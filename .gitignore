@@ -1,0 +1,17 @@
+# Build output
+/dist/
+/platforms/safari/.generated/
+
+# macOS / Xcode
+.DS_Store
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.xcscmblueprint
+
+# Editors
+.vscode/
+.idea/
+
+# Node (if tooling is added later)
+node_modules/
