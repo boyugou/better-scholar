@@ -946,6 +946,43 @@ const VENUES = {
   "plos computational biology": { sjr: "Q1" }
 };
 
+// Alternate real-world venue titles that don't reduce, string-wise, to their
+// CCF_RAW official full name or their VENUES abbreviation key — e.g. NeurIPS
+// papers on Scholar almost always cite the proceedings series title "Advances
+// in Neural Information Processing Systems", not the conference's own name
+// "Conference on Neural Information Processing Systems". Keys are normKey()'d
+// exact full names; values reuse a VENUES rating.
+const VENUE_FULL_NAME_ALIASES = {
+  "advances in neural information processing systems": VENUES["neurips"]
+};
+
+// Exact full-name -> bundled rating index for lookupBundled's fast path,
+// built by cross-referencing CCF_RAW's [abbr, full] pairs against VENUES:
+// whenever a CCF_RAW abbreviation also has a bundled CORE/SJR rating, its
+// full name is registered as an exact alias for that rating. This lets a
+// venue string spelled out in full (e.g. "International Conference on
+// Machine Learning" instead of "ICML") still resolve to the bundled CORE
+// badge, without the risk a generic boilerplate-stripped substring match
+// would carry (ICML's stripped core "machine learning" is also a substring
+// of the unrelated "Machine Learning" journal's name — see resolveCCF).
+const fullNameAliasIndex = new Map();
+for (const [abbr, full] of CCF_RAW) {
+  if (!abbr) continue;
+  const rating = VENUES[normKey(abbr)];
+  if (!rating) continue;
+  const nk = normKey(full);
+  if (!nk) continue;
+  if (fullNameAliasIndex.has(nk)) {
+    const prev = fullNameAliasIndex.get(nk);
+    if (prev && prev !== rating) fullNameAliasIndex.set(nk, null); // ambiguous
+  } else {
+    fullNameAliasIndex.set(nk, rating);
+  }
+}
+for (const [nk, rating] of Object.entries(VENUE_FULL_NAME_ALIASES)) {
+  if (!fullNameAliasIndex.has(nk)) fullNameAliasIndex.set(nk, rating);
+}
+
 // Phrases stripped from venue strings before matching, so that
 // "Proceedings of the 45th International Conference on Software Engineering"
 // reduces toward "software engineering". A standalone `workshop`/`findings`
@@ -1004,8 +1041,16 @@ function resolveCCF(raw) {
 
   let candidate = null; // { tier, full }
 
-  // (a) Exact normalized full-name match.
-  candidate = byName.get(norm) || null;
+  // (a) Exact full-name match: `byName` is keyed by normKey(full) — lowercased
+  // and punctuation-collapsed only, no boilerplate stripped — so the lookup
+  // key must be normKey(raw), not `norm` (which has "international conference
+  // on"/"proceedings of the Nth"/etc. stripped away). Using `norm` here would
+  // reduce distinct venues to the same short string — e.g. both "International
+  // Conference on Machine Learning" (ICML) and the unrelated "Machine
+  // Learning" journal collapse to "machine learning" — and silently resolve
+  // to whichever of the two happens to appear in `byName` under that
+  // over-stripped key, misjudging one as the other.
+  candidate = byName.get(normKey(raw)) || null;
 
   // (b) Parenthesized acronym in the RAW string.
   if (!candidate) {
@@ -1039,12 +1084,17 @@ function resolveCCF(raw) {
       const nf = normKey(full);
       const sf = normalizeVenue(full);
       for (const form of new Set([nf, sf])) {
-        if (form && form.length > bestLen) {
-          const re = new RegExp("\\b" + form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b");
-          if (re.test(norm)) {
-            bestFull = { tier, full };
-            bestLen = form.length;
-          }
+        if (!form || form.length < bestLen) continue;
+        const re = new RegExp("\\b" + form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b");
+        if (!re.test(norm)) continue;
+        // On a tie (e.g. a conference's boilerplate-stripped name and an
+        // unrelated journal's bare name both reduce to "machine learning"),
+        // prefer whichever candidate's own official full name is longer: it
+        // took more stripping to reach the same short form, which is stronger
+        // evidence that form actually came from *that* full name.
+        if (form.length > bestLen || !bestFull || full.length > bestFull.full.length) {
+          bestFull = { tier, full };
+          bestLen = form.length;
         }
       }
       if (!abbrHit && abbr) {
@@ -1066,13 +1116,19 @@ function resolveCCF(raw) {
   return candidate.tier;
 }
 
-// Look for a bundled CORE/SJR match: exact normalized key, a parenthesized
-// acronym inside the raw string, or a key appearing as a token run.
+// Look for a bundled CORE/SJR match: exact normalized key, an exact official
+// full-name match, a parenthesized acronym inside the raw string, or a key
+// appearing as a token run.
 function lookupBundled(rawVenue) {
   const norm = normalizeVenue(rawVenue);
   if (!norm) return null;
 
   if (VENUES[norm]) return { ...VENUES[norm], source: "bundled", matched: norm };
+
+  const exactFull = fullNameAliasIndex.get(normKey(rawVenue));
+  if (exactFull) {
+    return { ...exactFull, source: "bundled-full", matched: normKey(rawVenue) };
+  }
 
   const acro = rawVenue.match(/\(([^)]{2,40})\)/);
   if (acro) {

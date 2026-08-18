@@ -93,13 +93,53 @@
     return { givens, last };
   }
 
+  // True when a given-name token is a run of concatenated initials that lines
+  // up with `cluster.length` consecutive tokens on the other side, letter by
+  // letter — e.g. "AK" against ["amin", "karimi"], or "WLH" against ["wei",
+  // "lun", "harry"]. Scholar collapses every given name of an author with a
+  // middle name into one token like this when it abbreviates ("AK Monsefi"),
+  // so a single token on one side can stand for several given-name tokens on
+  // the other.
+  function matchesInitialsRun(cluster, tokens, start) {
+    if (start + cluster.length > tokens.length) return false;
+    for (let k = 0; k < cluster.length; k++) {
+      if (cluster[k] !== tokens[start + k][0]) return false;
+    }
+    return true;
+  }
+
+  // True when two given-name token sequences could name the same person.
+  // Walks both lists with two pointers, consuming one token from each side
+  // per step — unless a multi-letter token on one side doesn't equal its
+  // counterpart outright, in which case it may be a concatenated-initials
+  // cluster (see matchesInitialsRun) that consumes several tokens from the
+  // other side at once. Whichever list runs out first leaves the remainder
+  // unchecked: a shorter variant (e.g. "John Smith" given just "John") is
+  // accepted, not rejected.
+  function givensCompatible(ga, gb) {
+    let i = 0, j = 0;
+    while (i < ga.length && j < gb.length) {
+      const ta = ga[i];
+      const tb = gb[j];
+      if (ta[0] !== tb[0]) return false;
+      if (ta.length === 1 || tb.length === 1 || ta === tb) { i++; j++; continue; }
+      // Both sides are multi-letter words that differ outright — the only
+      // way they still describe the same person is if one is an initials
+      // cluster covering several of the other's tokens.
+      if (matchesInitialsRun(ta, gb, j)) { i++; j += ta.length; continue; }
+      if (matchesInitialsRun(tb, ga, i)) { j++; i += tb.length; continue; }
+      return false;
+    }
+    return true;
+  }
+
   // True when displayed author text matches a tracked author. Strategy:
   //   1. exact normalized equality with any configured variant;
-  //   2. same last name AND given-name tokens are compatible position by
-  //      position. Two tokens are compatible when one is a single-letter
-  //      initial sharing its leading letter, or when both are full words and
-  //      equal. This accepts "John Smith" == "J Smith" == "J. Smith" while
-  //      rejecting "Jane Smith" != "John Smith" (both full, J-a-n vs J-o-h).
+  //   2. same last name AND given-name tokens are compatible (see
+  //      givensCompatible) — same leading letter, and full words at the same
+  //      position must be identical, not just share an initial. This accepts
+  //      "John Smith" == "J Smith" == "J. Smith" while rejecting "Jane Smith"
+  //      != "John Smith" (both full, J-a-n vs J-o-h).
   function matchesAuthor(authorText, author) {
     const variants = [author.name, ...(author.alternates || [])].filter(Boolean);
     const a = nameParts(authorText);
@@ -109,18 +149,8 @@
       if (normName(authorText) === normName(v)) return true;
       const b = nameParts(v);
       if (a.last !== b.last) continue;
-      const n = Math.min(a.givens.length, b.givens.length);
-      if (n === 0) continue;
-      let ok = true;
-      for (let i = 0; i < n; i++) {
-        const ta = a.givens[i];
-        const tb = b.givens[i];
-        if (ta[0] !== tb[0]) { ok = false; break; }
-        // Both full words at this position must be identical, not just share
-        // an initial — this is what distinguishes Jane from John.
-        if (ta.length > 1 && tb.length > 1 && ta !== tb) { ok = false; break; }
-      }
-      if (ok) return true;
+      if (!a.givens.length || !b.givens.length) continue;
+      if (givensCompatible(a.givens, b.givens)) return true;
     }
     return false;
   }
