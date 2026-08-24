@@ -8,7 +8,7 @@ browsers directly and inside a generated Safari app wrapper. All logic uses the
 
 | File | World | Responsibility |
 |------|-------|----------------|
-| `src/content.js` | content script (`scholar.google.com/*`) | Detect the profile author, classify each paper's authorship role, highlight rows, inject the control panel, request venue badges, compute metrics. |
+| `src/content.js` | content script (every Scholar domain — see [Scholar domains](#scholar-domains)) | Detect the profile author, classify each paper's authorship role, highlight rows, inject the control panel, request venue badges, compute metrics. |
 | `src/background.js` | service worker | Resolve a venue string to its CCF / CORE / SJR ratings; cache results in `chrome.storage.local` for 30 days. |
 | `src/popup/` | toolbar popup | At-a-glance status for the current tab plus the role-color legend. |
 
@@ -75,6 +75,24 @@ and live highlighted-vs-total metrics (Papers, Citations, h-index, i10-index).
 A `MutationObserver` reprocesses rows Scholar appends via "Show more"; it is
 paused around the extension's own DOM writes so decorating author names can't
 retrigger processing and fight a toggle.
+
+## Scholar domains
+
+Google Scholar is served from every Google country domain — a visitor in
+Singapore lands on `scholar.google.com.sg`, and `?hl=`/`pli=` redirects keep
+them there. The content script must therefore run on all of them, not just
+`scholar.google.com`.
+
+A Manifest V3 match pattern cannot wildcard a TLD (`https://scholar.google.*/*`
+is rejected: the host may only wildcard a *subdomain* prefix), so
+`manifest.json` enumerates all 187 domains from Google's published
+[`supported_domains`](https://www.google.com/supported_domains) list in both
+`host_permissions` and `content_scripts[0].matches`.
+
+`scripts/update-scholar-domains.sh` regenerates both lists from that source —
+run it if Google adds a country domain. Nothing else in the extension is
+domain-aware: `content.js` keys entirely off the DOM, and the popup's status
+check already accepts any TLD.
 
 ## Cross-browser packaging
 

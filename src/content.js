@@ -1,6 +1,8 @@
 // Scholar Lens — content script
 //
-// Runs on scholar.google.com. Parses publication entries (profile rows and
+// Runs on every Google Scholar domain (scholar.google.com and each country
+// mirror — scholar.google.com.sg, scholar.google.co.uk, …; see the enumerated
+// match patterns in manifest.json). Parses publication entries (profile rows and
 // search results), matches each paper's author list against the user's tracked
 // authors, applies role-based highlighting (first / last / co-first / etc.), and
 // requests venue quality badges from the background worker. A MutationObserver
