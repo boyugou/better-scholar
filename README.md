@@ -28,6 +28,8 @@ single shared codebase.
   over the current profile, with role / year filters and a show-only-highlighted
   toggle.
 - **Works on search results** too, not just profiles.
+- **Every Scholar domain** — `scholar.google.com` and all 186 country mirrors
+  (`scholar.google.com.sg`, `scholar.google.co.uk`, …).
 
 All controls live in the in-page **Author Highlighter** panel and persist across
 visits. The toolbar popup is an at-a-glance status + color legend.
@@ -47,6 +49,7 @@ platforms/
 scripts/
   package-chrome.sh      src/ → dist/scholar-lens-chrome-<version>.zip
   build-safari.sh        Generate + build (+ install) the Safari app
+  update-scholar-domains.sh  Refresh the Scholar domain list in manifest.json
 docs/
   ARCHITECTURE.md        How detection, role logic, and venue matching work
 ```
