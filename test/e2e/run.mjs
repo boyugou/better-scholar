@@ -1,0 +1,329 @@
+#!/usr/bin/env node
+// End-to-end test: load the real extension into Chromium and drive it against a local
+// stand-in for a Scholar profile page (test/e2e/fixture-server.js).
+//
+//   npm run test:e2e
+//
+// Needs Playwright and a Chromium build (branded Chrome ≥137 ignores --load-extension, so
+// use Playwright's bundled Chromium / Chrome for Testing). Locations, if not auto-found:
+//   PLAYWRIGHT_PATH=/path/to/node_modules/playwright  CHROMIUM_PATH=/path/to/Chromium
+// Without them the test prints a notice and exits 0 so plain `npm test` never depends on it.
+import { createRequire } from "node:module";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import crypto from "node:crypto";
+import { fileURLToPath } from "node:url";
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const repo = path.join(here, "..", "..");
+const require = createRequire(import.meta.url);
+
+// ---- locate Playwright + Chromium ------------------------------------------
+function findPlaywright() {
+  const cands = [process.env.PLAYWRIGHT_PATH];
+  const npx = path.join(os.homedir(), ".npm", "_npx");
+  if (fs.existsSync(npx)) for (const d of fs.readdirSync(npx)) cands.push(path.join(npx, d, "node_modules", "playwright"));
+  cands.push("playwright");
+  for (const c of cands.filter(Boolean)) { try { return require(c); } catch (e) { /* next */ } }
+  return null;
+}
+function findChromium() {
+  if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
+  const cache = path.join(os.homedir(), "Library", "Caches", "ms-playwright");
+  if (!fs.existsSync(cache)) return null;
+  const dirs = fs.readdirSync(cache).filter((d) => /^chromium-\d+$/.test(d)).sort((a, b) => parseInt(b.slice(9)) - parseInt(a.slice(9)));
+  for (const d of dirs) {
+    for (const arch of ["chrome-mac-arm64", "chrome-mac"]) {
+      const p = path.join(cache, d, arch, "Chromium.app", "Contents", "MacOS", "Chromium");
+      if (fs.existsSync(p)) return p;
+    }
+  }
+  return null;
+}
+const pw = findPlaywright();
+const chromiumPath = findChromium();
+if (!pw || !chromiumPath) {
+  console.log("e2e skipped: Playwright or a Chromium build was not found (set PLAYWRIGHT_PATH / CHROMIUM_PATH).");
+  process.exit(0);
+}
+
+// ---- expected values from the same pure libraries the extension uses -----------
+const names = require(path.join(repo, "src/lib/names.js"));
+const venues = require(path.join(repo, "src/lib/venues.js"));
+const metrics = require(path.join(repo, "src/lib/metrics.js"));
+const analysis = require(path.join(repo, "src/lib/analysis.js"));
+const ccf = require(path.join(repo, "src/data/ccf.js"));
+const core = require(path.join(repo, "src/data/core.js"));
+const aliases = require(path.join(repo, "src/data/aliases.js"));
+const { start } = require("./fixture-server.js");
+const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+
+function expected(profile, { resolveHidden = false, extraOwner } = {}) {
+  const owner = { name: profile.owner, alternates: extraOwner || [] };
+  return profile.rows.map((r) => {
+    const raw = { authorsText: r.authors, venueText: r.venue, citations: r.cites, year: r.year };
+    let resolved = null;
+    // only papers whose owner is hidden behind the truncation get looked up
+    if (resolveHidden && analysis.needsDetail(analysis.analyzeRow(raw, { owner, resolver }))) {
+      const visible = r.authors.split(/,\s*/).filter((t) => t && !/^\.\.\.$|…/.test(t));
+      resolved = { authors: [...visible, profile.owner].join(", ") };
+    }
+    const a = analysis.analyzeRow(raw, { owner, resolver, resolved });
+    return { status: a.status, role: a.role, venue: a.venue, citations: a.citations, year: a.year, highlighted: a.status === "found" && ["first", "cofirst", "second", "last"].includes(a.role), venueText: a.venueText };
+  });
+}
+
+// ---- build a test copy of the extension that also runs on 127.0.0.1 ------------
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "byline-e2e-"));
+const extDir = path.join(tmp, "ext");
+fs.cpSync(path.join(repo, "src"), extDir, { recursive: true });
+const manifestPath = path.join(extDir, "manifest.json");
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+manifest.content_scripts[0].matches = ["http://127.0.0.1/citations*"];
+fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+// unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p
+const extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
+  .map((c) => String.fromCharCode("a".charCodeAt(0) + parseInt(c, 16))).join("");
+
+const outDir = process.env.E2E_OUT || path.join(os.tmpdir(), "byline-e2e-out");
+fs.mkdirSync(outDir, { recursive: true });
+
+let step = 0;
+const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${msg}`);
+
+async function launch() {
+  return pw.chromium.launchPersistentContext(path.join(tmp, "profile-" + Math.random().toString(36).slice(2)), {
+    executablePath: chromiumPath,
+    headless: true,
+    viewport: { width: 1360, height: 900 },
+    permissions: ["clipboard-read", "clipboard-write"],
+    args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run"]
+  });
+}
+
+// DOM → matrix cells { role: { A, B, C, none, total } }
+const readMatrix = (page) => page.evaluate(() => {
+  const out = {};
+  document.querySelectorAll("#byline-panel tbody tr[data-role]").forEach((tr) => {
+    const role = tr.dataset.role;
+    if (role === "hidden") { out.hidden = parseInt(tr.querySelector(".bl-total").textContent, 10); return; }
+    out[role] = {};
+    tr.querySelectorAll("button.bl-cell").forEach((b) => { out[role][b.dataset.tier] = b.classList.contains("bl-zero") ? 0 : parseInt(b.textContent, 10); });
+    out[role].total = parseInt(tr.querySelector(".bl-total").textContent, 10);
+  });
+  return out;
+});
+
+function matrixOf(papers, source = "ccf") {
+  const s = metrics.summarize(papers, source);
+  const out = {};
+  for (const r of s.rows) { out[r.role] = Object.fromEntries([...s.columns.map((c) => [c, r[c]]), ["total", r.total]]); }
+  if (s.hidden) out.hidden = s.hidden;
+  return out;
+}
+
+const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hide)").count();
+
+(async () => {
+  const fx = await start({ slug: "ion-stoica", pageSize: 20 });
+  const profile = fx.profile;
+  const context = await launch();
+  const errors = [];
+  context.on("page", (p) => { p.on("pageerror", (e) => errors.push("pageerror: " + e.message)); p.on("console", (m) => { if (m.type() === "error") errors.push("console: " + m.text()); }); });
+  try {
+    const page = await context.newPage();
+    await page.goto(fx.url);
+    await page.waitForSelector("#byline-panel");
+    console.log("Byline e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
+
+    // -- 1. panel lands in the right-hand sidebar on a wide window
+    const place = await page.evaluate(() => {
+      const p = document.getElementById("byline-panel");
+      return { inSidebar: p.parentElement.classList.contains("gsc_rsb"), first: p.parentElement.firstElementChild === p, wide: p.classList.contains("bl-wide") };
+    });
+    assert.deepEqual(place, { inSidebar: true, first: true, wide: false });
+    ok("panel sits at the top of the sidebar on a wide window");
+
+    // -- 2. first page (20 rows): matrix equals what the libraries compute
+    assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr").count(), 20);
+    const first20 = { owner: profile.owner, rows: profile.rows.slice(0, 20) };
+    assert.deepEqual(await readMatrix(page), matrixOf(expected(first20)));
+    ok("summary matrix matches the pure-library result for the first 20 papers");
+
+    // -- 3. row decoration
+    const roleCounts = await page.evaluate(() => Object.fromEntries(["first", "cofirst", "second", "last"].map((r) => [r, document.querySelectorAll("tr.byline-r-" + r).length])));
+    const want20 = expected(first20);
+    for (const r of ["first", "cofirst", "second", "last"]) assert.equal(roleCounts[r], want20.filter((p) => p.highlighted && p.role === r).length, "row class " + r);
+    const ccfChips = await page.locator('.byline-chip[data-kind="ccf"]').count();
+    assert.equal(ccfChips, want20.filter((p) => p.venue.ccf).length);
+    const coreChips = await page.locator('.byline-chip[data-kind="core"]').count();
+    assert.equal(coreChips, want20.filter((p) => p.venue.core).length);
+    assert.ok(ccfChips > 0 && coreChips > 0);
+    ok(`rows tinted by role; ${ccfChips} CCF and ${coreChips} CORE chips`);
+
+    // -- 4. tooltips carry provenance
+    const tip = await page.locator('.byline-chip[data-kind="ccf"]').first().getAttribute("title");
+    assert.match(tip, /CCF [ABC]/); assert.match(tip, /CCF 2026 \(7th edition\)/); assert.match(tip, /Matched by/);
+    ok("badge tooltip names the matched venue, the rule and the edition");
+
+    // -- 5. load all papers
+    await page.click('[data-act="load-all"]');
+    await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
+    await page.waitForFunction(() => !document.querySelector('[data-act="load-all"]'));
+    const all = expected(profile);
+    assert.deepEqual(await readMatrix(page), matrixOf(all));
+    ok("'Load all' brings 100 rows and the matrix matches the library result");
+    const stats = matrixOf(all);
+    console.log("      matrix:", JSON.stringify(stats));
+
+    // -- 6. role checkbox toggles highlighting (and persists to the DOM state)
+    await page.uncheck('input[data-role="last"]');
+    assert.equal(await page.locator("tr.byline-r-last").count(), 0);
+    assert.equal(await page.locator('.byline-chip-role[data-role="last"]').count(), 0);
+    await page.check('input[data-role="last"]');
+    assert.equal(await page.locator("tr.byline-r-last").count(), all.filter((p) => p.highlighted && p.role === "last").length);
+    ok("role checkboxes switch highlighting off and on");
+
+    // -- 7. matrix cell filters the list
+    const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;
+    await page.click('button.bl-cell[data-role="last"][data-tier="A"]');
+    assert.equal(await visibleRows(page), lastA);
+    assert.equal(await page.getAttribute('button.bl-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
+    await page.click('button.bl-cell[data-role="last"][data-tier="A"]');
+    assert.equal(await visibleRows(page), 100);
+    ok(`clicking last × CCF-A shows exactly ${lastA} papers; clicking again clears`);
+
+    // -- 8. CORE tab
+    await page.click('button[data-src="core"]');
+    assert.deepEqual(await readMatrix(page), matrixOf(all, "core"));
+    await page.click('button[data-src="ccf"]');
+    ok("CCF/CORE switch recomputes the matrix");
+
+    // -- 9. year filter + only highlighted
+    const years = [...new Set(all.map((p) => p.year))].sort((a, b) => b - a);
+    await page.selectOption('select[data-act="year-start"]', String(years[2]));
+    const inRange = all.filter((p) => p.year >= years[2]).length;
+    assert.equal(await visibleRows(page), inRange);
+    await page.selectOption('select[data-act="year-start"]', "");
+    await page.check('input[data-act="only"]');
+    assert.equal(await visibleRows(page), all.filter((p) => p.highlighted).length);
+    await page.uncheck('input[data-act="only"]');
+    ok("year filter and 'only highlighted' hide the right rows");
+
+    // -- 10. mark name
+    await page.check('input[data-act="mark-name"]');
+    assert.ok((await page.locator(".byline-name").count()) > 0);
+    const textBefore = await page.locator("#gsc_a_b tr.gsc_a_tr").first().locator(".gs_gray").first().textContent();
+    assert.equal(textBefore, profile.rows[0].authors, "marking a name must not change the text");
+    await page.uncheck('input[data-act="mark-name"]');
+    assert.equal(await page.locator(".byline-name").count(), 0);
+    ok("name marking wraps the owner's name without altering the text, and undoes cleanly");
+
+    // -- 11. resolve hidden roles from each paper's own page
+    const hiddenBefore = (await readMatrix(page)).hidden;
+    assert.equal(hiddenBefore, 28);
+    await page.click('[data-act="resolve"]');
+    await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
+    const resolvedExpect = matrixOf(expected(profile, { resolveHidden: true }));
+    assert.deepEqual(await readMatrix(page), resolvedExpect);
+    assert.equal(fx.detailRequests(), 28);
+    ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
+    console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
+    const fromPage = await page.locator('.byline-chip-role').first().getAttribute("title");
+    assert.ok(fromPage.length > 0);
+
+    // -- 12. clipboard
+    await page.click('[data-act="copy-text"]');
+    const clip = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF tier/);
+    assert.match(clip, /Last author: \d+ \(/);
+    assert.match(clip, /CCF 2026 \(7th edition\)/);
+    await page.click('[data-act="copy-tsv"]');
+    const tsv = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(tsv.split("\n")[0], /^Role\tA\tB\tC\tNot ranked\tTotal$/);
+    ok("Copy summary / Copy as table put the expected text on the clipboard");
+
+    // -- 13. collapse persists
+    await page.click('[data-act="collapse"]');
+    assert.ok(await page.evaluate(() => document.getElementById("byline-panel").classList.contains("bl-collapsed")));
+    await page.reload();
+    await page.waitForSelector("#byline-panel");
+    assert.ok(await page.evaluate(() => document.getElementById("byline-panel").classList.contains("bl-collapsed")), "collapsed state survives a reload");
+    await page.click('[data-act="collapse"]');
+    ok("collapsed state is stored in chrome.storage and restored");
+
+    await page.screenshot({ path: path.join(outDir, "wide.png") });
+
+    // -- 14. narrow window: the panel moves above the list
+    await page.setViewportSize({ width: 840, height: 900 });
+    await page.waitForFunction(() => document.getElementById("byline-panel").classList.contains("bl-wide"));
+    const narrow = await page.evaluate(() => { const p = document.getElementById("byline-panel"); return p.nextElementSibling && p.nextElementSibling.id; });
+    assert.equal(narrow, "gsc_a_tw");
+    await page.screenshot({ path: path.join(outDir, "narrow.png") });
+    await page.setViewportSize({ width: 1360, height: 900 });
+    await page.waitForFunction(() => !document.getElementById("byline-panel").classList.contains("bl-wide"));
+    ok("narrow window moves the panel above the paper list (two-column layout), wide window moves it back");
+
+    // -- 15. popup shows the same summary for the profile tab
+    const popup = await context.newPage();
+    await popup.goto(`chrome-extension://${extId}/popup/popup.html`);
+    await popup.waitForSelector("#main");
+    assert.match(await popup.textContent("#main"), /Open a Google Scholar author profile/);
+    const tabId = await popup.evaluate(async () => {
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "byline:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+      return null;
+    });
+    assert.ok(tabId != null, "a profile tab answers the popup's message");
+    await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tabId}`);
+    await popup.waitForSelector(".who");
+    assert.match(await popup.textContent(".who"), /Ion Stoica/);
+    const popupMatrix = await popup.evaluate(() => Array.from(document.querySelectorAll("tbody tr")).map((tr) => tr.lastElementChild.textContent));
+    assert.ok(popupMatrix.length >= 3);
+    await popup.screenshot({ path: path.join(outDir, "popup.png") });
+    await popup.close();
+    ok("toolbar popup renders the active profile's summary (and a hint on other pages)");
+
+    // -- 16. i18n substitutions resolved (no raw $N1$ placeholders anywhere)
+    const body = await page.evaluate(() => document.getElementById("byline-panel").textContent);
+    assert.ok(!/\$N\d\$|\$\d/.test(body), "placeholders substituted");
+    assert.match(body, /20 papers loaded/);   // (the page was reloaded in step 13)
+    ok("chrome.i18n placeholders are substituted");
+
+    assert.deepEqual(errors, [], "no console or page errors:\n" + errors.join("\n"));
+    ok("no console errors");
+  } finally {
+    await context.close();
+    await fx.close();
+  }
+
+  // -- 17. a profile whose header name is spelled the other way round
+  const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica Ion" });
+  const ctx2 = await launch();
+  try {
+    const page = await ctx2.newPage();
+    await page.goto(fx2.url);
+    await page.waitForSelector("#byline-panel");
+    const absentBefore = await page.locator('[data-byline="absent"]').count();
+    assert.equal(absentBefore, 1, "the panel reports papers where the name was not found");
+    await page.click('[data-byline="variants"] summary');
+    await page.fill('input[data-act="variant-input"]', "Ion Stoica");
+    await page.press('input[data-act="variant-input"]', "Enter");
+    await page.waitForFunction(() => !document.querySelector('[data-byline="absent"]') || /^\d+ papers where/.test(document.querySelector('[data-byline="absent"]').textContent));
+    const m = await readMatrix(page);
+    const want = matrixOf(expected({ owner: "Ion Stoica", rows: fx2.profile.rows }));
+    assert.deepEqual(m, want);
+    ok("adding a name variant re-matches every paper");
+    // the variant is remembered for this profile after a reload
+    await page.reload();
+    await page.waitForSelector("#byline-panel");
+    assert.deepEqual(await readMatrix(page), want);
+    ok("name variants persist per profile");
+  } finally {
+    await ctx2.close();
+    await fx2.close();
+  }
+
+  console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
+})().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });
