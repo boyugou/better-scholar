@@ -5,8 +5,9 @@
 # Scholar is served from every Google country domain (scholar.google.com.sg,
 # scholar.google.co.uk, …) and a Manifest V3 match pattern cannot wildcard a
 # TLD — "https://scholar.google.*/*" is rejected — so the domains have to be
-# enumerated. This regenerates both `host_permissions` and the content script's
-# `matches` from Google's own published list, keeping scholar.google.com first.
+# enumerated. This regenerates the content script's `matches` from Google's own
+# published list, keeping scholar.google.com first. The extension only acts on
+# profile pages, so each pattern is scoped to /citations*.
 #
 # Run it when Google adds a country domain; the diff is the review.
 #
@@ -31,15 +32,11 @@ if "google.com" not in domains or len(domains) < 100:
 
 # google.com first (the canonical host), the country domains sorted after it.
 ordered = ["google.com"] + sorted(d for d in domains if d != "google.com")
-patterns = ["https://scholar.%s/*" % d for d in ordered]
+patterns = ["https://scholar.%s/citations*" % d for d in ordered]
 
 with open(manifest_path) as f:
     manifest = json.load(f, object_pairs_hook=collections.OrderedDict)
 
-# Keep any non-Scholar host permission (dblp, OpenAlex) in place.
-others = [h for h in manifest["host_permissions"]
-          if not h.startswith("https://scholar.google.")]
-manifest["host_permissions"] = patterns + others
 manifest["content_scripts"][0]["matches"] = patterns
 
 with open(manifest_path, "w") as f:

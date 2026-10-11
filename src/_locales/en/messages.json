@@ -1,0 +1,278 @@
+{
+  "extName": {
+    "message": "Byline"
+  },
+  "extDescription": {
+    "message": "See who led each paper and where it was published: authorship roles × CCF / CORE tiers on Google Scholar profiles."
+  },
+  "summaryTitle": {
+    "message": "Papers by role and tier"
+  },
+  "hlLabel": {
+    "message": "Highlight"
+  },
+  "badgesLabel": {
+    "message": "Venue badges"
+  },
+  "onlyHighlighted": {
+    "message": "Only highlighted"
+  },
+  "markName": {
+    "message": "Mark name"
+  },
+  "yearLabel": {
+    "message": "Year"
+  },
+  "yearStart": {
+    "message": "From"
+  },
+  "yearEnd": {
+    "message": "To"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "First"
+  },
+  "roleCofirst": {
+    "message": "Co-first"
+  },
+  "roleSecond": {
+    "message": "Second"
+  },
+  "roleLast": {
+    "message": "Last"
+  },
+  "roleMiddle": {
+    "message": "Other"
+  },
+  "roleHidden": {
+    "message": "Hidden"
+  },
+  "colTotal": {
+    "message": "All"
+  },
+  "tipUnranked": {
+    "message": "Not ranked"
+  },
+  "tipHidden": {
+    "message": "Scholar truncated the author list, so the profile owner's position is not visible"
+  },
+  "copySummary": {
+    "message": "Copy summary"
+  },
+  "copyTable": {
+    "message": "Copy as table"
+  },
+  "copied": {
+    "message": "Copied"
+  },
+  "coverLoaded": {
+    "message": "$N1$ papers loaded",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 paper loaded"
+  },
+  "loadingAll": {
+    "message": "Loading… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Load all"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "coverHidden": {
+    "message": "$N1$ roles hidden by truncated author lists",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 role hidden by a truncated author list"
+  },
+  "resolveBtn": {
+    "message": "Resolve"
+  },
+  "resolveHint": {
+    "message": "Opens each paper's page on Scholar (about one per second) to read the full author list."
+  },
+  "resolving": {
+    "message": "Reading paper pages… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google asked for a CAPTCHA. Solve it in a normal tab, then try again."
+  },
+  "resolveDone": {
+    "message": "Done."
+  },
+  "coverAbsent": {
+    "message": "$N1$ papers where the profile name is not in the author list",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 paper where the profile name is not in the author list"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ papers at venues without a rank",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 paper at a venue without a rank"
+  },
+  "variantsTitle": {
+    "message": "Name not matching? Add a spelling"
+  },
+  "variantsPlaceholder": {
+    "message": "e.g. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Add"
+  },
+  "variantRemove": {
+    "message": "Remove"
+  },
+  "expand": {
+    "message": "Expand"
+  },
+  "collapse": {
+    "message": "Collapse"
+  },
+  "metricsTitle": {
+    "message": "Highlighted papers"
+  },
+  "mPapers": {
+    "message": "Papers"
+  },
+  "mCitations": {
+    "message": "Citations"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "of"
+  },
+  "dataNote": {
+    "message": "Tiers come from today's $N1$ lists, not the tier at publication time. CCF states that its list is not a basis for academic evaluation.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "chipFirst": {
+    "message": "1st"
+  },
+  "chipCofirst": {
+    "message": "Co-1st"
+  },
+  "chipSecond": {
+    "message": "2nd"
+  },
+  "chipLast": {
+    "message": "Last"
+  },
+  "ruleName": {
+    "message": "Matched by name"
+  },
+  "ruleAcronym": {
+    "message": "Matched by acronym"
+  },
+  "rulePrefix": {
+    "message": "Matched by the visible part of a truncated name"
+  },
+  "tipToday": {
+    "message": "current list, not the tier at publication"
+  },
+  "tipPosition": {
+    "message": "position $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "from the paper's page"
+  },
+  "copyFirst": {
+    "message": "First author"
+  },
+  "copyCofirst": {
+    "message": "Co-first author"
+  },
+  "copySecond": {
+    "message": "Second author"
+  },
+  "copyLast": {
+    "message": "Last author"
+  },
+  "copyMiddle": {
+    "message": "Other positions"
+  },
+  "tsvRole": {
+    "message": "Role"
+  },
+  "tsvTotal": {
+    "message": "Total"
+  },
+  "popupNotProfile": {
+    "message": "Open a Google Scholar author profile to see its summary here."
+  },
+  "popupReading": {
+    "message": "Reading the page…"
+  },
+  "popupPapers": {
+    "message": "$N1$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 paper"
+  },
+  "popupOpenScholar": {
+    "message": "Open Google Scholar"
+  }
+}

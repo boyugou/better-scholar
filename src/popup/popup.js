@@ -1,35 +1,67 @@
-// Scholar Lens — popup (informational).
-//
-// The live controls (role highlighting, venue badges, filters, metrics) live in
-// the Author Highlighter panel injected into the Scholar page's right sidebar.
-// This popup only reports whether the extension is active on the current tab and
-// shows the role-color legend.
+// Toolbar popup: the same role × tier summary as the in-page panel, for the active tab.
+(async function () {
+  "use strict";
+  const B = globalThis.Byline;
+  const { h, t, tn, copyText } = B.dom;
+  const metrics = B.metrics;
 
-function setStatus(state, title, sub) {
-  document.getElementById("statusDot").className = "status-dot " + state;
-  document.getElementById("statusTitle").textContent = title;
-  document.getElementById("statusSub").textContent = sub || "";
-}
+  document.documentElement.lang = chrome.i18n.getUILanguage();
+  document.getElementById("title").textContent = t("extName");
+  document.getElementById("ver").textContent = "v" + chrome.runtime.getManifest().version;
+  const main = document.getElementById("main");
 
-chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  const url = (tabs[0] && tabs[0].url) || "";
-  if (/^https:\/\/scholar\.google\.[^/]+\/citations\?/.test(url)) {
-    setStatus("on", "Active on this profile",
-      "Adjust highlighting in the sidebar panel.");
-  } else if (/^https:\/\/scholar\.google\./.test(url)) {
-    setStatus("idle", "On Google Scholar",
-      "Open an author profile to use the controls.");
-  } else {
-    setStatus("off", "Not on Google Scholar",
-      "Visit a Scholar author profile to begin.");
+  const COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
+  const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
+  const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };
+
+  function notProfile() {
+    main.replaceChildren(
+      h("p", { class: "empty" }, t("popupNotProfile")),
+      h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))));
   }
-});
 
-document.getElementById("clearCacheBtn").addEventListener("click", () => {
-  const btn = document.getElementById("clearCacheBtn");
-  chrome.runtime.sendMessage({ type: "CLEAR_VENUE_CACHE" }, () => {
-    void chrome.runtime.lastError;
-    btn.textContent = "Cache cleared";
-    setTimeout(() => (btn.textContent = "Clear venue cache"), 1400);
-  });
-});
+  async function ask() {
+    // ?tab=<id> lets the end-to-end test aim the popup at a specific tab
+    const forced = parseInt(new URLSearchParams(location.search).get("tab"), 10);
+    const [tab] = Number.isFinite(forced) ? [{ id: forced }] : await chrome.tabs.query({ active: true, currentWindow: true });
+    if (!tab || tab.id == null) return null;
+    try { return await chrome.tabs.sendMessage(tab.id, { type: "byline:summary" }); } catch (e) { return null; }
+  }
+
+  function render(data) {
+    let source = data.source === "core" ? "core" : "ccf";
+    const labels = () => Object.fromEntries(Object.entries(COPY).map(([k, v]) => [k, t(v)]));
+    const draw = () => {
+      const s = data.summaries[source];
+      const tier = (c) => (c === "none" ? "–" : c);
+      const seg = h("div", { class: "seg", role: "group" },
+        ...["ccf", "core"].map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, t(k === "ccf" ? "srcCcf" : "srcCore"))));
+      const table = h("table", {},
+        h("thead", {}, h("tr", {}, h("th", {}), ...s.columns.map((c) => h("th", {}, tier(c))), h("th", {}, t("colTotal")))),
+        h("tbody", {}, ...s.rows.map((r) => h("tr", {},
+          h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
+          ...s.columns.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),
+          h("td", { class: "t" }, String(r.total)))),
+          s.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")), h("td", { colspan: String(s.columns.length), class: "z" }, ""), h("td", { class: "t" }, String(s.hidden))) : null),
+        h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
+      const copy = (kind) => async (e) => {
+        const text = kind === "tsv"
+          ? metrics.toTsv(s, { label: labels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
+          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), edition: `${data.edition[source]} — ${t("tipToday")}` });
+        if (await copyText(text)) { const b = e.target; const old = b.textContent; b.textContent = t("copied"); setTimeout(() => (b.textContent = old), 1200); }
+      };
+      main.replaceChildren(
+        h("div", { class: "who" }, h("b", {}, data.owner), h("span", {}, tn("popupPapers", data.loaded, [String(data.loaded)]))),
+        seg, table,
+        h("div", { class: "actions" },
+          h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
+          h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))),
+        h("p", { class: "note" }, t("dataNote", [data.edition.ccf + " · " + data.edition.core])));
+    };
+    draw();
+  }
+
+  main.replaceChildren(h("p", { class: "empty" }, t("popupReading")));
+  const data = await ask();
+  if (data && data.ok) render(data); else notProfile();
+})();

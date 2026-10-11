@@ -1,0 +1,263 @@
+{
+  "extName": {
+    "message": "署名 Byline"
+  },
+  "extDescription": {
+    "message": "在 Google Scholar 作者主页上，一眼看出每篇论文的作者角色（一作/二作/末位）与发表场所的 CCF / CORE 等级。"
+  },
+  "summaryTitle": {
+    "message": "按角色与等级统计"
+  },
+  "hlLabel": {
+    "message": "高亮"
+  },
+  "badgesLabel": {
+    "message": "场所徽章"
+  },
+  "onlyHighlighted": {
+    "message": "只显示高亮"
+  },
+  "markName": {
+    "message": "标出姓名"
+  },
+  "yearLabel": {
+    "message": "年份"
+  },
+  "yearStart": {
+    "message": "起"
+  },
+  "yearEnd": {
+    "message": "止"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "一作"
+  },
+  "roleCofirst": {
+    "message": "共一"
+  },
+  "roleSecond": {
+    "message": "二作"
+  },
+  "roleLast": {
+    "message": "末位"
+  },
+  "roleMiddle": {
+    "message": "其他"
+  },
+  "roleHidden": {
+    "message": "未显示"
+  },
+  "colTotal": {
+    "message": "合计"
+  },
+  "tipUnranked": {
+    "message": "未收录"
+  },
+  "tipHidden": {
+    "message": "Scholar 截断了作者列表，看不到本人所在位置"
+  },
+  "copySummary": {
+    "message": "复制摘要"
+  },
+  "copyTable": {
+    "message": "复制为表格"
+  },
+  "copied": {
+    "message": "已复制"
+  },
+  "coverLoaded": {
+    "message": "已加载 $N1$ 篇",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "加载中… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "全部加载"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "coverHidden": {
+    "message": "$N1$ 篇的作者列表被截断，看不到角色",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "补全"
+  },
+  "resolveHint": {
+    "message": "逐篇读取 Scholar 上的论文页（约每秒一篇）以获取完整作者列表。"
+  },
+  "resolving": {
+    "message": "正在读取论文页… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google 要求验证码。请在普通标签页完成验证后再试。"
+  },
+  "resolveDone": {
+    "message": "完成。"
+  },
+  "coverAbsent": {
+    "message": "$N1$ 篇的作者列表里没找到本人姓名",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "$N1$ 篇的发表场所未收录",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "variantsTitle": {
+    "message": "名字没匹配上？添加一种写法"
+  },
+  "variantsPlaceholder": {
+    "message": "如 Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "添加"
+  },
+  "variantRemove": {
+    "message": "移除"
+  },
+  "expand": {
+    "message": "展开"
+  },
+  "collapse": {
+    "message": "收起"
+  },
+  "metricsTitle": {
+    "message": "高亮论文指标"
+  },
+  "mPapers": {
+    "message": "论文数"
+  },
+  "mCitations": {
+    "message": "引用数"
+  },
+  "mH": {
+    "message": "h 指数"
+  },
+  "mI10": {
+    "message": "i10 指数"
+  },
+  "metricsOf": {
+    "message": "/"
+  },
+  "dataNote": {
+    "message": "等级取自当前的 $N1$ 名录，并非论文发表时的等级。CCF 声明其目录不作为学术评价依据。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "chipFirst": {
+    "message": "一作"
+  },
+  "chipCofirst": {
+    "message": "共一"
+  },
+  "chipSecond": {
+    "message": "二作"
+  },
+  "chipLast": {
+    "message": "末位"
+  },
+  "ruleName": {
+    "message": "按名称匹配"
+  },
+  "ruleAcronym": {
+    "message": "按缩写匹配"
+  },
+  "rulePrefix": {
+    "message": "按被截断名称的可见部分匹配"
+  },
+  "tipToday": {
+    "message": "当前名录，非发表时等级"
+  },
+  "tipPosition": {
+    "message": "第 $N1$ 位 / 共 $N2$ 位",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "来自论文页"
+  },
+  "copyFirst": {
+    "message": "一作"
+  },
+  "copyCofirst": {
+    "message": "共同一作"
+  },
+  "copySecond": {
+    "message": "二作"
+  },
+  "copyLast": {
+    "message": "末位作者"
+  },
+  "copyMiddle": {
+    "message": "其他位置"
+  },
+  "tsvRole": {
+    "message": "角色"
+  },
+  "tsvTotal": {
+    "message": "合计"
+  },
+  "popupNotProfile": {
+    "message": "打开 Google Scholar 作者主页，即可在这里查看摘要。"
+  },
+  "popupReading": {
+    "message": "正在读取页面…"
+  },
+  "popupPapers": {
+    "message": "$N1$ 篇",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "打开 Google Scholar"
+  }
+}

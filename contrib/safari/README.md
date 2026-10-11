@@ -18,11 +18,11 @@ contrib/safari/build.sh --install
 
 This uses Apple's `safari-web-extension-converter` to generate an Xcode project
 under `contrib/safari/.generated/` (git-ignored), builds it ad-hoc signed, and
-copies `Scholar Lens.app` to `/Applications`.
+copies `Byline.app` to `/Applications`.
 
 Then, in Safari:
 
-1. **Settings → Extensions** → enable **Scholar Lens**.
+1. **Settings → Extensions** → enable **Byline**.
 2. For local unsigned builds, also enable **Develop → Allow Unsigned Extensions**
    (this resets every time Safari restarts).
 
@@ -32,7 +32,7 @@ Then, in Safari:
 
 ## Notes
 
-- The default bundle identifier is `com.boyugou.Scholar-Lens`. Change `BUNDLE_ID`
+- The default bundle identifier is `com.boyugou.Byline`. Change `BUNDLE_ID`
   in `contrib/safari/build.sh` to use your own.
 - For a distributable, signed build, open the generated project in Xcode and set
   your Apple Developer team, or pass your signing identity to `xcodebuild`.
