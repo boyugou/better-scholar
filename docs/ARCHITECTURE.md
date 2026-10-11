@@ -1,114 +1,177 @@
 # Architecture
 
-Scholar Lens is a Manifest V3 extension built for Chrome. The same `src/` loads
-unmodified in other Chromium browsers; Safari is supported on a best-effort
-basis only — see [Platform policy](#platform-policy-chrome-first).
+Byline is a Manifest V3 extension built for Chrome. It is a **content script and
+nothing else**: no service worker, one permission (`storage`), and no network access
+except the optional, user-triggered read of a paper's own page on Scholar. The same
+`src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
+[Platform policy](#platform-policy-chrome-first)).
+
+```
+Scholar profile page ──► content/scholar.js   (the only code that knows Scholar's DOM)
+                             │ raw rows: authors text, venue text, citations, year
+                             ▼
+                        lib/analysis.js ──► lib/names.js    owner + roles (first / second / last …)
+                             │          └─► lib/venues.js   CCF / CORE tier  ◄── data/ccf.js, data/core.js, data/aliases.js
+                             ▼
+                        content/main.js  (state, filters, observers) ──► content/panel.js  (view)
+                             │                                         └► decorated rows (tint, chips)
+                             └─► lib/metrics.js   role × tier matrix, h-index, clipboard text
+popup/  ── asks the content script for the summary and renders the same matrix
+```
+
+Everything under `lib/` is **pure** (no DOM, no `chrome.*`). Each file is a UMD-style
+script: in the extension it attaches to `globalThis.Byline`, under Node it is
+`require`d. That is what lets the unit tests exercise the real code on real Scholar
+data, and why there is no build step.
 
 ## Components
 
-| File | World | Responsibility |
-|------|-------|----------------|
-| `src/content.js` | content script (every Scholar domain — see [Scholar domains](#scholar-domains)) | Detect the profile author, classify each paper's authorship role, highlight rows, inject the control panel, request venue badges, compute metrics. |
-| `src/background.js` | service worker | Resolve a venue string to its CCF / CORE / SJR ratings; cache results in `chrome.storage.local` for 30 days. |
-| `src/popup/` | toolbar popup | At-a-glance status for the current tab plus the role-color legend. |
-
-The popup is intentionally thin: every live control lives in the in-page panel,
-where the context is. Settings persist in `chrome.storage.sync`.
+| Path | Responsibility |
+|------|----------------|
+| `lib/names.js` | Normalise names, parse an author list, find the profile owner in it, classify the role. |
+| `lib/venues.js` | Resolve a Scholar venue string to a CCF tier and a CORE rank (below). |
+| `lib/analysis.js` | One row → `{ status, role, venue, … }`; folds in a paper's detail page when available. |
+| `lib/metrics.js` | h-index / i10, the role × tier summary, matrix filtering, clipboard text. |
+| `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), *Load all*. |
+| `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
+| `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state. |
+| `content/main.js` | Wires it together: settings, filters, decoration, observers, messages to the popup. |
+| `content/store.js` | `chrome.storage` wrappers + settings migration; degrades to memory if the extension context disappears. |
+| `data/*.js` | **Generated** from `data/*.json` by `scripts/build-data.mjs`; `aliases.js` is curated by hand. |
 
 ## Author detection and roles
 
-On a profile page the author is read from the page header (`#gsc_prf_in`) — no
-manual setup. Each publication row's author list is parsed, matched against the
-detected author (initial-aware: `John Smith` = `J Smith` = `J. Smith`, while
-`Jane Smith` ≠ `John Smith`), and assigned one role:
+The profile owner is the text of `#gsc_prf_in`. `cleanOwnerHeader` strips honorifics,
+suffixes and parentheticals (`Prof. John Smith, PhD`, `Wei Zhang (张伟)`).
 
-- **first** — position 0.
-- **co-first** — marked with a shared-first symbol (`† ‡ § * # ✉ …`).
-- **second** — position 1.
-- **last** — final position, only when the author list is *not* truncated.
-- middle (3rd+) — deliberately **not** highlighted, to keep the page calm.
+Matching an author token to the owner (`names.js`):
 
-`roleFor` checks co-first → first → last → second in that order, so in a
-two-author paper the author at position 1 is the **last** (senior) author, not
-merely "second". Truncated lists (`A, B, …`) never falsely claim the last slot.
+- accents are folded and letters NFD cannot decompose are transliterated (`ł ø đ ß …`);
+  names with no Latin letters at all (CJK, …) are compared by their own letters;
+- Scholar collapses a multi-part given name into one all-caps token (`GE Hinton`,
+  `WLH Smith`). Such **initials clusters** are expanded into letters before comparing, so
+  the profile name `Geoffrey Hinton` matches `GE Hinton`. This was the largest single
+  source of silent misses: 57 of 100 rows on a real profile;
+- full given names must agree (`Jane` ≠ `John`); a single letter matches any name starting
+  with it; an all-caps *name* is not treated as initials;
+- family-name particles (`van der`, `von`, …) belong to the surname; `de/di/da/le/la` do
+  not, because they are common given names;
+- user-added spellings ("name variants", stored per profile) are extra owner names. Chinese
+  family-name-first order (`Zhang Wei` for `W Zhang`) is deliberately *not* guessed — it
+  would create false matches — but a variant fixes it in one click.
 
-Each role maps to a fixed color (first = blue, co-first = purple, second =
-amber, last = green); the row is tinted across all columns with a thin accent
-bar, and the panel's checkboxes carry matching legend dots.
+Roles (`roleFor`): co-first (shared-first mark) → first (position 0) → last (final
+position, only if the list is *not* truncated) → second (position 1) → middle. In a
+two-author paper the second author is the senior (last) author. Middle authors are not
+highlighted.
 
-## Venue matching (CCF / CORE / SJR)
+A row's `status` is `found`, `hidden` (list truncated with `…` and the owner not in the
+visible part — typically a senior author on a large paper) or `absent` (complete list, no
+match — a name-spelling problem). `hidden` rows can be resolved from the paper's own page,
+which lists every author in full.
 
-`background.js` bundles the **official CCF 2026 (7th edition)** catalogue —
-386 conferences + 295 journals — as `[abbr, full, tier, type]` rows, indexed
-once at load into:
+## Venue matching
 
-- `byAbbr`: normalized abbreviation → tier. An abbreviation that appears with
-  **different** tiers across fields (e.g. `FSE` is A for software engineering
-  and B for the crypto venue) is marked ambiguous and resolved only by full name.
-- `byName`: normalized full name → `{ tier, full }`.
+Goal: **precision first**. A missing badge is acceptable; a wrong one is not. The first
+version of this matcher used loose substring matching and, on real profiles, mis-tiered
+roughly one badge in five (CVPR as C, every unlisted "IEEE …" journal as A, "machine
+learning" anywhere as ICML…). The rewrite has no fuzzy fallback at all.
 
-`resolveCCF` tries, in order: exact full-name, parenthesized acronym, leading
-acronym token — all O(1) Map lookups — then a single O(N) scan only on a miss,
-after which the result is cached. `normalizeVenue` strips years, ordinals
-(including Chinese `第N届`), and boilerplate like "Proceedings of the
-45th International Conference on …".
+`prepare(raw)` reduces what Scholar prints to the venue words: it drops `[arXiv…]`
+annotations, the `…` truncation marker (remembered), trailing year / pages / volume (issue),
+`Volume N`, leading ordinals and years, and records whether a volume number was present.
 
-**Secondary tracks are excluded.** `isSecondaryTrack` drops a badge when the
-venue string is a Findings / co-located Workshop / Demo / Companion / Doctoral /
-Tutorial / Poster track of a main conference — so "ACL Findings" and
-"EMNLP System Demonstrations" get no badge — *unless* the matched venue's own
-official name contains that word (IWQoS, NOSSDAV, HotNets are genuine
-workshop-named venues and are kept). The same exclusion gates the CORE badge.
+`typeHint` decides which index to consult: conference words (proceedings, conference,
+symposium, `Advances in`) → conferences; journal words (journal, transactions, letters,
+review, `Communications of`) → journals; neither → journals first, then conferences. A
+volume number alone proves nothing (`ISCA 2014 42 (3)` is a conference).
 
-CORE conference tiers and SJR journal quartiles come from a smaller bundled
-table with an OpenAlex fallback for journals not listed.
+Then, per ranking (CCF, CORE), the first rule that yields **one** venue wins; ambiguity
+means no badge:
 
-## The injected panel
+1. **Name** — canonical token key equality. Canonicalisation drops punctuation, stop
+   words, ordinals, years and event words (`Proceedings of the`, `International`,
+   `Conference`, …). Three variants are tried, strictest first: all words, without
+   organisation words (IEEE/ACM/USENIX…), and without all-caps acronyms of real venues
+   (`2020 CHI Conference on …`). Weakened variants need ≥ 2 words. Curated **aliases**
+   (`src/data/aliases.js`) are indexed as extra names. Journals also match on the same
+   words in a different order (`Audio, Speech, and Language Processing, IEEE Transactions on`).
+2. **Acronym** — only strong signals: `(ICML)`, `(NSDI 11)`, `(USENIX Security 21)`,
+   `(S&P'05)`, an unclosed `(OSDI …`, a leading `ISCA 2014`, a one-word venue (`Ndss`), or an
+   acronym buried in a sentence when little else is said. Organisation words are never
+   acronyms; a buried acronym is not used for journals or when much text surrounds it.
+3. **Prefix** (only for truncated names) — a unique entry that begins with what is visible.
+   Organisation words must agree; a trailing connective must agree (`Information processing
+   in …` is IPSN, not IPMU); too little visible text stays silent.
+4. **Subtitle** — a known name followed by extra words (`…: Human Language Technologies`).
 
-`ensurePanel` builds a card and inserts it at the top of Scholar's right sidebar
-(`.gsc_rsb`). It is styled to match Scholar's native look (Arial, light only —
-Scholar never renders dark — scoped CSS reset so Scholar's own button/input
-styles don't bleed in). It offers role checkboxes, venue-badge checkboxes, a
-"show only highlighted" toggle, an author-name highlight toggle, a year range,
-and live highlighted-vs-total metrics (Papers, Citations, h-index, i10-index).
+Ties between entries with the same canonical key are broken by the event word in the
+string (`symposium` → SoCC rather than the JCC conference). **Secondary tracks** —
+Findings, workshops, demos, posters, tutorials, extended abstracts, short/industry papers,
+shared tasks — get no badge unless the venue's own official name contains the word
+(IWQoS, HotNets). Results are memoised per string and carry the rule and entry that matched,
+which the chip tooltip shows.
 
-A `MutationObserver` reprocesses rows Scholar appends via "Show more"; it is
-paused around the extension's own DOM writes so decorating author names can't
-retrigger processing and fight a toggle.
+The behaviour is pinned by `test/venues.test.js`: targeted regression cases for every bug found
+in the audit, and a reviewed **snapshot** of the result for every venue string in the
+real-profile corpora (`test/fixtures`). A change that moves any badge fails the test until the
+diff is reviewed and `npm run test:update` is run.
 
-## Scholar domains
+## Data
 
-Google Scholar is served from every Google country domain — a visitor in
-Singapore lands on `scholar.google.com.sg`, and `?hl=`/`pli=` redirects keep
-them there. The content script must therefore run on all of them, not just
-`scholar.google.com`.
+`data/ccf-2026.json` is extracted **reproducibly** from CCF's official PDF
+(`scripts/ccf/`, see [`data/README.md`](../data/README.md)); its totals match the published
+catalogue (386 + 295; A 95 / B 245 / C 341). `data/core-2026.json` comes from the ICORE
+export (`scripts/core/build-core.mjs`). `scripts/build-data.mjs` turns both into
+`src/data/*.js`; a test fails if they are stale.
 
-A Manifest V3 match pattern cannot wildcard a TLD (`https://scholar.google.*/*`
-is rejected: the host may only wildcard a *subdomain* prefix), so
-`manifest.json` enumerates all 187 domains from Google's published
-[`supported_domains`](https://www.google.com/supported_domains) list in both
-`host_permissions` and `content_scripts[0].matches`.
+Tiers are those of the current lists. They are *not* the tier at publication time, which the
+UI says in the panel note and in every chip tooltip.
 
-`scripts/update-scholar-domains.sh` regenerates both lists from that source —
-run it if Google adds a country domain. Nothing else in the extension is
-domain-aware: `content.js` keys entirely off the DOM, and the popup's status
-check already accepts any TLD.
+## The panel
+
+`panel.js` is a pure view over a model. `main.js` rebuilds the model after every change
+(settings, filters, new rows from *Show more*, resolved papers) and re-renders; rows are
+decorated by toggling classes (`byline-r-<role>`, `byline-hide`) and appending one chip
+container — no `innerHTML`, and the author line's text is never altered (name marking
+rebuilds it from the original text and restores it on undo). Venue resolution is
+synchronous and cached, so decorating cannot re-trigger the row observer. The panel moves
+between the right sidebar (wide window) and the space above the list (narrow window, where
+Scholar drops the sidebar *below* the list) as the window is resized. Styles are scoped under
+`#byline-panel` and out-rank the reset that stops Scholar's global button/input styles bleeding in.
+
+## Storage and privacy
+
+- `chrome.storage.sync`: settings (role/badge toggles, matrix source, collapsed) and per-profile
+  name variants.
+- `chrome.storage.local`: cache of resolved paper pages (author list + venue), 90 days.
+- No other persistence, no remote code, no third-party requests. *Resolve* fetches
+  `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops
+  at the first CAPTCHA or HTTP 429/503.
+
+## Testing
+
+| Suite | What it proves |
+|-------|----------------|
+| `test/names.test.js` | role logic, name matching edge cases, and owner detection rates on real profiles |
+| `test/venues.test.js` | the matcher: regression cases, alias integrity, reviewed snapshot over real venue strings |
+| `test/metrics.test.js` | h-index, the matrix, filtering, clipboard text |
+| `test/extension.test.js` | manifest, load order, locales, bundle freshness |
+| `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
 
 ## Platform policy: Chrome first
 
 Chrome is the main line, and product decisions are made for it:
 
-- **Use Chrome's platform freely.** Any Chrome / Chromium MV3 API is fair game
-  when it makes the product better — side panel, action badge, commands,
-  `chrome.i18n`, optional host permissions, cross-device `chrome.storage.sync`,
-  promise / `async` style, and so on.
-- **No lowest-common-denominator code.** No polyfills, feature-detection shims
-  or reduced UI/UX to keep another browser working.
-- **Other Chromium browsers** (Edge, Brave, …) run the same package; no special
-  handling.
-- **Safari is best-effort.** `contrib/safari/build.sh` generates a native
-  wrapper from `src/` with `safari-web-extension-converter` at build time, so
-  the wrapper is never committed and cannot drift from the source. It is not
-  tested on each release, may lag behind or break when Chrome-first features
-  land, and carries no support commitment. Fixes for it are welcome as long as
-  they don't change Chrome behavior.
+- **Use Chrome's platform freely.** Any Chrome / Chromium MV3 API is fair game when it makes
+  the product better — side panel, action badge, commands, `chrome.i18n`, optional host
+  permissions, cross-device `chrome.storage.sync`, promise / `async` style, CSS `all: revert`,
+  and so on.
+- **No lowest-common-denominator code.** No polyfills, feature-detection shims or reduced UI/UX
+  to keep another browser working.
+- **Other Chromium browsers** (Edge, Brave, …) run the same package; no special handling.
+- **Safari is best-effort.** `contrib/safari/build.sh` generates a native wrapper from `src/` with
+  `safari-web-extension-converter` at build time, so the wrapper is never committed and cannot
+  drift from the source. It is not tested on each release, may lag behind or break when
+  Chrome-first features land, and carries no support commitment. Fixes for it are welcome as long
+  as they don't change Chrome behavior.

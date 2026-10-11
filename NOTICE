@@ -1,9 +1,18 @@
-Scholar Lens
+Byline
 Copyright 2026 Boyu Gou
 
 This product is licensed under the Apache License, Version 2.0 (see LICENSE).
 
-The bundled CCF venue ratings are derived from the China Computer Federation
-(CCF) "Recommended International Conferences and Journals" catalogue, 2026 (7th)
-edition. CCF is the source and owner of that ranking data; it is included here
-for reference and is not covered by this project's license.
+The bundled ranking data is NOT covered by this project's license. It is included
+for reference only and remains the property of its owners:
+
+- CCF recommended international conferences and journals, 2026 (7th) edition —
+  China Computer Federation (中国计算机学会), https://www.ccf.org.cn/ . CCF states that
+  the catalogue is not a basis for academic evaluation, and that conferences count only
+  full papers. See data/README.md for how the table was extracted from CCF's PDF.
+- ICORE 2026 conference rankings — CORE (Computing Research and Education Association
+  of Australasia), https://portal.core.edu.au/conf-ranks/ , exported from the public
+  portal. Used with attribution; see https://www.core.edu.au/ for the terms of use.
+
+"Google" and "Google Scholar" are trademarks of Google LLC. Byline is an independent
+project and is not affiliated with, endorsed by, or sponsored by Google or CCF.
