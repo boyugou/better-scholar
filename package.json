@@ -1,0 +1,15 @@
+{
+  "name": "google-scholar-highlighter",
+  "private": true,
+  "description": "Chrome extension: authorship roles and CCF/CORE venue ranks on Google Scholar. No dependencies; this file only wires up the test runner.",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "test:update": "UPDATE_SNAPSHOTS=1 node --test \"test/**/*.test.js\"",
+    "test:e2e": "node test/e2e/run.mjs",
+    "data": "node scripts/build-data.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "Apache-2.0"
+}

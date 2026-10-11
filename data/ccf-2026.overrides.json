@@ -1,0 +1,24 @@
+{
+  "pdfSha256": "271b630b576bf8a4f802e767f5694caded93680e22b3a19bef7902591c45c1d3",
+  "about": "Fixes that parsing the PDF cannot get right. Each override must match exactly one parsed row, must state the value the parser produced (expect), and must give a reason; scripts/ccf/build-ccf.mjs refuses to run otherwise. They apply only to the PDF with the sha256 above. Source typos in the PDF itself are NOT overridden (see data/README.md).",
+  "overrides": [
+    {
+      "match": { "kind": "C", "tier": "B", "area": "计算机体系结构/并行与分布计算/存储系统", "serial": 14 },
+      "expect": { "abbr": "SIG-METRICS" },
+      "set": { "abbr": "SIGMETRICS" },
+      "reason": "The abbreviation cell wraps as 'SIG-' / 'METRICS' (page 7), and the text layer cannot tell a wrap hyphen from a printed one. The venue's acronym is SIGMETRICS (the row's own dblp URL is conf/sigmetrics/). Contrast CCF-THPC, whose hyphen is part of the abbreviation and is kept."
+    },
+    {
+      "match": { "kind": "C", "tier": "B", "area": "计算机图形学与多媒体", "serial": 14 },
+      "expect": { "abbr": "INTER-SPEECH" },
+      "set": { "abbr": "INTERSPEECH" },
+      "reason": "The abbreviation cell wraps as 'INTER-' / 'SPEECH' (page 48); same situation as SIGMETRICS. The conference is INTERSPEECH (the row's own dblp URL is conf/interspeech/)."
+    },
+    {
+      "match": { "kind": "J", "tier": "C", "area": "计算机科学理论", "serial": 6 },
+      "expect": { "abbr": "JCOMPLEXI TY" },
+      "set": { "abbr": "JCOMPLEXITY" },
+      "reason": "The 11-letter abbreviation is too long for its cell and Word broke it mid-word as 'JCOMPLEXI' / 'TY' without a hyphen (page 40); the text layer has no space there, but the line-join rule for abbreviations (space between wrapped lines, needed for 'HOT' / 'CHIPS') inserts one."
+    }
+  ]
+}
