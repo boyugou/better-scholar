@@ -168,11 +168,13 @@ test("snapshot: every venue string in the real-profile corpora", () => {
   const actual = {};
   for (const list of Object.values(corpora)) for (const raw of list) actual[raw] = brief(raw);
   const file = path.join(FIX, "venues.expected.json");
-  if (process.env.UPDATE_SNAPSHOTS || !fs.existsSync(file)) {
+  if (process.env.UPDATE_SNAPSHOTS) {
     const sorted = Object.fromEntries(Object.entries(actual).sort(([a], [b]) => a.localeCompare(b)));
     fs.writeFileSync(file, JSON.stringify(sorted, null, 1) + "\n");
     return;
   }
+  // a missing snapshot must never silently disable the regression guard
+  assert.ok(fs.existsSync(file), "test/fixtures/venues.expected.json is missing — restore it from git (or review the output and run `npm run test:update`)");
   const expected = JSON.parse(fs.readFileSync(file, "utf8"));
   const diffs = [];
   for (const raw of Object.keys(actual)) {

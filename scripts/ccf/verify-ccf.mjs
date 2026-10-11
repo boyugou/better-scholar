@@ -1,20 +1,23 @@
 #!/usr/bin/env node
 // Verification report for data/ccf-2026.json.
 //
-//   node scripts/ccf/verify-ccf.mjs [--data data/ccf-2026.json] [--source src/background.js] [--out report.md]
+//   node scripts/ccf/verify-ccf.mjs [--data data/ccf-2026.json] [--out report.md]
+//                                   [--source-git <rev>[:<path>] | --source <file> | --no-diff]
 //
 // Prints a Markdown report (and writes it to --out when given):
 //   (a) counts by kind x tier x area against the third-party extraction totals
 //   (b) rows with an empty abbreviation
 //   (c) rows whose abbreviation / name / URL look suspicious
 //   (d) duplicates
-//   (e) diff against the hand-transcribed CCF_RAW table in src/background.js
-//       (parsed out of the source text; that file is never executed)
+//   (e) diff against the hand-transcribed CCF_RAW table that used to live in src/background.js
+//       (default: `git show d81990c:src/background.js`, the last commit that still had it; the
+//       array literal is parsed out of the source text, the file is never executed)
 //
 // Deterministic: no timestamps. Node built-ins only.
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -23,15 +26,37 @@ const REPO = path.resolve(HERE, '..', '..');
 // Totals from an independent (third-party) extraction of the same PDF, as given in the task brief.
 const TARGET = { conference: 386, journal: 295, total: 681, tiers: { A: 95, B: 245, C: 341 } };
 
+// The last commit whose src/background.js still contains the hand-written CCF_RAW table.
+const OLD_TABLE_REV = 'd81990c';
+
 function parseArgs(argv) {
-  const o = { data: path.join(REPO, 'data', 'ccf-2026.json'), source: path.join(REPO, 'src', 'background.js'), out: null };
+  const o = { data: path.join(REPO, 'data', 'ccf-2026.json'), source: null, sourceGit: OLD_TABLE_REV, noDiff: false, out: null };
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--data') o.data = path.resolve(argv[++i]);
-    else if (argv[i] === '--source') o.source = path.resolve(argv[++i]);
+    else if (argv[i] === '--source') {
+      o.source = path.resolve(argv[++i]);
+      o.sourceGit = null;
+    } else if (argv[i] === '--source-git') {
+      o.sourceGit = argv[++i];
+      o.source = null;
+    } else if (argv[i] === '--no-diff') o.noDiff = true;
     else if (argv[i] === '--out') o.out = path.resolve(argv[++i]);
     else throw new Error(`unknown argument ${argv[i]}`);
   }
   return o;
+}
+
+/** Read the old source text, from a file or from git history (read-only `git show`, no shell). */
+function readOldSource(opts) {
+  if (opts.source) return { text: fs.readFileSync(opts.source, 'utf8'), label: path.relative(REPO, opts.source) || opts.source };
+  const [rev, file = 'src/background.js'] = opts.sourceGit.split(':');
+  if (!rev || rev.startsWith('-')) throw new Error(`bad git revision ${JSON.stringify(rev)}`);
+  try {
+    const text = execFileSync('git', ['-C', REPO, 'show', `${rev}:${file}`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
+    return { text, label: `${rev}:${file}` };
+  } catch (err) {
+    throw new Error(`cannot read ${rev}:${file} from git history (${String(err.stderr || err.message).trim()}); pass --source <file> or --no-diff`);
+  }
 }
 
 const esc = (s) => String(s).replace(/\|/g, '\\|');
@@ -317,8 +342,8 @@ function diffAgainstRaw(venues, raw) {
   return { pairs, onlyPdf: P.filter((p) => !p.used), onlyRaw: R.filter((r) => !r.used) };
 }
 
-function sectionDiff(venues, areas, raw, sourcePath) {
-  const out = ['## (e) Diff against the hand transcription (`CCF_RAW` in src/background.js)', ''];
+function sectionDiff(venues, areas, raw, sourceLabel) {
+  const out = ['## (e) Diff against the hand transcription (the old `CCF_RAW` table)', ''];
   const { pairs, onlyPdf, onlyRaw } = diffAgainstRaw(venues, raw);
   const rawDup = new Map();
   for (const r of raw) {
@@ -335,7 +360,7 @@ function sectionDiff(venues, areas, raw, sourcePath) {
   const nameDiff = rest.filter(({ p, r }) => p.kind === r.kind && norm(p.name) !== norm(r.name));
   const abbrOnly = rest.filter(({ p, r }) => p.kind === r.kind && p.tier === r.tier && norm(p.name) === norm(r.name) && norm(p.abbr) !== norm(r.abbr));
 
-  out.push(`Source: ${code(path.relative(REPO, sourcePath) || sourcePath)}, parsed as text (${raw.length} tuples; row-opener count verified). Dataset: ${venues.length} rows.`, '');
+  out.push(`Source: ${code(sourceLabel)}, parsed as text (${raw.length} tuples; row-opener count verified). Dataset: ${venues.length} rows.`, '');
   out.push('| | rows |', '|---|---|');
   out.push(`| CCF_RAW rows | ${raw.length} |`, `| dataset rows | ${venues.length} |`);
   out.push(`| paired and identical (kind, tier, abbr, name; case / punctuation ignored) | ${same.length} |`);
@@ -403,12 +428,11 @@ function main() {
   parts.push(sectionEmptyAbbr(venues, areas));
   parts.push(sectionSuspicious(venues, areas));
   parts.push(sectionDuplicates(venues, areas));
-  let e = null;
-  if (fs.existsSync(opts.source)) {
-    e = sectionDiff(venues, areas, parseCcfRaw(fs.readFileSync(opts.source, 'utf8')), opts.source);
-    parts.push(e.text);
+  if (opts.noDiff) {
+    parts.push('## (e) Diff against the hand transcription', '', 'Skipped (--no-diff).', '');
   } else {
-    parts.push('## (e) Diff against CCF_RAW', '', `${opts.source} not found; skipped.`, '');
+    const old = readOldSource(opts);
+    parts.push(sectionDiff(venues, areas, parseCcfRaw(old.text), old.label).text);
   }
   const text = parts.join('\n') + '\n';
   if (opts.out) fs.writeFileSync(opts.out, text);
@@ -416,4 +440,9 @@ function main() {
   if (!a.ok) process.exitCode = 2;
 }
 
-main();
+try {
+  main();
+} catch (err) {
+  console.error('error: ' + err.message);
+  process.exit(1);
+}
