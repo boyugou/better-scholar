@@ -1,8 +1,8 @@
 # Architecture
 
-Scholar Lens is a Manifest V3 extension. The same `src/` runs on Chromium
-browsers directly and inside a generated Safari app wrapper. All logic uses the
-`chrome.*` APIs, which both engines support.
+Scholar Lens is a Manifest V3 extension built for Chrome. The same `src/` loads
+unmodified in other Chromium browsers; Safari is supported on a best-effort
+basis only — see [Platform policy](#platform-policy-chrome-first).
 
 ## Components
 
@@ -94,9 +94,21 @@ run it if Google adds a country domain. Nothing else in the extension is
 domain-aware: `content.js` keys entirely off the DOM, and the popup's status
 check already accepts any TLD.
 
-## Cross-browser packaging
+## Platform policy: Chrome first
 
-The extension code is identical on every browser. Chromium loads `src/`
-directly. The Safari build (`scripts/build-safari.sh`) generates a native
-wrapper from `src/` with `safari-web-extension-converter` at build time, so the
-wrapper is never committed and cannot drift from the source.
+Chrome is the main line, and product decisions are made for it:
+
+- **Use Chrome's platform freely.** Any Chrome / Chromium MV3 API is fair game
+  when it makes the product better — side panel, action badge, commands,
+  `chrome.i18n`, optional host permissions, cross-device `chrome.storage.sync`,
+  promise / `async` style, and so on.
+- **No lowest-common-denominator code.** No polyfills, feature-detection shims
+  or reduced UI/UX to keep another browser working.
+- **Other Chromium browsers** (Edge, Brave, …) run the same package; no special
+  handling.
+- **Safari is best-effort.** `contrib/safari/build.sh` generates a native
+  wrapper from `src/` with `safari-web-extension-converter` at build time, so
+  the wrapper is never committed and cannot drift from the source. It is not
+  tested on each release, may lag behind or break when Chrome-first features
+  land, and carries no support commitment. Fixes for it are welcome as long as
+  they don't change Chrome behavior.

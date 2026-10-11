@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
 #
-# Build the Safari (macOS) app that wraps the shared extension in src/.
+# BEST-EFFORT / EXPERIMENTAL. Chrome is the primary target; Safari is not
+# tested on each release and may lag behind or break as Chrome-first features
+# land in src/. Nothing here may constrain the Chrome extension.
+#
+# Build the Safari (macOS) app that wraps the extension in src/.
 #
 # Safari ships web extensions inside a native app. This script generates that
 # wrapper from src/ with Apple's `safari-web-extension-converter`, builds it
 # with xcodebuild, and (optionally) installs it to /Applications. The generated
-# Xcode project lives under platforms/safari/.generated (git-ignored) and is
+# Xcode project lives under contrib/safari/.generated (git-ignored) and is
 # recreated from src/ on every run, so it never drifts from the source.
 #
 # Requirements: macOS with Xcode + command-line tools.
 # Usage:
-#   scripts/build-safari.sh           # generate + build
-#   scripts/build-safari.sh --install # also copy the .app to /Applications
+#   contrib/safari/build.sh           # generate + build
+#   contrib/safari/build.sh --install # also copy the .app to /Applications
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 SRC="$ROOT/src"
-GEN="$ROOT/platforms/safari/.generated"
+GEN="$ROOT/contrib/safari/.generated"
 APP_NAME="Scholar Lens"
 BUNDLE_ID="com.boyugou.Scholar-Lens"   # maintainer default; change for your own signing
 
 INSTALL=0
 [ "${1:-}" = "--install" ] && INSTALL=1
 
+echo "==> Note: Safari support is best-effort; Chrome is the primary target."
 echo "==> Generating Safari wrapper from src/ …"
 rm -rf "$GEN"
 mkdir -p "$GEN"

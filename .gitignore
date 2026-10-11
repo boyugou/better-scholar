@@ -1,6 +1,6 @@
 # Build output
 /dist/
-/platforms/safari/.generated/
+/contrib/safari/.generated/
 
 # macOS / Xcode
 .DS_Store

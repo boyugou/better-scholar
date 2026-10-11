@@ -1,12 +1,13 @@
 # Scholar Lens
 
-A browser extension that makes [Google Scholar](https://scholar.google.com)
+A **Chrome extension** that makes [Google Scholar](https://scholar.google.com)
 profiles easier to read at a glance. It auto-detects the profile's author and
 color-codes each paper by their authorship role, and badges venues with their
 CCF rank — all from a compact control panel injected into the page sidebar.
 
-Ships for **Safari** and **Chromium** browsers (Chrome, Edge, Brave, …) from a
-single shared codebase.
+**Chrome is the primary platform.** It is a standard Manifest V3 extension, so it
+also runs in other Chromium browsers (Edge, Brave, …). Safari is
+[best-effort only](contrib/safari/README.md). See [Platform policy](#platform-policy).
 
 ## Features
 
@@ -34,40 +35,56 @@ single shared codebase.
 All controls live in the in-page **Author Highlighter** panel and persist across
 visits. The toolbar popup is an at-a-glance status + color legend.
 
+## Install
+
+**Chrome** (also Edge — use `edge://extensions` — and other Chromium browsers):
+
+1. Open `chrome://extensions` and enable **Developer mode** (top-right).
+2. Click **Load unpacked** and select this repository's `src/` folder.
+3. Open any [Google Scholar](https://scholar.google.com) author profile.
+
+There is no build step and no dependencies: `src/` is loaded as-is.
+
+To package for the Chrome Web Store:
+
+```bash
+scripts/package-chrome.sh
+```
+
+This writes `dist/scholar-lens-chrome-<version>.zip` with `manifest.json` at the
+archive root, ready to upload to the Web Store developer dashboard.
+
+## Platform policy
+
+Chrome is the main line. Features, extension APIs and UI/UX are designed for
+Chrome; compatibility with other browsers never constrains them.
+
+| Browser | Status |
+|---------|--------|
+| **Chrome** | **Primary** — developed and checked here first. |
+| Edge, Brave, other Chromium | Expected to work (same MV3 package); not regularly tested. |
+| Safari (macOS) | **Best-effort / experimental.** Lives in [`contrib/safari`](contrib/safari/README.md); may lag behind or break as Chrome-first features land, with no support commitment. |
+
 ## Repository layout
 
 ```
-src/                     Shared Manifest V3 extension — the single source of truth
+src/                     Manifest V3 extension — the single source of truth
   manifest.json
   background.js          Venue resolution (CCF 2026 catalogue + matcher, CORE/SJR)
   content.js             Author detection, role highlighting, injected panel
   popup/                 Toolbar popup (status + legend)
   icons/
-platforms/
-  chrome/                How to load / package for Chromium browsers
-  safari/                How to build the Safari app (generated from src/)
 scripts/
   package-chrome.sh      src/ → dist/scholar-lens-chrome-<version>.zip
-  build-safari.sh        Generate + build (+ install) the Safari app
   update-scholar-domains.sh  Refresh the Scholar domain list in manifest.json
+contrib/
+  safari/                Best-effort Safari wrapper (generated from src/)
 docs/
   ARCHITECTURE.md        How detection, role logic, and venue matching work
 ```
 
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for how author detection,
 role classification, and the CCF venue matcher work.
-
-The extension itself is the same standard MV3 code on every browser; only the
-Safari native wrapper is platform-specific, and it is generated from `src/`
-rather than committed.
-
-## Quick start
-
-**Chrome / Edge / Chromium** — `chrome://extensions` → Developer mode → Load
-unpacked → select `src/`. See [`platforms/chrome`](platforms/chrome/README.md).
-
-**Safari (macOS)** — `scripts/build-safari.sh --install`, then enable in
-Safari → Settings → Extensions. See [`platforms/safari`](platforms/safari/README.md).
 
 ## License
 

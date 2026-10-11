@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Package the shared extension in src/ into a Chrome Web Store zip.
+# Package the extension in src/ into a Chrome Web Store zip.
 # The same src/ folder also loads directly as an unpacked extension in Chrome
 # (chrome://extensions → Developer mode → Load unpacked → select src/).
 #
 # Usage: scripts/package-chrome.sh
-# Output: dist/scholar-lens-chrome.zip
+# Output: dist/scholar-lens-chrome-<version>.zip
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

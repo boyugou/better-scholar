@@ -1,4 +1,10 @@
-# Safari (macOS)
+# Safari (macOS) — best-effort
+
+> **Chrome is the primary platform.** Safari support is best-effort and
+> experimental: it is not tested on each release, has no support commitment, and
+> may lag behind or break whenever Chrome-first features land in `src/`. It never
+> constrains the Chrome extension. See the
+> [platform policy](../../docs/ARCHITECTURE.md#platform-policy-chrome-first).
 
 Safari ships web extensions inside a native macOS app. That wrapper is generated
 from [`../../src`](../../src) on demand — it is **not** committed, so it can never
@@ -7,11 +13,11 @@ drift from the source.
 ## Build & install
 
 ```bash
-scripts/build-safari.sh --install
+contrib/safari/build.sh --install
 ```
 
 This uses Apple's `safari-web-extension-converter` to generate an Xcode project
-under `platforms/safari/.generated/` (git-ignored), builds it ad-hoc signed, and
+under `contrib/safari/.generated/` (git-ignored), builds it ad-hoc signed, and
 copies `Scholar Lens.app` to `/Applications`.
 
 Then, in Safari:
@@ -27,6 +33,8 @@ Then, in Safari:
 ## Notes
 
 - The default bundle identifier is `com.boyugou.Scholar-Lens`. Change `BUNDLE_ID`
-  in `scripts/build-safari.sh` to use your own.
+  in `contrib/safari/build.sh` to use your own.
 - For a distributable, signed build, open the generated project in Xcode and set
   your Apple Developer team, or pass your signing identity to `xcodebuild`.
+- Fixes that make Safari work again are welcome as pull requests, as long as they
+  don't change Chrome behavior.
