@@ -299,7 +299,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
   }
 
   // -- 17. a profile whose header name is spelled the other way round
-  const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica Ion" });
+  const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica Ion", hl: "zh-CN" });
   const ctx2 = await launch();
   try {
     const page = await ctx2.newPage();
@@ -320,6 +320,13 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
     await page.waitForSelector("#byline-panel");
     assert.deepEqual(await readMatrix(page), want);
     ok("name variants persist per profile");
+    // this profile is served with a Chinese interface (hl=zh-CN): detail-page labels are localised unless hl=en is requested
+    await page.click('[data-act="resolve"]');
+    await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
+    assert.equal(fx2.detailRequests(), 28);
+    assert.deepEqual([...new Set(fx2.detailHls())], ["en"], "every detail request asks for English labels");
+    assert.deepEqual(await readMatrix(page), matrixOf(expected({ owner: "Ion Stoica", rows: fx2.profile.rows }, { resolveHidden: true })));
+    ok("Resolve works on a profile with a non-English Scholar interface (requests hl=en)");
   } finally {
     await ctx2.close();
     await fx2.close();

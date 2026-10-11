@@ -20,17 +20,23 @@
       throw new ResolveError("captcha");
     }
     const fields = {};
+    let firstValue = "";
     doc.querySelectorAll("#gsc_oci_table .gs_scl").forEach((row) => {
       const k = (row.querySelector(".gsc_oci_field") || {}).textContent;
       const v = (row.querySelector(".gsc_oci_value") || {}).textContent;
-      if (k && v) fields[k.trim()] = v.trim();
+      if (k && v) { fields[k.trim()] = v.trim(); if (!firstValue) firstValue = v.trim(); }
     });
     const venueKey = ["Journal", "Conference", "Book", "Source", "Publisher"].find((k) => fields[k]);
-    return { authors: fields.Authors || "", venue: venueKey ? fields[venueKey] : "", fields };
+    // The page is requested with hl=en, so the label is "Authors"; if Scholar ever ignores that,
+    // the author list is still the first field of the table.
+    return { authors: fields.Authors || firstValue, venue: venueKey ? fields[venueKey] : "", fields };
   }
 
   async function fetchDetail(href, signal) {
-    const res = await fetch(new URL(href, location.href).href, { credentials: "include", signal });
+    // Field labels follow the interface language ("Authors" / "作者" / …): ask for English.
+    const url = new URL(href, location.href);
+    url.searchParams.set("hl", "en");
+    const res = await fetch(url.href, { credentials: "include", signal });
     if (res.status === 429 || res.status === 503 || /\/sorry\//.test(res.url)) throw new ResolveError("captcha");
     if (!res.ok) throw new ResolveError("http", "HTTP " + res.status);
     return parseDetail(await res.text());

@@ -23,8 +23,9 @@ function loadProfile(slug) {
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
+let ROW_HL = "en";   // the interface language baked into row links, like Scholar's hl= parameter
 function rowHtml(r) {
-  return `<tr class="gsc_a_tr"><td class="gsc_a_t"><a href="/citations?view_op=view_citation&amp;hl=en&amp;user=TEST&amp;citation_for_view=${esc(r.id)}" class="gsc_a_at">${esc(r.title)}</a>` +
+  return `<tr class="gsc_a_tr"><td class="gsc_a_t"><a href="/citations?view_op=view_citation&amp;hl=${ROW_HL}&amp;user=TEST&amp;citation_for_view=${esc(r.id)}" class="gsc_a_at">${esc(r.title)}</a>` +
     `<div class="gs_gray">${esc(r.authors)}</div><div class="gs_gray">${esc(r.venue)}</div></td>` +
     `<td class="gsc_a_c"><a class="gsc_a_ac gs_ibl">${r.cites}</a></td><td class="gsc_a_y"><span class="gsc_a_h gsc_a_hc gs_ibl">${r.year}</span></td></tr>`;
 }
@@ -69,27 +70,32 @@ btn.addEventListener("click", () => {
 </script></body></html>`;
 }
 
-function detailPage(profile, id) {
+function detailPage(profile, id, hl) {
   const r = profile.rows.find((x) => x.id === id);
+  // Scholar localises the field labels with the interface language
+  const L = hl === "en" ? { authors: "Authors", conf: "Conference" } : { authors: "作者", conf: "会议" };
   if (!r) return "<!doctype html><title>404</title>not found";
   // full author list: the visible names plus the profile owner, last (what Scholar's detail page shows)
   const visible = r.authors.split(/,\s*/).filter((t) => t && !/^\.\.\.$|…/.test(t));
   const full = /\.\.\.|…/.test(r.authors) ? [...visible, profile.owner].join(", ") : r.authors;
   return `<!doctype html><html><body><div id="gsc_oci_title">${esc(r.title)}</div><div id="gsc_oci_table">
-<div class="gs_scl"><div class="gsc_oci_field">Authors</div><div class="gsc_oci_value">${esc(full)}</div></div>
-<div class="gs_scl"><div class="gsc_oci_field">Conference</div><div class="gsc_oci_value">${esc(r.venue.replace(/,.*$/, ""))}</div></div>
+<div class="gs_scl"><div class="gsc_oci_field">${L.authors}</div><div class="gsc_oci_value">${esc(full)}</div></div>
+<div class="gs_scl"><div class="gsc_oci_field">${L.conf}</div><div class="gsc_oci_value">${esc(r.venue.replace(/,.*$/, ""))}</div></div>
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0 } = {}) {
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en" } = {}) {
+  ROW_HL = hl;
   const profile = loadProfile(slug);
   let detailRequests = 0;
+  const detailHls = [];
   const server = http.createServer((req, res) => {
     const u = new URL(req.url, "http://127.0.0.1");
     if (u.pathname === "/citations" && u.searchParams.get("view_op") === "view_citation") {
       detailRequests++;
+      detailHls.push(u.searchParams.get("hl"));
       res.setHeader("content-type", "text/html; charset=utf-8");
-      return res.end(detailPage(profile, u.searchParams.get("citation_for_view")));
+      return res.end(detailPage(profile, u.searchParams.get("citation_for_view"), u.searchParams.get("hl")));
     }
     if (u.pathname === "/citations") {
       res.setHeader("content-type", "text/html; charset=utf-8");
@@ -100,7 +106,7 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0 } = {}) {
   });
   return new Promise((resolve) => server.listen(port, "127.0.0.1", () => resolve({
     server, profile, port: server.address().port, url: `http://127.0.0.1:${server.address().port}/citations?user=TEST&hl=en`,
-    detailRequests: () => detailRequests, close: () => new Promise((r) => server.close(r))
+    detailRequests: () => detailRequests, detailHls: () => detailHls.slice(), close: () => new Promise((r) => server.close(r))
   })));
 }
 
