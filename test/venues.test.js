@@ -136,6 +136,13 @@ test("secondary tracks get no badge, unless the venue's own name says so", () =>
   assert.equal(brief("Proceedings of the 11th ACM Workshop on Hot Topics in Networks, 31-36, 2012"), "CCF C HotNets");
 });
 
+test("renamed venues match their former names and abbreviations (from the catalogue's own notes)", () => {
+  assert.match(brief("IEEE Virtual Reality, 2019"), /^CCF A VR/, "VR was 'IEEE Virtual Reality'");
+  assert.match(brief("International World Wide Web Conference"), /^CCF A WWW/);
+  assert.match(brief("USENIX Annual Technical Conference, 2018"), /CCF A ACM SIGOPS ATC/);
+  assert.match(brief("USENIX ATC 2019"), /CCF A ACM SIGOPS ATC/, "former abbreviation");
+});
+
 test("preprints, books and report series are never badged", () => {
   for (const s of ["arXiv preprint arXiv:1503.02531, 2015", "Cambridge: Cambridge University Press, 2008", "https://github.com/facebookresearch/Detectron, 2018", "", "Cited on 14 (8), 2, 2012"]) {
     assert.equal(brief(s), "", s);

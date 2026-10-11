@@ -110,6 +110,16 @@
     { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"] },
     { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques"] },
 
+    // ---- rows whose official PDF text has a typo or a stray word (kept verbatim in data/):
+    //      give the correct spelling so Scholar's strings still match
+    { ccf: "Euro-Par", names: ["European Conference on Parallel and Distributed Computing", "Euro-Par"] },
+    { ccf: "MoDELS", names: ["ACM/IEEE International Conference on Model Driven Engineering Languages and Systems"] },
+    { ccf: "PG", names: ["Pacific Conference on Computer Graphics and Applications", "Pacific Graphics"] },
+    { ccf: "PASTE", names: ["ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering"] },
+    { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
+    { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
+    { ccf: "P2P", names: ["IEEE International Conference on Peer-to-Peer Computing", "IEEE International Conference on P2P Computing"] },
+
     // ---- journals (kind J)
     { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] }
   ];

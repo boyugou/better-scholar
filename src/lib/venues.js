@@ -163,7 +163,9 @@
     const byRef = { ccf: new Map(), core: new Map() }; // "kind|key" -> entry[]
     const known = new Set();                           // every abbreviation key, for noAcr
 
-    function newSide() { return { names: new Map(), abbrs: new Map(), bags: new Map(), all: [] }; }
+    function newSide() {
+      return { names: new Map(), abbrs: new Map(), bags: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+    }
     const push = (map, key, entry) => {
       if (!key) return;
       const list = map.get(key);
@@ -182,9 +184,14 @@
           if (a) { push(side.abbrs, a, entry); known.add(a); }
         }
         const plain = n.replace(/\([^()]*\)/g, " ");
+        // token forms are computed once here, not on every lookup
+        const form = {
+          full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
+          kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg")
+        };
         for (const mode of ["full", "noOrg"]) {
-          const t = canonTokens(plain, mode);
-          if (t.length) push(side.names, t.join(" "), entry);
+          const t = form[mode];
+          if (t.length) { push(side.names, t.join(" "), entry); push(side.first[mode], t[0], { entry, form }); }
         }
         // order-insensitive key for journals ("…, IEEE Transactions on")
         const bag = canonTokens(plain, "noOrg");
@@ -194,8 +201,11 @@
     }
 
     for (const v of ccf) {
-      const entry = { src: "ccf", kind: v.kind, tier: v.tier, abbr: v.abbr || "", name: v.name, area: v.area || "", dblp: v.dblp || "", extra: [v.name] };
-      register("ccf", v.kind, entry, [v.name], v.abbr ? [v.abbr] : []);
+      const former = v.former || {};
+      const names = [v.name, ...(former.name ? [former.name] : [])];
+      const abbrs = [...(v.abbr ? [v.abbr] : []), ...(former.abbr ? [former.abbr] : [])];
+      const entry = { src: "ccf", kind: v.kind, tier: v.tier, abbr: v.abbr || "", name: v.name, area: v.area || "", dblp: v.dblp || "", extra: names.slice() };
+      register("ccf", v.kind, entry, names, abbrs);
       push(byRef.ccf, v.kind + "|" + squash(v.abbr || v.name), entry);
     }
     for (const v of core) {
@@ -363,25 +373,21 @@
       for (let i = rawKeep.length - 1; i >= 0 && STOP.has(rawKeep[i]); i--) trailingStops.unshift(rawKeep[i]);
       const prefixPass = (mode) => {
         const Rm = canonTokens(p.plain, mode);
-        const found = [];
-        if (!Rm.length) return found;
+        const found = new Set();
+        if (!Rm.length) return [];
         for (const side of sides) {
-          for (const e of side.all) {
-            for (const n of e.extra) {
-              const plainName = n.replace(/\([^()]*\)/g, " ");
-              const t = canonTokens(plainName, mode);
-              if (!(t.length > Rm.length && Rm.every((w, i) => t[i] === w))) continue;
-              if (trailingStops.length) {
-                const ts = canonTokensKeepStops(plainName, mode);
-                const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
-                if (at < 0 || trailingStops.some((w, k) => ts[at + 1 + k] !== w)) continue;
-              }
-              found.push(e);
-              break;
+          for (const { entry, form } of side.first[mode].get(Rm[0]) || []) {
+            const t = form[mode];
+            if (!(t.length > Rm.length && Rm.every((w, i) => t[i] === w))) continue;
+            if (trailingStops.length) {
+              const ts = form[mode === "full" ? "kfull" : "knoOrg"];
+              const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
+              if (at < 0 || trailingStops.some((w, k) => ts[at + 1 + k] !== w)) continue;
             }
+            found.add(entry);
           }
         }
-        return found;
+        return Array.from(found);
       };
       // strict pass first (organisation words must agree), then a looser one without them
       let d = decide(prefixPass(rawHasOrg ? "full" : "noOrg"), rawWords);
@@ -394,11 +400,9 @@
     if (R.length >= 4) {
       const found = [];
       for (const side of sides) {
-        for (const e of side.all) {
-          for (const n of e.extra) {
-            const t = canonTokens(n.replace(/\([^()]*\)/g, " "), "full");
-            if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w)) { found.push({ e, len: t.length }); break; }
-          }
+        for (const { entry, form } of side.first.full.get(R[0]) || []) {
+          const t = form.full;
+          if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w)) found.push({ e: entry, len: t.length });
         }
       }
       if (found.length) {

@@ -39,7 +39,7 @@ function emit(name, key, payload, source) {
 const ccf = JSON.parse(readFileSync(join(root, "data", "ccf-2026.json"), "utf8"));
 emit("ccf.js", "ccf", {
   meta: { label: "CCF 2026 (7th edition)", edition: ccf.meta.edition, counts: ccf.meta.counts },
-  venues: ccf.venues.map((v) => ({ kind: v.kind, tier: v.tier, abbr: v.abbr, name: v.name, area: v.area, dblp: v.dblp }))
+  venues: ccf.venues.map((v) => ({ kind: v.kind, tier: v.tier, abbr: v.abbr, name: v.name, area: v.area, dblp: v.dblp, ...(v.former ? { former: v.former } : {}) }))
 }, "data/ccf-2026.json");
 
 // ---- CORE
