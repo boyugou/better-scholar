@@ -1937,3 +1937,15 @@ test("ICASSP best-paper page: headings with title and authors' line pairs (quota
   const h = `<p>Best Paper Awards</p><p>The following papers were at the top of all submitted papers in each category.</p><p>Best Paper Award</p><p>“A Federated Learning Paper Title”</p><p>Ann Lee, Bo Chan</p><p>Conference Best Paper Award for Industry</p><p>“An Industry Paper Title Here”</p><p>Cy Dunn, Meta, Ed Fox, INRIA</p><p>Best Student Paper Awards</p><p>A Student Audio Paper Title</p><p>Flo Gray, Gil Hart</p><p>Home</p>`;
   assert.deepEqual(parseIcasspAwards(h, "https://2024.ieeeicassp.org/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Federated Learning Paper Title | Ann Lee; Bo Chan", "student A Student Audio Paper Title | Flo Gray; Gil Hart"]);
 });
+
+test("COLING best-paper page: headings, then title and authors' line pairs with 'Presentation' lines between; the table of contents is not read", async () => {
+  const { parseColingAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Long Paper AwardsA Table Of Contents Title</p><p>Best Long Paper Awards</p><p>A Long Paper About Languages</p><p>Ann Lee and Bo Chan</p><p>Presentation</p><p>Outstanding Paper Awards</p><p>An Outstanding Paper Title</p><p>Cy Dunn, Ed Fox and Flo Gray</p><p>Share on</p>`;
+  assert.deepEqual(parseColingAwards(h, "https://coling2025.org/program/best_papers/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Long Paper About Languages | Ann Lee; Bo Chan", "outstanding An Outstanding Paper Title | Cy Dunn; Ed Fox; Flo Gray"]);
+});
+
+test("Interspeech best-paper page: only the shortlisted papers marked WINNERS are read", async () => {
+  const { parseInterspeechBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>1. Ann Lee, Bo Chan & Cy Dunn – WINNERS</p><p>A Speech Recognition Paper Title</p><p>2. Ed Fox, Flo Gray</p><p>A Shortlisted Only Paper Title</p>`;
+  assert.deepEqual(parseInterspeechBest(h, "https://interspeech2024.org/best-paper-award-2024/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A Speech Recognition Paper Title | Ann Lee; Bo Chan; Cy Dunn"]);
+});

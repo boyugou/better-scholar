@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.48 — 2026-10-12
+
+- COLING 2025's best long / short, outstanding and category (social impact, low-resource language, dataset, demonstration) papers (15) and Interspeech 2024's two best papers, from the conferences' own pages (`tot.mjs coling`, `tot.mjs interspeech`); the list had none of either. The list has 6431 awards.
+
 ## 2.10.47 — 2026-10-12
 
 - ICASSP's best, best industry and best student papers of 2023 and 2024 (13 papers; the list had none) from the conference's own award pages (`tot.mjs icassp`); the 2024 industry paper, whose authors' line mixes in affiliations, is not read. The list has 6414 awards.

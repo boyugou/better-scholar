@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6414
+  "count": 6431
  },
  "entries": [
   {
@@ -38453,6 +38453,248 @@
    "evidence": "CI 2025 program, Honorable Mention: Quo Vadis, HCOMP? A Review of 12 Years of Research at the Frontier of Human Computation and Crowdsourcing — Jonas Oppenlaender, Ujwal Gadiraju, Simo Hosio"
   },
   {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Beyond Surprisal: A Dual Metric Framework for Lexical Skill Acquisition in LLMs",
+   "authors": [
+    "Nazanin Shafiabadi",
+    "Guillaume Wisniewski"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Short Paper Award: Beyond Surprisal: A Dual Metric Framework for Lexical Skill Acquisition in LLMs — Nazanin Shafiabadi, Guillaume Wisniewski"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Detecting Conversational Mental Manipulation with Intent-Aware Prompting",
+   "authors": [
+    "Jiayuan Ma",
+    "Hongbin Na",
+    "Zimu Wang",
+    "Yining Hua",
+    "Yue Liu",
+    "Wei Wang",
+    "Ling Chen"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Short Paper Award: Detecting Conversational Mental Manipulation with Intent-Aware Prompting — Jiayuan Ma, Hongbin Na, Zimu Wang, Yining Hua, Yue Liu, Wei Wang, Ling Chen"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Towards Understanding Multi-Task Learning (Generalization) of LLMs via Detecting and Exploring Task-Specific Neurons",
+   "authors": [
+    "Yongqi Leng",
+    "Deyi Xiong"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Long Paper Award: Towards Understanding Multi-Task Learning (Generalization) of LLMs via Detecting and Exploring Task-Specific Neurons — Yongqi Leng, Deyi Xiong"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Why do language models perform worse for morphologically complex languages?",
+   "authors": [
+    "Catherine Arnett",
+    "Benjamin Bergen"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Long Paper Award: Why do language models perform worse for morphologically complex languages? — Catherine Arnett, Benjamin Bergen"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Low-Resource Language Paper Award",
+   "title": "BERT-based Classical Arabic Poetry Authorship Attribution",
+   "authors": [
+    "Lama Alqurashi",
+    "Serge Sharoff",
+    "Janet Watson",
+    "Jacob Blakesley"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Low-Resource Language Paper Award: BERT-based Classical Arabic Poetry Authorship Attribution — Lama Alqurashi, Serge Sharoff, Janet Watson, Jacob Blakesley"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper Award",
+   "title": "CHIFRAUD: A Long-term Web Text Dataset for Chinese Fraud Detection",
+   "authors": [
+    "Min Tang",
+    "Lixin Zou",
+    "Zhe Jin",
+    "ShuJie Cui",
+    "Shiuan Ni Liang",
+    "Weiqing Wang"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Social Impact Paper Award: CHIFRAUD: A Long-term Web Text Dataset for Chinese Fraud Detection — Min Tang, Lixin Zou, Zhe Jin, ShuJie Cui, Shiuan Ni Liang, Weiqing Wang"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Demonstration Paper Award",
+   "title": "MuRAR: A Simple and Effective Multimodal Retrieval and Answer Refinement Framework for Multimodal Question Answering",
+   "authors": [
+    "Zhengyuan Zhu",
+    "Daniel Lee",
+    "Hong Zhang",
+    "Sai Sree Harsha",
+    "Loic Feujio",
+    "Akash Maharaj",
+    "Yunyao Li"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Demonstration Paper Award: MuRAR: A Simple and Effective Multimodal Retrieval and Answer Refinement Framework for Multimodal Question Answering — Zhengyuan Zhu, Daniel Lee, Hong Zhang, Sai Sree Harsha, Loic Feujio, Akash Maharaj, Yunyao Li"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Dataset Paper Award",
+   "title": "NYT-Connections: A Deceptively Simple Text Classification Task that Stumps System-1 Thinkers",
+   "authors": [
+    "Angel Yahir Loredo Lopez",
+    "Tyler McDonald",
+    "Ali Emami"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Dataset Paper Award: NYT-Connections: A Deceptively Simple Text Classification Task that Stumps System-1 Thinkers — Angel Yahir Loredo Lopez, Tyler McDonald, Ali Emami"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper Award",
+   "title": "PIRsuader: A Persuasive Chatbot for Mitigating Psychological Insulin Resistance in Type-2 Diabetic Patients",
+   "authors": [
+    "Sujatha Das Gollapalli",
+    "See-Kiong Ng"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Social Impact Paper Award: PIRsuader: A Persuasive Chatbot for Mitigating Psychological Insulin Resistance in Type-2 Diabetic Patients — Sujatha Das Gollapalli, See-Kiong Ng"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Dataset Paper Award",
+   "title": "VeritasQA: A Truthfulness Benchmark Aimed at Multilingual Transferability",
+   "authors": [
+    "Javier Aula-Blasco",
+    "Júlia Falcão",
+    "Susana Sotelo",
+    "Silvia Paniagua",
+    "Aitor Gonzalez-Agirre",
+    "Marta Villegas"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Best Dataset Paper Award: VeritasQA: A Truthfulness Benchmark Aimed at Multilingual Transferability — Javier Aula-Blasco, Júlia Falcão, Susana Sotelo, Silvia Paniagua, Aitor Gonzalez-Agirre, Marta Villegas"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Do Large Language Models Mirror Cognitive Language Processing?",
+   "authors": [
+    "Yuqi Ren",
+    "Renren Jin",
+    "Tongxuan Zhang",
+    "Deyi Xiong"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Outstanding Paper Award: Do Large Language Models Mirror Cognitive Language Processing? — Yuqi Ren, Renren Jin, Tongxuan Zhang, Deyi Xiong"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Enhancing Emotional Support Conversations: A Framework for Dynamic Knowledge Filtering and Persona Extraction",
+   "authors": [
+    "Jiawang Hao",
+    "Fang Kong"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Outstanding Paper Award: Enhancing Emotional Support Conversations: A Framework for Dynamic Knowledge Filtering and Persona Extraction — Jiawang Hao, Fang Kong"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Language Models Encode the Value of Numbers Linearly",
+   "authors": [
+    "Fangwei Zhu",
+    "Damai Dai",
+    "Zhifang Sui"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Outstanding Paper Award: Language Models Encode the Value of Numbers Linearly — Fangwei Zhu, Damai Dai, Zhifang Sui"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MLLM-I2W: Harnessing Multimodal Large Language Model for Zero-Shot Composed Image Retrieval",
+   "authors": [
+    "Tong Bao",
+    "Che Liu",
+    "Derong Xu",
+    "Zhi Zheng",
+    "Tong Xu"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Outstanding Paper Award: MLLM-I2W: Harnessing Multimodal Large Language Model for Zero-Shot Composed Image Retrieval — Tong Bao, Che Liu, Derong Xu, Zhi Zheng, Tong Xu"
+  },
+  {
+   "venue": "COLING",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "VideoQA-TA: Temporal-Aware Multi-Modal Video Question Answering",
+   "authors": [
+    "Zhixuan Wu",
+    "Bo Cheng",
+    "Jiale Han",
+    "Jiabao Ma",
+    "Shuhao Zhang",
+    "Yuli Chen",
+    "Changbo Li"
+   ],
+   "track": "main",
+   "source": "https://coling2025.org/program/best_papers/",
+   "evidence": "COLING 2025 Outstanding Paper Award: VideoQA-TA: Temporal-Aware Multi-Modal Video Question Answering — Zhixuan Wu, Bo Cheng, Jiale Han, Jiabao Ma, Shuhao Zhang, Yuli Chen, Changbo Li"
+  },
+  {
    "venue": "COLT",
    "year": 2021,
    "award": "best",
@@ -68991,6 +69233,39 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10050/44/program",
    "evidence": "IMX 2020 program, Honorable Mention: Staying on Track: a Comparative Study on the Use of Optical Flow in 360º Video to Mitigate VIMS — Paulo Bala, Ian Oakley, Valentina Nisi, Nuno Jardim Nunes"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DiffATR: Diffusion-based Generative Modeling for Audio-Text Retrieval",
+   "authors": [
+    "Yifei Xin",
+    "Xuxin Cheng",
+    "Zhihong Zhu",
+    "Xusheng Yang",
+    "Yuexian Zou"
+   ],
+   "track": "main",
+   "source": "https://interspeech2024.org/best-paper-award-2024/",
+   "evidence": "Interspeech 2024 Best Paper Award: DiffATR: Diffusion-based Generative Modeling for Audio-Text Retrieval — Yifei Xin, Xuxin Cheng, Zhihong Zhu, Xusheng Yang, Yuexian Zou"
+  },
+  {
+   "venue": "Interspeech",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource and Multilingual Scenarios",
+   "authors": [
+    "Tejes Srivastava",
+    "Jiatong Shi",
+    "William Chen",
+    "Shinji Watanabe"
+   ],
+   "track": "main",
+   "source": "https://interspeech2024.org/best-paper-award-2024/",
+   "evidence": "Interspeech 2024 Best Paper Award: EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource and Multilingual Scenarios — Tejes Srivastava, Jiatong Shi, William Chen, Shinji Watanabe"
   },
   {
    "venue": "ISCA",
