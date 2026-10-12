@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6246
+  "count": 6248
  },
  "entries": [
   {
@@ -75661,6 +75661,43 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobicom/2015/awards.html",
    "evidence": "MobiCom 2015 Best Community Paper Award: CAreDroid: Adaptation Framework for Android ContextAware Applications — Salma Elmalaki, Lucas Wanner, Mani Srivastava"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "WEBee: Physical-Layer Cross-Technology Communication via Emulation",
+   "authors": [
+    "Zhijun Li",
+    "Tian He"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/grav/publications/quarterly-newsletters/201710",
+   "evidence": "MobiCom 2017 best paper: WEBee: Physical-Layer Cross-Technology Communication via Emulation — Zhijun Li, Tian He"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2017,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "The Tick Programmable Low-Latency SDR System",
+   "authors": [
+    "Haoyang Wu",
+    "Tao Wang",
+    "Zengwen Yuan",
+    "Chunyi Peng",
+    "Zhiwei Li",
+    "Zhaowei Tan",
+    "Boyan Ding",
+    "Xiaoguang Li",
+    "Yuanjie Li",
+    "Jun Liu",
+    "Songwu Lu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/grav/publications/quarterly-newsletters/201710",
+   "evidence": "MobiCom 2017 best community paper: The Tick Programmable Low-Latency SDR System — Haoyang Wu, Tao Wang, Zengwen Yuan, Chunyi Peng, Zhiwei Li, Zhaowei Tan, Boyan Ding, Xiaoguang Li, Yuanjie Li, Jun Liu, Songwu Lu"
   },
   {
    "venue": "MobiCom",

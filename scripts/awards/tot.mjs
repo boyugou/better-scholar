@@ -1437,8 +1437,19 @@ export function parseScAwards(html, source = PAGES.sc) {
 export function parseMobicomYear(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
-  const year = parseInt((/^MobiCom (\d{4}):/.exec(ls[0] || "") || [])[1], 10);
+  // (a SIGMOBILE newsletter's report on the conference — "ACM MobiCom 2017 was wrapped up last week …" — names the year too)
+  const year = parseInt((/^MobiCom (\d{4}):/.exec(ls[0] || "") || /ACM MobiCom (\d{4}) was wrapped up/.exec(ls.join("\n")) || [])[1], 10);
   if (!year) return { entries, skipped: ["no year in the title"] };
+  // the newsletter lists them as "Best paper: Title. Authors (Affiliation); Authors (Affiliation)." and "Best community paper: …"
+  for (const l of ls) {
+    const n = /^Best (community )?paper:\s*(.+)$/i.exec(l);
+    if (!n) continue;
+    const cuts = [...n[2].matchAll(/\.\s+/g)].map((c) => c.index);
+    const at = cuts.find((c) => n[2].slice(c + 1).trim().length > 5 && kddAuthors(n[2].slice(c + 1)).length >= 1 && /\(/.test(n[2].slice(c + 1)));
+    if (at === undefined) { skipped.push(`${year}: not read: ${n[2].slice(0, 50)}`); continue; }
+    const t = cleanTitle(n[2].slice(0, at)), who = kddAuthors(n[2].slice(at + 1));
+    if (who.length && t.length >= 8) entries.push({ venue: "MobiCom", year, award: n[1] ? "category" : "best", awardLabel: n[1] ? "Best Community Paper Award" : "Best Paper Award", title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} ${n[1] ? "best community paper" : "best paper"}: ${t} — ${who.join(", ")}` });
+  }
   // the award headings the pages use over the years (video, poster, demo and reviewer awards are not paper awards)
   const kindOf = (l) => {
     const h = l.replace(/:$/, "");

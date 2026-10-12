@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.32 — 2026-10-12
+
+- MobiCom 2017's best paper (WEBee: Physical-Layer Cross-Technology Communication via Emulation) and best community paper (The Tick Programmable Low-Latency SDR System) from SIGMOBILE's own October 2017 newsletter (`tot.mjs mobicom-year`;
+  the conference's pages of that year name no awards). The list has 6248 awards.
+
 ## 2.10.31 — 2026-10-12
 
 - MobiCom 2018's best paper (SkyCore) and best community paper (One Billion Apples' Secret Sauce) from the conference's keynotes-and-awards page (`tot.mjs mobicom-year`; the 2017 pages name them only in a SIGMOBILE newsletter, not read).

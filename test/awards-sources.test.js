@@ -1801,3 +1801,16 @@ test("MobiCom 2018's keynotes-and-awards page: 'Best Paper Award Winner: Title b
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("a SIGMOBILE newsletter's report on MobiCom 2017: 'Best paper: Title. Authors (Affiliation); …' and 'Best community paper: …'; video and demo awards are left out", async () => {
+  const { parseMobicomYear } = await import("../scripts/awards/tot.mjs");
+  const html = `<h1>Newsletter of October 2017</h1><p>ACM MobiCom 2017 was wrapped up last week in Snowbird, Utah.</p><p>We celebrated the following paper awards in this year’s program.</p>
+<p>Best paper: WEBee: Physical-Layer Cross-Technology Communication via Emulation. Zhijun Li (University of Minnesota); Tian He (University of Minnesota).</p>
+<p>Best community paper: The Tick Programmable Low-Latency SDR System. Haoyang Wu, Tao Wang (Peking University), Zengwen Yuan (University of California, Los Angeles), Songwu Lu (UCLA).</p>
+<p>Best video: TinyLink: A Holistic System for Rapid Development of IoT Applications. Gaoyang Guan, Wei Dong (Zhejiang University).</p>`;
+  const { entries } = parseMobicomYear(html, "https://www.sigmobile.org/grav/publications/quarterly-newsletters/201710");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2017 best WEBee: P | Zhijun Li; Tian He",
+    "2017 category The Tick | Haoyang Wu; Tao Wang; Zengwen Yuan; Songwu Lu"
+  ]);
+});
