@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.17 — 2026-10-12
+
+- "Reset to defaults" asks on the settings page (the question with a Reset and a Cancel button, the Reset one in red) instead of in the browser's own dialog; no native dialog is left in the extension.
+
 ## 2.10.16 — 2026-10-12
 
 - SC 2025's best paper (ORBIT-2), best student paper (X-MoE), best reproducibility advancement paper (RAPTOR) and test-of-time paper (The Globus Striped GridFTP Framework and Server) from the conference's own awards page (`tot.mjs sc`); only the current year's page answers. The list has 6217 awards.

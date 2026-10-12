@@ -54,3 +54,7 @@ button.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px
 #pv-panel { margin: 0 0 12px; }
 .opt.sub { padding-left: 34px; background: #fbfcfd; }
 .opt.sub .name { font-size: 13.5px; }
+.reset-box { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.reset-box .ask { color: var(--muted); font-size: 13px; }
+button.btn.danger { border-color: #d93025; color: #d93025; }
+button.btn.danger:hover { background: #fce8e6; border-color: #d93025; }

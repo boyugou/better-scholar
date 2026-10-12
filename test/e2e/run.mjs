@@ -474,8 +474,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await opts.locator("#preview tr.rr-r-last").count(), 0, "the preview reflects the migrated 'last' switch");
     assert.equal(await opts.locator('#preview .rr-chip[data-kind="core"]').count(), 0);
     assert.equal(await opts.locator("#preview .rr-name").count(), 0);
-    opts.once("dialog", (d) => d.accept());
     await opts.click('[data-act="reset"]');
+    await opts.click('[data-act="reset-cancel"]');                        // (it asks on the page: "No" leaves the settings alone)
+    assert.equal(await opts.locator('[data-act="reset"]').count(), 1);
+    await opts.click('[data-act="reset"]');
+    await opts.click('[data-act="reset-confirm"]');
     await eventually(opts, () => document.querySelectorAll("#preview tr.rr-r-last").length === 1);
     assert.deepEqual(await stored(opts, "sync", "prefs"), prefsLib.defaults());
     assert.equal(await opts.locator("#preview tr[class*='rr-r-']").count(), 4);

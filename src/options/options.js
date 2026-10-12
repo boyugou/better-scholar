@@ -68,11 +68,16 @@
     clearBtn.textContent = t("optCleared");
     setTimeout(() => { clearBtn.textContent = t("optClearCache"); }, 1400);
   } }, t("optClearCache"));
-  const resetBtn = h("button", { class: "btn", type: "button", "data-act": "reset", onClick: () => {
-    if (!confirm(t("optResetConfirm"))) return;
-    prefs = B.prefs.defaults();
-    save();
-  } }, t("optReset"));
+  // "Reset" asks in the page, not in the browser's dialog: the button gives way to the question and a yes / no pair
+  const resetBox = h("span", { class: "reset-box" });
+  const resetBtn = h("button", { class: "btn", type: "button", "data-act": "reset", onClick: () => askReset() }, t("optReset"));
+  function askReset() {
+    const yes = h("button", { class: "btn danger", type: "button", "data-act": "reset-confirm", onClick: () => { prefs = B.prefs.defaults(); save(); resetBox.replaceChildren(resetBtn); } }, t("optReset"));
+    const no = h("button", { class: "btn", type: "button", "data-act": "reset-cancel", onClick: () => resetBox.replaceChildren(resetBtn) }, t("cancel"));
+    resetBox.replaceChildren(h("span", { class: "ask" }, t("optResetConfirm")), yes, no);
+    no.focus();
+  }
+  resetBox.append(resetBtn);
 
   $("controls").append(
     card(t("optRolesTitle"), t("optRolesHint"),
@@ -94,7 +99,7 @@
         h("button", { class: "btn", type: "button", "data-act": "panel-full", onClick: () => { for (const k of B.prefs.PANEL_PARTS) prefs.panel[k] = true; save(); } }, t("optPanelFull")))),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
-    card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBtn, cacheNote)));
+    card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, cacheNote)));
   showCacheCount();
 
   // ---- the preview -------------------------------------------------------
