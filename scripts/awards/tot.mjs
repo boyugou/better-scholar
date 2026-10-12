@@ -121,7 +121,8 @@ const PAGES = {
   "etaps-bp": "https://etaps.org/awards/best-paper/",
   gecco: "https://sig.sigevo.org/SIGEVO-Impact-Award",
   "kdd-bp": "https://kdd.org/awards/sigkdd-best-research-paper-awards",
-  "kdd-tot": "https://kdd.org/awards/kdd-test-of-time-award"
+  "kdd-tot": "https://kdd.org/awards/kdd-test-of-time-award",
+  sigcomm: "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -1035,6 +1036,52 @@ export function parseKddTot(html, source = PAGES["kdd-tot"]) {
   return { entries, skipped };
 }
 
+// The ACM SIGCOMM Test of Time page (www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award): per year a heading "2024:", then per paper one line and a line saying why. The
+// newer lines read `"Title" by Authors. ACM SIGCOMM Computer Communication Review, …, 2015.` (the authors may be written "Zhu, Y., Eran, H." as well), the older ones `Title, by
+// Authors. SIGCOMM 1999.` or `Title, Author, Author, Proc. ACM SIGCOMM 2002.`; the 2006 batch (papers of 1969–1995, initials and surnames) is not read.
+const VENUE_AT = /(?:[.,]\s*|\s+)(?:in\s+)?(?:Proc\b\.?|ACM\b|SIGCOMM\b|CCR\b|IMC\b|HotNets\b|SIGMETRICS\b)/i;
+function surnameFirst(list) {
+  const initials = /^(?:\p{Lu}\.?-?)+\.?$/u;
+  const parts = list.replace(/\s+and\s+/g, ", ").split(/\s*,\s*/).filter(Boolean);
+  if (parts.length >= 2 && parts.every((p, i) => (i % 2 ? initials.test(p) : !initials.test(p)))) {
+    const out = []; for (let i = 0; i + 1 < parts.length; i += 2) out.push(parts[i + 1] + " " + parts[i]); return out;
+  }
+  return null;
+}
+export function parseSigcommTot(html, source = PAGES.sigcomm) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  const start = ls.findIndex((l) => /past recipients of the ACM SIGCOMM Test of Time/i.test(l));
+  let year = null;
+  const add = (title, authorText, tail, raw) => {
+    const t = cleanTitle(title), cut = VENUE_AT.exec(authorText);
+    let text = (cut ? authorText.slice(0, cut.index) : authorText).replace(/[,\s]+$/, "").replace(/(?<=\p{L}{2})\.$/u, "");
+    if (cut && /^\.\s/.test(authorText.slice(cut.index)) && /(?:^|[\s,])\p{Lu}$/u.test(text)) text += ".";                   // (the full stop after "Zhang, M." is an initial's)
+    const flipped = surnameFirst(text);
+    const who = flipped || names(text);
+    const py = (/((?:19|20)\d{2})\D*$/.exec(tail) || [])[1];
+    if (who.length && who.every(isPerson) && t.length >= 8) entries.push(entry("SIGCOMM", year, "Test of Time Paper Award", t, who, source, `SIGCOMM ${year} Test of Time Paper Award: ${raw}`, py ? parseInt(py, 10) : null));
+    else skipped.push(`${year}: not read: ${raw.slice(0, 80)}`);
+  };
+  for (let i = Math.max(0, start); i < ls.length; i++) {
+    const l = ls[i];
+    if (/^acm sigcomm$/i.test(l)) break;
+    const y = /^((?:19|20)\d{2}):$/.exec(l);
+    if (y) { year = parseInt(y[1], 10); continue; }
+    if (!year || year < 2007 || /^For |Committee|^The \d{4}|^In 2006/.test(l)) continue;
+    let m;
+    if ((m = /^[“"]\s*(.+?)[”"]\s*,?\s+by\s+(.+)$/.exec(l))) { add(m[1], m[2], m[2], l); continue; }
+    if ((m = /^(.{8,}?),?\s+by\s+(.+)$/.exec(l)) && VENUE_AT.test(m[2])) { add(m[1], m[2], m[2], l); continue; }
+    if (VENUE_AT.test(l) && /,/.test(l)) {                                    // "Title, Author, Author, Proc. ACM SIGCOMM 2002."
+      const v = VENUE_AT.exec(l), head = l.slice(0, v.index), commas = [...head.matchAll(/,\s+/g)].map((c) => c.index);
+      const k = commas.find((c) => { const who = names(head.slice(c + 1)); return who.length && who.every(isPerson); });
+      if (k !== undefined) { add(head.slice(0, k), l.slice(k + 1), l, l); continue; }
+      skipped.push(`${year}: not read: ${l.slice(0, 80)}`);
+    }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -1090,7 +1137,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);

@@ -1567,3 +1567,19 @@ test("SIGKDD award pages: category lines with track headings and affiliations, t
   const tot3 = `<p>2023 SIGKDD Test of Time Award Winners</p><p>SIGKDD Test of Time Award for Research</p><p>Chris Thornton ,Frank Hutter, Holger H. Hoos: Auto-WEKA: Combined Selection and Hyperparameter Optimization</p><p>SIGKDD Test of Time Award for Applied Data Science</p><p>Hugh Brendan McMahan, Gary Holt: Ad Click Prediction: A View From the Trenches. KDD 2013: 1222-1230.</p>`;
   assert.deepEqual(parseKddTot(tot3).entries.map((e) => `${e.awardLabel} | ${e.authors[0]} | ${e.title.slice(0, 14)}`), ["Test of Time Award for Research | Chris Thornton | Auto-WEKA: Com", "Test of Time Award for Applied Data Science | Hugh Brendan McMahan | Ad Click Predi"]);
 });
+
+test("SIGCOMM Test of Time page: quoted titles with 'by', surname-first author lists, the older 'Title, Authors, Proc.' lines; the 2006 batch is left out", async () => {
+  const { parseSigcommTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>The past recipients of the ACM SIGCOMM Test of Time Paper Award are:</p><p>2025:</p><p>"Congestion control for large-scale RDMA deployments" by Zhu, Y., Eran, H., Zhang, M. ACM SIGCOMM Computer Communication Review, 45(4), 2015.</p><p>For DCQCN.</p><p>The 2025 Test of Time Award Committee members were: Mark Allman.</p>
+<p>2022:</p><p>"Network Traffic Characteristics of Data Centers in the Wild" by Theophilus Benson, Aditya Akella, and David A. Maltz, in ACM SIGCOMM 2010.</p>
+<p>2012:</p><p>Tussle in cyberspace: defining tomorrow's internet, David Clark, Karen Sollins, John Wroclawski and Bob Braden, Proc. ACM SIGCOMM 2002.</p><p>2010:</p><p>An analysis of BGP convergence properties, by Tim Griffin and Gordon Wilfong. SIGCOMM 1999.</p>
+<p>2006:</p><p>Congestion Avoidance and Control, V. Jacobson (Proc. SIGCOMM '88)</p><p>acm sigcomm</p>`;
+  const { entries, skipped } = parseSigcommTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title.slice(0, 12)} | ${e.authors.join("; ")}`), [
+    "2025/2015 Congestion c | Y. Zhu; H. Eran; M. Zhang",
+    "2022/2010 Network Traf | Theophilus Benson; Aditya Akella; David A. Maltz",
+    "2012/2002 Tussle in cy | David Clark; Karen Sollins; John Wroclawski; Bob Braden",
+    "2010/1999 An analysis  | Tim Griffin; Gordon Wilfong"
+  ]);
+  assert.deepEqual(skipped, []);
+});

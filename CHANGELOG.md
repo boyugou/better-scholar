@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.38 — 2026-10-12
+
+- The ACM SIGCOMM Test of Time Paper Award (2007–2026, 33 papers: Chord, P4, B4, DCTCP, VL2, Ethane, XORs in the air …) from SIGCOMM's own page (`tot.mjs sigcomm`). The bundled list has 6003 awards.
+
 ## 2.9.37 — 2026-10-12
 
 - The SIGKDD best paper awards 1997–2015 (research, application, student, with runners-up) and the KDD Test of Time awards 2014–2025 (82 papers new to the list: Graphs over Time, DBSCAN, Collaborative Filtering with

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5970
+  "count": 6003
  },
  "entries": [
   {
@@ -83076,6 +83076,21 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Towards an Active Network Architecture",
+   "authors": [
+    "David L. Tennenhouse",
+    "David J. Wetherall"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2007 Test of Time Paper Award: Towards an Active Network Architecture, by David L. Tennenhouse and David J. Wetherall, CCR 26(2), April 1996."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2008,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83087,6 +83102,56 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2008: Shyamnath Gollakota and Dina Katabi, \"ZigZag Decoding: Combating Hidden Terminals in Wireless Networks\"."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Internet Routing Instability",
+   "authors": [
+    "Craig Labovitz",
+    "G. Robert Malan",
+    "Farnam Jahanian"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2008 Test of Time Paper Award: Internet Routing Instability, by Craig Labovitz, G. Robert Malan, and Farnam Jahanian, Proc. of ACM SIGCOMM 1997."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Modeling TCP Throughput: A Simple Model and Its Empirical Validation",
+   "authors": [
+    "Jitendra Padhye",
+    "Victor Firoiu",
+    "Don Towsley",
+    "Jim Kurose"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2008 Test of Time Paper Award: Modeling TCP Throughput: A Simple Model and Its Empirical Validation, by Jitendra Padhye, Victor Firoiu, Don Towsley, and Jim Kurose, Proc. of ACM SIGCOMM 1998."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "The Macroscopic Behavior of the TCP Congestion Avoidance Algorithm",
+   "authors": [
+    "Matthew Mathis",
+    "Jeffrey Semke",
+    "Jamshid Mahdavi",
+    "Teunis Ott"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2008 Test of Time Paper Award: The Macroscopic Behavior of the TCP Congestion Avoidance Algorithm, by Matthew Mathis, Jeffrey Semke, Jamshid Mahdavi, and Teunis Ott, CCR 27(3), 1997."
   },
   {
    "venue": "SIGCOMM",
@@ -83107,6 +83172,23 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A Digital Fountain Approach to Reliable Distribution of Bulk Data",
+   "authors": [
+    "John Byers",
+    "Michael Luby",
+    "Michael Mitzenmacher",
+    "Ashutosh Rege"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2009 Test of Time Paper Award: A Digital Fountain Approach to Reliable Distribution of Bulk Data, by John Byers, Michael Luby, Michael Mitzenmacher, and Ashutosh Rege, Proc. of ACM SIGCOMM 1998."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2010,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83120,6 +83202,37 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2010: Binbin Chen, Zling Zhou, Yuda Zho, and Haifeng Yu, \"Efficient Error Estimating Coding: Feasibility and Applications\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "An analysis of BGP convergence properties",
+   "authors": [
+    "Tim Griffin",
+    "Gordon Wilfong"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2010 Test of Time Paper Award: An analysis of BGP convergence properties, by Tim Griffin and Gordon Wilfong. SIGCOMM 1999."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "On Power-Law Relationships of the Internet Topology",
+   "authors": [
+    "Michalis Faloutsos",
+    "Petros Faloutsos",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2010 Test of Time Paper Award: On Power-Law Relationships of the Internet Topology, by Michalis Faloutsos, Petros Faloutsos, and Christos Faloutsos. SIGCOMM 1999."
   },
   {
    "venue": "SIGCOMM",
@@ -83140,6 +83253,42 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A Scalable Content-addressable Network",
+   "authors": [
+    "Sylvia Ratnasamy",
+    "Paul Francis",
+    "Mark Handley",
+    "Richard Karp",
+    "Scott Shenker"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2011 Test of Time Paper Award: A Scalable Content-addressable Network, Sylvia Ratnasamy, Paul Francis, Mark Handley, Richard Karp, Scott Shenker, Proc. ACM SIGCOMM 2001."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications",
+   "authors": [
+    "Ion Stoica",
+    "Robert Morris",
+    "David Karger",
+    "M. Frans Kaashoek",
+    "Hari Balakrishnan"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2011 Test of Time Paper Award: Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications, Ion Stoica, Robert Morris, David Karger, M. Frans Kaashoek, Hari Balakrishnan, Proc. ACM SIGCOMM 2001."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2012,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83153,6 +83302,23 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2012: Ali Ghodsi, Vyas Sekar, Matei Zaharia, Ion Stoica, Multi-Resource Fair Queueing for Packet Processing"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Tussle in cyberspace: defining tomorrow's internet",
+   "authors": [
+    "David Clark",
+    "Karen Sollins",
+    "John Wroclawski",
+    "Bob Braden"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2012 Test of Time Paper Award: Tussle in cyberspace: defining tomorrow's internet, David Clark, Karen Sollins, John Wroclawski and Bob Braden, Proc. ACM SIGCOMM 2002."
   },
   {
    "venue": "SIGCOMM",
@@ -83171,6 +83337,40 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2013: Vincent Liu, Aaron Parks, Vamsi Talla, Shyamnath Gollakota, David Wetherall and Joshua Smith, “Ambient Backscatter: Wireless Communication Out of Thin Air”"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A delay-tolerant network architecture for challenged internets",
+   "authors": [
+    "Kevin Fall"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2013 Test of Time Paper Award: A delay-tolerant network architecture for challenged internets, Kevin Fall, Proc. SIGCOMM 2003."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "PlanetLab: an overlay testbed for broad-coverage services",
+   "authors": [
+    "Brent Chun",
+    "David Culler",
+    "Timothy Roscoe",
+    "Andy Bavier",
+    "Larry Peterson",
+    "Mike Wawrzoniak",
+    "Mic Bowman"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2013 Test of Time Paper Award: PlanetLab: an overlay testbed for broad-coverage services, Brent Chun, David Culler, Timothy Roscoe, Andy Bavier, Larry Peterson, Mike Wawrzoniak and Mic Bowman, Proc. SIGCOMM CCR, Volume 33 Issue 3 (July 2003)."
   },
   {
    "venue": "SIGCOMM",
@@ -83212,6 +83412,38 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Congestion Control for High Bandwidth-Delay Product Networks",
+   "authors": [
+    "Dina Katabi",
+    "Mark Handley",
+    "Charlie Rohrs"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2014 Test of Time Paper Award: “Congestion Control for High Bandwidth-Delay Product Networks” by Dina Katabi, Mark Handley, and Charlie Rohrs, SIGCOMM 2002"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Measuring ISP Topologies with Rocketfuel",
+   "authors": [
+    "Neil Spring",
+    "Ratul Mahajan",
+    "David Wetherall"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2014 Test of Time Paper Award: “Measuring ISP Topologies with Rocketfuel” by Neil Spring, Ratul Mahajan, and David Wetherall, , SIGCOMM 2002."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2015,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83225,6 +83457,44 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2015: Stefano Vissicchio (UCLouvain), Olivier Tilmans (UCLouvain), Laurent Vanbever (ETH Zürich), Jennifer Rexford (Princeton University), \"Central Control Over Distributed Routing\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A clean slate 4D approach to network control and management",
+   "authors": [
+    "Albert Greenberg",
+    "Gisli Hjalmtysson",
+    "David A. Maltz",
+    "Andy Myers",
+    "Jennifer Rexford",
+    "Geoffrey Xie",
+    "Hong Yan",
+    "Jibin Zhan",
+    "Hui Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2015 Test of Time Paper Award: \"A clean slate 4D approach to network control and management.\" by Albert Greenberg, Gisli Hjalmtysson, David A. Maltz, Andy Myers, Jennifer Rexford, Geoffrey Xie, Hong Yan, Jibin Zhan, and Hui Zhang. CCR October 2005."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Sizing router buffers",
+   "authors": [
+    "Guido Appenzeller",
+    "Isaac Keslassy",
+    "Nick McKeown"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2015 Test of Time Paper Award: \"Sizing router buffers\", by Guido Appenzeller, Isaac Keslassy, and Nick McKeown. SIGCOMM 2004."
   },
   {
    "venue": "SIGCOMM",
@@ -83278,6 +83548,41 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A first-principles approach to understanding the Internet's router-level topology",
+   "authors": [
+    "Lun Li",
+    "David Alderson",
+    "Walter Willinger",
+    "John Doyle"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2016 Test of Time Paper Award: \"A first-principles approach to understanding the Internet's router-level topology\", by Lun Li, David Alderson, Walter Willinger, John Doyle. SIGCOMM 2004."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Link-level measurements from an 802.11b mesh network",
+   "authors": [
+    "Daniel Aguayo",
+    "John Bicket",
+    "Sanjit Biswas",
+    "Glenn Judd",
+    "Robert Morris"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2016 Test of Time Paper Award: \"Link-level measurements from an 802.11b mesh network\" by Daniel Aguayo, John Bicket, Sanjit Biswas, Glenn Judd, Robert Morris . SIGCOMM 2004."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2017,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83317,6 +83622,43 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Ethane: Taking control of the Enterprise",
+   "authors": [
+    "Martin Casado",
+    "Michael J. Freedman",
+    "Justin Pettit",
+    "Jianying Luo",
+    "Nick McKeown",
+    "Scott Shenker"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2017 Test of Time Paper Award: \"Ethane: Taking control of the Enterprise\" by Martin Casado, Michael J. Freedman, Justin Pettit, Jianying Luo, Nick McKeown, Scott Shenker. SIGCOMM 2007."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Measurement and analysis of online social networks",
+   "authors": [
+    "Alan Mislove",
+    "Massimiliano Marcon",
+    "Krishna P. Gummadi",
+    "Peter Druschel",
+    "Bobby Bhattacharjee"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2017 Test of Time Paper Award: \"Measurement and analysis of online social networks\", by Alan Mislove, Massimiliano Marcon, Krishna P. Gummadi, Peter Druschel, Bobby Bhattacharjee. IMC 2007."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2018,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83338,6 +83680,41 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A Scalable, Commodity Data Center Network Architecture",
+   "authors": [
+    "Mohammad Al-Fares",
+    "Alexander Loukissas",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2018 Test of Time Paper Award: \"A Scalable, Commodity Data Center Network Architecture\" by Mohammad Al-Fares, Alexander Loukissas, and Amin Vahdat. SIGCOMM 2008"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "XORs in the air: practical wireless network coding",
+   "authors": [
+    "Sachin Katti",
+    "Hariharan Rahul",
+    "Wenjun Hu",
+    "Dina Katabi",
+    "Muriel Médard",
+    "Jon Crowcroft"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2018 Test of Time Paper Award: \"XORs in the air: practical wireless network coding\" by Sachin Katti, Hariharan Rahul, Wenjun Hu, Dina Katabi, Muriel Médard, and Jon Crowcroft. SIGCOMM 2006"
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2019,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83349,6 +83726,28 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2019: Junsu Jang and Fadel Adib (MIT Media Lab), \"Underwater Backscatter Networking\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "VL2: A Scalable and Flexible Data Center Network",
+   "authors": [
+    "Albert Greenberg",
+    "James R. Hamilton",
+    "Navendu Jain",
+    "Srikanth Kandula",
+    "Changhoon Kim",
+    "Parantap Lahiri",
+    "Dave A. Maltz",
+    "Parveen Patel",
+    "Sudipta Sengupta"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2019 Test of Time Paper Award: \"VL2: A Scalable and Flexible Data Center Network\" by Albert Greenberg, James R. Hamilton, Navendu Jain, Srikanth Kandula, Changhoon Kim, Parantap Lahiri, Dave A. Maltz, Parveen Patel, and Sudipta Sengupta. SIGCOMM 2009"
   },
   {
    "venue": "SIGCOMM",
@@ -83390,6 +83789,22 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A network in a laptop: rapid prototyping for software-defined networks",
+   "authors": [
+    "Bob Lantz",
+    "Brandon Heller",
+    "Nick McKeown"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2020 Test of Time Paper Award: \"A network in a laptop: rapid prototyping for software-defined networks\" by Bob Lantz, Brandon Heller, and Nick McKeown, in ACM HotNets 2010"
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2021,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83410,6 +83825,45 @@
   },
   {
    "venue": "SIGCOMM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Data-Center TCP (DCTCP)",
+   "authors": [
+    "Mohammad Alizadeh",
+    "Albert Greenberg",
+    "David Maltz",
+    "Jitendra Padhye",
+    "Parveen Patel",
+    "Balaji Prabhakar",
+    "Sudipta Sengupta",
+    "Murari Sridharan"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2021 Test of Time Paper Award: \"Data-Center TCP (DCTCP)\", by Mohammad Alizadeh, Albert Greenberg, David Maltz, Jitendra Padhye, Parveen Patel, Balaji Prabhakar, Sudipta Sengupta, and Murari Sridharan, in ACM SIGCOMM 2010."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Internet Inter-Domain Traffic",
+   "authors": [
+    "Craig Labovitz",
+    "Scott Iekel-Johnson",
+    "Danny McPherson",
+    "Jon Oberheide",
+    "Farnam Jahanian"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2021 Test of Time Paper Award: \"Internet Inter-Domain Traffic\" by Craig Labovitz, Scott Iekel-Johnson, Danny McPherson, Jon Oberheide, and Farnam Jahanian, in ACM SIGCOMM 2010."
+  },
+  {
+   "venue": "SIGCOMM",
    "year": 2022,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -83427,6 +83881,152 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2022: Huangxun Chen (Huawei Theory Lab), Yukai Miao (University of New South Wales), Li Chen (Zhongguancun Laboratory), Haifeng Sun (Beijing University of Posts and Telecommunications), Hong Xu (Chinese University of Hong Kong), Libin Liu (Shandong Computer Science Center (National Supercomputer Center in Jinan)), Gong Zhang (Huawei Theory Lab), Wei Wang (Hong Kong University of Science and Technology (Guangzhou) & Hong Kong University of Science and Technology), \"Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Network Traffic Characteristics of Data Centers in the Wild",
+   "authors": [
+    "Theophilus Benson",
+    "Aditya Akella",
+    "David A. Maltz"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2022 Test of Time Paper Award: \"Network Traffic Characteristics of Data Centers in the Wild\" by Theophilus Benson, Aditya Akella, and David A. Maltz, in ACM SIGCOMM 2010."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Understanding the Impact of Video Quality on User Engagement",
+   "authors": [
+    "Florin Dobrian",
+    "Vyas Sekar",
+    "Asad Awan",
+    "Ion Stoica",
+    "Dilip Joseph",
+    "Aditya Ganjam",
+    "Jibin Zhan",
+    "Hui Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2022 Test of Time Paper Award: \"Understanding the Impact of Video Quality on User Engagement\" by Florin Dobrian, Vyas Sekar, Asad Awan, Ion Stoica, Dilip Joseph, Aditya Ganjam, Jibin Zhan, and Hui Zhang, in ACM SIGCOMM 2011."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "B4: Experience with a Globally-Deployed Software Defined Wan",
+   "authors": [
+    "Sushant Jain",
+    "Alok Kumar",
+    "Subhasree Mandal",
+    "Joon Ong",
+    "Leon Poutievski",
+    "Arjun Singh",
+    "Subbaiah Venkata",
+    "Jim Wanderer",
+    "Junlan Zhou",
+    "Min Zhu",
+    "Jon Zolla",
+    "Urs Hölzle",
+    "Stephen Stuart",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2023 Test of Time Paper Award: \"B4: Experience with a Globally-Deployed Software Defined Wan\" by Sushant Jain, Alok Kumar, Subhasree Mandal, Joon Ong, Leon Poutievski, Arjun Singh, Subbaiah Venkata, Jim Wanderer, Junlan Zhou, Min Zhu, Jon Zolla, Urs Hölzle, Stephen Stuart, Amin Vahdat, in ACM SIGCOMM 2013."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "P4: programming protocol-independent packet processors",
+   "authors": [
+    "Pat Bosshart",
+    "Dan Daly",
+    "Glen Gibb",
+    "Martin Izzard",
+    "Nick McKeown",
+    "Jennifer Rexford",
+    "Cole Schlesinger",
+    "Dan Talayco",
+    "Amin Vahdat",
+    "George Varghese",
+    "David Walker"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2024 Test of Time Paper Award: \"P4: programming protocol-independent packet processors\" by Pat Bosshart, Dan Daly, Glen Gibb, Martin Izzard, Nick McKeown, Jennifer Rexford, Cole Schlesinger, Dan Talayco, Amin Vahdat, George Varghese, David Walker, in ACM SIGCOMM Computer Communication Review, 44(3), 2014."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Congestion control for large-scale RDMA deployments",
+   "authors": [
+    "Y. Zhu",
+    "H. Eran",
+    "D. Firestone",
+    "C. Guo",
+    "M. Lipshteyn",
+    "Y. Liron",
+    "J. Padhye",
+    "S. Raindel",
+    "M.H. Yahia",
+    "M. Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2025 Test of Time Paper Award: \"Congestion control for large-scale RDMA deployments\" by Zhu, Y., Eran, H., Firestone, D., Guo, C., Lipshteyn, M., Liron, Y., Padhye, J., Raindel, S., Yahia, M.H. and Zhang, M. ACM SIGCOMM Computer Communication Review, 45(4), pp.523-536, 2015."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A buffer-based approach to rate adaptation: evidence from a large video streaming service",
+   "authors": [
+    "Te-Yuan Huang",
+    "Ramesh Johari",
+    "Nick McKeown",
+    "Matthew Trunnell",
+    "Mark Watson"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2026 Test of Time Paper Award: \"A buffer-based approach to rate adaptation: evidence from a large video streaming service\" by Te-Yuan Huang, Ramesh Johari, Nick McKeown, Matthew Trunnell, Mark Watson. ACM SIGCOMM Computer Communication Review: Volume 44 Issue 4, 2014."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP",
+   "authors": [
+    "Xiaoqi Yin",
+    "Abhishek Jindal",
+    "Vyas Sekar",
+    "Bruno Sinopoli"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+   "evidence": "SIGCOMM 2026 Test of Time Paper Award: \" A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP\" by Xiaoqi Yin, Abhishek Jindal, Vyas Sekar, Bruno Sinopoli. ACM SIGCOMM Computer Communication Review: Volume 45 Issue 4, 2015."
   },
   {
    "venue": "SIGCSE",
