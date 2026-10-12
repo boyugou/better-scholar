@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.7.7 — 2026-10-12
+
+Eighteen more real profiles (autonomous driving, crowdsourcing, ML systems, web search, computational photography, biomedical and nursing informatics,
+energy-efficient computing — 1,633 venue strings) went into the corpora; the sweep found no new wrong badge beyond a known limit (an IEEE-numbered
+*Computational Science and …* cut reads as ICCSA, the IEEE CSE conference being unranked).
+
 ## 2.7.6 — 2026-10-12
 
 - Automatic loading takes a short-lived lock in the origin's `localStorage` before each press, so profiles open in several visible windows load one at a
