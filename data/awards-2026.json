@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2331
+  "count": 2363
  },
  "entries": [
   {
@@ -31912,6 +31912,35 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 1999,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Case for Redundant Arrays of Inexpensive Disks (RAID)",
+   "authors": [
+    "David A. Patterson",
+    "Garth A. Gibson",
+    "Randy H. Katz"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "1999 SIGMOD Test of Time Award: A Case for Redundant Arrays of Inexpensive Disks (RAID). David A. Patterson, Garth A. Gibson, and Randy H. Katz"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1999,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "F-Logic: A Higher-Order Language for Reasoning About Objects, Inheritance, and Scheme",
+   "authors": [
+    "Michael Kifer",
+    "Georg Lausen"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "1999 SIGMOD Test of Time Award: F-Logic: A Higher-Order Language for Reasoning About Objects, Inheritance, and Scheme. Michael Kifer and Georg Lausen"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2000,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -31923,6 +31952,33 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2000: XMill: An Efficient Compressor for XML data. Hartmut Liefke and Dan Suciu"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Encapsulation of Parallelism in the Volcano Query Processing System",
+   "authors": [
+    "Goetz Graefe"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2000 SIGMOD Test of Time Award: Encapsulation of Parallelism in the Volcano Query Processing System. Goetz Graefe"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Set-Oriented Production Rules in Relational Database Systems",
+   "authors": [
+    "Jennifer Widom",
+    "Shel Finkelstein"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2000 SIGMOD Test of Time Award: Set-Oriented Production Rules in Relational Database Systems. Jennifer Widom and Shel Finkelstein"
   },
   {
    "venue": "SIGMOD",
@@ -31939,6 +31995,36 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2001: Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases. Eamonn Keogh, Kaushik Chakrabarti, Sharad Mehrotra, and Michael Pazzani"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Extensible/Rule Based Query Rewrite Optimization in Starburst",
+   "authors": [
+    "H. Pirahesh",
+    "J. M. Hellerstein",
+    "W. Hasan"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2002 SIGMOD Test of Time Award: Extensible/Rule Based Query Rewrite Optimization in Starburst. H. Pirahesh, J. M. Hellerstein, and W. Hasan"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Querying Object-Oriented Databases",
+   "authors": [
+    "M. Kifer",
+    "W. Kim",
+    "Y. Sagiv"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2002 SIGMOD Test of Time Award: Querying Object-Oriented Databases. M. Kifer, W. Kim, and Y. Sagiv"
   },
   {
    "venue": "SIGMOD",
@@ -31961,6 +32047,21 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mining Association Rules Between Sets of Items in Large Databases",
+   "authors": [
+    "Rakesh Agrawal",
+    "Tomasz Imielinski",
+    "Arun Swami"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2003 SIGMOD Test of Time Award: Mining Association Rules Between Sets of Items in Large Databases. Rakesh Agrawal, Tomasz Imielinski, and Arun Swami"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2004,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -31972,6 +32073,62 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2004: Indexing Spatio-Temporal Trajectories with Chebyshev Polynomials. Raymond Ng and Yuhan Cai"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "From Structured Documents to Novel Query Facilities",
+   "authors": [
+    "Vassilis Christophides",
+    "Serge Abiteboul",
+    "Sophie Cluet",
+    "Michel Scholl"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2004 SIGMOD Test of Time Award: From Structured Documents to Novel Query Facilities. Vassilis Christophides, Serge Abiteboul, Sophie Cluet, and Michel Scholl"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Shoring Up Persistent Applications",
+   "authors": [
+    "Michael J. Carey",
+    "David J. DeWitt",
+    "Michael J. Franklin",
+    "Nancy E. Hall",
+    "Mark L. McAuliffe",
+    "Jeffrey F. Naughton",
+    "Daniel T. Schuh",
+    "Marvin H. Solomon",
+    "C. K. Tan",
+    "Odysseas G. Tsatalos",
+    "Seth J. White",
+    "Michael J. Zwilling"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2004 SIGMOD Test of Time Award: Shoring Up Persistent Applications. Michael J. Carey, David J. DeWitt, Michael J. Franklin, Nancy E. Hall, Mark L. McAuliffe, Jeffrey F. Naughton, Daniel T. Schuh, Marvin H. Solomon, C. K. Tan, Odysseas G. Tsatalos, Seth J. White, and Michael J. Zwilling"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "View Maintenance in a Warehousing Environment",
+   "authors": [
+    "Yue Zhuge",
+    "Hector Garcia-Molina",
+    "Jennifer Widom",
+    "Joachim Hammer"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2005 SIGMOD Test of Time Award: View Maintenance in a Warehousing Environment. Yue Zhuge, Hector Garcia-Molina, Jennifer Widom, Joachim Hammer"
   },
   {
    "venue": "SIGMOD",
@@ -31988,6 +32145,36 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2006: To Search or to Crawl? Towards a Query Optimizer for Text-Centric Tasks. Panagiotis Ipeirotis, Eugene Agichtein, Pranay Jain, and Luis Gravano"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "BIRCH: An Efficient Data Clustering Method for Very Large Databases",
+   "authors": [
+    "Tian Zhang",
+    "Raghu Ramakrishnan",
+    "Miron Livny"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2006 SIGMOD Test of Time Award: BIRCH: An Efficient Data Clustering Method for Very Large Databases. Tian Zhang, Raghu Ramakrishnan, and Miron Livny"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Implementing Data Cubes Efficiently",
+   "authors": [
+    "Venky Harinarayan",
+    "Anand Rajaraman",
+    "Jeffrey D. Ullman"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2006 SIGMOD Test of Time Award: Implementing Data Cubes Efficiently. Venky Harinarayan, Anand Rajaraman, and Jeffrey D. Ullman"
   },
   {
    "venue": "SIGMOD",
@@ -32022,6 +32209,21 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Online Aggregation",
+   "authors": [
+    "Joseph M. Hellerstein",
+    "Peter J. Haas",
+    "Helen J. Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2007 SIGMOD Test of Time Award: Online Aggregation. Joseph M. Hellerstein, Peter J. Haas, and Helen J. Wang"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2008,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32052,6 +32254,19 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Integration of Heterogeneous Databases without Common Domains Using Queries Based on Textual Similarity",
+   "authors": [
+    "William W. Cohen"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2008 SIGMOD Test of Time Award: Integration of Heterogeneous Databases without Common Domains Using Queries Based on Textual Similarity. William W. Cohen"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2009,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32079,6 +32294,20 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Approximate Computation of Multidimensional Aggregates of Sparse Data Using Wavelets",
+   "authors": [
+    "Jeffrey Scott Vitter",
+    "Min Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2009 SIGMOD Test of Time Award: Approximate Computation of Multidimensional Aggregates of Sparse Data Using Wavelets. Jeffrey Scott Vitter and Min Wang"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2010,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32100,6 +32329,22 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "NiagaraCQ: A Scalable Continuous Query System for Internet Databases",
+   "authors": [
+    "Jianjun Chen",
+    "David J. DeWitt",
+    "Feng Tian",
+    "Yuan Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2010 SIGMOD Test of Time Award: NiagaraCQ: A Scalable Continuous Query System for Internet Databases. Jianjun Chen, David J. DeWitt, Feng Tian, and Yuan Wang"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2011,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32118,6 +32363,20 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Optimizing Queries Using Materialized Views: A Practical, Scalable Solution",
+   "authors": [
+    "Jonathan Goldstein",
+    "Per-Åke Larson"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2011 SIGMOD Test of Time Award: Optimizing Queries Using Materialized Views: A Practical, Scalable Solution. Jonathan Goldstein and Per-Åke Larson"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2012,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32130,6 +32389,22 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2012: High-Performance Complex Event Processing over XML Streams. Barzan Mozafari, Kai Zeng, Carlo Zaniolo"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Executing SQL over Encrypted Data in the Database-Service-Provider Model",
+   "authors": [
+    "Hakan Hacigumus",
+    "Bala Iyer",
+    "Chen Li",
+    "Sharad Mehrotra"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2012 SIGMOD Test of Time Award: Executing SQL over Encrypted Data in the Database-Service-Provider Model. Hakan Hacigumus, Bala Iyer, Chen Li, Sharad Mehrotra"
   },
   {
    "venue": "SIGMOD",
@@ -32148,6 +32423,22 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Design of an Acquisitional Query Processor for Sensor Networks",
+   "authors": [
+    "Samuel Madden",
+    "Michael J. Franklin",
+    "Joseph M. Hellerstein",
+    "Wei Hong"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2013 SIGMOD Test of Time Award: The Design of an Acquisitional Query Processor for Sensor Networks. Samuel Madden, Michael J. Franklin, Joseph M. Hellerstein, Wei Hong"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2014,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32160,6 +32451,22 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2014: Materialization Optimizations for Feature Selection Workloads. Ce Zhang, Arun Kumar, Christopher Ré"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Order-Preserving Encryption for Numeric Data",
+   "authors": [
+    "Rakesh Agrawal",
+    "Jerry Kiernan",
+    "Ramakrishnan Srikant",
+    "Yirong Xu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2014 SIGMOD Test of Time Award: Order-Preserving Encryption for Numeric Data. Rakesh Agrawal, Jerry Kiernan, Ramakrishnan Srikant, Yirong Xu"
   },
   {
    "venue": "SIGMOD",
@@ -32177,6 +32484,21 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Robust and Fast Similarity Search for Moving Object Trajectories",
+   "authors": [
+    "Lei Chen",
+    "M. Tamer Özsu",
+    "Vincent Oria"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2015 SIGMOD Test of Time Award: Robust and Fast Similarity Search for Moving Object Trajectories. Lei Chen, M. Tamer Özsu, Vincent Oria"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2016,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32190,6 +32512,21 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2016: Wander Join: Online Aggregation via Random Walks. Feifei Li, Bin Wu, Ke Yi, Zhuoyue Zhao"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Provenance Management in Curated Databases",
+   "authors": [
+    "Peter Buneman",
+    "Adriane Chapman",
+    "James Cheney"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2016 SIGMOD Test of Time Award: Provenance Management in Curated Databases. Peter Buneman, Adriane Chapman, James Cheney"
   },
   {
    "venue": "SIGMOD",
@@ -32214,6 +32551,22 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fault-tolerance in the Borealis distributed stream processing system",
+   "authors": [
+    "Magdalena Balazinska",
+    "Hari Balakrishnan",
+    "Samuel Madden",
+    "Michael Stonebraker"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2017 SIGMOD Test of Time Award: Fault-tolerance in the Borealis distributed stream processing system. Magdalena Balazinska, Hari Balakrishnan, Samuel Madden, Michael Stonebraker"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2018,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32233,6 +32586,21 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Serializable isolation for snapshot databases",
+   "authors": [
+    "Michael Cahill",
+    "Uwe Röhm",
+    "Alan Fekete"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2018 SIGMOD Test of Time Award: Serializable isolation for snapshot databases. Michael Cahill, Uwe Röhm, Alan Fekete"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2019,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32246,6 +32614,19 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2019: Interventional Fairness : Causal Database Repair for Algorithmic Fairness. Babak Salimi, Luke Rodriguez, Bill Howe, and Dan Suciu"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Privacy integrated queries: an extensible platform for privacy-preserving data analysis",
+   "authors": [
+    "Frank McSherry"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2019 SIGMOD Test of Time Award: Privacy integrated queries: an extensible platform for privacy-preserving data analysis. Frank McSherry"
   },
   {
    "venue": "SIGMOD",
@@ -32280,6 +32661,25 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2020: ShapeSearch: A Flexible and Efficient System for Shape-based Exploration of Trendlines. Tarique Siddiqui, Paul Luh, Zesheng Wang, Karrie Karahalios, Aditya Parameswaran"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Pregel: a system for large-scale graph processing",
+   "authors": [
+    "Grzegorz Malewicz",
+    "Matthew H. Austern",
+    "Aart J.C Bik",
+    "James C. Dehnert",
+    "Ian Horn",
+    "Naty Leiser",
+    "Grzegorz Czajkowski"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2020 SIGMOD Test of Time Award: Pregel: a system for large-scale graph processing. Grzegorz Malewicz, Matthew H. Austern, Aart J.C Bik, James C. Dehnert, Ian Horn, Naty Leiser, and Grzegorz Czajkowski"
   },
   {
    "venue": "SIGMOD",
@@ -32362,6 +32762,20 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2021: FoundationDB: A Distributed Unbundled Transactional KeyValue Store. Jingyu Zhou, Meng Xu, Alexander Shraer, Alex Miller, Bala Namasivayam, Evan Tschannen, Rusty Sears, John Leach, Dave Rosenthal, Will Wilson, Ben Collins, David Scherer, Steve Atherton, Andrew Beamon, Xin Dong, Alec Grieser, Young Liu, Alvin Moore, Bhaskar Muppana, Xiaoge Su, Vishesh Yadav"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "No free lunch in data privacy",
+   "authors": [
+    "D Kifer",
+    "A Machanavajjhala"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2021 SIGMOD Test of Time Award: No free lunch in data privacy. D Kifer, A Machanavajjhala"
   },
   {
    "venue": "SIGMOD",
@@ -32450,6 +32864,23 @@
   },
   {
    "venue": "SIGMOD",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "NoDB: Efficient Query Execution on Raw Data Files",
+   "authors": [
+    "Ioannis Alagiannis",
+    "Renata Borovica",
+    "Miguel Branco",
+    "Stratos Idreos",
+    "Anastasia Ailamaki"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2022 SIGMOD Test of Time Award: NoDB: Efficient Query Execution on Raw Data Files. Ioannis Alagiannis, Renata Borovica, Miguel Branco, Stratos Idreos, and Anastasia Ailamaki"
+  },
+  {
+   "venue": "SIGMOD",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -32512,6 +32943,22 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2023 Industry Track Best Paper: PG-Schema: Schemas for Property Graphs — Renzo Angles, Angela Bonifati, Stefania Dumbrava, George Fletcher, Alastair Green, Jan Hidders, Bei Li, Leonid Libkin, Victor Marsault, Wim Martens, Filip Murlak, Stefan Plantikow, Ognjen Savkovic, Michael Schmidt, Juan Sequeda, Sławek Staworko, Dominik Tomaszuk, Hannes Voigt, Domagoj Vrgoc, Mingxi Wu, Dušan Živković"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Integrating Scale Out and Fault Tolerance in Stream Processing using Operator State Management",
+   "authors": [
+    "Raul Castro Fernandez",
+    "Matteo Migliavacca",
+    "Evangelia Kalyvianaki",
+    "Peter Pietzuch"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2023 SIGMOD Test of Time Award: Integrating Scale Out and Fault Tolerance in Stream Processing using Operator State Management. Raul Castro Fernandez, Matteo Migliavacca, Evangelia Kalyvianaki, and Peter Pietzuch"
   },
   {
    "venue": "SIGMOD",
@@ -32590,6 +33037,23 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2024 Best Paper Honorable Mention: SAGA: A Scalable Framework for Optimizing Data Cleaning Pipelines for Machine Learning Applications — Shafaq Siddiqi, Roman Kern, and Matthias Boehm"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "PrivBayes: Private Data Release via Bayesian Networks",
+   "authors": [
+    "Jun Zhang",
+    "Graham Cormode",
+    "Cecilia M. Procopiuc",
+    "Divesh Srivastava",
+    "Xiaokui Xiao"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2024 SIGMOD Test of Time Award: PrivBayes: Private Data Release via Bayesian Networks. Jun Zhang, Graham Cormode, Cecilia M. Procopiuc, Divesh Srivastava, Xiaokui Xiao"
   },
   {
    "venue": "SIGMOD",
@@ -32677,6 +33141,20 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2025 Best Paper Honorable Mention: DPconv: Super-Polynomially Faster Join Ordering — Mihail Stoian, Andreas Kipf"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "K-shape: Efficient and accurate clustering of time series",
+   "authors": [
+    "John Paparrizos",
+    "Luis Gravano"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2025 SIGMOD Test of Time Award: K-shape: Efficient and accurate clustering of time series. John Paparrizos and Luis Gravano"
   },
   {
    "venue": "SIGMOD",
@@ -32848,6 +33326,36 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
    "evidence": "2026 Best Paper Honorable Mention: Sublime: Sublinear Error & Space for Unbounded Skewed Streams — Navid Eslami (University of Toronto), Ioana Bercea (KTH Royal Institute of Technology), Rasmus Pagh (BARC, University of Copenhagen), Niv Dayan (University of Toronto)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Snowflake Elastic Data Warehouse",
+   "authors": [
+    "Benoit Dageville",
+    "Thierry Cruanes",
+    "Marcin Zukowski",
+    "Vadim Antonov",
+    "Artin Avanes",
+    "Jon Bock",
+    "Jonathan Claybaugh",
+    "Daniel Engovatov",
+    "Martin Hentschel",
+    "Jiansheng Huang",
+    "Allison W. Lee",
+    "Ashish Motivala",
+    "Abdul Q. Munir",
+    "Steven Pelley",
+    "Peter Povinec",
+    "Greg Rahn",
+    "Spyridon Triantafyllis",
+    "Phillipp Unterbrunner"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
+   "evidence": "2026 SIGMOD Test of Time Award: The Snowflake Elastic Data Warehouse. Benoit Dageville, Thierry Cruanes, Marcin Zukowski, Vadim Antonov, Artin Avanes, Jon Bock, Jonathan Claybaugh, Daniel Engovatov, Martin Hentschel, Jiansheng Huang, Allison W. Lee, Ashish Motivala, Abdul Q. Munir, Steven Pelley, Peter Povinec, Greg Rahn, Spyridon Triantafyllis, Phillipp Unterbrunner"
   },
   {
    "venue": "SOUPS",

@@ -671,6 +671,29 @@ test("SIGMOD best papers table: sections with alternating Title / Authors lines,
   assert.ok(entries.every((e) => e.venue === "SIGMOD" && e.evidence.includes(e.title.slice(0, 10))));
 });
 
+test("SIGMOD Test of Time page: a year, then 'Title. Authors' lines (newer ones end in [award abstract]; initials too), a title with a full stop, two awards in one year, the footer not read", async () => {
+  const { parseTot } = await import("../scripts/awards/sigmod.mjs");
+  const html = `<p>Previous recipients of the Award are listed below. Not an entry.</p><h3>2026</h3><p>A Synthetic Elastic Warehouse. Ann Lee, Bo Chen, Cy Diaz and Dee Park <a href="x">[award abstract]</a></p>
+<h3>2021</h3><p>No synthetic lunch in data privacy. E Ross, F Gray <a href="y">[award abstract]</a></p>
+<h3>2006</h3><p>A Synthetic Clustering Method for Very Large Databases. Gia Stone, Hal Wu, Ivy Xu <a href="z">[award abstract]</a></p>
+<p>Implementing Synthetic Cubes vs. Rollups. Jo Yan, Kai de Zu <a href="w">[award abstract]</a></p>
+<h3>2005</h3><p>Synthetic Maintenance in a Warehouse (SMW). A. Beta, C. D. Gamma, and E. Delta-Eps</p>
+<h3>2000</h3><p>A line whose authors are not names. lower case words only</p>
+<h3>1999</h3><p>A Synthetic Higher-Order Language for Reasoning About Schemes. Fay Gray and Gil Hall</p>
+<h4>ABOUT THE SITE</h4><p>This site is maintained by volunteers. We thank you for visiting! Ann Lee, Bo Chen</p>`;
+  const { entries, skipped } = parseTot(html);
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    ["SIGMOD", 2026, "tot", "Test of Time Award", "A Synthetic Elastic Warehouse", ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park"]],
+    ["SIGMOD", 2021, "tot", "Test of Time Award", "No synthetic lunch in data privacy", ["E Ross", "F Gray"]],
+    ["SIGMOD", 2006, "tot", "Test of Time Award", "A Synthetic Clustering Method for Very Large Databases", ["Gia Stone", "Hal Wu", "Ivy Xu"]],
+    ["SIGMOD", 2006, "tot", "Test of Time Award", "Implementing Synthetic Cubes vs. Rollups", ["Jo Yan", "Kai de Zu"]],
+    ["SIGMOD", 2005, "tot", "Test of Time Award", "Synthetic Maintenance in a Warehouse (SMW)", ["A. Beta", "C. D. Gamma", "E. Delta-Eps"]],
+    ["SIGMOD", 1999, "tot", "Test of Time Award", "A Synthetic Higher-Order Language for Reasoning About Schemes", ["Fay Gray", "Gil Hall"]]
+  ]);
+  assert.equal(skipped.length, 1, skipped.join("\n"));        // the line of the year 2000 whose "authors" are not names
+  assert.ok(entries.every((e) => e.evidence.includes(e.title) && !("paperYear" in e)));
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

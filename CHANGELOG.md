@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.21 — 2026-10-12
+
+- **SIGMOD Test of Time Award** (32 entries, 1999–2026; the list holds 2363) from ACM SIGMOD's own list of recipients: *Pregel*, *Online
+  Aggregation*, *BIRCH*, *Implementing Data Cubes Efficiently* (which also holds the 1996 best-paper mark), *Mining Association Rules
+  Between Sets of Items in Large Databases*, *A Case for Redundant Arrays of Inexpensive Disks (RAID)* … The page prints "Title. Authors"
+  (some authors as initials, the older years without the abstract link) and not the paper's year, so entries carry none. `sigmod.mjs`
+  reads it as `tot`; a word that ends in a full stop and is longer than an initial ("… vs. Rollups. Jo Yan") ends a title, never starts a name.
+
 ## 2.5.20 — 2026-10-12
 
 Sixteen more real profiles (robotics, reinforcement learning, HCI and visualization, accessibility, program synthesis, learning theory,

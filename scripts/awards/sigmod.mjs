@@ -7,18 +7,21 @@
 //             2021        three sections, an entry per line: "Title. Authors"
 //             1994–2020   one entry per paragraph or line: "Title. Authors" (the title often a link)
 //   pods    https://sigmod.org/pods-home/pods-best-paper-awards/         <p><strong>2024</strong><br>Authors:<br><a>Title</a></p>
+//   tot     https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/  the SIGMOD Test of Time Award, 1999–: a year, then a line "Title. Authors" per
+//                                                                        award (the newer ones end in "[award abstract]")
 //
-//   node scripts/awards/sigmod.mjs sigmod|pods [saved-page.html] > sigmod.json      (fetches the page when no file is given)
+//   node scripts/awards/sigmod.mjs sigmod|pods|tot [saved-page.html] > sigmod.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs sigmod.json [--write]
 //
 // The 2021 row and the older rows run entries together in places; an entry whose title cannot be told from its authors is
 // reported and skipped, never guessed.
 import { readFileSync } from "node:fs";
-import { text } from "./html.mjs";
+import { text, lines as pageLines } from "./html.mjs";
 
 const PAGES = {
   sigmod: "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
-  pods: "https://sigmod.org/pods-home/pods-best-paper-awards/"
+  pods: "https://sigmod.org/pods-home/pods-best-paper-awards/",
+  tot: "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/"
 };
 
 // the names in "A (Aff), B and C" — parentheses and a leading "Authors:" dropped
@@ -110,11 +113,41 @@ export function parseSigmod(html, source = PAGES.sigmod) {
   return { entries, skipped };
 }
 
+// ---- Test of Time: a year heading, then "Title. Author, Author and Author" lines, the newer ones ending in "[award abstract]" (initials for some
+// names: "D Kifer, A Machanavajjhala"; "H. Pirahesh, J. M. Hellerstein")
+export function parseTot(html, source = PAGES.tot) {
+  const entries = [], skipped = [];
+  let year = null;
+  // a name: two to five words, each a capitalised word, an initial ("M.", "J.C", "T-H.") or a particle; a word that ends in a full stop and is
+  // longer than an initial ("vs. Rollups. Jo Yan") is the end of a title, not a name
+  const person = (n) => { const t = n.split(" "); return t.length >= 2 && t.length <= 5 && !/[:?!0-9]/.test(n) && t.every((w) => /^\p{Lu}[\p{L}'’-]*$/u.test(w) || /^\p{Lu}(?:[.-]\p{Lu})*\.?$/u.test(w) || /^(?:van|von|der|den|de|del|di|da|la|le|bin|al|el|ter)$/.test(w)); };
+  for (const l of pageLines(html).map((x) => x.normalize("NFC"))) {
+    const y = /^((?:19|20)\d{2})$/.exec(l);
+    if (y) { year = parseInt(y[1], 10); continue; }
+    if (/^ABOUT THE SITE$/i.test(l)) break;                          // the page's footer
+    const m = year && /^(.+?)(?:\s*\[award abstract\])?\s*$/i.exec(l);
+    if (!m) continue;
+    // the title ends at the first ". " after which only names follow
+    let done = false;
+    for (const cut of [...m[1].matchAll(/\.\s+/g)]) {
+      const title = m[1].slice(0, cut.index).trim(), authorText = m[1].slice(cut.index + cut[0].length).trim();
+      const authors = names(authorText);
+      if (title.length >= 8 && authors.length && authors.every(person)) {
+        entries.push(entry("SIGMOD", year, "tot", "Test of Time Award", title, authors, source, `${year} SIGMOD Test of Time Award: ${title}. ${authorText}`));
+        done = true;
+        break;
+      }
+    }
+    if (!done) skipped.push(`${year}: not read: ${m[1].slice(0, 70)}`);
+  }
+  return { entries, skipped };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
-  if (!PAGES[kind]) { console.error("usage: sigmod.mjs sigmod|pods [saved-page.html]"); process.exit(2); }
+  if (!PAGES[kind]) { console.error("usage: sigmod.mjs sigmod|pods|tot [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
-  const r = kind === "pods" ? { entries: parsePods(html), skipped: [] } : parseSigmod(html);
+  const r = kind === "pods" ? { entries: parsePods(html), skipped: [] } : kind === "tot" ? parseTot(html) : parseSigmod(html);
   const by = {};
   for (const e of r.entries) by[e.year] = (by[e.year] || 0) + 1;
   console.error(r.entries.length + " entries:", JSON.stringify(by));
