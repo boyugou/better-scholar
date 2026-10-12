@@ -159,6 +159,15 @@ Scholar drops the sidebar *below* the list) as the window is resized. Styles are
 | `test/extension.test.js` | manifest, load order, locales, bundle freshness |
 | `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
 
+The stand-in mimics Scholar's DOM, but only the real page can confirm that it still does. On
+2026-10-11 the built content script was run once on a live profile (injected into a normal browser
+tab): all 100 visible rows got the same role and CCF / CORE tiers as the library computes from the
+same strings, *Load all* (real "Show more") and *Resolve* (three real paper pages) behaved, and the
+panel sat where designed. That check found that Scholar prints a no-break space before the "…" that
+truncates a venue; the matcher already treated it as a space, and tests and the stand-in now include
+it. This is a manual check, not part of CI: Scholar serves CAPTCHAs to automated browsers, so do not
+script it.
+
 ## Platform policy: Chrome first
 
 Chrome is the main line, and product decisions are made for it:

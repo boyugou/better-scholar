@@ -192,6 +192,22 @@ test("snapshot: every venue string in the real-profile corpora", () => {
   assert.equal(diffs.length, 0, "venue results changed (review, then run `npm run test:update`):\n" + diffs.slice(0, 40).join("\n"));
 });
 
+// Scholar's own DOM prints truncated venues as "… California …, 2009" (a no-break space
+// before the ellipsis), which the plain-space fixtures did not show until the live page was checked.
+test("no-break spaces (as in Scholar's DOM) change nothing", () => {
+  const strings = Object.keys(JSON.parse(fs.readFileSync(path.join(FIX, "venues.expected.json"), "utf8")));
+  const fresh = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+  const key = (r) => JSON.stringify([r.ccf && [r.ccf.tier, r.ccf.name], r.core && [r.core.rank, r.core.name], r.secondary]);
+  const bad = [];
+  for (const s of strings) {
+    const plain = key(fresh.resolve(s));
+    for (const variant of [s.replace(/ …/g, " …"), s.replace(/ /g, " "), s.replace(/ /g, " ")]) {
+      if (key(fresh.resolve(variant)) !== plain) bad.push(JSON.stringify(variant));
+    }
+  }
+  assert.deepEqual(bad.slice(0, 10), []);
+});
+
 test("resolving is fast enough for large profiles", () => {
   const strings = Object.keys(JSON.parse(fs.readFileSync(path.join(FIX, "venues.expected.json"), "utf8")));
   const fresh = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });

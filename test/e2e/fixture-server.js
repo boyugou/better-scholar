@@ -26,7 +26,8 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 let ROW_HL = "en";   // the interface language baked into row links, like Scholar's hl= parameter
 function rowHtml(r) {
   return `<tr class="gsc_a_tr"><td class="gsc_a_t"><a href="/citations?view_op=view_citation&amp;hl=${ROW_HL}&amp;user=TEST&amp;citation_for_view=${esc(r.id)}" class="gsc_a_at">${esc(r.title)}</a>` +
-    `<div class="gs_gray">${esc(r.authors)}</div><div class="gs_gray">${esc(r.venue)}</div></td>` +
+    // like the real DOM: a no-break space sits before the "…" that truncates a venue
+    `<div class="gs_gray">${esc(r.authors)}</div><div class="gs_gray">${esc(r.venue.replace(/ …/g, " …"))}</div></td>` +
     `<td class="gsc_a_c"><a class="gsc_a_ac gs_ibl">${r.cites}</a></td><td class="gsc_a_y"><span class="gsc_a_h gsc_a_hc gs_ibl">${r.year}</span></td></tr>`;
 }
 
