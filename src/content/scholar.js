@@ -87,6 +87,13 @@
 
   // Milliseconds: between presses (plus up to `jitter`), how long a press may take to bring rows, how long to wait for the button to
   // come back after a batch. Overridable (`timing`) so that the loader can be tested without waiting nine seconds.
+  // One automatic run at a time per browser: tabs of the same Scholar origin share localStorage, so a run takes a short-lived lock before each press
+  // (several visible windows would otherwise press in parallel). A lock nobody renews for a few seconds is stale.
+  const LOCK = "rr-load-lock", me = Math.random().toString(36).slice(2);
+  const lockFree = () => { try { const l = JSON.parse(localStorage.getItem(LOCK) || "null"); return !l || l.id === me || Date.now() - l.t > 5000; } catch (e) { return true; } };
+  const takeLock = () => { try { localStorage.setItem(LOCK, JSON.stringify({ id: me, t: Date.now() })); } catch (e) { /* no storage: no lock */ } };
+  const dropLock = () => { try { const l = JSON.parse(localStorage.getItem(LOCK) || "null"); if (l && l.id === me) localStorage.removeItem(LOCK); } catch (e) { /* gone */ } };
+
   const TIMING = { pause: 600, jitter: 400, rowTimeout: 9000, regrace: 1500 };
 
   // Press "Show more" until Scholar has nothing left: the same request a click of yours makes, one at a time and about a second
@@ -104,19 +111,21 @@
     let stalls = 0;
     for (let i = 0; i < 400 && !aborted(); i++) {
       if (!foreground()) { await waitUntil(foreground, Infinity, signal); if (aborted()) break; }
+      if (foregroundOnly) { await waitUntil(lockFree, Infinity, signal); if (aborted()) break; takeLock(); }
       let btn = showMoreButton();
       // just after a batch Scholar may still be re-enabling the button: give it a moment before calling the list complete
       // (a press still in flight — slow, or made by the user — is not the end either)
       if (btn && btn.disabled) { await waitUntil(() => { const b = showMoreButton(); return !b || !b.disabled; }, T.regrace, signal); btn = showMoreButton(); }
-      if (!btn || btn.disabled) { if (stalls > 0) return "stalled"; break; }
+      if (!btn || btn.disabled) { if (stalls > 0) { if (foregroundOnly) dropLock(); return "stalled"; } break; }
       const before = rowElements().length;
       btn.click();
       await waitUntil(() => rowElements().length > before, T.rowTimeout, signal);
       if (aborted()) break;
-      if (rowElements().length <= before) { if (++stalls >= maxStalls) return "stalled"; }
+      if (rowElements().length <= before) { if (++stalls >= maxStalls) { if (foregroundOnly) dropLock(); return "stalled"; } }
       else { stalls = 0; if (onProgress) onProgress(rowElements().length); }
       await sleep(T.pause + Math.random() * T.jitter);
     }
+    if (foregroundOnly) dropLock();
     return aborted() ? "cancelled" : "done";
   }
 

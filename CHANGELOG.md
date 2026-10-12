@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.6 — 2026-10-12
+
+- Automatic loading takes a short-lived lock in the origin's `localStorage` before each press, so profiles open in several visible windows load one at a
+  time (about one request a second in all) instead of in parallel; a lock that nobody renews for five seconds is stale.
+
 ## 2.7.5 — 2026-10-12
 
 An independent review of automatic loading and *Copy papers* found these; each was reproduced first.

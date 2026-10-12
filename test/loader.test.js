@@ -148,3 +148,19 @@ test("a press still in flight is not the end of the list: a late answer after a 
   assert.equal(await r, "done");
   assert.ok(busy.btn.presses >= 1, "pressed once the button came back");
 });
+
+test("automatic runs share a lock between tabs: another tab's fresh lock holds this one back, and it is released when the run ends", async () => {
+  const store = new Map();
+  globalThis.localStorage = { getItem: (k) => (store.has(k) ? store.get(k) : null), setItem: (k, v) => store.set(k, String(v)), removeItem: (k) => store.delete(k) };
+  try {
+    store.set("rr-load-lock", JSON.stringify({ id: "other-tab", t: Date.now() }));
+    const p = page({ first: 3, batches: [3] });
+    const run = loadAll({ timing: FAST, foregroundOnly: true });
+    await wait(80);
+    assert.equal(p.btn.presses, 0, "held back by the other tab");
+    store.delete("rr-load-lock");
+    assert.equal(await run, "done");
+    assert.equal(p.btn.presses, 1);
+    assert.equal(store.has("rr-load-lock"), false, "released at the end");
+  } finally { delete globalThis.localStorage; }
+});
