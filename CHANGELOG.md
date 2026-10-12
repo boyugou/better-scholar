@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.7 — 2026-10-12
+
+Fifteen more real profiles (computer architecture at ICT-CAS, Tsinghua and Zhejiang groups in learning, data, vision and graphics — 1,472 venue strings).
+
+- *HPCA (China)* (the Chinese conference on High Performance Computing and Applications) was read as the architecture symposium HPCA: a country in
+  parentheses after an acronym now says it is another event or edition, and the acronym is not claimed.
+
 ## 2.8.6 — 2026-10-12
 
 Fifteen more real profiles (real-time systems, visualization, computing education, data mining, ML security, SLAM — 1,500 venue strings; no wrong badge found).

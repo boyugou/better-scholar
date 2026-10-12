@@ -351,6 +351,10 @@
   // "ACM CCS 2023", "IEEE/ACM ASE 2023": the organisation words in front are not part of the acronym.
   const ORG_LEAD = /^(?:(?:ieee|acm|usenix|ifip|siam|cvf)(?:\s*[\/-]\s*(?:ieee|acm|usenix|ifip|siam|cvf))*\s+)+(?=[A-Za-z0-9])/i;
 
+  // A country in parentheses after an acronym says it is another edition or another event ("HPCA (China)" is the Chinese conference on
+  // High Performance Computing and Applications, not the architecture symposium)
+  const PLACED = /\(\s*(?:China|USA|U\.S\.A?\.?|UK|Japan|Korea|India|Germany|France|Canada|Australia|Singapore|Taiwan|Hong Kong|Europe|Asia)\s*\)/i;
+
   // All-caps / camel-case acronym signals present in the string, strongest first.
   function acronymSignals(p) {
     const out = [];
@@ -370,6 +374,7 @@
       for (const part of parts) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren", part: parts.length > 1 });
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
+    const placed = PLACED.test(p.withParens);
     // leading acronym: "ISCA 2014", "MICRO 2017", "ACL 2015 Proceedings of …", "NDSS 5", "HPCA-16 2010 …"
     // ("Proceedings ASE 2000. Fifteenth IEEE International Conference on Automated …": the proceedings' own title word is not the venue)
     const head0 = p.withParens.replace(/^[\s,]+/, "").replace(/^(?:proceedings?|proc\.?)(?:\s+of)?\s+(?:the\s+)?(?=[A-Z][A-Za-z0-9&'’-]{1,14}[\s,]+(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b))/i, "");
@@ -382,7 +387,7 @@
     const restNoise = canonTokens(rest, "full").length === 0 && !/^international\b/i.test(rest);
     // (after a two-letter acronym a bare two-digit number is not a year: "DS 75-4" is a Design Society report, not the conference DS)
     const yearAfter = (first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/).test(rest);
-    if (looksAcr && (restNoise || yearAfter)) {
+    if (!placed && looksAcr && (restNoise || yearAfter)) {
       // "USENIX ATC 2007": with its organisation first ("usenixatc" is the venue; "atc" alone is a trusted-computing conference)
       const org = head0.length > head.length ? head0.slice(0, head0.length - head.length).trim().split(/[\s/-]+/).filter(Boolean) : [];
       if (org.length === 1) for (const k of keys(org[0] + first)) out.push({ key: k, kind: "lead", event: yearAfter });
@@ -394,7 +399,7 @@
     if (acmDl && /[A-Z]/.test(acmDl[1])) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0])) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0])) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
     return out;
   }
 
@@ -406,6 +411,7 @@
 
   function embeddedSignals(p) {
     const out = [];
+    if (PLACED.test(p.withParens)) return out;
     const text = fold(p.withParens).replace(SIG_CHAIN, " ");
     for (const m of text.matchAll(/\b([A-Z][A-Za-z]{2,10})[-–']\s?(\d{2,4})\b/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });

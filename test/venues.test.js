@@ -464,6 +464,12 @@ test("IEEE's High Performance symposia: a cut-off '13th IEEE International Sympo
   assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
 });
 
+test("a country in parentheses after an acronym is another event: 'HPCA (China)' is not the architecture symposium", () => {
+  assert.equal(brief("HPCA (China), 497-502, 2009"), "");
+  assert.equal(brief("HPCA, 497-502, 2009"), "CCF A HPCA · CORE A* HPCA");
+  assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
+});
+
 test("an acronym in a hyphenated parenthesis names a conference, never a journal: '(WF-IoT)' is not the IEEE Internet of Things Journal", () => {
   assert.equal(brief("2016 IEEE 3rd world forum on internet of things (WF-IoT), 7-12, 2016"), "");
   assert.equal(brief("IEEE Internet of Things Journal 6 (3), 4921-4934, 2019"), "CCF C IOT");
