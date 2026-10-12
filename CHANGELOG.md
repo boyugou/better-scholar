@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.7 — 2026-10-12
+
+- The SIGMOBILE Test-of-Time Paper Awards (2018–2026, 28 papers: MobiCom, SIGCOMM, SOSP, SenSys …) from SIGMOBILE's own page (`tot.mjs sigmobile`); 12 rows of 2018, typed
+  "Surname, Given", are reported and skipped. The bundled list has 4917 awards.
+
 ## 2.9.6 — 2026-10-12
 
 - Springer's colon form of a conference-proceedings title, *Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …*, is now read through its acronym

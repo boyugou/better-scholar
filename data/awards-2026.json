@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4889
+  "count": 4917
  },
  "entries": [
   {
@@ -71595,6 +71595,484 @@
    "track": "main",
    "source": "https://www.sigmetrics.org/awards.shtml",
    "evidence": "SIGMETRICS 2026 Test of Time Award: Lei Ying “On the Approximation Error of Mean-Field Models”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Ad-hoc On-Demand Distance Vector Routing",
+   "authors": [
+    "Charles E. Perkins",
+    "Elizabeth M. Royer"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Charles E. Perkins and Elizabeth M. Royer “Ad-hoc On-Demand Distance Vector Routing”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Analysis of a Campus-wide Wireless Network",
+   "authors": [
+    "David Kotz",
+    "Kobby Essien"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: David Kotz and Kobby Essien “Analysis of a Campus-wide Wireless Network”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "CarTel: A Distributed Mobile Sensor Computing System",
+   "authors": [
+    "Bret Hull",
+    "Vladimir Bychkovsky",
+    "Yang Zhang",
+    "Kevin Chen",
+    "Michel Goraczko",
+    "Allen K. Miu",
+    "Eugene Shih",
+    "Hari Balakrishnan",
+    "Samuel Madden"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Bret Hull, Vladimir Bychkovsky, Yang Zhang, Kevin Chen, Michel Goraczko, Allen K. Miu, Eugene Shih, Hari Balakrishnan and Samuel Madden “CarTel: A Distributed Mobile Sensor Computing System”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Energy-Efficient Computing for Wildlife Tracking: Design Tradeoffs and Early Experiences with ZebraNet",
+   "authors": [
+    "Philo Juang",
+    "Hidekazu Oki",
+    "Yong Wang",
+    "Margaret Martonosi",
+    "Li-Shiuan Peh",
+    "Daniel Rubenstein"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Philo Juang, Hidekazu Oki, Yong Wang, Margaret Martonosi, Li-Shiuan Peh, Daniel Rubenstein “Energy-Efficient Computing for Wildlife Tracking: Design Tradeoffs and Early Experiences with ZebraNet”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Modeling TCP throughput: A simple model and its empirical validation",
+   "authors": [
+    "Jitendra Padhye",
+    "Victor Firoiu",
+    "Don Towsley",
+    "Jim Kurose"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Jitendra Padhye, Victor Firoiu, Don Towsley and Jim Kurose “Modeling TCP throughput: A simple model and its empirical validation”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Network Information Flow",
+   "authors": [
+    "Rudolf Ahlswede",
+    "Ning Cai",
+    "Shuo-Yen Robert Li",
+    "Raymond W. Yeung"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Rudolf Ahlswede, Ning Cai, Shuo-Yen Robert Li and Raymond W. Yeung “Network Information Flow”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Pervasive Computing: Vision and Challenges",
+   "authors": [
+    "M. Satyanarayanan"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: M. Satyanarayanan “Pervasive Computing: Vision and Challenges”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Sensing Techniques for Mobile Interaction",
+   "authors": [
+    "Ken Hinckley",
+    "Jeff Pierce",
+    "Mike Sinclair",
+    "Eric Horvitz"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Ken Hinckley, Jeff Pierce, Mike Sinclair, Eric Horvitz “Sensing Techniques for Mobile Interaction”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "The Cricket Location-Support System",
+   "authors": [
+    "Nissanka Priyantha",
+    "Anit Chakraborty",
+    "Hari Balakrishnan"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Nissanka Priyantha, Anit Chakraborty, Hari Balakrishnan “The Cricket Location-Support System”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Wake on Wireless: An Event Driven Energy Saving Strategy for Battery Operated Devices",
+   "authors": [
+    "Eugene Shih",
+    "Paramvir Bahl",
+    "Michael J. Sinclair"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Eugene Shih, Paramvir Bahl and Michael J. Sinclair “Wake on Wireless: An Event Driven Energy Saving Strategy for Battery Operated Devices”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Design of WARP: a wireless open-access research platform",
+   "authors": [
+    "Patrick Murphy",
+    "Ashutosh Sabharwal",
+    "Behnaam Aazhang"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2019 Test-of-Time Paper Award: Patrick Murphy, Ashutosh Sabharwal, and Behnaam Aazhang “Design of WARP: a wireless open-access research platform”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones",
+   "authors": [
+    "Prashanth Mohan",
+    "Venkata N. Padmanabhan",
+    "Ramachandran Ramjee"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2019 Test-of-Time Paper Award: Prashanth Mohan, Venkata N. Padmanabhan, and Ramachandran Ramjee “Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Sensing meets mobile social networks: the design, implementation and evaluation of the CenceMe application",
+   "authors": [
+    "Emiliano Miluzzo",
+    "Nicholas D. Lane",
+    "Kristof Fodor",
+    "Ronald Peterson",
+    "Hong Lu",
+    "Mirco Musolesi",
+    "Shane B. Eisenman",
+    "Xiao Zheng",
+    "Andrew T. Campbell"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2019 Test-of-Time Paper Award: Emiliano Miluzzo, Nicholas D. Lane, Kristof Fodor, Ronald Peterson, Hong Lu, Mirco Musolesi, Shane B. Eisenman, Xiao Zheng, and Andrew T. Campbell “Sensing meets mobile social networks: the design, implementation and evaluation of the CenceMe application”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Energy-aware adaptation for mobile applications",
+   "authors": [
+    "Jason Flinn",
+    "M. Satyanarayanan"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2020 Test-of-Time Paper Award: Jason Flinn and M. Satyanarayanan “Energy-aware adaptation for mobile applications”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Achieving Single Channel, Full Duplex Wireless Communication",
+   "authors": [
+    "Jung Il Choi",
+    "Mayank Jain",
+    "Kannan Srinivasan",
+    "Philip Levis",
+    "Sachin Katti"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2021 Test-of-Time Paper Award: Jung Il Choi, Mayank Jain, Kannan Srinivasan, Philip Levis, and Sachin Katti “Achieving Single Channel, Full Duplex Wireless Communication”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Full-Duplex Wireless Communications Using Off-The-Shelf Radios: Feasibility and First Results",
+   "authors": [
+    "Melissa Duarte",
+    "Ashutosh Sabharwal"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2021 Test-of-Time Paper Award: Melissa Duarte and Ashutosh Sabharwal “Full-Duplex Wireless Communications Using Off-The-Shelf Radios: Feasibility and First Results”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "IBM's Linux Watch: The Challenge of Miniaturization",
+   "authors": [
+    "Chandra Narayanaswami",
+    "Noboru Kamijoh",
+    "Mandayam Raghunath",
+    "Tadanobu Inoue",
+    "Thomas Cipolla",
+    "Jim Sanford",
+    "Eugene Schlig",
+    "Sreekrishnan Venkiteswaran",
+    "Dinakar Guniguntala",
+    "Vishal Kulkarni",
+    "Kazuhiko Yamazaki"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2021 Test-of-Time Paper Award: Chandra Narayanaswami, Noboru Kamijoh, Mandayam Raghunath, Tadanobu Inoue, Thomas Cipolla, Jim Sanford, Eugene Schlig, Sreekrishnan Venkiteswaran, Dinakar Guniguntala, Vishal Kulkarni, and Kazuhiko Yamazaki “IBM's Linux Watch: The Challenge of Miniaturization”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Argos: Practical many-antenna base stations",
+   "authors": [
+    "Clayton Shepard",
+    "Hang Yu",
+    "Narendra Anand",
+    "Erran Li",
+    "Thomas Marzetta",
+    "Richard Yang",
+    "Lin Zhong"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2022 Test-of-Time Paper Award: Clayton Shepard (Rice University), Hang Yu (Rice University), Narendra Anand (Rice University), Erran Li (Alcatel-Lucent), Thomas Marzetta (Alcatel-Lucent), Richard Yang (Yale University), Lin Zhong (Rice University) “Argos: Practical many-antenna base stations”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "The Case for VM-based Cloudlets in Mobile Computing",
+   "authors": [
+    "Mahadev Satyanarayanan",
+    "Paramvir Bahl",
+    "Ramon Caceres",
+    "Nigel Davies"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2022 Test-of-Time Paper Award: Mahadev Satyanarayanan (Carnegie Mellon University), Paramvir Bahl (Microsoft Research), Ramon Caceres (AT&T Research), Nigel Davies (Lancaster University) “The Case for VM-based Cloudlets in Mobile Computing”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Real-time dynamic voltage scaling for low-power embedded operating systems",
+   "authors": [
+    "Padmanabhan Pillai",
+    "Kang G. Shin"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2023 Test-of-Time Paper Award: Padmanabhan Pillai and Kang G. Shin “Real-time dynamic voltage scaling for low-power embedded operating systems”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "See through walls with WiFi!",
+   "authors": [
+    "Fadel Adib",
+    "Dina Katabi"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2023 Test-of-Time Paper Award: Fadel Adib and Dina Katabi “See through walls with WiFi!”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Where is the energy spent inside my app?: fine grained energy accounting on smartphones with Eprof",
+   "authors": [
+    "Abhinav Pathak",
+    "Y. Charlie Hu",
+    "Ming Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2023 Test-of-Time Paper Award: Abhinav Pathak, Y. Charlie Hu, and Ming Zhang “Where is the energy spent inside my app?: fine grained energy accounting on smartphones with Eprof”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Agile Application-aware Adaptation for Mobility",
+   "authors": [
+    "Brian D. Noble",
+    "M. Satyanarayanan",
+    "Dushyanth Narayanan",
+    "James Eric Tilton",
+    "Jason Flinn",
+    "Kevin R. Walker"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2024 Test-of-Time Paper Award: Brian D. Noble, M. Satyanarayanan, Dushyanth Narayanan, James Eric Tilton, Jason Flinn, and Kevin R. Walker “Agile Application-aware Adaptation for Mobility”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "ArrayTrack: A Fine-Grained Indoor Location System",
+   "authors": [
+    "Jie Xiong",
+    "Kyle Jamieson"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2024 Test-of-Time Paper Award: Jie Xiong and Kyle Jamieson “ArrayTrack: A Fine-Grained Indoor Location System”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Opportunistic Media Access for Multirate Ad Hoc Networks",
+   "authors": [
+    "Bahar Sadeghi",
+    "Vikram Kanodia",
+    "Ashutosh Sabharwal",
+    "Edward Knightly"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2025 Test-of-Time Paper Award: Bahar Sadeghi, Vikram Kanodia, Ashutosh Sabharwal, and Edward Knightly “Opportunistic Media Access for Multirate Ad Hoc Networks”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Predictable 802.11 Packet Delivery from Wireless Channel Measurements",
+   "authors": [
+    "Daniel Halperin",
+    "Wenjun Hu",
+    "Anmol Sheth",
+    "David Wetherall"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2025 Test-of-Time Paper Award: Daniel Halperin, Wenjun Hu, Anmol Sheth, and David Wetherall “Predictable 802.11 Packet Delivery from Wireless Channel Measurements”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Impact of Interference on Multi-hop Wireless Network Performance",
+   "authors": [
+    "Kamal Jain",
+    "Jitendra Padhye",
+    "Venkata N. Padmanabhan",
+    "Lili Qiu"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2026 Test-of-Time Paper Award: Kamal Jain, Jitendra Padhye, Venkata N. Padmanabhan, and Lili Qiu “Impact of Interference on Multi-hop Wireless Network Performance”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Precise Power Delay Profiling with Commodity WiFi",
+   "authors": [
+    "Yaxiong Xie",
+    "Zhenjiang Li",
+    "Mo Li"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2026 Test-of-Time Paper Award: Yaxiong Xie, Zhenjiang Li, and Mo Li “Precise Power Delay Profiling with Commodity WiFi”"
   },
   {
    "venue": "SIGMOD",
