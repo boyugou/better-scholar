@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4877
+  "count": 4889
  },
  "entries": [
   {
@@ -76217,6 +76217,190 @@
    "paperYear": 2005,
    "source": "https://sigact.org/prizes/stoc_tot.html",
    "evidence": "STOC 2026 Test of Time (20 Years): Omer Reingold, “Undirected ST-connectivity in log-space”, 2005."
+  },
+  {
+   "venue": "TCC",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Physically Observable Cryptography",
+   "authors": [
+    "Silvio Micali",
+    "Leonid Reyzin"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2015 Test of Time Award: Silvio Micali (MIT) and Leonid Reyzin (Boston University) “Physically Observable Cryptography”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Calibrating Noise to Sensitivity in Private Data Analysis",
+   "authors": [
+    "Cynthia Dwork",
+    "Frank McSherry",
+    "Kobbi Nissim",
+    "Adam Smith"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2016 Test of Time Award: Cynthia Dwork (Microsoft Research), Frank McSherry, Kobbi Nissim (Ben-Gurion University), and Adam Smith (Penn State) “Calibrating Noise to Sensitivity in Private Data Analysis”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Indifferentiability, Impossibility Results on Reductions, and Applications to the Random Oracle Methodology",
+   "authors": [
+    "Ueli Maurer",
+    "Renato Renner",
+    "Clemens Holenstein"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2016 Test of Time Award: Ueli Maurer (ETH), Renato Renner (ETH), and Clemens Holenstein “Indifferentiability, Impossibility Results on Reductions, and Applications to the Random Oracle Methodology”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Collision-Resistant Hashing from Worst-Case Assumptions on Cyclic Lattices",
+   "authors": [
+    "Chris Peikert",
+    "Alon Rosen"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2017 Test of Time Award: Chris Peikert (University of Michigan) and Alon Rosen (IDC Herzlia) “Efficient Collision-Resistant Hashing from Worst-Case Assumptions on Cyclic Lattices”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Evaluating 2-DNF Formulas on Ciphertexts",
+   "authors": [
+    "Dan Boneh",
+    "Eu-Jin Goh",
+    "Kobbi Nissim"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2018 Test of Time Award: Dan Boneh, Eu-Jin Goh, and Kobbi Nissim “Evaluating 2-DNF Formulas on Ciphertexts”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Incrementally Verifiable Computation or Proofs of Knowledge Imply Time/Space Efficiency",
+   "authors": [
+    "Paul Valiant"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2019 Test of Time Award: Paul Valiant “Incrementally Verifiable Computation or Proofs of Knowledge Imply Time/Space Efficiency”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Perfectly-Secure MPC with Linear Communication Complexity",
+   "authors": [
+    "Zuzana Trubini",
+    "Martin Hirt"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2020 Test of Time Award: Zuzana Trubini and Martin Hirt “Perfectly-Secure MPC with Linear Communication Complexity”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Keyword Search and Oblivious Pseudorandom Functions",
+   "authors": [
+    "Michael J. Freedman",
+    "Yuval Ishai",
+    "Benny Pinkas",
+    "Omer Reingold"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2021 Test of Time Award: Michael J. Freedman, Yuval Ishai, Benny Pinkas, and Omer Reingold “Keyword Search and Oblivious Pseudorandom Functions”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Perfectly secure oblivious RAM without random oracles",
+   "authors": [
+    "Ivan Damgård",
+    "Sigurd Meldgaard",
+    "Jesper Buus Nielsen"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2022 Test of Time Award: Ivan Damgård, Sigurd Meldgaard, and Jesper Buus Nielsen “Perfectly secure oblivious RAM without random oracles”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Multi-authority Attribute Based Encryption",
+   "authors": [
+    "Melissa Chase"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2023 Test of Time Award: Melissa Chase “Multi-authority Attribute Based Encryption”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Notions of Reducibility between Cryptographic Primitives",
+   "authors": [
+    "Omer Reingold",
+    "Luca Trevisan",
+    "Salil P. Vadhan"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2024 Test of Time Award: Omer Reingold, Luca Trevisan, and Salil P. Vadhan “Notions of Reducibility between Cryptographic Primitives”"
+  },
+  {
+   "venue": "TCC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A modular analysis of the Fujisaki-Okamoto transformation",
+   "authors": [
+    "Dennis Hofheinz",
+    "Kathrin Hövelmanns",
+    "Eike Kiltz"
+   ],
+   "track": "main",
+   "source": "https://www.iacr.org/workshops/tcc/awards.html",
+   "evidence": "TCC 2025 Test of Time Award: Dennis Hofheinz, Kathrin Hövelmanns, and Eike Kiltz “A modular analysis of the Fujisaki-Okamoto transformation”"
   },
   {
    "venue": "TEI",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.5 — 2026-10-12
+
+- The TCC Test of Time Award (2015–2025, 12 papers) from the TCC's own page (`tot.mjs tcc`). The bundled list has 4889 awards.
+
 ## 2.9.4 — 2026-10-12
 
 - The IACR Test of Time Awards for CRYPTO, EUROCRYPT and ASIACRYPT (2019–2026, 27 papers) from IACR's own page (`tot.mjs iacr`); "te" (te Riele) is a name particle.

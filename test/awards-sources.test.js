@@ -1168,3 +1168,16 @@ test("IACR Test of Time page: a year heading, 'From Crypto 2010', a lead paragra
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("TCC Test of Time page: a heading per year, a paragraph per paper (links around the title and the names, affiliations in parentheses)", async () => {
+  const { parseTccTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h4 class="mt-4 mb-1"> 2016 </h4><div><p> <a href="x">Calibrating Noise to Sensitivity in Private Data Analysis</a> by <a href="y">Cynthia Dwork</a> (Microsoft Research), <a>Frank McSherry</a>, and <a>Adam Smith</a> (Penn State)</i>. This paper was published in TCC 2006. The award is given for introducing … </p></div>
+<h4 class="mt-4 mb-1">2015</h4><p class="mb-5"> <a href="z">Physically Observable Cryptography</a> by <a>Silvio Micali</a> (MIT) and <a>Leonid Reyzin</a> (Boston University). This paper was published in TCC 2004. The award is given for pioneering … </p>
+<h2> Award committee members </h2><h4> Mihir Bellare </h4>`;
+  const { entries, skipped } = parseTccTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2016/2006 Calibrating Noise to Sensitivity in Private Data Analysis | Cynthia Dwork; Frank McSherry; Adam Smith",
+    "2015/2004 Physically Observable Cryptography | Silvio Micali; Leonid Reyzin"
+  ]);
+  assert.deepEqual(skipped, []);
+});
