@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.39 — 2026-10-12
+
+- COLT's best, best student and runner-up papers of 2021, 2022 and 2024 (13 papers) from the conference's own "Paper Awards" pages (`tot.mjs colt-year`). The 2023 page is a copy of 2022's, so it is not read. The list has 6320 awards.
+
 ## 2.10.38 — 2026-10-12
 
 - MobiSys 2019's best paper (This is Your President Speaking: Spoofing Alerts in 4G LTE Networks) from the conference's program page (`tot.mjs mobisys-year`). The list has 6307 awards.

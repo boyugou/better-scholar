@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6307
+  "count": 6320
  },
  "entries": [
   {
@@ -38310,6 +38310,199 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10134/33/program",
    "evidence": "CI 2025 program, Honorable Mention: Quo Vadis, HCOMP? A Review of 12 Years of Research at the Frontier of Human Computation and Crowdsourcing — Jonas Oppenlaender, Ujwal Gadiraju, Simo Hosio"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Non-stationary Reinforcement Learning without Prior Knowledge: an Optimal Black-box Approach",
+   "authors": [
+    "Chen-Yu Wei",
+    "Haipeng Luo"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Paper Award: Non-stationary Reinforcement Learning without Prior Knowledge: an Optimal Black-box Approach — Chen-Yu Wei, Haipeng Luo"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Min-Max Complexity of Distributed Stochastic Convex Optimization with Intermittent Communication",
+   "authors": [
+    "Blake E Woodworth",
+    "Brian Bullins",
+    "Ohad Shamir",
+    "Nathan Srebro"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Paper Award: The Min-Max Complexity of Distributed Stochastic Convex Optimization with Intermittent Communication — Blake E Woodworth, Brian Bullins, Ohad Shamir, Nathan Srebro"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Improved Regret for Zeroth-Order Stochastic Convex Bandits",
+   "authors": [
+    "Tor Lattimore",
+    "Andras Gyorgy"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Paper Runner-up: Improved Regret for Zeroth-Order Stochastic Convex Bandits — Tor Lattimore, Andras Gyorgy"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Online Learning with Simple Predictors and a Combinatorial Characterization of Minimax in 0/1 Games",
+   "authors": [
+    "Steve Hanneke",
+    "Roi Livni",
+    "Shay Moran"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Paper Runner-up: Online Learning with Simple Predictors and a Combinatorial Characterization of Minimax in 0/1 Games — Steve Hanneke, Roi Livni, Shay Moran"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Statistical Query Algorithms and Low Degree Tests Are Almost Equivalent",
+   "authors": [
+    "Matthew S Brennan",
+    "Guy Bresler",
+    "Sam Hopkins",
+    "Jerry Li",
+    "Tselil Schramm"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Paper Runner-up: Statistical Query Algorithms and Low Degree Tests Are Almost Equivalent — Matthew S Brennan, Guy Bresler, Sam Hopkins, Jerry Li, Tselil Schramm"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Optimal Dynamic Regret in Exp-Concave Online Learning",
+   "authors": [
+    "Dheeraj Baby",
+    "Yu-Xiang Wang"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Student Paper Award: Optimal Dynamic Regret in Exp-Concave Online Learning — Dheeraj Baby, Yu-Xiang Wang"
+  },
+  {
+   "venue": "COLT",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Stochastic block model entropy and broadcasting on trees with survey",
+   "authors": [
+    "Emmanuel Abbe",
+    "Elisabetta Cornacchia",
+    "Yuzhou Gu",
+    "Yury Polyanskiy"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2021/awards.html",
+   "evidence": "COLT 2021 Best Student Paper Award: Stochastic block model entropy and broadcasting on trees with survey — Emmanuel Abbe, Elisabetta Cornacchia, Yuzhou Gu, Yury Polyanskiy"
+  },
+  {
+   "venue": "COLT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient convex optimization requires superlinear memory",
+   "authors": [
+    "Annie Marsden",
+    "Vatsal Sharan",
+    "Aaron Sidford",
+    "Gregory Valiant"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2022/awards.html",
+   "evidence": "COLT 2022 Best Paper Award: Efficient convex optimization requires superlinear memory — Annie Marsden, Vatsal Sharan, Aaron Sidford, Gregory Valiant"
+  },
+  {
+   "venue": "COLT",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Universal online learning: An optimistically universal learning rule",
+   "authors": [
+    "Moise Blanchard"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2022/awards.html",
+   "evidence": "COLT 2022 Best Paper Runner-up: Universal online learning: An optimistically universal learning rule — Moise Blanchard"
+  },
+  {
+   "venue": "COLT",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "New projection-free algorithms for online convex optimization with adaptive regret guarantees",
+   "authors": [
+    "Ben Kretzu",
+    "Dan Garber"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2022/awards.html",
+   "evidence": "COLT 2022 Best Student Paper Award: New projection-free algorithms for online convex optimization with adaptive regret guarantees — Ben Kretzu, Dan Garber"
+  },
+  {
+   "venue": "COLT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Smoothed Analysis for Learning Concepts with Low Intrinsic Dimension",
+   "authors": [
+    "Gautam Chandrasekaran",
+    "Adam Klivans",
+    "Vasilis Kontonis",
+    "Raghu Meka",
+    "Konstantinos Stavropoulos"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2024/awards.html",
+   "evidence": "COLT 2024 Best Paper Award: Smoothed Analysis for Learning Concepts with Low Intrinsic Dimension — Gautam Chandrasekaran, Adam Klivans, Vasilis Kontonis, Raghu Meka, Konstantinos Stavropoulos"
+  },
+  {
+   "venue": "COLT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Price of Adaptivity in Stochastic Convex Optimization",
+   "authors": [
+    "Yair Carmon",
+    "Oliver Hinder"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2024/awards.html",
+   "evidence": "COLT 2024 Best Paper Award: The Price of Adaptivity in Stochastic Convex Optimization — Yair Carmon, Oliver Hinder"
+  },
+  {
+   "venue": "COLT",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Improved Hardness Results for Learning Intersections of Halfspaces",
+   "authors": [
+    "Stefan Tiegel"
+   ],
+   "track": "main",
+   "source": "https://learningtheory.org/colt2024/awards.html",
+   "evidence": "COLT 2024 Best Student Paper Award: Improved Hardness Results for Learning Intersections of Halfspaces — Stefan Tiegel"
   },
   {
    "venue": "CoNLL",

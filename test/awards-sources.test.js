@@ -1873,3 +1873,11 @@ test("SIGCOMM program page: 'Best Paper:' and 'Best Student Paper:' titles, auth
     "student A Student Systems Paper | Cy Fox"
   ]);
 });
+
+test("COLT awards page: 'Family, Given; …' and 'Given Family; …' author lines, the 2021 'Title, by …' line form, student and runner-up headings", async () => {
+  const { parseColtAwards } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>COLT 2024 - Paper Awards</p><p>Best papers</p><p>A Good Learning Theory Result</p><p>Lee, Ann; Chan, Bo</p><p>Best student paper</p><p>A Student Learning Result</p><p>Dunn, Cy</p><p>Menu</p>`;
+  assert.deepEqual(parseColtAwards(a, "https://learningtheory.org/colt2024/awards.html").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Good Learning Theory Result | Ann Lee; Bo Chan", "student A Student Learning Result | Cy Dunn"]);
+  const b = `<p>COLT 2021 - Paper Awards</p><p>Best papers runners-up</p><p>An Online Learning Result, by Fox, Ed; Gray, Flo</p><p>Menu</p>`;
+  assert.deepEqual(parseColtAwards(b, "https://learningtheory.org/colt2021/awards.html").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["runner-up An Online Learning Result | Ed Fox; Flo Gray"]);
+});
