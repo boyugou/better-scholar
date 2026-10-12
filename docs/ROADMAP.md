@@ -30,6 +30,10 @@ line by line; test it with synthetic pages and a few well-known winners.
 The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no
 official page does is left out. The test-of-time rows whose award page omitted the paper title (NeurIPS 2025, ICML 2022 and 2026) are read now (2.9.39).
 
+*Known gaps, 2026-10-12 (so they are not rediscovered):* MobiCom best papers from 2013 (SIGMOBILE's page was written in 2017 and stops at 2012); IROS (only 2022's conference site is a real page — later years' domains now serve spam or nothing; a past
+conference's own domain must be checked for what it serves before anything is read from it); SC (every page but the current year's answers 403); The Web Conference best papers (one site per year in `archives.iw3c2.org`, each laid out differently);
+SODA, COLT, UbiComp before 2024, ICDM 2025's second runner-up (an author printed with one word). A web search for "<venue> best paper awards list" has found the series' own page twice (ICDM, SIGGRAPH) where menus did not.
+
 ## Tier at publication time
 
 Tiers are those of the current lists. CCF's earlier editions (2012, 2015, 2019, 2022) could be
