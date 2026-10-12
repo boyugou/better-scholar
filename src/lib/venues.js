@@ -207,7 +207,7 @@
     function newSide() {
       // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
       // official name once its boilerplate is dropped ("IEEE International Conference on Data Mining" → "data mining")
-      return { names: new Map(), bare: new Map(), abbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+      return { names: new Map(), bare: new Map(), abbrs: new Map(), weakAbbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
     }
     const push = (map, key, entry) => {
       if (!key) return;
@@ -273,6 +273,10 @@
           entry.extra.push(...a.names);
           register(src, kind, entry, a.names, a.abbrs || [], true);
           if (a.exact) { entry.extra.push(...a.exact); register(src, kind, entry, a.exact, [], true, true); }
+          if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
+            const side = sources[src][kind], k = squash(entry.abbr), list = side.abbrs.get(k);
+            if (list) { const rest = list.filter((e) => e !== entry); if (rest.length) side.abbrs.set(k, rest); else side.abbrs.delete(k); push(side.weakAbbrs, k, entry); }
+          }
           for (const st of a.starts || []) push(sources[src][kind].starts, rawSeq(st).join(" "), entry);
         }
       }
@@ -356,14 +360,20 @@
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
     // leading acronym: "ISCA 2014", "MICRO 2017", "ACL 2015 Proceedings of …", "NDSS 5", "HPCA-16 2010 …"
-    const head = p.withParens.replace(/^[\s,]+/, "").replace(ORG_LEAD, "");
+    const head0 = p.withParens.replace(/^[\s,]+/, "");
+    const head = head0.replace(ORG_LEAD, "");
     const first = head.split(/[\s,]+/)[0] || "";
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
     const looksAcr = /^[A-Za-z][A-Za-z0-9&'’-]{1,14}$/.test(first) &&
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
     const restNoise = canonTokens(rest, "full").length === 0;
     const yearAfter = /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/.test(rest);
-    if (looksAcr && (restNoise || yearAfter)) for (const k of keys(first)) out.push({ key: k, kind: "lead", event: yearAfter });
+    if (looksAcr && (restNoise || yearAfter)) {
+      // "USENIX ATC 2007": with its organisation first ("usenixatc" is the venue; "atc" alone is a trusted-computing conference)
+      const org = head0.length > head.length ? head0.slice(0, head0.length - head.length).trim().split(/[\s/-]+/).filter(Boolean) : [];
+      if (org.length === 1) for (const k of keys(org[0] + first)) out.push({ key: k, kind: "lead", event: yearAfter });
+      for (const k of keys(first)) out.push({ key: k, kind: "lead", event: yearAfter });
+    }
     // the ACM Digital Library's own citation form: "SC18: International Conference for …", "ICSE '06: Proceedings of …", "CHI'09:" —
     // an acronym, a two-digit year and a colon name the event whatever follows
     const acmDl = /^([A-Za-z][A-Za-z0-9&]{1,9})\s*['’]?\s*\d{2}\s*:/.exec(head);
@@ -413,7 +423,8 @@
     const series = /[a-z0-9)] ?[–—−-]{1,2} ?([A-Z][A-Z0-9]{1,9}(?:-[A-Z0-9]{1,6})?)(?:\s+(?:19|20)\d{2}\b|['’]\d{2}\b)/.exec(fold(p.withParens));
     if (series) {
       const k = squash(series[1]);
-      const d = firstHit((side) => side.abbrs.get(k) || side.abbrs.get(stripDigits(k)));
+      // (an acronym that proves nothing on its own is evidence after a dash and in front of a year)
+      const d = firstHit((side) => side.abbrs.get(k) || side.weakAbbrs.get(k) || side.abbrs.get(stripDigits(k)));
       if (d && d !== "ambiguous") return { entry: d, rule: "acronym" };
     }
 

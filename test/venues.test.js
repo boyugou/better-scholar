@@ -646,3 +646,17 @@ test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN Intern
   assert.equal(brief("Proceedings of the seventh ACM SIGACT-SIGMOD-SIGART symposium on Principles …, 1988"), "CCF B PODS · CORE A* PODS");
   assert.equal(brief("Proceedings of the 2024 ACM SIGPLAN International Symposium on Memory …, 2024"), "CORE C ISMM");
 });
+
+test("an acronym two venues share counts only with its name: ACM's SAC is not Selected Areas in Cryptography; 'USENIX ATC' is not the trusted-computing ATC", () => {
+  assert.equal(brief("SAC 3, 1135-1139, 2003"), "", "ACM's Symposium on Applied Computing is not ranked");
+  assert.equal(brief("Selected Areas in Cryptography, 36-55, 2007"), "CCF C SAC · CORE B SAC");
+  assert.equal(brief("Selected Areas in Cryptography--SAC 2015, 21st International Conference …, 2015"), "CCF C SAC · CORE B SAC");
+  assert.equal(brief("USENIX ATC 7, 2007"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
+  assert.equal(brief("2015 USENIX Annual Technical Conference (USENIX ATC 15), 417-429, 2015"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
+});
+
+test("the Autonomous Agents conference and ICMAS are AAMAS's earlier forms; UM and AH are UMAP's", () => {
+  assert.equal(brief("Proceedings of the third annual conference on Autonomous Agents, 69-76, 1999"), "CCF B AAMAS · CORE A AAMAS");
+  assert.equal(brief("Proceedings of the first international conference on Autonomous agents, 228-236, 1997"), "CCF B AAMAS · CORE A AAMAS");
+  assert.equal(brief("International Conference on User Modeling, 178-187, 2003"), "CORE A UMAP");
+});

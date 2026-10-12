@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5.14 — 2026-10-12
+
+Fifteen more real profiles (NLP, networking, software engineering, multi-agent systems, operating systems and storage, information
+retrieval, recommender systems — 1,416 venue strings, now in the test corpora).
+
+- **Acronyms two venues share:** *"SAC 3, 1135-1139, 2003"* (ACM's Symposium on Applied Computing, which neither list ranks) was read as
+  Selected Areas in Cryptography; such an acronym now counts only with its name (alias flag `noBareAcronym`, kept for the series form
+  *"…–SAC 2015"*). *"USENIX ATC 7, 2007"* was read as the trusted-computing ATC (rank C) instead of the USENIX conference (A): the
+  organisation in front of a leading acronym is now tried as part of it first.
+- **Earlier names of AAMAS** (*International Conference on Autonomous Agents*, ICMAS — the 1997–2001 proceedings of the agents community)
+  and of UMAP (*International Conference on User Modeling*, AH).
+
 ## 2.5.13 — 2026-10-12
 
 Twelve more real profiles (databases, vision, security, IoT, algorithmic game theory, cryptography, quantum, type theory — 1,121 venue

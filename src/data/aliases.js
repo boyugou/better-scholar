@@ -11,6 +11,8 @@
 //   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
 //   exact         extra names for whole strings only: the start of a cut-off string is never read as one of them
 //                 (a name that is also the start of other venues' names, "Machine Learning and …")
+//   noBareAcronym the acronym alone proves nothing: another, unranked venue is called the same ("SAC" is also ACM's Symposium on
+//                 Applied Computing) — only the name counts
 //   starts        visible starts of a cut-off string that are read as this venue although other venues begin the same way
 //                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA)
 //   names         extra names; case, punctuation, ordinals, years and words like
@@ -27,6 +29,8 @@
     // ---- machine learning / AI
     { ccf: "NeurIPS", core: "NeurIPS", names: ["Advances in Neural Information Processing Systems", "Neural Information Processing Systems", "NIPS"] },
     { ccf: "AAAI", core: "AAAI", names: ["National Conference on Artificial Intelligence", "AAAI Conference on Artificial Intelligence"] },
+    // AAMAS began in 2002 as the merger of the Autonomous Agents conference, ICMAS and ATAL
+    { ccf: "AAMAS", core: "AAMAS", names: ["International Conference on Autonomous Agents", "International Conference on Multiagent Systems", "International Conference on Multi-Agent Systems"] },
     { ccf: "IJCAI", core: "IJCAI", names: ["International Joint Conference on Artificial Intelligence"] },
     { ccf: "AISTATS", core: "AISTATS", names: ["International Workshop on Artificial Intelligence and Statistics", "Artificial Intelligence and Statistics"] },
     { ccf: "COLT", core: "COLT", names: ["Conference on Learning Theory", "Annual Conference on Learning Theory", "Computational Learning Theory"] },
@@ -85,7 +89,8 @@
     { ccf: "CSCW", core: "CSCW", names: ["ACM Conference on Computer Supported Cooperative Work", "ACM Conference on Computer-Supported Cooperative Work and Social Computing", "Computer Supported Cooperative Work"] },
     // ESWC was the European Semantic Web Conference until 2014; UMAP is spelled "Modeling" by its own publishers (CORE: "Modelling")
     { ccf: "ESWC", core: "ESWC", names: ["European Semantic Web Conference"] },
-    { core: "UMAP", names: ["International Conference on User Modeling, Adaptation, and Personalization"] },
+    // (UM and AH merged into UMAP in 2009)
+    { core: "UMAP", names: ["International Conference on User Modeling, Adaptation, and Personalization", "International Conference on User Modeling", "International Conference on Adaptive Hypermedia and Adaptive Web-Based Systems"] },
     // Hot Chips is one venue under two acronyms (CCF "HOT CHIPS", CORE "HOTCHIPS (HCS)"): not a disagreement between the lists
     { ccf: "HOT CHIPS", core: "HOTCHIPS (HCS)", names: ["Symposium on High Performance Chips"] },
     // more venues the two lists give different acronyms (CSFW was the workshop, CSF is the symposium; CCF has two cloud rows)
@@ -107,7 +112,7 @@
     { ccf: "OSDI", core: "OSDI", names: ["USENIX Symposium on Operating Systems Design and Implementation"] },
     { ccf: "NSDI", names: ["USENIX Symposium on Networked Systems Design and Implementation", "Symposium on Networked Systems Design and Implementation", "Symposium on Network System Design and Implementation"] },
     { ccf: "EuroSys", core: "EuroSys", names: ["European Conference on Computer Systems", "Conference on Computer Systems", "ACM European Conference on Computer Systems"] },
-    { ccf: "ACM SIGOPS ATC", core: "USENIX", names: ["USENIX Annual Technical Conference", "USENIX Technical Conference", "USENIX ATC"] },
+    { ccf: "ACM SIGOPS ATC", core: "USENIX", abbrs: ["USENIX ATC"], names: ["USENIX Annual Technical Conference", "USENIX Technical Conference", "USENIX ATC"] },
     { ccf: "FAST", core: "FAST", names: ["USENIX Conference on File and Storage Technologies"] },
     { ccf: "ASPLOS", core: "ASPLOS", names: ["International Conference on Architectural Support for Programming Languages and Operating Systems"] },
     // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)
@@ -170,6 +175,7 @@
     { ccf: "PASTE", names: ["ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering"] },
     { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
     { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
+    { ccf: "SAC", core: "SAC", noBareAcronym: true, names: ["Selected Areas in Cryptography"] },
     { ccf: "ACISP", names: ["Australasian Conference on Information Security and Privacy"] },
     { ccf: "CT-RSA", core: "CT-RSA", names: ["Cryptographers' Track at the RSA Conference", "Cryptographers' Track at RSA Conference"] },
     // AsiaCCS was the ACM Symposium on Information, Computer and Communications Security (ASIACCS 2006–2010)
