@@ -6647,7 +6647,7 @@
    "year": 2018,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Control Flow-Guided SMT Solving for Program Verification.",
+   "title": "Control Flow-Guided SMT Solving for Program Verification",
    "authors": [
     "Jianhui Chen",
     "Fei He"
@@ -21951,7 +21951,7 @@
    "year": 2022,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "Eyes-Off Your fingers: Gradual Surface Haptic Feedback Improves Eyes-Free Touchscreen Interaction.",
+   "title": "Eyes-Off Your fingers: Gradual Surface Haptic Feedback Improves Eyes-Free Touchscreen Interaction",
    "authors": [
     "Corentin Bernard",
     "Jocelyn Monnoyer",
@@ -23212,7 +23212,7 @@
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper",
-   "title": "Disentangling Fairness Perceptions in Algorithmic Decision-Making: the Effects of Explanations, Human Oversight, and Contestability.",
+   "title": "Disentangling Fairness Perceptions in Algorithmic Decision-Making: the Effects of Explanations, Human Oversight, and Contestability",
    "authors": [
     "Mireia Yurrita",
     "Tim Draws",
@@ -25444,7 +25444,7 @@
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper",
-   "title": "Engaging recently incarcerated and gang affiliated Black and Latino/a young adults in designing social collocated applications for mixed reality smart glasses through community-based participatory design workshops.",
+   "title": "Engaging recently incarcerated and gang affiliated Black and Latino/a young adults in designing social collocated applications for mixed reality smart glasses through community-based participatory design workshops",
    "authors": [
     "Richard Martinez",
     "kurt squire"
@@ -26759,7 +26759,7 @@
    "year": 2024,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "DisplayFab: The State of the Art and a Roadmap in the Personal Fabrication of Free-Form Displays Using Active Materials and Additive Manufacturing.",
+   "title": "DisplayFab: The State of the Art and a Roadmap in the Personal Fabrication of Free-Form Displays Using Active Materials and Additive Manufacturing",
    "authors": [
     "Ollie Hanton",
     "Mike Fraser",
@@ -29458,7 +29458,7 @@
    "year": 2025,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "“It feels like we're not meeting the criteria\": Examining and Mitigating the Cascading Effects of Bias in Automatic Speech Recognition in Spoken Language Interfaces.",
+   "title": "“It feels like we're not meeting the criteria\": Examining and Mitigating the Cascading Effects of Bias in Automatic Speech Recognition in Spoken Language Interfaces",
    "authors": [
     "Kelechi Ezema",
     "Chelsea Chandler",
@@ -45700,7 +45700,7 @@
    "year": 2024,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "Close a door to open a window: Unpacking strategies and know-how in making comfortable.",
+   "title": "Close a door to open a window: Unpacking strategies and know-how in making comfortable",
    "authors": [
     "Piet de Koning",
     "Simone van Wieringen",
@@ -54153,7 +54153,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Transferability Study of Interpolation-Based Hardware Model Checking for Software Verification.",
+   "title": "A Transferability Study of Interpolation-Based Hardware Model Checking for Software Verification",
    "authors": [
     "Dirk Beyer",
     "Po-Chun Chien",
@@ -54169,7 +54169,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Component Security Ten Years Later: An Empirical Study of Cross-Layer Threats in Real-World Mobile Applications.",
+   "title": "Component Security Ten Years Later: An Empirical Study of Cross-Layer Threats in Real-World Mobile Applications",
    "authors": [
     "Keke Lian",
     "Lei Zhang",
@@ -54188,7 +54188,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Fast Graph Simplification for Path-Sensitive Typestate Analysis through Tempo-Spatial Multi-Point Slicing.",
+   "title": "Fast Graph Simplification for Path-Sensitive Typestate Analysis through Tempo-Spatial Multi-Point Slicing",
    "authors": [
     "Xiao Cheng",
     "Jiawei Ren",
@@ -54203,7 +54203,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Improving the Learning of Code Review Successive Tasks with Cross-Task Knowledge Distillation.",
+   "title": "Improving the Learning of Code Review Successive Tasks with Cross-Task Knowledge Distillation",
    "authors": [
     "Oussama Ben Sghaier",
     "Houari Sahraoui"
@@ -54217,7 +54217,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Only diff Is Not Enough: Generating Commit Messages Leveraging Reasoning and Action of Large Language Model.",
+   "title": "Only diff Is Not Enough: Generating Commit Messages Leveraging Reasoning and Action of Large Language Model",
    "authors": [
     "Jiawei Li",
     "David Faragó",
@@ -54233,7 +54233,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "ProveNFix: Temporal Property-Guided Program Repair.",
+   "title": "ProveNFix: Temporal Property-Guided Program Repair",
    "authors": [
     "Yahui Song",
     "Xiang Gao",
@@ -54271,7 +54271,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "TraStrainer: Adaptive Sampling for Distributed Traces with System Runtime State.",
+   "title": "TraStrainer: Adaptive Sampling for Distributed Traces with System Runtime State",
    "authors": [
     "Haiyu Huang",
     "Xiaoyu Zhang",
@@ -70697,7 +70697,7 @@
    "year": 2017,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Faster Mutation Analysis via Equivalence Modulo States.",
+   "title": "Faster Mutation Analysis via Equivalence Modulo States",
    "authors": [
     "Bo Wang",
     "Yingfei Xiong",
@@ -70714,7 +70714,7 @@
    "year": 2017,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Just-in-Time Static Analysis.",
+   "title": "Just-in-Time Static Analysis",
    "authors": [
     "Lisa Nguyen Quang Do",
     "Karim Ali",
@@ -71027,7 +71027,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "AI Coders Are among Us: Rethinking Programming Language Grammar towards Efficient Code Generation.",
+   "title": "AI Coders Are among Us: Rethinking Programming Language Grammar towards Efficient Code Generation",
    "authors": [
     "Zhensu Sun",
     "Xiaoning Du",
@@ -71044,7 +71044,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "An In-Depth Study of Runtime Verification Overheads during Software Testing.",
+   "title": "An In-Depth Study of Runtime Verification Overheads during Software Testing",
    "authors": [
     "Kevin Guan",
     "Owolabi Legunsen"
@@ -71058,7 +71058,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "AsFuzzer: Differential Testing of Assemblers with Error-Driven Grammar Inference.",
+   "title": "AsFuzzer: Differential Testing of Assemblers with Error-Driven Grammar Inference",
    "authors": [
     "Hyungseok Kim",
     "Soomin Kim",
@@ -71074,7 +71074,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Identifying Smart Contract Security Issues in Code Snippets from Stack Overflow.",
+   "title": "Identifying Smart Contract Security Issues in Code Snippets from Stack Overflow",
    "authors": [
     "Jiachi Chen",
     "Chong Chen",
@@ -71111,7 +71111,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Multi-modal Learning for WebAssembly Reverse Engineering.",
+   "title": "Multi-modal Learning for WebAssembly Reverse Engineering",
    "authors": [
     "Hanxian Huang",
     "Jishen Zhao"
@@ -71125,7 +71125,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "One Size Does Not Fit All: Multi-granularity Patch Generation for Better Automated Program Repair.",
+   "title": "One Size Does Not Fit All: Multi-granularity Patch Generation for Better Automated Program Repair",
    "authors": [
     "Bo Lin",
     "Shangwen Wang",
@@ -71142,7 +71142,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Precise Compositional Buffer Overflow Detection via Heap Disjointness.",
+   "title": "Precise Compositional Buffer Overflow Detection via Heap Disjointness",
    "authors": [
     "Yiyuan Guo",
     "Peisen Yao",
@@ -71157,7 +71157,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "When to Stop? Towards Efficient Code Generation in LLMs with Excess Token Prevention.",
+   "title": "When to Stop? Towards Efficient Code Generation in LLMs with Excess Token Prevention",
    "authors": [
     "Lianghong Guo",
     "Yanlin Wang",
@@ -77702,7 +77702,7 @@
    "year": 2022,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Accelerating similarity-based model matching using on-the-fly similarity preserving hashing.",
+   "title": "Accelerating similarity-based model matching using on-the-fly similarity preserving hashing",
    "authors": [
     "Xiao He",
     "Letian Tang",
@@ -77717,7 +77717,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "AI-Driven Consistency of SysML Diagrams.",
+   "title": "AI-Driven Consistency of SysML Diagrams",
    "authors": [
     "Ludovic Apvrille",
     "Bastien Sultan"
@@ -77731,7 +77731,7 @@
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Mutation Testing of Java Bytecode: A Model-Driven Approach.",
+   "title": "Mutation Testing of Java Bytecode: A Model-Driven Approach",
    "authors": [
     "Christoph Bockisch",
     "Deniz Eren",
@@ -77764,7 +77764,7 @@
    "year": 2025,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Does Functional Package Management Enable Reproducible Builds at Scale? Yes.",
+   "title": "Does Functional Package Management Enable Reproducible Builds at Scale? Yes",
    "authors": [
     "Julien Malka",
     "Stefano Zacchiroli",
@@ -90039,7 +90039,7 @@
    "year": 2000,
    "award": "best",
    "awardLabel": "Best Paper",
-   "title": "IR evaluation methods for retrieving highly relevant documents.",
+   "title": "IR evaluation methods for retrieving highly relevant documents",
    "authors": [
     "Kalervo Järvelin",
     "Jaana Kekäläinen"
@@ -90053,7 +90053,7 @@
    "year": 2000,
    "award": "student",
    "awardLabel": "Best Student Paper",
-   "title": "Link-based and content-based evidential information in a belief network model.",
+   "title": "Link-based and content-based evidential information in a belief network model",
    "authors": [
     "Ilmerio Reis da Silva",
     "Berthier Ribeiro-Neto",

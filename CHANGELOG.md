@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.43 — 2026-10-12
+
+- The 30 award titles that kept a sentence full stop from the page they were read from ("… Program Repair.") lose it, and `merge-raw` now strips it; matching was never affected, the tooltip text is cleaner.
+
 ## 2.10.42 — 2026-10-12
 
 - RSS 2025's four outstanding paper awards (paper, systems, student, demo) from the conference's awards page, where a "Winner:" line follows the winning finalist (`tot.mjs rss-year`). The list has 6335 awards.

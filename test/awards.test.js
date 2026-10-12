@@ -431,3 +431,8 @@ test("a misspelt title on an official page is put right (CC 2011: partitionic / 
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   assert.equal(idx.lookup({ title: "A Static Task Partitioning Approach for Heterogeneous Systems Using OpenCL", authorsText: "D Grewe, M O'Boyle" }).some((m) => m.venue === "CC" && m.year === 2011), true);
 });
+
+test("the bundled list: no title ends in a sentence full stop some pages leave after it", () => {
+  const bad = data.entries.filter((e) => /[^.]\.$/.test(e.title)).map((e) => `${e.venue} ${e.year} ${e.title}`);
+  assert.deepEqual(bad, []);
+});

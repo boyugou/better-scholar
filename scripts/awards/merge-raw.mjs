@@ -88,6 +88,7 @@ for (const file of files) {
 const NOT_A_NAME = /\[node:|^and\s|\b(?:University|Universit[a-zé]\w*|Institute|Institut|Laborator(?:y|ies)|Department|College|School of|Corporation)\b|\bInc\.?$/i;
 let cleaned = 0;
 for (const e of accepted.values()) {
+  if (/[^.]\.$/.test(e.title)) { e.title = e.title.slice(0, -1); cleaned++; }                // a sentence full stop some pages leave after the title
   if (/&[a-z#0-9]+;/i.test(e.title + e.evidence)) { e.title = decode(e.title); e.evidence = decode(e.evidence); cleaned++; }
   const keep = [];
   for (const a of e.authors) if (!NOT_A_NAME.test(a) && !keep.includes(a)) keep.push(a);
