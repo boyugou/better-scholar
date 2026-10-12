@@ -1705,3 +1705,18 @@ test("ACM SIGGRAPH blog posts: Best Papers / Honorable Mentions / Test-of-Time A
     "2022 tot 2014 Embree:  | Ingo Wald; Sven Woop; Gregory S. Johnson; Manfred Ernst"
   ]);
 });
+
+test("SIGMOBILE's MobiCom page: a best paper list and a best student paper list, 'YYYYTitle' lines (the year runs into the title) and authors with bracketed affiliations", async () => {
+  const { parseMobicomBest } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>Past Recipients of the Mobicom Best Paper Award</p><p>Past Recipients of the MobiCom Best Student Paper Awards</p><h3>Past Recipients of the Mobicom Best Paper Award</h3>
+<p>2011E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks</p><p>Xinyu Zhang (University of Michigan-Ann Arbor, USA) and Kang G. Shin (University of Michigan-Ann Arbor, USA)</p>
+<p>2010The κ factor: inferring protocol performance using inter-link reception correlation,</p><p>Kannan Srinivasan (Stanford University), Mayank Jain (Stanford University), Phil Levis (Stanford University)</p>
+<h3>Past Recipients of the MobiCom Best Student Paper Awards</h3><p>2007Crossing Over the Bounded Domain: From Exponential to Power-law Inter-meeting Time in MANET</p><p>Han Cai and Do Young Eun (North Carolina State University)</p><p>Nomination Process</p>`;
+  const { entries, skipped } = parseMobicomBest(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 10)} | ${e.authors.join("; ")}`), [
+    "2011 best E-MiLi: En | Xinyu Zhang; Kang G. Shin",
+    "2010 best The κ fact | Kannan Srinivasan; Mayank Jain; Phil Levis",
+    "2007 student Crossing O | Han Cai; Do Young Eun"
+  ]);
+  assert.deepEqual(skipped, []);
+});

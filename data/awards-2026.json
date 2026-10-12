@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6193
+  "count": 6211
  },
  "entries": [
   {
@@ -75347,6 +75347,299 @@
    "paperYear": 2007,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2025 Test of Time Award: MICRO 2007: Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0 — Naveen Muralimanohar, Rajeev Balasubramonian, Norman P. Jouppi"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 1995,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Improving TCP/IP Performance over Wireless Networks",
+   "authors": [
+    "Hari Balakrishnan",
+    "Srinivasan Seshan",
+    "Elan Amir",
+    "Randy H. Katz"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 1995: Improving TCP/IP Performance over Wireless Networks — Hari Balakrishnan, Srinivasan Seshan, Elan Amir and Randy H. Katz (University of California, Berkeley, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 1997,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Composable Ad-Hoc Mobile Services for Universal Interaction",
+   "authors": [
+    "Todd D. Hodes",
+    "Randy H. Katz",
+    "Edouard Servan-Scheriber",
+    "Lawrence Rowe"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 1997: Composable Ad-Hoc Mobile Services for Universal Interaction — Todd D. Hodes, Randy H. Katz, Edouard Servan-Scheriber and Lawrence Rowe (University of California, Berkeley, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 1998,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Location-Aided Routing (LAR) in Mobile Ad-Hoc Networks",
+   "authors": [
+    "Young-Bae Ko",
+    "Nitin H. Vaidya"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 1998: Location-Aided Routing (LAR) in Mobile Ad-Hoc Networks — Young-Bae Ko and Nitin H. Vaidya (Texas A&M University, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 1999,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "LeZi-Update: An Information-Theoretic Approach to Track Mobile Users in PCS Networks",
+   "authors": [
+    "Amiya Bhattacharya",
+    "Sajal K. Das"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 1999: LeZi-Update: An Information-Theoretic Approach to Track Mobile Users in PCS Networks — Amiya Bhattacharya and Sajal K. Das (University of North Texas, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2000,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "A Unified Header Compression Framework for Low-Bandwidth Links",
+   "authors": [
+    "Jeremy Lilley",
+    "Jason Yang",
+    "Hari Balakrishnan",
+    "Srinivasan Seshan"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2000: A Unified Header Compression Framework for Low-Bandwidth Links — Jeremy Lilley, Jason Yang, Hari Balakrishnan (MIT, USA) and Srinivasan Seshan (IBM T.J. Watson Research Center, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2001,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Exposure In Wireless Ad Hoc Sensor Networks",
+   "authors": [
+    "Seapahn Meguerdichian",
+    "Farinaz Koushanfar",
+    "Gang Qu",
+    "Miodrag Potkonjak"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2001: Exposure In Wireless Ad Hoc Sensor Networks — Seapahn Meguerdichian (University of California, Los Angeles), Farinaz Koushanfar (University of California, Berkeley), Gang Qu (University of Maryland), Miodrag Potkonjak (University of California, Los Angeles)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Zero-Interaction Authentication",
+   "authors": [
+    "Mark Corner",
+    "Brian Noble"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2002: Zero-Interaction Authentication — Mark Corner and Brian Noble (University of Michigan, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2003,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "A Receiver-Centric Transport Protocol for Mobile Hosts with Heterogeneous Wireless Interfaces",
+   "authors": [
+    "Hung-Yun Hsieh",
+    "Kyu-Han Kim",
+    "Yujie Zhu",
+    "Raghupathy Sivakumar"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2003: A Receiver-Centric Transport Protocol for Mobile Hosts with Heterogeneous Wireless Interfaces — Hung-Yun Hsieh, Kyu-Han Kim, Yujie Zhu, and Raghupathy Sivakumar (Georgia Tech, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "MobiDesk: Mobile Virtual Desktop Computing",
+   "authors": [
+    "Ricardo A. Baratto",
+    "Shaya Potter",
+    "Gong Su",
+    "Jason Nieh"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2004: MobiDesk: Mobile Virtual Desktop Computing — Ricardo A. Baratto, Shaya Potter, Gong Su, Jason Nieh (Columbia University, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Architecture and Evaluation of an Unplanned 802.11b Mesh Network",
+   "authors": [
+    "John Bicket",
+    "Daniel Aguayo",
+    "Sanjit Biswas",
+    "Robert Morris"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2005: Architecture and Evaluation of an Unplanned 802.11b Mesh Network — John Bicket, Daniel Aguayo, Sanjit Biswas, and Robert Morris (Massachusetts Institute of Technology, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "A Measurement Study of Vehicular Internet Access Using In Situ Wi-Fi Networks",
+   "authors": [
+    "Vladimir Bychkovsky",
+    "Bret Hull",
+    "Allen K. Miu",
+    "Hari Balakrishnan",
+    "Samuel Madden"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2006: A Measurement Study of Vehicular Internet Access Using In Situ Wi-Fi Networks — Vladimir Bychkovsky, Bret Hull, Allen K. Miu, Hari Balakrishnan, Samuel Madden (Massachusetts Institute of Technology, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "MobiCom Best Student Paper Award",
+   "title": "Crossing Over the Bounded Domain: From Exponential to Power-law Inter-meeting Time in MANET",
+   "authors": [
+    "Han Cai",
+    "Do Young Eun"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Student Paper Award 2007: Crossing Over the Bounded Domain: From Exponential to Power-law Inter-meeting Time in MANET — Han Cai and Do Young Eun (North Carolina State University)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "Assessment of Urban-Scale Wireless Networks with a Small Number of Measurements",
+   "authors": [
+    "Joshua Robinson",
+    "Ram Swaminathan",
+    "Edward W. Knightly"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2008: Assessment of Urban-Scale Wireless Networks with a Small Number of Measurements — Joshua Robinson (Rice University), Ram Swaminathan (HP Labs), and Edward W. Knightly (Rice University)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "CENTAUR: Realizing the Full Potential of Centralized WLANs through a Hybrid Data Path",
+   "authors": [
+    "Vivek Shrivastava",
+    "Nabeel Ahmed",
+    "Shravan Rayanchu",
+    "Suman Banerjee",
+    "Srinivasan Keshav",
+    "Konstantina Papagiannaki",
+    "Arunesh Mishra"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2009: CENTAUR: Realizing the Full Potential of Centralized WLANs through a Hybrid Data Path — Vivek Shrivastava(University of Wisconsin), Nabeel Ahmed (University of Waterloo), Shravan Rayanchu (University of Wisconsin), Suman Banerjee (University of Wisconsin), Srinivasan Keshav (University of Waterloo), Konstantina Papagiannaki (Intel Labs), and Arunesh Mishra (Google Inc.)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "The κ factor: inferring protocol performance using inter-link reception correlation",
+   "authors": [
+    "Kannan Srinivasan",
+    "Mayank Jain",
+    "Jung Il Choi",
+    "Tahir Azim",
+    "Edward S. Kim",
+    "Philip Levis",
+    "Bhaskar Krishnamachari"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2010: The κ factor: inferring protocol performance using inter-link reception correlation — Kannan Srinivasan (Stanford University), Mayank Jain (Stanford University), Jung Il Choi (Stanford University), Tahir Azim (Stanford University), Edward S. Kim (University of Southern California), Philip Levis (Stanford University), and Bhaskar Krishnamachari (University of Southern California)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "Detecting Driver Phone Use Leveraging Car Speakers",
+   "authors": [
+    "Jie Yang",
+    "Simon Sdhom",
+    "Gayathri Chandrasekaran",
+    "Tam Vu",
+    "Hongbo Liu",
+    "Nicolae Cecan",
+    "Yingying Chen",
+    "Marco Gruteser",
+    "Richard P. Martin"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2011: Detecting Driver Phone Use Leveraging Car Speakers — Jie Yang (Stevens Institute of Technology, USA), Simon Sdhom (Stevens Institute of Technology, USA), Gayathri Chandrasekaran (Rutgers University, USA), Tam Vu (Stevens Institute of Technology, USA), Hongbo Liu (Stevens Institute of Technology, USA), Nicolae Cecan (Rutgers University, USA), Yingying Chen (Stevens Institute of Technology, USA), Marco Gruteser (Rutgers University, USA), and Richard P. Martin (Rutgers University, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks",
+   "authors": [
+    "Xinyu Zhang",
+    "Kang G. Shin"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2011: E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks — Xinyu Zhang (University of Michigan-Ann Arbor, USA) and Kang G. Shin (University of Michigan-Ann Arbor, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "MobiCom Best Paper Award",
+   "title": "Distinguishing Users with Capacitative Touch Communication",
+   "authors": [
+    "Tam Vu",
+    "Akash Baid",
+    "Simon Gao",
+    "Marco Gruteser",
+    "Richard Howard",
+    "Janne Lindqvist",
+    "Predag Spasojevic",
+    "Jeffrey Walling"
+   ],
+   "track": "main",
+   "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
+   "evidence": "MobiCom Best Paper Award 2012: Distinguishing Users with Capacitative Touch Communication — Tam Vu (Rutgers University, USA), Akash Baid (Rutgers University, USA), Simon Gao (Rutgers University, USA), Marco Gruteser (Rutgers University, USA), Richard Howard (Rutgers University, USA), Janne Lindqvist (Rutgers University, USA), Predag Spasojevic (Rutgers University, USA) and Jeffrey Walling (Rutgers University, USA)"
   },
   {
    "venue": "MobileHCI",

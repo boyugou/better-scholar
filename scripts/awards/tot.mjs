@@ -126,6 +126,7 @@ const PAGES = {
   dac: "https://www.dac.com/2027/dac-most-influential-papers-award",
   ubicomp: "https://ubicomp.org/ubicomp-iswc-2025/awards/",
   icdm: "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+  mobicom: "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
   siggraph: "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
   "icml-tot-2021": "https://icml.cc/virtual/2021/test-of-time/11808",
   "nips-book-2018": "https://media.nips.cc/Conferences/NIPS2018/NIPS-2018-Conference-Book.pdf",
@@ -1347,6 +1348,27 @@ export function parseSiggraphAwards(html, source = PAGES.siggraph) {
   return { entries, skipped };
 }
 
+// SIGMOBILE's "Past Recipients of the MobiCom Best Paper Award" page (beta.sigmobile.org/articles/mobicom-best-paper-award; written in 2017, so it stops at 2012): two lists, the Best Paper Award (2008–2012) and the
+// Best Student Paper Awards (1995–2007); per paper a line "2011E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks" (the year runs into the title) and a line of authors with their affiliations in brackets.
+export function parseMobicomBest(html, source = PAGES.mobicom) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  let section = null;
+  for (let i = 0; i < ls.length; i++) {
+    const l = ls[i];
+    if (/^Past Recipients of the MobiCom Best Paper Award$/i.test(l)) { section = ["best", "MobiCom Best Paper Award"]; continue; }
+    if (/^Past Recipients of the MobiCom Best Student Paper Awards?$/i.test(l)) { section = ["student", "MobiCom Best Student Paper Award"]; continue; }
+    if (/^Nomination Process$/i.test(l) && section && i > 20) break;
+    const m = /^((?:19|20)\d{2})\s*(\S.+)$/.exec(l);
+    if (!section || !m) continue;
+    const who = kddAuthors(ls[i + 1] || ""), title = cleanTitle(m[2].replace(/[,\s]+$/, ""));
+    if (who.length && title.length >= 8) entries.push({ venue: "MobiCom", year: parseInt(m[1], 10), award: section[0], awardLabel: section[1], title, authors: who, track: "main", source, evidence: `${section[1]} ${m[1]}: ${title} — ${ls[i + 1]}` });
+    else skipped.push(`${m[1]}: not read: ${title.slice(0, 50)} / ${(ls[i + 1] || "").slice(0, 50)}`);
+    i += 1;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -1402,7 +1424,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);

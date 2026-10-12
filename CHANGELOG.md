@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.12 — 2026-10-12
+
+- The MobiCom best paper awards 2008–2012 and best student paper awards 1995–2007 (17 papers: Improving TCP/IP Performance over Wireless Networks, Location-Aided Routing, Exposure in Wireless Ad Hoc Sensor Networks, …) from SIGMOBILE's own page (`tot.mjs mobicom`);
+  the page was written in 2017, so 2013 on is not covered. The list has 6211 awards.
+
 ## 2.10.11 — 2026-10-12
 
 - ICDM 2009's six papers (authors and title run together in one paragraph after each category) and 2008's two application papers (the title wraps over three lines): ICDM is complete from 2001 to 2025 now, bar one row whose author list has a single-word name. The list has 6193 awards.
