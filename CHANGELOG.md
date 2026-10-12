@@ -3,7 +3,7 @@
 ## 2.5.0 — 2026-10-12
 
 - **A profile name written surname first is read the other way round, automatically.** Of 22 real public profiles the owner was found
-  in nearly every paper on 20; on the two Chinese-name profiles whose header reads `Tang Jie` / `Huang Xuanjing (黄萱菁）` — the papers
+  in nearly every paper on 20; on the two Chinese-name profiles whose header reads `Tang Jie` / `Huang Xuanjing (黄萱菁)` — the papers
   print `J Tang`, `X Huang` — in none. The panel then said "73 papers where the profile name is not in the author list" and
   every role was blank until the owner typed a spelling. Now, when the name as printed finds the owner in under 10% of at least
   8 rows and the reversed order in at least four times as many (and a quarter of all rows), the reversed order is used at once
