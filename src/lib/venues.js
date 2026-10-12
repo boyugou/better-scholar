@@ -381,7 +381,9 @@
     // journal IoT: parts are looked up among conferences only)
     for (let m; (m = reParen.exec(p.withParens.replace(SIG_CHAIN, " "))); ) {
       const g = m[1], parts = g.split(/[-–/,;]+/);
-      for (const part of parts) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren", part: parts.length > 1 });
+      // (a place in the parenthesis — "(Cambridge, Mass.)", "(College Park, Md.)" — is no acronym: the abbreviation of a state, written as a word, not in capitals)
+      const PLACE_ABBR = /^(?:Mass|Md|Mich|Minn|Miss|Mo|Mont|Penn|Pa|Ill|Ind|Calif|Cal|Conn|Del|Fla|Ga|Ariz|Ark|Colo|Kan|Kans|Ky|La|Me|Neb|Nev|Okla|Ore|Tenn|Tex|Va|Vt|Wash|Wis|Wyo)\.?$/;
+      for (const part of parts) if (!(PLACE_ABBR.test(part.trim()) && part.trim() !== part.trim().toUpperCase())) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren", part: parts.length > 1 });
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
     const placed = PLACED.test(p.withParens);

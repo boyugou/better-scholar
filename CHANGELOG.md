@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.9.18 — 2026-10-12
+
+- *Cell (Cambridge, Mass.)* and *MIT Press (Cambridge, Mass.)* were drawn as the IEEE MASS conference: "Mass." in a parenthesis, the abbreviation of a state, was read as the acronym MASS. A
+  state's abbreviation written as a word (*Mass.*, *Md.*, *Calif.* …) is no acronym; *(MASS)* in capitals still is. Found by running the alternate titles of the 3,700 most-cited journals
+  (OpenAlex) through the matcher.
+
 ## 2.9.17 — 2026-10-12
 
 - The three misreadings recorded in 2.9.14 are fixed, and so are a dozen more of the same kind, with a short curated list (`aliases.js`, `shadow`): acronyms of events whose names boil down to the

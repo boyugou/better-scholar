@@ -501,6 +501,14 @@ test("an unranked event named by its own acronym gets no badge from the ranked v
   assert.equal(brief("International Conference on Image and Signal Processing (ICISP)"), "CORE C ICISP");
 });
 
+test("a place in a parenthesis is no acronym: '(Cambridge, Mass.)' is not the IEEE MASS conference", () => {
+  assert.equal(brief("Cell (Cambridge, Mass.)"), "");
+  assert.equal(brief("MIT Press (Cambridge, Mass.)"), "");
+  assert.equal(brief("Science (New York, N.Y.)"), "");
+  assert.equal(brief("IEEE International Conference on Mobile Ad Hoc and Sensor Systems (MASS)"), "CCF C MASS · CORE B MASS");
+  assert.equal(brief("MASS 2019"), "CCF C MASS · CORE B MASS");
+});
+
 test("names that only look like a venue: 'International Security', 'Journal', 'Journal of Knowledge Management', and an ICTIR that carries SIGIR's name", () => {
   // a political-science journal is not the USENIX Security Symposium; a bare "Journal" is not the Journal of the ACM
   assert.equal(brief("International Security"), "");
