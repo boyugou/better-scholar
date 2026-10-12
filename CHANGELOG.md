@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.6 — 2026-10-12
+
+- The year drop-down no longer closes when its own list scrolls (arrow keys, End or a long list of years); only a scroll of the page behind it closes it. A keyboard check (open, End, Escape, focus back on the button) joins the end-to-end test.
+
 ## 2.10.5 — 2026-10-12
 
 - Two shortcuts under the summary panel's switches: "Compact: filters and citation totals only" (the leanest panel) and "Everything".

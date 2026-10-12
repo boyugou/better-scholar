@@ -243,7 +243,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.check('input[data-act="only"]');
     assert.equal(await visibleRows(page), all.filter((p) => p.highlighted).length);
     await page.uncheck('input[data-act="only"]');
-    ok("year filter and 'only highlighted' hide the right rows");
+    // the year list is a keyboard-operable drop-down: arrow keys move, End scrolls a long list without closing it, Escape closes and returns focus to the button
+    await page.click('#rr-panel button[data-act="year-end"]');
+    assert.equal(await page.getAttribute('#rr-panel button[data-act="year-end"]', "aria-expanded"), "true");
+    await page.keyboard.press("End");
+    await page.waitForTimeout(150);
+    assert.equal(await page.getAttribute('#rr-panel button[data-act="year-end"]', "aria-expanded"), "true", "scrolling the list does not close it");
+    assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.textContent), String(years[years.length - 1]));
+    await page.keyboard.press("Escape");
+    assert.equal(await page.getAttribute('#rr-panel button[data-act="year-end"]', "aria-expanded"), "false");
+    assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.dataset.act), "year-end");
+    ok("year filter and 'only highlighted' hide the right rows; the year list works from the keyboard");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");

@@ -34,9 +34,10 @@
     const close = (back) => {
       if (!open) return;
       open = false; list.hidden = true; el.setAttribute("aria-expanded", "false");
-      document.removeEventListener("pointerdown", outside, true); window.removeEventListener("resize", close); window.removeEventListener("scroll", close, true);
+      document.removeEventListener("pointerdown", outside, true); window.removeEventListener("resize", close); window.removeEventListener("scroll", onScroll, true);
       if (back) el.focus();
     };
+    const onScroll = (e) => { if (!list.contains(e.target)) close(false); };          // (scrolling the list itself — arrow keys on a long one — must not close it)
     const outside = (e) => { if (!list.contains(e.target) && !el.contains(e.target)) close(false); };
     const show = () => {
       if (open || !options.length) return;
@@ -46,7 +47,7 @@
       list.style.left = Math.min(r.left, Math.max(8, window.innerWidth - 120)) + "px";
       list.style.maxHeight = Math.max(120, Math.min(260, up ? r.top - 12 : room)) + "px";
       if (up) { list.style.top = ""; list.style.bottom = (window.innerHeight - r.top + 4) + "px"; } else { list.style.bottom = ""; list.style.top = (r.bottom + 4) + "px"; }
-      document.addEventListener("pointerdown", outside, true); window.addEventListener("resize", close); window.addEventListener("scroll", close, true);
+      document.addEventListener("pointerdown", outside, true); window.addEventListener("resize", close); window.addEventListener("scroll", onScroll, true);
       focusItem(Math.max(0, options.findIndex((o) => o.value === value)));
     };
     const choose = (i) => { const o = options[i]; if (!o) return; const changed = o.value !== value; value = o.value; draw(); close(true); if (changed) onChange(value); };
