@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 435
+  "count": 438
  },
  "entries": [
   {
@@ -4067,6 +4067,20 @@
    "year": 2024,
    "award": "runner-up",
    "awardLabel": "Best Paper Honorable Mention",
+   "title": "Concept Arithmetics for Circumventing Concept Inhibition in Diffusion Models",
+   "authors": [
+    "Vitali Petsiuk",
+    "Kate Saenko"
+   ],
+   "track": "main",
+   "source": "https://eccv.ecva.net/Conferences/2024/Awards",
+   "evidence": "Concept Arithmetics for Circumventing Concept Inhibition in Diffusion Models — Best Paper Honorable Mention"
+  },
+  {
+   "venue": "ECCV",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
    "title": "Rasterized Edge Gradients: Handling Discontinuities Differentially",
    "authors": [
     "Stanislav Pidhorskyi",
@@ -4820,6 +4834,36 @@
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.154/",
    "evidence": "Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values? — Outstanding Paper"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks",
+   "authors": [
+    "Yikang Shen",
+    "Shawn Tan",
+    "Alessandro Sordoni",
+    "Aaron Courville"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/Conferences/2019/Awards",
+   "evidence": "Ordered Neurons: Integrating Tree Structures into Recurrent Neural Networks — Best Paper Awards"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Awards",
+   "title": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks",
+   "authors": [
+    "Jonathan Frankle",
+    "Michael Carbin"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/Conferences/2019/Awards",
+   "evidence": "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks — Best Paper Awards"
   },
   {
    "venue": "ICLR",

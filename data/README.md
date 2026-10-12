@@ -85,12 +85,12 @@ Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
 
 | | |
 |---|---|
-| Entries | 435: ACL 2019–2026 (8 yrs); CVPR 2025–2025 (1 yr); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 2024–2024 (1 yr); EMNLP 2019–2025 (4 yrs); ICLR 2022–2024 (3 yrs); ICML 2019–2026 (8 yrs); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
+| Entries | 438: ACL 2019–2026 (8 yrs); CVPR 2025–2025 (1 yr); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 2024–2024 (1 yr); EMNLP 2019–2025 (4 yrs); ICLR 2019–2024 (4 yrs); ICML 2019–2026 (8 yrs); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
 | Kinds | `best`, `outstanding`, `distinguished`, `runner-up`, `student`, `category` (a named category such as *Best Resource Paper* or *Best Theme Paper*, shown under its printed name), `tot` (test of time) |
 | Source | **Official pages only.** Each entry has `source` (the page it was read from) and `evidence` (a quoted snippet that contains the title). Aggregator lists and Wikipedia are never a source |
 | ACL family | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0): the `<award name="…"/>` element on each paper, read by `scripts/awards/anthology.mjs`. Only years and venues the Anthology records are present |
 | ICLR, NeurIPS, ICML | each conference's own awards page on its virtual site (`/virtual/<year>/awards_detail`), read by `scripts/awards/virtual-site.mjs` with `scripts/awards/parse-virtual.mjs`. ICML 2023 also from its official awards page (`icml.cc/Conferences/2023/Awards`), which lists six outstanding papers. Where a virtual page is incomplete, the missing paper is added only when an official page names it |
-| CVPR 2025, ECCV 2024 | the conferences' own best-paper pages (`cvpr.thecvf.com/Conferences/2025/BestPapersDemos`, `eccv.ecva.net/Conferences/2024/Awards`), read by `parsePaperAwardPage` |
+| CVPR 2025, ECCV 2024, ICLR 2019 | the conferences' own best-paper pages (`cvpr.thecvf.com/Conferences/2025/BestPapersDemos`, `eccv.ecva.net/Conferences/2024/Awards`, `iclr.cc/Conferences/2019/Awards`), read by `parsePaperAwardPage` |
 
 Matching in the extension is deliberately strict (`src/lib/awards.js`): the full title must be identical
 (ignoring case, accents and punctuation) **and** the award's first author must be among the paper's authors.

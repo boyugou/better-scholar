@@ -79,7 +79,8 @@ for (const site of SITES) {
 const OFFICIAL = [
   { venue: "ICML", years: YEARS, page: (y) => `https://icml.cc/Conferences/${y}/Awards`, parse: parseRecipientsPage },
   { venue: "CVPR", years: [2025], page: (y) => `https://cvpr.thecvf.com/Conferences/${y}/BestPapersDemos`, parse: parsePaperAwardPage },
-  { venue: "ECCV", years: [2024], page: (y) => `https://eccv.ecva.net/Conferences/${y}/Awards`, parse: parsePaperAwardPage }
+  { venue: "ECCV", years: [2024], page: (y) => `https://eccv.ecva.net/Conferences/${y}/Awards`, parse: parsePaperAwardPage },
+  { venue: "ICLR", years: [2019], page: (y) => `https://iclr.cc/Conferences/${y}/Awards`, parse: parsePaperAwardPage }
 ];
 for (const src of OFFICIAL) {
   for (const year of src.years) {

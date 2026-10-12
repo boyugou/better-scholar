@@ -133,7 +133,9 @@ export function parseRecipientsPage(html, { venue, year, source }) {
 // followed by the title and the author list (ECCV: "Best Paper", "Best Paper Honorable Mention"), or
 // "Best Paper:" / "Paper Name: …" / "Authors: …" with wrapped author lines (CVPR). A heading is accepted only when
 // a title and an author list follow it, so navigation text that happens to match is ignored.
-const AWARD_HEADING = /^(Best (?:Student )?Paper(?: Honorable Mention| Runner-?up)?|Outstanding Paper(?: Honorable Mention)?)\s*:?\s*(?:ID:\s*\d+)?\s*:?\s*$/i;
+const AWARD_HEADING = /^(Best (?:Student )?Papers?(?: Honorable Mention| Runner-?up)?(?: Awards?)?|Outstanding Papers?(?: Honorable Mention)?(?: Awards?)?)\s*:?\s*(?:ID:\s*\d+)?\s*:?\s*$/i;
+// a candidate or finalist section heading ('Award Candidate') is not a title, and neither is a line ending in ':'
+const isPairTitle = (l) => l.length >= 8 && !/:$/.test(l) && !AWARD_HEADING.test(l) && !/^(authors?|paper name|id)\b/i.test(l) && !/^(award )?candidates?$|finalists?$|nominees?$/i.test(l);
 export function parsePaperAwardPage(html, { venue, year, source }) {
   const lines = toLines(html);
   const entries = [];
@@ -143,7 +145,12 @@ export function parsePaperAwardPage(html, { venue, year, source }) {
     const label = h[1].replace(/\s+/g, " ");
     const kind = kindOf(label);
     if (!kind) continue;
-    const j = i + 1;
+    // the title/author pair follows the heading, possibly after a sentence of introduction ("Congratulations …")
+    const pairAt = (x) => (/^paper name:/i.test(lines[x] || "") && /^authors?:/i.test(lines[x + 1] || ""))
+      || (isPairTitle(lines[x] || "") && AUTHOR_SEP.test(lines[x + 1] || ""));
+    let j = i + 1;
+    while (j < i + 3 && j < lines.length && !pairAt(j) && !AWARD_HEADING.test(lines[j])) j++;
+    if (!pairAt(j)) continue;
     const title = (lines[j] || "").replace(/^paper name:\s*/i, "").replace(/[.\s]+$/, "").trim();
     if (!title || title.length < 8 || AWARD_HEADING.test(lines[j]) || /^authors?:/i.test(lines[j])) continue;
     let authorsText = lines[j + 1] || "";
@@ -156,10 +163,17 @@ export function parsePaperAwardPage(html, { venue, year, source }) {
     }
     const authors = authorsText.split(/,|⋅|·|\band\b/).map((a) => a.trim()).filter(Boolean);
     if (!authors.length) continue;
-    entries.push({
-      venue, year, award: kind, awardLabel: label, title, authors, track: "main",
-      source, evidence: `${title} — ${label}`, verified: "official (conference awards page)"
+    const make = (t, a) => ({
+      venue, year, award: kind, awardLabel: label, title: t, authors: a, track: "main",
+      source, evidence: `${t} — ${label}`, verified: "official (conference awards page)"
     });
+    entries.push(make(title, authors));
+    // further papers under the same heading ("Best Paper Awards" lists two on ICLR 2019): a title line and an
+    // author line with "·" or "⋅". A line ending in ":" ("Based on Selection from Area Chairs:") ends the list.
+    while (k + 1 < lines.length && isPairTitle(lines[k]) && AUTHOR_SEP.test(lines[k + 1])) {
+      entries.push(make(lines[k], lines[k + 1].split(AUTHOR_SEP).map((a) => a.trim()).filter(Boolean)));
+      k += 2;
+    }
     i = k - 1;
   }
   return { entries };

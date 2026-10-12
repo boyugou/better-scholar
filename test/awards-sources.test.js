@@ -136,3 +136,18 @@ test("a test-of-time award page names its paper in the abstract block; a list ro
   assert.equal(skipped[0].href, "/virtual/2025/test-of-time/6");
   assert.deepEqual(skipped[0].authors, ["Lu Mo", "Ned Oh"]);
 });
+
+test("a heading that lists several papers ('Best Paper Awards', ICLR 2019); a list of area chairs under another heading is not an award", async () => {
+  const { parsePaperAwardPage } = await load();
+  const html = `<h2>Best Paper Awards</h2><p>Congratulations to the winners!</p>
+<p>Ordered Synthetic Neurons: Tree Structures in Recurrent Networks</p><p>Ann Lee · Bo Chen · Cy Diaz</p>
+<p>A Synthetic Ticket Hypothesis: Finding Sparse Networks</p><p>Dee Park · Eli Ross</p>
+<p>Based on Selection from Area Chairs:</p><p>Fay Gray, Gia Stone, Hal Wu, and Ivy Xu</p>
+<h2>Outstanding Reviewers</h2><p>Jo Yan</p><p>Kai Zu</p>`;
+  const { entries } = parsePaperAwardPage(html, { venue: "ICLR", year: 2019, source: "https://iclr.cc/Conferences/2019/Awards" });
+  assert.deepEqual(entries.map((e) => [e.award, e.title]), [
+    ["best", "Ordered Synthetic Neurons: Tree Structures in Recurrent Networks"],
+    ["best", "A Synthetic Ticket Hypothesis: Finding Sparse Networks"]
+  ]);
+  assert.deepEqual(entries[1].authors, ["Dee Park", "Eli Ross"]);
+});

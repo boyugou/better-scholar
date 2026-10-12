@@ -14,7 +14,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (435 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
+**Built — a bundled list of award-winning papers** (438 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
 ICML, CVPR 2025, ECCV 2024). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own awards pages), each entry carries its page and a quoted snippet, and the matcher requires
 the identical full title and the award's first author. Award kinds stay distinct (`best`, `outstanding`,
