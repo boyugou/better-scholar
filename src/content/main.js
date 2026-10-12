@@ -155,6 +155,9 @@
   // on, per its full author list, is not counted).
   const markCounts = () => marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
 
+  // Most rows without an author line means Scholar's markup moved under us.
+  const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
+
   function model() {
     const list = papers();
     const summary = metrics.summarize(list, settings.matrixSource);
@@ -166,7 +169,7 @@
       metrics: metrics.citationMetrics(list),
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll,
-        hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage,
+        hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },
       variants
@@ -236,6 +239,7 @@
       }
     },
     onCancelLoad() { if (loadAbort) loadAbort.abort(); },
+    onCopyUnmatched() { return copyText(metrics.unmatchedVenues(papers()).map((u) => `${u.count}× ${u.venue}`).join("\n")); },
     async onResolve() {
       if (state.resolving) return;
       const items = state.rows

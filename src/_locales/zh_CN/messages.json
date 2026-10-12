@@ -189,6 +189,15 @@
       }
     }
   },
+  "copyUnmatched": {
+    "message": "复制列表"
+  },
+  "reportLink": {
+    "message": "反馈"
+  },
+  "layoutWarning": {
+    "message": "Scholar 的页面结构似乎变了，扩展读不到作者行。请反馈给开发者。"
+  },
   "variantsTitle": {
     "message": "名字没匹配上？添加一种写法"
   },

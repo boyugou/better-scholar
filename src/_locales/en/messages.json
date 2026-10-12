@@ -201,6 +201,15 @@
   "coverUnmatchedOne": {
     "message": "1 paper at a venue without a rank"
   },
+  "copyUnmatched": {
+    "message": "Copy list"
+  },
+  "reportLink": {
+    "message": "Report"
+  },
+  "layoutWarning": {
+    "message": "Scholar's page layout seems to have changed: this extension cannot read the author lines. Please report it."
+  },
   "variantsTitle": {
     "message": "Name not matching? Add a spelling"
   },

@@ -6,9 +6,11 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
-function loadProfile(slug) {
+function loadProfile(slug, repeat = 1) {
   const f = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "fixtures", "profiles", slug + ".json"), "utf8"));
-  const rows = f.rows.map(([authors, venue, title], i) => {
+  // `repeat` multiplies the rows (distinct ids) to stand in for a very large profile
+  const source = Array.from({ length: repeat }, () => f.rows).flat();
+  const rows = source.map(([authors, venue, title], i) => {
     const y = /(\d{4})\D*$/.exec(venue);
     return {
       id: "TEST:P" + String(i).padStart(3, "0"),
@@ -23,11 +25,12 @@ function loadProfile(slug) {
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
+let BROKEN = false;   // render rows without Scholar's gs_gray author/venue lines, as if the markup had changed
 let ROW_HL = "en";   // the interface language baked into row links, like Scholar's hl= parameter
 function rowHtml(r) {
   return `<tr class="gsc_a_tr"><td class="gsc_a_t"><a href="/citations?view_op=view_citation&amp;hl=${ROW_HL}&amp;user=TEST&amp;citation_for_view=${esc(r.id)}" class="gsc_a_at">${esc(r.title)}</a>` +
     // like the real DOM: a no-break space sits before the "…" that truncates a venue
-    `<div class="gs_gray">${esc(r.authors)}</div><div class="gs_gray">${esc(r.venue.replace(/ …/g, " …"))}</div></td>` +
+    `<div class="${BROKEN ? "gx_a" : "gs_gray"}">${esc(r.authors)}</div><div class="${BROKEN ? "gx_a" : "gs_gray"}">${esc(r.venue.replace(/ …/g, "\u00a0…"))}</div></td>` +
     `<td class="gsc_a_c"><a class="gsc_a_ac gs_ibl">${r.cites}</a></td><td class="gsc_a_y"><span class="gsc_a_h gsc_a_hc gs_ibl">${r.year}</span></td></tr>`;
 }
 
@@ -85,9 +88,10 @@ function detailPage(profile, id, hl) {
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en" } = {}) {
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false } = {}) {
   ROW_HL = hl;
-  const profile = loadProfile(slug);
+  BROKEN = brokenLayout;
+  const profile = loadProfile(slug, repeat);
   let detailRequests = 0;
   const detailHls = [];
   const server = http.createServer((req, res) => {

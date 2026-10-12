@@ -16,13 +16,18 @@
   const rowElements = () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr"));
   const showMoreButton = () => $("#gsc_bpf_more");
 
-  // Text of an element without anything this extension appended to it.
+  // Text of an element without anything this extension appended to it. Scholar's DOM puts a no-break space
+  // before the "…" that truncates a venue; it is read as the plain space it stands for.
   function cleanText(el) {
     if (!el) return "";
-    if (!el.querySelector(".rr-chips, .rr-name")) return el.textContent || "";
-    const c = el.cloneNode(true);
-    c.querySelectorAll(".rr-chips").forEach((n) => n.remove());
-    return c.textContent || "";
+    let text;
+    if (!el.querySelector(".rr-chips, .rr-name")) text = el.textContent || "";
+    else {
+      const c = el.cloneNode(true);
+      c.querySelectorAll(".rr-chips").forEach((n) => n.remove());
+      text = c.textContent || "";
+    }
+    return text.replace(/\u00a0/g, " ");
   }
 
   function readRow(tr) {

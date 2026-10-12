@@ -4,7 +4,7 @@
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
-  const { h, t, tn } = B.dom;
+  const { h, t, tn, issueUrl } = B.dom;
 
   const ROLE_COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6", hidden: "#dadce0" };
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
@@ -145,9 +145,21 @@
       if (c.absent > 0) lines.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
       if (c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
+        const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
+          c.unmatched.slice(0, 6).map((u) => "- " + u.venue).join("\n") + "\n\nThe rank they should have (and the venue's full name): ";
+        const copyBtn = h("button", { class: "rr-btn", type: "button", "data-act": "copy-unmatched", onClick: async () => {
+          if (await cb.onCopyUnmatched()) { copyBtn.textContent = t("copied"); setTimeout(() => { copyBtn.textContent = t("copyUnmatched"); }, 1400); }
+        } }, t("copyUnmatched"));
         lines.push(h("details", { "data-rr": "unmatched" },
           h("summary", {}, tn("coverUnmatched", total, [String(total)])),
-          h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, h("b", {}, u.count + "× "), u.venue)))));
+          h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, h("b", {}, u.count + "× "), u.venue))),
+          h("div", { class: "rr-actions" }, copyBtn,
+            h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink")))));
+      }
+      // Scholar changes its markup now and then: say so instead of silently showing nothing
+      if (c.layoutBroken) {
+        lines.unshift(h("div", { class: "rr-warn", "data-rr": "layout-warning" }, t("layoutWarning") + " ",
+          h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/user=[^&]+/, "user=…")), target: "_blank", rel: "noopener" }, t("reportLink"))));
       }
       coverSec.replaceChildren(...lines);
     }

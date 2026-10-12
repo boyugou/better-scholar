@@ -31,6 +31,8 @@ function findPlaywright() {
 }
 function findChromium() {
   if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
+  // a Playwright-installed Chromium (CI: `npx playwright install chromium`)
+  try { const p = pw && pw.chromium.executablePath(); if (p && fs.existsSync(p)) return p; } catch (e) { /* fall through to the macOS cache */ }
   const cache = path.join(os.homedir(), "Library", "Caches", "ms-playwright");
   if (!fs.existsSync(cache)) return null;
   const dirs = fs.readdirSync(cache).filter((d) => /^chromium-\d+$/.test(d)).sort((a, b) => parseInt(b.slice(9)) - parseInt(a.slice(9)));
@@ -109,7 +111,7 @@ async function launch() {
     headless: true,
     viewport: { width: 1360, height: 900 },
     permissions: ["clipboard-read", "clipboard-write"],
-    args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run"]
+    args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run", ...(process.env.CI ? ["--no-sandbox"] : [])]
   });
 }
 
@@ -405,6 +407,73 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
   } finally {
     await ctx4.close();
     await fx4.close();
+  }
+
+  // -- 26. a very large profile (1,000 papers): loading everything neither janks the page nor drops rows
+  const fx5 = await start({ slug: "ion-stoica", pageSize: 100, repeat: 10 });
+  const ctx5 = await launch();
+  try {
+    const page = await ctx5.newPage();
+    await page.addInitScript(() => {
+      window.__long = [];
+      try { new PerformanceObserver((l) => l.getEntries().forEach((e) => window.__long.push(Math.round(e.duration)))).observe({ entryTypes: ["longtask"] }); } catch (e) { /* unsupported */ }
+    });
+    const t0 = Date.now();
+    await page.goto(fx5.url);
+    await page.waitForSelector("#rr-panel");
+    const firstPaint = Date.now() - t0;
+    await page.click('[data-act="load-all"]');
+    await page.waitForFunction(() => /^1,?000 papers loaded/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 90000 });
+    const total = Date.now() - t0;
+    assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr").count(), 1000);
+    assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr .rr-chips").count() > 400, true, "rows are decorated");
+    const long = await page.evaluate(() => window.__long);
+    const worst = Math.max(0, ...long);
+    assert.ok(firstPaint < 5000, `panel appeared after ${firstPaint} ms`);
+    assert.ok(worst < 1000, `a ${worst} ms long task`);
+    ok(`1,000 papers: panel in ${firstPaint} ms, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
+  } finally {
+    await ctx5.close();
+    await fx5.close();
+  }
+
+  // -- 27. unrecognised venues can be copied and reported; a layout Scholar changed is called out, not ignored
+  const fx6 = await start({ slug: "ion-stoica", pageSize: 100 });
+  const ctx6 = await launch();
+  try {
+    const page = await ctx6.newPage();
+    await page.goto(fx6.url);
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator('[data-rr="layout-warning"]').count(), 0);
+    await page.click('[data-rr="unmatched"] summary');
+    await page.click('[data-act="copy-unmatched"]');
+    const text = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(text, /^\d+× \S/m);
+    const unmatched = metrics.unmatchedVenues(expected(fx6.profile));
+    assert.equal(text, unmatched.map((u) => `${u.count}× ${u.venue}`).join("\n"));
+    const href = await page.getAttribute('[data-act="report-unmatched"]', "href");
+    assert.match(href, /^https:\/\/github\.com\/boyugou\/scholar-author-roles-and-venue-ranks\/issues\/new\?title=Venue%20not%20recognised&body=/);
+    assert.ok(decodeURIComponent(href).includes(unmatched[0].venue), "the report names an unrecognised venue");
+    assert.ok(href.length < 4000);
+    ok("unrecognised venues: Copy list matches the library, and the Report link carries them to the issue tracker");
+  } finally {
+    await ctx6.close();
+    await fx6.close();
+  }
+  const fx7 = await start({ slug: "ion-stoica", pageSize: 100, brokenLayout: true });
+  const ctx7 = await launch();
+  try {
+    const page = await ctx7.newPage();
+    await page.goto(fx7.url);
+    await page.waitForSelector("#rr-panel");
+    const warn = page.locator('[data-rr="layout-warning"]');
+    assert.equal(await warn.count(), 1);
+    assert.match(await warn.textContent(), /layout seems to have changed/);
+    assert.match(await warn.locator("a").getAttribute("href"), /issues\/new\?title=Scholar%20page%20layout%20changed/);
+    ok("a page whose author lines cannot be read says so, with a way to report it");
+  } finally {
+    await ctx7.close();
+    await fx7.close();
   }
 
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);

@@ -5,6 +5,8 @@ reads a [Google Scholar](https://scholar.google.com) profile and shows, for ever
 paper, the author's role (first / second / last…) and the venue's **CCF** and
 **CORE** rank — then adds them up: *"first-author CCF-A papers: 4"*.
 
+[![test](https://github.com/boyugou/scholar-author-roles-and-venue-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-author-roles-and-venue-ranks/actions/workflows/test.yml)
+
 [简体中文](README.zh-CN.md)
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
@@ -35,6 +37,9 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   range, "only highlighted", optional name marking, **Load all** to expand the list.
 - **Private by design** — no accounts, no analytics, no third-party requests. The
   rankings are bundled in the extension. Settings sync through your Chrome account.
+  See [`PRIVACY.md`](PRIVACY.md).
+- **Easy to correct** — a venue that has no rank? *Report* in the panel opens a pre-filled issue with the
+  venue text (and *Copy list* copies it); see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 It works on **profile pages** (`scholar.google.com/citations?user=…`) on every
 Scholar domain. English and 简体中文 UI.
@@ -88,6 +93,8 @@ Both are included for reference and are the property of their owners — see
 [`NOTICE`](NOTICE). Regenerate with `npm run data`.
 
 ## Development
+
+Contributions welcome — [`CONTRIBUTING.md`](CONTRIBUTING.md) explains how to fix a venue with real strings.
 
 ```bash
 npm test            # unit tests: names, venues (real-profile corpora), metrics, package checks
