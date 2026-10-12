@@ -219,15 +219,24 @@ test("the bundled list: SIGMOD's Test of Time Award (the page's list of 1999–2
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
   assert.deepEqual(find("Pregel: a system for large-scale graph processing", "G Malewicz, MH Austern, AJC Bik, JC Dehnert, I Horn, N Leiser, G Czajkowski"), ["SIGMOD 2020 tot"]);
   assert.deepEqual(find("Mining association rules between sets of items in large databases", "R Agrawal, T Imieliński, A Swami"), ["SIGMOD 2003 tot"]);
-  assert.deepEqual(find("A case for redundant arrays of inexpensive disks (RAID)", "DA Patterson, G Gibson, RH Katz"), ["SIGMOD 1999 tot"]);
+  assert.deepEqual(find("A case for redundant arrays of inexpensive disks (RAID)", "DA Patterson, G Gibson, RH Katz"), ["SIGMOD 1999 tot", "SIGOPS 2011 tot"]);
   assert.deepEqual(find("No free lunch in data privacy", "D Kifer, A Machanavajjhala"), ["SIGMOD 2021 tot"]);
   assert.deepEqual(find("Pregel: a system for large-scale graph processing", "A Smith, B Jones"), []);
+});
+
+test("the bundled list: SIGOPS's Hall of Fame Award (the page's winners, 2005–2025; the paper may be of any venue)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("The Google file system", "S Ghemawat, H Gobioff, ST Leung"), ["SIGOPS 2015 tot"]);
+  assert.deepEqual(find("The Tail at Scale", "J Dean, LA Barroso"), ["SIGOPS 2025 tot"]);
+  assert.deepEqual(find("seL4: formal verification of an OS kernel", "G Klein, K Elphinstone, G Heiser"), ["SIGOPS 2019 tot"]);
+  assert.deepEqual(find("The Tail at Scale", "A Smith, B Jones"), []);
 });
 
 test("the bundled list: the Dijkstra Prize in Distributed Computing (PODC / DISC), and the PODC Influential-Paper Award it was before 2003", () => {
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
-  assert.deepEqual(find("Time, clocks, and the ordering of events in a distributed system", "L Lamport"), ["PODC 2000 tot"]);
+  assert.deepEqual(find("Time, clocks, and the ordering of events in a distributed system", "L Lamport"), ["PODC 2000 tot", "SIGOPS 2007 tot"]);
   assert.deepEqual(find("Impossibility of distributed consensus with one faulty process", "MJ Fischer, NA Lynch, MS Paterson"), ["PODC 2001 tot"]);
   assert.deepEqual(find("Wait-free synchronization", "M Herlihy"), ["PODC/DISC 2003 tot"]);
   assert.deepEqual(find("Unreliable failure detectors for reliable distributed systems", "TD Chandra, S Toueg"), ["PODC/DISC 2010 tot"]);

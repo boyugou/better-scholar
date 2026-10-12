@@ -18,7 +18,10 @@
 //   focs   https://tc.computer.org/tcmf/focs-test-time-award/            the FOCS Test of Time Award, 2019–: "At FOCS 2025:", "1995 award (citations):", then per paper
 //                                                                       a line "Authors:" and a line with the title
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   sigops https://www.sigops.org/awards/hof/                            the SIGOPS Hall of Fame Award, 2005–: a heading per year, then per paper a list item
+//                                                                       "Authors. For their paper, <a>Title</a>. In …" (the title is the first link)
+//
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -33,7 +36,8 @@ const PAGES = {
   pldi: "https://www.sigplan.org/Awards/PLDI/",
   icfp: "https://www.sigplan.org/Awards/ICFP/",
   oopsla: "https://www.sigplan.org/Awards/OOPSLA/",
-  focs: "https://tc.computer.org/tcmf/focs-test-time-award/"
+  focs: "https://tc.computer.org/tcmf/focs-test-time-award/",
+  sigops: "https://www.sigops.org/awards/hof/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -122,6 +126,29 @@ export function parseDijkstra(html, source = PAGES.dijkstra) {
   return { entries, skipped };
 }
 
+// A heading per year ("2025"), then a list item per paper: the authors, "For their paper," in the newest rows, the title as the first link, the venue.
+// The paper may be of any venue (SOSP, OSDI, CACM, TOCS), so the award is SIGOPS's own.
+export function parseSigopsHof(html, source = PAGES.sigops) {
+  const entries = [], skipped = [];
+  const start = html.search(/>\s*Winners\s*</);
+  const body = start < 0 ? html : html.slice(start);
+  const marks = [];
+  for (const m of body.matchAll(/<h[1-4][^>]*>\s*((?:19|20)\d{2})\s*<\/h[1-4]>/g)) marks.push({ at: m.index, year: parseInt(m[1], 10) });
+  for (const m of body.matchAll(/<li>((?:(?!<li)[\s\S])*?)<\/li>/g)) {
+    const link = /<a\s[^>]*>([\s\S]*?)<\/a>/.exec(m[1]);
+    if (!link) continue;
+    const head = marks.filter((h) => h.at < m.index).pop();
+    if (!head) continue;
+    const authorText = text(m[1].slice(0, link.index)).replace(/\s*For (?:their|his|her) paper[,:]?\s*$/i, "").replace(/[\s,.;:]+$/, "")
+      .replace(/,?\s*Google,?\s+Inc$/i, "").replace(/\b([A-Z][a-z]+)\.(?=\s+[A-Z]\.)/g, "$1");   // ("David. L. Parnas"; the 2022 row ends with the company)
+    if (!authorText) continue;                                                                      // (the page's blog list after the winners)
+    const who = names(authorText), title = cleanTitle(text(link[1]));
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("SIGOPS", head.year, "Hall of Fame Award", title, who, source, `SIGOPS ${head.year} Hall of Fame Award: ${authorText} “${title}”`));
+    else skipped.push(`${head.year}: not read: ${authorText.slice(0, 60)} / ${title.slice(0, 40)}`);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -177,8 +204,8 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs }[kind];
-  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs [saved-page.html]"); process.exit(2); }
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof }[kind];
+  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
   const by = {};

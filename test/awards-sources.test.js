@@ -1084,3 +1084,23 @@ Gia Stone, and Hal Wu</p>
   assert.deepEqual(skipped, []);
   assert.ok(entries.every((e) => e.award === "tot" && e.evidence.includes(e.title)));
 });
+
+test("SIGOPS Hall of Fame page: a heading per year, a list item per paper, the title is the first link", async () => {
+  const { parseSigopsHof } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Winners</h2>
+<h2 class="x">2025</h2><ul>
+<li>Jo Dean, Lu Barroso. For their paper, <a href="https://dl.acm.org/doi/1">The Tail at Scale</a>. In Communications of the ACM 2013. “Why it happens.”<br /><br /></li>
+<li>Ann Chen, Bo Ziegler, and Cy Chajed. For their paper, <a href="https://dl.acm.org/doi/2">Using Crash Hoare Logic for Certifying the FSCQ File System</a>. In SOSP’15.</li></ul>
+<h3>2015</h3><ul><li style="list-style-type: none;"><ul><li>David. L. Parnas. <a href="x">On the criteria to be used in decomposing systems into modules</a>. Communications of the ACM 15(12), 1972.<em> This paper …</em></li></ul></li></ul>
+<h3>2022</h3><ul><li>Ann Corbett, Bo Dean, and Cy Woodford, Google, Inc. For their paper <a href="y">Spanner: Google’s Globally-Distributed Database</a>. In OSDI’12.</li></ul>
+<h3>2005</h3><ul><li><a href="blog">Slow Software: The Case for High-latency</a> <span>August 2026</span></li></ul>`;
+  const { entries, skipped } = parseSigopsHof(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 The Tail at Scale | Jo Dean; Lu Barroso",
+    "2025 Using Crash Hoare Logic for Certifying the FSCQ File System | Ann Chen; Bo Ziegler; Cy Chajed",
+    "2015 On the criteria to be used in decomposing systems into modules | David L. Parnas",
+    "2022 Spanner: Google’s Globally-Distributed Database | Ann Corbett; Bo Dean; Cy Woodford"
+  ]);
+  assert.ok(entries.every((e) => e.venue === "SIGOPS" && e.award === "tot" && e.awardLabel === "Hall of Fame Award"));
+  assert.deepEqual(skipped, []);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4708
+  "count": 4770
  },
  "entries": [
   {
@@ -71452,6 +71452,1000 @@
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-test-of-time-award/",
    "evidence": "2026 SIGMOD Test of Time Award: The Snowflake Elastic Data Warehouse. Benoit Dageville, Thierry Cruanes, Marcin Zukowski, Vadim Antonov, Artin Avanes, Jon Bock, Jonathan Claybaugh, Daniel Engovatov, Martin Hentschel, Jiansheng Huang, Allison W. Lee, Ashish Motivala, Abdul Q. Munir, Steven Pelley, Peter Povinec, Greg Rahn, Spyridon Triantafyllis, Phillipp Unterbrunner"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Hints for Computer System Design",
+   "authors": [
+    "Butler Lampson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2005 Hall of Fame Award: Butler Lampson “Hints for Computer System Design”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Structure of the THE Multiprogramming System",
+   "authors": [
+    "Edsger W. Dijkstra"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2005 Hall of Fame Award: Edsger W. Dijkstra “The Structure of the THE Multiprogramming System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The UNIX Time-Sharing System",
+   "authors": [
+    "Dennis M. Ritchie",
+    "Ken Thompson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2005 Hall of Fame Award: Dennis M. Ritchie and Ken Thompson “The UNIX Time-Sharing System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Working Set Model for Program Behavior",
+   "authors": [
+    "Peter J. Denning"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2005 Hall of Fame Award: Peter J. Denning “The Working Set Model for Program Behavior”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Safe Kernel Extensions Without Run-Time Checking",
+   "authors": [
+    "George C. Necula",
+    "Peter Lee"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2006 Hall of Fame Award: George C. Necula and Peter Lee “Safe Kernel Extensions Without Run-Time Checking”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "A Logic of Authentication",
+   "authors": [
+    "Michael Burrows",
+    "Martin Abadi",
+    "Roger Needham"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2007 Hall of Fame Award: Michael Burrows, Martin Abadi, and Roger Needham “A Logic of Authentication”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "End-To-End Arguments in System Design",
+   "authors": [
+    "J. H. Saltzer",
+    "D. P. Reed",
+    "D. D. Clark"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2007 Hall of Fame Award: J. H. Saltzer, D. P. Reed, and D. D. Clark “End-To-End Arguments in System Design”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Implementing Fault-Tolerant Services Using the State Machine Approach: a tutorial",
+   "authors": [
+    "Fred B. Schneider"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2007 Hall of Fame Award: Fred B. Schneider “Implementing Fault-Tolerant Services Using the State Machine Approach: a tutorial”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Implementing Remote Procedure Calls",
+   "authors": [
+    "Andrew D. Birrell",
+    "Bruce Jay Nelson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2007 Hall of Fame Award: Andrew D. Birrell and Bruce Jay Nelson “Implementing Remote Procedure Calls”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Time, Clocks, and the Ordering of Events in a Distributed System",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2007 Hall of Fame Award: Leslie Lamport “Time, Clocks, and the Ordering of Events in a Distributed System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Disco: Running Commodity Operating Systems on Scalable Multiprocessors",
+   "authors": [
+    "Edouard Bugnion",
+    "Scott Devine",
+    "Mendel Rosenblum"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2008 Hall of Fame Award: Edouard Bugnion, Scott Devine, and Mendel Rosenblum “Disco: Running Commodity Operating Systems on Scalable Multiprocessors”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Grapevine: An Exercise in Distributed Computing",
+   "authors": [
+    "Andrew D. Birrell",
+    "Roy Levin",
+    "Roger M. Needham",
+    "Michael D. Schroeder"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2008 Hall of Fame Award: Andrew D. Birrell, Roy Levin, Roger M. Needham, and Michael D. Schroeder “Grapevine: An Exercise in Distributed Computing”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Machine-Independent Virtual Memory Management for Paged Uniprocessor and Multiprocessor Architectures",
+   "authors": [
+    "Richard Rashid",
+    "Avadis Tevanian",
+    "Michael Young",
+    "David Golub",
+    "Robert Baron",
+    "David Black",
+    "William Bolosky",
+    "Jonathan Chew"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2008 Hall of Fame Award: Richard Rashid, Avadis Tevanian, Michael Young, David Golub, Robert Baron, David Black, William Bolosky, and Jonathan Chew “Machine-Independent Virtual Memory Management for Paged Uniprocessor and Multiprocessor Architectures”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Scale and Performance in a Distributed File System",
+   "authors": [
+    "John H. Howard",
+    "Michael L. Kazar",
+    "Sherri G. Menees",
+    "David A. Nichols",
+    "M. Satyanarayanan",
+    "Robert N. Sidebotham",
+    "Michael J. West"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2008 Hall of Fame Award: John H. Howard, Michael L. Kazar, Sherri G. Menees, David A. Nichols, M. Satyanarayanan, Robert N. Sidebotham, and Michael J. West “Scale and Performance in a Distributed File System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Multics Virtual Memory: Concepts and Design",
+   "authors": [
+    "Andre Bensoussan",
+    "Charlie T. Clingen",
+    "Robert C. Daley"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2008 Hall of Fame Award: Andre Bensoussan, Charlie T. Clingen, Robert C. Daley “The Multics Virtual Memory: Concepts and Design”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Experience with processes and monitors in Mesa",
+   "authors": [
+    "Butler W. Lampson",
+    "David D. Redell"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2009 Hall of Fame Award: Butler W. Lampson and David D. Redell “Experience with processes and monitors in Mesa”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Leases: An Efficient Fault-Tolerant Mechanism for Distributed File Cache Consistency",
+   "authors": [
+    "Cary G. Gray",
+    "David R. Cheriton"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2009 Hall of Fame Award: Cary G. Gray and David R. Cheriton “Leases: An Efficient Fault-Tolerant Mechanism for Distributed File Cache Consistency”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "VAXclusters: A Closely-Coupled Distributed System",
+   "authors": [
+    "Nancy P. Kronenberg",
+    "Henry M. Levy",
+    "William D. Strecker"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2009 Hall of Fame Award: Nancy P. Kronenberg, Henry M. Levy, and William D. Strecker “VAXclusters: A Closely-Coupled Distributed System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Crash Recovery in a Distributed Data Storage System",
+   "authors": [
+    "Butler Lampson",
+    "Howard Sturgis"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2010 Hall of Fame Award: Butler Lampson and Howard Sturgis “Crash Recovery in a Distributed Data Storage System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Recovery Manager of the System R Database Manager",
+   "authors": [
+    "Jim Gray",
+    "Paul McJones",
+    "Mike Blasgen",
+    "Bruce Lindsay",
+    "Raymond Lorie",
+    "Tom Price",
+    "Franco Putzolu",
+    "Irving Traiger"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2010 Hall of Fame Award: Jim Gray, Paul McJones, Mike Blasgen, Bruce Lindsay, Raymond Lorie, Tom Price, Franco Putzolu, and Irving Traiger “The Recovery Manager of the System R Database Manager”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Using Encryption for Authentication in Large Networks of Computers",
+   "authors": [
+    "Roger Needham",
+    "Michael Schroeder"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2010 Hall of Fame Award: Roger Needham and Michael Schroeder “Using Encryption for Authentication in Large Networks of Computers”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "A Case for Redundant Arrays of Inexpensive Disks (RAID)",
+   "authors": [
+    "David A. Patterson",
+    "Garth Gibson",
+    "Randy H. Katz"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2011 Hall of Fame Award: David A. Patterson, Garth Gibson, Randy H. Katz “A Case for Redundant Arrays of Inexpensive Disks (RAID)”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Programming Semantics for Multiprogrammed Computations",
+   "authors": [
+    "Jack B. Dennis",
+    "Earl C. Van Horn"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2011 Hall of Fame Award: Jack B. Dennis, Earl C. Van Horn “Programming Semantics for Multiprogrammed Computations”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Reflections on Trusting Trust",
+   "authors": [
+    "Ken Thompson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2011 Hall of Fame Award: Ken Thompson “Reflections on Trusting Trust”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Why Do Computers Stop And What Can Be Done About It?",
+   "authors": [
+    "Jim Gray"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2011 Hall of Fame Award: Jim Gray “Why Do Computers Stop And What Can Be Done About It?”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Memory Coherence in Shared Virtual Memory Systems",
+   "authors": [
+    "Kai Li",
+    "Paul Hudak"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2012 Hall of Fame Award: Kai Li, Paul Hudak “Memory Coherence in Shared Virtual Memory Systems”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Design and Implementation of a Log-Structured File System",
+   "authors": [
+    "Mendel Rosenblum",
+    "John K. Ousterhout"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2012 Hall of Fame Award: Mendel Rosenblum, John K. Ousterhout “The Design and Implementation of a Log-Structured File System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Part Time Parliament",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2012 Hall of Fame Award: Leslie Lamport “The Part Time Parliament”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Viewstamped Replication: A New Primary Copy Method to Support Highly-Available Distributed Systems",
+   "authors": [
+    "Brian M. Oki",
+    "Barbara H. Liskov"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2012 Hall of Fame Award: Brian M. Oki, Barbara H. Liskov “Viewstamped Replication: A New Primary Copy Method to Support Highly-Available Distributed Systems”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "A NonStop Kernel",
+   "authors": [
+    "Joel Bartlett"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2013 Hall of Fame Award: Joel Bartlett “A NonStop Kernel”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Distributed Snapshots: Determining Global States of a Distributed System",
+   "authors": [
+    "K. Mani Chandy",
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2013 Hall of Fame Award: K. Mani Chandy and Leslie Lamport “Distributed Snapshots: Determining Global States of a Distributed System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Exploiting Virtual Synchrony in Distributed Systems",
+   "authors": [
+    "Kenneth P. Birman",
+    "Thomas A. Joseph"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2013 Hall of Fame Award: Kenneth P. Birman and Thomas A. Joseph “Exploiting Virtual Synchrony in Distributed Systems”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Tenex, A Paged Time Sharing System for the PDP-10",
+   "authors": [
+    "Daniel G. Bobrow",
+    "Jerry D. Burchfiel",
+    "Daniel L. Murphy",
+    "Raymond S. Tomlinson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2013 Hall of Fame Award: Daniel G. Bobrow, Jerry D. Burchfiel, Daniel L. Murphy and Raymond S. Tomlinson “Tenex, A Paged Time Sharing System for the PDP-10”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Click Modular Router",
+   "authors": [
+    "Eddie Kohler",
+    "Robert Morris",
+    "Benjie Chen",
+    "John Jannotti",
+    "Frans Kaashoek"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2013 Hall of Fame Award: Eddie Kohler, Robert Morris, Benjie Chen, John Jannotti and Frans Kaashoek “The Click Modular Router”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "A fast file system for UNIX",
+   "authors": [
+    "Marshall K. McKusick",
+    "William N. Joy",
+    "Samuel J. Leffler",
+    "Robert S. Fabry"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Marshall K. McKusick, William N. Joy, Samuel J. Leffler, and Robert S. Fabry “A fast file system for UNIX”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "A virtual machine time-sharing system",
+   "authors": [
+    "R. A. Meyer",
+    "L. H. Seawright"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: R. A. Meyer and L. H. Seawright “A virtual machine time-sharing system”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Chord: A scalable peer-to-peer lookup service for Internet applications",
+   "authors": [
+    "Ion Stoica",
+    "Robert Morris",
+    "David Karger",
+    "M. Frans Kaashoek",
+    "Hari Balakrishnan"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Ion Stoica, Robert Morris, David Karger, M. Frans Kaashoek, and Hari Balakrishnan “Chord: A scalable peer-to-peer lookup service for Internet applications”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Disconnected operation in the Coda File System",
+   "authors": [
+    "James J. Kistler",
+    "M. Satyanarayanan"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: James J. Kistler and M. Satyanarayanan “Disconnected operation in the Coda File System”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Efficient software-based fault isolation",
+   "authors": [
+    "Robert Wahbe",
+    "Steven Lucco",
+    "Thomas E. Anderson",
+    "Susan L. Graham"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Robert Wahbe, Steven Lucco, Thomas E. Anderson, and Susan L. Graham “Efficient software-based fault isolation”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Managing update conflicts in Bayou, a weakly connected replicated storage system",
+   "authors": [
+    "D. B. Terry",
+    "M. M. Theimer",
+    "Karin Petersen",
+    "A. J. Demers",
+    "M. J. Spreitzer",
+    "C. H. Hauser"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: D. B. Terry, M. M. Theimer, Karin Petersen, A. J. Demers, M. J. Spreitzer, and C. H. Hauser “Managing update conflicts in Bayou, a weakly connected replicated storage system”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "MapReduce: simplified data processing on large clusters",
+   "authors": [
+    "Jeffrey Dean",
+    "Sanjay Ghemawat"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Jeffrey Dean and Sanjay Ghemawat “MapReduce: simplified data processing on large clusters”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Memory resource management in VMware ESX server",
+   "authors": [
+    "Carl A. Waldspurger"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Carl A. Waldspurger “Memory resource management in VMware ESX server”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "On micro-kernel construction",
+   "authors": [
+    "J. Liedtke"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: J. Liedtke “On micro-kernel construction”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "On optimistic methods for concurrency control",
+   "authors": [
+    "H. T. Kung",
+    "John T. Robinson"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: H. T. Kung and John T. Robinson “On optimistic methods for concurrency control”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "On the criteria to be used in decomposing systems into modules",
+   "authors": [
+    "David L. Parnas"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: David L. Parnas “On the criteria to be used in decomposing systems into modules”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "ReVirt: Enabling intrusion analysis through virtual-machine logging and replay",
+   "authors": [
+    "George W. Dunlap",
+    "Samuel T. King",
+    "Sukru Cinar",
+    "Murtaza A. Basrai",
+    "Peter M. Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: George W. Dunlap, Samuel T. King, Sukru Cinar, Murtaza A. Basrai, and Peter M. Chen “ReVirt: Enabling intrusion analysis through virtual-machine logging and replay”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Google file system",
+   "authors": [
+    "Sanjay Ghemawat",
+    "Howard Gobioff",
+    "Shun-Tak Leung"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung “The Google file system”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Transactional memory: architectural support for lock-free data structures",
+   "authors": [
+    "Maurice Herlihy",
+    "J. Eliot B. Moss"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2015 Hall of Fame Award: Maurice Herlihy and J. Eliot B. Moss “Transactional memory: architectural support for lock-free data structures”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Bigtable: A Distributed Storage System for Structured Data",
+   "authors": [
+    "Fay Chang",
+    "Jeffrey Dean",
+    "Sanjay Ghemawat",
+    "Wilson C. Hsieh",
+    "Deborah A. Wallach",
+    "Mike Burrows",
+    "Tushar Chandra",
+    "Andrew Fikes",
+    "Robert E. Gruber"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2016 Hall of Fame Award: Fay Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson C. Hsieh, Deborah A. Wallach, Mike Burrows, Tushar Chandra, Andrew Fikes, and Robert E. Gruber “Bigtable: A Distributed Storage System for Structured Data”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Dynamo: Amazon’s Highly Available Key-value Store",
+   "authors": [
+    "Giuseppe DeCandia",
+    "Deniz Hastorun",
+    "Madan Jampani",
+    "Gunavardhan Kakulapati",
+    "Avinash Lakshman",
+    "Alex Pilchin",
+    "Swaminathan Sivasubramanian",
+    "Peter Vosshall",
+    "Werner Vogels"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2017 Hall of Fame Award: Giuseppe DeCandia, Deniz Hastorun, Madan Jampani, Gunavardhan Kakulapati, Avinash Lakshman, Alex Pilchin, Swaminathan Sivasubramanian, Peter Vosshall, and Werner Vogels “Dynamo: Amazon’s Highly Available Key-value Store”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Chubby lock service for loosely-coupled distributed systems",
+   "authors": [
+    "Mike Burrows"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2017 Hall of Fame Award: Mike Burrows “The Chubby lock service for loosely-coupled distributed systems”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language",
+   "authors": [
+    "Yuan Yu",
+    "Michael Isard",
+    "Dennis Fetterly",
+    "Mihai Budiu",
+    "Úlfar Erlingsson",
+    "Pradeep Kumar Gunda",
+    "Jon Currey"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2018 Hall of Fame Award: Yuan Yu, Michael Isard, Dennis Fetterly, Mihai Budiu, Úlfar Erlingsson, Pradeep Kumar Gunda, and Jon Currey “DryadLINQ: A System for General-Purpose Distributed Data-Parallel Computing Using a High-Level Language”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs",
+   "authors": [
+    "Cristian Cadar",
+    "Daniel Dunbar",
+    "Dawson Engler"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2018 Hall of Fame Award: Cristian Cadar, Daniel Dunbar, and Dawson Engler “KLEE: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Debugging in the (Very) Large: Ten Years of Implementation and Experience",
+   "authors": [
+    "Kirk Glerum",
+    "Kinshuman Kinshumann",
+    "Steve Greenberg",
+    "Gabriel Aul",
+    "Vince Orgovan",
+    "Greg Nichols",
+    "David Grant",
+    "Gretchen Loihle",
+    "Galen Hunt"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2019 Hall of Fame Award: Kirk Glerum, Kinshuman Kinshumann, Steve Greenberg, Gabriel Aul, Vince Orgovan, Greg Nichols, David Grant, Gretchen Loihle, and Galen Hunt “Debugging in the (Very) Large: Ten Years of Implementation and Experience”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "seL4: formal verification of an OS kernel",
+   "authors": [
+    "Gerwin Klein",
+    "Kevin Elphinstone",
+    "Gernot Heiser",
+    "June Andronick",
+    "David Cock",
+    "Philip Derrin",
+    "Dhammika Elkaduwe",
+    "Kai Engelhardt",
+    "Rafal Kolanski",
+    "Michael Norrish",
+    "Thomas Sewell",
+    "Harvey Tuch",
+    "Simon Winwood"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2019 Hall of Fame Award: Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock, Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael Norrish, Thomas Sewell, Harvey Tuch, and Simon Winwood “seL4: formal verification of an OS kernel”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "TaintDroid: An Information-Flow Tracking System for Realtime Privacy Monitoring on Smartphones",
+   "authors": [
+    "William Enck",
+    "Peter Gilbert",
+    "Byung-Gon Chun",
+    "Landon P. Cox",
+    "Jaeyeon Jung",
+    "Patrick McDaniel",
+    "Anmol N. Sheth"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2020 Hall of Fame Award: William Enck, Peter Gilbert, Byung-Gon Chun, Landon P. Cox, Jaeyeon Jung, Patrick McDaniel, and Anmol N. Sheth “TaintDroid: An Information-Flow Tracking System for Realtime Privacy Monitoring on Smartphones”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Multikernel: A New OS Architecture for Scalable Multicore Systems",
+   "authors": [
+    "Andrew Baumann",
+    "Paul Barham",
+    "Pierre-Evariste Dagand",
+    "Tim Harris",
+    "Rebecca Isaacs",
+    "Simon Peter",
+    "Timothy Roscoe",
+    "Adrian Schüpbach",
+    "Akhilesh Singhania"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2020 Hall of Fame Award: Andrew Baumann, Paul Barham, Pierre-Evariste Dagand, Tim Harris, Rebecca Isaacs, Simon Peter, Timothy Roscoe, Adrian Schüpbach, and Akhilesh Singhania “The Multikernel: A New OS Architecture for Scalable Multicore Systems”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Onix: A Distributed Control Platform for Large-scale Production Networks",
+   "authors": [
+    "Teemu Koponen",
+    "Martin Casado",
+    "Natasha Gude",
+    "Jeremy Stribling",
+    "Leon Poutievski",
+    "Min Zhu",
+    "Rajiv Ramanathan",
+    "Yuichiro Iwata",
+    "Hiroaki Inoue",
+    "Takayuki Hama",
+    "Scott Shenker"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2021 Hall of Fame Award: Teemu Koponen, Martin Casado, Natasha Gude, Jeremy Stribling, Leon Poutievski, Min Zhu, Rajiv Ramanathan, Yuichiro Iwata, Hiroaki Inoue, Takayuki Hama, and Scott Shenker “Onix: A Distributed Control Platform for Large-scale Production Networks”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Spanner: Google’s Globally-Distributed Database",
+   "authors": [
+    "James C. Corbett",
+    "Jeffrey Dean",
+    "Michael Epstein",
+    "Andrew Fikes",
+    "Christopher Frost",
+    "JJ Furman",
+    "Sanjay Ghemawat",
+    "Andrey Gubarev",
+    "Christopher Heiser",
+    "Peter Hochschild",
+    "Wilson Hsieh",
+    "Sebastian Kanthak",
+    "Eugene Kogan",
+    "Hongyi Li",
+    "Alexander Lloyd",
+    "Sergey Melnik",
+    "David Mwaura",
+    "David Nagle",
+    "Sean Quinlan",
+    "Rajesh Rao",
+    "Lindsay Rolig",
+    "Yasushi Saito",
+    "Michal Szymaniak",
+    "Christopher Taylor",
+    "Ruth Wang",
+    "Dale Woodford"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2022 Hall of Fame Award: James C. Corbett, Jeffrey Dean, Michael Epstein, Andrew Fikes, Christopher Frost, JJ Furman, Sanjay Ghemawat, Andrey Gubarev, Christopher Heiser, Peter Hochschild, Wilson Hsieh, Sebastian Kanthak, Eugene Kogan, Hongyi Li, Alexander Lloyd, Sergey Melnik, David Mwaura, David Nagle, Sean Quinlan, Rajesh Rao, Lindsay Rolig, Yasushi Saito, Michal Szymaniak, Christopher Taylor, Ruth Wang, and Dale Woodford “Spanner: Google’s Globally-Distributed Database”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Xen and the art of Virtualization",
+   "authors": [
+    "Paul Barham",
+    "Boris Dragovic",
+    "Keir Fraser",
+    "Steven Hand",
+    "Tim Harris",
+    "Alex Ho",
+    "Rolf Neugebauer",
+    "Ian Pratt",
+    "Andrew Warfield"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2023 Hall of Fame Award: Paul Barham, Boris Dragovic, Keir Fraser, Steven Hand, Tim Harris, Alex Ho, Rolf Neugebauer, Ian Pratt, Andrew Warfield “Xen and the art of Virtualization”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "The Tail at Scale",
+   "authors": [
+    "Jeffrey Dean",
+    "Luiz André Barroso"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2025 Hall of Fame Award: Jeffrey Dean, Luiz André Barroso “The Tail at Scale”"
+  },
+  {
+   "venue": "SIGOPS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Hall of Fame Award",
+   "title": "Using Crash Hoare Logic for Certifying the FSCQ File System",
+   "authors": [
+    "Haogang Chen",
+    "Daniel Ziegler",
+    "Tej Chajed",
+    "Adam Chlipala",
+    "M. Frans Kaashoek",
+    "Nickolai Zeldovich"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/awards/hof/",
+   "evidence": "SIGOPS 2025 Hall of Fame Award: Haogang Chen, Daniel Ziegler, Tej Chajed, Adam Chlipala, M. Frans Kaashoek, and Nickolai Zeldovich “Using Crash Hoare Logic for Certifying the FSCQ File System”"
   },
   {
    "venue": "SOUPS",

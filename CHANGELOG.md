@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.0 — 2026-10-12
+
+- SIGOPS Hall of Fame Award (2005–2025, 62 papers) from SIGOPS's own page, read by `scripts/awards/tot.mjs sigops`: the Google File System, Bigtable,
+  MapReduce, Time Clocks, seL4, The Tail at Scale … The paper may be of any venue, so the mark reads "SIGOPS Hall of Fame Award". The bundled list has 4,770 awards.
+
 ## 2.8.8 — 2026-10-12
 
 Sixteen more real profiles (Peking, Jiao Tong, Nanjing, Harbin, NUDT and Wuhan groups — 1,533 venue strings; no wrong badge found).
