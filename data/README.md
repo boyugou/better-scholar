@@ -109,7 +109,7 @@ is a cross-check and never a source). All 21 top awards that list has for ACL ag
 
 **Known gaps (on purpose):** CVPR 2022–2024 and 2026 and ICCV best papers, and ICML 2022, are on an independent
 list but not on any official page this tooling can reach, so they are not in the file. Add them when an official
-page is found; a paper that only a secondary source names is never added. ICLR 2025–2026, NeurIPS 2026 and ICML 2026
+page is found; a paper that only a secondary source names is never added. ICLR 2025–2026 and NeurIPS 2026
 had no paper awards on their pages yet when this was written. Test-of-time rows whose page omits the paper title
 (NeurIPS 2025, ICML 2022 and 2026) are skipped rather than guessed.
 
