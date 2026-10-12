@@ -297,7 +297,10 @@ export function parseSigmobileTot(html, source = PAGES.sigmobile) {
     if (/^[\p{Lu}][^"“”]{2,300}[.,]\s+["“”][^"“”]{8,}$/u.test(l) && ls[i + 1] && /^[^"“”]{1,120}["“”]/.test(ls[i + 1])) l = l + " " + ls[++i];
     const m = /^(.{3,400}?)[.,]\s+["“”]([^"“”]{8,200}?)[,.]?\s*["“”][,.]?\s*(.*)$/.exec(l);
     if (!m) continue;
-    const who = names(m[1]), title = cleanTitle(m[2]), py = [...m[3].matchAll(/\b((?:19|20)\d{2})\b/g)].map((x) => parseInt(x[1], 10)).pop();
+    let who = names(m[1]);
+    // (the 2018 rows are typed in the citation style "Kistler, James J., and Mahadev Satyanarayanan": the first author surname first, the others as usual)
+    if (year === 2018 && who.length >= 2 && who[0].split(" ").length === 1 && who[1].split(" ").length <= 3 && who.slice(2).every(isPerson)) who = [`${who[1]} ${who[0]}`, ...who.slice(2)];
+    const title = cleanTitle(m[2]), py = [...m[3].matchAll(/\b((?:19|20)\d{2})\b/g)].map((x) => parseInt(x[1], 10)).pop();
     if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("SIGMOBILE", year, "Test-of-Time Paper Award", title, who, source, `SIGMOBILE ${year} Test-of-Time Paper Award: ${m[1]} “${title}”`, py));
     else skipped.push(`${year}: not read: ${l.slice(0, 70)}`);
   }

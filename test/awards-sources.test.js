@@ -1182,15 +1182,17 @@ test("TCC Test of Time page: a heading per year, a paragraph per paper (links ar
   assert.deepEqual(skipped, []);
 });
 
-test("SIGMOBILE Test-of-Time page: Authors. \"Title,\" Venue Year. — a title over two lines is joined, 'Surname, Given' rows are skipped", async () => {
+test("SIGMOBILE Test-of-Time page: Authors. \"Title,\" Venue Year. — a title over two lines is joined, the 2018 'Surname, Given' rows are turned round, an unreadable one is skipped", async () => {
   const { parseSigmobileTot } = await import("../scripts/awards/tot.mjs");
   const html = `<h3>2026 Paper Awardees</h3><p>Kay Jain, Jo Padhye, and Lil Qiu. "Impact of Interference on Multi-hop Wireless Network Performance," ACM MobiCom 2003.</p><p>What is the maximum achievable capacity of a wireless network? Although …</p>
 <h3>2019 Paper Awardees</h3><p>Pat Mohan, Venkata N. Padmanabhan, and Ram Ramjee. "Nericell: Rich Monitoring of Road and Traffic Conditions using</p><p>Mobile Smartphones," ACM SenSys, 2008.</p>
-<h3>2018 Paper Awardees</h3><p>Bianchi, Giuseppe. "Performance Analysis of the IEEE 802.11 Distributed Coordination Function." IEEE JSAC, 2000.</p><h3>Selection Committee</h3><p>Ann Lee. "A Sentence of Eight Words," in the committee text.</p>`;
+<h3>2018 Paper Awardees</h3><p>Bianchi, Giuseppe. "Performance Analysis of the IEEE 802.11 Distributed Coordination Function." IEEE JSAC, 2000.</p><p>Kistler, James J., and Mahadev Satyanarayanan. "Disconnected operation in the Coda file system." ACM TOCS (1992).</p><p>The 2018 Committee Of Nine. "Something not in that style at all." ACM Foo 2001.</p><h3>Selection Committee</h3><p>Ann Lee. "A Sentence of Eight Words," in the committee text.</p>`;
   const { entries, skipped } = parseSigmobileTot(html);
   assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
     "2026/2003 Impact of Interference on Multi-hop Wireless Network Performance | Kay Jain; Jo Padhye; Lil Qiu",
-    "2019/2008 Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones | Pat Mohan; Venkata N. Padmanabhan; Ram Ramjee"
+    "2019/2008 Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones | Pat Mohan; Venkata N. Padmanabhan; Ram Ramjee",
+    "2018/2000 Performance Analysis of the IEEE 802.11 Distributed Coordination Function | Giuseppe Bianchi",
+    "2018/1992 Disconnected operation in the Coda file system | James J Kistler; Mahadev Satyanarayanan"
   ]);
   assert.equal(skipped.length, 1);
 });

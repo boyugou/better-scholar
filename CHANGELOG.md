@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.8 — 2026-10-12
+
+- SIGMOBILE's 2018 rows typed in citation style ("Kistler, James J., and Mahadev Satyanarayanan") are read too: the first author's surname is put last (12 more papers, 40 in all).
+  The bundled list has 4929 awards.
+
 ## 2.9.7 — 2026-10-12
 
 - The SIGMOBILE Test-of-Time Paper Awards (2018–2026, 28 papers: MobiCom, SIGCOMM, SOSP, SenSys …) from SIGMOBILE's own page (`tot.mjs sigmobile`); 12 rows of 2018, typed

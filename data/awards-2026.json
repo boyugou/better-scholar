@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4917
+  "count": 4929
  },
  "entries": [
   {
@@ -71631,6 +71631,23 @@
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test-of-Time Paper Award",
+   "title": "Architecture and evaluation of an unplanned 802.11 b mesh network",
+   "authors": [
+    "John Bicket",
+    "Daniel Aguayo",
+    "Sanjit Biswas",
+    "Robert Morris"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Bicket, John, Daniel Aguayo, Sanjit Biswas, and Robert Morris “Architecture and evaluation of an unplanned 802.11 b mesh network”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
    "title": "CarTel: A Distributed Mobile Sensor Computing System",
    "authors": [
     "Bret Hull",
@@ -71653,6 +71670,21 @@
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test-of-Time Paper Award",
+   "title": "Disconnected operation in the Coda file system",
+   "authors": [
+    "James J Kistler",
+    "Mahadev Satyanarayanan"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Kistler, James J., and Mahadev Satyanarayanan “Disconnected operation in the Coda file system”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
    "title": "Energy-Efficient Computing for Wildlife Tracking: Design Tradeoffs and Early Experiences with ZebraNet",
    "authors": [
     "Philo Juang",
@@ -71666,6 +71698,21 @@
    "paperYear": 2002,
    "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
    "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Philo Juang, Hidekazu Oki, Yong Wang, Margaret Martonosi, Li-Shiuan Peh, Daniel Rubenstein “Energy-Efficient Computing for Wildlife Tracking: Design Tradeoffs and Early Experiences with ZebraNet”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "I-TCP: Indirect TCP for mobile hosts",
+   "authors": [
+    "Ajay Bakre",
+    "B. R. Badrinath"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Bakre, Ajay, and B. R. Badrinath “I-TCP: Indirect TCP for mobile hosts”"
   },
   {
    "venue": "SIGMOBILE",
@@ -71706,6 +71753,35 @@
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test-of-Time Paper Award",
+   "title": "Packet switching in radio channels: Part I--carrier sense multiple-access modes and their throughput-delay characteristics",
+   "authors": [
+    "Leonard Kleinrock",
+    "Fouad A. Tobagi"
+   ],
+   "track": "main",
+   "paperYear": 1975,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Kleinrock, Leonard, and Fouad A. Tobagi “Packet switching in radio channels: Part I--carrier sense multiple-access modes and their throughput-delay characteristics”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Performance Analysis of the IEEE 802.11 Distributed Coordination Function",
+   "authors": [
+    "Giuseppe Bianchi"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Bianchi, Giuseppe “Performance Analysis of the IEEE 802.11 Distributed Coordination Function”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
    "title": "Pervasive Computing: Vision and Challenges",
    "authors": [
     "M. Satyanarayanan"
@@ -71714,6 +71790,48 @@
    "paperYear": 2001,
    "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
    "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: M. Satyanarayanan “Pervasive Computing: Vision and Challenges”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Place lab: Device positioning using radio beacons in the wild",
+   "authors": [
+    "Anthony LaMarca",
+    "Yatin Chawathe",
+    "Sunny Consolvo",
+    "Jeffrey Hightower",
+    "Ian Smith",
+    "James Scott",
+    "Timothy Sohn",
+    "James Howard",
+    "Jeff Hughes",
+    "Fred Potter",
+    "Jason Tabert",
+    "Pauline Powledge",
+    "Gaetano Borriello",
+    "Bill Schilit"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: LaMarca, Anthony, Yatin Chawathe, Sunny Consolvo, Jeffrey Hightower, Ian Smith, James Scott, Timothy Sohn, James Howard, Jeff Hughes, Fred Potter, Jason Tabert, Pauline Powledge, Gaetano Borriello, Bill Schilit “Place lab: Device positioning using radio beacons in the wild”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "RADAR: An in-building RF-based user location and tracking system",
+   "authors": [
+    "Paramvir Bahl",
+    "Venkata N. Padmanabhan"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Bahl, Paramvir, and Venkata N. Padmanabhan “RADAR: An in-building RF-based user location and tracking system”"
   },
   {
    "venue": "SIGMOBILE",
@@ -71737,6 +71855,66 @@
    "year": 2018,
    "award": "tot",
    "awardLabel": "Test-of-Time Paper Award",
+   "title": "The active badge location system",
+   "authors": [
+    "Roy Want",
+    "Andy Hopper",
+    "Veronica Falcao",
+    "Jonathan Gibbons"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Want, Roy, Andy Hopper, Veronica Falcao, and Jonathan Gibbons “The active badge location system”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "THE ALOHA SYSTEM: another alternative for computer communications",
+   "authors": [
+    "Norman Abramson"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Abramson, Norman “THE ALOHA SYSTEM: another alternative for computer communications”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "The capacity of wireless networks",
+   "authors": [
+    "Piyush Gupta",
+    "Panganmala R. Kumar"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Gupta, Piyush, and Panganmala R. Kumar “The capacity of wireless networks”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "The computer for the 21st century",
+   "authors": [
+    "Mark Weiser"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Weiser, Mark “The computer for the 21st century”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
    "title": "The Cricket Location-Support System",
    "authors": [
     "Nissanka Priyantha",
@@ -71747,6 +71925,22 @@
    "paperYear": 2000,
    "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
    "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Nissanka Priyantha, Anit Chakraborty, Hari Balakrishnan “The Cricket Location-Support System”"
+  },
+  {
+   "venue": "SIGMOBILE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Paper Award",
+   "title": "Versatile low power media access for wireless sensor networks",
+   "authors": [
+    "Joseph Polastre",
+    "Jason Hill",
+    "David Culler"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://sigmobile.org/grav/awards/test-of-time-paper",
+   "evidence": "SIGMOBILE 2018 Test-of-Time Paper Award: Polastre, Joseph, Jason Hill, and David Culler “Versatile low power media access for wireless sensor networks”"
   },
   {
    "venue": "SIGMOBILE",
