@@ -450,5 +450,8 @@
         "content": "$1"
       }
     }
+  },
+  "mkCategory": {
+    "message": "分类奖"
   }
 }

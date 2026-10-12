@@ -115,7 +115,10 @@
       const counts = m.marks || {};
       const groups = B.marks.GROUPS.filter((g) => counts[g]);
       marksSec.hidden = !groups.length;
-      marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g,
+      // the award count's parts, on hover: best papers and test-of-time awards apart from the honorable mentions
+      const kinds = m.markKinds || {};
+      const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
+      marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
         "aria-pressed": String(m.markGroup === g), onClick: () => cb.onMarkGroup(g) },
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }

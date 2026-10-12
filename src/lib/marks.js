@@ -173,7 +173,17 @@
     return counts;
   }
 
+  // Papers per award kind (a paper counts once per kind): what the panel's "Awards" count is made of — best papers and test-of-time
+  // awards apart from the many honorable mentions that a conference such as CHI gives.
+  function summarizeKinds(papers) {
+    const counts = {};
+    for (const p of papers) {
+      for (const k of new Set((p.marks || []).filter((m) => m.group === "award").map((m) => m.kind))) counts[k] = (counts[k] || 0) + 1;
+    }
+    return counts;
+  }
+
   const inGroup = (paper, group) => (paper.marks || []).some((m) => m.group === group);
 
-  return { KINDS, GROUPS, LABEL, groupOf, scan, detect, merge, summarize, inGroup };
+  return { KINDS, GROUPS, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
 });

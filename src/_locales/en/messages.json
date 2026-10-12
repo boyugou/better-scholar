@@ -468,5 +468,8 @@
         "content": "$1"
       }
     }
+  },
+  "mkCategory": {
+    "message": "Category award"
   }
 }

@@ -149,6 +149,11 @@
 
   // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
   // on, per its full author list, is not counted) — only the groups the settings page has switched on.
+  // The award kinds behind the "Awards" count (only when that group is switched on)
+  function markKinds() {
+    return prefs.marks.award ? marks.summarizeKinds(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) }))) : {};
+  }
+
   function markCounts() {
     const counts = marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
     for (const g of marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
@@ -165,7 +170,7 @@
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary,
       selection: state.selection, filters: state.filters,
-      marks: markCounts(), markGroup: state.markGroup,
+      marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: metrics.citationMetrics(list),
       coverage: {

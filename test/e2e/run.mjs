@@ -518,6 +518,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.deepEqual(chipKinds, ["spotlight", "oral", "best", "outstanding", "", "", "finalist", "oral", "best", "runner-up"]);
     const pill = (g) => page.locator(`#rr-panel button[data-mark-group="${g}"]`);
     assert.match(await pill("award").textContent(), /Awards\s*4/);
+    assert.match(await pill("award").getAttribute("title"), /^Best paper \d+/, "the Awards count says what it is made of, on hover");
+    assert.equal(await pill("oral").getAttribute("title"), null, "talk levels have no breakdown");
     assert.match(await pill("oral").textContent(), /Oral\s*2/);
     assert.match(await pill("spotlight").textContent(), /Spotlight\s*1/);
     assert.equal(await pill("highlight").count(), 0, "no pill for a group nobody has");

@@ -41,5 +41,8 @@
       title: lines.join("\n") }, name);
   }
 
-  B.chips = { tierChip, markChip, markLabel };
+  // The kind's name in the interface language, for counts ("Best paper 5 · Honorable mention 47")
+  const kindName = (kind) => t(kind === "best-category" ? "mkCategory" : MARK_TEXT[kind] || "mkBest");
+
+  B.chips = { tierChip, markChip, markLabel, kindName };
 })();

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.6.3 — 2026-10-12
+
+- **What the Awards count is made of.** With CHI's honorable mentions (about one paper in twenty) in the list, a single "Awards 52" hid how many
+  were best papers. Hovering the row now says: *Best paper 5 · Honorable mention 47 · Test of time 1* (in the interface language; talk levels
+  have no breakdown). `marks.summarizeKinds`.
+
 ## 2.6.2 — 2026-10-12
 
 - **SIGPLAN's Most Influential Paper Awards** (90 entries; the list holds 4608) from SIGPLAN's own pages for POPL (2003–2026), PLDI (2000–2026),
