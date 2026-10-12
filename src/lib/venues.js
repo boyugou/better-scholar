@@ -89,6 +89,16 @@
       .filter((t) => !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
   }
 
+  // The words of a name in their order with everything that varies from edition to edition taken out (proceedings, the,
+  // annual, ordinals, years, organisations) but the event words and connectives kept: "annual international symposium on
+  // computer" → [international symposium on computer]. Lets a lone common content word ("… symposium on computer …") borrow
+  // its meaning from the words in front of it.
+  const SEQ_DROP = new Set(["the", "proceedings", "proceeding", "proc", "annual", "ann"]);
+  function rawSeq(s) {
+    return fold(s).replace(/&/g, " and ").toLowerCase().replace(/\b(?:proceedings?|proc)\b\.?\s*(?:of\b)?/g, " ").split(/[^a-z0-9]+/)
+      .filter((w) => w && !SEQ_DROP.has(w) && !isNoiseToken(w) && !ORG.has(w)).map((w) => ISO[w] || w);
+  }
+
   // -------------------------------------------------------------- input cleanup
 
   const MONTH = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*";
@@ -108,7 +118,7 @@
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
   function prepare(raw) {
     // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic)
-    let s = fold(raw).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/\s+/g, " ").trim();
+    let s = fold(raw).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
@@ -210,7 +220,8 @@
         // token forms are computed once here, not on every lookup
         const form = {
           full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
-          kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg")
+          kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg"),
+          seq: rawSeq(plain)
         };
         for (const mode of ["full", "noOrg"]) {
           const t = form[mode];
@@ -260,7 +271,11 @@
         for (const w of words) df.set(w, (df.get(w) || 0) + 1);
       }
     }
-    return { sources, known, df };
+    // CCF and CORE rows that the alias table says are one venue under two acronyms
+    const pairs = new Set();
+    for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
+    const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
+    return { sources, known, df, sameVenue };
   }
 
   // ---------------------------------------------------------------- matching
@@ -485,8 +500,33 @@
         return Array.from(found);
       };
       // strict pass first (organisation words must agree), then a looser one without them
-      let d = decide(prefixPass(rawHasOrg ? "full" : "noOrg"), rawWords);
-      if (!d && rawHasOrg) d = decide(prefixPass("noOrg"), rawWords);
+      // "annual" in the string is an event word too: when several venues begin with what is left, only those that call
+      // themselves annual stay ("Annual International Conference on the Theory and Applications of …" is EUROCRYPT, not SAT)
+      const annual = /\bannual\b/i.test(p.plain);
+      const decideHere = (list) => {
+        let x = decide(list, rawWords);
+        if (x === "ambiguous" && annual) { const only = list.filter((e) => hasWord(e, "annual")); if (only.length) x = decide(only, rawWords); }
+        return x;
+      };
+      let d = decideHere(prefixPass(rawHasOrg ? "full" : "noOrg"));
+      if (!d && rawHasOrg) d = decideHere(prefixPass("noOrg"));
+      // nothing usable because one common word is all that is left ("… annual international symposium on computer …" is ISCA, not
+      // the IEEE Computer Security Foundations Symposium): the event words before it must begin one venue's name, in that order
+      if (!d) {
+        const seq = rawSeq(p.plain);
+        if (seq.length >= 4) {
+          const found = new Set();
+          for (const side of sides) {
+            for (const { entry, form } of side.first.full.get(R[0]) || []) {
+              if (form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w)) found.add(entry);
+            }
+          }
+          let cands = Array.from(found);
+          // ISCA calls itself the annual symposium, IFIP Performance does not
+          if (cands.length > 1 && annual) cands = cands.filter((e) => hasWord(e, "annual"));
+          d = cands.length === 1 ? cands[0] : null;      // one venue, not "same rating, pick any": the tooltip names it
+        }
+      }
       if (d && d !== "ambiguous") return { entry: d, rule: "prefix" };
       return null;
     }
@@ -549,6 +589,13 @@
         out[src] = src === "ccf"
           ? { tier: r.entry.tier, name: r.entry.name, abbr: r.entry.abbr, area: r.entry.area, kind: r.entry.kind, dblp: r.entry.dblp, rule: r.rule }
           : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, rule: r.rule };
+      }
+      // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
+      // ("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing" is HCOMP to CORE; CCF, which does not list
+      // HCOMP, saw "AAAI"). The name wins — unless the two rows are known to be one venue under two acronyms (SIGKDD / KDD).
+      if (out.ccf && out.core && out.ccf.kind !== "J" && squash(out.ccf.abbr) !== squash(out.core.abbr) && !idx.sameVenue(out.ccf.abbr, out.core.abbr)) {
+        if (out.ccf.rule === "acronym" && out.core.rule === "name") out.ccf = null;
+        else if (out.core.rule === "acronym" && out.ccf.rule === "name") out.core = null;
       }
       // a workshop / Findings / demo string is unranked on purpose, not "missing"
       if (sec && !out.ccf && !out.core) out.secondary = sec;

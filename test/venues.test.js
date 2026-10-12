@@ -171,8 +171,10 @@ test("truncated names resolve only when unambiguous", () => {
   assert.equal(brief("Journal of Machine Learning…, 2008"), "CCF A JMLR");
   // visible text too generic to know which symposium: stay silent
   assert.equal(brief("Proceedings of the 44th Annual IEEE/ACM international symposium on …, 2011"), "");
-  assert.equal(brief("Proceedings of the 40th Annual International Symposium on Computer …, 2013"), "");
   assert.equal(brief("Proceedings of the 4th…, 2007"), "");
+  // …but not when the event words in front of the one word left (here "annual international symposium on computer") begin exactly one
+  // venue's name that calls itself annual: that is ISCA (see the test on event words below)
+  assert.equal(brief("Proceedings of the 40th Annual International Symposium on Computer …, 2013"), "CCF A ISCA · CORE A* ISCA");
 });
 
 test("ties are broken by the event word, and by the organisation named in the string", () => {
@@ -389,4 +391,33 @@ test("Scholar's cut-off name that goes on as a venue with the string's own event
   assert.equal(brief("Proceedings of the 28th international conference on Software engineering …, 2006"), "CCF A ICSE · CORE A* ICSE");
   assert.equal(brief("Proceedings of the SIGCHI conference on human factors in computing systems …, 2010"), "CCF A CHI · CORE A* CHI");
   assert.equal(brief("Proceedings of the ACM SIGOPS 22nd symposium on Operating systems principles …, 2009"), "CCF A SOSP · CORE A* SOSP");
+});
+
+test("a cut-off name with one common word left is read through the event words in front of it: '… annual international symposium on computer …' is ISCA", () => {
+  const isca = "CCF A ISCA · CORE A* ISCA";
+  for (const s of ["Proceedings of the 44th annual international symposium on computer …, 2017", "Proceedings of the 25th annual international symposium on Computer …, 1998",
+    "Proceedings of the 50th annual international symposium on computer …, 2023"]) assert.equal(brief(s), isca, s);
+  // without "annual" the same words fit several venues (IFIP Performance, …): nothing is claimed
+  assert.equal(brief("Proceedings of the 3rd international symposium on Computer …, 1990"), "");
+  // never when the event words say something else: a conference on computers is not the symposium
+  assert.equal(brief("IEEE conference on computer …, 2010"), "");
+  // and one venue, not "any of the same rating": 'Principles of …' fits PODC and POPL alike
+  assert.equal(brief("Proceedings of the twenty-first annual symposium on Principles of …, 2002"), "");
+});
+
+test("'Annual International Conference on the Theory and Applications of …' is EUROCRYPT (the annual one), the same without 'annual' is not claimed", () => {
+  for (const s of ["Annual International Conference on the Theory and Applications of …, 2010", "annual international conference on the theory and applications of …, 2011"]) {
+    assert.equal(brief(s), "CCF A EUROCRYPT · CORE A* EuroCrypt", s);
+  }
+  assert.equal(brief("International Conference on the Theory and Applications of …, 2005"), "");
+});
+
+test("USENIX ATC's 'General Track' is its main program; the AAAI conference on Human Computation is HCOMP, not AAAI (the lists disagree, the name wins)", () => {
+  assert.equal(brief("USENIX ATC, General Track, 263-276, 2000"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
+  assert.equal(brief("USENIX Annual Technical Conference, General Track, 2004"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
+  assert.equal(brief("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing 7 …, 2019"), "CORE B HCOMP", "CCF does not list HCOMP; it must not call it AAAI");
+  assert.equal(brief("Proceedings of the AAAI Conference on Artificial Intelligence 32 (1), 2018"), "CCF A AAAI · CORE A* AAAI");
+  assert.equal(brief("Tenth International AAAI Conference on Web and Social Media, 2016"), "CCF B ICWSM · CORE A ICWSM");
+  // two acronyms for one venue are not a disagreement
+  assert.equal(brief("Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining, 2009"), "CCF A SIGKDD · CORE A* KDD");
 });

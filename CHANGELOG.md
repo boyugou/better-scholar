@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.4.6 — 2026-10-12
+
+Six more real profiles (databases, architecture, cryptography, HCI, information retrieval, theory; 570 venue strings) through the matcher.
+
+- **ISCA is found when Scholar cuts its name after "… symposium on computer …"** (six rows on an architecture profile, including the
+  TPU paper): the event words in front of the one common word left (*annual international symposium on computer*) must begin
+  exactly one venue's name, and that venue must call itself annual. Without "annual" nothing is claimed.
+- **EUROCRYPT is found from "Annual International Conference on the Theory and Applications of …"**, which also fits SAT and
+  others: when several venues begin with what is left, only those that call themselves annual stay.
+- **The two lists may not contradict each other.** `AAAI Conference on Human Computation and Crowdsourcing` is HCOMP to CORE, but CCF
+  (which does not list HCOMP) saw the acronym AAAI and badged it CCF A. A whole-name hit now beats an acronym lying in the string
+  when the two lists name different venues (unless the alias table says they are one venue under two acronyms, as SIGKDD / KDD).
+- **USENIX ATC's "General Track"** is its main program, not a track that makes it something else.
+- A few cut-off names that were silent now resolve because their words begin exactly one venue's name: COLING (*… 23rd International
+  Conference on Computational …*) and MobiCom 1997–1999 (*… annual ACM/IEEE international conference on Mobile …*).
+
 ## 2.4.5 — 2026-10-12
 
 Five more real profiles (data mining, machine learning, robot learning, statistical learning; 480 venue strings) went through the
