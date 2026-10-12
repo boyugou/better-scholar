@@ -38,3 +38,6 @@ Then, in Safari:
   your Apple Developer team, or pass your signing identity to `xcodebuild`.
 - Fixes that make Safari work again are welcome as pull requests, as long as they
   don't change Chrome behavior.
+- Known gap: since 2.2 the panel's settings button asks a tiny service worker (`src/background.js`) to open the
+  settings page; if Safari's converter rejects `background.service_worker`, the settings page is still
+  reachable from the toolbar popup.

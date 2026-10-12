@@ -1,6 +1,7 @@
-// The control panel injected into the Scholar profile page. Pure view: it renders a
-// model handed to update() and reports user intent through callbacks — it owns no
-// application state beyond which disclosure widgets are open.
+// The summary panel injected into the Scholar profile page. Pure view: it renders a model handed to
+// update() and reports user intent through callbacks — it owns no application state beyond which
+// disclosure widgets are open. What it shows at all is decided on the settings page (model.prefs); the
+// panel only keeps the quick, per-visit controls: the ranking tab, the filters, the clickable counts.
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -18,8 +19,9 @@
 
     // ---- skeleton --------------------------------------------------------
     const title = h("span", { class: "rr-title" }, t("panelTitle"));
+    const settingsBtn = h("button", { class: "rr-icon rr-ico-settings", "data-act": "settings", type: "button", title: t("settingsOpen"), "aria-label": t("settingsOpen"), onClick: () => cb.onSettings() });
     const collapseBtn = h("button", { class: "rr-icon", "data-act": "collapse", type: "button", onClick: () => cb.onCollapse() });
-    const head = h("header", { class: "rr-head" }, title, collapseBtn);
+    const head = h("header", { class: "rr-head" }, title, settingsBtn, collapseBtn);
 
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
@@ -33,31 +35,13 @@
 
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" });
 
-    // options (built once, synced on update)
-    const roleChecks = {};
-    const roleGrid = h("div", { class: "rr-roles" });
-    for (const role of ["first", "cofirst", "second", "last"]) {
-      const cbx = h("input", { type: "checkbox", "data-role": role, onChange: (e) => cb.onRole(role, e.target.checked) });
-      roleChecks[role] = cbx;
-      roleGrid.append(h("label", { class: "rr-check" }, cbx, dot(role), t(ROLE_KEY[role])));
-    }
-    const roleRow = h("div", {}, h("div", { class: "rr-label-line" }, t("hlLabel")), roleGrid);
-    const badgeChecks = {};
-    const badgeRow = h("div", { class: "rr-row" }, h("span", { class: "rr-label" }, t("badgesLabel")));
-    for (const key of ["ccf", "core", "marks"]) {
-      const cbx = h("input", { type: "checkbox", "data-badge": key, onChange: (e) => cb.onBadge(key, e.target.checked) });
-      badgeChecks[key] = cbx;
-      badgeRow.append(h("label", { class: "rr-check" }, cbx, t(key === "ccf" ? "srcCcf" : key === "core" ? "srcCore" : "markToggle")));
-    }
+    // filters (built once, synced on update)
     const onlyCb = h("input", { type: "checkbox", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
-    const nameCb = h("input", { type: "checkbox", "data-act": "mark-name", onChange: (e) => cb.onMarkName(e.target.checked) });
-    const toggleRow = h("div", { class: "rr-row" },
-      h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")),
-      h("label", { class: "rr-check" }, nameCb, t("markName")));
     const yearStart = h("select", { "data-act": "year-start", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
     const yearEnd = h("select", { "data-act": "year-end", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
-    const yearRow = h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart, "–", yearEnd);
-    const optionsSec = h("div", { class: "rr-sec rr-options" }, roleRow, badgeRow, toggleRow, yearRow);
+    const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters" },
+      h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted"))),
+      h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart, "–", yearEnd));
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics" });
 
@@ -75,18 +59,20 @@
 
     const body = h("div", { class: "rr-body" },
       h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec),
-      h("div", { class: "rr-col rr-col-b" }, optionsSec, metricsSec, coverSec, footSec));
+      h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, coverSec, footSec));
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle") }, head, body);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
 
+    // The ranking tab: a switch between the lists that are on, a plain label when only one is, nothing when none is.
     function renderSummaryHead(m) {
-      const seg = h("span", { class: "rr-seg", role: "group" },
-        ...["ccf", "core"].map((src) =>
-          h("button", { type: "button", "data-src": src, "aria-pressed": String(m.settings.matrixSource === src), onClick: () => cb.onSource(src) },
-            t(src === "ccf" ? "srcCcf" : "srcCore"))));
-      summaryHead.replaceChildren(h("span", { class: "rr-sec-title" }, t("summaryTitle")), seg);
+      const name = (src) => t(src === "ccf" ? "srcCcf" : "srcCore");
+      const control = m.sources.length > 1
+        ? h("span", { class: "rr-seg", role: "group" },
+          ...m.sources.map((src) => h("button", { type: "button", "data-src": src, "aria-pressed": String(m.source === src), onClick: () => cb.onSource(src) }, name(src))))
+        : m.sources.length === 1 ? h("span", { class: "rr-src" }, name(m.sources[0])) : null;
+      summaryHead.replaceChildren(...[h("span", { class: "rr-sec-title" }, t("summaryTitle")), control].filter(Boolean));   // (replaceChildren(null) would print "null")
     }
 
     function renderMatrix(m) {
@@ -109,7 +95,7 @@
         bodyRows.push(h("tr", { "data-role": "hidden", title: t("tipHidden") },
           h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }),
             onClick: () => cb.onSelect({ role: "hidden", tier: undefined }) }, dot("hidden"), t("roleHidden"))),
-          h("td", { colspan: String(s.columns.length), class: "rr-faint" }, ""),
+          s.columns.length ? h("td", { colspan: String(s.columns.length), class: "rr-faint" }, "") : null,
           h("td", { class: "rr-total" }, String(s.hidden))));
       }
       const foot = h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)));
@@ -170,11 +156,8 @@
       coverSec.replaceChildren(...lines);
     }
 
-    function syncOptions(m) {
-      for (const [role, cbx] of Object.entries(roleChecks)) cbx.checked = !!m.settings.roles[role];
-      for (const [key, cbx] of Object.entries(badgeChecks)) cbx.checked = !!m.settings.badges[key];
+    function syncFilters(m) {
       onlyCb.checked = !!m.filters.onlyHighlighted;
-      nameCb.checked = !!m.settings.markName;
       const sig = m.years.join(",");
       if (yearStart.dataset.sig !== sig) {
         const opts = (label) => [h("option", { value: "" }, label), ...m.years.map((y) => h("option", { value: String(y) }, String(y)))];
@@ -203,13 +186,15 @@
     }
 
     function update(m) {
-      el.classList.toggle("rr-collapsed", !!m.settings.collapsed);
-      collapseBtn.textContent = m.settings.collapsed ? "▸" : "▾";
-      collapseBtn.title = t(m.settings.collapsed ? "expand" : "collapse");
-      collapseBtn.setAttribute("aria-expanded", String(!m.settings.collapsed));
+      el.classList.toggle("rr-collapsed", !!m.ui.collapsed);
+      collapseBtn.textContent = m.ui.collapsed ? "▸" : "▾";
+      collapseBtn.title = t(m.ui.collapsed ? "expand" : "collapse");
+      collapseBtn.setAttribute("aria-expanded", String(!m.ui.collapsed));
+      filtersSec.hidden = !m.prefs.panel.filters;
+      metricsSec.hidden = !m.prefs.panel.metrics;
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
-      syncOptions(m); renderMetrics(m); renderVariants(m);
-      noteBox.textContent = t("dataNote", [m.edition.ccf + " · " + m.edition.core]);
+      syncFilters(m); renderMetrics(m); renderVariants(m);
+      noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
     }
 
     function flash(kind) {

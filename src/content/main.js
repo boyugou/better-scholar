@@ -6,12 +6,14 @@
   const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
 
-  const { venues, analysis, metrics, marks } = B;
+  const { venues, analysis, metrics, marks, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
 
   const profileId = B.scholar.profileId();
   const headerName = B.scholar.ownerName();
-  const settings = await B.store.loadSettings();
+  await B.store.migrate();
+  let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
+  const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
   const resolvedCache = await B.store.loadResolved();
 
@@ -36,6 +38,8 @@
 
   const owner = () => ({ name: headerName, alternates: variants });
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
+  // the ranking the panel's table uses (null when both lists are switched off)
+  const currentSource = () => B.prefs.source(prefs, ui);
 
   // ---- rows ---------------------------------------------------------------
 
@@ -57,40 +61,6 @@
   // ---- decoration ---------------------------------------------------------
 
   const ROLE_NAME = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast" };   // "First author", …
-  // outline ramp: strongest = top tier. CCF and CORE share shades so "A" looks the same in both.
-  const SHADE = { ccf: { A: 1, B: 3, C: 4 }, core: { "A*": 1, A: 2, B: 3, C: 4 } };
-  const RULE_TEXT = { name: "ruleName", acronym: "ruleAcronym", prefix: "rulePrefix" };
-
-  function tierChip(kind, info) {
-    const tier = kind === "ccf" ? info.tier : info.rank;
-    const label = (kind === "ccf" ? t("srcCcf") : t("srcCore")) + " " + tier;
-    const lines = [
-      `${label} · ${info.name}${info.abbr ? " (" + info.abbr + ")" : ""}`,
-      t(RULE_TEXT[info.rule] || "ruleName"),
-      edition[kind] + " — " + t("tipToday")
-    ];
-    return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
-      h("span", { class: "rr-k" }, kind === "ccf" ? t("srcCcf") : t("srcCore")), " ", h("b", {}, tier));
-  }
-
-  // Chip text: the kind in the interface language. A named category keeps the name it was given.
-  const MARK_TEXT = {
-    best: "mkBest", "best-student": "mkBestStudent", outstanding: "mkOutstanding", distinguished: "mkDistinguished",
-    "runner-up": "mkRunnerUp", tot: "mkTot", finalist: "mkFinalist", oral: "mkOral", spotlight: "mkSpotlight", highlight: "mkHighlight"
-  };
-  const markLabel = (mark) => (MARK_TEXT[mark.kind] ? t(MARK_TEXT[mark.kind]) : mark.label);
-
-  // A paper's standing: an award from the bundled list, or what the author wrote ("Oral", "Best Paper Award"…).
-  function markChip(mark) {
-    const name = markLabel(mark);
-    const lines = [name];
-    if (mark.source === "list") {
-      lines.push(t("tipMarkList", [mark.awardLabel || name, mark.venue + " " + mark.year]));
-      if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
-    } else lines.push(t("tipMarkAuthor", [mark.text]));
-    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
-      title: lines.join("\n") }, name);
-  }
 
   // "First author · position 1 of 8": the tooltip on the marked name (or on the author line when no name is marked).
   function roleTip(a) {
@@ -108,7 +78,7 @@
     if (!row.highlighted) return;
     const tip = roleTip(row.a);
     const tipOnLine = () => { el.title = tip; el.dataset.rrTip = ""; };
-    if (!settings.markName || row.a.fromDetail) return tipOnLine();
+    if (!prefs.markName || row.a.fromDetail) return tipOnLine();
     const text = el.textContent;
     let cursor = 0, pos = -1;
     row.a.tokens.forEach((tok, i) => {
@@ -124,14 +94,14 @@
   function decorate(row) {
     const { tr, venueEl } = row.raw;
     const a = row.a;
-    row.highlighted = analysis.isHighlighted(a, settings.roles);
+    row.highlighted = analysis.isHighlighted(a, prefs.roles);
     for (const r of analysis.ROLE_KEYS) tr.classList.toggle("rr-r-" + r, row.highlighted && a.role === r);
     if (venueEl) {
       venueEl.querySelectorAll(":scope > .rr-chips").forEach((n) => n.remove());
       const chips = [];
-      if (settings.badges.ccf && a.venue.ccf) chips.push(tierChip("ccf", a.venue.ccf));
-      if (settings.badges.core && a.venue.core) chips.push(tierChip("core", a.venue.core));
-      if (settings.badges.marks) for (const m of a.marks) chips.push(markChip(m));
+      if (prefs.ranks.ccf && a.venue.ccf) chips.push(chip.tierChip("ccf", a.venue.ccf, edition.ccf));
+      if (prefs.ranks.core && a.venue.core) chips.push(chip.tierChip("core", a.venue.core, edition.core));
+      for (const m of B.prefs.visibleMarks(prefs, a.marks)) chips.push(chip.markChip(m));
       if (chips.length) venueEl.append(h("span", { class: "rr-chips" }, chips));
     }
     markName(row);
@@ -139,6 +109,7 @@
 
   function applyFilters() {
     const f = state.filters;
+    const source = currentSource();
     for (const row of state.rows) {
       const a = row.a;
       let hide = f.onlyHighlighted && !row.highlighted;
@@ -147,7 +118,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
       if (state.markGroup && !marks.inGroup(a, state.markGroup)) hide = true;
-      if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, settings.matrixSource)) hide = true;
+      if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
       row.raw.tr.classList.toggle("rr-hide", hide);
     }
   }
@@ -162,19 +133,24 @@
   }
 
   // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
-  // on, per its full author list, is not counted).
-  const markCounts = () => marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
+  // on, per its full author list, is not counted) — only the groups the settings page has switched on.
+  function markCounts() {
+    const counts = marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
+    for (const g of marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
+    return counts;
+  }
 
   // Most rows without an author line means Scholar's markup moved under us.
   const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
 
   function model() {
     const list = papers();
-    const summary = metrics.summarize(list, settings.matrixSource);
+    const source = currentSource();
+    const summary = metrics.summarize(list, source);
     return {
-      ownerName: headerName, edition, settings, summary,
+      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary,
       selection: state.selection, filters: state.filters,
-      marks: settings.badges.marks ? markCounts() : {}, markGroup: state.markGroup,
+      marks: markCounts(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: metrics.citationMetrics(list),
       coverage: {
@@ -203,25 +179,22 @@
     return metrics.toText(m.summary, {
       owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(),
       extra: [marksLine(m.marks)].filter(Boolean),
-      edition: `${edition[settings.matrixSource]} — ${t("tipToday")}`
+      edition: m.source ? `${edition[m.source]} — ${t("tipToday")}` : ""
     });
   }
 
-  const persist = () => B.store.saveSettings(settings);
-
   const panel = B.panel.create({
-    onCollapse() { settings.collapsed = !settings.collapsed; persist(); refresh(); },
-    onSource(src) { settings.matrixSource = src; state.selection = null; persist(); refresh(); },
+    onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
+    onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
+    // a content script cannot open the options page itself; the service worker does it on request
+    onSettings() { try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { /* extension context gone */ } },
     onSelect(sel) {
       const same = state.selection && state.selection.role === sel.role && state.selection.tier === sel.tier;
       state.selection = same || (sel.role === undefined && sel.tier === undefined) ? null : sel;
       refresh();
     },
-    onRole(role, on) { settings.roles[role] = on; persist(); refresh(); },
-    onBadge(key, on) { settings.badges[key] = on; if (key === "marks" && !on) state.markGroup = null; persist(); refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
-    onMarkName(on) { settings.markName = on; persist(); refresh(); },
     onYear(start, end) {
       state.filters.yearStart = start === "" ? null : parseInt(start, 10);
       state.filters.yearEnd = end === "" ? null : parseInt(end, 10);
@@ -296,9 +269,22 @@
   function refresh() {
     for (const row of state.rows) decorate(row);
     applyFilters();
-    panel.update(model());
+    panel.el.hidden = !prefs.panel.show;
+    if (prefs.panel.show) panel.update(model());
   }
   const scheduleRefresh = frame(refresh);
+
+  // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
+  // gone must not keep hiding rows, so those are cleared.
+  B.store.onPrefsChanged((next) => {
+    const before = currentSource();
+    prefs = next;
+    if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
+    if (state.markGroup && !prefs.marks[state.markGroup]) state.markGroup = null;
+    if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
+    if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
+    refresh();
+  });
 
   // ---- boot ---------------------------------------------------------------
 
@@ -317,9 +303,9 @@
         const list = papers();
         send({
           ok: true, owner: headerName, loaded: list.length, edition,
-          summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core") },
-          marks: settings.badges.marks ? markCounts() : {},
-          source: settings.matrixSource
+          sources: B.prefs.sources(prefs), source: currentSource(),
+          summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
+          marks: markCounts()
         });
       }
       return false;

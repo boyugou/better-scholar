@@ -14,15 +14,6 @@
   "summaryTitle": {
     "message": "Papers by role and rank"
   },
-  "hlLabel": {
-    "message": "Highlight"
-  },
-  "badgesLabel": {
-    "message": "Venue badges"
-  },
-  "markToggle": {
-    "message": "Awards & talks"
-  },
   "marksTitle": {
     "message": "Awards & talks"
   },
@@ -95,9 +86,6 @@
   },
   "onlyHighlighted": {
     "message": "Only highlighted"
-  },
-  "markName": {
-    "message": "Mark name"
   },
   "yearLabel": {
     "message": "Year"
@@ -350,5 +338,109 @@
   },
   "popupOpenScholar": {
     "message": "Open Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Settings"
+  },
+  "optHeading": {
+    "message": "Settings"
+  },
+  "optPreviewTitle": {
+    "message": "Preview"
+  },
+  "optPreviewNote": {
+    "message": "Sample papers as they will look on a Scholar profile. “A Author” is you."
+  },
+  "optSaved": {
+    "message": "Saved"
+  },
+  "optRolesTitle": {
+    "message": "Highlight my papers"
+  },
+  "optRolesHint": {
+    "message": "Each position gets its own row colour. Papers where you are in the middle stay plain."
+  },
+  "optMarkName": {
+    "message": "Mark my name in the author line"
+  },
+  "optMarkNameHint": {
+    "message": "Bold and tinted. Hover it to see your position."
+  },
+  "optRanksTitle": {
+    "message": "Venue ranks"
+  },
+  "optCcf": {
+    "message": "CCF rank"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federation list, 7th edition (2026)."
+  },
+  "optCore": {
+    "message": "CORE rank"
+  },
+  "optCoreHint": {
+    "message": "CORE conference ranking, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Awards and talks"
+  },
+  "optMarkAwardHint": {
+    "message": "Best, outstanding and distinguished paper, honorable mention, test of time, and best-paper finalists."
+  },
+  "optPanelTitle": {
+    "message": "Summary panel"
+  },
+  "optPanelShow": {
+    "message": "Show the summary panel"
+  },
+  "optPanelShowHint": {
+    "message": "The role × rank table on a profile page. Off: only the paper list is marked up."
+  },
+  "optPanelFilters": {
+    "message": "Filters"
+  },
+  "optPanelFiltersHint": {
+    "message": "Only highlighted papers, and a year range."
+  },
+  "optPanelMetrics": {
+    "message": "Citation totals"
+  },
+  "optPanelMetricsHint": {
+    "message": "Papers, citations, h-index and i10-index of the highlighted papers."
+  },
+  "optDataTitle": {
+    "message": "Saved data"
+  },
+  "optClearCache": {
+    "message": "Clear saved paper details"
+  },
+  "optCacheCount": {
+    "message": "$N1$ papers' author lists are saved on this device (read with Resolve, kept for 90 days).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "1 paper's author list is saved on this device (read with Resolve, kept for 90 days)."
+  },
+  "optCacheNone": {
+    "message": "No paper details are saved."
+  },
+  "optCleared": {
+    "message": "Cleared"
+  },
+  "optReset": {
+    "message": "Reset to defaults"
+  },
+  "optResetConfirm": {
+    "message": "Reset all of these settings to their defaults?"
+  },
+  "optStorage": {
+    "message": "Settings are stored in your browser and sync with your Chrome profile. Nothing is sent anywhere."
+  },
+  "optSample": {
+    "message": "Sample paper"
   }
 }

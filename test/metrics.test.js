@@ -104,3 +104,19 @@ test("toText appends extra lines (the awards and talks line) before the edition"
   assert.equal(lines[lines.length - 1], "CCF 2026");
   assert.ok(!m.toText(s, {}).includes("Awards"));
 });
+
+test("summarize with no ranking (both rank lists switched off): roles only, no tier columns", () => {
+  const rows = [paper("first", "A"), paper("first", null), paper("last", "B"), paper(null, null), { status: "absent", role: null, venue: {}, citations: 0 }];
+  const s = m.summarize(rows, null);
+  assert.deepEqual(s.columns, []);
+  assert.equal(s.source, null);
+  assert.deepEqual(s.rows.map((r) => [r.role, r.total]), [["first", 2], ["second", 0], ["last", 1]]);
+  assert.equal(s.totals.total, 3);
+  assert.equal(s.hidden, 1);
+  assert.equal(s.absent, 1);
+  const text = m.toText(s, { owner: "A Author" });
+  assert.match(text, /^A Author — 5 papers on Google Scholar, by authorship role$/m);
+  assert.match(text, /^First author: 2$/m, "no empty parentheses");
+  assert.equal(m.toTsv(s).split("\n")[0], "Role\tTotal");
+  assert.ok(m.inSelection(paper("first", "A"), { role: "first" }, null));
+});

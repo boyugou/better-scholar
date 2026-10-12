@@ -11,21 +11,23 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
 <p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
+<p align="center"><img src="docs/settings.png" width="640" alt="The settings page: switches for author positions, rank lists, awards and talks and the summary panel, with a live preview"></p>
+<p align="center"><sub>The settings page (sliders button in the panel or the toolbar popup): choose what is shown, with a live preview.</sub></p>
 
 - **Role × rank summary** — a small matrix in the page: first / co-first / second /
   last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
   list exactly those papers. *Copy summary* and *Copy as table* put it on the
   clipboard for a CV or an application form.
 - **Role colours on every paper** — each row is tinted by the author's position
-  (blue first, purple co-first, amber second, green last) with a small tag; matching
-  venue chips (`CCF A`, `CORE A*`) sit on the venue line. Hover a chip to see which
-  venue it matched, by which rule, and the list edition.
+  (blue first, purple co-first, amber second, green last) and your name in the author line is marked
+  (hover it: "First author · position 1 of 8"). Quiet rank chips (`CCF A`, `CORE A*`) sit on the venue
+  line; hover one to see which venue it matched, by which rule, and the list edition.
 - **Accurate, explainable venue matching** — built against real Scholar data, not
   guesses. Conferences and journals are matched separately; truncated names
   (`…on Computer Vision and Pattern …`), `ISCA 2014 42 (3)`, `[arXiv…]` annotations,
   `Findings`/workshop/demo tracks are all handled. When a venue is not recognised the
   panel lists it instead of guessing.
-- **Awards and talk levels** — a paper gets a small chip (awards in gold with a ★) when its title or venue
+- **Awards and talk levels** — a paper gets a small chip (gold ★ for an award, silver for an honorable mention, slate for a talk level) when its title or venue
   text says *Oral*, *Spotlight*, *Highlight* or an award (*Best / Outstanding / Distinguished Paper*, *Test
   of Time*), or when it is on a bundled list of award-winning papers from the conferences' own award pages
   (ACL family, ICLR, NeurIPS, ICML, CVPR 2025, ECCV 2024). The panel counts them and a click lists just those
@@ -34,8 +36,13 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   hides the last author on large papers (on one well-known PI's profile, 30 of the
   first 100 papers). **Resolve** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
-- **Metrics** for the highlighted papers (papers, citations, h-index, i10), year
-  range, "only highlighted", optional name marking, **Load all** to expand the list.
+- **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
+  highlighted", and **Load all** to expand the list.
+- **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
+  settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
+  of Awards / Oral / Spotlight / Highlight, and whether the panel, its filters and its citation totals
+  appear at all. A live preview shows the result and open Scholar tabs update at once; whatever you switch
+  off disappears from the page instead of staying as a control.
 - **Private by design** — no accounts, no analytics, no third-party requests. The
   rankings are bundled in the extension. Settings sync through your Chrome account.
   See [`PRIVACY.md`](PRIVACY.md).
@@ -124,10 +131,12 @@ compatibility with other browsers never constrains them.
 ```
 src/                     the extension — load this folder in Chrome
   manifest.json          MV3, permission: storage only; content script on /citations* pages
-  lib/                   pure logic: names, venues (matcher), metrics, analysis
-  content/               Scholar adapter, panel UI, detail-page reader, styles
+  background.js          four lines: opens the settings page when the panel's button asks
+  lib/                   pure logic: names, venues (matcher), metrics, marks, awards, prefs, analysis
+  content/               Scholar adapter, panel UI, chips, detail-page reader, styles
   data/                  bundled rankings (generated) and curated venue aliases
   popup/                 toolbar popup (the same summary for the active tab)
+  options/               settings page: what to show, with a live preview
   _locales/              English, 简体中文
 data/                    ranking datasets + provenance (source of src/data/*.js)
 scripts/                 data builders (CCF PDF, ICORE), packaging, icon renderer

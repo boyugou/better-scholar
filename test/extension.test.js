@@ -20,11 +20,13 @@ function walk(dir, out = []) {
   return out;
 }
 
-test("manifest: MV3, least privilege, no background worker", () => {
+test("manifest: MV3, least privilege, nothing in the background but the options-page relay", () => {
   assert.equal(manifest.manifest_version, 3);
   assert.deepEqual(manifest.permissions, ["storage"]);
   assert.equal(manifest.host_permissions, undefined, "content-script matches are enough");
-  assert.equal(manifest.background, undefined, "everything runs in the content script");
+  assert.deepEqual(manifest.background, { service_worker: "background.js" }, "a service worker and nothing else (no persistent page, no module)");
+  assert.deepEqual(manifest.options_ui, { page: "options/options.html", open_in_tab: true });
+  assert.equal(manifest.web_accessible_resources, undefined, "no page may reach into the extension");
   assert.equal(manifest.optional_permissions, undefined);
   assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
   assert.equal(manifest.default_locale, "en");
@@ -43,7 +45,7 @@ test("manifest: runs only on Scholar profile pages, on every Scholar domain", ()
 
 test("manifest: every referenced file exists, and scripts load in dependency order", () => {
   const cs = manifest.content_scripts[0];
-  for (const f of [...cs.js, ...cs.css, manifest.action.default_popup, ...Object.values(manifest.icons), ...Object.values(manifest.action.default_icon)]) {
+  for (const f of [...cs.js, ...cs.css, manifest.action.default_popup, manifest.options_ui.page, manifest.background.service_worker, ...Object.values(manifest.icons), ...Object.values(manifest.action.default_icon)]) {
     assert.ok(fs.existsSync(path.join(src, f)), "missing " + f);
   }
   const idx = (f) => cs.js.indexOf(f);
@@ -54,12 +56,33 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
   assert.ok(idx("lib/venues.js") < idx("content/main.js"));
   assert.ok(idx("data/ccf.js") < idx("content/main.js") && idx("data/core.js") < idx("content/main.js") && idx("data/aliases.js") < idx("content/main.js"));
   assert.ok(idx("content/dom.js") < idx("content/store.js") && idx("content/scholar.js") < idx("content/panel.js") && idx("content/panel.js") < idx("content/main.js"));
-  // every script on disk is either loaded by the manifest or by the popup page
-  const popupHtml = read("popup/popup.html");
+  assert.ok(idx("content/dom.js") < idx("content/chips.js") && idx("content/chips.js") < idx("content/main.js"));
+  assert.ok(idx("lib/prefs.js") < idx("content/main.js"));
+  // every script on disk is loaded by the manifest, the popup page or the settings page
+  const pages = read("popup/popup.html") + read("options/options.html");
   for (const f of walk(path.join(src, "lib")).concat(walk(path.join(src, "content"))).filter((x) => x.endsWith(".js"))) {
     const rel = path.relative(src, f).split(path.sep).join("/");
-    assert.ok(cs.js.includes(rel) || popupHtml.includes(rel.replace(/^/, "../")), `${rel} is not loaded anywhere`);
+    assert.ok(cs.js.includes(rel) || pages.includes("../" + rel), `${rel} is not loaded anywhere`);
   }
+});
+
+test("pages: the popup and the settings page load only files that exist, dependencies first", () => {
+  for (const [page, scripts] of [["popup/popup.html", ["lib/metrics.js", "content/dom.js", "popup/popup.js"]], ["options/options.html", ["lib/prefs.js", "content/dom.js", "content/chips.js", "content/store.js", "options/options.js"]]]) {
+    const html = read(page);
+    const refs = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join(path.posix.dirname(page), m[1])));
+    assert.deepEqual(refs, scripts, page);
+    for (const m of html.matchAll(/(?:src|href)="([^"#]+)"/g)) assert.ok(fs.existsSync(path.join(src, path.posix.dirname(page), m[1])), `${page}: missing ${m[1]}`);
+    assert.doesNotMatch(html, /<script(?![^>]*\bsrc=)/, "no inline scripts (they would break the extension CSP)");
+  }
+});
+
+test("background.js only relays 'open the settings page'", () => {
+  const code = read("background.js").replace(/^\s*\/\/.*$/gm, "");
+  assert.match(code, /chrome\.runtime\.onMessage\.addListener/);
+  assert.match(code, /chrome\.runtime\.openOptionsPage\(\)/);
+  assert.match(code, /sender\.id === chrome\.runtime\.id/, "only this extension's own scripts may ask");
+  for (const bad of ["fetch(", "XMLHttpRequest", "WebSocket", "chrome.storage", "chrome.tabs", "chrome.scripting", "importScripts", "eval("]) assert.ok(!code.includes(bad), "background.js must not use " + bad);
+  assert.ok(code.split("\n").filter((l) => l.trim()).length <= 8, "keep it tiny");
 });
 
 test("locales: same keys in every language, manifest strings defined", () => {
@@ -88,11 +111,12 @@ test("locales: same keys in every language, manifest strings defined", () => {
 test("every string the UI asks for exists in the English catalog", () => {
   const en = locale("en");
   const used = new Set();
-  for (const f of walk(path.join(src, "content")).concat(walk(path.join(src, "popup"))).filter((x) => x.endsWith(".js"))) {
+  for (const f of walk(path.join(src, "content")).concat(walk(path.join(src, "popup")), walk(path.join(src, "options"))).filter((x) => x.endsWith(".js"))) {
     const text = fs.readFileSync(f, "utf8");
     for (const m of text.matchAll(/\b(?:t|tn)\(\s*"(\w+)"/g)) used.add(m[1]);
     // dynamic keys built from small lookup tables
-    for (const m of text.matchAll(/:\s*"((?:role|chip|rule|copy|srcC|tip|mark[A-Z])\w*)"/g)) used.add(m[1]);
+    // (a `key: "…"` is a settings path such as "markName", not a message)
+    for (const m of text.matchAll(/(?<!\bkey):\s*"((?:role|chip|rule|copy|srcC|tip|mark[A-Z])\w*)"/g)) used.add(m[1]);
   }
   const missing = [...used].filter((k) => !en[k]);
   assert.deepEqual(missing, [], "messages used in code but not defined");

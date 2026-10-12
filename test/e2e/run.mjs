@@ -56,6 +56,7 @@ const names = require(path.join(repo, "src/lib/names.js"));
 const venues = require(path.join(repo, "src/lib/venues.js"));
 const metrics = require(path.join(repo, "src/lib/metrics.js"));
 const analysis = require(path.join(repo, "src/lib/analysis.js"));
+const prefsLib = require(path.join(repo, "src/lib/prefs.js"));
 const ccf = require(path.join(repo, "src/data/ccf.js"));
 const core = require(path.join(repo, "src/data/core.js"));
 const aliases = require(path.join(repo, "src/data/aliases.js"));
@@ -110,6 +111,7 @@ async function launch() {
     executablePath: chromiumPath,
     headless: true,
     viewport: { width: 1360, height: 900 },
+    deviceScaleFactor: parseFloat(process.env.E2E_SCALE || "1"),   // E2E_SCALE=2 for sharp README screenshots
     permissions: ["clipboard-read", "clipboard-write"],
     args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run", ...(process.env.CI ? ["--no-sandbox"] : [])]
   });
@@ -137,6 +139,18 @@ function matrixOf(papers, source = "ccf") {
 }
 
 const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").count();
+
+// the settings page: switches are saved at once and every open profile tab redraws
+const optionsUrl = `chrome-extension://${extId}/options/options.html`;
+async function openOptions(context) {
+  const p = await context.newPage();
+  await p.goto(optionsUrl);
+  await p.waitForSelector('input[data-pref="roles.last"]');
+  return p;
+}
+const setPref = (p, key, on) => p.setChecked(`input[data-pref="${key}"]`, on);
+const stored = (p, area, key) => p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]);
+const eventually = (page, fn, arg) => page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 });
 
 (async () => {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -210,12 +224,14 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     const stats = matrixOf(all);
     console.log("      matrix:", JSON.stringify(stats));
 
-    // -- 6. role checkbox toggles highlighting (and persists to the DOM state)
-    await page.uncheck('input[data-role="last"]');
-    assert.equal(await page.locator("tr.rr-r-last").count(), 0);
-    await page.check('input[data-role="last"]');
-    assert.equal(await page.locator("tr.rr-r-last").count(), all.filter((p) => p.highlighted && p.role === "last").length);
-    ok("role checkboxes switch highlighting off and on");
+    // -- 6. a role switch on the settings page recolours the open profile at once (no reload)
+    const opts = await openOptions(context);
+    const lastRows = all.filter((p) => p.highlighted && p.role === "last").length;
+    await setPref(opts, "roles.last", false);
+    await eventually(page, () => document.querySelectorAll("tr.rr-r-last").length === 0);
+    await setPref(opts, "roles.last", true);
+    await eventually(page, (n) => document.querySelectorAll("tr.rr-r-last").length === n, lastRows);
+    ok("role switches on the settings page recolour the open profile at once");
 
     // -- 7. matrix cell filters the list
     const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;
@@ -248,12 +264,12 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     const textBefore = await page.locator("#gsc_a_b tr.gsc_a_tr").first().locator(".gs_gray").first().textContent();
     assert.equal(textBefore, profile.rows[0].authors, "marking a name must not change the text");
     assert.match(await page.locator(".rr-name").first().getAttribute("title"), /author · position \d+ of \d+/);
-    await page.uncheck('input[data-act="mark-name"]');
-    assert.equal(await page.locator(".rr-name").count(), 0);
+    await setPref(opts, "markName", false);
+    await eventually(page, () => document.querySelectorAll(".rr-name").length === 0);
     assert.ok((await page.locator('tr[class*="rr-r-"] .gs_gray[title]').count()) > 0, "the role tooltip stays on the author line");
-    await page.check('input[data-act="mark-name"]');
-    assert.ok((await page.locator(".rr-name").count()) > 0);
-    ok("the owner's name is marked by default (text untouched, role in the tooltip) and the switch undoes it cleanly");
+    await setPref(opts, "markName", true);
+    await eventually(page, () => document.querySelectorAll(".rr-name").length > 0);
+    ok("the owner's name is marked by default (text untouched, role in the tooltip) and its switch on the settings page undoes it cleanly");
 
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
@@ -312,6 +328,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tabId}`);
     await popup.waitForSelector(".who");
     assert.match(await popup.textContent(".who"), /Ion Stoica/);
+    assert.doesNotMatch(await popup.textContent("#main"), /\bnull\b|undefined/, "no stray null / undefined in the popup");
     const popupMatrix = await popup.evaluate(() => Array.from(document.querySelectorAll("tbody tr")).map((tr) => tr.lastElementChild.textContent));
     assert.ok(popupMatrix.length >= 3);
     await popup.screenshot({ path: path.join(outDir, "popup.png") });
@@ -323,6 +340,133 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     assert.ok(!/\$N\d\$|\$\d/.test(body), "placeholders substituted");
     assert.match(body, /20 papers loaded/);   // (the page was reloaded in step 13)
     ok("chrome.i18n placeholders are substituted");
+
+    // -- S1. no preference switches are left on the page itself
+    for (const sel of ['input[data-role]', 'input[data-badge]', 'input[data-act="mark-name"]']) assert.equal(await page.locator(`#rr-panel ${sel}`).count(), 0, sel);
+    ok("the panel keeps no preference switches (those live on the settings page)");
+
+    // -- S2. rank switches: CORE off → no CORE chips and no tab; both off → roles only
+    const rows20 = expected(first20, { resolveHidden: true });   // (step 11's Resolve is cached, so the reload keeps it)
+    await setPref(opts, "ranks.core", false);
+    await eventually(page, () => !document.querySelector('.rr-chip[data-kind="core"]'));
+    assert.equal(await page.locator("#rr-panel button[data-src]").count(), 0);
+    assert.equal((await page.textContent("#rr-panel .rr-src")).trim(), "CCF");
+    assert.deepEqual(await readMatrix(page), matrixOf(rows20, "ccf"));
+    await setPref(opts, "ranks.ccf", false);
+    await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
+    assert.equal(await page.locator("#rr-panel button.rr-cell").count(), 0, "no tier columns when both lists are off");
+    assert.deepEqual(await readMatrix(page), matrixOf(rows20, null));
+    assert.doesNotMatch(await page.textContent("#rr-panel"), /\bnull\b|undefined/, "no stray null / undefined in the panel");
+    await page.click('[data-act="copy-text"]');
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Ion Stoica — 20 papers on Google Scholar, by authorship role\n/);
+    await setPref(opts, "ranks.ccf", true);
+    await setPref(opts, "ranks.core", true);
+    await eventually(page, () => document.querySelector('.rr-chip[data-kind="core"]') && document.querySelector("#rr-panel button[data-src]"));
+    ok("CORE off: no CORE chips or tab, table by CCF; both off: roles only, copy text says so; back on restores both");
+
+    // -- S3. panel switches: filters, citation totals, the panel itself
+    await page.check('input[data-act="only"]');
+    const highlighted20 = rows20.filter((p) => p.highlighted).length;
+    assert.ok(highlighted20 < 20 && highlighted20 > 0);
+    assert.equal(await visibleRows(page), highlighted20, "the filter is active");
+    await setPref(opts, "panel.filters", false);
+    await eventually(page, () => document.querySelector('[data-rr="filters"]').hidden);
+    assert.equal(await visibleRows(page), 20, "a filter whose control is gone no longer hides rows");
+    await setPref(opts, "panel.metrics", false);
+    await eventually(page, () => document.querySelector('[data-rr="metrics"]').hidden);
+    await setPref(opts, "panel.show", false);
+    await eventually(page, () => document.getElementById("rr-panel").hidden);
+    assert.ok((await page.locator("tr.rr-r-last").count()) > 0, "rows stay decorated with the panel off");
+    assert.ok(await opts.locator('input[data-pref="panel.filters"]').isDisabled(), "the panel's sub-switches are greyed out while it is off");
+    for (const key of ["panel.show", "panel.filters", "panel.metrics"]) await setPref(opts, key, true);
+    await eventually(page, () => !document.getElementById("rr-panel").hidden && !document.querySelector('[data-rr="filters"]').hidden && !document.querySelector('[data-rr="metrics"]').hidden);
+    ok("panel switches hide the filters, the citation totals and the whole panel; a hidden filter stops filtering");
+
+    // -- S4. the toolbar popup follows the settings
+    await setPref(opts, "ranks.ccf", false);
+    await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
+    const pop = await context.newPage();
+    await pop.goto(`chrome-extension://${extId}/popup/popup.html`);
+    const profileTab = await pop.evaluate(async () => {
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+      return null;
+    });
+    await pop.goto(`chrome-extension://${extId}/popup/popup.html?tab=${profileTab}`);
+    await pop.waitForSelector(".who");
+    assert.equal(await pop.locator(".seg").count(), 0);
+    assert.equal((await pop.textContent(".src")).trim(), "CORE");
+    await pop.close();
+    await setPref(opts, "ranks.ccf", true);
+    await eventually(page, () => document.querySelector('.rr-chip[data-kind="ccf"]'));
+    ok("the popup shows only the rank lists that are switched on");
+
+    // -- S5. the page writes view state, the settings page writes preferences: neither overwrites the other
+    await setPref(opts, "roles.last", false);
+    await eventually(page, () => document.querySelectorAll("tr.rr-r-last").length === 0);
+    await page.click('[data-act="collapse"]');
+    await page.click('[data-act="collapse"]');
+    await page.click('button[data-src="core"]');
+    assert.equal((await stored(opts, "sync", "prefs")).roles.last, false, "collapsing or switching the table never rewrites the preferences");
+    assert.deepEqual(await stored(opts, "local", "ui"), { collapsed: false, source: "core" });
+    await page.click('button[data-src="ccf"]');
+    await setPref(opts, "roles.last", true);
+    await eventually(page, () => document.querySelectorAll("tr.rr-r-last").length > 0);
+    ok("view state (collapsed, ranking tab) and preferences are stored separately");
+
+    // -- S6. the pre-2.2 combined settings are split once and removed
+    await opts.evaluate(async () => {
+      await chrome.storage.sync.remove("prefs");
+      await chrome.storage.local.remove("ui");
+      await chrome.storage.sync.set({ settings: { v: 2, roles: { first: true, cofirst: true, second: true, last: false }, badges: { ccf: true, core: false, marks: true }, markName: false, matrixSource: "core", collapsed: true } });
+    });
+    await page.reload();
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator("tr.rr-r-last").count(), 0);
+    assert.equal(await page.locator('.rr-chip[data-kind="core"]').count(), 0);
+    assert.equal(await page.locator(".rr-name").count(), 0);
+    assert.ok(await page.evaluate(() => document.getElementById("rr-panel").classList.contains("rr-collapsed")));
+    const migrated = await stored(opts, "sync", "prefs");
+    assert.equal(migrated.roles.last, false);
+    assert.equal(migrated.ranks.core, false);
+    assert.equal(migrated.markName, false);
+    assert.equal(await stored(opts, "sync", "settings"), undefined, "the old record is removed");
+    assert.deepEqual(await stored(opts, "local", "ui"), { collapsed: true, source: "core" });
+    ok("settings from the previous version carry over (roles, rank lists, collapsed) and the old record is removed");
+
+    // -- S7. the settings page: preview, reset, clearing the saved paper details
+    await opts.reload();
+    await opts.waitForSelector('input[data-pref="roles.last"]');
+    assert.equal(await opts.locator("#preview tr").count(), 4);
+    assert.equal(await opts.locator("#preview tr.rr-r-last").count(), 0, "the preview reflects the migrated 'last' switch");
+    assert.equal(await opts.locator('#preview .rr-chip[data-kind="core"]').count(), 0);
+    assert.equal(await opts.locator("#preview .rr-name").count(), 0);
+    opts.once("dialog", (d) => d.accept());
+    await opts.click('[data-act="reset"]');
+    await eventually(opts, () => document.querySelectorAll("#preview tr.rr-r-last").length === 1);
+    assert.deepEqual(await stored(opts, "sync", "prefs"), prefsLib.defaults());
+    assert.equal(await opts.locator("#preview tr[class*='rr-r-']").count(), 4);
+    assert.equal(await opts.locator("#preview .rr-name").count(), 4);
+    assert.ok((await opts.locator("#preview .rr-chip-mark").count()) >= 4);
+    await setPref(opts, "marks.award", false);
+    assert.equal(await opts.locator("#preview .rr-chip-mark-award").count(), 0);
+    await setPref(opts, "marks.award", true);
+    assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Resolve' left a cache of paper details");
+    await opts.reload();
+    await opts.waitForSelector('[data-act="clear-cache"]');
+    assert.match(await opts.textContent(".row .note"), /^\d+ papers' author lists are saved/);
+    await opts.click('[data-act="clear-cache"]');
+    await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
+    assert.equal(await stored(opts, "local", "resolved"), undefined);
+    await opts.evaluate(() => window.scrollTo(0, 0));
+    await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
+    ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
+
+    // -- S8. the panel's settings button opens the settings page
+    await opts.close();
+    const [opened] = await Promise.all([context.waitForEvent("page"), page.click('[data-act="settings"]')]);
+    await opened.waitForLoadState();
+    assert.equal(opened.url(), optionsUrl);
+    ok("the settings button in the panel opens the settings page");
 
     assert.deepEqual(errors, [], "no console or page errors:\n" + errors.join("\n"));
     ok("no console errors");
@@ -398,12 +542,24 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     assert.match(text, /Awards & talks: Awards 4, Oral 2, Spotlight 1 \(from the authors' own words or the award list\)/);
     ok("Copy summary includes the awards and talks line");
     await page.screenshot({ path: path.join(outDir, "marks.png") });
-    await page.click('input[data-badge="marks"]');
-    assert.equal(await page.locator(".rr-chip-mark").count(), 0);
-    assert.equal(await page.locator("#rr-panel .rr-markrow").count(), 0);
-    await page.click('input[data-badge="marks"]');
-    assert.ok((await page.locator(".rr-chip-mark").count()) > 0);
-    ok("the Awards & talks switch hides and restores the chips and pills");
+    // each group has its own switch on the settings page; a finalist follows the awards
+    const optsM = await openOptions(ctx3);
+    await pill("award").click();
+    assert.equal(await visibleRows(page), 4);
+    await setPref(optsM, "marks.award", false);
+    await eventually(page, () => document.querySelectorAll('.rr-chip-mark[data-group="award"], .rr-chip-mark[data-group="finalist"]').length === 0);
+    assert.equal(await visibleRows(page), 10, "switching a group off also ends a filter on it");
+    assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="award"]').count(), 0);
+    assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="oral"]').count(), 1);
+    assert.ok((await page.locator('.rr-chip-mark[data-group="oral"]').count()) > 0, "talk levels keep their own switch");
+    await page.click('[data-act="copy-text"]');
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Awards & talks: Oral 2, Spotlight 1 /m);
+    for (const g of ["oral", "spotlight"]) await setPref(optsM, "marks." + g, false);
+    await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length === 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 0);
+    assert.equal(await page.locator('[data-rr="marks"]').isHidden(), true, "no Awards & talks section when every group is off");
+    for (const g of ["award", "oral", "spotlight"]) await setPref(optsM, "marks." + g, true);
+    await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length > 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 3);
+    ok("each Awards & talks group has its own switch on the settings page: chips, panel rows, counts and an active filter follow");
   } finally {
     await ctx3.close();
     await fx3.close();

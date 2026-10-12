@@ -8,6 +8,9 @@
   document.documentElement.lang = chrome.i18n.getUILanguage();
   document.getElementById("title").textContent = t("panelTitle");
   document.getElementById("ver").textContent = "v" + chrome.runtime.getManifest().version;
+  const settings = document.getElementById("settings");
+  settings.title = settings.ariaLabel = t("settingsOpen");
+  settings.addEventListener("click", () => { chrome.runtime.openOptionsPage(); window.close(); });
   const main = document.getElementById("main");
 
   const COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
@@ -30,13 +33,18 @@
   }
 
   function render(data) {
-    let source = data.source === "core" ? "core" : "ccf";
+    // the lists switched on in the settings; "none" = roles only
+    const sources = data.sources || ["ccf", "core"];
+    let source = sources.includes(data.source) ? data.source : sources[0] || "none";
     const labels = () => Object.fromEntries(Object.entries(COPY).map(([k, v]) => [k, t(v)]));
     const draw = () => {
       const s = data.summaries[source];
       const tier = (c) => (c === "none" ? "–" : c);
-      const seg = h("div", { class: "seg", role: "group" },
-        ...["ccf", "core"].map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, t(k === "ccf" ? "srcCcf" : "srcCore"))));
+      const name = (k) => t(k === "ccf" ? "srcCcf" : "srcCore");
+      const seg = sources.length > 1
+        ? h("div", { class: "seg", role: "group" },
+          ...sources.map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, name(k))))
+        : sources.length === 1 ? h("div", { class: "src" }, name(sources[0])) : null;
       const table = h("table", {},
         h("thead", {}, h("tr", {}, h("th", {}), ...s.columns.map((c) => h("th", {}, tier(c))), h("th", {}, t("colTotal")))),
         h("tbody", {}, ...s.rows.map((r) => h("tr", {},
@@ -50,17 +58,19 @@
       const copy = (kind) => async (e) => {
         const text = kind === "tsv"
           ? metrics.toTsv(s, { label: labels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), extra: marksLine ? [marksLine] : [], edition: `${data.edition[source]} — ${t("tipToday")}` });
+          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), extra: marksLine ? [marksLine] : [], edition: source === "none" ? "" : `${data.edition[source]} — ${t("tipToday")}` });
         if (await copyText(text)) { const b = e.target; const old = b.textContent; b.textContent = t("copied"); setTimeout(() => (b.textContent = old), 1200); }
       };
-      main.replaceChildren(
+      // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
+      main.replaceChildren(...[
         h("div", { class: "who" }, h("b", {}, data.owner), h("span", {}, tn("popupPapers", data.loaded, [String(data.loaded)]))),
         seg, table,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
           h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))),
-        h("p", { class: "note" }, t("dataNote", [data.edition.ccf + " · " + data.edition.core])));
+        h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => data.edition[k]).join(" · ")]))
+      ].filter(Boolean));
     };
     draw();
   }

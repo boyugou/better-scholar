@@ -14,15 +14,6 @@
   "summaryTitle": {
     "message": "按角色与等级统计"
   },
-  "hlLabel": {
-    "message": "高亮"
-  },
-  "badgesLabel": {
-    "message": "场所徽章"
-  },
-  "markToggle": {
-    "message": "获奖与报告形式"
-  },
   "marksTitle": {
     "message": "获奖与报告形式"
   },
@@ -95,9 +86,6 @@
   },
   "onlyHighlighted": {
     "message": "只显示高亮"
-  },
-  "markName": {
-    "message": "标出姓名"
   },
   "yearLabel": {
     "message": "年份"
@@ -335,5 +323,106 @@
   },
   "popupOpenScholar": {
     "message": "打开 Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "设置"
+  },
+  "optHeading": {
+    "message": "设置"
+  },
+  "optPreviewTitle": {
+    "message": "预览"
+  },
+  "optPreviewNote": {
+    "message": "示例论文在 Scholar 主页上的样子；“A Author”就是你。"
+  },
+  "optSaved": {
+    "message": "已保存"
+  },
+  "optRolesTitle": {
+    "message": "高亮我的论文"
+  },
+  "optRolesHint": {
+    "message": "每种作者位次对应一种行颜色；你排在中间的论文保持原样。"
+  },
+  "optMarkName": {
+    "message": "在作者行里标出我的名字"
+  },
+  "optMarkNameHint": {
+    "message": "加粗并着色；鼠标悬停可看到你的位次。"
+  },
+  "optRanksTitle": {
+    "message": "会议期刊等级"
+  },
+  "optCcf": {
+    "message": "CCF 等级"
+  },
+  "optCcfHint": {
+    "message": "中国计算机学会推荐目录，第七版（2026）。"
+  },
+  "optCore": {
+    "message": "CORE 等级"
+  },
+  "optCoreHint": {
+    "message": "CORE 会议排名，ICORE 2026。"
+  },
+  "optMarksTitle": {
+    "message": "获奖与报告形式"
+  },
+  "optMarkAwardHint": {
+    "message": "最佳论文、杰出论文、优秀论文、荣誉提名、时间检验奖，以及最佳论文入围。"
+  },
+  "optPanelTitle": {
+    "message": "摘要面板"
+  },
+  "optPanelShow": {
+    "message": "显示摘要面板"
+  },
+  "optPanelShowHint": {
+    "message": "主页上的“角色 × 等级”统计表。关闭后只在论文列表里做标记。"
+  },
+  "optPanelFilters": {
+    "message": "筛选"
+  },
+  "optPanelFiltersHint": {
+    "message": "只显示高亮论文，以及年份范围。"
+  },
+  "optPanelMetrics": {
+    "message": "引用统计"
+  },
+  "optPanelMetricsHint": {
+    "message": "高亮论文的篇数、引用数、h 指数和 i10 指数。"
+  },
+  "optDataTitle": {
+    "message": "已保存的数据"
+  },
+  "optClearCache": {
+    "message": "清除已保存的论文详情"
+  },
+  "optCacheCount": {
+    "message": "本机已保存 $N1$ 篇论文的作者列表（点“补全”时读取，保留 90 天）。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "没有保存任何论文详情。"
+  },
+  "optCleared": {
+    "message": "已清除"
+  },
+  "optReset": {
+    "message": "恢复默认设置"
+  },
+  "optResetConfirm": {
+    "message": "把这里的所有设置恢复为默认值？"
+  },
+  "optStorage": {
+    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步；不会发送到任何地方。"
+  },
+  "optSample": {
+    "message": "示例论文"
   }
 }

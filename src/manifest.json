@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
   "minimum_chrome_version": "110",
@@ -16,6 +16,13 @@
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png"
     }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "icons/icon-16.png",
@@ -223,12 +230,14 @@
         "lib/metrics.js",
         "lib/marks.js",
         "lib/awards.js",
+        "lib/prefs.js",
         "lib/analysis.js",
         "data/aliases.js",
         "data/ccf.js",
         "data/core.js",
         "data/awards.js",
         "content/dom.js",
+        "content/chips.js",
         "content/store.js",
         "content/scholar.js",
         "content/detail.js",

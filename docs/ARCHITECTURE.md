@@ -1,8 +1,9 @@
 # Architecture
 
-This is a Manifest V3 extension built for Chrome. It is a **content script and
-nothing else**: no service worker, one permission (`storage`), and no network access
-except the optional, user-triggered read of a paper's own page on Scholar. The same
+This is a Manifest V3 extension built for Chrome. It is a **content script, a popup and a
+settings page**: one permission (`storage`), a four-line service worker whose only job is to open the
+settings page for the panel's button, and no network access except the optional, user-triggered read of
+a paper's own page on Scholar. The same
 `src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
 [Platform policy](#platform-policy-chrome-first)).
 
@@ -18,7 +19,8 @@ Scholar profile page ──► content/scholar.js   (the only code that knows Sc
                         content/main.js  (state, filters, observers) ──► content/panel.js  (view)
                              │                                         └► decorated rows (tint, chips)
                              └─► lib/metrics.js   role × tier matrix, h-index, clipboard text
-popup/  ── asks the content script for the summary and renders the same matrix
+popup/    ── asks the content script for the summary and renders the same matrix
+options/  ── the settings page: writes `prefs`; open Scholar tabs redraw on chrome.storage.onChanged
 ```
 
 Everything under `lib/` is **pure** (no DOM, no `chrome.*`). Each file is a UMD-style
@@ -38,9 +40,13 @@ data, and why there is no build step.
 | `lib/metrics.js` | h-index / i10, the role × tier summary, matrix filtering, clipboard text. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), *Load all*. |
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
-| `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state. |
-| `content/main.js` | Wires it together: settings, filters, decoration, observers, messages to the popup. |
-| `content/store.js` | `chrome.storage` wrappers + settings migration; degrades to memory if the extension context disappears. |
+| `lib/prefs.js` | What to show (`prefs`) and per-device view state (`ui`): shapes, defaults, normalising, migration from the pre-2.2 combined record, and the rules (which ranking the table uses, which marks are visible). |
+| `content/chips.js` | The rank and award / talk chips; shared by the Scholar page and the settings page's preview. |
+| `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state. What it shows at all is decided by `prefs`. |
+| `content/main.js` | Wires it together: prefs, filters, decoration, observers, messages to the popup. |
+| `content/store.js` | `chrome.storage` wrappers + migration; degrades to memory if the extension context disappears. |
+| `options/*` | The settings page: switches saved at once, with a live preview built from `content/chips.js`. |
+| `background.js` | Opens the settings page when the panel asks (a content script cannot). Nothing else. |
 | `data/*.js` | **Generated** from `data/*.json` by `scripts/build-data.mjs`; `aliases.js` is curated by hand. |
 
 ## Author detection and roles
@@ -146,9 +152,12 @@ Scholar drops the sidebar *below* the list) as the window is resized. Styles are
 
 ## Storage and privacy
 
-- `chrome.storage.sync`: settings (role/badge toggles, matrix source, collapsed) and per-profile
+- `chrome.storage.sync`: `prefs` (what to show — written **only** by the settings page) and per-profile
   name variants.
-- `chrome.storage.local`: cache of resolved paper pages (author list + venue), 90 days.
+- `chrome.storage.local`: `ui` (panel collapsed, which ranking the table uses — written **only** by the
+  Scholar page) and the cache of resolved paper pages (author list + venue), 90 days.
+- Two records with one writer each, so a stale Scholar tab can never overwrite what the settings page saved.
+  The pre-2.2 combined `settings` record is split into these once and removed.
 - No other persistence, no remote code, no third-party requests. *Resolve* fetches
   `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops
   at the first CAPTCHA or HTTP 429/503.

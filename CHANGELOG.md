@@ -1,7 +1,18 @@
 # Changelog
 
-## Unreleased
+## 2.2.0 — 2026-10-11
 
+- **Settings page** — what the extension draws is now configured in one place instead of in the panel:
+  which author positions are coloured, whether your name is marked, the CCF and CORE chips, each of Awards /
+  Oral / Spotlight / Highlight, and whether the summary panel, its filters and its citation totals appear at
+  all. A live preview shows the result, changes reach open Scholar tabs at once, and whatever is switched off
+  disappears from the page (a hidden filter also stops filtering). Open it with the sliders button in the
+  panel header or the toolbar popup. With both rank lists off the table shows roles only.
+  Technically: preferences (`prefs`, written only by the settings page) and view state (`ui`, written only by the
+  Scholar page) are separate records, so a stale tab can never overwrite a saved choice; settings from earlier
+  versions carry over once. A four-line service worker opens the settings page for the panel's button.
+- **The panel keeps only quick controls**: the ranking tab, *Only highlighted*, the year range and the
+  clickable counts. The role / badge / name switches that used to sit in it are gone.
 - **Quieter rows.** The *1st / 2nd / Co-1st / Last* chip is gone: the row tint and the marked name already say
   it, and hovering the name gives "First author · position 1 of 8". The owner's name is now marked by default
   and the choice is remembered. CCF / CORE chips are white pills with an indigo outline that fades with the
@@ -9,6 +20,7 @@
 - **Awards and talks, one visual language.** Awards are gold (an honorable mention silver, a finalist
   dashed), talk levels slate, all with the same small icons. In the panel they are a section of their own: one row
   per group with its count, the same icons, click a row to list just those papers.
+- Fixed: the toolbar popup printed a stray "null" under the table when the profile had no awards or talks.
 
 ## 2.1.0 — 2026-10-11
 

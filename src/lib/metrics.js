@@ -47,13 +47,12 @@
     return (v.ccf && v.ccf.tier) || NONE;
   }
 
-  // Role × tier counts. `source` is 'ccf' (default) or 'core'.
+  // Role × tier counts. `source` is 'ccf' (default), 'core', or null for no ranking at all: roles only, no tier columns.
   //   rows:    one entry per role bucket that has papers (cofirst/middle only when non-empty)
   //   hidden:  papers whose author list is truncated without the owner in view
   //   absent:  papers whose complete author list never names the owner
   function summarize(papers, source = "ccf") {
-    const tiers = TIERS[source] || TIERS.ccf;
-    const columns = [...tiers, NONE];
+    const columns = source === null ? [] : [...(TIERS[source] || TIERS.ccf), NONE];
     const blank = () => Object.assign(Object.fromEntries(columns.map((c) => [c, 0])), { total: 0 });
     const byRole = Object.fromEntries(ROLES.map((r) => [r, blank()]));
     const totals = blank();
@@ -61,10 +60,12 @@
     for (const p of papers) {
       if (p.status === "hidden") { hidden++; continue; }
       if (p.status !== "found" || !p.role) { absent++; continue; }
-      const t = tierOf(p, source);
-      const col = columns.includes(t) ? t : NONE;
-      byRole[p.role][col]++; byRole[p.role].total++;
-      totals[col]++; totals.total++;
+      if (columns.length) {
+        const t = tierOf(p, source);
+        const col = columns.includes(t) ? t : NONE;
+        byRole[p.role][col]++; totals[col]++;
+      }
+      byRole[p.role].total++; totals.total++;
     }
     const rows = ROLES
       .filter((r) => byRole[r].total > 0 || r === "first" || r === "second" || r === "last")
@@ -100,13 +101,13 @@
 
   // Plain-text summary for the clipboard.
   function toText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [] } = {}) {
-    const src = summary.source === "core" ? "CORE" : "CCF";
+    const src = summary.source === "core" ? "CORE" : summary.source === null ? "" : "CCF";
     const lines = [];
-    lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role and ${src} rank`);
+    lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role${src ? ` and ${src} rank` : ""}`);
     for (const r of summary.rows) {
       if (!r.total) continue;
       const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}: ${r[c]}`);
-      lines.push(`${label[r.role]}: ${r.total} (${parts.join(", ")})`);
+      lines.push(`${label[r.role]}: ${r.total}${parts.length ? ` (${parts.join(", ")})` : ""}`);
     }
     if (summary.hidden) lines.push(`Role not visible (author list truncated by Scholar): ${summary.hidden}`);
     if (summary.absent) lines.push(`Name not found in author list: ${summary.absent}`);

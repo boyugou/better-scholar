@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scholar Author Roles &amp; Venue Ranks — Settings</title>
+  <!-- the preview borrows the Scholar page's own styling, so it is exactly what you will get -->
+  <link rel="stylesheet" href="../content/styles.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <img class="logo" src="../icons/icon-48.png" alt="" width="32" height="32">
+      <div class="who"><h1 id="title"></h1><p id="sub"></p></div>
+      <span id="saved" role="status" aria-live="polite"></span>
+    </header>
+    <div class="grid">
+      <main id="controls"></main>
+      <aside class="preview">
+        <section class="card">
+          <h2 id="pv-title"></h2>
+          <table class="pv"><tbody id="preview"></tbody></table>
+          <p class="desc" id="pv-note"></p>
+        </section>
+      </aside>
+    </div>
+    <footer class="foot"><span id="storage"></span> <span id="ver"></span></footer>
+  </div>
+  <script src="../lib/prefs.js"></script>
+  <script src="../content/dom.js"></script>
+  <script src="../content/chips.js"></script>
+  <script src="../content/store.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

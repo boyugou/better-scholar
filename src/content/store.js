@@ -1,19 +1,17 @@
-// Persistence. Settings and per-profile name variants live in chrome.storage.sync
-// (follows the user across devices); the cache of paper-detail lookups lives in
-// chrome.storage.local. If the extension context disappears (the extension was
-// updated while the tab stayed open) everything degrades to in-memory state.
+// Persistence. Display preferences and per-profile name variants live in chrome.storage.sync (they follow
+// the user across devices); the panel's view state and the cache of paper-detail lookups live in
+// chrome.storage.local. If the extension context disappears (the extension was updated while the tab
+// stayed open) everything degrades to in-memory state.
+//
+// Keys (see lib/prefs.js for the shapes and who writes what):
+//   sync  prefs      what to show — written by the settings page
+//   local ui         { collapsed, source } — written by the Scholar page
+//   sync  variants   { profileId: [name spellings] }
+//   local resolved   { paperId: { ts, authors } } — author lists read with "Resolve"
+//   sync  settings   the pre-2.2 combined record; read once by migrate() and removed
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
-
-  const DEFAULTS = {
-    v: 2,
-    roles: { first: true, cofirst: true, second: true, last: true },
-    badges: { ccf: true, core: true, marks: true },
-    markName: true,
-    matrixSource: "ccf",
-    collapsed: false
-  };
 
   const mem = { sync: {}, local: {} };
   const live = () => {
@@ -31,25 +29,42 @@
     if (!live()) return;
     try { await chrome.storage[area].set({ [key]: value }); } catch (e) { /* quota or context loss */ }
   }
-
-  // v1 stored { authors, badges: { conference, journal, ccf }, roles } and had CCF off by default.
-  function migrate(stored) {
-    const s = stored && typeof stored === "object" ? stored : {};
-    const out = {
-      v: 2,
-      roles: Object.assign({}, DEFAULTS.roles, s.roles),
-      badges: Object.assign({}, DEFAULTS.badges),
-      markName: s.markName !== false,
-      matrixSource: s.matrixSource === "core" ? "core" : "ccf",
-      collapsed: !!s.collapsed
-    };
-    if (s.v === 2 && s.badges) out.badges = Object.assign({}, DEFAULTS.badges, s.badges);
-    else if (s.badges && s.badges.conference === false) out.badges.core = false;
-    return out;
+  async function remove(area, key) {
+    delete mem[area][key];
+    if (!live()) return;
+    try { await chrome.storage[area].remove(key); } catch (e) { /* context loss */ }
   }
 
-  async function loadSettings() { return migrate(await get("sync", "settings")); }
-  const saveSettings = (s) => set("sync", "settings", s);
+  // Older versions kept everything in one `settings` record. Split it once, then forget it.
+  async function migrate() {
+    if ((await get("sync", "prefs")) !== undefined) return;
+    const legacy = await get("sync", "settings");
+    if (legacy === undefined) return;
+    const { prefs, ui } = B.prefs.fromLegacy(legacy);
+    await set("sync", "prefs", prefs);
+    await set("local", "ui", ui);
+    await remove("sync", "settings");
+  }
+
+  async function loadPrefs() {
+    const stored = await get("sync", "prefs");
+    return stored === undefined ? B.prefs.fromLegacy(await get("sync", "settings")).prefs : B.prefs.normalize(stored);
+  }
+  const savePrefs = (prefs) => set("sync", "prefs", B.prefs.normalize(prefs));
+
+  async function loadUi() {
+    const stored = await get("local", "ui");
+    return stored === undefined ? B.prefs.fromLegacy(await get("sync", "settings")).ui : B.prefs.normalizeUi(stored);
+  }
+  const saveUi = (ui) => set("local", "ui", B.prefs.normalizeUi(ui));
+
+  // Run `fn(newPrefs)` whenever the settings page saves (from any tab); returns a function that stops listening.
+  function onPrefsChanged(fn) {
+    if (!live()) return () => {};
+    const listener = (changes, area) => { if (area === "sync" && changes.prefs) fn(B.prefs.normalize(changes.prefs.newValue)); };
+    try { chrome.storage.onChanged.addListener(listener); } catch (e) { return () => {}; }
+    return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
+  }
 
   async function loadVariants(profileId) {
     const all = (await get("sync", "variants")) || {};
@@ -75,6 +90,7 @@
     const entries = Object.entries(map).sort((a, b) => b[1].ts - a[1].ts).slice(0, 3000);
     await set("local", "resolved", Object.fromEntries(entries));
   }
+  const clearResolved = () => remove("local", "resolved");
 
-  B.store = { DEFAULTS, migrate, loadSettings, saveSettings, loadVariants, saveVariants, loadResolved, saveResolved };
+  B.store = { migrate, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
 })();
