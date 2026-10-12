@@ -1477,3 +1477,17 @@ test("ICWSM awards page: Test of Time and Best Paper sections, title / authors p
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("ETAPS Test of Time page: one 'The YYYY ETAPS Test of Time Award went to … for their VENUE YYYY paper Title' sentence per year", async () => {
+  const { parseEtapsTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>2026</h3><p>The 2026 ETAPS Test of Time Award went to T. Knapik, D. Niwinski and P. Urzyczyn for their FoSSaCS 2002 paper Higher-Order Pushdown Trees Are Easy</p><p>This paper opened up higher-order model checking.</p>
+<h3>2020</h3><p>The 2020 ETAPS Test of Time Award went to Geoffrey Smith for his FoSSaCS 2009 paper On the Foundations of Quantitative Information Flow.</p>
+<h3>2019</h3><p>The 2019 ETAPS Test of Time Award went to Kohei Honda (posthumously), Vasco T. Vasconcelos, Makoto Kubo for their ESOP 1998 paper Language primitives and type discipline for structured communication-based programming</p>`;
+  const { entries, skipped } = parseEtapsTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.venue} ${e.title} | ${e.authors.join("; ")}`), [
+    "2026/2002 FoSSaCS Higher-Order Pushdown Trees Are Easy | T. Knapik; D. Niwinski; P. Urzyczyn",
+    "2020/2009 FoSSaCS On the Foundations of Quantitative Information Flow | Geoffrey Smith",
+    "2019/1998 ESOP Language primitives and type discipline for structured communication-based programming | Kohei Honda; Vasco T. Vasconcelos; Makoto Kubo"
+  ]);
+  assert.deepEqual(skipped, []);
+});

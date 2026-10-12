@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.33 — 2026-10-12
+
+- The ETAPS Test of Time Award (2017–2026, 10 papers: Z3: An Efficient SMT Solver, Mobile Ambients, Handlers of Algebraic Effects, Symbolic model-checking without BDDs …) from ETAPS's own
+  awards page (`tot.mjs etaps`); each is credited to its constituent conference (TACAS, ESOP, FoSSaCS, FASE). The bundled list has 5485 awards.
+
 ## 2.9.32 — 2026-10-12
 
 - The AAAI ICWSM awards (Test of Time 2018–2021, Best Paper 2007–2021 with its outstanding papers and runners-up: 37 papers — Political Polarization on Twitter, The Million Follower Fallacy, Gephi,

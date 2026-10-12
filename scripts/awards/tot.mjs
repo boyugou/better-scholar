@@ -116,7 +116,8 @@ const PAGES = {
   newton: "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
   sigspatial: "https://www.sigspatial.org/people/award-recipients/",
   sigcse: "https://sigcse.org/programs/awards/test-of-time.html",
-  icwsm: "https://www.icwsm.org/awards/"
+  icwsm: "https://www.icwsm.org/awards/",
+  etaps: "https://etaps.org/awards/test-of-time"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -785,6 +786,22 @@ export function parseIcwsmAwards(html, source = PAGES.icwsm) {
   return { entries, skipped };
 }
 
+// "The 2025 ETAPS Test of Time Award went to A, B and C for their ESOP 2009 paper Title" — one sentence per year; the venue is the constituent conference
+// the paper appeared in (TACAS, ESOP, FoSSaCS, FASE).
+export function parseEtapsTot(html, source = PAGES.etaps) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const re = /^The\s+((?:19|20)\d{2})\s+ETAPS Test of Time Award went to\s+(.+?)\s+for\s+(?:their|his|her)\s+(TACAS|ESOP|FoSSaCS|FASE|ETAPS)\s+((?:19|20)\d{2})\s+paper\s+(.+)$/;
+  for (const l of ls) {
+    const m = re.exec(l);
+    if (!m) continue;
+    const who = names(m[2].replace(/\s*\((?:posthumously)\)/i, "")), title = cleanTitle(m[5]), year = parseInt(m[1], 10);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry(m[3], year, "ETAPS Test of Time Award", title, who, source, `ETAPS ${year} Test of Time Award: ${m[2]} — ${m[3]} ${m[4]} “${title}”`, parseInt(m[4], 10)));
+    else skipped.push(`${year}: not read: ${m[2].slice(0, 50)} / ${title.slice(0, 40)}`);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -840,7 +857,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
