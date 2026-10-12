@@ -1264,3 +1264,17 @@ test("IEEE VIS Test-of-Time page: a paper-year heading, then label / authors / t
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("ICDE Influential Paper Awards page: 'ICDE 2026' headings, authors / title lines, 'Authors: Title' over two lines, a row without separators is skipped", async () => {
+  const { parseIcdeInfluential } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>ICDE Influential Paper Awards</h2><h3>ICDE 2021</h3><p>Alf Kemper, Tom Neumann</p><p>HyPer: A hybrid OLTP&amp;OLAP main memory database system based on virtual memory snapshots. ICDE 2011</p>
+<h3>ICDE 2017</h3><p>Ash Machanavajjhala, Joe Gehrke, Dan Kifer and Muthu Venkitasubramaniam</p><p>l-Diversity: Privacy Beyond k-Anonymity. ICDE 2006.</p><p>Citation: L-diversity is method for sharing sensitive data.</p>
+<h3>ICDE 2013</h3><p>Alon Y. Halevy Zachary G. Ives Dan Suciu Igor Tatarinov</p><p>Schema Mediation in Peer Data Management Systems. ICDE 2003</p><p>Sam Melnik, Hec Garcia-Molina, Erh Rahm: Similarity Flooding</p><p>A Versatile Graph Matching Algorithm and its Application to Schema Matching. ICDE 2002</p><h2>Award Selection Process</h2>`;
+  const { entries, skipped } = parseIcdeInfluential(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2021/2011 HyPer: A hybrid OLTP&OLAP main memory database system based on virtual memory snapshots | Alf Kemper; Tom Neumann",
+    "2017/2006 l-Diversity: Privacy Beyond k-Anonymity | Ash Machanavajjhala; Joe Gehrke; Dan Kifer; Muthu Venkitasubramaniam",
+    "2013/2002 Similarity Flooding: A Versatile Graph Matching Algorithm and its Application to Schema Matching | Sam Melnik; Hec Garcia-Molina; Erh Rahm"
+  ]);
+  assert.equal(skipped.length, 1);
+});

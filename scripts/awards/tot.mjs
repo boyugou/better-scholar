@@ -46,8 +46,11 @@
 //                                                                       2022–2023 only): "2023:", then per paper a line `"Title" by Authors, in ACM IMC 2009.`
 //   vis     https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards  the IEEE VIS Test-of-Time Awards (InfoVis, VAST, SciVis and VIS tracks): a heading per paper year, then per award a label line
 //                                                                       ("10-Years InfoVis Test-of-Time Award"), the authors, the title, "(Awarded at: VIS 2025)" and the DOI
+//   icde    https://tc.computer.org/tcde/icde-steering-committee/influential-papers  the ICDE Influential Paper Awards (the TCDE's page), 2005–: a heading "ICDE 2026", then per paper a line of authors and a
+//                                                                       line with the title ("… ICDE 2011" after it in most rows), "Citation:" paragraphs between; a row typed "Authors: Title" over two lines is joined,
+//                                                                       a row whose authors have no separator between them is reported and skipped
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -76,7 +79,8 @@ const PAGES = {
   ches: "https://ches.iacr.org/testoftime.php",
   hpca: "https://ieeetcca.org/awards/hpca-test-of-time-award/",
   imc: "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
-  vis: "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards"
+  vis: "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+  icde: "https://tc.computer.org/tcde/icde-steering-committee/influential-papers"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -407,6 +411,38 @@ export function parseVisTot(html, source = PAGES.vis) {
   return { entries, skipped };
 }
 
+export function parseIcdeInfluential(html, source = PAGES.icde) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const start = ls.indexOf("ICDE Influential Paper Awards"), end = ls.findIndex((l) => /^Award Selection Process$/i.test(l));
+  const block = ls.slice(start < 0 ? 0 : start + 1, end < 0 ? ls.length : end);
+  const tail = /[.,]?\s*ICDE\s+((?:19|20)\d{2})\.?$/;
+  const nameList = (l) => names(l.replace(/;/g, ",").replace(/\s+and\s+/g, ", and "));
+  let year = null;
+  const add = (authorText, titleText) => {
+    const t = tail.exec(titleText), who = nameList(authorText), title = cleanTitle(titleText.replace(tail, ""));
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("ICDE", year, "Influential Paper Award", title, who, source, `ICDE ${year} Influential Paper Award: ${authorText} “${title}”`, t ? parseInt(t[1], 10) : undefined));
+    else skipped.push(`${year}: not read: ${authorText.slice(0, 60)} / ${title.slice(0, 40)}`);
+  };
+  for (let i = 0; i < block.length; i++) {
+    const h = /^ICDE ((?:19|20)\d{2})$/.exec(block[i]);
+    if (h) { year = parseInt(h[1], 10); continue; }
+    if (!year || /^Citation:/i.test(block[i])) continue;
+    const colon = /^(.{5,200}?):\s+(.{3,200})$/.exec(block[i]);
+    if (colon && nameList(colon[1]).length && nameList(colon[1]).every(isPerson)) {
+      // ("Sergey Melnik, Hector Garcia-Molina, Erhard Rahm: Similarity Flooding" — the title goes on in the next line)
+      let title = colon[2];
+      if (block[i + 1] && tail.test(block[i + 1]) && !/^Citation:/i.test(block[i + 1])) title += ": " + block[++i];
+      add(colon[1], title);
+      continue;
+    }
+    const authors = nameList(block[i]);
+    if (authors.length && authors.every(isPerson) && block[i + 1] && !/^Citation:/i.test(block[i + 1])) { add(block[i], block[i + 1]); i++; continue; }
+    if (block[i + 1] && /[A-Z]\w+ [A-Z]/.test(block[i]) && !/^Citation:/i.test(block[i + 1]) && block[i].split(" ").length >= 6 && tail.test(block[i + 1])) { skipped.push(`${year}: not read: ${block[i].slice(0, 60)} / ${block[i + 1].slice(0, 40)}`); i++; }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -462,7 +498,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5034
+  "count": 5055
  },
  "entries": [
   {
@@ -52675,6 +52675,346 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#Helmholtz",
    "evidence": "Helmholtz Prize: 2025 “Fast R-CNN” R. Girshick"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Volcano Optimizer Generator: Extensibility and Efficient Search",
+   "authors": [
+    "Goetz Graefe",
+    "William J. McKenna"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2005 Influential Paper Award: Goetz Graefe, William J. McKenna “The Volcano Optimizer Generator: Extensibility and Efficient Search”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Total",
+   "authors": [
+    "Jim Gray",
+    "Adam Bosworth",
+    "Andrew Layman",
+    "Hamid Pirahesh"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2006 Influential Paper Award: Jim Gray, Adam Bosworth, Andrew Layman, Hamid Pirahesh “Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Total”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Disk Striping",
+   "authors": [
+    "Kenneth Salem",
+    "Hector Garcia-Molina"
+   ],
+   "track": "main",
+   "paperYear": 1986,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2007 Influential Paper Award: Kenneth Salem and Hector Garcia-Molina “Disk Striping”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Mining Sequential Patterns",
+   "authors": [
+    "Rakesh Agrawal",
+    "Ramakrishnan Srikant"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2008 Influential Paper Award: Rakesh Agrawal and Ramakrishnan Srikant “Mining Sequential Patterns”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Efficient Time Series Matching by Wavelets",
+   "authors": [
+    "Kin-pong Chan",
+    "Ada Wai-Chee Fu"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2009 Influential Paper Award: Kin-pong Chan, Ada Wai-Chee Fu “Efficient Time Series Matching by Wavelets”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Skyline Operator",
+   "authors": [
+    "Stephan Börzsönyi",
+    "Donald Kossmann",
+    "Konrad Stocker"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2011 Influential Paper Award: Stephan Börzsönyi, Donald Kossmann, Konrad Stocker “The Skyline Operator”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "DBXplorer: A System for Keyword-Based Search over Relational Databases",
+   "authors": [
+    "Sanjay Agrawal",
+    "Surajit Chaudhuri",
+    "Gautam Das"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2012 Influential Paper Award: Sanjay Agrawal, Surajit Chaudhuri, Gautam Das “DBXplorer: A System for Keyword-Based Search over Relational Databases”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Keyword Searching and Browsing in Databases using BANKS",
+   "authors": [
+    "Gaurav Bhalotia",
+    "Arvind Hulgeri",
+    "Charuta Nakhe",
+    "Soumen Chakrabarti",
+    "S. Sudarshan"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2012 Influential Paper Award: Gaurav Bhalotia, Arvind Hulgeri, Charuta Nakhe, Soumen Chakrabarti, S. Sudarshan “Keyword Searching and Browsing in Databases using BANKS”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Similarity Flooding: A Versatile Graph Matching Algorithm and its Application to Schema Matching",
+   "authors": [
+    "Sergey Melnik",
+    "Hector Garcia-Molina",
+    "Erhard Rahm"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2013 Influential Paper Award: Sergey Melnik, Hector Garcia-Molina, Erhard Rahm “Similarity Flooding: A Versatile Graph Matching Algorithm and its Application to Schema Matching”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Approximate aggregation techniques for sensor databases",
+   "authors": [
+    "Jeffrey Considine",
+    "Feifei Li",
+    "George Kollios",
+    "John W. Byers"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2014 Influential Paper Award: Jeffrey Considine, Feifei Li, George Kollios, John W. Byers “Approximate aggregation techniques for sensor databases”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "One Size Fits All”: An Idea Whose Time Has Come and Gone",
+   "authors": [
+    "Michael Stonebraker",
+    "Ugur Çetintemel"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2015 Influential Paper Award: Michael Stonebraker, Ugur Çetintemel “One Size Fits All”: An Idea Whose Time Has Come and Gone”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "l-Diversity: Privacy Beyond k-Anonymity",
+   "authors": [
+    "Ashwin Machanavajjhala",
+    "Johannes Gehrke",
+    "Daniel Kifer",
+    "Muthuramakrishnan Venkitasubramaniam"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2017 Influential Paper Award: Ashwin Machanavajjhala, Johannes Gehrke, Daniel Kifer and Muthuramakrishnan Venkitasubramaniam “l-Diversity: Privacy Beyond k-Anonymity”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "t-Closeness: Privacy Beyond k-Anonymity and l-Diversity",
+   "authors": [
+    "Ninghui Li",
+    "Tiancheng Li",
+    "Suresh Venkatasubramanian"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2017 Influential Paper Award: Ninghui Li, Tiancheng Li and Suresh Venkatasubramanian “t-Closeness: Privacy Beyond k-Anonymity and l-Diversity”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Preserving Privacy in Social Networks Against Neighborhood Attacks",
+   "authors": [
+    "Bin Zhou",
+    "Jian Pei"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2018 Influential Paper Award: Bin Zhou and Jian Pei “Preserving Privacy in Social Networks Against Neighborhood Attacks”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Predicting Multiple Metrics for Queries: Better Decisions Enabled by Machine Learning",
+   "authors": [
+    "Archana Ganapathi",
+    "Harumi A. Kuno",
+    "Umeshwar Dayal",
+    "Janet L. Wiener",
+    "Armando Fox",
+    "Michael I. Jordan",
+    "David A. Patterson"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2019 Influential Paper Award: Archana Ganapathi, Harumi A. Kuno, Umeshwar Dayal, Janet L. Wiener, Armando Fox, Michael I. Jordan, David A. Patterson “Predicting Multiple Metrics for Queries: Better Decisions Enabled by Machine Learning”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Hive – a petabyte scale data warehouse using Hadoop",
+   "authors": [
+    "Ashish Thusoo",
+    "Joydeep Sen Sarma",
+    "Namit Jain",
+    "Zheng Shao",
+    "Prasad Chakka",
+    "Ning Zhang",
+    "Suresh Anthony",
+    "Hao Liu",
+    "Raghotham Murthy"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2020 Influential Paper Award: Ashish Thusoo, Joydeep Sen Sarma, Namit Jain, Zheng Shao, Prasad Chakka, Ning Zhang, Suresh Anthony, Hao Liu, Raghotham Murthy “Hive – a petabyte scale data warehouse using Hadoop”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "HyPer: A hybrid OLTP&OLAP main memory database system based on virtual memory snapshots",
+   "authors": [
+    "Alfons Kemper",
+    "Thomas Neumann"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2021 Influential Paper Award: Alfons Kemper, Thomas Neumann “HyPer: A hybrid OLTP&OLAP main memory database system based on virtual memory snapshots”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "TEDAS: A twitter-based event detection and analysis system",
+   "authors": [
+    "Rui Li",
+    "Kin Hou Lei",
+    "Ravi Khadiwala",
+    "Kevin Chen-Chuan Chang"
+   ],
+   "track": "main",
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2022 Influential Paper Award: Rui Li, Kin Hou Lei, Ravi Khadiwala, Kevin Chen-Chuan Chang “TEDAS: A twitter-based event detection and analysis system”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Bw-Tree: A B-tree for new hardware platforms",
+   "authors": [
+    "Justin J. Levandoski",
+    "David B. Lomet",
+    "Sudipta Sengupt"
+   ],
+   "track": "main",
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2023 Influential Paper Award: Justin J. Levandoski, David B. Lomet, Sudipta Sengupt “The Bw-Tree: A B-tree for new hardware platforms”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Spatialhadoop: A mapreduce framework for spatial data",
+   "authors": [
+    "Ahmed Eldawy",
+    "Mohamed F. Mokbel"
+   ],
+   "track": "main",
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2025 Influential Paper Award: Ahmed Eldawy; Mohamed F. Mokbel “Spatialhadoop: A mapreduce framework for spatial data”"
+  },
+  {
+   "venue": "ICDE",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Interactive Data Exploration with Smart Drill-Down",
+   "authors": [
+    "Manas Joglekar",
+    "Hector Garcia-Molina",
+    "Aditya Parameswaran"
+   ],
+   "track": "main",
+   "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
+   "evidence": "ICDE 2026 Influential Paper Award: Manas Joglekar; Hector Garcia-Molina; Aditya Parameswaran “Interactive Data Exploration with Smart Drill-Down”"
   },
   {
    "venue": "ICFP",
