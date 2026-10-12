@@ -1680,3 +1680,21 @@ test("ICDM best papers page: 'by Authors' (also 'by' alone and wrapped), authors
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("ACM SIGGRAPH blog posts: Best Papers / Honorable Mentions / Test-of-Time Awards, a title, an abstract line, the authors (with affiliations in 2022; initials with a full stop are no sentence end); the posts that follow are not read", async () => {
+  const { parseSiggraphAwards } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 45 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `${filler}<h1>SIGGRAPH 2022 Technical Papers Awards: Best Papers and Honorable Mentions</h1><h2>Best Papers</h2>
+<p>CLIPasso: Semantically Aware Object Sketching</p><p>We present CLIPasso, a method for sketching objects at different levels of abstraction. We define a sketch as a set of strokes and use a differentiable rasterizer to optimize.</p>
+<p>Yael Vinker, Tel Aviv University, École Polytechnique Fédérale de Lausanne; Ehsan Pajouheshgar, École Polytechnique Fédérale de Lausanne; Jessica Y. Bo, École Polytechnique Fédérale de Lausanne, ETH; Ariel Shamir, Reichman University</p>
+<h2>Honorable Mentions</h2><p>Solid Knitting</p><p>Yuichi Hirose, Mark Gillespie, James McCann</p>
+<h2>Test-of-Time Awards</h2><p>ACM SIGGRAPH is proud to announce the 2022 Test-of-Time Award papers.</p>
+<p>Embree: A Kernel Framework for Efficient CPU Ray Tracing (2014)</p><p>This paper introduces the Embree system and describes in detail what it takes to build a professional-grade modular ray tracing framework. It achieved state-of-the-art performance.</p><p>Ingo Wald, Sven Woop, Gregory S. Johnson, Manfred Ernst</p>
+<p>Register for SIGGRAPH 2022, taking place in August.</p><p>Related Posts</p><p>Some Other Post</p><p>Ada Lovelace, Charles Babbage</p>`;
+  const { entries } = parseSiggraphAwards(html, "https://blog.siggraph.org/2022/x/");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.paperYear || "-"} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2022 best - CLIPasso | Yael Vinker; Ehsan Pajouheshgar; Jessica Y. Bo; Ariel Shamir",
+    "2022 runner-up - Solid Kn | Yuichi Hirose; Mark Gillespie; James McCann",
+    "2022 tot 2014 Embree:  | Ingo Wald; Sven Woop; Gregory S. Johnson; Manfred Ernst"
+  ]);
+});

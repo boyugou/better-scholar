@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.9 — 2026-10-12
+
+- The SIGGRAPH technical papers awards 2022–2026 (Best Papers, Honorable Mentions and, from 2023, Test-of-Time: Instant Neural Graphics Primitives, 3D Gaussian Splatting, CLIPasso, Eulerian Video Magnification … 90 papers) from ACM SIGGRAPH's own blog posts
+  (`tot.mjs siggraph`). The bundled list has 6182 awards.
+
 ## 2.10.8 — 2026-10-12
 
 - The ICDM best paper awards 2001–2025 (best, runner-up, student, application and category papers; 61 papers) from the series' own awards page (`tot.mjs icdm`). The bundled list has 6092 awards.

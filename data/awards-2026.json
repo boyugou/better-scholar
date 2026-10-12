@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6092
+  "count": 6182
  },
  "entries": [
   {
@@ -85840,6 +85840,1521 @@
    "track": "main",
    "source": "https://sigecom.org/award-tot.html",
    "evidence": "SIGecom 2025 Test of Time Award: Richard J. Lipton, Evangelos Markakis, Elchanan Mossel and Amin Saberi “On approximately fair allocations of indivisible goods”"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "CLIPasso: Semantically Aware Object Sketching",
+   "authors": [
+    "Yael Vinker",
+    "Ehsan Pajouheshgar",
+    "Jessica Y. Bo",
+    "Roman Christian Bachmann",
+    "Amit Bermano",
+    "Daniel Cohen-Or",
+    "Amir Zamir",
+    "Ariel Shamir"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Best Paper: CLIPasso: Semantically Aware Object Sketching — Yael Vinker, Ehsan Pajouheshgar, Jessica Y. Bo, Roman Christian Bachmann, Amit Bermano, Daniel Cohen-Or, Amir Zamir, Ariel Shamir"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DeepPhase: Periodic Autoencoders for Learning Motion Phase Manifolds",
+   "authors": [
+    "Sebastian Starke",
+    "Ian Mason",
+    "Taku Komura"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Best Paper: DeepPhase: Periodic Autoencoders for Learning Motion Phase Manifolds — Sebastian Starke, Ian Mason, Taku Komura"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Image Features Influence Reaction Time: A Learned Probabilistic Perceptual Model for Saccade Latency",
+   "authors": [
+    "Budmonde Duinkharjav",
+    "Praneeth Chakravarthula",
+    "Rachel Brown",
+    "Anjul Patney",
+    "Qi Sun"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Best Paper: Image Features Influence Reaction Time: A Learned Probabilistic Perceptual Model for Saccade Latency — Budmonde Duinkharjav, Praneeth Chakravarthula, Rachel Brown, Anjul Patney, Qi Sun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding",
+   "authors": [
+    "Thomas Müller",
+    "Alex Evans",
+    "Christoph Schied",
+    "Alexander Keller"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Best Paper: Instant Neural Graphics Primitives with a Multiresolution Hash Encoding — Thomas Müller, Alex Evans, Christoph Schied, Alexander Keller"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Spelunking the Deep: Guaranteed Queries on General Neural Implicit Surfaces",
+   "authors": [
+    "Nicholas Sharp",
+    "Alec Jacobson"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Best Paper: Spelunking the Deep: Guaranteed Queries on General Neural Implicit Surfaces — Nicholas Sharp, Alec Jacobson"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Computational Design of High-level Interlocking Puzzles",
+   "authors": [
+    "Rulin Chen",
+    "Ziqi Wang",
+    "Peng Song",
+    "Bernd Bickel",
+    "IST Austria"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Computational Design of High-level Interlocking Puzzles — Rulin Chen, Ziqi Wang, Peng Song, Bernd Bickel, IST Austria"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Facial Hair Tracking for High Fidelity Performance Capture",
+   "authors": [
+    "Sebastian Winberg",
+    "Gaspard Zoss",
+    "Prashanth Chandran",
+    "Paulo Gotardo",
+    "Derek Bradley"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Facial Hair Tracking for High Fidelity Performance Capture — Sebastian Winberg, Gaspard Zoss, Prashanth Chandran, Paulo Gotardo, Derek Bradley"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Free2CAD: Parsing Freehand Drawings Into CAD Commands",
+   "authors": [
+    "Changjian Li",
+    "Hao Pan",
+    "Adrien Bousseau",
+    "Niloy Mitra"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Free2CAD: Parsing Freehand Drawings Into CAD Commands — Changjian Li, Hao Pan, Adrien Bousseau, Niloy Mitra"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Grid-free Monte Carlo for PDEs With Spatially Varying Coefficients",
+   "authors": [
+    "Rohan Sawhney",
+    "Dario Seyb",
+    "Wojciech Jarosz",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Grid-free Monte Carlo for PDEs With Spatially Varying Coefficients — Rohan Sawhney, Dario Seyb, Wojciech Jarosz, Keenan Crane"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Implicit Neural Representation for Physics-driven Actuated Soft Bodies",
+   "authors": [
+    "Lingchen Yang",
+    "Byungsoo Kim",
+    "Gaspard Zoss",
+    "Baran Gözcü",
+    "Markus Gross",
+    "Barbara Solenthaler"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Implicit Neural Representation for Physics-driven Actuated Soft Bodies — Lingchen Yang, Byungsoo Kim, Gaspard Zoss, Baran Gözcü, Markus Gross, Barbara Solenthaler"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Joint Neural Phase Retrieval and Compression for Energy- and Computation-efficient Holography on the Edge",
+   "authors": [
+    "Yujie Wang",
+    "Praneeth Chakravarthula",
+    "Qi Sun",
+    "Baoquan Chen"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Joint Neural Phase Retrieval and Compression for Energy- and Computation-efficient Holography on the Edge — Yujie Wang, Praneeth Chakravarthula, Qi Sun, Baoquan Chen"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sketch2Pose: Estimating a 3D Character Pose From a Bitmap Sketch",
+   "authors": [
+    "Kirill Brodt",
+    "Mikhail Bessmeltsev"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Sketch2Pose: Estimating a 3D Character Pose From a Bitmap Sketch — Kirill Brodt, Mikhail Bessmeltsev"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sparse Ellipsometry: Portable Acquisition of Polarimetric SVBRDF and Shape With Unstructured Flash Photography",
+   "authors": [
+    "Inseung Hwang",
+    "Daniel S. Jeon",
+    "Adolfo Muñoz",
+    "Diego Gutierrez",
+    "Xin Tong",
+    "Min H. Kim"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Sparse Ellipsometry: Portable Acquisition of Polarimetric SVBRDF and Shape With Unstructured Flash Photography — Inseung Hwang, Daniel S. Jeon, Adolfo Muñoz, Diego Gutierrez, Xin Tong, Min H. Kim"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Towards Practical Physical-optics Rendering",
+   "authors": [
+    "Shlomi Steinberg",
+    "Pradeep Sen",
+    "Ling-Qi Yan"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Towards Practical Physical-optics Rendering — Shlomi Steinberg, Pradeep Sen, Ling-Qi Yan"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Umbrella Meshes: Volumetric Elastic Mechanisms for Freeform Shape Deployment",
+   "authors": [
+    "Yingying Ren",
+    "Uday Kusupati",
+    "Julian Panetta",
+    "UC Davis",
+    "Florin Isvoranu",
+    "Davide Pellis",
+    "Tian Chen",
+    "Mark Pauly"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2022/07/siggraph-2022-technical-papers-awards-best-papers-and-honorable-mentions.html/",
+   "evidence": "SIGGRAPH 2022 Honorable Mention: Umbrella Meshes: Volumetric Elastic Mechanisms for Freeform Shape Deployment — Yingying Ren, Uday Kusupati, Julian Panetta, UC Davis, Florin Isvoranu, Davide Pellis, Tian Chen, Mark Pauly"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "3D Gaussian Splatting for Real-time Radiance Field Rendering",
+   "authors": [
+    "Bernhard Kerbl",
+    "Georgios Kopanas",
+    "Thomas Leimkuehler",
+    "George Drettakis"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Best Paper: 3D Gaussian Splatting for Real-time Radiance Field Rendering — Bernhard Kerbl, Georgios Kopanas, Thomas Leimkuehler, George Drettakis"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Differentiable Stripe Patterns for Inverse Design of Structured Surfaces",
+   "authors": [
+    "Juan Sebastian Montes Maestre",
+    "Yinwei Du",
+    "Ronan Hinchet",
+    "Stelian Coros",
+    "Bernhard Thomaszewski"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Best Paper: Differentiable Stripe Patterns for Inverse Design of Structured Surfaces — Juan Sebastian Montes Maestre, Yinwei Du, Ronan Hinchet, Stelian Coros, Bernhard Thomaszewski"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DOC: Differentiable Optimal Control for Retargeting Motions Onto Legged Robots",
+   "authors": [
+    "Ruben Grandia",
+    "Farbod Farshidian",
+    "Espen Knoop",
+    "Christian Schumacher",
+    "Marco Hutter",
+    "Moritz Bächer"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Best Paper: DOC: Differentiable Optimal Control for Retargeting Motions Onto Legged Robots — Ruben Grandia, Farbod Farshidian, Espen Knoop, Christian Schumacher, Marco Hutter, Moritz Bächer"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Globally Consistent Normal Orientation for Point Clouds by Regularizing the Winding-number Field",
+   "authors": [
+    "Rui Xu",
+    "Zhiyang Dou",
+    "Ningna Wang",
+    "Shiqing Xin",
+    "Shuangmin Chen",
+    "Mingyan Jiang",
+    "Xiaohu Guo",
+    "Wenping Wang",
+    "Changhe Tu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Best Paper: Globally Consistent Normal Orientation for Point Clouds by Regularizing the Winding-number Field — Rui Xu, Zhiyang Dou, Ningna Wang, Shiqing Xin, Shuangmin Chen, Mingyan Jiang, Xiaohu Guo, Wenping Wang, Changhe Tu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Split-Lohmann Multifocal Displays",
+   "authors": [
+    "Yingsi Qin",
+    "Wei-Yu Chen",
+    "Matthew O’Toole",
+    "Aswin C. Sankaranarayanan"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Best Paper: Split-Lohmann Multifocal Displays — Yingsi Qin, Wei-Yu Chen, Matthew O’Toole, Aswin C. Sankaranarayanan"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Deployable Strip Structures",
+   "authors": [
+    "Daoming Liu",
+    "Davide Pellis",
+    "Yu-Chou Chiang",
+    "Florian Rist",
+    "Johannes Wallner",
+    "TU Graz",
+    "Helmut Pottmann"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Deployable Strip Structures — Daoming Liu, Davide Pellis, Yu-Chou Chiang, Florian Rist, Johannes Wallner, TU Graz, Helmut Pottmann"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "GestureDiffuCLIP: Gesture Diffusion Model With CLIP Latents",
+   "authors": [
+    "Tenglong Ao",
+    "Zeyi Zhang",
+    "Libin Liu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: GestureDiffuCLIP: Gesture Diffusion Model With CLIP Latents — Tenglong Ao, Zeyi Zhang, Libin Liu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Learning Physically Simulated Tennis Skills From Broadcast Videos",
+   "authors": [
+    "Haotian Zhang",
+    "Ye Yuan",
+    "Viktor Makoviychuk",
+    "Yunrong Guo",
+    "Sanja Fidler",
+    "Xue Bin Peng",
+    "Kayvon Fatahalian"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Learning Physically Simulated Tennis Skills From Broadcast Videos — Haotian Zhang, Ye Yuan, Viktor Makoviychuk, Yunrong Guo, Sanja Fidler, Xue Bin Peng, Kayvon Fatahalian"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Min-Deviation-Flow in Bi-directed Graphs for T-Mesh Quantization",
+   "authors": [
+    "Martin Heistermann",
+    "Jethro Warnett",
+    "David Bommes"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Min-Deviation-Flow in Bi-directed Graphs for T-Mesh Quantization — Martin Heistermann, Jethro Warnett, David Bommes"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Random-access Neural Compression of Material Textures",
+   "authors": [
+    "Karthik Vaidyanathan",
+    "Marco Salvi",
+    "Bartlomiej Wronski",
+    "Tomas Akenine-Moller",
+    "Pontus Ebelin",
+    "Aaron Lefohn"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Random-access Neural Compression of Material Textures — Karthik Vaidyanathan, Marco Salvi, Bartlomiej Wronski, Tomas Akenine-Moller, Pontus Ebelin, Aaron Lefohn"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sag-Free Initialization for Strand-Based Hybrid Hair Simulation",
+   "authors": [
+    "Jerry Hsu",
+    "Tongtong Wang",
+    "Zherong Pan",
+    "Xifeng Gao",
+    "Cem Yuksel",
+    "Kui Wu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Sag-Free Initialization for Strand-Based Hybrid Hair Simulation — Jerry Hsu, Tongtong Wang, Zherong Pan, Xifeng Gao, Cem Yuksel, Kui Wu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Towards Attention-Aware Rendering",
+   "authors": [
+    "Brooke Krajancich",
+    "Petr Kellnhofer",
+    "TU Delft",
+    "Gordon Wetzstein"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Towards Attention-Aware Rendering — Brooke Krajancich, Petr Kellnhofer, TU Delft, Gordon Wetzstein"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Word-as-image for Semantic Typography",
+   "authors": [
+    "Shir Iluz",
+    "Yael Vinker",
+    "Amir Hertz",
+    "Daniel Berio",
+    "Daniel Cohen-Or",
+    "Ariel Shamir"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Honorable Mention: Word-as-image for Semantic Typography — Shir Iluz, Yael Vinker, Amir Hertz, Daniel Berio, Daniel Cohen-Or, Ariel Shamir"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Eulerian Video Magnification for Revealing Subtle Changes in the World",
+   "authors": [
+    "Hao-Yu Wu",
+    "Michael Rubinstein",
+    "Eugene Shih",
+    "John Guttag",
+    "Frédo Durand",
+    "William Freeman"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Test-of-Time Award: Eulerian Video Magnification for Revealing Subtle Changes in the World — Hao-Yu Wu, Michael Rubinstein, Eugene Shih, John Guttag, Frédo Durand, William Freeman"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Functional Maps: A Flexible Representation of Maps Between Shapes",
+   "authors": [
+    "Maks Ovsjanikov",
+    "Mirela Ben-Chen",
+    "Justin Solomon",
+    "Adrian Butscher",
+    "Leonidas Guibas"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Test-of-Time Award: Functional Maps: A Flexible Representation of Maps Between Shapes — Maks Ovsjanikov, Mirela Ben-Chen, Justin Solomon, Adrian Butscher, Leonidas Guibas"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "HDR-VDP-2: A Calibrated Visual Metric for Visibility and Quality Predictions in All Luminance Conditions",
+   "authors": [
+    "Rafal Mantiuk",
+    "Kil Joong Kim",
+    "Allan G. Rempel",
+    "Wolfgang Heidrich"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Test-of-Time Award: HDR-VDP-2: A Calibrated Visual Metric for Visibility and Quality Predictions in All Luminance Conditions — Rafal Mantiuk, Kil Joong Kim, Allan G. Rempel, Wolfgang Heidrich"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Optimizing Locomotion Controllers Using Biologically-based Actuators and Objectives",
+   "authors": [
+    "Jack M. Wang",
+    "Samuel R. Hamner",
+    "Scott L. Delp",
+    "Vladlen Koltun"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2023 Test-of-Time Award: Optimizing Locomotion Controllers Using Biologically-based Actuators and Objectives — Jack M. Wang, Samuel R. Hamner, Scott L. Delp, Vladlen Koltun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "From Microfacets to Participating Media: A Unified Theory of Light Transport With Stochastic Geometry",
+   "authors": [
+    "Dario Seyb"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Best Paper: From Microfacets to Participating Media: A Unified Theory of Light Transport With Stochastic Geometry — Dario Seyb"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Lightning-Fast Method of Fundamental Solutions",
+   "authors": [
+    "Jiong Chen",
+    "Florian Schäfer",
+    "Mathieu Desbrun"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Best Paper: Lightning-Fast Method of Fundamental Solutions — Jiong Chen, Florian Schäfer, Mathieu Desbrun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Repulsive Shells",
+   "authors": [
+    "Josua Sassen",
+    "Henrik Schumacher",
+    "Martin Rumpf",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Best Paper: Repulsive Shells — Josua Sassen, Henrik Schumacher, Martin Rumpf, Keenan Crane"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Robust Containment Queries Over Collections of Rational Parametric Curves via Generalized Winding Numbers",
+   "authors": [
+    "Jacob Spainhour",
+    "David Gunderman",
+    "Kenneth Weiss"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Best Paper: Robust Containment Queries Over Collections of Rational Parametric Curves via Generalized Winding Numbers — Jacob Spainhour, David Gunderman, Kenneth Weiss"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Walkin’ Robin: Walk on Stars With Robin Boundary Conditions",
+   "authors": [
+    "Bailey Miller",
+    "Rohan Sawhney",
+    "Keenan Crane",
+    "Ioannis Gkioulekas"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Best Paper: Walkin’ Robin: Walk on Stars With Robin Boundary Conditions — Bailey Miller, Rohan Sawhney, Keenan Crane, Ioannis Gkioulekas"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Bilateral Guided Radiance Field Processing",
+   "authors": [
+    "Yuehao Wang",
+    "Chaoyi Wang",
+    "Bingchen Gong",
+    "Tianfan Xue"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Bilateral Guided Radiance Field Processing — Yuehao Wang, Chaoyi Wang, Bingchen Gong, Tianfan Xue"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Capacitive Touch Sensing on General 3D Surfaces",
+   "authors": [
+    "Gianpaolo Palma",
+    "Narges Pourjafarian",
+    "Jürgen Steimle",
+    "Paolo Cignoni"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Capacitive Touch Sensing on General 3D Surfaces — Gianpaolo Palma, Narges Pourjafarian, Jürgen Steimle, Paolo Cignoni"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets",
+   "authors": [
+    "Longwen Zhang",
+    "Ziyu Wang",
+    "Qixuan Zhang",
+    "Qiwei Qiu",
+    "Anqi Pang",
+    "Haoran Jiang",
+    "Wei Yang",
+    "Lan Xu",
+    "Jingyi Yu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets — Longwen Zhang, Ziyu Wang, Qixuan Zhang, Qiwei Qiu, Anqi Pang, Haoran Jiang, Wei Yang, Lan Xu, Jingyi Yu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "DressCode: Autoregressively Sewing and Generating Garments From Text Guidance",
+   "authors": [
+    "Kai He",
+    "Kaixin Yao",
+    "Qixuan Zhang",
+    "Jingyi Yu",
+    "Lingjie Liu",
+    "Lan Xu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: DressCode: Autoregressively Sewing and Generating Garments From Text Guidance — Kai He, Kaixin Yao, Qixuan Zhang, Jingyi Yu, Lingjie Liu, Lan Xu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Fabric Tessellation: Realizing Freeform Surfaces by Smocking",
+   "authors": [
+    "Aviv Segall",
+    "Jing Ren",
+    "Amir Vaxman",
+    "Olga Sorkine-Hornung"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Fabric Tessellation: Realizing Freeform Surfaces by Smocking — Aviv Segall, Jing Ren, Amir Vaxman, Olga Sorkine-Hornung"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "PEA-PODs: Perceptual Evaluation of Algorithms for Power Optimization in XR Displays",
+   "authors": [
+    "Kenneth Chen",
+    "Thomas Wan",
+    "Nathan Matsuda",
+    "Ajit Ninan",
+    "Alexandre Chapiro",
+    "Qi Sun"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: PEA-PODs: Perceptual Evaluation of Algorithms for Power Optimization in XR Displays — Kenneth Chen, Thomas Wan, Nathan Matsuda, Ajit Ninan, Alexandre Chapiro, Qi Sun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Ray Tracing Harmonic Functions",
+   "authors": [
+    "Mark Gillespie",
+    "Denise Yang",
+    "Mario Botsch",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Ray Tracing Harmonic Functions — Mark Gillespie, Denise Yang, Mario Botsch, Keenan Crane"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Seamless Parametrization in Penner Coordinates",
+   "authors": [
+    "Ryan Capouellez",
+    "Denis Zorin"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Seamless Parametrization in Penner Coordinates — Ryan Capouellez, Denis Zorin"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "SMERF: Streamable Memory Efficient Radiance Fields for Real-time Large-scene Exploration",
+   "authors": [
+    "Daniel Duckworth",
+    "Peter Hedman",
+    "Christian Reiser",
+    "Peter Zhizhin",
+    "Jean-François Thibert",
+    "Mario Lučić",
+    "Richard Szeliski",
+    "Jonathan T. Barron"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: SMERF: Streamable Memory Efficient Radiance Fields for Real-time Large-scene Exploration — Daniel Duckworth, Peter Hedman, Christian Reiser, Peter Zhizhin, Jean-François Thibert, Mario Lučić, Richard Szeliski, Jonathan T. Barron"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Solid Knitting",
+   "authors": [
+    "Yuichi Hirose",
+    "Mark Gillespie",
+    "Angelica M. Bonilla Fominaya",
+    "James McCann"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Solid Knitting — Yuichi Hirose, Mark Gillespie, Angelica M. Bonilla Fominaya, James McCann"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Spin-It Faster: Quadrics Solve All Topology Optimization Problems That Depend Only on Mass Moments",
+   "authors": [
+    "Christian Hafner",
+    "Mickaël Ly",
+    "Chris Wojtan"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Spin-It Faster: Quadrics Solve All Topology Optimization Problems That Depend Only on Mass Moments — Christian Hafner, Mickaël Ly, Chris Wojtan"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Theory of Human Tetrachromatic Color Experience and Printing",
+   "authors": [
+    "Jessica Lee",
+    "Nicholas Jennings",
+    "Varun Srivastava",
+    "Ren Ng"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Honorable Mention: Theory of Human Tetrachromatic Color Experience and Printing — Jessica Lee, Nicholas Jennings, Varun Srivastava, Ren Ng"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "3D Shape Regression for Real-Time Facial Animation",
+   "authors": [
+    "Chen Cao",
+    "Yanlin Weng",
+    "Stephen Lin",
+    "Kun Zhou"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Test-of-Time Award: 3D Shape Regression for Real-Time Facial Animation — Chen Cao, Yanlin Weng, Stephen Lin, Kun Zhou"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Femto-Photography: Capturing and Visualizing the Propagation of Light",
+   "authors": [
+    "Andreas Velten",
+    "Di Wu",
+    "Adrián Jarabo",
+    "Belén Masiá",
+    "Christopher Barsi",
+    "Chinmaya Joshi",
+    "Everett Lawson",
+    "Moungi Bawendi",
+    "Diego Gutiérrez",
+    "Ramesh Raskar"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Test-of-Time Award: Femto-Photography: Capturing and Visualizing the Propagation of Light — Andreas Velten, Di Wu, Adrián Jarabo, Belén Masiá, Christopher Barsi, Chinmaya Joshi, Everett Lawson, Moungi Bawendi, Diego Gutiérrez, Ramesh Raskar"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "How do Humans Sketch Objects?",
+   "authors": [
+    "Mathias Eitz",
+    "James Hays",
+    "Marc Alexa"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Test-of-Time Award: How do Humans Sketch Objects? — Mathias Eitz, James Hays, Marc Alexa"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Robust Inside-Outside Segmentation Using Generalized Winding Numbers",
+   "authors": [
+    "Alec Jacobson",
+    "Ladislav Kavan",
+    "Olga Sorkine-Hornung"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://blog.siggraph.org/2024/06/siggraph-2024-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2024 Test-of-Time Award: Robust Inside-Outside Segmentation Using Generalized Winding Numbers — Alec Jacobson, Ladislav Kavan, Olga Sorkine-Hornung"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "CAST: Component-Aligned 3D Scene Reconstruction From an RGB Image",
+   "authors": [
+    "Kaixin Yao",
+    "Longwen Zhang",
+    "Xinhao Yan",
+    "Yan Zeng",
+    "Qixuan Zhang",
+    "Jiayuan Gu",
+    "Wei Yang",
+    "Lan Xu",
+    "Jingyi Yu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Best Paper: CAST: Component-Aligned 3D Scene Reconstruction From an RGB Image — Kaixin Yao, Longwen Zhang, Xinhao Yan, Yan Zeng, Qixuan Zhang, Jiayuan Gu, Wei Yang, Lan Xu, Jingyi Yu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Shape Space Spectra",
+   "authors": [
+    "Yue Chang",
+    "Otman Benchekroun",
+    "Maurizio M. Chiaramonte",
+    "Peter Yichen Chen",
+    "Eitan Grinspun"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Best Paper: Shape Space Spectra — Yue Chang, Otman Benchekroun, Maurizio M. Chiaramonte, Peter Yichen Chen, Eitan Grinspun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "TokenVerse: Versatile Multi-Concept Personalization in Token Modulation Space",
+   "authors": [
+    "Daniel Garibi",
+    "Shahar Yadin",
+    "Roni Paiss",
+    "Omer Tov",
+    "Shiran Zada",
+    "Ariel Ephrat",
+    "Tomer Michaeli",
+    "Inbar Mosseri",
+    "Tali Dekel"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Best Paper: TokenVerse: Versatile Multi-Concept Personalization in Token Modulation Space — Daniel Garibi, Shahar Yadin, Roni Paiss, Omer Tov, Shiran Zada, Ariel Ephrat, Tomer Michaeli, Inbar Mosseri, Tali Dekel"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Transformer IMU Calibrator: Dynamic On-Body IMU Calibration for Inertial Motion Capture",
+   "authors": [
+    "Chengxu Zuo",
+    "Jiawei Huang",
+    "Xiao Jiang",
+    "Yuan Yao",
+    "Xiangren Shi",
+    "Rui Cao",
+    "Xinyu Yi",
+    "Feng Xu",
+    "Shihui Guo",
+    "Yipeng Qin"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Best Paper: Transformer IMU Calibrator: Dynamic On-Body IMU Calibration for Inertial Motion Capture — Chengxu Zuo, Jiawei Huang, Xiao Jiang, Yuan Yao, Xiangren Shi, Rui Cao, Xinyu Yi, Feng Xu, Shihui Guo, Yipeng Qin"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Vector-Valued Monte Carlo Integration Using Ratio Control Variates",
+   "authors": [
+    "Haolin Lu",
+    "Delio Vicini",
+    "Wesley Chang",
+    "Tzu-Mao Li"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Best Paper: Vector-Valued Monte Carlo Integration Using Ratio Control Variates — Haolin Lu, Delio Vicini, Wesley Chang, Tzu-Mao Li"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Monte Carlo Rendering Framework for Simulating Optical Heterodyne Detection",
+   "authors": [
+    "Juhyeon Kim",
+    "Craig Benko",
+    "Magnus Wrenninge",
+    "Ryusuke Villemin",
+    "Zeb Barber",
+    "Wojciech Jarosz",
+    "Adithya Pediredla"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: A Monte Carlo Rendering Framework for Simulating Optical Heterodyne Detection — Juhyeon Kim, Craig Benko, Magnus Wrenninge, Ryusuke Villemin, Zeb Barber, Wojciech Jarosz, Adithya Pediredla"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "C-Tubes: Design of Tubular Structures From Developable Strips",
+   "authors": [
+    "Klara Mundilova",
+    "Michele Vidulis",
+    "Quentin Becker",
+    "Florin Isvoranu",
+    "Mark Pauly"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: C-Tubes: Design of Tubular Structures From Developable Strips — Klara Mundilova, Michele Vidulis, Quentin Becker, Florin Isvoranu, Mark Pauly"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Clebsch Gauge Fluid on Particle Flow Maps",
+   "authors": [
+    "Zhiqi Li",
+    "Candong Lin",
+    "Duowen Chen",
+    "Xinyi Zhou",
+    "Shiying Xiong",
+    "Bo Zhu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Clebsch Gauge Fluid on Particle Flow Maps — Zhiqi Li, Candong Lin, Duowen Chen, Xinyi Zhou, Shiying Xiong, Bo Zhu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Faraday Cage Estimation of Normals for Point Clouds and Ribbon Sketches",
+   "authors": [
+    "Daniel Scrivener",
+    "Daniel Cui",
+    "Ellis Coldren",
+    "Mazdak Abulnaga",
+    "Mikhail Bessmeltsev",
+    "Edward Chien"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Faraday Cage Estimation of Normals for Point Clouds and Ribbon Sketches — Daniel Scrivener, Daniel Cui, Ellis Coldren, Mazdak Abulnaga, Mikhail Bessmeltsev, Edward Chien"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "High-Performance CPU Cloth Simulation Using Domain-Decomposed Projective Dynamics",
+   "authors": [
+    "Zixuan Lu",
+    "Ziheng Liu",
+    "Lei Lan",
+    "Huamin Wang",
+    "Yuko Ishiwaka",
+    "Chenfanfu Jiang",
+    "Kui Wu",
+    "Yin Yang"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: High-Performance CPU Cloth Simulation Using Domain-Decomposed Projective Dynamics — Zixuan Lu, Ziheng Liu, Lei Lan, Huamin Wang, Yuko Ishiwaka, Chenfanfu Jiang, Kui Wu, Yin Yang"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Lifting the Winding Number: Precise Discontinuities in Neural Fields for Physics Simulation",
+   "authors": [
+    "Yue Chang",
+    "Mengfei Liu",
+    "Zhecheng Wang",
+    "Peter Yichen Chen",
+    "Eitan Grinspun"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Lifting the Winding Number: Precise Discontinuities in Neural Fields for Physics Simulation — Yue Chang, Mengfei Liu, Zhecheng Wang, Peter Yichen Chen, Eitan Grinspun"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Moment Bounds Are Differentiable: Efficiently Approximating Measures in Inverse Rendering",
+   "authors": [
+    "Markus Worchel",
+    "Marc Alexa"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Moment Bounds Are Differentiable: Efficiently Approximating Measures in Inverse Rendering — Markus Worchel, Marc Alexa"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Rectangular Surface Parameterization",
+   "authors": [
+    "Etienne Corman",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Rectangular Surface Parameterization — Etienne Corman, Keenan Crane"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Variational Surface Reconstruction Using Natural Neighbors",
+   "authors": [
+    "Jianjun Xia",
+    "Tao Ju"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Honorable Mention: Variational Surface Reconstruction Using Natural Neighbors — Jianjun Xia, Tao Ju"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Embree: A Kernel Framework for Efficient CPU Ray Tracing",
+   "authors": [
+    "Ingo Wald",
+    "Sven Woop",
+    "Carsten Benthin",
+    "Gregory S. Johnson",
+    "Manfred Ernst"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Test-of-Time Award: Embree: A Kernel Framework for Efficient CPU Ray Tracing — Ingo Wald, Sven Woop, Carsten Benthin, Gregory S. Johnson, Manfred Ernst"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "L1-Medial Skeleton of Point Cloud",
+   "authors": [
+    "Hui Huang",
+    "Shihao Wu",
+    "Daniel Cohen-Or",
+    "Minglun Gong",
+    "Hao Zhang",
+    "Guiqing Li",
+    "Baoquan Chen"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Test-of-Time Award: L1-Medial Skeleton of Point Cloud — Hui Huang, Shihao Wu, Daniel Cohen-Or, Minglun Gong, Hao Zhang, Guiqing Li, Baoquan Chen"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Learning Visual Similarity for Product Design With Convolutional Neural Networks",
+   "authors": [
+    "Sean Bell",
+    "Kavita Bala"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Test-of-Time Award: Learning Visual Similarity for Product Design With Convolutional Neural Networks — Sean Bell, Kavita Bala"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Unified Particle Physics for Real-Time Applications",
+   "authors": [
+    "Miles Macklin",
+    "Matthias Müller",
+    "Nuttapong Chentanez",
+    "Tae-Yong Kim"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2025 Test-of-Time Award: Unified Particle Physics for Real-Time Applications — Miles Macklin, Matthias Müller, Nuttapong Chentanez, Tae-Yong Kim"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "GimmBO: Interactive Generative Image Model Merging via Bayesian Optimization",
+   "authors": [
+    "Chenxi Liu",
+    "Selena Ling",
+    "Alec Jacobson"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Best Paper: GimmBO: Interactive Generative Image Model Merging via Bayesian Optimization — Chenxi Liu, Selena Ling, Alec Jacobson"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Inverse Rendering for Discrete X-Ray Computed Tomography",
+   "authors": [
+    "Lovro Nuic",
+    "Ziyi Zhang",
+    "Korbinian Sager",
+    "Wenzel Jakob"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Best Paper: Inverse Rendering for Discrete X-Ray Computed Tomography — Lovro Nuic, Ziyi Zhang, Korbinian Sager, Wenzel Jakob"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Mixwell: Sharp 2D Fluid Brushes for Progressive Physics-Based Mixing",
+   "authors": [
+    "Doug James",
+    "Ethan James"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Best Paper: Mixwell: Sharp 2D Fluid Brushes for Progressive Physics-Based Mixing — Doug James, Ethan James"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Robust Planar Maps for 3D Vectorization",
+   "authors": [
+    "Robert Fuchs",
+    "Keenan Crane"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Best Paper: Robust Planar Maps for 3D Vectorization — Robert Fuchs, Keenan Crane"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Walk on Decomposed Subdomains: A Hybrid Monte Carlo-Deterministic Solver for Elliptic PDEs",
+   "authors": [
+    "Clément Jambon",
+    "Mohammad Sina Nabizadeh",
+    "Mina Konaković Luković"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Best Paper: Walk on Decomposed Subdomains: A Hybrid Monte Carlo-Deterministic Solver for Elliptic PDEs — Clément Jambon, Mohammad Sina Nabizadeh, Mina Konaković Luković"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Two-Millisecond Passthrough Headset for Perceptual Studies",
+   "authors": [
+    "Eric Penner",
+    "Josephine D’Angelo",
+    "Clinton Smith",
+    "Nathan Matsuda",
+    "Neethan Siva",
+    "Phillip Guan"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: A Two-Millisecond Passthrough Headset for Perceptual Studies — Eric Penner, Josephine D’Angelo, Clinton Smith, Nathan Matsuda, Neethan Siva, Phillip Guan"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Gradient Domain Reconstruction for Monte Carlo PDE Solvers",
+   "authors": [
+    "Jiaqi Wu",
+    "Xuejun Hu",
+    "Shuang Zhao",
+    "Kun Xu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Gradient Domain Reconstruction for Monte Carlo PDE Solvers — Jiaqi Wu, Xuejun Hu, Shuang Zhao, Kun Xu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Implicit Minimal Surfaces for Bijective Correspondences",
+   "authors": [
+    "Etienne Corman",
+    "Yousuf Soliman",
+    "Robin Magnet",
+    "Mark Gillespie"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Implicit Minimal Surfaces for Bijective Correspondences — Etienne Corman, Yousuf Soliman, Robin Magnet, Mark Gillespie"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Inspiration Seeds: Learning Non-Literal Visual Combinations for Generative Exploration",
+   "authors": [
+    "Kfir Goldberg",
+    "Elad Richardson",
+    "Yael Vinker"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Inspiration Seeds: Learning Non-Literal Visual Combinations for Generative Exploration — Kfir Goldberg, Elad Richardson, Yael Vinker"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Photons × Force: Differentiable Radiation Pressure Modeling",
+   "authors": [
+    "Charles Constant",
+    "Santosh Bhattarai",
+    "Elizabeth Bates",
+    "Marek Ziebart",
+    "Tobias Ritschel"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Photons × Force: Differentiable Radiation Pressure Modeling — Charles Constant, Santosh Bhattarai, Elizabeth Bates, Marek Ziebart, Tobias Ritschel"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Sample Matching for Joint Extinction Gradient Estimation in Differentiable Volume Rendering",
+   "authors": [
+    "Ruihan Yu",
+    "Yu-Chen Wang",
+    "Jingwang Ling",
+    "Feng Xu",
+    "Shuang Zhao"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Sample Matching for Joint Extinction Gradient Estimation in Differentiable Volume Rendering — Ruihan Yu, Yu-Chen Wang, Jingwang Ling, Feng Xu, Shuang Zhao"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Spatio-Temporal Control Variates with ReSTIR for Real-Time Rendering",
+   "authors": [
+    "Zhong Shi",
+    "Cunhao Wu",
+    "Lifan Wu",
+    "Kun Xu"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Spatio-Temporal Control Variates with ReSTIR for Real-Time Rendering — Zhong Shi, Cunhao Wu, Lifan Wu, Kun Xu"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Spatiotemporal FLIP for Fast Free-Surface and Two-Phase Simulation With Very Large Time Steps",
+   "authors": [
+    "Bernhard Braun",
+    "Rene Winchenbach",
+    "Jan Bender",
+    "Nils Thuerey"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Spatiotemporal FLIP for Fast Free-Surface and Two-Phase Simulation With Very Large Time Steps — Bernhard Braun, Rene Winchenbach, Jan Bender, Nils Thuerey"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Stochastic Geomorphological Transport for Terrain Erosion Simulation",
+   "authors": [
+    "Nicholas McDonald",
+    "Guillaume Cordonnier"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Stochastic Geomorphological Transport for Terrain Erosion Simulation — Nicholas McDonald, Guillaume Cordonnier"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Uncertainty-Aware Geometry Processing on Gaussian Process Implicit Surfaces",
+   "authors": [
+    "Baptiste Genest",
+    "David Coeurjolly"
+   ],
+   "track": "main",
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Honorable Mention: Uncertainty-Aware Geometry Processing on Gaussian Process Implicit Surfaces — Baptiste Genest, David Coeurjolly"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Deep Learning Framework for Character Motion Synthesis and Editing",
+   "authors": [
+    "Daniel Holden",
+    "Jun Saito",
+    "Taku Komura"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Test-of-Time Award: A Deep Learning Framework for Character Motion Synthesis and Editing — Daniel Holden, Jun Saito, Taku Komura"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Machine Learning Approach for Filtering Monte Carlo Noise",
+   "authors": [
+    "Nima Khademi Kalantari",
+    "Steve Bako",
+    "Pradeep Sen"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Test-of-Time Award: A Machine Learning Approach for Filtering Monte Carlo Noise — Nima Khademi Kalantari, Steve Bako, Pradeep Sen"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains",
+   "authors": [
+    "Justin Solomon",
+    "Fernando de Goes",
+    "Gabriel Peyré",
+    "Marco Cuturi",
+    "Adrian Butscher",
+    "Andy Nguyen",
+    "Tao Du",
+    "Leonidas Guibas"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Test-of-Time Award: Convolutional Wasserstein Distances: Efficient Optimal Transportation on Geometric Domains — Justin Solomon, Fernando de Goes, Gabriel Peyré, Marco Cuturi, Adrian Butscher, Andy Nguyen, Tao Du, Leonidas Guibas"
+  },
+  {
+   "venue": "SIGGRAPH",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Intrinsic Images in the Wild",
+   "authors": [
+    "Sean Bell",
+    "Kavita Bala",
+    "Noah Snavely"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://blog.siggraph.org/2026/05/siggraph-2026-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
+   "evidence": "SIGGRAPH 2026 Test-of-Time Award: Intrinsic Images in the Wild — Sean Bell, Kavita Bala, Noah Snavely"
   },
   {
    "venue": "SIGIR",
