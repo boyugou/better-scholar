@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.52 — 2026-10-12
+
+- WSDM's best, best student, runner-up and test of time papers of 2018–2021 (15 papers; the list had none) from each year's own front page, which announces the awards in a layout of its own that year (`tot.mjs wsdm-year`); the honorable mentions are not read, and the later years' pages name no winners. The list has 6481 awards.
+
 ## 2.10.51 — 2026-10-12
 
 - IEEE Euro S&P's distinguished papers of 2022 and 2025, and its 2024 distinguished paper and runners-up (11 papers; the list had none) from the symposium's own accepted-papers-and-awards pages (`tot.mjs eurosp`); 2023's page lists finalists only. The list has 6466 awards.

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6466
+  "count": 6481
  },
  "entries": [
   {
@@ -107068,6 +107068,245 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "WOOT '26: Squeezing Juicy Variant Bugs Out of Modern Browsers — Han Zheng, EPFL; Flavio Toffalini, Ruhr-Universität Bochum; Qiang Liu, EPFL; Mathias Payer, EPFL"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Index Compression Using Byte-Aligned ANS Coding and Two-Dimensional Contexts",
+   "authors": [
+    "Alistair Moffat",
+    "Matthias Petri"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2018/",
+   "evidence": "WSDM 2018 Best Paper Award: Index Compression Using Byte-Aligned ANS Coding and Two-Dimensional Contexts — Alistair Moffat, Matthias Petri"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Path-constrained Framework for Discriminating Substitutable and Complementary Products in Ecommerce",
+   "authors": [
+    "Zihan Wang",
+    "Ziheng Jiang",
+    "Zhaochun Ren",
+    "Jiliang Tang",
+    "Dawei Yin"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2018/",
+   "evidence": "WSDM 2018 Best Student Paper Award: A Path-constrained Framework for Discriminating Substitutable and Complementary Products in Ecommerce — Zihan Wang, Ziheng Jiang, Zhaochun Ren, Jiliang Tang, Dawei Yin"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Finding High-Quality Content in Social Media",
+   "authors": [
+    "Eugene Agichtein",
+    "Carlos Castillo",
+    "Debora Donato",
+    "Aristides Gionis",
+    "Gilad Mishne"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.wsdm-conference.org/2018/",
+   "evidence": "WSDM 2018 Test of Time Award: Finding High-Quality Content in Social Media — Eugene Agichtein, Carlos Castillo, Debora Donato, Aristides Gionis, Gilad Mishne"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Slice: Scalable Linear Extreme Classifiers trained on 100 Million Labels for Related Searches",
+   "authors": [
+    "Himanshu Jain",
+    "Venkatesh Balasubramanian",
+    "Bhanu Teja Chunduri",
+    "Manik Varma"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2019/",
+   "evidence": "WSDM 2019 Best Paper Award: Slice: Scalable Linear Extreme Classifiers trained on 100 Million Labels for Related Searches — Himanshu Jain, Venkatesh Balasubramanian, Bhanu Teja Chunduri, Manik Varma"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Opinion Spam and Analysis",
+   "authors": [
+    "Nitin Jindal",
+    "Bing Liu"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.wsdm-conference.org/2019/",
+   "evidence": "WSDM 2019 Test of Time Award: Opinion Spam and Analysis — Nitin Jindal, Bing Liu"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Power of Pivoting for Exact Clique Counting",
+   "authors": [
+    "Shweta Jain",
+    "C. Seshadhri"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2020/",
+   "evidence": "WSDM 2020 Best Paper Award: The Power of Pivoting for Exact Clique Counting — Shweta Jain, C. Seshadhri"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "HyperML: A Boosting Metric Learning Approach in Hyperbolic Space for Recommender Systems",
+   "authors": [
+    "Lucas Vinh Tran",
+    "Yi Tay",
+    "Shuai Zhang",
+    "Gao Cong",
+    "Xiaoli Li"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2020/",
+   "evidence": "WSDM 2020 Best Paper Runner-up: HyperML: A Boosting Metric Learning Approach in Hyperbolic Space for Recommender Systems — Lucas Vinh Tran, Yi Tay, Shuai Zhang, Gao Cong, Xiaoli Li"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "TwitterRank: Finding Topic-sensitive Influential Twitterers",
+   "authors": [
+    "Jianshu Weng",
+    "Ee-Peng Lim",
+    "Jing Jiang",
+    "Qi He"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.wsdm-conference.org/2020/",
+   "evidence": "WSDM 2020 Test of Time Award: TwitterRank: Finding Topic-sensitive Influential Twitterers — Jianshu Weng, Ee-Peng Lim, Jing Jiang, Qi He"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unifying Online and Counterfactual Learning to Rank",
+   "authors": [
+    "Harrie Oosterhuis",
+    "Maarten de Rijke"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Best Paper Award: Unifying Online and Counterfactual Learning to Rank — Harrie Oosterhuis, Maarten de Rijke"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "A/B Testing, Controlled Experiments, Surrogate Metrics",
+   "authors": [
+    "Weitao Duan",
+    "Shan Ba",
+    "Chunzhe Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Best Paper Runner-up: A/B Testing, Controlled Experiments, Surrogate Metrics — Weitao Duan, Shan Ba, Chunzhe Zhang"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "FACE-KEG: FAct Checking Explained using KnowledgE Graphs",
+   "authors": [
+    "Nikhita Vedula",
+    "Srinivasan Parthasarathy"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Best Paper Runner-up: FACE-KEG: FAct Checking Explained using KnowledgE Graphs — Nikhita Vedula, Srinivasan Parthasarathy"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Generative Models are Unsupervised Predictors of Page Quality: A Colossal-Scale Study",
+   "authors": [
+    "Dara Bahri",
+    "Yi Tay",
+    "Che Zheng",
+    "Donald Metzler",
+    "Cliff Brunk",
+    "Andrew Tomkins"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Best Paper Runner-up: Generative Models are Unsupervised Predictors of Page Quality: A Colossal-Scale Study — Dara Bahri, Yi Tay, Che Zheng, Donald Metzler, Cliff Brunk, Andrew Tomkins"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "RePBubLik: Reducing Polarized Bubble Radius with Link Insertions",
+   "authors": [
+    "Shahrzad Haddadan",
+    "Cristina Menghini",
+    "Matteo Riondato",
+    "Eli Upfal"
+   ],
+   "track": "main",
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Best Paper Runner-up: RePBubLik: Reducing Polarized Bubble Radius with Link Insertions — Shahrzad Haddadan, Cristina Menghini, Matteo Riondato, Eli Upfal"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Diversifying search results",
+   "authors": [
+    "Rakesh Agrawal",
+    "Sreenivas Gollapudi",
+    "Alan Halverson",
+    "Samuel Ieong"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Test of Time Award: Diversifying search results — Rakesh Agrawal, Sreenivas Gollapudi, Alan Halverson, Samuel Ieong"
+  },
+  {
+   "venue": "WSDM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Everyone’s an influencer: Quantifying influence on Twitter",
+   "authors": [
+    "Eytan Bakshy",
+    "Jake Mark Hofman",
+    "Winter A Mason",
+    "Duncan J. Watts"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.wsdm-conference.org/2021/",
+   "evidence": "WSDM 2021 Test of Time Award: Everyone’s an influencer: Quantifying influence on Twitter — Eytan Bakshy, Jake Mark Hofman, Winter A Mason, Duncan J. Watts"
   },
   {
    "venue": "WWW",
