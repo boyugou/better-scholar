@@ -139,3 +139,8 @@ test("source files stay free of debugging leftovers and remote code", () => {
     assert.ok(!/\beval\(|new Function\(|https?:\/\/[^\s"']*\.js\b/.test(text), "dynamic code in " + f);
   }
 });
+
+test("the repository root holds no stray fetched pages (*.html)", () => {
+  const stray = fs.readdirSync(path.join(__dirname, "..")).filter((f) => /\.html?$/i.test(f));
+  assert.deepEqual(stray, []);
+});
