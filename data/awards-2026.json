@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6186
+  "count": 6193
  },
  "entries": [
   {
@@ -57294,6 +57294,25 @@
   {
    "venue": "ICDM",
    "year": 2008,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Interpreting PET Scans by Structured Patient Data: A Data Mining Case Study in Dementia Research",
+   "authors": [
+    "Andreas Hapfelmeier",
+    "Jana Schmidt",
+    "Marianne Mueller",
+    "Robert Perneczky",
+    "Alexander Drzezga",
+    "Alexander Kurz",
+    "Stefan Kramer"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2008 Best Application Paper Award: Interpreting PET Scans by Structured Patient Data: A Data Mining Case Study in Dementia Research — Andreas Hapfelmeier, Jana Schmidt, Marianne Mueller, Robert Perneczky, Alexander Drzezga, Alexander Kurz, and Stefan Kramer"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2008,
    "award": "runner-up",
    "awardLabel": "Best Paper Runner-up (Theoretical/Algorithms)",
    "title": "Isolation Forest",
@@ -57305,6 +57324,20 @@
    "track": "main",
    "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
    "evidence": "ICDM 2008 Best Paper Runner-up (Theoretical/Algorithms): Isolation Forest — Fei Tony Liu, Kai Ming Ting, and Zhi-Hua Zhou"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applications)",
+   "title": "Web Mining for Understanding Stories through Graph Visualization",
+   "authors": [
+    "Ilija Subasic",
+    "Bettina Berendt"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2008 Best Paper Runner-up (Applications): Web Mining for Understanding Stories through Graph Visualization — Ilija Subasic and Bettina Berendt"
   },
   {
    "venue": "ICDM",
@@ -57323,6 +57356,53 @@
   {
    "venue": "ICDM",
    "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Theoretical/Algorithms Paper Award",
+   "title": "Explore/Exploit Schemes for Web Content Optimization",
+   "authors": [
+    "Deepak Agarwal",
+    "Bee-Chung Chen",
+    "Pradheep Elango"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Theoretical/Algorithms Paper Award: Explore/Exploit Schemes for Web Content Optimization — Deepak Agarwal, Bee-Chung Chen, and Pradheep Elango, Explore/Exploit Schemes for"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Clustering Trajectories of Moving Objects in an Uncertain World",
+   "authors": [
+    "Nikos Pelekis",
+    "Ioannis Kopanakis",
+    "Evangelos Kotsifakos",
+    "Elias Frentzos",
+    "Yannis Theodoridis"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Application Paper Award: Clustering Trajectories of Moving Objects in an Uncertain World — Nikos Pelekis, Ioannis Kopanakis, Evangelos Kotsifakos, Elias Frentzos, and Yann"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Theoretical/Algorithms)",
+   "title": "Evaluating Statistical Tests for Within-Network Classifiers of Relational Data",
+   "authors": [
+    "Jennifer Neville",
+    "Brian Gallagher",
+    "Tina Eliassi-Rad"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Paper Runner-up (Theoretical/Algorithms): Evaluating Statistical Tests for Within-Network Classifiers of Relational Data — Jennifer Neville, Brian Gallagher, and Tina Eliassi-Rad, Evaluating Statistical"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
    "award": "runner-up",
    "awardLabel": "Best Paper Runner-up (Student Paper)",
    "title": "Inverse Time Dependency in Convex Regularized Learning",
@@ -57337,6 +57417,37 @@
    "track": "main",
    "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
    "evidence": "ICDM 2009 Best Paper Runner-up (Student Paper): Inverse Time Dependency in Convex Regularized Learning — Zeyuan Allen Zhu, Weizhu Chen, Chenguang Zhu, Gang Wang, Haixun Wang, and Zheng Chen,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applications)",
+   "title": "PEGASUS: A Peta-Scale Graph Mining System - Implementation and Observations",
+   "authors": [
+    "U Kang",
+    "Charalampos Tsourakakis",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Paper Runner-up (Applications): PEGASUS: A Peta-Scale Graph Mining System - Implementation and Observations — U Kang, Charalampos Tsourakakis, and Christos Faloutsos, PEGASUS: A Peta-Scale G"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "Accurate Estimation of the Degree Distribution of Private Networks",
+   "authors": [
+    "Michael Hay",
+    "Chao Li",
+    "Gerome Miklau",
+    "David Jensen"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Student Paper Awards: Accurate Estimation of the Degree Distribution of Private Networks — Michael Hay, Chao Li, Gerome Miklau, and David Jensen, Accurate Estimation of th"
   },
   {
    "venue": "ICDM",

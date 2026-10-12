@@ -1222,11 +1222,12 @@ export function parseIcdmBest(html, source = PAGES.icdm) {
   const entries = [], skipped = [];
   const ls0 = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
   // 2008 starts a paper on its category line ("Best Application Paper Award: “Interpreting"): the category is a line of its own, the rest follows
-  const ls = ls0.flatMap((l) => { const m = /^((?:Best (?:Theoretical\/Algorithms |Application |Student )?Papers? Awards?|(?:Theoretical\/Algorithms|Applications) Category)):\s*(\S.*)$/.exec(l); return m && /^[“"]/.test(m[2]) ? [m[1] + ":", m[2]] : [l]; });
+  const ls = ls0.flatMap((l) => { const m = /^((?:Best (?:Theoretical\/Algorithms |Application |Student )?Papers? Awards?|(?:Theoretical\/Algorithms|Applications) Category)):\s*(\S.*)$/.exec(l); return m && /^[“"]/.test(m[2]) ? [m[1] + ":", m[2]] : [l]; })
+    .flatMap((l) => { const m = /^(.*[”"]),?\s+by\s+(\S.*)$/.exec(l); return m ? [m[1], "by " + m[2]] : [l]; });          // (2008: the title ends and the authors begin on one line)
   const yearRe = /^IEEE ICDM\s*'?((?:19|20)?\d{2}) Best Paper Awards?:?\s*(.*)$/i;
   const catRe = /^(?:Best (?:Research |Application |Student |Theoretical\/Algorithms )?Paper(?: Awards?)?(?: Runner-?up(?: Awards?)?)?|Best Paper (?:Award )?Runner-?up(?: Awards?)?|Best Paper Runner-?up Awards?|Runner-up for Best Research Paper Award|Honorable Mention|(?:Theoretical\/Algorithms|Applications?) Category|Best (?:Theoretical\/Algorithms|Application) Paper Award|Student Paper):?$/i;
   const isBy = (l) => /^by(?:\s|$)/i.test(l || "");
-  const startsRecord = (i) => isBy(ls[i]) || isBy(ls[i + 1]) || isBy(ls[i + 2]);
+  const startsRecord = (i) => isBy(ls[i]) || isBy(ls[i + 1]) || isBy(ls[i + 2]) || (/^[“"][^”"]*$/.test(ls[i] || "") && isBy(ls[i + 3]));   // (a quotation that opens and runs over three lines)
   let year = null, top = "best", cat = null;
   const kindOf = (c) => /runner|honorable/i.test(c) ? "runner-up" : /student/i.test(c) ? "student" : /application/i.test(c) && !/category/i.test(c) ? "category" : "best";
   const add = (title, authorText, evidenceLine) => {
@@ -1239,7 +1240,34 @@ export function parseIcdmBest(html, source = PAGES.icdm) {
     if (who.length && t.length >= 8) entries.push({ venue: "ICDM", year, award, awardLabel: label, title: t, authors: who, track: "main", source, evidence: `ICDM ${year} ${label}: ${t} — ${evidenceLine}` });
     else skipped.push(`${year}: not read: ${t.slice(0, 50)} / ${authorText.slice(0, 50)}`);
   };
+  // a year whose papers run together after their category labels ("Best Application Paper Award: A, B, and C, Title …": 2009) has no "by" line: read it as one paragraph, the names being the leading entries
+  // (two to four words each) up to the first entry that is not a name
+  const labelRe = /(Best (?:Theoretical\/Algorithms |Application |Student )?Papers? Awards?|Best Paper Runner-Up Awards|(?:Theoretical\/Algorithms|Applications) Category|Student Paper):/g;
+  const runTogether = (blockLines) => {
+    const text = blockLines.join(" ").replace(/\s+/g, " ");
+    const marks = [...text.matchAll(labelRe)];
+    for (let n = 0; n < marks.length; n++) {
+      const body = text.slice(marks[n].index + marks[n][0].length, n + 1 < marks.length ? marks[n + 1].index : text.length).trim();
+      const label = marks[n][1];
+      if (/^Best Paper Awards?$/i.test(label)) { top = "best"; }
+      if (/Runner-Up Awards/i.test(label)) { top = "runner"; }
+      if (!body || /^Best Paper (?:Awards?|Runner-Up Awards)$/i.test(label)) continue;
+      if (!/category|^Student Paper$/i.test(label)) top = /runner/i.test(label) ? "runner" : "best";
+      const pieces = body.split(/(,\s+(?:and\s+)?|\s+and\s+)/);
+      let k = 0;
+      for (; k < pieces.length; k += 2) { const nm = pieces[k].trim(); const w = nm.split(" ").length; if (!isPerson(nm) || w < 2 || w > 4) break; }
+      if (k >= 2 && k < pieces.length) { cat = label + ":"; add(pieces.slice(k).join("").replace(/\.$/, ""), pieces.slice(0, k).join(""), body.slice(0, 80)); }
+    }
+  };
+  const blocks = [];
+  for (let i = 0; i < ls.length; i++) { const y = yearRe.exec(ls[i]); if (y) blocks.push({ from: i, year: y[1].length === 2 ? 2000 + parseInt(y[1], 10) : parseInt(y[1], 10) }); }
+  const skip = new Set();
+  blocks.forEach((b, n) => {
+    const to = n + 1 < blocks.length ? blocks[n + 1].from : ls.length, inner = ls.slice(b.from + 1, to);
+    if (!inner.some((x) => isBy(x)) && inner.filter((x) => /^Best .*Award:\s*\S/.test(x)).length >= 2) { year = b.year; top = "best"; cat = "Best Paper Award"; runTogether(inner); for (let q = b.from; q < to; q++) skip.add(q); }
+  });
   for (let i = 0; i < ls.length; i++) {
+    if (skip.has(i)) continue;
     const l = ls[i];
     const y = yearRe.exec(l);
     if (y) {

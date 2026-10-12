@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.11 — 2026-10-12
+
+- ICDM 2009's six papers (authors and title run together in one paragraph after each category) and 2008's two application papers (the title wraps over three lines): ICDM is complete from 2001 to 2025 now, bar one row whose author list has a single-word name. The list has 6193 awards.
+
 ## 2.10.10 — 2026-10-12
 
 - ICDM: 2012's best paper (title and authors on two lines, no "by") and three of 2008's papers (the category and the title start on one line) are read now; the list has 6186 awards.

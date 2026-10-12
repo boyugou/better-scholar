@@ -1662,16 +1662,19 @@ test("UbiComp / ISWC awards page: IMWUT distinguished papers (title / authors pa
   assert.deepEqual(skipped, []);
 });
 
-test("ICDM best papers page: 'by Authors' (also 'by' alone and wrapped), authors-first years, a title on the heading line, runner-up context and 2007's categories; the 2008 paragraph form is not read", async () => {
+test("ICDM best papers page: 'by Authors' (also 'by' alone and wrapped), authors-first years, a title on the heading line, runner-up context and 2007's categories; 2008's titles that start on the category line and 2009's run-together paragraphs", async () => {
   const { parseIcdmBest } = await import("../scripts/awards/tot.mjs");
   const html = `<p>IEEE ICDM Best Paper Awards</p><p>IEEE ICDM 2024 Best Paper Awards:</p><p>Best Paper Award</p><p>Scalable Graph Classification via Random Walk Fingerprints</p><p>by</p><p>Peiyan Li,Honglian Wang and Christian Bohm</p>
 <p>Best Student Paper Runner-Up</p><p>Traffic Pattern Sharing for Federated Traffic Flow Prediction</p><p>by Hang Zhou, Wentao Yu, Sheng Wan</p><p>IEEE ICDM 2013 Best Paper Awards:</p><p>Best Paper Award</p><p>Nicholas Jing Yuan, Yingzi Wang, and Guang-Zhong Sun,</p><p>Reconstructing Individual Mobility from Smart Card Transactions</p>
 <p>IEEE ICDM '07 Best Paper Awards:</p><p>Theoretical/Algorithms Category:</p><p>Disk Aware Discord Discovery: Finding Unusual Time Series</p><p>by Dragomir Yankov, Eamonn Keogh</p><p>Best Paper Runner-Up Awards:</p><p>Applications Category:</p><p>Improving Text Classification by Using Encyclopedia Knowledge,</p><p>by Pu Wang, Jian Hu</p>
 <p>IEEE ICDM 2005 Best Paper Award: Mining Minimal Distinguishing Subsequence Patterns with Gap Constraints</p><p>by Xiaonan Ji, James Bailey, and Guozhu Dong</p>
 <p>IEEE ICDM 2012 Best Paper Awards:</p><p>Best Paper Award</p><p>Scalable Coordinate Descent Approaches to Parallel Matrix Factorization</p><p>Hsiang-Fu Yu, Cho-Jui Hsieh, Si Si, and Inderjit Dhillon</p>
-<p>IEEE ICDM 2008 Best Paper Awards:</p><p>Best Theoretical/Algorithms Paper Award:</p><p>“Scalable Tensor Decomposition for Multi-Aspect Data Mining”,</p><p>by Tamara Kolda and Jimeng Sun</p><p>Best Application Paper Award: “Interpreting</p><p>PET Scans”, by Andreas Hapfelmeier and Stefan Kramer</p>`;
+<p>IEEE ICDM 2008 Best Paper Awards:</p><p>Best Theoretical/Algorithms Paper Award:</p><p>“Scalable Tensor Decomposition for Multi-Aspect Data Mining”,</p><p>by Tamara Kolda and Jimeng Sun</p><p>Best Application Paper Award: “Interpreting</p><p>PET Scans by Structured Data: A Case</p><p>Study in Dementia Research”, by Andreas Hapfelmeier and Stefan Kramer</p>
+<p>IEEE ICDM 2009 Best Paper Awards:</p><p>Best Paper Awards:</p><p>Best Theoretical/Algorithms Paper Award: Deepak</p><p>Agarwal, Bee-Chung Chen, and Pradheep Elango, Explore/Exploit Schemes</p><p>for Web Content Optimization</p><p>Best Application Paper Award: Nikos Pelekis,</p><p>Ioannis Kopanakis, and Yannis Theodoridis, Clustering Trajectories of Moving Objects in an Uncertain</p><p>World</p>`;
   const { entries, skipped } = parseIcdmBest(html);
   assert.deepEqual(entries.map((e) => `${e.year} ${e.award} [${e.awardLabel}] ${e.title.slice(0, 14)} | ${e.authors.join("; ")}`), [
+    "2009 best [Best Theoretical/Algorithms Paper Award] Explore/Exploi | Deepak Agarwal; Bee-Chung Chen; Pradheep Elango",
+    "2009 category [Best Application Paper Award] Clustering Tra | Nikos Pelekis; Ioannis Kopanakis; Yannis Theodoridis",
     "2024 best [Best Paper Award] Scalable Graph | Peiyan Li; Honglian Wang; Christian Bohm",
     "2024 runner-up [Best Student Paper Runner-Up] Traffic Patter | Hang Zhou; Wentao Yu; Sheng Wan",
     "2013 best [Best Paper Award] Reconstructing | Nicholas Jing Yuan; Yingzi Wang; Guang-Zhong Sun",
@@ -1679,7 +1682,8 @@ test("ICDM best papers page: 'by Authors' (also 'by' alone and wrapped), authors
     "2007 runner-up [Best Paper Runner-up (Applications)] Improving Text | Pu Wang; Jian Hu",
     "2005 best [Best Paper Award] Mining Minimal | Xiaonan Ji; James Bailey; Guozhu Dong",
     "2012 best [Best Paper Award] Scalable Coord | Hsiang-Fu Yu; Cho-Jui Hsieh; Si Si; Inderjit Dhillon",
-    "2008 best [Best Theoretical/Algorithms Paper Award] Scalable Tenso | Tamara Kolda; Jimeng Sun"
+    "2008 best [Best Theoretical/Algorithms Paper Award] Scalable Tenso | Tamara Kolda; Jimeng Sun",
+    "2008 category [Best Application Paper Award] Interpreting P | Andreas Hapfelmeier; Stefan Kramer"
   ]);
   assert.ok(skipped.length <= 1, "what cannot be read is reported, not guessed");
 });
