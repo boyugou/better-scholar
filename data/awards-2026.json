@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4946
+  "count": 4968
  },
  "entries": [
   {
@@ -9182,6 +9182,95 @@
    "track": "main",
    "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
    "evidence": "CCS 2025 Test-of-Time Award: Reza Shokri, Vitaly Shmatikov: Privacy-Preserving Deep Learning"
+  },
+  {
+   "venue": "CHES",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Resistance Against Differential Power Analysis For Elliptic Curve Cryptosystems",
+   "authors": [
+    "Jean-Sébastien Coron"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2020 Test of Time Award: Jean-Sébastien Coron “Resistance Against Differential Power Analysis For Elliptic Curve Cryptosystems”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Sound Method for Switching between Boolean and Arithmetic Masking",
+   "authors": [
+    "Louis Goubin"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2021 Test of Time Award: Louis Goubin “A Sound Method for Switching between Boolean and Arithmetic Masking”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Template Attacks",
+   "authors": [
+    "Suresh Chari",
+    "Josyula R. Rao",
+    "Pankaj Rohatgi"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2022 Test of Time Award: Suresh Chari, Josyula R. Rao, and Pankaj Rohatgi “Template Attacks”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Differential Fault Attack Technique against SPN Structures, with Application to the AES and Khazad",
+   "authors": [
+    "Gilles Piret",
+    "Jean-Jacques Quisquater"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2023 Test of Time Award: Gilles Piret, Jean-Jacques Quisquater “A Differential Fault Attack Technique against SPN Structures, with Application to the AES and Khazad”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Correlation Power Analysis with a Leakage Model",
+   "authors": [
+    "Eric Brier",
+    "Christophe Clavier",
+    "Francis Olivier"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2024 Test of Time Award: Eric Brier, Christophe Clavier, and Francis Olivier “Correlation Power Analysis with a Leakage Model”"
+  },
+  {
+   "venue": "CHES",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Very Compact S-box for AES",
+   "authors": [
+    "David Canright"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://ches.iacr.org/testoftime.php",
+   "evidence": "CHES 2025 Test of Time Award: David Canright “A Very Compact S-box for AES”"
   },
   {
    "venue": "CHI",
@@ -65949,6 +66038,247 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
+  },
+  {
+   "venue": "PKC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How to Enhance the Security of Public-Key Encryption at Minimum Cost",
+   "authors": [
+    "Eiichiro Fujisaki",
+    "Tatsuaki Okamoto"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2019 Test of Time Award: Eiichiro Fujisaki and Tatsuaki Okamoto “How to Enhance the Security of Public-Key Encryption at Minimum Cost”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Selecting Cryptographic key Sizes",
+   "authors": [
+    "Arjen K. Lenstra",
+    "Eric R. Verheul"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2019 Test of Time Award: Arjen K. Lenstra and Eric R. Verheul “Selecting Cryptographic key Sizes”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Gap-Problems: A New Class of Problems for the Security of Cryptographic Schemes",
+   "authors": [
+    "Tatsuaki Okamoto",
+    "David Pointcheval"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2019 Test of Time Award: Tatsuaki Okamoto and David Pointcheval “The Gap-Problems: A New Class of Problems for the Security of Cryptographic Schemes”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Generalisation, a Simplification and Some Applications of Paillier's Probabilistic Public-Key System",
+   "authors": [
+    "Ivan Damgård",
+    "Mads Jurik"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2020 Test of Time Award: Ivan Damgård and Mads Jurik “A Generalisation, a Simplification and Some Applications of Paillier's Probabilistic Public-Key System”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On the Security of ElGamal Based Encryption",
+   "authors": [
+    "Yiannis Tsiounis",
+    "Moti Yung"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2020 Test of Time Award: Yiannis Tsiounis and Moti Yung “On the Security of ElGamal Based Encryption”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Threshold Signatures, Multisignatures and Blind Signatures based on the Gap-Diffie-Hellman-Group Signature Scheme",
+   "authors": [
+    "Alexandra Boldyreva"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2020 Test of Time Award: Alexandra Boldyreva “Threshold Signatures, Multisignatures and Blind Signatures based on the Gap-Diffie-Hellman-Group Signature Scheme”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Verifiable Random Function with Short Proofs and Keys",
+   "authors": [
+    "Yevgeniy Dodis",
+    "Aleksandr Yampolskiy"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2021 Test of Time Award: Yevgeniy Dodis and Aleksandr Yampolskiy “A Verifiable Random Function with Short Proofs and Keys”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Efficient Signature Scheme from Bilinear Pairings and Its Applications",
+   "authors": [
+    "Fangguo Zhang",
+    "Reihaneh Safavi-Naini",
+    "Willy Susilo"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2021 Test of Time Award: Fangguo Zhang, Reihaneh Safavi-Naini, and Willy Susilo “An Efficient Signature Scheme from Bilinear Pairings and Its Applications”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Identity-Based Signature from Gap Diffie-Hellman Groups",
+   "authors": [
+    "Jae Choon Cha",
+    "Jung Hee Cheon"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2021 Test of Time Award: Jae Choon Cha and Jung Hee Cheon “An Identity-Based Signature from Gap Diffie-Hellman Groups”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Curve25519: New Diffie-Hellman Speed Records",
+   "authors": [
+    "Daniel J. Bernstein"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2022 Test of Time Award: Daniel J. Bernstein “Curve25519: New Diffie-Hellman Speed Records”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Password-Based Authenticated Key Exchange in the Three-Party Setting",
+   "authors": [
+    "Michel Abdalla",
+    "Pierre-Alain Fouque",
+    "David Pointcheval"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2022 Test of Time Award: Michel Abdalla, Pierre-Alain Fouque, and David Pointcheval “Password-Based Authenticated Key Exchange in the Three-Party Setting”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Unidirectional chosen-ciphertext secure proxy re-encryption",
+   "authors": [
+    "Benoît Libert",
+    "Damien Vergnaud"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2023 Test of Time Award: Benoît Libert and Damien Vergnaud “Unidirectional chosen-ciphertext secure proxy re-encryption”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Traceable Ring Signature",
+   "authors": [
+    "Eiichiro Fujisaki",
+    "Koutarou Suzuki"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2024 Test of Time Award: Eiichiro Fujisaki and Koutarou Suzuki “Traceable Ring Signature”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Accumulator Based on Bilinear Maps and Efficient Revocation for Anonymous Credentials",
+   "authors": [
+    "Jan Camenisch",
+    "Markulf Kohlweiss",
+    "Claudio Soriente"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2025 Test of Time Award: Jan Camenisch, Markulf Kohlweiss, and Claudio Soriente. “An Accumulator Based on Bilinear Maps and Efficient Revocation for Anonymous Credentials”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Signing a Linear Subspace: Signature Schemes for Network Coding",
+   "authors": [
+    "Dan Boneh",
+    "David Freeman",
+    "Jonathan Katz",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2025 Test of Time Award: Dan Boneh, David Freeman, Jonathan Katz, and Brent Waters. “Signing a Linear Subspace: Signature Schemes for Network Coding”"
+  },
+  {
+   "venue": "PKC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Implicit Factoring: On Polynomial Time Factoring Given Only an Implicit Hint",
+   "authors": [
+    "Alexander Ma",
+    "Maike Ritzenhofen"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/meetings/pkc/test_of_time_award",
+   "evidence": "PKC 2026 Test of Time Award: Alexander Ma and Maike Ritzenhofen “Implicit Factoring: On Polynomial Time Factoring Given Only an Implicit Hint”"
   },
   {
    "venue": "PLDI",

@@ -38,8 +38,10 @@
 //                                                                       runs over two lines has no closing quotation mark on its line: those are reported and skipped)
 //   sensys  https://sensys.acm.org/tot/                                   the SenSys Test of Time Award, 2014–: a year heading, then per paper `Authors (affiliations): “Title,” Nth ACM Conference …`
 //                                                                       or, in the 2022 block, the authors on one line and `Title (2004).` on the next
+//   pkc     https://iacr.org/meetings/pkc/test_of_time_award             the PKC Test of Time Award, 2019–: the TCC page's template
+//   ches    https://ches.iacr.org/testoftime.php                          the CHES Test of Time Award, 2020–: a list item `<b>2024:</b> <a>Title</a>, Authors, CHES 2004.`
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -63,7 +65,9 @@ const PAGES = {
   iacr: "https://iacr.org/testoftime/",
   tcc: "https://www.iacr.org/workshops/tcc/awards.html",
   sigmobile: "https://sigmobile.org/grav/awards/test-of-time-paper",
-  sensys: "https://sensys.acm.org/tot/"
+  sensys: "https://sensys.acm.org/tot/",
+  pkc: "https://iacr.org/meetings/pkc/test_of_time_award",
+  ches: "https://ches.iacr.org/testoftime.php"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -268,7 +272,8 @@ export function parseIacrTot(html, source = PAGES.iacr) {
   return { entries, skipped };
 }
 
-export function parseTccTot(html, source = PAGES.tcc) {
+// (the TCC and PKC pages share a template)
+export function parseTccTot(html, source = PAGES.tcc, venue = "TCC") {
   const entries = [], skipped = [];
   const body = html.replace(/<!--[\s\S]*?-->/g, "");
   let year = null;
@@ -278,9 +283,9 @@ export function parseTccTot(html, source = PAGES.tcc) {
     const a = /^<a\s[^>]*>([\s\S]*?)<\/a>\s*by\s+([\s\S]+)$/.exec(m[2]);
     if (!a) continue;
     const rest = text(a[2]), cut = /\.\s+(?=This paper|The award|For\b)/.exec(rest);
-    const authorText = cut ? rest.slice(0, cut.index) : rest, py = /published in TCC (\d{4})/.exec(rest);
+    const authorText = cut ? rest.slice(0, cut.index) : rest, py = new RegExp(`published in ${venue} (\\d{4})`).exec(rest);
     const title = cleanTitle(text(a[1])), who = names(authorText);
-    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("TCC", year, "Test of Time Award", title, who, source, `TCC ${year} Test of Time Award: ${authorText} “${title}”`, py ? parseInt(py[1], 10) : undefined));
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry(venue, year, "Test of Time Award", title, who, source, `${venue} ${year} Test of Time Award: ${authorText} “${title}”`, py ? parseInt(py[1], 10) : undefined));
     else skipped.push(`${year}: not read: ${title.slice(0, 50)} / ${authorText.slice(0, 50)}`);
   }
   return { entries, skipped };
@@ -331,6 +336,16 @@ export function parseSensysTot(html, source = PAGES.sensys) {
     if (one && !/^Committee:/i.test(ls[i]) && !/[“"]/.test(ls[i])) { add(one[1], one[2], parseInt(one[3], 10)); continue; }
     const t = /^(.{8,200}?)\s*\(((?:19|20)\d{2})\)\.$/.exec(ls[i + 1] || "");
     if (t && /\.$/.test(ls[i]) && !/^Committee:/i.test(ls[i]) && !/[“"]/.test(ls[i])) { add(ls[i], t[1], parseInt(t[2], 10)); i++; }
+  }
+  return { entries, skipped };
+}
+
+export function parseChesTot(html, source = PAGES.ches) {
+  const entries = [], skipped = [];
+  for (const m of html.replace(/<!--[\s\S]*?-->/g, "").matchAll(/<li>\s*<b>\s*((?:19|20)\d{2}):\s*<\/b>\s*<a\s[^>]*>([\s\S]*?)<\/a>,\s*([\s\S]*?),\s*(?:T?CHES)\s+((?:19|20)\d{2})\.?\s*<\/li>/g)) {
+    const year = parseInt(m[1], 10), title = cleanTitle(text(m[2])), authorText = text(m[3]), who = names(authorText);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("CHES", year, "Test of Time Award", title, who, source, `CHES ${year} Test of Time Award: ${authorText} “${title}”`, parseInt(m[4], 10)));
+    else skipped.push(`${year}: not read: ${title.slice(0, 50)} / ${authorText.slice(0, 50)}`);
   }
   return { entries, skipped };
 }
@@ -390,7 +405,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

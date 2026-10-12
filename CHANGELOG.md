@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.10 — 2026-10-12
+
+- The PKC Test of Time Award (2019–2026, 16 papers) and the CHES Test of Time Award (2020–2025, 6 papers), each from its own page (`tot.mjs pkc`, `tot.mjs ches`).
+  The bundled list has 4968 awards.
+
 ## 2.9.9 — 2026-10-12
 
 - The SenSys Test of Time Award (2014–2023, 17 papers) from SenSys's own page (`tot.mjs sensys`). The bundled list has 4946 awards.

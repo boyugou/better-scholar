@@ -1210,3 +1210,17 @@ test("SenSys Test of Time page: `Authors: “Title,” …` rows, and the 2022 r
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("PKC and CHES Test of Time pages: the TCC template, and `<b>2024:</b> <a>Title</a>, Authors, CHES 2004.` list items", async () => {
+  const { parseTccTot, parseChesTot } = await import("../scripts/awards/tot.mjs");
+  const pkc = parseTccTot(`<h4 class="mt-4 mb-1">2022</h4><p>Two awards were given in 2022, for papers published in PKC 2005-2006.</p>
+<p><a href="x">Curve25519: New Diffie-Hellman Speed Records</a> by Daniel J. Bernstein. This paper was published in PKC 2006.</p>
+<p>The <a>2021 PKC Test of Time award ceremony</a> is available on Youtube.</p><h2>Award committee &amp; rules</h2>`, "src", "PKC");
+  assert.deepEqual(pkc.entries.map((e) => `${e.venue} ${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), ["PKC 2022/2006 Curve25519: New Diffie-Hellman Speed Records | Daniel J. Bernstein"]);
+  const ches = parseChesTot(`<ul><li> <b>2024:</b> <a href="d"> Correlation Power Analysis with a Leakage Model</a>, Eric Brier, Christophe Clavier, and Francis Olivier, CHES 2004. </li></ul>
+<ul><li> <b>2025:</b> <a href="e"> A Very Compact S-box for AES</a>, David Canright, CHES 2005. </li></ul>`);
+  assert.deepEqual(ches.entries.map((e) => `${e.venue} ${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "CHES 2024/2004 Correlation Power Analysis with a Leakage Model | Eric Brier; Christophe Clavier; Francis Olivier",
+    "CHES 2025/2005 A Very Compact S-box for AES | David Canright"
+  ]);
+});
