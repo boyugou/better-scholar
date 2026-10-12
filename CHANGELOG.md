@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.4 — 2026-10-12
+
+- The IACR Test of Time Awards for CRYPTO, EUROCRYPT and ASIACRYPT (2019–2026, 27 papers) from IACR's own page (`tot.mjs iacr`); "te" (te Riele) is a name particle.
+  The bundled list has 4877 awards.
+
 ## 2.9.3 — 2026-10-12
 
 - ASPLOS Most Influential Paper Award (2017–2022, 12 papers) from SIGPLAN's page of other awards (`tot.mjs asplos`). The bundled list has 4850 awards.

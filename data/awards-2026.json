@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4850
+  "count": 4877
  },
  "entries": [
   {
@@ -6991,6 +6991,128 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The IEEE/ACM International Conference on Automated Software Engineering (ASE 2025): Xiaogang Zhu, Enze Dai, Xiaotao Feng, Shaohua Wang, Xin Xia, Sheng Wen, Kwok-Yan Lam, Yang Xiang: WingMuzz: Blackbox Testing of IoT Protocols via Two-dimensional Fuzzing Schedule"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How Far Can We Go Beyond Linear Cryptanalysis?",
+   "authors": [
+    "Thomas Baignères",
+    "Pascal Junod",
+    "Serge Vaudenay"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2019 Test of Time Award: Thomas Baignères, Pascal Junod, and Serge Vaudenay “How Far Can We Go Beyond Linear Cryptanalysis?”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Discrete-Log-Based Signatures May Not Be Equivalent to Discrete Log",
+   "authors": [
+    "Pascal Paillier",
+    "Damien Vergnaud"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2020 Test of Time Award: Pascal Paillier and Damien Vergnaud “Discrete-Log-Based Signatures May Not Be Equivalent to Discrete Log”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Simulation-sound NIZK proofs for a practical language and constant size group signatures",
+   "authors": [
+    "Jens Groth"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2021 Test of Time Award: Jens Groth “Simulation-sound NIZK proofs for a practical language and constant size group signatures”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Faster Addition and Doubling on Elliptic Curves",
+   "authors": [
+    "Daniel J. Bernstein",
+    "Tanja Lange"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2022 Test of Time Award: Daniel J. Bernstein and Tanja Lange “Faster Addition and Doubling on Elliptic Curves”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Preimage Attacks on 3, 4, and 5-Pass HAVAL",
+   "authors": [
+    "Kazumaro Aoki",
+    "Yu Sasaki"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2023 Test of Time Award: Kazumaro Aoki and Yu Sasaki “Preimage Attacks on 3, 4, and 5-Pass HAVAL”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient public key encryption based on ideal lattices",
+   "authors": [
+    "Damien Stehlé",
+    "Ron Steinfeld",
+    "Keisuke Tanaka",
+    "Keita Xagawa"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2024 Test of Time Award: Damien Stehlé, Ron Steinfeld, Keisuke Tanaka and Keita Xagawa “Efficient public key encryption based on ideal lattices”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fiat-Shamir with aborts:Applications to lattice and factoring-based signatures",
+   "authors": [
+    "Vadim Lyubashevsky"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2024 Test of Time Award: Vadim Lyubashevsky “Fiat-Shamir with aborts:Applications to lattice and factoring-based signatures”"
+  },
+  {
+   "venue": "ASIACRYPT",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Constant-Size Commitments to Polynomials and Their Applications",
+   "authors": [
+    "Aniket Kate",
+    "Gregory M. Zaverucha",
+    "Ian Goldberg"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "ASIACRYPT 2025 Test of Time Award: Aniket Kate, Gregory M. Zaverucha, and Ian Goldberg “Constant-Size Commitments to Polynomials and Their Applications”"
   },
   {
    "venue": "ASPLOS",
@@ -35987,6 +36109,151 @@
    "evidence": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences — Outstanding Paper"
   },
   {
+   "venue": "CRYPTO",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Multicollisions in Iterated Hash Functions. Application to Cascaded Constructions",
+   "authors": [
+    "Antoine Joux"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2019 Test of Time Award: Antoine Joux “Multicollisions in Iterated Hash Functions. Application to Cascaded Constructions”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Finding collisions in the full SHA-1",
+   "authors": [
+    "Xiaoyun Wang",
+    "Yiqun Lisa Yin",
+    "Hongbo Yu"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2020 Test of Time Award: Xiaoyun Wang, Yiqun Lisa Yin and Hongbo Yu “Finding collisions in the full SHA-1”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "New proofs for NMAC and HMAC: Security without collision-resistance",
+   "authors": [
+    "Mihir Bellare"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2021 Test of Time Award: Mihir Bellare “New proofs for NMAC and HMAC: Security without collision-resistance”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Deterministic and Efficiently Searchable Encryption",
+   "authors": [
+    "Mihir Bellare",
+    "Alexandra Boldyreva",
+    "Adam O'Neill"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2022 Test of Time Award: Mihir Bellare, Alexandra Boldyreva, and Adam O'Neill “Deterministic and Efficiently Searchable Encryption”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Framework for Efficient and Composable Oblivious Transfer",
+   "authors": [
+    "Chris Peikert",
+    "Vinod Vaikuntanathan",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2023 Test of Time Award: Chris Peikert, Vinod Vaikuntanathan, and Brent Waters “A Framework for Efficient and Composable Oblivious Transfer”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dual-System Encryption",
+   "authors": [
+    "Brent Waters"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2024 Test of Time Award: Brent Waters “Dual-System Encryption”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Reconstructing RSA Private Keys from Random Key Bits",
+   "authors": [
+    "Nadia Heninger",
+    "Hovav Shacham"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2024 Test of Time Award: Nadia Heninger and Hovav Shacham “Reconstructing RSA Private Keys from Random Key Bits”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Cryptographic Extraction and Key Derivation: The HKDF Scheme",
+   "authors": [
+    "Hugo Krawczyk"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2025 Test of Time Award: Hugo Krawczyk “Cryptographic Extraction and Key Derivation: The HKDF Scheme”"
+  },
+  {
+   "venue": "CRYPTO",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Factorization of a 768-bit RSA modulus",
+   "authors": [
+    "Thorsten Kleinjung",
+    "Kazumaro Aoki",
+    "Jens Franke",
+    "Arjen K. Lenstra",
+    "Emmanuel Thomé",
+    "Joppe W. Bos",
+    "Pierrick Gaudry",
+    "Alexander Kruppa",
+    "Peter L. Montgomery",
+    "Dag Arne Osvik",
+    "Herman te Riele",
+    "Andrey Timofeev",
+    "Paul Zimmermann"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "CRYPTO 2025 Test of Time Award: Thorsten Kleinjung, Kazumaro Aoki, Jens Franke, Arjen K. Lenstra, Emmanuel Thomé, Joppe W. Bos, Pierrick Gaudry, Alexander Kruppa, Peter L. Montgomery, Dag Arne Osvik, Herman te Riele, Andrey Timofeev, and Paul Zimmermann “Factorization of a 768-bit RSA modulus”"
+  },
+  {
    "venue": "CSCW",
    "year": 2019,
    "award": "best",
@@ -47605,6 +47872,166 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "32nd ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2023): Chenyang Ma, Wei Song, Jeff Huang: TransRacer: Function Dependence-Guided Transaction Race Detection for Smart Contracts"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fuzzy Extractors: How to Generate Strong Keys from Biometrics and Other Noisy Data",
+   "authors": [
+    "Yevgeniy Dodis",
+    "Leonid Reyzin",
+    "Adam D. Smith"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2019 Test of Time Award: Yevgeniy Dodis, Leonid Reyzin, and Adam D. Smith “Fuzzy Extractors: How to Generate Strong Keys from Biometrics and Other Noisy Data”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fuzzy Identity-Based Encryption",
+   "authors": [
+    "Amit Sahai",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2020 Test of Time Award: Amit Sahai and Brent Waters “Fuzzy Identity-Based Encryption”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A provable-security treatment of the key-wrap problem",
+   "authors": [
+    "Phillip Rogaway",
+    "Thomas Shrimpton"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2021 Test of Time Award: Phillip Rogaway and Thomas Shrimpton “A provable-security treatment of the key-wrap problem”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Efficient Protocol for Secure Two-Party Computation in the Presence of Malicious Adversaries",
+   "authors": [
+    "Yehuda Lindell",
+    "Benny Pinkas"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2022 Test of Time Award: Yehuda Lindell and Benny Pinkas “An Efficient Protocol for Secure Two-Party Computation in the Presence of Malicious Adversaries”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Non-interactive Proof Systems for Bilinear Groups",
+   "authors": [
+    "Jens Groth",
+    "Amit Sahai"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2023 Test of Time Award: Jens Groth and Amit Sahai “Efficient Non-interactive Proof Systems for Bilinear Groups”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On the Indifferentiability of the Sponge Construction",
+   "authors": [
+    "Guido Bertoni",
+    "Joan Daemen",
+    "Michael Peeters",
+    "Gilles Van Assche"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2023 Test of Time Award: Guido Bertoni, Joan Daemen, Michael Peeters, and Gilles Van Assche “On the Indifferentiability of the Sponge Construction”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Unified Framework for the Analysis of Side-Channel Key Recovery Attacks",
+   "authors": [
+    "François-Xavier Standaert",
+    "Tal G. Malkin",
+    "Moti Yung"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2024 Test of Time Award: François-Xavier Standaert, Tal G. Malkin and Moti Yung “A Unified Framework for the Analysis of Side-Channel Key Recovery Attacks”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On Ideal Lattices and Learning with Errors over Rings",
+   "authors": [
+    "Vadim Lyubashevsky",
+    "Chris Peikert",
+    "Oded Regev"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2025 Test of Time Award: Vadim Lyubashevsky, Chris Peikert and Oded Regev “On Ideal Lattices and Learning with Errors over Rings”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Faster Explicit Formulas for Computing Pairings over Ordinary Curves",
+   "authors": [
+    "Diego F. Aranha",
+    "Koray Karabina",
+    "Patrick Longa",
+    "Catherine H. Gebotys",
+    "Julio López"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2026 Test of Time Award: Diego F. Aranha, Koray Karabina, Patrick Longa, Catherine H. Gebotys, and Julio López “Faster Explicit Formulas for Computing Pairings over Ordinary Curves”"
+  },
+  {
+   "venue": "EUROCRYPT",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Semi-homomorphic Encryption and Multiparty Computation",
+   "authors": [
+    "Rikke Bendlin",
+    "Ivan Damgård",
+    "Claudio Orlandi",
+    "Sarah Zakarias"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://iacr.org/testoftime/",
+   "evidence": "EUROCRYPT 2026 Test of Time Award: Rikke Bendlin, Ivan Damgård, Claudio Orlandi, and Sarah Zakarias “Semi-homomorphic Encryption and Multiparty Computation”"
   },
   {
    "venue": "EuroSys",

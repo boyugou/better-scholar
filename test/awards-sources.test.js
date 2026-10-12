@@ -1155,3 +1155,16 @@ test("SIGPLAN's other awards: the ASPLOS Most Influential Paper rows (a year, th
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("IACR Test of Time page: a year heading, 'From Crypto 2010', a lead paragraph per paper; commented blocks are ignored; 'te Riele' is a name", async () => {
+  const { parseIacrTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2> 2026 </h2><!-- <h4> From Asiacrypt 2011 </h4> <p class="lead mb-0"> G </p> -->
+<h4> From Eurocrypt 2011 </h4><p class="lead mb-0"> <a href="x">Semi-homomorphic Encryption and Multiparty Computation</a> by Rik Bendlin, Ivo Damgård, and Sal Zakarias </p><p> For pioneering … </p>
+<h2> 2025 </h2><h4> From Crypto 2010 </h4><p class="lead mb-0"> <a href="y">Factorization of a 768-bit RSA modulus</a> by Thor Kleinjung, Joppe W. Bos, and Herman te Riele </p><p>For the landmark …</p>`;
+  const { entries, skipped } = parseIacrTot(html);
+  assert.deepEqual(entries.map((e) => `${e.venue} ${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "EUROCRYPT 2026/2011 Semi-homomorphic Encryption and Multiparty Computation | Rik Bendlin; Ivo Damgård; Sal Zakarias",
+    "CRYPTO 2025/2010 Factorization of a 768-bit RSA modulus | Thor Kleinjung; Joppe W. Bos; Herman te Riele"
+  ]);
+  assert.deepEqual(skipped, []);
+});
