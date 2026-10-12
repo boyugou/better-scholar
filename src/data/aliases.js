@@ -19,7 +19,8 @@
 //                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
-//                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list
+//                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list. An entry may be { acronym, with }:
+//                 the acronym only counts when the string also holds that word ("ICCC" is ranked too, the Computational Creativity conference)
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -247,7 +248,8 @@
     { ccf: "IJCV", kind: "J", names: ["Int. J. Comput. Vis.", "Int. J. Comput. Vision"] },
     { ccf: "JMLR", kind: "J", names: ["J. Mach. Learn. Res."] },
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
-    // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher)
-    { shadow: ["ICCC", "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "JCC", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT"] }
+    // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
+    // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
+    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }] }
   ];
 });

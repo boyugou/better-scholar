@@ -272,8 +272,8 @@
       register("core", "C", entry, [v.name], [v.acronym]);
       push(byRef.core, "C|" + squash(v.acronym), entry);
     }
-    const shadow = new Set();
-    for (const a of aliases) for (const x of a.shadow || []) shadow.add(squash(x));
+    const shadow = new Map();   // acronym key -> [required word | null, …]
+    for (const a of aliases) for (const x of a.shadow || []) { const k = squash(typeof x === "string" ? x : x.acronym); if (!shadow.has(k)) shadow.set(k, []); shadow.get(k).push(typeof x === "string" ? null : String(x.with).toLowerCase()); }
     for (const a of aliases) {
       for (const src of ["ccf", "core"]) {
         const ref = a[src];
@@ -436,7 +436,7 @@
   function matchSource(idx, src, p, hint, known) {
     if (isPublisher(p)) return null;
     // an unranked event named by its own acronym (aliases.js `shadow`)
-    if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => idx.shadow.has(x.key))) return null;
+    if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => (idx.shadow.get(x.key) || []).some((w) => !w || fold(p.withParens).toLowerCase().includes(w)))) return null;
     const kinds = hint ? [hint] : ["J", "C"];
     const sides = kinds.map((k) => idx.sources[src][k]).filter(Boolean);
     if (!sides.length) return null;

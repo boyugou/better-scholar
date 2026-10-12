@@ -2,10 +2,11 @@
 
 ## 2.9.17 — 2026-10-12
 
-- The three misreadings recorded in 2.9.14 are fixed, and so are ten more of the same kind, with a short curated list (`aliases.js`, `shadow`): acronyms of unranked events whose names
-  boil down to the words of a ranked venue's. *… Computer and Communications (ICCC)* is not INFOCOM, *… Image and Signal Processing (CISP)* not ICISP, *IEEE Region 10 Symposium (TENSYMP)* not
-  TENCON, *IEEE International Conference on Joint Cloud Computing (JCC)* not IEEE CLOUD (two rows of the corpora), and ASYU, CAI, ICTIR, ISCISC, ICCIT, COMM, ICNLP, MODSIM, ONCON, IntelliSys,
-  ICALTE and ICSOFT-PT likewise. A string that names one of them by its acronym gets no badge; the ranked venues themselves are untouched.
+- The three misreadings recorded in 2.9.14 are fixed, and so are a dozen more of the same kind, with a short curated list (`aliases.js`, `shadow`): acronyms of events whose names boil down to the
+  words of a ranked venue's. *… Computer and Communications (ICCC)* is not INFOCOM (the word keeps the Computational Creativity ICCC apart), *… Image and Signal Processing (CISP)* not ICISP,
+  *IEEE Region 10 Symposium (TENSYMP)* not TENCON, and ASYU, CAI, ICTIR, ISCISC, ICCIT, COMM, ICNLP, MODSIM, ONCON, IntelliSys, ICALTE and ICSOFT-PT likewise. *IEEE International Conference on Joint
+  Cloud Computing (JCC)* (two rows of the corpora) was read as IEEE CLOUD; it now gets no badge — CCF ranks the JointCloud conference, but the words boil down to CLOUD's. The ranked venues
+  themselves are untouched, and a test keeps a plain shadow acronym from ever being a ranked venue's abbreviation.
 
 ## 2.9.16 — 2026-10-12
 
