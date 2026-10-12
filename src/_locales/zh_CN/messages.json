@@ -414,6 +414,12 @@
   "optPanelNamesHint": {
     "message": "“名字不匹配？添加拼写”及对你名字的拼写建议。"
   },
+  "optPanelCompact": {
+    "message": "精简：只留筛选和引用统计"
+  },
+  "optPanelFull": {
+    "message": "全部显示"
+  },
   "optPanelFilters": {
     "message": "筛选"
   },

@@ -87,7 +87,11 @@
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
         ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
-        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show }))),
+        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show })),
+      // two shortcuts over the switches above
+      h("div", { class: "row" },
+        h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "marks", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")),
+        h("button", { class: "btn", type: "button", "data-act": "panel-full", onClick: () => { for (const k of B.prefs.PANEL_PARTS) prefs.panel[k] = true; save(); } }, t("optPanelFull")))),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBtn, cacheNote)));

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.5 — 2026-10-12
+
+- Two shortcuts under the summary panel's switches: "Compact: filters and citation totals only" (the leanest panel) and "Everything".
+
 ## 2.10.4 — 2026-10-12
 
 - The toolbar popup follows the settings page's switches for the role × rank table and the awards & talks counts, as the panel does: with the table off it shows the name and the paper count (and the awards line, if that is on) and no table, Copy buttons or data note.

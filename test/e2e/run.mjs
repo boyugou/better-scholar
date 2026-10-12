@@ -483,6 +483,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       for (const other of ["summary", "marks", "filters", "metrics"]) if (other !== part) assert.equal(await opts.locator(`#pv-panel [data-rr="${other === "summary" ? "matrix" : other}"]`).first().isVisible(), true, `${other} stays when ${part} goes`);
       await setPref(opts, "panel." + part, true);
     }
+    // the two shortcuts: compact (filters and citation totals only) and everything
+    await opts.click('[data-act="panel-compact"]');
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, status: false, names: false });
+    assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
+    assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
+    await opts.click('[data-act="panel-full"]');
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, prefsLib.defaults().panel);
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await setPref(opts, "panel.show", true);

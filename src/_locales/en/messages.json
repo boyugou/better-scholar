@@ -429,6 +429,12 @@
   "optPanelNamesHint": {
     "message": "“Name not matching? Add a spelling” and the suggestions for your name."
   },
+  "optPanelCompact": {
+    "message": "Compact: filters and citation totals only"
+  },
+  "optPanelFull": {
+    "message": "Everything"
+  },
   "optPanelFilters": {
     "message": "Filters"
   },
