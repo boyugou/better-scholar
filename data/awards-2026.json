@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4838
+  "count": 4850
  },
  "entries": [
   {
@@ -6991,6 +6991,213 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The IEEE/ACM International Conference on Automated Software Engineering (ASE 2025): Xiaogang Zhu, Enze Dai, Xiaotao Feng, Shaohua Wang, Xin Xia, Sheng Wen, Kwok-Yan Lam, Yang Xiang: WingMuzz: Blackbox Testing of IoT Protocols via Two-dimensional Fuzzing Schedule"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Automatically characterizing large scale program behavior",
+   "authors": [
+    "Timothy Sherwood",
+    "Erez Perelman",
+    "Greg Hamerly",
+    "Brad Calder"
+   ],
+   "track": "main",
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2017 Most Influential Paper Award: Timothy Sherwood, Erez Perelman, Greg Hamerly, and Brad Calder “Automatically characterizing large scale program behavior”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "OceanStore: an architecture for global-scale persistent storage",
+   "authors": [
+    "John Kubiatowicz",
+    "David Bindel",
+    "Yan Chen",
+    "Steven Czerwinski",
+    "Patrick Eaton",
+    "Dennis Geels",
+    "Ramakrishan Gummadi",
+    "Sean Rhea",
+    "Hakim Weatherspoon",
+    "Westley Weimer",
+    "Chris Wells",
+    "Ben Zhao"
+   ],
+   "track": "main",
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2018 Most Influential Paper Award: John Kubiatowicz, David Bindel, Yan Chen, Steven Czerwinski, Patrick Eaton, Dennis Geels, Ramakrishan Gummadi, Sean Rhea, Hakim Weatherspoon, Westley Weimer, Chris Wells, and Ben Zhao “OceanStore: an architecture for global-scale persistent storage”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Hoard: A Scalable Memory Allocator for Multithreaded Applications",
+   "authors": [
+    "Emery D. Berger",
+    "Kathryn S. McKinley",
+    "Robert D. Blumofe",
+    "Paul R. Wilson"
+   ],
+   "track": "main",
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2019 Most Influential Paper Award: Emery D. Berger, Kathryn S. McKinley, Robert D. Blumofe, and Paul R. Wilson “Hoard: A Scalable Memory Allocator for Multithreaded Applications”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A comparison of software and hardware techniques for x86 virtualization",
+   "authors": [
+    "Keith Adams",
+    "Ole Agesen"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2020 Most Influential Paper Award: Keith Adams and Ole Agesen “A comparison of software and hardware techniques for x86 virtualization”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Energy-efficient computing for wildlife tracking: design tradeoffs and early experiences with ZebraNet",
+   "authors": [
+    "Philo Juang",
+    "Hidekazu Oki",
+    "Yong Wang",
+    "Margaret Martonosi",
+    "Li Shiuan Peh",
+    "Daniel Rubenstein"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2020 Most Influential Paper Award: Philo Juang, Hidekazu Oki, Yong Wang, Margaret Martonosi, Li Shiuan Peh, and Daniel Rubenstein “Energy-efficient computing for wildlife tracking: design tradeoffs and early experiences with ZebraNet”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A VLIW Architecture for a Trace Scheduling Compiler",
+   "authors": [
+    "Robert P. Colwell",
+    "Robert P. Nix",
+    "John J. O’Donnell",
+    "David B. Papworth",
+    "Paul K. Rodman"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2021 Most Influential Paper Award: Robert P. Colwell, Robert P. Nix, John J. O’Donnell, David B. Papworth, and Paul K. Rodman “A VLIW Architecture for a Trace Scheduling Compiler”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Improving the Accuracy of Dynamic Branch Prediction Using Branch Correlation",
+   "authors": [
+    "Shien-Tai Pan",
+    "Kimming So",
+    "Joseph T. Rahmeh"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2021 Most Influential Paper Award: Shien-Tai Pan, Kimming So, and Joseph T. Rahmeh “Improving the Accuracy of Dynamic Branch Prediction Using Branch Correlation”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The Cache Performance and Optimizations of Blocked Algorithms",
+   "authors": [
+    "Monica S. Lam",
+    "Edward E. Rothberg",
+    "Michael E. Wolf"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2021 Most Influential Paper Award: Monica S. Lam, Edward E. Rothberg, and Michael E. Wolf “The Cache Performance and Optimizations of Blocked Algorithms”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Value Locality and Load Value Prediction",
+   "authors": [
+    "Mikko H. Lipasti",
+    "Christopher B. Wilkerson",
+    "John Paul Shen"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2021 Most Influential Paper Award: Mikko H. Lipasti, Christopher B. Wilkerson, and John Paul Shen “Value Locality and Load Value Prediction”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Design and evaluation of a compiler algorithm for prefetching",
+   "authors": [
+    "Todd C. Mowry",
+    "Monica S. Lam",
+    "Anoop Gupta"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Todd C. Mowry, Monica S. Lam, and Anoop Gupta “Design and evaluation of a compiler algorithm for prefetching”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Learning from mistakes: a comprehensive study on real world concurrency bug characteristics",
+   "authors": [
+    "Shan Lu",
+    "Soyeon Park",
+    "Eunsoo Seo",
+    "Yuanyuan Zhou"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Shan Lu, Soyeon Park, Eunsoo Seo, and Yuanyuan Zhou “Learning from mistakes: a comprehensive study on real world concurrency bug characteristics”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Rethinking the Library OS from the Top Down",
+   "authors": [
+    "Donald E. Porter",
+    "Silas Boyd-Wickizer",
+    "Jon Howell",
+    "Reuben Olinsky",
+    "Galen C. Hunt"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://sigplan.org/Awards/Other",
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Donald E. Porter, Silas Boyd-Wickizer, Jon Howell, Reuben Olinsky, and Galen C. Hunt “Rethinking the Library OS from the Top Down”"
   },
   {
    "venue": "BSDCon",

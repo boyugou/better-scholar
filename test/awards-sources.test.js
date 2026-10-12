@@ -1142,3 +1142,16 @@ test("IFAAMAS and SIGecom pages: three-line papers under 'YYYY:', title / author
   ]);
   assert.deepEqual(e.skipped, []);
 });
+
+test("SIGPLAN's other awards: the ASPLOS Most Influential Paper rows (a year, the award line, authors, title with or without ', ASPLOS YYYY')", async () => {
+  const { parseAsplosMip } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>2022</p><p>ASPLOS Most Influential Paper Award:</p><p>Shan Lu, Soyeon Park, and Yuanyuan Zhou</p><p>Learning from mistakes: a comprehensive study, ASPLOS 2008</p>
+<p>2019</p><p>ASPLOS Most Influential Paper Award:</p><p>Emery D. Berger and Paul R. Wilson</p><p>Hoard: A Scalable Memory Allocator for Multithreaded Applications</p>
+<p>2024</p><p>John Vlissides Award:</p><p>Noam Zilberstein, Cornell University</p>`;
+  const { entries, skipped } = parseAsplosMip(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear || "-"} ${e.title} | ${e.authors.join("; ")}`), [
+    "2022/2008 Learning from mistakes: a comprehensive study | Shan Lu; Soyeon Park; Yuanyuan Zhou",
+    "2019/- Hoard: A Scalable Memory Allocator for Multithreaded Applications | Emery D. Berger; Paul R. Wilson"
+  ]);
+  assert.deepEqual(skipped, []);
+});

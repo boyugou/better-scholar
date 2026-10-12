@@ -27,8 +27,10 @@
 //                                                                       venue (a paper whose authors are written "Surname, I., …" is reported and skipped)
 //   ec      https://sigecom.org/award-tot.html                            the SIGecom Test of Time Award: a year heading, then per paper the title, the authors and the venue line(s); the
 //                                                                       paper may be of any venue (EC, SODA, STOC, a journal)
+//   asplos  https://sigplan.org/Awards/Other                              the ASPLOS Most Influential Paper Award (listed among SIGPLAN's other awards, 2017–2022): a year line, "ASPLOS Most
+//                                                                       Influential Paper Award:", the authors, and the title (", ASPLOS 2008" after it in the newer rows)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -47,7 +49,8 @@ const PAGES = {
   sigops: "https://www.sigops.org/awards/hof/",
   eurosys: "https://www.eurosys.org/awards/test-of-time-award",
   aamas: "https://aamas.csc.liv.ac.uk/award-influential.html",
-  ec: "https://sigecom.org/award-tot.html"
+  ec: "https://sigecom.org/award-tot.html",
+  asplos: "https://sigplan.org/Awards/Other"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -215,6 +218,21 @@ export function parseEcTot(html, source = PAGES.ec) {
   return { entries, skipped };
 }
 
+export function parseAsplosMip(html, source = PAGES.asplos) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  let year = null;
+  for (let i = 0; i < ls.length; i++) {
+    if (/^(?:19|20)\d{2}$/.test(ls[i])) { year = parseInt(ls[i], 10); continue; }
+    if (!year || !/^ASPLOS Most Influential Paper Award:$/i.test(ls[i])) continue;
+    const authors = names(ls[i + 1] || ""), tm = /^(.+?)(?:,\s*ASPLOS\s+((?:19|20)\d{2}))?$/.exec(ls[i + 2] || ""), title = cleanTitle(tm ? tm[1] : "");
+    if (authors.length && authors.every(isPerson) && title.length >= 8) entries.push(entry("ASPLOS", year, "Most Influential Paper Award", title, authors, source, `ASPLOS ${year} Most Influential Paper Award: ${ls[i + 1]} “${title}”`, tm && tm[2] ? parseInt(tm[2], 10) : undefined));
+    else skipped.push(`${year}: not read: ${(ls[i + 1] || "").slice(0, 50)} / ${(ls[i + 2] || "").slice(0, 40)}`);
+    i += 2;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -270,7 +288,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

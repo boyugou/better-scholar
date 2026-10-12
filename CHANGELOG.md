@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.3 — 2026-10-12
+
+- ASPLOS Most Influential Paper Award (2017–2022, 12 papers) from SIGPLAN's page of other awards (`tot.mjs asplos`). The bundled list has 4850 awards.
+
 ## 2.9.2 — 2026-10-12
 
 - IFAAMAS's Influential Paper Award (AAMAS, 2006–2026, 39 papers) and the SIGecom Test of Time Award (2015–2025, 17 papers), each from its own official page
