@@ -409,10 +409,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await pop.waitForSelector(".who");
     assert.equal(await pop.locator(".seg").count(), 0);
     assert.equal((await pop.textContent(".src")).trim(), "CORE");
+    assert.equal(await pop.locator("table").count(), 1);
     await pop.close();
+    // the table's switch applies to the popup too: no table, no Copy buttons, no data note; the name and paper count stay
+    await setPref(opts, "panel.summary", false);
+    await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
+    const pop2 = await context.newPage();
+    await pop2.goto(`chrome-extension://${extId}/popup/popup.html?tab=${profileTab}`);
+    await pop2.waitForSelector(".who");
+    assert.equal(await pop2.locator("table, .actions, .note, .seg").count(), 0);
+    await pop2.close();
+    await setPref(opts, "panel.summary", true);
     await setPref(opts, "ranks.ccf", true);
-    await eventually(page, () => document.querySelector('.rr-chip[data-kind="ccf"]'));
-    ok("the popup shows only the rank lists that are switched on");
+    await eventually(page, () => document.querySelector('.rr-chip[data-kind="ccf"]') && document.querySelector('[data-rr="matrix"] table'));
+    ok("the popup shows only the rank lists that are switched on, and follows the table's switch");
 
     // -- S5. the page writes view state, the settings page writes preferences: neither overwrites the other
     await setPref(opts, "roles.last", false);

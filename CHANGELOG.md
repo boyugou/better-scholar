@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.4 — 2026-10-12
+
+- The toolbar popup follows the settings page's switches for the role × rank table and the awards & talks counts, as the panel does: with the table off it shows the name and the paper count (and the awards line, if that is on) and no table, Copy buttons or data note.
+
 ## 2.10.3 — 2026-10-12
 
 - ICML's 2021 test-of-time paper, Bayesian Learning via Stochastic Gradient Langevin Dynamics (Welling, Teh), from its own test-of-time page (`tot.mjs icml-tot-2021`), which the awards page links only from its menu. The bundled list has 6012 awards.

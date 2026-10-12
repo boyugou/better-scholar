@@ -53,7 +53,8 @@
           h("td", { class: "t" }, String(r.total)))),
           s.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")), h("td", { colspan: String(s.columns.length), class: "z" }, ""), h("td", { class: "t" }, String(s.hidden))) : null),
         h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
-      const markParts = ["award", "oral", "spotlight", "highlight"].filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
+      const parts = data.parts || { summary: true, marks: true };
+      const markParts = !parts.marks ? [] : ["award", "oral", "spotlight", "highlight"].filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
       const marksLine = markParts.length ? t("marksTitle") + ": " + markParts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
       const copy = (kind) => async (e) => {
         const text = kind === "tsv"
@@ -64,12 +65,12 @@
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
         h("div", { class: "who" }, h("b", {}, data.owner), h("span", {}, tn("popupPapers", data.loaded, [String(data.loaded)]))),
-        seg, table,
+        parts.summary ? seg : null, parts.summary ? table : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
-        h("div", { class: "actions" },
+        parts.summary ? h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
-          h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))),
-        h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => data.edition[k]).join(" · ")]))
+          h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))) : null,
+        parts.summary ? h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => data.edition[k]).join(" · ")])) : null
       ].filter(Boolean));
     };
     draw();

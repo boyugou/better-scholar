@@ -371,7 +371,7 @@
           ok: true, owner: headerName, loaded: list.length, edition,
           sources: B.prefs.sources(prefs), source: currentSource(),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-          marks: markCounts()
+          marks: markCounts(), parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
         });
       }
       return false;
