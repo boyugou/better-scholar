@@ -630,3 +630,43 @@ Kai Zu (University of California, Berkeley) and Lu Mo (University of California,
   assert.equal(classify("Distinguished Reviewer Awards"), null);
   assert.equal(classify("Test of Time Award (1995-2006)"), null);
 });
+
+// ACM SIGMOD's best-paper tables (SIGMOD and PODS) — synthetic rows in the shapes of the real page.
+test("PODS best papers: <p><strong>year</strong><br>Authors:<br><a>Title</a></p>, more winners of the year in later paragraphs, one starting 'and'", async () => {
+  const { parsePods } = await import("../scripts/awards/sigmod.mjs");
+  const html = `<p>Rules of the award.</p><p><strong>Recipients of the Best Paper Award:</strong></p>
+<p><strong>2024</strong><br />Ann Lee, and Bo Chen:<br /><a href="x"> A Synthetic Consistency Paper over Monoids</a></p>
+<p>Cy Diaz, Dee Park, Eli Ross, and Fay Gray:       <br /><a class="external-link" href="y">A Second Synthetic Partitioning Paper</a></p>
+<p><strong>2005</strong> <br />Gia Stone, Hal Wu:<br /><a href="z">On the Synthetic Complexity of Division and Joins</a></p><p>and  Ivy Xu, Jo Yan:<br /><a href="w">A Synthetic Paper on XML Exchange</a></p><p>Back to the top</p>`;
+  assert.deepEqual(parsePods(html).map((e) => [e.venue, e.year, e.award, e.title, e.authors]), [
+    ["PODS", 2024, "best", "A Synthetic Consistency Paper over Monoids", ["Ann Lee", "Bo Chen"]],
+    ["PODS", 2024, "best", "A Second Synthetic Partitioning Paper", ["Cy Diaz", "Dee Park", "Eli Ross", "Fay Gray"]],
+    ["PODS", 2005, "best", "On the Synthetic Complexity of Division and Joins", ["Gia Stone", "Hal Wu"]],
+    ["PODS", 2005, "best", "A Synthetic Paper on XML Exchange", ["Ivy Xu", "Jo Yan"]]
+  ]);
+});
+
+test("SIGMOD best papers table: sections with alternating Title / Authors lines, the 2021 mix, 'Title. Authors' lines and links, runner-up, wrapped authors", async () => {
+  const { parseSigmod } = await import("../scripts/awards/sigmod.mjs");
+  const row = (year, cell) => `<tr><td class="has-text-align-center"><strong>${year}</strong></td><td>${cell}</td></tr>`;
+  const html = `<table>` +
+    row("2024", `<strong>Research: Best Papers</strong><br>A Synthetic Views Paper over Graphs<br>Ann Lee and Bo Chen<strong>Honorable Mentions</strong><br>A Synthetic Reservoir Paper<br>Cy Diaz, Dee Park, and Eli Ross<br>Another Synthetic Cleaning Paper<br>Fay Gray<strong>Industry: Best Paper</strong><br>A Synthetic Cloud-Native Paper<br>Gia Stone, Hal Wu (Big Lab)<br><br><em>Source: <a href="x">https://2024.sigmod.org/sigmod_awards.shtml</a></em>`) +
+    row("2021", `<strong>Data Management: Best Papers</strong><br>A Synthetic Learned Optimizer Paper.<br>Ivy Xu, Jo Yan, Kai Zu <p>A Synthetic Data Flow Paper. Lu Mo, Ned Oh, Pia Qi<strong>Data Science: Best Paper</strong><br>A Synthetic Slice Finding Paper. Ray Sun, Sue Tan</p>`) +
+    row("2019", `<a class="external-link" href="http://doi.acm.org/1">A Synthetic Fairness : Repair Paper</a>. Tom Uy, Una Vo, and Vic Wan`) +
+    row("2009", `A Synthetic Example Data Paper. Wes Xia, Yui Zhao<br>Zed Alpha, and Amy Beta<p>Runner-up: A Synthetic Recycling Paper. Bea Cole,<br>Cal Dunn, and Dee Eden</p>`) +
+    `</table>`;
+  const { entries } = parseSigmod(html);
+  assert.deepEqual(entries.map((e) => [e.year, e.award, e.awardLabel, e.title, e.authors[0], e.authors.length]), [
+    [2024, "best", "Best Paper", "A Synthetic Views Paper over Graphs", "Ann Lee", 2],
+    [2024, "runner-up", "Best Paper Honorable Mention", "A Synthetic Reservoir Paper", "Cy Diaz", 3],
+    [2024, "runner-up", "Best Paper Honorable Mention", "Another Synthetic Cleaning Paper", "Fay Gray", 1],
+    [2024, "category", "Industry Track Best Paper", "A Synthetic Cloud-Native Paper", "Gia Stone", 2],
+    [2021, "best", "Best Paper", "A Synthetic Learned Optimizer Paper", "Ivy Xu", 3],
+    [2021, "best", "Best Paper", "A Synthetic Data Flow Paper", "Lu Mo", 3],
+    [2021, "best", "Best Paper (Data Science)", "A Synthetic Slice Finding Paper", "Ray Sun", 2],
+    [2019, "best", "Best Paper", "A Synthetic Fairness : Repair Paper", "Tom Uy", 3],
+    [2009, "best", "Best Paper", "A Synthetic Example Data Paper", "Wes Xia", 2],
+    [2009, "runner-up", "Best Paper Runner-up", "A Synthetic Recycling Paper", "Bea Cole", 1]
+  ]);
+  assert.ok(entries.every((e) => e.venue === "SIGMOD" && e.evidence.includes(e.title.slice(0, 10))));
+});

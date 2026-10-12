@@ -198,6 +198,17 @@ test("the bundled list: security winners (IEEE S&P's own awards pages)", () => {
   assert.deepEqual(find("Towards evaluating the robustness of neural networks", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: database winners (SIGMOD's and PODS's own best-paper pages)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Bao: Making learned query optimization practical", "R Marcus, P Negi, H Mao, N Tatbul, M Alizadeh, T Kraska"), ["SIGMOD 2021 best"]);
+  assert.deepEqual(find("Wander join: Online aggregation via random walks", "F Li, B Wu, K Yi, Z Zhao"), ["SIGMOD 2016 best"]);
+  assert.deepEqual(find("Implementing data cubes efficiently", "V Harinarayan, A Rajaraman, JD Ullman"), ["SIGMOD 1996 best"]);
+  assert.deepEqual(find("Worst-case optimal join algorithms", "HQ Ngo, E Porat, C Ré, A Rudra"), ["PODS 2012 best"]);
+  assert.deepEqual(find("Optimal aggregation algorithms for middleware", "R Fagin, A Lotem, M Naor"), ["PODS 2001 best"]);
+  assert.deepEqual(find("Bao: Making learned query optimization practical", "A Smith, B Jones"), []);
+});
+
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
   assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
   assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));

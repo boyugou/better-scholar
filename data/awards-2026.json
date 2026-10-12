@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1940
+  "count": 2032
  },
  "entries": [
   {
@@ -24819,6 +24819,532 @@
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
   },
   {
+   "venue": "PODS",
+   "year": 1997,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Complexity of Database Queries",
+   "authors": [
+    "Christos H. Papadimitriou",
+    "Mihalis Yannakakis"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "1997: Christos H. Papadimitriou, Mihalis Yannakakis: On the Complexity of Database Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 1998,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Lower Bound Theorem for Indexing Schemes and Its Application to Multidimensional Range Queries",
+   "authors": [
+    "Vasilis Samoladas",
+    "Daniel P. Miranker"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "1998: Vasilis Samoladas, Daniel P. Miranker: A Lower Bound Theorem for Indexing Schemes and Its Application to Multidimensional Range Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 1998,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Expressiveness of Structured Document Query Languages Based on Attribute Grammars",
+   "authors": [
+    "Frank Neven",
+    "Jan Van den Bussche"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "1998: Frank Neven, Jan Van den Bussche: Expressiveness of Structured Document Query Languages Based on Attribute Grammars"
+  },
+  {
+   "venue": "PODS",
+   "year": 1999,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Exact and Approximate Aggregation in Constraint Query Languages",
+   "authors": [
+    "Michael Benedikt",
+    "Leonid Libkin"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "1999: Michael Benedikt, Leonid Libkin: Exact and Approximate Aggregation in Constraint Query Languages"
+  },
+  {
+   "venue": "PODS",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Auditing Boolean Attributes",
+   "authors": [
+    "Jon M. Kleinberg",
+    "Christos H. Papadimitriou",
+    "Prabhakar Raghavan"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2000: Jon M. Kleinberg, Christos H. Papadimitriou, Prabhakar Raghavan: Auditing Boolean Attributes"
+  },
+  {
+   "venue": "PODS",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Optimal Aggregation Algorithms for Middleware",
+   "authors": [
+    "Ronald Fagin",
+    "Amnon Lotem",
+    "Moni Naor"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2001: Ronald Fagin, Amnon Lotem, Moni Naor: Optimal Aggregation Algorithms for Middleware"
+  },
+  {
+   "venue": "PODS",
+   "year": 2002,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Monadic Datalog and the Expressive Power of Languages for Web Information Extraction",
+   "authors": [
+    "Georg Gottlob",
+    "Christoph Koch"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2002: Georg Gottlob, Christoph Koch: Monadic Datalog and the Expressive Power of Languages for Web Information Extraction"
+  },
+  {
+   "venue": "PODS",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "An Information-Theoretic Approach to Normal Forms for Relational and XML Data",
+   "authors": [
+    "Marcelo Arenas",
+    "Leonid Libkin"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2003: Marcelo Arenas, Leonid Libkin: An Information-Theoretic Approach to Normal Forms for Relational and XML Data"
+  },
+  {
+   "venue": "PODS",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "XCPath, the first order complete XPath dialect",
+   "authors": [
+    "Maarten Marx"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2004: Maarten Marx: XCPath, the first order complete XPath dialect"
+  },
+  {
+   "venue": "PODS",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the complexity of division and set joins in the relational algebra",
+   "authors": [
+    "Dirk Leinders",
+    "Jan Van den Bussche"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2005: Dirk Leinders, Jan Van den Bussche: On the complexity of division and set joins in the relational algebra"
+  },
+  {
+   "venue": "PODS",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "XML Data Exchange: Consistency and Query Answering",
+   "authors": [
+    "Marcelo Arenas",
+    "Leonid Libkin"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2005: and Marcelo Arenas, Leonid Libkin: XML Data Exchange: Consistency and Query Answering"
+  },
+  {
+   "venue": "PODS",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Two-Variable Logic on Data Trees and XML Reasoning",
+   "authors": [
+    "Mikolaj Bojanczyk",
+    "Claire David",
+    "Anca Muscholl",
+    "Thomas Schwentick",
+    "Luc Segoufin"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2006: Mikolaj Bojanczyk, Claire David, Anca Muscholl, Thomas Schwentick, Luc Segoufin: Two-Variable Logic on Data Trees and XML Reasoning"
+  },
+  {
+   "venue": "PODS",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Generalized Hypertree Decompositions: NP-Hardness and Tractable Variants",
+   "authors": [
+    "Georg Gottlob",
+    "Zoltan Miklos",
+    "Thomas Schwentick"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2007: Georg Gottlob, Zoltan Miklos, Thomas Schwentick: Generalized Hypertree Decompositions: NP-Hardness and Tractable Variants"
+  },
+  {
+   "venue": "PODS",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Estimating PageRank on Graph Streams",
+   "authors": [
+    "Anish Das Sarma",
+    "Sreenivas Gollapudi",
+    "Rina Panigrahy"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2008: Anish Das Sarma, Sreenivas Gollapudi, Rina Panigrahy: Estimating PageRank on Graph Streams"
+  },
+  {
+   "venue": "PODS",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Size and Treewidth Bounds for Conjunctive Queries",
+   "authors": [
+    "Georg Gottlob",
+    "Stephanie Lee",
+    "Gregory Valiant"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2009: Georg Gottlob, Stephanie Lee, Gregory Valiant: Size and Treewidth Bounds for Conjunctive Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "An Optimal Algorithm for the Distinct Elements Problem",
+   "authors": [
+    "Daniel M. Kane",
+    "Jelani Nelson",
+    "David P. Woodruff"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2010: Daniel M. Kane, Jelani Nelson, David P. Woodruff: An Optimal Algorithm for the Distinct Elements Problem"
+  },
+  {
+   "venue": "PODS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Data Exchange Beyond Complete Data",
+   "authors": [
+    "Marcelo Arenas",
+    "Jorge Perez",
+    "Juan L. Reutter"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2011: Marcelo Arenas, Jorge Perez, Juan L. Reutter: Data Exchange Beyond Complete Data"
+  },
+  {
+   "venue": "PODS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Worst-case Optimal Join Algorithms",
+   "authors": [
+    "Hung Q. Ngo",
+    "Ely Porat",
+    "Christopher Ré",
+    "Atri Rudra"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2012: Hung Q. Ngo, Ely Porat, Christopher Ré, Atri Rudra: Worst-case Optimal Join Algorithms"
+  },
+  {
+   "venue": "PODS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Verification of Database-Driven Systems via Amalgamation",
+   "authors": [
+    "Mikolaj Bojanczyk",
+    "Luc Segoufin",
+    "Szymon Torunczyk"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2013: Mikolaj Bojanczyk, Luc Segoufin, and Szymon Torunczyk: Verification of Database-Driven Systems via Amalgamation"
+  },
+  {
+   "venue": "PODS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Weaker Forms of Monotonicity for Declarative Networking: A More Fine-Grained Answer to the CALM-Conjecture",
+   "authors": [
+    "Tom J. Ameloot",
+    "Bas Ketsman",
+    "Frank Neven",
+    "Daniel Zinn"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2014: Tom J. Ameloot, Bas Ketsman, Frank Neven, and Daniel Zinn: Weaker Forms of Monotonicity for Declarative Networking: A More Fine-Grained Answer to the CALM-Conjecture"
+  },
+  {
+   "venue": "PODS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Parallel-Correctness and Transferability for Conjunctive Queries",
+   "authors": [
+    "Tom J. Ameloot",
+    "Gaetano Geck",
+    "Bas Ketsman",
+    "Frank Neven",
+    "Thomas Schwentick"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2015: Tom J. Ameloot, Gaetano Geck, Bas Ketsman, Frank Neven, and Thomas Schwentick: Parallel-Correctness and Transferability for Conjunctive Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "FAQ: Questions Asked Frequently",
+   "authors": [
+    "Mahmoud Abo Khamis",
+    "Hung Q. Ngo",
+    "Atri Rudra"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2016: Mahmoud Abo Khamis, Hung Q. Ngo, Atri Rudra: FAQ: Questions Asked Frequently"
+  },
+  {
+   "venue": "PODS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Dichotomies in Ontology-Mediated Querying with the Guarded Fragment",
+   "authors": [
+    "André Hernich",
+    "Carsten Lutz",
+    "Fabio Papacchini",
+    "Frank Wolter"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2017: André Hernich, Carsten Lutz, Fabio Papacchini and Frank Wolter: Dichotomies in Ontology-Mediated Querying with the Guarded Fragment"
+  },
+  {
+   "venue": "PODS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Entity Matching with Active Monotone Classification",
+   "authors": [
+    "Yufei Tao"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2018: Yufei Tao: Entity Matching with Active Monotone Classification"
+  },
+  {
+   "venue": "PODS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Efficient Logspace Classes for Enumeration, Counting, and Uniform Generation",
+   "authors": [
+    "Marcelo Arenas",
+    "Luis Alberto Croqueviell",
+    "Rajesh Jayaram",
+    "Cristian Riveros"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2019: Marcelo Arenas, Luis Alberto Croqueviell, Rajesh Jayaram and Cristian Riveros: Efficient Logspace Classes for Enumeration, Counting, and Uniform Generation"
+  },
+  {
+   "venue": "PODS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Framework for Adversarially Robust Streaming Algorithms",
+   "authors": [
+    "Omri Ben-Eliezer",
+    "Rajesh Jayaram",
+    "David P. Woodruff",
+    "Eylon Yogev"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2020: Omri Ben-Eliezer, Rajesh Jayaram, David P. Woodruff and Eylon Yogev: A Framework for Adversarially Robust Streaming Algorithms"
+  },
+  {
+   "venue": "PODS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Relative Error Streaming Quantiles",
+   "authors": [
+    "Graham Cormode",
+    "Zohar Karnin",
+    "Edo Liberty",
+    "Justin Thaler",
+    "Pavel Vesely"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2021: Graham Cormode, Zohar Karnin, Edo Liberty, Justin Thaler and Pavel Vesely: Relative Error Streaming Quantiles"
+  },
+  {
+   "venue": "PODS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Convergence of Datalog over (Pre-) Semirings",
+   "authors": [
+    "Mahmoud Abo Khamis",
+    "Hung Q. Ngo",
+    "Reinhard Pichler",
+    "Dan Suciu",
+    "Yisu Remy Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2022: Mahmoud Abo Khamis, Hung Q. Ngo, Reinhard Pichler, Dan Suciu, and Yisu Remy Wang: Convergence of Datalog over (Pre-) Semirings"
+  },
+  {
+   "venue": "PODS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Optimal Bounds for Approximate Counting",
+   "authors": [
+    "Jelani Nelson",
+    "Huacheng Yu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2022: Jelani Nelson, Huacheng Yu: Optimal Bounds for Approximate Counting"
+  },
+  {
+   "venue": "PODS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Extremal Fitting Problems for Conjunctive Queries",
+   "authors": [
+    "Balder Ten Cate",
+    "Victor Dalmau",
+    "Maurice Funk",
+    "Carsten Lutz"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2023: Balder Ten Cate, Victor Dalmau, Maurice Funk, and Carsten Lutz: Extremal Fitting Problems for Conjunctive Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Consistency of Relations over Monoids",
+   "authors": [
+    "Albert Atserias",
+    "Phokion Kolaitis"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2024: Albert Atserias, and Phokion Kolaitis: Consistency of Relations over Monoids"
+  },
+  {
+   "venue": "PODS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "History-Independent Dynamic Partitioning: Operation-Order Privacy in Ordered Data Structures",
+   "authors": [
+    "Michael A. Bender",
+    "Martin Farach-Colton",
+    "Michael T. Goodrich",
+    "Hanna Komlos"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2024: Michael A. Bender, Martin Farach-Colton, Michael T. Goodrich, and Hanna Komlos: History-Independent Dynamic Partitioning: Operation-Order Privacy in Ordered Data Structures"
+  },
+  {
+   "venue": "PODS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Output-Optimal Algorithms for Join-Aggregate Queries",
+   "authors": [
+    "Xiao Hu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2025: Xiao Hu: Output-Optimal Algorithms for Join-Aggregate Queries"
+  },
+  {
+   "venue": "PODS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Output-sensitive Conjunctive Query Evaluation",
+   "authors": [
+    "Shaleen Deep",
+    "Hangdong Zhao",
+    "Austen Fan",
+    "Paraschos Koutris"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2025: Shaleen Deep, Hangdong Zhao, Austen Fan, and Paraschos Koutris: Output-sensitive Conjunctive Query Evaluation"
+  },
+  {
+   "venue": "PODS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Unbiased Insights: Optimal Streaming Algorithms for ℓp Sampling, the Forget Model, and Beyond",
+   "authors": [
+    "Honghao Lin",
+    "Hoai-An Nguyen",
+    "William Swartworth",
+    "David Woodruff"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
+   "evidence": "2026: Honghao Lin, Hoai-An Nguyen, William Swartworth, and David Woodruff: Unbiased Insights: Optimal Streaming Algorithms for ℓp Sampling, the Forget Model, and Beyond"
+  },
+  {
    "venue": "S&P",
    "year": 2016,
    "award": "distinguished",
@@ -27196,6 +27722,1052 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2025 GINGER: Grounded Information Nugget-Based Generation of Responses — Weronika Łajewska, Krisztian Balog"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1994,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "AlphaSort: A RISC Machine Sort",
+   "authors": [
+    "Chris Nyberg",
+    "Tom Barclay",
+    "Zarka Cvetanovic",
+    "Jim Gray",
+    "David Lomet"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1994: AlphaSort: A RISC Machine Sort. Chris Nyberg, Tom Barclay, Zarka Cvetanovic, Jim Gray, and David Lomet"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1994,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fast Subsequence Matching in Time-Series Databases",
+   "authors": [
+    "Christos Faloutsos",
+    "M. Ranganathan",
+    "Yannis Manolopoulos"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1994: Fast Subsequence Matching in Time-Series Databases. Christos Faloutsos, M. Ranganathan, and Yannis Manolopoulos"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1996,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Implementing Data Cubes Efficiently",
+   "authors": [
+    "Venky Harinarayan",
+    "Anand Rajaraman",
+    "Jeffrey Ullman"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1996: Implementing Data Cubes Efficiently. Venky Harinarayan, Anand Rajaraman, and Jeffrey Ullman"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1997,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fast Parallel Similarity Search in Multimedia Databases",
+   "authors": [
+    "Stefan Berchtold",
+    "Christian Bohm",
+    "Bernhard Braunmuller",
+    "Daniel Keim",
+    "Hans Peter Kriegel"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1997: Fast Parallel Similarity Search in Multimedia Databases. Stefan Berchtold, Christian Bohm, Bernhard Braunmuller, Daniel Keim, and Hans Peter Kriegel"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1998,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Efficient Transparent Application Recovery in Client Server Information Systems",
+   "authors": [
+    "David Lomet",
+    "Gerhard Weikum"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1998: Efficient Transparent Application Recovery in Client Server Information Systems. David Lomet and Gerhard Weikum"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1998,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Integrating Association Rule Mining with Relational Database Systems: Alternatives and Implications",
+   "authors": [
+    "Sunita Sarawagi",
+    "Shiby Thomas",
+    "Rakesh Agrawal"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1998: Integrating Association Rule Mining with Relational Database Systems: Alternatives and Implications. Sunita Sarawagi, Shiby Thomas, and Rakesh Agrawal"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 1999,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DynaMat: A Dynamic View Management System for Data Warehouses",
+   "authors": [
+    "Yannis Kotidis",
+    "Nick Roussopoulos"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "1999: DynaMat: A Dynamic View Management System for Data Warehouses. Yannis Kotidis and Nick Roussopoulos"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "XMill: An Efficient Compressor for XML data",
+   "authors": [
+    "Hartmut Liefke",
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2000: XMill: An Efficient Compressor for XML data. Hartmut Liefke and Dan Suciu"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases",
+   "authors": [
+    "Eamonn Keogh",
+    "Kaushik Chakrabarti",
+    "Sharad Mehrotra",
+    "Michael Pazzani"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2001: Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases. Eamonn Keogh, Kaushik Chakrabarti, Sharad Mehrotra, and Michael Pazzani"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Spreadsheets in RDBMS for OLAP",
+   "authors": [
+    "Abhinav Gupta",
+    "Andy Witkowski",
+    "Gregory Dorman",
+    "Srikanth Bellamkonda",
+    "Tolga Bozkaya",
+    "Nathan Folkert",
+    "Lei Sheng"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2003: Spreadsheets in RDBMS for OLAP. Abhinav Gupta, Andy Witkowski, Gregory Dorman, Srikanth Bellamkonda, Tolga Bozkaya, Nathan Folkert, and Lei Sheng"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Indexing Spatio-Temporal Trajectories with Chebyshev Polynomials",
+   "authors": [
+    "Raymond Ng",
+    "Yuhan Cai"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2004: Indexing Spatio-Temporal Trajectories with Chebyshev Polynomials. Raymond Ng and Yuhan Cai"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "To Search or to Crawl? Towards a Query Optimizer for Text-Centric Tasks",
+   "authors": [
+    "Panagiotis Ipeirotis",
+    "Eugene Agichtein",
+    "Pranay Jain",
+    "Luis Gravano"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2006: To Search or to Crawl? Towards a Query Optimizer for Text-Centric Tasks. Panagiotis Ipeirotis, Eugene Agichtein, Pranay Jain, and Luis Gravano"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Compiling Mappings to Bridge Applications and Databases",
+   "authors": [
+    "Sergey Melnik",
+    "Atul Adya",
+    "Philip Bernstein"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2007: Compiling Mappings to Bridge Applications and Databases. Sergey Melnik, Atul Adya, and Philip Bernstein"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Scalable Approximate Query Processing with the DBO Engine",
+   "authors": [
+    "Christopher Jermaine",
+    "Subramanian Arumugam",
+    "Abhijit Pol",
+    "Alin Dobra"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2007: Scalable Approximate Query Processing with the DBO Engine. Christopher Jermaine, Subramanian Arumugam, Abhijit Pol, and Alin Dobra"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Scalable Network Distance Browsing in Spatial Databases",
+   "authors": [
+    "Hanan Samet",
+    "Jagan Sankaranarayanan",
+    "Houman Alborzi"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2008: Scalable Network Distance Browsing in Spatial Databases. Hanan Samet, Jagan Sankaranarayanan, and Houman Alborzi"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Serializable Isolation for Snapshot Databases",
+   "authors": [
+    "Michael Cahill",
+    "Uwe Roehm",
+    "Alan Fekete"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2008: Serializable Isolation for Snapshot Databases. Michael Cahill, Uwe Roehm, and Alan Fekete"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Generating Example Data for Dataflow Programs",
+   "authors": [
+    "Christopher Olston",
+    "Shubham"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2009: Generating Example Data for Dataflow Programs. Christopher Olston, Shubham"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "An Architecture for Recycling Intermediates in a Column-Store",
+   "authors": [
+    "Milena G. Ivanova"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2009: An Architecture for Recycling Intermediates in a Column-Store. Milena G. Ivanova,"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "FAST: Fast Architecture Sensitive Tree Search on Modern CPUs and GPUs",
+   "authors": [
+    "Changkyu Kim",
+    "Jatin Chhugani",
+    "Nadathur Satish",
+    "Eric Sedlar",
+    "Anthony Nguyen",
+    "Tim Kaldewey",
+    "Victor Lee",
+    "Scott Brandt",
+    "Pradeep Dubey"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2010: FAST: Fast Architecture Sensitive Tree Search on Modern CPUs and GPUs. Changkyu Kim, Jatin Chhugani, Nadathur Satish, Eric Sedlar, Anthony Nguyen, Tim Kaldewey, Victor Lee, Scott Brandt, and Pradeep Dubey"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Entangled Queries: Enabling Declarative Data-Driven Coordination",
+   "authors": [
+    "Nitin Gupta",
+    "Lucja Kot",
+    "Sudip Roy",
+    "Gabriel Bender",
+    "Johannes Gehrke",
+    "Christoph Koch"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2011: Entangled Queries: Enabling Declarative Data-Driven Coordination. Nitin Gupta, Lucja Kot, Sudip Roy, Gabriel Bender, Johannes Gehrke, Christoph Koch"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "High-Performance Complex Event Processing over XML Streams",
+   "authors": [
+    "Barzan Mozafari",
+    "Kai Zeng",
+    "Carlo Zaniolo"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2012: High-Performance Complex Event Processing over XML Streams. Barzan Mozafari, Kai Zeng, Carlo Zaniolo"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Massive Graph Triangulation",
+   "authors": [
+    "Xiaocheng Hu",
+    "Yufei Tao",
+    "Chin-Wan Chung"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2013: Massive Graph Triangulation. Xiaocheng Hu, Yufei Tao, Chin-Wan Chung"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Materialization Optimizations for Feature Selection Workloads",
+   "authors": [
+    "Ce Zhang",
+    "Arun Kumar",
+    "Christopher Ré"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2014: Materialization Optimizations for Feature Selection Workloads. Ce Zhang, Arun Kumar, Christopher Ré"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DBSCAN Revisited: Mis-Claim, Un-Fixability, and Approximation",
+   "authors": [
+    "Yufei Tao",
+    "Junhao Gan"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2015: DBSCAN Revisited: Mis-Claim, Un-Fixability, and Approximation. Yufei Tao, Junhao Gan"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Wander Join: Online Aggregation via Random Walks",
+   "authors": [
+    "Feifei Li",
+    "Bin Wu",
+    "Ke Yi",
+    "Zhuoyue Zhao"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2016: Wander Join: Online Aggregation via Random Walks. Feifei Li, Bin Wu, Ke Yi, Zhuoyue Zhao"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Parallelizing Sequential Graph Computations",
+   "authors": [
+    "Wenfei Fan",
+    "Jingbo Xu",
+    "Yinghui Wu",
+    "Wenyuan Yu",
+    "Jiaxin Jiang",
+    "Zeyu Zheng",
+    "Bohan Zhang",
+    "Yang Cao",
+    "Chao Tian"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2017: Parallelizing Sequential Graph Computations. Wenfei Fan, Jingbo Xu , Yinghui Wu, Wenyuan Yu, Jiaxin Jiang, Zeyu Zheng, Bohan Zhang, Yang Cao, and Chao Tian"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "SuRF: Practical Range Query Filtering with Fast Succinct Tries",
+   "authors": [
+    "Huanchen Zhang",
+    "Hyeontaek Lim",
+    "Viktor Leis",
+    "David Andersen",
+    "Michael Kaminsky",
+    "Kimberly Keeton",
+    "Andrew Pavlo"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2018: SuRF: Practical Range Query Filtering with Fast Succinct Tries. Huanchen Zhang, Hyeontaek Lim, Viktor Leis, David Andersen, Michael Kaminsky, Kimberly Keeton, and Andrew Pavlo"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Interventional Fairness : Causal Database Repair for Algorithmic Fairness",
+   "authors": [
+    "Babak Salimi",
+    "Luke Rodriguez",
+    "Bill Howe",
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2019: Interventional Fairness : Causal Database Repair for Algorithmic Fairness. Babak Salimi, Luke Rodriguez, Bill Howe, and Dan Suciu"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Pump Up the Volume: Processing Large Data on GPUs with Fast Interconnects",
+   "authors": [
+    "Clemens Lutz",
+    "Sebastian Breß",
+    "Steffen Zeuch",
+    "Tilmann Rabl",
+    "Volker Markl"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2020: Pump Up the Volume: Processing Large Data on GPUs with Fast Interconnects. Clemens Lutz, Sebastian Breß, Steffen Zeuch, Tilmann Rabl, Volker Markl"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "ShapeSearch: A Flexible and Efficient System for Shape-based Exploration of Trendlines",
+   "authors": [
+    "Tarique Siddiqui",
+    "Paul Luh",
+    "Zesheng Wang",
+    "Karrie Karahalios",
+    "Aditya Parameswaran"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2020: ShapeSearch: A Flexible and Efficient System for Shape-based Exploration of Trendlines. Tarique Siddiqui, Paul Luh, Zesheng Wang, Karrie Karahalios, Aditya Parameswaran"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Bao: Making Learned Query Optimization Practical",
+   "authors": [
+    "Ryan Marcus",
+    "Parimarjan",
+    "Hongzi Mao",
+    "Nesime Tatbul",
+    "Mohammad Alizadeh",
+    "Tim Kraska"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2021: Bao: Making Learned Query Optimization Practical."
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DFI – The Data Flow Interface for High-Speed Networks",
+   "authors": [
+    "Lasse Thostrup",
+    "Jan Skrzypczak",
+    "Matthias Jasny",
+    "Tobias Ziegler",
+    "Carsten Binnig"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2021: DFI – The Data Flow Interface for High-Speed Networks. Lasse Thostrup, Jan Skrzypczak, Matthias Jasny, Tobias Ziegler, Carsten Binnig"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper (Data Science)",
+   "title": "SliceLine: Fast, Linear-Algebra-based Slice Finding for ML Model Debugging",
+   "authors": [
+    "Svetlana Sagadeeva",
+    "Matthias Boehm"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2021: SliceLine: Fast, Linear-Algebra-based Slice Finding for ML Model Debugging. Svetlana Sagadeeva, Matthias Boehm"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "FoundationDB: A Distributed Unbundled Transactional KeyValue Store",
+   "authors": [
+    "Jingyu Zhou",
+    "Meng Xu",
+    "Alexander Shraer",
+    "Alex Miller",
+    "Bala Namasivayam",
+    "Evan Tschannen",
+    "Rusty Sears",
+    "John Leach",
+    "Dave Rosenthal",
+    "Will Wilson",
+    "Ben Collins",
+    "David Scherer",
+    "Steve Atherton",
+    "Andrew Beamon",
+    "Xin Dong",
+    "Alec Grieser",
+    "Young Liu",
+    "Alvin Moore",
+    "Bhaskar Muppana",
+    "Xiaoge Su",
+    "Vishesh Yadav"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2021: FoundationDB: A Distributed Unbundled Transactional KeyValue Store. Jingyu Zhou, Meng Xu, Alexander Shraer, Alex Miller, Bala Namasivayam, Evan Tschannen, Rusty Sears, John Leach, Dave Rosenthal, Will Wilson, Ben Collins, David Scherer, Steve Atherton, Andrew Beamon, Xin Dong, Alec Grieser, Young Liu, Alvin Moore, Bhaskar Muppana, Xiaoge Su, Vishesh Yadav"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "R2T: Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys",
+   "authors": [
+    "Wei DONG",
+    "Juanru FANG",
+    "Ke Yi",
+    "Yuchao Tao",
+    "Ashwin Machanavajjhala"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2022 Best Paper: R2T: Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys — Wei DONG, Juanru FANG, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "Photon: A Fast Query Engine for Lakehouse Systems",
+   "authors": [
+    "Alexander Behm",
+    "Shoumik Palkar",
+    "Utkarsh Agarwal",
+    "Tim Armstrong",
+    "David Cashman",
+    "Ankur Dave",
+    "Todd Greenstein",
+    "Shant Hovsepian",
+    "Ryan Johnson",
+    "Arvind Sai Krishnan",
+    "Paul Leventis",
+    "Ala Luszczak",
+    "Prashanth Menon",
+    "Mostafa Mokhtar",
+    "Gene Pang",
+    "Sameer Paranjpye",
+    "Greg Rahn",
+    "Bart Samwel",
+    "Tom van Bussel",
+    "Herman van Hovell",
+    "Maryann Xue",
+    "Reynold Xin",
+    "Matei Zaharia"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2022 Industry Track Best Paper: Photon: A Fast Query Engine for Lakehouse Systems — Authors: Alexander Behm, Shoumik Palkar, Utkarsh Agarwal, Tim Armstrong, David Cashman, Ankur Dave, Todd Greenstein, Shant Hovsepian, Ryan Johnson, Arvind Sai Krishnan, Paul Leventis, Ala Luszczak, Prashanth Menon, Mostafa Mokhtar, Gene Pang, Sameer Paranjpye, Greg Rahn, Bart Samwel, Tom van Bussel, Herman van Hovell, Maryann Xue, Reynold Xin, Matei Zaharia"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Ad Hoc Transactions in Web Applications: The Good, the Bad, and the Ugly",
+   "authors": [
+    "Chuzhe Tang",
+    "Zhaoguo Wang",
+    "Xiaodong Zhang",
+    "Qianmian Yu",
+    "Binyu Zang",
+    "Haibing Guan",
+    "Haibo Chen"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2022 Best Paper Honorable Mention: Ad Hoc Transactions in Web Applications: The Good, the Bad, and the Ugly — Chuzhe Tang, Zhaoguo Wang, Xiaodong Zhang, Qianmian Yu, Binyu Zang, Haibing Guan, Haibo Chen"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Conjunctive Queries with Comparisons",
+   "authors": [
+    "Qichen Wang",
+    "Ke Yi"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2022 Best Paper Honorable Mention: Conjunctive Queries with Comparisons — Qichen Wang, Ke Yi"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Detecting Logic Bugs of Join Optimizations in DBMS",
+   "authors": [
+    "Xiu Tang",
+    "Sai Wu",
+    "Dongxiang Zhang",
+    "Feifei Li",
+    "Gang Chen"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2023 Best Paper: Detecting Logic Bugs of Join Optimizations in DBMS — Xiu Tang, Sai Wu, Dongxiang Zhang, Feifei Li, Gang Chen"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Predicate Pushdown for Data Science Pipelines",
+   "authors": [
+    "Cong Yan",
+    "Yin Lin",
+    "Yeye He"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2023 Best Paper: Predicate Pushdown for Data Science Pipelines — Cong Yan, Yin Lin, Yeye He"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "PG-Schema: Schemas for Property Graphs",
+   "authors": [
+    "Renzo Angles",
+    "Angela Bonifati",
+    "Stefania Dumbrava",
+    "George Fletcher",
+    "Alastair Green",
+    "Jan Hidders",
+    "Bei Li",
+    "Leonid Libkin",
+    "Victor Marsault",
+    "Wim Martens",
+    "Filip Murlak",
+    "Stefan Plantikow",
+    "Ognjen Savkovic",
+    "Michael Schmidt",
+    "Juan Sequeda",
+    "Sławek Staworko",
+    "Dominik Tomaszuk",
+    "Hannes Voigt",
+    "Domagoj Vrgoc",
+    "Mingxi Wu",
+    "Dušan Živković"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2023 Industry Track Best Paper: PG-Schema: Schemas for Property Graphs — Renzo Angles, Angela Bonifati, Stefania Dumbrava, George Fletcher, Alastair Green, Jan Hidders, Bei Li, Leonid Libkin, Victor Marsault, Wim Martens, Filip Murlak, Stefan Plantikow, Ognjen Savkovic, Michael Schmidt, Juan Sequeda, Sławek Staworko, Dominik Tomaszuk, Hannes Voigt, Domagoj Vrgoc, Mingxi Wu, Dušan Živković"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Implementation Strategies for Views over Property Graphs",
+   "authors": [
+    "Soonbo Han",
+    "Zack Ives"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2024 Best Paper: Implementation Strategies for Views over Property Graphs — Soonbo Han and Zack Ives"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "PolarDB-MP: A Multi-Primary Cloud-Native Database via Disaggregated Shared Memory",
+   "authors": [
+    "Xinjun Yang",
+    "Yingqiang Zhang",
+    "Hao Chen",
+    "Feifei Li",
+    "Bo Wang",
+    "Jing Fang",
+    "Chuan Sun",
+    "Yuhui Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2024 Industry Track Best Paper: PolarDB-MP: A Multi-Primary Cloud-Native Database via Disaggregated Shared Memory — Xinjun Yang, Yingqiang Zhang, Hao Chen, Feifei Li, Bo Wang, Jing Fang, Chuan Sun, and Yuhui Wang"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "On The Reasonable Effectiveness of Relational Diagrams: Explaining Relational Query Patterns and the Pattern Expressiveness of Relational Languages",
+   "authors": [
+    "Wolfgang Gatterbauer",
+    "Cody Dunne"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2024 Best Paper Honorable Mention: On The Reasonable Effectiveness of Relational Diagrams: Explaining Relational Query Patterns and the Pattern Expressiveness of Relational Languages — Wolfgang Gatterbauer and Cody Dunne"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Reservoir Sampling over Joins",
+   "authors": [
+    "Binyang DAI",
+    "Xiao Hu",
+    "Ke Yi"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2024 Best Paper Honorable Mention: Reservoir Sampling over Joins — Binyang DAI, Xiao Hu, and Ke Yi"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "SAGA: A Scalable Framework for Optimizing Data Cleaning Pipelines for Machine Learning Applications",
+   "authors": [
+    "Shafaq Siddiqi",
+    "Roman Kern",
+    "Matthias Boehm"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2024 Best Paper Honorable Mention: SAGA: A Scalable Framework for Optimizing Data Cleaning Pipelines for Machine Learning Applications — Shafaq Siddiqi, Roman Kern, and Matthias Boehm"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Low-Latency Transaction Scheduling via Userspace Interrupts: Why Wait or Yield When You Can Preempt?",
+   "authors": [
+    "Kaisong Huang",
+    "Jiatang Zhou",
+    "Zhuoyue Zhao",
+    "Dong Xie",
+    "Tianzheng Wang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2025 Best Paper: Low-Latency Transaction Scheduling via Userspace Interrupts: Why Wait or Yield When You Can Preempt? — Kaisong Huang, Jiatang Zhou, Zhuoyue Zhao, Dong Xie, Tianzheng Wang"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "LpBound: Pessimistic Cardinality Estimation Using Lp-Norms of Degree Sequences",
+   "authors": [
+    "Haozhe Zhang",
+    "Christoph Mayer",
+    "Mahmoud Abo Khamis",
+    "Dan Olteanu",
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2025 Best Paper: LpBound: Pessimistic Cardinality Estimation Using Lp-Norms of Degree Sequences — Haozhe Zhang, Christoph Mayer, Mahmoud Abo Khamis, Dan Olteanu, Dan Suciu"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "Unlocking the Potential of CXL for Disaggregated Memory in Cloud-Native Databases",
+   "authors": [
+    "Xinjun Yang",
+    "Yingqiang Zhang",
+    "Hao Chen",
+    "Feifei Li",
+    "Gerry Fan",
+    "Yang Kong",
+    "Bo Wang",
+    "Jing Fang",
+    "Yuhui Wang",
+    "Tao Huang",
+    "Wenpu Hu",
+    "Jim Kao",
+    "Jianping Jiang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2025 Industry Track Best Paper: Unlocking the Potential of CXL for Disaggregated Memory in Cloud-Native Databases — Xinjun Yang, Yingqiang Zhang, Hao Chen, Feifei Li, Gerry Fan, Yang Kong, Bo Wang, Jing Fang, Yuhui Wang, Tao Huang, Wenpu Hu, Jim Kao, Jianping Jiang"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "CRDV: Conflict-free Replicated Data Views",
+   "authors": [
+    "Nuno Faria",
+    "José Pereira"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2025 Best Paper Honorable Mention: CRDV: Conflict-free Replicated Data Views — Nuno Faria, José Pereira"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "DPconv: Super-Polynomially Faster Join Ordering",
+   "authors": [
+    "Mihail Stoian",
+    "Andreas Kipf"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2025 Best Paper Honorable Mention: DPconv: Super-Polynomially Faster Join Ordering — Mihail Stoian, Andreas Kipf"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "GPM: The Gaussian Pancake Mechanism for Planting Undetectable Backdoors in Differential Privacy",
+   "authors": [
+    "Haochen Sun",
+    "Xi He"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Best Paper: GPM: The Gaussian Pancake Mechanism for Planting Undetectable Backdoors in Differential Privacy — Haochen Sun (University of Waterloo) and Xi He (University of Waterloo)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Industry Track Best Paper",
+   "title": "CoddSpeed: Hardware Accelerated Query Processing in Microsoft Fabric",
+   "authors": [
+    "Matteo Interlandi",
+    "Nicolas Bruno",
+    "Brandon Haynes",
+    "Carlo Curino",
+    "Rathijit Sen",
+    "Yinan Li",
+    "Kaushik Rajan",
+    "Bailu Ding",
+    "Lukas Maas",
+    "Wei Cui",
+    "Kevin Gaffney",
+    "Mingsheng Hong",
+    "Brian Kroth",
+    "Sampath Rajenda",
+    "Peng Cheng",
+    "Surajit Chaudhuri",
+    "Johannes Gehrke",
+    "Raghu Ramakrishnan",
+    "Lidong Zhou",
+    "Momin Al-Ghosien",
+    "Craig Peeper",
+    "Marius Dumitru",
+    "Conor Cunningham",
+    "Kevin Bocksrocker",
+    "Prasanna Sundar",
+    "Ron Boskovic",
+    "YongChul Kwon",
+    "Marko Zivanovic",
+    "Runbin Shi",
+    "Krystian Sakowski",
+    "Denis Lamtsov",
+    "Josep Aguilar Saborit",
+    "Krish Srinivasan",
+    "Adarsh Kapil",
+    "Andrew Putnam",
+    "Anudeep Kambapu",
+    "Aparna Konduri",
+    "Aaron Landy",
+    "Aaron Moore",
+    "Aaron Pitman",
+    "Artem Oks",
+    "Ashit Gosalia",
+    "Babu Kandimalla",
+    "Blake Pelton",
+    "Bogdan Crivat",
+    "Cesar Galindo-Legaria",
+    "Chidamber Kulkarni",
+    "Esteban Calvo",
+    "Evgeny Babin",
+    "Hans Lehnert Marino",
+    "Igor Konev",
+    "Israel Arroyo",
+    "Jesus Camacho Rodriguez",
+    "Luis Penaranda",
+    "Mandar Datar",
+    "Morten Borup Petersen",
+    "Nicholas Simmons",
+    "Parminder Poonian",
+    "Pravija Danda",
+    "Rob Rydberg",
+    "Ronak Bajaj",
+    "Sai Sumanth Kammal Shetty",
+    "Sharanya Bhat",
+    "Zach Iracheta"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Industry Track Best Paper: CoddSpeed: Hardware Accelerated Query Processing in Microsoft Fabric — Matteo Interlandi (Microsoft)*; Nicolas Bruno (Microsoft); Brandon Haynes (Microsoft); Carlo Curino (Microsoft); Rathijit Sen (Microsoft); Yinan Li (Microsoft); Kaushik Rajan (Microsoft); Bailu Ding (Microsoft); Lukas Maas (Microsoft); Wei Cui (Microsoft); Kevin Gaffney (Microsoft); Mingsheng Hong (Microsoft); Brian Kroth (Microsoft); Sampath Rajenda (Microsoft); Peng Cheng (Microsoft); Surajit Chaudhuri (Microsoft); Johannes Gehrke (Microsoft); Raghu Ramakrishnan (Microsoft); Lidong Zhou (Microsoft); Momin Al-Ghosien (Microsoft); Craig Peeper (Microsoft); Marius Dumitru (Microsoft); Conor Cunningham (Microsoft); Kevin Bocksrocker (Microsoft); Prasanna Sundar (Microsoft); Ron Boskovic (Microsoft); YongChul Kwon (Microsoft); Marko Zivanovic (Microsoft); Runbin Shi (Microsoft); Krystian Sakowski (Microsoft); Denis Lamtsov (Microsoft); Josep Aguilar Saborit (Microsoft); Krish Srinivasan (Microsoft); Adarsh Kapil (Microsoft); Andrew Putnam (Microsoft); Anudeep Kambapu (Microsoft); Aparna Konduri (Microsoft); Aaron Landy (Microsoft); Aaron Moore (Microsoft); Aaron Pitman (Microsoft); Artem Oks (Microsoft); Ashit Gosalia (Microsoft); Babu Kandimalla (Microsoft); Blake Pelton (Microsoft); Bogdan Crivat (Microsoft); Cesar Galindo-Legaria (Microsoft); Chidamber Kulkarni (Microsoft); Esteban Calvo (Microsoft); Evgeny Babin (Microsoft); Hans Lehnert Marino (Microsoft); Igor Konev (Microsoft); Israel Arroyo (Microsoft); Jesus Camacho Rodriguez (Microsoft); Luis Penaranda (Microsoft); Mandar Datar (Microsoft); Morten Borup Petersen (Microsoft); Nicholas Simmons (Microsoft); Parminder Poonian (Microsoft); Pravija Danda (Microsoft); Rob Rydberg (Microsoft); Ronak Bajaj (Microsoft); Sai Sumanth Kammal Shetty (Microsoft); Sharanya Bhat (Microsoft); Zach Iracheta (Microsoft)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Industry Track Honorable Mention",
+   "title": "Enzyme: Incremental View Maintenance for Data Engineering",
+   "authors": [
+    "Ritwik Yadav",
+    "Supun Abeysinghe",
+    "Min Yang",
+    "Jeffrey Helt",
+    "Manuel Ung",
+    "Yuhong Chen",
+    "Melody Hu",
+    "William Wei",
+    "Yiming Yang",
+    "Tom van Bussel",
+    "Sourav Chatterji",
+    "Indrajit Roy",
+    "Paul Lappas",
+    "Yannis Papakonstantinou",
+    "Tahir Fayyaz",
+    "Bilal Aslam",
+    "Ross Bunker",
+    "Michael Armbrust",
+    "Shrikanth Shankar"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Industry Track Honorable Mention: Enzyme: Incremental View Maintenance for Data Engineering — Ritwik Yadav (Databricks, Inc.); Supun Abeysinghe (Databricks, Inc.); Min Yang (Databricks, Inc.); Jeffrey Helt (Databricks, Inc.); Manuel Ung (Databricks, Inc.); Yuhong Chen (Databricks, Inc.); Melody Hu (Databricks, Inc.); William Wei (Databricks, Inc.); Yiming Yang (Databricks, Inc.); Tom van Bussel (Databricks, Inc.); Sourav Chatterji (Databricks, Inc.); Indrajit Roy (Databricks, Inc.); Paul Lappas (Google, Inc.); Yannis Papakonstantinou (Google, Inc.); Tahir Fayyaz (Databricks, Inc.); Bilal Aslam (Databricks, Inc.); Ross Bunker (Databricks, Inc.); Michael Armbrust (Databricks, Inc.); Shrikanth Shankar (Databricks, Inc.)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "F3: The Open-Source Data File Format for the Future",
+   "authors": [
+    "Xinyu Zeng",
+    "Ruijun Meng",
+    "Martin Prammer",
+    "Wes McKinney",
+    "Jignesh Patel",
+    "Andrew Pavlo",
+    "Huanchen Zhang"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Best Paper Honorable Mention: F3: The Open-Source Data File Format for the Future — Xinyu Zeng (Tsinghua University), Ruijun Meng (Tsinghua University), Martin Prammer (Carnegie Mellon University), Wes McKinney (Posit PBC), Jignesh Patel (Carnegie Mellon University), Andrew Pavlo (Carnegie Mellon University), and Huanchen Zhang (Tsinghua University)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Integrating Vector Databases across Embedding Models",
+   "authors": [
+    "Beining Yang",
+    "Yang Cao",
+    "Yang Ren"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Best Paper Honorable Mention: Integrating Vector Databases across Embedding Models — Beining Yang (University of Edinburgh), Yang Cao (University of Edinburgh), and Yang Ren (Edinburgh Research Center, Central Software Institute, Huawei)"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Sublime: Sublinear Error & Space for Unbounded Skewed Streams",
+   "authors": [
+    "Navid Eslami",
+    "Ioana Bercea",
+    "Rasmus Pagh",
+    "Niv Dayan"
+   ],
+   "track": "main",
+   "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
+   "evidence": "2026 Best Paper Honorable Mention: Sublime: Sublinear Error & Space for Unbounded Skewed Streams — Navid Eslami (University of Toronto), Ioana Bercea (KTH Royal Institute of Technology), Rasmus Pagh (BARC, University of Copenhagen), Niv Dayan (University of Toronto)"
   },
   {
    "venue": "SOUPS",

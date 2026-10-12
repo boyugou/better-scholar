@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.3 — 2026-10-12
+
+- **SIGMOD and PODS best papers** (92 entries) from ACM SIGMOD's own pages: the SIGMOD best-paper table (1994–2026, with honorable
+  mentions and the industry track's awards) and the PODS best-paper list (1997–2026). New reader `scripts/awards/sigmod.mjs`
+  (the table's rows come in three shapes; unreadable entries are reported, not guessed). The list holds 2032 awards.
+
 ## 2.5.2 — 2026-10-12
 
 - **IEEE S&P distinguished papers, 2016–2025** (58 entries: Distinguished Paper, Distinguished Practical Paper and Distinguished
