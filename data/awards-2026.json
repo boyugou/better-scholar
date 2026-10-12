@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5268
+  "count": 5284
  },
  "entries": [
   {
@@ -50,6 +50,201 @@
   },
   {
    "venue": "AAAI",
+   "year": 1999,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "R1: An Expert in the Computer Systems Domain",
+   "authors": [
+    "John McDermott"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 1999 Classic Paper Award: John McDermott “R1: An Expert in the Computer Systems Domain”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Reverend Bayes on Inference Engines: A Distributed Hierarchical Approach",
+   "authors": [
+    "Judea Pearl"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2000 Classic Paper Award: Judea Pearl “Reverend Bayes on Inference Engines: A Distributed Hierarchical Approach”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "A Variational Approach to Edge Detection",
+   "authors": [
+    "John Canny"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2002 Classic Paper Award: John Canny “A Variational Approach to Edge Detection”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "A Logic of Implicit and Explicit Belief",
+   "authors": [
+    "Hector Levesque"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2004 Classic Paper Award: Hector Levesque “A Logic of Implicit and Explicit Belief”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Default Reasoning, Nonmonotonic Logics, and the Frame Problem",
+   "authors": [
+    "Steve Hanks",
+    "Drew McDermott"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2005 Classic Paper Award: Steve Hanks and Drew McDermott “Default Reasoning, Nonmonotonic Logics, and the Frame Problem”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Quantifying the Inductive Bias in Concept Learning (extended abstract)",
+   "authors": [
+    "David Haussler"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2005 Classic Paper Award: David Haussler “Quantifying the Inductive Bias in Concept Learning (extended abstract)”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2006,
+   "award": "runner-up",
+   "awardLabel": "Classic Paper Honorable Mention",
+   "title": "Real-Time Heuristic Search: First Results",
+   "authors": [
+    "Richard E Korf"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Richard E Korf “Real-Time Heuristic Search: First Results”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2006,
+   "award": "runner-up",
+   "awardLabel": "Classic Paper Honorable Mention",
+   "title": "The Logic of Representing Dependencies by Directed Graphs",
+   "authors": [
+    "Judea Pearl",
+    "Thomas Verma"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2006 Classic Paper Honorable Mention: Judea Pearl and Thomas Verma “The Logic of Representing Dependencies by Directed Graphs”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Pengi: An Implementation of a Theory of Activity",
+   "authors": [
+    "Philip E. Agre",
+    "David Chapman"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2006 Classic Paper Award: Philip E. Agre and David Chapman “Pengi: An Implementation of a Theory of Activity”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Reactive Reasoning and Planning",
+   "authors": [
+    "Amy Lansky",
+    "Michael P. Georgeff"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2006 Classic Paper Award: Amy Lansky and Michael P. Georgeff “Reactive Reasoning and Planning”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2007,
+   "award": "runner-up",
+   "awardLabel": "Classic Paper Honorable Mention",
+   "title": "A Robust, Qualitative Method for Robot Spatial Learning",
+   "authors": [
+    "Benjamin J. Kuipers",
+    "Yung-Tai Byun"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2007 Classic Paper Honorable Mention: Benjamin J. Kuipers and Yung-Tai Byun “A Robust, Qualitative Method for Robot Spatial Learning”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Bayesian Classification",
+   "authors": [
+    "Peter Cheeseman",
+    "Matthew Self",
+    "Jim Kelly",
+    "Will Taylor",
+    "Don Freeman"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2007 Classic Paper Award: Peter Cheeseman, Matthew Self, Jim Kelly, Will Taylor, and Don Freeman “Bayesian Classification”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Classic Paper Honorable Mention",
+   "title": "Learning to Coordinate Behaviors",
+   "authors": [
+    "Pattie Maes",
+    "Rodney A. Brooks"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2008 Classic Paper Honorable Mention: Pattie Maes and Rodney A. Brooks “Learning to Coordinate Behaviors”"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Solving Large-Scale Constraint Satisfaction and Scheduling Problems Using a Heuristic Repair Method",
+   "authors": [
+    "Steven Minton",
+    "Mark D. Johnston",
+    "Andrew B. Philips",
+    "Philip Laird"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2008 Classic Paper Award: Steven Minton, Mark D. Johnston, Andrew B. Philips, and Philip Laird “Solving Large-Scale Constraint Satisfaction and Scheduling Problems Using a Heuristic Repair Method”"
+  },
+  {
+   "venue": "AAAI",
    "year": 2010,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper",
@@ -77,6 +272,20 @@
    "track": "main",
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-conference-paper-awards-and-recognition/",
    "evidence": "2010 AAAI-10 Outstanding Paper Awards: How Incomplete Is Your Semantic Web Reasoner? Systematic Analysis of the Completeness of Query Answering Systems — Giorgos Stoilos, Bernardo Cuenca Grau, Ian Horrocks (Oxford University)"
+  },
+  {
+   "venue": "AAAI",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "Systematic Nonlinear Planning",
+   "authors": [
+    "David McAllester",
+    "David Rosenblitt"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2010 Classic Paper Award: David McAllester and David Rosenblitt “Systematic Nonlinear Planning”"
   },
   {
    "venue": "AAAI",
@@ -958,6 +1167,19 @@
    "track": "main",
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
    "evidence": "2020 Classic Paper Award Recipient: Ulrich Junker QUICKXPLAIN: Preferred Explanations and Relaxations for Over-Constrained Problems resented at the Nineteenth National Conference on Artificial Intelligence, held in 2004 in San Jose, California, USA. For developing an influential approach for formalizing and efficiently computing user-preferred failure explanations in over-constrained problems."
+  },
+  {
+   "venue": "AAAI",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Classic Paper Award",
+   "title": "QUICKXPLAIN: Preferred Explanations and Relaxations for Over-Constrained Problems resented at the Nineteenth National Conference on Artificial Intelligence, held in 2004 in San Jose, California, USA",
+   "authors": [
+    "Ulrich Junker"
+   ],
+   "track": "main",
+   "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+   "evidence": "AAAI 2020 Classic Paper Award: Ulrich Junker “QUICKXPLAIN: Preferred Explanations and Relaxations for Over-Constrained Problems resented at the Nineteenth National Conference on Artificial Intelligence, held in 2004 in San Jose, California, USA”"
   },
   {
    "venue": "AAAI",

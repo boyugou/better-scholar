@@ -58,8 +58,10 @@
 //   lics    https://lics.siglog.org/archive/test-of-time-award.html        the LICS Test-of-Time Award, 2006–: a heading "LICS Test-of-Time Award Winner in 2026", "All papers from LICS 2006 were considered", then per
 //                                                                       paper `<div><i><a>Author</a><a>Author</a></i><br><b>Title</b>` (the authors are the links, with no separator in the text)
 //   lics-dp https://lics.siglog.org/archive/distinguished-papers.html     the LICS Distinguished Papers, 2000s–: the same template, a heading `<a>LICS 2026</a>, Place` per year
+//   aaai    https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/  the AAAI Classic Paper Award, 2005–2026: a year heading, then per paper a list item `<em>Classic Paper Recipients:</em> <strong>Authors</strong><br>Title
+//                                                                       presented at …` (honorable mentions too; "for their two papers X and Y" rows are reported and skipped)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -93,7 +95,8 @@ const PAGES = {
   ismar: "https://www.ismar.net/past_symposiums",
   icse: "https://www.icse-conferences.org/mostinfluential.html",
   lics: "https://lics.siglog.org/archive/test-of-time-award.html",
-  "lics-dp": "https://lics.siglog.org/archive/distinguished-papers.html"
+  "lics-dp": "https://lics.siglog.org/archive/distinguished-papers.html",
+  aaai: "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -557,6 +560,27 @@ export function parseLicsDistinguished(html, source = PAGES["lics-dp"]) {
   return { entries, skipped };
 }
 
+export function parseAaaiClassic(html, source = PAGES.aaai) {
+  const entries = [], skipped = [];
+  const start = html.search(/<h[23][^>]*>\s*Past Recipients/i);
+  const head = start < 0 ? html : html;
+  let year = null;
+  for (const m of head.matchAll(/<h[23][^>]*>\s*((?:19|20)\d{2})\s*<\/h[23]>|<li>([\s\S]*?)<\/li>/g)) {
+    if (m[1]) { year = parseInt(m[1], 10); continue; }
+    if (!year) continue;
+    const li = m[2], lab = /^\s*<em>\s*([^<]*?(?:Recipients?|Corecipients?)):?\s*<\/em>/i.exec(li);
+    if (!lab) continue;
+    const rest = li.slice(lab[0].length), br = rest.search(/<br\s*\/?>/i);
+    if (br < 0) { skipped.push(`${year}: not read: ${text(rest).slice(0, 60)}`); continue; }
+    const authorText = text(rest.slice(0, br)), titleText = text(rest.slice(br).replace(/<br\s*\/?>/gi, " ")).replace(/\s*,?\s*[Pp]resented at.*$/, "").replace(/\s+For (?:introducing|their|its|being|developing|the)\b.*$/, "");
+    const who = names(authorText.replace(/\s+and\s+/g, ", and ")), title = cleanTitle(titleText);
+    const honorable = /honou?rable/i.test(lab[1]);
+    if (who.length && who.every(isPerson) && title.length >= 8 && !/^for\b/i.test(title)) entries.push({ venue: "AAAI", year, award: honorable ? "runner-up" : "tot", awardLabel: honorable ? "Classic Paper Honorable Mention" : "Classic Paper Award", title, authors: who, track: "main", source, evidence: `AAAI ${year} ${honorable ? "Classic Paper Honorable Mention" : "Classic Paper Award"}: ${authorText} “${title}”` });
+    else skipped.push(`${year}: not read: ${authorText.slice(0, 50)} / ${title.slice(0, 40)}`);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -612,7 +636,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

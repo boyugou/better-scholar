@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.24 — 2026-10-12
+
+- The AAAI Classic Paper Award and its honorable mentions (1999–2026, 40 papers: Monte Carlo Localization, Bayesian Classification, Maximum Entropy Inverse Reinforcement Learning, Never-Ending
+  Language Learning …) from AAAI's own page (`tot.mjs aaai`). The bundled list has 5284 awards.
+
 ## 2.9.23 — 2026-10-12
 
 - The LICS Distinguished Papers (2021–2026, 46 papers) from LICS's own archive page (`tot.mjs lics-dp`). The bundled list has 5268 awards.

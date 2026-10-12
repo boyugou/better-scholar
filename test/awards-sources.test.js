@@ -1337,3 +1337,18 @@ test("LICS Distinguished Papers page: a heading '<a>LICS 2026</a>, Place', per p
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("AAAI Classic Paper page: a year heading, per paper '<em>Classic Paper Recipients:</em> <strong>Authors</strong><br>Title presented at …'; a row of two papers is skipped", async () => {
+  const { parseAaaiClassic } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Past Recipients</h2><h3>2025</h3><ul><li><em>Classic Paper Recipients:</em> <strong>Tom Mitchell, Andrew Carlson, and Estevam Hruschka</strong><br>Toward an Architecture for Never-Ending Language Learning</li></ul>
+<h3>2022</h3><ul><li><em>Classic Paper Award Recipients:</em> <strong>Michael Montemerlo, Sebastian Thrun</strong><br>Winning the DARPA Grand Challenge with an AI Robot presented at the Twenty-First National Conference</li>
+<li><em>Classic Paper Honorable Mention Recipients:</em> <strong>Rada Mihalcea, Courtney Corley, and Carlo Strapparava</strong><br>Corpus-Based and Knowledge-Based Measures of Text Semantic Similarity presented at the Twenty-First</li></ul>
+<h3>2011</h3><ul><li><em>Classic Paper Award Corecipients:</em> <strong>Hector Levesque, David Mitchell, and Bart Selman</strong><br>for their two papers Hard and Easy Distribution of SAT Problems and A New Method</li></ul>`;
+  const { entries, skipped } = parseAaaiClassic(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 tot Toward an Architecture for Never-Ending Language Learning | Tom Mitchell; Andrew Carlson; Estevam Hruschka",
+    "2022 tot Winning the DARPA Grand Challenge with an AI Robot | Michael Montemerlo; Sebastian Thrun",
+    "2022 runner-up Corpus-Based and Knowledge-Based Measures of Text Semantic Similarity | Rada Mihalcea; Courtney Corley; Carlo Strapparava"
+  ]);
+  assert.equal(skipped.length, 1);
+});
