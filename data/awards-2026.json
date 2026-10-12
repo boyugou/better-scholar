@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4770
+  "count": 4782
  },
  "entries": [
   {
@@ -46806,6 +46806,228 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "32nd ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE 2023): Chenyang Ma, Wei Song, Jeff Huang: TransRacer: Function Dependence-Guided Transaction Race Detection for Smart Contracts"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Language Support for Fast and Reliable Message-based Communication in Singularity OS",
+   "authors": [
+    "Manuel Fähndrich",
+    "Mark Aiken",
+    "Chris Hawblitzel",
+    "Orion Hodson",
+    "Galen C. Hunt",
+    "James R. Larus",
+    "Steven Levi"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2016 Test-of-Time Award: Manuel Fähndrich, Mark Aiken, Chris Hawblitzel, Orion Hodson, Galen C. Hunt, James R. Larus, and Steven Levi for “Language Support for Fast and Reliable Message-based Communication in Singularity OS”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks",
+   "authors": [
+    "Michael Isard",
+    "Mihai Budiu",
+    "Yuan Yu",
+    "Andrew Birrell",
+    "Dennis Fetterly"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2017 Test-of-Time Award: Michael Isard, Mihai Budiu, Yuan Yu, Andrew Birrell, and Dennis Fetterly for “Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Documenting and Automating Collateral Evolutions in Linux Device Drivers",
+   "authors": [
+    "Yoann Padioleau",
+    "Julia Lawall",
+    "René Rydhof Hansen",
+    "Gilles Muller"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2018 Test-of-Time Award: Yoann Padioleau, Julia Lawall, René Rydhof Hansen, and Gilles Muller for “Documenting and Automating Collateral Evolutions in Linux Device Drivers”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SnowFlock: Rapid Virtual Machine Cloning for Cloud Computing",
+   "authors": [
+    "Horacio Andrés Lagar-Cavilla",
+    "Joseph Andrew Whitney",
+    "Adin Matthew Scannell",
+    "Philip Patchin",
+    "Stephen M. Rumble",
+    "Eyal de Lara",
+    "Michael Brudno",
+    "Mahadev Satyanarayanan"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2019 Test-of-Time Award: Horacio Andrés Lagar-Cavilla, Joseph Andrew Whitney, Adin Matthew Scannell, Philip Patchin, Stephen M. Rumble, Eyal de Lara, Michael Brudno, and Mahadev Satyanarayanan for “SnowFlock: Rapid Virtual Machine Cloning for Cloud Computing”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling",
+   "authors": [
+    "Matei Zaharia",
+    "Dhruba Borthakur",
+    "Joydeep Sen Sarma",
+    "Khaled Elmeleegy",
+    "Scott Shenker",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2020 Test-of-Time Award: Matei Zaharia, Dhruba Borthakur, Joydeep Sen Sarma, Khaled Elmeleegy, Scott Shenker, Ion Stoica for “Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "CloneCloud: Elastic Execution between Mobile Device and Cloud",
+   "authors": [
+    "Byung-Gon Chun",
+    "Sunghwan Ihm",
+    "Petros Maniatis",
+    "Mayur Naik",
+    "Ashwin Patti"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2021 Test-of-Time Award: Byung-Gon Chun, Sunghwan Ihm, Petros Maniatis, Mayur Naik, Ashwin Patti for “CloneCloud: Elastic Execution between Mobile Device and Cloud”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Where is the energy spent inside my app? Fine Grained Energy Accounting on Smartphones with Eprof",
+   "authors": [
+    "Abhinav Pathak",
+    "Y. Charlie Hu",
+    "Ming Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2022 Test-of-Time Award: Abhinav Pathak, Y. Charlie Hu, Ming Zhang for “Where is the energy spent inside my app? Fine Grained Energy Accounting on Smartphones with Eprof”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "BlinkDB: queries with bounded errors and bounded response times on very large data",
+   "authors": [
+    "Sameer Agarwal",
+    "Barzan Mozafari",
+    "Aurojit Panda",
+    "Henry Milner",
+    "Samuel Madden",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2023 Test-of-Time Award: Sameer Agarwal, Barzan Mozafari, Aurojit Panda, Henry Milner, Samuel Madden, Ion Stoica for “BlinkDB: queries with bounded errors and bounded response times on very large data”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Omega: flexible, scalable schedulers for large compute clusters",
+   "authors": [
+    "Malte Schwarzkopf",
+    "Andy Konwinski",
+    "Michael Abd-El-Malek",
+    "John Wilkes"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2023 Test-of-Time Award: Malte Schwarzkopf, Andy Konwinski, Michael Abd-El-Malek, John Wilkes for “Omega: flexible, scalable schedulers for large compute clusters”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "System software for persistent memory",
+   "authors": [
+    "Dulloor Subramanya Rao",
+    "Sanjay Kumar",
+    "Anil S. Keshavamurthy",
+    "Philip Lantz",
+    "Dheeraj Reddy",
+    "Rajesh Sankaran",
+    "Jeff Jackson"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2024 Test-of-Time Award: Dulloor Subramanya Rao, Sanjay Kumar, Anil S. Keshavamurthy, Philip Lantz, Dheeraj Reddy, Rajesh Sankaran, Jeff Jackson for “System software for persistent memory”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Large-scale cluster management at Google with Borg",
+   "authors": [
+    "Abhishek Verma",
+    "Luis Pedrosa",
+    "Madhukar Korupolu",
+    "David Oppenheimer",
+    "Eric Tune",
+    "John Wilkes"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2025 Test-of-Time Award: Abhishek Verma, Luis Pedrosa, Madhukar Korupolu, David Oppenheimer, Eric Tune, John Wilkes for “Large-scale cluster management at Google with Borg”"
+  },
+  {
+   "venue": "EuroSys",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "GeePS: Scalable Deep Learning on Distributed GPUs with a GPU-Specialized Parameter Server",
+   "authors": [
+    "Henggang Cui",
+    "Hao Zhang",
+    "Gregory R. Ganger",
+    "Phillip B. Gibbons",
+    "Eric P. Xing"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://www.eurosys.org/awards/test-of-time-award",
+   "evidence": "EuroSys 2026 Test-of-Time Award: Henggang Cui, Hao Zhang, Gregory R. Ganger, Phillip B. Gibbons, Eric P. Xing for “GeePS: Scalable Deep Learning on Distributed GPUs with a GPU-Specialized Parameter Server”"
   },
   {
    "venue": "EVT/WOTE",

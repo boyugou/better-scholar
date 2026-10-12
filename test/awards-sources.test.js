@@ -1104,3 +1104,20 @@ test("SIGOPS Hall of Fame page: a heading per year, a list item per paper, the t
   assert.ok(entries.every((e) => e.venue === "SIGOPS" && e.award === "tot" && e.awardLabel === "Hall of Fame Award"));
   assert.deepEqual(skipped, []);
 });
+
+test("EuroSys Test-of-Time page: the newest recipients under their heading, past ones dated, the undated one is paper year + 10", async () => {
+  const { parseEurosysTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>EuroSys 2026 Test-of-Time Award Recipients</h2>
+<p>Ann Cui, Bo Zhang, and Cy Ganger, for their EuroSys 2016 paper GeePS: Scalable Deep Learning on Distributed GPUs</p>
+<h3>Past Recipients</h3>
+<p>Dee Verma, Eli Pedrosa, and Fay Wilkes, for their EuroSys 2015 paper Large-scale cluster management at Google with Borg</p>
+<p>2023: Gus Schwarzkopf, Hal Konwinski, for their EuroSys'13 paper Omega: flexible, scalable schedulers for large compute clusters</p>
+<p>Contact Information: contact _at_ eurosys.org</p>`;
+  const { entries, skipped } = parseEurosysTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2026/2016 GeePS: Scalable Deep Learning on Distributed GPUs | Ann Cui; Bo Zhang; Cy Ganger",
+    "2025/2015 Large-scale cluster management at Google with Borg | Dee Verma; Eli Pedrosa; Fay Wilkes",
+    "2023/2013 Omega: flexible, scalable schedulers for large compute clusters | Gus Schwarzkopf; Hal Konwinski"
+  ]);
+  assert.deepEqual(skipped, []);
+});

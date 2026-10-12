@@ -231,6 +231,8 @@ test("the bundled list: SIGOPS's Hall of Fame Award (the page's winners, 2005–
   assert.deepEqual(find("The Tail at Scale", "J Dean, LA Barroso"), ["SIGOPS 2025 tot"]);
   assert.deepEqual(find("seL4: formal verification of an OS kernel", "G Klein, K Elphinstone, G Heiser"), ["SIGOPS 2019 tot"]);
   assert.deepEqual(find("The Tail at Scale", "A Smith, B Jones"), []);
+  // EuroSys's own Test-of-Time page
+  assert.deepEqual(find("Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks", "M Isard, M Budiu, Y Yu, A Birrell, D Fetterly"), ["EuroSys 2017 tot"]);
 });
 
 test("the bundled list: the Dijkstra Prize in Distributed Computing (PODC / DISC), and the PODC Influential-Paper Award it was before 2003", () => {

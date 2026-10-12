@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.1 — 2026-10-12
+
+- EuroSys Test-of-Time Award (2016–2026, 12 papers: Borg, Omega, Dryad, Delay Scheduling, GeePS …) from EuroSys's own page, read by `scripts/awards/tot.mjs eurosys`.
+  The bundled list has 4782 awards.
+
 ## 2.9.0 — 2026-10-12
 
 - SIGOPS Hall of Fame Award (2005–2025, 62 papers) from SIGOPS's own page, read by `scripts/awards/tot.mjs sigops`: the Google File System, Bigtable,
