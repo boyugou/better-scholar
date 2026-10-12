@@ -521,3 +521,34 @@ test("ESWC was the European Semantic Web Conference, UMAP is spelled 'Modeling' 
   assert.equal(brief("International Conference on User Modeling, Adaptation, and Personalization …, 2011"), "CORE A UMAP");
   assert.equal(brief("Symposium on High Performance Chips (HOT CHIPS), 2015"), "CCF B HOT CHIPS · CORE C HOTCHIPS (HCS)");
 });
+
+// ---- twelve more real profiles (medical imaging, game theory, verification, HRI, semantic web, compilers, education, bioinformatics)
+
+test("a short acronym in a parenthesis needs the venue's own words around it; 'Summits' are meetings of their own", () => {
+  assert.equal(brief("USDOE Office of Science (SC), Washington, DC (United States), 2018"), "", "the DOE's Office of Science is not the supercomputing conference");
+  assert.equal(brief("2006 IEEE Symposium on Security and Privacy (S&P'06), 15 pp.-16, 2006"), "CCF A S&P · CORE A* SP", "a stray '15 pp.' is not an objection");
+  assert.equal(brief("2013 10th Working Conference on Mining Software Repositories (MSR), 121-130, 2013"), "CCF C MSR · CORE A MSR");
+  assert.equal(brief("Proceedings of the 2005 ACM/IEEE Conference on Supercomputing (SC), 2005"), "CCF A SC · CORE A SC");
+  assert.equal(brief("AMIA Summits on Translational Science Proceedings 2018, 188, 2018"), "", "not the AMIA annual symposium");
+  assert.equal(brief("AMIA Annual Symposium Proceedings 2014, 645, 2014"), "CCF C AMIA");
+  assert.equal(brief("Machine Translation Summit, 2007"), "CORE C MT SUMMIT", "a venue whose own name says Summit");
+});
+
+test("Springer's series form 'Name− ACRONYM 2017 …' cut after the acronym, a numeral typed apart ('41 st'), IEEE Xplore's tag followed by more name", () => {
+  assert.equal(brief("Medical Image Computing and Computer Assisted Intervention− MICCAI 2017 …, 2017"), "CCF B MICCAI · CORE A MICCAI");
+  assert.equal(brief("Medical Image Computing and Computer-Assisted Intervention - MICCAI 2016 …, 2016"), "CCF B MICCAI · CORE A MICCAI");
+  assert.equal(brief("Proceedings of the 41 st International Conference on Machine Learning, 2024"), "CCF A ICML · CORE A* ICML");
+  assert.equal(brief("Computer Vision and Pattern Recognition, 2004. CVPR 2004. Proceedings of the …, 2004"), "CCF A CVPR · CORE A* CVPR");
+  assert.equal(brief("Parallel and Distributed Processing, 2008. IPDPS 2008. IEEE International …, 2008"), "CCF B IPDPS · CORE A IPDPS");
+  assert.equal(brief("IEEE Workshop on Automatic Speech Recognition and Understanding, 2001. ASRU …, 2001"), "CCF C ASRU · CORE C ASRU", "the workshop is the venue's own name");
+});
+
+test("a curated name for whole strings only is never the start of a cut-off one; ESEC/FSE's ACM Digital Library titles and FM's old name", () => {
+  // "Machine Learning and Knowledge Discovery in Databases" (ECML PKDD) also begins ICMLA's name: a cut-off "… Machine Learning and …" is not claimed for ECML PKDD
+  assert.equal(brief("Proceedings of the 12th International Conference on Machine Learning and …, 2012"), "CORE C ICMLA");
+  assert.equal(brief("Machine Learning and Knowledge Discovery in Databases: European Conference, ECML PKDD 2008, Antwerp, Belgium, 2008"), "CCF B ECML-PKDD · CORE A ECML PKDD");
+  assert.equal(brief("Machine Learning and Knowledge Discovery in Databases, 2012"), "CCF B ECML-PKDD · CORE A ECML PKDD");
+  assert.equal(brief("Proceedings of the 19th ACM SIGSOFT symposium and the 13th European …, 2011"), "CCF A FSE · CORE A* FSE");
+  assert.equal(brief("Proceedings of the 10th European software engineering conference held …, 2005"), "CCF A FSE · CORE A* FSE");
+  assert.equal(brief("International Symposium of Formal Methods Europe, 503-521, 2003"), "CCF A FM · CORE B FM");
+});

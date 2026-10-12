@@ -55,7 +55,9 @@
   // Systems" (NeurIPS 2024 was the thirty-eighth). After a tens word, "eight" / "nine" / "nineth" is that ordinal.
   const TENS = new Set(["twenty", "thirty", "forty", "fifty", "sixty"]);
   const ORDINAL_TYPOS = new Set(["eight", "nine", "nineth"]);
-  const dropOrdinalTypos = (tokens) => tokens.filter((t, i) => !(ORDINAL_TYPOS.has(t) && TENS.has(tokens[i - 1])));
+  // ... and "41 st International Conference": the suffix of a numeral that was typed apart
+  const ORDINAL_SUFFIX = new Set(["st", "nd", "rd", "th"]);
+  const dropOrdinalTypos = (tokens) => tokens.filter((t, i) => !(ORDINAL_TYPOS.has(t) && TENS.has(tokens[i - 1])) && !(ORDINAL_SUFFIX.has(t) && /^\d+$/.test(tokens[i - 1] || "")));
 
   // Squash to a key where "S&P" and "SP" collide on purpose and spacing is irrelevant.
   const squash = (s) => fold(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
@@ -126,7 +128,7 @@
     s = s.replace(/\s+/g, " ").trim();
     // IEEE Xplore's citation form: "IEEE Visualization, 2002. VIS 2002., 355-362, 2002" — the name, its year, then the event's own
     // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know.
-    s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\.(?=\s*(?:,|\d|$))/, "$1 ($2)");
+    s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\./, "$1 ($2)");
     const withParens = s;
     let hasVolume = false;
     for (let changed = true, guard = 0; changed && guard < 8; guard++) {
@@ -175,7 +177,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
   function secondaryWord(raw) {
     const m = SECONDARY.exec(fold(raw));
     if (m) return m[0].toLowerCase().replace(/s$/, "");
@@ -210,7 +212,7 @@
       if (!list) map.set(key, [entry]); else if (!list.includes(entry)) list.push(entry);
     };
 
-    function register(src, kind, entry, names, abbrs, curated) {
+    function register(src, kind, entry, names, abbrs, curated, noPrefix) {
       const side = sources[src][kind];
       if (!side) return;
       if (!side.all.includes(entry)) side.all.push(entry);
@@ -229,7 +231,8 @@
           seq: rawSeq(plain),
           // a curated name that says "joint" is what a string that says it too reads as; a string that does not is not it
           // (the official names — AAMAS's "Joint Conference …" is also printed without the word — are not held to this)
-          needsJoint: !!curated && /\bjoint\b/i.test(plain)
+          needsJoint: !!curated && /\bjoint\b/i.test(plain),
+          noPrefix: !!noPrefix          // a curated name for whole strings only: the start of a cut-off string is never read as it
         };
         for (const mode of ["full", "noOrg"]) {
           const t = form[mode];
@@ -266,6 +269,7 @@
         for (const entry of entries) {
           entry.extra.push(...a.names);
           register(src, kind, entry, a.names, a.abbrs || [], true);
+          if (a.exact) { entry.extra.push(...a.exact); register(src, kind, entry, a.exact, [], true, true); }
         }
       }
     }
@@ -430,7 +434,13 @@
     const danglingStop = p.truncated && (() => { const k = canonTokensKeepStops(p.plain, "full"); return k.length > 0 && STOP.has(k[k.length - 1]); })();
     // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"
     const publisherOnly = ORG.has(squash(p.plain));
-    const modes = danglingStop || publisherOnly ? [] : p.truncated ? ["full"] : ["full", "noOrg", "noAcr"];
+    // a cut-off string that ends in the acronym of a real venue ("Medical Image Computing and Computer Assisted Intervention− MICCAI
+    // 2017 …", Springer's series form) has said its whole name before the acronym: the variant without acronyms may speak too
+    const endsInAcronym = p.truncated && (() => {
+      const w = fold(p.plain).split(/[^A-Za-z0-9&]+/).filter(Boolean).pop() || "";
+      return /^[A-Z][A-Z0-9&]{1,9}$/.test(w) && idx.known.has(w.toLowerCase());
+    })();
+    const modes = danglingStop || publisherOnly ? [] : p.truncated ? (endsInAcronym ? ["full", "noAcr"] : ["full"]) : ["full", "noOrg", "noAcr"];
     // One or two plain words, no organisation and no conference wording ("Data mining", "Software engineering"): a field or a
     // book, not the conference whose official name merely boils down to them. Only a name that really is those words counts
     // (a curated alias such as "Pacific Graphics", a journal called "Machine Learning").
@@ -467,9 +477,17 @@
     // R3: acronym signals
     const signals = acronymSignals(p);
     const confSide = idx.sources[src].C;
-    for (const { key, part } of signals) {
+    // "Conference on Supercomputing (SC)" is SC; "USDOE Office of Science (SC)" is not: a one- to three-letter acronym in a parenthesis
+    // only counts when at least half of what else the string says is among the venue's own words (a "Working Conference …" or a
+    // stray "15 pp." may add a few of its own)
+    const ownWordShare = (entry, words) => {
+      if (!entry.vocab) entry.vocab = new Set(entry.extra.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg")));
+      return words.filter((w) => entry.vocab.has(w)).length * 2 >= words.length;
+    };
+    const ownWordsOnly = (entry) => ownWordShare(entry, canonTokens(p.plain, "noOrg"));
+    for (const { key, part, kind } of signals) {
       const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
-      if (d && d !== "ambiguous") return { entry: d, rule: "acronym" };
+      if (d && d !== "ambiguous" && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d))) return { entry: d, rule: "acronym" };
     }
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and
@@ -507,7 +525,7 @@
             const t = form[mode];
             // an entry whose whole name is what is visible is a candidate too: "… International Conference on
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
-            if (!(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
+            if (form.noPrefix || !(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
             if (joint ? !hasWord(entry, "joint") : form.needsJoint) continue;
             if (trailingStops.length) {
               const ts = form[mode === "full" ? "kfull" : "knoOrg"];
@@ -543,7 +561,7 @@
           const found = new Set();
           for (const side of sides) {
             for (const { entry, form } of side.first.full.get(R[0]) || []) {
-              if (form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.add(entry);
+              if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.add(entry);
             }
           }
           let cands = Array.from(found);

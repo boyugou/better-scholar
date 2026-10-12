@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5.9 — 2026-10-12
+
+More from the twelve real profiles (1,137 venue strings, now in the test corpora).
+
+- **Wrong badges removed:** *"USDOE Office of Science (SC)"* was read as the supercomputing conference (a short acronym in a parenthesis
+  now needs the venue's own words around it); *"AMIA Summits on Translational Science"* was read as the AMIA annual symposium (summits
+  are meetings of their own, like workshops); a cut-off *"… Machine Learning and …"* was read as ECML PKDD (a curated name for whole
+  strings can no longer be the start of a cut-off one).
+- **Matched now:** Springer's series form *"Medical Image Computing and Computer Assisted Intervention− MICCAI 2017 …"* (cut right after
+  the acronym — twelve papers on one profile), *"41 st International Conference"*, IEEE Xplore's *"Computer Vision and Pattern
+  Recognition, 2004. CVPR 2004. Proceedings of the …"*, the ACM Digital Library titles of ESEC/FSE 2005 and 2011, FM's earlier name.
+
 ## 2.5.8 — 2026-10-12
 
 From the independent code review and twelve more real profiles (medical imaging, game theory, verification, human-robot interaction,

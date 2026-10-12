@@ -9,6 +9,8 @@
 //   ccfTier       disambiguates two CCF rows with the same abbreviation (FSE)
 //   coreRank      same for ICORE
 //   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
+//   exact         extra names for whole strings only: the start of a cut-off string is never read as one of them
+//                 (a name that is also the start of other venues' names, "Machine Learning and …")
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -28,7 +30,7 @@
     { ccf: "COLT", core: "COLT", names: ["Conference on Learning Theory", "Annual Conference on Learning Theory", "Computational Learning Theory"] },
     { ccf: "UAI", core: "UAI", names: ["Conference on Uncertainty in Artificial Intelligence", "Uncertainty in Artificial Intelligence"] },
     // ECML (until 2007 its own conference) and PKDD (until 2007) are the two halves of one venue today
-    { ccf: "ECML-PKDD", core: "ECML PKDD", abbrs: ["ECML", "PKDD", "ECML PKDD", "ECML-PKDD"], names: ["European Conference on Machine Learning", "European Conference on Principles and Practice of Knowledge Discovery in Databases", "European Conference on Principles of Data Mining and Knowledge Discovery", "Joint European Conference on Machine Learning and Knowledge Discovery in Databases", "Machine Learning and Knowledge Discovery in Databases"] },
+    { ccf: "ECML-PKDD", core: "ECML PKDD", abbrs: ["ECML", "PKDD", "ECML PKDD", "ECML-PKDD"], names: ["European Conference on Machine Learning", "European Conference on Principles and Practice of Knowledge Discovery in Databases", "European Conference on Principles of Data Mining and Knowledge Discovery", "Joint European Conference on Machine Learning and Knowledge Discovery in Databases"], exact: ["Machine Learning and Knowledge Discovery in Databases"] },
 
     // ---- vision
     { ccf: "CVPR", core: "CVPR", names: ["IEEE Conference on Computer Vision and Pattern Recognition", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", "Computer Vision and Pattern Recognition"] },
@@ -127,8 +129,12 @@
     { ccf: "ICSE", core: "ICSE", names: ["International Conference on Software Engineering", "IEEE/ACM International Conference on Software Engineering", "ACM/IEEE International Conference on Software Engineering"] },
     { ccf: "FSE", ccfTier: "A", core: "FSE", coreRank: "A*", names: [
       "Joint Meeting on Foundations of Software Engineering", "ACM SIGSOFT Symposium on the Foundations of Software Engineering",
-      "European Software Engineering Conference and Symposium on the Foundations of Software Engineering", "ESEC/FSE"
+      "European Software Engineering Conference and Symposium on the Foundations of Software Engineering", "ESEC/FSE",
+      // the ACM Digital Library's titles of 2003, 2005 and 2011
+      "ACM SIGSOFT Symposium and the European Conference on Foundations of Software Engineering",
+      "European Software Engineering Conference held jointly with ACM SIGSOFT International Symposium on Foundations of Software Engineering"
     ] },
+    { ccf: "FM", core: "FM", names: ["International Symposium of Formal Methods Europe"] },
     { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering", "ACM/IEEE International Conference on Automated Software Engineering"] },
     { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis"] },
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },

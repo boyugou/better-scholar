@@ -107,7 +107,7 @@ test("detect returns the author's own text for tooltips and counts papers once p
   assert.ok(marks.inGroup(papers[0], "oral") && marks.inGroup(papers[0], "award") && !marks.inGroup(papers[1], "oral"));
 });
 
-test("no real venue string in the corpora is ever marked", () => {
+test("no real venue string in the corpora is marked unless its author wrote the level", () => {
   const strings = [];
   for (const f of ["hinton", "kaiming-he", "ion-stoica"]) {
     for (const r of JSON.parse(fs.readFileSync(path.join(FIX, "profiles", f + ".json"), "utf8")).rows) strings.push(r[1]);
@@ -116,7 +116,8 @@ test("no real venue string in the corpora is ever marked", () => {
   for (const [k, v] of Object.entries(extra)) if (!k.startsWith("_")) strings.push(...v);
   assert.ok(strings.length > 400);
   const hits = strings.map((s) => [s, marks.detect({ venue: s })]).filter(([, m]) => m.length);
-  assert.deepEqual(hits.map(([s, m]) => s + " -> " + m.map((x) => x.kind)), []);
+  // the one real string whose author put the level in the venue field, in parentheses (a profile owner's own "(spotlight)")
+  assert.deepEqual(hits.map(([s, m]) => s + " -> " + m.map((x) => x.kind)), ["2025 International Conference on Learning Representations (spotlight), 2025 -> spotlight"]);
 });
 
 test("analyzeRow carries the marks, from the list text and from a resolved paper page", () => {
