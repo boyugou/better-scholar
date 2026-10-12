@@ -180,6 +180,26 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     assert.match(tip, /CCF [ABC]/); assert.match(tip, /CCF 2026 \(7th edition\)/); assert.match(tip, /Matched by/);
     ok("badge tooltip names the matched venue, the rule and the edition");
 
+    // -- 4b. quiet design: no role chips, no help cursor, a chip never makes a row taller
+    assert.equal(await page.locator(".rr-chip-role").count(), 0, "the role is shown by the row tint and the marked name, not a chip");
+    const geometry = await page.evaluate(() => {
+      const cursor = getComputedStyle(document.querySelector(".rr-chip")).cursor;
+      let grew = 0, checked = 0;
+      document.querySelectorAll("#gsc_a_b tr.gsc_a_tr .rr-chips").forEach((chips) => {
+        const line = chips.parentElement;
+        const withChips = line.getBoundingClientRect().height;
+        chips.style.display = "none";
+        const without = line.getBoundingClientRect().height;
+        chips.style.display = "";
+        checked++;
+        if (withChips > without + 0.5) grew++;
+      });
+      return { cursor, grew, checked };
+    });
+    assert.notEqual(geometry.cursor, "help", "chips must not show the question-mark cursor");
+    assert.ok(geometry.checked > 0 && geometry.grew === 0, `${geometry.grew} of ${geometry.checked} chip lines grew taller`);
+    ok(`no role chips, no help cursor, ${geometry.checked} chip lines keep their height`);
+
     // -- 5. load all papers
     await page.click('[data-act="load-all"]');
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
@@ -193,7 +213,6 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     // -- 6. role checkbox toggles highlighting (and persists to the DOM state)
     await page.uncheck('input[data-role="last"]');
     assert.equal(await page.locator("tr.rr-r-last").count(), 0);
-    assert.equal(await page.locator('.rr-chip-role[data-role="last"]').count(), 0);
     await page.check('input[data-role="last"]');
     assert.equal(await page.locator("tr.rr-r-last").count(), all.filter((p) => p.highlighted && p.role === "last").length);
     ok("role checkboxes switch highlighting off and on");
@@ -224,14 +243,17 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     await page.uncheck('input[data-act="only"]');
     ok("year filter and 'only highlighted' hide the right rows");
 
-    // -- 10. mark name
-    await page.check('input[data-act="mark-name"]');
-    assert.ok((await page.locator(".rr-name").count()) > 0);
+    // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
+    assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");
     const textBefore = await page.locator("#gsc_a_b tr.gsc_a_tr").first().locator(".gs_gray").first().textContent();
     assert.equal(textBefore, profile.rows[0].authors, "marking a name must not change the text");
+    assert.match(await page.locator(".rr-name").first().getAttribute("title"), /author · position \d+ of \d+/);
     await page.uncheck('input[data-act="mark-name"]');
     assert.equal(await page.locator(".rr-name").count(), 0);
-    ok("name marking wraps the owner's name without altering the text, and undoes cleanly");
+    assert.ok((await page.locator('tr[class*="rr-r-"] .gs_gray[title]').count()) > 0, "the role tooltip stays on the author line");
+    await page.check('input[data-act="mark-name"]');
+    assert.ok((await page.locator(".rr-name").count()) > 0);
+    ok("the owner's name is marked by default (text untouched, role in the tooltip) and the switch undoes it cleanly");
 
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
@@ -243,8 +265,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     assert.equal(fx.detailRequests(), 28);
     ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
-    const fromPage = await page.locator('.rr-chip-role').first().getAttribute("title");
-    assert.ok(fromPage.length > 0);
+    assert.ok((await page.locator('.gs_gray[title*="paper\'s page"]').count()) > 0, "roles read from a paper's own page say so in a tooltip");
 
     // -- 12. clipboard
     await page.click('[data-act="copy-text"]');
@@ -379,7 +400,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     await page.screenshot({ path: path.join(outDir, "marks.png") });
     await page.click('input[data-badge="marks"]');
     assert.equal(await page.locator(".rr-chip-mark").count(), 0);
-    assert.equal(await page.locator("#rr-panel .rr-pill").count(), 0);
+    assert.equal(await page.locator("#rr-panel .rr-markrow").count(), 0);
     await page.click('input[data-badge="marks"]');
     assert.ok((await page.locator(".rr-chip-mark").count()) > 0);
     ok("the Awards & talks switch hides and restores the chips and pills");

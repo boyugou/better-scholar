@@ -10,6 +10,7 @@
     v: 2,
     roles: { first: true, cofirst: true, second: true, last: true },
     badges: { ccf: true, core: true, marks: true },
+    markName: true,
     matrixSource: "ccf",
     collapsed: false
   };
@@ -38,6 +39,7 @@
       v: 2,
       roles: Object.assign({}, DEFAULTS.roles, s.roles),
       badges: Object.assign({}, DEFAULTS.badges),
+      markName: s.markName !== false,
       matrixSource: s.matrixSource === "core" ? "core" : "ccf",
       collapsed: !!s.collapsed
     };

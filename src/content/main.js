@@ -27,7 +27,7 @@
     rows: [],                                   // { raw, a: analysis, highlighted }
     selection: null,                            // matrix cell / row / column filter
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
-    filters: { onlyHighlighted: false, markName: false, yearStart: null, yearEnd: null },
+    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
     loadingAll: false,
     resolving: null,                            // { done, total }
     resolveMessage: ""
@@ -56,9 +56,8 @@
 
   // ---- decoration ---------------------------------------------------------
 
-  const ROLE_CHIP = { first: "chipFirst", cofirst: "chipCofirst", second: "chipSecond", last: "chipLast" };
-  const ROLE_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
-  // grey ramp: dark = top tier. CCF and CORE share shades so "A" looks the same in both.
+  const ROLE_NAME = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast" };   // "First author", …
+  // outline ramp: strongest = top tier. CCF and CORE share shades so "A" looks the same in both.
   const SHADE = { ccf: { A: 1, B: 3, C: 4 }, core: { "A*": 1, A: 2, B: 3, C: 4 } };
   const RULE_TEXT = { name: "ruleName", acronym: "ruleAcronym", prefix: "rulePrefix" };
 
@@ -70,7 +69,8 @@
       t(RULE_TEXT[info.rule] || "ruleName"),
       edition[kind] + " — " + t("tipToday")
     ];
-    return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
+    return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
+      h("span", { class: "rr-k" }, kind === "ccf" ? t("srcCcf") : t("srcCore")), " ", h("b", {}, tier));
   }
 
   // Chip text: the kind in the interface language. A named category keeps the name it was given.
@@ -82,7 +82,6 @@
 
   // A paper's standing: an award from the bundled list, or what the author wrote ("Oral", "Best Paper Award"…).
   function markChip(mark) {
-    const star = mark.group === "award" ? "★ " : "";
     const name = markLabel(mark);
     const lines = [name];
     if (mark.source === "list") {
@@ -90,32 +89,36 @@
       if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
     } else lines.push(t("tipMarkAuthor", [mark.text]));
     return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
-      title: lines.join("\n") }, star + name);
+      title: lines.join("\n") }, name);
   }
 
-  function roleChip(a) {
+  // "First author · position 1 of 8": the tooltip on the marked name (or on the author line when no name is marked).
+  function roleTip(a) {
     const pos = a.index + 1;
     const total = a.authorCount + (a.truncated ? "+" : "");
-    return h("span", { class: "rr-chip rr-chip-role rr-chip-role-" + a.role, "data-role": a.role,
-      title: `${t(ROLE_NAME[a.role])} · ${t("tipPosition", [String(pos), String(total)])}${a.fromDetail ? " · " + t("tipFromPage") : ""}` }, t(ROLE_CHIP[a.role]));
+    return `${t(ROLE_NAME[a.role])} · ${t("tipPosition", [String(pos), String(total)])}${a.fromDetail ? " · " + t("tipFromPage") : ""}`;
   }
 
-  // Wrap the owner's name in the authors line (Range-free: rebuild the text node).
+  // Wrap the owner's name in the authors line (Range-free: rebuild the text node) and carry the role in a tooltip.
   function markName(row) {
     const el = row.raw.authorsEl;
     if (!el) return;
     if (el.dataset.rrOrig !== undefined) { el.textContent = el.dataset.rrOrig; delete el.dataset.rrOrig; }
-    if (!state.filters.markName || !row.highlighted || row.a.fromDetail) return;
+    if (el.dataset.rrTip !== undefined) { el.removeAttribute("title"); delete el.dataset.rrTip; }
+    if (!row.highlighted) return;
+    const tip = roleTip(row.a);
+    const tipOnLine = () => { el.title = tip; el.dataset.rrTip = ""; };
+    if (!settings.markName || row.a.fromDetail) return tipOnLine();
     const text = el.textContent;
     let cursor = 0, pos = -1;
     row.a.tokens.forEach((tok, i) => {
       const at = text.indexOf(tok.name, cursor);
       if (at >= 0) { if (i === row.a.index) pos = at; cursor = at + tok.name.length; }
     });
-    if (pos < 0) return;
+    if (pos < 0) return tipOnLine();
     const nameLen = row.a.tokens[row.a.index].name.length;
     el.dataset.rrOrig = text;
-    el.replaceChildren(text.slice(0, pos), h("span", { class: "rr-name rr-name-" + row.a.role }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
+    el.replaceChildren(text.slice(0, pos), h("span", { class: "rr-name rr-name-" + row.a.role, title: tip }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
   }
 
   function decorate(row) {
@@ -129,7 +132,6 @@
       if (settings.badges.ccf && a.venue.ccf) chips.push(tierChip("ccf", a.venue.ccf));
       if (settings.badges.core && a.venue.core) chips.push(tierChip("core", a.venue.core));
       if (settings.badges.marks) for (const m of a.marks) chips.push(markChip(m));
-      if (row.highlighted) chips.push(roleChip(a));
       if (chips.length) venueEl.append(h("span", { class: "rr-chips" }, chips));
     }
     markName(row);
@@ -219,7 +221,7 @@
     onBadge(key, on) { settings.badges[key] = on; if (key === "marks" && !on) state.markGroup = null; persist(); refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
-    onMarkName(on) { state.filters.markName = on; refresh(); },
+    onMarkName(on) { settings.markName = on; persist(); refresh(); },
     onYear(start, end) {
       state.filters.yearStart = start === "" ? null : parseInt(start, 10);
       state.filters.yearEnd = end === "" ? null : parseInt(end, 10);

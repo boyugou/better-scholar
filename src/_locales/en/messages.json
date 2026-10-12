@@ -284,18 +284,6 @@
       }
     }
   },
-  "chipFirst": {
-    "message": "1st"
-  },
-  "chipCofirst": {
-    "message": "Co-1st"
-  },
-  "chipSecond": {
-    "message": "2nd"
-  },
-  "chipLast": {
-    "message": "Last"
-  },
   "ruleName": {
     "message": "Matched by name"
   },

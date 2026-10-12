@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- **Quieter rows.** The *1st / 2nd / Co-1st / Last* chip is gone: the row tint and the marked name already say
+  it, and hovering the name gives "First author · position 1 of 8". The owner's name is now marked by default
+  and the choice is remembered. CCF / CORE chips are white pills with an indigo outline that fades with the
+  tier (no more black blocks). The question-mark cursor over chips is gone.
+- **Awards and talks, one visual language.** Awards are gold (an honorable mention silver, a finalist
+  dashed), talk levels slate, all with the same small icons. In the panel they are a section of their own: one row
+  per group with its count, the same icons, click a row to list just those papers.
+
 ## 2.1.0 — 2026-10-11
 
 - **Renamed** to *Scholar Author Roles & Venue Ranks* (was "Byline", earlier "Scholar Lens"): a plain

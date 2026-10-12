@@ -272,18 +272,6 @@
       }
     }
   },
-  "chipFirst": {
-    "message": "一作"
-  },
-  "chipCofirst": {
-    "message": "共一"
-  },
-  "chipSecond": {
-    "message": "二作"
-  },
-  "chipLast": {
-    "message": "末位"
-  },
   "ruleName": {
     "message": "按名称匹配"
   },

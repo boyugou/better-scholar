@@ -24,8 +24,12 @@
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
     const actions = h("div", { class: "rr-actions" });
-    const marksBox = h("div", { class: "rr-marks", "data-rr": "marks", title: t("marksHint") });
-    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions, marksBox);
+    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions);
+
+    // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies
+    const marksRows = h("div", { class: "rr-markrows" });
+    const marksSec = h("div", { class: "rr-sec rr-marks", "data-rr": "marks", hidden: true },
+      h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", title: t("marksHint") }, t("marksTitle"))), marksRows);
 
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" });
 
@@ -69,7 +73,9 @@
     const noteBox = h("div", { class: "rr-faint", "data-rr": "note" });
     const footSec = h("div", { class: "rr-sec" }, variantBox, noteBox);
 
-    const body = h("div", { class: "rr-body" }, summarySec, optionsSec, metricsSec, coverSec, footSec);
+    const body = h("div", { class: "rr-body" },
+      h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec),
+      h("div", { class: "rr-col rr-col-b" }, optionsSec, metricsSec, coverSec, footSec));
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle") }, head, body);
 
     // ---- renderers -------------------------------------------------------
@@ -117,14 +123,14 @@
       actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"));
     }
 
-    // Pills for the award / talk groups that occur on the loaded papers; click one to list just those.
+    // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {
       const counts = m.marks || {};
       const groups = B.marks.GROUPS.filter((g) => counts[g]);
-      marksBox.replaceChildren(...(groups.length ? [h("span", { class: "rr-marks-label" }, t("marksTitle"))] : []),
-        ...groups.map((g) => h("button", { class: "rr-pill rr-pill-" + g, type: "button", "data-mark-group": g,
-          "aria-pressed": String(m.markGroup === g), onClick: () => cb.onMarkGroup(g) },
-          (g === "award" ? "★ " : "") + t(MARK_KEY[g]) + " ", h("b", {}, String(counts[g])))));
+      marksSec.hidden = !groups.length;
+      marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g,
+        "aria-pressed": String(m.markGroup === g), onClick: () => cb.onMarkGroup(g) },
+        h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 
     function renderCoverage(m) {
@@ -168,7 +174,7 @@
       for (const [role, cbx] of Object.entries(roleChecks)) cbx.checked = !!m.settings.roles[role];
       for (const [key, cbx] of Object.entries(badgeChecks)) cbx.checked = !!m.settings.badges[key];
       onlyCb.checked = !!m.filters.onlyHighlighted;
-      nameCb.checked = !!m.filters.markName;
+      nameCb.checked = !!m.settings.markName;
       const sig = m.years.join(",");
       if (yearStart.dataset.sig !== sig) {
         const opts = (label) => [h("option", { value: "" }, label), ...m.years.map((y) => h("option", { value: String(y) }, String(y)))];

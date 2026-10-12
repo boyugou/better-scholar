@@ -16,28 +16,42 @@ tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 #f9ab00 !important;
 tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 #1e8e3e !important; }
 tr.rr-hide { display: none !important; }
 
-/* ---- chips on the venue line ---------------------------------------------- */
-.rr-chips { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: 6px; vertical-align: middle; }
+/* ---- chips on the venue line ----------------------------------------------------
+   One quiet family. Rank chips are white pills with an indigo outline that fades with the tier
+   (CCF A and CORE A* darkest), so they read on every role tint without any heavy block. What a paper
+   won or was invited to present is filled instead: gold for an award, silver for an honorable mention,
+   slate for a talk level, a dashed outline for a finalist. A chip is shorter than the text line, so a
+   row with chips is never taller than one without. */
+.rr-chips { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-left: 6px; vertical-align: middle; }
 .rr-chip {
-  display: inline-flex; align-items: center; height: 17px; padding: 0 6px; border-radius: 4px;
-  font: 700 10.5px/1 Arial, sans-serif; letter-spacing: .02em; white-space: nowrap; cursor: help;
+  display: inline-flex; align-items: center; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 6px;
+  border: 1px solid transparent; border-radius: 9px;
+  font: 600 10.5px/1 Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
-/* Tier chips are a grey ramp (dark = top tier) so they never compete with the role hues.
-   CCF A and CORE A* share the darkest shade, B the middle one, C the lightest. */
-.rr-chip-t1 { background: #202124; color: #fff; }
-.rr-chip-t2 { background: #3c4043; color: #fff; }
-.rr-chip-t3 { background: #6f747a; color: #fff; }
-.rr-chip-t4 { background: #e8eaed; color: #3c4043; }
-/* What the author wrote about the paper's standing: awards get a warm outline and a star, talk
-   levels (Oral / Spotlight / Highlight) a plain outline, a finalist a dashed one. */
-.rr-chip-mark { background: #fff; color: #3c4043; border: 1px solid #bdc1c6; }
-.rr-chip-mark-award { background: #fff8e1; color: #8a5a00; border-color: #f0b400; }
-.rr-chip-mark-finalist { color: #5f6368; border: 1px dashed #bdc1c6; }
-.rr-chip-role { font-weight: 700; border: 1px solid transparent; }
-.rr-chip-role-first   { background: rgba(26,115,232,.12); color: #174ea6; border-color: rgba(26,115,232,.35); }
-.rr-chip-role-cofirst { background: rgba(161,66,244,.12); color: #7b1fa2; border-color: rgba(161,66,244,.35); }
-.rr-chip-role-second  { background: rgba(249,171,0,.16);  color: #8a5a00; border-color: rgba(249,171,0,.45); }
-.rr-chip-role-last    { background: rgba(30,142,62,.12);  color: #137333; border-color: rgba(30,142,62,.35); }
+.rr-chip .rr-k { font-weight: 500; opacity: .78; }
+.rr-chip b { font-weight: 700; }
+.rr-chip-t1 { background: #fff; color: #3345a8; border-color: #9aa6e0; }
+.rr-chip-t2 { background: #fff; color: #5361bd; border-color: #c1c8ef; }
+.rr-chip-t3 { background: #fff; color: #69708a; border-color: #d3d7e3; }
+.rr-chip-t4 { background: #fff; color: #8c92a3; border-color: #e2e5ec; }
+
+/* awards and talk levels (the panel's Awards & talks rows use the same icons) */
+.rr-chip-mark, #rr-panel .rr-mi {
+  --rr-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 .7l1.35 2.95 3.2.35-2.4 2.15.68 3.15L5 7.75 2.17 9.3l.68-3.15L.45 4l3.2-.35z'/%3E%3C/svg%3E");
+  --rr-star-o: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1.3l1.15 2.5 2.75.3-2.05 1.85.58 2.7L5 7.2 2.57 8.65l.58-2.7L1.1 4.1l2.75-.3z' fill='none' stroke='black' stroke-width='.9' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.rr-chip-mark { background: #eef2f7; color: #3a4a5f; border-color: #d3dbe6; }
+.rr-chip-mark::before, #rr-panel .rr-mi::before { content: ""; display: block; flex: none; width: 9px; height: 9px; background: currentColor; }
+.rr-chip-mark-oral::before, .rr-chip-mark-spotlight::before, .rr-chip-mark-highlight::before, #rr-panel .rr-mi-talk::before { width: 5px; height: 5px; border-radius: 50%; opacity: .7; }
+.rr-chip-mark-award::before, .rr-chip-mark-finalist::before, #rr-panel .rr-mi-award::before {
+  -webkit-mask: var(--rr-star) center / contain no-repeat; mask: var(--rr-star) center / contain no-repeat;
+}
+.rr-chip-mark-award { background: #fff4cf; color: #6b4a00; border-color: #efc84a; }
+.rr-chip-mark-award::before, #rr-panel .rr-mi-award::before { background: #d29a00; }
+.rr-chip-mark-award[data-mark="runner-up"] { background: #f2f4f7; color: #4a5361; border-color: #cdd3dc; }
+.rr-chip-mark-award[data-mark="runner-up"]::before { background: #98a2b3; }
+.rr-chip-mark-finalist { background: transparent; color: #7a6a3a; border: 1px dashed #d8c070; }
+.rr-chip-mark-finalist::before { -webkit-mask-image: var(--rr-star-o); mask-image: var(--rr-star-o); }
 
 .rr-name { font-weight: 700; border-radius: 3px; padding: 0 3px; }
 .rr-name-first   { background: rgba(26,115,232,.12); color: #174ea6; }
@@ -130,20 +144,20 @@ tr.rr-hide { display: none !important; }
 #rr-panel .rr-variant button{ color: var(--rr-faint); font-size: 14px; line-height: 1; padding: 0 3px; }
 #rr-panel .rr-add{ display: flex; gap: 6px; }
 
-/* award / talk-level pills under the matrix */
-#rr-panel .rr-marks { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
-#rr-panel .rr-marks:empty { display: none; }
-#rr-panel .rr-marks-label { color: var(--rr-muted); font-size: 11.5px; font-weight: 700; margin-right: 2px; }
-#rr-panel .rr-pill { display: inline-flex; align-items: center; gap: 3px; padding: 1px 8px; border: 1px solid #dadce0; border-radius: 10px; background: #fff; color: var(--rr-text); font-size: 11.5px; }
-#rr-panel .rr-pill:hover { background: #f8f9fa; }
-#rr-panel .rr-pill-award { background: #fff8e1; border-color: #f0b400; color: #8a5a00; }
-#rr-panel .rr-pill[aria-pressed="true"] { background: #e8f0fe; border-color: var(--rr-accent); box-shadow: inset 0 0 0 1px var(--rr-accent); color: var(--rr-text); }
+/* Awards & talks: one row per group, same icons as the chips; click a row to list just those papers */
+#rr-panel .rr-mi { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; flex: none; color: #3a4a5f; }
+#rr-panel .rr-markrows { display: grid; gap: 1px; margin: 0 -6px; }
+#rr-panel .rr-markrow { display: flex; align-items: center; gap: 8px; padding: 3px 6px; border-radius: 4px; }
+#rr-panel .rr-markrow > .rr-lab { flex: 1; text-align: left; }
+#rr-panel .rr-markrow > b { font-variant-numeric: tabular-nums; }
+#rr-panel .rr-markrow:hover { background: #f1f3f4; }
+#rr-panel .rr-markrow[aria-pressed="true"] { background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
+#rr-panel [hidden] { display: none !important; }
 
-/* Narrow window: the panel sits above the list at full width — spread it over two columns. */
+/* Narrow window: the panel sits above the list at full width, in two columns. */
 #rr-panel.rr-wide .rr-body { display: grid; grid-template-columns: minmax(300px, 1.05fr) minmax(260px, 1fr); }
-#rr-panel.rr-wide .rr-sec { border-bottom: 1px solid var(--rr-line); }
-#rr-panel.rr-wide .rr-summary { grid-row: span 3; border-right: 1px solid var(--rr-line); }
-@media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } }
+#rr-panel.rr-wide .rr-col-a { border-right: 1px solid var(--rr-line); }
+@media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } #rr-panel.rr-wide .rr-col-a { border-right: 0; } }
 
 /* role check-boxes: a tidy 2x2 grid instead of a ragged wrap */
 #rr-panel .rr-roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; margin: 3px 0 6px; }
