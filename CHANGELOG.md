@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.22 — 2026-10-12
+
+- The LICS Test-of-Time Award (2006–2026, 44 papers) from LICS's own archive page (`tot.mjs lics`); "C.-H." (C.-H. Luke Ong) is an initial. The bundled list has 5178 awards.
+
 ## 2.9.21 — 2026-10-12
 
 - The ICSE Most Influential Paper Award (1990–2025, 35 papers: Program Slicing, Statemate, Feedback-Directed Random Test Generation, On the Naturalness of Software, IccTA …) from the ICSE
