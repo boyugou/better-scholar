@@ -11,6 +11,8 @@
 - A dropped "h" in a spelled-out ordinal no longer hides a conference: `The Thirty-eight Conference on Neural
   Information Processing Systems` (also *Thirty-nine*; only after a tens word).
 - The end-to-end test brings the tab under test to the front (a background tab cannot be screenshotted on Linux CI).
+- With every author position switched off nothing is highlighted, so *Only highlighted* is cleared and hidden instead of
+  hiding every row.
 
 ## 2.2.0 — 2026-10-11
 

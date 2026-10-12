@@ -283,6 +283,7 @@
     if (state.markGroup && !prefs.marks[state.markGroup]) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
+    if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
   });
 

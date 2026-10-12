@@ -360,6 +360,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => !document.getElementById("rr-panel").hidden && !document.querySelector('[data-rr="filters"]').hidden && !document.querySelector('[data-rr="metrics"]').hidden);
     ok("panel switches hide the filters, the citation totals and the whole panel; a hidden filter stops filtering");
 
+    // -- S3b. with every role switched off nothing is highlighted: "Only highlighted" goes away instead of hiding every row
+    await page.check('input[data-act="only"]');
+    for (const role of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + role, false);
+    await eventually(page, () => document.querySelectorAll("tr[class*='rr-r-']").length === 0 && document.querySelector('[data-act="only"]').closest(".rr-row").hidden);
+    assert.equal(await visibleRows(page), 20, "no role highlighted: no row is hidden by the 'only highlighted' filter");
+    for (const role of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + role, true);
+    await eventually(page, () => document.querySelectorAll("tr[class*='rr-r-']").length > 0 && !document.querySelector('[data-act="only"]').closest(".rr-row").hidden);
+    assert.equal(await page.isChecked('input[data-act="only"]'), false);
+    ok("every role switched off: the 'Only highlighted' filter is cleared and hidden");
+
     // -- S4. the toolbar popup follows the settings
     await setPref(opts, "ranks.ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));

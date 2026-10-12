@@ -39,8 +39,9 @@
     const onlyCb = h("input", { type: "checkbox", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = h("select", { "data-act": "year-start", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
     const yearEnd = h("select", { "data-act": "year-end", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
+    const onlyRow = h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")));
     const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters" },
-      h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted"))),
+      onlyRow,
       h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart, "–", yearEnd));
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics" });
@@ -191,6 +192,7 @@
       collapseBtn.title = t(m.ui.collapsed ? "expand" : "collapse");
       collapseBtn.setAttribute("aria-expanded", String(!m.ui.collapsed));
       filtersSec.hidden = !m.prefs.panel.filters;
+      onlyRow.hidden = !Object.values(m.prefs.roles).some(Boolean);          // with no role highlighted there is nothing to filter to
       metricsSec.hidden = !m.prefs.panel.metrics;
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
       syncFilters(m); renderMetrics(m); renderVariants(m);
