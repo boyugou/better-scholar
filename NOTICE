@@ -16,5 +16,8 @@ for reference only and remains the property of its owners:
   https://www.core.edu.au/ . If CORE objects, the CORE data can be removed without
   affecting the rest of the extension.
 
+- Paper award entries (data/awards-2026.json) are facts read from official pages, each cited. The ACL-family
+  entries are metadata of the ACL Anthology (https://aclanthology.org), licensed CC BY 4.0.
+
 "Google" and "Google Scholar" are trademarks of Google LLC. This extension is an independent
 project and is not affiliated with, endorsed by, or sponsored by Google or CCF.

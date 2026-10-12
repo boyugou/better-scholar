@@ -78,6 +78,32 @@ confirmed when this was added: the data is included with attribution for referen
 covered by this project's licence. If CORE objects, remove `data/core-2026.json` and the CORE
 badge — the rest of the extension does not depend on it.
 
+## Paper awards — `awards-2026.json`
+
+Award-winning papers, so a paper can carry a ★ chip even when its author did not write the award on
+Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
+
+| | |
+|---|---|
+| Entries | 271: ACL 2019–2026 (8 yrs); CoNLL 2026–2026 (1 yrs); EACL 2021–2024 (3 yrs); EMNLP 2019–2025 (4 yrs); NAACL 2019–2022 (3 yrs) |
+| Kinds | `best`, `outstanding`, `distinguished`, `runner-up`, `student`, `category` (a named category such as *Best Resource Paper* or *Best Theme Paper*, shown under its printed name), `tot` (test of time) |
+| Source | **Official pages only.** Each entry has `source` (the page it was read from) and `evidence` (a quoted snippet that contains the title). Aggregator lists and Wikipedia are never a source |
+| ACL family | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0): the `<award name="…"/>` element on each paper, read by `scripts/awards/anthology.mjs`. Only years and venues the Anthology records are present |
+
+Matching in the extension is deliberately strict (`src/lib/awards.js`): the full title must be identical
+(ignoring case, accents and punctuation) **and** the award's first author must be among the paper's authors.
+Tooltips say whether a mark comes from the list ("On the award list: …") or from the author's own words.
+
+```bash
+node scripts/awards/anthology.mjs --out raw/anthology.json          # fetches the Anthology XML (or --dir cache/)
+node scripts/awards/merge-raw.mjs raw/anthology.json --write       # validate (sources, evidence, kinds) and merge
+npm run data                                                       # rebuilds src/data/awards.js
+```
+
+`merge-raw.mjs` also takes `--cross-check list.json` to compare against an independent list (for example
+parsed from jeffhuang.com/best_paper_awards — it states no licence and does not separate award levels, so it
+is a cross-check and never a source). All 21 top awards that list has for ACL agree with this file.
+
 ## Curated aliases
 
 `src/data/aliases.js` (not generated) lists names that Scholar prints but the official titles do not
