@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.8 — 2026-10-12
+
+- The ICDM best paper awards 2001–2025 (best, runner-up, student, application and category papers; 61 papers) from the series' own awards page (`tot.mjs icdm`). The bundled list has 6092 awards.
+
 ## 2.10.7 — 2026-10-12
 
 - DAC's Most Influential Paper awards 2023–2026 (7 papers: Chaff, Chisel, Symbolic Model Checking Using SAT Procedures Instead of BDDs, …) from DAC's own page (`tot.mjs dac`), and UbiComp's IMWUT Distinguished Paper Awards 2024

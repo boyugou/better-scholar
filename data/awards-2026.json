@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6031
+  "count": 6092
  },
  "entries": [
   {
@@ -57078,6 +57078,976 @@
    "track": "main",
    "source": "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
    "evidence": "ICDE 2026 Influential Paper Award: Manas Joglekar; Hector Garcia-Molina; Aditya Parameswaran “Interactive Data Exploration with Smart Drill-Down”"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Tight Upper Bound on the Number of Candidate Patterns",
+   "authors": [
+    "Floris Geerts",
+    "Bart Goethals",
+    "Jan Van den Bussche"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2001 Best Paper Award: A Tight Upper Bound on the Number of Candidate Patterns — Floris Geerts, Bart Goethals, and Jan Van den Bussche"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2001,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Discovering Similar Patterns for Characterizing Time Series in a Medical Domain",
+   "authors": [
+    "Fernando Alonso",
+    "Juan P. Caraca-Valente",
+    "Loic Martinez",
+    "Cesar Montes"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2001 Best Application Paper Award: Discovering Similar Patterns for Characterizing Time Series in a Medical Domain — Fernando Alonso, Juan P. Caraca-Valente, Loic Martinez, and Cesar Montes"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2002,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Convex Hull Ensemble Machine",
+   "authors": [
+    "Yongdai Kim"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2002 Best Paper Award: Convex Hull Ensemble Machine — Yongdai Kim"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2002,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Efficient Discovery of Common Substructures in Macromolecules",
+   "authors": [
+    "Srinivasan Parthasarathy",
+    "Matt Coatney"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2002 Best Application Paper Award: Efficient Discovery of Common Substructures in Macromolecules — Srinivasan Parthasarathy and Matt Coatney"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the Privacy Preserving Properties of Random Data Perturbation Techniques",
+   "authors": [
+    "Hillol Kargupta",
+    "Souptik Datta",
+    "Qi Wang",
+    "Krishnamoorthy Sivakumar"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2003 Best Paper Award: On the Privacy Preserving Properties of Random Data Perturbation Techniques — Hillol Kargupta, Souptik Datta, Qi Wang, and Krishnamoorthy Sivakumar"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Non-Redundant Data Clustering",
+   "authors": [
+    "David Gondek",
+    "Thomas Hofmann"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2004 Best Paper Award: Non-Redundant Data Clustering — David Gondek and Thomas Hofmann"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mining Minimal Distinguishing Subsequence Patterns with Gap Constraints",
+   "authors": [
+    "Xiaonan Ji",
+    "James Bailey",
+    "Guozhu Dong"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2005 Best Paper Award: Mining Minimal Distinguishing Subsequence Patterns with Gap Constraints — Xiaonan Ji, James Bailey, and Guozhu Dong"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Fast Random Walk with Restart and Its Applications",
+   "authors": [
+    "Hanghang Tong",
+    "Christos Faloutsos",
+    "Jia-Yu Pan"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2006 Best Research Paper: Fast Random Walk with Restart and Its Applications — Hanghang Tong, Christos Faloutsos, and Jia-Yu Pan"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2006,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Forecasting Skewed Biased Stochastic Ozone Days: Analyses and Solutions",
+   "authors": [
+    "Kun Zhang",
+    "Wei Fan",
+    "Xiaojing Yuan",
+    "Ian Davidson",
+    "Xiangshang Li"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2006 Best Application Paper: Forecasting Skewed Biased Stochastic Ozone Days: Analyses and Solutions — Kun Zhang, Wei Fan, Xiaojing Yuan, Ian Davidson, and Xiangshang Li"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper (Theoretical/Algorithms)",
+   "title": "Disk Aware Discord Discovery: Finding Unusual Time Series in Terabyte Sized Datasets",
+   "authors": [
+    "Dragomir Yankov",
+    "Eamonn Keogh",
+    "Umaa Rebbapragada"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2007 Best Paper (Theoretical/Algorithms): Disk Aware Discord Discovery: Finding Unusual Time Series in Terabyte Sized Datasets — Dragomir Yankov, Eamonn Keogh, and Umaa Rebbapragada"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper (Applications)",
+   "title": "Rule Cubes for Causal Investigations",
+   "authors": [
+    "Axel Blumenstock",
+    "Franz Schweiggert",
+    "Markus Mueller"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2007 Best Paper (Applications): Rule Cubes for Causal Investigations — Axel Blumenstock, Franz Schweiggert, and Markus Mueller"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2007,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Theoretical/Algorithms)",
+   "title": "GMDA: General Averaged Divergence Analysis",
+   "authors": [
+    "Dacheng Tao",
+    "Xuelong Li",
+    "Xindong Wu",
+    "Stephen Maybank"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2007 Best Paper Runner-up (Theoretical/Algorithms): GMDA: General Averaged Divergence Analysis — Dacheng Tao, Xuelong Li, Xindong Wu, and Stephen Maybank"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2007,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applications)",
+   "title": "Improving Text Classification by Using Encyclopedia Knowledge",
+   "authors": [
+    "Pu Wang",
+    "Jian Hu",
+    "Hua-Jun Zeng",
+    "Lijun Chen",
+    "Zheng Chen"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2007 Best Paper Runner-up (Applications): Improving Text Classification by Using Encyclopedia Knowledge — Pu Wang, Jian Hu, Hua-Jun Zeng, Lijun Chen, and Zheng Chen"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Student Paper)",
+   "title": "Inverse Time Dependency in Convex Regularized Learning",
+   "authors": [
+    "Zeyuan Allen Zhu",
+    "Weizhu Chen",
+    "Chenguang Zhu",
+    "Gang Wang",
+    "Haixun Wang",
+    "Zheng Chen"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2009 Best Paper Runner-up (Student Paper): Inverse Time Dependency in Convex Regularized Learning — Zeyuan Allen Zhu, Weizhu Chen, Chenguang Zhu, Gang Wang, Haixun Wang, and Zheng Chen,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Research Paper Award",
+   "title": "Finding Local Anomalies in Very High Dimensional Space",
+   "authors": [
+    "Timothy de Vries",
+    "Sanjay Chawla",
+    "Michael Houle"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2010 Best Research Paper Award: Finding Local Anomalies in Very High Dimensional Space — Timothy de Vries, Sanjay Chawla, and Michael Houle,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2010,
+   "award": "category",
+   "awardLabel": "Best Application Paper Award",
+   "title": "Modeling Information Diffusion in Social Media",
+   "authors": [
+    "Jaewon Yang",
+    "Jure Leskovec"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2010 Best Application Paper Award: Modeling Information Diffusion in Social Media — Jaewon Yang and Jure Leskovec,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "A Conscience On-line Learning Approach for Kernel-Based Clustering",
+   "authors": [
+    "Chang-Dong Wang",
+    "Jian-Huang Lai",
+    "Jun-Yong Zhu"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2010 Honorable Mention: A Conscience On-line Learning Approach for Kernel-Based Clustering — Chang-Dong Wang, Jian-Huang Lai, and Jun-Yong Zhu,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Learning a Bi-Stochastic Data Similarity Matrix",
+   "authors": [
+    "Fei Wang",
+    "Ping Li",
+    "Christian Konig"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2010 Honorable Mention: Learning a Bi-Stochastic Data Similarity Matrix — Fei Wang, Ping Li, and Christian Konig,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Research Paper Award",
+   "title": "Personalized Travel Package Recommendation",
+   "authors": [
+    "Qi Liu",
+    "Yong Ge",
+    "Zhongmou Li",
+    "EnHong Chen",
+    "Hui Xiong"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2011 Best Research Paper Award: Personalized Travel Package Recommendation — Qi Liu, Yong Ge, Zhongmou Li, EnHong Chen, and Hui Xiong"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Structured Feature Selection and Task Relationship Inference for Multi-Task Learning",
+   "authors": [
+    "Hongliang Fei",
+    "Jun Huan"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2011 Best Student Paper Award: Structured Feature Selection and Task Relationship Inference for Multi-Task Learning — Hongliang Fei and Jun Huan"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up Award",
+   "title": "Active Evaluation of Classifiers on Large Datasets",
+   "authors": [
+    "Namit Katariya",
+    "Arun Iyer",
+    "Sunita Sarawagi"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2012 Best Paper Runner-Up Award: Active Evaluation of Classifiers on Large Datasets — Namit Katariya, Arun Iyer, and Sunita Sarawagi"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Sparse Group Selection on Fused Lasso Components for Identifying Group-specific DNA Copy Number Variations",
+   "authors": [
+    "Ze Tian",
+    "Huanan Zhang",
+    "Rui Kuang"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2012 Best Student Paper Award: Sparse Group Selection on Fused Lasso Components for Identifying Group-specific DNA Copy Number Variations — Ze Tian, Huanan Zhang, and Rui Kuang"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reconstructing Individual Mobility from Smart Card Transactions: A Space Alignment Approach",
+   "authors": [
+    "Nicholas Jing Yuan",
+    "Yingzi Wang",
+    "Fuzheng Zhang",
+    "Xing Xie",
+    "Guang-Zhong Sun"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2013 Best Paper Award: Reconstructing Individual Mobility from Smart Card Transactions: A Space Alignment Approach — Nicholas Jing Yuan, Yingzi Wang, Fuzheng Zhang, Xing Xie, and Guang-Zhong Sun,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-Up",
+   "title": "Distributed Column Subset Selection on MapReduce",
+   "authors": [
+    "Ahmed Farahat",
+    "Ahmed Elgohary",
+    "Ali Ghodsi",
+    "Mohamed Kamel"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2013 Best Paper Award Runner-Up: Distributed Column Subset Selection on MapReduce — Ahmed Farahat, Ahmed Elgohary, Ali Ghodsi, and Mohamed Kamel,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Divide-and-Conquer Anchoring for Near-Separable Nonnegative Matrix",
+   "authors": [
+    "Tianyi Zhou",
+    "Wei Bian",
+    "Dacheng Tao"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2013 Best Student Paper Award: Divide-and-Conquer Anchoring for Near-Separable Nonnegative Matrix — Tianyi Zhou, Wei Bian, and Dacheng Tao,"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ternary Matrix Factorization",
+   "authors": [
+    "Sam Maurus",
+    "Claudia Plant"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2014 Best Paper Award: Ternary Matrix Factorization — Sam Maurus and Claudia Plant"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Factorized Similarity Learning in Networks",
+   "authors": [
+    "Shiyu Chang",
+    "Guo-Jun Qi",
+    "Charu Aggarwal",
+    "Jiayu Zhou",
+    "Meng Wang",
+    "Thomas Huang"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2014 Best Student Paper Award: Factorized Similarity Learning in Networks — Shiyu Chang, Guo-Jun Qi, Charu Aggarwal, Jiayu Zhou, Meng Wang, and Thomas Huang"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Diamond Sampling for Approximate Maximum All-pairs Dot-product (MAD) Search",
+   "authors": [
+    "Grey Ballard",
+    "Seshadhri Comandur",
+    "Tamara Kolda",
+    "Ali Pinar"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2015 Best Paper Award: Diamond Sampling for Approximate Maximum All-pairs Dot-product (MAD) Search — Grey Ballard, Seshadhri Comandur, Tamara Kolda, and Ali Pinar"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "From Micro to Macro: Uncovering and Predicting Information Cascading Process with Behavioral Dynamics",
+   "authors": [
+    "Linyun Yu",
+    "Peng Cui",
+    "Fei Wang",
+    "Chaoming Song",
+    "Shiqiang Yang"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2015 Best Student Paper Award: From Micro to Macro: Uncovering and Predicting Information Cascading Process with Behavioral Dynamics — Linyun Yu, Peng Cui, Fei Wang, Chaoming Song, and Shiqiang Yang"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "KNN Classifier with Self Adjusting Memory for Heterogeneous Concept Drift",
+   "authors": [
+    "Viktor Losing",
+    "Barbara Hammer",
+    "Heiko Wersing"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2016 Best Paper Award: KNN Classifier with Self Adjusting Memory for Heterogeneous Concept Drift — Viktor Losing, Barbara Hammer, and Heiko Wersing"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-Up",
+   "title": "Model Accuracy and Runtime Tradeoff in Distributed Deep Learning: A Systematic Study",
+   "authors": [
+    "Wei Zhang",
+    "Suyog Gupta",
+    "Fei Wang"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2016 Best Paper Award Runner-Up: Model Accuracy and Runtime Tradeoff in Distributed Deep Learning: A Systematic Study — Wei Zhang, Suyog Gupta, and Fei Wang"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Boosted L-EnsNMF: Local Topic Discovery via Ensemble of Nonnegative Matrix Factorization",
+   "authors": [
+    "Sangho Suh",
+    "Jaegul Choo",
+    "Joonseok Lee",
+    "Chandan Reddy"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2016 Best Student Paper Award: Boosted L-EnsNMF: Local Topic Discovery via Ensemble of Nonnegative Matrix Factorization — Sangho Suh, Jaegul Choo, Joonseok Lee, and Chandan Reddy"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TensorCast: Forecasting with Context using Coupled Tensors",
+   "authors": [
+    "Miguel Ramos de Araujo",
+    "Pedro Manuel Pinto Ribeiro",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2017 Best Paper Award: TensorCast: Forecasting with Context using Coupled Tensors — Miguel Ramos de Araujo, Pedro Manuel Pinto Ribeiro, and Christos Faloutsos"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Time Series Chains: A New Primitive for Time Series Data Mining",
+   "authors": [
+    "Yan Zhu",
+    "Makoto Imamura",
+    "Daniel Nikovski",
+    "Eamonn Keogh"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2017 Best Student Paper Award: Time Series Chains: A New Primitive for Time Series Data Mining — Yan Zhu, Makoto Imamura, Daniel Nikovski, and Eamonn Keogh"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Discovering Reliable Dependencies from Data: Hardness and Improved Algorithms",
+   "authors": [
+    "Panagiotis Mandros",
+    "Mario Boley",
+    "Jilles Vreeken"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2018 Best Paper Award: Discovering Reliable Dependencies from Data: Hardness and Improved Algorithms — Panagiotis Mandros, Mario Boley, and Jilles Vreeken"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Award Runner-Up",
+   "title": "ProSecCo: Progressive Sequence Mining with Convergence Guarantees",
+   "authors": [
+    "Sacha Servan-Schreiber",
+    "Matteo Riondato",
+    "Emanuel Zgraggen"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2018 Best Student Paper Award Runner-Up: ProSecCo: Progressive Sequence Mining with Convergence Guarantees — Sacha Servan-Schreiber, Matteo Riondato, and Emanuel Zgraggen"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Fast Single-Class Classification and the Principle of Logit Separation",
+   "authors": [
+    "Gil Keren",
+    "Sivan Sabato",
+    "Bjorn Schuller"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2018 Best Student Paper Award: Fast Single-Class Classification and the Principle of Logit Separation — Gil Keren, Sivan Sabato, and Bjorn Schuller"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Multi-attributed Graph Translation with Node-Edge Co-evolution",
+   "authors": [
+    "Xiaojie Guo",
+    "Liang Zhao",
+    "Cameron Nowzari",
+    "Setareh Rafatirad",
+    "Houman Homayoun",
+    "Sai Manoj Pudukotai Dinakarrao"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2019 Best Paper Award: Deep Multi-attributed Graph Translation with Node-Edge Co-evolution — Xiaojie Guo, Liang Zhao, Cameron Nowzari, Setareh Rafatirad, Houman Homayoun, and Sai Manoj Pudukotai Dinakarrao"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Distribution of Node Embeddings as Multiresolution Features for Graphs",
+   "authors": [
+    "Mark Heimann",
+    "Tara Safavi",
+    "Danai Koutra"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2019 Best Student Paper Award: Distribution of Node Embeddings as Multiresolution Features for Graphs — Mark Heimann, Tara Safavi, and Danai Koutra"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Co-Embedding Network Nodes and Hierarchical Labels with Taxonomy Based Generative Adversarial Networks",
+   "authors": [
+    "Carl Yang",
+    "Jieyu Zhang",
+    "Jiawei Han"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2020 Best Paper Award: Co-Embedding Network Nodes and Hierarchical Labels with Taxonomy Based Generative Adversarial Networks — Carl Yang, Jieyu Zhang, and Jiawei Han"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "Sub-graph Contrast for Scalable Self-Supervised Graph Representation Learning",
+   "authors": [
+    "Yizhu Jiao",
+    "Yun Xiong",
+    "Jiawei Zhang",
+    "Yao Zhang",
+    "Tianqi Zhang",
+    "Yangyong Zhu"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2020 Best Student Paper Runner-Up: Sub-graph Contrast for Scalable Self-Supervised Graph Representation Learning — Yizhu Jiao, Yun Xiong, Jiawei Zhang, Yao Zhang, Tianqi Zhang, and Yangyong Zhu"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "OWGL: Open-World Graph Learning",
+   "authors": [
+    "Man Wu",
+    "Shirui Pan",
+    "Xingquan Zhu"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2020 Best Student Paper Award: OWGL: Open-World Graph Learning — Man Wu, Shirui Pan, and Xingquan Zhu"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Statistically-Guided Deep Network Transformation and Moderation Framework for Data with Spatial Heterogeneity",
+   "authors": [
+    "Yiqun Xie",
+    "Erhu He",
+    "Xiaowei Jia",
+    "Han Bao",
+    "Xun Zhou",
+    "Rahul Ghosh",
+    "Praveen Ravirathinam"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2021 Best Paper Award: A Statistically-Guided Deep Network Transformation and Moderation Framework for Data with Spatial Heterogeneity — Yiqun Xie, Erhu He, Xiaowei Jia, Han Bao, Xun Zhou, Rahul Ghosh, and Praveen Ravirathinam"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "AS-GCN: Adaptive Semantic Architecture of Graph Convolutional Networks for Text-Rich Networks",
+   "authors": [
+    "Zhizhi Yu",
+    "Di Jin",
+    "Ziyang Liu",
+    "Dongxiao He",
+    "Xiao Wang",
+    "Hanghang Tong",
+    "Jiawei Han"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2021 Best Student Paper Runner-Up: AS-GCN: Adaptive Semantic Architecture of Graph Convolutional Networks for Text-Rich Networks — Zhizhi Yu, Di Jin, Ziyang Liu, Dongxiao He, Xiao Wang, Hanghang Tong, and Jiawei Han"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-Up",
+   "title": "RIO:Task-agnostic dataset representation optimized for automatic algorithm selection",
+   "authors": [
+    "Noy Cohen-Shapira",
+    "Lior Rok"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2021 Best Paper Award Runner-Up: RIO:Task-agnostic dataset representation optimized for automatic algorithm selection — Noy Cohen-Shapira and Lior Rok"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "FRAUDRE: Fraud Detection Dual-Resistant to Graph Inconsistency and Imbalance",
+   "authors": [
+    "Ge Zhang",
+    "Jia Wu",
+    "Jian Yang",
+    "Amin Beheshti",
+    "Shan Xue",
+    "Chuan Zhou",
+    "Michael Sheng"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2021 Best Student Paper Award: FRAUDRE: Fraud Detection Dual-Resistant to Graph Inconsistency and Imbalance — Ge Zhang, Jia Wu, Jian Yang, Amin Beheshti, Shan Xue, Chuan Zhou, and Michael Sheng"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unsupervised Deep Subgraph Anomaly Detection",
+   "authors": [
+    "Zheng Zhang",
+    "Liang Zhao"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2022 Best Paper Award: Unsupervised Deep Subgraph Anomaly Detection — Zheng Zhang and Liang Zhao (Emory University, United States)"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-Up",
+   "title": "Extremely Fast Hoeffding Adaptive Tree",
+   "authors": [
+    "Chaitanya Manapragada",
+    "Monash University"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2022 Best Paper Award Runner-Up: Extremely Fast Hoeffding Adaptive Tree — Chaitanya Manapragada, Mahsa Salehi, and Geoffrey Webb (University of Melbourne; Monash University, Australia)"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "TD3 with Reverse KL Regularizer for Offline Reinforcement Learning from Mixed Datasets",
+   "authors": [
+    "Yuanying Cai",
+    "Chuheng Zhang",
+    "Li Zhao",
+    "Wei Shen",
+    "Xuyun Zhang",
+    "Lei Song",
+    "Jiang Bian",
+    "Tao Qin",
+    "Tieyan Liu"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2022 Best Student Paper Runner-Up: TD3 with Reverse KL Regularizer for Offline Reinforcement Learning from Mixed Datasets — Yuanying Cai, Chuheng Zhang, Li Zhao, Wei Shen, Xuyun Zhang, Lei Song, Jiang Bian, Tao Qin, Tieyan Liu"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Contrastive Code-Comment Pre-training",
+   "authors": [
+    "Xiaohuan Pei",
+    "Alibaba Group"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2022 Best Student Paper Award: Contrastive Code-Comment Pre-training — Xiaohuan Pei, Daochang Liu, Qian Luo, and Chang Xu (University of Sydney, Australia; Alibaba Group, China)"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Reinforcement Learning Approach to Configuration Sampling Problem",
+   "authors": [
+    "Amir Abolfazli",
+    "Jakob Spiegelberg",
+    "Gregory Palmer",
+    "Avishek Anand"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2023 Best Paper Award: Deep Reinforcement Learning Approach to Configuration Sampling Problem — Amir Abolfazli, Jakob Spiegelberg, Gregory Palmer, and Avishek Anand"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "C22MP: Fusing catch22 and the Matrix Profile to Produce an Efficient and Interpretable Anomaly Detector",
+   "authors": [
+    "Sadaf Tafazoli",
+    "Yue Lu",
+    "Renjie Wu",
+    "Thirumalai Srinivas",
+    "Hannah Dela Cruz",
+    "Ryan Mercer",
+    "Eamonn Keogh"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2023 Best Paper Award Runner-up: C22MP: Fusing catch22 and the Matrix Profile to Produce an Efficient and Interpretable Anomaly Detector — Sadaf Tafazoli, Yue Lu, Renjie Wu, Thirumalai Srinivas, Hannah Dela Cruz, Ryan Mercer, and Eamonn Keogh"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "TensorCodec: Compact Lossy Compression of Tensors without Strong Data Assumptions",
+   "authors": [
+    "Taehyung Kwon",
+    "Jihoon Ko",
+    "Jinhong Jung",
+    "Kijung Shin"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2023 Best Student Paper Runner-Up: TensorCodec: Compact Lossy Compression of Tensors without Strong Data Assumptions — Taehyung Kwon, Jihoon Ko, Jinhong Jung, and Kijung Shin"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "MPGraf: a Modular and Pre-trained Graphformer for Learning to Rank at Web-scale",
+   "authors": [
+    "Yuchen Li",
+    "Haoyi Xiong",
+    "Linghe Kong",
+    "Zeyi Sun",
+    "Hongyang Chen",
+    "Shuaiqiang Wang",
+    "Dawei Yin"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2023 Best Student Paper Award: MPGraf: a Modular and Pre-trained Graphformer for Learning to Rank at Web-scale — Yuchen Li, Haoyi Xiong, Linghe Kong, Zeyi Sun, Hongyang Chen, Shuaiqiang Wang, Dawei Yin"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scalable Graph Classification via Random Walk Fingerprints",
+   "authors": [
+    "Peiyan Li",
+    "Honglian Wang",
+    "Christian Bohm"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2024 Best Paper Award: Scalable Graph Classification via Random Walk Fingerprints — Peiyan Li,Honglian Wang and Christian Bohm"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up",
+   "title": "Traffic Pattern Sharing for Federated Traffic Flow Prediction with Personalization",
+   "authors": [
+    "Hang Zhou",
+    "Wentao Yu",
+    "Sheng Wan",
+    "Yongxin Tong",
+    "Tianlong Gu",
+    "Chen Gong"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2024 Best Student Paper Runner-Up: Traffic Pattern Sharing for Federated Traffic Flow Prediction with Personalization — Hang Zhou, Wentao Yu, Sheng Wan,Yongxin Tong, Tianlong Gu, Chen Gong"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Normalizing self-supervised learning for provably reliable Change Point Detection",
+   "authors": [
+    "Alexandra Bazarova",
+    "Evgenia Romanenkova",
+    "Alexey Zaytsev"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2024 Best Student Paper Award: Normalizing self-supervised learning for provably reliable Change Point Detection — Alexandra Bazarova,Evgenia Romanenkova, Alexey Zaytsev"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Attributed Hypergraph Generation with Realistic Interplay Between Structure and Attributes",
+   "authors": [
+    "Jaewan Chun",
+    "Seokbum Yoon",
+    "Minyoung Choe",
+    "Geon Lee",
+    "Kijung Shin"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2025 Best Paper Award: Attributed Hypergraph Generation with Realistic Interplay Between Structure and Attributes — Jaewan Chun, Seokbum Yoon, Minyoung Choe, Geon Lee, Kijung Shin"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up Awards",
+   "title": "DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device Large Language Models",
+   "authors": [
+    "Honghui Xu",
+    "Shiva Shrestha",
+    "Wei Chen",
+    "Zhiyuan Li",
+    "Zhipeng Cai"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2025 Best Paper Runner-Up Awards: DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device Large Language Models — Honghui Xu , Shiva Shrestha, Wei Chen, Zhiyuan Li, Zhipeng Cai"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-Up Award",
+   "title": "Zero-Shot Cross-City Trajectory Prediction Using Hypernetworks",
+   "authors": [
+    "Jonas Gunkel",
+    "Andrea Tundis",
+    "Max Muhlhauser"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2025 Best Student Paper Runner-Up Award: Zero-Shot Cross-City Trajectory Prediction Using Hypernetworks — Jonas Gunkel, Andrea Tundis, Max Muhlhauser"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "HyHG: A Temporal Hypergraph Contrastive Learning Framework for Biomedical Hypothesis Generation",
+   "authors": [
+    "Amir Shariatmadari",
+    "Sikun Guo",
+    "Nathan Sheffield",
+    "Aidong Zhang",
+    "Kishlay Jha"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2025 Best Student Paper Award: HyHG: A Temporal Hypergraph Contrastive Learning Framework for Biomedical Hypothesis Generation — Amir Shariatmadari, Sikun Guo, Nathan Sheffield, Aidong Zhang, Kishlay Jha"
   },
   {
    "venue": "ICFP",
