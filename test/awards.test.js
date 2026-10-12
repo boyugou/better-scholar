@@ -414,3 +414,15 @@ test("data/exclusions.json: an entry an official page gets wrong is not in the b
     assert.equal(data.entries.some((e) => e.venue === x.venue && e.year === x.year && awards.titleKey(e.title) === awards.titleKey(x.title)), false, `${x.venue} ${x.year} ${x.title} is back in the list`);
   }
 });
+
+test("data/exclusions.json `correct`: an author list the page writes family-name first is put right in the bundled list, and matches Scholar's 'S Dulloor'", () => {
+  const { correct } = JSON.parse(fs.readFileSync(path.join(ROOT, "data/exclusions.json"), "utf8"));
+  for (const x of correct) {
+    const e = data.entries.find((y) => y.venue === x.venue && y.year === x.year && awards.titleKey(y.title) === awards.titleKey(x.title));
+    assert.ok(e, `${x.venue} ${x.year} ${x.title} is not in the list`);
+    assert.deepEqual(e.authors, x.authors);
+    assert.ok(x.reason && x.reason.length > 20);
+  }
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  assert.equal(idx.lookup({ title: "System software for persistent memory", authorsText: "S Dulloor, S Kumar, A Keshavamurthy, P Lantz" }).some((m) => m.venue === "EuroSys"), true);
+});

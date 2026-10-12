@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.28 — 2026-10-12
+
+- EuroSys 2024's test-of-time paper (System software for persistent memory) lists its first author family-name first ("Dulloor Subramanya Rao"), so the surname "Rao" matched nothing — an OpenAlex spot check of the list found it. `data/exclusions.json` gets a
+  `correct` section (the same words, the family name last), applied by `merge-raw.mjs` and tested.
+
 ## 2.10.27 — 2026-10-12
 
 - SIGSOFT's distinguished papers: the reader cut a line at the first colon, so a title with a main title ("CUTE: A Concolic Unit Testing Engine for C", "HAMPI: A Solver for String Constraints", "Seeking the Ground Truth: …", "Trading Robustness for Maintainability: …")
