@@ -722,6 +722,41 @@ test("Dijkstra Prize page: 'Authors for “Title” in …' under a year's citat
   assert.deepEqual([bare.entries.length, bare.skipped.length], [0, 1]);
 });
 
+test("SIGCHI program data: BEST_PAPER and HONORABLE_MENTION flags on the Papers track only (the type may be on the session), authors by person id, drafts and unknown flags not read", async () => {
+  const { parseProgram } = await import("../scripts/awards/sigchi.mjs");
+  const program = (over = {}) => ({
+    conference: { id: 10999, shortName: "CHIPLAY", year: 2024, ...over.conference },
+    publicationInfo: { version: 7, publicationStatus: "PUBLISHED", isDraft: false, ...over.publicationInfo },
+    contentTypes: [{ id: 1, name: "Paper", displayName: "Papers" }, { id: 2, name: "Late Breaking", displayName: "Late-Breaking Work" }],
+    sessions: [{ id: 50, typeId: 1 }],
+    people: [{ id: 1, firstName: "Ann ", middleInitial: "J.", lastName: "Lee" }, { id: 2, firstName: "Bo", middleInitial: "", lastName: "de Chen" }, { id: 3, firstName: "Cy", lastName: "Diaz" }, { id: 4, firstName: "Madonna", lastName: "" },
+      { id: 5, firstName: "Hao-Ping (Hank)", lastName: "Wu" }, { id: 6, firstName: 'Xuhai "Orson"', lastName: "Xu" }, { id: 7, firstName: "Florian ‘Floyd’", lastName: "Mueller" }, { id: 8, firstName: "Melanie Yi Ning,", lastName: "Quek" }, { id: 9, firstName: "Greg", lastName: "d'Eon" }],
+    contents: [
+      { id: 1, typeId: 1, title: "A Synthetic Paper about Fish &amp; Chips", award: "BEST_PAPER", authors: [{ personId: 1 }, { personId: 2 }] },
+      { id: 2, sessionIds: [50], title: "A Synthetic Paper whose Type Is on its Session", award: "HONORABLE_MENTION", authors: [{ personId: 3 }] },
+      { id: 3, typeId: 2, title: "A Synthetic Late-Breaking Work Paper", award: "BEST_PAPER", authors: [{ personId: 3 }] },
+      { id: 4, typeId: 1, title: "A Synthetic Paper with an Unknown Flag", award: "AUDIENCE_CHOICE", authors: [{ personId: 3 }] },
+      { id: 5, typeId: 1, title: "A Synthetic Paper with a Single-Name Author", award: "BEST_PAPER", authors: [{ personId: 4 }] },
+      { id: 6, typeId: 1, title: "A Synthetic Paper with an Unknown Author", award: "BEST_PAPER", authors: [{ personId: 99 }] },
+      { id: 7, typeId: 1, title: "A Synthetic Paper without a Flag", authors: [{ personId: 1 }] },
+      { id: 8, typeId: 1, title: "A Synthetic Paper with Nicknames in its Authors", award: "HONORABLE_MENTION", authors: [{ personId: 5 }, { personId: 6 }, { personId: 7 }, { personId: 8 }, { personId: 9 }] },
+      { id: 9, sessionIds: [50], title: "A Synthetic Paper whose Type Is on its Session", award: "HONORABLE_MENTION", authors: [{ personId: 3 }] }
+    ],
+    ...over.rest
+  });
+  const { entries, skipped } = parseProgram(program());
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    ["CHI PLAY", 2024, "best", "Best Paper", "A Synthetic Paper about Fish & Chips", ["Ann J. Lee", "Bo de Chen"]],
+    ["CHI PLAY", 2024, "runner-up", "Honorable Mention", "A Synthetic Paper whose Type Is on its Session", ["Cy Diaz"]],
+    ["CHI PLAY", 2024, "runner-up", "Honorable Mention", "A Synthetic Paper with Nicknames in its Authors", ["Hao-Ping Wu", "Xuhai Xu", "Florian Mueller", "Melanie Yi Ning Quek", "Greg d'Eon"]]
+  ]);                                                              // the paper listed twice (ids 2 and 9) is one entry
+  assert.equal(entries[0].source, "https://files.sigchi.org/conference/cache/10999/7/program");
+  assert.ok(entries.every((e) => e.evidence.includes(e.title)));
+  assert.equal(skipped.length, 3, skipped.join("\n"));          // the unknown flag, the single-name author, the unknown author
+  assert.deepEqual(parseProgram(program({ publicationInfo: { isDraft: true } })).entries, []);
+  assert.deepEqual(parseProgram(program({ publicationInfo: { publicationStatus: "INTERNALLY_PUBLISHED" } })).entries, []);
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.23 — 2026-10-12
+
+- **CHI, CSCW, UIST and other SIGCHI conferences' awards** (2121 entries; the list holds 4518) from SIGCHI's own conference programs:
+  `programs.sigchi.org` draws each *Awards* page from public JSON files (`files.sigchi.org/conference/cache/…`, robots.txt allows
+  everything) in which a paper of the *Papers* track carries a `BEST_PAPER` or `HONORABLE_MENTION` flag. CHI 2018–2026 (best papers and
+  honorable mentions), CSCW 2019–2026, UIST 2021–2025, DIS 2024–2026, C&C, CHI PLAY, TEI, MobileHCI, FAccT, HRI, IUI, IMX and a few
+  more. Other tracks (late-breaking work, demos, pictorials), demo / poster awards and programs still marked as drafts are not read;
+  a nickname in an author's name ("Sungsoo (Ray) Hong") is dropped. New reader `scripts/awards/sigchi.mjs`. Checked on saved real
+  profiles: an HCI researcher's page now draws seven marks (best papers of UIST 2023, CHI 2022, CHI 2019 …), all of them real.
+
 ## 2.5.22 — 2026-10-12
 
 - **Dijkstra Prize in Distributed Computing** (34 entries, 2000–2026; the list holds 2397) from the prize's own page on podc.org:

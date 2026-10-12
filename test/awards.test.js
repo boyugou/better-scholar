@@ -235,6 +235,18 @@ test("the bundled list: the Dijkstra Prize in Distributed Computing (PODC / DISC
   assert.deepEqual(find("Time, clocks, and the ordering of events in a distributed system", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: HCI winners from SIGCHI's own conference programs (CHI, CSCW and UIST best papers, CHI honorable mentions)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Street-level algorithms: A theory at the gaps between policy and decisions", "A Alkhatib, MS Bernstein"), ["CHI 2019 best"]);
+  assert.deepEqual(find("The halting problem: Video analysis of self-driving cars in traffic", "B Brown, M Broth, E Vinkhuyzen"), ["CHI 2023 best"]);
+  assert.deepEqual(find("Designing human-agent collaborations: Commitment, responsiveness, and support", "N Cila"), ["CHI 2022 runner-up"]);
+  assert.deepEqual(find("Textoshop: Interactions inspired by drawing software to facilitate text editing", "D Masson, YH Kim, F Chevalier"), ["CHI 2025 runner-up"]);
+  assert.deepEqual(find("Between subjectivity and imposition: Power dynamics in data annotation for computer vision", "M Miceli, M Schuessler, T Yang"), ["CSCW 2020 best"]);
+  assert.deepEqual(find("Generative agents: Interactive simulacra of human behavior", "JS Park, JC O'Brien, CJ Cai, MR Morris, P Liang, MS Bernstein"), ["UIST 2023 best"]);
+  assert.deepEqual(find("Street-level algorithms: A theory at the gaps between policy and decisions", "A Smith, B Jones"), []);
+});
+
 test("the bundled list: machine-learning winners from the years before the virtual sites list awards (NeurIPS 2014–2018, ICML 2017–2018)", () => {
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
