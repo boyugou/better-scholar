@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.30 — 2026-10-12
+
+- Four more titles that an official page misprints are put right (`data/exclusions.json`): AAMAS 2012's "enviornment", HPCA 2019's "Branch Predication", JCDL 2002's "Collection Systhesis" and SIGMOD 2001's "Dimensionality Deduction" — found by looking for
+  rare long words one letter away from a common one across all award titles. Each matched nothing on Scholar before.
+
 ## 2.10.29 — 2026-10-12
 
 - ETAPS 2011's best paper of CC (Grewe and O'Boyle) is printed "A static task partitionic approach for heterogeneous systems using OpenGL" on the awards page — two typos for "partitioning … OpenCL" — so it could not match Scholar.

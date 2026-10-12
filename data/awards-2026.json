@@ -2498,14 +2498,14 @@
    "year": 2012,
    "award": "tot",
    "awardLabel": "Influential Paper Award",
-   "title": "A market-oriented programming enviornment and its application to distributed multicommodity flow problems",
+   "title": "A market-oriented programming environment and its application to distributed multicommodity flow problems",
    "authors": [
     "Michael P. Wellman"
    ],
    "track": "main",
    "paperYear": 1993,
    "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
-   "evidence": "AAMAS 2012 Influential Paper Award: Michael P. Wellman (1993) “A market-oriented programming enviornment and its application to distributed multicommodity flow problems”"
+   "evidence": "AAMAS 2012 Influential Paper Award: Michael P. Wellman (1993) “A market-oriented programming enviornment and its application to distributed multicommodity flow problems” [the page misprints the title; the paper is \"A market-oriented programming environment and its application to distributed multicommodity flow problems\" — data/exclusions.json]"
   },
   {
    "venue": "AAMAS",
@@ -53746,7 +53746,7 @@
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
-   "title": "Dynamic Branch Predication with Perceptrons",
+   "title": "Dynamic Branch Prediction with Perceptrons",
    "authors": [
     "D.A. Jimenez",
     "C. Lin"
@@ -53754,7 +53754,7 @@
    "track": "main",
    "paperYear": 2001,
    "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
-   "evidence": "HPCA 2019 Test of Time Award: D.A. Jimenez and C. Lin “Dynamic Branch Predication with Perceptrons”"
+   "evidence": "HPCA 2019 Test of Time Award: D.A. Jimenez and C. Lin “Dynamic Branch Predication with Perceptrons” [the page misprints the title; the paper is \"Dynamic Branch Prediction with Perceptrons\" — data/exclusions.json]"
   },
   {
    "venue": "HPCA",
@@ -70713,13 +70713,13 @@
    "year": 2002,
    "award": "best",
    "awardLabel": "Vannevar Bush Best Paper",
-   "title": "Collection Systhesis",
+   "title": "Collection Synthesis",
    "authors": [
     "Donna Bergmark"
    ],
    "track": "main",
    "source": "https://sigir.org/awards/vannevar-bush-best-paper-awards/",
-   "evidence": "Vannevar Bush Best Paper: 2002 Collection Systhesis — Donna Bergmark"
+   "evidence": "Vannevar Bush Best Paper: 2002 Collection Systhesis — Donna Bergmark [the page misprints the title; the paper is \"Collection Synthesis\" — data/exclusions.json]"
   },
   {
    "venue": "JCDL",
@@ -91649,7 +91649,7 @@
    "year": 2001,
    "award": "best",
    "awardLabel": "Best Paper",
-   "title": "Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases",
+   "title": "Locally Adaptive Dimensionality Reduction for Indexing Large Time Series Databases",
    "authors": [
     "Eamonn Keogh",
     "Kaushik Chakrabarti",
@@ -91658,7 +91658,7 @@
    ],
    "track": "main",
    "source": "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
-   "evidence": "2001: Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases. Eamonn Keogh, Kaushik Chakrabarti, Sharad Mehrotra, and Michael Pazzani"
+   "evidence": "2001: Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases. Eamonn Keogh, Kaushik Chakrabarti, Sharad Mehrotra, and Michael Pazzani [the page misprints the title; the paper is \"Locally Adaptive Dimensionality Reduction for Indexing Large Time Series Databases\" — data/exclusions.json]"
   },
   {
    "venue": "SIGMOD",

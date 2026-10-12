@@ -36,6 +36,34 @@
    "title": "A static task partitionic approach for heterogeneous systems using OpenGL",
    "newTitle": "A static task partitioning approach for heterogeneous systems using OpenCL",
    "reason": "etaps.org/awards/best-paper prints \"partitionic\" and \"OpenGL\"; the paper (Grewe and O'Boyle, CC 2011) is \"A Static Task Partitioning Approach for Heterogeneous Systems Using OpenCL\", so the title matched nothing on Scholar"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2012,
+   "title": "A market-oriented programming enviornment and its application to distributed multicommodity flow problems",
+   "newTitle": "A market-oriented programming environment and its application to distributed multicommodity flow problems",
+   "reason": "aamas.csc.liv.ac.uk/award-influential.html prints \"enviornment\" (Wellman's paper is \"… programming environment …\"); the misprint matched nothing on Scholar"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2019,
+   "title": "Dynamic Branch Predication with Perceptrons",
+   "newTitle": "Dynamic Branch Prediction with Perceptrons",
+   "reason": "ieeetcca.org/awards/hpca-test-of-time-award/ prints \"Predication\" (Jiménez and Lin's paper is \"Dynamic Branch Prediction with Perceptrons\"); the misprint matched nothing on Scholar"
+  },
+  {
+   "venue": "JCDL",
+   "year": 2002,
+   "title": "Collection Systhesis",
+   "newTitle": "Collection Synthesis",
+   "reason": "sigir.org/awards/vannevar-bush-best-paper-awards/ prints \"Systhesis\" (Bergmark, Lagoze and Sbityakov's paper is \"Collection Synthesis\"); the misprint matched nothing on Scholar"
+  },
+  {
+   "venue": "SIGMOD",
+   "year": 2001,
+   "title": "Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases",
+   "newTitle": "Locally Adaptive Dimensionality Reduction for Indexing Large Time Series Databases",
+   "reason": "sigmod.org/sigmod-awards/sigmod-best-paper-award/ prints \"Deduction\" (Keogh et al.'s paper is \"… Dimensionality Reduction …\"); the misprint matched nothing on Scholar"
   }
  ]
 }
