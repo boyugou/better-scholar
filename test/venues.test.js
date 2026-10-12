@@ -8,7 +8,7 @@ const ccf = require("../src/data/ccf.js");
 const core = require("../src/data/core.js");
 const aliases = require("../src/data/aliases.js");
 
-const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases, strict: true });     // strict: a throwing rule fails the test instead of being contained
 const FIX = path.join(__dirname, "fixtures");
 
 // compact "CCF A ACL · CORE A* ACL" form used by the snapshot and the assertions
@@ -577,4 +577,44 @@ test("one venue under two acronyms is no disagreement between the lists (CSFW/CS
   assert.equal(brief("2012 IEEE 5th International Conference on Cloud Computing, 2012"), "CCF C IEEE CLOUD · CORE B CLOUD");
   // ACM's symposium is SoCC; CORE lists only IEEE's conference, which a string that says "symposium" is not
   assert.equal(brief("Proceedings of the 1st ACM symposium on Cloud computing, 241-252, 2010"), "CCF B SoCC");
+});
+
+// ---- a string must never throw (2.5.9 let a cut-off string that ends in a known acronym reach an index that did not exist)
+
+test("Springer's series form cut after a known acronym ('… Conference, FC …') does not throw", () => {
+  const s = "Financial Cryptography and Data Security: 25th International Conference, FC …, 2021";
+  assert.doesNotThrow(() => resolver.resolve(s));
+  assert.equal(brief(s), "CCF C FC · CORE A FC", "Financial Cryptography: the name is complete before the acronym");
+});
+
+test("no real venue string, cut anywhere or given an acronym tail, makes a rule throw; and a throwing rule would only cost the badge", () => {
+  const extra = JSON.parse(fs.readFileSync(path.join(FIX, "venues.json"), "utf8"));
+  const strings = [];
+  for (const [k, v] of Object.entries(extra)) if (!k.startsWith("_")) strings.push(...v);
+  let seed = 7;
+  const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  const tails = [" MICCAI 2017", " (WF-IoT)", " - ICSE 2019", " ACL", " (SC)", " 2024", ", FC", " @ ISWC"];
+  let n = 0;
+  for (const s of strings) {
+    const words = s.split(" ");
+    const cut = words.slice(0, 1 + Math.floor(rnd() * words.length)).join(" ") + " …";
+    for (const v of [cut, cut.replace(/…$/, "") + tails[Math.floor(rnd() * tails.length)] + " …", s + tails[Math.floor(rnd() * tails.length)], s.toUpperCase(), s.toLowerCase()]) {
+      assert.doesNotThrow(() => resolver.resolve(v), v);
+      n++;
+    }
+  }
+  assert.ok(n > 10000);
+});
+
+test("a resolver that is not strict contains a throwing rule: the string is simply unranked", () => {
+  const data = { ccf: ccf.venues, core: core.venues, aliases };
+  const strict = venues.createResolver({ ...data, strict: true });
+  const lenient = venues.createResolver(data);
+  for (const r of [strict, lenient]) r.index.sources.ccf.C.names = null;       // every lookup in the index now throws
+  const s = "Proceedings of the 12th International Conference on Anything at All";
+  assert.throws(() => strict.resolve(s));
+  const r = lenient.resolve(s);
+  assert.equal(r.ccf, null);
+  assert.equal(r.core, null);
+  assert.equal(lenient.resolve(s), r, "and the verdict is remembered");
 });

@@ -427,8 +427,10 @@
     // and use the string's own event word ("conference") where the hit does not (the symposium DISC)?
     const continuesBeyond = (sidesNow, mode, tokens, hit) => {
       if (!rawWords.length || rawWords.every((w) => hasWord(hit, w))) return false;
-      return sidesNow.some((side) => (side.first[mode].get(tokens[0]) || []).some(({ entry, form }) => {
-        const t = form[mode];
+      // (the forms are indexed with and without organisation words; "noAcr" tokens are compared with the latter)
+      const m = mode === "noAcr" ? "noOrg" : mode;
+      return sidesNow.some((side) => (side.first[m].get(tokens[0]) || []).some(({ entry, form }) => {
+        const t = form[m];
         return entry !== hit && t.length > tokens.length && tokens.every((w, i) => t[i] === w) && rawWords.every((w) => hasWord(entry, w));
       }));
     };
@@ -628,7 +630,13 @@
     function resolve(raw) {
       const key = String(raw == null ? "" : raw);
       if (cache.has(key)) return cache.get(key);
-      const res = resolveUncached(key);
+      let res;
+      try { res = resolveUncached(key); }
+      catch (e) {
+        // a string the rules cannot cope with is an unranked venue, never a broken page (the tests pass `strict` to see the error)
+        if (data && data.strict) throw e;
+        res = { ccf: null, core: null, secondary: null, truncated: false, name: "", kind: null };
+      }
       cache.set(key, res);
       return res;
     }

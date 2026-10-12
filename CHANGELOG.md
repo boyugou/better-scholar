@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.12 — 2026-10-12
+
+- **Fix: a rule could throw on one kind of string** (from 2.5.9 on). A cut-off Springer series title that ends in a known acronym —
+  *"Financial Cryptography and Data Security: 25th International Conference, FC …"* — reached an index that does not exist for the
+  acronym-free reading, and the error stopped the page's whole analysis. Fixed; and the matcher can no longer break a page: a string a rule
+  cannot cope with is now simply unranked (the tests run it strict, and a new test cuts and decorates every real venue string in the
+  corpora in five ways — 20,000 strings — to prove nothing throws).
+
 ## 2.5.11 — 2026-10-12
 
 The rest of the independent review's matcher findings.
