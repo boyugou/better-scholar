@@ -16,17 +16,23 @@
   "use strict";
 
   // Display priority, most notable first.
-  const KINDS = ["best", "best-student", "outstanding", "distinguished", "runner-up", "tot", "finalist", "oral", "spotlight", "highlight"];
+  const KINDS = ["best", "best-student", "outstanding", "distinguished", "best-category", "runner-up", "tot", "finalist", "oral", "spotlight", "highlight"];
   // What the panel counts: every award a paper won, and each talk level. A finalist is only shown.
   const GROUP = {
-    best: "award", "best-student": "award", outstanding: "award", distinguished: "award", "runner-up": "award", tot: "award",
+    best: "award", "best-student": "award", outstanding: "award", distinguished: "award", "best-category": "award", "runner-up": "award", tot: "award",
     finalist: "finalist", oral: "oral", spotlight: "spotlight", highlight: "highlight"
   };
   const GROUPS = ["award", "oral", "spotlight", "highlight"];
   const LABEL = {
     best: "Best paper", "best-student": "Best student paper", outstanding: "Outstanding paper", distinguished: "Distinguished paper",
-    "runner-up": "Honorable mention", tot: "Test of time", finalist: "Best paper finalist", oral: "Oral", spotlight: "Spotlight", highlight: "Highlight"
+    "best-category": "Category award", "runner-up": "Honorable mention", tot: "Test of time", finalist: "Best paper finalist", oral: "Oral", spotlight: "Spotlight", highlight: "Highlight"
   };
+  // A category award ("Best Resource Paper", "Best Theme Paper") is shown under its own printed name, shortened for a chip.
+  function categoryLabel(printed) {
+    const s = String(printed || "").replace(/^\s*(?:ACL|EMNLP|NAACL|EACL|COLING)\s+/i, "").replace(/\s+award\s*$/i, "").replace(/\s+/g, " ").trim();
+    if (!s) return LABEL["best-category"];
+    return s.length > 26 ? s.slice(0, 25).trimEnd() + "…" : s;
+  }
   const groupOf = (kind) => GROUP[kind] || null;
 
   const S = "[-\\s]";   // separator inside a phrase: "best paper", "best-paper"
@@ -145,7 +151,7 @@
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
       byKind.set(m.kind, {
-        kind: m.kind, group: GROUP[m.kind], label: LABEL[m.kind], text: "", field: "list", source: "list",
+        kind: m.kind, group: GROUP[m.kind], label: m.kind === "best-category" ? categoryLabel(m.awardLabel) : LABEL[m.kind], text: "", field: "list", source: "list",
         venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(prev ? { declared: prev.text } : {})
       });
     }

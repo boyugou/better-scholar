@@ -26,7 +26,7 @@
   const surnameKey = (name) => names.nameParts(name || "").last || "";
 
   // How the list's award names map onto the marker kinds (see marks.js).
-  const KIND = { best: "best", outstanding: "outstanding", distinguished: "distinguished", "runner-up": "runner-up", student: "best-student", tot: "tot" };
+  const KIND = { best: "best", outstanding: "outstanding", distinguished: "distinguished", "runner-up": "runner-up", student: "best-student", category: "best-category", tot: "tot" };
 
   // items: [[titleKey, surnameKey, venue, year, award, printedAwardName?], …]  (as emitted by scripts/build-data.mjs)
   function createIndex(items) {

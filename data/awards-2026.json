@@ -1,9 +1,4895 @@
 {
-  "meta": {
-    "label": "Paper awards (curated)",
-    "edition": "2026-10",
-    "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
-    "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md."
+ "meta": {
+  "label": "Paper awards (curated)",
+  "edition": "2026-10",
+  "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
+  "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
+  "count": 271
+ },
+ "entries": [
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Bridging the Gap between Training and Inference for Neural Machine Translation",
+   "authors": [
+    "Wen Zhang",
+    "Yang Feng",
+    "Fandong Meng",
+    "Di You",
+    "Qun Liu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1426/",
+   "evidence": "Bridging the Gap between Training and Inference for Neural Machine Translation — Best Long Paper"
   },
-  "entries": []
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "A Simple Theoretical Model of Importance for Summarization",
+   "authors": [
+    "Maxime Peyrard"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1101/",
+   "evidence": "A Simple Theoretical Model of Importance for Summarization — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Emotion-Cause Pair Extraction: A New Task to Emotion Analysis in Texts",
+   "authors": [
+    "Rui Xia",
+    "Zixiang Ding"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1096/",
+   "evidence": "Emotion-Cause Pair Extraction: A New Task to Emotion Analysis in Texts — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Transferable Multi-Domain State Generator for Task-Oriented Dialogue Systems",
+   "authors": [
+    "Chien-Sheng Wu",
+    "Andrea Madotto",
+    "Ehsan Hosseini-Asl",
+    "Caiming Xiong",
+    "Richard Socher",
+    "Pascale Fung"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1078/",
+   "evidence": "Transferable Multi-Domain State Generator for Task-Oriented Dialogue Systems — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "We Need to Talk about Standard Splits",
+   "authors": [
+    "Kyle Gorman",
+    "Steven Bedrick"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1267/",
+   "evidence": "We Need to Talk about Standard Splits — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Zero-Shot Entity Linking by Reading Entity Descriptions",
+   "authors": [
+    "Lajanugen Logeswaran",
+    "Ming-Wei Chang",
+    "Kenton Lee",
+    "Kristina Toutanova",
+    "Jacob Devlin",
+    "Honglak Lee"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/P19-1335/",
+   "evidence": "Zero-Shot Entity Linking by Reading Entity Descriptions — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Overall Paper",
+   "title": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList",
+   "authors": [
+    "Marco Tulio Ribeiro",
+    "Tongshuang Wu",
+    "Carlos Guestrin",
+    "Sameer Singh"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.acl-main.442/",
+   "evidence": "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList — Best Overall Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data",
+   "authors": [
+    "Emily M. Bender",
+    "Alexander Koller"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.acl-main.463/",
+   "evidence": "Climbing towards NLU: On Meaning, Form, and Understanding in the Age of Data — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Overall Paper",
+   "title": "Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks",
+   "authors": [
+    "Suchin Gururangan",
+    "Ana Marasović",
+    "Swabha Swayamdipta",
+    "Kyle Lo",
+    "Iz Beltagy",
+    "Doug Downey",
+    "Noah A. Smith"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.acl-main.740/",
+   "evidence": "Don’t Stop Pretraining: Adapt Language Models to Domains and Tasks — Honorable Mention for Best Overall Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Theme Paper",
+   "title": "How Can We Accelerate Progress Towards Human-like Linguistic Generalization?",
+   "authors": [
+    "Tal Linzen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.acl-main.465/",
+   "evidence": "How Can We Accelerate Progress Towards Human-like Linguistic Generalization? — Honorable Mention for Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Overall Paper",
+   "title": "Tangled up in BLEU: Reevaluating the Evaluation of Automatic Machine Translation Evaluation Metrics",
+   "authors": [
+    "Nitika Mathur",
+    "Timothy Baldwin",
+    "Trevor Cohn"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.acl-main.448/",
+   "evidence": "Tangled up in BLEU: Reevaluating the Evaluation of Automatic Machine Translation Evaluation Metrics — Honorable Mention for Best Overall Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Vocabulary Learning via Optimal Transport for Neural Machine Translation",
+   "authors": [
+    "Jingjing Xu",
+    "Hao Zhou",
+    "Chun Gan",
+    "Zaixiang Zheng",
+    "Lei Li"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.571/",
+   "evidence": "Vocabulary Learning via Optimal Transport for Neural Machine Translation — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "Including Signed Languages in Natural Language Processing",
+   "authors": [
+    "Kayo Yin",
+    "Amit Moryossef",
+    "Julie Hochgesang",
+    "Yoav Goldberg",
+    "Malihe Alikhani"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.570/",
+   "evidence": "Including Signed Languages in Natural Language Processing — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "All That’s ‘Human’ Is Not Gold: Evaluating Human Evaluation of Generated Text",
+   "authors": [
+    "Elizabeth Clark",
+    "Tal August",
+    "Sofia Serrano",
+    "Nikita Haduong",
+    "Suchin Gururangan",
+    "Noah A. Smith"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.565/",
+   "evidence": "All That’s ‘Human’ Is Not Gold: Evaluating Human Evaluation of Generated Text — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning",
+   "authors": [
+    "Armen Aghajanyan",
+    "Sonal Gupta",
+    "Luke Zettlemoyer"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.568/",
+   "evidence": "Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Mind Your Outliers! Investigating the Negative Impact of Outliers on Active Learning for Visual Question Answering",
+   "authors": [
+    "Siddharth Karamcheti",
+    "Ranjay Krishna",
+    "Li Fei-Fei",
+    "Christopher Manning"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.564/",
+   "evidence": "Mind Your Outliers! Investigating the Negative Impact of Outliers on Active Learning for Visual Question Answering — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Neural Machine Translation with Monolingual Translation Memory",
+   "authors": [
+    "Deng Cai",
+    "Yan Wang",
+    "Huayang Li",
+    "Wai Lam",
+    "Lemao Liu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.567/",
+   "evidence": "Neural Machine Translation with Monolingual Translation Memory — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Scientific Credibility of Machine Translation Research: A Meta-Evaluation of 769 Papers",
+   "authors": [
+    "Benjamin Marie",
+    "Atsushi Fujita",
+    "Raphael Rubino"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.566/",
+   "evidence": "Scientific Credibility of Machine Translation Research: A Meta-Evaluation of 769 Papers — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "UnNatural Language Inference",
+   "authors": [
+    "Koustuv Sinha",
+    "Prasanna Parthasarathi",
+    "Joelle Pineau",
+    "Adina Williams"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.acl-long.569/",
+   "evidence": "UnNatural Language Inference — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Learned Incremental Representations for Parsing",
+   "authors": [
+    "Nikita Kitaev",
+    "Thomas Lu",
+    "Dan Klein"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.220/",
+   "evidence": "Learned Incremental Representations for Parsing — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "DiBiMT: A Novel Benchmark for Measuring Word Sense Disambiguation Biases in Machine Translation",
+   "authors": [
+    "Niccolò Campolungo",
+    "Federico Martelli",
+    "Francesco Saina",
+    "Roberto Navigli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.298/",
+   "evidence": "DiBiMT: A Novel Benchmark for Measuring Word Sense Disambiguation Biases in Machine Translation — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Linguistic Insight Paper",
+   "title": "KinyaBERT: a Morphology-aware Kinyarwanda Language Model",
+   "authors": [
+    "Antoine Nzeyimana",
+    "Andre Niyongabo Rubungo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.367/",
+   "evidence": "KinyaBERT: a Morphology-aware Kinyarwanda Language Model — Best Linguistic Insight Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Special Theme Paper",
+   "title": "Requirements and Motivations of Low-Resource Speech Synthesis for Language Revitalization",
+   "authors": [
+    "Aidan Pine",
+    "Dan Wells",
+    "Nathan Brinklow",
+    "Patrick Littell",
+    "Korin Richmond"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.507/",
+   "evidence": "Requirements and Motivations of Low-Resource Speech Synthesis for Language Revitalization — Best Special Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Active Evaluation: Efficient NLG Evaluation with Few Pairwise Comparisons",
+   "authors": [
+    "Akash Kumar Mohankumar",
+    "Mitesh Khapra"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.600/",
+   "evidence": "Active Evaluation: Efficient NLG Evaluation with Few Pairwise Comparisons — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Compression of Generative Pre-trained Language Models via Quantization",
+   "authors": [
+    "Chaofan Tao",
+    "Lu Hou",
+    "Wei Zhang",
+    "Lifeng Shang",
+    "Xin Jiang",
+    "Qun Liu",
+    "Ping Luo",
+    "Ngai Wong"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.331/",
+   "evidence": "Compression of Generative Pre-trained Language Models via Quantization — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Ditch the Gold Standard: Re-evaluating Conversational Question Answering",
+   "authors": [
+    "Huihan Li",
+    "Tianyu Gao",
+    "Manan Goenka",
+    "Danqi Chen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.555/",
+   "evidence": "Ditch the Gold Standard: Re-evaluating Conversational Question Answering — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Evaluating Factuality in Text Simplification",
+   "authors": [
+    "Ashwin Devaraj",
+    "William Sheffield",
+    "Byron Wallace",
+    "Junyi Jessy Li"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.506/",
+   "evidence": "Evaluating Factuality in Text Simplification — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity",
+   "authors": [
+    "Yao Lu",
+    "Max Bartolo",
+    "Alastair Moore",
+    "Sebastian Riedel",
+    "Pontus Stenetorp"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.556/",
+   "evidence": "Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Inducing Positive Perspectives with Text Reframing",
+   "authors": [
+    "Caleb Ziems",
+    "Minzhi Li",
+    "Anthony Zhang",
+    "Diyi Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.257/",
+   "evidence": "Inducing Positive Perspectives with Text Reframing — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Learning to Generalize to More: Continuous Semantic Augmentation for Neural Machine Translation",
+   "authors": [
+    "Xiangpeng Wei",
+    "Heng Yu",
+    "Yue Hu",
+    "Rongxiang Weng",
+    "Weihua Luo",
+    "Rong Jin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.546/",
+   "evidence": "Learning to Generalize to More: Continuous Semantic Augmentation for Neural Machine Translation — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Online Semantic Parsing for Latency Reduction in Task-Oriented Dialogue",
+   "authors": [
+    "Jiawei Zhou",
+    "Jason Eisner",
+    "Michael Newman",
+    "Emmanouil Antonios Platanios",
+    "Sam Thomson"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.acl-long.110/",
+   "evidence": "Online Semantic Parsing for Latency Reduction in Task-Oriented Dialogue — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Do Androids Laugh at Electric Sheep? Humor “Understanding” Benchmarks from The New Yorker Caption Contest",
+   "authors": [
+    "Jack Hessel",
+    "Ana Marasovic",
+    "Jena D. Hwang",
+    "Lillian Lee",
+    "Jeff Da",
+    "Rowan Zellers",
+    "Robert Mankoff",
+    "Yejin Choi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.41/",
+   "evidence": "Do Androids Laugh at Electric Sheep? Humor “Understanding” Benchmarks from The New Yorker Caption Contest — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models",
+   "authors": [
+    "Shangbin Feng",
+    "Chan Young Park",
+    "Yuhan Liu",
+    "Yulia Tsvetkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.656/",
+   "evidence": "From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "What the DAAM: Interpreting Stable Diffusion Using Cross Attention",
+   "authors": [
+    "Raphael Tang",
+    "Linqing Liu",
+    "Akshat Pandey",
+    "Zhiying Jiang",
+    "Gefei Yang",
+    "Karun Kumar",
+    "Pontus Stenetorp",
+    "Jimmy Lin",
+    "Ferhan Ture"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.310/",
+   "evidence": "What the DAAM: Interpreting Stable Diffusion Using Cross Attention — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "CAME: Confidence-guided Adaptive Memory Efficient Optimization",
+   "authors": [
+    "Yang Luo",
+    "Xiaozhe Ren",
+    "Zangwei Zheng",
+    "Zhuo Jiang",
+    "Xin Jiang",
+    "Yang You"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.243/",
+   "evidence": "CAME: Confidence-guided Adaptive Memory Efficient Optimization — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Causes and Cures for Interference in Multilingual Translation",
+   "authors": [
+    "Uri Shaham",
+    "Maha Elbayad",
+    "Vedanuj Goswami",
+    "Omer Levy",
+    "Shruti Bhosale"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.883/",
+   "evidence": "Causes and Cures for Interference in Multilingual Translation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Cognitive Reframing of Negative Thoughts through Human-Language Model Interaction",
+   "authors": [
+    "Ashish Sharma",
+    "Kevin Rushton",
+    "Inna Lin",
+    "David Wadden",
+    "Khendra Lucas",
+    "Adam Miner",
+    "Theresa Nguyen",
+    "Tim Althoff"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.555/",
+   "evidence": "Cognitive Reframing of Negative Thoughts through Human-Language Model Interaction — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Compositional Generalization without Trees using Multiset Tagging and Latent Permutations",
+   "authors": [
+    "Matthias Lindemann",
+    "Alexander Koller",
+    "Ivan Titov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.810/",
+   "evidence": "Compositional Generalization without Trees using Multiset Tagging and Latent Permutations — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Considerations for meaningful sign language machine translation based on glosses",
+   "authors": [
+    "Mathias Müller",
+    "Zifan Jiang",
+    "Amit Moryossef",
+    "Annette Rios",
+    "Sarah Ebling"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.60/",
+   "evidence": "Considerations for meaningful sign language machine translation based on glosses — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Dense-ATOMIC: Towards Densely-connected ATOMIC with High Knowledge Coverage and Massive Multi-hop Paths",
+   "authors": [
+    "Xiangqing Shen",
+    "Siwei Wu",
+    "Rui Xia"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.742/",
+   "evidence": "Dense-ATOMIC: Towards Densely-connected ATOMIC with High Knowledge Coverage and Massive Multi-hop Paths — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis",
+   "authors": [
+    "Ta-Chung Chi",
+    "Ting-Han Fan",
+    "Alexander Rudnicky",
+    "Peter Ramadge"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.756/",
+   "evidence": "Dissecting Transformer Length Extrapolation via the Lens of Receptive Field Analysis — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Distilling Script Knowledge from Large Language Models for Constrained Language Planning",
+   "authors": [
+    "Siyu Yuan",
+    "Jiangjie Chen",
+    "Ziquan Fu",
+    "Xuyang Ge",
+    "Soham Shah",
+    "Charles Jankowski",
+    "Yanghua Xiao",
+    "Deqing Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.236/",
+   "evidence": "Distilling Script Knowledge from Large Language Models for Constrained Language Planning — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Do PLMs Know and Understand Ontological Knowledge?",
+   "authors": [
+    "Weiqi Wu",
+    "Chengyue Jiang",
+    "Yong Jiang",
+    "Pengjun Xie",
+    "Kewei Tu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.173/",
+   "evidence": "Do PLMs Know and Understand Ontological Knowledge? — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments",
+   "authors": [
+    "Yu Gu",
+    "Xiang Deng",
+    "Yu Su"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.270/",
+   "evidence": "Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Extrinsic Evaluation of Machine Translation Metrics",
+   "authors": [
+    "Nikita Moghe",
+    "Tom Sherborne",
+    "Mark Steedman",
+    "Alexandra Birch"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.730/",
+   "evidence": "Extrinsic Evaluation of Machine Translation Metrics — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Faithful Low-Resource Data-to-Text Generation through Cycle Training",
+   "authors": [
+    "Zhuoer Wang",
+    "Marcus Collins",
+    "Nikhita Vedula",
+    "Simone Filice",
+    "Shervin Malmasi",
+    "Oleg Rokhlenko"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.160/",
+   "evidence": "Faithful Low-Resource Data-to-Text Generation through Cycle Training — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Generalizing Backpropagation for Gradient-Based Interpretability",
+   "authors": [
+    "Kevin Du",
+    "Lucas Torroba Hennigen",
+    "Niklas Stoehr",
+    "Alex Warstadt",
+    "Ryan Cotterell"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.669/",
+   "evidence": "Generalizing Backpropagation for Gradient-Based Interpretability — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Hexatagging: Projective Dependency Parsing as Tagging",
+   "authors": [
+    "Afra Amini",
+    "Tianyu Liu",
+    "Ryan Cotterell"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.124/",
+   "evidence": "Hexatagging: Projective Dependency Parsing as Tagging — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Hybrid Transducer and Attention based Encoder-Decoder Modeling for Speech-to-Text Tasks",
+   "authors": [
+    "Yun Tang",
+    "Anna Sun",
+    "Hirofumi Inaguma",
+    "Xinyue Chen",
+    "Ning Dong",
+    "Xutai Ma",
+    "Paden Tomasello",
+    "Juan Pino"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.695/",
+   "evidence": "Hybrid Transducer and Attention based Encoder-Decoder Modeling for Speech-to-Text Tasks — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Improving Pretraining Techniques for Code-Switched NLP",
+   "authors": [
+    "Richeek Das",
+    "Sahasra Ranjan",
+    "Shreya Pathak",
+    "Preethi Jyothi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.66/",
+   "evidence": "Improving Pretraining Techniques for Code-Switched NLP — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Knowledge Transfer in Incremental Learning for Multilingual Neural Machine Translation",
+   "authors": [
+    "Kaiyu Huang",
+    "Peng Li",
+    "Jin Ma",
+    "Ting Yao",
+    "Yang Liu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.852/",
+   "evidence": "Knowledge Transfer in Incremental Learning for Multilingual Neural Machine Translation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Language model acceptability judgements are not always robust to context",
+   "authors": [
+    "Koustuv Sinha",
+    "Jon Gauthier",
+    "Aaron Mueller",
+    "Kanishka Misra",
+    "Keren Fuentes",
+    "Roger Levy",
+    "Adina Williams"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.333/",
+   "evidence": "Language model acceptability judgements are not always robust to context — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Linear Classifier: An Often-Forgotten Baseline for Text Classification",
+   "authors": [
+    "Yu-Chen Lin",
+    "Si-An Chen",
+    "Jie-Jyun Liu",
+    "Chih-Jen Lin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.160/",
+   "evidence": "Linear Classifier: An Often-Forgotten Baseline for Text Classification — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Minding Language Models’ (Lack of) Theory of Mind: A Plug-and-Play Multi-Character Belief Tracker",
+   "authors": [
+    "Melanie Sclar",
+    "Sachin Kumar",
+    "Peter West",
+    "Alane Suhr",
+    "Yejin Choi",
+    "Yulia Tsvetkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.780/",
+   "evidence": "Minding Language Models’ (Lack of) Theory of Mind: A Plug-and-Play Multi-Character Belief Tracker — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MultiInstruct: Improving Multi-Modal Zero-Shot Learning via Instruction Tuning",
+   "authors": [
+    "Zhiyang Xu",
+    "Ying Shen",
+    "Lifu Huang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.641/",
+   "evidence": "MultiInstruct: Improving Multi-Modal Zero-Shot Learning via Instruction Tuning — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Multilingual LLMs are Better Cross-lingual In-context Learners with Alignment",
+   "authors": [
+    "Eshaan Tanwar",
+    "Subhabrata Dutta",
+    "Manish Borthakur",
+    "Tanmoy Chakraborty"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.346/",
+   "evidence": "Multilingual LLMs are Better Cross-lingual In-context Learners with Alignment — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Neural Machine Translation Methods for Translating Text to Sign Language Glosses",
+   "authors": [
+    "Dele Zhu",
+    "Vera Czehmann",
+    "Eleftherios Avramidis"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.700/",
+   "evidence": "Neural Machine Translation Methods for Translating Text to Sign Language Glosses — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "NLPositionality: Characterizing Design Biases of Datasets and Models",
+   "authors": [
+    "Sebastin Santy",
+    "Jenny Liang",
+    "Ronan Le Bras",
+    "Katharina Reinecke",
+    "Maarten Sap"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.505/",
+   "evidence": "NLPositionality: Characterizing Design Biases of Datasets and Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "PeaCoK: Persona Commonsense Knowledge for Consistent and Engaging Narratives",
+   "authors": [
+    "Silin Gao",
+    "Beatriz Borges",
+    "Soyoung Oh",
+    "Deniz Bayazit",
+    "Saya Kanno",
+    "Hiromi Wakaki",
+    "Yuki Mitsufuji",
+    "Antoine Bosselut"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.362/",
+   "evidence": "PeaCoK: Persona Commonsense Knowledge for Consistent and Engaging Narratives — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "QUEST: A Retrieval Dataset of Entity-Seeking Queries with Implicit Set Operations",
+   "authors": [
+    "Chaitanya Malaviya",
+    "Peter Shaw",
+    "Ming-Wei Chang",
+    "Kenton Lee",
+    "Kristina Toutanova"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.784/",
+   "evidence": "QUEST: A Retrieval Dataset of Entity-Seeking Queries with Implicit Set Operations — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Question-Answering in a Low-resourced Language: Benchmark Dataset and Models for Tigrinya",
+   "authors": [
+    "Fitsum Gaim",
+    "Wonsuk Yang",
+    "Hancheol Park",
+    "Jong Park"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.661/",
+   "evidence": "Question-Answering in a Low-resourced Language: Benchmark Dataset and Models for Tigrinya — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Scaling in Cognitive Modelling: a Multilingual Approach to Human Reading Times",
+   "authors": [
+    "Andrea de Varda",
+    "Marco Marelli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.14/",
+   "evidence": "Scaling in Cognitive Modelling: a Multilingual Approach to Human Reading Times — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "SCOTT: Self-Consistent Chain-of-Thought Distillation",
+   "authors": [
+    "Peifeng Wang",
+    "Zhengyang Wang",
+    "Zheng Li",
+    "Yifan Gao",
+    "Bing Yin",
+    "Xiang Ren"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.304/",
+   "evidence": "SCOTT: Self-Consistent Chain-of-Thought Distillation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Mechanical Bard: An Interpretable Machine Learning Approach to Shakespearean Sonnet Generation",
+   "authors": [
+    "Edwin Agnew",
+    "Michelle Qiu",
+    "Lily Zhu",
+    "Sam Wiseman",
+    "Cynthia Rudin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.140/",
+   "evidence": "The Mechanical Bard: An Interpretable Machine Learning Approach to Shakespearean Sonnet Generation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Tail Wagging the Dog: Dataset Construction Biases of Social Bias Benchmarks",
+   "authors": [
+    "Nikil Selvam",
+    "Sunipa Dev",
+    "Daniel Khashabi",
+    "Tushar Khot",
+    "Kai-Wei Chang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-short.118/",
+   "evidence": "The Tail Wagging the Dog: Dataset Construction Biases of Social Bias Benchmarks — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Towards Zero-Shot Multilingual Transfer for Code-Switched Responses",
+   "authors": [
+    "Ting-Wei Wu",
+    "Changsheng Zhao",
+    "Ernie Chang",
+    "Yangyang Shi",
+    "Pierce Chuang",
+    "Vikas Chandra",
+    "Biing Juang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.417/",
+   "evidence": "Towards Zero-Shot Multilingual Transfer for Code-Switched Responses — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Transfer and Active Learning for Dissonance Detection: Addressing the Rare-Class Challenge",
+   "authors": [
+    "Vasudha Varadarajan",
+    "Swanie Juhng",
+    "Syeda Mahwish",
+    "Xiaoran Liu",
+    "Jonah Luby",
+    "Christian Luhmann",
+    "H. Andrew Schwartz"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.665/",
+   "evidence": "Transfer and Active Learning for Dissonance Detection: Addressing the Rare-Class Challenge — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "VisText: A Benchmark for Semantically Rich Chart Captioning",
+   "authors": [
+    "Benny Tang",
+    "Angie Boggust",
+    "Arvind Satyanarayan"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.401/",
+   "evidence": "VisText: A Benchmark for Semantically Rich Chart Captioning — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Weaker Than You Think: A Critical Look at Weakly Supervised Learning",
+   "authors": [
+    "Dawei Zhu",
+    "Xiaoyu Shen",
+    "Marius Mosbach",
+    "Andreas Stephan",
+    "Dietrich Klakow"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.796/",
+   "evidence": "Weaker Than You Think: A Critical Look at Weakly Supervised Learning — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "What’s the Meaning of Superhuman Performance in Today’s NLU?",
+   "authors": [
+    "Simone Tedeschi",
+    "Johan Bos",
+    "Thierry Declerck",
+    "Jan Hajič",
+    "Daniel Hershcovich",
+    "Eduard Hovy",
+    "Alexander Koller",
+    "Simon Krek",
+    "Steven Schockaert",
+    "Rico Sennrich",
+    "Ekaterina Shutova",
+    "Roberto Navigli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.697/",
+   "evidence": "What’s the Meaning of Superhuman Performance in Today’s NLU? — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "WikiBio: a Semantic Resource for the Intersectional Analysis of Biographical Events",
+   "authors": [
+    "Marco Antonio Stranisci",
+    "Rossana Damiano",
+    "Enrico Mensa",
+    "Viviana Patti",
+    "Daniele Radicioni",
+    "Tommaso Caselli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.691/",
+   "evidence": "WikiBio: a Semantic Resource for the Intersectional Analysis of Biographical Events — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "World-to-Words: Grounded Open Vocabulary Acquisition through Fast Mapping in Vision-Language Models",
+   "authors": [
+    "Ziqiao Ma",
+    "Jiayi Pan",
+    "Joyce Chai"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.acl-long.31/",
+   "evidence": "World-to-Words: Grounded Open Vocabulary Acquisition through Fast Mapping in Vision-Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model",
+   "authors": [
+    "Ahmet Üstün",
+    "Viraat Aryabumi",
+    "Zheng Yong",
+    "Wei-Yin Ko",
+    "Daniel D’souza",
+    "Gbemileke Onilude",
+    "Neel Bhandari",
+    "Shivalika Singh",
+    "Hui-Lee Ooi",
+    "Amr Kayid",
+    "Freddie Vargus",
+    "Phil Blunsom",
+    "Shayne Longpre",
+    "Niklas Muennighoff",
+    "Marzieh Fadaee",
+    "Julia Kreutzer",
+    "Sara Hooker"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.845/",
+   "evidence": "Aya Model: An Instruction Finetuned Open-Access Multilingual Language Model — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Causal Estimation of Memorisation Profiles",
+   "authors": [
+    "Pietro Lesci",
+    "Clara Meister",
+    "Thomas Hofmann",
+    "Andreas Vlachos",
+    "Tiago Pimentel"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.834/",
+   "evidence": "Causal Estimation of Memorisation Profiles — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deciphering Oracle Bone Language with Diffusion Models",
+   "authors": [
+    "Haisu Guan",
+    "Huanxin Yang",
+    "Xinyu Wang",
+    "Shengwei Han",
+    "Yongge Liu",
+    "Lianwen Jin",
+    "Xiang Bai",
+    "Yuliang Liu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.831/",
+   "evidence": "Deciphering Oracle Bone Language with Diffusion Models — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mission: Impossible Language Models",
+   "authors": [
+    "Julie Kallini",
+    "Isabel Papadimitriou",
+    "Richard Futrell",
+    "Kyle Mahowald",
+    "Christopher Potts"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.787/",
+   "evidence": "Mission: Impossible Language Models — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Natural Language Satisfiability: Exploring the Problem Distribution and Evaluating Transformer-based Language Models",
+   "authors": [
+    "Tharindu Madusanka",
+    "Ian Pratt-Hartmann",
+    "Riza Batista-Navarro"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.815/",
+   "evidence": "Natural Language Satisfiability: Exploring the Problem Distribution and Evaluating Transformer-based Language Models — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Semisupervised Neural Proto-Language Reconstruction",
+   "authors": [
+    "Liang Lu",
+    "Peirong Xie",
+    "David Mortensen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.788/",
+   "evidence": "Semisupervised Neural Proto-Language Reconstruction — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Why are Sensitive Functions Hard for Transformers?",
+   "authors": [
+    "Michael Hahn",
+    "Mark Rofin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.800/",
+   "evidence": "Why are Sensitive Functions Hard for Transformers? — Best Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Resource Paper Award",
+   "title": "AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents",
+   "authors": [
+    "Harsh Trivedi",
+    "Tushar Khot",
+    "Mareike Hartmann",
+    "Ruskin Manku",
+    "Vinty Dong",
+    "Edward Li",
+    "Shashank Gupta",
+    "Ashish Sabharwal",
+    "Niranjan Balasubramanian"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.850/",
+   "evidence": "AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents — Best Resource Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper Award",
+   "title": "DIALECTBENCH: An NLP Benchmark for Dialects, Varieties, and Closely-Related Languages",
+   "authors": [
+    "Fahim Faisal",
+    "Orevaoghene Ahia",
+    "Aarohi Srivastava",
+    "Kabir Ahuja",
+    "David Chiang",
+    "Yulia Tsvetkov",
+    "Antonios Anastasopoulos"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.777/",
+   "evidence": "DIALECTBENCH: An NLP Benchmark for Dialects, Varieties, and Closely-Related Languages — Best Social Impact Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Resource Paper Award",
+   "title": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+   "authors": [
+    "Luca Soldaini",
+    "Rodney Kinney",
+    "Akshita Bhagia",
+    "Dustin Schwenk",
+    "David Atkinson",
+    "Russell Authur",
+    "Ben Bogin",
+    "Khyathi Chandu",
+    "Jennifer Dumas",
+    "Yanai Elazar",
+    "Valentin Hofmann",
+    "Ananya Jha",
+    "Sachin Kumar",
+    "Li Lucy",
+    "Xinxi Lyu",
+    "Nathan Lambert",
+    "Ian Magnusson",
+    "Jacob Morrison",
+    "Niklas Muennighoff",
+    "Aakanksha Naik",
+    "Crystal Nam",
+    "Matthew Peters",
+    "Abhilasha Ravichander",
+    "Kyle Richardson",
+    "Zejiang Shen",
+    "Emma Strubell",
+    "Nishant Subramani",
+    "Oyvind Tafjord",
+    "Evan Walsh",
+    "Luke Zettlemoyer",
+    "Noah Smith",
+    "Hannaneh Hajishirzi",
+    "Iz Beltagy",
+    "Dirk Groeneveld",
+    "Jesse Dodge",
+    "Kyle Lo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.840/",
+   "evidence": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research — Best Resource Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper Award",
+   "title": "Having Beer after Prayer? Measuring Cultural Bias in Large Language Models",
+   "authors": [
+    "Tarek Naous",
+    "Michael J Ryan",
+    "Alan Ritter",
+    "Wei Xu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.862/",
+   "evidence": "Having Beer after Prayer? Measuring Cultural Bias in Large Language Models — Best Social Impact Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper Award",
+   "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",
+   "authors": [
+    "Yi Zeng",
+    "Hongpeng Lin",
+    "Jingwen Zhang",
+    "Diyi Yang",
+    "Ruoxi Jia",
+    "Weiyan Shi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.773/",
+   "evidence": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs — Best Social Impact Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Resource Paper Award",
+   "title": "Latxa: An Open Language Model and Evaluation Suite for Basque",
+   "authors": [
+    "Julen Etxaniz",
+    "Oscar Sainz",
+    "Naiara Perez",
+    "Itziar Aldabe",
+    "German Rigau",
+    "Eneko Agirre",
+    "Aitor Ormazabal",
+    "Mikel Artetxe",
+    "Aitor Soroa"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.799/",
+   "evidence": "Latxa: An Open Language Model and Evaluation Suite for Basque — Best Resource Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Theme Paper Award",
+   "title": "OLMo: Accelerating the Science of Language Models",
+   "authors": [
+    "Dirk Groeneveld",
+    "Iz Beltagy",
+    "Evan Walsh",
+    "Akshita Bhagia",
+    "Rodney Kinney",
+    "Oyvind Tafjord",
+    "Ananya Jha",
+    "Hamish Ivison",
+    "Ian Magnusson",
+    "Yizhong Wang",
+    "Shane Arora",
+    "David Atkinson",
+    "Russell Authur",
+    "Khyathi Chandu",
+    "Arman Cohan",
+    "Jennifer Dumas",
+    "Yanai Elazar",
+    "Yuling Gu",
+    "Jack Hessel",
+    "Tushar Khot",
+    "William Merrill",
+    "Jacob Morrison",
+    "Niklas Muennighoff",
+    "Aakanksha Naik",
+    "Crystal Nam",
+    "Matthew Peters",
+    "Valentina Pyatkin",
+    "Abhilasha Ravichander",
+    "Dustin Schwenk",
+    "Saurabh Shah",
+    "William Smith",
+    "Emma Strubell",
+    "Nishant Subramani",
+    "Mitchell Wortsman",
+    "Pradeep Dasigi",
+    "Nathan Lambert",
+    "Kyle Richardson",
+    "Luke Zettlemoyer",
+    "Jesse Dodge",
+    "Kyle Lo",
+    "Luca Soldaini",
+    "Noah Smith",
+    "Hannaneh Hajishirzi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.841/",
+   "evidence": "OLMo: Accelerating the Science of Language Models — Best Theme Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Can Large Language Models be Good Emotional Supporter? Mitigating Preference Bias on Emotional Support Conversation",
+   "authors": [
+    "Dongjin Kang",
+    "Sunghwan Kim",
+    "Taeyoon Kwon",
+    "Seungjun Moon",
+    "Hyunsouk Cho",
+    "Youngjae Yu",
+    "Dongha Lee",
+    "Jinyoung Yeo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.813/",
+   "evidence": "Can Large Language Models be Good Emotional Supporter? Mitigating Preference Bias on Emotional Support Conversation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
+   "authors": [
+    "Zhouhao Sun",
+    "Li Du",
+    "Xiao Ding",
+    "Yixuan Ma",
+    "Yang Zhao",
+    "Kaitao Qiu",
+    "Ting Liu",
+    "Bing Qin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.778/",
+   "evidence": "Causal-Guided Active Learning for Debiasing Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "CausalGym: Benchmarking causal interpretability methods on linguistic tasks",
+   "authors": [
+    "Aryaman Arora",
+    "Dan Jurafsky",
+    "Christopher Potts"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.785/",
+   "evidence": "CausalGym: Benchmarking causal interpretability methods on linguistic tasks — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "CHECKWHY: Causal Fact Verification via Argument Structure",
+   "authors": [
+    "Jiasheng Si",
+    "Yibo Zhao",
+    "Yingjie Zhu",
+    "Haiyang Zhu",
+    "Wenpeng Lu",
+    "Deyu Zhou"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.835/",
+   "evidence": "CHECKWHY: Causal Fact Verification via Argument Structure — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Do Llamas Work in English? On the Latent Language of Multilingual Transformers",
+   "authors": [
+    "Chris Wendler",
+    "Veniamin Veselovsky",
+    "Giovanni Monea",
+    "Robert West"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.820/",
+   "evidence": "Do Llamas Work in English? On the Latent Language of Multilingual Transformers — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Don’t Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+   "authors": [
+    "Shangbin Feng",
+    "Weijia Shi",
+    "Yike Wang",
+    "Wenxuan Ding",
+    "Vidhisha Balachandran",
+    "Yulia Tsvetkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.786/",
+   "evidence": "Don’t Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "EconAgent: Large Language Model-Empowered Agents for Simulating Macroeconomic Activities",
+   "authors": [
+    "Nian Li",
+    "Chen Gao",
+    "Mingyu Li",
+    "Yong Li",
+    "Qingmin Liao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.829/",
+   "evidence": "EconAgent: Large Language Model-Empowered Agents for Simulating Macroeconomic Activities — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Emulated Disalignment: Safety Alignment for Large Language Models May Backfire!",
+   "authors": [
+    "Zhanhui Zhou",
+    "Jie Liu",
+    "Zhichen Dong",
+    "Jiaheng Liu",
+    "Chao Yang",
+    "Wanli Ouyang",
+    "Yu Qiao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.842/",
+   "evidence": "Emulated Disalignment: Safety Alignment for Large Language Models May Backfire! — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Estimating the Level of Dialectness Predicts Inter-annotator Agreement in Multi-dialect Arabic Datasets",
+   "authors": [
+    "Amr Keleg",
+    "Walid Magdy",
+    "Sharon Goldwater"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-short.70/",
+   "evidence": "Estimating the Level of Dialectness Predicts Inter-annotator Agreement in Multi-dialect Arabic Datasets — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "G-DIG: Towards Gradient-based DIverse and hiGh-quality Instruction Data Selection for Machine Translation",
+   "authors": [
+    "Xingyuan Pan",
+    "Luyang Huang",
+    "Liyan Kang",
+    "Zhicheng Liu",
+    "Yu Lu",
+    "Shanbo Cheng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.821/",
+   "evidence": "G-DIG: Towards Gradient-based DIverse and hiGh-quality Instruction Data Selection for Machine Translation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Getting Serious about Humor: Crafting Humor Datasets with Unfunny Large Language Models",
+   "authors": [
+    "Zachary Horvitz",
+    "Jingru Chen",
+    "Rahul Aditya",
+    "Harshvardhan Srivastava",
+    "Robert West",
+    "Zhou Yu",
+    "Kathleen McKeown"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-short.76/",
+   "evidence": "Getting Serious about Humor: Crafting Humor Datasets with Unfunny Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Greed is All You Need: An Evaluation of Tokenizer Inference Methods",
+   "authors": [
+    "Omri Uzan",
+    "Craig W. Schmidt",
+    "Chris Tanner",
+    "Yuval Pinter"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-short.73/",
+   "evidence": "Greed is All You Need: An Evaluation of Tokenizer Inference Methods — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages",
+   "authors": [
+    "Mohammed Safi Ur Rahman Khan",
+    "Priyam Mehta",
+    "Ananth Sankar",
+    "Umashankar Kumaravelan",
+    "Sumanth Doddapaneni",
+    "Suriyaprasaad B",
+    "Varun G",
+    "Sparsh Jain",
+    "Anoop Kunchukuttan",
+    "Pratyush Kumar",
+    "Raj Dabre",
+    "Mitesh M. Khapra"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.843/",
+   "evidence": "IndicLLMSuite: A Blueprint for Creating Pre-training and Fine-Tuning Datasets for Indian Languages — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "IRCoder: Intermediate Representations Make Language Models Robust Multilingual Code Generators",
+   "authors": [
+    "Indraneil Paul",
+    "Goran Glavaš",
+    "Iryna Gurevych"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.802/",
+   "evidence": "IRCoder: Intermediate Representations Make Language Models Robust Multilingual Code Generators — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "L-Eval: Instituting Standardized Evaluation for Long Context Language Models",
+   "authors": [
+    "Chenxin An",
+    "Shansan Gong",
+    "Ming Zhong",
+    "Xingjian Zhao",
+    "Mukai Li",
+    "Jun Zhang",
+    "Lingpeng Kong",
+    "Xipeng Qiu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.776/",
+   "evidence": "L-Eval: Instituting Standardized Evaluation for Long Context Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Language Complexity and Speech Recognition Accuracy: Orthographic Complexity Hurts, Phonological Complexity Doesn’t",
+   "authors": [
+    "Chihiro Taguchi",
+    "David Chiang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.827/",
+   "evidence": "Language Complexity and Speech Recognition Accuracy: Orthographic Complexity Hurts, Phonological Complexity Doesn’t — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Let’s Go Real Talk: Spoken Dialogue Model for Face-to-Face Conversation",
+   "authors": [
+    "Se Park",
+    "Chae Kim",
+    "Hyeongseop Rha",
+    "Minsu Kim",
+    "Joanna Hong",
+    "Jeonghun Yeo",
+    "Yong Ro"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.860/",
+   "evidence": "Let’s Go Real Talk: Spoken Dialogue Model for Face-to-Face Conversation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "M4LE: A Multi-Ability Multi-Range Multi-Task Multi-Domain Long-Context Evaluation Benchmark for Large Language Models",
+   "authors": [
+    "Wai-Chung Kwan",
+    "Xingshan Zeng",
+    "Yufei Wang",
+    "Yusen Sun",
+    "Liangyou Li",
+    "Yuxin Jiang",
+    "Lifeng Shang",
+    "Qun Liu",
+    "Kam-Fai Wong"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.832/",
+   "evidence": "M4LE: A Multi-Ability Multi-Range Multi-Task Multi-Domain Long-Context Evaluation Benchmark for Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MAP’s not dead yet: Uncovering true language model modes by conditioning away degeneracy",
+   "authors": [
+    "Davis Yoshida",
+    "Kartik Goyal",
+    "Kevin Gimpel"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.855/",
+   "evidence": "MAP’s not dead yet: Uncovering true language model modes by conditioning away degeneracy — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Media Framing: A typology and Survey of Computational Approaches Across Disciplines",
+   "authors": [
+    "Yulia Otmakhova",
+    "Shima Khanehzar",
+    "Lea Frermann"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.822/",
+   "evidence": "Media Framing: A typology and Survey of Computational Approaches Across Disciplines — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MMToM-QA: Multimodal Theory of Mind Question Answering",
+   "authors": [
+    "Chuanyang Jin",
+    "Yutong Wu",
+    "Jing Cao",
+    "Jiannan Xiang",
+    "Yen-Ling Kuo",
+    "Zhiting Hu",
+    "Tomer Ullman",
+    "Antonio Torralba",
+    "Joshua Tenenbaum",
+    "Tianmin Shu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.851/",
+   "evidence": "MMToM-QA: Multimodal Theory of Mind Question Answering — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MultiLegalPile: A 689GB Multilingual Legal Corpus",
+   "authors": [
+    "Joel Niklaus",
+    "Veton Matoshi",
+    "Matthias Stürmer",
+    "Ilias Chalkidis",
+    "Daniel Ho"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.805/",
+   "evidence": "MultiLegalPile: A 689GB Multilingual Legal Corpus — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MultiPICo: Multilingual Perspectivist Irony Corpus",
+   "authors": [
+    "Silvia Casola",
+    "Simona Frenda",
+    "Soda Marem Lo",
+    "Erhan Sezerer",
+    "Antonio Uva",
+    "Valerio Basile",
+    "Cristina Bosco",
+    "Alessandro Pedrani",
+    "Chiara Rubagotti",
+    "Viviana Patti",
+    "Davide Bernardi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.849/",
+   "evidence": "MultiPICo: Multilingual Perspectivist Irony Corpus — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Must NLP be Extractive?",
+   "authors": [
+    "Steven Bird"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.797/",
+   "evidence": "Must NLP be Extractive? — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "NounAtlas: Filling the Gap in Nominal Semantic Role Labeling",
+   "authors": [
+    "Roberto Navigli",
+    "Marco Lo Pinto",
+    "Pasquale Silvestri",
+    "Dennis Rotondi",
+    "Simone Ciciliano",
+    "Alessandro Scirè"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.857/",
+   "evidence": "NounAtlas: Filling the Gap in Nominal Semantic Role Labeling — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "On Efficient and Statistical Quality Estimation for Data Annotation",
+   "authors": [
+    "Jan-Christoph Klie",
+    "Juan Haladjian",
+    "Marc Kirchner",
+    "Rahul Nair"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.837/",
+   "evidence": "On Efficient and Statistical Quality Estimation for Data Annotation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models",
+   "authors": [
+    "Paul Röttger",
+    "Valentin Hofmann",
+    "Valentina Pyatkin",
+    "Musashi Hinck",
+    "Hannah Kirk",
+    "Hinrich Schuetze",
+    "Dirk Hovy"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.816/",
+   "evidence": "Political Compass or Spinning Arrow? Towards More Meaningful Evaluations for Values and Opinions in Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety",
+   "authors": [
+    "Zaibin Zhang",
+    "Yongting Zhang",
+    "Lijun Li",
+    "Hongzhi Gao",
+    "Lijun Wang",
+    "Huchuan Lu",
+    "Feng Zhao",
+    "Yu Qiao",
+    "Jing Shao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.812/",
+   "evidence": "PsySafe: A Comprehensive Framework for Psychological-based Attack, Defense, and Evaluation of Multi-agent System Safety — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Quantized Side Tuning: Fast and Memory-Efficient Tuning of Quantized Large Language Models",
+   "authors": [
+    "Zhengxin Zhang",
+    "Dan Zhao",
+    "Xupeng Miao",
+    "Gabriele Oliaro",
+    "Zhihao Zhang",
+    "Qing Li",
+    "Yong Jiang",
+    "Zhihao Jia"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.1/",
+   "evidence": "Quantized Side Tuning: Fast and Memory-Efficient Tuning of Quantized Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models",
+   "authors": [
+    "Mosh Levy",
+    "Alon Jacoby",
+    "Yoav Goldberg"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.818/",
+   "evidence": "Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Speech Translation with Speech Foundation Models and Large Language Models: What is There and What is Missing?",
+   "authors": [
+    "Marco Gaido",
+    "Sara Papi",
+    "Matteo Negri",
+    "Luisa Bentivogli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.789/",
+   "evidence": "Speech Translation with Speech Foundation Models and Large Language Models: What is There and What is Missing? — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "SPZ: A Semantic Perturbation-based Data Augmentation Method with Zonal-Mixing for Alzheimer’s Disease Detection",
+   "authors": [
+    "FangFang Li",
+    "Cheng Huang",
+    "PuZhen Su",
+    "Jie Yin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.823/",
+   "evidence": "SPZ: A Semantic Perturbation-based Data Augmentation Method with Zonal-Mixing for Alzheimer’s Disease Detection — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Steering Llama 2 via Contrastive Activation Addition",
+   "authors": [
+    "Nina Rimsky",
+    "Nick Gabrieli",
+    "Julian Schulz",
+    "Meg Tong",
+    "Evan Hubinger",
+    "Alexander Turner"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.828/",
+   "evidence": "Steering Llama 2 via Contrastive Activation Addition — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Earth is Flat because...: Investigating LLMs’ Belief towards Misinformation via Persuasive Conversation",
+   "authors": [
+    "Rongwu Xu",
+    "Brian Lin",
+    "Shujian Yang",
+    "Tianqi Zhang",
+    "Weiyan Shi",
+    "Tianwei Zhang",
+    "Zhixuan Fang",
+    "Wei Xu",
+    "Han Qiu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.858/",
+   "evidence": "The Earth is Flat because...: Investigating LLMs’ Belief towards Misinformation via Persuasive Conversation — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Word Embeddings Are Steers for Language Models",
+   "authors": [
+    "Chi Han",
+    "Jialiang Xu",
+    "Manling Li",
+    "Yi Fung",
+    "Chenkai Sun",
+    "Nan Jiang",
+    "Tarek Abdelzaher",
+    "Heng Ji"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.acl-long.864/",
+   "evidence": "Word Embeddings Are Steers for Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Theory of Response Sampling in LLMs: Part Descriptive and Part Prescriptive",
+   "authors": [
+    "Sarath Sivaprasad",
+    "Pramod Kaushik",
+    "Sahar Abdelnabi",
+    "Mario Fritz"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1454/",
+   "evidence": "A Theory of Response Sampling in LLMs: Part Descriptive and Part Prescriptive — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs",
+   "authors": [
+    "Angelina Wang",
+    "Michelle Phan",
+    "Daniel E. Ho",
+    "Sanmi Koyejo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.341/",
+   "evidence": "Fairness through Difference Awareness: Measuring Desired Group Discrimination in LLMs — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Language Models Resist Alignment: Evidence From Data Compression",
+   "authors": [
+    "Jiaming Ji",
+    "Kaile Wang",
+    "Tianyi Alex Qiu",
+    "Boyuan Chen",
+    "Jiayi Zhou",
+    "Changye Li",
+    "Hantao Lou",
+    "Josef Dai",
+    "Yunhuai Liu",
+    "Yaodong Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1141/",
+   "evidence": "Language Models Resist Alignment: Evidence From Data Compression — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+   "authors": [
+    "Jingyang Yuan",
+    "Huazuo Gao",
+    "Damai Dai",
+    "Junyu Luo",
+    "Liang Zhao",
+    "Zhengyan Zhang",
+    "Zhenda Xie",
+    "Yuxing Wei",
+    "Lean Wang",
+    "Zhiping Xiao",
+    "Yuqing Wang",
+    "Chong Ruan",
+    "Ming Zhang",
+    "Wenfeng Liang",
+    "Wangding Zeng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1126/",
+   "evidence": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset",
+   "authors": [
+    "Charles Nimo",
+    "Tobi Olatunji",
+    "Abraham Toluwase Owodunni",
+    "Tassallah Abdullahi",
+    "Emmanuel Ayodele",
+    "Mardhiyah Sanni",
+    "Ezinwanne C. Aka",
+    "Folafunmi Omofoye",
+    "Foutse Yuehgoh",
+    "Timothy Faniran",
+    "Bonaventure F. P. Dossou",
+    "Moshood O. Yekini",
+    "Jonas Kemp",
+    "Katherine A Heller",
+    "Jude Chidubem Omeke",
+    "Chidi Asuzu Md",
+    "Naome A Etori",
+    "Aïmérou Ndiaye",
+    "Ifeoma Okoh",
+    "Evans Doe Ocansey",
+    "Wendy Kinara",
+    "Michael L. Best",
+    "Irfan Essa",
+    "Stephen Edward Moore",
+    "Chris Fourie",
+    "Mercy Nyamewaa Asiedu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.96/",
+   "evidence": "AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset — Best Social Impact Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral",
+   "authors": [
+    "Shivani Kumar",
+    "David Jurgens"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.294/",
+   "evidence": "Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "BRIGHTER: BRIdging the Gap in Human-Annotated Textual Emotion Recognition Datasets for 28 Languages",
+   "authors": [
+    "Shamsuddeen Hassan Muhammad",
+    "Nedjma Ousidhoum",
+    "Idris Abdulmumin",
+    "Jan Philip Wahle",
+    "Terry Ruas",
+    "Meriem Beloucif",
+    "Christine de Kock",
+    "Nirmal Surange",
+    "Daniela Teodorescu",
+    "Ibrahim Said Ahmad",
+    "David Ifeoluwa Adelani",
+    "Alham Fikri Aji",
+    "Felermino D. M. A. Ali",
+    "Ilseyar Alimova",
+    "Vladimir Araujo",
+    "Nikolay Babakov",
+    "Naomi Baes",
+    "Ana-Maria Bucur",
+    "Andiswa Bukula",
+    "Guanqun Cao",
+    "Rodrigo Tufiño",
+    "Rendi Chevi",
+    "Chiamaka Ijeoma Chukwuneke",
+    "Alexandra Ciobotaru",
+    "Daryna Dementieva",
+    "Murja Sani Gadanya",
+    "Robert Geislinger",
+    "Bela Gipp",
+    "Oumaima Hourrane",
+    "Oana Ignat",
+    "Falalu Ibrahim Lawan",
+    "Rooweither Mabuya",
+    "Rahmad Mahendra",
+    "Vukosi Marivate",
+    "Alexander Panchenko",
+    "Andrew Piper",
+    "Charles Henrique Porto Ferreira",
+    "Vitaly Protasov",
+    "Samuel Rutunda",
+    "Manish Shrivastava",
+    "Aura Cristina Udrea",
+    "Lilian Diana Awuor Wanzare",
+    "Sophie Wu",
+    "Florian Valentin Wunderlich",
+    "Hanif Muhammad Zhafran",
+    "Tianhui Zhang",
+    "Yi Zhou",
+    "Saif M. Mohammad"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.436/",
+   "evidence": "BRIGHTER: BRIdging the Gap in Human-Annotated Textual Emotion Recognition Datasets for 28 Languages — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "MaCP: Minimal yet Mighty Adaptation via Hierarchical Cosine Projection",
+   "authors": [
+    "Yixian Shen",
+    "Qi Bi",
+    "Jia-hong Huang",
+    "Hongyi Zhu",
+    "Andy D. Pimentel",
+    "Anuj Pathania"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1006/",
+   "evidence": "MaCP: Minimal yet Mighty Adaptation via Hierarchical Cosine Projection — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models",
+   "authors": [
+    "Xinlin Zhuang",
+    "Jiahui Peng",
+    "Ren Ma",
+    "Yinfan Wang",
+    "Tianyi Bai",
+    "Xingjian Wei",
+    "Qiu Jiantao",
+    "Chi Zhang",
+    "Ying Qian",
+    "Conghui He"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.533/",
+   "evidence": "Meta-rater: A Multi-dimensional Data Selection Method for Pre-training Language Models — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs",
+   "authors": [
+    "Fakhraddin Alwajih",
+    "Abdellah El Mekki",
+    "Samar Mohamed Magdy",
+    "AbdelRahim A. Elmadany",
+    "Omer Nacar",
+    "El Moatez Billah Nagoudi",
+    "Reem Abdel-Salam",
+    "Hanin Atwany",
+    "Youssef Nafea",
+    "Abdulfattah Mohammed Yahya",
+    "Rahaf Alhamouri",
+    "Hamzah A. Alsayadi",
+    "Hiba Zayed",
+    "Sara Shatnawi",
+    "Serry Sibaee",
+    "Yasir Ech-chammakhy",
+    "Walid Al-Dhabyani",
+    "Marwa Mohamed Ali",
+    "Imen Jarraya",
+    "Ahmed Oumar El-Shangiti",
+    "Aisha Alraeesi",
+    "Mohammed Anwar AL-Ghrawi",
+    "Abdulrahman S. Al-Batati",
+    "Elgizouli Mohamed",
+    "Noha Taha Elgindi",
+    "Muhammed Saeed",
+    "Houdaifa Atou",
+    "Issam Ait Yahia",
+    "Abdelhak Bouayad",
+    "Mohammed Machrouh",
+    "Amal Makouar",
+    "Dania Alkawi",
+    "Mukhtar Mohamed",
+    "Safaa Taher Abdelfadil",
+    "Amine Ziad Ounnoughene",
+    "Anfel Rouabhia",
+    "Rwaa Assi",
+    "Ahmed Sorkatti",
+    "Mohamedou Cheikh Tourad",
+    "Anis Koubaa",
+    "Ismail Berrada",
+    "Mustafa Jarrar",
+    "Shady Shehata",
+    "Muhammad Abdul-Mageed"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1579/",
+   "evidence": "Palm: A Culturally Inclusive and Linguistically Diverse Dataset for Arabic LLMs — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "SubLIME: Subset Selection via Rank Correlation Prediction for Data-Efficient LLM Evaluation",
+   "authors": [
+    "Gayathri Saranathan",
+    "Cong Xu",
+    "Mahammad Parwez Alam",
+    "Tarun Kumar",
+    "Martin Foltin",
+    "Soon Yee Wong",
+    "Suparna Bhattacharya"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1477/",
+   "evidence": "SubLIME: Subset Selection via Rank Correlation Prediction for Data-Efficient LLM Evaluation — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "The AI Gap: How Socioeconomic Status Affects Language Technology Interactions",
+   "authors": [
+    "Elisa Bassignana",
+    "Amanda Cercas Curry",
+    "Dirk Hovy"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.914/",
+   "evidence": "The AI Gap: How Socioeconomic Status Affects Language Technology Interactions — Best Social Impact Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "A New Formulation of Zipf’s Meaning-Frequency Law through Contextual Diversity",
+   "authors": [
+    "Ryo Nagata",
+    "Kumiko Tanaka-Ishii"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.744/",
+   "evidence": "A New Formulation of Zipf’s Meaning-Frequency Law through Contextual Diversity — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "All That Glitters is Not Novel: Plagiarism in AI Generated Research",
+   "authors": [
+    "Tarun Gupta",
+    "Danish Pruthi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1249/",
+   "evidence": "All That Glitters is Not Novel: Plagiarism in AI Generated Research — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Between Circuits and Chomsky: Pre-pretraining on Formal Languages Imparts Linguistic Biases",
+   "authors": [
+    "Michael Y. Hu",
+    "Jackson Petty",
+    "Chuan Shi",
+    "William Merrill",
+    "Tal Linzen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.478/",
+   "evidence": "Between Circuits and Chomsky: Pre-pretraining on Formal Languages Imparts Linguistic Biases — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization",
+   "authors": [
+    "Itai Mondshine",
+    "Tzuf Paz-Argaman",
+    "Reut Tsarfaty"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.932/",
+   "evidence": "Beyond N-Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Bridging the Language Gaps in Large Language Models with Inference-Time Cross-Lingual Intervention",
+   "authors": [
+    "Weixuan Wang",
+    "Minghao Wu",
+    "Barry Haddow",
+    "Alexandra Birch"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.270/",
+   "evidence": "Bridging the Language Gaps in Large Language Models with Inference-Time Cross-Lingual Intervention — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Byte Latent Transformer: Patches Scale Better Than Tokens",
+   "authors": [
+    "Artidoro Pagnoni",
+    "Ramakanth Pasunuru",
+    "Pedro Rodriguez",
+    "John Nguyen",
+    "Benjamin Muller",
+    "Margaret Li",
+    "Chunting Zhou",
+    "Lili Yu",
+    "Jason E Weston",
+    "Luke Zettlemoyer",
+    "Gargi Ghosh",
+    "Mike Lewis",
+    "Ari Holtzman",
+    "Srini Iyer"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.453/",
+   "evidence": "Byte Latent Transformer: Patches Scale Better Than Tokens — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Capability Salience Vector: Fine-grained Alignment of Loss and Capabilities for Downstream Task Scaling Law",
+   "authors": [
+    "Qiming Ge",
+    "Shuhao Xing",
+    "Songyang Gao",
+    "Yunhua Zhou",
+    "Yicheng Zou",
+    "Songyang Zhang",
+    "Zhi Chen",
+    "Hang Yan",
+    "Qi Zhang",
+    "Qipeng Guo",
+    "Kai Chen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1157/",
+   "evidence": "Capability Salience Vector: Fine-grained Alignment of Loss and Capabilities for Downstream Task Scaling Law — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "From Real to Synthetic: Synthesizing Millions of Diversified and Complicated User Instructions with Attributed Grounding",
+   "authors": [
+    "Chiwei Zhu",
+    "Benfeng Xu",
+    "Xiaorui Wang",
+    "Zhendong Mao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.517/",
+   "evidence": "From Real to Synthetic: Synthesizing Millions of Diversified and Complicated User Instructions with Attributed Grounding — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them",
+   "authors": [
+    "Abhilasha Ravichander",
+    "Shrusti Ghela",
+    "David Wadden",
+    "Yejin Choi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.71/",
+   "evidence": "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "HateDay: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter",
+   "authors": [
+    "Manuel Tonneau",
+    "Diyi Liu",
+    "Niyati Malhotra",
+    "Scott A. Hale",
+    "Samuel Fraiberger",
+    "Victor Orozco-Olvera",
+    "Paul Röttger"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.115/",
+   "evidence": "HateDay: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "I0T: Embedding Standardization Method Towards Zero Modality Gap",
+   "authors": [
+    "Na Min An",
+    "Eunki Kim",
+    "James Thorne",
+    "Hyunjung Shim"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1319/",
+   "evidence": "I0T: Embedding Standardization Method Towards Zero Modality Gap — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "IndicSynth: A Large-Scale Multilingual Synthetic Speech Dataset for Low-Resource Indian Languages",
+   "authors": [
+    "Divya V Sharma",
+    "Vijval Ekbote",
+    "Anubha Gupta"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1070/",
+   "evidence": "IndicSynth: A Large-Scale Multilingual Synthetic Speech Dataset for Low-Resource Indian Languages — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "LaTIM: Measuring Latent Token-to-Token Interactions in Mamba Models",
+   "authors": [
+    "Hugo Pitorro",
+    "Marcos Vinicius Treviso"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1194/",
+   "evidence": "LaTIM: Measuring Latent Token-to-Token Interactions in Mamba Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs",
+   "authors": [
+    "Jingcheng Niu",
+    "Xingdi Yuan",
+    "Tong Wang",
+    "Hamidreza Saghir",
+    "Amir H. Abdi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.791/",
+   "evidence": "Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts",
+   "authors": [
+    "Qibing Ren",
+    "Hao Li",
+    "Dongrui Liu",
+    "Zhanxu Xie",
+    "Xiaoya Lu",
+    "Yu Qiao",
+    "Lei Sha",
+    "Junchi Yan",
+    "Lizhuang Ma",
+    "Jing Shao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1207/",
+   "evidence": "LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Mapping 1,000+ Language Models via the Log-Likelihood Vector",
+   "authors": [
+    "Momose Oyama",
+    "Hiroaki Yamagiwa",
+    "Yusuke Takase",
+    "Hidetoshi Shimodaira"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1584/",
+   "evidence": "Mapping 1,000+ Language Models via the Log-Likelihood Vector — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models",
+   "authors": [
+    "Zhongzhan Huang",
+    "Guoming Ling",
+    "Shanshan Zhong",
+    "Hefeng Wu",
+    "Liang Lin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.560/",
+   "evidence": "MiniLongBench: The Low-cost Long Context Understanding Benchmark for Large Language Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "PARME: Parallel Corpora for Low-Resourced Middle Eastern Languages",
+   "authors": [
+    "Sina Ahmadi",
+    "Rico Sennrich",
+    "Erfan Karami",
+    "Ako Marani",
+    "Parviz Fekrazad",
+    "Gholamreza Akbarzadeh Baghban",
+    "Hanah Hadi",
+    "Semko Heidari",
+    "Mahîr Dogan",
+    "Pedram Asadi",
+    "Dashne Bashir",
+    "Mohammad Amin Ghodrati",
+    "Kourosh Amini",
+    "Zeynab Ashourinezhad",
+    "Mana Baladi",
+    "Farshid Ezzati",
+    "Alireza Ghasemifar",
+    "Daryoush Hosseinpour",
+    "Behrooz Abbaszadeh",
+    "Amin Hassanpour",
+    "Bahaddin Jalal Hamaamin",
+    "Saya Kamal Hama",
+    "Ardeshir Mousavi",
+    "Sarko Nazir Hussein",
+    "Isar Nejadgholi",
+    "Mehmet Ölmez",
+    "Horam Osmanpour",
+    "Rashid Roshan Ramezani",
+    "Aryan Sediq Aziz",
+    "Ali Salehi Sheikhalikelayeh",
+    "Mohammadreza Yadegari",
+    "Kewyar Yadegari",
+    "Sedighe Zamani Roodsari"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1451/",
+   "evidence": "PARME: Parallel Corpora for Low-Resourced Middle Eastern Languages — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Past Meets Present: Creating Historical Analogy with Large Language Models",
+   "authors": [
+    "Nianqi Li",
+    "Siyu Yuan",
+    "Jiangjie Chen",
+    "Jiaqing Liang",
+    "Feng Wei",
+    "Zujie Liang",
+    "Deqing Yang",
+    "Yanghua Xiao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.200/",
+   "evidence": "Past Meets Present: Creating Historical Analogy with Large Language Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory",
+   "authors": [
+    "Yexiang Liu",
+    "Zekun Li",
+    "Zhi Fang",
+    "Nan Xu",
+    "Ran He",
+    "Tieniu Tan"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1356/",
+   "evidence": "Rethinking the Role of Prompting Strategies in LLM Test-Time Scaling: A Perspective of Probability Theory — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability",
+   "authors": [
+    "Yusuke Sakai",
+    "Hidetaka Kamigaito",
+    "Taro Watanabe"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1508/",
+   "evidence": "Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Toward Automatic Discovery of a Canine Phonetic Alphabet",
+   "authors": [
+    "Theron S. Wang",
+    "Xingyuan Li",
+    "Hridayesh Lekhak",
+    "Tuan Minh Dang",
+    "Mengyue Wu",
+    "Kenny Q. Zhu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.451/",
+   "evidence": "Toward Automatic Discovery of a Canine Phonetic Alphabet — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Towards the Law of Capacity Gap in Distilling Language Models",
+   "authors": [
+    "Chen Zhang",
+    "Qiuchi Li",
+    "Dawei Song",
+    "Zheyu Ye",
+    "Yan Gao",
+    "Yao Hu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1097/",
+   "evidence": "Towards the Law of Capacity Gap in Distilling Language Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling",
+   "authors": [
+    "Xianzhen Luo",
+    "Yixuan Wang",
+    "Qingfu Zhu",
+    "Zhiming Zhang",
+    "Xuanyu Zhang",
+    "Qing Yang",
+    "Dongliang Xu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.338/",
+   "evidence": "Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Typology-Guided Adaptation in Multilingual Models",
+   "authors": [
+    "Ndapa Nakashole"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.acl-long.1059/",
+   "evidence": "Typology-Guided Adaptation in Multilingual Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Characterizing the Expressivity of Local Attention in Transformers",
+   "authors": [
+    "Jiaoda Li",
+    "Ryan Cotterell"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1739/",
+   "evidence": "Characterizing the Expressivity of Local Attention in Transformers — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Memory efficiency and resource-rational encoding in sentence processing",
+   "authors": [
+    "Weijie Xu",
+    "Brian Dillon",
+    "Richard Futrell"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1550/",
+   "evidence": "Memory efficiency and resource-rational encoding in sentence processing — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Imperfective Paradox in Large Language Models",
+   "authors": [
+    "Bolei Ma",
+    "Yusuke Miyao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.689/",
+   "evidence": "The Imperfective Paradox in Large Language Models — Best Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "Afri-MCQA: Multimodal Cultural Question Answering for African Languages",
+   "authors": [
+    "Atnafu Lambebo Tonja",
+    "Srija Anand",
+    "Emilio Villa-Cueva",
+    "Israel Abebe Azime",
+    "Jesujoba Oluwadara Alabi",
+    "Muhidin A. Mohamed",
+    "Debela Desalegn Yadeta",
+    "Negasi Haile Abadi",
+    "Abigail Oppong",
+    "Nnaemeka Casmir Obiefuna",
+    "Idris Abdulmumin",
+    "Naome A Etori",
+    "Eric Peter Wairagala",
+    "Kanda Patrick Tshinu",
+    "Imanigirimbabazi Emmanuel",
+    "Gabofetswe Malema",
+    "Alham Fikri Aji",
+    "David Ifeoluwa Adelani",
+    "Thamar Solorio"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1869/",
+   "evidence": "Afri-MCQA: Multimodal Cultural Question Answering for African Languages — Best Social Impact Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "Audio MultiChallenge: A Multi-Turn Evaluation of Spoken Dialogue Systems on Natural Human Interaction",
+   "authors": [
+    "Advait Gosai",
+    "Tyler Vuong",
+    "Utkarsh Tyagi",
+    "Steven Li",
+    "Wenjia You",
+    "Miheer Bavare",
+    "Arda Uçar",
+    "Zhongwang Fang",
+    "Brian Jang",
+    "Bing Liu",
+    "Yunzhong He"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1654/",
+   "evidence": "Audio MultiChallenge: A Multi-Turn Evaluation of Spoken Dialogue Systems on Natural Human Interaction — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models",
+   "authors": [
+    "Mengfan Li",
+    "Xuanhua Shi",
+    "Yang Deng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.421/",
+   "evidence": "CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects",
+   "authors": [
+    "Jason S Lucas",
+    "Matt Murtagh White",
+    "Ali Al-Lawati",
+    "Uchendu Uchendu",
+    "Adaku Uchendu",
+    "Dongwon Lee"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.144/",
+   "evidence": "DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects — Best Social Impact Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "HSCodeComp: A Realistic and Expert-level Agent Benchmark for Hierarchical Rule Application",
+   "authors": [
+    "Tian Lan",
+    "Yiqian Yang",
+    "Qianghuai Jia",
+    "Li Zhu",
+    "Hui Jiang",
+    "Hang Zhu",
+    "Weihua Luo",
+    "Longyue Wang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.937/",
+   "evidence": "HSCodeComp: A Realistic and Expert-level Agent Benchmark for Hierarchical Rule Application — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models",
+   "authors": [
+    "Chonghan Qin",
+    "Xiachong Feng",
+    "Weitao Ma",
+    "Xiaocheng Feng",
+    "Lingpeng Kong"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1301/",
+   "evidence": "ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Theme Paper",
+   "title": "Mapping the Circumplex of Affect: Geometric Analysis of Emotion Representations via Hyperspherical Contrastive Learning",
+   "authors": [
+    "Yusuke Yamauchi",
+    "Akiko Aizawa"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.772/",
+   "evidence": "Mapping the Circumplex of Affect: Geometric Analysis of Emotion Representations via Hyperspherical Contrastive Learning — Best Theme Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking",
+   "authors": [
+    "Mark Rothermel",
+    "Marcus Kornmann",
+    "Marcus Rohrbach",
+    "Anna Rohrbach"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1948/",
+   "evidence": "VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking — Best Resource Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "category",
+   "awardLabel": "Best Social Impact Paper",
+   "title": "Your Students Don’t Use LLMs Like You Wish They Did",
+   "authors": [
+    "Sebastian Kobler",
+    "Matthew Clemson",
+    "Angela Sun",
+    "Jonathan K. Kummerfeld"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.875/",
+   "evidence": "Your Students Don’t Use LLMs Like You Wish They Did — Best Social Impact Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection",
+   "authors": [
+    "Yang Li",
+    "Qiang Sheng",
+    "Zhengjia Wang",
+    "Yehan Yang",
+    "Danding Wang",
+    "Juan Cao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.235/",
+   "evidence": "Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty",
+   "authors": [
+    "Johannes Kirmayr",
+    "Lukas Stappen",
+    "Elisabeth Andre"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1886/",
+   "evidence": "CAR-bench: Evaluating the Consistency and Limit-Awareness of LLM Agents under Real-World Uncertainty — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "CIG: Measuring Conversational Information Gain in Deliberative Dialogues with Semantic Memory Dynamics",
+   "authors": [
+    "Ming-Bin Chen",
+    "Jey Han Lau",
+    "Lea Frermann"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.2203/",
+   "evidence": "CIG: Measuring Conversational Information Gain in Deliberative Dialogues with Semantic Memory Dynamics — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "CURE: Critique-Driven Unified Reinforcement Learning for Test-Time Self-Improvement",
+   "authors": [
+    "Guirong Chen",
+    "Shuqi Ye",
+    "Wenkai Yang",
+    "Shiqi Shen",
+    "Guangyao Shen",
+    "Yankai Lin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1321/",
+   "evidence": "CURE: Critique-Driven Unified Reinforcement Learning for Test-Time Self-Improvement — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "CxMP: A Linguistic Minimal-Pair Benchmark for Evaluating Constructional Understanding in Language Models",
+   "authors": [
+    "Miyu Oba",
+    "Saku Sugawara"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.2132/",
+   "evidence": "CxMP: A Linguistic Minimal-Pair Benchmark for Evaluating Constructional Understanding in Language Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Evolutionary Guided Decoding: Iterative Value Refinement for LLMs",
+   "authors": [
+    "Zhenhua Liu",
+    "Lijun Li",
+    "Ruizhe Chen",
+    "Yuxian Jiang",
+    "Tong Zhu",
+    "Zhaochen Su",
+    "Wenliang Chen",
+    "Jing Shao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.148/",
+   "evidence": "Evolutionary Guided Decoding: Iterative Value Refinement for LLMs — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "From Local to Global: Revisiting Structured Pruning Paradigms for Large Language Models",
+   "authors": [
+    "Ziyan Wang",
+    "Enmao Diao",
+    "Qi Le",
+    "Pu Wang",
+    "Minwoo Lee",
+    "Shu-ping Yeh",
+    "Evgeny Stupachenko",
+    "Hao Feng",
+    "Li Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1653/",
+   "evidence": "From Local to Global: Revisiting Structured Pruning Paradigms for Large Language Models — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR",
+   "authors": [
+    "Jiaying Zhang",
+    "Lei Shi",
+    "Jiguo Li",
+    "Jun Xu",
+    "Jiuchong Gao",
+    "Jinghua Hao",
+    "Renqing He"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1110/",
+   "evidence": "GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs",
+   "authors": [
+    "Zhenyu Liu",
+    "Xuanyu Zhang",
+    "Yunxin Li",
+    "Qixun Teng",
+    "Shenyuan Jiang",
+    "Haolan Chen",
+    "Mingjun Zhao",
+    "Fanbo Meng",
+    "Yu Xu",
+    "Yancheng He",
+    "Baotian Hu",
+    "Haizhou Li",
+    "Min Zhang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.419/",
+   "evidence": "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage",
+   "authors": [
+    "Jinwei Hu",
+    "Xinmiao Huang",
+    "Youcheng Sun",
+    "Yi Dong",
+    "Xiaowei Huang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.270/",
+   "evidence": "Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Massively Multilingual Joint Segmentation and Glossing",
+   "authors": [
+    "Michael Ginn",
+    "Lindia Tjuatja",
+    "Enora Rice",
+    "Ali Marashian",
+    "Maria Valentini",
+    "Jasmine Xu",
+    "Graham Neubig",
+    "Alexis Palmer"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1657/",
+   "evidence": "Massively Multilingual Joint Segmentation and Glossing — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "MauBERT: Universal Phonetic Inductive Biases for Few-Shot Acoustic Units Discovery",
+   "authors": [
+    "Angelo Ortiz Tandazo",
+    "Manel Khentout",
+    "Youssef Benchekroun",
+    "Thomas Hueber",
+    "Emmanuel Dupoux"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.24/",
+   "evidence": "MauBERT: Universal Phonetic Inductive Biases for Few-Shot Acoustic Units Discovery — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning",
+   "authors": [
+    "Naixin Zhai",
+    "Pengyang Shao",
+    "Binbin Zheng",
+    "Yonghui Yang",
+    "Fei Shen",
+    "Long Bai",
+    "Xun Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.893/",
+   "evidence": "Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "MediEval: A Unified Medical Benchmark for Patient-Contextual and Knowledge-Grounded Reasoning in LLMs",
+   "authors": [
+    "Zhan Qu",
+    "Michael Färber"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.734/",
+   "evidence": "MediEval: A Unified Medical Benchmark for Patient-Contextual and Knowledge-Grounded Reasoning in LLMs — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Mind the (DH) Gap! A Contrast in Risky Choices Between Reasoning and Conversational LLMs",
+   "authors": [
+    "Luise Ge",
+    "Yongyan Zhang",
+    "Yevgeniy Vorobeychik"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.479/",
+   "evidence": "Mind the (DH) Gap! A Contrast in Risky Choices Between Reasoning and Conversational LLMs — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Rethinking Entropy Interventions in RLVR: An Entropy Change Perspective",
+   "authors": [
+    "Zhezheng Hao",
+    "Hong Wang",
+    "Haoyang Liu",
+    "Jian Luo",
+    "Jiarui Yu",
+    "Hande Dong",
+    "Qiang Lin",
+    "Can Wang",
+    "Jiawei Chen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1436/",
+   "evidence": "Rethinking Entropy Interventions in RLVR: An Entropy Change Perspective — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Systematicity between Forms and Meanings across Languages Supports Efficient Communication",
+   "authors": [
+    "Doreen Osmelak",
+    "Yang Xu",
+    "Michael Hahn",
+    "Kate McCurdy"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.1340/",
+   "evidence": "Systematicity between Forms and Meanings across Languages Supports Efficient Communication — Outstanding Paper"
+  },
+  {
+   "venue": "ACL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "ViLL-E: Video LLM Embeddings for Retrieval",
+   "authors": [
+    "Rohit Gupta",
+    "Jayakrishnan Unnikrishnan",
+    "Fan Fei",
+    "Sheng Liu",
+    "Son Tran",
+    "Mubarak Shah"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.acl-long.2003/",
+   "evidence": "ViLL-E: Video LLM Embeddings for Retrieval — Outstanding Paper"
+  },
+  {
+   "venue": "CoNLL",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "When transformers learn “impossible” languages, what do they learn?",
+   "authors": [
+    "Ram Janarthan",
+    "Coleman Haley",
+    "Sharon Goldwater"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.conll-main.24/",
+   "evidence": "When transformers learn “impossible” languages, what do they learn? — Best Paper"
+  },
+  {
+   "venue": "CoNLL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs",
+   "authors": [
+    "Tara Azin",
+    "Yongan Yu",
+    "Raj Singh",
+    "Olessia Jouravlev"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.conll-main.26/",
+   "evidence": "Presupposition and Reasoning in Conditionals: A Theory-Based Study of Humans and LLMs — Outstanding Paper"
+  },
+  {
+   "venue": "CoNLL",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences",
+   "authors": [
+    "Thomas Hikaru Clark",
+    "Roger P. Levy",
+    "Edward Gibson"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2026.conll-main.25/",
+   "evidence": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences — Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Error Analysis and the Role of Morphology",
+   "authors": [
+    "Marcel Bollmann",
+    "Anders Søgaard"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.eacl-main.162/",
+   "evidence": "Error Analysis and the Role of Morphology — Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Is Supervised Syntactic Parsing Beneficial for Language Understanding Tasks? An Empirical Investigation",
+   "authors": [
+    "Goran Glavaš",
+    "Ivan Vulić"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.eacl-main.270/",
+   "evidence": "Is Supervised Syntactic Parsing Beneficial for Language Understanding Tasks? An Empirical Investigation — Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Long Paper",
+   "title": "A phonetic model of non-native spoken word processing",
+   "authors": [
+    "Yevgen Matusevych",
+    "Herman Kamper",
+    "Thomas Schatz",
+    "Naomi H. Feldman",
+    "Sharon Goldwater"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.eacl-main.127/",
+   "evidence": "A phonetic model of non-native spoken word processing — Honorable Mention for Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Long Paper",
+   "title": "Cognition-aware Cognate Detection",
+   "authors": [
+    "Diptesh Kanojia",
+    "Prashant Sharma",
+    "Sayali Ghodekar",
+    "Pushpak Bhattacharyya",
+    "Gholamreza Haffari",
+    "Malhar Kulkarni"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.eacl-main.288/",
+   "evidence": "Cognition-aware Cognate Detection — Honorable Mention for Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best Long Paper",
+   "title": "Hidden Biases in Unreliable News Detection Datasets",
+   "authors": [
+    "Xiang Zhou",
+    "Heba Elfardy",
+    "Christos Christodoulopoulos",
+    "Thomas Butler",
+    "Mohit Bansal"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.eacl-main.211/",
+   "evidence": "Hidden Biases in Unreliable News Detection Datasets — Honorable Mention for Best Long Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "A Human Subject Study of Named Entity Recognition in Conversational Music Recommendation Queries",
+   "authors": [
+    "Elena Epure",
+    "Romain Hennequin"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.92/",
+   "evidence": "A Human Subject Study of Named Entity Recognition in Conversational Music Recommendation Queries — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "Don’t Blame the Annotator: Bias Already Starts in the Annotation Instructions",
+   "authors": [
+    "Mihir Parmar",
+    "Swaroop Mishra",
+    "Mor Geva",
+    "Chitta Baral"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.130/",
+   "evidence": "Don’t Blame the Annotator: Bias Already Starts in the Annotation Instructions — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "Identifying the limits of transformers when performing model-checking with natural language",
+   "authors": [
+    "Tharindu Madusanka",
+    "Riza Batista-navarro",
+    "Ian Pratt-hartmann"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.257/",
+   "evidence": "Identifying the limits of transformers when performing model-checking with natural language — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "Iterative Document-level Information Extraction via Imitation Learning",
+   "authors": [
+    "Yunmo Chen",
+    "William Gantt",
+    "Weiwei Gu",
+    "Tongfei Chen",
+    "Aaron Steven White",
+    "Benjamin Van Durme"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.136/",
+   "evidence": "Iterative Document-level Information Extraction via Imitation Learning — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "LongEval: Guidelines for Human Evaluation of Faithfulness in Long-form Summarization",
+   "authors": [
+    "Kalpesh Krishna",
+    "Erin Bransom",
+    "Bailey Kuehl",
+    "Mohit Iyyer",
+    "Pradeep Dasigi",
+    "Arman Cohan",
+    "Kyle Lo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.121/",
+   "evidence": "LongEval: Guidelines for Human Evaluation of Faithfulness in Long-form Summarization — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "LoRaLay: A Multilingual and Multimodal Dataset for Long Range and Layout-Aware Summarization",
+   "authors": [
+    "Laura Nguyen",
+    "Thomas Scialom",
+    "Benjamin Piwowarski",
+    "Jacopo Staiano"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.46/",
+   "evidence": "LoRaLay: A Multilingual and Multimodal Dataset for Long Range and Layout-Aware Summarization — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "NusaX: Multilingual Parallel Sentiment Dataset for 10 Indonesian Local Languages",
+   "authors": [
+    "Genta Indra Winata",
+    "Alham Fikri Aji",
+    "Samuel Cahyawijaya",
+    "Rahmad Mahendra",
+    "Fajri Koto",
+    "Ade Romadhony",
+    "Kemal Kurniawan",
+    "David Moeljadi",
+    "Radityo Eko Prasojo",
+    "Pascale Fung",
+    "Timothy Baldwin",
+    "Jey Han Lau",
+    "Rico Sennrich",
+    "Sebastian Ruder"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.57/",
+   "evidence": "NusaX: Multilingual Parallel Sentiment Dataset for 10 Indonesian Local Languages — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "PCC: Paraphrasing with Bottom-k Sampling and Cyclic Learning for Curriculum Data Augmentation",
+   "authors": [
+    "Hongyuan Lu",
+    "Wai Lam"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.5/",
+   "evidence": "PCC: Paraphrasing with Bottom-k Sampling and Cyclic Learning for Curriculum Data Augmentation — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "UScore: An Effective Approach to Fully Unsupervised Evaluation Metrics for Machine Translation",
+   "authors": [
+    "Jonas Belouadi",
+    "Steffen Eger"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.27/",
+   "evidence": "UScore: An Effective Approach to Fully Unsupervised Evaluation Metrics for Machine Translation — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "EACL Outstanding Paper",
+   "title": "ZELDA: A Comprehensive Benchmark for Supervised Entity Disambiguation",
+   "authors": [
+    "Marcel Milich",
+    "Alan Akbik"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2023.eacl-main.151/",
+   "evidence": "ZELDA: A Comprehensive Benchmark for Supervised Entity Disambiguation — EACL Outstanding Paper"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "LOCOST: State-Space Models for Long Document Abstractive Summarization",
+   "authors": [
+    "Florian Le Bronnec",
+    "Song Duong",
+    "Mathieu Ravaut",
+    "Alexandre Allauzen",
+    "Nancy Chen",
+    "Vincent Guigue",
+    "Alberto Lumbreras",
+    "Laure Soulier",
+    "Patrick Gallinari"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.69/",
+   "evidence": "LOCOST: State-Space Models for Long Document Abstractive Summarization — Best Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Non-publicized Paper Award",
+   "title": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs",
+   "authors": [
+    "Simone Balloccu",
+    "Patrícia Schmidtová",
+    "Mateusz Lango",
+    "Ondrej Dusek"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.5/",
+   "evidence": "Leak, Cheat, Repeat: Data Contamination and Evaluation Malpractices in Closed-Source LLMs — Best Non-publicized Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Centering the Speech Community",
+   "authors": [
+    "Steven Bird",
+    "Dean Yibarbuk"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.50/",
+   "evidence": "Centering the Speech Community — Outstanding Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Kardeş-NLU: Transfer to Low-Resource Languages with the Help of a High-Resource Cousin – A Benchmark and Evaluation for Turkic Languages",
+   "authors": [
+    "Lütfi Kerem Senel",
+    "Benedikt Ebing",
+    "Konul Baghirova",
+    "Hinrich Schuetze",
+    "Goran Glavaš"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.100/",
+   "evidence": "Kardeş-NLU: Transfer to Low-Resource Languages with the Help of a High-Resource Cousin – A Benchmark and Evaluation for Turkic Languages — Outstanding Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "MLCopilot: Unleashing the Power of Large Language Models in Solving Machine Learning Tasks",
+   "authors": [
+    "Lei Zhang",
+    "Yuge Zhang",
+    "Kan Ren",
+    "Dongsheng Li",
+    "Yuqing Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.179/",
+   "evidence": "MLCopilot: Unleashing the Power of Large Language Models in Solving Machine Learning Tasks — Outstanding Paper Award"
+  },
+  {
+   "venue": "EACL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models",
+   "authors": [
+    "Erik Arakelyan",
+    "Zhaoqi Liu",
+    "Isabelle Augenstein"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.eacl-long.27/",
+   "evidence": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Specializing Word Embeddings (for Parsing) by Information Bottleneck",
+   "authors": [
+    "Xiang Lisa Li",
+    "Jason Eisner"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/D19-1276/",
+   "evidence": "Specializing Word Embeddings (for Parsing) by Information Bottleneck — Best Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "The FLORES Evaluation Datasets for Low-Resource Machine Translation: Nepali–English and Sinhala–English",
+   "authors": [
+    "Francisco Guzmán",
+    "Peng-Jen Chen",
+    "Myle Ott",
+    "Juan Pino",
+    "Guillaume Lample",
+    "Philipp Koehn",
+    "Vishrav Chaudhary",
+    "Marc’Aurelio Ranzato"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/D19-1632/",
+   "evidence": "The FLORES Evaluation Datasets for Low-Resource Machine Translation: Nepali–English and Sinhala–English — Best Resource Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "Designing and Interpreting Probes with Control Tasks",
+   "authors": [
+    "John Hewitt",
+    "Percy Liang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/D19-1275/",
+   "evidence": "Designing and Interpreting Probes with Control Tasks — Best Paper Runner-Up"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Digital Voicing of Silent Speech",
+   "authors": [
+    "David Gaddy",
+    "Dan Klein"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.emnlp-main.445/",
+   "evidence": "Digital Voicing of Silent Speech — Best Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Paper",
+   "title": "GLUCOSE: GeneraLized and COntextualized Story Explanations",
+   "authors": [
+    "Nasrin Mostafazadeh",
+    "Aditya Kalyanpur",
+    "Lori Moon",
+    "David Buchanan",
+    "Lauren Berkowitz",
+    "Or Biran",
+    "Jennifer Chu-Carroll"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.emnlp-main.370/",
+   "evidence": "GLUCOSE: GeneraLized and COntextualized Story Explanations — Honorable Mention Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Paper",
+   "title": "If beam search is the answer, what was the question?",
+   "authors": [
+    "Clara Meister",
+    "Ryan Cotterell",
+    "Tim Vieira"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.emnlp-main.170/",
+   "evidence": "If beam search is the answer, what was the question? — Honorable Mention Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Paper",
+   "title": "Spot The Bot: A Robust and Efficient Framework for the Evaluation of Conversational Dialogue Systems",
+   "authors": [
+    "Jan Deriu",
+    "Don Tuggener",
+    "Pius von Däniken",
+    "Jon Ander Campos",
+    "Alvaro Rodrigo",
+    "Thiziri Belkacem",
+    "Aitor Soroa",
+    "Eneko Agirre",
+    "Mark Cieliebak"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.emnlp-main.326/",
+   "evidence": "Spot The Bot: A Robust and Efficient Framework for the Evaluation of Conversational Dialogue Systems — Honorable Mention Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention Paper",
+   "title": "Visually Grounded Compound PCFGs",
+   "authors": [
+    "Yanpeng Zhao",
+    "Ivan Titov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2020.emnlp-main.354/",
+   "evidence": "Visually Grounded Compound PCFGs — Honorable Mention Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An image speaks a thousand words, but can everyone listen? On image transcreation for cultural relevance",
+   "authors": [
+    "Simran Khanuja",
+    "Sathyanarayanan Ramamoorthy",
+    "Yueqi Song",
+    "Graham Neubig"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.573/",
+   "evidence": "An image speaks a thousand words, but can everyone listen? On image transcreation for cultural relevance — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Backward Lens: Projecting Language Model Gradients into the Vocabulary Space",
+   "authors": [
+    "Shahar Katz",
+    "Yonatan Belinkov",
+    "Mor Geva",
+    "Lior Wolf"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.142/",
+   "evidence": "Backward Lens: Projecting Language Model Gradients into the Vocabulary Space — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CoGen: Learning from Feedback with Coupled Comprehension and Generation",
+   "authors": [
+    "Mustafa Omer Gul",
+    "Yoav Artzi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.721/",
+   "evidence": "CoGen: Learning from Feedback with Coupled Comprehension and Generation — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method",
+   "authors": [
+    "Weichao Zhang",
+    "Ruqing Zhang",
+    "Jiafeng Guo",
+    "Maarten de Rijke",
+    "Yixing Fan",
+    "Xueqi Cheng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.300/",
+   "evidence": "Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Robust Speech Representation Learning for Thousands of Languages",
+   "authors": [
+    "William Chen",
+    "Wangyou Zhang",
+    "Yifan Peng",
+    "Xinjian Li",
+    "Jinchuan Tian",
+    "Jiatong Shi",
+    "Xuankai Chang",
+    "Soumi Maiti",
+    "Karen Livescu",
+    "Shinji Watanabe"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.570/",
+   "evidence": "Towards Robust Speech Representation Learning for Thousands of Languages — Best Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Are Large Language Models Capable of Generating Human-Level Narratives?",
+   "authors": [
+    "Yufei Tian",
+    "Tenghao Huang",
+    "Miri Liu",
+    "Derek Jiang",
+    "Alexander Spangher",
+    "Muhao Chen",
+    "Jonathan May",
+    "Nanyun Peng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.978/",
+   "evidence": "Are Large Language Models Capable of Generating Human-Level Narratives? — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Do LLMs Plan Like Human Writers? Comparing Journalist Coverage of Press Releases with LLMs",
+   "authors": [
+    "Alexander Spangher",
+    "Nanyun Peng",
+    "Sebastian Gehrmann",
+    "Mark Dredze"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.1216/",
+   "evidence": "Do LLMs Plan Like Human Writers? Comparing Journalist Coverage of Press Releases with LLMs — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Finding Blind Spots in Evaluator LLMs with Interpretable Checklists",
+   "authors": [
+    "Sumanth Doddapaneni",
+    "Mohammed Safi Ur Rahman Khan",
+    "Sshubam Verma",
+    "Mitesh M Khapra"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.911/",
+   "evidence": "Finding Blind Spots in Evaluator LLMs with Interpretable Checklists — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models",
+   "authors": [
+    "Sander Land",
+    "Max Bartolo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.649/",
+   "evidence": "Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Fool Me Once? Contrasting Textual and Visual Explanations in a Clinical Decision-Support Setting",
+   "authors": [
+    "Maxime Kayser",
+    "Bayar Menzat",
+    "Cornelius Emde",
+    "Bogdan Bercean",
+    "Alex Novak",
+    "Abdala Espinosa",
+    "Bartlomiej W. Papiez",
+    "Susanne Gaube",
+    "Thomas Lukasiewicz",
+    "Oana-Maria Camburu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.1051/",
+   "evidence": "Fool Me Once? Contrasting Textual and Visual Explanations in a Clinical Decision-Support Setting — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Formality is Favored: Unraveling the Learning Preferences of Large Language Models on Data with Conflicting Knowledge",
+   "authors": [
+    "Jiahuan Li",
+    "Yiqing Cao",
+    "Shujian Huang",
+    "Jiajun Chen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.304/",
+   "evidence": "Formality is Favored: Unraveling the Learning Preferences of Large Language Models on Data with Conflicting Knowledge — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "GoldCoin: Grounding Large Language Models in Privacy Laws via Contextual Integrity Theory",
+   "authors": [
+    "Wei Fan",
+    "Haoran Li",
+    "Zheye Deng",
+    "Weiqi Wang",
+    "Yangqiu Song"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.195/",
+   "evidence": "GoldCoin: Grounding Large Language Models in Privacy Laws via Contextual Integrity Theory — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Language Models Learn Rare Phenomena from Less Rare Phenomena: The Case of the Missing AANNs",
+   "authors": [
+    "Kanishka Misra",
+    "Kyle Mahowald"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.53/",
+   "evidence": "Language Models Learn Rare Phenomena from Less Rare Phenomena: The Case of the Missing AANNs — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Learning Planning-based Reasoning by Trajectories Collection and Process Reward Synthesizing",
+   "authors": [
+    "Fangkai Jiao",
+    "Chengwei Qin",
+    "Zhengyuan Liu",
+    "Nancy F. Chen",
+    "Shafiq Joty"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.20/",
+   "evidence": "Learning Planning-based Reasoning by Trajectories Collection and Process Reward Synthesizing — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Learning to Retrieve Iteratively for In-Context Learning",
+   "authors": [
+    "Yunmo Chen",
+    "Tongfei Chen",
+    "Harsh Jhamtani",
+    "Patrick Xia",
+    "Richard Shin",
+    "Jason Eisner",
+    "Benjamin Van Durme"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.406/",
+   "evidence": "Learning to Retrieve Iteratively for In-Context Learning — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Measuring Psychological Depth in Language Models",
+   "authors": [
+    "Fabrice Y Harel-Canada",
+    "Hanyu Zhou",
+    "Sreya Muppalla",
+    "Zeynep Senahan Yildiz",
+    "Miryung Kim",
+    "Amit Sahai",
+    "Nanyun Peng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.953/",
+   "evidence": "Measuring Psychological Depth in Language Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "OATH-Frames: Characterizing Online Attitudes Towards Homelessness with LLM Assistants",
+   "authors": [
+    "Jaspreet Ranjit",
+    "Brihi Joshi",
+    "Rebecca Dorn",
+    "Laura Petry",
+    "Olga Koumoundouros",
+    "Jayne Bottarini",
+    "Peichen Liu",
+    "Eric Rice",
+    "Swabha Swayamdipta"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.724/",
+   "evidence": "OATH-Frames: Characterizing Online Attitudes Towards Homelessness with LLM Assistants — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "SUPER: Evaluating Agents on Setting Up and Executing Tasks from Research Repositories",
+   "authors": [
+    "Ben Bogin",
+    "Kejuan Yang",
+    "Shashank Gupta",
+    "Kyle Richardson",
+    "Erin Bransom",
+    "Peter Clark",
+    "Ashish Sabharwal",
+    "Tushar Khot"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.702/",
+   "evidence": "SUPER: Evaluating Agents on Setting Up and Executing Tasks from Research Repositories — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Zeno’s Paradox of ‘Low-Resource’ Languages",
+   "authors": [
+    "Hellina Hailu Nigatu",
+    "Atnafu Lambebo Tonja",
+    "Benjamin Rosman",
+    "Thamar Solorio",
+    "Monojit Choudhury"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.983/",
+   "evidence": "The Zeno’s Paradox of ‘Low-Resource’ Languages — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Threshold-driven Pruning with Segmented Maximum Term Weights for Approximate Cluster-based Sparse Retrieval",
+   "authors": [
+    "Yifan Qiao",
+    "Parker Carlson",
+    "Shanxiu He",
+    "Yingrui Yang",
+    "Tao Yang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.1101/",
+   "evidence": "Threshold-driven Pruning with Segmented Maximum Term Weights for Approximate Cluster-based Sparse Retrieval — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Towards Cross-Cultural Machine Translation with Retrieval-Augmented Generation from Multilingual Knowledge Graphs",
+   "authors": [
+    "Simone Conia",
+    "Daniel Lee",
+    "Min Li",
+    "Umar Farooq Minhas",
+    "Saloni Potdar",
+    "Yunyao Li"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.914/",
+   "evidence": "Towards Cross-Cultural Machine Translation with Retrieval-Augmented Generation from Multilingual Knowledge Graphs — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving",
+   "authors": [
+    "Xin Quan",
+    "Marco Valentino",
+    "Louise A. Dennis",
+    "Andre Freitas"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.172/",
+   "evidence": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages",
+   "authors": [
+    "Tyler A. Chang",
+    "Catherine Arnett",
+    "Zhuowen Tu",
+    "Benjamin K. Bergen"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.236/",
+   "evidence": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Which questions should I answer? Salience Prediction of Inquisitive Questions",
+   "authors": [
+    "Yating Wu",
+    "Ritika Mangla",
+    "Alexandros G. Dimakis",
+    "Greg Durrett",
+    "Junyi Jessy Li"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.1114/",
+   "evidence": "Which questions should I answer? Salience Prediction of Inquisitive Questions — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Words Worth a Thousand Pictures: Measuring and Understanding Perceptual Variability in Text-to-Image Generation",
+   "authors": [
+    "Raphael Tang",
+    "Crystina Zhang",
+    "Lixinyu Xu",
+    "Yao Lu",
+    "Wenyan Li",
+    "Pontus Stenetorp",
+    "Jimmy Lin",
+    "Ferhan Ture"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2024.emnlp-main.311/",
+   "evidence": "Words Worth a Thousand Pictures: Measuring and Understanding Perceptual Variability in Text-to-Image Generation — Outstanding Paper Award"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index",
+   "authors": [
+    "Hao Xu",
+    "Jiacheng Liu",
+    "Yejin Choi",
+    "Noah A. Smith",
+    "Hannaneh Hajishirzi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.1268/",
+   "evidence": "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index — Best Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "Autoformalization in the Wild: Assessing LLMs on Real-World Mathematical Definitions",
+   "authors": [
+    "Lan Zhang",
+    "Marco Valentino",
+    "Andre Freitas"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.90/",
+   "evidence": "Autoformalization in the Wild: Assessing LLMs on Real-World Mathematical Definitions — Best Resource Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Special Theme Paper",
+   "title": "InterIDEAS: Philosophical Intertextuality via LLMs",
+   "authors": [
+    "Yue Yang",
+    "Yinzhi Xu",
+    "Chenghao Huang",
+    "JohnMichael Jurgensen",
+    "Han Hu",
+    "Hao Wang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.1180/",
+   "evidence": "InterIDEAS: Philosophical Intertextuality via LLMs — Best Special Theme Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Causal Interventions Reveal Shared Structure Across English Filler–Gap Constructions",
+   "authors": [
+    "Sasha Boguraev",
+    "Christopher Potts",
+    "Kyle Mahowald"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.1271/",
+   "evidence": "Causal Interventions Reveal Shared Structure Across English Filler–Gap Constructions — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "DiscoSG: Towards Discourse-Level Text Scene Graph Parsing through Iterative Graph Refinement",
+   "authors": [
+    "Shaoqing Lin",
+    "Chong Teng",
+    "Fei Li",
+    "Donghong Ji",
+    "Lizhen Qu",
+    "Zhuang Li"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.398/",
+   "evidence": "DiscoSG: Towards Discourse-Level Text Scene Graph Parsing through Iterative Graph Refinement — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Generative or Discriminative? Revisiting Text Classification in the Era of Transformers",
+   "authors": [
+    "Siva Rajesh Kasa",
+    "Karan Gupta",
+    "Sumegh Roychowdhury",
+    "Ashutosh Kumar",
+    "Yaswanth Biruduraju",
+    "Santhosh Kumar Kasa",
+    "Pattisapu Nikhil Priyatam",
+    "Arindam Bhattacharya",
+    "Shailendra Agarwal",
+    "Vijay Huddar"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.486/",
+   "evidence": "Generative or Discriminative? Revisiting Text Classification in the Era of Transformers — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "LingGym: How Far Are LLMs from Thinking Like Field Linguists?",
+   "authors": [
+    "Changbing Yang",
+    "Franklin Ma",
+    "Freda Shi",
+    "Jian Zhu"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.69/",
+   "evidence": "LingGym: How Far Are LLMs from Thinking Like Field Linguists? — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps",
+   "authors": [
+    "Martin Tutek",
+    "Fateme Hashemi Chaleshtori",
+    "Ana Marasovic",
+    "Yonatan Belinkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.504/",
+   "evidence": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning",
+   "authors": [
+    "Jingyan Shen",
+    "Jiarui Yao",
+    "Rui Yang",
+    "Yifan Sun",
+    "Feng Luo",
+    "Rui Pan",
+    "Tong Zhang",
+    "Han Zhao"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.882/",
+   "evidence": "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning — Outstanding Paper"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values?",
+   "authors": [
+    "Hua Shen",
+    "Nicholas Clark",
+    "Tanu Mitra"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2025.emnlp-main.154/",
+   "evidence": "Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values? — Outstanding Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+   "authors": [
+    "Jacob Devlin",
+    "Ming-Wei Chang",
+    "Kenton Lee",
+    "Kristina Toutanova"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/N19-1423/",
+   "evidence": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding — Best Long Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Explainable NLP Paper",
+   "title": "CNM: An Interpretable Complex-valued Network for Matching",
+   "authors": [
+    "Qiuchi Li",
+    "Benyou Wang",
+    "Massimo Melucci"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/N19-1420/",
+   "evidence": "CNM: An Interpretable Complex-valued Network for Matching — Best Explainable NLP Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Resource Paper",
+   "title": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge",
+   "authors": [
+    "Alon Talmor",
+    "Jonathan Herzig",
+    "Nicholas Lourie",
+    "Jonathan Berant"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/N19-1421/",
+   "evidence": "CommonsenseQA: A Question Answering Challenge Targeting Commonsense Knowledge — Best Resource Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Thematic Paper",
+   "title": "What’s in a Name? Reducing Bias in Bios without Access to Protected Attributes",
+   "authors": [
+    "Alexey Romanov",
+    "Maria De-Arteaga",
+    "Hanna Wallach",
+    "Jennifer Chayes",
+    "Christian Borgs",
+    "Alexandra Chouldechova",
+    "Sahin Geyik",
+    "Krishnaram Kenthapadi",
+    "Anna Rumshisky",
+    "Adam Kalai"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/N19-1424/",
+   "evidence": "What’s in a Name? Reducing Bias in Bios without Access to Protected Attributes — Best Thematic Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Video-aided Unsupervised Grammar Induction",
+   "authors": [
+    "Songyang Zhang",
+    "Linfeng Song",
+    "Lifeng Jin",
+    "Kun Xu",
+    "Dong Yu",
+    "Jiebo Luo"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.naacl-main.119/",
+   "evidence": "Video-aided Unsupervised Grammar Induction — Best Long Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Thematic Paper",
+   "title": "Preregistering NLP research",
+   "authors": [
+    "Emiel van Miltenburg",
+    "Chris van der Lee",
+    "Emiel Krahmer"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.naacl-main.51/",
+   "evidence": "Preregistering NLP research — Best Thematic Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Long Paper",
+   "title": "It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners",
+   "authors": [
+    "Timo Schick",
+    "Hinrich Schütze"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.naacl-main.185/",
+   "evidence": "It’s Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners — Outstanding Long Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Long Paper",
+   "title": "Unifying Cross-Lingual Semantic Role Labeling with Heterogeneous Linguistic Resources",
+   "authors": [
+    "Simone Conia",
+    "Andrea Bacciu",
+    "Roberto Navigli"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2021.naacl-main.31/",
+   "evidence": "Unifying Cross-Lingual Semantic Role Labeling with Heterogeneous Linguistic Resources — Outstanding Long Paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best new task (tied) and new resource paper",
+   "title": "Automatic Correction of Human Translations",
+   "authors": [
+    "Jessy Lin",
+    "Geza Kovacs",
+    "Aditya Shastry",
+    "Joern Wuebker",
+    "John DeNero"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.36/",
+   "evidence": "Automatic Correction of Human Translations — Best new task (tied) and new resource paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best efficient NLP paper",
+   "title": "FNet: Mixing Tokens with Fourier Transforms",
+   "authors": [
+    "James Lee-Thorp",
+    "Joshua Ainslie",
+    "Ilya Eckstein",
+    "Santiago Ontañón"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.319/",
+   "evidence": "FNet: Mixing Tokens with Fourier Transforms — Best efficient NLP paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best new task paper (tied)",
+   "title": "FRUIT: Faithfully Reflecting Updated Information in Text",
+   "authors": [
+    "Robert L. Logan IV",
+    "Alexandre Passos",
+    "Sameer Singh",
+    "Ming-Wei Chang"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.269/",
+   "evidence": "FRUIT: Faithfully Reflecting Updated Information in Text — Best new task paper (tied)"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best new method paper",
+   "title": "NeuroLogic A*esque Decoding: Constrained Text Generation with Lookahead Heuristics",
+   "authors": [
+    "Ximing Lu",
+    "Sean Welleck",
+    "Peter West",
+    "Liwei Jiang",
+    "Jungo Kasai",
+    "Daniel Khashabi",
+    "Ronan Le Bras",
+    "Lianhui Qin",
+    "Youngjae Yu",
+    "Rowan Zellers",
+    "Noah A. Smith",
+    "Yejin Choi"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.57/",
+   "evidence": "NeuroLogic A*esque Decoding: Constrained Text Generation with Lookahead Heuristics — Best new method paper"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best paper on human-centered NLP special theme",
+   "title": "User-Driven Research of Medical Note Generation Software",
+   "authors": [
+    "Tom Knoll",
+    "Francesco Moramarco",
+    "Alex Papadopoulos Korfiatis",
+    "Rachel Young",
+    "Claudia Ruffini",
+    "Mark Perera",
+    "Christian Perstl",
+    "Ehud Reiter",
+    "Anya Belz",
+    "Aleksandar Savkov"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.29/",
+   "evidence": "User-Driven Research of Medical Note Generation Software — Best paper on human-centered NLP special theme"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention for contribution to methods",
+   "title": "A Balanced Data Approach for Evaluating Cross-Lingual Transfer: Mapping the Linguistic Blood Bank",
+   "authors": [
+    "Dan Malkin",
+    "Tomasz Limisiewicz",
+    "Gabriel Stanovsky"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.361/",
+   "evidence": "A Balanced Data Approach for Evaluating Cross-Lingual Transfer: Mapping the Linguistic Blood Bank — Honorable mention for contribution to methods"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention for contribution to special theme on human-centered NLP",
+   "title": "Automatic Correction of Human Translations",
+   "authors": [
+    "Jessy Lin",
+    "Geza Kovacs",
+    "Aditya Shastry",
+    "Joern Wuebker",
+    "John DeNero"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.36/",
+   "evidence": "Automatic Correction of Human Translations — Honorable mention for contribution to special theme on human-centered NLP"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable mention for contributions to resources",
+   "title": "NewsEdits: A News Article Revision Dataset and a Novel Document-Level Reasoning Challenge",
+   "authors": [
+    "Alexander Spangher",
+    "Xiang Ren",
+    "Jonathan May",
+    "Nanyun Peng"
+   ],
+   "track": "main",
+   "source": "https://aclanthology.org/2022.naacl-main.10/",
+   "evidence": "NewsEdits: A News Article Revision Dataset and a Novel Document-Level Reasoning Challenge — Honorable mention for contributions to resources"
+  }
+ ]
 }
