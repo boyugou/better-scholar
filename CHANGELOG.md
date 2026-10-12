@@ -2,7 +2,7 @@
 
 ## 2.9.36 — 2026-10-12
 
-- The GECCO SIGEVO Impact Award (2009–2024, 20 papers: BOA, Exploratory landscape analysis, Z-/Evolving soft robots …) from SIGEVO's own page (`tot.mjs gecco`). The bundled list has 5888 awards.
+- The GECCO SIGEVO Impact Award (2009–2024, 20 papers: BOA, Exploratory landscape analysis, Unshackling evolution …) from SIGEVO's own page (`tot.mjs gecco`). The bundled list has 5888 awards.
 
 ## 2.9.35 — 2026-10-12
 
