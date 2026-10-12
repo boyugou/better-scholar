@@ -1,0 +1,18 @@
+{
+  "owner": "Alex Chen",
+  "note": "SYNTHETIC (not a real profile): a fictional researcher with real venue names, used only to draw the README screenshot in the end-to-end test.",
+  "rows": [
+    ["A Chen, M Rivera, S Patel, L Novak", "Advances in neural information processing systems 36 (NeurIPS 2023), Oral, 2023", "Scaling Sparse Retrieval to Billions of Documents"],
+    ["J Okafor, A Chen, P Haddad", "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023", "Self-Supervised Depth from Casual Video"],
+    ["S Patel, J Okafor, M Rivera, ..., A Chen", "17th USENIX Symposium on Operating Systems Design and Implementation (OSDI 23), 2023", "Fast Recovery for Disaggregated Memory"],
+    ["A Chen, T Lindqvist", "Proceedings of the 2022 International Conference on Management of Data, 1234-1247, 2022", "Adaptive Indexing for Streaming Graphs"],
+    ["M Rivera, A Chen, K Watanabe, D Brooks", "Findings of the Association for Computational Linguistics: ACL 2022, 410-423, 2022", "Cheap Calibration for Retrieval-Augmented Models"],
+    ["A Chen, S Patel", "International Conference on Machine Learning (ICML 2022), Spotlight, 2022", "Provable Rates for Sparse Fine-Tuning"],
+    ["L Novak, A Chen, J Okafor", "IEEE Transactions on Pattern Analysis and Machine Intelligence 44 (8), 4012-4025, 2022", "Geometry-Aware Feature Pyramids"],
+    ["P Haddad, A Chen", "arXiv preprint arXiv:2105.04321, 2021", "A Note on Sampling Without Replacement"],
+    ["A Chen, M Rivera, P Haddad, ..., S Patel", "Proceedings of the 29th ACM Symposium on Operating Systems Principles (SOSP), 2021", "Verifying Crash Consistency at Scale"],
+    ["K Watanabe, A Chen", "International Conference on Learning Representations (ICLR), 2020", "Tight Bounds for Residual Networks"],
+    ["A Chen, D Brooks", "Proceedings of the VLDB Endowment 13 (12), 2020", "Learned Cardinality Estimation Revisited"],
+    ["M Rivera, A Chen, S Patel", "CHI Conference on Human Factors in Computing Systems, 2019", "How Analysts Debug Data Pipelines"]
+  ]
+}

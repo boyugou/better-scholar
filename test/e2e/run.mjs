@@ -88,7 +88,8 @@ fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 const awardsLib = require(path.join(repo, "src/lib/awards.js"));
 const testAwards = { meta: { label: "test list", edition: "test", count: 2 }, items: [
   [awardsLib.titleKey("A Plain Preprint"), awardsLib.surnameKey("A Smith"), "ICLR", 2023, "best", "Best Paper Award"],
-  [awardsLib.titleKey("Deep Things for Recognition"), awardsLib.surnameKey("J Doe"), "CVPR", 2016, "best", "Best Paper Award"]
+  [awardsLib.titleKey("Deep Things for Recognition"), awardsLib.surnameKey("J Doe"), "CVPR", 2016, "best", "Best Paper Award"],
+  [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("S Patel"), "OSDI", 2023, "best", "Best Paper Award"]   // the fictional showcase profile
 ] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(testAwards)} });\n`);
@@ -383,6 +384,27 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
   } finally {
     await ctx3.close();
     await fx3.close();
+  }
+
+  // -- 25. the fictional showcase profile (the README screenshot): renders cleanly, with a list-derived award
+  const fx4 = await start({ slug: "showcase", pageSize: 100 });
+  const ctx4 = await launch();
+  try {
+    const page = await ctx4.newPage();
+    const errs = [];
+    page.on("pageerror", (e) => errs.push(e.message));
+    await page.goto(fx4.url);
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator('.rr-chip-mark[data-group="award"][data-source="list"]').count(), 1);
+    assert.deepEqual(errs, []);
+    await page.screenshot({ path: path.join(outDir, "showcase.png") });
+    await page.setViewportSize({ width: 760, height: 900 });
+    await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
+    await page.screenshot({ path: path.join(outDir, "showcase-narrow.png") });
+    ok("the fictional showcase profile renders (wide and narrow) with an award from the list");
+  } finally {
+    await ctx4.close();
+    await fx4.close();
   }
 
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);

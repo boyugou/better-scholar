@@ -9,6 +9,9 @@ _English name: Scholar Author Roles & Venue Ranks_
 
 [English](README.md)
 
+<p align="center"><img src="docs/screenshot.png" width="900" alt="Google Scholar 作者主页：按角色着色的论文行、CCF / CORE 等级徽章、获奖标签与右侧的角色 × 等级汇总面板"></p>
+<p align="center"><sub>虚构的作者主页（场所名称真实，论文为虚构）：按作者位次着色的行、场所旁的 CCF / CORE 徽章、右侧的角色 × 等级汇总。</sub></p>
+
 - **角色 × 等级汇总**：页面里的一张小矩阵——一作 / 共一 / 二作 / 末位 × CCF A / B / C /
   未收录（可切换为 CORE A\* / A / B / C）。点击任一格即可只看那几篇；**复制摘要**、
   **复制为表格** 可直接粘贴进简历或申报材料。

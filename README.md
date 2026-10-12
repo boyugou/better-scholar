@@ -7,7 +7,8 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 
 [简体中文](README.zh-CN.md)
 
-<p align="center"><img src="assets/icon.svg" width="72" alt=""></p>
+<p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
+<p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
 
 - **Role × rank summary** — a small matrix in the page: first / co-first / second /
   last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
