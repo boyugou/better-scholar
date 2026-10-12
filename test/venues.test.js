@@ -504,3 +504,20 @@ test("IEEE Xplore's citation form 'Name, 2002. ACR 2002., pages' reads as 'Name 
   assert.equal(brief("Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on, 292-301, 2007"), "CCF B ICDM");
   assert.equal(venues.prepare("IEEE Visualization, 2002. VIS 2002., 355-362, 2002").name, "IEEE Visualization (VIS)");
 });
+
+test("a workshop co-located with a conference ('OM@ ISWC') is not that conference, Learning@Scale is its own; two lists that read a cut-off name as different venues claim neither", () => {
+  assert.equal(brief("OM@ ISWC 2288, 132-137, 2018"), "");
+  assert.equal(brief("NLP-DBPEDIA@ ISWC 13, 2013"), "");
+  assert.equal(brief("International Semantic Web Conference, 498-514, 2016"), "CCF B ISWC · CORE A ISWC");
+  assert.equal(brief("Proceedings of the second (2015) ACM conference on learning@ scale, 75-84, 2015"), "CORE B L@S");
+  // CCF reads this as DAI and CORE as ICDCS: at least one is wrong
+  assert.equal(brief("Proceedings of the Twelfth International Conference on Distributed …, 2012"), "");
+  assert.equal(brief("Proceedings of the 36th annual international symposium on Computer …, 2009"), "CCF A ISCA · CORE A* ISCA");
+});
+
+test("ESWC was the European Semantic Web Conference, UMAP is spelled 'Modeling' by its publishers, Hot Chips is one venue under two acronyms", () => {
+  assert.equal(brief("European Semantic Web Conference, 343-359, 2020"), "CCF C ESWC · CORE B ESWC");
+  assert.equal(brief("Extended semantic web conference, 22-33, 2013"), "CCF C ESWC · CORE B ESWC");
+  assert.equal(brief("International Conference on User Modeling, Adaptation, and Personalization …, 2011"), "CORE A UMAP");
+  assert.equal(brief("Symposium on High Performance Chips (HOT CHIPS), 2015"), "CCF B HOT CHIPS · CORE C HOTCHIPS (HCS)");
+});

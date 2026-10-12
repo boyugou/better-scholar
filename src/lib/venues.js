@@ -178,7 +178,9 @@
   const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
   function secondaryWord(raw) {
     const m = SECONDARY.exec(fold(raw));
-    return m ? m[0].toLowerCase().replace(/s$/, "") : null;
+    if (m) return m[0].toLowerCase().replace(/s$/, "");
+    // "OM@ ISWC 2288", "NLP-DBPEDIA@ ISWC": a workshop co-located with the conference named after the @ (CEUR-WS proceedings)
+    return /\b[A-Za-z0-9-]+@\s?[A-Z]{3,}\b/.test(fold(raw)) ? "workshop" : null;
   }
 
   const ratingOf = (e) => (e.src === "ccf" ? e.tier : e.rank);
@@ -619,6 +621,8 @@
       if (out.ccf && out.core && out.ccf.kind !== "J" && squash(out.ccf.abbr) !== squash(out.core.abbr) && !idx.sameVenue(out.ccf.abbr, out.core.abbr)) {
         if (out.ccf.rule === "acronym" && out.core.rule === "name") out.ccf = null;
         else if (out.core.rule === "acronym" && out.ccf.rule === "name") out.core = null;
+        // both lists read a cut-off name by its start, as different venues: at least one is wrong, and nothing says which
+        else if (out.ccf.rule === "prefix" && out.core.rule === "prefix") { out.ccf = null; out.core = null; }
       }
       // a workshop / Findings / demo string is unranked on purpose, not "missing"
       if (sec && !out.ccf && !out.core) out.secondary = sec;

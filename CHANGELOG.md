@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.5.8 — 2026-10-12
+
+From the independent code review and twelve more real profiles (medical imaging, game theory, verification, human-robot interaction,
+semantic web, compilers, computing education, bioinformatics).
+
+- A workshop co-located with a conference and printed the CEUR-WS way (*"OM@ ISWC 2288"*) is no longer badged as the conference.
+- Two lists that read one cut-off name by its start as different venues (CCF *DAI*, CORE *ICDCS* for *"Twelfth International Conference on
+  Distributed …"*) now claim neither.
+- Aliases: ESWC's earlier name *European Semantic Web Conference* (8 of one profile's papers had no badge), UMAP's American spelling,
+  and Hot Chips as one venue under two acronyms (the cross-list rule had dropped the CCF badge for *"(HOT CHIPS)"*).
+
 ## 2.5.7 — 2026-10-12
 
 Eight more real profiles (multimedia, speech, design automation, wireless networking, graphics — 728 new venue strings in the

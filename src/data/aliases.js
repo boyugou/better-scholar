@@ -78,6 +78,11 @@
     { ccf: "AVI", names: ["International Conference on Advanced Visual Interfaces"] },
     { core: "AVI", names: ["International Working Conference on Advanced Visual Interfaces"] },
     { ccf: "CSCW", core: "CSCW", names: ["ACM Conference on Computer Supported Cooperative Work", "ACM Conference on Computer-Supported Cooperative Work and Social Computing", "Computer Supported Cooperative Work"] },
+    // ESWC was the European Semantic Web Conference until 2014; UMAP is spelled "Modeling" by its own publishers (CORE: "Modelling")
+    { ccf: "ESWC", core: "ESWC", names: ["European Semantic Web Conference"] },
+    { core: "UMAP", names: ["International Conference on User Modeling, Adaptation, and Personalization"] },
+    // Hot Chips is one venue under two acronyms (CCF "HOT CHIPS", CORE "HOTCHIPS (HCS)"): not a disagreement between the lists
+    { ccf: "HOT CHIPS", core: "HOTCHIPS (HCS)", names: ["Symposium on High Performance Chips"] },
     // ICMI was the International Conference on Multimodal Interfaces until 2005 (CORE keeps the old name in a parenthesis)
     { ccf: "ICMI", core: "ICMI", names: ["International Conference on Multimodal Interfaces", "IEEE International Conference on Multimodal Interfaces"] },
     { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
