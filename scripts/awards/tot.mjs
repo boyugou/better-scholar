@@ -1452,6 +1452,14 @@ export function parseMobicomYear(html, source) {
   const peopleOf = (l) => kddAuthors(bracket(l), true);
   const authorLine = (l) => /\(/.test(l) && l.length < 700 && peopleOf(l).length > 0;
   const continuation = (l) => /^and\s/i.test(l) || (/\)/.test(l) && !/^[A-Z][^()]{3,}:/.test(l));
+  // 2018's keynotes-and-awards page (sigmobile.org/mobicom/2018/keynotes.php) writes each award on one line: "Best Paper Award Winner: Title by Authors (Affiliation), …"
+  for (const l of ls) {
+    const w = /^(Best (?:Community )?Paper Award) Winner:\s*(.+?)\s+by\s+(.+)$/.exec(l);
+    if (!w) continue;
+    const who = kddAuthors(w[3]), t = cleanTitle(w[2]);
+    if (who.length && t.length >= 8) entries.push({ venue: "MobiCom", year, award: /Community/.test(w[1]) ? "category" : "best", awardLabel: w[1], title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} ${w[1]} Winner: ${t} — ${who.join(", ")}` });
+    else skipped.push(`${year}: not read: ${t.slice(0, 50)}`);
+  }
   const start = ls.findIndex((l, i) => i > 15 && kindOf(l));
   let kind = null;
   for (let i = Math.max(0, start); i < ls.length; i++) {

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.31 — 2026-10-12
+
+- MobiCom 2018's best paper (SkyCore) and best community paper (One Billion Apples' Secret Sauce) from the conference's keynotes-and-awards page (`tot.mjs mobicom-year`; the 2017 pages name them only in a SIGMOBILE newsletter, not read).
+  The list has 6246 awards.
+
 ## 2.10.30 — 2026-10-12
 
 - Four more titles that an official page misprints are put right (`data/exclusions.json`): AAMAS 2012's "enviornment", HPCA 2019's "Branch Predication", JCDL 2002's "Collection Systhesis" and SIGMOD 2001's "Dimensionality Deduction" — found by looking for

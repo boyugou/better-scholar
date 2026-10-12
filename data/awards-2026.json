@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6244
+  "count": 6246
  },
  "entries": [
   {
@@ -75661,6 +75661,38 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobicom/2015/awards.html",
    "evidence": "MobiCom 2015 Best Community Paper Award: CAreDroid: Adaptation Framework for Android ContextAware Applications — Salma Elmalaki, Lucas Wanner, Mani Srivastava"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SkyCore: Moving Core to the Edge for Untethered and Reliable UAV-based LTE networks",
+   "authors": [
+    "Mehrdad Moradi",
+    "Karthik Sundaresan",
+    "Eugene Chai",
+    "Sampath Rangarajan",
+    "Z. Morley Mao"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2018/keynotes.php",
+   "evidence": "MobiCom 2018 Best Paper Award Winner: SkyCore: Moving Core to the Edge for Untethered and Reliable UAV-based LTE networks — Mehrdad Moradi, Karthik Sundaresan, Eugene Chai, Sampath Rangarajan, Z. Morley Mao"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "One Billion Apples' Secret Sauce: Recipe for the Apple Wireless Direct Link Ad hoc Protocol",
+   "authors": [
+    "Milan Stute",
+    "David Kreitschmann",
+    "Matthias Hollick"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2018/keynotes.php",
+   "evidence": "MobiCom 2018 Best Community Paper Award Winner: One Billion Apples' Secret Sauce: Recipe for the Apple Wireless Direct Link Ad hoc Protocol — Milan Stute, David Kreitschmann, Matthias Hollick"
   },
   {
    "venue": "MobiCom",

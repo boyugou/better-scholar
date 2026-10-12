@@ -1789,3 +1789,15 @@ test("SIGSOFT distinguished papers: 'Authors, Main title: Subtitle' keeps the ma
     "Hard to Read and Understand Pythonic Idioms? DeIdiom | Xiwei (Sherry) Xu; Liming Zhu"
   ]);
 });
+
+test("MobiCom 2018's keynotes-and-awards page: 'Best Paper Award Winner: Title by Authors (Affiliation), …' on one line, the community paper award too", async () => {
+  const { parseMobicomYear } = await import("../scripts/awards/tot.mjs");
+  const html = `<h1>MobiCom 2018: The 24th Annual International Conference on Mobile Computing and Networking</h1><p>Best Paper Award Winner: SkyCore: Moving Core to the Edge for Untethered and Reliable UAV-based LTE networks by Mehrdad Moradi (University of Michigan), Karthik Sundaresan, Eugene Chai, Sampath Rangarajan (NEC Labs), and Z. Morley Mao (University of Michigan)</p>
+<p>Best Community Paper Award Winner: One Billion Apples' Secret Sauce: Recipe for the Apple Wireless Direct Link Ad hoc Protocol by Milan Stute (Technische Universität Darmstadt), David Kreitschmann, and Matthias Hollick</p>`;
+  const { entries, skipped } = parseMobicomYear(html, "https://www.sigmobile.org/mobicom/2018/keynotes.php");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2018 best SkyCore: | Mehrdad Moradi; Karthik Sundaresan; Eugene Chai; Sampath Rangarajan; Z. Morley Mao",
+    "2018 category One Bill | Milan Stute; David Kreitschmann; Matthias Hollick"
+  ]);
+  assert.deepEqual(skipped, []);
+});
