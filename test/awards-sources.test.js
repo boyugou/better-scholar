@@ -593,3 +593,40 @@ test("SIGCOMM Best Paper page: a line per winner, several winners joined by 'and
   ]);
   assert.equal(notes.length, 1, "the title without quotation marks is reported");
 });
+
+// IEEE S&P's own awards pages — three markups over the years, synthetic here.
+test("S&P awards pages: the 2016 list, the 2017–2022 headings with <strong> titles, the 2023–2025 list-group items; workshop, reviewer and test-of-time awards are left out", async () => {
+  const { parse, classify } = await import("../scripts/awards/sp.mjs");
+  const src = "https://www.ieee-security.org/TC/SP2017/awards.html";
+  const li = `<h1>Distinguished Papers</h1><ul>	<li>Distinguished Reviewer: <br>	Ann Lee	Some Lab		<li>Distinguished Practical Paper:  <br>	A Synthetic Practical Paper on Homes  <br>	Bo Chen (Univ A), Cy Diaz (Lab B), and Dee Park (Univ A, Ann Arbor)		<li>Distingushed Paper:  <br>	A2: A Synthetic Hardware Paper  <br>	Eli Ross, Fay Gray and Gia Stone (University of M)	</ul>`;
+  assert.deepEqual(parse(li, { year: 2016, source: src }).entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["distinguished", "Distinguished Practical Paper", "A Synthetic Practical Paper on Homes", ["Bo Chen", "Cy Diaz", "Dee Park"]],
+    ["distinguished", "Distinguished Paper", "A2: A Synthetic Hardware Paper", ["Eli Ross", "Fay Gray", "Gia Stone"]]
+  ]);
+  const headings = `<div class="container"><h1>Distinguished Paper Award</h1><h3>Sponsored by <a href="x"><img alt="G"></a></h3><hr>
+<p><strong>A Synthetic Verified Paper about Protocols</strong><br>Hal Wu (INRIA), Ivy Xu (INRIA), and Jo Yan (INRIA)</p>
+<h1>Distinguished Student Paper Award</h1><h3>Sponsored by <a href="y">Y</a></h3><hr>
+<p><strong><em>A Synthetic Student Paper on Networks</em></strong>
+Kai Zu (University of California, Berkeley) and Lu Mo (University of California, Berkeley)</p>
+<h1>Distinguished Reviewer Awards</h1><p>Ned Oh (Lab)<br>Pia Qi (Lab)</p>
+<h1>Workshop Awards</h1><h3>Third Synthetic Workshop on Privacy: Best Paper Award</h3><p><b>A Workshop Paper Title Here</b><br>Ray Sun (Univ)</p>
+<h3>Mobile Security Technologies: Best Paper Award</h3><p><b>Another Workshop Paper Title</b><br>Sue Tan (Univ)</p>
+<h1>Test of Time Award (1995-2006)</h1><p><strong>A Sense of Self for Unix Processes</strong> Tom Uy, 1996</p></div>`;
+  assert.deepEqual(parse(headings, { year: 2017, source: src }).entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["distinguished", "Distinguished Paper", "A Synthetic Verified Paper about Protocols", ["Hal Wu", "Ivy Xu", "Jo Yan"]],
+    ["student", "Distinguished Student Paper", "A Synthetic Student Paper on Networks", ["Kai Zu", "Lu Mo"]]
+  ]);
+  const items = `<h1 id="distinguished-paper-awards">Distinguished Paper Awards</h1><div class="panel-group"><div class="list-group-item">
+        <b>COBBL: A Synthetic Constraint Paper
+        </b><br />Vic Wan<sup>1</sup>, Wes Xia<sup>1</sup>, Yui Zhao<sup>2</sup><br /><sup>1</sup>: Paderborn University, <sup>2</sup>: Institute</div>
+ <div class="list-group-item"><b>Typing Synthetic Cryptography against Spectre</b><br />Zed Alpha (MPI-SP), Amy Beta (MPI-SP and IMDEA Software Institute)
+ </div></div><h1>Test of Time Awards</h1><div class="list-group-item"><b>A Classic Synthetic Paper from Long Ago</b><br />Old Timer</div>`;
+  assert.deepEqual(parse(items, { year: 2025, source: src }).entries.map((e) => [e.title, e.authors]), [
+    ["COBBL: A Synthetic Constraint Paper", ["Vic Wan", "Wes Xia", "Yui Zhao"]],
+    ["Typing Synthetic Cryptography against Spectre", ["Zed Alpha", "Amy Beta"]]
+  ]);
+  const best = `<h2>Best Paper Award</h2><h3>Sponsored by <a href="z">Z</a></h3><p><strong>A Synthetic Best Paper on Rowhammer</strong> Abe Cole (Univ), Bea Dunn (Univ)</p><h2>Best Practical Paper Award</h2><p><strong>An Analysis of Synthetic Pre-installed Software</strong> Cal Eden (Univ)</p>`;
+  assert.deepEqual(parse(best, { year: 2020, source: src }).entries.map((e) => [e.award, e.awardLabel]), [["best", "Best Paper"], ["category", "Best Practical Paper"]]);
+  assert.equal(classify("Distinguished Reviewer Awards"), null);
+  assert.equal(classify("Test of Time Award (1995-2006)"), null);
+});

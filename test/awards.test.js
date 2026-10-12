@@ -189,6 +189,15 @@ test("the bundled list: theory and networking winners (SIGACT's STOC pages, SIGC
   assert.deepEqual(find("Graph isomorphism in quasipolynomial time", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: security winners (IEEE S&P's own awards pages)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Towards evaluating the robustness of neural networks", "N Carlini, D Wagner"), ["S&P 2017 best-student"]);
+  assert.deepEqual(find("Spectre attacks: Exploiting speculative execution", "P Kocher, J Horn, A Fogh, D Genkin, D Gruss, W Haas"), ["S&P 2019 distinguished"]);
+  assert.deepEqual(find("Four attacks and a proof for Telegram", "MR Albrecht, L Mareková, KG Paterson, I Stepanovs"), ["S&P 2022 distinguished"]);
+  assert.deepEqual(find("Towards evaluating the robustness of neural networks", "A Smith, B Jones"), []);
+});
+
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
   assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
   assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));

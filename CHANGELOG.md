@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.2 — 2026-10-12
+
+- **IEEE S&P distinguished papers, 2016–2025** (58 entries: Distinguished Paper, Distinguished Practical Paper and Distinguished
+  Student Paper; Best Paper / Best Practical / Best Student Paper in 2020–21) from the symposium's own awards page of each year. The
+  pages come in three markups, all read by the new `scripts/awards/sp.mjs`; workshop, reviewer and test-of-time awards are not
+  read. The list holds 1940 awards.
+
 ## 2.5.1 — 2026-10-12
 
 - **STOC and SIGCOMM paper awards** (155 entries) from the societies' own pages: ACM SIGACT's *STOC Best Paper* (2003–2025), Machtey /

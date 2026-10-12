@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1882
+  "count": 1940
  },
  "entries": [
   {
@@ -24817,6 +24817,984 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
+  },
+  {
+   "venue": "S&P",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A2: Analog Malicious Hardware",
+   "authors": [
+    "Kaiyuan Yang",
+    "Matthew Hicks",
+    "Qing Dong",
+    "Todd Austin",
+    "Dennis Sylvester"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2016/awards.html",
+   "evidence": "Distingushed Paper:: A2: Analog Malicious Hardware — Kaiyuan Yang, Matthew Hicks, Qing Dong, Todd Austin, and Dennis Sylvester (University of Michigan)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper",
+   "title": "Security Analysis of Emerging Smart Home Applications",
+   "authors": [
+    "Earlence Fernandes",
+    "Jaeyeon Jung",
+    "Atul Prakash"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2016/awards.html",
+   "evidence": "Distinguished Practical Paper:: Security Analysis of Emerging Smart Home Applications — Earlence Fernandes (University of Michigan, Ann Arbor), Jaeyeon Jung (Microsoft Research), and Atul Prakash (University of Michigan, Ann Arbor)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "pASSWORD tYPOS and How to Correct Them Securely",
+   "authors": [
+    "Rahul Chatterjee",
+    "Anish Athalye",
+    "Devdatta Akhawe",
+    "Ari Juels",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2016/awards.html",
+   "evidence": "Distinguished Student Paper:: pASSWORD tYPOS and How to Correct Them Securely — Rahul Chatterjee (Cornell University), Anish Athalye (MIT), Devdatta Akhawe (Dropbox), and Ari Juels and Thomas Ristenpart (Cornell Tech)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "Verifiable ASICs",
+   "authors": [
+    "Riad S. Wahby",
+    "Max Howald",
+    "Siddharth Garg",
+    "abhi shelat",
+    "Michael Walfish"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2016/awards.html",
+   "evidence": "Distinguished Student Paper:: Verifiable ASICs — Riad S. Wahby (New York University, Stanford University), Max Howald (The Cooper Union, New York University), Siddharth Garg (New York University), abhi shelat (The University of Virginia), and Michael Walfish (New York University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper",
+   "title": "Cloak and Dagger: From Two Permissions to Complete Control of the UI Feedback Loop",
+   "authors": [
+    "Yanick Fratantonio",
+    "Chenxiong Qian",
+    "Simon Chung",
+    "Wenke Lee"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2017/awards.html",
+   "evidence": "Distinguished Practical Paper Award: Cloak and Dagger: From Two Permissions to Complete Control of the UI Feedback Loop — Yanick Fratantonio (UC Santa Barbara), Chenxiong Qian (Georgia Tech), Simon Chung (Georgia Tech), and Wenke Lee (Georgia Tech)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Verified Models and Reference Implementations for the TLS 1.3 Standard Candidate",
+   "authors": [
+    "Karthikeyan Bhargavan",
+    "Bruno Blanchet",
+    "Nadim Kobeissi"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2017/awards.html",
+   "evidence": "Distinguished Paper Award: Verified Models and Reference Implementations for the TLS 1.3 Standard Candidate — Karthikeyan Bhargavan (INRIA), Bruno Blanchet (INRIA), and Nadim Kobeissi (INRIA)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "Towards Evaluating the Robustness of Neural Networks",
+   "authors": [
+    "Nicholas Carlini",
+    "David Wagner"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2017/awards.html",
+   "evidence": "Distinguished Student Paper Award: Towards Evaluating the Robustness of Neural Networks — Nicholas Carlini (University of California, Berkeley) and David Wagner (University of California, Berkeley)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DEEPSEC: Deciding Equivalence Properties in Security Protocols -- Theory and Practice",
+   "authors": [
+    "Vincent Cheval",
+    "Steve Kremer",
+    "Itsaka Rakotonirina"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2018/awards.html",
+   "evidence": "Distinguished Paper Award: DEEPSEC: Deciding Equivalence Properties in Security Protocols -- Theory and Practice — Vincent Cheval (Inria Nancy & Loria), Steve Kremer (Inria Nancy & Loria), Itsaka Rakotonirina (Inria Nancy & Loria)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper",
+   "title": "FPGA-Based Remote Power Side-Channel Attacks",
+   "authors": [
+    "Mark Zhao",
+    "G. Edward Suh"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2018/awards.html",
+   "evidence": "Distinguished Practical Paper Award: FPGA-Based Remote Power Side-Channel Attacks — Mark Zhao (Cornell University), G. Edward Suh (Cornell University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "On Enforcing the Digital Immunity of a Large Humanitarian Organization",
+   "authors": [
+    "Stevens Le Blond",
+    "Alejandro Cuevas",
+    "Juan Ramón Troncoso-Pastoriza",
+    "Philipp Jovanovic",
+    "Bryan Ford",
+    "Jean-Pierre Hubaux"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2018/awards.html",
+   "evidence": "Distinguished Paper Award: On Enforcing the Digital Immunity of a Large Humanitarian Organization — Stevens Le Blond (École Polytechnique Fédérale de Lausanne), Alejandro Cuevas (École Polytechnique Fédérale de Lausanne), Juan Ramón Troncoso-Pastoriza (École Polytechnique Fédérale de Lausanne), Philipp Jovanovic (École Polytechnique Fédérale de Lausanne), Bryan Ford (École Polytechnique Fédérale de Lausanne), Jean-Pierre Hubaux (École Polytechnique Fédérale de Lausanne)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Practical Paper",
+   "title": "Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against Rowhammer Attacks",
+   "authors": [
+    "Lucian Cojocar",
+    "Kaveh Razavi",
+    "Cristiano Giuffrida",
+    "Herbert Bos"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2019/awards.html",
+   "evidence": "Distinguished Practical Paper Award: Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against Rowhammer Attacks — Lucian Cojocar (Vrije Universiteit Amsterdam), Kaveh Razavi (Vrije Universiteit Amsterdam), Cristiano Giuffrida (Vrije Universiteit Amsterdam), Herbert Bos (Vrije Universiteit Amsterdam)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Spectre Attacks: Exploiting Speculative Execution",
+   "authors": [
+    "Paul Kocher",
+    "Jann Horn",
+    "Anders Fogh",
+    "Daniel Genkin",
+    "Daniel Gruss",
+    "Werner Haas",
+    "Mike Hamburg",
+    "Moritz Lipp",
+    "Stefan Mangard",
+    "Thomas Prescher",
+    "Michael Schwarz",
+    "Yuval Yarom"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2019/awards.html",
+   "evidence": "Distinguished Paper Award: Spectre Attacks: Exploiting Speculative Execution — Paul Kocher (Independent (www.paulkocher.com)), Jann Horn (Google Project Zero), Anders Fogh (G DATA Advanced Analytics), Daniel Genkin (University of Pennsylvania and University of Maryland), Daniel Gruss (Graz University of Technology), Werner Haas (Cyberus Technology), Mike Hamburg (Rambus, Cryptography Research Division), Moritz Lipp (Graz University of Technology), Stefan Mangard (Graz University of Technology), Thomas Prescher (Cyberus Technology), Michael Schwarz (Graz University of Technology), Yuval Yarom (University of Adelaide and Data61)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "TRRespass: Exploiting the Many Sides of Target Row Refresh",
+   "authors": [
+    "Pietro Frigo",
+    "Emanuele Vannacci",
+    "Hasan Hassan",
+    "Victor van der Veen",
+    "Onur Mutlu",
+    "Cristiano Giuffrida",
+    "Herbert Bos",
+    "Kaveh Razavi"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2020/awards.html",
+   "evidence": "Best Paper Award: TRRespass: Exploiting the Many Sides of Target Row Refresh — Pietro Frigo (Vrije Universiteit Amsterdam), Emanuele Vannacci (Vrije Universiteit Amsterdam), Hasan Hassan (ETH Zürich), Victor van der Veen (Qualcomm Technologies, Inc.), Onur Mutlu (ETH Zürich), Cristiano Giuffrida (Vrije Universiteit Amsterdam), Herbert Bos (Vrije Universiteit Amsterdam), Kaveh Razavi (Vrije Universiteit Amsterdam)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Practical Paper",
+   "title": "An Analysis of Pre-installed Android Software",
+   "authors": [
+    "Julien Gamba",
+    "Mohammed Rashed",
+    "Abbas Razaghpanah",
+    "Juan Tapiador",
+    "Narseo Vallina-Rodriguez"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2020/awards.html",
+   "evidence": "Best Practical Paper Award: An Analysis of Pre-installed Android Software — Julien Gamba (IMDEA Networks Institute / Universidad Carlos III de Madrid), Mohammed Rashed (Universidad Carlos III de Madrid), Abbas Razaghpanah (Stony Brook University), Juan Tapiador (Universidad Carlos III de Madrid), Narseo Vallina-Rodriguez (IMDEA Networks Institute / ICSI)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Can Voters Detect Malicious Manipulation of Ballot Marking Devices?",
+   "authors": [
+    "Matthew Bernhard",
+    "Allison McDonald",
+    "Henry Meng",
+    "Jensen Hwa",
+    "Nakul Bajaj",
+    "Kevin Chang",
+    "J. Alex Halderman"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2020/awards.html",
+   "evidence": "Best Student Paper Award: Can Voters Detect Malicious Manipulation of Ballot Marking Devices? — Matthew Bernhard (University of Michigan), Allison McDonald (University of Michigan), Henry Meng (University of Michigan), Jensen Hwa (University of Michigan), Nakul Bajaj (The Harker School), Kevin Chang (University of Michigan), J. Alex Halderman (University of Michigan)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Compositional Security for Reentrant Applications",
+   "authors": [
+    "Ethan Cecchetti",
+    "Siqiu Yao",
+    "Haobin Ni",
+    "Andrew C. Myers"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2021/awards.html",
+   "evidence": "Best Paper Award: Compositional Security for Reentrant Applications — Ethan Cecchetti (Cornell University), Siqiu Yao (Cornell University), Haobin Ni (Cornell University), Andrew C. Myers (Cornell University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Hardware-Software Contracts for Secure Speculation",
+   "authors": [
+    "Marco Guarnieri",
+    "Boris Köpf",
+    "Jan Reineke",
+    "Pepe Vila"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2021/awards.html",
+   "evidence": "Best Paper Award: Hardware-Software Contracts for Secure Speculation — Marco Guarnieri (IMDEA Software Institute), Boris Köpf (Microsoft Research), Jan Reineke (Saarland University), and Pepe Vila (IMDEA Software Institute)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Practical Paper",
+   "title": "The EMV Standard: Break, Fix, Verify",
+   "authors": [
+    "David Basin",
+    "Ralf Sasse",
+    "Jorge Toro-Pozo"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2021/awards.html",
+   "evidence": "Best Practical Paper Award: The EMV Standard: Break, Fix, Verify — David Basin, Ralf Sasse, and Jorge Toro-Pozo"
+  },
+  {
+   "venue": "S&P",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing",
+   "authors": [
+    "Penghui Zhang",
+    "Adam Oest",
+    "Haehyun Cho",
+    "Zhibo Sun",
+    "RC Johnson",
+    "Brad Wardman",
+    "Shaown Sarker",
+    "Alexandros Kapravelos",
+    "Tiffany Bao",
+    "Ruoyu Wang",
+    "Yan Shoshitaishvili",
+    "Adam Doupé",
+    "Gail-Joon Ahn"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2021/awards.html",
+   "evidence": "Best Student Paper Award: CrawlPhish: Large-scale Analysis of Client-side Cloaking Techniques in Phishing — Penghui Zhang (ASU), Adam Oest (ASU), Haehyun Cho (ASU), Zhibo Sun (ASU), RC Johnson (PayPal), Brad Wardman (PayPal), Shaown Sarker (NCSU), Alexandros Kapravelos (NCSU), Tiffany Bao (ASU), Ruoyu Wang (ASU), Yan Shoshitaishvili (ASU), Adam Doupé (ASU), and Gail-Joon Ahn (ASU and Samsung Research)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "They Would do Better if They Worked Together: The Case of Interaction Problems Between Password Managers and Websites",
+   "authors": [
+    "Nicolas Huaman",
+    "Sabrina Amft",
+    "Marten Oltrogge",
+    "Yasemin Acar",
+    "Sascha Fahl"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2021/awards.html",
+   "evidence": "Best Student Paper Award: They Would do Better if They Worked Together: The Case of Interaction Problems Between Password Managers and Websites — Nicolas Huaman (Leibniz University Hannover), Sabrina Amft (Leibniz University Hannover), Marten Oltrogge (CISPA Helmholtz Center for Information Security), Yasemin Acar (Leibniz University Hannover and MPI-SP), and Sascha Fahl (Leibniz University Hannover)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions",
+   "authors": [
+    "Hammond Pearce",
+    "Baleegh Ahmad",
+    "Benjamin Tan",
+    "Brendan Dolan-Gavitt",
+    "Ramesh Karri"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2022/awards.html",
+   "evidence": "Distinguished Paper Award: Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions — Hammond Pearce, Baleegh Ahmad, Benjamin Tan, Brendan Dolan-Gavitt, Ramesh Karri (NYU Tandon School of Engineering)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Committed to Trust: A Qualitative Study on Security & Trust in Open Source Software Projects",
+   "authors": [
+    "Dominik Wermke",
+    "Noah Woehler",
+    "Jan H. Klemmer",
+    "Marcel Fourné",
+    "Yasemin Acar",
+    "Sascha Fahl"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2022/awards.html",
+   "evidence": "Distinguished Paper Award: Committed to Trust: A Qualitative Study on Security & Trust in Open Source Software Projects — Dominik Wermke (CISPA), Noah Woehler (CISPA), Jan H. Klemmer (Leibniz University Hannover), Marcel Fourné (MPI-SP), Yasemin Acar (George Washington University), Sascha Fahl (CISPA, Leibniz University Hannover)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Four Attacks and a Proof for Telegram",
+   "authors": [
+    "Martin R. Albrecht",
+    "Lenka Mareková",
+    "Kenneth G. Paterson",
+    "Igors Stepanovs"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2022/awards.html",
+   "evidence": "Distinguished Paper Award: Four Attacks and a Proof for Telegram — Martin R. Albrecht (Royal Holloway, University of London), Lenka Mareková (Royal Holloway, University of London), Kenneth G. Paterson (ETH Zurich), Igors Stepanovs (ETH Zurich)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Invisible Finger: Practical Electromagnetic Interference Attack on Touchscreen-based Electronic Devices",
+   "authors": [
+    "Haoqi Shan",
+    "Boyi Zhang",
+    "Zihao Zhan",
+    "Dean Sullivan",
+    "Shuo Wang",
+    "Yier Jin"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/SP2022/awards.html",
+   "evidence": "Distinguished Paper Award: Invisible Finger: Practical Electromagnetic Interference Attack on Touchscreen-based Electronic Devices — Haoqi Shan (University of Florida), Boyi Zhang (University of Florida), Zihao Zhan (University of Florida), Dean Sullivan (University of New Hampshire), Shuo Wang (University of Florida), Yier Jin (University of Florida)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "“In Eighty Percent of the Cases, I Select the Password for Them”: Security and Privacy Challenges, Advice, and Opportunities at Cybercafes in Kenya",
+   "authors": [
+    "Collins W. Munyendo",
+    "Yasemin Acar",
+    "Adam J. Aviv"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: “In Eighty Percent of the Cases, I Select the Password for Them”: Security and Privacy Challenges, Advice, and Opportunities at Cybercafes in Kenya — Collins W. Munyendo (The George Washington University), Yasemin Acar (The George Washington University), Adam J. Aviv (The George Washington University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Characterizing Everyday Misuse of Smart Home Devices",
+   "authors": [
+    "Phoebe Moh",
+    "Pubali Datta Noel Warford",
+    "Adam Bates",
+    "Nathan Malkin",
+    "Michelle L. Mazurek"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Characterizing Everyday Misuse of Smart Home Devices — Phoebe Moh (University of Maryland), Pubali Datta (University of Illinois Urbana-Champaign) Noel Warford (University of Maryland), Adam Bates (University of Illinois Urbana-Champaign), Nathan Malkin (University of Maryland), Michelle L. Mazurek (University of Maryland)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "It's (DOM) Clobbering Time: Attack Techniques, Prevalence, and Defenses",
+   "authors": [
+    "Soheil Khodayari",
+    "Giancarlo Pellegrino"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: It's (DOM) Clobbering Time: Attack Techniques, Prevalence, and Defenses — Soheil Khodayari (CISPA Helmholtz Center for Information Security), Giancarlo Pellegrino (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "MEGA: Malleable Encryption Goes Awry",
+   "authors": [
+    "Matilda Backendal",
+    "Miro Haller",
+    "Kenneth Paterson"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: MEGA: Malleable Encryption Goes Awry — Matilda Backendal (ETH Zurich), Miro Haller (ETH Zurich), Kenneth Paterson (ETH Zurich)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Not Yet Another Digital ID: Privacy-preserving Humanitarian Aid Distribution",
+   "authors": [
+    "Boya Wang",
+    "Wouter Lueks",
+    "Justinas Sukaitis",
+    "Vincent Graf Narbel",
+    "Carmela Troncoso"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Not Yet Another Digital ID: Privacy-preserving Humanitarian Aid Distribution — Boya Wang (EPFL), Wouter Lueks (CISPA Helmholtz Center for Information Security), Justinas Sukaitis (ICRC), Vincent Graf Narbel (ICRC), Carmela Troncoso (EPFL)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Practically-exploitable Cryptographic Vulnerabilities in Matrix",
+   "authors": [
+    "Martin R. Albrecht",
+    "Sofía Celi",
+    "Benjamin Dowling",
+    "Daniel Jones"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Practically-exploitable Cryptographic Vulnerabilities in Matrix — Martin R. Albrecht (Royal Holloway, University of London), Sofía Celi (Brave Software), Benjamin Dowling (University of Sheffield), Daniel Jones (Royal Holloway, University of London)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Red Team vs. Blue Team: A Real-World Hardware Trojan Detection Case Study Across Four Modern CMOS Technology Generations",
+   "authors": [
+    "Endres Puschner",
+    "Thorben Moos",
+    "Christian Kison",
+    "Steffen Becker",
+    "Amir Moradi",
+    "Christof Paar"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Red Team vs. Blue Team: A Real-World Hardware Trojan Detection Case Study Across Four Modern CMOS Technology Generations — Endres Puschner (Max Planck Institute for Security and Privacy), Thorben Moos (UCLouvain), Christian Kison (Bundeskriminalamt), Steffen Becker (Ruhr University Bochum & Max Planck Institute for Security and Privacy), Amir Moradi (Ruhr University Bochum), Christof Paar (Max Planck Institute for Security and Privacy)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Space Odyssey: An Experimental Software Security Analysis of Satellites",
+   "authors": [
+    "Johannes Willbold",
+    "Moritz Schloegel Manuel Vögele",
+    "Maximilian Gerhardt",
+    "Thorsten Holz",
+    "Ali Abbasi"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Space Odyssey: An Experimental Software Security Analysis of Satellites — Johannes Willbold (Ruhr-Universität Bochum), Moritz Schloegel (Ruhr-Universität Bochum) Manuel Vögele (Ruhr-Universität Bochum), Maximilian Gerhardt (Ruhr-Universität Bochum), Thorsten Holz (CISPA Helmholtz Center for Information Security), Ali Abbasi (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Leaky Web: Automated Discovery of Cross-Site Information Leaks in Browsers and the Web",
+   "authors": [
+    "Jannis Rautenstrauch",
+    "Giancarlo Pellegrino",
+    "Ben Stock"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: The Leaky Web: Automated Discovery of Cross-Site Information Leaks in Browsers and the Web — Jannis Rautenstrauch (CISPA Helmholtz Center for Information Security), Giancarlo Pellegrino (CISPA Helmholtz Center for Information Security), Ben Stock (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Typing High-Speed Cryptography against Spectre v1",
+   "authors": [
+    "Basavesh Ammanaghatta Shivakumar",
+    "Gilles Barthe",
+    "Benjamin Grégoire",
+    "Vincent Laporte",
+    "Tiago Oliviera",
+    "Swarn Priya",
+    "Peter Schwabe",
+    "Lucas Tabary-Maujean"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Typing High-Speed Cryptography against Spectre v1 — Basavesh Ammanaghatta Shivakumar (MPI-SP), Gilles Barthe (MPI-SP and IMDEA Software Institute), Benjamin Grégoire (Inria and Université Côte d'Azur), Vincent Laporte (Inria Nancy), Tiago Oliviera (MPI-SP), Swarn Priya (Inria and Université Côte d'Azur), Peter Schwabe (MPI-SP & Radboud University), Lucas Tabary-Maujean (ENS Paris-Saclay)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "WaVe: a verifiably secure WebAssembly sandboxing runtime",
+   "authors": [
+    "Evan Johnson",
+    "Evan Laufer",
+    "Zijie Zhao",
+    "Shravan Narayan",
+    "Stefan Savage",
+    "Deian Stefan",
+    "Fraser Brown"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: WaVe: a verifiably secure WebAssembly sandboxing runtime — Evan Johnson (University of California San Diego), Evan Laufer (Stanford University) , Zijie Zhao (University of Illinois Urbana-Champaign), Shravan Narayan (University of California San Diego) , Stefan Savage (University of California San Diego) , Deian Stefan (University of California San Diego), Fraser Brown (Carnegie Mellon University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Weak Fiat-Shamir Attacks on Modern Proof Systems",
+   "authors": [
+    "Quang Dao",
+    "Jim Miller",
+    "Opal Wright",
+    "Paul Grubbs"
+   ],
+   "track": "main",
+   "source": "https://sp2023.ieee-security.org/program-awards.html",
+   "evidence": "Distinguished Paper Awards: Weak Fiat-Shamir Attacks on Modern Proof Systems — Quang Dao (Carnegie Mellon University), Jim Miller (Trail of Bits), Opal Wright (Trail of Bits), Paul Grubbs (University of Michigan)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "\"False negative - that one is going to kill you.\" - Understanding Industry Perspectives of Static Analysis based Security Testing",
+   "authors": [
+    "Amit Seal Ami",
+    "Kevin Moran",
+    "Denys Poshyvanyk",
+    "Adwait Nadkarni"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: \"False negative - that one is going to kill you.\" - Understanding Industry Perspectives of Static Analysis based Security Testing — Amit Seal Ami (William & Mary), Kevin Moran (University of Central Florida), Denys Poshyvanyk (William & Mary), Adwait Nadkarni (William & Mary)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "BENZENE: A Practical Root Cause Analysis System with an Under-Constrained State Mutation",
+   "authors": [
+    "Younggi Park",
+    "Hwiwon Lee",
+    "Jinho Jung",
+    "Hyungjoon Koo",
+    "Huy Kang Kim"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: BENZENE: A Practical Root Cause Analysis System with an Under-Constrained State Mutation — Younggi Park (Korea University), Hwiwon Lee (Korea University), Jinho Jung (Ministry of National Defense), Hyungjoon Koo (Sungkyunkwan University), Huy Kang Kim (Korea University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "From Chatbots to Phishbots?: Phishing Scam Generation in Commercial Large Language Models",
+   "authors": [
+    "Sayak Saha Roy",
+    "Poojitha Thota",
+    "Krishna Vamsi Naragam",
+    "Shirin Nilizadeh"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: From Chatbots to Phishbots?: Phishing Scam Generation in Commercial Large Language Models — Sayak Saha Roy (University of Texas at Arlington), Poojitha Thota (University of Texas at Arlington), Krishna Vamsi Naragam (University of Texas at Arlington), Shirin Nilizadeh (University of Texas at Arlington)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "From Virtual Touch to Tesla Command: Unlocking Unauthenticated Control Chains From Smart Glasses for Vehicle Takeover",
+   "authors": [
+    "Xingli Zhang",
+    "Yazhou Tu",
+    "Yan Long",
+    "Liqun Shan",
+    "Mohamed A Elsaadani",
+    "Kevin Fu",
+    "Zhiqiang Lin",
+    "Xiali Hei"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: From Virtual Touch to Tesla Command: Unlocking Unauthenticated Control Chains From Smart Glasses for Vehicle Takeover — Xingli Zhang (University of Louisiana at Lafayette), Yazhou Tu (University of Louisiana at Lafayette), Yan Long (University of Michigan), Liqun Shan (University of Louisiana at Lafayette), Mohamed A Elsaadani (University of Louisiana at Lafayette), Kevin Fu (Northeastern University), Zhiqiang Lin (Ohio State University), Xiali Hei (University of Louisiana at Lafayette)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Shedding Light on CVSS Scoring Inconsistencies: A User-Centric Study on Evaluating Widespread Security Vulnerabilities",
+   "authors": [
+    "Julia Wunder",
+    "Andreas Kurtz",
+    "Christian Eichenmüller",
+    "Freya Gassmann",
+    "Zinaida Benenson"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Shedding Light on CVSS Scoring Inconsistencies: A User-Centric Study on Evaluating Widespread Security Vulnerabilities — Julia Wunder (Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)), Andreas Kurtz (Heilbronn University of Applied Sciences), Christian Eichenmüller (Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)), Freya Gassmann (Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau (RPTU)), Zinaida Benenson (Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU))"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SoK: Prudent Evaluation Practices for Fuzzing",
+   "authors": [
+    "Moritz Schloegel",
+    "Nils Bars",
+    "Nico Schiller",
+    "Lukas Bernhard",
+    "Tobias Scharnowski",
+    "Addison Crump",
+    "Arash Ale Ebrahim",
+    "Nicolai Bissantz",
+    "Marius Muench",
+    "Thorsten Holz"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: SoK: Prudent Evaluation Practices for Fuzzing — Moritz Schloegel (CISPA Helmholtz Center for Information Security), Nils Bars (CISPA Helmholtz Center for Information Security), Nico Schiller (CISPA Helmholtz Center for Information Security), Lukas Bernhard (CISPA Helmholtz Center for Information Security), Tobias Scharnowski (CISPA Helmholtz Center for Information Security), Addison Crump (CISPA Helmholtz Center for Information Security), Arash Ale Ebrahim (CISPA Helmholtz Center for Information Security), Nicolai Bissantz (Ruhr University Bochum), Marius Muench (University of Birmingham), Thorsten Holz (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SoK: Unintended Interactions among Machine Learning Defenses and Risks",
+   "authors": [
+    "Vasisht Duddu",
+    "Sebastian Szyller",
+    "N. Asokan"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: SoK: Unintended Interactions among Machine Learning Defenses and Risks — Vasisht Duddu (University of Waterloo), Sebastian Szyller (Intel Labs), N. Asokan (University of Waterloo, Aalto University)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Great Request Robbery: An Empirical Study of Client-side Request Hijacking Vulnerabilities on the Web",
+   "authors": [
+    "Soheil Khodayari",
+    "Thomas Barber",
+    "Giancarlo Pellegrino"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: The Great Request Robbery: An Empirical Study of Client-side Request Hijacking Vulnerabilities on the Web — Soheil Khodayari (CISPA Helmholtz Center for Information Security), Thomas Barber (SAP Security Research), Giancarlo Pellegrino (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "WESEE: Using Malicious #VC Interrupts to Break AMD SEV-SNP",
+   "authors": [
+    "Benedict Schlüter",
+    "Supraja Sridhara",
+    "Andrin Bertschi",
+    "Shweta Shinde"
+   ],
+   "track": "main",
+   "source": "https://sp2024.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: WESEE: Using Malicious #VC Interrupts to Break AMD SEV-SNP — Benedict Schlüter (ETH Zurich), Supraja Sridhara (ETH Zurich), Andrin Bertschi (ETH Zurich), Shweta Shinde (ETH Zurich)"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Breaking the Barrier: Post-Barrier Spectre Attacks",
+   "authors": [
+    "Johannes Wikner",
+    "Kaveh Razavi"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Breaking the Barrier: Post-Barrier Spectre Attacks — Johannes Wikner, Kaveh Razavi"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Characterizing Robocalls with Multiple Vantage Points",
+   "authors": [
+    "Sathvik Prasad",
+    "Aleksandr Nahapetyan",
+    "Bradley Reaves"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Characterizing Robocalls with Multiple Vantage Points — Sathvik Prasad, Aleksandr Nahapetyan, Bradley Reaves"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "CipherSteal: Stealing Input Data from TEE-Shielded Neural Networks with Ciphertext Side Channels",
+   "authors": [
+    "Yuanyuan Yuan",
+    "Zhibo Liu",
+    "Sen Deng",
+    "Yanzuo Chen",
+    "Shuai Wang",
+    "Yinqian Zhang",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: CipherSteal: Stealing Input Data from TEE-Shielded Neural Networks with Ciphertext Side Channels — Yuanyuan Yuan, Zhibo Liu, Sen Deng, Yanzuo Chen, Shuai Wang, Yinqian Zhang, Zhendong Su"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "COBBL: Dynamic Constraint Generation for SNARKs",
+   "authors": [
+    "Kunming Jiang",
+    "Fraser Brown",
+    "Riad Wahby"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: COBBL: Dynamic Constraint Generation for SNARKs — Kunming Jiang, Fraser Brown, Riad Wahby"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks",
+   "authors": [
+    "Yupei Liu",
+    "Yuqi Jia",
+    "Jinyuan Jia",
+    "Dawn Song",
+    "Neil Zhenqiang Gong"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: DataSentinel: A Game-Theoretic Detection of Prompt Injection Attacks — Yupei Liu, Yuqi Jia, Jinyuan Jia, Dawn Song, Neil Zhenqiang Gong"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Detecting Taint-Style Vulnerabilities in Microservice-Structured Web Applications",
+   "authors": [
+    "Fengyu Liu",
+    "Yuan Zhang",
+    "Tian Chen",
+    "Youkun Shi",
+    "Guangliang Yang",
+    "Zihan Lin",
+    "Min Yang",
+    "Junyao He",
+    "Qi Li"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Detecting Taint-Style Vulnerabilities in Microservice-Structured Web Applications — Fengyu Liu, Yuan Zhang, Tian Chen, Youkun Shi, Guangliang Yang, Zihan Lin, Min Yang, Junyao He, Qi Li"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Empc: Effective Path Prioritization for Symbolic Execution with Path Cover",
+   "authors": [
+    "Shuangjie Yao",
+    "Dongdong She"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Empc: Effective Path Prioritization for Symbolic Execution with Path Cover — Shuangjie Yao, Dongdong She"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Follow My Flow: Unveiling Client-Side Prototype Pollution Gadgets from One Million Real-World Websites",
+   "authors": [
+    "Zifeng Kang",
+    "Muxi Lyu",
+    "Zhengyu Liu",
+    "Jianjia Yu",
+    "Runqi Fan",
+    "Song Li",
+    "Yinzhi Cao"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Follow My Flow: Unveiling Client-Side Prototype Pollution Gadgets from One Million Real-World Websites — Zifeng Kang, Muxi Lyu, Zhengyu Liu, Jianjia Yu, Runqi Fan, Song Li, Yinzhi Cao"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SLAP: Data Speculation Attacks via Load Address Prediction on Apple Silicon",
+   "authors": [
+    "Jason Kim",
+    "Daniel Genkin",
+    "Yuval Yarom"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: SLAP: Data Speculation Attacks via Load Address Prediction on Apple Silicon — Jason Kim, Daniel Genkin, Yuval Yarom"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Inadequacy of Similarity-based Privacy Metrics: Privacy Attacks against “Truly Anonymous” Synthetic Datasets",
+   "authors": [
+    "Georgi Ganev",
+    "Emiliano De Cristofaro"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: The Inadequacy of Similarity-based Privacy Metrics: Privacy Attacks against “Truly Anonymous” Synthetic Datasets — Georgi Ganev, Emiliano De Cristofaro"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Transport Layer Obscurity: Circumventing SNI Censorship on the TLS Layer",
+   "authors": [
+    "Niklas Niere",
+    "Felix Lange",
+    "Juraj Somorovsky",
+    "Robert Merget"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Transport Layer Obscurity: Circumventing SNI Censorship on the TLS Layer — Niklas Niere, Felix Lange, Juraj Somorovsky, Robert Merget"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Unveiling Security Vulnerabilities in Git Large File Storage Protocol",
+   "authors": [
+    "Yuan Chen",
+    "Qinying Wang",
+    "Yong Yang",
+    "Yuanchao Chen",
+    "Yuwei Li",
+    "Shouling Ji"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Unveiling Security Vulnerabilities in Git Large File Storage Protocol — Yuan Chen, Qinying Wang, Yong Yang, Yuanchao Chen, Yuwei Li, Shouling Ji"
+  },
+  {
+   "venue": "S&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Verifiable Boosted Tree Ensembles",
+   "authors": [
+    "Stefano Calzavara",
+    "Lorenzo Cazzaro",
+    "Claudio Lucchese",
+    "Giulio Ermanno Pibiri"
+   ],
+   "track": "main",
+   "source": "https://sp2025.ieee-security.org/awards.html",
+   "evidence": "Distinguished Paper Awards: Verifiable Boosted Tree Ensembles — Stefano Calzavara, Lorenzo Cazzaro, Claudio Lucchese, Giulio Ermanno Pibiri"
   },
   {
    "venue": "SIGCOMM",
