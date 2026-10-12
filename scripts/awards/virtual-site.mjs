@@ -8,7 +8,7 @@
 // aggregators. Coverage per year is printed, including years whose page lists no paper awards.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseAwardsPage, parseRecipientsPage, parsePaperAwardPage } from "./parse-virtual.mjs";
+import { parseAwardsPage, parseRecipientsPage, parsePaperAwardPage, parseTestOfTimeDetail } from "./parse-virtual.mjs";
 
 const args = process.argv.slice(2);
 const opt = (name, dflt) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : dflt; };
@@ -48,6 +48,27 @@ for (const site of SITES) {
       if (seen.has(key)) { duplicates++; continue; }
       seen.add(key);
       entries.push(e);
+    }
+    // test-of-time rows whose list entry omits the paper's title: the award page names the paper
+    for (const s of skipped) {
+      if (!s.href) continue;
+      const url = new URL(s.href, `https://${site.host}/`).toString();
+      const detailHtml = await fetchPage(url, `${site.venue.toLowerCase()}-tot-${year}-${url.split("/").pop()}.html`);
+      const detail = detailHtml ? parseTestOfTimeDetail(detailHtml) : null;
+      const surname = (s.authors[0] || "").split(/\s+/).pop().toLowerCase();
+      if (!detail || !surname || !detail.authorsText.toLowerCase().includes(surname)) {
+        console.log(`${site.venue} ${year}: test-of-time paper not confirmed on its award page; not added`);
+        continue;
+      }
+      const e = {
+        venue: site.venue, year, award: "tot", awardLabel: s.label, title: detail.title, authors: s.authors,
+        track: "main", source: url, evidence: `${detail.title} — ${s.label}`, verified: "official (conference test-of-time page)"
+      };
+      const key = [e.venue, e.year, e.award, e.title.toLowerCase().replace(/[^a-z0-9]/g, "")].join("|");
+      if (seen.has(key)) continue;
+      seen.add(key);
+      entries.push(e);
+      console.log(`${site.venue} ${year}: test of time paper read from its award page`);
     }
     const notKept = [...new Set(skipped.map((s) => s.label))];
     console.log(`${site.venue} ${year}: ${got.length} paper award(s)` + (notKept.length ? `; not kept: ${notKept.join(" | ")}` : ""));

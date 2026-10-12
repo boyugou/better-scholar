@@ -119,3 +119,20 @@ test("the ECCV-style awards page: a heading, the title, then the authors joined 
   assert.deepEqual(entries[0].authors, ["Jeremy Klotz", "Shree Nayar"]);
   assert.equal(entries[1].source, "https://eccv.ecva.net/Conferences/2024/Awards");
 });
+
+test("a test-of-time award page names its paper in the abstract block; a list row without a title keeps its award page", async () => {
+  const { parseTestOfTimeDetail, parseAwardsPage } = await load();
+  const detail = `<div class="abstract-section"><div class="abstract-text collapsed" id="abstractText"><div class="abstract-text-inner">
+<p><a href="https://papers.example.org/paper/2015/hash/x-Abstract.html">A Synthetic Old Paper Title (Test of Time Award)</a> <em>Ann Lee, Bo Chen</em></p>
+<p><strong>Paper Abstract</strong>: text</p></div></div></div>`;
+  assert.deepEqual(parseTestOfTimeDetail(detail), { title: "A Synthetic Old Paper Title", authorsText: "Ann Lee, Bo Chen" });
+  assert.equal(parseTestOfTimeDetail("<p>no paper here</p>"), null);
+  const titled = parseAwardsPage(`<table><tr><td><div>Test of Time</div></td><td><div class="displaycards"><div class="virtual-card"><a class="small-title" href="/virtual/2019/test-of-time/9">Test of Time: An Old Paper Name</a></div><div class="author-str">Ann Lee &middot; Bo Chen</div></div></td></tr></table>`, { venue: "ICML", year: 2019, host: "icml.cc" });
+  assert.equal(titled.entries[0].title, "An Old Paper Name", "the 'Test of Time:' prefix is not part of the title");
+  const row = `<table><tr><td><div>Test of Time Award</div></td><td><div class="displaycards"><div><a href="/virtual/2025/test-of-time/6" style="x:y;">Test of Time Award</a></div>
+<div>Test Of Time</div><div style="color:#555;">Lu Mo &middot; Ned Oh</div></div></td></tr></table>`;
+  const { entries, skipped } = parseAwardsPage(row, { venue: "NeurIPS", year: 2025, host: "neurips.cc" });
+  assert.equal(entries.length, 0);
+  assert.equal(skipped[0].href, "/virtual/2025/test-of-time/6");
+  assert.deepEqual(skipped[0].authors, ["Lu Mo", "Ned Oh"]);
+});

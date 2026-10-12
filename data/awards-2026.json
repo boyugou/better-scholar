@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 434
+  "count": 435
  },
  "entries": [
   {
@@ -5525,7 +5525,7 @@
    "year": 2020,
    "award": "tot",
    "awardLabel": "Test of Time Award",
-   "title": "Test of Time: Gaussian Process Optimization in the Bandit Settings: No Regret and Experimental Design",
+   "title": "Gaussian Process Optimization in the Bandit Settings: No Regret and Experimental Design",
    "authors": [
     "Niranjan Srinivas",
     "Andreas Krause",
@@ -5534,7 +5534,7 @@
    ],
    "track": "main",
    "source": "https://icml.cc/virtual/2020/awards_detail",
-   "evidence": "Test of Time: Gaussian Process Optimization in the Bandit Settings: No Regret and Experimental Design — Test of Time Award"
+   "evidence": "Gaussian Process Optimization in the Bandit Settings: No Regret and Experimental Design — Test of Time Award"
   },
   {
    "venue": "ICML",
@@ -6913,13 +6913,13 @@
    "year": 2019,
    "award": "tot",
    "awardLabel": "Test of Time Award",
-   "title": "Test of Time: Dual Averaging Method for Regularized Stochastic Learning and Online Optimization",
+   "title": "Dual Averaging Method for Regularized Stochastic Learning and Online Optimization",
    "authors": [
     "Lin Xiao"
    ],
    "track": "main",
    "source": "https://neurips.cc/virtual/2019/awards_detail",
-   "evidence": "Test of Time: Dual Averaging Method for Regularized Stochastic Learning and Online Optimization — Test of Time Award"
+   "evidence": "Dual Averaging Method for Regularized Stochastic Learning and Online Optimization — Test of Time Award"
   },
   {
    "venue": "NeurIPS",
@@ -7829,6 +7829,22 @@
    "track": "main",
    "source": "https://neurips.cc/virtual/2025/awards_detail",
    "evidence": "Superposition Yields Robust Neural Scaling — Best Paper Runner-up"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+   "authors": [
+    "Shaoqing Ren",
+    "Kaiming He",
+    "Ross Girshick",
+    "Jian Sun"
+   ],
+   "track": "main",
+   "source": "https://neurips.cc/virtual/2025/test-of-time/128328",
+   "evidence": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks — Test of Time Award"
   }
  ]
 }

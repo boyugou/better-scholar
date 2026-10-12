@@ -9,7 +9,7 @@
   Distinguished Paper*, *Test of Time* in a paper's title or venue text become a small chip (awards in gold
   with a ★), a count in the panel that filters the list, and a line in the copied summary. A switch turns
   it off. Nothing is looked up: only the author's own words are read, and the tooltip says "not checked".
-- **Paper award list** (`lib/awards.js`, `data/awards-2026.json`, 434 entries): a paper is matched to an
+- **Paper award list** (`lib/awards.js`, `data/awards-2026.json`, 435 entries): a paper is matched to an
   award-winning paper by full title *and* first author, and tooltips say where a mark came from. Entries come
   only from official pages — the ACL Anthology's award metadata for the ACL family, and ICLR, NeurIPS and ICML's
   own awards pages (and the CVPR 2025 and ECCV 2024 best-paper pages) — each with its source and a quoted snippet. Not exhaustive: a missing paper has no mark.

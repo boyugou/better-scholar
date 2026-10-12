@@ -89,7 +89,7 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
 |---|---|---|
 | CCF recommended venues | 2026 (7th edition), 386 conferences + 295 journals | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) PDF, extracted reproducibly — see [`data/README.md`](data/README.md) |
 | CORE conference ranks | ICORE 2026, 800 ranked conferences | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) export |
-| Paper awards | 434 main-conference awards (ACL family, ICLR, NeurIPS, ICML, CVPR 2025, ECCV 2024; not exhaustive) | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0) and each conference's own awards pages — every entry cites its page; see [`data/README.md`](data/README.md) |
+| Paper awards | 435 main-conference awards (ACL family, ICLR, NeurIPS, ICML, CVPR 2025, ECCV 2024; not exhaustive) | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0) and each conference's own awards pages — every entry cites its page; see [`data/README.md`](data/README.md) |
 
 The rank lists are included for reference and are the property of their owners — see
 [`NOTICE`](NOTICE). Regenerate with `npm run data`.

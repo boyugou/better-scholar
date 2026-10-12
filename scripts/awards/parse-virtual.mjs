@@ -63,9 +63,8 @@ export function parseAwardsPage(html, { venue, year, host }) {
       title = text;
       break;
     }
-    // the test-of-time talk is titled "Test of Time Award Talk:<paper title>"
-    title = title.replace(/^test of time award talk:\s*/i, "").trim();
-    if (!title) { skipped.push({ label, title: "", why: "no paper title on the row" }); continue; }
+    // the test-of-time talk is titled "Test of Time Award Talk: <paper title>" or "Test of Time: <paper title>"
+    title = title.replace(/^test of time(?: award)?(?: talk)?\s*:\s*/i, "").trim();
 
     // the author line: the first block that names several people with a separator (or the author-str class)
     let authorsText = "";
@@ -75,6 +74,14 @@ export function parseAwardsPage(html, { venue, year, host }) {
       if (/\bauthor-str\b/.test(d[1]) || AUTHOR_SEP.test(text)) { authorsText = text; break; }
     }
     const authors = authorsText.split(AUTHOR_SEP).map((s) => s.trim()).filter(Boolean);
+    if (!title) {
+      // a test-of-time row without the paper's title: its own page may carry the title (see parseTestOfTimeDetail)
+      const href = (/href="([^"]*\/virtual\/\d{4}\/test-of-time\/[^"]*)"/.exec(body) || [])[1];
+      skipped.push(href && /test of time/i.test(label)
+        ? { label, title: "", why: "no paper title on the row", href, authors }
+        : { label, title: "", why: "no paper title on the row" });
+      continue;
+    }
 
     const kind = kindOf(label);
     if (!kind) { skipped.push({ label, title, why: "not a paper award" }); continue; }
@@ -156,4 +163,16 @@ export function parsePaperAwardPage(html, { venue, year, source }) {
     i = k - 1;
   }
   return { entries };
+}
+
+// A test-of-time award page (…/virtual/<year>/test-of-time/<id>) carries the paper in its abstract block:
+//   <p><a href="https://papers.…">PAPER TITLE (Test of Time Award)</a> <em>Author, Author</em></p>
+// → { title, authorsText } or null when that block is not there.
+export function parseTestOfTimeDetail(html) {
+  const block = /class="[^"]*\babstract-text\b[^"]*"[\s\S]*/.exec(String(html ?? ""));
+  const m = /<a\b[^>]*href="https?:\/\/[^"]*"[^>]*>([\s\S]*?)<\/a>\s*<em>([\s\S]*?)<\/em>/.exec(block ? block[0] : "");
+  if (!m) return null;
+  const title = decode(m[1]).replace(/\(\s*test of time award\s*\)\s*$/i, "").trim();
+  const authorsText = decode(m[2]);
+  return title && authorsText ? { title, authorsText } : null;
 }

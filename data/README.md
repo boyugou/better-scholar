@@ -85,7 +85,7 @@ Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
 
 | | |
 |---|---|
-| Entries | 434: ACL 2019–2026 (8 yrs); CVPR 2025–2025 (1 yr); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 2024–2024 (1 yr); EMNLP 2019–2025 (4 yrs); ICLR 2022–2024 (3 yrs); ICML 2019–2026 (8 yrs); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
+| Entries | 435: ACL 2019–2026 (8 yrs); CVPR 2025–2025 (1 yr); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 2024–2024 (1 yr); EMNLP 2019–2025 (4 yrs); ICLR 2022–2024 (3 yrs); ICML 2019–2026 (8 yrs); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
 | Kinds | `best`, `outstanding`, `distinguished`, `runner-up`, `student`, `category` (a named category such as *Best Resource Paper* or *Best Theme Paper*, shown under its printed name), `tot` (test of time) |
 | Source | **Official pages only.** Each entry has `source` (the page it was read from) and `evidence` (a quoted snippet that contains the title). Aggregator lists and Wikipedia are never a source |
 | ACL family | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0): the `<award name="…"/>` element on each paper, read by `scripts/awards/anthology.mjs`. Only years and venues the Anthology records are present |
@@ -111,7 +111,8 @@ is a cross-check and never a source). All 21 top awards that list has for ACL ag
 list but not on any official page this tooling can reach, so they are not in the file. Add them when an official
 page is found; a paper that only a secondary source names is never added. ICLR 2025–2026 and NeurIPS 2026
 had no paper awards on their pages yet when this was written. Test-of-time rows whose page omits the paper title
-(NeurIPS 2025, ICML 2022 and 2026) are skipped rather than guessed.
+are read from the award's own page when that names the paper and its first author (NeurIPS 2025 does); otherwise
+they are skipped (ICML 2022 and 2026 today).
 
 ## Curated aliases
 
