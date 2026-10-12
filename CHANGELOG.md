@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.20 — 2026-10-12
+
+Sixteen more real profiles (robotics, reinforcement learning, HCI and visualization, accessibility, program synthesis, learning theory,
+genomics, computational biology — 1,506 venue strings, now in the test corpora).
+
+- **Fix (since 2.5.11): RECOMB was read as COLING.** *"Proceedings of the sixth annual international conference on Computational …"* — the
+  ACM Digital Library's title of the RECOMB volumes — matched the curated start *"International Conference on Computational …"*. A
+  curated start now keeps the word *annual* (RECOMB is annual, COLING is not), and RECOMB has its own curated start.
+- ASSETS's earlier name *International ACM Conference on Assistive Technologies*, and *Ubicomp* written as one word.
+
 ## 2.5.19 — 2026-10-12
 
 More names the lists spell otherwise (the next batch of the most frequent unmatched strings): SIGCSE's *ACM Technical Symposium on Computer

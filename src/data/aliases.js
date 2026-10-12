@@ -104,7 +104,7 @@
 
     // ICMI was the International Conference on Multimodal Interfaces until 2005 (CORE keeps the old name in a parenthesis)
     { ccf: "ICMI", core: "ICMI", names: ["International Conference on Multimodal Interfaces", "IEEE International Conference on Multimodal Interfaces"] },
-    { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
+    { ccf: "UbiComp", names: ["Ubicomp", "ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
 
     // ---- systems / architecture / networking
     // DATE: the name in full (a string Scholar cut right after "Conference and …" has nothing else to match)
@@ -157,6 +157,8 @@
     ] },
     { ccf: "FM", core: "FM", names: ["International Symposium of Formal Methods Europe"] },
     { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering", "ACM/IEEE International Conference on Automated Software Engineering"] },
+    // the ACM Digital Library's titles of RECOMB: "Proceedings of the sixth annual international conference on Computational biology"
+    { ccf: "RECOMB", core: "RECOMB", names: ["Annual International Conference on Computational Molecular Biology", "International Conference on Computational Molecular Biology"], starts: ["Annual International Conference on Computational"] },
     { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis", "ACM SIGSOFT International Symposium on Software Testing and Analysis", "ACM SIGSOFT International Symposium on Software Testing & Analysis"] },
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },
     { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages", "ACM SIGPLAN Symposium on Principles of Programming Languages", "Symposium on Principles of Programming Languages"] },
@@ -184,6 +186,8 @@
     { ccf: "SECON", core: "SECON", names: ["IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks", "Sensor, Mesh and Ad Hoc Communications and Networks"] },
     { core: "SIGCSE", names: ["ACM Technical Symposium on Computer Science Education", "SIGCSE Technical Symposium on Computer Science Education", "ACM SIGCSE Technical Symposium on Computer Science Education", "Technical Symposium on Computer Science Education"] },
     { core: "SIGdial", names: ["SIGdial Meeting on Discourse and Dialogue", "Annual SIGdial Meeting on Discourse and Dialogue", "Annual Meeting of the Special Interest Group on Discourse and Dialogue"] },
+    // ASSETS was the International ACM Conference on Assistive Technologies (1994–2004)
+    { ccf: "ASSETS", core: "ASSETS", names: ["International ACM Conference on Assistive Technologies", "ACM Conference on Assistive Technologies", "ACM SIGACCESS Conference on Computers and Accessibility"] },
     { ccf: "ACISP", names: ["Australasian Conference on Information Security and Privacy"] },
     { ccf: "CT-RSA", core: "CT-RSA", names: ["Cryptographers' Track at the RSA Conference", "Cryptographers' Track at RSA Conference"] },
     // AsiaCCS was the ACM Symposium on Information, Computer and Communications Security (ASIACCS 2006–2010)

@@ -106,6 +106,10 @@
       .filter((w) => w && !SEQ_DROP.has(w) && !isNoiseToken(w) && !ORG.has(w)).map((w) => ISO[w] || w);
   }
 
+  // The key of a curated start (aliases.js `starts`): the event words in order, and whether the start says "annual" (rawSeq drops
+  // the word; RECOMB's "Annual International Conference on Computational …" is not COLING's "International Conference on Computational …")
+  const startKey = (text) => rawSeq(text).join(" ") + (/\bannual\b/i.test(text) ? "|annual" : "");
+
   // -------------------------------------------------------------- input cleanup
 
   const MONTH = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*";
@@ -279,7 +283,7 @@
             const side = sources[src][kind], k = squash(entry.abbr), list = side.abbrs.get(k);
             if (list) { const rest = list.filter((e) => e !== entry); if (rest.length) side.abbrs.set(k, rest); else side.abbrs.delete(k); push(side.weakAbbrs, k, entry); }
           }
-          for (const st of a.starts || []) push(sources[src][kind].starts, rawSeq(st).join(" "), entry);
+          for (const st of a.starts || []) push(sources[src][kind].starts, startKey(st), entry);
         }
       }
     }
@@ -548,7 +552,7 @@
     const visibleWords = p.plain.split(/\s+/).filter(Boolean).length;
     if (p.truncated && R.length >= 1 && (R.length >= 3 || visibleWords >= 6)) {
       // a start the curators read as one venue although others begin the same way (aliases.js `starts`)
-      const named = firstHit((side) => side.starts.get(rawSeq(p.plain).join(" ")));
+      const named = firstHit((side) => side.starts.get(startKey(p.plain)));
       if (named && named !== "ambiguous") return { entry: named, rule: "prefix" };
       const rawHasOrg = fold(p.plain).toLowerCase().split(/[^a-z0-9]+/).some((t) => ORG.has(t));
       // if Scholar cut the name right after a connective, that connective must agree

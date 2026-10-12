@@ -685,3 +685,10 @@ test("earlier or sponsor-carrying names: SIGCSE's Technical Symposium, SPAA, Sen
   // the proceedings' title word in front of ordinary words is nothing
   assert.equal(brief("Proceedings of Machine Learning Research 97, 1-10, 2019"), "");
 });
+
+test("a curated start keeps its own wording: RECOMB's annual 'Computational molecular biology' is not COLING's 'Computational Linguistics'; ASSETS and UbiComp's other spellings", () => {
+  assert.equal(brief("Proceedings of the sixth annual international conference on Computational …, 2002"), "CCF B RECOMB · CORE B RECOMB");
+  assert.equal(brief("Proceedings of the 23rd international conference on computational …, 2010"), "CCF B COLING · CORE B COLING");
+  assert.equal(brief("Proceedings of the fifth international ACM conference on Assistive …, 2002"), "CCF C ASSETS · CORE A ASSETS");
+  assert.equal(brief("Proc. Ubicomp 6, 2006"), "CCF A UbiComp");
+});
