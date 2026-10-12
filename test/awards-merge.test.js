@@ -21,7 +21,8 @@ const bad = [
   { ...good, title: "Fourth Paper Title Here", source: "http://icml.cc/x", evidence: "Fourth Paper Title Here" },            // not https
   { ...good, title: "Fifth Paper Title Here", award: "lifetime-achievement", evidence: "Fifth Paper Title Here" },            // unknown kind
   { ...good, title: "Sixth Paper Title Here", year: 1850, evidence: "Sixth Paper Title Here" },                              // impossible year
-  { ...good, title: "Seventh Paper Title Here", authors: [], evidence: "Seventh Paper Title Here" }                         // no authors
+  { ...good, title: "Seventh Paper Title Here", authors: [], evidence: "Seventh Paper Title Here" },                        // no authors
+  { ...good, title: "Eighth Paper Title Here", alsoAt: ["https://en.wikipedia.org/wiki/Award"], evidence: "Eighth Paper Title Here" } // a second source must pass the same rules
 ];
 const file = path.join(dir, "raw.json");
 fs.writeFileSync(file, JSON.stringify({ entries: [good, ...bad] }));
@@ -30,8 +31,8 @@ test("merge-raw keeps the verifiable row and reports each refused row with its r
   const r = spawnSync(process.execPath, [MERGE, file], { encoding: "utf8" });
   assert.equal(r.status, 0, r.stderr);
   assert.match(r.stdout, /1 new\)|\(1 new\)/, r.stdout);
-  assert.match(r.stdout, /6 rejected/, r.stdout);
-  for (const why of ["evidence does not contain the title", "source not allowed", "award kind", "year", "authors"]) {
+  assert.match(r.stdout, /7 rejected/, r.stdout);
+  for (const why of ["evidence does not contain the title", "source not allowed", "alsoAt not allowed", "award kind", "year", "authors"]) {
     assert.match(r.stdout, new RegExp(why), `reason mentioned: ${why}`);
   }
 });

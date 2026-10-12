@@ -6,7 +6,7 @@
 //   * the 2021 Fact Sheet PDF on iclr.cc ("Paper Award Winners" — the 8 Outstanding Papers; give it the PDF's text).
 //
 //   node scripts/awards/iclr.mjs blog <year> <post-url-or-saved.html> > iclr.json     (kind from the post's headings)
-//   node scripts/awards/iclr.mjs factsheet <fact-sheet.txt> > iclr-2021.json            (text of the PDF, any extractor)
+//   node scripts/awards/iclr.mjs factsheet <fact-sheet.txt> [--verify] > iclr-2021.json   (text of the PDF, any extractor)
 //   node scripts/awards/merge-raw.mjs iclr.json [--write]
 //
 // The posts are WordPress pages whose award lists come in four shapes, all handled here and covered by the tests:
@@ -93,13 +93,14 @@ export function parseBlog(html, { year, source }) {
   return { entries, skipped };
 }
 
-// The 2021 Fact Sheet prints one title without its first word; the paper (ICLR 2021, arXiv 2102.08597) is called
-// "Beyond Fully-Connected Layers with Quaternions: …", which is what a profile lists, so the entry carries that title
-// and its evidence says so. (OpenReview's API would confirm it, but it now asks for a challenge, which is not bypassed.)
-const TITLE_FIXES = {
-  "Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters":
-    "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters"
-};
+// The 2021 Fact Sheet prints one title without its first word. The conference's own poster page for the paper prints it in
+// full, so the entry carries that title, quotes both pages in its evidence and lists the poster page as a second source;
+// `factsheet … --verify` fetches each such page and fails unless it prints the title.
+export const TITLE_FIXES = [{
+  printed: "Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters",
+  title: "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with $1/n$ Parameters",
+  page: "https://iclr.cc/virtual/2021/poster/3068"
+}];
 
 // The 2021 Fact Sheet's text: a bullet per winner, "● Title by A, B, and C" (a bullet can wrap over several lines).
 export function parseFactSheet(txt, { year = 2021, source } = {}) {
@@ -114,10 +115,11 @@ export function parseFactSheet(txt, { year = 2021, source } = {}) {
     const authors = m && authorsOf(m[2].replace(/,\s*and\s+/g, ", ").replace(/\s+and\s+/g, ", "));
     if (!m || !authors) { skipped.push("not read: " + chunk.slice(0, 80)); continue; }
     const printed = cleanTitle(m[1]);
-    const title = TITLE_FIXES[printed] || printed;
+    const fix = TITLE_FIXES.find((f) => f.printed === printed);
     entries.push({
-      venue: "ICLR", year, award: "outstanding", awardLabel: "Outstanding Paper", title, authors, track: "main", source,
-      evidence: `Paper Award Winners: ${printed} by ${m[2]}` + (title === printed ? "" : ` (the paper's title is “${title}”)`)
+      venue: "ICLR", year, award: "outstanding", awardLabel: "Outstanding Paper", title: fix ? fix.title : printed, authors, track: "main", source,
+      evidence: `Paper Award Winners: ${printed} by ${m[2]}` + (fix ? `. The conference's poster page (${fix.page}) prints the title in full: “${fix.title}”` : ""),
+      ...(fix ? { alsoAt: [fix.page] } : {})
     });
   }
   return { entries, skipped };
@@ -132,6 +134,13 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     result = parseBlog(isUrl ? await (await fetch(b, UA)).text() : readFileSync(b, "utf8"), { year: parseInt(a, 10), source: isUrl ? b : process.env.ICLR_SOURCE });
   } else if (mode === "factsheet" && a) {
     result = parseFactSheet(readFileSync(a, "utf8"), { source: "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf" });
+    if (process.argv.includes("--verify")) {
+      for (const fix of TITLE_FIXES) {
+        const page = text(await (await fetch(fix.page, UA)).text());
+        if (!page.includes(fix.title)) { console.error(`${fix.page} does not print “${fix.title}”`); process.exit(1); }
+        console.error(`verified: ${fix.page} prints the title`);
+      }
+    }
   } else { console.error("usage: iclr.mjs blog <year> <url-or-saved.html> | iclr.mjs factsheet <fact-sheet.txt>   (a saved blog page needs ICLR_SOURCE=<its url>)"); process.exit(2); }
   const by = {};
   for (const e of result.entries) by[`${e.year} ${e.awardLabel}`] = (by[`${e.year} ${e.awardLabel}`] || 0) + 1;

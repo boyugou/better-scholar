@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.3 — 2026-10-12
+
+- The one ICLR 2021 title the Fact Sheet prints without its first word (*Beyond* Fully-Connected Layers with Quaternions …) is now
+  restored from ICLR's own poster page for that paper instead of from memory: the entry's evidence quotes both pages, the poster
+  page is recorded as a second source (`alsoAt`, which `merge-raw.mjs` checks by the same rules as `source`), and
+  `iclr.mjs factsheet … --verify` re-fetches the page and fails unless it prints the title.
+
 ## 2.4.2 — 2026-10-12
 
 - **ICLR 2025, 2026 and 2021 paper awards** (21 entries). ICLR's virtual-site awards page is empty for those years, so they come

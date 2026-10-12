@@ -14311,7 +14311,7 @@
    "year": 2021,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper",
-   "title": "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters",
+   "title": "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with $1/n$ Parameters",
    "authors": [
     "Aston Zhang",
     "Yi Tay",
@@ -14323,7 +14323,10 @@
    ],
    "track": "main",
    "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
-   "evidence": "Paper Award Winners: Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters by Aston Zhang, Yi Tay, Shuai Zhang, Alvin Chan, Anh Tuan Luu, Siu Hui, and Jie Fu (the paper's title is “Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters”)"
+   "alsoAt": [
+    "https://iclr.cc/virtual/2021/poster/3068"
+   ],
+   "evidence": "Paper Award Winners: Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters by Aston Zhang, Yi Tay, Shuai Zhang, Alvin Chan, Anh Tuan Luu, Siu Hui, and Jie Fu. The conference's poster page (https://iclr.cc/virtual/2021/poster/3068) prints the title in full: “Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with $1/n$ Parameters”"
   },
   {
    "venue": "ICLR",

@@ -440,7 +440,7 @@ test("ICLR blog, Test of Time: one paragraph (Title <br> Authors <br> link) unde
   ]);
 });
 
-test("ICLR 2021 fact sheet: a bullet per winner, wrapped over lines, “by A, B, and C”; the title printed without 'Beyond' is the paper's real one, said in the evidence", async () => {
+test("ICLR 2021 fact sheet: a bullet per winner, wrapped over lines, “by A, B, and C”; the title printed without 'Beyond' is restored from the conference's poster page, quoted in the evidence", async () => {
   const { parseFactSheet } = await import("../scripts/awards/iclr.mjs");
   const txt = `Research Content:\n● 8 outstanding paper winners presented in 2 outstanding paper sessions\nPaper Award Winners:
 ● A Synthetic Paper about Learning with Things by Ann Lee, Bo Chen,
@@ -451,10 +451,12 @@ Four of the Outstanding Paper Awards are featured in each of the Outstanding Pap
   const { entries, skipped } = parseFactSheet(txt, { source: "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf" });
   assert.deepEqual(entries.map((e) => [e.year, e.award, e.title, e.authors]), [
     [2021, "outstanding", "A Synthetic Paper about Learning with Things", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
-    [2021, "outstanding", "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters", ["Dee Park", "Eli Ross", "Fay Gray"]],
+    [2021, "outstanding", "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with $1/n$ Parameters", ["Dee Park", "Eli Ross", "Fay Gray"]],
     [2021, "outstanding", "Optimal Rates for Something under Some Regime", ["Gia Stone", "Hal Wu"]]
   ]);
-  assert.match(entries[1].evidence, /Fully-Connected Layers with Quaternions.*Beyond Fully-Connected Layers/s, "the evidence has the printed title and the corrected one");
+  assert.match(entries[1].evidence, /Fully-Connected Layers with Quaternions.*poster page \(https:\/\/iclr\.cc\/virtual\/2021\/poster\/3068\).*“Beyond Fully-Connected Layers/s, "the evidence quotes the Fact Sheet's title and the poster page's");
+  assert.deepEqual(entries[1].alsoAt, ["https://iclr.cc/virtual/2021/poster/3068"], "the poster page is listed as a second source");
+  assert.equal(entries[0].alsoAt, undefined);
   assert.deepEqual(skipped, []);
   assert.deepEqual(parseFactSheet("no award list here", {}).entries, []);
 });

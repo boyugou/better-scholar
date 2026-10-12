@@ -55,12 +55,19 @@ for (const file of files) {
     if (host && (!e.source.startsWith("https://") || BLOCKED_HOSTS.test(host))) bad.push("source not allowed (" + host + ")");
     if (!e.evidence || !awards.titleKey(e.evidence).includes(awards.titleKey(e.title || ""))) bad.push("evidence does not contain the title");
     if (e.track && !["main", "datasets"].includes(e.track)) bad.push("track " + e.track);
+    // further pages that print the same paper (a title restored from the conference's poster page, say): the same rules as `source`
+    const also = [];
+    for (const u of e.alsoAt || []) {
+      let h = "";
+      try { h = new URL(u).hostname; } catch (err) { /* reported below */ }
+      if (!h || !u.startsWith("https://") || BLOCKED_HOSTS.test(h)) bad.push("alsoAt not allowed (" + u + ")"); else also.push(u);
+    }
     if (bad.length) { problems.push({ where, why: bad.join("; ") }); continue; }
     const clean = {
       venue: e.venue, year: e.year, award: e.award, ...(e.awardLabel ? { awardLabel: e.awardLabel } : {}),
       title: e.title.replace(/\s+/g, " ").trim(), authors: e.authors.map((a) => a.replace(/\s+/g, " ").trim()),
       ...(e.track ? { track: e.track } : {}), ...(e.paperYear ? { paperYear: e.paperYear } : {}),
-      source: e.source, evidence: e.evidence.replace(/\s+/g, " ").trim()
+      source: e.source, ...(also.length ? { alsoAt: also } : {}), evidence: e.evidence.replace(/\s+/g, " ").trim()
     };
     const k = key(clean);
     if (accepted.has(k)) {
