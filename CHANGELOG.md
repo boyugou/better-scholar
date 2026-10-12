@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.24 — 2026-10-12
+
+- ASE 2025's distinguished paper "My productivity is boosted, but … Demystifying Users' Perception on AI Coding Assistants" had `&mldr;` in its title (an undecoded data file), so it could never match Scholar's title; `merge-raw.mjs` decodes character
+  references now (in titles, authors and evidence, new and existing entries) and a test keeps them out.
+
 ## 2.10.23 — 2026-10-12
 
 - Author lists are cleaned of what is no author: 12 entries listed an organisation (Monash University, Cornell University, Zhongguancun Laboratory …), a template placeholder (`[node:field-speakers-first-name]`)

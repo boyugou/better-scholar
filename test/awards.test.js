@@ -397,3 +397,7 @@ test("the bundled list names only people among the authors: no organisation, no 
   for (const e of data.entries) for (const a of e.authors) if (NOT_A_NAME.test(a)) bad.push(`${e.venue} ${e.year}: ${a}`);
   assert.deepEqual(bad.slice(0, 10), []);
 });
+
+test("the bundled titles hold no leftover character reference (&mldr; and the like): a page's undecoded data file would never match a Scholar title", () => {
+  assert.deepEqual(data.entries.filter((e) => /&[a-z#0-9]+;/i.test(e.title)).map((e) => `${e.venue} ${e.year}: ${e.title}`), []);
+});

@@ -34,6 +34,9 @@ const dataPath = join(root, "data", "awards-2026.json");
 const data = JSON.parse(readFileSync(dataPath, "utf8"));
 const kinds = new Set(Object.keys(awards.KIND));
 const key = (e) => [e.venue, e.year, e.award, awards.titleKey(e.title)].join("|");
+// a page's leftover character references ("but &mldr;” Demystifying": a program's data file that was never decoded) become the characters they stand for
+const ENTITIES = { mldr: "…", hellip: "…", amp: "&", lt: "<", gt: ">", quot: "\"", apos: "'", nbsp: " ", ndash: "–", mdash: "—", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”" };
+const decode = (t) => String(t).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10))).replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&([a-z]+);/gi, (m, n) => ENTITIES[n.toLowerCase()] ?? m);
 
 const problems = [];
 const accepted = new Map();
@@ -65,9 +68,9 @@ for (const file of files) {
     if (bad.length) { problems.push({ where, why: bad.join("; ") }); continue; }
     const clean = {
       venue: e.venue, year: e.year, award: e.award, ...(e.awardLabel ? { awardLabel: e.awardLabel } : {}),
-      title: e.title.replace(/\s+/g, " ").trim(), authors: e.authors.map((a) => a.replace(/\s+/g, " ").trim()),
+      title: decode(e.title).replace(/\s+/g, " ").trim(), authors: e.authors.map((a) => decode(a).replace(/\s+/g, " ").trim()),
       ...(e.track ? { track: e.track } : {}), ...(e.paperYear ? { paperYear: e.paperYear } : {}),
-      source: e.source, ...(also.length ? { alsoAt: also } : {}), evidence: e.evidence.replace(/\s+/g, " ").trim()
+      source: e.source, ...(also.length ? { alsoAt: also } : {}), evidence: decode(e.evidence).replace(/\s+/g, " ").trim()
     };
     const k = key(clean);
     if (accepted.has(k)) {
@@ -83,6 +86,7 @@ for (const file of files) {
 const NOT_A_NAME = /\[node:|^and\s|\b(?:University|Universit[a-zé]\w*|Institute|Institut|Laborator(?:y|ies)|Department|College|School of|Corporation)\b|\bInc\.?$/i;
 let cleaned = 0;
 for (const e of accepted.values()) {
+  if (/&[a-z#0-9]+;/i.test(e.title + e.evidence)) { e.title = decode(e.title); e.evidence = decode(e.evidence); cleaned++; }
   const keep = [];
   for (const a of e.authors) if (!NOT_A_NAME.test(a) && !keep.includes(a)) keep.push(a);
   if (keep.length !== e.authors.length) {
