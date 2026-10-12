@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.7.3 — 2026-10-12
+
+Twenty-eight more real profiles (databases, ubiquitous computing, distributed systems, game research, knowledge representation and constraints,
+requirements and testing, SLAM, recommender systems — 2,734 venue strings, 2,413 new to the test corpora).
+
+- **A spelled-out event wins over the acronym beside it.** *International Symposium on Wearable Computers (ISWC)* carried the rank of the *Semantic Web*
+  conference of the same acronym (every ubiquitous-computing profile has such strings); so did *AAAI International Conference on Weblogs and Social
+  Media* (AAAI's rank for ICWSM, now an alias of ICWSM's first name). Two or more other words, none of them the venue's own, in a string that says
+  "symposium", "conference" or "workshop" are the name of something else. A journal's abbreviated name before its track (*Proc. ACM Program. Lang.
+  6 (POPL)*) is not such a name.
+- **A cut inside a parenthesis that names the event** is not read as a venue that merely begins the same way: *IEEE Symposium on Information Visualization
+  (InfoVis' 99 …* was Information Visualization in Biomedical Informatics.
+- **One digit glued to two letters is no year**: *IFIP WG2 9* was the graph-theory workshop WG (*KR'96* keeps its reading).
+- SIGGRAPH *Talks*, *Sketches*, *Emerging Technologies* and *Conference abstracts and applications* are secondary tracks.
+
 ## 2.7.2 — 2026-10-12
 
 - **Copy papers is safe to paste into a spreadsheet.** A paper title is whatever its author typed; one that began with `=`, `+`, `-` or `@` would have

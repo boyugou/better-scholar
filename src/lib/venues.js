@@ -188,7 +188,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
   function secondaryWord(raw) {
     const m = SECONDARY.exec(fold(raw));
     if (m) return m[0].toLowerCase().replace(/s$/, "");
@@ -356,7 +356,10 @@
     const out = [];
     const keys = (txt) => {
       const k = squash(txt);
-      return k.length >= 2 ? uniq([k, stripDigits(k)]).filter((x) => x.length >= 2 && !ORG.has(x)) : [];
+      // (a number glued to an acronym is an edition or a year — "SIGCOMM98", "KR'96" — but one digit after two letters is not: "WG2" is no WG)
+      const s = stripDigits(k);
+      const digitsOk = s.length >= 3 || k.length - s.length >= 2;
+      return k.length >= 2 ? uniq([k, digitsOk ? s : k]).filter((x) => x.length >= 2 && !ORG.has(x)) : [];
     };
     // (ICML), (NSDI 11), (USENIX Security 21), (EMNLP-IJCNLP), (S&P'05), unclosed "(OSDI"
     const reParen = /\(([^()]*)(?:\)|$)/g;
@@ -545,6 +548,7 @@
     // R3: acronym signals
     const signals = acronymSignals(p);
     const confSide = idx.sources[src].C;
+    const spelledEvent = /\b(?:symposium|symposia|conference|workshop|congress|colloquium|meeting)\b/i.test(p.plain);
     // "Conference on Supercomputing (SC)" is SC; "USDOE Office of Science (SC)" is not: a one- to three-letter acronym in a parenthesis
     // only counts when at least half of what else the string says is among the venue's own words (a "Working Conference …" or a
     // stray "15 pp." may add a few of its own)
@@ -552,7 +556,13 @@
     const ownWordsOnly = (entry) => ownWordShare(entry, canonTokens(p.plain, "noOrg"));
     for (const { key, part, kind } of signals) {
       const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
-      if (d && d !== "ambiguous" && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d))) return { entry: d, rule: "acronym" };
+      // (a parenthesised acronym after a name that is another venue's: two or more other words, none of them this venue's own — see the
+      // buried acronyms below — in a string that spells out an event; a journal's abbreviated name before its track, "Proc. ACM Program. Lang. 6 (POPL)", does not)
+      const nameIsAnotherVenues = kind === "paren" && spelledEvent && d && d !== "ambiguous" && (() => {
+        const others = canonTokens(p.plain, "noOrg", idx.known).filter((w) => w !== key && w !== stripDigits(key));
+        return others.length >= 2 && !others.some((w) => vocabOf(d).has(w));
+      })();
+      if (d && d !== "ambiguous" && !nameIsAnotherVenues && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d))) return { entry: d, rule: "acronym" };
     }
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and
@@ -569,7 +579,10 @@
           const d = decide(hits, rawWords);
           // Scholar cut the name after the acronym and the words that did get through are not the venue's own ("ACM SIGCSE conference on
           // Innovation and …" is ITiCSE, not the SIGCSE symposium): the name goes on, so the prefix rule below may read it
-          if (d && d !== "ambiguous" && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
+          // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
+          // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
+          const foreign = spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w));
+          if (d && d !== "ambiguous" && !foreign && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
     }
@@ -682,7 +695,14 @@
           }
         }
       }
-      if (d && d !== "ambiguous") return { entry: d, rule: "prefix" };
+      // The cut came inside a parenthesis that names the event ("IEEE Symposium on Information Visualization (InfoVis' 99 …"): a venue that is
+      // not called that is not it, however well its name begins the same way
+      if (d && d !== "ambiguous") {
+        const open = /\(\s*([A-Za-z][A-Za-z0-9&-]{2,11})\b[^)]*$/.exec(p.withParens);
+        const named = open && squash(open[1]);
+        if (named && named !== squash(d.abbr) && stripDigits(named) !== squash(d.abbr) && !idx.sameVenue(named, squash(d.abbr))) return null;
+        return { entry: d, rule: "prefix" };
+      }
       return null;
     }
 

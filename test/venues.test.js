@@ -684,6 +684,21 @@ test("an acronym in a cut-off name whose other words are not the venue's is not 
   assert.equal(brief("International Symposium on Leveraging Applications of Formal Methods, 539-553, 2016"), "CORE C ISoLA", "Scholar cuts the subtitle at its comma");
 });
 
+// From twenty-eight more real profiles (databases, ubiquitous computing, distributed systems, games, KR, requirements, SLAM, recommender systems).
+test("a spelled-out event wins over the acronym next to it; a digit glued to a short acronym is no year; talks and abstracts are secondary tracks", () => {
+  assert.equal(brief("Ninth IEEE International Symposium on Wearable Computers (ISWC'05), 164-167, 2005"), "", "the Wearable Computers symposium, not the Semantic Web conference");
+  assert.equal(brief("International symposium on wearable computers (ISWC) 2010, 1-8, 2010"), "");
+  assert.equal(brief("International Semantic Web Conference (ISWC), 2019"), "CCF B ISWC · CORE A ISWC", "the one that really is ISWC");
+  assert.equal(brief("Proc. KR'96, 304-314, 1996"), "CCF B KR · CORE A* KR", "a two-digit year after two letters is a year");
+  assert.equal(brief("IFIP WG2 9, 2000"), "", "a working group, not the graph workshop WG");
+  assert.equal(brief("AAAI International Conference on Weblogs and Social Media, 2013"), "CCF B ICWSM · CORE A ICWSM", "ICWSM's first name");
+  assert.equal(brief("Proc. ACM Program. Lang. 6 (POPL), 1-29, 2022"), "CCF A POPL · CORE A* POPL", "a journal's abbreviated name before its track is not a spelled-out event");
+  assert.equal(brief("ACM SIGGRAPH 2011 Talks, 1-1, 2011"), "");
+  assert.equal(brief("ACM SIGGRAPH 98 Conference abstracts and applications, 282, 1998"), "");
+  assert.equal(brief("Proceedings 1999 IEEE Symposium on Information Visualization (InfoVis' 99 …, 1999"), "", "the parenthesis names InfoVis; IVBI only begins the same way");
+  assert.equal(brief("Proceedings of the 33rd international conference on Machine learning (ICML …, 2016"), "CCF A ICML · CORE A* ICML");
+});
+
 test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN International Conference on Functional …' is ICFP", () => {
   assert.equal(brief("Proceedings of the 15th ACM SIGPLAN international conference on Functional …, 2010"), "CCF B ICFP · CORE A ICFP");
   assert.equal(brief("International Conference on Functional Programming, 117-128, 2010"), "CCF B ICFP · CORE A ICFP", "CCF's row spells it 'Function Programming'");

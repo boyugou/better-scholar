@@ -138,6 +138,8 @@
     { ccf: "INFOCOM", core: "INFOCOM", names: ["IEEE Conference on Computer Communications", "IEEE INFOCOM", "Annual Joint Conference of the IEEE Computer and Communications Societies"] },
     // (MobiCom 1996–1999 was an ACM/IEEE conference: "Proceedings of the 3rd annual ACM/IEEE international conference on Mobile …")
     { ccf: "MobiCom", core: "MOBICOM", names: ["ACM International Conference on Mobile Computing and Networking", "International Conference on Mobile Computing and Networking", "ACM/IEEE International Conference on Mobile Computing and Networking"] },
+    // ICWSM's first name, which the AAAI printed: "AAAI International Conference on Weblogs and Social Media"
+    { ccf: "ICWSM", core: "ICWSM", names: ["International Conference on Weblogs and Social Media"] },
     // CORE names ITiCSE "Annual Conference on …"; Scholar prints the SIGCSE conference (the SIGCSE Technical Symposium is another venue)
     { core: "ITiCSE", names: ["ACM SIGCSE Conference on Innovation and Technology in Computer Science Education", "SIGCSE Conference on Innovation and Technology in Computer Science Education", "International Conference on Innovation and Technology in Computer Science Education"] },
     // LPAR's current name (CORE lists the older "Logic Programming and Automated Reasoning"); ACII's (CORE's name stops at "Intelligent"); ISoLA's, which Scholar prints without its subtitle
