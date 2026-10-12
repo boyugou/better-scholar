@@ -37,9 +37,9 @@
 
   // One switch: a label, an optional hint and colour swatch, a getter and a setter on the prefs
   // (`key` is the pref's path, e.g. "ranks.ccf", kept on the input as data-pref).
-  function option({ key, label, hint, swatch, get, set, off }) {
+  function option({ key, label, hint, swatch, get, set, off, sub }) {
     const input = h("input", { type: "checkbox", class: "sw", "data-pref": key, onChange: () => { set(input.checked); save(); } });
-    const row = h("label", { class: "opt" },
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") },
       h("span", { class: "txt" },
         h("span", { class: "name" }, swatch ? h("span", { class: "swatch", style: "background:" + swatch }) : null, label),
         hint ? h("span", { class: "hint" }, hint) : null),
@@ -87,7 +87,7 @@
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
         ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
-        .map(([part, label, hint]) => option({ key: "panel." + part, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show }))),
+        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show }))),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBtn, cacheNote)));

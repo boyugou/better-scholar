@@ -80,7 +80,7 @@
 
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
-    const actions = h("div", { class: "rr-actions" });
+    const actions = h("div", { class: "rr-actions rr-copybar" });
     const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions);
 
     // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies

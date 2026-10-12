@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.1 — 2026-10-12
+
+- The three Copy buttons share one row of equal width (the third used to drop alone onto a second line in the side panel); the panel-part switches on the settings page sit indented under "Show the summary panel".
+
 ## 2.10.0 — 2026-10-12
 
 From users' feedback (a long panel, controls that could not be switched off, markers in other fonts):
