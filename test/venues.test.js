@@ -222,6 +222,7 @@ test("preprints, books and report series are never badged", () => {
 
 test("every alias points at a real dataset row", () => {
   for (const a of aliases) {
+    if (a.shadow) { assert.ok(a.shadow.length && a.shadow.every((x) => /^[A-Za-z][A-Za-z0-9-]{2,14}$/.test(x) && !venues.squash(x).match(/^$/)), "shadow acronyms"); continue; }   // (an unranked event: no row to point at)
     if (a.ccf) {
       const kind = a.kind || "C";
       const hit = ccf.venues.filter((v) => v.kind === kind && venues.squash(v.abbr) === venues.squash(a.ccf) && (!a.ccfTier || v.tier === a.ccfTier));
@@ -478,6 +479,25 @@ test("a one-word string that is an English word or a journal's whole name is not
   for (const w of ["FAST", "NDSS", "Ndss"]) assert.notEqual(brief(w), "", w);
   assert.equal(brief("Interact 1, 593-601, 2001"), "CCF C INTERACT · CORE B Interact");
   assert.equal(brief("date 2, 1138, 2002"), "CCF B DATE · CORE A DATE");
+});
+
+test("no shadow acronym is the abbreviation of a ranked venue (it would silence it)", () => {
+  const abbr = new Set([...ccf.venues.map((v) => venues.squash(v.abbr || "")), ...core.venues.map((v) => venues.squash(v.acronym || ""))]);
+  for (const a of aliases) for (const x of a.shadow || []) assert.ok(!abbr.has(venues.squash(x)), `${x} is a ranked venue's abbreviation`);
+});
+
+test("an unranked event named by its own acronym gets no badge from the ranked venue whose name boils down to the same words (aliases.js `shadow`)", () => {
+  for (const x of [
+    "IEEE International Conference on Computer and Communications (ICCC)",   // not INFOCOM
+    "International Congress on Image and Signal Processing (CISP)",          // not ICISP
+    "IEEE Region 10 Symposium (TENSYMP)",                                    // not TENCON
+    "2022 IEEE International Conference on Joint Cloud Computing (JCC), 79-88, 2022",   // a real row of the corpora: not IEEE CLOUD
+    "International Conference on Computer and Information Technology (ICCIT)"
+  ]) assert.equal(brief(x), "", x);
+  // the ranked venues themselves, with and without their own acronym
+  assert.equal(brief("IEEE Region 10 Conference (TENCON)"), "CORE C Tencon");
+  assert.equal(brief("IEEE Conference on Computer Communications (INFOCOM)"), "CCF A INFOCOM · CORE A* INFOCOM");
+  assert.equal(brief("International Conference on Image and Signal Processing (ICISP)"), "CORE C ICISP");
 });
 
 test("names that only look like a venue: 'International Security', 'Journal', 'Journal of Knowledge Management', and an ICTIR that carries SIGIR's name", () => {

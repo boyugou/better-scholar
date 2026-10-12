@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.9.17 — 2026-10-12
+
+- The three misreadings recorded in 2.9.14 are fixed, and so are ten more of the same kind, with a short curated list (`aliases.js`, `shadow`): acronyms of unranked events whose names
+  boil down to the words of a ranked venue's. *… Computer and Communications (ICCC)* is not INFOCOM, *… Image and Signal Processing (CISP)* not ICISP, *IEEE Region 10 Symposium (TENSYMP)* not
+  TENCON, *IEEE International Conference on Joint Cloud Computing (JCC)* not IEEE CLOUD (two rows of the corpora), and ASYU, CAI, ICTIR, ISCISC, ICCIT, COMM, ICNLP, MODSIM, ONCON, IntelliSys,
+  ICALTE and ICSOFT-PT likewise. A string that names one of them by its acronym gets no badge; the ranked venues themselves are untouched.
+
 ## 2.9.16 — 2026-10-12
 
 - A one-word string that is an English word or a journal's whole name (*Crisis*, *Fast*, *Spin*, *Image*, *Cluster*, *Wine*, *Group*, *mAbs* …) is no longer read as the conference of that acronym

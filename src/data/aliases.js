@@ -17,6 +17,9 @@
 //                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA);
 //                 "annual" and any sponsor the start names (IEEE, ACM, a SIG) are part of the start: the IEEE's "… Conference on
 //                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
+//   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
+//                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
+//                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -243,6 +246,8 @@
     { ccf: "TON", kind: "J", names: ["IEEE/ACM Trans. Netw.", "IEEE/ACM Transactions on Networking"] },
     { ccf: "IJCV", kind: "J", names: ["Int. J. Comput. Vis.", "Int. J. Comput. Vision"] },
     { ccf: "JMLR", kind: "J", names: ["J. Mach. Learn. Res."] },
-    { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] }
+    { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
+    // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher)
+    { shadow: ["ICCC", "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "JCC", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT"] }
   ];
 });

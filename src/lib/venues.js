@@ -272,6 +272,8 @@
       register("core", "C", entry, [v.name], [v.acronym]);
       push(byRef.core, "C|" + squash(v.acronym), entry);
     }
+    const shadow = new Set();
+    for (const a of aliases) for (const x of a.shadow || []) shadow.add(squash(x));
     for (const a of aliases) {
       for (const src of ["ccf", "core"]) {
         const ref = a[src];
@@ -305,7 +307,7 @@
     const pairs = new Set();
     for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
     const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
-    return { sources, known, df, sameVenue };
+    return { sources, known, df, sameVenue, shadow };
   }
 
   // ---------------------------------------------------------------- matching
@@ -433,6 +435,8 @@
   // Resolve against one source (ccf | core). Returns { entry, rule } | null.
   function matchSource(idx, src, p, hint, known) {
     if (isPublisher(p)) return null;
+    // an unranked event named by its own acronym (aliases.js `shadow`)
+    if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => idx.shadow.has(x.key))) return null;
     const kinds = hint ? [hint] : ["J", "C"];
     const sides = kinds.map((k) => idx.sources[src][k]).filter(Boolean);
     if (!sides.length) return null;
