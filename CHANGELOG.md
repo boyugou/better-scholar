@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.25 — 2026-10-12
+
+- STOC 2024's best paper "Single-Source Shortest Paths with Negative Real Weights in $\tilde O(mn^{8/9})$ Time" could not match Scholar's "Õ(mn^{8/9})": the title key kept the word "tilde" of the LaTeX accent command. Accent commands
+  (`\tilde`, `\hat`, `\bar`, `\vec`, …) are dropped from the key now, as `\mathcal` and the like already were.
+
 ## 2.10.24 — 2026-10-12
 
 - ASE 2025's distinguished paper "My productivity is boosted, but … Demystifying Users' Perception on AI Coding Assistants" had `&mldr;` in its title (an undecoded data file), so it could never match Scholar's title; `merge-raw.mjs` decodes character

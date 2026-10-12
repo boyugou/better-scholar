@@ -16,7 +16,8 @@
 
   // A little LaTeX survives in some official titles — "Understanding Dataset Difficulty with $\mathcal{V}$-Usable Information" —
   // while Scholar prints "V-usable": the markup around a letter is dropped.
-  const untex = (s) => s.replace(/\\(?:mathcal|mathbf|mathrm|mathit|mathbb|textbf|textit|textrm|text|emph)\s*\{([^{}]*)\}/g, "$1").replace(/\$/g, "");
+  // (an accent command — \tilde O(mn) is Scholar's "Õ(mn)" — leaves its letter: the command word goes)
+  const untex = (s) => s.replace(/\\(?:widetilde|tilde|widehat|hat|overline|bar|vec|ddot|dot|check|breve)(?![A-Za-z])\s*/g, "").replace(/\\(?:mathcal|mathbf|mathrm|mathit|mathbb|textbf|textit|textrm|text|emph)\s*\{([^{}]*)\}/g, "$1").replace(/\$/g, "");
 
   // "Deep Residual Learning for Image Recognition" → "deepresiduallearningforimagerecognition"
   function titleKey(s) {

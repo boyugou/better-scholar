@@ -401,3 +401,7 @@ test("the bundled list names only people among the authors: no organisation, no 
 test("the bundled titles hold no leftover character reference (&mldr; and the like): a page's undecoded data file would never match a Scholar title", () => {
   assert.deepEqual(data.entries.filter((e) => /&[a-z#0-9]+;/i.test(e.title)).map((e) => `${e.venue} ${e.year}: ${e.title}`), []);
 });
+
+test("an accent command in an official title ($\\tilde O(mn^{8/9})$) matches Scholar's Õ(mn^{8/9})", () => {
+  assert.equal(awards.titleKey("Single-Source Shortest Paths with Negative Real Weights in $\\tilde O(mn^{8/9})$ Time"), awards.titleKey("Single-source shortest paths with negative real weights in Õ(mn^{8/9}) time"));
+});
