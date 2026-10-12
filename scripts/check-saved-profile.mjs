@@ -52,9 +52,13 @@ const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, ali
 const awardIndex = awardsLib.createIndex(award.items);
 const venueWords = new Set([...ccf.venues.map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter(Boolean).map((w) => w.toLowerCase()));
 const ALL = { first: true, cofirst: true, second: true, last: true };
+// the extension also reads a surname-first header the other way round when the rows show it (names.suggestVariants)
+const namesLib = require(path.join(repo, "src/lib/names.js"));
+const ownerSpelling = { name: owner, alternates: namesLib.suggestVariants(rows.map((r) => r.authors), { name: owner }).auto.map((v) => v.name) };
+if (ownerSpelling.alternates.length) console.log(`  (the name "${owner}" is also read as ${ownerSpelling.alternates.map((a) => `"${a}"`).join(", ")} — the rows show it)`);
 const want = rows.map((r) => {
   const a = analysis.analyzeRow({ title: r.title, authorsText: r.authors, venueText: r.venue, citations: r.cites, year: r.year },
-    { owner: { name: owner, alternates: [] }, resolver, venueWord: (w) => venueWords.has(w), awards: awardIndex });
+    { owner: ownerSpelling, resolver, venueWord: (w) => venueWords.has(w), awards: awardIndex });
   return { role: a.status === "found" && analysis.isHighlighted(a, ALL) ? a.role : "", ccf: a.venue.ccf ? a.venue.ccf.tier : "", core: a.venue.core ? a.venue.core.rank : "",
     marks: a.marks.map((m) => `${m.kind}:${m.source}`).join(",") };
 });
