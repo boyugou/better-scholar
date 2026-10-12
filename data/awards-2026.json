@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 425
+  "count": 434
  },
  "entries": [
   {
@@ -3531,6 +3531,178 @@
    "evidence": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences — Outstanding Paper"
   },
   {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "VGGT: Visual Geometry Grounded Transformer",
+   "authors": [
+    "Jianyuan Wang",
+    "Minghao Chen",
+    "Nikita Karaev",
+    "Andrea Vedaldi",
+    "Christian Rupprecht",
+    "David Novotny"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "VGGT: Visual Geometry Grounded Transformer — Best Paper"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "3D Student Splatting and Scooping",
+   "authors": [
+    "Jialin Zhu",
+    "Jiangbei Yue",
+    "Feixiang He",
+    "He Wang"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "3D Student Splatting and Scooping — Best Paper Honorable Mention"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honorable Mention",
+   "title": "Generative Multimodal Pretraining with Discrete Diffusion Timestep Tokens",
+   "authors": [
+    "Kaihang Pan",
+    "Wang Lin",
+    "Zhongqi Yue",
+    "Tenglong Ao",
+    "Liyu Jia",
+    "Wei Zhao",
+    "Juncheng Li",
+    "Siliang Tang",
+    "Hanwang"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "Generative Multimodal Pretraining with Discrete Diffusion Timestep Tokens — Best Student Paper Honorable Mention"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "MegaSaM: Accurate, Fast and Robust Structure and Motion from Casual Dynamic Videos",
+   "authors": [
+    "Zhengqi Li",
+    "Richard Tucker",
+    "Forrester Cole",
+    "Qianqian Wang",
+    "Linyi Jin",
+    "Vickie Ye",
+    "Angjoo Kanazawa",
+    "Aleksander Holynski",
+    "Noah Snavely"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "MegaSaM: Accurate, Fast and Robust Structure and Motion from Casual Dynamic Videos — Best Paper Honorable Mention"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Vision-Language Models",
+   "authors": [
+    "Matt Deitke",
+    "Christopher Clark",
+    "Sangho Lee",
+    "Rohun Tripathi",
+    "Yue Yang",
+    "Jae Sung Park",
+    "Mohammadreza Salehi",
+    "Niklas Muennighoff",
+    "Kyle Lo",
+    "Luca Soldaini",
+    "Jiasen Lu",
+    "Taira Anderson",
+    "Erin Bransom",
+    "Kiana Ehsani",
+    "Huong Ngo",
+    "YenSung Chen",
+    "Ajay Patel",
+    "Mark Yatskar",
+    "Chris Callison-Burch",
+    "Andrew Head",
+    "Rose Hendrix",
+    "Favyen Bastani",
+    "Eli VanderBilt",
+    "Nathan Lambert",
+    "Yvonne Chou",
+    "Arnavi Chheda",
+    "Jenna Sparks",
+    "Sam Skjonsberg",
+    "Michael Schmitz",
+    "Aaron Sarnat",
+    "Byron Bischoff",
+    "Pete Walsh",
+    "Chris Newell",
+    "Piper Wolters",
+    "Tanmay Gupta",
+    "Kuo-Hao Zeng",
+    "Jon Borchardt",
+    "Dirk Groeneveld",
+    "Crystal Nam",
+    "Sophie Lebrecht",
+    "Caitlin Wittlif",
+    "Carissa Schoenick",
+    "Oscar Michel",
+    "Ranjay Krishna",
+    "Luca Weihs",
+    "Noah A. Smith",
+    "Hannaneh Hajishirzi",
+    "Ross Girshick",
+    "Ali Farhadi",
+    "Aniruddha Kembhavi"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Vision-Language Models — Best Paper Honorable Mention"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Navigation World Models",
+   "authors": [
+    "Amir Bar",
+    "Gaoyue Zhou",
+    "Danny Tran",
+    "Trevor Darrell",
+    "Yann LeCun"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "Navigation World Models — Best Paper Honorable Mention"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Neural Inverse Rendering from Propagating Light",
+   "authors": [
+    "Anagh Malik",
+    "Benjamin Attal",
+    "Andrew Xie",
+    "Matthew O'Toole",
+    "David B. Lindell"
+   ],
+   "track": "main",
+   "source": "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos",
+   "evidence": "Neural Inverse Rendering from Propagating Light — Best Student Paper"
+  },
+  {
    "venue": "EACL",
    "year": 2021,
    "award": "best",
@@ -3875,6 +4047,38 @@
    "track": "main",
    "source": "https://aclanthology.org/2024.eacl-long.27/",
    "evidence": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models — Outstanding Paper Award"
+  },
+  {
+   "venue": "ECCV",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Minimalist Vision with Freeform Pixels",
+   "authors": [
+    "Jeremy Klotz",
+    "Shree Nayar"
+   ],
+   "track": "main",
+   "source": "https://eccv.ecva.net/Conferences/2024/Awards",
+   "evidence": "Minimalist Vision with Freeform Pixels — Best Paper"
+  },
+  {
+   "venue": "ECCV",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Rasterized Edge Gradients: Handling Discontinuities Differentially",
+   "authors": [
+    "Stanislav Pidhorskyi",
+    "Tomas Simon",
+    "Gabriel Schwartz",
+    "He Wen",
+    "Yaser Sheikh",
+    "Jason Saragih"
+   ],
+   "track": "main",
+   "source": "https://eccv.ecva.net/Conferences/2024/Awards",
+   "evidence": "Rasterized Edge Gradients: Handling Discontinuities Differentially — Best Paper Honorable Mention"
   },
   {
    "venue": "EMNLP",

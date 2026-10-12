@@ -92,13 +92,17 @@ export function parseAwardsPage(html, { venue, year, host }) {
 // heading, each recipient is a title line, an author line (affiliations in brackets) and an OpenReview link.
 // Only the sections whose heading names a paper award are read; the test-of-time section is not.
 const HEADING = /^(?:outstanding|best|distinguished)\b[\w\s,-]*\bawards?$/i;
-export function parseRecipientsPage(html, { venue, year, host }) {
-  const source = `https://${host}/Conferences/${year}/Awards`;
+// One visible line of text per line of the page, entities decoded.
+function toLines(html) {
   const text = String(html ?? "")
     .replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, " ")
     .replace(/<\/?(?:br|p|div|li|h[1-6]|tr|td|th|section|article)\b[^>]*>/gi, "\n")
     .replace(/<[^>]+>/g, " ");
-  const lines = text.split("\n").map((l) => decode(l)).filter(Boolean);
+  return text.split("\n").map((l) => decode(l)).filter(Boolean);
+}
+
+export function parseRecipientsPage(html, { venue, year, source }) {
+  const lines = toLines(html);
   const entries = [];
   let label = null;
   for (let i = 0; i < lines.length; i++) {
@@ -114,6 +118,42 @@ export function parseRecipientsPage(html, { venue, year, host }) {
       venue, year, award: kind, awardLabel: label, title, authors, track: "main",
       source, evidence: `${title} — ${label}`, verified: "official (conference awards page)"
     });
+  }
+  return { entries };
+}
+
+// The "best papers" listings that CVPR and ECCV print on their own pages, in two layouts: a heading per award
+// followed by the title and the author list (ECCV: "Best Paper", "Best Paper Honorable Mention"), or
+// "Best Paper:" / "Paper Name: …" / "Authors: …" with wrapped author lines (CVPR). A heading is accepted only when
+// a title and an author list follow it, so navigation text that happens to match is ignored.
+const AWARD_HEADING = /^(Best (?:Student )?Paper(?: Honorable Mention| Runner-?up)?|Outstanding Paper(?: Honorable Mention)?)\s*:?\s*(?:ID:\s*\d+)?\s*:?\s*$/i;
+export function parsePaperAwardPage(html, { venue, year, source }) {
+  const lines = toLines(html);
+  const entries = [];
+  for (let i = 0; i < lines.length; i++) {
+    const h = AWARD_HEADING.exec(lines[i]);
+    if (!h) continue;
+    const label = h[1].replace(/\s+/g, " ");
+    const kind = kindOf(label);
+    if (!kind) continue;
+    const j = i + 1;
+    const title = (lines[j] || "").replace(/^paper name:\s*/i, "").replace(/[.\s]+$/, "").trim();
+    if (!title || title.length < 8 || AWARD_HEADING.test(lines[j]) || /^authors?:/i.test(lines[j])) continue;
+    let authorsText = lines[j + 1] || "";
+    if (/^authors?:/i.test(authorsText)) authorsText = authorsText.replace(/^authors?:\s*/i, "");
+    else if (!/[,⋅·]/.test(authorsText)) continue;                           // no author list follows
+    let k = j + 2;
+    while (k < lines.length && /,/.test(lines[k]) && !/:/.test(lines[k]) && !AWARD_HEADING.test(lines[k]) && lines[k].length < 400) {
+      authorsText += " " + lines[k];                                         // a wrapped author line
+      k++;
+    }
+    const authors = authorsText.split(/,|⋅|·|\band\b/).map((a) => a.trim()).filter(Boolean);
+    if (!authors.length) continue;
+    entries.push({
+      venue, year, award: kind, awardLabel: label, title, authors, track: "main",
+      source, evidence: `${title} — ${label}`, verified: "official (conference awards page)"
+    });
+    i = k - 1;
   }
   return { entries };
 }

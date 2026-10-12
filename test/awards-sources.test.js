@@ -87,9 +87,35 @@ test("the conference's own prose awards page (ICML 2023 style): recipients are t
 <p><a href="https://openreview.net/forum?id=def">https://openreview.net/forum?id=def</a></p>
 <h2>Test of Time Award</h2><p>Old Paper Title Here</p><p>Eli Ross</p>
 <p><a href="https://openreview.net/forum?id=ghi">https://openreview.net/forum?id=ghi</a></p>`;
-  const { entries } = parseRecipientsPage(html, { venue: "ICML", year: 2023, host: "icml.cc" });
+  const { entries } = parseRecipientsPage(html, { venue: "ICML", year: 2023, source: "https://icml.cc/Conferences/2023/Awards" });
   assert.deepEqual(entries.map((e) => e.title), ["A Synthetic Learning Paper", "Second Synthetic Paper Title"], "the test-of-time section is not read");
   assert.deepEqual(entries[0].authors, ["Ann Lee", "Bo Chen", "Cy Diaz"]);
   assert.ok(entries.every((e) => e.award === "outstanding" && e.awardLabel === "Outstanding Paper Awards"));
   assert.equal(entries[0].source, "https://icml.cc/Conferences/2023/Awards");
+});
+
+test("the CVPR-style best papers listing: 'Best Paper:' then 'Paper Name:' and wrapped 'Authors:' lines; navigation is ignored", async () => {
+  const { parsePaperAwardPage } = await load();
+  const html = `<ul><li>Best Papers</li></ul><p>Best Paper:</p>
+<p>Paper Name: A Synthetic Transformer for Geometry</p>
+<p>Authors: Ann Lee, Bo Chen, Cy Diaz, Dee Park, Eli Ross, Fay Gray, Gia Stone,</p><p>Hal Wu, Ivy Xu</p>
+<p>Best Paper Honorable Mention: ID: 4119</p><p>Paper Name: Another Synthetic Method for Rendering</p>
+<p>Authors: Jo Yan, Kai Zu</p>
+<p>Best Student Paper:</p><p>Paper Name: A Student Paper About Something</p><p>Authors: Lu Mo</p>
+<p>Best Demos</p><p>Paper Name: Not an award, a demo</p><p>Authors: Ned Oh, Ora Pell</p>`;
+  const { entries } = parsePaperAwardPage(html, { venue: "CVPR", year: 2025, source: "https://cvpr.thecvf.com/Conferences/2025/BestPapersDemos" });
+  assert.deepEqual(entries.map((e) => [e.award, e.awardLabel]), [["best", "Best Paper"], ["runner-up", "Best Paper Honorable Mention"], ["student", "Best Student Paper"]]);
+  assert.deepEqual(entries[0].authors, ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park", "Eli Ross", "Fay Gray", "Gia Stone", "Hal Wu", "Ivy Xu"], "a wrapped author line is joined");
+  assert.equal(entries[1].title, "Another Synthetic Method for Rendering");
+});
+
+test("the ECCV-style awards page: a heading, the title, then the authors joined by ⋅; a heading without an author line is ignored", async () => {
+  const { parsePaperAwardPage } = await load();
+  const html = `<h3>Best Paper</h3><p>A Synthetic Minimal Vision Paper</p><p>Jeremy Klotz ⋅ Shree Nayar</p>
+<h3>Best Paper Honorable Mention</h3><p>Rasterized Edge Gradients Handling Discontinuities</p><p>Stan Pid ⋅ Tom Sim ⋅ Gab Sch</p>
+<h3>Best Paper</h3><p>Navigation</p><p>Overview of the site</p>`;
+  const { entries } = parsePaperAwardPage(html, { venue: "ECCV", year: 2024, source: "https://eccv.ecva.net/Conferences/2024/Awards" });
+  assert.deepEqual(entries.map((e) => [e.award, e.title]), [["best", "A Synthetic Minimal Vision Paper"], ["runner-up", "Rasterized Edge Gradients Handling Discontinuities"]]);
+  assert.deepEqual(entries[0].authors, ["Jeremy Klotz", "Shree Nayar"]);
+  assert.equal(entries[1].source, "https://eccv.ecva.net/Conferences/2024/Awards");
 });

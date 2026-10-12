@@ -8,7 +8,7 @@
 // aggregators. Coverage per year is printed, including years whose page lists no paper awards.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseAwardsPage, parseRecipientsPage } from "./parse-virtual.mjs";
+import { parseAwardsPage, parseRecipientsPage, parsePaperAwardPage } from "./parse-virtual.mjs";
 
 const args = process.argv.slice(2);
 const opt = (name, dflt) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : dflt; };
@@ -53,19 +53,29 @@ for (const site of SITES) {
     console.log(`${site.venue} ${year}: ${got.length} paper award(s)` + (notKept.length ? `; not kept: ${notKept.join(" | ")}` : ""));
   }
 }
-// ICML also publishes its awards on its own site, in prose; that page is read for the years where it exists.
-// Entries the virtual page already has are merged away by scripts/awards/merge-raw.mjs (same venue, year, award, title).
-for (const year of YEARS) {
-  const html = await fetchPage(`https://icml.cc/Conferences/${year}/Awards`, `icml-official-${year}.html`);
-  if (html == null) continue;
-  const { entries: got } = parseRecipientsPage(html, { venue: "ICML", year, host: "icml.cc" });
-  for (const e of got) {
-    const key = [e.venue, e.year, e.award, e.title.toLowerCase().replace(/[^a-z0-9]/g, "")].join("|");
-    if (seen.has(key)) continue;
-    seen.add(key);
-    entries.push(e);
+// The conferences' own award pages, where the virtual site does not list the paper awards. Each is read only for
+// the years named, and an entry the virtual pages already have is merged away (same venue, year, award, title).
+const OFFICIAL = [
+  { venue: "ICML", years: YEARS, page: (y) => `https://icml.cc/Conferences/${y}/Awards`, parse: parseRecipientsPage },
+  { venue: "CVPR", years: [2025], page: (y) => `https://cvpr.thecvf.com/Conferences/${y}/BestPapersDemos`, parse: parsePaperAwardPage },
+  { venue: "ECCV", years: [2024], page: (y) => `https://eccv.ecva.net/Conferences/${y}/Awards`, parse: parsePaperAwardPage }
+];
+for (const src of OFFICIAL) {
+  for (const year of src.years) {
+    const url = src.page(year);
+    const html = await fetchPage(url, `${src.venue.toLowerCase()}-official-${year}.html`);
+    if (html == null) continue;
+    const { entries: got } = src.parse(html, { venue: src.venue, year, source: url });
+    let added = 0;
+    for (const e of got) {
+      const key = [e.venue, e.year, e.award, e.title.toLowerCase().replace(/[^a-z0-9]/g, "")].join("|");
+      if (seen.has(key)) continue;
+      seen.add(key);
+      entries.push(e);
+      added++;
+    }
+    if (got.length) console.log(`${src.venue} ${year} (official awards page): ${got.length} read, ${added} new`);
   }
-  if (got.length) console.log(`ICML ${year} (official awards page): ${got.length} outstanding paper award(s) read`);
 }
 writeFileSync(outFile, JSON.stringify({ slice: "virtual-site", generatedBy: "scripts/awards/virtual-site.mjs", entries }, null, 1) + "\n");
 console.log(`\n${entries.length} entries (${duplicates} repeated listings dropped) -> ${outFile}`);
