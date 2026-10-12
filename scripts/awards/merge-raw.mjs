@@ -24,8 +24,8 @@ const awards = require(join(root, "src", "lib", "awards.js"));
 const args = process.argv.slice(2);
 const flag = (name) => args.includes(name);
 const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
-const files = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--cross-check");
-if (!files.length) { console.error("usage: merge-raw.mjs <raw.json>… [--cross-check list.json] [--write] [--keep-unconfirmed]"); process.exit(2); }
+const files = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--cross-check" && args[i - 1] !== "--replace-source");
+if (!files.length) { console.error("usage: merge-raw.mjs <raw.json>… [--cross-check list.json] [--replace-source <url>] [--write] [--keep-unconfirmed]"); process.exit(2); }
 
 const BLOCKED_HOSTS = /(^|\.)(jeffhuang\.com|wikipedia\.org|wikidata\.org|researchgate\.net|semanticscholar\.org|paperswithcode\.com|medium\.com|github\.com|reddit\.com|quora\.com|linkedin\.com|x\.com|twitter\.com)$/i;
 const MAX_YEAR = 2026;
@@ -40,7 +40,9 @@ const decode = (t) => String(t).replace(/&#(\d+);/g, (_, d) => String.fromCodePo
 
 const problems = [];
 const accepted = new Map();
-for (const e of data.entries) accepted.set(key(e), e);
+// --replace-source <url>: the entries read from that page are dropped first, so a reader that was fixed replaces what the old one produced (and not only adds to it)
+const replaced = opt("--replace-source");
+for (const e of data.entries) if (!replaced || e.source !== replaced) accepted.set(key(e), e);
 const existing = accepted.size;
 
 for (const file of files) {

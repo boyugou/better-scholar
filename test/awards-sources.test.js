@@ -1775,3 +1775,17 @@ test("MobiCom's main page of a year (2019–2024): a wrapped title, authors with
     "runner-up NeRF2: Neura | Xiaopeng Zhao; Zhenlin An"
   ]);
 });
+
+test("SIGSOFT distinguished papers: 'Authors, Main title: Subtitle' keeps the main title (CUTE: …, Seeking the Ground Truth: …), a nickname in brackets is no hindrance, a second paper's authors after the title are not read", async () => {
+  const { parse } = await import("../scripts/awards/sigsoft.mjs");
+  const html = `<h2 id=winners>Winners</h2><h3>Foundations of Software Engineering (FSE 2012)</h3><ul>
+<li>Bradley Cossette and Robert Walker, Seeking the Ground Truth: A Retroactive Study on the Evolution of Libraries</li>
+<li>Koushik Sen, Darko Marinov, and Gul Agha, CUTE: A Concolic Unit Testing Engine for C</li>
+<li>Xiwei (Sherry) Xu, Liming Zhu: Hard to Read and Understand Pythonic Idioms? DeIdiom</li>
+<li>Ann Lee, Bo Chen: Policy Testing with Fuzz (Replicability Study). Paul-Antoine Le Tolguenec, Emmanuel Rachelson, and Yann Pequignot: Another Paper</li></ul>`;
+  assert.deepEqual(parse(html).map((e) => `${e.title} | ${e.authors.join("; ")}`), [
+    "Seeking the Ground Truth: A Retroactive Study on the Evolution of Libraries | Bradley Cossette; Robert Walker",
+    "CUTE: A Concolic Unit Testing Engine for C | Koushik Sen; Darko Marinov; Gul Agha",
+    "Hard to Read and Understand Pythonic Idioms? DeIdiom | Xiwei (Sherry) Xu; Liming Zhu"
+  ]);
+});

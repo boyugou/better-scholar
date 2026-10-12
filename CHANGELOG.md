@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.10.27 — 2026-10-12
+
+- SIGSOFT's distinguished papers: the reader cut a line at the first colon, so a title with a main title ("CUTE: A Concolic Unit Testing Engine for C", "HAMPI: A Solver for String Constraints", "Seeking the Ground Truth: …", "Trading Robustness for Maintainability: …")
+  lost it to the author list and could never match Scholar. About 16 papers (ICSE, FSE, ISSTA, ASE 2002–2024) are right now: the names are the leading entries that are names, the first that is not starts the title. `merge-raw.mjs --replace-source <url>`
+  replaces what an older reader produced instead of adding to it. The list has 6244 awards.
+
 ## 2.10.26 — 2026-10-12
 
 - Two KDD 2005 rows are gone: the awards page prints the 2004 application winner's title under the 2005 winner's authors and the 2005 winner's title under the 2004 runners-up's authors, so the rows paired a paper with other people's names.

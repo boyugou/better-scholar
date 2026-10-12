@@ -6,6 +6,7 @@
 //
 // Under "Winners", an <h3> per conference-year ending in "(ASE 2025)" and a <ul> of <li>Author, Author: Title</li>.
 import { readFileSync } from "node:fs";
+import { isPerson } from "./people.mjs";
 import { text } from "./html.mjs";
 
 const URL_PAGE = "https://www2.sigsoft.org/awards/distinguishedpaper/";
@@ -32,9 +33,19 @@ export function parse(html) {
       // author names have no colon, so the first colon ends the author list (titles may contain more)
       const cut = line.indexOf(":");
       if (cut < 3) continue;
-      const authors = splitAuthors(line.slice(0, cut));
-      const title = line.slice(cut + 1).trim();
+      // "Authors, Main title: Subtitle" (the first colon is then inside the title): the names are the leading entries that are names (a nickname in brackets, "Xiwei (Sherry) Xu", is no hindrance); the first that is not starts the title
+      const pieces = line.slice(0, cut).split(/(\s*,\s*(?:and\s+)?|\s+and\s+)/);
+      const plain = (x) => x.replace(/\s*\([^)]*\)\s*/g, " ").trim();
+      let k = 0;
+      while (k < pieces.length && (k % 2 === 1 || isPerson(plain(pieces[k])))) k++;
+      if (k < pieces.length && k % 2 === 1) k--;                                                  // (stopped on a separator)
+      const titleLead = k < pieces.length ? pieces.slice(k).join("").replace(/^[\s,]+/, "").replace(/^and\s+/, "") : "";
+      const names = pieces.slice(0, k).filter((_, i) => i % 2 === 0).map((x) => x.trim());
+      if (titleLead && /[.?!]\s+\S/.test(titleLead)) continue;                                   // ("Authors. Title: Subtitle": the old format, skipped as before)
+      const authors = titleLead && names.length ? names : splitAuthors(line.slice(0, cut));
+      const title = (titleLead && names.length ? titleLead + ": " : "") + line.slice(cut + 1).trim();
       if (!authors.length || title.length < 8) continue;
+      if (/\)\.\s+(?:\S+\s+){1,3}\S+,/.test(title) || /^\p{Lu}\p{Lu}\p{Ll}+\s*:/u.test(title)) continue;      // (a second paper's authors after the title, or a lead that is a mistyped name: reported by its absence, not guessed)
       // Older entries read "Authors. Title: Subtitle" and would be cut at the wrong colon: a name is a few words and has no
       // sentence in it, so anything else in the author part means this line is not in the "Authors: Title" form — skip it.
       if (authors.some((a) => a.split(" ").length > 5 || /[.?!]\s+\S/.test(a) && !/^(?:[A-Z]\.\s*)+\S+$/.test(a))) continue;

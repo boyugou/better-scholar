@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6241
+  "count": 6244
  },
  "entries": [
   {
@@ -6420,12 +6420,11 @@
    "year": 2006,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Policy-Based Support for Managing Evolving Architecture-to-Implementation Traceability Links",
+   "title": "ArchTrace: Policy-Based Support for Managing Evolving Architecture-to-Implementation Traceability Links",
    "authors": [
     "Leonardo Murta",
     "Andre Van Der Hoek",
-    "Claudia Werner",
-    "ArchTrace"
+    "Claudia Werner"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -6436,12 +6435,11 @@
    "year": 2013,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Platform Independent Executable Trace",
+   "title": "PIEtrace: Platform Independent Executable Trace",
    "authors": [
     "Yonghwi Kwon",
     "Xiangyu Zhang",
-    "Dongyan Xu",
-    "PIEtrace"
+    "Dongyan Xu"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -49193,12 +49191,11 @@
    "year": 2005,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Concolic Unit Testing Engine for C",
+   "title": "CUTE: A Concolic Unit Testing Engine for C",
    "authors": [
     "Koushik Sen",
     "Darko Marinov",
-    "Gul Agha",
-    "CUTE"
+    "Gul Agha"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -52890,14 +52887,27 @@
   },
   {
    "venue": "FSE",
+   "year": 2007,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Globally Distributed Software Development Project Performance: An Empirical Analysis",
+   "authors": [
+    "Narayan Ramasubbu",
+    "Rajesh Krishna Balan"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "Joint 11th European Software Engineering Conference (ESEC 2007) and 15th ACM SIGSOFT Symposium on the Foundations of Software Engineering (FSE 2007): Narayan Ramasubbu, Rajesh Krishna Balan, Globally Distributed Software Development Project Performance: An Empirical Analysis"
+  },
+  {
+   "venue": "FSE",
    "year": 2012,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Retroactive Study on the Evolution and Migration of Software Libraries",
+   "title": "Seeking the Ground Truth: A Retroactive Study on the Evolution and Migration of Software Libraries",
    "authors": [
     "Bradley Cossette",
-    "Robert Walker",
-    "Seeking the Ground Truth"
+    "Robert Walker"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -52908,19 +52918,33 @@
    "year": 2014,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Lightweight System for Tolerating Concurrency Bugs",
+   "title": "AI: A Lightweight System for Tolerating Concurrency Bugs",
    "authors": [
     "Mingxing Zhang",
     "Yongwei Wu",
     "Shan Lu",
     "Shanxiang Qi",
     "Jinglei Ren",
-    "Weimin Zheng",
-    "AI"
+    "Weimin Zheng"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "Foundations of Software Engineering (FSE 2014): Mingxing Zhang, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren, and Weimin Zheng, AI: A Lightweight System for Tolerating Concurrency Bugs"
+  },
+  {
+   "venue": "FSE",
+   "year": 2014,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Architecture Challenges for Internal Software Ecosystems: A Large-Scale Industry Case Study",
+   "authors": [
+    "Klaus-Benedikt Schultis",
+    "Christoph Elsner",
+    "Daniel Lohmann"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "Foundations of Software Engineering (FSE 2014): Klaus-Benedikt Schultis, Christoph Elsner, and Daniel Lohmann, Architecture Challenges for Internal Software Ecosystems: A Large-Scale Industry Case Study"
   },
   {
    "venue": "FSE",
@@ -64776,14 +64800,13 @@
    "year": 2004,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Towards a Static Non-Interactive Approach to Feature Location”",
+   "title": "“SNIAFL: Towards a Static Non-Interactive Approach to Feature Location”",
    "authors": [
     "Wei Zhao",
     "Lu Zhang",
     "Yin Liu",
     "Jiasu Sun",
-    "Fuqing Yang",
-    "“SNIAFL"
+    "Fuqing Yang"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -64803,6 +64826,21 @@
    "paperYear": 1994,
    "source": "https://www.icse-conferences.org/mostinfluential.html",
    "evidence": "ICSE 2004 Most Influential Paper Award: Robert Allen and David Garlan: Formalizing Architectural Connection"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2005,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks",
+   "authors": [
+    "Andrew Ko",
+    "Htet Htet Aung",
+    "Brad Myers"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "International Conference on Software Engineering (ICSE 2005): Andrew Ko, Htet Htet Aung, Brad Myers, Eliciting Design Requirements for Maintenance-Oriented IDEs: A Detailed Study of Corrective and Perfective Maintenance Tasks"
   },
   {
    "venue": "ICSE",
@@ -65005,7 +65043,22 @@
    "year": 2014,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "An Empirical Study of Evolving C# Programs",
+   "title": "Cowboys, Ankle Sprains, and Keepers of Quality: How is Video Game Development Different from Software Development?",
+   "authors": [
+    "Emerson Murphy-Hill",
+    "Thomas Zimmermann",
+    "Nachiappan Nagappan"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "International Conference on Software Engineering (ICSE 2014): Emerson Murphy-Hill, Thomas Zimmermann, and Nachiappan Nagappan, Cowboys, Ankle Sprains, and Keepers of Quality: How is Video Game Development Different from Software Development?"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2014,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Trading Robustness for Maintainability: An Empirical Study of Evolving C# Programs",
    "authors": [
     "Nélio Cacho",
     "Thiago César",
@@ -65015,30 +65068,11 @@
     "Rafael Souza",
     "Israel Garcia",
     "Eiji Adachi Barbosa",
-    "Alessandro Garcia",
-    "Trading Robustness for Maintainability"
+    "Alessandro Garcia"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Software Engineering (ICSE 2014): Nélio Cacho, Thiago César, Thomas Filipe, Eliezio Soares, Arthur Cassio, Rafael Souza, Israel Garcia, Eiji Adachi Barbosa, and Alessandro Garcia, Trading Robustness for Maintainability: An Empirical Study of Evolving C# Programs"
-  },
-  {
-   "venue": "ICSE",
-   "year": 2014,
-   "award": "distinguished",
-   "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "How is Video Game Development Different from Software Development?",
-   "authors": [
-    "Emerson Murphy-Hill",
-    "Thomas Zimmermann",
-    "Nachiappan Nagappan",
-    "Cowboys",
-    "Ankle Sprains",
-    "Keepers of Quality"
-   ],
-   "track": "main",
-   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
-   "evidence": "International Conference on Software Engineering (ICSE 2014): Emerson Murphy-Hill, Thomas Zimmermann, and Nachiappan Nagappan, Cowboys, Ankle Sprains, and Keepers of Quality: How is Video Game Development Different from Software Development?"
   },
   {
    "venue": "ICSE",
@@ -66254,16 +66288,16 @@
    "year": 2025,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Formally Verified Cloud-Scale Authorization",
+   "title": "Gordo: Increasing the Effectiveness of Automatically Generated Tests by Improving Class Observability",
    "authors": [
-    "Aleks Chakarov",
-    "Jaco Geldenhuys",
-    "Matthew Heck",
-    "MIchael"
+    "Geraldine Galindo-Gutierrez",
+    "Juan Pablo Sandoval Alcocer",
+    "Nicolas Jimenez-Fuentes",
+    "Alexandre Bergel"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
-   "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Aleks Chakarov, Jaco Geldenhuys, Matthew Heck, MIchael : Formally Verified Cloud-Scale Authorization"
+   "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Geraldine Galindo-Gutierrez, Juan Pablo Sandoval Alcocer, Nicolas Jimenez-Fuentes, Alexandre Bergel, Gordo: Increasing the Effectiveness of Automatically Generated Tests by Improving Class Observability"
   },
   {
    "venue": "ICSE",
@@ -66282,23 +66316,6 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Yiwei Li, Liangze Yin, Wei Dong, Jiaxin Liu, Yanfeng Hu, Shanshan Li: Hetrify: Efficient Verification of Heterogeneous Programs on RISC-V"
-  },
-  {
-   "venue": "ICSE",
-   "year": 2025,
-   "award": "distinguished",
-   "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Increasing the Effectiveness of Automatically Generated Tests by Improving Class Observability",
-   "authors": [
-    "Geraldine Galindo-Gutierrez",
-    "Juan Pablo Sandoval Alcocer",
-    "Nicolas Jimenez-Fuentes",
-    "Alexandre Bergel",
-    "Gordo"
-   ],
-   "track": "main",
-   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
-   "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Geraldine Galindo-Gutierrez, Juan Pablo Sandoval Alcocer, Nicolas Jimenez-Fuentes, Alexandre Bergel, Gordo: Increasing the Effectiveness of Automatically Generated Tests by Improving Class Observability"
   },
   {
    "venue": "ICSE",
@@ -67939,6 +67956,20 @@
    "evidence": "2025 (For ISCA 2007): Zhenghong Wang and Ruby Lee — New Cache Designs for Thwarting Software Cache-based Side Channel Attacks"
   },
   {
+   "venue": "ISESE",
+   "year": 2006,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper",
+   "title": "Cross-company and Single-company Effort Models using the ISBSG Database: a Further Replicated Study",
+   "authors": [
+    "Chris Lokan",
+    "Emilia Mendes"
+   ],
+   "track": "main",
+   "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
+   "evidence": "International Symposium on Empirical Software Engineering (ISESE 2006): Chris Lokan, Emilia Mendes, Cross-company and Single-company Effort Models using the ISBSG Database: a Further Replicated Study"
+  },
+  {
    "venue": "ISMAR",
    "year": 2007,
    "award": "best",
@@ -69399,12 +69430,11 @@
    "year": 2002,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Automated Testing Based on Java Predicates”",
+   "title": "“Korat: Automated Testing Based on Java Predicates”",
    "authors": [
     "Chandrasekhar Boyapati",
     "Sarfraz Khurshid",
-    "Darko Marinov",
-    "“Korat"
+    "Darko Marinov"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -69415,11 +69445,10 @@
    "year": 2006,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Hybrid Analysis Tool for Bug Finding",
+   "title": "DSD-Crasher: A Hybrid Analysis Tool for Bug Finding",
    "authors": [
     "Christoph Csallner",
-    "Yannis Smaragdakis",
-    "DSD-Crasher"
+    "Yannis Smaragdakis"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -69446,11 +69475,10 @@
    "year": 2008,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Effective Race Detection Using AspectJ",
+   "title": "Racer: Effective Race Detection Using AspectJ",
    "authors": [
     "Eric Bodden",
-    "Klaus Havelund",
-    "Racer"
+    "Klaus Havelund"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -69461,14 +69489,13 @@
    "year": 2009,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "A Solver for String Constraints",
+   "title": "HAMPI: A Solver for String Constraints",
    "authors": [
     "Adam Kiezun",
     "Vijay Ganesh",
     "Philip Guo",
     "Pieter Hooimeijer",
-    "Michael Ernst",
-    "HAMPI"
+    "Michael Ernst"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
@@ -69509,13 +69536,12 @@
    "year": 2014,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "Locating Crashing Faults Based on Crash Stacks",
+   "title": "CrashLocator: Locating Crashing Faults Based on Crash Stacks",
    "authors": [
     "Rongxin Wu",
     "Hongyu Zhang",
     "Shing-Chi Cheung",
-    "Sunghun Kim",
-    "CrashLocator"
+    "Sunghun Kim"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
