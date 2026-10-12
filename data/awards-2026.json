@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6296
+  "count": 6304
  },
  "entries": [
   {
@@ -7377,6 +7377,84 @@
   {
    "venue": "ASPLOS",
    "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Case for Lease-Based, Utilitarian Resource Management on Mobile Devices",
+   "authors": [
+    "Yigong Hu",
+    "Suyi Liu",
+    "Peng Huang"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2019/",
+   "evidence": "ASPLOS 2019 Best Paper Award: A Case for Lease-Based, Utilitarian Resource Management on Mobile Devices — Yigong Hu, Suyi Liu, Peng Huang"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Boosted Race Trees for Low Energy Classification",
+   "authors": [
+    "Georgios Tzimpragos",
+    "Advait Madhavan",
+    "Dilip Vasudevan",
+    "Dmitri Strukov",
+    "Timothy Sherwood"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2019/",
+   "evidence": "ASPLOS 2019 Best Paper Award: Boosted Race Trees for Low Energy Classification — Georgios Tzimpragos, Advait Madhavan, Dilip Vasudevan, Dmitri Strukov, Timothy Sherwood"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CheriABI: Enforcing Valid Pointer Provenance and Minimizing Pointer Privilege in the POSIX C Run-time Environment",
+   "authors": [
+    "Brooks Davis",
+    "Robert N. M. Watson",
+    "Alexander Richardson",
+    "Peter Neumann",
+    "Simon Moore",
+    "John Baldwin",
+    "David Chisnall",
+    "James Clarke",
+    "Khilan Gudka",
+    "Alexandre Joannou",
+    "Ben Laurie",
+    "A. Theodore Markettos",
+    "Ed Maste",
+    "Edward Tomasz Napierala",
+    "Robert Norton",
+    "Michael Roe",
+    "Peter Sewell",
+    "Stacey Son",
+    "Jonathan Woodruff",
+    "Nathaniel Wesley Filardo"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2019/",
+   "evidence": "ASPLOS 2019 Best Paper Award: CheriABI: Enforcing Valid Pointer Provenance and Minimizing Pointer Privilege in the POSIX C Run-time Environment — Brooks Davis, Robert N. M. Watson, Alexander Richardson, Peter Neumann, Simon Moore, John Baldwin, David Chisnall, James Clarke, Khilan Gudka, Alexandre Joannou, Ben Laurie, A. Theodore Markettos, Ed Maste, Edward Tomasz Napierala, Robert Norton, Michael Roe, Peter Sewell, Stacey Son, Jonathan Woodruff, Nathaniel Wesley Filardo"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Wasabi: A Framework for Dynamically Analyzing Web Assembly",
+   "authors": [
+    "Daniel Lehmann",
+    "Michael Pradel"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2019/",
+   "evidence": "ASPLOS 2019 Best Paper Award: Wasabi: A Framework for Dynamically Analyzing Web Assembly — Daniel Lehmann, Michael Pradel"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2019,
    "award": "tot",
    "awardLabel": "Most Influential Paper Award",
    "title": "Hoard: A Scalable Memory Allocator for Multithreaded Applications",
@@ -7389,6 +7467,72 @@
    "track": "main",
    "source": "https://sigplan.org/Awards/Other",
    "evidence": "ASPLOS 2019 Most Influential Paper Award: Emery D. Berger, Kathryn S. McKinley, Robert D. Blumofe, and Paul R. Wilson “Hoard: A Scalable Memory Allocator for Multithreaded Applications”"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Challenging Sequential Bitstream Processing via Principled Bitwise Speculation",
+   "authors": [
+    "Junqiao Qiu",
+    "Lin Jiang",
+    "Zhijia Zhao"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2020/",
+   "evidence": "ASPLOS 2020 Best Paper Award: Challenging Sequential Bitstream Processing via Principled Bitwise Speculation — Junqiao Qiu, Lin Jiang, Zhijia Zhao"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Elastic Cuckoo Page Tables: Rethinking Virtual Memory Translation for Parallelism",
+   "authors": [
+    "Dimitrios Skarlatos",
+    "Apostolos Kokolis",
+    "Tianyin Xu",
+    "Josep Torrellas"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2020/",
+   "evidence": "ASPLOS 2020 Best Paper Award: Elastic Cuckoo Page Tables: Rethinking Virtual Memory Translation for Parallelism — Dimitrios Skarlatos, Apostolos Kokolis, Tianyin Xu, Josep Torrellas"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "IOctopus: Outsmarting Nonuniform DMA",
+   "authors": [
+    "Igor Smolyar",
+    "Alex Markuze",
+    "Boris Pismenny",
+    "Haggai Eran",
+    "Gerd Zellweger",
+    "Austin Bolen",
+    "Liran Liss",
+    "Adam Morrison",
+    "Dan Tsafrir"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2020/",
+   "evidence": "ASPLOS 2020 Best Paper Award: IOctopus: Outsmarting Nonuniform DMA — Igor Smolyar, Alex Markuze, Boris Pismenny, Haggai Eran, Gerd Zellweger, Austin Bolen, Liran Liss, Adam Morrison, Dan Tsafrir"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Orbital Edge Computing: Nanosatellite Constellations as a New Class of Computing System",
+   "authors": [
+    "Bradley Denby",
+    "Brandon Lucia"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2020/",
+   "evidence": "ASPLOS 2020 Best Paper Award: Orbital Edge Computing: Nanosatellite Constellations as a New Class of Computing System — Bradley Denby, Brandon Lucia"
   },
   {
    "venue": "ASPLOS",

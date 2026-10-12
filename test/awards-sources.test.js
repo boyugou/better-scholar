@@ -1856,3 +1856,11 @@ test("an ASPLOS year's page: title and authors lines (affiliations in brackets o
     "2022 tot 1999 An old idea that lasted for years | Cy Dunn; Di Eng"
   ]);
 });
+
+test("ASPLOS 2019 and 2020 pages: a title over two lines then the authors; 'by Authors (Affiliation)' under a quoted title; the influential paper is left out", async () => {
+  const { parseAsplosYear } = await import("../scripts/awards/tot.mjs");
+  const h19 = `<p>Announcing our Best Paper Winners:</p><p>A Long Title That Wraps Over</p><p>Two Lines Of Text</p><p>Ann Lee, Bo Chan, Cy Dunn</p><p>ASPLOS Influential Paper Winner:</p>`;
+  assert.deepEqual(parseAsplosYear(h19, "https://www.asplos-conference.org/asplos2019/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A Long Title That Wraps Over Two Lines Of Text | Ann Lee; Bo Chan; Cy Dunn"]);
+  const h20 = `<p>Best Paper Award:“A Quoted Title For Systems”,</p><p>by Ann Lee (MIT) and Bo Chan (CMU)</p><p>Virtual ASPLOS Logistics</p>`;
+  assert.deepEqual(parseAsplosYear(h20, "https://www.asplos-conference.org/asplos2020/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A Quoted Title For Systems | Ann Lee; Bo Chan"]);
+});

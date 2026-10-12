@@ -1564,7 +1564,26 @@ export function parseAsplosYear(html, source) {
   if (!year) return { entries, skipped: ["no year"] };
   let kind = null;
   const starts = ls.map((l, i) => (SEC(l) && ls[i + 1] && !SEC(ls[i + 1]) && (kddAuthors(ls[i + 2] || "").length || /,\s+\p{Lu}[\p{L}.' -]+(?:,| and )/u.test(ls[i + 1]) || /\)$/.test(ls[i + 2] || "")) ? i : -1)).filter((i) => i >= 0);
-  if (!starts.length) return { entries, skipped: ["no award section"] };
+  if (!starts.length) {
+    // 2020: 'Best Paper Award:“Title”,' then 'by Authors (Affiliation), …' per paper; 2019: 'Announcing our Best Paper Winners:' then a title (maybe over two lines) and an authors' line per paper, up to the influential paper
+    const BK = ["best", "Best Paper Award"];
+    const from = ls.findIndex((l) => /^Best Paper Award:\s*[“"]/.test(l) || /^Announcing our Best Paper Winners:?$/i.test(l));
+    if (from < 0) return { entries, skipped: ["no award section"] };
+    let title = "";
+    for (let i = from; i < ls.length && !/^(?:ASPLOS Influential|Virtual ASPLOS|Follow Us)/i.test(ls[i]); i++) {
+      const l = ls[i].replace(/^Best Paper Award:\s*/, "");
+      const q = /^[“"](.+?)[”"],?$/.exec(l);
+      if (q) { title = q[1]; continue; }
+      const by = /^by\s+(.+)$/i.exec(l);
+      if (by && title) { add(BK, title, kddAuthors(by[1])); title = ""; continue; }
+      if (/^Announcing/i.test(l)) continue;
+      if (!by && !q && year === 2019) {
+        const who = kddAuthors(l, true);
+        if (who.length >= 2 && title) { add(BK, title, who); title = ""; } else title = (title + " " + l).trim();
+      }
+    }
+    return { entries, skipped };
+  }
   for (let i = starts[0]; i < ls.length; i++) {
     const l = ls[i];
     const k = SEC(l);

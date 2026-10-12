@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.36 — 2026-10-12
+
+- ASPLOS's best papers of 2019 and 2020 (8 papers) from the conference's own site pages (`tot.mjs asplos-year`). The list has 6304 awards.
+
 ## 2.10.35 — 2026-10-12
 
 - ASPLOS's best, distinguished and influential paper awards of 2022–2026 (36 papers) from the conference's own site (`tot.mjs asplos-year`); the honorable mentions and artifact awards are not read. The list has 6296 awards.
