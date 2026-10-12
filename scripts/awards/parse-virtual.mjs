@@ -16,8 +16,8 @@ const PAPER_LINK = /href="[^"]*\/virtual\/\d{4}\/(?:poster|oral|spotlight|talk|p
 export function decode(html) {
   return String(html ?? "")
     .replace(/<[^>]+>/g, " ")
-    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+    .replace(/&#x([0-9a-f]+);?/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);?/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))   // pages sometimes omit the semicolon
     .replace(/&([a-z]+);/gi, (m, n) => NAMED[n.toLowerCase()] ?? m)
     .replace(/\s+/g, " ")
     .trim();
@@ -189,4 +189,40 @@ export function parseTestOfTimeDetail(html) {
   const title = decode(m[1]).replace(/\(\s*test of time award\s*\)\s*$/i, "").trim();
   const authorsText = decode(m[2]);
   return title && authorsText ? { title, authorsText } : null;
+}
+
+// A conference's programme lists each paper as <strong>TITLE.</strong><br><p>AUTHORS</p>. Used to give an award named on
+// the home page its author list (CVPR 2016 names "Deep Residual Learning for Image Recognition" as best paper there).
+const normTitle = (t) => decode(t).toLowerCase().replace(/[^a-z0-9]+/g, "");
+export function parseProgramAuthors(html) {
+  const byTitle = new Map();
+  for (const m of String(html ?? "").matchAll(/<strong>([\s\S]*?)<\/strong>\s*<br\s*\/?>\s*<p>([\s\S]*?)<\/p>/g)) {
+    const title = decode(m[1]).replace(/[.\s]+$/, "");
+    const authors = decode(m[2]);
+    if (title && authors) byTitle.set(normTitle(title), authors);
+  }
+  return byTitle;
+}
+
+// The home page's award lines: "Best paper:" (or "Best paper honorable mention:") and, on the next line, the title,
+// often with a trailing comma. An entry needs the title's authors from the programme; without them it is not kept.
+export function parseHomepageAwards(html, { venue, year, source, programHtml }) {
+  const lines = toLines(html);
+  const programAuthors = parseProgramAuthors(programHtml);
+  const entries = [];
+  for (let i = 0; i < lines.length - 1; i++) {
+    const h = /^(Best paper(?: honou?rable mention)?)\s*:\s*$/i.exec(lines[i]);
+    if (!h) continue;
+    const label = h[1].replace(/\b\w/g, (c) => c.toUpperCase()).replace(/^Best Paper Honou?rable Mention$/, "Best Paper Honorable Mention");
+    const kind = kindOf(label);
+    const title = lines[i + 1].replace(/[,.\s]+$/, "").trim();
+    const authorsText = programAuthors.get(normTitle(title));
+    if (!kind || title.length < 8 || !authorsText) continue;
+    const authors = authorsText.split(/,|⋅|·|\band\b/).map((a) => a.trim()).filter(Boolean);
+    entries.push({
+      venue, year, award: kind, awardLabel: label, title, authors, track: "main",
+      source, evidence: `${title} — ${label}`, verified: "official (conference home page; authors from the programme)"
+    });
+  }
+  return { entries };
 }

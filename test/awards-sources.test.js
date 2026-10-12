@@ -59,6 +59,7 @@ test("entities are decoded to the characters a reader sees", async () => {
   const { decode } = await load();
   assert.equal(decode("A &amp; B &middot; C &#39;x&#39; &#x2013; &hellip; &unknown;"), "A & B · C 'x' – … &unknown;");
   assert.equal(decode("  Line\n  break   here  "), "Line break here");
+  assert.equal(decode("M&#246llenhoff and M&#xF6;ller"), "Möllenhoff and Möller", "numeric entities, with or without the semicolon");
 });
 
 test("award labels map to the kinds the matcher understands", async () => {
@@ -150,4 +151,17 @@ test("a heading that lists several papers ('Best Paper Awards', ICLR 2019); a li
     ["best", "A Synthetic Ticket Hypothesis: Finding Sparse Networks"]
   ]);
   assert.deepEqual(entries[1].authors, ["Dee Park", "Eli Ross"]);
+});
+
+test("a home page's 'Best paper:' line gets its authors from the programme entry with the same title", async () => {
+  const { parseHomepageAwards, parseProgramAuthors } = await load();
+  const home = `<table><tr><td>AWARD INFO</td></tr><tr><td>Best paper:</td></tr><tr><td>A Synthetic Residual Paper,</td></tr>
+<tr><td>Best paper honorable mention:</td></tr><tr><td>Not In The Programme At All.</td></tr></table>`;
+  const program = `<ul class="program-list"> 2 <strong>A Synthetic Residual Paper for Images. </strong><br><p>Ann Lee, Bo Chen, Cy Diaz</p></ul>`;
+  assert.equal(parseProgramAuthors(program).size, 1);
+  const { entries } = parseHomepageAwards(home, { venue: "CVPR", year: 2016, source: "https://cvpr2016.thecvf.com/", programHtml: program });
+  assert.deepEqual(entries, [], "the title must match the programme exactly; a near title is not enough");
+  const exact = program.replace("A Synthetic Residual Paper for Images.", "A Synthetic Residual Paper,");
+  const { entries: got } = parseHomepageAwards(home, { venue: "CVPR", year: 2016, source: "https://cvpr2016.thecvf.com/", programHtml: exact });
+  assert.deepEqual(got.map((e) => [e.award, e.title, e.authors]), [["best", "A Synthetic Residual Paper", ["Ann Lee", "Bo Chen", "Cy Diaz"]]]);
 });

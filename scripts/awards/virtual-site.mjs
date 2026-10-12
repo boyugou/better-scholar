@@ -8,7 +8,7 @@
 // aggregators. Coverage per year is printed, including years whose page lists no paper awards.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { parseAwardsPage, parseRecipientsPage, parsePaperAwardPage, parseTestOfTimeDetail } from "./parse-virtual.mjs";
+import { parseAwardsPage, parseRecipientsPage, parsePaperAwardPage, parseTestOfTimeDetail, parseHomepageAwards } from "./parse-virtual.mjs";
 
 const args = process.argv.slice(2);
 const opt = (name, dflt) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : dflt; };
@@ -97,6 +97,23 @@ for (const src of OFFICIAL) {
       added++;
     }
     if (got.length) console.log(`${src.venue} ${year} (official awards page): ${got.length} read, ${added} new`);
+  }
+}
+// CVPR 2016 names its best papers on its home page; the programme page gives their authors (see parseHomepageAwards).
+{
+  const home = await fetchPage("https://cvpr2016.thecvf.com/", "cvpr-home-2016.html");
+  const program = await fetchPage("https://cvpr2016.thecvf.com/program/main_conference", "cvpr-program-2016.html");
+  if (home && program) {
+    const { entries: got } = parseHomepageAwards(home, { venue: "CVPR", year: 2016, source: "https://cvpr2016.thecvf.com/", programHtml: program });
+    let added = 0;
+    for (const e of got) {
+      const key = [e.venue, e.year, e.award, e.title.toLowerCase().replace(/[^a-z0-9]/g, "")].join("|");
+      if (seen.has(key)) continue;
+      seen.add(key);
+      entries.push(e);
+      added++;
+    }
+    console.log(`CVPR 2016 (official home page): ${got.length} read, ${added} new`);
   }
 }
 writeFileSync(outFile, JSON.stringify({ slice: "virtual-site", generatedBy: "scripts/awards/virtual-site.mjs", entries }, null, 1) + "\n");

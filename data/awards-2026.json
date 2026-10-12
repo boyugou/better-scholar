@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 438
+  "count": 440
  },
  "entries": [
   {
@@ -3529,6 +3529,39 @@
    "track": "main",
    "source": "https://aclanthology.org/2026.conll-main.25/",
    "evidence": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences — Outstanding Paper"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Deep Residual Learning for Image Recognition",
+   "authors": [
+    "Kaiming He",
+    "Xiangyu Zhang",
+    "Shaoqing Ren",
+    "Jian Sun"
+   ],
+   "track": "main",
+   "source": "https://cvpr2016.thecvf.com/",
+   "evidence": "Deep Residual Learning for Image Recognition — Best Paper"
+  },
+  {
+   "venue": "CVPR",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Sublabel-Accurate Relaxation of Nonconvex Energies",
+   "authors": [
+    "Thomas Möllenhoff",
+    "Emanuel Laude",
+    "Michael Moeller",
+    "Jan Lellmann",
+    "Daniel Cremers"
+   ],
+   "track": "main",
+   "source": "https://cvpr2016.thecvf.com/",
+   "evidence": "Sublabel-Accurate Relaxation of Nonconvex Energies — Best Paper Honorable Mention"
   },
   {
    "venue": "CVPR",
