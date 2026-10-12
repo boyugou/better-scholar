@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5433
+  "count": 5438
  },
  "entries": [
   {
@@ -75273,6 +75273,79 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2022: Huangxun Chen (Huawei Theory Lab), Yukai Miao (University of New South Wales), Li Chen (Zhongguancun Laboratory), Haifeng Sun (Beijing University of Posts and Telecommunications), Hong Xu (Chinese University of Hong Kong), Libin Liu (Shandong Computer Science Center (National Supercomputer Center in Jinan)), Gong Zhang (Huawei Theory Lab), Wei Wang (Hong Kong University of Science and Technology (Guangzhou) & Hong Kong University of Science and Technology), \"Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim\""
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An object-oriented program development environment for the first programming course",
+   "authors": [
+    "Michael Kölling",
+    "John Rosenberg"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://sigcse.org/programs/awards/test-of-time.html",
+   "evidence": "SIGCSE 2020 Test of Time Award: Michael Kölling and John Rosenberg. 1996. An object-oriented program development environment for the first programming course"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The incredible shrinking pipeline",
+   "authors": [
+    "Tracy Camp"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://sigcse.org/programs/awards/test-of-time.html",
+   "evidence": "SIGCSE 2021 Test of Time Award: Tracy Camp. 1997. The incredible shrinking pipeline"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Connecting K-16 Curriculum & Policy: Making Computer Science Engaging, Accessible, and Hospitable for Underrepresented Students",
+   "authors": [
+    "Joanna Goode"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sigcse.org/programs/awards/test-of-time.html",
+   "evidence": "SIGCSE 2022 Test of Time Award: Joanna Goode. 2010. Connecting K-16 Curriculum & Policy: Making Computer Science Engaging, Accessible, and Hospitable for Underrepresented Students"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Evaluating a new exam question: Parsons problems",
+   "authors": [
+    "Paul Denny",
+    "Andrew Luxton-Reilly",
+    "Beth Simon"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://sigcse.org/programs/awards/test-of-time.html",
+   "evidence": "SIGCSE 2024 Test of Time Award: Paul Denny, Andrew Luxton-Reilly, and Beth Simon. 2008. Evaluating a new exam question: Parsons problems"
+  },
+  {
+   "venue": "SIGCSE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Methods and Tools for Exploring Novice Compilation Behaviour",
+   "authors": [
+    "Matthew C. Jadud"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigcse.org/programs/awards/test-of-time.html",
+   "evidence": "SIGCSE 2025 Test of Time Award: Matthew C. Jadud. 2006. Methods and Tools for Exploring Novice Compilation Behaviour"
   },
   {
    "venue": "SIGDA",

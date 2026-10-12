@@ -1446,3 +1446,17 @@ test("SIGWEB DocEng page: the same template as Hypertext, the award named in the
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGCSE Test of Time page: a 'Title (2025)' line and an ACM citation line 'Authors. 2006. Title. In …'", async () => {
+  const { parseSigcseTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>Below is the list of the 5 SIGCSE papers that have received the Test of Time Award.</p><p>Methods and Tools for Exploring Novice Compilation Behaviour (2025)</p><p>Matthew C. Jadud. 2006. Methods and tools for exploring novice compilation behaviour. In Proceedings of the second international workshop on Computing education research (ICER '06). ACM, 73–84.</p>
+<p>Evaluating a new exam question: Parsons problems (2024)</p><p>Paul Denny, Andrew Luxton-Reilly, and Beth Simon. 2008. Evaluating a new exam question: Parsons problems. In Proceedings of the Fourth international Workshop.</p>
+<p>The incredible shrinking pipeline (2021)</p><p>Tracy Camp. 1997. The incredible shrinking pipeline. Communications of the ACM. 40, 10 (Oct. 1997), 103–110.</p>`;
+  const { entries, skipped } = parseSigcseTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025/2006 Methods and Tools for Exploring Novice Compilation Behaviour | Matthew C. Jadud",
+    "2024/2008 Evaluating a new exam question: Parsons problems | Paul Denny; Andrew Luxton-Reilly; Beth Simon",
+    "2021/1997 The incredible shrinking pipeline | Tracy Camp"
+  ]);
+  assert.deepEqual(skipped, []);
+});

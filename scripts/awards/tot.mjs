@@ -114,7 +114,8 @@ const PAGES = {
   ht: "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
   doceng: "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
   newton: "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
-  sigspatial: "https://www.sigspatial.org/people/award-recipients/"
+  sigspatial: "https://www.sigspatial.org/people/award-recipients/",
+  sigcse: "https://sigcse.org/programs/awards/test-of-time.html"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -738,6 +739,21 @@ export function parseSigspatial(html, source = PAGES.sigspatial) {
   return { entries, skipped };
 }
 
+export function parseSigcseTot(html, source = PAGES.sigcse) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  for (let i = 0; i < ls.length - 1; i++) {
+    const h = /^(.{8,200}?)\s*\(((?:19|20)\d{2})\)$/.exec(ls[i]);
+    const c = h && /^(.+?)\.\s+((?:19|20)\d{2})\.\s+(.+?)\.\s+(?:In|Communications|ACM)\b/.exec(ls[i + 1]);
+    if (!c) continue;
+    const who = names(c[1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(h[1]);
+    if (who.length && who.every(isPerson)) entries.push(entry("SIGCSE", parseInt(h[2], 10), "Test of Time Award", title, who, source, `SIGCSE ${h[2]} Test of Time Award: ${c[1]}. ${c[2]}. ${title}`, parseInt(c[2], 10)));
+    else skipped.push(`${h[2]}: not read: ${c[1].slice(0, 50)} / ${title.slice(0, 40)}`);
+    i++;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -793,7 +809,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

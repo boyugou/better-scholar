@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.31 — 2026-10-12
+
+- The ACM SIGCSE Test of Time Award (2020–2025, 5 papers: Methods and Tools for Exploring Novice Compilation Behaviour, Parsons problems, The incredible shrinking pipeline …) from SIGCSE's
+  own page (`tot.mjs sigcse`). The bundled list has 5438 awards.
+
 ## 2.9.30 — 2026-10-12
 
 - The SIGWEB DocEng Best Paper Award (2010–2024, 14 papers) from SIGWEB's page (`tot.mjs doceng`); the Hypertext reader and this one share one parser now. The bundled list has 5433 awards.
