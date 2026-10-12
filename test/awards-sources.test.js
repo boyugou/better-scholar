@@ -1251,3 +1251,16 @@ test("IMC Test of Time page: `\"Title\" by Authors, in ACM IMC 2009.` under a ye
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("IEEE VIS Test-of-Time page: a paper-year heading, then label / authors / title / (Awarded at: VIS 2025) / DOI; a row without 'Awarded at' is skipped", async () => {
+  const { parseVisTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h1>IEEE VIS Test-of-Time Awards</h1><h2>2015</h2><p>10-Years InfoVis Test-of-Time Award</p><p>Kay Wongsuphasawat, Dom Moritz, Jeff Heer</p><p>Voyager: Exploratory Analysis via Faceted Browsing</p><p>(Awarded at: VIS 2025)</p><p>10.1109/TVCG.2015.2467191</p>
+<p>10-Years VAST Test-of-Time Award</p><p>Stef van den Elzen, Danny Holten, Jarke J. van Wijk</p><p>Reducing Snapshots to Points: A Visual Analytics Approach</p><p>(Awarded at: VIS 2025)</p><p>10.1109/TVCG.2015.2468078</p>
+<h2>1992</h2><p>25-Years VIS Test-of-Time Award</p><p>Thi Delmarcelle, Lam Hesselink</p><p>Visualization of second order tensor fields and matrix data</p><p>10.1109/VISUAL.1992.235193</p>`;
+  const { entries, skipped } = parseVisTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.awardLabel} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025/2015 10-Year InfoVis Test of Time Award Voyager: Exploratory Analysis via Faceted Browsing | Kay Wongsuphasawat; Dom Moritz; Jeff Heer",
+    "2025/2015 10-Year VAST Test of Time Award Reducing Snapshots to Points: A Visual Analytics Approach | Stef van den Elzen; Danny Holten; Jarke J. van Wijk"
+  ]);
+  assert.equal(skipped.length, 1);
+});

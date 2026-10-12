@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4983
+  "count": 5034
  },
  "entries": [
   {
@@ -82438,6 +82438,843 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VehicleSec '26: Perspective-Shift Attacks Against Optical Perception Sensors: A Novel Attack Vector on LiDAR and Camera — Marco Calipari, Technical University of Munich; Michael Kühr, Technical University of Munich; Dominik Kulmer, Technical University of Munich; Maximilian Luedecke, Technical University of Munich; Mohammad Hamad, Technical University of Munich; Sebastian Steinhorst, Technical Uni"
+  },
+  {
+   "venue": "VIS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "A Visual Interface for Multivariate Temporal Data: Finding Patterns of Events Across Multiple Histories",
+   "authors": [
+    "Jerry Alan Fails",
+    "Amy Karlson",
+    "Layla Shahamat",
+    "Ben Shneiderman"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2016 10-Year VAST Test of Time Award: Jerry Alan Fails, Amy Karlson, Layla Shahamat, Ben Shneiderman “A Visual Interface for Multivariate Temporal Data: Finding Patterns of Events Across Multiple Histories”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "Hierarchical edge bundles: Visualization of adjacency relations in hierarchical data",
+   "authors": [
+    "Danny Holten"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2016 10-Year InfoVis Test of Time Award: Danny Holten “Hierarchical edge bundles: Visualization of adjacency relations in hierarchical data”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Visage: a user interface environment for exploring information",
+   "authors": [
+    "Steven F. Roth",
+    "Peter Eucas",
+    "Jeffrey A. Senn",
+    "Cristina C. Gomberg",
+    "Michael B. Burks",
+    "Philip J. Stroffolino",
+    "John A. Kolojejchick",
+    "Carolyn Dunmire"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2016 20-Year InfoVis Test of Time Award: Steven F. Roth, Peter Eucas, Jeffrey A. Senn, Cristina C. Gomberg, Michael B. Burks, Philip J. Stroffolino, John A. Kolojejchick, Carolyn Dunmire “Visage: a user interface environment for exploring information”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "21-Year InfoVis Test of Time Award",
+   "title": "Visualizing the non-visual: spatial analysis and interaction with information from text documents",
+   "authors": [
+    "James A. Wise",
+    "James J. Thomas",
+    "Kelly Pennock",
+    "David Lantrip",
+    "Marc Pottier",
+    "Anne Schur",
+    "Vern Crow"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2016 21-Year InfoVis Test of Time Award: James A. Wise, James J. Thomas, Kelly Pennock, David Lantrip, Marc Pottier, Anne Schur, Vern Crow “Visualizing the non-visual: spatial analysis and interaction with information from text documents”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "Efficient computation of the topology of level sets",
+   "authors": [
+    "Valerio Pascucci",
+    "Kree Cole-McLaughlin"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2017 15-Year SciVis Test of Time Award: Valerio Pascucci, Kree Cole-McLaughlin “Efficient computation of the topology of level sets”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "ManyEyes: A Site for Visualization at Internet Scale",
+   "authors": [
+    "Fernanda B. Viegas",
+    "Martin Wattenberg",
+    "Frank van Ham",
+    "Jesse Kriss",
+    "Matt McKeon"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2017 10-Year InfoVis Test of Time Award: Fernanda B. Viegas, Martin Wattenberg, Frank van Ham, Jesse Kriss, Matt McKeon “ManyEyes: A Site for Visualization at Internet Scale”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "The Structure of the Information Visualization Design Space",
+   "authors": [
+    "Stuart K. Card",
+    "Jock D. Mackinlay"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2017 20-Year InfoVis Test of Time Award: Stuart K. Card, Jock D. Mackinlay “The Structure of the Information Visualization Design Space”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "Acceleration techniques for GPU-based volume rendering Authors",
+   "authors": [
+    "Jens H. Krüger",
+    "Rüdiger Westermann"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2018 15-Year SciVis Test of Time Award: Jens H. Krüger, Rüdiger Westermann “Acceleration techniques for GPU-based volume rendering Authors”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "An Operator Interaction Framework For Visualization Systems",
+   "authors": [
+    "Ed Huai-hsin Chi",
+    "John T. Riedl"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2018 20-Year InfoVis Test of Time Award: Ed Huai-hsin Chi, John T. Riedl “An Operator Interaction Framework For Visualization Systems”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "Effectiveness of Animation in Trend Visualization",
+   "authors": [
+    "George G. Robertson",
+    "Roland Fernandez",
+    "Danyel Fisher",
+    "Bongshin Lee",
+    "John T. Stasko"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2018 10-Year InfoVis Test of Time Award: George G. Robertson, Roland Fernandez, Danyel Fisher, Bongshin Lee, John T. Stasko “Effectiveness of Animation in Trend Visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Spatio-temporal Aggregation for Visual Analysis of Movements",
+   "authors": [
+    "Gennady Andrienko",
+    "Natalia Andrienko"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2018 10-Year VAST Test of Time Award: Gennady Andrienko, Natalia Andrienko “Spatio-temporal Aggregation for Visual Analysis of Movements”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "Texture splats for 3D scalar and vector field visualization",
+   "authors": [
+    "Roger Crawfis",
+    "Nelson L. Max"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2018 25-Year VIS Test of Time Award: Roger Crawfis, Nelson L. Max “Texture splats for 3D scalar and vector field visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "A Nested Model for Visualization Design and Validation",
+   "authors": [
+    "Tamara Munzner"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2019 10-Year InfoVis Test of Time Award: Tamara Munzner “A Nested Model for Visualization Design and Validation”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "An evaluation of reconstruction filters for volume rendering",
+   "authors": [
+    "Stephen Marschner",
+    "Richard Lobb"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2019 25-Year VIS Test of Time Award: Stephen Marschner, Richard Lobb “An evaluation of reconstruction filters for volume rendering”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Cluster and calendar based visualization of time series data",
+   "authors": [
+    "Jarke J. Van Wijk",
+    "Edward R. Van Selow"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2019 20-Year InfoVis Test of Time Award: Jarke J. Van Wijk, Edward R. Van Selow “Cluster and calendar based visualization of time series data”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Parallel tag clouds to explore and analyze faceted text corpora",
+   "authors": [
+    "Christopher Collins",
+    "Fernanda B. Viegas",
+    "Martin Wattenberg"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2019 10-Year VAST Test of Time Award: Christopher Collins, Fernanda B. Viegas, and Martin Wattenberg “Parallel tag clouds to explore and analyze faceted text corpora”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "Simplifying Flexible Isosurfaces Using local Geometric Measures",
+   "authors": [
+    "Hamish Carr",
+    "Jack Snoeyink",
+    "Michiel van de Panne"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2019 15-Year SciVis Test of Time Award: Hamish Carr, Jack Snoeyink, Michiel van de Panne “Simplifying Flexible Isosurfaces Using local Geometric Measures”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "High Dimensional Brushing for Interactive Exploration of Multivariate Data",
+   "authors": [
+    "Allen R. Martin",
+    "Matthew O. Ward"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2020 25-Year VIS Test of Time Award: Allen R. Martin, Matthew O. Ward “High Dimensional Brushing for Interactive Exploration of Multivariate Data”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "iVisClassifier: An interactive visual analytics system for classification based on supervised dimension reduction",
+   "authors": [
+    "Jaegul Choo",
+    "Hanseung Lee",
+    "Jaeyeon Kihm",
+    "Haesun Park"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2020 10-Year VAST Test of Time Award: Jaegul Choo, Hanseung Lee, Jaeyeon Kihm, and Haesun Park “iVisClassifier: An interactive visual analytics system for classification based on supervised dimension reduction”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "Narrative Visualization: Telling Stories with Data",
+   "authors": [
+    "Edward Segel",
+    "Jeffrey Heer"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2020 10-Year InfoVis Test of Time Award: Edward Segel, Jeffrey Heer “Narrative Visualization: Telling Stories with Data”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Polaris: a system for query, analysis and visualization of multi-dimensional relational databases",
+   "authors": [
+    "Chris Stolte",
+    "Diane Tang",
+    "Pat Hanrahan"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2020 20-Year InfoVis Test of Time Award: Chris Stolte, Diane Tang, Pat Hanrahan “Polaris: a system for query, analysis and visualization of multi-dimensional relational databases”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "The Value of Visualization",
+   "authors": [
+    "Jarke J. van Wijk"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2020 15-Year SciVis Test of Time Award: Jarke J. van Wijk “The Value of Visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "Ambient Occlusion and Edge Cueing for Enhancing Real Time Molecular Visualization",
+   "authors": [
+    "Marco Tarini",
+    "Paolo Cignoni",
+    "Claudio Montani"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2021 15-Year SciVis Test of Time Award: Marco Tarini, Paolo Cignoni, Claudio Montani “Ambient Occlusion and Edge Cueing for Enhancing Real Time Molecular Visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "D3: Data-Driven Documents",
+   "authors": [
+    "Michael Bostock",
+    "Vadim Ogievetsky",
+    "Jeffrey Heer"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2021 10-Year InfoVis Test of Time Award: Michael Bostock, Vadim Ogievetsky, Jeffrey Heer “D3: Data-Driven Documents”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Ordered Treemap Layouts",
+   "authors": [
+    "Ben Shneiderman",
+    "Martin Wattenberg"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2021 20-Year InfoVis Test of Time Award: Ben Shneiderman, Martin Wattenberg “Ordered Treemap Layouts”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "SensePlace2: GeoTwitter analytics support for situational awareness",
+   "authors": [
+    "Alan M. MacEachren",
+    "Anuj Jaiswal",
+    "Anthony C. Robinson",
+    "Scott Pezanowski",
+    "Alexander Savelyev",
+    "Prasenjit Mitra",
+    "Xiao Zhang",
+    "Justine Blanford"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2021 10-Year VAST Test of Time Award: Alan M. MacEachren, Anuj Jaiswal, Anthony C. Robinson, Scott Pezanowski, Alexander Savelyev, Prasenjit Mitra, Xiao Zhang, and Justine Blanford “SensePlace2: GeoTwitter analytics support for situational awareness”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "The Design and Implementation of an Object-Oriented Toolkit for 3D Graphics and Visualization",
+   "authors": [
+    "William J. Schroeder",
+    "Kenneth M. Martin",
+    "William E. Lorensen"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2021 25-Year VIS Test of Time Award: William J. Schroeder, Kenneth M. Martin, William E. Lorensen “The Design and Implementation of an Object-Oriented Toolkit for 3D Graphics and Visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "14-Year SciVis Test of Time Award",
+   "title": "A practical approach to Morse-Smale complex computation: Scalability and generality",
+   "authors": [
+    "Attila Gyulassy",
+    "Peer-Timo Bremer",
+    "Bernd Hamann",
+    "Valerio Pascucci"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 14-Year SciVis Test of Time Award: Attila Gyulassy, Peer-Timo Bremer, Bernd Hamann, and Valerio Pascucci “A practical approach to Morse-Smale complex computation: Scalability and generality”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "Design Study Methodology: Reflections from the Trenches and the Stacks",
+   "authors": [
+    "Michael Sedlmair",
+    "Miriah Meyer",
+    "Tamara Munzner"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 10-Year InfoVis Test of Time Award: Michael Sedlmair, Miriah Meyer, Tamara Munzner “Design Study Methodology: Reflections from the Trenches and the Stacks”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "15-Year SciVis Test of Time Award",
+   "title": "Efficient Computation and Visualization of Coherent Structures in Fluid Flow Applications",
+   "authors": [
+    "Christoph Garth",
+    "Florian Gerhardt",
+    "Xavier Tricoche",
+    "Hans Hagen"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 15-Year SciVis Test of Time Award: Christoph Garth, Florian Gerhardt, Xavier Tricoche, Hans Hagen “Efficient Computation and Visualization of Coherent Structures in Fluid Flow Applications”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Enterprise Data Analysis and Visualization: An Interview Study",
+   "authors": [
+    "Sean Kandel",
+    "Andreas Paepcke",
+    "Joseph M. Hellerstein",
+    "Jeffrey Heer"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 10-Year VAST Test of Time Award: Sean Kandel, Andreas Paepcke, Joseph M. Hellerstein, Jeffrey Heer “Enterprise Data Analysis and Visualization: An Interview Study”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "ROAMing terrain: Real-time Optimally Adapting Meshes",
+   "authors": [
+    "Mark Duchaineau",
+    "Murray Wolinsky",
+    "David E. Sigeti",
+    "Mark C. Miller",
+    "Charles Aldrich",
+    "Mark B. Mineev-Weinstein"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 25-Year VIS Test of Time Award: Mark Duchaineau, Murray Wolinsky, David E. Sigeti, Mark C. Miller, Charles Aldrich, Mark B. Mineev-Weinstein “ROAMing terrain: Real-time Optimally Adapting Meshes”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "SpaceTree: supporting exploration in large node link tree, design evolution and empirical evaluation",
+   "authors": [
+    "Catherine Plaisant",
+    "Jesse Grosjean",
+    "Benjamin B Bederson"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2022 20-Year InfoVis Test of Time Award: Catherine Plaisant, Jesse Grosjean, Benjamin B Bederson “SpaceTree: supporting exploration in large node link tree, design evolution and empirical evaluation”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "A Multi-Level Typology of Abstract Visualization Tasks",
+   "authors": [
+    "Matthew Brehmer",
+    "Tamara Munzner"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 10-Year InfoVis Test of Time Award: Matthew Brehmer, Tamara Munzner “A Multi-Level Typology of Abstract Visualization Tasks”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "13-Year SciVis Test of Time Award",
+   "title": "An Information-theoretic Framework for Visualization",
+   "authors": [
+    "Min Chen",
+    "Heike Leitte"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 13-Year SciVis Test of Time Award: Min Chen, Heike Leitte “An Information-theoretic Framework for Visualization”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "14-Year SciVis Test of Time Award",
+   "title": "Depth-Dependent Halos: Illustrative Rendering of Dense Line Data",
+   "authors": [
+    "Maarten H. Everts",
+    "Henk Bekker",
+    "Jos B. T. M. Roerdink",
+    "Tobias Isenberg"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 14-Year SciVis Test of Time Award: Maarten H. Everts, Henk Bekker, Jos B. T. M. Roerdink, Tobias Isenberg “Depth-Dependent Halos: Illustrative Rendering of Dense Line Data”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Interactive hierarchical dimension ordering, spacing and filtering for exploration of high dimensional datasets",
+   "authors": [
+    "Jing Yang",
+    "Wei Peng",
+    "Matthew O. Ward",
+    "Elke A. Rundensteiner"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 20-Year InfoVis Test of Time Award: Jing Yang, Wei Peng, Matthew O. Ward, Elke A. Rundensteiner “Interactive hierarchical dimension ordering, spacing and filtering for exploration of high dimensional datasets”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "Smooth view-dependent level-of-detail control and its application to terrain rendering",
+   "authors": [
+    "Hugues Hoppe"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 25-Year VIS Test of Time Award: Hugues Hoppe “Smooth view-dependent level-of-detail control and its application to terrain rendering”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Visual Exploration of Big Spatio-Temporal Urban Data: A Study of New York City Taxi Trips",
+   "authors": [
+    "Nivan Ferreira",
+    "Jorge Poco",
+    "Huy T. Vo",
+    "Juliana Freire",
+    "Cláudio T. Silva"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2023 10-Year VAST Test of Time Award: Nivan Ferreira, Jorge Poco, Huy T. Vo, Juliana Freire, Cláudio T. Silva “Visual Exploration of Big Spatio-Temporal Urban Data: A Study of New York City Taxi Trips”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "A Comparison of the Readability of Graphs Using Node-Link and Matrix-Based Representations",
+   "authors": [
+    "Mohammad Ghoniem",
+    "Jean-Daniel Fekete",
+    "Philippe Castagliola"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 20-Year InfoVis Test of Time Award: Mohammad Ghoniem, Jean-Daniel Fekete, Philippe Castagliola “A Comparison of the Readability of Graphs Using Node-Link and Matrix-Based Representations”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "14-Year SciVis Test of Time Award",
+   "title": "Efficient Structure-Aware Selection Techniques for 3D Point Cloud Visualizations with 2DOF Input",
+   "authors": [
+    "Lingyun Yu",
+    "Konstantinos Efstathiou",
+    "Petra Isenberg",
+    "Tobias Isenberg"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 14-Year SciVis Test of Time Award: Lingyun Yu, Konstantinos Efstathiou, Petra Isenberg, Tobias Isenberg “Efficient Structure-Aware Selection Techniques for 3D Point Cloud Visualizations with 2DOF Input”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "25-Year VIS Test of Time Award",
+   "title": "Hierarchical parallel coordinates for exploration of large datasets",
+   "authors": [
+    "Ying-Huey Fua",
+    "Matthew O. Ward",
+    "Elke A. Rundensteiner"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 25-Year VIS Test of Time Award: Ying-Huey Fua, Matthew O. Ward, Elke A. Rundensteiner “Hierarchical parallel coordinates for exploration of large datasets”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Knowledge Generation Model for Visual Analytics",
+   "authors": [
+    "Dominik Sacha",
+    "Andreas Stoffel",
+    "Florian Stoffel",
+    "Bum Chul Kwon",
+    "Geoffrey Ellis",
+    "Daniel A. Keim"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 10-Year VAST Test of Time Award: Dominik Sacha, Andreas Stoffel, Florian Stoffel, Bum Chul Kwon, Geoffrey Ellis, Daniel A. Keim “Knowledge Generation Model for Visual Analytics”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "13-Year SciVis Test of Time Award",
+   "title": "Tuner: Principled Parameter Finding for Image Segmentation Algorithms Using Visual Response Surface Exploration",
+   "authors": [
+    "Thomas Torsney-Weir",
+    "Ahmed Saad",
+    "Torsten Möller",
+    "Hans-Christian Hege",
+    "Britta Weber",
+    "Jean-Marc Verbavatz",
+    "Steven Bergner"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 13-Year SciVis Test of Time Award: Thomas Torsney-Weir, Ahmed Saad, Torsten Möller, Hans-Christian Hege, Britta Weber, Jean-Marc Verbavatz, Steven Bergner “Tuner: Principled Parameter Finding for Image Segmentation Algorithms Using Visual Response Surface Exploration”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "UpSet: Visualization of Intersecting Sets",
+   "authors": [
+    "Alexander Lex",
+    "Nils Gehlenborg",
+    "Hendrik Strobelt",
+    "Romain Vuillemot",
+    "Hanspeter Pfister"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2024 10-Year InfoVis Test of Time Award: Alexander Lex, Nils Gehlenborg, Hendrik Strobelt, Romain Vuillemot, Hanspeter Pfister “UpSet: Visualization of Intersecting Sets”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "25-Year SciVis Test of Time Award",
+   "title": "A flow-guided streamline seeding strategy",
+   "authors": [
+    "Vivek Verma",
+    "David L. Kao",
+    "Alex Pang"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 25-Year SciVis Test of Time Award: Vivek Verma, David L. Kao, Alex Pang “A flow-guided streamline seeding strategy”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "12-Year SciVis Test of Time Award",
+   "title": "Contour Boxplots: A Method for Characterizing Uncertainty in Feature Sets from Simulation Ensembles",
+   "authors": [
+    "Ross T. Whitaker",
+    "Mahsa Mirzargar",
+    "Robert M. Kirby"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 12-Year SciVis Test of Time Award: Ross T. Whitaker, Mahsa Mirzargar, Robert M. Kirby “Contour Boxplots: A Method for Characterizing Uncertainty in Feature Sets from Simulation Ensembles”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "11-Year SciVis Test of Time Award",
+   "title": "Fixed-Rate Compressed Floating-Point Arrays",
+   "authors": [
+    "Peter Lindstrom"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 11-Year SciVis Test of Time Award: Peter Lindstrom “Fixed-Rate Compressed Floating-Point Arrays”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "20-Year InfoVis Test of Time Award",
+   "title": "Graph-theoretic scagnostics",
+   "authors": [
+    "Leland Wilkinson",
+    "Anushka Anand",
+    "Robert L. Grossman"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 20-Year InfoVis Test of Time Award: Leland Wilkinson, Anushka Anand, Robert L. Grossman “Graph-theoretic scagnostics”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "10-Year VAST Test of Time Award",
+   "title": "Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration",
+   "authors": [
+    "Stef van den Elzen",
+    "Danny Holten",
+    "Jorik Blaas",
+    "Jarke J. van Wijk"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 10-Year VAST Test of Time Award: Stef van den Elzen, Danny Holten, Jorik Blaas, Jarke J. van Wijk “Reducing Snapshots to Points: A Visual Analytics Approach to Dynamic Network Exploration”"
+  },
+  {
+   "venue": "VIS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "10-Year InfoVis Test of Time Award",
+   "title": "Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations",
+   "authors": [
+    "Kanit Wongsuphasawat",
+    "Dominik Moritz",
+    "Anushka Anand",
+    "Jock D. Mackinlay",
+    "Bill Howe",
+    "Jeffrey Heer"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
+   "evidence": "VIS 2025 10-Year InfoVis Test of Time Award: Kanit Wongsuphasawat, Dominik Moritz, Anushka Anand, Jock D. Mackinlay, Bill Howe, Jeffrey Heer “Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations”"
   },
   {
    "venue": "VLDB",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.13 — 2026-10-12
+
+- The IEEE VIS Test-of-Time Awards (InfoVis, VAST, SciVis and VIS tracks, awarded 2016–2025, 51 papers) from IEEE VIS's own history page (`tot.mjs vis`). The bundled list has 5034 awards.
+
 ## 2.9.12 — 2026-10-12
 
 - The IMC Test of Time Award (2022–2023, 5 papers) from the ACM-hosted copy of SIGCOMM's page (`tot.mjs imc`). The bundled list has 4983 awards.
