@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.2 — 2026-10-12
+
+- NeurIPS's 2018 test-of-time paper, The Tradeoffs of Large-Scale Learning (Bottou, Bousquet), from the NIPS 2018 conference book (`tot.mjs nips-book-2018`). The bundled list has 6011 awards.
+
 ## 2.10.1 — 2026-10-12
 
 - The three Copy buttons share one row of equal width (the third used to drop alone onto a second line in the side panel); the panel-part switches on the settings page sit indented under "Show the summary panel".

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6010
+  "count": 6011
  },
  "entries": [
   {
@@ -76259,6 +76259,20 @@
    "track": "main",
    "source": "https://nips.cc/Conferences/2018/Awards",
    "evidence": "Best Papers: Optimal Algorithms for Non-Smooth Distributed Optimization in Networks — By: Kevin Scaman · Francis Bach · Sebastien Bubeck · Laurent Massoulié · Yin Tat Lee"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Tradeoffs of Large-Scale Learning",
+   "authors": [
+    "Leon Bottou",
+    "Olivier Bousquet"
+   ],
+   "track": "main",
+   "source": "https://media.nips.cc/Conferences/NIPS2018/NIPS-2018-Conference-Book.pdf",
+   "evidence": "NIPS 2018 conference book, Tuesday schedule: Test Of Time Award: Leon Bottou, Olivier Bousquet — The Tradeoffs of Large-Scale Learning"
   },
   {
    "venue": "NeurIPS",

@@ -1616,3 +1616,11 @@ test("NeurIPS blog posts: 'The awarded papers are:' with title / authors lines (
   assert.deepEqual(b.entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2022 ImageNet Classification with Deep Convolutional Neural Networks | Alex Krizhevsky; Ilya Sutskever; Geoffrey Hinton"]);
   assert.deepEqual([...a.skipped, ...b.skipped], []);
 });
+
+test("NIPS 2018 conference book: the Test of Time line names the authors, the next line the paper; the overview row (time first) is not read as a second one", async () => {
+  const { parseNipsBookTot } = await import("../scripts/awards/tot.mjs");
+  const text = `Test Of Time Award:\n9:40 - 10:05 AM Leon Bottou, Olivier Bousquet\nThe Tradeoffs of Large-Scale\nLearning (2007)\n=====PAGE 10=====\nTest Of Time Award: Leon Bottou, Olivier Bousquet\nThe Tradeoffs of Large-Scale Learning\nCoffee break`;
+  const { entries, skipped } = parseNipsBookTot(text);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2018 The Tradeoffs of Large-Scale Learning | Leon Bottou; Olivier Bousquet"]);
+  assert.deepEqual(skipped, []);
+});
