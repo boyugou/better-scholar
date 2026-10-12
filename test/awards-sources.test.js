@@ -1512,3 +1512,20 @@ test("ETAPS best paper page: category sections per year, wrapped records ending 
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("IEEE RAS award pages: 'Winners of this Award', a year line, authors / “title” line pairs (several per year), ranks, student markers, nicknames; pre-1990 rows left out", async () => {
+  const { parseRas, RAS } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>Eligibility: all papers.</p><p>Winners of this Award</p><p>2025</p><p>Zi Cong Guo, James Richard Forbes, and Timothy Barfoot</p><p>“Marginalizing and Conditioning Gaussians Onto Linear Approximations of Smooth Manifolds”</p><p>For constructing a general approach.</p>
+<p>Yuheng Qiu, Yutian Chen and Sebastian Scherer</p><p>“MAC-VO: Metrics-Aware Covariance for Learning-Based Stereo Visual Odometry”</p><p>2011</p><p>Award Not Presented</p>
+<p>2008</p><p>1st Place: Chiwoo Park (Student Author), Yu Ding, Eunshin Byon</p><p>“Collaborative Data Reduction for Energy Efficient Wireless Sensor Networks”</p>
+<p>2004</p><p>K. “Gopal” Gopalakrishnan, Ken Goldberg</p><p>“D-Space and Deform Closure: A Framework for Holding Objects”</p>
+<p>1988</p><p>Old Author, Other Author</p><p>“Adaptive Load-Sharing Force Control for Two-Arm Manipulators”</p><p>Follow us</p>`;
+  const { entries, skipped } = parseRas(html, RAS["ras-icra-student"], "https://example.org/");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.venue} ${e.award} [${e.awardLabel}] ${e.title.slice(0, 24)} | ${e.authors.join("; ")}`), [
+    "2025 ICRA student [ICRA Best Student Paper Award] Marginalizing and Condit | Zi Cong Guo; James Richard Forbes; Timothy Barfoot",
+    "2025 ICRA student [ICRA Best Student Paper Award] MAC-VO: Metrics-Aware Co | Yuheng Qiu; Yutian Chen; Sebastian Scherer",
+    "2008 ICRA student [ICRA Best Student Paper Award (place 1)] Collaborative Data Reduc | Chiwoo Park; Yu Ding; Eunshin Byon",
+    "2004 ICRA student [ICRA Best Student Paper Award] D-Space and Deform Closu | K. Gopalakrishnan; Ken Goldberg"
+  ]);
+  assert.deepEqual(skipped, []);
+});

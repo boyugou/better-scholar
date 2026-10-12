@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.35 — 2026-10-12
+
+- The ICRA and CASE paper awards (286 papers: ICRA Best Conference Paper 1993–2025, Best Student Paper 1990–2025, thirteen area awards such as Automation, Medical Robotics, Robot Vision; CASE Best Conference,
+  Student, Application, Healthcare Automation and Young Researcher papers) from IEEE RAS's own award pages (`tot.mjs ras-*`). The bundled list has 5868 awards.
+
 ## 2.9.34 — 2026-10-12
 
 - The ETAPS best paper awards (2011–2026, 97 papers: the EATCS, EASST and EAPLS Best Paper, Best Tool Paper, Springer's Best Student Paper and the 2025–2026 Distinguished Paper awards)

@@ -860,6 +860,53 @@ export function parseEtapsBest(html, source = PAGES["etaps-bp"]) {
   return { entries, skipped };
 }
 
+// IEEE RAS's conference award pages (www.ieee-ras.org/awards-recognition/conference-awards/<award>/): each has a "Winners of this Award" list — a year line, then per
+// paper a line of authors and a line with the title in quotation marks, sometimes followed by a line of citation text. The award (and venue) is the page's.
+export const RAS = {
+  "ras-icra": { slug: "ieee-icra-best-conference-paper-award", venue: "ICRA", award: "best", label: "ICRA Best Conference Paper Award" },
+  "ras-icra-student": { slug: "ieee-icra-best-student-paper-award", venue: "ICRA", award: "student", label: "ICRA Best Student Paper Award" },
+  "ras-icra-automation": { slug: "ieee-icra-best-paper-award-in-automation", venue: "ICRA", award: "category", label: "ICRA Best Paper Award in Automation" },
+  "ras-icra-hri": { slug: "ieee-icra-best-paper-award-on-human-robot-interaction", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Human-Robot Interaction" },
+  "ras-icra-medical": { slug: "ieee-icra-best-paper-award-in-medical-robotics", venue: "ICRA", award: "category", label: "ICRA Best Paper Award in Medical Robotics" },
+  "ras-icra-multirobot": { slug: "ieee-icra-best-paper-award-on-multi-robot-systems", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Multi-Robot Systems" },
+  "ras-icra-mechanisms": { slug: "ieee-icra-best-paper-award-on-mechanisms-and-design", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Mechanisms and Design" },
+  "ras-icra-manipulation": { slug: "ieee-icra-best-paper-award-on-robot-manipulation-and-locomotion", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Robot Manipulation and Locomotion" },
+  "ras-icra-field": { slug: "ieee-icra-best-paper-award-in-field-and-service-robotics", venue: "ICRA", award: "category", label: "ICRA Best Paper Award in Field and Service Robotics" },
+  "ras-icra-vision": { slug: "ieee-icra-best-paper-award-in-robot-vision", venue: "ICRA", award: "category", label: "ICRA Best Paper Award in Robot Vision" },
+  "ras-icra-cognitive": { slug: "ieee-icra-best-paper-award-in-cognitive-robotics", venue: "ICRA", award: "category", label: "ICRA Best Paper Award in Cognitive Robotics" },
+  "ras-icra-uav": { slug: "ieee-icra-best-paper-award-on-unmanned-aerial-vehicles", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Unmanned Aerial Vehicles" },
+  "ras-icra-perception": { slug: "ieee-icra-best-paper-award-on-robot-perception", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Robot Perception" },
+  "ras-icra-learning": { slug: "ieee-icra-best-paper-award-on-robot-learning", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Robot Learning" },
+  "ras-icra-planning": { slug: "ieee-icra-best-paper-award-on-planning-and-control", venue: "ICRA", award: "category", label: "ICRA Best Paper Award on Planning and Control" },
+  "ras-case-young": { slug: "ieee-case-peter-luh-memorial-best-paper-award-for-young-researcher", venue: "CASE", award: "category", label: "CASE Peter Luh Memorial Best Paper Award for Young Researcher" },
+  "ras-case": { slug: "ieee-case-best-conference-paper-award", venue: "CASE", award: "best", label: "CASE Best Conference Paper Award" },
+  "ras-case-student": { slug: "ieee-case-best-student-paper-award", venue: "CASE", award: "student", label: "CASE Best Student Paper Award" },
+  "ras-case-application": { slug: "ieee-case-best-application-paper-award", venue: "CASE", award: "category", label: "CASE Best Application Paper Award" },
+  "ras-case-healthcare": { slug: "ieee-case-best-healthcare-automation-paper-award", venue: "CASE", award: "category", label: "CASE Best Healthcare Automation Paper Award" }
+};
+for (const [k, v] of Object.entries(RAS)) PAGES[k] = `https://www.ieee-ras.org/awards-recognition/conference-awards/${v.slug}/`;
+export function parseRas(html, cfg, source) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const start = ls.findIndex((l) => /^Winners of this Award/i.test(l));
+  let year = null;
+  for (let i = start < 0 ? ls.length : start + 1; i < ls.length; i++) {
+    const l = ls[i];
+    if (/^(?:19|20)\d{2}$/.test(l)) { year = parseInt(l, 10); continue; }
+    if (!year) continue;
+    if (/^Follow us$/i.test(l) || /^Home$/.test(l)) break;
+    if (year < 1990) continue;                                              // the bundled list starts at 1990 (the student award goes back to 1988)
+    if (!/^[“"]/.test(l) || i === 0) continue;
+    // ("1st Place: " puts a rank in front of the names; a nickname in quotation marks sits between two of them)
+    const title = cleanTitle(l), authorLine = ls[i - 1], place = (/^(\d)(?:st|nd|rd|th) Place:\s*/i.exec(authorLine) || [])[1];
+    const who = names(authorLine.replace(/^\d(?:st|nd|rd|th) Place:\s*/i, "").replace(/\s*[“"][^”"]*[”"]\s*/g, " ").replace(/\s+and\s+/g, ", and "));
+    const label = place ? `${cfg.label} (place ${place})` : cfg.label;
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: cfg.venue, year, award: cfg.award, awardLabel: label, title, authors: who, track: "main", source, evidence: `${label} ${year}: ${authorLine} — “${title}”` });
+    else skipped.push(`${year}: not read: ${authorLine.slice(0, 50)} / ${title.slice(0, 40)}`);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -915,7 +962,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
