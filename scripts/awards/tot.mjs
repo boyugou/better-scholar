@@ -137,6 +137,7 @@ const PAGES = {
   mobicom: "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
   "mobicom-year": "https://www.sigmobile.org/mobicom/2025/awards.html",
   "mobisys-year": "https://www.sigmobile.org/mobisys/2017/program.php",
+  "asplos-year": "https://www.asplos-conference.org/awards/",
   "www-best": "https://www2022.thewebconf.org/awards",
   sc: "https://sc25.supercomputing.org/program/awards/",
   siggraph: "https://blog.siggraph.org/2025/06/siggraph-2025-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/",
@@ -1545,6 +1546,45 @@ export function parseMobisysYear(html, source) {
   return { entries, skipped };
 }
 
+// An ASPLOS year's awards (www.asplos-conference.org/awards/ for the current year, asplos<year>/…/index.html for the others; the address is the third argument): under "Best Paper Awards" or "Distinguished Paper Awards" a title line and an authors' line
+// (affiliations in brackets or not; "Spring / Summer / Fall" lines between), under "Influential Paper Award(s)" the same with the paper's year ("… ASPLOS 2009" or "(ASPLOS 2013)") closing the title; 2022 prints each paper on one line, "Title, Authors."
+// The honorable mentions (titles only), the artifact awards and the distinguished reviewers are not read.
+export function parseAsplosYear(html, source) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/[\u200e\u200f\u202a-\u202e]/g, "").trim()).filter(Boolean);
+  const year = parseInt((/asplos(\d{4})|\/(\d{4})\//.exec(source) || [])[1] || (/ASPLOS (\d{4})/.exec(ls[0] || "") || [])[1] || (/ASPLOS (20\d{2})/.exec(ls.slice(0, 40).join(" ")) || [])[1], 10);
+  const SEC = (l) => (/^Best Paper Awards?$/i.test(l) ? ["best", "Best Paper Award"] : /^Distinguished Paper Awards?$/i.test(l) ? ["distinguished", "Distinguished Paper Award"] : /^(?:ASPLOS )?Influential Paper Awards?$/i.test(l) ? ["tot", "Influential Paper Award"] : null);
+  const END = /^(?:Platinum Sponsors|Distinguished (?:Artifact|Reviewers)|ASPLOS \d{4} Distinguished Reviewers|Best Paper Honorable Mentions|Distinguished Artifact Evaluation|CARES|Proudly powered)/i;
+  const add = (kind, title0, who) => {
+    const py = (/\(?ASPLOS\s*(\d{4})\)?\.?\s*$/i.exec(title0) || [])[1];
+    const t = cleanTitle(title0.replace(/[,\s]*\(?ASPLOS\s*\d{4}\)?\.?\s*$/i, "").replace(/,\s*$/, ""));
+    if (who.length && t.length >= 8) entries.push({ venue: "ASPLOS", year, award: kind[0], awardLabel: kind[1], title: t, authors: who, track: "main", source, evidence: `ASPLOS ${year} ${kind[1]}: ${t} — ${who.join(", ")}`, ...(py && kind[0] === "tot" ? { paperYear: parseInt(py, 10) } : {}) });
+    else skipped.push(`${year}: not read: ${t.slice(0, 50)}`);
+  };
+  if (!year) return { entries, skipped: ["no year"] };
+  let kind = null;
+  const starts = ls.map((l, i) => (SEC(l) && ls[i + 1] && !SEC(ls[i + 1]) && (kddAuthors(ls[i + 2] || "").length || /,\s+\p{Lu}[\p{L}.' -]+(?:,| and )/u.test(ls[i + 1]) || /\)$/.test(ls[i + 2] || "")) ? i : -1)).filter((i) => i >= 0);
+  if (!starts.length) return { entries, skipped: ["no award section"] };
+  for (let i = starts[0]; i < ls.length; i++) {
+    const l = ls[i];
+    const k = SEC(l);
+    if (k) { kind = k; continue; }
+    if (END.test(l) || (kind && /^Proudly/.test(l))) { kind = null; continue; }
+    if (!kind) continue;
+    // one-line form (2022): "Title, Authors."
+    const next = ls[i + 1] || "";
+    if (kddAuthors(next, true).length && !SEC(next) && !END.test(next)) { add(kind, l, kddAuthors(next, true)); i++; continue; }
+    const tl = /,\s*ASPLOS\s*(\d{4})\.?$/.exec(l);
+    const pieces = (tl ? l.slice(0, tl.index) + (tl ? "" : "") : l).split(/(,\s+)/);
+    for (let c = 2; c < pieces.length; c += 2) {
+      const tail = pieces.slice(c).join("").replace(/\.$/, "");
+      const who = kddAuthors(tail);
+      if (who.length >= 1 && pieces.slice(0, c - 1).join("").length >= 8 && !kddAuthors(pieces.slice(0, c - 1).join("")).length && (/ and /.test(tail) || who.length >= 2)) { add(kind, pieces.slice(0, c - 1).join("") + (tl ? ` (ASPLOS ${tl[1]})` : ""), who); break; }
+    }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -1600,7 +1640,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, "mobisys-year": parseMobisysYear, "mobicom-year": parseMobicomYear, sc: parseScAwards, "www-best": parseWwwBest, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, "asplos-year": parseAsplosYear, "mobisys-year": parseMobisysYear, "mobicom-year": parseMobicomYear, sc: parseScAwards, "www-best": parseWwwBest, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);

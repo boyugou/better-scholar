@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.35 — 2026-10-12
+
+- ASPLOS's best, distinguished and influential paper awards of 2022–2026 (36 papers) from the conference's own site (`tot.mjs asplos-year`); the honorable mentions and artifact awards are not read. The list has 6296 awards.
+
 ## 2.10.34 — 2026-10-12
 
 - MobiSys's best papers of 2011–2014, 2016 and 2017 (10 papers: SignalGuru, Chameleon, ACE, Energy Characterization and Optimization of Image Sensing Toward Continuous Mobile Vision, Rio, BackDoor …) from the conference's own program pages

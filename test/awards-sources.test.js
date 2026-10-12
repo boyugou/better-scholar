@@ -1847,3 +1847,12 @@ test("a MobiSys year's program page: 'Best Paper' / 'Best Paper Runner Up' then 
     "2011 Chameleo | Mian Dong; L. Zhong"
   ]);
 });
+
+test("an ASPLOS year's page: title and authors lines (affiliations in brackets or not), 'Title, Authors.' lines, influential papers with their year; honorable mentions and artifact awards are left out", async () => {
+  const { parseAsplosYear } = await import("../scripts/awards/tot.mjs");
+  const h = `<h2>Best Paper Awards</h2><p>Fast Thing For Systems</p><p>Ann Lee (MIT); Bo Chan (CMU)</p><h2>Best Paper Honorable Mentions</h2><p>Only A Title Here</p><h2>Influential Paper Awards</h2><p>An old idea that lasted for years, Cy Dunn, Di Eng, ASPLOS 1999.</p><h2>Distinguished Artifact Awards</h2><p>Artifact Paper Title, Ed Fox and Flo Gray.</p>`;
+  assert.deepEqual(parseAsplosYear(h, "https://www.asplos-conference.org/asplos2022/").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} ${e.title} | ${e.authors.join("; ")}`), [
+    "2022 best  Fast Thing For Systems | Ann Lee; Bo Chan",
+    "2022 tot 1999 An old idea that lasted for years | Cy Dunn; Di Eng"
+  ]);
+});

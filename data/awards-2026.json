@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6260
+  "count": 6296
  },
  "entries": [
   {
@@ -7493,6 +7493,74 @@
   {
    "venue": "ASPLOS",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Tree Clock Data Structure for Causal Orderings in Concurrent Executions",
+   "authors": [
+    "Umang Mathur",
+    "Andreas Pavlogiannis",
+    "Hünkar Can Tunç",
+    "Mahesh Viswanathan"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2022/",
+   "evidence": "ASPLOS 2022 Best Paper Award: A Tree Clock Data Structure for Causal Orderings in Concurrent Executions — Umang Mathur, Andreas Pavlogiannis, Hünkar Can Tunç, Mahesh Viswanathan"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "JSONSki: Streaming Semi-Structured Data with Bit-Parallel Fast-Forwarding",
+   "authors": [
+    "Lin Jiang",
+    "Zhijia Zhao"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2022/",
+   "evidence": "ASPLOS 2022 Best Paper Award: JSONSki: Streaming Semi-Structured Data with Bit-Parallel Fast-Forwarding — Lin Jiang, Zhijia Zhao"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TMO: Transparent Memory Offloading in Datacenters",
+   "authors": [
+    "Johannes Weiner",
+    "Niket Agarwal",
+    "Dan Schatzberg",
+    "Leon Yang",
+    "Hao Wang",
+    "Blaise Sanouillet",
+    "Bikash Sharma",
+    "Tejun Heo",
+    "Mayank Jain",
+    "Chunqiang Tang",
+    "Dimitrios Skarlatos"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2022/",
+   "evidence": "ASPLOS 2022 Best Paper Award: TMO: Transparent Memory Offloading in Datacenters — Johannes Weiner, Niket Agarwal, Dan Schatzberg, Leon Yang, Hao Wang, Blaise Sanouillet, Bikash Sharma, Tejun Heo, Mayank Jain, Chunqiang Tang, Dimitrios Skarlatos"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Understanding and exploiting optimal function inlining",
+   "authors": [
+    "Theodoros Theodoridis",
+    "Thobias Grosser",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2022/",
+   "evidence": "ASPLOS 2022 Best Paper Award: Understanding and exploiting optimal function inlining — Theodoros Theodoridis, Thobias Grosser, Zhendong Su"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Most Influential Paper Award",
    "title": "Design and evaluation of a compiler algorithm for prefetching",
@@ -7504,7 +7572,10 @@
    "track": "main",
    "paperYear": 1992,
    "source": "https://sigplan.org/Awards/Other",
-   "evidence": "ASPLOS 2022 Most Influential Paper Award: Todd C. Mowry, Monica S. Lam, and Anoop Gupta “Design and evaluation of a compiler algorithm for prefetching”"
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Todd C. Mowry, Monica S. Lam, and Anoop Gupta “Design and evaluation of a compiler algorithm for prefetching”",
+   "alsoAt": [
+    "https://www.asplos-conference.org/asplos2022/"
+   ]
   },
   {
    "venue": "ASPLOS",
@@ -7521,7 +7592,10 @@
    "track": "main",
    "paperYear": 2008,
    "source": "https://sigplan.org/Awards/Other",
-   "evidence": "ASPLOS 2022 Most Influential Paper Award: Shan Lu, Soyeon Park, Eunsoo Seo, and Yuanyuan Zhou “Learning from mistakes: a comprehensive study on real world concurrency bug characteristics”"
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Shan Lu, Soyeon Park, Eunsoo Seo, and Yuanyuan Zhou “Learning from mistakes: a comprehensive study on real world concurrency bug characteristics”",
+   "alsoAt": [
+    "https://www.asplos-conference.org/asplos2022/"
+   ]
   },
   {
    "venue": "ASPLOS",
@@ -7539,7 +7613,578 @@
    "track": "main",
    "paperYear": 2011,
    "source": "https://sigplan.org/Awards/Other",
-   "evidence": "ASPLOS 2022 Most Influential Paper Award: Donald E. Porter, Silas Boyd-Wickizer, Jon Howell, Reuben Olinsky, and Galen C. Hunt “Rethinking the Library OS from the Top Down”"
+   "evidence": "ASPLOS 2022 Most Influential Paper Award: Donald E. Porter, Silas Boyd-Wickizer, Jon Howell, Reuben Olinsky, and Galen C. Hunt “Rethinking the Library OS from the Top Down”",
+   "alsoAt": [
+    "https://www.asplos-conference.org/asplos2022/"
+   ]
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "A Generic Service to Provide In-network Aggregation for Key-value Streams",
+   "authors": [
+    "Yongchao He",
+    "Wenfei Wu",
+    "Yanfang Le",
+    "Ming Liu",
+    "ChonLam Lao"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: A Generic Service to Provide In-network Aggregation for Key-value Streams — Yongchao He, Wenfei Wu, Yanfang Le, Ming Liu, ChonLam Lao"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "eHDL: Turning eBPF/XDP Programs into Hardware Designs for the NIC",
+   "authors": [
+    "Alessandro Rivitti",
+    "Roberto Bifulco",
+    "Angelo Tulumello",
+    "Marco Bonola",
+    "Salvatore Pontarelli"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: eHDL: Turning eBPF/XDP Programs into Hardware Designs for the NIC — Alessandro Rivitti, Roberto Bifulco, Angelo Tulumello, Marco Bonola, Salvatore Pontarelli"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Going Beyond the Limits of SFI: Flexible Hardware-Assisted In-Process Isolation with HFI",
+   "authors": [
+    "Shravan Narayan",
+    "Mohammadkazem Taram",
+    "Joey Rudek",
+    "Chris Fallin",
+    "Anjo Vahldiek-Oberwagner",
+    "Ravi Sahita",
+    "Dean Tullsen"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Going Beyond the Limits of SFI: Flexible Hardware-Assisted In-Process Isolation with HFI — Shravan Narayan, Mohammadkazem Taram, Joey Rudek, Chris Fallin, Anjo Vahldiek-Oberwagner, Ravi Sahita, Dean Tullsen"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Hacky Racers: Exploiting Instruction-Level Parallelism to Generate Stealthy Fine-Grained Timers",
+   "authors": [
+    "Haocheng Xiao",
+    "Sam Ainsworth"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Hacky Racers: Exploiting Instruction-Level Parallelism to Generate Stealthy Fine-Grained Timers — Haocheng Xiao, Sam Ainsworth"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Junkyard Computing: Repurposing Discarded Smartphones to Minimize Carbon",
+   "authors": [
+    "Jennifer Switzer",
+    "Gabriel Marcano",
+    "Ryan Kastner",
+    "Pat Pannuto"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Junkyard Computing: Repurposing Discarded Smartphones to Minimize Carbon — Jennifer Switzer, Gabriel Marcano, Ryan Kastner, Pat Pannuto"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Lucid: A Non-Intrusive, Scalable and Interpretable Scheduler for Deep Learning Training Jobs",
+   "authors": [
+    "Qinghao Hu",
+    "Peng Sun",
+    "Yonggang Wen"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Lucid: A Non-Intrusive, Scalable and Interpretable Scheduler for Deep Learning Training Jobs — Qinghao Hu, Peng Sun, Yonggang Wen"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "MC Mutants: Evaluating and Improving Testing for Memory Consistency Specifications",
+   "authors": [
+    "Reese Levine",
+    "Alan Baker",
+    "Andrew Quinn"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: MC Mutants: Evaluating and Improving Testing for Memory Consistency Specifications — Reese Levine, Alan Baker, Andrew Quinn"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Mosaic Pages: Big TLB Reach with Small Pages",
+   "authors": [
+    "Krishnan Gosakan",
+    "Jaehyun Han",
+    "William Kuszmaul",
+    "Ibrahim Nael Mubarek",
+    "Karthik Sriram",
+    "Guido Tagliavini",
+    "Evan West",
+    "Abhishek Bhattacharjee",
+    "Alex Conway",
+    "Martin Farach-Colton",
+    "Jayneel Gandhi",
+    "Rob Johnson",
+    "Sudarsun Kannan",
+    "Donald Porter"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Mosaic Pages: Big TLB Reach with Small Pages — Krishnan Gosakan, Jaehyun Han, William Kuszmaul, Ibrahim Nael Mubarek, Karthik Sriram, Guido Tagliavini, Evan West, Abhishek Bhattacharjee, Alex Conway, Martin Farach-Colton, Jayneel Gandhi, Rob Johnson, Sudarsun Kannan, Donald Porter"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Pond: CXL-Based Memory Pooling Systems for Cloud Platforms",
+   "authors": [
+    "Huaicheng Li",
+    "Daniel S. Berger",
+    "Lisa Hsu",
+    "Dan Ernst",
+    "Stanko Novakovic",
+    "Monish Shah",
+    "Scott Lee",
+    "Ishwar Agarwal",
+    "Mark D. Hill",
+    "Marcus Fontoura",
+    "Ricardo Bianchini"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Pond: CXL-Based Memory Pooling Systems for Cloud Platforms — Huaicheng Li, Daniel S. Berger, Lisa Hsu, Dan Ernst, Stanko Novakovic, Monish Shah, Scott Lee, Ishwar Agarwal, Mark D. Hill, Marcus Fontoura, Ricardo Bianchini"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Propeller: A Profile Guided, Relinking Optimizer for Warehouse Scale Applications",
+   "authors": [
+    "Han Shen",
+    "Krzysztof Pszeniczny",
+    "Rahman Lavaee",
+    "Snehasish Kumar",
+    "Sriraman Tallam",
+    "Xinliang Li"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: Propeller: A Profile Guided, Relinking Optimizer for Warehouse Scale Applications — Han Shen, Krzysztof Pszeniczny, Rahman Lavaee, Snehasish Kumar, Sriraman Tallam, Xinliang Li"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "RepCut: Superlinear Parallel RTL Simulation with Replication-Aided Partitioning",
+   "authors": [
+    "Haoyuan Wang",
+    "Scott Beamer"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Distinguished Paper Award: RepCut: Superlinear Parallel RTL Simulation with Replication-Aided Partitioning — Haoyuan Wang, Scott Beamer"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Clearing the clouds: a study of emerging scale-out workloads on modern hardware",
+   "authors": [
+    "Michael Ferdman",
+    "Almutaz Adileh",
+    "Onur Kocberber",
+    "Stavros Volos",
+    "Mohammad Alisafaee",
+    "Djordje Jevdjic",
+    "Cansu Kaynak",
+    "Adrian Daniel Popescu",
+    "Anastasia Ailamaki",
+    "Babak Falsafi"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2023/",
+   "evidence": "ASPLOS 2023 Influential Paper Award: Clearing the clouds: a study of emerging scale-out workloads on modern hardware — Michael Ferdman, Almutaz Adileh, Onur Kocberber, Stavros Volos, Mohammad Alisafaee, Djordje Jevdjic, Cansu Kaynak, Adrian Daniel Popescu, Anastasia Ailamaki, Babak Falsafi"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors",
+   "authors": [
+    "Samuel Thomas",
+    "James Bornholt"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+   "evidence": "ASPLOS 2024 Best Paper Award: Automatic Generation of Vectorizing Compilers for Customizable Digital Signal Processors — Samuel Thomas, James Bornholt"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CSSTs: A Dynamic Data Structure for Partial Orders in Concurrent Execution Analysis",
+   "authors": [
+    "Hünkar Can Tunç",
+    "Ameya Prashant Deshmukh",
+    "Berk Cirisci",
+    "Constantin Enea",
+    "Andreas Pavlogiannis"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+   "evidence": "ASPLOS 2024 Best Paper Award: CSSTs: A Dynamic Data Structure for Partial Orders in Concurrent Execution Analysis — Hünkar Can Tunç, Ameya Prashant Deshmukh, Berk Cirisci, Constantin Enea, Andreas Pavlogiannis"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GIANTSAN: Efficient Memory Sanitization with Segment Folding",
+   "authors": [
+    "Hao Ling",
+    "Heqing Huang",
+    "Chengpeng Wang"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+   "evidence": "ASPLOS 2024 Best Paper Award: GIANTSAN: Efficient Memory Sanitization with Segment Folding — Hao Ling, Heqing Huang, Chengpeng Wang"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ngAP: Non-blocking Large-scale Automata Processing on GPUs",
+   "authors": [
+    "Tianao Ge",
+    "Tong Zhang",
+    "Hongyuan Liu"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+   "evidence": "ASPLOS 2024 Best Paper Award: ngAP: Non-blocking Large-scale Automata Processing on GPUs — Tianao Ge, Tong Zhang, Hongyuan Liu"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PDIP: Priority Directed Instruction Prefetching",
+   "authors": [
+    "Bhargav Reddy Godala",
+    "Sankara Prasad Ramesh",
+    "Gilles A. Pokam",
+    "Dean Tullsen",
+    "David I. August"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+   "evidence": "ASPLOS 2024 Best Paper Award: PDIP: Priority Directed Instruction Prefetching — Bhargav Reddy Godala, Sankara Prasad Ramesh, Gilles A. Pokam, Dean Tullsen, David I. August"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CXLfork: Fast Remote Fork over CXL Fabrics",
+   "authors": [
+    "Chloe Alverti",
+    "Stratos Psomadakis",
+    "Burak Ocalan",
+    "Shashwat Jaiswal",
+    "Tianyin Xu",
+    "Josep Torrellas"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Best Paper Award: CXLfork: Fast Remote Fork over CXL Fabrics — Chloe Alverti, Stratos Psomadakis, Burak Ocalan, Shashwat Jaiswal, Tianyin Xu, Josep Torrellas"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "H-Houdini: Scalable Invariant Learning",
+   "authors": [
+    "Sushant Dinesh",
+    "Yongye Zhu",
+    "Christopher W. Fletcher"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Best Paper Award: H-Houdini: Scalable Invariant Learning — Sushant Dinesh, Yongye Zhu, Christopher W. Fletcher"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Orion: A Fully Homomorphic Encryption Framework for Deep Learning",
+   "authors": [
+    "Austin Ebel",
+    "Karthik Garimella",
+    "Brandon Reagen"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Best Paper Award: Orion: A Fully Homomorphic Encryption Framework for Deep Learning — Austin Ebel, Karthik Garimella, Brandon Reagen"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SmoothE: Differentiable E-Graph Extraction",
+   "authors": [
+    "Yaohui Cai",
+    "Kaixin Yang",
+    "Chenhui Deng",
+    "Cunxi Yu",
+    "Zhiru Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Best Paper Award: SmoothE: Differentiable E-Graph Extraction — Yaohui Cai, Kaixin Yang, Chenhui Deng, Cunxi Yu, Zhiru Zhang"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "xUI: extended User Interrupts",
+   "authors": [
+    "Berk Aydogmus",
+    "Linsong Guo",
+    "Danial Zuberi",
+    "Tal Garfinkel",
+    "Dean Tullsen",
+    "Amy Ousterhout",
+    "Kazem Taram"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Best Paper Award: xUI: extended User Interrupts — Berk Aydogmus, Linsong Guo, Danial Zuberi, Tal Garfinkel, Dean Tullsen, Amy Ousterhout, Kazem Taram"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "PowerNap: Eliminating Server Idle Power",
+   "authors": [
+    "David Meisner",
+    "Brian T. Gold",
+    "Thomas F. Wenisch"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Influential Paper Award: PowerNap: Eliminating Server Idle Power — David Meisner, Brian T. Gold, Thomas F. Wenisch"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Unikernels: Library Operating Systems for the Cloud",
+   "authors": [
+    "Anil Madhavapeddy",
+    "Richard Mortier",
+    "Charalampos Rotsos",
+    "David J. Scott",
+    "Balraj Singh",
+    "Thomas Gazagnaire",
+    "Steven Smith",
+    "Steven Hand",
+    "Jon Crowcroft"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.asplos-conference.org/asplos2025/awards/index.html",
+   "evidence": "ASPLOS 2025 Influential Paper Award: Unikernels: Library Operating Systems for the Cloud — Anil Madhavapeddy, Richard Mortier, Charalampos Rotsos, David J. Scott, Balraj Singh, Thomas Gazagnaire, Steven Smith, Steven Hand, Jon Crowcroft"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CounterPoint: Using Hardware Event Counters to Refute and Refine Microarchitectural Assumptions",
+   "authors": [
+    "Nick Lindsay",
+    "Caroline Trippel",
+    "Anurag Khandelwal",
+    "Abhishek Bhattacharjee"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Best Paper Award: CounterPoint: Using Hardware Event Counters to Refute and Refine Microarchitectural Assumptions — Nick Lindsay, Caroline Trippel, Anurag Khandelwal, Abhishek Bhattacharjee"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Finding Reusable Instructions via E-Graph Anti-Unification",
+   "authors": [
+    "Youwei Xiao",
+    "Chenyun Yin",
+    "Yitian Sun",
+    "Yuyang Zou",
+    "Yun Liang"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Best Paper Award: Finding Reusable Instructions via E-Graph Anti-Unification — Youwei Xiao, Chenyun Yin, Yitian Sun, Yuyang Zou, Yun Liang"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lifetime-Aware Design of Item-Level Intelligence",
+   "authors": [
+    "Shvetank Prakash",
+    "Andrew Cheng",
+    "Olof Kindgren",
+    "Ashiq Ahamed",
+    "Graham Knight",
+    "Jed Kufel",
+    "Francisco Rodriguez",
+    "Arya Tschand",
+    "David Kong",
+    "Mariam Elgamal",
+    "Jerry Huang",
+    "Emma Chen",
+    "Gage Hills",
+    "Richard Price",
+    "Emre Ozer",
+    "Vijay Janapa Reddi"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Best Paper Award: Lifetime-Aware Design of Item-Level Intelligence — Shvetank Prakash, Andrew Cheng, Olof Kindgren, Ashiq Ahamed, Graham Knight, Jed Kufel, Francisco Rodriguez, Arya Tschand, David Kong, Mariam Elgamal, Jerry Huang, Emma Chen, Gage Hills, Richard Price, Emre Ozer, Vijay Janapa Reddi"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PF-LLM: Large Language Model Hinted Hardware Prefetching",
+   "authors": [
+    "Ceyu Xu",
+    "Xiangfeng Sun",
+    "Weihang Li",
+    "Chen Bai",
+    "Bangyan Wang",
+    "Mengming Li",
+    "Zhiyao Xie",
+    "Yuan Xie"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Best Paper Award: PF-LLM: Large Language Model Hinted Hardware Prefetching — Ceyu Xu, Xiangfeng Sun, Weihang Li, Chen Bai, Bangyan Wang, Mengming Li, Zhiyao Xie, Yuan Xie"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "vCXLGen: Automated Synthesis and Verification of CXL Bridges for Heterogeneous Architectures",
+   "authors": [
+    "Anatole Lefort",
+    "Julian Pritzi",
+    "Nicolò Carpentieri",
+    "David Schall",
+    "Simon Dittrich",
+    "Soham Chakraborty",
+    "Nicolai Oswald",
+    "Pramod Bhatotia"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Best Paper Award: vCXLGen: Automated Synthesis and Verification of CXL Bridges for Heterogeneous Architectures — Anatole Lefort, Julian Pritzi, Nicolò Carpentieri, David Schall, Simon Dittrich, Soham Chakraborty, Nicolai Oswald, Pramod Bhatotia"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A Hardware Design Language for Timing-Sensitive Information-Flow Security",
+   "authors": [
+    "Danfeng Zhang",
+    "Yao Wang",
+    "G. Edward Suh",
+    "Andrew C. Myers"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Influential Paper Award: A Hardware Design Language for Timing-Sensitive Information-Flow Security — Danfeng Zhang, Yao Wang, G. Edward Suh, Andrew C. Myers"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "An Adaptive, Non-Uniform Cache Structure for Wire-Delay Dominated On-Chip Caches",
+   "authors": [
+    "Changkyu Kim",
+    "Doug Burger",
+    "Stephen W. Keckler"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Influential Paper Award: An Adaptive, Non-Uniform Cache Structure for Wire-Delay Dominated On-Chip Caches — Changkyu Kim, Doug Burger, Stephen W. Keckler"
+  },
+  {
+   "venue": "ASPLOS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Overshadow: A Virtualization-Based Approach to Retrofitting Protection in Commodity Operating Systems",
+   "authors": [
+    "Xiaoxin Chen",
+    "Tal Garfinkel",
+    "E. Christopher Lewis",
+    "Pratap Subrahmanyam",
+    "Carl A. Waldspurger",
+    "Dan Boneh",
+    "Jeffrey Dwoskin",
+    "Dan R.K. Ports"
+   ],
+   "track": "main",
+   "source": "https://www.asplos-conference.org/awards/",
+   "evidence": "ASPLOS 2026 Influential Paper Award: Overshadow: A Virtualization-Based Approach to Retrofitting Protection in Commodity Operating Systems — Xiaoxin Chen, Tal Garfinkel, E. Christopher Lewis, Pratap Subrahmanyam, Carl A. Waldspurger, Dan Boneh, Jeffrey Dwoskin, Dan R.K. Ports"
   },
   {
    "venue": "BSDCon",
