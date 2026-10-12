@@ -357,6 +357,12 @@
   // High Performance Computing and Applications, not the architecture symposium)
   const PLACED = /\(\s*(?:China|USA|U\.S\.A?\.?|UK|Japan|Korea|India|Germany|France|Canada|Australia|Singapore|Taiwan|Hong Kong|Europe|Asia)\s*\)/i;
 
+  // Acronyms that are also plain English words (or a journal's whole name): written in capitals they are the venue ("FAST", "DATE"), written as a word they are
+  // not — "Crisis" is a psychology journal, "Spin" and "Image" are journals, "Fast" is a word, not the Conference on File and Storage Technologies
+  const ENGLISH_ACRONYMS = new Set(["fast", "cluster", "group", "wine", "spin", "paste", "image", "mass", "networking", "middleware", "models", "informs",
+    "acta", "wise", "cases", "assets", "forte", "crisis", "compass", "time", "chase", "onward", "raid", "pets", "scam", "ease", "concur", "colt",
+    "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language"]);
+
   // All-caps / camel-case acronym signals present in the string, strongest first.
   function acronymSignals(p) {
     const out = [];
@@ -397,11 +403,12 @@
     }
     // the ACM Digital Library's own citation form: "SC18: International Conference for …", "ICSE '06: Proceedings of …", "CHI'09:" —
     // an acronym, a two-digit year and a colon name the event whatever follows
-    const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})\s*['’]?\s*\d{2}\s*:/.exec(head);
-    if (acmDl && /[A-Z]/.test(acmDl[1])) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true });
+    const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})(\s*['’]?\s*)\d{2}\s*:/.exec(head);
+    // (a two-letter acronym needs the apostrophe or no space before the number: "CHI '09:", "SC18:" — "DS 30: Proceedings of DESIGN 2002" is the Design Society's report series)
+    if (acmDl && /[A-Z]/.test(acmDl[1]) && !(acmDl[1].length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0])) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
     return out;
   }
 

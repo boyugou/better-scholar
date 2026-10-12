@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.9.16 — 2026-10-12
+
+- A one-word string that is an English word or a journal's whole name (*Crisis*, *Fast*, *Spin*, *Image*, *Cluster*, *Wine*, *Group*, *mAbs* …) is no longer read as the conference of that acronym
+  (CRiSIS, FAST, SPIN, …) unless it is written in capitals (*FAST*, *NDSS*, and the title-case *Ndss* Scholar prints still are). *INTERACT* and *date* stay: both are real rows of the corpora.
+- *DS 30: Proceedings of DESIGN 2002 …* (the Design Society's report series) was read as the conference DS through the ACM Digital Library's form "SC18:": a two-letter acronym needs the
+  apostrophe or no space before the number there (*CHI '09:*, *SC18:*).
+
 ## 2.9.15 — 2026-10-12
 
 - Four more names that only look like a venue, found the same way: *International Security* (a political-science journal) was read as the USENIX Security Symposium, a bare *Journal* as the

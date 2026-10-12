@@ -473,6 +473,13 @@ test("a month is a whole word: 'Journal of Marketing' is not 'Journal of' (and s
   assert.equal(brief("SIGCOMM, Sept. 2008"), "CCF A SIGCOMM · CORE A* SIGCOMM");
 });
 
+test("a one-word string that is an English word or a journal's whole name is not the conference of that acronym unless it is written in capitals", () => {
+  for (const w of ["Crisis", "Fast", "Spin", "Image", "Cluster", "Wine", "Group", "mAbs"]) assert.equal(brief(w), "", w);
+  for (const w of ["FAST", "NDSS", "Ndss"]) assert.notEqual(brief(w), "", w);
+  assert.equal(brief("Interact 1, 593-601, 2001"), "CCF C INTERACT · CORE B Interact");
+  assert.equal(brief("date 2, 1138, 2002"), "CCF B DATE · CORE A DATE");
+});
+
 test("names that only look like a venue: 'International Security', 'Journal', 'Journal of Knowledge Management', and an ICTIR that carries SIGIR's name", () => {
   // a political-science journal is not the USENIX Security Symposium; a bare "Journal" is not the Journal of the ACM
   assert.equal(brief("International Security"), "");
