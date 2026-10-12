@@ -84,6 +84,8 @@
     { ccf: "ACM SIGOPS ATC", core: "USENIX", names: ["USENIX Annual Technical Conference", "USENIX Technical Conference", "USENIX ATC"] },
     { ccf: "FAST", core: "FAST", names: ["USENIX Conference on File and Storage Technologies"] },
     { ccf: "ASPLOS", core: "ASPLOS", names: ["International Conference on Architectural Support for Programming Languages and Operating Systems"] },
+    // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)
+    { ccf: "ICSME", core: "ICSME", abbrs: ["ICSM"], names: ["International Conference on Software Maintenance", "IEEE International Conference on Software Maintenance"] },
     { ccf: "ISCA", core: "ISCA", names: ["International Symposium on Computer Architecture", "Annual International Symposium on Computer Architecture", "ACM/IEEE Annual International Symposium on Computer Architecture"] },
     { ccf: "MICRO", core: "MICRO", names: ["IEEE/ACM International Symposium on Microarchitecture", "International Symposium on Microarchitecture"] },
     { ccf: "HPCA", core: "HPCA", names: ["IEEE International Symposium on High Performance Computer Architecture", "International Symposium on High-Performance Computer Architecture"] },

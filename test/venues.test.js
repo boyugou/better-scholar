@@ -421,3 +421,20 @@ test("USENIX ATC's 'General Track' is its main program; the AAAI conference on H
   // two acronyms for one venue are not a disagreement
   assert.equal(brief("Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining, 2009"), "CCF A SIGKDD · CORE A* KDD");
 });
+
+test("the ACM Digital Library's citation form names the event whatever follows: 'SC18: International Conference for …' is SC", () => {
+  const sc = "CCF A SC · CORE A SC";
+  for (const s of ["SC18: International Conference for High Performance Computing, Networking …, 2018", "SC20: International Conference for High Performance Computing, Networking …, 2020",
+    "SC11: Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis, 2011",
+    "SC'18: International Conference for High Performance Computing, Networking, Storage and Analysis, 2018", "SC '19: Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis, 2019"]) {
+    assert.equal(brief(s), sc, s);
+  }
+  assert.equal(brief("ICSE '06: Proceedings of the 28th international conference on Software engineering, 2006"), "CCF A ICSE · CORE A* ICSE");
+  assert.equal(brief("Proceedings of the international conference for high performance computing …, 2021"), "", "no acronym, and the visible words fit several venues");
+});
+
+test("ICSM is the old name of ICSME", () => {
+  for (const s of ["International Conference on Software Maintenance, 2003. ICSM 2003 …, 2003", "ICSM 2008, 2008", "IEEE International Conference on Software Maintenance and Evolution (ICSME), 2014"]) {
+    assert.equal(brief(s), "CCF B ICSME · CORE A ICSME", s);
+  }
+});

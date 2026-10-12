@@ -342,6 +342,10 @@
     const restNoise = canonTokens(rest, "full").length === 0;
     const yearAfter = /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/.test(rest);
     if (looksAcr && (restNoise || yearAfter)) for (const k of keys(first)) out.push({ key: k, kind: "lead", event: yearAfter });
+    // the ACM Digital Library's own citation form: "SC18: International Conference for …", "ICSE '06: Proceedings of …", "CHI'09:" —
+    // an acronym, a two-digit year and a colon name the event whatever follows
+    const acmDl = /^([A-Za-z][A-Za-z0-9&]{1,9})\s*['’]?\s*\d{2}\s*:/.exec(head);
+    if (acmDl && /[A-Z]/.test(acmDl[1])) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
     const words = p.plain.split(/\s+/).filter(Boolean);
     if (words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0])) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });

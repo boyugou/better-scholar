@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.4.7 — 2026-10-12
+
+Eight more real profiles (HPC, systems and machine learning, software engineering, AI planning, robotics, NLP in China, knowledge graphs;
+about 800 venue strings) went through the matcher; 3,000 real strings are now in the corpora.
+
+- **`SC18: International Conference for High Performance Computing, Networking …`** (the ACM Digital Library's citation form —
+  acronym, two-digit year, colon) is SC, with or without an apostrophe and however much of the name follows. Every HPC profile prints
+  its SC papers this way; none was recognised. `ICSE '06: …` and the like are read the same way.
+- **`International Conference on Software Maintenance … ICSM 2003`** is ICSME (renamed in 2014).
+
 ## 2.4.6 — 2026-10-12
 
 Six more real profiles (databases, architecture, cryptography, HCI, information retrieval, theory; 570 venue strings) through the matcher.
