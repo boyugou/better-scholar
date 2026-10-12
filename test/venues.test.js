@@ -706,6 +706,12 @@ test("HCI International is not the journal HCI; a colloquium is not a conference
   assert.equal(brief("Information Visualization, 2007. IV'07. 11th International Conference, 631-636, 2007"), "CORE C IV");
 });
 
+test("a bare two-digit number after a two-letter acronym is not a year", () => {
+  assert.equal(brief("DS 75-4: Proceedings of the 19th International Conference on Engineering Design, 2013"), "", "a Design Society report series");
+  assert.equal(brief("KR'96, 304-314, 1996"), "CCF B KR · CORE A* KR", "an apostrophe makes it a year");
+  assert.equal(brief("KR 2018, 2018"), "CCF B KR · CORE A* KR");
+});
+
 test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN International Conference on Functional …' is ICFP", () => {
   assert.equal(brief("Proceedings of the 15th ACM SIGPLAN international conference on Functional …, 2010"), "CCF B ICFP · CORE A ICFP");
   assert.equal(brief("International Conference on Functional Programming, 117-128, 2010"), "CCF B ICFP · CORE A ICFP", "CCF's row spells it 'Function Programming'");

@@ -380,7 +380,8 @@
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
     // ("HCI International" is a conference of its own — not the journal HCI — although "international" is a noise word)
     const restNoise = canonTokens(rest, "full").length === 0 && !/^international\b/i.test(rest);
-    const yearAfter = /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/.test(rest);
+    // (after a two-letter acronym a bare two-digit number is not a year: "DS 75-4" is a Design Society report, not the conference DS)
+    const yearAfter = (first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/).test(rest);
     if (looksAcr && (restNoise || yearAfter)) {
       // "USENIX ATC 2007": with its organisation first ("usenixatc" is the venue; "atc" alone is a trusted-computing conference)
       const org = head0.length > head.length ? head0.slice(0, head0.length - head.length).trim().split(/[\s/-]+/).filter(Boolean) : [];

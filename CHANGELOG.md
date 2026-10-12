@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.2 — 2026-10-12
+
+Fifteen more real profiles (dialogue and generation, speech, robot learning, blockchain, neuromorphic computing — 1,393 venue strings).
+
+- *DS 75-4: Proceedings of the 19th International Conference on Engineering …* (a Design Society report series) was read as the conference DS: after a
+  two-letter acronym a bare two-digit number is no year (an apostrophe or four digits still is: *KR'96*, *KR 2018*).
+
 ## 2.8.1 — 2026-10-12
 
 - A long list is decorated once, not once per batch: a row whose drawn state (role, ranks, marks, switches) is the same as last time is left alone. With the
