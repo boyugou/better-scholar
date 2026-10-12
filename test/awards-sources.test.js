@@ -1979,3 +1979,15 @@ test("WSDM front pages: the 2018 headings with wrapped titles and authors, the 2
   const c = `<p>WSDM 2021 Best Paper Award Recipient</p><p>38: Unifying online and counterfactual ranking</p><p>Ned Ong (University of Amsterdam), Pam Quinn (Delhaize).</p><p>WSDM 2021 Best Paper Award Runner-Up</p><p>337: Controlled experiments and surrogate metrics</p><p>Rae Sims, Sol Tate (LinkedIn Corporation)</p><p>WSDM 2021 Sponsors & Supporters</p>`;
   assert.deepEqual(parseWsdmYear(c, "https://www.wsdm-conference.org/2021/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Unifying online and counterfactual ranking | Ned Ong; Pam Quinn", "runner-up Controlled experiments and surrogate metrics | Rae Sims; Sol Tate"]);
 });
+
+test("PPoPP front page: titles and authors with bracketed affiliations under 'Best Paper(s)', up to the next heading", async () => {
+  const { parsePpoppYear } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Papers</p><p>A parallel programming result on locks</p><p>Ann Lee (MIT), Bo Chan and Cy Dunn (CMU)</p><p>Best Artifact</p><p>An artifact paper title here</p><p>Ed Fox (UCSD)</p>`;
+  assert.deepEqual(parsePpoppYear(h, "https://ppopp22.sigplan.org/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2022 A parallel programming result on locks | Ann Lee; Bo Chan; Cy Dunn"]);
+});
+
+test("CIKM best-paper page: 'best paper' / 'runner up' marks before a title ending in a dash, one authors' line per author; unmarked nominations left out", async () => {
+  const { parseCikmNominations } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Full Papers</p><p>best paper A graph network for prescribing detection &dash;</p><p>Ann Lee (CWRU, USA),</p><p>Bo Chan (Auburn, USA)</p><p>runner up Knowledge graph embeddings compared &dash;</p><p>Cy Dunn (Peking University, China)</p><p>A merely nominated paper title here &dash;</p><p>Ed Fox (MIT, USA)</p>`;
+  assert.deepEqual(parseCikmNominations(h, "https://www.cikm2021.org/programme/best-paper-nominations").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A graph network for prescribing detection | Ann Lee; Bo Chan", "runner-up Knowledge graph embeddings compared | Cy Dunn"]);
+});

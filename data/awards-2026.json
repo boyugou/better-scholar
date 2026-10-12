@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6481
+  "count": 6497
  },
  "entries": [
   {
@@ -38451,6 +38451,224 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10134/33/program",
    "evidence": "CI 2025 program, Honorable Mention: Quo Vadis, HCOMP? A Review of 12 Years of Research at the Frontier of Human Computation and Crowdsourcing — Jonas Oppenlaender, Ujwal Gadiraju, Simo Hosio"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AudiBERT: A Deep Transfer Learning Multimodal Classification Framework for Depression Screening",
+   "authors": [
+    "Ermal Toto",
+    "ML Tlachac",
+    "Elke A. Rundensteiner"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Award: AudiBERT: A Deep Transfer Learning Multimodal Classification Framework for Depression Screening — Ermal Toto, ML Tlachac, Elke A. Rundensteiner"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DORA THE EXPLORER: Exploring Very Large Data With Interactive Deep Reinforcement Learning",
+   "authors": [
+    "Aurélien Personnaz",
+    "Sihem Amer-Yahia",
+    "Laure Berti-Equille",
+    "Maximilian Fabricius",
+    "Srividya Subramanian"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Award: DORA THE EXPLORER: Exploring Very Large Data With Interactive Deep Reinforcement Learning — Aurélien Personnaz, Sihem Amer-Yahia, Laure Berti-Equille, Maximilian Fabricius, Srividya Subramanian"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Neuron Campaign for Initialization Guided by Information Bottleneck Theory",
+   "authors": [
+    "Haitao Mao",
+    "Xu Chen",
+    "Qiang Fu",
+    "Lun Du",
+    "Shi Han",
+    "Dongmei Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Award: Neuron Campaign for Initialization Guided by Information Bottleneck Theory — Haitao Mao, Xu Chen, Qiang Fu, Lun Du, Shi Han, Dongmei Zhang"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PyTorch Geometric Temporal: Spatiotemporal Signal Processing with Neural Machine Learning Models",
+   "authors": [
+    "Benedek Rozemberczki",
+    "Paul Scherer",
+    "Yixuan He",
+    "George Panagopoulos",
+    "Alexander Riedel",
+    "Maria Astefanoaei",
+    "Oliver Kiss",
+    "Ferenc Beres",
+    "Guzmán López",
+    "Nicolas Collignon",
+    "Rik Sarkar"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Award: PyTorch Geometric Temporal: Spatiotemporal Signal Processing with Neural Machine Learning Models — Benedek Rozemberczki, Paul Scherer, Yixuan He, George Panagopoulos, Alexander Riedel, Maria Astefanoaei, Oliver Kiss, Ferenc Beres, Guzmán López, Nicolas Collignon, Rik Sarkar"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RxNet: Rx-refill Graph Neural Network for Overprescribing Detection",
+   "authors": [
+    "Jianfei Zhang",
+    "Ai-Te Kuo",
+    "Jianan Zhao",
+    "Qianlong Wen",
+    "Erin Winstanley",
+    "Chuxu Zhang",
+    "Yanfang Ye"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Award: RxNet: Rx-refill Graph Neural Network for Overprescribing Detection — Jianfei Zhang, Ai-Te Kuo, Jianan Zhao, Qianlong Wen, Erin Winstanley, Chuxu Zhang, Yanfang Ye"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "A Formal Analysis of Recommendation Quality of Adversarially-trained Recommenders",
+   "authors": [
+    "Vito Walter Anelli",
+    "Yashar Deldjoo",
+    "Tommaso Di Noia",
+    "Felice Antonio Merra"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: A Formal Analysis of Recommendation Quality of Adversarially-trained Recommenders — Vito Walter Anelli, Yashar Deldjoo, Tommaso Di Noia, Felice Antonio Merra"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Cycle or Minkowski: Which is More Appropriate for Knowledge Graph Embedding?",
+   "authors": [
+    "Han Yang",
+    "Leilei Zhang",
+    "Bingning Wang",
+    "Ting Yao",
+    "Junfei Liu"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: Cycle or Minkowski: Which is More Appropriate for Knowledge Graph Embedding? — Han Yang, Leilei Zhang, Bingning Wang, Ting Yao, Junfei Liu"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Detection of Illicit Drug Trafficking Events on Instagram: A Deep Multimodal Multilabel Learning Approach",
+   "authors": [
+    "Chuanbo Hu",
+    "Minglei Yin",
+    "Bin Liu",
+    "Xin Li",
+    "Yanfang Ye"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: Detection of Illicit Drug Trafficking Events on Instagram: A Deep Multimodal Multilabel Learning Approach — Chuanbo Hu, Minglei Yin, Bin Liu, Xin Li, Yanfang Ye"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "DL-Traff: Survey and Benchmark of Deep Learning Models for Urban Traffic Prediction",
+   "authors": [
+    "Renhe Jiang",
+    "Du Yin",
+    "Zhaonan Wang",
+    "Yizhuo Wang",
+    "Jiewen Deng",
+    "Hangchen Liu",
+    "Zekun Cai",
+    "Jinliang Deng",
+    "Xuan Song",
+    "Ryosuke Shibasaki"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: DL-Traff: Survey and Benchmark of Deep Learning Models for Urban Traffic Prediction — Renhe Jiang, Du Yin, Zhaonan Wang, Yizhuo Wang, Jiewen Deng, Hangchen Liu, Zekun Cai, Jinliang Deng, Xuan Song, Ryosuke Shibasaki"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "From Community Search to Community Understanding: A Multimodal Community Query Engine",
+   "authors": [
+    "Zhao Li",
+    "Pengcheng Zou",
+    "Xia Chen",
+    "Shichang Hu",
+    "Peng Zhang",
+    "Yumou Zhang",
+    "Bingsheng He",
+    "Yuchen Li",
+    "Xing Tang"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: From Community Search to Community Understanding: A Multimodal Community Query Engine — Zhao Li, Pengcheng Zou, Xia Chen, Shichang Hu, Peng Zhang, Yumou Zhang, Bingsheng He, Yuchen Li, Xing Tang"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Mining Software Entities in Scientific Literature: Document-level NER for an Extremely Imbalance and Large-scale Task",
+   "authors": [
+    "Patrice Lopez",
+    "Caifan Du",
+    "Johanna Cohoon",
+    "Karthik Ram",
+    "James Howison"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: Mining Software Entities in Scientific Literature: Document-level NER for an Extremely Imbalance and Large-scale Task — Patrice Lopez, Caifan Du, Johanna Cohoon, Karthik Ram, James Howison"
+  },
+  {
+   "venue": "CIKM",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Principled Multi-Aspect Evaluation Measures of Rankings",
+   "authors": [
+    "Maria Maistro",
+    "Lucas Chaves Lima",
+    "Jakob Grue Simonsen",
+    "Christina Lioma"
+   ],
+   "track": "main",
+   "source": "https://www.cikm2021.org/programme/best-paper-nominations",
+   "evidence": "CIKM 2021 Best Paper Runner-up: Principled Multi-Aspect Evaluation Measures of Rankings — Maria Maistro, Lucas Chaves Lima, Jakob Grue Simonsen, Christina Lioma"
   },
   {
    "venue": "COLING",
@@ -86448,6 +86666,67 @@
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
    "evidence": "ETAPS 2018 EAPLS Best Paper Award: Ilya Grishchenko, Matteo Maffei, Clara Schneidewind. A Semantic Framework for the Security Analysis of Ethereum smart contracts"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Interference Relation-Guided SMT Solving for Multi-Threaded Program Verification",
+   "authors": [
+    "Hongyu Fan",
+    "Weiting Liu",
+    "Fei He"
+   ],
+   "track": "main",
+   "source": "https://ppopp22.sigplan.org/",
+   "evidence": "PPoPP 2022 Best Paper Award: Interference Relation-Guided SMT Solving for Multi-Threaded Program Verification — Hongyu Fan, Weiting Liu, Fei He"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lock-Free Locks Revisited",
+   "authors": [
+    "Naama Ben-David",
+    "Guy E. Blelloch",
+    "Yuanhao Wei"
+   ],
+   "track": "main",
+   "source": "https://ppopp22.sigplan.org/",
+   "evidence": "PPoPP 2022 Best Paper Award: Lock-Free Locks Revisited — Naama Ben-David, Guy E. Blelloch, Yuanhao Wei"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Performance Power of Software Combining in Persistence",
+   "authors": [
+    "Panagiota Fatourou",
+    "Nikolaos Kallimanis",
+    "Eleftherios Kosmas"
+   ],
+   "track": "main",
+   "source": "https://ppopp22.sigplan.org/",
+   "evidence": "PPoPP 2022 Best Paper Award: The Performance Power of Software Combining in Persistence — Panagiota Fatourou, Nikolaos Kallimanis, Eleftherios Kosmas"
+  },
+  {
+   "venue": "PPoPP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Provably Fast and Space-Efficient Parallel Biconnectivity",
+   "authors": [
+    "Xiaojun Dong",
+    "Letong Wang",
+    "Yan Gu",
+    "Yihan Sun"
+   ],
+   "track": "main",
+   "source": "https://ppopp23.sigplan.org/",
+   "evidence": "PPoPP 2023 Best Paper Award: Provably Fast and Space-Efficient Parallel Biconnectivity — Xiaojun Dong, Letong Wang, Yan Gu, Yihan Sun"
   },
   {
    "venue": "RecSys",

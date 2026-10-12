@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.53 — 2026-10-12
+
+- PPoPP's best papers of 2022 and 2023 (4 papers) from the conference's own front pages, and CIKM 2021's best and runner-up papers of its five tracks (12 papers) from its best-paper page; the list had none of either (`tot.mjs ppopp-year`, `tot.mjs cikm-year`). The other years' pages name no winners or print them in a form too loose to read. The list has 6497 awards.
+
 ## 2.10.52 — 2026-10-12
 
 - WSDM's best, best student, runner-up and test of time papers of 2018–2021 (15 papers; the list had none) from each year's own front page, which announces the awards in a layout of its own that year (`tot.mjs wsdm-year`); the honorable mentions are not read, and the later years' pages name no winners. The list has 6481 awards.
