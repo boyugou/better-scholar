@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6306
+  "count": 6307
  },
  "entries": [
   {
@@ -77323,6 +77323,26 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobisys/2017/program.php",
    "evidence": "MobiSys 2017 Best Paper Award: BackDoor: Making Microphones Hear Inaudible Sounds — Nirupam Roy, Haitham Hassanieh, Romit Roy Choudhury"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "This is Your President Speaking: Spoofing Alerts in 4G LTE Networks",
+   "authors": [
+    "Gyuhong Lee",
+    "Jihoon Lee",
+    "Jinsung Lee",
+    "Youngbin Im",
+    "Max Hollingsworth",
+    "Eric Wustrow",
+    "Dirk Grunwald",
+    "Sangtae Ha"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2019/program/",
+   "evidence": "MobiSys 2019 Best Paper Award: This is Your President Speaking: Spoofing Alerts in 4G LTE Networks — Gyuhong Lee, Jihoon Lee, Jinsung Lee, Youngbin Im, Max Hollingsworth, Eric Wustrow, Dirk Grunwald, Sangtae Ha"
   },
   {
    "venue": "MODELS",

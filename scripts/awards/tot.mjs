@@ -1515,11 +1515,11 @@ export function parseMobicomYear(html, source) {
 }
 
 // A MobiSys year's own program page (www.sigmobile.org/mobisys/<year>/program.php, 2011's front page; the address is the third argument): under "Awards" the heading "Best Paper" (or "Best Paper Runner Up"), then per paper a title line and an authors' line
-// with the affiliations in brackets; 2011 writes `Best Paper - "Title" by Authors.` The poster, demo and video awards and the journal special section that follows are not read. Only the years laid out like this are read (2011–2014, 2016, 2017).
+// with the affiliations in brackets; 2011 writes `Best Paper - "Title" by Authors.` The poster, demo and video awards and the journal special section that follows are not read. Only the years laid out like this are read (2011–2014, 2016, 2017, 2019).
 export function parseMobisysYear(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\t+/g, " ").trim()).filter(Boolean);
-  const year = parseInt((/^MobiSys (\d{4})\s*[-:]/.exec(ls[0] || "") || [])[1], 10);
+  const year = parseInt((/^MobiSys (\d{4})\s*[-:]/.exec(ls[0] || "") || [])[1] || (/mobisys\/(\d{4})\//.exec(source) || [])[1], 10);
   if (!year) return { entries, skipped: ["no year in the title"] };
   const add = (award, label, t0, who) => {
     const t = cleanTitle(t0);
@@ -1530,13 +1530,13 @@ export function parseMobisysYear(html, source) {
     const m = /^Best Paper\s*[-–]\s*["“](.+?)["”]\s+by\s+(.+?)\.?$/.exec(l);
     if (m) add("best", "Best Paper Award", m[1], kddAuthors(m[2]));
   }
-  const heading = (l) => (/^Best Paper$/.test(l) ? ["best", "Best Paper Award"] : /^Best Paper Runner[- ]?Up$/i.test(l) ? ["runner-up", "Best Paper Runner-up"] : null);
-  const start = ls.findIndex((l, i) => i > 10 && /^(?:Awards|Program)$/.test(ls[i - 1] || "") && heading(l));
+  const heading = (l) => (/^Best Paper(?: Award)?$/.test(l) ? ["best", "Best Paper Award"] : /^Best Paper Runner[- ]?Up$/i.test(l) ? ["runner-up", "Best Paper Runner-up"] : null);
+  const start = ls.findIndex((l, i) => i > 10 && /^(?:Awards|Program|Technical Program)$/.test(ls[i - 1] || "") && heading(l));
   let kind = null;
   for (let i = Math.max(0, start); i < ls.length && start >= 0; i++) {
     const l = ls[i], k = heading(l);
     if (k) { kind = k; continue; }
-    if (/^(?:Best (?:Poster|Demo|Video|Student)|IEEE Transactions|Public review|Advance Program|Free Access)/i.test(l)) break;
+    if (/^(?:Best (?:Poster|Demo|Video|Student|Paper Nominees)|IEEE Transactions|Public review|Advance Program|Free Access)/i.test(l)) break;
     if (!kind) continue;
     if (!/\(/.test(l) && /\(/.test(ls[i + 1] || "")) {                                    // a title, then the authors' line
       const who = kddAuthors(ls[i + 1], true);

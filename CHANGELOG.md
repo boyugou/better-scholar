@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.38 — 2026-10-12
+
+- MobiSys 2019's best paper (This is Your President Speaking: Spoofing Alerts in 4G LTE Networks) from the conference's program page (`tot.mjs mobisys-year`). The list has 6307 awards.
+
 ## 2.10.37 — 2026-10-12
 
 - SIGCOMM 2024's best paper (The Next Generation of BGP Data Collection Platforms) and best student paper (Understanding the Host Network) from the conference's program page (`tot.mjs sigcomm-year`); no other recent year's page names its awards. The list has 6306 awards.
