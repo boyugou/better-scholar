@@ -117,7 +117,8 @@ const PAGES = {
   sigspatial: "https://www.sigspatial.org/people/award-recipients/",
   sigcse: "https://sigcse.org/programs/awards/test-of-time.html",
   icwsm: "https://www.icwsm.org/awards/",
-  etaps: "https://etaps.org/awards/test-of-time"
+  etaps: "https://etaps.org/awards/test-of-time",
+  "etaps-bp": "https://etaps.org/awards/best-paper/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -802,6 +803,63 @@ export function parseEtapsTot(html, source = PAGES.etaps) {
   return { entries, skipped };
 }
 
+// ETAPS best paper page: a year heading (followed by "moreless"), then category headings ("EATCS Best Paper Award", "EASST …", "EAPLS …", "SCP Best Tool Paper Award",
+// "Springer’s Best Student Paper Award", "Distinguished Paper Awards") with their papers, and "Award Nominations" lists, which are not awards and are left out
+// (as are the artifact awards, 2026). A paper is "Authors. Title (TACAS)" / "Authors. Title. TACAS 2019" and wraps over lines (the tag may be alone on the last one,
+// the year on a line of its own); a record ends at a line that ends in the conference tag, or when the next line starts a record of its own.
+const ETAPS_TAG = "TACAS|ESOP|FoSSaCS|FASE|POST|CC";
+function splitAuthorsTitle(text) {
+  for (let i = text.indexOf(". "); i >= 0; i = text.indexOf(". ", i + 1)) {
+    const word = (/(\S+)$/.exec(text.slice(0, i)) || [""])[0];
+    if (word.length < 2 || word.includes(".")) continue;                    // an initial, not the end of the names
+    const who = names(text.slice(0, i)), title = text.slice(i + 2).trim();
+    if (who.length && who.every(isPerson) && /^[\p{L}\d“"]/u.test(title)) return { who, title };
+  }
+  return null;
+}
+export function parseEtapsBest(html, source = PAGES["etaps-bp"]) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const tagEnd = new RegExp(`(?:[.,]\\s+|\\s*\\()(${ETAPS_TAG})\\)?(?:\\s+(?:19|20)\\d{2})?[.\\s]*$`, "i");
+  const tagOnly = new RegExp(`^(?:${ETAPS_TAG})(?:\\s+(?:19|20)\\d{2})?\\.?$`, "i");
+  let year = null, kind = null, label = "", rec = [];
+  const flush = () => {
+    if (!rec.length) return;
+    const text = rec.join(" ").replace(/\s+/g, " ").trim(); rec = [];
+    const tag = tagEnd.exec(text), body = tag ? text.slice(0, tag.index) : text;
+    const split = splitAuthorsTitle(body.replace(/,?\s*$/, "") + (/\.\s*$/.test(body) ? "" : "") );
+    const title = split && cleanTitle(split.title.replace(/[,.\s]+$/, ""));
+    if (split && title.length >= 8) {
+      const venue = tag ? ({ fossacs: "FoSSaCS", fase: "FASE", tacas: "TACAS", esop: "ESOP", post: "POST", cc: "CC" })[tag[1].toLowerCase()] : "ETAPS";
+      entries.push({ venue, year, award: kind, awardLabel: label, title, authors: split.who, track: "main", source, evidence: `ETAPS ${year} ${label}: ${split.who.join(", ")}. ${title}` });
+    } else skipped.push(`${year} ${label}: not read: ${text.slice(0, 70)}`);
+  };
+  const heading = (l) => {
+    if (/^Award Nominations$/i.test(l) || /^Distinguished Artifact Awards?$/i.test(l)) return { kind: null };
+    if (/^Springer.?s Best Student Paper Award$/i.test(l)) return { kind: "student", label: "Springer Best Student Paper Award" };
+    if (/^(?:[A-Z]+ )?Best (?:Tool )?Paper Award$/i.test(l) && l.length < 40) return { kind: "best", label: l.replace(/^Springer.?s /, "") };
+    if (/^Distinguished Paper Awards?$/i.test(l)) return { kind: "distinguished", label: "Distinguished Paper Award" };
+    return null;
+  };
+  for (let i = 0; i < ls.length; i++) {
+    const l = ls[i];
+    if (/^ETAPS International Joint/i.test(l)) break;
+    if (/^(?:19|20)\d{2}$/.test(l) && /^more\s?less$/i.test(ls[i + 1] || "")) { flush(); year = parseInt(l, 10); kind = null; i++; continue; }
+    if (!year) continue;
+    const hd = heading(l);
+    if (hd) { flush(); kind = hd.kind; label = hd.label || ""; continue; }
+    if (!kind) continue;
+    // the next line starts a record of its own while the one being gathered is already whole
+    if (!rec.length && /^(?:19|20)\d{2}$/.test(l)) continue;                 // the year of the paper, wrapped onto a line of its own
+    const own = splitAuthorsTitle(l);
+    if (rec.length && own && !tagOnly.test(own.title) && splitAuthorsTitle(rec.join(" "))) flush();
+    rec.push(l);
+    if (tagEnd.test(rec.join(" "))) flush();
+  }
+  flush();
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -857,7 +915,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

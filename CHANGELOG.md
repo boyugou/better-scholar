@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.34 — 2026-10-12
+
+- The ETAPS best paper awards (2011–2026, 97 papers: the EATCS, EASST and EAPLS Best Paper, Best Tool Paper, Springer's Best Student Paper and the 2025–2026 Distinguished Paper awards)
+  from ETAPS's own page (`tot.mjs etaps-bp`); the nominations lists are not awards and are left out. The bundled list has 5582 awards.
+
 ## 2.9.33 — 2026-10-12
 
 - The ETAPS Test of Time Award (2017–2026, 10 papers: Z3: An Efficient SMT Solver, Mobile Ambients, Handlers of Algebraic Effects, Symbolic model-checking without BDDs …) from ETAPS's own

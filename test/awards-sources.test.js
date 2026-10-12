@@ -1491,3 +1491,24 @@ test("ETAPS Test of Time page: one 'The YYYY ETAPS Test of Time Award went to �
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("ETAPS best paper page: category sections per year, wrapped records ending in the conference tag, nominations left out", async () => {
+  const { parseEtapsBest } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>2022</h3><p>moreless</p><h4>EATCS Best Paper Award</h4>
+<p>Emmanuel Hainry, Bruce Kapron, Jean-Yves Marion and Romain Péchoux. Complete and tractable machine-independent</p><p>characterizations of second-order polytime. FoSSaCS 2022</p>
+<h4>Award Nominations</h4><p>Christel Baier, Florian Funke, Jakob Piribauer and Robin Ziemek. On probability-raising causality in Markov</p><p>decision</p><p>processes. FoSSaCS 2022</p>
+<h4>SCP Best Tool Paper Award</h4><p>Haniel Barbosa, Clark Barrett, Martin Brain and</p><p>Yoni Zohar. cvc5: A Versatile and Industrial-Strength SMT Solver. TACAS 2022</p>
+<h3>2013</h3><p>moreless</p><h4>Springer’s Best Student Paper Award</h4><p>Robbert Krebbers, Freek Wiedijk. Separation logic for non-local control flow and block scope variables. FoSSaCS</p><p>2013</p><p>Shin-ya Katsumata, Tetsuya Sato. Preorders on monads and coalgebraic simulations. FoSSaCS 2013</p>
+<h3>2024</h3><p>moreless</p><h4>EAPLS Best Paper Award</h4><p>Hannah Mertens, Joost-Pieter Katoen, Tim Quatmann and Tobias Winkler. Accurately Computing Expected Visiting Times and Stationary Distributions in Markov Chains</p>
+<h4>Best Tool Paper Award</h4><p>Raphaël Monat, Aymeric Fromherz, and Denis Merigoux. Formalizing Date Arithmetic and Statically Detecting</p><p>Ambiguities for the Law</p>`;
+  const { entries, skipped } = parseEtapsBest(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.venue} ${e.award} ${e.title} | ${e.authors.length}`), [
+    "2022 FoSSaCS best Complete and tractable machine-independent characterizations of second-order polytime | 4",
+    "2022 TACAS best cvc5: A Versatile and Industrial-Strength SMT Solver | 4",
+    "2013 FoSSaCS student Separation logic for non-local control flow and block scope variables | 2",
+    "2013 FoSSaCS student Preorders on monads and coalgebraic simulations | 2",
+    "2024 ETAPS best Accurately Computing Expected Visiting Times and Stationary Distributions in Markov Chains | 4",
+    "2024 ETAPS best Formalizing Date Arithmetic and Statically Detecting Ambiguities for the Law | 3"
+  ]);
+  assert.deepEqual(skipped, []);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5485
+  "count": 5582
  },
  "entries": [
   {
@@ -8202,6 +8202,35 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10146/33/program",
    "evidence": "C&C 2026 program, Honorable Mention: What Makes an AI Writing Companion a Good Fit? A Personality-Informed Co-Design Study — Mengke Wu, Kexin Quan, Weizi Liu, Mike Yao, Jessie Chin"
+  },
+  {
+   "venue": "CC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "A static task partitionic approach for heterogeneous systems using OpenGL",
+   "authors": [
+    "Dominik Grewe",
+    "Michael O’Boyle"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2011 EAPLS Best Paper Award: Dominik Grewe, Michael O’Boyle. A static task partitionic approach for heterogeneous systems using OpenGL"
+  },
+  {
+   "venue": "CC",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Springer Best Student Paper Award",
+   "title": "SSA-based register allocation with PBQP",
+   "authors": [
+    "Sebastian Buchwald",
+    "Andreas Zwinkau",
+    "Thomas Bersch"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2011 Springer Best Student Paper Award: Sebastian Buchwald, Andreas Zwinkau, Thomas Bersch. SSA-based register allocation with PBQP"
   },
   {
    "venue": "CCS",
@@ -48394,6 +48423,108 @@
   },
   {
    "venue": "ESOP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "An array-oriented language with static rank polymorphism",
+   "authors": [
+    "Justin Slepak",
+    "Olin Shivers",
+    "Panagiotis Manolios"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2014 EAPLS Best Paper Award: Justin Slepak, Olin Shivers, Panagiotis Manolios. An array-oriented language with static rank polymorphism"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "A Theory of Name Resolution",
+   "authors": [
+    "Pierre Neron",
+    "Andrew Tolmach",
+    "Eelco Visser",
+    "Guido Wachsmuth"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2015 EAPLS Best Paper Award: Pierre Neron, Andrew Tolmach, Eelco Visser, Guido Wachsmuth. A Theory of Name Resolution"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "An Application of Computable Distributions to the Semantics of Probabilistic Programming Languages",
+   "authors": [
+    "Daniel Huang",
+    "Greg Morrisett"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2016 EAPLS Best Paper Award: Daniel Huang, Greg Morrisett. An Application of Computable Distributions to the Semantics of Probabilistic Programming Languages"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Weakest Precondition Reasoning for Expected Run-Times of Probabilistic Programs",
+   "authors": [
+    "Benjamin Lucien Kaminski",
+    "Joost-Pieter Katoen",
+    "Christoph Matheja",
+    "Federico Olmedo"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2016 EATCS Best Paper Award: Benjamin Lucien Kaminski, Joost-Pieter Katoen, Christoph Matheja, Federico Olmedo. Weakest Precondition Reasoning for Expected Run-Times of Probabilistic Programs"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Commutative Semantics for Probabilistic Programming",
+   "authors": [
+    "Sam Staton"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2017 EATCS Best Paper Award: Sam Staton. Commutative Semantics for Probabilistic Programming"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Contextual Equivalence for Probabilistic Programs with Continuous Random Variables and Scoring",
+   "authors": [
+    "Ryan Culpepper",
+    "Andrew Cobb"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2017 EAPLS Best Paper Award: Ryan Culpepper, Andrew Cobb. Contextual Equivalence for Probabilistic Programs with Continuous Random Variables and Scoring"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Extended call-by-push-value: reasoning about effectful programs and evaluation order",
+   "authors": [
+    "Dylan McDermott",
+    "Alan Mycroft"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2019 EAPLS Best Paper Award: Dylan McDermott, Alan Mycroft. Extended call-by-push-value: reasoning about effectful programs and evaluation order"
+  },
+  {
+   "venue": "ESOP",
    "year": 2019,
    "award": "tot",
    "awardLabel": "ETAPS Test of Time Award",
@@ -48426,6 +48557,19 @@
   {
    "venue": "ESOP",
    "year": 2025,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "First-Person Choreographic Programming with Continuation-Passing Communications",
+   "authors": [
+    "Sung-Shik Jongmans"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 EAPLS Best Paper Award: Sung-Shik Jongmans. First-Person Choreographic Programming with Continuation-Passing Communications"
+  },
+  {
+   "venue": "ESOP",
+   "year": 2025,
    "award": "tot",
    "awardLabel": "ETAPS Test of Time Award",
    "title": "A Basis for Verifying Multi-threaded Programs",
@@ -48437,6 +48581,618 @@
    "paperYear": 2009,
    "source": "https://etaps.org/awards/test-of-time",
    "evidence": "ETAPS 2025 Test of Time Award: K. Rustan M. Leino and Peter Müller — ESOP 2009 “A Basis for Verifying Multi-threaded Programs”"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "SCP Best Tool Paper Award",
+   "title": "AutoHyper: Explicit-State Model Checking for HyperLTL",
+   "authors": [
+    "Raven Beutner",
+    "Bernd Finkbeiner"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2023 SCP Best Tool Paper Award: Raven Beutner, Bernd Finkbeiner. AutoHyper: Explicit-State Model Checking for HyperLTL"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Automatic Alignment in Higher-Order Probabilistic Programming Languages",
+   "authors": [
+    "Daniel Lundén",
+    "Gizem Çaylak",
+    "Fredrik Ronquist",
+    "David Broman"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2023 EAPLS Best Paper Award: Daniel Lundén, Gizem Çaylak, Fredrik Ronquist, David Broman. Automatic Alignment in Higher-Order Probabilistic Programming Languages"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Accurately Computing Expected Visiting Times and Stationary Distributions in Markov Chains",
+   "authors": [
+    "Hannah Mertens",
+    "Joost-Pieter Katoen",
+    "Tim Quatmann",
+    "Tobias Winkler"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2024 EAPLS Best Paper Award: Hannah Mertens, Joost-Pieter Katoen, Tim Quatmann, Tobias Winkler. Accurately Computing Expected Visiting Times and Stationary Distributions in Markov Chains"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Tool Paper Award",
+   "title": "Formalizing Date Arithmetic and Statically Detecting Ambiguities for the Law",
+   "authors": [
+    "Raphaël Monat",
+    "Aymeric Fromherz",
+    "Denis Merigoux"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2024 Best Tool Paper Award: Raphaël Monat, Aymeric Fromherz, Denis Merigoux. Formalizing Date Arithmetic and Statically Detecting Ambiguities for the Law"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "A Behavioural Pseudometric For Continuous-time Markov Processes",
+   "authors": [
+    "Linan Chen",
+    "Florence Clerc",
+    "Prakash Panangaden"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Linan Chen, Florence Clerc, Prakash Panangaden. A Behavioural Pseudometric For Continuous-time Markov Processes"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Cyclone: A Heterogeneous Tool For verifying Infinite Descent",
+   "authors": [
+    "Liron Cohen",
+    "Reuben Rowe",
+    "Matan Shaked"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Liron Cohen, Reuben Rowe, Matan Shaked. Cyclone: A Heterogeneous Tool For verifying Infinite Descent"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Dynamic Verification Of OCaml Software With Gospel And Ortac/QCheck-Stm",
+   "authors": [
+    "Nikolaus Huber",
+    "Naomi Spargo",
+    "Nicolas Osborne",
+    "Samuel Hym",
+    "Jan Midtgaard"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Nikolaus Huber, Naomi Spargo, Nicolas Osborne, Samuel Hym, Jan Midtgaard. Dynamic Verification Of OCaml Software With Gospel And Ortac/QCheck-Stm"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "First-Person Choreographic Programming with Continuation-Passing Communications",
+   "authors": [
+    "Sung-Shik Jongmans"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Sung-Shik Jongmans. First-Person Choreographic Programming with Continuation-Passing Communications"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Hybridize functions: A Tool For Automatically Refactoring Imperative Deep Learning Programs to Graph Execution",
+   "authors": [
+    "Raffi Khatchadourian",
+    "Tatiana Castro Vélez",
+    "Mehdi Bagherzadeh",
+    "Nan Jia",
+    "Anita Raja"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Raffi Khatchadourian, Tatiana Castro Vélez, Mehdi Bagherzadeh, Nan Jia, Anita Raja. Hybridize functions: A Tool For Automatically Refactoring Imperative Deep Learning Programs to Graph Execution"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Model-checking Real-Time Systems: Revisiting the Alternating Automaton Route",
+   "authors": [
+    "Patricia Bouyer",
+    "B Srivathsan",
+    "Vaishnavi Vishwanath"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Patricia Bouyer, B Srivathsan, Vaishnavi Vishwanath. Model-checking Real-Time Systems: Revisiting the Alternating Automaton Route"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Non-Zero-Sum Games With Multiple Weighted Objectives",
+   "authors": [
+    "Yoav Feisntein",
+    "Orna Kupferman",
+    "Noam Shenwald"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Yoav Feisntein, Orna Kupferman, Noam Shenwald. Non-Zero-Sum Games With Multiple Weighted Objectives"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "On the Relationship Between Dijkstra Monads And Higher-order Fixpoint Logic",
+   "authors": [
+    "Risa Yamada",
+    "Naoki Kobayashi",
+    "Ken Sakayori",
+    "Ryosuke Sato"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Risa Yamada, Naoki Kobayashi, Ken Sakayori, Ryosuke Sato. On the Relationship Between Dijkstra Monads And Higher-order Fixpoint Logic"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "SemML: Enhancing Automata-Theoretic Ltl Synthesis with Machine Learning",
+   "authors": [
+    "Jan Kretinsky",
+    "Tobias Meggendorfer",
+    "Maximilian Prokop",
+    "Ashkan Zarkhah"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Jan Kretinsky, Tobias Meggendorfer, Maximilian Prokop, Ashkan Zarkhah. SemML: Enhancing Automata-Theoretic Ltl Synthesis with Machine Learning"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Sharing and Linear Logic with Restricted Access",
+   "authors": [
+    "Pablo Barenbaum",
+    "Eduardo Bonelli"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Pablo Barenbaum, Eduardo Bonelli. Sharing and Linear Logic with Restricted Access"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Sound Statistical Model Checking For Probabilities and Expected Rewards",
+   "authors": [
+    "Carlos E. Budde",
+    "Arnd Hartmanns",
+    "Tobias Meggendorfer",
+    "Maximilian Weininger",
+    "Patrick Wienhöft"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Carlos E. Budde, Arnd Hartmanns, Tobias Meggendorfer, Maximilian Weininger, Patrick Wienhöft. Sound Statistical Model Checking For Probabilities and Expected Rewards"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Symbolic State Partitioning for Reinforcement Learning",
+   "authors": [
+    "Mohsen Ghaffari",
+    "Mahsa Varshosaz",
+    "Einar Broch Johnsen",
+    "Andrzej Wasowski"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Mohsen Ghaffari, Mahsa Varshosaz, Einar Broch Johnsen, Andrzej Wasowski. Symbolic State Partitioning for Reinforcement Learning"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Unsatisfiability Proofs for Horn Solving",
+   "authors": [
+    "Rodrigo Otoni",
+    "Martin Blicha",
+    "Matias Barandiaran Rivera",
+    "Patrick Eugster",
+    "Jan Kofroň",
+    "Natasha Sharygina"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Rodrigo Otoni, Martin Blicha, Matias Barandiaran Rivera, Patrick Eugster, Jan Kofroň, Natasha Sharygina. Unsatisfiability Proofs for Horn Solving"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Voce: A Virtual on-Call Engineer For Automated Alert Incident Analysis Using A large Language Model",
+   "authors": [
+    "Jia Chen",
+    "Xiao Lei Chen",
+    "Jie Shi",
+    "Peng Wang",
+    "Wei Wang"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Distinguished Paper Award: Jia Chen, Xiao Lei Chen, Jie Shi, Peng Wang, Wei Wang. Voce: A Virtual on-Call Engineer For Automated Alert Incident Analysis Using A large Language Model"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Don’t Go MAD with Anomalies! Design-Time Microservice Anomaly Detection in Migration to Microservices",
+   "authors": [
+    "Valentim Romão",
+    "Rafael Soares",
+    "Luis Rodrigues",
+    "Vasco Manquinho"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 EASST Best Paper Award: Valentim Romão, Rafael Soares, Luis Rodrigues, Vasco Manquinho. Don’t Go MAD with Anomalies! Design-Time Microservice Anomaly Detection in Migration to Microservices"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Tool Paper Award",
+   "title": "Massively Parallel Bit-Precise Verification with Bitwuzla and Mallob",
+   "authors": [
+    "Dominik Schreiber",
+    "Aina Niemetz",
+    "Mathias Preiner"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Best Tool Paper Award: Dominik Schreiber, Aina Niemetz, Mathias Preiner. Massively Parallel Bit-Precise Verification with Bitwuzla and Mallob"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "On Deciding Constant Runtime of Linear Loops",
+   "authors": [
+    "Florian Frohn",
+    "Jürgen Giesl",
+    "Peter Giesl",
+    "Nils Lommen"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 EAPLS Best Paper Award: Florian Frohn, Jürgen Giesl, Peter Giesl, Nils Lommen. On Deciding Constant Runtime of Linear Loops"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Recursive Logical Relations for Intuitionistic Linear Logic Session Types",
+   "authors": [
+    "Stephanie Balzer",
+    "Farzaneh Derakhshan",
+    "Robert Harper",
+    "Yue Yao"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 EATCS Best Paper Award: Stephanie Balzer, Farzaneh Derakhshan, Robert Harper, Yue Yao. Recursive Logical Relations for Intuitionistic Linear Logic Session Types"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "The Value Problem for Weighted Timed Games with Two clocks is Undecidable",
+   "authors": [
+    "Isa Vialard",
+    "Joël Ouaknine",
+    "Quentin Guilmant"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 EATCS Best Paper Award: Isa Vialard, Joël Ouaknine, Quentin Guilmant. The Value Problem for Weighted Timed Games with Two clocks is Undecidable"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "A Case Study in Firmware Verification: Applying Formal Methods to Intel TDX Module",
+   "authors": [
+    "Dirk Beyer",
+    "Po-Chun Chien",
+    "Bo-Yuan Huang",
+    "Nian-Ze Lee",
+    "Thomas Lemberger"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Dirk Beyer, Po-Chun Chien, Bo-Yuan Huang, Nian-Ze Lee, Thomas Lemberger. A Case Study in Firmware Verification: Applying Formal Methods to Intel TDX Module"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Auditing Rust Crates Effectively",
+   "authors": [
+    "Lydia Zoghbi",
+    "David Thien",
+    "Ranjit Jhala",
+    "Deian Stefan",
+    "Caleb Stanford"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Lydia Zoghbi, David Thien, Ranjit Jhala, Deian Stefan, Caleb Stanford. Auditing Rust Crates Effectively"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "CTL* Model Checking on Infinite Families of Finite-State Labeled Transition Systems",
+   "authors": [
+    "Roberto Pettinau",
+    "Christoph Matheja"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Roberto Pettinau, Christoph Matheja. CTL* Model Checking on Infinite Families of Finite-State Labeled Transition Systems"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Data Structure Analysis for Binaries",
+   "authors": [
+    "Sadra Bayat Tork",
+    "Nicholas Coughlin",
+    "Alicia Michael",
+    "James Tobler",
+    "Kirsten Winter"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Sadra Bayat Tork, Nicholas Coughlin, Alicia Michael, James Tobler, Kirsten Winter. Data Structure Analysis for Binaries"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Don’t go MAD with Anomalies! Design-time Microservice Anomaly Detection in Migration to Microservices",
+   "authors": [
+    "Valentim Romão",
+    "Rafael Soares",
+    "Luis Rodrigues",
+    "Vasco Manquinho"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Valentim Romão, Rafael Soares, Luis Rodrigues, Vasco Manquinho. Don’t go MAD with Anomalies! Design-time Microservice Anomaly Detection in Migration to Microservices"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "In Cantor Space No One Can Hear You Stream",
+   "authors": [
+    "Martin Baillon",
+    "Assia Mahboubi",
+    "Pierre-Marie Pédrot"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Martin Baillon, Assia Mahboubi, Pierre-Marie Pédrot. In Cantor Space No One Can Hear You Stream"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Learning bottom-up tree automata valued in monoidal categories",
+   "authors": [
+    "Quentin Aristote",
+    "Daniela Petrisan"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Quentin Aristote, Daniela Petrisan. Learning bottom-up tree automata valued in monoidal categories"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Massively Parallel Bit-Precise Verification with Bitwuzla and Mallob",
+   "authors": [
+    "Dominik Schreiber",
+    "Aina Niemetz",
+    "Mathias Preiner"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Dominik Schreiber, Aina Niemetz, Mathias Preiner. Massively Parallel Bit-Precise Verification with Bitwuzla and Mallob"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Modular Attractor Acceleration in Infinite-State Games",
+   "authors": [
+    "Philippe Heim",
+    "Rayna Dimitrova"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Philippe Heim, Rayna Dimitrova. Modular Attractor Acceleration in Infinite-State Games"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "On Deciding Constant Runtime of Linear Loops",
+   "authors": [
+    "Florian Frohn",
+    "Jürgen Giesl",
+    "Peter Giesl",
+    "Nils Lommen"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Florian Frohn, Jürgen Giesl, Peter Giesl, Nils Lommen. On Deciding Constant Runtime of Linear Loops"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Orbitopal Fixing in SAT",
+   "authors": [
+    "Markus Anders",
+    "Cayden Codel",
+    "Marijn Heule"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Markus Anders, Cayden Codel, Marijn Heule. Orbitopal Fixing in SAT"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Recursive Logical Relations for Intuitionistic Linear Logic Session Types",
+   "authors": [
+    "Stephanie Balzer",
+    "Farzaneh Derakhshan",
+    "Robert Harper",
+    "Yue Yao"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Stephanie Balzer, Farzaneh Derakhshan, Robert Harper, Yue Yao. Recursive Logical Relations for Intuitionistic Linear Logic Session Types"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Revisiting the Role of Natural Language Code Comments in Code Translation",
+   "authors": [
+    "Monika Gupta",
+    "Ajay Meena",
+    "Anamitra Roy Choudhury",
+    "Vijay Arya",
+    "Srikanta Bedathur"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Monika Gupta, Ajay Meena, Anamitra Roy Choudhury, Vijay Arya, Srikanta Bedathur. Revisiting the Role of Natural Language Code Comments in Code Translation"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "TEMPORA: Efficient Verification of Metric Temporal Properties with Past in Pointwise Semantics",
+   "authors": [
+    "S. Akshay",
+    "Prerak Contractor",
+    "Paul Gastin",
+    "R Govind",
+    "B Srivathsan"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: S. Akshay, Prerak Contractor, Paul Gastin, R Govind, B Srivathsan. TEMPORA: Efficient Verification of Metric Temporal Properties with Past in Pointwise Semantics"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "The Value Problem for Weighted Timed Games with Two Clocks is Undecidable",
+   "authors": [
+    "Isa Vialard",
+    "Joël Ouaknine",
+    "Quentin Guilmant"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Isa Vialard, Joël Ouaknine, Quentin Guilmant. The Value Problem for Weighted Timed Games with Two Clocks is Undecidable"
+  },
+  {
+   "venue": "ETAPS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Validating Quantum State Preparation Programs",
+   "authors": [
+    "Liyi Li",
+    "Anshu Sharma",
+    "Zoukarneini Difaizi Tagba",
+    "Sean Frett",
+    "Alex Potanin"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2026 Distinguished Paper Award: Liyi Li, Anshu Sharma, Zoukarneini Difaizi Tagba, Sean Frett, Alex Potanin. Validating Quantum State Preparation Programs"
   },
   {
    "venue": "EUROCRYPT",
@@ -49069,6 +49825,114 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10144/104/program",
    "evidence": "FAccT 2026 program, Honorable Mention: Putting the 'Practice' in Critical Technical Practice: A Decision-Making Pedagogy for the Public Interest Technology Clinic — Lauren M. Chambers, Diag Davenport"
+  },
+  {
+   "venue": "FASE",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Fine slicing – theory and applications for computation extraction",
+   "authors": [
+    "Aharon Abadi",
+    "Ran Ettinger",
+    "Yishai A. Feldman"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2012 EASST Best Paper Award: Aharon Abadi, Ran Ettinger, Yishai A. Feldman. Fine slicing – theory and applications for computation extraction"
+  },
+  {
+   "venue": "FASE",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Language-theoretic abstraction refinement",
+   "authors": [
+    "Zhenyue Long",
+    "Georgel Calin",
+    "Rupak Majumdar",
+    "Roland Meyer"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2012 EAPLS Best Paper Award: Zhenyue Long, Georgel Calin, Rupak Majumdar, Roland Meyer. Language-theoretic abstraction refinement"
+  },
+  {
+   "venue": "FASE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Model-Based Testing of Probabilistic Systems",
+   "authors": [
+    "Marcus Gerhold",
+    "Mariëlle Stoelinga"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2016 EASST Best Paper Award: Marcus Gerhold, Mariëlle Stoelinga. Model-Based Testing of Probabilistic Systems"
+  },
+  {
+   "venue": "FASE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Distributed Graph Queries for Runtime Monitoring of Cyber-Physical Systems",
+   "authors": [
+    "Márton Búr",
+    "Gábor Szilágyi",
+    "András Vörös",
+    "Daniel Varró"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2018 EASST Best Paper Award: Márton Búr, Gábor Szilágyi, András Vörös, Daniel Varró. Distributed Graph Queries for Runtime Monitoring of Cyber-Physical Systems"
+  },
+  {
+   "venue": "FASE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "An empirical study on the use and misuse of Java 8 streams",
+   "authors": [
+    "Raffi Khatchadourian",
+    "Yiming Tang",
+    "Mehdi Bagherzadeh",
+    "Baishakhi Ray"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2020 EAPLS Best Paper Award: Raffi Khatchadourian, Yiming Tang, Mehdi Bagherzadeh, Baishakhi Ray. An empirical study on the use and misuse of Java 8 streams"
+  },
+  {
+   "venue": "FASE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "SpecTest: Specification-Based Compiler Testing",
+   "authors": [
+    "Richard Schumi",
+    "Jun Sun"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2021 EASST Best Paper Award: Richard Schumi, Jun Sun. SpecTest: Specification-Based Compiler Testing"
+  },
+  {
+   "venue": "FASE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Information-flow Interface",
+   "authors": [
+    "Ezio Bartocci",
+    "Thomas Ferrère",
+    "Thomas Henzinger",
+    "Dejan Nickovic",
+    "Ana Oliveira Da Costa"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2022 EASST Best Paper Award: Ezio Bartocci, Thomas Ferrère, Thomas Henzinger, Dejan Nickovic, Ana Oliveira Da Costa. Information-flow Interface"
   },
   {
    "venue": "FASE",
@@ -50482,6 +51346,173 @@
   },
   {
    "venue": "FoSSaCS",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Springer Best Student Paper Award",
+   "title": "Probabilistic modal mu-calculus with independent product",
+   "authors": [
+    "Matteo Mio"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2011 Springer Best Student Paper Award: Matteo Mio. Probabilistic modal mu-calculus with independent product"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Effective characterizations of simple fragments of temporal logic using prophetic automata",
+   "authors": [
+    "Sebastian Preugschat",
+    "Thomas Wilke"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2012 EATCS Best Paper Award: Sebastian Preugschat, Thomas Wilke. Effective characterizations of simple fragments of temporal logic using prophetic automata"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Springer Best Student Paper Award",
+   "title": "Preorders on monads and coalgebraic simulations",
+   "authors": [
+    "Shin-ya Katsumata",
+    "Tetsuya Sato"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 Springer Best Student Paper Award: Shin-ya Katsumata, Tetsuya Sato. Preorders on monads and coalgebraic simulations"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Springer Best Student Paper Award",
+   "title": "Separation logic for non-local control flow and block scope variables",
+   "authors": [
+    "Robbert Krebbers",
+    "Freek Wiedijk"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 Springer Best Student Paper Award: Robbert Krebbers, Freek Wiedijk. Separation logic for non-local control flow and block scope variables"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Unsafe order-2 tree languages are context-sensitive",
+   "authors": [
+    "Naoki Kobayashi",
+    "Kazuhiro Inaba",
+    "Takeshi Tsukada"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2014 EATCS Best Paper Award: Naoki Kobayashi, Kazuhiro Inaba, Takeshi Tsukada. Unsafe order-2 tree languages are context-sensitive"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Synthesis of Strategies and the Hoare Logic of Angelic Nondeterminism",
+   "authors": [
+    "Konstantinos Mamouras"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2015 EATCS Best Paper Award: Konstantinos Mamouras. Synthesis of Strategies and the Hoare Logic of Angelic Nondeterminism"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Comprehensive Parametric Polymorphism: Categorical Models and Type Theory",
+   "authors": [
+    "Neil Ghani",
+    "Fredrik Nordvall Forsberg",
+    "Alex Simpson"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2016 EATCS Best Paper Award: Neil Ghani, Fredrik Nordvall Forsberg, Alex Simpson. Comprehensive Parametric Polymorphism: Categorical Models and Type Theory"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Classical System of Martin-Löf’s Inductive Definitions Is Not Equivalent to Cyclic Proof System",
+   "authors": [
+    "Stefano Berardi",
+    "Makoto Tatsuta"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2017 EATCS Best Paper Award: Stefano Berardi, Makoto Tatsuta. Classical System of Martin-Löf’s Inductive Definitions Is Not Equivalent to Cyclic Proof System"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Cyclic Arithmetic Is Equivalent to Peano Arithmetic",
+   "authors": [
+    "Alex Simpson"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2017 EATCS Best Paper Award: Alex Simpson. Cyclic Arithmetic Is Equivalent to Peano Arithmetic"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Guarded Traced Categories",
+   "authors": [
+    "Sergey Goncharov",
+    "Lutz Schröder"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2018 EATCS Best Paper Award: Sergey Goncharov, Lutz Schröder. Guarded Traced Categories"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Trees in partial higher dimensional automata",
+   "authors": [
+    "Jérémy Dubut"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2019 EATCS Best Paper Award: Jérémy Dubut. Trees in partial higher dimensional automata"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "The inconsistent labelling problem of stutter-preserving partial-order reduction",
+   "authors": [
+    "Thomas Neele",
+    "Antti Valmari",
+    "Tim A.C. Willemse"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2020 EATCS Best Paper Award: Thomas Neele, Antti Valmari, Tim A.C. Willemse. The inconsistent labelling problem of stutter-preserving partial-order reduction"
+  },
+  {
+   "venue": "FoSSaCS",
    "year": 2020,
    "award": "tot",
    "awardLabel": "ETAPS Test of Time Award",
@@ -50493,6 +51524,70 @@
    "paperYear": 2009,
    "source": "https://etaps.org/awards/test-of-time",
    "evidence": "ETAPS 2020 Test of Time Award: Geoffrey Smith — FoSSaCS 2009 “On the Foundations of Quantitative Information Flow”"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "A String Diagrammatic Axiomatisation of Finite-State Automata",
+   "authors": [
+    "Robin Piedeleu",
+    "Fabio Zanasi"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2021 EATCS Best Paper Award: Robin Piedeleu, Fabio Zanasi. A String Diagrammatic Axiomatisation of Finite-State Automata"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Nondeterministic and co-Nondeterministic Implies Deterministic, for Data Languages",
+   "authors": [
+    "Bartek Klin",
+    "Sławomir Lasota",
+    "Szymon Toruńczyk"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2021 EATCS Best Paper Award: Bartek Klin, Sławomir Lasota, Szymon Toruńczyk. Nondeterministic and co-Nondeterministic Implies Deterministic, for Data Languages"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Complete and tractable machine-independent characterizations of second-order polytime",
+   "authors": [
+    "Emmanuel Hainry",
+    "Bruce Kapron",
+    "Jean-Yves Marion",
+    "Romain Péchoux"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2022 EATCS Best Paper Award: Emmanuel Hainry, Bruce Kapron, Jean-Yves Marion, Romain Péchoux. Complete and tractable machine-independent characterizations of second-order polytime"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Unboundedness problems for machines with reversal-bounded counters",
+   "authors": [
+    "Pascal Baumann",
+    "Flavio D’Alessandro",
+    "Moses Ganardi",
+    "Oscar Ibarra",
+    "Ian McQuillan",
+    "Lia Schütze",
+    "Georg Zetzsche"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2023 EATCS Best Paper Award: Pascal Baumann, Flavio D’Alessandro, Moses Ganardi, Oscar Ibarra, Ian McQuillan, Lia Schütze, Georg Zetzsche. Unboundedness problems for machines with reversal-bounded counters"
   },
   {
    "venue": "FoSSaCS",
@@ -50508,6 +51603,35 @@
    "paperYear": 1998,
    "source": "https://etaps.org/awards/test-of-time",
    "evidence": "ETAPS 2024 Test of Time Award: Luca Cardelli and Andrew D. Gordon — FoSSaCS 1998 “Mobile Ambients”"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Model-checking real-time systems: revisiting the alternating automaton route",
+   "authors": [
+    "Patricia Bouyer",
+    "B Srivathsan",
+    "Vaishnavi Vishwanath"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 EATCS Best Paper Award: Patricia Bouyer, B Srivathsan, Vaishnavi Vishwanath. Model-checking real-time systems: revisiting the alternating automaton route"
+  },
+  {
+   "venue": "FoSSaCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Sharing and Linear Logic with Restricted Access",
+   "authors": [
+    "Pablo Barenbaum",
+    "Eduardo Bonelli"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 EATCS Best Paper Award: Pablo Barenbaum, Eduardo Bonelli. Sharing and Linear Logic with Restricted Access"
   },
   {
    "venue": "FoSSaCS",
@@ -74348,6 +75472,52 @@
    "evidence": "POPL 2026 Most Influential Paper Award: Nikhil Swamy, Cătălin Hriţcu, Chantal Keller, Aseem Rastogi, Antoine Delignat-Lavaud, Simon Forest, Karthikeyan Bhargavan, Cédric Fournet, Pierre-Yves Strub, Markulf Kohlweiss, Jean-Karim Zinzindohoue, Santiago Zanella-Béguelin (for 2016) Dependent Types and Multi-monadic Effects in F*"
   },
   {
+   "venue": "POST",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Logical foundations of secure resource management in protocol implementations",
+   "authors": [
+    "Michele Bugliesi",
+    "Stefano Calzavara",
+    "Fabienne Eigner",
+    "Matteo Maffei"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 EATCS Best Paper Award: Michele Bugliesi, Stefano Calzavara, Fabienne Eigner, Matteo Maffei. Logical foundations of secure resource management in protocol implementations"
+  },
+  {
+   "venue": "POST",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Bounding the Number of Agents, for Equivalence Too",
+   "authors": [
+    "Veronique Cortier",
+    "Antoine Dallon",
+    "Stephanie Delaune"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2016 EASST Best Paper Award: Veronique Cortier, Antoine Dallon, Stephanie Delaune. Bounding the Number of Agents, for Equivalence Too"
+  },
+  {
+   "venue": "POST",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "A Semantic Framework for the Security Analysis of Ethereum smart contracts",
+   "authors": [
+    "Ilya Grishchenko",
+    "Matteo Maffei",
+    "Clara Schneidewind"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2018 EAPLS Best Paper Award: Ilya Grishchenko, Matteo Maffei, Clara Schneidewind. A Semantic Framework for the Security Analysis of Ethereum smart contracts"
+  },
+  {
    "venue": "S&P",
    "year": 2016,
    "award": "distinguished",
@@ -84744,6 +85914,162 @@
   },
   {
    "venue": "TACAS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Boosting lazy abstraction for SystemC with partial order reduction",
+   "authors": [
+    "Alessandro Cimatti",
+    "Iman Narasamdya",
+    "Marco Roveri"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2011 EASST Best Paper Award: Alessandro Cimatti, Iman Narasamdya, Marco Roveri. Boosting lazy abstraction for SystemC with partial order reduction"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Canonized rewriting and ground AC-completion modulo Shostak theories",
+   "authors": [
+    "Sylvain Conchon",
+    "Evelyne Contejean",
+    "Mohamed Iguernelala"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2011 EATCS Best Paper Award: Sylvain Conchon, Evelyne Contejean, Mohamed Iguernelala. Canonized rewriting and ground AC-completion modulo Shostak theories"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Pushdown model checking for malware detection",
+   "authors": [
+    "Fu Song",
+    "Tayssir Touili"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2012 EASST Best Paper Award: Fu Song, Tayssir Touili. Pushdown model checking for malware detection"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "An integrated specification and verification technique for highly concurrent data structures",
+   "authors": [
+    "Parosh Aziz Abdulla",
+    "Frédéric Haziza",
+    "Lukáš Holík",
+    "Bengt Jonsson",
+    "Ahmed Rezine"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 EASST Best Paper Award: Parosh Aziz Abdulla, Frédéric Haziza, Lukáš Holík, Bengt Jonsson, Ahmed Rezine. An integrated specification and verification technique for highly concurrent data structures"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Deriving probability density functions from probabilistic functional programs",
+   "authors": [
+    "Sooraj Bhat",
+    "Johannes Borgström",
+    "Andrew D. Gordon",
+    "Claudio Russo"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 EAPLS Best Paper Award: Sooraj Bhat, Johannes Borgström, Andrew D. Gordon, Claudio Russo. Deriving probability density functions from probabilistic functional programs"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Springer Best Student Paper Award",
+   "title": "eVolCheck: incremental upgrade checker for C",
+   "authors": [
+    "Grigori Fedyukovich",
+    "Ondrej Sery",
+    "Natasha Sharygina"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2013 Springer Best Student Paper Award: Grigori Fedyukovich, Ondrej Sery, Natasha Sharygina. eVolCheck: incremental upgrade checker for C"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Analyzing the next generation airborne collision avoidance system",
+   "authors": [
+    "Christian Von Essen",
+    "Dimitra Giannakopoulou"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2014 EASST Best Paper Award: Christian Von Essen, Dimitra Giannakopoulou. Analyzing the next generation airborne collision avoidance system"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Computing conditional probabilities in Markovian models efficiently",
+   "authors": [
+    "Christel Baier",
+    "Joachim Klein",
+    "Sascha Klueppelholz",
+    "Steffen Märcker"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2014 EATCS Best Paper Award: Christel Baier, Joachim Klein, Sascha Klueppelholz, Steffen Märcker. Computing conditional probabilities in Markovian models efficiently"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Model checking Gene Regulatory Networks",
+   "authors": [
+    "Mirco Giacobbe",
+    "Calin C. Guet",
+    "Ashutosh Gupta",
+    "Thomas A. Henzinger",
+    "Tiago Paixão",
+    "Tatjana Petrov"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2015 EASST Best Paper Award: Mirco Giacobbe, Calin C. Guet, Ashutosh Gupta, Thomas A. Henzinger, Tiago Paixão, Tatjana Petrov. Model checking Gene Regulatory Networks"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Static Detection of DoS Vulnerabilities in Programs That Use Regular Expressions",
+   "authors": [
+    "Valentin Wüstholz",
+    "Oswaldo Olivo",
+    "Marijn J. H. Heule",
+    "Isil Dillig"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2017 EASST Best Paper Award: Valentin Wüstholz, Oswaldo Olivo, Marijn J. H. Heule, Isil Dillig. Static Detection of DoS Vulnerabilities in Programs That Use Regular Expressions"
+  },
+  {
+   "venue": "TACAS",
    "year": 2017,
    "award": "tot",
    "awardLabel": "ETAPS Test of Time Award",
@@ -84776,6 +86102,49 @@
   },
   {
    "venue": "TACAS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Abstract dependency graphs and their application to model checking",
+   "authors": [
+    "Søren Enevoldsen",
+    "Kim G. Larsen",
+    "Jiří Srba"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2019 EASST Best Paper Award: Søren Enevoldsen, Kim G. Larsen, Jiří Srba. Abstract dependency graphs and their application to model checking"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "A calculus for modular loop acceleration",
+   "authors": [
+    "Florian Frohn"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2020 EASST Best Paper Award: Florian Frohn. A calculus for modular loop acceleration"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "General Decidability Results for Asynchronous Shared-Memory Programs: Higher-Order and Beyond",
+   "authors": [
+    "Rupak Majumdar",
+    "Ramanathan S. Thinniyam",
+    "Georg Zetzsche"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2021 EAPLS Best Paper Award: Rupak Majumdar, Ramanathan S. Thinniyam, Georg Zetzsche. General Decidability Results for Asynchronous Shared-Memory Programs: Higher-Order and Beyond"
+  },
+  {
+   "venue": "TACAS",
    "year": 2021,
    "award": "tot",
    "awardLabel": "ETAPS Test of Time Award",
@@ -84789,6 +86158,138 @@
    "paperYear": 2003,
    "source": "https://etaps.org/awards/test-of-time",
    "evidence": "ETAPS 2021 Test of Time Award: Sarfraz Khurshid, Corina S. Păsăreanu and Willem Visser — TACAS 2003 “Generalized Symbolic Execution for Model Checking and Testing”"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "SCP Best Tool Paper Award",
+   "title": "cvc5: A Versatile and Industrial-Strength SMT Solver",
+   "authors": [
+    "Haniel Barbosa",
+    "Clark Barrett",
+    "Martin Brain",
+    "Gereon Kremer",
+    "Hanna Lachnitt",
+    "Makai Mann",
+    "Abdalrhman Mohamed",
+    "Mudathir Mohamed",
+    "Aina Niemetz",
+    "Andres Noetzli",
+    "Alex Ozdemir",
+    "Mathias Preiner",
+    "Andrew Reynolds",
+    "Ying Sheng",
+    "Cesare Tinelli",
+    "Yoni Zohar"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2022 SCP Best Tool Paper Award: Haniel Barbosa, Clark Barrett, Martin Brain, Gereon Kremer, Hanna Lachnitt, Makai Mann, Abdalrhman Mohamed, Mudathir Mohamed, Aina Niemetz, Andres Noetzli, Alex Ozdemir, Mathias Preiner, Andrew Reynolds, Ying Sheng, Cesare Tinelli, Yoni Zohar. cvc5: A Versatile and Industrial-Strength SMT Solver"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "EAPLS Best Paper Award",
+   "title": "Fast and Reliable Formal Verification of Smart Contracts with the Move Prover",
+   "authors": [
+    "David Dill",
+    "Wolfgang Grieskamp",
+    "Junkil Park",
+    "Shaz Qadeer",
+    "Meng Xu",
+    "Emma Zhong"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2022 EAPLS Best Paper Award: David Dill, Wolfgang Grieskamp, Junkil Park, Shaz Qadeer, Meng Xu, Emma Zhong. Fast and Reliable Formal Verification of Smart Contracts with the Move Prover"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Industrial-Strength Controlled Concurrency Testing for C# Programs with Coyote",
+   "authors": [
+    "Pantazis Deligiannis",
+    "Aditya Senthilnathan",
+    "Fahad Nayyar",
+    "Chris Lovett",
+    "Akash Lal"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2023 EASST Best Paper Award: Pantazis Deligiannis, Aditya Senthilnathan, Fahad Nayyar, Chris Lovett, Akash Lal. Industrial-Strength Controlled Concurrency Testing for C# Programs with Coyote"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "OxiDD: A Safe, Concurrent, Modular, and Performant Decision Diagram Framework in Rust",
+   "authors": [
+    "Nils Husung",
+    "Clemens Dubslaff",
+    "Holger Hermanns",
+    "Maximilian Alexander Köhl"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2024 EASST Best Paper Award: Nils Husung, Clemens Dubslaff, Holger Hermanns, Maximilian Alexander Köhl. OxiDD: A Safe, Concurrent, Modular, and Performant Decision Diagram Framework in Rust"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "EATCS Best Paper Award",
+   "title": "Scalable Tree-based Register Automata Learning",
+   "authors": [
+    "Paul Fiterau-Brostean",
+    "Simon Dierl",
+    "Falk Howar",
+    "Bengt Jonsson",
+    "Konstantinos Sagonas",
+    "Fredrik Tåquist"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2024 EATCS Best Paper Award: Paul Fiterau-Brostean, Simon Dierl, Falk Howar, Bengt Jonsson, Konstantinos Sagonas, Fredrik Tåquist. Scalable Tree-based Register Automata Learning"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Tool Paper Award",
+   "title": "Dynamic Verification of OCaml Software with Gospel and Ortac/QCheck-STM",
+   "authors": [
+    "Nikolaus Huber",
+    "Naomi Spargo",
+    "Nicolas Osborne",
+    "Samuel Hym",
+    "Jan Midtgaard"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 Best Tool Paper Award: Nikolaus Huber, Naomi Spargo, Nicolas Osborne, Samuel Hym, Jan Midtgaard. Dynamic Verification of OCaml Software with Gospel and Ortac/QCheck-STM"
+  },
+  {
+   "venue": "TACAS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "EASST Best Paper Award",
+   "title": "Unsatisfiability Proofs for Horn Solving",
+   "authors": [
+    "Rodrigo Otoni",
+    "Martin Blicha",
+    "Matias Barandiaran Rivera",
+    "Patrick Eugster",
+    "Jan Kofroň",
+    "Natasha Sharygina"
+   ],
+   "track": "main",
+   "source": "https://etaps.org/awards/best-paper/",
+   "evidence": "ETAPS 2025 EASST Best Paper Award: Rodrigo Otoni, Martin Blicha, Matias Barandiaran Rivera, Patrick Eugster, Jan Kofroň, Natasha Sharygina. Unsatisfiability Proofs for Horn Solving"
   },
   {
    "venue": "TCC",
