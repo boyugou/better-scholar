@@ -11,6 +11,8 @@
 //   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
 //   exact         extra names for whole strings only: the start of a cut-off string is never read as one of them
 //                 (a name that is also the start of other venues' names, "Machine Learning and …")
+//   starts        visible starts of a cut-off string that are read as this venue although other venues begin the same way
+//                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA)
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -48,7 +50,7 @@
       "Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics",
       "North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
     ] },
-    { ccf: "COLING", core: "COLING", names: ["International Conference on Computational Linguistics"] },
+    { ccf: "COLING", core: "COLING", names: ["International Conference on Computational Linguistics"], starts: ["International Conference on Computational"] },
     { core: "EACL", names: ["Conference of the European Chapter of the Association for Computational Linguistics", "European Chapter of the Association for Computational Linguistics"] },
     { ccf: "CoNLL", core: "CoNLL", names: ["Conference on Computational Natural Language Learning", "Computational Natural Language Learning"] },
     { ccf: "INTERSPEECH", core: "Interspeech", names: ["Conference of the International Speech Communication Association", "Annual Conference of the International Speech Communication Association", "Interspeech"] },
@@ -85,6 +87,14 @@
     { core: "UMAP", names: ["International Conference on User Modeling, Adaptation, and Personalization"] },
     // Hot Chips is one venue under two acronyms (CCF "HOT CHIPS", CORE "HOTCHIPS (HCS)"): not a disagreement between the lists
     { ccf: "HOT CHIPS", core: "HOTCHIPS (HCS)", names: ["Symposium on High Performance Chips"] },
+    // more venues the two lists give different acronyms (CSFW was the workshop, CSF is the symposium; CCF has two cloud rows)
+    { ccf: "CSFW", core: "CSF", names: ["IEEE Computer Security Foundations Workshop", "IEEE Computer Security Foundations Symposium"] },
+    { ccf: "WiSec", core: "ACM_WiSec", names: ["ACM Conference on Security and Privacy in Wireless and Mobile Networks"] },
+    { ccf: "IEEE CEC", core: "CEC", names: ["IEEE Congress on Evolutionary Computation"] },
+    { ccf: "IEEE BigData", core: "BigData", names: ["IEEE International Conference on Big Data"] },
+    { ccf: "IEEE CLOUD", core: "CLOUD", names: ["IEEE International Conference on Cloud Computing"] },
+    { ccf: "SSE", core: "IEEE SSE", names: ["IEEE International Conference on Software Services Engineering"] },
+
     // ICMI was the International Conference on Multimodal Interfaces until 2005 (CORE keeps the old name in a parenthesis)
     { ccf: "ICMI", core: "ICMI", names: ["International Conference on Multimodal Interfaces", "IEEE International Conference on Multimodal Interfaces"] },
     { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5.11 — 2026-10-12
+
+The rest of the independent review's matcher findings.
+
+- **A cut-off name is no longer claimed for the one venue of a list when the other list has others that begin the same way.** CCF alone
+  read *"… Conference on Principles of …"* as KR; CORE also lists OPODIS and others. Where the dominant reading is known it is curated
+  (`starts` in `aliases.js`): the ACL Anthology's *"… International Conference on Computational …"* is COLING — now in both lists.
+- **A weakened name never contradicts the venue's own event word:** *"ACM symposium on Cloud computing"* (SoCC) was also given CORE's
+  *IEEE Conference on Cloud Computing*.
+- **One venue under two acronyms is no disagreement between the lists** (the cross-list rule had dropped a correct badge): CSFW / CSF,
+  CEC, Big Data, Cloud, WiSec, SSE. *Computer Security Foundations Workshop* (1999) now also reaches CORE's CSF.
+
 ## 2.5.10 — 2026-10-12
 
 From the independent review.

@@ -204,7 +204,7 @@
     function newSide() {
       // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
       // official name once its boilerplate is dropped ("IEEE International Conference on Data Mining" → "data mining")
-      return { names: new Map(), bare: new Map(), abbrs: new Map(), bags: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+      return { names: new Map(), bare: new Map(), abbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
     }
     const push = (map, key, entry) => {
       if (!key) return;
@@ -270,6 +270,7 @@
           entry.extra.push(...a.names);
           register(src, kind, entry, a.names, a.abbrs || [], true);
           if (a.exact) { entry.extra.push(...a.exact); register(src, kind, entry, a.exact, [], true, true); }
+          for (const st of a.starts || []) push(sources[src][kind].starts, rawSeq(st).join(" "), entry);
         }
       }
     }
@@ -420,6 +421,8 @@
       if (hits.length > 1) { const pick = pickByBoiler(hits, p.plain); if (pick) return pick; }
       return hits[0] || null;
     };
+    // the string says "symposium" and this venue's names say "conference" (and never "symposium"), or the like
+    const typeClash = (entry) => rawWords.some((w) => !hasWord(entry, w)) && TYPE_WORDS.some((w) => !rawWords.includes(w) && hasWord(entry, w));
     // does another venue's name begin with these words, go on ("… Distributed Computing" → "… Distributed Computing Systems")
     // and use the string's own event word ("conference") where the hit does not (the symposium DISC)?
     const continuesBeyond = (sidesNow, mode, tokens, hit) => {
@@ -457,6 +460,9 @@
       seen.add(key);
       const d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
       if (d === "ambiguous") return null;
+      // Without its organisation or its acronym a name is weaker evidence: "ACM symposium on Cloud computing" is not the IEEE
+      // conference on Cloud Computing (CORE lists only that one) — the string's event word must not contradict the venue's own
+      if (d && mode !== "full" && typeClash(d)) continue;
       // Scholar cut the name right here ("… Conference on Distributed Computing …") and the string says "conference" while this
       // venue is a symposium: a venue whose longer name goes on the same way and does say "conference" is the better reading —
       // the prefix rule below decides between them
@@ -509,6 +515,9 @@
     const R = canonTokens(p.plain, "full");
     const visibleWords = p.plain.split(/\s+/).filter(Boolean).length;
     if (p.truncated && R.length >= 1 && (R.length >= 3 || visibleWords >= 6)) {
+      // a start the curators read as one venue although others begin the same way (aliases.js `starts`)
+      const named = firstHit((side) => side.starts.get(rawSeq(p.plain).join(" ")));
+      if (named && named !== "ambiguous") return { entry: named, rule: "prefix" };
       const rawHasOrg = fold(p.plain).toLowerCase().split(/[^a-z0-9]+/).some((t) => ORG.has(t));
       // if Scholar cut the name right after a connective, that connective must agree
       const rawKeep = canonTokensKeepStops(p.plain, "full");
@@ -561,16 +570,28 @@
       if (!d) {
         const seq = rawSeq(p.plain);
         if (seq.length >= 4) {
-          const found = new Map();
-          for (const side of sides) {
-            for (const { entry, form } of side.first.full.get(R[0]) || []) {
-              if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.set(entry, [...(found.get(entry) || []), form.raw]);
+          const seqCandidates = (listSides) => {
+            const found = new Map();
+            for (const side of listSides) {
+              for (const { entry, form } of side.first.full.get(R[0]) || []) {
+                if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.set(entry, [...(found.get(entry) || []), form.raw]);
+              }
             }
-          }
-          let cands = through(found);
-          // ISCA calls itself the annual symposium, IFIP Performance does not
-          if (cands.length > 1 && annual) cands = cands.filter((e) => hasWord(e, "annual"));
+            let list = through(found);
+            // ISCA calls itself the annual symposium, IFIP Performance does not
+            if (list.length > 1 && annual) list = list.filter((e) => hasWord(e, "annual"));
+            return list;
+          };
+          const cands = seqCandidates(sides);
           d = cands.length === 1 ? cands[0] : null;      // one venue, not "same rating, pick any": the tooltip names it
+          // The other list reads the same words too: a venue that only one list has is not "the only one" it fits ("… Conference on
+          // Computational …" is COLING to CCF, but CORE also has ICCSA, ICCCI …). Unless it is the same venue, nothing is claimed.
+          if (d) {
+            const other = src === "ccf" ? "core" : "ccf";
+            const rivals = seqCandidates(kinds.map((k) => idx.sources[other][k]).filter(Boolean));
+            const same = (a, b) => squash(a.abbr || a.name) === squash(b.abbr || b.name) || (a.src === "ccf" ? idx.sameVenue(a.abbr, b.abbr) : idx.sameVenue(b.abbr, a.abbr));
+            if (rivals.some((r) => !same(d, r))) d = null;
+          }
         }
       }
       if (d && d !== "ambiguous") return { entry: d, rule: "prefix" };

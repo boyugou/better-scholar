@@ -558,3 +558,23 @@ test("the words of a cut-off name are judged on the names that begin with it, no
   assert.ok(!/EuroCrypt/.test(brief("Annual International Conference on the Theory and Application of …, 2008")));
   assert.equal(brief("Annual International Conference on the Theory and Applications of …, 2008"), "CCF A EUROCRYPT · CORE A* EuroCrypt");
 });
+
+test("a cut-off name is not claimed for the one venue of a list when the other list has others that begin the same way; a curated start keeps the dominant reading", () => {
+  assert.equal(brief("Proceedings of the 12th International Conference on Principles of …, 2012"), "", "CCF alone would say KR; CORE also lists OPODIS and others");
+  assert.equal(brief("Proceedings of the 12th International Conference on Mathematical …, 2012"), "");
+  assert.equal(brief("Proceedings of the Twelfth International Conference on Distributed …, 2012"), "");
+  // the ACL Anthology's COLING volumes are cut right here: curated (aliases.js `starts`)
+  assert.equal(brief("Proceedings of the 23rd international conference on computational …, 2010"), "CCF B COLING · CORE B COLING");
+  assert.equal(brief("Proceedings of the 12th International Conference on Computational Science …, 2012"), "CORE C ICCSA");
+  assert.equal(brief("Proceedings of the 36th annual international symposium on Computer …, 2009"), "CCF A ISCA · CORE A* ISCA");
+});
+
+test("one venue under two acronyms is no disagreement between the lists (CSFW/CSF, CEC, Big Data, Cloud); a weakened name never contradicts the venue's own event word", () => {
+  assert.equal(brief("Proceedings of the 12th IEEE Computer Security Foundations Workshop, 192-202, 1999"), "CCF B CSFW · CORE A CSF");
+  assert.equal(brief("2016 IEEE 29th Computer Security Foundations Symposium (CSF), 2016"), "CCF B CSFW · CORE A CSF");
+  assert.equal(brief("2010 IEEE Congress on Evolutionary Computation (CEC), 2010"), "CCF C IEEE CEC · CORE B CEC");
+  assert.equal(brief("2015 IEEE International Conference on Big Data (Big Data), 2015"), "CCF C IEEE BigData · CORE B BigData");
+  assert.equal(brief("2012 IEEE 5th International Conference on Cloud Computing, 2012"), "CCF C IEEE CLOUD · CORE B CLOUD");
+  // ACM's symposium is SoCC; CORE lists only IEEE's conference, which a string that says "symposium" is not
+  assert.equal(brief("Proceedings of the 1st ACM symposium on Cloud computing, 241-252, 2010"), "CCF B SoCC");
+});
