@@ -1220,7 +1220,9 @@ export function parseUbicompAwards(html, source) {
 // authors wrap, a bracketed affiliation line may follow). 2010 and 2013 write the authors first ("A, B, and C," then the title). 2008 and 2009 run category, title and authors together in one paragraph and are not read.
 export function parseIcdmBest(html, source = PAGES.icdm) {
   const entries = [], skipped = [];
-  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  const ls0 = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  // 2008 starts a paper on its category line ("Best Application Paper Award: “Interpreting"): the category is a line of its own, the rest follows
+  const ls = ls0.flatMap((l) => { const m = /^((?:Best (?:Theoretical\/Algorithms |Application |Student )?Papers? Awards?|(?:Theoretical\/Algorithms|Applications) Category)):\s*(\S.*)$/.exec(l); return m && /^[“"]/.test(m[2]) ? [m[1] + ":", m[2]] : [l]; });
   const yearRe = /^IEEE ICDM\s*'?((?:19|20)?\d{2}) Best Paper Awards?:?\s*(.*)$/i;
   const catRe = /^(?:Best (?:Research |Application |Student |Theoretical\/Algorithms )?Paper(?: Awards?)?(?: Runner-?up(?: Awards?)?)?|Best Paper (?:Award )?Runner-?up(?: Awards?)?|Best Paper Runner-?up Awards?|Runner-up for Best Research Paper Award|Honorable Mention|(?:Theoretical\/Algorithms|Applications?) Category|Best (?:Theoretical\/Algorithms|Application) Paper Award|Student Paper):?$/i;
   const isBy = (l) => /^by(?:\s|$)/i.test(l || "");
@@ -1228,12 +1230,12 @@ export function parseIcdmBest(html, source = PAGES.icdm) {
   let year = null, top = "best", cat = null;
   const kindOf = (c) => /runner|honorable/i.test(c) ? "runner-up" : /student/i.test(c) ? "student" : /application/i.test(c) && !/category/i.test(c) ? "category" : "best";
   const add = (title, authorText, evidenceLine) => {
-    const who = kddAuthors(authorText.replace(/\s+and\s+/g, ", and ")), t = cleanTitle(title.replace(/[,\s]+$/, ""));
+    const who = kddAuthors(authorText.replace(/\s+and\s+/g, ", and ")), t = cleanTitle(title.replace(/[,\s]+$/, "").replace(/^[“"]\s*(.*?)\s*[”"]$/, "$1").replace(/[,\s]+$/, ""));
     const name = cat.replace(/:$/, "");
     let award = kindOf(name), label = name;
     if (/category$/i.test(name)) { award = top === "runner" ? "runner-up" : "best"; label = (top === "runner" ? "Best Paper Runner-up (" : "Best Paper (") + name.replace(/\s*Category$/i, "") + ")"; }
     else if (top === "runner" && award !== "runner-up") { award = "runner-up"; label = "Best Paper Runner-up (" + name.replace(/^Best\s+|\s*Awards?$/gi, "") + ")"; }
-    if (/Award|Category|[“”]/.test(title)) { skipped.push(`${year}: not read (category, title and authors run together): ${title.slice(0, 50)}`); return; }
+    if (/Award|Category|[“”]/.test(t)) { skipped.push(`${year}: not read (category, title and authors run together): ${title.slice(0, 50)}`); return; }
     if (who.length && t.length >= 8) entries.push({ venue: "ICDM", year, award, awardLabel: label, title: t, authors: who, track: "main", source, evidence: `ICDM ${year} ${label}: ${t} — ${evidenceLine}` });
     else skipped.push(`${year}: not read: ${t.slice(0, 50)} / ${authorText.slice(0, 50)}`);
   };
@@ -1262,6 +1264,9 @@ export function parseIcdmBest(html, source = PAGES.icdm) {
       while (j < ls.length && /^\(/.test(ls[j])) j++;                                                  // (a bracketed affiliation line)
       add(title.join(" "), auth.join(" "), auth.join(" "));
       i = j - 1;
+    } else if (!kddAuthors(l).length && l.length >= 12 && (kddAuthors(ls[i + 1] || "").length >= 3 || (/,/.test(ls[i + 1] || "") && kddAuthors(ls[i + 1]).length >= 2)) && !catRe.test(ls[i + 1]) && !yearRe.test(ls[i + 1])) {   // "Title" then "A, B, and C" (2012's best paper)
+      add(l, ls[i + 1], ls[i + 1]);
+      i += 1;
     } else if (/,$/.test(l) && kddAuthors(l).length) {                                             // authors first
       let j = i + 1; const title = [];
       while (j < ls.length && !yearRe.test(ls[j]) && !catRe.test(ls[j]) && !(/,$/.test(ls[j]) && kddAuthors(ls[j]).length)) title.push(ls[j++]);

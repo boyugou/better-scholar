@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6182
+  "count": 6186
  },
  "entries": [
   {
@@ -57279,6 +57279,49 @@
   },
   {
    "venue": "ICDM",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Theoretical/Algorithms Paper Award",
+   "title": "Scalable Tensor Decomposition for Multi-Aspect Data Mining",
+   "authors": [
+    "Tamara Kolda",
+    "Jimeng Sun"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2008 Best Theoretical/Algorithms Paper Award: Scalable Tensor Decomposition for Multi-Aspect Data Mining — Tamara Kolda and Jimeng Sun"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Theoretical/Algorithms)",
+   "title": "Isolation Forest",
+   "authors": [
+    "Fei Tony Liu",
+    "Kai Ming Ting",
+    "Zhi-Hua Zhou"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2008 Best Paper Runner-up (Theoretical/Algorithms): Isolation Forest — Fei Tony Liu, Kai Ming Ting, and Zhi-Hua Zhou"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper Awards",
+   "title": "A Randomized Approach for Approximating the Number of Frequent Sets",
+   "authors": [
+    "Mario Boley",
+    "Henrik Grosskreutz"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2008 Best Student Paper Awards: A Randomized Approach for Approximating the Number of Frequent Sets — Mario Boley and Henrik Grosskreutz"
+  },
+  {
+   "venue": "ICDM",
    "year": 2009,
    "award": "runner-up",
    "awardLabel": "Best Paper Runner-up (Student Paper)",
@@ -57384,6 +57427,22 @@
    "track": "main",
    "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
    "evidence": "ICDM 2011 Best Student Paper Award: Structured Feature Selection and Task Relationship Inference for Multi-Task Learning — Hongliang Fei and Jun Huan"
+  },
+  {
+   "venue": "ICDM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scalable Coordinate Descent Approaches to Parallel Matrix Factorization for Recommender Systems",
+   "authors": [
+    "Hsiang-Fu Yu",
+    "Cho-Jui Hsieh",
+    "Si Si",
+    "Inderjit Dhillon"
+   ],
+   "track": "main",
+   "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
+   "evidence": "ICDM 2012 Best Paper Award: Scalable Coordinate Descent Approaches to Parallel Matrix Factorization for Recommender Systems — Hsiang-Fu Yu, Cho-Jui Hsieh, Si Si, and Inderjit Dhillon"
   },
   {
    "venue": "ICDM",

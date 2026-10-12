@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.10 — 2026-10-12
+
+- ICDM: 2012's best paper (title and authors on two lines, no "by") and three of 2008's papers (the category and the title start on one line) are read now; the list has 6186 awards.
+
 ## 2.10.9 — 2026-10-12
 
 - The SIGGRAPH technical papers awards 2022–2026 (Best Papers, Honorable Mentions and, from 2023, Test-of-Time: Instant Neural Graphics Primitives, 3D Gaussian Splatting, CLIPasso, Eulerian Video Magnification … 90 papers) from ACM SIGGRAPH's own blog posts
