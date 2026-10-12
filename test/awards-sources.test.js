@@ -1624,3 +1624,12 @@ test("NIPS 2018 conference book: the Test of Time line names the authors, the ne
   assert.deepEqual(entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2018 The Tradeoffs of Large-Scale Learning | Leon Bottou; Olivier Bousquet"]);
   assert.deepEqual(skipped, []);
 });
+
+test("a conference virtual site's test-of-time page: the title from <title>, the authors from the line after the paper's heading", async () => {
+  const { parseVirtualTotDetail } = await import("../scripts/awards/tot.mjs");
+  const html = `<html><head><title>ICML Test Of Time Bayesian Learning via Stochastic Gradient Langevin Dynamics</title></head><body><nav>Test of Time Award</nav>
+<h3>Bayesian Learning via Stochastic Gradient Langevin Dynamics</h3><div>Yee Teh ⋅ Max Welling</div><p>Abstract</p></body></html>`;
+  const { entries, skipped } = parseVirtualTotDetail(html, "https://icml.cc/virtual/2021/test-of-time/11808");
+  assert.deepEqual(entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["ICML 2021 tot Bayesian Learning via Stochastic Gradient Langevin Dynamics | Yee Teh; Max Welling"]);
+  assert.deepEqual(skipped, []);
+});

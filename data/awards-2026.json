@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6011
+  "count": 6012
  },
  "entries": [
   {
@@ -58681,6 +58681,20 @@
    "track": "main",
    "source": "https://icml.cc/virtual/2021/awards_detail",
    "evidence": "Understanding self-supervised learning dynamics without contrastive pairs — Outstanding Paper Honorable Mention"
+  },
+  {
+   "venue": "ICML",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Bayesian Learning via Stochastic Gradient Langevin Dynamics",
+   "authors": [
+    "Yee Teh",
+    "Max Welling"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/virtual/2021/test-of-time/11808",
+   "evidence": "ICML 2021 test of time page: Bayesian Learning via Stochastic Gradient Langevin Dynamics — Yee Teh ⋅ Max Welling"
   },
   {
    "venue": "ICML",

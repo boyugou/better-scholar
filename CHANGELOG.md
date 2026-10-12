@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.3 — 2026-10-12
+
+- ICML's 2021 test-of-time paper, Bayesian Learning via Stochastic Gradient Langevin Dynamics (Welling, Teh), from its own test-of-time page (`tot.mjs icml-tot-2021`), which the awards page links only from its menu. The bundled list has 6012 awards.
+
 ## 2.10.2 — 2026-10-12
 
 - NeurIPS's 2018 test-of-time paper, The Tradeoffs of Large-Scale Learning (Bottou, Bousquet), from the NIPS 2018 conference book (`tot.mjs nips-book-2018`). The bundled list has 6011 awards.
