@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.22 — 2026-10-12
+
+- **Dijkstra Prize in Distributed Computing** (34 entries, 2000–2026; the list holds 2397) from the prize's own page on podc.org:
+  *Time, Clocks, and the Ordering of Events in a Distributed System*, *Impossibility of Distributed Consensus with One Faulty
+  Process*, *Wait-Free Synchronization*, *Unreliable Failure Detectors …*, *What Can Be Computed Locally?* … The prize is sponsored
+  by PODC and DISC together (the entries read "PODC/DISC"); 2000–2002 were the *PODC Influential-Paper Award*, and carry that name.
+  Many of these papers first appeared in journals — the list now holds paper awards, not only main-conference ones. `tot.mjs dijkstra`.
+- The check that tells a list of names from the end of a title moved to `scripts/awards/people.mjs`; the data README's merge command now
+  names every raw file (it had lost the CCS, VLDB and test-of-time ones).
+
 ## 2.5.21 — 2026-10-12
 
 - **SIGMOD Test of Time Award** (32 entries, 1999–2026; the list holds 2363) from ACM SIGMOD's own list of recipients: *Pregel*, *Online

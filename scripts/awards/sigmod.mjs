@@ -17,6 +17,7 @@
 // reported and skipped, never guessed.
 import { readFileSync } from "node:fs";
 import { text, lines as pageLines } from "./html.mjs";
+import { isPerson } from "./people.mjs";
 
 const PAGES = {
   sigmod: "https://sigmod.org/sigmod-awards/sigmod-best-paper-award/",
@@ -118,9 +119,6 @@ export function parseSigmod(html, source = PAGES.sigmod) {
 export function parseTot(html, source = PAGES.tot) {
   const entries = [], skipped = [];
   let year = null;
-  // a name: two to five words, each a capitalised word, an initial ("M.", "J.C", "T-H.") or a particle; a word that ends in a full stop and is
-  // longer than an initial ("vs. Rollups. Jo Yan") is the end of a title, not a name
-  const person = (n) => { const t = n.split(" "); return t.length >= 2 && t.length <= 5 && !/[:?!0-9]/.test(n) && t.every((w) => /^\p{Lu}[\p{L}'’-]*$/u.test(w) || /^\p{Lu}(?:[.-]\p{Lu})*\.?$/u.test(w) || /^(?:van|von|der|den|de|del|di|da|la|le|bin|al|el|ter)$/.test(w)); };
   for (const l of pageLines(html).map((x) => x.normalize("NFC"))) {
     const y = /^((?:19|20)\d{2})$/.exec(l);
     if (y) { year = parseInt(y[1], 10); continue; }
@@ -132,7 +130,7 @@ export function parseTot(html, source = PAGES.tot) {
     for (const cut of [...m[1].matchAll(/\.\s+/g)]) {
       const title = m[1].slice(0, cut.index).trim(), authorText = m[1].slice(cut.index + cut[0].length).trim();
       const authors = names(authorText);
-      if (title.length >= 8 && authors.length && authors.every(person)) {
+      if (title.length >= 8 && authors.length && authors.every(isPerson)) {
         entries.push(entry("SIGMOD", year, "tot", "Test of Time Award", title, authors, source, `${year} SIGMOD Test of Time Award: ${title}. ${authorText}`));
         done = true;
         break;

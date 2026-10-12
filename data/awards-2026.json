@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2363
+  "count": 2397
  },
  "entries": [
   {
@@ -28897,6 +28897,493 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
+  },
+  {
+   "venue": "PODC",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "PODC Influential-Paper Award",
+   "title": "Time, Clocks, and the Ordering of Events in a Distributed System",
+   "authors": [
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2000 PODC Influential-Paper Award: Leslie Lamport for “Time, Clocks, and the Ordering of Events in a Distributed System”"
+  },
+  {
+   "venue": "PODC",
+   "year": 2001,
+   "award": "tot",
+   "awardLabel": "PODC Influential-Paper Award",
+   "title": "Impossibility of Distributed Consensus with One Faulty Process",
+   "authors": [
+    "Michael J. Fischer",
+    "Nancy A. Lynch",
+    "Michael S. Paterson"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2001 PODC Influential-Paper Award: Michael J. Fischer, Nancy A. Lynch, and Michael S. Paterson for “Impossibility of Distributed Consensus with One Faulty Process”"
+  },
+  {
+   "venue": "PODC",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "PODC Influential-Paper Award",
+   "title": "Self-stabilizing systems in spite of distributed control",
+   "authors": [
+    "Edsger W. Dijkstra"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2002 PODC Influential-Paper Award: Edsger W. Dijkstra for “Self-stabilizing systems in spite of distributed control”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Wait-Free Synchronization",
+   "authors": [
+    "Maurice Herlihy"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2003 Dijkstra Prize in Distributed Computing: Maurice Herlihy for “Wait-Free Synchronization”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "A Distributed Algorithm for Minimum-Weight Spanning Trees",
+   "authors": [
+    "R. G. Gallager",
+    "P. A. Humblet",
+    "P. M. Spira"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2004 Dijkstra Prize in Distributed Computing: R. G. Gallager, P. A. Humblet, and P. M. Spira for “A Distributed Algorithm for Minimum-Weight Spanning Trees”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Reaching agreement in the presence of faults",
+   "authors": [
+    "Marshall Pease",
+    "Robert Shostak",
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2005 Dijkstra Prize in Distributed Computing: Marshall Pease, Robert Shostak, and Leslie Lamport for “Reaching agreement in the presence of faults”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Algorithms for scalable synchronization on shared-memory multiprocessors",
+   "authors": [
+    "John M. Mellor-Crummey",
+    "Michael L. Scott"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2006 Dijkstra Prize in Distributed Computing: John M. Mellor-Crummey and Michael L. Scott for “Algorithms for scalable synchronization on shared-memory multiprocessors”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Consensus in the presence of partial synchrony",
+   "authors": [
+    "Cynthia Dwork",
+    "Nancy Lynch",
+    "Larry Stockmeyer"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2007 Dijkstra Prize in Distributed Computing: Cynthia Dwork, Nancy Lynch, and Larry Stockmeyer for “Consensus in the presence of partial synchrony”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Sparse Partitions",
+   "authors": [
+    "Baruch Awerbuch",
+    "David Peleg"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2008 Dijkstra Prize in Distributed Computing: Baruch Awerbuch and David Peleg for “Sparse Partitions”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Knowledge and Common Knowledge in a Distributed Environment",
+   "authors": [
+    "Joseph Halpern",
+    "Yoram Moses"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2009 Dijkstra Prize in Distributed Computing: Joseph Halpern and Yoram Moses for “Knowledge and Common Knowledge in a Distributed Environment”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "The Weakest Failure Detector for Solving Consensus",
+   "authors": [
+    "Tushar D. Chandra",
+    "Vassos Hadzilacos",
+    "Sam Toueg"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2010 Dijkstra Prize in Distributed Computing: Tushar D. Chandra, Vassos Hadzilacos, and Sam Toueg for “The Weakest Failure Detector for Solving Consensus”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Unreliable Failure Detectors for Reliable Distributed Systems",
+   "authors": [
+    "Tushar D. Chandra",
+    "Sam Toueg"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2010 Dijkstra Prize in Distributed Computing: Tushar D. Chandra and Sam Toueg for “Unreliable Failure Detectors for Reliable Distributed Systems”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Sharing Memory Robustly in Message-Passing Systems",
+   "authors": [
+    "Hagit Attiya",
+    "Amotz Bar-Noy",
+    "Danny Dolev"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2011 Dijkstra Prize in Distributed Computing: Hagit Attiya, Amotz Bar-Noy, and Danny Dolev for “Sharing Memory Robustly in Message-Passing Systems”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Software Transactional Memory",
+   "authors": [
+    "Nir Shavit",
+    "Dan Touitou"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2012 Dijkstra Prize in Distributed Computing: Nir Shavit and Dan Touitou for “Software Transactional Memory”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Transactional Memory: Architectural Support for Lock-Free Data Structures",
+   "authors": [
+    "Maurice Herlihy",
+    "J. Eliot B. Moss"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2012 Dijkstra Prize in Distributed Computing: Maurice Herlihy and J. Eliot B. Moss for “Transactional Memory: Architectural Support for Lock-Free Data Structures”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Locality in Distributed Graph Algorithms",
+   "authors": [
+    "Nati Linial"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2013 Dijkstra Prize in Distributed Computing: Nati Linial for “Locality in Distributed Graph Algorithms”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Distributed Snapshots: Determining Global States of Distributed Systems",
+   "authors": [
+    "Kanianthra Mani Chandy",
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2014 Dijkstra Prize in Distributed Computing: Kanianthra Mani Chandy and Leslie Lamport for “Distributed Snapshots: Determining Global States of Distributed Systems”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Another Advantage of Free Choice: Completely Asynchronous Agreement Protocols",
+   "authors": [
+    "Michael Ben-Or"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2015 Dijkstra Prize in Distributed Computing: Michael Ben-Or for “Another Advantage of Free Choice: Completely Asynchronous Agreement Protocols”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Randomized Byzantine Generals",
+   "authors": [
+    "Michael O. Rabin"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2015 Dijkstra Prize in Distributed Computing: Michael O. Rabin for “Randomized Byzantine Generals”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "A Fast and Simple Randomized Parallel Algorithm for the Maximal Independent Set Problem",
+   "authors": [
+    "Noga Alon",
+    "László Babai",
+    "Alon Itai"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2016 Dijkstra Prize in Distributed Computing: Noga Alon, László Babai, and Alon Itai for “A Fast and Simple Randomized Parallel Algorithm for the Maximal Independent Set Problem”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Simple Parallel Algorithm for the Maximal Independent Set Problem",
+   "authors": [
+    "Michael Luby"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2016 Dijkstra Prize in Distributed Computing: Michael Luby for “Simple Parallel Algorithm for the Maximal Independent Set Problem”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Generalized FLP impossibility result for t-resilient asynchronous computations",
+   "authors": [
+    "Elizabeth Borowsky",
+    "Eli Gafni"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2017 Dijkstra Prize in Distributed Computing: Elizabeth Borowsky and Eli Gafni for “Generalized FLP impossibility result for t-resilient asynchronous computations”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Defining liveness",
+   "authors": [
+    "Bowen Alpern",
+    "Fred B. Schneider"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2018 Dijkstra Prize in Distributed Computing: Bowen Alpern and Fred B. Schneider for “Defining liveness”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Randomized Distributed Edge Coloring via an Extension of the Chernoff–Hoeffding Bounds",
+   "authors": [
+    "Alessandro Panconesi",
+    "Aravind Srinivasan"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2019 Dijkstra Prize in Distributed Computing: Alessandro Panconesi and Aravind Srinivasan for “Randomized Distributed Edge Coloring via an Extension of the Chernoff–Hoeffding Bounds”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Computation in networks of passively mobile finite-state sensors",
+   "authors": [
+    "Dana Angluin",
+    "James Aspnes",
+    "Zoe Diamadi",
+    "Michael J. Fischer",
+    "Rene Peralta"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2020 Dijkstra Prize in Distributed Computing: Dana Angluin, James Aspnes, Zoe Diamadi, Michael J. Fischer, and Rene Peralta for “Computation in networks of passively mobile finite-state sensors”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "CCS Expressions, Finite State Processes, and Three Problems of Equivalence",
+   "authors": [
+    "Paris C. Kanellakis",
+    "Scott A. Smolka"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2021 Dijkstra Prize in Distributed Computing: Paris C. Kanellakis and Scott A. Smolka for “CCS Expressions, Finite State Processes, and Three Problems of Equivalence”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Safe Memory Reclamation for Dynamic Lock-Free Objects Using Atomic Reads and Writes",
+   "authors": [
+    "Maged M. Michael"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2022 Dijkstra Prize in Distributed Computing: Maged M. Michael for “Safe Memory Reclamation for Dynamic Lock-Free Objects Using Atomic Reads and Writes”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "The Repeat Offender Problem: A Mechanism for Supporting Dynamic-Sized, Lock-Free Data Structures",
+   "authors": [
+    "Maurice Herlihy",
+    "Victor Luchangco",
+    "Mark Moir"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2022 Dijkstra Prize in Distributed Computing: Maurice Herlihy, Victor Luchangco, and Mark Moir for “The Repeat Offender Problem: A Mechanism for Supporting Dynamic-Sized, Lock-Free Data Structures”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Completeness Theorems for Non-Cryptographic Fault-Tolerant Distributed Computation",
+   "authors": [
+    "Michael Ben-Or",
+    "Shafi Goldwasser",
+    "Avi Wigderson"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2023 Dijkstra Prize in Distributed Computing: Michael Ben-Or, Shafi Goldwasser and Avi Wigderson for “Completeness Theorems for Non-Cryptographic Fault-Tolerant Distributed Computation”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Multiparty Unconditionally Secure Protocols",
+   "authors": [
+    "David Chaum",
+    "Claude Crépeau",
+    "Ivan Damgård"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2023 Dijkstra Prize in Distributed Computing: David Chaum, Claude Crépeau and Ivan Damgård for “Multiparty Unconditionally Secure Protocols”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Verifiable Secret Sharing and Multiparty Protocols with Honest Majority",
+   "authors": [
+    "Tal Rabin",
+    "Michael Ben-Or"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2023 Dijkstra Prize in Distributed Computing: Tal Rabin and Michael Ben-Or for “Verifiable Secret Sharing and Multiparty Protocols with Honest Majority”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Time is Not a Healer",
+   "authors": [
+    "Nicola Santoro",
+    "Peter Widmayer"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2024 Dijkstra Prize in Distributed Computing: Nicola Santoro and Peter Widmayer for “Time is Not a Healer”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "What Can Be Computed Locally?",
+   "authors": [
+    "Moni Naor",
+    "Larry Stockmeyer"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2025 Dijkstra Prize in Distributed Computing: Moni Naor and Larry Stockmeyer (1948 – 2004) for “What Can Be Computed Locally?”"
+  },
+  {
+   "venue": "PODC/DISC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Dijkstra Prize in Distributed Computing",
+   "title": "Distributed Verification and Hardness of Distributed Approximation",
+   "authors": [
+    "Atish Das Sarma",
+    "Stephan Holzer",
+    "Liah Kor",
+    "Amos Korman",
+    "Danupon Nanongkai",
+    "Gopal Pandurangan",
+    "David Peleg",
+    "Roger Wattenhofer"
+   ],
+   "track": "main",
+   "source": "https://www.podc.org/dijkstra/",
+   "evidence": "2026 Dijkstra Prize in Distributed Computing: Atish Das Sarma, Stephan Holzer, Liah Kor, Amos Korman, Danupon Nanongkai, Gopal Pandurangan, David Peleg, and Roger Wattenhofer for “Distributed Verification and Hardness of Distributed Approximation”"
   },
   {
    "venue": "PODS",

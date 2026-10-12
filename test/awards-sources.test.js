@@ -694,6 +694,34 @@ test("SIGMOD Test of Time page: a year, then 'Title. Authors' lines (newer ones 
   assert.ok(entries.every((e) => e.evidence.includes(e.title) && !("paperYear" in e)));
 });
 
+test("Dijkstra Prize page: 'Authors for “Title” in …' under a year's citation heading; two papers in a year, a wrapped citation, a starred year under the former name, dates in parentheses", async () => {
+  const { parseDijkstra } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Prize-winning papers</h2>
+<h3>2026 citation</h3><p>Ann Lee, Bo Chen and Cy Diaz for “A Synthetic Verification and Approximation Paper“, which originally appeared in Proceedings of the Symposium, 2012.</p>
+<h3>2025 citation</h3><p>Dee Park and Eli Ross (1948 – 2004) for “What Can Synthetic Nodes Compute Locally?” which originally appeared in STOC 1993.</p>
+<h3>2023 citation</h3><p>Fay Gray, Gia Stone and Hal Wu for “A Synthetic Completeness Theorem” in Proceedings of STOC, May 1988, pages 1-10.</p>
+<p>Ivy Xu for “A Synthetic Secret Sharing Protocol” in Proceedings of the 16th International Symposium on Distributed Computing (DISC), Toulouse, France, Octobe<br>2002, pages 339–353.</p>
+<h3>2004 citation</h3><p>R. G. Alpha, P. A. Beta, and P. M. Gamma for “A Synthetic Distributed Spanning Algorithm” in TOPLAS 5(1):66-77, January 1983.</p>
+<h3>2001 citation*</h3><p>Jo Yan and Kai Zu for “A Synthetic Impossibility of Consensus” in JACM, 1985.</p>
+<h3>2000 citation*</h3><p>Not a line of an entry, and neither is the next.</p><p>A line that is not names for “A Synthetic Title That Is Read” in the Journal.</p>
+<p>*The “Dijkstra Prize” was awarded under the name “PODC Influential-Paper Award” in the years 2000, 2001, and 2002.</p>
+<h3>Award committee</h3><p>Lu Mo for “Not Read Because The Committee Is Not A List Of Papers” in x.</p>`;
+  const { entries, skipped } = parseDijkstra(html);
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    ["PODC/DISC", 2026, "tot", "Dijkstra Prize in Distributed Computing", "A Synthetic Verification and Approximation Paper", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["PODC/DISC", 2025, "tot", "Dijkstra Prize in Distributed Computing", "What Can Synthetic Nodes Compute Locally?", ["Dee Park", "Eli Ross"]],
+    ["PODC/DISC", 2023, "tot", "Dijkstra Prize in Distributed Computing", "A Synthetic Completeness Theorem", ["Fay Gray", "Gia Stone", "Hal Wu"]],
+    ["PODC/DISC", 2023, "tot", "Dijkstra Prize in Distributed Computing", "A Synthetic Secret Sharing Protocol", ["Ivy Xu"]],
+    ["PODC/DISC", 2004, "tot", "Dijkstra Prize in Distributed Computing", "A Synthetic Distributed Spanning Algorithm", ["R. G. Alpha", "P. A. Beta", "P. M. Gamma"]],
+    ["PODC", 2001, "tot", "PODC Influential-Paper Award", "A Synthetic Impossibility of Consensus", ["Jo Yan", "Kai Zu"]]
+  ]);
+  assert.equal(skipped.length, 1, skipped.join("\n"));       // the year 2000 line whose "authors" are not names
+  assert.ok(entries.every((e) => e.evidence.includes(e.title) && !("paperYear" in e)));
+  // with no footnote naming the former prize, a starred year is not read
+  const bare = parseDijkstra(`<h3>2001 citation*</h3><p>Jo Yan and Kai Zu for “A Synthetic Impossibility of Consensus” in JACM, 1985.</p>`);
+  assert.deepEqual([bare.entries.length, bare.skipped.length], [0, 1]);
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

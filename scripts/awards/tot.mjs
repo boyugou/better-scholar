@@ -9,16 +9,20 @@
 //                                                                       and the title on the next line
 //   micro  https://www.sigmicro.org/awards/tot/                         the MICRO Test of Time Award, 2014–2025: a table per year, rows
 //                                                                       "MICRO 2006 | Title | Authors"
+//   dijkstra  https://www.podc.org/dijkstra/                            the Edsger W. Dijkstra Prize in Distributed Computing (PODC and DISC), 2000–2026:
+//                                                                       under "2023 citation" a line per paper, "Authors for “Title” in …"
 //
-//   node scripts/awards/tot.mjs www|isca|micro [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
+import { isPerson } from "./people.mjs";
 
 const PAGES = {
   www: "https://www.iw3c2.org/ToT/",
   isca: "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
-  micro: "https://www.sigmicro.org/awards/tot/"
+  micro: "https://www.sigmicro.org/awards/tot/",
+  dijkstra: "https://www.podc.org/dijkstra/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -84,10 +88,33 @@ export function parseMicro(html, source = PAGES.micro) {
   return { entries, skipped };
 }
 
+// "Maurice Herlihy, Victor Luchangco, and Mark Moir for “Title” in Proceedings of …" — one line per paper under its year's heading ("2022 citation").
+// A heading with an asterisk (2000–2002) is for the years the prize was named otherwise, as the page's footnote says (“PODC Influential-Paper Award”):
+// those entries carry that name, and PODC alone. The page gives each paper's citation in a free form, so no paper year is read.
+export function parseDijkstra(html, source = PAGES.dijkstra) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((l) => l.normalize("NFC"));
+  const former = (/awarded under the name [“"]([^”"]+)[”"]/i.exec(ls.join("\n")) || [])[1];
+  let year = null, starred = false;
+  for (const l of ls) {
+    const h = /^((?:19|20)\d{2}) citation(\*)?$/i.exec(l);
+    if (h) { year = parseInt(h[1], 10); starred = Boolean(h[2]); continue; }
+    if (/^Award committee$/i.test(l)) break;
+    const m = year && /^(.+?) for [“"](.+?)[”"“]/.exec(l);
+    if (!m) continue;
+    const authors = names(m[1]), title = cleanTitle(m[2]);
+    if (!authors.length || !authors.every(isPerson) || title.length < 8) { skipped.push(`${year}: not read: ${l.slice(0, 80)}`); continue; }
+    if (starred && !former) { skipped.push(`${year}: starred, but the page names no former name: ${title.slice(0, 60)}`); continue; }
+    const label = starred ? former : "Dijkstra Prize in Distributed Computing";
+    entries.push(entry(starred ? "PODC" : "PODC/DISC", year, label, title, authors, source, `${year} ${label}: ${m[1]} for “${title}”`));
+  }
+  return { entries, skipped };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
-  const parse = { www: parseWww, isca: parseIsca, micro: parseMicro }[kind];
-  if (!parse) { console.error("usage: tot.mjs www|isca|micro [saved-page.html]"); process.exit(2); }
+  const parse = { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra }[kind];
+  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
   const by = {};

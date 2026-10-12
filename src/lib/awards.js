@@ -3,8 +3,8 @@
 //
 // Precision first: the title must be identical once case, accents and punctuation are ignored,
 // AND the award's first author must be among the row's authors. A near title, a similar surname or a
-// shared venue is never enough. The list only knows main-conference paper awards of the venues and
-// years it covers; a paper that is not on it simply has no mark.
+// shared venue is never enough. The list only knows the paper awards of the venues and years it covers
+// (best papers of the main conferences, test-of-time awards); a paper that is not on it simply has no mark.
 (function (root, factory) {
   const api = factory(
     typeof require === "function" && typeof module === "object" ? require("./names.js") : root.RolesRanks.names
