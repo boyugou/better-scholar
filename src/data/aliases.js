@@ -146,6 +146,8 @@
     { ccf: "PKC", core: "PKC", names: ["IACR International Conference on Public-Key Cryptography"] },
     // CCC until 1995 was the Conference on Structure in Complexity Theory
     { ccf: "CCC", core: "CCC", names: ["Annual Conference on Structure in Complexity Theory", "IEEE Annual Conference on Structure in Complexity Theory"], starts: ["IEEE Annual Conference on Structure in Complexity Theory", "Annual Conference on Structure in Complexity Theory"] },
+    // FoSSaCS, as ETAPS and Springer print it: "… Foundations of Software Science and Computation Structures" (CORE has "Computational")
+    { core: "FOSSACS", names: ["International Conference on Foundations of Software Science and Computation Structures"] },
     // ICWSM's first name, which the AAAI printed: "AAAI International Conference on Weblogs and Social Media"
     { ccf: "ICWSM", core: "ICWSM", names: ["International Conference on Weblogs and Social Media"] },
     // CORE names ITiCSE "Annual Conference on …"; Scholar prints the SIGCSE conference (the SIGCSE Technical Symposium is another venue)

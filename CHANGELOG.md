@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.5 — 2026-10-12
+
+Sixteen more real profiles (verification, storage systems, medical imaging, music retrieval, software testing — 1,384 venue strings).
+
+- FoSSaCS as ETAPS prints it (*Foundations of Software Science and Computation Structures*; CORE writes "Computational") is now read.
+- Known gap: a three-letter acronym after a comma in a Springer series title (*Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …*) is not read; three-letter acronyms are too often something else.
+
 ## 2.8.4 — 2026-10-12
 
 Sixteen more real profiles (lattice and zero-knowledge cryptography, quantum algorithms, wireless sensing, computational biology, geometry processing and rendering — 1,583 venue strings).
