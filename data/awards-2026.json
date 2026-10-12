@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1727
+  "count": 1882
  },
  "entries": [
   {
@@ -24819,6 +24819,360 @@
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
   },
   {
+   "venue": "SIGCOMM",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "ZigZag Decoding: Combating Hidden Terminals in Wireless Networks",
+   "authors": [
+    "Shyamnath Gollakota",
+    "Dina Katabi"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2008: Shyamnath Gollakota and Dina Katabi, \"ZigZag Decoding: Combating Hidden Terminals in Wireless Networks\"."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "White Space Networking with Wi-Fi like Connectivity",
+   "authors": [
+    "Paramvir Bahl",
+    "Ranveer Chandra",
+    "Thomas Moscibroda",
+    "Rohan Murthy",
+    "Matt Welsh"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2009: Paramvir Bahl, Ranveer Chandra, Thomas Moscibroda, Rohan Murthy, and Matt Welsh, \"White Space Networking with Wi-Fi like Connectivity\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Efficient Error Estimating Coding: Feasibility and Applications",
+   "authors": [
+    "Binbin Chen",
+    "Zling Zhou",
+    "Yuda Zho",
+    "Haifeng Yu"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2010: Binbin Chen, Zling Zhou, Yuda Zho, and Haifeng Yu, \"Efficient Error Estimating Coding: Feasibility and Applications\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "They Can Hear Your Heartbeats: Non-Invasive Security for Implanted Medical Devices",
+   "authors": [
+    "Shyamnath Gollakota",
+    "Haitham Hassanieh",
+    "Benjamin Ransford",
+    "Dina Katabi",
+    "Kevin Fu"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2011: Shyamnath Gollakota, Haitham Hassanieh, Benjamin Ransford, Dina Katabi, and Kevin Fu, \"They Can Hear Your Heartbeats: Non-Invasive Security for Implanted Medical Devices\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Multi-Resource Fair Queueing for Packet Processing",
+   "authors": [
+    "Ali Ghodsi",
+    "Vyas Sekar",
+    "Matei Zaharia",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2012: Ali Ghodsi, Vyas Sekar, Matei Zaharia, Ion Stoica, Multi-Resource Fair Queueing for Packet Processing"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Ambient Backscatter: Wireless Communication Out of Thin Air",
+   "authors": [
+    "Vincent Liu",
+    "Aaron Parks",
+    "Vamsi Talla",
+    "Shyamnath Gollakota",
+    "David Wetherall",
+    "Joshua Smith"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2013: Vincent Liu, Aaron Parks, Vamsi Talla, Shyamnath Gollakota, David Wetherall and Joshua Smith, “Ambient Backscatter: Wireless Communication Out of Thin Air”"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Balancing Accountability and Privacy in the Network",
+   "authors": [
+    "David Naylor",
+    "Matthew K. Mukerjee",
+    "Peter Steenkiste"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2014: David Naylor (Carnegie Mellon University); Matthew K. Mukerjee (Carnegie Mellon University); Peter Steenkiste (Carnegie Mellon University), \"Balancing Accountability and Privacy in the Network\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "CONGA: Distributed Congestion-Aware Load Balancing for Datacenters",
+   "authors": [
+    "Mohammad Alizadeh",
+    "Tom Edsall",
+    "Sarang Dharmapurikar",
+    "Ramanan Vaidyanathan",
+    "Kevin Chu",
+    "Andy Fingerhut",
+    "Terry Lam",
+    "Francis Matus",
+    "Rong Pan",
+    "Navindra Yadav",
+    "George Varghese"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2014: Mohammad Alizadeh (Cisco); Tom Edsall (Cisco); Sarang Dharmapurikar (Cisco); Ramanan Vaidyanathan (Cisco); Kevin Chu (Cisco); Andy Fingerhut (Google); Terry Lam (Cisco); Francis Matus (Cisco); Rong Pan (Cisco); Navindra Yadav (Cisco); George Varghese (Microsoft), \"CONGA: Distributed Congestion-Aware Load Balancing for Datacenters\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Central Control Over Distributed Routing",
+   "authors": [
+    "Stefano Vissicchio",
+    "Olivier Tilmans",
+    "Laurent Vanbever",
+    "Jennifer Rexford"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2015: Stefano Vissicchio (UCLouvain), Olivier Tilmans (UCLouvain), Laurent Vanbever (ETH Zürich), Jennifer Rexford (Princeton University), \"Central Control Over Distributed Routing\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Don't Mind the Gap: Bridging Network-wide Objectives and Device-level Configurations",
+   "authors": [
+    "Ryan Beckett",
+    "Ratul Mahajan",
+    "Todd Millstein",
+    "Jitendra Padhye",
+    "David Walker"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2016: Ryan Beckett (Princeton University), Ratul Mahajan (Microsoft), Todd Millstein (University of California, Los Angeles), Jitendra Padhye (Microsoft), David Walker (Princeton University), \"Don't Mind the Gap: Bridging Network-wide Objectives and Device-level Configurations\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Eliminating Channel Feedback in Next-Generation Cellular Networks",
+   "authors": [
+    "Deepak Vasisht",
+    "Swarun Kumar",
+    "Hariharan Rahul",
+    "Dina Katabi"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2016: Deepak Vasisht (MIT), Swarun Kumar (CMU), Hariharan Rahul (MIT), Dina Katabi (MIT), \"Eliminating Channel Feedback in Next-Generation Cellular Networks\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices",
+   "authors": [
+    "Vikram Iyer",
+    "Vamsi Talla",
+    "Bryce Kellogg",
+    "Shyamnath Gollakota",
+    "Joshua Smith"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2016: Vikram Iyer, Vamsi Talla , Bryce Kellogg, Shyamnath Gollakota, Joshua Smith (University of Washington), \"Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Language-directed hardware design for network performance monitoring",
+   "authors": [
+    "Srinivas Narayana",
+    "Anirudh Sivaraman",
+    "Vikram Nathan",
+    "Prateesh Goyal",
+    "Venkat Arun",
+    "Mohammad Alizadeh",
+    "Vimalkumar Jeyakumar",
+    "Changhoon Kim"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2017: Srinivas Narayana, Anirudh Sivaraman, Vikram Nathan, and Prateesh Goyal (MIT CSAIL), Venkat Arun (IIT Guwahati), Mohammad Alizadeh (MIT CSAIL), Vimalkumar Jeyakumar (Cisco Tetration Analytics), and Changhoon Kim (Barefoot Networks), \"Language-directed hardware design for network performance monitoring\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Re-architecting datacenter networks and stacks for low latency and high performance",
+   "authors": [
+    "Mark Handley",
+    "Costin Raiciu",
+    "Alexandru Agache",
+    "Andrei Voinescu",
+    "Andrew Moore",
+    "Gianni Antichi",
+    "Marcin Wójcik"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2017: Mark Handley (University College London), Costin Raiciu, Alexandru Agache, and Andrei Voinescu (University Politehnica of Bucharest), and Andrew Moore, Gianni Antichi, and Marcin Wójcik (University of Cambridge), \"Re-architecting datacenter networks and stacks for low latency and high performance\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Inferring Persistent Interdomain Congestion",
+   "authors": [
+    "Amogh Dhamdhere",
+    "David D. Clark",
+    "Alexander Gamero-Garrido Matthew Luckie",
+    "Ricky K. P. Mok",
+    "Gautam Akiwate",
+    "Kabir Gogia",
+    "Vaibhav Bajpai",
+    "Alex C. Snoeren",
+    "kc claffy"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2018: Amogh Dhamdhere (CAIDA/UC San Diego), David D. Clark (MIT), Alexander Gamero-Garrido Matthew Luckie (University of Waikato), Ricky K. P. Mok (CAIDA/UC San Diego), Gautam Akiwate (CAIDA/UC San Diego), Kabir Gogia (CAIDA/UC San Diego), Vaibhav Bajpai (TU Munich), Alex C. Snoeren and kc claffy (CAIDA/UC San Diego), \"Inferring Persistent Interdomain Congestion\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Underwater Backscatter Networking",
+   "authors": [
+    "Junsu Jang",
+    "Fadel Adib"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2019: Junsu Jang and Fadel Adib (MIT Media Lab), \"Underwater Backscatter Networking\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Routing on Multiple Optimality Criteria",
+   "authors": [
+    "João Luís Sobrinho",
+    "Miguel Alves Ferreira"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2020: João Luís Sobrinho, Miguel Alves Ferreira (Instituto de Telecomunicações Instituto Superior Técnico, Universidade de Lisboa), \"Routing on Multiple Optimality Criteria\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Swift: Delay is Simple and Effective for Congestion Control in the Datacenter",
+   "authors": [
+    "Gautam Kumar",
+    "Nandita Dukkipati",
+    "Keon Jang",
+    "Hassan M. G. Wassel",
+    "Xian Wu",
+    "Behnam Montazeri",
+    "Yaogong Wang",
+    "Kevin Springborn",
+    "Christopher Alfeld",
+    "Michael Ryan",
+    "David Wetherall",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2020: Gautam Kumar, Nandita Dukkipati, Keon Jang (MPI-SWS), Hassan M. G. Wassel, Xian Wu, Behnam Montazeri, Yaogong Wang, Kevin Springborn, Christopher Alfeld, Michael Ryan, David Wetherall, Amin Vahdat (Google), \"Swift: Delay is Simple and Effective for Congestion Control in the Datacenter\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Seven years in the Life of Hypergiants' Off-Nets",
+   "authors": [
+    "Petros Gigis",
+    "Matt Calder",
+    "Lefteris Manassakis",
+    "George Nomikos",
+    "Vasileios Kotronis",
+    "Xenofontas Dimitropoulos",
+    "Ethan Katz-Bassett",
+    "Georgios Smaragdakis"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2021: Petros Gigis (University College London), Matt Calder (Microsoft & Columbia University), Lefteris Manassakis (FORTH-ICS), George Nomikos (FORTHJ_ICS & Lancaster University), Vasileios Kotronis (FORTH-ICS), Xenofontas Dimitropoulos (FORTH-ICS & University of Crete), Ethan Katz-Bassett (Columbia University), Georgios Smaragdakis (TU Delft), \"Seven years in the Life of Hypergiants' Off-Nets\""
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim",
+   "authors": [
+    "Huangxun Chen",
+    "Yukai Miao",
+    "Li Chen",
+    "Haifeng Sun",
+    "Hong Xu",
+    "Libin Liu",
+    "Gong Zhang",
+    "Wei Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigcomm.org/awards/best-paper-award",
+   "evidence": "2022: Huangxun Chen (Huawei Theory Lab), Yukai Miao (University of New South Wales), Li Chen (Zhongguancun Laboratory), Haifeng Sun (Beijing University of Posts and Telecommunications), Hong Xu (Chinese University of Hong Kong), Libin Liu (Shandong Computer Science Center (National Supercomputer Center in Jinan)), Gong Zhang (Huawei Theory Lab), Wei Wang (Hong Kong University of Science and Technology (Guangzhou) & Hong Kong University of Science and Technology), \"Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim\""
+  },
+  {
    "venue": "SIGIR",
    "year": 1996,
    "award": "best",
@@ -25991,6 +26345,1953 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "SOUPS 2025: I never reuse passwords! Development and Validation of a Security and Privacy Social Desirability Scale (SP-SDS) for end users without a background in computer science — Laura Marie Abels, University of Bonn; Matthew Smith, University of Bonn and Fraunhofer FKIE; Anna-Marie Ortloff, University of Bonn"
+  },
+  {
+   "venue": "STOC",
+   "year": 1990,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Lower Bounds for the Union-Find and Split-Find Problem on Pointer Machines",
+   "authors": [
+    "J. A. La Poutré"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1990: J. A. La Poutré, “Lower Bounds for the Union-Find and Split-Find Problem on Pointer Machines”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1990,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "One-Way Functions are Necessary and Sufficient for Digital Signatures",
+   "authors": [
+    "John Rompel"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1990: John Rompel, “One-Way Functions are Necessary and Sufficient for Digital Signatures”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1992,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Improved Algorithms for Coloring and Network Decomposition Problems",
+   "authors": [
+    "A. Panconesi",
+    "A. Srinivasan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1992: A. Panconesi and A. Srinivasan, “Improved Algorithms for Coloring and Network Decomposition Problems”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1992,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On Computing a Maximal Independent Set in a Hypergraph of Constant Dimension in Parallel",
+   "authors": [
+    "P. Kelson"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1992: P. Kelson, “On Computing a Maximal Independent Set in a Hypergraph of Constant Dimension in Parallel”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1993,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Cryptographic Hardness of Distribution Specific Learning",
+   "authors": [
+    "M. Kharitonov"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1993: M. Kharitonov, “Cryptographic Hardness of Distribution Specific Learning”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1994,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Nearly-linear Size Holographic Proofs",
+   "authors": [
+    "Alexander Polishchuk",
+    "Daniel A. Spielman"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1994: Alexander Polishchuk and Daniel A. Spielman, “Nearly-linear Size Holographic Proofs”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1994,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Optimal Parallel Suffix Tree Construction",
+   "authors": [
+    "Ramesh Harihan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1994: Ramesh Harihan, “Optimal Parallel Suffix Tree Construction”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1995,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Linear-Time Encodable and Decodable Error-Correcting Codes",
+   "authors": [
+    "Daniel A. Spielman"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1995: Daniel A. Spielman, “Linear-Time Encodable and Decodable Error-Correcting Codes”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1996,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On Extracting Randomness from Weak Random Sources",
+   "authors": [
+    "Amnon Ta-Shma"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1996: Amnon Ta-Shma, “On Extracting Randomness from Weak Random Sources”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1997,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "When Hamming Meets Euclid: The Approximability of Geometric TSP and MST",
+   "authors": [
+    "Luca Trevisan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1997: Luca Trevisan, “When Hamming Meets Euclid: The Approximability of Geometric TSP and MST”"
+  },
+  {
+   "venue": "STOC",
+   "year": 1999,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Constant Factor Approximation for the $k$-Median Problem",
+   "authors": [
+    "Moses Charikar",
+    "Sudipto Guha"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 1999: Moses Charikar and Sudipto Guha, “A Constant Factor Approximation for the $k$-Median Problem”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2000,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Quantum Lower Bounds by Quantum Arguments",
+   "authors": [
+    "Andris Ambainis"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2000: Andris Ambainis, “Quantum Lower Bounds by Quantum Arguments”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2001,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Learning DNF in Time $2^{O(n^{1/3})}$",
+   "authors": [
+    "Adam Klivans",
+    "Rocco Servedio"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2001: Adam Klivans and Rocco Servedio, “Learning DNF in Time $2^{O(n^{1/3})}$”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Price of Anarchy is Independent of the Network Topology",
+   "authors": [
+    "Tim Roughgarden"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2002: Tim Roughgarden, “The Price of Anarchy is Independent of the Network Topology”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Derandomizing Polynomial Identity Tests Means Proving Circuit Lower Bounds",
+   "authors": [
+    "Valentine Kabanets",
+    "Russell Impagliazzo"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2003: “Derandomizing Polynomial Identity Tests Means Proving Circuit Lower Bounds”, by Valentine Kabanets and Russell Impagliazzo."
+  },
+  {
+   "venue": "STOC",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "New Lattice-Based Cryptographic Constructions",
+   "authors": [
+    "Oded Regev"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2003: “New Lattice-Based Cryptographic Constructions”, by Oded Regev."
+  },
+  {
+   "venue": "STOC",
+   "year": 2003,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Randomly Coloring Graphs of Girth At Least Five",
+   "authors": [
+    "Thomas P. Hayes"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2003: Thomas P. Hayes, “Randomly Coloring Graphs of Girth At Least Five”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Expander Flows, Geometric Embeddings and Graph Partitioning",
+   "authors": [
+    "Sanjeev Arora",
+    "Satish Rao",
+    "Umesh Vazirani"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2004: “Expander Flows, Geometric Embeddings and Graph Partitioning”, by Sanjeev Arora, Satish Rao, and Umesh Vazirani."
+  },
+  {
+   "venue": "STOC",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Multi-Linear Formulas for Permanent and Determinant Are of Super-Polynomial Size",
+   "authors": [
+    "Ran Raz"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2004: “Multi-Linear Formulas for Permanent and Determinant Are of Super-Polynomial Size”, by Ran Raz."
+  },
+  {
+   "venue": "STOC",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Lower Bounds for Local Search by Quantum Arguments",
+   "authors": [
+    "Scott Aaronson"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2004: Scott Aaronson, “Lower Bounds for Local Search by Quantum Arguments”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Spectral Partitioning, Eigenvalue Bounds, and Circle Packings for Graphs of Bounded Genus",
+   "authors": [
+    "Jonathan Kelner"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2004: Jonathan Kelner, “Spectral Partitioning, Eigenvalue Bounds, and Circle Packings for Graphs of Bounded Genus”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Undirected ST-Connectivity in Log-Space",
+   "authors": [
+    "Omer Reingold"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2005: “Undirected ST-Connectivity in Log-Space”, by Omer Reingold."
+  },
+  {
+   "venue": "STOC",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A $O(\\log n \\log \\log n)$ Space Algorithm for Undirected Connectivity",
+   "authors": [
+    "Vladimir Trifonov"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2005: Vladimir Trifonov, “A $O(\\log n \\log \\log n)$ Space Algorithm for Undirected Connectivity”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The PCP Theorem via Gap Amplification",
+   "authors": [
+    "Irit Dinur"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2006: “The PCP Theorem via Gap Amplification”, by Irit Dinur."
+  },
+  {
+   "venue": "STOC",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Extractors for a Constant Number of Polynomial Min-Entropy Independent Sources",
+   "authors": [
+    "Anup Rao"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2006: Anup Rao, “Extractors for a Constant Number of Polynomial Min-Entropy Independent Sources”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Narrow Proofs May Be Spacious: Separating Space and Width in Resolution",
+   "authors": [
+    "Jakob Nordstrom"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2006: Jakob Nordstrom, “Narrow Proofs May Be Spacious: Separating Space and Width in Resolution”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Faster Integer Multiplication",
+   "authors": [
+    "Martin Fürer"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2007: “Faster Integer Multiplication”, by Martin Fürer."
+  },
+  {
+   "venue": "STOC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Towards $3$-Query Locally Decodable Codes of Subexponential Length",
+   "authors": [
+    "Sergey Yekhanin"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2007: “Towards $3$-Query Locally Decodable Codes of Subexponential Length”, by Sergey Yekhanin."
+  },
+  {
+   "venue": "STOC",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Towards $3$-Query Locally Decodable Codes of Subexponential Length",
+   "authors": [
+    "Sergey Yekhanin"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2007: Sergey Yekhanin, “Towards $3$-Query Locally Decodable Codes of Subexponential Length”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Algorithms and Inapproximability Results for Every CSP?",
+   "authors": [
+    "Prasad Raghavendra"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2008: “Algorithms and Inapproximability Results for Every CSP?”, by Prasad Raghavendra."
+  },
+  {
+   "venue": "STOC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Optimal Hierarchical Decompositions for Congestion Minimization in Networks",
+   "authors": [
+    "Harald Räcke"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2008: “Optimal Hierarchical Decompositions for Congestion Minimization in Networks”, by Harald Räcke."
+  },
+  {
+   "venue": "STOC",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Algorithms and Inapproximability Results for Every CSP?",
+   "authors": [
+    "Prasad Raghavendra"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2008: Prasad Raghavendra, “Algorithms and Inapproximability Results for Every CSP?”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Constructive Proof of the Lovász Local Lemma",
+   "authors": [
+    "Robin Moser"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2009: “A Constructive Proof of the Lovász Local Lemma”, by Robin Moser."
+  },
+  {
+   "venue": "STOC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Public-Key Cryptosystems from the Worst-Case Shortest Vector Problem",
+   "authors": [
+    "Chris Peikert"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2009: “Public-Key Cryptosystems from the Worst-Case Shortest Vector Problem”, by Chris Peikert."
+  },
+  {
+   "venue": "STOC",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A constructive proof of the Lovász Local Lemma",
+   "authors": [
+    "Robin Moser"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2009: Robin Moser, “A constructive proof of the Lovász Local Lemma”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "An Improved LP-Based Approximation for Steiner Tree",
+   "authors": [
+    "Jaroslaw Byrka",
+    "Fabrizio Grandoni",
+    "Thomas Rothvoß",
+    "Laura Sanità"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2010: “An Improved LP-Based Approximation for Steiner Tree”, by Jaroslaw Byrka, Fabrizio Grandoni, Thomas Rothvoß, and Laura Sanità."
+  },
+  {
+   "venue": "STOC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "QIP = PSPACE",
+   "authors": [
+    "Rahul Jain",
+    "Zhengfeng Ji",
+    "Sarvagya Upadhyay",
+    "John Watrous"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2010: “QIP = PSPACE”, by Rahul Jain, Zhengfeng Ji, Sarvagya Upadhyay, and John Watrous."
+  },
+  {
+   "venue": "STOC",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Augmenting Undirected Node-Connectivity by One",
+   "authors": [
+    "László Végh"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2010: László Végh, “Augmenting Undirected Node-Connectivity by One”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Electrical Flows, Laplacian Systems, and Faster Approximation of Maximum Flow in Undirected Graphs",
+   "authors": [
+    "Paul Christiano",
+    "Jonathan A. Kelner",
+    "Aleksander Madry",
+    "Daniel A. Spielman",
+    "Shang-Hua Teng"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2011: “Electrical Flows, Laplacian Systems, and Faster Approximation of Maximum Flow in Undirected Graphs”, by Paul Christiano, Jonathan A. Kelner, Aleksander Madry, Daniel A. Spielman, and Shang-Hua Teng."
+  },
+  {
+   "venue": "STOC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Subexponential Lower Bounds for Randomized Pivoting Rules for the Simplex Algorithm",
+   "authors": [
+    "Oliver Friedmann",
+    "Thomas Dueholm Hansen",
+    "Uri Zwick"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2011: “Subexponential Lower Bounds for Randomized Pivoting Rules for the Simplex Algorithm”, by Oliver Friedmann, Thomas Dueholm Hansen, and Uri Zwick."
+  },
+  {
+   "venue": "STOC",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Analyzing Network Coding Gossip Made Easy",
+   "authors": [
+    "Bernhard Haeupler"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2011: Bernhard Haeupler, “Analyzing Network Coding Gossip Made Easy”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Linear vs. Semidefinite Extended Formulations: Exponential Separation and Strong Lower Bounds",
+   "authors": [
+    "Samuel Fiorini",
+    "Serge Massar",
+    "Sebastian Pokutta",
+    "Hans Tiwary",
+    "Ronald de Wolf"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2012: “Linear vs. Semidefinite Extended Formulations: Exponential Separation and Strong Lower Bounds”, by Samuel Fiorini, Serge Massar, Sebastian Pokutta, Hans Tiwary, and Ronald de Wolf."
+  },
+  {
+   "venue": "STOC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Cell Probe Complexity of Dynamic Range Counting",
+   "authors": [
+    "Kasper Green Larsen"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2012: “The Cell Probe Complexity of Dynamic Range Counting”, by Kasper Green Larsen."
+  },
+  {
+   "venue": "STOC",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Cell Probe Complexity of Dynamic Range Counting",
+   "authors": [
+    "Kasper Green Larsen"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2012: Kasper Green Larsen, “The Cell Probe Complexity of Dynamic Range Counting”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Approximation Resistance from Pairwise Independent Subgroups",
+   "authors": [
+    "Siu On Chan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2013: “Approximation Resistance from Pairwise Independent Subgroups”, by Siu On Chan."
+  },
+  {
+   "venue": "STOC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Low Rank Approximation and Regression in Input Sparsity Time",
+   "authors": [
+    "Ken Clarkson",
+    "David Woodruff"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2013: “Low Rank Approximation and Regression in Input Sparsity Time”, by Ken Clarkson and David Woodruff."
+  },
+  {
+   "venue": "STOC",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Approximation Resistance from Pairwise Independent Subgroups",
+   "authors": [
+    "Siu On Chan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2013: Siu On Chan, “Approximation Resistance from Pairwise Independent Subgroups”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Maintaining Shortest Paths Under Deletions in Weighted Directed Graphs",
+   "authors": [
+    "Aaron Bernstein"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2013: Aaron Bernstein, “Maintaining Shortest Paths Under Deletions in Weighted Directed Graphs”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Matching Polytope Has Exponential Extension Complexity",
+   "authors": [
+    "Thomas Rothvoß"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2014: “The Matching Polytope Has Exponential Extension Complexity”, by Thomas Rothvoß."
+  },
+  {
+   "venue": "STOC",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Online Learning of Local Structure via Semidefinite Programming",
+   "authors": [
+    "Paul F. Christiano"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2014: Paul F. Christiano, “Online Learning of Local Structure via Semidefinite Programming”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "$2$-Server PIR with Sub-Polynomial Communication",
+   "authors": [
+    "Zeev Dvir",
+    "Sivakanth Gopi"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2015: “$2$-Server PIR with Sub-Polynomial Communication”, by Zeev Dvir and Sivakanth Gopi."
+  },
+  {
+   "venue": "STOC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Exponential Separation of Information and Communication for Boolean Functions",
+   "authors": [
+    "Anat Ganor",
+    "Gillat Kol",
+    "Ran Raz"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2015: “Exponential Separation of Information and Communication for Boolean Functions”, by Anat Ganor, Gillat Kol, and Ran Raz."
+  },
+  {
+   "venue": "STOC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Lower Bounds on the Size of Semidefinite Programming Relaxations",
+   "authors": [
+    "James Lee",
+    "Prasad Raghavendra",
+    "David Steurer"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2015: “Lower Bounds on the Size of Semidefinite Programming Relaxations”, by James Lee, Prasad Raghavendra, and David Steurer."
+  },
+  {
+   "venue": "STOC",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Inapproximability of Nash Equilibrium",
+   "authors": [
+    "Aviad Rubinstein"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2015: Aviad Rubinstein, “Inapproximability of Nash Equilibrium”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Explicit Two-Source Extractors and Resilient Functions",
+   "authors": [
+    "Eshan Chattopadhyay",
+    "David Zuckerman"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2016: “Explicit Two-Source Extractors and Resilient Functions”, by Eshan Chattopadhyay and David Zuckerman."
+  },
+  {
+   "venue": "STOC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Graph Isomorphism in Quasipolynomial Time",
+   "authors": [
+    "László Babai"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2016: “Graph Isomorphism in Quasipolynomial Time”, by László Babai."
+  },
+  {
+   "venue": "STOC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Reed-Muller Codes Achieve Capacity on Erasure Channels",
+   "authors": [
+    "Shrinivas Kudekar",
+    "Santhosh Kumar",
+    "Marco Mondelli",
+    "Henry D. Pfister",
+    "Eren Sasoglu",
+    "Rudiger Urbanke"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2016: “Reed-Muller Codes Achieve Capacity on Erasure Channels”, by Shrinivas Kudekar, Santhosh Kumar, Marco Mondelli, Henry D. Pfister, Eren Sasoglu, and Rudiger Urbanke."
+  },
+  {
+   "venue": "STOC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Tight Space Bound for Consensus",
+   "authors": [
+    "Leqi Zhu"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2016: Leqi Zhu, “A Tight Space Bound for Consensus”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The $4/3$ Additive Spanner Exponent is Tight",
+   "authors": [
+    "Amir Abboud",
+    "Greg Bodwin"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2016: Amir Abboud and Greg Bodwin, “The $4/3$ Additive Spanner Exponent is Tight”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Weighted Linear Matroid Parity Algorithm",
+   "authors": [
+    "Satoru Iwata",
+    "Yusuke Kobayashi"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2017: “A Weighted Linear Matroid Parity Algorithm”, by Satoru Iwata and Yusuke Kobayashi."
+  },
+  {
+   "venue": "STOC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Deciding Parity Games in Quasipolynomial Time",
+   "authors": [
+    "Cristian Calude",
+    "Sanjay Jain",
+    "Bakhadyr Khoussainov",
+    "Wei Li",
+    "Frank Stephan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2017: “Deciding Parity Games in Quasipolynomial Time”, by Cristian Calude, Sanjay Jain, Bakhadyr Khoussainov, Wei Li, and Frank Stephan."
+  },
+  {
+   "venue": "STOC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Explicit, Almost Optimal, Epsilon-Balanced Codes",
+   "authors": [
+    "Amnon Ta-Shma"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2017: “Explicit, Almost Optimal, Epsilon-Balanced Codes”, by Amnon Ta-Shma."
+  },
+  {
+   "venue": "STOC",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Almost-Polynomial Ratio ETH-Hardness of Approximating Densest $k$-Subgraph",
+   "authors": [
+    "Pasin Manurangsi"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2017: Pasin Manurangsi, “Almost-Polynomial Ratio ETH-Hardness of Approximating Densest $k$-Subgraph”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Constant-Factor Approximation Algorithm for the Asymmetric Traveling Salesman Problem",
+   "authors": [
+    "Ola Svensson",
+    "Jakub Tarnawski",
+    "Lászaló A. Végh"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2018: “A Constant-Factor Approximation Algorithm for the Asymmetric Traveling Salesman Problem”, by Ola Svensson, Jakub Tarnawski, and Lászaló A. Végh."
+  },
+  {
+   "venue": "STOC",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "An Almost-Linear Time Algorithm for Uniform Random Spanning Tree Generation",
+   "authors": [
+    "Aaron Schild"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2018: Aaron Schild, “An Almost-Linear Time Algorithm for Uniform Random Spanning Tree Generation”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Log-Concave Polynomials II: High-Dimensional Walks and an FPRAS for Counting Basis of a Matroid",
+   "authors": [
+    "Nima Anari",
+    "Kuikui Liu",
+    "Shayan Oveis Gharan",
+    "Cynthia Vinzant"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2019: “Log-Concave Polynomials II: High-Dimensional Walks and an FPRAS for Counting Basis of a Matroid”, by Nima Anari, Kuikui Liu, Shayan Oveis Gharan, and Cynthia Vinzant."
+  },
+  {
+   "venue": "STOC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Oracle Separation of BPQ and PH",
+   "authors": [
+    "Ran Raz",
+    "Avishay Tal"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2019: “Oracle Separation of BPQ and PH”, by Ran Raz and Avishay Tal."
+  },
+  {
+   "venue": "STOC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Reachability Problem for Petri Nets Is Not Elementary",
+   "authors": [
+    "Wojciech Czerwiński",
+    "Sławomir Lasota",
+    "Ranko Lazić",
+    "Jérôme Leroux",
+    "Filip Mazowiecki"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2019: “The Reachability Problem for Petri Nets Is Not Elementary”, by Wojciech Czerwiński, Sławomir Lasota, Ranko Lazić, Jérôme Leroux, and Filip Mazowiecki."
+  },
+  {
+   "venue": "STOC",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Bootstrapping Results for Threshold Circuits ‘Just Beyond’ Known Lower Bounds",
+   "authors": [
+    "Lijie Chen",
+    "Roei Tell"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2019: Lijie Chen and Roei Tell, “Bootstrapping Results for Threshold Circuits ‘Just Beyond’ Known Lower Bounds”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improved Bounds for The Sunflower Lemma",
+   "authors": [
+    "Ryan Alweiss",
+    "Shachar Lovett",
+    "Kewen Wu",
+    "Jiapeng Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2020: “Improved Bounds for The Sunflower Lemma”, by Ryan Alweiss, Shachar Lovett, Kewen Wu, and Jiapeng Zhang."
+  },
+  {
+   "venue": "STOC",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Improved Bounds for Perfect Sampling of $k$-colorings in Graphs",
+   "authors": [
+    "Siddharth Bhandari",
+    "Sayantan Chakraborty"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2020: Siddharth Bhandari and Sayantan Chakraborty, “Improved Bounds for Perfect Sampling of $k$-colorings in Graphs”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A (Slightly) Improved Approximation Algorithm for Metric TSP",
+   "authors": [
+    "Anna R. Karlin",
+    "Nathan Klein",
+    "Shayan Oveis Gharan"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2021: “A (Slightly) Improved Approximation Algorithm for Metric TSP”, by Anna R. Karlin, Nathan Klein, and Shayan Oveis Gharan."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Indistinguishability Obfuscation from Well-Founded Assumptions",
+   "authors": [
+    "Aayush Jain",
+    "Huijia Lin",
+    "Amit Sahai"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2021: “Indistinguishability Obfuscation from Well-Founded Assumptions”, by Aayush Jain, Huijia Lin , and Amit Sahai."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Complexity of Gradient Descent: CLS = PPAD ∩ PLS",
+   "authors": [
+    "John Fearnley",
+    "Paul W. Goldberg",
+    "Alexandros Hollender",
+    "Rahul Savani"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2021: “The Complexity of Gradient Descent: CLS = PPAD ∩ PLS”, by John Fearnley, Paul W. Goldberg, Alexandros Hollender, and Rahul Savani."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Discrepancy Minimization via a Self-Balancing Walk",
+   "authors": [
+    "Ryan Alweiss",
+    "Yang P. Liu",
+    "Mehtaab Sawhney"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2021: Ryan Alweiss (Princeton University), Yang P. Liu (Stanford University), and Mehtaab Sawhney (Massachusetts Institute of Technology), “Discrepancy Minimization via a Self-Balancing Walk”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Separating Words and Trace Reconstruction",
+   "authors": [
+    "Zachary Chase"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2021: Zachary Chase (University of Oxford), “Separating Words and Trace Reconstruction”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "A polynomial-time approximation algorithm for the permanent of a matrix with non-negative entries",
+   "authors": [
+    "Mark Jerrum",
+    "Alistair Sinclair",
+    "Eric Vigoda"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (20 Years): Mark Jerrum, Alistair Sinclair, and Eric Vigoda, “A polynomial-time approximation algorithm for the permanent of a matrix with non-negative entries”, 2001."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "Approximate distance oracles",
+   "authors": [
+    "Mikkel Thorup",
+    "Uri Zwick"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (20 Years): Mikkel Thorup and Uri Zwick, “Approximate distance oracles”, 2001."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Completeness theorems for non-cryptographic fault-tolerant distributed computation",
+   "authors": [
+    "Michael Ben-Or",
+    "Shafi Goldwasser",
+    "Avi Wigderson"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (30 Years): Michael Ben-Or, Shafi Goldwasser, and Avi Wigderson, “Completeness theorems for non-cryptographic fault-tolerant distributed computation”, 1988."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Multiparty unconditionally secure protocols",
+   "authors": [
+    "David Chaum",
+    "Claude Crépeau",
+    "Ivan Damgård"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (30 Years): David Chaum, Claude Crépeau, and Ivan Damgård, “Multiparty unconditionally secure protocols”, 1988."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "Smoothed analysis of algorithms: why the simplex algorithm usually takes polynomial time",
+   "authors": [
+    "Daniel A. Spielman",
+    "Shang-Hua Teng"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (20 Years): Daniel A. Spielman and Shang-Hua Teng, “Smoothed analysis of algorithms: why the simplex algorithm usually takes polynomial time”, 2001."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "The computational complexity of linear optics",
+   "authors": [
+    "Scott Aaronson",
+    "Alex Arkhipov"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (10 Years): Scott Aaronson and Alex Arkhipov, “The computational complexity of linear optics”, 2011."
+  },
+  {
+   "venue": "STOC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Verifiable secret-sharing and multiparty protocols with honest majority",
+   "authors": [
+    "Tal Rabin",
+    "Michael Ben-Or"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2021 Test of Time (30 Years): Tal Rabin and Michael Ben-Or, “Verifiable secret-sharing and multiparty protocols with honest majority”, 1989."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Asymptotically Good Quantum and Locally Testable Classical LDPC Codes",
+   "authors": [
+    "Pavel Panteleev",
+    "Gleb Kalachev"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2022: “Asymptotically Good Quantum and Locally Testable Classical LDPC Codes”, by Pavel Panteleev and Gleb Kalachev."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Locally Testable Codes with constant rate, distance, and locality",
+   "authors": [
+    "Irit Dinur",
+    "Shai Evra",
+    "Ron Livne",
+    "Alexander Lubotzky",
+    "Shahar Mozes"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2022: “Locally Testable Codes with constant rate, distance, and locality”, by Irit Dinur, Shai Evra, Ron Livne, Alexander Lubotzky, and Shahar Mozes."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Exact Complexity of Pseudorandom Functions and the Black-Box Natural Proof Barrier for Bootstrapping Results in Computational Complexity",
+   "authors": [
+    "Zhiyuan Fan",
+    "Jiatu Li",
+    "Tianqi Yang"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2022: Zhiyuan Fan (Tsinghua University), Jiatu Li (Tsinghua University) and Tianqi Yang (Tsinghua University), “The Exact Complexity of Pseudorandom Functions and the Black-Box Natural Proof Barrier for Bootstrapping Results in Computational Complexity”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Optimal Error Resilience of Interactive Communication Over Binary Channels",
+   "authors": [
+    "Rachel Yun Zhang",
+    "Meghal Gupta"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2022: Rachel Yun Zhang (MIT) and Meghal Gupta (Microsoft Research), “The Optimal Error Resilience of Interactive Communication Over Binary Channels”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Fully homomorphic encryption using ideal lattices",
+   "authors": [
+    "Craig Gentry"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (10 Years): Craig Gentry, “Fully homomorphic encryption using ideal lattices”, 2009."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Linear vs. semidefinite extended formulations: exponential separation and strong lower bounds",
+   "authors": [
+    "Samuel Fiorini",
+    "Serge Massar",
+    "Sebastian Pokutta",
+    "Hans Raj Tiwary",
+    "Ronald de Wolf"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (10 Years): Samuel Fiorini, Serge Massar, Sebastian Pokutta, Hans Raj Tiwary, and Ronald de Wolf, “Linear vs. semidefinite extended formulations: exponential separation and strong lower bounds”, 2012."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Non-malleable cryptography",
+   "authors": [
+    "Danny Dolev",
+    "Cynthia Dwork",
+    "Moni Naor"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (30 Years): Danny Dolev, Cynthia Dwork, and Moni Naor, “Non-malleable cryptography”, 1991."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "On the power of unique 2-prover 1-round games",
+   "authors": [
+    "Subhash Khot"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (20 Years): Subhash Khot, “On the power of unique 2-prover 1-round games”, 2002."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Pseudorandom generators for space-bounded computation",
+   "authors": [
+    "Noam Nisan"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (30 Years): Noam Nisan, “Pseudorandom generators for space-bounded computation”, 1990."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Self-testing/correcting with applications to numerical problems",
+   "authors": [
+    "Manuel Blum",
+    "Michael Luby",
+    "Ronitt Rubinfeld"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (30 Years): Manuel Blum, Michael Luby, and Ronitt Rubinfeld, “Self-testing/correcting with applications to numerical problems”, 1990."
+  },
+  {
+   "venue": "STOC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "Similarity estimation techniques from rounding algorithms",
+   "authors": [
+    "Moses Charikar"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2022 Test of Time (20 Years): Moses Charikar, “Similarity estimation techniques from rounding algorithms”, 2002."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Doubly Efficient Private Information Retrieval and Fully Homomorphic RAM Computation from Ring LWE",
+   "authors": [
+    "Wei-Kai Lin",
+    "Ethan Mook",
+    "Daniel Wichs"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2023: “Doubly Efficient Private Information Retrieval and Fully Homomorphic RAM Computation from Ring LWE”, by Wei-Kai Lin, Ethan Mook, and Daniel Wichs."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Randomized k-Server Conjecture is False!",
+   "authors": [
+    "Sebastien Bubeck",
+    "Christian Coester",
+    "Yuval Rabani"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2023: “The Randomized k-Server Conjecture is False!”, by Sebastien Bubeck, Christian Coester, and Yuval Rabani."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Subsampling Suffices for Adaptive Data Analysis",
+   "authors": [
+    "Guy Blanc"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2023: Guy Blanc (Stanford University), “Subsampling Suffices for Adaptive Data Analysis”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Power of Multi-Step Vizing chains",
+   "authors": [
+    "Aleksander Bjørn Grodt Christiansen"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2023: Aleksander Bjørn Grodt Christiansen (Technical University of Denmark, DTU), “The Power of Multi-Step Vizing chains”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "A sieve algorithm for the shortest lattice vector problem",
+   "authors": [
+    "Miklos Atjai",
+    "Ravi Kumar",
+    "D. Sivakumar"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2023 Test of Time (20 Years): Miklos Atjai, Ravi Kumar, and D. Sivakumar, “A sieve algorithm for the shortest lattice vector problem”, 2001."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Low rank approximation and regression in input sparsity time",
+   "authors": [
+    "Kenneth L Clarkson",
+    "David P Woodruff"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2023 Test of Time (10 Years): Kenneth L Clarkson and David P Woodruff, “Low rank approximation and regression in input sparsity time”, 2013."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "New lattice-based cryptographic constructions",
+   "authors": [
+    "Oded Regev"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2023 Test of Time (20 Years): Oded Regev, “New lattice-based cryptographic constructions”, 2003."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Quantum complexity theory",
+   "authors": [
+    "Ethan Bernstein",
+    "Umesh Vazirani"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2023 Test of Time (30 Years): Ethan Bernstein and Umesh Vazirani, “Quantum complexity theory”, 1993."
+  },
+  {
+   "venue": "STOC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "When trees collide: An approximation algorithm for the generalized Steiner problem on networks",
+   "authors": [
+    "Ajit Agrawal",
+    "Philip Klein",
+    "R. Ravi"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2023 Test of Time (30 Years): Ajit Agrawal, Philip Klein, and R. Ravi, “When trees collide: An approximation algorithm for the generalized Steiner problem on networks”, 1989."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Near Optimal Alphabet-Soundness Tradeoff PCPs",
+   "authors": [
+    "Dor Minzer",
+    "Kai Zhe Zheng"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2024: “Near Optimal Alphabet-Soundness Tradeoff PCPs”, by Dor Minzer and Kai Zhe Zheng."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Parameterized Inapproximability Hypothesis under Exponential Time Hypothesis",
+   "authors": [
+    "Venkatesan Guruswami",
+    "Bingkai Lin",
+    "Xuandi Ren",
+    "Yican Sun",
+    "Kewen Wu"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2024: “Parameterized Inapproximability Hypothesis under Exponential Time Hypothesis”, by Venkatesan Guruswami, Bingkai Lin, Xuandi Ren, Yican Sun, and Kewen Wu."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Single-Source Shortest Paths with Negative Real Weights in $\\tilde O(mn^{8/9})$ Time",
+   "authors": [
+    "Jeremy T. Fineman"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2024: “Single-Source Shortest Paths with Negative Real Weights in $\\tilde O(mn^{8/9})$ Time”, by Jeremy T. Fineman."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Relaxed Local Correctability from Local Testing",
+   "authors": [
+    "Vinayak M. Kumar",
+    "Geoffrey Mon"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2024: Vinayak M. Kumar, Geoffrey Mon (University of Texas at Austin), “Relaxed Local Correctability from Local Testing”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Shaving Logs via Large Sieve Inequality: Faster Algorithms for Sparse Convolution and More",
+   "authors": [
+    "Ce Jin",
+    "Yinzhan Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2024: Ce Jin, Yinzhan Xu (MIT), “Shaving Logs via Large Sieve Inequality: Faster Algorithms for Sparse Convolution and More”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": ". 878-Approximation Algorithms for MAX CUT and MAX 2SAT",
+   "authors": [
+    "M.X. Goemans",
+    "D.P. Williamson"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (30 Years): M.X. Goemans and D.P. Williamson, “. 878-Approximation Algorithms for MAX CUT and MAX 2SAT”, 1994."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "A Sparse Johnson-Lindenstrauss transform",
+   "authors": [
+    "A. Dasgupta",
+    "R. Kumar",
+    "T. Sarlós"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (10 Years): A. Dasgupta, R. Kumar, and T. Sarlós, “A Sparse Johnson-Lindenstrauss transform”, 2010."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "An Optimal Algorithm for On-line Bipartite Matching",
+   "authors": [
+    "R.M. Karp",
+    "U.V. Vazirani",
+    "V.V. Vazirani"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (30 Years): R.M. Karp, U.V. Vazirani, V.V. Vazirani, “An Optimal Algorithm for On-line Bipartite Matching”, 1990."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Balanced Allocations",
+   "authors": [
+    "Y. Azar",
+    "A.Z. Broder",
+    "A.R. Karlin",
+    "E. Upfal"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (30 Years): Y. Azar, A.Z. Broder, A.R. Karlin, and E. Upfal, “Balanced Allocations”, 1994."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "How to Use Indistinguishability Obfuscation: Deniable Encryption, and More",
+   "authors": [
+    "A. Sahai",
+    "B. Waters"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (10 Years): A. Sahai and B. Waters, “How to Use Indistinguishability Obfuscation: Deniable Encryption, and More”, 2014."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "On Coresets for k-Means and k-Median Clustering",
+   "authors": [
+    "S. Har-Peled",
+    "S. Mazumdar"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (20 Years): S. Har-Peled and S. Mazumdar, “On Coresets for k-Means and k-Median Clustering”, 2004."
+  },
+  {
+   "venue": "STOC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "The Small-World Phenomenon: An Algorithmic Perspective",
+   "authors": [
+    "J. Kleinberg"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2024 Test of Time (20 Years): J. Kleinberg, “The Small-World Phenomenon: An Algorithmic Perspective”, 2000."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Breaking the Sorting Barrier for Directed Single-Source Shortest Paths",
+   "authors": [
+    "Ran Duan",
+    "Jiayi Mao",
+    "Xiao Mao",
+    "Xinkai Shu",
+    "Longhui Yin"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2025: “Breaking the Sorting Barrier for Directed Single-Source Shortest Paths”, by Ran Duan, Jiayi Mao, Xiao Mao, Xinkai Shu, and Longhui Yin."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Quasi-Linear Size PCPs with Small Soundness from HDX",
+   "authors": [
+    "Mitali Bafna",
+    "Dor Minzer",
+    "Nikhil Vyas",
+    "Zhiwei Yun"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2025: “Quasi-Linear Size PCPs with Small Soundness from HDX”, by Mitali Bafna, Dor Minzer, Nikhil Vyas, and Zhiwei Yun."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Simulating Time in (Nearly) Square-Root Space",
+   "authors": [
+    "Ryan Williams"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2025: “Simulating Time in (Nearly) Square-Root Space”, by Ryan Williams."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Vizing’s Theorem in Near-Linear Time",
+   "authors": [
+    "Sepehr Assadi",
+    "Soheil Behnezhad",
+    "Sayan Bhattacharya",
+    "Martin Costa",
+    "Shay Solomon",
+    "Tianyi Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/best_paper.html",
+   "evidence": "STOC 2025: “Vizing’s Theorem in Near-Linear Time”, by Sepehr Assadi, Soheil Behnezhad, Sayan Bhattacharya, Martin Costa, Shay Solomon, and Tianyi Zhang."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Explicit Folded Reed-Solomon and Multiplicity Codes Achieve Relaxed Generalized Singleton Bounds",
+   "authors": [
+    "Yeyuan Chen",
+    "Zihan Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigact.org/prizes/student.html",
+   "evidence": "STOC 2025: Yeyuan Chen (University of Michigan, Ann Arbor); Zihan Zhang (Ohio State University), “Explicit Folded Reed-Solomon and Multiplicity Codes Achieve Relaxed Generalized Singleton Bounds”"
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "A parallel repetition theorem",
+   "authors": [
+    "Ran Raz"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (30 Years): Ran Raz, “A parallel repetition theorem”, 1995."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Electrical flows, laplacian systems, and faster approximation of maximum flow in undirected graphs",
+   "authors": [
+    "Paul F. Christiano",
+    "Jonathan A. Kelner",
+    "Aleksander Madry",
+    "Daniel A. Spielman",
+    "Shang-Hua Teng"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (10 Years): Paul F. Christiano, Jonathan A. Kelner, Aleksander Madry, Daniel A. Spielman, and Shang-Hua Teng, “Electrical flows, laplacian systems, and faster approximation of maximum flow in undirected graphs”, 2015."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Hypercontractivity, Sum-of-Squares Proofs and their Applications",
+   "authors": [
+    "Boaz Barak",
+    "Fernando G.S.L. Brandão",
+    "Aram W. Harrow",
+    "Jonathan A. Kelner",
+    "David Steurer",
+    "Yuan Zhou"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (10 Years): Boaz Barak, Fernando G.S.L. Brandão, Aram W. Harrow, Jonathan A. Kelner, David Steurer, and Yuan Zhou, “Hypercontractivity, Sum-of-Squares Proofs and their Applications”, 2015."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "On lattices, learning with errors, random linear codes, and cryptography",
+   "authors": [
+    "Oded Regev"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (20 Years): Oded Regev, “On lattices, learning with errors, random linear codes, and cryptography”, 2005."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Preserving Statistical Validity in Adaptive Data Analysis",
+   "authors": [
+    "Cynthia Dwork",
+    "Vitaly Feldman",
+    "Moritz Hardt",
+    "Toniann Pitassi",
+    "Omer Reingold",
+    "Aaron Leon Roth"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (10 Years): Cynthia Dwork, Vitaly Feldman, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Aaron Leon Roth, “Preserving Statistical Validity in Adaptive Data Analysis”, 2015."
+  },
+  {
+   "venue": "STOC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Transforming cabbage into turnip: polynomial algorithm for sorting signed permutations by reversals",
+   "authors": [
+    "Sridhar Hannenhalli",
+    "Pavel Pevzner"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2025 Test of Time (30 Years): Sridhar Hannenhalli and Pavel Pevzner, “Transforming cabbage into turnip: polynomial algorithm for sorting signed permutations by reversals”, 1995."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "A cost function for similarity-based hierarchical clustering",
+   "authors": [
+    "Sanjoy Dasgupta"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (10 Years): Sanjoy Dasgupta, “A cost function for similarity-based hierarchical clustering”, 2016."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "A fast quantum mechanical algorithm for database search",
+   "authors": [
+    "Lov Grover"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (30 Years): Lov Grover, “A fast quantum mechanical algorithm for database search”, 1996."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Constant-round interactive proofs for delegating computation",
+   "authors": [
+    "Omer Reingold",
+    "Guy N. Rothblum",
+    "Ron D. Rothblum"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (10 Years): Omer Reingold, Guy N. Rothblum, and Ron D. Rothblum, “Constant-round interactive proofs for delegating computation”, 2016."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Efficient noise-tolerant learning from statistical queries",
+   "authors": [
+    "Michael Kearns"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (30 Years): Michael Kearns, “Efficient noise-tolerant learning from statistical queries”, 1993."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "Explicit capacity-achieving list-decodable codes",
+   "authors": [
+    "Venkatesan Guruswami",
+    "Atri Rudra"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (20 Years): Venkatesan Guruswami and Atri Rudra, “Explicit capacity-achieving list-decodable codes”, 2006."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (30 years)",
+   "title": "Generating hard instances of lattice problems",
+   "authors": [
+    "Miklos Ajtai"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (30 Years): Miklos Ajtai, “Generating hard instances of lattice problems”, 1996."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (10 years)",
+   "title": "Graph isomorphism in quasipolynomial time",
+   "authors": [
+    "Laszlo Babai"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (10 Years): Laszlo Babai, “Graph isomorphism in quasipolynomial time”, 2016."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "The complexity of computing a Nash equilibrium",
+   "authors": [
+    "Constantinos Daskalakis",
+    "Paul W. Goldberg",
+    "Christos H. Papadimitriou"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (20 Years): Constantinos Daskalakis , Paul W. Goldberg, and Christos H. Papadimitriou, “The complexity of computing a Nash equilibrium”, 2006."
+  },
+  {
+   "venue": "STOC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award (20 years)",
+   "title": "Undirected ST-connectivity in log-space",
+   "authors": [
+    "Omer Reingold"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sigact.org/prizes/stoc_tot.html",
+   "evidence": "STOC 2026 Test of Time (20 Years): Omer Reingold, “Undirected ST-connectivity in log-space”, 2005."
   },
   {
    "venue": "USENIX ATC",

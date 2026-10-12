@@ -176,6 +176,19 @@ test("the bundled list: NLP winners of the years the ACL Anthology lacks (EMNLP 
   assert.deepEqual(find("Label words are anchors: An information flow perspective for understanding in-context learning", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: theory and networking winners (SIGACT's STOC pages, SIGCOMM's best-paper page)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Graph isomorphism in quasipolynomial time", "L Babai"), ["STOC 2016 best", "STOC 2026 tot"]);
+  assert.deepEqual(find("Undirected ST-connectivity in log-space", "O Reingold"), ["STOC 2005 best", "STOC 2026 tot"]);
+  assert.deepEqual(find("The PCP theorem via gap amplification", "I Dinur"), ["STOC 2006 best"]);
+  assert.deepEqual(find("Quantum lower bounds by quantum arguments", "A Ambainis"), ["STOC 2000 best-student"]);
+  assert.deepEqual(find("Fully homomorphic encryption using ideal lattices", "C Gentry"), ["STOC 2022 tot"]);
+  assert.deepEqual(find("Swift: Delay is simple and effective for congestion control in the datacenter", "G Kumar, N Dukkipati, K Jang, HMG Wassel"), ["SIGCOMM 2020 best"]);
+  assert.deepEqual(find("Multi-resource fair queueing for packet processing", "A Ghodsi, V Sekar, M Zaharia, I Stoica"), ["SIGCOMM 2012 best"]);
+  assert.deepEqual(find("Graph isomorphism in quasipolynomial time", "A Smith, B Jones"), []);
+});
+
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
   assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
   assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));

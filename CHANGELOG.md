@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.1 — 2026-10-12
+
+- **STOC and SIGCOMM paper awards** (155 entries) from the societies' own pages: ACM SIGACT's *STOC Best Paper* (2003–2025), Machtey /
+  Danny Lewin *Best Student Paper* (1990–2025) and *Test of Time* (2021–2026; the paper's own year is kept) pages, and ACM SIGCOMM's
+  *Best Paper Award* page (2008–2022). New readers `scripts/awards/sigact.mjs`, `scripts/awards/sigcomm.mjs`; the shared HTML helper
+  now decodes `&copy;` and the thin-space entities and exports `lines()`. The list holds 1882 awards.
+
 ## 2.5.0 — 2026-10-12
 
 - **A profile name written surname first is read the other way round, automatically.** Of 22 real public profiles the owner was found

@@ -4,7 +4,7 @@ const LATIN1 = ["Agrave", "Aacute", "Acirc", "Atilde", "Auml", "Aring", "AElig",
   "ETH", "Ntilde", "Ograve", "Oacute", "Ocirc", "Otilde", "Ouml", "times", "Oslash", "Ugrave", "Uacute", "Ucirc", "Uuml", "Yacute", "THORN", "szlig",
   "agrave", "aacute", "acirc", "atilde", "auml", "aring", "aelig", "ccedil", "egrave", "eacute", "ecirc", "euml", "igrave", "iacute", "icirc", "iuml",
   "eth", "ntilde", "ograve", "oacute", "ocirc", "otilde", "ouml", "divide", "oslash", "ugrave", "uacute", "ucirc", "uuml", "yacute", "thorn", "yuml"];
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "" };
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "", copy: "©", reg: "®", trade: "™", bull: "•", deg: "°", thinsp: " ", ensp: " ", emsp: " " };
 LATIN1.forEach((name, i) => { NAMED[name] = String.fromCharCode(192 + i); });
 
 export const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
@@ -13,3 +13,7 @@ export const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m,
 // the visible text of an HTML fragment (a <br> is a space)
 export const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, ""))
   .replace(/[\u00ad\u200b-\u200d\ufeff]/g, "").replace(/[\u00a0\u202f\u2009]/g, " ").replace(/\s+/g, " ").trim();
+
+// the page as lines of plain text: block ends and <br> become line breaks, scripts and styles are dropped
+export const lines = (html) => html.replace(/<(?:script|style)[\s\S]*?<\/(?:script|style)>/gi, "").replace(/<\/(?:p|div|h\d|li|tr|td|dt|dd)>|<br\s*\/?>/gi, "\n")
+  .split("\n").map((l) => text(l)).filter(Boolean);

@@ -533,3 +533,63 @@ Ann Lee, Bo Chen, Cy Diaz <br />Ballroom A, Session I: Oral/Poster 6, Thursday M
   assert.equal(classify("Outstanding Reviewers"), null);
   assert.equal(classify("Best Demo Award"), null);
 });
+
+// ACM SIGACT's STOC prize pages and SIGCOMM's Best Paper page — synthetic pages in the shapes the real ones use.
+test("SIGACT STOC Best Paper page: a 'STOC <year>' heading, then “Title”, by Authors. (wrapped lines, initials, TeX in a title); the footer belongs to no year", async () => {
+  const { parseBest } = await import("../scripts/awards/sigact.mjs");
+  const html = `<h1>STOC Best Paper Award</h1><p>The Program Committee may designate up to four papers, by 2005 and so on.</p><h2>Winners</h2>
+<p>STOC 2025</p><p>“A Synthetic Time and Space Paper”, by Ann Lee.</p><p>“A Paper with Several Authors”, by Bo Chen, Cy Diaz, and E. Q. Frost.</p>
+<p>STOC 2024</p><p>“A Wrapped Title for the Test”, by<br>Dee Park and Eli Ross.</p><p>“Maths in $\\tilde O(n^{2})$ Titles”, by Fay Gray.</p>
+<p>STOC 2003</p><p>“The Last Entry before the Footer”, by Gia Stone and Hal Wu.</p><p>&copy;&thinsp;2026 ACM SIGACT</p>`;
+  const e = parseBest(html);
+  assert.deepEqual(e.map((x) => [x.year, x.award, x.title, x.authors]), [
+    [2025, "best", "A Synthetic Time and Space Paper", ["Ann Lee"]],
+    [2025, "best", "A Paper with Several Authors", ["Bo Chen", "Cy Diaz", "E. Q. Frost"]],
+    [2024, "best", "A Wrapped Title for the Test", ["Dee Park", "Eli Ross"]],
+    [2024, "best", "Maths in $\\tilde O(n^{2})$ Titles", ["Fay Gray"]],
+    [2003, "best", "The Last Entry before the Footer", ["Gia Stone", "Hal Wu"]]
+  ]);
+  assert.ok(e.every((x) => x.venue === "STOC" && x.source === "https://www.sigact.org/prizes/best_paper.html" && x.evidence.includes(x.title.slice(0, 12))));
+});
+
+test("SIGACT Test of Time page: '(30 Years)' / '(10 years)' either case, authors and title on one line or two, the paper's own year kept; the footer is not an entry", async () => {
+  const { parseTestOfTime } = await import("../scripts/awards/sigact.mjs");
+  const html = `<h2>Winners</h2><p>2026</p><p>(30 Years) Ann Lee, “A Synthetic Old Paper on Lattices”, 1996.</p><p>(20 Years) Bo Chen and Cy Diaz, “A Synthetic Middle-Aged Paper”, 2006.</p>
+<p>2024</p><p>(30 years) A. Lee, B. Chen, and C. Diaz,<br>“Balanced Synthetic Allocations”, 1994.</p><p>(10 years) D. Park,<br>“A Synthetic Sparse Transform”, 2014.</p><p>&copy;&thinsp;2026 ACM SIGACT</p>`;
+  const e = parseTestOfTime(html);
+  assert.deepEqual(e.map((x) => [x.year, x.award, x.awardLabel, x.title, x.authors, x.paperYear]), [
+    [2026, "tot", "Test of Time Award (30 years)", "A Synthetic Old Paper on Lattices", ["Ann Lee"], 1996],
+    [2026, "tot", "Test of Time Award (20 years)", "A Synthetic Middle-Aged Paper", ["Bo Chen", "Cy Diaz"], 2006],
+    [2024, "tot", "Test of Time Award (30 years)", "Balanced Synthetic Allocations", ["A. Lee", "B. Chen", "C. Diaz"], 1994],
+    [2024, "tot", "Test of Time Award (10 years)", "A Synthetic Sparse Transform", ["D. Park"], 2014]
+  ]);
+});
+
+test("SIGACT best student paper page: authors (with affiliations) on the line above the title, or in front of it on the same line", async () => {
+  const { parseStudent } = await import("../scripts/awards/sigact.mjs");
+  const html = `<h2>Winners</h2><p>2024</p><p>Ann Lee (Some University); Bo Chen (Example Lab)</p><p>“A Synthetic Student Paper on Sketching”</p>
+<p>2021</p><p>Cy Diaz (Princeton University), Dee Park (Stanford University), and Eli Ross (Massachusetts Institute of Technology), “A Same-Line Synthetic Paper”.</p><p>Fay Gray (University of Oxford), “A Second Same-Line Synthetic Paper”.</p><p>&copy;&thinsp;2026 ACM SIGACT</p>`;
+  const e = parseStudent(html);
+  assert.deepEqual(e.map((x) => [x.year, x.award, x.title, x.authors]), [
+    [2024, "student", "A Synthetic Student Paper on Sketching", ["Ann Lee", "Bo Chen"]],
+    [2021, "student", "A Same-Line Synthetic Paper", ["Cy Diaz", "Dee Park", "Eli Ross"]],
+    [2021, "student", "A Second Same-Line Synthetic Paper", ["Fay Gray"]]
+  ]);
+});
+
+test("SIGCOMM Best Paper page: a line per winner, several winners joined by 'and', affiliations (nested too) dropped, one title without quotation marks", async () => {
+  const { parse } = await import("../scripts/awards/sigcomm.mjs");
+  const html = `<div><h1>Best Paper Award</h1><p>Some intro.</p><h2>Recent SIGCOMM Best Paper Award Winners</h2>
+<p>2022: Ann Lee (Big Lab), Bo Chen (University of X (Department of Y)), "A Synthetic Network Paper"</p>
+<p>2020: Cy Diaz, Dee Park (Instituto Superior), “First Synthetic Routing Paper” </p><p>and</p><p>Eli Ross, Fay Gray and Gia Stone (Google), “Second Synthetic Congestion Paper”</p>
+<p>2012: Hal Wu, Ivy Xu, Multi-Resource Synthetic Queueing for Packets</p><p>2008: Jo Yan and Kai Zu, "A Synthetic Decoding Paper:  With a Subtitle".</p><p>acm sigcomm</p><p>2001: Not Read, "After the List Ends"</p></div>`;
+  const { entries, notes } = parse(html);
+  assert.deepEqual(entries.map((x) => [x.venue, x.year, x.award, x.title, x.authors]), [
+    ["SIGCOMM", 2022, "best", "A Synthetic Network Paper", ["Ann Lee", "Bo Chen"]],
+    ["SIGCOMM", 2020, "best", "First Synthetic Routing Paper", ["Cy Diaz", "Dee Park"]],
+    ["SIGCOMM", 2020, "best", "Second Synthetic Congestion Paper", ["Eli Ross", "Fay Gray", "Gia Stone"]],
+    ["SIGCOMM", 2012, "best", "Multi-Resource Synthetic Queueing for Packets", ["Hal Wu", "Ivy Xu"]],
+    ["SIGCOMM", 2008, "best", "A Synthetic Decoding Paper: With a Subtitle", ["Jo Yan", "Kai Zu"]]
+  ]);
+  assert.equal(notes.length, 1, "the title without quotation marks is reported");
+});
