@@ -109,6 +109,17 @@ test("data/awards-2026.json: every entry is complete, sourced and unique", () =>
   }
 });
 
+test("the documentation quotes the real size of the list: data/README.md's coverage row exactly, the other documents the count", async () => {
+  const { coverage } = await import("../scripts/awards/coverage.mjs");
+  const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
+  assert.ok(read("data/README.md").includes(`| Entries | ${coverage(data.entries)} |`), "data/README.md's Entries row is stale: run  node scripts/awards/coverage.mjs");
+  for (const [file, re] of [["README.md", /\b(\d+) main-conference awards/], ["docs/ROADMAP.md", /\((\d+) entries on/]]) {
+    const m = re.exec(read(file));
+    assert.ok(m, `${file}: no longer says how many awards the list has (pattern ${re})`);
+    assert.equal(Number(m[1]), data.entries.length, `${file} says ${m[1]} awards, the list has ${data.entries.length}`);
+  }
+});
+
 test("the bundled list round-trips: every entry is found by its own title and first author", () => {
   const items = data.entries.map((e) => [awards.titleKey(e.title), awards.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || ""]);
   const idx = awards.createIndex(items);
@@ -138,6 +149,20 @@ test("the bundled list: well-known CV and AI winners are found from Scholar-styl
   // the same title with someone else first, or a near title, is not the paper
   assert.deepEqual(find("Mask R-CNN", "A Smith, B Jones"), []);
   assert.deepEqual(find("Mask R-CNN for object detection", "K He, G Gkioxari"), []);
+});
+
+test("the bundled list: ICLR winners of the years whose awards page is empty (2021 fact sheet, 2025 and 2026 blog posts)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Adam: A method for stochastic optimization", "DP Kingma, J Ba"), ["ICLR 2025 tot"]);
+  assert.deepEqual(find("Neural machine translation by jointly learning to align and translate", "D Bahdanau, K Cho, Y Bengio"), ["ICLR 2025 runner-up"]);
+  assert.deepEqual(find("Unsupervised representation learning with deep convolutional generative adversarial networks", "A Radford, L Metz, S Chintala"), ["ICLR 2026 tot"]);
+  assert.deepEqual(find("Safety alignment should be made more than just a few tokens deep", "X Qi, A Panda, K Lyu, X Ma, S Roy, A Beirami, P Mittal, P Henderson"), ["ICLR 2025 outstanding"]);
+  assert.deepEqual(find("SAM 2: Segment anything in images and videos", "N Ravi, V Gabeur, YT Hu, R Hu, C Ryali, T Ma"), ["ICLR 2025 runner-up"]);
+  assert.deepEqual(find("Transformers are inherently succinct", "P Bergsträßer, R Cotterell, AW Lin"), ["ICLR 2026 outstanding"]);
+  assert.deepEqual(find("Score-based generative modeling through stochastic differential equations", "Y Song, J Sohl-Dickstein, DP Kingma, A Kumar, S Ermon, B Poole"), ["ICLR 2021 outstanding"]);
+  assert.deepEqual(find("Beyond fully-connected layers with quaternions: Parameterization of hypercomplex multiplications with 1/n parameters", "A Zhang, Y Tay, S Zhang, A Chan, AT Luu"), ["ICLR 2021 outstanding"]);
+  assert.deepEqual(find("Adam: A method for stochastic optimization", "A Smith, B Jones"), []);
 });
 
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {

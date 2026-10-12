@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1655
+  "count": 1676
  },
  "entries": [
   {
@@ -14308,6 +14308,141 @@
   },
   {
    "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters",
+   "authors": [
+    "Aston Zhang",
+    "Yi Tay",
+    "Shuai Zhang",
+    "Alvin Chan",
+    "Anh Tuan Luu",
+    "Siu Hui",
+    "Jie Fu"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters by Aston Zhang, Yi Tay, Shuai Zhang, Alvin Chan, Anh Tuan Luu, Siu Hui, and Jie Fu (the paper's title is “Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters”)"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Complex Query Answering with Neural Link Predictors",
+   "authors": [
+    "Erik Arakelyan",
+    "Daniel Daza",
+    "Pasquale Minervini",
+    "Michael Cochez"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Complex Query Answering with Neural Link Predictors by Erik Arakelyan, Daniel Daza, Pasquale Minervini, and Michael Cochez"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "EigenGame: PCA as a Nash Equilibrium",
+   "authors": [
+    "Ian Gemp",
+    "Brian McWilliams",
+    "Claire Vernade",
+    "Thore Graepel"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: EigenGame: PCA as a Nash Equilibrium by Ian Gemp, Brian McWilliams, Claire Vernade, and Thore Graepel"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Learning Mesh-Based Simulation with Graph Networks",
+   "authors": [
+    "Tobias Pfaff",
+    "Meire Fortunato",
+    "Alvaro Sanchez-Gonzalez",
+    "Peter Battaglia"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Learning Mesh-Based Simulation with Graph Networks by Tobias Pfaff, Meire Fortunato, Alvaro Sanchez-Gonzalez, and Peter Battaglia"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Neural Synthesis of Binaural Speech from Mono Audio",
+   "authors": [
+    "Alexander Richard",
+    "Dejan Markovic",
+    "Israel D. Gebru",
+    "Steven Krenn",
+    "Gladstone Alexander Butler",
+    "Fernando Torre",
+    "Yaser Sheikh"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Neural Synthesis of Binaural Speech from Mono Audio by Alexander Richard, Dejan Markovic, Israel D. Gebru, Steven Krenn, Gladstone Alexander Butler, Fernando Torre, and Yaser Sheikh"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Optimal Rates for Averaged Stochastic Gradient Descent under Neural Tangent Kernel Regime",
+   "authors": [
+    "Atsushi Nitanda",
+    "Taiji Suzuki"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Optimal Rates for Averaged Stochastic Gradient Descent under Neural Tangent Kernel Regime by Atsushi Nitanda, and Taiji Suzuki"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Rethinking Architecture Selection in Differentiable NAS",
+   "authors": [
+    "Ruochen Wang",
+    "Minhao Cheng",
+    "Xiangning Chen",
+    "Xiaocheng Tang",
+    "Cho-Jui Hsieh"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Rethinking Architecture Selection in Differentiable NAS by Ruochen Wang, Minhao Cheng, Xiangning Chen, Xiaocheng Tang, and Cho-Jui Hsieh"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Score-Based Generative Modeling through Stochastic Differential Equations",
+   "authors": [
+    "Yang Song",
+    "Jascha Sohl-Dickstein",
+    "Diederik P Kingma",
+    "Abhishek Kumar",
+    "Stefano Ermon",
+    "Ben Poole"
+   ],
+   "track": "main",
+   "source": "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf",
+   "evidence": "Paper Award Winners: Score-Based Generative Modeling through Stochastic Differential Equations by Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole"
+  },
+  {
+   "venue": "ICLR",
    "year": 2022,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper",
@@ -14884,6 +15019,236 @@
    "track": "main",
    "source": "https://iclr.cc/virtual/2024/awards_detail",
    "evidence": "Towards a statistical theory of data selection under weak supervision — Honorable Mention"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "AlphaEdit: Null-Space Constrained Model Editing for Language Models",
+   "authors": [
+    "Junfeng Fang",
+    "Houcheng Jiang",
+    "Kun Wang",
+    "Yunshan Ma",
+    "Jie Shi",
+    "Xiang Wang",
+    "Xiangnan He",
+    "Tat-Seng Chua"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Outstanding Papers: AlphaEdit: Null-Space Constrained Model Editing for Language Models — Junfeng Fang, Houcheng Jiang, Kun Wang, Yunshan Ma, Jie Shi, Xiang Wang, Xiangnan He, Tat-Seng Chua"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Learning Dynamics of LLM Finetuning",
+   "authors": [
+    "Yi Ren",
+    "Danica J. Sutherland"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Outstanding Papers: Learning Dynamics of LLM Finetuning — Yi Ren, Danica J. Sutherland"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+   "authors": [
+    "Xiangyu Qi",
+    "Ashwinee Panda",
+    "Kaifeng Lyu",
+    "Xiao Ma",
+    "Subhrajit Roy",
+    "Ahmad Beirami",
+    "Prateek Mittal",
+    "Peter Henderson"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Outstanding Papers: Safety Alignment Should be Made More Than Just a Few Tokens Deep — Xiangyu Qi, Ashwinee Panda, Kaifeng Lyu, Xiao Ma, Subhrajit Roy, Ahmad Beirami, Prateek Mittal, Peter Henderson"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Data Shapley in One Training Run",
+   "authors": [
+    "Jiachen T. Wang",
+    "Prateek Mittal",
+    "Dawn Song",
+    "Ruoxi Jia"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Honorable Mentions: Data Shapley in One Training Run — Jiachen T. Wang, Prateek Mittal, Dawn Song, Ruoxi Jia"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Faster Cascades via Speculative Decoding",
+   "authors": [
+    "Harikrishna Narasimhan",
+    "Wittawat Jitkrittum",
+    "Ankit Singh Rawat",
+    "Seungyeon Kim",
+    "Neha Gupta",
+    "Aditya Krishna Menon",
+    "Sanjiv Kumar"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Honorable Mentions: Faster Cascades via Speculative Decoding — Harikrishna Narasimhan, Wittawat Jitkrittum, Ankit Singh Rawat, Seungyeon Kim, Neha Gupta, Aditya Krishna Menon, Sanjiv Kumar"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Runner Up",
+   "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+   "authors": [
+    "Dzmitry Bahdanau",
+    "Kyunghyun Cho",
+    "Yoshua Bengio"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/14/announcing-the-test-of-time-award-winners-from-iclr-2015/",
+   "evidence": "Runner Up: Neural Machine Translation by Jointly Learning to Align and Translate — Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "SAM 2: Segment Anything in Images and Videos",
+   "authors": [
+    "Nikhila Ravi",
+    "Valentin Gabeur",
+    "Yuan-Ting Hu",
+    "Ronghang Hu",
+    "Chaitanya Ryali",
+    "Tengyu Ma",
+    "Haitham Khedr",
+    "Roman Rädle",
+    "Chloe Rolland",
+    "Laura Gustafson",
+    "Eric Mintun",
+    "Junting Pan",
+    "Kalyan Vasudev Alwala",
+    "Nicolas Carion",
+    "Chao-Yuan Wu",
+    "Ross Girshick",
+    "Piotr Dollar",
+    "Christoph Feichtenhofer"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/22/announcing-the-outstanding-paper-awards-at-iclr-2025/",
+   "evidence": "Honorable Mentions: SAM 2: Segment Anything in Images and Videos — Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Roman Rädle, Chloe Rolland, Laura Gustafson, Eric Mintun, Junting Pan, Kalyan Vasudev Alwala, Nicolas Carion, Chao-Yuan Wu, Ross Girshick, Piotr Dollar, Christoph Feichtenhofer"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Adam: A Method for Stochastic Optimization",
+   "authors": [
+    "Diederik P. Kingma",
+    "Jimmy Ba"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2025/04/14/announcing-the-test-of-time-award-winners-from-iclr-2015/",
+   "evidence": "Test of Time: Adam: A Method for Stochastic Optimization — Diederik P. Kingma, Jimmy Ba"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "LLMs Get Lost In Multi-Turn Conversation",
+   "authors": [
+    "Philippe Laban",
+    "Hiroaki Hayashi",
+    "Yingbo Zhou",
+    "Jennifer Neville"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/",
+   "evidence": "Outstanding Papers: LLMs Get Lost In Multi-Turn Conversation — Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, Jennifer Neville"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Transformers are Inherently Succinct",
+   "authors": [
+    "Pascal Bergsträßer",
+    "Ryan Cotterell",
+    "Anthony Widjaja Lin"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/",
+   "evidence": "Outstanding Papers: Transformers are Inherently Succinct — Pascal Bergsträßer, Ryan Cotterell, Anthony Widjaja Lin"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm",
+   "authors": [
+    "Noah Amsel",
+    "David Persson",
+    "Christopher Musco",
+    "Robert M. Gower"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2026/04/23/announcing-the-iclr-2026-outstanding-papers/",
+   "evidence": "Honorable Mention: The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm — Noah Amsel, David Persson, Christopher Musco, Robert M. Gower"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Continuous control with deep reinforcement learning",
+   "authors": [
+    "Timothy P. Lillicrap",
+    "Jonathan J. Hunt",
+    "Alexander Pritzel",
+    "Nicolas Heess",
+    "Tom Erez",
+    "Yuval Tassa",
+    "David Silver",
+    "Daan Wierstra"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2026/04/22/announcing-the-test-of-time-awards-from-iclr-2016/",
+   "evidence": "Announcing the Test of Time Awards from ICLR 2016: Continuous control with deep reinforcement learning — Timothy P. Lillicrap, Jonathan J. Hunt, Alexander Pritzel, Nicolas Heess, Tom Erez, Yuval Tassa, David Silver, Daan Wierstra"
+  },
+  {
+   "venue": "ICLR",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks",
+   "authors": [
+    "Alec Radford",
+    "Luke Metz",
+    "Soumith Chintala"
+   ],
+   "track": "main",
+   "source": "https://blog.iclr.cc/2026/04/22/announcing-the-test-of-time-awards-from-iclr-2016/",
+   "evidence": "Announcing the Test of Time Awards from ICLR 2016: Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks — Alec Radford, Luke Metz, Soumith Chintala"
   },
   {
    "venue": "ICML",

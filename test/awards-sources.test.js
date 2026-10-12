@@ -386,3 +386,75 @@ test("KDD best papers: track and award label give kind and label; bold or linked
   assert.equal(e[0].source, "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners");
   assert.deepEqual(parse("<div class=\"entry-content\"><p>ACM SIGKDD is pleased to announce that X is the winner of its Service Award.</p></div>", 2021), []);
 });
+
+// ICLR's own announcements (blog posts and the 2021 fact sheet) — four shapes of the same list, all synthetic here.
+const ICLR_SRC = "https://blog.iclr.cc/2025/04/22/synthetic/";
+const iclrPost = (title, body) => `<h1 class="post-title entry-title">${title}</h1><div class="entry-content"><div class="tb_text_wrap">${body}</div></div><!-- /.entry-content -->`;
+
+test("ICLR blog, list items: a linked title with a full stop, <br>, the authors; Honorable Mentions get their own label; the committee line is not a paper", async () => {
+  const { parseBlog } = await import("../scripts/awards/iclr.mjs");
+  const html = iclrPost("Announcing the Outstanding Paper Awards", `<p>Awards Committee: Ann Lee, Bo Chen</p><h2><b>Selection Process</b></h2><p>The committee read 36 papers, and then it chose.</p>
+<h2><b>Outstanding Papers</b></h2><ul>
+<li><span><a href="https://openreview.net/forum?id=a">A Synthetic Paper about Testing Things.</a><br /></span><span>Cy Diaz, Dee Park, Eli van Ross.</span><span><br /></span></li>
+<li><span><a href="https://openreview.net/forum?id=b">Another Synthetic Paper: With a Subtitle.</a><br /></span><span>Fay Gray, Jean-Luc Moreau, Tat-Seng Chua</span></li></ul>
+<h2><b>Honorable Mentions</b></h2><ul><li><span><a href="https://openreview.net/forum?id=c">A Third Synthetic Paper on Speculation.</a><br /></span><span>Gia Stone, Hal Wu.</span></li></ul>`);
+  const { entries, skipped } = parseBlog(html, { year: 2025, source: ICLR_SRC });
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    ["ICLR", 2025, "outstanding", "Outstanding Paper", "A Synthetic Paper about Testing Things", ["Cy Diaz", "Dee Park", "Eli van Ross"]],
+    ["ICLR", 2025, "outstanding", "Outstanding Paper", "Another Synthetic Paper: With a Subtitle", ["Fay Gray", "Jean-Luc Moreau", "Tat-Seng Chua"]],
+    ["ICLR", 2025, "runner-up", "Honorable Mention", "A Third Synthetic Paper on Speculation", ["Gia Stone", "Hal Wu"]]
+  ]);
+  assert.ok(entries.every((e) => e.source === ICLR_SRC && e.evidence.includes(e.title)), "evidence quotes the title; source is the post");
+  assert.deepEqual(skipped, []);
+});
+
+test("ICLR blog, sentences: “Title, by A, B, C” with linked names; the committee's comment under it is not read as authors", async () => {
+  const { parseBlog } = await import("../scripts/awards/iclr.mjs");
+  const html = iclrPost("Announcing the ICLR 2026 Outstanding Papers", `<p>Guest Post by the Committee (<a href="x">Ann Lee</a> (chair), <a href="y">Bo Chen</a>)</p>
+<h3>Outstanding Papers</h3><p><a href="https://openreview.net/forum?id=a">A Synthetic Paper, with a Comma</a>, by <a href="x">Cy Diaz</a>, <a href="y">Dee Park</a>, <a href="z">Eli Ross</a></p>
+<p>This theoretical work proposes a new perspective, namely, how <em>succinctly</em> it can be encoded, by Someone Else, Another One.</p>
+<h3>Honorable Mention</h3><p><a href="https://openreview.net/forum?id=b">A Synthetic Honorable Paper</a>, by <a href="x">Fay Gray</a>, <a href="y">Robert M. Gower</a></p>
+<h3>Selection Process</h3><p>Given the significant value, Ann Lee, Bo Chen, by Cy Diaz.</p>`);
+  const { entries } = parseBlog(html, { year: 2026, source: ICLR_SRC });
+  assert.deepEqual(entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["outstanding", "Outstanding Paper", "A Synthetic Paper, with a Comma", ["Cy Diaz", "Dee Park", "Eli Ross"]],
+    ["runner-up", "Honorable Mention", "A Synthetic Honorable Paper", ["Fay Gray", "Robert M. Gower"]]
+  ]);
+});
+
+test("ICLR blog, Test of Time: one paragraph (Title <br> Authors <br> link) under Test of Time / Runner Up headings; or, with no headings, a title paragraph and an authors paragraph", async () => {
+  const { parseBlog } = await import("../scripts/awards/iclr.mjs");
+  const withHeadings = iclrPost("Announcing the Test of Time Award Winners from ICLR 2015", `<p>We are honored to announce the awards, and congratulate Ann Lee.</p>
+<h2><b>Test of Time</b></h2><p>A Synthetic Method for Optimization<br />Cy Diaz, Dee Ba<br /><a href="https://arxiv.org/abs/1">https://arxiv.org/abs/1</a> </p><p>As one of the most widely adopted methods, it changed how things are trained, and it is used everywhere.</p>
+<h2><b>Runner Up</b></h2><p>A Synthetic Translation Paper<br />Eli Ross, Fay Gray, Gia Stone<br /><a href="https://arxiv.org/abs/2">https://arxiv.org/abs/2</a></p><p>Introducing a form of attention, this paper changed the field.</p>`);
+  assert.deepEqual(parseBlog(withHeadings, { year: 2025, source: ICLR_SRC }).entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["tot", "Test of Time Award", "A Synthetic Method for Optimization", ["Cy Diaz", "Dee Ba"]],
+    ["runner-up", "Test of Time Runner Up", "A Synthetic Translation Paper", ["Eli Ross", "Fay Gray", "Gia Stone"]]
+  ]);
+  const bare = iclrPost("Announcing the Test of Time Awards from ICLR 2016", `<p>We are honored to announce the Test of Time awards, which recognise papers.</p><p>Congratulations to the authors of the Test of Time winners!</p>
+<p><a href="https://arxiv.org/abs/3"><em>A Synthetic Image Paper with Networks</em></a></p><p>Hal Wu, Ivy Xu, Jo Yan</p><p>This paper, colloquially called Synth, was one of the first demonstrations, with results, that mattered.</p>
+<p><a href="https://arxiv.org/abs/4"><em>A Synthetic Control Paper</em></a></p><p>Kai Zu, Lu Mo</p><p>The award recognizes works that alter the trajectory, and this one did.</p>`);
+  assert.deepEqual(parseBlog(bare, { year: 2026, source: ICLR_SRC }).entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["tot", "Test of Time Award", "A Synthetic Image Paper with Networks", ["Hal Wu", "Ivy Xu", "Jo Yan"]],
+    ["tot", "Test of Time Award", "A Synthetic Control Paper", ["Kai Zu", "Lu Mo"]]
+  ]);
+});
+
+test("ICLR 2021 fact sheet: a bullet per winner, wrapped over lines, “by A, B, and C”; the title printed without 'Beyond' is the paper's real one, said in the evidence", async () => {
+  const { parseFactSheet } = await import("../scripts/awards/iclr.mjs");
+  const txt = `Research Content:\n● 8 outstanding paper winners presented in 2 outstanding paper sessions\nPaper Award Winners:
+● A Synthetic Paper about Learning with Things by Ann Lee, Bo Chen,
+and Cy Diaz
+● Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters by Dee Park, Eli Ross, and Fay Gray
+● Optimal Rates for Something under Some Regime by Gia Stone, and Hal Wu
+Four of the Outstanding Paper Awards are featured in each of the Outstanding Paper sessions 1 and 2.\nLearn more about ICLR by Someone Else, Another.\n# # #`;
+  const { entries, skipped } = parseFactSheet(txt, { source: "https://iclr.cc/media/Press/ICLR_2021_Fact_Sheet.pdf" });
+  assert.deepEqual(entries.map((e) => [e.year, e.award, e.title, e.authors]), [
+    [2021, "outstanding", "A Synthetic Paper about Learning with Things", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    [2021, "outstanding", "Beyond Fully-Connected Layers with Quaternions: Parameterization of Hypercomplex Multiplications with 1/n Parameters", ["Dee Park", "Eli Ross", "Fay Gray"]],
+    [2021, "outstanding", "Optimal Rates for Something under Some Regime", ["Gia Stone", "Hal Wu"]]
+  ]);
+  assert.match(entries[1].evidence, /Fully-Connected Layers with Quaternions.*Beyond Fully-Connected Layers/s, "the evidence has the printed title and the corrected one");
+  assert.deepEqual(skipped, []);
+  assert.deepEqual(parseFactSheet("no award list here", {}).entries, []);
+});

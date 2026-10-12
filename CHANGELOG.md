@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.4.2 — 2026-10-12
+
+- **ICLR 2025, 2026 and 2021 paper awards** (21 entries). ICLR's virtual-site awards page is empty for those years, so they come
+  from ICLR's own announcements: the Outstanding Paper / Honorable Mention blog posts, the Test of Time posts (Adam and the
+  attention paper for 2015; DCGAN and DDPG for 2016) and the 2021 Fact Sheet's eight Outstanding Papers. The Fact Sheet prints one
+  title without its first word; the reader restores the paper's real title and the entry's evidence says so. New reader:
+  `scripts/awards/iclr.mjs`.
+- The documentation can no longer fall behind the data: a test compares `data/README.md`'s coverage row (printed by
+  `node scripts/awards/coverage.mjs`) and the award counts quoted in `README.md` and `docs/ROADMAP.md` with the list.
+  (`README.md` still said 1606 after the KDD update.)
+
 ## 2.4.1 — 2026-10-12
 
 - **KDD best papers** (research, applied data science and dataset & benchmark tracks: best, runner-up, honorable mention, best
