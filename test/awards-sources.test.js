@@ -1963,3 +1963,9 @@ test("INFOCOM awards page: title first or authors first (the first line decides)
   const b = `<p>2024 IEEE INFOCOM Best Paper Awards</p><p>Ed Fox (NCSU, USA); Flo Gray (NCSU, USA)</p><p>Hybrid Zone: A Wireless Gesture Paper</p><p>Gil Hart and Hal Ito (Columbia University, USA),</p><p>Ivy Jones (Columbia University, USA)</p><p>Scheduling stochastic traffic in multi-hop networks</p><p>2024 IEEE INFOCOM Best Demo Award</p>`;
   assert.deepEqual(parseInfocomBest(b, "https://infocom2024.ieee-infocom.org/awards").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Hybrid Zone: A Wireless Gesture Paper | Ed Fox; Flo Gray", "Scheduling stochastic traffic in multi-hop networks | Gil Hart; Hal Ito; Ivy Jones"]);
 });
+
+test("Euro S&P awards page: title and authors with affiliations (over one line or several); runners-up are their own kind; finalists and reviewers left out", async () => {
+  const { parseEurospAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Distinguished Paper Award</p><p>Bad design smells in benchmark datasets</p><p>Ann Lee</p><p>(University of Edinburgh),</p><p>Bo Chan</p><p>(DistriNet, KU Leuven)</p><p>Distinguished Paper Award Runners-Up</p><p>Memory tagging on commodity processors</p><p>Cy Dunn (Graz), Ed Fox (Graz)</p><p>Distinguished Paper Award Finalists</p><p>A finalist only paper title</p><p>Flo Gray (MIT)</p>`;
+  assert.deepEqual(parseEurospAwards(h, "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["distinguished Bad design smells in benchmark datasets | Ann Lee; Bo Chan", "runner-up Memory tagging on commodity processors | Cy Dunn; Ed Fox"]);
+});

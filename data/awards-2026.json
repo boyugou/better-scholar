@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6455
+  "count": 6466
  },
  "entries": [
   {
@@ -52144,6 +52144,184 @@
    "paperYear": 2011,
    "source": "https://iacr.org/testoftime/",
    "evidence": "EUROCRYPT 2026 Test of Time Award: Rikke Bendlin, Ivan Damgård, Claudio Orlandi, and Sarah Zakarias “Semi-homomorphic Encryption and Multiparty Computation”"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "CostCO: An automatic cost modeling framework for secure multi-party computation",
+   "authors": [
+    "Vivian Fang",
+    "Lloyd Brown",
+    "William Lin",
+    "Wenting Zheng",
+    "Aurojit Panda",
+    "Raluca Ada Popa"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2022/accepted_and_awards.html",
+   "evidence": "EuroS&P 2022 Distinguished Paper Award: CostCO: An automatic cost modeling framework for secure multi-party computation — Vivian Fang, Lloyd Brown, William Lin, Wenting Zheng, Aurojit Panda, Raluca Ada Popa"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Dynamic Policies Revisited",
+   "authors": [
+    "Amir M. Ahmadian",
+    "Musard Balliu"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2022/accepted_and_awards.html",
+   "evidence": "EuroS&P 2022 Distinguished Paper Award: Dynamic Policies Revisited — Amir M. Ahmadian, Musard Balliu"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Bad Design Smells in Benchmark NIDS Datasets",
+   "authors": [
+    "Robert Flood",
+    "Gints Engelen",
+    "David Aspinall",
+    "Lieven Desmet"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Award: Bad Design Smells in Benchmark NIDS Datasets — Robert Flood, Gints Engelen, David Aspinall, Lieven Desmet"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Runner-up",
+   "title": "Can Allowlists Capture the Variability of Home IoT Device Network Behavior?",
+   "authors": [
+    "Weijia He",
+    "Kevin Bryson",
+    "Ricardo Calderon",
+    "Vijay Prakash",
+    "Nick Feamster",
+    "Danny Yuxing Huang",
+    "Blase Ur"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Runner-up: Can Allowlists Capture the Variability of Home IoT Device Network Behavior? — Weijia He, Kevin Bryson, Ricardo Calderon, Vijay Prakash, Nick Feamster, Danny Yuxing Huang, Blase Ur"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Runner-up",
+   "title": "DeGhost: Unmasking Phantom Intrusions in Autonomous Recognition Systems",
+   "authors": [
+    "Hotaka Oyama",
+    "Ryo Iijima",
+    "Tatsuya Mori"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Runner-up: DeGhost: Unmasking Phantom Intrusions in Autonomous Recognition Systems — Hotaka Oyama, Ryo Iijima, Tatsuya Mori"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Runner-up",
+   "title": "Memory Tagging using Cryptographic Memory Integrity on Commodity x86 CPUs",
+   "authors": [
+    "David Schrammel",
+    "Martin Unterguggenberger",
+    "Lukas Lamster",
+    "Salmin Sultana",
+    "Karanvir Grewal",
+    "Michael LeMay",
+    "David M. Durham",
+    "Stefan Mangard"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Runner-up: Memory Tagging using Cryptographic Memory Integrity on Commodity x86 CPUs — David Schrammel, Martin Unterguggenberger, Lukas Lamster, Salmin Sultana, Karanvir Grewal, Michael LeMay, David M. Durham, Stefan Mangard"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Runner-up",
+   "title": "Metadata Privacy Beyond Tunneling for Instant Messaging",
+   "authors": [
+    "Boel Nelson",
+    "Elena Pagnin",
+    "Aslan Askarov"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Runner-up: Metadata Privacy Beyond Tunneling for Instant Messaging — Boel Nelson, Elena Pagnin, Aslan Askarov"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Runner-up",
+   "title": "Whispering Pixels: Exploiting Uninitialized Register Accesses in Modern GPUs",
+   "authors": [
+    "Frederik Dermot Pustelnik",
+    "Xhani Marvin Sass",
+    "Jean-Pierre Seifert"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2024/accepted_and_awards.html",
+   "evidence": "EuroS&P 2024 Distinguished Paper Runner-up: Whispering Pixels: Exploiting Uninitialized Register Accesses in Modern GPUs — Frederik Dermot Pustelnik, Xhani Marvin Sass, Jean-Pierre Seifert"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "CHARON: Polyglot Code Analysis for Detecting Vulnerabilities in Scripting Languages Native Extensions",
+   "authors": [
+    "Raoul Scholtes",
+    "Soheil Khodayari",
+    "Cristian-Alexandru Staicu",
+    "Giancarlo Pellegrino"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2025/accepted_and_awards.html",
+   "evidence": "EuroS&P 2025 Distinguished Paper Award: CHARON: Polyglot Code Analysis for Detecting Vulnerabilities in Scripting Languages Native Extensions — Raoul Scholtes, Soheil Khodayari, Cristian-Alexandru Staicu, Giancarlo Pellegrino"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "openIPE: An Extensible Memory Isolation Framework for Microcontrollers",
+   "authors": [
+    "Marton Bognar",
+    "Jo Van Bulck"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2025/accepted_and_awards.html",
+   "evidence": "EuroS&P 2025 Distinguished Paper Award: openIPE: An Extensible Memory Isolation Framework for Microcontrollers — Marton Bognar, Jo Van Bulck"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Rubicon: Precise Microarchitectural Attacks with Page-Granular Massaging",
+   "authors": [
+    "Matej Bölcskei",
+    "Patrick Jattke",
+    "Johannes Wikner",
+    "Kaveh Razavi"
+   ],
+   "track": "main",
+   "source": "https://www.ieee-security.org/TC/EuroSP2025/accepted_and_awards.html",
+   "evidence": "EuroS&P 2025 Distinguished Paper Award: Rubicon: Precise Microarchitectural Attacks with Page-Granular Massaging — Matej Bölcskei, Patrick Jattke, Johannes Wikner, Kaveh Razavi"
   },
   {
    "venue": "EuroSys",
