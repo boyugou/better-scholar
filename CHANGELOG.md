@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.1 — 2026-10-12
+
+- **KDD best papers** (research, applied data science and dataset & benchmark tracks: best, runner-up, honorable mention, best
+  student paper; 2016–2020 and 2022–2025 — 49 entries) from SIGKDD's own pages. The 2016–2019 pages mark each paper *Winner* or
+  *Runner Up*; reading that matters (a first pass filed the runners-up as best papers, caught in review before release).
+  A new test keeps an award's kind consistent with its printed label across the whole list.
+- The award readers share one HTML-to-text helper (`scripts/awards/html.mjs`) that now decodes every accented-letter entity
+  (`Z&uuml;gner` → Zügner) and drops soft hyphens and zero-width characters; the merged list is byte-for-byte what it was.
+
 ## 2.4.0 — 2026-10-12
 
 - **More paper awards: 857 → 1606 entries**, again only from official pages, each citing its page and a quoted line:

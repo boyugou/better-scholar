@@ -6,12 +6,9 @@
 //
 // Under "Winners", an <h3> per conference-year ending in "(ASE 2025)" and a <ul> of <li>Author, Author: Title</li>.
 import { readFileSync } from "node:fs";
+import { text } from "./html.mjs";
 
 const URL_PAGE = "https://www2.sigsoft.org/awards/distinguishedpaper/";
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const text = (html) => decode(html.replace(/<[^>]+>/g, "")).replace(/[  ]/g, " ").replace(/\s+/g, " ").trim();
 
 // "… (ASE 2025)" → { venue: "ASE", year: 2025 };  "… (ESEC/FSE 2017)" → { venue: "ESEC/FSE", year: 2017 }
 export function sectionOf(heading) {

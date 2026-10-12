@@ -166,3 +166,25 @@ test("the bundled list: software-engineering winners (SIGSOFT distinguished pape
   assert.deepEqual(find("Seeing is fixing: Cross-modal reasoning with multimodal LLMs for visual software issue repair", "K Huang, J Zhang, X Xie, C Chen"), ["ASE 2025 distinguished"]);
   assert.deepEqual(find("Understanding software engineering agents: A study of thought-action-result trajectories", "A Smith, B Jones"), []);
 });
+
+test("the bundled list: data-mining winners (KDD best papers)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Improving group robustness on spurious correlation via evidential alignment", "W Ye, G Zheng, A Zhang"), ["KDD 2025 best"]);
+  assert.deepEqual(find("On sampled metrics for item recommendation", "W Krichene, S Rendle"), ["KDD 2020 best"]);
+  assert.deepEqual(find("Network density of states", "K Dong, AR Benson, D Bindel"), ["KDD 2019 best"]);
+  assert.deepEqual(find("Network density of states", "A Smith, B Jones"), []);
+});
+
+test("data/awards-2026.json: an award's kind agrees with its printed label (a runner-up is never filed as a best paper)", () => {
+  const bad = [];
+  for (const e of data.entries) {
+    const l = e.awardLabel || "";
+    const runnerUpWords = /runner|honou?rable|mention|second|nominee|finalist/i;
+    if (e.award === "runner-up" && !runnerUpWords.test(l)) bad.push("runner-up without such a label: " + e.venue + " " + e.year + " " + e.title);
+    if (!["runner-up", "category"].includes(e.award) && /runner|honou?rable mention/i.test(l)) bad.push("not a runner-up but labelled one: " + e.venue + " " + e.year + " " + e.title);
+    if (e.award === "student" && !/student/i.test(l)) bad.push("student award without a student label: " + e.venue + " " + e.year + " " + e.title);
+    if (e.award === "best" && /student/i.test(l)) bad.push("best paper with a student label: " + e.venue + " " + e.year + " " + e.title);
+  }
+  assert.deepEqual(bad, []);
+});

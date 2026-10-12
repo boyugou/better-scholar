@@ -353,3 +353,36 @@ test("SIGSOFT distinguished papers: conference and year from the heading's paren
     ["ICSE", 2025, "distinguished", "ACM SIGSOFT Distinguished Paper", "An Initials-Style Synthetic Paper Title", ["L. Tang", "J. Liu"]]
   ]);
 });
+
+test("the award readers' shared HTML helper: entities incl. accented letters, soft hyphens and zero-width spaces, <br> as a space", async () => {
+  const { text, decode } = await import("../scripts/awards/html.mjs");
+  assert.equal(decode("Z&uuml;gner &amp; TRI&Egrave;ST &#233;t&eacute; &#x4e2d; &nbsp;&unknown;"), "Zügner & TRIÈST été 中  &unknown;");
+  assert.equal(text("<p>Bo&shy;chum­city​ <b>x</b><br/>y&nbsp;&nbsp;z</p>"), "Bochumcity x y z");
+});
+
+// SIGKDD's best-paper pages: <h2> track, <p><strong>AWARD</strong></p> label, then the paper (bold or linked title, authors with affiliations).
+test("KDD best papers: track and award label give kind and label; bold or linked titles; affiliations dropped from the authors; a page in another form yields nothing", async () => {
+  const { parse, awardOf } = await import("../scripts/awards/kdd.mjs");
+  assert.deepEqual(awardOf("BEST PAPER AWARD"), { award: "best", label: "Best Paper" });
+  assert.deepEqual(awardOf("BEST PAPER AWARD RUNNER-UP"), { award: "runner-up", label: "Best Paper Runner-up" });
+  assert.deepEqual(awardOf("BEST STUDENT PAPER AWARD HONORABLE MENTION"), { award: "runner-up", label: "Best Student Paper Honorable Mention" });
+  assert.deepEqual(awardOf("BEST STUDENT PAPER AWARD"), { award: "student", label: "Best Student Paper" });
+  assert.equal(awardOf("Audience Appreciation Award"), null);
+  const html = `<div class="entry-content notopmargin"><p>ACM SIGKDD is pleased to announce…</p>
+<h2>Research Track</h2><p><strong>BEST PAPER AWARD</strong></p>
+<p><strong>A Synthetic Graph Paper&#8203;</strong><br />\nAnn Lee (Some University);Bo Chen (Example Lab); Cy Z&uuml;ger</p>
+<p><strong>BEST PAPER AWARD RUNNER-UP</strong></p>
+<p><a href="https://example.org/x">A Linked Synthetic Title</a><br />\nDee Park (A University); Eli Ross (B Institute)&nbsp;</p>
+<h2>Applied Data Science Track</h2><p><strong>BEST STUDENT PAPER AWARD</strong></p>
+<p><strong>An Applied Synthetic Paper</strong><br />Fay Gray, Gia Stone</p>
+<p><strong>Audience Appreciation Award</strong></p><p><strong>An Audience Favourite</strong><br />Hal Wu</p>
+<div class="sidebar"><h4>Tags</h4><p><strong>Not a paper</strong><br />Nobody</p></div></div>`;
+  const e = parse(html, 2025);
+  assert.deepEqual(e.map((x) => [x.venue, x.year, x.award, x.awardLabel, x.title, x.authors]), [
+    ["KDD", 2025, "best", "Best Paper", "A Synthetic Graph Paper", ["Ann Lee", "Bo Chen", "Cy Züger"]],
+    ["KDD", 2025, "runner-up", "Best Paper Runner-up", "A Linked Synthetic Title", ["Dee Park", "Eli Ross"]],
+    ["KDD", 2025, "student", "Best Student Paper (Applied Data Science)", "An Applied Synthetic Paper", ["Fay Gray", "Gia Stone"]]
+  ]);
+  assert.equal(e[0].source, "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners");
+  assert.deepEqual(parse("<div class=\"entry-content\"><p>ACM SIGKDD is pleased to announce that X is the winner of its Service Award.</p></div>", 2021), []);
+});

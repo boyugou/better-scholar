@@ -1,0 +1,15 @@
+// Plain-text reading of HTML for the award readers: entities decoded (numeric, the usual named ones and all of Latin-1's
+// accented letters), tags dropped, soft hyphens and zero-width characters removed, no-break spaces read as spaces, whitespace collapsed. No DOM, no dependencies.
+const LATIN1 = ["Agrave", "Aacute", "Acirc", "Atilde", "Auml", "Aring", "AElig", "Ccedil", "Egrave", "Eacute", "Ecirc", "Euml", "Igrave", "Iacute", "Icirc", "Iuml",
+  "ETH", "Ntilde", "Ograve", "Oacute", "Ocirc", "Otilde", "Ouml", "times", "Oslash", "Ugrave", "Uacute", "Ucirc", "Uuml", "Yacute", "THORN", "szlig",
+  "agrave", "aacute", "acirc", "atilde", "auml", "aring", "aelig", "ccedil", "egrave", "eacute", "ecirc", "euml", "igrave", "iacute", "icirc", "iuml",
+  "eth", "ntilde", "ograve", "oacute", "ocirc", "otilde", "ouml", "divide", "oslash", "ugrave", "uacute", "ucirc", "uuml", "yacute", "thorn", "yuml"];
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "" };
+LATIN1.forEach((name, i) => { NAMED[name] = String.fromCharCode(192 + i); });
+
+export const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
+  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : name in NAMED ? NAMED[name] : name.toLowerCase() in NAMED && /^[a-z]+$/.test(name) ? NAMED[name.toLowerCase()] : m);
+
+// the visible text of an HTML fragment (a <br> is a space)
+export const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, ""))
+  .replace(/[\u00ad\u200b-\u200d\ufeff]/g, "").replace(/[\u00a0\u202f\u2009]/g, " ").replace(/\s+/g, " ").trim();

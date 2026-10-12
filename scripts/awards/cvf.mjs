@@ -10,6 +10,7 @@
 // The CVF is the organisation behind these conferences and the page is its own listing, so it is an official source.
 // The people awards on the same page (PAMI Young Researcher …) have no paper and are ignored.
 import { readFileSync } from "node:fs";
+import { text } from "./html.mjs";
 
 const URL_PAGE = "https://www.thecvf.com/?page_id=413";
 
@@ -28,10 +29,6 @@ const SECTIONS = {
   "Koenderink Prize": { venue: "ECCV", award: "tot", awardLabel: "Koenderink Prize" }
 };
 
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/[  ]/g, " ").replace(/\s+/g, " ").trim();
 
 // "A, B, C" / "A, B, and C" / "A and B" / "A et al."
 const splitAuthors = (s) => s.replace(/\s+et\s+al\.?\s*$/i, "").split(/\s*,\s*(?:and\s+)?|\s+and\s+/).map((a) => a.trim()).filter(Boolean);

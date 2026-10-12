@@ -8,6 +8,7 @@
 // A saved directory holds sigir-best.html, sigir-short.html, sigir-student.html and sigir-vb.html.
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { text as clean } from "./html.mjs";
 
 const PAGES = [
   { slug: "best-paper-awards", file: "sigir-best.html", venue: "SIGIR", award: "best", awardLabel: "Best Paper" },
@@ -16,10 +17,6 @@ const PAGES = [
   { slug: "vannevar-bush-best-paper-awards", file: "sigir-vb.html", venue: "JCDL", award: "best", awardLabel: "Vannevar Bush Best Paper" }
 ];
 
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const clean = (s) => decode(s.replace(/<[^>]+>/g, "")).replace(/[  ]/g, " ").replace(/\s+/g, " ").trim();
 
 export function parse(html, spec, source) {
   const entries = [];

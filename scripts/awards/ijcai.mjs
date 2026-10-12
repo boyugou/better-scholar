@@ -8,11 +8,8 @@
 // Only IJCAI-23's page of this shape was reachable when this was written; the other years' official pages (and the
 // proceedings prefaces, which are PDFs) are not read, so IJCAI is covered for 2023 only.
 import { readFileSync } from "node:fs";
+import { text } from "./html.mjs";
 
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/[  ]/g, " ").replace(/\s+/g, " ").trim();
 
 export function parse(html, { year, source }) {
   const body = (/<div class="entry-content[^"]*">([\s\S]*?)<!-- \.entry-content -->/i.exec(html) || [null, html])[1];

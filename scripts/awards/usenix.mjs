@@ -8,12 +8,9 @@
 //   <span class="field-content"><a …>Title</a></span> … <div class="field-content">Name, Affiliation; Name, Affiliation</div>
 // The page calls them all "Best Papers" (USENIX Security's distinguished papers included), so that is the label.
 import { readFileSync } from "node:fs";
+import { text } from "./html.mjs";
 
 const BASE = "https://www.usenix.org/conferences/best-papers";
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/[  ­]/g, (c) => (c === "­" ? "" : " ")).replace(/\s+/g, " ").trim();
 
 // "USENIX Security '25" → { venue: "USENIX Security", year: 2025 };  "SOUPS 2025" → { SOUPS, 2025 };  "'93" and earlier digits read as 19xx
 export function sectionOf(label) {

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1606
+  "count": 1655
  },
  "entries": [
   {
@@ -18693,6 +18693,897 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "JVM '01: SableVM: A Research Framework for the Efficient Execution of Java Bytecode — Etienne M. Gagnon, McGill University; Laurie J. Hendren, McGill University"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "FRAUDAR: Bounding Graph Fraud in the Face of Camouflage",
+   "authors": [
+    "Bryan Hooi",
+    "Hyun Ah Song",
+    "Alex Beutel",
+    "Neil Shah",
+    "Kijung Shin",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Paper: FRAUDAR: Bounding Graph Fraud in the Face of Camouflage — Bryan Hooi (Carnegie Mellon University), Hyun Ah Song (Carnegie Mellon University), Alex Beutel (Carnegie Mellon University), Neil Shah (Carnegie Mellon University), Kijung Shin (Carnegie Mellon University), Christos Faloutsos (Carnegie Mellon University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Ranking Relevance in Yahoo Search",
+   "authors": [
+    "Dawei Yin",
+    "Yuening Hu",
+    "Jiliang Tang",
+    "Tim Daly",
+    "Mianwei Zhou",
+    "Hua Ouyang",
+    "Jianhui Chen",
+    "Changsung Kang",
+    "Hongbo Deng",
+    "Chikashi Nobata",
+    "Jean-Marc Langlois",
+    "Yi Chang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Paper (Applied Data Science): Ranking Relevance in Yahoo Search — Dawei Yin (Yahoo! Inc.), Yuening Hu (Yahoo! Inc.), Jiliang Tang (Michigan State University), Tim Daly (Yahoo! Inc.), Mianwei Zhou (Yahoo! Inc.), Hua Ouyang (Apple), Jianhui Chen (Yahoo! Inc.), Changsung Kang (Yahoo! Inc.), Hongbo Deng (Google), Chikashi Nobata (Apple), Jean-Marc Langlois (Yahoo! Inc.), Yi Chang (Yahoo! Inc"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up (Applied Data Science)",
+   "title": "Firebird: Predicting Fire Risk and Prioritizing Fire Inspections in Atlanta",
+   "authors": [
+    "Michael Madaio",
+    "Shang-Tse Chen",
+    "Oliver L. Haimson",
+    "Wenwen Zhang",
+    "Xiang Cheng",
+    "Matthew Hinds-Aldrich",
+    "Duen Horng Chau",
+    "Bistra Dilkina"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Student Paper Runner-up (Applied Data Science): Firebird: Predicting Fire Risk and Prioritizing Fire Inspections in Atlanta — Michael Madaio (Carnegie Mellon University), Shang-Tse Chen (Georgia Institute of Technology), Oliver L. Haimson (University of California, Irvine), Wenwen Zhang (Georgia Institute of Technology), Xiang Cheng (Emory University), Matthew Hinds-Aldrich (Atlanta Fire"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "Matrix Computations and Optimization in Apache Spark",
+   "authors": [
+    "Reza Zadeh",
+    "Xiangrui Meng",
+    "Alexander Ulanov",
+    "Burak Yavuz",
+    "Li Pu",
+    "Shivaram Venkataraman",
+    "Evan Sparks",
+    "Aaron Staple",
+    "Matei Zaharia"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Paper Runner-up (Applied Data Science): Matrix Computations and Optimization in Apache Spark — Reza Zadeh (Stanford University), Xiangrui Meng(Databricks), Alexander Ulanov (HP Labs), Burak Yavuz (Databricks), Li Pu (Twitter), Shivaram Venkataraman(UC Berkeley),Evan Sparks(Evan Sparks), Aaron Staple(Aaron Staple), Matei Zaharia (MIT and Databricks)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Predicting matchups and preferences in context",
+   "authors": [
+    "Shuo Chen",
+    "Thorsten Joachims"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Student Paper Runner-up: Predicting matchups and preferences in context — Shuo Chen (Cornell ) andThorsten Joachims (Cornell University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Ranking Causal Anomalies via Temporal and Dynamical Analysis on Vanishing Correlations",
+   "authors": [
+    "Wei Cheng",
+    "Kai Zhang",
+    "Haifeng Chen",
+    "Guofei Jiang",
+    "Zhengzhang Chen",
+    "Wei Wang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Paper Runner-up: Ranking Causal Anomalies via Temporal and Dynamical Analysis on Vanishing Correlations — Wei Cheng (NEC Laboratories America), Kai Zhang (NEC Laboratories America), Haifeng Chen (NEC Laboratories America), Guofei Jiang (NEC Laboratories America), Zhengzhang Chen (NEC Laboratories America), Wei Wang (UCLA)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper (Applied Data Science)",
+   "title": "Contextual Intent Tracking for Personal Assistants",
+   "authors": [
+    "Yu Sun",
+    "Nicholas Jing Yuan",
+    "Yingzi Wang",
+    "Xing Xie",
+    "Kieran McDonald",
+    "Rui Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Student Paper (Applied Data Science): Contextual Intent Tracking for Personal Assistants — Yu Sun (University of Melbourne), Nicholas Jing Yuan (Microsoft Corporation), Yingzi Wang (University of Science and Technology of China & Microsoft Research), Xing Xie (Microsoft Research), Kieran McDonald (Microsoft Corporation), Rui Zhang (University of Melbourne)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "TRIÈST: Counting Local and Global Triangles in Fully-Dynamic Streams with Fixed Memory Size",
+   "authors": [
+    "Lorenzo De Stefani",
+    "Alessandro Epasto",
+    "Matteo Riondato",
+    "Eli Upfal"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2016-sigkdd-best-paper-award-winners",
+   "evidence": "2016 Best Student Paper: TRIÈST: Counting Local and Global Triangles in Fully-Dynamic Streams with Fixed Memory Size — Lorenzo De Stefani (Brown University), Alessandro Epasto (Google), Matteo Riondato (Two Sigma Investments), Eli Upfal (Brown University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Accelerating Innovation Through Analogy Mining",
+   "authors": [
+    "Tom Hope",
+    "Joel Chan",
+    "Aniket Kittur",
+    "Dafna Shahaf"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2017-sigkdd-best-paper-award-winners",
+   "evidence": "2017 Best Paper: Accelerating Innovation Through Analogy Mining — Tom Hope (Hebrew University of Jerusalem);Joel Chan (Carnegie Mellon University);Aniket Kittur (Carnegie Mellon University);Dafna Shahaf (Hebrew University of Jerusalem)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "HinDroid: An Intelligent Android Malware Detection System Based on Structured Heterogeneous Information Network",
+   "authors": [
+    "Yanfang Ye",
+    "Shifu Hou",
+    "Yangqiu Song"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2017-sigkdd-best-paper-award-winners",
+   "evidence": "2017 Best Paper (Applied Data Science): HinDroid: An Intelligent Android Malware Detection System Based on Structured Heterogeneous Information Network — Yanfang Ye (West Virginia University);Shifu Hou (West Virginia University);Yangqiu Song (West Virginia University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "DeepSD: Generating High Resolution Climate Change Projections through Single Image Super-Resolution",
+   "authors": [
+    "Thomas Vandal",
+    "Evan Kodra",
+    "Sangram Ganguly",
+    "Andrew Michaelis",
+    "Ramakrishna Nemani",
+    "Auroop Ganguly"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2017-sigkdd-best-paper-award-winners",
+   "evidence": "2017 Best Paper Runner-up (Applied Data Science): DeepSD: Generating High Resolution Climate Change Projections through Single Image Super-Resolution — Thomas Vandal (Northeastern University);Evan Kodra (risQ Inc.);Sangram Ganguly (Bay Area Environmental Research Institute / NASA Ames Research Center);Andrew Michaelis (University Corporation, Monterey Bay);Ramakrishna Nemani (NASA Ames Research Ce"
+  },
+  {
+   "venue": "KDD",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Toeplitz Inverse Covariance-Based Clustering of Multivariate Time Series Data",
+   "authors": [
+    "David Hallac",
+    "Sagar Vare",
+    "Stephen Boyd",
+    "Jure Leskovec"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2017-sigkdd-best-paper-award-winners",
+   "evidence": "2017 Best Paper Runner-up: Toeplitz Inverse Covariance-Based Clustering of Multivariate Time Series Data — David Hallac (Stanford University);Sagar Vare (Stanford University);Stephen Boyd (Stanford University);Jure Leskovec (Stanford University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Adversarial Attacks on Neural Networks for Graph Data",
+   "authors": [
+    "Daniel Zügner",
+    "Amir Akbarnejad",
+    "Stephan Günnemann"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2018-sigkdd-best-paper-award-winners",
+   "evidence": "2018 Best Paper: Adversarial Attacks on Neural Networks for Graph Data — Daniel Zügner (Technical University of Munich); Amir Akbarnejad (Technical University of Munich); Stephan Günnemann (Technical University of Munich)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Real-time Personalization using Embeddings for Search Ranking at Airbnb",
+   "authors": [
+    "Mihajlo Grbovic",
+    "Haibin Cheng"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2018-sigkdd-best-paper-award-winners",
+   "evidence": "2018 Best Paper (Applied Data Science): Real-time Personalization using Embeddings for Search Ranking at Airbnb — Mihajlo Grbovic (Airbnb); Haibin Cheng (Airbnb)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper (Applied Data Science)",
+   "title": "ActiveRemediation: The Search for Lead Pipes in Flint, Michigan",
+   "authors": [
+    "Jacob Abernethy",
+    "Alex Chojnacki",
+    "Arya Farahi",
+    "Eric Schwartz",
+    "Jared Webb"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2018-sigkdd-best-paper-award-winners",
+   "evidence": "2018 Best Student Paper (Applied Data Science): ActiveRemediation: The Search for Lead Pipes in Flint, Michigan — Jacob Abernethy (Georgia Institute of Technology); Alex Chojnacki (University of Michigan); Arya Farahi (University of Michigan - Ann Arbor); Eric Schwartz (University of Michigan); Jared Webb (Brigham Young University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music",
+   "authors": [
+    "Hongyuan Zhu",
+    "Qi Liu",
+    "Nicholas Jing Yuan",
+    "Chuan Qin",
+    "Jiawei Li",
+    "Kun Zhang",
+    "Guang Zhou",
+    "Furu Wei",
+    "Yuanchun Xu",
+    "Enhong Chen"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2018-sigkdd-best-paper-award-winners",
+   "evidence": "2018 Best Student Paper: XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music — Hongyuan Zhu (USTC); Qi Liu (USTC); Nicholas Jing Yuan (Microsoft); Chuan Qin (USTC); Jiawei Li (Soochow University); Kun Zhang (USTC); Guang Zhou (Microsoft); Furu Wei (Microsoft); Yuanchun Xu (Microsoft); Enhong Chen (USTC)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Actions Speak Louder Than Goals: Valuing Player Actions in Soccer",
+   "authors": [
+    "Tom Decroos",
+    "Lotte Bransen",
+    "Jan Van Haaren",
+    "Jesse Davis"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2019-sigkdd-best-paper-award-winners",
+   "evidence": "2019 Best Paper (Applied Data Science): Actions Speak Louder Than Goals: Valuing Player Actions in Soccer — Tom Decroos (KU Leuven), Lotte Bransen (SciSports), Jan Van Haaren (SciSports), Jesse Davis (KU Leuven)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Network Density of States",
+   "authors": [
+    "Kun Dong",
+    "Austin Benson",
+    "David Bindel"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2019-sigkdd-best-paper-award-winners",
+   "evidence": "2019 Best Paper: Network Density of States — Kun Dong (Cornell), Austin Benson (Cornell), and David Bindel (Cornell)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "Developing Measures of Cognitive Impairment in the Real World from Consumer-Grade Multimodal Sensor Streams",
+   "authors": [
+    "Richard Chen",
+    "Filip Jankovic",
+    "Nikki Marinsek",
+    "Luca Foschini",
+    "Lampros Kourtis",
+    "Alessio Signorini",
+    "Melissa Pugh",
+    "Jie Shen",
+    "Roy Yaari",
+    "Vera Maljkovic",
+    "Marc Sunga",
+    "Han Hee Song",
+    "Hyun Joon Jung",
+    "Belle Tseng",
+    "Andrew Trister"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2019-sigkdd-best-paper-award-winners",
+   "evidence": "2019 Best Paper Runner-up (Applied Data Science): Developing Measures of Cognitive Impairment in the Real World from Consumer-Grade Multimodal Sensor Streams — Richard Chen (Apple Inc.), Filip Jankovic (Evidation Health, Inc.), Nikki Marinsek (Evidation Health, Inc.), Luca Foschini (Evidation Health, Inc.), Lampros Kourtis (Evidation Health, Inc.), Alessio Signorini (Evidation Health, Inc.), Melis"
+  },
+  {
+   "venue": "KDD",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Optimizing Impression Counts for Outdoor Advertising",
+   "authors": [
+    "Yipeng Zhang",
+    "Yuchen Li",
+    "Zhifeng Bao",
+    "Songsong Mo",
+    "Ping Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2019-sigkdd-best-paper-award-winners",
+   "evidence": "2019 Best Paper Runner-up: Optimizing Impression Counts for Outdoor Advertising — Yipeng Zhang (RMIT University), Yuchen Li (Singapore Management University), Zhifeng Bao (RMIT University), Songsong Mo (Wuhan University), and Ping Zhang (Huawei)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On Sampled Metrics for Item Recommendation",
+   "authors": [
+    "Walid Krichene",
+    "Steffen Rendle"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2020-sigkdd-best-paper-award-winners",
+   "evidence": "2020 Best Paper: On Sampled Metrics for Item Recommendation — Walid Krichene (Google); Steffen Rendle (Google)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Temporal-Contextual Recommendation in Real-Time",
+   "authors": [
+    "Yifei Ma",
+    "Murali Balakrishnan Narayanaswamy",
+    "Haibin Lin",
+    "Hao Ding"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2020-sigkdd-best-paper-award-winners",
+   "evidence": "2020 Best Paper (Applied Data Science): Temporal-Contextual Recommendation in Real-Time — Yifei Ma (Amazon); Murali Balakrishnan Narayanaswamy (Amazon); Haibin Lin (Amazon);Hao Ding (Amazon)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Malicious Attacks against Deep Reinforcement Learning Interpretations",
+   "authors": [
+    "Mengdi Huai",
+    "Jianhui Sun Renqin Cai",
+    "Liuyi Yao",
+    "Aidong Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2020-sigkdd-best-paper-award-winners",
+   "evidence": "2020 Best Paper Runner-up: Malicious Attacks against Deep Reinforcement Learning Interpretations — Mengdi Huai (University of Virginia); Jianhui Sun (University of Virginia) Renqin Cai (University of Virginia); Liuyi Yao (University of New York at Buffalo); Aidong Zhang (University of Virginia)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "TIPRDC: Task-Independent Privacy-Respecting Data Crowdsourcing Framework for Deep Learning with Anonymized Intermediate Representations",
+   "authors": [
+    "Ang Li",
+    "Yixiao Duan",
+    "Huanrui Yang",
+    "Yiran Chen",
+    "Jianlei Yang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2020-sigkdd-best-paper-award-winners",
+   "evidence": "2020 Best Student Paper: TIPRDC: Task-Independent Privacy-Respecting Data Crowdsourcing Framework for Deep Learning with Anonymized Intermediate Representations — Ang Li (Duke University); Yixiao Duan (Beihang University); Huanrui Yang (Duke University); Yiran Chen (Duke University); Jianlei Yang (Beihang University"
+  },
+  {
+   "venue": "KDD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "EasyFGL: Towards a Unified, Comprehensive and Efficient Platform for Federated Graph Learning",
+   "authors": [
+    "Zhen Wang",
+    "Weirui Kuang",
+    "Yuexiang Xie",
+    "Liuyi Yao",
+    "Yaliang Li",
+    "Bolin Ding",
+    "Jingren Zhou"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2022-sigkdd-best-paper-award-winners",
+   "evidence": "2022 Best Paper (Applied Data Science): EasyFGL: Towards a Unified, Comprehensive and Efficient Platform for Federated Graph Learning — Zhen Wang, Weirui Kuang, Yuexiang Xie, Liuyi Yao, Yaliang Li, Bolin Ding, Jingren Zhou,"
+  },
+  {
+   "venue": "KDD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Learning Causal Effects on Hypergraphs",
+   "authors": [
+    "Jing Ma",
+    "Mengting Wan",
+    "Longqi Yang",
+    "Jundong Li",
+    "Brent Hecht",
+    "Jaime Teevan"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2022-sigkdd-best-paper-award-winners",
+   "evidence": "2022 Best Paper: Learning Causal Effects on Hypergraphs — Jing Ma, Mengting Wan, Longqi Yang, Jundong Li, Brent Hecht, Jaime Teevan"
+  },
+  {
+   "venue": "KDD",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "Deploying Flexible Forecasting at Scale in LinkedIn",
+   "authors": [
+    "Albert Chen",
+    "Reza Hosseini",
+    "Kaixu Yang",
+    "Sayan Patra",
+    "Yi Su",
+    "Saad Eddin Al Orjany",
+    "Sishi",
+    "Parvez Ahammad"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2022-sigkdd-best-paper-award-winners",
+   "evidence": "2022 Best Paper Runner-up (Applied Data Science): Deploying Flexible Forecasting at Scale in LinkedIn — Albert Chen, Reza Hosseini, Kaixu Yang, Sayan Patra, Yi Su, Saad Eddin Al Orjany, Sishi, Parvez Ahammad"
+  },
+  {
+   "venue": "KDD",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Partial-Quasi-Newton Methods: Efficient Algorithms for Minimax Optimization Problems with Unbalanced Dimensionality",
+   "authors": [
+    "Chengchang Liu",
+    "Shuxian Bi",
+    "Luo Luo",
+    "John C. S. Lui"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2022-sigkdd-best-paper-award-winners",
+   "evidence": "2022 Best Paper Runner-up: Partial-Quasi-Newton Methods: Efficient Algorithms for Minimax Optimization Problems with Unbalanced Dimensionality — Chengchang Liu, Shuxian Bi, Luo Luo, John C. S. Lui"
+  },
+  {
+   "venue": "KDD",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Flexible Modeling and Multitask Learning using Differentiable Tree Ensembles",
+   "authors": [
+    "Shibal Ibrahim",
+    "Hussein Hazimeh",
+    "Rahul Mazumder"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2022-sigkdd-best-paper-award-winners",
+   "evidence": "2022 Best Student Paper: Flexible Modeling and Multitask Learning using Differentiable Tree Ensembles — Shibal Ibrahim, Hussein Hazimeh, Rahul Mazumder,"
+  },
+  {
+   "venue": "KDD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "All in One: Multi-task Prompting for Graph Neural Networks",
+   "authors": [
+    "Xiangguo Sun",
+    "Hong Cheng",
+    "Jia Li",
+    "Bo Liu",
+    "Jihong Guan"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2023-sigkdd-best-paper-award-winners",
+   "evidence": "2023 Best Paper: All in One: Multi-task Prompting for Graph Neural Networks — Xiangguo Sun, Hong Cheng, Jia Li, Bo Liu, Jihong Guan"
+  },
+  {
+   "venue": "KDD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Improving Training Stability for Multitask Ranking Models in Recommender Systems",
+   "authors": [
+    "Jiaxi Tang",
+    "Yoel Drori",
+    "Daryl Chang",
+    "Maheswaran Sathiamoorthy",
+    "Justin Gilmer",
+    "Li Wei",
+    "Xinyang Yi",
+    "Lichan Hong",
+    "Ed H. Chi"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2023-sigkdd-best-paper-award-winners",
+   "evidence": "2023 Best Paper (Applied Data Science): Improving Training Stability for Multitask Ranking Models in Recommender Systems — Jiaxi Tang, Yoel Drori, Daryl Chang, Maheswaran Sathiamoorthy, Justin Gilmer, Li Wei, Xinyang Yi, Lichan Hong, Ed H. Chi"
+  },
+  {
+   "venue": "KDD",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Feature-based Learning for Diverse and Privacy-Preserving Counterfactual Explanations",
+   "authors": [
+    "Vy Vo",
+    "Trung Le",
+    "Van Nguyen",
+    "He Zhao",
+    "Edwin Bonilla",
+    "Gholamreza Haffari",
+    "Dinh Phung"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2023-sigkdd-best-paper-award-winners",
+   "evidence": "2023 Best Student Paper: Feature-based Learning for Diverse and Privacy-Preserving Counterfactual Explanations — Vy Vo, Trung Le, Van Nguyen, He Zhao, Edwin Bonilla, Gholamreza Haffari, Dinh Phung"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "CAT: Interpretable Concept-based Taylor Additive Models",
+   "authors": [
+    "Viet Duong",
+    "Qiong Wu",
+    "Zhengyi Zhou",
+    "Hongjue Zhao",
+    "Chenxiang Luo",
+    "Eric Zavesky",
+    "Huaxiu Yao",
+    "Huajie Shao"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-best-paper-award-winners",
+   "evidence": "2024 Best Paper: CAT: Interpretable Concept-based Taylor Additive Models — Viet Duong, Qiong Wu, Zhengyi Zhou, Hongjue Zhao, Chenxiang Luo, Eric Zavesky, Huaxiu Yao, Huajie Shao"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "LiGNN: Graph Neural Networks at LinkedIn",
+   "authors": [
+    "Fedor Borisyuk",
+    "Shihai He",
+    "Yunbo Ouyang",
+    "Morteza Ramezani",
+    "Peng Du",
+    "Xiaochen Hou",
+    "Chengming Jiang",
+    "Nitin Pasumarthy",
+    "Priya Bannur",
+    "Birjodh Tiwana",
+    "Ping Liu",
+    "Siddharth Dangi",
+    "Daqi Sun",
+    "Zhoutao Pei",
+    "Xiao Shi",
+    "Sirou Zhu",
+    "Kay Shen",
+    "Kuang-Hsuan Lee",
+    "David Stein",
+    "Baolei Li",
+    "Haichao Wei",
+    "Amol Ghoting",
+    "Souvik Ghosh"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-best-paper-award-winners",
+   "evidence": "2024 Best Paper (Applied Data Science): LiGNN: Graph Neural Networks at LinkedIn — Fedor Borisyuk, Shihai He, Yunbo Ouyang, Morteza Ramezani, Peng Du, Xiaochen Hou, Chengming Jiang, Nitin Pasumarthy, Priya Bannur, Birjodh Tiwana, Ping Liu, Siddharth Dangi, Daqi Sun, Zhoutao Pei, Xiao Shi, Sirou Zhu, Kay Shen, Kuang-Hsuan Lee, David Stein, Baolei Li, Haichao Wei, Amol Ghoting, Souvik Ghosh"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "Nested Fusion: A Method for Learning High Resolution Latent Structure of Multi-Scale Measurement Data on Mars",
+   "authors": [
+    "Austin Wright",
+    "Duen Chau",
+    "Scott Davidoff"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-best-paper-award-winners",
+   "evidence": "2024 Best Paper Runner-up (Applied Data Science): Nested Fusion: A Method for Learning High Resolution Latent Structure of Multi-Scale Measurement Data on Mars — Austin Wright, Duen Chau, Scott Davidoff"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Dataset Regeneration for Sequential Recommendation",
+   "authors": [
+    "Mingjia Yin",
+    "Hao Wang",
+    "Wei Guo",
+    "Yong Liu",
+    "Suojuan Zhang",
+    "Sirui Zhao",
+    "Defu Lian",
+    "Enhong Chen"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-best-paper-award-winners",
+   "evidence": "2024 Best Student Paper: Dataset Regeneration for Sequential Recommendation — Mingjia Yin, Hao Wang, Wei Guo, Yong Liu, Suojuan Zhang, Sirui Zhao, Defu Lian, Enhong Chen"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper (Applied Data Science)",
+   "title": "Evaluating Decision Rules Across Many Weak Experiments",
+   "authors": [
+    "Winston Chou",
+    "Colin Gray",
+    "Nathan Kallus",
+    "Aurélien Bibaut",
+    "Simon Ejdemyr"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper (Applied Data Science): Evaluating Decision Rules Across Many Weak Experiments — Winston Chou, Colin Gray, Nathan Kallus, Aurélien Bibaut, Simon Ejdemyr"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Improving Group Robustness on Spurious Correlation via Evidential Alignment",
+   "authors": [
+    "Wenqian Ye",
+    "Guangtao Zheng",
+    "Aidong Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper: Improving Group Robustness on Spurious Correlation via Evidential Alignment — Wenqian Ye, Guangtao Zheng, Aidong Zhang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper (Dataset and Benchmark)",
+   "title": "When Heterophily Meets Heterogeneity: Challenges and a New Large-Scale Graph Benchmark",
+   "authors": [
+    "Junhong Lin",
+    "Xiaojie Guo",
+    "Shuaicheng Zhang",
+    "Yada Zhu",
+    "Julian Shun"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper (Dataset and Benchmark): When Heterophily Meets Heterogeneity: Challenges and a New Large-Scale Graph Benchmark — Junhong Lin, Xiaojie Guo, Shuaicheng Zhang, Yada Zhu, Julian Shun"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Dataset and Benchmark)",
+   "title": "A Guide to Misinformation Detection Data and Evaluation",
+   "authors": [
+    "Camille Thibault",
+    "Jacob-Junqi Tian",
+    "Gabrielle Peloquin-Skulski",
+    "Taylor Lynn Curtis",
+    "James Zhou",
+    "Florence Laflamme",
+    "Yuxiang Guan",
+    "Reihaneh Rabbany",
+    "Jean-Francois Godbout",
+    "Kellin Pelrine"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Runner-up (Dataset and Benchmark): A Guide to Misinformation Detection Data and Evaluation — Camille Thibault, Jacob-Junqi Tian, Gabrielle Peloquin-Skulski, Taylor Lynn Curtis, James Zhou, Florence Laflamme, Yuxiang Guan, Reihaneh Rabbany, Jean-Francois Godbout, Kellin Pelrine"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Brain Effective Connectivity Estimation via Fourier Spatiotemporal Attention",
+   "authors": [
+    "Wen Xiong",
+    "Jinduo Liu",
+    "Junzhong Ji",
+    "Fenglong Ma"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Student Paper Runner-up: Brain Effective Connectivity Estimation via Fourier Spatiotemporal Attention — Wen Xiong, Jinduo Liu, Junzhong Ji, Fenglong Ma"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Dataset and Benchmark)",
+   "title": "HtFLlib: A Comprehensive Heterogeneous Federated Learning Library and Benchmark",
+   "authors": [
+    "Jianqing Zhang",
+    "Xinghao Wu",
+    "Yanbing Zhou",
+    "Xiaoting Sun",
+    "Qiqi Cai",
+    "Yang Liu",
+    "Yang Hua",
+    "Zhenzhe Zheng",
+    "Jian Cao",
+    "Qiang Yang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Runner-up (Dataset and Benchmark): HtFLlib: A Comprehensive Heterogeneous Federated Learning Library and Benchmark — Jianqing Zhang, Xinghao Wu, Yanbing Zhou, Xiaoting Sun, Qiqi Cai, Yang Liu, Yang Hua, Zhenzhe Zheng, Jian Cao,Qiang Yang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Monitoring Robustness and Individual Fairness",
+   "authors": [
+    "Ashutosh Gupta",
+    "Thomas A. Henzinger",
+    "Konstantin Kueffner",
+    "Kaushik Mallik",
+    "David Pape"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Runner-up: Monitoring Robustness and Individual Fairness — Ashutosh Gupta, Thomas A. Henzinger, Konstantin Kueffner, Kaushik Mallik, David Pape"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up (Applied Data Science)",
+   "title": "Put Teacher in Student’s Shoes: Cross-Distillation for Ultra-compact Model Compression Framework",
+   "authors": [
+    "Maolin Wang",
+    "Jun Chu",
+    "Sicong Xie",
+    "Xiaoling Zhang",
+    "Yap Zhao",
+    "Wenliang Zhong",
+    "Xiangyu Zhao"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Runner-up (Applied Data Science): Put Teacher in Student’s Shoes: Cross-Distillation for Ultra-compact Model Compression Framework — Maolin Wang, Jun Chu, Sicong Xie, Xiaoling Zhang, Yap Zhao, Wenliang Zhong, Xiangyu Zhao"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "SIGEM: A Simple Yet Effective Similarity Based Graph Embedding Method",
+   "authors": [
+    "Masoud Reyhani Hamedani",
+    "Jeong-Seok Oh",
+    "Seong-Un Cho",
+    "Sang-Wook Kim"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Honorable Mention: SIGEM: A Simple Yet Effective Similarity Based Graph Embedding Method — Masoud Reyhani Hamedani, Jeong-Seok Oh, Seong-Un Cho, Sang-Wook Kim"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honorable Mention",
+   "title": "Verification of Incomplete Graph Unlearning Through Adversarial Perturbations",
+   "authors": [
+    "Kun Wu",
+    "Wendy Hui Wang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Student Paper Honorable Mention: Verification of Incomplete Graph Unlearning Through Adversarial Perturbations — Kun Wu, Wendy Hui Wang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention (Applied Data Science)",
+   "title": "VLM as Policy: Common-Law Content Moderation Framework for Short Video Platform",
+   "authors": [
+    "Xingyu Lu",
+    "Tianke Zhang",
+    "Chang Meng",
+    "Xiaobei Wang",
+    "Jinpeng Wang",
+    "YiFan Zhang",
+    "Shisong Tang",
+    "Changyi Liu",
+    "Haojie Ding",
+    "Kaiyu Jiang",
+    "Kaiyu Tang",
+    "Bin Wen",
+    "Hai-Tao Zheng",
+    "Fan Yeng",
+    "Tingting Gao",
+    "Di Zhang",
+    "Kun Gai"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Honorable Mention (Applied Data Science): VLM as Policy: Common-Law Content Moderation Framework for Short Video Platform — Xingyu Lu, Tianke Zhang, Chang Meng, Xiaobei Wang, Jinpeng Wang, YiFan Zhang, Shisong Tang, Changyi Liu, Haojie Ding, Kaiyu Jiang, Kaiyu Tang, Bin Wen, Hai-Tao Zheng, Fan Yeng, Tingting Gao, Di Zhang, Kun Gai"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention (Applied Data Science)",
+   "title": "Web Scale Graph Mining for Cyber Threat Intelligence",
+   "authors": [
+    "Scott Freitas",
+    "Amir Gharib"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Paper Honorable Mention (Applied Data Science): Web Scale Graph Mining for Cyber Threat Intelligence — Scott Freitas, Amir Gharib"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Taming Recommendation Bias with Causal Intervention on Evolving Personal Popularity",
+   "authors": [
+    "Shiyin Tan",
+    "Dongyuan Li",
+    "Renhe Jiang",
+    "Zhen Wang",
+    "Xingtong Yu",
+    "Manabu Okumura"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
+   "evidence": "2025 Best Student Paper: Taming Recommendation Bias with Causal Intervention on Evolving Personal Popularity — Shiyin Tan, Dongyuan Li, Renhe Jiang, Zhen Wang, Xingtong Yu, Manabu Okumura"
   },
   {
    "venue": "LEET",

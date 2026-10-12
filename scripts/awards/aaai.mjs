@@ -17,14 +17,11 @@
 // and are skipped; so is anything that is not under a recognised award heading. Years before 2010 are left out: those
 // lists print affiliations after the authors, and the papers are rarely on a profile today.
 import { readFileSync } from "node:fs";
+import { text } from "./html.mjs";
 
 const URL_PAGE = "https://aaai.org/about-aaai/aaai-awards/aaai-conference-paper-awards-and-recognition/";
 const URL_CLASSIC = "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/";
 
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…" };
-const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : NAMED[name.toLowerCase()] || m);
-const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/[  ]/g, " ").replace(/\s+/g, " ").trim();
 const isYear = (s) => /^(?:19|20)\d{2}$/.test(s);
 
 // What a heading means. The first rule that matches wins; `null` = not a paper award.
