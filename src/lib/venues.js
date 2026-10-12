@@ -118,6 +118,7 @@
     for (let changed = true, guard = 0; changed && guard < 8; guard++) {
       const before = s;
       s = s.replace(/\s*,\s*(?:19|20)\d{2}\s*$/, "");                       // ", 2014"
+      s = s.replace(/\s*,?\s*\bPMLR\b\s*\d*\s*[:,]?\s*(?:\d+\s*[-–]\s*\d+)?\s*$/i, "");   // ", PMLR 235:12345-12367" (the proceedings series, not a venue)
       s = s.replace(new RegExp("\\s*,\\s*" + PAGES + "\\s*$"), "");        // ", 611-626" / ", 79"
       s = s.replace(/\s*,\s*\d+\s*:\s*\d+\s*-\s*\d+\s*$/, "");              // ", 3: 1-3: 19"
       if (/\s+\d+\s*\([^)]*\)?\s*$/.test(s)) hasVolume = true;
@@ -156,7 +157,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
   function secondaryWord(raw) {
     const m = SECONDARY.exec(fold(raw));
     return m ? m[0].toLowerCase().replace(/s$/, "") : null;
@@ -283,6 +284,9 @@
     return uniq(u.map(ratingOf)).length === 1 && uniq(u.map((e) => e.kind)).length === 1 ? u[0] : "ambiguous";
   }
 
+  // "ACM CCS 2023", "IEEE/ACM ASE 2023": the organisation words in front are not part of the acronym.
+  const ORG_LEAD = /^(?:(?:ieee|acm|usenix|ifip|siam|cvf)(?:\s*[\/-]\s*(?:ieee|acm|usenix|ifip|siam|cvf))*\s+)+(?=[A-Za-z0-9])/i;
+
   // All-caps / camel-case acronym signals present in the string, strongest first.
   function acronymSignals(p) {
     const out = [];
@@ -298,7 +302,7 @@
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
     // leading acronym: "ISCA 2014", "MICRO 2017", "ACL 2015 Proceedings of …", "NDSS 5", "HPCA-16 2010 …"
-    const head = p.withParens.replace(/^[\s,]+/, "");
+    const head = p.withParens.replace(/^[\s,]+/, "").replace(ORG_LEAD, "");
     const first = head.split(/[\s,]+/)[0] || "";
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
     const looksAcr = /^[A-Za-z][A-Za-z0-9&'’-]{1,14}$/.test(first) &&

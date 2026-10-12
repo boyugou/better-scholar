@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.3.1 — 2026-10-12
+
+- Matcher, from a sweep of realistic Scholar strings for AI, systems and security venues:
+  - **No badge for tracks that are not a conference's main proceedings**: *Tiny Papers*, *Blogpost*, *Creative AI* and
+    *Competition* tracks, *AAAI Symposium Series* / *Spring Symposium*, *Sister Conferences*, *Journal Track* /
+    *Journal-First* (they used to inherit the main conference's rank).
+  - `ACM CCS 2023`, `IEEE INFOCOM 2020`, `USENIX NSDI 2022`, `IEEE/ACM ASE 2023`: an organisation word in front of the acronym is
+    ignored. `Proceedings of the ACM Web Conference 2024` is WWW. A PMLR tail (`…Machine Learning, PMLR 235:12345-12367`)
+    is dropped, so those ICML strings match.
+
 ## 2.3.0 — 2026-10-12
 
 - **More paper awards: the list grows from 440 to 857 entries.** The **Computer Vision Foundation's own award

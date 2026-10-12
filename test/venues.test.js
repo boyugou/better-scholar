@@ -312,3 +312,34 @@ test("a dropped 'h' in a spelled-out ordinal does not hide the conference (Thirt
   // the typo rule only reads "eight" / "nine" after a tens word; a lone "Eight" stays a word of the name
   assert.equal(brief("Eight Conference on Neural Information Processing Systems"), "");
 });
+
+test("tracks that are not a conference's main proceedings get no badge: tiny papers, blog posts, symposium series, competitions, sister conferences, journal-first", () => {
+  for (const s of [
+    "ICLR 2025 Blogpost Track", "ICLR 2024 Tiny Papers Track", "The Twelfth International Conference on Learning Representations (Tiny Papers)",
+    "NeurIPS 2024 Creative AI Track", "NeurIPS 2023 Competition Track", "AAAI Spring Symposium Series", "Proceedings of the AAAI Symposium Series 2 (1), 2023",
+    "AAAI 2024 Fall Symposium", "IJCAI 2023 Sister Conferences Track", "IJCAI 2023 Journal Track", "ICSE 2024 Journal-First Papers"
+  ]) assert.equal(brief(s), "", s);
+  // …while the main conferences and the main-conference tracks keep theirs
+  for (const s of [
+    "Proceedings of the AAAI Conference on Artificial Intelligence 37 (13), 2023", "ICLR 2025", "NeurIPS 2025 Datasets and Benchmarks Track", "ICML 2024 Position Paper Track",
+    "Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence, 2023"
+  ]) assert.notEqual(brief(s), "", s);
+});
+
+test("an organisation word before the acronym is not part of it ('ACM CCS 2023'), and a PMLR volume tail is not a venue", () => {
+  assert.equal(brief("ACM CCS 2023"), "CCF A CCS · CORE A* CCS");
+  assert.equal(brief("ACM SIGMOD 2024"), "CCF A SIGMOD · CORE A* SIGMOD");
+  assert.equal(brief("IEEE INFOCOM 2020"), "CCF A INFOCOM · CORE A* INFOCOM");
+  assert.equal(brief("IEEE/ACM ASE 2023"), "CCF A ASE · CORE A* ASE");
+  for (const s of ["ACM", "IEEE", "IEEE 2020", "ACM Press 2019", "IEEE Access"]) assert.equal(brief(s), "", s);
+  const icml = "CCF A ICML · CORE A* ICML";
+  assert.equal(brief("Proceedings of the 41st International Conference on Machine Learning, PMLR 235:12345-12367"), icml);
+  assert.equal(brief("International Conference on Machine Learning, PMLR, 2023"), icml);
+  assert.equal(brief("Proceedings of Machine Learning Research"), "", "the series itself is not a venue");
+});
+
+test("'Proceedings of the ACM Web Conference 2024' is WWW", () => {
+  for (const s of ["Proceedings of the ACM Web Conference 2024", "Proceedings of the ACM Web Conference 2023, 123-134", "The ACM Web Conference 2022", "The Web Conference", "WWW 2025"]) {
+    assert.equal(brief(s), "CCF A WWW · CORE A* WWW", s);
+  }
+});

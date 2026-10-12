@@ -51,7 +51,7 @@
 
     // ---- data mining / databases / IR
     { ccf: "SIGKDD", core: "KDD", names: ["ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", "SIGKDD International Conference on Knowledge Discovery in Data Mining", "Knowledge Discovery and Data Mining"] },
-    { ccf: "WWW", core: "WWW", names: ["International Conference on World Wide Web", "International World Wide Web Conference", "World Wide Web Conference", "The Web Conference", "WWW Conference"] },
+    { ccf: "WWW", core: "WWW", names: ["International Conference on World Wide Web", "International World Wide Web Conference", "World Wide Web Conference", "The Web Conference", "WWW Conference", "ACM Web Conference"] },
     { ccf: "SIGMOD", core: "SIGMOD", names: ["International Conference on Management of Data", "ACM SIGMOD International Conference on Management of Data", "ACM Special Interest Group on Management of Data", "Proceedings of the ACM on Management of Data"] },
     { ccf: "VLDB", core: "VLDB", names: ["Proceedings of the VLDB Endowment", "International Conference on Very Large Data Bases", "VLDB Conference"] },
     { ccf: "ICDE", core: "ICDE", names: ["IEEE International Conference on Data Engineering", "International Conference on Data Engineering"] },
