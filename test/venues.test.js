@@ -464,6 +464,11 @@ test("IEEE's High Performance symposia: a cut-off '13th IEEE International Sympo
   assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
 });
 
+test("ESEC/FSE as the lead acronym, cut off or not", () => {
+  assert.equal(brief("ESEC/FSE '11 Proceedings of the 19th ACM SIGSOFT symposium and the 13th …, 2011"), "CCF A FSE · CORE A* FSE");
+  assert.equal(brief("ESEC/FSE 2021 29th ACM Joint European Software Engineering Conference and …, 2021"), "CCF A FSE · CORE A* FSE");
+});
+
 test("a country in parentheses after an acronym is another event: 'HPCA (China)' is not the architecture symposium", () => {
   assert.equal(brief("HPCA (China), 497-502, 2009"), "");
   assert.equal(brief("HPCA, 497-502, 2009"), "CCF A HPCA · CORE A* HPCA");

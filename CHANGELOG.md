@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.8.8 — 2026-10-12
+
+Sixteen more real profiles (Peking, Jiao Tong, Nanjing, Harbin, NUDT and Wuhan groups — 1,533 venue strings; no wrong badge found).
+
+- *ESEC/FSE '11 Proceedings of the 19th ACM SIGSOFT symposium and the 13th …* and *ESEC/FSE 2021 29th ACM Joint European … Conference and …* (the
+  joint-meeting acronym with its slash, then a cut-off title) are now read as FSE.
+
 ## 2.8.7 — 2026-10-12
 
 Fifteen more real profiles (computer architecture at ICT-CAS, Tsinghua and Zhejiang groups in learning, data, vision and graphics — 1,472 venue strings).

@@ -381,7 +381,7 @@
     const head = head0.replace(ORG_LEAD, "");
     const first = head.split(/[\s,]+/)[0] || "";
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
-    const looksAcr = /^[A-Za-z][A-Za-z0-9&'’-]{1,14}$/.test(first) &&
+    const looksAcr = /^[A-Za-z][A-Za-z0-9&'’\/-]{1,14}$/.test(first) &&
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
     // ("HCI International" is a conference of its own — not the journal HCI — although "international" is a noise word)
     const restNoise = canonTokens(rest, "full").length === 0 && !/^international\b/i.test(rest);
@@ -395,7 +395,7 @@
     }
     // the ACM Digital Library's own citation form: "SC18: International Conference for …", "ICSE '06: Proceedings of …", "CHI'09:" —
     // an acronym, a two-digit year and a colon name the event whatever follows
-    const acmDl = /^([A-Za-z][A-Za-z0-9&]{1,9})\s*['’]?\s*\d{2}\s*:/.exec(head);
+    const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})\s*['’]?\s*\d{2}\s*:/.exec(head);
     if (acmDl && /[A-Z]/.test(acmDl[1])) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
     const words = p.plain.split(/\s+/).filter(Boolean);

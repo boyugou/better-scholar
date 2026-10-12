@@ -171,7 +171,7 @@
 
     // ---- software engineering / PL / theory / graphics
     { ccf: "ICSE", core: "ICSE", names: ["International Conference on Software Engineering", "IEEE/ACM International Conference on Software Engineering", "ACM/IEEE International Conference on Software Engineering"] },
-    { ccf: "FSE", ccfTier: "A", core: "FSE", coreRank: "A*", names: [
+    { ccf: "FSE", ccfTier: "A", core: "FSE", coreRank: "A*", abbrs: ["ESEC/FSE"], names: [
       "Joint Meeting on Foundations of Software Engineering", "ACM SIGSOFT Symposium on the Foundations of Software Engineering",
       "European Software Engineering Conference and Symposium on the Foundations of Software Engineering", "ESEC/FSE",
       // the ACM Digital Library's titles of 2003, 2005 and 2011
