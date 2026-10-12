@@ -1881,3 +1881,9 @@ test("COLT awards page: 'Family, Given; …' and 'Given Family; …' author line
   const b = `<p>COLT 2021 - Paper Awards</p><p>Best papers runners-up</p><p>An Online Learning Result, by Fox, Ed; Gray, Flo</p><p>Menu</p>`;
   assert.deepEqual(parseColtAwards(b, "https://learningtheory.org/colt2021/awards.html").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["runner-up An Online Learning Result | Ed Fox; Flo Gray"]);
 });
+
+test("CoRL awards page: winners' titles and plain author lines under the award headings; the finalist list is left out", async () => {
+  const { parseCorlAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Awards</p><p>"Outstanding Paper Award" Winners for CoRL 2024</p><p>A Robot Learning Paper Title</p><p>Ann Lee, Bo Chan, Cy Dunn</p><p>"Outstanding Paper Award" Finalists for CoRL 2024</p><p>A Finalist Paper Title</p><p>Ed Fox, Flo Gray</p><p>Report abuse</p>`;
+  assert.deepEqual(parseCorlAwards(h, "https://2024.corl.org/program/awards").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["outstanding A Robot Learning Paper Title | Ann Lee; Bo Chan; Cy Dunn"]);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6320
+  "count": 6325
  },
  "entries": [
   {
@@ -38549,6 +38549,110 @@
    "track": "main",
    "source": "https://aclanthology.org/2026.conll-main.25/",
    "evidence": "Readers make targeted regressions to plausible errors in reanalysis of “noisy-channel garden-path” sentences — Outstanding Paper"
+  },
+  {
+   "venue": "CoRL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "One Model to Drift Them All",
+   "authors": [
+    "Franck Djeumou",
+    "Thomas Jonathan Lew",
+    "Nan Ding",
+    "Michael Thompson",
+    "Makoto Suminaka",
+    "Marcus Greiff",
+    "John Subosits"
+   ],
+   "track": "main",
+   "source": "https://2024.corl.org/program/awards",
+   "evidence": "CoRL 2024 Outstanding Paper Award: One Model to Drift Them All — Franck Djeumou, Thomas Jonathan Lew, Nan Ding, Michael Thompson, Makoto Suminaka, Marcus Greiff, John Subosits"
+  },
+  {
+   "venue": "CoRL",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "PoliFormer: Scaling On-Policy RL with Transformers Results in Masterful Navigators",
+   "authors": [
+    "Kuo-Hao Zeng",
+    "Kiana Ehsani",
+    "Rose Hendrix",
+    "Jordi Salvador",
+    "Zichen Zhang",
+    "Alvaro Herrasti",
+    "Ross Girshick",
+    "Aniruddha Kembhavi",
+    "Luca Weihs"
+   ],
+   "track": "main",
+   "source": "https://2024.corl.org/program/awards",
+   "evidence": "CoRL 2024 Outstanding Paper Award: PoliFormer: Scaling On-Policy RL with Transformers Results in Masterful Navigators — Kuo-Hao Zeng, Kiana Ehsani, Rose Hendrix, Jordi Salvador, Zichen Zhang, Alvaro Herrasti, Ross Girshick, Aniruddha Kembhavi, Luca Weihs"
+  },
+  {
+   "venue": "CoRL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fabrica: Dual-Arm Assembly of General Multi-Part Objects via Integrated Planning and Learning",
+   "authors": [
+    "Yunsheng Tian",
+    "Joshua Jacob",
+    "Yijiang Huang",
+    "Jialiang Zhao",
+    "Edward Li Gu",
+    "Pingchuan Ma",
+    "Annan Zhang",
+    "Farhad Javid",
+    "Branden Romero",
+    "Sachin Chitta",
+    "Shinjiro Sueda",
+    "Hui Li",
+    "Wojciech Matusik"
+   ],
+   "track": "main",
+   "source": "https://2025.corl.org/program/awards",
+   "evidence": "CoRL 2025 Best Paper Award: Fabrica: Dual-Arm Assembly of General Multi-Part Objects via Integrated Planning and Learning — Yunsheng Tian, Joshua Jacob, Yijiang Huang, Jialiang Zhao, Edward Li Gu, Pingchuan Ma, Annan Zhang, Farhad Javid, Branden Romero, Sachin Chitta, Shinjiro Sueda, Hui Li, Wojciech Matusik"
+  },
+  {
+   "venue": "CoRL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning a Unified Policy for Position and Force Control in Legged Loco-Manipulation",
+   "authors": [
+    "Peiyuan Zhi",
+    "Peiyang Li",
+    "Jianqin Yin",
+    "Baoxiong Jia",
+    "Siyuan Huang"
+   ],
+   "track": "main",
+   "source": "https://2025.corl.org/program/awards",
+   "evidence": "CoRL 2025 Best Paper Award: Learning a Unified Policy for Position and Force Control in Legged Loco-Manipulation — Peiyuan Zhi, Peiyang Li, Jianqin Yin, Baoxiong Jia, Siyuan Huang"
+  },
+  {
+   "venue": "CoRL",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Visual Imitation Enables Contextual Humanoid Control",
+   "authors": [
+    "Arthur Allshire",
+    "Hongsuk Choi",
+    "Junyi Zhang",
+    "David McAllister",
+    "Anthony Zhang",
+    "Chung Min Kim",
+    "Trevor Darrell",
+    "Pieter Abbeel",
+    "Jitendra Malik",
+    "Angjoo Kanazawa"
+   ],
+   "track": "main",
+   "source": "https://2025.corl.org/program/awards",
+   "evidence": "CoRL 2025 Best Student Paper Award: Visual Imitation Enables Contextual Humanoid Control — Arthur Allshire, Hongsuk Choi, Junyi Zhang, David McAllister, Anthony Zhang, Chung Min Kim, Trevor Darrell, Pieter Abbeel, Jitendra Malik, Angjoo Kanazawa"
   },
   {
    "venue": "CRYPTO",
