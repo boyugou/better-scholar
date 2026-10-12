@@ -464,6 +464,14 @@ test("IEEE's High Performance symposia: a cut-off '13th IEEE International Sympo
   assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
 });
 
+test("Springer's colon form: 'Series: 18th International Conference, ACR 2020, Place …' is the venue", () => {
+  assert.equal(brief("Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …, 2020"), "CCF B TCC · CORE B TCC");
+  assert.equal(brief("Computer Aided Verification: 13th International Conference, CAV 2001, Paris …, 2003"), "CCF A CAV · CORE A* CAV");
+  assert.equal(brief("Search-Based Software Engineering: 17th International Symposium, SSBSE 2025 …, 2026"), "CORE B SSBSE");
+  // an acronym that is no conference's proves nothing
+  assert.equal(brief("The Internet of Things: First International Conference, IOT 2008, Zurich …, 2008"), "");
+});
+
 test("ESEC/FSE as the lead acronym, cut off or not", () => {
   assert.equal(brief("ESEC/FSE '11 Proceedings of the 19th ACM SIGSOFT symposium and the 13th …, 2011"), "CCF A FSE · CORE A* FSE");
   assert.equal(brief("ESEC/FSE 2021 29th ACM Joint European Software Engineering Conference and …, 2021"), "CCF A FSE · CORE A* FSE");

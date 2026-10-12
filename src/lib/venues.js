@@ -443,7 +443,11 @@
     // Springer's series form: "Advances in Cryptology–ASIACRYPT 2009", "Algorithms–ESA 2012: 19th Annual European Symposium, …".
     // The acronym after the dash names the event, whatever series name goes before it ("Advances in Cryptology" is CRYPTO's series
     // title too, but this is not CRYPTO).
-    const series = /[a-z0-9)] ?[–—−-]{1,2} ?([A-Z][A-Z0-9]{1,9}(?:-[A-Z0-9]{1,6})?)(?:\s+(?:19|20)\d{2}\b|['’]\d{2}\b)/.exec(fold(p.withParens));
+    // (the same series, as Springer's colon form prints it: "Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …" — the acronym
+    // comes after the ordinal and the event word, and may be three letters; the series title shares a word with the venue's name or it proves nothing)
+    const colonForm = /^([^:]{4,80}):\s*(?:\d+(?:st|nd|rd|th)|(?:First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth))\s+(?:(?:International|European|Annual|IEEE|ACM)\s+)*(?:Conference|Symposium|Workshop|Colloquium)\b[^,:]*,\s*([A-Z][A-Z0-9]{2,9})\s+(?:19|20)\d{2}\b/.exec(fold(p.withParens));
+    const dashForm = /[a-z0-9)] ?[–—−-]{1,2} ?([A-Z][A-Z0-9]{1,9}(?:-[A-Z0-9]{1,6})?)(?:\s+(?:19|20)\d{2}\b|['’]\d{2}\b)/.exec(fold(p.withParens));
+    const series = dashForm || (colonForm && { 1: colonForm[2], index: colonForm[1].length - 1 });
     if (series) {
       const k = squash(series[1]);
       const title = canonTokens(fold(p.withParens).slice(0, series.index + 1), "noOrg");

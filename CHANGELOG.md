@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.9.6 — 2026-10-12
+
+- Springer's colon form of a conference-proceedings title, *Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …*, is now read through its acronym
+  (the series rule that already read *Advances in Cryptology–CRYPTO 2009*): the open gap of 2.8.5. Also read now: *Computer Aided Verification: 13th International Conference,
+  CAV 2001, Paris …* and *Search-Based Software Engineering: 17th International Symposium, SSBSE 2025 …*. An acronym that is no conference's (*IOT 2008*) still proves nothing.
+
 ## 2.9.5 — 2026-10-12
 
 - The TCC Test of Time Award (2015–2025, 12 papers) from the TCC's own page (`tot.mjs tcc`). The bundled list has 4889 awards.
