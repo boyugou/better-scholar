@@ -21,5 +21,7 @@ export const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/
   .replace(/[\u00ad\u200b-\u200d\ufeff]/g, "").replace(/[\u00a0\u202f\u2009]/g, " ").replace(/\s+/g, " ").trim();
 
 // the page as lines of plain text: block ends and <br> become line breaks, scripts and styles are dropped
-export const lines = (html) => html.replace(/<(?:script|style)[\s\S]*?<\/(?:script|style)>/gi, "").replace(/<\/(?:p|div|h\d|li|tr|td|dt|dd)>|<br\s*\/?>/gi, "\n")
+// (comments are not what a reader sees and are dropped; a tag may run over a line break — ``<a href="…\n">`` — so tags go before the text is split)
+export const lines = (html) => html.replace(/<!--[\s\S]*?-->/g, "").replace(/<(?:script|style)[\s\S]*?<\/(?:script|style)>/gi, "")
+  .replace(/<[^>]*>/g, (tag) => (/^<\/(?:p|div|h\d|li|tr|td|dt|dd)\b/i.test(tag) || /^<br\b/i.test(tag) ? "\n" : ""))
   .split("\n").map((l) => text(l)).filter(Boolean);

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2292
+  "count": 2331
  },
  "entries": [
   {
@@ -13732,6 +13732,21 @@
   },
   {
    "venue": "FAST",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Venti: A New Approach to Archival Storage",
+   "authors": [
+    "Sean Quinlan",
+    "Sean Dorward"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '12 Test of Time Award: Venti: A New Approach to Archival Storage — Sean Quinlan and Sean Dorward (Published in the Proceedings of the Conference on File and Storage Technologies, January 2002)"
+  },
+  {
+   "venue": "FAST",
    "year": 2013,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13763,6 +13778,21 @@
   },
   {
    "venue": "FAST",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "GPFS: A Shared-Disk File System for Large Computing Clusters",
+   "authors": [
+    "Frank Schmuck",
+    "Roger Haskin"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '13 Test of Time Award: GPFS: A Shared-Disk File System for Large Computing Clusters — Frank Schmuck and Roger Haskin (Published in the Proceedings of the Conference on File and Storage Technologies, January 2002)"
+  },
+  {
+   "venue": "FAST",
    "year": 2014,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13778,6 +13808,21 @@
   },
   {
    "venue": "FAST",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "ARC: A Self-Tuning, Low Overhead Replacement Cache",
+   "authors": [
+    "Nimrod Megiddo",
+    "Dharmendra S. Modha"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '14 Test of Time Award: ARC: A Self-Tuning, Low Overhead Replacement Cache — Nimrod Megiddo and Dharmendra S. Modha (Published in the Proceedings of the Conference on File and Storage Technologies, March 2003)"
+  },
+  {
+   "venue": "FAST",
    "year": 2015,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13789,6 +13834,25 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '15: Skylight—A Window on Shingled Disk Operation — Abutalib Aghayev, Northeastern University; Peter Desnoyers, Northeastern University"
+  },
+  {
+   "venue": "FAST",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hippodrome: Running Circles Around Storage Administration",
+   "authors": [
+    "Eric Anderson",
+    "Michael Hobbs",
+    "Kimberly Keeton",
+    "Susan Spence",
+    "Mustafa Uysal",
+    "Alistair Veitch"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '15 Test of Time Award: Hippodrome: Running Circles Around Storage Administration — Eric Anderson, Michael Hobbs, Kimberly Keeton, Susan Spence, Mustafa Uysal, and Alistair Veitch (Published in the Proceedings of the Conference on File and Storage Technologies, January 2002)"
   },
   {
    "venue": "FAST",
@@ -13835,6 +13899,26 @@
   },
   {
    "venue": "FAST",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Row-Diagonal Parity for Double Disk Failure Correction",
+   "authors": [
+    "Peter Corbett",
+    "Bob English",
+    "Atul Goel",
+    "Tomislav Grcanac",
+    "Steven Kleiman",
+    "James Leong",
+    "Sunitha Sankar"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '16 Test of Time Award: Row-Diagonal Parity for Double Disk Failure Correction — Peter Corbett, Bob English, Atul Goel, Tomislav Grcanac, Steven Kleiman, James Leong, and Sunitha Sankar (Published in the Proceedings of the Third USENIX Conference on File and Storage Technologies, March 2004)"
+  },
+  {
+   "venue": "FAST",
    "year": 2017,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13866,6 +13950,25 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '17: Application Crash Consistency and Performance with CCFS — Thanumalayan Sankaranarayana Pillai, University of Wisconsin—Madison; Ramnatthan Alagappan, University of Wisconsin—Madison; Lanyue Lu, University of Wisconsin—Madison; Vijay Chidambaram, The University of Texas at Austin; Andrea C. Arpaci-Dusseau, University of Wisconsin—Madison; Remzi H. Arpaci-Dusseau, University of Wisconsin—M"
+  },
+  {
+   "venue": "FAST",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SnapMirror: File-System-Based Asynchronous Mirroring for Disaster Recovery",
+   "authors": [
+    "Hugo Patterson",
+    "Stephen Manley",
+    "Mike Federwisch",
+    "Dave Hitz",
+    "Steve Kleiman",
+    "Shane Owara"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '17 Test of Time Award: SnapMirror: File-System-Based Asynchronous Mirroring for Disaster Recovery — Hugo Patterson, Stephen Manley, Mike Federwisch, Dave Hitz, Steve Kleiman, and Shane Owara (Published in the Proceedings of the FAST 2002 Conference on File and Storage Technologies, January 2002)"
   },
   {
    "venue": "FAST",
@@ -13907,6 +14010,24 @@
   },
   {
    "venue": "FAST",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Designing for Disasters",
+   "authors": [
+    "Kimberly Keeton",
+    "Cipriano Santos",
+    "Dirk Beyer",
+    "Jeffrey Chase",
+    "John Wilkes"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '18 Test of Time Award: Designing for Disasters — Kimberly Keeton, Cipriano Santos, Dirk Beyer, Jeffrey Chase, and John Wilkes (Published in the Proceedings of the Third USENIX Conference on File and Storage Technologies, March 2004)"
+  },
+  {
+   "venue": "FAST",
    "year": 2019,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13924,6 +14045,22 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '19: DistCache: Provable Load Balancing for Large-Scale Storage Systems with Distributed Caching — Zaoxing Liu, Johns Hopkins University; Zhihao Bai, Johns Hopkins University; Zhenming Liu, College of William and Mary; Xiaozhou Li, Celer Network; Changhoon Kim, Barefoot Networks; Vladimir Braverman, Johns Hopkins University; Xin Jin, Johns Hopkins University; Ion Stoica, UC Berkeley"
+  },
+  {
+   "venue": "FAST",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Failure Trends in a Large Disk Drive Population",
+   "authors": [
+    "Eduardo Pinheiro",
+    "Wolf-Dietrich Weber",
+    "Luiz André Barroso"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '19 Test of Time Award: Failure Trends in a Large Disk Drive Population — Eduardo Pinheiro, Wolf-Dietrich Weber, and Luiz André Barroso (Published in the Proceedings of the 5th USENIX Conference on File and Storage Technologies, February 2007)"
   },
   {
    "venue": "FAST",
@@ -13959,6 +14096,22 @@
   },
   {
    "venue": "FAST",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Avoiding the Disk Bottleneck in the Data Domain Deduplication File System",
+   "authors": [
+    "Benjamin Zhu",
+    "Kai Li",
+    "Hugo Patterson"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '20 Test of Time Award: Avoiding the Disk Bottleneck in the Data Domain Deduplication File System — Benjamin Zhu, Kai Li, Hugo Patterson (Published in the Proceedings of the 6th USENIX Conference on File and Storage Technologies, February 2008)"
+  },
+  {
+   "venue": "FAST",
    "year": 2021,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13978,6 +14131,23 @@
   },
   {
    "venue": "FAST",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Five-Year Study of File-System Metadata",
+   "authors": [
+    "Nitin Agrawal",
+    "William J. Bolosky",
+    "John R. Douceur",
+    "Jacob R. Lorch"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '21 Test of Time Award: A Five-Year Study of File-System Metadata — Nitin Agrawal, William J. Bolosky, John R. Douceur, Jacob R. Lorch (Published in the Proceedings of the 5th USENIX Conference on File and Storage Technologies, February 2007)"
+  },
+  {
+   "venue": "FAST",
    "year": 2022,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -13990,6 +14160,24 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '22: Improving the Reliability of Next Generation SSDs using WOM-v Codes — Shehbaz Jaffer, University of Toronto, Google; Kaveh Mahdaviani, University of Toronto; Bianca Schroeder, University of Toronto"
+  },
+  {
+   "venue": "FAST",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An Analysis of Data Corruption in the Storage Stack",
+   "authors": [
+    "Lakshmi N. Bairavasundaram",
+    "Garth Goodson",
+    "Bianca Schroeder",
+    "Andrea C. Arpaci-Dusseau",
+    "Remzi H. Arpaci-Dusseau"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '22 Test of Time Award: An Analysis of Data Corruption in the Storage Stack — Lakshmi N. Bairavasundaram, Garth Goodson, Bianca Schroeder, Andrea C. Arpaci-Dusseau, and Remzi H. Arpaci-Dusseau (Published in the Proceedings of the 6th USENIX Conference on File and Storage Technologies, February 2008)"
   },
   {
    "venue": "FAST",
@@ -14030,6 +14218,21 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '23: ROLEX: A Scalable RDMA-oriented Learned Key-Value Store for Disaggregated Memory Systems — Pengfei Li, Huazhong University of Science and Technology; Yu Hua, Huazhong University of Science and Technology; Pengfei Zuo, Huazhong University of Science and Technology; Zhangyu Chen, Huazhong University of Science and Technology; Jiajie Sheng, Huazhong University of Science and Technology"
+  },
+  {
+   "venue": "FAST",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Study of Practical Deduplication",
+   "authors": [
+    "Dutch T. Meyer",
+    "William J. Bolosky"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '23 Test of Time Award: A Study of Practical Deduplication — Dutch T. Meyer and William J. Bolosky (Published in the Proceedings of the 9th USENIX Conference on File and Storage Technologies, February 2011)"
   },
   {
    "venue": "FAST",
@@ -14089,6 +14292,24 @@
   },
   {
    "venue": "FAST",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SFS: Random Write Considered Harmful in Solid State Drives",
+   "authors": [
+    "Changwoo Min",
+    "Kangnyeon Kim",
+    "Hyunjin Cho",
+    "Sang-Won Lee",
+    "Young Ik Eom"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '24 Test of Time Award: SFS: Random Write Considered Harmful in Solid State Drives — Changwoo Min, Kangnyeon Kim, Hyunjin Cho, Sang-Won Lee, and Young Ik Eom (Published in the Proceedings of the 10th USENIX Conference on File and Storage Technologies, February 2012)"
+  },
+  {
+   "venue": "FAST",
    "year": 2025,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -14107,6 +14328,23 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "FAST '25: Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot — Ruoyu Qin, Moonshot AI and Tsinghua University; Zheming Li, Moonshot AI; Weiran He, Moonshot AI; Jialei Cui, Moonshot AI; Feng Ren, Tsinghua University; Mingxing Zhang, Tsinghua University; Yongwei Wu, Tsinghua University; Weimin Zheng, Tsinghua University; Xinran Xu, Moonshot A"
+  },
+  {
+   "venue": "FAST",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient MRC Construction with SHARDS",
+   "authors": [
+    "Carl A. Waldspurger",
+    "Nohhyun Park",
+    "Alexander Garthwaite",
+    "Irfan Ahmad"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "FAST '25 Test of Time Award: Efficient MRC Construction with SHARDS — Carl A. Waldspurger, Nohhyun Park, Alexander Garthwaite, and Irfan Ahmad (Published in the Proceedings of the 13th USENIX Conference on File and Storage Technologies, February 2015)"
   },
   {
    "venue": "FAST",
@@ -26842,6 +27080,29 @@
   },
   {
    "venue": "NSDI",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Operating System Support for Planetary-Scale Network Services",
+   "authors": [
+    "Andy Bavier",
+    "Mic Bowman",
+    "Brent Chun",
+    "David Culler",
+    "Scott Karlin",
+    "Steve Muir",
+    "Larry Peterson",
+    "Timothy Roscoe",
+    "Tammo Spalink",
+    "Mike Wawrzoniak"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '14 Test of Time Award: Operating System Support for Planetary-Scale Network Services — Andy Bavier, Mic Bowman, Brent Chun, David Culler, Scott Karlin, Steve Muir, Larry Peterson, Timothy Roscoe, Tammo Spalink, and Mike Wawrzoniak (Published in the Proceedings of the First Symposium on Networked Systems Design and Implementation, March 2004)"
+  },
+  {
+   "venue": "NSDI",
    "year": 2015,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -26902,6 +27163,27 @@
   },
   {
    "venue": "NSDI",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Live Migration of Virtual Machines",
+   "authors": [
+    "Christopher Clark",
+    "Keir Fraser",
+    "Steven Hand",
+    "Jacob Gorm Hansen",
+    "Eric Jul",
+    "Christian Limpach",
+    "Ian Pratt",
+    "Andrew Warfield"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '15 Test of Time Award: Live Migration of Virtual Machines — Christopher Clark, Keir Fraser, Steven Hand, Jacob Gorm Hansen, Eric Jul, Christian Limpach, Ian Pratt, and Andrew Warfield (Published in the Proceedings of the Second Symposium on Networked Systems Design and Implementation, May 2005)"
+  },
+  {
+   "venue": "NSDI",
    "year": 2016,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -26954,6 +27236,25 @@
   },
   {
    "venue": "NSDI",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Pip: Detecting the Unexpected in Distributed Systems",
+   "authors": [
+    "Patrick Reynolds",
+    "Charles Killian",
+    "Janet L. Wiener",
+    "Jeffrey C. Mogul",
+    "Mehul A. Shah",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '16 Test of Time Award: Pip: Detecting the Unexpected in Distributed Systems — Patrick Reynolds, Charles Killian, Janet L. Wiener, Jeffrey C. Mogul, Mehul A. Shah, and Amin Vahdat (Published in the Proceedings of the Third Symposium on Networked Systems Design and Implementation, May 2006)"
+  },
+  {
+   "venue": "NSDI",
    "year": 2017,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -26984,6 +27285,24 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '17: The Design, Implementation, and Deployment of a System to Transparently Compress Hundreds of Petabytes of Image Files for a File-Storage Service — Daniel Reiter Horn, Dropbox Inc.; Ken Elkabany, Dropbox Inc.; Chris Lesniewski-Lass, Dropbox; Keith Winstein, Stanford University"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "X-Trace: A Pervasive Network Tracing Framework",
+   "authors": [
+    "Rodrigo Fonseca",
+    "George Porter",
+    "Randy H. Katz",
+    "Scott Shenker",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '17 Test of Time Award: X-Trace: A Pervasive Network Tracing Framework — Rodrigo Fonseca, George Porter, Randy H. Katz, Scott Shenker, and Ion Stoica (Published in the Proceedings of the 4th USENIX Symposium on Networked Systems Design & Implementation, April 2007)"
   },
   {
    "venue": "NSDI",
@@ -27020,6 +27339,25 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '18: Stateless Datacenter Load-balancing with Beamer — Vladimir Olteanu, University Politehnica of Bucharest; Alexandru Agache, University Politehnica of Bucharest; Andrei Voinescu, University Politehnica of Bucharest; Costin Raiciu, University Politehnica of Bucharest"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Remus: High Availability via Asynchronous Virtual Machine Replication",
+   "authors": [
+    "Brendan Cully",
+    "Geoffrey Lefebvre",
+    "Dutch Meyer",
+    "Mike Feeley",
+    "Norm Hutchinson",
+    "Andrew Warfield"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '18 Test of Time Award: Remus: High Availability via Asynchronous Virtual Machine Replication — Brendan Cully, Geoffrey Lefebvre, Dutch Meyer, Mike Feeley, Norm Hutchinson, and Andrew Warfield (Published in the Proceedings of the 5th USENIX Symposium on Networked Systems Design & Implementation, April 2008)"
   },
   {
    "venue": "NSDI",
@@ -27068,6 +27406,29 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '19: Understanding Lifecycle Management Complexity of Datacenter Topologies — Mingyang Zhang, University of Southern California; Radhika Niranjan Mysore, VMware Research; Sucha Supittayapornpong, University of Southern California; Ramesh Govindan, University of Southern California"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Sora: High Performance Software Radio Using General Purpose Multi-core Processors",
+   "authors": [
+    "Kun Tan",
+    "Jiansong Zhang",
+    "Ji Fang",
+    "He Liu",
+    "Yusheng Ye",
+    "Shen Wang",
+    "Yongguang Zhang",
+    "Haitao Wu",
+    "Wei Wang",
+    "Geoffrey M. Voelker"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '19 Test of Time Award: Sora: High Performance Software Radio Using General Purpose Multi-core Processors — Kun Tan, Jiansong Zhang, Ji Fang, He Liu, Yusheng Ye, Shen Wang, Yongguang Zhang, Haitao Wu, Wei Wang, and Geoffrey M. Voelker (Published in the Proceedings of the 6th USENIX Symposium on Networked Systems Design and Implementation, April 2009)"
   },
   {
    "venue": "NSDI",
@@ -27124,6 +27485,24 @@
   },
   {
    "venue": "NSDI",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hedera: Dynamic Flow Scheduling for Data Center Networks",
+   "authors": [
+    "Mohammad Al-Fares",
+    "Sivasankar Radhakrishnan",
+    "Barath Raghavan",
+    "Nelson Huang",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '20 Test of Time Award: Hedera: Dynamic Flow Scheduling for Data Center Networks — Mohammad Al-Fares, Sivasankar Radhakrishnan, Barath Raghavan, Nelson Huang, and Amin Vahdat (Published in the Proceedings of the 7th USENIX Symposium on Networked Systems Design and Implementation, April 2010)"
+  },
+  {
+   "venue": "NSDI",
    "year": 2021,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -27155,6 +27534,27 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '21: Segcache: a memory-efficient and scalable in-memory key-value cache for small objects — Juncheng Yang, Carnegie Mellon University; Yao Yue, Twitter; Rashmi Vinayak, Carnegie Mellon University"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center",
+   "authors": [
+    "Benjamin Hindman",
+    "Andy Konwinski",
+    "Matei Zaharia",
+    "Ali Ghodsi",
+    "Anthony D. Joseph",
+    "Randy Katz",
+    "Scott Shenker",
+    "Ion Stoica"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '21 Test of Time Award: Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center — Benjamin Hindman, Andy Konwinski, Matei Zaharia, Ali Ghodsi, Anthony D. Joseph, Randy Katz, Scott Shenker, and Ion Stoica (Published in the Proceedings of the 8th USENIX Symposium on Networked Systems Design and Implementation, March 2011)"
   },
   {
    "venue": "NSDI",
@@ -27204,6 +27604,23 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '22: Packet Order Matters! Improving Application Performance by Deliberately Delaying Packets — Hamid Ghasemirahni, KTH Royal Institute of Technology; Tom Barbette, KTH Royal Institute of Technology; Georgios P. Katsikas, KTH Royal Institute of Technology; Alireza Farshin, KTH Royal Institute of Technology; Amir Roozbeh, KTH Royal Institute of Technology and Ericsson Research; Massimo Girondi"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Design, Implementation and Evaluation of Congestion Control for Multipath TCP",
+   "authors": [
+    "Damon Wischik",
+    "Costin Raiciu",
+    "Adam Greenhalgh",
+    "Mark Handley"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '22 Test of Time Award: Design, Implementation and Evaluation of Congestion Control for Multipath TCP — Damon Wischik, Costin Raiciu, Adam Greenhalgh, Mark Handley (Published in the Proceedings of the 8th USENIX Symposium on Networked Systems Design and Implementation, March 2011)"
   },
   {
    "venue": "NSDI",
@@ -27289,6 +27706,22 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '23: LeakyScatter: A Frequency-Agile Directional Backscatter Network Above 100 GHz — Atsutse Kludze, Princeton University; Yasaman Ghasempour, Princeton University"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Detecting and Defending Against Third-Party Tracking on the Web",
+   "authors": [
+    "Franziska Roesner",
+    "Tadayoshi Kohno",
+    "David Wetherall"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '23 Test of Time Award: Detecting and Defending Against Third-Party Tracking on the Web — Franziska Roesner, Tadayoshi Kohno, and David Wetherall (Published in the Proceedings of the 9th USENIX Symposium on Networked Systems Design and Implementation, April 2012)"
   },
   {
    "venue": "NSDI",
@@ -27405,6 +27838,22 @@
   },
   {
    "venue": "NSDI",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Header Space Analysis: Static Checking For Networks",
+   "authors": [
+    "Peyman Kazemian",
+    "George Varghese",
+    "Nick McKeown"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '24 Test of Time Award: Header Space Analysis: Static Checking For Networks — Peyman Kazemian, George Varghese, and Nick McKeown (Published in the Proceedings of the 9th USENIX Symposium on Networked Systems Design and Implementation, April 2012)"
+  },
+  {
+   "venue": "NSDI",
    "year": 2025,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -27434,6 +27883,31 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '25: NDD: A Decision Diagram for Network Verification — Zechun Li, Xi'an Jiaotong University; Peng Zhang, Xi'an Jiaotong University; Yichi Zhang, Xi'an Jiaotong University; Hongkun Yang, Google"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Design and Implementation of Open vSwitch",
+   "authors": [
+    "Ben Pfaff",
+    "Justin Pettit",
+    "Teemu Koponen",
+    "Ethan Jackson",
+    "Andy Zhou",
+    "Jarno Rajahalme",
+    "Jesse Gross",
+    "Alex Wang",
+    "Joe Stringer",
+    "Pravin Shelar",
+    "Keith Amidon",
+    "Martín Casado"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '25 Test of Time Award: The Design and Implementation of Open vSwitch — Ben Pfaff, Justin Pettit, Teemu Koponen, Ethan Jackson, Andy Zhou, Jarno Rajahalme, Jesse Gross, Alex Wang, Joe Stringer, Pravin Shelar, Keith Amidon, and Martín Casado (Published in the Proceedings of the 12th USENIX Symposium on Networked Systems Design and Implementation, May 2015)"
   },
   {
    "venue": "NSDI",
@@ -27608,6 +28082,44 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "NSDI '26: UpFuzz: Detecting Data Format Incompatibility Bugs during Distributed Storage System Upgrade — Ke Han, Purdue University; Sruthi P C, Purdue University; Yayu Wang, The University of British Columbia; Yaoxu Song, Purdue University; Bishal Basak Papan, Purdue University; Junwen Yang, Meta; Pedro Fonseca, Purdue University; Yongle Zhang, Purdue University"
+  },
+  {
+   "venue": "NSDI",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Network Virtualization in Multi-tenant Datacenters",
+   "authors": [
+    "Teemu Koponen",
+    "Keith Amidon",
+    "Peter Balland",
+    "Martín Casado",
+    "Anupam Chanda",
+    "Bryan Fulton",
+    "Igor Ganichev",
+    "Jesse Gross",
+    "Natasha Gude",
+    "Paul Ingram",
+    "Ethan Jackson",
+    "Andrew Lambeth",
+    "Romain Lenglet",
+    "Shih-Hao Li",
+    "Amar Padmanabhan",
+    "Justin Pettit",
+    "Ben Pfaff",
+    "Rajiv Ramanathan",
+    "Scott Shenker",
+    "Alan Shieh",
+    "Jeremy Stribling",
+    "Pankaj Thakkar",
+    "Dan Wendlandt",
+    "Alexander Yip",
+    "Ronghua Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "NSDI '26 Test of Time Award: Network Virtualization in Multi-tenant Datacenters — Teemu Koponen, Keith Amidon, Peter Balland, Martín Casado, Anupam Chanda, Bryan Fulton, Igor Ganichev, Jesse Gross, Natasha Gude, Paul Ingram, Ethan Jackson, Andrew Lambeth, Romain Lenglet, Shih-Hao Li, Amar Padmanabhan, Justin Pettit, Ben Pfaff, Rajiv Ramanathan, Scott Shenker, Alan Shieh, Jeremy Stribling, Pankaj Thakkar, Dan Wendlandt, Alexander Yip, and Ronghua Zhang (Published in the Proceedings of the 11th USENIX Symposium on Networked Systems Design and Implementation, April 2014)"
   },
   {
    "venue": "OSDI",
@@ -35718,6 +36230,29 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks",
+   "authors": [
+    "Crispin Cowan",
+    "Calton Pu",
+    "Dave Maier",
+    "Jonathan Walpole",
+    "Peat Bakke",
+    "Steve Beattie",
+    "Aaron Grier",
+    "Perry Wagle",
+    "Qian Zhang",
+    "Heather Hinton"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '13 Test of Time Award: StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks — Crispin Cowan, Calton Pu, Dave Maier, Jonathan Walpole, Peat Bakke, Steve Beattie, Aaron Grier, Perry Wagle, Qian Zhang, and Heather Hinton (Published in the Proceedings of the 7th USENIX Security Symposium, January 1998)"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2014,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -35766,6 +36301,22 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Tor: The Second-Generation Onion Router",
+   "authors": [
+    "Roger Dingledine",
+    "Nick Mathewson",
+    "Paul Syverson"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '14 Test of Time Award: Tor: The Second-Generation Onion Router — Roger Dingledine, Nick Mathewson, and Paul Syverson (Published in the Proceedings of the 13th USENIX Security Symposium, August 2004)"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2015,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -35791,6 +36342,21 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '15: Under-Constrained Symbolic Execution: Correctness Checking for Real Code — David A. Ramos, Stanford University; Dawson Engler, Stanford University"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Why Johnny Can’t Encrypt: A Usability Evaluation of PGP 5.0",
+   "authors": [
+    "Alma Whitten",
+    "J. D. Tygar"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '15 Test of Time Award: Why Johnny Can’t Encrypt: A Usability Evaluation of PGP 5.0 — Alma Whitten and J. D. Tygar (Published in the Proceedings of the 8th USENIX Security Symposium, August 1999)"
   },
   {
    "venue": "USENIX Security",
@@ -35844,6 +36410,22 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '16: ZKBoo: Faster Zero-Knowledge for Boolean Circuits — Irene Giacomelli, Aarhus University; Jesper Madsen, Aarhus University; Claudio Orlandi, Aarhus University"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Preventing Privilege Escalation",
+   "authors": [
+    "Niels Provos",
+    "Markus Friedl",
+    "Peter Honeyman"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '16 Test of Time Award: Preventing Privilege Escalation — Niels Provos, Markus Friedl, and Peter Honeyman (Published in the Proceedings of the 12th USENIX Security Symposium, August 2003)"
   },
   {
    "venue": "USENIX Security",
@@ -35952,6 +36534,22 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Inferring Internet Denial-of-Service Activity",
+   "authors": [
+    "David Moore",
+    "Geoffrey M. Voelker",
+    "Stefan Savage"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '17 Test of Time Award: Inferring Internet Denial-of-Service Activity — David Moore, Geoffrey M. Voelker, and Stefan Savage (Published in the Proceedings of the USENIX Security Symposium, August 2001)"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2018,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -36030,6 +36628,21 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '18: Who Left Open the Cookie Jar? A Comprehensive Evaluation of Third-Party Cookie Policies — Gertjan Franken, imec-Distrinet, KU Leuven; Tom Van Goethem, imec-Distrinet, KU Leuven; Wouter Joosen, imec-Distrinet, KU Leuven"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Evaluating SFI for a CISC Architecture",
+   "authors": [
+    "Stephen McCamant",
+    "Greg Morrisett"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '18 Test of Time Award: Evaluating SFI for a CISC Architecture — Stephen McCamant and Greg Morrisett (Published in the Proceedings of the 15th USENIX Security Symposium, August 2006)"
   },
   {
    "venue": "USENIX Security",
@@ -36140,6 +36753,23 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '19: Users Really Do Answer Telephone Scams — Huahong Tu, University of Maryland; Adam Doupé, Arizona State University; Ziming Zhao, Rochester Institute of Technology; Gail-Joon Ahn, Arizona State University and Samsung Research"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Secure Environment for Untrusted Helper Applications (Confining the Wily Hacker)",
+   "authors": [
+    "Ian Goldberg",
+    "David Wagner",
+    "Randi Thomas",
+    "Eric Brewer"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '19 Test of Time Award: A Secure Environment for Untrusted Helper Applications (Confining the Wily Hacker) — Ian Goldberg, David Wagner, Randi Thomas, and Eric Brewer (Published in the Proceedings of the Sixth USENIX Security Symposium, July 1996)"
   },
   {
    "venue": "USENIX Security",
@@ -36647,6 +37277,22 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Kerberos: An Authentication Service for Open Network Systems",
+   "authors": [
+    "Jennifer G. Steiner",
+    "Clifford Neuman",
+    "Jeffrey I. Schiller"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '22 Test of Time Award: Kerberos: An Authentication Service for Open Network Systems — Jennifer G. Steiner, Clifford Neuman, and Jeffrey I. Schiller (Published in the 1988 Winter USENIX Technical Conference Proceedings, February 1988)"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2023,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -36918,6 +37564,21 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '23: TreeSync: Authenticated Group Management for Messaging Layer Security — Théophile Wallez, Inria Paris; Jonathan Protzenko, Microsoft Research; Benjamin Beurdouche, Mozilla; Karthikeyan Bhargavan, Inria Paris"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Remote Timing Attacks Are Practical",
+   "authors": [
+    "David Brumley",
+    "Dan Boneh"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '23 Test of Time Award: Remote Timing Attacks Are Practical — David Brumley and Dan Boneh (Published in the Proceedings of the 12th USENIX Security Symposium, August 2003)"
   },
   {
    "venue": "USENIX Security",
@@ -37248,6 +37909,25 @@
   },
   {
    "venue": "USENIX Security",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Privacy in Pharmacogenetics: An End-to-End Case Study of Personalized Warfarin Dosing",
+   "authors": [
+    "Matthew Fredrikson",
+    "Eric Lantz",
+    "Somesh Jha",
+    "Simon Lin",
+    "David Page",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '24 Test of Time Award: Privacy in Pharmacogenetics: An End-to-End Case Study of Personalized Warfarin Dosing — Matthew Fredrikson, Eric Lantz, Somesh Jha, Simon Lin, David Page, and Thomas Ristenpart (Published in the Proceedings of the 23rd USENIX Security Symposium, August 2014)"
+  },
+  {
+   "venue": "USENIX Security",
    "year": 2025,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
@@ -37392,6 +38072,29 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '25: We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs — Joseph Spracklen, University of Texas at San Antonio; Raveen Wijewickrama, University of Texas at San Antonio; A H M Nazmus Sakib, University of Texas at San Antonio; Anindya Maiti, University of Oklahoma; Bimal Viswanath, Virginia Tech; Murtuza Jadliwala, University of Texa"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Comprehensive Experimental Analyses of Automotive Attack Surfaces",
+   "authors": [
+    "Stephen Checkoway",
+    "Damon McCoy",
+    "Brian Kantor",
+    "Danny Anderson",
+    "Hovav Shacham",
+    "Stefan Savage",
+    "Karl Koscher",
+    "Alexei Czeskis",
+    "Franziska Roesner",
+    "Tadayoshi Kohno"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '25 Test of Time Award: Comprehensive Experimental Analyses of Automotive Attack Surfaces — Stephen Checkoway, Damon McCoy, Brian Kantor, Danny Anderson, Hovav Shacham, Stefan Savage, Karl Koscher, Alexei Czeskis, Franziska Roesner, and Tadayoshi Kohno (Published in the Proceedings of the 20th USENIX Security Symposium, August 2011)"
   },
   {
    "venue": "USENIX Security",
@@ -37638,6 +38341,24 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "USENIX Security '26: The State of Passkeys: Studying the Adoption and Security of Passkeys on the Web — Louis Jannett, Ruhr University Bochum; Andreas Mayer, Heilbronn University of Applied Sciences; Maximilian Westers, Heilbronn University of Applied Sciences; Vladislav Mladenov, Ruhr University Bochum; Christian Mainka, University of Wuppertal; Jörg Schwenk, Ruhr University Bochum"
+  },
+  {
+   "venue": "USENIX Security",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Stealing Machine Learning Models via Prediction APIs",
+   "authors": [
+    "Florian Tramèr",
+    "Fan Zhang",
+    "Ari Juels",
+    "Michael K. Reiter",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://www.usenix.org/conferences/test-of-time-awards",
+   "evidence": "USENIX Security '26 Test of Time Award: Stealing Machine Learning Models via Prediction APIs — Florian Tramèr, Fan Zhang, Ari Juels, Michael K. Reiter, Thomas Ristenpart (Published in the Proceedings of the 25th USENIX Security Symposium, August 2016)"
   },
   {
    "venue": "USITS",
@@ -37985,15 +38706,16 @@
    "venue": "VLDB",
    "year": 2012,
    "award": "tot",
-   "awardLabel": "Test of Time Award",
+   "awardLabel": "10-Year Award",
    "title": "Approximate Frequency Counts over Data Streams",
    "authors": [
     "Gurmeet Singh Manku",
     "Rajeev Motwani"
    ],
    "track": "main",
-   "source": "https://vldb.org/awards_10year.html",
-   "evidence": "VLDB 2012 Test of Time Award: Gurmeet Singh Manku, Rajeev Motwani: Approximate Frequency Counts over Data Streams"
+   "paperYear": 2002,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2012 10-year Award: Gurmeet Singh Manku, Rajeev Motwani: Approximate Frequency Counts over Data Streams"
   },
   {
    "venue": "VLDB",

@@ -301,3 +301,13 @@ test("the bundled list: web, architecture and microarchitecture classics (WWW's 
   assert.deepEqual(find("Trace cache: A low latency approach to high bandwidth instruction fetching", "E Rotenberg, S Bennett, JE Smith"), ["MICRO 2015 tot"]);
   assert.deepEqual(find("Item-based collaborative filtering recommendation algorithms", "A Smith, B Jones"), []);
 });
+
+test("the bundled list: USENIX's own test-of-time winners (Security, NSDI, FAST)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Tor: The second-generation onion router", "R Dingledine, N Mathewson, P Syverson"), ["USENIX Security 2014 tot"]);
+  assert.deepEqual(find("Stealing machine learning models via prediction APIs", "F Tramèr, F Zhang, A Juels, MK Reiter, T Ristenpart"), ["USENIX Security 2026 tot"]);
+  assert.deepEqual(find("Live migration of virtual machines", "C Clark, K Fraser, S Hand, JG Hansen, E Jul, C Limpach, I Pratt, A Warfield"), ["NSDI 2015 tot"]);
+  assert.deepEqual(find("ARC: A self-tuning, low overhead replacement cache", "N Megiddo, DS Modha"), ["FAST 2014 tot"]);
+  assert.deepEqual(find("Approximate frequency counts over data streams", "GS Manku, R Motwani"), ["VLDB 2012 tot"]);
+});

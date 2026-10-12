@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.5.17 — 2026-10-12
+
+- **USENIX test-of-time awards** (39 entries; the list holds 2331) from USENIX's own Test of Time Awards page: USENIX Security, NSDI and FAST,
+  2012–2026, each with the year of the paper (*Stealing Machine Learning Models via Prediction APIs*, *Why Johnny Can't Encrypt*, *Tor*,
+  *Live Migration of Virtual Machines* …). New reader `scripts/awards/usenix-tot.mjs`.
+- **The award readers no longer read what a page hides.** The shared line reader drops HTML comments and tags that run over a line break:
+  the USENIX page keeps a commented-out second 2020 Security entry, and the VLDB page's 2012 block is commented out (the archive table
+  lists that award, so it is read from there). The one entry that had come from the hidden text is gone.
+
 ## 2.5.16 — 2026-10-12
 
 - **Test-of-time awards of WWW, ISCA and MICRO** (64 entries; the list holds 2292) from the pages that list them in full: the Web

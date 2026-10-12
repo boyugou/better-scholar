@@ -68,7 +68,7 @@ export function parseArchive(html, source = PAGES.archive) {
   for (const [, row] of html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
     let cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((c) => c[1]);
     if (cells.length && /^\s*(?:19|20)\d{2}\s*$/.test(text(cells[0]))) { year = parseInt(text(cells[0]), 10); cells = cells.slice(1); }
-    if (!year || cells.length < 2 || year >= 2012) continue;       // 2012 on is the current page's (it lists them with their citations)
+    if (!year || cells.length < 2 || year >= 2014) continue;       // 2014 on is the current page's (it lists them with their citations; its 2012 block is commented out)
     // the first line of a cell is the award-winning paper; what follows <br> in parentheses belongs to the memorial talk
     const first = (c) => text(c.split(/<br\s*\/?>/i)[0]);
     const winners = first(cells[0]), title = first(cells[1]).replace(/\s+/g, " ");

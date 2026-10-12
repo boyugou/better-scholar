@@ -849,7 +849,7 @@ test("vldb test-of-time pages: winners and title lines with their citations; a s
     <tr><td rowspan="2">2002</td><td><p>Lu Mo<br>(Lu Mo)</p></td><td><p>Querying in Synthetic Mobile Environments<br>(Wireless Graffiti)</p></td></tr>
     <tr><td><p>Ned Oh and Pia Qi<br>(Pia Qi)</p></td><td><p>Performance Evaluation of a Synthetic Load
       Control Method<br>(Self-tuning Technology)</p></td></tr>
-    <tr><td>2012</td><td><p>Ray Sun<br>(Ray Sun)</p></td><td><p>Listed On The Current Page Instead<br>(x)</p></td></tr></table>`;
+    <tr><td>2014</td><td><p>Ray Sun<br>(Ray Sun)</p></td><td><p>Listed On The Current Page Instead<br>(x)</p></td></tr></table>`;
   assert.deepEqual(parseArchive(arch).entries.map((e) => [e.year, e.awardLabel, e.title, e.authors, e.paperYear]), [
     [2011, "10-Year Award", "Synthetic Schema Matching With a Cupid", ["Ivy Xu", "Jo Yan", "Kai Zu"], 2001],
     [2002, "10-Year Award", "Querying in Synthetic Mobile Environments", ["Lu Mo"], 1992],
@@ -892,4 +892,32 @@ test("test-of-time lists on one page: WWW (winners over two lines, titles in quo
     [2025, 2007, "Optimizing Synthetic Cache Organizations with a Model", ["Cal Dunn", "Dee Eden"]],
     [2024, 2006, "Utility-Based Synthetic Partitioning", ["Fay Gray"]]
   ]);
+});
+
+test("usenix test-of-time page: title, wrapped authors, an optional citation line and 'Published in' (its year is the paper's); commented-out blocks and tags over a line break are not read", async () => {
+  const { parse } = await import("../scripts/awards/usenix-tot.mjs");
+  const html = `<h2>2025</h2>
+<h3><a href="/conference/usenixsecurity25">USENIX Security '25</a></h3><div class="test">
+<p class="title"><a href="/conference/x
+">Comprehensive Synthetic Analyses of Attack Surfaces</a></p>
+<p class="author">Ann Lee, Bo Chen, Cy Diaz, and Dee Park</p>
+<p class="citation">Published in the <em>Proceedings of the 20th USENIX Security Symposium</em>, August 2011</p></div>
+<h3><a href="/conference/fast25">FAST '25</a></h3><div class="test">
+<p class="title"><a href="/conference/y">Efficient Synthetic Construction with Sampling</a></p>
+<p class="author">Eli Ross, Fay Gray,
+Gia Stone, and Hal Wu</p>
+<p>For the invention of synthetic stack canaries.</p>
+<p class="citation">Published in the <em>Proceedings of the Conference on File and Storage Technologies</em>, February 2015</p></div>
+<!--<h3><a href="/conference/usenixsecurity20">USENIX Security '20</a></h3><div class="test">
+<p class="title"><a href="/z">A Hidden Synthetic Entry in a Comment</a></p><p class="author">Ivy Xu and Jo Yan</p>
+<p class="citation">Published in the <em>Proceedings of X</em>, July 1996</p></div>-->
+<h2>2019</h2><h3><a href="/conference/nsdi19">NSDI '19</a></h3><div class="test"><p class="title">A Synthetic Radio Title Here</p><p class="author">Kai Zu</p><p class="citation">Published in the Proceedings of the 6th NSDI, April 2009</p></div>`;
+  const { entries, skipped } = parse(html);
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.paperYear, e.title, e.authors]), [
+    ["USENIX Security", 2025, 2011, "Comprehensive Synthetic Analyses of Attack Surfaces", ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park"]],
+    ["FAST", 2025, 2015, "Efficient Synthetic Construction with Sampling", ["Eli Ross", "Fay Gray", "Gia Stone", "Hal Wu"]],
+    ["NSDI", 2019, 2009, "A Synthetic Radio Title Here", ["Kai Zu"]]
+  ]);
+  assert.deepEqual(skipped, []);
+  assert.ok(entries.every((e) => e.award === "tot" && e.evidence.includes(e.title)));
 });
