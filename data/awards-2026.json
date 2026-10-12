@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5888
+  "count": 5970
  },
  "entries": [
   {
@@ -69601,6 +69601,1086 @@
   },
   {
    "venue": "KDD",
+   "year": 1997,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "An efficient approach to clustering in large multimedia databases with noise",
+   "authors": [
+    "Alexander Hinneburg",
+    "Daniel Keim"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1997-sigkdd-best-paper-awards",
+   "evidence": "KDD 1997 Best Research Paper: An efficient approach to clustering in large multimedia databases with noise — Alexander Hinneburg, and Daniel Keim"
+  },
+  {
+   "venue": "KDD",
+   "year": 1997,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Detecting Atmospheric Regimes using Cross-Validated Clustering",
+   "authors": [
+    "Padhraic Smyth",
+    "Michael Ghil",
+    "Kayo Ide",
+    "Joe Roden",
+    "Andrew Fraser"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1997-sigkdd-best-paper-awards",
+   "evidence": "KDD 1997 Best Application Paper: Detecting Atmospheric Regimes using Cross-Validated Clustering — Padhraic Smyth, Michael Ghil, Kayo Ide, Joe Roden, and Andrew Fraser"
+  },
+  {
+   "venue": "KDD",
+   "year": 1997,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "A Probabilistic Approach to Fast Pattern Matching in Time Series Databases",
+   "authors": [
+    "Eamonn Keogh",
+    "Padhraic Smyth"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1997-sigkdd-best-paper-awards",
+   "evidence": "KDD 1997 Best Research Paper Runner-up: A Probabilistic Approach to Fast Pattern Matching in Time Series Databases — Eamonn Keogh, and Padhraic Smyth"
+  },
+  {
+   "venue": "KDD",
+   "year": 1997,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "JAM: Java Agents for Meta-Learning over Distributed Databases",
+   "authors": [
+    "Sal Stolfo",
+    "A. Prodromidis",
+    "P. Chan"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1997-sigkdd-best-paper-awards",
+   "evidence": "KDD 1997 Best Application Paper Runner-up: JAM: Java Agents for Meta-Learning over Distributed Databases — Sal Stolfo , A. Prodromidis, and P. Chan"
+  },
+  {
+   "venue": "KDD",
+   "year": 1998,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Occam's two razors: the sharp and the blunt",
+   "authors": [
+    "Pedro Domingos"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1998-sigkdd-best-paper-awards",
+   "evidence": "KDD 1998 Best Research Paper: Occam's two razors: the sharp and the blunt — Pedro Domingos"
+  },
+  {
+   "venue": "KDD",
+   "year": 1998,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Finding frequent substructures in chemical compounds",
+   "authors": [
+    "Luc Dehaspe",
+    "Hannu Toivonen",
+    "Ross D. King"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1998-sigkdd-best-paper-awards",
+   "evidence": "KDD 1998 Best Application Paper: Finding frequent substructures in chemical compounds — Luc Dehaspe, Hannu Toivonen, and Ross D. King"
+  },
+  {
+   "venue": "KDD",
+   "year": 1998,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "An efficient approach to clustering in large multimedia databases with noise",
+   "authors": [
+    "Alexander Hinneburg",
+    "Daniel Keim"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1998-sigkdd-best-paper-awards",
+   "evidence": "KDD 1998 Best Research Paper Runner-up: An efficient approach to clustering in large multimedia databases with noise — Alexander Hinneburg, and Daniel Keim"
+  },
+  {
+   "venue": "KDD",
+   "year": 1998,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Mining audit data to build intrusion detection models",
+   "authors": [
+    "Wenke Lee",
+    "Salvatore Stolfo",
+    "Kui Mok"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1998-sigkdd-best-paper-awards",
+   "evidence": "KDD 1998 Best Application Paper Runner-up: Mining audit data to build intrusion detection models — Wenke Lee, Salvatore Stolfo, and Kui Mok"
+  },
+  {
+   "venue": "KDD",
+   "year": 1998,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Rule discovery from time series",
+   "authors": [
+    "Gautam Das",
+    "King-Ip Lin",
+    "Heikki Mannila",
+    "Gopal Renganathan",
+    "Padhraic Smyth"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1998-sigkdd-best-paper-awards",
+   "evidence": "KDD 1998 Best Research Paper Runner-up: Rule discovery from time series — Gautam Das, King-Ip Lin, Heikki Mannila, Gopal Renganathan, and Padhraic Smyth"
+  },
+  {
+   "venue": "KDD",
+   "year": 1999,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "MetaCost: A General Method for Making Classifiers Cost-Sensitive",
+   "authors": [
+    "Pedro Domingos"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1999-sigkdd-best-paper-awards",
+   "evidence": "KDD 1999 Best Research Paper: MetaCost: A General Method for Making Classifiers Cost-Sensitive — Pedro Domingos"
+  },
+  {
+   "venue": "KDD",
+   "year": 1999,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Mining in a Data-flow Environment: Experience in Network Intrusion Detection",
+   "authors": [
+    "Wenke Lee",
+    "Sal Stolfo",
+    "Kui Mok"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1999-sigkdd-best-paper-awards",
+   "evidence": "KDD 1999 Best Application Paper: Mining in a Data-flow Environment: Experience in Network Intrusion Detection — Wenke Lee, Sal Stolfo, and Kui Mok"
+  },
+  {
+   "venue": "KDD",
+   "year": 1999,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Mining GPS Data to Augment Road Models",
+   "authors": [
+    "Seth Rogers",
+    "Pat Langley",
+    "Christopher Wilson"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1999-sigkdd-best-paper-awards",
+   "evidence": "KDD 1999 Best Application Paper Runner-up: Mining GPS Data to Augment Road Models — Seth Rogers, Pat Langley, and Christopher Wilson"
+  },
+  {
+   "venue": "KDD",
+   "year": 1999,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Squashing Flat Files Flatter",
+   "authors": [
+    "W. DuMouchel",
+    "Chris Volinsky",
+    "Ted Johnson",
+    "Corinna Cortes",
+    "Daryl Pregibon"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1999-sigkdd-best-paper-awards",
+   "evidence": "KDD 1999 Best Research Paper Runner-up: Squashing Flat Files Flatter — W. DuMouchel, Chris Volinsky, Ted Johnson, Corinna Cortes, and Daryl Pregibon"
+  },
+  {
+   "venue": "KDD",
+   "year": 1999,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Using Association Rules for Product Assortment Decisions: A Case Study",
+   "authors": [
+    "Tom Brijs",
+    "Gilbert Swinnen",
+    "Koen Vanhoof",
+    "Geert Wets"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/1999-sigkdd-best-paper-awards",
+   "evidence": "KDD 1999 Best Application Paper Runner-up: Using Association Rules for Product Assortment Decisions: A Case Study — Tom Brijs, Gilbert Swinnen, Koen Vanhoof, and Geert Wets"
+  },
+  {
+   "venue": "KDD",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Hancock: A Language for Extracting Signatures from Data Streams",
+   "authors": [
+    "Corinna Cortes",
+    "Kathleen Fisher",
+    "Daryl Pregibon",
+    "Anne Rogers",
+    "Frederick Smith"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2000-sigkdd-best-paper-awards",
+   "evidence": "KDD 2000 Best Research Paper: Hancock: A Language for Extracting Signatures from Data Streams — Corinna Cortes, Kathleen Fisher, Daryl Pregibon, Anne Rogers, and Frederick Smith"
+  },
+  {
+   "venue": "KDD",
+   "year": 2000,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Mining IC Test Data to Optimize VLSI Testing",
+   "authors": [
+    "Tony Fountain",
+    "Thomas Dietterich",
+    "Bill Sudyka"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2000-sigkdd-best-paper-awards",
+   "evidence": "KDD 2000 Best Application Paper: Mining IC Test Data to Optimize VLSI Testing — Tony Fountain, Thomas Dietterich, and Bill Sudyka"
+  },
+  {
+   "venue": "KDD",
+   "year": 2000,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Deformable Markov Model Templates for Time-Series Pattern Matching",
+   "authors": [
+    "Xianping Ge",
+    "Padhraic Smyth"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2000-sigkdd-best-paper-awards",
+   "evidence": "KDD 2000 Best Research Paper Runner-up: Deformable Markov Model Templates for Time-Series Pattern Matching — Xianping Ge, and Padhraic Smyth"
+  },
+  {
+   "venue": "KDD",
+   "year": 2000,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Ongoing Management and Application of Discovered Knowledge in a Large Regulatory Organization: A Case Study of the Use and Impact of NASD Regulation's Advanced Detection System (ADS)",
+   "authors": [
+    "Ted Senator"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2000-sigkdd-best-paper-awards",
+   "evidence": "KDD 2000 Best Application Paper Runner-up: Ongoing Management and Application of Discovered Knowledge in a Large Regulatory Organization: A Case Study of the Use and Impact of NASD Regulation's Advanced Detection System (ADS) — Ted Senator"
+  },
+  {
+   "venue": "KDD",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Robust Space Transformations for Distance-Based Operations",
+   "authors": [
+    "Ed Knorr",
+    "Raymond Ng",
+    "Ruben Zamar"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2001-sigkdd-best-paper-award",
+   "evidence": "KDD 2001 Best Research Paper: Robust Space Transformations for Distance-Based Operations — Ed Knorr, Raymond Ng, and Ruben Zamar"
+  },
+  {
+   "venue": "KDD",
+   "year": 2001,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Empirical Bayes Screening for Multi-Item Associations in Massive Datasets",
+   "authors": [
+    "William DuMouchel",
+    "Daryl Pregibon"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2001-sigkdd-best-paper-award",
+   "evidence": "KDD 2001 Best Application Paper: Empirical Bayes Screening for Multi-Item Associations in Massive Datasets — William DuMouchel, and Daryl Pregibon"
+  },
+  {
+   "venue": "KDD",
+   "year": 2001,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Molecular Feature Mining in HIV Data",
+   "authors": [
+    "Stefan Kramer",
+    "Luc De Raedt",
+    "Christoph Helma"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2001-sigkdd-best-paper-award",
+   "evidence": "KDD 2001 Best Application Paper Runner-up: Molecular Feature Mining in HIV Data — Stefan Kramer, Luc De Raedt, and Christoph Helma."
+  },
+  {
+   "venue": "KDD",
+   "year": 2001,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "The 'DGX' Distribution for Mining Massive, Skewed Data",
+   "authors": [
+    "Zhiqiang Bi",
+    "Christos Faloutsos",
+    "Flip Korn"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2001-sigkdd-best-paper-award",
+   "evidence": "KDD 2001 Best Research Paper Runner-up: The 'DGX' Distribution for Mining Massive, Skewed Data — Zhiqiang Bi, Christos Faloutsos, and Flip Korn"
+  },
+  {
+   "venue": "KDD",
+   "year": 2002,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Pattern Discovery in Sequences under a Markov Assumption",
+   "authors": [
+    "Darya Chudova",
+    "Padhraic Smyth"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2002-sigkdd-best-paper-award",
+   "evidence": "KDD 2002 Best Research Paper: Pattern Discovery in Sequences under a Markov Assumption — Darya Chudova, and Padhraic Smyth"
+  },
+  {
+   "venue": "KDD",
+   "year": 2002,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Customer Lifetime Value Modeling and Its Use for Customer Retention Planning",
+   "authors": [
+    "Saharon Rosset",
+    "Einat Neumann",
+    "Uri Eick",
+    "Nurit Vatnik",
+    "Yizhak Idan"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2002-sigkdd-best-paper-award",
+   "evidence": "KDD 2002 Best Application Paper: Customer Lifetime Value Modeling and Its Use for Customer Retention Planning — Saharon Rosset, Einat Neumann, Uri Eick, Nurit Vatnik, and Yizhak Idan"
+  },
+  {
+   "venue": "KDD",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Maximizing the Spread of Influence through a Social Network",
+   "authors": [
+    "David Kempe",
+    "Jon Kleinberg",
+    "Eva Tardos"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2003-sigkdd-best-paper-award",
+   "evidence": "KDD 2003 Best Research Paper: Maximizing the Spread of Influence through a Social Network — David Kempe, Jon Kleinberg, and Eva Tardos"
+  },
+  {
+   "venue": "KDD",
+   "year": 2003,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Capturing Best Practice for Microarray Gene Expression",
+   "authors": [
+    "Gregory Piatetsky-Shapiro",
+    "Tom Khabaza",
+    "Sridhar Ramaswamy"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2003-sigkdd-best-paper-award",
+   "evidence": "KDD 2003 Best Application Paper Runner-up: Capturing Best Practice for Microarray Gene Expression — Gregory Piatetsky-Shapiro, Tom Khabaza, and Sridhar Ramaswamy"
+  },
+  {
+   "venue": "KDD",
+   "year": 2003,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Empirical Bayesian Data Mining for Discovering Patterns in Post-Marketing Drug Safety",
+   "authors": [
+    "David M. Fram",
+    "June S. Almenoff",
+    "William DuMouchel"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2003-sigkdd-best-paper-award",
+   "evidence": "KDD 2003 Best Research Paper Runner-up: Empirical Bayesian Data Mining for Discovering Patterns in Post-Marketing Drug Safety — David M. Fram, June S. Almenoff, and William DuMouchel"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Probabilistic Framework for Semi-Supervised Clustering >>",
+   "authors": [
+    "Sugato Basu",
+    "Mikhail Bilenko",
+    "Raymond Mooney"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
+   "evidence": "KDD 2004 Best Research Paper: Probabilistic Framework for Semi-Supervised Clustering >> — Sugato Basu, Mikhail Bilenko, and Raymond Mooney"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Learning to Detect Malicious Executables in the Wild",
+   "authors": [
+    "Jeremy Z. Kolter",
+    "Marcus A. Maloof"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
+   "evidence": "KDD 2004 Best Application Paper: Learning to Detect Malicious Executables in the Wild — Jeremy Z. Kolter, and Marcus A. Maloof"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Mining Coherent Gene Clusters from Three-Dimensional Microarray Data",
+   "authors": [
+    "Daxin Jiang",
+    "Jian Pei",
+    "Murali Ramanathan",
+    "Chun Tang",
+    "Aidong Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
+   "evidence": "KDD 2004 Best Application Paper Runner-up: Mining Coherent Gene Clusters from Three-Dimensional Microarray Data — Daxin Jiang, Jian Pei, Murali Ramanathan, Chun Tang, and Aidong Zhang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "The Complexity of Mining Maximal Frequent Itemsets and Maximal Frequent Patterns",
+   "authors": [
+    "Guizhen Yang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
+   "evidence": "KDD 2004 Best Research Paper Runner-up: The Complexity of Mining Maximal Frequent Itemsets and Maximal Frequent Patterns — Guizhen Yang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Incorporating Prior Knowledge with Weighted Margin Support Vector Machines",
+   "authors": [
+    "Xiaoyun Wu",
+    "Rohini Srihari"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
+   "evidence": "KDD 2004 Best Student Paper: Incorporating Prior Knowledge with Weighted Margin Support Vector Machines — Xiaoyun Wu, and Rohini Srihari"
+  },
+  {
+   "venue": "KDD",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Graphs Over Time: Densification Laws, Shrinking Diameters, and Possible Explanations",
+   "authors": [
+    "Jure Leskovec",
+    "Jon Kleinberg",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2005-best-paper-award",
+   "evidence": "KDD 2005 Best Research Paper: Graphs Over Time: Densification Laws, Shrinking Diameters, and Possible Explanations — Jure Leskovec, Jon Kleinberg, and Christos Faloutsos"
+  },
+  {
+   "venue": "KDD",
+   "year": 2005,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Learning to Detect Malicious Executables in the Wild",
+   "authors": [
+    "G. Niklas Norén",
+    "Roland Orre",
+    "Andrew Bate"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2005-best-paper-award",
+   "evidence": "KDD 2005 Best Application Paper: Learning to Detect Malicious Executables in the Wild — G. Niklas Norén, Roland Orre, and Andrew Bate."
+  },
+  {
+   "venue": "KDD",
+   "year": 2005,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database",
+   "authors": [
+    "Daxin Jiang",
+    "Jian Pei",
+    "Murali Ramanathan",
+    "Chun Tang",
+    "Aidong Zhang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2005-best-paper-award",
+   "evidence": "KDD 2005 Best Application Paper Runner-up: A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database — Daxin Jiang, Jian Pei, Murali Ramanathan, Chun Tang, and Aidong Zhang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2005,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Summarizing Itemset Patterns: A Profile-Based Approach",
+   "authors": [
+    "Xifeng Yan",
+    "Hong Cheng",
+    "Dong Xin",
+    "Jiawei Han"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2005-best-paper-award",
+   "evidence": "KDD 2005 Best Student Paper Runner-up: Summarizing Itemset Patterns: A Profile-Based Approach — Xifeng Yan, Hong Cheng, Dong Xin, and Jiawei Han."
+  },
+  {
+   "venue": "KDD",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Query Chains Learning to Rank from Implicit Feedback",
+   "authors": [
+    "Filip Radlinski",
+    "Thorsten Joachims"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2005-best-paper-award",
+   "evidence": "KDD 2005 Best Student Paper: Query Chains Learning to Rank from Implicit Feedback — Filip Radlinski, and Thorsten Joachims."
+  },
+  {
+   "venue": "KDD",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Training Linear SVMs in Linear Time",
+   "authors": [
+    "Thorsten Joachims"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2006-best-paper-award",
+   "evidence": "KDD 2006 Best Research Paper: Training Linear SVMs in Linear Time — Thorsten Joachims"
+  },
+  {
+   "venue": "KDD",
+   "year": 2006,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Accessing Data Mining Results via Swap Randomization",
+   "authors": [
+    "A. Gionis",
+    "H. Mannila",
+    "T. Mielikainen",
+    "P. Tsaparas"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2006-best-paper-award",
+   "evidence": "KDD 2006 Best Research Paper Runner-up: Accessing Data Mining Results via Swap Randomization — A. Gionis, H. Mannila, T. Mielikainen, and P. Tsaparas"
+  },
+  {
+   "venue": "KDD",
+   "year": 2006,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Generating Semantic Annotations for Frequent Patterns with Context Analysis",
+   "authors": [
+    "Qiaozhu Mei",
+    "Dong Xin",
+    "Hong Cheng",
+    "Jiawei Han",
+    "ChengXiang Zhai"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2006-best-paper-award",
+   "evidence": "KDD 2006 Best Student Paper Runner-up: Generating Semantic Annotations for Frequent Patterns with Context Analysis — Qiaozhu Mei, Dong Xin, Hong Cheng, Jiawei Han, and ChengXiang Zhai."
+  },
+  {
+   "venue": "KDD",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Very Sparse Random Projections",
+   "authors": [
+    "Ping Li",
+    "Trevor J. Hastie",
+    "Kenneth W. Church"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2006-best-paper-award",
+   "evidence": "KDD 2006 Best Student Paper: Very Sparse Random Projections — Ping Li, Trevor J. Hastie, and Kenneth W. Church."
+  },
+  {
+   "venue": "KDD",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Predictive Discrete Latent Factor Models for Large Scale Dyadic Data",
+   "authors": [
+    "Deepak Agarwal",
+    "Srujana Merugu"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2007-sigkdd-best-paper-award",
+   "evidence": "KDD 2007 Best Research Paper: Predictive Discrete Latent Factor Models for Large Scale Dyadic Data — Deepak Agarwal, and Srujana Merugu"
+  },
+  {
+   "venue": "KDD",
+   "year": 2007,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "An Event-based Framework for Characterizing the Evolutionary Behavior of Interaction Graphs",
+   "authors": [
+    "Sitaram Asur",
+    "Srinivasan Parthasarathy",
+    "Duygu Ucar"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2007-sigkdd-best-paper-award",
+   "evidence": "KDD 2007 Best Application Paper: An Event-based Framework for Characterizing the Evolutionary Behavior of Interaction Graphs — Sitaram Asur, Srinivasan Parthasarathy, Duygu Ucar"
+  },
+  {
+   "venue": "KDD",
+   "year": 2007,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Evolutionary Spectral Clustering by Incorporating Temporal Smoothness",
+   "authors": [
+    "Yun Chi",
+    "Xiaodan Song",
+    "Dengyong Zhou",
+    "Koji Hino",
+    "Belle L. Tseng"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2007-sigkdd-best-paper-award",
+   "evidence": "KDD 2007 Best Research Paper Runner-up: Evolutionary Spectral Clustering by Incorporating Temporal Smoothness — Yun Chi, Xiaodan Song, Dengyong Zhou, Koji Hino, and Belle L. Tseng"
+  },
+  {
+   "venue": "KDD",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Automatic Labeling of Multinomial Topic Models",
+   "authors": [
+    "Qiaozhu Mei",
+    "Xuehua Shen",
+    "ChengXiang Zhai"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2007-sigkdd-best-paper-award",
+   "evidence": "KDD 2007 Best Student Paper: Automatic Labeling of Multinomial Topic Models — Qiaozhu Mei, Xuehua Shen, and ChengXiang Zhai."
+  },
+  {
+   "venue": "KDD",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Cost-effective Outbreak Detection in Networks",
+   "authors": [
+    "Jure Leskovec",
+    "Andreas Krause",
+    "Carlos Guestrin",
+    "Christos Faloutsos",
+    "Jeanne VanBriesen",
+    "Natalie Glance"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2007-sigkdd-best-paper-award",
+   "evidence": "KDD 2007 Best Student Paper: Cost-effective Outbreak Detection in Networks — Jure Leskovec, Andreas Krause, Carlos Guestrin, Christos Faloutsos, Jeanne VanBriesen, and Natalie Glance."
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "FastANOVA: an efficient algorithm for genome-wide association study",
+   "authors": [
+    "X. Zhang",
+    "F. Zou",
+    "W. Wang"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Research Paper: FastANOVA: an efficient algorithm for genome-wide association study — X. Zhang, F. Zou, W. Wang"
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Context-Aware Query Suggestion by Mining Click-Through and Session Data",
+   "authors": [
+    "H. Cao",
+    "D. Jiang",
+    "J. Pei",
+    "Q. He",
+    "Z. Liao",
+    "E. Chen",
+    "H. Li"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Application Paper: Context-Aware Query Suggestion by Mining Click-Through and Session Data — H. Cao, D. Jiang, J. Pei, Q. He, Z. Liao, E. Chen, H. Li."
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers",
+   "authors": [
+    "V. S. Sheng",
+    "F. Provost",
+    "P. G. Ipeirotis"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Research Paper Runner-up: Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers — V. S. Sheng, F. Provost, P. G. Ipeirotis."
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Learning from Multi-Topic Web Documents for Contextual Advertising",
+   "authors": [
+    "Y. Zhang",
+    "A. C. Surendran",
+    "J. C. Platt",
+    "M. Narasimhan"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Application Paper Runner-up: Learning from Multi-Topic Web Documents for Contextual Advertising — Y. Zhang, A. C. Surendran, J. C. Platt, M. Narasimhan"
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "SPIRAL: Efficient and Exact Model Identification for Hidden Markov Models",
+   "authors": [
+    "Y. Fujiwara",
+    "Y. Sakurai",
+    "M. Yamamuro"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Research Paper Runner-up: SPIRAL: Efficient and Exact Model Identification for Hidden Markov Models — Y. Fujiwara, Y. Sakurai, M. Yamamuro"
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Volatile Correlation Computation: A Checkpoint View",
+   "authors": [
+    "W. Zhou",
+    "H. Xiong"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Student Paper Runner-up: Volatile Correlation Computation: A Checkpoint View — W. Zhou, H. Xiong"
+  },
+  {
+   "venue": "KDD",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Effective Label Acquisition for Collective Classification",
+   "authors": [
+    "M. Bilgic",
+    "L. Getoor"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2008-sigkdd-best-paper-award",
+   "evidence": "KDD 2008 Best Student Paper: Effective Label Acquisition for Collective Classification — M. Bilgic, L. Getoor"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Research Paper",
+   "title": "Collaborative Filtering with Temporal Dynamics",
+   "authors": [
+    "Yehuda Koren"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Research Paper: Collaborative Filtering with Temporal Dynamics — Yehuda Koren"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Large-Scale Behavioral Targeting",
+   "authors": [
+    "Ye Chen",
+    "Dmitry Pavlov",
+    "John Canny"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Application Paper: Large-Scale Behavioral Targeting — Ye Chen, Dmitry Pavlov, John Canny"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Research Paper Runner-up",
+   "title": "A LRT Framework for Fast Spatial Anomaly Detection",
+   "authors": [
+    "Mingxi Wu",
+    "Xiuyao Song",
+    "Chris Jermaine",
+    "Sanjay Ranka",
+    "John Gums"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Research Paper Runner-up: A LRT Framework for Fast Spatial Anomaly Detection — Mingxi Wu, Xiuyao Song, Chris Jermaine, Sanjay Ranka, John Gums"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Optimizing Web Traffic via the Media Scheduling Problem",
+   "authors": [
+    "Lars Backstrom",
+    "Jon Kleinberg",
+    "Ravi Kumar"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Student Paper Runner-up: Optimizing Web Traffic via the Media Scheduling Problem — Lars Backstrom, Jon Kleinberg, Ravi Kumar"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Best Application Paper Runner-up",
+   "title": "Sustainable Operation and Management of Data Center Chillers using Temporal Data Mining",
+   "authors": [
+    "Debprakash Patnaiky",
+    "Manish Marwah",
+    "Ratnesh Sharma",
+    "Naren Ramakrishnany"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Application Paper Runner-up: Sustainable Operation and Management of Data Center Chillers using Temporal Data Mining — Debprakash Patnaiky, Manish Marwah, Ratnesh Sharma, Naren Ramakrishnany"
+  },
+  {
+   "venue": "KDD",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Anonymizing Healthcare Data: A Case Study on the Blood Transfusion Service",
+   "authors": [
+    "Noman Mohammed",
+    "Benjamin C. M. Fung",
+    "Patrick C. K. Hung",
+    "Cheuk-kwong Lee"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2009-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2009 Best Student Paper: Anonymizing Healthcare Data: A Case Study on the Blood Transfusion Service — Noman Mohammed, Benjamin C. M. Fung, Patrick C. K. Hung, Cheuk-kwong Lee"
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Reducing the Sampling Complexity of Topic Models",
+   "authors": [
+    "Aaron Q Li",
+    "Amr Ahmed",
+    "Sujith Ravi",
+    "Alexander J Smola"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2014-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2014 Best Paper: Reducing the Sampling Complexity of Topic Models — Aaron Q Li, Carnegie Mellon University; Amr Ahmed, Google Inc.; Sujith Ravi, Google Inc.; Alexander J Smola, Carnegie Mellon University and Google Inc."
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Efficient SimRank Computation via Linearization",
+   "authors": [
+    "Takanori Maehara",
+    "Mitsuru Kusumoto",
+    "Ken-ichi Kawarabayashi"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2014-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2014 Best Paper Runner-up: Efficient SimRank Computation via Linearization — Takanori Maehara, National Institute of Informatics; Mitsuru Kusumoto, Preferred Infrastructure, Inc; Ken-ichi Kawarabayashi, National Institute of Informatics."
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Runner-up",
+   "title": "Fast Flux Discriminant for Large-Scale Sparse Nonlinear Classification",
+   "authors": [
+    "Wenlin Chen",
+    "Yixin Chen",
+    "Kilian Q. Weinberger"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2014-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2014 Best Student Paper Runner-up: Fast Flux Discriminant for Large-Scale Sparse Nonlinear Classification — Wenlin Chen, Washington University in St. Louis; Yixin Chen, Washington University in St. Louis; Kilian Q. Weinberger, Washington University in St. Louis;"
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "An Efficient Algorithm For Weak Hierarchical Lasso",
+   "authors": [
+    "Yashu Liu",
+    "Jie Wang",
+    "Jieping Ye"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2014-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2014 Best Student Paper: An Efficient Algorithm For Weak Hierarchical Lasso — Yashu Liu, Arizona State University; Jie Wang, Arizona State University; Jieping Ye, Arizona State University;"
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise",
+   "authors": [
+    "Martin Ester",
+    "Hans-Peter Kriegel",
+    "Joerg Sander",
+    "Xiaowei Xu"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://kdd.org/awards/view/2014-sikdd-test-of-time-award-winners",
+   "evidence": "KDD 2014 Test of Time Award: Martin Ester, Hans-Peter Kriegel, Joerg Sander, Xiaowei Xu — A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise [KDD 1996]"
+  },
+  {
+   "venue": "KDD",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Integrating Classification and Association Rule Mining",
+   "authors": [
+    "Bing Liu",
+    "Wynne Hsu",
+    "Yiming Ma"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://kdd.org/awards/view/2014-sikdd-test-of-time-award-winners",
+   "evidence": "KDD 2014 Test of Time Award: Bing Liu, Wynne Hsu, Yiming Ma — Integrating Classification and Association Rule Mining [KDD 1998]"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Efficient Algorithms for Public-Private Social Networks",
+   "authors": [
+    "Flavio Chierichetti",
+    "Alessandro Epasto",
+    "Ravi Kumar",
+    "Silvio Lattanzi",
+    "Vahab Mirrokni"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2015-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2015 Best Paper: Efficient Algorithms for Public-Private Social Networks — Flavio Chierichetti, Alessandro Epasto, Ravi Kumar, Silvio Lattanzi, Vahab Mirrokni"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Edge-Weighted Personalized pageRank: Breaking a Decade-Old Performance Barrier",
+   "authors": [
+    "Wenlei Xie",
+    "David Bindel",
+    "Alan Demers",
+    "Johannes Gehrke"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2015-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2015 Best Student Paper: Edge-Weighted Personalized pageRank: Breaking a Decade-Old Performance Barrier — Wenlei Xie, David Bindel, Alan Demers, Johannes Gehrke"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Who supported Obama in 2012? Ecological inference through distribution regression",
+   "authors": [
+    "Beth Flaxman",
+    "Yu-Xiang Wang",
+    "Alex Smola"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2015-sigkdd-best-paper-award-winners",
+   "evidence": "KDD 2015 Best Student Paper: Who supported Obama in 2012? Ecological inference through distribution regression — Beth Flaxman, Yu-Xiang Wang, Alex Smola"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mining and summarizing customer reviews",
+   "authors": [
+    "Minqing Hu",
+    "Bing Liu"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://kdd.org/awards/view/2015-kdd-test-of-time",
+   "evidence": "KDD 2015 Test of Time Award: Minqing Hu, Bing Liu — Mining and summarizing customer reviews, KDD 2004"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mining High-Speed Data Streams",
+   "authors": [
+    "Pedro Domingos",
+    "Geoff Hulten"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://kdd.org/awards/view/2015-kdd-test-of-time",
+   "evidence": "KDD 2015 Test of Time Award: Pedro Domingos, Geoff Hulten — Mining High-Speed Data Streams, KDD 2000"
+  },
+  {
+   "venue": "KDD",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Optimizing Search Engines using Clickthrough Data",
+   "authors": [
+    "Thorsten Joachims"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://kdd.org/awards/view/2015-kdd-test-of-time",
+   "evidence": "KDD 2015 Test of Time Award: Thorsten Joachims — Optimizing Search Engines using Clickthrough Data, KDD 2002"
+  },
+  {
+   "venue": "KDD",
    "year": 2016,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -69750,6 +70830,22 @@
   },
   {
    "venue": "KDD",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations",
+   "authors": [
+    "Jure Leskovec",
+    "Jon Kleinberg",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://kdd.org/awards/view/2016-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2016 Test of Time Award: Jure Leskovec, Jon Kleinberg, Christos Faloutsos — Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations, KDD 2005"
+  },
+  {
+   "venue": "KDD",
    "year": 2017,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -69812,6 +70908,20 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2017-sigkdd-best-paper-award-winners",
    "evidence": "2017 Best Paper Runner-up: Toeplitz Inverse Covariance-Based Clustering of Multivariate Time Series Data — David Hallac (Stanford University);Sagar Vare (Stanford University);Stephen Boyd (Stanford University);Jure Leskovec (Stanford University)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Training Linear SVMs in Linear Time",
+   "authors": [
+    "Thorsten Joachims",
+    "Cornell University"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2017-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2017 Test of Time Award: Thorsten Joachims, Cornell University — Training Linear SVMs in Linear Time"
   },
   {
    "venue": "KDD",
@@ -69880,6 +70990,20 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2018-sigkdd-best-paper-award-winners",
    "evidence": "2018 Best Student Paper: XiaoIce Band: A Melody and Arrangement Generation Framework for Pop Music — Hongyuan Zhu (USTC); Qi Liu (USTC); Nicholas Jing Yuan (Microsoft); Chuan Qin (USTC); Jiawei Li (Soochow University); Kun Zhang (USTC); Guang Zhou (Microsoft); Furu Wei (Microsoft); Yuanchun Xu (Microsoft); Enhong Chen (USTC)"
+  },
+  {
+   "venue": "KDD",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Factorization meets the neighborhood: a multifaceted collaborative filtering model",
+   "authors": [
+    "Yehuda Koren",
+    "Google Israel"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2018-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2018 Test of Time Award: Yehuda Koren, Google Israel — Factorization meets the neighborhood: a multifaceted collaborative filtering model"
   },
   {
    "venue": "KDD",
@@ -70018,6 +71142,38 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2020-sigkdd-best-paper-award-winners",
    "evidence": "2020 Best Student Paper: TIPRDC: Task-Independent Privacy-Respecting Data Crowdsourcing Framework for Deep Learning with Anonymized Intermediate Representations — Ang Li (Duke University); Yixiao Duan (Beihang University); Huanrui Yang (Duke University); Yiran Chen (Duke University); Jianlei Yang (Beihang University"
+  },
+  {
+   "venue": "KDD",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Research",
+   "title": "Collaborative topic modeling for recommending scientific articles",
+   "authors": [
+    "Chong Wang",
+    "David M. Blei"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://kdd.org/awards/view/2021-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2021 Test of Time Award for Research: Chong Wang, David M. Blei: Collaborative topic modeling for recommending scientific articles. KDD 2011: 448-456."
+  },
+  {
+   "venue": "KDD",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Applied Data Science",
+   "title": "Overlapping experiment infrastructure: more, better, faster experimentation",
+   "authors": [
+    "Diane Tang",
+    "Ashish Agarwal",
+    "Deirdre O’Brien",
+    "Mike Meyer"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://kdd.org/awards/view/2021-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2021 Test of Time Award for Applied Data Science: Diane Tang, Ashish Agarwal, Deirdre O’Brien, Mike Meyer: Overlapping experiment infrastructure: more, better, faster experimentation. KDD 2010: 17-26"
   },
   {
    "venue": "KDD",
@@ -70166,6 +71322,50 @@
   },
   {
    "venue": "KDD",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Applied Data Science",
+   "title": "Ad Click Prediction: A View From the Trenches",
+   "authors": [
+    "Hugh Brendan McMahan",
+    "Gary Holt",
+    "David Sculley",
+    "Michael Young",
+    "Dietmar Ebner",
+    "Julian Grady",
+    "Lan Nie",
+    "Todd Phillips",
+    "Eugene Davydov",
+    "Daniel Golovin",
+    "Sharat Chikkerur",
+    "Dan Liu",
+    "Martin Wattenberg",
+    "Arnar Mar Hrafnkelsson",
+    "Tom Boulos",
+    "Jeremy Kubica"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2023-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2023 Test of Time Award for Applied Data Science: Hugh Brendan McMahan, Gary Holt, David Sculley, Michael Young, Dietmar Ebner, Julian Grady, Lan Nie, Todd Phillips, Eugene Davydov, Daniel Golovin, Sharat Chikkerur, Dan Liu, Martin Wattenberg, Arnar Mar Hrafnkelsson, Tom Boulos, Jeremy Kubica: Ad Click Prediction: A View From the Trenches"
+  },
+  {
+   "venue": "KDD",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Research",
+   "title": "Auto-WEKA: Combined Selection and Hyperparameter Optimization of Classification Algorithms",
+   "authors": [
+    "Chris Thornton",
+    "Frank Hutter",
+    "Holger H. Hoos",
+    "Kevin Leyton-Brown"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2023-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2023 Test of Time Award for Research: Chris Thornton ,Frank Hutter, Holger H. Hoos, Kevin Leyton-Brown: Auto-WEKA: Combined Selection and Hyperparameter Optimization of Classification Algorithms"
+  },
+  {
+   "venue": "KDD",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -70253,6 +71453,36 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2024-sigkdd-best-paper-award-winners",
    "evidence": "2024 Best Student Paper: Dataset Regeneration for Sequential Recommendation — Mingjia Yin, Hao Wang, Wei Guo, Yong Liu, Suojuan Zhang, Sirui Zhao, Defu Lian, Enhong Chen"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Research",
+   "title": "DeepWalk: online learning of social representations",
+   "authors": [
+    "Brian Perozzi",
+    "Rami Al-Rfou",
+    "Steven Skiena"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2024 Test of Time Award for Research: Brian Perozzi, Rami Al-Rfou, Steven Skiena: DeepWalk: online learning of social representations"
+  },
+  {
+   "venue": "KDD",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Applied Data Science",
+   "title": "U-Air: when urban air quality inference meets big data",
+   "authors": [
+    "Yu Zheng",
+    "Furui Liu",
+    "Hsun-Ping Hsieh"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2024-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2024 Test of Time Award for Applied Data Science: Yu Zheng, Furui Liu, Hsun-Ping Hsieh: U-Air: when urban air quality inference meets big data"
   },
   {
    "venue": "KDD",
@@ -70489,6 +71719,63 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2025-sigkdd-best-paper-award-winners",
    "evidence": "2025 Best Student Paper: Taming Recommendation Bias with Causal Intervention on Evolving Personal Popularity — Shiyin Tan, Dongyuan Li, Renhe Jiang, Zhen Wang, Xingtong Yu, Manabu Okumura"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Applied Data Science",
+   "title": "‘Beating the News’ with EMBERS: Forecasting Civil Unrest Using Open Source Indicators",
+   "authors": [
+    "Naren Ramakrishnan",
+    "Patrick Butler",
+    "Sathappan Muthiah",
+    "Nathan Self",
+    "Rupinder Khandpur",
+    "Parang Saraf",
+    "Wei Wang",
+    "Jose Cadenv",
+    "Anil Vullikanti",
+    "Gizem Korkmaz",
+    "Chris Kuhlman",
+    "Achla Marath",
+    "Liang Zhao",
+    "Ting Hua",
+    "Feng Chen",
+    "Chang Tien L",
+    "Bert Huang",
+    "Aravind Srinivasan",
+    "Khoa Trinh",
+    "Lise Getoor",
+    "Graham Katz",
+    "Andy Doyle",
+    "Chris Ackermann",
+    "Ilya Zavorin",
+    "Jim Ford",
+    "Kristen Summers",
+    "Youssef Fayed",
+    "Jaime Arredondo",
+    "Dipak Gupta",
+    "David Mares"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2025 Test of Time Award for Applied Data Science: Naren Ramakrishnan, Patrick Butler, Sathappan Muthiah, Nathan Self, Rupinder Khandpur, Parang Saraf, Wei Wang, Jose Cadenv, Anil Vullikanti, Gizem Korkmaz, Chris Kuhlman, Achla Marath, Liang Zhao, Ting Hua, Feng Chen, Chang Tien L, Bert Huang, Aravind Srinivasan, Khoa Trinh, Lise Getoor, Graham Katz, Andy Doyle, Chris Ackermann, Ilya Zavorin, Jim Ford, Kristen Summers, Youssef Fayed, Jaime Arredondo,Dipak Gupta, David Mares: ‘Beating the News’ with EMBERS: Forecasting Civil Unrest Using Open Source Indicators"
+  },
+  {
+   "venue": "KDD",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award for Research",
+   "title": "Collaborative Deep Learning for Recommender Systems",
+   "authors": [
+    "Hao Wang",
+    "Naiyan Wang",
+    "Dit-Yan Yeung"
+   ],
+   "track": "main",
+   "source": "https://kdd.org/awards/view/2025-sigkdd-test-of-time-award-winners",
+   "evidence": "KDD 2025 Test of Time Award for Research: Hao Wang, Naiyan Wang, Dit-Yan Yeung: Collaborative Deep Learning for Recommender Systems"
   },
   {
    "venue": "LEET",

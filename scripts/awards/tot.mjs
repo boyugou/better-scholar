@@ -119,7 +119,9 @@ const PAGES = {
   icwsm: "https://www.icwsm.org/awards/",
   etaps: "https://etaps.org/awards/test-of-time",
   "etaps-bp": "https://etaps.org/awards/best-paper/",
-  gecco: "https://sig.sigevo.org/SIGEVO-Impact-Award"
+  gecco: "https://sig.sigevo.org/SIGEVO-Impact-Award",
+  "kdd-bp": "https://kdd.org/awards/sigkdd-best-research-paper-awards",
+  "kdd-tot": "https://kdd.org/awards/kdd-test-of-time-award"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -943,6 +945,96 @@ export function parseGeccoImpact(html, source = PAGES.gecco) {
   return { entries, skipped };
 }
 
+// SIGKDD's award pages (kdd.org/awards/view/<year>-…): one page per year, read one file at a time (the third argument of the command is the page's address).
+//   Best paper pages: capitalised category lines ("BEST PAPER AWARD", "BEST STUDENT PAPER AWARD RUNNER-UP", "BEST APPLICATION PAPER: WINNER", "… HONORABLE MENTION"), a track
+//   heading ("Applied Data Science Track") that applies to the lines below it, then a title line and an authors line (affiliations in parentheses from 2016 on).
+//   Test of time pages: an authors line, then "Title, KDD 2002", then a paragraph on the paper.
+const ZW = /[​‌‍﻿]/g;
+// "Name (Affiliation);Name (Affiliation)", "Name, Affiliation; Name, Affiliation" or plain "A, B, and C" — the names, in order (empty when a name is not one)
+function kddAuthors(line) {
+  const t = line.replace(ZW, "").replace(/\s+/g, " ").trim().replace(/[,;.\s]+$/, "");
+  let who;
+  if (t.includes(";")) who = t.split(/\s*;\s*/).map((seg) => seg.replace(/\([^()]*\)/g, " ").split(",")[0].replace(/\s+/g, " ").trim());
+  else who = names(t.replace(/\([^()]*\)/g, " ").replace(/\s+and\s+/g, ", and ").replace(/\s+,/g, ","));
+  who = who.filter(Boolean);
+  return who.length && who.every((n) => isPerson(n) && n.split(" ").length <= 4) ? who : [];
+}
+export function parseKddBest(html, source = PAGES["kdd-bp"]) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  const year = (/^((?:19|20)\d{2})\b.*Best .*Paper/i.exec(ls.find((l) => /^(?:19|20)\d{2}\b.*Best .*Paper/i.test(l)) || "") || [])[1];
+  if (!year) return { entries, skipped: ["no year heading"] };
+  // a category line: the capitalised ones, the mixed-case "Best Student Paper Award" of 2015, the sentences of 2014 ("The runner up to the best research track paper is:")
+  const category = (l) => {
+    if (/^BEST (?:RESEARCH |APPLICATION |STUDENT )?PAPER\b/.test(l) && l === l.toUpperCase()) return { text: l.toUpperCase() };
+    if (/^Best (?:Student )?Paper Award$/.test(l)) return { text: l.toUpperCase() };
+    const m = /^(?:The )?(overall best|runner up (?:to|for) the best|best) (research track|student) paper(?: award)?(?: goes to(?: the paper)?| is)?:$/i.exec(l);
+    if (m) return { text: ((/runner/i.test(m[1]) ? "RUNNER-UP " : "") + (/student/i.test(m[2]) ? "BEST STUDENT PAPER" : "BEST PAPER")).replace("RUNNER-UP BEST", "BEST") + (/runner/i.test(m[1]) ? " RUNNER-UP" : "") };
+    return null;
+  };
+  let track = "";
+  const first = ls.findIndex((l) => /pleased to announce/i.test(l));
+  const quoted = (l) => /^[“"]/.test(l);
+  for (let i = Math.max(0, first); i < ls.length; i++) {
+    const l = ls[i];
+    if (/^(?:Tags|Twitter Feed)$/.test(l)) break;
+    if (/Track$/.test(l) && l.length < 40) { track = l; continue; }
+    const cat = category(l);
+    if (!cat) continue;
+    let j = i + 1;
+    const sub = /^(Winner|Runner[- ]Up)$/i.exec(ls[j] || "");
+    if (sub) j++;
+    const text = cat.text, kindLine = text + (sub ? " " + sub[1].toUpperCase() : "");
+    const student = /STUDENT/.test(text), application = /APPLICATION/.test(text), runner = /RUNNER/.test(kindLine), honor = /HONORABLE/.test(text);
+    const base = student ? "Best Student Paper" : application ? "Best Application Paper" : /RESEARCH/.test(text) ? "Best Research Paper" : "Best Paper";
+    const award = honor || runner ? "runner-up" : student ? "student" : application ? "category" : "best";
+    const label = (base + (honor ? " Honorable Mention" : runner ? " Runner-up" : "")) + (track ? ` (${track})` : "");
+    for (;;) {                                                               // (one category line can head several papers: 2015's student papers)
+      const title = cleanTitle(ls[j] || ""), authorLine = ls[j + 1] || "", who = kddAuthors(authorLine);
+      if (who.length && title.length >= 8) entries.push({ venue: "KDD", year: parseInt(year, 10), award, awardLabel: label, title, authors: who, track: "main", source, evidence: `KDD ${year} ${label}: ${title} — ${authorLine.replace(ZW, "")}` });
+      else skipped.push(`${year}: not read: ${title.slice(0, 40)} / ${authorLine.slice(0, 40)}`);
+      i = j + 1;
+      if (quoted(ls[i + 1] || "") && quoted(ls[j] || "")) { j = i + 1; continue; }
+      break;
+    }
+  }
+  return { entries, skipped };
+}
+export function parseKddTot(html, source = PAGES["kdd-tot"]) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  const year = (/^((?:19|20)\d{2}) .*Test of Time/i.exec(ls.find((l) => /^(?:19|20)\d{2} .*Test of Time/i.test(l)) || "") || [])[1];
+  if (!year) return { entries, skipped: ["no year heading"] };
+  const y = parseInt(year, 10);
+  let area = "", areaLine = -9;
+  const add = (title, who, py, evidence) => {
+    const t = cleanTitle(title.replace(/\s*\[KDD\s*(?:19|20)\d{2}\]\s*$/, ""));
+    const label = "Test of Time Award" + (area ? ` for ${area}` : "");
+    if (who.length && t.length >= 8) entries.push({ ...entry("KDD", y, label, t, who, source, `KDD ${year} ${label}: ${evidence}`, py) });
+    else skipped.push(`${year}: not read: ${evidence.slice(0, 80)}`);
+  };
+  for (let i = 1; i < ls.length; i++) {
+    const l = ls[i];
+    if (/^(?:Tags|Twitter Feed)$/.test(l)) break;
+    const ar = /^SIGKDD Test of Time Award for (Research|Applied Data Science)$/i.exec(l);
+    if (ar) { area = ar[1]; areaLine = i; continue; }
+    let m;
+    // "Authors: Title. KDD 2011: 448-456." — the line under a "Test of Time Award for …" heading (the venue may be left out)
+    if (i === areaLine + 1 && (m = /^([^:]+?)\s*:\s+(.{8,})$/.exec(l)) && kddAuthors(m[1]).length) {
+      const v = /[.,]?\s*(?:In\s+)?KDD\s*(?:'|’)?((?:19|20)?\d{2})\b.*$/.exec(m[2]);
+      add(v ? m[2].slice(0, v.index) : m[2], kddAuthors(m[1]), v && /^\d{4}$/.test(v[1]) ? parseInt(v[1], 10) : null, l); continue;
+    }
+    if ((m = /^(.{8,}?)\s*\[KDD\s*((?:19|20)\d{2})\]$/.exec(l)) && ls[i + 1] && kddAuthors(ls[i + 1]).length) { add(m[1], kddAuthors(ls[i + 1]), parseInt(m[2], 10), `${ls[i + 1]} — ${l}`); continue; }  // "Title [KDD 1996]" then the authors
+    if ((m = /^(.{8,}?),\s*KDD\s*((?:19|20)\d{2})$/.exec(l))) {                                                       // authors on the line(s) before, "Title, KDD 2002"
+      const who = []; let k = i - 1;
+      while (k >= 1 && kddAuthors(ls[k]).length && ls[k].split(" ").length <= 12 && !/^The /.test(ls[k])) { who.unshift(...kddAuthors(ls[k])); k--; }
+      add(m[1], who, parseInt(m[2], 10), `${who.join(", ")} — ${l}`); continue;
+    }
+    if (/^Significance/i.test(ls[i + 1] || "") && kddAuthors(ls[i - 1] || "").length && !/^Significance/i.test(l)) add(l, kddAuthors(ls[i - 1]), null, `${ls[i - 1]} — ${l}`);   // "Authors" / "Title" / "Significance …"
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -996,12 +1088,12 @@ export function parseFocs(html, source = PAGES.focs) {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const [kind, file] = process.argv.slice(2);
+  const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
-  const { entries, skipped } = parse(html, PAGES[kind]);
+  const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);
   const by = {};
   for (const e of entries) by[e.year] = (by[e.year] || 0) + 1;
   console.error(entries.length + " entries:", JSON.stringify(by));

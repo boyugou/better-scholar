@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.37 — 2026-10-12
+
+- The SIGKDD best paper awards 1997–2015 (research, application, student, with runners-up) and the KDD Test of Time awards 2014–2025 (82 papers new to the list: Graphs over Time, DBSCAN, Collaborative Filtering with
+  Temporal Dynamics …) from SIGKDD's own per-year award pages (`tot.mjs kdd-bp`, `kdd-tot`). The bundled list has 5970 awards.
+
 ## 2.9.36 — 2026-10-12
 
 - The GECCO SIGEVO Impact Award (2009–2024, 20 papers: BOA, Exploratory landscape analysis, Unshackling evolution …) from SIGEVO's own page (`tot.mjs gecco`). The bundled list has 5888 awards.

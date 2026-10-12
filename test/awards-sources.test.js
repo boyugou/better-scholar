@@ -1545,3 +1545,25 @@ test("SIGEVO Impact Award page: title line, authors line (names written 'Surname
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGKDD award pages: category lines with track headings and affiliations, the 2014 prose lead-ins, a quoted multi-paper heading, and the three Test of Time layouts", async () => {
+  const { parseKddBest, parseKddTot } = await import("../scripts/awards/tot.mjs");
+  const best = `<p>Awards</p><p>Best Paper Award</p><p>Rising Star Award</p><p>2018 SIGKDD Best Paper Award Winners</p><p>ACM SIGKDD is pleased to announce the winners.</p><p>Research Track</p><p>BEST PAPER AWARD</p><p>Adversarial Attacks on Neural Networks for Graph Data</p><p>Daniel Zügner (Technical University of Munich); Amir Akbarnejad (Technical University of Munich)</p>
+<p>BEST STUDENT PAPER AWARD RUNNER-UP</p><p>XiaoIce Band: A Melody and Arrangement Generation Framework</p><p>Hongyuan Zhu (USTC);Qi Liu (USTC)</p><p>Applied Data Science Track</p><p>BEST PAPER AWARD</p><p>Winner</p><p>Real-time Personalization using Embeddings</p><p>Mihajlo Grbovic, Airbnb; Haibin Cheng, Airbnb</p><p>Tags</p>`;
+  const r = parseKddBest(best);
+  assert.deepEqual(r.entries.map((e) => `${e.year} ${e.award} [${e.awardLabel}] ${e.title.slice(0, 11)} | ${e.authors.join("; ")}`), [
+    "2018 best [Best Paper (Research Track)] Adversarial | Daniel Zügner; Amir Akbarnejad",
+    "2018 runner-up [Best Student Paper Runner-up (Research Track)] XiaoIce Ban | Hongyuan Zhu; Qi Liu",
+    "2018 best [Best Paper (Applied Data Science Track)] Real-time P | Mihajlo Grbovic; Haibin Cheng"
+  ]);
+  const prose = `<p>2014 SIGKDD Best Paper Award Winners</p><p>ACM SIGKDD is pleased to announce the winners.</p><p>The overall best research track paper award goes to the paper:</p><p>Reducing the Sampling Complexity of Topic Models</p><p>Aaron Q Li, Carnegie Mellon University; Amr Ahmed, Google Inc.</p><p>The runner up to the best research track paper is:</p><p>Efficient SimRank Computation via Linearization</p><p>Takanori Maehara, National Institute of Informatics; Mitsuru Kusumoto, Preferred Infrastructure, Inc</p><p>Tags</p>`;
+  assert.deepEqual(parseKddBest(prose).entries.map((e) => `${e.award} ${e.authors[0]}`), ["best Aaron Q Li", "runner-up Takanori Maehara"]);
+  const quoted = `<p>2015 SIGKDD Best Paper Award Winners</p><p>ACM SIGKDD is pleased to announce the winners.</p><p>Best Student Paper Award</p><p>“Who supported Obama in 2012? Ecological inference”</p><p>Beth Flaxman, Yu-Xiang Wang, Alex Smola</p><p>“Edge-Weighted Personalized pageRank: Breaking a Barrier”</p><p>Wenlei Xie, David Bindel</p><p>Tags</p>`;
+  assert.deepEqual(parseKddBest(quoted).entries.map((e) => `${e.award} ${e.authors[0]}`), ["student Beth Flaxman", "student Wenlei Xie"]);
+  const tot1 = `<p>2015 KDD Test of Time Award Winners</p><p>Thorsten Joachims</p><p>Optimizing Search Engines using Clickthrough Data, KDD 2002</p><p>The paper introduced the problem.</p><p>Pedro Domingos and Geoff Hulten</p><p>Mining High-Speed Data Streams, KDD 2000</p>`;
+  assert.deepEqual(parseKddTot(tot1).entries.map((e) => `${e.paperYear} ${e.authors.join("+")} ${e.title}`), ["2002 Thorsten Joachims Optimizing Search Engines using Clickthrough Data", "2000 Pedro Domingos+Geoff Hulten Mining High-Speed Data Streams"]);
+  const tot2 = `<p>2014 SIKDD Test of Time Award Winners</p><p>A Density-Based Algorithm for Discovering Clusters [KDD 1996]</p><p>Martin Ester, Hans-Peter Kriegel, Joerg Sander, Xiaowei Xu</p>`;
+  assert.deepEqual(parseKddTot(tot2).entries.map((e) => `${e.paperYear} ${e.authors.length}`), ["1996 4"]);
+  const tot3 = `<p>2023 SIGKDD Test of Time Award Winners</p><p>SIGKDD Test of Time Award for Research</p><p>Chris Thornton ,Frank Hutter, Holger H. Hoos: Auto-WEKA: Combined Selection and Hyperparameter Optimization</p><p>SIGKDD Test of Time Award for Applied Data Science</p><p>Hugh Brendan McMahan, Gary Holt: Ad Click Prediction: A View From the Trenches. KDD 2013: 1222-1230.</p>`;
+  assert.deepEqual(parseKddTot(tot3).entries.map((e) => `${e.awardLabel} | ${e.authors[0]} | ${e.title.slice(0, 14)}`), ["Test of Time Award for Research | Chris Thornton | Auto-WEKA: Com", "Test of Time Award for Applied Data Science | Hugh Brendan McMahan | Ad Click Predi"]);
+});
