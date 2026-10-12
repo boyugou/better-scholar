@@ -122,7 +122,13 @@ test("no real venue string in the corpora is marked unless its author wrote the 
   assert.ok(strings.length > 400);
   const hits = strings.map((s) => [s, marks.detect({ venue: s })]).filter(([, m]) => m.length);
   // the one real string whose author put the level in the venue field, in parentheses (a profile owner's own "(spotlight)")
-  assert.deepEqual(hits.map(([s, m]) => s + " -> " + m.map((x) => x.kind)), ["2025 International Conference on Learning Representations (spotlight), 2025 -> spotlight"]);
+  assert.deepEqual(hits.map(([s, m]) => s + " -> " + m.map((x) => x.kind)), [
+    "2025 International Conference on Learning Representations (spotlight), 2025 -> spotlight",
+    // one real profile's own annotations in the venue field (the author wrote the level)
+    "WWW 2024 (🌟 Top-1 Most Influential Paper), 2024 -> tot",
+    "WSDM 2022 (🌟 Best Paper Nomination & Top-3 Most Cited Papers), 2022 -> finalist",
+    "MM 2024 (🌟 Best Paper Honorable Mention Award), 2024 -> runner-up"
+  ]);
 });
 
 test("analyzeRow carries the marks, from the list text and from a resolved paper page", () => {

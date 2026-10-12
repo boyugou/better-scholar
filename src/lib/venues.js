@@ -378,7 +378,8 @@
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
     const looksAcr = /^[A-Za-z][A-Za-z0-9&'’-]{1,14}$/.test(first) &&
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
-    const restNoise = canonTokens(rest, "full").length === 0;
+    // ("HCI International" is a conference of its own — not the journal HCI — although "international" is a noise word)
+    const restNoise = canonTokens(rest, "full").length === 0 && !/^international\b/i.test(rest);
     const yearAfter = /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/.test(rest);
     if (looksAcr && (restNoise || yearAfter)) {
       // "USENIX ATC 2007": with its organisation first ("usenixatc" is the venue; "atc" alone is a trusted-computing conference)
@@ -600,6 +601,9 @@
       // the SIGOPS workshop (PLOS). A special interest group that the venue's names never mention is the string's own, and the two
       // common words left are not enough: a rare one (the way "Architectural …" is ASPLOS) must carry the claim.
       const sigWords = rawOrgWords.filter((t) => /^sig/.test(t));
+      // a colloquium, a congress or a forum is not a "Conference on …" that merely begins with the same words (CISSE is not ICISSP); the
+      // ordinary event words are left out here — Scholar swaps conference, symposium and workshop for one another more than it should
+      const rareEvent = ((/\b(colloquium|congress|forum|summit)\b/i.exec(p.plain) || [])[1] || "").toLowerCase();
       const sigContradicts = (entry) => sigWords.some((s) => !entry.extra.some((n) => fold(n).toLowerCase().includes(s)));
       // if Scholar cut the name right after a connective, that connective must agree
       const rawKeep = canonTokensKeepStops(p.plain, "full");
@@ -621,6 +625,7 @@
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
             if (form.noPrefix || !(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
             if (joint ? !hasWord(entry, "joint") : form.needsJoint) continue;
+            if (rareEvent && !hasWord(entry, rareEvent)) continue;
             if (mode === "noOrg" && sigWords.length && sigContradicts(entry) && !Rm.some((w) => (idx.df.get(w) || 0) <= 5)) continue;
             if (trailingStops.length) {
               const ts = form[mode === "full" ? "kfull" : "knoOrg"];

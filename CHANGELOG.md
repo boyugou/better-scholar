@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.7.4 — 2026-10-12
+
+Twenty-eight more real profiles (visualization, usable security, measurement, FPGA, cyber-physical systems, AR/VR, haptics, data mining — 2,800 venue
+strings, 2,344 new to the corpora).
+
+- *HCI International* is no longer the journal HCI; *Colloquium for Information Systems Security …* (CISSE) is no longer ICISSP (a colloquium, congress,
+  forum or summit is not a "Conference on …" that begins alike); *International Conference on Information Visualization* is IV (CORE spells it
+  "Visualisation"), not Information Visualization in Biomedical Informatics.
+
 ## 2.7.3 — 2026-10-12
 
 Twenty-eight more real profiles (databases, ubiquitous computing, distributed systems, game research, knowledge representation and constraints,

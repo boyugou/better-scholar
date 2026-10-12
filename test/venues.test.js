@@ -699,6 +699,13 @@ test("a spelled-out event wins over the acronym next to it; a digit glued to a s
   assert.equal(brief("Proceedings of the 33rd international conference on Machine learning (ICML …, 2016"), "CCF A ICML · CORE A* ICML");
 });
 
+test("HCI International is not the journal HCI; a colloquium is not a conference that begins alike; IV is spelled both ways", () => {
+  assert.equal(brief("HCI International 1, 5-10, 2001"), "", "the conference series, not the journal");
+  assert.equal(brief("Proceedings of the 13th Colloquium for Information Systems Security …, 2009"), "", "CISSE, not ICISSP");
+  assert.equal(brief("Proceedings of the 5th International Conference on Information Visualization …, 2001"), "CORE C IV", "not Information Visualization in Biomedical Informatics");
+  assert.equal(brief("Information Visualization, 2007. IV'07. 11th International Conference, 631-636, 2007"), "CORE C IV");
+});
+
 test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN International Conference on Functional …' is ICFP", () => {
   assert.equal(brief("Proceedings of the 15th ACM SIGPLAN international conference on Functional …, 2010"), "CCF B ICFP · CORE A ICFP");
   assert.equal(brief("International Conference on Functional Programming, 117-128, 2010"), "CCF B ICFP · CORE A ICFP", "CCF's row spells it 'Function Programming'");
