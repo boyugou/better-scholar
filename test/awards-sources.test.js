@@ -1893,3 +1893,9 @@ test("RSS awards page: winners under their headings with 'A, B, and C' author li
   const h = `<p>Congratulations to the following people!</p><p>Best Paper Award</p><p>A Robot Systems Paper Title</p><p>Ann Lee, Bo Chan, and Cy Dunn</p><p>Best Student Paper Award</p><p>A Student Robot Paper</p><p>Ed Fox; Flo Gray</p><p>Best Student Paper Finalists</p><p>A Finalist Paper Title</p><p>Gil Hart</p>`;
   assert.deepEqual(parseRssAwards(h, "https://roboticsconference.org/2022/program/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Robot Systems Paper Title | Ann Lee; Bo Chan; Cy Dunn", "student A Student Robot Paper | Ed Fox; Flo Gray"]);
 });
+
+test("RSS 2025 awards page: a 'Winner:' line after the winning finalist; the other finalists are left out", async () => {
+  const { parseRssAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Awards</p><p>Outstanding Paper Award Finalists</p><p>A First Finalist Paper</p><p>Ann Lee, Bo Chan</p><p>Winner: Outstanding Paper Award</p><p>A Second Finalist Paper</p><p>Cy Dunn, Ed Fox</p><p>Award Committee</p>`;
+  assert.deepEqual(parseRssAwards(h, "https://roboticsconference.org/2025/program/awards/").entries.map((e) => `${e.awardLabel} ${e.title} | ${e.authors.join("; ")}`), ["Outstanding Paper Award A First Finalist Paper | Ann Lee; Bo Chan"]);
+});

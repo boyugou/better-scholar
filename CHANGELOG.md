@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.42 — 2026-10-12
+
+- RSS 2025's four outstanding paper awards (paper, systems, student, demo) from the conference's awards page, where a "Winner:" line follows the winning finalist (`tot.mjs rss-year`). The list has 6335 awards.
+
 ## 2.10.41 — 2026-10-12
 
 - RSS's best, best student and best systems papers of 2021 and 2022 (6 papers) from the conference's own awards pages (`tot.mjs rss-year`); the other years' pages list only finalists or nominees. The list has 6331 awards.

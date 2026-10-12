@@ -1686,7 +1686,7 @@ export function parseCorlAwards(html, source) {
 }
 
 // An RSS year's awards page (roboticsconference.org/<year>/program/awards/): under "Congratulations to the following people!" the headings "Best Paper Award", "Best Student Paper Award", "Best Systems Paper Award", each with a title line and an authors' line
-// ("A, B, and C"; the 2021 student paper line separates two author groups with a semicolon). The finalist lists end the winners. Only 2021 and 2022 are laid out like this: 2020 lists nominees, 2023 and 2024 finalists, 2025 marks a winner among them.
+// ("A, B, and C"; the 2021 student paper line separates two author groups with a semicolon). The finalist lists end the winners. Only 2021, 2022 and 2025 are read: 2020 lists nominees, 2023 and 2024 finalists, 2025 marks the winner among the finalists with a \"Winner:\" line after its paper.
 export function parseRssAwards(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
@@ -1694,7 +1694,28 @@ export function parseRssAwards(html, source) {
   if (!year) return { entries, skipped: ["no year in the address"] };
   const KIND = (l) => (/^Best Student Paper Award$/i.test(l) ? ["student", "Best Student Paper Award"] : /^Best Systems Paper Award$/i.test(l) ? ["best", "Best Systems Paper Award"] : /^Best Paper Award(?: \/ Best Systems Paper Award in Memory of Seth Teller)?$/i.test(l) ? ["best", "Best Paper Award"] : null);
   const start = ls.findIndex((l, i) => /^Congratulations to the following people!?$/.test(ls[i - 1] || "") && KIND(l));
-  if (start < 0) return { entries, skipped: ["no award list"] };
+  if (start < 0) {
+    // 2025: "Outstanding … Award [Finalists]" headings, each paper a title line and an authors' line, and a "Winner: <heading>" line right after the paper that won
+    const H = /^(Outstanding (?:Demo |Systems |Student )?Paper Award)(?: Finalists)?$/;
+    const from = ls.findIndex((l, i) => ls[i - 1] === "Awards" && H.test(l) && /^Winner:|^[^:]+$/.test(ls[i + 1] || "") && ls.slice(i, i + 12).some((x) => /^Winner:/.test(x)));
+    if (from < 0) return { entries, skipped: ["no award list"] };
+    let label = null, last = null;
+    for (let i = from; i < ls.length; i++) {
+      const l = ls[i], h = H.exec(l);
+      if (h) { label = h[1]; last = null; continue; }
+      if (/^Award Committee/.test(l)) break;
+      const w = /^Winner:\s*(.+)$/.exec(l);
+      if (w) {
+        if (last && w[1] === label) entries.push({ venue: "RSS", year, award: "outstanding", awardLabel: label, title: cleanTitle(last.title), authors: last.who, track: "main", source, evidence: `RSS ${year} ${label}: ${cleanTitle(last.title)} — ${last.who.join(", ")}` });
+        else skipped.push(`${year}: winner line without its paper`);
+        last = null; continue;
+      }
+      if (!label || !ls[i + 1] || H.test(ls[i + 1]) || /^Winner:/.test(ls[i + 1])) continue;
+      const who = ls[i + 1].split(/\s*[;,]\s*(?:and\s+)?|\s+and\s+/).filter(Boolean);
+      if (who.length && who.every(isPerson)) { last = { title: l, who }; i++; } else last = null;
+    }
+    return { entries, skipped };
+  }
   let kind = null;
   for (let i = start; i < ls.length; i++) {
     const l = ls[i], k = KIND(l);

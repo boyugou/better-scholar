@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6331
+  "count": 6335
  },
  "entries": [
   {
@@ -85375,6 +85375,84 @@
    "track": "main",
    "source": "https://roboticsconference.org/2022/program/awards/",
    "evidence": "RSS 2022 Best Student Paper Award: AK: Attentive Kernel for Information Gathering — Weizhe Chen, Roni Khardon, Lantao Liu"
+  },
+  {
+   "venue": "RSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Systems Paper Award",
+   "title": "Building Rome with Convex Optimization",
+   "authors": [
+    "Haoyu Han",
+    "Heng Yang"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2025/program/awards/",
+   "evidence": "RSS 2025 Outstanding Systems Paper Award: Building Rome with Convex Optimization — Haoyu Han, Heng Yang"
+  },
+  {
+   "venue": "RSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Demo Paper Award",
+   "title": "Demonstrating MuJoCo Playground",
+   "authors": [
+    "Kevin Zakka",
+    "Baruch Tabanpour",
+    "Qiayuan Liao",
+    "Mustafa Haiderbhai",
+    "Samuel Holt",
+    "Jing Yuan Luo",
+    "Arthur Allshire",
+    "Erik Frey",
+    "Koushil Sreenath",
+    "Lueder Alexander Kahrs",
+    "Carmelo Sferrazza",
+    "Yuval Tassa",
+    "Pieter Abbeel"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2025/program/awards/",
+   "evidence": "RSS 2025 Outstanding Demo Paper Award: Demonstrating MuJoCo Playground — Kevin Zakka, Baruch Tabanpour, Qiayuan Liao, Mustafa Haiderbhai, Samuel Holt, Jing Yuan Luo, Arthur Allshire, Erik Frey, Koushil Sreenath, Lueder Alexander Kahrs, Carmelo Sferrazza, Yuval Tassa, Pieter Abbeel"
+  },
+  {
+   "venue": "RSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "FEAST: A Flexible Mealtime-Assistance System Tackling In-the-Wild Personalization",
+   "authors": [
+    "Rajat Kumar Jenamani",
+    "Tom Silver",
+    "Ben Dodson",
+    "Shiqin Tong",
+    "Anthony Song",
+    "Yuting Yang",
+    "Ziang Liu",
+    "Benjamin Howe",
+    "Aimee Whitneck",
+    "Tapomayukh Bhattacharjee"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2025/program/awards/",
+   "evidence": "RSS 2025 Outstanding Paper Award: FEAST: A Flexible Mealtime-Assistance System Tackling In-the-Wild Personalization — Rajat Kumar Jenamani, Tom Silver, Ben Dodson, Shiqin Tong, Anthony Song, Yuting Yang, Ziang Liu, Benjamin Howe, Aimee Whitneck, Tapomayukh Bhattacharjee"
+  },
+  {
+   "venue": "RSS",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Student Paper Award",
+   "title": "Solving Multi-Agent Safe Optimal Control with Distributed Epigraph Form MARL",
+   "authors": [
+    "Songyuan Zhang",
+    "Oswin So",
+    "Mitchell Black",
+    "Zachary Serlin",
+    "Chuchu Fan"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2025/program/awards/",
+   "evidence": "RSS 2025 Outstanding Student Paper Award: Solving Multi-Agent Safe Optimal Control with Distributed Epigraph Form MARL — Songyuan Zhang, Oswin So, Mitchell Black, Zachary Serlin, Chuchu Fan"
   },
   {
    "venue": "S&P",
