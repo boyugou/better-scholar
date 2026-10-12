@@ -1,6 +1,12 @@
 /* Chrome-native settings page: system font, Google blue, cards on a pale ground. The preview rows get their
    look from ../content/styles.css (the same rules the Scholar page uses). */
-:root { color-scheme: light; --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --ground: #f6f8fb; }
+:root { color-scheme: light dark; --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --ground: #f6f8fb; --card: #fff; --sub: #fbfcfd; --hover: #f8f9fa; --btn-line: #dadce0; }
+@media (prefers-color-scheme: dark) {
+  :root { --text: #e8eaed; --muted: #9aa0a6; --faint: #80868b; --line: #3c4043; --accent: #8ab4f8; --ground: #202124; --card: #2d2e31; --sub: #292a2d; --hover: #3a3b3e; --btn-line: #5f6368; }
+  /* the preview stays as it looks on Scholar: light */
+  .preview > .card { --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --card: #fff; }
+  #saved { color: #81c995; }
+}
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--ground); color: var(--text);
   font: 14px/1.5 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
@@ -17,7 +23,7 @@ body { margin: 0; background: var(--ground); color: var(--text);
 .preview > .card { margin: 0; }
 @media (max-width: 940px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; order: -1; } }
 
-.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin: 0 0 16px; overflow: hidden; }
+.card { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 16px; overflow: hidden; }
 .card > h2 { margin: 0; padding: 14px 18px 2px; font-size: 14px; font-weight: 600; }
 .card > .desc { margin: 0; padding: 2px 18px 10px; color: var(--muted); font-size: 12.5px; line-height: 1.45; }
 
@@ -38,8 +44,8 @@ body { margin: 0; background: var(--ground); color: var(--text);
 
 .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 18px; border-top: 1px solid var(--line); }
 .row .note { flex: 1 1 100%; margin: 0; color: var(--muted); font-size: 12.5px; }
-button.btn { font: inherit; font-size: 13px; padding: 5px 14px; border: 1px solid #dadce0; border-radius: 6px; background: #fff; color: var(--text); cursor: pointer; }
-button.btn:hover { background: #f8f9fa; border-color: #c4c7cc; }
+button.btn { font: inherit; font-size: 13px; padding: 5px 14px; border: 1px solid #dadce0; border-radius: 6px; background: var(--card); color: var(--text); cursor: pointer; }
+button.btn:hover { background: var(--hover); border-color: var(--btn-line); }
 button.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* preview */
@@ -52,7 +58,7 @@ button.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px
 .foot { margin-top: 8px; color: var(--faint); font-size: 12.5px; }
 .foot #ver { margin-left: 6px; }
 #pv-panel { margin: 0 0 12px; }
-.opt.sub { padding-left: 34px; background: #fbfcfd; }
+.opt.sub { padding-left: 34px; background: var(--sub); }
 .opt.sub .name { font-size: 13.5px; }
 .reset-box { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .reset-box .ask { color: var(--muted); font-size: 13px; }
