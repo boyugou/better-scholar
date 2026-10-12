@@ -1367,3 +1367,17 @@ test("ICAPS awards page: 'ICAPS Influential Paper Award 2026', lines 'WinnerAuth
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SWSA Ten-Year Award page: year, 'ISWC 2013' and 'Authors. “Title”' rows; a title on the line after its authors is joined", async () => {
+  const { parseSwsaTenYear } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Awardees</h2><p>2025</p><p>ISWC2015</p><p>Yavor Nenov, Robert Piro, Boris Motik, Ian Horrocks, Zhe Wu, Jay Banerjee. “RDFox: A Highly-Scalable RDF Store”</p>
+<p>2020</p><p>ISWC 2010</p><p>Harry Halpin, Patrick J. Hayes, Henry S. Thompson. “When owl:sameAs Isn’t the Same: An Analysis of Identity in Linked Data”</p>
+<p>2011</p><p>SWWS 2001</p><p>Anupriya Ankolekar, Mark H. Burstein, Honglei Zeng.</p><p>“DAML-S: Semantic Markup for Web Services”</p><p>© Semantic Web Science Association.</p>`;
+  const { entries, skipped } = parseSwsaTenYear(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025/2015 RDFox: A Highly-Scalable RDF Store | Yavor Nenov; Robert Piro; Boris Motik; Ian Horrocks; Zhe Wu; Jay Banerjee",
+    "2020/2010 When owl:sameAs Isn’t the Same: An Analysis of Identity in Linked Data | Harry Halpin; Patrick J. Hayes; Henry S. Thompson",
+    "2011/2001 DAML-S: Semantic Markup for Web Services | Anupriya Ankolekar; Mark H. Burstein; Honglei Zeng"
+  ]);
+  assert.deepEqual(skipped, []);
+});

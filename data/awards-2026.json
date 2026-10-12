@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5320
+  "count": 5338
  },
  "entries": [
   {
@@ -61510,6 +61510,313 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA 2025): N. Risse, J. Liu, M. Böhme: Top Score on the Wrong Exam: On Benchmarking in Machine Learning for Vulnerability Detection"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "DAML-S: Semantic Markup for Web Services",
+   "authors": [
+    "Anupriya Ankolekar",
+    "Mark H. Burstein",
+    "Jerry R. Hobbs",
+    "Ora Lassila",
+    "David L. Martin",
+    "Sheila A. McIlraith",
+    "Srini Narayanan",
+    "Massimo Paolucci",
+    "Terry R. Payne",
+    "Katia P. Sycara",
+    "Honglei Zeng"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2011 SWSA Ten-Year Award: Anupriya Ankolekar, Mark H. Burstein, Jerry R. Hobbs, Ora Lassila, David L. Martin, Sheila A. McIlraith, Srini Narayanan, Massimo Paolucci, Terry R. Payne, Katia P. Sycara, Honglei Zeng “DAML-S: Semantic Markup for Web Services”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Semantic Matching of Web Services Capabilities",
+   "authors": [
+    "Massimo Paolucci",
+    "Takahiro Kawamura",
+    "Terry Payne",
+    "Katia P. Sycara"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2012 SWSA Ten-Year Award: Massimo Paolucci, Takahiro Kawamura, Terry Payne, Katia P. Sycara “Semantic Matching of Web Services Capabilities”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema",
+   "authors": [
+    "Jeen Broekstra",
+    "Arjohn Kampman",
+    "Frank van Harmelen"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2012 SWSA Ten-Year Award: Jeen Broekstra, Arjohn Kampman, Frank van Harmelen “Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Reducing OWL Entailment to Description Logic Satisfiability",
+   "authors": [
+    "Ian Horrocks",
+    "Peter F. Patel-Schneider"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2013 SWSA Ten-Year Award: Ian Horrocks, Peter F. Patel-Schneider “Reducing OWL Entailment to Description Logic Satisfiability”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "The Protégé OWL plugin: An open development environment for semantic web applications",
+   "authors": [
+    "Holger Knublauch",
+    "Ray Fergerson",
+    "Natalya Noy",
+    "Mark Musen"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2014 SWSA Ten-Year Award: Holger Knublauch, Ray Fergerson, Natalya Noy, Mark Musen “The Protégé OWL plugin: An open development environment for semantic web applications”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Ontologies are us: A unified model of social networks and semantics",
+   "authors": [
+    "Peter Mika"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2015 SWSA Ten-Year Award: Peter Mika “Ontologies are us: A unified model of social networks and semantics”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Semantics and Complexity of SPARQL",
+   "authors": [
+    "Jorge Perez",
+    "Marcelo Arenas",
+    "Claudio Gutierrez"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2016 SWSA Ten-Year Award: Jorge Perez, Marcelo Arenas, Claudio Gutierrez “Semantics and Complexity of SPARQL”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "DBpedia: A Nucleus for a Web of Open Data",
+   "authors": [
+    "Sören Auer",
+    "Christian Bizer",
+    "Georgi Kobilarov",
+    "Jens Lehmann",
+    "Richard Cyganiak",
+    "Zachary G. Ives"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2017 SWSA Ten-Year Award: Sören Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard Cyganiak, Zachary G. Ives “DBpedia: A Nucleus for a Web of Open Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Laconic and precise justifications in OWL",
+   "authors": [
+    "Matthew Horridge",
+    "Bijan Parsia",
+    "Ulrike Sattler"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2018 SWSA Ten-Year Award: Matthew Horridge, Bijan Parsia, Ulrike Sattler “Laconic and precise justifications in OWL”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Semantic Grounding of Tag Relatedness in Social Bookmarking Systems",
+   "authors": [
+    "Ciro Cattuto",
+    "Dominik Benz",
+    "Andreas Hotho",
+    "Gerd Stumme"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2018 SWSA Ten-Year Award: Ciro Cattuto, Dominik Benz, Andreas Hotho, Gerd Stumme “Semantic Grounding of Tag Relatedness in Social Bookmarking Systems”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Discovering and Maintaining Links on the Web of Data",
+   "authors": [
+    "Julius Volz",
+    "Christian Bizer",
+    "Martin Gaedke",
+    "Georgi Kobilarov"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2019 SWSA Ten-Year Award: Julius Volz, Christian Bizer, Martin Gaedke, Georgi Kobilarov “Discovering and Maintaining Links on the Web of Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Executing SPARQL Queries over the Web of Linked Data",
+   "authors": [
+    "Olaf Hartig",
+    "Christian Bizer",
+    "Johann-Christoph Freytag"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2019 SWSA Ten-Year Award: Olaf Hartig, Christian Bizer, Johann-Christoph Freytag “Executing SPARQL Queries over the Web of Linked Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Ontology Alignment for Linked Open Data",
+   "authors": [
+    "Prateek Jain",
+    "Pascal Hitzler",
+    "Amit P. Sheth",
+    "Kunal Verma",
+    "Peter Z. Yeh"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2020 SWSA Ten-Year Award: Prateek Jain, Pascal Hitzler, Amit P. Sheth, Kunal Verma, Peter Z. Yeh “Ontology Alignment for Linked Open Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "When owl:sameAs Isn’t the Same: An Analysis of Identity in Linked Data",
+   "authors": [
+    "Harry Halpin",
+    "Patrick J. Hayes",
+    "James P. McCusker",
+    "Deborah L. McGuinness",
+    "Henry S. Thompson"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2020 SWSA Ten-Year Award: Harry Halpin, Patrick J. Hayes, James P. McCusker, Deborah L. McGuinness, Henry S. Thompson “When owl:sameAs Isn’t the Same: An Analysis of Identity in Linked Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "LogMap: Logic-Based and Scalable Ontology Matching",
+   "authors": [
+    "Ernesto Jiménez-Ruiz",
+    "Bernardo Cuenca Grau"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2021 SWSA Ten-Year Award: Ernesto Jiménez-Ruiz, Bernardo Cuenca Grau “LogMap: Logic-Based and Scalable Ontology Matching”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Semantic Sentiment Analysis of Twitter",
+   "authors": [
+    "Hassan Saif",
+    "Yulan He",
+    "Harith Alani"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2022 SWSA Ten-Year Award: Hassan Saif, Yulan He, Harith Alani “Semantic Sentiment Analysis of Twitter”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "Knowledge graph identification",
+   "authors": [
+    "Jay Pujara",
+    "Hui Miao",
+    "Lise Getoor",
+    "William Cohen"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2023 SWSA Ten-Year Award: Jay Pujara, Hui Miao, Lise Getoor, William Cohen “Knowledge graph identification”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Ten-Year Award",
+   "title": "RDFox: A Highly-Scalable RDF Store",
+   "authors": [
+    "Yavor Nenov",
+    "Robert Piro",
+    "Boris Motik",
+    "Ian Horrocks",
+    "Zhe Wu",
+    "Jay Banerjee"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
+   "evidence": "ISWC 2025 SWSA Ten-Year Award: Yavor Nenov, Robert Piro, Boris Motik, Ian Horrocks, Zhe Wu, Jay Banerjee “RDFox: A Highly-Scalable RDF Store”"
   },
   {
    "venue": "IUI",

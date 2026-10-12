@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.26 — 2026-10-12
+
+- The SWSA Ten-Year Award for ISWC (2011–2025, 18 papers: DBpedia, RDFox, LogMap, Semantics and Complexity of SPARQL, Sesame, DAML-S …) from the Semantic Web Science Association's own page
+  (`tot.mjs swsa`). The bundled list has 5338 awards.
+
 ## 2.9.25 — 2026-10-12
 
 - The ICAPS Influential Paper Awards and honorable mentions (2007–2026, 36 papers: FF-Replan, Planning as Heuristic Search, Labeled RTDP, Anytime Dynamic A* …) from ICAPS's own awards page
