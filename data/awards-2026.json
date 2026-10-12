@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5868
+  "count": 5888
  },
  "entries": [
   {
@@ -53257,6 +53257,316 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The ACM International Conference on the Foundations of Software Engineering (FSE 2025): Xiaokun Luan, David Sanan, Zhe Hou, Qiyuan Xu, Chengwei Liu, Yufan Cai, Yang Liu, Meng Sun: Why the Proof Fails in Different Versions of Theorem Provers: An Empirical Study of Compatibility Issues in Isabelle"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "BOA: The Bayesian Optimization Algorithm",
+   "authors": [
+    "M. Pelikan",
+    "D. Goldberg",
+    "E. Cantu-Paz"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2009 SIGEVO Impact Award: M. Pelikan, D. Goldberg, E. Cantu-Paz. BOA: The Bayesian Optimization Algorithm"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Immunity by Design: An Artificial Immune System",
+   "authors": [
+    "S. Hofmeyer",
+    "S. Forrest"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2009 SIGEVO Impact Award: S. Hofmeyer, S. Forrest. Immunity by Design: An Artificial Immune System"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "A Memetic Algorithm With Self-Adaptive Local Search: TSP as a case study",
+   "authors": [
+    "Natalio Krasnogor",
+    "Jim Smith"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2010 SIGEVO Impact Award: Natalio Krasnogor, Jim Smith. A Memetic Algorithm With Self-Adaptive Local Search: TSP as a case study"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Hybrid Particle Swarm Optimizer with Breeding and Subpopulations",
+   "authors": [
+    "M. Lovbjerg",
+    "T.K. Rasmussen",
+    "T. Krink"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2011 SIGEVO Impact Award: M. Lovbjerg, T.K. Rasmussen, T. Krink. Hybrid Particle Swarm Optimizer with Breeding and Subpopulations"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "A Racing Algorithm for Configuring Metaheuristics",
+   "authors": [
+    "M. Birattari",
+    "T. Stuetzle",
+    "L. Paquete",
+    "K. Varrentrapp"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2012 SIGEVO Impact Award: M. Birattari, T. Stuetzle, L. Paquete, K. Varrentrapp. A Racing Algorithm for Configuring Metaheuristics"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "A Non-dominated Particle Swarm Optimizer for Multiobjective Optimization",
+   "authors": [
+    "X. Li"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2013 SIGEVO Impact Award: X. Li. A Non-dominated Particle Swarm Optimizer for Multiobjective Optimization"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Real-Valued Negative Selection Algorithm with Variable-Sized Detectors",
+   "authors": [
+    "Z. Ji",
+    "D. Dasgupta"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2014 SIGEVO Impact Award: Z. Ji, D. Dasgupta. Real-Valued Negative Selection Algorithm with Variable-Sized Detectors"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "An approach for QoS-aware service composition based on genetic algorithms",
+   "authors": [
+    "Gerardo Canfora",
+    "Massimiliano Di Penta",
+    "Raffaele Esposito",
+    "Maria Luisa Villani"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2015 SIGEVO Impact Award: Gerardo Canfora, Massimiliano Di Penta, Raffaele Esposito, Maria Luisa Villani. An approach for QoS-aware service composition based on genetic algorithms"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Reference point based multi-objective optimization using evolutionary algorithms",
+   "authors": [
+    "Kalyanmoy Deb",
+    "J. Sundar"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2016 SIGEVO Impact Award: Kalyanmoy Deb, J. Sundar. Reference point based multi-objective optimization using evolutionary algorithms"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Search-based determination of refactorings for improving the class structure of object-oriented systems",
+   "authors": [
+    "Olaf Seng",
+    "Johannes Stammel",
+    "David Burkhart"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2016 SIGEVO Impact Award: Olaf Seng, Johannes Stammel, David Burkhart. Search-based determination of refactorings for improving the class structure of object-oriented systems"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Techniques for highly multiobjective optimisation: some nondominated points are better than others",
+   "authors": [
+    "DW Corne",
+    "JD Knowles"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2017 SIGEVO Impact Award: DW Corne, JD Knowles. Techniques for highly multiobjective optimisation: some nondominated points are better than others"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Adaptive operator selection with dynamic multi-armed bandits",
+   "authors": [
+    "Luis DaCosta",
+    "Alvaro Fialho",
+    "Marc Schoenauer",
+    "Michèle Sebag"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2018 SIGEVO Impact Award: Luis DaCosta, Alvaro Fialho, Marc Schoenauer, Michèle Sebag. Adaptive operator selection with dynamic multi-armed bandits"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "A genetic programming approach to automated software repair",
+   "authors": [
+    "Stephanie Forrest",
+    "ThanhVu Nguyen",
+    "Westley Weimer",
+    "Claire Le Goues"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2019 SIGEVO Impact Award: Stephanie Forrest, ThanhVu Nguyen, Westley Weimer, Claire Le Goues. A genetic programming approach to automated software repair"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Comparing results of 31 algorithms from the black-box optimization benchmarking BBOB-2009",
+   "authors": [
+    "Nikolaus Hansen",
+    "Anne Auger",
+    "Raymond Ros",
+    "Steffen Finck",
+    "Petr Pošík"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2020 SIGEVO Impact Award: Nikolaus Hansen, Anne Auger, Raymond Ros, Steffen Finck, Petr Pošík. Comparing results of 31 algorithms from the black-box optimization benchmarking BBOB-2009"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Evolving a diversity of creatures through novelty search and local competition",
+   "authors": [
+    "J. Lehman",
+    "K.O. Stanley"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2021 SIGEVO Impact Award: J. Lehman, K.O. Stanley. Evolving a diversity of creatures through novelty search and local competition"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Exploratory landscape analysis",
+   "authors": [
+    "O. Mersmann",
+    "B. Bischl",
+    "H. Trautmann",
+    "M. Preuss",
+    "C. Weihs",
+    "G. Rudolph"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2021 SIGEVO Impact Award: O. Mersmann, B. Bischl, H. Trautmann, M. Preuss, C. Weihs, G. Rudolph. Exploratory landscape analysis"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Genetic programming needs better benchmarks",
+   "authors": [
+    "J. McDermott",
+    "D.R. White",
+    "S. Luke",
+    "L. Manzoni",
+    "M. Castelli",
+    "L. Vanneschi",
+    "W. Jaśkowski",
+    "K. Krawiec",
+    "R. Harper",
+    "K. De Jong",
+    "U.-M. O'Reilly"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2022 SIGEVO Impact Award: J. McDermott, D.R. White, S. Luke, L. Manzoni, M. Castelli, L. Vanneschi, W. Jaśkowski, K. Krawiec, R. Harper, K. De Jong, U.-M. O'Reilly. Genetic programming needs better benchmarks"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Unshackling evolution: Evolving soft robots with multiple materials and a powerful generative encoding",
+   "authors": [
+    "N. Cheney",
+    "R. MacCurdy",
+    "J. Clune",
+    "H. Lipson"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2023 SIGEVO Impact Award: N. Cheney, R. MacCurdy, J. Clune, H. Lipson. Unshackling evolution: Evolving soft robots with multiple materials and a powerful generative encoding"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Evolving deep unsupervised convolutional networks for vision-based reinforcement learning",
+   "authors": [
+    "J. Koutník",
+    "J. Schmidhuber",
+    "F. Gomez"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2024 SIGEVO Impact Award: J. Koutník, J. Schmidhuber, F. Gomez. Evolving deep unsupervised convolutional networks for vision-based reinforcement learning"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "SIGEVO Impact Award",
+   "title": "Multiple regression genetic programming",
+   "authors": [
+    "I. Arnaldo",
+    "K. Krawiec",
+    "U.-M. O'Reilly"
+   ],
+   "track": "main",
+   "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
+   "evidence": "GECCO 2024 SIGEVO Impact Award: I. Arnaldo, K. Krawiec, U.-M. O'Reilly. Multiple regression genetic programming"
   },
   {
    "venue": "HotStorage",

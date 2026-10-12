@@ -118,7 +118,8 @@ const PAGES = {
   sigcse: "https://sigcse.org/programs/awards/test-of-time.html",
   icwsm: "https://www.icwsm.org/awards/",
   etaps: "https://etaps.org/awards/test-of-time",
-  "etaps-bp": "https://etaps.org/awards/best-paper/"
+  "etaps-bp": "https://etaps.org/awards/best-paper/",
+  gecco: "https://sig.sigevo.org/SIGEVO-Impact-Award"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -907,6 +908,41 @@ export function parseRas(html, cfg, source) {
   return { entries, skipped };
 }
 
+// SIGEVO's Impact Award page (sig.sigevo.org/SIGEVO-Impact-Award, a GECCO paper of ten years earlier): per year a heading "2024 SIGEVO Impact Award", then per paper a line
+// with the title, a line with the authors and citation lines (the newest rows put "GECCO'14, pp. …" on the authors' line, and write the names "Surname I." or "Surname, I.,").
+export function parseGeccoImpact(html, source = PAGES.gecco) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const initials = /^(?:\p{Lu}\.?-?)+\.?$/u;
+  const cit = /GECCO|Genetic and Evolutionary|Proceedings|\bpp\.?\s*\d|\(Eds?\.?\)|\bEds?\b|LNCS|Morgan Kaufmann|PDF/i;
+  const flip = (list) => {
+    const parts = list.split(/\s*,\s*/).filter(Boolean);
+    if (parts.length >= 2 && parts.every((p, i) => (i % 2 ? initials.test(p) : !initials.test(p)))) {         // "McDermott, J., White, D.R."
+      const out = []; for (let i = 0; i + 1 < parts.length; i += 2) out.push(parts[i + 1] + " " + parts[i]); return out;
+    }
+    return parts.map((n) => { const w = n.split(" "); return w.length === 2 && initials.test(w[1]) && !initials.test(w[0]) ? w[1] + " " + w[0] : n; });
+  };
+  let year = null, title = null;
+  const emit = (authorLine) => {
+    const hasVenue = /GECCO\s?'/.test(authorLine), text = authorLine.split(/,?\s*GECCO\s?'/)[0].replace(/(?<=\p{L}{2})\.\s*$/u, "").replace(/,\s*$/, "").replace(/,\s*and\s+/g, ", ").replace(/\s+and\s+/g, ", ");
+    const who = (hasVenue || /^\p{Lu}[\p{L}'’ -]+,\s*(?:\p{Lu}\.?-?)+\.?\s*,/u.test(text) ? flip(text) : text.split(/\s*,\s*/)).map((n) => n.replace(/\s+/g, " ").trim()).filter(Boolean);
+    const t = cleanTitle(title);
+    if (who.length && who.every(isPerson) && t.length >= 8) entries.push(entry("GECCO", year, "SIGEVO Impact Award", t, who, source, `GECCO ${year} SIGEVO Impact Award: ${who.join(", ")}. ${t}`));
+    else skipped.push(`${year}: not read: ${authorLine.slice(0, 50)} / ${t.slice(0, 40)}`);
+    title = null;
+  };
+  for (const l of ls) {
+    const h = /^((?:19|20)\d{2}) SIGEVO Impact Award$/.exec(l);
+    if (h) { year = parseInt(h[1], 10); title = null; continue; }
+    if (!year) continue;
+    if (/^Log in$/i.test(l)) break;
+    if (/^(?:Two awards|Note )/i.test(l)) continue;
+    if (title === null) { if (!cit.test(l)) title = l; continue; }
+    emit(l);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -962,7 +998,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

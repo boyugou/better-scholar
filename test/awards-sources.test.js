@@ -1529,3 +1529,19 @@ test("IEEE RAS award pages: 'Winners of this Award', a year line, authors / “t
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGEVO Impact Award page: title line, authors line (names written 'Surname I.' or 'Surname, I.,', with or without GECCO'14 on the line), citation lines; two awards in one year", async () => {
+  const { parseGeccoImpact } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>2024 SIGEVO Impact Award</h2><p>Multiple regression genetic programming</p><p>Arnaldo I., Krawiec K., O'Reilly U.-M., GECCO'14, pp. 879-886</p>
+<h2>2021 SIGEVO Impact Award</h2><p>Evolving a diversity of creatures through novelty search and local competition.</p><p>Lehman, J., Stanley, K.O. GECCO'11, pp. 211-218.</p>
+<h2>2016 SIGEVO Impact Award</h2><p>Two awards have been awarded in 2016:</p><p>Reference point based multi-objective optimization using evolutionary algorithms.</p><p>Kalyanmoy Deb, and J. Sundar.</p><p>In: Mike Catolico (Eds), Proceedings of the 8th annual conference on Genetic and evolutionary computation, pp 635-642, ACM, 2006.</p>
+<p>Search-based determination of refactorings for improving the class structure of object-oriented systems.</p><p>Olaf Seng, Johannes Stammel, and David Burkhart.</p><p>In: Mike Catolico (Eds), Proceedings, pp 1909-1916, ACM, 2006.</p><p>Log in</p>`;
+  const { entries, skipped } = parseGeccoImpact(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.title.slice(0, 10)} | ${e.authors.join("; ")}`), [
+    "2024 Multiple r | I. Arnaldo; K. Krawiec; U.-M. O'Reilly",
+    "2021 Evolving a | J. Lehman; K.O. Stanley",
+    "2016 Reference  | Kalyanmoy Deb; J. Sundar",
+    "2016 Search-bas | Olaf Seng; Johannes Stammel; David Burkhart"
+  ]);
+  assert.deepEqual(skipped, []);
+});

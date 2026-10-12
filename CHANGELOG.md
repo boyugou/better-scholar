@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.36 — 2026-10-12
+
+- The GECCO SIGEVO Impact Award (2009–2024, 20 papers: BOA, Exploratory landscape analysis, Z-/Evolving soft robots …) from SIGEVO's own page (`tot.mjs gecco`). The bundled list has 5888 awards.
+
 ## 2.9.35 — 2026-10-12
 
 - The ICRA and CASE paper awards (286 papers: ICRA Best Conference Paper 1993–2025, Best Student Paper 1990–2025, thirteen area awards such as Automation, Medical Robotics, Robot Vision; CASE Best Conference,
