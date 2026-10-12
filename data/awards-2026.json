@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6213
+  "count": 6217
  },
  "entries": [
   {
@@ -84482,6 +84482,91 @@
    "track": "main",
    "source": "https://sp2025.ieee-security.org/awards.html",
    "evidence": "Distinguished Paper Awards: Verifiable Boosted Tree Ensembles — Stefano Calzavara, Lorenzo Cazzaro, Claudio Lucchese, Giulio Ermanno Pibiri"
+  },
+  {
+   "venue": "SC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ORBIT-2: Scaling Exascale Vision Foundation Models for Weather and Climate Downscaling",
+   "authors": [
+    "Xiao Wang",
+    "Jong-Youl Choi",
+    "Takuya Kurihaya",
+    "Isaac Lyngaas",
+    "Hong-Jun Yoon",
+    "Nasik Muhammad Nafi",
+    "Aristeidis Tsaris",
+    "Fan Ming",
+    "Ashwin M Aji",
+    "Maliha Hossain",
+    "Mohamed Wahib",
+    "Dali Wang",
+    "Peter Thornton",
+    "Moetasim Ashfaq",
+    "Prasanna Balaprakash",
+    "Dan Lu"
+   ],
+   "track": "main",
+   "source": "https://sc25.supercomputing.org/program/awards/",
+   "evidence": "SC25 Best Paper Award: ORBIT-2: Scaling Exascale Vision Foundation Models for Weather and Climate Downscaling — Xiao Wang, Jong-Youl Choi, Takuya Kurihaya, Isaac Lyngaas, Hong-Jun Yoon, Nasik Muhammad Nafi, Aristeidis Tsaris, Fan Ming, Ashwin M Aji, Maliha Hossain, Mohamed Wahib, Dali Wang, Peter Thornton, Moetasim Ashfaq, Prasanna Balaprakash, Dan Lu"
+  },
+  {
+   "venue": "SC",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Reproducibility Advancement Award",
+   "title": "RAPTOR: Practical Numerical Profiling of Scientific Applications",
+   "authors": [
+    "Faveo Hoerold",
+    "Ivan Radanov Ivanov",
+    "Akash Dhruv",
+    "William S. Moses",
+    "Anshu Dubey",
+    "Mohamed Wahib",
+    "Jens Domke"
+   ],
+   "track": "main",
+   "source": "https://sc25.supercomputing.org/program/awards/",
+   "evidence": "SC25 Best Reproducibility Advancement Award: RAPTOR: Practical Numerical Profiling of Scientific Applications — Faveo Hoerold, Ivan Radanov Ivanov, Akash Dhruv, William S. Moses, Anshu Dubey, Mohamed Wahib, Jens Domke"
+  },
+  {
+   "venue": "SC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "X-MoE: Enabling Scalable Training for Emerging Mixture-of-Experts Architectures on HPC Platforms",
+   "authors": [
+    "Yueming Yuan",
+    "Ahan Gupta",
+    "Jianping Li",
+    "Sajal Dash",
+    "Feiyi Wang",
+    "Minjia Zhang"
+   ],
+   "track": "main",
+   "source": "https://sc25.supercomputing.org/program/awards/",
+   "evidence": "SC25 Best Student Paper Award: X-MoE: Enabling Scalable Training for Emerging Mixture-of-Experts Architectures on HPC Platforms — Yueming Yuan, Ahan Gupta, Jianping Li, Sajal Dash, Feiyi Wang, Minjia Zhang"
+  },
+  {
+   "venue": "SC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Globus Striped GridFTP Framework and Server",
+   "authors": [
+    "William Allcock",
+    "John Bresnahan",
+    "Rajkumar Kettimuthu",
+    "Michael Link",
+    "Catalin Dumitrescu",
+    "Ioan Raicu",
+    "Ian Foster"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://sc25.supercomputing.org/program/awards/",
+   "evidence": "SC25 Test of Time Award: The Globus Striped GridFTP Framework and Server — William Allcock, John Bresnahan, Rajkumar Kettimuthu, Michael Link, Catalin Dumitrescu, Ioan Raicu, Ian Foster"
   },
   {
    "venue": "SenSys",

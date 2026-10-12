@@ -1731,3 +1731,19 @@ test("The Web Conference awards page: 'Best Paper Award', the title, authors wit
   const b = parseWwwBest(y24, "https://www2024.thewebconf.org/program/awards");
   assert.deepEqual(b.entries.map((e) => `${e.year} ${e.title.slice(0, 20)} | ${e.authors.join("; ")}`), ["2024 Mechanism Design for | Paul Dütting; Vahab Mirrokni; Renato Paes Leme; Haifeng Xu; Song Zuo"]);
 });
+
+test("SC awards page: best paper, best student paper and reproducibility lines `“Title”, Authors; affiliations` and the test-of-time line `Authors, “Title” SC05: …`; posters and the cluster competition are not paper awards", async () => {
+  const { parseScAwards } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 35 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `${filler}<h3>Test of Time Award</h3><p>William Allcock, John Bresnahan, Ian Foster, “The Globus Striped GridFTP Framework and Server” SC05: Proceedings of the 2005 ACM/IEEE Conference on Supercomputing, p. 55</p>
+<h3>Best Paper Award</h3><p>“ORBIT-2: Scaling Exascale Vision Foundation Models”, Xiao Wang, Jong-Youl Choi, Fan Ming, Oak Ridge National Laboratory (ORNL); Ashwin M Aji, Advanced Micro Devices, Inc. (AMD); Mohamed Wahib, RIKEN</p>
+<h3>Best Student Paper Award</h3><p>“X-MoE: Enabling Scalable Training for Emerging Mixture-of-Experts Architectures”, Yueming Yuan, University of Illinois Urbana-Champaign; Ahan Gupta, University of Illinois</p>
+<h3>Best Research Poster Award</h3><p>“Time-stepping Hamiltonian Simulation for Solving Nonlinear PDEs”, Sangwon Kim, RIKEN</p>`;
+  const { entries, skipped } = parseScAwards(html, "https://sc25.supercomputing.org/program/awards/");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.paperYear || "-"} ${e.title.slice(0, 10)} | ${e.authors.join("; ")}`), [
+    "2025 tot 2005 The Globus | William Allcock; John Bresnahan; Ian Foster",
+    "2025 best - ORBIT-2: S | Xiao Wang; Jong-Youl Choi; Fan Ming; Ashwin M Aji; Mohamed Wahib",
+    "2025 student - X-MoE: Ena | Yueming Yuan; Ahan Gupta"
+  ]);
+  assert.deepEqual(skipped, []);
+});

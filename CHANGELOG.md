@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.16 — 2026-10-12
+
+- SC 2025's best paper (ORBIT-2), best student paper (X-MoE), best reproducibility advancement paper (RAPTOR) and test-of-time paper (The Globus Striped GridFTP Framework and Server) from the conference's own awards page (`tot.mjs sc`); only the current year's page answers. The list has 6217 awards.
+
 ## 2.10.15 — 2026-10-12
 
 - A provenance test: `test/fixtures/award-source-hosts.json` lists the 78 hosts the bundled awards were read from, and a test fails for a host that is not on it (or no longer used), so a new source is reviewed by hand — old conference domains are taken over by spam.
