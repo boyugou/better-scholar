@@ -25,10 +25,11 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   (`…on Computer Vision and Pattern …`), `ISCA 2014 42 (3)`, `[arXiv…]` annotations,
   `Findings`/workshop/demo tracks are all handled. When a venue is not recognised the
   panel lists it instead of guessing.
-- **Awards and talk levels, as the authors wrote them** — if a paper's title or venue text says
-  *Oral*, *Spotlight*, *Highlight* or *Best / Outstanding / Distinguished Paper*, it gets a small chip
-  (awards in gold with a ★) and the panel counts them; click a count to list just those papers. Only
-  what the author wrote is read — nothing is looked up, and the tooltip says "not checked".
+- **Awards and talk levels** — a paper gets a small chip (awards in gold with a ★) when its title or venue
+  text says *Oral*, *Spotlight*, *Highlight* or an award (*Best / Outstanding / Distinguished Paper*, *Test
+  of Time*), or when it is on a bundled list of award-winning papers from the conferences' own award pages
+  (ACL family, ICLR, NeurIPS, ICML, CVPR 2025, ECCV 2024). The panel counts them and a click lists just those
+  papers. A chip's tooltip says whether it came from the author's words or from the award list.
 - **Hidden senior-author roles** — Scholar cuts long author lists with `…`, which
   hides the last author on large papers (on one well-known PI's profile, 30 of the
   first 100 papers). **Resolve** reads those papers' own pages (about one a second,
@@ -70,9 +71,9 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
   collide on `W Wang`. Co-first marks (†, ∗ …) are honoured when present — Scholar
   rarely preserves them. If a profile's name is spelled differently from its papers,
   use **Add a spelling** in the panel.
-- **Awards and talk levels are only what authors wrote.** Scholar's text rarely carries them (none in
-  400 rows on four real profiles), so expect few chips; look-alikes such as *Oral Oncology* or
-  *Spotlight on …* are never marked, and a paper the author did not annotate simply has none.
+- **Awards are not exhaustive.** The award list covers the venues above and only the years their pages
+  publish; a paper that is not on it has no award chip. Talk levels (*Oral*, *Spotlight*) are only what the
+  author wrote — Scholar's text rarely carries them — and look-alikes such as *Oral Oncology* are never marked.
 - **Venue strings are messy.** What Scholar prints is owner-editable and often
   truncated. Anything unrecognised is listed ("papers at venues without a rank") so you
   can see what is missing; there is no fuzzy guessing.
