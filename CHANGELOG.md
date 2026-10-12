@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.21 — 2026-10-12
+
+- MobiCom 2025's best paper (AquaScan), best community paper (5G-MAP) and best artifact paper (RF-Based 3D SLAM Rivaling Vision Approaches), and 2015's best paper and best community paper (CAreDroid), from MobiCom's own awards pages (`tot.mjs mobicom-year`). The list has 6222 awards.
+
 ## 2.10.20 — 2026-10-12
 
 - The panel, the settings page and the popup drop their small transitions (switches, drop-down, buttons) when the system asks for reduced motion.

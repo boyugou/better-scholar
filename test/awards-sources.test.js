@@ -1747,3 +1747,17 @@ test("SC awards page: best paper, best student paper and reproducibility lines `
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("a MobiCom year's awards page: best paper, best community paper and best artifact papers with their authors; video, poster and reviewer awards are left out", async () => {
+  const { parseMobicomYear } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 30 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `<title>MobiCom 2025: The 31st Annual International Conference on Mobile Computing and Networking</title>${filler}<h2>Best Paper Award</h2><p>AquaScan: A Sonar-based Underwater Sensing System for Human Activity Monitoring</p><p>Haozheng Hou, Bowen Zheng, Sitong Cheng (The Chinese University of Hong Kong)</p>
+<h2>Best Community Paper Award</h2><p>5G-MAP: Demystifying the Performance Implications of Cloud-Based 5G Core Deployments</p><p>Tolga Atalay (Virginia Tech), Dragoslav Stojadinovic (Kryptowire LLC), Haining Wang (Virginia Tech)</p>
+<h2>Best Artifact Reviewer Award</h2><p>Siyang Jiang (The Chinese University of Hong Kong)</p><h2>Best Poster Award</h2><p>Poster: Vibration-Tolerant Doppler Disambiguation Algorithm</p><p>Skanda Harisha (University of Michigan)</p>`;
+  const { entries, skipped } = parseMobicomYear(html, "https://www.sigmobile.org/mobicom/2025/awards.html");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2025 best AquaScan | Haozheng Hou; Bowen Zheng; Sitong Cheng",
+    "2025 category 5G-MAP:  | Tolga Atalay; Dragoslav Stojadinovic; Haining Wang"
+  ]);
+  assert.deepEqual(skipped, []);
+});

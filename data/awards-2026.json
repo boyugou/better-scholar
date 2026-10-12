@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6217
+  "count": 6222
  },
  "entries": [
   {
@@ -75640,6 +75640,89 @@
    "track": "main",
    "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
    "evidence": "MobiCom Best Paper Award 2012: Distinguishing Users with Capacitative Touch Communication — Tam Vu (Rutgers University, USA), Akash Baid (Rutgers University, USA), Simon Gao (Rutgers University, USA), Marco Gruteser (Rutgers University, USA), Richard Howard (Rutgers University, USA), Janne Lindqvist (Rutgers University, USA), Predag Spasojevic (Rutgers University, USA) and Jeffrey Walling (Rutgers University, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CAreDroid: Adaptation Framework for Android ContextAware Applications",
+   "authors": [
+    "Salma Elmalaki",
+    "Lucas Wanner",
+    "Mani Srivastava"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2015/awards.html",
+   "evidence": "MobiCom 2015 Best Paper Award: CAreDroid: Adaptation Framework for Android ContextAware Applications — Salma Elmalaki, Lucas Wanner, Mani Srivastava"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "CAreDroid: Adaptation Framework for Android ContextAware Applications",
+   "authors": [
+    "Salma Elmalaki",
+    "Lucas Wanner",
+    "Mani Srivastava"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2015/awards.html",
+   "evidence": "MobiCom 2015 Best Community Paper Award: CAreDroid: Adaptation Framework for Android ContextAware Applications — Salma Elmalaki, Lucas Wanner, Mani Srivastava"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AquaScan: A Sonar-based Underwater Sensing System for Human Activity Monitoring",
+   "authors": [
+    "Haozheng Hou",
+    "Bowen Zheng",
+    "Sitong Cheng",
+    "Xiaoguang Zhao",
+    "Peiheng Wu",
+    "Lixing He",
+    "Yunqi Guo",
+    "Guoliang Xing",
+    "Zhenyu Yan"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2025/awards.html",
+   "evidence": "MobiCom 2025 Best Paper Award: AquaScan: A Sonar-based Underwater Sensing System for Human Activity Monitoring — Haozheng Hou, Bowen Zheng, Sitong Cheng, Xiaoguang Zhao, Peiheng Wu, Lixing He, Yunqi Guo, Guoliang Xing, Zhenyu Yan"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "5G-MAP: Demystifying the Performance Implications of Cloud-Based 5G Core Deployments",
+   "authors": [
+    "Tolga Atalay",
+    "Dragoslav Stojadinovic",
+    "Alireza Famili",
+    "Angelos Stavrou",
+    "Haining Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2025/awards.html",
+   "evidence": "MobiCom 2025 Best Community Paper Award: 5G-MAP: Demystifying the Performance Implications of Cloud-Based 5G Core Deployments — Tolga Atalay, Dragoslav Stojadinovic, Alireza Famili, Angelos Stavrou, Haining Wang"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Artifact Award",
+   "title": "RF-Based 3D SLAM Rivaling Vision Approaches",
+   "authors": [
+    "Haowen Lai",
+    "Zhiwei Zheng",
+    "Mingmin Zhao"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2025/awards.html",
+   "evidence": "MobiCom 2025 Best Artifact Award: RF-Based 3D SLAM Rivaling Vision Approaches — Haowen Lai, Zhiwei Zheng, Mingmin Zhao"
   },
   {
    "venue": "MobileHCI",
