@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.44 — 2026-10-12
+
+- SOSP's best papers of 2021, 2023 and 2024 (9 papers; the list had none) from the conference's own program, front and accepted-papers pages (`tot.mjs sosp-program`). The list has 6344 awards.
+
 ## 2.10.43 — 2026-10-12
 
 - The 30 award titles that kept a sentence full stop from the page they were read from ("… Program Repair.") lose it, and `merge-raw` now strips it; matching was never affected, the tooltip text is cleaner.

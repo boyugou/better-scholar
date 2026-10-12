@@ -1899,3 +1899,11 @@ test("RSS 2025 awards page: a 'Winner:' line after the winning finalist; the oth
   const h = `<p>Awards</p><p>Outstanding Paper Award Finalists</p><p>A First Finalist Paper</p><p>Ann Lee, Bo Chan</p><p>Winner: Outstanding Paper Award</p><p>A Second Finalist Paper</p><p>Cy Dunn, Ed Fox</p><p>Award Committee</p>`;
   assert.deepEqual(parseRssAwards(h, "https://roboticsconference.org/2025/program/awards/").entries.map((e) => `${e.awardLabel} ${e.title} | ${e.authors.join("; ")}`), ["Outstanding Paper Award A First Finalist Paper | Ann Lee; Bo Chan"]);
 });
+
+test("SOSP program page: a title followed by 'Best Paper Award' and its authors with affiliations; talks without the line are left out; 2024's 'Best Paper Award: Title' line takes its authors from the accepted-papers list", async () => {
+  const { parseSospProgram } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Paper</p><p>A Kernel Systems Paper Title</p><p>Best Paper Award</p><p>Ann Lee (MIT), Bo Chan (CMU)</p><p>Paper</p><p>Another Systems Paper Title</p><p>Cy Dunn (UCSD)</p>`;
+  assert.deepEqual(parseSospProgram(h, "https://sosp2023.mpi-sws.org/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2023 A Kernel Systems Paper Title | Ann Lee; Bo Chan"]);
+  const f = `<p>Best Paper Award: A Log Systems Paper Title</p><p>A Log Systems Paper Title</p><p>Ed Fox (UIUC), Flo Gray (UIUC)</p>`;
+  assert.deepEqual(parseSospProgram(f, "https://www.sigops.org/s/conferences/sosp/2024/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2024 A Log Systems Paper Title | Ed Fox; Flo Gray"]);
+});

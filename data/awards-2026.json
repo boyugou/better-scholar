@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6335
+  "count": 6344
  },
  "entries": [
   {
@@ -96009,6 +96009,192 @@
    "track": "main",
    "source": "https://www.sigspatial.org/people/award-recipients/",
    "evidence": "SIGSPATIAL 2025 10-Year Impact Award: Jia Yu, Jinxuan Wu, Mohamed Sarwat “GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data”"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Kangaroo: Caching Billions of Tiny Objects on Flash",
+   "authors": [
+    "Sara McAllister",
+    "Benjamin Berg",
+    "Julian Tutuncu-Macias",
+    "Juncheng Yang",
+    "Sathya Gunasekar",
+    "Jimmy Lu",
+    "Daniel Berger",
+    "Nathan Beckmann",
+    "Gregory R. Ganger"
+   ],
+   "track": "main",
+   "source": "https://sosp2021.mpi-sws.org/program.html",
+   "evidence": "SOSP 2021 Best Paper Award: Kangaroo: Caching Billions of Tiny Objects on Flash — Sara McAllister, Benjamin Berg, Julian Tutuncu-Macias, Juncheng Yang, Sathya Gunasekar, Jimmy Lu, Daniel Berger, Nathan Beckmann, Gregory R. Ganger"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "LineFS: Efficient SmartNIC Offload of a Distributed File System with Pipeline Parallelism",
+   "authors": [
+    "Jongyul Kim",
+    "Insu Jang",
+    "Waleed Reda",
+    "Jaeseong Im",
+    "Marco Canini",
+    "Dejan Kostić",
+    "Youngjin Kwon",
+    "Simon Peter",
+    "Emmett Witchel"
+   ],
+   "track": "main",
+   "source": "https://sosp2021.mpi-sws.org/program.html",
+   "evidence": "SOSP 2021 Best Paper Award: LineFS: Efficient SmartNIC Offload of a Distributed File System with Pipeline Parallelism — Jongyul Kim, Insu Jang, Waleed Reda, Jaeseong Im, Marco Canini, Dejan Kostić, Youngjin Kwon, Simon Peter, Emmett Witchel"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3",
+   "authors": [
+    "James Bornholt",
+    "Rajeev Joshi",
+    "Vytautas Astrauskas",
+    "Brendan Cully",
+    "Bernhard Kragl",
+    "Seth Markle",
+    "Kyle Sauri",
+    "Drew Schleit",
+    "Grant Slatton",
+    "Serdar Tasiran",
+    "Jacob Van Geffen",
+    "Andrew Warfield"
+   ],
+   "track": "main",
+   "source": "https://sosp2021.mpi-sws.org/program.html",
+   "evidence": "SOSP 2021 Best Paper Award: Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3 — James Bornholt, Rajeev Joshi, Vytautas Astrauskas, Brendan Cully, Bernhard Kragl, Seth Markle, Kyle Sauri, Drew Schleit, Grant Slatton, Serdar Tasiran, Jacob Van Geffen, Andrew Warfield"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Enabling High-Performance and Secure Userspace NVM File Systems with the Trio Architecture",
+   "authors": [
+    "Diyu Zhou",
+    "Vojtech Aschenbrenner",
+    "Tao Lyu",
+    "Jian Zhang",
+    "Sudarsun Kannan",
+    "Sanidhya Kashyap"
+   ],
+   "track": "main",
+   "source": "https://sosp2023.mpi-sws.org/program.html",
+   "evidence": "SOSP 2023 Best Paper Award: Enabling High-Performance and Secure Userspace NVM File Systems with the Trio Architecture — Diyu Zhou, Vojtech Aschenbrenner, Tao Lyu, Jian Zhang, Sudarsun Kannan, Sanidhya Kashyap"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TreeSLS: A Whole-system Persistent Microkernel with Tree-structured State Checkpoint on NVM",
+   "authors": [
+    "Fangnuo Wu",
+    "Mingkai Dong",
+    "Gequan Mo",
+    "Haibo Chen"
+   ],
+   "track": "main",
+   "source": "https://sosp2023.mpi-sws.org/program.html",
+   "evidence": "SOSP 2023 Best Paper Award: TreeSLS: A Whole-system Persistent Microkernel with Tree-structured State Checkpoint on NVM — Fangnuo Wu, Mingkai Dong, Gequan Mo, Haibo Chen"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Validating JIT Compilers via Compilation Space Exploration",
+   "authors": [
+    "Cong Li",
+    "Yanyan Jiang",
+    "Chang Xu",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "source": "https://sosp2023.mpi-sws.org/program.html",
+   "evidence": "SOSP 2023 Best Paper Award: Validating JIT Compilers via Compilation Space Exploration — Cong Li, Yanyan Jiang, Chang Xu, Zhendong Su"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FBDetect: Catching Tiny Performance Regressions at Hyperscale through In-Production Monitoring",
+   "authors": [
+    "Dong Young Yoon",
+    "Yang Wang",
+    "Miao Yu",
+    "Xu Huang",
+    "Juan Ignacio Jones",
+    "Abhinay Kukkadapu",
+    "Osman Kocas",
+    "Jonathan Wiepert",
+    "Kapil Goenka",
+    "Sherry Chen",
+    "Yanjun Lin",
+    "Zhihui Huang",
+    "Jocelyn Kong",
+    "Michael Chow",
+    "Chunqiang Tang"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2024/",
+   "alsoAt": [
+    "https://www.sigops.org/s/conferences/sosp/2024/accepted.html"
+   ],
+   "evidence": "SOSP 2024 Best Paper Award: FBDetect: Catching Tiny Performance Regressions at Hyperscale through In-Production Monitoring — Dong Young Yoon, Yang Wang, Miao Yu, Xu Huang, Juan Ignacio Jones, Abhinay Kukkadapu, Osman Kocas, Jonathan Wiepert, Kapil Goenka, Sherry Chen, Yanjun Lin, Zhihui Huang, Jocelyn Kong, Michael Chow, Chunqiang Tang"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "LazyLog: A New Shared Log Abstraction for Low-Latency Applications",
+   "authors": [
+    "Xuhao Luo",
+    "Shreesha G Bhat",
+    "Jiyu Hu",
+    "Ramnatthan Alagappan",
+    "Aishwarya Ganesan"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2024/",
+   "alsoAt": [
+    "https://www.sigops.org/s/conferences/sosp/2024/accepted.html"
+   ],
+   "evidence": "SOSP 2024 Best Paper Award: LazyLog: A New Shared Log Abstraction for Low-Latency Applications — Xuhao Luo, Shreesha G Bhat, Jiyu Hu, Ramnatthan Alagappan, Aishwarya Ganesan"
+  },
+  {
+   "venue": "SOSP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OZZ: Identifying Kernel Out-of-Order Concurrency Bugs with In-Vivo Memory Access Reordering",
+   "authors": [
+    "Dae R. Jeong",
+    "Yewon Choi",
+    "Byoungyoung Lee",
+    "Insik Shin",
+    "Youngjin Kwon"
+   ],
+   "track": "main",
+   "source": "https://www.sigops.org/s/conferences/sosp/2024/",
+   "alsoAt": [
+    "https://www.sigops.org/s/conferences/sosp/2024/accepted.html"
+   ],
+   "evidence": "SOSP 2024 Best Paper Award: OZZ: Identifying Kernel Out-of-Order Concurrency Bugs with In-Vivo Memory Access Reordering — Dae R. Jeong, Yewon Choi, Byoungyoung Lee, Insik Shin, Youngjin Kwon"
   },
   {
    "venue": "SOUPS",
