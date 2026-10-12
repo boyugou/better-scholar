@@ -820,6 +820,20 @@ test("SIGMETRICS awards page: test-of-time rows (authors before the title or on 
   assert.ok(entries.every((e) => e.evidence.includes(e.title)));
 });
 
+test("FOCS test-of-time page: award-year blocks, 'NNNN award' groups, a names line ending in a colon and the title under it; a missing space after an initial; a line that is not names is skipped", async () => {
+  const { parseFocs } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>Rules.</p><h2>Award Winners</h2><h3>At FOCS 2025:</h3><p>1995 award (citations):</p><p>Ann Lee, Bo Chen:</p><p>A Synthetic Retrieval Result</p>
+<p>2005 award (citations):</p><p>Cy A.Diaz, Dee Park:</p><p>The Synthetic Games Conjecture and Cuts</p><p>Eli Ross Fay Gray Gil Hall Ivy Xu Jo Yan Kai Zu:</p><p>Names Run Together Without Commas</p>
+<h3>At FOCS 2024:</h3><p>1994 award (citations):</p><p>Lu Mo:</p><p>Synthetic Algorithms for Quantum Things</p>`;
+  const { entries, skipped } = parseFocs(html);
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.paperYear, e.award, e.title, e.authors]), [
+    ["FOCS", 2025, 1995, "tot", "A Synthetic Retrieval Result", ["Ann Lee", "Bo Chen"]],
+    ["FOCS", 2025, 2005, "tot", "The Synthetic Games Conjecture and Cuts", ["Cy A. Diaz", "Dee Park"]],
+    ["FOCS", 2024, 1994, "tot", "Synthetic Algorithms for Quantum Things", ["Lu Mo"]]
+  ]);
+  assert.equal(skipped.length, 1, skipped.join("\n"));
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

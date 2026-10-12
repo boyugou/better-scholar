@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.8.0 — 2026-10-12
+
+- **FOCS Test of Time Awards** (24 entries, 2019–2025; the list holds 4708) from the TCMF's own page: *Private Information Retrieval*, *Cache-Oblivious
+  Algorithms*, *Algorithms for quantum computation*, *Universally Composable Security* … each with the paper's FOCS year. `tot.mjs focs`.
+
 ## 2.7.7 — 2026-10-12
 
 Eighteen more real profiles (autonomous driving, crowdsourcing, ML systems, web search, computational photography, biomedical and nursing informatics,

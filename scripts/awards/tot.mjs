@@ -15,7 +15,10 @@
 //                                                                       SIGPLAN's Most Influential Paper Awards (for the paper of ten years before): per year the
 //                                                                       authors, then "(for 2016) Title." and a "Citation:" paragraph
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   focs   https://tc.computer.org/tcmf/focs-test-time-award/            the FOCS Test of Time Award, 2019–: "At FOCS 2025:", "1995 award (citations):", then per paper
+//                                                                       a line "Authors:" and a line with the title
+//
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -29,7 +32,8 @@ const PAGES = {
   popl: "https://www.sigplan.org/Awards/POPL/",
   pldi: "https://www.sigplan.org/Awards/PLDI/",
   icfp: "https://www.sigplan.org/Awards/ICFP/",
-  oopsla: "https://www.sigplan.org/Awards/OOPSLA/"
+  oopsla: "https://www.sigplan.org/Awards/OOPSLA/",
+  focs: "https://tc.computer.org/tcmf/focs-test-time-award/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -148,11 +152,33 @@ export function parseSigplan(html, venue, source) {
   return { entries, skipped };
 }
 
+// "At FOCS 2025:" (the award year), "1995 award (citations):" (the paper's FOCS year), then "Author, Author:" and the title on the next line.
+// A names line that does not read as names (the page runs two together without a comma) is reported and skipped.
+export function parseFocs(html, source = PAGES.focs) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((l) => l.normalize("NFC"));
+  const start = ls.findIndex((l) => /^Award Winners$/i.test(l));
+  let year = null, paperYear = null;
+  for (let i = start + 1; i < ls.length; i++) {
+    const a = /^At FOCS (\d{4}):?$/i.exec(ls[i]);
+    if (a) { year = parseInt(a[1], 10); paperYear = null; continue; }
+    const p = /^((?:19|20)\d{2}) award\b/i.exec(ls[i]);
+    if (p) { paperYear = parseInt(p[1], 10); continue; }
+    if (!year || !paperYear || !/:\s*$/.test(ls[i]) || i + 1 >= ls.length) continue;
+    // ("Subhash A.Khot": the space after an initial is missing)
+    const who = names(ls[i].replace(/:\s*$/, "").replace(/\b(\p{Lu})\.(?=\p{Lu}\p{Ll})/gu, "$1. ")), title = cleanTitle(ls[i + 1]);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("FOCS", year, "Test of Time Award", title, who, source, `FOCS ${year} Test of Time Award (${paperYear}): ${ls[i].replace(/:\s*$/, "")}: ${title}`, paperYear));
+    else skipped.push(`${year}/${paperYear}: not read: ${ls[i].slice(0, 70)} / ${title.slice(0, 30)}`);
+    i++;
+  }
+  return { entries, skipped };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra }[kind];
-  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla [saved-page.html]"); process.exit(2); }
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs }[kind];
+  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
   const by = {};

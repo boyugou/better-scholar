@@ -267,6 +267,14 @@ test("the bundled list: SIGMETRICS's best papers, student papers and test-of-tim
   assert.deepEqual(find("Counter braids: a novel counter architecture for per-flow measurement", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: FOCS's test-of-time winners", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Cache-oblivious algorithms", "M Frigo, CE Leiserson, H Prokop, S Ramachandran"), ["FOCS 2019 tot"]);
+  assert.deepEqual(find("Private information retrieval", "B Chor, O Goldreich, E Kushilevitz, M Sudan"), ["FOCS 2025 tot"]);
+  assert.deepEqual(find("Cache-oblivious algorithms", "A Smith, B Jones"), []);
+});
+
 test("the bundled list: machine-learning winners from the years before the virtual sites list awards (NeurIPS 2014–2018, ICML 2017–2018)", () => {
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();

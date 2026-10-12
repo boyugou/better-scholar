@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4684
+  "count": 4708
  },
  "entries": [
   {
@@ -48079,6 +48079,378 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "Feedback Computing '13: Online Resource Management for Data Center with Energy Capping — A. S. M. Hasan Mahmud, Florida International University; Shaolei Ren, Florida International University"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Cache-Oblivious Algorithms",
+   "authors": [
+    "Matteo Frigo",
+    "Charles Leiserson",
+    "Harald Prokop",
+    "Sridhar Ramachandran"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2019 Test of Time Award (1999): Matteo Frigo, Charles Leiserson, Harald Prokop, Sridhar Ramachandran: Cache-Oblivious Algorithms"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Determinant Sums for Undirected Hamiltonicity",
+   "authors": [
+    "Andreas Björklund"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2020 Test of Time Award (2010): Andreas Björklund: Determinant Sums for Undirected Hamiltonicity"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How bad is selfish routing?",
+   "authors": [
+    "Tim Roughgarden",
+    "Éva Tardos"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2020 Test of Time Award (2000): Tim Roughgarden and Éva Tardos: How bad is selfish routing?"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Fully Homomorphic Encryption from (Standard) LWE",
+   "authors": [
+    "Zvika Brakerski",
+    "Vinod Vaikuntanathan"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2021 Test of Time Award (2011): Zvika Brakerski, Vinod Vaikuntanathan: Efficient Fully Homomorphic Encryption from (Standard) LWE"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How to Go Beyond the Black-Box Simulation Barrier",
+   "authors": [
+    "Boaz Barak"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2021 Test of Time Award (2001): Boaz Barak: How to Go Beyond the Black-Box Simulation Barrier"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Informational Complexity and the Direct Sum Problem for Simultaneous Message Complexity",
+   "authors": [
+    "Amit Chakrabarti",
+    "Yaoyun Shi",
+    "Anthony Wirth",
+    "Andrew Chi-Chih Yao"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2021 Test of Time Award (2001): Amit Chakrabarti, Yaoyun Shi, Anthony Wirth, Andrew Chi-Chih Yao: Informational Complexity and the Direct Sum Problem for Simultaneous Message Complexity"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Universally Composable Security: A New Paradigm for Cryptographic Protocols",
+   "authors": [
+    "Ran Canetti"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2021 Test of Time Award (2001): Ran Canetti: Universally Composable Security: A New Paradigm for Cryptographic Protocols"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Polynomial Time Algorithm for Counting Integral Points in Polyhedra When the Dimension Is Fixed",
+   "authors": [
+    "Alexander Barvinok"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2023 Test of Time Award (1993): Alexander Barvinok: A Polynomial Time Algorithm for Counting Integral Points in Polyhedra When the Dimension Is Fixed"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Candidate Indistinguishability Obfuscation and Functional Encryption for All Circuits",
+   "authors": [
+    "Sanjam Garg",
+    "Craig Gentry",
+    "Shai Halevi",
+    "Mariana Raykova",
+    "Amit Sahai",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2023 Test of Time Award (2013): Sanjam Garg, Craig Gentry, Shai Halevi, Mariana Raykova, Amit Sahai, and Brent Waters: Candidate Indistinguishability Obfuscation and Functional Encryption for All Circuits"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Value of Knowing a Demand Curve: Bounds on Regret for Online Posted-Price Auctions",
+   "authors": [
+    "Robert D. Kleinberg",
+    "Frank Thomson Leighton"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2023 Test of Time Award (2003): Robert D. Kleinberg and Frank Thomson Leighton: The Value of Knowing a Demand Curve: Bounds on Regret for Online Posted-Price Auctions"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Algorithms for quantum computation: discrete logarithms and factoring",
+   "authors": [
+    "Peter W. Shor"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (1994): Peter W. Shor: Algorithms for quantum computation: discrete logarithms and factoring"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Expander Codes",
+   "authors": [
+    "Michael Sipser",
+    "Daniel A. Spielman"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (1994): Michael Sipser, Daniel A. Spielman: Expander Codes"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On the power of quantum computation",
+   "authors": [
+    "Daniel R. Simon"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (1994): Daniel R. Simon: On the power of quantum computation"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Optimal Inapproximability results for Max-Cut and Other 2-Variables CSPs?",
+   "authors": [
+    "Subhash Khot",
+    "Guy Kindler",
+    "Elchanan Mossel",
+    "Ryan O’Donnell"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (2004): Subhash Khot, Guy Kindler, Elchanan Mossel, and Ryan O’Donnell: Optimal Inapproximability results for Max-Cut and Other 2-Variables CSPs?"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Popular conjectures imply strong lower bounds for dynamic problems",
+   "authors": [
+    "Amir Abboud",
+    "Virginia Vassilevska Williams"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (2014): Amir Abboud and Virginia Vassilevska Williams: Popular conjectures imply strong lower bounds for dynamic problems"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Worst-case to average-case reductions based on Gaussian measures",
+   "authors": [
+    "Daniele Micciancio"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2024 Test of Time Award (2004): Daniele Micciancio: Worst-case to average-case reductions based on Gaussian measures"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Faster Cutting Plane Method and its Implications for Combinatorial and Convex Optimization",
+   "authors": [
+    "Yin Tat Lee",
+    "Aaron Sidford",
+    "Sam Chiu-Wai Wong"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2015): Yin Tat Lee, Aaron Sidford, Sam Chiu-Wai Wong: A Faster Cutting Plane Method and its Implications for Combinatorial and Convex Optimization"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "AdWord and Generalized Online Matching",
+   "authors": [
+    "Aranyak Mehta",
+    "Amin Saberi",
+    "Umesh Vazirani",
+    "Vijay Vazirani"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2005): Aranyak Mehta, Amin Saberi, Umesh Vazirani, Vijay Vazirani: AdWord and Generalized Online Matching"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Agnostically Learning Half Spaces",
+   "authors": [
+    "Adam T. Kalai",
+    "Adam R. Klivans",
+    "Yishay Mansour Rocco A. Servedio"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2005): Adam T. Kalai, Adam R. Klivans, Yishay Mansour Rocco A. Servedio: Agnostically Learning Half Spaces"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Deterministic Communication vs. Partition Number",
+   "authors": [
+    "Mika Göös",
+    "Toniann Pitassi",
+    "Thomas Watson"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2015): Mika Göös, Toniann Pitassi, Thomas Watson: Deterministic Communication vs. Partition Number"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Gambling in a rigged casino: The adversarial multi-armed bandit problem",
+   "authors": [
+    "Peter Auer",
+    "Nicoló Cesa-Bianchi",
+    "Yoav Freund",
+    "Robert Schapire"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (1995): Peter Auer, Nicoló Cesa-Bianchi, Yoav Freund, Robert Schapire: Gambling in a rigged casino: The adversarial multi-armed bandit problem"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Indistinguishability Obfuscation from Functional Encryption",
+   "authors": [
+    "Nir Bitansky",
+    "Vinod Vaikuntanathan"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2015): Nir Bitansky, Vinod Vaikuntanathan: Indistinguishability Obfuscation from Functional Encryption"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Private Information Retrieval",
+   "authors": [
+    "Benny Chor",
+    "Oded Goldreich",
+    "Eyal Kushilevitz",
+    "Madhu Sudan"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (1995): Benny Chor, Oded Goldreich, Eyal Kushilevitz, Madhu Sudan: Private Information Retrieval"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Unique Games Conjecture, Integrality Gap for Cut Problems and Embeddability of Negative Type",
+   "authors": [
+    "Subhash A. Khot",
+    "Nisheeth K. Vishnoi"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
+   "evidence": "FOCS 2025 Test of Time Award (2005): Subhash A.Khot, Nisheeth K. Vishnoi: The Unique Games Conjecture, Integrality Gap for Cut Problems and Embeddability of Negative Type"
   },
   {
    "venue": "FSE",
