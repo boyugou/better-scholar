@@ -5,14 +5,14 @@
 # The same src/ folder also loads directly as an unpacked extension.
 #
 # Usage: scripts/package-chrome.sh
-# Output: dist/byline-chrome-<version>.zip
+# Output: dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="$ROOT/src"
 DIST="$ROOT/dist"
 VERSION="$(grep -o '"version"[^,]*' "$SRC/manifest.json" | head -1 | grep -o '[0-9][0-9.]*')"
-OUT="$DIST/byline-chrome-${VERSION}.zip"
+OUT="$DIST/scholar-author-roles-and-venue-ranks-chrome-${VERSION}.zip"
 
 # the bundled ranking data must match data/*.json
 node "$ROOT/scripts/build-data.mjs" --check

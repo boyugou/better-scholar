@@ -3,7 +3,7 @@
 // clean venue field. User-triggered and throttled; stops at the first sign of a CAPTCHA.
 (function () {
   "use strict";
-  const B = (globalThis.Byline = globalThis.Byline || {});
+  const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
   const { sleep } = B.dom;
   // About one request a second against Scholar; instant against a local test server.
   const PACE = () => (/^(127\.0\.0\.1|localhost)$/.test(location.hostname) ? 30 : 1000 + Math.random() * 600);

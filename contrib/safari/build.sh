@@ -21,8 +21,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 SRC="$ROOT/src"
 GEN="$ROOT/contrib/safari/.generated"
-APP_NAME="Byline"
-BUNDLE_ID="com.boyugou.Byline"   # maintainer default; change for your own signing
+APP_NAME="AuthorRolesVenueRanks"
+BUNDLE_ID="com.boyugou.AuthorRolesVenueRanks"   # maintainer default; change for your own signing
 
 INSTALL=0
 [ "${1:-}" = "--install" ] && INSTALL=1

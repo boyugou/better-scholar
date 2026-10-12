@@ -1,9 +1,15 @@
 {
   "extName": {
-    "message": "署名 Byline"
+    "message": "谷歌学术：作者位次与会议期刊等级"
   },
   "extDescription": {
-    "message": "在 Google Scholar 作者主页上，一眼看出每篇论文的作者角色（一作/二作/末位）与发表场所的 CCF / CORE 等级。"
+    "message": "在谷歌学术（Google Scholar）作者主页上，高亮一作、共一、二作和末位作者的论文，标出会议/期刊的 CCF / CORE 等级，并按位次×等级汇总。"
+  },
+  "extShortName": {
+    "message": "位次与等级"
+  },
+  "panelTitle": {
+    "message": "作者位次与会议期刊等级"
   },
   "summaryTitle": {
     "message": "按角色与等级统计"

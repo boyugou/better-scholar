@@ -1,4 +1,6 @@
-# Byline（署名）
+# 谷歌学术：作者位次与会议期刊等级
+
+_English name: Scholar Author Roles & Venue Ranks_
 
 **一眼看出每篇论文：你是第几作者、发在什么级别。** 这是一个 Chrome 扩展，读取
 [Google Scholar](https://scholar.google.com) 作者主页，为每篇论文标出作者角色
@@ -38,14 +40,14 @@
 无需构建、无依赖。打包 zip（用于分享或上架）：
 
 ```bash
-scripts/package-chrome.sh      # → dist/byline-chrome-<version>.zip
+scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip
 ```
 
 ## 它能知道什么、不能知道什么
 
 - **等级是当前名录的等级，不是发表时的等级。** 2009 年发在如今是 CCF-A 的会议上的论文，
   也显示 `CCF A`。CCF 还声明其目录**不作为学术评价依据**，且会议只计 full paper——
-  Byline 会排除 Findings、Workshop、Demo、Poster 等轨道，但无法从 Scholar 文本里区分
+  本扩展会排除 Findings、Workshop、Demo、Poster 等轨道，但无法从 Scholar 文本里区分
   short paper 与 full paper。
 - **角色来自 Scholar 的作者文本。** 缩写做了宽松匹配（`GE Hinton` = `Geoffrey Hinton`，
   `Jane` ≠ `John`），但两个不同的人仍可能在 `W Wang` 上撞车。共一标记（†、∗ 等）存在时会
@@ -54,7 +56,7 @@ scripts/package-chrome.sh      # → dist/byline-chrome-<version>.zip
 - **场所字符串很乱。** Scholar 显示的内容可由主页所有者编辑，且常被截断。认不出的会列在
   "发表场所未收录"里供你查看；不做模糊猜测。
 - **补全** 会访问 Google Scholar（论文自己的页面，同源、限速、缓存）。大量使用后 Google
-  可能弹出验证码；Byline 一遇到就会停下并提示。
+  可能弹出验证码；扩展一遇到就会停下并提示。
 - 不支持搜索结果页：那里既没有主页所有者，也没有完整的场所名称。
 
 ## 数据

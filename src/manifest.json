@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
   "version": "2.0.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
@@ -214,7 +215,7 @@
         "https://scholar.google.ws/citations*"
       ],
       "css": [
-        "content/byline.css"
+        "content/styles.css"
       ],
       "js": [
         "lib/names.js",

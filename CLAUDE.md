@@ -1,7 +1,7 @@
-# Byline
+# Scholar Author Roles & Venue Ranks
 
 Chrome (Manifest V3) extension for Google Scholar profiles: authorship roles × CCF / CORE
-venue tiers, as row colours, venue chips and a role × tier summary. See `README.md` and
+venue ranks, as row colours, venue chips and a role × rank summary. See `README.md` and
 `docs/ARCHITECTURE.md`.
 
 ## Platform policy — Chrome first
@@ -21,10 +21,13 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
 - **Develop against real data.** The matcher and name logic are tuned on real Scholar strings
   (`test/fixtures`). When changing them, run `npm test`, *review* any snapshot diff in
   `test/venues.test.js`, and only then `npm run test:update`. Add new real strings to the corpora.
-- Tiers are the current lists, not the tier at publication — keep saying so in the UI.
+- Ranks are the current lists, not the rank at publication — keep saying so in the UI.
 - No network access beyond the user-triggered read of a paper's page on Scholar itself. No
   analytics, no remote code, no new permissions without a very good reason.
 - Keep `lib/` pure (no DOM, no `chrome.*`) so it stays unit-testable in Node.
+- Naming: user-visible names are plain and descriptive (no coined words). In code the shared
+  namespace is `globalThis.RolesRanks`, and everything the extension adds to Scholar's DOM is
+  prefixed `rr-` (ids, classes, `data-rr-*`) so it cannot collide with Scholar's `gs_` / `gsc_`.
 
 ## Layout and commands
 
@@ -38,7 +41,7 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
   `data/core-2026.json` from the ICORE export via `scripts/core/build-core.mjs`.
 - `src/data/aliases.js` is hand-curated: names Scholar prints that differ from the official titles.
   Every alias must point at a real dataset row (tested).
-- `scripts/package-chrome.sh` → `dist/byline-chrome-<version>.zip` (`dist/` is git-ignored).
+- `scripts/package-chrome.sh` → `dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip` (`dist/` is git-ignored).
 - `scripts/update-scholar-domains.sh` regenerates the Scholar domain list in `src/manifest.json` —
   don't edit that list by hand.
 - User-visible strings live in `src/_locales/{en,zh_CN}/messages.json`; keep both in sync (tested).

@@ -1,15 +1,15 @@
-# Byline
+# Scholar Author Roles & Venue Ranks
 
-**See who led each paper — and where it was published.** A Chrome extension that
+**See who led each paper — and how its venue ranks.** A Chrome extension that
 reads a [Google Scholar](https://scholar.google.com) profile and shows, for every
 paper, the author's role (first / second / last…) and the venue's **CCF** and
-**CORE** tier — then adds them up: *"first-author CCF-A papers: 4"*.
+**CORE** rank — then adds them up: *"first-author CCF-A papers: 4"*.
 
 [简体中文](README.zh-CN.md)
 
 <p align="center"><img src="assets/icon.svg" width="72" alt=""></p>
 
-- **Role × tier summary** — a small matrix in the page: first / co-first / second /
+- **Role × rank summary** — a small matrix in the page: first / co-first / second /
   last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
   list exactly those papers. *Copy summary* and *Copy as table* put it on the
   clipboard for a CV or an application form.
@@ -45,14 +45,14 @@ Scholar domain. English and 简体中文 UI.
 No build step, no dependencies. To make a zip (for sharing, or a store upload):
 
 ```bash
-scripts/package-chrome.sh      # → dist/byline-chrome-<version>.zip
+scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip
 ```
 
 ## What it can and cannot know
 
-- **Tiers are today's, not the tier at publication time.** A 2009 paper in a venue
+- **Ranks are today's, not the rank at publication time.** A 2009 paper in a venue
   that is CCF-A now shows `CCF A`. CCF also states that its list is *not a basis for
-  academic evaluation*, and counts only full papers at conferences — Byline excludes
+  academic evaluation*, and counts only full papers at conferences — the extension excludes
   Findings, workshops, demos, posters and similar tracks, but cannot tell a short
   paper from a full one in Scholar's text.
 - **Roles come from Scholar's author text.** Initials are matched flexibly
@@ -64,7 +64,7 @@ scripts/package-chrome.sh      # → dist/byline-chrome-<version>.zip
   truncated. Anything unrecognised is listed ("papers at venues without a rank") so you
   can see what is missing; there is no fuzzy guessing.
 - **Resolve** talks to Google Scholar (the paper's own page, same-origin, throttled,
-  cached). Google may show a CAPTCHA after heavy use; Byline stops at the first sign of
+  cached). Google may show a CAPTCHA after heavy use; it stops at the first sign of
   one and tells you.
 - Search-result pages are not supported: they carry neither the profile owner nor
   complete venue names.

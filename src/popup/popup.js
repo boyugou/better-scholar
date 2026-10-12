@@ -1,12 +1,12 @@
 // Toolbar popup: the same role × tier summary as the in-page panel, for the active tab.
 (async function () {
   "use strict";
-  const B = globalThis.Byline;
+  const B = globalThis.RolesRanks;
   const { h, t, tn, copyText } = B.dom;
   const metrics = B.metrics;
 
   document.documentElement.lang = chrome.i18n.getUILanguage();
-  document.getElementById("title").textContent = t("extName");
+  document.getElementById("title").textContent = t("panelTitle");
   document.getElementById("ver").textContent = "v" + chrome.runtime.getManifest().version;
   const main = document.getElementById("main");
 
@@ -25,7 +25,7 @@
     const forced = parseInt(new URLSearchParams(location.search).get("tab"), 10);
     const [tab] = Number.isFinite(forced) ? [{ id: forced }] : await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab || tab.id == null) return null;
-    try { return await chrome.tabs.sendMessage(tab.id, { type: "byline:summary" }); } catch (e) { return null; }
+    try { return await chrome.tabs.sendMessage(tab.id, { type: "rr:summary" }); } catch (e) { return null; }
   }
 
   function render(data) {

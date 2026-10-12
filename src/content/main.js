@@ -3,7 +3,7 @@
 // isProfile() double-checks — author-search and citation pages are left alone).
 (async function () {
   "use strict";
-  const B = globalThis.Byline;
+  const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
 
   const { venues, analysis, metrics } = B;
@@ -64,13 +64,13 @@
       t(RULE_TEXT[info.rule] || "ruleName"),
       edition[kind] + " — " + t("tipToday")
     ];
-    return h("span", { class: "byline-chip byline-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
+    return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
   }
 
   function roleChip(a) {
     const pos = a.index + 1;
     const total = a.authorCount + (a.truncated ? "+" : "");
-    return h("span", { class: "byline-chip byline-chip-role byline-chip-role-" + a.role, "data-role": a.role,
+    return h("span", { class: "rr-chip rr-chip-role rr-chip-role-" + a.role, "data-role": a.role,
       title: `${t(ROLE_NAME[a.role])} · ${t("tipPosition", [String(pos), String(total)])}${a.fromDetail ? " · " + t("tipFromPage") : ""}` }, t(ROLE_CHIP[a.role]));
   }
 
@@ -78,7 +78,7 @@
   function markName(row) {
     const el = row.raw.authorsEl;
     if (!el) return;
-    if (el.dataset.bylineOrig !== undefined) { el.textContent = el.dataset.bylineOrig; delete el.dataset.bylineOrig; }
+    if (el.dataset.rrOrig !== undefined) { el.textContent = el.dataset.rrOrig; delete el.dataset.rrOrig; }
     if (!state.filters.markName || !row.highlighted || row.a.fromDetail) return;
     const text = el.textContent;
     let cursor = 0, pos = -1;
@@ -88,22 +88,22 @@
     });
     if (pos < 0) return;
     const nameLen = row.a.tokens[row.a.index].name.length;
-    el.dataset.bylineOrig = text;
-    el.replaceChildren(text.slice(0, pos), h("span", { class: "byline-name byline-name-" + row.a.role }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
+    el.dataset.rrOrig = text;
+    el.replaceChildren(text.slice(0, pos), h("span", { class: "rr-name rr-name-" + row.a.role }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
   }
 
   function decorate(row) {
     const { tr, venueEl } = row.raw;
     const a = row.a;
     row.highlighted = analysis.isHighlighted(a, settings.roles);
-    for (const r of analysis.ROLE_KEYS) tr.classList.toggle("byline-r-" + r, row.highlighted && a.role === r);
+    for (const r of analysis.ROLE_KEYS) tr.classList.toggle("rr-r-" + r, row.highlighted && a.role === r);
     if (venueEl) {
-      venueEl.querySelectorAll(":scope > .byline-chips").forEach((n) => n.remove());
+      venueEl.querySelectorAll(":scope > .rr-chips").forEach((n) => n.remove());
       const chips = [];
       if (settings.badges.ccf && a.venue.ccf) chips.push(tierChip("ccf", a.venue.ccf));
       if (settings.badges.core && a.venue.core) chips.push(tierChip("core", a.venue.core));
       if (row.highlighted) chips.push(roleChip(a));
-      if (chips.length) venueEl.append(h("span", { class: "byline-chips" }, chips));
+      if (chips.length) venueEl.append(h("span", { class: "rr-chips" }, chips));
     }
     markName(row);
   }
@@ -118,7 +118,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, settings.matrixSource)) hide = true;
-      row.raw.tr.classList.toggle("byline-hide", hide);
+      row.raw.tr.classList.toggle("rr-hide", hide);
     }
   }
 
@@ -266,7 +266,7 @@
   // The toolbar popup asks for the current summary.
   try {
     chrome.runtime.onMessage.addListener((msg, _sender, send) => {
-      if (msg && msg.type === "byline:summary") {
+      if (msg && msg.type === "rr:summary") {
         const list = papers();
         send({
           ok: true, owner: headerName, loaded: list.length, edition,

@@ -95,7 +95,7 @@ test("every string the UI asks for exists in the English catalog", () => {
   assert.deepEqual(missing, [], "messages used in code but not defined");
   // and no catalog entry is dead weight (singular "…One" forms are looked up dynamically)
   const code = walk(src).filter((x) => /\.(js|html)$/.test(x) && !x.includes("_locales")).map((f) => fs.readFileSync(f, "utf8")).join("\n");
-  const dead = Object.keys(en).filter((k) => !k.endsWith("One") && !code.includes(`"${k}"`) && !code.includes(`__MSG_${k}__`) && !manifest.description.includes(k));
+  const dead = Object.keys(en).filter((k) => !k.endsWith("One") && !code.includes(`"${k}"`) && !code.includes(`__MSG_${k}__`) && !JSON.stringify(manifest).includes(`__MSG_${k}__`));
   assert.deepEqual(dead, [], "unused messages");
 });
 

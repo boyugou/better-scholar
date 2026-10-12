@@ -1,6 +1,6 @@
 # Architecture
 
-Byline is a Manifest V3 extension built for Chrome. It is a **content script and
+This is a Manifest V3 extension built for Chrome. It is a **content script and
 nothing else**: no service worker, one permission (`storage`), and no network access
 except the optional, user-triggered read of a paper's own page on Scholar. The same
 `src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
@@ -20,7 +20,7 @@ popup/  ── asks the content script for the summary and renders the same matr
 ```
 
 Everything under `lib/` is **pure** (no DOM, no `chrome.*`). Each file is a UMD-style
-script: in the extension it attaches to `globalThis.Byline`, under Node it is
+script: in the extension it attaches to `globalThis.RolesRanks`, under Node it is
 `require`d. That is what lets the unit tests exercise the real code on real Scholar
 data, and why there is no build step.
 
@@ -132,13 +132,13 @@ UI says in the panel note and in every chip tooltip.
 
 `panel.js` is a pure view over a model. `main.js` rebuilds the model after every change
 (settings, filters, new rows from *Show more*, resolved papers) and re-renders; rows are
-decorated by toggling classes (`byline-r-<role>`, `byline-hide`) and appending one chip
+decorated by toggling classes (`rr-r-<role>`, `rr-hide`) and appending one chip
 container — no `innerHTML`, and the author line's text is never altered (name marking
 rebuilds it from the original text and restores it on undo). Venue resolution is
 synchronous and cached, so decorating cannot re-trigger the row observer. The panel moves
 between the right sidebar (wide window) and the space above the list (narrow window, where
 Scholar drops the sidebar *below* the list) as the window is resized. Styles are scoped under
-`#byline-panel` and out-rank the reset that stops Scholar's global button/input styles bleeding in.
+`#rr-panel` and out-rank the reset that stops Scholar's global button/input styles bleeding in.
 
 ## Storage and privacy
 

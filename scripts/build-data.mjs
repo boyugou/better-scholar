@@ -5,7 +5,7 @@
 //   node scripts/build-data.mjs --check    # exit 1 if src/data/*.js is out of date (used by tests/CI)
 //
 // The extension has no build step, so the generated files are committed. They are
-// plain scripts that attach to globalThis.Byline.data (and export under node).
+// plain scripts that attach to globalThis.RolesRanks.data (and export under node).
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -19,7 +19,7 @@ function emit(name, key, payload, source) {
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
-  else ((root.Byline = root.Byline || {}).data = (root.Byline && root.Byline.data) || {}).${key} = api;
+  else ((root.RolesRanks = root.RolesRanks || {}).data = (root.RolesRanks && root.RolesRanks.data) || {}).${key} = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
   return ${JSON.stringify(payload)};

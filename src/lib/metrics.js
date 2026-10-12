@@ -8,7 +8,7 @@
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
-  else (root.Byline = root.Byline || {}).metrics = api;
+  else (root.RolesRanks = root.RolesRanks || {}).metrics = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 

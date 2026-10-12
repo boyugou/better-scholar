@@ -1,7 +1,7 @@
 // Google Scholar profile page adapter: everything that knows Scholar's DOM lives here.
 (function () {
   "use strict";
-  const B = (globalThis.Byline = globalThis.Byline || {});
+  const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
   const $ = (s, r = document) => r.querySelector(s);
   const { sleep } = B.dom;
 
@@ -19,9 +19,9 @@
   // Text of an element without anything this extension appended to it.
   function cleanText(el) {
     if (!el) return "";
-    if (!el.querySelector(".byline-chips, .byline-name")) return el.textContent || "";
+    if (!el.querySelector(".rr-chips, .rr-name")) return el.textContent || "";
     const c = el.cloneNode(true);
-    c.querySelectorAll(".byline-chips").forEach((n) => n.remove());
+    c.querySelectorAll(".rr-chips").forEach((n) => n.remove());
     return c.textContent || "";
   }
 
@@ -63,8 +63,8 @@
     const mode = layout();
     const side = $(".gsc_rsb");
     const table = $("#gsc_a_tw") || $("#gsc_a_t");
-    panel.classList.toggle("bl-wide", mode === "above");
-    panel.classList.toggle("bl-float", mode === "float");
+    panel.classList.toggle("rr-wide", mode === "above");
+    panel.classList.toggle("rr-float", mode === "float");
     if (mode === "side") {
       if (panel.parentNode !== side || side.firstChild !== panel) side.insertBefore(panel, side.firstChild);
     } else if (mode === "above") {

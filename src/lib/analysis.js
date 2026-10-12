@@ -2,10 +2,10 @@
 // Pure (no DOM), shared by the content script and the tests.
 (function (root, factory) {
   const api = factory(
-    typeof require === "function" && typeof module === "object" ? require("./names.js") : root.Byline.names
+    typeof require === "function" && typeof module === "object" ? require("./names.js") : root.RolesRanks.names
   );
   if (typeof module === "object" && module.exports) module.exports = api;
-  else (root.Byline = root.Byline || {}).analysis = api;
+  else (root.RolesRanks = root.RolesRanks || {}).analysis = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function (names) {
   "use strict";
 

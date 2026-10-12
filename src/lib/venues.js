@@ -15,7 +15,7 @@
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
-  else (root.Byline = root.Byline || {}).venues = api;
+  else (root.RolesRanks = root.RolesRanks || {}).venues = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 

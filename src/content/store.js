@@ -4,7 +4,7 @@
 // updated while the tab stayed open) everything degrades to in-memory state.
 (function () {
   "use strict";
-  const B = (globalThis.Byline = globalThis.Byline || {});
+  const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
 
   const DEFAULTS = {
     v: 2,

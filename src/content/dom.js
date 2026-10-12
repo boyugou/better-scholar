@@ -1,7 +1,7 @@
 // Tiny DOM helpers shared by the panel and the popup. No framework, no innerHTML.
 (function () {
   "use strict";
-  const B = (globalThis.Byline = globalThis.Byline || {});
+  const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
 
   // h("div", { class: "x", onClick: fn, dataset: { a: 1 } }, "text", childNode, [more])
   function h(tag, attrs, ...children) {

@@ -1,12 +1,12 @@
 // Name normalisation, author-list parsing and authorship-role classification.
 //
 // Pure functions — no DOM, no chrome.* — so the same file runs in the content
-// script (as a plain script that attaches to `globalThis.Byline.names`) and under
+// script (as a plain script that attaches to `globalThis.RolesRanks.names`) and under
 // `node --test` (via require).
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
-  else (root.Byline = root.Byline || {}).names = api;
+  else (root.RolesRanks = root.RolesRanks || {}).names = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 

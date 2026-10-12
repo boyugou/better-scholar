@@ -15,7 +15,7 @@
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
-  else (root.Byline = root.Byline || {}).aliases = api;
+  else (root.RolesRanks = root.RolesRanks || {}).aliases = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
   return [

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <!-- Byline: a paper's title line, its author line with the first author highlighted, its venue line — and a tier badge -->
+  <!-- a paper's title line, its author line with the first author highlighted, its venue line — and a rank badge -->
   <rect width="128" height="128" rx="28" fill="#1a73e8"/>
   <rect x="20" y="26" width="88" height="13" rx="6.5" fill="#fff" fill-opacity=".5"/>
   <rect x="20" y="52" width="26" height="17" rx="8.5" fill="#fbbc04"/>

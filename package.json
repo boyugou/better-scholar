@@ -1,5 +1,5 @@
 {
-  "name": "google-scholar-highlighter",
+  "name": "scholar-author-roles-and-venue-ranks",
   "private": true,
   "description": "Chrome extension: authorship roles and CCF/CORE venue ranks on Google Scholar. No dependencies; this file only wires up the test runner.",
   "scripts": {

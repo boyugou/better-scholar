@@ -76,7 +76,7 @@ function expected(profile, { resolveHidden = false, extraOwner } = {}) {
 }
 
 // ---- build a test copy of the extension that also runs on 127.0.0.1 ------------
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "byline-e2e-"));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rr-e2e-"));
 const extDir = path.join(tmp, "ext");
 fs.cpSync(path.join(repo, "src"), extDir, { recursive: true });
 const manifestPath = path.join(extDir, "manifest.json");
@@ -87,7 +87,7 @@ fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 const extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
   .map((c) => String.fromCharCode("a".charCodeAt(0) + parseInt(c, 16))).join("");
 
-const outDir = process.env.E2E_OUT || path.join(os.tmpdir(), "byline-e2e-out");
+const outDir = process.env.E2E_OUT || path.join(os.tmpdir(), "rr-e2e-out");
 fs.mkdirSync(outDir, { recursive: true });
 
 let step = 0;
@@ -106,12 +106,12 @@ async function launch() {
 // DOM → matrix cells { role: { A, B, C, none, total } }
 const readMatrix = (page) => page.evaluate(() => {
   const out = {};
-  document.querySelectorAll("#byline-panel tbody tr[data-role]").forEach((tr) => {
+  document.querySelectorAll("#rr-panel tbody tr[data-role]").forEach((tr) => {
     const role = tr.dataset.role;
-    if (role === "hidden") { out.hidden = parseInt(tr.querySelector(".bl-total").textContent, 10); return; }
+    if (role === "hidden") { out.hidden = parseInt(tr.querySelector(".rr-total").textContent, 10); return; }
     out[role] = {};
-    tr.querySelectorAll("button.bl-cell").forEach((b) => { out[role][b.dataset.tier] = b.classList.contains("bl-zero") ? 0 : parseInt(b.textContent, 10); });
-    out[role].total = parseInt(tr.querySelector(".bl-total").textContent, 10);
+    tr.querySelectorAll("button.rr-cell").forEach((b) => { out[role][b.dataset.tier] = b.classList.contains("rr-zero") ? 0 : parseInt(b.textContent, 10); });
+    out[role].total = parseInt(tr.querySelector(".rr-total").textContent, 10);
   });
   return out;
 });
@@ -124,7 +124,7 @@ function matrixOf(papers, source = "ccf") {
   return out;
 }
 
-const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hide)").count();
+const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").count();
 
 (async () => {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -135,13 +135,13 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
   try {
     const page = await context.newPage();
     await page.goto(fx.url);
-    await page.waitForSelector("#byline-panel");
-    console.log("Byline e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
+    await page.waitForSelector("#rr-panel");
+    console.log("Roles & Ranks e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
 
     // -- 1. panel lands in the right-hand sidebar on a wide window
     const place = await page.evaluate(() => {
-      const p = document.getElementById("byline-panel");
-      return { inSidebar: p.parentElement.classList.contains("gsc_rsb"), first: p.parentElement.firstElementChild === p, wide: p.classList.contains("bl-wide") };
+      const p = document.getElementById("rr-panel");
+      return { inSidebar: p.parentElement.classList.contains("gsc_rsb"), first: p.parentElement.firstElementChild === p, wide: p.classList.contains("rr-wide") };
     });
     assert.deepEqual(place, { inSidebar: true, first: true, wide: false });
     ok("panel sits at the top of the sidebar on a wide window");
@@ -153,18 +153,18 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
     ok("summary matrix matches the pure-library result for the first 20 papers");
 
     // -- 3. row decoration
-    const roleCounts = await page.evaluate(() => Object.fromEntries(["first", "cofirst", "second", "last"].map((r) => [r, document.querySelectorAll("tr.byline-r-" + r).length])));
+    const roleCounts = await page.evaluate(() => Object.fromEntries(["first", "cofirst", "second", "last"].map((r) => [r, document.querySelectorAll("tr.rr-r-" + r).length])));
     const want20 = expected(first20);
     for (const r of ["first", "cofirst", "second", "last"]) assert.equal(roleCounts[r], want20.filter((p) => p.highlighted && p.role === r).length, "row class " + r);
-    const ccfChips = await page.locator('.byline-chip[data-kind="ccf"]').count();
+    const ccfChips = await page.locator('.rr-chip[data-kind="ccf"]').count();
     assert.equal(ccfChips, want20.filter((p) => p.venue.ccf).length);
-    const coreChips = await page.locator('.byline-chip[data-kind="core"]').count();
+    const coreChips = await page.locator('.rr-chip[data-kind="core"]').count();
     assert.equal(coreChips, want20.filter((p) => p.venue.core).length);
     assert.ok(ccfChips > 0 && coreChips > 0);
     ok(`rows tinted by role; ${ccfChips} CCF and ${coreChips} CORE chips`);
 
     // -- 4. tooltips carry provenance
-    const tip = await page.locator('.byline-chip[data-kind="ccf"]').first().getAttribute("title");
+    const tip = await page.locator('.rr-chip[data-kind="ccf"]').first().getAttribute("title");
     assert.match(tip, /CCF [ABC]/); assert.match(tip, /CCF 2026 \(7th edition\)/); assert.match(tip, /Matched by/);
     ok("badge tooltip names the matched venue, the rule and the edition");
 
@@ -180,18 +180,18 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
 
     // -- 6. role checkbox toggles highlighting (and persists to the DOM state)
     await page.uncheck('input[data-role="last"]');
-    assert.equal(await page.locator("tr.byline-r-last").count(), 0);
-    assert.equal(await page.locator('.byline-chip-role[data-role="last"]').count(), 0);
+    assert.equal(await page.locator("tr.rr-r-last").count(), 0);
+    assert.equal(await page.locator('.rr-chip-role[data-role="last"]').count(), 0);
     await page.check('input[data-role="last"]');
-    assert.equal(await page.locator("tr.byline-r-last").count(), all.filter((p) => p.highlighted && p.role === "last").length);
+    assert.equal(await page.locator("tr.rr-r-last").count(), all.filter((p) => p.highlighted && p.role === "last").length);
     ok("role checkboxes switch highlighting off and on");
 
     // -- 7. matrix cell filters the list
     const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;
-    await page.click('button.bl-cell[data-role="last"][data-tier="A"]');
+    await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), lastA);
-    assert.equal(await page.getAttribute('button.bl-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
-    await page.click('button.bl-cell[data-role="last"][data-tier="A"]');
+    assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
+    await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), 100);
     ok(`clicking last × CCF-A shows exactly ${lastA} papers; clicking again clears`);
 
@@ -214,11 +214,11 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
 
     // -- 10. mark name
     await page.check('input[data-act="mark-name"]');
-    assert.ok((await page.locator(".byline-name").count()) > 0);
+    assert.ok((await page.locator(".rr-name").count()) > 0);
     const textBefore = await page.locator("#gsc_a_b tr.gsc_a_tr").first().locator(".gs_gray").first().textContent();
     assert.equal(textBefore, profile.rows[0].authors, "marking a name must not change the text");
     await page.uncheck('input[data-act="mark-name"]');
-    assert.equal(await page.locator(".byline-name").count(), 0);
+    assert.equal(await page.locator(".rr-name").count(), 0);
     ok("name marking wraps the owner's name without altering the text, and undoes cleanly");
 
     // -- 11. resolve hidden roles from each paper's own page
@@ -231,7 +231,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
     assert.equal(fx.detailRequests(), 28);
     ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
-    const fromPage = await page.locator('.byline-chip-role').first().getAttribute("title");
+    const fromPage = await page.locator('.rr-chip-role').first().getAttribute("title");
     assert.ok(fromPage.length > 0);
 
     // -- 12. clipboard
@@ -247,10 +247,10 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
 
     // -- 13. collapse persists
     await page.click('[data-act="collapse"]');
-    assert.ok(await page.evaluate(() => document.getElementById("byline-panel").classList.contains("bl-collapsed")));
+    assert.ok(await page.evaluate(() => document.getElementById("rr-panel").classList.contains("rr-collapsed")));
     await page.reload();
-    await page.waitForSelector("#byline-panel");
-    assert.ok(await page.evaluate(() => document.getElementById("byline-panel").classList.contains("bl-collapsed")), "collapsed state survives a reload");
+    await page.waitForSelector("#rr-panel");
+    assert.ok(await page.evaluate(() => document.getElementById("rr-panel").classList.contains("rr-collapsed")), "collapsed state survives a reload");
     await page.click('[data-act="collapse"]');
     ok("collapsed state is stored in chrome.storage and restored");
 
@@ -258,12 +258,12 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
 
     // -- 14. narrow window: the panel moves above the list
     await page.setViewportSize({ width: 840, height: 900 });
-    await page.waitForFunction(() => document.getElementById("byline-panel").classList.contains("bl-wide"));
-    const narrow = await page.evaluate(() => { const p = document.getElementById("byline-panel"); return p.nextElementSibling && p.nextElementSibling.id; });
+    await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
+    const narrow = await page.evaluate(() => { const p = document.getElementById("rr-panel"); return p.nextElementSibling && p.nextElementSibling.id; });
     assert.equal(narrow, "gsc_a_tw");
     await page.screenshot({ path: path.join(outDir, "narrow.png") });
     await page.setViewportSize({ width: 1360, height: 900 });
-    await page.waitForFunction(() => !document.getElementById("byline-panel").classList.contains("bl-wide"));
+    await page.waitForFunction(() => !document.getElementById("rr-panel").classList.contains("rr-wide"));
     ok("narrow window moves the panel above the paper list (two-column layout), wide window moves it back");
 
     // -- 15. popup shows the same summary for the profile tab
@@ -272,7 +272,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
     await popup.waitForSelector("#main");
     assert.match(await popup.textContent("#main"), /Open a Google Scholar author profile/);
     const tabId = await popup.evaluate(async () => {
-      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "byline:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
       return null;
     });
     assert.ok(tabId != null, "a profile tab answers the popup's message");
@@ -286,7 +286,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
     ok("toolbar popup renders the active profile's summary (and a hint on other pages)");
 
     // -- 16. i18n substitutions resolved (no raw $N1$ placeholders anywhere)
-    const body = await page.evaluate(() => document.getElementById("byline-panel").textContent);
+    const body = await page.evaluate(() => document.getElementById("rr-panel").textContent);
     assert.ok(!/\$N\d\$|\$\d/.test(body), "placeholders substituted");
     assert.match(body, /20 papers loaded/);   // (the page was reloaded in step 13)
     ok("chrome.i18n placeholders are substituted");
@@ -304,20 +304,20 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.byline-hid
   try {
     const page = await ctx2.newPage();
     await page.goto(fx2.url);
-    await page.waitForSelector("#byline-panel");
-    const absentBefore = await page.locator('[data-byline="absent"]').count();
+    await page.waitForSelector("#rr-panel");
+    const absentBefore = await page.locator('[data-rr="absent"]').count();
     assert.equal(absentBefore, 1, "the panel reports papers where the name was not found");
-    await page.click('[data-byline="variants"] summary');
+    await page.click('[data-rr="variants"] summary');
     await page.fill('input[data-act="variant-input"]', "Ion Stoica");
     await page.press('input[data-act="variant-input"]', "Enter");
-    await page.waitForFunction(() => !document.querySelector('[data-byline="absent"]') || /^\d+ papers where/.test(document.querySelector('[data-byline="absent"]').textContent));
+    await page.waitForFunction(() => !document.querySelector('[data-rr="absent"]') || /^\d+ papers where/.test(document.querySelector('[data-rr="absent"]').textContent));
     const m = await readMatrix(page);
     const want = matrixOf(expected({ owner: "Ion Stoica", rows: fx2.profile.rows }));
     assert.deepEqual(m, want);
     ok("adding a name variant re-matches every paper");
     // the variant is remembered for this profile after a reload
     await page.reload();
-    await page.waitForSelector("#byline-panel");
+    await page.waitForSelector("#rr-panel");
     assert.deepEqual(await readMatrix(page), want);
     ok("name variants persist per profile");
     // this profile is served with a Chinese interface (hl=zh-CN): detail-page labels are localised unless hl=en is requested

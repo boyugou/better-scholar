@@ -1,12 +1,18 @@
 {
   "extName": {
-    "message": "Byline"
+    "message": "Scholar Author Roles & Venue Ranks"
   },
   "extDescription": {
-    "message": "See who led each paper and where it was published: authorship roles × CCF / CORE tiers on Google Scholar profiles."
+    "message": "Highlight first-, co-first- and last-author papers on Google Scholar, with each venue's CCF / CORE rank and a role × rank summary."
+  },
+  "extShortName": {
+    "message": "Roles & Ranks"
+  },
+  "panelTitle": {
+    "message": "Author roles & venue ranks"
   },
   "summaryTitle": {
-    "message": "Papers by role and tier"
+    "message": "Papers by role and rank"
   },
   "hlLabel": {
     "message": "Highlight"
@@ -189,7 +195,7 @@
     "message": "of"
   },
   "dataNote": {
-    "message": "Tiers come from today's $N1$ lists, not the tier at publication time. CCF states that its list is not a basis for academic evaluation.",
+    "message": "Ranks come from today's $N1$ lists, not the rank at publication time. CCF states that its list is not a basis for academic evaluation.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -218,7 +224,7 @@
     "message": "Matched by the visible part of a truncated name"
   },
   "tipToday": {
-    "message": "current list, not the tier at publication"
+    "message": "current list, not the rank at publication"
   },
   "tipPosition": {
     "message": "position $N1$ of $N2$",
