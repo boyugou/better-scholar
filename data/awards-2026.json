@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6325
+  "count": 6331
  },
  "entries": [
   {
@@ -85270,6 +85270,111 @@
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
    "evidence": "ETAPS 2018 EAPLS Best Paper Award: Ilya Grishchenko, Matteo Maffei, Clara Schneidewind. A Semantic Framework for the Security Analysis of Ethereum smart contracts"
+  },
+  {
+   "venue": "RSS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments",
+   "authors": [
+    "Chao Cao",
+    "Hongbiao Zhu",
+    "Howie Choset",
+    "Ji Zhang"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2021/program/awards/",
+   "evidence": "RSS 2021 Best Paper Award: TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments — Chao Cao, Hongbiao Zhu, Howie Choset, Ji Zhang"
+  },
+  {
+   "venue": "RSS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "DiSECt: A Differentiable Simulation Engine for Autonomous Robotic Cutting",
+   "authors": [
+    "Eric Heiden",
+    "Miles Macklin",
+    "Yashraj S Narang",
+    "Dieter Fox",
+    "Animesh Garg",
+    "Fabio Ramos"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2021/program/awards/",
+   "evidence": "RSS 2021 Best Student Paper Award: DiSECt: A Differentiable Simulation Engine for Autonomous Robotic Cutting — Eric Heiden, Miles Macklin, Yashraj S Narang, Dieter Fox, Animesh Garg, Fabio Ramos"
+  },
+  {
+   "venue": "RSS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Learning Riemannian Manifolds for Geodesic Motion Skills",
+   "authors": [
+    "Hadi Beik-mohammadi",
+    "Soren Hauberg",
+    "Georgios Arvanitidis",
+    "Gerhard Neumann",
+    "Leonel Rozo"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2021/program/awards/",
+   "evidence": "RSS 2021 Best Student Paper Award: Learning Riemannian Manifolds for Geodesic Motion Skills — Hadi Beik-mohammadi, Soren Hauberg, Georgios Arvanitidis, Gerhard Neumann, Leonel Rozo"
+  },
+  {
+   "venue": "RSS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Systems Paper Award",
+   "title": "Autonomously Untangling Long Cables",
+   "authors": [
+    "Kaushik Shivakumar",
+    "Vainavi Viswanath",
+    "Justin Kerr",
+    "Brijen Thananjeyan",
+    "Ellen Novoseller",
+    "Jeffrey Ichnowski",
+    "Ken Goldberg",
+    "Joseph Gonzalez",
+    "Michael Laskey",
+    "Alejandro Escontrela"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2022/program/awards/",
+   "evidence": "RSS 2022 Best Systems Paper Award: Autonomously Untangling Long Cables — Kaushik Shivakumar, Vainavi Viswanath, Justin Kerr, Brijen Thananjeyan, Ellen Novoseller, Jeffrey Ichnowski, Ken Goldberg, Joseph Gonzalez, Michael Laskey, Alejandro Escontrela"
+  },
+  {
+   "venue": "RSS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Iterative Residual Policy for Goal-Conditioned Dynamic Manipulation of Deformable Objects",
+   "authors": [
+    "Cheng Chi",
+    "Benjamin CM Burchfiel",
+    "Eric Cousineau",
+    "Siyuan Feng",
+    "Shuran Song"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2022/program/awards/",
+   "evidence": "RSS 2022 Best Paper Award: Iterative Residual Policy for Goal-Conditioned Dynamic Manipulation of Deformable Objects — Cheng Chi, Benjamin CM Burchfiel, Eric Cousineau, Siyuan Feng, Shuran Song"
+  },
+  {
+   "venue": "RSS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "AK: Attentive Kernel for Information Gathering",
+   "authors": [
+    "Weizhe Chen",
+    "Roni Khardon",
+    "Lantao Liu"
+   ],
+   "track": "main",
+   "source": "https://roboticsconference.org/2022/program/awards/",
+   "evidence": "RSS 2022 Best Student Paper Award: AK: Attentive Kernel for Information Gathering — Weizhe Chen, Roni Khardon, Lantao Liu"
   },
   {
    "venue": "S&P",

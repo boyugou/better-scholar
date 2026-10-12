@@ -1887,3 +1887,9 @@ test("CoRL awards page: winners' titles and plain author lines under the award h
   const h = `<p>Awards</p><p>"Outstanding Paper Award" Winners for CoRL 2024</p><p>A Robot Learning Paper Title</p><p>Ann Lee, Bo Chan, Cy Dunn</p><p>"Outstanding Paper Award" Finalists for CoRL 2024</p><p>A Finalist Paper Title</p><p>Ed Fox, Flo Gray</p><p>Report abuse</p>`;
   assert.deepEqual(parseCorlAwards(h, "https://2024.corl.org/program/awards").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["outstanding A Robot Learning Paper Title | Ann Lee; Bo Chan; Cy Dunn"]);
 });
+
+test("RSS awards page: winners under their headings with 'A, B, and C' author lines, the finalists are left out", async () => {
+  const { parseRssAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Congratulations to the following people!</p><p>Best Paper Award</p><p>A Robot Systems Paper Title</p><p>Ann Lee, Bo Chan, and Cy Dunn</p><p>Best Student Paper Award</p><p>A Student Robot Paper</p><p>Ed Fox; Flo Gray</p><p>Best Student Paper Finalists</p><p>A Finalist Paper Title</p><p>Gil Hart</p>`;
+  assert.deepEqual(parseRssAwards(h, "https://roboticsconference.org/2022/program/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Robot Systems Paper Title | Ann Lee; Bo Chan; Cy Dunn", "student A Student Robot Paper | Ed Fox; Flo Gray"]);
+});

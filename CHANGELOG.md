@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.41 — 2026-10-12
+
+- RSS's best, best student and best systems papers of 2021 and 2022 (6 papers) from the conference's own awards pages (`tot.mjs rss-year`); the other years' pages list only finalists or nominees. The list has 6331 awards.
+
 ## 2.10.40 — 2026-10-12
 
 - CoRL's outstanding paper awards of 2024 and best / best student paper awards of 2025 (5 papers) from the conference's own awards pages (`tot.mjs corl-year`); the finalists are not read. The list has 6325 awards.
