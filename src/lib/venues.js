@@ -114,7 +114,8 @@
 
   // -------------------------------------------------------------- input cleanup
 
-  const MONTH = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*";
+  // (the whole word: "Marketing" and "Decision" are not months — "Journal of Marketing" was read as "Journal of" and then as the Journal of the ACM)
+  const MONTH = "(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
   const PAGES = "(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";
 
   // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
@@ -152,6 +153,7 @@
       s = s.replace(/\s+\d+\s*\([^)]*\)?\s*$/, "");                         // " 42 (3)" / " 8 (4"
       s = s.replace(/\s*[,:]?\s*\b(?:volume|vol\.?)\s*\d+.*$/i, "");        // "Volume 1 (Long Papers)"
       s = s.replace(/\s+\d{1,3}\s*:.*$/, "");                               // "… Systems 15: Proceedings"
+      s = s.replace(new RegExp("\\s*,?\\s*\\b" + MONTH + "\\b\\.?\\s*(?:19|20)\\d{2}\\s*$", "i"), "");   // ", December 2012"
       s = s.replace(new RegExp("\\s*,?\\s*\\b" + MONTH + "\\b\\.?\\s*(?:\\d{1,2}\\s*[-–]\\s*\\d{1,2})?\\s*$", "i"), "");
       changed = s !== before;
     }

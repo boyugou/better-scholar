@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.9.14 — 2026-10-12
+
+- **A wrong badge fixed.** *Journal of Marketing* was drawn as CCF A, the Journal of the ACM: the cleanup that removes a trailing month ("Dec. 2010") took any word that begins with a month's three
+  letters for one, so "Marketing" went and "Journal of" was left. A month now has to be the whole word (January … December and their usual short forms). Found by running the names of the 2,000
+  most-cited journals and conferences (OpenAlex) through the matcher; none of the real-profile corpora contained such a string. A trailing month and year with no comma (*Journal of the ACM, December 2009*) is now dropped too.
+- Known, not changed: *International Conference on Computer and Communications (ICCC)* reads as INFOCOM, *International Congress on Image and Signal Processing (CISP)* as ICISP and
+  *IEEE Region 10 Symposium (TENSYMP)* as TENCON — the names boil down to the same words and the acronym in the parenthesis alone cannot tell them apart without wrongly dropping
+  real ones (*(ICFPT)* for FPT, *(WHC)* for the World Haptics Conference).
+
 ## 2.9.13 — 2026-10-12
 
 - The IEEE VIS Test-of-Time Awards (InfoVis, VAST, SciVis and VIS tracks, awarded 2016–2025, 51 papers) from IEEE VIS's own history page (`tot.mjs vis`). The bundled list has 5034 awards.

@@ -464,6 +464,15 @@ test("IEEE's High Performance symposia: a cut-off '13th IEEE International Sympo
   assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
 });
 
+test("a month is a whole word: 'Journal of Marketing' is not 'Journal of' (and so not the Journal of the ACM), a trailing 'Dec. 2010' still goes", () => {
+  assert.equal(brief("Journal of Marketing"), "");
+  assert.equal(brief("Journal of Marketing 80 (3), 1-20, 2016"), "");
+  assert.equal(brief("International Journal of Marketing"), "");
+  assert.equal(brief("Journal of the ACM 56 (3), Dec. 2009"), "CCF A JACM");
+  assert.equal(brief("Journal of the ACM, December 2009"), "CCF A JACM");
+  assert.equal(brief("SIGCOMM, Sept. 2008"), "CCF A SIGCOMM · CORE A* SIGCOMM");
+});
+
 test("Springer's colon form: 'Series: 18th International Conference, ACR 2020, Place …' is the venue", () => {
   assert.equal(brief("Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …, 2020"), "CCF B TCC · CORE B TCC");
   assert.equal(brief("Computer Aided Verification: 13th International Conference, CAV 2001, Paris …, 2003"), "CCF A CAV · CORE A* CAV");
