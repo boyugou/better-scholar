@@ -552,3 +552,9 @@ test("a curated name for whole strings only is never the start of a cut-off one;
   assert.equal(brief("Proceedings of the 10th European software engineering conference held …, 2005"), "CCF A FSE · CORE A* FSE");
   assert.equal(brief("International Symposium of Formal Methods Europe, 503-521, 2003"), "CCF A FM · CORE B FM");
 });
+
+test("the words of a cut-off name are judged on the names that begin with it, not on every alias of the venue", () => {
+  // CCF's own ASIACRYPT name begins exactly so; CORE's EuroCrypt must not win through its alias that says 'Annual'
+  assert.ok(!/EuroCrypt/.test(brief("Annual International Conference on the Theory and Application of …, 2008")));
+  assert.equal(brief("Annual International Conference on the Theory and Applications of …, 2008"), "CCF A EUROCRYPT · CORE A* EuroCrypt");
+});

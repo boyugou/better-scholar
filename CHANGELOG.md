@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.5.10 — 2026-10-12
+
+From the independent review.
+
+- **Loading a long profile is lighter.** The name-spelling check that looks at every row after each page of rows is loaded now remembers
+  what it worked out about a row: 1,000 papers of 40 authors took 2.8 s over ten pages, now 0.3 s (results identical on 695 random and
+  real cases).
+- **A ninth name spelling replaces the oldest** instead of silently doing nothing (at most eight are kept per profile).
+- **A cut-off name is read through the names that begin with it.** The event word (*symposium*, *conference*) and *annual* of an alias of
+  another era no longer decide between venues (the review's case: CORE's EuroCrypt winning for *"Annual International Conference on the
+  Theory and Application of …"* through an alias that says *Annual*).
+
 ## 2.5.9 — 2026-10-12
 
 More from the twelve real profiles (1,137 venue strings, now in the test corpora).

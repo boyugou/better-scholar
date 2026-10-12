@@ -72,7 +72,7 @@
   }
   async function saveVariants(profileId, list) {
     const all = Object.assign({}, (await get("sync", "variants")) || {});
-    if (list.length) all[profileId] = list.slice(0, 8); else delete all[profileId];
+    if (list.length) all[profileId] = list.slice(-8); else delete all[profileId];
     const keys = Object.keys(all);
     if (keys.length > 40) delete all[keys[0]];          // chrome.storage.sync items are capped at 8 KB
     await set("sync", "variants", all);

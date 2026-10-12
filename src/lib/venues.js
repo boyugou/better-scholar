@@ -228,7 +228,7 @@
         const form = {
           full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
           kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg"),
-          seq: rawSeq(plain),
+          seq: rawSeq(plain), raw: n,
           // a curated name that says "joint" is what a string that says it too reads as; a string that does not is not it
           // (the official names — AAMAS's "Joint Conference …" is also printed without the word — are not held to this)
           needsJoint: !!curated && /\bjoint\b/i.test(plain),
@@ -514,9 +514,12 @@
       const rawKeep = canonTokensKeepStops(p.plain, "full");
       const trailingStops = [];
       for (let i = rawKeep.length - 1; i >= 0 && STOP.has(rawKeep[i]); i--) trailingStops.unshift(rawKeep[i]);
+      // The candidates are the venues, seen through the names that begin with what is visible: the event words and "annual" of a name
+      // that did not match (a historical alias, the other list's wording) say nothing about this string.
+      const through = (found) => Array.from(found, ([entry, names]) => Object.create(entry, { extra: { value: names } }));
       const prefixPass = (mode) => {
         const Rm = canonTokens(p.plain, mode);
-        const found = new Set();
+        const found = new Map();
         // One content word says too little ("… the IEEE Computer and …" is INFOCOM, not CCS; "Principles of …"
         // is PODC, PODS or POPL) unless the word is rare among venue names ("Architectural …" is ASPLOS).
         if (!Rm.length || (Rm.length < 2 && (idx.df.get(Rm[0]) || 0) > 5)) return [];
@@ -532,10 +535,10 @@
               const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
               if (at < 0 || trailingStops.some((w, k) => ts[at + 1 + k] !== w)) continue;
             }
-            found.add(entry);
+            found.set(entry, [...(found.get(entry) || []), form.raw]);
           }
         }
-        return Array.from(found);
+        return through(found);
       };
       // strict pass first (organisation words must agree), then a looser one without them
       // "annual" in the string is an event word too: when several venues begin with what is left, only those that call
@@ -558,13 +561,13 @@
       if (!d) {
         const seq = rawSeq(p.plain);
         if (seq.length >= 4) {
-          const found = new Set();
+          const found = new Map();
           for (const side of sides) {
             for (const { entry, form } of side.first.full.get(R[0]) || []) {
-              if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.add(entry);
+              if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.set(entry, [...(found.get(entry) || []), form.raw]);
             }
           }
-          let cands = Array.from(found);
+          let cands = through(found);
           // ISCA calls itself the annual symposium, IFIP Performance does not
           if (cands.length > 1 && annual) cands = cands.filter((e) => hasWord(e, "annual"));
           d = cands.length === 1 ? cands[0] : null;      // one venue, not "same rating, pick any": the tooltip names it

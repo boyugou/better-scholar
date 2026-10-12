@@ -259,9 +259,24 @@
   //                owner in hardly any paper and the other order in many ("Tang Jie" on the profile, "J Tang" in the papers)
   //   suggestions  spellings to offer: author names, in at least two papers whose complete author lists do not otherwise
   //                contain the owner, that are the owner's name rearranged ("SY Philip")
+  //
+  // It runs again over every row read so far each time a page of rows is loaded, so what it works out about a row — the parsed author
+  // line, where an owner's spelling finds the owner in it, whether a name is a rearrangement of the owner's — is remembered.
+  const CACHE_LIMIT = 6000;
+  const parsedCache = new Map(), foundCache = new Map();
+  const remember = (cache, key, make) => {
+    let v = cache.get(key);
+    if (v === undefined) { if (cache.size >= CACHE_LIMIT) cache.clear(); v = make(); cache.set(key, v); }
+    return v;
+  };
+  const ownerKey = (o) => [o.name, ...(o.alternates || [])].join("\u0001");
   function suggestVariants(authorTexts, owner) {
-    const lists = authorTexts.map(parseAuthors);
-    const count = (o) => lists.reduce((n, l) => n + (findOwner(l.tokens, o) >= 0 ? 1 : 0), 0);
+    const lists = authorTexts.map((text) => remember(parsedCache, text, () => parseAuthors(text)));
+    const found = (l, text, o, key) => remember(foundCache, key + "\u0002" + text, () => findOwner(l.tokens, o));
+    const count = (o) => {
+      const key = ownerKey(o);
+      return lists.reduce((n, l, i) => n + (found(l, authorTexts[i], o, key) >= 0 ? 1 : 0), 0);
+    };
     const out = { auto: [], suggestions: [] };
     let current = owner;
     const base = count(owner);
@@ -277,12 +292,15 @@
       }
     }
     const tally = new Map();
-    for (const l of lists) {
-      if (l.truncated || findOwner(l.tokens, current) >= 0) continue;
+    const currentKey = ownerKey(current), permutations = new Map();
+    const isRearranged = (name) => { let v = permutations.get(name); if (v === undefined) { v = isPermutation(name, current.name); permutations.set(name, v); } return v; };
+    for (let i = 0; i < lists.length; i++) {
+      const l = lists[i];
+      if (l.truncated || found(l, authorTexts[i], current, currentKey) >= 0) continue;
       const seen = new Set();
       for (const t of l.tokens) {
         const key = normalize(t.name);
-        if (seen.has(key) || !isPermutation(t.name, current.name)) continue;
+        if (seen.has(key) || !isRearranged(t.name)) continue;
         seen.add(key);
         const e = tally.get(key) || { name: t.name, rows: 0 };
         e.rows++;

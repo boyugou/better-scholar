@@ -267,7 +267,7 @@
     onCancelResolve() { if (resolveAbort) resolveAbort.abort(); },
     onAddVariant(v) {
       if (variants.includes(v)) return;
-      variants = [...variants, v].slice(0, 8);
+      variants = [...variants, v].slice(-8);        // at most eight: a ninth replaces the oldest, so adding one always does something
       B.store.saveVariants(profileId, variants);
       rehint();
       refresh();
