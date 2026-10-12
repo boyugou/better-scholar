@@ -125,7 +125,7 @@
 
   // ------------------------------------------------------- type & track signals
 
-  const CONF_SIGNAL = /\b(?:proceedings?|proc|conference|conf|symposium|symposia|symp|workshop|meeting|congress|colloquium|summit|forum|advances in)\b/i;
+  const CONF_SIGNAL = /\b(?:proceedings?|proc|conference|conf|symposium|symposia|symp|workshop|meeting|congress|colloquium|summit|advances in)\b/i;
   const JOURNAL_SIGNAL = /\b(?:journal|transactions?|trans|letters?|reviews?|magazine|bulletin|annals?|archives|news(?:letter)?|quarterly|surveys?|reports?)\b|^communications of\b/i;
   // The journals literally titled "Proceedings of the IEEE" / "…National Academy of Sciences" — but not
   // "Proceedings of the IEEE Conference on …".
@@ -226,12 +226,35 @@
         }
       }
     }
-    return { sources, known };
+    // how many venues use each word anywhere in their names: a lone visible word is only a usable prefix
+    // when it is rare ("architectural" → ASPLOS), never when it is common ("computer", "principles")
+    const df = new Map();
+    for (const side of [sources.ccf.C, sources.ccf.J, sources.core.C]) {
+      for (const entry of side.all) {
+        const words = new Set();
+        for (const n of entry.extra) for (const w of canonTokens(n.replace(/\([^()]*\)/g, " "), "full")) words.add(w);
+        for (const w of words) df.set(w, (df.get(w) || 0) + 1);
+      }
+    }
+    return { sources, known, df };
   }
 
   // ---------------------------------------------------------------- matching
 
   const hasWord = (e, w) => e.extra.some((n) => new RegExp("\\b" + w + "\\b", "i").test(n));
+
+  // Of entries that share a canonical key, the one whose own name uses the most of the string's
+  // boilerplate words (forum, international, symposium …) — or null when none stands out.
+  function pickByBoiler(entries, plain) {
+    const words = new Set(fold(plain).toLowerCase().split(/[^a-z0-9]+/).filter((w) => BOILER.has(w)));
+    const score = (e) => {
+      let n = 0;
+      for (const name of e.extra) for (const w of new Set(fold(name).toLowerCase().split(/[^a-z0-9]+/))) if (words.has(w)) n++;
+      return n;
+    };
+    const scored = entries.map((e) => ({ e, s: score(e) })).sort((a, b) => b.s - a.s);
+    return scored[0].s > scored[1].s ? scored[0].e : null;
+  }
 
   // Pick one entry out of the hits for a key. Hits that all carry the same rating are
   // interchangeable for the badge; otherwise the event-type word in the raw string
@@ -307,12 +330,16 @@
     // do not name-match it to a conference of the same name.
     const nameSides = !hint && p.hasVolume ? sides.filter((side) => side === idx.sources[src].J) : sides;
     const nameHit = (getter) => {
+      const hits = [];
       for (const side of nameSides) {
         const d = decide(getter(side), rawWords);
         if (d === "ambiguous") return "ambiguous";
-        if (d) return d;
+        if (d) hits.push(d);
       }
-      return null;
+      // a journal and a conference can share a canonical key ("Computer Graphics Forum" / "Computer
+      // Graphics International"): the boilerplate word the string keeps (forum / international) says which
+      if (hits.length > 1) { const pick = pickByBoiler(hits, p.plain); if (pick) return pick; }
+      return hits[0] || null;
     };
     const modes = p.truncated ? ["full"] : ["full", "noOrg", "noAcr"];
     const seen = new Set();
@@ -374,11 +401,15 @@
       const prefixPass = (mode) => {
         const Rm = canonTokens(p.plain, mode);
         const found = new Set();
-        if (!Rm.length) return [];
+        // One content word says too little ("… the IEEE Computer and …" is INFOCOM, not CCS; "Principles of …"
+        // is PODC, PODS or POPL) unless the word is rare among venue names ("Architectural …" is ASPLOS).
+        if (!Rm.length || (Rm.length < 2 && (idx.df.get(Rm[0]) || 0) > 5)) return [];
         for (const side of sides) {
           for (const { entry, form } of side.first[mode].get(Rm[0]) || []) {
             const t = form[mode];
-            if (!(t.length > Rm.length && Rm.every((w, i) => t[i] === w))) continue;
+            // an entry whose whole name is what is visible is a candidate too: "… International Conference on
+            // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
+            if (!(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
             if (trailingStops.length) {
               const ts = form[mode === "full" ? "kfull" : "knoOrg"];
               const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);

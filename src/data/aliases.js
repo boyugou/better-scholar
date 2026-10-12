@@ -61,8 +61,11 @@
     { ccf: "RecSys", core: "RecSys", names: ["ACM Conference on Recommender Systems"] },
 
     // ---- HCI
-    { ccf: "CHI", core: "CHI", names: ["ACM Conference on Human Factors in Computing Systems", "SIGCHI Conference on Human Factors in Computing Systems", "Conference on Human Factors in Computing Systems"] },
+    { ccf: "CHI", core: "CHI", names: ["ACM Conference on Human Factors in Computing Systems", "SIGCHI Conference on Human Factors in Computing Systems", "Conference on Human Factors in Computing Systems", "CHI Conference on Human Factors in Computing Systems"] },
     { ccf: "UIST", core: "UIST", names: ["ACM Symposium on User Interface Software and Technology"] },
+    // CCF calls AVI an "International Working Conference", CORE (and ACM) an "International Conference"
+    { ccf: "AVI", names: ["International Conference on Advanced Visual Interfaces"] },
+    { core: "AVI", names: ["International Working Conference on Advanced Visual Interfaces"] },
     { ccf: "CSCW", core: "CSCW", names: ["ACM Conference on Computer Supported Cooperative Work", "ACM Conference on Computer-Supported Cooperative Work and Social Computing", "Computer Supported Cooperative Work"] },
     { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
 
@@ -96,12 +99,12 @@
     { ccf: "EUROCRYPT", core: "EuroCrypt", names: ["Annual International Conference on the Theory and Applications of Cryptographic Techniques", "Advances in Cryptology - EUROCRYPT"] },
 
     // ---- software engineering / PL / theory / graphics
-    { ccf: "ICSE", core: "ICSE", names: ["International Conference on Software Engineering", "IEEE/ACM International Conference on Software Engineering"] },
+    { ccf: "ICSE", core: "ICSE", names: ["International Conference on Software Engineering", "IEEE/ACM International Conference on Software Engineering", "ACM/IEEE International Conference on Software Engineering"] },
     { ccf: "FSE", ccfTier: "A", core: "FSE", coreRank: "A*", names: [
       "Joint Meeting on Foundations of Software Engineering", "ACM SIGSOFT Symposium on the Foundations of Software Engineering",
       "European Software Engineering Conference and Symposium on the Foundations of Software Engineering", "ESEC/FSE"
     ] },
-    { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering"] },
+    { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering", "ACM/IEEE International Conference on Automated Software Engineering"] },
     { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis"] },
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },
     { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages"] },

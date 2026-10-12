@@ -75,6 +75,38 @@ test("the audit's headline bugs stay fixed", () => {
   assert.equal(brief("Commun. Acm 60, 84-90, 2017"), "", "not CCF-listed, and not ICC");
 });
 
+test("same name, different kind: Computer Graphics Forum is the journal, Computer Graphics International the conference", () => {
+  assert.equal(brief("Computer graphics forum 33 (3), 351-360, 2014"), "CCF B CGF");
+  assert.equal(brief("Computer Graphics Forum (EuroVis'13), 2013"), "CCF B CGF");
+  assert.equal(brief("Computer Graphics International 2012"), "CCF C CGI · CORE C CGI");
+  assert.equal(brief("Proceedings of Computer Graphics International, 2015"), "CCF C CGI · CORE C CGI");
+  // a bare "Forum on …" is still a conference name
+  assert.equal(brief("Forum on specification and design languages, 2012"), "CORE C FDL");
+});
+
+test("CHI proceedings carry the acronym inside the name", () => {
+  for (const s of [
+    "Proceedings of the 2017 chi conference on human factors in computing systems …, 2017",
+    "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems …, 2018",
+    "Proceedings of the CHI Conference on Human Factors in Computing Systems, 2024",
+    "Proceedings of the SIGCHI conference on Human factors in computing systems …, 2007"
+  ]) assert.equal(brief(s), "CCF A CHI · CORE A* CHI", s);
+  assert.equal(brief("Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, 2018"), "", "extended abstracts are not the main track");
+});
+
+test("a truncated name is not claimed on one common word, nor when a complete name also fits", () => {
+  // INFOCOM's "Joint Conference of the IEEE Computer and Communications Societies" is not CCS
+  assert.equal(brief("Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and …, 2005"), "");
+  // the visible words are ICSE's whole name AND the start of SEKE's: ambiguous, so no badge
+  assert.equal(brief("2015 IEEE/ACM 37th IEEE international conference on software engineering 1 …, 2015"), "");
+  // "Principles of …" could be PODC, PODS or POPL
+  assert.equal(brief("Proceedings of the twenty-first annual symposium on Principles of …, 2002"), "");
+  // but a rare lone word still identifies its venue, and ACM/IEEE order does not matter
+  assert.equal(brief("Proceedings of the twenty-third international conference on architectural …, 2018"), "CCF A ASPLOS · CORE A* ASPLOS");
+  assert.equal(brief("Proceedings of the 33rd ACM/IEEE International Conference on Automated …, 2018"), "CCF A ASE · CORE A* ASE");
+  assert.equal(brief("Proceedings of the ACM/IEEE 42nd international conference on software …, 2020"), "CCF A ICSE · CORE A* ICSE");
+});
+
 test("CORE now fires on the strings Scholar really prints", () => {
   assert.equal(brief("Advances in neural information processing systems 36, 46595-46623, 2023"), "CCF A NeurIPS · CORE A* NeurIPS");
   assert.equal(brief("Proceedings of the 29th symposium on operating systems principles, 611-626, 2023"), "CCF A SOSP · CORE A* SOSP");
