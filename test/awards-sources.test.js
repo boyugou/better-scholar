@@ -1917,3 +1917,17 @@ test("RecSys best-paper page: 'by Authors (label)' under year headings; student 
     "2023 runner-up A Runner Up Recommender Paper | Gil Hart"
   ]);
 });
+
+test("AISTATS awards page: the prose 'goes to A and B for their paper Title.' (affiliations in brackets), 'Congratulations to …' under a heading; honorable mentions are left out", async () => {
+  const { parseAistatsAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Test of Time Award</p><p>The AISTATS 2025 Test of Time Award goes to Ann Lee (MIT) and</p><p>Bo Chan (CMU) for their paper A Test Of Time Paper Title.</p><p>Congratulations!</p><p>Best Paper</p><p>The AISTATS 2025 Best Paper Award goes to Cy Dunn for their paper A Best Paper Title Here.</p><p>The paper was chosen out of 500.</p><p>Best Student Paper</p><p>Congratulations to Ed Fox, Flo Gray, and Gil Hart for their paper A Student Paper Title Here.</p><p>Honorable Mentions</p>`;
+  assert.deepEqual(parseAistatsAwards(h, "https://aistats.org/aistats2025/awards.html").entries.map((e) => `${e.award} ${e.paperYear || ""} ${e.title} | ${e.authors.join("; ")}`), [
+    "tot 2015 A Test Of Time Paper Title | Ann Lee; Bo Chan", "best  A Best Paper Title Here | Cy Dunn", "student  A Student Paper Title Here | Ed Fox; Flo Gray; Gil Hart"
+  ]);
+});
+
+test("UAI awards page: 'Best Paper Award: Title, by authors' lines (2023) and a heading then title and authors lines (2025)", async () => {
+  const { parseUaiAwards } = await import("../scripts/awards/tot.mjs");
+  assert.deepEqual(parseUaiAwards("<p>Best Paper Award: A Graph Paper Title Here, by Ann Lee and Bo Chan</p>", "https://auai.org/uai2023/awards").entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["2023 best A Graph Paper Title Here | Ann Lee; Bo Chan"]);
+  assert.deepEqual(parseUaiAwards("<p>Best Student Paper Award:</p><p>A Student Langevin Paper</p><p>Cy Dunn, Ed Fox</p><p>[OpenReview]</p>", "https://auai.org/uai2025/best_papers").entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["2025 student A Student Langevin Paper | Cy Dunn; Ed Fox"]);
+});

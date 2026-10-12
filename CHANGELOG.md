@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.46 — 2026-10-12
+
+- AISTATS's best, best student and test of time papers of 2021–2025 (9 papers) and UAI's best, best student and runner-up papers of 2023 and 2025 (6 papers); the list had none of either. Each comes from the conference's own awards page (`tot.mjs aistats`, `tot.mjs uai`); the pages of the other years name no winners (2019 and 2020 list "notable papers", UAI's 2022 and 2024 pages are empty). The list has 6401 awards.
+
 ## 2.10.45 — 2026-10-12
 
 - ACM RecSys's best papers 2009–2025 (42 papers: best full / long / short, student and runner-up; the list had none) from the conference's own best-paper page (`tot.mjs recsys`); the honorable mentions and best demo are not read. The list has 6386 awards.

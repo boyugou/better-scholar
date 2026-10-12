@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6386
+  "count": 6401
  },
  "entries": [
   {
@@ -6350,6 +6350,147 @@
    "track": "main",
    "source": "https://aclanthology.org/2026.acl-long.2003/",
    "evidence": "ViLL-E: Video LLM Embeddings for Retrieval — Outstanding Paper"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Homeomorphic-Invariance of EM: Non-Asymptotic Convergence in KL Divergence for Exponential Families via Mirror Descent",
+   "authors": [
+    "Frederik Kunstner",
+    "Raunak Kumar",
+    "Mark Schmidt"
+   ],
+   "track": "main",
+   "source": "https://aistats.org/aistats2021/awards.html",
+   "evidence": "AISTATS 2021 Best Paper Award: Homeomorphic-Invariance of EM: Non-Asymptotic Convergence in KL Divergence for Exponential Families via Mirror Descent — Frederik Kunstner, Raunak Kumar, Mark Schmidt"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Matérn Gaussian Processes on Graphs",
+   "authors": [
+    "Viacheslav Borovitskiy",
+    "Iskander Azangulov",
+    "Alexander Terenin",
+    "Peter Mostowsky",
+    "Marc Deisenroth",
+    "Nicolas Durrande"
+   ],
+   "track": "main",
+   "source": "https://aistats.org/aistats2021/awards.html",
+   "evidence": "AISTATS 2021 Best Student Paper Award: Matérn Gaussian Processes on Graphs — Viacheslav Borovitskiy, Iskander Azangulov, Alexander Terenin, Peter Mostowsky, Marc Deisenroth, Nicolas Durrande"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robust Bayesian Inference for Simulator-based Models via the MMD Posterior Bootstrap",
+   "authors": [
+    "Charita Dellaporta",
+    "Jeremias Knoblauch",
+    "Theodoros Damoulas",
+    "Francois-Xavier Briol"
+   ],
+   "track": "main",
+   "source": "https://aistats.org/aistats2022/awards.html",
+   "evidence": "AISTATS 2022 Best Paper Award: Robust Bayesian Inference for Simulator-based Models via the MMD Posterior Bootstrap — Charita Dellaporta, Jeremias Knoblauch, Theodoros Damoulas, Francois-Xavier Briol"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Approximate Inference in Additive Factorial HMMs with Application to Energy Disaggregation",
+   "authors": [
+    "J. Zico Kolter",
+    "Tommi S. Jaakkola"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://aistats.org/aistats2022/awards.html",
+   "evidence": "AISTATS 2022 Test of Time Award: Approximate Inference in Additive Factorial HMMs with Application to Energy Disaggregation — J. Zico Kolter, Tommi S. Jaakkola"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Deep Gaussian Processes",
+   "authors": [
+    "Andreas Damianou",
+    "Neil Lawrence"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://aistats.org/aistats2023/awards.html",
+   "evidence": "AISTATS 2023 Test of Time Award: Deep Gaussian Processes — Andreas Damianou, Neil Lawrence"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Black Box Variational Inference",
+   "authors": [
+    "Rajesh Ranganath",
+    "Sean Gerrish",
+    "David M. Blei"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://aistats.org/aistats2024/awards.html",
+   "evidence": "AISTATS 2024 Test of Time Award: Black Box Variational Inference — Rajesh Ranganath, Sean Gerrish, David M. Blei"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Variational Inference in Location-Scale Families: Exact Recovery of the Mean and Correlation Matrix",
+   "authors": [
+    "Charles Margossian",
+    "Lawrence Saul"
+   ],
+   "track": "main",
+   "source": "https://aistats.org/aistats2025/awards.html",
+   "evidence": "AISTATS 2025 Best Paper Award: Variational Inference in Location-Scale Families: Exact Recovery of the Mean and Correlation Matrix — Charles Margossian, Lawrence Saul"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Pick-to-Learn and Self-Certified Gaussian Process Approximations",
+   "authors": [
+    "Daniel Marks",
+    "Dario Paccagnan"
+   ],
+   "track": "main",
+   "source": "https://aistats.org/aistats2025/awards.html",
+   "evidence": "AISTATS 2025 Best Student Paper Award: Pick-to-Learn and Self-Certified Gaussian Process Approximations — Daniel Marks, Dario Paccagnan"
+  },
+  {
+   "venue": "AISTATS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Deeply supervised Nets",
+   "authors": [
+    "Chen-Yu Lee",
+    "Saining Xie",
+    "Patrick Gallagher",
+    "Zhengyou Zhang",
+    "Zhuowen Tu"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://aistats.org/aistats2025/awards.html",
+   "evidence": "AISTATS 2025 Test of Time Award: Deeply supervised Nets — Chen-Yu Lee, Saining Xie, Patrick Gallagher, Zhengyou Zhang, Zhuowen Tu"
   },
   {
    "venue": "AIware",
@@ -99714,6 +99855,105 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10143/88/program",
    "evidence": "TEI 2026 program, Honorable Mention: PileUp: A Tufting Approach to Soft, Tactile, and Volumetric E-Textile Interfaces — Seoyoung Choi, Rashmi Balegar Mohan, Heather Jin Hee Kim, Jisoo Ha, Jeyeon Jo"
+  },
+  {
+   "venue": "UAI",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Establishing Markov Equivalence in Cyclic Directed Graphs",
+   "authors": [
+    "Tom Claassen",
+    "Joris Mooij"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2023/awards",
+   "evidence": "UAI 2023 Best Paper: Establishing Markov Equivalence in Cyclic Directed Graphs — Tom Claassen, Joris Mooij"
+  },
+  {
+   "venue": "UAI",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "MixupE: Understanding and Improving Mixup from Directional Derivative Perspective",
+   "authors": [
+    "Yingtian Zou",
+    "Vikas Verma",
+    "Sarthak Mittal",
+    "Wai Hoh Tang",
+    "Hieu Pham",
+    "Juho Kannala",
+    "Yoshua Bengio",
+    "Arno Solin",
+    "Kenji Kawaguchi"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2023/awards",
+   "evidence": "UAI 2023 Best Paper Runner-up: MixupE: Understanding and Improving Mixup from Directional Derivative Perspective — Yingtian Zou, Vikas Verma, Sarthak Mittal, Wai Hoh Tang, Hieu Pham, Juho Kannala, Yoshua Bengio, Arno Solin, Kenji Kawaguchi"
+  },
+  {
+   "venue": "UAI",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Learning from Low Rank Tensor Data: A Random Tensor Theory Perspective",
+   "authors": [
+    "Mohamed El Amine Seddik",
+    "Malik Tiomoko",
+    "Alexis Decurninge",
+    "Maxime Guillaud",
+    "Maxim Panov"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2023/awards",
+   "evidence": "UAI 2023 Best Student Paper: Learning from Low Rank Tensor Data: A Random Tensor Theory Perspective — Mohamed El Amine Seddik, Malik Tiomoko, Alexis Decurninge, Maxime Guillaud, Maxim Panov"
+  },
+  {
+   "venue": "UAI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Probabilistic Explanations for Regression Models",
+   "authors": [
+    "Frédéric Koriche",
+    "Jean-Marie Lagniez",
+    "Chi Tran"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2025/best_papers",
+   "evidence": "UAI 2025 Best Paper: Probabilistic Explanations for Regression Models — Frédéric Koriche, Jean-Marie Lagniez, Chi Tran"
+  },
+  {
+   "venue": "UAI",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "A Probabilistic Neuro-symbolic Layer for Algebraic Constraint Satisfaction",
+   "authors": [
+    "Leander Kurscheidt",
+    "Paolo Morettin",
+    "Roberto Sebastiani",
+    "Andrea Passerini",
+    "Antonio Vergari"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2025/best_papers",
+   "evidence": "UAI 2025 Best Student Paper Runner-up: A Probabilistic Neuro-symbolic Layer for Algebraic Constraint Satisfaction — Leander Kurscheidt, Paolo Morettin, Roberto Sebastiani, Andrea Passerini, Antonio Vergari"
+  },
+  {
+   "venue": "UAI",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Proximal Interacting Particle Langevin Algorithms",
+   "authors": [
+    "Paula Cordero Encinar",
+    "Francesca Romana Crucinio",
+    "O. Deniz Akyildiz"
+   ],
+   "track": "main",
+   "source": "https://auai.org/uai2025/best_papers",
+   "evidence": "UAI 2025 Best Student Paper: Proximal Interacting Particle Langevin Algorithms — Paula Cordero Encinar, Francesca Romana Crucinio, O. Deniz Akyildiz"
   },
   {
    "venue": "UbiComp",
