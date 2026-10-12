@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6007
+  "count": 6010
  },
  "entries": [
   {
@@ -76928,6 +76928,21 @@
   },
   {
    "venue": "NeurIPS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+   "authors": [
+    "Alex Krizhevsky",
+    "Ilya Sutskever",
+    "Geoffrey Hinton"
+   ],
+   "track": "main",
+   "source": "https://blog.neurips.cc/2022/11/21/announcing-the-neurips-2022-awards/",
+   "evidence": "NeurIPS 2022 Test of Time Award: ImageNet Classification with Deep Convolutional Neural Networks by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton"
+  },
+  {
+   "venue": "NeurIPS",
    "year": 2023,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper",
@@ -77140,6 +77155,41 @@
    "track": "main",
    "source": "https://neurips.cc/virtual/2024/awards_detail",
    "evidence": "Not All Tokens Are What You Need for Pretraining — Best Paper Runner-up"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Generative Adversarial Nets",
+   "authors": [
+    "Ian Goodfellow",
+    "Jean Pouget-Abadie",
+    "Mehdi Mirza",
+    "Bing Xu",
+    "David Warde-Farley",
+    "Sherjil Ozair",
+    "Aaron Courville",
+    "Yoshua Bengio"
+   ],
+   "track": "main",
+   "source": "https://blog.neurips.cc/2024/11/27/announcing-the-neurips-2024-test-of-time-paper-awards/",
+   "evidence": "NeurIPS 2024 Test of Time Award: Generative Adversarial Nets — Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Sequence to Sequence Learning with Neural Networks",
+   "authors": [
+    "Ilya Sutskever",
+    "Oriol Vinyals",
+    "Quoc V. Le"
+   ],
+   "track": "main",
+   "source": "https://blog.neurips.cc/2024/11/27/announcing-the-neurips-2024-test-of-time-paper-awards/",
+   "evidence": "NeurIPS 2024 Test of Time Award: Sequence to Sequence Learning with Neural Networks — Ilya Sutskever, Oriol Vinyals, Quoc V. Le"
   },
   {
    "venue": "NeurIPS",

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.40 — 2026-10-12
+
+- NeurIPS's test-of-time papers of 2022 (ImageNet Classification with Deep Convolutional Neural Networks) and 2024 (Generative Adversarial Nets; Sequence to Sequence Learning with Neural Networks)
+  from the conference's own announcement posts (`tot.mjs neurips-2022`, `neurips-2024`), which the virtual site's award pages do not list. The bundled list has 6010 awards.
+
 ## 2.9.39 — 2026-10-12
 
 - ICML's test-of-time papers of 2022 (Poisoning Attacks Against Support Vector Machines, with two honorable mentions) and 2026 (Asynchronous Methods for Deep Reinforcement Learning), which the earlier readers skipped:

@@ -1605,3 +1605,14 @@ Kun Zhang, Joris Mooij</i></p></div></div></div></td></tr></table>`;
     "runner-up [Test of Time Honorable Mention] On causal and antica | Bernhard Schölkopf; Dominik Janzing; Kun Zhang; Joris Mooij"
   ]);
 });
+
+test("NeurIPS blog posts: 'The awarded papers are:' with title / authors lines (2024), and the sentence naming one test-of-time paper (2022)", async () => {
+  const { parseNeuripsBlogTot } = await import("../scripts/awards/tot.mjs");
+  const y24 = `<p>This year, we are making an exception to award two Test of Time papers. The awarded papers are:</p><p>Generative Adversarial Nets</p><p>Ian Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, Yoshua Bengio</p><p>Sequence to Sequence Learning with Neural Networks</p><p>Ilya Sutskever, Oriol Vinyals, Quoc V. Le</p><p>The Generative Adversarial Nets paper has been cited more than 85,000 times as of this blog post.</p>`;
+  const a = parseNeuripsBlogTot(y24, "https://blog.neurips.cc/2024/11/27/announcing/");
+  assert.deepEqual(a.entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2024 Generative Adversarial Nets | Ian Goodfellow; Jean Pouget-Abadie; Mehdi Mirza; Bing Xu; Yoshua Bengio", "2024 Sequence to Sequence Learning with Neural Networks | Ilya Sutskever; Oriol Vinyals; Quoc V. Le"]);
+  const y22 = `<h3>Test of Time Award</h3><p>This year, following the usual practice, we chose a NeurIPS paper from 10 years ago, and “ImageNet Classification with Deep Convolutional Neural Networks” by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton, aka “AlexNet paper” was unanimously selected by the committee.</p>`;
+  const b = parseNeuripsBlogTot(y22, "https://blog.neurips.cc/2022/11/21/announcing/");
+  assert.deepEqual(b.entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2022 ImageNet Classification with Deep Convolutional Neural Networks | Alex Krizhevsky; Ilya Sutskever; Geoffrey Hinton"]);
+  assert.deepEqual([...a.skipped, ...b.skipped], []);
+});
