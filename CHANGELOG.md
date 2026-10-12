@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.6.1 — 2026-10-12
+
+A second independent review of the matcher (on 2.5.14, re-run at 2.5.22; 7.7 million strings, no input made it throw) found wrong badges. Each
+was reproduced, fixed and measured against the 8,395 real venue strings in the test corpora (eight of them change; none was right before).
+
+- **A series title announces a conference.** In Springer's *Series–ACRONYM year* form the conference list answers, one venue only: *Security
+  and Cryptography for Networks–SCN* was the journal *Security and Communication Networks*, *World Wide Web–WWW* was the journal (B) and
+  not The Web Conference (A). An acronym that proves nothing alone (ACM's SAC) now needs the series title to share a word with the venue
+  (*Selected Areas in Cryptography–SAC* yes, *Applied Computing–SAC* no), and a name is no longer read without a known series acronym.
+- **A sponsor is part of a curated start.** The IEEE's *International Conference on Computational …* was read as COLING. The *International
+  Conference on Distributed Computing …* start for ICDCS is gone: ICDCN's real title cut at 76 characters read as ICDCS (the one real 1996
+  ICDCS string loses its badge — it fits ICDCS, DCOSS and ICDCN alike).
+- **Special interest groups.** *ACM SIGSAC Workshop on Programming Languages and …* (PLAS) read as the SIGOPS workshop PLOS: a SIG the
+  venue's names never mention now needs a rare word to stand on. In the fallback that reads the event words in front of a common word,
+  every organisation the string names must be among the venue's own (*ACM/IEEE … Information …* was the ACM's CIKM, *ACM SIGPLAN …
+  Software …* the ACM/IEEE ICSE), and the other list's rivals include the names that do not begin with an organisation.
+- **An exact name with another event word is the fallback.** *IEEE International Symposium on Neural Networks (ISNN)* read as the IEEE
+  Joint *Conference* on Neural Networks (IJCNN): the looser variants, which find the symposium that says "symposium", now come first.
+- Aliases: MobiCom's 1990s name *ACM/IEEE International Conference on Mobile Computing and Networking* (the three real strings keep
+  their badge, and CCF's A joins CORE's A*); XP's earlier names (*Extreme Programming* …).
+
 ## 2.6.0 — 2026-10-12
 
 - **The whole paper list loads by itself.** Scholar shows a profile's first 100 papers and hides the rest behind *Show more*, so the

@@ -451,7 +451,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
     assert.equal(await stored(opts, "local", "resolved"), undefined);
-    await opts.bringToFront();
+    await eventually(opts, () => document.querySelector('[data-act="clear-cache"]').textContent !== "Cleared");     // (the button says "Cleared" for a moment)
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");

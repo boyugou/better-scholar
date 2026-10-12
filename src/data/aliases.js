@@ -14,7 +14,9 @@
 //   noBareAcronym the acronym alone proves nothing: another, unranked venue is called the same ("SAC" is also ACM's Symposium on
 //                 Applied Computing) — only the name counts
 //   starts        visible starts of a cut-off string that are read as this venue although other venues begin the same way
-//                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA)
+//                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA);
+//                 "annual" and any sponsor the start names (IEEE, ACM, a SIG) are part of the start: the IEEE's "… Conference on
+//                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -119,7 +121,7 @@
     // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)
     { ccf: "ICSME", core: "ICSME", abbrs: ["ICSM"], names: ["International Conference on Software Maintenance", "IEEE International Conference on Software Maintenance"] },
     // a cut-off "… Conference on Distributed Computing …" is ICDCS (DISC is a symposium)
-    { ccf: "ICDCS", core: "ICDCS", names: ["International Conference on Distributed Computing Systems"], starts: ["International Conference on Distributed Computing"] },
+    { ccf: "ICDCS", core: "ICDCS", names: ["International Conference on Distributed Computing Systems"] },
     // the CCF row spells it "Function Programming"
     { ccf: "ICFP", core: "ICFP", names: ["International Conference on Functional Programming", "ACM SIGPLAN International Conference on Functional Programming"] },
     { ccf: "ISCA", core: "ISCA", names: ["International Symposium on Computer Architecture", "Annual International Symposium on Computer Architecture", "ACM/IEEE Annual International Symposium on Computer Architecture"] },
@@ -134,7 +136,10 @@
       "ACM Special Interest Group on Data Communication", "SIGCOMM Conference on Data Communication"
     ] },
     { ccf: "INFOCOM", core: "INFOCOM", names: ["IEEE Conference on Computer Communications", "IEEE INFOCOM", "Annual Joint Conference of the IEEE Computer and Communications Societies"] },
-    { ccf: "MobiCom", core: "MOBICOM", names: ["ACM International Conference on Mobile Computing and Networking", "International Conference on Mobile Computing and Networking"] },
+    // (MobiCom 1996–1999 was an ACM/IEEE conference: "Proceedings of the 3rd annual ACM/IEEE international conference on Mobile …")
+    { ccf: "MobiCom", core: "MOBICOM", names: ["ACM International Conference on Mobile Computing and Networking", "International Conference on Mobile Computing and Networking", "ACM/IEEE International Conference on Mobile Computing and Networking"] },
+    // XP's first names, before it became the conference on agile software development
+    { core: "XP", names: ["International Conference on Extreme Programming", "International Conference on Extreme Programming and Agile Processes in Software Engineering", "International Conference on Agile Software Development"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Proceedings of the ACM on Measurement and Analysis of Computing Systems", "ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems"] },
     { core: "EC", names: ["ACM Conference on Electronic Commerce", "ACM Conference on Economics and Computation"] },
 

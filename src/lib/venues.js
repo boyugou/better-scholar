@@ -106,9 +106,11 @@
       .filter((w) => w && !SEQ_DROP.has(w) && !isNoiseToken(w) && !ORG.has(w)).map((w) => ISO[w] || w);
   }
 
-  // The key of a curated start (aliases.js `starts`): the event words in order, and whether the start says "annual" (rawSeq drops
-  // the word; RECOMB's "Annual International Conference on Computational …" is not COLING's "International Conference on Computational …")
-  const startKey = (text) => rawSeq(text).join(" ") + (/\bannual\b/i.test(text) ? "|annual" : "");
+  // The key of a curated start (aliases.js `starts`): the event words in order, whether the start says "annual" (rawSeq drops the word;
+  // RECOMB's "Annual International Conference on Computational …" is not COLING's "International Conference on Computational …"), and
+  // the sponsors it names (the IEEE's "International Conference on Computational …" is not COLING either; rawSeq drops them too).
+  const startKey = (text) => rawSeq(text).join(" ") + (/\bannual\b/i.test(text) ? "|annual" : "") +
+    fold(text).toLowerCase().split(/[^a-z0-9]+/).filter((t) => ORG.has(t) && t !== "springer" && t !== "elsevier").sort().map((t) => "|" + t).join("");
 
   // -------------------------------------------------------------- input cleanup
 
@@ -424,15 +426,27 @@
       return null;
     };
 
+    // the words of a venue's names (and aliases), organisations and event words left out
+    const vocabOf = (entry) => entry.vocab || (entry.vocab = new Set(entry.extra.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg"))));
+
     // Springer's series form: "Advances in Cryptology–ASIACRYPT 2009", "Algorithms–ESA 2012: 19th Annual European Symposium, …".
     // The acronym after the dash names the event, whatever series name goes before it ("Advances in Cryptology" is CRYPTO's series
     // title too, but this is not CRYPTO).
     const series = /[a-z0-9)] ?[–—−-]{1,2} ?([A-Z][A-Z0-9]{1,9}(?:-[A-Z0-9]{1,6})?)(?:\s+(?:19|20)\d{2}\b|['’]\d{2}\b)/.exec(fold(p.withParens));
     if (series) {
       const k = squash(series[1]);
-      // (an acronym that proves nothing on its own is evidence after a dash and in front of a year)
-      const d = firstHit((side) => side.abbrs.get(k) || side.weakAbbrs.get(k) || side.abbrs.get(stripDigits(k)));
-      if (d && d !== "ambiguous") return { entry: d, rule: "acronym" };
+      const title = canonTokens(fold(p.withParens).slice(0, series.index + 1), "noOrg");
+      // A book series of conferences, so only the conference list answers (a journal that happens to share the acronym — "Security and
+      // Communication Networks" for SCN, "World Wide Web" for WWW — is not what a series title announces), and only one venue: two that
+      // share the acronym are no answer. An acronym that proves nothing on its own is evidence after a dash and in front of a year only
+      // when the series title shares a word with the venue's name ("Selected Areas in Cryptography–SAC 2013", not "Applied Computing–SAC").
+      for (const side of hint === "J" ? sides : sides.filter((s) => s === idx.sources[src].C)) {
+        const strong = side.abbrs.get(k) || null;
+        const list = strong || (side.weakAbbrs.get(k) || []).filter((e) => title.some((w) => vocabOf(e).has(w))) || side.abbrs.get(stripDigits(k));
+        const d = decide(list && list.length ? list : side.abbrs.get(stripDigits(k)), rawWords, true);
+        if (d === "ambiguous") break;
+        if (d) return { entry: d, rule: "acronym" };
+      }
     }
 
     // R1/R2: canonical name (curated aliases are indexed as names too). A truncated
@@ -485,7 +499,12 @@
     const plainWords = contentWords(p.plain);
     const bareString = !hint && plainWords.length <= 2 && !plainWords.some((w) => ORG.has(w)) && plainWords.length === canonTokens(p.plain, "full").length;
     const seen = new Set();
+    let clashing = null;           // the string's whole name is a venue's, with another event word ("Symposium" for a Conference): only if nothing better turns up
+    // the series form names its event by the acronym after the dash: when that acronym is a known one and the rule above did not take it
+    // (a journal's, or two venues', or a weak one), the name read without it is a guess
+    const seriesAcronymKnown = !!series && idx.known.has(squash(series[1]));
     for (const mode of modes) {
+      if (mode === "noAcr" && seriesAcronymKnown) continue;
       const tokens = canonTokens(p.plain, mode, idx.known);
       // organisation words / acronyms carry identity ("Communications of the ACM" is not
       // "Communications"): a weakened variant must still be at least two words long
@@ -498,13 +517,20 @@
       // A name read without its organisation or acronym (the venue's own forms are indexed that way too) is weaker evidence: "ACM
       // symposium on Cloud computing" is not the IEEE conference on Cloud Computing (CORE lists only that one) — the string's event
       // word must not contradict the venue's own
-      if (d && (mode !== "full" || !exactForm(d, tokens, key)) && typeClash(d)) continue;
+      if (d && typeClash(d)) {
+        // ("IEEE International Symposium on Neural Networks" boils down to the words of the IEEE Joint Conference on them, but the
+        // symposium ISNN says "symposium" itself — which the looser variants find)
+        if (mode === "full" && exactForm(d, tokens, key) && !clashing) clashing = { d, mode, tokens };
+        continue;
+      }
       // Scholar cut the name right here ("… Conference on Distributed Computing …") and the string says "conference" while this
       // venue is a symposium: a venue whose longer name goes on the same way and does say "conference" is the better reading —
       // the prefix rule below decides between them
       if (d && p.truncated && continuesBeyond(sides, mode, tokens, d)) continue;
       if (d) return { entry: d, rule: "name" };
     }
+
+    if (clashing && !(p.truncated && continuesBeyond(sides, clashing.mode, clashing.tokens, clashing.d))) return { entry: clashing.d, rule: "name" };
 
     // R2b: same words, different order (journals: "Audio, Speech, and Language Processing, IEEE Transactions on")
     if (!p.truncated) {
@@ -522,10 +548,7 @@
     // "Conference on Supercomputing (SC)" is SC; "USDOE Office of Science (SC)" is not: a one- to three-letter acronym in a parenthesis
     // only counts when at least half of what else the string says is among the venue's own words (a "Working Conference …" or a
     // stray "15 pp." may add a few of its own)
-    const ownWordShare = (entry, words) => {
-      if (!entry.vocab) entry.vocab = new Set(entry.extra.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg")));
-      return words.filter((w) => entry.vocab.has(w)).length * 2 >= words.length;
-    };
+    const ownWordShare = (entry, words) => words.filter((w) => vocabOf(entry).has(w)).length * 2 >= words.length;
     const ownWordsOnly = (entry) => ownWordShare(entry, canonTokens(p.plain, "noOrg"));
     for (const { key, part, kind } of signals) {
       const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
@@ -554,7 +577,13 @@
       // a start the curators read as one venue although others begin the same way (aliases.js `starts`)
       const named = firstHit((side) => side.starts.get(startKey(p.plain)));
       if (named && named !== "ambiguous") return { entry: named, rule: "prefix" };
-      const rawHasOrg = fold(p.plain).toLowerCase().split(/[^a-z0-9]+/).some((t) => ORG.has(t));
+      const rawOrgWords = fold(p.plain).toLowerCase().split(/[^a-z0-9]+/).filter((t) => ORG.has(t));
+      const rawHasOrg = rawOrgWords.length > 0;
+      // The loose pass leaves the organisations out on both sides, so "ACM SIGSAC Workshop on Programming Languages and …" reads like
+      // the SIGOPS workshop (PLOS). A special interest group that the venue's names never mention is the string's own, and the two
+      // common words left are not enough: a rare one (the way "Architectural …" is ASPLOS) must carry the claim.
+      const sigWords = rawOrgWords.filter((t) => /^sig/.test(t));
+      const sigContradicts = (entry) => sigWords.some((s) => !entry.extra.some((n) => fold(n).toLowerCase().includes(s)));
       // if Scholar cut the name right after a connective, that connective must agree
       const rawKeep = canonTokensKeepStops(p.plain, "full");
       const trailingStops = [];
@@ -575,6 +604,7 @@
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
             if (form.noPrefix || !(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
             if (joint ? !hasWord(entry, "joint") : form.needsJoint) continue;
+            if (mode === "noOrg" && sigWords.length && sigContradicts(entry) && !Rm.some((w) => (idx.df.get(w) || 0) <= 5)) continue;
             if (trailingStops.length) {
               const ts = form[mode === "full" ? "kfull" : "knoOrg"];
               const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
@@ -618,11 +648,17 @@
       if (!d) {
         const seq = rawSeq(p.plain);
         if (seq.length >= 4) {
-          const seqCandidates = (listSides) => {
+          // `wide`: the other list's reading also sees the names that do not begin with an organisation where the string's first word is one
+          // ("ACM … Distributed Computing …" has the IEEE's DCOSS as a rival too); the claim itself is only ever made from the first-word bucket
+          const seqCandidates = (listSides, wide) => {
             const found = new Map();
+            const Rno = canonTokens(p.plain, "noOrg");
             for (const side of listSides) {
-              for (const { entry, form } of side.first.full.get(R[0]) || []) {
-                if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.set(entry, [...(found.get(entry) || []), form.raw]);
+              for (const { entry, form } of [...(side.first.full.get(R[0]) || []), ...(wide && Rno.length ? side.first.noOrg.get(Rno[0]) || [] : [])]) {
+                // (the bucket is the string's first word, an organisation when it begins with one: "ACM/IEEE …" is not the ACM's CIKM, and
+                // "ACM SIGPLAN …" is not the ACM/IEEE ICSE — every organisation the string names must be among the form's own)
+                if (!form.noPrefix && form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint) &&
+                  R.every((w) => !ORG.has(w) || form.full.includes(w))) found.set(entry, [...(found.get(entry) || []), form.raw]);
               }
             }
             let list = through(found);
@@ -636,7 +672,7 @@
           // Computational …" is COLING to CCF, but CORE also has ICCSA, ICCCI …). Unless it is the same venue, nothing is claimed.
           if (d) {
             const other = src === "ccf" ? "core" : "ccf";
-            const rivals = seqCandidates(kinds.map((k) => idx.sources[other][k]).filter(Boolean));
+            const rivals = seqCandidates(kinds.map((k) => idx.sources[other][k]).filter(Boolean), true);
             const same = (a, b) => squash(a.abbr || a.name) === squash(b.abbr || b.name) || (a.src === "ccf" ? idx.sameVenue(a.abbr, b.abbr) : idx.sameVenue(b.abbr, a.abbr));
             if (rivals.some((r) => !same(d, r))) d = null;
           }

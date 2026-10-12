@@ -387,7 +387,9 @@ test("KDD and SIGKDD are one venue in both lists; ECML, PKDD and ECML PKDD likew
 });
 
 test("Scholar's cut-off name that goes on as a venue with the string's own event word: '… Conference on Distributed Computing …' is ICDCS, not the symposium DISC", () => {
-  assert.equal(brief("Proceedings of 16th International Conference on Distributed Computing …, 1996"), "CCF B ICDCS · CORE A ICDCS", "DISC is a symposium and ICDCS's name is longer: a curated start (aliases.js)");
+  // (the cut string fits ICDCS, DCOSS and ICDCN alike: nothing is claimed — and above all not the symposium DISC)
+  assert.equal(brief("Proceedings of 16th International Conference on Distributed Computing …, 1996"), "", "DISC is a symposium; ICDCS, DCOSS and ICDCN are conferences whose names go on");
+  assert.equal(brief("Proceedings of the 20th International Conference on Distributed Computing …, 2019"), "", "ICDCN's real title, cut at 76 characters");
   // a complete name followed by a cut stays what it is
   assert.equal(brief("Proceedings of the 28th international conference on Software engineering …, 2006"), "CCF A ICSE · CORE A* ICSE");
   assert.equal(brief("Proceedings of the SIGCHI conference on human factors in computing systems …, 2010"), "CCF A CHI · CORE A* CHI");
@@ -636,8 +638,34 @@ test("Springer's series form 'Series–ACRONYM YEAR' names the event by its acro
 test("two lists that read the same words as different venues claim neither; an event word never decides for a name read without its organisation", () => {
   assert.equal(brief("International Conference on Information Security, 237-254, 2014"), "", "IFIP's SEC (CCF) and Springer's ISC (CORE) share it once the organisation is dropped");
   assert.equal(brief("Proceedings of the 21st International Symposium on Principles and Practice …, 2019"), "", "CCF's PPoPP and CORE's PPDP both begin so");
-  assert.equal(brief("Proceedings of 16th International Conference on Distributed Computing …, 1996"), "CCF B ICDCS · CORE A ICDCS");
+  assert.equal(brief("Proceedings of 16th International Conference on Distributed Computing …, 1996"), "", "CORE has ICDCS and DCOSS, CCF only ICDCS: the visible words fit both");
   assert.equal(brief("Proceedings of the second International Conference on Web Information …, 2001"), "CCF B WISE · CORE B WISE");
+});
+
+// From the second independent review of the matcher (2.5.8–2.5.14): strings that read as another venue.
+test("review: a series title announces a conference, a sponsor names the community, an event word keeps its venue, and a start never crosses sponsors", () => {
+  // Springer's series form: the acronym after the dash names a conference, never a journal that shares it, and an acronym that two venues share proves nothing
+  assert.equal(brief("Security and Cryptography for Networks–SCN 2012"), "", "SCN is also the journal Security and Communication Networks");
+  assert.equal(brief("Computational Logic—CL 2000"), "", "CL is also a journal");
+  assert.equal(brief("World Wide Web–WWW 2021"), "CCF A WWW · CORE A* WWW", "the conference, not the journal of that name");
+  assert.equal(brief("Applied Computing–SAC 2013"), "", "ACM's SAC; the series title shares no word with Selected Areas in Cryptography");
+  assert.equal(brief("Selected Areas in Cryptography–SAC 2013"), "CCF C SAC · CORE B SAC");
+  assert.equal(brief("Advances in Cryptology–ASIACRYPT 2009"), "CCF B ASIACRYPT · CORE A ASIACRYPT");
+  // a curated start keeps the sponsors the string names: the IEEE's "… Conference on Computational …" is not COLING
+  assert.equal(brief("Proceedings of the 2012 IEEE International Conference on Computational …, 2012"), "");
+  assert.equal(brief("Proceedings of the 27th International Conference on Computational …, 2018"), "CCF B COLING · CORE B COLING");
+  // the loose pass leaves organisations out on both sides; a special interest group the venue never mentions needs a rare word
+  assert.equal(brief("Proceedings of the 14th ACM SIGSAC Workshop on Programming Languages and …, 2019"), "", "PLAS, not the SIGOPS workshop PLOS");
+  assert.equal(brief("Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations …, 2014"), "CCF A FSE · CORE A* FSE");
+  // the seq fallback names the sponsors too: ACM/IEEE is IPSN's, not the ACM's CIKM; ACM SIGPLAN is SLE's, not the ACM/IEEE ICSE
+  assert.equal(brief("Proceedings of the 17th ACM/IEEE International Conference on Information …, 2018"), "", "IPSN");
+  assert.equal(brief("Proceedings of the 13th ACM SIGPLAN International Conference on Software …, 2019"), "", "SLE");
+  assert.equal(brief("Proceedings of the 3rd annual ACM/IEEE international conference on Mobile …, 1997"), "CCF A MobiCom · CORE A* MOBICOM", "MobiCom was an ACM/IEEE conference then (an alias)");
+  // an exact name with another event word is only the fallback: the symposium that says "symposium" itself comes first
+  assert.equal(brief("1998 IEEE International Symposium on Neural Networks (ISNN), 1-12, 1998"), "CORE C ISNN", "not the IEEE Joint Conference IJCNN");
+  assert.equal(brief("Proceedings of 37th Conference on Foundations of Computer Science, 2-11, 1996"), "CCF A FOCS · CORE A* FOCS", "Scholar's own word differs from FOCS's 'Symposium', and nothing else fits");
+  // a venue's earlier names are aliases
+  assert.equal(brief("Proceedings of the 3rd International Conference on Extreme Programming (XP …, 2002"), "CORE B XP");
 });
 
 test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN International Conference on Functional …' is ICFP", () => {
