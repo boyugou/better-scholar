@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6211
+  "count": 6213
  },
  "entries": [
   {
@@ -102985,6 +102985,23 @@
   {
    "venue": "WWW",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rewiring what-to-watch-next Recommendations to Reduce Radicalization Pathways",
+   "authors": [
+    "Francesco Fabbri",
+    "Yanhao Wang",
+    "Francesco Bonchi",
+    "Carlos Castillo",
+    "Michael Mathioudakis"
+   ],
+   "track": "main",
+   "source": "https://www2022.thewebconf.org/awards",
+   "evidence": "The Web Conference 2022 Best Paper Award: Rewiring what-to-watch-next Recommendations to Reduce Radicalization Pathways — Francesco Fabbri, Yanhao Wang, Francesco Bonchi, Carlos Castillo, Michael Mathioudakis"
+  },
+  {
+   "venue": "WWW",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Seoul Test of Time Award",
    "title": "Earthquake shakes Twitter users: Real-time event detection by social sensors",
@@ -103012,6 +103029,23 @@
    "track": "main",
    "source": "https://www.iw3c2.org/ToT/",
    "evidence": "The Web Conference 2023 Seoul Test of Time Award: Lihong Li, Wei Chu, John Langford and Robert Schapire for their paper “A Contextual-Bandit Approach to Personalized News Article Recommendation”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mechanism Design for Large Language Models",
+   "authors": [
+    "Paul Dütting",
+    "Vahab Mirrokni",
+    "Renato Paes Leme",
+    "Haifeng Xu",
+    "Song Zuo"
+   ],
+   "track": "main",
+   "source": "https://www2024.thewebconf.org/program/awards",
+   "evidence": "The Web Conference 2024 Best Paper Award: Mechanism Design for Large Language Models — Paul Dütting, Vahab Mirrokni, Renato Paes Leme, Haifeng Xu, Song Zuo"
   },
   {
    "venue": "WWW",

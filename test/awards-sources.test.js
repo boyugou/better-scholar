@@ -1720,3 +1720,14 @@ test("SIGMOBILE's MobiCom page: a best paper list and a best student paper list,
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("The Web Conference awards page: 'Best Paper Award', the title, authors with their affiliations on the next line (2022) or as superscript numbers on one line (2024)", async () => {
+  const { parseWwwBest } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 25 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const y22 = `${filler}<h2>Best Paper Award</h2><p>Rewiring what-to-watch-next Recommendations to Reduce Radicalization Pathways</p><p>Web and Society Track</p><p>Francesco Fabbri</p><p>Universitat Pompeu Fabra</p><p>Yanhao Wang</p><p>East China Normal University</p><p>Francesco Bonchi</p><p>Fondazione ISI</p><p>Best Paper Award Committee</p><p>Elena Ferrari</p>`;
+  const a = parseWwwBest(y22, "https://www2022.thewebconf.org/awards");
+  assert.deepEqual(a.entries.map((e) => `${e.year} ${e.title.slice(0, 20)} | ${e.authors.join("; ")}`), ["2022 Rewiring what-to-wat | Francesco Fabbri; Yanhao Wang; Francesco Bonchi"]);
+  const y24 = `${filler}<h2>Best Paper Award</h2><p>Mechanism Design for Large Language Models</p><p>Paul Dütting1, Vahab Mirrokni1, Renato Paes Leme1, Haifeng Xu1,2,  Song Zuo1</p><p>(1Google Research, 2University of Chicago)</p><p>2024 Seoul Test of Time Award</p>`;
+  const b = parseWwwBest(y24, "https://www2024.thewebconf.org/program/awards");
+  assert.deepEqual(b.entries.map((e) => `${e.year} ${e.title.slice(0, 20)} | ${e.authors.join("; ")}`), ["2024 Mechanism Design for | Paul Dütting; Vahab Mirrokni; Renato Paes Leme; Haifeng Xu; Song Zuo"]);
+});

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.14 — 2026-10-12
+
+- The Web Conference's best papers of 2022 (Rewiring what-to-watch-next Recommendations to Reduce Radicalization Pathways) and 2024 (Mechanism Design for Large Language Models) from the conference's own awards pages (`tot.mjs www-best`). The list has 6213 awards.
+
 ## 2.10.13 — 2026-10-12
 
 - The switch-styled ticks (the panel's "Only highlighted" and every switch on the settings page) are announced as switches to screen readers (`role="switch"`), not as plain checkboxes.
