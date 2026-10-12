@@ -72,6 +72,14 @@
 //   sigspatial  https://www.sigspatial.org/people/award-recipients/       ACM SIGSPATIAL's "10-Year Impact Award" and "Best Paper Award" blocks: a year line ("2020 Honorable Mention"), then the title (in quotation marks or
 //                                                                       alone) and the authors as "Name (Affiliation)" with or without a separator between them
 //
+// Added later (each reader's own comment above its function says what it reads; the data/README.md row names the page):
+//   icwsm, etaps, etaps-bp, gecco, sigcomm, dac, mobicom      one page each (ICWSM awards, ETAPS test of time / best papers, GECCO's SIGEVO Impact Award, SIGCOMM's test of time, DAC's Most Influential Papers,
+//                                                             MobiCom's best paper page)
+//   ras-<name>                                                 IEEE RAS's per-award pages (ICRA, CASE: the table RAS)
+//   kdd-bp, kdd-tot, siggraph, ubicomp, www-best               one page per year, the page's address is the third argument
+//   icdm                                                       the ICDM series' best paper page (several layouts over the years)
+//   nips-book-2018, neurips-2022, neurips-2024, icml-tot-2021  single test-of-time papers named by a conference book, a blog post or a virtual-site page
+//
 //   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai|icaps|swsa|sigmm|ht|newton|sigspatial [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
