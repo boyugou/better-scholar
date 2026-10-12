@@ -1294,3 +1294,18 @@ test("ISMAR past-symposia page: per symposium an Awards block of label / title /
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("ICSE Most Influential Paper page: a year line, then wrapped free text 'Authors: Title, ICSE-37, 2015'; 'No award.' is left out; Latin Extended-A entities are decoded", async () => {
+  const { parseIcseMip } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>RECIPIENTS AND TITLE OF THE MOST INFLUENTIAL PAPER AWARD</h2><p>2025</p><p>Li Li, Alexandre Bartel, Tegawendé F. Bissyandé,</p><p>Jacques Klein, Yves Le Traon: IccTA:</p><p>Detecting Inter-Component Privacy Leaks in Android Apps ICSE-37, 2015</p>
+<p>2013</p><p>Davor &Ccaron;ubrani&cacute; and Gail C. Murphy: Hipikat: Recommending</p><p>Pertinent Software Development Artifacts, ICSE-25, 2003</p><p>2006</p><p>No Award.</p>
+<p>1997</p><p>Manny Lehman: Process Models, Process Programs, Programming Support, ICSE-9,</p><p>1987.</p><p>Lee Osterweil: Software Processes are Software Too, ICSE-9, 1987.</p>`;
+  const { entries, skipped } = parseIcseMip(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025/2015 IccTA: Detecting Inter-Component Privacy Leaks in Android Apps | Li Li; Alexandre Bartel; Tegawendé F. Bissyandé; Jacques Klein; Yves Le Traon",
+    "2013/2003 Hipikat: Recommending Pertinent Software Development Artifacts | Davor Čubranić; Gail C. Murphy",
+    "1997/1987 Process Models, Process Programs, Programming Support | Manny Lehman",
+    "1997/1987 Software Processes are Software Too | Lee Osterweil"
+  ]);
+  assert.deepEqual(skipped, []);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5143
+  "count": 5178
  },
  "entries": [
   {
@@ -55705,6 +55705,217 @@
   },
   {
    "venue": "ICSE",
+   "year": 1990,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "An Introduction to the Construction and Verification of Alphard Programs",
+   "authors": [
+    "William A. Wulf",
+    "Ralph L. London",
+    "Mary Shaw"
+   ],
+   "track": "main",
+   "paperYear": 1976,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1990 Most Influential Paper Award: William A. Wulf, Ralph L. London and Mary Shaw: An Introduction to the Construction and Verification of Alphard Programs"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1991,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Designing Software for Ease of Extension and Contraction",
+   "authors": [
+    "David Parnas"
+   ],
+   "track": "main",
+   "paperYear": 1978,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1991 Most Influential Paper Award: David Parnas: Designing Software for Ease of Extension and Contraction"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1992,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Software Development Control Based on Module Interconnection",
+   "authors": [
+    "Walter Tichy"
+   ],
+   "track": "main",
+   "paperYear": 1979,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1992 Most Influential Paper Award: Walter Tichy: Software Development Control Based on Module Interconnection"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1993,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Program Slicing",
+   "authors": [
+    "Mark Weiser"
+   ],
+   "track": "main",
+   "paperYear": 1981,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1993 Most Influential Paper Award: Mark Weiser: Program Slicing"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1994,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Capturing More World Knowledge in the Requirements Specification",
+   "authors": [
+    "Sol Greenspan",
+    "John Mylopoulos",
+    "Alex Borgida"
+   ],
+   "track": "main",
+   "paperYear": 1982,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1994 Most Influential Paper Award: Sol Greenspan, John Mylopoulos and Alex Borgida: Capturing More World Knowledge in the Requirements Specification"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1995,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The Modular Structure of Complex Systems",
+   "authors": [
+    "David L. Parnas",
+    "Paul C. Clements",
+    "David M. Weiss"
+   ],
+   "track": "main",
+   "paperYear": 1984,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1995 Most Influential Paper Award: David L. Parnas, Paul C. Clements and David M. Weiss: The Modular Structure of Complex Systems"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1996,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Software Technology Maturation",
+   "authors": [
+    "Sam Redwine Jr",
+    "William Riddle"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1996 Most Influential Paper Award: Sam Redwine Jr. and William Riddle: Software Technology Maturation"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1997,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Process Models, Process Programs, Programming Support",
+   "authors": [
+    "Manny Lehman"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1997 Most Influential Paper Award: Manny Lehman: Process Models, Process Programs, Programming Support"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1997,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Software Processes are Software Too",
+   "authors": [
+    "Lee Osterweil"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1997 Most Influential Paper Award: Lee Osterweil: Software Processes are Software Too"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1998,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Statemate: A Working Environment for the Development of Complex Reactive Systems",
+   "authors": [
+    "David Harel",
+    "Hagi Lachover",
+    "Amnon Naamad",
+    "Amir Pnueli",
+    "Michal Politi",
+    "Rivi Sherman",
+    "Aharon Shtul-Trauring"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1998 Most Influential Paper Award: David Harel, Hagi Lachover, Amnon Naamad, Amir Pnueli, Michal Politi, Rivi Sherman and Aharon Shtul-Trauring: Statemate: A Working Environment for the Development of Complex Reactive Systems"
+  },
+  {
+   "venue": "ICSE",
+   "year": 1999,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The Inscape Environment",
+   "authors": [
+    "Dewayne Perry"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 1999 Most Influential Paper Award: Dewayne Perry: The Inscape Environment"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2001,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Tolerating Inconsistency",
+   "authors": [
+    "Robert Balzer"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2001 Most Influential Paper Award: Robert Balzer: Tolerating Inconsistency"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Towards a Method of Programming with Assertions",
+   "authors": [
+    "David S. Rosenblum"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2002 Most Influential Paper Award: David S. Rosenblum: Towards a Method of Programming with Assertions"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Expressing the Relationships between Multiple Views in Requirements Specification",
+   "authors": [
+    "Bashar Nuseibeh",
+    "Jeff Kramer",
+    "Anthony Finkelstein"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2003 Most Influential Paper Award: Bashar Nuseibeh, Jeff Kramer and Anthony Finkelstein: Expressing the Relationships between Multiple Views in Requirements Specification"
+  },
+  {
+   "venue": "ICSE",
    "year": 2004,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
@@ -55720,6 +55931,52 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "2004 International Conference on Software Engineering (ICSE 2004): Wei Zhao, Lu Zhang, Yin Liu, Jiasu Sun, Fuqing Yang, “SNIAFL: Towards a Static Non-Interactive Approach to Feature Location”"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Formalizing Architectural Connection",
+   "authors": [
+    "Robert Allen",
+    "David Garlan"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2004 Most Influential Paper Award: Robert Allen and David Garlan: Formalizing Architectural Connection"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Deriving Specifications from Requirements: An Example",
+   "authors": [
+    "Michael Jackson",
+    "Pamela Zave"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2005 Most Influential Paper Award: Michael Jackson and Pamela Zave: Deriving Specifications from Requirements: An Example"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Designing Distributed Applications with Mobile Code Paradigms",
+   "authors": [
+    "Antonio Carzaniga",
+    "Gian Pietro Picco",
+    "Giovanni Vigna"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2007 Most Influential Paper Award: Antonio Carzaniga, Gian Pietro Picco and Giovanni Vigna: Designing Distributed Applications with Mobile Code Paradigms"
   },
   {
    "venue": "ICSE",
@@ -55757,6 +56014,90 @@
   },
   {
    "venue": "ICSE",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Architecture-Based Runtime Software Evolution",
+   "authors": [
+    "Peyman Oreizy",
+    "Nenad Medvidovic",
+    "Richard N. Taylor"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2008 Most Influential Paper Award: Peyman Oreizy, Nenad Medvidovic and Richard N. Taylor: Architecture-Based Runtime Software Evolution"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "N Degrees of Separation: Multi-Dimensional Separation of Concerns",
+   "authors": [
+    "Peri Tarr",
+    "Harold Ossher",
+    "William Harrison",
+    "Stanley M. Sutton Jr"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2009 Most Influential Paper Award: Peri Tarr, Harold Ossher, William Harrison, and Stanley M. Sutton Jr.: N Degrees of Separation: Multi-Dimensional Separation of Concerns"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A case study of open source software development: the Apache server",
+   "authors": [
+    "Audris Mockus",
+    "Roy T. Fielding",
+    "James Herbsleb"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2010 Most Influential Paper Award: Audris Mockus, Roy T. Fielding, James Herbsleb: A case study of open source software development: the Apache server"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Bandera: extracting finite-state models from Java source code",
+   "authors": [
+    "James C. Corbett",
+    "Matthew B. Dwyer",
+    "John Hatcliff",
+    "Shawn Laubach",
+    "Corina S. Păsăreanu",
+    "Robby",
+    "Hongjun Zheng"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2010 Most Influential Paper Award: James C. Corbett, Matthew B. Dwyer, John Hatcliff, Shawn Laubach, Corina S. Păsăreanu, Robby, Hongjun Zheng: Bandera: extracting finite-state models from Java source code"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Analysis and Testing of Web Applications",
+   "authors": [
+    "Filippo Ricca",
+    "Paolo Tonella"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2011 Most Influential Paper Award: Filippo Ricca, Paolo Tonella: Analysis and Testing of Web Applications"
+  },
+  {
+   "venue": "ICSE",
    "year": 2012,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
@@ -55770,6 +56111,37 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "34th International Conference on Software Engineering (ICSE 2012): Michalis Famelis, Rick Salay and Marsha Chechik, Partial Models: Towards Modeling and Reasoning with Uncertainty"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "ArchJava: Connecting Software Architecture to Implementation",
+   "authors": [
+    "Jonathan Aldrich",
+    "Craig Chambers",
+    "David Notkin"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2012 Most Influential Paper Award: Jonathan Aldrich, Craig Chambers, David Notkin: ArchJava: Connecting Software Architecture to Implementation"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Hipikat: Recommending Pertinent Software Development Artifacts",
+   "authors": [
+    "Davor Čubranić",
+    "Gail C. Murphy"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2013 Most Influential Paper Award: Davor Čubranić and Gail C. Murphy: Hipikat: Recommending Pertinent Software Development Artifacts"
   },
   {
    "venue": "ICSE",
@@ -55810,6 +56182,23 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Software Engineering (ICSE 2014): Emerson Murphy-Hill, Thomas Zimmermann, and Nachiappan Nagappan, Cowboys, Ankle Sprains, and Keepers of Quality: How is Video Game Development Different from Software Development?"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Mining Version Histories to Guide Software Changes",
+   "authors": [
+    "Thomas Zimmerman",
+    "Peter Weisgerber",
+    "Stephan Diehl",
+    "Andreas Zeller"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2014 Most Influential Paper Award: Thomas Zimmerman, Peter Weisgerber, Stephan Diehl and Andreas Zeller: Mining Version Histories to Guide Software Changes"
   },
   {
    "venue": "ICSE",
@@ -55875,6 +56264,22 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Software Engineering (ICSE 2015): Michele Tufano, Fabio Palomba, Gabriele Bavota, Rocco Oliveto, Massimiliano Di Penta, Andrea De Lucia, and Denys Poshyvanyk: When and Why Your Code Starts to Smell Bad"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Is Mutation an Appropriate Tool for Testing Experiments?",
+   "authors": [
+    "James H. Andrews",
+    "Lionel C. Briand",
+    "Yvan Labiche"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2015 Most Influential Paper Award: James H. Andrews, Lionel C. Briand, and Yvan Labiche: Is Mutation an Appropriate Tool for Testing Experiments?"
   },
   {
    "venue": "ICSE",
@@ -55974,6 +56379,22 @@
   },
   {
    "venue": "ICSE",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Who Should Fix This Bug?",
+   "authors": [
+    "John Anvik",
+    "Lyndon Hiew",
+    "Gail C. Murphy"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2016 Most Influential Paper Award: John Anvik, Lyndon Hiew, and Gail C. Murphy: Who Should Fix This Bug?"
+  },
+  {
+   "venue": "ICSE",
    "year": 2017,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
@@ -56063,6 +56484,23 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Software Engineering (ICSE 2017): August Shi, Suresh Thummalapenta, Shuvendu Lahiri, Nikolaj Bjorner and Jacek Czerwonka: Optimizing Test Placement for Module-Level Regression Testing"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Feedback-Directed Random Test Generation",
+   "authors": [
+    "Carlos Pacheco",
+    "Shuvendu K. Lahiri",
+    "Michael D. Ernst",
+    "Thomas Ball"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2017 Most Influential Paper Award: Carlos Pacheco, Shuvendu K. Lahiri, Michael D. Ernst, and Thomas Ball: Feedback-Directed Random Test Generation"
   },
   {
    "venue": "ICSE",
@@ -56376,6 +56814,23 @@
   },
   {
    "venue": "ICSE",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "It Does What You Say, Not What You Mean: Lessons From A Decade of Program Repair",
+   "authors": [
+    "Westley Weimer",
+    "ThanhVu Nguyen",
+    "Claire Le Goues",
+    "Stephanie Forrest"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2019 Most Influential Paper Award: Westley Weimer, ThanhVu Nguyen, Claire Le Goues, Stephanie Forrest: It Does What You Say, Not What You Mean: Lessons From A Decade of Program Repair"
+  },
+  {
+   "venue": "ICSE",
    "year": 2020,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
@@ -56512,6 +56967,73 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "42nd International Conference on Software Engineering (ICSE 2020): Peixin Zhang, Jingyi Wang, Jun Sun, Guoliang Dong, Xinyu Wang, Xingen Wang, Jin Song Dong, Ting Dai: White-box Fairness Testing through Adversarial Sampling"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Oracle-Guided Component-Based Program Synthesis",
+   "authors": [
+    "Susmit Jha",
+    "Sumit Gulwani",
+    "Sanjit A. Seshia",
+    "Ashish Tiwari"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2020 Most Influential Paper Award: Susmit Jha, Sumit Gulwani, Sanjit A. Seshia, Ashish Tiwari: Oracle-Guided Component-Based Program Synthesis"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Practical Guide for Using Statistical Tests to Assess Randomized Algorithms in Software Engineering",
+   "authors": [
+    "Andrea Arcuri",
+    "Lionel Briand"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2021 Most Influential Paper Award: Andrea Arcuri, Lionel Briand: A Practical Guide for Using Statistical Tests to Assess Randomized Algorithms in Software Engineering"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "On the Naturalness of Software",
+   "authors": [
+    "Abram Hindle",
+    "Earl T. Barr",
+    "Zhendong Su",
+    "Mark Gabel",
+    "Premkumar Devanbu"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2022 Most Influential Paper Award: Abram Hindle, Earl T. Barr, Zhendong Su, Mark Gabel, Premkumar Devanbu: On the Naturalness of Software"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "SemFix: Program Repair via Semantic Analysis",
+   "authors": [
+    "Hoang Duong Thien Nguyen",
+    "Dawei Qi",
+    "Abhik Roychoudhury",
+    "Satish Chandra"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2023 Most Influential Paper Award: Hoang Duong Thien Nguyen, Dawei Qi, Abhik Roychoudhury, Satish Chandra: SemFix: Program Repair via Semantic Analysis"
   },
   {
    "venue": "ICSE",
@@ -56747,6 +57269,21 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "42nd International Conference on Software Engineering (ICSE 2024): Brian Zhang: Towards Finding Accounting Errors in Smart Contracts"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Coverage is not strongly correlated with test suite effectiveness",
+   "authors": [
+    "Laura Inozemtseva",
+    "Reid Holmes"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2024 Most Influential Paper Award: Laura Inozemtseva, Reid Holmes: Coverage is not strongly correlated with test suite effectiveness"
   },
   {
    "venue": "ICSE",
@@ -57105,6 +57642,29 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Enrique Barba Roque, Luís Cruz, Thomas Durieux: Unveiling the Energy Vampires: A Methodology for Debugging Software Energy Consumption"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "IccTA: Detecting Inter-Component Privacy Leaks in Android Apps",
+   "authors": [
+    "Li Li",
+    "Alexandre Bartel",
+    "Tegawendé F. Bissyandé",
+    "Jacques Klein",
+    "Yves Le Traon",
+    "Steven Arzt",
+    "Siegfried Rasthofer",
+    "Eric Bodden",
+    "Damien Octeau",
+    "Patrick McDaniel"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.icse-conferences.org/mostinfluential.html",
+   "evidence": "ICSE 2025 Most Influential Paper Award: Li Li, Alexandre Bartel, Tegawendé F. Bissyandé, Jacques Klein, Yves Le Traon, Steven Arzt, Siegfried Rasthofer, Eric Bodden, Damien Octeau, Patrick McDaniel: IccTA: Detecting Inter-Component Privacy Leaks in Android Apps"
   },
   {
    "venue": "IH",

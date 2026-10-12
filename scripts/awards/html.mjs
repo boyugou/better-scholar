@@ -4,7 +4,9 @@ const LATIN1 = ["Agrave", "Aacute", "Acirc", "Atilde", "Auml", "Aring", "AElig",
   "ETH", "Ntilde", "Ograve", "Oacute", "Ocirc", "Otilde", "Ouml", "times", "Oslash", "Ugrave", "Uacute", "Ucirc", "Uuml", "Yacute", "THORN", "szlig",
   "agrave", "aacute", "acirc", "atilde", "auml", "aring", "aelig", "ccedil", "egrave", "eacute", "ecirc", "euml", "igrave", "iacute", "icirc", "iuml",
   "eth", "ntilde", "ograve", "oacute", "ocirc", "otilde", "ouml", "divide", "oslash", "ugrave", "uacute", "ucirc", "uuml", "yacute", "thorn", "yuml"];
-const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "", copy: "©", reg: "®", trade: "™", bull: "•", deg: "°", thinsp: " ", ensp: " ", emsp: " " };
+// (Latin Extended-A: the names of Central European authors)
+const EXT = { Ccaron: "Č", ccaron: "č", Cacute: "Ć", cacute: "ć", Scaron: "Š", scaron: "š", Zcaron: "Ž", zcaron: "ž", Ecaron: "Ě", ecaron: "ě", Rcaron: "Ř", rcaron: "ř", Ncaron: "Ň", ncaron: "ň", Dcaron: "Ď", dcaron: "ď", Tcaron: "Ť", tcaron: "ť", Lstrok: "Ł", lstrok: "ł", Scedil: "Ş", scedil: "ş", Gbreve: "Ğ", gbreve: "ğ", Idot: "İ", inodot: "ı", Abreve: "Ă", abreve: "ă", Amacr: "Ā", amacr: "ā", Emacr: "Ē", emacr: "ē", Omacr: "Ō", omacr: "ō", Umacr: "Ū", umacr: "ū", Odblac: "Ő", odblac: "ő", Udblac: "Ű", udblac: "ű" };
+const NAMED = { ...EXT, amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "", copy: "©", reg: "®", trade: "™", bull: "•", deg: "°", thinsp: " ", ensp: " ", emsp: " " };
 LATIN1.forEach((name, i) => { NAMED[name] = String.fromCharCode(192 + i); });
 
 // HTML also reads the old Latin-1 entities without their semicolon ("J&oumlrg" is "Jörg"), the longest name first

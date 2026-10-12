@@ -53,8 +53,10 @@
 //                                                                       "Honorable Mention for …", "ISMAR Paper Impact Award"), then the title and "Recipients: Authors" (2025: "Recipients: Title — Authors";
 //                                                                       2019: "Recipients:" then `for the paper "Title."`); authors typed "Surname, I., and Surname, I." are turned round. Papers only: no
 //                                                                       career, poster, demo, doctoral, student-volunteer or design awards
+//   icse    https://www.icse-conferences.org/mostinfluential.html         the ICSE Most Influential Paper Award, 1989–2025: a year line, then free text wrapped over lines,
+//                                                                       "Authors: Title, ICSE-37, 2015" (one or two papers; "No award." years are left out)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -85,7 +87,8 @@ const PAGES = {
   imc: "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
   vis: "https://aa.ieeevis.org/year/2026/info/history/test-of-time-awards",
   icde: "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
-  ismar: "https://www.ismar.net/past_symposiums"
+  ismar: "https://www.ismar.net/past_symposiums",
+  icse: "https://www.icse-conferences.org/mostinfluential.html"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -495,6 +498,30 @@ export function parseIsmarAwards(html, source = PAGES.ismar) {
   return { entries, skipped };
 }
 
+export function parseIcseMip(html, source = PAGES.icse) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const start = ls.findIndex((l) => /^RECIPIENTS AND TITLE OF THE MOST INFLUENTIAL PAPER AWARD$/i.test(l));
+  const blocks = [];
+  for (const l of start < 0 ? [] : ls.slice(start + 1)) {
+    if (/^(?:19|20)\d{2}$/.test(l)) blocks.push({ year: parseInt(l, 10), text: [] });
+    else if (blocks.length) blocks[blocks.length - 1].text.push(l);
+  }
+  for (const b of blocks) {
+    const text = b.text.join(" ").replace(/\s+/g, " ").replace(/\s+-\s+/g, "-");
+    if (/^No award/i.test(text)) continue;
+    for (const m of text.matchAll(/\s*(.+?)\s*(?:ICSE|NCSE)-\d+,?\s*((?:19|20)\d{2})[a-z]?\.?/g)) {
+      const c = /^([^:]{3,400}?):\s+(.+?)[,.]?$/.exec(m[1].trim());
+      if (!c) { skipped.push(`${b.year}: not read: ${m[1].slice(0, 60)}`); continue; }
+      const who = names(c[1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(c[2]);
+      // (a one-word name after the first author — "Robby" — is a name)
+      if (who.length && isPerson(who[0]) && who.slice(1).every((n) => isPerson(n) || /^\p{Lu}[\p{L}'’-]+$/u.test(n)) && title.length >= 8) entries.push(entry("ICSE", b.year, "Most Influential Paper Award", title, who, source, `ICSE ${b.year} Most Influential Paper Award: ${c[1]}: ${title}`, parseInt(m[2], 10)));
+      else skipped.push(`${b.year}: not read: ${c[1].slice(0, 50)} / ${title.slice(0, 40)}`);
+    }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -550,7 +577,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

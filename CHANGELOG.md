@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.21 — 2026-10-12
+
+- The ICSE Most Influential Paper Award (1990–2025, 35 papers: Program Slicing, Statemate, Feedback-Directed Random Test Generation, On the Naturalness of Software, IccTA …) from the ICSE
+  Steering Committee's own page (`tot.mjs icse`); the HTML entities for Central European letters (`&Ccaron;` in Čubranić) are decoded. The bundled list has 5178 awards.
+
 ## 2.9.20 — 2026-10-12
 
 - ISMAR's awards (2007–2025, 88 papers: best papers, best student papers, honorable mentions, and the impact / lasting-impact papers) from ISMAR's own page of past symposia (`tot.mjs ismar`);
