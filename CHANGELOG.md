@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.32 — 2026-10-12
+
+- The AAAI ICWSM awards (Test of Time 2018–2021, Best Paper 2007–2021 with its outstanding papers and runners-up: 37 papers — Political Polarization on Twitter, The Million Follower Fallacy, Gephi,
+  The Livehoods Project, 4chan and /b/ …) from ICWSM's own awards page (`tot.mjs icwsm`). The bundled list has 5475 awards.
+
 ## 2.9.31 — 2026-10-12
 
 - The ACM SIGCSE Test of Time Award (2020–2025, 5 papers: Methods and Tools for Exploring Novice Compilation Behaviour, Parsons problems, The incredible shrinking pipeline …) from SIGCSE's

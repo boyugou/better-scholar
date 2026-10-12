@@ -115,7 +115,8 @@ const PAGES = {
   doceng: "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
   newton: "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
   sigspatial: "https://www.sigspatial.org/people/award-recipients/",
-  sigcse: "https://sigcse.org/programs/awards/test-of-time.html"
+  sigcse: "https://sigcse.org/programs/awards/test-of-time.html",
+  icwsm: "https://www.icwsm.org/awards/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -754,6 +755,36 @@ export function parseSigcseTot(html, source = PAGES.sigcse) {
   return { entries, skipped };
 }
 
+export function parseIcwsmAwards(html, source = PAGES.icwsm) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  let section = null, year = null, sub = "main";
+  const authorsOf = (l) => { const t = l.replace(/;?\s*ICWSM\s*((?:19|20)\d{2})\s*$/, ""); return { who: names(t.replace(/\s+and\s+/g, ", and ").replace(/\bDavidW\./, "David W.")), py: (/ICWSM\s*((?:19|20)\d{2})\s*$/.exec(l) || [])[1] }; };
+  for (let i = 0; i < ls.length; i++) {
+    const l = ls[i];
+    if (/^Test of Time Award$/i.test(l)) { section = "tot"; year = null; continue; }
+    if (/^Best Paper Award$/i.test(l)) { section = "best"; year = null; continue; }
+    if (/^Adamic-Glance Distinguished Young Researcher Award$/i.test(l)) { section = null; continue; }
+    if (!section) continue;
+    if (/^(?:19|20)\d{2}$/.test(l)) { year = parseInt(l, 10); sub = "main"; continue; }
+    if (/^Outstanding Papers$/i.test(l)) { sub = "outstanding"; continue; }
+    if (/^Runner[- ]Up$/i.test(l)) { sub = "runner-up"; continue; }
+    if (!year || !ls[i + 1]) continue;
+    // (a Test of Time row wraps: "Authors;" and "ICWSM 2010" are lines of their own, and a long author list wraps before)
+    let take = 1, authorLine = ls[i + 1];
+    if (section === "tot") for (let k = 2; k <= 4 && ls[i + k]; k++) { if (/ICWSM\s*(?:19|20)\d{2}\s*$/.test(authorLine) || !(/[;,]$/.test(authorLine) || /^ICWSM\s*(?:19|20)\d{2}$/.test(ls[i + k]))) break; authorLine += " " + ls[i + k]; take = k; }
+    const { who, py } = authorsOf(authorLine);
+    if (!who.length || !who.every(isPerson)) continue;
+    const award = sub === "outstanding" ? "outstanding" : sub === "runner-up" ? "runner-up" : section === "tot" ? "tot" : "best";
+    const label = award === "outstanding" ? "Outstanding Paper" : award === "runner-up" ? (section === "tot" ? "Test of Time Award Runner Up" : "Best Paper Runner Up") : section === "tot" ? "Test of Time Award" : "Best Paper Award";
+    const title = cleanTitle(l);
+    if (title.length >= 8) entries.push({ venue: "ICWSM", year, award, awardLabel: label, title, authors: who, track: "main", source, evidence: `ICWSM ${year} ${label}: ${l} — ${authorLine}`, ...(py ? { paperYear: parseInt(py, 10) } : {}) });
+    else skipped.push(`${year}: not read: ${l.slice(0, 50)}`);
+    i += take;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -809,7 +840,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5438
+  "count": 5475
  },
  "entries": [
   {
@@ -58949,6 +58949,597 @@
    "paperYear": 2015,
    "source": "https://www.icse-conferences.org/mostinfluential.html",
    "evidence": "ICSE 2025 Most Influential Paper Award: Li Li, Alexandre Bartel, Tegawendé F. Bissyandé, Jacques Klein, Yves Le Traon, Steven Arzt, Siegfried Rasthofer, Eric Bodden, Damien Octeau, Patrick McDaniel: IccTA: Detecting Inter-Component Privacy Leaks in Android Apps"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TagAssist: Automatic Tag Suggestion for Blog Posts",
+   "authors": [
+    "Sanjay Sood",
+    "Sara Owsley",
+    "Kristian Hammond",
+    "Larry Birnbaum"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2007 Best Paper Award: TagAssist: Automatic Tag Suggestion for Blog Posts — Sanjay Sood, Sara Owsley, Kristian Hammond and Larry Birnbaum"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Wikipedian Self-Governance in Action: Motivating the Policy Lens",
+   "authors": [
+    "Ivan Beschastnikh",
+    "Travis Kriplean",
+    "David W. McDonald"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2008 Best Paper Award: Wikipedian Self-Governance in Action: Motivating the Policy Lens — Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Gesundheit! Modeling Contagion Through Facebook News Feed",
+   "authors": [
+    "Eric Sun",
+    "Itamar Rosenn",
+    "Cameron Marlow",
+    "Thomas Lento"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2009 Best Paper Award: Gesundheit! Modeling Contagion Through Facebook News Feed — Eric Sun, Itamar Rosenn, Cameron Marlow, Thomas Lento"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Motivational, Structural and Tenure Factors that Impact Online Community Photo Sharing",
+   "authors": [
+    "Oded Nov",
+    "Mor Naaman",
+    "Chen Ye"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2009 Best Paper Award: Motivational, Structural and Tenure Factors that Impact Online Community Photo Sharing — Oded Nov, Mor Naaman, Chen Ye"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ePluribus : Ethnicity on Social Networks",
+   "authors": [
+    "Jonathan Chang",
+    "Itamar Rosenn",
+    "Lars Backstrom",
+    "Cameron Marlow"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2010 Best Paper Award: ePluribus : Ethnicity on Social Networks — Jonathan Chang, Itamar Rosenn, Lars Backstrom, Cameron Marlow"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Social Dynamics of Economic Activity in a Virtual World",
+   "authors": [
+    "Eytan Bakshy",
+    "Matthew Simmons",
+    "David Huffaker",
+    "ChunYuen Teng",
+    "Lada Adamic"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2010 Best Paper Award: The Social Dynamics of Economic Activity in a Virtual World — Eytan Bakshy, Matthew Simmons, David Huffaker, ChunYuen Teng, Lada Adamic"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "4chan and /b/: An Analysis of Anonymity and Ephemerality in a Large Online Community",
+   "authors": [
+    "Michael Bernstein",
+    "Andrés Monroy-Hernández",
+    "Drew Harry",
+    "Paul André",
+    "Katrina Panovich",
+    "Gregory G Vargas"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2011 Best Paper Award: 4chan and /b/: An Analysis of Anonymity and Ephemerality in a Large Online Community — Michael Bernstein, Andrés Monroy-Hernández, Drew Harry, Paul André, Katrina Panovich, Gregory G Vargas"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Emergence of Conventions in Online Social Networks",
+   "authors": [
+    "Farshad Kooti",
+    "Haeryun Yang",
+    "Meeyoung Cha",
+    "Krishna P. Gummadi",
+    "Winter A. Mason"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2012 Best Paper Award: The Emergence of Conventions in Online Social Networks — Farshad Kooti, Haeryun Yang, Meeyoung Cha, Krishna P. Gummadi, Winter A. Mason"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Livehoods Project: Utilizing Social Media to Understand the Dynamics of a City",
+   "authors": [
+    "Justin Cranshaw",
+    "Raz Schwartz",
+    "Jason Hong",
+    "Norman Sadeh"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2012 Best Paper Award: The Livehoods Project: Utilizing Social Media to Understand the Dynamics of a City — Justin Cranshaw, Raz Schwartz, Jason Hong, and Norman Sadeh"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Booming Up the Long Tails: Discovering Potentially Contributive Users in Community-Based Question Answering Services",
+   "authors": [
+    "Juyup Sung",
+    "Jae-Gil Lee",
+    "Uichin Lee"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2013 Best Paper Award: Booming Up the Long Tails: Discovering Potentially Contributive Users in Community-Based Question Answering Services — Juyup Sung, Jae-Gil Lee, Uichin Lee"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "When Politicians Talk: Assessing Online Conversational Practices of Political Parties on Twitter",
+   "authors": [
+    "Haiko Lietz",
+    "Claudia Wagner",
+    "Arnim Bleier",
+    "Markus Strohmaier"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2014 Best Paper Award: When Politicians Talk: Assessing Online Conversational Practices of Political Parties on Twitter — Haiko Lietz, Claudia Wagner, Arnim Bleier, Markus Strohmaier"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Like Partying? Your Face Says It All. Predicting the Ambiance of Places with Profile Pictures",
+   "authors": [
+    "Miriam Redi",
+    "Daniele Quercia",
+    "Lindsay T. Graham",
+    "Samuel D. Gosling"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2015 Best Paper Award: Like Partying? Your Face Says It All. Predicting the Ambiance of Places with Profile Pictures — Miriam Redi, Daniele Quercia, Lindsay T. Graham, Samuel D. Gosling"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Social Media Participation in an Activist Movement for Racial Equality",
+   "authors": [
+    "Munmun de Choudhury",
+    "Shagun Jhaver",
+    "Benjamin Sugar",
+    "Ingmar Weber"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2016 Best Paper Award: Social Media Participation in an Activist Movement for Racial Equality — Munmun de Choudhury, Shagun Jhaver, Benjamin Sugar, Ingmar Weber"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Language of Social Support in Social Media and its Effect on Suicidal Ideation Risk",
+   "authors": [
+    "Munmun de Choudhury",
+    "Emre Kiciman"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2017 Best Paper Award: The Language of Social Support in Social Media and its Effect on Suicidal Ideation Risk — Munmun de Choudhury, Emre Kiciman"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The_Tower_of_Babel.jpg: Diversity of Visual Encyclopedic Knowledge Across Wikipedia Language Editions",
+   "authors": [
+    "Shiqing He",
+    "Allen Yilun Lin",
+    "Eytan Adar",
+    "Brent Hecht"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2018 Best Paper Award: The_Tower_of_Babel.jpg: Diversity of Visual Encyclopedic Knowledge Across Wikipedia Language Editions — Shiqing He, Allen Yilun Lin, Eytan Adar, Brent Hecht"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Award Runner Up",
+   "title": "Wikipedian Self-Governance in Action: Motivating the Policy Lens",
+   "authors": [
+    "Ivan Beschastnikh",
+    "Travis Kriplean",
+    "David W. McDonald"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2018 Test of Time Award Runner Up: Wikipedian Self-Governance in Action: Motivating the Policy Lens — Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Personality Impressions Based on Facebook Profiles",
+   "authors": [
+    "Samuel D. Gosling",
+    "Sam Gaddis",
+    "Simine Vazire"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2018 Test of Time Award: Personality Impressions Based on Facebook Profiles — Samuel D. Gosling, Sam Gaddis, Simine Vazire; ICWSM 2007"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Smart, Responsible, and Upper Caste Only: Measuring Caste Attitudes through Large-Scale Analysis of Matrimonial Profile",
+   "authors": [
+    "Ashwin Rajadesingan",
+    "Ramaswami Mahalingam",
+    "David Jurgens"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2019 Best Paper Award: Smart, Responsible, and Upper Caste Only: Measuring Caste Attitudes through Large-Scale Analysis of Matrimonial Profile — Ashwin Rajadesingan, Ramaswami Mahalingam, David Jurgens"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "A Social Media Study on the Effects of Psychiatric Medication Use",
+   "authors": [
+    "Koustuv Saha",
+    "Benjamin Sugar",
+    "John Torous",
+    "Bruno Abrahao",
+    "Emre Kiciman",
+    "Munmun De Choudhury"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2019 Outstanding Paper: A Social Media Study on the Effects of Psychiatric Medication Use — Koustuv Saha, Benjamin Sugar, John Torous, Bruno Abrahao, Emre Kiciman, Munmun De Choudhury"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Bias Misperceived: The Role of Partisanship and Misinformation in YouTube Comment Moderation",
+   "authors": [
+    "Shan Jiang",
+    "Ronald E Robertson",
+    "Christo Wilson"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2019 Outstanding Paper: Bias Misperceived: The Role of Partisanship and Misinformation in YouTube Comment Moderation — Shan Jiang, Ronald E Robertson, Christo Wilson"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2019,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Eliciting New Wikipedia Users' Interests via Automatically Mined Questionnaires: For a Warm Welcome, Not a Cold Start",
+   "authors": [
+    "Ramtin Yazdanian",
+    "Leila Zia",
+    "Jonathan T Morgan",
+    "Bahodir Mansurov",
+    "Robert West"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2019 Outstanding Paper: Eliciting New Wikipedia Users' Interests via Automatically Mined Questionnaires: For a Warm Welcome, Not a Cold Start — Ramtin Yazdanian, Leila Zia, Jonathan T Morgan, Bahodir Mansurov, Robert West"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Gephi: An Open Source Software for Exploring and Manipulating Networks",
+   "authors": [
+    "Mathieu Bastian",
+    "Sebastien Heymann",
+    "Mathieu Jacomy"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2019 Test of Time Award: Gephi: An Open Source Software for Exploring and Manipulating Networks — Mathieu Bastian, Sebastien Heymann, Mathieu Jacomy; ICWSM 2009"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Experimental Study of Structural Diversity in Social Networks",
+   "authors": [
+    "Jessica Su",
+    "Krishna Kamath",
+    "Aneesh Sharma",
+    "Johan Ugander",
+    "Sharad Goel"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Best Paper Award: An Experimental Study of Structural Diversity in Social Networks — Jessica Su, Krishna Kamath, Aneesh Sharma, Johan Ugander, Sharad Goel"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "A Quantitative Approach to Understanding Online Antisemitism",
+   "authors": [
+    "Savvas Zannettou",
+    "Joel Finkelstein",
+    "Barry Bradlyn",
+    "Jeremy Blackburn"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: A Quantitative Approach to Understanding Online Antisemitism — Savvas Zannettou, Joel Finkelstein, Barry Bradlyn, Jeremy Blackburn"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Aggressive, Repetitive, Intentional, Visible, and Imbalanced: Refining Representations for Cyberbullying Classification",
+   "authors": [
+    "Caleb Ziems",
+    "Ymir Vigfusson",
+    "Fred Morstatter"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Aggressive, Repetitive, Intentional, Visible, and Imbalanced: Refining Representations for Cyberbullying Classification — Caleb Ziems, Ymir Vigfusson, Fred Morstatter"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Behind the Mask: A Computational Study of Anonymous' Presence on Twitter",
+   "authors": [
+    "Keenan Jones",
+    "Jason R. C. Nurse",
+    "Shujun Li"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Behind the Mask: A Computational Study of Anonymous' Presence on Twitter — Keenan Jones, Jason R. C. Nurse, Shujun Li"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Disturbed YouTube for Kids: Characterizing and Detecting Inappropriate Videos Targeting Young Children",
+   "authors": [
+    "Kostantinos Papadamou",
+    "Antonis Papasavva",
+    "Savvas Zannettou",
+    "Jeremy Blackburn",
+    "Nicolas Kourtellis",
+    "Ilias Leontiadis",
+    "Gianluca Stringhini",
+    "Michael Sirivianos"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Disturbed YouTube for Kids: Characterizing and Detecting Inappropriate Videos Targeting Young Children — Kostantinos Papadamou, Antonis Papasavva, Savvas Zannettou, Jeremy Blackburn, Nicolas Kourtellis, Ilias Leontiadis, Gianluca Stringhini, Michael Sirivianos"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Gravity of Location-Based Service: Analyzing the Effects for Mobility Pattern and Location Prediction",
+   "authors": [
+    "Keiichi Ochiai",
+    "Yusuke Fukazawa",
+    "Wataru Yamada",
+    "Hiroyuki Manabe",
+    "Yutaka Matsuo"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Gravity of Location-Based Service: Analyzing the Effects for Mobility Pattern and Location Prediction — Keiichi Ochiai, Yusuke Fukazawa, Wataru Yamada, Hiroyuki Manabe, Yutaka Matsuo"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Influence Maximization Using Influence and Susceptibility Embeddings",
+   "authors": [
+    "George Panagopoulos",
+    "Fragkiskos D. Malliaros",
+    "Michalis Vazirgianis"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Influence Maximization Using Influence and Susceptibility Embeddings — George Panagopoulos, Fragkiskos D. Malliaros, Michalis Vazirgianis"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Minimizing Interference and Selection Bias in Network Experiment Design",
+   "authors": [
+    "Zahra Fatemi",
+    "Elena Zheleva"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Minimizing Interference and Selection Bias in Network Experiment Design — Zahra Fatemi, Elena Zheleva"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Quasi-Experimental Designs for Assessing Response on Social Media to Policy Changes",
+   "authors": [
+    "Yijun Tian",
+    "Rumi Chunara"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Outstanding Paper: Quasi-Experimental Designs for Assessing Response on Social Media to Policy Changes — Yijun Tian, Rumi Chunara"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Measuring User Influence in Twitter: The Million Follower Fallacy",
+   "authors": [
+    "Meeyoung Cha",
+    "Hamed Haddadi",
+    "Fabricio Benevenuto",
+    "Krishna P. Gummadi"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2020 Test of Time Award: Measuring User Influence in Twitter: The Million Follower Fallacy — Meeyoung Cha, Hamed Haddadi, Fabricio Benevenuto, and Krishna P. Gummadi; ICWSM 2010"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Political Polarization in Online News Consumption",
+   "authors": [
+    "Kiran Garimella",
+    "Tim Smith",
+    "Rebecca Weiss",
+    "Robert West"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2021 Best Paper Award: Political Polarization in Online News Consumption — Kiran Garimella, Tim Smith, Rebecca Weiss, Robert West"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Political Bias and Factualness in News Sharing across more than 100,000 Online Communities",
+   "authors": [
+    "Galen Weld",
+    "Maria Glenski",
+    "Tim Althoff"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2021 Outstanding Paper: Political Bias and Factualness in News Sharing across more than 100,000 Online Communities — Galen Weld, Maria Glenski, Tim Althoff"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "The Effect of Moderation on Online Mental Health Conversations",
+   "authors": [
+    "David Wadden",
+    "Tal August",
+    "Qisheng Li",
+    "Tim Althoff"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2021 Outstanding Paper: The Effect of Moderation on Online Mental Health Conversations — David Wadden, Tal August, Qisheng Li, Tim Althoff"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Which Node Attribute Prediction Task Are We Solving? Within-Network, Across-Network, or Across-Layer Tasks",
+   "authors": [
+    "Kristen M. Altenburger",
+    "Johan Ugander"
+   ],
+   "track": "main",
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2021 Outstanding Paper: Which Node Attribute Prediction Task Are We Solving? Within-Network, Across-Network, or Across-Layer Tasks — Kristen M. Altenburger, Johan Ugander"
+  },
+  {
+   "venue": "ICWSM",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Political Polarization on Twitter",
+   "authors": [
+    "Michael Connover",
+    "Jacob Ratkiewicz",
+    "Matthew Francisco",
+    "Bruno Gonçalves",
+    "Filippo Menczer",
+    "Alessandro Flammini"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.icwsm.org/awards/",
+   "evidence": "ICWSM 2021 Test of Time Award: Political Polarization on Twitter — Michael Connover, Jacob Ratkiewicz, Matthew Francisco, Bruno Gonçalves, Filippo Menczer, Alessandro Flammini; ICWSM 2011"
   },
   {
    "venue": "IH",

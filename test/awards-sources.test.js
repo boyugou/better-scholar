@@ -1460,3 +1460,20 @@ test("SIGCSE Test of Time page: a 'Title (2025)' line and an ACM citation line '
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("ICWSM awards page: Test of Time and Best Paper sections, title / authors pairs, wrapped Test of Time rows, outstanding papers and runners-up", async () => {
+  const { parseIcwsmAwards } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Adamic-Glance Distinguished Young Researcher Award</h2><p>2021 Winner</p><p>Tanushree (Tanu) Mitra</p>
+<h2>Test of Time Award</h2><p>2021</p><p>Political Polarization on Twitter</p><p>Michael Connover, Jacob Ratkiewicz, Matthew Francisco,</p><p>Bruno Gonçalves, Filippo Menczer, Alessandro Flammini;</p><p>ICWSM 2011</p>
+<p>2018</p><p>Personality Impressions Based on Facebook Profiles</p><p>Samuel D. Gosling, Sam Gaddis, Simine Vazire;</p><p>ICWSM 2007</p><p>Runner Up</p><p>Wikipedian Self-Governance in Action: Motivating the Policy Lens</p><p>Ivan Beschastnikh, Travis Kriplean, DavidW. McDonald</p>
+<h2>Best Paper Award</h2><p>2021</p><p>Political Polarization in Online News Consumption</p><p>Kiran Garimella, Tim Smith, Rebecca Weiss, Robert West</p><p>Outstanding Papers</p><p>The Effect of Moderation on Online Mental Health Conversations</p><p>David Wadden, Tal August, Qisheng Li, Tim Althoff</p>`;
+  const { entries, skipped } = parseIcwsmAwards(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear || "-"} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2021/2011 tot Political Polarization on Twitter | Michael Connover; Jacob Ratkiewicz; Matthew Francisco; Bruno Gonçalves; Filippo Menczer; Alessandro Flammini",
+    "2018/2007 tot Personality Impressions Based on Facebook Profiles | Samuel D. Gosling; Sam Gaddis; Simine Vazire",
+    "2018/- runner-up Wikipedian Self-Governance in Action: Motivating the Policy Lens | Ivan Beschastnikh; Travis Kriplean; David W. McDonald",
+    "2021/- best Political Polarization in Online News Consumption | Kiran Garimella; Tim Smith; Rebecca Weiss; Robert West",
+    "2021/- outstanding The Effect of Moderation on Online Mental Health Conversations | David Wadden; Tal August; Qisheng Li; Tim Althoff"
+  ]);
+  assert.deepEqual(skipped, []);
+});
