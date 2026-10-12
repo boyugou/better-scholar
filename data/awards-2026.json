@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 1676
+  "count": 1727
  },
  "entries": [
   {
@@ -10394,6 +10394,631 @@
   },
   {
    "venue": "EMNLP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Long Paper",
+   "title": "Visually Grounded Reasoning across Languages and Cultures",
+   "authors": [
+    "Fangyu Liu",
+    "Emanuele Bugliarello",
+    "Edoardo Maria Ponti",
+    "Siva Reddy",
+    "Nigel Collier",
+    "Desmond Elliott"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Best Long Paper: Visually Grounded Reasoning across Languages and Cultures — Fangyu Liu, Emanuele Bugliarello, Edoardo Maria Ponti, Siva Reddy, Nigel Collier and Desmond Elliott"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "CHoRaL: Collecting Humor Reaction Labels from Millions of Social Media Users",
+   "authors": [
+    "Zixiaofan Yang",
+    "Shayan Hooshmand",
+    "Julia Hirschberg"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Best Short Paper: CHoRaL: Collecting Humor Reaction Labels from Millions of Social Media Users — Zixiaofan Yang, Shayan Hooshmand and Julia Hirschberg"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "MindCraft: Theory of Mind Modeling for Situated Dialogue in Collaborative Tasks",
+   "authors": [
+    "Cristian-Paul Bara",
+    "Sky CH-Wang",
+    "Joyce Chai"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Outstanding Papers: MindCraft: Theory of Mind Modeling for Situated Dialogue in Collaborative Tasks — Cristian-Paul Bara, Sky CH-Wang and Joyce Chai"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Shortcutted Commonsense: Data Spuriousness in Deep Learning of Commonsense Reasoning",
+   "authors": [
+    "Ruben Branco",
+    "Antonio Branco",
+    "Joao Antonio Rodrigues",
+    "Joao Ricardo Silva"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Outstanding Papers: Shortcutted Commonsense: Data Spuriousness in Deep Learning of Commonsense Reasoning — Ruben Branco, Antonio Branco, Joao Antonio Rodrigues and Joao Ricardo Silva"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "SituatedQA: Incorporating Extra-Linguistic Contexts into QA",
+   "authors": [
+    "Michael Zhang",
+    "Eunsol Choi"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Outstanding Papers: SituatedQA: Incorporating Extra-Linguistic Contexts into QA — Michael Zhang and Eunsol Choi"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute",
+   "authors": [
+    "Tao Lei"
+   ],
+   "track": "main",
+   "source": "https://2021.emnlp.org/blog/2021-10-29-best-paper-awards/",
+   "evidence": "Outstanding Papers: When Attention Meets Fast Recurrence: Training Language Models with Reduced Compute — Tao Lei"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Faster Minimum Bayes Risk Decoding with Confidence-based Pruning",
+   "authors": [
+    "Julius Cheng",
+    "Andreas Vlachos"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Best Paper Awards: Faster Minimum Bayes Risk Decoding with Confidence-based Pruning — Julius Cheng and Andreas Vlachos"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs Through a Global Prompt Hacking Competition",
+   "authors": [
+    "Sander V Schulhoff",
+    "Jeremy Pinto",
+    "Anaum Khan",
+    "Louis-François Bouchard",
+    "Chenglei Si",
+    "Svetlina Anati",
+    "Valen Tagliabue",
+    "Anson Liu Kost",
+    "Christopher R Carnahan",
+    "Jordan Lee Boyd-Graber"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Best Paper Awards: Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs Through a Global Prompt Hacking Competition — Sander V Schulhoff, Jeremy Pinto, Anaum Khan, Louis-François Bouchard, Chenglei Si, Svetlina Anati, Valen Tagliabue, Anson Liu Kost, Christopher R Carnahan and Jordan Lee Boyd-Graber"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Label Words are Anchors: An Information Flow Perspective for Understanding In-Context Learning",
+   "authors": [
+    "Lean Wang",
+    "Lei Li",
+    "Damai Dai",
+    "Deli Chen",
+    "Hao Zhou",
+    "Fandong Meng",
+    "Jie Zhou",
+    "Xu Sun"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Best Paper Awards: Label Words are Anchors: An Information Flow Perspective for Understanding In-Context Learning — Lean Wang, Lei Li, Damai Dai, Deli Chen, Hao Zhou, Fandong Meng, Jie Zhou and Xu Sun"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents",
+   "authors": [
+    "Kyle Lo",
+    "Zejiang Shen",
+    "Benjamin Newman",
+    "Joseph Chee Chang",
+    "Russell Authur",
+    "Erin Bransom",
+    "Stefan Candra",
+    "Yoganand Chandrasekhar",
+    "Regan Huff",
+    "Bailey Kuehl",
+    "Amanpreet Singh",
+    "Chris Wilhelm",
+    "Angele Zamarron",
+    "Marti A. Hearst",
+    "Daniel Weld",
+    "Doug Downey",
+    "Luca Soldaini"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Best Paper Awards: PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents — _Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel Weld, Doug Downey and Luca Soldaini _"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Personalized Dense Retrieval on Global Index for Voice-enabled Conversational Systems",
+   "authors": [
+    "Masha Belyi",
+    "Charlotte Dzialo",
+    "Chaitanya Dwivedi",
+    "Prajit Reddy Muppidi",
+    "Kanna Shimizu"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Best Paper Awards: Personalized Dense Retrieval on Global Index for Voice-enabled Conversational Systems — Masha Belyi, Charlotte Dzialo, Chaitanya Dwivedi, Prajit Reddy Muppidi and Kanna Shimizu"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Background Summarization of Event Timelines",
+   "authors": [
+    "Adithya Pratapa",
+    "Kevin Small",
+    "Markus Dreyer"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Background Summarization of Event Timelines — Adithya Pratapa, Kevin Small and Markus Dreyer"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Bridging Continuous and Discrete Spaces: Interpretable Sentence Representation Learning via Compositional Operations",
+   "authors": [
+    "James Y. Huang",
+    "Wenlin Yao",
+    "Kaiqiang Song",
+    "Hongming Zhang",
+    "Muhao Chen",
+    "Dong Yu"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Bridging Continuous and Discrete Spaces: Interpretable Sentence Representation Learning via Compositional Operations — James Y. Huang, Wenlin Yao, Kaiqiang Song, Hongming Zhang, Muhao Chen and Dong Yu"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Counter Turing Test (CT2): AI-Generated Text Detection is Not as Easy as You May Think - Introducing AI Detectability Index (ADI)",
+   "authors": [
+    "Megha Chakraborty",
+    "S.M Towhidul Islam Tonmoy",
+    "S M Mehedi Zaman",
+    "Shreya Gautam",
+    "Tanay Kumar",
+    "Krish Sharma",
+    "Niyar R Barman",
+    "Chandan Gupta",
+    "Vinija Jain",
+    "Aman Chadha",
+    "Amit P. Sheth",
+    "Amitava Das"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Counter Turing Test (CT2): AI-Generated Text Detection is Not as Easy as You May Think - Introducing AI Detectability Index (ADI) — Megha Chakraborty, S.M Towhidul Islam Tonmoy, S M Mehedi Zaman, Shreya Gautam, Tanay Kumar, Krish Sharma, Niyar R Barman, Chandan Gupta, Vinija Jain, Aman Chadha, Amit P. Sheth and Amitava Das"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Cross-Lingual Consistency of Factual Knowledge in Multilingual Language Models",
+   "authors": [
+    "Jirui Qi",
+    "Raquel Fernández",
+    "Arianna Bisazza"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Cross-Lingual Consistency of Factual Knowledge in Multilingual Language Models — Jirui Qi, Raquel Fernández and Arianna Bisazza"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "FedID: Federated Interactive Distillation for Large-Scale Pretraining Language Models",
+   "authors": [
+    "Xinge Ma",
+    "Jiangming Liu",
+    "Jin Wang",
+    "Xuejie Zhang"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: FedID: Federated Interactive Distillation for Large-Scale Pretraining Language Models — Xinge Ma, Jiangming Liu, Jin Wang and Xuejie Zhang"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Homophone Disambiguation Reveals Patterns of Context Mixing in Speech Transformers",
+   "authors": [
+    "Hosein Mohebbi",
+    "Grzegorz Chrupała",
+    "Willem Zuidema",
+    "Afra Alishahi"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Homophone Disambiguation Reveals Patterns of Context Mixing in Speech Transformers — Hosein Mohebbi, Grzegorz Chrupała, Willem Zuidema and Afra Alishahi"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "IfQA: A Dataset for Open-domain Question Answering under Counterfactual Presuppositions",
+   "authors": [
+    "Wenhao Yu",
+    "Meng Jiang",
+    "Peter Clark",
+    "Ashish Sabharwal"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: IfQA: A Dataset for Open-domain Question Answering under Counterfactual Presuppositions — Wenhao Yu, Meng Jiang, Peter Clark and Ashish Sabharwal"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Incorporating Worker Perspectives into MTurk Annotation Practices for NLP",
+   "authors": [
+    "Olivia Huang",
+    "Eve Fleisig",
+    "Dan Klein"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Incorporating Worker Perspectives into MTurk Annotation Practices for NLP — Olivia Huang, Eve Fleisig and Dan Klein"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents",
+   "authors": [
+    "Weiwei Sun",
+    "Lingyong Yan",
+    "Xinyu Ma",
+    "Shuaiqiang Wang",
+    "Pengjie Ren",
+    "Zhumin Chen",
+    "Dawei Yin",
+    "Zhaochun Ren"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents — Weiwei Sun, Lingyong Yan, Xinyu Ma, Shuaiqiang Wang, Pengjie Ren, Zhumin Chen, Dawei Yin and Zhaochun Ren"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Joint Dialogue Topic Segmentation and Categorization: A Case Study on Clinical Spoken Conversations",
+   "authors": [
+    "Zhengyuan Liu",
+    "Siti Umairah Md Salleh",
+    "Hong Choon Oh",
+    "Pavitra Krishnaswamy",
+    "Nancy Chen"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Joint Dialogue Topic Segmentation and Categorization: A Case Study on Clinical Spoken Conversations — Zhengyuan Liu, Siti Umairah Md Salleh, Hong Choon Oh, Pavitra Krishnaswamy and Nancy Chen"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Language Model Quality Correlates with Psychometric Predictive Power in Multiple Languages",
+   "authors": [
+    "Ethan Wilcox",
+    "Clara Meister",
+    "Ryan Cotterell",
+    "Tiago Pimentel"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Language Model Quality Correlates with Psychometric Predictive Power in Multiple Languages — Ethan Wilcox, Clara Meister, Ryan Cotterell and Tiago Pimentel"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "LINC: A Neurosymbolic Approach for Logical Reasoning by Combining Language Models with First-Order Logic Provers",
+   "authors": [
+    "Theo X. Olausson",
+    "Alex Gu",
+    "Ben Lipkin",
+    "Cedegao E. Zhang",
+    "Armando Solar-Lezama",
+    "Joshua B. Tenenbaum",
+    "Roger P. Levy"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: LINC: A Neurosymbolic Approach for Logical Reasoning by Combining Language Models with First-Order Logic Provers — Theo X. Olausson, Alex Gu, Ben Lipkin, Cedegao E. Zhang, Armando Solar-Lezama, Joshua B. Tenenbaum and Roger P. Levy"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Linear-Time Modeling of Linguistic Structure: An Order-Theoretic Perspective",
+   "authors": [
+    "Tianyu Liu",
+    "Afra Amini",
+    "Mrinmaya Sachan",
+    "Ryan Cotterell"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Linear-Time Modeling of Linguistic Structure: An Order-Theoretic Perspective — Tianyu Liu, Afra Amini, Mrinmaya Sachan and Ryan Cotterell"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Look-back Decoding for Open-Ended Text Generation",
+   "authors": [
+    "Nan Xu",
+    "Chunting Zhou",
+    "Asli Celikyilmaz",
+    "Xuezhe Ma"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Look-back Decoding for Open-Ended Text Generation — Nan Xu, Chunting Zhou, Asli Celikyilmaz and Xuezhe Ma"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Physician Detection of Clinical Harm in Machine Translation: Quality Estimation Aids in Reliance and Backtranslation Identifies Critical Errors",
+   "authors": [
+    "Nikita Mehandru",
+    "Sweta Agrawal",
+    "Yimin Xiao",
+    "Ge Gao",
+    "Elaine C Khoong",
+    "Marine Carpuat",
+    "Niloufar Salehi"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Physician Detection of Clinical Harm in Machine Translation: Quality Estimation Aids in Reliance and Backtranslation Identifies Critical Errors — Nikita Mehandru, Sweta Agrawal, Yimin Xiao, Ge Gao, Elaine C Khoong, Marine Carpuat and Niloufar Salehi"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Preserving Knowledge Invariance: Rethinking Robustness Evaluation of Open Information Extraction",
+   "authors": [
+    "Ji Qi",
+    "Chuchun Zhang",
+    "Xiaozhi Wang",
+    "Kaisheng Zeng",
+    "Jifan Yu",
+    "Jinxin Liu",
+    "Lei Hou",
+    "Juanzi Li",
+    "Xu Bin"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Preserving Knowledge Invariance: Rethinking Robustness Evaluation of Open Information Extraction — Ji Qi, Chuchun Zhang, Xiaozhi Wang, Kaisheng Zeng, Jifan Yu, Jinxin Liu, Lei Hou, Juanzi Li and Xu Bin"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Revisiting the Optimality of Word Lengths",
+   "authors": [
+    "Tiago Pimentel",
+    "Clara Meister",
+    "Ethan Wilcox",
+    "Kyle Mahowald",
+    "Ryan Cotterell"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Revisiting the Optimality of Word Lengths — Tiago Pimentel, Clara Meister, Ethan Wilcox, Kyle Mahowald and Ryan Cotterell"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization",
+   "authors": [
+    "Hyunwoo Kim",
+    "Jack Hessel",
+    "Liwei Jiang",
+    "Peter West",
+    "Ximing Lu",
+    "Youngjae Yu",
+    "Pei Zhou",
+    "Ronan Le Bras",
+    "Malihe Alikhani",
+    "Gunhee Kim",
+    "Maarten Sap",
+    "Yejin Choi"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization — Hyunwoo Kim, Jack Hessel, Liwei Jiang, Peter West, Ximing Lu, Youngjae Yu, Pei Zhou, Ronan Le Bras, Malihe Alikhani, Gunhee Kim, Maarten Sap and Yejin Choi"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Text Embeddings Reveal (Almost) As Much As Text",
+   "authors": [
+    "John Xavier Morris",
+    "Volodymyr Kuleshov",
+    "Vitaly Shmatikov",
+    "Alexander M Rush"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Text Embeddings Reveal (Almost) As Much As Text — John Xavier Morris, Volodymyr Kuleshov, Vitaly Shmatikov and Alexander M Rush"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "The Sentiment Problem: A Critical Survey towards Deconstructing Sentiment Analysis",
+   "authors": [
+    "Pranav Narayanan Venkit",
+    "Mukund Srinath",
+    "Sanjana Gautam",
+    "Saranya Venkatraman",
+    "Vipul Gupta",
+    "Rebecca J. Passonneau",
+    "Shomir Wilson"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: The Sentiment Problem: A Critical Survey towards Deconstructing Sentiment Analysis — Pranav Narayanan Venkit, Mukund Srinath, Sanjana Gautam, Saranya Venkatraman, Vipul Gupta, Rebecca J. Passonneau and Shomir Wilson"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Ties Matter: Meta-Evaluating Modern Metrics with Pairwise Accuracy and Tie Calibration",
+   "authors": [
+    "Daniel Deutsch",
+    "George Foster",
+    "Markus Freitag"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Ties Matter: Meta-Evaluating Modern Metrics with Pairwise Accuracy and Tie Calibration — Daniel Deutsch, George Foster and Markus Freitag"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Toward a Critical Toponymy Framework for Named Entity Recognition: A Case Study of Airbnb in New York City",
+   "authors": [
+    "Mikael Brunila",
+    "Jack LaViolette",
+    "Sky CH-Wang",
+    "Priyanka Verma",
+    "Clara Féré",
+    "Grant McKenzie"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Toward a Critical Toponymy Framework for Named Entity Recognition: A Case Study of Airbnb in New York City — Mikael Brunila, Jack LaViolette, Sky CH-Wang, Priyanka Verma, Clara Féré and Grant McKenzie"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Understanding Compositional Data Augmentation in Typologically Diverse Morphological Inflection",
+   "authors": [
+    "Farhan Samir",
+    "Miikka Silfverberg"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Understanding Compositional Data Augmentation in Typologically Diverse Morphological Inflection — Farhan Samir and Miikka Silfverberg"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Unraveling Feature Extraction Mechanisms in Neural Networks",
+   "authors": [
+    "Xiaobing Sun",
+    "Jiaxi Li",
+    "Wei Lu"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: Unraveling Feature Extraction Mechanisms in Neural Networks — Xiaobing Sun, Jiaxi Li and Wei Lu"
+  },
+  {
+   "venue": "EMNLP",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "ViPE: Visualise Pretty-much Everything",
+   "authors": [
+    "Hassan Shahmohammadi",
+    "Adhiraj Ghosh",
+    "Hendrik Lensch"
+   ],
+   "track": "main",
+   "source": "https://2023.emnlp.org/program/best_papers/",
+   "evidence": "Outstanding Papers: ViPE: Visualise Pretty-much Everything — Hassan Shahmohammadi, Adhiraj Ghosh and Hendrik Lensch"
+  },
+  {
+   "venue": "EMNLP",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -10406,7 +11031,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.573/",
-   "evidence": "An image speaks a thousand words, but can everyone listen? On image transcreation for cultural relevance — Best Paper Award"
+   "evidence": "An image speaks a thousand words, but can everyone listen? On image transcreation for cultural relevance — Best Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10422,7 +11050,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.142/",
-   "evidence": "Backward Lens: Projecting Language Model Gradients into the Vocabulary Space — Best Paper Award"
+   "evidence": "Backward Lens: Projecting Language Model Gradients into the Vocabulary Space — Best Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10436,7 +11067,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.721/",
-   "evidence": "CoGen: Learning from Feedback with Coupled Comprehension and Generation — Best Paper Award"
+   "evidence": "CoGen: Learning from Feedback with Coupled Comprehension and Generation — Best Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10454,7 +11088,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.300/",
-   "evidence": "Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method — Best Paper Award"
+   "evidence": "Pretraining Data Detection for Large Language Models: A Divergence-based Calibration Method — Best Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10476,7 +11113,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.570/",
-   "evidence": "Towards Robust Speech Representation Learning for Thousands of Languages — Best Paper Award"
+   "evidence": "Towards Robust Speech Representation Learning for Thousands of Languages — Best Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10496,7 +11136,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.978/",
-   "evidence": "Are Large Language Models Capable of Generating Human-Level Narratives? — Outstanding Paper Award"
+   "evidence": "Are Large Language Models Capable of Generating Human-Level Narratives? — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10512,7 +11155,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.1216/",
-   "evidence": "Do LLMs Plan Like Human Writers? Comparing Journalist Coverage of Press Releases with LLMs — Outstanding Paper Award"
+   "evidence": "Do LLMs Plan Like Human Writers? Comparing Journalist Coverage of Press Releases with LLMs — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10528,7 +11174,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.911/",
-   "evidence": "Finding Blind Spots in Evaluator LLMs with Interpretable Checklists — Outstanding Paper Award"
+   "evidence": "Finding Blind Spots in Evaluator LLMs with Interpretable Checklists — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10542,7 +11191,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.649/",
-   "evidence": "Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models — Outstanding Paper Award"
+   "evidence": "Fishing for Magikarp: Automatically Detecting Under-trained Tokens in Large Language Models — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10564,7 +11216,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.1051/",
-   "evidence": "Fool Me Once? Contrasting Textual and Visual Explanations in a Clinical Decision-Support Setting — Outstanding Paper Award"
+   "evidence": "Fool Me Once? Contrasting Textual and Visual Explanations in a Clinical Decision-Support Setting — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10580,7 +11235,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.304/",
-   "evidence": "Formality is Favored: Unraveling the Learning Preferences of Large Language Models on Data with Conflicting Knowledge — Outstanding Paper Award"
+   "evidence": "Formality is Favored: Unraveling the Learning Preferences of Large Language Models on Data with Conflicting Knowledge — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10597,7 +11255,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.195/",
-   "evidence": "GoldCoin: Grounding Large Language Models in Privacy Laws via Contextual Integrity Theory — Outstanding Paper Award"
+   "evidence": "GoldCoin: Grounding Large Language Models in Privacy Laws via Contextual Integrity Theory — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10611,7 +11272,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.53/",
-   "evidence": "Language Models Learn Rare Phenomena from Less Rare Phenomena: The Case of the Missing AANNs — Outstanding Paper Award"
+   "evidence": "Language Models Learn Rare Phenomena from Less Rare Phenomena: The Case of the Missing AANNs — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10628,7 +11292,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.20/",
-   "evidence": "Learning Planning-based Reasoning by Trajectories Collection and Process Reward Synthesizing — Outstanding Paper Award"
+   "evidence": "Learning Planning-based Reasoning by Trajectories Collection and Process Reward Synthesizing — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10647,7 +11314,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.406/",
-   "evidence": "Learning to Retrieve Iteratively for In-Context Learning — Outstanding Paper Award"
+   "evidence": "Learning to Retrieve Iteratively for In-Context Learning — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10666,7 +11336,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.953/",
-   "evidence": "Measuring Psychological Depth in Language Models — Outstanding Paper Award"
+   "evidence": "Measuring Psychological Depth in Language Models — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10687,7 +11360,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.724/",
-   "evidence": "OATH-Frames: Characterizing Online Attitudes Towards Homelessness with LLM Assistants — Outstanding Paper Award"
+   "evidence": "OATH-Frames: Characterizing Online Attitudes Towards Homelessness with LLM Assistants — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10707,7 +11383,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.702/",
-   "evidence": "SUPER: Evaluating Agents on Setting Up and Executing Tasks from Research Repositories — Outstanding Paper Award"
+   "evidence": "SUPER: Evaluating Agents on Setting Up and Executing Tasks from Research Repositories — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10724,7 +11403,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.983/",
-   "evidence": "The Zeno’s Paradox of ‘Low-Resource’ Languages — Outstanding Paper Award"
+   "evidence": "The Zeno’s Paradox of ‘Low-Resource’ Languages — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10741,7 +11423,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.1101/",
-   "evidence": "Threshold-driven Pruning with Segmented Maximum Term Weights for Approximate Cluster-based Sparse Retrieval — Outstanding Paper Award"
+   "evidence": "Threshold-driven Pruning with Segmented Maximum Term Weights for Approximate Cluster-based Sparse Retrieval — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10759,7 +11444,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.914/",
-   "evidence": "Towards Cross-Cultural Machine Translation with Retrieval-Augmented Generation from Multilingual Knowledge Graphs — Outstanding Paper Award"
+   "evidence": "Towards Cross-Cultural Machine Translation with Retrieval-Augmented Generation from Multilingual Knowledge Graphs — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10775,7 +11463,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.172/",
-   "evidence": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving — Outstanding Paper Award"
+   "evidence": "Verification and Refinement of Natural Language Explanations through LLM-Symbolic Theorem Proving — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10791,7 +11482,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.236/",
-   "evidence": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages — Outstanding Paper Award"
+   "evidence": "When Is Multilinguality a Curse? Language Modeling for 250 High- and Low-Resource Languages — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10808,7 +11502,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.1114/",
-   "evidence": "Which questions should I answer? Salience Prediction of Inquisitive Questions — Outstanding Paper Award"
+   "evidence": "Which questions should I answer? Salience Prediction of Inquisitive Questions — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10828,7 +11525,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2024.emnlp-main.311/",
-   "evidence": "Words Worth a Thousand Pictures: Measuring and Understanding Perceptual Variability in Text-to-Image Generation — Outstanding Paper Award"
+   "evidence": "Words Worth a Thousand Pictures: Measuring and Understanding Perceptual Variability in Text-to-Image Generation — Outstanding Paper Award",
+   "alsoAt": [
+    "https://2024.emnlp.org/program/best_papers/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10845,7 +11545,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.1268/",
-   "evidence": "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index — Best Paper"
+   "evidence": "Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index — Best Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10860,7 +11563,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.90/",
-   "evidence": "Autoformalization in the Wild: Assessing LLMs on Real-World Mathematical Definitions — Best Resource Paper"
+   "evidence": "Autoformalization in the Wild: Assessing LLMs on Real-World Mathematical Definitions — Best Resource Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10878,7 +11584,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.1180/",
-   "evidence": "InterIDEAS: Philosophical Intertextuality via LLMs — Best Special Theme Paper"
+   "evidence": "InterIDEAS: Philosophical Intertextuality via LLMs — Best Special Theme Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10893,7 +11602,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.1271/",
-   "evidence": "Causal Interventions Reveal Shared Structure Across English Filler–Gap Constructions — Outstanding Paper"
+   "evidence": "Causal Interventions Reveal Shared Structure Across English Filler–Gap Constructions — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10911,7 +11623,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.398/",
-   "evidence": "DiscoSG: Towards Discourse-Level Text Scene Graph Parsing through Iterative Graph Refinement — Outstanding Paper"
+   "evidence": "DiscoSG: Towards Discourse-Level Text Scene Graph Parsing through Iterative Graph Refinement — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10933,7 +11648,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.486/",
-   "evidence": "Generative or Discriminative? Revisiting Text Classification in the Era of Transformers — Outstanding Paper"
+   "evidence": "Generative or Discriminative? Revisiting Text Classification in the Era of Transformers — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10949,7 +11667,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.69/",
-   "evidence": "LingGym: How Far Are LLMs from Thinking Like Field Linguists? — Outstanding Paper"
+   "evidence": "LingGym: How Far Are LLMs from Thinking Like Field Linguists? — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10965,7 +11686,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.504/",
-   "evidence": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps — Outstanding Paper"
+   "evidence": "Measuring Chain of Thought Faithfulness by Unlearning Reasoning Steps — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -10985,7 +11709,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.882/",
-   "evidence": "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning — Outstanding Paper"
+   "evidence": "MiCRo: Mixture Modeling and Context-aware Routing for Personalized Preference Learning — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "EMNLP",
@@ -11000,7 +11727,10 @@
    ],
    "track": "main",
    "source": "https://aclanthology.org/2025.emnlp-main.154/",
-   "evidence": "Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values? — Outstanding Paper"
+   "evidence": "Mind the Value-Action Gap: Do LLMs Act in Alignment with Their Values? — Outstanding Paper",
+   "alsoAt": [
+    "https://2025.emnlp.org/program/awards/"
+   ]
   },
   {
    "venue": "ESEC/FSE",
@@ -20881,6 +21611,345 @@
    "track": "main",
    "source": "https://aclanthology.org/2022.naacl-main.10/",
    "evidence": "NewsEdits: A News Article Revision Dataset and a Novel Document-Level Reasoning Challenge — Honorable mention for contributions to resources"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The BiGGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models",
+   "authors": [
+    "Seungone Kim",
+    "Juyoung Suk",
+    "Ji Yong Cho",
+    "Shayne Longpre",
+    "Chaeeun Kim",
+    "Dongkeun Yoon",
+    "Guijin Son",
+    "Yejin Cho",
+    "Sheikh Shafayat",
+    "Jinheon Baek",
+    "Sue Hyun Park",
+    "Hyeonbin Hwang",
+    "Jinkyung Jo",
+    "Hyowon Cho",
+    "Haebin Shin",
+    "Seongyun Lee",
+    "Hanseok Oh",
+    "Noah Lee",
+    "Namgyu Ho",
+    "Se June Joo",
+    "Miyoung Ko",
+    "Yoonjoo Lee",
+    "Hyungjoo Chae",
+    "Jamin Shin",
+    "Joel Jang",
+    "Seonghyeon Ye",
+    "Bill Yuchen Lin",
+    "Sean Welleck",
+    "Graham Neubig",
+    "Moontae Lee",
+    "Kyungjae Lee",
+    "Minjoon Seo"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Best Paper Award:: The BiGGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models — Seungone Kim, Juyoung Suk, Ji Yong Cho, Shayne Longpre, Chaeeun Kim, Dongkeun Yoon, Guijin Son, Yejin Cho, Sheikh Shafayat, Jinheon Baek, Sue Hyun Park, Hyeonbin Hwang, Jinkyung Jo, Hyowon Cho, Haebin Shin, Seongyun Lee, Hanseok Oh, Noah Lee, Namgyu Ho, Se June Joo, Miyoung Ko, Yoonjoo Lee, Hyungjoo Chae, Jamin Shin, Joel Jang, Seonghyeon Ye, Bill Yuchen Lin, Sean Welleck, Graham Neubig, Moontae Lee, Kyungjae Lee, Minjoon Seo"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Social Impact Award",
+   "title": "FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation",
+   "authors": [
+    "Garrett Tanzer"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Best Social Impact Award:: FLEURS-ASL: Including American Sign Language in Massively Multilingual Multitask Evaluation — Garrett Tanzer"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Theme Paper Award",
+   "title": "WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines",
+   "authors": [
+    "Genta Indra Winata",
+    "Frederikus Hudi",
+    "Patrick Amadeus Irawan",
+    "David Anugraha",
+    "Rifki Afina Putri",
+    "WANG YUTONG",
+    "Adam Nohejl",
+    "Ubaidillah Ariq Prathama",
+    "Nedjma Ousidhoum",
+    "Afifa Amriani",
+    "Anar Sabuhi Rzayev",
+    "Anirban Das",
+    "Ashmari Pramodya",
+    "Aulia Adila",
+    "Bryan Wilie",
+    "Candy Olivia Mawalim",
+    "CHENG Ching Lam",
+    "Daud Abolade",
+    "Emmanuele Chersoni",
+    "Enrico Santus",
+    "Fariz Ikhwantri",
+    "Garry Kuwanto",
+    "Hanyang Zhao",
+    "Haryo Akbarianto Wibowo",
+    "Holy Lovenia",
+    "Jan Christian Blaise Cruz",
+    "Jan Wira Gotama Putra",
+    "Junho Myung",
+    "Lucky Susanto",
+    "Maria Angelica Riera Machin",
+    "Marina Zhukova",
+    "Michael Anugraha",
+    "Muhammad Farid Adilazuarda",
+    "Natasha Christabelle Santosa",
+    "Peerat Limkonchotiwat",
+    "Raj Dabre",
+    "Rio Alexander Audino",
+    "Samuel Cahyawijaya",
+    "Shi-Xiong Zhang",
+    "Stephanie Yulia Salim",
+    "Yi Zhou",
+    "Yinxuan Gui",
+    "David Ifeoluwa Adelani",
+    "En-Shiun Annie Lee",
+    "Shogo Okada",
+    "Ayu Purwarianti",
+    "Alham Fikri Aji",
+    "Taro Watanabe",
+    "Derry Tanti Wijaya",
+    "Alice Oh",
+    "Chong-Wah Ngo"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Best Theme Paper Award:: WorldCuisines: A Massive-Scale Benchmark for Multilingual and Multicultural Visual Question Answering on Global Cuisines — Genta Indra Winata, Frederikus Hudi, Patrick Amadeus Irawan, David Anugraha, Rifki Afina Putri, WANG YUTONG, Adam Nohejl, Ubaidillah Ariq Prathama, Nedjma Ousidhoum, Afifa Amriani, Anar Sabuhi Rzayev, Anirban Das, Ashmari Pramodya, Aulia Adila, Bryan Wilie, Candy Olivia Mawalim, CHENG Ching Lam, Daud Abolade, Emmanuele Chersoni, Enrico Santus, Fariz Ikhwantri, Garry Kuwanto, Hanyang Zhao, Haryo Akbarianto Wibowo, Holy Lovenia, Jan Christian Blaise Cruz, Jan Wira Gotama Putra, Junho Myung, Lucky Susanto, Maria Angelica Riera Machin, Marina Zhukova, Michael Anugraha, Muhammad Farid Adilazuarda, Natasha Christabelle Santosa, Peerat Limkonchotiwat, Raj Dabre, Rio Alexander Audino, Samuel Cahyawijaya, Shi-Xiong Zhang, Stephanie Yulia Salim, Yi Zhou, Yinxuan Gui, David Ifeoluwa Adelani, En-Shiun Annie Lee, Shogo Okada, Ayu Purwarianti, Alham Fikri Aji, Taro Watanabe, Derry Tanti Wijaya, Alice Oh, Chong-Wah Ngo"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "A Logical Fallacy-Informed Framework for Argument Generation",
+   "authors": [
+    "Luca Mouchel",
+    "Debjit Paul",
+    "Shaobo Cui",
+    "Robert West",
+    "Antoine Bosselut",
+    "Boi Faltings"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: A Logical Fallacy-Informed Framework for Argument Generation — Luca Mouchel, Debjit Paul, Shaobo Cui, Robert West, Antoine Bosselut, Boi Faltings"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "ACCORD: Closing the Commonsense Measurability Gap",
+   "authors": [
+    "François Roewer-Després",
+    "Jinyue Feng",
+    "Zining Zhu",
+    "Frank Rudzicz"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: ACCORD: Closing the Commonsense Measurability Gap — François Roewer-Després, Jinyue Feng, Zining Zhu, Frank Rudzicz"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "DrawEduMath: Evaluating Vision Language Models with Expert-Annotated Students’ Hand-Drawn Math Images",
+   "authors": [
+    "Sami Baral",
+    "Li Lucy",
+    "Ryan Knight",
+    "Alice Ng",
+    "Luca Soldaini",
+    "Neil Heffernan",
+    "Kyle Lo"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: DrawEduMath: Evaluating Vision Language Models with Expert-Annotated Students’ Hand-Drawn Math Images — Sami Baral, Li Lucy, Ryan Knight, Alice Ng, Luca Soldaini, Neil Heffernan, Kyle Lo"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "How Good Are LLMs for Literary Translation, Really? Literary Translation Evaluation with Humans and LLMs",
+   "authors": [
+    "Ran Zhang",
+    "Wei Zhao",
+    "Steffen Eger"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: How Good Are LLMs for Literary Translation, Really? Literary Translation Evaluation with Humans and LLMs — Ran Zhang, Wei Zhao, Steffen Eger"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+   "authors": [
+    "David Ifeoluwa Adelani",
+    "Jessica Ojo",
+    "Israel Abebe Azime",
+    "Jian Yun Zhuang",
+    "Jesujoba Oluwadara Alabi",
+    "Xuanli He",
+    "Millicent Ochieng",
+    "Sara Hooker",
+    "Andiswa Bukula",
+    "En-Shiun Annie Lee",
+    "Chiamaka Ijeoma Chukwuneke",
+    "Happy Buzaaba",
+    "Blessing Kudzaishe Sibanda",
+    "Godson Koffi KALIPE",
+    "Jonathan Mukiibi",
+    "Salomon KABONGO KABENAMUALU",
+    "Foutse Yuehgoh",
+    "Mmasibidi Setaka",
+    "Lolwethu Ndolela",
+    "Nkiruka Odu",
+    "Rooweither Mabuya",
+    "Salomey Osei",
+    "Shamsuddeen Hassan Muhammad",
+    "Sokhar Samb",
+    "Tadesse Kebede Guge",
+    "Tombekai Vangoni Sherman",
+    "Pontus Stenetorp"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models — David Ifeoluwa Adelani, Jessica Ojo, Israel Abebe Azime, Jian Yun Zhuang, Jesujoba Oluwadara Alabi, Xuanli He, Millicent Ochieng, Sara Hooker, Andiswa Bukula, En-Shiun Annie Lee, Chiamaka Ijeoma Chukwuneke, Happy Buzaaba, Blessing Kudzaishe Sibanda, Godson Koffi KALIPE, Jonathan Mukiibi, Salomon KABONGO KABENAMUALU, Foutse Yuehgoh, Mmasibidi Setaka, Lolwethu Ndolela, Nkiruka Odu, Rooweither Mabuya, Salomey Osei, Shamsuddeen Hassan Muhammad, Sokhar Samb, Tadesse Kebede Guge, Tombekai Vangoni Sherman, Pontus Stenetorp"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness",
+   "authors": [
+    "Yoo Yeon Sung",
+    "Maharshi Gor",
+    "Eve Fleisig",
+    "Ishani Mondal",
+    "Jordan Lee Boyd-Graber"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: Is your benchmark truly adversarial? AdvScore: Evaluating Human-Grounded Adversarialness — Yoo Yeon Sung, Maharshi Gor, Eve Fleisig, Ishani Mondal, Jordan Lee Boyd-Graber"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models",
+   "authors": [
+    "Aliakbar Nafar",
+    "K. Brent Venable",
+    "Parisa Kordjamshidi"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: Learning vs Retrieval: The Role of In-Context Examples in Regression with Large Language Models — Aliakbar Nafar, K. Brent Venable, Parisa Kordjamshidi"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision–Language Models",
+   "authors": [
+    "Minh Duc Bui",
+    "Katharina von der Wense",
+    "Anne Lauscher"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: Multi3Hate: Multimodal, Multilingual, and Multicultural Hate Speech Detection with Vision–Language Models — Minh Duc Bui, Katharina von der Wense, Anne Lauscher"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "NLI under the Microscope: What Atomic Hypothesis Decomposition Reveals",
+   "authors": [
+    "Neha Srikanth",
+    "Rachel Rudinger"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: NLI under the Microscope: What Atomic Hypothesis Decomposition Reveals — Neha Srikanth, Rachel Rudinger"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper",
+   "title": "PeerQA: A Scientific Question Answering Dataset from Peer Reviews",
+   "authors": [
+    "Tim Baumgärtner",
+    "Ted Briscoe",
+    "Iryna Gurevych"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Outstanding Papers: PeerQA: A Scientific Question Answering Dataset from Peer Reviews — Tim Baumgärtner, Ted Briscoe, Iryna Gurevych"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Theme Paper Runner-Up",
+   "title": "Developing multilingual speech synthesis system for Ojibwe, Mi’kmaq, and Maliseet",
+   "authors": [
+    "Shenran Wang",
+    "Changbing Yang",
+    "Michael l parkhill",
+    "Chad Quinn",
+    "Christopher Hammerly",
+    "Jian Zhu"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Best Theme Paper Runner-Up:: Developing multilingual speech synthesis system for Ojibwe, Mi’kmaq, and Maliseet — Shenran Wang, Changbing Yang, Michael l parkhill, Chad Quinn, Christopher Hammerly, Jian Zhu"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-Up",
+   "title": "REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance",
+   "authors": [
+    "Kaitlyn Zhou",
+    "Jena D. Hwang",
+    "Xiang Ren",
+    "Nouha Dziri",
+    "Dan Jurafsky",
+    "Maarten Sap"
+   ],
+   "track": "main",
+   "source": "https://2025.naacl.org/blog/best-papers/",
+   "evidence": "Best Paper Runner-Up:: REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance — Kaitlyn Zhou, Jena D. Hwang, Xiang Ren, Nouha Dziri, Dan Jurafsky, Maarten Sap"
   },
   {
    "venue": "NeurIPS",

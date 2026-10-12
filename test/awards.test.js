@@ -165,6 +165,17 @@ test("the bundled list: ICLR winners of the years whose awards page is empty (20
   assert.deepEqual(find("Adam: A method for stochastic optimization", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: NLP winners of the years the ACL Anthology lacks (EMNLP 2021, 2023, NAACL 2025 from the conferences' own pages)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Label words are anchors: An information flow perspective for understanding in-context learning", "L Wang, L Li, D Dai, D Chen, H Zhou, F Meng, J Zhou, X Sun"), ["EMNLP 2023 best"]);
+  assert.deepEqual(find("Text embeddings reveal (almost) as much as text", "JX Morris, V Kuleshov, V Shmatikov, AM Rush"), ["EMNLP 2023 outstanding"]);
+  assert.deepEqual(find("Visually grounded reasoning across languages and cultures", "F Liu, E Bugliarello, EM Ponti, S Reddy, N Collier, D Elliott"), ["EMNLP 2021 best"]);
+  assert.deepEqual(find("CHoRaL: Collecting humor reaction labels from millions of social media users", "Z Yang, S Hooshmand, J Hirschberg"), ["EMNLP 2021 best-category"]);
+  assert.deepEqual(find("The BiGGen Bench: A principled benchmark for fine-grained evaluation of language models with language models", "S Kim, J Suk, JY Cho, S Longpre"), ["NAACL 2025 best"]);
+  assert.deepEqual(find("Label words are anchors: An information flow perspective for understanding in-context learning", "A Smith, B Jones"), []);
+});
+
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
   assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
   assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));

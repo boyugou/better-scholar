@@ -460,3 +460,76 @@ Four of the Outstanding Paper Awards are featured in each of the Outstanding Pap
   assert.deepEqual(skipped, []);
   assert.deepEqual(parseFactSheet("no award list here", {}).entries, []);
 });
+
+// ACL-family conference sites (scripts/awards/acl-sites.mjs): four shapes of the same list, synthetic here.
+const ACL_SRC = "https://2023.example.org/program/best_papers/";
+test("ACL-site reader, Jekyll lists: <li><p>Title<br><em>Authors</em></p> under Best Paper Awards and Outstanding Papers; wrapped author lines; underscores left by Markdown; a plain list of names is not a paper", async () => {
+  const { parse } = await import("../scripts/awards/acl-sites.mjs");
+  const html = `<nav><ul><li><a href="/x">Program</a></li></ul></nav><article class="page"><h1>Best Papers</h1><section class="page__content">
+<h2 id="best-paper-awards">Best Paper Awards</h2><ul>
+<li><p>A Synthetic Paper about Anchors and Words<br />
+<em>Ann Lee, Bo Chen, Cy Diaz and Dee Park</em></p></li>
+<li><p>A Toolkit with Underscores for Documents<br />
+_Eli Ross, Fay Gray, Gia Stone _</p></li></ul>
+<h2 id="outstanding-papers">Outstanding Papers</h2><ul>
+<li>An Outstanding Synthetic Paper on Logic<br /> <em>Hal Wu, Ivy Xu and Jo Yan</em></li>
+<li>A Paper with a Long Author List, Wrapped<br /> <em>Kai Zu, Lu Mo, Ned Oh,<br />
+Pia Qi, Ray Sun</em></li></ul>
+<h2>Best Demo Awards</h2><ul><li><p>A Demo System Paper Title<br /><em>Sue Tan, Tom Uy</em></p></li></ul>
+<p>For the selection of the papers above, we thank our <strong>Best Paper Award committee</strong>:</p>
+<p>Zed Zimmer, Some University, USA (chair)<br />Yan Xu, Other University, China</p>
+</section></article>`;
+  const { entries, skipped } = parse(html, { venue: "EMNLP", year: 2023, source: ACL_SRC });
+  assert.deepEqual(entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["best", "Best Paper Award", "A Synthetic Paper about Anchors and Words", ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park"]],
+    ["best", "Best Paper Award", "A Toolkit with Underscores for Documents", ["Eli Ross", "Fay Gray", "Gia Stone"]],
+    ["outstanding", "Outstanding Paper", "An Outstanding Synthetic Paper on Logic", ["Hal Wu", "Ivy Xu", "Jo Yan"]],
+    ["outstanding", "Outstanding Paper", "A Paper with a Long Author List, Wrapped", ["Kai Zu", "Lu Mo", "Ned Oh", "Pia Qi", "Ray Sun"]]
+  ]);
+  assert.ok(entries.every((e) => e.venue === "EMNLP" && e.year === 2023 && e.source === ACL_SRC && e.evidence.includes(e.title)));
+  assert.deepEqual(skipped, []);
+});
+
+test("ACL-site reader, blog posts: EMNLP 2021's <em>Title</em><br>Authors under Best Long / Short / Outstanding, and NAACL 2025's “Label:” in front of each item (SAC and demo awards left out, a committee list never read as a paper)", async () => {
+  const { parse, classify } = await import("../scripts/awards/acl-sites.mjs");
+  const blog2021 = `<article class="default blog"><section><h1>Best Paper Awards</h1><p>The Best Paper Awards aims to recognise the most outstanding papers, and so on.</p>
+<h2 id="best-long-paper"><a href="#x" class="anchor before"><svg aria-hidden="true"><path d="M4 9"></path></svg></a>Best Long Paper</h2><p><em>A Synthetic Grounded Reasoning Paper</em><br>Ann Lee, Bo Chen and Cy Diaz</p>
+<h2 id="best-short-paper">Best Short Paper</h2><p><em>A Synthetic Humor Paper</em><br>Dee Park, Eli Ross and Fay Gray</p>
+<h2 id="outstanding-papers">Outstanding Papers</h2><p><em>A Synthetic Dialogue Paper</em><br>Gia Stone and Hal Wu  </p><p><em>A Single Author Synthetic Paper</em><br>Ivy Xu  </p>
+<p>For the selection of the papers above, we thank our <strong>Best Paper Award committee</strong>:</p>
+<p>Jo Yan, University of Somewhere, USA (chair)<br>Kai Zu, University of Elsewhere, China</p>
+<h2 id="best-demonstration-paper">Best Demonstration Paper</h2><p><em>A Synthetic Demo Library</em></p><p>Lu Mo, Ned Oh</p></section></article>`;
+  assert.deepEqual(parse(blog2021, { venue: "EMNLP", year: 2021, source: ACL_SRC }).entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["best", "Best Long Paper", "A Synthetic Grounded Reasoning Paper", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["category", "Best Short Paper", "A Synthetic Humor Paper", ["Dee Park", "Eli Ross", "Fay Gray"]],
+    ["outstanding", "Outstanding Paper", "A Synthetic Dialogue Paper", ["Gia Stone", "Hal Wu"]],
+    ["outstanding", "Outstanding Paper", "A Single Author Synthetic Paper", ["Ivy Xu"]]
+  ]);
+  const blog2025 = `<article class="page h-entry"><h1>Announcing the Award Winners!</h1><section class="page__content e-content"><p>Winners were selected through a blind process managed by our Best Paper Committee.</p>
+<h2 id="best-paper-awards">Best Paper Awards</h2><ul>
+<li><strong>Best Paper Award:</strong> <br /><em>A Synthetic Benchmark for Fine-grained Evaluation</em> \\ <br />
+Ann Lee, Bo Chen, Cy Diaz <br />Ballroom A, Session I: Oral/Poster 6, Thursday May 1, 16:00-17:30</li>
+<li><strong>Best Paper Runner-Up:</strong> <br /><em>A Synthetic Reliance Paper</em> <br />Dee Park, Eli Ross <br />Ballroom B, Session H: Oral/Poster 5</li>
+<li><strong>Best Demo Award:</strong> <br /><em>A Synthetic Corpus Explorer Demo</em> <br />Fay Gray; Gia Stone <br />Posters</li>
+<li><strong>Best Social Impact Award:</strong> <br /><em>A Synthetic Sign Language Paper</em> <br />Hal Wu <br />Online, Gather Session 1</li>
+<li><strong>Best Theme Paper Runner-Up:</strong> <br /><em>A Synthetic Speech Synthesis Paper</em> <br />Ivy Xu, Jo Yan <br />Online</li></ul>
+<h2 id="outstanding-papers">Outstanding Papers</h2><ul>
+<li><em>An Outstanding Synthetic QA Paper</em> <br />Kai Zu, Lu Mo <br />Posters (Exhibit Hall), Session H: Oral/Poster 5, Thursday May 1, 14:00-15:30</li></ul>
+<h2 id="senior-area-chair-sac-awards">Senior Area Chair (SAC) Awards</h2><ul>
+<li><strong>SAC Award for Generation:</strong> <em>A Synthetic Decoding Paper</em> <br />Ned Oh, Pia Qi <br />Mesilla, Session B</li></ul></section></article>`;
+  const r = parse(blog2025, { venue: "NAACL", year: 2025, source: ACL_SRC });
+  assert.deepEqual(r.entries.map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["best", "Best Paper Award", "A Synthetic Benchmark for Fine-grained Evaluation", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["runner-up", "Best Paper Runner-Up", "A Synthetic Reliance Paper", ["Dee Park", "Eli Ross"]],
+    ["category", "Best Social Impact Award", "A Synthetic Sign Language Paper", ["Hal Wu"]],
+    ["runner-up", "Best Theme Paper Runner-Up", "A Synthetic Speech Synthesis Paper", ["Ivy Xu", "Jo Yan"]],
+    ["outstanding", "Outstanding Paper", "An Outstanding Synthetic QA Paper", ["Kai Zu", "Lu Mo"]]
+  ]);
+  // the kind rules, as the Anthology reader's
+  assert.deepEqual([classify("Best Paper"), classify("Best Long Paper"), classify("Best Paper Awards")].map((c) => c.award), ["best", "best", "best"]);
+  assert.deepEqual([classify("Best Special Theme Paper").award, classify("Best Resource Paper").award, classify("Best Student Paper").award, classify("Outstanding Papers").award], ["category", "category", "student", "outstanding"]);
+  assert.equal(classify("People’s Choice Award"), null);
+  assert.equal(classify("SAC Highlights"), null);
+  assert.equal(classify("Outstanding Reviewers"), null);
+  assert.equal(classify("Best Demo Award"), null);
+});

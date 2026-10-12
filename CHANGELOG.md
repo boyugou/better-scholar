@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.4.4 — 2026-10-12
+
+- **EMNLP 2021 and 2023 and NAACL 2025 paper awards** (51 entries) from the conferences' own pages — the ACL Anthology records
+  none of them: EMNLP 2023's *Best Papers* page (5 best, 25 outstanding), EMNLP 2021's *Best Paper Awards* post (best long,
+  best short, outstanding) and NAACL 2025's *Award Winners* post (best, runner-up, best theme paper and its runner-up, social
+  impact, outstanding). The new reader (`scripts/awards/acl-sites.mjs`) parses EMNLP 2024 and 2025's pages into exactly the entries
+  the Anthology already gives, which is its cross-check. Demo, SAC, reviewer and People's Choice awards are left out.
+
 ## 2.4.3 — 2026-10-12
 
 - The one ICLR 2021 title the Fact Sheet prints without its first word (*Beyond* Fully-Connected Layers with Quaternions …) is now
