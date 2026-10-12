@@ -7,6 +7,7 @@ runs with Node ≥ 20.
 npm test            # unit tests (names, venues, marks, awards, metrics, package checks)
 npm run test:e2e    # loads the extension in Chromium against a local Scholar stand-in (needs Playwright)
 npm run data        # rebuild src/data/*.js from data/*.json
+npm run check:profile -- page.html   # the extension on a real saved Scholar page (see below)
 ```
 
 ## The one principle: precision over recall
@@ -29,6 +30,20 @@ links out.
 3. `npm test` will fail on the venue snapshot. **Read the diff** — every changed line is a badge that
    appeared, moved or vanished — and only then run `npm run test:update`.
 4. Add a targeted regression test in `test/venues.test.js` for the bug you fixed.
+
+## When Scholar changes its markup
+
+The panel shows a layout warning when most rows have no author line. To see exactly what broke, save a
+profile page (Chrome: File → Save Page As → "Webpage, HTML Only") and run
+
+```bash
+npm run check:profile -- page.html [--owner "Name"] [--shot out.png]
+```
+
+It loads the unmodified extension in Chromium, serves that file offline as a Scholar profile, and
+checks that every selector in `src/content/scholar.js` still exists and that the row tints, rank chips
+and award marks it drew equal the pure libraries' result for an independent reading of the same HTML.
+Nothing is fetched or sent. (Needs Playwright and Chromium, like the end-to-end test.)
 
 ## Data
 

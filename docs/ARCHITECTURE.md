@@ -170,6 +170,7 @@ Scholar drops the sidebar *below* the list) as the window is resized. Styles are
 | `test/venues.test.js` | the matcher: regression cases, alias integrity, reviewed snapshot over real venue strings |
 | `test/metrics.test.js` | h-index, the matrix, filtering, clipboard text |
 | `test/extension.test.js` | manifest, load order, locales, bundle freshness |
+| `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
 | `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
 
 The stand-in mimics Scholar's DOM, but only the real page can confirm that it still does. On

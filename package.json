@@ -6,6 +6,7 @@
     "test": "node --test test/*.test.js",
     "test:update": "UPDATE_SNAPSHOTS=1 node --test test/*.test.js",
     "test:e2e": "node test/e2e/run.mjs",
+    "check:profile": "node scripts/check-saved-profile.mjs",
     "data": "node scripts/build-data.mjs"
   },
   "engines": {

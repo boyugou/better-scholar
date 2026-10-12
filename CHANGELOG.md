@@ -21,6 +21,9 @@
   dashed), talk levels slate, all with the same small icons. In the panel they are a section of their own: one row
   per group with its count, the same icons, click a row to list just those papers.
 - Fixed: the toolbar popup printed a stray "null" under the table when the profile had no awards or talks.
+- Maintenance: `npm run check:profile -- page.html` runs the extension on a real saved Scholar page and checks the
+  selector contract and the drawn result (verified on a 100-paper profile saved from live Scholar: every
+  selector present, tints / chips / marks identical to the libraries, the one list award found).
 
 ## 2.1.0 — 2026-10-11
 
