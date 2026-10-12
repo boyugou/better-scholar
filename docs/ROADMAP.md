@@ -14,7 +14,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (6003 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (6007 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
 CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA, MICRO, USENIX, SIGMOD, SIGPLAN's most influential papers, SIGMETRICS, FOCS's test of time, SIGOPS's Hall of Fame, EuroSys's test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time, SIGecom's test of time and PODC / DISC's Dijkstra Prize; CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own program data). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
@@ -28,8 +28,7 @@ year in different shapes; CCS's page covers 2013–2023 only (2024 and 2025 are 
 request with 403 and are not worked around. Add a reader only after reading the page's markup for every year it covers; review its output
 line by line; test it with synthetic pages and a few well-known winners.
 The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no
-official page does is left out. Also open: test-of-time rows whose page omits the paper title (NeurIPS 2025,
-ICML 2022 and 2026) — the detail page may carry it.
+official page does is left out. The test-of-time rows whose award page omitted the paper title (NeurIPS 2025, ICML 2022 and 2026) are read now (2.9.39).
 
 ## Tier at publication time
 

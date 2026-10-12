@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.39 — 2026-10-12
+
+- ICML's test-of-time papers of 2022 (Poisoning Attacks Against Support Vector Machines, with two honorable mentions) and 2026 (Asynchronous Methods for Deep Reinforcement Learning), which the earlier readers skipped:
+  2022 prints them in the row's abstract block under headings, 2026 links the title to the award page. The bundled list has 6007 awards.
+
 ## 2.9.38 — 2026-10-12
 
 - The ACM SIGCOMM Test of Time Paper Award (2007–2026, 33 papers: Chord, P4, B4, DCTCP, VL2, Ethane, XORs in the air …) from SIGCOMM's own page (`tot.mjs sigcomm`). The bundled list has 6003 awards.

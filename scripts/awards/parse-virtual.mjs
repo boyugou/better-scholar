@@ -56,7 +56,7 @@ export function parseAwardsPage(html, { venue, year, host }) {
     // the paper's title: a "small-title" link, or the link to the paper's own virtual page
     let title = "";
     for (const a of body.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)) {
-      if (!/class="[^"]*\bsmall-title\b/.test(a[1]) && !PAPER_LINK.test(a[1])) continue;
+      if (!/class="[^"]*\bsmall-title\b/.test(a[1]) && !PAPER_LINK.test(a[1]) && !/href="[^"]*\/virtual\/\d{4}\/test-of-time\//.test(a[1])) continue;   // (ICML 2026 links the test-of-time paper's title to its award page)
       const text = decode(a[2]);
       // a test-of-time row links to its award page, whose text is the award name rather than a paper title
       if (!text || text.toLowerCase() === label.toLowerCase() || /^test of time award$/i.test(text)) continue;
@@ -75,6 +75,16 @@ export function parseAwardsPage(html, { venue, year, host }) {
     }
     const authors = authorsText.split(AUTHOR_SEP).map((s) => s.trim()).filter(Boolean);
     if (!title) {
+      // ICML 2022 prints the test-of-time papers in the row's abstract block: "<h4>Test of Time Award:</h4>" then a bold title and an italic author line, per paper
+      const fromBlock = parseAbstractAwards(body, label);
+      if (fromBlock.length) {
+        for (const b of fromBlock) {
+          const kind = kindOf(b.label);
+          if (!kind) { skipped.push({ label: b.label, title: b.title, why: "not a paper award" }); continue; }
+          entries.push({ venue, year, award: kind, awardLabel: b.label, title: b.title, authors: b.authors, track: "main", source, evidence: `${b.title} — ${b.label}`, verified: "official (conference awards page)" });
+        }
+        continue;
+      }
       // a test-of-time row without the paper's title: its own page may carry the title (see parseTestOfTimeDetail)
       const href = (/href="([^"]*\/virtual\/\d{4}\/test-of-time\/[^"]*)"/.exec(body) || [])[1];
       skipped.push(href && /test of time/i.test(label)
@@ -93,6 +103,25 @@ export function parseAwardsPage(html, { venue, year, host }) {
     });
   }
   return { entries, skipped };
+}
+
+
+// A row whose abstract block lists its papers under headings: <h4>Test of Time Award:</h4> <p><strong>TITLE</strong></p> <p><i>Author, Author:</i></p> …
+function parseAbstractAwards(body, fallbackLabel) {
+  const out = [];
+  const block = /class="abstract-display"[\s\S]*/.exec(body);
+  if (!block || !/test of time/i.test(fallbackLabel)) return out;
+  let label = fallbackLabel, title = null;
+  for (const m of block[0].matchAll(/<h4\b[^>]*>([\s\S]*?)<\/h4>|<p\b[^>]*>\s*<strong>([\s\S]*?)<\/strong>\s*<\/p>|<p\b[^>]*>\s*<i>([\s\S]*?)<\/i>\s*<\/p>/gi)) {
+    if (m[1] !== undefined) { label = decode(m[1]).replace(/:\s*$/, ""); title = null; }
+    else if (m[2] !== undefined) title = decode(m[2]);
+    else if (m[3] !== undefined && title) {
+      const authors = decode(m[3]).replace(/[:\s]+$/, "").split(/,|\band\b/).map((x) => x.trim()).filter(Boolean);
+      if (authors.length) out.push({ label, title, authors });
+      title = null;
+    }
+  }
+  return out;
 }
 
 // The conference's own "Awards" page in prose (ICML 2023 lists its Outstanding Paper recipients this way): under a

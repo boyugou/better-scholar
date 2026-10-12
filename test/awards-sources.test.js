@@ -1583,3 +1583,25 @@ test("SIGCOMM Test of Time page: quoted titles with 'by', surname-first author l
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("virtual sites: ICML 2026 links the test-of-time paper's title to its award page; ICML 2022 lists the test-of-time papers in the row's abstract block under <h4> headings", async () => {
+  const { parseAwardsPage } = await load();
+  const y26 = `<table><tr><td><div>Test of Time Award</div></td><td><div class="displaycards touchup-date" id="event-67269">
+<div style="margin-bottom: 8px;"><a href="/virtual/2026/test-of-time/67269" style="font-size: 1.05em;">Asynchronous Methods for Deep Reinforcement Learning</a></div>
+<div style="color: #666;">Test Of Time</div><div style="color: #555;">Volodymyr Mnih ⋅ Adria Puigdomenech Badia ⋅ Mehdi Mirza ⋅ Alex Graves</div></div></td></tr></table>`;
+  const a = parseAwardsPage(y26, { venue: "ICML", year: 2026, host: "icml.cc" });
+  assert.deepEqual(a.entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["tot Asynchronous Methods for Deep Reinforcement Learning | Volodymyr Mnih; Adria Puigdomenech Badia; Mehdi Mirza; Alex Graves"]);
+  assert.deepEqual(a.skipped, []);
+  const y22 = `<table><tr><td><div>Test of Time Award</div></td><td><div class="displaycards touchup-date" id="event-20803">
+<div style="width:80%;margin:auto;"><a class="small-title" href="/virtual/2022/award/20803">Test of Time Award</a></div><div class="author-str"></div>
+<div class="collapse"><div class="abstract-display"><p>&nbsp;</p><h4>Test of Time Award:</h4><p><strong>Poisoning Attacks Against Support Vector Machines</strong></p><p><I>Battista Biggio, Blaine Nelson, Pavel Laskov:</I></p><hr />
+<h4>Test of Time Honorable Mention:</h4><p><strong>Building high-level features using large scale unsupervised learning</strong></p><p><i>Quoc Le, Marc'Aurelio Ranzato, Andrew Ng</i></p>
+<p><strong>On causal and anticausal learning</strong></p><p><I>Bernhard Schölkopf, Dominik Janzing,
+Kun Zhang, Joris Mooij</i></p></div></div></div></td></tr></table>`;
+  const b = parseAwardsPage(y22, { venue: "ICML", year: 2022, host: "icml.cc" });
+  assert.deepEqual(b.entries.map((e) => `${e.award} [${e.awardLabel}] ${e.title.slice(0, 20)} | ${e.authors.join("; ")}`), [
+    "tot [Test of Time Award] Poisoning Attacks Ag | Battista Biggio; Blaine Nelson; Pavel Laskov",
+    "runner-up [Test of Time Honorable Mention] Building high-level  | Quoc Le; Marc'Aurelio Ranzato; Andrew Ng",
+    "runner-up [Test of Time Honorable Mention] On causal and antica | Bernhard Schölkopf; Dominik Janzing; Kun Zhang; Joris Mooij"
+  ]);
+});

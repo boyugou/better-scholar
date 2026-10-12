@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6003
+  "count": 6007
  },
  "entries": [
   {
@@ -58870,6 +58870,26 @@
    "venue": "ICML",
    "year": 2022,
    "award": "runner-up",
+   "awardLabel": "Test of Time Honorable Mention",
+   "title": "Building high-level features using large scale unsupervised learning",
+   "authors": [
+    "Quoc Le",
+    "Marc'Aurelio Ranzato",
+    "Rajat Monga",
+    "Matthieu Devin",
+    "Kai Chen",
+    "Greg Corrado",
+    "Jeff Dean",
+    "Andrew Ng"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/virtual/2022/awards_detail",
+   "evidence": "Building high-level features using large scale unsupervised learning — Test of Time Honorable Mention"
+  },
+  {
+   "venue": "ICML",
+   "year": 2022,
+   "award": "runner-up",
    "awardLabel": "Outstanding Paper Runner Up",
    "title": "Learning inverse folding from millions of predicted structures",
    "authors": [
@@ -58922,6 +58942,39 @@
    "track": "main",
    "source": "https://icml.cc/virtual/2022/awards_detail",
    "evidence": "Monarch: Expressive Structured Matrices for Efficient and Accurate Training — Outstanding Paper Runner Up"
+  },
+  {
+   "venue": "ICML",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Honorable Mention",
+   "title": "On causal and anticausal learning",
+   "authors": [
+    "Bernhard Schölkopf",
+    "Dominik Janzing",
+    "Jonas Peters",
+    "Eleni Sgouritsa",
+    "Kun Zhang",
+    "Joris Mooij"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/virtual/2022/awards_detail",
+   "evidence": "On causal and anticausal learning — Test of Time Honorable Mention"
+  },
+  {
+   "venue": "ICML",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Poisoning Attacks Against Support Vector Machines",
+   "authors": [
+    "Battista Biggio",
+    "Blaine Nelson",
+    "Pavel Laskov"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/virtual/2022/awards_detail",
+   "evidence": "Poisoning Attacks Against Support Vector Machines — Test of Time Award"
   },
   {
    "venue": "ICML",
@@ -59614,6 +59667,26 @@
    "track": "main",
    "source": "https://icml.cc/virtual/2026/awards_detail",
    "evidence": "To Grok Grokking: Provable Grokking in Ridge Regression — Outstanding Paper Honorable Mention"
+  },
+  {
+   "venue": "ICML",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Asynchronous Methods for Deep Reinforcement Learning",
+   "authors": [
+    "Volodymyr Mnih",
+    "Adria Puigdomenech Badia",
+    "Mehdi Mirza",
+    "Alex Graves",
+    "Timothy Lillicrap",
+    "Tim Harley",
+    "David Silver",
+    "Koray Kavukcuoglu"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/virtual/2026/awards_detail",
+   "evidence": "Asynchronous Methods for Deep Reinforcement Learning — Test of Time Award"
   },
   {
    "venue": "ICPC",
