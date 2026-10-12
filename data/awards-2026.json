@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6012
+  "count": 6031
  },
  "entries": [
   {
@@ -44229,6 +44229,123 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#LHP",
    "evidence": "Longuet-Higgins Prize: 2026 “You Only Look Once: Unified, Real-Time Object Detection” J. Redmon, S. Divvala, R. Girshick, A. Farhadi"
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A logic design structure for LSI testability",
+   "authors": [
+    "E.B. Eichelberger",
+    "T.W. Williams"
+   ],
+   "track": "main",
+   "paperYear": 1977,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2023 Most Influential Paper Award: “A logic design structure for LSI testability” by E.B. Eichelberger, T.W. Williams, 14th DAC, 1977."
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Dagon: technology binding and local optimization by DAG matching",
+   "authors": [
+    "K. Keutzer"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2023 Most Influential Paper Award: “Dagon: technology binding and local optimization by DAG matching” by K. Keutzer, 24th DAC, 1987."
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Sketch pad a man-machine graphical communication system",
+   "authors": [
+    "Ivan E. Sutherland"
+   ],
+   "track": "main",
+   "paperYear": 1964,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2023 Most Influential Paper Award: “Sketch pad a man-machine graphical communication system” by Ivan E. Sutherland, 1964."
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Symbolic Model Checking Using SAT Procedures Instead of BDDs",
+   "authors": [
+    "A. Biere",
+    "A. Cimatti",
+    "E.M. Clarke",
+    "M. Fujita",
+    "Y. Zhu"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2023 Most Influential Paper Award: “Symbolic Model Checking Using SAT Procedures Instead of BDDs” by A. Biere, A. Cimatti, E.M. Clarke, M. Fujita, Y. Zhu, 36th DAC, 1999."
+  },
+  {
+   "venue": "DAC",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Chaff: Engineering an Efficient SAT Solver",
+   "authors": [
+    "Matthew W. Moskewicz",
+    "Conor F. Madigan",
+    "Ying Zhao",
+    "Lintao Zhang",
+    "Sharad Malik"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2024 Most Influential Paper Award: “Chaff: Engineering an Efficient SAT Solver” by Matthew W. Moskewicz, Conor F. Madigan, Ying Zhao, Lintao Zhang, and Sharad Malik, 2001."
+  },
+  {
+   "venue": "DAC",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Chisel: Constructing Hardware in a Scala Embedded Language",
+   "authors": [
+    "J. Bachrach",
+    "H. Vo",
+    "B. Richards",
+    "Y. Lee",
+    "A. Waterman",
+    "R. Avižienis",
+    "J. Wawrzynek",
+    "K. Asanovic"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2025 Most Influential Paper Award: “Chisel: Constructing Hardware in a Scala Embedded Language” by J. Bachrach, H. Vo), B. Richards, Y. Lee, A. Waterman, R. Avižienis, J. Wawrzynek, K. Asanovic. 2012."
+  },
+  {
+   "venue": "DAC",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "First-order Incremental Block-based Statistical Timing Analysis",
+   "authors": [
+    "Chandu Visweswariah",
+    "Kaushik Ravindran",
+    "Kerim Kalafala",
+    "Steve G Walker",
+    "Sambasivan Narayan"
+   ],
+   "track": "main",
+   "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
+   "evidence": "DAC 2026 Most Influential Paper Award: “First-order Incremental Block-based Statistical Timing Analysis” by Chandu Visweswariah (CURE100 and Croton100), Kaushik Ravindran (Stealth AI Startup), Kerim Kalafala (IBM), Steve G Walker (IBM), Sambasivan Narayan (Apple)"
   },
   {
    "venue": "DIS",
@@ -93716,6 +93833,213 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10143/88/program",
    "evidence": "TEI 2026 program, Honorable Mention: PileUp: A Tufting Approach to Soft, Tactile, and Volumetric E-Textile Interfaces — Seoyoung Choi, Rashmi Balegar Mohan, Heather Jin Hee Kim, Jisoo Ha, Jeyeon Jo"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "DIPA2: An Image Dataset with Cross-cultural Privacy Perception Annotations",
+   "authors": [
+    "Anran Xu",
+    "Zhongyi Zhou",
+    "Kakeru Miyazaki",
+    "Ryo Yoshikawa",
+    "Simo Hosio",
+    "Koji Yatani"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: DIPA2: An Image Dataset with Cross-cultural Privacy Perception Annotations — Anran Xu, Zhongyi Zhou, Kakeru Miyazaki, Ryo Yoshikawa, Simo Hosio, and Koji Yatani."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones",
+   "authors": [
+    "Joseph Breda",
+    "Mastafa Springston",
+    "Alex Mariakakis",
+    "Shwetak Patel"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: FeverPhone: Accessible Core-Body Temperature Sensing for Fever Monitoring Using Commodity Smartphones — Joseph Breda, Mastafa Springston, Alex Mariakakis, and Shwetak Patel."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "MITES: Design and Deployment of a General-Purpose Sensing Infrastructure for Buildings",
+   "authors": [
+    "Sudershan Boovaraghavan",
+    "Chen Chen",
+    "Anurag Maravi",
+    "Mike Czapik",
+    "Yang Zhang",
+    "Chris Harrison",
+    "Yuvraj Agarwal"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: MITES: Design and Deployment of a General-Purpose Sensing Infrastructure for Buildings — Sudershan Boovaraghavan, Chen Chen, Anurag Maravi, Mike Czapik, Yang Zhang, Chris Harrison, and Yuvraj Agarwal."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "MoCaPose: Motion Capturing with Textile-integrated Capacitive Sensors in Loose-fitting Smart Garments",
+   "authors": [
+    "Bo Zhou",
+    "Daniel Geissler",
+    "Marc Faulhaber",
+    "Clara Elisabeth Gleiss",
+    "Esther Friederike Zahn",
+    "Lala Shakti Swarup Ray",
+    "David Gamarra",
+    "Vitor Fortes Rey",
+    "Sungho Suh",
+    "Sizhen Bian",
+    "Gesche Joost",
+    "Paul Lukowicz"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: MoCaPose: Motion Capturing with Textile-integrated Capacitive Sensors in Loose-fitting Smart Garments — Bo Zhou, Daniel Geissler, Marc Faulhaber, Clara Elisabeth Gleiss, Esther Friederike Zahn, Lala Shakti Swarup Ray, David Gamarra, Vitor Fortes Rey, Sungho Suh, Sizhen Bian, Gesche Joost, and Paul Lukowicz."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "SkinLink: On-body Construction and Prototyping of Reconfigurable Epidermal Interfaces",
+   "authors": [
+    "Pin-Sung Ku",
+    "Kunpeng Huang",
+    "Nancy Wang",
+    "Boaz Ng",
+    "Alicia Chu",
+    "Hsin-Liu Cindy Kao"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: SkinLink: On-body Construction and Prototyping of Reconfigurable Epidermal Interfaces — Pin-Sung Ku, Kunpeng Huang, Nancy Wang, Boaz Ng, Alicia Chu, and Hsin-Liu Cindy Kao."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "Uncovering Bias in Personal Informatics",
+   "authors": [
+    "Sofia Yfantidou",
+    "Pavlos Sermpezis",
+    "Athena Vakali",
+    "Ricardo Baeza-Yates"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: Uncovering Bias in Personal Informatics — Sofia Yfantidou, Pavlos Sermpezis, Athena Vakali, and Ricardo Baeza-Yates."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "Understanding Disengagement in Just-in-Time Mobile Health Interventions",
+   "authors": [
+    "Joonyoung Park",
+    "Uichin Lee"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: Understanding Disengagement in Just-in-Time Mobile Health Interventions — Joonyoung Park and Uichin Lee."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "IMWUT Distinguished Paper Award",
+   "title": "What and When to Explain? On-road Evaluation of Explanations in Highly Automated Vehicles",
+   "authors": [
+    "Gwangbin Kim",
+    "Dohyeon Yeo",
+    "Taewoo Jo",
+    "Daniela Rus",
+    "Seung Jun Kim"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 IMWUT Distinguished Paper Award: What and When to Explain? On-road Evaluation of Explanations in Highly Automated Vehicles — Gwangbin Kim, Dohyeon Yeo, Taewoo Jo, Daniela Rus, and Seung Jun Kim."
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "10-Year Impact Award Runner-up",
+   "title": "InterruptMe: designing intelligent prompting mechanisms for pervasive applications",
+   "authors": [
+    "Veljko Pejovic",
+    "Mirco Musolesi"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 10-Year Impact Award Runner-up: InterruptMe: designing intelligent prompting mechanisms for pervasive applications — Veljko Pejovic and Mirco Musolesi"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones",
+   "authors": [
+    "Rui Wang",
+    "Fanglin Chen",
+    "Zhenyu Chen",
+    "Tianxing Li",
+    "Gabriella Harari",
+    "Stefanie Tignor",
+    "Xia Zhou",
+    "Dror Ben-Zeev",
+    "Andrew T. Campbell"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
+   "evidence": "UbiComp 2024 10-Year Impact Award: StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones — Rui Wang, Fanglin Chen, Zhenyu Chen, Tianxing Li, Gabriella Harari, Stefanie Tignor, Xia Zhou, Dror Ben-Zeev and Andrew T. Campbell"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "10-Year Impact Award Runner-up",
+   "title": "A Lived Informatics Model of Personal Informatics",
+   "authors": [
+    "Daniel A. Epstein",
+    "An Ping",
+    "James Fogarty",
+    "Sean A. Munson"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2025/awards/",
+   "evidence": "UbiComp 2025 10-Year Impact Award Runner-up: A Lived Informatics Model of Personal Informatics — Daniel A. Epstein, An Ping, James Fogarty, and Sean A. Munson (University of Washington)"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Trajectories of Depression: Unobtrusive Monitoring of Depressive States by Means of Smartphone Mobility Traces",
+   "authors": [
+    "Luca Canzian",
+    "Mirco Musolesi"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/ubicomp-iswc-2025/awards/",
+   "evidence": "UbiComp 2025 10-Year Impact Award: Trajectories of Depression: Unobtrusive Monitoring of Depressive States by Means of Smartphone Mobility Traces — Luca Canzian (University of Birmingham) and Mirco Musolesi (University College London and University of Birmingham)"
   },
   {
    "venue": "UbiComp-ISWC",

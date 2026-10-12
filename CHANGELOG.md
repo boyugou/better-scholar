@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.7 — 2026-10-12
+
+- DAC's Most Influential Paper awards 2023–2026 (7 papers: Chaff, Chisel, Symbolic Model Checking Using SAT Procedures Instead of BDDs, …) from DAC's own page (`tot.mjs dac`), and UbiComp's IMWUT Distinguished Paper Awards 2024
+  and 10-Year Impact Awards 2024–2025 with their runners-up from UbiComp's awards pages (`tot.mjs ubicomp`). The bundled list has 6031 awards.
+
 ## 2.10.6 — 2026-10-12
 
 - The year drop-down no longer closes when its own list scrolls (arrow keys, End or a long list of years); only a scroll of the page behind it closes it. A keyboard check (open, End, Escape, focus back on the button) joins the end-to-end test.

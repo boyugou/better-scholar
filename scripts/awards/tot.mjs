@@ -123,6 +123,8 @@ const PAGES = {
   "kdd-bp": "https://kdd.org/awards/sigkdd-best-research-paper-awards",
   "kdd-tot": "https://kdd.org/awards/kdd-test-of-time-award",
   sigcomm: "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
+  dac: "https://www.dac.com/2027/dac-most-influential-papers-award",
+  ubicomp: "https://ubicomp.org/ubicomp-iswc-2025/awards/",
   "icml-tot-2021": "https://icml.cc/virtual/2021/test-of-time/11808",
   "nips-book-2018": "https://media.nips.cc/Conferences/NIPS2018/NIPS-2018-Conference-Book.pdf",
   "neurips-2022": "https://blog.neurips.cc/2022/11/21/announcing-the-neurips-2022-awards/",
@@ -1151,6 +1153,66 @@ export function parseVirtualTotDetail(html, source) {
   return { entries, skipped };
 }
 
+// DAC's Most Influential Paper award page (www.dac.com/2027/dac-most-influential-papers-award, "Past Winners"): per year a heading "2024 DAC Most Influential Paper (MIP) Award Winner(s)",
+// then per paper a line with the title in quotation marks (2023 prefixes a decade: `1960s "Sketch pad …"`) and a line `by Authors, [14th DAC,] 1977.` (a stray parenthesis, the paper's year and its DAC
+// number are in the author line; affiliations in parentheses in the newest).
+export function parseDacMip(html, source = PAGES.dac) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").trim()).filter(Boolean);
+  const start = ls.findIndex((l) => /^Past Winners$/i.test(l));
+  let year = null;
+  for (let i = Math.max(0, start); i < ls.length; i++) {
+    const l = ls[i];
+    const h = /^((?:19|20)\d{2}) DAC Most Influential Paper/i.exec(l);
+    if (h) { year = parseInt(h[1], 10); continue; }
+    if (year && /^View Profile$/i.test(l)) break;
+    if (!year || !/^by\s/i.test(l) || i === 0) continue;
+    const tl = /^(?:\d{4}s\s+)?[“"”](.+?)[”"“]\s*$/.exec(ls[i - 1]);
+    if (!tl) { skipped.push(`${year}: not read: ${ls[i - 1].slice(0, 60)}`); continue; }
+    const py = (/((?:19|20)\d{2})\.?\s*$/.exec(l) || [])[1];
+    const parts = l.replace(/^by\s+/i, "").replace(/[.,\s]*(?:19|20)\d{2}\.?\s*$/, "").replace(/\([^()]*\)/g, " ").replace(/\)/g, " ").split(/\s*,\s*(?:and\s+)?|\s+and\s+/).map((x) => x.replace(/\s+/g, " ").trim().replace(/\.$/, (m, off, str) => (/\b\p{Lu}$/u.test(str.slice(0, off)) ? "." : ""))).filter((x) => x && !/^\d+(?:st|nd|rd|th)\s+DAC$/i.test(x) && !/^(?:19|20)\d{2}$/.test(x));
+    if (parts.length && parts.every(isPerson)) entries.push({ ...entry("DAC", year, "Most Influential Paper Award", cleanTitle(tl[1]), parts, source, `DAC ${year} Most Influential Paper Award: “${tl[1]}” ${l}`, py ? parseInt(py, 10) : null) });
+    else skipped.push(`${year}: not read: ${l.slice(0, 80)}`);
+  }
+  return { entries, skipped };
+}
+
+// UbiComp / ISWC's awards page of a year (ubicomp.org/ubicomp-iswc-<year>/awards/; the year is in the address, only the newest years carry the paper awards): "IMWUT Distinguished Paper Awards" with
+// title / authors line pairs, and the UbiComp 10-Year Impact Award ("Winner" or "Overall Winner:", then "Runner Up"), each a title line, an authors line (affiliations in brackets) and a paragraph on the paper.
+// The ISWC Test of Time list on the same page is read from ISWC's own source, and the student, poster, demo and design awards are not paper awards.
+const SECTION_END = /^(?:Design Exhibition|Best Poster Awards?|Best Demo Awards?|Gaetano Bor?r?iello|ISWC Test of Time)/i;
+export function parseUbicompAwards(html, source) {
+  const entries = [], skipped = [];
+  const year = parseInt((/ubicomp-iswc-(\d{4})/.exec(source) || [])[1], 10);
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
+  const start = ls.findIndex((l, i) => i > 30 && /^Awards$/.test(l));
+  let section = null, sub = "winner";
+  const add = (award, label, title, authorLine) => {
+    const who = kddAuthors(authorLine), t = cleanTitle(title);
+    if (who.length && t.length >= 8) entries.push({ venue: "UbiComp", year, award, awardLabel: label, title: t, authors: who, track: "main", source, evidence: `UbiComp ${year} ${label}: ${t} — ${authorLine}` });
+    else skipped.push(`${year}: not read: ${title.slice(0, 50)} / ${authorLine.slice(0, 50)}`);
+  };
+  for (let i = Math.max(0, start); i < ls.length; i++) {
+    const l = ls[i];
+    if (SECTION_END.test(l)) { section = null; continue; }
+    if (/^IMWUT Distinguished Paper Awards?$/i.test(l)) { section = "distinguished"; continue; }
+    if (/^(?:UbiComp )?(?:10-Year|Ten-Year) Impact Award$/i.test(l)) { section = "impact"; sub = "winner"; continue; }
+    if (!section) continue;
+    if (section === "impact") {
+      if (/^(?:Overall )?Winner:?$/i.test(l)) { sub = "winner"; continue; }
+      if (/^Runners?[- ]?up:?$/i.test(l)) { sub = "runner-up"; continue; }
+      if (ls[i + 2] && l.length >= 8 && l.length < 200 && !/^(?:Overall )?Winner|^Runners?/i.test(l) && !SECTION_END.test(ls[i + 1]) && kddAuthors(ls[i + 1]).length && !/^[A-Z][^.]{0,40}\([^)]*\)$/.test(l)) {
+        add(sub === "winner" ? "tot" : "runner-up", sub === "winner" ? "10-Year Impact Award" : "10-Year Impact Award Runner-up", l, ls[i + 1]);
+        i += 1;                                                                        // (a paragraph on the paper may follow; it is no title, so it is passed over)
+      }
+    } else if (kddAuthors(ls[i + 1] || "").length && l.length >= 8 && /\.$/.test(l) && !kddAuthors(l).length) {
+      add("distinguished", "IMWUT Distinguished Paper Award", l, ls[i + 1]);
+      i += 1;
+    }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -1206,7 +1268,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);

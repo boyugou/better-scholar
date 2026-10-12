@@ -1633,3 +1633,31 @@ test("a conference virtual site's test-of-time page: the title from <title>, the
   assert.deepEqual(entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["ICML 2021 tot Bayesian Learning via Stochastic Gradient Langevin Dynamics | Yee Teh; Max Welling"]);
   assert.deepEqual(skipped, []);
 });
+
+test("DAC Most Influential Paper page: a heading per year, the title in quotation marks (a decade prefix in 2023), 'by Authors, 14th DAC, 1977.'", async () => {
+  const { parseDacMip } = await import("../scripts/awards/tot.mjs");
+  const html = `<h2>Past Winners</h2><h3>2025 DAC Most Influential Paper (MIP) Award Winner</h3><p>“Chisel: Constructing Hardware in a Scala Embedded Language”</p><p>by J. Bachrach, H. Vo), B. Richards, K. Asanovic. 2012.</p>
+<h3>2023 DAC Most Influential Paper (MIP) Award Winners</h3><p>1970s "A logic design structure for LSI testability"</p><p>by E.B. Eichelberger, T.W. Williams, 14th DAC, 1977.</p><p>1960s "Sketch pad a man-machine graphical communication system"</p><p>by Ivan E. Sutherland, 1964.</p><p>View Profile</p>`;
+  const { entries, skipped } = parseDacMip(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title.slice(0, 10)} | ${e.authors.join("; ")}`), [
+    "2025/2012 Chisel: Co | J. Bachrach; H. Vo; B. Richards; K. Asanovic",
+    "2023/1977 A logic de | E.B. Eichelberger; T.W. Williams",
+    "2023/1964 Sketch pad | Ivan E. Sutherland"
+  ]);
+  assert.deepEqual(skipped, []);
+});
+
+test("UbiComp / ISWC awards page: IMWUT distinguished papers (title / authors pairs) and the 10-Year Impact Award with its runner-up; posters, demos and student awards are left out", async () => {
+  const { parseUbicompAwards } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 35 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `${filler}<h1>Awards</h1><h2>IMWUT Distinguished Paper Awards</h2><p>MITES: Design and Deployment of a General-Purpose Sensing Infrastructure for Buildings.</p><p>Sudershan Boovaraghavan, Chen Chen, and Yuvraj Agarwal.</p>
+<h2>UbiComp 10-Year Impact Award</h2><p>Winner</p><p>StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones</p><p>Rui Wang, Fanglin Chen and Andrew T. Campbell</p><p>Runner Up</p><p>InterruptMe: designing intelligent prompting mechanisms for pervasive applications.</p><p>Veljko Pejovic and Mirco Musolesi</p>
+<h2>Gaetano Borriello Outstanding Student Award</h2><p>Winner</p><p>Anandghan Waghmare, University of Washington</p><h2>Best Poster Awards</h2><p>Gaze2Prompt: Turning Eye-Tracking Data into Visual Prompts</p><p>Jae Young Choi (KAIST); Seon Gyeom Kim (KAIST)</p>`;
+  const { entries, skipped } = parseUbicompAwards(html, "https://ubicomp.org/ubicomp-iswc-2024/awards/");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 12)} | ${e.authors.join("; ")}`), [
+    "2024 distinguished MITES: Desig | Sudershan Boovaraghavan; Chen Chen; Yuvraj Agarwal",
+    "2024 tot StudentLife: | Rui Wang; Fanglin Chen; Andrew T. Campbell",
+    "2024 runner-up InterruptMe: | Veljko Pejovic; Mirco Musolesi"
+  ]);
+  assert.deepEqual(skipped, []);
+});
