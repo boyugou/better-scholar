@@ -115,6 +115,34 @@ test("joint SIG names are not read as one SIG's acronym", () => {
   assert.equal(brief("Proceedings of the 35th annual ACM SIGPLAN-SIGACT symposium on Principles of …, 2008"), "CCF A POPL · CORE A* POPL");
 });
 
+test("SIGGRAPH proceedings, the SIGGRAPH newsletter, courses and a publisher's name", () => {
+  // every pre-2003 SIGGRAPH paper is printed this way — cut right after "and", it is not Computer Graphics International
+  assert.equal(brief("Proceedings of the 28th annual conference on Computer graphics and …, 2001"), "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  assert.equal(brief("Proceedings of the 25th annual conference on Computer graphics and interactive techniques, 1998"), "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  assert.equal(brief("ACM SIGGRAPH 2003 Papers, 376-381, 2003"), "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  assert.equal(brief("Acm Siggraph 2011 Papers, 1-12, 2011"), "CCF A SIGGRAPH · CORE A* SIGGRAPH", "Scholar sometimes title-cases the acronym");
+  assert.equal(brief("ACM SIGGRAPH Asia 2010 papers, 1-10, 2010"), "CORE A* SiggraphA");
+  assert.equal(brief("ACM SIGGRAPH computer graphics 25 (4), 285-288, 1991"), "", "the SIGGRAPH newsletter is neither the conference nor Computer Graphics Forum");
+  assert.equal(brief("ACM SIGGRAPH 2005 Courses, 268-es, 2005"), "", "courses are a tutorial track");
+  assert.equal(brief("Proceedings of the ACM SIGGRAPH/EUROGRAPHICS conference on Graphics hardware …, 2004"), "", "a joint-sponsor chain is not SIGGRAPH's acronym");
+  assert.equal(brief("ACM SIGGRAPH/Eurographics Symposium on Computer Animation, 2010"), "CCF B SCA · CORE B SCA");
+  assert.equal(brief("Computer Graphics International 2012"), "CCF C CGI · CORE C CGI");
+  assert.equal(brief("Computer graphics forum 28 (3), 831-838, 2009"), "CCF B CGF");
+  // a publisher is not a venue
+  assert.equal(brief("ACM, 2011"), "");
+  assert.equal(brief("IEEE, 2003"), "");
+  assert.equal(brief("Proceedings of the IEEE 86 (11), 2278-2324, 1998"), "CCF A Proc. IEEE");
+});
+
+test("abbreviated journal names and older conference names", () => {
+  assert.equal(brief("ACM Trans. Graph. 33 (4), 144:1-144:11, 2014"), "CCF A TOG");
+  assert.equal(brief("IEEE Trans. Pattern Anal. Mach. Intell. 40 (1), 2018"), "CCF A TPAMI");
+  assert.equal(brief("J. ACM 12, 1965"), "CCF A JACM");
+  assert.equal(brief("Proceedings of the 2006 ACM/IEEE Conference on Supercomputing, 83-es, 2006"), "CCF A SC · CORE A SC");
+  assert.equal(brief("SC'05: Proceedings of the 2005 ACM/IEEE Conference on Supercomputing, 11-11, 2005"), "CCF A SC · CORE A SC");
+  assert.equal(brief("Proceedings of the 2007 symposium on Interactive 3D graphics and games, 167-174, 2007"), "CCF B I3D");
+});
+
 test("CORE now fires on the strings Scholar really prints", () => {
   assert.equal(brief("Advances in neural information processing systems 36, 46595-46623, 2023"), "CCF A NeurIPS · CORE A* NeurIPS");
   assert.equal(brief("Proceedings of the 29th symposium on operating systems principles, 611-626, 2023"), "CCF A SOSP · CORE A* SOSP");

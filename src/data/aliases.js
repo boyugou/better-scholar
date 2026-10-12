@@ -60,6 +60,10 @@
     { ccf: "SIGIR", core: "SIGIR", names: ["International ACM SIGIR Conference on Research and Development in Information Retrieval", "ACM SIGIR Conference on Research and Development in Information Retrieval"] },
     { ccf: "RecSys", core: "RecSys", names: ["ACM Conference on Recommender Systems"] },
 
+    // ---- graphics
+    { ccf: "I3D", names: ["Symposium on Interactive 3D Graphics and Games", "Symposium on Interactive 3D Graphics"] },
+    { core: "SiggraphA", names: ["ACM SIGGRAPH Asia", "SIGGRAPH Asia", "ACM SIGGRAPH Asia Papers", "SIGGRAPH Asia Papers", "ACM SIGGRAPH Asia Technical Papers", "SIGGRAPH Asia Technical Papers"] },
+
     // ---- HCI
     { ccf: "CHI", core: "CHI", names: ["ACM Conference on Human Factors in Computing Systems", "SIGCHI Conference on Human Factors in Computing Systems", "Conference on Human Factors in Computing Systems", "CHI Conference on Human Factors in Computing Systems"] },
     { ccf: "UIST", core: "UIST", names: ["ACM Symposium on User Interface Software and Technology"] },
@@ -80,7 +84,7 @@
     { ccf: "ISCA", core: "ISCA", names: ["International Symposium on Computer Architecture", "Annual International Symposium on Computer Architecture", "ACM/IEEE Annual International Symposium on Computer Architecture"] },
     { ccf: "MICRO", core: "MICRO", names: ["IEEE/ACM International Symposium on Microarchitecture", "International Symposium on Microarchitecture"] },
     { ccf: "HPCA", core: "HPCA", names: ["IEEE International Symposium on High Performance Computer Architecture", "International Symposium on High-Performance Computer Architecture"] },
-    { ccf: "SC", core: "SC", names: ["International Conference for High Performance Computing, Networking, Storage and Analysis", "Supercomputing"] },
+    { ccf: "SC", core: "SC", names: ["International Conference for High Performance Computing, Networking, Storage and Analysis", "Supercomputing", "ACM/IEEE Conference on Supercomputing", "ACM/IEEE Supercomputing Conference", "Conference on Supercomputing"] },
     { ccf: "SIGCOMM", core: "SIGCOMM", names: [
       "ACM SIGCOMM Conference", "Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication",
       "ACM Special Interest Group on Data Communication", "SIGCOMM Conference on Data Communication"
@@ -127,6 +131,29 @@
     { ccf: "P2P", names: ["IEEE International Conference on Peer-to-Peer Computing", "IEEE International Conference on P2P Computing"] },
 
     // ---- journals (kind J)
-    { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] }
+    { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] },
+    // ISO-4 abbreviations as DBLP / BibTeX print them (the full names already match by themselves)
+    { ccf: "TOG", kind: "J", names: ["ACM Trans. Graph.", "ACM Trans. on Graphics"] },
+    { ccf: "TOCS", kind: "J", names: ["ACM Trans. Comput. Syst."] },
+    { ccf: "TODS", kind: "J", names: ["ACM Trans. Database Syst."] },
+    { ccf: "TOIS", kind: "J", names: ["ACM Trans. Inf. Syst."] },
+    { ccf: "TOPLAS", kind: "J", names: ["ACM Trans. Program. Lang. Syst."] },
+    { ccf: "TOSEM", kind: "J", names: ["ACM Trans. Softw. Eng. Methodol."] },
+    { ccf: "TOCHI", kind: "J", names: ["ACM Trans. Comput. Hum. Interact."] },
+    { ccf: "TSE", kind: "J", names: ["IEEE Trans. Softw. Eng."] },
+    { ccf: "TPAMI", kind: "J", names: ["IEEE Trans. Pattern Anal. Mach. Intell."] },
+    { ccf: "TIP", kind: "J", names: ["IEEE Trans. Image Process."] },
+    { ccf: "TVCG", kind: "J", names: ["IEEE Trans. Vis. Comput. Graph."] },
+    { ccf: "TIT", kind: "J", names: ["IEEE Trans. Inf. Theory"] },
+    { ccf: "TC", kind: "J", names: ["IEEE Trans. Comput."] },
+    { ccf: "TKDE", kind: "J", names: ["IEEE Trans. Knowl. Data Eng."] },
+    { ccf: "TPDS", kind: "J", names: ["IEEE Trans. Parallel Distributed Syst.", "IEEE Trans. Parallel Distrib. Syst."] },
+    { ccf: "TMC", kind: "J", names: ["IEEE Trans. Mob. Comput."] },
+    { ccf: "TDSC", kind: "J", names: ["IEEE Trans. Dependable Secur. Comput.", "IEEE Trans. Dependable Secure Comput."] },
+    { ccf: "TIFS", kind: "J", names: ["IEEE Trans. Inf. Forensics Secur."] },
+    { ccf: "TON", kind: "J", names: ["IEEE/ACM Trans. Netw.", "IEEE/ACM Transactions on Networking"] },
+    { ccf: "IJCV", kind: "J", names: ["Int. J. Comput. Vis.", "Int. J. Comput. Vision"] },
+    { ccf: "JMLR", kind: "J", names: ["J. Mach. Learn. Res."] },
+    { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] }
   ];
 });

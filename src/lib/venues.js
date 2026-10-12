@@ -34,7 +34,7 @@
   const BOILER = new Set([
     "proceedings", "proceeding", "proc", "conference", "conferences", "conf", "symposium",
     "symposia", "symp", "workshop", "workshops", "meeting", "meetings", "congress",
-    "colloquium", "forum", "annual", "international", "intl", "int", "joint", "edition",
+    "colloquium", "annual", "international", "intl", "int", "joint", "edition",
     "volume", "vol", "part", "track", "session", "sessions", "ann"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
@@ -46,7 +46,7 @@
     "thirty", "forty", "fifty", "sixty"
   ]);
   // ISO-4 style abbreviations Scholar sometimes prints ("Commun. Acm", "IEEE Trans. …").
-  const ISO = { trans: "transactions", commun: "communications", lett: "letters", jour: "journal" };
+  const ISO = { trans: "transactions", commun: "communications", lett: "letters", jour: "journal", j: "journal" };
   const TYPE_WORDS = ["symposium", "conference", "workshop", "meeting"];
 
   const isNoiseToken = (t) =>
@@ -144,7 +144,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress)\b/i;
   function secondaryWord(raw) {
     const m = SECONDARY.exec(fold(raw));
     return m ? m[0].toLowerCase().replace(/s$/, "") : null;
@@ -301,14 +301,18 @@
   }
 
   // "ACL-08: HLT", "NDSS'05", "SIGCOMM'98": acronym glued to a year, or a long all-caps token.
-  // "ACM SIGMOD-SIGACT-SIGART" names a joint symposium (PODS), not SIGMOD: the chain carries no acronym of its own.
-  const SIG_CHAIN = /\bSIG[A-Za-z]+(?:\s*[-–/]\s*SIG[A-Za-z]+)+/g;
+  // "ACM SIGMOD-SIGACT-SIGART" names a joint symposium (PODS), not SIGMOD, and "ACM SIGGRAPH/Eurographics" one on
+  // graphics hardware or animation, not SIGGRAPH itself: a joint-sponsor chain carries no acronym of its own.
+  const SIG_CHAIN = /\bSIG[A-Za-z]+(?:\s*[-–/]\s*(?:SIG[A-Za-z]+|Eurographics|EUROGRAPHICS))+/g;
 
   function embeddedSignals(p) {
     const out = [];
     const text = fold(p.withParens).replace(SIG_CHAIN, " ");
     for (const m of text.matchAll(/\b([A-Z][A-Za-z]{2,10})[-–']\s?(\d{2,4})\b/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });
+    for (const m of text.matchAll(/\bSig[a-z]{3,9}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });
+    // "SC'05: Proceedings of the 2005 …": a short acronym, a two-digit year and a colon
+    for (const m of text.matchAll(/\b([A-Z]{2,10})['’]\d{2}\s*:/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     return out.filter((s) => !ORG.has(s.key));
   }
 
@@ -344,7 +348,12 @@
       if (hits.length > 1) { const pick = pickByBoiler(hits, p.plain); if (pick) return pick; }
       return hits[0] || null;
     };
-    const modes = p.truncated ? ["full"] : ["full", "noOrg", "noAcr"];
+    // "… Computer graphics and …": cut after a connective, so the name goes on — what is visible equals no complete
+    // name (it is not CGI; it is SIGGRAPH's "… on Computer Graphics and Interactive Techniques"); only the prefix rule may speak
+    const danglingStop = p.truncated && (() => { const k = canonTokensKeepStops(p.plain, "full"); return k.length > 0 && STOP.has(k[k.length - 1]); })();
+    // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"
+    const publisherOnly = ORG.has(squash(p.plain));
+    const modes = danglingStop || publisherOnly ? [] : p.truncated ? ["full"] : ["full", "noOrg", "noAcr"];
     const seen = new Set();
     for (const mode of modes) {
       const tokens = canonTokens(p.plain, mode, idx.known);
