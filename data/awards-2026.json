@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5284
+  "count": 5320
  },
  "entries": [
   {
@@ -51475,6 +51475,530 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "ICAC '14: Self-Tuning Intel Transactional Synchronization Extensions — Nuno Diegues, INESC-ID and Instituto Superior Técnico, University of Lisbon; Paolo Romano, INESC-ID and Instituto Superior Técnico, University of Lisbon"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2007,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Using Temporal Logic to Control Search in a Forward Chaining Planner",
+   "authors": [
+    "Fahiem Bacchus",
+    "Froduald Kabanza"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2007 Influential Paper Honorable Mention: Fahiem Bacchus and Froduald Kabanza. Using Temporal Logic to Control Search in a Forward Chaining Planner"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Conditional Non-Linear Planning",
+   "authors": [
+    "Mark Peot",
+    "David E. Smith"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2007 Influential Paper Award: Mark Peot and David E. Smith. Conditional Non-Linear Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2008,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Extending Planning Graphs to an ADL Subset",
+   "authors": [
+    "Jana Koehler",
+    "Bernhard Nebel",
+    "Jörg Hoffmann",
+    "Yannis Dimopoulos"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2008 Influential Paper Honorable Mention: Jana Koehler, Bernhard Nebel, Jörg Hoffmann and Yannis Dimopoulos. Extending Planning Graphs to an ADL Subset"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Planning via Model Checking: A Decision Procedure for AR",
+   "authors": [
+    "Alessandro Cimatti",
+    "Fausto Giunchiglia",
+    "Enrico Giunchiglia",
+    "Paolo Traverso"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2008 Influential Paper Award: Alessandro Cimatti, Fausto Giunchiglia, Enrico Giunchiglia and Paolo Traverso. Planning via Model Checking: A Decision Procedure for AR"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "UMCP: A Sound and Complete Procedure for Hierarchical Task-Network Planning",
+   "authors": [
+    "Kutluhan Erol",
+    "James Hendler",
+    "Dana Nau"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2009 Influential Paper Honorable Mention: Kutluhan Erol, James Hendler and Dana Nau. UMCP: A Sound and Complete Procedure for Hierarchical Task-Network Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A Heuristic Estimator for Means-Ends Analysis in Planning",
+   "authors": [
+    "Drew McDermott"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2009 Influential Paper Award: Drew McDermott. A Heuristic Estimator for Means-Ends Analysis in Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Planning as Heuristic Search: New Results",
+   "authors": [
+    "Blai Bonet",
+    "Hector Geffner"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2009 Influential Paper Award: Blai Bonet and Hector Geffner. Planning as Heuristic Search: New Results"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2010,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Solving Planning-Graph by Compiling It into CSP",
+   "authors": [
+    "Minh Do",
+    "Rao Kambhampati"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2010 Influential Paper Honorable Mention: Minh Do and Rao Kambhampati. Solving Planning-Graph by Compiling It into CSP"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Admissible Heuristics for Optimal Planning",
+   "authors": [
+    "Patrik Haslum",
+    "Hector Geffner"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2010 Influential Paper Award: Patrik Haslum and Hector Geffner. Admissible Heuristics for Optimal Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Algorithms for Propagating Resource Constraints in AI Planning and Scheduling: Existing Approaches and New Results",
+   "authors": [
+    "Philippe Laborie"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2011 Influential Paper Award: Philippe Laborie. Algorithms for Propagating Resource Constraints in AI Planning and Scheduling: Existing Approaches and New Results"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Planning with Pattern Databases",
+   "authors": [
+    "Stefan Edelkamp"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2012 Influential Paper Award: Stefan Edelkamp. Planning with Pattern Databases"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "On the Extraction, Ordering, and Usage of Landmarks in Planning",
+   "authors": [
+    "Julie Porteous",
+    "Laura Sebastia",
+    "Jörg Hoffmann"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2013 Influential Paper Award: Julie Porteous, Laura Sebastia, and Jörg Hoffmann. On the Extraction, Ordering, and Usage of Landmarks in Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Choosing Objectives in Over-Subscription Planning",
+   "authors": [
+    "David E. Smith"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2014 Influential Paper Honorable Mention: David E. Smith. Choosing Objectives in Over-Subscription Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Labeled RTDP: Improving the Convergence of Real-Time Dynamic Programming",
+   "authors": [
+    "Blai Bonet",
+    "Hector Geffner"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2014 Influential Paper Award: Blai Bonet and Hector Geffner. Labeled RTDP: Improving the Convergence of Real-Time Dynamic Programming"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Activity Planning for the Mars Exploration Rovers",
+   "authors": [
+    "John L. Bresina",
+    "Ari K. Jonsson",
+    "Paul H. Morris",
+    "Kanna Rajan"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: John L. Bresina, Ari K. Jonsson, Paul H. Morris, and Kanna Rajan. Activity Planning for the Mars Exploration Rovers"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Generating Robust Schedules through Temporal Flexibility",
+   "authors": [
+    "Nicola Policella",
+    "Stephen F. Smith",
+    "Amedeo Cesta",
+    "Angelo Oddi"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2016 Influential Paper Honorable Mention: Nicola Policella, Stephen F. Smith, Amedeo Cesta, and Angelo Oddi. Generating Robust Schedules through Temporal Flexibility"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A Planning Heuristic Based on Causal Graph Analysis",
+   "authors": [
+    "Malte Helmert"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2016 Influential Paper Award: Malte Helmert. A Planning Heuristic Based on Causal Graph Analysis"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Automated Composition of Web Services by Planning in Asynchronous Domains",
+   "authors": [
+    "Marco Pistore",
+    "Paolo Traverso",
+    "Piergiorgio Bertoli"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Marco Pistore, Paolo Traverso, Piergiorgio Bertoli. Automated Composition of Web Services by Planning in Asynchronous Domains"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Conformant Planning via Heuristic Forward Search: A New Approach",
+   "authors": [
+    "Ronen Brafman",
+    "Joerg Hoffmann"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2017 Influential Paper Honorable Mention: Ronen Brafman and Joerg Hoffmann. Conformant Planning via Heuristic Forward Search: A New Approach"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Anytime Dynamic A*: An Anytime, Replanning Algorithm",
+   "authors": [
+    "Maxim Likhachev",
+    "David I. Ferguson",
+    "Geoffrey J. Gordon",
+    "Anthony Stentz",
+    "Sebastian Thrun"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2017 Influential Paper Award: Maxim Likhachev, David I. Ferguson, Geoffrey J. Gordon, Anthony Stentz, Sebastian Thrun. Anytime Dynamic A*: An Anytime, Replanning Algorithm"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Complexity of Planning with Partial Observability",
+   "authors": [
+    "Jussi Rintanen"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Jussi Rintanen. Complexity of Planning with Partial Observability"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Probabilistic planning with information gathering and contingent execution",
+   "authors": [
+    "Denise Draper",
+    "Steve Hanks",
+    "Daniel Weld"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2018 Influential Paper Honorable Mention: Denise Draper, Steve Hanks, Daniel Weld. Probabilistic planning with information gathering and contingent execution"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A knowledge-based approach to planning with incomplete information",
+   "authors": [
+    "Ronald Petrick",
+    "Fahiem Bacchus"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2018 Influential Paper Award: Ronald Petrick, Fahiem Bacchus. A knowledge-based approach to planning with incomplete information"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Planning in Interplanetary Space: Theory and Practice",
+   "authors": [
+    "Ari Jónsson",
+    "Paul Morris",
+    "Nicola Muscettola",
+    "Kanna Rajan",
+    "Ben Smith"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2018 Influential Paper Award: Ari Jónsson, Paul Morris, Nicola Muscettola, Kanna Rajan, Ben Smith. Planning in Interplanetary Space: Theory and Practice"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "From One to Many: Planning for Loosely Coupled Multi-Agent Systems",
+   "authors": [
+    "Ronen Brafman",
+    "Carmel Domshlak"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2019 Influential Paper Award: Ronen Brafman and Carmel Domshlak. From One to Many: Planning for Loosely Coupled Multi-Agent Systems"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "LPG: A Planner Based on Local Search for Planning Graphs with Action Costs",
+   "authors": [
+    "Alfonso Gerevini",
+    "Ivan Serina"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2019 Influential Paper Award: Alfonso Gerevini and Ivan Serina. LPG: A Planner Based on Local Search for Planning Graphs with Action Costs"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Breadth-First Heuristic Search",
+   "authors": [
+    "Rong Zhou",
+    "Eric Hansen"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2020 Influential Paper Award: Rong Zhou and Eric Hansen. Breadth-First Heuristic Search"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Landmarks, Critical Paths and Abstractions: What’s the Difference Anyway?",
+   "authors": [
+    "Malte Helmert",
+    "Carmel Domshlak"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2020 Influential Paper Award: Malte Helmert and Carmel Domshlak. Landmarks, Critical Paths and Abstractions: What’s the Difference Anyway?"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "FF-Replan: A Baseline for Probabilistic Planning",
+   "authors": [
+    "Sungwook Yoon",
+    "Alan Fern",
+    "Robert Givan"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2021 Influential Paper Award: Sungwook Yoon, Alan Fern, and Robert Givan. FF-Replan: A Baseline for Probabilistic Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Temporal Planning with Preferences and Time-Dependent Continuous Costs",
+   "authors": [
+    "J. Benton",
+    "Amanda Coles",
+    "Andrew Coles"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2022 Influential Paper Honorable Mention: J. Benton, Amanda Coles, Andrew Coles. Temporal Planning with Preferences and Time-Dependent Continuous Costs"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Improved Non-deterministic Planning by Exploiting State Relevance",
+   "authors": [
+    "Christian Muise",
+    "Sheila McIlraith",
+    "Christopher Beck"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2022 Influential Paper Award: Christian Muise, Sheila McIlraith, Christopher Beck. Improved Non-deterministic Planning by Exploiting State Relevance"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Influential Paper Honorable Mention",
+   "title": "Plan Stability: Replanning versus Plan Repair",
+   "authors": [
+    "Maria Fox",
+    "Alfonso Gerevini",
+    "Derek Long",
+    "Ivan Serina"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2023 Influential Paper Honorable Mention: Maria Fox, Alfonso Gerevini, Derek Long, Ivan Serina. Plan Stability: Replanning versus Plan Repair"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Optimal Additive Composition of Abstraction-based Admissible Heuristics",
+   "authors": [
+    "Michael Katz",
+    "Carmel Domshlak"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2023 Influential Paper Award: Michael Katz, Carmel Domshlak. Optimal Additive Composition of Abstraction-based Admissible Heuristics"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "LP-Based Heuristics for Cost-Optimal Planning",
+   "authors": [
+    "Florian Pommerening",
+    "Gabriele Röger",
+    "Malte Helmert",
+    "Blai Bonet"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2024 Influential Paper Award: Florian Pommerening, Gabriele Röger, Malte Helmert, Blai Bonet. LP-Based Heuristics for Cost-Optimal Planning"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Counterexample-Guided Cartesian Abstraction Refinement",
+   "authors": [
+    "Jendrik Seipp",
+    "Malte Helmert"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2025 Influential Paper Award: Jendrik Seipp and Malte Helmert. Counterexample-Guided Cartesian Abstraction Refinement"
+  },
+  {
+   "venue": "ICAPS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Who Said We Need to Relax All Variables?",
+   "authors": [
+    "Michael Katz",
+    "Jörg Hoffmann",
+    "Carmel Domshlak"
+   ],
+   "track": "main",
+   "source": "https://www.icaps-conference.org/icaps-awards/",
+   "evidence": "ICAPS 2026 Influential Paper Award: Michael Katz, Jörg Hoffmann, Carmel Domshlak. Who Said We Need to Relax All Variables?"
   },
   {
    "venue": "ICCV",

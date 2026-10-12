@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.25 — 2026-10-12
+
+- The ICAPS Influential Paper Awards and honorable mentions (2007–2026, 36 papers: FF-Replan, Planning as Heuristic Search, Labeled RTDP, Anytime Dynamic A* …) from ICAPS's own awards page
+  (`tot.mjs icaps`). The bundled list has 5320 awards.
+
 ## 2.9.24 — 2026-10-12
 
 - The AAAI Classic Paper Award and its honorable mentions (1999–2026, 40 papers: Monte Carlo Localization, Bayesian Classification, Maximum Entropy Inverse Reinforcement Learning, Never-Ending

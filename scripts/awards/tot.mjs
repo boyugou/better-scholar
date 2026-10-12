@@ -60,8 +60,10 @@
 //   lics-dp https://lics.siglog.org/archive/distinguished-papers.html     the LICS Distinguished Papers, 2000s–: the same template, a heading `<a>LICS 2026</a>, Place` per year
 //   aaai    https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/  the AAAI Classic Paper Award, 2005–2026: a year heading, then per paper a list item `<em>Classic Paper Recipients:</em> <strong>Authors</strong><br>Title
 //                                                                       presented at …` (honorable mentions too; "for their two papers X and Y" rows are reported and skipped)
+//   icaps   https://www.icaps-conference.org/icaps-awards/                 the ICAPS Influential Paper Awards, 2008–: "ICAPS Influential Paper Award 2026", then lines `WinnerAuthors. Title. (ICAPS 2013)“citation”` (also
+//                                                                       "Winners", "Honorable Mention(s)", the paper's venue ICAPS, AIPS or ECP); the dissertation awards on the same page are not read
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai|icaps [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -96,7 +98,8 @@ const PAGES = {
   icse: "https://www.icse-conferences.org/mostinfluential.html",
   lics: "https://lics.siglog.org/archive/test-of-time-award.html",
   "lics-dp": "https://lics.siglog.org/archive/distinguished-papers.html",
-  aaai: "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/"
+  aaai: "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
+  icaps: "https://www.icaps-conference.org/icaps-awards/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -581,6 +584,28 @@ export function parseAaaiClassic(html, source = PAGES.aaai) {
   return { entries, skipped };
 }
 
+export function parseIcapsInfluential(html, source = PAGES.icaps) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  let year = null, honorable = false;
+  for (const l of ls) {
+    const h = /^ICAPS (Influential Paper|Best Dissertation) Award (\d{4})$/.exec(l);
+    if (h) { year = h[1] === "Influential Paper" ? parseInt(h[2], 10) : null; honorable = false; continue; }
+    if (/^(?:Awards committee:|Awards presented at)/.test(l)) { if (/^Awards committee:/.test(l)) year = null; continue; }
+    if (!year) continue;
+    let rest = l;
+    const lead = /^(Winners?|Honou?rable Mentions?)\s*/.exec(rest);
+    if (lead) { honorable = /honou?rable/i.test(lead[1]); rest = rest.slice(lead[0].length); }
+    // (the authors end at the first full stop that follows a name, not an initial: "David I. Ferguson, … Sebastian Thrun. Anytime Dynamic A*")
+    const m = /^(.+?\p{Ll}{2})\.\s+(.+?)\.?\s*\((?:ICAPS|AIPS|ECP) ((?:19|20)\d{2})\)/u.exec(rest);
+    if (!m) continue;
+    const who = names(m[1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(m[2]);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "ICAPS", year, award: honorable ? "runner-up" : "tot", awardLabel: honorable ? "Influential Paper Honorable Mention" : "Influential Paper Award", title, authors: who, track: "main", source, evidence: `ICAPS ${year} Influential Paper ${honorable ? "Honorable Mention" : "Award"}: ${m[1]}. ${title}` });
+    else skipped.push(`${year}: not read: ${m[1].slice(0, 50)} / ${title.slice(0, 40)}`);
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -636,7 +661,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);

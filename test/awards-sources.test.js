@@ -1352,3 +1352,18 @@ test("AAAI Classic Paper page: a year heading, per paper '<em>Classic Paper Reci
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("ICAPS awards page: 'ICAPS Influential Paper Award 2026', lines 'WinnerAuthors. Title. (ICAPS 2013)', honorable mentions; initials do not end the authors", async () => {
+  const { parseIcapsInfluential } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>ICAPS Influential Paper Award 2017</h3><p>WinnerMaxim Likhachev, David I. Ferguson, Geoffrey J. Gordon, Anthony Stentz, Sebastian Thrun. Anytime Dynamic A*: An Anytime, Replanning Algorithm. (ICAPS 2005)Computing paths for robots</p>
+<p>Honorable MentionsRonen Brafman and Joerg Hoffmann. Conformant Planning via Heuristic Forward Search: A New Approach. (ICAPS 2004)This work adapted</p><p>Marco Pistore, Paolo Traverso, Piergiorgio Bertoli. Automated Composition of Web Services by Planning in Asynchronous Domains. (ICAPS 2005)This paper provides</p>
+<h3>ICAPS Best Dissertation Award 2017</h3><p>WinnerThomas Keller for his dissertation Anytime Optimal MDP Planning.</p><p>Awards committee: Scott Sanner (chair)</p>
+<h3>ICAPS Influential Paper Award 2015</h3><p>There is no paper award this year due to lack of nominations.</p>`;
+  const { entries, skipped } = parseIcapsInfluential(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2017 tot Anytime Dynamic A*: An Anytime, Replanning Algorithm | Maxim Likhachev; David I. Ferguson; Geoffrey J. Gordon; Anthony Stentz; Sebastian Thrun",
+    "2017 runner-up Conformant Planning via Heuristic Forward Search: A New Approach | Ronen Brafman; Joerg Hoffmann",
+    "2017 runner-up Automated Composition of Web Services by Planning in Asynchronous Domains | Marco Pistore; Paolo Traverso; Piergiorgio Bertoli"
+  ]);
+  assert.deepEqual(skipped, []);
+});
