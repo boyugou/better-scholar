@@ -451,7 +451,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
     assert.equal(await stored(opts, "local", "resolved"), undefined);
-    await eventually(opts, () => document.querySelector('[data-act="clear-cache"]').textContent !== "Cleared");     // (the button says "Cleared" for a moment)
+    // (the button says "Cleared" for a moment; no waitForFunction here — polling one evaluates a string, which an extension page's CSP refuses)
+    await opts.bringToFront();
+    for (let i = 0; i < 50 && (await opts.textContent('[data-act="clear-cache"]')) === "Cleared"; i++) await opts.waitForTimeout(100);
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
