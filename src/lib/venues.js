@@ -145,10 +145,14 @@
   // "Proceedings of the IEEE Conference on …".
   const JOURNAL_PROCEEDINGS = /^proceedings of the (?:ieee|national academy of sciences)$/i;
 
+  // The magazines of the special interest groups carry the group's acronym: "ACM SIGMOD Record", "SIGKDD Explorations",
+  // "ACM SIGPLAN Notices", "SIGIR Forum", "SIGecom Exchanges" — periodicals, not the conferences SIGMOD, KDD, PLDI, SIGIR.
+  const SIG_MAGAZINE = /\bsig[a-z]{2,10}\b(?:\s+[a-z]+){0,4}?\s+(?:record|explorations?|notices|forum|exchanges?|digest)\b/i;
+
   // 'C' | 'J' | null (unknown: consult journals first, then conferences).
   // A volume number alone proves nothing ("ISCA 2014 42 (3)" is a conference).
   function typeHint(name) {
-    if (JOURNAL_PROCEEDINGS.test(name)) return "J";
+    if (JOURNAL_PROCEEDINGS.test(name) || SIG_MAGAZINE.test(fold(name))) return "J";
     const c = CONF_SIGNAL.test(name), j = JOURNAL_SIGNAL.test(name);
     if (c && !j) return "C";
     if (j && !c) return "J";
@@ -166,6 +170,9 @@
 
   const ratingOf = (e) => (e.src === "ccf" ? e.tier : e.rank);
 
+  // the words of a name that are not connectives ("of", "on", "and" …)
+  const contentWords = (text) => fold(text).toLowerCase().split(/[^a-z0-9]+/).filter((w) => w && !STOP.has(w));
+
   // ----------------------------------------------------------------- indexing
 
   // Build lookup structures from the bundled datasets.
@@ -178,7 +185,9 @@
     const known = new Set();                           // every abbreviation key, for noAcr
 
     function newSide() {
-      return { names: new Map(), abbrs: new Map(), bags: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+      // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
+      // official name once its boilerplate is dropped ("IEEE International Conference on Data Mining" → "data mining")
+      return { names: new Map(), bare: new Map(), abbrs: new Map(), bags: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
     }
     const push = (map, key, entry) => {
       if (!key) return;
@@ -207,6 +216,7 @@
           const t = form[mode];
           if (t.length) { push(side.names, t.join(" "), entry); push(side.first[mode], t[0], { entry, form }); }
         }
+        if (form.full.length && form.full.length === contentWords(plain).length) push(side.bare, form.full.join(" "), entry);
         // order-insensitive key for journals ("…, IEEE Transactions on")
         const bag = canonTokens(plain, "noOrg");
         if (kind === "J" && bag.length >= 3) push(side.bags, uniq(bag).sort().join(" "), entry);
@@ -236,7 +246,7 @@
         const entries = (byRef[src].get(kind + "|" + squash(ref)) || []).filter((e) => !want || ratingOf(e) === want);
         for (const entry of entries) {
           entry.extra.push(...a.names);
-          register(src, kind, entry, a.names, []);
+          register(src, kind, entry, a.names, a.abbrs || []);
         }
       }
     }
@@ -372,12 +382,26 @@
       if (hits.length > 1) { const pick = pickByBoiler(hits, p.plain); if (pick) return pick; }
       return hits[0] || null;
     };
+    // does another venue's name begin with these words, go on ("… Distributed Computing" → "… Distributed Computing Systems")
+    // and use the string's own event word ("conference") where the hit does not (the symposium DISC)?
+    const continuesBeyond = (sidesNow, mode, tokens, hit) => {
+      if (!rawWords.length || rawWords.every((w) => hasWord(hit, w))) return false;
+      return sidesNow.some((side) => (side.first[mode].get(tokens[0]) || []).some(({ entry, form }) => {
+        const t = form[mode];
+        return entry !== hit && t.length > tokens.length && tokens.every((w, i) => t[i] === w) && rawWords.every((w) => hasWord(entry, w));
+      }));
+    };
     // "… Computer graphics and …": cut after a connective, so the name goes on — what is visible equals no complete
     // name (it is not CGI; it is SIGGRAPH's "… on Computer Graphics and Interactive Techniques"); only the prefix rule may speak
     const danglingStop = p.truncated && (() => { const k = canonTokensKeepStops(p.plain, "full"); return k.length > 0 && STOP.has(k[k.length - 1]); })();
     // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"
     const publisherOnly = ORG.has(squash(p.plain));
     const modes = danglingStop || publisherOnly ? [] : p.truncated ? ["full"] : ["full", "noOrg", "noAcr"];
+    // One or two plain words, no organisation and no conference wording ("Data mining", "Software engineering"): a field or a
+    // book, not the conference whose official name merely boils down to them. Only a name that really is those words counts
+    // (a curated alias such as "Pacific Graphics", a journal called "Machine Learning").
+    const plainWords = contentWords(p.plain);
+    const bareString = !hint && plainWords.length <= 2 && !plainWords.some((w) => ORG.has(w)) && plainWords.length === canonTokens(p.plain, "full").length;
     const seen = new Set();
     for (const mode of modes) {
       const tokens = canonTokens(p.plain, mode, idx.known);
@@ -387,8 +411,12 @@
       const key = tokens.join(" ");
       if (seen.has(key)) continue;
       seen.add(key);
-      const d = nameHit((side) => side.names.get(key));
+      const d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
       if (d === "ambiguous") return null;
+      // Scholar cut the name right here ("… Conference on Distributed Computing …") and the string says "conference" while this
+      // venue is a symposium: a venue whose longer name goes on the same way and does say "conference" is the better reading —
+      // the prefix rule below decides between them
+      if (d && p.truncated && continuesBeyond(sides, mode, tokens, d)) continue;
       if (d) return { entry: d, rule: "name" };
     }
 

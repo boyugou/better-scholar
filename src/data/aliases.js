@@ -8,6 +8,7 @@
 //   kind          'C' (default) or 'J' — which CCF index the row lives in
 //   ccfTier       disambiguates two CCF rows with the same abbreviation (FSE)
 //   coreRank      same for ICORE
+//   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -26,6 +27,8 @@
     { ccf: "AISTATS", core: "AISTATS", names: ["International Workshop on Artificial Intelligence and Statistics", "Artificial Intelligence and Statistics"] },
     { ccf: "COLT", core: "COLT", names: ["Conference on Learning Theory", "Annual Conference on Learning Theory", "Computational Learning Theory"] },
     { ccf: "UAI", core: "UAI", names: ["Conference on Uncertainty in Artificial Intelligence", "Uncertainty in Artificial Intelligence"] },
+    // ECML (until 2007 its own conference) and PKDD (until 2007) are the two halves of one venue today
+    { ccf: "ECML-PKDD", core: "ECML PKDD", abbrs: ["ECML", "PKDD", "ECML PKDD", "ECML-PKDD"], names: ["European Conference on Machine Learning", "European Conference on Principles and Practice of Knowledge Discovery in Databases", "European Conference on Principles of Data Mining and Knowledge Discovery", "Joint European Conference on Machine Learning and Knowledge Discovery in Databases", "Machine Learning and Knowledge Discovery in Databases"] },
 
     // ---- vision
     { ccf: "CVPR", core: "CVPR", names: ["IEEE Conference on Computer Vision and Pattern Recognition", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", "Computer Vision and Pattern Recognition"] },
@@ -50,7 +53,7 @@
     { ccf: "ICASSP", names: ["IEEE International Conference on Acoustics, Speech and Signal Processing"] },
 
     // ---- data mining / databases / IR
-    { ccf: "SIGKDD", core: "KDD", names: ["ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", "SIGKDD International Conference on Knowledge Discovery in Data Mining", "Knowledge Discovery and Data Mining"] },
+    { ccf: "SIGKDD", core: "KDD", abbrs: ["KDD", "SIGKDD"], names: ["ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", "SIGKDD International Conference on Knowledge Discovery in Data Mining", "Knowledge Discovery and Data Mining"] },
     { ccf: "WWW", core: "WWW", names: ["International Conference on World Wide Web", "International World Wide Web Conference", "World Wide Web Conference", "The Web Conference", "WWW Conference", "ACM Web Conference"] },
     { ccf: "SIGMOD", core: "SIGMOD", names: ["International Conference on Management of Data", "ACM SIGMOD International Conference on Management of Data", "ACM Special Interest Group on Management of Data", "Proceedings of the ACM on Management of Data"] },
     { ccf: "VLDB", core: "VLDB", names: ["Proceedings of the VLDB Endowment", "International Conference on Very Large Data Bases", "VLDB Conference"] },
@@ -74,7 +77,7 @@
     { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
 
     // ---- systems / architecture / networking
-    { ccf: "SOSP", core: "SOSP", names: ["ACM Symposium on Operating Systems Principles", "Symposium on Operating Systems Principles"] },
+    { ccf: "SOSP", core: "SOSP", names: ["ACM Symposium on Operating Systems Principles", "Symposium on Operating Systems Principles", "ACM SIGOPS Symposium on Operating Systems Principles"] },
     { ccf: "OSDI", core: "OSDI", names: ["USENIX Symposium on Operating Systems Design and Implementation"] },
     { ccf: "NSDI", names: ["USENIX Symposium on Networked Systems Design and Implementation", "Symposium on Networked Systems Design and Implementation", "Symposium on Network System Design and Implementation"] },
     { ccf: "EuroSys", core: "EuroSys", names: ["European Conference on Computer Systems", "Conference on Computer Systems", "ACM European Conference on Computer Systems"] },

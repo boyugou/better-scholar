@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.4.5 — 2026-10-12
+
+Five more real profiles (data mining, machine learning, robot learning, statistical learning; 480 venue strings) went through the
+matcher; the false badges and misses they showed are fixed, each with a test, and the strings join the corpora.
+
+- **A special interest group's magazine is not its conference.** `ACM SIGMOD Record`, `SIGKDD Explorations`, `ACM SIGPLAN Notices`,
+  `ACM SIGIR Forum` … were read as the conference when the acronym came in title case ("Sigmod"); they are periodicals now whatever the case.
+- **One or two plain words are a field, not a conference.** A book chapter's venue `Data mining` was badged ICDM because the official
+  name "IEEE International Conference on Data Mining" boils down to those two words. A string with no organisation, no conference
+  wording and at most two words now matches only a name that really is those words (a curated alias such as `Pacific Graphics`, a
+  journal called `Machine Learning`).
+- **KDD and SIGKDD are one venue in both lists** (`KDD 2014` had only its CORE badge), and so are **ECML, PKDD and ECML PKDD**, which were
+  not recognised at all, and the older **`ACM SIGOPS … Symposium on Operating Systems Principles`** (SOSP had only its CORE badge).
+- **A name that Scholar cut short can go on.** `… International Conference on Distributed Computing …` was read as CORE's symposium
+  DISC; the string says "conference" and ICDCS's longer name begins the same way, so DISC is no longer chosen. A complete name
+  followed by a cut (CHI, ICSE, STOC …) is unaffected.
+
 ## 2.4.4 — 2026-10-12
 
 - **EMNLP 2021 and 2023 and NAACL 2025 paper awards** (51 entries) from the conferences' own pages — the ACL Anthology records

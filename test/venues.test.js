@@ -354,3 +354,39 @@ test("a bare publisher is not a venue: the ACL Anthology's publisher name, AAAI 
   assert.equal(brief("Annual Meeting of the Association for Computational Linguistics, 2019"), "CCF A ACL · CORE A* ACL");
   assert.equal(brief("Proceedings of the AAAI Conference on Artificial Intelligence 32 (1), 2018"), "CCF A AAAI · CORE A* AAAI");
 });
+
+test("a special interest group's magazine is not its conference: SIGMOD Record, SIGKDD Explorations, SIGPLAN Notices, SIGIR Forum", () => {
+  // real strings from database and data-mining profiles; "Sigmod" in title case used to slip through as the SIGMOD conference
+  for (const s of ["ACM SIGMOD Record 29 (2), 1-12, 2000", "ACM Sigmod Record 27 (2), 13-24, 1998", "SIGMOD Record 31 (4), 2002", "ACM SIGMoD record 28 (2), 61-72, 1999",
+    "ACM SIGKDD Explorations Newsletter 14 (2), 20-28, 2013", "SIGKDD Explorations 6 (1), 2004", "ACM SIGPLAN Notices 40 (6), 15-26, 2005", "ACM SIGIR Forum 45 (1), 2011",
+    "ACM SIGecom Exchanges 10 (1), 2011"]) assert.equal(brief(s), "", s);
+  // the conferences themselves, with the same words around them, still match
+  assert.equal(brief("Proceedings of the 2007 ACM SIGMOD international conference on Management of data, 2007"), "CCF A SIGMOD · CORE A* SIGMOD");
+  assert.equal(brief("ACM SIGMOD 2024"), "CCF A SIGMOD · CORE A* SIGMOD");
+});
+
+test("one or two plain words are a field, not a conference: 'Data mining' (a book chapter) is not ICDM — unless the name really is those words", () => {
+  for (const s of ["Data mining, 39-82, 2012", "Data Mining, 2012", "Software engineering, 2012", "Computer vision, 2010"]) assert.equal(brief(s), "", s);
+  assert.equal(brief("Pacific Graphics, 2010"), "CCF B PG", "a curated alias that is just those words");
+  assert.equal(brief("ACM Multimedia, 307-316, 2006"), "CCF A ACM MM · CORE A* ACMMM", "an organisation word is evidence enough");
+  assert.equal(brief("Machine learning 37 (2), 183-233, 1999"), "CCF B Machine Learning", "the journal of that name");
+  assert.equal(brief("IEEE International Conference on Data Mining, 2008"), "CCF B ICDM · CORE A* ICDM");
+  assert.equal(brief("Proceedings of the 3rd ACM SIGCOMM Conference on Internet Measurement, 91-100, 2003"), "CCF B IMC · CORE A IMC", "a known acronym dropped from the name still leaves a name");
+});
+
+test("KDD and SIGKDD are one venue in both lists; ECML, PKDD and ECML PKDD likewise", () => {
+  for (const s of ["KDD 2014, 1286-1295, 2014", "SIGKDD 2014", "KDD, 2013", "Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining, 2009"]) {
+    assert.equal(brief(s), "CCF A SIGKDD · CORE A* KDD", s);
+  }
+  const ecml = "CCF B ECML-PKDD · CORE A ECML PKDD";
+  for (const s of ["ECML, 454-465, 2007", "ECML PKDD 2010, 274-290, 2010", "PKDD 2003, 2003", "ECML-PKDD 2021", "European Conference on Machine Learning, 2005",
+    "Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2008"]) assert.equal(brief(s), ecml, s);
+});
+
+test("Scholar's cut-off name that goes on as a venue with the string's own event word: '… Conference on Distributed Computing …' is ICDCS, not the symposium DISC", () => {
+  assert.equal(brief("Proceedings of 16th International Conference on Distributed Computing …, 1996"), "CCF B ICDCS", "CORE stays silent: DISC is a symposium and ICDCS's name is longer");
+  // a complete name followed by a cut stays what it is
+  assert.equal(brief("Proceedings of the 28th international conference on Software engineering …, 2006"), "CCF A ICSE · CORE A* ICSE");
+  assert.equal(brief("Proceedings of the SIGCHI conference on human factors in computing systems …, 2010"), "CCF A CHI · CORE A* CHI");
+  assert.equal(brief("Proceedings of the ACM SIGOPS 22nd symposium on Operating systems principles …, 2009"), "CCF A SOSP · CORE A* SOSP");
+});
