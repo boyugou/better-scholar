@@ -127,7 +127,15 @@ test("no real venue string in the corpora is marked unless its author wrote the 
     // one real profile's own annotations in the venue field (the author wrote the level)
     "WWW 2024 (🌟 Top-1 Most Influential Paper), 2024 -> tot",
     "WSDM 2022 (🌟 Best Paper Nomination & Top-3 Most Cited Papers), 2022 -> finalist",
-    "MM 2024 (🌟 Best Paper Honorable Mention Award), 2024 -> runner-up"
+    "MM 2024 (🌟 Best Paper Honorable Mention Award), 2024 -> runner-up",
+    // more real authors' own award notes written in front of the venue
+    "ASE 2024 Most Influential Paper Award. 2013 IEEE/ACM International\u00a0…, 2013 -> tot",
+    "HCOMP 2024 Test of Time and Impact Award. Proceedings of the AAAI Conference\u00a0…, 2013 -> tot",
+    "HCOMP Best Paper Award. AAAI Conference on Human Computation and\u00a0…, 2016 -> best",
+    "PIKM Best Paper Award. First Ph.D. Workshop at The Conference on Information\u00a0…, 2007 -> best",
+    "Best Paper Honorable Mention: CSCW'24. Proceedings of the 28th ACM\u00a0…, 2024 -> runner-up",
+    "ECIR Best Student Paper Award. Advances in Information Retrieval: 41st\u00a0…, 2019 -> best-student",
+    "CIST Best Student Paper Award. 2022 Conference on Information Systems and\u00a0…, 2023 -> best-student"
   ]);
 });
 

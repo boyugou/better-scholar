@@ -285,7 +285,7 @@ test("resolving is fast enough for large profiles", () => {
   const t0 = Date.now();
   for (let i = 0; i < 3; i++) for (const s of strings) fresh.resolve(s + " ".repeat(i));   // defeat the cache
   const ms = Date.now() - t0;
-  assert.ok(ms < 4000, `resolved ${strings.length * 3} strings in ${ms} ms`);
+  assert.ok(ms < 1000 + 0.12 * strings.length * 3, `resolved ${strings.length * 3} strings in ${ms} ms`);   // (about 0.05 ms each; the budget grows with the corpora)
 });
 
 test("NeurIPS Datasets and Benchmarks Track is NeurIPS, in every spelling Scholar prints", () => {
