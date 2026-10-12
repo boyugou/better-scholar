@@ -14,15 +14,19 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Next — a cached list of award-winning papers.** Awards are few and public (a flagship venue has a
-handful per year), so a bundled list can mark papers whose authors did not write it. Oral / spotlight
-lists are too large and drift between venues and years, so they stay author-written only. Plan: official
-award pages only, a reproducible extraction like the CCF data, one source URL and one quoted snippet per
-entry, `best` / `outstanding` / `distinguished` / `runner-up` / `student` / `test of time` kept distinct
-(never upgrade an honorable mention), match on normalised full title + first-author surname, and
-tooltips that say where each mark came from ("written by the author" vs "official award list"). The
-best-known public aggregator (jeffhuang.com/best_paper_awards) states no licence and does not
-separate award levels, so it is a cross-check, not a source.
+**Built — a bundled list of award-winning papers** (434 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
+ICML, CVPR 2025, ECCV 2024). Only official pages are sources (the ACL Anthology's award metadata; each
+conference's own awards pages), each entry carries its page and a quoted snippet, and the matcher requires
+the identical full title and the award's first author. Award kinds stay distinct (`best`, `outstanding`,
+`distinguished`, `runner-up`, `student`, `category`, `tot`); an honorable mention is never upgraded.
+Oral / spotlight lists stay author-written only: CVPR and ICCV's "Highlight" rows are about a tenth of the
+papers, which is the 'too many' case, so they are not used.
+
+**Next — more venues, where an official page exists.** CVPR 2022–2024 and 2026, ICCV, ECCV before 2024, AAAI and
+IJCAI: their best-paper pages were not reachable from the tooling when this was written. An independent list
+(jeffhuang.com/best_paper_awards: no licence, no award levels) is only a cross-check; a paper it names but no
+official page does is left out. Also open: test-of-time rows whose page omits the paper title (NeurIPS 2025,
+ICML 2022 and 2026) — the detail page may carry it.
 
 ## Tier at publication time
 
