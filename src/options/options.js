@@ -38,7 +38,7 @@
   // One switch: a label, an optional hint and colour swatch, a getter and a setter on the prefs
   // (`key` is the pref's path, e.g. "ranks.ccf", kept on the input as data-pref).
   function option({ key, label, hint, swatch, get, set, off, sub }) {
-    const input = h("input", { type: "checkbox", class: "sw", "data-pref": key, onChange: () => { set(input.checked); save(); } });
+    const input = h("input", { type: "checkbox", role: "switch", class: "sw", "data-pref": key, onChange: () => { set(input.checked); save(); } });
     const row = h("label", { class: "opt" + (sub ? " sub" : "") },
       h("span", { class: "txt" },
         h("span", { class: "name" }, swatch ? h("span", { class: "swatch", style: "background:" + swatch }) : null, label),

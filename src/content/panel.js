@@ -92,7 +92,7 @@
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" });
 
     // filters (built once, synced on update)
-    const onlyCb = h("input", { type: "checkbox", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
+    const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
     const yearEnd = dropdown("year-end", t("yearEnd"), () => cb.onYear(yearStart.value, yearEnd.value));
     const onlyRow = h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")));

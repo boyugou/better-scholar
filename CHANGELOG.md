@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.13 — 2026-10-12
+
+- The switch-styled ticks (the panel's "Only highlighted" and every switch on the settings page) are announced as switches to screen readers (`role="switch"`), not as plain checkboxes.
+
 ## 2.10.12 — 2026-10-12
 
 - The MobiCom best paper awards 2008–2012 and best student paper awards 1995–2007 (17 papers: Improving TCP/IP Performance over Wireless Networks, Location-Aided Routing, Exposure in Wireless Ad Hoc Sensor Networks, …) from SIGMOBILE's own page (`tot.mjs mobicom`);
