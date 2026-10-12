@@ -1324,3 +1324,16 @@ test("LICS Test-of-Time page: a heading per year, per paper the authors as links
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("LICS Distinguished Papers page: a heading '<a>LICS 2026</a>, Place', per paper the authors as links and the title in bold", async () => {
+  const { parseLicsDistinguished } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3><a href="2026/index.html">LICS 2026</a>, Lisbon, Portugal </h3><div><i><a>Shaull Almagor</a><a></a> <a>Guy Arbel</a></i><br><b>A Complexity Bound for Determinisation of Min-Plus Weighted Automata</b><a class="infolink">More Information...</a></div>
+<div><i><a>Romain P&eacute;choux</a></i><br><b>Quantum Control and General Recursion Beyond the Unitary Case</b></div><h3><a href="2025/index.html">LICS 2025</a>, Singapore</h3><div><i><a>Jamie Tucker-Foltz</a></i><br><b>Inapproximability of Unique Games in Fixed-Point Logic with Counting</b></div>`;
+  const { entries, skipped } = parseLicsDistinguished(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2026 distinguished A Complexity Bound for Determinisation of Min-Plus Weighted Automata | Shaull Almagor; Guy Arbel",
+    "2026 distinguished Quantum Control and General Recursion Beyond the Unitary Case | Romain Péchoux",
+    "2025 distinguished Inapproximability of Unique Games in Fixed-Point Logic with Counting | Jamie Tucker-Foltz"
+  ]);
+  assert.deepEqual(skipped, []);
+});

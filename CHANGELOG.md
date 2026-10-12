@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.23 — 2026-10-12
+
+- The LICS Distinguished Papers (2021–2026, 46 papers) from LICS's own archive page (`tot.mjs lics-dp`). The bundled list has 5268 awards.
+
 ## 2.9.22 — 2026-10-12
 
 - The LICS Test-of-Time Award (2006–2026, 44 papers) from LICS's own archive page (`tot.mjs lics`); "C.-H." (C.-H. Luke Ong) is an initial. The bundled list has 5222 awards. (The first commit of this version read the page but the data gate refused every row: the address was `http`, the gate takes `https` only — the next commit has the rows.)

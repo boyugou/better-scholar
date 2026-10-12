@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5222
+  "count": 5268
  },
  "entries": [
   {
@@ -62573,6 +62573,73 @@
   {
    "venue": "LICS",
    "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Fusible numbers and Peano Arithmetic",
+   "authors": [
+    "Jeff Erickson",
+    "Gabriel Nivasch",
+    "Junyan Xu"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2021 Distinguished Paper: Jeff Erickson, Gabriel Nivasch, Junyan Xu “Fusible numbers and Peano Arithmetic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Inapproximability of Unique Games in Fixed-Point Logic with Counting",
+   "authors": [
+    "Jamie Tucker-Foltz"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2021 Distinguished Paper: Jamie Tucker-Foltz “Inapproximability of Unique Games in Fixed-Point Logic with Counting”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Lacon- and Shrub-Decompositions: A New Characterization of First-Order Transductions of Bounded Expansion Classes",
+   "authors": [
+    "Jan Dreier"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2021 Distinguished Paper: Jan Dreier “Lacon- and Shrub-Decompositions: A New Characterization of First-Order Transductions of Bounded Expansion Classes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Positive First-order Logic on Words",
+   "authors": [
+    "Denis Kuperberg"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2021 Distinguished Paper: Denis Kuperberg “Positive First-order Logic on Words”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Separating Rank Logic from Polynomial Time",
+   "authors": [
+    "Moritz Lichter"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2021 Distinguished Paper: Moritz Lichter “Separating Rank Logic from Polynomial Time”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "Test-of-Time Award",
    "title": "Dependent Types for Program Termination Verification",
@@ -62583,6 +62650,92 @@
    "paperYear": 2001,
    "source": "https://lics.siglog.org/archive/test-of-time-award.html",
    "evidence": "LICS 2021 Test-of-Time Award: Hongwei Xi “Dependent Types for Program Termination Verification”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Choiceless Polynomial Time with Witnessed Symmetric Choice",
+   "authors": [
+    "Moritz Lichter",
+    "Pascal Schweitzer"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Moritz Lichter, Pascal Schweitzer “Choiceless Polynomial Time with Witnessed Symmetric Choice”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Computing the Density of the Positivity Set for Linear Recurrence Sequences",
+   "authors": [
+    "Edon Kelmendi"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Edon Kelmendi “Computing the Density of the Positivity Set for Linear Recurrence Sequences”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Monoidal Streams for Dataflow Programming",
+   "authors": [
+    "Elena Di Lavore",
+    "Giovanni de Felice",
+    "Mario Román"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Elena Di Lavore, Giovanni de Felice, Mario Román “Monoidal Streams for Dataflow Programming”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Quantum Weakest Preconditions for Reasoning about Expected Runtimes of Quantum Programs",
+   "authors": [
+    "Junyi Liu",
+    "Li Zhou",
+    "Gilles Barthe",
+    "Mingsheng Ying"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Junyi Liu, Li Zhou, Gilles Barthe, Mingsheng Ying “Quantum Weakest Preconditions for Reasoning about Expected Runtimes of Quantum Programs”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Stable graphs of bounded twin-width",
+   "authors": [
+    "Jakub Gajarský",
+    "Michał Pilipczuk",
+    "Szymon Toruńczyk"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Jakub Gajarský, Michał Pilipczuk, Szymon Toruńczyk “Stable graphs of bounded twin-width”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The amazing mixed polynomial closure and its applications to two-variable first-order logic",
+   "authors": [
+    "Thomas Place"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2022 Distinguished Paper: Thomas Place “The amazing mixed polynomial closure and its applications to two-variable first-order logic”"
   },
   {
    "venue": "LICS",
@@ -62616,6 +62769,123 @@
    "paperYear": 2002,
    "source": "https://lics.siglog.org/archive/test-of-time-award.html",
    "evidence": "LICS 2022 Test-of-Time Award: Josée Desharnais, Vineet Gupta, Radha Jagadeesan, Prakash Panangaden “The Metric Analogue of Weak Bisimulation for Probabilistic Processes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Extensional and Non-extensional Functions as Processes",
+   "authors": [
+    "Ken Sakayori",
+    "Davide Sangiorgi"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Ken Sakayori, Davide Sangiorgi “Extensional and Non-extensional Functions as Processes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Formalizing π4(S3) ≅Z/2Z and Computing a Brunerie Number in Cubical Agda",
+   "authors": [
+    "Axel Ljungström",
+    "Anders Mörtberg"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Axel Ljungström, Anders Mörtberg “Formalizing π4(S3) ≅Z/2Z and Computing a Brunerie Number in Cubical Agda”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Fully Abstract Normal Form Bisimulation for Call-by-Value PCF",
+   "authors": [
+    "Vasileios Koutavas",
+    "Yu-Yang Lin",
+    "Nikos Tzevelekos"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Vasileios Koutavas, Yu-Yang Lin, Nikos Tzevelekos “Fully Abstract Normal Form Bisimulation for Call-by-Value PCF”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Orbit-finite linear programming",
+   "authors": [
+    "Arka Ghosh",
+    "Piotr Hofman",
+    "Sławomir Lasota"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Arka Ghosh, Piotr Hofman, Sławomir Lasota “Orbit-finite linear programming”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Symmetries of Graphs and Structures that Fail to Interpret a Finite Thing",
+   "authors": [
+    "Libor Barto",
+    "Bertalan Bodor",
+    "Marcin Kozik",
+    "Antoine Mottet",
+    "Michael Pinsker"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Libor Barto, Bertalan Bodor, Marcin Kozik, Antoine Mottet, Michael Pinsker “Symmetries of Graphs and Structures that Fail to Interpret a Finite Thing”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Descriptive Complexity of Graph Neural Networks",
+   "authors": [
+    "Martin Grohe"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Martin Grohe “The Descriptive Complexity of Graph Neural Networks”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Identity Problem in the special affine group of Z2",
+   "authors": [
+    "Ruiwen Dong"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Ruiwen Dong “The Identity Problem in the special affine group of Z2”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "ωPAP Spaces: Reasoning Denotationally About Higher-Order, Recursive Probabilistic and Differentiable Programs",
+   "authors": [
+    "Mathieu Huot",
+    "Alexander K. Lew",
+    "Vikash K. Mansinghka",
+    "Sam Staton"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2023 Distinguished Paper: Mathieu Huot, Alexander K. Lew, Vikash K. Mansinghka, Sam Staton “ωPAP Spaces: Reasoning Denotationally About Higher-Order, Recursive Probabilistic and Differentiable Programs”"
   },
   {
    "venue": "LICS",
@@ -62666,6 +62936,119 @@
   {
    "venue": "LICS",
    "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Equivalence and Conditional Independence in Atomic Sheaf Logic",
+   "authors": [
+    "Alex Simpson"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Alex Simpson “Equivalence and Conditional Independence in Atomic Sheaf Logic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "First order complexity of finite random structures",
+   "authors": [
+    "Danila Demin",
+    "Maksim Zhukovskii"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Danila Demin, Maksim Zhukovskii “First order complexity of finite random structures”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "On the Decidability of Monadic Second-Order Logic with Arithmetic Predicates",
+   "authors": [
+    "Valérie Berthé",
+    "Toghrul Karimov",
+    "Joris Nieuwveld",
+    "Joël Ouaknine",
+    "Mihir Vahanwala",
+    "James Worrell"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Valérie Berthé, Toghrul Karimov, Joris Nieuwveld, Joël Ouaknine, Mihir Vahanwala, James Worrell “On the Decidability of Monadic Second-Order Logic with Arithmetic Predicates”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "On the Separability Problem of VASS Reachability Languages",
+   "authors": [
+    "Eren Keskin",
+    "Roland Meyer"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Eren Keskin, Roland Meyer “On the Separability Problem of VASS Reachability Languages”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Relevant S is Undecidable",
+   "authors": [
+    "Søren Brinck Knudstorp"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Søren Brinck Knudstorp “Relevant S is Undecidable”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Finite Satisfiability Problem for PCTL is Undecidable",
+   "authors": [
+    "Miroslav Chodil",
+    "Antonín Kučera"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Miroslav Chodil, Antonín Kučera “The Finite Satisfiability Problem for PCTL is Undecidable”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Upon This Quote I Will Build My Church Thesis",
+   "authors": [
+    "Pierre-Marie Pédrot"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Pierre-Marie Pédrot “Upon This Quote I Will Build My Church Thesis”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "δ is for Dialectica",
+   "authors": [
+    "Marie Morgane Kerjean",
+    "Pierre-Marie Pédrot"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2024 Distinguished Paper: Marie Morgane Kerjean, Pierre-Marie Pédrot “δ is for Dialectica”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
    "award": "tot",
    "awardLabel": "Test-of-Time Award",
    "title": "A Categorical Semantics of Quantum Protocols",
@@ -62696,6 +63079,165 @@
   {
    "venue": "LICS",
    "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Characterization and Decidability of FC-Definable Regular Languages",
+   "authors": [
+    "Sam M. Thompson",
+    "Nicole Schweikardt",
+    "Dominik D. Freydenberger"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Sam M. Thompson, Nicole Schweikardt, Dominik D. Freydenberger “Characterization and Decidability of FC-Definable Regular Languages”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Effectful Mealy Machines: Bisimulation and Trace",
+   "authors": [
+    "Filippo Bonchi",
+    "Elena Di Lavore",
+    "Mario Román"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Filippo Bonchi, Elena Di Lavore, Mario Román “Effectful Mealy Machines: Bisimulation and Trace”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Hofmann-Streicher lifting of fibred categories",
+   "authors": [
+    "Andrew Slattery",
+    "Jonathan Sterling"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Andrew Slattery, Jonathan Sterling “Hofmann-Streicher lifting of fibred categories”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Minimal History-Deterministic Co-Büchi Automata: Congruences and Passive Learning",
+   "authors": [
+    "Christof Löding",
+    "Igor Walukiewicz"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Christof Löding, Igor Walukiewicz “Minimal History-Deterministic Co-Büchi Automata: Congruences and Passive Learning”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Ordinal Exponentiation in Homotopy Type Theory",
+   "authors": [
+    "Tom de Jong",
+    "Nicolai Kraus",
+    "Fredrik Nordvall Forsberg",
+    "Chuangjie Xu"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Tom de Jong, Nicolai Kraus, Fredrik Nordvall Forsberg, Chuangjie Xu “Ordinal Exponentiation in Homotopy Type Theory”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Pushdown Model Checking above the Cubic Bottleneck",
+   "authors": [
+    "A. R. Balasubramanian",
+    "Dmitry Chistikov",
+    "Rupak Majumdar"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: A. R. Balasubramanian, Dmitry Chistikov, Rupak Majumdar “Pushdown Model Checking above the Cubic Bottleneck”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Blurred Drinker Paradox: Constructive Reverse Mathematics of the Downward Löwenheim-Skolem Theorem",
+   "authors": [
+    "Dominik Kirst",
+    "Haoyi Zeng"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Dominik Kirst, Haoyi Zeng “The Blurred Drinker Paradox: Constructive Reverse Mathematics of the Downward Löwenheim-Skolem Theorem”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The commutativity problem for effective varieties of formal series, and applications",
+   "authors": [
+    "Lorenzo Clemente"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Lorenzo Clemente “The commutativity problem for effective varieties of formal series, and applications”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Identity Problem in virtually solvable matrix groups over algebraic numbers",
+   "authors": [
+    "Corentin Bodart",
+    "Ruiwen Dong"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Corentin Bodart, Ruiwen Dong “The Identity Problem in virtually solvable matrix groups over algebraic numbers”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Steenrod squares via unordered joins",
+   "authors": [
+    "Axel Ljungström",
+    "David Wärn"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Axel Ljungström, David Wärn “The Steenrod squares via unordered joins”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Yoneda embedding in simplicial type theory",
+   "authors": [
+    "Daniel Gratzer",
+    "Jonathan Weinberger",
+    "Ulrik Buchholtz"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2025 Distinguished Paper: Daniel Gratzer, Jonathan Weinberger, Ulrik Buchholtz “The Yoneda embedding in simplicial type theory”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
    "award": "tot",
    "awardLabel": "Test-of-Time Award",
    "title": "Existential Positive Types and Preservation under Homomorphisisms",
@@ -62721,6 +63263,129 @@
    "paperYear": 2005,
    "source": "https://lics.siglog.org/archive/test-of-time-award.html",
    "evidence": "LICS 2025 Test-of-Time Award: Joël Ouaknine, James Worrell “On the Decidability of Metric Temporal Logic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A Complexity Bound for Determinisation of Min-Plus Weighted Automata",
+   "authors": [
+    "Shaull Almagor",
+    "Guy Arbel",
+    "Sarai Sheinvald"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Shaull Almagor, Guy Arbel, Sarai Sheinvald “A Complexity Bound for Determinisation of Min-Plus Weighted Automata”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Dynamic Planar Graph Isomorphism Is in DynFO",
+   "authors": [
+    "Samir Datta",
+    "Asif Khan",
+    "Felix Tschirbs",
+    "Nils Vortmeier",
+    "Thomas Zeume"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Samir Datta, Asif Khan, Felix Tschirbs, Nils Vortmeier, Thomas Zeume “Dynamic Planar Graph Isomorphism Is in DynFO”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Existential Positive Transductions of Sparse Graphs",
+   "authors": [
+    "Nikolas Mählmann",
+    "Sebastian Siebertz"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Nikolas Mählmann, Sebastian Siebertz “Existential Positive Transductions of Sparse Graphs”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "PVASS Reachability Is Decidable",
+   "authors": [
+    "Roland Guttenberg",
+    "Eren Keskin",
+    "Roland Meyer"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Roland Guttenberg, Eren Keskin, Roland Meyer “PVASS Reachability Is Decidable”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Quantum Control and General Recursion Beyond the Unitary Case",
+   "authors": [
+    "Kathleen Barsse",
+    "Romain Péchoux",
+    "Simon Perdrix"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Kathleen Barsse, Romain Péchoux, Simon Perdrix “Quantum Control and General Recursion Beyond the Unitary Case”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The ∞-Category of ∞-Categories in Simplicial Type Theory",
+   "authors": [
+    "Daniel Gratzer",
+    "Jonathan Weinberger",
+    "Ulrik Buchholtz"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Daniel Gratzer, Jonathan Weinberger, Ulrik Buchholtz “The ∞-Category of ∞-Categories in Simplicial Type Theory”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "The Logic of Bunched Implications Is Undecidable",
+   "authors": [
+    "Nikolaos Galatos",
+    "Peter Jipsen",
+    "Søren Brinck Knudstorp",
+    "Revantha Ramanayake"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Nikolaos Galatos, Peter Jipsen, Søren Brinck Knudstorp, Revantha Ramanayake “The Logic of Bunched Implications Is Undecidable”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Wiring the π-Calculus to Denotational Semantics",
+   "authors": [
+    "Ken Sakayori",
+    "Davide Sangiorgi",
+    "Simon Castellan",
+    "Pierre Clairambault"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/distinguished-papers.html",
+   "evidence": "LICS 2026 Distinguished Paper: Ken Sakayori, Davide Sangiorgi, Simon Castellan, Pierre Clairambault “Wiring the π-Calculus to Denotational Semantics”"
   },
   {
    "venue": "LICS",
