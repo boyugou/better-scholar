@@ -39,7 +39,7 @@
     { ccf: "ECML-PKDD", core: "ECML PKDD", abbrs: ["ECML", "PKDD", "ECML PKDD", "ECML-PKDD"], names: ["European Conference on Machine Learning", "European Conference on Principles and Practice of Knowledge Discovery in Databases", "European Conference on Principles of Data Mining and Knowledge Discovery", "Joint European Conference on Machine Learning and Knowledge Discovery in Databases"], exact: ["Machine Learning and Knowledge Discovery in Databases"] },
 
     // ---- vision
-    { ccf: "CVPR", core: "CVPR", names: ["IEEE Conference on Computer Vision and Pattern Recognition", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", "Computer Vision and Pattern Recognition"] },
+    { ccf: "CVPR", core: "CVPR", names: ["IEEE Conference on Computer Vision and Pattern Recognition", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", "IEEE Computer Society Conference on Computer Vision and Pattern Recognition", "Computer Vision and Pattern Recognition"] },
     { ccf: "ICCV", core: "ICCV", names: ["IEEE International Conference on Computer Vision", "IEEE/CVF International Conference on Computer Vision"] },
     { ccf: "ECCV", core: "ECCV", names: ["European Conference on Computer Vision"] },
 
@@ -52,7 +52,8 @@
     ] },
     { ccf: "NAACL", core: "NAACL", names: [
       "Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics",
-      "North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+      "North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+      "Human Language Technologies: The Annual Conference of the North American Chapter of the Association for Computational Linguistics"
     ] },
     { ccf: "COLING", core: "COLING", names: ["International Conference on Computational Linguistics"], starts: ["International Conference on Computational"] },
     { core: "EACL", names: ["Conference of the European Chapter of the Association for Computational Linguistics", "European Chapter of the Association for Computational Linguistics"] },
@@ -156,7 +157,7 @@
     ] },
     { ccf: "FM", core: "FM", names: ["International Symposium of Formal Methods Europe"] },
     { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering", "ACM/IEEE International Conference on Automated Software Engineering"] },
-    { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis"] },
+    { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis", "ACM SIGSOFT International Symposium on Software Testing and Analysis", "ACM SIGSOFT International Symposium on Software Testing & Analysis"] },
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },
     { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages", "ACM SIGPLAN Symposium on Principles of Programming Languages", "Symposium on Principles of Programming Languages"] },
     // PODS: CCF writes SIGAI, CORE and the proceedings SIGART

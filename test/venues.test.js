@@ -97,8 +97,9 @@ test("CHI proceedings carry the acronym inside the name", () => {
 test("a truncated name is not claimed on one common word, nor when a complete name also fits", () => {
   // INFOCOM's "Joint Conference of the IEEE Computer and Communications Societies" is not CCS (and, see below, not CIT either)
   assert.equal(brief("Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and …, 2005"), "CCF A INFOCOM · CORE A* INFOCOM");
-  // the visible words are ICSE's whole name AND the start of SEKE's: ambiguous, so no badge
-  assert.equal(brief("2015 IEEE/ACM 37th IEEE international conference on software engineering 1 …, 2015"), "");
+  // the visible words are ICSE's whole name (IEEE named twice, "Volume 1" cut off) — and also the start of SEKE's, which a name that
+  // is complete in front of a volume number is not
+  assert.equal(brief("2015 IEEE/ACM 37th IEEE international conference on software engineering 1 …, 2015"), "CCF A ICSE · CORE A* ICSE");
   // "Principles of …" could be PODC, PODS or POPL
   assert.equal(brief("Proceedings of the twenty-first annual symposium on Principles of …, 2002"), "");
   // but a rare lone word still identifies its venue, and ACM/IEEE order does not matter
@@ -659,4 +660,14 @@ test("the Autonomous Agents conference and ICMAS are AAMAS's earlier forms; UM a
   assert.equal(brief("Proceedings of the third annual conference on Autonomous Agents, 69-76, 1999"), "CCF B AAMAS · CORE A AAMAS");
   assert.equal(brief("Proceedings of the first international conference on Autonomous agents, 228-236, 1997"), "CCF B AAMAS · CORE A AAMAS");
   assert.equal(brief("International Conference on User Modeling, 178-187, 2003"), "CORE A UMAP");
+});
+
+test("names that Scholar prints with the sponsor or a former wording: ACM SIGSOFT's ISSTA, the 2004–2010 CVPR, NAACL's HLT titles, an organisation named twice", () => {
+  assert.equal(brief("Proceedings of the 31st ACM SIGSOFT International Symposium on Software …, 2022"), "CCF A ISSTA · CORE A ISSTA");
+  assert.equal(brief("Proceedings of the 2002 ACM SIGSOFT international symposium on Software …, 2002"), "CCF A ISSTA · CORE A ISSTA");
+  // cut after "on" it could be ISSTA or the Foundations of Software Engineering: no badge
+  assert.equal(brief("Proceedings of the 2016 24th ACM SIGSOFT International Symposium on …, 2016"), "");
+  assert.equal(brief("2010 IEEE Computer Society Conference on Computer Vision and Pattern …, 2010"), "CCF A CVPR · CORE A* CVPR");
+  assert.equal(brief("Human Language Technologies: The 2010 Annual Conference of the North …, 2010"), "CCF B NAACL · CORE A NAACL");
+  assert.equal(brief("USENIX security Symposium, 11th. USENIX, 2002"), "CCF A USENIX Security · CORE A* USENIX-Security");
 });

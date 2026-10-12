@@ -78,12 +78,14 @@
     if (mode === "noAcr" && known) {
       r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) ? " " : m));
     }
-    return dropOrdinalTypos(r.toLowerCase()
+    const out = dropOrdinalTypos(r.toLowerCase()
       .replace(/[^a-z0-9]+/g, " ")
       .split(" ")
       .filter(Boolean))
       .map((t) => ISO[t] || t)
       .filter((t) => !STOP.has(t) && !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
+    // an organisation named twice is named once ("2015 IEEE/ACM 37th IEEE International Conference on Software Engineering")
+    return mode === "full" ? out.filter((t, i) => !ORG.has(t) || out.indexOf(t) === i) : out;
   }
 
   // Like canonTokens but keeps connectives ("in", "and", "of"): used where the exact

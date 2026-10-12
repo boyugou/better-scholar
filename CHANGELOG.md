@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.5.18 — 2026-10-12
+
+From the most frequent venue strings that matched nothing across the 55 real profiles:
+
+- **ISSTA's *ACM SIGSOFT International Symposium on Software …*** (the sponsor in front of a name the lists give without it),
+  the 2003–2010 CVPR's *IEEE Computer Society Conference on Computer Vision and Pattern …*, NAACL's *Human Language Technologies: The
+  Annual Conference of the North …* titles, and strings that name an organisation twice (*2015 IEEE/ACM 37th IEEE International
+  Conference on Software Engineering*, *USENIX security Symposium … USENIX*) now match.
+- A cut-off *"24th ACM SIGSOFT International Symposium on …"* is no longer claimed for the Foundations of Software Engineering: it fits
+  ISSTA just as well (which is how it was a guess before).
+
 ## 2.5.17 — 2026-10-12
 
 - **USENIX test-of-time awards** (39 entries; the list holds 2331) from USENIX's own Test of Time Awards page: USENIX Security, NSDI and FAST,
