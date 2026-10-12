@@ -136,6 +136,12 @@
       }
       if (c.resolveMessage) lines.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
       if (c.absent > 0) lines.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
+      // spellings of the owner's name found in those very papers: one click adds one
+      if (c.absent > 0 && m.nameHints.suggestions.length) {
+        lines.push(h("div", { class: "rr-cover-line", "data-rr": "suggest" }, h("span", { class: "rr-note" }, t("variantSuggest")),
+          ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
+            onClick: () => cb.onAddVariant(sg.name) }, `${sg.name} (${sg.rows})`))));
+      }
       if (c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
         const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
@@ -182,8 +188,10 @@
     }
 
     function renderVariants(m) {
-      variantList.replaceChildren(...m.variants.map((v) => h("span", { class: "rr-variant" }, v,
-        h("button", { type: "button", "aria-label": t("variantRemove"), onClick: () => cb.onRemoveVariant(v) }, "×"))));
+      variantList.replaceChildren(
+        ...m.nameHints.auto.map((v) => h("span", { class: "rr-variant rr-variant-auto", title: t("variantAutoTip", [String(v.rows)]) }, v.name)),
+        ...m.variants.map((v) => h("span", { class: "rr-variant" }, v,
+          h("button", { type: "button", "aria-label": t("variantRemove"), onClick: () => cb.onRemoveVariant(v) }, "×"))));
     }
 
     function update(m) {

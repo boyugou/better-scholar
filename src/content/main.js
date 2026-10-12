@@ -6,7 +6,7 @@
   const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
 
-  const { venues, analysis, metrics, marks, chips: chip } = B;
+  const { venues, analysis, metrics, marks, names, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
 
   const profileId = B.scholar.profileId();
@@ -36,7 +36,18 @@
   };
   let loadAbort = null, resolveAbort = null;
 
-  const owner = () => ({ name: headerName, alternates: variants });
+  // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
+  // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
+  let hints = { auto: [], suggestions: [] };
+  const owner = () => ({ name: headerName, alternates: [...variants, ...hints.auto.map((v) => v.name)] });
+  // true when the automatic spellings changed (the rows must then be analysed again)
+  function updateHints() {
+    const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: headerName, alternates: variants });
+    const key = (x) => x.auto.map((v) => v.name).join("|");
+    const changed = key(next) !== key(hints);
+    hints = next;
+    return changed;
+  }
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
   // the ranking the panel's table uses (null when both lists are switched off)
   const currentSource = () => B.prefs.source(prefs, ui);
@@ -53,10 +64,13 @@
       added = true;
     }
     state.rows = state.rows.filter((r) => r.raw.tr.isConnected);
+    if (added && updateHints()) reanalyze();
     return added;
   }
 
   const reanalyze = () => state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); });
+  // the spelling list or the author lists changed: look again at what the rows say, then analyse every row
+  const rehint = () => { updateHints(); reanalyze(); };
 
   // ---- decoration ---------------------------------------------------------
 
@@ -158,7 +172,7 @@
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },
-      variants
+      variants, nameHints: hints
     };
   }
 
@@ -247,7 +261,7 @@
       state.resolving = null;
       resolveAbort = null;
       state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "cancelled" ? "" : t("resolveDone");
-      reanalyze();
+      rehint();
       refresh();
     },
     onCancelResolve() { if (resolveAbort) resolveAbort.abort(); },
@@ -255,13 +269,13 @@
       if (variants.includes(v)) return;
       variants = [...variants, v].slice(0, 8);
       B.store.saveVariants(profileId, variants);
-      reanalyze();
+      rehint();
       refresh();
     },
     onRemoveVariant(v) {
       variants = variants.filter((x) => x !== v);
       B.store.saveVariants(profileId, variants);
-      reanalyze();
+      rehint();
       refresh();
     }
   });

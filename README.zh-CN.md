@@ -63,8 +63,10 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
   short paper 与 full paper。
 - **角色来自 Scholar 的作者文本。** 缩写做了宽松匹配（`GE Hinton` = `Geoffrey Hinton`，
   `Jane` ≠ `John`），但两个不同的人仍可能在 `W Wang` 上撞车。共一标记（†、∗ 等）存在时会
-  被识别——不过 Scholar 很少保留它们。若主页姓名与论文里的写法不同，可用面板里的
-  **添加一种写法**。
+  被识别——不过 Scholar 很少保留它们。主页姓名写成“姓在前”（主页是 `Tang Jie`，论文里是 `J Tang`）时，
+  若页面本身的数据显示倒过来才能找到你，会自动按另一种顺序匹配；Scholar 打印出的其他换位写法
+  （如 `Philip S. Yu` 在论文里是 `SY Philip`）出现在至少两篇论文里时，会在面板里给出一键添加的建议。
+  其余情况可用面板里的 **添加一种写法**。
 - **获奖名单不求完整。** 名单只覆盖上面列出的会议和各会议官方页面公布的年份；不在名单上的论文不会有获奖标签。
   报告形式（*Oral*、*Spotlight*）只来自作者自己写的文字，Scholar 的文字里很少有，`Oral Oncology` 之类也不会被标出。
 - **场所字符串很乱。** Scholar 显示的内容可由主页所有者编辑，且常被截断。认不出的会列在

@@ -1,0 +1,406 @@
+{
+ "owner": "Philip S. Yu",
+ "note": "First 100 rows (by citations) of the public Google Scholar profile, captured 2026-10-12: [authors, venue] exactly as Scholar prints them. Scholar prints the owner as 'SY Philip' in 6 of them.",
+ "rows": [
+  [
+   "Z Wu, S Pan, F Chen, G Long, C Zhang, PS Yu",
+   "IEEE transactions on neural networks and learning systems 32 (1), 4-24, 2020"
+  ],
+  [
+   "X Wu, V Kumar, J Ross Quinlan, J Ghosh, Q Yang, H Motoda, ...",
+   "Knowledge and information systems 14 (1), 1-37, 2008"
+  ],
+  [
+   "Y Chang, X Wang, J Wang, Y Wu, L Yang, K Zhu, H Chen, X Yi, C Wang, ...",
+   "ACM transactions on intelligent systems and technology 15 (3), 1-45, 2024"
+  ],
+  [
+   "S Ji, S Pan, E Cambria, P Marttinen, PS Yu",
+   "IEEE transactions on neural networks and learning systems 33 (2), 494-514, 2021"
+  ],
+  [
+   "X Wang, H Ji, C Shi, B Wang, Y Ye, P Cui, PS Yu",
+   "The world wide web conference, 2022-2032, 2019"
+  ],
+  [
+   "MS Chen, J Han, PS Yu",
+   "IEEE Transactions on Knowledge and data Engineering 8 (6), 866-883, 1996"
+  ],
+  [
+   "CC Aggarwal, SY Philip, J Han, J Wang",
+   "Proceedings 2003 VLDB conference, 81-92, 2003"
+  ],
+  [
+   "JS Park, MS Chen, PS Yu",
+   "Acm sigmod record 24 (2), 175-186, 1995"
+  ],
+  [
+   "Y Sun, J Han, X Yan, PS Yu, T Wu",
+   "Proceedings of the VLDB Endowment 4 (11), 992-1003, 2011"
+  ],
+  [
+   "M Long, J Wang, G Ding, J Sun, PS Yu",
+   "Proceedings of the IEEE international conference on computer vision, 2200-2207, 2013"
+  ],
+  [
+   "BCM Fung, K Wang, R Chen, PS Yu",
+   "ACM Computing Surveys (Csur) 42 (4), 1-53, 2010"
+  ],
+  [
+   "J Wang, C Lan, C Liu, Y Ouyang, T Qin, W Lu, Y Chen, W Zeng, PS Yu",
+   "IEEE transactions on knowledge and data engineering 35 (8), 8052-8072, 2022"
+  ],
+  [
+   "H Wang, W Fan, PS Yu, J Han",
+   "Proceedings of the ninth ACM SIGKDD international conference on Knowledge …, 2003"
+  ],
+  [
+   "X Ding, B Liu, PS Yu",
+   "Proceedings of the 2008 international conference on web search and data …, 2008"
+  ],
+  [
+   "CC Aggarwal, PS Yu",
+   "Proceedings of the 2001 ACM SIGMOD international conference on Management of …, 2001"
+  ],
+  [
+   "Y Cao, S Li, Y Liu, Z Yan, Y Dai, PS Yu, L Sun",
+   "arXiv preprint arXiv:2303.04226, 2023"
+  ],
+  [
+   "JZ Wang, Z Du, R Payattakool, PS Yu, CF Chen",
+   "Bioinformatics 23 (10), 1274-1281, 2007"
+  ],
+  [
+   "CC Aggarwal, SY Philip",
+   "Springer-Verlag New York Inc, 2008"
+  ],
+  [
+   "Y Wang, M Long, J Wang, Z Gao, PS Yu",
+   "Advances in neural information processing systems 30, 2017"
+  ],
+  [
+   "CC Aggarwal, JL Wolf, PS Yu, C Procopiuc, JS Park",
+   "ACM SIGMoD record 28 (2), 61-72, 1999"
+  ],
+  [
+   "L Zheng, V Noroozi, PS Yu",
+   "Proceedings of the tenth ACM international conference on web search and data …, 2017"
+  ],
+  [
+   "C Shi, Y Li, J Zhang, Y Sun, PS Yu",
+   "IEEE Transactions on Knowledge and Data Engineering 29 (1), 17-37, 2016"
+  ],
+  [
+   "C Shi, B Hu, WX Zhao, PS Yu",
+   "IEEE transactions on knowledge and data engineering 31 (2), 357-370, 2018"
+  ],
+  [
+   "C Zhou, Q Li, C Li, J Yu, Y Liu, G Wang, K Zhang, C Ji, Q Yan, L He, ...",
+   "International Journal of Machine Learning and Cybernetics 16 (12), 9851-9915, 2025"
+  ],
+  [
+   "X Ma, J Wu, S Xue, J Yang, C Zhou, QZ Sheng, H Xiong, L Akoglu",
+   "IEEE transactions on knowledge and data engineering 35 (12), 12012-12038, 2021"
+  ],
+  [
+   "G Zhang, C Li, Q Li, B Li, DM Larkin, C Lee, JF Storz, A Antunes, ...",
+   "Science 346 (6215), 1311-1320, 2014"
+  ],
+  [
+   "S Wang, J Cao, SY Philip",
+   "IEEE transactions on knowledge and data engineering 34 (8), 3681-3700, 2020"
+  ],
+  [
+   "H Hu, Z Salcic, L Sun, G Dobbie, PS Yu, X Zhang",
+   "ACM Computing Surveys (CSUR) 54 (11s), 1-37, 2022"
+  ],
+  [
+   "Y Dou, Z Liu, L Sun, Y Deng, H Peng, PS Yu",
+   "Proceedings of the 29th ACM international conference on information …, 2020"
+  ],
+  [
+   "H Xu, B Liu, L Shu, PS Yu",
+   "Proceedings of the 2019 conference of the North American chapter of the …, 2019"
+  ],
+  [
+   "V Cardellini, M Colajanni, PS Yu",
+   "IEEE Internet computing 3 (3), 28-39, 1999"
+  ],
+  [
+   "B Liu, Y Dai, X Li, WS Lee, PS Yu",
+   "Third IEEE international conference on data mining, 179-186, 2003"
+  ],
+  [
+   "Z Cao, M Long, J Wang, PS Yu",
+   "2017 IEEE international conference on computer vision (ICCV), 5609-5618, 2017"
+  ],
+  [
+   "X Yin, J Han, PS Yu",
+   "Proceedings of the 13th ACM SIGKDD international conference on Knowledge …, 2007"
+  ],
+  [
+   "Y Liu, M Jin, S Pan, C Zhou, Y Zheng, F Xia, PS Yu",
+   "IEEE transactions on knowledge and data engineering 35 (6), 5879-5900, 2022"
+  ],
+  [
+   "X Yan, PS Yu, J Han",
+   "Proceedings of the 2004 ACM SIGMOD international conference on Management of …, 2004"
+  ],
+  [
+   "Y Wang, Z Gao, M Long, J Wang, PS Yu",
+   "International conference on machine learning, 5123-5132, 2018"
+  ],
+  [
+   "Y Huang, L Sun, H Wang, S Wu, Q Zhang, Y Li, C Gao, Y Huang, W Lyu, ...",
+   "International Conference on Machine Learning, 20166-20270, 2024"
+  ],
+  [
+   "B Hu, C Shi, WX Zhao, PS Yu",
+   "Proceedings of the 24th ACM SIGKDD international conference on knowledge …, 2018"
+  ],
+  [
+   "Q Li, H Peng, J Li, C Xia, R Yang, L Sun, PS Yu, L He",
+   "ACM Transactions on Intelligent Systems and Technology (TIST) 13 (2), 1-41, 2022"
+  ],
+  [
+   "Y Wang, H Wu, J Zhang, Z Gao, J Wang, PS Yu, M Long",
+   "IEEE Transactions on Pattern Analysis and Machine Intelligence 45 (2), 2208-2225, 2022"
+  ],
+  [
+   "M Long, J Wang, G Ding, J Sun, PS Yu",
+   "Proceedings of the IEEE conference on computer vision and pattern …, 2014"
+  ],
+  [
+   "L Lyu, H Yu, X Ma, C Chen, L Sun, J Zhao, Q Yang, PS Yu",
+   "IEEE transactions on neural networks and learning systems 35 (7), 8726-8746, 2022"
+  ],
+  [
+   "B Liu, WS Lee, PS Yu, X Li",
+   "ICML 2 (485), 387-394, 2002"
+  ],
+  [
+   "CC Aggarwal, PS Yu",
+   "Proceedings of the 2000 ACM SIGMOD international conference on Management of …, 2000"
+  ],
+  [
+   "MS Chen, JS Park, PS Yu",
+   "IEEE Transactions on knowledge and data engineering 10 (2), 209-221, 1998"
+  ],
+  [
+   "BCM Fung, K Wang, PS Yu",
+   "21st international conference on data engineering (ICDE'05), 205-216, 2005"
+  ],
+  [
+   "J Wang, W Feng, Y Chen, H Yu, M Huang, PS Yu",
+   "Proceedings of the 26th ACM international conference on Multimedia, 402-410, 2018"
+  ],
+  [
+   "PS Yu",
+   "US Patent 6,351,775, 2002"
+  ],
+  [
+   "C Giannella, J Han, J Pei, X Yan, PS Yu",
+   "Next generation data mining 212, 191-212, 2003"
+  ],
+  [
+   "CC Aggarwal, J Han, J Wang, PS Yu",
+   "Proceedings of the Thirtieth international conference on Very large data …, 2004"
+  ],
+  [
+   "V Cardellini, E Casalicchio, M Colajanni, PS Yu",
+   "ACM Computing Surveys (CSUR) 34 (2), 263-311, 2002"
+  ],
+  [
+   "N Agarwal, H Liu, L Tang, PS Yu",
+   "Proceedings of the 2008 international conference on web search and data …, 2008"
+  ],
+  [
+   "X Su, S Xue, F Liu, J Wu, J Yang, C Zhou, W Hu, C Paris, S Nepal, D Jin, ...",
+   "IEEE transactions on neural networks and learning systems 35 (4), 4682-4702, 2022"
+  ],
+  [
+   "M Long, J Wang, G Ding, SJ Pan, PS Yu",
+   "IEEE Transactions on Knowledge and Data Engineering 26 (5), 1076-1089, 2013"
+  ],
+  [
+   "H Wang, W Wang, J Yang, PS Yu",
+   "Proceedings of the 2002 ACM SIGMOD international conference on Management of …, 2002"
+  ],
+  [
+   "VS Tseng, BE Shie, CW Wu, PS Yu",
+   "IEEE transactions on knowledge and data engineering 25 (8), 1772-1786, 2012"
+  ],
+  [
+   "JP Crosskey, MGG Mei, H Ragavan, KL Wu, PS Yu",
+   "US Patent 6,035,281, 2000"
+  ],
+  [
+   "H He, H Wang, J Yang, PS Yu",
+   "Proceedings of the 2007 ACM SIGMOD international conference on Management of …, 2007"
+  ],
+  [
+   "CC Aggarwal, SY Philip",
+   "IEEE Transactions on knowledge and data engineering 21 (5), 609-623, 2008"
+  ],
+  [
+   "CC Aggarwal, JL Wolf, KL Wu, PS Yu",
+   "Proceedings of the fifth ACM SIGKDD international conference on Knowledge …, 1999"
+  ],
+  [
+   "J Wu, W Gan, Z Chen, S Wan, PS Yu",
+   "2023 IEEE international conference on big data (bigdata), 2247-2256, 2023"
+  ],
+  [
+   "ZM Liu, C Zhang, SY Philip",
+   "IEEE Transactions on Antennas and Propagation 66 (12), 7315-7327, 2018"
+  ],
+  [
+   "J Sun, C Faloutsos, S Papadimitriou, PS Yu",
+   "Proceedings of the 13th ACM SIGKDD international conference on Knowledge …, 2007"
+  ],
+  [
+   "JS Park, MS Chen, PS Yu",
+   "IEEE transactions on knowledge and data engineering 9 (5), 813-825, 1997"
+  ],
+  [
+   "PK Malkin, PS Yu",
+   "US Patent 6,643,684, 2003"
+  ],
+  [
+   "L Stenneth, O Wolfson, PS Yu, B Xu",
+   "Proceedings of the 19th ACM SIGSPATIAL international conference on advances …, 2011"
+  ],
+  [
+   "Y Wang, J Zhang, H Zhu, M Long, J Wang, PS Yu",
+   "2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR …, 2019"
+  ],
+  [
+   "X Wang, D Bo, C Shi, S Fan, Y Ye, PS Yu",
+   "IEEE transactions on big data 9 (2), 415-436, 2022"
+  ],
+  [
+   "VS Tseng, CW Wu, BE Shie, PS Yu",
+   "Proceedings of the 16th ACM SIGKDD international conference on Knowledge …, 2010"
+  ],
+  [
+   "MS Chen, JS Park, PS Yu",
+   "Proceedings of 16th International Conference on Distributed Computing …, 1996"
+  ],
+  [
+   "C Liu, C Chen, J Han, PS Yu",
+   "Proceedings of the 12th ACM SIGKDD international conference on Knowledge …, 2006"
+  ],
+  [
+   "B Gedik, H Andrade, KL Wu, PS Yu, M Doo",
+   "Proceedings of the 2008 ACM SIGMOD international conference on Management of …, 2008"
+  ],
+  [
+   "PK Malkin, PS Yu",
+   "US Patent 6,085,193, 2000"
+  ],
+  [
+   "Y Chi, H Wang, PS Yu, RR Muntz",
+   "Knowledge and Information Systems 10 (3), 265-294, 2006"
+  ],
+  [
+   "D Jin, Z Yu, P Jiao, S Pan, D He, J Wu, PS Yu, W Zhang",
+   "IEEE Transactions on knowledge and data engineering 35 (2), 1149-1170, 2021"
+  ],
+  [
+   "G Wang, S Xie, B Liu, PS Yu",
+   "2011 IEEE 11th international conference on data mining, 1242-1247, 2011"
+  ],
+  [
+   "S Wang, T Xu, H Li, C Zhang, J Liang, J Tang, PS Yu, Q Wen",
+   "IEEE Signal Processing Magazine 42 (6), 51-63, 2026"
+  ],
+  [
+   "L Sun, Y Dou, C Yang, K Zhang, J Wang, PS Yu, L He, B Li",
+   "IEEE Transactions on Knowledge and Data Engineering 35 (8), 7693-7711, 2022"
+  ],
+  [
+   "C Aggarwal, JL Wolf, PS Yu",
+   "IEEE Transactions on Knowledge and data Engineering 11 (1), 94-107, 1999"
+  ],
+  [
+   "M Long, Z Cao, J Wang, PS Yu",
+   "Advances in neural information processing systems 30, 2017"
+  ],
+  [
+   "CC Aggarwal, PS Yu",
+   "International Conference on Extending Database Technology, 183-199, 2004"
+  ],
+  [
+   "Y Wan, Z Zhao, M Yang, G Xu, H Ying, J Wu, PS Yu",
+   "Proceedings of the 33rd ACM/IEEE international conference on automated …, 2018"
+  ],
+  [
+   "GPC Fung, JX Yu, PS Yu, H Lu",
+   "Proceedings of the 31st international conference on Very large data bases …, 2005"
+  ],
+  [
+   "L Yuan, Z Wang, L Sun, PS Yu, CG Brinton",
+   "IEEE Internet of Things Journal 11 (21), 34617-34638, 2024"
+  ],
+  [
+   "S Lin, PS Yu",
+   "Communications, IEEE Transactions on 30 (7), 1701-1719, 1982"
+  ],
+  [
+   "H Xu, B Liu, L Shu, PS Yu",
+   "Proceedings of the 56th annual meeting of the association for computational …, 2018"
+  ],
+  [
+   "S Xie, G Wang, S Lin, PS Yu",
+   "Proceedings of the 18th ACM SIGKDD international conference on Knowledge …, 2012"
+  ],
+  [
+   "X Zheng, Y Wang, Y Liu, M Li, M Zhang, D Jin, PS Yu, S Pan",
+   "IEEE Transactions on Knowledge and Data Engineering, 2026"
+  ],
+  [
+   "Y Ren, J Pu, Z Yang, J Xu, G Li, X Pu, PS Yu, L He",
+   "IEEE transactions on neural networks and learning systems 36 (4), 5858-5878, 2024"
+  ],
+  [
+   "BCM Fung, K Wang, SY Philip",
+   "IEEE transactions on knowledge and data engineering 19 (5), 711-725, 2007"
+  ],
+  [
+   "Z Liu, Y Dou, PS Yu, Y Deng, H Peng",
+   "Proceedings of the 43rd international ACM SIGIR conference on research and …, 2020"
+  ],
+  [
+   "Y Dou, K Shu, C Xia, PS Yu, L Sun",
+   "Proceedings of the 44th international ACM SIGIR conference on research and …, 2021"
+  ],
+  [
+   "N Mohammed, R Chen, BCM Fung, PS Yu",
+   "Proceedings of the 17th ACM SIGKDD international conference on Knowledge …, 2011"
+  ],
+  [
+   "X Yan, H Cheng, J Han, PS Yu",
+   "Proceedings of the 2008 ACM SIGMOD international conference on Management of …, 2008"
+  ],
+  [
+   "K Wang, PS Yu, S Chakraborty",
+   "Fourth IEEE International Conference on Data Mining (ICDM'04), 249-256, 2004"
+  ],
+  [
+   "Y Sun, B Norick, J Han, X Yan, PS Yu, X Yu",
+   "ACM transactions on knowledge discovery from data (TKDD) 7 (3), 1-23, 2013"
+  ],
+  [
+   "Y Yang, L Zheng, J Zhang, Q Cui, Z Li, PS Yu",
+   "arXiv preprint arXiv:1806.00749, 2018"
+  ],
+  [
+   "X Yan, PS Yu, J Han",
+   "Proceedings of the 2005 ACM SIGMOD international conference on Management of …, 2005"
+  ],
+  [
+   "H Wang, S Park, W Fan, PS Yu",
+   "Proceedings of the 2003 ACM SIGMOD international conference on Management of …, 2003"
+  ]
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "owner": "Tang Jie",
+ "note": "First 100 rows (by citations) of the public Google Scholar profile, captured 2026-10-12: [authors, venue] exactly as Scholar prints them. The profile name is written surname first ('Tang Jie'); the papers print 'J Tang'.",
+ "rows": [
+  [
+   "J Tang, J Zhang, L Yao, J Li, L Zhang, Z Su",
+   "Proceedings of the 14th ACM SIGKDD international conference on Knowledge …, 2008"
+  ],
+  [
+   "X Liu, F Zhang, Z Hou, Z Wang, L Mian, J Zhang, J Tang",
+   "IEEE Transactions on Knowledge and Data Engineering, 2021"
+  ],
+  [
+   "Z Yang, J Teng, W Zheng, M Ding, S Huang, J Xu, Y Yang, W Hong, ...",
+   "International Conference on Learning Representations 2025, 83048-83077, 2025"
+  ],
+  [
+   "X Liu, K Ji, Y Fu, W Tam, Z Du, Z Yang, J Tang",
+   "Proceedings of the 60th Annual Meeting of the Association for Computational …, 2022"
+  ],
+  [
+   "X Liu, Y Zheng, Z Du, M Ding, Y Qian, Z Yang, J Tang",
+   "AI Open 5, 208-215, 2024"
+  ],
+  [
+   "Z Du, Y Qian, X Liu, M Ding, J Qiu, Z Yang, J Tang",
+   "Proceedings of the 60th Annual Meeting of the Association for Computational …, 2022"
+  ],
+  [
+   "GLM Team, A Zeng, B Xu, B Wang, C Zhang, D Yin, D Rojas, G Feng, ...",
+   "arXiv e-prints, arXiv: 2406.12793, 2024"
+  ],
+  [
+   "N Ding, Y Qin, G Yang, F Wei, Z Yang, Y Su, S Hu, Y Chen, CM Chan, ...",
+   "Nature Machine Intelligence 5 (3), 220-235, 2023"
+  ],
+  [
+   "J Xu, X Liu, Y Wu, Y Tong, Q Li, M Ding, J Tang, Y Dong",
+   "Advances in Neural Information Processing Systems 36, 15903-15935, 2023"
+  ],
+  [
+   "A Zeng, X Liu, Z Du, Z Wang, H Lai, M Ding, Z Yang, Y Xu, W Zheng, X Xia, ...",
+   "ICLR‘23, 2023"
+  ],
+  [
+   "J Tang, J Sun, C Wang, Z Yang",
+   "Proceedings of the 15th ACM SIGKDD international conference on Knowledge …, 2009"
+  ],
+  [
+   "X Han, Z Zhang, N Ding, Y Gu, X Liu, Y Huo, J Qiu, Y Yao, A Zhang, ...",
+   "AI Open 2, 225-250, 2021"
+  ],
+  [
+   "W Wang, Q Lv, W Yu, W Hong, J Qi, Y Wang, J Ji, Z Yang, L Zhao, ...",
+   "Advances in Neural Information Processing Systems 37, 121475-121499, 2024"
+  ],
+  [
+   "X Liu, H Yu, H Zhang, Y Xu, X Lei, H Lai, Y Gu, H Ding, K Men, K Yang, ...",
+   "arXiv preprint arXiv:2308.03688, 2023"
+  ],
+  [
+   "J Qiu, Q Chen, Y Dong, J Zhang, H Yang, M Ding, K Wang, J Tang",
+   "Proceedings of the 26th ACM SIGKDD International Conference on Knowledge …, 2020"
+  ],
+  [
+   "W Hong, M Ding, W Zheng, X Liu, J Tang",
+   "ICLR‘23, 2023"
+  ],
+  [
+   "Z Hou, X Liu, Y Dong, C Wang, J Tang",
+   "Proceedings of the Twenty-Eighth ACM SIGKDD International Conference on …, 2022"
+  ],
+  [
+   "Y Bai, X Lv, J Zhang, H Lyu, J Tang, Z Huang, Z Du, X Liu, A Zeng, L Hou, ...",
+   "arXiv preprint arXiv:2308.14508, 2023"
+  ],
+  [
+   "J Qiu, Y Dong, H Ma, J Li, K Wang, J Tang",
+   "Proceedings of the Eleventh ACM International Conference on Web Search and …, 2018"
+  ],
+  [
+   "M Ding, Z Yang, W Hong, W Zheng, C Zhou, D Yin, J Lin, X Zou, Z Shao, ...",
+   "Advances in Neural Information Processing Systems 34, 19822-19835, 2021"
+  ],
+  [
+   "W Hong, W Wang, Q Lv, J Xu, W Yu, J Ji, Y Wang, Z Wang, Y Dong, ...",
+   "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2024"
+  ],
+  [
+   "Q Zheng, X Xia, X Zou, Y Dong, S Wang, Y Xue, L Shen, Z Wang, A Wang, ...",
+   "Proceedings of the 29th ACM SIGKDD Conference on Knowledge Discovery and …, 2023"
+  ],
+  [
+   "J Qiu, J Tang, H Ma, Y Dong, K Wang, J Tang",
+   "Proceedings of the 24th ACM SIGKDD International Conference on Knowledge …, 2018"
+  ],
+  [
+   "W Feng, J Zhang, Y Dong, Y Han, H Luan, Q Xu, Q Yang, E Kharlamov, ...",
+   "Advances in neural information processing systems 33, 22092-22103, 2020"
+  ],
+  [
+   "Q Lv, M Ding, Q Liu, Y Chen, W Feng, S He, C Zhou, J Jiang, Y Dong, ...",
+   "Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data …, 2021"
+  ],
+  [
+   "Y Cen, X Zou, J Zhang, H Yang, J Zhou, J Tang",
+   "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge …, 2019"
+  ],
+  [
+   "J Li, J Tang, Y Li, Q Luo",
+   "IEEE Transactions on Knowledge and data Engineering 21 (8), 1218-1232, 2008"
+  ],
+  [
+   "C Tan, L Lee, J Tang, L Jiang, M Zhou, P Li",
+   "Proceedings of the seventeenth ACM SIGKDD international conference on …, 2011"
+  ],
+  [
+   "D Zhang, S Zhoubian, Z Hu, Y Yue, Y Dong, J Tang",
+   "Advances in Neural Information Processing Systems 37, 64735-64772, 2024"
+  ],
+  [
+   "Z Zhang, L Lei, L Wu, R Sun, Y Huang, C Long, X Liu, X Lei, J Tang, ...",
+   "arXiv preprint arXiv:2309.07045, 2023"
+  ],
+  [
+   "Y Cen, J Zhang, X Zou, C Zhou, H Yang, J Tang",
+   "Proceedings of the 26th ACM SIGKDD International Conference on Knowledge …, 2020"
+  ],
+  [
+   "Y Bai, S Tu, J Zhang, H Peng, X Wang, X Lv, S Cao, J Xu, L Hou, Y Dong, ...",
+   "arXiv preprint arXiv:2412.15204, 2024"
+  ],
+  [
+   "M Ding, W Zheng, W Hong, J Tang",
+   "Advances in Neural Information Processing Systems 35, 2022"
+  ],
+  [
+   "W Wang, Z He, W Hong, Y Cheng, X Zhang, J Qi, X Gu, S Huang, B Xu, ...",
+   "arXiv preprint arXiv:2406.08035, 2024"
+  ],
+  [
+   "J Tang, S Wu, J Sun, H Su",
+   "Proceedings of the 18th ACM SIGKDD international conference on Knowledge …, 2012"
+  ],
+  [
+   "A Zeng, M Liu, R Lu, B Wang, X Liu, Y Dong, J Tang",
+   "arXiv preprint arXiv:2310.12823, 2023"
+  ],
+  [
+   "Q Chen, J Lin, Y Zhang, M Ding, Y Cen, H Yang, J Tang",
+   "the 2019 Conference on Empirical Methods in Natural Language Processing …, 2019"
+  ],
+  [
+   "Y Zhang, J Tang, Z Yang, J Pei, PS Yu",
+   "Proceedings of the 21th ACM SIGKDD International Conference on Knowledge …, 2015"
+  ],
+  [
+   "J Zhang, B Liu, J Tang, T Chen, J Li",
+   "IJCAI’13, 2761-2767, 2013"
+  ],
+  [
+   "N Ding, Y Qin, G Yang, F Wei, Z Yang, Y Su, S Hu, Y Chen, CM Chan, ...",
+   "arXiv preprint arXiv:2203.06904, 2022"
+  ],
+  [
+   "Z Yang, J Guo, K Cai, J Tang, J Li, L Zhang, Z Su",
+   "Proceedings of the 19th ACM international conference on Information and …, 2010"
+  ],
+  [
+   "Y Dong, J Tang, S Wu, J Tian, NV Chawla, J Rao, H Cao",
+   "2012 IEEE 12th International conference on data mining, 181-190, 2012"
+  ],
+  [
+   "A Zeng, X Lv, Q Zheng, Z Hou, B Chen, C Xie, C Wang, D Yin, H Zeng, ...",
+   "arXiv preprint arXiv:2508.06471, 2025"
+  ],
+  [
+   "W Feng, J Tang, TX Liu",
+   "Proceedings of the AAAI Conference on Artificial Intelligence 33 (01), 517-524, 2019"
+  ],
+  [
+   "J Tang, T Lou, J Kleinberg",
+   "Proceedings of the fourth ACM international conference on Web search and …, 2012"
+  ],
+  [
+   "T Huang, Y Dong, M Ding, Z Yang, W Feng, X Wang, J Tang",
+   "Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data …, 2021"
+  ],
+  [
+   "Y Zhang, R Chen, J Tang, WF Stewart, J Sun",
+   "Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge …, 2017"
+  ],
+  [
+   "L Liu, J Tang, J Han, M Jiang, S Yang",
+   "Proceedings of the 19th ACM international conference on Information and …, 2010"
+  ],
+  [
+   "J Sun, J Tang",
+   "Social Network Data Analytics, 177-214, 2011"
+  ],
+  [
+   "W Hong, W Wang, M Ding, W Yu, Q Lv, Y Wang, Y Cheng, S Huang, J Ji, ...",
+   "arXiv preprint arXiv:2408.16500, 2024"
+  ],
+  [
+   "F Feng, X He, J Tang, TS Chua",
+   "IEEE Transactions on Knowledge and Data Engineering 33 (6), 2493-2504, 2019"
+  ],
+  [
+   "M Ding, C Zhou, Q Chen, H Yang, J Tang",
+   "Proceedings of the 57th Annual Meeting of the Association of Computational …, 2019"
+  ],
+  [
+   "J Qiu, H Ma, O Levy, SW Yih, S Wang, J Tang",
+   "arXiv preprint arXiv:1911.02972, 2019"
+  ],
+  [
+   "J Tang, A Fong, B Wang, J Zhang",
+   "IEEE Transactions on Knowledge and Data Engineering 24 (6), 975-987, 2012"
+  ],
+  [
+   "J Zhang, J Tang, J Li",
+   "International Conference on Database Systems for Advanced Applications, 1066 …, 2007"
+  ],
+  [
+   "J Zhang, X Zhang, J Yu, J Tang, J Tang, C Li, H Chen",
+   "Proceedings of the 60th Annual Meeting of the Association for Computational …, 2022"
+  ],
+  [
+   "Z Yang, M Ding, C Zhou, H Yang, J Zhou, J Tang",
+   "Proceedings of the 26th ACM SIGKDD International Conference on Knowledge …, 2020"
+  ],
+  [
+   "K Zhang, H Xu, J Tang, J Li",
+   "International Conference on Web-Age Information Management, 85-96, 2006"
+  ],
+  [
+   "A Zeng, X Lv, Z Hou, Z Du, Q Zheng, B Chen, D Yin, C Ge, C Xie, C Wang, ...",
+   "arXiv preprint arXiv:2602.15763, 2026"
+  ],
+  [
+   "J Tang, J Li, B Liang, X Huang, Y Li, K Wang",
+   "Web Semantics: Science, Services and Agents on the World Wide Web 4 (4), 243-262, 2006"
+  ],
+  [
+   "Z Hou, Y He, Y Cen, X Liu, Y Dong, E Kharlamov, J Tang",
+   "Proceedings of the ACM Web Conference 2023, 737-746, 2023"
+  ],
+  [
+   "J Zhang, Y Dong, Y Wang, J Tang, M Ding",
+   "IJCAI 19, 4278-4284, 2019"
+  ],
+  [
+   "C Wang, J Han, Y Jia, J Tang, D Zhang, Y Yu, J Guo",
+   "Proceedings of the 16th ACM SIGKDD international conference on Knowledge …, 2010"
+  ],
+  [
+   "R Yan, J Tang, X Liu, D Shan, X Li",
+   "Proceeding of the 20th ACM conference on Information and knowledge …, 2011"
+  ],
+  [
+   "Y Dong, Y Yang, J Tang, Y Yang, NV Chawla",
+   "Proceedings of the 20th ACM SIGKDD international conference on Knowledge …, 2014"
+  ],
+  [
+   "Y Cai, H Leung, Q Li, H Min, J Tang, J Li",
+   "Knowledge and Data Engineering, IEEE Transactions on, 1-1, 2013"
+  ],
+  [
+   "B Chen, X Cheng, Y Geng, S Li, X Zeng, B Wang, J Gong, C Liu, A Zeng, ...",
+   "Nature Methods 22 (5), 1028-1039, 2025"
+  ],
+  [
+   "J Qiu, J Tang, TX Liu, J Gong, C Zhang, Q Zhang, Y Xue",
+   "Proceedings of the Ninth ACM International Conference on Web Search and Data …, 2016"
+  ],
+  [
+   "J Gong, S Wang, J Wang, W Feng, H Peng, J Tang, PS Yu",
+   "Proceedings of the 43rd International ACM SIGIR Conference on Research and …, 2020"
+  ],
+  [
+   "J Qiu, Y Dong, H Ma, J Li, C Wang, K Wang, J Tang",
+   "The World Wide Web Conference, 1509-1520, 2019"
+  ],
+  [
+   "T Lou, J Tang",
+   "Proceedings of the 22nd international conference on World Wide Web, 825-836, 2013"
+  ],
+  [
+   "H Lin, J Jia, J Qiu, Y Zhang, G Shen, L Xie, J Tang, L Feng, TS Chua",
+   "IEEE Transactions on Knowledge and Data Engineering 29 (9), 1820-1833, 2017"
+  ],
+  [
+   "H Zhuang, Y Sun, J Tang, J Zhang, X Sun",
+   "2013 IEEE 13th International Conference on Data Mining (ICDM), 1313-1318, 2013"
+  ],
+  [
+   "J Lin, R Men, A Yang, C Zhou, Y Zhang, P Wang, J Zhou, J Tang, H Yang",
+   "Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data …, 2021"
+  ],
+  [
+   "J Tang, L Yao, D Zhang, J Zhang",
+   "ACM Transactions on Knowledge Discovery from Data (TKDD) 5 (1), 1-44, 2010"
+  ],
+  [
+   "M Ding, C Zhou, H Yang, J Tang",
+   "Advances in Neural Information Processing Systems 33, 12792-12804, 2020"
+  ],
+  [
+   "J Yu, G Luo, T Xiao, Q Zhong, Y Wang, W Feng, J Luo, C Wang, L Hou, ...",
+   "Proceedings of the 58th annual meeting of the association for computational …, 2020"
+  ],
+  [
+   "L Pan, C Li, J Li, J Tang",
+   "Proceedings of the 55th Annual Meeting of the Association for Computational …, 2017"
+  ],
+  [
+   "J Zhang, J Tang, J Li, Y Liu, C Xing",
+   "ACM Transactions on Knowledge Discovery from Data (TKDD) 9 (3), 25, 2015"
+  ],
+  [
+   "J Tang, R Jin, J Zhang",
+   "2008 Eighth IEEE International Conference on Data Mining, 1055-1060, 2008"
+  ],
+  [
+   "J Hopcroft, T Lou, J Tang",
+   "Proceeding of the 18th ACM conference on Information and knowledge …, 2011"
+  ],
+  [
+   "J Yu, X Wang, S Tu, S Cao, D Zhang-Li, X Lv, H Peng, Z Yao, X Zhang, ...",
+   "arXiv preprint arXiv:2306.09296, 2023"
+  ],
+  [
+   "Y Zhang, F Zhang, P Yao, J Tang",
+   "Proceedings of the 24th ACM SIGKDD International Conference on Knowledge …, 2018"
+  ],
+  [
+   "M Zhang, J Tang, X Zhang, X Xue",
+   "Proceedings of the 37th international ACM SIGIR conference on Research …, 2014"
+  ],
+  [
+   "Y Bai, J Zhang, X Lv, L Zheng, S Zhu, L Hou, Y Dong, J Tang, J Li",
+   "arXiv preprint arXiv:2408.07055, 2024"
+  ],
+  [
+   "X Zou, Q Zheng, Y Dong, X Guan, E Kharlamov, J Lu, J Tang",
+   "Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data …, 2021"
+  ],
+  [
+   "W Hong, W Yu, X Gu, G Wang, G Gan, H Tang, J Cheng, J Qi, J Ji, L Pan, ...",
+   "arXiv preprint arXiv:2507.01006, 2025"
+  ],
+  [
+   "J Cheng, X Liu, K Zheng, P Ke, H Wang, Y Dong, J Tang, M Huang",
+   "arXiv preprint arXiv:2311.04155, 2023"
+  ],
+  [
+   "C Wang, X Liu, Z Chen, H Hong, J Tang, D Song",
+   "arXiv preprint arXiv:2205.10475, 2022"
+  ],
+  [
+   "J Tang, D Zhang, L Yao",
+   "Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on, 292-301, 2007"
+  ],
+  [
+   "J He, J Qiu, A Zeng, Z Yang, J Zhai, J Tang",
+   "arXiv preprint arXiv:2103.13262, 2021"
+  ],
+  [
+   "J Tang, S Wu, J Sun",
+   "Proceedings of the 19th ACM SIGKDD international conference on Knowledge …, 2013"
+  ],
+  [
+   "Y Bai, X Lv, J Zhang, Y He, J Qi, L Hou, J Tang, Y Dong, J Li",
+   "arXiv preprint arXiv:2401.18058, 2024"
+  ],
+  [
+   "F Zhang, X Liu, J Tang, Y Dong, P Yao, J Zhang, X Gu, Y Wang, B Shao, ...",
+   "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge …, 2019"
+  ],
+  [
+   "B Wen, P Ke, X Gu, L Wu, H Huang, J Zhou, W Li, B Hu, W Gao, J Xu, ...",
+   "arXiv preprint arXiv:2407.03978, 2024"
+  ],
+  [
+   "Z Du, X Wang, H Yang, J Zhou, J Tang",
+   "Proceedings of the 25th ACM SIGKDD International Conference on Knowledge …, 2019"
+  ],
+  [
+   "W Tang, H Zhuang, J Tang",
+   "Machine Learning and Knowledge Discovery in Databases, 381-397, 2011"
+  ],
+  [
+   "Y Yang, J Tang, CW Leung, Y Sun, Q Chen, J Li, Q Yang",
+   "Proceedings of the 29th AAAI Conference on Artificial Intelligence, 367-373, 2015"
+  ],
+  [
+   "T Lou, J Tang, J Hopcroft, Z Fang, X Ding",
+   "ACM Transactions on Knowledge Discovery from Data (TKDD) 7 (2), 1-25, 2013"
+  ],
+  [
+   "J Xu, Y Huang, J Cheng, Y Yang, J Xu, Y Wang, W Duan, S Yang, Q Jin, ...",
+   "arXiv preprint arXiv:2412.21059, 2024"
+  ]
+ ]
+}

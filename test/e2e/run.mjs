@@ -464,8 +464,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await fx.close();
   }
 
-  // -- 17. a profile whose header name is spelled the other way round
-  const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica Ion", hl: "zh-CN" });
+  // -- 17. a profile whose header name cannot be read in any other order: the owner adds a spelling by hand
+  const fx2 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica-Ion", hl: "zh-CN" });
   const ctx2 = await launch();
   try {
     const page = await ctx2.newPage();
@@ -473,6 +473,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     const absentBefore = await page.locator('[data-rr="absent"]').count();
     assert.equal(absentBefore, 1, "the panel reports papers where the name was not found");
+    assert.equal(await page.locator(".rr-variant-auto").count(), 0, "nothing is guessed for a name that has no other order");
     await page.click('[data-rr="variants"] summary');
     await page.fill('input[data-act="variant-input"]', "Ion Stoica");
     await page.press('input[data-act="variant-input"]', "Enter");
@@ -640,6 +641,56 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
   } finally {
     await ctx7.close();
     await fx7.close();
+  }
+
+  // -- 28. the profile name is written surname first ("Stoica Ion"): the other order is used at once, and says so
+  const fx8 = await start({ slug: "ion-stoica", pageSize: 100, header: "Stoica Ion" });
+  const ctx8 = await launch();
+  try {
+    const page = await ctx8.newPage();
+    await page.goto(fx8.url);
+    await page.waitForSelector("#rr-panel");
+    assert.deepEqual(await readMatrix(page), matrixOf(expected({ owner: "Ion Stoica", rows: fx8.profile.rows })));
+    const auto = page.locator(".rr-variant-auto");
+    assert.equal(await auto.count(), 1);
+    assert.equal((await auto.textContent()).trim(), "Ion Stoica");
+    assert.match(await auto.getAttribute("title"), /^Added automatically: .* \d+ papers$/);
+    assert.match(await page.locator('[data-rr="absent"]').textContent(), /^2 papers where/, "only the two papers that really lack the name are left");
+    assert.equal(await page.locator('[data-rr="suggest"]').count(), 0);
+    await page.click('[data-rr="variants"] summary');
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-auto-spelling.png") });
+    ok("a surname-first profile name is read the other way round at once, as an automatic spelling");
+  } finally {
+    await ctx8.close();
+    await fx8.close();
+  }
+
+  // -- 29. 'SY Philip' is what Scholar prints for Philip S. Yu in six papers: offered, one click adds it
+  const fx9 = await start({ slug: "philip-yu", pageSize: 100 });
+  const ctx9 = await launch();
+  try {
+    const page = await ctx9.newPage();
+    await page.goto(fx9.url);
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator(".rr-variant-auto").count(), 0, "a name that mostly matches is left alone");
+    const sugg = page.locator('[data-act="suggest-variant"]');
+    assert.equal(await sugg.count(), 1);
+    assert.equal((await sugg.textContent()).trim(), "SY Philip (6)");
+    const absentWas = parseInt(await page.locator('[data-rr="absent"]').textContent(), 10);
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-suggested-spelling.png") });
+    await sugg.click();
+    await page.waitForFunction((n) => parseInt((document.querySelector('[data-rr="absent"]') || { textContent: "0" }).textContent, 10) === n, absentWas - 6);
+    assert.equal(await page.locator('[data-rr="suggest"]').count(), 0, "once added, it is no longer suggested");
+    assert.deepEqual(await readMatrix(page), matrixOf(expected({ owner: "Philip S. Yu", rows: fx9.profile.rows }, { extraOwner: ["SY Philip"] })));
+    await page.click('[data-rr="variants"] summary');
+    assert.equal((await page.locator(".rr-variant:not(.rr-variant-auto)").textContent()).replace("×", "").trim(), "SY Philip");
+    await page.reload();
+    await page.waitForSelector("#rr-panel");
+    assert.equal(await page.locator('[data-rr="suggest"]').count(), 0, "and it is remembered for this profile");
+    ok("a rearranged spelling in the owner's own papers is offered, and one click adds it");
+  } finally {
+    await ctx9.close();
+    await fx9.close();
   }
 
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);

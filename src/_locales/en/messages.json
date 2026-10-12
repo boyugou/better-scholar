@@ -240,6 +240,15 @@
   "variantRemove": {
     "message": "Remove"
   },
+  "variantAutoTip": {
+    "message": "Added automatically: your profile name in the other order finds you in $1 papers"
+  },
+  "variantSuggest": {
+    "message": "Maybe you:"
+  },
+  "variantSuggestTip": {
+    "message": "Appears in $1 papers whose author list does not otherwise name you — click to add this spelling"
+  },
   "expand": {
     "message": "Expand"
   },

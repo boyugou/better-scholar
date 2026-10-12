@@ -228,6 +228,15 @@
   "variantRemove": {
     "message": "移除"
   },
+  "variantAutoTip": {
+    "message": "已自动加入：把主页姓名倒过来写，在 $1 篇论文里找到了你"
+  },
+  "variantSuggest": {
+    "message": "也许是你："
+  },
+  "variantSuggestTip": {
+    "message": "出现在 $1 篇作者列表里没有别的你的写法的论文中——点击添加这种写法"
+  },
   "expand": {
     "message": "展开"
   },

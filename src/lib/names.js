@@ -222,8 +222,79 @@
     return { status: truncated ? "hidden" : "absent", role: null, index: -1, tokens, truncated };
   }
 
+  // ---------------------------------------------------------------- evidence-based variants
+
+  // The same name with its parts in another order: "Tang Jie" → "Jie Tang". Only the rotations of a two- or three-part name.
+  function reorderings(ownerName) {
+    const words = cleanOwnerHeader(ownerName).split(/\s+/).filter(Boolean);
+    if (words.length === 2) return [`${words[1]} ${words[0]}`];
+    if (words.length === 3) return [`${words[1]} ${words[2]} ${words[0]}`, `${words[2]} ${words[0]} ${words[1]}`];
+    return [];
+  }
+
+  // Is `authorName` the owner's name with its parts in another order, initials standing for some of them? Every word of one
+  // is a word of the other or a letter that starts it, each used once, and at least one word is written out:
+  // "SY Philip" for "Philip S. Yu", "J Tang" for "Tang Jie", "M Tomas" for "Tomas Mikolov" — but not "PA David" for "David Patterson".
+  function isPermutation(authorName, ownerName) {
+    const a = normalize(authorName).split(" ").filter(Boolean);
+    const o = normalize(cleanOwnerHeader(ownerName)).split(" ").filter(Boolean);
+    if (a.length !== o.length || a.length < 2) return false;
+    const used = new Array(o.length).fill(false);
+    let written = 0;
+    for (const t of a) if (t.length > 1) {
+      const i = o.findIndex((w, k) => !used[k] && w === t);
+      if (i < 0) return false;
+      used[i] = true; written++;
+    }
+    for (const t of a) if (t.length === 1) {
+      const i = o.findIndex((w, k) => !used[k] && w[0] === t);
+      if (i < 0) return false;
+      used[i] = true;
+    }
+    return written >= 1;
+  }
+
+  // What the page itself says about how the owner's name is spelled, from the rows read so far.
+  //   auto         spellings to use without asking: the profile name in the other order, when the name as printed finds the
+  //                owner in hardly any paper and the other order in many ("Tang Jie" on the profile, "J Tang" in the papers)
+  //   suggestions  spellings to offer: author names, in at least two papers whose complete author lists do not otherwise
+  //                contain the owner, that are the owner's name rearranged ("SY Philip")
+  function suggestVariants(authorTexts, owner) {
+    const lists = authorTexts.map(parseAuthors);
+    const count = (o) => lists.reduce((n, l) => n + (findOwner(l.tokens, o) >= 0 ? 1 : 0), 0);
+    const out = { auto: [], suggestions: [] };
+    let current = owner;
+    const base = count(owner);
+    if (lists.length >= 8 && base < lists.length * 0.1) {
+      let best = null;
+      for (const cand of reorderings(owner.name)) {
+        const n = count({ name: owner.name, alternates: [...(owner.alternates || []), cand] });
+        if (!best || n > best.n) best = { cand, n };
+      }
+      if (best && best.n - base >= Math.max(5, 4 * base) && best.n >= lists.length * 0.25) {
+        out.auto.push({ name: best.cand, rows: best.n - base });
+        current = { name: owner.name, alternates: [...(owner.alternates || []), best.cand] };
+      }
+    }
+    const tally = new Map();
+    for (const l of lists) {
+      if (l.truncated || findOwner(l.tokens, current) >= 0) continue;
+      const seen = new Set();
+      for (const t of l.tokens) {
+        const key = normalize(t.name);
+        if (seen.has(key) || !isPermutation(t.name, current.name)) continue;
+        seen.add(key);
+        const e = tally.get(key) || { name: t.name, rows: 0 };
+        e.rows++;
+        tally.set(key, e);
+      }
+    }
+    out.suggestions = [...tally.values()].filter((e) => e.rows >= 2).sort((x, y) => y.rows - x.rows).slice(0, 3);
+    return out;
+  }
+
   return {
     COFIRST_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
-    matchStrength, matchesAuthor, splitCofirst, parseAuthors, findOwner, roleFor, classifyRow
+    matchStrength, matchesAuthor, splitCofirst, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, suggestVariants
   };
 });

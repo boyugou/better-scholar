@@ -76,8 +76,10 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
 - **Roles come from Scholar's author text.** Initials are matched flexibly
   (`GE Hinton` = `Geoffrey Hinton`; `Jane` ≠ `John`), but two different people can
   collide on `W Wang`. Co-first marks (†, ∗ …) are honoured when present — Scholar
-  rarely preserves them. If a profile's name is spelled differently from its papers,
-  use **Add a spelling** in the panel.
+  rarely preserves them. A profile name written surname first (`Tang Jie` on the profile, `J Tang` in the
+  papers) is read the other way round automatically when the page itself shows that this finds you and the
+  name as printed hardly does; other rearrangements Scholar prints (`SY Philip` for `Philip S. Yu`) are offered
+  with one click when they occur in at least two papers. Anything else: **Add a spelling** in the panel.
 - **Awards are not exhaustive.** The award list covers the venues above and only the years their pages
   publish; a paper that is not on it has no award chip. Talk levels (*Oral*, *Spotlight*) are only what the
   author wrote — Scholar's text rarely carries them — and look-alikes such as *Oral Oncology* are never marked.

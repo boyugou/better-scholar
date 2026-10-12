@@ -138,3 +138,61 @@ test("real profile — Ion Stoica: 28 senior-author rows are hidden behind Schol
   assert.equal(count("absent"), 2); // single-author 'R Fonseca' row and a mis-attributed paper
   assert.equal(count("found"), 70);
 });
+
+test("reorderings: the rotations of a two- or three-part name, nothing else", () => {
+  assert.deepEqual(names.reorderings("Tang Jie"), ["Jie Tang"]);
+  assert.deepEqual(names.reorderings("Huang Xuanjing (黄萱菁)"), ["Xuanjing Huang"]);
+  assert.deepEqual(names.reorderings("Prof. Wang Xiao Ming"), ["Xiao Ming Wang", "Ming Wang Xiao"]);
+  assert.deepEqual(names.reorderings("Stoica"), []);
+  assert.deepEqual(names.reorderings("Jean-Luc Marie Pierre Picard"), []);
+});
+
+test("isPermutation: the owner's name with its parts moved and initials for some of them — but a different initial is another person", () => {
+  for (const [author, o] of [["SY Philip", "Philip S. Yu"], ["J Tang", "Tang Jie"], ["M Tomas", "Tomas Mikolov"], ["H Jiawei", "Jiawei Han"], ["Huang X", "Xuanjing Huang"]]) {
+    assert.ok(names.isPermutation(author, o), `${author} ~ ${o}`);
+  }
+  for (const [author, o] of [["PA David", "David Patterson"], ["J Smith", "Tang Jie"], ["Jie", "Tang Jie"], ["S Y", "Philip S. Yu"], ["Tang Wei", "Tang Jie"]]) {
+    assert.ok(!names.isPermutation(author, o), `${author} !~ ${o}`);
+  }
+});
+
+test("suggestVariants: a surname-first profile name is read the other way at once, when the evidence is plain", () => {
+  const rows = Array.from({ length: 12 }, (_, i) => `J Tang, A Author${i}, B Other${i}`);
+  const v = names.suggestVariants(rows, { name: "Tang Jie" });
+  assert.deepEqual(v.auto, [{ name: "Jie Tang", rows: 12 }]);
+  assert.deepEqual(v.suggestions, []);
+  // the name as printed already finds the owner: nothing is changed
+  assert.deepEqual(names.suggestVariants(rows, { name: "Jie Tang" }), { auto: [], suggestions: [] });
+  // too few papers to be sure, or too few that fit
+  assert.deepEqual(names.suggestVariants(rows.slice(0, 6), { name: "Tang Jie" }).auto, []);
+  assert.deepEqual(names.suggestVariants([...rows.slice(0, 5), ...Array.from({ length: 20 }, (_, i) => `X Nobody${i}, Y Else${i}`)], { name: "Tang Jie" }).auto, []);
+});
+
+test("suggestVariants: other rearrangements are offered, only from complete author lists that name no one else's way of writing the owner", () => {
+  const owner = { name: "Philip S. Yu" };
+  const rows = [
+    ...Array.from({ length: 14 }, (_, i) => `A Author${i}, PS Yu`),
+    "C Aggarwal, SY Philip", "S Wang, J Cao, SY Philip", "K Fung, SY Philip, Z Liu",
+    "A Author, B Other", "PA David, T Klundert",
+    "L Truncated, SY Philip, ..."                      // a cut list proves nothing
+  ];
+  assert.deepEqual(names.suggestVariants(rows, owner), { auto: [], suggestions: [{ name: "SY Philip", rows: 3 }] });
+  assert.deepEqual(names.suggestVariants(rows.filter((r) => !/Wang|Fung/.test(r)), owner).suggestions, [], "one paper is not a pattern");
+});
+
+test("real profiles — Tang Jie: all 100 rows say 'J Tang' under a surname-first header; Philip S. Yu: 'SY Philip' is offered; the others need nothing", () => {
+  const tang = fixture("tang-jie");
+  const t = names.suggestVariants(tang.rows.map((r) => r[0]), owner(tang.owner));
+  assert.equal(t.auto.length, 1);
+  assert.equal(t.auto[0].name, "Jie Tang");
+  assert.ok(t.auto[0].rows >= 70, "rows " + t.auto[0].rows);
+  const before = tang.rows.filter(([a]) => names.classifyRow(a, owner(tang.owner)).status === "found").length;
+  const after = tang.rows.filter(([a]) => names.classifyRow(a, { name: tang.owner, alternates: ["Jie Tang"] }).status === "found").length;
+  assert.deepEqual([before, after >= 70], [0, true]);
+  const yu = fixture("philip-yu");
+  assert.deepEqual(names.suggestVariants(yu.rows.map((r) => r[0]), owner(yu.owner)), { auto: [], suggestions: [{ name: "SY Philip", rows: 6 }] });
+  for (const slug of ["hinton", "kaiming-he", "ion-stoica"]) {
+    const f = fixture(slug);
+    assert.deepEqual(names.suggestVariants(f.rows.map((r) => r[0]), owner(f.owner)), { auto: [], suggestions: [] }, slug);
+  }
+});

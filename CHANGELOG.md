@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.5.0 — 2026-10-12
+
+- **A profile name written surname first is read the other way round, automatically.** Of 22 real public profiles the owner was found
+  in nearly every paper on 20; on the two Chinese-name profiles whose header reads `Tang Jie` / `Huang Xuanjing (黄萱菁）` — the papers
+  print `J Tang`, `X Huang` — in none. The panel then said "73 papers where the profile name is not in the author list" and
+  every role was blank until the owner typed a spelling. Now, when the name as printed finds the owner in under 10% of at least
+  8 rows and the reversed order in at least four times as many (and a quarter of all rows), the reversed order is used at once
+  (0 → 76 of 100 and 0 → 77 of 100 on those two profiles). It is shown as an outlined, non-removable spelling in the panel
+  and derived again on every load, never stored.
+- **Rearranged spellings are offered.** Scholar prints Philip S. Yu as `SY Philip` in 6 of his 100 papers and Mikolov as `M Tomas` in 3.
+  When an author name in at least two papers whose complete author lists do not otherwise contain the owner is the owner's name rearranged
+  with initials (`SY Philip`; not `PA David` for David Patterson), the panel offers it under the "papers where the profile name is not in
+  the author list" line — one click adds it as an ordinary spelling. Nothing is added without a click except the surname-first case.
+- Two more real profiles (Philip S. Yu, Tang Jie) join the fixtures; two e2e checks (automatic reversed spelling; offered spelling).
+
 ## 2.4.7 — 2026-10-12
 
 Eight more real profiles (HPC, systems and machine learning, software engineering, AI planning, robotics, NLP in China, knowledge graphs;
