@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.6.4 — 2026-10-12
+
+Sixteen more real profiles (music and audio, computational geometry, SAT and SMT, theorem proving, computational social science, educational data
+mining, wireless communications, concurrency theory — 1,552 venue strings, 1,419 new to the test corpora).
+
+- **An acronym in a cut-off name is not the venue when the other words are not the venue's own.** *ACM SIGCSE conference on Innovation and …* was
+  the SIGCSE Technical Symposium (it is ITiCSE); the same rule drops three read-as-SIGCOMM / SIGMETRICS strings that had been accepted as known false
+  positives — *ACM SIGCOMM conference on Internet measurement …* (IMC), *ACM SIGCOMM symposium on software defined networking …* (SOSR),
+  *SIGMETRICS symposium on Parallel and distributed tools …* (SPDT). One correct claim goes with them (ICRA 2000's *Millennium Conference* string).
+- **"Place: Publisher" is no venue.** *Nijmegen: ICIS* (a university institute's report series) was read as the Information Systems conference.
+- Names Scholar prints in another form: LPAR's current name (CORE lists the older one), ACII (CORE's name stops at "Intelligent"), ISoLA without its
+  subtitle (Scholar cuts it at the comma), ITiCSE as the SIGCSE conference.
+
 ## 2.6.3 — 2026-10-12
 
 - **What the Awards count is made of.** With CHI's honorable mentions (about one paper in twenty) in the list, a single "Awards 52" hid how many

@@ -668,6 +668,22 @@ test("review: a series title announces a conference, a sponsor names the communi
   assert.equal(brief("Proceedings of the 3rd International Conference on Extreme Programming (XP …, 2002"), "CORE B XP");
 });
 
+// From sixteen more real profiles (music, geometry, SAT/SMT, theorem proving, social science, education, wireless, concurrency).
+test("an acronym in a cut-off name whose other words are not the venue's is not the venue; a place and a publisher is no venue; names Scholar prints in another form", () => {
+  assert.equal(brief("Proceedings of the 14th annual ACM SIGCSE conference on Innovation and …, 2009"), "CORE B ITiCSE", "not the SIGCSE Technical Symposium");
+  assert.equal(brief("Proceedings of the 14th annual ACM SIGCSE conference on Innovation and technology in computer science education, 2009"), "CORE B ITiCSE");
+  assert.equal(brief("Proceedings of the 2011 ACM SIGCOMM conference on Internet measurement …, 2011"), "", "IMC");
+  assert.equal(brief("Proceedings of the 1st ACM SIGCOMM symposium on software defined networking …, 2015"), "", "SOSR");
+  assert.equal(brief("Proceedings of the SIGMETRICS symposium on Parallel and distributed tools …, 1998"), "", "SPDT");
+  assert.equal(brief("Proceedings of the 2020 ACM SIGCOMM conference on …, 2020"), "CCF A SIGCOMM · CORE A* SIGCOMM", "nothing but the acronym's own words is cut");
+  assert.equal(brief("Nijmegen: ICIS, 2008"), "", "an institute's report series, not the Information Systems conference");
+  assert.equal(brief("Cambridge: Cambridge University Press, 2008"), "");
+  assert.equal(brief("International Conference on Logic for Programming Artificial Intelligence …, 2010"), "CORE B LPAR");
+  assert.equal(brief("Logic for Programming, Artificial Intelligence, and Reasoning, 606-621, 2015"), "CORE B LPAR");
+  assert.equal(brief("International conference on affective computing and intelligent interaction …, 2011"), "CORE B ACII", "CORE's name stops at 'Intelligent'");
+  assert.equal(brief("International Symposium on Leveraging Applications of Formal Methods, 539-553, 2016"), "CORE C ISoLA", "Scholar cuts the subtitle at its comma");
+});
+
 test("ACM's special interest groups are sponsors, not names: 'ACM SIGPLAN International Conference on Functional …' is ICFP", () => {
   assert.equal(brief("Proceedings of the 15th ACM SIGPLAN international conference on Functional …, 2010"), "CCF B ICFP · CORE A ICFP");
   assert.equal(brief("International Conference on Functional Programming, 117-128, 2010"), "CCF B ICFP · CORE A ICFP", "CCF's row spells it 'Function Programming'");

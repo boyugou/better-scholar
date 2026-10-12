@@ -557,7 +557,9 @@
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and
     // unsupervised feature learning" workshops would inherit NeurIPS.
-    if (hint !== "J") {
+    // ("Nijmegen: ICIS" is a place and a publisher — an institute's report series — not the conference called ICIS)
+    const placeAndPublisher = /^[A-Z][A-Za-z.'’-]+(?: [A-Z][A-Za-z.'’-]+){0,2}:\s/.test(p.plain) && !CONF_SIGNAL.test(p.plain);
+    if (hint !== "J" && !placeAndPublisher) {
       const content = canonTokens(p.plain, "noOrg", idx.known);
       const room = CONF_SIGNAL.test(p.plain) ? 3 : 1;   // a bare "IEEE INFOCOM" says little else
       for (const { key } of embeddedSignals(p)) {
@@ -565,7 +567,9 @@
         const left = content.filter((t) => t !== key);
         if (hits && left.length <= room) {
           const d = decide(hits, rawWords);
-          if (d && d !== "ambiguous") return { entry: d, rule: "acronym" };
+          // Scholar cut the name after the acronym and the words that did get through are not the venue's own ("ACM SIGCSE conference on
+          // Innovation and …" is ITiCSE, not the SIGCSE symposium): the name goes on, so the prefix rule below may read it
+          if (d && d !== "ambiguous" && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
     }
