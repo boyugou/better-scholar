@@ -191,3 +191,6 @@ tr.rr-hide { display: none !important; }
 #rr-panel.rr-wide.rr-onecol .rr-body { display: block; }
 #rr-panel.rr-wide.rr-onecol .rr-col-a { border-right: 0; }
 @media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } #rr-panel.rr-wide .rr-col-a { border-right: 0; } }
+
+/* no animation for those who asked the system for less motion */
+@media (prefers-reduced-motion: reduce) { #rr-panel *, #rr-panel *::before, #rr-panel *::after { transition: none !important; } }

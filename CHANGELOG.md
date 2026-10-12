@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.20 — 2026-10-12
+
+- The panel, the settings page and the popup drop their small transitions (switches, drop-down, buttons) when the system asks for reduced motion.
+
 ## 2.10.19 — 2026-10-12
 
 - The settings page and the toolbar popup follow the system's dark mode (the preview on the settings page stays light, as the panel looks on Scholar).

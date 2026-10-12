@@ -41,3 +41,5 @@ a.btn.primary:hover { background: #1765cc; border-color: #1765cc; }
 .marks { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
 .marks b { color: var(--text, inherit); }
 .note { margin-top: 10px; color: var(--faint); font-size: 11.5px; line-height: 1.4; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

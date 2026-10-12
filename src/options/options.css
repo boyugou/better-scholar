@@ -64,3 +64,5 @@ button.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px
 .reset-box .ask { color: var(--muted); font-size: 13px; }
 button.btn.danger { border-color: #d93025; color: #d93025; }
 button.btn.danger:hover { background: #fce8e6; border-color: #d93025; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
