@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.34 — 2026-10-12
+
+- MobiSys's best papers of 2011–2014, 2016 and 2017 (10 papers: SignalGuru, Chameleon, ACE, Energy Characterization and Optimization of Image Sensing Toward Continuous Mobile Vision, Rio, BackDoor …) from the conference's own program pages
+  (`tot.mjs mobisys-year`); the other years' pages are not read. The list has 6260 awards.
+
 ## 2.10.33 — 2026-10-12
 
 - MobiCom 2014's best paper (Tagoram: Real-Time Tracking of Mobile RFID Tags to High Precision Using COTS Devices) and runner-up (EkhoNet: High Speed Ultra Low-power Backscatter for Next Generation Sensors) from the conference's front page

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6250
+  "count": 6260
  },
  "entries": [
   {
@@ -76375,6 +76375,165 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "MobiSys2005: Reincarnating PCs with Portable SoulPads — Ramón Cáceres, IBM T.J. Watson Research Center; Casey Carter, IBM T.J. Watson Research Center; Chandra Narayanaswami, IBM T.J. Watson Research Center; Mandayam Raghunath, IBM T.J. Watson Research Center"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Chameleon: A Color-Adaptive Web Browser for Mobile OLED Displays",
+   "authors": [
+    "Mian Dong",
+    "L. Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2011/",
+   "evidence": "MobiSys 2011 Best Paper Award: Chameleon: A Color-Adaptive Web Browser for Mobile OLED Displays — Mian Dong, L. Zhong"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SignalGuru: Leveraging Mobile Phones for Collaborative Traffic Signal Schedule Advisory",
+   "authors": [
+    "Emmanouil Koukoumidis",
+    "Li-Shiuan Peh",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2011/",
+   "evidence": "MobiSys 2011 Best Paper Award: SignalGuru: Leveraging Mobile Phones for Collaborative Traffic Signal Schedule Advisory — Emmanouil Koukoumidis, Li-Shiuan Peh, Margaret Martonosi"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ACE: Exploiting Correlation for Energy-Efficient and Continuous Context Sensing",
+   "authors": [
+    "Suman Nath"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2012/program.php",
+   "evidence": "MobiSys 2012 Best Paper Award: ACE: Exploiting Correlation for Energy-Efficient and Continuous Context Sensing — Suman Nath"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Energy Characterization and Optimization of Image Sensing Toward Continuous Mobile Vision",
+   "authors": [
+    "Robert LiKamWa",
+    "Bodhi Priyantha",
+    "Matthai Philipose",
+    "Lin Zhong",
+    "Paramvir Bahl"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2013/program.php",
+   "evidence": "MobiSys 2013 Best Paper Award: Energy Characterization and Optimization of Image Sensing Toward Continuous Mobile Vision — Robert LiKamWa, Bodhi Priyantha, Matthai Philipose, Lin Zhong, Paramvir Bahl"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "AMC: Verifying User Interface Properties for Vehicular Applications",
+   "authors": [
+    "Kyungmin Lee",
+    "Jason Flinn",
+    "T.J. Giuli",
+    "Brian Noble",
+    "Christopher Peplin"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2013/program.php",
+   "evidence": "MobiSys 2013 Best Paper Runner-up: AMC: Verifying User Interface Properties for Vehicular Applications — Kyungmin Lee, Jason Flinn, T.J. Giuli, Brian Noble, Christopher Peplin"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "High-Accuracy Differential Tracking of Low-Cost GPS Receivers",
+   "authors": [
+    "Will Hedgecock",
+    "Miklos Maroti",
+    "Janos Sallai",
+    "Peter Volgyesi",
+    "Akos Ledeczi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2013/program.php",
+   "evidence": "MobiSys 2013 Best Paper Runner-up: High-Accuracy Differential Tracking of Low-Cost GPS Receivers — Will Hedgecock, Miklos Maroti, Janos Sallai, Peter Volgyesi, Akos Ledeczi"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "COIN-GPS: Indoor Localization from Direct GPS Receiving",
+   "authors": [
+    "Shahriar Nirjon",
+    "Jie Liu",
+    "Gerald DeJean",
+    "Bodhi Priyantha",
+    "Yuzhe Jin",
+    "Ted Hart"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2014/program.php",
+   "evidence": "MobiSys 2014 Best Paper Award: COIN-GPS: Indoor Localization from Direct GPS Receiving — Shahriar Nirjon, Jie Liu, Gerald DeJean, Bodhi Priyantha, Yuzhe Jin, Ted Hart"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rio: A System Solution for Sharing I/O between Mobile Systems",
+   "authors": [
+    "Ardalan Amiri Sani",
+    "Kevin Boos",
+    "Min Hong Yun",
+    "Lin Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2014/program.php",
+   "evidence": "MobiSys 2014 Best Paper Award: Rio: A System Solution for Sharing I/O between Mobile Systems — Ardalan Amiri Sani, Kevin Boos, Min Hong Yun, Lin Zhong"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reactive Control of Autonomous Drones",
+   "authors": [
+    "Endri Bregu",
+    "Nicola Casamassima",
+    "Daniel Cantoni",
+    "Luca Mottola",
+    "Kamin Whitehouse"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2016/program.php",
+   "evidence": "MobiSys 2016 Best Paper Award: Reactive Control of Autonomous Drones — Endri Bregu, Nicola Casamassima, Daniel Cantoni, Luca Mottola, Kamin Whitehouse"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "BackDoor: Making Microphones Hear Inaudible Sounds",
+   "authors": [
+    "Nirupam Roy",
+    "Haitham Hassanieh",
+    "Romit Roy Choudhury"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2017/program.php",
+   "evidence": "MobiSys 2017 Best Paper Award: BackDoor: Making Microphones Hear Inaudible Sounds — Nirupam Roy, Haitham Hassanieh, Romit Roy Choudhury"
   },
   {
    "venue": "MODELS",

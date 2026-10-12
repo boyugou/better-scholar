@@ -1828,3 +1828,22 @@ test("MobiCom 2014's front page: 'Best Paper' then 'Authors, Title (Winner)' / '
     "2014 runner-up EkhoNet: | Pengyu Zhang; Pan Hu; Vijay Pasikanti; Deepak Ganesan"
   ]);
 });
+
+test("a MobiSys year's program page: 'Best Paper' / 'Best Paper Runner Up' then title and authors lines (2013), the quoted line form of 2011, the journal special section and the poster / demo awards are left out", async () => {
+  const { parseMobisysYear } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 12 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const y13 = `<h1>MobiSys 2013 - The 11th International Conference on Mobile Systems, Applications and Services</h1>${filler}<p>Program</p><p>Awards</p><p>Best Paper</p>
+<p>Energy Characterization and Optimization of Image Sensing Toward Continuous Mobile Vision</p><p>Robert LiKamWa (Rice University), Bodhi Priyantha, Matthai Philipose (Microsoft Research Redmond), Paramvir Bahl (Microsoft Research Redmond)</p>
+<p>Best Paper Runner Up</p><p>AMC: Verifying User Interface Properties for Vehicular Applications</p><p>Kyungmin Lee, Jason Flinn (University of Michigan), T.J. Giuli (Ford Motor Company)</p>
+<p>Best Poster</p><p>Instrumenting Thailand's Coastline: Mobile Devices</p><p>Michael Nekrasov (University of California Santa Barbara)</p>`;
+  const a = parseMobisysYear(y13, "https://www.sigmobile.org/mobisys/2013/program.php");
+  assert.deepEqual(a.entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 10)} | ${e.authors.join("; ")}`), [
+    "2013 best Energy Cha | Robert LiKamWa; Bodhi Priyantha; Matthai Philipose; Paramvir Bahl",
+    "2013 runner-up AMC: Verif | Kyungmin Lee; Jason Flinn; T.J. Giuli"
+  ]);
+  const y11 = `<h1>MobiSys 2011: The 9th Annual International Conference on Mobile Systems, Applications, and Services</h1><p>Best Paper -  "SignalGuru: Leveraging Mobile Phones for Collaborative Traffic Signal Schedule Advisory" by Emmanouil Koukoumidis, Li-Shiuan Peh and Margaret Martonosi.</p><p>Best Paper -  "Chameleon: A Color-Adaptive Web Browser for Mobile OLED Displays" by Mian Dong and L. Zhong.</p><p>Best Poster -  "You Driving? Talk to You Later" by Hon Lung Chu</p>`;
+  assert.deepEqual(parseMobisysYear(y11, "https://www.sigmobile.org/mobisys/2011/").entries.map((e) => `${e.year} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2011 SignalGu | Emmanouil Koukoumidis; Li-Shiuan Peh; Margaret Martonosi",
+    "2011 Chameleo | Mian Dong; L. Zhong"
+  ]);
+});
