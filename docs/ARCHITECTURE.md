@@ -46,7 +46,7 @@ data, and why there is no build step.
 | `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state. What it shows at all is decided by `prefs`. |
 | `content/main.js` | Wires it together: prefs, filters, decoration, observers, messages to the popup. |
 | `content/store.js` | `chrome.storage` wrappers + migration; degrades to memory if the extension context disappears. |
-| `options/*` | The settings page: switches saved at once, with a live preview built from `content/chips.js`. |
+| `options/*` | The settings page: switches saved at once, with a live preview — the real `content/panel.js` handed a model built from invented papers (`panelModel()` in `options.js` follows `main.js`'s `model()`), above sample rows built from `content/chips.js`. |
 | `background.js` | Opens the settings page when the panel asks (a content script cannot). Nothing else. |
 | `data/*.js` | **Generated** from `data/*.json` by `scripts/build-data.mjs`; `aliases.js` is curated by hand. |
 
@@ -166,6 +166,11 @@ second try) and the panel says so; *Cancel* ends it and it does not start again 
 started, and switching it on starts one on the open profile. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
 
 ## The panel
+
+Every part of the panel has its own switch in `prefs.panel` (`show`, then `summary` — the role × rank table with its Copy buttons and data note —, `marks`, `filters`, `metrics`, `status` — loaded papers and unranked venues —, `names`).
+`panel.update()` hides a section whose switch is off and lets a column with nothing in it give its width to the other (`rr-onecol`); the layout-changed warning is never hidden. The toolbar popup obeys `summary` and
+`marks` too (`main.js` sends them with its reply). A part added later needs: a `PANEL_PARTS` entry (default on), a settings row in both locales, a preview effect (the preview runs the same panel) and an end-to-end check.
+The controls are components of the panel's own, not the system's: the year range is `dropdown()` (button, fixed-position list, arrow keys, Escape, click outside), the one checkbox is styled as a switch (`role="switch"`).
 
 `panel.js` is a pure view over a model. `main.js` rebuilds the model after every change
 (settings, filters, new rows from *Show more*, resolved papers) and re-renders; rows are
