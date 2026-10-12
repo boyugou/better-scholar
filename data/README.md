@@ -138,7 +138,10 @@ parsed from jeffhuang.com/best_paper_awards — it states no licence and does no
 is a cross-check and never a source). All 21 top awards that list has for ACL agree with this file.
 
 **Known gaps (on purpose):** IJCAI 2018, 2019, 2024 and 2025 (no official page lists the winners), AAAI before 2010,
-and venues whose official lists are not yet read (CHI, SIGPLAN, FOCS, SOSP, S&P before 2016 and its test-of-time papers …; SIGCOMM after 2022; CCS, whose page is a different layout for most years); older SIGSOFT lines in another form.
+and venues whose official lists are not yet read (CHI — its program site needs JavaScript —, SIGPLAN, FOCS, SOSP, VLDB, ISCA, ASPLOS, MICRO,
+UIST, WWW; S&P before 2016 and its test-of-time papers; SIGCOMM after 2022; CCS, whose page has a different layout for most years;
+the ACM's own "Conferences Best Paper Awards" pages answer every automated request with 403, which is not worked around);
+older SIGSOFT lines in another form; NeurIPS before 2014 and ICML before 2017; EMNLP 2022 (no official page), NAACL 2024 (a slide deck).
 A paper that only a secondary source names is never added. NeurIPS 2026
 had no paper awards on its pages yet when this was written. Test-of-time rows whose page omits the paper title
 are read from the award's own page when that names the paper and its first author (NeurIPS 2025 does); otherwise
