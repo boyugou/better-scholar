@@ -47,7 +47,16 @@ const adversarial = {
   "nbsp soup": "a ".repeat(8000),
   "marker soup": "(Oral) [Spotlight] - Best Paper Award ".repeat(1500),
   "award words": "best paper ".repeat(4000),
-  "quotes": "\"'".repeat(5000)
+  "quotes": "\"'".repeat(5000),
+  // patterns added for NeurIPS tracks, PMLR tails, organisation prefixes and spelled-out ordinals
+  "datasets and benchmarks": "NeurIPS " + "Datasets and Benchmarks Track ".repeat(3000),
+  "unclosed track paren": "NeurIPS (" + "Datasets ".repeat(5000),
+  "round soup": "NeurIPS Datasets and Benchmarks Track (Round " + "1 ".repeat(5000),
+  "pmlr soup": "International Conference on Machine Learning, " + "PMLR 1:2-3, ".repeat(3000),
+  "pmlr then spaces": "ICML, PMLR" + " ".repeat(20000) + "x",
+  "organisation chain": "IEEE/".repeat(5000) + "ACM CCS 2023",
+  "tens words": "thirty-eight ".repeat(5000) + "Conference on Neural Information Processing Systems",
+  "track words": "Track on ".repeat(5000) + "Datasets and Benchmarks"
 };
 
 test("no adversarial string throws, and each is handled quickly by every library", () => {

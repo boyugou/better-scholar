@@ -107,7 +107,8 @@
   // plain      name with parenthetical content removed (used for name matching)
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
   function prepare(raw) {
-    let s = fold(raw).replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/\s+/g, " ").trim();
+    // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic)
+    let s = fold(raw).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
