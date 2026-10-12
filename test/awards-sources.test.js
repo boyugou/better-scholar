@@ -772,3 +772,92 @@ test("old NeurIPS / ICML award pages: seven small markups, demos, reviewers and 
   const e18 = parsers.icml[2018](i2018, "https://icml.cc/Conferences/2018/Awards");
   assert.deepEqual(e18.map((e) => [e.award, e.awardLabel, e.paperYear]), [["best", "Best Paper", undefined], ["runner-up", "Best Paper Runner-up", undefined], ["tot", "Test of Time Award", 2008]]);
 });
+
+// ---- ACM CCS's and the VLDB Endowment's own award pages (synthetic pages in the markups the real ones use)
+
+const lineHtml = (...ls) => ls.map((l) => `<p>${l}</p>`).join("\n");
+
+test("ccs best-paper page: authors and title on one line, on two lines, with affiliations; a repeated authors line; a title made of capitalised words", async () => {
+  const { parseBest } = await import("../scripts/awards/ccs.mjs");
+  const html = lineHtml(
+    "2023", "The Distinguished Paper Award winners for CCS 2023 are:",
+    "Ann Lee, Bo Chen, and Cy Diaz, A Synthetic Title: On Testing, Trust and Time",
+    "Dee Park and Eli Ross, Authenticated Synthetic Garbling and Efficient Secure Two-Party Computation",
+    "2021", "The Best Paper award winners for CCS 2021 are:",
+    "Fay Gray; Gia Stone (Some University); Hal Wu (Lab, City); Ivy Xu (Institute of Things, Chinese Academy of Sciences)",
+    "A Synthetic Paper: With Affiliations in Parentheses",
+    "2018", "The Best  Paper award winners for CCS 2018 are: (in no particular order)",
+    "Jo Yan, Kai Zu,", "Another Synthetic Title For Two Lines",
+    "Lu Mo and Ned Oh,", "A Title Before A Repeated Line Of Authors", "Lu Mo and Ned Oh",
+    "Pia Qi, Ray Sun,", "Wes Xia,", "A Synthetic Title After Authors Over Two Lines",
+    "2014", "The Best  Paper award winners for CCS 2014 are:", "Yui Zhao and J&oumlrg Alpha,", "Entities Without Their Semicolon: Jörg",
+    "CCS 2014 Committee:", "Dr. Someone, Somewhere");
+  const { entries } = parseBest(html);
+  assert.deepEqual(entries.map((e) => [e.year, e.award, e.title, e.authors]), [
+    [2023, "distinguished", "A Synthetic Title: On Testing, Trust and Time", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    [2023, "distinguished", "Authenticated Synthetic Garbling and Efficient Secure Two-Party Computation", ["Dee Park", "Eli Ross"]],
+    [2021, "best", "A Synthetic Paper: With Affiliations in Parentheses", ["Fay Gray", "Gia Stone", "Hal Wu", "Ivy Xu"]],
+    [2018, "best", "Another Synthetic Title For Two Lines", ["Jo Yan", "Kai Zu"]],
+    [2018, "best", "A Title Before A Repeated Line Of Authors", ["Lu Mo", "Ned Oh"]],
+    [2018, "best", "A Synthetic Title After Authors Over Two Lines", ["Pia Qi", "Ray Sun", "Wes Xia"]],
+    [2014, "best", "Entities Without Their Semicolon: Jörg", ["Yui Zhao", "Jörg Alpha"]]
+  ]);
+  assert.ok(entries.every((e) => e.venue === "CCS" && e.evidence.includes(e.title) && e.source.startsWith("https://www.sigsac.org/")));
+});
+
+test("ccs test-of-time page: authors end in a colon (on one or two lines), the title is cut where the citation begins, the paper's year comes from it", async () => {
+  const { parseTestOfTime } = await import("../scripts/awards/ccs.mjs");
+  const html = lineHtml(
+    "2023", "The test-of-time award winners for CCS 2023 are as follows:",
+    "Ann Lee, Bo Chen, and Cy Diaz:", "A Synthetic Old Title: With a Colon.",
+    "Pages 299-310, In Proceedings of the 20th ACM Conference on Computer and Communications Security, CCS 2013, Berlin, Germany. ACM 2013, ISBN: 978-1-4503-2477-9",
+    "Dee Park, Eli Ross, Fay", "Gray, and Gia Stone:", "Another Synthetic Old Title.",
+    "Pages 901-914, In Proceedings of the 20th ACM Conference on Computer and Communications Security, CCS 2013, Berlin, Germany. ACM 2013, ISBN:", "978-1-4503-2477-9",
+    "2012", "The test-of-time award winners for CCS 2012 are two papers from ACM CCS 2002 (in no particular order). They were selected by",
+    "a committee of PC members after careful consideration of any conflict of", "interest.",
+    "Hal Wu and Ivy Xu:", "Synthetic Mimicry of Old Systems. Pages 255-264, In Vijayalakshmi Atluri (Ed.): Proceedings of the 9th ACM Conference on Computer and Communications Security, CCS 2002, Washington, DC, USA. ACM 2002, ISBN 1-58113-612-9",
+    "2025", "The test-of-time award winner for CCS 2025 is as follows:", "Jo Yan, Kai Zu :", "Synthetic Privacy-Preserving Deep Learning");
+  const { entries } = parseTestOfTime(html);
+  assert.deepEqual(entries.map((e) => [e.year, e.title, e.authors, e.paperYear]), [
+    [2023, "A Synthetic Old Title: With a Colon", ["Ann Lee", "Bo Chen", "Cy Diaz"], 2013],
+    [2023, "Another Synthetic Old Title", ["Dee Park", "Eli Ross", "Fay Gray", "Gia Stone"], 2013],
+    [2012, "Synthetic Mimicry of Old Systems", ["Hal Wu", "Ivy Xu"], 2002],
+    [2025, "Synthetic Privacy-Preserving Deep Learning", ["Jo Yan", "Kai Zu"], undefined]
+  ]);
+  assert.ok(entries.every((e) => e.award === "tot" && e.evidence.includes(e.title)));
+});
+
+test("vldb test-of-time pages: winners and title lines with their citations; a same-year retrospective is not the award paper; the archive table's memorial talks are not read", async () => {
+  const { parseCurrent, parseArchive, splitTitle } = await import("../scripts/awards/vldb.mjs");
+  assert.deepEqual(splitTitle("Distributed Synthetic Graphlab: A framework for machine learning in the cloud. Proc. VLDB Endow. 5(8): 716-727 (2012)"), { title: "Distributed Synthetic Graphlab: A framework for machine learning in the cloud", paperYear: 2012 });
+  assert.deepEqual(splitTitle("The Synthetic Casper: Location Services without Compromise. VLDB 2006: 763-774"), { title: "The Synthetic Casper: Location Services without Compromise", paperYear: 2006 });
+  assert.deepEqual(splitTitle("How synthetic are query optimizers, really?"), { title: "How synthetic are query optimizers, really?", paperYear: null });
+  const cur = lineHtml(
+    "2023", "Award Winner: Ann Lee, Bo Chen, Cy Diaz", "Paper Title: Distributed Synthetic Graphlab: A framework for machine learning in the cloud. Proc. VLDB Endow. 5(8): 716-727 (2012)",
+    "2019", "Award Winners: Dee Park, Eli Ross.", "Paper Title: A Synthetic Hybrid for Analytical Workloads. PVLDB 2(1): 922-933 (2009)",
+    "Award Winners: Fay Gray and Gia Stone", "Paper Title: A Second Synthetic Hosted Data Platform. PVLDB 1(2): 1277-1288 (2008)",
+    "2017", "Award Winner: Hal Wu", "Paper Title: Intelligent Synthetic Probing: Multi-Probe and Beyond. PVLDB 10(12): 2021-2024 (2017)");
+  const a = parseCurrent(cur);
+  assert.deepEqual(a.entries.map((e) => [e.year, e.title, e.authors, e.paperYear]), [
+    [2023, "Distributed Synthetic Graphlab: A framework for machine learning in the cloud", ["Ann Lee", "Bo Chen", "Cy Diaz"], 2012],
+    [2019, "A Synthetic Hybrid for Analytical Workloads", ["Dee Park", "Eli Ross"], 2009],
+    [2019, "A Second Synthetic Hosted Data Platform", ["Fay Gray", "Gia Stone"], 2008]
+  ]);
+  assert.equal(a.skipped.length, 1, "the 2017 article is the award talk's retrospective");
+  const arch = `<table><tr><td>Year</td><td>Award Winners</td><td>Paper Title</td></tr>
+    <tr><td>2011</td><td><p>Ivy Xu, Jo Yan, and Kai Zu<br>(Ivy Xu and Jo Yan)</p></td><td><p>Synthetic Schema Matching With a Cupid<br>(Schema Matching, Ten Years Later)</p></td></tr>
+    <tr><td rowspan="2">2002</td><td><p>Lu Mo<br>(Lu Mo)</p></td><td><p>Querying in Synthetic Mobile Environments<br>(Wireless Graffiti)</p></td></tr>
+    <tr><td><p>Ned Oh and Pia Qi<br>(Pia Qi)</p></td><td><p>Performance Evaluation of a Synthetic Load
+      Control Method<br>(Self-tuning Technology)</p></td></tr>
+    <tr><td>2012</td><td><p>Ray Sun<br>(Ray Sun)</p></td><td><p>Listed On The Current Page Instead<br>(x)</p></td></tr></table>`;
+  assert.deepEqual(parseArchive(arch).entries.map((e) => [e.year, e.awardLabel, e.title, e.authors, e.paperYear]), [
+    [2011, "10-Year Award", "Synthetic Schema Matching With a Cupid", ["Ivy Xu", "Jo Yan", "Kai Zu"], 2001],
+    [2002, "10-Year Award", "Querying in Synthetic Mobile Environments", ["Lu Mo"], 1992],
+    [2002, "10-Year Award", "Performance Evaluation of a Synthetic Load Control Method", ["Ned Oh", "Pia Qi"], 1992]
+  ]);
+});
+
+test("html: the old Latin-1 entities are read without their semicolon, the longest name first", async () => {
+  const { decode } = await import("../scripts/awards/html.mjs");
+  assert.equal(decode("J&oumlrg Schwenk, Noß, caf&eacute and R&Dteam, AT&T, &amp; &ouml;"), "Jörg Schwenk, Noß, café and R&Dteam, AT&T, & ö");
+});

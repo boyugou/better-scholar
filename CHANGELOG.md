@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.5.15 — 2026-10-12
+
+- **ACM CCS and VLDB awards** (104 entries; the list holds 2228) from the organisations' own pages. CCS (CCF A, CORE A*): the *Best Paper
+  Awards* page, 2013–2021 best papers and 2022–2023 distinguished papers (Path ORAM, Imperfect Forward Secrecy, DolphinAttack …), and the
+  *Test-of-Time Awards* page, 2012–2025, each with the year of the original paper. VLDB (CCF A, CORE A*): the *Test of Time Award* page
+  (2012–2026) and its archive table (the 10-year awards, 1995–2011). New readers `scripts/awards/ccs.mjs` (a hand-typed page in several
+  layouts: a line is read as authors for as long as every piece of it is a person's name) and `scripts/awards/vldb.mjs`; the shared HTML
+  reader now also decodes the old semicolon-less entities (`J&oumlrg`). One CCS title is printed cut short by the page itself
+  (*Path ORAM: An Extremely Simple Oblivious*) and kept as printed; the 2017 VLDB entry lists the award talk's own 2017 article and is skipped.
+
 ## 2.5.14 — 2026-10-12
 
 Fifteen more real profiles (NLP, networking, software engineering, multi-agent systems, operating systems and storage, information

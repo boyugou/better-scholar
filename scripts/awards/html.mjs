@@ -7,8 +7,14 @@ const LATIN1 = ["Agrave", "Aacute", "Acirc", "Atilde", "Auml", "Aring", "AElig",
 const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", hellip: "…", shy: "", copy: "©", reg: "®", trade: "™", bull: "•", deg: "°", thinsp: " ", ensp: " ", emsp: " " };
 LATIN1.forEach((name, i) => { NAMED[name] = String.fromCharCode(192 + i); });
 
+// HTML also reads the old Latin-1 entities without their semicolon ("J&oumlrg" is "Jörg"), the longest name first
+const LEGACY = new Set([...LATIN1, "amp", "lt", "gt", "quot", "nbsp", "copy", "reg", "shy", "deg"]);
 export const decode = (s) => s.replace(/&(?:#x([0-9a-f]+)|#(\d+)|(\w+));/gi, (m, hex, dec, name) =>
-  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : name in NAMED ? NAMED[name] : name.toLowerCase() in NAMED && /^[a-z]+$/.test(name) ? NAMED[name.toLowerCase()] : m);
+  hex ? String.fromCodePoint(parseInt(hex, 16)) : dec ? String.fromCodePoint(parseInt(dec, 10)) : name in NAMED ? NAMED[name] : name.toLowerCase() in NAMED && /^[a-z]+$/.test(name) ? NAMED[name.toLowerCase()] : m)
+  .replace(/&([A-Za-z][A-Za-z0-9]{1,7})(?!;)/g, (m, name) => {
+    for (let n = name.length; n >= 2; n--) if (LEGACY.has(name.slice(0, n))) return NAMED[name.slice(0, n)] + name.slice(n);
+    return m;
+  });
 
 // the visible text of an HTML fragment (a <br> is a space)
 export const text = (html) => decode(html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, ""))

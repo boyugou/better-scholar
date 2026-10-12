@@ -274,3 +274,18 @@ test("data/awards-2026.json: an award's kind agrees with its printed label (a ru
   }
   assert.deepEqual(bad, []);
 });
+
+test("the bundled list: security and database winners from ACM CCS's and the VLDB Endowment's own pages", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Path ORAM: An extremely simple oblivious RAM protocol", "E Stefanov, M Van Dijk, E Shi, C Fletcher, L Ren, X Yu, S Devadas"), ["CCS 2013 best"]);
+  assert.deepEqual(find("Imperfect forward secrecy: How Diffie-Hellman fails in practice", "D Adrian, K Bhargavan, Z Durumeric, P Gaudry, M Green, JA Halderman"), ["CCS 2015 best"]);
+  assert.deepEqual(find("DolphinAttack: Inaudible voice commands", "G Zhang, C Yan, X Ji, T Zhang, T Zhang, W Xu"), ["CCS 2017 best"]);
+  assert.deepEqual(find("Large language models for code: Security hardening and adversarial testing", "J He, M Vechev"), ["CCS 2023 distinguished"]);
+  assert.deepEqual(find("Control-flow integrity", "M Abadi, M Budiu, U Erlingsson, J Ligatti"), ["CCS 2015 tot"]);
+  assert.deepEqual(find("Rappor: Randomized aggregatable privacy-preserving ordinal response", "Ú Erlingsson, V Pihur, A Korolova"), ["CCS 2024 tot"]);
+  assert.deepEqual(find("C-Store: a column-oriented DBMS", "M Stonebraker, DJ Abadi, A Batkin, X Chen, M Cherniack"), ["VLDB 2015 tot"]);
+  assert.deepEqual(find("Dremel: interactive analysis of web-scale datasets", "S Melnik, A Gubarev, JJ Long, G Romer"), ["VLDB 2020 tot"]);
+  assert.deepEqual(find("Fast algorithms for mining association rules in large databases", "R Agrawal, R Srikant"), ["VLDB 2004 tot"]);
+  assert.deepEqual(find("Path ORAM: An extremely simple oblivious RAM protocol", "A Smith, B Jones"), []);
+});

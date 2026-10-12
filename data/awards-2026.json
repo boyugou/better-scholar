@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2124
+  "count": 2228
  },
  "entries": [
   {
@@ -6452,6 +6452,1208 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "BSDCon 2003: Running BSD Kernels as User Processes by Partial Emulation and Rewriting of Machine Instructions — Hideki Eiraku, University of Tsukuba; Yasushi Shinjo, University of Tsukuba"
+  },
+  {
+   "venue": "CCS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Design and implementation of the idemix anonymous credential system",
+   "authors": [
+    "Jan Camenisch",
+    "Els Van Herreweghen"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2012 Test-of-Time Award: Jan Camenisch and Els Van Herreweghen: Design and implementation of the idemix anonymous credential system"
+  },
+  {
+   "venue": "CCS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mimicry attacks on host-based intrusion detection systems",
+   "authors": [
+    "David Wagner",
+    "Paolo Soto"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2012 Test-of-Time Award: David Wagner and Paolo Soto: Mimicry attacks on host-based intrusion detection systems"
+  },
+  {
+   "venue": "CCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "FANCI: Identification of Stealthy Malicious Logic Using Boolean Functional Analysis",
+   "authors": [
+    "Adam Waksman",
+    "Matthew Suozzo"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2013 Best Paper: Adam Waksman and Matthew Suozzo — FANCI: Identification of Stealthy Malicious Logic Using Boolean Functional Analysis"
+  },
+  {
+   "venue": "CCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Path ORAM: An Extremely Simple Oblivious RAM Protocol",
+   "authors": [
+    "Emil Stefanov",
+    "Christopher Fletcher",
+    "Ling Ren",
+    "Xiangyao Yu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2013 Best Paper: Emil Stefanov, Christopher Fletcher, Ling Ren, and Xiangyao Yu — Path ORAM: An Extremely Simple Oblivious RAM Protocol"
+  },
+  {
+   "venue": "CCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Security Analysis of Integrated Circuit Camouflaging",
+   "authors": [
+    "Jeyavijayan Rajendran",
+    "Michael Sam"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2013 Best Paper: Jeyavijayan Rajendran and Michael Sam — Security Analysis of Integrated Circuit Camouflaging"
+  },
+  {
+   "venue": "CCS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Pairwise Key Pre-distribution Scheme for Wireless Sensor Networks",
+   "authors": [
+    "Wenliang Du",
+    "Yunghsiang S. Han",
+    "Jing Deng",
+    "Pramod K. Varshney"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2013 Test-of-Time Award: Wenliang Du, Yunghsiang S. Han, Jing Deng, and Pramod K. Varshney: A Pairwise Key Pre-distribution Scheme for Wireless Sensor Networks"
+  },
+  {
+   "venue": "CCS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Countering Code-Injection Attacks With Instruction-Set Randomization",
+   "authors": [
+    "Gaurav S. Kc",
+    "Angelos D. Keromytis",
+    "Vassilis Prevelakis"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2013 Test-of-Time Award: Gaurav S. Kc, Angelos D. Keromytis, and Vassilis Prevelakis: Countering Code-Injection Attacks With Instruction-Set Randomization"
+  },
+  {
+   "venue": "CCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Code Reuse Attacks in PHP: Automated POP Chain Generation",
+   "authors": [
+    "Johannes Dahse",
+    "Nikolai Krein",
+    "Thorsten Holz"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2014 Best Paper: Johannes Dahse, Nikolai Krein and Thorsten Holz — Code Reuse Attacks in PHP: Automated POP Chain Generation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Multi-ciphersuite security of the Secure Shell (SSH) protocol",
+   "authors": [
+    "Florian Bergsma",
+    "Benjamin Dowling",
+    "Florian Kohlar",
+    "Jörg Schwenk",
+    "Douglas Stebila"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2014 Best Paper: Florian Bergsma, Benjamin Dowling, Florian Kohlar, Jörg Schwenk and Douglas Stebila — Multi-ciphersuite security of the Secure Shell (SSH) protocol"
+  },
+  {
+   "venue": "CCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Private-by-Design Advertising Meets the Real World",
+   "authors": [
+    "Alexey Reznichenko",
+    "Paul Francis"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2014 Best Paper: Alexey Reznichenko and Paul Francis — Private-by-Design Advertising Meets the Real World"
+  },
+  {
+   "venue": "CCS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Direct anonymous attestation",
+   "authors": [
+    "Ernest F. Brickell",
+    "Jan Camenisch",
+    "Liqun Chen"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2014 Test-of-Time Award: Ernest F. Brickell, Jan Camenisch, and Liqun Chen: Direct anonymous attestation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Privacy and security in library RFID: issues, practices, and architectures",
+   "authors": [
+    "David Molnar",
+    "David Wagner"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2014 Test-of-Time Award: David Molnar and David Wagner: Privacy and security in library RFID: issues, practices, and architectures"
+  },
+  {
+   "venue": "CCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Automated Analysis And Synthesis Of Authenticated Encryption Schemes",
+   "authors": [
+    "Viet Tung Hoang",
+    "Jonathan Katz",
+    "Alex J. Malozemoff"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2015 Best Paper: Viet Tung Hoang, Jonathan Katz and Alex J. Malozemoff — Automated Analysis And Synthesis Of Authenticated Encryption Schemes"
+  },
+  {
+   "venue": "CCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Guitar: Piecing Together Android App GUIs From Memory Images",
+   "authors": [
+    "Brendan Saltaformaggio",
+    "Rohit Bhatia",
+    "Zhongshu Gu",
+    "Xiangyu Zhang",
+    "Dongyan Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2015 Best Paper: Brendan Saltaformaggio, Rohit Bhatia, Zhongshu Gu, Xiangyu Zhang and Dongyan Xu — Guitar: Piecing Together Android App GUIs From Memory Images"
+  },
+  {
+   "venue": "CCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Imperfect Forward Secrecy: How Diffie-Hellman Fails In Practice",
+   "authors": [
+    "David Adrian",
+    "Karthikeyan Bhargavan",
+    "Zakir Durumeric",
+    "Pierrick Gaudry",
+    "Mathew Green",
+    "J. Alex Halderman",
+    "Nadia Heninger",
+    "Drew Springall",
+    "Emmanuel Thomé",
+    "Luke Valenta",
+    "Benjamin Vandersloot",
+    "Eric Wustrow",
+    "Santiago Zanella-Béquelin",
+    "Paul Zimmerman"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2015 Best Paper: David Adrian, Karthikeyan Bhargavan, Zakir Durumeric, Pierrick Gaudry, Mathew Green, J. Alex Halderman, Nadia Heninger, Drew Springall, Emmanuel Thomé, Luke Valenta, Benjamin Vandersloot, Eric Wustrow, Santiago Zanella-Béquelin, and Paul Zimmerman — Imperfect Forward Secrecy: How Diffie-Hellman Fails In Practice"
+  },
+  {
+   "venue": "CCS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Control-flow integrity",
+   "authors": [
+    "Martín Abadi",
+    "Mihai Budiu",
+    "Úlfar Erlingsson",
+    "Jay Ligatti"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2015 Test-of-Time Award: Martín Abadi, Mihai Budiu, Úlfar Erlingsson, Jay Ligatti: Control-flow integrity"
+  },
+  {
+   "venue": "CCS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamic and efficient key management for access hierarchies",
+   "authors": [
+    "Mikhail J. Atallah",
+    "Keith B. Frikken",
+    "Marina Blanton"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2015 Test-of-Time Award: Mikhail J. Atallah, Keith B. Frikken, Marina Blanton: Dynamic and efficient key management for access hierarchies"
+  },
+  {
+   "venue": "CCS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Surfeit of SSH Cipher Suites",
+   "authors": [
+    "Martin R. Albrecht",
+    "Jean Paul Degabriele",
+    "Torben Brandt Hansen",
+    "Kenneth G. Paterson"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2016 Best Paper: Martin R. Albrecht, Jean Paul Degabriele, Torben Brandt Hansen and Kenneth G. Paterson — A Surfeit of SSH Cipher Suites"
+  },
+  {
+   "venue": "CCS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Systematic Analysis of the Juniper Dual EC Incident",
+   "authors": [
+    "Stephen Checkoway",
+    "Jacob Mankiewicz",
+    "Christina Garman",
+    "Joshua Fried",
+    "Shaanan Cohney",
+    "Matthew Green",
+    "Nadia Heninger",
+    "Ralf-Philipp Weinmann",
+    "Eric Rescorla",
+    "Hovav Shacham"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2016 Best Paper: Stephen Checkoway, Jacob Mankiewicz, Christina Garman, Joshua Fried, Shaanan Cohney, Matthew Green, Nadia Heninger, Ralf-Philipp Weinmann, Eric Rescorla, and Hovav Shacham — A Systematic Analysis of the Juniper Dual EC Incident"
+  },
+  {
+   "venue": "CCS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "High-Throughput Semi-Honest Secure Three-Party Computation with an Honest Majority",
+   "authors": [
+    "Toshinori Araki",
+    "Jun Furukawa",
+    "Yehuda Lindell",
+    "Ariel Nof",
+    "Kazuma Ohara"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2016 Best Paper: Toshinori Araki, Jun Furukawa, Yehuda Lindell, Ariel Nof and Kazuma Ohara — High-Throughput Semi-Honest Secure Three-Party Computation with an Honest Majority"
+  },
+  {
+   "venue": "CCS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Attribute-Based Encryption for Fine-Grained Access Control of Encrypted Data",
+   "authors": [
+    "Vipul Goyal",
+    "Omkant Pandey",
+    "Amit Sahai",
+    "Brent Waters"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2016 Test-of-Time Award: Vipul Goyal, Omkant Pandey, Amit Sahai and Brent Waters: Attribute-Based Encryption for Fine-Grained Access Control of Encrypted Data"
+  },
+  {
+   "venue": "CCS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "EXE: Automatically Generating Inputs of Death",
+   "authors": [
+    "Cristian Cadar",
+    "Vijay Ganesh",
+    "Peter M. Pawlowski",
+    "David L. Dill",
+    "Dawson R. Engler"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2016 Test-of-Time Award: Cristian Cadar, Vijay Ganesh, Peter M. Pawlowski, David L. Dill and Dawson R. Engler: EXE: Automatically Generating Inputs of Death"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Formal Foundation for Secure Remote Execution of Enclaves",
+   "authors": [
+    "Pramod Subramanyan",
+    "Rohit Sinha",
+    "Ilia Lebedev",
+    "Srinivas Devadas",
+    "Sanjit Seshia"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2017 Best Paper: Pramod Subramanyan, Rohit Sinha, Ilia Lebedev, Srinivas Devadas, Sanjit Seshia — A Formal Foundation for Secure Remote Execution of Enclaves"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Authenticated Garbling and Efficient Maliciously Secure Two-Party Computation",
+   "authors": [
+    "Xiao Wang",
+    "Samuel Ranellucci",
+    "Jonathan Katz"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2017 Best Paper: Xiao Wang, Samuel Ranellucci, Jonathan Katz — Authenticated Garbling and Efficient Maliciously Secure Two-Party Computation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Better Bounds for Block Cipher Modes of Operation via Nonce-Based Key Derivation",
+   "authors": [
+    "Shay Gueron",
+    "Yehuda Lindell"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2017 Best Paper: Shay Gueron, Yehuda Lindell — Better Bounds for Block Cipher Modes of Operation via Nonce-Based Key Derivation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DolphinAttack: Inaudible Voice Commands",
+   "authors": [
+    "Guoming Zhang",
+    "Chen Yan",
+    "Xiaoyu Ji",
+    "Tianchen Zhang",
+    "Taimin Zhang",
+    "Wenyuan Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2017 Best Paper: Guoming Zhang, Chen Yan, Xiaoyu Ji, Tianchen Zhang, Taimin Zhang Wenyuan Xu — DolphinAttack: Inaudible Voice Commands"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Scaling ORAM for Secure Computation",
+   "authors": [
+    "Jack Doerner",
+    "Abhi Shelat"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2017 Best Paper: Jack Doerner, Abhi Shelat — Scaling ORAM for Secure Computation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Geometry of Innocent Flesh on the Bone: Return-into-libc without Function Calls (on the x86)",
+   "authors": [
+    "Hovav Shacham"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2017 Test-of-Time Award: Hovav Shacham: The Geometry of Innocent Flesh on the Bone: Return-into-libc without Function Calls (on the x86)"
+  },
+  {
+   "venue": "CCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "LEMNA: Explaining Deep Learning based Security Applications",
+   "authors": [
+    "Wenbo Guo",
+    "Dongliang Mu",
+    "Jun Xu",
+    "Purui Su",
+    "Gang Wang",
+    "Xinyu Xing"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2018 Best Paper: Wenbo Guo, Dongliang Mu, Jun Xu, Purui Su, Gang Wang, Xinyu Xing — LEMNA: Explaining Deep Learning based Security Applications"
+  },
+  {
+   "venue": "CCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Toward Detecting Violations of Differential Privacy",
+   "authors": [
+    "Ding Ding",
+    "Yuxin Wang",
+    "Guanhong Wang",
+    "Danfeng Zhang",
+    "Daniel Kifer"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2018 Best Paper: Ding Ding, Yuxin Wang, Guanhong Wang, Danfeng Zhang, Daniel Kifer — Toward Detecting Violations of Differential Privacy"
+  },
+  {
+   "venue": "CCS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Ether: Malware Analysis via Hardware Virtualization Extensions",
+   "authors": [
+    "Artem Dinaburg",
+    "Paul Royal",
+    "Monirul Sharif",
+    "Wenke Lee"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2018 Test-of-Time Award: Artem Dinaburg, Paul Royal, Monirul Sharif, and Wenke Lee: Ether: Malware Analysis via Hardware Virtualization Extensions"
+  },
+  {
+   "venue": "CCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Where Does It Go? Refining Indirect-Call Targets with Multi-layer Type Analysis",
+   "authors": [
+    "Kangjie Lu",
+    "Hong Hu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2019 Best Paper: Kangjie Lu and Hong Hu — Where Does It Go? Refining Indirect-Call Targets with Multi-layer Type Analysis"
+  },
+  {
+   "venue": "CCS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "False data injection attacks against state estimation in electric power grid",
+   "authors": [
+    "Yao Liu",
+    "Peng Ning",
+    "Michael K. Reiter"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2019 Test-of-Time Award: Yao Liu, Peng Ning and Michael K. Reiter: False data injection attacks against state estimation in electric power grid"
+  },
+  {
+   "venue": "CCS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hey, you, get off of my cloud: exploring information leakage in third-party compute clouds",
+   "authors": [
+    "Thomas Ristenpart",
+    "Eran Tromer",
+    "Hovav Shacham",
+    "Stefan Savage"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2019 Test-of-Time Award: Thomas Ristenpart, Eran Tromer, Hovav Shacham, and Stefan Savage: Hey, you, get off of my cloud: exploring information leakage in third-party compute clouds"
+  },
+  {
+   "venue": "CCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "DNS Cache Poisoning Attack Reloaded: Revolutions with Side Channels",
+   "authors": [
+    "Keyu Man",
+    "Zhiyun Qian",
+    "Zhongjie Wang",
+    "Xiaofeng Zheng",
+    "Youjun Huang",
+    "Haixin Duan"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2020 Best Paper: Keyu Man, Zhiyun Qian, Zhongjie Wang, Xiaofeng Zheng, Youjun Huang, Haixin Duan — DNS Cache Poisoning Attack Reloaded: Revolutions with Side Channels"
+  },
+  {
+   "venue": "CCS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "PinDr0p: using single-ended audio features to determine call provenance",
+   "authors": [
+    "Vijay A. Balasubramaniyan",
+    "Aamir Poonawalla",
+    "Mustaque Ahamad",
+    "Michael T. Hunter",
+    "Patrick Traynor"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2020 Test-of-Time Award: Vijay A. Balasubramaniyan, Aamir Poonawalla, Mustaque Ahamad, Michael T. Hunter, and Patrick Traynor: PinDr0p: using single-ended audio features to determine call provenance"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the (In)Security of ElGamal in OpenPGP",
+   "authors": [
+    "Luca De Feo",
+    "Bertram Poettering",
+    "Alessandro Sorniotti"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2021 Best Paper: Luca De Feo; Bertram Poettering; Alessandro Sorniotti (IBM Research Europe - Zurich) — On the (In)Security of ElGamal in OpenPGP"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Renyi Differential Privacy of the Shuffle Model",
+   "authors": [
+    "Antonious M. Girgis",
+    "Deepesh Data",
+    "Suhas Diggavi",
+    "Ananda Theertha Suresh",
+    "Peter Kairouz"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2021 Best Paper: Antonious M. Girgis; Deepesh Data; Suhas Diggavi (University of California Los Angeles); Ananda Theertha Suresh; Peter Kairouz (Google Research) — On the Renyi Differential Privacy of the Shuffle Model"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "One Glitch to Rule Them All: Fault Injection Attacks Against AMD's Secure Encrypted Virtualization",
+   "authors": [
+    "Robert Buhren",
+    "Hans-Niklas Jacob",
+    "Thilo Krachenfels",
+    "Jean-Pierre Seifert"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2021 Best Paper: Robert Buhren; Hans-Niklas Jacob; Thilo Krachenfels (Technische UniversitätBerlin - SECT); Jean-Pierre Seifert (Technische Universität Berlin - SECT & Fraunhofer SIT) — One Glitch to Rule Them All: Fault Injection Attacks Against AMD's Secure Encrypted Virtualization"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "V-Shuttle: Scalable and Semantics-Aware Hypervisor Virtual Device Fuzzing",
+   "authors": [
+    "Gaoning Pan",
+    "Xingwei Lin",
+    "Xuhong Zhang",
+    "Yongkang Jia",
+    "Shouling Ji",
+    "Chunming Wu",
+    "Xinlei Ying",
+    "Jiashui Wang",
+    "Yanjun Wu"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2021 Best Paper: Gaoning Pan (Zhejiang University & Ant Group); Xingwei Lin (Ant Group); Xuhong Zhang (Zhejiang University & Binjiang Institute of Zhejiang University); Yongkang Jia (Zhejiang University); Shouling Ji (Zhejiang University & Binjiang Institute of Zhejiang University); Chunming Wu (Zhejiang University); Xinlei Ying (Ant Group); Jiashui Wang (Ant Group); Yanjun Wu (Institute of Software, Chinese Academy of Sciences) — V-Shuttle: Scalable and Semantics-Aware Hypervisor Virtual Device Fuzzing"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "XSinator.com: From a Formal Model to the Automatic Evaluation of Cross-Site Leaks in Web Browsers",
+   "authors": [
+    "Lukas Knittel",
+    "Christian Mainka",
+    "Marcus Niemietz",
+    "Dominik Trevor Noß Jörg Schwenk"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2021 Best Paper: Lukas Knittel; Christian Mainka (Ruhr University Bochum); Marcus Niemietz (Niederrhein University of Applied Sciences); Dominik Trevor Noß Jörg Schwenk (Ruhr University Bochum) — XSinator.com: From a Formal Model to the Automatic Evaluation of Cross-Site Leaks in Web Browsers"
+  },
+  {
+   "venue": "CCS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Android Permissions Demystified",
+   "authors": [
+    "Adrienne Porter Felt",
+    "Erika Chin",
+    "Steve Hanna",
+    "Dawn Song",
+    "David A. Wagner"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2021 Test-of-Time Award: Adrienne Porter Felt, Erika Chin, Steve Hanna, Dawn Song, David A. Wagner: Android Permissions Demystified"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Automatic Detection of Speculative Execution Combinations",
+   "authors": [
+    "Xaver Fabian",
+    "Marco Patrignani",
+    "Marco Guarnieri"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2022 Distinguished Paper: Xaver Fabian, Marco Patrignani, Marco Guarnieri — Automatic Detection of Speculative Execution Combinations"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Proving UNSAT in Zero Knowledge",
+   "authors": [
+    "Ning Luo",
+    "Timos Antonopoulos",
+    "William Harris",
+    "Ruzica Piskac",
+    "Eran Tromer",
+    "Xiao Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2022 Distinguished Paper: Ning Luo, Timos Antonopoulos, William Harris, Ruzica Piskac, Eran Tromer, Xiao Wang — Proving UNSAT in Zero Knowledge"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "STAR: Secret Sharing for Private Threshold Aggregation Reporting",
+   "authors": [
+    "Alex Davidson",
+    "Peter Snyder",
+    "E. B. Quirk",
+    "Joseph Genereux",
+    "Hamed Haddadi",
+    "Benjamin Livshits"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2022 Distinguished Paper: Alex Davidson, Peter Snyder, E. B. Quirk, Joseph Genereux, Hamed Haddadi, Benjamin Livshits — STAR: Secret Sharing for Private Threshold Aggregation Reporting"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Victory by KO: Attacking OpenPGP Using Key Overwriting",
+   "authors": [
+    "Kenny Paterson",
+    "Lara Bruseghini",
+    "Daniel Huigens"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2022 Distinguished Paper: Kenny Paterson, Lara Bruseghini, Daniel Huigens — Victory by KO: Attacking OpenPGP Using Key Overwriting"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Zapper: Smart Contracts with Data and Identity Privacy",
+   "authors": [
+    "Samuel Steffen",
+    "Benjamin Bichsel",
+    "Martin Vechev"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2022 Distinguished Paper: Samuel Steffen, Benjamin Bichsel, Martin Vechev — Zapper: Smart Contracts with Data and Identity Privacy"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Cross-VM Side Channels and Their Use to Extract Private Keys",
+   "authors": [
+    "Yinqian Zhang",
+    "Ari Juels",
+    "Michael K. Reiter",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2022 Test-of-Time Award: Yinqian Zhang, Ari Juels, Michael K. Reiter, Thomas Ristenpart: Cross-VM Side Channels and Their Use to Extract Private Keys"
+  },
+  {
+   "venue": "CCS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamic searchable symmetric encryption",
+   "authors": [
+    "Seny Kamara",
+    "Charalampos Papamanthou",
+    "Tom Roeder"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2022 Test-of-Time Award: Seny Kamara, Charalampos Papamanthou, Tom Roeder: Dynamic searchable symmetric encryption"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Alert Alchemy: SOC Workflows and Decisions in the Management of NIDS Rules",
+   "authors": [
+    "Mathew Vermeer",
+    "Natalia Kadenko",
+    "Michel Van Eeten",
+    "Carlos Gañán",
+    "Simon Parkin"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Mathew Vermeer, Natalia Kadenko, Michel Van Eeten, Carlos Gañán, and Simon Parkin — Alert Alchemy: SOC Workflows and Decisions in the Management of NIDS Rules"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Amplification by Shuffling without Shuffling",
+   "authors": [
+    "Borja Balle",
+    "James Bell",
+    "Adria Gascon"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Borja Balle, James Bell, and Adria Gascon — Amplification by Shuffling without Shuffling"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Batchman and Robin: Batched and Non-batched Branching for Interactive ZK",
+   "authors": [
+    "Yibin Yang",
+    "David Heath",
+    "Carmit Hazay",
+    "Vladimir Kolesnikov",
+    "Muthuramakrishnan Venkitasubramaniam"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Yibin Yang, David Heath, Carmit Hazay, Vladimir Kolesnikov, and Muthuramakrishnan Venkitasubramaniam — Batchman and Robin: Batched and Non-batched Branching for Interactive ZK"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Capacity: Cryptographically-Enforced In-process Capabilities for Modern ARM Architectures",
+   "authors": [
+    "Kha Dinh Duy",
+    "Kyuwon Cho",
+    "Taehyun Noh",
+    "Hojoon Lee"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Kha Dinh Duy, Kyuwon Cho, Taehyun Noh, and Hojoon Lee — Capacity: Cryptographically-Enforced In-process Capabilities for Modern ARM Architectures"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "CoCo: Efficient Browser Extension Vulnerability Detection via Coverage-guided, Concurrent Abstract Interpretation",
+   "authors": [
+    "Jianjia Yu",
+    "Song Li",
+    "Junmin Zhu",
+    "Yinzhi Cao"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Jianjia Yu, Song Li, Junmin Zhu, and Yinzhi Cao — CoCo: Efficient Browser Extension Vulnerability Detection via Coverage-guided, Concurrent Abstract Interpretation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Concurrent Composition for Interactive Differential Privacy with Adaptive Privacy-Loss Parameters",
+   "authors": [
+    "Samuel Haney",
+    "Michael Shoemate",
+    "Grace Tian",
+    "Salil Vadhan",
+    "Andrew Vyrros",
+    "Vicki Xu",
+    "Wanrong Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Samuel Haney, Michael Shoemate, Grace Tian, Salil Vadhan, Andrew Vyrros, Vicki Xu, and Wanrong Zhang — Concurrent Composition for Interactive Differential Privacy with Adaptive Privacy-Loss Parameters"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "FutORAMa: A Concretely Efficient Hierarchical Oblivious RAM",
+   "authors": [
+    "Gilad Asharov",
+    "Ilan Komargodski",
+    "Yehuda Michelson"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Gilad Asharov, Ilan Komargodski, and Yehuda Michelson — FutORAMa: A Concretely Efficient Hierarchical Oblivious RAM"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "HE3DB: An Efficient and Elastic Encrypted Database Via Arithmetic-And-Logic Fully Homomorphic Encryption",
+   "authors": [
+    "Song Bian",
+    "Zhou Zhang",
+    "Haowen Pan",
+    "Ran Mao",
+    "Zian Zhao",
+    "Yier Jin",
+    "Zhenyu Guan"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Song Bian, Zhou Zhang, Haowen Pan, Ran Mao, Zian Zhao, Yier Jin, and Zhenyu Guan — HE3DB: An Efficient and Elastic Encrypted Database Via Arithmetic-And-Logic Fully Homomorphic Encryption"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "How Hard is Takeover in DPoS Blockchains? Understanding the Security of Coin-based Voting Governance",
+   "authors": [
+    "Chao Li",
+    "Balaji Palanisamy",
+    "Runhua Xu",
+    "Li Duan",
+    "Jiqiang Liu",
+    "Wei Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Chao Li, Balaji Palanisamy, Runhua Xu, Li Duan, Jiqiang Liu, and Wei Wang — How Hard is Takeover in DPoS Blockchains? Understanding the Security of Coin-based Voting Governance"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Large Language Models for Code: Security Hardening and Adversarial Testing",
+   "authors": [
+    "Jingxuan He",
+    "Martin Vechev"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Jingxuan He and Martin Vechev — Large Language Models for Code: Security Hardening and Adversarial Testing"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "PANIC: PAN-assisted Intra-process Memory Isolation on ARM",
+   "authors": [
+    "Jiali Xu",
+    "Mengyao Xie",
+    "Chenggang Wu",
+    "Yinqian Zhang",
+    "Qijing Li",
+    "Xuan Huang",
+    "Yuanming Lai",
+    "Yan Kang",
+    "Wei Wang",
+    "Qiang Wei",
+    "Zhe Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Jiali Xu, Mengyao Xie, Chenggang Wu, Yinqian Zhang, Qijing Li, Xuan Huang, Yuanming Lai, Yan Kang, Wei Wang, Qiang Wei, and Zhe Wang — PANIC: PAN-assisted Intra-process Memory Isolation on ARM"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Security Verification of Low-Trust Architectures",
+   "authors": [
+    "Qinhan Tan",
+    "Yonathan Fisseha",
+    "Shibo Chen",
+    "Lauren Biernacki",
+    "Jean-Baptiste Jeannin",
+    "Sharad Malik",
+    "Todd Austin"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Qinhan Tan, Yonathan Fisseha, Shibo Chen, Lauren Biernacki, Jean-Baptiste Jeannin, Sharad Malik, and Todd Austin — Security Verification of Low-Trust Architectures"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Silence is not Golden: Disrupting the Load Balancing of Authoritative DNS Servers",
+   "authors": [
+    "Fenglu Zhang",
+    "Baojun Liu",
+    "Eihal Alowaisheq",
+    "Jianjun Chen",
+    "Chaoyi Lu",
+    "Linjian Song",
+    "Yong Ma",
+    "Ying Liu",
+    "Haixin Duan",
+    "Min Yang"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Fenglu Zhang, Baojun Liu, Eihal Alowaisheq, Jianjun Chen, Chaoyi Lu, Linjian Song, Yong Ma, Ying Liu, Haixin Duan, and Min Yang — Silence is not Golden: Disrupting the Load Balancing of Authoritative DNS Servers"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Specification and Verification of Side-channel Security for Open-source Processors via Leakage Contracts",
+   "authors": [
+    "Zilong Wang",
+    "Gideon Mohr",
+    "Klaus Von Gleissenthall",
+    "Jan Reineke",
+    "Marco Guarnieri"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Zilong Wang, Gideon Mohr, Klaus Von Gleissenthall, Jan Reineke, and Marco Guarnieri — Specification and Verification of Side-channel Security for Open-source Processors via Leakage Contracts"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SpecVerilog: Adapting Information Flow Control for Secure Speculation",
+   "authors": [
+    "Drew Zagieboylo",
+    "Charles Sherk",
+    "Gookwon Edward Suh",
+    "Andrew Myers"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Drew Zagieboylo, Charles Sherk, Gookwon Edward Suh, and Andrew Myers — SpecVerilog: Adapting Information Flow Control for Secure Speculation"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Stealing the Decoding Algorithms of Language Models",
+   "authors": [
+    "Ali Naseh",
+    "Kalpesh Krishna",
+    "Mohit Iyyer",
+    "Amir Houmansadr"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Ali Naseh, Kalpesh Krishna, Mohit Iyyer, and Amir Houmansadr — Stealing the Decoding Algorithms of Language Models"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Uncle Maker: (Time)Stamping Out The Competition in Ethereum",
+   "authors": [
+    "Aviv Yaish",
+    "Gilad Stern",
+    "Aviv Zohar"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-bestpaper.html",
+   "evidence": "CCS 2023 Distinguished Paper: Aviv Yaish, Gilad Stern, and Aviv Zohar — Uncle Maker: (Time)Stamping Out The Competition in Ethereum"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Geo-indistinguishability: Differential Privacy for Location-based Systems",
+   "authors": [
+    "Miguel E. Andrés",
+    "Nicolás E. Bordenabe",
+    "Konstantinos Chatzikokolakis",
+    "Catuscia Palamidessi"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2023 Test-of-Time Award: Miguel E. Andrés, Nicolás E. Bordenabe, Konstantinos Chatzikokolakis, and Catuscia Palamidessi: Geo-indistinguishability: Differential Privacy for Location-based Systems"
+  },
+  {
+   "venue": "CCS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Path ORAM: An Extremely Simple Oblivious",
+   "authors": [
+    "Emil Stefanov",
+    "Marten van Dijk",
+    "Elaine Shi",
+    "T-H. Hubert Chan",
+    "Christopher Fletcher",
+    "Ling Ren",
+    "Xiangyao Yu",
+    "Srinivas Devadas"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2023 Test-of-Time Award: Emil Stefanov, Marten van Dijk, Elaine Shi, T-H. Hubert Chan, Christopher Fletcher, Ling Ren, Xiangyao Yu, and Srinivas Devadas: Path ORAM: An Extremely Simple Oblivious"
+  },
+  {
+   "venue": "CCS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Rappor: Randomized aggregatable privacy-preserving ordinal response",
+   "authors": [
+    "Ulfar Erlingsson",
+    "Vasyl Pihur",
+    "Aleksandra Korolova"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2024 Test-of-Time Award: Ulfar Erlingsson, Vasyl Pihur, Aleksandra Korolova: Rappor: Randomized aggregatable privacy-preserving ordinal response"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Demystifying Incentives in the Consensus Computer",
+   "authors": [
+    "Loi Luu",
+    "Jason Teutsch",
+    "Raghav Kulkarni",
+    "Prateek Saxena"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2025 Test-of-Time Award: Loi Luu, Jason Teutsch, Raghav Kulkarni, Prateek Saxena: Demystifying Incentives in the Consensus Computer"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures",
+   "authors": [
+    "Matt Fredrikson",
+    "Somesh Jha",
+    "Thomas Ristenpart"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2025 Test-of-Time Award: Matt Fredrikson, Somesh Jha, Thomas Ristenpart: Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures"
+  },
+  {
+   "venue": "CCS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Privacy-Preserving Deep Learning",
+   "authors": [
+    "Reza Shokri",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "source": "https://www.sigsac.org/ccs/CCS_awards/ccs-tta.html",
+   "evidence": "CCS 2025 Test-of-Time Award: Reza Shokri, Vitaly Shmatikov: Privacy-Preserving Deep Learning"
   },
   {
    "venue": "CoNLL",
@@ -35625,6 +36827,544 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VehicleSec '26: Perspective-Shift Attacks Against Optical Perception Sensors: A Novel Attack Vector on LiDAR and Camera — Marco Calipari, Technical University of Munich; Michael Kühr, Technical University of Munich; Dominik Kulmer, Technical University of Munich; Maximilian Luedecke, Technical University of Munich; Mohammad Hamad, Technical University of Munich; Sebastian Steinhorst, Technical Uni"
+  },
+  {
+   "venue": "VLDB",
+   "year": 1995,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "A Model of CAD Transactions",
+   "authors": [
+    "François Bancilhon",
+    "Won Kim",
+    "Henry F. Korth"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 1995 10-year Award: François Bancilhon, Won Kim, and Henry F. Korth: A Model of CAD Transactions"
+  },
+  {
+   "venue": "VLDB",
+   "year": 1996,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Object and File Management in the EXODUS Extensible Database System",
+   "authors": [
+    "Michael J. Carey",
+    "David J. DeWitt",
+    "Joel E. Richardson",
+    "Eugene J. Shekita"
+   ],
+   "track": "main",
+   "paperYear": 1986,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 1996 10-year Award: Michael J. Carey, David J. DeWitt, Joel E. Richardson, and Eugene J. Shekita: Object and File Management in the EXODUS Extensible Database System"
+  },
+  {
+   "venue": "VLDB",
+   "year": 1997,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "The R+-Tree: A Dynamic Index for Multi-Dimensional Objects",
+   "authors": [
+    "Timos Sellis",
+    "Nick Roussopoulos",
+    "Christos Faloutsos"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 1997 10-year Award: Timos Sellis, Nick Roussopoulos, and Christos Faloutsos: The R+-Tree: A Dynamic Index for Multi-Dimensional Objects"
+  },
+  {
+   "venue": "VLDB",
+   "year": 1998,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Disk Shadowing",
+   "authors": [
+    "Dina Bitton",
+    "Jim Gray"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 1998 10-year Award: Dina Bitton and Jim Gray: Disk Shadowing"
+  },
+  {
+   "venue": "VLDB",
+   "year": 1999,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "ARIES/NT: A Recovery Method Based on Write-Ahead Logging for Nested Transactions)",
+   "authors": [
+    "Kurt Rothermel",
+    "C. Mohan"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 1999 10-year Award: Kurt Rothermel and C. Mohan: ARIES/NT: A Recovery Method Based on Write-Ahead Logging for Nested Transactions)"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Deriving Production Rules for Constraint Maintainance",
+   "authors": [
+    "Sterfano Ceri",
+    "Jennifer Widom"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2000 10-year Award: Sterfano Ceri and Jennifer Widom: Deriving Production Rules for Constraint Maintainance"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2001,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "A Transactional Model for Long-Running Activities",
+   "authors": [
+    "Umeshwar Dayal",
+    "Meichun Hsu",
+    "Rivka Ladin"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2001 10-year Award: Umeshwar Dayal, Meichun Hsu, and Rivka Ladin: A Transactional Model for Long-Running Activities"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Performance Evaluation of an Adaptive and Robust Load Control Method for the Avoidance of Data-Contention Thrashing",
+   "authors": [
+    "Axel Moenkeberg",
+    "Gerhard Weikum"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2002 10-year Award: Axel Moenkeberg and Gerhard Weikum: Performance Evaluation of an Adaptive and Robust Load Control Method for the Avoidance of Data-Contention Thrashing"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Querying in Highly Mobile Distributed Environments",
+   "authors": [
+    "T. Imielinski",
+    "B. R. Badrinath"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2002 10-year Award: T. Imielinski and B. R. Badrinath: Querying in Highly Mobile Distributed Environments"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Universality of Serial Histograms",
+   "authors": [
+    "Yannis E. Ioannidis"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2003 10-year Award: Yannis E. Ioannidis: Universality of Serial Histograms"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Fast Algorithms for Mining Association Rules in Large Databases",
+   "authors": [
+    "Rakesh Agrawal",
+    "Ramakrishnan Srikant"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2004 10-year Award: Rakesh Agrawal and Ramakrishnan Srikant: Fast Algorithms for Mining Association Rules in Large Databases"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "W3QS: A Query System for the World-Wide Web",
+   "authors": [
+    "David Konopnicki",
+    "Oded Shmueli"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2005 10-year Award: David Konopnicki and Oded Shmueli: W3QS: A Query System for the World-Wide Web"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Querying Heterogeneous Information Sources using Source Descriptions",
+   "authors": [
+    "Alon Y. Levy",
+    "Anand Rajaraman",
+    "Joann J. Ordille"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2006 10-year Award: Alon Y. Levy, Anand Rajaraman, and Joann J. Ordille: Querying Heterogeneous Information Sources using Source Descriptions"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "An Efficient Cost-Driven Index Selection Tool for Microsoft SQL Server",
+   "authors": [
+    "Surajit Chaudhuri",
+    "Vivek Narasayya"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2007 10-year Award: Surajit Chaudhuri, and Vivek Narasayya: An Efficient Cost-Driven Index Selection Tool for Microsoft SQL Server"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "A Quantitative Analysis and Performance Study for Similarity-Search Methods in High-Dimensional Spaces",
+   "authors": [
+    "Stephen Blott",
+    "Hans Schek",
+    "Roger Weber"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2008 10-year Award: Stephen Blott, Hans Schek and Roger Weber: A Quantitative Analysis and Performance Study for Similarity-Search Methods in High-Dimensional Spaces"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Database Architecture Optimized for the New Bottleneck: Memory Access",
+   "authors": [
+    "Peter A. Boncz",
+    "Stefan Manegold",
+    "Martin L. Kersten"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2009 10-year Award: Peter A. Boncz, Stefan Manegold, Martin L. Kersten: Database Architecture Optimized for the New Bottleneck: Memory Access"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Database replication: a tale of research across communities",
+   "authors": [
+    "Bettina Kemme",
+    "Gustavo Alonso"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2010 10-year Award: Bettina Kemme, Gustavo Alonso: Database replication: a tale of research across communities"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "10-Year Award",
+   "title": "Generic Schema Matching With Cupid",
+   "authors": [
+    "Philip A. Bernstein",
+    "Jayant Madhavan",
+    "Erhard Rahm"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.vldb.org/archives/10year.html",
+   "evidence": "VLDB 2011 10-year Award: Philip A. Bernstein, Jayant Madhavan, Erhard Rahm: Generic Schema Matching With Cupid"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Approximate Frequency Counts over Data Streams",
+   "authors": [
+    "Gurmeet Singh Manku",
+    "Rajeev Motwani"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2012 Test of Time Award: Gurmeet Singh Manku, Rajeev Motwani: Approximate Frequency Counts over Data Streams"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Query Evaluation on Probabilistic Databases",
+   "authors": [
+    "Nilesh Dalvi",
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2014 Test of Time Award: Nilesh Dalvi, Dan Suciu: Efficient Query Evaluation on Probabilistic Databases"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "C-Store: A Column-oriented DBMS",
+   "authors": [
+    "Michael Stonebraker",
+    "Daniel J. Abadi",
+    "Adam Batkin",
+    "Xuedong Chen",
+    "Mitch Cherniack",
+    "Miguel Ferreira",
+    "Edmond Lau",
+    "Amerson Lin",
+    "Samuel Madden",
+    "Elizabeth J. O'Neil",
+    "Patrick E. O'Neil",
+    "Alex Rasin",
+    "Nga Tran",
+    "Stanley B. Zdonik"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2015 Test of Time Award: Michael Stonebraker, Daniel J. Abadi, Adam Batkin, Xuedong Chen, Mitch Cherniack, Miguel Ferreira, Edmond Lau, Amerson Lin, Samuel Madden, Elizabeth J. O'Neil, Patrick E. O'Neil, Alex Rasin, Nga Tran, Stanley B. Zdonik: C-Store: A Column-oriented DBMS"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The New Casper: Query Processing for Location Services without Compromising Privacy",
+   "authors": [
+    "Mohamed F. Mokbel",
+    "Chi-Yin Chow",
+    "Walid G. Aref"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2016 Test of Time Award: Mohamed F. Mokbel, Chi-Yin Chow, Walid G. Aref: The New Casper: Query Processing for Location Services without Compromising Privacy"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "WebTables: exploring the power of tables on the web",
+   "authors": [
+    "Michael J. Cafarella",
+    "Alon Y. Halevy",
+    "Daisy Zhe Wang",
+    "Eugene Wu",
+    "Yang Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2018 Test of Time Award: Michael J. Cafarella, Alon Y. Halevy, Daisy Zhe Wang, Eugene Wu, Yang Zhang: WebTables: exploring the power of tables on the web"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "HadoopDB: An Architectural Hybrid of MapReduce and DBMS Technologies for Analytical Workloads",
+   "authors": [
+    "Azza Abouzeid",
+    "Kamil Bajda-Pawlikowski",
+    "Daniel Abadi",
+    "Avi Silberschatz",
+    "Alexander Rasin"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2019 Test of Time Award: Azza Abouzeid, Kamil Bajda-Pawlikowski, Daniel Abadi, Avi Silberschatz, Alexander Rasin: HadoopDB: An Architectural Hybrid of MapReduce and DBMS Technologies for Analytical Workloads"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "PNUTS: Yahoo!'s hosted data serving platform",
+   "authors": [
+    "Brian F. Cooper",
+    "Raghu Ramakrishnan",
+    "Utkarsh Srivastava",
+    "Adam Silberstein",
+    "Philip Bohannon",
+    "Hans-Arno Jacobsen",
+    "Nick Puz",
+    "Daniel Weaver",
+    "Ramana Yerneni"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2019 Test of Time Award: Brian F. Cooper, Raghu Ramakrishnan, Utkarsh Srivastava, Adam Silberstein, Philip Bohannon, Hans-Arno Jacobsen, Nick Puz, Daniel Weaver, Ramana Yerneni: PNUTS: Yahoo!'s hosted data serving platform"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dremel: interactive analysis of web-scale datasets",
+   "authors": [
+    "Sergey Melnik",
+    "Andrey Gubarev",
+    "Jing Jing Long",
+    "Geoffrey Romer",
+    "Shiva Shivakumar",
+    "Matt Tolton",
+    "Theo Vassilakis"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2020 Test of Time Award: Sergey Melnik, Andrey Gubarev, Jing Jing Long, Geoffrey Romer, Shiva Shivakumar, Matt Tolton, and Theo Vassilakis: Dremel: interactive analysis of web-scale datasets"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficiently Compiling Efficient Query Plans for Modern Hardware",
+   "authors": [
+    "Thomas Neumann"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2021 Test of Time Award: Thomas Neumann: Efficiently Compiling Efficient Query Plans for Modern Hardware"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks",
+   "authors": [
+    "Yizhou Sun",
+    "Jiawei Han",
+    "Xifeng Yan",
+    "Philip S. Yu",
+    "Tianyi Wu"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2022 Test of Time Award: Yizhou Sun, Jiawei Han, Xifeng Yan, Philip S. Yu, Tianyi Wu: PathSim: Meta Path-Based Top-K Similarity Search in Heterogeneous Information Networks"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Distributed Graphlab: A framework for machine learning in the cloud",
+   "authors": [
+    "Yucheng Low",
+    "Joseph Gonzalez",
+    "Aapo Kyrola",
+    "Danny Bickson",
+    "Carlos Guestrin",
+    "Joseph M. Hellerstein"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2023 Test of Time Award: Yucheng Low, Joseph Gonzalez, Aapo Kyrola, Danny Bickson, Carlos Guestrin, Joseph M. Hellerstein: Distributed Graphlab: A framework for machine learning in the cloud"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hadoop GIS: A High Performance Spatial Data Warehousing System over MapReduce",
+   "authors": [
+    "Ablimit Aji",
+    "Fusheng Wang",
+    "Hoang Vo",
+    "Rubao Lee",
+    "Qiaoling Liu",
+    "Xiaodong Zhang",
+    "Joel H. Saltz"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2024 Test of Time Award: Ablimit Aji, Fusheng Wang, Hoang Vo, Rubao Lee, Qiaoling Liu, Xiaodong Zhang, Joel H. Saltz: Hadoop GIS: A High Performance Spatial Data Warehousing System over MapReduce"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How good are query optimizers, really?",
+   "authors": [
+    "Viktor Leis",
+    "Andrey Gubichev",
+    "Atanas Mirchev",
+    "Peter Boncz",
+    "Alfons Kemper",
+    "Thomas Neumann"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2025 Test of Time Award: Viktor Leis, Andrey Gubichev, Atanas Mirchev, Peter Boncz, Alfons Kemper, and Thomas Neumann: How good are query optimizers, really?"
+  },
+  {
+   "venue": "VLDB",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-scale, Unbounded, Out-of-order Data Processing",
+   "authors": [
+    "Tyler Akidau",
+    "Robert Bradshaw",
+    "Craig Chambers",
+    "Slava Chernyak",
+    "Rafael J. Fernandez-Moctezuma",
+    "Reuven Lax",
+    "Sam McVeety",
+    "Daniel Mills",
+    "Frances Perry",
+    "Eric Schmidt",
+    "Sam Whittle"
+   ],
+   "track": "main",
+   "source": "https://vldb.org/awards_10year.html",
+   "evidence": "VLDB 2026 Test of Time Award: Tyler Akidau, Robert Bradshaw, Craig Chambers, Slava Chernyak, Rafael J. Fernandez-Moctezuma, Reuven Lax, Sam McVeety, Daniel Mills, Frances Perry, Eric Schmidt, Sam Whittle: The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-scale, Unbounded, Out-of-order Data Processing"
   },
   {
    "venue": "VM",
