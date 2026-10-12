@@ -146,6 +146,8 @@ test("the bundled list: well-known CV and AI winners are found from Scholar-styl
   assert.deepEqual(find("Informer: Beyond efficient transformer for long sequence time-series forecasting", "H Zhou, S Zhang, J Peng"), ["AAAI 2021 outstanding"]);
   assert.deepEqual(find("Maximum entropy inverse reinforcement learning", "BD Ziebart, AL Maas, JA Bagnell, AK Dey"), ["AAAI 2024 tot"]);
   assert.deepEqual(find("Levin tree search with context models", "L Orseau, M Hutter, LHS Lelis"), ["IJCAI 2023 distinguished"]);
+  assert.deepEqual(find("Keep your distance: Land division with separation", "E Elkind, E Segal-Halevi, W Suksompong"), ["IJCAI 2021 distinguished"]);
+  assert.deepEqual(find("Plurality veto: A simple voting rule achieving optimal metric distortion", "F Kizilkaya, D Kempe"), ["IJCAI 2022 distinguished"]);
   // the same title with someone else first, or a near title, is not the paper
   assert.deepEqual(find("Mask R-CNN", "A Smith, B Jones"), []);
   assert.deepEqual(find("Mask R-CNN for object detection", "K He, G Gkioxari"), []);

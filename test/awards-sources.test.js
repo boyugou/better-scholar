@@ -670,3 +670,33 @@ test("SIGMOD best papers table: sections with alternating Title / Authors lines,
   ]);
   assert.ok(entries.every((e) => e.venue === "SIGMOD" && e.evidence.includes(e.title.slice(0, 10))));
 });
+
+test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
+  const { parse } = await import("../scripts/awards/ijcai.mjs");
+  const src = "https://example.org/distinguished-papers/";
+  const y2020 = `<h2 class="x">Distinguished papers</h2><ul><li>A Synthetic Explanation Paper from Reviews<br>Ann Lee, Bo W. Chen</li></ul><ul><li>A Synthetic Side-Effects Paper<br>Cy Diaz, Dee Park, Eli Ross</li></ul><p></p>
+</div></div></article><div>Not content: <strong>Other Thing</strong></div>`;
+  const wrap = `<div class="entry-content single-content">${y2020}`;
+  assert.deepEqual(parse(wrap, { year: 2020, source: src }).map((e) => [e.year, e.award, e.title, e.authors]), [
+    [2020, "distinguished", "A Synthetic Explanation Paper from Reviews", ["Ann Lee", "Bo W. Chen"]],
+    [2020, "distinguished", "A Synthetic Side-Effects Paper", ["Cy Diaz", "Dee Park", "Eli Ross"]]
+  ]);
+  const y2021 = `<div class="entry-content clear" itemprop="text"><p><strong>A Synthetic Unsolvability Paper</strong><br>Fay Gray (Linköping University), Gia Stone (Universitat Pompeu Fabra), Hal Wu<br>(Linköping University)</p>
+<p class="ec-pdf"><a href="x.pdf">PDF</a></p><p><br>O<strong>n a Synthetic Relation Between Theories</strong><br>Ivy Xu (KU Leuven), Jo Yan (Vrije Universiteit Brussel)</p>
+<p><br><strong>A Synthetic Land Division Paper</strong><br>Kai Zu (University of Oxford), Lu Mo (Ariel University), Ned Oh (National<br>University of Singapore)</p>
+<h2 class="wp-block-heading">Honorable Mention </h2><p><strong>A Synthetic Ontology Learning Paper</strong><br>Pia Qi (University of Bremen), Ray Sun (University of Hildesheim)</p></div><!-- .entry-content .clear -->`;
+  assert.deepEqual(parse(y2021, { year: 2021, source: src }).map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["distinguished", "Distinguished Paper", "A Synthetic Unsolvability Paper", ["Fay Gray", "Gia Stone", "Hal Wu"]],
+    ["distinguished", "Distinguished Paper", "On a Synthetic Relation Between Theories", ["Ivy Xu", "Jo Yan"]],
+    ["distinguished", "Distinguished Paper", "A Synthetic Land Division Paper", ["Kai Zu", "Lu Mo", "Ned Oh"]],
+    ["runner-up", "Distinguished Paper Honorable Mention", "A Synthetic Ontology Learning Paper", ["Pia Qi", "Ray Sun"]]
+  ]);
+  const y2022 = `<nav><h2>Menu item</h2></nav><main id="main"><h1 class="single-title">Distinguished Papers</h1>
+<h2 class="wp-block-heading"><strong><em>A Synthetic Voting Rule Achieving Optimal Distortion</em></strong></h2>
+<p>Sue Tan ( University of Southern California ) &nbsp;<br>Tom Uy ( University of Southern California )&nbsp; &nbsp;</p>
+<h2 class="wp-block-heading"><strong><em>A Synthetic Proof-Number Search Paper</em></strong></h2><p>Una Vo ( Kotaicode GmbH )  <br>Vic Wan ( Bayer AG )  </p></main>`;
+  assert.deepEqual(parse(y2022, { year: 2022, source: src }).map((e) => [e.title, e.authors]), [
+    ["A Synthetic Voting Rule Achieving Optimal Distortion", ["Sue Tan", "Tom Uy"]],
+    ["A Synthetic Proof-Number Search Paper", ["Una Vo", "Vic Wan"]]
+  ]);
+});

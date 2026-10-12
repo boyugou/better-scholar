@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.4 — 2026-10-12
+
+- **IJCAI distinguished papers 2020–2022** (9 new entries next to 2023's) from the conference sites' own *Distinguished Papers* pages
+  (four WordPress markups; 2021 also names an honorable mention). `scripts/awards/ijcai.mjs` reads all four shapes. The list holds
+  2041 awards.
+
 ## 2.5.3 — 2026-10-12
 
 - **SIGMOD and PODS best papers** (92 entries) from ACM SIGMOD's own pages: the SIGMOD best-paper table (1994–2026, with honorable

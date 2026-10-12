@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2032
+  "count": 2041
  },
  "entries": [
   {
@@ -18564,6 +18564,140 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The 47th International Conference on Software Engineering (ICSE 2025): Enrique Barba Roque, Luís Cruz, Thomas Durieux: Unveiling the Energy Vampires: A Methodology for Debugging Software Energy Consumption"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "A Multi-Objective Approach to Mitigate Negative Side Effects",
+   "authors": [
+    "Sandhya Saisubramanian",
+    "Ece Kamar",
+    "Shlomo Zilberstein"
+   ],
+   "track": "main",
+   "source": "https://ijcai-20.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: A Multi-Objective Approach to Mitigate Negative Side Effects — Sandhya Saisubramanian, Ece Kamar, Shlomo Zilberstein"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Synthesizing Aspect-Driven Recommendation Explanations from Reviews",
+   "authors": [
+    "Trung-Hoang Le",
+    "Hady W. Lauw"
+   ],
+   "track": "main",
+   "source": "https://ijcai-20.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: Synthesizing Aspect-Driven Recommendation Explanations from Reviews — Trung-Hoang Le, Hady W. Lauw"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Keep Your Distance: Land Division With Separation",
+   "authors": [
+    "Edith Elkind",
+    "Erel Segal-Halevi",
+    "Warut Suksompong"
+   ],
+   "track": "main",
+   "source": "https://ijcai-21.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: Keep Your Distance: Land Division With Separation — Edith Elkind (University of Oxford), Erel Segal-Halevi (Ariel University), Warut Suksompong (National University of Singapore)"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Learning Generalized Unsolvability Heuristics for Classical Planning",
+   "authors": [
+    "Simon Ståhlberg",
+    "Guillem Francès",
+    "Jendrik Seipp"
+   ],
+   "track": "main",
+   "source": "https://ijcai-21.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: Learning Generalized Unsolvability Heuristics for Classical Planning — Simon Ståhlberg (Linköping University), Guillem Francès (Universitat Pompeu Fabra), Jendrik Seipp (Linköping University)"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "On the Relation Between Approximation Fixpoint Theory and Justification Theory",
+   "authors": [
+    "Simon Marynissen",
+    "Bart Bogaerts",
+    "Marc Denecker"
+   ],
+   "track": "main",
+   "source": "https://ijcai-21.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: On the Relation Between Approximation Fixpoint Theory and Justification Theory — Simon Marynissen (KU Leuven), Bart Bogaerts (Vrije Universiteit Brussel), Marc Denecker (KU Leuven)"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "Actively Learning Concepts and Conjunctive Queries under ELdr-Ontologies",
+   "authors": [
+    "Maurice Funk",
+    "Jean Christoph Jung",
+    "Carsten Lutz"
+   ],
+   "track": "main",
+   "source": "https://ijcai-21.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper Honorable Mention: Actively Learning Concepts and Conjunctive Queries under ELdr-Ontologies — Maurice Funk (University of Bremen), Jean Christoph Jung (University of Hildesheim), Carsten Lutz (University of Bremen)"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Completeness and Diversity in Depth-First Proof-Number Search with Applications to Retrosynthesis",
+   "authors": [
+    "Christopher Franz",
+    "Georg Mogk",
+    "Thomas Mrziglod",
+    "Kevin Schewior"
+   ],
+   "track": "main",
+   "source": "https://ijcai-22.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: Completeness and Diversity in Depth-First Proof-Number Search with Applications to Retrosynthesis — Christopher Franz ( Kotaicode GmbH ), Georg Mogk ( Bayer AG ), Thomas Mrziglod ( Bayer AG ), Kevin Schewior ( University of Southern Denmark )"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Plurality Veto: A Simple Voting Rule Achieving Optimal Metric Distortion",
+   "authors": [
+    "Fatih Kizilkaya",
+    "David Kempe"
+   ],
+   "track": "main",
+   "source": "https://ijcai-22.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: Plurality Veto: A Simple Voting Rule Achieving Optimal Metric Distortion — Fatih Kizilkaya ( University of Southern California ), David Kempe ( University of Southern California )"
+  },
+  {
+   "venue": "IJCAI",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "QCDCL with Cube Learning or Pure Literal Elimination – What is best?",
+   "authors": [
+    "Benjamin Böhm",
+    "Tomas Peitl",
+    "Olaf Beyersdorff"
+   ],
+   "track": "main",
+   "source": "https://ijcai-22.org/distinguished-paper-awards/",
+   "evidence": "Distinguished Paper: QCDCL with Cube Learning or Pure Literal Elimination – What is best? — Benjamin Böhm ( Friedrich Schiller University Jena ), Tomas Peitl ( Friedrich-Schiller-Universität Jena ), Olaf Beyersdorff ( Friedrich Schiller University Jena )"
   },
   {
    "venue": "IJCAI",
