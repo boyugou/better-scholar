@@ -31,10 +31,11 @@
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
     loadingAll: false,
+    loadMessage: "",                           // why loading the rest of the list stopped, when it was not asked to
     resolving: null,                            // { done, total }
     resolveMessage: ""
   };
-  let loadAbort = null, resolveAbort = null;
+  let loadAbort = null, loadOrigin = "", resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
 
   // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
@@ -168,7 +169,7 @@
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: metrics.citationMetrics(list),
       coverage: {
-        loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll,
+        loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },
@@ -221,20 +222,7 @@
         : summaryText();
       if (await copyText(text)) panel.flash(kind);
     },
-    async onLoadAll() {
-      if (state.loadingAll) return;
-      state.loadingAll = true;
-      loadAbort = new AbortController();
-      refresh();
-      try {
-        await B.scholar.loadAll({ signal: loadAbort.signal, onProgress: () => { ingest(); refresh(); } });
-      } finally {
-        state.loadingAll = false;
-        loadAbort = null;
-        ingest();
-        refresh();
-      }
-    },
+    onLoadAll() { return startLoad("manual"); },
     onCancelLoad() { if (loadAbort) loadAbort.abort(); },
     onCopyUnmatched() { return copyText(metrics.unmatchedVenues(papers()).map((u) => `${u.count}× ${u.venue}`).join("\n")); },
     async onResolve() {
@@ -280,6 +268,33 @@
     }
   });
 
+  // The rest of the paper list, through Scholar's own "Show more" button (scholar.loadAll): started by itself when the settings say so
+  // ("auto" — after a moment, and at the first sign of trouble it gives up) or by the panel's Load all ("manual").
+  async function startLoad(origin) {
+    if (state.loadingAll || !B.scholar.canLoadMore()) return;
+    state.loadingAll = true;
+    state.loadMessage = "";
+    loadOrigin = origin;
+    loadAbort = new AbortController();
+    refresh();
+    let stopped = "done";
+    try {
+      stopped = await B.scholar.loadAll({
+        signal: loadAbort.signal, startDelay: origin === "auto" ? 1200 : 0, maxStalls: origin === "auto" ? 1 : 2, foregroundOnly: origin === "auto",
+        onProgress: () => { ingest(); refresh(); }
+      });
+    } catch (e) {
+      stopped = "stalled";                       // Scholar's page is not what it was: say so like any other stop
+    } finally {
+      state.loadingAll = false;
+      loadAbort = null;
+      loadOrigin = "";
+      ingest();
+      state.loadMessage = stopped === "stalled" ? t("loadStalled", [String(state.rows.length)]) : "";
+      refresh();
+    }
+  }
+
   function refresh() {
     for (const row of state.rows) decorate(row);
     applyFilters();
@@ -292,6 +307,7 @@
   // gone must not keep hiding rows, so those are cleared.
   B.store.onPrefsChanged((next) => {
     const before = currentSource();
+    const wasAuto = prefs.autoLoad;
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
     if (state.markGroup && !prefs.marks[state.markGroup]) state.markGroup = null;
@@ -299,6 +315,8 @@
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
+    if (prefs.autoLoad && !wasAuto) startLoad("auto");                                          // switched on: load the rest of the list now
+    else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
   });
 
   // ---- boot ---------------------------------------------------------------
@@ -310,6 +328,7 @@
   const tbody = B.scholar.tbody();
   if (tbody) new MutationObserver(() => { if (ingest()) scheduleRefresh(); }).observe(tbody, { childList: true });
   window.addEventListener("resize", frame(() => B.scholar.place(panel.el)));
+  if (prefs.autoLoad) startLoad("auto");
 
   // The toolbar popup asks for the current summary.
   try {

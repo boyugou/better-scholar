@@ -9,9 +9,14 @@ Scholar Author Roles & Venue Ranks works entirely in your browser.
   panel is folded and a cache of the paper pages you asked it to read (kept at most 90 days). The settings page
   can clear that cache. Nothing else.
 - **What it sends:** nothing. There is no analytics, no tracking, no account, no remote code and no
-  third-party request. The one network activity is **Resolve**, which — only when you click it — opens each
-  paper's own page on `scholar.google.*` (same origin, about once a second) to read the full author list.
-  It stops at the first CAPTCHA or HTTP 429/503.
+  third-party request. The extension's own network activity is **Resolve**, which — only when you click it —
+  opens each paper's own page on `scholar.google.*` (same origin, about once a second) to read the full author
+  list. It stops at the first CAPTCHA or HTTP 429/503.
+- **Loading the whole paper list:** Scholar shows 100 papers and loads the rest when its own *Show more* button
+  is pressed. By default the extension presses that button for you (about once a second, one press at a time, only
+  while the tab is the one you are looking at), so the summary covers every paper. The request is made by Scholar's own page script, to Scholar, exactly as if
+  you had clicked; the extension adds no request and no permission. It stops at once if Scholar stops sending
+  papers. The setting *Paper list → Load all papers automatically* turns it off (the panel then offers *Load all*).
 - **Links:** the *Report* links in the panel are ordinary links to this project's GitHub issue tracker; they
   open only when you click them and carry only the venue text you can see in the panel.
 - **Permissions:** `storage` only. No host permissions beyond the content-script matches, no `tabs`/`activeTab`.

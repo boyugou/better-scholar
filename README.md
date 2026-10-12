@@ -37,11 +37,13 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   first 100 papers). **Resolve** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
 - **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
-  highlighted", and **Load all** to expand the list.
+  highlighted". **The whole paper list loads by itself**: Scholar shows 100 papers and hides the rest behind *Show more*, so the extension
+  presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
+  offers **Load all**.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
   settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
-  of Awards / Oral / Spotlight / Highlight, and whether the panel, its filters and its citation totals
-  appear at all. A live preview shows the result and open Scholar tabs update at once; whatever you switch
+  of Awards / Oral / Spotlight / Highlight, whether the panel, its filters and its citation totals
+  appear at all, and whether the whole paper list loads by itself. A live preview shows the result and open Scholar tabs update at once; whatever you switch
   off disappears from the page instead of staying as a control.
 - **Private by design** — no accounts, no analytics, no third-party requests. The
   rankings are bundled in the extension. Settings sync through your Chrome account.

@@ -87,6 +87,8 @@
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       option({ key: "panel.filters", label: t("optPanelFilters"), hint: t("optPanelFiltersHint"), get: () => prefs.panel.filters, set: (v) => { prefs.panel.filters = v; }, off: () => !prefs.panel.show }),
       option({ key: "panel.metrics", label: t("optPanelMetrics"), hint: t("optPanelMetricsHint"), get: () => prefs.panel.metrics, set: (v) => { prefs.panel.metrics = v; }, off: () => !prefs.panel.show })),
+    card(t("optLoadTitle"), null,
+      option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBtn, cacheNote)));
   showCacheCount();
 

@@ -2,8 +2,9 @@
 
 This is a Manifest V3 extension built for Chrome. It is a **content script, a popup and a
 settings page**: one permission (`storage`), a four-line service worker whose only job is to open the
-settings page for the panel's button, and no network access except the optional, user-triggered read of
-a paper's own page on Scholar. The same
+settings page for the panel's button, and no network access of its own except the optional, user-triggered read of
+a paper's own page on Scholar. (It also presses Scholar's own *Show more* button for you, by default — the page's
+script makes that request, see [Loading the whole list](#loading-the-whole-list).) The same
 `src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
 [Platform policy](#platform-policy-chrome-first)).
 
@@ -38,7 +39,7 @@ data, and why there is no build step.
 | `lib/awards.js` | The bundled list of award-winning papers: match a row by identical full title and the award's first author. |
 | `lib/analysis.js` | One row → `{ status, role, venue, marks, … }`; folds in a paper's detail page when available. |
 | `lib/metrics.js` | h-index / i10, the role × tier summary, matrix filtering, clipboard text. |
-| `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), *Load all*. |
+| `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), press *Show more* until the list is complete (`loadAll`). |
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
 | `lib/prefs.js` | What to show (`prefs`) and per-device view state (`ui`): shapes, defaults, normalising, migration from the pre-2.2 combined record, and the rules (which ranking the table uses, which marks are visible). |
 | `content/chips.js` | The rank and award / talk chips; shared by the Scholar page and the settings page's preview. |
@@ -152,6 +153,18 @@ export (`scripts/core/build-core.mjs`). `scripts/build-data.mjs` turns both into
 Tiers are those of the current lists. They are *not* the tier at publication time, which the
 UI says in the panel note and in every chip tooltip.
 
+## Loading the whole list
+
+Scholar shows a profile's first 100 papers and loads the rest when its *Show more* button is pressed. The role × rank summary
+is only as good as the papers it has seen, so `scholar.loadAll()` presses that button until it is disabled — started by
+`main.js` shortly after the page loads when the `autoLoad` preference is on (the default), or by the panel's *Load all*
+when it is off. The request is Scholar's own script's, made to Scholar exactly as a click of yours would make it; the extension
+adds no network access and no permission. It is polite and fails soft: one press at a time, waiting for the rows to arrive,
+about a second apart, and an automatic run presses only while its tab is the one being looked at (profiles opened in many tabs at
+once do not press together); a press that brings no rows within nine seconds ends the automatic run at once (a manual one gets a
+second try) and the panel says so; *Cancel* ends it and it does not start again by itself; switching the setting off ends a run it
+started, and switching it on starts one on the open profile. `loadAll` returns why it stopped (`done`, `cancelled`, `stalled`).
+
 ## The panel
 
 `panel.js` is a pure view over a model. `main.js` rebuilds the model after every change
@@ -185,7 +198,7 @@ Scholar drops the sidebar *below* the list) as the window is resized. Styles are
 | `test/metrics.test.js` | h-index, the matrix, filtering, clipboard text |
 | `test/extension.test.js` | manifest, load order, locales, bundle freshness |
 | `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
-| `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
+| `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, the whole list loading by itself, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
 
 The stand-in mimics Scholar's DOM, but only the real page can confirm that it still does. On
 2026-10-11 the built content script was run once on a live profile (injected into a normal browser

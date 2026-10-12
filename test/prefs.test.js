@@ -11,7 +11,8 @@ test("defaults: everything on, complete, and a fresh object each time", () => {
     markName: true,
     ranks: { ccf: true, core: true },
     marks: { award: true, oral: true, spotlight: true, highlight: true },
-    panel: { show: true, filters: true, metrics: true }
+    panel: { show: true, filters: true, metrics: true },
+    autoLoad: true
   });
   d.roles.first = false;
   assert.equal(prefs.defaults().roles.first, true);
@@ -26,6 +27,9 @@ test("normalize: keeps real choices, drops unknown keys, repairs wrong types, ne
   assert.equal(n.markName, true);
   assert.deepEqual(n.marks, prefs.defaults().marks);
   assert.deepEqual(n.panel, { show: false, filters: true, metrics: true });
+  assert.equal(n.autoLoad, true, "loading the whole list is on unless it was switched off");
+  assert.equal(prefs.normalize({ autoLoad: false }).autoLoad, false);
+  assert.equal(prefs.normalize({ autoLoad: "no" }).autoLoad, true, "a non-boolean falls back to the default");
   assert.equal("other" in n, false);
   for (const junk of [undefined, null, 0, "x", [], [1, 2], true, () => 1]) assert.deepEqual(prefs.normalize(junk), prefs.defaults());
   assert.deepEqual(prefs.normalize(prefs.normalize(n)), n, "idempotent");

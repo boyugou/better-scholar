@@ -63,10 +63,13 @@ function profilePage(profile, opts) {
 </div></div></div>
 <script>
 const REST = ${JSON.stringify(rest.map((r) => rowHtml(r)))};
+const STOP_AFTER = ${opts.stopAfter == null ? -1 : opts.stopAfter};   // Scholar stops answering after this many presses: the button comes back, no rows do
+let presses = 0;
 const btn = document.getElementById("gsc_bpf_more");
 btn.addEventListener("click", () => {
   btn.disabled = true;
   setTimeout(() => {
+    if (STOP_AFTER >= 0 && presses++ >= STOP_AFTER) { btn.disabled = false; return; }
     document.getElementById("gsc_a_b").insertAdjacentHTML("beforeend", REST.splice(0, 80).join(""));
     btn.disabled = REST.length === 0;
   }, 150);
@@ -88,7 +91,7 @@ function detailPage(profile, id, hl) {
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false } = {}) {
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter } = {}) {
   ROW_HL = hl;
   BROKEN = brokenLayout;
   const profile = loadProfile(slug, repeat);
@@ -104,7 +107,7 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
     }
     if (u.pathname === "/citations") {
       res.setHeader("content-type", "text/html; charset=utf-8");
-      return res.end(profilePage(profile, { pageSize, header }));
+      return res.end(profilePage(profile, { pageSize, header, stopAfter }));
     }
     if (u.pathname === "/favicon.ico") { res.statusCode = 204; return res.end(); }
     res.statusCode = 404; res.end("not found");

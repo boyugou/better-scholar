@@ -78,21 +78,43 @@
     return mode;
   }
 
-  // Click "Show more" until Scholar has nothing left (or the user cancels).
-  async function loadAll({ onProgress, signal } = {}) {
+  // Wait (at most `ms`, and until `signal` aborts) for `test()` to hold; says whether it does.
+  async function waitUntil(test, ms, signal) {
+    const t0 = Date.now();
+    while (!test() && Date.now() - t0 < ms && !(signal && signal.aborted)) await sleep(100);
+    return test();
+  }
+
+  // Milliseconds: between presses (plus up to `jitter`), how long a press may take to bring rows, how long to wait for the button to
+  // come back after a batch. Overridable (`timing`) so that the loader can be tested without waiting nine seconds.
+  const TIMING = { pause: 600, jitter: 400, rowTimeout: 9000, regrace: 1500 };
+
+  // Press "Show more" until Scholar has nothing left: the same request a click of yours makes, one at a time and about a second
+  // apart. Says why it stopped — "done" (the button is gone, or stays disabled), "cancelled", or "stalled" (a press brought no rows
+  // within nine seconds, `maxStalls` times in a row: Scholar is slow, limiting requests or asking for a CAPTCHA, and is not pressed again).
+  // `startDelay` waits before the first press (Scholar's own script has to be ready for it). `foregroundOnly` presses only while the tab
+  // is the one being looked at, so profiles opened in many tabs at once do not all press together.
+  async function loadAll({ onProgress, signal, maxStalls = 2, startDelay = 0, foregroundOnly = false, timing } = {}) {
+    const T = Object.assign({}, TIMING, timing);
+    const aborted = () => !!(signal && signal.aborted);
+    const foreground = () => !foregroundOnly || !document.hidden;
+    if (startDelay) await waitUntil(() => false, startDelay, signal);
     let stalls = 0;
-    for (let i = 0; i < 400; i++) {
-      const btn = showMoreButton();
-      if (!btn || btn.disabled || (signal && signal.aborted)) break;
+    for (let i = 0; i < 400 && !aborted(); i++) {
+      if (!foreground()) { await waitUntil(foreground, Infinity, signal); if (aborted()) break; }
+      let btn = showMoreButton();
+      // just after a batch Scholar may still be re-enabling the button: give it a moment before calling the list complete
+      if (btn && btn.disabled && i > 0) { await waitUntil(() => { const b = showMoreButton(); return !b || !b.disabled; }, T.regrace, signal); btn = showMoreButton(); }
+      if (!btn || btn.disabled) break;
       const before = rowElements().length;
       btn.click();
-      const t0 = Date.now();
-      while (rowElements().length === before && Date.now() - t0 < 9000 && !(signal && signal.aborted)) await sleep(150);
-      if (rowElements().length === before) { if (++stalls >= 2) break; } else stalls = 0;
-      if (onProgress) onProgress(rowElements().length);
-      await sleep(600 + Math.random() * 400);
+      await waitUntil(() => rowElements().length !== before, T.rowTimeout, signal);
+      if (aborted()) break;
+      if (rowElements().length === before) { if (++stalls >= maxStalls) return "stalled"; }
+      else { stalls = 0; if (onProgress) onProgress(rowElements().length); }
+      await sleep(T.pause + Math.random() * T.jitter);
     }
-    return rowElements().length;
+    return aborted() ? "cancelled" : "done";
   }
 
   const canLoadMore = () => { const b = showMoreButton(); return !!b && !b.disabled; };

@@ -22,8 +22,11 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
   (`test/fixtures`). When changing them, run `npm test`, *review* any snapshot diff in
   `test/venues.test.js`, and only then `npm run test:update`. Add new real strings to the corpora.
 - Ranks are the current lists, not the rank at publication — keep saying so in the UI.
-- No network access beyond the user-triggered read of a paper's page on Scholar itself. No
-  analytics, no remote code, no new permissions without a very good reason.
+- No network access of its own beyond the user-triggered read of a paper's page on Scholar itself.
+  The one other thing it does on Scholar is press Scholar's own "Show more" button for you (the
+  `autoLoad` setting, on by default; Scholar's page makes that request, about one a second, and
+  the loader gives up at the first stall). No analytics, no remote code, no new permissions
+  without a very good reason.
 - Keep `lib/` pure (no DOM, no `chrome.*`) so it stays unit-testable in Node.
 - Naming: user-visible names are plain and descriptive (no coined words). In code the shared
   namespace is `globalThis.RolesRanks`, and everything the extension adds to Scholar's DOM is

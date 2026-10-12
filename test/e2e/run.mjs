@@ -136,6 +136,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
   const errors = [];
   context.on("page", (p) => { p.on("pageerror", (e) => errors.push("pageerror: " + e.message)); p.on("console", (m) => { if (m.type() === "error") errors.push("console: " + m.text()); }); });
   try {
+    // The default loads the whole paper list by itself. This first profile is looked at page by page (20 papers, then 'Load all'), so
+    // its setting is switched off here; the default and the setting have their own checks (26 and 26b–26d).
+    const seed = await openOptions(context);
+    assert.equal(await seed.isChecked('input[data-pref="autoLoad"]'), true, "loading the whole list is on by default");
+    await setPref(seed, "autoLoad", false);
+    await seed.close();
     const page = await context.newPage();
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");
@@ -576,7 +582,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await fx4.close();
   }
 
-  // -- 26. a very large profile (1,000 papers): loading everything neither janks the page nor drops rows
+  // -- 26. a very large profile (1,000 papers), settings untouched: the whole list loads by itself, neither janking the page nor dropping rows
   const fx5 = await start({ slug: "ion-stoica", pageSize: 100, repeat: 10 });
   const ctx5 = await launch();
   try {
@@ -589,19 +595,80 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.goto(fx5.url);
     await page.waitForSelector("#rr-panel");
     const firstPaint = Date.now() - t0;
-    await page.click('[data-act="load-all"]');
+    await page.waitForFunction(() => /^Loading… \d/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 10000 });
+    assert.equal(await page.locator('[data-act="load-all"]').count(), 0, "no button to press: it is already loading");
     await page.waitForFunction(() => /^1,?000 papers loaded/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 90000 });
     const total = Date.now() - t0;
     assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr").count(), 1000);
+    assert.equal(await page.locator('[data-act="load-all"]').count(), 0);
+    assert.equal(await page.locator('[data-rr="load-msg"]').count(), 0, "nothing went wrong");
     assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr .rr-chips").count() > 400, true, "rows are decorated");
     const long = await page.evaluate(() => window.__long);
     const worst = Math.max(0, ...long);
     assert.ok(firstPaint < 5000, `panel appeared after ${firstPaint} ms`);
     assert.ok(worst < 1000, `a ${worst} ms long task`);
-    ok(`1,000 papers: panel in ${firstPaint} ms, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
+    ok(`1,000 papers, no click: the list loads by itself (the default); panel in ${firstPaint} ms, everything loaded in ${(total / 1000).toFixed(1)} s, longest main-thread task ${worst} ms`);
   } finally {
     await ctx5.close();
+  }
+
+  // -- 26b–26d. the setting: Cancel stops it for good; off means the panel offers 'Load all'; switching it on loads, switching it off stops
+  const ctx5b = await launch();
+  try {
+    const page = await ctx5b.newPage();
+    const rowsNow = () => page.locator("#gsc_a_b tr.gsc_a_tr").count();
+    await page.goto(fx5.url);
+    await page.waitForSelector("#rr-panel");
+    await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length > 100, null, { timeout: 15000 });
+    await page.click('#rr-panel button:has-text("Cancel")');
+    await page.waitForSelector('[data-act="load-all"]');
+    const atCancel = await rowsNow();
+    await page.waitForTimeout(3500);
+    assert.equal(await rowsNow(), atCancel, "Cancel stops it, and it does not start again by itself");
+    assert.ok(atCancel > 100 && atCancel < 1000, `${atCancel} rows when cancelled`);
+    ok("Cancel stops the automatic loading, and 'Load all' is offered again");
+
+    const opts = await openOptions(ctx5b);
+    await setPref(opts, "autoLoad", false);
+    const off = await ctx5b.newPage();
+    await off.goto(fx5.url);
+    await off.waitForSelector("#rr-panel");
+    await off.waitForTimeout(3500);
+    assert.equal(await off.locator("#gsc_a_b tr.gsc_a_tr").count(), 100, "with the setting off the list stays at Scholar's first page");
+    assert.equal(await off.locator('[data-act="load-all"]').count(), 1);
+    ok("setting off: the list stays at Scholar's first 100 papers and the panel offers 'Load all'");
+
+    await setPref(opts, "autoLoad", true);
+    await off.bringToFront();
+    await off.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length > 100, null, { timeout: 15000 });
+    await setPref(opts, "autoLoad", false);
+    await off.bringToFront();
+    await off.waitForFunction(() => !/^Loading/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 15000 });
+    const stopped = await off.locator("#gsc_a_b tr.gsc_a_tr").count();
+    await off.waitForTimeout(3500);
+    assert.equal(await off.locator("#gsc_a_b tr.gsc_a_tr").count(), stopped, "switching it off stops what it started");
+    assert.ok(stopped > 100 && stopped < 1000);
+    ok("switching the setting on loads the open profile's list, switching it off stops it");
+  } finally {
+    await ctx5b.close();
     await fx5.close();
+  }
+
+  // -- 26e. Scholar stops answering: it is not pressed again, and the panel says so
+  const fxStall = await start({ slug: "ion-stoica", pageSize: 20, repeat: 10, stopAfter: 2 });
+  const ctxStall = await launch();
+  try {
+    const page = await ctxStall.newPage();
+    await page.goto(fxStall.url);
+    await page.waitForSelector("#rr-panel");
+    await page.waitForSelector('[data-rr="load-msg"]', { timeout: 40000 });
+    assert.match(await page.locator('[data-rr="load-msg"]').textContent(), /^Scholar sent no more papers \(180 loaded\)/);
+    assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr").count(), 180, "20 papers and two presses of 80");
+    assert.equal(await page.locator('[data-act="load-all"]').count(), 1, "'Load all' is there to try again");
+    ok("when Scholar stops answering the automatic loading gives up at once and says so");
+  } finally {
+    await ctxStall.close();
+    await fxStall.close();
   }
 
   // -- 27. unrecognised venues can be copied and reported; a layout Scholar changed is called out, not ignored

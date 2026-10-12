@@ -128,6 +128,7 @@
         c.loadingAll ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelLoad() }, t("cancel"))
           : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-act": "load-all", onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
       lines.push(loadedLine);
+      if (c.loadMessage) lines.push(h("div", { class: "rr-faint", "data-rr": "load-msg" }, c.loadMessage));
       if (c.hidden > 0 || c.resolving) {
         lines.push(h("div", { class: "rr-cover-line", title: t("resolveHint") },
           h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),

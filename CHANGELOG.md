@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.6.0 — 2026-10-12
+
+- **The whole paper list loads by itself.** Scholar shows a profile's first 100 papers and hides the rest behind *Show more*, so the
+  role × rank summary only covered what had been loaded. The extension now presses that button for you right after the page loads (the
+  page's own script makes the request, to Scholar, exactly as a click would; about once a second, one press at a time, and only while the
+  tab is the one you are looking at, so profiles opened in many tabs do not press together). It gives up at
+  once if a press brings no rows within nine seconds — Scholar is slow, limiting requests or asking for a CAPTCHA — and the panel says
+  so and offers *Load all* to try again. *Cancel* stops it for good on that page. **Settings → Paper list → Load all papers
+  automatically** (on by default) turns it off; the panel then keeps its *Load all* button. Switching the setting on or off updates open
+  profiles at once.
+- `loadAll` now reports why it stopped (done, cancelled or stalled) and waits a moment for Scholar to re-enable the button after a batch
+  before calling the list complete. Documented in `PRIVACY.md`, `docs/ARCHITECTURE.md` and the project rules (`CLAUDE.md`).
+
 ## 2.5.23 — 2026-10-12
 
 - **CHI, CSCW, UIST and other SIGCHI conferences' awards** (2121 entries; the list holds 4518) from SIGCHI's own conference programs:

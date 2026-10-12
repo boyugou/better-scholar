@@ -433,5 +433,22 @@
   },
   "optSample": {
     "message": "示例论文"
+  },
+  "optLoadTitle": {
+    "message": "论文列表"
+  },
+  "optAutoLoad": {
+    "message": "自动加载全部论文"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar 起初只显示 100 篇。开启后会替你点击它自带的“显示更多”按钮（约每秒一次），直到整个列表加载完，若 Scholar 不再响应就停止。关闭后，面板里会提供“全部加载”按钮。"
+  },
+  "loadStalled": {
+    "message": "Scholar 没有再返回论文（已加载 $N1$ 篇）。稍后可再点“全部加载”。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

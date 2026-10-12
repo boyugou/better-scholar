@@ -2,7 +2,7 @@
 // defaults, and the rules that turn a preference into behaviour, so they can be tested in Node.
 //
 // Two records, two writers (so a stale Scholar tab can never overwrite what the settings page saved):
-//   prefs — what to show. Written by the settings page only; read by the pages and the popup.
+//   prefs — what to show, and whether to load the whole paper list. Written by the settings page only; read by the pages and the popup.
 //   ui    — { collapsed, source }: whether the panel is folded and which ranking its table uses.
 //           Written by the Scholar page only.
 (function (root, factory) {
@@ -32,7 +32,8 @@
       markName: flag(r.markName, true),            // bold + tint your name in the author line
       ranks: pick(r.ranks, RANKS),                 // CCF / CORE chips, and their tab in the panel
       marks: pick(r.marks, MARK_GROUPS),           // award / oral / spotlight / highlight chips and counts
-      panel: pick(r.panel, PANEL_PARTS)            // the panel itself, its filters, its citation totals
+      panel: pick(r.panel, PANEL_PARTS),           // the panel itself, its filters, its citation totals
+      autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded
     };
   }
 

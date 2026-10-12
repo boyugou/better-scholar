@@ -451,5 +451,22 @@
   },
   "optSample": {
     "message": "Sample paper"
+  },
+  "optLoadTitle": {
+    "message": "Paper list"
+  },
+  "optAutoLoad": {
+    "message": "Load all papers automatically"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar shows 100 papers at first. This presses its own “Show more” button for you, about once a second, until the whole list is loaded, and stops if Scholar stops answering. Off: the panel offers “Load all” instead."
+  },
+  "loadStalled": {
+    "message": "Scholar sent no more papers ($N1$ loaded). Try “Load all” again in a moment.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }
