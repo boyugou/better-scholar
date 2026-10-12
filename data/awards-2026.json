@@ -57993,8 +57993,7 @@
    "awardLabel": "Best Paper Award Runner-Up",
    "title": "Extremely Fast Hoeffding Adaptive Tree",
    "authors": [
-    "Chaitanya Manapragada",
-    "Monash University"
+    "Chaitanya Manapragada"
    ],
    "track": "main",
    "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
@@ -70190,7 +70189,6 @@
     "Y. Zhang",
     "J. Chen",
     "Y. Liu",
-    "Y. Liu",
     "B. Li",
     "F. Huang",
     "Y. Li"
@@ -72260,8 +72258,7 @@
    "awardLabel": "Test of Time Award",
    "title": "Training Linear SVMs in Linear Time",
    "authors": [
-    "Thorsten Joachims",
-    "Cornell University"
+    "Thorsten Joachims"
    ],
    "track": "main",
    "source": "https://kdd.org/awards/view/2017-sigkdd-test-of-time-award-winners",
@@ -78645,7 +78642,6 @@
     "Guoshuai Zhao",
     "Zheng Liu",
     "Xing Xie",
-    "Hao Sun",
     "Weiwei Deng",
     "Qi Zhang",
     "Mao Yang"
@@ -79273,7 +79269,6 @@
     "Rui Lu",
     "Andrew Zhao",
     "Zhaokai Wang",
-    "Yang Yue",
     "Shiji Song",
     "Gao Huang"
    ],
@@ -81472,18 +81467,15 @@
    "title": "Pollux: Co-adaptive Cluster Scheduling for Goodput-Optimized Deep Learning",
    "authors": [
     "Aurick Qiao",
-    "Carnegie Mellon University",
     "Sang Keun Choe",
     "Suhas Jayaram Subramanya",
     "Willie Neiswanger",
-    "Carnegie Mellon University",
     "Qirong Ho",
     "Hao Zhang",
     "UC Berkeley",
     "Gregory R. Ganger",
     "Eric P. Xing",
-    "Petuum",
-    "Carnegie Mellon University"
+    "Petuum"
    ],
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
@@ -81629,7 +81621,6 @@
    "title": "VeriSMo: A Verified Security Module for Confidential VMs",
    "authors": [
     "Ziqiao Zhou",
-    "[node:field-speakers-first-name] Anjali",
     "Weiteng Chen",
     "Sishuai Gong",
     "Chris Hawblitzel",
@@ -99004,7 +98995,6 @@
     "Junsu Im",
     "Jinwook Bae",
     "Chanwoo Chung",
-    "[node:field-speakers-first-name] Arvind",
     "Sungjin Lee"
    ],
    "track": "main",
@@ -101065,12 +101055,9 @@
    "authors": [
     "Jipeng Zhang",
     "Junhao Huang",
-    "Hong Kong Baptist University",
     "Lirui Zhao",
     "Donglong Chen",
-    "Çetin Kaya Koç",
-    "Iğdır University",
-    "University of California Santa Barbara"
+    "Çetin Kaya Koç"
    ],
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
@@ -101133,18 +101120,12 @@
     "Yihao Chen",
     "Qilei Yin",
     "Qi Li",
-    "Zhongguancun Laboratory",
     "Zhuotao Liu",
-    "Zhongguancun Laboratory",
     "Ke Xu",
-    "Zhongguancun Laboratory",
     "Yi Xu",
-    "Zhongguancun Laboratory",
     "Mingwei Xu",
-    "Zhongguancun Laboratory",
     "Ziqian Liu",
-    "Jianping Wu",
-    "Zhongguancun Laboratory"
+    "Jianping Wu"
    ],
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
@@ -101396,10 +101377,8 @@
    "authors": [
     "Yufan You",
     "Jianjun Chen",
-    "Zhongguancun Laboratory",
     "Qi Wang",
-    "Haixin Duan",
-    "Zhongguancun Laboratory"
+    "Haixin Duan"
    ],
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
@@ -101494,8 +101473,7 @@
     "Yansong Gao",
     "Hongsheng Hu",
     "Boyu Kuang",
-    "Anmin Fu",
-    "and School of Computer Science and Engineering"
+    "Anmin Fu"
    ],
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",

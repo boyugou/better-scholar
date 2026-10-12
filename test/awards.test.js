@@ -390,3 +390,10 @@ test("provenance: every host an award was read from is on the reviewed list (tes
   assert.deepEqual(used.filter((h) => !reviewed.includes(h)), [], "a source host that was never reviewed (is the domain still the organisation's own?)");
   assert.deepEqual(reviewed.filter((h) => !used.includes(h)), [], "a reviewed host nothing is read from any more: remove it from the list");
 });
+
+test("the bundled list names only people among the authors: no organisation, no template placeholder, no wrapped-line tail", () => {
+  const NOT_A_NAME = /\[node:|^and\s|\b(?:University|Universit[a-zé]\w*|Institute|Institut|Laborator(?:y|ies)|Department|College|School of|Corporation)\b|\bInc\.?$/i;
+  const bad = [];
+  for (const e of data.entries) for (const a of e.authors) if (NOT_A_NAME.test(a)) bad.push(`${e.venue} ${e.year}: ${a}`);
+  assert.deepEqual(bad.slice(0, 10), []);
+});

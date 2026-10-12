@@ -79,6 +79,19 @@ for (const file of files) {
   }
 }
 
+// what a page prints among the authors that is no author: an organisation ("Monash University"), a template placeholder ("[node:field-speakers-first-name]"), the tail of a wrapped line ("and School of …")
+const NOT_A_NAME = /\[node:|^and\s|\b(?:University|Universit[a-zé]\w*|Institute|Institut|Laborator(?:y|ies)|Department|College|School of|Corporation)\b|\bInc\.?$/i;
+let cleaned = 0;
+for (const e of accepted.values()) {
+  const keep = [];
+  for (const a of e.authors) if (!NOT_A_NAME.test(a) && !keep.includes(a)) keep.push(a);
+  if (keep.length !== e.authors.length) {
+    cleaned++;
+    if (!keep.length || !awards.surnameKey(keep[0])) problems.push({ where: `${e.venue} ${e.year} ${JSON.stringify(e.title.slice(0, 60))}`, why: "no author left after the organisations are dropped" });
+    else e.authors = keep;
+  }
+}
+
 // clashes: the same paper listed with two different award kinds at one venue-year
 const byPaper = new Map();
 for (const e of accepted.values()) {
@@ -117,6 +130,7 @@ const perVenue = {};
 for (const e of sorted) (perVenue[e.venue] ||= new Set()).add(e.year);
 
 console.log(`entries: ${sorted.length} (${sorted.length - existing} new) from ${files.length} file(s); ${problems.length} rejected, ${clashes.length} clash(es)`);
+if (cleaned) console.log(`authors cleaned (organisations and placeholders dropped): ${cleaned} entr${cleaned === 1 ? "y" : "ies"}`);
 console.log("venues:", Object.entries(perVenue).map(([v, ys]) => `${v}×${ys.size}y`).join("  "));
 if (problems.length) { console.log("\nREJECTED"); for (const p of problems.slice(0, 60)) console.log(" -", p.where, "->", p.why); }
 if (clashes.length) { console.log("\nCLASHES (same paper, different award kinds)"); for (const c of clashes) console.log(" -", c[0].venue, c[0].year, JSON.stringify(c[0].title.slice(0, 60)), c.map((e) => e.award).join(" / ")); }

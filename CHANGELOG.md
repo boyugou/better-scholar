@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.23 — 2026-10-12
+
+- Author lists are cleaned of what is no author: 12 entries listed an organisation (Monash University, Cornell University, Zhongguancun Laboratory …), a template placeholder (`[node:field-speakers-first-name]`)
+  or the tail of a wrapped line among their names. `merge-raw.mjs` drops such names from now on (and rejects an entry left with none), the Kdd/ICDM/UbiComp reader reads brackets before it splits on ";", and a test keeps the bundled list clean.
+
 ## 2.10.22 — 2026-10-12
 
 - MobiCom's best paper, honorable mention, community paper and artifact awards of 2019–2024 (21 papers: FLUID, Hummingbird, M-Cube, HeadFi, AgriTera, NeRF2, CosMAC, …) from the conference's own main pages (`tot.mjs mobicom-year`), read strictly: a record with a bracket in

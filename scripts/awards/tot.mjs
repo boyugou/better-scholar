@@ -972,12 +972,14 @@ export function parseGeccoImpact(html, source = PAGES.gecco) {
 //   Test of time pages: an authors line, then "Title, KDD 2002", then a paragraph on the paper.
 const ZW = /[​‌‍﻿]/g;
 // "Name (Affiliation);Name (Affiliation)", "Name, Affiliation; Name, Affiliation" or plain "A, B, and C" — the names, in order (empty when a name is not one)
-function kddAuthors(line) {
+function kddAuthors(line, strict = false) {
   const t = line.replace(ZW, "").replace(/\s+/g, " ").trim().replace(/[,;.\s]+$/, "");
+  const noBrackets = t.replace(/\([^()]*\)/g, " ").replace(/\s+/g, " ").trim();          // (an affiliation may hold a ";" or a "," of its own)
   let who;
-  if (t.includes(";")) who = t.split(/\s*;\s*/).map((seg) => seg.replace(/\([^()]*\)/g, " ").split(",")[0].replace(/\s+/g, " ").trim());
-  else who = names(t.replace(/\([^()]*\)/g, " ").replace(/\s+and\s+/g, ", and ").replace(/\s+,/g, ","));
-  who = who.filter(Boolean);
+  if (noBrackets.includes(";")) who = noBrackets.split(/\s*;\s*/).map((seg) => seg.split(",")[0].replace(/\s+/g, " ").trim());
+  else who = names(noBrackets.replace(/\s+and\s+/g, ", and ").replace(/\s+,/g, ","));
+  if (strict && who.some((n) => ORG.test(n))) return [];                                      // (strict: an organisation among the names means the line is a fragment)
+  who = who.filter((n) => n && !ORG.test(n));                                                // (a bare "Cornell University" after a name is the affiliation)
   return who.length && who.every((n) => isPerson(n) && n.split(" ").length <= 4) ? who : [];
 }
 export function parseKddBest(html, source = PAGES["kdd-bp"]) {
@@ -1447,7 +1449,7 @@ export function parseMobicomYear(html, source) {
   };
   const stop = (l) => /^(?:Best (?:Video|Poster|Demo|Artifact Reviewer)|Best Artifact Awards?|Honou?rable|News|Program|Registration|Sponsors?|Keynotes?)\b/i.test(l);
   const bracket = (l) => l.replace(/\(([^()]*)$/, "($1)");
-  const peopleOf = (l) => { const w = kddAuthors(bracket(l)); return w.length && w.every((n) => !ORG.test(n)) ? w : []; };
+  const peopleOf = (l) => kddAuthors(bracket(l), true);
   const authorLine = (l) => /\(/.test(l) && l.length < 700 && peopleOf(l).length > 0;
   const continuation = (l) => /^and\s/i.test(l) || (/\)/.test(l) && !/^[A-Z][^()]{3,}:/.test(l));
   const start = ls.findIndex((l, i) => i > 15 && kindOf(l));
