@@ -1239,3 +1239,15 @@ test("HPCA Test of Time page: `2026: “Title”` then `by A; B, published at HP
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("IMC Test of Time page: `\"Title\" by Authors, in ACM IMC 2009.` under a year; a row whose authors do not read is skipped", async () => {
+  const { parseImcTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>2023:</p><p>"Energy Consumption in Mobile Phones:A Measurement Study" by Nia Balasubramanian, Aru Balasubramanian, Arun Venkataramani, in ACM IMC 2009.</p>
+<p>2022:</p><p>"Avoiding Traceroute Anomalies with Paris Traceroute" by Brice Augustin, Xavier Cuvellier, and Renata Teixeira, in IMC 2006.</p><p>"Code-Red: A Case Study on the Spread" by David Moore, Colleen Shannon, k claffy, in ACM IMW 2002.</p>`;
+  const { entries, skipped } = parseImcTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2023/2009 Energy Consumption in Mobile Phones:A Measurement Study | Nia Balasubramanian; Aru Balasubramanian; Arun Venkataramani",
+    "2022/2006 Avoiding Traceroute Anomalies with Paris Traceroute | Brice Augustin; Xavier Cuvellier; Renata Teixeira"
+  ]);
+  assert.equal(skipped.length, 1);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4978
+  "count": 4983
  },
  "entries": [
   {
@@ -57044,6 +57044,94 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "IMC '05: Measurement-based Characterization of a Collection of On-line Games — Chris Chambers, Portland State University; Wu-chang Feng, Portland State University; Sambit Sahu, IBM Research; Debanjan Saha, IBM Research"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Avoiding Traceroute Anomalies with Paris Traceroute",
+   "authors": [
+    "Brice Augustin",
+    "Xavier Cuvellier",
+    "Benjamin Orgogozo",
+    "Fabien Viger",
+    "Timur Friedman",
+    "Matthieu Latapy",
+    "Clemence Magnien",
+    "Renata Teixeira"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
+   "evidence": "IMC 2022 Test of Time Award: Brice Augustin, Xavier Cuvellier, Benjamin Orgogozo, Fabien Viger, Timur Friedman, Matthieu Latapy, Clemence Magnien, and Renata Teixeira “Avoiding Traceroute Anomalies with Paris Traceroute”"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Characteristics of Internet Background Radiation",
+   "authors": [
+    "Ruoming Pang",
+    "Vinod Yegneswaran",
+    "Paul Barford",
+    "Vern Paxson",
+    "Larry Peterson"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
+   "evidence": "IMC 2022 Test of Time Award: Ruoming Pang, Vinod Yegneswaran, Paul Barford, Vern Paxson, Larry Peterson “Characteristics of Internet Background Radiation”"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "I Tube, You Tube, Everybody Tubes: Analyzing the World's Largest User Generated Content Video System",
+   "authors": [
+    "Meeyoung Cha",
+    "Haewoon Kwak",
+    "Pablo Rodriguez",
+    "Yong-Yeol Ahn",
+    "Sue Moon"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
+   "evidence": "IMC 2022 Test of Time Award: Meeyoung Cha, Haewoon Kwak, Pablo Rodriguez, Yong-Yeol Ahn, Sue Moon “I Tube, You Tube, Everybody Tubes: Analyzing the World's Largest User Generated Content Video System”"
+  },
+  {
+   "venue": "IMC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Energy Consumption in Mobile Phones:A Measurement Study and Implications for Network Applications",
+   "authors": [
+    "Niranjan Balasubramanian",
+    "Aruna Balasubramanian",
+    "Arun Venkataramani"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
+   "evidence": "IMC 2023 Test of Time Award: Niranjan Balasubramanian, Aruna Balasubramanian, Arun Venkataramani “Energy Consumption in Mobile Phones:A Measurement Study and Implications for Network Applications”"
+  },
+  {
+   "venue": "IMC",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Video Stream Quality Impacts Viewer Behavior: Inferring Causality Using Quasi-Experimental Designs",
+   "authors": [
+    "S. Shunmuga Krishnan",
+    "Ramesh K. Sitaraman"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
+   "evidence": "IMC 2023 Test of Time Award: S. Shunmuga Krishnan, Ramesh K. Sitaraman “Video Stream Quality Impacts Viewer Behavior: Inferring Causality Using Quasi-Experimental Designs”"
   },
   {
    "venue": "IMX",

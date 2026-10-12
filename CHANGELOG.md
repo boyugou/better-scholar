@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.12 — 2026-10-12
+
+- The IMC Test of Time Award (2022–2023, 5 papers) from the ACM-hosted copy of SIGCOMM's page (`tot.mjs imc`). The bundled list has 4983 awards.
+
 ## 2.9.11 — 2026-10-12
 
 - The HPCA Test of Time Award (2018–2026, 10 papers) from the TCCA's own page (`tot.mjs hpca`). The bundled list has 4978 awards.
