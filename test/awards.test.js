@@ -247,6 +247,16 @@ test("the bundled list: HCI winners from SIGCHI's own conference programs (CHI, 
   assert.deepEqual(find("Street-level algorithms: A theory at the gaps between policy and decisions", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: SIGPLAN's Most Influential Paper Awards (POPL, PLDI, ICFP, OOPSLA)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Proof-carrying code", "GC Necula"), ["POPL 2007 tot"]);
+  assert.deepEqual(find("Valgrind: a framework for heavyweight dynamic binary instrumentation", "N Nethercote, J Seward"), ["PLDI 2017 tot"]);
+  assert.deepEqual(find("Quickcheck: a lightweight tool for random testing of Haskell programs", "K Claessen, J Hughes"), ["ICFP 2010 tot"]);
+  assert.deepEqual(find("The DaCapo benchmarks: Java benchmarking development and analysis", "SM Blackburn, R Garner, C Hoffmann, AM Khan, KS McKinley"), ["OOPSLA 2016 tot"]);
+  assert.deepEqual(find("Proof-carrying code", "A Smith, B Jones"), []);
+});
+
 test("the bundled list: machine-learning winners from the years before the virtual sites list awards (NeurIPS 2014–2018, ICML 2017–2018)", () => {
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();

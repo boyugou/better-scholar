@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.6.2 — 2026-10-12
+
+- **SIGPLAN's Most Influential Paper Awards** (90 entries; the list holds 4608) from SIGPLAN's own pages for POPL (2003–2026), PLDI (2000–2026),
+  ICFP (2006–2025) and OOPSLA (2007–2025): *Proof-carrying Code*, *Valgrind*, *Quickcheck*, *The DaCapo benchmarks*, *Halide* … each with the year of the
+  paper (ten years before). The pages hard-wrap authors and titles (a name may break at a hyphen), the POPL page writes "(for 2016):" in its newest rows,
+  and the older rows carry stray quotes and commas; the reader (`tot.mjs popl|pldi|icfp|oopsla`) handles each and reports what it cannot read.
+- The first test-of-time pages for SIGIR, SIGCOMM, SIGMETRICS and SIGMOBILE turned out to list no winners or to be gone; KDD's has no list.
+
 ## 2.6.1 — 2026-10-12
 
 A second independent review of the matcher (on 2.5.14, re-run at 2.5.22; 7.7 million strings, no input made it throw) found wrong badges. Each

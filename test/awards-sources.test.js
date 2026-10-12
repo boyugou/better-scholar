@@ -757,6 +757,34 @@ test("SIGCHI program data: BEST_PAPER and HONORABLE_MENTION flags on the Papers 
   assert.deepEqual(parseProgram(program({ publicationInfo: { publicationStatus: "INTERNALLY_PUBLISHED" } })).entries, []);
 });
 
+test("SIGPLAN most-influential pages: authors over several source lines (and a name broken at a hyphen), '(for YYYY) Title' with and without a colon, a title that wraps, hand-typed stray quotes and commas, citations and the footer not read", async () => {
+  const { parseSigplan } = await import("../scripts/awards/tot.mjs");
+  const html = `<h1>Most Influential Synthetic Paper Award</h1><p>The award given in year N is for the paper of year N-10.</p><h2>Recipients</h2>
+<h3>2026</h3><p>Ann Lee, Bo Chen (MIT), Cy Diaz, Dee Park, Eli Ross, Fay Gray, Pierre-
+Yves Stone and
+Hal Wu (Big Lab)
+(for 2016): Dependent Types and Synthetic Effects in S*</p><p>Citation:</p><p>This paper introduced a thing. (for 1999) Not a heading, and 2005 is not a year line.</p>
+<h3>2025</h3><p>Ivy Xu and Jo Yan
+(for 2015) A Synthetic Garbage Collector with Low Overhead and
+Consistent Utilization of Memory
+Citation:
+It was influential.</p>
+<h3>2008</h3><p>Kai de Zu and Lu Mo"
+(for 1998) Cayenne-like — a synthetic language with types,</p>
+<h3>2007</h3><p>Not names at all, only lowercase words here
+(for 1997) A Synthetic Title That Is Not Read</p>
+<p>Page generated Thu, 08 Oct 2026 21:34:05 +0000</p><h3>2003</h3><p>Ned Oh
+(for 1993) Never Read</p>`;
+  const { entries, skipped } = parseSigplan(html, "POPL", "https://example.org/Awards/POPL/");
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.paperYear, e.award, e.awardLabel, e.title, e.authors]), [
+    ["POPL", 2026, 2016, "tot", "Most Influential Paper Award", "Dependent Types and Synthetic Effects in S*", ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park", "Eli Ross", "Fay Gray", "Pierre-Yves Stone", "Hal Wu"]],
+    ["POPL", 2025, 2015, "tot", "Most Influential Paper Award", "A Synthetic Garbage Collector with Low Overhead and Consistent Utilization of Memory", ["Ivy Xu", "Jo Yan"]],
+    ["POPL", 2008, 1998, "tot", "Most Influential Paper Award", "Cayenne-like — a synthetic language with types", ["Kai de Zu", "Lu Mo"]]
+  ]);
+  assert.equal(skipped.length, 1, skipped.join("\n"));       // the 2007 row whose "authors" are not names
+  assert.ok(entries.every((e) => e.evidence.includes(e.title) && e.source === "https://example.org/Awards/POPL/"));
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

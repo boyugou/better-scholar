@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4518
+  "count": 4608
  },
  "entries": [
   {
@@ -50604,6 +50604,324 @@
    "evidence": "Helmholtz Prize: 2025 “Fast R-CNN” R. Girshick"
   },
   {
+   "venue": "ICFP",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Optimality and inefficiency: what isn’t a cost model of the lambda calculus?",
+   "authors": [
+    "Julia L. Lawall",
+    "Harry G. Mairson"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2006 Most Influential Paper Award: Julia L. Lawall and Harry G. Mairson (for 1996) Optimality and inefficiency: what isn’t a cost model of the lambda calculus?"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Functional Reactive Animation",
+   "authors": [
+    "Conal Elliott",
+    "Paul Hudak"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2007 Most Influential Paper Award: Conal Elliott and Paul Hudak (for 1997) Functional Reactive Animation"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Cayenne — a language with dependent types",
+   "authors": [
+    "Lennart Augustsson"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2008 Most Influential Paper Award: Lennart Augustsson (for 1998) Cayenne — a language with dependent types"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Haskell and XML: Generic combinators or type-based translation?",
+   "authors": [
+    "Malcolm Wallace",
+    "Colin Runciman"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2009 Most Influential Paper Award: Malcolm Wallace and Colin Runciman (for 1999) Haskell and XML: Generic combinators or type-based translation?"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Quickcheck: a lightweight tool for random testing of Haskell programs",
+   "authors": [
+    "Koen Claessen",
+    "John Hughes"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2010 Most Influential Paper Award: Koen Claessen and John Hughes (for 2000) Quickcheck: a lightweight tool for random testing of Haskell programs"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Recursive Structures for Standard ML",
+   "authors": [
+    "Claudio Russo"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2011 Most Influential Paper Award: Claudio Russo (for 2001) Recursive Structures for Standard ML"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Contracts for higher-order functions",
+   "authors": [
+    "Robert Findler",
+    "Matthias Felleisen"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2012 Most Influential Paper Award: Robert Findler and Matthias Felleisen (for 2002) Contracts for higher-order functions"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "MLF: Raising ML to the Power of System F",
+   "authors": [
+    "Didier Le Botlan",
+    "Didier Rémy"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2013 Most Influential Paper Award: Didier Le Botlan and Didier Rémy (for 2003) MLF: Raising ML to the Power of System F"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Scrap More Boilerplate: Reflection, Zips, and Generalised Casts",
+   "authors": [
+    "Ralf Lämmel",
+    "Simon Peyton Jones"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2014 Most Influential Paper Award: Ralf Lämmel and Simon Peyton Jones (for 2004) Scrap More Boilerplate: Reflection, Zips, and Generalised Casts"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Associated Type Synonyms",
+   "authors": [
+    "Manuel M. T. Chakravarty",
+    "Gabriele Keller",
+    "Simon Peyton Jones"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2015 Most Influential Paper Award: Manuel M. T. Chakravarty, Gabriele Keller, and Simon Peyton Jones (for 2005) Associated Type Synonyms"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Simple unification-based type inference for GADTs",
+   "authors": [
+    "Simon Peyton Jones",
+    "Dimitrios Vytiniotis",
+    "Stephanie Weirich",
+    "Geoffrey Washburn"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2016 Most Influential Paper Award: Simon Peyton Jones, Dimitrios Vytiniotis, Stephanie Weirich, and Geoffrey Washburn (for 2006) Simple unification-based type inference for GADTs"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Ott: Effective Tool Support for the Working Semanticist",
+   "authors": [
+    "Peter Sewell",
+    "Francesco Zappa Nardelli",
+    "Scott Owens",
+    "Gilles Peskine",
+    "Thomas Ridge",
+    "Susmit Sarkar",
+    "Rok Strniša"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2017 Most Influential Paper Award: Peter Sewell, Francesco Zappa Nardelli, Scott Owens, Gilles Peskine, Thomas Ridge, Susmit Sarkar, and Rok Strniša (for 2007) Ott: Effective Tool Support for the Working Semanticist"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Parametric higher-order abstract syntax for mechanized semantics",
+   "authors": [
+    "Adam Chlipala"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2018 Most Influential Paper Award: Adam Chlipala (for 2008) Parametric higher-order abstract syntax for mechanized semantics"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Runtime Support for Multicore Haskell",
+   "authors": [
+    "Simon Marlow",
+    "Simon Peyton Jones",
+    "Satnam Singh"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2019 Most Influential Paper Award: Simon Marlow, Simon Peyton Jones, and Satnam Singh (for 2009) Runtime Support for Multicore Haskell"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Abstracting Abstract Machines",
+   "authors": [
+    "David Van Horn",
+    "Matthew Might"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2020 Most Influential Paper Award: David Van Horn and Matthew Might (for 2010) Abstracting Abstract Machines"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Frenetic: A Network Programming Language",
+   "authors": [
+    "Nate Foster",
+    "Rob Harrison",
+    "Michael Freedman",
+    "Christopher Monsanto",
+    "Jennifer Rexford",
+    "Alex Story",
+    "David Walker"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2021 Most Influential Paper Award: Nate Foster, Rob Harrison, Michael Freedman, Christopher Monsanto, Jennifer Rexford, Alex Story, and David Walker (for 2011) Frenetic: A Network Programming Language"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Addressing covert termination and timing channels in concurrent information flow systems",
+   "authors": [
+    "Deian Stefan",
+    "Alejandro Russo",
+    "Pablo Buiras",
+    "Amit Levy",
+    "John C. Mitchell",
+    "David Mazières"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2022 Most Influential Paper Award: Deian Stefan, Alejandro Russo, Pablo Buiras, Amit Levy, John C. Mitchell and David Mazières (for 2012) Addressing covert termination and timing channels in concurrent information flow systems"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Handlers in Action",
+   "authors": [
+    "Ohad Kammar",
+    "Sam Lindley",
+    "Nicolas Oury"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2023 Most Influential Paper Award: Ohad Kammar, Sam Lindley and Nicolas Oury (for 2013) Handlers in Action"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Refinement Types for Haskell",
+   "authors": [
+    "Niki Vazou",
+    "Eric L. Seidel",
+    "Ranjit Jhala",
+    "Dimitrios Vytiniotis",
+    "Simon Peyton-Jones"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2024 Most Influential Paper Award: Niki Vazou, Eric L. Seidel, Ranjit Jhala, Dimitrios Vytiniotis, Simon Peyton-Jones (for 2014) Refinement Types for Haskell"
+  },
+  {
+   "venue": "ICFP",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "1ML - Core and Modules United (F-ing first-class modules)",
+   "authors": [
+    "Andreas Rossberg"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigplan.org/Awards/ICFP/",
+   "evidence": "ICFP 2025 Most Influential Paper Award: Andreas Rossberg (for 2015) 1ML - Core and Modules United (F-ing first-class modules)"
+  },
+  {
    "venue": "ICGSE",
    "year": 2019,
    "award": "distinguished",
@@ -62699,6 +63017,343 @@
    "evidence": "NSDI '26 Test of Time Award: Network Virtualization in Multi-tenant Datacenters — Teemu Koponen, Keith Amidon, Peter Balland, Martín Casado, Anupam Chanda, Bryan Fulton, Igor Ganichev, Jesse Gross, Natasha Gude, Paul Ingram, Ethan Jackson, Andrew Lambeth, Romain Lenglet, Shih-Hao Li, Amar Padmanabhan, Justin Pettit, Ben Pfaff, Rajiv Ramanathan, Scott Shenker, Alan Shieh, Jeremy Stribling, Pankaj Thakkar, Dan Wendlandt, Alexander Yip, and Ronghua Zhang (Published in the Proceedings of the 11th USENIX Symposium on Networked Systems Design and Implementation, April 2014)"
   },
   {
+   "venue": "OOPSLA",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Call Graph Construction in Object-Oriented Languages",
+   "authors": [
+    "David Grove",
+    "Greg DeFouw",
+    "Jeffrey Dean",
+    "Craig Chambers"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2007 Most Influential Paper Award: David Grove, Greg DeFouw, Jeffrey Dean, and Craig Chambers (for 1997) Call Graph Construction in Object-Oriented Languages"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Ownership Types for Flexible Alias Protection",
+   "authors": [
+    "David G. Clarke",
+    "John M. Potter",
+    "James Noble"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2008 Most Influential Paper Award: David G. Clarke, John M. Potter, and James Noble (for 1998) Ownership Types for Flexible Alias Protection"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Implementing Jalapeño in Java",
+   "authors": [
+    "Bowen Alpern",
+    "C. R. Attanasio",
+    "Anthony Cocchi",
+    "Derek Lieber",
+    "Stephen Smith",
+    "Ton Ngo",
+    "John J. Barton",
+    "Susan Flynn Hummel",
+    "Janice C. Shepherd",
+    "Mark Mergen"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2009 Most Influential Paper Award: Bowen Alpern, C. R. Attanasio, Anthony Cocchi, Derek Lieber, Stephen Smith, Ton Ngo, John J. Barton, Susan Flynn Hummel, Janice C. Shepherd, and Mark Mergen (for 1999) Implementing Jalapeño in Java"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Adaptive Optimization in the Jalapeño JVM",
+   "authors": [
+    "Matthew Arnold",
+    "Stephen Fink",
+    "David Grove",
+    "Michael Hind",
+    "Peter F. Sweeney"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2010 Most Influential Paper Award: Matthew Arnold, Stephen Fink, David Grove, Michael Hind, Peter F. Sweeney (for 2000) Adaptive Optimization in the Jalapeño JVM"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Multitasking without compromise: a virtual machine evolution",
+   "authors": [
+    "Grzegorz Czajkowski",
+    "Laurent Daynés"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2011 Most Influential Paper Award: Grzegorz Czajkowski, Laurent Daynés (for 2001) Multitasking without compromise: a virtual machine evolution"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Reconsidering Custom Memory Allocation",
+   "authors": [
+    "Emery Berger",
+    "Benjamin G. Zorn",
+    "Kathryn S. McKinley"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2012 Most Influential Paper Award: Emery Berger, Benjamin G. Zorn, and Kathryn S. McKinley (for 2002) Reconsidering Custom Memory Allocation"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Language Support for Lightweight Transactions",
+   "authors": [
+    "Tim Harris",
+    "Keir Fraser"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2013 Most Influential Paper Award: Tim Harris and Keir Fraser (for 2003) Language Support for Lightweight Transactions"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Mirrors: Design Principles for Meta-level Facilities of Object-Oriented Programming Languages",
+   "authors": [
+    "Gilad Bracha",
+    "David Ungar"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2014 Most Influential Paper Award: Gilad Bracha and David Ungar (for 2004) Mirrors: Design Principles for Meta-level Facilities of Object-Oriented Programming Languages"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "X10: An Object-Oriented Approach to Non-Uniform Cluster Computing",
+   "authors": [
+    "Philippe Charles",
+    "Christian Grothoff",
+    "Vijay Saraswat",
+    "Christopher Donawa",
+    "Allan Kielstra",
+    "Kemal Ebcioglu",
+    "Christoph von Praun",
+    "Vivek Sarkar"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2015 Most Influential Paper Award: Philippe Charles, Christian Grothoff, Vijay Saraswat, Christopher Donawa, Allan Kielstra, Kemal Ebcioglu, Christoph von Praun, and Vivek Sarkar (for 2005) X10: An Object-Oriented Approach to Non-Uniform Cluster Computing"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The DaCapo benchmarks: Java benchmarking development and analysis",
+   "authors": [
+    "Stephen M. Blackburn",
+    "Robin Garner",
+    "Chris Hoffmann",
+    "Asjad M. Khan",
+    "Kathryn S. McKinley",
+    "Rotem Bentzur",
+    "Amer Diwan",
+    "Daniel Feinberg",
+    "Daniel Frampton",
+    "Samuel Z. Guyer",
+    "Martin Hirzel",
+    "Antony Hosking",
+    "Maria Jump",
+    "Han Lee",
+    "J. Eliot B. Moss",
+    "Aashish Phansalkar",
+    "Darko Stefanović",
+    "Thomas VanDrunen",
+    "Daniel von Dincklage",
+    "Ben Wiedermann"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2016 Most Influential Paper Award: Stephen M. Blackburn, Robin Garner, Chris Hoffmann, Asjad M. Khan, Kathryn S. McKinley, Rotem Bentzur, Amer Diwan, Daniel Feinberg, Daniel Frampton, Samuel Z. Guyer, Martin Hirzel, Antony Hosking, Maria Jump, Han Lee, J. Eliot B. Moss, Aashish Phansalkar, Darko Stefanović, Thomas VanDrunen, Daniel von Dincklage, Ben Wiedermann (for 2006) The DaCapo benchmarks: Java benchmarking development and analysis"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Statistically rigorous Java performance evaluation",
+   "authors": [
+    "Andy Georges",
+    "Dries Buytaert",
+    "Lieven Eeckhout"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2017 Most Influential Paper Award: Andy Georges, Dries Buytaert, Lieven Eeckhout (for 2007) Statistically rigorous Java performance evaluation"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "jStar: towards practical verification for Java",
+   "authors": [
+    "Dino Distefano",
+    "Matthew Parkinson"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2018 Most Influential Paper Award: Dino Distefano, Matthew Parkinson (for 2008) jStar: towards practical verification for Java"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Flapjax: a programming language for Ajax applications",
+   "authors": [
+    "Leo A. Meyerovich",
+    "Arjun Guha",
+    "Jacob Baskin",
+    "Gregory H. Cooper",
+    "Michael Greenberg",
+    "Aleks Bromfield",
+    "Shriram Krishnamurthi"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2019 Most Influential Paper Award: Leo A. Meyerovich, Arjun Guha, Jacob Baskin, Gregory H. Cooper, Michael Greenberg, Aleks Bromfield, Shriram Krishnamurthi (for 2009) Flapjax: a programming language for Ajax applications"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The spoofax language workbench: rules for declarative specification of languages and IDEs",
+   "authors": [
+    "Lennart C.L. Kats",
+    "Eelco Visser"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2020 Most Influential Paper Award: Lennart C.L. Kats, Eelco Visser (for 2010) The spoofax language workbench: rules for declarative specification of languages and IDEs"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "SugarJ: library-based syntactic language extensibility",
+   "authors": [
+    "Sebastian Erdweg",
+    "Tillmann Rendel",
+    "Christian Kästner",
+    "Klaus Ostermann"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2021 Most Influential Paper Award: Sebastian Erdweg, Tillmann Rendel, Christian Kästner, Klaus Ostermann (for 2011) SugarJ: library-based syntactic language extensibility"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "GPUVerify: a verifier for GPU kernels",
+   "authors": [
+    "Adam Betts",
+    "Nathan Chong",
+    "Alastair Donaldson",
+    "Shaz Qadeer",
+    "Paul Thomson"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2022 Most Influential Paper Award: Adam Betts, Nathan Chong, Alastair Donaldson, Shaz Qadeer and Paul Thomson (for 2012) GPUVerify: a verifier for GPU kernels"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Empirical analysis of programming language adoption",
+   "authors": [
+    "Leo Meyerovich",
+    "Ariel Rabkin"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2023 Most Influential Paper Award: Leo Meyerovich and Ariel Rabkin (for 2013) Empirical analysis of programming language adoption"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Adaptive LL(*) parsing: the power of dynamic analysis",
+   "authors": [
+    "Terence Parr",
+    "Sam Harwell",
+    "Kathleen Fisher"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2024 Most Influential Paper Award: Terence Parr, Sam Harwell, Kathleen Fisher (for 2014) Adaptive LL(*) parsing: the power of dynamic analysis"
+  },
+  {
+   "venue": "OOPSLA",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Finding Deep Compiler Bugs via Guided Stochastic Program Mutation",
+   "authors": [
+    "Vu Le",
+    "Chengnian Sun",
+    "Zhendong Su"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigplan.org/Awards/OOPSLA/",
+   "evidence": "OOPSLA 2025 Most Influential Paper Award: Vu Le, Chengnian Sun, and Zhendong Su (for 2015) Finding Deep Compiler Bugs via Guided Stochastic Program Mutation"
+  },
+  {
    "venue": "OSDI",
    "year": 1996,
    "award": "best",
@@ -63474,6 +64129,456 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2000,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Profile guided code positioning",
+   "authors": [
+    "Karl Pettis",
+    "Robert C. Hansen"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2000 Most Influential Paper Award: Karl Pettis and Robert C. Hansen (for 1990) Profile guided code positioning"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2001,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A data locality optimizing algorithm",
+   "authors": [
+    "Michael E. Wolf",
+    "Monica S. Lam"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2001 Most Influential Paper Award: Michael E. Wolf and Monica S. Lam (for 1991) A data locality optimizing algorithm"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2002,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Lazy Code Motion",
+   "authors": [
+    "Jens Knoop",
+    "Oliver Rüthing",
+    "Bernhard Steffen"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2002 Most Influential Paper Award: Jens Knoop, Oliver Rüthing, and Bernhard Steffen (for 1992) Lazy Code Motion"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Space Efficient Conservative Garbage Collection",
+   "authors": [
+    "Hans Boehm"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2003 Most Influential Paper Award: Hans Boehm (for 1993) Space Efficient Conservative Garbage Collection"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "ATOM: a system for building customized program analysis tools",
+   "authors": [
+    "Amitabh Srivastava",
+    "Alan Eustace"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2004 Most Influential Paper Award: Amitabh Srivastava and Alan Eustace (for 1994) ATOM: a system for building customized program analysis tools"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Selective Specialization for Object-Oriented Languages",
+   "authors": [
+    "Jeffrey Dean",
+    "Craig Chambers",
+    "David Grove"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2005 Most Influential Paper Award: Jeffrey Dean, Craig Chambers, and David Grove (for 1995) Selective Specialization for Object-Oriented Languages"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "TIL: A Type-Directed Optimizing Compiler for ML",
+   "authors": [
+    "David Tarditi",
+    "Greg Morrisett",
+    "Perry Cheng",
+    "Christopher Stone",
+    "Robert Harper",
+    "Peter Lee"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2006 Most Influential Paper Award: David Tarditi, Greg Morrisett, Perry Cheng, Christopher Stone, Robert Harper, and Peter Lee (for 1996) TIL: A Type-Directed Optimizing Compiler for ML"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Exploiting Hardware Performance Counters with Flow and Context Sensitive Profiling",
+   "authors": [
+    "Glenn Ammons",
+    "Thomas Ball",
+    "James R. Larus"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2007 Most Influential Paper Award: Glenn Ammons, Thomas Ball, and James R. Larus (for 1997) Exploiting Hardware Performance Counters with Flow and Context Sensitive Profiling"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The Implementation of the Cilk-5 Multithreaded Language",
+   "authors": [
+    "Matteo Frigo",
+    "Charles E. Leiserson",
+    "Keith H. Randall"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2008 Most Influential Paper Award: Matteo Frigo, Charles E. Leiserson, and Keith H. Randall (for 1998) The Implementation of the Cilk-5 Multithreaded Language"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Fast Fourier Transform Compiler",
+   "authors": [
+    "Matteo Frigo"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2009 Most Influential Paper Award: Matteo Frigo (for 1999) A Fast Fourier Transform Compiler"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Dynamo: A Transparent Dynamic Optimization System",
+   "authors": [
+    "Vasanth Bala",
+    "Evelyn Duesterwald",
+    "Sanjeev Banerji"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2010 Most Influential Paper Award: Vasanth Bala, Evelyn Duesterwald, and Sanjeev Banerji (for 2000) Dynamo: A Transparent Dynamic Optimization System"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Automatic predicate abstraction of C programs",
+   "authors": [
+    "Thomas Ball",
+    "Rupak Majumdar",
+    "Todd Millstein",
+    "Sriram K. Rajamani"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2011 Most Influential Paper Award: Thomas Ball, Rupak Majumdar, Todd Millstein, and Sriram K. Rajamani (for 2001) Automatic predicate abstraction of C programs"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Extended Static Checking for Java",
+   "authors": [
+    "Cormac Flanagan",
+    "K. Rustan M. Leino",
+    "Mark Lillibridge",
+    "Greg Nelson",
+    "James B. Saxe",
+    "Raymie Stata"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2012 Most Influential Paper Award: Cormac Flanagan, K. Rustan M. Leino, Mark Lillibridge, Greg Nelson, James B. Saxe, and Raymie Stata (for 2002) Extended Static Checking for Java"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "The nesC language: A holistic approach to networked embedded systems",
+   "authors": [
+    "David Gay",
+    "Philip Levis",
+    "J. Robert von Behren",
+    "Matt Welsh",
+    "Eric Brewer",
+    "David E. Culler"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2013 Most Influential Paper Award: David Gay, Philip Levis, J. Robert von Behren, Matt Welsh, Eric Brewer, and David E. Culler (for 2003) The nesC language: A holistic approach to networked embedded systems"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Scalable Lock-Free Dynamic Memory Allocation",
+   "authors": [
+    "Maged M. Michael"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2014 Most Influential Paper Award: Maged M. Michael (for 2004) Scalable Lock-Free Dynamic Memory Allocation"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Pin: building customized program analysis tools with dynamic instrumentation",
+   "authors": [
+    "Chi-Keung Luk",
+    "Robert Cohn",
+    "Robert Muth",
+    "Harish Patil",
+    "Artur Klauser",
+    "Geoff Lowney",
+    "Steven Wallace",
+    "Vijay Janapa Reddi",
+    "Kim Hazelwood"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2015 Most Influential Paper Award: Chi-Keung Luk, Robert Cohn, Robert Muth, Harish Patil, Artur Klauser, Geoff Lowney, Steven Wallace, Vijay Janapa Reddi, and Kim Hazelwood (for 2005) Pin: building customized program analysis tools with dynamic instrumentation"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "DieHard: probabilistic memory safety for unsafe languages",
+   "authors": [
+    "Emery Berger",
+    "Benjamin Zorn"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2016 Most Influential Paper Award: Emery Berger and Benjamin Zorn (for 2006) DieHard: probabilistic memory safety for unsafe languages"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Valgrind: a framework for heavyweight dynamic binary instrumentation",
+   "authors": [
+    "Nicholas Nethercote",
+    "Julian Seward"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2017 Most Influential Paper Award: Nicholas Nethercote and Julian Seward (for 2007) Valgrind: a framework for heavyweight dynamic binary instrumentation"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Practical Automatic Polyhedral Parallelizer and Locality Optimizer",
+   "authors": [
+    "Uday Bondhugula",
+    "Albert Hartono",
+    "J. Ramanujam",
+    "P. Sadayappan"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2018 Most Influential Paper Award: Uday Bondhugula, Albert Hartono, J. Ramanujam, and P. Sadayappan (for 2008) A Practical Automatic Polyhedral Parallelizer and Locality Optimizer"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "FastTrack: Efficient and Precise Dynamic Race Detection",
+   "authors": [
+    "Cormac Flanagan",
+    "Stephen N. Freund"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2019 Most Influential Paper Award: Cormac Flanagan (UC Santa Cruz) and Stephen N. Freund (Williams College) (for 2009) FastTrack: Efficient and Precise Dynamic Race Detection"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Green: A Framework for Supporting Energy-Conscious Programming using Controlled Approximation",
+   "authors": [
+    "Woongki Baek",
+    "Trishul M. Chilimbi"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2020 Most Influential Paper Award: Woongki Baek (Ulsan National Institute of Science and Technology) and Trishul M. Chilimbi (Amazon) (for 2010) Green: A Framework for Supporting Energy-Conscious Programming using Controlled Approximation"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Finding and understanding bugs in C compilers",
+   "authors": [
+    "Xuejun Yang",
+    "Yang Chen",
+    "Eric Eide",
+    "John Regehr"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2021 Most Influential Paper Award: Xuejun Yang (Microsoft), Yang Chen (Microsoft), Eric Eide (University of Utah), and John Regehr (University of Utah) (for 2011) Finding and understanding bugs in C compilers"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Test-Case Reduction for C Compiler Bugs",
+   "authors": [
+    "John Regehr",
+    "Yang Chen",
+    "Pascal Cuoq",
+    "Eric Eide",
+    "Chucky Ellison",
+    "Xuejun Yang"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2022 Most Influential Paper Award: John Regehr (University of Utah), Yang Chen (Meta), Pascal Cuoq (TrustInSoft), Eric Eide (University of Utah), Chucky Ellison, Xuejun Yang (Microsoft) (for 2012) Test-Case Reduction for C Compiler Bugs"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Representation in Image Processing Pipelines",
+   "authors": [
+    "Jonathan Ragan-Kelley",
+    "Connelly Barnes",
+    "Andrew Adams",
+    "Sylvain Paris",
+    "Frédo Durand",
+    "Saman Amarasinghe"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2023 Most Influential Paper Award: Jonathan Ragan-Kelley (MIT), Connelly Barnes (Adobe), Andrew Adams (Adobe), Sylvain Paris (Adobe), Frédo Durand (MIT), Saman Amarasinghe (MIT) (for 2013) Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Representation in Image Processing Pipelines"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "FlowDroid: Precise Context, Flow, Field, Object-sensitive and Lifecycle-aware Taint Analysis for Android Apps",
+   "authors": [
+    "Steven Arzt",
+    "Siegfried Rasthofer",
+    "Christian Fritz",
+    "Eric Bodden",
+    "Alexandre Bartel",
+    "Jacques Klein",
+    "Yves Le Traon",
+    "Damien Octeau",
+    "Patrick McDaniel"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2024 Most Influential Paper Award: Steven Arzt, Siegfried Rasthofer, Christian Fritz, Eric Bodden, Alexandre Bartel, Jacques Klein, Yves Le Traon, Damien Octeau, Patrick McDaniel (for 2014) FlowDroid: Precise Context, Flow, Field, Object-sensitive and Lifecycle-aware Taint Analysis for Android Apps"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Simpler, Safer Programming and Execution Model for Intermittent Systems",
+   "authors": [
+    "Brandon Lucia",
+    "Benjamin Ransford"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2025 Most Influential Paper Award: Brandon Lucia and Benjamin Ransford (for 2015) A Simpler, Safer Programming and Execution Model for Intermittent Systems"
+  },
+  {
+   "venue": "PLDI",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Ivy: Safety Verification by Interactive Generalization",
+   "authors": [
+    "Oded Padon",
+    "Kenneth Lauchlin McMillan",
+    "Aurojit Panda",
+    "Mooly Sagiv",
+    "Sharon Shoham"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://www.sigplan.org/Awards/PLDI/",
+   "evidence": "PLDI 2026 Most Influential Paper Award: Oded Padon, Kenneth Lauchlin McMillan, Aurojit Panda, Mooly Sagiv, Sharon Shoham (for 2016) Ivy: Safety Verification by Interactive Generalization"
   },
   {
    "venue": "PODC",
@@ -64487,6 +65592,395 @@
    "track": "main",
    "source": "https://sigmod.org/pods-home/pods-best-paper-awards/",
    "evidence": "2026: Honghao Lin, Hoai-An Nguyen, William Swartworth, and David Woodruff: Unbiased Insights: Optimal Streaming Algorithms for ℓp Sampling, the Forget Model, and Beyond"
+  },
+  {
+   "venue": "POPL",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Imperative functional programming",
+   "authors": [
+    "Simon Peyton Jones",
+    "Philip Wadler"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2003 Most Influential Paper Award: Simon Peyton Jones and Philip Wadler (for 1993) Imperative functional programming"
+  },
+  {
+   "venue": "POPL",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Implementation of the Typed Call-by-Value lambda-calculus using a Stack of Regions",
+   "authors": [
+    "Mads Tofte",
+    "Jean-Pierre Talpin"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2004 Most Influential Paper Award: Mads Tofte and Jean-Pierre Talpin (for 1994) Implementation of the Typed Call-by-Value lambda-calculus using a Stack of Regions"
+  },
+  {
+   "venue": "POPL",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A Language with Distributed Scope",
+   "authors": [
+    "Luca Cardelli"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2005 Most Influential Paper Award: Luca Cardelli (for 1995) A Language with Distributed Scope"
+  },
+  {
+   "venue": "POPL",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Points-to Analysis in Almost Linear Time",
+   "authors": [
+    "Bjarne Steensgaard"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2006 Most Influential Paper Award: Bjarne Steensgaard (for 1996) Points-to Analysis in Almost Linear Time"
+  },
+  {
+   "venue": "POPL",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Proof-carrying Code",
+   "authors": [
+    "George Necula"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2007 Most Influential Paper Award: George Necula (for 1997) Proof-carrying Code"
+  },
+  {
+   "venue": "POPL",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "From System F to Typed Assembly Language",
+   "authors": [
+    "Greg Morrisett",
+    "David Walker",
+    "Karl Crary",
+    "Neal Glew"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2008 Most Influential Paper Award: Greg Morrisett, David Walker, Karl Crary, and Neal Glew (for 1998) From System F to Typed Assembly Language"
+  },
+  {
+   "venue": "POPL",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "JFlow: Practical Mostly-Static Information Flow Control",
+   "authors": [
+    "Andrew C. Myers"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2009 Most Influential Paper Award: Andrew C. Myers (for 1999) JFlow: Practical Mostly-Static Information Flow Control"
+  },
+  {
+   "venue": "POPL",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Anytime, Anywhere: Modal Logics for Mobile Ambients",
+   "authors": [
+    "Luca Cardelli",
+    "Andrew D. Gordon"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2010 Most Influential Paper Award: Luca Cardelli and Andrew D. Gordon (for 2000) Anytime, Anywhere: Modal Logics for Mobile Ambients"
+  },
+  {
+   "venue": "POPL",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "BI as an Assertion Language for Mutable Data Structures",
+   "authors": [
+    "Samin Ishtiaq",
+    "Peter W. O'Hearn"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2011 Most Influential Paper Award: Samin Ishtiaq and Peter W. O'Hearn (for 2001) BI as an Assertion Language for Mutable Data Structures"
+  },
+  {
+   "venue": "POPL",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "CCured: Type-Safe Retrofitting of Legacy Code",
+   "authors": [
+    "George C. Necula",
+    "Scott McPeak",
+    "Westley Weimer"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2012 Most Influential Paper Award: George C. Necula, Scott McPeak, and Westley Weimer (for 2002) CCured: Type-Safe Retrofitting of Legacy Code"
+  },
+  {
+   "venue": "POPL",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "A real-time garbage collector with low overhead and consistent utilization",
+   "authors": [
+    "David F. Bacon",
+    "Perry Cheng",
+    "VT Rajan"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2013 Most Influential Paper Award: David F. Bacon, Perry Cheng, VT Rajan (for 2003) A real-time garbage collector with low overhead and consistent utilization"
+  },
+  {
+   "venue": "POPL",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Abstractions from proofs",
+   "authors": [
+    "Thomas Henzinger",
+    "Ranjit Jhala",
+    "Rupak Majumdar",
+    "Kenneth McMillan"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2014 Most Influential Paper Award: Thomas Henzinger, Ranjit Jhala, Rupak Majumdar, Kenneth McMillan (for 2004) Abstractions from proofs"
+  },
+  {
+   "venue": "POPL",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Combinators for Bidirectional Tree Transformations: A Linguistic Approach to the View Update Problem",
+   "authors": [
+    "Nate Foster",
+    "Michael B. Greenwald",
+    "Jonathan T. Moore",
+    "Benjamin C. Pierce",
+    "Alan Schmitt"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2015 Most Influential Paper Award: Nate Foster, Michael B. Greenwald, Jonathan T. Moore, Benjamin C. Pierce, Alan Schmitt (for 2005) Combinators for Bidirectional Tree Transformations: A Linguistic Approach to the View Update Problem"
+  },
+  {
+   "venue": "POPL",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Formal certification of a compiler back-end or: programming a compiler with a proof assistant",
+   "authors": [
+    "Xavier Leroy"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2016 Most Influential Paper Award: Xavier Leroy (for 2006) Formal certification of a compiler back-end or: programming a compiler with a proof assistant"
+  },
+  {
+   "venue": "POPL",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "JavaScript Instrumentation for Browser Security",
+   "authors": [
+    "Dachuan Yu",
+    "Ajay Chander",
+    "Nayeem Islam",
+    "Igor Serikov"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2017 Most Influential Paper Award: Dachuan Yu, Ajay Chander, Nayeem Islam, Igor Serikov (for 2007) JavaScript Instrumentation for Browser Security"
+  },
+  {
+   "venue": "POPL",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Multiparty asynchronous session types",
+   "authors": [
+    "Kohei Honda",
+    "Nobuko Yoshida",
+    "Marco Carbone"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2018 Most Influential Paper Award: Kohei Honda, Nobuko Yoshida, Marco Carbone (for 2008) Multiparty asynchronous session types"
+  },
+  {
+   "venue": "POPL",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Compositional shape analysis by means of bi-abduction",
+   "authors": [
+    "Cristiano Calcagno",
+    "Dino Distefano",
+    "Peter W. O'Hearn",
+    "Hongseok Yang"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2019 Most Influential Paper Award: Cristiano Calcagno, Dino Distefano, Peter W. O'Hearn, Hongseok Yang (for 2009) Compositional shape analysis by means of bi-abduction"
+  },
+  {
+   "venue": "POPL",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "From program verification to program synthesis",
+   "authors": [
+    "Saurabh Srivastava",
+    "Sumit Gulwani",
+    "Jeffrey Foster"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2020 Most Influential Paper Award: Saurabh Srivastava, Sumit Gulwani, Jeffrey Foster (for 2010) From program verification to program synthesis"
+  },
+  {
+   "venue": "POPL",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Automating string processing in spreadsheets using input-output examples",
+   "authors": [
+    "Sumit Gulwani"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2021 Most Influential Paper Award: Sumit Gulwani (for 2011) Automating string processing in spreadsheets using input-output examples"
+  },
+  {
+   "venue": "POPL",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Multiple facets for dynamic information flow",
+   "authors": [
+    "Thomas H. Austin",
+    "Cormac Flanagan"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2022 Most Influential Paper Award: Thomas H. Austin and Cormac Flanagan (for 2012) Multiple facets for dynamic information flow"
+  },
+  {
+   "venue": "POPL",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Views: Compositional reasoning for concurrent programs",
+   "authors": [
+    "Thomas Dinsdale-Young",
+    "Lars Birkedal",
+    "Philippa Gardner",
+    "Matthew Parkinson",
+    "Hongseok Yang"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2023 Most Influential Paper Award: Thomas Dinsdale-Young, Lars Birkedal, Philippa Gardner, Matthew Parkinson, Hongseok Yang (for 2013) Views: Compositional reasoning for concurrent programs"
+  },
+  {
+   "venue": "POPL",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "CakeML: A Verified Implementation of ML",
+   "authors": [
+    "Ramana Kumar",
+    "Magnus Myreen",
+    "Michael Norrish",
+    "Scott Owens"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2024 Most Influential Paper Award: Ramana Kumar, Magnus Myreen, Michael Norrish, Scott Owens (for 2014) CakeML: A Verified Implementation of ML"
+  },
+  {
+   "venue": "POPL",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Iris: Monoids and Invariants as an Orthogonal Basis for Concurrent Reasoning",
+   "authors": [
+    "Ralf Jung",
+    "David Swasey",
+    "Filip Sieczkowski",
+    "Kasper Paabøl Svendsen",
+    "Aaron Joseph Turon",
+    "Lars Birkedal",
+    "Derek Dreyer"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2025 Most Influential Paper Award: Ralf Jung, David Swasey, Filip Sieczkowski, Kasper Paabøl Svendsen, Aaron Joseph Turon, Lars Birkedal, Derek Dreyer (for 2015) Iris: Monoids and Invariants as an Orthogonal Basis for Concurrent Reasoning"
+  },
+  {
+   "venue": "POPL",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Most Influential Paper Award",
+   "title": "Dependent Types and Multi-monadic Effects in F*",
+   "authors": [
+    "Nikhil Swamy",
+    "Cătălin Hriţcu",
+    "Chantal Keller",
+    "Aseem Rastogi",
+    "Antoine Delignat-Lavaud",
+    "Simon Forest",
+    "Karthikeyan Bhargavan",
+    "Cédric Fournet",
+    "Pierre-Yves Strub",
+    "Markulf Kohlweiss",
+    "Jean-Karim Zinzindohoue",
+    "Santiago Zanella-Béguelin"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://www.sigplan.org/Awards/POPL/",
+   "evidence": "POPL 2026 Most Influential Paper Award: Nikhil Swamy, Cătălin Hriţcu, Chantal Keller, Aseem Rastogi, Antoine Delignat-Lavaud, Simon Forest, Karthikeyan Bhargavan, Cédric Fournet, Pierre-Yves Strub, Markulf Kohlweiss, Jean-Karim Zinzindohoue, Santiago Zanella-Béguelin (for 2016) Dependent Types and Multi-monadic Effects in F*"
   },
   {
    "venue": "S&P",

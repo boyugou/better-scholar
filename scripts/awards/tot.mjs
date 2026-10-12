@@ -11,8 +11,11 @@
 //                                                                       "MICRO 2006 | Title | Authors"
 //   dijkstra  https://www.podc.org/dijkstra/                            the Edsger W. Dijkstra Prize in Distributed Computing (PODC and DISC), 2000–2026:
 //                                                                       under "2023 citation" a line per paper, "Authors for “Title” in …"
+//   popl|pldi|icfp|oopsla  https://www.sigplan.org/Awards/<POPL|PLDI|ICFP|OOPSLA>/
+//                                                                       SIGPLAN's Most Influential Paper Awards (for the paper of ten years before): per year the
+//                                                                       authors, then "(for 2016) Title." and a "Citation:" paragraph
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -22,7 +25,11 @@ const PAGES = {
   www: "https://www.iw3c2.org/ToT/",
   isca: "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
   micro: "https://www.sigmicro.org/awards/tot/",
-  dijkstra: "https://www.podc.org/dijkstra/"
+  dijkstra: "https://www.podc.org/dijkstra/",
+  popl: "https://www.sigplan.org/Awards/POPL/",
+  pldi: "https://www.sigplan.org/Awards/PLDI/",
+  icfp: "https://www.sigplan.org/Awards/ICFP/",
+  oopsla: "https://www.sigplan.org/Awards/OOPSLA/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -111,10 +118,41 @@ export function parseDijkstra(html, source = PAGES.dijkstra) {
   return { entries, skipped };
 }
 
+// The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
+// The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
+// the parenthesis. A page's footer ("Page generated …") ends the list.
+export function parseSigplan(html, venue, source) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((l) => l.normalize("NFC"));
+  const join = (parts) => parts.reduce((a, b) => (a ? (/-$/.test(a) ? a + b : a + " " + b) : b), "");
+  let year = null, state = null, authors = [], title = [], paperYear = null;
+  const flush = () => {
+    if (state !== "title") return;
+    // (a stray quotation mark after the last name, a comma after the title: the older rows are typed by hand)
+    const authorText = join(authors).replace(/["“”]+\s*$/, ""), t = cleanTitle(join(title).replace(/[,;]+$/, "")), who = names(authorText);
+    if (who.length && who.every(isPerson) && t.length >= 8) entries.push(entry(venue, year, "Most Influential Paper Award", t, who, source, `${venue} ${year} Most Influential Paper Award: ${authorText} (for ${paperYear}) ${t}`, paperYear));
+    else skipped.push(`${venue} ${year}: not read: ${authorText.slice(0, 50)} / ${t.slice(0, 40)}`);
+    state = null;
+  };
+  for (const l of ls.slice(Math.max(0, ls.findIndex((x) => /^Recipients$/i.test(x))) + 1)) {
+    if (/^Page generated\b/i.test(l)) break;
+    const y = /^((?:19|20)\d{2})$/.exec(l);
+    if (y) { flush(); year = parseInt(y[1], 10); state = "authors"; authors = []; title = []; continue; }
+    const f = year && /^\(for ((?:19|20)\d{2})\)\s*:?\s*(.*)$/.exec(l);
+    if (state === "authors" && f) { paperYear = parseInt(f[1], 10); title = f[2] ? [f[2]] : []; state = "title"; continue; }
+    if (state === "title" && /^Citation:?/i.test(l)) { flush(); continue; }       // (what follows, the citation, is not read)
+    if (state === "authors") authors.push(l);
+    else if (state === "title") title.push(l);
+  }
+  flush();
+  return { entries, skipped };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
-  const parse = { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra }[kind];
-  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra [saved-page.html]"); process.exit(2); }
+  const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra }[kind];
+  if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
   const by = {};
