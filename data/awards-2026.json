@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2041
+  "count": 2097
  },
  "entries": [
   {
@@ -22084,6 +22084,949 @@
    "track": "main",
    "source": "https://2025.naacl.org/blog/best-papers/",
    "evidence": "Best Paper Runner-Up:: REL-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance — Kaitlyn Zhou, Jena D. Hwang, Xiang Ren, Nouha Dziri, Dan Jurafsky, Maarten Sap"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Dial One for Scam: A Large-Scale Analysis of Technical Support Scams",
+   "authors": [
+    "Najmeh Miramirkhani",
+    "Oleksii Starov",
+    "Nick Nikiforakis"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2017/",
+   "evidence": "NDSS Symposium 2017 Distinguished Paper Award: Dial One for Scam: A Large-Scale Analysis of Technical Support Scams — Najmeh Miramirkhani, Oleksii Starov and Nick Nikiforakis"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Ramblr: Making Reassembly Great Again",
+   "authors": [
+    "Ruoyu Wang",
+    "Yan Shoshitaishvili",
+    "Antonio Bianchi",
+    "Aravind Machiry",
+    "John Grosen",
+    "Paul Grosen",
+    "Christopher Kruegel",
+    "Giovanni Vigna"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2017/",
+   "evidence": "NDSS Symposium 2017 Distinguished Paper Award: Ramblr: Making Reassembly Great Again — Ruoyu Wang, Yan Shoshitaishvili, Antonio Bianchi, Aravind Machiry, John Grosen, Paul Grosen, Christopher Kruegel and Giovanni Vigna"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2018,
+   "award": "category",
+   "awardLabel": "Cisco Network Security Best Paper",
+   "title": "Automated Attack Discovery in TCP Congestion Control Using a Model-guided Approach",
+   "authors": [
+    "Samuel Jero",
+    "Endadul Hoque",
+    "David Choffnes",
+    "Alan Mislove",
+    "Cristina Nita-Rotaru"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2018/",
+   "evidence": "Cisco Network Security Best Paper Award: Automated Attack Discovery in TCP Congestion Control Using a Model-guided Approach — Samuel Jero (Purdue Univ.), Endadul Hoque (FIU), David Choffnes, Alan Mislove, Cristina Nita-Rotaru (Northeastern Univ.)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Knock Knock, Who’s There? Membership Inference on Aggregate Location Data",
+   "authors": [
+    "Apostolos Pyrgelis",
+    "Carmela Troncoso",
+    "Emiliano De Cristofaro"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2018/",
+   "evidence": "NDSS 2018 Distinguished Paper Awards: Knock Knock, Who’s There? Membership Inference on Aggregate Location Data — Apostolos Pyrgelis (UCL), Carmela Troncoso (EPFL), and Emiliano De Cristofaro (UCL)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Resolving the Predicament of Android Custom Permissions",
+   "authors": [
+    "Güliz Seray Tuncay",
+    "Soteris Demetriou",
+    "Karan Ganju",
+    "Carl Gunter"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2018/",
+   "evidence": "NDSS 2018 Distinguished Paper Awards: Resolving the Predicament of Android Custom Permissions — Güliz Seray Tuncay, Soteris Demetriou, Karan Ganju, and Carl Gunter (UIUC)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Cleaning Up the Internet of Evil Things: Real-World Evidence on ISP and Consumer Efforts to Remove Mirai",
+   "authors": [
+    "Orcun Cetin",
+    "Carlos Ganan",
+    "Lisette Altena",
+    "Takahiro Kasama",
+    "Daisuke Inoue",
+    "Kazuki Tamiya",
+    "Ying Tie",
+    "Katsunari Yoshioka",
+    "Michel van Eeten"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Awards: Cleaning Up the Internet of Evil Things: Real-World Evidence on ISP and Consumer Efforts to Remove Mirai — Orcun Cetin (Delft University of Technology), Carlos Ganan (Delft University of Technology), Lisette Altena (Delft University of Technology), Takahiro Kasama (National Institute of Information and Communications Technology), Daisuke Inoue (National Institute of Information and Communications Technology), Kazuki Tamiya (Yokohama National University), Ying Tie (Yokohama National University), Katsunari Yoshioka (Yokohama National University), Michel van Eeten (Delft University of Technology)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Cracking the Wall of Confinement: Understanding and Analyzing Malicious Domain Take-downs",
+   "authors": [
+    "Eihal Alowaisheq",
+    "Peng Wang",
+    "Sumayah Alrwais",
+    "Xiaojing Liao",
+    "XiaoFeng Wang",
+    "Tasneem Alowaisheq",
+    "Xianghang Mi",
+    "Siyuan Tang",
+    "Baojun Liu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Awards: Cracking the Wall of Confinement: Understanding and Analyzing Malicious Domain Take-downs — Eihal Alowaisheq (Indiana University, King Saud University), Peng Wang (Indiana University), Sumayah Alrwais (King Saud University), Xiaojing Liao (Indiana University), XiaoFeng Wang (Indiana University), Tasneem Alowaisheq (Indiana University, King Saud University), Xianghang Mi (Indiana University), Siyuan Tang (Indiana University), Baojun Liu (Tsinghua University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Establishing Software Root of Trust Unconditionally",
+   "authors": [
+    "Virgil D. Gligor",
+    "Maverick S. L. Woo"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Awards: Establishing Software Root of Trust Unconditionally — Virgil D. Gligor (Carnegie Mellon University), Maverick S. L. Woo (Carnegie Mellon University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "MBeacon: Privacy-Preserving Beacons for DNA Methylation Data",
+   "authors": [
+    "Inken Hagestedt",
+    "Yang Zhang",
+    "Mathias Humbert",
+    "Pascal Berrang",
+    "Haixu Tang",
+    "XiaoFeng Wang",
+    "Michael Backes"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Awards: MBeacon: Privacy-Preserving Beacons for DNA Methylation Data — Inken Hagestedt (CISPA Helmholtz Center for Information Security), Yang Zhang (CISPA Helmholtz Center for Information Security), Mathias Humbert (Swiss Data Science Center, ETH Zurich/EPFL), Pascal Berrang (CISPA Helmholtz Center for Information Security), Haixu Tang (Indiana University Bloomington), XiaoFeng Wang (Indiana University Bloomington), Michael Backes (CISPA Helmholtz Center for Information Security)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "Data Oblivious ISA Extensions for Side Channel-Resistant and High Performance Computing",
+   "authors": [
+    "Jiyong Yu",
+    "Lucas Hsiung",
+    "Mohamad El’Hajj",
+    "Christopher W. Fletcher"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: Data Oblivious ISA Extensions for Side Channel-Resistant and High Performance Computing — Jiyong Yu, Lucas Hsiung, Mohamad El’Hajj, Christopher W. Fletcher (UIUC)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "Ginseng: Keeping Secrets in Registers When You Distrust the Operating System",
+   "authors": [
+    "Min Hong Yun",
+    "Lin Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: Ginseng: Keeping Secrets in Registers When You Distrust the Operating System — Min Hong Yun, Lin Zhong (Rice University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "Graph-based Security and Privacy Analytics via Collective Classification with Joint Weight Learning and Propagation",
+   "authors": [
+    "Binghui Wang",
+    "Jinyuan Jia",
+    "Neil Zhenqiang Gong"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: Graph-based Security and Privacy Analytics via Collective Classification with Joint Weight Learning and Propagation — Binghui Wang, Jinyuan Jia, Neil Zhenqiang Gong (Iowa State University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "ICSREF: A Framework for Automated Reverse Engineering of Industrial Control Systems Binaries",
+   "authors": [
+    "Anastasis Keliris",
+    "Michail Maniatakos"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: ICSREF: A Framework for Automated Reverse Engineering of Industrial Control Systems Binaries — Anastasis Keliris (NYU); Michail Maniatakos (NYU Abu Dhabi)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "On the Challenges of Geographical Avoidance for Tor",
+   "authors": [
+    "Katharina Kohls",
+    "Kai Jansen",
+    "David Rupprecht",
+    "Thorsten Holz",
+    "Christina Ppper"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: On the Challenges of Geographical Avoidance for Tor — Katharina Kohls, Kai Jansen, David Rupprecht, Thorsten Holz (Ruhr-University Bochum); Christina Ppper (New York University Abu Dhabi)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "One Engine To Serve ’em All: Inferring Taint Rules Without Architectural Semantics",
+   "authors": [
+    "Zheng Leong Chua",
+    "Yanhao Wang",
+    "Teodora Baluta",
+    "Prateek Saxena",
+    "Zhenkai Liang",
+    "Purui Su"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: One Engine To Serve ’em All: Inferring Taint Rules Without Architectural Semantics — Zheng Leong Chua (National University of Singapore); Yanhao Wang (TCA/SKLCS, Institute of Software, Chinese Academy of Sciences); Teodora Baluta, Prateek Saxena, Zhenkai Liang (National University of Singapore); Purui Su (TCA/SKLCS, Institute of Software, Chinese Academy of Sciences)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Distinguished Paper Honorable Mention",
+   "title": "Privacy Attacks to the 4G and 5G Cellular Paging Protocols Using Side Channel Information",
+   "authors": [
+    "Syed Rafiul Hussain",
+    "Mitziu Echeverria",
+    "Omar Chowdhury",
+    "Ninghui Li",
+    "Elisa Bertino"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS 2019 Distinguished Paper Award Honorable Mentions: Privacy Attacks to the 4G and 5G Cellular Paging Protocols Using Side Channel Information — Syed Rafiul Hussain (Purdue University); Mitziu Echeverria, Omar Chowdhury (University of Iowa); Ninghui Li, Elisa Bertino (Purdue University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Virtual Machine Introspection Based Architecture for Intrusion Detection",
+   "authors": [
+    "Tal Garfinkel",
+    "Mendel Rosenblum"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS Test of Time Awards: A Virtual Machine Introspection Based Architecture for Intrusion Detection — Tal Garfinkel and Mendel Rosenblum"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks",
+   "authors": [
+    "Ari Juels",
+    "John Brainard"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS Test of Time Awards: Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks — Ari Juels and John Brainard"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SKEME: A Versatile Secure Key Exchange Mechanism for Internet",
+   "authors": [
+    "Hugo Krawczyk"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.ndss-symposium.org/ndss2019/",
+   "evidence": "NDSS Test of Time Awards: SKEME: A Versatile Secure Key Exchange Mechanism for Internet — Hugo Krawczyk"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2020,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Melting Pot of Origins: Compromising the Intermediary Web Services that Rehost Websites",
+   "authors": [
+    "Takuya Watanabe",
+    "Eitaro Shioji",
+    "Mitsuaki Akiyama",
+    "Tatsuya Mori"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2020/",
+   "evidence": "NDSS 2020 Distinguished Paper Award: Melting Pot of Origins: Compromising the Intermediary Web Services that Rehost Websites — Takuya Watanabe, Eitaro Shioji, Mitsuaki Akiyama, Tatsuya Mori"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A First Step Towards Automated Detection of Buffer Overrun Vulnerabilities",
+   "authors": [
+    "David Wagner",
+    "Jeffrey S. Foster",
+    "Eric A. Brewer",
+    "Alexander Aiken"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.ndss-symposium.org/ndss2020/",
+   "evidence": "NDSS Test of Time Awards: A First Step Towards Automated Detection of Buffer Overrun Vulnerabilities — David Wagner, Jeffrey S. Foster, Eric A. Brewer, Alexander Aiken"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software",
+   "authors": [
+    "James Newsome",
+    "Dawn Song"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.ndss-symposium.org/ndss2020/",
+   "evidence": "NDSS Test of Time Awards: Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software — James Newsome and Dawn Song"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Design and Implementation of Datagram TLS",
+   "authors": [
+    "Nagendra Modadugu",
+    "Eric Rescorla"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.ndss-symposium.org/ndss2020/",
+   "evidence": "NDSS Test of Time Awards: The Design and Implementation of Datagram TLS — Nagendra Modadugu and Eric Rescorla"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2021,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Awakening the Web’s Sleeping Agents: Misusing Service Workers for Privacy Leakage",
+   "authors": [
+    "Soroush Karami",
+    "Panagiotis Ilia",
+    "Jason Polakis"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2021/",
+   "evidence": "NDSS 2021 Distinguished Paper Award: Awakening the Web’s Sleeping Agents: Misusing Service Workers for Privacy Leakage — Soroush Karami, Panagiotis Ilia, Jason Polakis (University of Illinois at Chicago)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Preventing Kernel Hacks with HAKCs",
+   "authors": [
+    "Derrick McKee",
+    "Yianni Giannaris",
+    "Carolina Ortega",
+    "Howard Shrobe",
+    "Mathias Payer",
+    "Hamed Okhravi",
+    "Nathan Burow"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2022/",
+   "evidence": "2022 Distinguished Paper Award: Preventing Kernel Hacks with HAKCs — Derrick McKee (Purdue University), Yianni Giannaris (MIT CSAIL), Carolina Ortega (MIT CSAIL), Howard Shrobe (MIT CSAIL), Mathias Payer (EPFL), Hamed Okhravi (MIT Lincoln Laboratory), Nathan Burow (MIT Lincoln Laboratory)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Automated Whitebox Fuzz Testing",
+   "authors": [
+    "Patrice Godefroid",
+    "Michael Y. Levin",
+    "David Molnar"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.ndss-symposium.org/ndss2022/",
+   "evidence": "NDSS Symposium Test of Time Award: Automated Whitebox Fuzz Testing — Patrice Godefroid (Microsoft, Research), Michael Y. Levin (Microsoft, CSE), and David Molnar (UC Berkley)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DARWIN: Survival of the Fittest Fuzzing Mutators",
+   "authors": [
+    "Patrick Jauernig",
+    "Domagoj Jakobovic",
+    "Stjepan Picek",
+    "Emmanuel Stapf",
+    "Ahmad-Reza Sadeghi"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2023/",
+   "evidence": "2023 Distinguished Paper Award Winners: DARWIN: Survival of the Fittest Fuzzing Mutators — Patrick Jauernig (Technical University of Darmstadt), Domagoj Jakobovic (University of Zagreb, Croatia), Stjepan Picek (Radboud University and TU Delft), Emmanuel Stapf (Technical University of Darmstadt), Ahmad-Reza Sadeghi (Technical University of Darmstadt)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2023,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Your Router Is My Prober: Measuring IPv6Networks via ICMP Rate Limiting Side Channels",
+   "authors": [
+    "Long Pan",
+    "Jiahai Yang",
+    "Lin He",
+    "Zhiliang Wang",
+    "Leyao Nie",
+    "Guanglei Song",
+    "Yaozhong Liu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2023/",
+   "evidence": "2023 Distinguished Paper Award Winners: Your Router Is My Prober: Measuring IPv6Networks via ICMP Rate Limiting Side Channels — Long Pan (Tsinghua University), Jiahai Yang (Tsinghua University), Lin He (Tsinghua University), Zhiliang Wang (Tsinghua University), Leyao Nie (Tsinghua University), Guanglei Song (Tsinghua University), Yaozhong Liu (Tsinghua University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Eavesdropping on Controller Acoustic Emanation for Keystroke Inference Attack in Virtual Reality",
+   "authors": [
+    "Shiqing Luo",
+    "Anh Nguyen",
+    "Hafsa Farooq",
+    "Kun Sun",
+    "Zhisheng Yan"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2024/",
+   "evidence": "2024 Distinguished Paper Award Winners: Eavesdropping on Controller Acoustic Emanation for Keystroke Inference Attack in Virtual Reality — Shiqing Luo (George Mason University), Anh Nguyen (George Mason University), Hafsa Farooq (Georgia State University), Kun Sun (George Mason University), Zhisheng Yan (George Mason University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Like, Comment, Get Scammed: Characterizing Comment Scams on Media Platforms",
+   "authors": [
+    "Xigao Li",
+    "Amir Rahmati",
+    "Nick Nikiforakis"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2024/",
+   "evidence": "2024 Distinguished Paper Award Winners: Like, Comment, Get Scammed: Characterizing Comment Scams on Media Platforms — Xigao Li (Stony Brook University), Amir Rahmati (Stony Brook University), Nick Nikiforakis (Stony Brook University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "LMSanitator: Defending Prompt-Tuning Against Task-Agnostic Backdoors",
+   "authors": [
+    "Chengkun Wei",
+    "Wenlong Meng",
+    "Zhikun Zhang",
+    "Min Chen",
+    "Minghu Zhao",
+    "Wenjing Fang",
+    "Lei Wang",
+    "Zihui Zhang",
+    "Wenzhi Chen"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2024/",
+   "evidence": "2024 Distinguished Paper Award Winners: LMSanitator: Defending Prompt-Tuning Against Task-Agnostic Backdoors — Chengkun Wei (Zhejiang University), Wenlong Meng (Zhejiang University), Zhikun Zhang (CISPA Helmholtz Center for Information Security and Stanford University), Min Chen (CISPA Helmholtz Center for Information Security), Minghu Zhao (Zhejiang University), Wenjing Fang (Ant Group), Lei Wang (Ant Group), Zihui Zhang (Zhejiang University), Wenzhi Chen (Zhejiang University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2024,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "UntrustIDE: Exploiting Weaknesses in VS Code Extensions",
+   "authors": [
+    "Elizabeth Lin",
+    "Igibek Koishybayev",
+    "Trevor Dunlap",
+    "William Enck",
+    "Alexandros Kapravelos"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2024/",
+   "evidence": "2024 Distinguished Paper Award Winners: UntrustIDE: Exploiting Weaknesses in VS Code Extensions — Elizabeth Lin (North Carolina State University), Igibek Koishybayev (North Carolina State University), Trevor Dunlap (North Carolina State University), William Enck (North Carolina State University), Alexandros Kapravelos (North Carolina State University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust",
+   "authors": [
+    "Karim El Defrawy",
+    "Aurélien Francillon",
+    "Daniele Perito",
+    "Gene Tsudik"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://www.ndss-symposium.org/ndss2024/",
+   "evidence": "NDSS Symposium Test of Time Award: SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust — Karim El Defrawy (UC Irvine), Aurélien Francillon (Institute EURECOM), Daniele Perito (INRIA), Gene Tsudik (UC Irvine)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "An Empirical Study on Fingerprint API Misuse with Lifecycle Analysis in Real-world Android Apps",
+   "authors": [
+    "Xin Zhang",
+    "Xiaohan Zhang",
+    "Zhichen Liu",
+    "Bo Zhao",
+    "Zhemin Yang",
+    "Min Yang"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: An Empirical Study on Fingerprint API Misuse with Lifecycle Analysis in Real-world Android Apps — Xin Zhang, Xiaohan Zhang, Zhichen Liu, Bo Zhao, Zhemin Yang, Min Yang (Fudan University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Blindfold: Confidential Memory Management by Untrusted Operating System",
+   "authors": [
+    "Caihua Li",
+    "Seung-seob Lee",
+    "Ling Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: Blindfold: Confidential Memory Management by Untrusted Operating System — Caihua Li, Seung-seob Lee, Ling Zhong (Yale University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DiStefano: Decentralized Infrastructure for Sharing Trusted Encrypted Facts and Nothing More",
+   "authors": [
+    "Sofía Celi",
+    "Alex Davidson",
+    "Hamed Haddadi",
+    "Gonçalo Pestana",
+    "Joe Rowell"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: DiStefano: Decentralized Infrastructure for Sharing Trusted Encrypted Facts and Nothing More — Sofía Celi (Brave Software), Alex Davidson (NOVA LINCS & Universidade NOVA de Lisboa), Hamed Haddadi (Imperial College London & Brave Software), Gonçalo Pestana (Hashmatter), Joe Rowell (University of London)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "DUMPLING: Fine-grained Differential JavaScript Engine Fuzzing",
+   "authors": [
+    "Liam Wachter",
+    "Julian Gremminger",
+    "Christian Wressnegger",
+    "Mathias Payer",
+    "Flavio Toffalini"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: DUMPLING: Fine-grained Differential JavaScript Engine Fuzzing — Liam Wachter, Julian Gremminger (EPFL), Christian Wressnegger (Karlsruhe Institute of Technology), Mathias Payer, Flavio Toffalini (EPFL)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "PropertyGPT: LLM-driven Formal Verification of Smart Contracts through Retrieval-Augmented Property Generation",
+   "authors": [
+    "Ye Liu",
+    "Yue Xue",
+    "Daoyuan Wu",
+    "Yuqiang Sun",
+    "Yi Li",
+    "Miaolei Shi",
+    "Yang Liu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: PropertyGPT: LLM-driven Formal Verification of Smart Contracts through Retrieval-Augmented Property Generation — Ye Liu (Singapore Management University), Yue Xue (MetaTrust Labs), Daoyuan Wu (The Hong Kong University of Science and Technology), Yuqiang Sun, Yi Li (Nanyang Technological University), Miaolei Shi (MetaTrust Labs), Yang Liu (Nanyang Technological University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Provably Unlearnable Data Examples",
+   "authors": [
+    "Derui Wang",
+    "Minhui Xue",
+    "Bo Li",
+    "Seyit Camtepe",
+    "Liming Zhu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: Provably Unlearnable Data Examples — Derui Wang (CSIRO’s Data61), Minhui Xue (CSIRO’s Data61), Bo Li (The University of Chicago), Seyit Camtepe, Liming Zhu (CSIRO’s Data61)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "ReDAN: An Empirical Study on Remote DoS Attacks against NAT Networks",
+   "authors": [
+    "Xuewei Feng",
+    "Yuxiang Yang",
+    "Qi Li",
+    "Xingxiang Zhan",
+    "Kun Sun",
+    "Ziqiang Wang",
+    "Ao Wang",
+    "Ganqiu Du",
+    "Ke Xu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: ReDAN: An Empirical Study on Remote DoS Attacks against NAT Networks — Xuewei Feng, Yuxiang Yang, Qi Li (Tsinghua University), Xingxiang Zhan (Zhongguancun Lab), Kun Sun (George Mason University), Ziqiang Wang, Ao Wang (Southeast University), Ganqiu Du (China Software Testing Center), Ke Xu (Tsinghua University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "ReThink: Reveal the Threat of Electromagnetic Interference on Power Inverters",
+   "authors": [
+    "Fengchen Yang",
+    "Zihao Dan",
+    "Kaikai Pan",
+    "Chen Yan",
+    "Xiaoyu Ji",
+    "Wenyuan Xu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: ReThink: Reveal the Threat of Electromagnetic Interference on Power Inverters — Fengchen Yang, Zihao Dan, Kaikai Pan, Chen Yan, Xiaoyu Ji, Wenyuan Xu (Zhejiang University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Rethinking Trust in Forge-Based Git Security",
+   "authors": [
+    "Aditya Sirish A Yelgundhalli",
+    "Patrick Zielinski",
+    "Reza Curtmola",
+    "Justin Cappos"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: Rethinking Trust in Forge-Based Git Security — Aditya Sirish A Yelgundhalli, Patrick Zielinski (New York University), Reza Curtmola (New Jersey Institute of Technology), Justin Cappos (New York University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "SafeSplit: A Novel Defense Against Client-Side Backdoor Attacks in Split Learning",
+   "authors": [
+    "Phillip Rieger",
+    "Alessandro Pegoraro",
+    "Kavita Kumari",
+    "Tigist Abera",
+    "Jonathan Knauer",
+    "Ahmad-Reza Sadeghi"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: SafeSplit: A Novel Defense Against Client-Side Backdoor Attacks in Split Learning — Phillip Rieger, Alessandro Pegoraro, Kavita Kumari, Tigist Abera, Jonathan Knauer, Ahmad-Reza Sadeghi (Technical University of Darmstadt)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "type++: Prohibiting Type Confusion with Inline Type Information",
+   "authors": [
+    "Nicolas Badoux",
+    "Flavio Toffalini",
+    "Yuseok Jeon",
+    "Mathias Payer"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: type++: Prohibiting Type Confusion with Inline Type Information — Nicolas Badoux (EPFL), Flavio Toffalini (Ruhr-Universität Bochum, EPFL), Yuseok Jeon (UNIST), Mathias Payer (EPFL)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "VoiceRadar: Voice Deepfake Detection using Micro-Frequency and Compositional Analysis",
+   "authors": [
+    "Kavita Kumari",
+    "Maryam Abbasihafshejani",
+    "Alessandro Pegoraro",
+    "Phillip Rieger",
+    "Kamyar Arshi",
+    "Murtuza Jadliwala",
+    "Ahmad-Reza Sadeghi"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2025/",
+   "evidence": "2025 Distinguished Paper Award Winners: VoiceRadar: Voice Deepfake Detection using Micro-Frequency and Compositional Analysis — Kavita Kumari (Technical University of Darmstadt), Maryam Abbasihafshejani (University of Texas at San Antonio), Alessandro Pegoraro, Phillip Rieger, Kamyar Arshi (Technical University of Darmstadt), Murtuza Jadliwala (University of Texas at San Antonio), Ahmad-Reza Sadeghi (Technical University of Darmstadt)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Decompiling the Synergy: An Empirical Study of Human–LLM Teaming in Software Reverse Engineering",
+   "authors": [
+    "Zion Leonahenahe Basque",
+    "Samuele Doria",
+    "Ananta Soneji",
+    "Wil Gibbs",
+    "Adam Doupe",
+    "Yan Shoshitaishvili",
+    "Eleonora Losiouk",
+    "Ruoyu “Fish” Wang",
+    "Simone Aonzo"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Decompiling the Synergy: An Empirical Study of Human–LLM Teaming in Software Reverse Engineering — Zion Leonahenahe Basque (Arizona State University), Samuele Doria (University of Padua), Ananta Soneji, Wil Gibbs, Adam Doupe, Yan Shoshitaishvili (Arizona State University), Eleonora Losiouk (University of Padua), Ruoyu “Fish” Wang (Arizona State University), Simone Aonzo (EURECOM)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fuzzilicon: A Post-Silicon Microcode-Guided x86 CPU Fuzzer",
+   "authors": [
+    "Johannes Lenzen",
+    "Mohamadreza Rostami",
+    "Lichao Wu",
+    "Ahmad-Reza Sadeghi"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Fuzzilicon: A Post-Silicon Microcode-Guided x86 CPU Fuzzer — Johannes Lenzen, Mohamadreza Rostami, Lichao Wu, Ahmad-Reza Sadeghi (Technical University of Darmstadt)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Indicator of Benignity: An Industry View of False Positive in Malicious Domain Detection and its Mitigation",
+   "authors": [
+    "Daiping Liu",
+    "Danyu Sun",
+    "Zhenhua Chen",
+    "Shu Wang",
+    "Zhou Li"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Indicator of Benignity: An Industry View of False Positive in Malicious Domain Detection and its Mitigation — Daiping Liu (Palo Alto Networks, Inc.), Danyu Sun (University of California, Irvine), Zhenhua Chen, Shu Wang (Palo Alto Networks, Inc.), Zhou Li (University of California, Irvine)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "LOKI: Proactively Discovering Online Scam Websites by Mining Toxic Search Queries",
+   "authors": [
+    "Pujan Paudel",
+    "Gianluca Stringhini"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: LOKI: Proactively Discovering Online Scam Websites by Mining Toxic Search Queries — Pujan Paudel, Gianluca Stringhini (Boston University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "OCCUPY+PROBE: Cross-Privilege Branch Target Buffer Side-Channel Attacks at Instruction Granularity",
+   "authors": [
+    "Kaiyuan Rong",
+    "Junqi Fang",
+    "Haixia Wang",
+    "Dapeng Ju",
+    "Dongsheng Wang"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: OCCUPY+PROBE: Cross-Privilege Branch Target Buffer Side-Channel Attacks at Instruction Granularity — Kaiyuan Rong, Junqi Fang (Tsinghua University, Zhongguancun Laboratory), Haixia Wang (Tsinghua University), Dapeng Ju, Dongsheng Wang (Tsinghua University, Zhongguancun Laboratory)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "One Email, Many Faces: A Deep Dive into Identity Confusion in Email Aliases",
+   "authors": [
+    "Mengying Wu",
+    "Geng Hong",
+    "Jiatao Chen",
+    "Baojun Liu",
+    "Mingxuan Liu",
+    "Min Yang"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: One Email, Many Faces: A Deep Dive into Identity Confusion in Email Aliases — Mengying Wu, Geng Hong, Jiatao Chen (Fudan University), Baojun Liu (Tsinghua University), Mingxuan Liu (Zhongguancun Laboratory), Min Yang (Fudan University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Peering Inside the Black-Box: Long-Range and Scalable Model Architecture Snooping via GPU Electromagnetic Side-Channel",
+   "authors": [
+    "Rui Xiao",
+    "Sibo Feng",
+    "Soundarya Ramesh",
+    "Jun Han",
+    "Jinsong Han"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Peering Inside the Black-Box: Long-Range and Scalable Model Architecture Snooping via GPU Electromagnetic Side-Channel — Rui Xiao, Sibo Feng (Zhejiang University), Soundarya Ramesh (National University of Singapore), Jun Han (KAIST), Jinsong Han (Zhejiang University)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Phishing in Wonderland: Evaluating Learning-Based Ethereum Phishing Transaction Detection and Pitfalls",
+   "authors": [
+    "Ahod Alghuried",
+    "David Mohaisen"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Phishing in Wonderland: Evaluating Learning-Based Ethereum Phishing Transaction Detection and Pitfalls — Ahod Alghuried, David Mohaisen (University of Central Florida)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Should I Trust You? Rethinking the Principle of Zone-Based Isolation DNS Bailiwick Checking",
+   "authors": [
+    "Yuxiao Wu",
+    "Yunyi Zhang",
+    "Chaoyi Lu",
+    "Baojun Liu"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Should I Trust You? Rethinking the Principle of Zone-Based Isolation DNS Bailiwick Checking — Yuxiao Wu (Institute for Network Sciences and Cyberspace, BNRist, Tsinghua University), Yunyi Zhang (Tsinghua University), Chaoyi Lu (Zhongguancun Laboratory), Baojun Liu (Tsinghua University and Zhongguancun Laboratory)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Small Cell, Big Risk: A Security Assessment of 4G LTE Femtocells in the Wild",
+   "authors": [
+    "Yaru Yang",
+    "Yiming Zhang",
+    "Tao Wan",
+    "Haixin Duan",
+    "Deliang Chang",
+    "Yishen Li",
+    "Shujun Tang"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "2026 Best Paper Award Winners: Small Cell, Big Risk: A Security Assessment of 4G LTE Femtocells in the Wild — Yaru Yang, Yiming Zhang (Tsinghua University), Tao Wan (CableLabs & Carleton University), Haixin Duan (Tsinghua University & Quancheng Laboratory), Deliang Chang (QI-ANXIN Technology Research Institute), Yishen Li (Tsinghua University), Shujun Tang (Tsinghua University & QI-ANXIN Technology Research Institute)"
+  },
+  {
+   "venue": "NDSS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Security Enhanced (SE) Android: Bringing Flexible MAC to Android",
+   "authors": [
+    "Stephen Smalley",
+    "Robert Craig"
+   ],
+   "track": "main",
+   "source": "https://www.ndss-symposium.org/ndss2026/",
+   "evidence": "NDSS Symposium Test of Time Award: Security Enhanced (SE) Android: Bringing Flexible MAC to Android — Stephen Smalley (Trusted Systems Research, National Security Agency), Robert Craig (Trusted Systems Research, National Security Agency)"
   },
   {
    "venue": "NeurIPS",

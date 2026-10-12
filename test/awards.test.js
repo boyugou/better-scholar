@@ -197,6 +197,9 @@ test("the bundled list: security winners (IEEE S&P's own awards pages)", () => {
   assert.deepEqual(find("Towards evaluating the robustness of neural networks", "N Carlini, D Wagner"), ["S&P 2017 best-student"]);
   assert.deepEqual(find("Spectre attacks: Exploiting speculative execution", "P Kocher, J Horn, A Fogh, D Genkin, D Gruss, W Haas"), ["S&P 2019 distinguished"]);
   assert.deepEqual(find("Four attacks and a proof for Telegram", "MR Albrecht, L Mareková, KG Paterson, I Stepanovs"), ["S&P 2022 distinguished"]);
+  assert.deepEqual(find("Automated whitebox fuzz testing", "P Godefroid, MY Levin, D Molnar"), ["NDSS 2022 tot"]);
+  assert.deepEqual(find("Dynamic taint analysis for automatic detection, analysis, and signature generation of exploits on commodity software", "J Newsome, D Song"), ["NDSS 2020 tot"]);
+  assert.deepEqual(find("Resolving the predicament of Android custom permissions", "GS Tuncay, S Demetriou, K Ganju, CA Gunter"), ["NDSS 2018 distinguished"]);
   assert.deepEqual(find("Towards evaluating the robustness of neural networks", "A Smith, B Jones"), []);
 });
 

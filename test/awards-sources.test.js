@@ -700,3 +700,32 @@ test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <stron
     ["A Synthetic Proof-Number Search Paper", ["Una Vo", "Vic Wan"]]
   ]);
 });
+
+// The NDSS year pages' "<year> Awards" sections — synthetic, in the nestings of link, bold and <br> the real pages use.
+test("NDSS year page: distinguished papers (link/bold/br in any nesting), honorable mentions, Cisco best paper and test-of-time with the paper's year; posters, workshops and the page's later sections are not read", async () => {
+  const { parse, classify } = await import("../scripts/awards/ndss.mjs");
+  const html = `<h2>2018 Programme</h2><p><a href="x"><strong>Not an Award Paper</strong></a><br>Zed Alpha (Lab)</p>
+<h2 class="wp-block-heading">2019 Awards</h2>
+<h3>NDSS Test of Time Awards</h3><p><strong>2000: </strong><a href="p.pdf"><strong>A Synthetic First Step Towards Detection</strong></a><br>Ann Lee, Bo Chen</p>
+<p><strong><a href="q">A Synthetic Whitebox Fuzzing Paper (2008)</a><br></strong>Cy Diaz (Microsoft, Research), Dee Park (Microsoft, CSE), and Eli Ross (UC Berkley)</p>
+<h3>NDSS 2019 Distinguished Paper Awards</h3>
+<p><a href="y"><strong>A Synthetic Beacon Paper about Methylation</strong></a><br>Fay Gray (CISPA), Gia Stone (CISPA), and Hal Wu (UCL)</p>
+<p><strong><a href="z">Synthetic Eavesdropping on Controllers<br></a></strong>Ivy Xu (George Mason University), Jo Yan (Georgia State University)</p>
+<h3>NDSS 2019 Distinguished Paper Award Honorable Mentions</h3><p><a href="w"><strong>A Synthetic Oblivious Extensions Paper<br></strong></a>Kai Zu (UIUC)</p>
+<h3>Cisco Network Security Best Paper Award</h3><p><a href="v"><strong>Synthetic Attack Discovery in Congestion Control</strong></a><br>Lu Mo (Purdue Univ.), Ned Oh (FIU)</p>
+<h3>NDSS 2019 Distinguished Technical Poster Awards</h3><p><a href="u"><strong>A Poster Paper Title Here</strong></a><br>Pia Qi.</p>
+<h3>MADWeb 2019 Best Paper</h3><p><a href="t"><strong>A Workshop Paper Title Here</strong></a><br>Ray Sun</p>
+<h2>2019 Sponsors</h2><h3>Distinguished Paper Award</h3><p><a href="s"><strong>Not Read After the Awards Section</strong></a><br>Sue Tan</p>`;
+  const { entries } = parse(html, { year: 2019, source: "https://www.ndss-symposium.org/ndss2019/" });
+  assert.deepEqual(entries.map((e) => [e.award, e.awardLabel, e.title, e.authors, e.paperYear]), [
+    ["tot", "Test of Time Award", "A Synthetic First Step Towards Detection", ["Ann Lee", "Bo Chen"], 2000],
+    ["tot", "Test of Time Award", "A Synthetic Whitebox Fuzzing Paper", ["Cy Diaz", "Dee Park", "Eli Ross"], 2008],
+    ["distinguished", "Distinguished Paper", "A Synthetic Beacon Paper about Methylation", ["Fay Gray", "Gia Stone", "Hal Wu"], undefined],
+    ["distinguished", "Distinguished Paper", "Synthetic Eavesdropping on Controllers", ["Ivy Xu", "Jo Yan"], undefined],
+    ["runner-up", "Distinguished Paper Honorable Mention", "A Synthetic Oblivious Extensions Paper", ["Kai Zu"], undefined],
+    ["category", "Cisco Network Security Best Paper", "Synthetic Attack Discovery in Congestion Control", ["Lu Mo", "Ned Oh"], undefined]
+  ]);
+  assert.equal(classify("2026 Best Paper Award Winners").award, "best");
+  assert.equal(classify("2024 Artifact Evaluation Award Winners"), null);
+  assert.equal(classify("2023 Best Technical Poster Award Winner"), null);
+});

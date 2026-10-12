@@ -30,7 +30,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 - **Awards and talk levels** — a paper gets a small chip (gold ★ for an award, silver for an honorable mention, slate for a talk level) when its title or venue
   text says *Oral*, *Spotlight*, *Highlight* or an award (*Best / Outstanding / Distinguished Paper*, *Test
   of Time*), or when it is on a bundled list of award-winning papers from the conferences' own award pages
-  (the ACL family, ICLR, NeurIPS and ICML; CVPR, ICCV and ECCV from the Computer Vision Foundation's own award list, test-of-time prizes included; AAAI; IJCAI 2020–2023; USENIX's best papers; SIGIR and KDD; the SIGSOFT distinguished papers of ICSE, FSE and ASE; STOC and SIGCOMM best papers, the IEEE S&P distinguished papers, SIGMOD and PODS best papers). The panel counts them and a click lists just those
+  (the ACL family, ICLR, NeurIPS and ICML; CVPR, ICCV and ECCV from the Computer Vision Foundation's own award list, test-of-time prizes included; AAAI; IJCAI 2020–2023; USENIX's best papers; SIGIR and KDD; the SIGSOFT distinguished papers of ICSE, FSE and ASE; STOC and SIGCOMM best papers, the IEEE S&P and NDSS distinguished papers, SIGMOD and PODS best papers). The panel counts them and a click lists just those
   papers. A chip's tooltip says whether it came from the author's words or from the award list.
 - **Hidden senior-author roles** — Scholar cuts long author lists with `…`, which
   hides the last author on large papers (on one well-known PI's profile, 30 of the
@@ -98,7 +98,7 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
 |---|---|---|
 | CCF recommended venues | 2026 (7th edition), 386 conferences + 295 journals | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) PDF, extracted reproducibly — see [`data/README.md`](data/README.md) |
 | CORE conference ranks | ICORE 2026, 800 ranked conferences | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) export |
-| Paper awards | 2041 main-conference awards (ACL family, ICLR, NeurIPS, ICML, CVPR, ICCV, ECCV, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P, SIGMOD, PODS; not exhaustive) | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0), the Computer Vision Foundation's and each conference's own awards pages — every entry cites its page; see [`data/README.md`](data/README.md) |
+| Paper awards | 2097 main-conference awards (ACL family, ICLR, NeurIPS, ICML, CVPR, ICCV, ECCV, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P, NDSS, SIGMOD, PODS; not exhaustive) | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0), the Computer Vision Foundation's and each conference's own awards pages — every entry cites its page; see [`data/README.md`](data/README.md) |
 
 The rank lists are included for reference and are the property of their owners — see
 [`NOTICE`](NOTICE). Regenerate with `npm run data`.

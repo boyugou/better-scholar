@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.5 — 2026-10-12
+
+- **NDSS distinguished papers and test-of-time papers, 2017–2026** (56 entries) from the symposium's own year pages: Distinguished Paper
+  Awards (Best Paper Awards in 2026), the 2019 honorable mentions, the 2018 Cisco Network Security Best Paper, and the Test of Time
+  Awards (classic papers with the year they appeared — Automated Whitebox Fuzz Testing, Dynamic Taint Analysis …). New reader
+  `scripts/awards/ndss.mjs`. The list holds 2097 awards.
+
 ## 2.5.4 — 2026-10-12
 
 - **IJCAI distinguished papers 2020–2022** (9 new entries next to 2023's) from the conference sites' own *Distinguished Papers* pages
