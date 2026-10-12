@@ -17,7 +17,7 @@ for reference only and remains the property of its owners:
   affecting the rest of the extension.
 
 - Paper award entries (data/awards-2026.json) are facts read from official pages, each cited: the Computer Vision
-  Foundation's award list (https://www.thecvf.com/?page_id=413), AAAI's award pages, the conferences' own award pages. The
+  Foundation's award list (https://www.thecvf.com/?page_id=413), AAAI's award pages, USENIX's best-papers list, SIGIR's and SIGSOFT's award pages, the conferences' own award pages. The
   ACL-family entries are metadata of the ACL Anthology (https://aclanthology.org), licensed CC BY 4.0.
 
 "Google" and "Google Scholar" are trademarks of Google LLC. This extension is an independent

@@ -45,7 +45,7 @@ for (const file of files) {
   for (const e of raw.entries || []) {
     const where = `${file.split("/").pop()}: ${e.venue} ${e.year} ${JSON.stringify((e.title || "").slice(0, 60))}`;
     const bad = [];
-    if (!e.venue || !/^[A-Za-z0-9&+.-]+$/.test(e.venue)) bad.push("venue");
+    if (!e.venue || !/^[A-Za-z0-9&+./ -]+$/.test(e.venue)) bad.push("venue");
     if (!Number.isInteger(e.year) || e.year < 1990 || e.year > MAX_YEAR) bad.push("year");
     if (!kinds.has(e.award)) bad.push("award kind " + e.award);
     if (!e.title || e.title.length < 8) bad.push("title");

@@ -294,3 +294,62 @@ test("IJCAI distinguished-paper page: <strong> title and <em> authors in the ent
     ["IJCAI", 2023, "distinguished", "A Second Synthetic Paper", ["Dee Park", "Eli Ross", "Fay Gray"]]
   ]);
 });
+
+// USENIX's best-papers list: an <h3> per conference-year, then a block per paper (title link, "Name, Affiliation; …").
+test("USENIX best papers: conference and year from the section label, titles and first-name authors from the blocks", async () => {
+  const { parse, sectionOf } = await import("../scripts/awards/usenix.mjs");
+  assert.deepEqual(sectionOf("USENIX Security '25"), { venue: "USENIX Security", year: 2025 });
+  assert.deepEqual(sectionOf("SOUPS 2025"), { venue: "SOUPS", year: 2025 });
+  assert.deepEqual(sectionOf("OSDI '96"), { venue: "OSDI", year: 1996 });
+  assert.deepEqual(sectionOf("5th Annual Tcl/Tk Workshop 1997"), { venue: "5th Annual Tcl/Tk Workshop", year: 1997 });
+  assert.equal(sectionOf("Best Papers"), null);
+  const block = (title, people) => `<div class="views-row views-row-1 odd">
+  <div class="views-field views-field-title-1">        <span class="field-content"><a href="/x">${title}</a></span>  </div>
+  <div class="views-field views-field-field-paper-people">        <div class="field-content">${people}</div>  </div>  </div>`;
+  const html = `<h3><a href="/conference/usenixsecurity25">USENIX Security &#039;25</a></h3>
+${block("A Synthetic Package Paper: On Hallucination", "Ann Lee, University of Nowhere; Bo Chen, Example Institute; Cy Diaz")}
+${block("A Second Synthetic Paper", "Dee Park, University of Nowhere and Example Lab")}
+<h3><a href="/conference/osdi23">OSDI &#039;23</a></h3>
+${block("A Synthetic Systems Paper", "Eli Ross, Some University; Fay Gray, Some University")}`;
+  const e = parse(html);
+  assert.deepEqual(e.map((x) => [x.venue, x.year, x.award, x.awardLabel, x.title, x.authors]), [
+    ["USENIX Security", 2025, "best", "USENIX Best Paper", "A Synthetic Package Paper: On Hallucination", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["USENIX Security", 2025, "best", "USENIX Best Paper", "A Second Synthetic Paper", ["Dee Park"]],
+    ["OSDI", 2023, "best", "USENIX Best Paper", "A Synthetic Systems Paper", ["Eli Ross", "Fay Gray"]]
+  ]);
+});
+
+test("SIGIR award pages: Year | Authors (one per line) | Citation, with the venue and kind of the page", async () => {
+  const { parse } = await import("../scripts/awards/sigir.mjs");
+  const html = `<h1>Best Paper Awards</h1><table><tbody><tr><th>Year</th><th>Authors</th><th>Citation</th></tr>
+<tr><td>2025</td><td>Ann Lee<br/> Bo Chen<br/> Cy Diaz
+</td><td><a href="https://dl.acm.org/doi/10.1/1">A Synthetic Retrieval Engine</a><br/>For a paper that is synthetic.</td></tr>
+<tr><td>2024</td><td>Dee Park</td><td>A Title Without a Link</td></tr>
+<tr><td>n/a</td><td>Nobody</td><td>Not a year row</td></tr></tbody></table>`;
+  const e = parse(html, { venue: "SIGIR", award: "category", awardLabel: "Best Short Paper" }, "https://sigir.org/awards/x/");
+  assert.deepEqual(e.map((x) => [x.venue, x.year, x.award, x.awardLabel, x.title, x.authors]), [
+    ["SIGIR", 2025, "category", "Best Short Paper", "A Synthetic Retrieval Engine", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["SIGIR", 2024, "category", "Best Short Paper", "A Title Without a Link", ["Dee Park"]]
+  ]);
+});
+
+test("SIGSOFT distinguished papers: conference and year from the heading's parentheses; 'Authors: Title' lines only, older formats are skipped", async () => {
+  const { parse, sectionOf } = await import("../scripts/awards/sigsoft.mjs");
+  assert.deepEqual(sectionOf("The IEEE/ACM International Conference on Automated Software Engineering (ASE 2025)"), { venue: "ASE", year: 2025 });
+  assert.deepEqual(sectionOf("European Software Engineering Conference and Foundations of Software Engineering (ESEC/FSE 2017)"), { venue: "ESEC/FSE", year: 2017 });
+  assert.equal(sectionOf("Search"), null);
+  const html = `<h2 id=winners>Winners</h2>
+<h3 id=a>The 47th International Conference on Software Engineering (ICSE 2025)</h3><p>Sun 16 - Thu 20 November, 2025</p><ul>
+<li>Ann Lee, Bo Chen, Cy Diaz: A Synthetic Paper: With a Subtitle</li>
+<li>Raoul van Doren, Dee Park: Another Synthetic Paper on Testing</li>
+<li>L. Tang, J. Liu: An Initials-Style Synthetic Paper Title</li></ul>
+<h3 id=b>Foundations of Software Engineering (FSE 2014)</h3><ul>
+<li>Ann Lee, Bo Chen. Architecture Challenges for Internal Ecosystems: A Large-Scale Case Study</li></ul>
+<h3 id=c>Search</h3><ul><li>Not: a winner entry in a heading without a year</li></ul>`;
+  const e = parse(html);
+  assert.deepEqual(e.map((x) => [x.venue, x.year, x.award, x.awardLabel, x.title, x.authors]), [
+    ["ICSE", 2025, "distinguished", "ACM SIGSOFT Distinguished Paper", "A Synthetic Paper: With a Subtitle", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["ICSE", 2025, "distinguished", "ACM SIGSOFT Distinguished Paper", "Another Synthetic Paper on Testing", ["Raoul van Doren", "Dee Park"]],
+    ["ICSE", 2025, "distinguished", "ACM SIGSOFT Distinguished Paper", "An Initials-Style Synthetic Paper Title", ["L. Tang", "J. Liu"]]
+  ]);
+});

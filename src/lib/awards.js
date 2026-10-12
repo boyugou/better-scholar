@@ -14,9 +14,13 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function (names) {
   "use strict";
 
+  // A little LaTeX survives in some official titles — "Understanding Dataset Difficulty with $\mathcal{V}$-Usable Information" —
+  // while Scholar prints "V-usable": the markup around a letter is dropped.
+  const untex = (s) => s.replace(/\\(?:mathcal|mathbf|mathrm|mathit|mathbb|textbf|textit|textrm|text|emph)\s*\{([^{}]*)\}/g, "$1").replace(/\$/g, "");
+
   // "Deep Residual Learning for Image Recognition" → "deepresiduallearningforimagerecognition"
   function titleKey(s) {
-    return String(s == null ? "" : s)
+    return untex(String(s == null ? "" : s))
       .normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase()
       .replace(/ß/g, "ss").replace(/ł/g, "l").replace(/ø/g, "o").replace(/đ/g, "d").replace(/œ/g, "oe").replace(/æ/g, "ae")
       .replace(/&/g, "and").replace(/[^\p{L}\p{N}]+/gu, "");

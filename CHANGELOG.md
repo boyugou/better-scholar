@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.4.0 — 2026-10-12
+
+- **More paper awards: 857 → 1606 entries**, again only from official pages, each citing its page and a quoted line:
+  - **USENIX's Best Papers list** — USENIX Security, OSDI, NSDI, FAST, ATC, SOUPS, LISA, WOOT and more (412 papers).
+  - **ACM SIGIR's award pages** — best papers, best short papers, best student papers (and JCDL's Vannevar Bush best papers).
+  - **ACM SIGSOFT's Distinguished Paper Award list** — ICSE, FSE/ESEC-FSE, ASE, ISSTA, MSR, MODELS … (older lines that are
+    not in the `Authors: Title` form are skipped rather than guessed).
+  The tooltip names the list ("USENIX Best Paper", "Best Short Paper", "ACM SIGSOFT Distinguished Paper"). New readers:
+  `scripts/awards/usenix.mjs`, `sigir.mjs`, `sigsoft.mjs`.
+- LaTeX left in an official title (ICML 2022's `$\mathcal{V}$-Usable Information`) is ignored when matching, so that paper — in the
+  list but never matched — now is.
+
 ## 2.3.2 — 2026-10-12
 
 - **A bare publisher is not a venue.** `Association for Computational Linguistics, 2013` (the ACL Anthology's publisher

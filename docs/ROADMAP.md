@@ -14,15 +14,15 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (857 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
-ICML, CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2023). Only official pages are sources (the ACL Anthology's award metadata; each
+**Built — a bundled list of award-winning papers** (1606 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
+ICML, CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2023, USENIX, SIGIR, SIGSOFT). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
 the identical full title and the award's first author. Award kinds stay distinct (`best`, `outstanding`,
 `distinguished`, `runner-up`, `student`, `category`, `tot`); an honorable mention is never upgraded.
 Oral / spotlight lists stay author-written only: CVPR and ICCV's "Highlight" rows are about a tenth of the
 papers, which is the 'too many' case, so they are not used.
 
-**Next — more venues, where an official page exists.** IJCAI before and after 2023 (the years' official pages are not of one shape, or are PDFs), ICML 2022. An independent list
+**Next — more venues, where an official page exists.** ACM SIGMOD / PODS best papers (`sigmod.org/sigmod-awards/sigmod-best-paper-award/`, irregular prose per year), KDD (`kdd.org/awards/view/<year>-sigkdd-best-paper-award-winners`, one page per year), CHI (`programs.sigchi.org/chi/<year>/awards/…`), POPL/PLDI/OOPSLA, STOC/FOCS. IJCAI before and after 2023 (the years' official pages are not of one shape, or are PDFs), ICML 2022. An independent list
 (jeffhuang.com/best_paper_awards: no licence, no award levels) is only a cross-check; a paper it names but no
 official page does is left out. Also open: test-of-time rows whose page omits the paper title (NeurIPS 2025,
 ICML 2022 and 2026) — the detail page may carry it.

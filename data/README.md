@@ -85,7 +85,7 @@ Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
 
 | | |
 |---|---|
-| Entries | 857: AAAI 2010–2026 (17 yrs); ACL 2019–2026 (8 yrs); CVPR 1991–2026 (33 yrs); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 1992–2024 (16 yrs); EMNLP 2019–2025 (4 yrs); ICCV 1990–2025 (18 yrs); ICLR 2019–2024 (4 yrs); ICML 2019–2026 (8 yrs); IJCAI 2023–2023 (1 yr); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
+| Entries | 1606: 5th Annual Tcl/Tk Workshop 1997–1997 (1 yr); AAAI 2010–2026 (17 yrs); ACL 2019–2026 (8 yrs); AIware 2024–2024 (1 yr); ALS 2000–2001 (2 yrs); ASE 2006–2025 (9 yrs); BSDCon 2002–2003 (2 yrs); CVPR 1991–2026 (33 yrs); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 1992–2024 (16 yrs); EMNLP 2019–2025 (4 yrs); ESEC/FSE 2005–2023 (5 yrs); EVT/WOTE 2009–2009 (1 yr); FAST 2002–2026 (23 yrs); FSE 2012–2025 (5 yrs); Feedback Computing 2013–2013 (1 yr); HotStorage 2020–2020 (1 yr); ICAC 2013–2014 (2 yrs); ICCV 1990–2025 (18 yrs); ICGSE 2019–2019 (1 yr); ICLR 2019–2024 (4 yrs); ICML 2019–2026 (8 yrs); ICPC 2020–2020 (1 yr); ICSE 2004–2025 (12 yrs); IJCAI 2023–2023 (1 yr); IMC 2005–2005 (1 yr); ISSTA 2002–2025 (17 yrs); JCDL 1998–2017 (20 yrs); JVM 2001–2001 (1 yr); Java VM 2002–2002 (1 yr); LEET 2008–2008 (1 yr); LISA 2001–2013 (12 yrs); MODELS 2020–2024 (4 yrs); MSR 2025–2025 (1 yr); MobiSys 2003–2005 (3 yrs); NAACL 2019–2022 (3 yrs); NSDI 2004–2026 (21 yrs); NeurIPS 2019–2025 (7 yrs); OSDI 1996–2026 (15 yrs); SIGIR 1996–2025 (30 yrs); SOUPS 2018–2025 (8 yrs); USENIX ATC 2001–2025 (23 yrs); USENIX Security 2001–2026 (24 yrs); USITS 2003–2003 (1 yr); VM 2004–2004 (1 yr); VehicleSec 2025–2026 (2 yrs); WOOT 2011–2026 (9 yrs) |
 | Kinds | `best`, `outstanding`, `distinguished`, `runner-up`, `student`, `category` (a named category such as *Best Resource Paper* or *Best Theme Paper*, shown under its printed name), `tot` (test of time) |
 | Source | **Official pages only.** Each entry has `source` (the page it was read from) and `evidence` (a quoted snippet that contains the title). Aggregator lists and Wikipedia are never a source |
 | ACL family | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0): the `<award name="…"/>` element on each paper, read by `scripts/awards/anthology.mjs`. Only years and venues the Anthology records are present |
@@ -93,6 +93,9 @@ Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
 | CVPR 2025, ECCV 2024, ICLR 2019 | the conferences' own best-paper pages (`cvpr.thecvf.com/Conferences/2025/BestPapersDemos`, `eccv.ecva.net/Conferences/2024/Awards`, `iclr.cc/Conferences/2019/Awards`), read by `parsePaperAwardPage` |
 | CVPR, ICCV, ECCV | the **Computer Vision Foundation's own award list** (`www.thecvf.com/?page_id=413`): one table per award — CVPR / ICCV (Marr Prize) / ECCV best papers, best student papers and honorable mentions, and the Longuet-Higgins (CVPR), Helmholtz (ICCV) and Koenderink (ECCV) test-of-time prizes — read by `scripts/awards/cvf.mjs`. Its 2023 and 2024 CVPR and 2021 ICCV rows match the conferences' own pages; 54 of its best papers agree with the independent cross-check list. Years before 1990 are left out |
 | AAAI | AAAI's own paper-awards page (`aaai.org/about-aaai/aaai-awards/aaai-conference-paper-awards-and-recognition/`: Outstanding, Best (special tracks), Distinguished and Student papers with their honorable mentions, 2010–2026) and its Classic Paper Award page (`…/aaai-classic-paper-award/`, 2012–2026, as test of time), read by `scripts/awards/aaai.mjs`. Demonstration, poster and student-abstract awards are not paper awards and are left out; older lists print affiliations and are not read |
+| USENIX | USENIX's own *Best Papers* list (`www.usenix.org/conferences/best-papers`, 9 pages: USENIX Security, OSDI, NSDI, FAST, ATC, SOUPS, LISA, WOOT, MobiSys … 1996–2026), read by `scripts/awards/usenix.mjs`. The page calls all of them best papers (USENIX Security's distinguished papers included), so the label is *USENIX Best Paper* |
+| SIGIR, JCDL | ACM SIGIR's own award pages (`sigir.org/awards/`): best papers, best short papers (shown under that name), best student papers, and the Vannevar Bush best papers of JCDL it lists too; read by `scripts/awards/sigir.mjs` |
+| ICSE, FSE, ASE, ISSTA … | ACM SIGSOFT's Distinguished Paper Award list (`www2.sigsoft.org/awards/distinguishedpaper/`), read by `scripts/awards/sigsoft.mjs`; only lines in the `Authors: Title` form are read — older lines in another form would be cut at the wrong colon and are skipped |
 | IJCAI 2023 | the conference site's *Distinguished Paper Awards* page (`ijcai-23.org/distinguished-paper-awards/`), read by `scripts/awards/ijcai.mjs`. Only this year's page of that shape was reachable; other IJCAI years are not covered |
 | CVPR 2016 | the home page's best-paper lines (`cvpr2016.thecvf.com`); the authors come from the programme page (`cvpr2016.thecvf.com/program/main_conference`) entry with the identical title (`parseHomepageAwards`) |
 
@@ -106,7 +109,8 @@ node scripts/awards/virtual-site.mjs --out raw/virtual-site.json                
 node scripts/awards/cvf.mjs > raw/cvf.json                                        # the Computer Vision Foundation's list (CVPR, ICCV, ECCV)
 node scripts/awards/aaai.mjs > raw/aaai.json; node scripts/awards/aaai.mjs --classic > raw/aaai-classic.json
 node scripts/awards/ijcai.mjs 2023 https://ijcai-23.org/distinguished-paper-awards/ > raw/ijcai.json
-node scripts/awards/merge-raw.mjs raw/anthology.json raw/virtual-site.json raw/cvf.json raw/aaai.json raw/aaai-classic.json raw/ijcai.json --write  # validate (sources, evidence, kinds) and merge
+node scripts/awards/usenix.mjs > raw/usenix.json; node scripts/awards/sigir.mjs > raw/sigir.json; node scripts/awards/sigsoft.mjs > raw/sigsoft.json
+node scripts/awards/merge-raw.mjs raw/anthology.json raw/virtual-site.json raw/cvf.json raw/aaai.json raw/aaai-classic.json raw/ijcai.json raw/usenix.json raw/sigir.json raw/sigsoft.json --write  # validate (sources, evidence, kinds) and merge
 npm run data                                                       # rebuilds src/data/awards.js
 ```
 
@@ -114,8 +118,8 @@ npm run data                                                       # rebuilds sr
 parsed from jeffhuang.com/best_paper_awards — it states no licence and does not separate award levels, so it
 is a cross-check and never a source). All 21 top awards that list has for ACL agree with this file.
 
-**Known gaps (on purpose):** ICML 2022 (on an independent list, on no official page this tooling can reach),
-IJCAI before 2023 and after (the other years' official pages are not of one shape, or PDFs), and AAAI before 2010.
+**Known gaps (on purpose):** IJCAI before 2023 and after (the other years' official pages are not of one shape, or PDFs), AAAI before 2010,
+and venues whose official lists are not yet read (ACM SIGMOD / PODS, KDD, CHI, SIGPLAN, STOC / FOCS …); older SIGSOFT lines in another form.
 A paper that only a secondary source names is never added. ICLR 2025–2026 and NeurIPS 2026
 had no paper awards on their pages yet when this was written. Test-of-time rows whose page omits the paper title
 are read from the award's own page when that names the paper and its first author (NeurIPS 2025 does); otherwise

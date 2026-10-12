@@ -95,7 +95,7 @@ test("data/awards-2026.json: every entry is complete, sourced and unique", () =>
   const seen = new Set();
   for (const e of data.entries) {
     const where = `${e.venue} ${e.year} “${e.title}”`;
-    assert.ok(e.venue && /^[A-Za-z0-9&+.-]+$/.test(e.venue), "venue " + where);
+    assert.ok(e.venue && /^[A-Za-z0-9&+./ -]+$/.test(e.venue), "venue " + where);
     assert.ok(Number.isInteger(e.year) && e.year >= 1990 && e.year <= 2026, "year " + where);
     assert.ok(kinds.has(e.award), "award kind " + where);
     assert.ok(e.title && e.title.length >= 8, "title " + where);
@@ -138,4 +138,31 @@ test("the bundled list: well-known CV and AI winners are found from Scholar-styl
   // the same title with someone else first, or a near title, is not the paper
   assert.deepEqual(find("Mask R-CNN", "A Smith, B Jones"), []);
   assert.deepEqual(find("Mask R-CNN for object detection", "K He, G Gkioxari"), []);
+});
+
+test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
+  assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
+  assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  assert.deepEqual(idx.lookup({ title: "Understanding dataset difficulty with V-usable information", authorsText: "K Ethayarajh, Y Choi, S Swayamdipta" }).map((m) => `${m.venue} ${m.year} ${m.kind}`), ["ICML 2022 outstanding"]);
+});
+
+test("the bundled list: systems, security and IR winners (USENIX and SIGIR lists)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Triangulating Python performance issues with SCALENE", "ED Berger, S Stern, JA Pizzorno"), ["OSDI 2023 best"]);
+  assert.deepEqual(find("Glaze: Protecting artists from style mimicry by {Text-to-Image} models", "S Shan, J Cryan, E Wenger, H Zheng, R Hanocka, BY Zhao"), ["USENIX Security 2023 best"]);
+  assert.deepEqual(find("Scaling laws for dense retrieval", "Y Fang, J Zhan, Q Ai, J Mao, W Su, J Chen, Y Liu"), ["SIGIR 2024 best"]);
+  assert.deepEqual(find("Mooncake: Trading more storage for less computation—a KVCache-centric architecture for serving LLM chatbot", "R Qin, Z Li, W He"), ["FAST 2025 best"]);
+  // one paper, two awards in one year (best paper and best student paper): both are kept
+  assert.deepEqual(find("Minimal test collections for retrieval evaluation", "B Carterette, J Allan, R Sitaraman"), ["SIGIR 2006 best", "SIGIR 2006 best-student"]);
+  assert.deepEqual(find("Scaling laws for dense retrieval", "A Smith, B Jones"), []);
+});
+
+test("the bundled list: software-engineering winners (SIGSOFT distinguished papers)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Understanding software engineering agents: A study of thought-action-result trajectories", "I Bouzenia, M Pradel"), ["ASE 2025 distinguished"]);
+  assert.deepEqual(find("Seeing is fixing: Cross-modal reasoning with multimodal LLMs for visual software issue repair", "K Huang, J Zhang, X Xie, C Chen"), ["ASE 2025 distinguished"]);
+  assert.deepEqual(find("Understanding software engineering agents: A study of thought-action-result trajectories", "A Smith, B Jones"), []);
 });
