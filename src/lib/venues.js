@@ -515,6 +515,7 @@
     // (a curated alias such as "Pacific Graphics", a journal called "Machine Learning").
     const plainWords = contentWords(p.plain);
     const bareString = !hint && plainWords.length <= 2 && !plainWords.some((w) => ORG.has(w)) && plainWords.length === canonTokens(p.plain, "full").length;
+    const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
     const seen = new Set();
     let clashing = null;           // the string's whole name is a venue's, with another event word ("Symposium" for a Conference): only if nothing better turns up
     // the series form names its event by the acronym after the dash: when that acronym is a known one and the rule above did not take it
@@ -531,6 +532,14 @@
       seen.add(key);
       const d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
       if (d === "ambiguous") return null;
+      // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
+      // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
+      if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
+      // ("Journal" alone is not "Journal of the ACM": a one-word string only meets a journal's name that is that one word whole, not the rest of a name that lost its organisation)
+      if (d && d !== "ambiguous" && d.kind === "J" && tokens.length < 2 && !d.extra.some((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "full").join(" ") === key)) continue;
+      // ("International Security" is a political-science journal, not the USENIX Security Symposium: one content word with "international" or "annual"
+      // in front and no event word at all names a field, whatever one-word form a venue's name boils down to)
+      if (d && mode === "full" && tokens.length === 1 && !rawWords.length && /\b(?:international|intl|annual)\b/i.test(p.plain) && !hasWord(d, "international") && !hasWord(d, "annual")) continue;
       // A name read without its organisation or acronym (the venue's own forms are indexed that way too) is weaker evidence: "ACM
       // symposium on Cloud computing" is not the IEEE conference on Cloud Computing (CORE lists only that one) — the string's event
       // word must not contradict the venue's own
@@ -555,7 +564,7 @@
       if (bag.length >= 3) {
         const bkey = uniq(bag).sort().join(" ");
         const d = nameHit((side) => side.bags && side.bags.get(bkey));
-        if (d && d !== "ambiguous") return { entry: d, rule: "name" };
+        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d)) return { entry: d, rule: "name" };
       }
     }
 
@@ -568,6 +577,18 @@
     // stray "15 pp." may add a few of its own)
     const ownWordShare = (entry, words) => words.filter((w) => vocabOf(entry).has(w)).length * 2 >= words.length;
     const ownWordsOnly = (entry) => ownWordShare(entry, canonTokens(p.plain, "noOrg"));
+    // A string whose parenthesis names another event by an acronym of its own — "ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)" — is not
+    // the venue whose sponsor's name or acronym stands in front ("SIGIR"): unless the parenthesis holds an acronym of the venue itself
+    const parenContradicts = (entry) => {
+      if (!spelledEvent) return false;
+      for (const m of p.withParens.matchAll(/\(([A-Z][A-Za-z0-9&/-]{2,14})(?:\s*['’]?\d{2,4})?\)/g)) {
+        const P = m[1];
+        if ((P.match(/[A-Z]/g) || []).length < 2) continue;
+        const parts = P.split(/[-/]/).filter(Boolean).concat([P]);
+        if (!parts.some((x) => sides.some((side) => (side.abbrs.get(squash(x)) || []).includes(entry) || (side.weakAbbrs.get(squash(x)) || []).includes(entry)))) return true;
+      }
+      return false;
+    };
     for (const { key, part, kind } of signals) {
       const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
       // (a parenthesised acronym after a name that is another venue's: two or more other words, none of them this venue's own — see the
@@ -576,7 +597,7 @@
         const others = canonTokens(p.plain, "noOrg", idx.known).filter((w) => w !== key && w !== stripDigits(key));
         return others.length >= 2 && !others.some((w) => vocabOf(d).has(w));
       })();
-      if (d && d !== "ambiguous" && !nameIsAnotherVenues && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d))) return { entry: d, rule: "acronym" };
+      if (d && d !== "ambiguous" && !nameIsAnotherVenues && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d)) && !(kind !== "paren" && parenContradicts(d))) return { entry: d, rule: "acronym" };
     }
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and
@@ -596,7 +617,7 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           const foreign = spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w));
-          if (d && d !== "ambiguous" && !foreign && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
+          if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
     }

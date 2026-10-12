@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.9.15 — 2026-10-12
+
+- Four more names that only look like a venue, found the same way: *International Security* (a political-science journal) was read as the USENIX Security Symposium, a bare *Journal* as the
+  Journal of the ACM, *Journal of Knowledge Management* and *Journal of Intelligent Systems* as the *International Journals* of those names (a journal's own "International" now counts; "Int." and
+  "Intl" are the word), and *ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)* as SIGIR (a parenthesis that names another event by its own acronym is not read as the
+  sponsor SIGIR's conference). None of these changes touches a string of the real-profile corpora.
+
 ## 2.9.14 — 2026-10-12
 
 - **A wrong badge fixed.** *Journal of Marketing* was drawn as CCF A, the Journal of the ACM: the cleanup that removes a trailing month ("Dec. 2010") took any word that begins with a month's three

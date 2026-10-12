@@ -473,6 +473,23 @@ test("a month is a whole word: 'Journal of Marketing' is not 'Journal of' (and s
   assert.equal(brief("SIGCOMM, Sept. 2008"), "CCF A SIGCOMM · CORE A* SIGCOMM");
 });
 
+test("names that only look like a venue: 'International Security', 'Journal', 'Journal of Knowledge Management', and an ICTIR that carries SIGIR's name", () => {
+  // a political-science journal is not the USENIX Security Symposium; a bare "Journal" is not the Journal of the ACM
+  assert.equal(brief("International Security"), "");
+  assert.equal(brief("Journal"), "");
+  assert.equal(brief("Journal of International Conference Proceedings"), "");
+  // Emerald's Journal of Knowledge Management and De Gruyter's Journal of Intelligent Systems are not the International Journals of those names
+  assert.equal(brief("Journal of Knowledge Management"), "");
+  assert.equal(brief("Journal of Intelligent Systems"), "");
+  assert.equal(brief("International Journal of Knowledge Management"), "CCF C IJKM");
+  assert.equal(brief("Int. J. Comput. Vis."), "CCF A IJCV");
+  assert.equal(brief("Intl J Human-Computer Studies"), "CCF A IJHCS");
+  // the ICTIR is no SIGIR; SIGIR with its own acronym in the parenthesis still is
+  assert.equal(brief("ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR)"), "");
+  assert.equal(brief("ACM SIGIR International Conference on Research and Development in Information Retrieval (SIGIR)"), "CCF A SIGIR · CORE A* SIGIR");
+  assert.equal(brief("ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD)"), "CCF A SIGKDD · CORE A* KDD");
+});
+
 test("Springer's colon form: 'Series: 18th International Conference, ACR 2020, Place …' is the venue", () => {
   assert.equal(brief("Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC …, 2020"), "CCF B TCC · CORE B TCC");
   assert.equal(brief("Computer Aided Verification: 13th International Conference, CAV 2001, Paris …, 2003"), "CCF A CAV · CORE A* CAV");
