@@ -9,9 +9,11 @@
   Distinguished Paper*, *Test of Time* in a paper's title or venue text become a small chip (awards in gold
   with a ★), a count in the panel that filters the list, and a line in the copied summary. A switch turns
   it off. Nothing is looked up: only the author's own words are read, and the tooltip says "not checked".
-- **Award list plumbing** (`lib/awards.js`, `data/awards-2026.json`): a paper is matched to an
-  award-winning paper by full title *and* first author; tooltips say where a mark came from. The list is
-  filled from official award pages only, each entry with its source and a quoted snippet.
+- **Paper award list** (`lib/awards.js`, `data/awards-2026.json`, 425 entries): a paper is matched to an
+  award-winning paper by full title *and* first author, and tooltips say where a mark came from. Entries come
+  only from official pages — the ACL Anthology's award metadata for the ACL family, and ICLR, NeurIPS and ICML's
+  own awards pages — each with its source and a quoted snippet. Not exhaustive: a missing paper has no mark.
+  Named categories (*Best Resource Paper*, *Outstanding New Directions Paper*) show under their printed names.
 - **Matcher fixes from nine more real profiles** (HCI, networking, software engineering, programming
   languages, security, graphics, theory): Computer Graphics Forum is the journal, not Computer Graphics
   International; the CHI proceedings' own name (`2018 CHI Conference on …`); SIGGRAPH proceedings
