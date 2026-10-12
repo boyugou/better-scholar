@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.8.1 — 2026-10-12
+
+- A long list is decorated once, not once per batch: a row whose drawn state (role, ranks, marks, switches) is the same as last time is left alone. With the
+  whole list now loading by itself, the longest main-thread task while 1,000 papers load fell from 62 ms to under a frame (the review's point 5).
+
 ## 2.8.0 — 2026-10-12
 
 - **FOCS Test of Time Awards** (24 entries, 2019–2025; the list holds 4708) from the TCMF's own page: *Private Information Retrieval*, *Cache-Oblivious

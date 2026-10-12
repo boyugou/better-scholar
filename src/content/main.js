@@ -106,7 +106,18 @@
     el.replaceChildren(text.slice(0, pos), h("span", { class: "rr-name rr-name-" + row.a.role, title: tip }, text.slice(pos, pos + nameLen)), text.slice(pos + nameLen));
   }
 
+  // What decorate() draws on a row, as a string: when it is the same as last time nothing is touched (a long list is decorated once, not once per batch)
+  function decorKey(row) {
+    const a = row.a, v = a.venue || {};
+    return [analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.markName, prefs.ranks.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.ranks.core && v.core ? v.core.rank + v.core.name : "",
+      B.prefs.visibleMarks(prefs, a.marks).map((m) => m.kind + m.source + (m.venue || "") + (m.year || "") + (m.text || "")).join(","), prefs.roles.first, prefs.roles.cofirst, prefs.roles.second, prefs.roles.last,
+      row.raw.authorsEl ? row.raw.authorsEl.isConnected : 0, row.raw.venueEl ? row.raw.venueEl.querySelector(":scope > .rr-chips") !== null : 0].join("|");
+  }
+
   function decorate(row) {
+    const key = decorKey(row);
+    if (row.decorKey === key) return;
+    row.decorKey = key;
     const { tr, venueEl } = row.raw;
     const a = row.a;
     row.highlighted = analysis.isHighlighted(a, prefs.roles);
