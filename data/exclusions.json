@@ -1,0 +1,13 @@
+{
+ "note": "Entries read from an official page that the page itself gets wrong (a title printed under another paper's authors). scripts/awards/merge-raw.mjs drops them from every merge; each says what is wrong and where.",
+ "exclude": [
+  {
+   "venue": "KDD", "year": 2005, "title": "Learning to Detect Malicious Executables in the Wild",
+   "reason": "kdd.org/awards/view/2005-best-paper-award prints this title (the 2004 application winner by Kolter and Maloof) under the 2005 application winner's authors, Norén, Orre and Bate"
+  },
+  {
+   "venue": "KDD", "year": 2005, "title": "A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database",
+   "reason": "the same page prints this title (Norén et al.'s paper) under the 2005 application runner-up's authors, Jiang, Pei, Ramanathan, Tang and Zhang (the 2004 runners-up)"
+  }
+ ]
+}

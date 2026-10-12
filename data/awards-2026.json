@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6243
+  "count": 6241
  },
  "entries": [
   {
@@ -71432,38 +71432,6 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2005-best-paper-award",
    "evidence": "KDD 2005 Best Research Paper: Graphs Over Time: Densification Laws, Shrinking Diameters, and Possible Explanations — Jure Leskovec, Jon Kleinberg, and Christos Faloutsos"
-  },
-  {
-   "venue": "KDD",
-   "year": 2005,
-   "award": "category",
-   "awardLabel": "Best Application Paper",
-   "title": "Learning to Detect Malicious Executables in the Wild",
-   "authors": [
-    "G. Niklas Norén",
-    "Roland Orre",
-    "Andrew Bate"
-   ],
-   "track": "main",
-   "source": "https://kdd.org/awards/view/2005-best-paper-award",
-   "evidence": "KDD 2005 Best Application Paper: Learning to Detect Malicious Executables in the Wild — G. Niklas Norén, Roland Orre, and Andrew Bate."
-  },
-  {
-   "venue": "KDD",
-   "year": 2005,
-   "award": "runner-up",
-   "awardLabel": "Best Application Paper Runner-up",
-   "title": "A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database",
-   "authors": [
-    "Daxin Jiang",
-    "Jian Pei",
-    "Murali Ramanathan",
-    "Chun Tang",
-    "Aidong Zhang"
-   ],
-   "track": "main",
-   "source": "https://kdd.org/awards/view/2005-best-paper-award",
-   "evidence": "KDD 2005 Best Application Paper Runner-up: A Hit-Miss Model for Duplicate Detection in the WHO Drug Safety Database — Daxin Jiang, Jian Pei, Murali Ramanathan, Chun Tang, and Aidong Zhang"
   },
   {
    "venue": "KDD",

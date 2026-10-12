@@ -96,6 +96,11 @@ for (const e of accepted.values()) {
   }
 }
 
+// entries an official page gets wrong (data/exclusions.json), dropped from every merge
+const exclusions = JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).exclude.map((x) => [x.venue, x.year, awards.titleKey(x.title)].join("|"));
+let excluded = 0;
+for (const [k, e] of [...accepted]) if (exclusions.includes([e.venue, e.year, awards.titleKey(e.title)].join("|"))) { accepted.delete(k); excluded++; }
+
 // clashes: the same paper listed with two different award kinds at one venue-year
 const byPaper = new Map();
 for (const e of accepted.values()) {
@@ -134,6 +139,7 @@ const perVenue = {};
 for (const e of sorted) (perVenue[e.venue] ||= new Set()).add(e.year);
 
 console.log(`entries: ${sorted.length} (${sorted.length - existing} new) from ${files.length} file(s); ${problems.length} rejected, ${clashes.length} clash(es)`);
+if (excluded) console.log(`dropped by data/exclusions.json: ${excluded}`);
 if (cleaned) console.log(`authors cleaned (organisations and placeholders dropped): ${cleaned} entr${cleaned === 1 ? "y" : "ies"}`);
 console.log("venues:", Object.entries(perVenue).map(([v, ys]) => `${v}×${ys.size}y`).join("  "));
 if (problems.length) { console.log("\nREJECTED"); for (const p of problems.slice(0, 60)) console.log(" -", p.where, "->", p.why); }

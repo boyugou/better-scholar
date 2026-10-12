@@ -405,3 +405,12 @@ test("the bundled titles hold no leftover character reference (&mldr; and the li
 test("an accent command in an official title ($\\tilde O(mn^{8/9})$) matches Scholar's Õ(mn^{8/9})", () => {
   assert.equal(awards.titleKey("Single-Source Shortest Paths with Negative Real Weights in $\\tilde O(mn^{8/9})$ Time"), awards.titleKey("Single-source shortest paths with negative real weights in Õ(mn^{8/9}) time"));
 });
+
+test("data/exclusions.json: an entry an official page gets wrong is not in the bundled list, and says why", () => {
+  const { exclude } = JSON.parse(fs.readFileSync(path.join(ROOT, "data/exclusions.json"), "utf8"));
+  assert.ok(exclude.length >= 1);
+  for (const x of exclude) {
+    assert.ok(x.reason && x.reason.length > 20, `${x.venue} ${x.year}: no reason`);
+    assert.equal(data.entries.some((e) => e.venue === x.venue && e.year === x.year && awards.titleKey(e.title) === awards.titleKey(x.title)), false, `${x.venue} ${x.year} ${x.title} is back in the list`);
+  }
+});

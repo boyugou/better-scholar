@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.26 — 2026-10-12
+
+- Two KDD 2005 rows are gone: the awards page prints the 2004 application winner's title under the 2005 winner's authors and the 2005 winner's title under the 2004 runners-up's authors, so the rows paired a paper with other people's names.
+  `data/exclusions.json` records such page errors (with the reason), `merge-raw.mjs` drops them from every merge, a test keeps them out. The list has 6241 awards.
+
 ## 2.10.25 — 2026-10-12
 
 - STOC 2024's best paper "Single-Source Shortest Paths with Negative Real Weights in $\tilde O(mn^{8/9})$ Time" could not match Scholar's "Õ(mn^{8/9})": the title key kept the word "tilde" of the LaTeX accent command. Accent commands
