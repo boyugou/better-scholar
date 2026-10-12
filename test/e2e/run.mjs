@@ -114,6 +114,9 @@ function matrixOf(papers, source = "ccf") {
   return out;
 }
 
+// the year drop-down: open the list, choose the entry
+const pickYear = async (page, act, value) => { await page.click(`#rr-panel button[data-act="${act}"]`); await page.click(`#rr-panel .rr-dd-list li[data-value="${value}"]:visible`); };
+
 const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").count();
 
 // the settings page: switches are saved at once and every open profile tab redraws
@@ -233,10 +236,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
 
     // -- 9. year filter + only highlighted
     const years = [...new Set(all.map((p) => p.year))].sort((a, b) => b - a);
-    await page.selectOption('select[data-act="year-start"]', String(years[2]));
+    await pickYear(page, "year-start", String(years[2]));
     const inRange = all.filter((p) => p.year >= years[2]).length;
     assert.equal(await visibleRows(page), inRange);
-    await page.selectOption('select[data-act="year-start"]', "");
+    await pickYear(page, "year-start", "");
     await page.check('input[data-act="only"]');
     assert.equal(await visibleRows(page), all.filter((p) => p.highlighted).length);
     await page.uncheck('input[data-act="only"]');
@@ -461,6 +464,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "marks.award", false);
     assert.equal(await opts.locator("#preview .rr-chip-mark-award").count(), 0);
     await setPref(opts, "marks.award", true);
+    // the preview holds the real panel, and each of its parts has its own switch
+    assert.equal(await opts.locator('#pv-panel #rr-panel [data-rr="matrix"] table').count(), 1);
+    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
+      assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), true, `${part} shows by default`);
+      await setPref(opts, "panel." + part, false);
+      assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), false, `${part} switch hides it in the preview`);
+      for (const other of ["summary", "marks", "filters", "metrics"]) if (other !== part) assert.equal(await opts.locator(`#pv-panel [data-rr="${other === "summary" ? "matrix" : other}"]`).first().isVisible(), true, `${other} stays when ${part} goes`);
+      await setPref(opts, "panel." + part, true);
+    }
+    await setPref(opts, "panel.show", false);
+    assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
+    await setPref(opts, "panel.show", true);
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Resolve' left a cache of paper details");
     await opts.reload();
     await opts.waitForSelector('[data-act="clear-cache"]');
@@ -577,6 +592,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (const g of ["award", "oral", "spotlight"]) await setPref(optsM, "marks." + g, true);
     await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length > 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 3);
     ok("each Awards & talks group has its own switch on the settings page: chips, panel rows, counts and an active filter follow");
+
+    // each part of the panel has its own switch: the role × rank table can go while the filters and totals stay
+    await setPref(optsM, "panel.summary", false);
+    await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
+    assert.equal(await page.locator('[data-rr="matrix"] table').isVisible(), false);
+    assert.equal(await page.locator('[data-act="copy-text"]').isVisible(), false, "the Copy buttons belong to the table");
+    for (const part of ["filters", "metrics", "coverage"]) assert.equal(await page.locator(`[data-rr="${part}"]`).isVisible(), true, `${part} stays`);
+    assert.equal(await page.locator('[data-rr="marks"]').isVisible(), true, "the awards and talks counts stay");
+    await setPref(optsM, "panel.status", false);
+    await setPref(optsM, "panel.names", false);
+    await eventually(page, () => document.querySelector('[data-rr="coverage"]').hidden && document.querySelector('[data-rr="variants"]').hidden);
+    await setPref(optsM, "panel.summary", true); await setPref(optsM, "panel.status", true); await setPref(optsM, "panel.names", true);
+    await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1 && !document.querySelector('[data-rr="coverage"]').hidden);
+    ok("each part of the panel has its own switch: the role × rank table, the loaded-papers status and the name help can go, the rest stays");
   } finally {
     await ctx3.close();
     await fx3.close();

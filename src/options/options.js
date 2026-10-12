@@ -85,8 +85,9 @@
       ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } }))),
     card(t("optPanelTitle"), null,
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
-      option({ key: "panel.filters", label: t("optPanelFilters"), hint: t("optPanelFiltersHint"), get: () => prefs.panel.filters, set: (v) => { prefs.panel.filters = v; }, off: () => !prefs.panel.show }),
-      option({ key: "panel.metrics", label: t("optPanelMetrics"), hint: t("optPanelMetricsHint"), get: () => prefs.panel.metrics, set: (v) => { prefs.panel.metrics = v; }, off: () => !prefs.panel.show })),
+      ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
+        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
+        .map(([part, label, hint]) => option({ key: "panel." + part, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show }))),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBtn, cacheNote)));
@@ -122,7 +123,43 @@
     return h("tr", { class: lit ? "rr-r-" + s.role : "" },
       h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? h("span", { class: "rr-chips" }, chips) : null)));
   }
-  function renderPreview() { $("preview").replaceChildren(...SAMPLES.map(sampleRow)); }
+  // The summary panel is the one the Scholar page draws (content/panel.js), handed a model built from invented papers
+  // with the same rules as content/main.js — so every switch above changes it exactly as it changes a real profile.
+  const P = (role, ccf, core, citations, year, ...markKinds) => ({
+    status: "found", role, venue: { ccf: ccf ? { tier: ccf } : null, core: core ? { rank: core } : null }, citations, year, highlighted: true,
+    marks: markKinds.map((k) => ({ kind: k, group: B.marks.groupOf(k) }))
+  });
+  const PAPERS = [
+    P("first", "A", "A*", 310, 2025, "best"), P("first", "A", "A", 120, 2024, "oral"), P("first", "B", "B", 64, 2023), P("first", null, null, 8, 2022),
+    P("cofirst", "A", "A*", 190, 2024, "spotlight"), P("second", "B", "B", 71, 2023), P("second", "A", "A", 55, 2022),
+    P("last", "A", "A*", 240, 2025, "tot"), P("last", "C", "C", 12, 2021), P("middle", "A", "A*", 402, 2024, "highlight"), P("middle", "B", "A", 87, 2023), P("middle", null, null, 5, 2020)
+  ];
+  const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onMarkGroup", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
+  panelCb.onCopyUnmatched = async () => false;
+  let panelUi = { collapsed: false, source: "ccf" };
+  panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };
+  panelCb.onSource = (src) => { panelUi.source = src; renderPreview(); };
+  const panel = B.panel.create(panelCb);
+  function panelModel() {
+    const source = B.prefs.source(prefs, panelUi);
+    const visible = (p) => ({ marks: B.prefs.visibleMarks(prefs, p.marks) });
+    const counts = B.marks.summarize(PAPERS);
+    for (const g of B.marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
+    return {
+      ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
+      selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
+      marks: counts, markKinds: prefs.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
+      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS),
+      coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
+        unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
+      variants: [], nameHints: { auto: [], suggestions: [] }
+    };
+  }
+  function renderPreview() {
+    $("pv-panel").hidden = !prefs.panel.show;
+    if (prefs.panel.show) { if (!$("pv-panel").contains(panel.el)) $("pv-panel").append(panel.el); panel.update(panelModel()); }
+    $("preview").replaceChildren(...SAMPLES.map(sampleRow));
+  }
   renderPreview();
 
   // another settings tab (or Reset) changed something

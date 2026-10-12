@@ -14,6 +14,61 @@
   const sameSel = (a, b) => !!a && !!b && a.role === b.role && a.tier === b.tier;
   const dot = (role) => h("span", { class: "rr-dot", style: "background:" + ROLE_COLOR[role] });
 
+  // A drop-down that looks like the rest of the panel instead of the system's menu: a button showing the choice, a list
+  // under it (placed with fixed coordinates so the panel's own overflow cannot clip it), arrow keys, Escape and a click outside to close.
+  //   dd.setOptions([{ value, label }], value)  ·  dd.value  ·  dd.el (the button)  ·  dd.list (the popup; lives next to the button)
+  function dropdown(act, placeholder, onChange) {
+    let options = [], value = "", open = false, active = -1, lastSig = "";
+    const label = h("span", { class: "rr-dd-label" });
+    const el = h("button", { class: "rr-dd", type: "button", "data-act": act, "aria-haspopup": "listbox", "aria-expanded": "false" }, label, h("span", { class: "rr-dd-caret", "aria-hidden": "true" }));
+    const list = h("ul", { class: "rr-dd-list", role: "listbox", tabindex: "-1", hidden: true });
+    const items = () => [...list.children];
+    const draw = () => {
+      const cur = options.find((o) => o.value === value);
+      label.textContent = cur && cur.value !== "" ? cur.label : placeholder;
+      el.classList.toggle("rr-dd-set", !!(cur && cur.value !== ""));
+      list.replaceChildren(...options.map((o, i) => h("li", { role: "option", tabindex: "-1", "data-value": o.value, "aria-selected": String(o.value === value),
+        onClick: () => choose(i) }, o.label)));
+    };
+    const focusItem = (i) => { active = Math.max(0, Math.min(options.length - 1, i)); const li = items()[active]; if (li) { li.focus(); li.scrollIntoView({ block: "nearest" }); } };
+    const close = (back) => {
+      if (!open) return;
+      open = false; list.hidden = true; el.setAttribute("aria-expanded", "false");
+      document.removeEventListener("pointerdown", outside, true); window.removeEventListener("resize", close); window.removeEventListener("scroll", close, true);
+      if (back) el.focus();
+    };
+    const outside = (e) => { if (!list.contains(e.target) && !el.contains(e.target)) close(false); };
+    const show = () => {
+      if (open || !options.length) return;
+      open = true; list.hidden = false; el.setAttribute("aria-expanded", "true");
+      const r = el.getBoundingClientRect(), room = window.innerHeight - r.bottom - 12, up = room < 150 && r.top > room;
+      list.style.minWidth = Math.max(r.width, 84) + "px";
+      list.style.left = Math.min(r.left, Math.max(8, window.innerWidth - 120)) + "px";
+      list.style.maxHeight = Math.max(120, Math.min(260, up ? r.top - 12 : room)) + "px";
+      if (up) { list.style.top = ""; list.style.bottom = (window.innerHeight - r.top + 4) + "px"; } else { list.style.bottom = ""; list.style.top = (r.bottom + 4) + "px"; }
+      document.addEventListener("pointerdown", outside, true); window.addEventListener("resize", close); window.addEventListener("scroll", close, true);
+      focusItem(Math.max(0, options.findIndex((o) => o.value === value)));
+    };
+    const choose = (i) => { const o = options[i]; if (!o) return; const changed = o.value !== value; value = o.value; draw(); close(true); if (changed) onChange(value); };
+    el.addEventListener("click", () => (open ? close(true) : show()));
+    el.addEventListener("keydown", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); show(); } });
+    list.addEventListener("keydown", (e) => {
+      const k = e.key;
+      if (k === "Escape") { e.preventDefault(); close(true); }
+      else if (k === "ArrowDown") { e.preventDefault(); focusItem(active + 1); }
+      else if (k === "ArrowUp") { e.preventDefault(); focusItem(active - 1); }
+      else if (k === "Home") { e.preventDefault(); focusItem(0); }
+      else if (k === "End") { e.preventDefault(); focusItem(options.length - 1); }
+      else if (k === "Enter" || k === " ") { e.preventDefault(); choose(active); }
+      else if (k === "Tab") close(false);
+    });
+    return {
+      el, list,
+      get value() { return value; },
+      setOptions(opts, v) { const sig = JSON.stringify([opts, v]); if (sig === lastSig) return; lastSig = sig; options = opts; value = v; draw(); }
+    };
+  }
+
   function create(cb) {
     const ui = { flash: null };
 
@@ -37,12 +92,12 @@
 
     // filters (built once, synced on update)
     const onlyCb = h("input", { type: "checkbox", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
-    const yearStart = h("select", { "data-act": "year-start", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
-    const yearEnd = h("select", { "data-act": "year-end", onChange: () => cb.onYear(yearStart.value, yearEnd.value) });
+    const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
+    const yearEnd = dropdown("year-end", t("yearEnd"), () => cb.onYear(yearStart.value, yearEnd.value));
     const onlyRow = h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")));
     const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters" },
       onlyRow,
-      h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart, "–", yearEnd));
+      h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list));
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics" });
 
@@ -58,9 +113,9 @@
     const noteBox = h("div", { class: "rr-faint", "data-rr": "note" });
     const footSec = h("div", { class: "rr-sec" }, variantBox, noteBox);
 
-    const body = h("div", { class: "rr-body" },
-      h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec),
-      h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, coverSec, footSec));
+    const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
+    const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, coverSec, footSec);
+    const body = h("div", { class: "rr-body" }, colAEl, colBEl);
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle") }, head, body);
 
     // ---- renderers -------------------------------------------------------
@@ -114,7 +169,7 @@
     function renderMarks(m) {
       const counts = m.marks || {};
       const groups = B.marks.GROUPS.filter((g) => counts[g]);
-      marksSec.hidden = !groups.length;
+      marksSec.hidden = !groups.length || !m.prefs.panel.marks;
       // the award count's parts, on hover: best papers and test-of-time awards apart from the honorable mentions
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
@@ -124,29 +179,31 @@
     }
 
     function renderCoverage(m) {
-      const c = m.coverage;
+      const c = m.coverage, parts = m.prefs.panel;
       const lines = [];
       const loadedLine = h("div", { class: "rr-cover-line" },
         h("span", { class: "rr-note" }, c.loadingAll ? t("loadingAll", [String(c.loaded)]) : tn("coverLoaded", c.loaded, [String(c.loaded)])),
         c.loadingAll ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelLoad() }, t("cancel"))
           : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-act": "load-all", onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
-      lines.push(loadedLine);
-      if (c.loadMessage) lines.push(h("div", { class: "rr-faint", "data-rr": "load-msg" }, c.loadMessage));
+      const status = [];
+      status.push(loadedLine);
+      if (c.loadMessage) status.push(h("div", { class: "rr-faint", "data-rr": "load-msg" }, c.loadMessage));
       if (c.hidden > 0 || c.resolving) {
-        lines.push(h("div", { class: "rr-cover-line", title: t("resolveHint") },
+        status.push(h("div", { class: "rr-cover-line", title: t("resolveHint") },
           h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
           c.resolving ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelResolve() }, t("cancel"))
             : h("button", { class: "rr-link", type: "button", "data-act": "resolve", onClick: () => cb.onResolve() }, t("resolveBtn"))));
       }
-      if (c.resolveMessage) lines.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
-      if (c.absent > 0) lines.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
+      if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
+      if (c.absent > 0) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
       // spellings of the owner's name found in those very papers: one click adds one
-      if (c.absent > 0 && m.nameHints.suggestions.length) {
+      if (parts.status) lines.push(...status);
+      if (parts.names && c.absent > 0 && m.nameHints.suggestions.length) {
         lines.push(h("div", { class: "rr-cover-line", "data-rr": "suggest" }, h("span", { class: "rr-note" }, t("variantSuggest")),
           ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
             onClick: () => cb.onAddVariant(sg.name) }, `${sg.name} (${sg.rows})`))));
       }
-      if (c.unmatched.length) {
+      if (parts.status && c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
         const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
           c.unmatched.slice(0, 6).map((u) => "- " + u.venue).join("\n") + "\n\nThe rank they should have (and the venue's full name): ";
@@ -169,15 +226,9 @@
 
     function syncFilters(m) {
       onlyCb.checked = !!m.filters.onlyHighlighted;
-      const sig = m.years.join(",");
-      if (yearStart.dataset.sig !== sig) {
-        const opts = (label) => [h("option", { value: "" }, label), ...m.years.map((y) => h("option", { value: String(y) }, String(y)))];
-        yearStart.replaceChildren(...opts(t("yearStart")));
-        yearEnd.replaceChildren(...opts(t("yearEnd")));
-        yearStart.dataset.sig = sig;
-      }
-      yearStart.value = m.filters.yearStart != null ? String(m.filters.yearStart) : "";
-      yearEnd.value = m.filters.yearEnd != null ? String(m.filters.yearEnd) : "";
+      const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
+      yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");
+      yearEnd.setOptions(opts(t("yearEnd")), m.filters.yearEnd != null ? String(m.filters.yearEnd) : "");
     }
 
     function renderMetrics(m) {
@@ -206,7 +257,16 @@
       filtersSec.hidden = !m.prefs.panel.filters;
       onlyRow.hidden = !Object.values(m.prefs.roles).some(Boolean);          // with no role highlighted there is nothing to filter to
       metricsSec.hidden = !m.prefs.panel.metrics;
+      summarySec.hidden = !m.prefs.panel.summary;
+      variantBox.hidden = !m.prefs.panel.names;
+      noteBox.hidden = !m.prefs.panel.summary;                              // the note says where the ranks in the table come from
+      footSec.hidden = variantBox.hidden && noteBox.hidden;
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
+      coverSec.hidden = !coverSec.childNodes.length;
+      // a column with nothing in it gives its width to the other
+      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !coverSec.hidden || !footSec.hidden;
+      colAEl.hidden = !colA; colBEl.hidden = !colB;
+      el.classList.toggle("rr-onecol", !(colA && colB));
       syncFilters(m); renderMetrics(m); renderVariants(m);
       noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
     }

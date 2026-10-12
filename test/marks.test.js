@@ -158,3 +158,15 @@ test("analyzeRow carries the marks, from the list text and from a resolved paper
   // an ordinary row has none, and a row without a title field still works
   assert.deepEqual(analysis.analyzeRow({ authorsText: "J Doe", venueText: "Nature 521, 2015" }, { owner, resolver }).marks, []);
 });
+
+test("styled letters (mathematical bold, full-width) read as plain ones, and several trailing brackets are each read", () => {
+  const kinds = (title, venue) => marks.detect({ title, venue }).map((m) => m.kind).sort();
+  assert.deepEqual(kinds("Some paper (Oral) (Best Paper Finalist)"), ["finalist", "oral"]);
+  assert.deepEqual(kinds("Some paper (𝐎𝐫𝐚𝐥) (𝐁𝐞𝐬𝐭 𝐏𝐚𝐩𝐞𝐫 𝐅𝐢𝐧𝐚𝐥𝐢𝐬𝐭)"), ["finalist", "oral"]);
+  assert.deepEqual(kinds("Some paper （ＯＲＡＬ）"), ["oral"]);
+  assert.deepEqual(kinds("Some paper [Spotlight] (ICLR 2024) (Oral)"), ["oral", "spotlight"]);
+  assert.deepEqual(kinds("(Oral) (Best Paper) Some paper"), ["best", "oral"]);
+  // still precision-first: a bracket holding other words is no marker, nor is a word of an ordinary title
+  assert.deepEqual(kinds("Oral Oncology (Review)"), []);
+  assert.deepEqual(kinds("Notes on Spotlight Detection (Oral history of the lab)"), []);
+});

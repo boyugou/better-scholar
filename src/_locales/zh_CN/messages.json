@@ -390,6 +390,30 @@
   "optPanelShowHint": {
     "message": "主页上的“角色 × 等级”统计表。关闭后只在论文列表里做标记。"
   },
+  "optPanelSummary": {
+    "message": "角色 × 排名表格"
+  },
+  "optPanelSummaryHint": {
+    "message": "按作者位置和排名统计论文的表格，连同“复制”按钮和排名来源说明。"
+  },
+  "optPanelMarks": {
+    "message": "奖项与报告统计"
+  },
+  "optPanelMarksHint": {
+    "message": "获奖论文和各级报告（Oral 等）的数量，点击即可列出。"
+  },
+  "optPanelStatus": {
+    "message": "已加载论文与无排名 venue"
+  },
+  "optPanelStatusHint": {
+    "message": "已加载论文数、“加载全部”按钮，以及无排名 venue 的论文列表。"
+  },
+  "optPanelNames": {
+    "message": "名字拼写帮助"
+  },
+  "optPanelNamesHint": {
+    "message": "“名字不匹配？添加拼写”及对你名字的拼写建议。"
+  },
   "optPanelFilters": {
     "message": "筛选"
   },

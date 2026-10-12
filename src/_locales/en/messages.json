@@ -405,6 +405,30 @@
   "optPanelShowHint": {
     "message": "The role × rank table on a profile page. Off: only the paper list is marked up."
   },
+  "optPanelSummary": {
+    "message": "Role × rank table"
+  },
+  "optPanelSummaryHint": {
+    "message": "The table of your papers by position and rank, with its Copy buttons and the note on where the ranks come from."
+  },
+  "optPanelMarks": {
+    "message": "Awards and talks counts"
+  },
+  "optPanelMarksHint": {
+    "message": "The count of award-winning papers and talk levels, one click to list them."
+  },
+  "optPanelStatus": {
+    "message": "Loaded papers and unranked venues"
+  },
+  "optPanelStatusHint": {
+    "message": "How many papers are loaded, the “Load all” button, and the list of papers at venues without a rank."
+  },
+  "optPanelNames": {
+    "message": "Name spelling help"
+  },
+  "optPanelNamesHint": {
+    "message": "“Name not matching? Add a spelling” and the suggestions for your name."
+  },
   "optPanelFilters": {
     "message": "Filters"
   },

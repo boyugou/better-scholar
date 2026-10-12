@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.10.0 — 2026-10-12
+
+From users' feedback (a long panel, controls that could not be switched off, markers in other fonts):
+
+- **Every part of the summary panel has its own switch** on the settings page: the role × rank table (with its Copy buttons and the note on where the ranks come from), the awards & talks counts, the filters, the
+  citation totals, the loaded-papers / unranked-venues status, and the name-spelling help. Turn off just the table and the rest stays; the columns close up when one is empty. A warning that Scholar's
+  layout changed is never hidden.
+- **The settings preview is the real panel** (the same code the Scholar page runs, handed invented papers), above the sample rows, so every switch changes it the way it changes a profile. It had shown only the row colours and chips.
+- **Markers in other fonts are read**: styled letters (𝐎𝐫𝐚𝐥, ＯＲＡＬ) count as plain ones, and several brackets in a row — "(Oral) (Best Paper Finalist)" — are each looked at (only the last one was).
+- **Controls with a design of their own**: the "Only highlighted" tick is a switch, the year range a drop-down with its own list (arrow keys, Escape, opens upward near the bottom of the window) instead of the system menu, the CCF / CORE tab a
+  pill, buttons and the name field with hover, press and focus states, the disclosure arrows drawn rather than typed.
 ## 2.9.40 — 2026-10-12
 
 - NeurIPS's test-of-time papers of 2022 (ImageNet Classification with Deep Convolutional Neural Networks) and 2024 (Generative Adversarial Nets; Sequence to Sequence Learning with Neural Networks)

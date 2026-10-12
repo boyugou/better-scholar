@@ -42,8 +42,8 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   offers **Load all**.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
   settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
-  of Awards / Oral / Spotlight / Highlight, whether the panel, its filters and its citation totals
-  appear at all, and whether the whole paper list loads by itself. A live preview shows the result and open Scholar tabs update at once; whatever you switch
+  of Awards / Oral / Spotlight / Highlight, the summary panel and each of its parts (the role × rank table, the awards and talks counts, the filters, the citation totals, the loaded-papers status, the name help — keep the filters and totals, say, without the table),
+  and whether the whole paper list loads by itself. A live preview shows the result and open Scholar tabs update at once; whatever you switch
   off disappears from the page instead of staying as a control.
 - **Private by design** — no accounts, no analytics, no third-party requests. The
   rankings are bundled in the extension. Settings sync through your Chrome account.

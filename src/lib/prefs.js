@@ -15,7 +15,7 @@
   const ROLES = ["first", "cofirst", "second", "last"];
   const RANKS = ["ccf", "core"];
   const MARK_GROUPS = ["award", "oral", "spotlight", "highlight"];
-  const PANEL_PARTS = ["show", "filters", "metrics"];
+  const PANEL_PARTS = ["show", "summary", "marks", "filters", "metrics", "status", "names"];
 
   const flag = (v, fallback) => (typeof v === "boolean" ? v : fallback);
   const pick = (src, keys) => Object.fromEntries(keys.map((k) => [k, flag(src && typeof src === "object" ? src[k] : undefined, true)]));
@@ -32,7 +32,7 @@
       markName: flag(r.markName, true),            // bold + tint your name in the author line
       ranks: pick(r.ranks, RANKS),                 // CCF / CORE chips, and their tab in the panel
       marks: pick(r.marks, MARK_GROUPS),           // award / oral / spotlight / highlight chips and counts
-      panel: pick(r.panel, PANEL_PARTS),           // the panel itself, its filters, its citation totals
+      panel: pick(r.panel, PANEL_PARTS),           // the panel itself and each of its parts: the role × rank table (with its copy buttons and data note), the award / talk counts, the filters, the citation totals, the loaded-papers / unranked-venues status, the name-spelling help
       autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded
     };
   }

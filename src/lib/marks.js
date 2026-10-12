@@ -61,7 +61,9 @@
   ];
 
   const SPACES = /[   -​  　]/g;
+  // (NFKC turns the styled letters some authors paste in — 𝐎𝐫𝐚𝐥, 𝘉𝘦𝘴𝘵 𝘗𝘢𝘱𝘦𝘳, full-width ＯＲＡＬ — back into plain ones)
   const norm = (s) => String(s == null ? "" : s)
+    .normalize("NFKC")
     .replace(SPACES, " ")
     .replace(/[（［【]/g, (c) => (c === "（" ? "(" : "[")).replace(/[）］】]/g, (c) => (c === "）" ? ")" : "]"))
     .replace(/\s+/g, " ").trim();
@@ -101,13 +103,14 @@
     return okBefore && /^\s*(?:$|[)\](\[,;:|/]|\s?[–—-]\s|(?:19|20)\d{2}\b)|^\s+(?:at|@)\s+(?:the\s+)?[A-Z0-9']/.test(after);
   }
 
-  // The bracketed or dashed tails and heads of a title that could hold a marker.
+  // The bracketed or dashed tails and heads of a title that could hold a marker. Several brackets in a row
+  // ("… (Oral) (Best Paper Finalist)") are each a segment.
   function titleSegments(title) {
     const segs = [];
-    let m = /[(\[]([^()\[\]]{1,80})[)\]]\s*$/.exec(title);
-    if (m) segs.push(m[1]);
-    m = /^\s*[(\[]([^()\[\]]{1,80})[)\]]\s*[:–—-]?\s*\S/.exec(title);
-    if (m) segs.push(m[1]);
+    let rest = title, m;
+    for (let i = 0; i < 3 && (m = /[(\[]([^()\[\]]{1,80})[)\]]\s*$/.exec(rest)); i++) { segs.push(m[1]); rest = rest.slice(0, m.index).trimEnd(); }
+    rest = title;
+    for (let i = 0; i < 3 && (m = /^\s*[(\[]([^()\[\]]{1,80})[)\]]\s*[:–—-]?\s*(?=\S)/.exec(rest)); i++) { segs.push(m[1]); rest = rest.slice(m[0].length); }
     m = /\s[–—|-]\s+([^–—|]{1,80})$/.exec(title);
     if (m) segs.push(m[1]);
     return segs;
