@@ -2,17 +2,18 @@
 // Pure (no DOM), shared by the content script and the tests.
 (function (root, factory) {
   const api = factory(
-    typeof require === "function" && typeof module === "object" ? require("./names.js") : root.RolesRanks.names
+    typeof require === "function" && typeof module === "object" ? require("./names.js") : root.RolesRanks.names,
+    typeof require === "function" && typeof module === "object" ? require("./marks.js") : root.RolesRanks.marks
   );
   if (typeof module === "object" && module.exports) module.exports = api;
   else (root.RolesRanks = root.RolesRanks || {}).analysis = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (names) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (names, marks) {
   "use strict";
 
   const ROLE_KEYS = ["first", "cofirst", "second", "last"];
 
-  // raw:  { authorsText, venueText, citations?, year? }   — straight from the Scholar list view
-  // ctx:  { owner: {name, alternates?}, resolver, resolved?: { authors?, venue? } }
+  // raw:  { authorsText, venueText, title?, citations?, year? }   — straight from the Scholar list view
+  // ctx:  { owner: {name, alternates?}, resolver, resolved?: { authors?, venue? }, venueWord? }
   //       `resolved` is what a paper's detail page said (full author list, clean venue).
   function analyzeRow(raw, ctx) {
     const resolved = ctx.resolved || null;
@@ -36,7 +37,9 @@
       venueText,
       citations: raw.citations || 0,
       year: raw.year || null,
-      fromDetail: !!(resolved && resolved.authors)
+      fromDetail: !!(resolved && resolved.authors),
+      // award / talk words the authors wrote into the title or venue (see marks.js)
+      marks: marks.detect({ title: raw.title, venue: [venueText, resolved && resolved.venue] }, { venueWord: ctx.venueWord })
     };
   }
 

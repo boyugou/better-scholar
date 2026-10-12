@@ -19,6 +19,9 @@ _English name: Scholar Author Roles & Venue Ranks_
   能处理被截断的名称（`…on Computer Vision and Pattern …`）、`ISCA 2014 42 (3)`、
   `[arXiv…]` 注释，以及 Findings / Workshop / Demo 等非主会议轨道。认不出的场所不会乱标，
   而是列在面板里。
+- **作者自己写的获奖与报告形式**：论文标题或发表信息里若写了 *Oral*、*Spotlight*、*Highlight* 或
+  *Best / Outstanding / Distinguished Paper*，会显示一个小标签（获奖为金色并带 ★），面板里也会统计；
+  点击统计即可只看那几篇。只读取作者写下的文字，不联网查询，悬停会提示"未核实"。
 - **补全被截断的末位作者**：Scholar 会用 `…` 截断长作者列表，导致看不到大论文里的末位作者
   （某位知名 PI 的前 100 篇里有 30 篇如此）。点 **补全** 会逐篇读取论文页（约每秒一篇，
   仅在你点击时）把角色补上。
@@ -53,6 +56,8 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
   `Jane` ≠ `John`），但两个不同的人仍可能在 `W Wang` 上撞车。共一标记（†、∗ 等）存在时会
   被识别——不过 Scholar 很少保留它们。若主页姓名与论文里的写法不同，可用面板里的
   **添加一种写法**。
+- **获奖与报告形式只是作者写下的内容。** Scholar 的文字里很少有这些（四个真实主页共 400 行中一条也没有），
+  所以标签会很少；`Oral Oncology`、`Spotlight on …` 之类长得像的不会被标出；作者没写的论文就是没有。
 - **场所字符串很乱。** Scholar 显示的内容可由主页所有者编辑，且常被截断。认不出的会列在
   "发表场所未收录"里供你查看；不做模糊猜测。
 - **补全** 会访问 Google Scholar（论文自己的页面，同源、限速、缓存）。大量使用后 Google

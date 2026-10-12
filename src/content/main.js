@@ -6,7 +6,7 @@
   const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
 
-  const { venues, analysis, metrics } = B;
+  const { venues, analysis, metrics, marks } = B;
   const { h, t, copyText, frame } = B.dom;
 
   const profileId = B.scholar.profileId();
@@ -16,11 +16,15 @@
   const resolvedCache = await B.store.loadResolved();
 
   const resolver = venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
+  // venue names/acronyms the dataset knows, so "(Interspeech 2022 Oral)" in a title reads as a marker
+  const venueWords = new Set([...B.data.ccf.venues.map((v) => v.abbr), ...B.data.core.venues.map((v) => v.acronym)].filter(Boolean).map((w) => w.toLowerCase()));
+  const venueWord = (w) => venueWords.has(w);
   const edition = { ccf: B.data.ccf.meta.label, core: B.data.core.meta.label };
 
   const state = {
     rows: [],                                   // { raw, a: analysis, highlighted }
     selection: null,                            // matrix cell / row / column filter
+    markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, markName: false, yearStart: null, yearEnd: null },
     loadingAll: false,
     resolving: null,                            // { done, total }
@@ -29,7 +33,7 @@
   let loadAbort = null, resolveAbort = null;
 
   const owner = () => ({ name: headerName, alternates: variants });
-  const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id] });
+  const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord });
 
   // ---- rows ---------------------------------------------------------------
 
@@ -67,6 +71,13 @@
     return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
   }
 
+  // What the author wrote about the paper's standing ("Oral", "Best Paper Award"…), shown as written.
+  function markChip(mark) {
+    const star = mark.group === "award" ? "★ " : "";
+    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group,
+      title: mark.label + "\n" + t("tipMarkAuthor", [mark.text]) }, star + mark.label);
+  }
+
   function roleChip(a) {
     const pos = a.index + 1;
     const total = a.authorCount + (a.truncated ? "+" : "");
@@ -102,6 +113,7 @@
       const chips = [];
       if (settings.badges.ccf && a.venue.ccf) chips.push(tierChip("ccf", a.venue.ccf));
       if (settings.badges.core && a.venue.core) chips.push(tierChip("core", a.venue.core));
+      if (settings.badges.marks) for (const m of a.marks) chips.push(markChip(m));
       if (row.highlighted) chips.push(roleChip(a));
       if (chips.length) venueEl.append(h("span", { class: "rr-chips" }, chips));
     }
@@ -117,6 +129,7 @@
         if (f.yearStart != null && a.year < f.yearStart) hide = true;
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
+      if (state.markGroup && !marks.inGroup(a, state.markGroup)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, settings.matrixSource)) hide = true;
       row.raw.tr.classList.toggle("rr-hide", hide);
     }
@@ -131,12 +144,17 @@
     }));
   }
 
+  // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
+  // on, per its full author list, is not counted).
+  const markCounts = () => marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
+
   function model() {
     const list = papers();
     const summary = metrics.summarize(list, settings.matrixSource);
     return {
       ownerName: headerName, edition, settings, summary,
       selection: state.selection, filters: state.filters,
+      marks: settings.badges.marks ? markCounts() : {}, markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: metrics.citationMetrics(list),
       coverage: {
@@ -154,10 +172,17 @@
     first: t("copyFirst"), cofirst: t("copyCofirst"), second: t("copySecond"), last: t("copyLast"), middle: t("copyMiddle")
   });
 
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
+  const marksLine = (counts) => {
+    const parts = marks.GROUPS.filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
+    return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
+  };
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
       owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(),
+      extra: [marksLine(m.marks)].filter(Boolean),
       edition: `${edition[settings.matrixSource]} — ${t("tipToday")}`
     });
   }
@@ -173,7 +198,8 @@
       refresh();
     },
     onRole(role, on) { settings.roles[role] = on; persist(); refresh(); },
-    onBadge(key, on) { settings.badges[key] = on; persist(); refresh(); },
+    onBadge(key, on) { settings.badges[key] = on; if (key === "marks" && !on) state.markGroup = null; persist(); refresh(); },
+    onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
     onMarkName(on) { state.filters.markName = on; refresh(); },
     onYear(start, end) {
@@ -271,6 +297,7 @@
         send({
           ok: true, owner: headerName, loaded: list.length, edition,
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core") },
+          marks: settings.badges.marks ? markCounts() : {},
           source: settings.matrixSource
         });
       }

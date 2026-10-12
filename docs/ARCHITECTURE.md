@@ -11,7 +11,8 @@ Scholar profile page ──► content/scholar.js   (the only code that knows Sc
                              │ raw rows: authors text, venue text, citations, year
                              ▼
                         lib/analysis.js ──► lib/names.js    owner + roles (first / second / last …)
-                             │          └─► lib/venues.js   CCF / CORE tier  ◄── data/ccf.js, data/core.js, data/aliases.js
+                             │          ├─► lib/venues.js   CCF / CORE tier  ◄── data/ccf.js, data/core.js, data/aliases.js
+                             │          └─► lib/marks.js    awards / talk levels the author wrote (title, venue text)
                              ▼
                         content/main.js  (state, filters, observers) ──► content/panel.js  (view)
                              │                                         └► decorated rows (tint, chips)
@@ -30,7 +31,8 @@ data, and why there is no build step.
 |------|----------------|
 | `lib/names.js` | Normalise names, parse an author list, find the profile owner in it, classify the role. |
 | `lib/venues.js` | Resolve a Scholar venue string to a CCF tier and a CORE rank (below). |
-| `lib/analysis.js` | One row → `{ status, role, venue, … }`; folds in a paper's detail page when available. |
+| `lib/marks.js` | Find the award and talk-level words an author wrote in a title or venue string (precision first). |
+| `lib/analysis.js` | One row → `{ status, role, venue, marks, … }`; folds in a paper's detail page when available. |
 | `lib/metrics.js` | h-index / i10, the role × tier summary, matrix filtering, clipboard text. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), *Load all*. |
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |

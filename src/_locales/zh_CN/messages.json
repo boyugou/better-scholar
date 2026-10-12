@@ -20,6 +20,38 @@
   "badgesLabel": {
     "message": "场所徽章"
   },
+  "markToggle": {
+    "message": "获奖与报告形式"
+  },
+  "marksTitle": {
+    "message": "获奖与报告形式"
+  },
+  "markAward": {
+    "message": "获奖"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "取自 Scholar 上每篇论文的标题和发表信息：作者自己写的内容，未与任何获奖名单核对。"
+  },
+  "marksAsWritten": {
+    "message": "作者自述"
+  },
+  "tipMarkAuthor": {
+    "message": "作者自己写的（未核实）：“$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "onlyHighlighted": {
     "message": "只显示高亮"
   },

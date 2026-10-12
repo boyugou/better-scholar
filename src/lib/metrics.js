@@ -99,7 +99,7 @@
   const ROLE_LABEL = { first: "First author", cofirst: "Co-first author", second: "Second author", last: "Last author", middle: "Other positions" };
 
   // Plain-text summary for the clipboard.
-  function toText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked" } = {}) {
+  function toText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [] } = {}) {
     const src = summary.source === "core" ? "CORE" : "CCF";
     const lines = [];
     lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role and ${src} tier`);
@@ -110,6 +110,7 @@
     }
     if (summary.hidden) lines.push(`Role not visible (author list truncated by Scholar): ${summary.hidden}`);
     if (summary.absent) lines.push(`Name not found in author list: ${summary.absent}`);
+    for (const line of extra) lines.push(line);
     if (edition) lines.push(edition);
     return lines.join("\n");
   }

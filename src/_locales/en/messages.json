@@ -20,6 +20,38 @@
   "badgesLabel": {
     "message": "Venue badges"
   },
+  "markToggle": {
+    "message": "Awards & talks"
+  },
+  "marksTitle": {
+    "message": "Awards & talks"
+  },
+  "markAward": {
+    "message": "Awards"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Read from each paper's title and venue text on Scholar: what the authors wrote, not checked against any award list."
+  },
+  "marksAsWritten": {
+    "message": "as written by the authors"
+  },
+  "tipMarkAuthor": {
+    "message": "Written by the author (not checked): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "onlyHighlighted": {
     "message": "Only highlighted"
   },

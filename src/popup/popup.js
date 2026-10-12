@@ -12,6 +12,7 @@
 
   const COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
   const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
   const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };
 
   function notProfile() {
@@ -44,15 +45,18 @@
           h("td", { class: "t" }, String(r.total)))),
           s.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")), h("td", { colspan: String(s.columns.length), class: "z" }, ""), h("td", { class: "t" }, String(s.hidden))) : null),
         h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
+      const markParts = ["award", "oral", "spotlight", "highlight"].filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
+      const marksLine = markParts.length ? t("marksTitle") + ": " + markParts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
       const copy = (kind) => async (e) => {
         const text = kind === "tsv"
           ? metrics.toTsv(s, { label: labels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), edition: `${data.edition[source]} — ${t("tipToday")}` });
+          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), extra: marksLine ? [marksLine] : [], edition: `${data.edition[source]} — ${t("tipToday")}` });
         if (await copyText(text)) { const b = e.target; const old = b.textContent; b.textContent = t("copied"); setTimeout(() => (b.textContent = old), 1200); }
       };
       main.replaceChildren(
         h("div", { class: "who" }, h("b", {}, data.owner), h("span", {}, tn("popupPapers", data.loaded, [String(data.loaded)]))),
         seg, table,
+        markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
           h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))),

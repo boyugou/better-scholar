@@ -48,6 +48,7 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
   }
   const idx = (f) => cs.js.indexOf(f);
   assert.ok(idx("lib/names.js") < idx("lib/analysis.js"));
+  assert.ok(idx("lib/marks.js") < idx("lib/analysis.js"));
   assert.ok(idx("lib/venues.js") < idx("content/main.js"));
   assert.ok(idx("data/ccf.js") < idx("content/main.js") && idx("data/core.js") < idx("content/main.js") && idx("data/aliases.js") < idx("content/main.js"));
   assert.ok(idx("content/dom.js") < idx("content/store.js") && idx("content/scholar.js") < idx("content/panel.js") && idx("content/panel.js") < idx("content/main.js"));
@@ -89,7 +90,7 @@ test("every string the UI asks for exists in the English catalog", () => {
     const text = fs.readFileSync(f, "utf8");
     for (const m of text.matchAll(/\b(?:t|tn)\(\s*"(\w+)"/g)) used.add(m[1]);
     // dynamic keys built from small lookup tables
-    for (const m of text.matchAll(/:\s*"((?:role|chip|rule|copy|srcC|tip|award|talk)\w*)"/g)) used.add(m[1]);
+    for (const m of text.matchAll(/:\s*"((?:role|chip|rule|copy|srcC|tip|mark[A-Z])\w*)"/g)) used.add(m[1]);
   }
   const missing = [...used].filter((k) => !en[k]);
   assert.deepEqual(missing, [], "messages used in code but not defined");

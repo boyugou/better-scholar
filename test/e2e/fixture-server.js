@@ -8,11 +8,11 @@ const path = require("node:path");
 
 function loadProfile(slug) {
   const f = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "fixtures", "profiles", slug + ".json"), "utf8"));
-  const rows = f.rows.map(([authors, venue], i) => {
+  const rows = f.rows.map(([authors, venue, title], i) => {
     const y = /(\d{4})\D*$/.exec(venue);
     return {
       id: "TEST:P" + String(i).padStart(3, "0"),
-      title: "Paper number " + (i + 1) + " — " + venue.slice(0, 28),
+      title: title || "Paper number " + (i + 1) + " — " + venue.slice(0, 28),
       authors, venue,
       cites: Math.max(0, 900 - i * 9) + (i % 7),
       year: y ? parseInt(y[1], 10) : 2000

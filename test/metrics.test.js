@@ -95,3 +95,12 @@ test("toText / toTsv", () => {
   assert.equal(tsv[1], "First author\t1\t0\t0\t1\t2");
   assert.equal(tsv[tsv.length - 1], "\t1\t1\t0\t1\t3");
 });
+
+test("toText appends extra lines (the awards and talks line) before the edition", () => {
+  const s = m.summarize([{ status: "found", role: "first", venue: {}, citations: 1 }], "ccf");
+  const text = m.toText(s, { owner: "Jane Doe", extra: ["Awards & talks: Awards 1"], edition: "CCF 2026" });
+  const lines = text.split("\n");
+  assert.equal(lines[lines.length - 2], "Awards & talks: Awards 1");
+  assert.equal(lines[lines.length - 1], "CCF 2026");
+  assert.ok(!m.toText(s, {}).includes("Awards"));
+});

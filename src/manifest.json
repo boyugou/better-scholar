@@ -221,6 +221,7 @@
         "lib/names.js",
         "lib/venues.js",
         "lib/metrics.js",
+        "lib/marks.js",
         "lib/analysis.js",
         "data/aliases.js",
         "data/ccf.js",

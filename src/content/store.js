@@ -9,7 +9,7 @@
   const DEFAULTS = {
     v: 2,
     roles: { first: true, cofirst: true, second: true, last: true },
-    badges: { ccf: true, core: true },
+    badges: { ccf: true, core: true, marks: true },
     matrixSource: "ccf",
     collapsed: false
   };

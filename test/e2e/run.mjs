@@ -332,5 +332,43 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     await fx2.close();
   }
 
+  // -- 21. award and talk markers the authors wrote (synthetic profile; look-alikes must stay unmarked)
+  const fx3 = await start({ slug: "marks-demo", pageSize: 100 });
+  const ctx3 = await launch();
+  try {
+    const page = await ctx3.newPage();
+    await page.goto(fx3.url);
+    await page.waitForSelector("#rr-panel");
+    const chipKinds = await page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).map((tr) => Array.from(tr.querySelectorAll(".rr-chip-mark")).map((c) => c.dataset.mark).join("+")));
+    assert.deepEqual(chipKinds, ["spotlight", "oral", "best", "outstanding", "", "", "finalist", "oral", "", "runner-up"]);
+    const pill = (g) => page.locator(`#rr-panel button[data-mark-group="${g}"]`);
+    assert.match(await pill("award").textContent(), /Awards\s*3/);
+    assert.match(await pill("oral").textContent(), /Oral\s*2/);
+    assert.match(await pill("spotlight").textContent(), /Spotlight\s*1/);
+    assert.equal(await pill("highlight").count(), 0, "no pill for a group nobody has");
+    const tip = await page.locator('.rr-chip-mark[data-mark="oral"]').first().getAttribute("title");
+    assert.match(tip, /Written by the author \(not checked\): “Oral”/);
+    ok("chips and pills show what the authors wrote; Oral Oncology / Spotlight on … stay unmarked, a finalist is a chip but not an award");
+    await pill("award").click();
+    assert.equal(await visibleRows(page), 3);
+    await pill("award").click();
+    assert.equal(await visibleRows(page), 10);
+    ok("a pill lists exactly those papers, and clicking again clears it");
+    await page.click('[data-act="copy-text"]');
+    const text = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(text, /Awards & talks: Awards 3, Oral 2, Spotlight 1 \(as written by the authors\)/);
+    ok("Copy summary includes the awards and talks line");
+    await page.screenshot({ path: path.join(outDir, "marks.png") });
+    await page.click('input[data-badge="marks"]');
+    assert.equal(await page.locator(".rr-chip-mark").count(), 0);
+    assert.equal(await page.locator("#rr-panel .rr-pill").count(), 0);
+    await page.click('input[data-badge="marks"]');
+    assert.ok((await page.locator(".rr-chip-mark").count()) > 0);
+    ok("the Awards & talks switch hides and restores the chips and pills");
+  } finally {
+    await ctx3.close();
+    await fx3.close();
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

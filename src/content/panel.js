@@ -7,6 +7,7 @@
   const { h, t, tn } = B.dom;
 
   const ROLE_COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6", hidden: "#dadce0" };
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
   const ROLE_KEY = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle", hidden: "roleHidden" };
 
   const sameSel = (a, b) => !!a && !!b && a.role === b.role && a.tier === b.tier;
@@ -23,7 +24,8 @@
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
     const actions = h("div", { class: "rr-actions" });
-    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions);
+    const marksBox = h("div", { class: "rr-marks", "data-rr": "marks", title: t("marksHint") });
+    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions, marksBox);
 
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" });
 
@@ -38,10 +40,10 @@
     const roleRow = h("div", {}, h("div", { class: "rr-label-line" }, t("hlLabel")), roleGrid);
     const badgeChecks = {};
     const badgeRow = h("div", { class: "rr-row" }, h("span", { class: "rr-label" }, t("badgesLabel")));
-    for (const key of ["ccf", "core"]) {
+    for (const key of ["ccf", "core", "marks"]) {
       const cbx = h("input", { type: "checkbox", "data-badge": key, onChange: (e) => cb.onBadge(key, e.target.checked) });
       badgeChecks[key] = cbx;
-      badgeRow.append(h("label", { class: "rr-check" }, cbx, t(key === "ccf" ? "srcCcf" : "srcCore")));
+      badgeRow.append(h("label", { class: "rr-check" }, cbx, t(key === "ccf" ? "srcCcf" : key === "core" ? "srcCore" : "markToggle")));
     }
     const onlyCb = h("input", { type: "checkbox", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const nameCb = h("input", { type: "checkbox", "data-act": "mark-name", onChange: (e) => cb.onMarkName(e.target.checked) });
@@ -115,6 +117,16 @@
       actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"));
     }
 
+    // Pills for the award / talk groups that occur on the loaded papers; click one to list just those.
+    function renderMarks(m) {
+      const counts = m.marks || {};
+      const groups = B.marks.GROUPS.filter((g) => counts[g]);
+      marksBox.replaceChildren(...(groups.length ? [h("span", { class: "rr-marks-label" }, t("marksTitle"))] : []),
+        ...groups.map((g) => h("button", { class: "rr-pill rr-pill-" + g, type: "button", "data-mark-group": g,
+          "aria-pressed": String(m.markGroup === g), onClick: () => cb.onMarkGroup(g) },
+          (g === "award" ? "★ " : "") + t(MARK_KEY[g]) + " ", h("b", {}, String(counts[g])))));
+    }
+
     function renderCoverage(m) {
       const c = m.coverage;
       const lines = [];
@@ -177,7 +189,7 @@
       collapseBtn.textContent = m.settings.collapsed ? "▸" : "▾";
       collapseBtn.title = t(m.settings.collapsed ? "expand" : "collapse");
       collapseBtn.setAttribute("aria-expanded", String(!m.settings.collapsed));
-      renderSummaryHead(m); renderMatrix(m); renderActions(); renderCoverage(m);
+      renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
       syncOptions(m); renderMetrics(m); renderVariants(m);
       noteBox.textContent = t("dataNote", [m.edition.ccf + " · " + m.edition.core]);
     }
