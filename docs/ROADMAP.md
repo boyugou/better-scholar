@@ -14,16 +14,21 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (2124 entries on 2026-10-12: ACL family, ICLR, NeurIPS,
-ICML, CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT). Only official pages are sources (the ACL Anthology's award metadata; each
+**Built — a bundled list of award-winning papers** (2124 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
+CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
+NDSS, SIGMOD, PODS). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
 the identical full title and the award's first author. Award kinds stay distinct (`best`, `outstanding`,
 `distinguished`, `runner-up`, `student`, `category`, `tot`); an honorable mention is never upgraded.
 Oral / spotlight lists stay author-written only: CVPR and ICCV's "Highlight" rows are about a tenth of the
 papers, which is the 'too many' case, so they are not used.
 
-**Next — more venues, where an official page exists.** ACM SIGMOD / PODS best papers (`sigmod.org/sigmod-awards/sigmod-best-paper-award/`, irregular prose per year; 2022–2026 are two-line title / authors blocks), CHI (`programs.sigchi.org/chi/<year>/awards/…`), POPL/PLDI/OOPSLA, STOC/FOCS. IJCAI before and after 2023 (the years' official pages are not of one shape, or are PDFs), ICML 2022. An independent list
-(jeffhuang.com/best_paper_awards: no licence, no award levels) is only a cross-check; a paper it names but no
+**Next — more venues, where an official page exists.** CHI's program site (`programs.sigchi.org/chi/<year>/awards`) needs JavaScript; CCS
+(`sigsac.org/ccs/CCS_awards/ccs-bestpaper.html`, four layouts), FOCS, SOSP, VLDB, ISCA / ASPLOS / MICRO / HPCA, UIST and WWW have a page per
+year in different shapes. The ACM's own "Conferences Best Paper Awards" pages would cover most of them at once, but answer every automated
+request with 403 and are not worked around. Add a reader only after reading the page's markup for every year it covers; review its output
+line by line; test it with synthetic pages and a few well-known winners.
+The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no
 official page does is left out. Also open: test-of-time rows whose page omits the paper title (NeurIPS 2025,
 ICML 2022 and 2026) — the detail page may carry it.
 
