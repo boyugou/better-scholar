@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2228
+  "count": 2292
  },
  "entries": [
   {
@@ -20162,6 +20162,401 @@
    "evidence": "IMC '05: Measurement-based Characterization of a Collection of On-line Games — Chris Chambers, Portland State University; Wu-chang Feng, Portland State University; Sambit Sahu, IBM Research; Debanjan Saha, IBM Research"
   },
   {
+   "venue": "ISCA",
+   "year": 2003,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "On the inclusion properties for multi-level cache hierarchies",
+   "authors": [
+    "Jean-Loup Baer",
+    "Wen-Hann Wang"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2003 (For ISCA 1988): Jean-Loup Baer and Wen-Hann Wang — On the inclusion properties for multi-level cache hierarchies"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2004,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Characteristics of Performance-Optimal Multi-Level Cache Hierarchies",
+   "authors": [
+    "Steven Przybylski",
+    "John Hennessy",
+    "Mark Horowitz"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2004 (For ISCA 1989): Steven Przybylski, John Hennessy, Mark Horowitz — Characteristics of Performance-Optimal Multi-Level Cache Hierarchies"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2005,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Improving Direct-Mapped Cache Performance by the Addition of a Small Fully-Associative Cache and Prefetch Buffers",
+   "authors": [
+    "Norman P. Jouppi"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2005 (For ISCA 1990): Norman P. Jouppi — Improving Direct-Mapped Cache Performance by the Addition of a Small Fully-Associative Cache and Prefetch Buffers"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "IMPACT: an architectural framework for multiple-instruction-issue processors",
+   "authors": [
+    "Pohua P. Chang",
+    "Scott A. Mahlke",
+    "William Y. Chen",
+    "Nancy J. Warter",
+    "Wen-mei W. Hwu"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2006 (For ISCA 1991): Pohua P. Chang, Scott A. Mahlke, William Y. Chen, Nancy J. Warter, Wen-mei W. Hwu — IMPACT: an architectural framework for multiple-instruction-issue processors"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Alternative Implementations of Two-Level Adaptive Branch Prediction",
+   "authors": [
+    "Tse-Yu Yeh",
+    "Yale N. Patt"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2007 (For ISCA 1992): Tse-Yu Yeh and Yale N. Patt — Alternative Implementations of Two-Level Adaptive Branch Prediction"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Transactional memory: architectural support for lock-free data structures",
+   "authors": [
+    "Maurice Herlihy",
+    "J. Eliot B. Moss"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2008 (For ISCA 1993): Maurice Herlihy and J. Eliot B. Moss — Transactional memory: architectural support for lock-free data structures"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "The Stanford FLASH multiprocessor",
+   "authors": [
+    "Jeffrey Kuskin",
+    "David Ofelt",
+    "Mark Heinrich",
+    "John Heinlein",
+    "Richard Simoni",
+    "Kourosh Gharachorloo",
+    "John Chapin",
+    "David Nakahira",
+    "Joel Baxter",
+    "Mark Horowitz",
+    "Anoop Gupta",
+    "Mendel Rosenblum",
+    "John Hennessy"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2009 (For ISCA 1994): Jeffrey Kuskin, David Ofelt, Mark Heinrich, John Heinlein, Richard Simoni, Kourosh Gharachorloo, John Chapin, David Nakahira, Joel Baxter, Mark Horowitz, Anoop Gupta, Mendel Rosenblum, John Hennessy — The Stanford FLASH multiprocessor"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Simultaneous Multithreading: Maximizing On-Chip Parallelism",
+   "authors": [
+    "Dean M. Tullsen",
+    "Susan J. Eggers",
+    "Henry M. Levy"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2010 (For ISCA 1995): Dean M. Tullsen, Susan J. Eggers, Henry M. Levy — Simultaneous Multithreading: Maximizing On-Chip Parallelism"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Exploiting choice: instruction fetch and issue on an implementable simultaneous multithreading processor",
+   "authors": [
+    "Dean M. Tullsen",
+    "Susan J. Eggers",
+    "Joel S. Emer",
+    "Henry M. Levy",
+    "Jack L. Lo",
+    "Rebecca L. Stamm"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2011 (For ISCA 1996): Dean M. Tullsen, Susan J. Eggers, Joel S. Emer, Henry M. Levy, Jack L. Lo, Rebecca L. Stamm — Exploiting choice: instruction fetch and issue on an implementable simultaneous multithreading processor"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Complexity-Effective Superscalar Processors",
+   "authors": [
+    "Subbarao Palacharla",
+    "Norman P. Jouppi",
+    "James E. Smith"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2012 (For ISCA 1997): Subbarao Palacharla, Norman P. Jouppi, James E. Smith — Complexity-Effective Superscalar Processors"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Pipeline Gating: Speculation Control for Energy Reduction",
+   "authors": [
+    "Srilatha Manne",
+    "Artur Klauser",
+    "Dirk Grunwald"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2013 (For ISCA 1998): Srilatha Manne, Artur Klauser, Dirk Grunwald — Pipeline Gating: Speculation Control for Energy Reduction"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "PipeRench: A Coprocessor for Streaming Multimedia Acceleration",
+   "authors": [
+    "Seth Copen Goldstein",
+    "Herman Schmit",
+    "Matthew Moe",
+    "Mihai Budiu",
+    "Srihari Cadambi",
+    "R. Reed Taylor",
+    "Ronald Laufer"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2014 (For ISCA 1999): Seth Copen Goldstein, Herman Schmit, Matthew Moe, Mihai Budiu, Srihari Cadambi, R. Reed Taylor, Ronald Laufer — PipeRench: A Coprocessor for Streaming Multimedia Acceleration"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Wattch: A Framework for Architectural-Level Power Analysis and Optimizations",
+   "authors": [
+    "David Brooks",
+    "Vivek Tiwari",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2015 (For ISCA 2000): David Brooks, Vivek Tiwari, Margaret Martonosi — Wattch: A Framework for Architectural-Level Power Analysis and Optimizations"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Focusing processor policies via critical-path prediction",
+   "authors": [
+    "Brian Fields",
+    "Shai Rubin",
+    "Rastislav Bodík"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2016 (For ISCA 2001): Brian Fields, Shai Rubin, Rastislav Bodík — Focusing processor policies via critical-path prediction"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Drowsy Caches: Simple Techniques for Reducing Leakage Power",
+   "authors": [
+    "Kris Flautner",
+    "Nam Sung Kim",
+    "Steve Martin",
+    "David Blaauw",
+    "Trevor Mudge"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2017 (For ISCA 2002): Kris Flautner, Nam Sung Kim, Steve Martin, David Blaauw, Trevor Mudge — Drowsy Caches: Simple Techniques for Reducing Leakage Power"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Temperature-Aware Microarchitecture",
+   "authors": [
+    "Kevin Skadron",
+    "Mircea R. Stan",
+    "Karthik Sankaranarayanan",
+    "Wei Huang",
+    "Sivakumar Velusamy",
+    "David Tarjan"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2018 (For ISCA 2003): Kevin Skadron, Mircea R. Stan, Karthik Sankaranarayanan, Wei Huang, Sivakumar Velusamy, David Tarjan — Temperature-Aware Microarchitecture"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Transactional Memory Coherence and Consistency",
+   "authors": [
+    "Lance Hammond",
+    "Vicky Wong",
+    "Mike Chen",
+    "Brian D. Carlstrom",
+    "John D. Davis",
+    "Ben Hertzberg",
+    "Manohar K. Prabhu",
+    "Honggo Wijaya",
+    "Christos Kozyrakis",
+    "Kunle Olukotun"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2019 (For ISCA 2004): Lance Hammond, Vicky Wong, Mike Chen, Brian D. Carlstrom, John D. Davis, Ben Hertzberg, Manohar K. Prabhu, Honggo Wijaya, Christos Kozyrakis, Kunle Olukotun — Transactional Memory Coherence and Consistency"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Interconnections in Multi-Core Architectures: Understanding Mechanisms, Overheads and Scaling",
+   "authors": [
+    "Rakesh Kumar",
+    "Victor V. Zyuban",
+    "Dean M. Tullsen"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2020 (For ISCA 2005): Rakesh Kumar, Victor V. Zyuban, Dean M. Tullsen — Interconnections in Multi-Core Architectures: Understanding Mechanisms, Overheads and Scaling"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Techniques for Multicore Thermal Management: Classification and New Exploration",
+   "authors": [
+    "James Donald",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2021 (For ISCA 2006): James Donald and Margaret Martonosi — Techniques for Multicore Thermal Management: Classification and New Exploration"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Power provisioning for a warehouse-sized computer",
+   "authors": [
+    "Xiaobo Fan",
+    "Wolf-Dietrich Weber",
+    "Luiz Andre Barroso"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2022 (For ISCA 2007): Xiaobo Fan, Wolf-Dietrich Weber, Luiz Andre Barroso — Power provisioning for a warehouse-sized computer"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "3D-Stacked Memory Architectures for Multi-core Processors",
+   "authors": [
+    "Gabe Loh"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2023 (For ISCA 2008): Gabe Loh — 3D-Stacked Memory Architectures for Multi-core Processors"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "Exploiting ILP, TLP, and DLP with the polymorphous TRIPS architecture",
+   "authors": [
+    "Karthikeyan Sankaralingam",
+    "Ramadass Nagarajan",
+    "Haiming Liu",
+    "Changkyu Kim",
+    "Jaehyuk Huh",
+    "Doug Burger",
+    "Stephen W. Keckler",
+    "Charles R. Moore"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2024 (For ISCA 2003): Karthikeyan Sankaralingam, Ramadass Nagarajan, Haiming Liu, Changkyu Kim, Jaehyuk Huh, Doug Burger, Stephen W. Keckler, and Charles R. Moore — Exploiting ILP, TLP, and DLP with the polymorphous TRIPS architecture"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential ISCA Paper Award",
+   "title": "New Cache Designs for Thwarting Software Cache-based Side Channel Attacks",
+   "authors": [
+    "Zhenghong Wang",
+    "Ruby Lee"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
+   "evidence": "2025 (For ISCA 2007): Zhenghong Wang and Ruby Lee — New Cache Designs for Thwarting Software Cache-based Side Channel Attacks"
+  },
+  {
    "venue": "ISSTA",
    "year": 2002,
    "award": "distinguished",
@@ -22643,6 +23038,486 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "LISA '13: dsync: Efficient Block-wise Synchronization of Multi-Gigabyte Binary Data — Thomas Knauth, TU Dresden; Christof Fetzer, TU Dresden"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Code Generation Schema for Modulo Scheduled Loops",
+   "authors": [
+    "B. Ramakrishna Rau",
+    "Michael S. Schlansker",
+    "P. P. Tirumalai"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1992: Code Generation Schema for Modulo Scheduled Loops — B. Ramakrishna Rau, Michael S. Schlansker, P. P. Tirumalai"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Critical Issues Regarding HPS, A High Performance Microarchitecture",
+   "authors": [
+    "Yale N. Patt",
+    "Stephen W. Melvin",
+    "Wen-mei Hwu",
+    "Michael C. Shebanow"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1985: Critical Issues Regarding HPS, A High Performance Microarchitecture — Yale N. Patt, Stephen W. Melvin, Wen-mei Hwu, Michael C. Shebanow"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Effective Compiler Support For Predicated Execution Using the Hyperblock",
+   "authors": [
+    "Scott A. Mahlke",
+    "David C. Lin",
+    "William Y. Chen",
+    "Richard E. Hank",
+    "Roger A. Bringmann"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1992: Effective Compiler Support For Predicated Execution Using the Hyperblock — Scott A. Mahlke, David C. Lin, William Y. Chen, Richard E. Hank, Roger A. Bringmann"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Executing Compressed Programs on An Embedded RISC Architecture",
+   "authors": [
+    "Andrew Wolfe",
+    "Alex Chanin"
+   ],
+   "track": "main",
+   "paperYear": 1992,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1992: Executing Compressed Programs on An Embedded RISC Architecture — Andrew Wolfe, Alex Chanin"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hardware Support for Large Atomic Units in Dynamically Scheduled Machines",
+   "authors": [
+    "Stephen W. Melvin",
+    "Michael C. Shebanow",
+    "Yale N. Patt"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1988: Hardware Support for Large Atomic Units in Dynamically Scheduled Machines — Stephen W. Melvin, Michael C. Shebanow, Yale N. Patt"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "HPS, A New Microarchitecture: Rationale and Introduction",
+   "authors": [
+    "Yale N. Patt",
+    "Wen-mei Hwu",
+    "Michael Shebanow"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1985: HPS, A New Microarchitecture: Rationale and Introduction — Yale N. Patt, Wen-mei Hwu, Michael Shebanow"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Microprogrammed Implementation of A Single Chip Microprocessor",
+   "authors": [
+    "Skip Stritter",
+    "Nick Tredennick"
+   ],
+   "track": "main",
+   "paperYear": 1978,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1978: Microprogrammed Implementation of A Single Chip Microprocessor — Skip Stritter, Nick Tredennick"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "MIPS: A Microprocessor Architecture",
+   "authors": [
+    "John Hennessy",
+    "Norman Jouppi",
+    "Steven Przybylski",
+    "Christopher Rowen",
+    "Thomas Gross",
+    "Forest Baskett",
+    "John Gill"
+   ],
+   "track": "main",
+   "paperYear": 1982,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1982: MIPS: A Microprocessor Architecture — John Hennessy, Norman Jouppi, Steven Przybylski, Christopher Rowen, Thomas Gross, Forest Baskett, John Gill"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Some Scheduling Techniques and An Easily Schedulable Horizontal Architecture for High Performance Scientific Computing",
+   "authors": [
+    "B. Ramakrishna Rau",
+    "C. D. Glaeser"
+   ],
+   "track": "main",
+   "paperYear": 1981,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1981: Some Scheduling Techniques and An Easily Schedulable Horizontal Architecture for High Performance Scientific Computing — B. Ramakrishna Rau, C. D. Glaeser"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Two-Level Adaptive Training Branch Prediction",
+   "authors": [
+    "Tse-Yu Yeh",
+    "Yale N. Patt"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2014 Test of Time Award: MICRO 1991: Two-Level Adaptive Training Branch Prediction — Tse-Yu Yeh, Yale N. Patt"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Trace Cache: A Low Latency Approach to High Bandwidth Instruction Fetching",
+   "authors": [
+    "Eric Rotenberg",
+    "Steve Bennett",
+    "James E. Smith"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2015 Test of Time Award: MICRO 1996: Trace Cache: A Low Latency Approach to High Bandwidth Instruction Fetching — Eric Rotenberg, Steve Bennett, James E. Smith"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Iterative Modulo Scheduling: An Algorithm for Software Pipelining Loops",
+   "authors": [
+    "B. Ramakrishna Rau"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2016 Test of Time Award: MICRO 1994: Iterative Modulo Scheduling: An Algorithm for Software Pipelining Loops — B. Ramakrishna Rau"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Exceeding the Dataflow Limit Via Value Prediction",
+   "authors": [
+    "Mikko H. Lipasti",
+    "John Paul Shen"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2017 Test of Time Award: MICRO 1996: Exceeding the Dataflow Limit Via Value Prediction — Mikko H. Lipasti, John Paul Shen"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Assigning Confidence to Conditional Branch Predictions",
+   "authors": [
+    "Erik Jacobsen",
+    "Eric Rotenberg",
+    "James E. Smith"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2018 Test of Time Award: MICRO 1996: Assigning Confidence to Conditional Branch Predictions — Erik Jacobsen, Eric Rotenberg, James E. Smith"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "DIVA: A Reliable Substrate for Deep Submicron Microarchitecture Design",
+   "authors": [
+    "Todd M. Austin"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2018 Test of Time Award: MICRO 1999: DIVA: A Reliable Substrate for Deep Submicron Microarchitecture Design — Todd M. Austin"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Path Profiling",
+   "authors": [
+    "Thomas Ball",
+    "James R. Larus"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2018 Test of Time Award: MICRO 1996: Efficient Path Profiling — Thomas Ball, James R. Larus"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Selective Cache Ways: On-Demand Cache Resource Allocation",
+   "authors": [
+    "David H. Albonesi"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2019 Test of Time Award: MICRO 1999: Selective Cache Ways: On-Demand Cache Resource Allocation — David H. Albonesi"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Speculative Lock Elision: Enabling Highly Concurrent Multithreaded Execution",
+   "authors": [
+    "Ravi Rajwar",
+    "James R. Goodman"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2019 Test of Time Award: MICRO 2001: Speculative Lock Elision: Enabling Highly Concurrent Multithreaded Execution — Ravi Rajwar, James R. Goodman"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Dynamic Multithreading Processor",
+   "authors": [
+    "Haitham Akkary",
+    "Michael A. Driscoll"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2020 Test of Time Award: MICRO 1998: A Dynamic Multithreading Processor — Haitham Akkary, Michael A. Driscoll"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Permutation-Based Page Interleaving Scheme to Reduce Row-Buffer Conflicts and Exploit Data Locality",
+   "authors": [
+    "Zhao Zhang",
+    "Zhichun Zhu",
+    "Xiaodong Zhang"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2020 Test of Time Award: MICRO 2000: A Permutation-Based Page Interleaving Scheme to Reduce Row-Buffer Conflicts and Exploit Data Locality — Zhao Zhang, Zhichun Zhu, Xiaodong Zhang"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fetch Directed Instruction Prefetching",
+   "authors": [
+    "Glenn Reinman",
+    "Brad Calder",
+    "Todd M. Austin"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2020 Test of Time Award: MICRO 1999: Fetch Directed Instruction Prefetching — Glenn Reinman, Brad Calder, Todd M. Austin"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Razor: A Low-Power Pipeline Based on Circuit-Level Timing Speculation",
+   "authors": [
+    "Dan Ernst",
+    "Nam Sung Kim",
+    "Shidhartha Das",
+    "Sanjay Pant",
+    "Rajeev R. Rao",
+    "Toan Pham",
+    "Conrad H. Ziesler",
+    "David T. Blaauw",
+    "Todd M. Austin",
+    "Krisztián Flautner",
+    "Trevor N. Mudge"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2021 Test of Time Award: MICRO 2003: Razor: A Low-Power Pipeline Based on Circuit-Level Timing Speculation — Dan Ernst, Nam Sung Kim, Shidhartha Das, Sanjay Pant, Rajeev R. Rao, Toan Pham, Conrad H. Ziesler, David T. Blaauw, Todd M. Austin, Krisztián Flautner, Trevor N. Mudge"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Single-ISA Heterogeneous Multi-Core Architectures: The Potential for Processor Power Reduction",
+   "authors": [
+    "Rakesh Kumar",
+    "Keith I. Farkas",
+    "Norman P. Jouppi",
+    "Parthasarathy Ranganathan",
+    "Dean M. Tullsen"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2021 Test of Time Award: MICRO 2003: Single-ISA Heterogeneous Multi-Core Architectures: The Potential for Processor Power Reduction — Rakesh Kumar, Keith I. Farkas, Norman P. Jouppi, Parthasarathy Ranganathan, Dean M. Tullsen"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Systematic Methodology to Compute the Architectural Vulnerability Factors for a High-Performance Microprocessor",
+   "authors": [
+    "Shubhendu S. Mukherjee",
+    "Christopher T. Weaver",
+    "Joel S. Emer",
+    "Steven K. Reinhardt",
+    "Todd M. Austin"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2022 Test of Time Award: MICRO 2003: A Systematic Methodology to Compute the Architectural Vulnerability Factors for a High-Performance Microprocessor — Shubhendu S. Mukherjee, Christopher T. Weaver, Joel S. Emer, Steven K. Reinhardt, Todd M. Austin"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Runtime Power Monitoring in High-End Processors: Methodology and Empirical Data",
+   "authors": [
+    "Canturk Isci",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2022 Test of Time Award: MICRO 2003: Runtime Power Monitoring in High-End Processors: Methodology and Empirical Data — Canturk Isci, Margaret Martonosi"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Orion: A Power-Performance Simulator for Interconnection Networks",
+   "authors": [
+    "Hang-Sheng Wang",
+    "Xinping Zhu",
+    "Li-Shiuan Peh",
+    "Sharad Malik"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2023 Test of Time Award: MICRO 2002: Orion: A Power-Performance Simulator for Interconnection Networks — Hang-Sheng Wang, Xinping Zhu, Li-Shiuan Peh, Sharad Malik"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Utility-Based Cache Partitioning: A Low-Overhead, High-Performance, Runtime Mechanism to Partition Shared Caches",
+   "authors": [
+    "Moinuddin K. Qureshi",
+    "Yale N. Patt"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2024 Test of Time Award: MICRO 2006: Utility-Based Cache Partitioning: A Low-Overhead, High-Performance, Runtime Mechanism to Partition Shared Caches — Moinuddin K. Qureshi, Yale N. Patt"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Die Stacking (3D) Microarchitecture",
+   "authors": [
+    "Bryan Black",
+    "Murali Annavaram",
+    "Ned Brekelbaum",
+    "John DeVale",
+    "Lei Jiang",
+    "Gabriel H. Loh",
+    "Don McCauley",
+    "Pat Morrow",
+    "Donald W. Nelson",
+    "Daniel Pantuso",
+    "Paul Reed",
+    "Jeff Rupley",
+    "Sadasivan Shankar",
+    "John Shen",
+    "Clair Webb"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2025 Test of Time Award: MICRO 2006: Die Stacking (3D) Microarchitecture — Bryan Black, Murali Annavaram, Ned Brekelbaum, John DeVale, Lei Jiang, Gabriel H. Loh, Don McCauley, Pat Morrow, Donald W. Nelson, Daniel Pantuso, Paul Reed, Jeff Rupley, Sadasivan Shankar, John Shen, Clair Webb"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0",
+   "authors": [
+    "Naveen Muralimanohar",
+    "Rajeev Balasubramonian",
+    "Norman P. Jouppi"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://www.sigmicro.org/awards/tot/",
+   "evidence": "MICRO 2025 Test of Time Award: MICRO 2007: Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0 — Naveen Muralimanohar, Rajeev Balasubramonian, Norman P. Jouppi"
   },
   {
    "venue": "MobiSys",
@@ -37585,6 +38460,193 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "WOOT '26: Squeezing Juicy Variant Bugs Out of Modern Browsers — Han Zheng, EPFL; Flavio Toffalini, Ruhr-Universität Bochum; Qiang Liu, EPFL; Mathias Payer, EPFL"
+  },
+  {
+   "venue": "WWW",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "The Anatomy of a Large-Scale Hypertextual Web Search Engine",
+   "authors": [
+    "Sergey Brin",
+    "Larry Page"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2015 Seoul Test of Time Award: Sergey Brin and Larry Page for their paper “The Anatomy of a Large-Scale Hypertextual Web Search Engine”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Item-based collaborative filtering recommendation algorithms",
+   "authors": [
+    "Badrul Sarwar",
+    "George Karypis",
+    "Joseph Konstan",
+    "John Riedl"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2016 Seoul Test of Time Award: Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl for their paper “Item-based collaborative filtering recommendation algorithms”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Graph Structure in the Web",
+   "authors": [
+    "Andrei Broder",
+    "Ravi Kumar",
+    "Farzin Maghoul",
+    "Prabhakar Raghavan",
+    "Sridhar Rajagopalan",
+    "Raymie Stata",
+    "Andrew Tomkins",
+    "Janet Wiener"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2017 Seoul Test of Time Award: Andrei Broder, Ravi Kumar, Farzin Maghoul, Prabhakar Raghavan, Sridhar Rajagopalan, Raymie Stata, Andrew Tomkins and Janet Wiener for their paper “Graph Structure in the Web”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "YAGO: A Core of Semantic Knowledge Unifying WordNet and Wikipedia",
+   "authors": [
+    "Fabian M. Suchanek",
+    "Gjergji Kasneci",
+    "Gerhard Weikum"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2018 Seoul Test of Time Award: Fabian M. Suchanek, Gjergji Kasneci and Gerhard Weikum for their paper “YAGO: A Core of Semantic Knowledge Unifying WordNet and Wikipedia”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "The EigenTrust Algorithm for Reputation Management in P2P Networks",
+   "authors": [
+    "Sepandar D. Kamvar",
+    "Mario Schlosser",
+    "Héctor Garcia-Molina"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2019 Seoul Test of Time Award: Sepandar D. Kamvar, Mario Schlosser and Héctor Garcia-Molina for their paper “The EigenTrust Algorithm for Reputation Management in P2P Networks”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Mining the Peanut Gallery: Opinion Extraction and Semantic Classification of Product Reviews",
+   "authors": [
+    "Kushal Dave",
+    "Steve Lawrence",
+    "David M Pennock"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2020 Seoul Test of Time Award: Kushal Dave, Steve Lawrence and David M Pennock for their paper “Mining the Peanut Gallery: Opinion Extraction and Semantic Classification of Product Reviews”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Information Credibility on Twitter",
+   "authors": [
+    "Carlos Castillo",
+    "Marcelo Mendoza",
+    "Barbara Poblete"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2021 Seoul Test of Time Award: Carlos Castillo, Marcelo Mendoza and Barbara Poblete for their paper “Information Credibility on Twitter”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Earthquake shakes Twitter users: Real-time event detection by social sensors",
+   "authors": [
+    "Takeshi Sakaki",
+    "Makoto Okazaki",
+    "Yutaka Matsuo"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2022 Seoul Test of Time Award: Takeshi Sakaki, Makoto Okazaki and Yutaka Matsuo for their paper “Earthquake shakes Twitter users: Real-time event detection by social sensors”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "A Contextual-Bandit Approach to Personalized News Article Recommendation",
+   "authors": [
+    "Lihong Li",
+    "Wei Chu",
+    "John Langford",
+    "Robert Schapire"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2023 Seoul Test of Time Award: Lihong Li, Wei Chu, John Langford and Robert Schapire for their paper “A Contextual-Bandit Approach to Personalized News Article Recommendation”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Topic-Sensitive PageRank",
+   "authors": [
+    "Taher H Haveliwala"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2024 Seoul Test of Time Award: Taher H Haveliwala for their paper “Topic-Sensitive PageRank”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "Factorizing Personalized Markov Chains for Next-Basket Recommendation",
+   "authors": [
+    "Steffen Rendle",
+    "Christoph Freudenthaler",
+    "Lars Schmidt-Thieme"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2025 Seoul Test of Time Award: Steffen Rendle, Christoph Freudenthaler and Lars Schmidt-Thieme for their paper “Factorizing Personalized Markov Chains for Next-Basket Recommendation”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Seoul Test of Time Award",
+   "title": "LINE: Large-scale information network embedding",
+   "authors": [
+    "Jian Tang",
+    "Meng Qu",
+    "Mingzhe Wang",
+    "Ming Zhang",
+    "Jun Yan",
+    "Qiaozhu Me"
+   ],
+   "track": "main",
+   "source": "https://www.iw3c2.org/ToT/",
+   "evidence": "The Web Conference 2026 Seoul Test of Time Award: Jian Tang, Meng Qu, Mingzhe Wang, Ming Zhang, Jun Yan, and Qiaozhu Me for their paper “LINE: Large-scale information network embedding”"
   }
  ]
 }

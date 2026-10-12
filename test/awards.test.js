@@ -289,3 +289,15 @@ test("the bundled list: security and database winners from ACM CCS's and the VLD
   assert.deepEqual(find("Fast algorithms for mining association rules in large databases", "R Agrawal, R Srikant"), ["VLDB 2004 tot"]);
   assert.deepEqual(find("Path ORAM: An extremely simple oblivious RAM protocol", "A Smith, B Jones"), []);
 });
+
+test("the bundled list: web, architecture and microarchitecture classics (WWW's Seoul ToT, the Influential ISCA Paper Award, MICRO's Test of Time)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Item-based collaborative filtering recommendation algorithms", "B Sarwar, G Karypis, J Konstan, J Riedl"), ["WWW 2016 tot"]);
+  assert.deepEqual(find("The anatomy of a large-scale hypertextual web search engine", "S Brin, L Page"), ["WWW 2015 tot"]);
+  assert.deepEqual(find("LINE: Large-scale information network embedding", "J Tang, M Qu, M Wang, M Zhang, J Yan, Q Mei"), ["WWW 2026 tot"]);
+  assert.deepEqual(find("Wattch: A framework for architectural-level power analysis and optimizations", "D Brooks, V Tiwari, M Martonosi"), ["ISCA 2015 tot"]);
+  assert.deepEqual(find("Simultaneous multithreading: Maximizing on-chip parallelism", "DM Tullsen, SJ Eggers, HM Levy"), ["ISCA 2010 tot"]);
+  assert.deepEqual(find("Trace cache: A low latency approach to high bandwidth instruction fetching", "E Rotenberg, S Bennett, JE Smith"), ["MICRO 2015 tot"]);
+  assert.deepEqual(find("Item-based collaborative filtering recommendation algorithms", "A Smith, B Jones"), []);
+});

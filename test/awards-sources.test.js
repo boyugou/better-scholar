@@ -861,3 +861,35 @@ test("html: the old Latin-1 entities are read without their semicolon, the longe
   const { decode } = await import("../scripts/awards/html.mjs");
   assert.equal(decode("J&oumlrg Schwenk, Noß, caf&eacute and R&Dteam, AT&T, &amp; &ouml;"), "Jörg Schwenk, Noß, café and R&Dteam, AT&T, & ö");
 });
+
+test("test-of-time lists on one page: WWW (winners over two lines, titles in quotes), ISCA ('For ISCA 2003' gives the paper's year), MICRO (a table per year)", async () => {
+  const { parseWww, parseIsca, parseMicro } = await import("../scripts/awards/tot.mjs");
+  const www = lineHtml(
+    "The Web Conference 2017 - Seoul Test of Time Award", "(presented at The Web Conference 2017 in Perth)",
+    "Winners: Ann Lee, Bo Chen, Cy Diaz, Dee Park,", "Eli Ross and Fay Gray", "for their paper \"A Synthetic Structure in the Web\".", "Read the Press Release (April 5, 2017)",
+    "The Web Conference 2016 - Seoul Test of Time Award", "Winners: Dr Gia Stone, Professors Hal Wu, Ivy Xu, and Jo Yan", "for their paper \"Synthetic item-based filtering algorithms\".",
+    "The Web Conference 2015 - First Seoul Test of Time Award", "Winner: Kai Zu", "for his paper \"The Synthetic Anatomy of a Search Engine\".");
+  assert.deepEqual(parseWww(www).entries.map((e) => [e.venue, e.year, e.title, e.authors]), [
+    ["WWW", 2017, "A Synthetic Structure in the Web", ["Ann Lee", "Bo Chen", "Cy Diaz", "Dee Park", "Eli Ross", "Fay Gray"]],
+    ["WWW", 2016, "Synthetic item-based filtering algorithms", ["Gia Stone", "Hal Wu", "Ivy Xu", "Jo Yan"]],
+    ["WWW", 2015, "The Synthetic Anatomy of a Search Engine", ["Kai Zu"]]
+  ]);
+  const isca = lineHtml(
+    "Past Winners", "2024 (For ISCA 2003): Lu Mo, Ned Oh, Pia Qi, and Ray Sun", "Exploiting Synthetic Parallelism with a Polymorphous Architecture",
+    "2012 (For ISCA 1997): Sue Tan, Tom Uy and Una Vo.", "“Complexity-Effective Synthetic Processors.”", "2003 (for ISCA 1988): Vic Wan and Wes Xia", "“On the synthetic properties of cache hierarchies”",
+    "ACM SIGARCH");
+  assert.deepEqual(parseIsca(isca).entries.map((e) => [e.year, e.paperYear, e.title, e.authors]), [
+    [2024, 2003, "Exploiting Synthetic Parallelism with a Polymorphous Architecture", ["Lu Mo", "Ned Oh", "Pia Qi", "Ray Sun"]],
+    [2012, 1997, "Complexity-Effective Synthetic Processors", ["Sue Tan", "Tom Uy", "Una Vo"]],
+    [2003, 1988, "On the synthetic properties of cache hierarchies", ["Vic Wan", "Wes Xia"]]
+  ]);
+  const micro = `<h3 id="winners2025">2025</h3><table><thead><tr><th>Conference</th><th>Paper Title</th><th>Authors</th></tr></thead><tbody>
+    <tr><td>MICRO 2006</td><td><a href="x">Synthetic Die Stacking Microarchitecture</a></td><td>Yui Zhao, Zed Alpha, Amy Beta</td></tr>
+    <tr><td>MICRO 2007</td><td><a href="y">Optimizing Synthetic Cache Organizations with a Model</a></td><td>Cal Dunn and Dee Eden</td></tr></tbody></table>
+    <h3 id="winners2024">2024</h3><table><tbody><tr><td>MICRO 2006</td><td>Utility-Based Synthetic Partitioning</td><td>Fay Gray</td></tr></tbody></table>`;
+  assert.deepEqual(parseMicro(micro).entries.map((e) => [e.year, e.paperYear, e.title, e.authors]), [
+    [2025, 2006, "Synthetic Die Stacking Microarchitecture", ["Yui Zhao", "Zed Alpha", "Amy Beta"]],
+    [2025, 2007, "Optimizing Synthetic Cache Organizations with a Model", ["Cal Dunn", "Dee Eden"]],
+    [2024, 2006, "Utility-Based Synthetic Partitioning", ["Fay Gray"]]
+  ]);
+});

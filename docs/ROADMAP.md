@@ -14,18 +14,17 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (2228 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (2292 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
-CCS, NDSS, SIGMOD, PODS, VLDB). Only official pages are sources (the ACL Anthology's award metadata; each
+CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA and MICRO). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
 the identical full title and the award's first author. Award kinds stay distinct (`best`, `outstanding`,
 `distinguished`, `runner-up`, `student`, `category`, `tot`); an honorable mention is never upgraded.
 Oral / spotlight lists stay author-written only: CVPR and ICCV's "Highlight" rows are about a tenth of the
 papers, which is the 'too many' case, so they are not used.
 
-**Next — more venues, where an official page exists.** CHI's program site (`programs.sigchi.org/chi/<year>/awards`) needs JavaScript; FOCS, SOSP, VLDB's
-best papers (only its test-of-time awards are on one official page), ISCA / ASPLOS / MICRO / HPCA, UIST and WWW have a page per year in
-different shapes; CCS's page covers 2013–2023 only (2024 and 2025 are on the conference sites). The ACM's own "Conferences Best Paper Awards" pages would cover most of them at once, but answer every automated
+**Next — more venues, where an official page exists.** CHI's program site (`programs.sigchi.org/chi/<year>/awards`) needs JavaScript; FOCS, SOSP, ASPLOS / HPCA, UIST and the best papers of VLDB, ISCA, MICRO and WWW (only their test-of-time awards sit on one official page) have a page per
+year in different shapes; CCS's page covers 2013–2023 only (2024 and 2025 are on the conference sites). The ACM's own "Conferences Best Paper Awards" pages would cover most of them at once, but answer every automated
 request with 403 and are not worked around. Add a reader only after reading the page's markup for every year it covers; review its output
 line by line; test it with synthetic pages and a few well-known winners.
 The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no

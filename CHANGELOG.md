@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.16 — 2026-10-12
+
+- **Test-of-time awards of WWW, ISCA and MICRO** (64 entries; the list holds 2292) from the pages that list them in full: the Web
+  Conference's *Seoul Test of Time Award* (IW3C2, 2015–2026: PageRank-era classics such as *The Anatomy of a Large-Scale Hypertextual
+  Web Search Engine* and *Item-based collaborative filtering recommendation algorithms*), the *Influential ISCA Paper Award* (2003–2025,
+  with the ISCA year of the paper) and the *MICRO Test of Time Award* (2014–2025). New reader `scripts/awards/tot.mjs`.
+
 ## 2.5.15 — 2026-10-12
 
 - **ACM CCS and VLDB awards** (104 entries; the list holds 2228) from the organisations' own pages. CCS (CCF A, CORE A*): the *Best Paper
