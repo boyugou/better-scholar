@@ -1196,3 +1196,17 @@ test("SIGMOBILE Test-of-Time page: Authors. \"Title,\" Venue Year. — a title o
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("SenSys Test of Time page: `Authors: “Title,” …` rows, and the 2022 rows `Authors (affiliations). Title (2004).` on one line or two", async () => {
+  const { parseSensysTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>2017</h3><p>Committee: Pat Dutta (UC Berkeley), Jo Liu (chair)</p><p>Awardees:</p><p>Pei Zhang, christopher Sadler, Stephen Lyon, and Margaret Martonosi: “Hardware Design Experiences in Zebranet,”  2nd ACM Conference on Embedded Networked Sensor Systems, 2004</p><p>“For pioneering low power design of sensing devices."</p>
+<h3>2022</h3><p>Ning Xu (USC, USA), Alan Broad (Crossbow, USA). Ramesh Govindan (USC, USA).</p><p>A wireless sensor network for structural monitoring (2004).</p><p>"For its impact on early sensor networks."</p>
+<p>Federico Ferrari (ETH Zurich), Marco Zimmerling (ETH Zurich), Lothar Thiele (ETH Zurich). Low-Power Wireless Bus (2012).</p>`;
+  const { entries, skipped } = parseSensysTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear || "-"} ${e.title} | ${e.authors.join("; ")}`), [
+    "2017/- Hardware Design Experiences in Zebranet | Pei Zhang; Christopher Sadler; Stephen Lyon; Margaret Martonosi",
+    "2022/2004 A wireless sensor network for structural monitoring | Ning Xu; Alan Broad; Ramesh Govindan",
+    "2022/2012 Low-Power Wireless Bus | Federico Ferrari; Marco Zimmerling; Lothar Thiele"
+  ]);
+  assert.deepEqual(skipped, []);
+});

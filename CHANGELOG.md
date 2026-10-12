@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.9 — 2026-10-12
+
+- The SenSys Test of Time Award (2014–2023, 17 papers) from SenSys's own page (`tot.mjs sensys`). The bundled list has 4946 awards.
+
 ## 2.9.8 — 2026-10-12
 
 - SIGMOBILE's 2018 rows typed in citation style ("Kistler, James J., and Mahadev Satyanarayanan") are read too: the first author's surname is put last (12 more papers, 40 in all).

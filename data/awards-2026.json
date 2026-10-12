@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4929
+  "count": 4946
  },
  "entries": [
   {
@@ -68779,6 +68779,298 @@
    "track": "main",
    "source": "https://sp2025.ieee-security.org/awards.html",
    "evidence": "Distinguished Paper Awards: Verifiable Boosted Tree Ensembles — Stefano Calzavara, Lorenzo Cazzaro, Claudio Lucchese, Giulio Ermanno Pibiri"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The flooding time synchronization protocol",
+   "authors": [
+    "Miklós Maróti",
+    "Branislav Kusy",
+    "Gyula Simon",
+    "Ákos Lédeczi"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2014 Test of Time Award: Miklós Maróti, Branislav Kusy, Gyula Simon, Ákos Lédeczi (Vanderbilt University) “The flooding time synchronization protocol”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Versatile Low Power Media Access for Wireless Sensor Networks",
+   "authors": [
+    "Joseph Polastre",
+    "Jason Hill",
+    "David Culler"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2014 Test of Time Award: Joseph Polastre, Jason Hill, David Culler (University of California, Berkeley) “Versatile Low Power Media Access for Wireless Sensor Networks”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An analysis of a large scale habitat monitoring application",
+   "authors": [
+    "Robert Szewczyk",
+    "Alan Mainwaring",
+    "Joseph Polastre",
+    "John Anderson",
+    "David Culler"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2015 Test of Time Award: Robert Szewczyk, Alan Mainwaring, Joseph Polastre, John Anderson, David Culler “An analysis of a large scale habitat monitoring application”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Hardware Design Experiences in Zebranet",
+   "authors": [
+    "Pei Zhang",
+    "Christopher Sadler",
+    "Stephen Lyon",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2017 Test of Time Award: Pei Zhang, christopher Sadler, Stephen Lyon, and Margaret Martonosi “Hardware Design Experiences in Zebranet”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "IP is Dead, Long Live IP for Wireless Sensor Networks",
+   "authors": [
+    "Jonathan Hui",
+    "David Culler"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2018 Test of Time Award: Jonathan Hui and David Culler “IP is Dead, Long Live IP for Wireless Sensor Networks”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Sensing Meets Mobile Social Networks: Design, Implementation and Evaluation of the Cenceme Application",
+   "authors": [
+    "Emiliano Miluzzo",
+    "Nicholas D. Lane",
+    "Kristóf Fodor",
+    "Ronald Peterson",
+    "Hong Lu",
+    "Mirco Musolesi",
+    "Shane B Eisenman",
+    "Xiao Zheng",
+    "Andrew T. Campbell"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2018 Test of Time Award: Emiliano Miluzzo, Nicholas D. Lane, Kristóf Fodor, Ronald Peterson, Hong Lu, Mirco Musolesi, Shane B Eisenman, Xiao Zheng, Andrew T. Campbell “Sensing Meets Mobile Social Networks: Design, Implementation and Evaluation of the Cenceme Application”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones",
+   "authors": [
+    "Prashanth Mohan",
+    "Venkata Padmanabhan",
+    "Ramachandran Ramjee"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2019 Test of Time Award: Prashanth Mohan, Venkata Padmanabhan, Ramachandran Ramjee “Nericell: Rich Monitoring of Road and Traffic Conditions using Mobile Smartphones”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "VTrack: Accurate, Energy-aware Road Traffic Delay Estimation Using Mobile Phones",
+   "authors": [
+    "Arvind Thiagarajan",
+    "Lenin Ravindranath",
+    "Katrina LaCurts",
+    "Samuel Madden",
+    "Hari Balakrishnan",
+    "Sivan Toledo",
+    "Jakob Eriksson"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2019 Test of Time Award: Arvind Thiagarajan, Lenin Ravindranath, Katrina LaCurts, Samuel Madden, Hari Balakrishnan, Sivan Toledo, Jakob Eriksson “VTrack: Accurate, Energy-aware Road Traffic Delay Estimation Using Mobile Phones”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A wireless sensor network for structural monitoring",
+   "authors": [
+    "Ning Xu",
+    "Sumit Rangwala",
+    "Krishna Chintalapudi",
+    "Deepak Ganesan",
+    "Alan Broad",
+    "Ramesh Govindan",
+    "Deborah Estrin"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Ning Xu (University of Southern California, USA), Sumit Rangwala (USC, USA), Krishna Chintalapudi (University of Southern California, USA), Deepak Ganesan (UCLA, USA), Alan Broad (Crossbow, USA). Ramesh Govindan (University of Southern California, USA), Deborah Estrin (UCLA, USA) “A wireless sensor network for structural monitoring”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Collection tree protocol",
+   "authors": [
+    "Omprakash Gnawali",
+    "Rodrigo Fonseca",
+    "Kyle Jamieson",
+    "David Moss",
+    "Philip Levis"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Omprakash Gnawali (USC), Rodrigo Fonseca (Yahoo/Brown), Kyle Jamieson (University College London), David Moss (Rincon Research), Philip Levis (Stanford) “Collection tree protocol”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Design and Evaluation of a Versatile and Efficient Receiver-Initiated Link Layer for Low-Power Wireless",
+   "authors": [
+    "Prabal Dutta",
+    "Stephen Dawson-Haggerty",
+    "Yin Chen",
+    "Chieh-Jan Liang",
+    "Andreas Terzis"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Prabal Dutta (University of Michigan), Stephen Dawson-Haggerty (University of California, Berkeley), Yin Chen (Johns Hopkins University), Chieh-Jan (Mike) Liang (Johns Hopkins University), Andreas Terzis (Johns Hopkins University) “Design and Evaluation of a Versatile and Efficient Receiver-Initiated Link Layer for Low-Power Wireless”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Low-Power Wireless Bus",
+   "authors": [
+    "Federico Ferrari",
+    "Marco Zimmerling",
+    "Luca Mottola",
+    "Lothar Thiele"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Federico Ferrari (ETH Zurich), Marco Zimmerling (ETH Zurich), Luca Mottola (Politecnico di Milano and Swedish Institute of Computer Science), Lothar Thiele (ETH Zurich) “Low-Power Wireless Bus”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "ODetector: A Generic Service for Indoor Outdoor Detection",
+   "authors": [
+    "Pengfei Zhou",
+    "Yuanqing Zheng",
+    "Zhenjiang Li",
+    "Mo Li",
+    "Guobin Shen"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Pengfei Zhou (Nanyang Technological University), Yuanqing Zheng (Nanyang Technological University), Zhenjiang Li (Nanyang Technological University), Mo Li (Nanyang Technological University), Guobin Shen (Microsoft Research Asia) “ODetector: A Generic Service for Indoor Outdoor Detection”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Protothreads: simplifying event-driven programming of memory-constrained embedded systems",
+   "authors": [
+    "Adam Dunkels",
+    "Oliver Schmidt",
+    "Thiemo Voigt",
+    "Muneeb Ali"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Adam Dunkels, Oliver Schmidt, Thiemo Voigt (Swedish Institute of Computer Science), Muneeb Ali (TU Delft) “Protothreads: simplifying event-driven programming of memory-constrained embedded systems”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Reliable Clinical Monitoring using Wireless Sensor Networks: Experience in a Step-down Hospital Unit",
+   "authors": [
+    "Octav Chipara",
+    "Chenyang Lu",
+    "Thomas C. Bailey",
+    "Gruia-Catalin Roman"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2022 Test of Time Award: Octav Chipara (Washington Univesity in St. Louis), Chenyang Lu (Washington Univesity in St. Louis), Thomas C. Bailey (Washington University School of Medicine), Gruia-Catalin Roman (Washington University in St. Louis) “Reliable Clinical Monitoring using Wireless Sensor Networks: Experience in a Step-down Hospital Unit”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Accelerometer-based transportation mode detection on smartphones",
+   "authors": [
+    "Samuli Hemminki",
+    "Petteri Nurmi",
+    "Sasu Tarkoma"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2023 Test of Time Award: Samuli Hemminki, Petteri Nurmi, Sasu Tarkoma (University of Helsinki, Finland) “Accelerometer-based transportation mode detection on smartphones”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Canopy closure estimates with GreenOrbs: sustainable sensing in the forest",
+   "authors": [
+    "Lufeng Mo",
+    "Yuan He",
+    "Yunhao Liu",
+    "Jizhong Zhao",
+    "Shaojie Tang",
+    "Xiangyang Li",
+    "Guojun Dai"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/tot/",
+   "evidence": "SenSys 2023 Test of Time Award: Lufeng Mo (Zhejiang Forestry University), Yuan He, Yunhao Liu (Hong Kong University of Science and Technoloty), Jizhong Zhao (Xi'an Jiaotong University), Shaojie Tang, Xiangyang Li (Illinois Institue of Technology), Guojun Dai (Hangzhou Dianzi University) “Canopy closure estimates with GreenOrbs: sustainable sensing in the forest”"
   },
   {
    "venue": "SIGCOMM",

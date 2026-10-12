@@ -36,8 +36,10 @@
 //   sigmobile https://sigmobile.org/grav/awards/test-of-time-paper        the SIGMOBILE Test-of-Time Paper Awards, 2018–: "2026 Paper Awardees", then per paper a line
 //                                                                       `Authors. "Title," Venue Year.` (the older rows are typed by hand in other forms, a title that
 //                                                                       runs over two lines has no closing quotation mark on its line: those are reported and skipped)
+//   sensys  https://sensys.acm.org/tot/                                   the SenSys Test of Time Award, 2014–: a year heading, then per paper `Authors (affiliations): “Title,” Nth ACM Conference …`
+//                                                                       or, in the 2022 block, the authors on one line and `Title (2004).` on the next
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -60,7 +62,8 @@ const PAGES = {
   asplos: "https://sigplan.org/Awards/Other",
   iacr: "https://iacr.org/testoftime/",
   tcc: "https://www.iacr.org/workshops/tcc/awards.html",
-  sigmobile: "https://sigmobile.org/grav/awards/test-of-time-paper"
+  sigmobile: "https://sigmobile.org/grav/awards/test-of-time-paper",
+  sensys: "https://sensys.acm.org/tot/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -307,6 +310,31 @@ export function parseSigmobileTot(html, source = PAGES.sigmobile) {
   return { entries, skipped };
 }
 
+export function parseSensysTot(html, source = PAGES.sensys) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  let year = null;
+  const add = (authorText, titleText, py) => {
+    // ("christopher Sadler" is typed so on the page; "Alan Broad (Crossbow, USA). Ramesh Govindan" has a full stop for a comma)
+    const who = names(authorText.replace(/\)\.\s+(?=[A-Z])/g, "), ").replace(/\s+and\s+/g, ", and ")).map((n) => n.replace(/^([a-z])(?=[a-z]{3,}\s)/, (c) => c.toUpperCase())), title = cleanTitle(titleText);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("SenSys", year, "Test of Time Award", title, who, source, `SenSys ${year} Test of Time Award: ${authorText.replace(/[\s:,.]+$/, "")} “${title}”`, py));
+    else skipped.push(`${year}: not read: ${authorText.slice(0, 50)} / ${title.slice(0, 40)}`);
+  };
+  for (let i = 0; i < ls.length; i++) {
+    const h = /^((?:19|20)\d{2})$/.exec(ls[i]);
+    if (h) { year = parseInt(h[1], 10); continue; }
+    if (!year) continue;
+    const q = /^(.{3,600}?)[:,]?\s+[“"]([^”"“]{8,200}?)[,.]?[”"]/.exec(ls[i]);
+    if (q && !/^Committee:/i.test(ls[i])) { add(q[1], q[2], undefined); continue; }
+    // (the 2022 block: the authors, then "Title (2004)." on the next line — or on the same line after the closing parenthesis of the last affiliation)
+    const one = /^(.{20,800}\))\.\s+(.{8,200}?)\s*\(((?:19|20)\d{2})\)\.$/.exec(ls[i]);
+    if (one && !/^Committee:/i.test(ls[i]) && !/[“"]/.test(ls[i])) { add(one[1], one[2], parseInt(one[3], 10)); continue; }
+    const t = /^(.{8,200}?)\s*\(((?:19|20)\d{2})\)\.$/.exec(ls[i + 1] || "");
+    if (t && /\.$/.test(ls[i]) && !/^Committee:/i.test(ls[i]) && !/[“"]/.test(ls[i])) { add(ls[i], t[1], parseInt(t[2], 10)); i++; }
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -362,7 +390,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
