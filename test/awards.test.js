@@ -383,3 +383,10 @@ test("the bundled list: USENIX's own test-of-time winners (Security, NSDI, FAST)
   assert.deepEqual(find("ARC: A self-tuning, low overhead replacement cache", "N Megiddo, DS Modha"), ["FAST 2014 tot"]);
   assert.deepEqual(find("Approximate frequency counts over data streams", "GS Manku, R Motwani"), ["VLDB 2012 tot"]);
 });
+
+test("provenance: every host an award was read from is on the reviewed list (test/fixtures/award-source-hosts.json) — a new source has to be added there by hand", () => {
+  const reviewed = Object.keys(JSON.parse(fs.readFileSync(path.join(ROOT, "test/fixtures/award-source-hosts.json"), "utf8")).hosts).sort();
+  const used = [...new Set(data.entries.map((e) => new URL(e.source).host))].sort();
+  assert.deepEqual(used.filter((h) => !reviewed.includes(h)), [], "a source host that was never reviewed (is the domain still the organisation's own?)");
+  assert.deepEqual(reviewed.filter((h) => !used.includes(h)), [], "a reviewed host nothing is read from any more: remove it from the list");
+});

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.15 — 2026-10-12
+
+- A provenance test: `test/fixtures/award-source-hosts.json` lists the 78 hosts the bundled awards were read from, and a test fails for a host that is not on it (or no longer used), so a new source is reviewed by hand — old conference domains are taken over by spam.
+
 ## 2.10.14 — 2026-10-12
 
 - The Web Conference's best papers of 2022 (Rewiring what-to-watch-next Recommendations to Reduce Radicalization Pathways) and 2024 (Mechanism Design for Large Language Models) from the conference's own awards pages (`tot.mjs www-best`). The list has 6213 awards.
