@@ -284,3 +284,31 @@ test("resolving is fast enough for large profiles", () => {
   const ms = Date.now() - t0;
   assert.ok(ms < 4000, `resolved ${strings.length * 3} strings in ${ms} ms`);
 });
+
+test("NeurIPS Datasets and Benchmarks Track is NeurIPS, in every spelling Scholar prints", () => {
+  const A = "CCF A NeurIPS · CORE A* NeurIPS";
+  for (const s of [
+    "NeurIPS 2025 Datasets and Benchmarks Track",                       // seen on a real profile
+    "NeurIPS Datasets and Benchmarks Track, 2024", "NeurIPS Datasets and Benchmarks", "NeurIPS Track on Datasets and Benchmarks",
+    "NIPS Datasets and Benchmarks Track", "NeurIPS Datasets and Benchmarks Track (Round 2)", "NeurIPS D&B Track",
+    "Advances in Neural Information Processing Systems 36, 2023 (Datasets and Benchmarks Track)",
+    "Advances in Neural Information Processing Systems 35, 2022 - Datasets and Benchmarks",
+    "Neural Information Processing Systems Datasets; Benchmarks Track, 2023",
+    "Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2)",
+    "The Thirty-eight Conference on Neural Information Processing Systems Datasets and Benchmarks Track, 2024"
+  ]) assert.equal(brief(s), A, s);
+  // the phrase is only dropped, never trusted on its own: a workshop on the subject or a title that says it is not NeurIPS
+  for (const s of ["NeurIPS 2025 Workshop on Datasets and Benchmarks", "Workshop on Datasets and Benchmarks for Foo", "Datasets and Benchmarks for Deep Learning", "Datasets and Benchmarks Track"]) {
+    assert.equal(brief(s), "", s);
+  }
+});
+
+test("a dropped 'h' in a spelled-out ordinal does not hide the conference (Thirty-eight / Thirty-nine)", () => {
+  const A = "CCF A NeurIPS · CORE A* NeurIPS";
+  assert.equal(brief("The Thirty-eight Conference on Neural Information Processing Systems"), A);
+  assert.equal(brief("The Thirty-nine Conference on Neural Information Processing Systems"), A);
+  assert.equal(brief("The Thirty-eighth Conference on Neural Information Processing Systems"), A);
+  assert.equal(brief("Thirty-seventh AAAI Conference on Artificial Intelligence"), brief("AAAI Conference on Artificial Intelligence"));
+  // the typo rule only reads "eight" / "nine" after a tens word; a lone "Eight" stays a word of the name
+  assert.equal(brief("Eight Conference on Neural Information Processing Systems"), "");
+});

@@ -51,6 +51,11 @@
 
   const isNoiseToken = (t) =>
     /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a");
+  // Authors often drop the "h" of an ordinal: "The Thirty-eight Conference on Neural Information Processing
+  // Systems" (NeurIPS 2024 was the thirty-eighth). After a tens word, "eight" / "nine" / "nineth" is that ordinal.
+  const TENS = new Set(["twenty", "thirty", "forty", "fifty", "sixty"]);
+  const ORDINAL_TYPOS = new Set(["eight", "nine", "nineth"]);
+  const dropOrdinalTypos = (tokens) => tokens.filter((t, i) => !(ORDINAL_TYPOS.has(t) && TENS.has(tokens[i - 1])));
 
   // Squash to a key where "S&P" and "SP" collide on purpose and spacing is irrelevant.
   const squash = (s) => fold(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
@@ -68,10 +73,10 @@
     if (mode === "noAcr" && known) {
       r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) ? " " : m));
     }
-    return r.toLowerCase()
+    return dropOrdinalTypos(r.toLowerCase()
       .replace(/[^a-z0-9]+/g, " ")
       .split(" ")
-      .filter(Boolean)
+      .filter(Boolean))
       .map((t) => ISO[t] || t)
       .filter((t) => !STOP.has(t) && !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
   }
@@ -79,8 +84,8 @@
   // Like canonTokens but keeps connectives ("in", "and", "of"): used where the exact
   // connective after a truncated prefix matters ("Information processing in …").
   function canonTokensKeepStops(s, mode) {
-    return fold(s).replace(/&/g, " and ").toLowerCase()
-      .replace(/[^a-z0-9]+/g, " ").split(" ").filter(Boolean).map((t) => ISO[t] || t)
+    return dropOrdinalTypos(fold(s).replace(/&/g, " and ").toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ").split(" ").filter(Boolean)).map((t) => ISO[t] || t)
       .filter((t) => !BOILER.has(t) && !isNoiseToken(t) && !(mode !== "full" && ORG.has(t)));
   }
 
@@ -89,13 +94,20 @@
   const MONTH = "(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*";
   const PAGES = "(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";
 
+  // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
+  // "Datasets; Benchmarks" spellings) is not part of the venue's identity, so it is dropped before matching. Whether the
+  // raw string names a workshop is judged on the raw string, so "… Workshop on Datasets and Benchmarks" stays unbadged.
+  const DB_PHRASE = "(?:track\\s+on\\s+)?(?:datasets?\\s*(?:and|&|;)\\s*benchmarks?|d\\s?&\\s?b)(?:\\s+track)?(?:\\s*[(,]?\\s*round\\s*\\d\\s*\\)?)?";
+  const DB_PAREN = new RegExp("\\(\\s*" + DB_PHRASE + "\\s*\\)", "gi");
+  const DB_TAIL = new RegExp("[\\s,;:–-]*\\b" + DB_PHRASE + "(?=\\s*(?:[,;:.)]|$|\\d))", "gi");
+
   // Reduce a raw Scholar venue field to
   //   { name, plain, withParens, truncated, hasVolume }
   // name       the venue words with volume/pages/year tails removed (parentheses kept)
   // plain      name with parenthetical content removed (used for name matching)
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
   function prepare(raw) {
-    let s = fold(raw).replace(/\s+/g, " ").trim();
+    let s = fold(raw).replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);

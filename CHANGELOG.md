@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.1 — 2026-10-11
+
+- **NeurIPS Datasets and Benchmarks Track papers are NeurIPS (CCF A / CORE A\*) in every spelling** — the phrase
+  *Datasets and Benchmarks (Track)* (also *Track on Datasets and Benchmarks*, *Datasets; Benchmarks*, *D&B Track*,
+  *(Round 2)*) is dropped before matching, so `NeurIPS Datasets and Benchmarks Track, 2024` and
+  `Advances in Neural Information Processing Systems 36, 2023 (Datasets and Benchmarks Track)` are no longer missed
+  (the year-first form `NeurIPS 2025 Datasets and Benchmarks Track` already worked). A workshop on the subject, or a
+  title that merely says it, is still not NeurIPS.
+- A dropped "h" in a spelled-out ordinal no longer hides a conference: `The Thirty-eight Conference on Neural
+  Information Processing Systems` (also *Thirty-nine*; only after a tens word).
+- The end-to-end test brings the tab under test to the front (a background tab cannot be screenshotted on Linux CI).
+
 ## 2.2.0 — 2026-10-11
 
 - **Settings page** — what the extension draws is now configured in one place instead of in the panel:
