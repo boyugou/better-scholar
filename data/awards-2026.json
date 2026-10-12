@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6248
+  "count": 6250
  },
  "entries": [
   {
@@ -75631,6 +75631,40 @@
    "track": "main",
    "source": "https://beta.sigmobile.org/articles/mobicom-best-paper-award",
    "evidence": "MobiCom Best Paper Award 2012: Distinguishing Users with Capacitative Touch Communication — Tam Vu (Rutgers University, USA), Akash Baid (Rutgers University, USA), Simon Gao (Rutgers University, USA), Marco Gruteser (Rutgers University, USA), Richard Howard (Rutgers University, USA), Janne Lindqvist (Rutgers University, USA), Predag Spasojevic (Rutgers University, USA) and Jeffrey Walling (Rutgers University, USA)"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Tagoram: Real-Time Tracking of Mobile RFID Tags to High Precision Using COTS Devices",
+   "authors": [
+    "Lei Yang",
+    "Yekui Chen",
+    "Xiang-Yang Li",
+    "Chaowei Xiao",
+    "Mo Li",
+    "Yunhao Liu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2014/index.html",
+   "evidence": "MobiCom 2014 Best Paper (Winner): Lei Yang, Yekui Chen, Xiang-Yang Li, Chaowei Xiao, Mo Li, Yunhao Liu, Tagoram: Real-Time Tracking of Mobile RFID Tags to High Precision Using COTS Devices"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "EkhoNet: High Speed Ultra Low-power Backscatter for Next Generation Sensors",
+   "authors": [
+    "Pengyu Zhang",
+    "Pan Hu",
+    "Vijay Pasikanti",
+    "Deepak Ganesan"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2014/index.html",
+   "evidence": "MobiCom 2014 Best Paper (Runner-up): Pengyu Zhang, Pan Hu, Vijay Pasikanti, Deepak Ganesan, EkhoNet: High Speed Ultra Low-power Backscatter for Next Generation Sensors"
   },
   {
    "venue": "MobiCom",

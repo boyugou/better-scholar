@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.33 — 2026-10-12
+
+- MobiCom 2014's best paper (Tagoram: Real-Time Tracking of Mobile RFID Tags to High Precision Using COTS Devices) and runner-up (EkhoNet: High Speed Ultra Low-power Backscatter for Next Generation Sensors) from the conference's front page
+  (`tot.mjs mobicom-year`). The list has 6250 awards.
+
 ## 2.10.32 — 2026-10-12
 
 - MobiCom 2017's best paper (WEBee: Physical-Layer Cross-Technology Communication via Emulation) and best community paper (The Tick Programmable Low-Latency SDR System) from SIGMOBILE's own October 2017 newsletter (`tot.mjs mobicom-year`;

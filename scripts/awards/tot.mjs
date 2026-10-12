@@ -1450,6 +1450,21 @@ export function parseMobicomYear(html, source) {
     const t = cleanTitle(n[2].slice(0, at)), who = kddAuthors(n[2].slice(at + 1));
     if (who.length && t.length >= 8) entries.push({ venue: "MobiCom", year, award: n[1] ? "category" : "best", awardLabel: n[1] ? "Best Community Paper Award" : "Best Paper Award", title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} ${n[1] ? "best community paper" : "best paper"}: ${t} — ${who.join(", ")}` });
   }
+  // 2014's front page: under "Awards" / "Best Paper" a line per paper, "A, B, and C, Title (Winner)" or "(Runner-up)" — the names are the leading entries that are names, the first that is not starts the title
+  const bpAt = ls.findIndex((l, i) => i > 10 && /^Best Paper$/.test(l) && /\((?:Winner|Runner-up)\)$/.test(ls[i + 1] || ""));
+  if (bpAt >= 0) {
+    for (let i = bpAt + 1; i < ls.length; i++) {
+      const m = /^(.+)\s\((Winner|Runner-up)\)$/.exec(ls[i]);
+      if (!m) break;
+      const pieces = m[1].split(/(\s*,\s*(?:and\s+)?|\s+and\s+)/);
+      let k = 0;
+      while (k < pieces.length && (k % 2 === 1 || isPerson(pieces[k].trim()))) k++;
+      if (k < pieces.length && k % 2 === 1) k--;
+      const who = pieces.slice(0, k).filter((_, q) => q % 2 === 0).map((x) => x.trim()), t = cleanTitle(pieces.slice(k).join("").replace(/^[\s,]+/, "").replace(/^and\s+/, ""));
+      if (who.length && t.length >= 8 && k < pieces.length) entries.push({ venue: "MobiCom", year, award: m[2] === "Winner" ? "best" : "runner-up", awardLabel: m[2] === "Winner" ? "Best Paper Award" : "Best Paper Runner-up", title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} Best Paper (${m[2]}): ${who.join(", ")}, ${t}` });
+      else skipped.push(`${year}: not read: ${m[1].slice(0, 50)}`);
+    }
+  }
   // the award headings the pages use over the years (video, poster, demo and reviewer awards are not paper awards)
   const kindOf = (l) => {
     const h = l.replace(/:$/, "");

@@ -14,7 +14,7 @@ trailing or leading `( … )` / `[ … ]` made of nothing but marker and venue/y
 low by nature — across four real profiles (400 rows, including one whose owner has CVPR'16 and ICCV'17
 best papers) Scholar's text contained **no** such markers — so this is best effort, not a promise.
 
-**Built — a bundled list of award-winning papers** (6248 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
+**Built — a bundled list of award-winning papers** (6250 entries on 2026-10-12: the ACL family, ICLR, NeurIPS, ICML,
 CVPR / ICCV / ECCV from the Computer Vision Foundation's list, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P,
 CCS, NDSS, SIGMOD, PODS, VLDB, and the test-of-time awards of WWW, ISCA, MICRO, USENIX, SIGMOD, SIGPLAN's most influential papers, SIGMETRICS, FOCS's test of time, SIGOPS's Hall of Fame, EuroSys's test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time, SIGecom's test of time and PODC / DISC's Dijkstra Prize; CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own program data). Only official pages are sources (the ACL Anthology's award metadata; each
 conference's own or the CVF's awards pages), each entry carries its page and a quoted snippet, and the matcher requires
@@ -30,7 +30,7 @@ line by line; test it with synthetic pages and a few well-known winners.
 The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no
 official page does is left out. The test-of-time rows whose award page omitted the paper title (NeurIPS 2025, ICML 2022 and 2026) are read now (2.9.39).
 
-*Known gaps, 2026-10-12 (so they are not rediscovered):* MobiCom best papers of 2013–2014 and 2016 and the ones the strict reader drops in 2019–2024 (SIGMOBILE's list was written in 2017 and stops at 2012); IROS (only 2022's conference site is a real page — later years' domains now serve spam or nothing; a past
+*Known gaps, 2026-10-12 (so they are not rediscovered):* MobiCom best papers of 2013 and 2016 (no award is named on those years' pages) and the ones the strict reader drops in 2019–2024 (SIGMOBILE's list was written in 2017 and stops at 2012); IROS (only 2022's conference site is a real page — later years' domains now serve spam or nothing; a past
 conference's own domain must be checked for what it serves before anything is read from it); SC (every page but the current year's answers 403; 2025's is read since 2.10.16); The Web Conference best papers other than 2022 and 2024 (one site per year, each laid out differently or gone);
 SODA, COLT, UbiComp before 2024, ICDM 2025's second runner-up (an author printed with one word). A web search for "<venue> best paper awards list" has found the series' own page twice (ICDM, SIGGRAPH) where menus did not.
 

@@ -1814,3 +1814,17 @@ test("a SIGMOBILE newsletter's report on MobiCom 2017: 'Best paper: Title. Autho
     "2017 category The Tick | Haoyang Wu; Tao Wang; Zengwen Yuan; Songwu Lu"
   ]);
 });
+
+test("MobiCom 2014's front page: 'Best Paper' then 'Authors, Title (Winner)' / '(Runner-up)'; the best presentation lines after it are not best papers", async () => {
+  const { parseMobicomYear } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 12 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `<h1>MobiCom 2014: The 20th Annual International Conference on Mobile Computing and Networking</h1>${filler}<p>Awards</p><p>Best Paper</p>
+<p>Lei Yang, Yekui Chen, Xiang-Yang Li, Chaowei Xiao, Mo Li, and Yunhao Liu, Tagoram: Real-Time Tracking of Mobile RFID Tags to High Precision Using COTS Devices (Winner)</p>
+<p>Pengyu Zhang, Pan Hu, Vijay Pasikanti, and Deepak Ganesan, EkhoNet: High Speed Ultra Low-power Backscatter for Next Generation Sensors (Runner-up)</p>
+<p>Best Presentation</p><p>Jon Gjengset, Enabling Phased Array Signal Processing on Commodity WiFi Access Points (Winner)</p>`;
+  const { entries } = parseMobicomYear(html, "https://www.sigmobile.org/mobicom/2014/index.html");
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title.slice(0, 8)} | ${e.authors.join("; ")}`), [
+    "2014 best Tagoram: | Lei Yang; Yekui Chen; Xiang-Yang Li; Chaowei Xiao; Mo Li; Yunhao Liu",
+    "2014 runner-up EkhoNet: | Pengyu Zhang; Pan Hu; Vijay Pasikanti; Deepak Ganesan"
+  ]);
+});
