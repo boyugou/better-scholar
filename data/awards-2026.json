@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5178
+  "count": 5222
  },
  "entries": [
   {
@@ -62095,6 +62095,660 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "LEET '08: Designing and Implementing Malicious Hardware — Samuel T. King, University of Illinois at Urbana-Champaign; Joseph Tucek, University of Illinois at Urbana-Champaign; Anthony Cozzie, University of Illinois at Urbana-Champaign; Chris Grier, University of Illinois at Urbana-Champaign; Weihang Jiang, University of Illinois at Urbana-Champaign; Yuanyuan Zhou, University of Illinois at Urbana-"
+  },
+  {
+   "venue": "LICS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "An Automata-Theoretic Approach to Automatic Program Verification (Preliminary Report)",
+   "authors": [
+    "Moshe Y. Vardi",
+    "Pierre Wolper"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2006 Test-of-Time Award: Moshe Y. Vardi, Pierre Wolper “An Automata-Theoretic Approach to Automatic Program Verification (Preliminary Report)”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Efficient Model Checking in Fragments of the Propositional Mu-Calculus (Extended Abstract)",
+   "authors": [
+    "E. Allen Emerson",
+    "Chin-Laung Lei"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2006 Test-of-Time Award: E. Allen Emerson, Chin-Laung Lei “Efficient Model Checking in Fragments of the Propositional Mu-Calculus (Extended Abstract)”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Orderings for Equational Proofs",
+   "authors": [
+    "Leo Bachmair",
+    "Nachum Dershowitz",
+    "Jieh Hsiang"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2006 Test-of-Time Award: Leo Bachmair, Nachum Dershowitz, Jieh Hsiang “Orderings for Equational Proofs”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Framework for Defining Logics",
+   "authors": [
+    "Robert Harper",
+    "Furio Honsell",
+    "Gordon D. Plotkin"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2007 Test-of-Time Award: Robert Harper, Furio Honsell, Gordon D. Plotkin “A Framework for Defining Logics”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Domain Theory in Logical Form",
+   "authors": [
+    "Samson Abramsky"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2007 Test-of-Time Award: Samson Abramsky “Domain Theory in Logical Form”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "The existence of refinement mappings",
+   "authors": [
+    "Martín Abadi",
+    "Leslie Lamport"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2008 Test-of-Time Award: Martín Abadi, Leslie Lamport “The existence of refinement mappings”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Computational lambda-calculus and monads",
+   "authors": [
+    "Eugenio Moggi"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2009 Test-of-Time Award: Eugenio Moggi “Computational lambda-calculus and monads”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Model-checking for real-time systems",
+   "authors": [
+    "Rajeev Alur",
+    "Costas Courcoubetis",
+    "David L. Dill"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2010 Test-of-Time Award: Rajeev Alur, Costas Courcoubetis, David L. Dill “Model-checking for real-time systems”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Recursive types reduced to inductive types",
+   "authors": [
+    "Peter J. Freyd"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2010 Test-of-Time Award: Peter J. Freyd “Recursive types reduced to inductive types”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Symbolic model checking: 10^20 states and beyond",
+   "authors": [
+    "Jerry R. Burch",
+    "Edmund M. Clarke",
+    "Kenneth L. McMillan",
+    "David L. Dill",
+    "L. James Hwang"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2010 Test-of-Time Award: Jerry R. Burch, Edmund M. Clarke, Kenneth L. McMillan, David L. Dill, L. James Hwang “Symbolic model checking: 10^20 states and beyond”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "The theory of ground rewrite systems is decidable",
+   "authors": [
+    "Max Dauchet",
+    "Sophie Tison"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2010 Test-of-Time Award: Max Dauchet, Sophie Tison “The theory of ground rewrite systems is decidable”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A completeness theorem for Kleene algebras and the algebra of regular events",
+   "authors": [
+    "Dexter C. Kozen"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2011 Test-of-Time Award: Dexter C. Kozen “A completeness theorem for Kleene algebras and the algebra of regular events”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A partial approach to model checking",
+   "authors": [
+    "Patrice Godefroid",
+    "Pierre Wolper"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2011 Test-of-Time Award: Patrice Godefroid, Pierre Wolper “A partial approach to model checking”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Logic programming in a fragment of intuitionistic linear logic",
+   "authors": [
+    "Joshua S. Hodas",
+    "Dale A. Miller"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2011 Test-of-Time Award: Joshua S. Hodas, Dale A. Miller “Logic programming in a fragment of intuitionistic linear logic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Symbolic model checking for real-time systems",
+   "authors": [
+    "Thomas A. Henzinger",
+    "Xavier Nicollin",
+    "Joseph Sifakis",
+    "Sergio Yovine"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2012 Test-of-Time Award: Thomas A. Henzinger, Xavier Nicollin, Joseph Sifakis, Sergio Yovine “Symbolic model checking for real-time systems”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "The type and effect discipline",
+   "authors": [
+    "Jean-Pierre Talpin",
+    "Pierre Jouvelot"
+   ],
+   "track": "main",
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2012 Test-of-Time Award: Jean-Pierre Talpin, Pierre Jouvelot “The type and effect discipline”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Bisimulation and open maps",
+   "authors": [
+    "André Joyal",
+    "Mogens Nielsen",
+    "Glynn Winskel"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2013 Test-of-Time Award: André Joyal, Mogens Nielsen, Glynn Winskel “Bisimulation and open maps”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Set constraints are the monadic class",
+   "authors": [
+    "Leo Bachmair",
+    "Harald Ganzinger",
+    "Uwe Waldmann"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2013 Test-of-Time Award: Leo Bachmair, Harald Ganzinger, Uwe Waldmann “Set constraints are the monadic class”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Typing and subtyping for mobile processes",
+   "authors": [
+    "Benjamin C. Pierce",
+    "Davide Sangiorgi"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2013 Test-of-Time Award: Benjamin C. Pierce, Davide Sangiorgi “Typing and subtyping for mobile processes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A multiple-conclusion meta-logic",
+   "authors": [
+    "Dale A. Miller"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2014 Test-of-Time Award: Dale A. Miller “A multiple-conclusion meta-logic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "The groupoid model refutes uniqueness of identity proofs",
+   "authors": [
+    "Martin Hofmann",
+    "Thomas Streicher"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2014 Test-of-Time Award: Martin Hofmann, Thomas Streicher “The groupoid model refutes uniqueness of identity proofs”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Completeness of Kozen's Axiomatisation of the Propositional Mu-Calculus",
+   "authors": [
+    "Igor Walukiewicz"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2015 Test-of-Time Award: Igor Walukiewicz “Completeness of Kozen's Axiomatisation of the Propositional Mu-Calculus”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Linear Logical Framework",
+   "authors": [
+    "Iliano Cervesato",
+    "Frank Pfenning"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2016 Test-of-Time Award: Iliano Cervesato, Frank Pfenning “A Linear Logical Framework”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "General decidability theorems for infinite-state systems",
+   "authors": [
+    "Parosh A. Abdulla",
+    "Karlis Cerans",
+    "Bengt Jonsson",
+    "Yih-Kuen Tsay"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2016 Test-of-Time Award: Parosh A. Abdulla, Karlis Cerans, Bengt Jonsson, Yih-Kuen Tsay “General decidability theorems for infinite-state systems”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Bisimulation for Labelled Markov Processes",
+   "authors": [
+    "Richard Blute",
+    "Josée Desharnais",
+    "Abbas Edalat",
+    "Prakash Panangaden"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2017 Test-of-Time Award: Richard Blute, Josée Desharnais, Abbas Edalat, Prakash Panangaden “Bisimulation for Labelled Markov Processes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Towards a Mathematical Operational Semantics",
+   "authors": [
+    "Daniele Turi",
+    "Gordon D. Plotkin"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2017 Test-of-Time Award: Daniele Turi, Gordon D. Plotkin “Towards a Mathematical Operational Semantics”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Fully Abstract Game Semantics for General References",
+   "authors": [
+    "Samson Abramsky",
+    "Kohei Honda",
+    "Guy McCusker"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2018 Test-of-Time Award: Samson Abramsky, Kohei Honda, Guy McCusker “A Fully Abstract Game Semantics for General References”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Secure Implementation of Channel Abstractions",
+   "authors": [
+    "Martín Abadi",
+    "Cédric Fournet",
+    "Georges Gonthier"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2018 Test-of-Time Award: Martín Abadi, Cédric Fournet, Georges Gonthier “Secure Implementation of Channel Abstractions”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A New Approach to Abstract Syntax Involving Binders",
+   "authors": [
+    "Murdoch Gabbay",
+    "Andrew M. Pitts"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2019 Test-of-Time Award: Murdoch Gabbay, Andrew M. Pitts “A New Approach to Abstract Syntax Involving Binders”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Abstract Syntax and Variable Binding",
+   "authors": [
+    "Marcelo P. Fiore",
+    "Gordon D. Plotkin",
+    "Daniele Turi"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2019 Test-of-Time Award: Marcelo P. Fiore, Gordon D. Plotkin, Daniele Turi “Abstract Syntax and Variable Binding”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Modality for Recursion",
+   "authors": [
+    "Hiroshi Nakano"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2020 Test-of-Time Award: Hiroshi Nakano “A Modality for Recursion”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Concurrent Omega-Regular Games",
+   "authors": [
+    "Luca de Alfaro",
+    "Thomas A. Henzinger"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2020 Test-of-Time Award: Luca de Alfaro, Thomas A. Henzinger “Concurrent Omega-Regular Games”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Dependent Types for Program Termination Verification",
+   "authors": [
+    "Hongwei Xi"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2021 Test-of-Time Award: Hongwei Xi “Dependent Types for Program Termination Verification”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Temporal Logic with Forgettable Past",
+   "authors": [
+    "François Laroussinie",
+    "Nicolas Markey",
+    "Philippe Schnoebelen"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2022 Test-of-Time Award: François Laroussinie, Nicolas Markey, Philippe Schnoebelen “Temporal Logic with Forgettable Past”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "The Metric Analogue of Weak Bisimulation for Probabilistic Processes",
+   "authors": [
+    "Josée Desharnais",
+    "Vineet Gupta",
+    "Radha Jagadeesan",
+    "Prakash Panangaden"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2022 Test-of-Time Award: Josée Desharnais, Vineet Gupta, Radha Jagadeesan, Prakash Panangaden “The Metric Analogue of Weak Bisimulation for Probabilistic Processes”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "An NP Decision Procedure for Protocol Insecurity with XOR",
+   "authors": [
+    "Yannick Chevalier",
+    "Ralf Küsters",
+    "Michaël Rusinowitch",
+    "Mathieu Turuani"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2023 Test-of-Time Award: Yannick Chevalier, Ralf Küsters, Michaël Rusinowitch, Mathieu Turuani “An NP Decision Procedure for Protocol Insecurity with XOR”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Intruder Deductions, Constraint Solving and Insecurity Decision in Presence of Exclusive or",
+   "authors": [
+    "Hubert Comon-Lundh",
+    "Vitaly Shmatikov"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2023 Test-of-Time Award: Hubert Comon-Lundh, Vitaly Shmatikov “Intruder Deductions, Constraint Solving and Insecurity Decision in Presence of Exclusive or”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Tractable conservative Constraint Satisfaction Problems",
+   "authors": [
+    "Andrei A. Bulatov"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2023 Test-of-Time Award: Andrei A. Bulatov “Tractable conservative Constraint Satisfaction Problems”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Categorical Semantics of Quantum Protocols",
+   "authors": [
+    "Samson Abramsky",
+    "Bob Coecke"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2024 Test-of-Time Award: Samson Abramsky, Bob Coecke “A Categorical Semantics of Quantum Protocols”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Transition Invariants",
+   "authors": [
+    "Andreas Podelski",
+    "Andrey Rybalchenko"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2024 Test-of-Time Award: Andreas Podelski, Andrey Rybalchenko “Transition Invariants”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Existential Positive Types and Preservation under Homomorphisisms",
+   "authors": [
+    "Benjamin Rossman"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2025 Test-of-Time Award: Benjamin Rossman “Existential Positive Types and Preservation under Homomorphisisms”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "On the Decidability of Metric Temporal Logic",
+   "authors": [
+    "Joël Ouaknine",
+    "James Worrell"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2025 Test-of-Time Award: Joël Ouaknine, James Worrell “On the Decidability of Metric Temporal Logic”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "From Nondeterministic Büchi and Streett Automata to Deterministic Parity Automata",
+   "authors": [
+    "Nir Piterman"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2026 Test-of-Time Award: Nir Piterman “From Nondeterministic Büchi and Streett Automata to Deterministic Parity Automata”"
+  },
+  {
+   "venue": "LICS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "On model-checking trees generated by higher-order recursion schemes",
+   "authors": [
+    "C.-H. Luke Ong"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://lics.siglog.org/archive/test-of-time-award.html",
+   "evidence": "LICS 2026 Test-of-Time Award: C.-H. Luke Ong “On model-checking trees generated by higher-order recursion schemes”"
   },
   {
    "venue": "LISA",

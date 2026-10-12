@@ -55,7 +55,7 @@
 //                                                                       career, poster, demo, doctoral, student-volunteer or design awards
 //   icse    https://www.icse-conferences.org/mostinfluential.html         the ICSE Most Influential Paper Award, 1989–2025: a year line, then free text wrapped over lines,
 //                                                                       "Authors: Title, ICSE-37, 2015" (one or two papers; "No award." years are left out)
-//   lics    http://lics.siglog.org/archive/test-of-time-award.html        the LICS Test-of-Time Award, 2006–: a heading "LICS Test-of-Time Award Winner in 2026", "All papers from LICS 2006 were considered", then per
+//   lics    https://lics.siglog.org/archive/test-of-time-award.html        the LICS Test-of-Time Award, 2006–: a heading "LICS Test-of-Time Award Winner in 2026", "All papers from LICS 2006 were considered", then per
 //                                                                       paper `<div><i><a>Author</a><a>Author</a></i><br><b>Title</b>` (the authors are the links, with no separator in the text)
 //
 //   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics [saved-page.html] > tot.json      (fetches the page when no file is given)
@@ -91,7 +91,7 @@ const PAGES = {
   icde: "https://tc.computer.org/tcde/icde-steering-committee/influential-papers",
   ismar: "https://www.ismar.net/past_symposiums",
   icse: "https://www.icse-conferences.org/mostinfluential.html",
-  lics: "http://lics.siglog.org/archive/test-of-time-award.html"
+  lics: "https://lics.siglog.org/archive/test-of-time-award.html"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
