@@ -165,3 +165,132 @@ test("a home page's 'Best paper:' line gets its authors from the programme entry
   const { entries: got } = parseHomepageAwards(home, { venue: "CVPR", year: 2016, source: "https://cvpr2016.thecvf.com/", programHtml: exact });
   assert.deepEqual(got.map((e) => [e.award, e.title, e.authors]), [["best", "A Synthetic Residual Paper", ["Ann Lee", "Bo Chen", "Cy Diaz"]]]);
 });
+
+// The Computer Vision Foundation's awards page: one <h1> and one table per award, a row = year, “title”, authors.
+// (Synthetic rows in the page's real structure, including its quirks.)
+const CVF = `<p><a name="CVPRBest"></a></p><h1>CVPR Best Paper Award</h1><p>Picked by a committee.</p>
+<table><tbody>
+<tr><td>2024</td><td>&#8220;A Synthetic Paper on Testing&#8221;</td><td>A. Lee, B. Chen, and C. Diaz</td></tr>
+<tr><td>2023</td><td>&#8220;Wrapped Title for the Synthetic
+Layout Test&#8221;</td><td>D. Park et al.</td></tr>
+</tbody></table>
+<h1>CVPR Best Paper Honorable Mention Award</h1>
+<table><tbody>
+<tr><td>2024</td><td>&#8220;A Student Honorable Synthetic Paper&#8221; (Student Paper)</td><td>E. Ross, F. Gray</td></tr>
+<tr><td>2011</td><td>&#8220;Plain Honorable Synthetic Paper&#8221; (Honorable Mention)</td><td>G. Stone</td></tr>
+</tbody></table>
+<h1>ECCV Best Paper Award</h1>
+<table><tbody>
+<tr><td>2002</td><td>&#8220;First Shared Synthetic Paper&#8221; and &#8220;Second Shared Synthetic Paper?&#8221;</td><td>H. Wu, I. Xu</td></tr>
+<tr><td>2002</td><td>&#8220;A Category Synthetic Paper&#8221; (Best Paper in Cognitive Vision)</td><td>J. Yan</td></tr>
+</tbody></table>
+<h1>Longuet-Higgins Prize</h1><p>CVPR papers from ten years ago.</p>
+<table><tbody><tr><td>2026</td><td>&#8220;An Old Synthetic Paper&#8221;</td><td>K. Zu, L. Mo</td></tr></tbody></table>
+<h1>PAMI Young Researcher Award</h1>
+<table><tbody><tr><td>2025</td><td>Somebody</td><td></td></tr></tbody></table>`;
+
+test("CVF awards page: sections map to venue and kind, titles are unquoted and unwrapped, notes set the label, a shared cell gives two papers", async () => {
+  const { parse } = await import("../scripts/awards/cvf.mjs");
+  const e = parse(CVF);
+  const by = (title) => e.find((x) => x.title === title);
+  assert.deepEqual(by("A Synthetic Paper on Testing"), {
+    venue: "CVPR", award: "best", awardLabel: "Best Paper", year: 2024, title: "A Synthetic Paper on Testing", authors: ["A. Lee", "B. Chen", "C. Diaz"], track: "main",
+    source: "https://www.thecvf.com/?page_id=413#CVPRBest", evidence: "CVPR Best Paper Award: 2024 “A Synthetic Paper on Testing” A. Lee, B. Chen, and C. Diaz"
+  });
+  assert.equal(by("Wrapped Title for the Synthetic Layout Test").year, 2023, "a title wrapped over two lines is one title");
+  assert.deepEqual(by("Wrapped Title for the Synthetic Layout Test").authors, ["D. Park"], "'et al.' is not an author");
+  assert.deepEqual([by("A Student Honorable Synthetic Paper").award, by("A Student Honorable Synthetic Paper").awardLabel], ["runner-up", "Best Student Paper Honorable Mention"]);
+  assert.deepEqual([by("Plain Honorable Synthetic Paper").award, by("Plain Honorable Synthetic Paper").awardLabel], ["runner-up", "Best Paper Honorable Mention"]);
+  assert.deepEqual([by("First Shared Synthetic Paper").venue, by("Second Shared Synthetic Paper?").venue], ["ECCV", "ECCV"]);
+  assert.deepEqual(by("First Shared Synthetic Paper").authors, ["H. Wu", "I. Xu"]);
+  assert.deepEqual([by("A Category Synthetic Paper").award, by("A Category Synthetic Paper").awardLabel], ["category", "Best Paper in Cognitive Vision"]);
+  assert.deepEqual([by("An Old Synthetic Paper").venue, by("An Old Synthetic Paper").award, by("An Old Synthetic Paper").awardLabel], ["CVPR", "tot", "Longuet-Higgins Prize"]);
+  assert.equal(e.length, 8, "the people awards (PAMI …) have no paper and are ignored");
+});
+
+// AAAI's paper-awards page: a year (h3 or a bold <p>), an <h4> per award, one <p> per paper. Synthetic papers, the page's quirks.
+const AAAI = `<h3 class="wp-block-heading"><strong>Past Recipients</strong></h3>
+<p class="wp-block-paragraph"><strong>2025</strong></p>
+<h4>AAAI-25 Outstanding Paper Awards</h4>
+<p>These papers exemplify the highest standards.</p>
+<p><strong>A Synthetic Paper About Voting<br></strong>Ann Lee, Bo Chen, and Cy Diaz</p>
+<h4>AAAI-25 Outstanding Paper Award – AI for Social Alignment Track</h4>
+<p><strong>A Synthetic Paper About Biodiversity</strong><br>Dee Park; Eli Ross</p>
+<h4>AAAI-25 Best Poster Award</h4>
+<p><strong>A Poster Only Title</strong><br>Fay Gray</p>
+<h4>AAAI-25 Outstanding Student Papers</h4>
+<h5>Student Abstract Program Awards</h5>
+<p><strong>A Student Abstract Only Title</strong><br>Gia Stone</p>
+<h3>2013</h3>
+<h4>AAAI-13 Outstanding Paper Awards</h4>
+<p><strong>A Synthetic Paper About Search</strong><br>Hal Wu, Ivy Xu</p>
+<p><em>Honorable Mention:</em><br><strong>A Synthetic Honorable Paper</strong><br>Jo Yan and Kai Zu<br>For Outstanding Formal Analysis</p>
+<h3>2024</h3>
+<h4>AAAI-24 Outstanding Paper Award</h4>
+<p><strong>A Synthetic Paper With Split Authors</strong></p>
+<p>Lu Mo; Ned Oh</p>
+<h4>Best Paper for the AI for Social Impact track at AAAI-2024</h4>
+<p><strong>A Synthetic Track Paper</strong></p>
+<p>Pam Quinn; Ray Sun</p>
+<p><em>Honorable Mention:</em></p>
+<p><strong>A Synthetic Track Honorable Paper</strong></p>
+<p>Sal Tan; Uma Vu</p>
+<h4>Best Student Paper for the AI for Social Impact track at AAAI-2024</h4>
+<p><strong>A Synthetic Student Paper</strong></p>
+<p>Vic Wei; Wen Xi</p>
+<h3>2009</h3>
+<h4>AAAI-09 Outstanding Paper Awards</h4>
+<p><strong>A Paper Before the Cut-Off Year</strong><br>Yan Zhu (Some University)</p>
+<h3>2023</h3>
+<h4>AAAI Distinguished Papers</h4>
+<p><em>AAAI-23 Distinguished Papers</em><br><strong>A Synthetic Distinguished Paper</strong><br>Zed Ang, Abe Bell</p>`;
+
+test("AAAI paper awards: awards, tracks and honorable mentions map to kinds and labels; poster and student-abstract sections are not paper awards", async () => {
+  const { parse } = await import("../scripts/awards/aaai.mjs");
+  const { entries, skipped } = parse(AAAI);
+  const by = (t) => entries.find((e) => e.title === t);
+  const kind = (t) => [by(t).year, by(t).award, by(t).awardLabel];
+  assert.deepEqual(kind("A Synthetic Paper About Voting"), [2025, "outstanding", "Outstanding Paper"]);
+  assert.deepEqual(by("A Synthetic Paper About Voting").authors, ["Ann Lee", "Bo Chen", "Cy Diaz"]);
+  assert.deepEqual(kind("A Synthetic Paper About Biodiversity"), [2025, "outstanding", "Outstanding Paper (AI for Social Alignment track)"]);
+  assert.equal(by("A Poster Only Title"), undefined);
+  assert.equal(by("A Student Abstract Only Title"), undefined, "an <h5> heading ends the previous section");
+  assert.deepEqual(kind("A Synthetic Honorable Paper"), [2013, "runner-up", "Outstanding Paper Honorable Mention"]);
+  assert.deepEqual(by("A Synthetic Honorable Paper").authors, ["Jo Yan", "Kai Zu"], "a note line after the authors is not an author");
+  assert.deepEqual(by("A Synthetic Paper With Split Authors").authors, ["Lu Mo", "Ned Oh"], "authors in the next paragraph");
+  assert.deepEqual(kind("A Synthetic Track Paper"), [2024, "best", "Best Paper (AI for Social Impact track)"]);
+  assert.deepEqual(kind("A Synthetic Track Honorable Paper"), [2024, "runner-up", "Best Paper (AI for Social Impact track) Honorable Mention"]);
+  assert.deepEqual(kind("A Synthetic Student Paper"), [2024, "student", "Best Student Paper (AI for Social Impact track)"]);
+  assert.deepEqual(kind("A Synthetic Distinguished Paper"), [2023, "distinguished", "Distinguished Paper"]);
+  assert.equal(by("A Paper Before the Cut-Off Year"), undefined, "years before 2010 are left out");
+  assert.deepEqual(skipped, []);
+});
+
+test("AAAI Classic Paper Award: authors from the bold runs, the title without 'presented at …', honorable mentions as runner-up; the irregular years before 2012 are left out", async () => {
+  const { parseClassic } = await import("../scripts/awards/aaai.mjs");
+  const html = `<h3>2024</h3><ul>
+<li><em>Classic Paper Recipients:</em>&nbsp;<strong>Ann Lee, Bo Chen</strong><br>A Synthetic Classic Paper<br>For introducing something synthetic.</li></ul>
+<h3>2022</h3><ul>
+<li><em>Classic Paper Award Recipients:</em> <strong>Cy Diaz</strong>, <strong>Dee Park, Eli Ross</strong><br>Another Synthetic Classic Paper presented at the Twenty-First National Conference on AI, held in 2006.<br>For something.</li>
+<li><em>Classic Paper Honorable Mention Recipients:</em> <strong>Fay Gray and Gia Stone</strong><br>A Synthetic Honorable Classic<br></li></ul>
+<h3>2011</h3><ul><li><em>Classic Paper Award Recipients:</em> <strong>Old Timer</strong><br>An Irregular Old Entry</li></ul>`;
+  const { entries } = parseClassic(html);
+  assert.deepEqual(entries.map((e) => [e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    [2024, "tot", "Classic Paper Award", "A Synthetic Classic Paper", ["Ann Lee", "Bo Chen"]],
+    [2022, "tot", "Classic Paper Award", "Another Synthetic Classic Paper", ["Cy Diaz", "Dee Park", "Eli Ross"]],
+    [2022, "runner-up", "Classic Paper Honorable Mention", "A Synthetic Honorable Classic", ["Fay Gray", "Gia Stone"]]
+  ]);
+});
+
+test("IJCAI distinguished-paper page: <strong> title and <em> authors in the entry content", async () => {
+  const { parse } = await import("../scripts/awards/ijcai.mjs");
+  const html = `<nav>Distinguished Paper Awards</nav><div class="entry-content single-content">
+<p class="x"><strong>A Synthetic Search Paper</strong><br><em>Ann Lee, Bo Chen, Cy S. Diaz</em></p>
+<p class="x"><br><strong>A Second Synthetic Paper</strong><br><em>Dee Park; Eli Ross; Fay Gray</em></p>
+</div><!-- .entry-content --><footer><p><strong>Not an entry</strong></p></footer>`;
+  const e = parse(html, { year: 2023, source: "https://example.org/x/" });
+  assert.deepEqual(e.map((x) => [x.venue, x.year, x.award, x.title, x.authors]), [
+    ["IJCAI", 2023, "distinguished", "A Synthetic Search Paper", ["Ann Lee", "Bo Chen", "Cy S. Diaz"]],
+    ["IJCAI", 2023, "distinguished", "A Second Synthetic Paper", ["Dee Park", "Eli Ross", "Fay Gray"]]
+  ]);
+});

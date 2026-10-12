@@ -25,8 +25,8 @@ _English name: Scholar Author Roles & Venue Ranks_
   `[arXiv…]` 注释，以及 Findings / Workshop / Demo 等非主会议轨道。认不出的场所不会乱标，
   而是列在面板里。
 - **获奖与报告形式**：论文标题或发表信息里写了 *Oral*、*Spotlight*、*Highlight* 或获奖（*Best / Outstanding /
-  Distinguished Paper*、*Test of Time*），或者论文在内置的获奖名单里（ACL 系列、ICLR、NeurIPS、ICML、CVPR 2025、
-  ECCV 2024，取自各会议官方获奖页），就会显示小标签（获奖为金色 ★，荣誉提名为银色，报告形式为灰蓝）；面板里也会统计，点击即可只看那几篇。
+  Distinguished Paper*、*Test of Time*），或者论文在内置的获奖名单里（ACL 系列、ICLR、NeurIPS、ICML；CVPR / ICCV / ECCV 取自计算机视觉基金会（CVF）的官方获奖总表，含时间检验奖；AAAI；
+  IJCAI 2023，均取自官方页面），就会显示小标签（获奖为金色 ★，荣誉提名为银色，报告形式为灰蓝）；面板里也会统计，点击即可只看那几篇。
   悬停提示会说明来自作者自述还是获奖名单。
 - **补全被截断的末位作者**：Scholar 会用 `…` 截断长作者列表，导致看不到大论文里的末位作者
   （某位知名 PI 的前 100 篇里有 30 篇如此）。点 **补全** 会逐篇读取论文页（约每秒一篇，

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.3.0 — 2026-10-12
+
+- **More paper awards: the list grows from 440 to 857 entries.** The **Computer Vision Foundation's own award
+  list** gives CVPR, ICCV (Marr Prize) and ECCV best papers, best student papers and honorable mentions back to
+  1990, plus the Longuet-Higgins, Helmholtz and Koenderink **test-of-time prizes** — so *Deep Residual Learning* now
+  shows both *Best paper* (CVPR 2016) and *Test of time* (CVPR 2026). **AAAI**'s paper-awards page (Outstanding, Best of
+  the special tracks, Distinguished and Student papers with their honorable mentions, 2010–2026) and its **Classic Paper
+  Award** page (2012–2026) are read too, and **IJCAI 2023**'s Distinguished Paper Awards. Each entry still cites its
+  official page and a quoted line, and the matcher still needs the identical title and the award's first author. New
+  readers: `scripts/awards/cvf.mjs`, `aaai.mjs`, `ijcai.mjs`; the CVF rows for CVPR 2023 / 2024 and ICCV 2021 were
+  checked against the conferences' own pages.
+
 ## 2.2.1 — 2026-10-11
 
 - **NeurIPS Datasets and Benchmarks Track papers are NeurIPS (CCF A / CORE A\*) in every spelling** — the phrase

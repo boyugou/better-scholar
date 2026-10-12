@@ -85,12 +85,15 @@ Scholar. **Not exhaustive**: a paper that is not listed simply has no mark.
 
 | | |
 |---|---|
-| Entries | 440: ACL 2019–2026 (8 yrs); CVPR 2016–2025 (2 yrs); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 2024–2024 (1 yr); EMNLP 2019–2025 (4 yrs); ICLR 2019–2024 (4 yrs); ICML 2019–2026 (8 yrs); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
+| Entries | 857: AAAI 2010–2026 (17 yrs); ACL 2019–2026 (8 yrs); CVPR 1991–2026 (33 yrs); CoNLL 2026–2026 (1 yr); EACL 2021–2024 (3 yrs); ECCV 1992–2024 (16 yrs); EMNLP 2019–2025 (4 yrs); ICCV 1990–2025 (18 yrs); ICLR 2019–2024 (4 yrs); ICML 2019–2026 (8 yrs); IJCAI 2023–2023 (1 yr); NAACL 2019–2022 (3 yrs); NeurIPS 2019–2025 (7 yrs) |
 | Kinds | `best`, `outstanding`, `distinguished`, `runner-up`, `student`, `category` (a named category such as *Best Resource Paper* or *Best Theme Paper*, shown under its printed name), `tot` (test of time) |
 | Source | **Official pages only.** Each entry has `source` (the page it was read from) and `evidence` (a quoted snippet that contains the title). Aggregator lists and Wikipedia are never a source |
 | ACL family | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0): the `<award name="…"/>` element on each paper, read by `scripts/awards/anthology.mjs`. Only years and venues the Anthology records are present |
 | ICLR, NeurIPS, ICML | each conference's own awards page on its virtual site (`/virtual/<year>/awards_detail`), read by `scripts/awards/virtual-site.mjs` with `scripts/awards/parse-virtual.mjs`. ICML 2023 also from its official awards page (`icml.cc/Conferences/2023/Awards`), which lists six outstanding papers. Where a virtual page is incomplete, the missing paper is added only when an official page names it |
 | CVPR 2025, ECCV 2024, ICLR 2019 | the conferences' own best-paper pages (`cvpr.thecvf.com/Conferences/2025/BestPapersDemos`, `eccv.ecva.net/Conferences/2024/Awards`, `iclr.cc/Conferences/2019/Awards`), read by `parsePaperAwardPage` |
+| CVPR, ICCV, ECCV | the **Computer Vision Foundation's own award list** (`www.thecvf.com/?page_id=413`): one table per award — CVPR / ICCV (Marr Prize) / ECCV best papers, best student papers and honorable mentions, and the Longuet-Higgins (CVPR), Helmholtz (ICCV) and Koenderink (ECCV) test-of-time prizes — read by `scripts/awards/cvf.mjs`. Its 2023 and 2024 CVPR and 2021 ICCV rows match the conferences' own pages; 54 of its best papers agree with the independent cross-check list. Years before 1990 are left out |
+| AAAI | AAAI's own paper-awards page (`aaai.org/about-aaai/aaai-awards/aaai-conference-paper-awards-and-recognition/`: Outstanding, Best (special tracks), Distinguished and Student papers with their honorable mentions, 2010–2026) and its Classic Paper Award page (`…/aaai-classic-paper-award/`, 2012–2026, as test of time), read by `scripts/awards/aaai.mjs`. Demonstration, poster and student-abstract awards are not paper awards and are left out; older lists print affiliations and are not read |
+| IJCAI 2023 | the conference site's *Distinguished Paper Awards* page (`ijcai-23.org/distinguished-paper-awards/`), read by `scripts/awards/ijcai.mjs`. Only this year's page of that shape was reachable; other IJCAI years are not covered |
 | CVPR 2016 | the home page's best-paper lines (`cvpr2016.thecvf.com`); the authors come from the programme page (`cvpr2016.thecvf.com/program/main_conference`) entry with the identical title (`parseHomepageAwards`) |
 
 Matching in the extension is deliberately strict (`src/lib/awards.js`): the full title must be identical
@@ -100,7 +103,10 @@ Tooltips say whether a mark comes from the list ("On the award list: …") or fr
 ```bash
 node scripts/awards/anthology.mjs --out raw/anthology.json          # fetches the Anthology XML (or --dir cache/)
 node scripts/awards/virtual-site.mjs --out raw/virtual-site.json                 # ICLR, NeurIPS, ICML (virtual sites + ICML's own page)
-node scripts/awards/merge-raw.mjs raw/anthology.json raw/virtual-site.json --write  # validate (sources, evidence, kinds) and merge
+node scripts/awards/cvf.mjs > raw/cvf.json                                        # the Computer Vision Foundation's list (CVPR, ICCV, ECCV)
+node scripts/awards/aaai.mjs > raw/aaai.json; node scripts/awards/aaai.mjs --classic > raw/aaai-classic.json
+node scripts/awards/ijcai.mjs 2023 https://ijcai-23.org/distinguished-paper-awards/ > raw/ijcai.json
+node scripts/awards/merge-raw.mjs raw/anthology.json raw/virtual-site.json raw/cvf.json raw/aaai.json raw/aaai-classic.json raw/ijcai.json --write  # validate (sources, evidence, kinds) and merge
 npm run data                                                       # rebuilds src/data/awards.js
 ```
 
@@ -108,9 +114,9 @@ npm run data                                                       # rebuilds sr
 parsed from jeffhuang.com/best_paper_awards — it states no licence and does not separate award levels, so it
 is a cross-check and never a source). All 21 top awards that list has for ACL agree with this file.
 
-**Known gaps (on purpose):** CVPR 2022–2024 and 2026 and ICCV best papers, and ICML 2022, are on an independent
-list but not on any official page this tooling can reach, so they are not in the file. Add them when an official
-page is found; a paper that only a secondary source names is never added. ICLR 2025–2026 and NeurIPS 2026
+**Known gaps (on purpose):** ICML 2022 (on an independent list, on no official page this tooling can reach),
+IJCAI before 2023 and after (the other years' official pages are not of one shape, or PDFs), and AAAI before 2010.
+A paper that only a secondary source names is never added. ICLR 2025–2026 and NeurIPS 2026
 had no paper awards on their pages yet when this was written. Test-of-time rows whose page omits the paper title
 are read from the award's own page when that names the paper and its first author (NeurIPS 2025 does); otherwise
 they are skipped (ICML 2022 and 2026 today).

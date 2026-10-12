@@ -117,3 +117,25 @@ test("the bundled list round-trips: every entry is found by its own title and fi
     assert.ok(hit, `${e.venue} ${e.year} ${e.title}`);
   }
 });
+
+test("the bundled list: well-known CV and AI winners are found from Scholar-style author lists (CVF and AAAI lists)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  // a best paper and, ten years on, its test-of-time prize
+  assert.deepEqual(find("Deep residual learning for image recognition", "K He, X Zhang, S Ren, J Sun"), ["CVPR 2016 best", "CVPR 2026 tot"]);
+  assert.deepEqual(find("Mask R-CNN", "K He, G Gkioxari, P Dollár, R Girshick"), ["ICCV 2017 best"]);
+  assert.deepEqual(find("Fast R-CNN", "R Girshick"), ["ICCV 2025 tot"]);
+  assert.deepEqual(find("LSD-SLAM: Large-scale direct monocular SLAM", "J Engel, T Schöps, D Cremers"), ["ECCV 2024 tot"]);
+  assert.deepEqual(find("BioCLIP: A vision foundation model for the tree of life", "S Stevens, J Wu, MJ Thompson, Y Su"), ["CVPR 2024 best-student"]);
+  assert.deepEqual(find("Swin transformer: Hierarchical vision transformer using shifted windows", "Z Liu, Y Lin, Y Cao, H Hu"), ["ICCV 2021 best"]);
+  // two papers of one cell on the CVF page, and one paper with two prizes at one conference
+  assert.deepEqual(find("What energy functions can be minimized via graph cuts?", "V Kolmogorov, R Zabih"), ["ECCV 2002 best", "ECCV 2012 tot"]);
+  // AAAI: outstanding / distinguished / classic, and an IJCAI distinguished paper
+  assert.deepEqual(find("Misspecification in inverse reinforcement learning", "J Skalse, A Abate"), ["AAAI 2023 outstanding"]);
+  assert.deepEqual(find("Informer: Beyond efficient transformer for long sequence time-series forecasting", "H Zhou, S Zhang, J Peng"), ["AAAI 2021 outstanding"]);
+  assert.deepEqual(find("Maximum entropy inverse reinforcement learning", "BD Ziebart, AL Maas, JA Bagnell, AK Dey"), ["AAAI 2024 tot"]);
+  assert.deepEqual(find("Levin tree search with context models", "L Orseau, M Hutter, LHS Lelis"), ["IJCAI 2023 distinguished"]);
+  // the same title with someone else first, or a near title, is not the paper
+  assert.deepEqual(find("Mask R-CNN", "A Smith, B Jones"), []);
+  assert.deepEqual(find("Mask R-CNN for object detection", "K He, G Gkioxari"), []);
+});
