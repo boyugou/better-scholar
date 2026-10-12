@@ -102,7 +102,7 @@
   function toText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [] } = {}) {
     const src = summary.source === "core" ? "CORE" : "CCF";
     const lines = [];
-    lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role and ${src} tier`);
+    lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role and ${src} rank`);
     for (const r of summary.rows) {
       if (!r.total) continue;
       const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}: ${r[c]}`);

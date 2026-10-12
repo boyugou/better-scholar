@@ -86,7 +86,7 @@ test("unmatchedVenues lists unplaced venues, ignoring preprints and secondary tr
 test("toText / toTsv", () => {
   const s = m.summarize([paper("first", "A"), paper("first", null), paper("last", "B")], "ccf");
   const text = m.toText(s, { owner: "Jane Doe", edition: "CCF 2026 (7th edition)" });
-  assert.match(text, /^Jane Doe — 3 papers on Google Scholar, by authorship role and CCF tier/);
+  assert.match(text, /^Jane Doe — 3 papers on Google Scholar, by authorship role and CCF rank/);
   assert.match(text, /First author: 2 \(A: 1, unranked: 1\)/);
   assert.match(text, /Last author: 1 \(B: 1\)/);
   assert.match(text, /CCF 2026 \(7th edition\)$/);

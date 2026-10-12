@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "label": "Paper awards (curated)",
+    "edition": "2026-10",
+    "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 2012-2026, from official award pages",
+    "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md."
+  },
+  "entries": []
+}

@@ -13,7 +13,7 @@
   const ROLE_KEYS = ["first", "cofirst", "second", "last"];
 
   // raw:  { authorsText, venueText, title?, citations?, year? }   — straight from the Scholar list view
-  // ctx:  { owner: {name, alternates?}, resolver, resolved?: { authors?, venue? }, venueWord? }
+  // ctx:  { owner: {name, alternates?}, resolver, resolved?: { authors?, venue? }, venueWord?, awards? }
   //       `resolved` is what a paper's detail page said (full author list, clean venue).
   function analyzeRow(raw, ctx) {
     const resolved = ctx.resolved || null;
@@ -38,8 +38,11 @@
       citations: raw.citations || 0,
       year: raw.year || null,
       fromDetail: !!(resolved && resolved.authors),
-      // award / talk words the authors wrote into the title or venue (see marks.js)
-      marks: marks.detect({ title: raw.title, venue: [venueText, resolved && resolved.venue] }, { venueWord: ctx.venueWord })
+      // award / talk words the author wrote into the title or venue (marks.js), plus awards from the
+      // bundled list when one is given (ctx.awards, awards.js)
+      marks: marks.merge(
+        marks.detect({ title: raw.title, venue: [venueText, resolved && resolved.venue] }, { venueWord: ctx.venueWord }),
+        ctx.awards ? ctx.awards.lookup({ title: raw.title, authorsText }) : [])
     };
   }
 

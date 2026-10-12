@@ -83,6 +83,15 @@ const manifestPath = path.join(extDir, "manifest.json");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 manifest.content_scripts[0].matches = ["http://127.0.0.1/citations*"];
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+// Give the test copy a small award list aimed at the synthetic "marks-demo" profile (the shipped list is
+// checked by test/awards.test.js; these entries only exercise the page behaviour).
+const awardsLib = require(path.join(repo, "src/lib/awards.js"));
+const testAwards = { meta: { label: "test list", edition: "test", count: 2 }, items: [
+  [awardsLib.titleKey("A Plain Preprint"), awardsLib.surnameKey("A Smith"), "ICLR", 2023, "best", "Best Paper Award"],
+  [awardsLib.titleKey("Deep Things for Recognition"), awardsLib.surnameKey("J Doe"), "CVPR", 2016, "best", "Best Paper Award"]
+] };
+fs.writeFileSync(path.join(extDir, "data", "awards.js"),
+  `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(testAwards)} });\n`);
 // unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p
 const extId = [...crypto.createHash("sha256").update(fs.realpathSync(extDir)).digest("hex").slice(0, 32)]
   .map((c) => String.fromCharCode("a".charCodeAt(0) + parseInt(c, 16))).join("");
@@ -237,7 +246,7 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     // -- 12. clipboard
     await page.click('[data-act="copy-text"]');
     const clip = await page.evaluate(() => navigator.clipboard.readText());
-    assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF tier/);
+    assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF rank/);
     assert.match(clip, /Last author: \d+ \(/);
     assert.match(clip, /CCF 2026 \(7th edition\)/);
     await page.click('[data-act="copy-tsv"]');
@@ -340,23 +349,29 @@ const visibleRows = (page) => page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)")
     await page.goto(fx3.url);
     await page.waitForSelector("#rr-panel");
     const chipKinds = await page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).map((tr) => Array.from(tr.querySelectorAll(".rr-chip-mark")).map((c) => c.dataset.mark).join("+")));
-    assert.deepEqual(chipKinds, ["spotlight", "oral", "best", "outstanding", "", "", "finalist", "oral", "", "runner-up"]);
+    assert.deepEqual(chipKinds, ["spotlight", "oral", "best", "outstanding", "", "", "finalist", "oral", "best", "runner-up"]);
     const pill = (g) => page.locator(`#rr-panel button[data-mark-group="${g}"]`);
-    assert.match(await pill("award").textContent(), /Awards\s*3/);
+    assert.match(await pill("award").textContent(), /Awards\s*4/);
     assert.match(await pill("oral").textContent(), /Oral\s*2/);
     assert.match(await pill("spotlight").textContent(), /Spotlight\s*1/);
     assert.equal(await pill("highlight").count(), 0, "no pill for a group nobody has");
     const tip = await page.locator('.rr-chip-mark[data-mark="oral"]').first().getAttribute("title");
     assert.match(tip, /Written by the author \(not checked\): “Oral”/);
-    ok("chips and pills show what the authors wrote; Oral Oncology / Spotlight on … stay unmarked, a finalist is a chip but not an award");
+    const tipOf = (row) => page.locator(`#gsc_a_b tr.gsc_a_tr:nth-child(${row}) .rr-chip-mark`).first().getAttribute("title");
+    assert.match(await tipOf(9), /On the award list: Best Paper Award — ICLR 2023/);
+    assert.doesNotMatch(await tipOf(9), /Written by the author/);
+    const both = await tipOf(3);
+    assert.match(both, /On the award list: Best Paper Award — CVPR 2016/);
+    assert.match(both, /Written by the author \(not checked\): “Best Paper Award”/);
+    ok("chips and pills show what the authors wrote and what the award list says; Oral Oncology / Spotlight on … stay unmarked, a finalist is a chip but not an award");
     await pill("award").click();
-    assert.equal(await visibleRows(page), 3);
+    assert.equal(await visibleRows(page), 4);
     await pill("award").click();
     assert.equal(await visibleRows(page), 10);
     ok("a pill lists exactly those papers, and clicking again clears it");
     await page.click('[data-act="copy-text"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
-    assert.match(text, /Awards & talks: Awards 3, Oral 2, Spotlight 1 \(as written by the authors\)/);
+    assert.match(text, /Awards & talks: Awards 4, Oral 2, Spotlight 1 \(from the authors' own words or the award list\)/);
     ok("Copy summary includes the awards and talks line");
     await page.screenshot({ path: path.join(outDir, "marks.png") });
     await page.click('input[data-badge="marks"]');

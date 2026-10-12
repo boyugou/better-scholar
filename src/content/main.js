@@ -19,6 +19,8 @@
   // venue names/acronyms the dataset knows, so "(Interspeech 2022 Oral)" in a title reads as a marker
   const venueWords = new Set([...B.data.ccf.venues.map((v) => v.abbr), ...B.data.core.venues.map((v) => v.acronym)].filter(Boolean).map((w) => w.toLowerCase()));
   const venueWord = (w) => venueWords.has(w);
+  // award-winning papers (bundled list); optional — without it only the authors' own words count
+  const awards = B.awards && B.data.awards ? B.awards.createIndex(B.data.awards.items) : null;
   const edition = { ccf: B.data.ccf.meta.label, core: B.data.core.meta.label };
 
   const state = {
@@ -33,7 +35,7 @@
   let loadAbort = null, resolveAbort = null;
 
   const owner = () => ({ name: headerName, alternates: variants });
-  const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord });
+  const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
 
   // ---- rows ---------------------------------------------------------------
 
@@ -71,11 +73,16 @@
     return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
   }
 
-  // What the author wrote about the paper's standing ("Oral", "Best Paper Award"…), shown as written.
+  // A paper's standing: an award from the bundled list, or what the author wrote ("Oral", "Best Paper Award"…).
   function markChip(mark) {
     const star = mark.group === "award" ? "★ " : "";
-    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group,
-      title: mark.label + "\n" + t("tipMarkAuthor", [mark.text]) }, star + mark.label);
+    const lines = [mark.label];
+    if (mark.source === "list") {
+      lines.push(t("tipMarkList", [mark.awardLabel || mark.label, mark.venue + " " + mark.year]));
+      if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
+    } else lines.push(t("tipMarkAuthor", [mark.text]));
+    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
+      title: lines.join("\n") }, star + mark.label);
   }
 
   function roleChip(a) {

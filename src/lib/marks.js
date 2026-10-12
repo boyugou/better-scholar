@@ -23,6 +23,10 @@
     finalist: "finalist", oral: "oral", spotlight: "spotlight", highlight: "highlight"
   };
   const GROUPS = ["award", "oral", "spotlight", "highlight"];
+  const LABEL = {
+    best: "Best paper", "best-student": "Best student paper", outstanding: "Outstanding paper", distinguished: "Distinguished paper",
+    "runner-up": "Honorable mention", tot: "Test of time", finalist: "Best paper finalist", oral: "Oral", spotlight: "Spotlight", highlight: "Highlight"
+  };
   const groupOf = (kind) => GROUP[kind] || null;
 
   const S = "[-\\s]";   // separator inside a phrase: "best paper", "best-paper"
@@ -116,7 +120,7 @@
   function detect(fields, opts = {}) {
     const venueWord = opts.venueWord;
     const found = new Map();
-    const add = (m, field) => { if (!found.has(m.kind)) found.set(m.kind, { kind: m.kind, group: GROUP[m.kind], label: m.label, text: m.text.trim(), field }); };
+    const add = (m, field) => { if (!found.has(m.kind)) found.set(m.kind, { kind: m.kind, group: GROUP[m.kind], label: m.label, text: m.text.trim(), field, source: "author" }); };
 
     const venues = [].concat(fields.venue || []).map(norm).filter(Boolean);
     for (const v of venues) {
@@ -130,6 +134,22 @@
       }
     }
     return KINDS.filter((k) => found.has(k)).map((k) => found.get(k));
+  }
+
+  // Combine what the author wrote with what the award list says. The list wins where both name the same
+  // kind (it is the better evidence) but remembers the author's words in `declared`.
+  //   listed: [{ kind, venue, year, awardLabel }]  →  [{ kind, group, label, source, … }], most notable first
+  function merge(declared, listed) {
+    const byKind = new Map();
+    for (const m of declared || []) byKind.set(m.kind, m);
+    for (const m of listed || []) {
+      const prev = byKind.get(m.kind);
+      byKind.set(m.kind, {
+        kind: m.kind, group: GROUP[m.kind], label: LABEL[m.kind], text: "", field: "list", source: "list",
+        venue: m.venue, year: m.year, awardLabel: m.awardLabel || "", ...(prev ? { declared: prev.text } : {})
+      });
+    }
+    return KINDS.filter((k) => byKind.has(k)).map((k) => byKind.get(k));
   }
 
   // Counts for the panel: papers per group (a paper counts once per group) among `papers`,
@@ -149,5 +169,5 @@
 
   const inGroup = (paper, group) => (paper.marks || []).some((m) => m.group === group);
 
-  return { KINDS, GROUPS, groupOf, scan, detect, summarize, inGroup };
+  return { KINDS, GROUPS, LABEL, groupOf, scan, detect, merge, summarize, inGroup };
 });

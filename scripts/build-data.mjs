@@ -7,10 +7,12 @@
 // The extension has no build step, so the generated files are committed. They are
 // plain scripts that attach to globalThis.RolesRanks.data (and export under node).
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const require = createRequire(import.meta.url);
 const check = process.argv.includes("--check");
 let stale = false;
 
@@ -31,7 +33,7 @@ function emit(name, key, payload, source) {
     if (prev !== body) { console.error(`stale: src/data/${name} (run scripts/build-data.mjs)`); stale = true; }
   } else {
     writeFileSync(dest, body);
-    console.log(`wrote src/data/${name}  (${payload.venues.length} venues, ${(body.length / 1024).toFixed(0)} KB)`);
+    console.log(`wrote src/data/${name}  (${(payload.venues || payload.items).length} ${payload.venues ? "venues" : "awards"}, ${(body.length / 1024).toFixed(0)} KB)`);
   }
 }
 
@@ -48,5 +50,13 @@ emit("core.js", "core", {
   meta: { label: "ICORE 2026", edition: core.meta.edition, counts: core.meta.counts },
   venues: core.venues.map((v) => ({ acronym: v.acronym, name: v.name, rank: v.rank }))
 }, "data/core-2026.json");
+
+// ---- paper awards (curated; keys are computed with the runtime's own normalisers)
+const awards = JSON.parse(readFileSync(join(root, "data", "awards-2026.json"), "utf8"));
+const awardsLib = require(join(root, "src", "lib", "awards.js"));
+emit("awards.js", "awards", {
+  meta: { label: awards.meta.label, edition: awards.meta.edition, count: awards.entries.length },
+  items: awards.entries.map((e) => [awardsLib.titleKey(e.title), awardsLib.surnameKey(e.authors[0]), e.venue, e.year, e.award, e.awardLabel || ""])
+}, "data/awards-2026.json");
 
 if (check && stale) process.exit(1);

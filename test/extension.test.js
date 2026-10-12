@@ -49,6 +49,8 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
   const idx = (f) => cs.js.indexOf(f);
   assert.ok(idx("lib/names.js") < idx("lib/analysis.js"));
   assert.ok(idx("lib/marks.js") < idx("lib/analysis.js"));
+  assert.ok(idx("lib/names.js") < idx("lib/awards.js"));
+  assert.ok(idx("data/awards.js") < idx("content/main.js"));
   assert.ok(idx("lib/venues.js") < idx("content/main.js"));
   assert.ok(idx("data/ccf.js") < idx("content/main.js") && idx("data/core.js") < idx("content/main.js") && idx("data/aliases.js") < idx("content/main.js"));
   assert.ok(idx("content/dom.js") < idx("content/store.js") && idx("content/scholar.js") < idx("content/panel.js") && idx("content/panel.js") < idx("content/main.js"));

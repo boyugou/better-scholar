@@ -39,16 +39,27 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "取自 Scholar 上每篇论文的标题和发表信息：作者自己写的内容，未与任何获奖名单核对。"
+    "message": "来自 Scholar 上每篇论文标题和发表信息里作者自己写的文字（未核实），以及内置的主要会议获奖论文名单。"
   },
   "marksAsWritten": {
-    "message": "作者自述"
+    "message": "来自作者自述或获奖名单"
   },
   "tipMarkAuthor": {
     "message": "作者自己写的（未核实）：“$N1$”",
     "placeholders": {
       "n1": {
         "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "获奖名单：$N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
       }
     }
   },

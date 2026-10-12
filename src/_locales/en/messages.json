@@ -39,16 +39,27 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "Read from each paper's title and venue text on Scholar: what the authors wrote, not checked against any award list."
+    "message": "From the authors' own words in each paper's title and venue text on Scholar (not checked), and from a bundled list of award-winning papers at major conferences."
   },
   "marksAsWritten": {
-    "message": "as written by the authors"
+    "message": "from the authors' own words or the award list"
   },
   "tipMarkAuthor": {
     "message": "Written by the author (not checked): “$N1$”",
     "placeholders": {
       "n1": {
         "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "On the award list: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
       }
     }
   },
