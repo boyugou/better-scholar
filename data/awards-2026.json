@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6431
+  "count": 6436
  },
  "entries": [
   {
@@ -49183,6 +49183,92 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#Koenderink",
    "evidence": "Koenderink Prize: 2024 “Microsoft COCO: Common Objects in Context” T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, C. Lawrence Zitnick"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Applied Data Science Track Award",
+   "title": "Graph Neural Networks for Jamming Source Localization",
+   "authors": [
+    "Dania Herzalla",
+    "Willian Tessaro",
+    "Martin Andreoni"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2025/awards/",
+   "evidence": "ECML PKDD 2025 Best Paper Applied Data Science Track Award: Graph Neural Networks for Jamming Source Localization — Dania Herzalla, Willian Tessaro, Martin Andreoni"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Research Track Award",
+   "title": "PAR-AdvGAN: Improving Adversarial Attack Capability with Progressive Auto-Regression AdvGAN",
+   "authors": [
+    "Jiayu Zhang",
+    "Zhiyu Zhu",
+    "Xinyi Wang",
+    "Silin Liao",
+    "Zhibo Jin",
+    "Flora Salim",
+    "Huaming Chen"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2025/awards/",
+   "evidence": "ECML PKDD 2025 Best Paper Research Track Award: PAR-AdvGAN: Improving Adversarial Attack Capability with Progressive Auto-Regression AdvGAN — Jiayu Zhang, Zhiyu Zhu, Xinyi Wang, Silin Liao, Zhibo Jin, Flora Salim, Huaming Chen"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Research Track Award",
+   "title": "Fairness-Aware Graph Representation Learning with Limited Demographic Information",
+   "authors": [
+    "Zichong Wang",
+    "Zhipeng Yin",
+    "Liping Yang",
+    "Jun Zhuang",
+    "Rui Yu",
+    "Qingzhao Kong",
+    "Wenbin Zhang"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2025/awards/",
+   "evidence": "ECML PKDD 2025 Best Student Paper Research Track Award: Fairness-Aware Graph Representation Learning with Limited Demographic Information — Zichong Wang, Zhipeng Yin, Liping Yang, Jun Zhuang, Rui Yu, Qingzhao Kong, Wenbin Zhang"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Applied Data Science Track Award",
+   "title": "WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care",
+   "authors": [
+    "Vanessa Borst",
+    "Timo Dittus",
+    "Tassilo Dege",
+    "Astrid Schmieder",
+    "Samuel Kounev"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2025/awards/",
+   "evidence": "ECML PKDD 2025 Best Student Paper Applied Data Science Track Award: WoundAmbit: Bridging State-of-the-Art Semantic Segmentation and Real-World Wound Care — Vanessa Borst, Timo Dittus, Tassilo Dege, Astrid Schmieder, Samuel Kounev"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Difference Target Propagation",
+   "authors": [
+    "Dong-Hyun Lee",
+    "Saizheng Zhang",
+    "Asja Fischer",
+    "Yoshua Bengio"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2025/awards/",
+   "evidence": "ECML PKDD 2025 Test of Time Award: Difference Target Propagation — Dong-Hyun Lee, Saizheng Zhang, Asja Fischer, Yoshua Bengio"
   },
   {
    "venue": "EMNLP",

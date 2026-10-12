@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.49 — 2026-10-12
+
+- ECML PKDD 2025's test of time, best and best student papers of both tracks (5 papers; the list had none) from the conference's own awards page (`tot.mjs ecml`). The list has 6436 awards.
+
 ## 2.10.48 — 2026-10-12
 
 - COLING 2025's best long / short, outstanding and category (social impact, low-resource language, dataset, demonstration) papers (15) and Interspeech 2024's two best papers, from the conferences' own pages (`tot.mjs coling`, `tot.mjs interspeech`); the list had none of either. The list has 6431 awards.

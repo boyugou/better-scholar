@@ -1949,3 +1949,9 @@ test("Interspeech best-paper page: only the shortlisted papers marked WINNERS ar
   const h = `<p>1. Ann Lee, Bo Chan & Cy Dunn – WINNERS</p><p>A Speech Recognition Paper Title</p><p>2. Ed Fox, Flo Gray</p><p>A Shortlisted Only Paper Title</p>`;
   assert.deepEqual(parseInterspeechBest(h, "https://interspeech2024.org/best-paper-award-2024/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A Speech Recognition Paper Title | Ann Lee; Bo Chan; Cy Dunn"]);
 });
+
+test("ECML PKDD awards page: 'Title, by A, B and C.' under the award headings", async () => {
+  const { parseEcmlAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Test of Time</p><p>An Old Learning Paper Title, by Ann Lee, Bo Chan.</p><p>Best Student Paper Research Track</p><p>A Fair Graph Paper Title, by Cy Dunn, Ed Fox and Flo Gray.</p><p>Twitter</p>`;
+  assert.deepEqual(parseEcmlAwards(h, "https://ecmlpkdd.org/2025/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["tot An Old Learning Paper Title | Ann Lee; Bo Chan", "student A Fair Graph Paper Title | Cy Dunn; Ed Fox; Flo Gray"]);
+});
