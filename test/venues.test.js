@@ -671,3 +671,17 @@ test("names that Scholar prints with the sponsor or a former wording: ACM SIGSOF
   assert.equal(brief("Human Language Technologies: The 2010 Annual Conference of the North …, 2010"), "CCF B NAACL · CORE A NAACL");
   assert.equal(brief("USENIX security Symposium, 11th. USENIX, 2002"), "CCF A USENIX Security · CORE A* USENIX-Security");
 });
+
+test("earlier or sponsor-carrying names: SIGCSE's Technical Symposium, SPAA, SenSys, CoNEXT, SECON, SIGdial, PODS under SIGACT-SIGMOD; 'Proceedings ASE 2000.' names the event", () => {
+  assert.equal(brief("Proceedings of the 54th ACM Technical Symposium on Computer Science …, 2023"), "CORE A SIGCSE");
+  assert.equal(brief("Proceedings of the seventh annual ACM symposium on Parallel algorithms and …, 1995"), "CCF B SPAA · CORE B SPAA");
+  assert.equal(brief("Proceedings of the 6th ACM conference on Embedded network sensor systems …, 2008"), "CCF B SenSys");
+  assert.equal(brief("Proceedings of the 2008 ACM CoNEXT conference, 1-6, 2008"), "CCF B CoNEXT · CORE A CoNEXT");
+  assert.equal(brief("2008 5th Annual IEEE Communications Society Conference on Sensor, Mesh and …, 2008"), "CCF B SECON · CORE B SECON");
+  assert.equal(brief("Proceedings of the 18th Annual SIGdial Meeting on Discourse and Dialogue …, 2017"), "CORE B SIGdial");
+  assert.equal(brief("Proceedings of the 1st ACM SIGACT-SIGMOD symposium on Principles of database …, 1982"), "CCF B PODS · CORE A* PODS");
+  assert.equal(brief("Proceedings ASE 2000. Fifteenth IEEE International Conference on Automated …, 2000"), "CCF A ASE · CORE A* ASE");
+  assert.equal(brief("Proceedings LCN 2001. 26th Annual IEEE Conference on Local Computer Networks …, 2001"), "CCF C LCN · CORE B LCN");
+  // the proceedings' title word in front of ordinary words is nothing
+  assert.equal(brief("Proceedings of Machine Learning Research 97, 1-10, 2019"), "");
+});

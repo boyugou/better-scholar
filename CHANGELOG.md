@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.19 — 2026-10-12
+
+More names the lists spell otherwise (the next batch of the most frequent unmatched strings): SIGCSE's *ACM Technical Symposium on Computer
+Science Education* (eleven strings on one profile), SPAA's *Parallel Algorithms and Architectures*, SenSys's *Embedded Network Sensor Systems*,
+*ACM CoNEXT conference*, SECON's *IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc …*, SIGdial's *Dialogue*, PODS under
+*SIGACT-SIGMOD*, and the IEEE form *"Proceedings ASE 2000. Fifteenth IEEE International Conference on …"* (the proceedings' own title word in
+front of an acronym and a year is no longer taken for the venue's first word).
+
 ## 2.5.18 — 2026-10-12
 
 From the most frequent venue strings that matched nothing across the 55 real profiles:

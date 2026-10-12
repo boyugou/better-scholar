@@ -362,7 +362,8 @@
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
     // leading acronym: "ISCA 2014", "MICRO 2017", "ACL 2015 Proceedings of …", "NDSS 5", "HPCA-16 2010 …"
-    const head0 = p.withParens.replace(/^[\s,]+/, "");
+    // ("Proceedings ASE 2000. Fifteenth IEEE International Conference on Automated …": the proceedings' own title word is not the venue)
+    const head0 = p.withParens.replace(/^[\s,]+/, "").replace(/^(?:proceedings?|proc\.?)(?:\s+of)?\s+(?:the\s+)?(?=[A-Z][A-Za-z0-9&'’-]{1,14}[\s,]+(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b))/i, "");
     const head = head0.replace(ORG_LEAD, "");
     const first = head.split(/[\s,]+/)[0] || "";
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");

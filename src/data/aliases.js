@@ -161,8 +161,8 @@
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },
     { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages", "ACM SIGPLAN Symposium on Principles of Programming Languages", "Symposium on Principles of Programming Languages"] },
     // PODS: CCF writes SIGAI, CORE and the proceedings SIGART
-    { ccf: "PODS", names: ["ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
-    { core: "PODS", names: ["ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", "ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
+    { ccf: "PODS", names: ["ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "ACM SIGACT-SIGMOD Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
+    { core: "PODS", names: ["ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", "ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "ACM SIGACT-SIGMOD Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
     { ccf: "OOPSLA", core: "OOPSLA", names: ["ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"] },
     { ccf: "STOC", core: "STOC", names: ["ACM Symposium on Theory of Computing", "ACM SIGACT Symposium on Theory of Computing"] },
     { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"] },
@@ -177,6 +177,13 @@
     { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
     { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
     { ccf: "SAC", core: "SAC", noBareAcronym: true, names: ["Selected Areas in Cryptography"] },
+    // earlier or sponsor-carrying names Scholar prints (the lists give the current ones)
+    { ccf: "SPAA", core: "SPAA", names: ["ACM Symposium on Parallel Algorithms and Architectures", "Symposium on Parallel Algorithms and Architectures"] },
+    { ccf: "SenSys", names: ["ACM Conference on Embedded Network Sensor Systems", "ACM International Conference on Embedded Networked Sensor Systems", "International Conference on Embedded Networked Sensor Systems"] },
+    { ccf: "CoNEXT", core: "CoNEXT", names: ["ACM CoNEXT Conference", "CoNEXT Conference"] },
+    { ccf: "SECON", core: "SECON", names: ["IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks", "Sensor, Mesh and Ad Hoc Communications and Networks"] },
+    { core: "SIGCSE", names: ["ACM Technical Symposium on Computer Science Education", "SIGCSE Technical Symposium on Computer Science Education", "ACM SIGCSE Technical Symposium on Computer Science Education", "Technical Symposium on Computer Science Education"] },
+    { core: "SIGdial", names: ["SIGdial Meeting on Discourse and Dialogue", "Annual SIGdial Meeting on Discourse and Dialogue", "Annual Meeting of the Special Interest Group on Discourse and Dialogue"] },
     { ccf: "ACISP", names: ["Australasian Conference on Information Security and Privacy"] },
     { ccf: "CT-RSA", core: "CT-RSA", names: ["Cryptographers' Track at the RSA Conference", "Cryptographers' Track at RSA Conference"] },
     // AsiaCCS was the ACM Symposium on Information, Computer and Communications Security (ASIACCS 2006–2010)
