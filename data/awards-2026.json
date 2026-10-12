@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4968
+  "count": 4978
  },
  "entries": [
   {
@@ -50492,6 +50492,170 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "HotStorage '20: Say Goodbye to Off-heap Caches! On-heap Caches Using Memory-Mapped I/O — Iacovos G. Kolokasis, Institute of Computer Science (ICS), Foundation for Research and Technology – Hellas (FORTH), Greece; Anastasios Papagiannis, Institute of Computer Science (ICS), Foundation for Research and Technology – Hellas (FORTH), Greece; Polyvios Pratikakis, Institute of Computer Science (ICS), Fou"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamically Exploiting Narrow Width Operands to Improve Processor Power and Performance",
+   "authors": [
+    "David Brooks",
+    "Margaret Martonosi"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2018 Test of Time Award: David Brooks and Margaret Martonosi “Dynamically Exploiting Narrow Width Operands to Improve Processor Power and Performance”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamic Branch Predication with Perceptrons",
+   "authors": [
+    "D.A. Jimenez",
+    "C. Lin"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2019 Test of Time Award: D.A. Jimenez and C. Lin “Dynamic Branch Predication with Perceptrons”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Delay Model and Speculative Architecture for Pipelined Routers",
+   "authors": [
+    "L.S. Peh",
+    "W.J. Dally"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2020 Test of Time Award: L.S. Peh and W.J. Dally “A Delay Model and Speculative Architecture for Pipelined Routers”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Dynamic Thermal Management for High-Performance Microprocessors",
+   "authors": [
+    "D.M. Brooks",
+    "M. Martonosi"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2021 Test of Time Award: D.M. Brooks, M. Martonosi “Dynamic Thermal Management for High-Performance Microprocessors”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Runahead Execution: An Alternative to Very Large Instruction Windows for Out-of-Order Processors",
+   "authors": [
+    "O. Mutlu",
+    "J. Stark",
+    "C. Wilkerson",
+    "Y. N. Patt"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2021 Test of Time Award: O. Mutlu, J. Stark, C. Wilkerson, Y. N. Patt “Runahead Execution: An Alternative to Very Large Instruction Windows for Out-of-Order Processors”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Energy-Efficient Processor Design Using Multiple Clock Domains with Dynamic Voltage and Frequency Scaling",
+   "authors": [
+    "Greg Semeraro",
+    "Grigorios Magklis",
+    "Rajeev Balasubramonian",
+    "David H. Albonesi",
+    "Sandhya Dwarkadas",
+    "Michael L. Scott"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2022 Test of Time Award: Greg Semeraro, Grigorios Magklis, Rajeev Balasubramonian, David H. Albonesi, Sandhya Dwarkadas, and Michael L. Scott “Energy-Efficient Processor Design Using Multiple Clock Domains with Dynamic Voltage and Frequency Scaling”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Predicting Inter-Thread Cache Contention on a Chip Multi-Processor Architecture",
+   "authors": [
+    "Dhruba Chandra",
+    "Fei Guo",
+    "Seongbeom Kim",
+    "Yan Solihin"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2023 Test of Time Award: Dhruba Chandra, Fei Guo, Seongbeom Kim, and Yan Solihin “Predicting Inter-Thread Cache Contention on a Chip Multi-Processor Architecture”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Data Cache Prefetching Using a Global History Buffer",
+   "authors": [
+    "Kyle J. Nesbit",
+    "James E. Smith"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2024 Test of Time Award: Kyle J. Nesbit and James E. Smith “Data Cache Prefetching Using a Global History Buffer”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Caches and hash trees for efficient memory integrity verification",
+   "authors": [
+    "Blaise Gassend",
+    "G. Edward Suh",
+    "Dwaine Clarke",
+    "Marten van Dijk",
+    "Srinivas Devadas"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2025 Test of Time Award: Blaise Gassend; G.Edward Suh; Dwaine Clarke; Marten van Dijk; Srinivas Devadas “Caches and hash trees for efficient memory integrity verification”"
+  },
+  {
+   "venue": "HPCA",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Evaluating MapReduce for Multi-core and Multiprocessor Systems",
+   "authors": [
+    "Colby Ranger",
+    "Ramanan Raghuraman",
+    "Arun Penmetsa",
+    "Gary Bradski",
+    "Christos Kozyrakis"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+   "evidence": "HPCA 2026 Test of Time Award: Colby Ranger; Ramanan Raghuraman; Arun Penmetsa; Gary Bradski; Christos Kozyrakis “Evaluating MapReduce for Multi-core and Multiprocessor Systems”"
   },
   {
    "venue": "HRI",

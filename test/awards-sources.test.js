@@ -1224,3 +1224,18 @@ test("PKC and CHES Test of Time pages: the TCC template, and `<b>2024:</b> <a>Ti
     "CHES 2025/2005 A Very Compact S-box for AES | David Canright"
   ]);
 });
+
+test("HPCA Test of Time page: `2026: “Title”` then `by A; B, published at HPCA 2007.`; an honorable mention is not read", async () => {
+  const { parseHpcaTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>Previous winners</h3><p>2026: “Evaluating MapReduce for Multi-core and Multiprocessor Systems”</p><p>by Colby Ranger; Ramanan Raghuraman; Gary Bradski; Christos Kozyrakis, published at HPCA 2007.</p>
+<p>2025: “Caches and hash trees for efficient memory integrity verification.”</p><p>by Blaise Gassend; G.Edward Suh; Marten van Dijk, published at HPCA 2003.</p>
+<p>2020: “A Delay Model and Speculative Architecture for Pipelined Routers”</p><p>by L.S. Peh and W.J. Dally, published at HPCA 2001.</p>
+<p>“Predictive Sequential Associated Cache”, B. Calder, D. Grunwald and J. Emer, HPCA 1996, has received honorable mention.</p>`;
+  const { entries, skipped } = parseHpcaTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2026/2007 Evaluating MapReduce for Multi-core and Multiprocessor Systems | Colby Ranger; Ramanan Raghuraman; Gary Bradski; Christos Kozyrakis",
+    "2025/2003 Caches and hash trees for efficient memory integrity verification | Blaise Gassend; G. Edward Suh; Marten van Dijk",
+    "2020/2001 A Delay Model and Speculative Architecture for Pipelined Routers | L.S. Peh; W.J. Dally"
+  ]);
+  assert.deepEqual(skipped, []);
+});

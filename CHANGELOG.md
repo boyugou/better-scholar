@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.11 — 2026-10-12
+
+- The HPCA Test of Time Award (2018–2026, 10 papers) from the TCCA's own page (`tot.mjs hpca`). The bundled list has 4978 awards.
+
 ## 2.9.10 — 2026-10-12
 
 - The PKC Test of Time Award (2019–2026, 16 papers) and the CHES Test of Time Award (2020–2025, 6 papers), each from its own page (`tot.mjs pkc`, `tot.mjs ches`).

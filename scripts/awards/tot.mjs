@@ -40,8 +40,10 @@
 //                                                                       or, in the 2022 block, the authors on one line and `Title (2004).` on the next
 //   pkc     https://iacr.org/meetings/pkc/test_of_time_award             the PKC Test of Time Award, 2019–: the TCC page's template
 //   ches    https://ches.iacr.org/testoftime.php                          the CHES Test of Time Award, 2020–: a list item `<b>2024:</b> <a>Title</a>, Authors, CHES 2004.`
+//   hpca    https://ieeetcca.org/awards/hpca-test-of-time-award/          the HPCA Test of Time Award, 2018–: under "Previous winners" a line `2026: “Title”` and a line `by A; B; C, published at HPCA 2007.`
+//                                                                       (an honorable mention has no year in front and is not read)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -67,7 +69,8 @@ const PAGES = {
   sigmobile: "https://sigmobile.org/grav/awards/test-of-time-paper",
   sensys: "https://sensys.acm.org/tot/",
   pkc: "https://iacr.org/meetings/pkc/test_of_time_award",
-  ches: "https://ches.iacr.org/testoftime.php"
+  ches: "https://ches.iacr.org/testoftime.php",
+  hpca: "https://ieeetcca.org/awards/hpca-test-of-time-award/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -350,6 +353,22 @@ export function parseChesTot(html, source = PAGES.ches) {
   return { entries, skipped };
 }
 
+export function parseHpcaTot(html, source = PAGES.hpca) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  for (let i = ls.indexOf("Previous winners") + 1; i > 0 && i < ls.length - 1; i++) {
+    const h = /^((?:19|20)\d{2}):\s*[“"](.+?)[.,]?[”"]\s*$/.exec(ls[i]);
+    if (!h) continue;
+    const b = /^by\s+(.+?),?\s+published at HPCA\s+((?:19|20)\d{2})\.?$/.exec(ls[i + 1]);
+    if (!b) { skipped.push(`${h[1]}: no author line after “${h[2].slice(0, 40)}”`); continue; }
+    const year = parseInt(h[1], 10), title = cleanTitle(h[2]), who = names(b[1].replace(/;/g, ",").replace(/\s+and\s+/g, ", and ").replace(/\b([A-Z]\.)(?=[A-Z][a-z])/g, "$1 "));
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("HPCA", year, "Test of Time Award", title, who, source, `HPCA ${year} Test of Time Award: ${b[1]} “${title}”`, parseInt(b[2], 10)));
+    else skipped.push(`${year}: not read: ${title.slice(0, 40)} / ${b[1].slice(0, 50)}`);
+    i++;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -405,7 +424,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
