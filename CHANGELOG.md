@@ -3,7 +3,7 @@
 ## 2.9.24 — 2026-10-12
 
 - The AAAI Classic Paper Award and its honorable mentions (1999–2026, 40 papers: Monte Carlo Localization, Bayesian Classification, Maximum Entropy Inverse Reinforcement Learning, Never-Ending
-  Language Learning …) from AAAI's own page (`tot.mjs aaai`). The bundled list has 5284 awards.
+  Language Learning …) from AAAI's own page (`tot.mjs aaai`). 24 of the 40 were in the list already (AAAI's own award pages read earlier); 16 are new. The bundled list has 5284 awards.
 
 ## 2.9.23 — 2026-10-12
 
