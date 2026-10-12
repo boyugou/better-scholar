@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.7.2 — 2026-10-12
+
+- **Copy papers is safe to paste into a spreadsheet.** A paper title is whatever its author typed; one that began with `=`, `+`, `-` or `@` would have
+  been a formula in Excel or Google Sheets (`=HYPERLINK(…)` can do more than show itself). Such a field now carries a leading apostrophe, the
+  spreadsheets' own sign for text; numbers and ordinary text are left alone.
+
 ## 2.7.1 — 2026-10-12
 
 - **SIGMETRICS awards** (76 entries; the list holds 4684) from the conference's own awards page: the *Test of Time Award* (2010–2026) and the paper awards —

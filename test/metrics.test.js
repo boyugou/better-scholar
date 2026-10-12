@@ -125,4 +125,7 @@ test("toRowsTsv: a header and one line per row; a tab or a line break inside a f
   assert.equal(m.toRowsTsv(["Year", "Title", "Citations"], [[2023, "A\ttab and\nnewline", 12], [null, "Plain", 0], [2020, undefined, ""]]),
     "Year\tTitle\tCitations\n2023\tA tab and newline\t12\n\tPlain\t0\n2020\t\t");
   assert.equal(m.toRowsTsv(["A"], []), "A");
+  // a field that a spreadsheet would read as a formula is marked as text; numbers and ordinary text are left alone
+  assert.equal(m.toRowsTsv(["T", "N"], [["=HYPERLINK(\"http://x\",\"y\")", -3], ["+1 and -1 ways", "@user"], ["-Omics at scale", "x=y"]]),
+    "T\tN\n'=HYPERLINK(\"http://x\",\"y\")\t-3\n'+1 and -1 ways\t'@user\n'-Omics at scale\tx=y");
 });

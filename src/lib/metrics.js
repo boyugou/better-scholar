@@ -118,8 +118,13 @@
 
   // Tab-separated table for spreadsheets.
   // Tab-separated rows under a header: "Copy papers" (one line per paper, for a spreadsheet or a CV). A tab or line break inside a field is a space.
+  // A title is whatever its author typed: one that begins with = + - or @ would be a formula in Excel or Sheets (and "=HYPERLINK(…)" could do
+  // more than show itself), so such a field gets a leading apostrophe — the spreadsheets' own sign for "text" — unless it is a plain number.
   function toRowsTsv(header, rows) {
-    const cell = (v) => String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ").trim();
+    const cell = (v) => {
+      const s = String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ").trim();
+      return /^[=+\-@]/.test(s) && !/^[+-]?\d+(?:[.,]\d+)?$/.test(s) ? "'" + s : s;
+    };
     return [header, ...rows].map((r) => r.map(cell).join("\t")).join("\n");
   }
 
