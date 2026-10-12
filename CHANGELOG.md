@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.3.2 — 2026-10-12
+
+- **A bare publisher is not a venue.** `Association for Computational Linguistics, 2013` (the ACL Anthology's publisher
+  name, printed as the venue of ACL, NAACL, EMNLP and CoNLL papers alike — on a real profile it was a NAACL paper that
+  got an ACL badge), `AAAI Press, 2015` (AAAI Press also publishes ICWSM, HCOMP, ICAPS …) and `NIPS Foundation` no
+  longer get a badge; with an acronym (`… (ACL 2016)`) or as the conference's own name they still do.
+- Two more real profiles join the matcher corpora (Kaiming He: computer vision; Tomas Mikolov: language and learning —
+  venue strings only, 144 new): every result reviewed, none of the earlier results changed. A saved-page check of the two
+  profiles also confirmed the award list: eight marks on Kaiming He's papers (*Deep Residual Learning* best paper
+  and test of time, *Mask R-CNN* Marr Prize, *Focal Loss* best student paper, …), each on the right paper, none elsewhere.
+
 ## 2.3.1 — 2026-10-12
 
 - Matcher, from a sweep of realistic Scholar strings for AI, systems and security venues:

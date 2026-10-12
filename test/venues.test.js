@@ -343,3 +343,14 @@ test("'Proceedings of the ACM Web Conference 2024' is WWW", () => {
     assert.equal(brief(s), "CCF A WWW · CORE A* WWW", s);
   }
 });
+
+test("a bare publisher is not a venue: the ACL Anthology's publisher name, AAAI Press, NIPS Foundation", () => {
+  // seen on a real profile: a NAACL paper printed as just "Association for Computational Linguistics, 2013" (it was badged ACL)
+  for (const s of ["Association for Computational Linguistics, 2013", "Association for Computational Linguistics", "The Association for Computational Linguistics, 2015",
+    "Association for Computational Linguistics, 175-186, 2019", "AAAI Press, 2015", "AAAI Press, 1233-1239, 2012", "NIPS Foundation, 2015"]) assert.equal(brief(s), "", s);
+  // …but the same words with an acronym, or as the conference they name, still are
+  assert.equal(brief("Association for Computational Linguistics (ACL 2016)"), "CCF A ACL · CORE A* ACL");
+  assert.equal(brief("ACL, 2017"), "CCF A ACL · CORE A* ACL");
+  assert.equal(brief("Annual Meeting of the Association for Computational Linguistics, 2019"), "CCF A ACL · CORE A* ACL");
+  assert.equal(brief("Proceedings of the AAAI Conference on Artificial Intelligence 32 (1), 2018"), "CCF A AAAI · CORE A* AAAI");
+});

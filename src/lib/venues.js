@@ -284,6 +284,12 @@
     return uniq(u.map(ratingOf)).length === 1 && uniq(u.map((e) => e.kind)).length === 1 ? u[0] : "ambiguous";
   }
 
+  // Strings that are a publisher, not a venue: the ACL Anthology's publisher is printed as the venue of papers from
+  // ACL, NAACL, EMNLP, CoNLL and their workshops alike; AAAI Press publishes AAAI, ICWSM, HCOMP, ICAPS, KR …; so the bare
+  // string says nothing about which conference it was (the same name with an acronym — "(ACL 2016)" — still does).
+  const PUBLISHERS = new Set(["associationforcomputationallinguistics", "aaaipress", "nipsfoundation", "neuralinformationprocessingsystemsfoundation"]);
+  const isPublisher = (p) => PUBLISHERS.has(squash(p.name).replace(/^the/, ""));
+
   // "ACM CCS 2023", "IEEE/ACM ASE 2023": the organisation words in front are not part of the acronym.
   const ORG_LEAD = /^(?:(?:ieee|acm|usenix|ifip|siam|cvf)(?:\s*[\/-]\s*(?:ieee|acm|usenix|ifip|siam|cvf))*\s+)+(?=[A-Za-z0-9])/i;
 
@@ -334,6 +340,7 @@
 
   // Resolve against one source (ccf | core). Returns { entry, rule } | null.
   function matchSource(idx, src, p, hint, known) {
+    if (isPublisher(p)) return null;
     const kinds = hint ? [hint] : ["J", "C"];
     const sides = kinds.map((k) => idx.sources[src][k]).filter(Boolean);
     if (!sides.length) return null;
