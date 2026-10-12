@@ -49,7 +49,7 @@
     { ccf: "COLING", core: "COLING", names: ["International Conference on Computational Linguistics"] },
     { core: "EACL", names: ["Conference of the European Chapter of the Association for Computational Linguistics", "European Chapter of the Association for Computational Linguistics"] },
     { ccf: "CoNLL", core: "CoNLL", names: ["Conference on Computational Natural Language Learning", "Computational Natural Language Learning"] },
-    { ccf: "INTERSPEECH", core: "Interspeech", names: ["Conference of the International Speech Communication Association", "Annual Conference of the International Speech Communication Association"] },
+    { ccf: "INTERSPEECH", core: "Interspeech", names: ["Conference of the International Speech Communication Association", "Annual Conference of the International Speech Communication Association", "Interspeech"] },
     { ccf: "ICASSP", names: ["IEEE International Conference on Acoustics, Speech and Signal Processing"] },
 
     // ---- data mining / databases / IR
@@ -65,6 +65,10 @@
 
     // ---- graphics
     { ccf: "I3D", names: ["Symposium on Interactive 3D Graphics and Games", "Symposium on Interactive 3D Graphics"] },
+    { ccf: "SGP", core: "SGP", names: ["Eurographics/ACM SIGGRAPH Symposium on Geometry Processing", "Eurographics Symposium on Geometry Processing", "Symposium on Geometry Processing"] },
+    { ccf: "SCA", core: "SCA", names: ["Eurographics/ACM SIGGRAPH Symposium on Computer Animation", "ACM SIGGRAPH/Eurographics Symposium on Computer Animation", "Symposium on Computer Animation"] },
+    // EGSR was the Eurographics Workshop on Rendering; its proceedings are "Rendering Techniques" (the ACM Digital Library: "Eurographics conference on Rendering Techniques")
+    { ccf: "EGSR", names: ["Eurographics Workshop on Rendering", "Eurographics Workshop on Rendering Techniques", "Eurographics Conference on Rendering Techniques", "Rendering Techniques"] },
     { core: "SiggraphA", names: ["ACM SIGGRAPH Asia", "SIGGRAPH Asia", "ACM SIGGRAPH Asia Papers", "SIGGRAPH Asia Papers", "ACM SIGGRAPH Asia Technical Papers", "SIGGRAPH Asia Technical Papers"] },
 
     // ---- HCI
@@ -74,9 +78,13 @@
     { ccf: "AVI", names: ["International Conference on Advanced Visual Interfaces"] },
     { core: "AVI", names: ["International Working Conference on Advanced Visual Interfaces"] },
     { ccf: "CSCW", core: "CSCW", names: ["ACM Conference on Computer Supported Cooperative Work", "ACM Conference on Computer-Supported Cooperative Work and Social Computing", "Computer Supported Cooperative Work"] },
+    // ICMI was the International Conference on Multimodal Interfaces until 2005 (CORE keeps the old name in a parenthesis)
+    { ccf: "ICMI", core: "ICMI", names: ["International Conference on Multimodal Interfaces", "IEEE International Conference on Multimodal Interfaces"] },
     { ccf: "UbiComp", names: ["ACM International Joint Conference on Pervasive and Ubiquitous Computing", "International Conference on Ubiquitous Computing", "ACM Conference on Ubiquitous Computing"] },
 
     // ---- systems / architecture / networking
+    // DATE: the name in full (a string Scholar cut right after "Conference and …" has nothing else to match)
+    { ccf: "DATE", core: "DATE", names: ["Design, Automation and Test in Europe Conference and Exhibition", "Design Automation and Test in Europe Conference and Exhibition", "Design, Automation, and Test in Europe"] },
     { ccf: "SOSP", core: "SOSP", names: ["ACM Symposium on Operating Systems Principles", "Symposium on Operating Systems Principles", "ACM SIGOPS Symposium on Operating Systems Principles"] },
     { ccf: "OSDI", core: "OSDI", names: ["USENIX Symposium on Operating Systems Design and Implementation"] },
     { ccf: "NSDI", names: ["USENIX Symposium on Networked Systems Design and Implementation", "Symposium on Networked Systems Design and Implementation", "Symposium on Network System Design and Implementation"] },
@@ -88,13 +96,16 @@
     { ccf: "ICSME", core: "ICSME", abbrs: ["ICSM"], names: ["International Conference on Software Maintenance", "IEEE International Conference on Software Maintenance"] },
     { ccf: "ISCA", core: "ISCA", names: ["International Symposium on Computer Architecture", "Annual International Symposium on Computer Architecture", "ACM/IEEE Annual International Symposium on Computer Architecture"] },
     { ccf: "MICRO", core: "MICRO", names: ["IEEE/ACM International Symposium on Microarchitecture", "International Symposium on Microarchitecture"] },
+    // HPDC was an IEEE symposium until 2008 (CCF and CORE name the ACM one): without this name a cut-off "13th IEEE International
+    // Symposium on High performance …" reads as HPCA
+    { ccf: "HPDC", core: "HPDC", names: ["IEEE International Symposium on High Performance Distributed Computing", "International Symposium on High Performance Distributed Computing"] },
     { ccf: "HPCA", core: "HPCA", names: ["IEEE International Symposium on High Performance Computer Architecture", "International Symposium on High-Performance Computer Architecture"] },
     { ccf: "SC", core: "SC", names: ["International Conference for High Performance Computing, Networking, Storage and Analysis", "Supercomputing", "ACM/IEEE Conference on Supercomputing", "ACM/IEEE Supercomputing Conference", "Conference on Supercomputing"] },
     { ccf: "SIGCOMM", core: "SIGCOMM", names: [
       "ACM SIGCOMM Conference", "Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication",
       "ACM Special Interest Group on Data Communication", "SIGCOMM Conference on Data Communication"
     ] },
-    { ccf: "INFOCOM", core: "INFOCOM", names: ["IEEE Conference on Computer Communications", "IEEE INFOCOM"] },
+    { ccf: "INFOCOM", core: "INFOCOM", names: ["IEEE Conference on Computer Communications", "IEEE INFOCOM", "Annual Joint Conference of the IEEE Computer and Communications Societies"] },
     { ccf: "MobiCom", core: "MOBICOM", names: ["ACM International Conference on Mobile Computing and Networking", "International Conference on Mobile Computing and Networking"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Proceedings of the ACM on Measurement and Analysis of Computing Systems", "ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems"] },
     { core: "EC", names: ["ACM Conference on Electronic Commerce", "ACM Conference on Economics and Computation"] },
@@ -137,6 +148,8 @@
 
     // ---- journals (kind J)
     { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] },
+    // the speech journal of the IEEE Signal Processing Society, under its earlier name (1993–2005)
+    { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing"] },
     // ISO-4 abbreviations as DBLP / BibTeX print them (the full names already match by themselves)
     { ccf: "TOG", kind: "J", names: ["ACM Trans. Graph.", "ACM Trans. on Graphics"] },
     { ccf: "TOCS", kind: "J", names: ["ACM Trans. Comput. Syst."] },

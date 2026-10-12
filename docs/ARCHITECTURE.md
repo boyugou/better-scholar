@@ -116,10 +116,17 @@ means no badge:
 2. **Acronym** — only strong signals: `(ICML)`, `(NSDI 11)`, `(USENIX Security 21)`,
    `(S&P'05)`, an unclosed `(OSDI …`, a leading `ISCA 2014`, a one-word venue (`Ndss`), or an
    acronym buried in a sentence when little else is said. Organisation words are never
-   acronyms; a buried acronym is not used for journals or when much text surrounds it.
+   acronyms; a buried acronym is not used for journals or when much text surrounds it. The
+   parts of a hyphenated parenthesis (`(EMNLP-IJCNLP)`) may name a conference, never a journal
+   (`(WF-IoT)` is not the IoT Journal); joint-sponsor chains (`Eurographics/ACM SIGGRAPH`) carry
+   no acronym of their own.
 3. **Prefix** (only for truncated names) — a unique entry that begins with what is visible.
    Organisation words must agree; a trailing connective must agree (`Information processing
-   in …` is IPSN, not IPMU); too little visible text stays silent.
+   in …` is IPSN, not IPMU); too little visible text stays silent. *Unique* means one venue: several
+   different venues that merely share a rating are still ambiguous (the badge would be right, its
+   tooltip would name the wrong venue). `Joint` is an identity word: a string that says it only
+   reads as a venue that does (`… Annual Joint Conference of the IEEE Computer and …` is INFOCOM,
+   not CIT).
 4. **Subtitle** — a known name followed by extra words (`…: Human Language Technologies`).
 
 Ties between entries with the same canonical key are broken by the event word in the

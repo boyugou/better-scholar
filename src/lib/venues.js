@@ -124,6 +124,9 @@
     const truncated = /…|\.{3}/.test(s);
     if (truncated) s = s.split(/…|\.{3}/)[0];
     s = s.replace(/\s+/g, " ").trim();
+    // IEEE Xplore's citation form: "IEEE Visualization, 2002. VIS 2002., 355-362, 2002" — the name, its year, then the event's own
+    // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know.
+    s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\.(?=\s*(?:,|\d|$))/, "$1 ($2)");
     const withParens = s;
     let hasVolume = false;
     for (let changed = true, guard = 0; changed && guard < 8; guard++) {
@@ -205,7 +208,7 @@
       if (!list) map.set(key, [entry]); else if (!list.includes(entry)) list.push(entry);
     };
 
-    function register(src, kind, entry, names, abbrs) {
+    function register(src, kind, entry, names, abbrs, curated) {
       const side = sources[src][kind];
       if (!side) return;
       if (!side.all.includes(entry)) side.all.push(entry);
@@ -221,7 +224,10 @@
         const form = {
           full: canonTokens(plain, "full"), noOrg: canonTokens(plain, "noOrg"),
           kfull: canonTokensKeepStops(plain, "full"), knoOrg: canonTokensKeepStops(plain, "noOrg"),
-          seq: rawSeq(plain)
+          seq: rawSeq(plain),
+          // a curated name that says "joint" is what a string that says it too reads as; a string that does not is not it
+          // (the official names — AAMAS's "Joint Conference …" is also printed without the word — are not held to this)
+          needsJoint: !!curated && /\bjoint\b/i.test(plain)
         };
         for (const mode of ["full", "noOrg"]) {
           const t = form[mode];
@@ -257,7 +263,7 @@
         const entries = (byRef[src].get(kind + "|" + squash(ref)) || []).filter((e) => !want || ratingOf(e) === want);
         for (const entry of entries) {
           entry.extra.push(...a.names);
-          register(src, kind, entry, a.names, a.abbrs || []);
+          register(src, kind, entry, a.names, a.abbrs || [], true);
         }
       }
     }
@@ -298,16 +304,20 @@
   // Pick one entry out of the hits for a key. Hits that all carry the same rating are
   // interchangeable for the badge; otherwise the event-type word in the raw string
   // (symposium vs conference vs workshop) may break the tie. Else: ambiguous.
-  function decide(list, rawWords) {
+  // `strict` (the prefix rule): several different venues that merely share a rating are ambiguous too — the badge would be
+  // right, but its tooltip would name a venue that may not be the one. Two rows of the same venue are not different venues.
+  const venueKey = (e) => e.src + "|" + e.kind + "|" + squash(e.abbr || e.name);
+  function decide(list, rawWords, strict) {
     if (!list || !list.length) return null;
     const u = uniq(list);
     if (u.length === 1) return u[0];
+    const tie = (l) => (strict && uniq(l.map(venueKey)).length > 1 ? "ambiguous" : l[0]);
     if (rawWords.length) {
       const f = u.filter((e) => rawWords.every((w) => hasWord(e, w)));
       if (f.length === 1) return f[0];
-      if (f.length > 1 && uniq(f.map(ratingOf)).length === 1) return f[0];
+      if (f.length > 1 && uniq(f.map(ratingOf)).length === 1) return tie(f);
     }
-    return uniq(u.map(ratingOf)).length === 1 && uniq(u.map((e) => e.kind)).length === 1 ? u[0] : "ambiguous";
+    return uniq(u.map(ratingOf)).length === 1 && uniq(u.map((e) => e.kind)).length === 1 ? tie(u) : "ambiguous";
   }
 
   // Strings that are a publisher, not a venue: the ACL Anthology's publisher is printed as the venue of papers from
@@ -328,9 +338,11 @@
     };
     // (ICML), (NSDI 11), (USENIX Security 21), (EMNLP-IJCNLP), (S&P'05), unclosed "(OSDI"
     const reParen = /\(([^()]*)(?:\)|$)/g;
+    // (a part of "(EMNLP-IJCNLP)" is an acronym of a joint event, so it may name a conference — but "(WF-IoT)" is not the
+    // journal IoT: parts are looked up among conferences only)
     for (let m; (m = reParen.exec(p.withParens.replace(SIG_CHAIN, " "))); ) {
-      const g = m[1];
-      for (const part of g.split(/[-–/,;]+/)) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren" });
+      const g = m[1], parts = g.split(/[-–/,;]+/);
+      for (const part of parts) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren", part: parts.length > 1 });
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
     }
     // leading acronym: "ISCA 2014", "MICRO 2017", "ACL 2015 Proceedings of …", "NDSS 5", "HPCA-16 2010 …"
@@ -355,14 +367,15 @@
   // "ACL-08: HLT", "NDSS'05", "SIGCOMM'98": acronym glued to a year, or a long all-caps token.
   // "ACM SIGMOD-SIGACT-SIGART" names a joint symposium (PODS), not SIGMOD, and "ACM SIGGRAPH/Eurographics" one on
   // graphics hardware or animation, not SIGGRAPH itself: a joint-sponsor chain carries no acronym of its own.
-  const SIG_CHAIN = /\bSIG[A-Za-z]+(?:\s*[-–/]\s*(?:SIG[A-Za-z]+|Eurographics|EUROGRAPHICS))+/g;
+  // (and so does "Eurographics/ACM SIGGRAPH Symposium on Geometry Processing": the sponsors in front of the event, not the event).
+  const SIG_CHAIN = /\bSIG[A-Za-z]+(?:\s*[-–/]\s*(?:SIG[A-Za-z]+|Eurographics|EUROGRAPHICS))+|\b(?:Eurographics|EUROGRAPHICS)\s*[-–/]\s*(?:(?:ACM|IEEE)\s+)?SIG[A-Za-z]+/g;
 
   function embeddedSignals(p) {
     const out = [];
     const text = fold(p.withParens).replace(SIG_CHAIN, " ");
     for (const m of text.matchAll(/\b([A-Z][A-Za-z]{2,10})[-–']\s?(\d{2,4})\b/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });
-    for (const m of text.matchAll(/\bSig[a-z]{3,9}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });
+    for (const m of text.matchAll(/\b[Ss]ig[a-z]{3,9}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });     // "SIGgraph", "siggraph": Scholar re-cases some strings
     // "SC'05: Proceedings of the 2005 …": a short acronym, a two-digit year and a colon
     for (const m of text.matchAll(/\b([A-Z]{2,10})['’]\d{2}\s*:/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     return out.filter((s) => !ORG.has(s.key));
@@ -451,15 +464,15 @@
 
     // R3: acronym signals
     const signals = acronymSignals(p);
-    for (const { key } of signals) {
-      const d = firstHit((side) => side.abbrs.get(key));
+    const confSide = idx.sources[src].C;
+    for (const { key, part } of signals) {
+      const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
       if (d && d !== "ambiguous") return { entry: d, rule: "acronym" };
     }
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and
     // unsupervised feature learning" workshops would inherit NeurIPS.
     if (hint !== "J") {
-      const confSide = idx.sources[src].C;
       const content = canonTokens(p.plain, "noOrg", idx.known);
       const room = CONF_SIGNAL.test(p.plain) ? 3 : 1;   // a bare "IEEE INFOCOM" says little else
       for (const { key } of embeddedSignals(p)) {
@@ -493,6 +506,7 @@
             // an entry whose whole name is what is visible is a candidate too: "… International Conference on
             // Software Engineering 1 …" is ICSE as much as it begins SEKE ("… and Knowledge Engineering")
             if (!(t.length >= Rm.length && Rm.every((w, i) => t[i] === w))) continue;
+            if (joint ? !hasWord(entry, "joint") : form.needsJoint) continue;
             if (trailingStops.length) {
               const ts = form[mode === "full" ? "kfull" : "knoOrg"];
               const at = ts.findIndex((w, i) => !STOP.has(w) && ts.filter((x, j) => j <= i && !STOP.has(x)).length === Rm.length);
@@ -507,9 +521,14 @@
       // "annual" in the string is an event word too: when several venues begin with what is left, only those that call
       // themselves annual stay ("Annual International Conference on the Theory and Applications of …" is EUROCRYPT, not SAT)
       const annual = /\bannual\b/i.test(p.plain);
+      // "Annual Joint Conference of the IEEE Computer and …" is INFOCOM, not the IEEE Computer and Information Technology
+      // conference: "joint" says what kind of event it is, so a venue that never calls itself joint is not a candidate for it
+      // (and INFOCOM's curated "Annual Joint Conference of the IEEE Computer and Communications Societies" is not one for
+      // "IEEE … Conference on Computer and …")
+      const joint = /\bjoint\b/i.test(p.plain);
       const decideHere = (list) => {
-        let x = decide(list, rawWords);
-        if (x === "ambiguous" && annual) { const only = list.filter((e) => hasWord(e, "annual")); if (only.length) x = decide(only, rawWords); }
+        let x = decide(list, rawWords, true);
+        if (x === "ambiguous" && annual) { const only = list.filter((e) => hasWord(e, "annual")); if (only.length) x = decide(only, rawWords, true); }
         return x;
       };
       let d = decideHere(prefixPass(rawHasOrg ? "full" : "noOrg"));
@@ -522,7 +541,7 @@
           const found = new Set();
           for (const side of sides) {
             for (const { entry, form } of side.first.full.get(R[0]) || []) {
-              if (form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w)) found.add(entry);
+              if (form.seq.length >= seq.length && seq.every((w, i) => form.seq[i] === w) && !(joint ? !hasWord(entry, "joint") : form.needsJoint)) found.add(entry);
             }
           }
           let cands = Array.from(found);

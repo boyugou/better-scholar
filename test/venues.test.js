@@ -95,8 +95,8 @@ test("CHI proceedings carry the acronym inside the name", () => {
 });
 
 test("a truncated name is not claimed on one common word, nor when a complete name also fits", () => {
-  // INFOCOM's "Joint Conference of the IEEE Computer and Communications Societies" is not CCS
-  assert.equal(brief("Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and …, 2005"), "");
+  // INFOCOM's "Joint Conference of the IEEE Computer and Communications Societies" is not CCS (and, see below, not CIT either)
+  assert.equal(brief("Proceedings IEEE 24th Annual Joint Conference of the IEEE Computer and …, 2005"), "CCF A INFOCOM · CORE A* INFOCOM");
   // the visible words are ICSE's whole name AND the start of SEKE's: ambiguous, so no badge
   assert.equal(brief("2015 IEEE/ACM 37th IEEE international conference on software engineering 1 …, 2015"), "");
   // "Principles of …" could be PODC, PODS or POPL
@@ -437,4 +437,70 @@ test("ICSM is the old name of ICSME", () => {
   for (const s of ["International Conference on Software Maintenance, 2003. ICSM 2003 …, 2003", "ICSM 2008, 2008", "IEEE International Conference on Software Maintenance and Evolution (ICSME), 2014"]) {
     assert.equal(brief(s), "CCF B ICSME · CORE A ICSME", s);
   }
+});
+
+// ---- found on eight more real profiles (multimedia, speech, design automation, wireless, graphics): the five wrong badges first
+
+test("'Joint' says what kind of event it is: '… Annual Joint Conference of the IEEE Computer and …' is INFOCOM, not the IEEE Computer and Information Technology conference", () => {
+  const infocom = "CCF A INFOCOM · CORE A* INFOCOM";
+  for (const s of ["Proceedings. Twenty-First Annual Joint Conference of the IEEE Computer and …, 2002",
+    "IEEE INFOCOM 2003. Twenty-second Annual Joint Conference of the IEEE Computer and Communications Societies, 2003",
+    "Twenty-First Annual Joint Conference of the IEEE Computer and Communications Societies, 2002"]) assert.equal(brief(s), infocom, s);
+  // the conference that really is about computers and information technology is still CIT, and its cut-off name is not INFOCOM
+  assert.equal(brief("2012 IEEE 12th International Conference on Computer and Information Technology, 2012"), "CORE C CIT");
+  assert.equal(brief("Proceedings of the IEEE International Conference on Computer and …, 2010"), "CORE C CIT");
+  // a venue that is not called joint is not what a "joint" string cut short means; the official names that are printed without the word still match
+  assert.equal(brief("Proceedings of the 16th Conference on Autonomous Agents and MultiAgent …, 2017"), "CORE A AAMAS");
+  assert.equal(brief("Proceedings of the 29th ACM Joint Meeting on European Software Engineering …, 2021"), "CCF A FSE · CORE A* FSE");
+});
+
+test("IEEE's High Performance symposia: a cut-off '13th IEEE International Symposium on High performance …' is HPCA or HPDC, so no badge", () => {
+  assert.equal(brief("Proceedings. 13th IEEE International Symposium on High performance …, 2004"), "");
+  assert.equal(brief("Proceedings of the 13th IEEE International Symposium on High Performance Distributed Computing, 2004"), "CCF A HPDC · CORE A HPDC");
+  assert.equal(brief("Proceedings of the 19th ACM International Symposium on High Performance Distributed Computing, 2010"), "CCF A HPDC · CORE A HPDC");
+  assert.equal(brief("2017 IEEE International Symposium on High Performance Computer Architecture (HPCA), 2017"), "CCF A HPCA · CORE A* HPCA");
+});
+
+test("an acronym in a hyphenated parenthesis names a conference, never a journal: '(WF-IoT)' is not the IEEE Internet of Things Journal", () => {
+  assert.equal(brief("2016 IEEE 3rd world forum on internet of things (WF-IoT), 7-12, 2016"), "");
+  assert.equal(brief("IEEE Internet of Things Journal 6 (3), 4921-4934, 2019"), "CCF C IOT");
+  // the parts of a joint event's parenthesis still count for the conference
+  assert.equal(brief("Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), 2019"), "CCF B EMNLP · CORE A* EMNLP");
+});
+
+test("the Eurographics/ACM SIGGRAPH symposia are not SIGGRAPH, and a cut-off 'ACM Special Interest Group on …' is not any one of them", () => {
+  assert.equal(brief("Proceedings of the 2004 Eurographics/ACM SIGGRAPH symposium on Geometry …, 2004"), "CCF B SGP · CORE B SGP");
+  assert.equal(brief("Proceedings of the 2003 Eurographics/ACM SIGGRAPH symposium on Computer animation, 2003"), "CCF B SCA · CORE B SCA");
+  assert.equal(brief("Proceedings of the 2005 ACM SIGGRAPH/Eurographics symposium on Computer animation, 2005"), "CCF B SCA · CORE B SCA");
+  assert.equal(brief("ACM SIGGRAPH 2008 papers, 1-10, 2008"), "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  assert.equal(brief("Acm siggraph 2011 papers, 1-12, 2011"), "CCF A SIGGRAPH · CORE A* SIGGRAPH", "Scholar sometimes prints the acronym in lower case");
+  // SIGGRAPH, SIGMOD and SIGCOMM are all CCF A: the badge would be right, its tooltip would name a venue that may be wrong
+  assert.equal(brief("Proceedings of the Annual conference of the ACM Special Interest Group on …, 2020"), "");
+  assert.equal(brief("Proceedings of the 2018 conference of the ACM special interest group on data communication, 2018"), "CCF A SIGCOMM · CORE A* SIGCOMM");
+});
+
+test("Interspeech, DATE and the other names the dataset spells differently", () => {
+  assert.equal(brief("Proc. Interspeech 2004, 889-892, 2004"), "CCF B INTERSPEECH · CORE A Interspeech");
+  assert.equal(brief("INTERSPEECH, 1265-1268, 2002"), "CCF B INTERSPEECH · CORE A Interspeech");
+  assert.equal(brief("Proceedings 2002 Design, Automation and Test in Europe Conference and …, 2002"), "CCF B DATE · CORE A DATE");
+  assert.equal(brief("Proceedings Design, Automation and Test in Europe Conference and Exhibition …, 2004"), "CCF B DATE · CORE A DATE");
+  assert.equal(brief("2009 Design, Automation & Test in Europe Conference & Exhibition, 375-380, 2009"), "CCF B DATE · CORE A DATE");
+});
+
+test("old names of one venue: TASLP's predecessor, ICMI's 'Multimodal Interfaces', EGSR's 'Rendering Techniques'", () => {
+  assert.equal(brief("IEEE Transactions on Speech and Audio Processing 13 (3), 441-450, 2005"), "CCF B TASLP");
+  assert.equal(brief("IEEE Transactions on Audio, Speech, and Language Processing 17 (6), 1162-1171, 2009"), "CCF B TASLP");
+  assert.equal(brief("Proceedings of the 6th international conference on Multimodal interfaces …, 2004"), "CCF C ICMI · CORE B ICMI");
+  assert.equal(brief("Proceedings of the 18th Eurographics conference on Rendering Techniques, 309-320, 2007"), "CCF B EGSR");
+  assert.equal(brief("Eurographics Workshop on Rendering Techniques, 115-125, 2001"), "CCF B EGSR", "the workshop is the venue's own name");
+  assert.equal(brief("Proceedings of the Eurographics Symposium on Rendering, 2005"), "CCF B EGSR");
+});
+
+test("IEEE Xplore's citation form 'Name, 2002. ACR 2002., pages' reads as 'Name (ACR)'", () => {
+  assert.equal(brief("IEEE Visualization, 2002. VIS 2002., 355-362, 2002"), "CCF A IEEE VIS · CORE A IEEE VIS");
+  assert.equal(brief("Proceedings Visualization, 2001. VIS'01., 21-29, 537, 2001"), "CCF A IEEE VIS · CORE A IEEE VIS");
+  assert.equal(brief("IEEE International Conference on Communications, 2003. ICC'03. 2, 1080-1084, 2003"), "CCF C ICC");
+  // where the acronym is followed by more name, nothing is rewritten
+  assert.equal(brief("Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on, 292-301, 2007"), "CCF B ICDM");
+  assert.equal(venues.prepare("IEEE Visualization, 2002. VIS 2002., 355-362, 2002").name, "IEEE Visualization (VIS)");
 });

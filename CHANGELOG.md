@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.5.7 — 2026-10-12
+
+Eight more real profiles (multimedia, speech, design automation, wireless networking, graphics — 728 new venue strings in the
+test corpora) turned up five wrong badges and a handful of old names the lists do not know. All fixed, each with a regression test.
+
+- **Wrong badges removed.** A cut-off *"… Annual Joint Conference of the IEEE Computer and …"* (INFOCOM until 2003) was read as the IEEE
+  Computer and Information Technology conference; *"Eurographics/ACM SIGGRAPH Symposium on Geometry Processing"* was read as SIGGRAPH;
+  *"(WF-IoT)"* was read as the IEEE Internet of Things Journal; a cut-off *"ACM Special Interest Group on …"* picked SIGGRAPH out of three
+  venues of the same rank; a cut-off *"13th IEEE International Symposium on High performance …"* (HPDC then, IEEE-sponsored) was
+  read as HPCA. The prefix rule now treats several different venues of one rank as ambiguous (the badge would be right, its tooltip
+  would name the wrong venue), and *joint* is an identity word.
+- **Names the lists spell differently, now matched:** INFOCOM's *Annual Joint Conference of the IEEE Computer and Communications
+  Societies*, HPDC under its IEEE years, the Eurographics/ACM SIGGRAPH symposia on Geometry Processing and Computer Animation,
+  *Interspeech* in CCF, DATE's full name, *IEEE Transactions on Speech and Audio Processing* (TASLP's earlier name), the *International
+  Conference on Multimodal Interfaces* (ICMI's earlier name), EGSR's *Rendering Techniques* / *Eurographics Workshop on Rendering*,
+  an all-lower-case *Acm siggraph 2011 papers*, and IEEE Xplore's citation form *"IEEE Visualization, 2002. VIS 2002., 355-362"*.
+
 ## 2.5.6 — 2026-10-12
 
 - **NeurIPS 2014–2018 and ICML 2017–2018 awards** (27 entries) from the conferences' own awards pages, for the years before the
