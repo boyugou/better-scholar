@@ -85,7 +85,7 @@ const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${msg}`);
 async function launch() {
   return pw.chromium.launchPersistentContext(path.join(tmp, "profile-" + Math.random().toString(36).slice(2)), {
     executablePath: chromiumPath,
-    headless: true,
+    headless: !process.env.E2E_HEADED,                              // E2E_HEADED=1 shows the window (background tabs then behave like a real browser's)
     viewport: { width: 1360, height: 900 },
     deviceScaleFactor: parseFloat(process.env.E2E_SCALE || "1"),   // E2E_SCALE=2 for sharp README screenshots
     permissions: ["clipboard-read", "clipboard-write"],
@@ -124,9 +124,10 @@ async function openOptions(context) {
   await p.waitForSelector('input[data-pref="roles.last"]');
   return p;
 }
-const setPref = (p, key, on) => p.setChecked(`input[data-pref="${key}"]`, on);
+// (a background tab neither paints nor can be screenshotted, so each helper first brings its own tab to the front)
+const setPref = async (p, key, on) => { await p.bringToFront(); await p.setChecked(`input[data-pref="${key}"]`, on); };
 const stored = (p, area, key) => p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]);
-const eventually = (page, fn, arg) => page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 });
+const eventually = async (page, fn, arg) => { await page.bringToFront(); return page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); };
 
 (async () => {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -279,6 +280,7 @@ const eventually = (page, fn, arg) => page.waitForFunction(fn, arg, { polling: 1
     await page.click('[data-act="collapse"]');
     ok("collapsed state is stored in chrome.storage and restored");
 
+    await page.bringToFront();
     await page.screenshot({ path: path.join(outDir, "wide.png") });
 
     // -- 14. narrow window: the panel moves above the list
@@ -433,6 +435,7 @@ const eventually = (page, fn, arg) => page.waitForFunction(fn, arg, { polling: 1
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
     assert.equal(await stored(opts, "local", "resolved"), undefined);
+    await opts.bringToFront();
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
