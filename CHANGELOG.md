@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.18 — 2026-10-12
+
+- The toolbar popup's CCF / CORE tab and buttons take the panel's design (a pill tab, rounder buttons with hover and press states, a darker blue on the primary button).
+
 ## 2.10.17 — 2026-10-12
 
 - "Reset to defaults" asks on the settings page (the question with a Reset and a Cancel button, the Reset one in red) instead of in the browser's own dialog; no native dialog is left in the extension.
