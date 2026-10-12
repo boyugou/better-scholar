@@ -207,7 +207,7 @@
     { ccf: "SenSys", names: ["ACM Conference on Embedded Network Sensor Systems", "ACM International Conference on Embedded Networked Sensor Systems", "International Conference on Embedded Networked Sensor Systems"] },
     { ccf: "CoNEXT", core: "CoNEXT", names: ["ACM CoNEXT Conference", "CoNEXT Conference"] },
     { ccf: "SECON", core: "SECON", names: ["IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks", "Sensor, Mesh and Ad Hoc Communications and Networks"] },
-    { core: "SIGCSE", names: ["ACM Technical Symposium on Computer Science Education", "SIGCSE Technical Symposium on Computer Science Education", "ACM SIGCSE Technical Symposium on Computer Science Education", "Technical Symposium on Computer Science Education"] },
+    { core: "SIGCSE", names: ["ACM Technical Symposium on Computer Science Education", "SIGCSE Technical Symposium on Computer Science Education", "ACM SIGCSE Technical Symposium on Computer Science Education", "Technical Symposium on Computer Science Education", "ACM Technical Symposium on Computing Science Education"] },
     { core: "SIGdial", names: ["SIGdial Meeting on Discourse and Dialogue", "Annual SIGdial Meeting on Discourse and Dialogue", "Annual Meeting of the Special Interest Group on Discourse and Dialogue"] },
     // ASSETS was the International ACM Conference on Assistive Technologies (1994–2004)
     { ccf: "ASSETS", core: "ASSETS", names: ["International ACM Conference on Assistive Technologies", "ACM Conference on Assistive Technologies", "ACM SIGACCESS Conference on Computers and Accessibility"] },

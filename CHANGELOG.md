@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.8.6 — 2026-10-12
+
+Fifteen more real profiles (real-time systems, visualization, computing education, data mining, ML security, SLAM — 1,500 venue strings; no wrong badge found).
+
+- The 2016 SIGCSE Technical Symposium printed *… Technical Symposium on Computing Science Education*; that wording is now read.
+
 ## 2.8.5 — 2026-10-12
 
 Sixteen more real profiles (verification, storage systems, medical imaging, music retrieval, software testing — 1,384 venue strings).
