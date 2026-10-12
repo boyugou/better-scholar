@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.22 — 2026-10-12
+
+- MobiCom's best paper, honorable mention, community paper and artifact awards of 2019–2024 (21 papers: FLUID, Hummingbird, M-Cube, HeadFi, AgriTera, NeRF2, CosMAC, …) from the conference's own main pages (`tot.mjs mobicom-year`), read strictly: a record with a bracket in
+  its title or an organisation among its names is dropped, so a few award papers of those years are missing. The list has 6243 awards.
+
 ## 2.10.21 — 2026-10-12
 
 - MobiCom 2025's best paper (AquaScan), best community paper (5G-MAP) and best artifact paper (RF-Based 3D SLAM Rivaling Vision Approaches), and 2015's best paper and best community paper (CAreDroid), from MobiCom's own awards pages (`tot.mjs mobicom-year`). The list has 6222 awards.

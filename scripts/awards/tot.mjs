@@ -1437,22 +1437,40 @@ export function parseMobicomYear(html, source) {
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").trim()).filter(Boolean);
   const year = parseInt((/^MobiCom (\d{4}):/.exec(ls[0] || "") || [])[1], 10);
   if (!year) return { entries, skipped: ["no year in the title"] };
-  const KINDS = { "Best Paper Award": ["best", "Best Paper Award"], "Best Community Paper Award": ["category", "Best Community Paper Award"], "Best Artifact Award": ["category", "Best Artifact Award"] };
-  const heading = (l) => KINDS[l.replace(/:$/, "")];
-  const other = (l) => /^Best (?:Video|Poster|Demo|Artifact Reviewer)[A-Za-z ]*:?$/i.test(l);
-  const authorLine = (l) => /\(/.test(l) && kddAuthors(l).length;
-  const start = ls.findIndex((l, i) => i > 20 && heading(l));
+  // the award headings the pages use over the years (video, poster, demo and reviewer awards are not paper awards)
+  const kindOf = (l) => {
+    const h = l.replace(/:$/, "");
+    if (/^Best (?:Community (?:Paper|Contributions?)|Artifact)(?: Awards?)?$/i.test(h)) return ["category", h.replace(/Contributions?$/i, "Paper").replace(/ Awards?$/i, "") + " Award"];
+    if (/^Best (?:Community (?:Paper|Contributions?)(?: Awards?)?|Paper(?: Awards?)?) (?:Runner-?ups?|Honorable Mention)$/i.test(h)) return ["runner-up", h.replace(/Runner-?ups?/i, "Runner-up").replace(/Contributions?/i, "Paper")];
+    if (/^Best Paper(?: Awards?)?$/i.test(h)) return ["best", "Best Paper Award"];
+    return null;
+  };
+  const stop = (l) => /^(?:Best (?:Video|Poster|Demo|Artifact Reviewer)|Best Artifact Awards?|Honou?rable|News|Program|Registration|Sponsors?|Keynotes?)\b/i.test(l);
+  const bracket = (l) => l.replace(/\(([^()]*)$/, "($1)");
+  const peopleOf = (l) => { const w = kddAuthors(bracket(l)); return w.length && w.every((n) => !ORG.test(n)) ? w : []; };
+  const authorLine = (l) => /\(/.test(l) && l.length < 700 && peopleOf(l).length > 0;
+  const continuation = (l) => /^and\s/i.test(l) || (/\)/.test(l) && !/^[A-Z][^()]{3,}:/.test(l));
+  const start = ls.findIndex((l, i) => i > 15 && kindOf(l));
+  let kind = null;
   for (let i = Math.max(0, start); i < ls.length; i++) {
-    const kind = heading(ls[i]);
+    const l = ls[i];
+    const k = kindOf(l);
+    if (k) { kind = k; continue; }
+    if (stop(l)) { kind = null; continue; }
     if (!kind) continue;
-    let j = i + 1; const title = [];
-    while (j < ls.length && !authorLine(ls[j]) && !heading(ls[j]) && !other(ls[j])) title.push(ls[j++]);
-    const who = [];
-    while (j < ls.length && authorLine(ls[j])) who.push(...kddAuthors(ls[j++]));
+    // a title (it may wrap over two lines) followed by the authors' line; abstract paragraphs and wrapped author lines are passed over
+    const title = [l];
+    let j = i + 1;
+    while (j < ls.length && !authorLine(ls[j]) && !kindOf(ls[j]) && !stop(ls[j]) && title.length < 3 && ls[j].length < 120) title.push(ls[j++]);
+    if (!authorLine(ls[j] || "")) continue;
+    const who = peopleOf(ls[j]);
     const t = cleanTitle(title.join(" "));
-    if (who.length && t.length >= 8) entries.push({ venue: "MobiCom", year, award: kind[0], awardLabel: kind[1], title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} ${kind[1]}: ${t} — ${who.join(", ")}` });
-    else if (t) skipped.push(`${year}: not read: ${t.slice(0, 50)}`);      // (an empty one is the section heading that the award's own heading follows)
-    i = j - 1;
+    const clean = who.length && t.length >= 8 && !/Award|Runner|Honou?rable|Mention|[()]|^[a-z]/.test(t) && !/[.:]$/.test(t);
+    if (clean) entries.push({ venue: "MobiCom", year, award: kind[0], awardLabel: kind[1], title: t, authors: who, track: "main", source, evidence: `MobiCom ${year} ${kind[1]}: ${t} — ${who.join(", ")}` });
+    else if (t) skipped.push(`${year}: not read: ${t.slice(0, 50)}`);
+    i = j;
+    while (i + 1 < ls.length && continuation(ls[i + 1])) i++;
+    while (i + 1 < ls.length && ls[i + 1].length >= 160) i++;                                         // (the abstract)
   }
   return { entries, skipped };
 }

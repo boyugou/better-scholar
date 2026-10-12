@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6222
+  "count": 6243
  },
  "entries": [
   {
@@ -75670,6 +75670,336 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobicom/2015/awards.html",
    "evidence": "MobiCom 2015 Best Community Paper Award: CAreDroid: Adaptation Framework for Android ContextAware Applications — Salma Elmalaki, Lucas Wanner, Mani Srivastava"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FLUID: Flexible User Interface Distribution for Ubiquitous Multi-device Interaction",
+   "authors": [
+    "Sangeun Oh",
+    "Steven Y. Ko",
+    "Insik Shin"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2019/",
+   "evidence": "MobiCom 2019 Best Paper Award: FLUID: Flexible User Interface Distribution for Ubiquitous Multi-device Interaction — Sangeun Oh, Steven Y. Ko, Insik Shin"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2019,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "HealthSense: Software-defined Mobile-based Clinical Trials",
+   "authors": [
+    "Aidan Curtis",
+    "Nidal Moukaddam",
+    "Ashutosh Sabharwal"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2019/",
+   "evidence": "MobiCom 2019 Best Community Paper Award: HealthSense: Software-defined Mobile-based Clinical Trials — Aidan Curtis, Nidal Moukaddam, Ashutosh Sabharwal"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Towards Low Cost Soil Sensing Using Wi-Fi",
+   "authors": [
+    "Jian Ding",
+    "Ranveer Chandra"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2019/",
+   "evidence": "MobiCom 2019 Best Paper Honorable Mention: Towards Low Cost Soil Sensing Using Wi-Fi — Jian Ding, Ranveer Chandra"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hummingbird: Energy Efficient GPS Receiver for Small Satellites",
+   "authors": [
+    "Sujay Narayana",
+    "Luca Mottola",
+    "T Venkata Prabhakar"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2020/",
+   "evidence": "MobiCom 2020 Best Paper Award: Hummingbird: Energy Efficient GPS Receiver for Small Satellites — Sujay Narayana, Luca Mottola, T Venkata Prabhakar"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "M-Cube: A Millimeter-Wave Massive MIMO Software Radio",
+   "authors": [
+    "Renjie Zhao",
+    "Timothy Woodford",
+    "Teng Wei",
+    "Kun Qian",
+    "Xinyu Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2020/",
+   "evidence": "MobiCom 2020 Best Paper Award: M-Cube: A Millimeter-Wave Massive MIMO Software Radio — Renjie Zhao, Timothy Woodford, Teng Wei, Kun Qian, Xinyu Zhang"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2021,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "Experience: developing a usable battery drain testing and diagnostic tool for the mobile industry",
+   "authors": [
+    "Abhilash Jindal",
+    "Y. Charlie Hu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2021/",
+   "evidence": "MobiCom 2021 Best Community Paper Award: Experience: developing a usable battery drain testing and diagnostic tool for the mobile industry — Abhilash Jindal, Y. Charlie Hu"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "HeadFi: Bringing Intelligence to All Headphones",
+   "authors": [
+    "Xiaoran Fan",
+    "Longfei Shangguan",
+    "Siddharth Rupavatharam",
+    "Yanyong Zhang",
+    "Jie Xiong",
+    "Yunfei Ma",
+    "Richard Howard"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2021/",
+   "evidence": "MobiCom 2021 Best Paper Award Runner-up: HeadFi: Bringing Intelligence to All Headphones — Xiaoran Fan, Longfei Shangguan, Siddharth Rupavatharam, Yanyong Zhang, Jie Xiong, Yunfei Ma, Richard Howard"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Community Paper Award Runner-up",
+   "title": "LegoDNN: Block-grained Scaling of Deep Neural Networks for Mobile Vision",
+   "authors": [
+    "Rui Han",
+    "Jian Tang",
+    "Lydia Yiyu Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2021/",
+   "evidence": "MobiCom 2021 Best Community Paper Award Runner-up: LegoDNN: Block-grained Scaling of Deep Neural Networks for Mobile Vision — Rui Han, Jian Tang, Lydia Yiyu Chen"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "Experience: Practical Indoor Localization for Malls",
+   "authors": [
+    "Yuming Hu",
+    "Feng Qian"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2022/",
+   "evidence": "MobiCom 2022 Best Community Paper Award: Experience: Practical Indoor Localization for Malls — Yuming Hu, Feng Qian"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Community Paper Runner-up",
+   "title": "Experience: Pushing Indoor Localization from Laboratory to the Wild",
+   "authors": [
+    "Jiazhi Ni",
+    "Fusang Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2022/",
+   "evidence": "MobiCom 2022 Best Community Paper Runner-up: Experience: Pushing Indoor Localization from Laboratory to the Wild — Jiazhi Ni, Fusang Zhang"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "Mobi2Sense: Empowering Wireless Sensing with Mobility",
+   "authors": [
+    "Fusang Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2022/",
+   "evidence": "MobiCom 2022 Best Paper Award Runner-up: Mobi2Sense: Empowering Wireless Sensing with Mobility — Fusang Zhang"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "VIPS: Real-Time Perception Fusion for Infrastructure-Assisted Autonomous Driving",
+   "authors": [
+    "Shuyao Shi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2022/",
+   "evidence": "MobiCom 2022 Best Paper Award Runner-up: VIPS: Real-Time Perception Fusion for Infrastructure-Assisted Autonomous Driving — Shuyao Shi"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AgriTera: Accurate Non-Invasive Fruit Ripeness Sensing via Sub-Terahertz Wireless Signals",
+   "authors": [
+    "Sayed Saad Afzal",
+    "Atsutse Kludze",
+    "Subhajit Karmakar",
+    "Ranveer Chandra"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2023/",
+   "evidence": "MobiCom 2023 Best Paper Award: AgriTera: Accurate Non-Invasive Fruit Ripeness Sensing via Sub-Terahertz Wireless Signals — Sayed Saad Afzal, Atsutse Kludze, Subhajit Karmakar, Ranveer Chandra"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Underwater Backscatter Channel: Theory, Link Budget, and Experimental Validation",
+   "authors": [
+    "Waleed Akbar",
+    "Ahmed Allam",
+    "Fadel Adib"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2023/",
+   "evidence": "MobiCom 2023 Best Paper Award: The Underwater Backscatter Channel: Theory, Link Budget, and Experimental Validation — Waleed Akbar, Ahmed Allam, Fadel Adib"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Artifact Award",
+   "title": "CoreKube: An Efficient, Autoscaling, and Resilient Mobile Core System",
+   "authors": [
+    "Andrew E. Ferguson",
+    "Jon Larrea",
+    "Mahesh K. Marina"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2023/",
+   "evidence": "MobiCom 2023 Best Artifact Award: CoreKube: An Efficient, Autoscaling, and Resilient Mobile Core System — Andrew E. Ferguson, Jon Larrea, Mahesh K. Marina"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "VI-Map: Infrastructure-Assisted Real-Time HD Mapping for Autonomous Driving",
+   "authors": [
+    "Yuze He",
+    "Chen Bian",
+    "Jingfei Xia",
+    "Shuyao Shi",
+    "Zhenyu Yan",
+    "Qun Song"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2023/",
+   "evidence": "MobiCom 2023 Best Community Paper Award: VI-Map: Infrastructure-Assisted Real-Time HD Mapping for Autonomous Driving — Yuze He, Chen Bian, Jingfei Xia, Shuyao Shi, Zhenyu Yan, Qun Song"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Award Runner-up",
+   "title": "NeRF2: Neural Radio-Frequency Radiance Fields",
+   "authors": [
+    "Xiaopeng Zhao",
+    "Zhenlin An",
+    "Qingrui Pan",
+    "Lei Yang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2023/",
+   "evidence": "MobiCom 2023 Best Paper Award Runner-up: NeRF2: Neural Radio-Frequency Radiance Fields — Xiaopeng Zhao, Zhenlin An, Qingrui Pan, Lei Yang"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones",
+   "authors": [
+    "Tao Chen",
+    "Yongjie Yang",
+    "Xiaoran Fan",
+    "Xiuzhen Guo",
+    "Jie Xiong",
+    "Longfei Shangguan"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2024/",
+   "evidence": "MobiCom 2024 Best Paper Award: Exploring the Feasibility of Remote Cardiac Auscultation Using Earphones — Tao Chen, Yongjie Yang, Xiaoran Fan, Xiuzhen Guo, Jie Xiong, Longfei Shangguan"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Community Paper Award",
+   "title": "CosMAC: Constellation-Aware Medium Access and Scheduling for IoT Satellites",
+   "authors": [
+    "Jayanth Shenoy",
+    "Om Chabra",
+    "Tusher Chakraborty",
+    "Suraj Jog",
+    "Deepak Vasisht",
+    "Ranveer Chandra"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2024/",
+   "evidence": "MobiCom 2024 Best Community Paper Award: CosMAC: Constellation-Aware Medium Access and Scheduling for IoT Satellites — Jayanth Shenoy, Om Chabra, Tusher Chakraborty, Suraj Jog, Deepak Vasisht, Ranveer Chandra"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Artifact Award",
+   "title": "RF-Diffusion: Radio Signal Generation via Time-Frequency Diffusion",
+   "authors": [
+    "Guoxuan Chi",
+    "Zheng Yang",
+    "Chenshu Wu",
+    "Jingao Xu",
+    "Yuchong Gao",
+    "Yunhao Liu",
+    "Tony Xiao Han"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2024/",
+   "evidence": "MobiCom 2024 Best Artifact Award: RF-Diffusion: Radio Signal Generation via Time-Frequency Diffusion — Guoxuan Chi, Zheng Yang, Chenshu Wu, Jingao Xu, Yuchong Gao, Yunhao Liu, Tony Xiao Han"
+  },
+  {
+   "venue": "MobiCom",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Artifact Award",
+   "title": "αLiDAR: An Adaptive High-Resolution Panoramic LiDAR System",
+   "authors": [
+    "Jiahe Cui",
+    "Yuze He",
+    "Jianwei Niu",
+    "Zhenchao Ouyang",
+    "Guoliang Xing"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobicom/2024/",
+   "evidence": "MobiCom 2024 Best Artifact Award: αLiDAR: An Adaptive High-Resolution Panoramic LiDAR System — Jiahe Cui, Yuze He, Jianwei Niu, Zhenchao Ouyang, Guoliang Xing"
   },
   {
    "venue": "MobiCom",

@@ -1761,3 +1761,17 @@ test("a MobiCom year's awards page: best paper, best community paper and best ar
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("MobiCom's main page of a year (2019–2024): a wrapped title, authors with brackets, an abstract line; a record whose title or authors look contaminated (a bracket in the title, an award word) is dropped, never guessed", async () => {
+  const { parseMobicomYear } = await import("../scripts/awards/tot.mjs");
+  const filler = Array.from({ length: 20 }, (_, i) => `<p>Menu ${i}</p>`).join("");
+  const html = `<title>MobiCom 2023: The 29th Annual International Conference on Mobile Computing and Networking</title>${filler}<h2>Best Paper Awards</h2>
+<p>AgriTera: Accurate Non-Invasive Fruit Ripeness Sensing</p><p>via Sub-Terahertz Wireless Signals</p><p>Sayed Saad Afzal (MIT), Atsutse Kludze, Subhajit Karmakar (Princeton University), Ranveer Chandra (Microsoft)</p><p>The abstract of the paper runs on for a long while so that it is plainly a paragraph and not a title or an author line at all, which is what the reader must see.</p>
+<h2>Best Paper Award Runner-up</h2><p>NeRF2: Neural Radio-Frequency Radiance</p><p>Fields</p><p>Xiaopeng Zhao, Zhenlin An (The Hong Kong Polytechnic University)</p>
+<h2>Best Community Paper Award</h2><p>Some Wrapped Title Without Authors</p><p>University of Technology), Guoliang Xing (The Chinese University of Hong Kong)</p><p>News</p>`;
+  const { entries } = parseMobicomYear(html, "https://www.sigmobile.org/mobicom/2023/");
+  assert.deepEqual(entries.map((e) => `${e.award} ${e.title.slice(0, 12)} | ${e.authors.join("; ")}`), [
+    "best AgriTera: Ac | Sayed Saad Afzal; Atsutse Kludze; Subhajit Karmakar; Ranveer Chandra",
+    "runner-up NeRF2: Neura | Xiaopeng Zhao; Zhenlin An"
+  ]);
+});
