@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.9.30 — 2026-10-12
+
+- The SIGWEB DocEng Best Paper Award (2010–2024, 14 papers) from SIGWEB's page (`tot.mjs doceng`); the Hypertext reader and this one share one parser now. The bundled list has 5433 awards.
+
 ## 2.9.29 — 2026-10-12
 
 - ACM SIGSPATIAL's Best Paper Award (2009–2025) and 10-Year Impact Award (2018–2025, with the 2020 honorable mention): 26 papers from SIGSPATIAL's own award-recipients page (`tot.mjs sigspatial`;

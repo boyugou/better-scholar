@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5419
+  "count": 5433
  },
  "entries": [
   {
@@ -45004,6 +45004,214 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10148/31/program",
    "evidence": "DIS 2026 program, Honorable Mention: Who Owns the Robot Matters: How Robot Ownership Shapes Belonging and Social Roles in Human Groups — Tuan Vu Pham, Judith Dörrenbächer, Thomas H. Weisswange, Marc Hassenzahl"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Using Versioned Tree Data Structure, Change Detection and Node Identity for Three-Way XML Merging",
+   "authors": [
+    "Cheng Thao",
+    "Ethan V. Munson"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2010 SIGWEB DocEng Best Paper Award: Cheng Thao and Ethan V. Munson “Using Versioned Tree Data Structure, Change Detection and Node Identity for Three-Way XML Merging”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Probabilistic Document Model for Automated Document Composition",
+   "authors": [
+    "Niranjan Damera-Venkata",
+    "José Bento",
+    "Eamonn O'Brien-Strain"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2011 SIGWEB DocEng Best Paper Award: Niranjan Damera-Venkata, José Bento and Eamonn O'Brien-Strain “Probabilistic Document Model for Automated Document Composition”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Optimal Guillotine Layout",
+   "authors": [
+    "Graeme Gange",
+    "Kim Marriott",
+    "Peter Stuckey"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2012 SIGWEB DocEng Best Paper Award: Graeme Gange, Kim Marriott and Peter Stuckey “Optimal Guillotine Layout”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Document Noise Removal Using Sparse Representations over Learned Dictionary",
+   "authors": [
+    "Thanh-Ha Do",
+    "Salvatore Tabbone",
+    "Oriol Ramos Terrades"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2013 SIGWEB DocEng Best Paper Award: Thanh-Ha Do, Salvatore Tabbone, and Oriol Ramos Terrades “Document Noise Removal Using Sparse Representations over Learned Dictionary”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Truncation: All the News that Fits We'll Print",
+   "authors": [
+    "Joshua Hailpern",
+    "Niranjan Damera-Venkata",
+    "Marina Danilevsky"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2014 SIGWEB DocEng Best Paper Award: Joshua Hailpern, Niranjan Damera-Venkata, and Marina Danilevsky “Truncation: All the News that Fits We'll Print”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Exploring Scholarly Papers Through Citations",
+   "authors": [
+    "Angelo Di Iorio",
+    "Raffaele Giannella",
+    "Francesco Poggi",
+    "Silvio Peroni",
+    "Fabio Vitali"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2015 SIGWEB DocEng Best Paper Award: Angelo Di Iorio, Raffaele Giannella, Francesco Poggi, Silvio Peroni, and Fabio Vitali “Exploring Scholarly Papers Through Citations”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "A general framework for globally optimized pagination",
+   "authors": [
+    "Frank Mittelbach"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2016 SIGWEB DocEng Best Paper Award: Frank Mittelbach “A general framework for globally optimized pagination”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Towards a Transcription System of Sign Language Video Resources via Motion Trajectory Factorisation",
+   "authors": [
+    "Mark Borg",
+    "Kenneth Camilleri"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2017 SIGWEB DocEng Best Paper Award: Mark Borg and Kenneth Camilleri “Towards a Transcription System of Sign Language Video Resources via Motion Trajectory Factorisation”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Choosing Math Features for BM25 Ranking with Tangent-L",
+   "authors": [
+    "Dallas Fraser",
+    "Andrew Kane",
+    "Frank Tompa"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2018 SIGWEB DocEng Best Paper Award: Dallas Fraser, Andrew Kane and Frank Tompa “Choosing Math Features for BM25 Ranking with Tangent-L”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Augmenting Music Sheets with Harmonic Fingerprints",
+   "authors": [
+    "Matthias Miller",
+    "Alexandra Bonnici",
+    "Mennatallah El-Assady"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2019 SIGWEB DocEng Best Paper Award: Matthias Miller, Alexandra Bonnici, and Mennatallah El-Assady “Augmenting Music Sheets with Harmonic Fingerprints”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "A novel approach on the joint de-identification of textual and relational data with a modified mondrian algorithm",
+   "authors": [
+    "F. Singhofer",
+    "A. Garifullina",
+    "M. Kern",
+    "A. Scherp"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2021 SIGWEB DocEng Best Paper Award: F. Singhofer, A. Garifullina, M. Kern, and A. Scherp “A novel approach on the joint de-identification of textual and relational data with a modified mondrian algorithm”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Tab this folder of documents: page stream segmentation of business documents",
+   "authors": [
+    "Thisanaporn Mungmeeprued",
+    "Yuxin Ma",
+    "Nisarg Mehta",
+    "Aldo Lipani"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2022 SIGWEB DocEng Best Paper Award: Thisanaporn Mungmeeprued, Yuxin Ma, Nisarg Mehta, Aldo Lipani “Tab this folder of documents: page stream segmentation of business documents”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "Multi-Task CTC for Joint Handwriting Recognition and Character Bounding Box Prediction",
+   "authors": [
+    "Curtis Wigington"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2023 SIGWEB DocEng Best Paper Award: Curtis Wigington “Multi-Task CTC for Joint Handwriting Recognition and Character Bounding Box Prediction”"
+  },
+  {
+   "venue": "DocEng",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "SIGWEB DocEng Best Paper Award",
+   "title": "ZigZag: A Robust Adaptive Approach to Non-Uniformly Illuminated Document Image Binarization",
+   "authors": [
+    "Jean-Luc Bloechle",
+    "Jean Hennebert",
+    "Christophe Gisler"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
+   "evidence": "DocEng 2024 SIGWEB DocEng Best Paper Award: Jean-Luc Bloechle, Jean Hennebert, Christophe Gisler “ZigZag: A Robust Adaptive Approach to Non-Uniformly Illuminated Document Image Binarization”"
   },
   {
    "venue": "EACL",

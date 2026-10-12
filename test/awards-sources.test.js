@@ -1433,3 +1433,16 @@ test("SIGSPATIAL award page: 10-Year Impact and Best Paper lists (quoted titles 
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGWEB DocEng page: the same template as Hypertext, the award named in the menu and again as the heading", async () => {
+  const { parseDocengBest } = await import("../scripts/awards/tot.mjs");
+  const html = `<ul><li>SIGWEB DocEng Best Paper Award</li><li>Join us</li></ul><h2>SIGWEB DocEng Best Paper Award</h2><p>Presented annually at DocEng.</p>
+<p>2024</p><p>Jean-Luc Bloechle, Jean Hennebert, Christophe Gisler.</p><p>ZigZag: A Robust Adaptive Approach to Non-Uniformly Illuminated Document Image Binarization.</p>
+<p>2023</p><p>Curtis Wigington.</p><p>Multi-Task CTC for Joint Handwriting Recognition and Character Bounding Box Prediction.</p><p>Join Us</p>`;
+  const { entries, skipped } = parseDocengBest(html);
+  assert.deepEqual(entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "DocEng 2024 best ZigZag: A Robust Adaptive Approach to Non-Uniformly Illuminated Document Image Binarization | Jean-Luc Bloechle; Jean Hennebert; Christophe Gisler",
+    "DocEng 2023 best Multi-Task CTC for Joint Handwriting Recognition and Character Bounding Box Prediction | Curtis Wigington"
+  ]);
+  assert.deepEqual(skipped, []);
+});
