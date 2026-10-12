@@ -123,7 +123,9 @@
   function toRowsTsv(header, rows) {
     const cell = (v) => {
       const s = String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ").trim();
-      return /^[=+\-@]/.test(s) && !/^[+-]?\d+(?:[.,]\d+)?$/.test(s) ? "'" + s : s;
+      const safe = /^[=+\-@]/.test(s) && !/^[+-]?\d+(?:[.,]\d+)?$/.test(s) ? "'" + s : s;
+      // a quotation mark is a text qualifier to a spreadsheet: a field that has one is quoted whole, its quotes doubled
+      return safe.includes('"') ? '"' + safe.replace(/"/g, '""') + '"' : safe;
     };
     return [header, ...rows].map((r) => r.map(cell).join("\t")).join("\n");
   }

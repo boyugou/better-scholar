@@ -37,7 +37,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   first 100 papers). **Resolve** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
 - **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
-  highlighted". **The whole paper list loads by itself**: Scholar shows 100 papers and hides the rest behind *Show more*, so the extension
+  highlighted". **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
   presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
   offers **Load all**.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a

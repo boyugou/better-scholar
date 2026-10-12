@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.7.5 — 2026-10-12
+
+An independent review of automatic loading and *Copy papers* found these; each was reproduced first.
+
+- A manual *Load all* that met an answer slower than nine seconds stopped and said nothing (the button was still busy); a press already in flight at
+  the start (the user's own) ended an automatic run before its first press. The loader now waits for a busy button and says "stalled" after a silent
+  timeout; a shrinking list is not progress.
+- A loader whose extension was updated, disabled or removed stops pressing.
+- Switching the setting off and on again quickly now restarts the run once the abort has landed.
+- Each batch no longer refreshes the page twice (the row observer already schedules one).
+- *Copy papers*: a field containing a quotation mark is quoted whole (a spreadsheet reads a leading quote as a text qualifier, which swallowed tabs and
+  could hide the formula guard). The hint no longer says Scholar starts at 100 papers.
+
 ## 2.7.4 — 2026-10-12
 
 Twenty-eight more real profiles (visualization, usable security, measurement, FPGA, cyber-physical systems, AR/VR, haptics, data mining — 2,800 venue

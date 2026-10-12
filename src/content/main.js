@@ -35,7 +35,7 @@
     resolving: null,                            // { done, total }
     resolveMessage: ""
   };
-  let loadAbort = null, loadOrigin = "", resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
+  let loadAbort = null, loadOrigin = "", restartAuto = false, resolveAbort = null;       // loadOrigin: "auto" (the setting started it) or "manual" (Load all)
 
   // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
@@ -301,7 +301,7 @@
     try {
       stopped = await B.scholar.loadAll({
         signal: loadAbort.signal, startDelay: origin === "auto" ? 1200 : 0, maxStalls: origin === "auto" ? 1 : 2, foregroundOnly: origin === "auto",
-        onProgress: () => { ingest(); refresh(); }
+        onProgress: () => { ingest(); scheduleRefresh(); }
       });
     } catch (e) {
       stopped = "stalled";                       // Scholar's page is not what it was: say so like any other stop
@@ -310,6 +310,7 @@
       loadAbort = null;
       loadOrigin = "";
       ingest();
+      if (restartAuto) { restartAuto = false; if (prefs.autoLoad) setTimeout(() => startLoad("auto"), 0); }
       state.loadMessage = stopped === "stalled" ? t("loadStalled", [String(state.rows.length)]) : "";
       refresh();
     }
@@ -335,7 +336,7 @@
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
-    if (prefs.autoLoad && !wasAuto) startLoad("auto");                                          // switched on: load the rest of the list now
+    if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
     else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
   });
 

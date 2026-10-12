@@ -96,7 +96,9 @@
   // is the one being looked at, so profiles opened in many tabs at once do not all press together.
   async function loadAll({ onProgress, signal, maxStalls = 2, startDelay = 0, foregroundOnly = false, timing } = {}) {
     const T = Object.assign({}, TIMING, timing);
-    const aborted = () => !!(signal && signal.aborted);
+    // (an orphaned content script — the extension was updated, disabled or removed — stops pressing)
+    const orphaned = () => { try { return !(chrome.runtime && chrome.runtime.id); } catch (e) { return true; } };
+    const aborted = () => !!(signal && signal.aborted) || (typeof chrome !== "undefined" && orphaned());
     const foreground = () => !foregroundOnly || !document.hidden;
     if (startDelay) await waitUntil(() => false, startDelay, signal);
     let stalls = 0;
@@ -104,13 +106,14 @@
       if (!foreground()) { await waitUntil(foreground, Infinity, signal); if (aborted()) break; }
       let btn = showMoreButton();
       // just after a batch Scholar may still be re-enabling the button: give it a moment before calling the list complete
-      if (btn && btn.disabled && i > 0) { await waitUntil(() => { const b = showMoreButton(); return !b || !b.disabled; }, T.regrace, signal); btn = showMoreButton(); }
-      if (!btn || btn.disabled) break;
+      // (a press still in flight — slow, or made by the user — is not the end either)
+      if (btn && btn.disabled) { await waitUntil(() => { const b = showMoreButton(); return !b || !b.disabled; }, T.regrace, signal); btn = showMoreButton(); }
+      if (!btn || btn.disabled) { if (stalls > 0) return "stalled"; break; }
       const before = rowElements().length;
       btn.click();
-      await waitUntil(() => rowElements().length !== before, T.rowTimeout, signal);
+      await waitUntil(() => rowElements().length > before, T.rowTimeout, signal);
       if (aborted()) break;
-      if (rowElements().length === before) { if (++stalls >= maxStalls) return "stalled"; }
+      if (rowElements().length <= before) { if (++stalls >= maxStalls) return "stalled"; }
       else { stalls = 0; if (onProgress) onProgress(rowElements().length); }
       await sleep(T.pause + Math.random() * T.jitter);
     }

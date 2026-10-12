@@ -132,3 +132,19 @@ test("a button that comes back a moment after the rows do is not taken for the e
   assert.equal(p.rows.length, 12);
   assert.equal(p.btn.presses, 3);
 });
+
+test("a press still in flight is not the end of the list: a late answer after a silent timeout says stalled; a button busy at the start is waited for", async () => {
+  const slow = page({ first: 3, batches: [3, 3] });
+  const origClick = slow.btn.click;
+  // an answer slower than rowTimeout: the button stays disabled past the timeout
+  slow.btn.click = function () { this.presses++; this.disabled = true; setTimeout(() => { for (let i = 0; i < 3; i++) slow.rows.push({}); this.disabled = false; }, 200); };
+  assert.equal(await loadAll({ timing: { ...FAST, rowTimeout: 60, regrace: 40 }, maxStalls: 2 }), "stalled");
+  void origClick;
+  const busy = page({ first: 3, batches: [3] });
+  busy.btn.disabled = true;                          // a press by the user is in flight when the loader looks
+  setTimeout(() => { busy.rows.push({}, {}, {}); busy.btn.disabled = true; }, 20);
+  const r = loadAll({ timing: { ...FAST, regrace: 100 } });
+  setTimeout(() => { busy.btn.disabled = false; }, 40);
+  assert.equal(await r, "done");
+  assert.ok(busy.btn.presses >= 1, "pressed once the button came back");
+});
