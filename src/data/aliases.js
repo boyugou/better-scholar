@@ -140,6 +140,8 @@
     { ccf: "MobiCom", core: "MOBICOM", names: ["ACM International Conference on Mobile Computing and Networking", "International Conference on Mobile Computing and Networking", "ACM/IEEE International Conference on Mobile Computing and Networking"] },
     // CORE spells IV "Visualisation"; Scholar prints the American spelling (and "Information Visualization in Biomedical Informatics" is another venue)
     { core: "IV", names: ["International Conference on Information Visualization"], starts: ["International Conference on Information Visualization"] },
+    // FSTTCS as the IARCS printed it in 2015 and after: "35th IARCS Annual Conference on Foundations of Software Technology and …"
+    { ccf: "FSTTCS", names: ["IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science"], starts: ["IARCS Annual Conference on Foundations of Software Technology and"] },
     // ICWSM's first name, which the AAAI printed: "AAAI International Conference on Weblogs and Social Media"
     { ccf: "ICWSM", core: "ICWSM", names: ["International Conference on Weblogs and Social Media"] },
     // CORE names ITiCSE "Annual Conference on …"; Scholar prints the SIGCSE conference (the SIGCSE Technical Symposium is another venue)

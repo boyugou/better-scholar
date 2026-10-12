@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.8.3 — 2026-10-12
+
+Twelve more real profiles (approximation algorithms, HPC and FPGAs, parallel programming, video understanding, code synthesis — 988 venue strings).
+
+- FSTTCS under the name the IARCS printed from 2009 on (*35th IARCS Annual Conference on Foundations of Software Technology and …*) is now read.
+
 ## 2.8.2 — 2026-10-12
 
 Fifteen more real profiles (dialogue and generation, speech, robot learning, blockchain, neuromorphic computing — 1,393 venue strings).
