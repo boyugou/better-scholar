@@ -107,7 +107,10 @@
     { ccf: "ASE", core: "ASE", names: ["IEEE/ACM International Conference on Automated Software Engineering", "ACM/IEEE International Conference on Automated Software Engineering"] },
     { ccf: "ISSTA", core: "ISSTA", names: ["International Symposium on Software Testing and Analysis"] },
     { ccf: "PLDI", core: "PLDI", names: ["ACM SIGPLAN Conference on Programming Language Design and Implementation"] },
-    { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages"] },
+    { ccf: "POPL", core: "POPL", names: ["ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages", "ACM SIGPLAN Symposium on Principles of Programming Languages", "Symposium on Principles of Programming Languages"] },
+    // PODS: CCF writes SIGAI, CORE and the proceedings SIGART
+    { ccf: "PODS", names: ["ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
+    { core: "PODS", names: ["ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", "ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
     { ccf: "OOPSLA", core: "OOPSLA", names: ["ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"] },
     { ccf: "STOC", core: "STOC", names: ["ACM Symposium on Theory of Computing", "ACM SIGACT Symposium on Theory of Computing"] },
     { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"] },

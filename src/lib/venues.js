@@ -280,7 +280,7 @@
     };
     // (ICML), (NSDI 11), (USENIX Security 21), (EMNLP-IJCNLP), (S&P'05), unclosed "(OSDI"
     const reParen = /\(([^()]*)(?:\)|$)/g;
-    for (let m; (m = reParen.exec(p.withParens)); ) {
+    for (let m; (m = reParen.exec(p.withParens.replace(SIG_CHAIN, " "))); ) {
       const g = m[1];
       for (const part of g.split(/[-–/,;]+/)) for (const k of keys(part.replace(/'?\d{2,4}$/, ""))) out.push({ key: k, kind: "paren" });
       for (const k of keys(g)) out.push({ key: k, kind: "paren" });
@@ -301,9 +301,12 @@
   }
 
   // "ACL-08: HLT", "NDSS'05", "SIGCOMM'98": acronym glued to a year, or a long all-caps token.
+  // "ACM SIGMOD-SIGACT-SIGART" names a joint symposium (PODS), not SIGMOD: the chain carries no acronym of its own.
+  const SIG_CHAIN = /\bSIG[A-Za-z]+(?:\s*[-–/]\s*SIG[A-Za-z]+)+/g;
+
   function embeddedSignals(p) {
     const out = [];
-    const text = fold(p.withParens);
+    const text = fold(p.withParens).replace(SIG_CHAIN, " ");
     for (const m of text.matchAll(/\b([A-Z][A-Za-z]{2,10})[-–']\s?(\d{2,4})\b/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
     for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });
     return out.filter((s) => !ORG.has(s.key));

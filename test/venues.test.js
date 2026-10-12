@@ -107,6 +107,14 @@ test("a truncated name is not claimed on one common word, nor when a complete na
   assert.equal(brief("Proceedings of the ACM/IEEE 42nd international conference on software …, 2020"), "CCF A ICSE · CORE A* ICSE");
 });
 
+test("joint SIG names are not read as one SIG's acronym", () => {
+  // "ACM SIGMOD-SIGACT-SIGART symposium" is PODS, not SIGMOD
+  assert.equal(brief("Proceedings of the twenty-fifth ACM SIGMOD-SIGACT-SIGART symposium on …, 2006"), "CCF B PODS · CORE A* PODS");
+  assert.equal(brief("Proceedings of the 2005 ACM SIGMOD international conference on Management of …, 2005"), "CCF A SIGMOD · CORE A* SIGMOD");
+  assert.equal(brief("Proceedings of the 44th ACM SIGPLAN Symposium on Principles of Programming …, 2017"), "CCF A POPL · CORE A* POPL");
+  assert.equal(brief("Proceedings of the 35th annual ACM SIGPLAN-SIGACT symposium on Principles of …, 2008"), "CCF A POPL · CORE A* POPL");
+});
+
 test("CORE now fires on the strings Scholar really prints", () => {
   assert.equal(brief("Advances in neural information processing systems 36, 46595-46623, 2023"), "CCF A NeurIPS · CORE A* NeurIPS");
   assert.equal(brief("Proceedings of the 29th symposium on operating systems principles, 611-626, 2023"), "CCF A SOSP · CORE A* SOSP");
