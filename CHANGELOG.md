@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.50 — 2026-10-12
+
+- INFOCOM's best papers of 2019–2025 (19 papers; the list had none) from each year's own awards page (`tot.mjs infocom`); the pages print the title or the authors first, which the reader works out from the first line. The best demo and poster awards and the test of time papers are not read. The list has 6455 awards.
+
 ## 2.10.49 — 2026-10-12
 
 - ECML PKDD 2025's test of time, best and best student papers of both tracks (5 papers; the list had none) from the conference's own awards page (`tot.mjs ecml`). The list has 6436 awards.

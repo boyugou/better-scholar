@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6436
+  "count": 6455
  },
  "entries": [
   {
@@ -69319,6 +69319,299 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10050/44/program",
    "evidence": "IMX 2020 program, Honorable Mention: Staying on Track: a Comparative Study on the Use of Optical Flow in 360º Video to Mitigate VIMS — Paulo Bala, Ian Oakley, Valentina Nisi, Nuno Jardim Nunes"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Combinatorial Sleeping Bandits with Fairness Constraints",
+   "authors": [
+    "Fengjiao Li",
+    "Jia Liu",
+    "Bo Ji"
+   ],
+   "track": "main",
+   "source": "https://infocom2019.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2019 Best Paper Award: Combinatorial Sleeping Bandits with Fairness Constraints — Fengjiao Li, Jia Liu, Bo Ji"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Counterintuitive Characteristics of Optimal Distributed LRU Caching Over Unreliable Channels",
+   "authors": [
+    "Guocong Quan",
+    "Jian Tan",
+    "Atilla Eryilmaz"
+   ],
+   "track": "main",
+   "source": "https://infocom2019.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2019 Best Paper Award: Counterintuitive Characteristics of Optimal Distributed LRU Caching Over Unreliable Channels — Guocong Quan, Jian Tan, Atilla Eryilmaz"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RF-Mehndi: A Fingertip Profiled RF Identifier",
+   "authors": [
+    "Cui Zhao",
+    "Zhenjiang Li",
+    "Han Ding",
+    "Jinsong Han",
+    "Wei Xi",
+    "Ting Liu",
+    "Ruowei Gui"
+   ],
+   "track": "main",
+   "source": "https://infocom2019.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2019 Best Paper Award: RF-Mehndi: A Fingertip Profiled RF Identifier — Cui Zhao, Zhenjiang Li, Han Ding, Jinsong Han, Wei Xi, Ting Liu, Ruowei Gui"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the Power of Randomization for Scheduling Real-Time Traffic in Wireless Networks",
+   "authors": [
+    "Christos Tsanikidis",
+    "Javad Ghaderi"
+   ],
+   "track": "main",
+   "source": "https://infocom2020.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2020 Best Paper Award: On the Power of Randomization for Scheduling Real-Time Traffic in Wireless Networks — Christos Tsanikidis, Javad Ghaderi"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Push the Limit of Acoustic Gesture Recognition",
+   "authors": [
+    "Yanwen Wang",
+    "Jiaxing Shen",
+    "Yuanqing Zheng"
+   ],
+   "track": "main",
+   "source": "https://infocom2020.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2020 Best Paper Award: Push the Limit of Acoustic Gesture Recognition — Yanwen Wang, Jiaxing Shen, Yuanqing Zheng"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reducing the Service Function Chain Backup Cost over the Edge and Cloud by a Self-Adapting Scheme",
+   "authors": [
+    "Xiaojun Shang",
+    "Yaodong Huang",
+    "Zhenhua Liu",
+    "Yuanyuan Yang"
+   ],
+   "track": "main",
+   "source": "https://infocom2020.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2020 Best Paper Award: Reducing the Service Function Chain Backup Cost over the Edge and Cloud by a Self-Adapting Scheme — Xiaojun Shang, Yaodong Huang, Zhenhua Liu, Yuanyuan Yang"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploiting Simultaneous Communications to Accelerate Data Parallel Distributed Deep Learning",
+   "authors": [
+    "Shaohuai Shi",
+    "Xiaowen Chu",
+    "Bo Li"
+   ],
+   "track": "main",
+   "source": "https://infocom2021.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2021 Best Paper Award: Exploiting Simultaneous Communications to Accelerate Data Parallel Distributed Deep Learning — Shaohuai Shi, Xiaowen Chu, Bo Li"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "mCore: Achieving Sub-millisecond Scheduling for 5G MU-MIMO Systems",
+   "authors": [
+    "Yongce Chen",
+    "Yubo Wu",
+    "Thomas Hou",
+    "Wenjing Lou"
+   ],
+   "track": "main",
+   "source": "https://infocom2021.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2021 Best Paper Award: mCore: Achieving Sub-millisecond Scheduling for 5G MU-MIMO Systems — Yongce Chen, Yubo Wu, Thomas Hou, Wenjing Lou"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Uplink Multi-User Beamforming on Single RF Chain mmWave WLANs",
+   "authors": [
+    "Keerthi Priya Dasala",
+    "Josep M Jornet",
+    "Edward W. Knightly"
+   ],
+   "track": "main",
+   "source": "https://infocom2021.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2021 Best Paper Award: Uplink Multi-User Beamforming on Single RF Chain mmWave WLANs — Keerthi Priya Dasala, Josep M Jornet, Edward W. Knightly"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ChARM: NextG Spectrum Sharing Through Data-Driven Real-Time O-RAN Dynamic Control",
+   "authors": [
+    "Luca Baldesi",
+    "Francesco Restuccia",
+    "Tommaso Melodia"
+   ],
+   "track": "main",
+   "source": "https://infocom2022.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2022 Best Paper Award: ChARM: NextG Spectrum Sharing Through Data-Driven Real-Time O-RAN Dynamic Control — Luca Baldesi, Francesco Restuccia, Tommaso Melodia"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PreGAN: Preemptive Migration Prediction Network for Proactive Fault-Tolerant Edge Computing",
+   "authors": [
+    "Shreshth Tuli",
+    "Giuliano Casale",
+    "Nicholas Jennings"
+   ],
+   "track": "main",
+   "source": "https://infocom2022.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2022 Best Paper Award: PreGAN: Preemptive Migration Prediction Network for Proactive Fault-Tolerant Edge Computing — Shreshth Tuli, Giuliano Casale, Nicholas Jennings"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "More than Enough is Too Much: Adaptive Defenses against Gradient Leakage in Production Federated Learning",
+   "authors": [
+    "Fei Wang",
+    "Ethan Hugh",
+    "Baochun Li"
+   ],
+   "track": "main",
+   "source": "https://infocom2023.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2023 Best Paper Award: More than Enough is Too Much: Adaptive Defenses against Gradient Leakage in Production Federated Learning — Fei Wang, Ethan Hugh, Baochun Li"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scalable Real-Time Bandwidth Fairness in Switches",
+   "authors": [
+    "Robert MacDavid",
+    "Xiaoqi Chen",
+    "Jennifer Rexford"
+   ],
+   "track": "main",
+   "source": "https://infocom2023.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2023 Best Paper Award: Scalable Real-Time Bandwidth Fairness in Switches — Robert MacDavid, Xiaoqi Chen, Jennifer Rexford"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AIChronoLens: Advancing Explainability for Time Series AI Forecasting in Mobile Networks",
+   "authors": [
+    "Claudio Fiandrino",
+    "Eloy Pérez Gómez",
+    "Pablo Fernández Pérez",
+    "Hossein Mohammadalizadeh",
+    "Marco Fiore",
+    "Joerg Widmer"
+   ],
+   "track": "main",
+   "source": "https://infocom2024.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2024 Best Paper Award: AIChronoLens: Advancing Explainability for Time Series AI Forecasting in Mobile Networks — Claudio Fiandrino, Eloy Pérez Gómez, Pablo Fernández Pérez, Hossein Mohammadalizadeh, Marco Fiore, Joerg Widmer"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hybrid Zone: Bridging Acoustic and Wi-Fi for Enhanced Gesture Recognition",
+   "authors": [
+    "Mengning Li",
+    "Wenye Wang"
+   ],
+   "track": "main",
+   "source": "https://infocom2024.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2024 Best Paper Award: Hybrid Zone: Bridging Acoustic and Wi-Fi for Enhanced Gesture Recognition — Mengning Li, Wenye Wang"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scheduling Stochastic Traffic With End-to-End Deadlines in Multi-hop Wireless Networks",
+   "authors": [
+    "Christos Tsanikidis",
+    "Javad Ghaderi"
+   ],
+   "track": "main",
+   "source": "https://infocom2024.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2024 Best Paper Award: Scheduling Stochastic Traffic With End-to-End Deadlines in Multi-hop Wireless Networks — Christos Tsanikidis, Javad Ghaderi"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DUNE: Distributed Inference in the User Plane",
+   "authors": [
+    "Beyza Butun",
+    "David de Andres Hernandez",
+    "Michele Gucciardo",
+    "Marco Fiore"
+   ],
+   "track": "main",
+   "source": "https://infocom2025.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2025 Best Paper Award: DUNE: Distributed Inference in the User Plane — Beyza Butun, David de Andres Hernandez, Michele Gucciardo, Marco Fiore"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "How to BREAK MU-MIMO Precoding in IEEE 802.11 Wi-Fi Networks",
+   "authors": [
+    "Francesca Meneghello",
+    "Francesco Gringoli",
+    "Marco Cominelli",
+    "Michele Rossi",
+    "Francesco Restuccia"
+   ],
+   "track": "main",
+   "source": "https://infocom2025.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2025 Best Paper Award: How to BREAK MU-MIMO Precoding in IEEE 802.11 Wi-Fi Networks — Francesca Meneghello, Francesco Gringoli, Marco Cominelli, Michele Rossi, Francesco Restuccia"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Safeguarding WiFi 7 and Beyond: Tackling Protocol-Aware Jamming in Multi-AP Coordination",
+   "authors": [
+    "Munmun Talukder",
+    "Linda Jiang Xie"
+   ],
+   "track": "main",
+   "source": "https://infocom2025.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2025 Best Paper Award: Safeguarding WiFi 7 and Beyond: Tackling Protocol-Aware Jamming in Multi-AP Coordination — Munmun Talukder, Linda Jiang Xie"
   },
   {
    "venue": "Interspeech",

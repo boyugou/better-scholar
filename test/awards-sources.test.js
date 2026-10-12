@@ -1955,3 +1955,11 @@ test("ECML PKDD awards page: 'Title, by A, B and C.' under the award headings", 
   const h = `<p>Test of Time</p><p>An Old Learning Paper Title, by Ann Lee, Bo Chan.</p><p>Best Student Paper Research Track</p><p>A Fair Graph Paper Title, by Cy Dunn, Ed Fox and Flo Gray.</p><p>Twitter</p>`;
   assert.deepEqual(parseEcmlAwards(h, "https://ecmlpkdd.org/2025/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["tot An Old Learning Paper Title | Ann Lee; Bo Chan", "student A Fair Graph Paper Title | Cy Dunn; Ed Fox; Flo Gray"]);
 });
+
+test("INFOCOM awards page: title first or authors first (the first line decides), affiliations in brackets, authors over two lines; demo and poster awards left out", async () => {
+  const { parseInfocomBest } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>2025 IEEE INFOCOM Best Paper Awards</p><p>A network paper about switching in wireless meshes</p><p>Ann Lee (MIT, USA); Bo Chan (CMU, USA)</p><p>2025 IEEE INFOCOM Best Demo Award</p><p>A Demo Title Here</p><p>Cy Dunn (UCSD, USA)</p>`;
+  assert.deepEqual(parseInfocomBest(a, "https://infocom2025.ieee-infocom.org/awards").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2025 A network paper about switching in wireless meshes | Ann Lee; Bo Chan"]);
+  const b = `<p>2024 IEEE INFOCOM Best Paper Awards</p><p>Ed Fox (NCSU, USA); Flo Gray (NCSU, USA)</p><p>Hybrid Zone: A Wireless Gesture Paper</p><p>Gil Hart and Hal Ito (Columbia University, USA),</p><p>Ivy Jones (Columbia University, USA)</p><p>Scheduling stochastic traffic in multi-hop networks</p><p>2024 IEEE INFOCOM Best Demo Award</p>`;
+  assert.deepEqual(parseInfocomBest(b, "https://infocom2024.ieee-infocom.org/awards").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Hybrid Zone: A Wireless Gesture Paper | Ed Fox; Flo Gray", "Scheduling stochastic traffic in multi-hop networks | Gil Hart; Hal Ito; Ivy Jones"]);
+});
