@@ -38,6 +38,36 @@
   "markHighlight": {
     "message": "Highlight"
   },
+  "mkBest": {
+    "message": "最佳论文"
+  },
+  "mkBestStudent": {
+    "message": "最佳学生论文"
+  },
+  "mkOutstanding": {
+    "message": "杰出论文"
+  },
+  "mkDistinguished": {
+    "message": "卓越论文"
+  },
+  "mkRunnerUp": {
+    "message": "荣誉提名"
+  },
+  "mkTot": {
+    "message": "时间检验奖"
+  },
+  "mkFinalist": {
+    "message": "最佳论文入围"
+  },
+  "mkOral": {
+    "message": "口头报告"
+  },
+  "mkSpotlight": {
+    "message": "聚光报告"
+  },
+  "mkHighlight": {
+    "message": "亮点报告"
+  },
   "marksHint": {
     "message": "来自 Scholar 上每篇论文标题和发表信息里作者自己写的文字（未核实），以及内置的主要会议获奖论文名单。"
   },

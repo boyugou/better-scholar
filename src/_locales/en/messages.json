@@ -38,6 +38,36 @@
   "markHighlight": {
     "message": "Highlight"
   },
+  "mkBest": {
+    "message": "Best paper"
+  },
+  "mkBestStudent": {
+    "message": "Best student paper"
+  },
+  "mkOutstanding": {
+    "message": "Outstanding paper"
+  },
+  "mkDistinguished": {
+    "message": "Distinguished paper"
+  },
+  "mkRunnerUp": {
+    "message": "Honorable mention"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Best paper finalist"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
   "marksHint": {
     "message": "From the authors' own words in each paper's title and venue text on Scholar (not checked), and from a bundled list of award-winning papers at major conferences."
   },

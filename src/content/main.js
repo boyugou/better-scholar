@@ -73,16 +73,24 @@
     return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier }, label);
   }
 
+  // Chip text: the kind in the interface language. A named category keeps the name it was given.
+  const MARK_TEXT = {
+    best: "mkBest", "best-student": "mkBestStudent", outstanding: "mkOutstanding", distinguished: "mkDistinguished",
+    "runner-up": "mkRunnerUp", tot: "mkTot", finalist: "mkFinalist", oral: "mkOral", spotlight: "mkSpotlight", highlight: "mkHighlight"
+  };
+  const markLabel = (mark) => (MARK_TEXT[mark.kind] ? t(MARK_TEXT[mark.kind]) : mark.label);
+
   // A paper's standing: an award from the bundled list, or what the author wrote ("Oral", "Best Paper Award"…).
   function markChip(mark) {
     const star = mark.group === "award" ? "★ " : "";
-    const lines = [mark.label];
+    const name = markLabel(mark);
+    const lines = [name];
     if (mark.source === "list") {
-      lines.push(t("tipMarkList", [mark.awardLabel || mark.label, mark.venue + " " + mark.year]));
+      lines.push(t("tipMarkList", [mark.awardLabel || name, mark.venue + " " + mark.year]));
       if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
     } else lines.push(t("tipMarkAuthor", [mark.text]));
     return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
-      title: lines.join("\n") }, star + mark.label);
+      title: lines.join("\n") }, star + name);
   }
 
   function roleChip(a) {
