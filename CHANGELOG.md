@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.20 — 2026-10-12
+
+- ISMAR's awards (2007–2025, 88 papers: best papers, best student papers, honorable mentions, and the impact / lasting-impact papers) from ISMAR's own page of past symposia (`tot.mjs ismar`);
+  16 rows of it are reported and skipped. The bundled list has 5143 awards.
+
 ## 2.9.19 — 2026-10-12
 
 - The ICDE Influential Paper Awards (2005–2026, 21 papers: Data Cube, Volcano, One Size Fits All, l-Diversity, Hive, Bw-Tree …) from the TCDE's own page (`tot.mjs icde`), found through the page's

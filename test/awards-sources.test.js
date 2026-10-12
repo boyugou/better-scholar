@@ -1278,3 +1278,19 @@ test("ICDE Influential Paper Awards page: 'ICDE 2026' headings, authors / title 
   ]);
   assert.equal(skipped.length, 1);
 });
+
+test("ISMAR past-symposia page: per symposium an Awards block of label / title / Recipients lines (and the 2025 and 2019 variants)", async () => {
+  const { parseIsmarAwards } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>ISMAR 2025 - Daejeon, South Korea</p><p>Awards</p><p>Best Paper Award</p><p>Recipients: Negotiated User-to-Group Teleportations in Social VR — Wen-Tong Shu, Yi-Jun Li, and Miao Wang</p>
+<p>Best Paper Awards Honorable Mention</p><p>Recipients: Exploring and Modeling the Effects of Eye-Tracking Accuracy — Xuning Hu and Yuxin Shen</p><p>Best Poster Award</p><p>Recipients: A Poster About Something — Pat Poster</p>
+<p>ISMAR 2023 - Australia, Sydney</p><p>Awards</p><p>ISMAR 2023 Career Impact Award</p><p>Recipient: Kato, Hirokazo</p><p>ISMAR Paper Impact Award</p><p>Experiences with handheld augmented reality. In 2007 IEEE International Symposium on Mixed and Augmented Reality (pp. 3-18). IEEE.</p><p>Recipients: Schmalstieg, D., and Wagner, D.</p>
+<p>ISMAR 2019 - Beijing, China</p><p>Awards</p><p>Best Impact Paper Award</p><p>Recipients: Henderson, S. J., and Feiner, S.</p><p>for the paper "Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret."</p>`;
+  const { entries, skipped } = parseIsmarAwards(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 best Negotiated User-to-Group Teleportations in Social VR | Wen-Tong Shu; Yi-Jun Li; Miao Wang",
+    "2025 runner-up Exploring and Modeling the Effects of Eye-Tracking Accuracy | Xuning Hu; Yuxin Shen",
+    "2023 tot Experiences with handheld augmented reality | D. Schmalstieg; D. Wagner",
+    "2019 tot Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret | S. J. Henderson; S. Feiner"
+  ]);
+  assert.deepEqual(skipped, []);
+});

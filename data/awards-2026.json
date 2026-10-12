@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5055
+  "count": 5143
  },
  "entries": [
   {
@@ -57929,6 +57929,1462 @@
    "paperYear": 2007,
    "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
    "evidence": "2025 (For ISCA 2007): Zhenghong Wang and Ruby Lee — New Cache Designs for Thwarting Software Cache-based Side Channel Attacks"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Tracking and Mapping for Small AR Workspaces",
+   "authors": [
+    "Georg Klein",
+    "David Murray"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2007 Best Paper Award: Parallel Tracking and Mapping for Small AR Workspaces — Georg Klein and David Murray"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Interactive Focus and Context Visualization for Augmented Reality",
+   "authors": [
+    "Denis Kalkofen",
+    "Erick Mendez",
+    "Dieter Schmalstieg"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2007 Best Student Paper Award: Interactive Focus and Context Visualization for Augmented Reality — Denis Kalkofen, Erick Mendez, and Dieter Schmalstieg"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pose Tracking from Natural Features on Mobile Phones",
+   "authors": [
+    "Daniel Wagner",
+    "Gerhard Reitmayr",
+    "Alessandro Mulloni",
+    "Tom Drummond",
+    "Dieter Schmalstieg"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2008 Best Paper Award: Pose Tracking from Natural Features on Mobile Phones — Daniel Wagner, Gerhard Reitmayr, Alessandro Mulloni, Tom Drummond, Dieter Schmalstieg"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "An Optical See-Through Head Mounted Display with Addressable Focal Planes",
+   "authors": [
+    "Sheng Liu",
+    "Dewen Cheng",
+    "Hong Hua"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2008 Best Student Paper Award: An Optical See-Through Head Mounted Display with Addressable Focal Planes — Sheng Liu, Dewen Cheng, Hong Hua"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret",
+   "authors": [
+    "Steven Henderson",
+    "Steven Feiner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2009 Best Paper Award: Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret — Steven Henderson and Steven Feiner"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Shape recognition and pose estimation for mobile augmented reality",
+   "authors": [
+    "Nate Hagbi",
+    "Oriel Bergig",
+    "Jihad El-Sana",
+    "Mark Billinghurst"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2009 Best Student Paper Award: Shape recognition and pose estimation for mobile augmented reality — Nate Hagbi, Oriel Bergig, Jihad El-Sana, and Mark Billinghurst"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best S&T Paper Award",
+   "title": "Differential Instant Radiosity for Mixed Reality",
+   "authors": [
+    "Martin Knecht",
+    "Christoph Traxler",
+    "Oliver Mattausch",
+    "Werner Purgathofer",
+    "Michael Wimmer"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2010 Best S&T Paper Award: Differential Instant Radiosity for Mixed Reality — Martin Knecht, Christoph Traxler, Oliver Mattausch, Werner Purgathofer, and Michael Wimmer"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best S&T Student Paper Award",
+   "title": "Build Your World and Play In It: Interacting with Surface Particles on Complex Objects",
+   "authors": [
+    "Brett Jones",
+    "Rajinder Sodhi",
+    "Roy Campbell",
+    "Guy Garnett",
+    "Brian Bailey"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2010 Best S&T Student Paper Award: Build Your World and Play In It: Interacting with Surface Particles on Complex Objects — Brett Jones, Rajinder Sodhi, Roy Campbell, Guy Garnett, and Brian Bailey"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best S&T Paper Award",
+   "title": "KinectFusion: Real-Time Dense Surface Mapping and Trackin",
+   "authors": [
+    "Richard A. Newcombe",
+    "Shahram Izadi",
+    "Otmar Hilliges",
+    "David Molyneaux",
+    "David Kim",
+    "Andrew J. Davison",
+    "Pushmeet Kohli",
+    "Jamie Shotton",
+    "Steve Hodges",
+    "Andrew Fitzgibbon"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2011 Best S&T Paper Award: KinectFusion: Real-Time Dense Surface Mapping and Trackin — Richard A. Newcombe, Shahram Izadi, Otmar Hilliges, David Molyneaux, David Kim, Andrew J. Davison, Pushmeet Kohli, Jamie Shotton, Steve Hodges, Andrew Fitzgibbon"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best AMH Paper Award",
+   "title": "Pre-Patterns for Designing Embodied Interactions in Handheld Augmented Reality Games",
+   "authors": [
+    "Yan Xu",
+    "Evan Barba",
+    "Iulian Radu",
+    "Maribeth Gandy",
+    "Richard Shemaka",
+    "Brian Schrank",
+    "Tony Tseng",
+    "Blair MacIntyre"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2011 Best AMH Paper Award: Pre-Patterns for Designing Embodied Interactions in Handheld Augmented Reality Games — Yan Xu, Evan Barba, Iulian Radu, Maribeth Gandy, Richard Shemaka, Brian Schrank, Tony Tseng, Blair MacIntyre"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best S&T Student Paper Award",
+   "title": "Augmented Reality in the Psychomotor Phase of a Procedural Task",
+   "authors": [
+    "Steven J. Henderson",
+    "Steven K. Feiner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2011 Best S&T Student Paper Award: Augmented Reality in the Psychomotor Phase of a Procedural Task — Steven J. Henderson, Steven K. Feiner"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best S&T Student Paper Award",
+   "title": "Interactive Visualization Technique for Truthful Color Reproduction in Spatial Augmented Reality Applications",
+   "authors": [
+    "Christoffer Menk",
+    "Reinhard Koch"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2011 Best S&T Student Paper Award: Interactive Visualization Technique for Truthful Color Reproduction in Spatial Augmented Reality Applications — Christoffer Menk, Reinhard Koch"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Live Tracking and Mapping From Both General and Rotation-Only Camera Motion",
+   "authors": [
+    "Steffen Gauglitz",
+    "Chris Sweeney",
+    "Jonathan Ventura",
+    "Matthew Turk",
+    "Tobias Hollerer"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2012 Best Paper Award: Live Tracking and Mapping From Both General and Rotation-Only Camera Motion — Steffen Gauglitz, Chris Sweeney, Jonathan Ventura, Matthew Turk, Tobias Hollerer"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up Award",
+   "title": "Kinectrack: Agile 6-DoF Tracking Using a Projected Dot Pattern",
+   "authors": [
+    "Paul Mcilroy",
+    "Shahram Izadi",
+    "Andrew Fitzgibbon"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2012 Best Paper Runner Up Award: Kinectrack: Agile 6-DoF Tracking Using a Projected Dot Pattern — Paul Mcilroy, Shahram Izadi, Andrew Fitzgibbon"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "10 Years Lasting Impact Award",
+   "title": "Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System",
+   "authors": [
+    "Hirokazu Kato",
+    "Mark Billinghurst"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2012 10 Years Lasting Impact Award: Marker Tracking and HMD Calibration for a Video-Based Augmented Reality Conferencing System — Hirokazu Kato, Mark Billinghurst"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Augmented Reality Binoculars",
+   "authors": [
+    "Taragay Oskiper",
+    "Mikhail Sizintsev",
+    "Vlad Branzoi",
+    "Supun Samarasekera",
+    "Rakesh Kumar"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2013 Best Paper Award: Augmented Reality Binoculars — Taragay Oskiper, Mikhail Sizintsev, Vlad Branzoi, Supun Samarasekera, and Rakesh Kumar"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up Award",
+   "title": "Image-guided Simulation of Heterogeneous Tissue Deformation For Augmented Reality during Hepatic Surgery",
+   "authors": [
+    "Nazim Haouchine",
+    "Jeremie Dequidt",
+    "Igor Peterlik",
+    "Erwan Kerrien",
+    "Marie-Odile Berger",
+    "Stephane Cotin"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2013 Best Paper Runner Up Award: Image-guided Simulation of Heterogeneous Tissue Deformation For Augmented Reality during Hepatic Surgery — Nazim Haouchine, Jeremie Dequidt, Igor Peterlik, Erwan Kerrien, Marie-Odile Berger, and Stephane Cotin"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2013,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up Award",
+   "title": "Through the Looking Glass: Pretend Play for Children with Autism",
+   "authors": [
+    "Zhen Bai",
+    "Alan Blackwell",
+    "George Coulouris"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2013 Best Paper Runner Up Award: Through the Looking Glass: Pretend Play for Children with Autism — Zhen Bai, Alan Blackwell, and George Coulouris"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "10 Years Lasting Impact Award",
+   "title": "Markerless Tracking using Planar Structures in the Scene",
+   "authors": [
+    "Simon Gilles",
+    "Andrew W. Fitzgibbon",
+    "Andrew Zisserman"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2013 10 Years Lasting Impact Award: Markerless Tracking using Planar Structures in the Scene — Simon Gilles, Andrew W. Fitzgibbon, and Andrew Zisserman"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Interactive Near-Field Illumination for Photorealistic Augmented Reality on Mobile Devices",
+   "authors": [
+    "Kai Rohmer",
+    "Wolfgang Büschel",
+    "Raimund Dachselt",
+    "Thorsten Grosch"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2014 Best Long Paper Award: Interactive Near-Field Illumination for Photorealistic Augmented Reality on Mobile Devices — Kai Rohmer, Wolfgang Büschel, Raimund Dachselt, and Thorsten Grosch"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Semi-Dense Visual Odometry for AR on a Smartphone",
+   "authors": [
+    "Thomas Schöps",
+    "Jakob Engel",
+    "Daniel Cremers"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2014 Best Short Paper Award: Semi-Dense Visual Odometry for AR on a Smartphone — Thomas Schöps, Jakob Engel, and Daniel Cremers"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "MASH'D Best Full Paper Award",
+   "title": "Augmented \"Ouch!\". How to create intersubjective augmented objects into which we can bump",
+   "authors": [
+    "Nicola Liberati"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2015 MASH'D Best Full Paper Award: Augmented \"Ouch!\". How to create intersubjective augmented objects into which we can bump — Nicola Liberati"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "S&T Best Short Paper Award",
+   "title": "Efficient Computation of Absolute Pose for Gravity-Aware Augmented Reality",
+   "authors": [
+    "Chris Sweeney",
+    "John Flynn",
+    "Benjamin Neurnberger",
+    "Matthew Turk",
+    "Tobias Höllerer"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2015 S&T Best Short Paper Award: Efficient Computation of Absolute Pose for Gravity-Aware Augmented Reality — Chris Sweeney, John Flynn, Benjamin Neurnberger, Matthew Turk, and Tobias Höllerer"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "S&T Best Full Paper Award",
+   "title": "Instant Outdoor Localization and SLAM Initialization from 2.5D Maps",
+   "authors": [
+    "Clemens Arth",
+    "Christian Pirchheim",
+    "Jonathan Ventura",
+    "Dieter Schmalstieg",
+    "Vincent Lepetit"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2015 S&T Best Full Paper Award: Instant Outdoor Localization and SLAM Initialization from 2.5D Maps — Clemens Arth, Christian Pirchheim, Jonathan Ventura, Dieter Schmalstieg, and Vincent Lepetit"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2015,
+   "award": "runner-up",
+   "awardLabel": "S&T Best Full Paper Honorable Mention",
+   "title": "Live Texturing of Augmented Reality Characters from Colored Drawings",
+   "authors": [
+    "Stephane Magnenat",
+    "Dat Tien Ngo",
+    "Fabio Zünd",
+    "Mattia Ryffel",
+    "Gioacchino Noris",
+    "Gerhard Rothlin",
+    "Alessia Marra",
+    "Maurizio Nitti",
+    "Pascal Fua",
+    "Markus Gross",
+    "Robert W. Sumner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2015 S&T Best Full Paper Honorable Mention: Live Texturing of Augmented Reality Characters from Colored Drawings — Stephane Magnenat, Dat Tien Ngo, Fabio Zünd, Mattia Ryffel, Gioacchino Noris, Gerhard Rothlin, Alessia Marra, Maurizio Nitti, Pascal Fua, Markus Gross, and Robert W. Sumner"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Kilo-Hertz 6-DoF Visual Tracking Using an Egocentric Cluster of Rolling Shutter Cameras",
+   "authors": [
+    "Akash Bapat",
+    "Enrique Dunn",
+    "Jan-Michael Frahm"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2016 Best Paper Award: Towards Kilo-Hertz 6-DoF Visual Tracking Using an Egocentric Cluster of Rolling Shutter Cameras — Akash Bapat, Enrique Dunn, and Jan-Michael Frahm"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner Up",
+   "title": "Gaussian Light Field: Estimation of Viewpoint-Dependent Blur for Optical See-Through Head-Mounted Displays",
+   "authors": [
+    "Yuta Itoh",
+    "Toshiyuki Amano",
+    "Daisuke Iwai",
+    "Gudrun Klinker"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2016 Best Paper Runner Up: Gaussian Light Field: Estimation of Viewpoint-Dependent Blur for Optical See-Through Head-Mounted Displays — Yuta Itoh, Toshiyuki Amano, Daisuke Iwai, and Gudrun Klinker"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Long Lasting Impact Papers Award",
+   "title": "Dynamic shader lamps: Painting on movable objects (ISAR2001)",
+   "authors": [
+    "Deepak Bandyopadhyay",
+    "Ramesh Raskar",
+    "Henry Fuchs"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2016 Long Lasting Impact Papers Award: Dynamic shader lamps: Painting on movable objects (ISAR2001) — Deepak Bandyopadhyay, Ramesh Raskar, and Henry Fuchs"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Long Lasting Impact Papers Award",
+   "title": "Spatially augmented reality (IWAR98)",
+   "authors": [
+    "Ramesh Raskar",
+    "Greg Welch",
+    "Henry Fuchs"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2016 Long Lasting Impact Papers Award: Spatially augmented reality (IWAR98) — Ramesh Raskar, Greg Welch, and Henry Fuchs"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SonifEye: Sonification of Visual Information using Physical Modeling Sound Synthesis",
+   "authors": [
+    "Hessam Roodaki",
+    "Navid Navab",
+    "Abouzar Eslami",
+    "Christopher Stapleton",
+    "Nassir Navab"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2017 Best Paper Award: SonifEye: Sonification of Visual Information using Physical Modeling Sound Synthesis — Hessam Roodaki, Navid Navab, Abouzar Eslami, Christopher Stapleton, and Nassir Navab"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Impact Paper Award",
+   "title": "Parallel Tracking and mapping for small AR workspaces",
+   "authors": [
+    "Georg Klein",
+    "David Murray"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2017 Impact Paper Award: Parallel Tracking and mapping for small AR workspaces — Georg Klein (Microsoft) and David Murray (University of Oxford)"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ReconViguRation: Reconfiguring Physical Keyboards in Virtual Reality",
+   "authors": [
+    "Daniel Schneider",
+    "Alexander Otte",
+    "Travis Gesslein",
+    "Philipp Gagel",
+    "Bastian Kuth",
+    "Mohamad Shahm Damlakhi",
+    "Oliver Dietz",
+    "Eyal Ofek",
+    "Michel Pahud",
+    "Per Ola Kristensson",
+    "Jörg Müller",
+    "Jens Grubert"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2019 Best Paper Award: ReconViguRation: Reconfiguring Physical Keyboards in Virtual Reality — Daniel Schneider, Alexander Otte, Travis Gesslein, Philipp Gagel, Bastian Kuth, Mohamad Shahm Damlakhi, Oliver Dietz, Eyal Ofek, Michel Pahud, Per Ola Kristensson, Jörg Müller, and Jens Grubert"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "Animated Stickies: Fast Video Projection Mapping onto a Markerless Plane through a Direct Closed-Loop Alignment",
+   "authors": [
+    "Shingo Kagami",
+    "Koichi Hashimoto"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2019 Best Paper Honorable Mention Award: Animated Stickies: Fast Video Projection Mapping onto a Markerless Plane through a Direct Closed-Loop Alignment — Shingo Kagami and Koichi Hashimoto"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Impact Paper Award",
+   "title": "Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret",
+   "authors": [
+    "S. J. Henderson",
+    "S Feiner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2019 Best Impact Paper Award: Evaluating the benefits of augmented reality for task localization in maintenance of an armored personnel carrier turret — Henderson, S. J., and Feiner, S."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mobile3DRecon: Real-time Monocular 3D Reconstruction on a Mobile Phone",
+   "authors": [
+    "Xingbin Yang",
+    "Liyang Zhou",
+    "Hanqing Jiang",
+    "Zhongliang Tang",
+    "Yuanbo Wang",
+    "Hujun Bao",
+    "Guofeng Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2020 Best Paper Award: Mobile3DRecon: Real-time Monocular 3D Reconstruction on a Mobile Phone — Xingbin Yang, Liyang Zhou, Hanqing Jiang, Zhongliang Tang, Yuanbo Wang, Hujun Bao, and Guofeng Zhang (Sensetime Research / Zhejiang University)"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention Award",
+   "title": "Spatial Presence, Performance, and Behavior between Real, Remote, and Virtual Immersive Environments",
+   "authors": [
+    "Nawel Khenak",
+    "Jeanne Vézien",
+    "Patrick Bourdot"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2020 Best Paper Honorable Mention Award: Spatial Presence, Performance, and Behavior between Real, Remote, and Virtual Immersive Environments — Nawel Khenak, Jeanne Vézien, and Patrick Bourdot (Université Paris-Saclay)"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Journal Paper Award",
+   "title": "Multifocal Stereoscopic Projection Mapping",
+   "authors": [
+    "Sorashi Kimura",
+    "Daisuke Iwai",
+    "Parinya Punpongsanon",
+    "Kosuke Sato"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Best Journal Paper Award: Multifocal Stereoscopic Projection Mapping — Sorashi Kimura, Daisuke Iwai, Parinya Punpongsanon, and Kosuke Sato"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Conference Paper",
+   "title": "Neural Cameras: Learning Camera Characteristics for Coherent Mixed Reality Rendering",
+   "authors": [
+    "David Mandl",
+    "Peter Mohr",
+    "Tobias Langlotz",
+    "Christoph Ebner",
+    "Shohei Mori",
+    "Stefanie Zollmann",
+    "Peter M. Roth",
+    "Denis Kalkofen"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Best Conference Paper: Neural Cameras: Learning Camera Characteristics for Coherent Mixed Reality Rendering — David Mandl, Peter Mohr, Tobias Langlotz, Christoph Ebner, Shohei Mori, Stefanie Zollmann, Peter M. Roth, and Denis Kalkofen"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Journal Paper Honorable Mention",
+   "title": "Redirected Walking in Static and Dynamic Scenes Using Visibility Polygons",
+   "authors": [
+    "Niall L. Williams",
+    "Aniket Bera",
+    "Dinesh Manocha"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Journal Paper Honorable Mention: Redirected Walking in Static and Dynamic Scenes Using Visibility Polygons — Niall L. Williams, Aniket Bera, and Dinesh Manocha"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Conference Paper Honorable Mention",
+   "title": "Redirected Walking Using Noisy Galvanic Vestibular Stimulation",
+   "authors": [
+    "Keigo Matsumoto",
+    "Kazuma Aoyama",
+    "Narumi Takuji",
+    "Hideaki Kuzuoka"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Conference Paper Honorable Mention: Redirected Walking Using Noisy Galvanic Vestibular Stimulation — Keigo Matsumoto, Kazuma Aoyama, Narumi Takuji, and Hideaki Kuzuoka"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student-Led Conference Paper",
+   "title": "AlterEcho: Loose Avatar-Streamer Coupling for Expressive VTubing",
+   "authors": [
+    "Man To Tang",
+    "Victor Long Zhu",
+    "Voicu Popescu"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Best Student-Led Conference Paper: AlterEcho: Loose Avatar-Streamer Coupling for Expressive VTubing — Man To Tang, Victor Long Zhu, and Voicu Popescu"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student-Led Journal Paper",
+   "title": "Head Mounted Displays with Increased Downward Field of View Improve Presence and Sense of Self-Location",
+   "authors": [
+    "Kizashi Nakano",
+    "Naoya Isoyama",
+    "Diego Monteiro",
+    "Nobuchika Sakata",
+    "Kiyoshi Kiyokawa",
+    "Takuji Narumi"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 Best Student-Led Journal Paper: Head Mounted Displays with Increased Downward Field of View Improve Presence and Sense of Self-Location — Kizashi Nakano, Naoya Isoyama, Diego Monteiro, Nobuchika Sakata, Kiyoshi Kiyokawa, and Takuji Narumi"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Impact Paper Award",
+   "title": "Kinectfusion: Real-time Dense Surface Mapping and Tracking",
+   "authors": [
+    "Richard A. Newcombe",
+    "Shahram Izadi",
+    "Otmar Hilliges",
+    "David Molyneaux",
+    "David Kim",
+    "Andrew J. Davison",
+    "Pushmeet Kohi",
+    "Jamie Shotton",
+    "Steve Hodges",
+    "Andrew Fitzgibbon"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2021 ISMAR 2021 Impact Paper Award: Kinectfusion: Real-time Dense Surface Mapping and Tracking — Richard A. Newcombe, Shahram Izadi, Otmar Hilliges, David Molyneaux, David Kim, Andrew J. Davison, Pushmeet Kohi, Jamie Shotton, Steve Hodges, and Andrew Fitzgibbon"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Conference Paper Award",
+   "title": "Evaluating the Object-Centered User Interface in Head-Worn Mixed Reality Environment",
+   "authors": [
+    "Yihan Li",
+    "Yong Hu",
+    "Zidan Wang",
+    "Xukun Shen"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 Best IEEE ISMAR 2022 Conference Paper Award: Evaluating the Object-Centered User Interface in Head-Worn Mixed Reality Environment — Yihan Li, Yong Hu, Zidan Wang, and Xukun Shen"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Journal Paper Award",
+   "title": "FoV-NeRF: Foveated Neural Radiance Fields for Virtual Reality",
+   "authors": [
+    "Nianchen Deng",
+    "Zhenyi He",
+    "Jiannan Ye",
+    "Budmonde Duinkharjav",
+    "Praneeth Chakravarthula",
+    "Xubo Yang",
+    "Qi Sun"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 Best IEEE ISMAR 2022 Journal Paper Award: FoV-NeRF: Foveated Neural Radiance Fields for Virtual Reality — Nianchen Deng, Zhenyi He, Jiannan Ye, Budmonde Duinkharjav, Praneeth Chakravarthula, Xubo Yang, and Qi Sun"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best IEEE ISMAR 2022 Journal Paper",
+   "title": "Content-Aware Brightness Solving and Error Mitigation in Large-Scale Multi-Projection Mapping",
+   "authors": [
+    "Philipp Kurth",
+    "Markus Leuschner",
+    "Marc Stamminger",
+    "Frank Bauer"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 Honorable Mention for Best IEEE ISMAR 2022 Journal Paper: Content-Aware Brightness Solving and Error Mitigation in Large-Scale Multi-Projection Mapping — Philipp Kurth, Markus Leuschner, Marc Stamminger, and Frank Bauer"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best IEEE ISMAR 2022 Conference Paper",
+   "title": "Exploring the Impact of Visual Information on Intermittent Typing in Virtual Reality",
+   "authors": [
+    "Alexander Giovannelli",
+    "Lee Lisle",
+    "Doug A. Bowman"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 Honorable Mention for Best IEEE ISMAR 2022 Conference Paper: Exploring the Impact of Visual Information on Intermittent Typing in Virtual Reality — Alexander Giovannelli, Lee Lisle, Doug A. Bowman"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "ISMAR Paper Impact Award",
+   "title": "Going out: robust model-based tracking for outdoor augmented reality",
+   "authors": [
+    "G. Reitmayr",
+    "T. W Drummond"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 ISMAR Paper Impact Award: Going out: robust model-based tracking for outdoor augmented reality — Reitmayr, G., and Drummond, T. W."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "ISMAR Paper Impact Award",
+   "title": "Perceptual issues in augmented reality revisited",
+   "authors": [
+    "E. Kruijff",
+    "J. E. Swan",
+    "S Feiner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2022 ISMAR Paper Impact Award: Perceptual issues in augmented reality revisited — Kruijff, E., Swan, J. E., and Feiner, S"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Journal Paper Award",
+   "title": "Multi-layer Scene Representation from Composed Focal Stacks",
+   "authors": [
+    "Reina Ishikawa",
+    "Hideo Saito",
+    "Denis Kalkofen",
+    "Shohei Mori"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2023 Best IEEE ISMAR 2023 Journal Paper Award: Multi-layer Scene Representation from Composed Focal Stacks — Reina Ishikawa, Hideo Saito, Denis Kalkofen, and Shohei Mori"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Conference Paper Award",
+   "title": "Point & Portal: A New Action at a Distance Technique For Virtual Reality",
+   "authors": [
+    "Daniel Ablett",
+    "Andrew Cunningham",
+    "Gun A. Lee",
+    "Bruce H. Thomas"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2023 Best IEEE ISMAR 2023 Conference Paper Award: Point & Portal: A New Action at a Distance Technique For Virtual Reality — Daniel Ablett, Andrew Cunningham, Gun A. Lee, and Bruce H. Thomas"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Journal Paper Award",
+   "title": "Understanding Effects of Visual Feedback Delay in AR on Fine Motor Surgical Tasks",
+   "authors": [
+    "Talha Khan",
+    "Toby S. Zhu",
+    "Thomas Downes",
+    "Lucille Cheng",
+    "Nicolás M. Kass",
+    "Edward G. Andrews",
+    "Jacob T. Biehl"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2023 Best IEEE ISMAR 2023 Journal Paper Award: Understanding Effects of Visual Feedback Delay in AR on Fine Motor Surgical Tasks — Talha Khan, Toby S. Zhu, Thomas Downes, Lucille Cheng, Nicolás M. Kass, Edward G. Andrews, and Jacob T. Biehl"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for Best IEEE ISMAR 2023 Conference Paper",
+   "title": "Enhancing Seamless Walking in Virtual Reality: Application of Bone-Conduction Vibration in Redirected Walking",
+   "authors": [
+    "Seokhyun Hwang",
+    "YoungIn Kim",
+    "Youngseok Seo",
+    "SeungJun Kim"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2023 Honorable Mention for Best IEEE ISMAR 2023 Conference Paper: Enhancing Seamless Walking in Virtual Reality: Application of Bone-Conduction Vibration in Redirected Walking — Seokhyun Hwang, YoungIn Kim, Youngseok Seo, and SeungJun Kim"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "ISMAR Paper Impact Award",
+   "title": "Experiences with handheld augmented reality",
+   "authors": [
+    "D. Schmalstieg",
+    "D Wagner"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2023 ISMAR Paper Impact Award: Experiences with handheld augmented reality — Schmalstieg, D., and Wagner, D."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Journal Paper",
+   "title": "HOIMotion: Forecasting Human Motion During Human-Object Interactions Using Egocentric 3D Object Bounding Boxes",
+   "authors": [
+    "Z. Hu",
+    "Z. Yin",
+    "D. Haeufle",
+    "S. Schmitt",
+    "A Bulling"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Best Journal Paper: HOIMotion: Forecasting Human Motion During Human-Object Interactions Using Egocentric 3D Object Bounding Boxes — Hu, Z., Yin, Z., Haeufle, D., Schmitt, S., & Bulling, A."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Conference Paper",
+   "title": "Spatial Affordance-aware Interactable Subspace Allocation for Mixed Reality Telepresence",
+   "authors": [
+    "D. Kim",
+    "S. Kim",
+    "S. Choi",
+    "W Woo"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Best Conference Paper: Spatial Affordance-aware Interactable Subspace Allocation for Mixed Reality Telepresence — Kim, D., Kim, S., Choi, S., & Woo, W."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for ISMAR 2024 Best Student Conference Paper",
+   "title": "Do you read me? (E)motion Legibility of Virtual Reality Character Representations",
+   "authors": [
+    "K. Brandstatter",
+    "B. Congdon",
+    "A Steed"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 Honorable Mention for ISMAR 2024 Best Student Conference Paper: Do you read me? (E)motion Legibility of Virtual Reality Character Representations — Brandstatter, K., Congdon, B., & Steed, A."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for ISMAR 2024 Best Journal Paper",
+   "title": "Should I Evaluate my Augmented Reality System in an Industrial Environment? Investigating the Effects of Classroom and Shop Floor Settings on Guided Assembly",
+   "authors": [
+    "V. Zhang",
+    "A. Albers",
+    "C. Saeedi-Givi",
+    "P.O. Kristensson",
+    "T. Bohn",
+    "S Tadeja"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 Honorable Mention for ISMAR 2024 Best Journal Paper: Should I Evaluate my Augmented Reality System in an Industrial Environment? Investigating the Effects of Classroom and Shop Floor Settings on Guided Assembly — Zhang, V., Albers, A., Saeedi-Givi, C., Kristensson, P.O., Bohn, T., & Tadeja, S."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for ISMAR 2024 Best Conference Paper",
+   "title": "Speaking with Objects: Conversational Agents’ Embodiment in Virtual Museums",
+   "authors": [
+    "I. López García",
+    "E. Schott",
+    "M. Gohsen",
+    "V. Bernhard",
+    "B. Stein",
+    "B Froehlich"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 Honorable Mention for ISMAR 2024 Best Conference Paper: Speaking with Objects: Conversational Agents’ Embodiment in Virtual Museums — López García, I., Schott, E., Gohsen, M., Bernhard, V., Stein, B., & Froehlich, B."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention for ISMAR 2024 Best Student Conference Paper",
+   "title": "XR Prototyping of Mixed Reality Visualizations: Compensating Interaction Latency for a Medical Imaging Robot",
+   "authors": [
+    "J. H. Plümer",
+    "K. Yu",
+    "U. Eck",
+    "D. Kalkofen",
+    "P. Steininger",
+    "N. Navab",
+    "M Tatzgern"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 Honorable Mention for ISMAR 2024 Best Student Conference Paper: XR Prototyping of Mixed Reality Visualizations: Compensating Interaction Latency for a Medical Imaging Robot — Plümer, J. H., Yu, K., Eck, U., Kalkofen, D., Steininger, P., Navab, N., & Tatzgern, M."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Journal Paper",
+   "title": "The Effects of Depth of Knowledge of a Virtual Agent",
+   "authors": [
+    "F. Yang",
+    "K. Duque",
+    "C Mousas"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Best Student Journal Paper: The Effects of Depth of Knowledge of a Virtual Agent — Yang, F., Duque , K., & Mousas, C."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Journal Paper",
+   "title": "VPRF: Visual Perceptual Radiance Fields for Foveated Image Synthesis",
+   "authors": [
+    "Z. Wang",
+    "J. Wu",
+    "R. Fan",
+    "W. Ke",
+    "L Wang"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Best Student Journal Paper: VPRF: Visual Perceptual Radiance Fields for Foveated Image Synthesis — Wang, Z., Wu, J., Fan, R., Ke, W., & Wang, L."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Conference Paper",
+   "title": "XaiR: An XR Platform that Integrates Large Language Models with the Physical World",
+   "authors": [
+    "S. Srinidhi",
+    "E. Schott",
+    "E. Lu",
+    "A Rowe"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Best Student Conference Paper: XaiR: An XR Platform that Integrates Large Language Models with the Physical World — Srinidhi, S., Schott, E., Lu, E., & Rowe, A."
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Paper Impact Award",
+   "title": "Mobile Augmented Reality for Cultural Heritage: A Technology Acceptance Study",
+   "authors": [
+    "Anne-Cecilie Haugstvedt",
+    "John Krogstie"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2024 ISMAR 2024 Paper Impact Award: Mobile Augmented Reality for Cultural Heritage: A Technology Acceptance Study — Anne-Cecilie Haugstvedt & John Krogstie"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Handheld Stiffness Display with a Programmable Spring and Electrostatic Clutches for Haptic Interaction in Virtual Reality",
+   "authors": [
+    "Ke Shi",
+    "Quan Xiong",
+    "Maozeng Zhang",
+    "Aiguo Song",
+    "Lifeng Zhu"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: A Handheld Stiffness Display with a Programmable Spring and Electrostatic Clutches for Haptic Interaction in Virtual Reality — Ke Shi, Quan Xiong, Maozeng Zhang, Aiguo Song, and Lifeng Zhu"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ada: A Distributed, Power-Aware, Real-Time Scene Provider for XR",
+   "authors": [
+    "Yihan Pang",
+    "Sushant Kondguli",
+    "Shenlong Wang",
+    "Sarita Adve"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: Ada: A Distributed, Power-Aware, Real-Time Scene Provider for XR — Yihan Pang, Sushant Kondguli, Shenlong Wang, and Sarita Adve"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Detecting Visual Information Manipulation Attacks in Augmented Reality: A Multimodal Semantic Reasoning Approach",
+   "authors": [
+    "Yanming Xiu",
+    "Maria Gorlatova"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: Detecting Visual Information Manipulation Attacks in Augmented Reality: A Multimodal Semantic Reasoning Approach — Yanming Xiu and Maria Gorlatova"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Negotiated User-to-Group Teleportations in Social VR",
+   "authors": [
+    "Wen-Tong Shu",
+    "Yi-Jun Li",
+    "Hao-Zhong Yang",
+    "Zi-Nan Han",
+    "Frank Steinicke",
+    "Miao Wang"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: Negotiated User-to-Group Teleportations in Social VR — Wen-Tong Shu, Yi-Jun Li, Hao-Zhong Yang, Zi-Nan Han, Frank Steinicke, and Miao Wang"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Viewpoint-Tolerant Depth Perception for Shared Extended Space Experience on Wall-Sized Display",
+   "authors": [
+    "Dooyoung Kim",
+    "Jinseok Hong",
+    "Heejeong Ko",
+    "Woontack Woo"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: Viewpoint-Tolerant Depth Perception for Shared Extended Space Experience on Wall-Sized Display — Dooyoung Kim, Jinseok Hong, Heejeong Ko, and Woontack Woo"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Visuo-Tactile Feedback with Hand Outline Styles for Modulating Affective Roughness Perception",
+   "authors": [
+    "Minju Baeck",
+    "Yoonseok Shin",
+    "Dooyoung Kim",
+    "Hyunjin Lee",
+    "Sang Ho Yoon",
+    "Woontack Woo"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: Visuo-Tactile Feedback with Hand Outline Styles for Modulating Affective Roughness Perception — Minju Baeck, Yoonseok Shin, Dooyoung Kim, Hyunjin Lee, Sang Ho Yoon, and Woontack Woo"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "When LLMs Recognize Your Space: Research on Experiences with Spatially Aware LLM Agents",
+   "authors": [
+    "Seungwoo Oh",
+    "Nakyoung An",
+    "Youngwug Cho",
+    "Myeongul Jung",
+    "Kwanguk Kim"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Award: When LLMs Recognize Your Space: Research on Experiences with Spatially Aware LLM Agents — Seungwoo Oh, Nakyoung An, Youngwug Cho, Myeongul Jung, and Kwanguk (Kenny) Kim"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Casual-VRAuth: A Design Framework Bridging Focused and Casual Interactions for Behavioral Authentication in Virtual Reality",
+   "authors": [
+    "GuanYu Ye",
+    "BoYu Gao",
+    "Huawei Tu"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Casual-VRAuth: A Design Framework Bridging Focused and Casual Interactions for Behavioral Authentication in Virtual Reality — GuanYu Ye, BoYu Gao, and Huawei Tu"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Exploring and Modeling the Effects of Eye-Tracking Accuracy and Precision on Gaze-Based Steering in Virtual Environments",
+   "authors": [
+    "Xuning Hu",
+    "Yichuan Zhang",
+    "Yushi Wei",
+    "Liangyuting Zhang",
+    "Yue Li",
+    "Wolfgang Stuerzlinger",
+    "Hai-Ning Liang"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Exploring and Modeling the Effects of Eye-Tracking Accuracy and Precision on Gaze-Based Steering in Virtual Environments — Xuning Hu, Yichuan Zhang, Yushi Wei, Liangyuting Zhang, Yue Li, Wolfgang Stuerzlinger, and Hai-Ning Liang"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Extended Reality Check: Evaluating XR Prototyping for Human-Robot Interaction in Contact-Intensive Tasks",
+   "authors": [
+    "Tonia Mielke",
+    "Mareen Allgaier",
+    "Christian Hansen",
+    "Florian Heinrich"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Extended Reality Check: Evaluating XR Prototyping for Human-Robot Interaction in Contact-Intensive Tasks — Tonia Mielke, Mareen Allgaier, Christian Hansen, and Florian Heinrich"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Facilitating the Exploration of Linearly Aligned Objects in Controller-Free 3D Environment with Gaze and Microgestures",
+   "authors": [
+    "Jihyeon Lee",
+    "Jinwook Kim",
+    "Jeongmi Lee"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Facilitating the Exploration of Linearly Aligned Objects in Controller-Free 3D Environment with Gaze and Microgestures — Jihyeon Lee, Jinwook Kim, and Jeongmi Lee"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Handows: A Palm-Based Interactive Multi-Window Management System in Virtual Reality",
+   "authors": [
+    "Jin-Du Wang",
+    "Ke Zhou",
+    "Haoyu Ren",
+    "Per Ola Kristensson",
+    "Xiang Li"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Handows: A Palm-Based Interactive Multi-Window Management System in Virtual Reality — Jin-Du Wang, Ke Zhou, Haoyu Ren, Per Ola Kristensson, and Xiang Li"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "How Do We Read Texts in VR?: The Effects of Text Segment Quantity and Social Distraction on Text Readability in Virtual Museum Contexts",
+   "authors": [
+    "Jungmin Lee",
+    "Hyuckjin Jang",
+    "Jeongmi Lee"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: How Do We Read Texts in VR?: The Effects of Text Segment Quantity and Social Distraction on Text Readability in Virtual Museum Contexts — Jungmin Lee, Hyuckjin Jang, and Jeongmi Lee"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "I was truly able to express the image of myself that I have within\": Exploring VR Group Therapy Approaches with the LGBTQIA+ Community",
+   "authors": [
+    "Kinga Skierś",
+    "Danyang Peng",
+    "Anish Kundu",
+    "Tanner Person",
+    "Kenkichi Takase",
+    "Tamii Nagoshi",
+    "Sawako Nakayama",
+    "Yano Yuichiro",
+    "Tomoyuki Miyazaki",
+    "Kouta Minamizawa",
+    "Giulia Barbareschi"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: I was truly able to express the image of myself that I have within\": Exploring VR Group Therapy Approaches with the LGBTQIA+ Community — Kinga Skierś, Danyang Peng, Anish Kundu, Tanner Person, Kenkichi Takase, Tamii Nagoshi, Sawako Nakayama, Yano Yuichiro, Tomoyuki Miyazaki, Kouta Minamizawa, and Giulia Barbareschi"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Impact of Avatar-Locomotion Congruence on User Experience and Identification in Virtual Reality",
+   "authors": [
+    "Omar Khan",
+    "Hyeongil Nam",
+    "Kangsoo Kim"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Impact of Avatar-Locomotion Congruence on User Experience and Identification in Virtual Reality — Omar Khan, Hyeongil Nam, and Kangsoo Kim"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Influence of Object Height, Shadow and Adapting Luminance on Outdoor Depth Perception in Augmented Reality",
+   "authors": [
+    "Shining Ma",
+    "Chaochao Liu",
+    "Jingyuan Wang",
+    "Yue Liu",
+    "Yongtian Wang",
+    "Weitao Song"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Influence of Object Height, Shadow and Adapting Luminance on Outdoor Depth Perception in Augmented Reality — Shining Ma, Chaochao Liu, Jingyuan Wang, Yue Liu, Yongtian Wang, and Weitao Song"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "LiteAT: A Data-Lightweight and User-Adaptive VR Telepresence System for Remote Education",
+   "authors": [
+    "Yuxin Shen",
+    "Wei Liang",
+    "Jianzhu Ma"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: LiteAT: A Data-Lightweight and User-Adaptive VR Telepresence System for Remote Education — Yuxin Shen, Wei Liang, and Jianzhu Ma"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "MetaRoundWorm: A Virtual Reality Escape Room Game for Learning the Lifecycle and Immune Response to Parasitic Infections",
+   "authors": [
+    "Xuanru Cheng",
+    "Xian Wang",
+    "Chi-lok Tai",
+    "Lik-Hang Lee"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: MetaRoundWorm: A Virtual Reality Escape Room Game for Learning the Lifecycle and Immune Response to Parasitic Infections — Xuanru Cheng, Xian Wang, Chi-lok Tai, and Lik-Hang Lee"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "p-Blend: Privacy- and Utility-Preserving Blendshape Perturbation Against Re-identification Attacks in Virtual Reality",
+   "authors": [
+    "Jingwei Liu",
+    "Lai Wei",
+    "Yan Hu",
+    "Guangrong Zhao",
+    "Qing Yang",
+    "Guangdong Bai",
+    "Yiran Shen"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: p-Blend: Privacy- and Utility-Preserving Blendshape Perturbation Against Re-identification Attacks in Virtual Reality — Jingwei Liu, Lai Wei, Yan Hu, Guangrong Zhao, Qing Yang, Guangdong Bai, and Yiran Shen"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Portable Silent Room: Exploring VR Design for Anxiety and Emotion Regulation for Neurodivergent Women and Non-Binary Individuals",
+   "authors": [
+    "Kinga Skierś",
+    "Yun Suen Pai",
+    "Marina Nakagawa",
+    "Kouta Minamizawa",
+    "Giulia Barbareschi"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Portable Silent Room: Exploring VR Design for Anxiety and Emotion Regulation for Neurodivergent Women and Non-Binary Individuals — Kinga Skierś, Yun Suen Pai, Marina Nakagawa, Kouta Minamizawa, and Giulia Barbareschi"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "The AI of the Beholder: Experience of Healthcare AI Robots is Shaped by User-Centred Factors, Not Their Visual Appearance",
+   "authors": [
+    "Jinha Yoon",
+    "Patrycja Zajac",
+    "Lauren Pococke",
+    "Anisia Jicol",
+    "Christopher Clarke",
+    "Eamonn O’Neill",
+    "Karin Petrini",
+    "Christof Lutteroth",
+    "Crescent Jicol"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: The AI of the Beholder: Experience of Healthcare AI Robots is Shaped by User-Centred Factors, Not Their Visual Appearance — Jinha Yoon, Patrycja Zajac, Lauren Pococke, Anisia Jicol, Christopher Clarke, Eamonn O’Neill, Karin Petrini, Christof Lutteroth, and Crescent Jicol"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "The Effect of Hand Visibility in AR: Comparing Dexterity and Interaction with Virtual and Real Objects",
+   "authors": [
+    "Jakob Hartbrich",
+    "Stephanie Arévalo Arboleda",
+    "Steve Göring",
+    "Alexander Raake"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: The Effect of Hand Visibility in AR: Comparing Dexterity and Interaction with Virtual and Real Objects — Jakob Hartbrich, Stephanie Arévalo Arboleda, Steve Göring, and Alexander Raake"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "The Impact of AI-Based Real-Time Gesture Generation and Immersion on the Perception of Others and Interaction Quality in Social XR",
+   "authors": [
+    "Christian Merz",
+    "Niklas Krome",
+    "Carolin Wienrich",
+    "Stefan Kopp",
+    "Marc Erich Latoschik"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: The Impact of AI-Based Real-Time Gesture Generation and Immersion on the Perception of Others and Interaction Quality in Social XR — Christian Merz, Niklas Krome, Carolin Wienrich, Stefan Kopp, and Marc Erich Latoschik"
+  },
+  {
+   "venue": "ISMAR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Awards Honorable Mention",
+   "title": "Visceral Notices and Privacy Mechanisms for Eye Tracking in Augmented Reality",
+   "authors": [
+    "Nissi Otoo",
+    "Kailon Blue",
+    "G. Nikki Ramirez",
+    "Evan Selinger",
+    "Shaun Foster",
+    "Brendan David-John"
+   ],
+   "track": "main",
+   "source": "https://www.ismar.net/past_symposiums",
+   "evidence": "ISMAR 2025 Best Paper Awards Honorable Mention: Visceral Notices and Privacy Mechanisms for Eye Tracking in Augmented Reality — Nissi Otoo, Kailon Blue, G. Nikki Ramirez, Evan Selinger, Shaun Foster, and Brendan David-John"
   },
   {
    "venue": "ISSTA",
