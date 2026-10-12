@@ -1931,3 +1931,9 @@ test("UAI awards page: 'Best Paper Award: Title, by authors' lines (2023) and a 
   assert.deepEqual(parseUaiAwards("<p>Best Paper Award: A Graph Paper Title Here, by Ann Lee and Bo Chan</p>", "https://auai.org/uai2023/awards").entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["2023 best A Graph Paper Title Here | Ann Lee; Bo Chan"]);
   assert.deepEqual(parseUaiAwards("<p>Best Student Paper Award:</p><p>A Student Langevin Paper</p><p>Cy Dunn, Ed Fox</p><p>[OpenReview]</p>", "https://auai.org/uai2025/best_papers").entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), ["2025 student A Student Langevin Paper | Cy Dunn; Ed Fox"]);
 });
+
+test("ICASSP best-paper page: headings with title and authors' line pairs (quotation marks around the title kept out); a line with affiliations among the names is not read", async () => {
+  const { parseIcasspAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Paper Awards</p><p>The following papers were at the top of all submitted papers in each category.</p><p>Best Paper Award</p><p>“A Federated Learning Paper Title”</p><p>Ann Lee, Bo Chan</p><p>Conference Best Paper Award for Industry</p><p>“An Industry Paper Title Here”</p><p>Cy Dunn, Meta, Ed Fox, INRIA</p><p>Best Student Paper Awards</p><p>A Student Audio Paper Title</p><p>Flo Gray, Gil Hart</p><p>Home</p>`;
+  assert.deepEqual(parseIcasspAwards(h, "https://2024.ieeeicassp.org/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A Federated Learning Paper Title | Ann Lee; Bo Chan", "student A Student Audio Paper Title | Flo Gray; Gil Hart"]);
+});

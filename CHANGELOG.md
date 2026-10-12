@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.47 — 2026-10-12
+
+- ICASSP's best, best industry and best student papers of 2023 and 2024 (13 papers; the list had none) from the conference's own award pages (`tot.mjs icassp`); the 2024 industry paper, whose authors' line mixes in affiliations, is not read. The list has 6414 awards.
+
 ## 2.10.46 — 2026-10-12
 
 - AISTATS's best, best student and test of time papers of 2021–2025 (9 papers) and UAI's best, best student and runner-up papers of 2023 and 2025 (6 papers); the list had none of either. Each comes from the conference's own awards page (`tot.mjs aistats`, `tot.mjs uai`); the pages of the other years name no winners (2019 and 2020 list "notable papers", UAI's 2022 and 2024 pages are empty). The list has 6401 awards.

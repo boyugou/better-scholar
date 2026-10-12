@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6401
+  "count": 6414
  },
  "entries": [
   {
@@ -56567,6 +56567,211 @@
    "track": "main",
    "source": "https://www.icaps-conference.org/icaps-awards/",
    "evidence": "ICAPS 2026 Influential Paper Award: Michael Katz, Jörg Hoffmann, Carmel Domshlak. Who Said We Need to Relax All Variables?"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Audio signal enhancement with learning from positive and unlabelled data",
+   "authors": [
+    "Nobutaka Ito",
+    "Masashi Sugiyama"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Paper Award: Audio signal enhancement with learning from positive and unlabelled data — Nobutaka Ito, Masashi Sugiyama"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Industry Paper Award",
+   "title": "Contrastive learning-based audio to lyrics alignment for multiple languages",
+   "authors": [
+    "Simon Durand",
+    "Daniel Stoller",
+    "Sebastian Ewert"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Industry Paper Award: Contrastive learning-based audio to lyrics alignment for multiple languages — Simon Durand, Daniel Stoller, Sebastian Ewert"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "High-dimensional confidence regions in sparse MRI",
+   "authors": [
+    "Frederik Hoppe",
+    "Felix Krahmer",
+    "Claudio Mayrink Verdun",
+    "Marion Menzel",
+    "Holger Rauhut"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Student Paper Award: High-dimensional confidence regions in sparse MRI — Frederik Hoppe, Felix Krahmer, Claudio Mayrink Verdun, Marion Menzel, Holger Rauhut"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Hyperbolic audio source separation",
+   "authors": [
+    "Darius Petermann",
+    "Gordon Wichern",
+    "Aswin Shanmugam Subramanian",
+    "Jonathan LeRoux"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Student Paper Award: Hyperbolic audio source separation — Darius Petermann, Gordon Wichern, Aswin Shanmugam Subramanian, Jonathan LeRoux"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Large covariance matrix estimation with oracle statistical rate",
+   "authors": [
+    "Quan Wei",
+    "Ziping Zhao"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Student Paper Award: Large covariance matrix estimation with oracle statistical rate — Quan Wei, Ziping Zhao"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Perspective projection-based 3D CT reconstruction from biplanar X-rays",
+   "authors": [
+    "Daeun Kyung",
+    "Kyungmin Jo",
+    "Jaegul Choo",
+    "Joonseok Lee",
+    "Edward Choi"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Student Paper Award: Perspective projection-based 3D CT reconstruction from biplanar X-rays — Daeun Kyung, Kyungmin Jo, Jaegul Choo, Joonseok Lee, Edward Choi"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Solving audio inverse problems with a diffusion model",
+   "authors": [
+    "Eloi Moliner",
+    "Jaakko Lehtinen",
+    "Vesa Valimaki"
+   ],
+   "track": "main",
+   "source": "https://2023.ieeeicassp.org/best-paper-awards/",
+   "evidence": "ICASSP 2023 Best Student Paper Award: Solving audio inverse problems with a diffusion model — Eloi Moliner, Jaakko Lehtinen, Vesa Valimaki"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Composite Federated Learning with Heterogeneous Data",
+   "authors": [
+    "Jiaojiao Zhang",
+    "Jiang Hu",
+    "Mikael Johansson"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Paper Award: Composite Federated Learning with Heterogeneous Data — Jiaojiao Zhang, Jiang Hu, Mikael Johansson"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Adapting Frechet Audio Distance for Generative Music Evaluation",
+   "authors": [
+    "Azalea Gui",
+    "Hannes Gamper",
+    "Sebastian Braun",
+    "Dimitra Emmanouilidou"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Student Paper Award: Adapting Frechet Audio Distance for Generative Music Evaluation — Azalea Gui, Hannes Gamper, Sebastian Braun, Dimitra Emmanouilidou"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "DGLP: Incorporating Orientation Information for Enhanced Link Prediction in Directed Graphs",
+   "authors": [
+    "Yusen Zhang",
+    "Yusong Tan",
+    "Songlei Jian",
+    "Qingbo Wu",
+    "Kenli Li"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Student Paper Award: DGLP: Incorporating Orientation Information for Enhanced Link Prediction in Directed Graphs — Yusen Zhang, Yusong Tan, Songlei Jian, Qingbo Wu, Kenli Li"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Robust Symbol-Level Precoding via A Symbol-Perturbed Zero-Forcing Structure",
+   "authors": [
+    "Wai-You Keung",
+    "Yatao Liu",
+    "Wing-Kin Ma"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Student Paper Award: Robust Symbol-Level Precoding via A Symbol-Perturbed Zero-Forcing Structure — Wai-You Keung, Yatao Liu, Wing-Kin Ma"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Significant ASR Error Detection for Conversational Voice Assistants",
+   "authors": [
+    "John Harvill",
+    "Rinat Khaziev",
+    "Scarlett Li",
+    "Randy Cogill",
+    "Lidan Wang",
+    "Gopinath Chennupati",
+    "Hari Thadakamalla"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Student Paper Award: Significant ASR Error Detection for Conversational Voice Assistants — John Harvill, Rinat Khaziev, Scarlett Li, Randy Cogill, Lidan Wang, Gopinath Chennupati, Hari Thadakamalla"
+  },
+  {
+   "venue": "ICASSP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "STAR: Distilling Speech Temporal Relation for Lightweight Speech Self-Supervised Learning Models",
+   "authors": [
+    "Kangwook Jang",
+    "Sungnyun Kim",
+    "Hoirin Kim"
+   ],
+   "track": "main",
+   "source": "https://2024.ieeeicassp.org/awards/",
+   "evidence": "ICASSP 2024 Best Student Paper Award: STAR: Distilling Speech Temporal Relation for Lightweight Speech Self-Supervised Learning Models — Kangwook Jang, Sungnyun Kim, Hoirin Kim"
   },
   {
    "venue": "ICCV",
