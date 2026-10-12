@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.37 — 2026-10-12
+
+- SIGCOMM 2024's best paper (The Next Generation of BGP Data Collection Platforms) and best student paper (Understanding the Host Network) from the conference's program page (`tot.mjs sigcomm-year`); no other recent year's page names its awards. The list has 6306 awards.
+
 ## 2.10.36 — 2026-10-12
 
 - ASPLOS's best papers of 2019 and 2020 (8 papers) from the conference's own site pages (`tot.mjs asplos-year`). The list has 6304 awards.

@@ -1864,3 +1864,12 @@ test("ASPLOS 2019 and 2020 pages: a title over two lines then the authors; 'by A
   const h20 = `<p>Best Paper Award:“A Quoted Title For Systems”,</p><p>by Ann Lee (MIT) and Bo Chan (CMU)</p><p>Virtual ASPLOS Logistics</p>`;
   assert.deepEqual(parseAsplosYear(h20, "https://www.asplos-conference.org/asplos2020/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A Quoted Title For Systems | Ann Lee; Bo Chan"]);
 });
+
+test("SIGCOMM program page: 'Best Paper:' and 'Best Student Paper:' titles, authors from the paper's own entry (affiliations in brackets, a lower-case name kept); honorable mentions left out", async () => {
+  const { parseSigcommProgram } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Awards</p><p>Best Paper:A Good Systems Paper Title</p><p>Best Student Paper:A Student Systems Paper</p><p>Honorable mentions:Some Other Systems Paper</p><p>A Good Systems Paper Title Research Track</p><p>Ann Lee, Bo Chan (MIT); kc Dunn (UCSD)</p><p>Abstract: x</p><p>A Student Systems Paper Research Track</p><p>Cy Fox (CMU)</p>`;
+  assert.deepEqual(parseSigcommProgram(h, "https://conferences.sigcomm.org/sigcomm/2024/program/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "best A Good Systems Paper Title | Ann Lee; Bo Chan; kc Dunn",
+    "student A Student Systems Paper | Cy Fox"
+  ]);
+});

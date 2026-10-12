@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6304
+  "count": 6306
  },
  "entries": [
   {
@@ -87180,6 +87180,41 @@
    "paperYear": 2013,
    "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
    "evidence": "SIGCOMM 2023 Test of Time Paper Award: \"B4: Experience with a Globally-Deployed Software Defined Wan\" by Sushant Jain, Alok Kumar, Subhasree Mandal, Joon Ong, Leon Poutievski, Arjun Singh, Subbaiah Venkata, Jim Wanderer, Junlan Zhou, Min Zhu, Jon Zolla, Urs Hölzle, Stephen Stuart, Amin Vahdat, in ACM SIGCOMM 2013."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Next Generation of BGP Data Collection Platforms",
+   "authors": [
+    "Thomas Alfroy",
+    "Thomas Holterbach",
+    "Thomas Krenc",
+    "kc Claffy",
+    "Cristel Pelsser"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/sigcomm/2024/program/",
+   "evidence": "SIGCOMM 2024 Best Paper Award: The Next Generation of BGP Data Collection Platforms — Thomas Alfroy, Thomas Holterbach, Thomas Krenc, kc Claffy, Cristel Pelsser"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Understanding the Host Network",
+   "authors": [
+    "Midhul Vuppalapati",
+    "Saksham Agarwal",
+    "Henry N. Schuh",
+    "Baris Kasikci",
+    "Arvind Krishnamurthy",
+    "Rachit Agarwal"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/sigcomm/2024/program/",
+   "evidence": "SIGCOMM 2024 Best Student Paper Award: Understanding the Host Network — Midhul Vuppalapati, Saksham Agarwal, Henry N. Schuh, Baris Kasikci, Arvind Krishnamurthy, Rachit Agarwal"
   },
   {
    "venue": "SIGCOMM",
