@@ -785,6 +785,41 @@ It was influential.</p>
   assert.ok(entries.every((e) => e.evidence.includes(e.title) && e.source === "https://example.org/Awards/POPL/"));
 });
 
+test("SIGMETRICS awards page: test-of-time rows (authors before the title or on its line, a title that wraps, a surname-first author, a paragraph that quotes words) and paper awards under category lines", async () => {
+  const { parse } = await import("../scripts/awards/sigmetrics.mjs");
+  const html = `<h2>The SIGMETRICS Test of Time Award</h2><p>Recognizes papers.</p><h3>Past Winners</h3>
+<p>2024:</p><p>Ann Lee, Bo Chen, and Cy Diaz</p><p>"A Synthetic Measurement Study of Stores"</p><p>In Proceedings of ACM SIGMETRICS 2014.</p><p>A crawler that put "green" things next to "brown" things.</p>
+<p>2018:</p><p>Dee Park, Eli Ross, and Fay Gray</p><p>"A synthetic counter architecture for per-flow measurement"</p><p>ACM SIGMETRICS Performance Evaluation Review 36.1 (2008): 121-132</p><p>This work revisits it.</p>
+<p>2012:</p><p>Gia Stone, N Duffield, and D. Towsley. "Network Tomography on Synthetic Topologies." In Proceedings of ACM SIGMETRICS 2002.</p>
+<p>2010:</p><p>Hal Wu and Ivy Xu.</p><p>"A Comparison of Synthetic Receiver-initiated and Sender-initiated</p><p>Adaptive Load Sharing."</p><p>In Proceedings of ACM SIGMETRICS 1985.</p><p>It provided results.</p>
+<p>2017:</p><p>Zed, Kai J., Lu Mo, and Ned Oh.</p><p>"An analysis of synthetic errors in disk drives" In ACM SIGMETRICS Performance Evaluation Review, 2007.</p>
+<p>Go back to top.</p><h2>Other</h2><p>Paper awards</p><p>This list is incomplete.</p>
+<p>2026:</p><p>Best Paper Award:</p><p>"A Synthetic Envy Goes Long" by Pia Qi (Cornell University); Ray Sun (Northwestern University); Sue Tan (UMass; Allium).</p>
+<p>Kenneth C. Sevcik Outstanding Student Paper Award:</p><p>"Synthetic Central Limit Rates" by Tom Uy, Una Vo (University of Wisconsin-Madison).</p>
+<p>Best Paper Awards Runners-Up:</p><p>"A Synthetic Carbon Footprint of Flows" by Vic Wan, Wes Xia (University of Oxford).</p>
+<p>2013:</p><p>Best Paper Award and the Ken Sevcik Outstanding Student Paper Award:</p><p>"Synthetic Queueing Topologies"by John Roe (MIT) and Kai Zu (MIT)</p>
+<p>2011:</p><p>Kenneth C. Sevcik Outstanding Student Paper Award:</p><p>"Synthetic Network Architecture for Recovery" by Mia Ng</p><p>(Princeton University), Nat Ou (AT&T Labs), and and Orla Pe (Princeton University).</p>
+<p>2001</p><p>2000</p><p>1996</p><p>Best Paper Award:</p><p>"A Synthetic Process Lifetime Distribution Paper" by Quin Ro (UCB).</p><p>"Not by anyone, so skipped for its authors" by lower case words only.</p>
+<p>Follow @acmsigmetrics</p><p>2005:</p><p>Best Paper Award:</p><p>"Never Read" by Ann Lee.</p>`;
+  const { entries, skipped } = parse(html, "https://example.org/awards.shtml");
+  assert.deepEqual(entries.map((e) => [e.venue, e.year, e.award, e.awardLabel, e.title, e.authors]), [
+    ["SIGMETRICS", 2024, "tot", "Test of Time Award", "A Synthetic Measurement Study of Stores", ["Ann Lee", "Bo Chen", "Cy Diaz"]],
+    ["SIGMETRICS", 2018, "tot", "Test of Time Award", "A synthetic counter architecture for per-flow measurement", ["Dee Park", "Eli Ross", "Fay Gray"]],
+    ["SIGMETRICS", 2012, "tot", "Test of Time Award", "Network Tomography on Synthetic Topologies", ["Gia Stone", "N Duffield", "D. Towsley"]],
+    ["SIGMETRICS", 2010, "tot", "Test of Time Award", "A Comparison of Synthetic Receiver-initiated and Sender-initiated Adaptive Load Sharing", ["Hal Wu", "Ivy Xu"]],
+    ["SIGMETRICS", 2017, "tot", "Test of Time Award", "An analysis of synthetic errors in disk drives", ["Kai J Zed", "Lu Mo", "Ned Oh"]],
+    ["SIGMETRICS", 2026, "best", "Best Paper", "A Synthetic Envy Goes Long", ["Pia Qi", "Ray Sun", "Sue Tan"]],
+    ["SIGMETRICS", 2026, "student", "Kenneth C. Sevcik Outstanding Student Paper Award", "Synthetic Central Limit Rates", ["Tom Uy", "Una Vo"]],
+    ["SIGMETRICS", 2026, "runner-up", "Best Paper Runner-up", "A Synthetic Carbon Footprint of Flows", ["Vic Wan", "Wes Xia"]],
+    ["SIGMETRICS", 2013, "student", "Ken Sevcik Outstanding Student Paper Award", "Synthetic Queueing Topologies", ["John Roe", "Kai Zu"]],
+    ["SIGMETRICS", 2013, "best", "Best Paper", "Synthetic Queueing Topologies", ["John Roe", "Kai Zu"]],
+    ["SIGMETRICS", 2011, "student", "Kenneth C. Sevcik Outstanding Student Paper Award", "Synthetic Network Architecture for Recovery", ["Mia Ng", "Nat Ou", "Orla Pe"]],
+    ["SIGMETRICS", 1996, "best", "Best Paper", "A Synthetic Process Lifetime Distribution Paper", ["Quin Ro"]]
+  ]);
+  assert.equal(skipped.length, 1, skipped.join("\n"));       // the 1996 row whose authors are not names
+  assert.ok(entries.every((e) => e.evidence.includes(e.title)));
+});
+
 test("IJCAI distinguished-paper pages of 2020, 2021 and 2022: list items, <strong> titles with wrapped affiliations and an Honorable Mention section, a heading per title", async () => {
   const { parse } = await import("../scripts/awards/ijcai.mjs");
   const src = "https://example.org/distinguished-papers/";

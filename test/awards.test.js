@@ -257,6 +257,16 @@ test("the bundled list: SIGPLAN's Most Influential Paper Awards (POPL, PLDI, ICF
   assert.deepEqual(find("Proof-carrying code", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: SIGMETRICS's best papers, student papers and test-of-time awards", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Counter braids: a novel counter architecture for per-flow measurement", "Y Lu, A Montanari, B Prabhakar, S Dharmapurikar, A Kabbani"), ["SIGMETRICS 2008 best", "SIGMETRICS 2018 tot"]);
+  assert.deepEqual(find("Network tomography on general topologies", "T Bu, N Duffield, FL Presti, D Towsley"), ["SIGMETRICS 2012 tot"]);
+  assert.deepEqual(find("Workload analysis of a large-scale key-value store", "B Atikoglu, Y Xu, E Frachtenberg, S Jiang, M Paleczny"), ["SIGMETRICS 2022 tot"]);
+  assert.deepEqual(find("Nudge: Stochastically improving upon FCFS", "I Grosof, K Yang, Z Scully, M Harchol-Balter"), ["SIGMETRICS 2021 best"]);
+  assert.deepEqual(find("Counter braids: a novel counter architecture for per-flow measurement", "A Smith, B Jones"), []);
+});
+
 test("the bundled list: machine-learning winners from the years before the virtual sites list awards (NeurIPS 2014–2018, ICML 2017–2018)", () => {
   const idx = awards.createIndex(require("../src/data/awards.js").items);
   const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();

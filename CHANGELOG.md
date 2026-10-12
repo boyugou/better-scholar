@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.7.1 — 2026-10-12
+
+- **SIGMETRICS awards** (76 entries; the list holds 4684) from the conference's own awards page: the *Test of Time Award* (2010–2026) and the paper awards —
+  best papers, the Sevcik and Lavenberg–Sevcik student papers and the runners-up (1996–2026). *Counter Braids* is on it twice (best paper 2008, test of time
+  2018). New reader `scripts/awards/sigmetrics.mjs`; the page's hand-typed rows (a surname-first first author, "and and", a title that wraps) are handled
+  and what cannot be read is reported. The name check now accepts a two-letter initial such as "Iu.".
+
 ## 2.7.0 — 2026-10-12
 
 - **Copy papers.** A third button next to *Copy summary* and *Copy as table* copies the papers the page shows now — the filters count, so a click on

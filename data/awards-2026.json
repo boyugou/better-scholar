@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4608
+  "count": 4684
  },
  "entries": [
   {
@@ -68360,6 +68360,1172 @@
    "track": "main",
    "source": "https://sigir.org/awards/best-short-paper-awards/",
    "evidence": "Best Short Paper: 2025 GINGER: Grounded Information Nugget-Based Generation of Responses — Weronika Łajewska, Krisztian Balog"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 1996,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Exploiting Process Lifetime Distributions for Dynamic Load Balancing",
+   "authors": [
+    "Mor Harchol-Balter",
+    "Allen Downey"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 1996 Best Paper: “Exploiting Process Lifetime Distributions for Dynamic Load Balancing” by Mor Harchol-Balter (University of California Berkeley) and Allen Downey (University of California Berkeley)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 1996,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Supporting stored video: reducing rate variability and end-to-end resource requirements through optimal smoothing",
+   "authors": [
+    "James D. Salehi",
+    "Zhi-Li Zhang",
+    "James F. Kurose",
+    "Don Towsley"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 1996 Best Paper: “Supporting stored video: reducing rate variability and end-to-end resource requirements through optimal smoothing” by James D. Salehi (University of Massachusetts Amherst), Zhi-Li Zhang (University of Massachusetts Amherst), James F. Kurose (University of Massachusetts Amherst), and Don Towsley (University of Massachusetts Amherst)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "PC Based Precision Timing Without GPS",
+   "authors": [
+    "Attila Pásztor",
+    "Darryl Veitch"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2002 Best Student Paper Award: “PC Based Precision Timing Without GPS” by Attila Pásztor (The University of Melbourne) and Darryl Veitch (The University of Melbourne)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2003,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Classifying Scheduling Policies with respect to Unfairness in an M/GI/1",
+   "authors": [
+    "Adam Wierman",
+    "Mor Harchol-Balter"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2003 Best Student Paper Award: “Classifying Scheduling Policies with respect to Unfairness in an M/GI/1” by Adam Wierman (Carnegie Mellon University) and Mor Harchol-Balter (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On performance bounds for the integration of elastic and adaptive streaming flows",
+   "authors": [
+    "Thomas Bonald",
+    "Alexandre Proutière"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2004 Best Paper: “On performance bounds for the integration of elastic and adaptive streaming flows” by Thomas Bonald (France Telecom) and Alexandre Proutière (France Telecom)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Coupon Replication Systems",
+   "authors": [
+    "Laurent Massoulié",
+    "Milan Vojnović"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2005 Best Paper: “Coupon Replication Systems” by Laurent Massoulié (Microsoft Research), Milan Vojnović (Microsoft Research)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "A Network Service Curve Approach for the Stochastic Analysis of Networks",
+   "authors": [
+    "Florin Ciucu",
+    "Almut Burchard",
+    "Jorg Liebeherr"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2005 Kenneth C. Sevcik Outstanding Student Paper Award: “A Network Service Curve Approach for the Stochastic Analysis of Networks” by Florin Ciucu (University of Virginia), Almut Burchard (University of Virginia), Jorg Liebeherr (University of Virginia)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Maximizing Throughput in Wireless Networks via Gossiping",
+   "authors": [
+    "Eytan Modiano",
+    "Devavrat Sha",
+    "Gil Zussman"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2006 Best Paper: “Maximizing Throughput in Wireless Networks via Gossiping” by Eytan Modiano (Massachusetts Institute of Technology), Devavrat Sha (Massachusetts Institute of Technology), and Gil Zussman (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "GPS Scheduling: Selection of Optimal Weights and Comparison with Strict Priorities",
+   "authors": [
+    "Pascal Lieshout",
+    "Michel R.H. Mandjes",
+    "Sem Borst"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2006 Kenneth C. Sevcik Outstanding Student Paper Award: “GPS Scheduling: Selection of Optimal Weights and Comparison with Strict Priorities” by Pascal Lieshout (Centrum Wiskunde & Informatica), Michel R.H. Mandjes (Centrum Wiskunde & Informatica), and Sem Borst (Centrum Wiskunde & Informatica)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Modeling the relative fitness of storage",
+   "authors": [
+    "Michael Mesnier",
+    "Matthew Wachs",
+    "Raja R. Sambasivan",
+    "Alice Zheng",
+    "Gregory R. Ganger"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2007 Best Paper: “Modeling the relative fitness of storage” by Michael Mesnier (Intel and Carnegie Mellon University); Matthew Wachs (Carnegie Mellon University), Raja R. Sambasivan (Carnegie Mellon University), Alice Zheng (Carnegie Mellon University), Gregory R. Ganger (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "An Analysis of Latent Sector Errors in Disk Drives",
+   "authors": [
+    "Lakshmi Bairavasundaram",
+    "Garth Goodson",
+    "Shankar Pasupathy",
+    "Jiri Schindler"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2007 Kenneth C. Sevcik Outstanding Student Paper Award: “An Analysis of Latent Sector Errors in Disk Drives” by Lakshmi Bairavasundaram (University of Wisconsin-Madison, US); Garth Goodson (Network Appliance, Inc); Shankar Pasupathy (Network Appliance, Inc); Jiri Schindler (Network Appliance, Inc)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Counter Braids: A Novel Counter Architecture for Per-Flow Measurement",
+   "authors": [
+    "Yi Lu",
+    "Andrea Montanari",
+    "Balaji Prabhakar",
+    "Sarang Dharmapurikar",
+    "Abdul Kabbani"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2008 Best Paper: “Counter Braids: A Novel Counter Architecture for Per-Flow Measurement” by Yi Lu (Stanford University), Andrea Montanari (Stanford University), Balaji Prabhakar (Stanford University), and Sarang Dharmapurikar (Nuova Systems, Inc), Abdul Kabbani (Stanford University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Fully Decentralized Emulation of Best-Effort and Processor Sharing Queues",
+   "authors": [
+    "Rade Stanojevic",
+    "Robert Shorten"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2008 Kenneth C. Sevcik Outstanding Student Paper Award: “Fully Decentralized Emulation of Best-Effort and Processor Sharing Queues” by Rade Stanojevic (Maynooth University) and Robert Shorten (Maynooth University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "The Age of Gossip: Spatial Mean Field Regime",
+   "authors": [
+    "Augustin Chaintreau",
+    "Jean-Yves Le Boudec",
+    "Nikodin Ristanovic"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2009 Best Paper: “The Age of Gossip: Spatial Mean Field Regime” by Augustin Chaintreau (Thomson); Jean-Yves Le Boudec (EPFL); Nikodin Ristanovic (EPFL)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Network adiabatic theorem: An efficient randomized protocol for contention resolution",
+   "authors": [
+    "Shreevatsa Rajagopalan",
+    "Devavrat Shah",
+    "Jinwoo Shin"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2009 Kenneth C. Sevcik Outstanding Student Paper Award: “Network adiabatic theorem: An efficient randomized protocol for contention resolution” by Shreevatsa Rajagopalan (Massachusetts Institute of Technology), Devavrat Shah (Massachusetts Institute of Technology) and Jinwoo Shin (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Load Balancing via Randomized Local Search in Closed and Open Systems",
+   "authors": [
+    "Ayalvadi Ganesh",
+    "Sarah Lilienthal",
+    "D. Manjunath",
+    "Alexandre Proutiere",
+    "Florian Simatos"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2010 Best Paper: “Load Balancing via Randomized Local Search in Closed and Open Systems” by Ayalvadi Ganesh (University of Bristol), Sarah Lilienthal (Cambridge University), D. Manjunath (IIT Mumbai), Alexandre Proutiere (Microsoft Research), Florian Simatos (INRIA)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Distributed Sensor Network Localization from Local Connectivity: Performance Analysis for the HOP-TERRAIN Algorithm",
+   "authors": [
+    "Amin Karbasi",
+    "Sewoong Oh"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2010 Kenneth C. Sevcik Outstanding Student Paper Award: “Distributed Sensor Network Localization from Local Connectivity: Performance Analysis for the HOP-TERRAIN Algorithm” by Amin Karbasi (EPFL) and Sewoong Oh (Stanford University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Comparison of Receiver-initiated and Sender-initiated Adaptive Load Sharing",
+   "authors": [
+    "Derek Eager",
+    "Ed Lazowska",
+    "John Zahorjan"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2010 Test of Time Award: Derek Eager, Ed Lazowska, and John Zahorjan “A Comparison of Receiver-initiated and Sender-initiated Adaptive Load Sharing”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fundamental Laws of Computer System Performance",
+   "authors": [
+    "Jeffrey P. Buzen"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2010 Test of Time Award: Jeffrey P. Buzen “Fundamental Laws of Computer System Performance”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Self-similarity in World Wide Web Traffic: Evidence and Possible Causes",
+   "authors": [
+    "Mark E. Crovella",
+    "Azer Bestavros"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2010 Test of Time Award: Mark E. Crovella and Azer Bestavros “Self-similarity in World Wide Web Traffic: Evidence and Possible Causes”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Topology Discovery of Sparse Random Graphs with Few Participants",
+   "authors": [
+    "Animashree Anandkumar",
+    "Avinatan Hassidim",
+    "Jonathan Kelner"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2011 Best Paper: “Topology Discovery of Sparse Random Graphs with Few Participants” by Animashree Anandkumar (University of California Irvine), Avinatan Hassidim (Google Research), and Jonathan Kelner (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Network Architecture for Joint Failure Recovery and Traffic Engineering",
+   "authors": [
+    "Martin Suchara",
+    "Dahai Xu",
+    "Robert Doverspike",
+    "David Johnson",
+    "Jennifer Rexford"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2011 Kenneth C. Sevcik Outstanding Student Paper Award: “Network Architecture for Joint Failure Recovery and Traffic Engineering” by Martin Suchara (Princeton University), Dahai Xu (AT&T Labs Research), Robert Doverspike (AT&T Labs Research), David Johnson (AT&T Labs Research), and Jennifer Rexford (Princeton University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Case for End System Multicast",
+   "authors": [
+    "Yang-hua Chu",
+    "Sanjay Rao",
+    "Hui Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2011 Test of Time Award: Yang-hua Chu, Sanjay Rao, and Hui Zhang “A Case for End System Multicast”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Stable Internet Routing without Global Coordination",
+   "authors": [
+    "Lixin Gao",
+    "Jennifer Rexford"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2011 Test of Time Award: Lixin Gao and Jennifer Rexford “Stable Internet Routing without Global Coordination”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Temperature Management in Data Centers: Why Some (Might) Like It Hot",
+   "authors": [
+    "Nosayba El-Sayed",
+    "Ioan Stefanovici",
+    "George Amvrosiadis",
+    "Andy A. Hwang",
+    "Bianca Schroeder"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2012 Best Paper: “Temperature Management in Data Centers: Why Some (Might) Like It Hot” by Nosayba El-Sayed (University of Toronto), Ioan Stefanovici (University of Toronto), George Amvrosiadis (University of Toronto), Andy A. Hwang (University of Toronto) and Bianca Schroeder (University of Toronto)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Optimal Queue-Size Scaling in Switched Networks",
+   "authors": [
+    "Devavrat Shah",
+    "Neil Walton",
+    "Yuan Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2012 Kenneth C. Sevcik Outstanding Student Paper Award: “Optimal Queue-Size Scaling in Switched Networks” by Devavrat Shah (Massachusetts Institute of Technology), Neil Walton (University of Amsterdam) and Yuan Zhong (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Network Tomography on General Topologies",
+   "authors": [
+    "Tian Bu",
+    "N Duffield",
+    "FL Presti",
+    "D. Towsley"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2012 Test of Time Award: Tian Bu, N Duffield, FL Presti, and D. Towsley “Network Tomography on General Topologies”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Queueing System Topologies with Limited Flexibility",
+   "authors": [
+    "John N. Tsitsiklis",
+    "Kuang Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2013 Best Paper: “Queueing System Topologies with Limited Flexibility” by John N. Tsitsiklis (Massachusetts Institute of Technology) and Kuang Xu (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Ken Sevcik Outstanding Student Paper Award",
+   "title": "Queueing System Topologies with Limited Flexibility",
+   "authors": [
+    "John N. Tsitsiklis",
+    "Kuang Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2013 Ken Sevcik Outstanding Student Paper Award: “Queueing System Topologies with Limited Flexibility” by John N. Tsitsiklis (Massachusetts Institute of Technology) and Kuang Xu (Massachusetts Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Fast Accurate Computation of Large-Scale IP Traffic Matrices from Link Loads",
+   "authors": [
+    "Yin Zhang",
+    "Matthew Roughan",
+    "Nick Duffield",
+    "Albert Greenberg"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2013 Test of Time Award: Yin Zhang, Matthew Roughan, Nick Duffield, and Albert Greenberg “Fast Accurate Computation of Large-Scale IP Traffic Matrices from Link Loads”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Concave switching in single and multihop networks",
+   "authors": [
+    "Neil Walton"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2014 Best Paper: “Concave switching in single and multihop networks” by Neil Walton (University of Amsterdam)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "A Measurement Study of Google Play",
+   "authors": [
+    "Nicolas Viennot",
+    "Edward Garcia",
+    "Jason Nieh"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2014 Kenneth C. Sevcik Outstanding Student Paper Award: “A Measurement Study of Google Play” by Nicolas Viennot (Columbia University); Edward Garcia (Columbia University); Jason Nieh (Columbia University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Myths and Realities: the Performance Impact of Garbage Collection",
+   "authors": [
+    "Stephen Blackburn",
+    "Perry Cheng",
+    "Kathryn McKinley"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2014 Test of Time Award: Stephen Blackburn, Perry Cheng, and Kathryn McKinley “Myths and Realities: the Performance Impact of Garbage Collection”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Spy vs. Spy: Rumor Source Obfuscation",
+   "authors": [
+    "Giulia Fanti",
+    "Peter Kairouz",
+    "Sewoong Oh",
+    "Pramod Viswanath"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2015 Best Paper: “Spy vs. Spy: Rumor Source Obfuscation” by Giulia Fanti (University of California Berkeley); Peter Kairouz (University of Illinois at Urbana-Champaign); Sewoong Oh (University of Illinois at Urbana-Champaign); Pramod Viswanath (University of Illinois at Urbana-Champaign)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Fisher Information-based Experiment Design for Network Tomography",
+   "authors": [
+    "Ting He",
+    "Chang Liu",
+    "Ananthram Swami",
+    "Don Towsley",
+    "Theodoros Salonidis",
+    "Andrei Iu. Bejan",
+    "Paul Yu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2015 Kenneth C. Sevcik Outstanding Student Paper Award: “Fisher Information-based Experiment Design for Network Tomography” by Ting He (IBM T. J. Watson Research Center); Chang Liu (University of Massachusetts Amherst); Ananthram Swami (Army Research Lab); Don Towsley (University of Massachusetts Amherst); Theodoros Salonidis (IBM T. J. Watson Research Center); Andrei Iu. Bejan (University of Cambridge); Paul Yu (Army Research Lab)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Internet Traffic Classification Using Bayesian Analysis Techniques",
+   "authors": [
+    "Andrew W. Moore",
+    "Denis Zuev"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2015 Test of Time Award: Andrew W. Moore and Denis Zuev “Internet Traffic Classification Using Bayesian Analysis Techniques”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "On the Duration and Intensity of Competitions in Nonlinear Pólya Urn Processes with Fitness",
+   "authors": [
+    "Bo Jiang",
+    "Daniel R. Figueiredo",
+    "Bruno Ribeiro",
+    "Don Towsley"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2016 Best Paper: “On the Duration and Intensity of Competitions in Nonlinear Pólya Urn Processes with Fitness” by Bo Jiang (University of Massachusetts Amherst), Daniel R. Figueiredo (Federal University of Rio de Janeiro), Bruno Ribeiro (Purdue University) and Don Towsley (University of Massachusetts Amherst)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "The Value of Privacy: Strategic Data Subjects, Incentive Mechanisms and Fundamental Limits",
+   "authors": [
+    "Weina Wang",
+    "Lei Ying",
+    "Junshan Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2016 Kenneth C. Sevcik Outstanding Student Paper Award: “The Value of Privacy: Strategic Data Subjects, Incentive Mechanisms and Fundamental Limits” by Weina Wang (Arizona State University), Lei Ying (Arizona State University) and Junshan Zhang (Arizona State University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An analytical model for multi-tier internet services and its applications",
+   "authors": [
+    "Bhuvan Urgaonkar",
+    "Giovanni Pacifici",
+    "Prashant Shenoy",
+    "Mike Spreitzer",
+    "Asser Tantawi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2016 Test of Time Award: Bhuvan Urgaonkar, Giovanni Pacifici, Prashant Shenoy, Mike Spreitzer, and Asser Tantawi “An analytical model for multi-tier internet services and its applications”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Accelerating Performance Inference over Closed Systems by Asymptotic Methods",
+   "authors": [
+    "Giuliano Casale"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2017 Best Paper: “Accelerating Performance Inference over Closed Systems by Asymptotic Methods” by Giuliano Casale (Imperial College London)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Security Game with Non-additive Utilities and Multiple Attacker Resources",
+   "authors": [
+    "Sinong Wang",
+    "Ness Shroff"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2017 Kenneth C. Sevcik Outstanding Student Paper Award: “Security Game with Non-additive Utilities and Multiple Attacker Resources” by Sinong Wang (The Ohio State University), Ness Shroff (The Ohio State University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An analysis of latent sector errors in disk drives",
+   "authors": [
+    "Lakshmi N Bairavasundaram",
+    "Garth R. Goodson",
+    "Shankar Pasupathy",
+    "Jiri Schindler"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2017 Test of Time Award: Bairavasundaram, Lakshmi N., Garth R. Goodson, Shankar Pasupathy, and Jiri Schindler “An analysis of latent sector errors in disk drives”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A refined mean field approximation",
+   "authors": [
+    "Nicolas Gast",
+    "Benny van Houdt"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2018 Best Paper: “A refined mean field approximation” by Nicolas Gast (Inria) and Benny van Houdt (University of Antwerp)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Counter braids: a novel counter architecture for per-flow measurement",
+   "authors": [
+    "Yi Lu",
+    "Andrea Montanari",
+    "Balaji Prabhakar",
+    "Sarang Dharmapurikar",
+    "Abdul Kabbani"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2018 Test of Time Award: Yi Lu, Andrea Montanari, Balaji Prabhakar, Sarang Dharmapurikar, and Abdul Kabbani “Counter braids: a novel counter architecture for per-flow measurement”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Computationally Efficient Estimation of the Spectral Gap of a Markov Chain",
+   "authors": [
+    "Richard Combes",
+    "Mikael Touati"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2019 Best Paper: “Computationally Efficient Estimation of the Spectral Gap of a Markov Chain” by Richard Combes (Centrale-Supelec) and Mikael Touati (Orange Labs)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Load Balancing Guardrails: Keeping Your Heavy Traffic on the Road to Low Response Times",
+   "authors": [
+    "Isaac Grosof",
+    "Ziv Scully",
+    "Mor Harchol-Balter"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2019 Kenneth C. Sevcik Outstanding Student Paper Award: “Load Balancing Guardrails: Keeping Your Heavy Traffic on the Road to Low Response Times” by Isaac Grosof (Carnegie Mellon University), Ziv Scully (Carnegie Mellon University), Mor Harchol-Balter (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Network adiabatic theorem: an efficient randomized protocol for contention resolution",
+   "authors": [
+    "Shreevatsa Rajagopalan",
+    "Devavrat Shah",
+    "Jinwoo Shin"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2019 Test of Time Award: Shreevatsa Rajagopalan, Devavrat Shah, and Jinwoo Shin “Network adiabatic theorem: an efficient randomized protocol for contention resolution”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Rateless Codes for Near-Perfect Load Balancing in Distributed Matrix-Vector Multiplication",
+   "authors": [
+    "Ankur Mallick",
+    "Malhar Chaudhari",
+    "Utsav Sheth",
+    "Ganesh Palanikumar",
+    "Gauri Joshi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2020 Best Paper: “Rateless Codes for Near-Perfect Load Balancing in Distributed Matrix-Vector Multiplication” by Ankur Mallick (Carnegie Mellon University), Malhar Chaudhari (Oracle Corporation), Utsav Sheth (Automation Anywhere), Ganesh Palanikumar (Apple Inc.), Gauri Joshi (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Optimal Data Placement for Heterogeneous Cache, Memory, and Storage Systems",
+   "authors": [
+    "Lei Zhang",
+    "Reza Karimi",
+    "Irfan Ahmad",
+    "Ymir Vigfusson"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2020 Kenneth C. Sevcik Outstanding Student Paper Award: “Optimal Data Placement for Heterogeneous Cache, Memory, and Storage Systems” by Lei Zhang (Emory University), Reza Karimi (Emory University), Irfan Ahmad (Magnition), Ymir Vigfusson (Emory University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Detecting Sources of Computer Viruses in Networks: Theory and Experiment",
+   "authors": [
+    "Devavrat Shah",
+    "Tauhid Zaman"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2020 Test of Time Award: Devavrat Shah and Tauhid Zaman “Detecting Sources of Computer Viruses in Networks: Theory and Experiment”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Nudge: Stochastically Improving upon FCFS",
+   "authors": [
+    "Isaac Grosof",
+    "Kunhe Yang",
+    "Ziv Scully",
+    "Mor Harchol-Balter"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2021 Best Paper: “Nudge: Stochastically Improving upon FCFS” by Isaac Grosof (Carnegie Mellon University), Kunhe Yang (Tsinghua University), Ziv Scully (Carnegie Mellon University), Mor Harchol-Balter (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "A Look Behind the Curtain: Traffic Classification in an Increasingly Encrypted Web",
+   "authors": [
+    "Iman Akbari",
+    "Mohammad A. Salahuddin",
+    "Shi-Han Wen",
+    "Noura Limam",
+    "Raouf Boutaba",
+    "Bertrand Mathieu",
+    "Stephanie Moteau",
+    "Stephane Tuffin"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2021 Kenneth C. Sevcik Outstanding Student Paper Award: “A Look Behind the Curtain: Traffic Classification in an Increasingly Encrypted Web” by Iman Akbari (University of Waterloo), Mohammad A. Salahuddin (University of Waterloo), Shi-Han Wen (University of Waterloo), Noura Limam (University of Waterloo), Raouf Boutaba (University of Waterloo), Bertrand Mathieu (Orange Labs), Stephanie Moteau (Orange Labs), Stephane Tuffin (Orange Labs)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Greening Geographical Load Balancing",
+   "authors": [
+    "Zhenhua Liu",
+    "Minghong Lin",
+    "Adam Wierman",
+    "Steven Low",
+    "Lachlan L.H. Andrew"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2021 Test of Time Award: Zhenhua Liu, Minghong Lin, Adam Wierman, Steven Low, Lachlan L.H. Andrew “Greening Geographical Load Balancing”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "WISEFUSE: Workload Characterization and DAG Transformation for Serverless Workflows",
+   "authors": [
+    "Ashraf Mahgoub",
+    "Edgardo Barsallo Yi",
+    "Karthick Shankar",
+    "Eshaan Minocha",
+    "Somali Chaterji",
+    "Sameh Elnikety",
+    "Saurabh Bagchi"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2022 Best Paper: “WISEFUSE: Workload Characterization and DAG Transformation for Serverless Workflows” by Ashraf Mahgoub (Purdue University), Edgardo Barsallo Yi (Purdue University), Karthick Shankar (Carnegie Mellon University), Eshaan Minocha (Purdue University), Somali Chaterji (Purdue University), Sameh Elnikety (Microsoft Research), and Saurabh Bagchi (Purdue University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Award",
+   "title": "Offline and Online Algorithms for SSD Management",
+   "authors": [
+    "Tomer Lange",
+    "Joseph Naor",
+    "Gala Yadgar"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2022 Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Award: “Offline and Online Algorithms for SSD Management” by Tomer Lange (Technion - Israel Institute of Technology), Joseph (Seffi) Naor (Technion - Israel Institute of Technology), and Gala Yadgar (Technion - Israel Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Workload Analysis of a Large-Scale Key-Value Store",
+   "authors": [
+    "Berk Atikoglu",
+    "Yuehai Xu",
+    "Eitan Frachtenberg",
+    "Song Jiang",
+    "Mike Paleczny"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2022 Test of Time Award: Berk Atikoglu, Yuehai Xu, Eitan Frachtenberg, Song Jiang, Mike Paleczny “Workload Analysis of a Large-Scale Key-Value Store”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Mean-field Analysis for Load Balancing on Spatial Graphs",
+   "authors": [
+    "Daan Rutten",
+    "Debankur Mukherjee"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2023 Best Paper: “Mean-field Analysis for Load Balancing on Spatial Graphs” by Daan Rutten (Georgia Institute of Technology) and Debankur Mukherjee (Georgia Institute of Technology)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Overcoming the Long Horizon Barrier for Sample-Efficient Reinforcement Learning with Latent Low-Rank Structure",
+   "authors": [
+    "Tyler Sam",
+    "Yudong Chen",
+    "Christina Lee Yu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2023 Kenneth C. Sevcik Outstanding Student Paper Award: “Overcoming the Long Horizon Barrier for Sample-Efficient Reinforcement Learning with Latent Low-Rank Structure” by Tyler Sam (Cornell University), Yudong Chen (University of Wisconsin-Madison) and Christina Lee Yu (Cornell University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Root Cause Detection in a Service-Oriented Architecture",
+   "authors": [
+    "Myunghwan Kim",
+    "Roshan Sumbaly",
+    "Sam Shah"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2023 Test of Time Award: Myunghwan Kim, Roshan Sumbaly, Sam Shah “Root Cause Detection in a Service-Oriented Architecture”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Agents of Autonomy: A Systematic Study of Robotics on Modern Hardware",
+   "authors": [
+    "Mohammad Bakhshalipour",
+    "Phillip B. Gibbons"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2024 Best Paper: “Agents of Autonomy: A Systematic Study of Robotics on Modern Hardware” by Mohammad Bakhshalipour, Phillip B. Gibbons (Carnegie Mellon University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Strongly Tail-Optimal Scheduling in the Light-Tailed M/G/1",
+   "authors": [
+    "George Yu",
+    "Ziv Scully"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2024 Best Paper: “Strongly Tail-Optimal Scheduling in the Light-Tailed M/G/1” by George Yu, Ziv Scully (Cornell University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Awards",
+   "title": "CarbonScaler: Leveraging Cloud Workload Elasticity for Optimizing Carbon-Efficiency",
+   "authors": [
+    "Walid A. Hanafy",
+    "Qianlin Liang",
+    "Noman Bashir",
+    "David Irwin",
+    "Prashant Shenoy"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2024 Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Awards: “CarbonScaler: Leveraging Cloud Workload Elasticity for Optimizing Carbon-Efficiency” by Walid A. Hanafy, Qianlin Liang (University of Massachusetts Amherst), Noman Bashir (Massachusetts Institute of Technology), David Irwin and and Prashant Shenoy (University of Massachusetts Amherst)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Awards",
+   "title": "Fair Resource Allocation in Virtualized O-RAN Platforms",
+   "authors": [
+    "Fatih Aslan",
+    "George Iosifidis",
+    "Jose A. Ayala-Romero",
+    "Andres Garcia-Saavedra",
+    "Xavier Costa-Perez"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2024 Stephen S. Lavenberg and Kenneth C. Sevcik Best Student Paper Awards: “Fair Resource Allocation in Virtualized O-RAN Platforms” by Fatih Aslan, George Iosifidis (TU Delft), Jose A. Ayala-Romero, Andres Garcia-Saavedra (NEC Laboratories Europe) and Xavier Costa-Perez (NEC Laboratories Europe, i2CAT Foundation and ICREA)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Measurement Study of Google Play",
+   "authors": [
+    "Nicolas Viennot",
+    "Edward Garcia",
+    "Jason Nieh"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2024 Test of Time Award: Nicolas Viennot, Edward Garcia, Jason Nieh “A Measurement Study of Google Play”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Adversarial Network Optimization under Bandit Feedback: Maximizing Utility in Non-Stationary Multi-Hop Networks",
+   "authors": [
+    "Yan Dai",
+    "Longbo Huang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Best Paper: “Adversarial Network Optimization under Bandit Feedback: Maximizing Utility in Non-Stationary Multi-Hop Networks” by Yan Dai (MIT) and Longbo Huang (Tsinghua University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Combinatorial Logistic Bandits",
+   "authors": [
+    "Xutong Liu",
+    "Xiangxiang Dai",
+    "Xuchuang Wang",
+    "Mohammad Hajiesmaili",
+    "John C.S. Lui"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Best Paper Runner-up: “Combinatorial Logistic Bandits” by Xutong Liu and Xiangxiang Dai (The Chinese University of Hong Kong), Xuchuang Wang and Mohammad Hajiesmaili (UMass Amherst), John C.S. Lui (The Chinese University of Hong Kong)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Game Theoretic Liquidity Provisioning in Concentrated Liquidity Market Makers",
+   "authors": [
+    "Weizhao Tang",
+    "Rachid Elazouzi",
+    "Cheng Han Lee",
+    "Ethan Chan",
+    "Giulia Fanti"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Best Paper Runner-up: “Game Theoretic Liquidity Provisioning in Concentrated Liquidity Market Makers” by Weizhao Tang (CMU), Rachid Elazouzi (University of Avignon), Cheng Han Lee and Ethan Chan (Allium), Giulia Fanti (CMU)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "On the Distribution of Sojourn Times in Tandem Queues",
+   "authors": [
+    "Florin Ciucu",
+    "Sima Mehri"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Best Paper Runner-up: “On the Distribution of Sojourn Times in Tandem Queues” by Florin Ciucu and Sima Mehri (University of Warwick)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Beaver: A High-Performance and Crash-Consistent File System Cache via PM-DRAM Collaborative Memory Tiering",
+   "authors": [
+    "Qinglin Pan",
+    "Ji Qi",
+    "Jiatai He",
+    "Heng Zhang",
+    "Jiageng Yu",
+    "Yanjun Wu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Kenneth C. Sevcik Outstanding Student Paper Award: “Beaver: A High-Performance and Crash-Consistent File System Cache via PM-DRAM Collaborative Memory Tiering” by Qinglin Pan (Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences), Ji Qi (Institute of Software Chinese Academy of Sciences; The University of Hong Kong), Jiatai He (Institute of Software Chinese Academy of Sciences; University of Chinese Academy of Sciences), Heng Zhang, Jiageng Yu and Yanjun Wu (Institute of Software Chinese Academy of Sciences)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Learning to Rank: Regret Lower Bounds and Efficient Algorithms",
+   "authors": [
+    "Richard Combes",
+    "Stefan Magureanu",
+    "Alexandre Proutiere",
+    "Cyrille Laroche"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2025 Test of Time Award: Richard Combes, Stefan Magureanu, Alexandre Proutiere, and Cyrille Laroche “Learning to Rank: Regret Lower Bounds and Efficient Algorithms”"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Sequential Fair Allocation With Replenishments: A Little Envy Goes An Exponentially Long Way",
+   "authors": [
+    "Chido Onyeze",
+    "Sean R. Sinclair",
+    "Chamsi Hssaine",
+    "Siddhartha Banerjee"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Best Paper: “Sequential Fair Allocation With Replenishments: A Little Envy Goes An Exponentially Long Way” by Chido Onyeze (Cornell University); Sean R. Sinclair (Northwestern University); Chamsi Hssaine (University of Southern California, Marshall School of Business); Siddhartha Banerjee (Cornell University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "A Minimal-Assumption Analysis of Q-Learning with Time-Varying Policies",
+   "authors": [
+    "Phalguni Nanda",
+    "Zaiwei Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Best Paper Runner-up: “A Minimal-Assumption Analysis of Q-Learning with Time-Varying Policies” by Phalguni Nanda, Zaiwei Chen (Purdue University)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "From Measurement to Emissions: Assessing the Carbon Footprint of Traffic Flows",
+   "authors": [
+    "Sawsan El-Zahr",
+    "Noa Zilberman"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Best Paper Runner-up: “From Measurement to Emissions: Assessing the Carbon Footprint of Traffic Flows” by Sawsan El-Zahr, Noa Zilberman (University of Oxford)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Shedding Light on Shadows: Automatically Tracing Illicit Money Flows on EVM-Compatible Blockchains",
+   "authors": [
+    "Yicheng Huo",
+    "Yufeng Hu",
+    "Yajin Zhou",
+    "Ting Yu",
+    "Lei Wu",
+    "Cong Wang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Best Paper Runner-up: “Shedding Light on Shadows: Automatically Tracing Illicit Money Flows on EVM-Compatible Blockchains” by Yicheng Huo (Zhejiang University); Yufeng Hu (City University of Hong Kong); Yajin Zhou (Zhejiang University); Ting Yu (Mohamed bin Zayed University of Artificial Intelligence); Lei Wu (Zhejiang University); Cong Wang (City University of Hong Kong)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Kenneth C. Sevcik Outstanding Student Paper Award",
+   "title": "Wasserstein-p Central Limit Theorem Rates: From Local Dependence to Markov Chains",
+   "authors": [
+    "Yixuan Zhang",
+    "Qiaomin Xie"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Kenneth C. Sevcik Outstanding Student Paper Award: “Wasserstein-p Central Limit Theorem Rates: From Local Dependence to Markov Chains” by Yixuan Zhang, Qiaomin Xie (University of Wisconsin-Madison)"
+  },
+  {
+   "venue": "SIGMETRICS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On the Approximation Error of Mean-Field Models",
+   "authors": [
+    "Lei Ying"
+   ],
+   "track": "main",
+   "source": "https://www.sigmetrics.org/awards.shtml",
+   "evidence": "SIGMETRICS 2026 Test of Time Award: Lei Ying “On the Approximation Error of Mean-Field Models”"
   },
   {
    "venue": "SIGMOD",
