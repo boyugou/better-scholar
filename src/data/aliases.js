@@ -142,6 +142,10 @@
     { core: "IV", names: ["International Conference on Information Visualization"], starts: ["International Conference on Information Visualization"] },
     // FSTTCS as the IARCS printed it in 2015 and after: "35th IARCS Annual Conference on Foundations of Software Technology and …"
     { ccf: "FSTTCS", names: ["IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science"], starts: ["IARCS Annual Conference on Foundations of Software Technology and"] },
+    // PKC as the IACR's own series prints it: "IACR International Conference on Public-Key Cryptography" (no other conference is called that)
+    { ccf: "PKC", core: "PKC", names: ["IACR International Conference on Public-Key Cryptography"] },
+    // CCC until 1995 was the Conference on Structure in Complexity Theory
+    { ccf: "CCC", core: "CCC", names: ["Annual Conference on Structure in Complexity Theory", "IEEE Annual Conference on Structure in Complexity Theory"], starts: ["IEEE Annual Conference on Structure in Complexity Theory", "Annual Conference on Structure in Complexity Theory"] },
     // ICWSM's first name, which the AAAI printed: "AAAI International Conference on Weblogs and Social Media"
     { ccf: "ICWSM", core: "ICWSM", names: ["International Conference on Weblogs and Social Media"] },
     // CORE names ITiCSE "Annual Conference on …"; Scholar prints the SIGCSE conference (the SIGCSE Technical Symposium is another venue)
@@ -184,7 +188,7 @@
     { core: "PODS", names: ["ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems", "ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems", "ACM SIGACT-SIGMOD Symposium on Principles of Database Systems", "Symposium on Principles of Database Systems"] },
     { ccf: "OOPSLA", core: "OOPSLA", names: ["ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"] },
     { ccf: "STOC", core: "STOC", names: ["ACM Symposium on Theory of Computing", "ACM SIGACT Symposium on Theory of Computing"] },
-    { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"] },
+    { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"], starts: ["Foundations of Computer Science Proceedings Annual Symposium on"] },
     { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques"] },
 
     // ---- rows whose official PDF text has a typo or a stray word (kept verbatim in data/):

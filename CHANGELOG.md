@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.8.4 — 2026-10-12
+
+Sixteen more real profiles (lattice and zero-knowledge cryptography, quantum algorithms, wireless sensing, computational biology, geometry processing and rendering — 1,583 venue strings).
+
+- Three names Scholar prints that were not read: PKC as *IACR International Conference on Public-Key Cryptography* (and the older *… Workshop on Public Key Cryptography*), the CCC of 1994–95 as *Annual Conference on Structure in Complexity Theory*, and FOCS as *Foundations of Computer Science, 2000. Proceedings. 41st Annual Symposium on …*.
+
 ## 2.8.3 — 2026-10-12
 
 Twelve more real profiles (approximation algorithms, HPC and FPGAs, parallel programming, video understanding, code synthesis — 988 venue strings).
