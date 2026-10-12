@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.27 — 2026-10-12
+
+- The SIGMM Test of Time Paper Award and its honorable mentions (2020, 2022–2025, 17 papers: Caffe, MatConvNet, VLFeat, GamingAnywhere, opensmile …) from SIGMM's own page (`tot.mjs sigmm`); the
+  2021 block, written differently, is not read. The bundled list has 5355 awards.
+
 ## 2.9.26 — 2026-10-12
 
 - The SWSA Ten-Year Award for ISWC (2011–2025, 18 papers: DBpedia, RDFox, LogMap, Semantics and Complexity of SPARQL, Sesame, DAML-S …) from the Semantic Web Science Association's own page

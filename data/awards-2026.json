@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5338
+  "count": 5355
  },
  "entries": [
   {
@@ -77197,6 +77197,286 @@
    "track": "main",
    "source": "https://www.sigmetrics.org/awards.shtml",
    "evidence": "SIGMETRICS 2026 Test of Time Award: Lei Ying “On the Approximation Error of Mean-Field Models”"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Outdoors augmented reality on mobile phone using loxel-based visual feature organization",
+   "authors": [
+    "Gabriel Takacs",
+    "Vijay Chandrasekhar",
+    "Natasha Gelfand",
+    "Yingen Xiong",
+    "Wei-Chao Chen",
+    "Thanos Bismpigiannis",
+    "Radek Grzeszczuk",
+    "Kari Pulli",
+    "Bernd Girod"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2020 Test of Time Honorable Mention: Gabriel Takacs, Vijay Chandrasekhar, Natasha Gelfand, Yingen Xiong, Wei-Chao Chen, Thanos Bismpigiannis, Radek Grzeszczuk, Kari Pulli, and Bernd Girod Outdoors augmented reality on mobile phone using loxel-based visual feature organization"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Vlfeat: An open and portable library of computer vision algorithms",
+   "authors": [
+    "Andrea Vedaldi",
+    "Brian Fulkerson"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2020 Test of Time Paper Award: Andrea Vedaldi and Brian Fulkerson Vlfeat: An open and portable library of computer vision algorithms"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "An experimental evaluation of rate-adaptation algorithms in adaptive streaming over http",
+   "authors": [
+    "Saamer Akhshabi",
+    "Ali Begen",
+    "Constantine Dovrolis"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Saamer Akhshabi, Ali Begen, and Constantine Dovrolis An experimental evaluation of rate-adaptation algorithms in adaptive streaming over http"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Privacy-preserving fingercode authentication",
+   "authors": [
+    "Mauro Barni",
+    "Tiziano Bianchi",
+    "Dario Catalano",
+    "Mario Di Raimondo",
+    "Ruggero Donida Labati",
+    "Pierluigi Failla",
+    "Dario Fiore",
+    "Riccardo Lazzeretti",
+    "Vincenzo Piuri",
+    "Fabio Scotti",
+    "Alessandro Piva"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Mauro Barni, Tiziano Bianchi, Dario Catalano, Mario Di Raimondo, Ruggero Donida Labati, Pierluigi Failla, Dario Fiore, Riccardo Lazzeretti, Vincenzo Piuri, Fabio Scotti, and Alessandro Piva Privacy-preserving fingercode authentication"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Requirements and design space for interactive public displays",
+   "authors": [
+    "Jörg Müller",
+    "Florian Alt",
+    "Daniel Michelis",
+    "Albrecht Schmidt"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2022 Test of Time Honorable Mention: Jörg Müller, Florian Alt, Daniel Michelis, and Albrecht Schmidt Requirements and design space for interactive public displays"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Affective image classification using features inspired by psychology and art theory",
+   "authors": [
+    "Jana Machajdik",
+    "Allan Hanbury"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2022 Test of Time Paper Award: Jana Machajdik and Allan Hanbury Affective image classification using features inspired by psychology and art theory"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Digital image steganography using universal distortion",
+   "authors": [
+    "Vojtech Holub",
+    "Jessica Fridrich"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich Digital image steganography using universal distortion"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Dynamic adaptive streaming over http dataset",
+   "authors": [
+    "Stefan Lederer",
+    "Christopher Mueller",
+    "Christian Timmerer"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Stefan Lederer, Christopher Mueller, and Christian Timmerer Dynamic adaptive streaming over http dataset"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Recent developments in opensmile, the munich open-source multimedia feature extractor",
+   "authors": [
+    "Florian Eyben",
+    "Felix Weninger",
+    "Florian Gross",
+    "Bjoern Schuller"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2023 Test of Time Honorable Mention: Florian Eyben, Felix Weninger, Florian Gross, and Bjoern Schuller Recent developments in opensmile, the munich open-source multimedia feature extractor"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Large-scale visual sentiment ontology and detectors using adjective noun pairs",
+   "authors": [
+    "Damian Borth",
+    "Rongrong Ji",
+    "Tao Chen",
+    "Thomas Breuel",
+    "Shih-Fu Chang"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2023 Test of Time Paper Award: Damian Borth, Rongrong Ji, Tao Chen, Thomas Breuel, and Shih-Fu Chang Large-scale visual sentiment ontology and detectors using adjective noun pairs"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "A dataset and taxonomy for urban sound research",
+   "authors": [
+    "Justin Salamon",
+    "Christopher Jacoby",
+    "Juan Pablo Bello"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Justin Salamon, Christopher Jacoby, and Juan Pablo Bello. A dataset and taxonomy for urban sound research"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Moving steganography and steganalysis from the laboratory into the real world",
+   "authors": [
+    "Andrew D. Ker",
+    "Patrick Bas",
+    "Rainer Boehme",
+    "Remi Cogranne",
+    "Scott Craver",
+    "Tomas Filler",
+    "Jessica Fridrich",
+    "Tomas Pevny"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Andrew D. Ker, Patrick Bas, Rainer Boehme, Remi Cogranne, Scott Craver, Tomas Filler, Jessica Fridrich, and Tomas Pevny Moving steganography and steganalysis from the laboratory into the real world"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "What happens when http adaptive streaming players compete for bandwidth?",
+   "authors": [
+    "Saamer Akhshabi",
+    "Lakshmi Anantakrishnan",
+    "Ali C. Begen",
+    "Constantine Dovrolis"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2024 Test of Time Honorable Mention: Saamer Akhshabi, Lakshmi Anantakrishnan, Ali C. Begen, and Constantine Dovrolis. What happens when http adaptive streaming players compete for bandwidth?"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Caffe: Convolutional architecture for fast feature embedding",
+   "authors": [
+    "Yangqing Jia",
+    "Evan Shelhamer",
+    "Jeff Donahue",
+    "Sergey Karayev",
+    "Jonathan Long",
+    "Ross Girshick",
+    "Sergio Guadarrama",
+    "Trevor Darrell"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2024 Test of Time Paper Award: Yangqing Jia, Evan Shelhamer, Jeff Donahue, Sergey Karayev, Jonathan Long, Ross Girshick, Sergio Guadarrama, and Trevor Darrell. Caffe: Convolutional architecture for fast feature embedding"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Digital image steganography using universal distortion",
+   "authors": [
+    "Vojtech Holub",
+    "Jessica Fridrich"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Vojtech Holub and Jessica Fridrich. Digital image steganography using universal distortion"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Paper Award Honorable Mention",
+   "title": "Gaminganywhere: an open cloud gaming system",
+   "authors": [
+    "Chun-Ying Huang",
+    "Cheng-Hsin Hsu",
+    "Yu-Chun Chang",
+    "Kuan-Ta Chen"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2025 Test of Time Honorable Mention: Chun-Ying Huang, Cheng-Hsin Hsu, Yu-Chun Chang, and Kuan-Ta Chen. Gaminganywhere: an open cloud gaming system"
+  },
+  {
+   "venue": "SIGMM",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Paper Award",
+   "title": "Matconvnet: Convolutional neural networks for matlab",
+   "authors": [
+    "Andrea Vedaldi",
+    "Karel Lenc"
+   ],
+   "track": "main",
+   "source": "https://www.sigmm.org/Awards/testoftime",
+   "evidence": "SIGMM 2025 Test of Time Paper Award: Andrea Vedaldi and Karel Lenc. Matconvnet: Convolutional neural networks for matlab"
   },
   {
    "venue": "SIGMOBILE",

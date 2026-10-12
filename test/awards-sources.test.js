@@ -1381,3 +1381,20 @@ test("SWSA Ten-Year Award page: year, 'ISWC 2013' and 'Authors. “Title”' row
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGMM Test of Time page: '2025 Awards' blocks, three-line and one-line citations, 'Winner:' / 'Honorable Mention:' prefixes, honorable mentions as runners-up", async () => {
+  const { parseSigmmTot } = await import("../scripts/awards/tot.mjs");
+  const html = `<p>PREVIOUS YEARS</p><p>2025 Awards</p><p>Overall Winner and Winner in the Category “MM Content Analysis, Retrieval, Query”</p><p>Andrea Vedaldi and Karel Lenc.</p><p>Matconvnet: Convolutional neural networks for matlab.</p><p>In Proceedings of the 23rd ACM International Conference on Multimedia, MM ’15, 2015.</p>
+<p>Honorable Mentions:</p><p>In the category “MM Security and Privacy”</p><p>Vojtech Holub and Jessica Fridrich.</p><p>Digital image steganography using universal distortion.</p><p>In Proceedings of the First ACM Workshop, IH&amp;MMSec ’13, 2013.</p><p>Selection Committee:</p><p>Ralf Steinmetz</p>
+<p>2023 Awards</p><p>Overall Winner</p><p>Damian Borth, Rongrong Ji, and Shih-Fu Chang. Large-scale visual sentiment ontology and detectors using adjective noun pairs. In Proceedings of the 21st ACM International Conference on Multimedia, 2013.</p><p>Honorable Mentions:</p><p>Florian Eyben and Bjoern Schuller. Recent developments in opensmile, the munich open-source multimedia feature extractor. In Proceedings of the 21st ACM, 2013.</p>
+<p>2020 Awards</p><p>Winner: Andrea Vedaldi and Brian Fulkerson. Vlfeat: An open and portable library of computer vision algorithms. In Proceedings of the 18th ACM International Conference on Multimedia, MM '10, 2010.</p>`;
+  const { entries, skipped } = parseSigmmTot(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 tot Matconvnet: Convolutional neural networks for matlab | Andrea Vedaldi; Karel Lenc",
+    "2025 runner-up Digital image steganography using universal distortion | Vojtech Holub; Jessica Fridrich",
+    "2023 tot Large-scale visual sentiment ontology and detectors using adjective noun pairs | Damian Borth; Rongrong Ji; Shih-Fu Chang",
+    "2023 runner-up Recent developments in opensmile, the munich open-source multimedia feature extractor | Florian Eyben; Bjoern Schuller",
+    "2020 tot Vlfeat: An open and portable library of computer vision algorithms | Andrea Vedaldi; Brian Fulkerson"
+  ]);
+  assert.deepEqual(skipped, []);
+});
