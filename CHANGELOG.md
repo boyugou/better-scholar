@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.28 — 2026-10-12
+
+- The Hypertext Douglas Engelbart Best Paper Award (2003–2025, 22 papers) from ACM SIGWEB's page (`tot.mjs ht`) and SIGDA's A. Richard Newton Technical Impact Award in EDA (2009–2024, 16 papers:
+  Chaff, FlowMap, Bryant's BDDs, Networks on Chips, Silicon Physical Random Functions …) from SIGDA's page (`tot.mjs newton`). The bundled list has 5393 awards.
+
 ## 2.9.27 — 2026-10-12
 
 - The SIGMM Test of Time Paper Award and its honorable mentions (2020, 2022–2025, 17 papers: Caffe, MatConvNet, VLFeat, GamingAnywhere, opensmile …) from SIGMM's own page (`tot.mjs sigmm`); the

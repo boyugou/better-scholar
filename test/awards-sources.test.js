@@ -1398,3 +1398,22 @@ test("SIGMM Test of Time page: '2025 Awards' blocks, three-line and one-line cit
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("SIGWEB Engelbart and SIGDA Newton pages: year / authors / title (and “Title,” venue year); a doubled author line is read once", async () => {
+  const { parseHtEngelbart, parseSigdaNewton } = await import("../scripts/awards/tot.mjs");
+  const ht = parseHtEngelbart(`<h2>Hypertext Douglas Engelbart Best Paper Award</h2><p>2025</p><p>Alessio Antonini, Lucia Lupi, and Sam Brooker.</p><p>Literary Hypertext, AI, and Google's New Web: An Aesthetics Discussion</p>
+<p>2018</p><p>Lemei Zhang, Peng Liu and Jon Atle Gulla.Lemei Zhang, Peng Liu and Jon Atle Gulla.</p><p>A Deep Joint Network for Session-based News Recommendations with Contextual Augmentation.</p>
+<p>2007</p><p>m. c. schraefel</p><p>What is an Analogue for the Semantic Web and Why is Having One Important?</p><p>Join Us</p>`);
+  assert.deepEqual(ht.entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 best Literary Hypertext, AI, and Google's New Web: An Aesthetics Discussion | Alessio Antonini; Lucia Lupi; Sam Brooker",
+    "2018 best A Deep Joint Network for Session-based News Recommendations with Contextual Augmentation | Lemei Zhang; Peng Liu; Jon Atle Gulla"
+  ]);
+  assert.equal(ht.skipped.length, 1);
+  const nw = parseSigdaNewton(`<h3>Past Awardees</h3><p>2017</p><p>Matthew W. Moskewicz, Conor F. Madigan, Ying Zhao, Lintao Zhang, and Sharad Malik</p><p>“Chaff: Engineering an Efficient SAT Solver,” in the proceedings of the 38st Design Automation Conference, 2001.</p>
+<p>2010</p><p>Randal Bryant</p><p>“Graph-based algorithms for Boolean function manipulation” IEEE Transactions on Computers, Aug., 1986.</p>`);
+  assert.deepEqual(nw.entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2017/2001 Chaff: Engineering an Efficient SAT Solver | Matthew W. Moskewicz; Conor F. Madigan; Ying Zhao; Lintao Zhang; Sharad Malik",
+    "2010/1986 Graph-based algorithms for Boolean function manipulation | Randal Bryant"
+  ]);
+  assert.deepEqual(nw.skipped, []);
+});

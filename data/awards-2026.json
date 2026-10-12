@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5355
+  "count": 5393
  },
  "entries": [
   {
@@ -51417,6 +51417,336 @@
    "evidence": "HRI 2024 program, Honorable Mention: Workspace Optimization Techniques to Improve Prediction of Human Motion During Human-Robot Collaboration — Yi-Shiuan Tung, Matthew B Luebbers, Alessandro Roncone, Bradley Hayes"
   },
   {
+   "venue": "HT",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "IUHM, a Hypermedia-Based Model for Integrating Open Services, Data and Metadata",
+   "authors": [
+    "Jocelyne Nanard",
+    "Marc Nanard",
+    "Peter King"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2003 Douglas Engelbart Best Paper Award: Jocelyne Nanard, Marc Nanard and Peter King “IUHM, a Hypermedia-Based Model for Integrating Open Services, Data and Metadata”"
+  },
+  {
+   "venue": "HT",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Twin Media : Hypertext Structure Under Pressure",
+   "authors": [
+    "David Kolb"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2004 Douglas Engelbart Best Paper Award: David Kolb “Twin Media : Hypertext Structure Under Pressure”"
+  },
+  {
+   "venue": "HT",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "What the Geeks Know: Hypertext and the Problem of Literacy",
+   "authors": [
+    "Stuart Moulthrop"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2005 Douglas Engelbart Best Paper Award: Stuart Moulthrop “What the Geeks Know: Hypertext and the Problem of Literacy”"
+  },
+  {
+   "venue": "HT",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Templates and Queries in Contextual Hypermedia",
+   "authors": [
+    "Kenneth Anderson",
+    "Allan Hansen",
+    "Niels Olof Bouvin"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2006 Douglas Engelbart Best Paper Award: Kenneth Anderson, Allan Hansen, and Niels Olof Bouvin “Templates and Queries in Contextual Hypermedia”"
+  },
+  {
+   "venue": "HT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "The Very Small World of the Well-Connected",
+   "authors": [
+    "Xiaolin Shi",
+    "Matthew Bonner",
+    "Lada Adamic",
+    "Anna Gilbert"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2008 Douglas Engelbart Best Paper Award: Xiaolin Shi, Matthew Bonner, Lada Adamic and Anna Gilbert “The Very Small World of the Well-Connected”"
+  },
+  {
+   "venue": "HT",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Hyperincident Connected Components of Tagging Networks",
+   "authors": [
+    "Nicolas Neubauer",
+    "Klaus Obermayer"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2009 Douglas Engelbart Best Paper Award: Nicolas Neubauer and Klaus Obermayer “Hyperincident Connected Components of Tagging Networks”"
+  },
+  {
+   "venue": "HT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Hyperorders and Transclusion: Understanding Dimensional Hypertext",
+   "authors": [
+    "James Goulding",
+    "Tim Brailsford",
+    "Helen Ashman"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2010 Douglas Engelbart Best Paper Award: James Goulding, Tim Brailsford and Helen Ashman “Hyperorders and Transclusion: Understanding Dimensional Hypertext”"
+  },
+  {
+   "venue": "HT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Beyond the Usual Suspects: Context-Aware Revisitation Support",
+   "authors": [
+    "Ricardo Kawase",
+    "George Papadakis",
+    "Eelco Herder",
+    "Wolfgang Nejdl"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2011 Douglas Engelbart Best Paper Award: Ricardo Kawase, George Papadakis, Eelco Herder and Wolfgang Nejdl “Beyond the Usual Suspects: Context-Aware Revisitation Support”"
+  },
+  {
+   "venue": "HT",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Anatomy of a Conference",
+   "authors": [
+    "Björn Elmar Macek",
+    "Christoph Scholz",
+    "Martin Atzmüller",
+    "Gerd Stumme"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2012 Douglas Engelbart Best Paper Award: Björn Elmar Macek, Christoph Scholz, Martin Atzmüller, and Gerd Stumme “Anatomy of a Conference”"
+  },
+  {
+   "venue": "HT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Canyons, Deltas and Plains: Towards a Unified Sculptural Model of Location-Based Hypertext",
+   "authors": [
+    "David Millard",
+    "Charlie Hargood",
+    "Michael Jewell",
+    "Mark Weal"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2013 Douglas Engelbart Best Paper Award: David Millard, Charlie Hargood, Michael Jewell, and Mark Weal “Canyons, Deltas and Plains: Towards a Unified Sculptural Model of Location-Based Hypertext”"
+  },
+  {
+   "venue": "HT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Scalable, Generic, and Adaptive Systems for Focused Crawling",
+   "authors": [
+    "Georges Gouriten",
+    "Silviu Maniu",
+    "Pierre Senellart"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2014 Douglas Engelbart Best Paper Award: Georges Gouriten, Silviu Maniu, and Pierre Senellart “Scalable, Generic, and Adaptive Systems for Focused Crawling”"
+  },
+  {
+   "venue": "HT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Small-Scale Incident Detection based on Microposts",
+   "authors": [
+    "Axel Schulz",
+    "Benedikt Schmidt",
+    "Thorsten Strufe"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2015 Douglas Engelbart Best Paper Award: Axel Schulz, Benedikt Schmidt, and Thorsten Strufe “Small-Scale Incident Detection based on Microposts”"
+  },
+  {
+   "venue": "HT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Patterns of Sculptural Hypertext in Location Based Narratives",
+   "authors": [
+    "Charlie Hargood",
+    "Verity Hunt",
+    "Mark Weal",
+    "David Millard"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2016 Douglas Engelbart Best Paper Award: Charlie Hargood, Verity Hunt, Mark Weal and David Millard “Patterns of Sculptural Hypertext in Location Based Narratives”"
+  },
+  {
+   "venue": "HT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Clarity is a Worthwhile Quality - On the Role of Task Clarity in Microtask Crowdsourcing",
+   "authors": [
+    "Ujwal Gadiraju",
+    "Jie Yang",
+    "Alessandro Bozzon"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2017 Douglas Engelbart Best Paper Award: Ujwal Gadiraju, Jie Yang and Alessandro Bozzon “Clarity is a Worthwhile Quality - On the Role of Task Clarity in Microtask Crowdsourcing”"
+  },
+  {
+   "venue": "HT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "A Deep Joint Network for Session-based News Recommendations with Contextual Augmentation",
+   "authors": [
+    "Lemei Zhang",
+    "Peng Liu",
+    "Jon Atle Gulla"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2018 Douglas Engelbart Best Paper Award: Lemei Zhang, Peng Liu and Jon Atle Gulla “A Deep Joint Network for Session-based News Recommendations with Contextual Augmentation”"
+  },
+  {
+   "venue": "HT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Isolating the Effects of Web Page Visual Appearance on the Perceived Credibility of Online News among College Students",
+   "authors": [
+    "Jacob Wobbrock",
+    "Anya Hsu",
+    "Marijn Burger",
+    "Michael Magee"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2019 Douglas Engelbart Best Paper Award: Jacob Wobbrock, Anya Hsu, Marijn Burger and Michael Magee “Isolating the Effects of Web Page Visual Appearance on the Perceived Credibility of Online News among College Students”"
+  },
+  {
+   "venue": "HT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "On Links To Be: Exercises in Style #2",
+   "authors": [
+    "Alessio Antonini",
+    "Francesca Benatti",
+    "Sally Blackburn-Daniels"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2020 Douglas Engelbart Best Paper Award: Alessio Antonini, Francesca Benatti and Sally Blackburn-Daniels “On Links To Be: Exercises in Style #2”"
+  },
+  {
+   "venue": "HT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "This Item Might Reinforce Your Opinion: Obfuscation and Labeling of Search Results to Mitigate Confirmation Bias",
+   "authors": [
+    "Alisa Rieger",
+    "Tim Draws",
+    "Mariët Theune",
+    "Nava Tintarev"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2021 Douglas Engelbart Best Paper Award: Alisa Rieger, Tim Draws, Mariët Theune and Nava Tintarev “This Item Might Reinforce Your Opinion: Obfuscation and Labeling of Search Results to Mitigate Confirmation Bias”"
+  },
+  {
+   "venue": "HT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Links Of Darkness: Hypertext And Horror",
+   "authors": [
+    "Mark Bernstein",
+    "Stee McMorris"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2022 Douglas Engelbart Best Paper Award: Mark Bernstein and Stee McMorris “Links Of Darkness: Hypertext And Horror”"
+  },
+  {
+   "venue": "HT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Seven Hypertexts",
+   "authors": [
+    "Mark Anderson",
+    "David Millard"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2023 Douglas Engelbart Best Paper Award: Mark Anderson and David Millard “Seven Hypertexts”"
+  },
+  {
+   "venue": "HT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Experiencing The Authorial Burden",
+   "authors": [
+    "Joey Donald Jones",
+    "David Millard"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2024 Douglas Engelbart Best Paper Award: Joey Donald Jones, David Millard “Experiencing The Authorial Burden”"
+  },
+  {
+   "venue": "HT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Douglas Engelbart Best Paper Award",
+   "title": "Literary Hypertext, AI, and Google's New Web: An Aesthetics Discussion",
+   "authors": [
+    "Alessio Antonini",
+    "Lucia Lupi",
+    "Mariusz Pisarski",
+    "Sam Brooker"
+   ],
+   "track": "main",
+   "source": "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+   "evidence": "Hypertext 2025 Douglas Engelbart Best Paper Award: Alessio Antonini, Lucia Lupi, Mariusz Pisarski and Sam Brooker “Literary Hypertext, AI, and Google's New Web: An Aesthetics Discussion”"
+  },
+  {
    "venue": "ICAC",
    "year": 2013,
    "award": "best",
@@ -74735,6 +75065,259 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2022: Huangxun Chen (Huawei Theory Lab), Yukai Miao (University of New South Wales), Li Chen (Zhongguancun Laboratory), Haifeng Sun (Beijing University of Posts and Telecommunications), Hong Xu (Chinese University of Hong Kong), Libin Liu (Shandong Computer Science Center (National Supercomputer Center in Jinan)), Gong Zhang (Huawei Theory Lab), Wei Wang (Hong Kong University of Science and Technology (Guangzhou) & Hong Kong University of Science and Technology), \"Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim\""
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "MIS: A Multiple-Level Logic Optimizations System",
+   "authors": [
+    "Robert K. Brayton",
+    "Richard Rudell",
+    "Alberto Sangiovanni-Vincentelli",
+    "Albert R. Wang"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2009 A. Richard Newton Technical Impact Award: Robert K. Brayton, Richard Rudell, Alberto Sangiovanni-Vincentelli, and Albert R. Wang “MIS: A Multiple-Level Logic Optimizations System”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Graph-based algorithms for Boolean function manipulation",
+   "authors": [
+    "Randal Bryant"
+   ],
+   "track": "main",
+   "paperYear": 1986,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2010 A. Richard Newton Technical Impact Award: Randal Bryant “Graph-based algorithms for Boolean function manipulation”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "FlowMap: An Optimal Technology Mapping Algorithm for Delay Optimization in Lookup-Table Based FPGA Designs",
+   "authors": [
+    "Jason Cong",
+    "Eugene Ding"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2011 A. Richard Newton Technical Impact Award: Jason Cong and Eugene Ding “FlowMap: An Optimal Technology Mapping Algorithm for Delay Optimization in Lookup-Table Based FPGA Designs”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "PRIMA: Passive Reduced-Order Interconnect Macromodeling Algorithm",
+   "authors": [
+    "Altan Odabasioglu",
+    "Mustafa Celik",
+    "Larry Pileggi"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2012 A. Richard Newton Technical Impact Award: Altan Odabasioglu, Mustafa Celik, and Larry Pileggi “PRIMA: Passive Reduced-Order Interconnect Macromodeling Algorithm”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "FastCap: A multipole accelerated 3-D capacitance extraction program",
+   "authors": [
+    "Keith Nabors",
+    "Jacob White"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2013 A. Richard Newton Technical Impact Award: Keith Nabors and Jacob White “FastCap: A multipole accelerated 3-D capacitance extraction program”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "X-compact: an efficient response compaction technique for test cost reduction",
+   "authors": [
+    "Subhasish Mitra",
+    "Kee Sup Kim"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2014 A. Richard Newton Technical Impact Award: Subhasish Mitra and Kee Sup Kim “X-compact: an efficient response compaction technique for test cost reduction”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Silicon Physical Random Functions",
+   "authors": [
+    "Blaise Gassend",
+    "Dwaine Clarke",
+    "Marten van Dijk",
+    "Srinivas Devadas"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2015 A. Richard Newton Technical Impact Award: Blaise Gassend, Dwaine Clarke, Marten van Dijk, and Srinivas Devadas “Silicon Physical Random Functions”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "First-Order Incremental Block-Based Statistical Timing Analysis",
+   "authors": [
+    "Chandu Visweswariah",
+    "Kaushik Ravindran",
+    "Kerim Kalafala",
+    "Steven G. Walker",
+    "Sambasivan Narayan"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2016 A. Richard Newton Technical Impact Award: Chandu Visweswariah, Kaushik Ravindran, Kerim Kalafala, Steven G. Walker, and Sambasivan Narayan “First-Order Incremental Block-Based Statistical Timing Analysis”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Chaff: Engineering an Efficient SAT Solver",
+   "authors": [
+    "Matthew W. Moskewicz",
+    "Conor F. Madigan",
+    "Ying Zhao",
+    "Lintao Zhang",
+    "Sharad Malik"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2017 A. Richard Newton Technical Impact Award: Matthew W. Moskewicz, Conor F. Madigan, Ying Zhao, Lintao Zhang, and Sharad Malik “Chaff: Engineering an Efficient SAT Solver”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Generic Global Placement and Floorplanning",
+   "authors": [
+    "Hans Eisenmann",
+    "Frank M. Johannes"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2018 A. Richard Newton Technical Impact Award: Hans Eisenmann and Frank M. Johannes “Generic Global Placement and Floorplanning”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "A Logic Design Structure for LSI Testability",
+   "authors": [
+    "E. B. Eichelberger",
+    "T. W. Williams"
+   ],
+   "track": "main",
+   "paperYear": 1977,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2019 A. Richard Newton Technical Impact Award: E. B. Eichelberger and T. W. Williams “A Logic Design Structure for LSI Testability”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Networks on Chips: A New SoC Paradigm",
+   "authors": [
+    "Luca Benini",
+    "Giovanni De Micheli"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2020 A. Richard Newton Technical Impact Award: Luca Benini and Giovanni De Micheli “Networks on Chips: A New SoC Paradigm”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Transition Fault Simulation",
+   "authors": [
+    "John A. Waicukauski",
+    "Eric Lindbloom",
+    "Barry K. Rosen",
+    "Vijay S. Iyengar"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2021 A. Richard Newton Technical Impact Award: John A. Waicukauski, Eric Lindbloom, Barry K. Rosen, and Vijay S. Iyengar “Transition Fault Simulation”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Efficient Steady-State Analysis based on Matrix-Free Krylov-Subspace Methods",
+   "authors": [
+    "Ricardo Telichevesky",
+    "Kenneth S. Kundert",
+    "Jacob K. White"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2022 A. Richard Newton Technical Impact Award: Ricardo Telichevesky, Kenneth S. Kundert, and Jacob K. White “Efficient Steady-State Analysis based on Matrix-Free Krylov-Subspace Methods”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "An Automata-Theoretic Approach to Automatic Program Verification",
+   "authors": [
+    "Moshe Vardi",
+    "Pierre Wolper"
+   ],
+   "track": "main",
+   "paperYear": 1986,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2023 A. Richard Newton Technical Impact Award: Moshe Vardi and Pierre Wolper “An Automata-Theoretic Approach to Automatic Program Verification”"
+  },
+  {
+   "venue": "SIGDA",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "A. Richard Newton Technical Impact Award in EDA",
+   "title": "Bus-Invert Coding for Low-Power I/O",
+   "authors": [
+    "Mircea Stan",
+    "Wayne Burleson"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/",
+   "evidence": "SIGDA 2024 A. Richard Newton Technical Impact Award: Mircea Stan and Wayne Burleson “Bus-Invert Coding for Low-Power I/O”"
   },
   {
    "venue": "SIGecom",

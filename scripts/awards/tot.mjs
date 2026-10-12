@@ -65,8 +65,11 @@
 //   swsa    https://swsa.semanticweb.org/awards/swsa-ten-year-award/       the SWSA Ten-Year Award (ISWC), 2011–: a table of year, "ISWC 2013" and per paper `Authors. “Title”`
 //   sigmm   https://www.sigmm.org/Awards/testoftime                       the SIGMM Test of Time Paper Award, 2020–: a block "2025 Awards", per paper three lines — "Authors.", "Title.", "In Proceedings of …, 2015." — the winners
 //                                                                       first, then under "Honorable Mentions:" the others (read as runners-up); the paper may be of any SIGMM conference
+//   ht      https://www.sigweb.org/douglas-engelbart-best-paper-award/    the Hypertext Douglas Engelbart Best Paper Award, 2003–: per year a line of authors and a line with the title
+//   newton  https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/  SIGDA's A. Richard Newton Technical Impact Award in EDA, 2009–: per year a line of authors and a
+//                                                                       line `“Title,” in the proceedings of the 38st Design Automation Conference, 2001.` (a paper of any venue)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai|icaps|swsa|sigmm [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai|icaps|swsa|sigmm|ht|newton [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -104,7 +107,9 @@ const PAGES = {
   aaai: "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
   icaps: "https://www.icaps-conference.org/icaps-awards/",
   swsa: "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
-  sigmm: "https://www.sigmm.org/Awards/testoftime"
+  sigmm: "https://www.sigmm.org/Awards/testoftime",
+  ht: "https://www.sigweb.org/douglas-engelbart-best-paper-award/",
+  newton: "https://www.sigda.org/acm-ieee-a-richard-newton-technical-impact-award-in-eda/"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -659,6 +664,39 @@ export function parseSigmmTot(html, source = PAGES.sigmm) {
   return { entries, skipped };
 }
 
+export function parseHtEngelbart(html, source = PAGES.ht) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const start = ls.findIndex((l) => /^Hypertext Douglas Engelbart Best Paper Award$/i.test(l)), end = ls.findIndex((l, i) => i > start && /^Join Us$/i.test(l));
+  const block = ls.slice(start < 0 ? 0 : start + 1, end < 0 ? ls.length : end);
+  for (let i = 0; i < block.length; i++) {
+    if (!/^(?:19|20)\d{2}$/.test(block[i]) || !block[i + 1] || !block[i + 2]) continue;
+    const year = parseInt(block[i], 10);
+    // (the 2018 row prints the authors twice, "Lemei Zhang, Peng Liu and Jon Atle Gulla.Lemei Zhang, Peng Liu and Jon Atle Gulla.")
+    let authorText = block[i + 1].replace(/\.$/, ""); const dup = /^(.+?)\.\1$/.exec(authorText); if (dup) authorText = dup[1];
+    const who = names(authorText.replace(/\s+and\s+/g, ", and ")), title = cleanTitle(block[i + 2]);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "HT", year, award: "best", awardLabel: "Douglas Engelbart Best Paper Award", title, authors: who, track: "main", source, evidence: `Hypertext ${year} Douglas Engelbart Best Paper Award: ${authorText} “${title}”` });
+    else skipped.push(`${year}: not read: ${authorText.slice(0, 50)} / ${title.slice(0, 40)}`);
+    i += 2;
+  }
+  return { entries, skipped };
+}
+
+export function parseSigdaNewton(html, source = PAGES.newton) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const start = ls.findIndex((l) => /^Past Awardees$/i.test(l));
+  for (let i = start < 0 ? 0 : start + 1; i < ls.length; i++) {
+    if (!/^(?:19|20)\d{2}$/.test(ls[i]) || !ls[i + 1] || !/^[“"]/.test(ls[i + 2] || "")) continue;
+    const year = parseInt(ls[i], 10), m = /^[“"](.+?)[,.]?[”"],?\s*(.*)$/.exec(ls[i + 2]);
+    const who = names(ls[i + 1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(m ? m[1] : ""), py = m && [...m[2].matchAll(/\b((?:19|20)\d{2})\b/g)].map((x) => parseInt(x[1], 10)).pop();
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("SIGDA", year, "A. Richard Newton Technical Impact Award in EDA", title, who, source, `SIGDA ${year} A. Richard Newton Technical Impact Award: ${ls[i + 1]} “${title}”`, py || undefined));
+    else skipped.push(`${year}: not read: ${ls[i + 1].slice(0, 50)} / ${title.slice(0, 40)}`);
+    i += 2;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -714,7 +752,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, newton: parseSigdaNewton }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
