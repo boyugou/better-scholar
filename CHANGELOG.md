@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.5.13 — 2026-10-12
+
+Twelve more real profiles (databases, vision, security, IoT, algorithmic game theory, cryptography, quantum, type theory — 1,121 venue
+strings, now in the test corpora).
+
+- **Springer's series form names the event by its acronym.** *"Advances in Cryptology–ASIACRYPT 2009"* was read as CRYPTO (the series
+  title is CRYPTO's too) and got its A* badge; now ASIACRYPT, CT-RSA, SAC, CHES, ESA, GECCO, MICCAI … by the acronym after the dash.
+- **A cut-off name is claimed only when the other list does not read it as other venues** (CCF's PPoPP against CORE's PPDP for
+  *"International Symposium on Principles and Practice …"*), and two lists that read the same words as different venues claim neither
+  (IFIP's SEC against Springer's ISC for *"International Conference on Information Security"*). Where the dominant reading is known it
+  is curated: *"… Conference on Distributed Computing …"* is ICDCS, *"… on Web Information …"* is WISE — now in both lists.
+- **A name read without its organisation no longer contradicts the venue's own event word** (ACM's *Symposium on Cloud Computing* is not
+  IEEE's *Conference on Cloud Computing*).
+- **ACM's special interest groups are sponsors, not names:** *"ACM SIGPLAN International Conference on Functional …"* (ICFP),
+  *Certified …* (CPP), *Compiler …* (CC), *ACM SIGACT-SIGMOD-SIGART symposium* (PODS), *Memory …* (ISMM) now match.
+- Aliases: ICFP (CCF's row says "Function Programming"), ACISP (CCF's row says "Australasia"), CT-RSA, AsiaCCS's earlier name
+  *ACM Symposium on Information, Computer and Communications Security*.
+
 ## 2.5.12 — 2026-10-12
 
 - **Fix: a rule could throw on one kind of string** (from 2.5.9 on). A cut-off Springer series title that ends in a known acronym —

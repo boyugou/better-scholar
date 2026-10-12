@@ -61,6 +61,7 @@
     { ccf: "WWW", core: "WWW", names: ["International Conference on World Wide Web", "International World Wide Web Conference", "World Wide Web Conference", "The Web Conference", "WWW Conference", "ACM Web Conference"] },
     { ccf: "SIGMOD", core: "SIGMOD", names: ["International Conference on Management of Data", "ACM SIGMOD International Conference on Management of Data", "ACM Special Interest Group on Management of Data", "Proceedings of the ACM on Management of Data"] },
     { ccf: "VLDB", core: "VLDB", names: ["Proceedings of the VLDB Endowment", "International Conference on Very Large Data Bases", "VLDB Conference"] },
+    { ccf: "WISE", core: "WISE", names: ["International Conference on Web Information Systems Engineering"], starts: ["International Conference on Web Information"] },
     { ccf: "ICDE", core: "ICDE", names: ["IEEE International Conference on Data Engineering", "International Conference on Data Engineering"] },
     { ccf: "WSDM", core: "WSDM", names: ["ACM International Conference on Web Search and Data Mining", "International Conference on Web Search and Data Mining"] },
     { ccf: "CIKM", core: "CIKM", names: ["ACM International Conference on Information and Knowledge Management", "International Conference on Information and Knowledge Management"] },
@@ -111,6 +112,10 @@
     { ccf: "ASPLOS", core: "ASPLOS", names: ["International Conference on Architectural Support for Programming Languages and Operating Systems"] },
     // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)
     { ccf: "ICSME", core: "ICSME", abbrs: ["ICSM"], names: ["International Conference on Software Maintenance", "IEEE International Conference on Software Maintenance"] },
+    // a cut-off "… Conference on Distributed Computing …" is ICDCS (DISC is a symposium)
+    { ccf: "ICDCS", core: "ICDCS", names: ["International Conference on Distributed Computing Systems"], starts: ["International Conference on Distributed Computing"] },
+    // the CCF row spells it "Function Programming"
+    { ccf: "ICFP", core: "ICFP", names: ["International Conference on Functional Programming", "ACM SIGPLAN International Conference on Functional Programming"] },
     { ccf: "ISCA", core: "ISCA", names: ["International Symposium on Computer Architecture", "Annual International Symposium on Computer Architecture", "ACM/IEEE Annual International Symposium on Computer Architecture"] },
     { ccf: "MICRO", core: "MICRO", names: ["IEEE/ACM International Symposium on Microarchitecture", "International Symposium on Microarchitecture"] },
     // HPDC was an IEEE symposium until 2008 (CCF and CORE name the ACM one): without this name a cut-off "13th IEEE International
@@ -165,6 +170,10 @@
     { ccf: "PASTE", names: ["ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering"] },
     { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
     { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
+    { ccf: "ACISP", names: ["Australasian Conference on Information Security and Privacy"] },
+    { ccf: "CT-RSA", core: "CT-RSA", names: ["Cryptographers' Track at the RSA Conference", "Cryptographers' Track at RSA Conference"] },
+    // AsiaCCS was the ACM Symposium on Information, Computer and Communications Security (ASIACCS 2006–2010)
+    { ccf: "AsiaCCS", core: "AsiaCCS", names: ["ACM Symposium on Information, Computer and Communications Security"] },
     { ccf: "P2P", names: ["IEEE International Conference on Peer-to-Peer Computing", "IEEE International Conference on P2P Computing"] },
 
     // ---- journals (kind J)
