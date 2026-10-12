@@ -1121,3 +1121,24 @@ test("EuroSys Test-of-Time page: the newest recipients under their heading, past
   ]);
   assert.deepEqual(skipped, []);
 });
+
+test("IFAAMAS and SIGecom pages: three-line papers under 'YYYY:', title / authors / venue under a year heading", async () => {
+  const { parseAamas, parseEcTot } = await import("../scripts/awards/tot.mjs");
+  const a = parseAamas(`<p>Previous winners of the award have been:</p><p>2023:</p><p>Cal Claus, Dan Boutilier (1998)</p><p>The dynamics of reinforcement learning in cooperative multiagent systems</p><p>Proceedings of the Fifteenth National Conference on Artificial Intelligence - AAAI-98, pages 746-752</p>
+<p>2019:</p><p>Bernstein, D. S., Zilberstein, S., &amp; Immerman, N. (2000, June)</p><p>The complexity of decentralized control of Markov decision processes</p><p>Proceedings of the Sixteenth Conference, pages 32-37</p>
+<p>2020:</p><p>A. Procaccia and M. Tennenholtz (2009)</p><p>Approximate mechanism design without money</p><p>Proceedings of the 10th ACM Conference on Electronic Commerce, pages 177-186</p>`);
+  assert.deepEqual(a.entries.map((e) => `${e.year}/${e.paperYear} ${e.title} | ${e.authors.join("; ")}`), [
+    "2023/1998 The dynamics of reinforcement learning in cooperative multiagent systems | Cal Claus; Dan Boutilier",
+    "2020/2009 Approximate mechanism design without money | A. Procaccia; M. Tennenholtz"
+  ]);
+  assert.equal(a.skipped.length, 1);
+  const e = parseEcTot(`<p>Test of Time Award Winners</p><p>2023</p><p>Marriage, honesty, and stability</p><p>Nia Immorlica and Mo Mahdian</p><p>Proceedings of the 16th Annual ACM-SIAM Symposium on Discrete Algorithms (SODA), 2005, pp. 53–62.</p>
+<p>Unbalanced random matching markets</p><p>Ida Ashlagi, Yo Kanoria, Jay Leshno</p><p>Proceedings of the 14th ACM Conference on Electronic Commerce (EC), 2013, pp. 27–28.</p><p>"… for explaining an apparent gap."</p>
+<p>2018</p><p>Position Auctions</p><p>Hal R. Varian</p><p>International Journal of Industrial Organization 25(6), 2007, pp. 1163–1178</p>`);
+  assert.deepEqual(e.entries.map((x) => `${x.year} ${x.title} | ${x.authors.join("; ")}`), [
+    "2023 Marriage, honesty, and stability | Nia Immorlica; Mo Mahdian",
+    "2023 Unbalanced random matching markets | Ida Ashlagi; Yo Kanoria; Jay Leshno",
+    "2018 Position Auctions | Hal R. Varian"
+  ]);
+  assert.deepEqual(e.skipped, []);
+});

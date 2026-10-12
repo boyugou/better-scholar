@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.2 — 2026-10-12
+
+- IFAAMAS's Influential Paper Award (AAMAS, 2006–2026, 39 papers) and the SIGecom Test of Time Award (2015–2025, 17 papers), each from its own official page
+  (`tot.mjs aamas`, `tot.mjs ec`). The bundled list has 4838 awards.
+
 ## 2.9.1 — 2026-10-12
 
 - EuroSys Test-of-Time Award (2016–2026, 12 papers: Borg, Omega, Dryad, Delay Scheduling, GeePS …) from EuroSys's own page, read by `scripts/awards/tot.mjs eurosys`.

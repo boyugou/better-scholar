@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 4782
+  "count": 4838
  },
  "entries": [
   {
@@ -2059,6 +2059,598 @@
    "track": "main",
    "source": "https://aaai.org/about-aaai/aaai-awards/aaai-classic-paper-award/",
    "evidence": "2026 Classic Paper Recipients: Stefanie Tellex, Thomas Kollar, Steven Dickerson, Matthew Walter, Ashis Banerjee, Seth Teller, Nicholas Roy Understanding Natural Language Commands for Robotic Navigation and Mobile Manipulation"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Intention is choice with commitment",
+   "authors": [
+    "P. R. Cohen",
+    "H. Levesque"
+   ],
+   "track": "main",
+   "paperYear": 1990,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2006 Influential Paper Award: P. R. Cohen and H. Levesque (1990) “Intention is choice with commitment”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2006,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Negotiation as a Metaphor for Distributed Problem Solving",
+   "authors": [
+    "R. Davis",
+    "R. Smith"
+   ],
+   "track": "main",
+   "paperYear": 1983,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2006 Influential Paper Award: R. Davis and R. Smith (1983) “Negotiation as a Metaphor for Distributed Problem Solving”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Collaborative Plans for Complex Group Actions",
+   "authors": [
+    "B. J. Grosz",
+    "S. Kraus"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2007 Influential Paper Award: B. J. Grosz and S. Kraus (1996) “Collaborative Plans for Complex Group Actions”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Deals Among Rational Agents",
+   "authors": [
+    "J. S. Rosenschein",
+    "M. R. Genesereth"
+   ],
+   "track": "main",
+   "paperYear": 1985,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2007 Influential Paper Award: J. S. Rosenschein and M. R. Genesereth (1985) “Deals Among Rational Agents”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2007,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Modelling rational agents within a BDI-architecture",
+   "authors": [
+    "A. Rao",
+    "M. Georgeff"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2007 Influential Paper Award: A. Rao and M. Georgeff (1991) “Modelling rational agents within a BDI-architecture”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Intelligent Agents: Theory and Practice",
+   "authors": [
+    "M. Wooldridge",
+    "N. R. Jennings"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2008 Influential Paper Award: M. Wooldridge and N. R. Jennings (1995) “Intelligent Agents: Theory and Practice”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Partial global planning: A coordination framework for distributed hypothesis formation",
+   "authors": [
+    "E. H. Durfee",
+    "V. Lesser"
+   ],
+   "track": "main",
+   "paperYear": 1991,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2008 Influential Paper Award: E. H. Durfee and V. Lesser (1991) “Partial global planning: A coordination framework for distributed hypothesis formation”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2008,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Plans and resource-bounded practical reasoning",
+   "authors": [
+    "M. E. Bratman",
+    "D. J. Israel",
+    "M. E. Pollack"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2008 Influential Paper Award: M. E. Bratman, D. J. Israel and M. E. Pollack (1988) “Plans and resource-bounded practical reasoning”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Distributed Artificial Intelligence",
+   "authors": [
+    "M. N. Huhns"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2009 Influential Paper Award: M. N. Huhns. (Ed.) (1987) “Distributed Artificial Intelligence”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Distributed Artificial Intelligence (Volume II)",
+   "authors": [
+    "L. Gasser",
+    "M. N. Huhns"
+   ],
+   "track": "main",
+   "paperYear": 1989,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2009 Influential Paper Award: L. Gasser and M. N. Huhns. (Eds.) (1989) “Distributed Artificial Intelligence (Volume II)”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Readings in Distributed Artificial Intelligence",
+   "authors": [
+    "A. Bond",
+    "L. Gasser"
+   ],
+   "track": "main",
+   "paperYear": 1988,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2009 Influential Paper Award: A. Bond and L. Gasser. (Eds.) (1988) “Readings in Distributed Artificial Intelligence”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Distributed Breakout Algorithm for Solving Distributed Constraint Satisfaction Problems",
+   "authors": [
+    "Makoto Yokoo",
+    "Katsutoshi Hirayama"
+   ],
+   "track": "main",
+   "paperYear": 1996,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2010 Influential Paper Award: Makoto Yokoo and Katsutoshi Hirayama (1996) “Distributed Breakout Algorithm for Solving Distributed Constraint Satisfaction Problems”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Distributed Constraint Satisfaction Problem: Formalization and Algorithms",
+   "authors": [
+    "Makoto Yokoo",
+    "Edmund H. Durfee",
+    "Toru Ishida",
+    "Kazuhiro Kuwabara"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2010 Influential Paper Award: Makoto Yokoo, Edmund H. Durfee, Toru Ishida, and Kazuhiro Kuwabara (1998) “The Distributed Constraint Satisfaction Problem: Formalization and Algorithms”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Agent-oriented programming",
+   "authors": [
+    "Yoav Shoham"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2011 Influential Paper Award: Yoav Shoham (1993) “Agent-oriented programming”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A market-oriented programming enviornment and its application to distributed multicommodity flow problems",
+   "authors": [
+    "Michael P. Wellman"
+   ],
+   "track": "main",
+   "paperYear": 1993,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2012 Influential Paper Award: Michael P. Wellman (1993) “A market-oriented programming enviornment and its application to distributed multicommodity flow problems”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Towards Flexible Teamwork",
+   "authors": [
+    "Milind Tambe"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2012 Influential Paper Award: Milind Tambe (1997) “Towards Flexible Teamwork”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Commitment: From individual intentions to groups and organizations",
+   "authors": [
+    "Cristiano Castelfranchi"
+   ],
+   "track": "main",
+   "paperYear": 1995,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2013 Influential Paper Award: Cristiano Castelfranchi (1995) “Commitment: From individual intentions to groups and organizations”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Modelling social action for AI agents",
+   "authors": [
+    "Cristiano Castelfranchi"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2013 Influential Paper Award: Cristiano Castelfranchi (1998) “Modelling social action for AI agents”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Methods for task allocation via agent coalition formation",
+   "authors": [
+    "Onn Shehory",
+    "Sarit Kraus"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2014 Influential Paper Award: Onn Shehory and Sarit Kraus (1998) “Methods for task allocation via agent coalition formation”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Markov games as a framework for multi-agent reinforcement learning",
+   "authors": [
+    "Michael L. Littman"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2015 Influential Paper Award: Michael L. Littman (1994) “Markov games as a framework for multi-agent reinforcement learning”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Agent Communication Languages: Rethinking the Principles",
+   "authors": [
+    "Munindar P. Singh"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2016 Influential Paper Award: Munindar P. Singh (1998) “Agent Communication Languages: Rethinking the Principles”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Animated conversation: Rule-based generation of facial expression, gesture & spoken intonation for multiple conversational agents",
+   "authors": [
+    "Justine Cassell",
+    "Catherine Pelachaud",
+    "Norman Badler",
+    "Mark Steedman",
+    "Brett Achorn",
+    "Tripp Becket",
+    "Brett Douville",
+    "Scott Prevost",
+    "Matthew Stone"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2017 Influential Paper Award: Justine Cassell, Catherine Pelachaud, Norman Badler, Mark Steedman, Brett Achorn, Tripp Becket, Brett Douville, Scott Prevost, Matthew Stone (1994) “Animated conversation: Rule-based generation of facial expression, gesture & spoken intonation for multiple conversational agents”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Animated pedagogical agents: Face-to-face interaction in interactive learning environments",
+   "authors": [
+    "W. Lewis Johnson",
+    "Jeff W. Rickel",
+    "James C. Lester"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2017 Influential Paper Award: W. Lewis Johnson, Jeff W. Rickel, James C. Lester (2000) “Animated pedagogical agents: Face-to-face interaction in interactive learning environments”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Developing Multiagent Systems: The Gaia Methodology",
+   "authors": [
+    "Franco Zambonelli",
+    "Nicholas R. Jennings",
+    "Michael Wooldridge"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2018 Influential Paper Award: Franco Zambonelli, Nicholas R. Jennings, and Michael Wooldridge (2003) “Developing Multiagent Systems: The Gaia Methodology”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The Gaia Methodology for Agent-Oriented Analysis and Design",
+   "authors": [
+    "Michael Wooldridge",
+    "Nicholas R. Jennings",
+    "David Kinny"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2018 Influential Paper Award: Michael Wooldridge, Nicholas R. Jennings, and David Kinny (2000) “The Gaia Methodology for Agent-Oriented Analysis and Design”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A multiagent approach to autonomous intersection management",
+   "authors": [
+    "K. Dresner",
+    "P. Stone"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2020 Influential Paper Award: K. Dresner and P. Stone (2008) “A multiagent approach to autonomous intersection management”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Approximate mechanism design without money",
+   "authors": [
+    "A. Procaccia",
+    "M. Tennenholtz"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2020 Influential Paper Award: A. Procaccia and M. Tennenholtz (2009) “Approximate mechanism design without money”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Alternating-time Temporal Logic",
+   "authors": [
+    "Rajeev Alur",
+    "Thomas A. Henzinger",
+    "Orna Kupferman"
+   ],
+   "track": "main",
+   "paperYear": 1997,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2021 Influential Paper Award: Rajeev Alur, Thomas A. Henzinger, Orna Kupferman (1997) “Alternating-time Temporal Logic”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Emotion and Sociable Humanoid Robots",
+   "authors": [
+    "Cynthia Breazeal"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2021 Influential Paper Award: Cynthia Breazeal (2003) “Emotion and Sociable Humanoid Robots”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A domain-independent framework for modeling emotion",
+   "authors": [
+    "Jonathan Gratch",
+    "Stacy Marsella"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2022 Influential Paper Award: Jonathan Gratch, Stacy Marsella (2004) “A domain-independent framework for modeling emotion”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Computing the optimal strategy to commit to",
+   "authors": [
+    "Vince Conitzer",
+    "Tuomas Sandholm"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2022 Influential Paper Award: Vince Conitzer, Tuomas Sandholm (2006) “Computing the optimal strategy to commit to”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "The dynamics of reinforcement learning in cooperative multiagent systems",
+   "authors": [
+    "Caroline Claus",
+    "Craig Boutilier"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2023 Influential Paper Award: Caroline Claus, Craig Boutilier (1998) “The dynamics of reinforcement learning in cooperative multiagent systems”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Learning to cooperate via policy search",
+   "authors": [
+    "Leonid Peshkin",
+    "Kee-Eung Kim",
+    "Nicolas Meuleau",
+    "Leslie Pack Kaelbling"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2024 Influential Paper Award: Leonid Peshkin, Kee-Eung Kim, Nicolas Meuleau, Leslie Pack Kaelbling (2000) “Learning to cooperate via policy search”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Negotiation decision functions for autonomous agents",
+   "authors": [
+    "Peyman Faratin",
+    "Carles Sierra",
+    "Nicholas R. Jennings"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2024 Influential Paper Award: Peyman Faratin, Carles Sierra, Nicholas R. Jennings (1998) “Negotiation decision functions for autonomous agents”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Flocks, Herds and Schools: A Distributed Behavioral Model",
+   "authors": [
+    "Craig W. Reynolds"
+   ],
+   "track": "main",
+   "paperYear": 1987,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2025 Influential Paper Award: Craig W. Reynolds (1987) “Flocks, Herds and Schools: A Distributed Behavioral Model”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "A General Class of No-Regret Learning Algorithms and Game-Theoretic Equilibria",
+   "authors": [
+    "Amy Greenwald",
+    "Amir Jafari"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2026 Influential Paper Award: Amy Greenwald, Amir Jafari (2003) “A General Class of No-Regret Learning Algorithms and Game-Theoretic Equilibria”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Correlated-Q Learning",
+   "authors": [
+    "Amy Greenwald",
+    "Keith Hall"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2026 Influential Paper Award: Amy Greenwald, Keith Hall (2003) “Correlated-Q Learning”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Nash Q-Learning for General-Sum Stochastic Games",
+   "authors": [
+    "Junling Hu",
+    "Michael Wellman"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2026 Influential Paper Award: Junling Hu, Michael Wellman (2003) “Nash Q-Learning for General-Sum Stochastic Games”"
+  },
+  {
+   "venue": "AAMAS",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Influential Paper Award",
+   "title": "Rules of Encounter: Designing Conventions for Automated Negotiation Among Computers",
+   "authors": [
+    "Jeffrey S. Rosenschein",
+    "Gilad Zlotkin"
+   ],
+   "track": "main",
+   "paperYear": 1994,
+   "source": "https://aamas.csc.liv.ac.uk/award-influential.html",
+   "evidence": "AAMAS 2026 Influential Paper Award: Jeffrey S. Rosenschein, Gilad Zlotkin (1994) “Rules of Encounter: Designing Conventions for Automated Negotiation Among Computers”"
   },
   {
    "venue": "ACL",
@@ -67907,6 +68499,255 @@
    "track": "main",
    "source": "https://www.sigcomm.org/awards/best-paper-award",
    "evidence": "2022: Huangxun Chen (Huawei Theory Lab), Yukai Miao (University of New South Wales), Li Chen (Zhongguancun Laboratory), Haifeng Sun (Beijing University of Posts and Telecommunications), Hong Xu (Chinese University of Hong Kong), Libin Liu (Shandong Computer Science Center (National Supercomputer Center in Jinan)), Gong Zhang (Huawei Theory Lab), Wei Wang (Hong Kong University of Science and Technology (Guangzhou) & Hong Kong University of Science and Technology), \"Software-Defined Network Assimilation: Bridging the Last Mile Towards Centralized Network Configuration Management with NAssim\""
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Social Cost of Cheap Pseudonyms",
+   "authors": [
+    "Eric J. Friedman",
+    "Paul Resnick"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2015 Test of Time Award: Eric J. Friedman and Paul Resnick “The Social Cost of Cheap Pseudonyms”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "How Hard is it to Control an Election?",
+   "authors": [
+    "John J. Bartholdi III",
+    "Craig A. Tovey",
+    "Michael A. Trick"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2016 Test of Time Award: John J. Bartholdi III, Craig A. Tovey, and Michael A. Trick “How Hard is it to Control an Election?”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Single Transferable Vote Resists Strategic Voting",
+   "authors": [
+    "John J. Bartholdi III",
+    "James B. Orlin"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2016 Test of Time Award: John J. Bartholdi III and James B. Orlin “Single Transferable Vote Resists Strategic Voting”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Truth Revelation in Approximately Efficient Combinatorial Auctions",
+   "authors": [
+    "Daniel Lehmann",
+    "Liadan Ita O'Callaghan",
+    "Yoav Shoham"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2017 Test of Time Award: Daniel Lehmann, Liadan Ita O'Callaghan, and Yoav Shoham “Truth Revelation in Approximately Efficient Combinatorial Auctions”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Internet Advertising and the Generalized Second-Price Auction: Selling Billions of Dollars Worth of Keywords",
+   "authors": [
+    "Benjamin Edelman",
+    "Michael Ostrovsky",
+    "Michael Schwarz"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2018 Test of Time Award: Benjamin Edelman, Michael Ostrovsky, and Michael Schwarz “Internet Advertising and the Generalized Second-Price Auction: Selling Billions of Dollars Worth of Keywords”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Position Auctions",
+   "authors": [
+    "Hal R. Varian"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2018 Test of Time Award: Hal R. Varian “Position Auctions”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Truthful Auctions for Pricing Search Keywords",
+   "authors": [
+    "Gagan Aggarwal",
+    "Ashish Goel",
+    "Rajeev Motwani"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2018 Test of Time Award: Gagan Aggarwal, Ashish Goel, and Rajeev Motwani “Truthful Auctions for Pricing Search Keywords”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Communication Requirements of Efficient Allocations and Supporting Prices",
+   "authors": [
+    "Noam Nisan",
+    "Ilya Segal"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2019 Test of Time Award: Noam Nisan and Ilya Segal “The Communication Requirements of Efficient Allocations and Supporting Prices”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A simple adaptive procedure leading to correlated equilibrium",
+   "authors": [
+    "Sergiu Hart",
+    "Andreu Mas-Colell"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2020 Test of Time Award: Sergiu Hart and Andreu Mas-Colell “A simple adaptive procedure leading to correlated equilibrium”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Calibrated learning and correlated equilibrium",
+   "authors": [
+    "Dean Foster",
+    "Rakesh Vohra"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2020 Test of Time Award: Dean Foster and Rakesh Vohra “Calibrated learning and correlated equilibrium”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Competitive auctions and digital goods",
+   "authors": [
+    "Andrew V. Goldberg",
+    "Jason D. Hartline",
+    "Andrew Wright"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2021 Test of Time Award: Andrew V. Goldberg, Jason D. Hartline, and Andrew Wright “Competitive auctions and digital goods”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Settling the complexity of computing two-player Nash equilibria",
+   "authors": [
+    "Xi Chen",
+    "Xiaotie Deng",
+    "Shang-Hua Teng"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2022 Test of Time Award: Xi Chen, Xiaotie Deng, and Shang-Hua Teng “Settling the complexity of computing two-player Nash equilibria”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The complexity of computing a Nash equilibrium",
+   "authors": [
+    "Constantinos Daskalakis",
+    "Paul W. Goldberg",
+    "Christos H. Papadimitriou"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2022 Test of Time Award: Constantinos Daskalakis, Paul W. Goldberg, and Christos H. Papadimitriou “The complexity of computing a Nash equilibrium”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Marriage, honesty, and stability",
+   "authors": [
+    "Nicole Immorlica",
+    "Mohammad Mahdian"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2023 Test of Time Award: Nicole Immorlica and Mohammad Mahdian “Marriage, honesty, and stability”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Unbalanced random matching markets",
+   "authors": [
+    "Itai Ashlagi",
+    "Yash Kanoria",
+    "Jacob D. Leshno"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2023 Test of Time Award: Itai Ashlagi, Yash Kanoria, Jacob D. Leshno “Unbalanced random matching markets”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "AdWords and generalized online matching",
+   "authors": [
+    "Aranyak Mehta",
+    "Amin Saberi",
+    "Umesh Vazirani",
+    "Vijay Vazirani"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2024 Test of Time Award: Aranyak Mehta, Amin Saberi, Umesh Vazirani, Vijay Vazirani “AdWords and generalized online matching”"
+  },
+  {
+   "venue": "SIGecom",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "On approximately fair allocations of indivisible goods",
+   "authors": [
+    "Richard J. Lipton",
+    "Evangelos Markakis",
+    "Elchanan Mossel",
+    "Amin Saberi"
+   ],
+   "track": "main",
+   "source": "https://sigecom.org/award-tot.html",
+   "evidence": "SIGecom 2025 Test of Time Award: Richard J. Lipton, Evangelos Markakis, Elchanan Mossel and Amin Saberi “On approximately fair allocations of indivisible goods”"
   },
   {
    "venue": "SIGIR",

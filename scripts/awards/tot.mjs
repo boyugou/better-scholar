@@ -23,8 +23,12 @@
 //   eurosys https://www.eurosys.org/awards/test-of-time-award            the EuroSys Test-of-Time Award, 2016–: "EuroSys 2026 Test-of-Time Award Recipients", then a line "Authors, for their EuroSys 2016
 //                                                                       paper Title"; under "Past Recipients" a line per paper, "2024: Authors for their EuroSys 2014 paper Title" (the newest has no year:
 //                                                                       the award is of the paper's year + 10, as every dated row is)
+//   aamas   https://aamas.csc.liv.ac.uk/award-influential.html            IFAAMAS's Influential Paper Award, 2015–: "2026:", then per paper three lines — "Authors (1994)", the title, the
+//                                                                       venue (a paper whose authors are written "Surname, I., …" is reported and skipped)
+//   ec      https://sigecom.org/award-tot.html                            the SIGecom Test of Time Award: a year heading, then per paper the title, the authors and the venue line(s); the
+//                                                                       paper may be of any venue (EC, SODA, STOC, a journal)
 //
-//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys [saved-page.html] > tot.json      (fetches the page when no file is given)
+//   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
 import { text, lines } from "./html.mjs";
@@ -41,7 +45,9 @@ const PAGES = {
   oopsla: "https://www.sigplan.org/Awards/OOPSLA/",
   focs: "https://tc.computer.org/tcmf/focs-test-time-award/",
   sigops: "https://www.sigops.org/awards/hof/",
-  eurosys: "https://www.eurosys.org/awards/test-of-time-award"
+  eurosys: "https://www.eurosys.org/awards/test-of-time-award",
+  aamas: "https://aamas.csc.liv.ac.uk/award-influential.html",
+  ec: "https://sigecom.org/award-tot.html"
 };
 
 // "Dr Badrul Sarwar, Professors George Karypis, Joseph Konstan, and John Riedl" — the names, in order
@@ -172,6 +178,43 @@ export function parseEurosysTot(html, source = PAGES.eurosys) {
   return { entries, skipped };
 }
 
+export function parseAamas(html, source = PAGES.aamas) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  let year = null;
+  for (let i = ls.indexOf("Previous winners of the award have been:") + 1; i > 0 && i < ls.length; i++) {
+    const h = /^((?:19|20)\d{2}):$/.exec(ls[i]);
+    if (h) { year = parseInt(h[1], 10); continue; }
+    const m = year && /^(.+?)\s*\(((?:19|20)\d{2})(?:,\s*\w+)?\)$/.exec(ls[i]);
+    if (!m) continue;
+    const authors = names(m[1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(ls[i + 1] || "");
+    // ("Bernstein, D. S., Zilberstein, S., & Immerman, N." is a surname-first list: not read)
+    if (!/&/.test(m[1]) && authors.length && authors.every(isPerson) && title.length >= 8) entries.push(entry("AAMAS", year, "Influential Paper Award", title, authors, source, `AAMAS ${year} Influential Paper Award: ${m[1]} (${m[2]}) “${title}”`, parseInt(m[2], 10)));
+    else skipped.push(`${year}: not read: ${ls[i].slice(0, 70)}`);
+    i++;
+  }
+  return { entries, skipped };
+}
+
+// A year heading, then per paper: the title, the authors, the venue line(s) (each with the paper's year), and at the end of the year a quotation of the citation.
+export function parseEcTot(html, source = PAGES.ec) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC"));
+  const hasYear = (l) => /\b(?:19|20)\d{2}\b/.test(l);
+  let year = null;
+  for (let i = ls.indexOf("Test of Time Award Winners") + 1; i > 0 && i < ls.length; i++) {
+    const h = /^((?:19|20)\d{2})$/.exec(ls[i]);
+    if (h) { year = parseInt(h[1], 10); continue; }
+    if (!year || hasYear(ls[i]) || /^["“…]/.test(ls[i])) continue;
+    if (!(ls[i + 2] && hasYear(ls[i + 2]) && !hasYear(ls[i + 1]))) continue;
+    const who = names(ls[i + 1].replace(/\s+and\s+/g, ", and ")), title = cleanTitle(ls[i]);
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push(entry("SIGecom", year, "Test of Time Award", title, who, source, `SIGecom ${year} Test of Time Award: ${ls[i + 1]} “${title}”`));
+    else skipped.push(`${year}: not read: ${ls[i].slice(0, 50)} / ${ls[i + 1].slice(0, 50)}`);
+    i += 1;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -227,7 +270,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
