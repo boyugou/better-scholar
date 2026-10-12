@@ -102,9 +102,15 @@ for (const e of accepted.values()) {
 const exclusions = JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).exclude.map((x) => [x.venue, x.year, awards.titleKey(x.title)].join("|"));
 let excluded = 0;
 for (const [k, e] of [...accepted]) if (exclusions.includes([e.venue, e.year, awards.titleKey(e.title)].join("|"))) { accepted.delete(k); excluded++; }
-const corrections = new Map((JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).correct || []).map((x) => [[x.venue, x.year, awards.titleKey(x.title)].join("|"), x.authors]));
+const corrections = new Map((JSON.parse(readFileSync(join(root, "data", "exclusions.json"), "utf8")).correct || []).flatMap((x) => [[[x.venue, x.year, awards.titleKey(x.title)].join("|"), x], ...(x.newTitle ? [[[x.venue, x.year, awards.titleKey(x.newTitle)].join("|"), x]] : [])]));      // (found by the misprinted title in a fresh read, by the right one once it is in the list)
 let corrected = 0;
-for (const e of accepted.values()) { const a = corrections.get([e.venue, e.year, awards.titleKey(e.title)].join("|")); if (a && a.join() !== e.authors.join()) { e.authors = a; corrected++; } }
+for (const e of accepted.values()) {
+  const x = corrections.get([e.venue, e.year, awards.titleKey(e.title)].join("|"));
+  if (!x) continue;
+  if (x.authors && x.authors.join() !== e.authors.join()) { e.authors = x.authors; corrected++; }
+  if (x.newTitle && x.newTitle !== e.title) { e.title = x.newTitle; corrected++; }
+  if (x.newTitle && !awards.titleKey(e.evidence).includes(awards.titleKey(e.title))) e.evidence += ` [the page misprints the title; the paper is "${e.title}" — data/exclusions.json]`;
+}
 
 // clashes: the same paper listed with two different award kinds at one venue-year
 const byPaper = new Map();

@@ -9328,14 +9328,14 @@
    "year": 2011,
    "award": "best",
    "awardLabel": "EAPLS Best Paper Award",
-   "title": "A static task partitionic approach for heterogeneous systems using OpenGL",
+   "title": "A static task partitioning approach for heterogeneous systems using OpenCL",
    "authors": [
     "Dominik Grewe",
     "Michael O’Boyle"
    ],
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
-   "evidence": "ETAPS 2011 EAPLS Best Paper Award: Dominik Grewe, Michael O’Boyle. A static task partitionic approach for heterogeneous systems using OpenGL"
+   "evidence": "ETAPS 2011 EAPLS Best Paper Award: Dominik Grewe, Michael O’Boyle. A static task partitionic approach for heterogeneous systems using OpenGL [the page misprints the title; the paper is \"A static task partitioning approach for heterogeneous systems using OpenCL\" — data/exclusions.json]"
   },
   {
    "venue": "CC",

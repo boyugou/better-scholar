@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.29 — 2026-10-12
+
+- ETAPS 2011's best paper of CC (Grewe and O'Boyle) is printed "A static task partitionic approach for heterogeneous systems using OpenGL" on the awards page — two typos for "partitioning … OpenCL" — so it could not match Scholar.
+  `data/exclusions.json`'s `correct` section takes a `newTitle` now; the evidence keeps the page's misprint and says what the paper's title is.
+
 ## 2.10.28 — 2026-10-12
 
 - EuroSys 2024's test-of-time paper (System software for persistent memory) lists its first author family-name first ("Dulloor Subramanya Rao"), so the surname "Rao" matched nothing — an OpenAlex spot check of the list found it. `data/exclusions.json` gets a

@@ -1,5 +1,5 @@
 {
- "note": "Entries read from an official page that the page itself gets wrong: `exclude` drops one (a title printed under another paper's authors), `correct` puts right an author list the page writes in another order (a family name first). scripts/awards/merge-raw.mjs applies both to every merge; each says what is wrong and where.",
+ "note": "Entries read from an official page that the page itself gets wrong: `exclude` drops one (a title printed under another paper's authors), `correct` puts right an author list written in another order (a family name first) or a misspelt title (`newTitle`). scripts/awards/merge-raw.mjs applies them to every merge; each says what is wrong and where.",
  "exclude": [
   {
    "venue": "KDD",
@@ -29,6 +29,13 @@
     "Jeff Jackson"
    ],
    "reason": "eurosys.org/awards/test-of-time-award prints the first author family-name first (\"Dulloor Subramanya Rao\"); Scholar has \"S Dulloor\", so the surname \"Rao\" matched nothing. The same words, the family name last."
+  },
+  {
+   "venue": "CC",
+   "year": 2011,
+   "title": "A static task partitionic approach for heterogeneous systems using OpenGL",
+   "newTitle": "A static task partitioning approach for heterogeneous systems using OpenCL",
+   "reason": "etaps.org/awards/best-paper prints \"partitionic\" and \"OpenGL\"; the paper (Grewe and O'Boyle, CC 2011) is \"A Static Task Partitioning Approach for Heterogeneous Systems Using OpenCL\", so the title matched nothing on Scholar"
   }
  ]
 }
