@@ -120,3 +120,9 @@ test("summarize with no ranking (both rank lists switched off): roles only, no t
   assert.equal(m.toTsv(s).split("\n")[0], "Role\tTotal");
   assert.ok(m.inSelection(paper("first", "A"), { role: "first" }, null));
 });
+
+test("toRowsTsv: a header and one line per row; a tab or a line break inside a field is a space; missing values are empty", () => {
+  assert.equal(m.toRowsTsv(["Year", "Title", "Citations"], [[2023, "A\ttab and\nnewline", 12], [null, "Plain", 0], [2020, undefined, ""]]),
+    "Year\tTitle\tCitations\n2023\tA tab and newline\t12\n\tPlain\t0\n2020\t\t");
+  assert.equal(m.toRowsTsv(["A"], []), "A");
+});

@@ -117,6 +117,12 @@
   }
 
   // Tab-separated table for spreadsheets.
+  // Tab-separated rows under a header: "Copy papers" (one line per paper, for a spreadsheet or a CV). A tab or line break inside a field is a space.
+  function toRowsTsv(header, rows) {
+    const cell = (v) => String(v == null ? "" : v).replace(/[\t\r\n]+/g, " ").trim();
+    return [header, ...rows].map((r) => r.map(cell).join("\t")).join("\n");
+  }
+
   function toTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
     const head = [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total];
     const lines = [head.join("\t")];
@@ -125,5 +131,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
 });

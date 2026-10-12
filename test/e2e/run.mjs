@@ -276,6 +276,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const tsv = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(tsv.split("\n")[0], /^Role\tA\tB\tC\tNot ranked\tTotal$/);
     ok("Copy summary / Copy as table put the expected text on the clipboard");
+    // "Copy papers": the papers shown now, one line each
+    await page.click('[data-act="copy-papers"]');
+    const paperRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n").map((l) => l.split("\t"));
+    assert.deepEqual(paperRows[0], ["Year", "Title", "Authors", "Role", "Venue", "CCF", "CORE", "Awards & talks", "Citations"]);
+    assert.equal(paperRows.length, 1 + 100, "the header and the hundred papers loaded");
+    const exp = expected(profile);
+    assert.equal(paperRows[1][1], profile.rows[0].title);
+    assert.equal(paperRows[1][8], String(profile.rows[0].cites));
+    assert.equal(paperRows[1][5], exp[0].venue.ccf ? exp[0].venue.ccf.tier : "");
+    assert.ok(paperRows.slice(1).every((r) => r.length === 9));
+    await page.check('input[data-act="only"]');
+    await page.click('[data-act="copy-papers"]');
+    const onlyRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n");
+    assert.equal(onlyRows.length, 1 + (await visibleRows(page)), "the filters count");
+    assert.ok(onlyRows.length < paperRows.length);
+    await page.uncheck('input[data-act="only"]');
+    ok("Copy papers puts the papers shown (the filters count) on the clipboard, one line each, with role, ranks, awards and citations");
 
     // -- 13. collapse persists
     await page.click('[data-act="collapse"]');

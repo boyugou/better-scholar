@@ -453,5 +453,26 @@
   },
   "mkCategory": {
     "message": "分类奖"
+  },
+  "copyPapers": {
+    "message": "复制论文列表"
+  },
+  "tsvYear": {
+    "message": "年份"
+  },
+  "tsvTitle": {
+    "message": "标题"
+  },
+  "tsvAuthors": {
+    "message": "作者"
+  },
+  "tsvVenue": {
+    "message": "期刊/会议"
+  },
+  "tsvAwards": {
+    "message": "获奖与报告形式"
+  },
+  "tsvCitations": {
+    "message": "引用"
   }
 }

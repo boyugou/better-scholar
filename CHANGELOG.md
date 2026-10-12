@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.7.0 — 2026-10-12
+
+- **Copy papers.** A third button next to *Copy summary* and *Copy as table* copies the papers the page shows now — the filters count, so a click on
+  "first author × CCF A" and *Copy papers* is that list — as tab-separated lines for a spreadsheet or a CV: year, title, authors (as Scholar prints
+  them), your role, venue, CCF, CORE (only the lists that are switched on), awards and talks (with the award's conference and year) and citations.
+  `metrics.toRowsTsv`; interface language follows the browser (English, 简体中文).
+
 ## 2.6.4 — 2026-10-12
 
 Sixteen more real profiles (music and audio, computational geometry, SAT and SMT, theorem proving, computational social science, educational data

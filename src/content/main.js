@@ -194,6 +194,21 @@
     return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
   };
 
+  // "Copy papers": the papers the page shows now (the filters count), one line each
+  function papersText() {
+    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
+    const header = [t("tsvYear"), t("tsvTitle"), t("tsvAuthors"), t("tsvRole"), t("tsvVenue"), ...(ccfOn ? [t("srcCcf")] : []), ...(coreOn ? [t("srcCore")] : []), t("tsvAwards"), t("tsvCitations")];
+    // (a paper whose author list Scholar cut before the owner's name says so; one that does not have the owner has no role)
+    const roleOf = (a) => (a.status === "found" ? copyLabels()[a.role] || a.role : a.status === "hidden" ? t("roleHidden") : "");
+    const rows = state.rows.filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+      const a = r.a;
+      const awardsAndTalks = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")).join(", ");
+      return [a.year, r.raw.title, r.raw.authorsText, roleOf(a), r.raw.venueText,
+        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, a.citations];
+    });
+    return metrics.toRowsTsv(header, rows);
+  }
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
@@ -224,7 +239,7 @@
       const m = model();
       const text = kind === "tsv"
         ? metrics.toTsv(m.summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-        : summaryText();
+        : kind === "papers" ? papersText() : summaryText();
       if (await copyText(text)) panel.flash(kind);
     },
     onLoadAll() { return startLoad("manual"); },

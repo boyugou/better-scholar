@@ -16,8 +16,8 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 
 - **Role × rank summary** — a small matrix in the page: first / co-first / second /
   last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
-  list exactly those papers. *Copy summary* and *Copy as table* put it on the
-  clipboard for a CV or an application form.
+  list exactly those papers. *Copy summary* and *Copy as table* put the matrix on the clipboard for a CV or an application form;
+  *Copy papers* copies the papers shown (so the cell you clicked) as one line each — role, ranks, awards, citations.
 - **Role colours on every paper** — each row is tinted by the author's position
   (blue first, purple co-first, amber second, green last) and your name in the author line is marked
   (hover it: "First author · position 1 of 8"). Quiet rank chips (`CCF A`, `CORE A*`) sit on the venue

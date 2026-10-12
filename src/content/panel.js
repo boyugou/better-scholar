@@ -107,7 +107,7 @@
       const btn = (kind, key) =>
         h("button", { class: "rr-btn", type: "button", "data-act": "copy-" + kind, onClick: () => cb.onCopy(kind) },
           ui.flash === kind ? t("copied") : t(key));
-      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"));
+      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"));
     }
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
