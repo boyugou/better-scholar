@@ -729,3 +729,46 @@ test("NDSS year page: distinguished papers (link/bold/br in any nesting), honora
   assert.equal(classify("2024 Artifact Evaluation Award Winners"), null);
   assert.equal(classify("2023 Best Technical Poster Award Winner"), null);
 });
+
+// NeurIPS 2014–2018 and ICML 2017–2018 award pages (hand-typed, each year a different markup) — synthetic, in those markups.
+test("old NeurIPS / ICML award pages: seven small markups, demos, reviewers and the page's footer left out", async () => {
+  const { parsers } = await import("../scripts/awards/ml-archive.mjs");
+  const page = (inner) => `<nav>menu <h3>Best Papers</h3></nav><!--JUst above the HTML in document-snippet.html--><div>${inner}</div></div></main><!--END BLOCK CONTENT--><footer><h4>Best paper award:</h4></footer>`;
+  const src = "https://nips.cc/Conferences/2014/Awards";
+  const n2014 = page(`<h2>NIPS 2014 Awards</h2><h3>Outstanding Paper Award</h3><h4> Sponsored by <span>Machine Learning Journal</span><br></h4> <a href="x" class="btn btn-primary">A Synthetic Hashing Paper for Search »</a><br><div class="relIndent">Ann Lee (Cornell University)<br> Bo Chen (Rutgers) </div> <br><br><a href="y" class="btn btn-primary">A* Synthetic Sampling »</a><br><div class="relIndent"> Cy Diaz (University of Toronto) <br> Dee Park (Microsoft Research)</div><div class="relIndent"> Eli Ross (Microsoft Research)</div> <h3>Outstanding Reviewer Awards</h3><ul><li>Fay Gray</li></ul>`);
+  assert.deepEqual(parsers.neurips[2014](n2014, src).map((e) => [e.award, e.title, e.authors]), [
+    ["outstanding", "A Synthetic Hashing Paper for Search", ["Ann Lee", "Bo Chen"]],
+    ["outstanding", "A* Synthetic Sampling", ["Cy Diaz", "Dee Park", "Eli Ross"]]
+  ]);
+  const n2015 = page(`<h2>NIPS 2015 Awards</h2><h3>Outstanding Demonstration Award</h3><h4><a href="d">A Synthetic Demonstration Title »</a></h4><p><em>Gia Stone · Hal Wu</em><br></p><h3>Best papers</h3> <h4><a href="a">Competitive Synthetic Estimation: Why is It Good »</a></h4><em>Ivy Xu · Jo Yan</em> <h4><a href="b">Fast Synthetic Convergence of Learning in Games »</a></h4><em>Kai Zu · Lu Mo · Ned Oh</em> <h3>Best reviewers <span>Sponsored</span></h3> <p>Pia Qi<br>Ray Sun</p>`);
+  assert.deepEqual(parsers.neurips[2015](n2015, src).map((e) => [e.award, e.title, e.authors]), [
+    ["best", "Competitive Synthetic Estimation: Why is It Good", ["Ivy Xu", "Jo Yan"]],
+    ["best", "Fast Synthetic Convergence of Learning in Games", ["Kai Zu", "Lu Mo", "Ned Oh"]]
+  ]);
+  const n2016 = page(`<h2>NIPS 2016 Awards</h2><h3>Best paper awards</h3><p><strong>Best paper award:</strong> Sue Tan, Tom Uy, Una Vo: <a href="v"><em><strong>Synthetic Value Iteration Networks</strong></em></a><br> <br> <strong>Best student paper award:</strong> Vic Wan, Wes Xia: Matrix Completion has <a href="m"><em><strong>No Synthetic Local Minimum</strong></em></a></p><p><strong>Best demonstration: </strong>Yui Zhao <a href="z"><em><strong>A Demo Title Here</strong></em></a></p>`);
+  assert.deepEqual(parsers.neurips[2016](n2016, src).map((e) => [e.award, e.title, e.authors]), [
+    ["best", "Synthetic Value Iteration Networks", ["Sue Tan", "Tom Uy", "Una Vo"]],
+    ["student", "Matrix Completion has No Synthetic Local Minimum", ["Vic Wan", "Wes Xia"]]
+  ]);
+  const n2017 = page(`<h4><strong>Best paper awards:</strong></h4><ul><li>Zed Alpha, Amy Beta. <a href="x"><em>A Synthetic Subgame Solving Paper</em></a>.</li><li>Cal Dunn, Dee Eden, Fay Gray. <a href="y"><em>A Synthetic Kernel Goodness-of-Fit Test</em></a>.</li></ul><h4><strong>Test of time award:</strong> </h4><ul><li>Gia Stone, Hal Wu. Synthetic Random Features for Large-Scale Machines. NIPS 2007.</li></ul><h4>Best Demonstration</h4><ul><li><p>Ivy Xu · Jo Yan. <a href="d">A Demo Title Here</a></p></li></ul>`);
+  assert.deepEqual(parsers.neurips[2017](n2017, src).map((e) => [e.award, e.title, e.authors, e.paperYear]), [
+    ["best", "A Synthetic Subgame Solving Paper", ["Zed Alpha", "Amy Beta"], undefined],
+    ["best", "A Synthetic Kernel Goodness-of-Fit Test", ["Cal Dunn", "Dee Eden", "Fay Gray"], undefined],
+    ["tot", "Synthetic Random Features for Large-Scale Machines", ["Gia Stone", "Hal Wu"], 2007]
+  ]);
+  const n2018 = page(`<h3>Awards NeurIPS 2018</h3><h3 class="x">Best Papers</h3><p><em>Synthetic Non-delusional Q-learning</em><br> By: Kai Zu · Lu Mo · Ned Oh<br> <br> <em>Synthetic Neural Differential Equations</em><br> By: Pia Qi · Ray Sun</p> <br> <h3>Best Demonstration</h3><p><em>A Synthetic Robot Feeding Demonstration</em><br> By: Sue Tan · Tom Uy<br> <br></p>`);
+  assert.deepEqual(parsers.neurips[2018](n2018, src).map((e) => [e.title, e.authors]), [
+    ["Synthetic Non-delusional Q-learning", ["Kai Zu", "Lu Mo", "Ned Oh"]],
+    ["Synthetic Neural Differential Equations", ["Pia Qi", "Ray Sun"]]
+  ]);
+  const i2017 = page(`<h3>ICML 2017 Awards</h3><h4><br> Test of Time Award</h4><p><strong>Combining Synthetic Online and Offline Knowledge</strong><br><em>Una Vo and Vic Wan</em><br> Remote presented</p><h4>Honorable Mentions</h4><p><strong>Pegasos: A Synthetic Sub-gradient Solver</strong><br><em>Wes Xia, Yui Zhao, Zed Alpha</em></p><h4>Best Paper Award</h4><p><strong>Understanding Synthetic Black-box Predictions</strong><br><em>Amy Beta, Cal Dunn</em></p><h4>Honorable Mentions</h4><p><strong>Lost Synthetic Relatives of the Gumbel Trick</strong><br><em>Dee Eden</em></p>`);
+  assert.deepEqual(parsers.icml[2017](i2017, "https://icml.cc/Conferences/2017/Awards").map((e) => [e.award, e.awardLabel, e.title, e.authors]), [
+    ["tot", "Test of Time Award", "Combining Synthetic Online and Offline Knowledge", ["Una Vo", "Vic Wan"]],
+    ["runner-up", "Test of Time Honorable Mention", "Pegasos: A Synthetic Sub-gradient Solver", ["Wes Xia", "Yui Zhao", "Zed Alpha"]],
+    ["best", "Best Paper", "Understanding Synthetic Black-box Predictions", ["Amy Beta", "Cal Dunn"]],
+    ["runner-up", "Best Paper Honorable Mention", "Lost Synthetic Relatives of the Gumbel Trick", ["Dee Eden"]]
+  ]);
+  const i2018 = page(`<h3>ICML 2018 Awards</h3><h4>Best Paper Awards</h4><p><strong>Synthetic Obfuscated Gradients Give a False Sense</strong><br><em>Fay Gray, Gia Stone</em></p><h4>Best Paper Runner Up Awards</h4><p><strong>The Synthetic Mechanics of Differentiable Games</strong><br><em>Hal Wu</em></p><h4><strong>Test of Time Award</strong></h4><p><strong>A Synthetic Unified Architecture for Language Processing</strong><br><em>Ivy Xu and Jo Yan</em> (from ICML 2008)</p>`);
+  const e18 = parsers.icml[2018](i2018, "https://icml.cc/Conferences/2018/Awards");
+  assert.deepEqual(e18.map((e) => [e.award, e.awardLabel, e.paperYear]), [["best", "Best Paper", undefined], ["runner-up", "Best Paper Runner-up", undefined], ["tot", "Test of Time Award", 2008]]);
+});

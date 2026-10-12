@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 2097
+  "count": 2124
  },
  "entries": [
   {
@@ -15985,6 +15985,203 @@
   },
   {
    "venue": "ICML",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Understanding Black-box Predictions via Influence Functions",
+   "authors": [
+    "Pang Wei Koh",
+    "Percy Liang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Best Paper: Understanding Black-box Predictions via Influence Functions — Pang Wei Koh, Percy Liang"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Honorable Mention",
+   "title": "A Bound on the Label Complexity of Agnostic Active Learning",
+   "authors": [
+    "Steve Hanneke"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Test of Time Honorable Mention: A Bound on the Label Complexity of Agnostic Active Learning — Steve Hanneke"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "A Unified Maximum Likelihood Approach for Estimating Symmetric Properties of Discrete Distributions",
+   "authors": [
+    "Jayadev Acharya",
+    "Hirakendu Das",
+    "Alon Orlitsky",
+    "Ananda Suresh"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Best Paper Honorable Mention: A Unified Maximum Likelihood Approach for Estimating Symmetric Properties of Discrete Distributions — Jayadev Acharya, Hirakendu Das, Alon Orlitsky, Ananda Suresh"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Lost Relatives of the Gumbel Trick",
+   "authors": [
+    "Matej Balog",
+    "Nilesh Tripuraneni",
+    "Zoubin Ghahramani",
+    "Adrian Weller"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Best Paper Honorable Mention: Lost Relatives of the Gumbel Trick — Matej Balog, Nilesh Tripuraneni, Zoubin Ghahramani, Adrian Weller"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "Modular Multitask Reinforcement Learning with Policy Sketches",
+   "authors": [
+    "Jacob Andreas",
+    "Dan Klein",
+    "Sergey Levine"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Best Paper Honorable Mention: Modular Multitask Reinforcement Learning with Policy Sketches — Jacob Andreas, Dan Klein, Sergey Levine"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Test of Time Honorable Mention",
+   "title": "Pegasos: Primal estimated sub-gradient solver for SVM",
+   "authors": [
+    "Shai Shalev-Shwartz",
+    "Yoram Singer",
+    "Nathan Srebro"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Test of Time Honorable Mention: Pegasos: Primal estimated sub-gradient solver for SVM — Shai Shalev-Shwartz, Yoram Singer, Nathan Srebro"
+  },
+  {
+   "venue": "ICML",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Combining Online and Offline Knowledge in UCT",
+   "authors": [
+    "Sylvain Gelly",
+    "David Silver"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2017/Awards",
+   "evidence": "Test of Time Award: Combining Online and Offline Knowledge in UCT — Sylvain Gelly and David Silver"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Delayed Impact of Fair Machine Learning",
+   "authors": [
+    "Lydia Liu",
+    "Sarah Dean",
+    "Esther Rolf",
+    "Max Simchowitz",
+    "Moritz Hardt"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Best Paper: Delayed Impact of Fair Machine Learning — Lydia Liu, Sarah Dean, Esther Rolf, Max Simchowitz, Moritz Hardt"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples",
+   "authors": [
+    "Anish Athalye",
+    "Nicholas Carlini",
+    "David Wagner"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Best Paper: Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples — Anish Athalye, Nicholas Carlini, David Wagner"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Fairness Without Demographics in Repeated Loss Minimization",
+   "authors": [
+    "Tatsunori Hashimoto",
+    "Megha Srivastava",
+    "Hongseok Namkoong",
+    "Percy Liang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Best Paper Runner-up: Fairness Without Demographics in Repeated Loss Minimization — Tatsunori Hashimoto, Megha Srivastava, Hongseok Namkoong, Percy Liang"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Near Optimal Frequent Directions for Sketching Dense and Sparse Matrices",
+   "authors": [
+    "Zengfeng Huang"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Best Paper Runner-up: Near Optimal Frequent Directions for Sketching Dense and Sparse Matrices — Zengfeng Huang"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "The Mechanics of n-Player Differentiable Games",
+   "authors": [
+    "David Balduzzi",
+    "Sebastien Racaniere",
+    "James Martens",
+    "Jakob Foerster",
+    "Karl Tuyls",
+    "Thore Graepel"
+   ],
+   "track": "main",
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Best Paper Runner-up: The Mechanics of n-Player Differentiable Games — David Balduzzi, Sebastien Racaniere, James Martens, Jakob Foerster, Karl Tuyls, Thore Graepel"
+  },
+  {
+   "venue": "ICML",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning",
+   "authors": [
+    "Ronan Collobert",
+    "Jason Weston"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://icml.cc/Conferences/2018/Awards",
+   "evidence": "Test of Time Award: A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning — Ronan Collobert and Jason Weston"
+  },
+  {
+   "venue": "ICML",
    "year": 2019,
    "award": "outstanding",
    "awardLabel": "Outstanding Paper",
@@ -23027,6 +23224,223 @@
    "track": "main",
    "source": "https://www.ndss-symposium.org/ndss2026/",
    "evidence": "NDSS Symposium Test of Time Award: Security Enhanced (SE) Android: Bringing Flexible MAC to Android — Stephen Smalley (Trusted Systems Research, National Security Agency), Robert Craig (Trusted Systems Research, National Security Agency)"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2014,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "A* Sampling",
+   "authors": [
+    "Christopher Maddison",
+    "Daniel Tarlow",
+    "Tom Minka"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2014/Awards",
+   "evidence": "Outstanding Paper Award: A* Sampling » — , Christopher Maddison (University of Toronto) , Daniel Tarlow (Microsoft Research), Tom Minka (Microsoft Research),"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2014,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Asymmetric LSH (ALSH) for Sublinear Time Maximum Inner Product Search (MIPS)",
+   "authors": [
+    "Anshumali Shrivastava",
+    "Ping Li"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2014/Awards",
+   "evidence": "Outstanding Paper Award: Asymmetric LSH (ALSH) for Sublinear Time Maximum Inner Product Search (MIPS) » — , Anshumali Shrivastava (Cornell University), Ping Li (Rutgers University) , , ,"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Competitive Distribution Estimation: Why is Good-Turing Good",
+   "authors": [
+    "Alon Orlitsky",
+    "Ananda Suresh"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2015/Awards",
+   "evidence": "Best papers: Competitive Distribution Estimation: Why is Good-Turing Good » — Alon Orlitsky · Ananda Suresh"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Fast Convergence of Regularized Learning in Games",
+   "authors": [
+    "Vasilis Syrgkanis",
+    "Alekh Agarwal",
+    "Haipeng Luo",
+    "Robert Schapire"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2015/Awards",
+   "evidence": "Best papers: Fast Convergence of Regularized Learning in Games » — Vasilis Syrgkanis · Alekh Agarwal · Haipeng Luo · Robert Schapire"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Value Iteration Networks",
+   "authors": [
+    "Aviv Tamar",
+    "Yi Wu",
+    "Garrett Thomas",
+    "Sergey Levine",
+    "Pieter Abbeel"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2016/Awards",
+   "evidence": "Best paper award: Aviv Tamar, Yi Wu, Garrett Thomas, Sergey Levine, Pieter Abbeel: Value Iteration Networks"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Matrix Completion has No Spurious Local Minimum",
+   "authors": [
+    "Rong Ge",
+    "Jason Lee",
+    "Tengyu Ma"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2016/Awards",
+   "evidence": "Best student paper award: Rong Ge, Jason Lee, Tengyu Ma: Matrix Completion has No Spurious Local Minimum"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "A Linear-Time Kernel Goodness-of-Fit Test",
+   "authors": [
+    "Wittawat Jitkrittum",
+    "Wenkai Xu",
+    "Zoltan Szabo",
+    "Kenji Fukumizu",
+    "Arthur Gretton"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2017/Awards",
+   "evidence": "Best paper awards:: Wittawat Jitkrittum, Wenkai Xu, Zoltan Szabo, Kenji Fukumizu, Arthur Gretton. A Linear-Time Kernel Goodness-of-Fit Test."
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Safe and Nested Subgame Solving for Imperfect-Information Games",
+   "authors": [
+    "Noam Brown",
+    "Tuomas Sandholm"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2017/Awards",
+   "evidence": "Best paper awards:: Noam Brown, Tuomas Sandholm. Safe and Nested Subgame Solving for Imperfect-Information Games."
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Variance-based Regularization with Convex Objectives",
+   "authors": [
+    "Hongseok Namkoong",
+    "John Duchi"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2017/Awards",
+   "evidence": "Best paper awards:: Hongseok Namkoong, John Duchi. Variance-based Regularization with Convex Objectives."
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Random Features for Large-Scale Kernel Machines",
+   "authors": [
+    "Ali Rahimi",
+    "Benjamen Recht"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://nips.cc/Conferences/2017/Awards",
+   "evidence": "Test of time award:: Ali Rahimi, Benjamen Recht. Random Features for Large-Scale Kernel Machines. NIPS 2007."
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Nearly Tight Sample Complexity Bounds for Learning Mixtures of Gaussians via Sample Compression Schemes",
+   "authors": [
+    "Hassan Ashtiani",
+    "Shai Ben-David",
+    "Nick Harvey",
+    "Christopher Liaw",
+    "Abbas Mehrabian",
+    "Yaniv Plan"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2018/Awards",
+   "evidence": "Best Papers: Nearly Tight Sample Complexity Bounds for Learning Mixtures of Gaussians via Sample Compression Schemes — By: Hassan Ashtiani · Shai Ben-David · Nick Harvey · Christopher Liaw · Abbas Mehrabian · Yaniv Plan"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Neural Ordinary Differential Equations",
+   "authors": [
+    "Tian Qi Chen",
+    "Yulia Rubanova",
+    "Jesse Bettencourt",
+    "David Duvenaud"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2018/Awards",
+   "evidence": "Best Papers: Neural Ordinary Differential Equations — By: Tian Qi Chen · Yulia Rubanova · Jesse Bettencourt · David Duvenaud"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Non-delusional Q-learning and Value-iteration",
+   "authors": [
+    "Tyler Lu",
+    "Dale Schuurmans",
+    "Craig Boutilier"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2018/Awards",
+   "evidence": "Best Papers: Non-delusional Q-learning and Value-iteration — By: Tyler Lu · Dale Schuurmans · Craig Boutilier"
+  },
+  {
+   "venue": "NeurIPS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Optimal Algorithms for Non-Smooth Distributed Optimization in Networks",
+   "authors": [
+    "Kevin Scaman",
+    "Francis Bach",
+    "Sebastien Bubeck",
+    "Laurent Massoulié",
+    "Yin Tat Lee"
+   ],
+   "track": "main",
+   "source": "https://nips.cc/Conferences/2018/Awards",
+   "evidence": "Best Papers: Optimal Algorithms for Non-Smooth Distributed Optimization in Networks — By: Kevin Scaman · Francis Bach · Sebastien Bubeck · Laurent Massoulié · Yin Tat Lee"
   },
   {
    "venue": "NeurIPS",

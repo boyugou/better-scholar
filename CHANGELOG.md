@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.6 — 2026-10-12
+
+- **NeurIPS 2014–2018 and ICML 2017–2018 awards** (27 entries) from the conferences' own awards pages, for the years before the
+  virtual sites list awards: Neural ODEs, Value Iteration Networks, Obfuscated Gradients, the NeurIPS 2017 *Random Features* and
+  ICML 2018 *Unified Architecture for NLP* test-of-time awards, and the others. Seven hand-typed markups, one new reader
+  `scripts/awards/ml-archive.mjs`. The list holds 2124 awards.
+
 ## 2.5.5 — 2026-10-12
 
 - **NDSS distinguished papers and test-of-time papers, 2017–2026** (56 entries) from the symposium's own year pages: Distinguished Paper

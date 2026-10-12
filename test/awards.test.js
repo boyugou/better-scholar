@@ -214,6 +214,18 @@ test("the bundled list: database winners (SIGMOD's and PODS's own best-paper pag
   assert.deepEqual(find("Bao: Making learned query optimization practical", "A Smith, B Jones"), []);
 });
 
+test("the bundled list: machine-learning winners from the years before the virtual sites list awards (NeurIPS 2014–2018, ICML 2017–2018)", () => {
+  const idx = awards.createIndex(require("../src/data/awards.js").items);
+  const find = (title, authorsText) => idx.lookup({ title, authorsText }).map((m) => `${m.venue} ${m.year} ${m.kind}`).sort();
+  assert.deepEqual(find("Neural ordinary differential equations", "RTQ Chen, Y Rubanova, J Bettencourt, DK Duvenaud"), ["NeurIPS 2018 best"]);
+  assert.deepEqual(find("Value iteration networks", "A Tamar, Y Wu, G Thomas, S Levine, P Abbeel"), ["NeurIPS 2016 best"]);
+  assert.deepEqual(find("Random features for large-scale kernel machines", "A Rahimi, B Recht"), ["NeurIPS 2017 tot"]);
+  assert.deepEqual(find("Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples", "A Athalye, N Carlini, D Wagner"), ["ICML 2018 best"]);
+  assert.deepEqual(find("Understanding black-box predictions via influence functions", "PW Koh, P Liang"), ["ICML 2017 best"]);
+  assert.deepEqual(find("A unified architecture for natural language processing: Deep neural networks with multitask learning", "R Collobert, J Weston"), ["ICML 2018 tot"]);
+  assert.deepEqual(find("Neural ordinary differential equations", "A Smith, B Jones"), []);
+});
+
 test("LaTeX left in an official title does not hide the paper: $\\mathcal{V}$-Usable matches Scholar's V-usable", () => {
   assert.equal(awards.titleKey("Understanding Dataset Difficulty with $\\mathcal{V}$-Usable Information"), awards.titleKey("Understanding dataset difficulty with V-usable information"));
   assert.equal(awards.titleKey("A \\textbf{Bold} Title"), awards.titleKey("A Bold Title"));
