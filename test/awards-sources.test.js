@@ -1417,3 +1417,19 @@ test("SIGWEB Engelbart and SIGDA Newton pages: year / authors / title (and “Ti
   ]);
   assert.deepEqual(nw.skipped, []);
 });
+
+test("SIGSPATIAL award page: 10-Year Impact and Best Paper lists (quoted titles with the authors run together, an unquoted title, a runner-up year); the other awards are not read", async () => {
+  const { parseSigspatial } = await import("../scripts/awards/tot.mjs");
+  const html = `<h3>10-Year Impact Award</h3><p>This annual award is given to a regular paper published at our main conference 10 years ago.</p><p>2025</p><p>“GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data”</p><p>Jia Yu (Arizona State University)</p><p>Mohamed Sarwat (Arizona State University)</p>
+<p>2024</p><p>“Local Persistent Homology Based Distance Between Maps”</p><p>Mahmuda Ahmed (The University of Texas at San Antonio)Carola Wenk (Tulane University)</p><p>2020 Honorable Mention</p><p>“T-Drive: Driving Directions Based on Taxi Trajectories”Jing Yuan (USTC, Hefei)Yu Zheng (Microsoft Research Asia)</p>
+<h3>Best Paper Award</h3><p>2025</p><p>XXLTraffic: Expanding and Extremely Long Traffic forecasting beyond test adaptation</p><p>Du Yin (University of New South Wales Sydney)</p><p>Flora Salim (University of New South Wales Sydney)</p>
+<h3>Best Vision Paper Award</h3><p>2025</p><p>“Lory: Location-aware Data Discovery from Data Lakes”</p><p>El Kindi Rezig (University of Utah)</p><h3>Other Awards</h3>`;
+  const { entries, skipped } = parseSigspatial(html);
+  assert.deepEqual(entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2025 tot GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data | Jia Yu; Mohamed Sarwat",
+    "2024 tot Local Persistent Homology Based Distance Between Maps | Mahmuda Ahmed; Carola Wenk",
+    "2020 runner-up T-Drive: Driving Directions Based on Taxi Trajectories | Jing Yuan; Yu Zheng",
+    "2025 best XXLTraffic: Expanding and Extremely Long Traffic forecasting beyond test adaptation | Du Yin; Flora Salim"
+  ]);
+  assert.deepEqual(skipped, []);
+});

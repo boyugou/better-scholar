@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.29 — 2026-10-12
+
+- ACM SIGSPATIAL's Best Paper Award (2009–2025) and 10-Year Impact Award (2018–2025, with the 2020 honorable mention): 26 papers from SIGSPATIAL's own award-recipients page (`tot.mjs sigspatial`;
+  GeoSpark, T-Drive, Map-Matching for Low-Sampling-Rate GPS Trajectories …). The bundled list has 5419 awards.
+
 ## 2.9.28 — 2026-10-12
 
 - The Hypertext Douglas Engelbart Best Paper Award (2003–2025, 22 papers) from ACM SIGWEB's page (`tot.mjs ht`) and SIGDA's A. Richard Newton Technical Impact Award in EDA (2009–2024, 16 papers:

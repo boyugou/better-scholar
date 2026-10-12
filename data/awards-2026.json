@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 5393
+  "count": 5419
  },
  "entries": [
   {
@@ -81280,6 +81280,415 @@
    "track": "main",
    "source": "https://www.sigops.org/awards/hof/",
    "evidence": "SIGOPS 2025 Hall of Fame Award: Haogang Chen, Daniel Ziegler, Tej Chajed, Adam Chlipala, M. Frans Kaashoek, and Nickolai Zeldovich “Using Crash Hoare Logic for Certifying the FSCQ File System”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Improved Visibility Computation on Massive Grid Terrains",
+   "authors": [
+    "Jeremy Fishman",
+    "Herman Haverkort",
+    "Laura Toma"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2009 Best Paper Award: Jeremy Fishman, Herman Haverkort, Laura Toma “Improved Visibility Computation on Massive Grid Terrains”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Natural Neighbor Interpolation Based Grid DEM Construction Using a GPU",
+   "authors": [
+    "Alex Beutel",
+    "Thomas Mølhave",
+    "Pankaj K. Agarwal"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2010 Best Paper Award: Alex Beutel, Thomas Mølhave, Pankaj K. Agarwal “Natural Neighbor Interpolation Based Grid DEM Construction Using a GPU”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Path Shapes – An Alternative Method for Map Matching and Fully Autonomous Self-Localization",
+   "authors": [
+    "Stefan Funke",
+    "Sabine Storandt"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2011 Best Paper Award: Stefan Funke, Sabine Storandt “Path Shapes – An Alternative Method for Map Matching and Fully Autonomous Self-Localization”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HLDB: Location-Based Services in Databases",
+   "authors": [
+    "Ittai Abraham",
+    "Daniel Delling",
+    "Amos Fiat",
+    "Andrew Goldberg",
+    "Renato Werneck"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2012 Best Paper Award: Ittai Abraham, Daniel Delling, Amos Fiat, Andrew Goldberg, Renato Werneck “HLDB: Location-Based Services in Databases”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dejavu: An Accurate Energy-Efficient Outdoor Localization System",
+   "authors": [
+    "Heba Aly",
+    "Moustafa Youssef"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2013 Best Paper Award: Heba Aly, Moustafa Youssef “Dejavu: An Accurate Energy-Efficient Outdoor Localization System”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Path-Based Queries on Trajectory Data",
+   "authors": [
+    "Benjamin Krogh",
+    "Nikos Pelekis",
+    "Yannis Theodoridis",
+    "Kristian Torp"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2014 Best Paper Award: Benjamin Krogh, Nikos Pelekis, Yannis Theodoridis, Kristian Torp “Path-Based Queries on Trajectory Data”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Map Reconstruction and Augmentation via Topological Methods",
+   "authors": [
+    "Suyi Wang",
+    "Yusu Wang",
+    "Yanjie Li"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2015 Best Paper Award: Suyi Wang, Yusu Wang, Yanjie Li “Efficient Map Reconstruction and Augmentation via Topological Methods”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Activity-based Ridesharing: Increasing Flexibility by Time Geography",
+   "authors": [
+    "Yaoli Wang",
+    "Ronny Kutadinata",
+    "Stephan Winter"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2016 Best Paper Award: Yaoli Wang, Ronny Kutadinata, Stephan Winter “Activity-based Ridesharing: Increasing Flexibility by Time Geography”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dictionary Compression in Point Cloud Data Management",
+   "authors": [
+    "Mirjana Pavlovic",
+    "Kai-Niklas Bastian",
+    "Hinnerk Gildhoff",
+    "Anastasia Ailamaki"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2017 Best Paper Award: Mirjana Pavlovic, Kai-Niklas Bastian, Hinnerk Gildhoff, Anastasia Ailamaki “Dictionary Compression in Point Cloud Data Management”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Flood Risk Analysis on Terrains under the Multi-Flow-Direction Model",
+   "authors": [
+    "Aaron Lowe",
+    "Pankaj Agarwal"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2018 Best Paper Award: Aaron Lowe, Pankaj Agarwal “Flood Risk Analysis on Terrains under the Multi-Flow-Direction Model”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "NewsStand: A New View on News",
+   "authors": [
+    "Benjamin Teitler",
+    "Michael Lieberman",
+    "Daniele Panozzo",
+    "Jagan Sankaranarayanan",
+    "Hanan Samet",
+    "Jon Sperling"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2018 10-Year Impact Award: Benjamin Teitler, Michael Lieberman, Daniele Panozzo, Jagan Sankaranarayanan, Hanan Samet, Jon Sperling “NewsStand: A New View on News”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Maximum Physically Consistent Trajectories",
+   "authors": [
+    "Bram Custers",
+    "Mees van de Kerkhof",
+    "Wouter Meulemans",
+    "Bettina Speckmann",
+    "Frank Staals"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2019 Best Paper Award: Bram Custers, Mees van de Kerkhof, Wouter Meulemans, Bettina Speckmann, Frank Staals “Maximum Physically Consistent Trajectories”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Map-Matching for Low-Sampling-Rate GPS Trajectories",
+   "authors": [
+    "Yin Lou",
+    "Chengyang Zhang",
+    "Yu Zheng",
+    "Xing Xie",
+    "Wei Wang",
+    "Yan Huang"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2019 10-Year Impact Award: Yin Lou, Chengyang Zhang, Yu Zheng, Xing Xie, Wei Wang, Yan Huang “Map-Matching for Low-Sampling-Rate GPS Trajectories”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Incorporating Domain Knowledge into Memetic Algorithms for Solving Spatial Optimization Problems",
+   "authors": [
+    "Subhodip Biswas",
+    "Fanglan Chen",
+    "Zhiqian Chen",
+    "Chang-Tien Lu",
+    "Naren Ramakrishnan"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2020 Best Paper Award: Subhodip Biswas, Fanglan Chen, Zhiqian Chen, Chang-Tien Lu, Naren Ramakrishnan “Incorporating Domain Knowledge into Memetic Algorithms for Solving Spatial Optimization Problems”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "10-Year Impact Award Honorable Mention",
+   "title": "T-Drive: Driving Directions Based on Taxi Trajectories",
+   "authors": [
+    "Jing Yuan",
+    "Yu Zheng",
+    "Chengyang Zhang",
+    "Wenlei Xie",
+    "Xing Xie",
+    "Guangzhong Sun",
+    "Yan Huang"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2020 10-Year Impact Award Honorable Mention: Jing Yuan, Yu Zheng, Chengyang Zhang, Wenlei Xie, Xing Xie, Guangzhong Sun, Yan Huang “T-Drive: Driving Directions Based on Taxi Trajectories”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Bag-Of-Visual-Words and Spatial Extensions for Land-Use Classification",
+   "authors": [
+    "Yi Yang",
+    "Shawn Newsam"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2020 10-Year Impact Award: Yi Yang, Shawn Newsam “Bag-Of-Visual-Words and Spatial Extensions for Land-Use Classification”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robust Routing Using Electrical Flows",
+   "authors": [
+    "Ali Kemal Sinop",
+    "Lisa Fawcett",
+    "Sreenivas Gollapudi",
+    "Kostas Kollias"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2021 Best Paper Award: Ali Kemal Sinop, Lisa Fawcett, Sreenivas Gollapudi, Kostas Kollias “Robust Routing Using Electrical Flows”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Transportation Mode Detection using Mobile Devices and GIS Information",
+   "authors": [
+    "Leon Stenneth",
+    "Ouri Wolfson",
+    "Philip Yu",
+    "Bo Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2021 10-Year Impact Award: Leon Stenneth, Ouri Wolfson, Philip Yu, Bo Xu “Transportation Mode Detection using Mobile Devices and GIS Information”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Maximum Entropy Bridgelets for Trajectory Completion",
+   "authors": [
+    "John Krumm"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2022 Best Paper Award: John Krumm “Maximum Entropy Bridgelets for Trajectory Completion”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Location-Based and Preference-Aware Recommendation Using Sparse Geo-Social Networking Data",
+   "authors": [
+    "Jie Bao",
+    "Yu Zheng",
+    "Mohamed Mokbel"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2022 10-Year Impact Award: Jie Bao, Yu Zheng, Mohamed Mokbel “Location-Based and Preference-Aware Recommendation Using Sparse Geo-Social Networking Data”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Spatial Knowledge-Infused Hierarchical Learning: An Application in Flood Mapping on Earth Imagery",
+   "authors": [
+    "Zelin Xu",
+    "Tingsong Xiao",
+    "Wenchong He",
+    "Yu Wang",
+    "Zhe Jiang"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2023 Best Paper Award: Zelin Xu, Tingsong Xiao, Wenchong He, Yu Wang, Zhe Jiang “Spatial Knowledge-Infused Hierarchical Learning: An Application in Flood Mapping on Earth Imagery”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Crowd Sensing of Traffic Anomalies based on Human Mobility and Social Media",
+   "authors": [
+    "Bei Pan",
+    "Yu Zheng",
+    "David Wilkie",
+    "Cyrus Shahabi"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2023 10-Year Impact Award: Bei Pan, Yu Zheng, David Wilkie, Cyrus Shahabi “Crowd Sensing of Traffic Anomalies based on Human Mobility and Social Media”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Urban Mobility Assessment Using LLMs",
+   "authors": [
+    "Prabin Bhandari",
+    "Antonios Anastasopoulos",
+    "Dieter Pfoser"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2024 Best Paper Award: Prabin Bhandari, Antonios Anastasopoulos, Dieter Pfoser “Urban Mobility Assessment Using LLMs”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "Local Persistent Homology Based Distance Between Maps",
+   "authors": [
+    "Mahmuda Ahmed",
+    "Brittany Terese Fasy",
+    "Carola Wenk"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2024 10-Year Impact Award: Mahmuda Ahmed, Brittany Terese Fasy, Carola Wenk “Local Persistent Homology Based Distance Between Maps”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "XXLTraffic: Expanding and Extremely Long Traffic forecasting beyond test adaptation",
+   "authors": [
+    "Du Yin",
+    "Hao Xue",
+    "Arian Prabowo",
+    "Shuang Ao",
+    "Flora Salim"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2025 Best Paper Award: Du Yin, Hao Xue, Arian Prabowo, Shuang Ao, Flora Salim “XXLTraffic: Expanding and Extremely Long Traffic forecasting beyond test adaptation”"
+  },
+  {
+   "venue": "SIGSPATIAL",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "10-Year Impact Award",
+   "title": "GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data",
+   "authors": [
+    "Jia Yu",
+    "Jinxuan Wu",
+    "Mohamed Sarwat"
+   ],
+   "track": "main",
+   "source": "https://www.sigspatial.org/people/award-recipients/",
+   "evidence": "SIGSPATIAL 2025 10-Year Impact Award: Jia Yu, Jinxuan Wu, Mohamed Sarwat “GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data”"
   },
   {
    "venue": "SOUPS",
