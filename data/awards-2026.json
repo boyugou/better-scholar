@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6344
+  "count": 6386
  },
  "entries": [
   {
@@ -85270,6 +85270,684 @@
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
    "evidence": "ETAPS 2018 EAPLS Best Paper Award: Ilya Grishchenko, Matteo Maffei, Clara Schneidewind. A Semantic Framework for the Security Analysis of Ethereum smart contracts"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Collaborative Prediction and Ranking with Non-Random Missing Data",
+   "authors": [
+    "B. Marlin",
+    "R. Zemel"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2009 Best Paper: Collaborative Prediction and Ranking with Non-Random Missing Data — B. Marlin, R. Zemel"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Understanding the Effect of Adaptive Preference Elicitation Methods on User Satisfaction of a Recommender System",
+   "authors": [
+    "B. Knijnenburg",
+    "M. Willemsen"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2009 Best Short Paper: Understanding the Effect of Adaptive Preference Elicitation Methods on User Satisfaction of a Recommender System — B. Knijnenburg, M. Willemsen"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Merging Multiple Criteria to Identify Suspicious Reviews",
+   "authors": [
+    "G. Wu",
+    "D. Greene",
+    "P. Cunningham"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2010 Best Short Paper: Merging Multiple Criteria to Identify Suspicious Reviews — G. Wu, D. Greene, P. Cunningham"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "The Network Effects of Recommending Social Connections",
+   "authors": [
+    "E. Daly",
+    "W. Geyer",
+    "D. Millen"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2010 Best Short Paper: The Network Effects of Recommending Social Connections — E. Daly, W. Geyer, D. Millen"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OrdRec: An Ordinal Model for Predicting Personalized Item Rating Distributions",
+   "authors": [
+    "Y. Koren",
+    "J. Sill"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2011 Best Paper: OrdRec: An Ordinal Model for Predicting Personalized Item Rating Distributions — Y. Koren, J. Sill"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Utilizing Related Product for Post-Purchase Recommendation in E-commerce",
+   "authors": [
+    "J. Wang",
+    "B. Sarwar",
+    "N. Sundaresan"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2011 Best Short Paper: Utilizing Related Product for Post-Purchase Recommendation in E-commerce — J. Wang, B. Sarwar, N. Sundaresan"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CLiMF: Learning to Maximize Reciprocal Rank with Collaborative Less-is-More Filtering",
+   "authors": [
+    "Y. Shi",
+    "A. Karatzoglou",
+    "L. Baltrunas",
+    "M. Larson",
+    "N. Oliver",
+    "A. Hanjalic"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2012 Best Paper: CLiMF: Learning to Maximize Reciprocal Rank with Collaborative Less-is-More Filtering — Y. Shi, A. Karatzoglou, L. Baltrunas, M. Larson, N. Oliver, A. Hanjalic"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Using Graph Partitioning Techniques for Neighbour Selection in User-Based Collaborative Filtering",
+   "authors": [
+    "A. Bellogin",
+    "J. Parapar"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2012 Best Short Paper: Using Graph Partitioning Techniques for Neighbour Selection in User-Based Collaborative Filtering — A. Bellogin, J. Parapar"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Fast Parallel SGD for Matrix Factorization in Shared Memory Systems",
+   "authors": [
+    "Y. Zhuang",
+    "W. Chin",
+    "Y. Juan",
+    "C. Lin"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2013 Best Paper: A Fast Parallel SGD for Matrix Factorization in Shared Memory Systems — Y. Zhuang, W. Chin, Y. Juan, C. Lin"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Beyond Clicks: Dwell Time for Personalization",
+   "authors": [
+    "X. Yi",
+    "L. Hong",
+    "E. Zhong",
+    "N. Nan Liu",
+    "S. Rajan"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2014 Best Paper: Beyond Clicks: Dwell Time for Personalization — X. Yi, L. Hong, E. Zhong, N. Nan Liu, S. Rajan"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Context-Aware Event Recommendation in Event-based Social Networks",
+   "authors": [
+    "A. Macedo",
+    "L. Marinho",
+    "R. Santos"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2015 Best Paper: Context-Aware Event Recommendation in Event-based Social Networks — A. Macedo, L. Marinho, R. Santos"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Crowd Sourcing, with a Few Answers: Recommending Commuters for Traffic Updates",
+   "authors": [
+    "E. Daly",
+    "M. Berlingerio",
+    "F. Schnitzler"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2015 Best Short Paper: Crowd Sourcing, with a Few Answers: Recommending Commuters for Traffic Updates — E. Daly, M. Berlingerio, F. Schnitzler"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Adaptive, Personalized Diversity for Visual Discovery",
+   "authors": [
+    "C. H. Teo",
+    "H. Nassif",
+    "D. Hill",
+    "S. Srinivasan",
+    "M. Goodman",
+    "V. Mohan",
+    "S. V. N. Vishwanathan"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2016 Best Short Paper: Adaptive, Personalized Diversity for Visual Discovery — C. H. Teo, H. Nassif, D. Hill, S. Srinivasan, M. Goodman, V. Mohan, S. V. N. Vishwanathan"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Local Item-Item Models for Top-N Recommendation",
+   "authors": [
+    "E. Christakopoulou",
+    "G. Karypis"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2016 Best Paper: Local Item-Item Models for Top-N Recommendation — E. Christakopoulou, G. Karypis"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Modeling the Assimilation-Contrast Effects in Online Product Rating Systems: Debiasing and Recommendations",
+   "authors": [
+    "X. Zhang",
+    "J. Zhao",
+    "J.C.S. Lui"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2017 Best Paper: Modeling the Assimilation-Contrast Effects in Online Product Rating Systems: Debiasing and Recommendations — X. Zhang, J. Zhao, J.C.S. Lui"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2017,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Translation-based Recommendation",
+   "authors": [
+    "R. He",
+    "W.-C. Kang",
+    "J. McAuley"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2017 Best Paper Runner-up: Translation-based Recommendation — R. He, W.-C. Kang, J. McAuley"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Causal Embeddings for Recommendation",
+   "authors": [
+    "S. Bonner",
+    "F. Vasile"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2018 Best Long Paper: Causal Embeddings for Recommendation — S. Bonner, F. Vasile"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Impact of Item Consumption on Assessment of Recommendations in User Studies",
+   "authors": [
+    "B. Loepp",
+    "T. Donkers",
+    "T. Kleemann",
+    "J. Ziegler"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2018 Best Short Paper: Impact of Item Consumption on Assessment of Recommendations in User Studies — B. Loepp, T. Donkers, T. Kleemann, J. Ziegler"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Generation Meets Recommendation: Proposing Novel Items for Groups of Users",
+   "authors": [
+    "T. V. Vo",
+    "H. Soh"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2018 Best Long Paper Runner-up: Generation Meets Recommendation: Proposing Novel Items for Groups of Users — T. V. Vo, H. Soh"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2018,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "HOP-rec: High-order Proximity for Implicit Recommendation",
+   "authors": [
+    "J.-H. Yang",
+    "C.-M. Chen",
+    "C.-J. Wang",
+    "M.-F. Tsai"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2018 Best Short Paper Runner-up: HOP-rec: High-order Proximity for Implicit Recommendation — J.-H. Yang, C.-M. Chen, C.-J. Wang, M.-F. Tsai"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Are We Really Making Much Progress? A Worrying Analysis of Recent Neural Recommendation Approaches",
+   "authors": [
+    "M. Ferrari Dacrema",
+    "P. Cremonesi",
+    "D. Jannach"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2019 Best Long Paper: Are We Really Making Much Progress? A Worrying Analysis of Recent Neural Recommendation Approaches — M. Ferrari Dacrema, P. Cremonesi, D. Jannach"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Pace My Race: Recommendations for Marathon Running",
+   "authors": [
+    "J. Berndsen",
+    "B. Smyth",
+    "A. Lawlor"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2019 Best Short Paper: Pace My Race: Recommendations for Marathon Running — J. Berndsen, B. Smyth, A. Lawlor"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "ADER: Adaptively Distilled Exemplar Replay Towards Continual Learning for Session-based Recommendation",
+   "authors": [
+    "F. Mi",
+    "X. Lin",
+    "B. Faltings"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2020 Best Short Paper: ADER: Adaptively Distilled Exemplar Replay Towards Continual Learning for Session-based Recommendation — F. Mi, X. Lin, B. Faltings"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Long Paper Award",
+   "title": "Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations",
+   "authors": [
+    "H. Tang",
+    "J. Liu",
+    "M. Zhao",
+    "X. Gong"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2020 Best Long Paper: Progressive Layered Extraction (PLE): A Novel Multi-Task Learning (MTL) Model for Personalized Recommendations — H. Tang, J. Liu, M. Zhao, X. Gong"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Exploiting Performance Estimates for Augmenting Recommendation Ensembles",
+   "authors": [
+    "G. Penha",
+    "R. L. T. Santos"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2020 Best Long Paper Runner-up: Exploiting Performance Estimates for Augmenting Recommendation Ensembles — G. Penha, R. L. T. Santos"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes",
+   "authors": [
+    "Matus Tomlein",
+    "Branislav Pecher",
+    "Jakub Simko",
+    "Ivan Srba",
+    "Robert Moro",
+    "Elena Stefancova",
+    "Michal Kompan",
+    "Andrea Hrckova",
+    "Juraj Podrouzek",
+    "Maria Bielikova"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2021 Best Paper: An Audit of Misinformation Filter Bubbles on YouTube: Bubble Bursting and Recent Behavior Changes — Matus Tomlein, Branislav Pecher, Jakub Simko, Ivan Srba, Robert Moro, Elena Stefancova, Michal Kompan, Andrea Hrckova, Juraj Podrouzek, Maria Bielikova"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Pessimistic Reward Models for Off-Policy Learning in Recommendation",
+   "authors": [
+    "Olivier Jeunen",
+    "Bart Goethals"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2021 Best Student paper: Pessimistic Reward Models for Off-Policy Learning in Recommendation — Olivier Jeunen, Bart Goethals"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Denoising Self-Attentive Sequential Recommendation",
+   "authors": [
+    "Huiyuan Chen",
+    "Yusan Lin",
+    "Menghai Pan",
+    "Lan Wang",
+    "Chin-Chia Michael Yeh",
+    "Xiaoting Li",
+    "Yan Zheng",
+    "Fei Wang",
+    "Hao Yang"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2022 Best Paper: Denoising Self-Attentive Sequential Recommendation — Huiyuan Chen, Yusan Lin, Menghai Pan, Lan Wang, Chin-Chia Michael Yeh, Xiaoting Li, Yan Zheng, Fei Wang, Hao Yang"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Modelling Two-Way Selection Preference for Person-Job Fit",
+   "authors": [
+    "Chen Yang",
+    "Yupeng Hou",
+    "Yang Song",
+    "Tao Zhang",
+    "Ji-Rong Wen",
+    "Wayne Xin Zhao"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2022 Best Student Paper Runner-up: Modelling Two-Way Selection Preference for Person-Job Fit — Chen Yang, Yupeng Hou, Yang Song, Tao Zhang, Ji-Rong Wen, Wayne Xin Zhao"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "RADio – Rank-Aware Divergence Metrics to Measure Normative Diversity in News Recommendations",
+   "authors": [
+    "Sanne Vrijenhoek",
+    "Gabriel Bénédict",
+    "Mateo Gutierrez",
+    "Daan Odijk",
+    "Maarten de Rijke"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2022 Best Paper Runner-up: RADio – Rank-Aware Divergence Metrics to Measure Normative Diversity in News Recommendations — Sanne Vrijenhoek, Gabriel Bénédict, Mateo Gutierrez, Daan Odijk, Maarten de Rijke"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Exploring the longitudinal effects of nudging on users’ music genre exploration behavior and listening preferences",
+   "authors": [
+    "Yu Liang",
+    "Martijn C. Willemsen"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2022 Best Student Paper: Exploring the longitudinal effects of nudging on users’ music genre exploration behavior and listening preferences — Yu Liang, Martijn C. Willemsen"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Full Paper Award",
+   "title": "gSASRec: Reducing Overconfidence in Sequential Recommendation Trained with Negative Sampling",
+   "authors": [
+    "Aleksandr V. Petrov",
+    "Craig Macdonald"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Full Paper: gSASRec: Reducing Overconfidence in Sequential Recommendation Trained with Negative Sampling — Aleksandr V. Petrov, Craig Macdonald"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Interpretable User Retention Modeling in Recommendation",
+   "authors": [
+    "Rui Ding",
+    "Ruobing Xie",
+    "Xiaobo Hao",
+    "Xiaochun Yang",
+    "Kaikai Ge",
+    "Xu Zhang",
+    "Jie Zhou",
+    "Leyu Lin"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Short Paper: Interpretable User Retention Modeling in Recommendation — Rui Ding, Ruobing Xie, Xiaobo Hao, Xiaochun Yang, Kaikai Ge, Xu Zhang, Jie Zhou, Leyu Lin"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Going Beyond Local: Global Graph-Enhanced Personalized News Recommendations",
+   "authors": [
+    "Boming Yang",
+    "Dairui Liu",
+    "Toyotaro Suzumura",
+    "Ruihai Dong",
+    "Irene Li"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Full Paper Runner-Up: Going Beyond Local: Global Graph-Enhanced Personalized News Recommendations — Boming Yang, Dairui Liu, Toyotaro Suzumura, Ruihai Dong, Irene Li"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Of Spiky SVDs and Music Recommendation",
+   "authors": [
+    "Darius Afchar",
+    "Romain Hennequin",
+    "Vincent Guigue"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Short Paper Runner-Up: Of Spiky SVDs and Music Recommendation — Darius Afchar, Romain Hennequin, Vincent Guigue"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Pairwise Intent Graph Embedding Learning for Context-Aware Recommendation",
+   "authors": [
+    "Dugang Liu",
+    "Yuhao Wu",
+    "Weixin Li",
+    "Xiaolian Zhang",
+    "Hao Wang",
+    "Qinjuan Yang",
+    "Zhong Ming"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Full Paper Runner-Up: Pairwise Intent Graph Embedding Learning for Context-Aware Recommendation — Dugang Liu, Yuhao Wu, Weixin Li, Xiaolian Zhang, Hao Wang, Qinjuan Yang, Zhong Ming"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Scalable Approximate NonSymmetric Autoencoder for Collaborative Filtering",
+   "authors": [
+    "Martin Spišák",
+    "Radek Bartyzal",
+    "Antonín Hoskovec",
+    "Ladislav Peška",
+    "Miroslav Tůma"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2023 Best Short Paper Runner-Up: Scalable Approximate NonSymmetric Autoencoder for Collaborative Filtering — Martin Spišák, Radek Bartyzal, Antonín Hoskovec, Ladislav Peška, Miroslav Tůma"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "The MovieLens Beliefs Dataset: Collecting Pre-Choice Data for Online Recommender Systems",
+   "authors": [
+    "Guy Aridor",
+    "Duarte Goncalves",
+    "Ruoyan Kong",
+    "Daniel Kluver",
+    "Joseph Konstan"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2024 Best Short Paper: The MovieLens Beliefs Dataset: Collecting Pre-Choice Data for Online Recommender Systems — Guy Aridor, Duarte Goncalves, Ruoyan Kong, Daniel Kluver, Joseph Konstan"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Full Paper Award",
+   "title": "Towards Empathetic Conversational Recommender Systems",
+   "authors": [
+    "Xiaoyu Zhang",
+    "Ruobing Xie",
+    "Yougang Lyu",
+    "Xin Xin",
+    "Pengjie Ren",
+    "Mingfei Liang",
+    "Bo Zhang",
+    "Zhanhui Kang",
+    "Maarten de Rijke",
+    "Zhaochun Ren"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2024 Best Full Paper: Towards Empathetic Conversational Recommender Systems — Xiaoyu Zhang, Ruobing Xie, Yougang Lyu, Xin Xin, Pengjie Ren, Mingfei Liang, Bo Zhang, Zhanhui Kang, Maarten de Rijke, Zhaochun Ren"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Unlocking the Hidden Treasures: Enhancing Recommendations with Unlabeled Data",
+   "authors": [
+    "Yuhan Zhao",
+    "Rui Chen",
+    "Qilong Han",
+    "Hongtao Song",
+    "Li Chen"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2024 Best Student Paper: Unlocking the Hidden Treasures: Enhancing Recommendations with Unlabeled Data — Yuhan Zhao, Rui Chen, Qilong Han, Hongtao Song, Li Chen"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Beyond Top-1: Addressing Inconsistencies in Evaluating Counterfactual Explanations for Recommender Systems",
+   "authors": [
+    "Amir Reza Mohammadi",
+    "Andreas Peintner",
+    "Michael Müller",
+    "Eva Zangerle"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2025 Best Short Paper: Beyond Top-1: Addressing Inconsistencies in Evaluating Counterfactual Explanations for Recommender Systems — Amir Reza Mohammadi, Andreas Peintner, Michael Müller, Eva Zangerle"
+  },
+  {
+   "venue": "RecSys",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Full Paper Award",
+   "title": "You Don’t Bring Me Flowers: Mitigating Unwanted Recommendations Through Conformal Risk Control",
+   "authors": [
+    "Giovanni De Toni",
+    "Erasmo Purificato",
+    "Emilia Gomez",
+    "Andrea Passerini",
+    "Bruno Lepri",
+    "Cristian Consonni"
+   ],
+   "track": "main",
+   "source": "https://recsys.acm.org/best-papers/",
+   "evidence": "RecSys 2025 Best Full Paper: You Don’t Bring Me Flowers: Mitigating Unwanted Recommendations Through Conformal Risk Control — Giovanni De Toni, Erasmo Purificato, Emilia Gomez, Andrea Passerini, Bruno Lepri, Cristian Consonni"
   },
   {
    "venue": "RSS",

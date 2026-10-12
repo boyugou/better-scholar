@@ -1907,3 +1907,13 @@ test("SOSP program page: a title followed by 'Best Paper Award' and its authors 
   const f = `<p>Best Paper Award: A Log Systems Paper Title</p><p>A Log Systems Paper Title</p><p>Ed Fox (UIUC), Flo Gray (UIUC)</p>`;
   assert.deepEqual(parseSospProgram(f, "https://www.sigops.org/s/conferences/sosp/2024/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2024 A Log Systems Paper Title | Ed Fox; Flo Gray"]);
 });
+
+test("RecSys best-paper page: 'by Authors (label)' under year headings; student and runner-up labels; honorable mentions and demos left out", async () => {
+  const { parseRecsysBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>RecSys Best Paper Awards</p><p>2024</p><p>A Good Recommender Paper Title</p><p>by Ann Lee, Bo Chan and Cy Dunn (Best Full Paper)</p><p>A Student Recommender Paper</p><p>by Ed Fox (Best Student Paper)</p><p>An Honoured Recommender Paper</p><p>by Flo Gray (Honorable Mention)</p><p>2023</p><p>A Runner Up Recommender Paper</p><p>by Gil Hart (Best Short Paper Runner-Up)</p>`;
+  assert.deepEqual(parseRecsysBest(h, "https://recsys.acm.org/best-papers/").entries.map((e) => `${e.year} ${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "2024 best A Good Recommender Paper Title | Ann Lee; Bo Chan; Cy Dunn",
+    "2024 student A Student Recommender Paper | Ed Fox",
+    "2023 runner-up A Runner Up Recommender Paper | Gil Hart"
+  ]);
+});

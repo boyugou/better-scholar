@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.45 — 2026-10-12
+
+- ACM RecSys's best papers 2009–2025 (42 papers: best full / long / short, student and runner-up; the list had none) from the conference's own best-paper page (`tot.mjs recsys`); the honorable mentions and best demo are not read. The list has 6386 awards.
+
 ## 2.10.44 — 2026-10-12
 
 - SOSP's best papers of 2021, 2023 and 2024 (9 papers; the list had none) from the conference's own program, front and accepted-papers pages (`tot.mjs sosp-program`). The list has 6344 awards.
