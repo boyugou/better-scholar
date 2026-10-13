@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7336
+  "count": 7410
  },
  "entries": [
   {
@@ -11116,6 +11116,408 @@
    "track": "main",
    "source": "https://www.ieee-ras.org/awards-recognition/conference-awards/ieee-case-best-student-paper-award/",
    "evidence": "CASE Best Student Paper Award 2025: Sanghyun Joo and Hyun-Jung Kim — “K-Wafer Cyclic Sequence for Scheduling of Dual-Armed Cluster Tool with Purge Operation”"
+  },
+  {
+   "venue": "CASES",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring the Design Space of LUT-based Transparent Accelerators",
+   "authors": [
+    "Sami Yehia",
+    "Nathan Clark",
+    "Scott Mahlke",
+    "Krisztian Flautner"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2005 Best Paper: Exploring the Design Space of LUT-based Transparent Accelerators — Sami Yehia, Nathan Clark, Scott Mahlke, and Krisztian Flautner"
+  },
+  {
+   "venue": "CASES",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Probabilistic Arithmetic and Energy Efficient Embedded Signal Processing",
+   "authors": [
+    "Jason George",
+    "Bo Marr",
+    "Bilge E. S. Akgul",
+    "Krishna V. Palem"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2006 Best Paper: Probabilistic Arithmetic and Energy Efficient Embedded Signal Processing — Jason George, Bo Marr, Bilge E. S. Akgul and Krishna V. Palem"
+  },
+  {
+   "venue": "CASES",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rethinking custom ISE identification: a new processor-agnostic method",
+   "authors": [
+    "Ajay K. Verma",
+    "Philip Brisk",
+    "Paolo Ienne"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2007 Best Paper: Rethinking custom ISE identification: a new processor-agnostic method — Ajay K. Verma, Philip Brisk, Paolo Ienne"
+  },
+  {
+   "venue": "CASES",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Control Flow Optimization in Loops using Interval Analysis",
+   "authors": [
+    "Mohammad Ali Ghodrat",
+    "Tony Givargis",
+    "Alex Nicolau"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2008 Best Paper: Control Flow Optimization in Loops using Interval Analysis — Mohammad Ali Ghodrat, Tony Givargis, Alex Nicolau"
+  },
+  {
+   "venue": "CASES",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Tabu search-based synthesis of dynamically reconfigurable digital microfluidic biochips",
+   "authors": [
+    "Elena Maftei",
+    "Paul Pop",
+    "Jan Madsen"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2009 Best Paper: Tabu search-based synthesis of dynamically reconfigurable digital microfluidic biochips — Elena Maftei, Paul Pop, Jan Madsen"
+  },
+  {
+   "venue": "CASES",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Architecting Processors to Allow Voltage/Reliability Tradeoffs",
+   "authors": [
+    "John Sartori",
+    "Rakesh Kumar"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2011 Best Paper: Architecting Processors to Allow Voltage/Reliability Tradeoffs — John Sartori and Rakesh Kumar"
+  },
+  {
+   "venue": "CASES",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Power Agnostic Technique for Efficient Temperature Estimation of Multicore Embedded Systems",
+   "authors": [
+    "Devendra Rai",
+    "Hoeseok Yang",
+    "Iuliana Bacivarov",
+    "Lothar Thiele"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2012 Best Paper: Power Agnostic Technique for Efficient Temperature Estimation of Multicore Embedded Systems — Devendra Rai, Hoeseok Yang, Iuliana Bacivarov and Lothar Thiele"
+  },
+  {
+   "venue": "CASES",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ILPc: A Novel Approach for Scalable Timing Analysis of Synchronous Programs",
+   "authors": [
+    "Jia Jie Wang",
+    "Partha Roop",
+    "Sidharta Andalam"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2013 Best Paper: ILPc: A Novel Approach for Scalable Timing Analysis of Synchronous Programs — Jia Jie Wang, Partha Roop and Sidharta Andalam"
+  },
+  {
+   "venue": "CASES",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Context-Sensitive Timing Simulation of Binary Embedded Software",
+   "authors": [
+    "Sebastian Ottlik",
+    "Stefan Stattelmann",
+    "Alexander Viehl",
+    "Oliver Bringmann",
+    "Wolfgang Rosenstiel"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2014 Best Paper: Context-Sensitive Timing Simulation of Binary Embedded Software — Sebastian Ottlik, Stefan Stattelmann, Alexander Viehl, Oliver Bringmann, and Wolfgang Rosenstiel"
+  },
+  {
+   "venue": "CASES",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Vector-Aware Register Allocation for GPU Shader Processors?",
+   "authors": [
+    "Yi-Ping You",
+    "Szu-Chieh Chen"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2015 Best Paper: Vector-Aware Register Allocation for GPU Shader Processors? — Yi-Ping You and Szu-Chieh Chen"
+  },
+  {
+   "venue": "CASES",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CaffePresso: An Optimized Library for Deep Learning on Embedded Accelerator-based Platforms",
+   "authors": [
+    "Gopalakrishna Hegde",
+    "Siddhartha",
+    "Nachiappan Ramasamy",
+    "Nachiket Kapre"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2016 Best Paper: CaffePresso: An Optimized Library for Deep Learning on Embedded Accelerator-based Platforms — Gopalakrishna Hegde, Siddhartha, Nachiappan Ramasamy, & Nachiket Kapre"
+  },
+  {
+   "venue": "CASES",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Low-Cost Memory Fault Tolerance for IoT Devices",
+   "authors": [
+    "Mark Gottscho",
+    "Irina Alam",
+    "Clayton Schoeny",
+    "Lara Dolecek",
+    "Puneet Gupta"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2017 Best Paper: Low-Cost Memory Fault Tolerance for IoT Devices — Mark Gottscho, Irina Alam, Clayton Schoeny, Lara Dolecek, Puneet Gupta"
+  },
+  {
+   "venue": "CASES",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Minimally Biased Multipliers for Approximate Integer and Floating‐Point Multiplication",
+   "authors": [
+    "Hassaan Saadat",
+    "Haseeb Bokhari",
+    "Sri Parameswaran"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2018 Best Paper: Minimally Biased Multipliers for Approximate Integer and Floating‐Point Multiplication — Hassaan Saadat, Haseeb Bokhari, Sri Parameswaran"
+  },
+  {
+   "venue": "CASES",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Ultra-Low Energy Human Activity Recognition Accelerator for Wearable Health Applications",
+   "authors": [
+    "Ganapati Bhat",
+    "Yigit Tuncel",
+    "Sizhe An",
+    "Hyung Gyu Lee",
+    "Umit Ogras"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2019 Best Paper: An Ultra-Low Energy Human Activity Recognition Accelerator for Wearable Health Applications — Ganapati Bhat, Yigit Tuncel, Sizhe An, Hyung Gyu Lee, Umit Ogras"
+  },
+  {
+   "venue": "CASES",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Process Cruise Control: Event-driven Clock Scaling for Dynamic Power Management",
+   "authors": [
+    "Andreas Weissel",
+    "Frank Bellosa"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2019 Test-of-Time: Process Cruise Control: Event-driven Clock Scaling for Dynamic Power Management — Andreas Weissel and Frank Bellosa"
+  },
+  {
+   "venue": "CASES",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Scheduling of Irregular Network Structures on CNN Accelerators",
+   "authors": [
+    "Shixuan Zheng",
+    "Xianjue Zhang",
+    "Daoli Ou",
+    "Shibin Tang",
+    "Leibo Liu",
+    "Shaojun Wei",
+    "Shouyi Yin"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2020 Best Paper: Efficient Scheduling of Irregular Network Structures on CNN Accelerators — Shixuan Zheng, Xianjue Zhang, Daoli Ou, Shibin Tang, Leibo Liu, Shaojun Wei and Shouyi Yin"
+  },
+  {
+   "venue": "CASES",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Computation offloading to save energy on handheld devices: a partition scheme",
+   "authors": [
+    "Zhiyuan Li",
+    "Cheng Wang",
+    "Rong Xu"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2020 Test-of-Time: Computation offloading to save energy on handheld devices: a partition scheme — Zhiyuan Li, Cheng Wang and Rong Xu"
+  },
+  {
+   "venue": "CASES",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Two Birds with One Stone: Boosting Both Read and Write Performance for Tree Indices on Persistent Memory",
+   "authors": [
+    "Yongping Luo",
+    "Peiquan Jin",
+    "Zhou Zhang",
+    "Juncheng Zhang",
+    "Qinglin Zhang",
+    "Bin Cheng"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2021 Best Paper: Two Birds with One Stone: Boosting Both Read and Write Performance for Tree Indices on Persistent Memory — Yongping Luo, Peiquan Jin, Zhou Zhang, Juncheng Zhang, Qinglin Zhang, and Bin Cheng"
+  },
+  {
+   "venue": "CASES",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "CFLRU: A Replacement Algorithm for Flash Memory",
+   "authors": [
+    "Seon-Yeong Park",
+    "Dawoon Jung",
+    "Jeong-Uk Kang",
+    "Jin-Soo Kim",
+    "Joonwon Lee"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2021 Test-of-Time: CFLRU: A Replacement Algorithm for Flash Memory — Seon-Yeong Park, Dawoon Jung, Jeong-Uk Kang, Jin-Soo Kim, and Joonwon Lee"
+  },
+  {
+   "venue": "CASES",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SWAP: A Server-Scale Communication-Aware Chiplet-Based Manycore PIM Accelerator",
+   "authors": [
+    "Harsh Sharma",
+    "Sumit K. Mandal",
+    "Janardhan Rao Doppa",
+    "Umit K. Ogras",
+    "Partha Pratim Pande"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2022 Best Paper: SWAP: A Server-Scale Communication-Aware Chiplet-Based Manycore PIM Accelerator — Harsh Sharma, Sumit K. Mandal, Janardhan Rao Doppa, Umit K. Ogras, Partha Pratim Pande"
+  },
+  {
+   "venue": "CASES",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Scalable Custom Instructions Identification for Instruction-set Extensible Processors",
+   "authors": [
+    "Pan Yu",
+    "Tulika Mitra"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2022 Test-of-Time: Scalable Custom Instructions Identification for Instruction-set Extensible Processors — Pan Yu and Tulika Mitra"
+  },
+  {
+   "venue": "CASES",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ZPP: A Dynamic Technique to Eliminate Cache Pollution in NoC based MPSoCs",
+   "authors": [
+    "Dipika Deb",
+    "John Jose"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2023 Best Paper: ZPP: A Dynamic Technique to Eliminate Cache Pollution in NoC based MPSoCs — Dipika Deb, John Jose"
+  },
+  {
+   "venue": "CASES",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Predictable Programming on a Precision Timed Architecture",
+   "authors": [
+    "Ben Lickly",
+    "Isaac Liu",
+    "Sungjun Kim",
+    "Hiren D. Patel",
+    "Stephen A. Edwards",
+    "Edward A. Lee"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2023 Test-of-Time: Predictable Programming on a Precision Timed Architecture — Ben Lickly, Isaac Liu, Sungjun Kim, Hiren D. Patel, Stephen A. Edwards, Edward A. Lee"
+  },
+  {
+   "venue": "CASES",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Dataflow-aware Network-on-Interposer for CNN Inferencing in the Presence of Defective Chiplets",
+   "authors": [
+    "Harsh Sharma",
+    "Umit Ogras",
+    "Ananth Kalyanraman",
+    "Partha Pratim Pande"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2024 Best Paper: A Dataflow-aware Network-on-Interposer for CNN Inferencing in the Presence of Defective Chiplets — Harsh Sharma, Umit Ogras, Ananth Kalyanraman, Partha Pratim Pande"
+  },
+  {
+   "venue": "CASES",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Highly Energy and Performance Efficient Embedded Computing through Approximately Correct Arithmetic: A Mathematical Foundation and Preliminary Experimental Validation",
+   "authors": [
+    "Lakshmi N.B. Chakrapani",
+    "Kirthi Krishna Muntimadugu",
+    "Avinash Lingamneni",
+    "Jason George",
+    "Krishna V. Palem"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CASES 2024 Test-of-Time: Highly Energy and Performance Efficient Embedded Computing through Approximately Correct Arithmetic: A Mathematical Foundation and Preliminary Experimental Validation — Lakshmi N.B. Chakrapani, Kirthi Krishna Muntimadugu, Avinash Lingamneni, Jason George, Krishna V. Palem"
   },
   {
    "venue": "CC",
@@ -39833,6 +40235,435 @@
    "evidence": "CIKM 2021 Best Paper Runner-up: Principled Multi-Aspect Evaluation Measures of Rankings — Maria Maistro, Lucas Chaves Lima, Jakob Grue Simonsen, Christina Lioma"
   },
   {
+   "venue": "CODES+ISSS",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Unified Approach to Constrained Mapping and Routing on Network-on-Chip Architectures",
+   "authors": [
+    "Andreas Hansson",
+    "Kees Goossens",
+    "Andrei Radulescu"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2005 Best Paper: A Unified Approach to Constrained Mapping and Routing on Network-on-Chip Architectures — Andreas Hansson, Kees Goossens, and Andrei Radulescu"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Architectural support for safe software execution on embedded processors",
+   "authors": [
+    "D. Arora",
+    "A. Raghunathan",
+    "S. Ravi",
+    "N. K. Jha"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2006 Best Paper: Architectural support for safe software execution on embedded processors — D. Arora, A. Raghunathan, S. Ravi, and N. K. Jha"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Dynamic Security Domain Scaling on Symmetric Multiprocessors for Future High-End Embedded Systems",
+   "authors": [
+    "Hiroaki Inoue",
+    "Akihisa Ikeno",
+    "Tsuyoshi Abe",
+    "Junji Sakai",
+    "Masato Edahiro"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2007 Best Paper: Dynamic Security Domain Scaling on Symmetric Multiprocessors for Future High-End Embedded Systems — Hiroaki Inoue, Akihisa Ikeno, Tsuyoshi Abe, Junji Sakai, and Masato Edahiro"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hardware/Software Partitioning of Floating Point Software Applications to Fixed-Point Coprocessor Circuits",
+   "authors": [
+    "L. Saldanha",
+    "R. Lysecky"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2008 Best Paper: Hardware/Software Partitioning of Floating Point Software Applications to Fixed-Point Coprocessor Circuits — L. Saldanha, R. Lysecky"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Standby-Sparing Technique with Low Energy-Overhead for Fault-Tolerant Hard Real-Time Systems",
+   "authors": [
+    "Alireza Ejlali",
+    "Bashir Al-Hashimi",
+    "Petru Eles"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2009 Best Paper: A Standby-Sparing Technique with Low Energy-Overhead for Fault-Tolerant Hard Real-Time Systems — Alireza Ejlali, Bashir Al-Hashimi, and Petru Eles"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Worst-case Performance Analysis of Synchronous Dataflow Scenarios",
+   "authors": [
+    "Marc Geilen",
+    "Sander Stuijk"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2010 Best Paper: Worst-case Performance Analysis of Synchronous Dataflow Scenarios — Marc Geilen and Sander Stuijk"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reliable Software for Unreliable Hardware: Embedded Code Generation aiming at Reliability",
+   "authors": [
+    "S. Rehman",
+    "M. Shafique",
+    "F. Kriebel",
+    "J. Henkel"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2011 Best Paper: Reliable Software for Unreliable Hardware: Embedded Code Generation aiming at Reliability — S. Rehman, M. Shafique, F. Kriebel, J. Henkel"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Traffic-Aware Adaptive Routing Algorithm on a Highly Reconfigurable Network-on-Chip Architecture",
+   "authors": [
+    "Zhiliang Qian",
+    "Paul Bogdan",
+    "Guopeng Wei",
+    "Chi-Ying Tsui",
+    "Radu Marculescu"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2012 Best Paper: A Traffic-Aware Adaptive Routing Algorithm on a Highly Reconfigurable Network-on-Chip Architecture — Zhiliang Qian, Paul Bogdan, Guopeng Wei, Chi-Ying Tsui, and Radu Marculescu"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Improving Polyhedral Code Generation for High-Level Synthesis",
+   "authors": [
+    "Wei Zuo",
+    "Peng Li",
+    "Deming Chen",
+    "Louis-Noel Pouchet",
+    "Shunan Zhong",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2013 Best Paper: Improving Polyhedral Code Generation for High-Level Synthesis — Wei Zuo, Peng Li, Deming Chen, Louis-Noel Pouchet, Shunan Zhong and Jason Cong"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TSP: Thermal Safe Power – Efficient power budgeting for Many-Core Systems in Dark Silicon",
+   "authors": [
+    "Santiago Pagani",
+    "Heba Khdr",
+    "Waqaas Munawar",
+    "Jian-Jia Chen",
+    "Muhammad Shafique",
+    "Minming Li",
+    "Joerg Henkel"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2014 Best Paper: TSP: Thermal Safe Power – Efficient power budgeting for Many-Core Systems in Dark Silicon — Santiago Pagani, Heba Khdr, Waqaas Munawar, Jian-Jia Chen, Muhammad Shafique, Minming Li, and Joerg Henkel"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "R2Cache: Reliability-Aware Reconfigurable Last-Level Cache Architecture for Multi-Cores",
+   "authors": [
+    "Florian Kriebel",
+    "Arun Subramaniyan",
+    "Semeen Rehman",
+    "Segnon Jean Bruno",
+    "Ahandagbe",
+    "Muhammad Shafique",
+    "Jörg Henkel"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2015 Best Paper: R2Cache: Reliability-Aware Reconfigurable Last-Level Cache Architecture for Multi-Cores — Florian Kriebel, Arun Subramaniyan, Semeen Rehman, Segnon Jean Bruno, Ahandagbe, Muhammad Shafique, and Jörg Henkel"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Design to Reduce Write Amplification in Object-based NAND Flash Devices",
+   "authors": [
+    "Jie Guo",
+    "Chuhan Min",
+    "Tao Cai",
+    "Yiran Chen"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2016 Best Paper: A Design to Reduce Write Amplification in Object-based NAND Flash Devices — Jie Guo, Chuhan Min, Tao Cai, & Yiran Chen"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Flexible PV-cell modeling for energy harvesting in wearable IoT applications",
+   "authors": [
+    "Jaehyun Park",
+    "Hitesh Joshi",
+    "Hyung Gyu Lee",
+    "Sayfe Kiaei",
+    "Umit Ogras"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2017 Best Paper: Flexible PV-cell modeling for energy harvesting in wearable IoT applications — Jaehyun Park, Hitesh Joshi, Hyung Gyu Lee, Sayfe Kiaei and Umit Ogras"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "XNOR Neural Engine: a Hardware Accelerator IP for 21.6 fJ/op Binary Neural Network Inference",
+   "authors": [
+    "Francesco Conti",
+    "Pasquale Davide Schiavone",
+    "Luca Benini"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2018 Best Paper: XNOR Neural Engine: a Hardware Accelerator IP for 21.6 fJ/op Binary Neural Network Inference — Francesco Conti, Pasquale Davide Schiavone, Luca Benini"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Achieving Lossless Accuracy with Lossy Programming for Efficient Neural-Network Training on NVM-Based Systems",
+   "authors": [
+    "Wei-Chen Wang",
+    "Yuan-Hao Chang",
+    "Tei-Wei Kuo",
+    "Chien-Chung Ho",
+    "Yu-Ming Chang",
+    "Hung-Sheng Chang"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2019 Best Paper: Achieving Lossless Accuracy with Lossy Programming for Efficient Neural-Network Training on NVM-Based Systems — Wei-Chen Wang, Yuan-Hao Chang, Tei-Wei Kuo, Chien-Chung Ho, Yu-Ming Chang, Hung-Sheng Chang"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Transaction level modeling: an overview",
+   "authors": [
+    "Lukai Cai",
+    "Daniel Gajski"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2019 Test-of-Time: Transaction level modeling: an overview — Lukai Cai and Daniel Gajski"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Everything Leaves Footprints: Hardware Accelerated Intermittent Deep Inference",
+   "authors": [
+    "Chih-Kai Kang",
+    "Hashan Roshantha Mendis",
+    "Chun-Han Lin",
+    "Ming-Syan Chen",
+    "Pi-Cheng Hsiu"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2020 Best Paper: Everything Leaves Footprints: Hardware Accelerated Intermittent Deep Inference — Chih-Kai Kang, Hashan Roshantha Mendis, Chun-Han Lin, Ming-Syan Chen and Pi-Cheng Hsiu"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Key research problems in NoC design: a holistic perspective",
+   "authors": [
+    "Umit Y. Ogras",
+    "Jingcao Hu",
+    "Radu Marculescu"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2020 Test-of-Time: Key research problems in NoC design: a holistic perspective — Umit Y. Ogras, Jingcao Hu and Radu Marculescu"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Intermittent-Aware Neural Architecture Search",
+   "authors": [
+    "Hashan Roshantha Mendis",
+    "Chih-Kai Kang",
+    "Pi-Cheng Hsiu"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2021 Best Paper: Intermittent-Aware Neural Architecture Search — Hashan Roshantha Mendis, Chih-Kai Kang, and Pi-Cheng Hsiu"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Unified Hardware/Software Runtime Environment for FPGA-based Reconfigurable Computers using BORPH",
+   "authors": [
+    "Hayden So",
+    "Art Tkachenko",
+    "Robert Brodersen"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2021 Test-of-Time: A Unified Hardware/Software Runtime Environment for FPGA-based Reconfigurable Computers using BORPH — Hayden So, Art Tkachenko, and Robert Brodersen"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring Synchronous Page Fault Handling",
+   "authors": [
+    "Yin-Chiuan Chen",
+    "Chun-Feng Wu",
+    "Yuan-Hao Chang",
+    "Tei-Wei Kuo"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2022 Best Paper: Exploring Synchronous Page Fault Handling — Yin-Chiuan Chen, Chun-Feng Wu, Yuan-Hao Chang, Tei-Wei Kuo"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Framework for Rapid System-level Exploration, Synthesis, and Programming of Multimedia MP-SoCs",
+   "authors": [
+    "Mark Thompson",
+    "Hristo Nikolov",
+    "Todor Stefanov",
+    "Andy D. Pimentel",
+    "Cagkan Erbas",
+    "Simon Polstra",
+    "Ed. F. Deprettere"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2022 Test-of-Time: A Framework for Rapid System-level Exploration, Synthesis, and Programming of Multimedia MP-SoCs — Mark Thompson, Hristo Nikolov, Todor Stefanov, Andy D. Pimentel, Cagkan Erbas, Simon Polstra, and Ed. F. Deprettere"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Florets for Chiplets: Data Flow-aware High-Performance and Energy-efficient Network-on-Interposer for CNN Inference Tasks",
+   "authors": [
+    "Harsh Sharma",
+    "Lukas Pfromm",
+    "Rasit Onur Topaloglu",
+    "Jana Doppa",
+    "Umit Ogras",
+    "Ananth Kalyanaraman",
+    "Partha Pratim Pande"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2023 Best Paper: Florets for Chiplets: Data Flow-aware High-Performance and Energy-efficient Network-on-Interposer for CNN Inference Tasks — Harsh Sharma, Lukas Pfromm, Rasit Onur Topaloglu, Jana Doppa, Umit Ogras, Ananth Kalyanaraman, Partha Pratim Pande"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Predator: A Predictable SDRAM Memory Controller",
+   "authors": [
+    "Benny Akesson",
+    "Kees Goossens",
+    "Markus Ringhofer"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2023 Test-of-Time: Predator: A Predictable SDRAM Memory Controller — Benny Akesson, Kees Goossens, Markus Ringhofer"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reliable, Versatile, and Efficient Data Matching in SSD’s NAND Flash Memory Chip for Data Indexing Acceleration",
+   "authors": [
+    "Yun-Chih Chen",
+    "Yuan-Hao Chang",
+    "Tei-Wei Kuo"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2024 Best Paper: Reliable, Versatile, and Efficient Data Matching in SSD’s NAND Flash Memory Chip for Data Indexing Acceleration — Yun-Chih Chen, Yuan-Hao Chang, Tei-Wei Kuo"
+  },
+  {
+   "venue": "CODES+ISSS",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Temperature-aware Processor Frequency Assignment for MPSoCs Using Convex Optimization",
+   "authors": [
+    "Srinivasan Murali",
+    "Almir Mutapcic",
+    "David Atienza",
+    "Rajesh Gupta",
+    "Stephen Boyd",
+    "Giovanni De Micheli"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "CODES+ISSS 2024 Test-of-Time: Temperature-aware Processor Frequency Assignment for MPSoCs Using Convex Optimization — Srinivasan Murali, Almir Mutapcic, David Atienza, Rajesh Gupta, Stephen Boyd, Giovanni De Micheli"
+  },
+  {
    "venue": "COLING",
    "year": 2025,
    "award": "best",
@@ -52623,6 +53454,373 @@
    "alsoAt": [
     "https://2025.emnlp.org/program/awards/"
    ]
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Symbolic Analysis for Improving Simulation Coverage of Simulink/Stateflow Models",
+   "authors": [
+    "Rajeev Alur",
+    "Aditya Kanade",
+    "S. Ramesh",
+    "K. C. Shashidhar"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2008 Best Paper: Symbolic Analysis for Improving Simulation Coverage of Simulink/Stateflow Models — Rajeev Alur, Aditya Kanade, S. Ramesh and K. C. Shashidhar"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Analytic Real-Time Analysis and Timed Automata: A Hybrid Method for Analyzing Embedded Real-Time Systems",
+   "authors": [
+    "Kai Lampka",
+    "Simon Perathoner",
+    "Lothar Thiele"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2009 Best Paper: Analytic Real-Time Analysis and Timed Automata: A Hybrid Method for Analyzing Embedded Real-Time Systems — Kai Lampka, Simon Perathoner and Lothar Thiele"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatic verification of control system implementations",
+   "authors": [
+    "Adolfo Anta",
+    "Rupak Majumdar",
+    "Indranil Saha",
+    "Paulo Tabuada"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2010 Best Paper: Automatic verification of control system implementations — Adolfo Anta, Rupak Majumdar, Indranil Saha and Paulo Tabuada"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Real-Time Resource-Sharing under Clustered Scheduling: Mutex, Reader-Writer, and k-Exclusion Locks",
+   "authors": [
+    "Björn B. Brandenburg",
+    "James H. Anderson"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2011 Best Paper: Real-Time Resource-Sharing under Clustered Scheduling: Mutex, Reader-Writer, and k-Exclusion Locks — Björn B. Brandenburg and James H. Anderson"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Programming Parallelism with Futures in Lustre",
+   "authors": [
+    "Albert Cohen",
+    "Léonard Gérard",
+    "Marc Pouzet"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2012 Best Paper: Programming Parallelism with Futures in Lustre — Albert Cohen, Léonard Gérard, and Marc Pouzet"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Safety Verification for Linear Systems",
+   "authors": [
+    "Sridhar Duggirala",
+    "Ashish Tiwari"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2013 Best Paper: Safety Verification for Linear Systems — Sridhar Duggirala and Ashish Tiwari"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Multiple Shooting, CEGAR-based Falsification of Hybrid Systems",
+   "authors": [
+    "Aditya Zutshi",
+    "Sriram Sankaranarayanan",
+    "Jyotirmoy V. Deshmukh",
+    "James Kapinski"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2014 Best Paper: Multiple Shooting, CEGAR-based Falsification of Hybrid Systems — Aditya Zutshi, Sriram Sankaranarayanan, Jyotirmoy V. Deshmukh, and James Kapinski"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Scalable Algebraic Method to Infer Quadratic Invariants of Switched Systems",
+   "authors": [
+    "Xavier Allamigeon",
+    "Stephane Gaubert",
+    "Eric Goubault",
+    "Sylvie Putot",
+    "Nikolas Stott"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2015 Best Paper: A Scalable Algebraic Method to Infer Quadratic Invariants of Switched Systems — Xavier Allamigeon, Stephane Gaubert, Eric Goubault, Sylvie Putot, and Nikolas Stott"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Underminer: A Framework for Automatically Identifying Non-Convergent Behaviors in Black Box System Models",
+   "authors": [
+    "Ayca Balkan",
+    "Paulo Tabuada",
+    "Jyotirmoy Deshmukh",
+    "Xiaoqing Jin",
+    "James Kapinski"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2016 Best Paper: Underminer: A Framework for Automatically Identifying Non-Convergent Behaviors in Black Box System Models — Ayca Balkan, Paulo Tabuada, Jyotirmoy Deshmukh, Xiaoqing Jin, & James Kapinski"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Security-Aware Scheduling of Embedded Control Tasks",
+   "authors": [
+    "Vuk Lesi",
+    "Ilija Jovanov",
+    "Miroslav Pajic"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2017 Best Paper: Security-Aware Scheduling of Embedded Control Tasks — Vuk Lesi, Ilija Jovanov, Miroslav Pajic"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bounding DRAM Interference in COTS Heterogeneous MPSoCs for Mixed Criticality Systems",
+   "authors": [
+    "Mohamed Hassan",
+    "Rodolfo Pellizzoni"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2018 Best Paper: Bounding DRAM Interference in COTS Heterogeneous MPSoCs for Mixed Criticality Systems — Mohamed Hassan, Rodolfo Pellizzoni"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deriving Equations from Sensor Data Using Dimensional Function Synthesis",
+   "authors": [
+    "Sam Willis",
+    "Youchao Wang",
+    "Vasileios Tsoutsouras",
+    "Phillip Stanley-Marbell"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2019 Best Paper: Deriving Equations from Sensor Data Using Dimensional Function Synthesis — Sam Willis, Youchao Wang, Vasileios Tsoutsouras, Phillip Stanley-Marbell"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Reliable and Precise WCET Determination for a Real-Life Processor",
+   "authors": [
+    "Christian Ferdinand",
+    "Reinhold Heckmann",
+    "Marc Langenbach",
+    "Florian Martin",
+    "Michael Schmidt",
+    "Henrik Theiling",
+    "Stephan Thesing",
+    "Reinhard Wilhelm"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2019 Test-of-Time: Reliable and Precise WCET Determination for a Real-Life Processor — Christian Ferdinand, Reinhold Heckmann, Marc Langenbach, Florian Martin, Michael Schmidt, Henrik Theiling, Stephan Thesing and Reinhard Wilhelm"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Feasibility Analysis for Graph-based Real-Time Task Systems",
+   "authors": [
+    "Jinghao Sun",
+    "Rongxiao Shi",
+    "Kexuan Wang",
+    "Nan Guan",
+    "Zhishan Guo"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2020 Best Paper: Efficient Feasibility Analysis for Graph-based Real-Time Task Systems — Jinghao Sun, Rongxiao Shi, Kexuan Wang, Nan Guan and Zhishan Guo"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Interface Theories for Component-Based Design",
+   "authors": [
+    "Luca de Alfaro",
+    "Thomas A. Henzinger"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2020 Test-of-Time: Interface Theories for Component-Based Design — Luca de Alfaro and Thomas A. Henzinger"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Verified Lustre Normalization with Node Subsampling",
+   "authors": [
+    "Timothy Bourke",
+    "Basile Pesin",
+    "Paul Jeanmaire",
+    "Marc Pouzet"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2021 Best Paper: Verified Lustre Normalization with Node Subsampling — Timothy Bourke, Basile Pesin, Paul Jeanmaire, and Marc Pouzet"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A Superblock-based Flash Translation Layer for NAND Flash Memory",
+   "authors": [
+    "Jeong-Uk Kang",
+    "Heeseung Jo",
+    "Jin-Soo Kim",
+    "Joonwon Lee"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2021 Test-of-Time: A Superblock-based Flash Translation Layer for NAND Flash Memory — Jeong-Uk Kang, Heeseung Jo, Jin-Soo Kim, and Joonwon Lee"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Tinkertoy: Build your own operating systems for IoT devices",
+   "authors": [
+    "Bingyao Wang",
+    "Margo Seltzer"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2022 Best Paper: Tinkertoy: Build your own operating systems for IoT devices — Bingyao Wang, Margo Seltzer"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Real-time Interfaces for Composing Real-time Systems",
+   "authors": [
+    "Lothar Thiele",
+    "Ernesto Wandeler",
+    "Nikolay Stoimenov"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2022 Test-of-Time: Real-time Interfaces for Composing Real-time Systems — Lothar Thiele, Ernesto Wandeler, and Nikolay Stoimenov"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Equation-Directed Axiomatization of Lustre Semantics to Enable Optimized Code Validation",
+   "authors": [
+    "Lélio Brun",
+    "Christophe Garion",
+    "Pierre-loic Garoche",
+    "Xavier Thirioux"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2023 Best Paper: Equation-Directed Axiomatization of Lustre Semantics to Enable Optimized Code Validation — Lélio Brun, Christophe Garion, Pierre-loic Garoche, Xavier Thirioux"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Scheduling Multiple Independent Hard-Real-Time Jobs on a Heterogeneous Multiprocessor",
+   "authors": [
+    "Orlando Moreira",
+    "Frederico Valente",
+    "Marco Bekooij"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2023 Test-of-Time: Scheduling Multiple Independent Hard-Real-Time Jobs on a Heterogeneous Multiprocessor — Orlando Moreira, Frederico Valente, Marco Bekooij"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Thread Carefully: Preventing Starvation in the ROS 2 Multithreaded Executor",
+   "authors": [
+    "Harun Teper",
+    "Daniel Kuhse",
+    "Mario Günzel",
+    "Georg von der Brüggen",
+    "Falk Howar",
+    "Jian-Jia Chen"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2024 Best Paper: Thread Carefully: Preventing Starvation in the ROS 2 Multithreaded Executor — Harun Teper, Daniel Kuhse, Mario Günzel, Georg von der Brüggen, Falk Howar, Jian-Jia Chen"
+  },
+  {
+   "venue": "EMSOFT",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Symbolic analysis for improving simulation coverage of Simulink/Stateflow models",
+   "authors": [
+    "Rajeev Alur",
+    "Aditya Kanade",
+    "S. Ramesh",
+    "K.C. Shashidhar"
+   ],
+   "track": "main",
+   "source": "https://2024.esweek.org/?p=613",
+   "evidence": "EMSOFT 2024 Test-of-Time: Symbolic analysis for improving simulation coverage of Simulink/Stateflow models — Rajeev Alur, Aditya Kanade, S. Ramesh, K.C. Shashidhar"
   },
   {
    "venue": "ESA",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.102 — 2026-10-12
+
+- Best papers 2005–2024 and test-of-time papers 2019–2024 of the three Embedded Systems Week conferences CASES, CODES+ISSS and EMSOFT (74 papers; the list had none for any of them) from ESWEEK 2024's own award page (`tot.mjs esweek-awards`). The list has 7410 awards.
+
 ## 2.10.101 — 2026-10-12
 
 - SPAA's best, outstanding and distinguished papers, 2007–2026 (50 papers; the list had none for SPAA) from the SPAA steering committee's own page (`tot.mjs spaa-awards`). The list has 7336 awards.

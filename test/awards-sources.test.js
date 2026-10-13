@@ -2333,6 +2333,12 @@ test("SPAA awards page: a year line ('2025' or '2011:'), the heading (Best / Out
   assert.deepEqual(parseSpaaAwards(h, "https://spaa.acm.org/best-paper-award/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 distinguished | Michael A. Bender; Alex Conway; Evan West", "2024 best | Ann Lee; Bo Chan", "2024 outstanding | Cy Dunn", "2011 best | Ed Fox; Flo Gray; Gil Hart"]);
 });
 
+test("ESWEEK best paper and test-of-time page: per year 'CASES|CODES+ISSS|EMSOFT[ Test-of-Time]: Title' then the authors ('&' for 'and', a one-word name after the first tolerated, the test-of-time paper's year in brackets)", async () => {
+  const { parseEsweekAwards } = await import("../scripts/awards/tot.mjs");
+  const h = "<p>menu</p>".repeat(25) + `<h1>Best Paper and Test-of-Time Awards</h1><p>2024</p><p>CASES: A dataflow-aware network-on-interposer for inferencing</p><p>Ann Lee, Bo Chan, Cy Dunn</p><p>EMSOFT: Thread carefully: preventing starvation in the executor</p><p>Ed Fox, Flo Gray, and Gil Hart</p><p>EMSOFT Test-of-Time: Symbolic analysis for improving simulation coverage (2008)</p><p>Hal Ito and Jo Kim</p><p>2016</p><p>CODES+ISSS: A design to reduce write amplification in object-based flash</p><p>Al Roe, Siddhartha, & Bea Poe</p><p>CASES: Vector-aware register allocation for shader processors</p><p>not an authors line, just a sentence?</p>`;
+  assert.deepEqual(parseEsweekAwards(h, "https://2024.esweek.org/?p=613").entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["CASES 2024 best  | Ann Lee; Bo Chan; Cy Dunn", "EMSOFT 2024 best  | Ed Fox; Flo Gray; Gil Hart", "EMSOFT 2024 tot 2008 | Hal Ito; Jo Kim", "CODES+ISSS 2016 best  | Al Roe; Siddhartha; Bea Poe"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
