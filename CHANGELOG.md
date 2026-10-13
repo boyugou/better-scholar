@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.60 — 2026-10-12
+
+- MobiSys 2023's best paper (Mozart) from its program page (`tot.mjs mobisys-html`, third layout); the reader now refuses a page whose <title> names another year. 2022's and 2024's program pages keep 2021's sessions beside their own, so they stay unread. The list has 6535 awards.
+
 ## 2.10.59 — 2026-10-12
 
 - MobiSys 2020's best paper (SonicPrint) and 2021's three (zTT, nn-Meter, PPFL) from the conference's own program pages, read from their HTML (`tot.mjs mobisys-html`; the text-only reader cannot tell 2020's title from its first author). The 2022 and 2024 program pages repeat 2021's sessions, so they are not read. The list has 6534 awards.

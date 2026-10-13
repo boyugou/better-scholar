@@ -2189,12 +2189,25 @@ export function parseCccProgram(html, source) {
   return { entries, skipped };
 }
 
-// MobiSys 2020's and 2021's program pages read from their HTML (www.sigmobile.org/mobisys/2020/program/, …/2021/program.html): under <h3>Best Paper Award</h3> a list item with the title in a <span> and the authors in <span class="authors"> with each affiliation in <span class="affl">.
+// MobiSys 2020's, 2021's and 2023's program pages read from their HTML (www.sigmobile.org/mobisys/2020/program/, …/2021/program.html): under <h3>Best Paper Award</h3> a list item with the title in a <span> and the authors in <span class="authors"> with each affiliation in <span class="affl">.
 // (The text-only reader cannot tell where such a title ends and the first author begins.) The honourable mentions that follow the next <h3> are not read.
 export function parseMobisysHtml(html, source) {
   const entries = [], skipped = [];
   const year = parseInt((/mobisys\/(\d{4})\//.exec(source) || [])[1], 10);
   const h = /<h3>\s*<b>\s*Best Paper Award\s*<\/b>[\s\S]*?<\/h3>([\s\S]*?)(?=<h3>|$)/i.exec(html);
+  const ty = (/<title>[^<]*MobiSys\s*(\d{4})/i.exec(html) || [])[1];
+  if (ty && parseInt(ty, 10) !== year) return { entries, skipped: [`the page is titled ${ty}, not ${year}`] };
+  if (year && !h) {
+    const r3 = /<strong[^>]*>\s*Best Paper Award!\s*<\/strong>\s*<p>\s*<strong>([^<]+)<\/strong>\s*<br>\s*<em>([\s\S]*?)<\/em>/g;   // 2023: a red "Best Paper Award!" before a bold title and the authors in <em>
+    let c, any = false;
+    while ((c = r3.exec(html))) {
+      any = true;
+      const title = cleanTitle(text(c[1])), who = names(text(c[2]).replace(/;/g, ","));
+      if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "MobiSys", year, award: "best", awardLabel: "Best Paper Award", title, authors: who, track: "main", source, evidence: `MobiSys ${year} Best Paper Award: ${title} — ${who.join(", ")}` });
+      else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+    }
+    if (any) return { entries, skipped };
+  }
   if (year && !h) {                                                                      // 2021: a "Best Paper!" badge before the linked title, the authors in <em> ("Name (Affiliation); Name (Affiliation)")
     const rb = /<strong>\s*Best Paper!\s*<\/strong>\s*<\/span>\s*<span class="new">\s*<a [^>]*>([^<]+)<\/a>\s*<\/span>\s*<br>\s*<em>([\s\S]*?)<\/em>/g;
     let b;

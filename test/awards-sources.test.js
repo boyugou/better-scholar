@@ -2035,3 +2035,10 @@ test("MobiSys program pages from their HTML: 2020's best paper list item with it
   const b = `<li><p><span class="badge"> <strong>Best Paper!</strong> </span> <span class="new"> <a href="https://doi.org/x">Learning-based DVFS for Mobile Devices</a> </span> <br><em>Ed Fox (KAIST); Flo Gray (SNU); Gil Hart (Colorado)</em>`;
   assert.deepEqual(parseMobisysHtml(b, "https://www.sigmobile.org/mobisys/2021/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2021 Learning-based DVFS for Mobile Devices | Ed Fox; Flo Gray; Gil Hart"]);
 });
+
+test("MobiSys 2023's program page: a red 'Best Paper Award!' line before the bold title and the authors; a page titled with another year is refused", async () => {
+  const { parseMobisysHtml } = await import("../scripts/awards/tot.mjs");
+  const h = `<title>ACM MobiSys 2023 • Program</title><ul><li> <strong style="color: #ee4042">Best Paper Award!</strong> <p><strong>A Mobile ToF System for Sensing in the Dark</strong> <br><em>Ann Lee, Bo Chan and Cy Dunn (CUHK); Ed Fox (Michigan)</em></p></li></ul>`;
+  assert.deepEqual(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2023/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2023 A Mobile ToF System for Sensing in the Dark | Ann Lee; Bo Chan; Cy Dunn; Ed Fox"]);
+  assert.equal(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2022/program.html").entries.length, 0);
+});

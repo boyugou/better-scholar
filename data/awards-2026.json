@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6534
+  "count": 6535
  },
  "entries": [
   {
@@ -79597,6 +79597,24 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobisys/2021/program.html",
    "evidence": "MobiSys 2021 Best Paper Award: zTT: Learning-based DVFS with Zero Thermal Throttling for Mobile Devices — Seyeon Kim, Kyungmin Bin, Sangtae Ha, Kyunghan Lee, Song Chong"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mozart: A Mobile ToF System for Sensing in the Dark through Phase Manipulation",
+   "authors": [
+    "Zhiyuan Xie",
+    "Xiaomin Ouyang",
+    "Li Pan",
+    "Wenrui Lu",
+    "Guoliang Xing",
+    "Xiaoming Liu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2023/program.html",
+   "evidence": "MobiSys 2023 Best Paper Award: Mozart: A Mobile ToF System for Sensing in the Dark through Phase Manipulation — Zhiyuan Xie, Xiaomin Ouyang, Li Pan, Wenrui Lu, Guoliang Xing, Xiaoming Liu"
   },
   {
    "venue": "MODELS",
