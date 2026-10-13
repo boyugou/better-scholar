@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7428
+  "count": 7444
  },
  "entries": [
   {
@@ -48024,6 +48024,274 @@
    "track": "main",
    "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
    "evidence": "DAC 2026 Most Influential Paper Award: “First-order Incremental Block-based Statistical Timing Analysis” by Chandu Visweswariah (CURE100 and Croton100), Kaushik Ravindran (Stealth AI Startup), Kerim Kalafala (IBM), Steve G Walker (IBM), Sambasivan Narayan (Apple)"
+  },
+  {
+   "venue": "DATE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MODELING FABRICATION NON-UNIFORMITY IN CHIP-SCALE SILICON PHOTONIC INTERCONNECTS",
+   "authors": [
+    "Mahdi Nikdast",
+    "Gabriela Nicolescu",
+    "Jelena Trajkovic",
+    "Odile Liboiron-Ladouceur"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
+   "evidence": "DATE 2016 best paper: MODELING FABRICATION NON-UNIFORMITY IN CHIP-SCALE SILICON PHOTONIC INTERCONNECTS — Mahdi Nikdast1 , Gabriela Nicolescu2 , Jelena Trajkovic3 , Odile Liboiron-Ladouceur4"
+  },
+  {
+   "venue": "DATE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OTEM: OPTIMIZED THERMAL AND ENERGY MANAGEMENT FOR HYBRID ELECTRICAL ENERGY STORAGE IN ELECTRIC VEHICLES",
+   "authors": [
+    "Korosh Vatanparvar",
+    "Mohammad Al Faruque"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
+   "evidence": "DATE 2016 best paper: OTEM: OPTIMIZED THERMAL AND ENERGY MANAGEMENT FOR HYBRID ELECTRICAL ENERGY STORAGE IN ELECTRIC VEHICLES — Korosh Vatanparvar and Mohammad Al Faruque"
+  },
+  {
+   "venue": "DATE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PROBABILISTIC WCET ESTIMATION IN PRESENCE OF HARDWARE FOR MITIGATING THE IMPACT OF PERMANENT FAULTS",
+   "authors": [
+    "Damien Hardy",
+    "Isabelle Puaut",
+    "Yiannakis Sazeides"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
+   "evidence": "DATE 2016 best paper: PROBABILISTIC WCET ESTIMATION IN PRESENCE OF HARDWARE FOR MITIGATING THE IMPACT OF PERMANENT FAULTS — Damien Hardy1, Isabelle Puaut1, Yiannakis Sazeides2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "UTILIZING MACROMODELS IN FLOATING RANDOM WALK BASED CAPACITANCE EXTRACTION",
+   "authors": [
+    "Wenjian Yu",
+    "Bolong Zhang",
+    "Chao Zhang",
+    "Haiquan Wang",
+    "Luca Daniel"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
+   "evidence": "DATE 2016 best paper: UTILIZING MACROMODELS IN FLOATING RANDOM WALK BASED CAPACITANCE EXTRACTION — Wenjian Yu1, Bolong Zhang1, Chao Zhang1, Haiquan Wang1, Luca Daniel2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatic Place-and-Route of Emerging LED-Driven Wires within a Monolithically-Integrated CMOS+III-V Process",
+   "authors": [
+    "Tushar Krishn",
+    "Arya Balachandran",
+    "Siau Ben Chiah",
+    "Li Zhang",
+    "Bing Wang",
+    "Cong Wang",
+    "Kenneth Lee Eng Kian",
+    "Jurgen Michel",
+    "Li-Shiuan Peh"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
+   "evidence": "DATE 2017 best paper: Automatic Place-and-Route of Emerging LED-Driven Wires within a Monolithically-Integrated CMOS+III-V Process — Tushar Krishn 3, Arya Balachandran1, Siau Ben Chiah2, Li Zhang3, Bing Wang3, Cong Wang2, Kenneth Lee Eng Kian3, Jurgen Michel4, Li-Shiuan Peh4"
+  },
+  {
+   "venue": "DATE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CoSyn: Efficient Single-Cell Analysis Using a Hybrid Microfluidic Platform",
+   "authors": [
+    "Mohamed Ibrahim",
+    "Krishnendu Chakrabarty",
+    "Ulf Schlichtmann"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
+   "evidence": "DATE 2017 best paper: CoSyn: Efficient Single-Cell Analysis Using a Hybrid Microfluidic Platform — Mohamed Ibrahim1, Krishnendu Chakrabarty1 , Ulf Schlichtmann2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fast and Waveform-Accurate Hazard-Aware SAT-Based TSOF ATPG",
+   "authors": [
+    "Jan Burchard",
+    "Dominik Erb",
+    "Adit D. Singh",
+    "Sudhakar M. Reddy",
+    "Bernd Becker"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
+   "evidence": "DATE 2017 best paper: Fast and Waveform-Accurate Hazard-Aware SAT-Based TSOF ATPG — Jan Burchard1, Dominik Erb1, Adit D. Singh2, Sudhakar M. Reddy3, Bernd Becker1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MoDNN: Local Distributed Mobile Computing System for Deep Neural Network",
+   "authors": [
+    "Jiachen Mao",
+    "Xiang Chen",
+    "Kent W. Nixon",
+    "Christopher Krieger",
+    "Yiran Chen"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
+   "evidence": "DATE 2017 best paper: MoDNN: Local Distributed Mobile Computing System for Deep Neural Network — Jiachen Mao1, Xiang Chen2, Kent W. Nixon1, Christopher Krieger3, Yiran Chen1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Buffer-aware bounds to multi-point progressive blocking in priority-preemptive NoCs",
+   "authors": [
+    "Leandro Indrusiak",
+    "Alan Burns",
+    "Borislav Nikolic"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
+   "evidence": "DATE 2018 best paper: Buffer-aware bounds to multi-point progressive blocking in priority-preemptive NoCs — Leandro Indrusiak1 , Alan Burns2 , Borislav Nikolic3"
+  },
+  {
+   "venue": "DATE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Verification Of Multi-Property Designs (The Benefit Of Wrong Assumptions)",
+   "authors": [
+    "Eugene Goldberg",
+    "Matthias Gudemann",
+    "Daniel Kroening",
+    "Rajdeep Mukherjee"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
+   "evidence": "DATE 2018 best paper: Efficient Verification Of Multi-Property Designs (The Benefit Of Wrong Assumptions) — Eugene Goldberg1 , Matthias Gudemann1 , Daniel Kroening1 , Rajdeep Mukherjee2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Low-Cost High-Accuracy Variation Characterization for Nanoscale IC Technologies via Novel Learning-based Techniques",
+   "authors": [
+    "Zhijian Pan",
+    "Miao Li",
+    "Jian Yao",
+    "Hong Lu",
+    "Zuochang Ye",
+    "Yanfeng Li",
+    "Yan Wang"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
+   "evidence": "DATE 2018 best paper: Low-Cost High-Accuracy Variation Characterization for Nanoscale IC Technologies via Novel Learning-based Techniques — Zhijian Pan1 , Miao Li2 , Jian Yao2 , Hong Lu2 , Zuochang Ye1 , Yanfeng Li2 , Yan Wang1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MATIC: Learning Around Errors for Efficient Low-Voltage Neural Network Accelerators",
+   "authors": [
+    "Sung Kim",
+    "Patrick Howe",
+    "Thierry Moreau",
+    "Armin Alaghi",
+    "Luis Ceze",
+    "Visvesh Sathe"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
+   "evidence": "DATE 2018 best paper: MATIC: Learning Around Errors for Efficient Low-Voltage Neural Network Accelerators — Sung Kim, Patrick Howe, Thierry Moreau, Armin Alaghi, Luis Ceze and Visvesh Sathe"
+  },
+  {
+   "venue": "DATE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Data Subsetting: A Data-Centric Approach to Approximate Computing",
+   "authors": [
+    "Younghoon Kim",
+    "Swagath Venkataramani",
+    "Nitin Chandrachoodan",
+    "Anand Raghunathan"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
+   "evidence": "DATE 2019 best paper: Data Subsetting: A Data-Centric Approach to Approximate Computing — Younghoon Kim1 , Swagath Venkataramani2 , Nitin Chandrachoodan3, Anand Raghunathan1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Enhancing Reliability of STT-MRAM Caches by Eliminating Read Disturbance Accumulation",
+   "authors": [
+    "Elham Cheshmikhani",
+    "Hamed Farbeh",
+    "Hossein Asadi"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
+   "evidence": "DATE 2019 best paper: Enhancing Reliability of STT-MRAM Caches by Eliminating Read Disturbance Accumulation — Elham Cheshmikhani1 , Hamed Farbeh2, Hossein Asadi1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Error-Shielded Register Renaming Subsystem for a Dynamically Scheduled Out-of-Order Core",
+   "authors": [
+    "Ron Gabor",
+    "Yiannakis Sazeides",
+    "Arkady Bramnik",
+    "Alexandros Andreou",
+    "Chrysostomos Nicopoulos",
+    "Yanfeng Li",
+    "Karyofyllis Patsidis",
+    "Dimitris Konstantinou",
+    "Giorgos Dimitrakopoulos"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
+   "evidence": "DATE 2019 best paper: Error-Shielded Register Renaming Subsystem for a Dynamically Scheduled Out-of-Order Core — Ron Gabor1 , Yiannakis Sazeides2 , Arkady Bramnik1 , Alexandros Andreou2 , Chrysostomos Nicopoulos2 , Yanfeng Li2 , Karyofyllis Patsidis3 , Dimitris Konstantinou3 , Giorgos Dimitrakopoulos"
+  },
+  {
+   "venue": "DATE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "When Capacitors Attack: Formal Method Driven Design and Detection of Charge-Domain Trojans",
+   "authors": [
+    "Xiaolong Guo",
+    "Huifeng Zhu",
+    "Yier Jin",
+    "Xuan Zhang"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
+   "evidence": "DATE 2019 best paper: When Capacitors Attack: Formal Method Driven Design and Detection of Charge-Domain Trojans — Xiaolong Guo1, Huifeng Zhu2, Yier Jin1 , Xuan Zhang2"
   },
   {
    "venue": "DIS",

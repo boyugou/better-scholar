@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.104 — 2026-10-12
+
+- DATE's best papers 2016–2019 (16 papers; the list had none for DATE) from the conference's own archive PDFs, read through macOS PDFKit (`scripts/awards/pdf-text.swift`, `tot.mjs date-best`). PDFs the sites publish are readable this way, which opens other sources earlier probes had written off as unreadable. The list has 7444 awards.
+
 ## 2.10.103 — 2026-10-12
 
 - HSCC's best papers and best student papers 2012–2023 and test-of-time papers 2018–2022 (18 papers; the list had none for HSCC) from the conference's own past-conferences page (`tot.mjs hscc-past`). The list has 7428 awards.

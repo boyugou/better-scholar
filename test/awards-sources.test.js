@@ -2345,6 +2345,14 @@ test("HSCC past conferences page: test-of-time lines '2022: Authors. Title. HSCC
   assert.deepEqual(parseHsccPast(h, "https://hscc.acm.org/2025/previous-hscc-editions/").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2022 tot 2002 | Bo Chan; Cy Dunn; Ed Fox", "2023 best  | Flo Gray; Gil Hart; Manuel A. Mazo Jr", "2017 student  | Hal Ito"]);
 });
 
+test("DATE best papers PDF text: per 'X Track' a (wrapped) title, the authors with affiliation numbers (a name wrapped over two lines, a short title-case last title line not taken for an author) and the affiliations; the nominations are left out and the 2015 layout is refused", async () => {
+  const { parseDateBest } = await import("../scripts/awards/tot.mjs");
+  const txt = (y, body) => `DATE Best Paper Awards\nEach year the conference presents awards.\nThe DATE ${y} best papers are:\n${body}\nBest Paper Award Nominations\nD track\nNot a winner at all, just a nominated title\nZed Quux, Ann Lee\nSome University\n`;
+  const body = "D Track\nAutomatic Place-and-Route of Emerging Wires within a\nMonolithic Process\nAnn Lee 1, Bo Chan2, Cy\nDunn3, Ed Fox2\n1 Georgia Institute of Technology, 2 NTU, 3 SMART\nA Track\nMoDNN: Local Distributed Mobile Computing System for\nDeep Neural Network\nFlo Gray1, Gil Hart2\n1 University of Pittsburgh, 2 George Mason University\nE Track\nSingle author paper on efficient scheduling\nHal Ito\nUniversity of York";
+  assert.deepEqual(parseDateBest(txt(2017, body), "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2017 | Ann Lee; Bo Chan; Cy Dunn; Ed Fox | Automatic Place-and-Route of Emerging Wires within a Monolithic Process", "2017 | Flo Gray; Gil Hart | MoDNN: Local Distributed Mobile Computing System for Deep Neural Network", "2017 | Hal Ito | Single author paper on efficient scheduling"]);
+  assert.equal(parseDateBest(txt(2015, body), "https://past.date-conference.com/proceedings-archive/2015/html/date-best-papers-2015.pdf").entries.length, 0);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
