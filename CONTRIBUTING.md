@@ -58,6 +58,14 @@ that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 filtered with a list open, every part on, the wide layout, four languages), the settings page (light and dark) and the popup; it
 exits 1 on any violation. Run it after a change to the panel's or the settings page's markup or colours.
 
+### The website
+
+The project site (30 languages) lives on the orphan branch `site` (source) and `gh-pages` (the built pages; GitHub Pages serves them). Work on it in
+a worktree: `git worktree add ../scholar-roles-and-ranks-site site`. There: `npm run verify` builds and checks, `npm run deploy` builds, checks and
+pushes `gh-pages` (no CI involved). Its pictures come from this repository's end-to-end run
+(`E2E_SCALE=2 E2E_SHOWCASE_H=1080 E2E_OUT=/tmp/pics npm run test:e2e`, then `scripts/crop-image.mjs`), and its privacy page is a copy of
+`PRIVACY.md` (`npm run sync-privacy` there after changing it here).
+
 ### Adding an award source
 
 1. Find the organisation's *own* page (the conference series, society or steering committee; never a
