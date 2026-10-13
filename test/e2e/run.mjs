@@ -255,8 +255,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 6. a role switch on the settings page recolours the open profile at once (no reload)
     const opts = await openOptions(context);
     const lastRows = all.filter((p) => p.highlighted && p.role === "last").length;
+    assert.equal(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), "First, Co-first, Second, and Last", "the highlighted papers say which roles they are");
     await setPref(opts, "roles.last", false);
     await eventually(page, () => document.querySelectorAll("tr.rr-r-last").length === 0);
+    assert.equal(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), "First, Co-first, and Second");
     await setPref(opts, "roles.last", true);
     await eventually(page, (n) => document.querySelectorAll("tr.rr-r-last").length === n, lastRows);
     ok("role switches on the settings page recolour the open profile at once");

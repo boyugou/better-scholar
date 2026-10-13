@@ -244,10 +244,15 @@
       const fmt = (n) => n.toLocaleString("en-US");
       const row = (key, a, b) => h("div", { class: "rr-m", "data-metric": key },
         h("span", {}, t(key)), h("span", {}, h("b", {}, fmt(a)), h("i", {}, t("metricsOf")), h("span", { class: "rr-faint" }, fmt(b))));
-      metricsSec.replaceChildren(
+      // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
+      const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
+      let scope = roleNames.join(", ");
+      try { scope = new Intl.ListFormat(B.dom.langTag(), { style: "long", type: "conjunction" }).format(roleNames); } catch (e) { /* the plain list */ }
+      metricsSec.replaceChildren(...[                                       // (replaceChildren(null) would print "null")
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
+        scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,
         row("mPapers", hi.papers, all.papers), row("mCitations", hi.citations, all.citations),
-        row("mH", hi.h, all.h), row("mI10", hi.i10, all.i10));
+        row("mH", hi.h, all.h), row("mI10", hi.i10, all.i10)].filter(Boolean));
     }
 
     // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers)
