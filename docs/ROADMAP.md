@@ -58,7 +58,7 @@ official page does is left out. The test-of-time rows whose award page omitted t
   - 3DV 2025 (the awards page lists candidates only) and ACCV 2024 (no award page)
   - WACV (the Computer Vision Foundation's page for it is gone)
   - ACM EC 2025 (the program has a "Best Papers Session" slot with no titles marked) and KR 2025 (no award on the site)
-  - IACR's CRYPTO, EUROCRYPT and ASIACRYPT best papers, VLDB's research-paper awards, EuroSys's best papers (the societies list the test-of-time awards already read; the best papers sit on one page per year), SCA 2021–2023, GROUP, IWQoS, NOSSDAV (no series page)
+  - CogSci (the society's page lists the Marr Prize and modelling prize winners by name, without paper titles), EDM (one page per year), SC before 2025 (one page per year, answering 403), CAV, ICPP, HiPEAC and SYSTOR (no series page); IACR's CRYPTO, EUROCRYPT and ASIACRYPT best papers, VLDB's research-paper awards, EuroSys's best papers (the societies list the test-of-time awards already read; the best papers sit on one page per year), SCA 2021–2023, GROUP, IWQoS, NOSSDAV (no series page)
   - IEEE TCCA's award pages for ISCA and HPCA best papers (ieeetcca.org answers 406 from ModSecurity, not worked around), ESWEEK 2025's award page (the same list as 2024's, no 2025 winners yet), SIGBED and the Computer Society's technical committees (no page of conference winners found)
   - LREC, ICPR, IJCNN and PSB (no series page; ICPR's are one page per edition; ISMB's student award has a list but is not a paper award in the list's sense)
   - SAS (staticanalysis.org lists the Radhia Cousot award's recipients with their papers but no years, in a Latin-1 page, so the year of each is not read), MSST, ICCD, VEE (no series page, or researchr-hosted)
