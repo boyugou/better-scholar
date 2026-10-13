@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6818
+  "count": 6820
  },
  "entries": [
   {
@@ -86567,6 +86567,38 @@
    "track": "main",
    "source": "https://neurips.cc/virtual/2025/test-of-time/128328",
    "evidence": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks — Test of Time Award"
+  },
+  {
+   "venue": "NOMS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RNA: Automating IDS/IPS Event Detection Offload into Programmable Forwarding Devices",
+   "authors": [
+    "Lucas Hagen",
+    "Alexandre Ilha",
+    "Ricardo Parizotto",
+    "Luciano Paschoal Gaspary"
+   ],
+   "track": "main",
+   "source": "https://noms2025.ieee-noms.org/",
+   "evidence": "NOMS 2025 Best Paper: RNA: Automating IDS/IPS Event Detection Offload into Programmable Forwarding Devices — Lucas Hagen, Alexandre Ilha, Ricardo Parizotto, Luciano Paschoal Gaspary"
+  },
+  {
+   "venue": "NOMS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Dynamic Frequency Planning for Autonomous Mobile 6G in-X Subnetworks",
+   "authors": [
+    "Valentin Thomas Haider",
+    "Fidan Mehmeti",
+    "Rastin Pries",
+    "Wolfgang Kellerer"
+   ],
+   "track": "main",
+   "source": "https://noms2025.ieee-noms.org/",
+   "evidence": "NOMS 2025 Best Student Paper: Dynamic Frequency Planning for Autonomous Mobile 6G in-X Subnetworks — Valentin Thomas Haider, Fidan Mehmeti, Rastin Pries, Wolfgang Kellerer"
   },
   {
    "venue": "NSDI",

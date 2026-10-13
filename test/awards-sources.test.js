@@ -2249,3 +2249,9 @@ test("CCNC awards pages: best paper, runner-up and best student paper headings o
   const h = `<p>Awards</p><p>Congratulations to all Award Winners!</p><p>Best Poster award</p><p>1570967106 Calibration of real-time lidar data with static images</p><p>Gil Hart, Hal Ito</p><p>Best Student Paper award</p><p>1570950803 Edge-oriented point cloud compression by moving object detection</p><p>Ann Lee; Bo Chan; Cy Dunn</p><p>Best Paper Award</p><p>1570947511 A lightweight aggregate authentication protocol for drones</p><p>Ed Fox, Flo Gray</p><p>Best Demo</p><p>Patrons</p>`;
   assert.deepEqual(parseCcncAwards(h, "https://ccnc2024.ieee-ccnc.org/registration/awards").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["student Edge-oriented point cloud compression by moving object detection | Ann Lee; Bo Chan; Cy Dunn", "best A lightweight aggregate authentication protocol for drones | Ed Fox; Flo Gray"]);
 });
+
+test("NOMS front page: Best Paper and Best Student Paper under the year's winners heading, title then authors with brackets; the demo and the Stokesberry award are left out", async () => {
+  const { parseNomsAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h2>NOMS 2025 Award Winners</h2><p>Best Paper Award</p><p>Automating event detection offload into forwarding devices</p><p>Ann Lee, Bo Chan, Cy Dunn (UFRGS)</p><p>Best Student Paper Award</p><p>Dynamic frequency planning for mobile subnetworks</p><p>Ed Fox, Flo Gray (Technical University of Munich), Gil Hart (Nokia)</p><p>Best Demo Paper Award</p><p>A demo title that is not read</p><p>Hal Ito (X)</p><p>Dan Stokesberry Award</p>`;
+  assert.deepEqual(parseNomsAwards(h, "https://noms2025.ieee-noms.org/").entries.map((e) => `${e.award} ${e.year} | ${e.authors.join("; ")}`), ["best 2025 | Ann Lee; Bo Chan; Cy Dunn", "student 2025 | Ed Fox; Flo Gray; Gil Hart"]);
+});

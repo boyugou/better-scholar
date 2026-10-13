@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.89 — 2026-10-12
+
+- IEEE/IFIP NOMS 2025's best paper and best student paper (2 papers; the list had none for NOMS) from the symposium's own front page (`tot.mjs noms-awards`). The list has 6820 awards.
+
 ## 2.10.88 — 2026-10-12
 
 - IEEE CCNC's best paper and runner-up of 2025 and best paper and best student paper of 2024 (4 papers; the list had none for CCNC) from the conference's own awards pages (`tot.mjs ccnc-awards`). The list has 6818 awards.
