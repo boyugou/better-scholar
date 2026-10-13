@@ -342,7 +342,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, false);
     await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
     await page.bringToFront();
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
+    await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
     assert.match(await page.locator('[data-rr="no-roles"]').textContent(), /No author position is switched on/, "with every role off the panel says why nothing is highlighted");
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, true);
     await setPref(opts, "panel.venues", false);
@@ -390,7 +390,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForFunction(() => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").dir === "rtl", null, { timeout: 15000 });
     await pollPage(opts, () => document.documentElement.dir === "rtl", null, 15000);
     await opts.waitForTimeout(400);
-    await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
+    await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
     await page.bringToFront(); await page.waitForTimeout(400);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
     await opts.selectOption('select[data-pref="language"]', "auto");
@@ -454,7 +454,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), lastA);
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
+    await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
     assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
     // the numbers under the filters follow them (the highlighted papers of that cell), and are whole again without it
     assert.equal(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA), "papers counted in the cell");
@@ -528,7 +528,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-hidden-roles.png") });
+    await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-hidden-roles.png") });
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
     await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
@@ -842,19 +842,19 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     for (let i = 0; i < 50 && (await opts.textContent('[data-act="clear-cache"]')) === "Cleared"; i++) await opts.waitForTimeout(100);
     await opts.evaluate(() => window.scrollTo(0, 0));
-    await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
+    await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
     // (the README and website picture: the header, the first cards and the whole live preview, so the window is made tall for it)
     await opts.setViewportSize({ width: 1360, height: 1500 });
     for (let i = 0; i < 40 && (await opts.evaluate(() => document.querySelector(".preview").classList.contains("more"))); i++) await opts.waitForTimeout(100);
     await opts.waitForTimeout(300);
-    await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
+    await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
     await opts.setViewportSize({ width: 1360, height: 900 });
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
     assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
     await opts.emulateMedia({ colorScheme: "dark" });
     await opts.waitForTimeout(400);
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (dark): text under 4.5:1");
-    await opts.screenshot({ path: path.join(outDir, "settings-dark.png"), fullPage: true });
+    await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-dark.png"), fullPage: true });
     await opts.emulateMedia({ colorScheme: "light" });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
 
@@ -1049,9 +1049,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
       // every part of the panel on, as a picture (light, dark, and the wide layout)
       await reloadSafe(); await page.waitForSelector("#rr-panel"); await page.bringToFront();       // (a background tab cannot be photographed)
-      await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all.png") });
+      await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all.png") });
       await page.emulateMedia({ colorScheme: "dark" }); await page.waitForTimeout(400);
-      await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all-dark.png") });
+      await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all-dark.png") });
       await page.emulateMedia({ colorScheme: "light" });
       await opts.close();
       await page.setViewportSize({ width: 1360, height: 900 });
@@ -1168,7 +1168,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.check('input[data-act="only"]');
     assert.equal(await page.evaluate(() => document.querySelector('[data-rr="unmatched"]').open), true, "an opened list is not closed by a redraw");
     await page.uncheck('input[data-act="only"]');
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-unmatched.png") });
+    await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-unmatched.png") });
     await page.click('[data-act="copy-unmatched"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /^\d+× \S/m);
@@ -1191,7 +1191,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     const warn = page.locator('[data-rr="layout-warning"]');
     assert.equal(await warn.isVisible(), true);
-    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-layout-warning.png") });
+    await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-layout-warning.png") });
     assert.match(await warn.textContent(), /layout seems to have changed/);
     assert.equal(await page.locator('[data-rr="matrix"]').isVisible(), false, "no table of zeros next to the warning");
     assert.match(await warn.locator("a").getAttribute("href"), /issues\/new\?title=Scholar%20page%20layout%20changed/);
