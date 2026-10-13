@@ -93,6 +93,37 @@ async function launch() {
   });
 }
 
+
+// Text in `root` whose colour against its background (the nearest opaque one up the tree) is under 4.5:1 (3:1 for large or bold text)
+const lowContrast = (page, root) => page.evaluate((sel) => {
+  const parse = (c) => { const m = /rgba?\(([^)]+)\)/.exec(c); if (!m) return null; const p = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return { r: p[0], g: p[1], b: p[2], a: p[3] == null ? 1 : p[3] }; };
+  const lum = ({ r, g, b }) => { const f = (v) => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); };
+  const over = (top, bottom) => ({ r: top.r * top.a + bottom.r * (1 - top.a), g: top.g * top.a + bottom.g * (1 - top.a), b: top.b * top.a + bottom.b * (1 - top.a), a: 1 });
+  const bgOf = (el) => { const stack = []; for (let e = el; e; e = e.parentElement) { const c = parse(getComputedStyle(e).backgroundColor); if (c && c.a > 0) { stack.push(c); if (c.a >= 1) break; } } let acc = { r: 255, g: 255, b: 255, a: 1 }; if (document.documentElement && getComputedStyle(document.documentElement).colorScheme.includes("dark") && !stack.some((c) => c.a >= 1)) acc = { r: 0, g: 0, b: 0, a: 1 }; for (const c of stack.reverse()) acc = over(c, acc); return acc; };
+  const bad = [];
+  for (const el of document.querySelectorAll(sel + ", " + sel + " *")) {
+    if (!el.offsetParent && el !== document.querySelector(sel)) continue;
+    const own = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
+    if (!own || /^[·–—-]$/.test(el.textContent.trim())) continue;          // (the dots of an empty table cell are decoration)
+    const cs = getComputedStyle(el);
+    if (cs.visibility === "hidden" || parseFloat(cs.opacity) < .1) continue;
+    const fg = parse(cs.color), bg = bgOf(el);
+    if (!fg) continue;
+    const f = over(fg, bg), L1 = lum(f), L2 = lum(bg), ratio = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
+    const large = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.66 && parseInt(cs.fontWeight, 10) >= 700);
+    if (ratio < (large ? 3 : 4.5) && !el.disabled && !el.closest("[disabled]")) bad.push(`${el.tagName.toLowerCase()}.${String(el.className).split(" ")[0]} "${el.textContent.trim().slice(0, 24)}" ${ratio.toFixed(2)}`);
+  }
+  return bad;
+}, root);
+
+
+// Controls (buttons, inputs, selects, links) inside `root` that a screen reader would announce without a name
+const unnamed = (page, root) => page.evaluate((sel) => [...document.querySelectorAll(`${sel} button, ${sel} input, ${sel} select, ${sel} a[href], ${sel} textarea`)].filter((el) => {
+  if (el.type === "hidden") return false;
+  const label = el.getAttribute("aria-label") || el.getAttribute("title") || (el.labels && [...el.labels].map((l) => l.textContent).join("").trim()) || el.textContent.trim() || el.getAttribute("placeholder");
+  return !label || !String(label).trim();
+}).map((el) => el.outerHTML.slice(0, 90)), root);
+
 // DOM → matrix cells { role: { A, B, C, none, total } }
 const readMatrix = (page) => page.evaluate(() => {
   const out = {};
@@ -512,7 +543,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await popup.emulateMedia({ colorScheme: "dark" });
     await popup.waitForTimeout(400);                                 // (the buttons ease their colours over .15 s)
     // readable in the dark popup: every button's text against its own background is at least 4.5 : 1
-    const lowContrast = await popup.evaluate(() => {
+    const popupLow = await popup.evaluate(() => {
       const rgb = (c) => c.match(/[\d.]+/g).slice(0, 3).map(Number);
       const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
       const bad = [];
@@ -525,7 +556,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       }
       return bad;
     });
-    assert.deepEqual(lowContrast, [], "a popup button is unreadable in dark mode");
+    assert.deepEqual(popupLow, [], "a popup button is unreadable in dark mode");
     await popup.screenshot({ path: path.join(outDir, "popup-dark.png") });
     await popup.emulateMedia({ colorScheme: "light" });
     await popup.close();
@@ -700,8 +731,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (let i = 0; i < 50 && (await opts.textContent('[data-act="clear-cache"]')) === "Cleared"; i++) await opts.waitForTimeout(100);
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
+    assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
+    assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
     await opts.emulateMedia({ colorScheme: "dark" });
     await opts.waitForTimeout(400);
+    assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (dark): text under 4.5:1");
     await opts.screenshot({ path: path.join(outDir, "settings-dark.png"), fullPage: true });
     await opts.emulateMedia({ colorScheme: "light" });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
@@ -842,8 +876,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const cut = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-btn")].filter((b) => b.offsetParent && b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent.trim()));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the sidebar");
     await page.screenshot({ path: path.join(outDir, "showcase.png") });
+    assert.deepEqual(await lowContrast(page, "#rr-panel"), [], "panel (light): text under 4.5:1");
+    assert.deepEqual(await unnamed(page, "#rr-panel"), [], "panel: a control without an accessible name");
     await page.emulateMedia({ colorScheme: "dark" });
     await page.waitForTimeout(400);
+    assert.deepEqual(await lowContrast(page, "#rr-panel"), [], "panel (dark): text under 4.5:1");
     await page.screenshot({ path: path.join(outDir, "showcase-dark.png") });
     await page.emulateMedia({ colorScheme: "light" });
     await page.setViewportSize({ width: 760, height: 900 });
