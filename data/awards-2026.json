@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6537
+  "count": 6539
  },
  "entries": [
   {
@@ -79471,6 +79471,44 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobisys/2014/program.php",
    "evidence": "MobiSys 2014 Best Paper Award: Rio: A System Solution for Sharing I/O between Mobile Systems — Ardalan Amiri Sani, Kevin Boos, Min Hong Yun, Lin Zhong"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Accelerating Mobile Applications through Flip-Flop Replication",
+   "authors": [
+    "Mark Gordon",
+    "David Ke Hong",
+    "Peter Chen",
+    "Jason Flinn",
+    "Scott Mahlke",
+    "Z. Morley Mao"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2015/program.php",
+   "evidence": "MobiSys 2015 Best Paper Award: Accelerating Mobile Applications through Flip-Flop Replication — Mark Gordon, David Ke Hong, Peter Chen, Jason Flinn, Scott Mahlke, Z. Morley Mao"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Outatime: Using Speculation to Enable Low-Latency Continuous Interaction for Mobile Cloud Gaming",
+   "authors": [
+    "Kyungmin Lee",
+    "David Chu",
+    "Eduardo Cuervo",
+    "Johannes Kopf",
+    "Yury Degtyarev",
+    "Sergey Grizan",
+    "Alec Wolman",
+    "Jason Flinn"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2015/program.php",
+   "evidence": "MobiSys 2015 Best Paper Award: Outatime: Using Speculation to Enable Low-Latency Continuous Interaction for Mobile Cloud Gaming — Kyungmin Lee, David Chu, Eduardo Cuervo, Johannes Kopf, Yury Degtyarev, Sergey Grizan, Alec Wolman, Jason Flinn"
   },
   {
    "venue": "MobiSys",

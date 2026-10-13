@@ -2051,3 +2051,10 @@ test("MobiSys badge pages: only the papers whose DOI carries the page year's pro
   assert.deepEqual(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2022/program.html").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Acoustic spatial sensing for micro-robot navigation | Bo Chan; Cy Dunn"]);
   assert.equal(parseMobisysHtml(h.replace("2022", "2024"), "https://www.sigmobile.org/mobisys/2024/program.html").entries.length, 0);
 });
+
+test("MobiSys 2015's program page: the plural heading 'Best Papers' under Awards", async () => {
+  const { parseMobisysYear } = await import("../scripts/awards/tot.mjs");
+  const lead = Array.from({ length: 12 }, (_, i) => `<p>Menu item ${i}</p>`).join("");
+  const h = `<p>MobiSys 2015 - The 13th International Conference</p>${lead}<p>Awards</p><p>Best Papers</p><p>Accelerating mobile applications through replication</p><p>Ann Lee, Bo Chan (University of Michigan)</p><p>Speculation for low-latency mobile cloud gaming</p><p>Cy Dunn, Ed Fox (Microsoft Research)</p><p>Best Poster</p>`;
+  assert.deepEqual(parseMobisysYear(h, "https://www.sigmobile.org/mobisys/2015/program.php").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2015 Accelerating mobile applications through replication | Ann Lee; Bo Chan", "2015 Speculation for low-latency mobile cloud gaming | Cy Dunn; Ed Fox"]);
+});

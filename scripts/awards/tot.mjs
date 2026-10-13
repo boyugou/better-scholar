@@ -1542,7 +1542,7 @@ export function parseMobicomYear(html, source) {
 }
 
 // A MobiSys year's own program page (www.sigmobile.org/mobisys/<year>/program.php, 2011's front page; the address is the third argument): under "Awards" the heading "Best Paper" (or "Best Paper Runner Up"), then per paper a title line and an authors' line
-// with the affiliations in brackets; 2011 writes `Best Paper - "Title" by Authors.` The poster, demo and video awards and the journal special section that follows are not read. Only the years laid out like this are read (2011–2014, 2016, 2017, 2019).
+// with the affiliations in brackets; 2011 writes `Best Paper - "Title" by Authors.` The poster, demo and video awards and the journal special section that follows are not read. Only the years laid out like this are read (2011–2015, 2016, 2017, 2019).
 export function parseMobisysYear(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\t+/g, " ").trim()).filter(Boolean);
@@ -1557,7 +1557,7 @@ export function parseMobisysYear(html, source) {
     const m = /^Best Paper\s*[-–]\s*["“](.+?)["”]\s+by\s+(.+?)\.?$/.exec(l);
     if (m) add("best", "Best Paper Award", m[1], kddAuthors(m[2]));
   }
-  const heading = (l) => (/^Best Paper(?: Award)?$/.test(l) ? ["best", "Best Paper Award"] : /^Best Paper Runner[- ]?Up$/i.test(l) ? ["runner-up", "Best Paper Runner-up"] : null);
+  const heading = (l) => (/^Best Papers?(?: Award)?$/.test(l) ? ["best", "Best Paper Award"] : /^Best Paper Runner[- ]?Up$/i.test(l) ? ["runner-up", "Best Paper Runner-up"] : null);
   const start = ls.findIndex((l, i) => i > 10 && /^(?:Awards|Program|Technical Program)$/.test(ls[i - 1] || "") && heading(l));
   let kind = null;
   for (let i = Math.max(0, start); i < ls.length && start >= 0; i++) {
