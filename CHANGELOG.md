@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.83 — 2026-10-12
+
+- Contrast and screen-reader fixes found by an axe-core audit of the settings page, the panel and the popup: the faint grey (`#80868b`, 3.7:1 on white) is `#6b7076` (5:1) and `#969ca2` in dark mode; the last-author name green is darker (5.4:1 on its tint); Scholar's own grey author and venue lines (`#777`, 3.8:1) are `#5f6368` inside tinted rows; the role column of the table has a screen-reader label ("Role", "作者位置"). A test keeps these colours above 4.5:1.
+
 ## 2.10.82 — 2026-10-12
 
 - ECML PKDD 2023's test of time paper and its best and best student papers of the research and ADS tracks (5 entries) from the conference's own awards page, which prints the authors above each title (`tot.mjs ecml-authors-first`); the list had ECML PKDD 2025 only. The list has 6800 awards.

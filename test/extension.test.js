@@ -144,3 +144,20 @@ test("the repository root holds no stray fetched pages (*.html)", () => {
   const stray = fs.readdirSync(path.join(__dirname, "..")).filter((f) => /\.html?$/i.test(f));
   assert.deepEqual(stray, []);
 });
+
+test("text colours on the extension's own surfaces keep a 4.5:1 contrast (found by an axe-core audit)", () => {
+  const lum = (h) => { const [r, g, b] = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+  const css = (f) => fs.readFileSync(path.join(src, f), "utf8");
+  const faint = (f, nth) => [...css(f).matchAll(/--(?:rr-)?faint:\s*(#[0-9a-f]{6})/gi)].map((m) => m[1])[nth];
+  const cases = [
+    ["content/styles.css", 0, ["#ffffff", "#f6f8fb"]],
+    ["options/options.css", 0, ["#ffffff", "#f6f8fb"]],
+    ["options/options.css", 1, ["#202124", "#2d2e31", "#292a2d"]],
+    ["popup/popup.css", 0, ["#ffffff"]],
+    ["popup/popup.css", 1, ["#202124"]]
+  ];
+  for (const [f, nth, grounds] of cases) for (const g of grounds) assert.ok(ratio(faint(f, nth), g) >= 4.5, `${f} faint #${nth} ${faint(f, nth)} on ${g}: ${ratio(faint(f, nth), g).toFixed(2)}`);
+  assert.ok(ratio("#0d652d", "#cce5d4") >= 4.5, "the last-author name on its tint");
+  assert.ok(ratio("#5f6368", "#e4eefc") >= 4.5 && ratio("#5f6368", "#e4f1e8") >= 4.5, "Scholar's grey lines on the row tints");
+});

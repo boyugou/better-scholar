@@ -120,6 +120,9 @@
   "roleHidden": {
     "message": "Hidden"
   },
+  "colRole": {
+    "message": "Role"
+  },
   "colTotal": {
     "message": "All"
   },

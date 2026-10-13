@@ -120,6 +120,9 @@
   "roleHidden": {
     "message": "未显示"
   },
+  "colRole": {
+    "message": "作者位置"
+  },
   "colTotal": {
     "message": "合计"
   },

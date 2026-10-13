@@ -135,7 +135,7 @@
     function renderMatrix(m) {
       const s = m.summary, sel = m.selection;
       const pressed = (x) => String(sameSel(sel, x));
-      const headRow = h("tr", {}, h("th", {}),
+      const headRow = h("tr", {}, h("th", {}, h("span", { class: "rr-sr" }, t("colRole"))),
         ...s.columns.map((c) => h("th", {},
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
             title: c === "none" ? t("tipUnranked") : "", onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),

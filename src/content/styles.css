@@ -15,6 +15,8 @@ tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 #a142f4 !important;
 tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 #f9ab00 !important; }
 tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 #1e8e3e !important; }
 tr.rr-hide { display: none !important; }
+/* Scholar's grey author and venue lines (#777) fall below 4.5:1 on our row tints; the tinted rows use a darker grey */
+tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr-r-last .gs_gray { color: #5f6368; }
 
 /* ---- chips on the venue line ----------------------------------------------------
    One quiet family. Rank chips are white pills with an indigo outline that fades with the tier
@@ -57,12 +59,12 @@ tr.rr-hide { display: none !important; }
 .rr-name-first   { background: rgba(26,115,232,.12); color: #174ea6; }
 .rr-name-cofirst { background: rgba(161,66,244,.12); color: #7b1fa2; }
 .rr-name-second  { background: rgba(249,171,0,.16);  color: #8a5a00; }
-.rr-name-last    { background: rgba(30,142,62,.12);  color: #137333; }
+.rr-name-last    { background: rgba(30,142,62,.12);  color: #0d652d; }
 
 /* ---- panel ------------------------------------------------------------------ */
 #rr-panel, #rr-panel * { box-sizing: border-box; }
 #rr-panel {
-  --rr-text: #202124; --rr-muted: #5f6368; --rr-faint: #80868b; --rr-line: #e8eaed; --rr-link: #1a0dab; --rr-accent: #1a73e8;
+  --rr-text: #202124; --rr-muted: #5f6368; --rr-faint: #6b7076; --rr-line: #e8eaed; --rr-link: #1a0dab; --rr-accent: #1a73e8;
   font: 13px/1.4 Arial, sans-serif; color: var(--rr-text);
   background: #fff; border: 1px solid #dadce0; border-radius: 10px; box-shadow: 0 1px 2px rgba(60,64,67,.08);
   margin: 0 0 16px; overflow: hidden; -webkit-font-smoothing: antialiased;
@@ -111,6 +113,7 @@ tr.rr-hide { display: none !important; }
 /* the settings button: a sliders icon (drawn with a mask so it takes the text colour) */
 #rr-panel { --rr-sliders: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 6h8.6M17.4 6H20M4 12h2.6M11.4 12H20M4 18h10.6M19.4 18H20'/%3E%3Ccircle cx='15' cy='6' r='2.4'/%3E%3Ccircle cx='9' cy='12' r='2.4'/%3E%3Ccircle cx='17' cy='18' r='2.4'/%3E%3C/svg%3E"); }
 #rr-panel .rr-ico-settings::before { content: ""; display: block; width: 14px; height: 14px; background: currentColor; -webkit-mask: var(--rr-sliders) center / contain no-repeat; mask: var(--rr-sliders) center / contain no-repeat; }
+#rr-panel .rr-sr{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* read by screen readers only */
 #rr-panel .rr-src{ font-size: 11px; font-weight: 700; color: var(--rr-muted); letter-spacing: .02em; }
 #rr-panel.rr-collapsed .rr-body { display: none; }
 #rr-panel.rr-collapsed .rr-head { border-bottom: 0; }

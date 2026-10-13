@@ -1,10 +1,10 @@
 /* Chrome-native settings page: system font, Google blue, cards on a pale ground. The preview rows get their
    look from ../content/styles.css (the same rules the Scholar page uses). */
-:root { color-scheme: light dark; --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --ground: #f6f8fb; --card: #fff; --sub: #fbfcfd; --hover: #f8f9fa; --btn-line: #dadce0; }
+:root { color-scheme: light dark; --text: #202124; --muted: #5f6368; --faint: #6b7076; --line: #e8eaed; --accent: #1a73e8; --ground: #f6f8fb; --card: #fff; --sub: #fbfcfd; --hover: #f8f9fa; --btn-line: #dadce0; }
 @media (prefers-color-scheme: dark) {
-  :root { --text: #e8eaed; --muted: #9aa0a6; --faint: #80868b; --line: #3c4043; --accent: #8ab4f8; --ground: #202124; --card: #2d2e31; --sub: #292a2d; --hover: #3a3b3e; --btn-line: #5f6368; }
+  :root { --text: #e8eaed; --muted: #9aa0a6; --faint: #969ca2; --line: #3c4043; --accent: #8ab4f8; --ground: #202124; --card: #2d2e31; --sub: #292a2d; --hover: #3a3b3e; --btn-line: #5f6368; }
   /* the preview stays as it looks on Scholar: light */
-  .preview > .card { --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --card: #fff; }
+  .preview > .card { --text: #202124; --muted: #5f6368; --faint: #6b7076; --line: #e8eaed; --accent: #1a73e8; --card: #fff; }
   #saved { color: #81c995; }
 }
 * { box-sizing: border-box; }

@@ -1,6 +1,6 @@
 /* Chrome-native popup: system font, Google blue, no decorative chrome. */
-:root { color-scheme: light dark; --text: #202124; --muted: #5f6368; --faint: #80868b; --line: #e8eaed; --accent: #1a73e8; --bg: #fff; --hover: #f1f3f4; --seg: #f1f3f4; --btn-line: #dadce0; --zero: #bdc1c6; }
-@media (prefers-color-scheme: dark) { :root { --text: #e8eaed; --muted: #9aa0a6; --faint: #80868b; --line: #3c4043; --accent: #8ab4f8; --bg: #202124; --hover: #3a3b3e; --seg: #3a3b3e; --btn-line: #5f6368; --zero: #5f6368; } }
+:root { color-scheme: light dark; --text: #202124; --muted: #5f6368; --faint: #6b7076; --line: #e8eaed; --accent: #1a73e8; --bg: #fff; --hover: #f1f3f4; --seg: #f1f3f4; --btn-line: #dadce0; --zero: #bdc1c6; }
+@media (prefers-color-scheme: dark) { :root { --text: #e8eaed; --muted: #9aa0a6; --faint: #969ca2; --line: #3c4043; --accent: #8ab4f8; --bg: #202124; --hover: #3a3b3e; --seg: #3a3b3e; --btn-line: #5f6368; --zero: #5f6368; } }
 * { box-sizing: border-box; }
 html, body { margin: 0; width: 340px; background: var(--bg); color: var(--text);
   font: 13px/1.45 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
