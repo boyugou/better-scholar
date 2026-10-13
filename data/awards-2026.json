@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7119
+  "count": 7136
  },
  "entries": [
   {
@@ -48842,6 +48842,277 @@
    "track": "main",
    "source": "https://www.sigweb.org/sigweb-doceng-best-paper-award/",
    "evidence": "DocEng 2024 SIGWEB DocEng Best Paper Award: Jean-Luc Bloechle, Jean Hennebert, Christophe Gisler “ZigZag: A Robust Adaptive Approach to Non-Uniformly Illuminated Document Image Binarization”"
+  },
+  {
+   "venue": "DSN",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reliability and Security Monitoring of Virtual Machines Using Hardware Architectural Invariants",
+   "authors": [
+    "Cuong Pham",
+    "Zachary Estrada",
+    "Phuong Cao",
+    "Zbigniew Kalbarczyk",
+    "Ravishankar Iyer"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2014 Best Paper Award: Reliability and Security Monitoring of Virtual Machines Using Hardware Architectural Invariants, Cuong Pham, Zachary Estrada, Phuong Cao, Zbigniew Kalbarczyk, and Ravishankar Iyer"
+  },
+  {
+   "venue": "DSN",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Leveraging State Information for Automated Attack Discovery in Transport Protocol Implementations",
+   "authors": [
+    "Samuel Jero",
+    "Hyojeong Lee",
+    "Cristina Nita-Rotaru"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2015 Best Paper Award: Leveraging State Information for Automated Attack Discovery in Transport Protocol Implementations, Samuel Jero, Hyojeong Lee, and Cristina Nita-Rotaru"
+  },
+  {
+   "venue": "DSN",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Quantitative Methodology for Security Monitor Deployment",
+   "authors": [
+    "Uttam Thakore",
+    "Gabriel A. Weaver",
+    "William H. Sanders"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2016 Best Paper Award: A Quantitative Methodology for Security Monitor Deployment, Uttam Thakore, Gabriel A. Weaver, and William H. Sanders"
+  },
+  {
+   "venue": "DSN",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "What Can We Learn from Four Years of Data Center Hardware Failures?",
+   "authors": [
+    "Guosai Wang",
+    "Wei Xu"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2017 Best Paper Award: What Can We Learn from For Years of Data Center Hardware Failures?, Guosai Wang, Wei Xu [the page misprints the title; the paper is \"What Can We Learn from Four Years of Data Center Hardware Failures?\" — data/exclusions.json]"
+  },
+  {
+   "venue": "DSN",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CAROL: Confidence-Aware Resilience Model for Edge Federations",
+   "authors": [
+    "Shreshth Tuli",
+    "Giuliano Casale",
+    "Nicholas R. Jennings"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2022 Best Paper Award: CAROL: Confidence-Aware Resilience Model for Edge Federations, Shreshth Tuli, Giuliano Casale, Nicholas R. Jennings"
+  },
+  {
+   "venue": "DSN",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Devils in Your Apps: Vulnerabilities and User Privacy Exposure in Mobile Notification Systems",
+   "authors": [
+    "J. Lou",
+    "X. Zhang",
+    "Y. Zhang",
+    "X. Li",
+    "X. Yuan",
+    "N. Zhang"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2023 Best Paper Award: Devils in Your Apps: Vulnerabilities and User Privacy Exposure in Mobile Notification Systems, J. Lou, X. Zhang, Y. Zhang, X. Li, X. Yuan, N. Zhang"
+  },
+  {
+   "venue": "DSN",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Making Replay Attack Protection Practical by Securing the DDR Interface",
+   "authors": [
+    "A. Fakhrzadehgan",
+    "P. Ramrakhyani",
+    "M. Qureshi",
+    "M. Erez"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2023 Best Paper Award: Making Replay Attack Protection Practical by Securing the DDR Interface, A. Fakhrzadehgan, P. Ramrakhyani, M. Qureshi, M. Erez"
+  },
+  {
+   "venue": "DSN",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SHATTER: Control and Defense-Aware Attack Analytics for Activity-Driven Smart Home Systems",
+   "authors": [
+    "N. Haque",
+    "M. Ngouen",
+    "M. Rahman",
+    "S. Uluagac",
+    "L. Njilla"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2023 Best Paper Award: SHATTER: Control and Defense-Aware Attack Analytics for Activity-Driven Smart Home Systems, N. Haque, M. Ngouen, M. Rahman, S. Uluagac, L. Njilla"
+  },
+  {
+   "venue": "DSN",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "JITBULL: Securing JavaScript Runtime with a Go/No-Go policy for JIT Engine",
+   "authors": [
+    "Jean-Baptiste Decourcelle",
+    "Boris Teabe",
+    "Daniel Hagimont"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2024 Best Paper Award: JITBULL: Securing JavaScript Runtime with a Go/No-Go policy for JIT Engine, Jean-Baptiste Decourcelle, Boris Teabe, Daniel Hagimont"
+  },
+  {
+   "venue": "DSN",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the Correctness of Metadata-based SBOM Generation: A Differential Analysis Approach",
+   "authors": [
+    "Sheng Yu",
+    "Wei Song",
+    "Xunchao Hu",
+    "Heng Yin"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2024 Best Paper Award: On the Correctness of Metadata-based SBOM Generation: A Differential Analysis Approach, Sheng Yu, Wei Song, Xunchao Hu, Heng Yin"
+  },
+  {
+   "venue": "DSN",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ZLB: A Blockchain to Tolerate Colluding Majorities",
+   "authors": [
+    "Alejandro Ranchal-Pedrosa",
+    "Vincent Gramoli"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2024 Best Paper Award: ZLB: A Blockchain to Tolerate Colluding Majorities, Alejandro Ranchal-Pedrosa, Vincent Gramoli"
+  },
+  {
+   "venue": "DSN",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Faster Hash-based Multi-valued Validated Asynchronous Byzantine Agreement",
+   "authors": [
+    "Hanwen Feng",
+    "Zhenliang Lu",
+    "Tiancheng Mai",
+    "Qiang Tang"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2025 Best Paper Award: Faster Hash-based Multi-valued Validated Asynchronous Byzantine Agreement, Hanwen Feng, Zhenliang Lu, Tiancheng Mai, Qiang Tang"
+  },
+  {
+   "venue": "DSN",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GnuZero: A Compiler-Based Zeroization Static Detection Tool for the Masses",
+   "authors": [
+    "Pierrick Philippe",
+    "Mohamed Sabt",
+    "Pierre-Alain Fouque"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2025 Best Paper Award: GnuZero: A Compiler-Based Zeroization Static Detection Tool for the Masses, Pierrick Philippe, Mohamed Sabt, Pierre-Alain Fouque"
+  },
+  {
+   "venue": "DSN",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Privacy Analysis of Oblivious DNS over HTTPS: a Website Fingerprinting Study",
+   "authors": [
+    "Mohammad Amir Salari",
+    "Abhinav Kumar",
+    "Federico Rinaudi",
+    "Reza Tourani",
+    "Alessio Sacco",
+    "Flavio Esposito"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2025 Best Paper Award: Privacy Analysis of Oblivious DNS over HTTPS: a Website Fingerprinting Study, Mohammad Amir Salari, Abhinav Kumar, Federico Rinaudi, Reza Tourani, Alessio Sacco, Flavio Esposito"
+  },
+  {
+   "venue": "DSN",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PRAXIS: Integrating Program Analysis with Observability for Root-Cause Analysis",
+   "authors": [
+    "S. Cui",
+    "R. Krishna",
+    "S. Jha",
+    "R. Iyer"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2026 Best Paper Award: PRAXIS: Integrating Program Analysis with Observability for Root-Cause Analysis, S. Cui, R. Krishna, S. Jha, R. Iyer"
+  },
+  {
+   "venue": "DSN",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Q3Fuzz: Multi-Layered Stateful Fuzzing for the QUIC-HTTP/3 Protocol Stack",
+   "authors": [
+    "I. Jafarov",
+    "C. Lee",
+    "H. Lee",
+    "S. Dietrich"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2026 Best Paper Award: Q3Fuzz: Multi-Layered Stateful Fuzzing for the QUIC-HTTP/3 Protocol Stack, I. Jafarov, C. Lee, H. Lee, S. Dietrich"
+  },
+  {
+   "venue": "DSN",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Thinking Inside the Box: Injecting Realistic Radiation Faults in ML Accelerators",
+   "authors": [
+    "B. Coelho",
+    "M. Sadati",
+    "A. Chan",
+    "A. Hands",
+    "K. Pattabiraman",
+    "P. Rech"
+   ],
+   "track": "main",
+   "source": "https://www.dependability.org/?p=370",
+   "evidence": "DSN 2026 Best Paper Award: Thinking Inside the Box: Injecting Realistic Radiation Faults in ML Accelerators, B. Coelho, M. Sadati, A. Chan, A. Hands, K. Pattabiraman, P. Rech"
   },
   {
    "venue": "EACL",

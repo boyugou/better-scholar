@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.96 — 2026-10-12
+
+- DSN's best papers for 2014–2017 and 2022–2026 (17 papers; the list had none for DSN) from the DSN steering committee's own page (`tot.mjs dsn-best`); 2018–2021 are not read, the page running the authors into the title. The list has 7136 awards.
+
 ## 2.10.95 — 2026-10-12
 
 - CADE's and IJCAR's best papers and best student papers, 1999–2026 (26 papers; the list had none for either) from CADE Inc.'s own award page (`tot.mjs cade-awards`). The list has 7119 awards.

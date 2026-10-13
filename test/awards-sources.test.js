@@ -2290,6 +2290,12 @@ test("CADE Inc. best paper page: one line per conference ('CADE-29 (2023): Autho
   assert.deepEqual(parseCadeAwards(h, "https://cadeinc.org/Best-Paper-Award").entries.map((e) => `${e.venue} ${e.year} ${e.award} | ${e.authors.join("; ")}`), ["IJCAR 2024 best | Ann Lee; Bo Chan", "IJCAR 2024 student | Cy Dunn; Chad E. Brown; Ed Fox", "IJCAR 2022 best | Flo Gray; Gil Hart", "IJCAR 2022 best | Hal Ito; Jo Kim", "CADE 2019 best | Al Roe"]);
 });
 
+test("DSN best paper list: 'Title, Authors.' per winner with brackets dropped, a year line or 'YYYY: Title, Authors'; a line whose authors run into the title (2018-2021) is not read", async () => {
+  const { parseDsnBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>List of Past Best Paper Award Winners</p><p>2025:</p><p>Privacy analysis of oblivious DNS: a fingerprinting study, Ann Lee, Bo Chan, Cy Dunn.</p><p>Zeroization detection, a static tool for the masses, Ed Fox, Flo Gray. (also Distinguished Paper Award)</p><p>2022: CAROL: confidence-aware resilience for edge federations, Gil Hart (Imperial College, London), Hal Ito (Loughborough University)</p><p>2021: PID-Piper: Recovering Robotic Vehicles from Physical Attacks Jo Kim (University of British Columbia, CA), Al Roe</p><p>Recent Posts</p>`;
+  assert.deepEqual(parseDsnBest(h, "https://www.dependability.org/?p=370").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2025 | Ann Lee; Bo Chan; Cy Dunn | Privacy analysis of oblivious DNS: a fingerprinting study", "2025 | Ed Fox; Flo Gray | Zeroization detection, a static tool for the masses", "2022 | Gil Hart; Hal Ito | CAROL: confidence-aware resilience for edge federations"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
