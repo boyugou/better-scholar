@@ -1,0 +1,11 @@
+{
+  "name": "scholar-roles-and-ranks-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "verify": "node build.mjs && node scripts/verify.mjs",
+    "deploy": "scripts/deploy.sh",
+    "dev": "node build.mjs && python3 -m http.server 8080 --directory _site"
+  }
+}
