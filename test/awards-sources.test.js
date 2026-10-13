@@ -2387,6 +2387,13 @@ test("venueGuard keeps only entries whose conference the page mentions (a reader
   assert.equal(venueGuard(es, "<p>nothing relevant</p>").kept.length, 0);
 });
 
+test("SCA award pages: 'Best Paper' and 'Best Paper, Honourable Mention(s)' labels over title and authors lines; presentation, poster and people awards are left out; the year comes from the address (or the sca<year>awards address on the current page)", async () => {
+  const { parseScaAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Paper Presentation and Poster Awards</h1><h3>Best Paper</h3><p>Generalized audio-driven synthesis of precise drummer motion</p><p>Ann Lee, Bo Chan and Cy Dunn</p><h3>Best Paper, Honourable Mention</h3><p>Prior-first, condition-second: scalable hand motion completion</p><p>Ed Fox and Flo Gray</p><h3>Best Presentation</h3><p>Weak nonlinearity and linear equalization for materials</p><p>Gil Hart and Hal Ito</p><h3>Doctoral Dissertation Award</h3><p>Awarded to Jo Kim</p><p>Please email sca2026awards@gmail.com by April</p>`;
+  assert.deepEqual(parseScaAwards(h, "https://computeranimation.org/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2026 best | Ann Lee; Bo Chan; Cy Dunn", "2026 runner-up | Ed Fox; Flo Gray"]);
+  assert.equal(parseScaAwards("<p>SCA 2022 Awards</p><p>The winner of the Early Career Research Award is Dr Daniel Holden</p>", "https://computeranimation.org/2022/awards.html").entries.length, 0);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

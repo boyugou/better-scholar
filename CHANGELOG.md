@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.114 — 2026-10-12
+
+- SCA's best papers and honourable mentions 2024–2026 (10 papers; the list had none for SCA) from the symposium's own award pages (`tot.mjs sca-awards`). The list has 7566 awards.
+
 ## 2.10.113 — 2026-10-12
 
 - CONTRIBUTING.md: how to add an award source (official pages only, PDFs through `scripts/awards/pdf-text.swift`, the readers' refusals, the venue guard, tests, hosts, corrections).

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7556
+  "count": 7566
  },
  "entries": [
   {
@@ -103327,6 +103327,172 @@
    "paperYear": 2005,
    "source": "https://sc25.supercomputing.org/program/awards/",
    "evidence": "SC25 Test of Time Award: The Globus Striped GridFTP Framework and Server — William Allcock, John Bresnahan, Rajkumar Kettimuthu, Michael Link, Catalin Dumitrescu, Ioan Raicu, Ian Foster"
+  },
+  {
+   "venue": "SCA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Generalized eXtended Finite Element Method for Deformable Cutting via Boolean Operations",
+   "authors": [
+    "Quoc-Minh Ton-That",
+    "Paul Kry",
+    "Sheldon Andrews"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2024/awards.html",
+   "evidence": "SCA 2024 Best Paper: Generalized eXtended Finite Element Method for Deformable Cutting via Boolean Operations — Quoc-Minh Ton-That, Paul Kry, Sheldon Andrews"
+  },
+  {
+   "venue": "SCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "PartwiseMPC: Interactive Control of Contact-Guided Motions",
+   "authors": [
+    "Niloofar Khoshsiyar",
+    "Ruiyu Gou",
+    "Tianhong Zhou",
+    "Sheldon Andrews",
+    "Michiel van de Panne"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2024/awards.html",
+   "evidence": "SCA 2024 Best Paper, Honourable Mention: PartwiseMPC: Interactive Control of Contact-Guided Motions — Niloofar Khoshsiyar, Ruiyu Gou, Tianhong Zhou, Sheldon Andrews, Michiel van de Panne"
+  },
+  {
+   "venue": "SCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Reactive Gaze during Locomotion in Natural Environments",
+   "authors": [
+    "Julia Melgaré",
+    "Damien Rohmer",
+    "Soraia Musse",
+    "Marie-Paule Cani"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2024/awards.html",
+   "evidence": "SCA 2024 Best Paper, Honourable Mention: Reactive Gaze during Locomotion in Natural Environments — Julia Melgaré, Damien Rohmer, Soraia Musse, Marie-Paule Cani"
+  },
+  {
+   "venue": "SCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Unerosion: Simulating Terrain Evolution Back in Time",
+   "authors": [
+    "Zhanyu Yang",
+    "Guillaume Cordonnier",
+    "Marie-Paule Cani",
+    "Christian Perrenoud",
+    "Bedrich Benes"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2024/awards.html",
+   "evidence": "SCA 2024 Best Paper, Honourable Mention: Unerosion: Simulating Terrain Evolution Back in Time — Zhanyu Yang, Guillaume Cordonnier, Marie-Paule Cani, Christian Perrenoud, Bedrich Benes"
+  },
+  {
+   "venue": "SCA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters",
+   "authors": [
+    "Agon Serifi",
+    "Ruben Grandia",
+    "Espen Knoop",
+    "Markus Gross",
+    "Moritz Bächer"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2024/awards.html",
+   "evidence": "SCA 2024 Best Paper, Honourable Mention: VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters — Agon Serifi, Ruben Grandia, Espen Knoop, Markus Gross, Moritz Bächer"
+  },
+  {
+   "venue": "SCA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Representing Flow Fields with Divergence-Free Kernels for Reconstruction",
+   "authors": [
+    "Xingyu Ni",
+    "Jingrui Xing",
+    "Xingqiao Li",
+    "Bin Wang",
+    "Baoquan Chen"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2025/awards.html",
+   "evidence": "SCA 2025 Best Paper: Representing Flow Fields with Divergence-Free Kernels for Reconstruction — Xingyu Ni, Jingrui Xing, Xingqiao Li, Bin Wang and Baoquan Chen"
+  },
+  {
+   "venue": "SCA",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Real-Time Triangle-SDF Continuous Collision Detection",
+   "authors": [
+    "Joël Pelletier-Guénette",
+    "Alexandre Mercier-Aubin",
+    "Sheldon Andrews"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/2025/awards.html",
+   "evidence": "SCA 2025 Best Paper, Honourable Mention: Real-Time Triangle-SDF Continuous Collision Detection — Joël Pelletier-Guénette, Alexandre Mercier-Aubin and Sheldon Andrews"
+  },
+  {
+   "venue": "SCA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Generalized Audio-driven Synthesis of Precise Drummer Motion",
+   "authors": [
+    "Álvaro Iñesta",
+    "Mattia Ryffel",
+    "Amit Haim Bermano",
+    "Robert Sumner",
+    "Martin Guay"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/awards",
+   "evidence": "SCA 2026 Best Paper: Generalized Audio-driven Synthesis of Precise Drummer Motion — Álvaro Iñesta, Mattia Ryffel, Amit Haim Bermano, Robert Sumner, Martin Guay"
+  },
+  {
+   "venue": "SCA",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Pose-based Neural Clothing for Animated Characters",
+   "authors": [
+    "Julian N. Heidenreich",
+    "Vinicius C. Azevedo",
+    "Jakob Buhmann",
+    "Lento Manickathan",
+    "Arnold Moon",
+    "Paul Kanyuk",
+    "Amit H. Bermano",
+    "Jingwei Tang"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/awards",
+   "evidence": "SCA 2026 Best Paper, Honourable Mention: Pose-based Neural Clothing for Animated Characters — Julian N. Heidenreich, Vinicius C. Azevedo, Jakob Buhmann, Lento Manickathan, Arnold Moon, Paul Kanyuk, Amit H. Bermano, Jingwei Tang"
+  },
+  {
+   "venue": "SCA",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mention",
+   "title": "Prior-First, Condition-Second: Scalable and Controllable Hand Motion Completion",
+   "authors": [
+    "Mingyi Shi",
+    "Xuelin Chen",
+    "Taku Komura"
+   ],
+   "track": "main",
+   "source": "https://computeranimation.org/awards",
+   "evidence": "SCA 2026 Best Paper, Honourable Mention: Prior-First, Condition-Second: Scalable and Controllable Hand Motion Completion — Mingyi Shi, Xuelin Chen, Taku Komura"
   },
   {
    "venue": "SenSys",
