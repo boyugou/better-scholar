@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.59 — 2026-10-12
+
+- MobiSys 2020's best paper (SonicPrint) and 2021's three (zTT, nn-Meter, PPFL) from the conference's own program pages, read from their HTML (`tot.mjs mobisys-html`; the text-only reader cannot tell 2020's title from its first author). The 2022 and 2024 program pages repeat 2021's sessions, so they are not read. The list has 6534 awards.
+
 ## 2.10.58 — 2026-10-12
 
 - The Computational Complexity Conference's best and best student papers of 2020–2022, 2024 and 2025 (the list had none) from the winning talks tagged in each year's own program page (`tot.mjs ccc-year`). 2023's page names none. The list has 6530 awards.

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6530
+  "count": 6534
  },
  "entries": [
   {
@@ -79523,6 +79523,80 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobisys/2019/program/",
    "evidence": "MobiSys 2019 Best Paper Award: This is Your President Speaking: Spoofing Alerts in 4G LTE Networks — Gyuhong Lee, Jihoon Lee, Jinsung Lee, Youngbin Im, Max Hollingsworth, Eric Wustrow, Dirk Grunwald, Sangtae Ha"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SonicPrint: A Generally Adoptable and Secure Fingerprint Biometrics in Smart Devices",
+   "authors": [
+    "Aditya Singh Rathore",
+    "Weijin Zhu",
+    "Afee Daiyan",
+    "Chenhan Xu",
+    "Kun Wang",
+    "Feng Lin",
+    "Kui Ren",
+    "Wenyao Xu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2020/program/",
+   "evidence": "MobiSys 2020 Best Paper Award: SonicPrint: A Generally Adoptable and Secure Fingerprint Biometrics in Smart Devices — Aditya Singh Rathore, Weijin Zhu, Afee Daiyan, Chenhan Xu, Kun Wang, Feng Lin, Kui Ren, Wenyao Xu"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "nn-Meter: Towards Accurate Latency Prediction of Deep-Learning Model Inference on Diverse Edge Devices",
+   "authors": [
+    "Li Lyna Zhang",
+    "Shihao Han",
+    "Jianyu Wei",
+    "Ningxin Zheng",
+    "Ting Cao",
+    "Yuqing Yang",
+    "Yunxin Liu"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2021/program.html",
+   "evidence": "MobiSys 2021 Best Paper Award: nn-Meter: Towards Accurate Latency Prediction of Deep-Learning Model Inference on Diverse Edge Devices — Li Lyna Zhang, Shihao Han, Jianyu Wei, Ningxin Zheng, Ting Cao, Yuqing Yang, Yunxin Liu"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PPFL: Privacy-preserving Federated Learning with Trusted Execution Environments",
+   "authors": [
+    "Fan Mo",
+    "Hamed Haddadi",
+    "Kleomenis Katevas",
+    "Eduard Marin",
+    "Diego Perino",
+    "Nicolas Kourtellis"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2021/program.html",
+   "evidence": "MobiSys 2021 Best Paper Award: PPFL: Privacy-preserving Federated Learning with Trusted Execution Environments — Fan Mo, Hamed Haddadi, Kleomenis Katevas, Eduard Marin, Diego Perino, Nicolas Kourtellis"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "zTT: Learning-based DVFS with Zero Thermal Throttling for Mobile Devices",
+   "authors": [
+    "Seyeon Kim",
+    "Kyungmin Bin",
+    "Sangtae Ha",
+    "Kyunghan Lee",
+    "Song Chong"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2021/program.html",
+   "evidence": "MobiSys 2021 Best Paper Award: zTT: Learning-based DVFS with Zero Thermal Throttling for Mobile Devices — Seyeon Kim, Kyungmin Bin, Sangtae Ha, Kyunghan Lee, Song Chong"
   },
   {
    "venue": "MODELS",

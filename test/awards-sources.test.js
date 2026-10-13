@@ -2027,3 +2027,11 @@ test("CCC program page: winners tagged under the title, inline after it, or by a
     "best On the complexity of branching proofs | Ed Fox; Flo Gray"
   ]);
 });
+
+test("MobiSys program pages from their HTML: 2020's best paper list item with its authors span, 2021's 'Best Paper!' badges; honourable mentions are left out", async () => {
+  const { parseMobisysHtml } = await import("../scripts/awards/tot.mjs");
+  const a = `<h3><b>Best Paper Award</b><br></h3><ul class="papers"><li><span>A Fingerprint Biometrics System For Phones</span> <ul><li> <span class="authors">Ann Lee <span class="affl">(Buffalo, SUNY)</span>, Bo Chan <span class="affl">(UCLA)</span></span></li></ul></li></ul><h3><b>Honourable Mentions</b></h3><ul class="papers"><li><span>An Honoured Millimeter Wave Platform</span> <ul><li> <span class="authors">Cy Dunn <span class="affl">(IMDEA)</span></span></li></ul></li></ul>`;
+  assert.deepEqual(parseMobisysHtml(a, "https://www.sigmobile.org/mobisys/2020/program/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2020 A Fingerprint Biometrics System For Phones | Ann Lee; Bo Chan"]);
+  const b = `<li><p><span class="badge"> <strong>Best Paper!</strong> </span> <span class="new"> <a href="https://doi.org/x">Learning-based DVFS for Mobile Devices</a> </span> <br><em>Ed Fox (KAIST); Flo Gray (SNU); Gil Hart (Colorado)</em>`;
+  assert.deepEqual(parseMobisysHtml(b, "https://www.sigmobile.org/mobisys/2021/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2021 Learning-based DVFS for Mobile Devices | Ed Fox; Flo Gray; Gil Hart"]);
+});
