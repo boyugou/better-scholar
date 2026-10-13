@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.97 — 2026-10-12
+
+- FPGA's best papers 2011–2026 and FCCM's best papers and runner-up 2010–2026 (35 papers; the list had none for either) from the IEEE TCFPGA community's award pages (`tot.mjs tcfpga-best`). The list has 7171 awards.
+
 ## 2.10.96 — 2026-10-12
 
 - DSN's best papers for 2014–2017 and 2022–2026 (17 papers; the list had none for DSN) from the DSN steering committee's own page (`tot.mjs dsn-best`); 2018–2021 are not read, the page running the authors into the title. The list has 7136 awards.

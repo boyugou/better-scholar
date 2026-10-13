@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7136
+  "count": 7171
  },
  "entries": [
   {
@@ -56337,6 +56337,308 @@
    "evidence": "FAST '26: Sharpen the Spec, Cut the Code: A Case for Generative File System with SYSSPEC — Qingyuan Liu, Shanghai Jiao Tong University; Mo Zou, Shanghai Jiao Tong University; Hengbin Zhang, Shanghai Jiao Tong University; Dong Du, Shanghai Jiao Tong University; Yubin Xia, Shanghai Jiao Tong University; Haibo Chen, Shanghai Jiao Tong University"
   },
   {
+   "venue": "FCCM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hardware Acceleration of Approximate Tandem Repeat Detection",
+   "authors": [
+    "Tomáš Martínek",
+    "Matej Lexa"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2010 Best Paper Award: Hardware Acceleration of Approximate Tandem Repeat Detection — Tomáš Martínek and Matej Lexa"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rapid RNA Folding: Analysis and Acceleration of the Zuker Recurrence",
+   "authors": [
+    "Arpith C. Jacob",
+    "Jeremy D. Buhler",
+    "Roger D. Chamberlain"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2010 Best Paper Award: Rapid RNA Folding: Analysis and Acceleration of the Zuker Recurrence — Arpith C. Jacob, Jeremy D. Buhler and Roger D. Chamberlain"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Multilevel Granularity Parallelism Synthesis on FPGAs",
+   "authors": [
+    "Alexandros Papakonstantinou",
+    "Yun Liang",
+    "John A. Stratton",
+    "Karthik Gururaj",
+    "Deming Chen",
+    "Wen-Mei W. Hwu",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2011 Best Paper Award: Multilevel Granularity Parallelism Synthesis on FPGAs — Alexandros Papakonstantinou, Yun Liang, John A. Stratton, Karthik Gururaj, Deming Chen, Wen-Mei W. Hwu and Jason Cong"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hardware Acceleration of Short Read Mapping",
+   "authors": [
+    "Corey B. Olson",
+    "Maria Kim",
+    "Cooper Clauson",
+    "Boris Kogon",
+    "Carl Ebeling",
+    "Scott Hauck",
+    "Walter L. Ruzzo"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2012 Best Paper Award: Hardware Acceleration of Short Read Mapping — Corey B. Olson, Maria Kim, Cooper Clauson, Boris Kogon, Carl Ebeling, Scott Hauck and Walter L. Ruzzo"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Computation of Skyline Queries",
+   "authors": [
+    "Louis Woods",
+    "Gustavo Alonso",
+    "Jens Teubner"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2013 Best Paper Award: Parallel Computation of Skyline Queries — Louis Woods, Gustavo Alonso and Jens Teubner"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Speeding Up FPGA Placement: Parallel Algorithms and Methods",
+   "authors": [
+    "Matthew An",
+    "J. Gregory Steffan",
+    "Vaughn Betz"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2014 Best Paper Award: Speeding Up FPGA Placement: Parallel Algorithms and Methods — Matthew An, J. Gregory Steffan and Vaughn Betz"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Using Dynamic Signal-Tracing to Debug Compiler-Optimized HLS Circuits on FPGAs",
+   "authors": [
+    "Jeffrey Goeders",
+    "Steve J.E. Wilton"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2015 Best Paper Award: Using Dynamic Signal-Tracing to Debug Compiler-Optimized HLS Circuits on FPGAs — Jeffrey Goeders and Steve J.E. Wilton"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "KAPow: A System Identification Approach to Online Per-module Power Estimation in FPGA Designs",
+   "authors": [
+    "Eddie Hung",
+    "James J. Davis",
+    "Joshua M. Levine",
+    "Edward A. Stott",
+    "Peter Y.K. Cheung",
+    "George A. Constantinides"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2016 Best Paper Award: KAPow: A System Identification Approach to Online Per-module Power Estimation in FPGA Designs — Eddie Hung, James J. Davis, Joshua M. Levine, Edward A. Stott, Peter Y.K. Cheung and George A. Constantinides"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "High-Performance Hardware Merge Sorter",
+   "authors": [
+    "Susumu Mashimo",
+    "Thiem Van Chu",
+    "Kenji Kise"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2017 Best Paper Award: High-Performance Hardware Merge Sorter — Susumu Mashimo, Thiem Van Chu and Kenji Kise"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ReBNet: Residual Binarized Neural Network",
+   "authors": [
+    "Mohammad Ghasemzadeh",
+    "Mohammad Samragh",
+    "Farinaz Koushanfar"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2018 Best Paper Award: ReBNet: Residual Binarized Neural Network — Mohammad Ghasemzadeh, Mohammad Samragh and Farinaz Koushanfar"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Templatised soft floating-point for High-Level Synthesis",
+   "authors": [
+    "David B. Thomas"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2019 Best Paper Award: Templatised soft floating-point for High-Level Synthesis — David B. Thomas"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Comparison of Arithmetic Number Formats for Inference in Sum-Product Networks on FPGAs",
+   "authors": [
+    "Lukas Sommer",
+    "Lukas Weber",
+    "Martin Kumm",
+    "Andreas Koch"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2020 Best Paper Award: Comparison of Arithmetic Number Formats for Inference in Sum-Product Networks on FPGAs — Lukas Sommer, Lukas Weber, Martin Kumm and Andreas Koch"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Clockwork: Resource-Efficient Static Scheduling for Multi-Rate Image Processing Applications on FPGAs",
+   "authors": [
+    "Dillon Huff",
+    "Steve Dai",
+    "Pat Hanrahan"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2021 Best Paper Award: Clockwork: Resource-Efficient Static Scheduling for Multi-Rate Image Processing Applications on FPGAs — Dillon Huff, Steve Dai and Pat Hanrahan"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CoMeFa: Compute-in-Memory Blocks for FPGAs",
+   "authors": [
+    "Aman Arora",
+    "Tanmay Anand",
+    "Aatman Borda",
+    "Rishabh Sehgal",
+    "Bagus Hanindhito",
+    "Jaydeep Kulkarni",
+    "Lizy K. John"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2022 Best Paper Award: CoMeFa: Compute-in-Memory Blocks for FPGAs — Aman Arora, Tanmay Anand, Aatman Borda, Rishabh Sehgal, Bagus Hanindhito, Jaydeep Kulkarni and Lizy K. John"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Machine Learning Approach for Predicting the Difficulty of FPGA Routing Problems",
+   "authors": [
+    "Andrew David Gunter",
+    "Steven J.E. Wilton"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2023 Best Paper Award: A Machine Learning Approach for Predicting the Difficulty of FPGA Routing Problems — Andrew David Gunter and Steven J.E. Wilton"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "LightningSim: Fast and Accurate Trace-Based Simulation for High-Level Synthesis",
+   "authors": [
+    "Rishov Sarkar",
+    "Cong Hao"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2023 Best Paper Runner-up: LightningSim: Fast and Accurate Trace-Based Simulation for High-Level Synthesis — Rishov Sarkar and Cong Hao"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Data-Driven, Congestion-Aware and Open-Source Timing-Driven FPGA Placer Accelerated by GPUs",
+   "authors": [
+    "Zhili Xiong",
+    "Rachel Selina Rajarathnam",
+    "David Z. Pan"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2024 Best Paper Award: A Data-Driven, Congestion-Aware and Open-Source Timing-Driven FPGA Placer Accelerated by GPUs — Zhili Xiong, Rachel Selina Rajarathnam and David Z. Pan"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Guaranteed Yet Hard to Find: Uncovering FPGA Routing Convergence Paradox",
+   "authors": [
+    "Shashwat Shrivastava",
+    "Stefan Nikolić",
+    "Sun Tanaka",
+    "Chirag Ravishankar",
+    "Dinesh Gaitonde",
+    "Mirjana Stojilovic"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2025 Best Paper Award: Guaranteed Yet Hard to Find: Uncovering FPGA Routing Convergence Paradox — Shashwat Shrivastava, Stefan Nikolić, Sun Tanaka, Chirag Ravishankar, Dinesh Gaitonde and Mirjana Stojilovic"
+  },
+  {
+   "venue": "FCCM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HGQ-LUT: Fast LUT-Aware Training and Efficient Architectures for DNN Inference",
+   "authors": [
+    "Chang Sun",
+    "Zhiqiang Que",
+    "Bakhtiar Zadeh",
+    "Qibin Liu",
+    "Kevin H. Alvarez",
+    "Wayne Luk",
+    "Maria Spiropulu"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards",
+   "evidence": "FCCM 2026 Best Paper Award: HGQ-LUT: Fast LUT-Aware Training and Efficient Architectures for DNN Inference — Chang Sun, Zhiqiang Que, Bakhtiar Zadeh, Qibin Liu, Kevin H. Alvarez, Wayne Luk, andMaria Spiropulu"
+  },
+  {
    "venue": "Feedback Computing",
    "year": 2013,
    "award": "best",
@@ -57104,6 +57406,294 @@
    "paperYear": 2002,
    "source": "https://etaps.org/awards/test-of-time",
    "evidence": "ETAPS 2026 Test of Time Award: T. Knapik, D. Niwinski and P. Urzyczyn — FoSSaCS 2002 “Higher-Order Pushdown Trees Are Easy”"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CoRAM: an in-fabric memory architecture for FPGA-based computing",
+   "authors": [
+    "Eric S. Chung",
+    "James C. Hoe",
+    "Ken Mai"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2011 Best Paper Award: CoRAM: an in-fabric memory architecture for FPGA-based computing — Eric S. Chung, James C. Hoe, and Ken Mai"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rethinking FPGAs: elude the flexibility excess of LUTs with and-inverter cones",
+   "authors": [
+    "Hadi Parandeh-Afshar",
+    "Hind Benbihi",
+    "David Novo",
+    "Paolo Ienne"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2012 Best Paper Award: Rethinking FPGAs: elude the flexibility excess of LUTs with and-inverter cones — Hadi Parandeh-Afshar, Hind Benbihi, David Novo and Paolo Ienne"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Polyhedral-Based Data Reuse Optimization for Configurable Computing",
+   "authors": [
+    "Louis-Noel Pouchet",
+    "Peng Zhang",
+    "P. Sadayappan",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2013 Best Paper Award: Polyhedral-Based Data Reuse Optimization for Configurable Computing — Louis-Noel Pouchet, Peng Zhang, P. Sadayappan and Jason Cong"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimizing Effective Interconnect Capacitance for FPGA Power Reduction",
+   "authors": [
+    "Safeen Huda",
+    "Jason Anderson",
+    "Hirotaka Tamura"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2014 Best Paper Award: Optimizing Effective Interconnect Capacitance for FPGA Power Reduction — Safeen Huda, Jason Anderson and Hirotaka Tamura"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Take the Highway: Design for Embedded NoCs on FPGAs",
+   "authors": [
+    "Mohamed S. Abdelfattah",
+    "Andrew Bitar",
+    "Vaughn Betz"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2015 Best Paper Award: Take the Highway: Design for Embedded NoCs on FPGAs — Mohamed S. Abdelfattah, Andrew Bitar and Vaughn Betz"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FPRESSO: Enabling Express Transistor-Level Exploration of FPGA Architectures",
+   "authors": [
+    "Grace Zgheib",
+    "Manana Lortkipanidze",
+    "Muhsen Owaida",
+    "David Novo",
+    "Paolo Ienne"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2016 Best Paper Award: FPRESSO: Enabling Express Transistor-Level Exploration of FPGA Architectures — Grace Zgheib, Manana Lortkipanidze, Muhsen Owaida, David Novo and Paolo Ienne"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ESE: Efficient Speech Recognition Engine with Compressed LSTM on FPGA",
+   "authors": [
+    "Song Han",
+    "Junlong Kang",
+    "Huizi Mao",
+    "Yiming Hu",
+    "Xin Li",
+    "Yubin Li",
+    "Dongliang Xie",
+    "Hong Luo",
+    "Song Yao",
+    "Yu Wang",
+    "Huazhong Yang",
+    "William J. Dally"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2017 Best Paper Award: ESE: Efficient Speech Recognition Engine with Compressed LSTM on FPGA — Song Han, Junlong Kang, Huizi Mao, Yiming Hu, Xin Li, Yubin Li, Dongliang Xie, Hong Luo, Song Yao, Yu Wang, Huazhong Yang, William (Bill) J. Dally"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FASTCF: FPGA-based Accelerator for Stochastic-Gradient-Descent-based Collaborative Filtering",
+   "authors": [
+    "Shijie Zhou",
+    "Rajgopal Kannan",
+    "Yu Min",
+    "Viktor K. Prasanna"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2018 Best Paper Award: FASTCF: FPGA-based Accelerator for Stochastic-Gradient-Descent-based Collaborative Filtering — Shijie Zhou, Rajgopal Kannan, Yu Min and Viktor K. Prasanna"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HeteroCL: A Multi-Paradigm Programming Infrastructure for Software-Defined Reconfigurable Computing",
+   "authors": [
+    "Yi-Hsiang Lai",
+    "Yuze Chi",
+    "Yuwei Hu",
+    "Jie Wang",
+    "Cody Hao Yu",
+    "Yuan Zhou",
+    "Jason Cong",
+    "Zhiru Zhang"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2019 Best Paper Award: HeteroCL: A Multi-Paradigm Programming Infrastructure for Software-Defined Reconfigurable Computing — Yi-Hsiang Lai, Yuze Chi, Yuwei Hu, Jie Wang, Cody Hao Yu, Yuan Zhou, Jason Cong and Zhiru Zhang"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Buffer Placement and Sizing for High-Performance Dataflow Circuits",
+   "authors": [
+    "Lana Josipović",
+    "Shabnam Sheikhha",
+    "Andrea Guerrieri",
+    "Paolo Ienne",
+    "Jordi Cortadella"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2020 Best Paper Award: Buffer Placement and Sizing for High-Performance Dataflow Circuits — Lana Josipović, Shabnam Sheikhha, Andrea Guerrieri, Paolo Ienne and Jordi Cortadella"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AutoBridge: Coupling Coarse-Grained Floorplanning and Pipelining for High-Frequency HLS Design on Multi-Die FPGAs",
+   "authors": [
+    "Licheng Guo",
+    "Yuze Chi",
+    "Jie Wang",
+    "Jason Lau",
+    "Weikang Qiao",
+    "Ecenur Ustun",
+    "Zhiru Zhang",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2021 Best Paper Award: AutoBridge: Coupling Coarse-Grained Floorplanning and Pipelining for High-Frequency HLS Design on Multi-Die FPGAs — Licheng Guo, Yuze Chi, Jie Wang, Jason Lau, Weikang Qiao, Ecenur Ustun, Zhiru Zhang and Jason Cong"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RapidStream: Parallel Physical Implementation of FPGA HLS Designs",
+   "authors": [
+    "Licheng Guo",
+    "Pongstorn Maidee",
+    "Yun Zhou",
+    "Chris Lavin",
+    "Jie Wang",
+    "Yuze Chi",
+    "Weikang Qiao",
+    "Alireza Kaviani",
+    "Zhiru Zhang",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2022 Best Paper Award: RapidStream: Parallel Physical Implementation of FPGA HLS Designs — Licheng Guo, Pongstorn Maidee, Yun Zhou, Chris Lavin, Jie Wang, Yuze Chi, Weikang Qiao, Alireza Kaviani, Zhiru Zhang and Jason Cong"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DONGLE: Direct FPGA-Orchestrated NVMe Storage for HLS",
+   "authors": [
+    "Linus Y. Wong",
+    "Jialiang Zhang",
+    "Jing Li"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2023 Best Paper Award: DONGLE: Direct FPGA-Orchestrated NVMe Storage for HLS — Linus Y. Wong, Jialiang Zhang and Jing (Jane) Li"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Formal Verification of Source-to-Source Transformations for HLS",
+   "authors": [
+    "Louis-Noël Pouchet",
+    "Emily Tucker",
+    "Niansong Zhang",
+    "Hongzheng Chen",
+    "Debjit Pal",
+    "Gabriel Rodríguez",
+    "Zhiru Zhang"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2024 Best Paper Award: Formal Verification of Source-to-Source Transformations for HLS — Louis-Noël Pouchet, Emily Tucker, Niansong Zhang, Hongzheng Chen, Debjit Pal, Gabriel Rodríguez and Zhiru Zhang"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs",
+   "authors": [
+    "Jun Liu",
+    "Shulin Zeng",
+    "Li Ding",
+    "Widyadewi Soedarmadji",
+    "Hao Zhou",
+    "Zehao Wang",
+    "Jinhao Li",
+    "Jintao Li",
+    "Yadong Dai",
+    "Kairui Wen",
+    "Shan He",
+    "Yaqi Sun",
+    "Yu Wang",
+    "Guohao Dai"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2025 Best Paper Award: FlightVGM: Efficient Video Generation Model Inference with Online Sparsification and Hybrid Precision on FPGAs — Jun Liu, Shulin Zeng, Li Ding, Widyadewi Soedarmadji, Hao Zhou, Zehao Wang, Jinhao Li, Jintao Li, Yadong Dai, Kairui Wen, Shan He, Yaqi Sun, Yu Wang and Guohao Dai"
+  },
+  {
+   "venue": "FPGA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "KANELÉ: Kolmogorov-Arnold Networks for Efficient LUT-based Evaluation",
+   "authors": [
+    "Duc Hoang",
+    "Aarush Gupta",
+    "Philip C Harris"
+   ],
+   "track": "main",
+   "source": "https://tcfpga.org/books/community-awards/page/fpga-best-paper-awards",
+   "evidence": "FPGA 2026 Best Paper Award: KANELÉ: Kolmogorov-Arnold Networks for Efficient LUT-based Evaluation — Duc Hoang, Aarush Gupta and Philip C Harris"
   },
   {
    "venue": "FSE",

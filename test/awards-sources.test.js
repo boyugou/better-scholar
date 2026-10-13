@@ -2296,6 +2296,12 @@ test("DSN best paper list: 'Title, Authors.' per winner with brackets dropped, a
   assert.deepEqual(parseDsnBest(h, "https://www.dependability.org/?p=370").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2025 | Ann Lee; Bo Chan; Cy Dunn | Privacy analysis of oblivious DNS: a fingerprinting study", "2025 | Ed Fox; Flo Gray | Zeroization detection, a static tool for the masses", "2022 | Gil Hart; Hal Ito | CAROL: confidence-aware resilience for edge federations"]);
 });
 
+test("TCFPGA award pages: a year line ('2025' or '2025, City'), then a title line and an authors line per winner; a runner-up prefix marks the award, a short paper is left out", async () => {
+  const { parseTcfpgaBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>The IEEE International Symposium on Field-Programmable Custom Computing Machines (FCCM) has awarded Best Paper Awards to the following papers:</p><p>2024, Orlando, FL</p><p>A congestion-aware timing-driven placer accelerated by GPUs</p><p>Ann Lee, Bo Chan and Cy Dunn</p><p>Best Short Paper: Synthesis of LUT networks for dense functions</p><p>Ed Fox and Flo Gray</p><p>2023, Porto</p><p>A machine learning approach to predicting routing difficulty</p><p>Gil Hart and Hal Ito</p><p>Best Paper Runner Up: Fast trace-based simulation for synthesis</p><p>Jo Kim, andAl Roe</p><p>Enter section select mode</p>`;
+  assert.deepEqual(parseTcfpgaBest(h, "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2024 best | Ann Lee; Bo Chan; Cy Dunn | A congestion-aware timing-driven placer accelerated by GPUs", "2023 best | Gil Hart; Hal Ito | A machine learning approach to predicting routing difficulty", "2023 runner-up | Jo Kim; Al Roe | Fast trace-based simulation for synthesis"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
