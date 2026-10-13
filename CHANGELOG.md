@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.84 — 2026-10-12
+
+- Static security review of the extension code: no `innerHTML`, `eval` or `new Function` anywhere, `storage` is the only permission, and the one `fetch` (the user-triggered read of a paper's page on Scholar) now refuses a link that is not on the page's own origin before it sends cookies.
+
 ## 2.10.83 — 2026-10-12
 
 - Contrast and screen-reader fixes found by an axe-core audit of the settings page, the panel and the popup: the faint grey (`#80868b`, 3.7:1 on white) is `#6b7076` (5:1) and `#969ca2` in dark mode; the last-author name green is darker (5.4:1 on its tint); Scholar's own grey author and venue lines (`#777`, 3.8:1) are `#5f6368` inside tinted rows; the role column of the table has a screen-reader label ("Role", "作者位置"). A test keeps these colours above 4.5:1.

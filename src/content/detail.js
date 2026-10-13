@@ -36,6 +36,7 @@
     // Field labels follow the interface language ("Authors" / "作者" / …): ask for English.
     const url = new URL(href, location.href);
     url.searchParams.set("hl", "en");
+    if (url.origin !== location.origin) throw new ResolveError("http", "not a Scholar page");      // (cookies go only to the page's own origin)
     const res = await fetch(url.href, { credentials: "include", signal });
     if (res.status === 429 || res.status === 503 || /\/sorry\//.test(res.url)) throw new ResolveError("captcha");
     if (!res.ok) throw new ResolveError("http", "HTTP " + res.status);
