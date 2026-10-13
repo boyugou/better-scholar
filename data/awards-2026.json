@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6792
+  "count": 6795
  },
  "entries": [
   {
@@ -38722,6 +38722,20 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10139/86/program",
    "evidence": "CHIPLAY 2025 program, Honorable Mention: Looking through the Lens: Contextualizing and Operationalizing Design Recommendations for Rehabilitation Games for Young People — Maria Aufheimer, Kathrin Gerling, T.C. Nicholas Graham, André Rodrigues, Zeynep Yildiz"
+  },
+  {
+   "venue": "CHIIR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fitting to the Body: The Role of Embodiment in Beauty Information Seeking",
+   "authors": [
+    "Catherine Chavula",
+    "Cassandra Kist"
+   ],
+   "track": "main",
+   "source": "https://chiir2025.github.io/",
+   "evidence": "CHIIR 2025 Best Paper Award: Fitting to the Body: The Role of Embodiment in Beauty Information Seeking — Catherine Chavula, Cassandra Kist"
   },
   {
    "venue": "CI",
@@ -94248,6 +94262,51 @@
    "paperYear": 2014,
    "source": "https://www.sigcomm.org/awards/acm-sigcomm-test-of-time-paper-award",
    "evidence": "SIGCOMM 2024 Test of Time Paper Award: \"P4: programming protocol-independent packet processors\" by Pat Bosshart, Dan Daly, Glen Gibb, Martin Izzard, Nick McKeown, Jennifer Rexford, Cole Schlesinger, Dan Talayco, Amin Vahdat, George Varghese, David Walker, in ACM SIGCOMM Computer Communication Review, 44(3), 2014."
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mosaic: Breaking the Optics versus Copper Trade-off with a Wide-and-Slow Architecture and MicroLEDs",
+   "authors": [
+    "Kaoutar Benyahya",
+    "Ariel Gomez Diaz",
+    "Junyi Liu",
+    "Vassily Lyutsarev",
+    "Marianna Pantouvaki",
+    "Kai Shi",
+    "Shawn Yohanes Siew",
+    "Hitesh Ballani",
+    "Thomas Burridge",
+    "Daniel Cletheroe",
+    "Thomas Karagiannis",
+    "Brian Robertson",
+    "Ant Rowstron",
+    "Mengyang Yang",
+    "Arash Behziz",
+    "Jamie Gaudette",
+    "Paolo Costa"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/sigcomm/2025/program/papers-info/",
+   "evidence": "SIGCOMM 2025 Best Paper: Mosaic: Breaking the Optics versus Copper Trade-off with a Wide-and-Slow Architecture and MicroLEDs — Kaoutar Benyahya, Ariel Gomez Diaz, Junyi Liu, Vassily Lyutsarev, Marianna Pantouvaki, Kai Shi, Shawn Yohanes Siew, Hitesh Ballani, Thomas Burridge, Daniel Cletheroe, Thomas Karagiannis, Brian Robertson, Ant Rowstron, Mengyang Yang, Arash Behziz, Jamie Gaudette, Paolo Costa"
+  },
+  {
+   "venue": "SIGCOMM",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Edge Caching as Differentiation",
+   "authors": [
+    "Muhammad Abdullah",
+    "Mughees Ur Rehman",
+    "Pavlos Nikolopoulos",
+    "Katerina Argyraki"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/sigcomm/2025/program/papers-info/",
+   "evidence": "SIGCOMM 2025 Best Student Paper: Edge Caching as Differentiation — Muhammad Abdullah, Mughees Ur Rehman, Pavlos Nikolopoulos, Katerina Argyraki"
   },
   {
    "venue": "SIGCOMM",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.81 — 2026-10-12
+
+- SIGCOMM 2025's best paper (Mosaic) and best student paper (Edge Caching as Differentiation) from the conference's paper information page, and CHIIR 2025's best paper from its front page (`tot.mjs sigcomm25`, `tot.mjs chiir-best`). The list has 6795 awards.
+
 ## 2.10.80 — 2026-10-12
 
 - IEEE ICC 2019's sixteen best papers (a fifth layout: `Paper Title:`, `Authors:` and one `Name (Affiliation)` line per author) from the conference's own page (`tot.mjs icc-best`). The list has 6792 awards.
