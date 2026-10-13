@@ -1006,6 +1006,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the wide panel");
     await page.screenshot({ path: path.join(outDir, "showcase-narrow.png") });
+    // a very narrow window: a row's chips (they wrap as one group) never reach beyond the title column, and the page does not scroll sideways
+    await page.setViewportSize({ width: 480, height: 900 });
+    await page.waitForTimeout(300);
+    const spill = await page.evaluate(() => {
+      const bad = [];
+      document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").forEach((tr) => { const cell = tr.querySelector("td.gsc_a_t").getBoundingClientRect(); tr.querySelectorAll(".rr-chips").forEach((c) => { for (const r of c.getClientRects()) if (r.right > cell.right + 1) bad.push(Math.round(r.right - cell.right)); }); });
+      return { chips: bad, page: document.documentElement.scrollWidth - document.documentElement.clientWidth };
+    });
+    assert.deepEqual(spill, { chips: [], page: 0 }, "chips or the page spill sideways at 480 px");
     ok("the fictional showcase profile renders (wide and narrow) with an award from the list");
 
     // -- 25b. every interface language fits: no panel button cut off, nothing wider than the panel, in the sidebar and in the wide panel
