@@ -111,6 +111,17 @@ ordered author lists; no citation counts, so no h-index there). Semantic Scholar
 priority: its API licence forbids shipping a key, the shared pool rate-limits, and author IDs
 contain misattributions.
 
+## Considered and set aside (2026-10-13)
+
+So that they are not rediscovered from scratch:
+
+- **DBLP person pages** (the best-aligned second surface: `li.entry` ids are DBLP keys such as `conf/cvpr/HeZRS16`, and 679 of the 681 CCF venues carry their `dblp` URL, so the match could be exact). A scripted request to `dblp.org` is now answered with a proof-of-work bot check ("Making sure you're not a bot!"), which is not worked around, so there is no real page to develop against; a reader written from memory of the markup would break the "develop against real data" rule. Revisit if a saved page is supplied.
+- **Semantic Scholar author pages** (summary only; the data would come from `/author/<id>/papers`). The author-ID graph contains misattributions (the profile of a well-known author returned another person's paper in its first three results), so roles computed from it would carry wrong badges; the shared unauthenticated pool also rate-limits within a handful of requests. The opt-in title lookup for cut-off author lists (2.12.0, with a precision check on first author and year) is the safe part of that idea.
+- **Preprint → published venue through Semantic Scholar**: its record merges versions, so a venue can belong to another version of the paper (the same reason its venue is not used in the author-list lookup).
+- **SCImago / JCR quartiles for journals outside the CCF list**: licensing of redistributed data is unclear and matching ~30k journal titles exactly is a large data build for a content script that runs on every profile.
+- **Sorting the paper list by rank or role**: Scholar re-renders the list when its own sort headers are used and appends rows on *Show more*; keeping a reordered list consistent with both would be fragile for little gain next to the cell filters.
+- **Frequent co-authors**: the key would be surname + initial, which merges different people ("J Wang"); a wrong claim about who someone works with is worse than none.
+
 ## Distribution
 
 Stores are a nice-to-have, not a requirement; GitHub plus *Load unpacked* is the primary route.
