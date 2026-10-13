@@ -24,4 +24,4 @@ rm -f "$OUT"
 ( cd "$SRC" && zip -r -q "$OUT" . -x '.*' '*/.*' )
 
 echo "Built $OUT"
-unzip -l "$OUT" | tail -n +2 | head -40
+unzip -l "$OUT" | awk 'NR > 1 && NR <= 41'

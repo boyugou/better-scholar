@@ -372,8 +372,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const links = await opts.locator(".toc a").count();
     assert.equal(links, await opts.locator("#controls > section.card").count());
     await opts.locator(".toc a").nth(3).click();
-    await opts.waitForFunction(() => { const t = document.querySelector("#card-3").getBoundingClientRect().top; return t >= 0 && t < 140; }, null, { timeout: 5000 });
-    await opts.waitForFunction(() => (document.querySelector(".toc a[aria-current]") || {}).dataset?.card === "card-3", null, { timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
+    // (polled with evaluate: the settings page's content security policy has no 'unsafe-eval', which waitForFunction needs on some builds)
+    for (let i = 0; i < 50; i++) { const t = await opts.evaluate(() => document.querySelector("#card-3").getBoundingClientRect().top); if (t >= 0 && t < 140) break; await opts.waitForTimeout(100); if (i === 49) assert.fail("the card did not come to the top"); }
+    await opts.locator('.toc a[data-card="card-3"][aria-current]').waitFor({ timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
     await opts.evaluate(() => window.scrollTo(0, 0));
     ok(`settings page: ${links} links to its cards under the header, each one scrolls its card into view`);
 
