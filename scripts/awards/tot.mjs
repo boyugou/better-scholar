@@ -3146,7 +3146,7 @@ export function parseUmapBest(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const i0 = ls.findIndex((l) => /^Best Paper Award Winners$/i.test(l));
-  if (i0 < 0) return { entries, skipped: ["no winners list"] };
+  if (i0 < 0 || !/um\.org/.test(source) || !ls.some((l) => /UMAP/.test(l))) return { entries, skipped: ["no UMAP winners list"] };
   let year = 0;
   for (let i = i0 + 1; i < ls.length; i++) {
     const l = ls[i];
@@ -3156,7 +3156,7 @@ export function parseUmapBest(html, source) {
     if (l.length < 12) continue;
     const au = (ls[i + 1] || "").replace(/\.$/, "").replace(/,\s*(?:University|Universit\u00e0|Institute)\b.*$/, "");
     const who = names(au);
-    if (who.length && who.every(isPerson) && !/^https?:/.test(ls[i + 1] || "")) {
+    if (who.length && who.every(isPerson) && !/^https?:/.test(ls[i + 1] || "") && !(names(l).length > 1 && names(l).every(isPerson))) {
       entries.push({ venue: "UMAP", year, award: "best", awardLabel: "Best Paper Award", title: cleanTitle(l), authors: who, track: "main", source, evidence: `UMAP ${year} Best Paper Award: ${cleanTitle(l)} — ${ls[i + 1]}` });
       i++; year = 0;
     } else skipped.push(`${year}: not read: ${l.slice(0, 50)}`);

@@ -2312,6 +2312,7 @@ test("McCalla award page: per block a title, 'Author(s)', semicolon-separated au
 test("UMAP best paper page: year line, an optional 'The 27th International Conference … awarded the following paper:' sentence, the title and the authors (a trailing affiliation after the last name and a DOI line are dropped)", async () => {
   const { parseUmapBest } = await import("../scripts/awards/tot.mjs");
   const h = `<h1>Best Paper Award Winners</h1><p>Below the list of award winners thus far.</p><p>2020</p><p>Personalized recommendation of points of interest</p><p>Ann Lee, Bo Chan and Cy Dunn, University of Turin, Italy</p><p>https://doi.org/10.1145/1</p><p>2019</p><p>The 27th International Conference on User Modeling, ACM UMAP 2019, in Larnaca, Cyprus, awarded the following paper:</p><p>Effect of values and technology use on exercise</p><p>Ed Fox and Flo Gray</p><p>James Chen Best Student Paper Awards</p>`;
+  assert.equal(parseUmapBest("<p>Best Paper Award Winners</p><p>2024</p><p>Some title that is long enough here</p><p>Ann Lee; Bo Chan</p>", "https://ieee-ceda.org/awarded-papers").entries.length, 0);
   assert.deepEqual(parseUmapBest(h, "https://um.org/awards/best-paper-awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2020 | Ann Lee; Bo Chan; Cy Dunn | Personalized recommendation of points of interest", "2019 | Ed Fox; Flo Gray | Effect of values and technology use on exercise"]);
 });
 

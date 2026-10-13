@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.111 — 2026-10-12
+
+- The UMAP reader now refuses pages that are not UMAP's (a fuzz run of the 21 newest readers over 400 saved pages found it was the only one accepting unrelated pages; none crashed).
+
 ## 2.10.110 — 2026-10-12
 
 - KDD 2004's best research paper title is corrected (the page printed it without its article and with a stray ">>"), so it matches Scholar. A re-audit of all 7556 entries found no other malformed titles or authors.
