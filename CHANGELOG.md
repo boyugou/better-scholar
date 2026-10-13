@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.95 — 2026-10-12
+
+- CADE's and IJCAR's best papers and best student papers, 1999–2026 (26 papers; the list had none for either) from CADE Inc.'s own award page (`tot.mjs cade-awards`). The list has 7119 awards.
+
 ## 2.10.94 — 2026-10-12
 
 - ICGT's best papers 2010–2024 (11 papers) from EATCS's own award page (`tot.mjs eatcs-paper`); EATCS's ETAPS page mixes the member conferences' papers (already read from etaps.org) and its CCC student page has no history list, so neither is read. The list has 7093 awards.

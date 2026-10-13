@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7093
+  "count": 7119
  },
  "entries": [
   {
@@ -9314,6 +9314,201 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10146/33/program",
    "evidence": "C&C 2026 program, Honorable Mention: What Makes an AI Writing Companion a Good Fit? A Personality-Informed Co-Design Study — Mengke Wu, Kexin Quan, Weizi Liu, Mike Yao, Jessie Chin"
+  },
+  {
+   "venue": "CADE",
+   "year": 1999,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A PSpace Algorithm for Graded Modal Logics",
+   "authors": [
+    "Stephan Tobies"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 1999 Best Paper Award: Stephan Tobies - A PSpace Algorithm for Graded Modal Logics"
+  },
+  {
+   "venue": "CADE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Tree Width of Separation Logic with Recursive Definitions",
+   "authors": [
+    "Radu Iosif",
+    "Adam Rogalewicz",
+    "Jiri Simacek"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2013 Best Paper Award: Radu Iosif, Adam Rogalewicz, and Jiri Simacek - The Tree Width of Separation Logic with Recursive Definitions"
+  },
+  {
+   "venue": "CADE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Abstract Interpretation as Automated Deduction",
+   "authors": [
+    "Vijay D’Silva",
+    "Caterina Urban"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2015 Best Paper Award: Vijay D`Silva and Caterina Urban - Abstract Interpretation as Automated Deduction"
+  },
+  {
+   "venue": "CADE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Unifying Principle for Clause Elimination in First-Order Logic",
+   "authors": [
+    "Benjamin Kiesl",
+    "Martin Suda"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2017 Best Paper Award: Benjamin Kiesl and Martin Suda - A Unifying Principle for Clause Elimination in First-Order Logic"
+  },
+  {
+   "venue": "CADE",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Short Proofs without New Variables",
+   "authors": [
+    "Marijn Heule",
+    "Benjamin Kiesl",
+    "Armin Biere"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2017 Best Paper Award: Marijn Heule, Benjamin Kiesl and Armin Biere - Short Proofs without New Variables"
+  },
+  {
+   "venue": "CADE",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automata Terms in a Lazy WSkS Decision Procedure",
+   "authors": [
+    "Vojtéch Havlena",
+    "Lukáš Holík",
+    "Onřej Lengál",
+    "Tomáš Vojnar"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2019 Best Paper Award: Vojtéch Havlena, Lukáš Holík, Onřej Lengál and Tomáš Vojnar - Automata Terms in a Lazy WSkS Decision Procedure"
+  },
+  {
+   "venue": "CADE",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "SPASS-SATT a CDCL(LA) Solver",
+   "authors": [
+    "Martin Bromberger",
+    "Mathias Fleury",
+    "Simon Schwarz",
+    "Christoph Weidenbach"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2019 Best Student Paper Award: Martin Bromberger, Mathias Fleury, Simon Schwarz, and Christoph Weidenbach - SPASS-SATT a CDCL(LA) Solver"
+  },
+  {
+   "venue": "CADE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Isabelle’s Metalogic: Formalization and Proof Checker",
+   "authors": [
+    "Tobias Nipkow",
+    "Simon Roßkopf"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2021 Best Paper Award: Tobias Nipkow and Simon Roßkopf - Isabelle’s Metalogic: Formalization and Proof Checker"
+  },
+  {
+   "venue": "CADE",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Making Higher-Order Superposition Work",
+   "authors": [
+    "Petar Vukmirović",
+    "Alexander Bentkamp",
+    "Jasmin Blanchette",
+    "Simon Cruanes",
+    "Visa Nummelin",
+    "Sophie Tourret"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2021 Best Student Paper Award: Petar Vukmirović, Alexander Bentkamp, Jasmin Blanchette, Simon Cruanes, Visa Nummelin, and Sophie Tourret - Making Higher-Order Superposition Work"
+  },
+  {
+   "venue": "CADE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Verified Given Clause Procedures",
+   "authors": [
+    "Jasmin Blanchette",
+    "Qi Qiu",
+    "Sophie Tourret"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2023 Best Paper Award: Jasmin Blanchette, Qi Qiu, and Sophie Tourret - Verified Given Clause Procedures"
+  },
+  {
+   "venue": "CADE",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Verification of NP-hardness for Exact Lattice Problems",
+   "authors": [
+    "Katharina Kreuzer",
+    "Tobias Nipkow"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2023 Best Student Paper Award: Katharina Kreuzer and Tobias Nipkow - Verification of NP-hardness for Exact Lattice Problems"
+  },
+  {
+   "venue": "CADE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "More is Less: Adding Polynomials for Faster Explanations in NLSAT",
+   "authors": [
+    "Valentin Promies",
+    "Jasper Nalbach",
+    "Erika Ábrahám",
+    "Paul Wagner"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2025 Best Paper Award: Valentin Promies, Jasper Nalbach, Erika Ábrahám and Paul Wagner - More is Less: Adding Polynomials for Faster Explanations in NLSAT"
+  },
+  {
+   "venue": "CADE",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Being Polite is Not Enough (and Other Limits of Theory Combination)",
+   "authors": [
+    "Guilherme Toledo",
+    "Benjamin Przybocki",
+    "Yoni Zohar"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "CADE 2025 Best Student Paper Award: Guilherme Toledo, Benjamin Przybocki and Yoni Zohar - Being Polite is Not Enough (and Other Limits of Theory Combination)"
   },
   {
    "venue": "CASE",
@@ -76604,6 +76799,199 @@
    "track": "main",
    "source": "https://ijcai-23.org/distinguished-paper-awards/",
    "evidence": "Distinguished Paper Awards: SAT-Based PAC Learning of Description Logic Concepts — Balder ten Cate, Maurice Funk, Jean Christoph Jung, Carsten Lutz"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NExpTime-Complete Description Logics with Concrete Domains",
+   "authors": [
+    "Carsten Lutz"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2001 Best Paper Award: Carsten Lutz - NExpTime-Complete Description Logics with Concrete Domains"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Decision Procedures for Recursive Data Structures with Integer Constraints",
+   "authors": [
+    "Ting Zhang",
+    "Henny Sipma",
+    "Zohar Manna"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2004 Best Paper Award: Ting Zhang, Henny Sipma, Zohar Manna - Decision Procedures for Recursive Data Structures with Integer Constraints"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Approximations for Model Construction",
+   "authors": [
+    "Aleksandar Zeljic",
+    "Christoph Wintersteiger",
+    "Philipp Rümmer"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2014 Best Paper Award: Aleksandar Zeljic, Christoph Wintersteiger, and Philipp Rümmer - Approximations for Model Construction"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Verified SAT Solver Framework with Learn, Forget, Restart, and Incrementality",
+   "authors": [
+    "Jasmin Christian Blanchette",
+    "Mathias Fleury",
+    "Christoph Weidenbach"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2016 Best Paper Award: Jasmin Christian Blanchette, Mathias Fleury, and Christoph Weidenbach - A Verified SAT Solver Framework with Learn, Forget, Restart, and Incrementality"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Extended Resolution Simulates DRAT",
+   "authors": [
+    "Benjamin Kiesl",
+    "Adrian Rebola-Pardo",
+    "Marijn Heule"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2018 Best Paper Award: Benjamin Kiesl, Adrian Rebola-Pardo and Marijn Heule - Extended Resolution Simulates DRAT"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Politeness for The Theory of Algebraic Datatypes",
+   "authors": [
+    "Ying Sheng",
+    "Yoni Zohar",
+    "Christophe Ringeissen",
+    "Jane Lange",
+    "Pascal Fontaine",
+    "Clark Barrett"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2020 Best Paper Award: Ying Sheng, Yoni Zohar, Christophe Ringeissen, Jane Lange, Pascal Fontaine and Clark Barrett - Politeness for The Theory of Algebraic Datatypes"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Resolution of Keller’s Conjecture",
+   "authors": [
+    "Joshua Brakensiek",
+    "Marijn Heule",
+    "John Mackey",
+    "David Narvaez"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2020 Best Paper Award: Joshua Brakensiek, Marijn Heule, John Mackey and David Narvaez - The Resolution of Keller’s Conjecture"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cyclic Proofs, Hypersequents, and Transitive Closure Logic",
+   "authors": [
+    "Anupam Das",
+    "Marianna Girlando"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2022 Best Paper Award: Anupam Das, Marianna Girlando - Cyclic Proofs, Hypersequents, and Transitive Closure Logic"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ground Joinability and Connectedness in the Superposition Calculus",
+   "authors": [
+    "André Duarte",
+    "Konstantin Korovin"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2022 Best Paper Award: André Duarte, Konstantin Korovin - Ground Joinability and Connectedness in the Superposition Calculus"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Mechanised Uniform Interpolation for Modal Logics K, GL and ISL",
+   "authors": [
+    "Hugo Férée",
+    "Iris van der Giessen",
+    "Sam van Gool",
+    "Ian Shillito"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2024 Best Paper Award: Hugo Férée, Iris van der Giessen, Sam van Gool, and Ian Shillito - Mechanised Uniform Interpolation for Modal Logics K, GL and ISL"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Tableaux for Automated Reasoning in Dependently-Typed Higher-Order Logic",
+   "authors": [
+    "Johannes Niederhauser",
+    "Chad E. Brown",
+    "Cezary Kaliszyk"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2024 Best Student Paper Award: Johannes Niederhauser, Chad E. Brown, Cezary Kaliszyk - Tableaux for Automated Reasoning in Dependently-Typed Higher-Order Logic"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Accelerating Loops with Arrays",
+   "authors": [
+    "Florian Frohn",
+    "Jürgen Giesl"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2026 Best Paper Award: Florian Frohn, Jürgen Giesl - Accelerating Loops with Arrays"
+  },
+  {
+   "venue": "IJCAR",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Saving Craig in the Fluted Fragment",
+   "authors": [
+    "Hongkai Yin"
+   ],
+   "track": "main",
+   "source": "https://cadeinc.org/Best-Paper-Award",
+   "evidence": "IJCAR 2026 Best Student Paper Award: Hongkai Yin - Saving Craig in the Fluted Fragment"
   },
   {
    "venue": "IMC",

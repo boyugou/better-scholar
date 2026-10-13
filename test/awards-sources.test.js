@@ -2284,6 +2284,12 @@ test("ICDT awards page: year lines, then best paper / best student paper (alone 
   assert.deepEqual(parseIcdtAwards(h, "https://databasetheory.org/ICDT/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 best | Ann Lee; Bo Chan", "2025 student | Ann Lee; Bo Chan", "2010 best | Cy Dunn; Ed Fox; Flo Gray", "2010 student | Gil Hart", "2010 student | Hal Ito"]);
 });
 
+test("CADE Inc. best paper page: one line per conference ('CADE-29 (2023): Authors - Title. Best student paper: Authors - Title'), several winners split at a full stop and a capital, a middle initial not splitting; the winners of a heading-only line follow on their own lines", async () => {
+  const { parseCadeAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Best Paper Award</h1><p>Recipients</p><p>12th IJCAR (2024): Ann Lee and Bo Chan - Mechanised uniform interpolation for modal logics. Best student paper: Cy Dunn, Chad E. Brown and Ed Fox - Tableaux for automated reasoning in typed logic.</p><p>11th IJCAR (2022):</p><p>Flo Gray, Gil Hart - Cyclic proofs and transitive closure logic.</p><p>Hal Ito, Jo Kim - Ground joinability in superposition.</p><p>CADE-27 (2019): Al Roe - Automata terms in a lazy decision procedure.</p><p>© 2026 Conference</p>`;
+  assert.deepEqual(parseCadeAwards(h, "https://cadeinc.org/Best-Paper-Award").entries.map((e) => `${e.venue} ${e.year} ${e.award} | ${e.authors.join("; ")}`), ["IJCAR 2024 best | Ann Lee; Bo Chan", "IJCAR 2024 student | Cy Dunn; Chad E. Brown; Ed Fox", "IJCAR 2022 best | Flo Gray; Gil Hart", "IJCAR 2022 best | Hal Ito; Jo Kim", "CADE 2019 best | Al Roe"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
