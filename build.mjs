@@ -77,6 +77,8 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <meta property="og:image" content="${SITE_URL}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
+<meta name="theme-color" content="#161d33">
+<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Scholar Roles & Ranks", applicationCategory: "BrowserApplication", operatingSystem: "Chrome, Chromium browsers", description: strings[lang.code]["meta.description"] ?? strings.en["meta.description"], inLanguage: lang.code, url, image: `${SITE_URL}/assets/og.png`, license: "https://www.apache.org/licenses/LICENSE-2.0", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }).replace(/</g, "\\u003c")}</script>
 </head>
 <body>
 <header class="top">
