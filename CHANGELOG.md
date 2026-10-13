@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.73 — 2026-10-12
+
+- AutomotiveUI 2024's best paper (What Characterizes “Situations” in Situation Awareness?): the front page names the title, the proceedings page the authors (`tot.mjs autoui-best`). The list has 6650 awards.
+
 ## 2.10.72 — 2026-10-12
 
 - ASSETS 2025's best paper and best student paper (an author per line, with institution lines to skip) and SUI 2024's best paper (the authors above the title) from the conferences' own home pages (`tot.mjs assets-sui`); the list had none for either. The list has 6649 awards.

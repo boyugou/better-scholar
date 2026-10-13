@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6649
+  "count": 6650
  },
  "entries": [
   {
@@ -8506,6 +8506,24 @@
    "track": "main",
    "source": "https://assets25.sigaccess.org/",
    "evidence": "ASSETS 2025 Best Student Paper: NeuroBridge: Using Generative AI to Bridge Cross-neurotype Communication Differences through Neurotypical Perspective-taking — Rukhshan Haroon, Kyle Wigdor, Zihan Yang, Nicole Toumanios, Eileen T. Crehan, Fahad Dogar"
+  },
+  {
+   "venue": "AutomotiveUI",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "What Characterizes “Situations” in Situation Awareness? Findings from a Human-centered Investigation",
+   "authors": [
+    "Philipp Michael Markus Peter Asteriou",
+    "Heike Christiane Kotsios",
+    "Philipp Wintersberger"
+   ],
+   "track": "main",
+   "source": "https://www.auto-ui.org/24/",
+   "alsoAt": [
+    "https://www.auto-ui.org/24/proceedings/main-proceedings/"
+   ],
+   "evidence": "AutomotiveUI 2024 Best Paper Award: What Characterizes “Situations” in Situation Awareness? Findings from a Human-centered Investigation — Philipp Michael Markus Peter Asteriou, Heike Christiane Kotsios, Philipp Wintersberger"
   },
   {
    "venue": "BMVC",

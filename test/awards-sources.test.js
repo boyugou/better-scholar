@@ -2139,3 +2139,9 @@ test("ASSETS home page: a title over lines, then one author per line (affiliate 
   const b = `<p>SUI 2024 Paper Awards</p><p>Best Paper Award</p><p>Gil Hart, Hal Ito, and Ivy Jones</p><p>Augmenting virtual spatial interfaces with physics-based visual motion cues</p><p>Best Paper Honorable Mention Award</p><p>Kay Lowe</p><p>An honoured handray guiding study</p>`;
   assert.deepEqual(parseAssetsSuiAwards(b, "https://sui.acm.org/2024/").entries.map((e) => `${e.venue} ${e.title} | ${e.authors.join("; ")}`), ["SUI Augmenting virtual spatial interfaces with physics-based visual motion cues | Gil Hart; Hal Ito; Ivy Jones"]);
 });
+
+test("AutomotiveUI: the best paper's title from the front page, its authors from the proceedings page's lines under that title; honorable mentions left out", async () => {
+  const { parseAutoUiBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>News</p><p>Congrats to the authors receiving the Best Paper Award!</p><p>🏆 What characterizes situations in situation awareness findings from a human-centered study</p><p>Congrats to the authors receiving Honorable Mentions!</p><p>🎉 Driven to distraction while mind wandering during a city drive</p><p>SESSION: Session 5</p><p>What characterizes situations in situation awareness findings from a human-centered study</p><p>Ann Lee</p><p>Bo Chan</p><p>Another session paper title about conditionally automated cars</p><p>Cy Dunn</p>`;
+  assert.deepEqual(parseAutoUiBest(h, "https://www.auto-ui.org/24/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2024 What characterizes situations in situation awareness findings from a human-centered study | Ann Lee; Bo Chan"]);
+});
