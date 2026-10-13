@@ -12,6 +12,7 @@ test("defaults: everything on, complete, and a fresh object each time", () => {
     ranks: { ccf: true, core: true },
     marks: { award: true, oral: true, spotlight: true, highlight: true },
     panel: { show: true, summary: true, marks: true, filters: true, metrics: true, status: true, names: true },
+    hide: { cited: false, coauthors: false, access: false },
     autoLoad: true
   });
   d.roles.first = false;

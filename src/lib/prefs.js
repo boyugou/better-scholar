@@ -16,8 +16,10 @@
   const RANKS = ["ccf", "core"];
   const MARK_GROUPS = ["award", "oral", "spotlight", "highlight"];
   const PANEL_PARTS = ["show", "summary", "marks", "filters", "metrics", "status", "names"];
+  const HIDE_PARTS = ["cited", "coauthors", "access"];     // Scholar's own side blocks that can be hidden: "Cited by", "Co-authors", "Public access"
 
   const flag = (v, fallback) => (typeof v === "boolean" ? v : fallback);
+  const pickOff = (src, keys) => Object.fromEntries(keys.map((k) => [k, flag(src && typeof src === "object" ? src[k] : undefined, false)]));
   const pick = (src, keys) => Object.fromEntries(keys.map((k) => [k, flag(src && typeof src === "object" ? src[k] : undefined, true)]));
 
   // Everything on: nobody has asked for less yet.
@@ -33,6 +35,7 @@
       ranks: pick(r.ranks, RANKS),                 // CCF / CORE chips, and their tab in the panel
       marks: pick(r.marks, MARK_GROUPS),           // award / oral / spotlight / highlight chips and counts
       panel: pick(r.panel, PANEL_PARTS),           // the panel itself and each of its parts: the role × rank table (with its copy buttons and data note), the award / talk counts, the filters, the citation totals, the loaded-papers / unranked-venues status, the name-spelling help
+      hide: pickOff(r.hide, HIDE_PARTS),           // Scholar's own blocks to hide (nothing is hidden until asked): they repeat what the panel shows or are not wanted
       autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded
     };
   }
@@ -73,5 +76,5 @@
   const groupOn = (prefs, group) => (group === "finalist" ? prefs.marks.award : !!prefs.marks[group]);
   const visibleMarks = (prefs, marks) => (marks || []).filter((m) => groupOn(prefs, m.group));
 
-  return { ROLES, RANKS, MARK_GROUPS, PANEL_PARTS, defaults, normalize, normalizeUi, fromLegacy, sources, source, groupOn, visibleMarks };
+  return { ROLES, RANKS, MARK_GROUPS, PANEL_PARTS, HIDE_PARTS, defaults, normalize, normalizeUi, fromLegacy, sources, source, groupOn, visibleMarks };
 });

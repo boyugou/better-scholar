@@ -525,5 +525,29 @@
   },
   "tsvCitations": {
     "message": "Citations"
+  },
+  "optHideTitle": {
+    "message": "Scholar's own blocks"
+  },
+  "optHideHint": {
+    "message": "Hide parts of the profile page that repeat the panel or that you do not use. Nothing is hidden until you switch it on."
+  },
+  "optHideCited": {
+    "message": "Cited by"
+  },
+  "optHideCitedHint": {
+    "message": "The citations, h-index and i10-index table and its graph: the panel shows the same totals for the highlighted papers."
+  },
+  "optHideCo": {
+    "message": "Co-authors"
+  },
+  "optHideCoHint": {
+    "message": "The list of co-authors in the sidebar."
+  },
+  "optHideAccess": {
+    "message": "Public access"
+  },
+  "optHideAccessHint": {
+    "message": "The public access box in the sidebar."
   }
 }

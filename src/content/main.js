@@ -333,11 +333,15 @@
     panel.el.hidden = !prefs.panel.show;
     if (prefs.panel.show) panel.update(model());
   }
+  // Scholar's own blocks the settings ask to hide (a class on <html>, styled in styles.css)
+  const prefsHide = (p) => { for (const k of B.prefs.HIDE_PARTS) document.documentElement.classList.toggle("rr-hide-" + k, !!p.hide[k]); };
+  prefsHide(prefs);
   const scheduleRefresh = frame(refresh);
 
   // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
   // gone must not keep hiding rows, so those are cleared.
   B.store.onPrefsChanged((next) => {
+    prefsHide(next);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;

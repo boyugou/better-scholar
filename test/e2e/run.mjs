@@ -219,6 +219,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, (n) => document.querySelectorAll("tr.rr-r-last").length === n, lastRows);
     ok("role switches on the settings page recolour the open profile at once");
 
+    // -- 6a. hiding Scholar's own blocks: nothing is hidden by default; each switch hides its block and brings it back
+    const shown = (id) => page.evaluate((i) => getComputedStyle(document.getElementById(i)).display !== "none", id);
+    for (const [key, id] of [["hide.cited", "gsc_rsb_cit"], ["hide.coauthors", "gsc_rsb_co"], ["hide.access", "gsc_rsb_mnd"]]) {
+      assert.ok(await shown(id), `${id} is shown by default`);
+      await setPref(opts, key, true);
+      await eventually(page, (i) => getComputedStyle(document.getElementById(i)).display === "none", id);
+      await setPref(opts, key, false);
+      await eventually(page, (i) => getComputedStyle(document.getElementById(i)).display !== "none", id);
+    }
+    ok("Scholar's own Cited by / Co-authors / Public access blocks are shown by default and each can be hidden from the settings");
+
     // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
     await opts.bringToFront();
     await opts.setViewportSize({ width: 1360, height: 640 });

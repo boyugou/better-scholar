@@ -88,6 +88,9 @@
       option({ key: "ranks.core", label: t("optCore"), hint: t("optCoreHint"), get: () => prefs.ranks.core, set: (v) => { prefs.ranks.core = v; } })),
     card(t("optMarksTitle"), t("marksHint"),
       ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } }))),
+    card(t("optHideTitle"), t("optHideHint"),
+      ...[["cited", "optHideCited", "optHideCitedHint"], ["coauthors", "optHideCo", "optHideCoHint"], ["access", "optHideAccess", "optHideAccessHint"]]
+        .map(([part, label, hint]) => option({ key: "hide." + part, label: t(label), hint: t(hint), get: () => prefs.hide[part], set: (v) => { prefs.hide[part] = v; } }))),
     card(t("optPanelTitle"), null,
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],

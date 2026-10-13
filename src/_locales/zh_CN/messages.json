@@ -507,5 +507,29 @@
   },
   "tsvCitations": {
     "message": "引用"
+  },
+  "optHideTitle": {
+    "message": "Scholar 自带的区块"
+  },
+  "optHideHint": {
+    "message": "隐藏个人主页上与面板重复、或你不需要的部分。默认什么都不隐藏。"
+  },
+  "optHideCited": {
+    "message": "被引用次数"
+  },
+  "optHideCitedHint": {
+    "message": "引用数、h 指数、i10 指数的表格和图表：面板里已有高亮论文的同样汇总。"
+  },
+  "optHideCo": {
+    "message": "合著者"
+  },
+  "optHideCoHint": {
+    "message": "侧栏里的合著者列表。"
+  },
+  "optHideAccess": {
+    "message": "公开访问"
+  },
+  "optHideAccessHint": {
+    "message": "侧栏里的公开访问方块。"
   }
 }
