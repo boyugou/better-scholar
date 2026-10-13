@@ -2255,3 +2255,11 @@ test("NOMS front page: Best Paper and Best Student Paper under the year's winner
   const h = `<h2>NOMS 2025 Award Winners</h2><p>Best Paper Award</p><p>Automating event detection offload into forwarding devices</p><p>Ann Lee, Bo Chan, Cy Dunn (UFRGS)</p><p>Best Student Paper Award</p><p>Dynamic frequency planning for mobile subnetworks</p><p>Ed Fox, Flo Gray (Technical University of Munich), Gil Hart (Nokia)</p><p>Best Demo Paper Award</p><p>A demo title that is not read</p><p>Hal Ito (X)</p><p>Dan Stokesberry Award</p>`;
   assert.deepEqual(parseNomsAwards(h, "https://noms2025.ieee-noms.org/").entries.map((e) => `${e.award} ${e.year} | ${e.authors.join("; ")}`), ["best 2025 | Ann Lee; Bo Chan; Cy Dunn", "student 2025 | Ed Fox; Flo Gray; Gil Hart"]);
 });
+
+test("MICCAI best paper page: the winner and the runners-up, one line of authors with brackets and the quoted title each; the conference's date line must carry the year", async () => {
+  const { parseMiccaiBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<h2>INTERNATIONAL CONFERENCE ON MEDICAL IMAGE COMPUTING</h2><h2>23-27 SEPTEMBER 2025</h2><h4>Winner</h4><p><strong>Ann Lee, Bo Chan, Cy Dunn (RICE University),</strong> <em>"Fit pixels, get labels: implicit networks"</em></p><h4>Runners-up</h4><p><strong>Ed Fox and Flo Gray (Charit&eacute; Berlin)</strong> <em>"Multifrequency wave inversion"</em></p>`;
+  const src = "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html";
+  assert.deepEqual(parseMiccaiBest(h, src).entries.map((e) => `${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["best | Ann Lee; Bo Chan; Cy Dunn | Fit pixels, get labels: implicit networks", "runner-up | Ed Fox; Flo Gray | Multifrequency wave inversion"]);
+  assert.equal(parseMiccaiBest(h.replace("2025</h2>", "2024</h2>"), src).entries.length, 0);
+});

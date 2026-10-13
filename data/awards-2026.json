@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6820
+  "count": 6823
  },
  "entries": [
   {
@@ -19522,6 +19522,30 @@
    "year": 2021,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "‘Unmochon’: A Tool to Combat Online Sexual Harassment over Facebook Messenger",
+   "authors": [
+    "Sharifa Sultana",
+    "Mitrasree Deb",
+    "Ananya Bhattacharjee",
+    "Shaid Hasan",
+    "S.M.Raihanul Alam",
+    "Trishna Chakraborty",
+    "Prianka Roy",
+    "Samira Fairuz Ahmed",
+    "Aparna Moitra",
+    "M Ashraful Amin",
+    "A.K.M. Najmul Islam",
+    "Syed Ishtiaque Ahmed"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10028/155/program",
+   "evidence": "CHI 2021 program, Honorable Mention: ‘Unmochon’: A Tool to Combat Online Sexual Harassment over Facebook Messenger — Sharifa Sultana, Mitrasree Deb, Ananya Bhattacharjee, Shaid Hasan, S.M.Raihanul Alam, Trishna Chakraborty, Prianka Roy, Samira Fairuz Ahmed, Aparna Moitra, M Ashraful Amin, A.K.M. Najmul Islam, Syed Ishtiaque Ahmed"
+  },
+  {
+   "venue": "CHI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"Beyond 3D printers\": Understanding Digital Fabrication Practices for the Education of Visually Impaired or Blind Youth",
    "authors": [
     "Emeline Brulé",
@@ -19530,6 +19554,20 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10028/155/program",
    "evidence": "CHI 2021 program, Honorable Mention: \"Beyond 3D printers\": Understanding Digital Fabrication Practices for the Education of Visually Impaired or Blind Youth — Emeline Brulé, Gilles Bailly"
+  },
+  {
+   "venue": "CHI",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "“Constant Pressure of Having to Perform”: Exploring Player Health Concerns in Esports",
+   "authors": [
+    "Daniel Madden",
+    "Casper Harteveld"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10028/155/program",
+   "evidence": "CHI 2021 program, Honorable Mention: “Constant Pressure of Having to Perform”: Exploring Player Health Concerns in Esports — Daniel Madden, Casper Harteveld"
   },
   {
    "venue": "CHI",
@@ -19603,20 +19641,6 @@
    "year": 2021,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "“Constant Pressure of Having to Perform”: Exploring Player Health Concerns in Esports",
-   "authors": [
-    "Daniel Madden",
-    "Casper Harteveld"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10028/155/program",
-   "evidence": "CHI 2021 program, Honorable Mention: “Constant Pressure of Having to Perform”: Exploring Player Health Concerns in Esports — Daniel Madden, Casper Harteveld"
-  },
-  {
-   "venue": "CHI",
-   "year": 2021,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
    "title": "“You Gotta Watch What You Say”: Surveillance of Communication with Incarcerated People",
    "authors": [
     "Kentrell Owens",
@@ -19626,30 +19650,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10028/155/program",
    "evidence": "CHI 2021 program, Honorable Mention: “You Gotta Watch What You Say”: Surveillance of Communication with Incarcerated People — Kentrell Owens, Camille Cobb, Lorrie Cranor"
-  },
-  {
-   "venue": "CHI",
-   "year": 2021,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "‘Unmochon’: A Tool to Combat Online Sexual Harassment over Facebook Messenger",
-   "authors": [
-    "Sharifa Sultana",
-    "Mitrasree Deb",
-    "Ananya Bhattacharjee",
-    "Shaid Hasan",
-    "S.M.Raihanul Alam",
-    "Trishna Chakraborty",
-    "Prianka Roy",
-    "Samira Fairuz Ahmed",
-    "Aparna Moitra",
-    "M Ashraful Amin",
-    "A.K.M. Najmul Islam",
-    "Syed Ishtiaque Ahmed"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10028/155/program",
-   "evidence": "CHI 2021 program, Honorable Mention: ‘Unmochon’: A Tool to Combat Online Sexual Harassment over Facebook Messenger — Sharifa Sultana, Mitrasree Deb, Ananya Bhattacharjee, Shaid Hasan, S.M.Raihanul Alam, Trishna Chakraborty, Prianka Roy, Samira Fairuz Ahmed, Aparna Moitra, M Ashraful Amin, A.K.M. Najmul Islam, Syed Ishtiaque Ahmed"
   },
   {
    "venue": "CHI",
@@ -21904,6 +21904,22 @@
    "year": 2022,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "“Just Not Together”: The Experience of Videoconferencing for People with Aphasia during the Covid-19 Pandemic",
+   "authors": [
+    "Timothy Neate",
+    "Vasiliki Kladouchou",
+    "Stephanie Wilson",
+    "Shehzmani Shams"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10072/291/program",
+   "evidence": "CHI 2022 program, Honorable Mention: “Just Not Together”: The Experience of Videoconferencing for People with Aphasia during the Covid-19 Pandemic — Timothy Neate, Vasiliki Kladouchou, Stephanie Wilson, Shehzmani Shams"
+  },
+  {
+   "venue": "CHI",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"You have to prove the threat is real\": Understanding the needs of Female Journalists and Activists to Document and Report Online Harassment",
    "authors": [
     "Nitesh Goyal",
@@ -21929,22 +21945,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10072/291/program",
    "evidence": "CHI 2022 program, Honorable Mention: (Re)discovering the Physical Body Online: Strategies and Challenges to Approach Non-Cisgender Identity in Social Virtual Reality — Guo Freeman, Divine Maloney, Dane Acena, Catherine Barwulor"
-  },
-  {
-   "venue": "CHI",
-   "year": 2022,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "“Just Not Together”: The Experience of Videoconferencing for People with Aphasia during the Covid-19 Pandemic",
-   "authors": [
-    "Timothy Neate",
-    "Vasiliki Kladouchou",
-    "Stephanie Wilson",
-    "Shehzmani Shams"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10072/291/program",
-   "evidence": "CHI 2022 program, Honorable Mention: “Just Not Together”: The Experience of Videoconferencing for People with Aphasia during the Covid-19 Pandemic — Timothy Neate, Vasiliki Kladouchou, Stephanie Wilson, Shehzmani Shams"
   },
   {
    "venue": "CHI",
@@ -24244,6 +24244,22 @@
    "year": 2023,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "“Nudes? Shouldn't I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans",
+   "authors": [
+    "Vaughn Hamilton",
+    "Ananta Soneji",
+    "Allison McDonald",
+    "Elissa M. Redmiles"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10088/250/program",
+   "evidence": "CHI 2023 program, Honorable Mention: “Nudes? Shouldn't I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans — Vaughn Hamilton, Ananta Soneji, Allison McDonald, Elissa M. Redmiles"
+  },
+  {
+   "venue": "CHI",
+   "year": 2023,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"We Cried on Each Other's Shoulders\": How LGBTQ+ Individuals Experience Social Support in Social Virtual Reality",
    "authors": [
     "Lingyuan Li",
@@ -24299,22 +24315,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10088/250/program",
    "evidence": "CHI 2023 program, Honorable Mention: “You Can See the Connections”: Facilitating Visualization of Care Priorities in People Living with Multiple Chronic Health Conditions — Hyeyoung Ryu, Andrew B.L. Berry, Catherine Y Lim, Andrea Hartzler, Tad Hirsch, Juanita I Trejo, Zoë Abigail Bermet, Brandi Crawford-Gallagher, Vi Tran, Dawn Ferguson, David J Cronkite, Brooks Tiffany, John Weeks, James Ralston"
-  },
-  {
-   "venue": "CHI",
-   "year": 2023,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "“Nudes? Shouldn't I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans",
-   "authors": [
-    "Vaughn Hamilton",
-    "Ananta Soneji",
-    "Allison McDonald",
-    "Elissa M. Redmiles"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10088/250/program",
-   "evidence": "CHI 2023 program, Honorable Mention: “Nudes? Shouldn't I charge for these?”: Motivations of New Sexual Content Creators on OnlyFans — Vaughn Hamilton, Ananta Soneji, Allison McDonald, Elissa M. Redmiles"
   },
   {
    "venue": "CHI",
@@ -34434,6 +34434,21 @@
    "year": 2026,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "“No One Should Know I Used This App\": Challenges and Design Opportunities for Digital Mental Well-Being Support for Young Saudi Women",
+   "authors": [
+    "Sarah Aldaweesh",
+    "Max Van Kleek",
+    "Nigel R Shadbolt"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10142/86/program",
+   "evidence": "CHI 2026 program, Honorable Mention: “No One Should Know I Used This App\": Challenges and Design Opportunities for Digital Mental Well-Being Support for Young Saudi Women — Sarah Aldaweesh, Max Van Kleek, Nigel R Shadbolt"
+  },
+  {
+   "venue": "CHI",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"That's another doom I haven't thought about\": A User Study on AI Labels as a Safeguard Against Image-Based Misinformation",
    "authors": [
     "Sandra Höltervennhoff",
@@ -34462,21 +34477,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10142/86/program",
    "evidence": "CHI 2026 program, Honorable Mention: \"Tinged with Heartbreak\": An Ethnographic Account of Navigating Autistic Loneliness and the Fragile Promise of AI Companionship — Anna Hollis"
-  },
-  {
-   "venue": "CHI",
-   "year": 2026,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "“No One Should Know I Used This App\": Challenges and Design Opportunities for Digital Mental Well-Being Support for Young Saudi Women",
-   "authors": [
-    "Sarah Aldaweesh",
-    "Max Van Kleek",
-    "Nigel R Shadbolt"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10142/86/program",
-   "evidence": "CHI 2026 program, Honorable Mention: “No One Should Know I Used This App\": Challenges and Design Opportunities for Digital Mental Well-Being Support for Young Saudi Women — Sarah Aldaweesh, Max Van Kleek, Nigel R Shadbolt"
   },
   {
    "venue": "CHI",
@@ -41139,6 +41139,21 @@
    "year": 2021,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "“Jol\" or “Pani\"?: How Does Governance Shape a Platform's Identity?",
+   "authors": [
+    "Dipto Das",
+    "Carsten Østerlund",
+    "Bryan Semaan"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10069/53/program",
+   "evidence": "CSCW 2021 program, Honorable Mention: “Jol\" or “Pani\"?: How Does Governance Shape a Platform's Identity? — Dipto Das, Carsten Østerlund, Bryan Semaan"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"We Would Never Write That Down\": Classifications of Unemployed and Data Challenges for AI",
    "authors": [
     "Anette C. M. Petersen",
@@ -41166,21 +41181,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10069/53/program",
    "evidence": "CSCW 2021 program, Honorable Mention: “What is the Topic of the Group, Please?” On Migration, Care and the Challenges of Participation in Design — Max Krüger, Anne Weibert, Debora de Castro Leal, Dave Randall, Volker Wulf"
-  },
-  {
-   "venue": "CSCW",
-   "year": 2021,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "“Jol\" or “Pani\"?: How Does Governance Shape a Platform's Identity?",
-   "authors": [
-    "Dipto Das",
-    "Carsten Østerlund",
-    "Bryan Semaan"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10069/53/program",
-   "evidence": "CSCW 2021 program, Honorable Mention: “Jol\" or “Pani\"?: How Does Governance Shape a Platform's Identity? — Dipto Das, Carsten Østerlund, Bryan Semaan"
   },
   {
    "venue": "CSCW",
@@ -42812,6 +42812,21 @@
    "year": 2025,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
+   "title": "‘My Dataset of Love’: A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships",
+   "authors": [
+    "Xuetong WANG",
+    "Ching Christie PANG",
+    "Pan Hui"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10140/49/program",
+   "evidence": "CSCW 2025 program, Honorable Mention: ‘My Dataset of Love’: A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships — Xuetong WANG, Ching Christie PANG, Pan Hui"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
    "title": "\"I Have Abused Someone Who Abused Me\": Understanding People Who Have Experienced Both Sides of Harassment Accusations in Social VR",
    "authors": [
     "Guo Freeman",
@@ -42853,21 +42868,6 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10140/49/program",
    "evidence": "CSCW 2025 program, Honorable Mention: \"There Has To Be a Lot That We're Missing”: Moderating AI-Generated Content on Reddit — Travis Lloyd, Joseph Reagle, Mor Naaman"
-  },
-  {
-   "venue": "CSCW",
-   "year": 2025,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
-   "title": "‘My Dataset of Love’: A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships",
-   "authors": [
-    "Xuetong WANG",
-    "Ching Christie PANG",
-    "Pan Hui"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10140/49/program",
-   "evidence": "CSCW 2025 program, Honorable Mention: ‘My Dataset of Love’: A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships — Xuetong WANG, Ching Christie PANG, Pan Hui"
   },
   {
    "venue": "CSCW",
@@ -43625,22 +43625,6 @@
    "year": 2026,
    "award": "runner-up",
    "awardLabel": "Honorable Mention",
-   "title": "\"Re-Tell the Fortune so I Can Believe It\": How Chinese User Communities Engage with and Interpret GenAI-based Fortune Telling",
-   "authors": [
-    "Long Ling",
-    "Xiyu Zheng",
-    "Gengchen Cao",
-    "RAY LC"
-   ],
-   "track": "main",
-   "source": "https://files.sigchi.org/conference/cache/10156/51/program",
-   "evidence": "CSCW 2026 program, Honorable Mention: \"Re-Tell the Fortune so I Can Believe It\": How Chinese User Communities Engage with and Interpret GenAI-based Fortune Telling — Long Ling, Xiyu Zheng, Gengchen Cao, RAY LC"
-  },
-  {
-   "venue": "CSCW",
-   "year": 2026,
-   "award": "runner-up",
-   "awardLabel": "Honorable Mention",
    "title": "“I Just Don't Want My Work Being Fed Into The AI Blender”: Queer Artists on Refusing and Resisting Generative AI",
    "authors": [
     "Jordan Taylor",
@@ -43653,6 +43637,22 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10156/51/program",
    "evidence": "CSCW 2026 program, Honorable Mention: “I Just Don't Want My Work Being Fed Into The AI Blender”: Queer Artists on Refusing and Resisting Generative AI — Jordan Taylor, Joel Mire, Alicia DeVrio, Maarten Sap, Haiyi Zhu, Sarah E Fox"
+  },
+  {
+   "venue": "CSCW",
+   "year": 2026,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "\"Re-Tell the Fortune so I Can Believe It\": How Chinese User Communities Engage with and Interpret GenAI-based Fortune Telling",
+   "authors": [
+    "Long Ling",
+    "Xiyu Zheng",
+    "Gengchen Cao",
+    "RAY LC"
+   ],
+   "track": "main",
+   "source": "https://files.sigchi.org/conference/cache/10156/51/program",
+   "evidence": "CSCW 2026 program, Honorable Mention: \"Re-Tell the Fortune so I Can Believe It\": How Chinese User Communities Engage with and Interpret GenAI-based Fortune Telling — Long Ling, Xiyu Zheng, Gengchen Cao, RAY LC"
   },
   {
    "venue": "CSCW",
@@ -81562,6 +81562,63 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "LISA '13: dsync: Efficient Block-wise Synchronization of Multi-Gigabyte Binary Data — Thomas Knauth, TU Dresden; Christof Fetzer, TU Dresden"
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fit Pixels, Get Labels: Meta-learned Implicit Networks for Image Segmentation",
+   "authors": [
+    "Kushal Vyas",
+    "Ashok Veeraraghavan",
+    "Guha Balakrishnan"
+   ],
+   "track": "main",
+   "source": "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html",
+   "evidence": "MICCAI 2025 Winner: Kushal Vyas, Ashok Veeraraghavan, Guha Balakrishnan (RICE University), \"Fit Pixels, Get Labels: Meta-learned Implicit Networks for Image Segmentation\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Learning Segmentation from Radiology Reports",
+   "authors": [
+    "Pedro R. A. S. Bassi",
+    "Wenxuan Li",
+    "Jieneng Chen",
+    "Zheren Zhu",
+    "Tianya Lin",
+    "Sergio Decherchi",
+    "Andrea Cavalli",
+    "Kang Wang",
+    "Yang Yang",
+    "Alan L. Yuille",
+    "Zongwei Zhou"
+   ],
+   "track": "main",
+   "source": "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html",
+   "evidence": "MICCAI 2025 Runner-up: Pedro R. A. S. Bassi, Wenxuan Li, Jieneng Chen, Zheren Zhu, Tianya Lin, Sergio Decherchi, Andrea Cavalli, Kang Wang, Yang Yang, Alan L. Yuille, and Zongwei Zhou (John Hopkins University), \"Learning Segmentation from Radiology Reports\""
+  },
+  {
+   "venue": "MICCAI",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Multifrequency Neural Network-Based Wave Inversion",
+   "authors": [
+    "Héloïse Bustin",
+    "Tom Meyer",
+    "Jakob Jordan",
+    "Lars Walczak",
+    "Heiko Tzschätzsch",
+    "Ingolf Sack",
+    "Anya Hennemuth"
+   ],
+   "track": "main",
+   "source": "https://conferences.miccai.org/2025/en/BEST-PAPER-AWARDS.html",
+   "evidence": "MICCAI 2025 Runner-up: Héloïse Bustin, Tom Meyer, Jakob Jordan, Lars Walczak, Heiko Tzschätzsch, Ingolf Sack and Anya Hennemuth (Charité - Universitätsmedizin Berlin), \"Multifrequency Neural Network-Based Wave Inversion\""
   },
   {
    "venue": "MICRO",
