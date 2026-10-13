@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.64 — 2026-10-12
+
+- The best papers of ISCA 2024 (Constable) and 2025 (two) and of MICRO 2022 (Whisper, Hermes), from the conferences' own front pages (`tot.mjs isca-best`, `tot.mjs micro-best`); the list had only their influential / test of time papers for those years. The list has 6551 awards.
+
 ## 2.10.63 — 2026-10-12
 
 - SenSys's best papers and runners-up of 2020, 2021 and 2024 (7 papers; the list had only its test of time papers) from each year's own page (`tot.mjs sensys-year`); 2018's and 2019's pages name a title without authors. The list has 6546 awards.

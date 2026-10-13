@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6546
+  "count": 6551
  },
  "entries": [
   {
@@ -70891,6 +70891,29 @@
   {
    "venue": "ISCA",
    "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Constable: Improving Performance and Power Efficiency by Safely Eliminating Load Execution",
+   "authors": [
+    "R. Bera",
+    "A. Ranganathan",
+    "J. Rakshit",
+    "S. Mahto",
+    "A. Nori",
+    "J. Gaur",
+    "A. Olgun",
+    "K. Kanellopoulos",
+    "M. Sadrosadati",
+    "S. Subramoney",
+    "O. Mutlu"
+   ],
+   "track": "main",
+   "source": "https://iscaconf.org/isca2024/",
+   "evidence": "ISCA 2024 Best Paper Award: Constable: Improving Performance and Power Efficiency by Safely Eliminating Load Execution — R. Bera, A. Ranganathan, J. Rakshit, S. Mahto, A. Nori, J. Gaur, A. Olgun, K. Kanellopoulos, M. Sadrosadati, S. Subramoney, O. Mutlu"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2024,
    "award": "tot",
    "awardLabel": "Influential ISCA Paper Award",
    "title": "Exploiting ILP, TLP, and DLP with the polymorphous TRIPS architecture",
@@ -70908,6 +70931,48 @@
    "paperYear": 2003,
    "source": "https://www.sigarch.org/awards/acm-sigarchieee-cs-tcca-influential-isca-paper-award/",
    "evidence": "2024 (For ISCA 2003): Karthikeyan Sankaralingam, Ramadass Nagarajan, Haiming Liu, Changkyu Kim, Jaehyuk Huh, Doug Burger, Stephen W. Keckler, and Charles R. Moore — Exploiting ILP, TLP, and DLP with the polymorphous TRIPS architecture"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "H2-LLM: Hardware-Dataflow Co-Exploration for Heterogeneous Hybrid-Bonding-based Low-Batch LLM Inference",
+   "authors": [
+    "Cong Li",
+    "Yihan Yin",
+    "Xintong Wu",
+    "Jingchen Zhu",
+    "Zhutianya Gao",
+    "Dimin Niu",
+    "Qiang Wu",
+    "Xin Si",
+    "Yuan Xie",
+    "Chen Zhang",
+    "Guangyu Sun"
+   ],
+   "track": "main",
+   "source": "https://iscaconf.org/isca2025/",
+   "evidence": "ISCA 2025 Best Paper Award: H2-LLM: Hardware-Dataflow Co-Exploration for Heterogeneous Hybrid-Bonding-based Low-Batch LLM Inference — Cong Li, Yihan Yin, Xintong Wu, Jingchen Zhu, Zhutianya Gao, Dimin Niu, Qiang Wu, Xin Si, Yuan Xie, Chen Zhang, Guangyu Sun"
+  },
+  {
+   "venue": "ISCA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Precise exceptions in relaxed architectures",
+   "authors": [
+    "Ben Simner",
+    "Alasdair Armstrong",
+    "Thomas Bauereiss",
+    "Brian Campbell",
+    "Ohad Kammar",
+    "Jean Pichon-Pharabod",
+    "Peter Sewell"
+   ],
+   "track": "main",
+   "source": "https://iscaconf.org/isca2025/",
+   "evidence": "ISCA 2025 Best Paper Award: Precise exceptions in relaxed architectures — Ben Simner, Alasdair Armstrong, Thomas Bauereiss, Brian Campbell, Ohad Kammar, Jean Pichon-Pharabod, Peter Sewell"
   },
   {
    "venue": "ISCA",
@@ -78198,6 +78263,44 @@
    "paperYear": 2003,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2021 Test of Time Award: MICRO 2003: Single-ISA Heterogeneous Multi-Core Architectures: The Potential for Processor Power Reduction — Rakesh Kumar, Keith I. Farkas, Norman P. Jouppi, Parthasarathy Ranganathan, Dean M. Tullsen"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hermes: Accelerating Long-Latency Load Requests via Perceptron-Based Off-Chip Load Prediction",
+   "authors": [
+    "Rahul Bera",
+    "Konstantinos Kanellopoulos",
+    "Shankar Balachandran",
+    "David Novo",
+    "Ataberk Olgun",
+    "Mohammad Sadrosadati",
+    "Onur Mutlu"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro55/",
+   "evidence": "MICRO 2022 Best Paper Award: Hermes: Accelerating Long-Latency Load Requests via Perceptron-Based Off-Chip Load Prediction — Rahul Bera, Konstantinos Kanellopoulos, Shankar Balachandran, David Novo, Ataberk Olgun, Mohammad Sadrosadati, Onur Mutlu"
+  },
+  {
+   "venue": "MICRO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Whisper: Profile-Guided Branch Misprediction Elimination for Data Center Applications",
+   "authors": [
+    "Tanvir Ahmed Khan",
+    "Muhammed Ugur",
+    "Krishnendra Nathella",
+    "Dam Sunwoo",
+    "Heiner Litz",
+    "Daniel A. Jiménez",
+    "Baris Kasikci"
+   ],
+   "track": "main",
+   "source": "https://www.microarch.org/micro55/",
+   "evidence": "MICRO 2022 Best Paper Award: Whisper: Profile-Guided Branch Misprediction Elimination for Data Center Applications — Tanvir Ahmed Khan, Muhammed Ugur, Krishnendra Nathella, Dam Sunwoo, Heiner Litz, Daniel A. Jiménez, Baris Kasikci"
   },
   {
    "venue": "MICRO",

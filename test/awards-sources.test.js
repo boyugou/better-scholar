@@ -2066,3 +2066,13 @@ test("SenSys year pages: title and authors with brackets under 'Best Paper Award
   const b = `<title>ACM SenSys 2021</title><p>Conference in Coimbra</p><p>Best paper:</p><p>"Ultra-low SNR LoRa communication with neural demodulation" -</p><p>C. Li, H. Guo, S. Tong</p><p>Best Presentation at the PhD Forum</p>`;
   assert.deepEqual(parseSensysYear(b, "https://sensys.acm.org/2021/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Ultra-low SNR LoRa communication with neural demodulation | C. Li; H. Guo; S. Tong"]);
 });
+
+test("ISCA front page: quoted 'Title by Authors' lines (the page's 'y' typo too) or a title ending ' by' over an authors' line; honorable mentions left out. MICRO: authors, then for \"Title\", over several lines", async () => {
+  const { parseIscaBest, parseMicroBest } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>2025 ISCA Best Paper Award</p><p>"Precise exceptions in relaxed architectures" by Ann Lee, Bo Chan</p><p>"A hardware dataflow co-exploration design" y Cy Dunn, Ed Fox</p><p>2025 ISCA Best Paper Honorable Mentions</p><p>"An honoured cache paper title" by Flo Gray</p>`;
+  assert.deepEqual(parseIscaBest(a, "https://iscaconf.org/isca2025/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Precise exceptions in relaxed architectures | Ann Lee; Bo Chan", "A hardware dataflow co-exploration design | Cy Dunn; Ed Fox"]);
+  const b = `<p>2024 ISCA Best Paper Award</p><p>Eliminating load execution for performance by</p><p>R. Bera, A. Ranganathan, O. Mutlu</p><p>2024 ISCA Distinguished Artifact Award</p>`;
+  assert.deepEqual(parseIscaBest(b, "https://iscaconf.org/isca2024/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Eliminating load execution for performance | R. Bera; A. Ranganathan; O. Mutlu"]);
+  const m = `<p>MICRO 2022: Home</p><p>Best Paper Awards</p><p>Gil Hart, Hal Ito,</p><p>and Ivy Jones, for "Profile-guided branch</p><p>elimination for data centers"</p><p>The other best paper nominees (as noted)</p>`;
+  assert.deepEqual(parseMicroBest(m, "https://www.microarch.org/micro55/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2022 Profile-guided branch elimination for data centers | Gil Hart; Hal Ito; Ivy Jones"]);
+});
