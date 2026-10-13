@@ -44,6 +44,7 @@ test("co-first marks: a leading group that shares a mark counts; a lone mark, or
   assert.equal(role("A Smith*†, B Jones*, C Lee†", 2), "last", "the first author's extra mark does not make the corresponding author co-first");
   assert.equal(role("A Smith*†, B Jones*, C Lee†, D Kim", 2), "middle");
   assert.equal(role("A Smith*†, B Jones*†, C Lee*†, D Kim", 2), "cofirst", "a group that shares both marks");
+  assert.equal(role("A Smith*†, B Jones*†, C Lee*, D Kim", 2), "cofirst", "and goes on while an author carries one of the shared marks");
   assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 1), "cofirst");
   assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 2), "middle", "a second group with another mark is not co-first");
   assert.equal(role("A Smith†, B Jones‡, C Lee", 1), "second", "two different marks on the first two are two different notes");
@@ -77,8 +78,13 @@ test("an all-caps initials + surname name (a patent's inventor) is offered as a 
   const shouted = ["WU LI, X ZHANG, Y CHEN", "A WANG, WU LI", "W Li, Q Sun", "Wei Li, K Ho"];
   assert.deepEqual(names.suggestVariants(shouted, wei).suggestions, [], "nothing offered on the strength of the capitals alone");
   assert.deepEqual(names.suggestVariants([...shouted, "WU Li, K Ho"], wei).suggestions, [{ name: "WU LI", rows: 2 }], "offered once 'WU Li' is how the profile writes the owner");
-  // once the person adds it, it finds the owner
+  // once the person adds it, it finds the owner — in capitals only: a spelling in capitals must not make every mixed-case namesake the owner's
   assert.equal(names.matchesAuthor("JA DOUDNA", { name: "Jennifer Doudna", alternates: ["JA DOUDNA"] }), true);
+  const caps = { name: "Wei Li", alternates: ["WU LI"] };
+  assert.equal(names.matchesAuthor("WU LI", caps), true);
+  assert.equal(names.matchesAuthor("Wu Li", caps), false, "an ordinary 'Wu Li' is somebody else");
+  assert.equal(names.classifyRow("Wu Li, X Yang, Wei Li", caps).role, "last", "and does not take the owner's place in the author line");
+  assert.equal(names.matchesAuthor("Wei Li", caps), true);
 });
 
 test("middle initials: profile 'Geoffrey Hinton' matches 'GE Hinton'", () => {

@@ -72,7 +72,7 @@ btn.addEventListener("click", () => {
     if (STOP_AFTER >= 0 && presses++ >= STOP_AFTER) { btn.disabled = false; return; }
     document.getElementById("gsc_a_b").insertAdjacentHTML("beforeend", REST.splice(0, 80).join(""));
     btn.disabled = REST.length === 0;
-  }, 150);
+  }, ${opts.latency});
 });
 </script></body></html>`;
 }
@@ -91,7 +91,7 @@ function detailPage(profile, id, hl) {
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter } = {}) {
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150 } = {}) {
   ROW_HL = hl;
   BROKEN = brokenLayout;
   const profile = loadProfile(slug, repeat);
@@ -107,7 +107,7 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
     }
     if (u.pathname === "/citations") {
       res.setHeader("content-type", "text/html; charset=utf-8");
-      return res.end(profilePage(profile, { pageSize, header, stopAfter }));
+      return res.end(profilePage(profile, { pageSize, header, stopAfter, latency }));
     }
     if (u.pathname === "/scholar" || u.pathname === "/scholar.bib") {                         // (search results, and a download the language redirect must leave alone)
       res.setHeader("content-type", u.pathname.endsWith(".bib") ? "text/plain" : "text/html; charset=utf-8");

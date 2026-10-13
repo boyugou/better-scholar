@@ -1,8 +1,8 @@
 name: data-fresh
 
 # Are the bundled CCF and ICORE files still what the official sources publish? Checked every Monday (and on demand).
-# A failed run (GitHub mails it) means a changed file or a newer edition: see "Regenerate" in data/README.md.
-# A source that cannot be reached is only a warning: no verdict that week.
+# A failed run (GitHub mails it) means a changed file or a newer edition (exit 1: see "Regenerate" in data/README.md), or that a source could not be
+# reached or refused the check (exit 2, "no verdict": the data may be stale, and a check that stays silent for weeks is no check).
 on:
   schedule:
     - cron: "23 5 * * 1"
@@ -16,9 +16,4 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - run: |
-          set +e
-          node scripts/check-data-fresh.mjs
-          code=$?
-          if [ "$code" = 2 ]; then echo "::warning::a source could not be reached, so there is no verdict this week"; exit 0; fi
-          exit $code
+      - run: node scripts/check-data-fresh.mjs

@@ -33,7 +33,7 @@
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
     loadingAll: false,
-    complete: false,                            // the whole list is here: the page offered nothing more at the start, or our loader ran to its end
+    complete: false,                            // the whole list is here (see listComplete)
     loadMessage: "",                           // why loading the rest of the list stopped, when it was not asked to
     resolving: null,                            // { done, total }
     resolveMessage: ""
@@ -55,8 +55,8 @@
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
   // the ranking the panel's table uses (null when both lists are switched off)
   const currentSource = () => B.prefs.source(prefs, ui);
-  // Is the whole list here? Only when the page offered nothing more at the start, or our loader ran to its end ("done"): after a cancel or a stall Scholar's
-  // button can be disabled just because a request is still in flight, which says nothing.
+  // Is the whole list here? Only when the page offered nothing more at the start, our loader ran to its end ("done"), or rows came that the loader did not ask for and
+  // Scholar's button stayed off (checkComplete): after a cancel or a stall the button can be disabled just because a request is still in flight, which says nothing.
   const listComplete = () => state.complete && !state.loadingAll && !B.scholar.canLoadMore();
   // Nothing on the profile is on a list that is switched on (a biologist's, say) and nothing more is coming: the tier columns and the switch between the lists
   // would be empty, so the table is by role only (the model says so in `noRanks`; the lists that are on stay in `sources`, for the note)
@@ -469,6 +469,8 @@
   // Rows came that our loader did not ask for (the person pressed Scholar's own "Show more", or a cancelled request was answered): once Scholar has had the moment it
   // needs to enable its button again and the button is still off, the whole list is here
   let completeTimer = 0;
+  // (a press of the button — the person's or the loader's — starts a request: what a pending check was going to read is stale until that request is answered)
+  document.addEventListener("click", (e) => { if (e.target && e.target.closest && e.target.closest("#gsc_bpf_more")) clearTimeout(completeTimer); }, true);
   const checkComplete = () => {
     clearTimeout(completeTimer);
     completeTimer = setTimeout(() => { if (!state.loadingAll && !state.complete && !B.scholar.canLoadMore()) { state.complete = true; refresh(); } }, 1800);

@@ -22,6 +22,7 @@
   $("pv-note").textContent = t("optPreviewNote");
   $("storage").textContent = t("optStorage");
   $("ver").textContent = "v" + chrome.runtime.getManifest().version;
+  $("lnk-privacy").parentNode.setAttribute("aria-label", t("extName"));
   // plain links to this project's own pages, opened only when clicked (the settings page itself sends nothing)
   for (const [id, href, text] of [["lnk-privacy", "https://boyugou.github.io/scholar-roles-and-ranks/privacy/", t("optLinkPrivacy")], ["lnk-issues", B.dom.REPO + "/issues/new/choose", t("optLinkIssues")], ["lnk-source", B.dom.REPO, "GitHub"]]) {
     $(id).href = href; $(id).textContent = text;

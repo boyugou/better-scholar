@@ -11,7 +11,7 @@
 //
 // Exit status: 0 current · 1 out of date, or a source that says the file is gone (404, 410: moved or removed; what changed and the commands to run are
 // printed) · 2 a source could not be reached or would not answer (no answer, a 5xx, a 403 or other refusal — bot checks answer so —, a challenge page instead of
-// the file: no verdict).
+// the file: no verdict — the weekly workflow fails on it too, so that a check that can no longer reach its sources is noticed).
 // Run on a schedule by .github/workflows/data-fresh.yml.
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";

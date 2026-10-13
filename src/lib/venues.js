@@ -517,7 +517,8 @@
     // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"; with the years, ordinals and the cut taken out too
     // ("2019 IEEE", "2023 IEEE 39th …": Scholar's cut-off form of a conference of the IEEE) it still says no more than the publisher —
     // only the two journals titled "Proceedings of the IEEE" / "…National Academy of Sciences" name themselves by it
-    const publisherOnly = ORG.has(squash(p.plain)) || (!JOURNAL_PROCEEDINGS.test(p.plain.trim()) && (() => { const k = canonTokens(p.plain, "full"); return k.length > 0 && k.every((t) => ORG.has(t)); })());
+    // (the journal's own line is short, with a volume: a cut "Proceedings of the IEEE …" is the start of a conference's — CVPR, ICCV …)
+    const publisherOnly = ORG.has(squash(p.plain)) || (!(JOURNAL_PROCEEDINGS.test(p.plain.trim()) && (!p.truncated || p.hasVolume)) && (() => { const k = canonTokens(p.plain, "full"); return k.length > 0 && k.every((t) => ORG.has(t)); })());
     // a cut-off string that ends in the acronym of a real venue ("Medical Image Computing and Computer Assisted Intervention− MICCAI
     // 2017 …", Springer's series form) has said its whole name before the acronym: the variant without acronyms may speak too
     const endsInAcronym = p.truncated && (() => {

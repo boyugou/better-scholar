@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.22.9 — 2026-10-13
+
+From an independent review of 2.22.6–2.22.8:
+
+- **A spelling in capitals matches only capitals.** Accepting the offered `WU LI` still made every mixed-case `Wu Li` the owner's, at full strength (so `Wu Li, X Yang, Wei Li` put the owner first). A spelling that is all capitals now finds only an author written in capitals; the owner's own name is unchanged.
+- **A press of *Show more* drops the pending "list complete" check.** The button is off while a request is in flight, so a second press within the check's 1.8 s, answered slowly, made the panel call a partial list complete (the lone "papers loaded" line gone, the tier columns gone on a profile with nothing ranked yet). The check now starts only after the last press is answered (end-to-end step with a stand-in that answers in three seconds).
+- **A cut `Proceedings of the IEEE …` is no journal.** The journal's own line is short and has a volume; a line cut right after "IEEE" is the start of a conference's (CVPR, ICCV …), and was badged CCF A as the journal.
+- **The co-first group goes on while an author carries one of the marks the first two share** (`A*†, B*†, C*`: C is co-first again); `A*†, B*, C†` still makes C the last author.
+- **The weekly data check fails on "no verdict" too** (a source that cannot be reached or refuses): a check that can stay green without ever reaching its sources would hide a stale list. A 404 / 410 is still the finding.
+- The settings footer's navigation is named in the person's language (it said "Scholar Roles & Ranks" in English everywhere); comments and the 2.22.6 notes name all three ways a list becomes complete. (The 2.22.8 regression test covers the organisation-only forms of several publishers, of which only IEEE was ever wrong.)
+
 ## 2.22.8 — 2026-10-13
 
 - **A publisher with only a year, an ordinal or the cut is no venue.** Read on the live pages of Scholar's search results: the source line is cut to fit, and `2023 IEEE 39th …` (a cut-off conference of the IEEE) was badged CCF A as the journal *Proceedings of the IEEE*; so were `2019 IEEE …`, `IEEE 39th …`, `The 39th IEEE …` and a bare `2019 IEEE` — a wrong badge, which the principles do not allow. A string whose words, once years, ordinals and the cut are taken out, are only organisations (IEEE, ACM, SIAM, USENIX …) now says no more than the publisher; the two journals literally titled *Proceedings of the IEEE* / *…National Academy of Sciences* still match. Regression test over every organisation and form; none of the 1,000+ real corpus strings changed.

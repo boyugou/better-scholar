@@ -1020,6 +1020,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         assert.equal(await pgH.locator("#gsc_bpf_more").isDisabled(), true);
         await eventually(pgH, () => !document.querySelector("#rr-panel [data-tier]") && !!document.querySelector('[data-rr="note"]').textContent.startsWith("No venue on this profile"));
       } finally { await pgH.close().catch(() => {}); await fxH.close(); }
+      // a press answered slowly: the button is off while the request is in flight, which says nothing about the list being whole (a pending check is dropped by the press)
+      const fxS = await start({ slug: "non-cs-demo", pageSize: 5, repeat: 20, latency: 3000 });       // (260 papers, 80 a press, three seconds an answer)
+      const pgS = await ctxN.newPage();
+      try {
+        await pgS.goto(fxS.url);
+        await pgS.waitForSelector('#rr-panel th button[data-tier="none"]');
+        await pgS.bringToFront();
+        await pgS.evaluate(() => document.getElementById("gsc_bpf_more").click());
+        await eventually(pgS, () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 85);       // answered: the panel starts its 1.8 s check
+        await pgS.waitForTimeout(500);
+        await pgS.evaluate(() => document.getElementById("gsc_bpf_more").click());                          // the person presses again, the answer is three seconds away
+        await pgS.waitForTimeout(2300);                                                                    // (past the moment the old check would have read the button as off)
+        assert.equal(await pgS.locator("#rr-panel [data-tier]").count() > 0, true, "a request in flight is not a whole list: the tier columns stay");
+        assert.equal(await pgS.locator("#gsc_a_b tr.gsc_a_tr").count(), 85);
+      } finally { await pgS.close().catch(() => {}); await fxS.close(); }
       ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup); a tier selection does not outlive the columns");
     } finally { await ctxN.close(); await fxN.close(); }
   }

@@ -143,6 +143,8 @@
     return full(a.givens) && full(b.givens) ? 2 : 1;
   }
 
+  const isAllCaps = (s) => /[A-Z]/.test(fold(s)) && fold(s) === fold(s).toUpperCase();
+
   // owner = { name, alternates?: string[] } — alternates are extra spellings the
   // user told us about ("Zhang Wei", "W. Zhang").
   function matchStrength(authorText, owner) {
@@ -150,7 +152,11 @@
     a.raw = authorText;
     const variants = [owner.name, ...(owner.alternates || [])].filter(Boolean);
     let best = 0;
-    for (const v of variants) best = Math.max(best, strength(a, v));
+    for (const v of variants) {
+      // a spelling in capitals ("JA DOUDNA", offered from a patent) names the capitals: it must not make every "Wu Li" the owner's, as an ordinary spelling would
+      if (v !== owner.name && isAllCaps(v) && !isAllCaps(authorText)) continue;
+      best = Math.max(best, strength(a, v));
+    }
     return best;
   }
 
@@ -175,7 +181,7 @@
   }
 
   // How many authors at the front share a mark ("A*, B*, C": 2). The marks of the group are the ones the first two authors have in common, and it goes on while
-  // an author carries all of them; fewer than two is no group: a lone mark on the first author is a note or a corresponding author, and marks that begin
+  // an author carries one of them; fewer than two is no group: a lone mark on the first author is a note or a corresponding author, and marks that begin
   // further down (or another symbol, or an extra symbol of the first author — "A*†, B*, C†": C is the corresponding author) are not equal contribution.
   function leadingGroup(tokens) {
     const a = tokens[0] && tokens[0].marks, b = tokens[1] && tokens[1].marks;
@@ -183,7 +189,7 @@
     const shared = a.filter((m) => b.includes(m));
     if (!shared.length) return 0;
     let k = 2;
-    while (k < tokens.length && shared.every((m) => (tokens[k].marks || []).includes(m))) k++;
+    while (k < tokens.length && shared.some((m) => (tokens[k].marks || []).includes(m))) k++;
     return k;
   }
 
