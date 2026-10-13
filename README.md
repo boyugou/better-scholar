@@ -54,7 +54,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   venue text (and *Copy list* copies it); see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 It works on **profile pages** (`scholar.google.com/citations?user=…`) on every
-Scholar domain. English and 简体中文 UI.
+Scholar domain. The interface comes in 30 languages.
 
 ## Install
 

@@ -41,8 +41,10 @@ _English name: Scholar Roles & Ranks_
   消失，而不是留着一个开关。
 - **隐私**：无账号、无统计、无追踪；除非你打开可选的 Semantic Scholar 查询（它只收到论文标题），否则没有任何第三方请求；名录内置在扩展里；设置通过你的 Chrome 账号同步。
 
+- **易于纠正**：某个场所没有等级？面板里的 *Report* 会打开预填了场所文字的 issue（*复制列表*也可复制），见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
+
 适用于**作者主页**（`scholar.google.com/citations?user=…`），覆盖所有 Scholar 域名。
-界面提供简体中文和英文。
+界面提供 30 种语言（简体中文、英文、日文等）。
 
 ## 安装
 
