@@ -227,7 +227,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       const r = await opts.evaluate(() => { const b = document.querySelector(".preview").getBoundingClientRect(); return { top: b.top, bottom: b.bottom, vh: innerHeight }; });
       assert.ok(r.top >= 0 && r.bottom <= r.vh, `the preview left the window at scroll ${y}: ${JSON.stringify(r)}`);
     }
+    assert.ok(await opts.evaluate(() => document.querySelector(".preview").classList.contains("more")), "a cut-off preview shows its fade");
     await opts.evaluate(() => window.scrollTo(0, 0));
+    await opts.setViewportSize({ width: 1360, height: 1600 });
+    await opts.waitForFunction(() => !document.querySelector(".preview").classList.contains("more"), null, { timeout: 4000 }).catch(() => assert.fail("a whole preview has no fade"));
     await opts.setViewportSize({ width: 1360, height: 900 });
     ok("the settings preview stays whole in view while the page scrolls, even in a short window");
 
@@ -683,9 +686,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     assert.equal(await page.locator('.rr-chip-mark[data-group="award"][data-source="list"]').count(), 1);
     assert.deepEqual(errs, []);
+    // a button label is never cut off, in the sidebar and in the wide panel
+    const cut = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-btn")].filter((b) => b.offsetParent && b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent.trim()));
+    assert.deepEqual(await cut(), [], "a panel button label is cut off in the sidebar");
     await page.screenshot({ path: path.join(outDir, "showcase.png") });
     await page.setViewportSize({ width: 760, height: 900 });
     await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
+    assert.deepEqual(await cut(), [], "a panel button label is cut off in the wide panel");
     await page.screenshot({ path: path.join(outDir, "showcase-narrow.png") });
     ok("the fictional showcase profile renders (wide and narrow) with an award from the list");
   } finally {

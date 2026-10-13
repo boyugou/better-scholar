@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.130 — 2026-10-12
+
+- The panel's three copy buttons keep their full labels in a narrow sidebar (they wrap onto a second row instead of being cut to "Copy summ…"), and the settings preview that scrolls inside itself in a short window fades at its foot to say there is more. Both have end-to-end checks.
+
 ## 2.10.129 — 2026-10-12
 
 - The settings page's preview stays whole in view while the page scrolls: it is pinned below the top and never taller than the window (it scrolls inside itself in a short window), so it is no longer pushed up and cut off at the end of the page. A new end-to-end check scrolls a short window to the top, middle and end.

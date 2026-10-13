@@ -171,6 +171,14 @@
   }
   renderPreview();
 
+  // the preview scrolls inside itself in a short window: a soft fade at its foot says there is more below
+  const pv = document.querySelector(".preview");
+  const hint = () => pv.classList.toggle("more", pv.scrollHeight - pv.scrollTop - pv.clientHeight > 2);
+  pv.addEventListener("scroll", hint, { passive: true });
+  window.addEventListener("resize", hint);
+  new ResizeObserver(hint).observe(pv.firstElementChild || pv);
+  hint();
+
   // another settings tab (or Reset) changed something
   B.store.onPrefsChanged((next) => { prefs = next; renderPreview(); syncers.forEach((fn) => fn()); });
 })();
