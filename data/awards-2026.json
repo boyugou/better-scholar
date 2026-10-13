@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6728
+  "count": 6761
  },
  "entries": [
   {
@@ -56957,6 +56957,548 @@
    "track": "main",
    "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
    "evidence": "GECCO 2025 Best Paper Award, GECH + THEORY Tracks: Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms — Duc-Cuong Dang, Andre Opris, Dirk Sudholt"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NGNI)",
+   "title": "A Novel Intrusion Detection System for Next Generation In-Vehicle Networks",
+   "authors": [
+    "Zhouyan Deng",
+    "Yijie Xun",
+    "Jiajia Liu",
+    "Shouqing Li",
+    "Yilin Zhao"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, NGNI Symposium: A Novel Intrusion Detection System for Next Generation In-Vehicle Networks — Zhouyan Deng, Yijie Xun, Jiajia Liu, Shouqing Li, Yilin Zhao"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CQRM)",
+   "title": "A Novel Sybil Attack Detection Mechanism for Mobile IoT Networks",
+   "authors": [
+    "Seda Dogan-Tusha",
+    "Saud Althunibat",
+    "Marwa Qaraqe"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, CQRM Symposium: A Novel Sybil Attack Detection Mechanism for Mobile IoT Networks — Seda Dogan-Tusha, Saud Althunibat, Marwa Qaraqe"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GCSN)",
+   "title": "AHP4HPA: An AHP-based Autoscaling Framework for Kubernetes Clusters at the Network Edge",
+   "authors": [
+    "Ioannis Dimolitsas",
+    "Dimitrios Spatharakis",
+    "Dimitrios Dechouniotis",
+    "Symeon Papavassiliou"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, GCSN Symposium: AHP4HPA: An AHP-based Autoscaling Framework for Kubernetes Clusters at the Network Edge — Ioannis Dimolitsas, Dimitrios Spatharakis, Dimitrios Dechouniotis, Symeon Papavassiliou"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CRN)",
+   "title": "An Unsupervised Learning Approach for Spectrum Allocation in Terahertz Communication Systems",
+   "authors": [
+    "Akram Shafie",
+    "Chunhui Li",
+    "Nan Yang",
+    "Xiangyun Zhou",
+    "Trung Q. Duong"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, CRN Symposium: An Unsupervised Learning Approach for Spectrum Allocation in Terahertz Communication Systems — Akram Shafie, Chunhui Li, Nan Yang, Xiangyun Zhou, Trung Q. Duong"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MWN)",
+   "title": "Defending Against DDOS Attacks on IoT Network Throughput: A Trust-Stackelberg Game Model",
+   "authors": [
+    "Chunyang Qi",
+    "Jie Huang",
+    "Cheng Huang",
+    "Huaqing Wu",
+    "Xuemin Shen"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, MWN Symposium: Defending Against DDOS Attacks on IoT Network Throughput: A Trust-Stackelberg Game Model — Chunyang Qi, Jie Huang, Cheng Huang, Huaqing Wu, Xuemin Shen"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ONS)",
+   "title": "Design Tradeoffs of Non-Imaging Angle Diversity Receivers for 6G Optical Wireless Access Networks",
+   "authors": [
+    "Elham Sarbazi",
+    "Hossein Kazemi",
+    "Mohammad Dehghani Soltani",
+    "Majid Safari",
+    "Harald Haas"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, ONS Symposium: Design Tradeoffs of Non-Imaging Angle Diversity Receivers for 6G Optical Wireless Access Networks — Elham Sarbazi, Hossein Kazemi, Mohammad Dehghani Soltani, Majid Safari, Harald Haas"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CSM)",
+   "title": "Grey Wolf Optimizer for Reducing Communication Cost of Federated Learning",
+   "authors": [
+    "Ammar Kamal Abasi",
+    "Moayad Aloqaily",
+    "Mohsen Guizani"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, CSM Symposium: Grey Wolf Optimizer for Reducing Communication Cost of Federated Learning — Ammar Kamal Abasi, Moayad Aloqaily, Mohsen Guizani"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC-MLC Track)",
+   "title": "Grid-less mmWave Beam Alignment through Deep Learning",
+   "authors": [
+    "Yuqiang Heng",
+    "Jeffrey G. Andrews"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, SAC-MLC Track: Grid-less mmWave Beam Alignment through Deep Learning — Yuqiang Heng, Jeffrey G. Andrews"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CISS)",
+   "title": "PPsky: Privacy-Preserving Skyline Queries with Secret Sharing in eHealthcare",
+   "authors": [
+    "Songnian Zhang",
+    "Suprio Ray",
+    "Rongxing Lu",
+    "Yunguo Guan"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, CISS Symposium: PPsky: Privacy-Preserving Skyline Queries with Secret Sharing in eHealthcare — Songnian Zhang, Suprio Ray, Rongxing Lu, Yunguo Guan"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IoTSN)",
+   "title": "Real-time Optimal Multibeam and Power Allocation in 5G Satellite–Terrestrial IoT Networks",
+   "authors": [
+    "Trung Q. Duong",
+    "Long D. Nguyen",
+    "Tinh T. Bui",
+    "Khanh D. Pham"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, IoTSN Symposium: Real-time Optimal Multibeam and Power Allocation in 5G Satellite–Terrestrial IoT Networks — Trung Q. Duong, Long D. Nguyen, Tinh T. Bui, Khanh D. Pham"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC Track)",
+   "title": "Realization of Reconfigurable Intelligent Surface-Based Index Modulation Transmission",
+   "authors": [
+    "Jia Liu",
+    "Wankai Tang",
+    "Xiangyu Chen",
+    "Jun Chen Ke",
+    "Shi Jin",
+    "Fu-Chun Zheng",
+    "Qiang Cheng",
+    "Tie Jun Cui"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, SAC Track: Realization of Reconfigurable Intelligent Surface-Based Index Modulation Transmission — Jia Liu, Wankai Tang, Xiangyu Chen, Jun Chen Ke, Shi Jin, Fu-Chun Zheng, Qiang Cheng, Tie Jun Cui"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WC)",
+   "title": "RSMA for Dual-Polarized Massive MIMO Networks: A SIC-Free Approach",
+   "authors": [
+    "Arthur S. de Sena",
+    "Pedro H. J. Nardelli",
+    "Daniel B. da Costa",
+    "Petar Popovski",
+    "Constantinos B. Papadias",
+    "Merouane Debbah"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, WC Symposium: RSMA for Dual-Polarized Massive MIMO Networks: A SIC-Free Approach — Arthur S. de Sena, Pedro H. J. Nardelli, Daniel B. da Costa, Petar Popovski, Constantinos B. Papadias, Merouane Debbah"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SPC)",
+   "title": "SemAudio: Semantic-Aware Streaming Communications for Real-Time Audio Transmission",
+   "authors": [
+    "Hao Wei",
+    "Wenjun Xu",
+    "Fengyu Wang",
+    "Xin Du",
+    "Tiankui Zhang",
+    "Ping Zhang"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, SPC Symposium: SemAudio: Semantic-Aware Streaming Communications for Real-Time Audio Transmission — Hao Wei, Wenjun Xu, Fengyu Wang, Xin Du, Tiankui Zhang, Ping Zhang"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CT)",
+   "title": "Thermal Conduction as a Wireless Communication Channel",
+   "authors": [
+    "Ruth G. Gebremedhin",
+    "Thomas L. Marzetta"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, CT Symposium: Thermal Conduction as a Wireless Communication Channel — Ruth G. Gebremedhin, Thomas L. Marzetta"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC Track)",
+   "title": "UAV Communications in Integrated Terrestrial and Non-terrestrial Networks",
+   "authors": [
+    "Mohamed Benzaghta",
+    "Giovanni Geraci",
+    "Rasoul Nikbakht",
+    "David López-Pérez"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, SAC Track: UAV Communications in Integrated Terrestrial and Non-terrestrial Networks — Mohamed Benzaghta, Giovanni Geraci, Rasoul Nikbakht, David López-Pérez"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WC)",
+   "title": "Vandermonde Constrained Tensor Decomposition for Hybrid Beamforming in Multi-Carrier MIMO Systems",
+   "authors": [
+    "Mohamed Salah Ibrahim",
+    "Akshay Malhotra",
+    "Mihaela Beluri",
+    "Arnab Roy",
+    "Shahab Hamidi-Rad"
+   ],
+   "track": "main",
+   "source": "https://globecom2022.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2022 Best Paper Award, WC Symposium: Vandermonde Constrained Tensor Decomposition for Hybrid Beamforming in Multi-Carrier MIMO Systems — Mohamed Salah Ibrahim, Akshay Malhotra, Mihaela Beluri, Arnab Roy, Shahab Hamidi-Rad"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COGNITIVE RADIO AND AI-ENABLED NETWORKS)",
+   "title": "A Partially Observable Deep Multi-Agent Active Inference Framework for Resource Allocation in 6G and Beyond Wireless Communications Networks",
+   "authors": [
+    "Fuhui Zhou",
+    "Rui Ding",
+    "Qihui Wu",
+    "Derrick Wing Kwan Ng",
+    "Kai-Kit Wong",
+    "Naofal Al-Dhahir"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, COGNITIVE RADIO AND AI-ENABLED NETWORKS: A Partially Observable Deep Multi-Agent Active Inference Framework for Resource Allocation in 6G and Beyond Wireless Communications Networks — Fuhui Zhou, Rui Ding, Qihui Wu, Derrick Wing Kwan Ng, Kai-Kit Wong, Naofal Al-Dhahir"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC - MACHINE LEARNING FOR COMMUNICATIONS)",
+   "title": "A Spatial Generative Adversarial Network-based Signal Detection for MIMO-ODDM Systems",
+   "authors": [
+    "Qingqing Cheng",
+    "Zhenguo Shi",
+    "Jinhong Yuan",
+    "Hai Lin"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, SAC - MACHINE LEARNING FOR COMMUNICATIONS: A Spatial Generative Adversarial Network-based Signal Detection for MIMO-ODDM Systems — Qingqing Cheng, Zhenguo Shi, Jinhong Yuan, Hai Lin"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATIONS SOFTWARE AND MULTIMEDIA)",
+   "title": "AI Generated Signal for Wireless Sensing",
+   "authors": [
+    "Hanxiang He",
+    "Han Hu",
+    "Xintao Huan",
+    "Heng Liu",
+    "Jianping An",
+    "Shiwen Mao"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, COMMUNICATIONS SOFTWARE AND MULTIMEDIA: AI Generated Signal for Wireless Sensing — Hanxiang He, Han Hu, Xintao Huan, Heng Liu, Jianping An, Shiwen Mao"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION THEORY)",
+   "title": "Algorithmic Computability of the Capacity of Additive Colored Gaussian Noise Channels",
+   "authors": [
+    "Holger Boche",
+    "Andrea Grigorescu",
+    "Rafael F. Schaefer",
+    "H. Vincent Poor"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, COMMUNICATION THEORY: Algorithmic Computability of the Capacity of Additive Colored Gaussian Noise Channels — Holger Boche, Andrea Grigorescu, Rafael F. Schaefer, H. Vincent Poor"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC: TERAHERTZ COMMUNICATIONS)",
+   "title": "Characterizing Sub-THz MIMO Channels in Practice: a Novel Channel Sounder with Absolute Time Reference",
+   "authors": [
+    "Duschia Bodet",
+    "Phuc Dinh",
+    "Milica Stojanovic",
+    "Joerg Widmer",
+    "Dimitrios Koutsonikolas",
+    "Josep Miquel Jornet"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, SAC: TERAHERTZ COMMUNICATIONS: Characterizing Sub-THz MIMO Channels in Practice: a Novel Channel Sounder with Absolute Time Reference — Duschia Bodet, Phuc Dinh, Milica Stojanovic, Joerg Widmer, Dimitrios Koutsonikolas, Josep Miquel Jornet"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IOT AND SENSOR NETWORKS)",
+   "title": "CMRM: A Cross-modal Reasoning Model to Enable Zero-shot Imitation Learning for Robotic RFID Inventory in Unstructured Environments",
+   "authors": [
+    "Yongshuai Wu",
+    "Jian Zhang",
+    "Shaoen Wu",
+    "Shiwen Mao",
+    "Ying Wang"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, IOT AND SENSOR NETWORKS: CMRM: A Cross-modal Reasoning Model to Enable Zero-shot Imitation Learning for Robotic RFID Inventory in Unstructured Environments — Yongshuai Wu, Jian Zhang, Shaoen Wu, Shiwen Mao, Ying Wang"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING AND INTERNET)",
+   "title": "DEAP Learning: A Data-Driven Approach to Unsupervised Cooperative Spectrum Sensing",
+   "authors": [
+    "Nada Abdel Khalek",
+    "Walaa Hamouda"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, NEXT-GENERATION NETWORKING AND INTERNET: DEAP Learning: A Data-Driven Approach to Unsupervised Cooperative Spectrum Sensing — Nada Abdel Khalek, Walaa Hamouda"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Delay-Phase Precoding to Alleviate Beam Defocus Effect for Circular Arrays",
+   "authors": [
+    "Zidong Wu",
+    "Linglong Dai"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, WIRELESS COMMUNICATIONS: Delay-Phase Precoding to Alleviate Beam Defocus Effect for Circular Arrays — Zidong Wu, Linglong Dai"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (OPTICAL NETWORKS AND SYSTEMS)",
+   "title": "Efficient Routing Method for Reducing Signiﬁcant Outages in Optical Networks",
+   "authors": [
+    "Katsuaki Higashimori",
+    "Takafumi Tanaka",
+    "Takeru Inoue"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, OPTICAL NETWORKS AND SYSTEMS: Efficient Routing Method for Reducing Signiﬁcant Outages in Optical Networks — Katsuaki Higashimori, Takafumi Tanaka, Takeru Inoue"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SIGNAL PROCESSING FOR COMMUNICATIONS)",
+   "title": "Joint Design of Multi-Dimensional Multiple Access and Lightweight Continuous Authentication in Zero-Trust Environments",
+   "authors": [
+    "He Fang",
+    "Xianbin Wang",
+    "Naofal Al-Dhahir",
+    "Robert Schober"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, SIGNAL PROCESSING FOR COMMUNICATIONS: Joint Design of Multi-Dimensional Multiple Access and Lightweight Continuous Authentication in Zero-Trust Environments — He Fang, Xianbin Wang, Naofal Al-Dhahir, Robert Schober"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WORKSHOP: UNCONVENTIONAL IOT APPLICATIONS)",
+   "title": "MetaCIDS: Metaverse Collaborative Intrusion Detection based on Blockchain and Federated Learning",
+   "authors": [
+    "Vu Tuan Truong",
+    "Vu Thai Nguyen",
+    "Long Bao Le"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, WORKSHOP: UNCONVENTIONAL IOT APPLICATIONS: MetaCIDS: Metaverse Collaborative Intrusion Detection based on Blockchain and Federated Learning — Vu Tuan Truong, Vu Thai Nguyen, Long Bao Le"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WORKSHOP: SEMANTIC COMMUNICATION FOR 6G)",
+   "title": "Neural Estimation for Rate-Distortion Function in Semantic Communications",
+   "authors": [
+    "Dongxu Li",
+    "Jianhao Huang",
+    "Chuan Huang",
+    "Xiaoqi Qin",
+    "Han Zhang"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, WORKSHOP: SEMANTIC COMMUNICATION FOR 6G: Neural Estimation for Rate-Distortion Function in Semantic Communications — Dongxu Li, Jianhao Huang, Chuan Huang, Xiaoqi Qin, Han Zhang"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC: SOCIAL NETWORKS)",
+   "title": "Opti-Safe: Optimal Supply and Demand For Providing Safety Services in SIoV Environment",
+   "authors": [
+    "Chandana Roy",
+    "Pushp Paritosh",
+    "Sudip Misra",
+    "Preetam Kumar"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, SAC: SOCIAL NETWORKS: Opti-Safe: Optimal Supply and Demand For Providing Safety Services in SIoV Environment — Chandana Roy, Pushp Paritosh, Sudip Misra, Preetam Kumar"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MOBILE AND WIRELESS NETWORKS)",
+   "title": "RIS-Assisted SWIPT-Empowered Cooperative Rate-Splitting Multiple Access for Two Users",
+   "authors": [
+    "Shreya Khisa",
+    "Mohamed Elhattab",
+    "Chadi Assi",
+    "Sanaa Sharafeddine"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, MOBILE AND WIRELESS NETWORKS: RIS-Assisted SWIPT-Empowered Cooperative Rate-Splitting Multiple Access for Two Users — Shreya Khisa, Mohamed Elhattab, Chadi Assi, Sanaa Sharafeddine"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION AND INFORMATION SYSTEM SECURITY)",
+   "title": "Smart Contract Firewall: Protecting the on-Chain Smart Contract Projects",
+   "authors": [
+    "Shen Su",
+    "Yue Xue",
+    "Liansheng Lin",
+    "Chao Wang",
+    "Hui Lu",
+    "Jing Qiu",
+    "Yanbin Sun",
+    "Yuan Liu",
+    "Zhihong Tian"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, COMMUNICATION AND INFORMATION SYSTEM SECURITY: Smart Contract Firewall: Protecting the on-Chain Smart Contract Projects — Shen Su, Yue Xue, Liansheng Lin, Chao Wang, Hui Lu, Jing Qiu, Yanbin Sun, Yuan Liu, Zhihong Tian"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATIONS QOS, RELIABILITY AND MODELLING)",
+   "title": "Swarm Learning IRS in 6G-Metaverse: Secure Configurable Resources Trading for Reliable XR Communications",
+   "authors": [
+    "Qianqian Pan",
+    "Jun Wu",
+    "Xinping Guan",
+    "M. Jamal Deen"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, COMMUNICATIONS QOS, RELIABILITY AND MODELLING: Swarm Learning IRS in 6G-Metaverse: Secure Configurable Resources Trading for Reliable XR Communications — Qianqian Pan, Jun Wu, Xinping Guan, M. Jamal Deen"
+  },
+  {
+   "venue": "GLOBECOM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GREEN COMMUNICATION SYSTEMS AND NETWORKS)",
+   "title": "Waste Factor: A New Metric for Evaluating Power Efficiency in any Cascade",
+   "authors": [
+    "Mingjun Ying",
+    "Dipankar Shakya",
+    "Hitesh Poddar",
+    "Theodore S. Rappaport"
+   ],
+   "track": "main",
+   "source": "https://globecom2023.ieee-globecom.org/program/best-paper-awards",
+   "evidence": "GLOBECOM 2023 Best Paper Award, GREEN COMMUNICATION SYSTEMS AND NETWORKS: Waste Factor: A New Metric for Evaluating Power Efficiency in any Cascade — Mingjun Ying, Dipankar Shakya, Hitesh Poddar, Theodore S. Rappaport"
   },
   {
    "venue": "HotStorage",

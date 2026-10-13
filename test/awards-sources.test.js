@@ -2176,3 +2176,14 @@ test("WCNC best paper pages: a 'Track N' line, the title and the authors (bracke
   assert.deepEqual(parseWcncBest(h, "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards").entries.map((e) => `${e.awardLabel} | ${e.authors.join("; ")}`), ["Best Paper Award (Track 1) | Ann Lee; Bo Chan", "Best Paper Award (Track 2) | Cy Dunn; Ed Fox"]);
   assert.equal(parseWcncBest(h, "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards").entries.length, 0);
 });
+
+test("GLOBECOM best paper page: several papers under one heading, a footnote mark after a name, a title printed twice; the committee above is not read", async () => {
+  const { parseGlobecomBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>GLOBECOM 2022 BEST PAPER AWARDS COMMITTEE</p><p>Chairs: Ann Lee and Bo Chan</p><p>GLOBECOM 2022 BEST PAPER AWARDS RECIPIENTS</p><p>WC Symposium</p><p>Dual polarized massive MIMO with rate splitting</p><p>Cy Dunn, Ed Fox, Flo Gray</p><p>Tensor decomposition for hybrid beamforming in MIMO systems</p><p>Gil Hart, Hal Ito</p><p>SAC Track</p><p>UAV communications in integrated terrestrial networks</p><p>Ivy Jones, Kay Lowe, Max Nye♭</p><p>NGNI Symposium</p><p>An intrusion detection system for in-vehicle networksAn intrusion detection system for in-vehicle networks</p><p>Pat Quinn, Ray Shaw</p><p>Best Paper Awards</p>`;
+  assert.deepEqual(parseGlobecomBest(h, "https://globecom2022.ieee-globecom.org/program/best-paper-awards").entries.map((e) => `${e.awardLabel} | ${e.title} | ${e.authors.join("; ")}`), [
+    "Best Paper Award (WC) | Dual polarized massive MIMO with rate splitting | Cy Dunn; Ed Fox; Flo Gray",
+    "Best Paper Award (WC) | Tensor decomposition for hybrid beamforming in MIMO systems | Gil Hart; Hal Ito",
+    "Best Paper Award (SAC Track) | UAV communications in integrated terrestrial networks | Ivy Jones; Kay Lowe; Max Nye",
+    "Best Paper Award (NGNI) | An intrusion detection system for in-vehicle networks | Pat Quinn; Ray Shaw"
+  ]);
+});

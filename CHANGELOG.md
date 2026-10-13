@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.78 — 2026-10-12
+
+- IEEE GLOBECOM's best papers of 2022 (16) and 2023 (17) — the totals the pages state — from each year's own Best Paper Awards page (`tot.mjs globecom-best`); the list had none for GLOBECOM. A footnote mark after a name (♭) no longer drops the paper. The list has 6761 awards.
+
 ## 2.10.77 — 2026-10-12
 
 - IEEE WCNC's best papers of 2022–2024 (12 papers, one per track; the list had none for WCNC) from each year's own Best Paper Awards page (`tot.mjs wcnc-best`). The list has 6728 awards.
