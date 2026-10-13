@@ -174,8 +174,11 @@
   "resolveHint": {
     "message": "逐篇读取 Scholar 上的论文页（约每秒一篇）以获取完整作者列表。"
   },
+  "resolveHintSemantic": {
+    "message": "先向 Semantic Scholar 询问每篇论文的作者列表（只发送论文标题），其余的再逐篇读取 Scholar 上的论文页（约每秒一篇）。"
+  },
   "resolving": {
-    "message": "正在读取论文页… $N1$/$N2$",
+    "message": "正在读取作者列表… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "清除已保存的论文详情"
   },
   "optCacheCount": {
-    "message": "本机已保存 $N1$ 篇论文的作者列表（点“补全”时读取，保留 90 天）。",
+    "message": "本机已保存 $N1$ 篇论文的作者列表（保留 90 天）。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -607,7 +610,7 @@
     "message": "用 Semantic Scholar 补全作者列表"
   },
   "optSemanticLabelHint": {
-    "message": "点“补全”时，先向 semanticscholar.org 询问每篇论文的完整作者列表（只发送论文标题，不发别的），它不认识的才去读 Scholar 自己的页面。对 Scholar 的请求更少，验证码也更少。"
+    "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表（只发送论文标题，不发别的），它不认识的才去读 Scholar 自己的页面。对 Scholar 的请求更少，验证码也更少。"
   },
   "yearsTitle": {
     "message": "各年份的高亮论文"

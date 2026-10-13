@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Doplnit"
+    "message": "Načíst celé seznamy"
   },
   "resolveHint": {
     "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
   },
+  "resolveHintSemantic": {
+    "message": "Nejprve rozšíření požádá Semantic Scholar o seznam autorů každé práce (posílá se jen název práce) a pak otevře stránku práce ve Scholar pro zbytek (zhruba jednu za sekundu)."
+  },
   "resolving": {
-    "message": "Čtení stránek prací… $N1$/$N2$",
+    "message": "Čtení seznamů autorů… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Vymazat uložené podrobnosti o pracích"
   },
   "optCacheCount": {
-    "message": "Uložené seznamy autorů na tomto zařízení: $N1$ (přečteno tlačítkem „Doplnit“, uchováno 90 dní).",
+    "message": "Seznamy autorů prací uložené na tomto zařízení: $N1$ (uchovány 90 dní).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Druhé místo, kde najdete to, co Scholar zkracuje."
   },
   "optSemanticLabel": {
-    "message": "Doplňovat seznamy autorů ze Semantic Scholar"
+    "message": "Nejprve načítat seznamy autorů ze Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Při stisku Doplnit se nejprve ptáme semanticscholar.org na úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholaru čteme jen u toho, co tam nemají. Méně dotazů na Scholar, tedy méně CAPTCHA."
+    "message": "Při stisku „Načíst celé seznamy“ se nejprve ptáme Semantic Scholar na úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholaru otevíráme jen u toho, co tam nemají. Méně dotazů na Scholar, tedy méně CAPTCHA."
   },
   "yearsTitle": {
     "message": "Zvýrazněné práce podle roku"

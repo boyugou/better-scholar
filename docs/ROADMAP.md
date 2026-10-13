@@ -93,9 +93,8 @@ A web search for "<venue> best paper awards list" has found the series' own page
 
 ## Tier at publication time
 
-Tiers are those of the current lists. CCF's earlier editions (2012, 2015, 2019, 2022) could be
-bundled to show the tier *in the paper's year*, which is what an evaluator of an old paper
-usually wants. Needs the older catalogues extracted the same reproducible way (`scripts/ccf/`).
+Tiers are those of the current lists, and the panel says so. Showing the tier *in the paper's year* was
+looked at on 2026-10-13 and set aside; the findings are under *Considered and set aside* below.
 
 ## Venue matching coverage
 
@@ -121,6 +120,7 @@ So that they are not rediscovered from scratch:
 - **SCImago / JCR quartiles for journals outside the CCF list**: licensing of redistributed data is unclear and matching ~30k journal titles exactly is a large data build for a content script that runs on every profile.
 - **Sorting the paper list by rank or role**: Scholar re-renders the list when its own sort headers are used and appends rows on *Show more*; keeping a reordered list consistent with both would be fragile for little gain next to the cell filters.
 - **Frequent co-authors**: the key would be surname + initial, which merges different people ("J Wang"); a wrong claim about who someone works with is worse than none.
+- **Tier at publication time** (CCF 2019 / 2022 and earlier ICORE editions instead of today's lists). The sources are there: CCF's own site serves the 2019 catalogue (`https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=99185`, 74 pages, sha-256 `3ad7de2a…0729`) and the 2022 one (attached to the notice of 2025-05-09, `…download?ID=5CB6670D4D81C9197633DF76D9843ED98D61484435CC1D2FB27663252659138E`, 73 pages, sha-256 `dda21c1a…a28b`); the 2013 and 2015 editions have announcement pages only. But `scripts/ccf/build-ccf.mjs` stops on the 2022 layout (the journal column is headed 刊物简称, and cells sit 4–8 pt from their row's serial, so rows cannot be told apart), so each edition needs its own geometry pass and audit, with no independent totals to check against. Matching a venue across editions needs a stable identity (renames, venues dropped from today's list) that only a hand-made table would give, and institutions disagree on which edition counts (the latest, or the one in force). A wrong or missing badge in a mode meant for evaluators costs more than the limitation the note already states. Revisit if someone asks for it and brings the policy they need.
 
 ## Distribution
 

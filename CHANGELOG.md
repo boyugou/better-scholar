@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.21.0 — 2026-10-13
+
+From a check against Scholar's live pages (a real profile and one of its paper pages, read in the author's own Chrome) and the first design review's last open point:
+
+- **The button that reads the cut-off author lists is called *Read full lists*** (it was *Complete*, which reads like "finish"); the progress line says *Reading author lists…*, the settings switch *Read author lists from Semantic Scholar first*, and the saved-data line no longer names a button. All 30 languages follow (the two Chinese ones keep 补全 / 補全, which already said "fill in what is cut off").
+- **The line under the button says who is asked.** With the Semantic Scholar switch on it used to say "Opens each paper's page on Scholar…" although the titles go to Semantic Scholar first; it now says so before anything is pressed (`resolveHintSemantic`, an e2e check for both texts).
+- **No lone "N papers loaded" line.** Once every paper is loaded and nothing else needs saying, the status block is gone instead of repeating the count that the totals already show; it stays while papers are coming, when *Load all* is offered, with any other status line, and whenever the totals are not shown.
+- **Real data:** every selector the extension reads or hides (rows, author and venue lines, *Show more*, the *Cited by* / *Co-authors* / *Public access* blocks, the paper page's field table) was found on Scholar's live markup today. `scripts/check-scholar-markup.js` repeats that check from the DevTools console, and a test keeps its list equal to what the source uses. Thirteen more real venue strings (LLM web-agent venues: Oral levels, Findings, a demo track, a journal and a venue no list has) joined the matcher's corpus; all resolve as intended.
+- Considered and set aside, with the reasons and the official PDF addresses: the tier in the paper's year (`docs/ROADMAP.md`).
+
 ## 2.20.3 — 2026-10-13
 
 From a review of the redirect script and the latest changes:

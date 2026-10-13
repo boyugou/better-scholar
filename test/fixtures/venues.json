@@ -1,5 +1,5 @@
 {
- "_note": "Unique venue strings exactly as Google Scholar printed them on the first 100 rows of public profiles (four on 2026-10-11, then more), captured 2026-10-11 and 2026-10-12 (seventy-one more profiles on the second day: multimedia, speech, design automation, wireless, graphics, medical imaging, game theory, verification, HRI, semantic web, compilers, education, bioinformatics, security and cryptography, Chinese institutions, quantum, type theory, NLP, networking, software engineering, multi-agent systems, operating systems, information retrieval, robotics, HCI, accessibility, program synthesis, genomics). Used to exercise the venue matcher on realistic, messy input (truncation with '…', [arXiv] annotations, acronym+year forms, volume/page tails). Sixteen more on 2026-10-12 (music and audio, computational geometry, SAT and SMT, theorem proving, computational social science, educational data mining, wireless communications, concurrency theory): strings an earlier profile already holds are not repeated. Twenty-eight more later that day (databases, ubiquitous computing, distributed systems, game research, knowledge representation and constraints, requirements and testing, SLAM, recommender systems). Twenty-eight more after that (visualization, usable security and privacy, measurement, FPGA and high-level synthesis, cyber-physical and real-time systems, AR/VR, haptics, time series and data mining). Eighteen more (autonomous driving, crowdsourcing, ML systems, web search, computational photography, biomedical and nursing informatics, energy-efficient computing). Fifteen more (dialogue and generation, speech, robot learning, blockchain, neuromorphic computing).",
+ "_note": "Unique venue strings exactly as Google Scholar printed them on the first 100 rows of public profiles (four on 2026-10-11, then more), captured 2026-10-11 and 2026-10-12 (seventy-one more profiles on the second day: multimedia, speech, design automation, wireless, graphics, medical imaging, game theory, verification, HRI, semantic web, compilers, education, bioinformatics, security and cryptography, Chinese institutions, quantum, type theory, NLP, networking, software engineering, multi-agent systems, operating systems, information retrieval, robotics, HCI, accessibility, program synthesis, genomics). Used to exercise the venue matcher on realistic, messy input (truncation with '…', [arXiv] annotations, acronym+year forms, volume/page tails). Sixteen more on 2026-10-12 (music and audio, computational geometry, SAT and SMT, theorem proving, computational social science, educational data mining, wireless communications, concurrency theory): strings an earlier profile already holds are not repeated. Twenty-eight more later that day (databases, ubiquitous computing, distributed systems, game research, knowledge representation and constraints, requirements and testing, SLAM, recommender systems). Twenty-eight more after that (visualization, usable security and privacy, measurement, FPGA and high-level synthesis, cyber-physical and real-time systems, AR/VR, haptics, time series and data mining). Eighteen more (autonomous driving, crowdsourcing, ML systems, web search, computational photography, biomedical and nursing informatics, energy-efficient computing). Fifteen more (dialogue and generation, speech, robot learning, blockchain, neuromorphic computing). One more on 2026-10-13, read in the author's own Chrome (LLM web agents: an Oral, Findings, a demo track, a journal and a venue no list has).",
  "manning-nlp": [
   "2014 conference on empirical methods in natural language processing (EMNLP …, 2014",
   "Cambridge: Cambridge University Press, 2008",
@@ -26260,5 +26260,20 @@
   "Peer-to-Peer Networking and Applications 12 (5), 1346-1357, 2019",
   "2016 IEEE 36th International Conference on Distributed Computing Systems …, 2016",
   "32nd USENIX Security Symposium (USENIX Security 23), 1073-1090, 2023"
+ ],
+ "gou-osu-web-agents": [
+  "ICML 2024, 2024",
+  "ICLR 2025 (Oral), 2024",
+  "COLM 2025, 2025",
+  "TMLR, 2024",
+  "NeurIPS 2025 Datasets and Benchmarks Track, 2025",
+  "ICML 2026, 2025",
+  "ACL 2025 Findings, 2025",
+  "NAACL 2025 Findings, 2024",
+  "EMNLP 2024 System Demonstrations, 2024",
+  "ICLR 2026 (Oral), 2025",
+  "NeurIPS 2026, 2026",
+  "EMNLP 2026 (Oral), 2026",
+  "arXiv, 2025"
  ]
 }

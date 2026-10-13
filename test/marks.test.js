@@ -135,7 +135,11 @@ test("no real venue string in the corpora is marked unless its author wrote the 
     "PIKM Best Paper Award. First Ph.D. Workshop at The Conference on Information\u00a0…, 2007 -> best",
     "Best Paper Honorable Mention: CSCW'24. Proceedings of the 28th ACM\u00a0…, 2024 -> runner-up",
     "ECIR Best Student Paper Award. Advances in Information Retrieval: 41st\u00a0…, 2019 -> best-student",
-    "CIST Best Student Paper Award. 2022 Conference on Information Systems and\u00a0…, 2023 -> best-student"
+    "CIST Best Student Paper Award. 2022 Conference on Information Systems and\u00a0…, 2023 -> best-student",
+    // a profile read live in its owner's Chrome on 2026-10-13: the level in parentheses after the venue, as the chip showed it
+    "ICLR 2025 (Oral), 2024 -> oral",
+    "ICLR 2026 (Oral), 2025 -> oral",
+    "EMNLP 2026 (Oral), 2026 -> oral"
   ]);
 });
 

@@ -543,14 +543,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // the status lines keep their spacing (the slots of the status section take no room of their own)
     const gaps = await page.evaluate(() => { const l = [...document.querySelectorAll('[data-rr="coverage"] .rr-cover-line')].map((e) => e.getBoundingClientRect()); return l.slice(1).map((r, i) => Math.round(r.top - l[i].bottom)); });
     assert.ok(gaps.length >= 1 && gaps.every((g) => g >= 3), "status lines are spaced: " + gaps);
+    assert.match(await page.locator('[data-rr="resolve-hint"]').textContent(), /^Opens each paper's page on Scholar/, "before it is pressed the panel says what Read full lists does: it opens Scholar's pages");
+    assert.doesNotMatch(await page.locator('[data-rr="resolve-hint"]').textContent(), /Semantic/, "and does not name Semantic Scholar while that setting is off");
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
     await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
     const resolvedExpect = matrixOf(expected(profile, { resolveHidden: true }));
     assert.deepEqual(await readMatrix(page), resolvedExpect);
     assert.equal(fx.detailRequests(), 28);
-    ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
-    assert.match(await page.locator('[data-rr="announce"]').textContent(), /Done/, "a screen reader is told when Complete has finished");
+    ok("'Read full lists' reads 28 paper pages; the hidden senior-author rows become 'last'");
+    assert.match(await page.locator('[data-rr="announce"]').textContent(), /Done/, "a screen reader is told when reading the lists has finished");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
     assert.ok((await page.locator('.gs_gray[title*="paper\'s page"]').count()) > 0, "roles read from a paper's own page say so in a tooltip");
 
@@ -587,6 +589,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         await pg.bringToFront();
         await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 30000 });
         await pg.waitForSelector('[data-act="resolve"]');
+        assert.match(await pg.locator('[data-rr="resolve-hint"]').textContent(), /^Asks Semantic Scholar .*it receives only the title/, "with the setting on, the panel says that titles go to Semantic Scholar before the button is pressed");
         await pg.click('[data-act="resolve"]');
         await pg.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 30000 });
         assert.deepEqual(await readMatrix(pg), resolvedExpect, "the same roles as when Scholar's own pages are read");
@@ -690,7 +693,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 16. i18n substitutions resolved (no raw $N1$ placeholders anywhere)
     const body = await page.evaluate(() => document.getElementById("rr-panel").textContent);
     assert.ok(!/\$N\d\$|\$\d/.test(body), "placeholders substituted");
-    assert.match(body, /20 papers loaded/);   // (the page was reloaded in step 13)
+    assert.match(body, /20 papers loaded/);   // (the page was reloaded in step 13; one paper does not name the owner, so the status block still has a line to say and keeps the count)
     ok("chrome.i18n placeholders are substituted");
 
     // -- S1. no preference switches are left on the page itself
@@ -698,7 +701,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("the panel keeps no preference switches (those live on the settings page)");
 
     // -- S2. rank switches: CORE off → no CORE chips and no tab; both off → roles only
-    const rows20 = expected(first20, { resolveHidden: true });   // (step 11's Resolve is cached, so the reload keeps it)
+    const rows20 = expected(first20, { resolveHidden: true });   // (step 11's Read full lists is cached, so the reload keeps it)
     await setPref(opts, "ranks.core", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="core"]'));
     assert.equal(await page.locator("#rr-panel button[data-src]").count(), 0);
@@ -856,7 +859,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await setPref(opts, "panel.show", true);
-    assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Resolve' left a cache of paper details");
+    assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
     await opts.reload();
     await opts.waitForSelector('[data-act="clear-cache"]');
     assert.match(await opts.textContent(".row .note"), /^\d+ papers' author lists are saved/);
@@ -926,10 +929,28 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(fx2.detailRequests(), 28);
     assert.deepEqual([...new Set(fx2.detailHls())], ["en"], "every detail request asks for English labels");
     assert.deepEqual(await readMatrix(page), matrixOf(expected({ owner: "Ion Stoica", rows: fx2.profile.rows }, { resolveHidden: true })));
-    ok("Resolve works on a profile with a non-English Scholar interface (requests hl=en)");
+    ok("Read full lists works on a profile with a non-English Scholar interface (requests hl=en)");
   } finally {
     await ctx2.close();
     await fx2.close();
+  }
+
+  // -- 20b. nothing left to say: no status block (the count of the papers is in the totals, so a lone "3 papers loaded" would only repeat it)
+  {
+    const fxC = await start({ slug: "clean-demo", pageSize: 100 });
+    const ctxC = await launch();
+    try {
+      const pg = await ctxC.newPage();
+      await pg.goto(fxC.url);
+      await pg.waitForSelector("#rr-panel");
+      await eventually(pg, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      assert.equal(await pg.locator('[data-rr="coverage"]').isHidden(), true, "a complete, fully ranked profile has no status block");
+      assert.match(await pg.locator('[data-rr="metrics"]').textContent(), /Papers\s*3\s*of\s*3/, "the count is in the totals");
+      const optsC = await openOptions(ctxC);
+      await setPref(optsC, "panel.metrics", false);                    // without the totals the count is nowhere else: the line comes back
+      await eventually(pg, () => !document.querySelector('[data-rr="coverage"]').hidden && /3 papers loaded/.test(document.querySelector('[data-rr="coverage"]').textContent));
+      ok("with nothing else to say the status block is gone (the totals show the count); it returns when the totals are switched off");
+    } finally { await ctxC.close(); await fxC.close(); }
   }
 
   // -- 21. award and talk markers the authors wrote (synthetic profile; look-alikes must stay unmarked)
@@ -1124,7 +1145,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const firstPaint = Date.now() - t0;
     await page.waitForFunction(() => /^Loading… \d/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 10000 });
     assert.equal(await page.locator('[data-act="load-all"]').count(), 0, "no button to press: it is already loading");
-    await page.waitForFunction(() => /^1,?000 papers loaded/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 90000 });
+    await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 1000 && !/Loading/.test((document.querySelector('[data-rr="coverage"]') || { hidden: true, textContent: "" }).textContent), null, { timeout: 90000 });
     const total = Date.now() - t0;
     assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr").count(), 1000);
     assert.equal(await page.locator('[data-act="load-all"]').count(), 0);

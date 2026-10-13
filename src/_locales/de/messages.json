@@ -175,13 +175,16 @@
     "message": "1 Rolle durch eine gekürzte Autorenliste verdeckt"
   },
   "resolveBtn": {
-    "message": "Ergänzen"
+    "message": "Vollständige Listen lesen"
   },
   "resolveHint": {
     "message": "Öffnet die Seite jedes Papers auf Scholar (etwa eine pro Sekunde), um die vollständige Autorenliste zu lesen."
   },
+  "resolveHintSemantic": {
+    "message": "Zuerst wird bei Semantic Scholar die Autorenliste jedes Papers abgefragt (es wird nur der Titel gesendet), danach wird für den Rest die Seite des Papers auf Scholar geöffnet (etwa eine pro Sekunde)."
+  },
   "resolving": {
-    "message": "Paper-Seiten werden gelesen… $N1$/$N2$",
+    "message": "Autorenlisten werden gelesen… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Gespeicherte Paper-Details löschen"
   },
   "optCacheCount": {
-    "message": "Die Autorenlisten von $N1$ Papern sind auf diesem Gerät gespeichert (mit „Ergänzen“ gelesen, 90 Tage aufbewahrt).",
+    "message": "Die Autorenlisten von $N1$ Papern sind auf diesem Gerät gespeichert (90 Tage aufbewahrt).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Die Autorenliste von 1 Paper ist auf diesem Gerät gespeichert (mit „Ergänzen“ gelesen, 90 Tage aufbewahrt)."
+    "message": "Die Autorenliste von 1 Paper ist auf diesem Gerät gespeichert (90 Tage aufbewahrt)."
   },
   "optCacheNone": {
     "message": "Es sind keine Paper-Details gespeichert."
@@ -622,10 +625,10 @@
     "message": "Eine zweite Quelle für das, was Scholar abschneidet."
   },
   "optSemanticLabel": {
-    "message": "Autorenlisten mit Semantic Scholar ergänzen"
+    "message": "Autorenlisten zuerst über Semantic Scholar lesen"
   },
   "optSemanticLabelHint": {
-    "message": "Beim Klick auf „Ergänzen“ wird zuerst semanticscholar.org nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite nur für das, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
+    "message": "Beim Klick auf „Vollständige Listen lesen“ wird zuerst Semantic Scholar nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite selbst wird nur für das geöffnet, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Hervorgehobene Paper nach Jahr"

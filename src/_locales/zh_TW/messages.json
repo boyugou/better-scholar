@@ -180,8 +180,11 @@
   "resolveHint": {
     "message": "逐一開啟各論文在 Scholar 上的頁面（約每秒一篇），讀取完整作者列表。"
   },
+  "resolveHintSemantic": {
+    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題），其餘論文則逐一開啟它們在 Scholar 上的頁面（約每秒一篇）。"
+  },
   "resolving": {
-    "message": "正在讀取論文頁面… $N1$/$N2$",
+    "message": "正在讀取作者列表… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "清除已儲存的論文資料"
   },
   "optCacheCount": {
-    "message": "此裝置上儲存了 $N1$ 篇論文的作者列表（以「補全」讀取，保留 90 天）。",
+    "message": "此裝置上儲存了 $N1$ 篇論文的作者列表（保留 90 天）。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "此裝置上儲存了 1 篇論文的作者列表（以「補全」讀取，保留 90 天）。"
+    "message": "此裝置上儲存了 1 篇論文的作者列表（保留 90 天）。"
   },
   "optCacheNone": {
     "message": "沒有儲存任何論文資料。"
@@ -625,7 +628,7 @@
     "message": "用 Semantic Scholar 補全作者列表"
   },
   "optSemanticLabelHint": {
-    "message": "按下「補全」時，先向 semanticscholar.org 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
+    "message": "按下「補全」時，先向 Semantic Scholar 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
   },
   "yearsTitle": {
     "message": "各年份的已標示論文"

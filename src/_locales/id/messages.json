@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Lengkapi"
+    "message": "Baca daftar lengkap"
   },
   "resolveHint": {
     "message": "Membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk membaca daftar penulis lengkap."
   },
+  "resolveHintSemantic": {
+    "message": "Meminta daftar penulis tiap makalah ke Semantic Scholar lebih dulu (hanya judul makalah yang dikirim), lalu membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk sisanya."
+  },
   "resolving": {
-    "message": "Membaca halaman makalah… $N1$/$N2$",
+    "message": "Membaca daftar penulis… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Hapus detail makalah tersimpan"
   },
   "optCacheCount": {
-    "message": "Daftar penulis $N1$ makalah tersimpan di perangkat ini (dibaca dengan Lengkapi, disimpan 90 hari).",
+    "message": "Daftar penulis $N1$ makalah tersimpan di perangkat ini (disimpan 90 hari).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Tempat kedua untuk mencari yang dipotong Scholar."
   },
   "optSemanticLabel": {
-    "message": "Lengkapi daftar penulis dengan Semantic Scholar"
+    "message": "Baca daftar penulis dari Semantic Scholar lebih dulu"
   },
   "optSemanticLabelHint": {
-    "message": "Saat menekan Lengkapi, semanticscholar.org lebih dulu ditanya tentang daftar penulis lengkap tiap makalah (hanya judul makalah yang dikirim), dan halaman Scholar sendiri hanya dibuka untuk yang tidak diketahuinya. Permintaan ke Scholar lebih sedikit, jadi CAPTCHA juga lebih sedikit."
+    "message": "Saat menekan tombol “Baca daftar lengkap”, Semantic Scholar lebih dulu ditanya tentang daftar penulis lengkap tiap makalah (hanya judul makalah yang dikirim), dan halaman Scholar sendiri hanya dibuka untuk yang tidak diketahuinya. Permintaan ke Scholar lebih sedikit, jadi CAPTCHA juga lebih sedikit."
   },
   "yearsTitle": {
     "message": "Makalah yang disorot per tahun"

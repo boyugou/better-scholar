@@ -175,13 +175,16 @@
     "message": "1 rol, kısaltılmış bir yazar listesi yüzünden gizli"
   },
   "resolveBtn": {
-    "message": "Tamamla"
+    "message": "Tam listeleri oku"
   },
   "resolveHint": {
     "message": "Tam yazar listesini okumak için her makalenin Scholar'daki sayfasını açar (saniyede yaklaşık bir)."
   },
+  "resolveHintSemantic": {
+    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir), ardından kalan makalelerin Scholar'daki sayfalarını açar (saniyede yaklaşık bir)."
+  },
   "resolving": {
-    "message": "Makale sayfaları okunuyor… $N1$/$N2$",
+    "message": "Yazar listeleri okunuyor… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Kayıtlı makale ayrıntılarını temizle"
   },
   "optCacheCount": {
-    "message": "$N1$ makalenin yazar listesi bu cihazda kayıtlı (Tamamla ile okundu, 90 gün saklanır).",
+    "message": "$N1$ makalenin yazar listesi bu cihazda kayıtlı (90 gün saklanır).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 makalenin yazar listesi bu cihazda kayıtlı (Tamamla ile okundu, 90 gün saklanır)."
+    "message": "1 makalenin yazar listesi bu cihazda kayıtlı (90 gün saklanır)."
   },
   "optCacheNone": {
     "message": "Kayıtlı makale ayrıntısı yok."
@@ -622,10 +625,10 @@
     "message": "Scholar'ın kestiklerini aramak için ikinci bir yer."
   },
   "optSemanticLabel": {
-    "message": "Yazar listelerini Semantic Scholar ile tamamla"
+    "message": "Yazar listelerini önce Semantic Scholar'dan oku"
   },
   "optSemanticLabelHint": {
-    "message": "Tamamla'ya basıldığında önce her makalenin tam yazar listesi için semanticscholar.org'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca semanticscholar.org'un bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
+    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca Semantic Scholar'ın bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
   },
   "yearsTitle": {
     "message": "Yıllara göre vurgulanan makaleler"

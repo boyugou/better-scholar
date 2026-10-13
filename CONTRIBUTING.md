@@ -45,6 +45,11 @@ checks that every selector in `src/content/scholar.js` still exists and that the
 and award marks it drew equal the pure libraries' result for an independent reading of the same HTML.
 Nothing is fetched or sent. (Needs Playwright and Chromium, like the end-to-end test.)
 
+To check the live site instead, paste `scripts/check-scholar-markup.js` into the DevTools console of a real
+profile page and of a paper's own page ("View article"): it counts every Scholar class and id the extension
+reads or hides (rows, author and venue lines, the *Show more* button, the sidebar blocks, the paper page's
+field table) and names the ones that are gone. A test keeps that list equal to what the source uses.
+
 ## Data
 
 The rank lists are generated from `data/*.json` (see `data/README.md` for provenance and how the CCF

@@ -175,13 +175,16 @@
     "message": "1 rol verborgen door een afgekapte auteurslijst"
   },
   "resolveBtn": {
-    "message": "Aanvullen"
+    "message": "Volledige lijsten lezen"
   },
   "resolveHint": {
     "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
   },
+  "resolveHintSemantic": {
+    "message": "Vraagt eerst Semantic Scholar om de auteurslijst van elke paper (het ontvangt alleen de titel), en opent daarna de pagina’s van de overige papers op Scholar (ongeveer één per seconde)."
+  },
   "resolving": {
-    "message": "Paperpagina’s lezen… $N1$/$N2$",
+    "message": "Auteurslijsten lezen… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Opgeslagen paperdetails wissen"
   },
   "optCacheCount": {
-    "message": "De auteurslijsten van $N1$ papers zijn op dit apparaat opgeslagen (gelezen met Aanvullen, 90 dagen bewaard).",
+    "message": "De auteurslijsten van $N1$ papers zijn op dit apparaat opgeslagen (90 dagen bewaard).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "De auteurslijst van 1 paper is op dit apparaat opgeslagen (gelezen met Aanvullen, 90 dagen bewaard)."
+    "message": "De auteurslijst van 1 paper is op dit apparaat opgeslagen (90 dagen bewaard)."
   },
   "optCacheNone": {
     "message": "Er zijn geen paperdetails opgeslagen."
@@ -622,10 +625,10 @@
     "message": "Een tweede plek om te zoeken naar wat Scholar afkapt."
   },
   "optSemanticLabel": {
-    "message": "Auteurslijsten aanvullen met Semantic Scholar"
+    "message": "Auteurslijsten eerst lezen via Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Bij Aanvullen vraagt de extensie eerst semanticscholar.org om de volledige auteurslijst van elke paper (alleen de titel van de paper wordt verstuurd), en leest ze de Scholar-pagina alleen voor wat daar onbekend is. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
+    "message": "Bij “Volledige lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper (het ontvangt de titel van de paper en verder niets), en opent de eigen pagina van Scholar alleen voor wat het niet kent. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
   },
   "yearsTitle": {
     "message": "Gemarkeerde papers per jaar"

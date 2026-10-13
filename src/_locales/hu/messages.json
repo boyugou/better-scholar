@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Kiegészítés"
+    "message": "Teljes listák olvasása"
   },
   "resolveHint": {
     "message": "Megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet), hogy elolvassa a teljes szerzői listát."
   },
+  "resolveHintSemantic": {
+    "message": "Először a Semantic Scholartól kéri le minden cikk szerzőlistáját (csak a cikk címe kerül elküldésre), majd a többinél megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet)."
+  },
   "resolving": {
-    "message": "Cikkoldalak olvasása… $N1$/$N2$",
+    "message": "Szerzőlisták olvasása… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Mentett cikkadatok törlése"
   },
   "optCacheCount": {
-    "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (a Kiegészítéssal beolvasva, 90 napig megőrizve).",
+    "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Második hely annak keresésére, amit a Scholar levág."
   },
   "optSemanticLabel": {
-    "message": "Szerzőlisták kiegészítése a Semantic Scholarral"
+    "message": "Szerzőlisták olvasása először a Semantic Scholarból"
   },
   "optSemanticLabelHint": {
-    "message": "A Kiegészítés gombra kattintva először a semanticscholar.org kérdezi le minden cikk teljes szerzőlistáját (csak a cikk címe kerül elküldésre), a Scholar saját oldalát pedig csak arra olvassa be, amit az nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
+    "message": "A „Teljes listák olvasása” gombra kattintva először a Semantic Scholartól kéri le minden cikk teljes szerzőlistáját (csak a cikk címe kerül elküldésre), a Scholar saját oldalát pedig csak arra nyitja meg, amit az nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
   },
   "yearsTitle": {
     "message": "Kiemelt cikkek évenként"

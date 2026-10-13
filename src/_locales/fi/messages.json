@@ -175,13 +175,16 @@
     "message": "1 rooli piilossa lyhennetyn kirjoittajaluettelon vuoksi"
   },
   "resolveBtn": {
-    "message": "Täydennä"
+    "message": "Lue täydet listat"
   },
   "resolveHint": {
     "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
   },
+  "resolveHintSemantic": {
+    "message": "Kysyy ensin Semantic Scholarilta kunkin artikkelin kirjoittajaluettelon (lähetetään vain artikkelin otsikko) ja avaa sitten jäljelle jäävien artikkelien sivut Scholarissa (noin yksi sekunnissa)."
+  },
   "resolving": {
-    "message": "Luetaan artikkelisivuja… $N1$/$N2$",
+    "message": "Luetaan kirjoittajaluetteloita… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Tyhjennä tallennetut artikkelitiedot"
   },
   "optCacheCount": {
-    "message": "$N1$ artikkelin kirjoittajaluettelot on tallennettu tälle laitteelle (luettu Täydennä-toiminnolla, säilytetään 90 päivää).",
+    "message": "$N1$ artikkelin kirjoittajaluettelot on tallennettu tälle laitteelle (säilytetään 90 päivää).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 artikkelin kirjoittajaluettelo on tallennettu tälle laitteelle (luettu Täydennä-toiminnolla, säilytetään 90 päivää)."
+    "message": "1 artikkelin kirjoittajaluettelo on tallennettu tälle laitteelle (säilytetään 90 päivää)."
   },
   "optCacheNone": {
     "message": "Artikkelitietoja ei ole tallennettu."
@@ -622,10 +625,10 @@
     "message": "Toinen paikka etsiä sitä, mitä Scholar katkaisee."
   },
   "optSemanticLabel": {
-    "message": "Täydennä kirjoittajaluettelot Semantic Scholarilla"
+    "message": "Lue ensin kirjoittajaluettelot Semantic Scholarilta"
   },
   "optSemanticLabelHint": {
-    "message": "Kun painat Täydennä, semanticscholar.orgilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua luetaan vain siltä osin, mitä semanticscholar.org ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
+    "message": "Kun painat “Lue täydet listat”, Semantic Scholarilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua avataan vain siltä osin, mitä Semantic Scholar ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
   },
   "yearsTitle": {
     "message": "Korostetut artikkelit vuosittain"

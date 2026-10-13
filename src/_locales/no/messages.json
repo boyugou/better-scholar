@@ -175,13 +175,16 @@
     "message": "1 rolle skjult av en forkortet forfatterliste"
   },
   "resolveBtn": {
-    "message": "Fullfør"
+    "message": "Les fulle lister"
   },
   "resolveHint": {
     "message": "Åpner hver artikkels side på Scholar (omtrent én per sekund) for å lese hele forfatterlisten."
   },
+  "resolveHintSemantic": {
+    "message": "Utvidelsen spør først Semantic Scholar etter hver artikkels forfatterliste (Semantic Scholar får bare tittelen), og åpner deretter resten av artikkelsidene på Scholar (omtrent én per sekund)."
+  },
   "resolving": {
-    "message": "Leser artikkelsider… $N1$/$N2$",
+    "message": "Leser forfatterlister… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Tøm lagrede artikkeldetaljer"
   },
   "optCacheCount": {
-    "message": "Forfatterlister for $N1$ artikler er lagret på denne enheten (lest med Fullfør, beholdes i 90 dager).",
+    "message": "Forfatterlister for $N1$ artikler er lagret på denne enheten (beholdes i 90 dager).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Forfatterlisten for 1 artikkel er lagret på denne enheten (lest med Fullfør, beholdes i 90 dager)."
+    "message": "Forfatterlisten for 1 artikkel er lagret på denne enheten (beholdes i 90 dager)."
   },
   "optCacheNone": {
     "message": "Ingen artikkeldetaljer er lagret."
@@ -622,10 +625,10 @@
     "message": "Et annet sted å lete etter det Scholar kutter av."
   },
   "optSemanticLabel": {
-    "message": "Fullstendige forfatterlister med Semantic Scholar"
+    "message": "Les forfatterlister først fra Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Når du trykker Fullfør, spør semanticscholar.org først etter hver artikkels fulle forfatterliste (bare tittelen sendes), og Scholars egen side leses bare for det den ikke kjenner. Det gir færre forespørsler til Scholar og færre captcha-er."
+    "message": "Når du trykker «Les fulle lister», spør utvidelsen først Semantic Scholar etter hver artikkels fulle forfatterliste (Semantic Scholar får tittelen på artikkelen og ingenting annet), og Scholars egen side åpnes bare for det Semantic Scholar ikke kjenner. Det gir færre forespørsler til Scholar og færre captcha-er."
   },
   "yearsTitle": {
     "message": "Uthevede artikler per år"

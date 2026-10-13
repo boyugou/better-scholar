@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Uzupełnij"
+    "message": "Odczytaj pełne listy"
   },
   "resolveHint": {
     "message": "Otwiera stronę każdej pracy w Scholar (mniej więcej jedną na sekundę), aby odczytać pełną listę autorów."
   },
+  "resolveHintSemantic": {
+    "message": "Najpierw pyta Semantic Scholar o listę autorów każdej pracy (on dostaje tylko tytuł), a potem otwiera strony pozostałych prac w Scholar (mniej więcej jedną na sekundę)."
+  },
   "resolving": {
-    "message": "Odczyt stron prac… $N1$/$N2$",
+    "message": "Odczytywanie list autorów… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Wyczyść zapisane szczegóły prac"
   },
   "optCacheCount": {
-    "message": "Zapisane na tym urządzeniu listy autorów: $N1$ (odczytane przyciskiem „Uzupełnij”, przechowywane 90 dni).",
+    "message": "Zapisane na tym urządzeniu listy autorów: $N1$ (przechowywane 90 dni).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Drugie miejsce, w którym sprawdzisz to, co Scholar ucina."
   },
   "optSemanticLabel": {
-    "message": "Uzupełniaj listy autorów z Semantic Scholar"
+    "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po naciśnięciu „Uzupełnij” najpierw pytamy semanticscholar.org o pełną listę autorów każdej pracy (wysyłany jest tylko tytuł pracy), a stronę samego Scholar czytamy tylko dla tego, czego tam nie ma. Mniej zapytań do Scholar, więc mniej CAPTCHA."
+    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy (dostaje tylko tytuł pracy i nic więcej), a stronę samego Scholar otwieramy tylko dla tego, czego on nie zna. Mniej zapytań do Scholar, więc mniej CAPTCHA."
   },
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"

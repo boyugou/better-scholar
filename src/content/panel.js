@@ -226,7 +226,7 @@
           h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
           c.resolving ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelResolve() }, t("cancel"))
             : h("button", { class: "rr-link", type: "button", "data-act": "resolve", onClick: () => cb.onResolve() }, t("resolveBtn"))));
-        if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint" }, t("resolveHint")));        // (what it does, and that it asks Scholar: before it is pressed, not in a tooltip)
+        if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint" }, t(m.prefs.semanticScholar ? "resolveHintSemantic" : "resolveHint")));        // (what it does and who it asks, titles included: before it is pressed, not in a tooltip)
       }
       if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
       // the same paper listed twice: say so, and where the setting is (the panel itself does not write settings)
@@ -234,7 +234,10 @@
         h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
       if (c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));        // (when the layout is broken every paper is "absent": that is the warning's news)
       // spellings of the owner's name found in those very papers: one click adds one
-      if (parts.status) lines.push(...status);
+      // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
+      const countShown = parts.metrics && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
+      const lone = status.length === 1 && !c.loadingAll && !c.canLoadMore && countShown;
+      if (parts.status && !lone) lines.push(...status);
       if (parts.names && c.absent > 0 && m.nameHints.suggestions.length) {
         lines.push(h("div", { class: "rr-cover-line", "data-rr": "suggest" }, h("span", { class: "rr-note" }, t("variantSuggest")),
           ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link rr-pill", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),

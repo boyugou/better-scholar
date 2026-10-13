@@ -34,13 +34,13 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   papers. A chip's tooltip says whether it came from the author's words or from the award list.
 - **Hidden senior-author roles** — Scholar cuts long author lists with `…`, which
   hides the last author on large papers (on one well-known PI's profile, 30 of the
-  first 100 papers). **Complete** reads those papers' own pages (about one a second,
+  first 100 papers). **Read full lists** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
 - **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
   highlighted"; whenever a filter narrows the list the panel says so ("Showing 25 of 100 papers · Clear"). **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
   presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
   offers **Load all**.
-- **Cleaner profiles, your way** — (all optional, in the settings) merge the entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), hide the "Cited by", "Co-authors" and "Public access" blocks of Scholar's own page, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and complete cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
+- **Cleaner profiles, your way** — (all optional, in the settings) merge the entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), hide the "Cited by", "Co-authors" and "Public access" blocks of Scholar's own page, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and read cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
 - **30 languages** — the interface follows the browser or the language you pick, and a Scholar profile or search page opened in another language (a shared link, say) can be reopened in yours.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
   settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
@@ -90,7 +90,7 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
 - **Venue strings are messy.** What Scholar prints is owner-editable and often
   truncated. Anything unrecognised is listed ("papers at venues without a rank") so you
   can see what is missing; there is no fuzzy guessing.
-- **Complete** talks to Google Scholar (the paper's own page, same-origin, throttled,
+- **Read full lists** talks to Google Scholar (the paper's own page, same-origin, throttled,
   cached). Google may show a CAPTCHA after heavy use; it stops at the first sign of
   one and tells you.
 - Search-result pages are not supported: they carry neither the profile owner nor

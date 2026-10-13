@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Bổ sung"
+    "message": "Đọc danh sách đầy đủ"
   },
   "resolveHint": {
     "message": "Mở trang của từng bài trên Scholar (khoảng một bài mỗi giây) để đọc danh sách tác giả đầy đủ."
   },
+  "resolveHintSemantic": {
+    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo), sau đó mở trang của các bài còn lại trên Scholar (khoảng một bài mỗi giây)."
+  },
   "resolving": {
-    "message": "Đang đọc trang bài báo… $N1$/$N2$",
+    "message": "Đang đọc danh sách tác giả… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Xóa chi tiết bài báo đã lưu"
   },
   "optCacheCount": {
-    "message": "Danh sách tác giả của $N1$ bài được lưu trên thiết bị này (đọc bằng Bổ sung, giữ 90 ngày).",
+    "message": "Danh sách tác giả của $N1$ bài được lưu trên thiết bị này (giữ 90 ngày).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Nơi thứ hai để tìm những gì Scholar bị cắt bớt."
   },
   "optSemanticLabel": {
-    "message": "Bổ sung đầy đủ danh sách tác giả bằng Semantic Scholar"
+    "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
   },
   "optSemanticLabelHint": {
-    "message": "Khi nhấn Bổ sung, trước hết hỏi semanticscholar.org danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
+    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
   },
   "yearsTitle": {
     "message": "Bài được tô nổi theo năm"

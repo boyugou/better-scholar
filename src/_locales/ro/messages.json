@@ -169,13 +169,16 @@
     }
   },
   "resolveBtn": {
-    "message": "Completează"
+    "message": "Citește listele complete"
   },
   "resolveHint": {
     "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
   },
+  "resolveHintSemantic": {
+    "message": "Extensia cere mai întâi de la Semantic Scholar lista de autori a fiecărei lucrări (Semantic Scholar primește doar titlul), apoi deschide pe Scholar paginile lucrărilor rămase (aproximativ una pe secundă)."
+  },
   "resolving": {
-    "message": "Se citesc paginile lucrărilor… $N1$/$N2$",
+    "message": "Se citesc listele de autori… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -436,7 +439,7 @@
     "message": "Șterge detaliile salvate ale lucrărilor"
   },
   "optCacheCount": {
-    "message": "Listele de autori salvate pe acest dispozitiv: $N1$ (citite cu Completează, păstrate 90 de zile).",
+    "message": "Listele de autori salvate pe acest dispozitiv: $N1$ (păstrate 90 de zile).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -604,10 +607,10 @@
     "message": "Un al doilea loc unde cauți ce taie Scholar."
   },
   "optSemanticLabel": {
-    "message": "Completează listele de autori cu Semantic Scholar"
+    "message": "Citește mai întâi listele de autori din Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Când apeși Completează, se întreabă mai întâi semanticscholar.org lista completă de autori a fiecărei lucrări (se trimite doar titlul lucrării), iar pagina Scholar se citește doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
+    "message": "Când apeși „Citește listele complete”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări (Semantic Scholar primește doar titlul lucrării și nimic altceva), iar pagina Scholar se deschide doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
   },
   "yearsTitle": {
     "message": "Lucrări evidențiate pe an"

@@ -175,13 +175,16 @@
     "message": "1 件は著者リストの省略により著者順が不明"
   },
   "resolveBtn": {
-    "message": "補完"
+    "message": "完全なリストを読み取る"
   },
   "resolveHint": {
     "message": "各論文の Scholar のページを（約 1 秒に 1 件）開き、完全な著者リストを読み取ります。"
   },
+  "resolveHintSemantic": {
+    "message": "まず Semantic Scholar に各論文の著者リストを問い合わせ（送るのは論文のタイトルだけです）、残りは各論文の Scholar のページを（約 1 秒に 1 件）開きます。"
+  },
   "resolving": {
-    "message": "論文ページを読み取り中… $N1$/$N2$",
+    "message": "著者リストを読み取り中… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "保存した論文情報を消去"
   },
   "optCacheCount": {
-    "message": "$N1$ 件の論文の著者リストをこの端末に保存しています（「補完」で取得、90 日間保持）。",
+    "message": "$N1$ 件の論文の著者リストをこの端末に保存しています（90 日間保持）。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 件の論文の著者リストをこの端末に保存しています（「補完」で取得、90 日間保持）。"
+    "message": "1 件の論文の著者リストをこの端末に保存しています（90 日間保持）。"
   },
   "optCacheNone": {
     "message": "保存された論文情報はありません。"
@@ -622,10 +625,10 @@
     "message": "Scholar で途切れた内容を確認できる、もう一つの場所です。"
   },
   "optSemanticLabel": {
-    "message": "Semantic Scholar で著者リストを補完"
+    "message": "まず Semantic Scholar から著者リストを読み取る"
   },
   "optSemanticLabelHint": {
-    "message": "「補完」を押すと、まず semanticscholar.org に各論文の完全な著者リストを問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを読みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
+    "message": "「完全なリストを読み取る」を押すと、まず Semantic Scholar に各論文の完全な著者リストを問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを開きます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
   },
   "yearsTitle": {
     "message": "年別のハイライト論文"

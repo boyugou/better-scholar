@@ -206,7 +206,7 @@ the window crosses the breakpoint. When Scholar's layout has changed (`layoutBro
   Scholar page) and the cache of resolved paper pages (author list + venue), 90 days.
 - Two records with one writer each, so a stale Scholar tab can never overwrite what the settings page saved.
   The pre-2.2 combined `settings` record is split into these once and removed.
-- No other persistence, no remote code, no third-party requests. *Complete* fetches
+- No other persistence, no remote code, no third-party requests. *Read full lists* fetches
   `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops
   at the first CAPTCHA or HTTP 429/503.
 

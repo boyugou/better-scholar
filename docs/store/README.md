@@ -15,7 +15,7 @@ See your place in every paper at a glance. On a Google Scholar profile this exte
 
 • Role × rank table: click a cell to list those papers; copy the summary or the list for a CV or a grant form.
 • Awards and talks: best-paper and test-of-time awards (from the conferences' own pages), Oral, Spotlight, Highlight.
-• Complete the author lists Scholar cuts off, with one click (optionally via Semantic Scholar, which receives only the title).
+• Read the full author lists Scholar cuts off, with one click (optionally via Semantic Scholar, which receives only the title).
 • Optional: merge duplicate entries, hide parts of Scholar's page, your own role colours, papers by year, top venues.
 • 30 languages. Free and open source (Apache 2.0).
 
@@ -26,4 +26,4 @@ Ranks are the current CCF 2026 / ICORE 2026 lists, not the rank at the time of p
 - Single purpose: show authorship roles and venue ranks on Google Scholar profile pages.
 - `storage`: saves your settings (synced through your Chrome profile) and a cache of paper details you asked it to read.
 - Host access: only the Google Scholar profile pages (content-script matches); no remote code.
-- Data use: no personal data is collected, sold or transferred. The optional Semantic Scholar lookup sends only a paper's title to api.semanticscholar.org, when you switch it on and press Complete.
+- Data use: no personal data is collected, sold or transferred. The optional Semantic Scholar lookup sends only a paper's title to api.semanticscholar.org, when you switch it on and press Read full lists.

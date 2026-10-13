@@ -175,13 +175,16 @@
     "message": "1 role hidden by a truncated author list"
   },
   "resolveBtn": {
-    "message": "Complete"
+    "message": "Read full lists"
   },
   "resolveHint": {
     "message": "Opens each paper's page on Scholar (about one per second) to read the full author list."
   },
+  "resolveHintSemantic": {
+    "message": "Asks Semantic Scholar for each paper's author list first (it receives only the title), then opens Scholar's page for the rest (about one per second)."
+  },
   "resolving": {
-    "message": "Reading paper pages… $N1$/$N2$",
+    "message": "Reading author lists… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Clear saved paper details"
   },
   "optCacheCount": {
-    "message": "$N1$ papers' author lists are saved on this device (read with Complete, kept for 90 days).",
+    "message": "$N1$ papers' author lists are saved on this device (kept for 90 days).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 paper's author list is saved on this device (read with Complete, kept for 90 days)."
+    "message": "1 paper's author list is saved on this device (kept for 90 days)."
   },
   "optCacheNone": {
     "message": "No paper details are saved."
@@ -622,10 +625,10 @@
     "message": "A second place to look for what Scholar cuts off."
   },
   "optSemanticLabel": {
-    "message": "Complete author lists with Semantic Scholar"
+    "message": "Read author lists from Semantic Scholar first"
   },
   "optSemanticLabelHint": {
-    "message": "When you press Complete, ask semanticscholar.org for each paper's full author list first (it sends the paper's title and nothing else), and Scholar's own page only for what it does not know. Fewer requests to Scholar, so fewer CAPTCHAs."
+    "message": "When you press Read full lists, ask Semantic Scholar for each paper's full author list first (it receives the paper's title and nothing else), and open Scholar's own page only for what it does not know. Fewer requests to Scholar, so fewer CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Highlighted papers by year"

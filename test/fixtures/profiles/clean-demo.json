@@ -1,0 +1,9 @@
+{
+ "owner": "Jane Doe",
+ "note": "SYNTHETIC (not a real profile): three papers that name the owner in a complete author list, at venues the lists rank, so nothing is left to say about coverage. Used by the end-to-end test only.",
+ "rows": [
+  ["J Doe, A Smith, B Lee", "Advances in neural information processing systems 36 (NeurIPS 2023), 2023", "A clean paper about nothing in particular"],
+  ["A Smith, J Doe", "ICLR 2023, 2023", "Another clean paper"],
+  ["B Lee, A Smith, J Doe", "ICML 2022, 2022", "A third clean paper"]
+ ]
+}

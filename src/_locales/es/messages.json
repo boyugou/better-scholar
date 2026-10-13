@@ -175,13 +175,16 @@
     "message": "1 posición oculta por una lista de autores acortada"
   },
   "resolveBtn": {
-    "message": "Completar"
+    "message": "Leer listas completas"
   },
   "resolveHint": {
     "message": "Abre la página de cada artículo en Scholar (aprox. uno por segundo) para leer la lista completa de autores."
   },
+  "resolveHintSemantic": {
+    "message": "Primero pide a Semantic Scholar la lista de autores de cada artículo (solo se envía el título) y luego abre en Scholar las páginas de los artículos que falten (aprox. uno por segundo)."
+  },
   "resolving": {
-    "message": "Leyendo páginas de artículos… $N1$/$N2$",
+    "message": "Leyendo listas de autores… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Borrar los datos de artículos guardados"
   },
   "optCacheCount": {
-    "message": "Las listas de autores de $N1$ artículos están guardadas en este dispositivo (leídas con Completar, se conservan 90 días).",
+    "message": "Las listas de autores de $N1$ artículos están guardadas en este dispositivo (se conservan 90 días).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "La lista de autores de 1 artículo está guardada en este dispositivo (leída con Completar, se conserva 90 días)."
+    "message": "La lista de autores de 1 artículo está guardada en este dispositivo (se conserva 90 días)."
   },
   "optCacheNone": {
     "message": "No hay datos de artículos guardados."
@@ -622,10 +625,10 @@
     "message": "Un segundo lugar donde consultar lo que Scholar recorta."
   },
   "optSemanticLabel": {
-    "message": "Completar listas de autores con Semantic Scholar"
+    "message": "Leer primero las listas de autores de Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Al pulsar Completar, primero se pide a semanticscholar.org la lista completa de autores de cada artículo (solo se envía el título del artículo), y solo se lee la página de Scholar para lo que aquel no conoce. Menos peticiones a Scholar, así que menos CAPTCHA."
+    "message": "Al pulsar «Leer listas completas», primero se pide a Semantic Scholar la lista completa de autores de cada artículo (solo se envía el título del artículo), y solo se abre la página de Scholar para lo que Semantic Scholar no conoce. Menos peticiones a Scholar, así que menos CAPTCHA."
   },
   "yearsTitle": {
     "message": "Artículos resaltados por año"

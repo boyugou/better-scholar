@@ -175,13 +175,16 @@
     "message": "1 rôle masqué par une liste d’auteurs tronquée"
   },
   "resolveBtn": {
-    "message": "Compléter"
+    "message": "Lire les listes complètes"
   },
   "resolveHint": {
     "message": "Ouvre la page de chaque article sur Scholar (environ un par seconde) pour lire la liste complète des auteurs."
   },
+  "resolveHintSemantic": {
+    "message": "Demande d’abord à Semantic Scholar la liste d’auteurs de chaque article (il ne reçoit que le titre), puis ouvre la page de chaque article sur Scholar pour le reste (environ un par seconde)."
+  },
   "resolving": {
-    "message": "Lecture des pages d’articles… $N1$/$N2$",
+    "message": "Lecture des listes d’auteurs… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Effacer les détails d’articles enregistrés"
   },
   "optCacheCount": {
-    "message": "Les listes d’auteurs de $N1$ articles sont enregistrées sur cet appareil (lues avec Compléter, conservées 90 jours).",
+    "message": "Les listes d’auteurs de $N1$ articles sont enregistrées sur cet appareil (conservées 90 jours).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "La liste d’auteurs de 1 article est enregistrée sur cet appareil (lue avec Compléter, conservée 90 jours)."
+    "message": "La liste d’auteurs de 1 article est enregistrée sur cet appareil (conservée 90 jours)."
   },
   "optCacheNone": {
     "message": "Aucun détail d’article n’est enregistré."
@@ -622,10 +625,10 @@
     "message": "Un second endroit où chercher ce que Scholar tronque."
   },
   "optSemanticLabel": {
-    "message": "Compléter les listes d’auteurs avec Semantic Scholar"
+    "message": "Lire d’abord les listes d’auteurs sur Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Avec Compléter, la liste complète des auteurs de chaque article est d’abord demandée à semanticscholar.org (seul le titre de l’article est envoyé), et la page de Scholar n’est lue que pour ce qu’il ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
+    "message": "Quand vous cliquez sur le bouton « Lire les listes complètes », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar (seul le titre de l’article est envoyé), et la page de Scholar n’est ouverte que pour ce qu’il ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articles mis en évidence par année"

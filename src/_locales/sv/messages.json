@@ -175,13 +175,16 @@
     "message": "1 roll dold av en kortad författarlista"
   },
   "resolveBtn": {
-    "message": "Komplettera"
+    "message": "Läs fullständiga listor"
   },
   "resolveHint": {
     "message": "Öppnar varje artikels sida på Scholar (ungefär en per sekund) för att läsa hela författarlistan."
   },
+  "resolveHintSemantic": {
+    "message": "Frågar först Semantic Scholar efter varje artikels författarlista (den får bara artikelns titel) och öppnar sedan artikelns sida på Scholar för resten (ungefär en per sekund)."
+  },
   "resolving": {
-    "message": "Läser artikelsidor… $N1$/$N2$",
+    "message": "Läser författarlistor… $N1$/$N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -451,7 +454,7 @@
     "message": "Rensa sparade artikeldetaljer"
   },
   "optCacheCount": {
-    "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (lästa med Komplettera, sparas i 90 dagar).",
+    "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (behålls i 90 dagar).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -459,7 +462,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Författarlistan för 1 artikel är sparad på den här enheten (läst med Komplettera, sparas i 90 dagar)."
+    "message": "Författarlistan för 1 artikel är sparad på den här enheten (behålls i 90 dagar)."
   },
   "optCacheNone": {
     "message": "Inga artikeldetaljer är sparade."
@@ -622,10 +625,10 @@
     "message": "En andra plats att leta på för det Scholar klipper av."
   },
   "optSemanticLabel": {
-    "message": "Komplettera författarlistor med Semantic Scholar"
+    "message": "Läs först författarlistor från Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "När du trycker på Komplettera frågar tillägget först semanticscholar.org efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det semanticscholar.org inte känner till. Det innebär färre förfrågningar till Scholar och färre captcha-koder."
+    "message": "När du trycker på ”Läs fullständiga listor” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det Semantic Scholar inte känner till. Det innebär färre förfrågningar till Scholar och färre captcha-koder."
   },
   "yearsTitle": {
     "message": "Markerade artiklar per år"
