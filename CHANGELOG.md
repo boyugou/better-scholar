@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.117 — 2026-10-12
+
+- NAACL HLT 2015's three best papers (the ACL Anthology metadata the list reads starts in 2019) from the conference's own page (`tot.mjs naacl-best`). The list has 7691 awards.
+
 ## 2.10.116 — 2026-10-12
 
 - CP's paper awards 2001–2025 (70 papers; the list had none for CP) from the Association for Constraint Programming's own page (`tot.mjs cp-awards`). The shared name check now accepts combining accents (Vilı́m). The list has 7688 awards.

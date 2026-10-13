@@ -2409,6 +2409,12 @@ test("ACP paper awards page: 'CP 2025' headings, 'Label: Authors. Title' lines t
   assert.deepEqual(parseCpAwards(h, "https://www.a4cp.org/awards/paper-awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2025 best | J. Christopher Beck; Ryo Kuroiwa; Allen Z. Zhong | Transition dominance in domain-independent dynamic programming", "2025 category | Ignace Bleukx; Tias Guns | Modeling and explaining an industrial workforce problem", "2009 best | Petr Vilím | Edge finding filtering algorithm for discrete cumulative resources", "2009 runner-up | Geoffrey Chu; Peter Stuckey | Using relaxations in maximum density still life"]);
 });
 
+test("NAACL HLT 2015 best papers page: after 'List of best papers' a title line ending in a colon and an authors line with the affiliation after the first full stop", async () => {
+  const { parseNaaclBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Best papers at NAACL HLT 2015</h1><p>Three best papers.</p><h2>List of best papers</h2><p>Retrofitting word vectors to semantic lexicons:</p><p>Manaal Faruqui, Jesse Dodge and Noah A. Smith. Carnegie Mellon University</p><p>Unsupervised morphology induction using word embeddings:</p><p>Radu Soricut and Franz Och. Google Inc.</p><p>naacl2015@googlegroups.com</p>`;
+  assert.deepEqual(parseNaaclBest(h, "https://naacl.org/naacl-hlt-2015/best-paper-awards.html").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2015 | Manaal Faruqui; Jesse Dodge; Noah A. Smith | Retrofitting word vectors to semantic lexicons", "2015 | Radu Soricut; Franz Och | Unsupervised morphology induction using word embeddings"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

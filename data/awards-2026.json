@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7688
+  "count": 7691
  },
  "entries": [
   {
@@ -95191,6 +95191,52 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "The 22nd International Conference on Mining Software Repositories (MSR 2025): Shrey Tiwari, Serena Chen, Alexander Joukov, Peter Vandervelde, Ao Li, Rohan Padhye: It’s About Time: An Empirical Study of Date and Time Bugs in Open-Source Python Software"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Retrofitting Word Vectors to Semantic Lexicons",
+   "authors": [
+    "Manaal Faruqui",
+    "Jesse Dodge",
+    "Sujay Kumar Jauhar",
+    "Chris Dyer",
+    "Eduard Hovy",
+    "Noah A. Smith"
+   ],
+   "track": "main",
+   "source": "https://naacl.org/naacl-hlt-2015/best-paper-awards.html",
+   "evidence": "NAACL 2015 best paper: Retrofitting Word Vectors to Semantic Lexicons — Manaal Faruqui, Jesse Dodge, Sujay Kumar Jauhar, Chris Dyer, Eduard Hovy, Noah A. Smith. Carnegie Mellon University"
+  },
+  {
+   "venue": "NAACL",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unsupervised Morphology Induction Using Word Embeddings",
+   "authors": [
+    "Radu Soricut",
+    "Franz Och"
+   ],
+   "track": "main",
+   "source": "https://naacl.org/naacl-hlt-2015/best-paper-awards.html",
+   "evidence": "NAACL 2015 best paper: Unsupervised Morphology Induction Using Word Embeddings — Radu Soricut and Franz Och. Google Inc. and Human Longevity, Inc."
+  },
+  {
+   "venue": "NAACL",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "You’re Mr. Lebowski, I’m the Dude”: Inducing Address Term Formality in Signed Social Networks",
+   "authors": [
+    "Vinodh Krishnan",
+    "Jacob Eisenstein"
+   ],
+   "track": "main",
+   "source": "https://naacl.org/naacl-hlt-2015/best-paper-awards.html",
+   "evidence": "NAACL 2015 best paper: You’re Mr. Lebowski, I’m the Dude”: Inducing Address Term Formality in Signed Social Networks — Vinodh Krishnan and Jacob Eisenstein. Georgia Institute of Technology"
   },
   {
    "venue": "NAACL",
