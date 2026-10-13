@@ -16,6 +16,7 @@ test("defaults: everything on, complete, and a fresh object each time", () => {
     mergeDuplicates: false,
     talkRows: "separate",
     semanticScholar: false,
+    rowStyle: "full",
     language: "auto",
     scholarLanguage: "keep",
     colors: { first: "", cofirst: "", second: "", last: "" },

@@ -331,6 +331,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => /26, 115, 232/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
     assert.equal(await rowColor(), before);
     ok("role colours: a picked colour recolours the open profile, and 'Back to the standard colours' restores it");
+    // the highlight style: bar only (no tint) / tint only (no bar) / both
+    const look = () => page.evaluate(() => { const td = document.querySelector("tr.rr-r-first > td:first-child"), c = getComputedStyle(td); return { tint: c.backgroundColor !== "rgba(0, 0, 0, 0)" && c.backgroundColor !== "transparent", bar: c.boxShadow !== "none" }; });
+    assert.deepEqual(await look(), { tint: true, bar: true });
+    await opts.selectOption('select[data-pref="rowStyle"]', "bar");
+    await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none" && getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).backgroundColor === "rgba(0, 0, 0, 0)");
+    assert.deepEqual(await look(), { tint: false, bar: true });
+    await opts.selectOption('select[data-pref="rowStyle"]', "tint");
+    await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow === "none");
+    assert.deepEqual(await look(), { tint: true, bar: false });
+    await opts.selectOption('select[data-pref="rowStyle"]', "full");
+    await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none");
+    ok("row highlight style: bar only, tint only and both change the open profile at once");
 
     // -- 6a4. language: choosing one in the settings re-draws the open profile and the settings page in it; "Follow the browser" brings English back
     const jaTitle = JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", "ja", "messages.json"), "utf8")).panelTitle.message;

@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar pyysi hidastamaan, joten loppuun käytettiin Scholarin omia sivuja."
+  },
+  "optRowStyle": {
+    "message": "Rivien korostus"
+  },
+  "optRowStyleFull": {
+    "message": "Tausta ja palkki"
+  },
+  "optRowStyleBar": {
+    "message": "Vain palkki"
+  },
+  "optRowStyleTint": {
+    "message": "Vain tausta"
   }
 }

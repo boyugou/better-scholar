@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar bad om at sætte farten ned, så resten blev hentet fra Scholars egne sider."
+  },
+  "optRowStyle": {
+    "message": "Rækkemarkering"
+  },
+  "optRowStyleFull": {
+    "message": "Baggrund og bjælke"
+  },
+  "optRowStyleBar": {
+    "message": "Kun bjælke"
+  },
+  "optRowStyleTint": {
+    "message": "Kun baggrund"
   }
 }

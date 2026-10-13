@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar vroeg om te vertragen, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
+  },
+  "optRowStyle": {
+    "message": "Rijmarkering"
+  },
+  "optRowStyleFull": {
+    "message": "Achtergrond en balk"
+  },
+  "optRowStyleBar": {
+    "message": "Alleen balk"
+  },
+  "optRowStyleTint": {
+    "message": "Alleen achtergrond"
   }
 }

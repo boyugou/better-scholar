@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar poprosił o zwolnienie, więc resztę pobrano z własnych stron Scholar."
+  },
+  "optRowStyle": {
+    "message": "Podświetlenie wierszy"
+  },
+  "optRowStyleFull": {
+    "message": "Tło i pasek"
+  },
+  "optRowStyleBar": {
+    "message": "Tylko pasek"
+  },
+  "optRowStyleTint": {
+    "message": "Tylko tło"
   }
 }

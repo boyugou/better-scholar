@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar ביקש להאט, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
+  },
+  "optRowStyle": {
+    "message": "הדגשת שורות"
+  },
+  "optRowStyleFull": {
+    "message": "רקע ופס"
+  },
+  "optRowStyleBar": {
+    "message": "פס בלבד"
+  },
+  "optRowStyleTint": {
+    "message": "רקע בלבד"
   }
 }

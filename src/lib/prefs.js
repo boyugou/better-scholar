@@ -41,6 +41,7 @@
       colors: Object.fromEntries(ROLES.map((k) => [k, hex(r.colors && r.colors[k])])),   // a role's own colour ("#rrggbb"), or "" for the built-in one
       talkRows: ["separate", "pair", "talks"].includes(r.talkRows) ? r.talkRows : "separate",   // the panel's talk rows: apart, spotlight + highlight together, or all three together
       semanticScholar: flag(r.semanticScholar, false),   // ask Semantic Scholar (titles only) for a cut-off author list before Scholar's own page
+      rowStyle: ["full", "bar", "tint"].includes(r.rowStyle) ? r.rowStyle : "full",   // how a highlighted row looks: tint and left bar, the bar only, or the tint only
       language: /^[a-z]{2,3}(_[A-Z]{2})?$/.test(r.language) ? r.language : "auto",   // the interface language: "auto" follows the browser, otherwise a folder of _locales (lib/i18n.js lists them)
       scholarLanguage: /^[a-z]{2,3}(_[A-Z]{2})?$/.test(r.scholarLanguage) ? r.scholarLanguage : "keep",   // the language Scholar's pages are opened in: "keep" leaves the address alone
       autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded

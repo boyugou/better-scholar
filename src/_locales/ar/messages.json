@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "طلبت Semantic Scholar التمهل، لذلك استُخدمت صفحات Scholar نفسها للباقي."
+  },
+  "optRowStyle": {
+    "message": "تمييز الصف"
+  },
+  "optRowStyleFull": {
+    "message": "لون خلفية وشريط"
+  },
+  "optRowStyleBar": {
+    "message": "شريط فقط"
+  },
+  "optRowStyleTint": {
+    "message": "لون خلفية فقط"
   }
 }

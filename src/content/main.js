@@ -381,7 +381,7 @@
   // Scholar's own blocks the settings ask to hide (a class on <html>, styled in styles.css)
   const prefsHide = (p) => { for (const k of B.prefs.HIDE_PARTS) document.documentElement.classList.toggle("rr-hide-" + k, !!p.hide[k]); };
   prefsHide(prefs);
-  B.dom.applyColors(prefs.colors);
+  B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rowStyle);
   const scheduleRefresh = frame(refresh);
 
   // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
@@ -389,7 +389,7 @@
   B.store.onPrefsChanged((next) => {
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
-    B.dom.applyColors(next.colors);
+    B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rowStyle);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;

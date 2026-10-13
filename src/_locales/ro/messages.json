@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar a cerut să încetinim, așa că restul a fost preluat din paginile Scholar."
+  },
+  "optRowStyle": {
+    "message": "Evidențiere rânduri"
+  },
+  "optRowStyleFull": {
+    "message": "Fundal și bară"
+  },
+  "optRowStyleBar": {
+    "message": "Doar bara"
+  },
+  "optRowStyleTint": {
+    "message": "Doar fundalul"
   }
 }

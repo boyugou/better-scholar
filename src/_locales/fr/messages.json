@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar a demandé de ralentir ; pour la suite, les pages de Scholar ont été utilisées."
+  },
+  "optRowStyle": {
+    "message": "Surlignage des lignes"
+  },
+  "optRowStyleFull": {
+    "message": "Fond et barre"
+  },
+  "optRowStyleBar": {
+    "message": "Barre seule"
+  },
+  "optRowStyleTint": {
+    "message": "Fond seul"
   }
 }

@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar が速度を落とすよう求めたため、残りは Scholar 自身のページを使用しました。"
+  },
+  "optRowStyle": {
+    "message": "行の強調"
+  },
+  "optRowStyleFull": {
+    "message": "背景色とバー"
+  },
+  "optRowStyleBar": {
+    "message": "バーのみ"
+  },
+  "optRowStyleTint": {
+    "message": "背景色のみ"
   }
 }

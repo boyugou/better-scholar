@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar 要求放慢，其余的改为读取 Scholar 自己的页面。"
+  },
+  "optRowStyle": {
+    "message": "行的高亮样式"
+  },
+  "optRowStyleFull": {
+    "message": "底色加色条"
+  },
+  "optRowStyleBar": {
+    "message": "只要色条"
+  },
+  "optRowStyleTint": {
+    "message": "只要底色"
   }
 }

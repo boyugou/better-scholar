@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar 要求放慢速度，其餘改為讀取 Scholar 自己的頁面。"
+  },
+  "optRowStyle": {
+    "message": "列標示"
+  },
+  "optRowStyleFull": {
+    "message": "底色與色條"
+  },
+  "optRowStyleBar": {
+    "message": "僅色條"
+  },
+  "optRowStyleTint": {
+    "message": "僅底色"
   }
 }

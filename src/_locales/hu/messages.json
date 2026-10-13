@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "A Semantic Scholar lassításra kért, ezért a továbbiakhoz a Scholar saját oldalait használtuk."
+  },
+  "optRowStyle": {
+    "message": "Sorkiemelés"
+  },
+  "optRowStyleFull": {
+    "message": "Háttér és sáv"
+  },
+  "optRowStyleBar": {
+    "message": "Csak sáv"
+  },
+  "optRowStyleTint": {
+    "message": "Csak háttér"
   }
 }

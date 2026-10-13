@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar ने धीमा करने को कहा, इसलिए बाकी के लिए Scholar के अपने पेज इस्तेमाल किए गए।"
+  },
+  "optRowStyle": {
+    "message": "पंक्ति हाइलाइट"
+  },
+  "optRowStyleFull": {
+    "message": "हल्का रंग और पट्टी"
+  },
+  "optRowStyleBar": {
+    "message": "केवल पट्टी"
+  },
+  "optRowStyleTint": {
+    "message": "केवल हल्का रंग"
   }
 }

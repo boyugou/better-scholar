@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar bat, langsamer zu werden, daher wurden für den Rest die eigenen Seiten von Scholar genutzt."
+  },
+  "optRowStyle": {
+    "message": "Zeilenhervorhebung"
+  },
+  "optRowStyleFull": {
+    "message": "Hintergrund und Balken"
+  },
+  "optRowStyleBar": {
+    "message": "Nur Balken"
+  },
+  "optRowStyleTint": {
+    "message": "Nur Hintergrund"
   }
 }

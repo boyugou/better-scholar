@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar попросив сповільнитися, тож решту взято зі сторінок самого Scholar."
+  },
+  "optRowStyle": {
+    "message": "Підсвітка рядків"
+  },
+  "optRowStyleFull": {
+    "message": "Фон і смуга"
+  },
+  "optRowStyleBar": {
+    "message": "Лише смуга"
+  },
+  "optRowStyleTint": {
+    "message": "Лише фон"
   }
 }

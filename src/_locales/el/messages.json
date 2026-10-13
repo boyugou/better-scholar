@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Το Semantic Scholar ζήτησε επιβράδυνση, οπότε για το υπόλοιπο χρησιμοποιήθηκαν οι σελίδες του ίδιου του Scholar."
+  },
+  "optRowStyle": {
+    "message": "Επισήμανση γραμμής"
+  },
+  "optRowStyleFull": {
+    "message": "Φόντο και μπάρα"
+  },
+  "optRowStyleBar": {
+    "message": "Μόνο μπάρα"
+  },
+  "optRowStyleTint": {
+    "message": "Μόνο φόντο"
   }
 }

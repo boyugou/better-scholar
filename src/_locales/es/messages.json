@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar pidió reducir el ritmo, así que para el resto se usaron las páginas de Scholar."
+  },
+  "optRowStyle": {
+    "message": "Resaltado de filas"
+  },
+  "optRowStyleFull": {
+    "message": "Fondo y barra"
+  },
+  "optRowStyleBar": {
+    "message": "Solo barra"
+  },
+  "optRowStyleTint": {
+    "message": "Solo fondo"
   }
 }

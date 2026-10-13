@@ -218,3 +218,7 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
   #rr-panel { break-inside: avoid; box-shadow: none; }
   #rr-panel .rr-icon, #rr-panel .rr-copybar { display: none; }
 }
+
+/* the highlight style (settings → Colours): the bar only, or the tint only */
+html.rr-rows-bar tr[class*="rr-r-"] > td { background: none !important; }
+html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !important; }

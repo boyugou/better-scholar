@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar meminta untuk diperlambat, jadi sisanya menggunakan halaman Scholar sendiri."
+  },
+  "optRowStyle": {
+    "message": "Sorotan baris"
+  },
+  "optRowStyleFull": {
+    "message": "Latar dan bilah"
+  },
+  "optRowStyleBar": {
+    "message": "Hanya bilah"
+  },
+  "optRowStyleTint": {
+    "message": "Hanya latar"
   }
 }

@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "O Semantic Scholar pediu para desacelerar, então o restante usou as páginas do próprio Scholar."
+  },
+  "optRowStyle": {
+    "message": "Destaque das linhas"
+  },
+  "optRowStyleFull": {
+    "message": "Fundo e barra"
+  },
+  "optRowStyleBar": {
+    "message": "Só barra"
+  },
+  "optRowStyleTint": {
+    "message": "Só fundo"
   }
 }

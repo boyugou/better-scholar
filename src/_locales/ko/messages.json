@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar가 속도를 늦춰 달라고 요청하여, 나머지는 Scholar 자체 페이지를 사용했습니다."
+  },
+  "optRowStyle": {
+    "message": "행 강조"
+  },
+  "optRowStyleFull": {
+    "message": "배경색과 막대"
+  },
+  "optRowStyleBar": {
+    "message": "막대만"
+  },
+  "optRowStyleTint": {
+    "message": "배경색만"
   }
 }

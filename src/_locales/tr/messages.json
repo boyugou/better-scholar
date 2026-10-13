@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar yavaşlamasını istedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
+  },
+  "optRowStyle": {
+    "message": "Satır vurgusu"
+  },
+  "optRowStyleFull": {
+    "message": "Zemin ve çubuk"
+  },
+  "optRowStyleBar": {
+    "message": "Yalnız çubuk"
+  },
+  "optRowStyleTint": {
+    "message": "Yalnız zemin"
   }
 }

@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar ขอให้ลดความเร็วลง จึงใช้หน้าของ Scholar เองสำหรับส่วนที่เหลือ"
+  },
+  "optRowStyle": {
+    "message": "ไฮไลต์แถว"
+  },
+  "optRowStyleFull": {
+    "message": "พื้นหลังและแถบ"
+  },
+  "optRowStyleBar": {
+    "message": "เฉพาะแถบ"
+  },
+  "optRowStyleTint": {
+    "message": "เฉพาะพื้นหลัง"
   }
 }

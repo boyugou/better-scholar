@@ -30,7 +30,7 @@
   let savedTimer = 0;
   async function save() {
     await B.store.savePrefs(prefs);
-    B.dom.applyColors(prefs.colors);
+    B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rowStyle);
     renderPreview();
     syncers.forEach((fn) => fn());
     $("saved").textContent = t("optSaved");
@@ -127,6 +127,7 @@
       option({ key: "markName", label: t("optMarkName"), hint: t("optMarkNameHint"), get: () => prefs.markName, set: (v) => { prefs.markName = v; } })),
     card(t("optColorsTitle"), t("optColorsHint"),
       ...B.prefs.ROLES.map(colorRow),
+      choice({ key: "rowStyle", label: t("optRowStyle"), choices: [["full", t("optRowStyleFull")], ["bar", t("optRowStyleBar")], ["tint", t("optRowStyleTint")]], get: () => prefs.rowStyle, set: (v) => { prefs.rowStyle = v; } }),
       h("div", { class: "row" }, h("button", { class: "btn", type: "button", "data-act": "colors-reset", onClick: () => { for (const r of B.prefs.ROLES) prefs.colors[r] = ""; B.dom.applyColors(prefs.colors); save(); } }, t("optColorsReset")))),
     card(t("optRanksTitle"), null,
       option({ key: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint"), get: () => prefs.ranks.ccf, set: (v) => { prefs.ranks.ccf = v; } }),
@@ -245,5 +246,5 @@
   hint();
 
   // another settings tab (or Reset) changed something
-  B.store.onPrefsChanged((next) => { prefs = next; B.dom.applyColors(prefs.colors); renderPreview(); syncers.forEach((fn) => fn()); });
+  B.store.onPrefsChanged((next) => { prefs = next; B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rowStyle); renderPreview(); syncers.forEach((fn) => fn()); });
 })();

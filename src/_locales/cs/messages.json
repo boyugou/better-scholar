@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar požádal o zpomalení, takže zbytek byl načten ze stránek Scholar."
+  },
+  "optRowStyle": {
+    "message": "Zvýraznění řádků"
+  },
+  "optRowStyleFull": {
+    "message": "Podbarvení a pruh"
+  },
+  "optRowStyleBar": {
+    "message": "Jen pruh"
+  },
+  "optRowStyleTint": {
+    "message": "Jen podbarvení"
   }
 }

@@ -655,5 +655,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar попросил снизить частоту запросов, поэтому остальное взято со страниц самого Scholar."
+  },
+  "optRowStyle": {
+    "message": "Подсветка строк"
+  },
+  "optRowStyleFull": {
+    "message": "Фон и полоса"
+  },
+  "optRowStyleBar": {
+    "message": "Только полоса"
+  },
+  "optRowStyleTint": {
+    "message": "Только фон"
   }
 }

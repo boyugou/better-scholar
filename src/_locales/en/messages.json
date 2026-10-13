@@ -673,5 +673,17 @@
   },
   "resolveSemanticBusy": {
     "message": "Semantic Scholar asked to slow down, so Scholar's own pages were used for the rest."
+  },
+  "optRowStyle": {
+    "message": "Row highlight"
+  },
+  "optRowStyleFull": {
+    "message": "Tint and bar"
+  },
+  "optRowStyleBar": {
+    "message": "Bar only"
+  },
+  "optRowStyleTint": {
+    "message": "Tint only"
   }
 }

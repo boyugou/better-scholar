@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.16.0 — 2026-10-13
+
+- Settings → Colours: **Row highlight** style: tint and bar (as before), the bar only, or the tint only.
+
 ## 2.15.1 — 2026-10-13
 
 - When Semantic Scholar asks to slow down during Complete, the rest is read from Scholar's own pages and the status says so (in every language).

@@ -31,7 +31,7 @@
   // Reads the language setting and loads its strings. Call once, before anything is drawn.
   async function useLanguage() {
     let code = "auto";
-    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); } catch (e) { /* no storage: the browser's language */ }
+    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rowStyle); } catch (e) { /* no storage: the browser's language */ }
     custom = null;
     language = code === "auto" ? chrome.i18n.getUILanguage() : code;
     if (code !== "auto") {
@@ -45,6 +45,10 @@
       const c = colors && colors[role];
       if (c) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);
     }
+  }
+  // How highlighted rows look: a class on <html> (styled in styles.css); "full" is the plain default
+  function applyRowStyle(style) {
+    for (const k of ["bar", "tint"]) document.documentElement.classList.toggle("rr-rows-" + k, style === k);
   }
   const dir = () => (B.i18n.isRtl(language) ? "rtl" : "ltr");
   const langTag = () => String(language).replace("_", "-");
@@ -97,5 +101,5 @@
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }
 
-  B.dom = { h, t, tn, applyColors, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl };
+  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl };
 })();
