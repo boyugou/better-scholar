@@ -274,6 +274,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForFunction((x) => (document.querySelector("#rr-panel") || {}).getAttribute && document.querySelector("#rr-panel").getAttribute("aria-label") === x, jaTitle, { timeout: 15000 });
     await opts.waitForFunction((x) => document.title.startsWith(x), jaTitle, { timeout: 15000 });
     assert.equal(await opts.locator('select[data-pref="language"]').inputValue(), "ja");
+    await opts.selectOption('select[data-pref="language"]', "ar");
+    await page.waitForFunction(() => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").dir === "rtl", null, { timeout: 15000 });
+    await opts.waitForFunction(() => document.documentElement.dir === "rtl", null, { timeout: 15000 });
+    await opts.waitForTimeout(400);
+    await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
+    await page.bringToFront(); await page.waitForTimeout(400);
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
     await opts.selectOption('select[data-pref="language"]', "auto");
     await page.waitForFunction((x) => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").getAttribute("aria-label") === x, enTitle, { timeout: 15000 });
     ok("language: picking Japanese redraws the open profile and the settings page in it; 'Follow the browser' brings English back");
