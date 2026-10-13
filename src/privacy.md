@@ -10,11 +10,11 @@ Scholar Roles & Ranks works entirely in your browser.
   panel is folded and a cache of the paper pages you asked it to read (kept at most 90 days). The settings page
   can clear that cache. Nothing else.
 - **What it sends:** nothing by default. There is no analytics, no tracking, no account, no remote code and no
-  third-party request (the one optional exception is the Semantic Scholar lookup below). The extension's own network activity is **Complete**, which — only when you click it —
+  third-party request (the one optional exception is the Semantic Scholar lookup below). The extension's own network activity is **Read full lists**, which — only when you click it —
   opens each paper's own page on `scholar.google.*` (same origin, about once a second) to read the full author
   list. It stops at the first CAPTCHA or HTTP 429/503.
-- **Semantic Scholar (off by default):** if you switch on *Semantic Scholar → Complete author lists with Semantic
-  Scholar*, then when you click **Complete** the extension first asks `api.semanticscholar.org` for each paper's
+- **Semantic Scholar (off by default):** if you switch on *Semantic Scholar → Read author lists from Semantic
+  Scholar first*, then when you click **Read full lists** the extension first asks `api.semanticscholar.org` for each paper's
   author list (about once a second): the request carries the paper's title and nothing else — no cookies, no
   referrer, no identifier of you or of the profile. If you give an optional Semantic Scholar API key in the settings, it is kept on this device only
   (`chrome.storage.local`, never synced) and sent only to `api.semanticscholar.org`, as the request's `x-api-key` header. Papers it does not know go to Scholar's own page as above.
