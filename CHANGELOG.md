@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.110 — 2026-10-12
+
+- KDD 2004's best research paper title is corrected (the page printed it without its article and with a stray ">>"), so it matches Scholar. A re-audit of all 7556 entries found no other malformed titles or authors.
+
 ## 2.10.109 — 2026-10-12
 
 - ASP-DAC's best papers 2006–2024, DAC's 2005–2024 and DATE's 2005–2024 (82 new papers, filling DATE's gaps before 2014 and in 2015, and DAC and ASP-DAC from nothing) from IEEE CEDA's own best paper award pages (`tot.mjs ceda-paper`). The list has 7556 awards.

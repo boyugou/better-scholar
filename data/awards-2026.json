@@ -87401,7 +87401,7 @@
    "year": 2004,
    "award": "best",
    "awardLabel": "Best Research Paper",
-   "title": "Probabilistic Framework for Semi-Supervised Clustering >>",
+   "title": "A Probabilistic Framework for Semi-Supervised Clustering",
    "authors": [
     "Sugato Basu",
     "Mikhail Bilenko",
@@ -87409,7 +87409,7 @@
    ],
    "track": "main",
    "source": "https://kdd.org/awards/view/2004-sigkdd-best-paper-award",
-   "evidence": "KDD 2004 Best Research Paper: Probabilistic Framework for Semi-Supervised Clustering >> — Sugato Basu, Mikhail Bilenko, and Raymond Mooney"
+   "evidence": "KDD 2004 Best Research Paper: Probabilistic Framework for Semi-Supervised Clustering >> [the page prints the title without its article and with a stray mark; the paper is “A Probabilistic Framework for Semi-Supervised Clustering” — data/exclusions.json] — Sugato Basu, Mikhail Bilenko, and Raymond Mooney"
   },
   {
    "venue": "KDD",
