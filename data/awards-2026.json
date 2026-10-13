@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7802
+  "count": 7803
  },
  "entries": [
   {
@@ -87974,6 +87974,24 @@
    "paperYear": 2009,
    "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
    "evidence": "ISWC 2019 SWSA Ten-Year Award: Olaf Hartig, Christian Bizer, Johann-Christoph Freytag “Executing SPARQL Queries over the Web of Linked Data”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Resource Track Paper Award",
+   "title": "Explanation Ontology: A Model of Explanations for User-Centered AI",
+   "authors": [
+    "Shruthi Chari",
+    "Oshani Seneviratne",
+    "Daniel Gruen",
+    "Morgan Foreman",
+    "Amar Das",
+    "Deborah McGuinness"
+   ],
+   "track": "main",
+   "source": "https://iswc2020.semanticweb.org/program/awards/",
+   "evidence": "ISWC 2020 Best Resource Paper Award: Shruthi Chari, Oshani Seneviratne, Daniel Gruen, Morgan Foreman, Amar Das and Deborah McGuinness “Explanation Ontology: A Model of Explanations for User-Centered AI“"
   },
   {
    "venue": "ISWC",

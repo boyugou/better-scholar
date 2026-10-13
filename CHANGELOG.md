@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.125 — 2026-10-12
+
+- Semantic Web ISWC 2020's best resource paper from the conference's awards page (the `iswc-semweb` reader takes its layout). The list has 7803 awards.
+
 ## 2.10.124 — 2026-10-12
 
 - The International Semantic Web Conference's best research, student, resource and in-use track papers of 2022, 2023 and 2024 (12 papers) from the conference's own award pages (`tot.mjs iswc-semweb`; the Wearable-computing ISWC pages are a different series). The list has 7802 awards.

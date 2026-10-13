@@ -3598,7 +3598,16 @@ export function parseIswcSemWeb(html, source) {
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/iswc(\d{4})\.semanticweb\.org/.exec(source) || [])[1], 10);
   const HEAD = /^Best (?:(Research|Resources?|In-?use) Track (Student )?Paper(?: Award)?|(Student )?Paper(?: Award)?\s*(?:--|,)\s*(Research|Resources?|In-?use) Track)$/i;
-  if (!year || !ls.some((l) => HEAD.test(l)) || !ls.some((l) => /ISWC|Semantic Web/.test(l))) return { entries, skipped: ["no Semantic Web ISWC awards"] };
+  if (!year || !ls.some((l) => /ISWC|Semantic Web/.test(l))) return { entries, skipped: ["no Semantic Web ISWC awards"] };
+  // 2020 prints "Best Resource Paper Award" over "Authors “Title“" (2018 announces its winners in prose on an http-only page, which the list does not take as a source).
+  const rp = ls.findIndex((l) => /^Best Resource Paper Award$/i.test(l));
+  if (rp >= 0 && !ls.some((l) => HEAD.test(l))) {
+    const m = /^(.+?)\s+[\u201c"](.+?)[\u201d\u201c"]\s*$/.exec(ls[rp + 1] || ""), who = m ? names(m[1]) : [];
+    if (m && who.length && who.every(isPerson)) entries.push({ venue: "ISWC", year, award: "category", awardLabel: "Best Resource Track Paper Award", title: cleanTitle(m[2]), authors: who, track: "main", source, evidence: `ISWC ${year} Best Resource Paper Award: ${ls[rp + 1]}` });
+    else skipped.push(`${year}: not read: ${(ls[rp + 1] || "").slice(0, 60)}`);
+    return { entries, skipped };
+  }
+  if (!ls.some((l) => HEAD.test(l))) return { entries, skipped: ["no Semantic Web ISWC awards"] };
   for (let i = 0; i < ls.length; i++) {
     const m = HEAD.exec(ls[i]);
     if (!m) continue;
