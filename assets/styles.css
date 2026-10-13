@@ -41,7 +41,7 @@ details.lang[open] > summary { color: var(--text); border-color: var(--accent); 
 .lang-menu a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--text); font-size: 14.5px; }
 .lang-menu a:hover { background: var(--bg); text-decoration: none; }
 .lang-menu a[aria-current] { background: color-mix(in srgb, var(--accent) 14%, transparent); font-weight: 650; }
-@media (max-width: 520px) { .brand span { display: none; } .lang-menu { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .brand span { display: none; } .lang-menu { width: min(360px, calc(100vw - 24px)); } .lang-menu a { padding: 8px 10px; font-size: 14px; } }
 
 /* hero */
 .hero { background: var(--hero); padding: 60px 0 28px; text-align: center; }
