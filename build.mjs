@@ -22,9 +22,10 @@ const ORDER = ["en", "zh-CN", "zh-TW", "es", "hi", "pt-BR", "id", "ja", "fr", "d
 const menu = ORDER.map((c) => languages.find((l) => l.code === c)).filter(Boolean);
 for (const l of languages) if (!menu.includes(l)) menu.push(l);
 
+// (the four role colours, in turn: the colour code of the product, not a rainbow)
 const FEATURES = [
-  ["roles", "#4d8ff5"], ["ranks", "#7c8cf8"], ["summary", "#b36cf6"], ["awards", "#fbbc04"],
-  ["complete", "#34a853"], ["merge", "#f28b82"], ["yours", "#4dd0c4"], ["private", "#9aa0a6"]
+  ["roles", "#4d8ff5"], ["ranks", "#b36cf6"], ["summary", "#fbbc04"], ["awards", "#34a853"],
+  ["complete", "#4d8ff5"], ["merge", "#b36cf6"], ["yours", "#fbbc04"], ["private", "#34a853"]
 ];
 
 // The "Try it" demo: six invented papers, the reader's own name at the position that gives the row its role; the buttons switch roles on and off
@@ -49,7 +50,7 @@ function demoAuthors(role, you) {
 }
 
 function page(lang) {
-  const t = (k) => esc(strings[lang.code][k] ?? strings.en[k]);
+  const t = (k) => esc(strings[lang.code][k] ?? strings.en[k]).replace(/chrome:\/\/extensions/g, "<code>chrome://extensions</code>");
   const url = `${SITE_URL}/${lang.code}/`;
   const switcher = `<details class="lang">
         <summary aria-label="${t("nav.language")}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>${esc(lang.name)}</span></summary>
@@ -100,9 +101,13 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>${t("shot.title")}</h2>
-      <figure><img src="../assets/screenshot.png" alt="${t("shot.caption")}" loading="eager"><figcaption>${t("shot.caption")}</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="${t("shot2.caption")}" loading="lazy"><figcaption>${t("shot2.caption")}</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="${t("shot.caption")}" width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>${t("shot.caption")}</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -116,6 +121,14 @@ ${["first", "cofirst", "second", "last"].map((r) => `        <button type="butto
 ${DEMO.map((d, i) => `        <div class="paper" data-role="${d.role}"><b class="ptitle">${t("demo.paper")} ${i + 1}</b><span class="auth">${demoAuthors(d.role, t("demo.you"))}</span><span class="ven">${d.venue} ${d.chips.map((c) => `<em>${c}</em>`).join("")}</span></div>`).join("\n")}
       </div>
       <p class="demo-count">${t("demo.count")}: <b id="demo-n">0</b></p>
+    </div>
+  </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="${t("shot2.caption")}" width="1360" height="1180" loading="lazy">
+        <figcaption>${t("shot2.caption")}</figcaption>
+      </figure>
     </div>
   </section>
   <section class="features">
