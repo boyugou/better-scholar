@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.126 — 2026-10-12
+
+- DASFAA 2024's best paper, best student paper and runner-up (3 papers; the list had none for DASFAA) from the conference's own awards page (`tot.mjs dasfaa-awards`). The list has 7806 awards.
+
 ## 2.10.125 — 2026-10-12
 
 - Semantic Web ISWC 2020's best resource paper from the conference's awards page (the `iswc-semweb` reader takes its layout). The list has 7803 awards.

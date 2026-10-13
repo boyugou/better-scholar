@@ -2465,6 +2465,12 @@ test("ISWC (Semantic Web) award pages in their three layouts (2023: heading, aut
   assert.deepEqual(parseIswcSemWeb(h24, "https://iswc2024.semanticweb.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2024 category | Mario Scrocca; Marco Grassi; Irene Celino"]);
 });
 
+test("DASFAA 2024's awards page: under Research Track the labels Best Paper / Best Student Paper / Best Paper Runner-up over title and authors; the demo track is left out", async () => {
+  const { parseDasfaaAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>DASFAA 2024 Awards</p><p>Research Track</p><p>Best Paper</p><p>Distributed temporal graph neural network learning over dynamic graphs</p><p>Ziquan Fang, Qichen Sun, Yunjun Gao (Zhejiang University)</p><p>Best Student Paper</p><p>Cost-aware outdated facts correction in knowledge bases</p><p>Hao Xin, Lei Chen (HKUST), Yanyan Shen (SJTU)</p><p>Best Paper Runner-up</p><p>Flexible contact correlation learning on trajectories</p><p>Chenhao Wang, Lisi Chen (UESTC)</p><p>Demonstration Track</p><p>Best Demo</p><p>Bridging the gap: an integrated graph database solution</p><p>Yongzhe Jia, Jianguo Wei (Tianjin University)</p>`;
+  assert.deepEqual(parseDasfaaAwards(h, "https://www.dasfaa2024.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2024 best | Ziquan Fang; Qichen Sun; Yunjun Gao", "2024 student | Hao Xin; Lei Chen; Yanyan Shen", "2024 runner-up | Chenhao Wang; Lisi Chen"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

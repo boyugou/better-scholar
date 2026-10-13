@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7803
+  "count": 7806
  },
  "entries": [
   {
@@ -50068,6 +50068,54 @@
    "track": "main",
    "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
    "evidence": "DAC 2026 Most Influential Paper Award: “First-order Incremental Block-based Statistical Timing Analysis” by Chandu Visweswariah (CURE100 and Croton100), Kaushik Ravindran (Stealth AI Startup), Kerim Kalafala (IBM), Steve G Walker (IBM), Sambasivan Narayan (Apple)"
+  },
+  {
+   "venue": "DASFAA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Distributed Temporal Graph Neural Network Learning over Large-Scale Dynamic Graphs",
+   "authors": [
+    "Ziquan Fang",
+    "Qichen Sun",
+    "Qilong Wang",
+    "Lu Chen",
+    "Yunjun Gao"
+   ],
+   "track": "main",
+   "source": "https://www.dasfaa2024.org/awards/",
+   "evidence": "DASFAA 2024 Best Paper: Distributed Temporal Graph Neural Network Learning over Large-Scale Dynamic Graphs — Ziquan Fang, Qichen Sun, Qilong Wang, Lu Chen, Yunjun Gao (Zhejiang University)"
+  },
+  {
+   "venue": "DASFAA",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Flexible Contact Correlation Learning on Spatio-Temporal Trajectories",
+   "authors": [
+    "Chenhao Wang",
+    "Lisi Chen",
+    "Shuo Shang",
+    "Shanshan Feng"
+   ],
+   "track": "main",
+   "source": "https://www.dasfaa2024.org/awards/",
+   "evidence": "DASFAA 2024 Best Paper Runner-up: Flexible Contact Correlation Learning on Spatio-Temporal Trajectories — Chenhao Wang, Lisi Chen, Shuo Shang (University of Electronic Science and Technology of China), Shanshan Feng (Centre for Frontier AI Research, A*STAR)"
+  },
+  {
+   "venue": "DASFAA",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Cost-aware Outdated Facts Correction in the Knowledge Bases",
+   "authors": [
+    "Hao Xin",
+    "Lei Chen",
+    "Yanyan Shen"
+   ],
+   "track": "main",
+   "source": "https://www.dasfaa2024.org/awards/",
+   "evidence": "DASFAA 2024 Best Student Paper: Cost-aware Outdated Facts Correction in the Knowledge Bases — Hao Xin, Lei Chen (Hong Kong University of Science and Technology), Yanyan Shen (Shanghai Jiao Tong University)"
   },
   {
    "venue": "DATE",
