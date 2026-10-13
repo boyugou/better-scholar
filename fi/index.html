@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Näin se näyttää</h2>
-      <figure><img src="../assets/screenshot.png" alt="Keksitty profiili (oikeat foorumit, keksityt julkaisut): rivit värjätty roolin mukaan, luokitusmerkit foorumin vieressä ja yhteenveto oikealla." loading="eager"><figcaption>Keksitty profiili (oikeat foorumit, keksityt julkaisut): rivit värjätty roolin mukaan, luokitusmerkit foorumin vieressä ja yhteenveto oikealla.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta." loading="lazy"><figcaption>Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Keksitty profiili (oikeat foorumit, keksityt julkaisut): rivit värjätty roolin mukaan, luokitusmerkit foorumin vieressä ja yhteenveto oikealla." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Keksitty profiili (oikeat foorumit, keksityt julkaisut): rivit värjätty roolin mukaan, luokitusmerkit foorumin vieressä ja yhteenveto oikealla.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Korostetut artikkelit: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta." width="1360" height="1180" loading="lazy">
+        <figcaption>Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Jokainen julkaisu värjätty roolisi mukaan</h3><p>Ensimmäisen, jaetun ensimmäisen, toisen ja viimeisen kirjoittajan rivit saavat oman värinsä, ja nimesi on korostettu kirjoittajariviltä.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF- ja CORE-luokitukset</h3><p>CCF 2026- ja ICORE 2026 -luokitus näkyy jokaisen foorumin vieressä, ja mukana on sääntö, jolla se tunnistettiin. Foorumi, jota ei voi sijoittaa, jää merkitsemättä: arvausta ei koskaan tehdä.</p></article>
-      <article style="--c:#b36cf6"><h3>Rooli × luokitus -taulukko</h3><p>Valitse solu nähdäksesi vain nuo julkaisut, ja kopioi yhteenveto tai lista CV:hen tai apurahahakemukseen.</p></article>
-      <article style="--c:#fbbc04"><h3>Palkinnot ja esitykset</h3><p>Parhaat julkaisut, test-of-time-palkinnot, Oral, Spotlight ja Highlight — kirjoittajien omista sanoista ja yli 7 000 julkaisun virallisilta palkintosivuilta.</p></article>
-      <article style="--c:#34a853"><h3>Katkaistut kirjoittajalistat täydennettynä</h3><p>Scholar piilottaa pitkien listojen viimeiset kirjoittajat. Yksi napsautus lukee ne julkaisun sivulta tai Semantic Scholarista, jos sallit sen.</p></article>
-      <article style="--c:#f28b82"><h3>Kaksoiskappaleet yhdistettynä</h3><p>Kun kytket tämän päälle, merkinnät, joissa sama julkaisu esiintyy kahdesti, yhdistyvät yhdeksi ja lainaukset lasketaan yhteen.</p></article>
-      <article style="--c:#4dd0c4"><h3>Muokkaa omaksesi</h3><p>Valitse, mitä näytetään, valitse omat värisi ja piilota Scholarin sivun osat, joita et tarvitse.</p></article>
-      <article style="--c:#9aa0a6"><h3>Yksityisyys suunnittelun lähtökohtana</h3><p>Ei tiliä, ei analytiikkaa, ei seurantaa. Kaikki lasketaan selaimessasi, ja luokituslistat ovat mukana laajennuksessa.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF- ja CORE-luokitukset</h3><p>CCF 2026- ja ICORE 2026 -luokitus näkyy jokaisen foorumin vieressä, ja mukana on sääntö, jolla se tunnistettiin. Foorumi, jota ei voi sijoittaa, jää merkitsemättä: arvausta ei koskaan tehdä.</p></article>
+      <article style="--c:#fbbc04"><h3>Rooli × luokitus -taulukko</h3><p>Valitse solu nähdäksesi vain nuo julkaisut, ja kopioi yhteenveto tai lista CV:hen tai apurahahakemukseen.</p></article>
+      <article style="--c:#34a853"><h3>Palkinnot ja esitykset</h3><p>Parhaat julkaisut, test-of-time-palkinnot, Oral, Spotlight ja Highlight — kirjoittajien omista sanoista ja yli 7 000 julkaisun virallisilta palkintosivuilta.</p></article>
+      <article style="--c:#4d8ff5"><h3>Katkaistut kirjoittajalistat täydennettynä</h3><p>Scholar piilottaa pitkien listojen viimeiset kirjoittajat. Yksi napsautus lukee ne julkaisun sivulta tai Semantic Scholarista, jos sallit sen.</p></article>
+      <article style="--c:#b36cf6"><h3>Kaksoiskappaleet yhdistettynä</h3><p>Kun kytket tämän päälle, merkinnät, joissa sama julkaisu esiintyy kahdesti, yhdistyvät yhdeksi ja lainaukset lasketaan yhteen.</p></article>
+      <article style="--c:#fbbc04"><h3>Muokkaa omaksesi</h3><p>Valitse, mitä näytetään, valitse omat värisi ja piilota Scholarin sivun osat, joita et tarvitse.</p></article>
+      <article style="--c:#34a853"><h3>Yksityisyys suunnittelun lähtökohtana</h3><p>Ei tiliä, ei analytiikkaa, ei seurantaa. Kaikki lasketaan selaimessasi, ja luokituslistat ovat mukana laajennuksessa.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Asennus</h2>
       <ol>
         <li>Lataa projekti GitHubista (vihreä „Code“-painike, sitten „Download ZIP“) ja pura zip-tiedosto.</li>
-        <li>Avaa chrome://extensions ja ota Kehittäjätila käyttöön.</li>
+        <li>Avaa <code>chrome://extensions</code> ja ota Kehittäjätila käyttöön.</li>
         <li>Napsauta „Lataa pakkaamaton laajennus“ ja valitse kansio src. Avaa sitten mikä tahansa Google Scholar -profiili.</li>
       </ol>
       <p class="note">Chrome Web Store -merkintä voi ilmestyä myöhemmin. Edge, Brave ja muut Chromium-selaimet toimivat samalla tavalla.</p>

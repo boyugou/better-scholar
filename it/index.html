@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Com'è fatta</h2>
-      <figure><img src="../assets/screenshot.png" alt="Un profilo inventato (sedi reali, articoli di fantasia): righe colorate per ruolo, etichette di ranking accanto a ogni sede, il riepilogo a destra." loading="eager"><figcaption>Un profilo inventato (sedi reali, articoli di fantasia): righe colorate per ruolo, etichette di ranking accanto a ogni sede, il riepilogo a destra.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="La pagina delle impostazioni: scegli cosa mostrare, con un'anteprima in tempo reale." loading="lazy"><figcaption>La pagina delle impostazioni: scegli cosa mostrare, con un'anteprima in tempo reale.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Un profilo inventato (sedi reali, articoli di fantasia): righe colorate per ruolo, etichette di ranking accanto a ogni sede, il riepilogo a destra." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Un profilo inventato (sedi reali, articoli di fantasia): righe colorate per ruolo, etichette di ranking accanto a ogni sede, il riepilogo a destra.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Articoli evidenziati: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="La pagina delle impostazioni: scegli cosa mostrare, con un'anteprima in tempo reale." width="1360" height="1180" loading="lazy">
+        <figcaption>La pagina delle impostazioni: scegli cosa mostrare, con un'anteprima in tempo reale.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Ogni articolo, colorato in base al tuo ruolo</h3><p>Le righe di primo autore, co-primo autore, secondo autore e ultimo autore hanno ciascuna un colore, e il tuo nome è evidenziato nell'elenco degli autori.</p></article>
-      <article style="--c:#7c8cf8"><h3>Ranking CCF e CORE</h3><p>Il ranking CCF 2026 e ICORE 2026 compare accanto a ogni sede, insieme alla regola che l'ha riconosciuta. Una sede che non riesce a collocare resta senza segno: mai un'ipotesi.</p></article>
-      <article style="--c:#b36cf6"><h3>Una tabella ruolo × ranking</h3><p>Seleziona una cella per elencare solo quegli articoli, e copia il riepilogo o l'elenco per un CV o una domanda di finanziamento.</p></article>
-      <article style="--c:#fbbc04"><h3>Premi e interventi</h3><p>Migliori articoli, premi test-of-time, Oral, Spotlight e Highlight, dalle parole stesse degli autori e dalle pagine ufficiali dei premi, per oltre 7.000 articoli.</p></article>
-      <article style="--c:#34a853"><h3>Elenchi di autori troncati, completati</h3><p>Scholar nasconde gli ultimi autori delle liste lunghe. Un clic li legge dalla pagina dell'articolo, o da Semantic Scholar se lo consenti.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicati uniti</h3><p>Se lo attivi, le voci che elencano due volte lo stesso articolo diventano una sola, con le citazioni sommate.</p></article>
-      <article style="--c:#4dd0c4"><h3>Su misura per te</h3><p>Scegli cosa mostrare, scegli i tuoi colori e nascondi le parti della pagina di Scholar che non ti servono.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privacy by design</h3><p>Nessun account, nessuna analisi, nessun tracciamento. Tutto viene calcolato nel tuo browser, e le liste di ranking sono incluse nell'estensione.</p></article>
+      <article style="--c:#b36cf6"><h3>Ranking CCF e CORE</h3><p>Il ranking CCF 2026 e ICORE 2026 compare accanto a ogni sede, insieme alla regola che l'ha riconosciuta. Una sede che non riesce a collocare resta senza segno: mai un'ipotesi.</p></article>
+      <article style="--c:#fbbc04"><h3>Una tabella ruolo × ranking</h3><p>Seleziona una cella per elencare solo quegli articoli, e copia il riepilogo o l'elenco per un CV o una domanda di finanziamento.</p></article>
+      <article style="--c:#34a853"><h3>Premi e interventi</h3><p>Migliori articoli, premi test-of-time, Oral, Spotlight e Highlight, dalle parole stesse degli autori e dalle pagine ufficiali dei premi, per oltre 7.000 articoli.</p></article>
+      <article style="--c:#4d8ff5"><h3>Elenchi di autori troncati, completati</h3><p>Scholar nasconde gli ultimi autori delle liste lunghe. Un clic li legge dalla pagina dell'articolo, o da Semantic Scholar se lo consenti.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicati uniti</h3><p>Se lo attivi, le voci che elencano due volte lo stesso articolo diventano una sola, con le citazioni sommate.</p></article>
+      <article style="--c:#fbbc04"><h3>Su misura per te</h3><p>Scegli cosa mostrare, scegli i tuoi colori e nascondi le parti della pagina di Scholar che non ti servono.</p></article>
+      <article style="--c:#34a853"><h3>Privacy by design</h3><p>Nessun account, nessuna analisi, nessun tracciamento. Tutto viene calcolato nel tuo browser, e le liste di ranking sono incluse nell'estensione.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installa</h2>
       <ol>
         <li>Scarica il progetto da GitHub (pulsante verde “Code”, poi “Download ZIP”) e decomprimilo.</li>
-        <li>Apri chrome://extensions e attiva la Modalità sviluppatore.</li>
+        <li>Apri <code>chrome://extensions</code> e attiva la Modalità sviluppatore.</li>
         <li>Clicca su “Carica estensione non pacchettizzata” e scegli la cartella src. Poi apri un qualsiasi profilo di Google Scholar.</li>
       </ol>
       <p class="note">Potrebbe seguire una scheda nel Chrome Web Store. Edge, Brave e gli altri browser Chromium funzionano allo stesso modo.</p>

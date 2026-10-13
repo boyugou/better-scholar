@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>表示例</h2>
-      <figure><img src="../assets/screenshot.png" alt="架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。" loading="eager"><figcaption>架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。" loading="lazy"><figcaption>設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。" width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>架空のプロフィール（実在の掲載先、架空の論文）：役割ごとに色分けされた行、掲載先ごとのランクのラベル、右側の集計。</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">ハイライトした論文: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。" width="1360" height="1180" loading="lazy">
+        <figcaption>設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>役割ごとに色分けされた全論文</h3><p>筆頭著者、共同筆頭著者、第二著者、最終著者の行にそれぞれ色が付き、著者欄ではあなたの名前が目立つように示されます。</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF と CORE のランク</h3><p>各掲載先の横に CCF 2026 と ICORE 2026 のランクを、どの規則で一致したかとともに表示します。判定できない掲載先には印を付けず、推測もしません。</p></article>
-      <article style="--c:#b36cf6"><h3>役割 × ランクの表</h3><p>セルを選ぶと該当する論文だけを一覧にできます。集計や一覧をコピーして、業績書や研究助成の申請書にお使いいただけます。</p></article>
-      <article style="--c:#fbbc04"><h3>受賞と発表</h3><p>ベストペーパー、時の試練賞、Oral・Spotlight・Highlight を、著者自身の記述と、7,000 件を超える論文の公式受賞ページから集めています。</p></article>
-      <article style="--c:#34a853"><h3>途切れた著者リストを補完</h3><p>Scholar は長い著者リストの後ろの著者を省略します。ワンクリックで論文ページから読み取り、許可すれば Semantic Scholar からも補完します。</p></article>
-      <article style="--c:#f28b82"><h3>重複エントリーの統合</h3><p>オンにすると、同じ論文が 2 回載っているエントリーが 1 件にまとめられ、被引用数は合算されます。</p></article>
-      <article style="--c:#4dd0c4"><h3>好みに合わせて調整</h3><p>表示する項目を選び、色を自分好みに変え、Scholar のページで不要な部分を非表示にできます。</p></article>
-      <article style="--c:#9aa0a6"><h3>設計段階からプライバシー重視</h3><p>アカウント不要、アクセス解析なし、トラッキングなし。すべての計算はブラウザ内で行われ、ランクの一覧は拡張機能に同梱されています。</p></article>
+      <article style="--c:#b36cf6"><h3>CCF と CORE のランク</h3><p>各掲載先の横に CCF 2026 と ICORE 2026 のランクを、どの規則で一致したかとともに表示します。判定できない掲載先には印を付けず、推測もしません。</p></article>
+      <article style="--c:#fbbc04"><h3>役割 × ランクの表</h3><p>セルを選ぶと該当する論文だけを一覧にできます。集計や一覧をコピーして、業績書や研究助成の申請書にお使いいただけます。</p></article>
+      <article style="--c:#34a853"><h3>受賞と発表</h3><p>ベストペーパー、時の試練賞、Oral・Spotlight・Highlight を、著者自身の記述と、7,000 件を超える論文の公式受賞ページから集めています。</p></article>
+      <article style="--c:#4d8ff5"><h3>途切れた著者リストを補完</h3><p>Scholar は長い著者リストの後ろの著者を省略します。ワンクリックで論文ページから読み取り、許可すれば Semantic Scholar からも補完します。</p></article>
+      <article style="--c:#b36cf6"><h3>重複エントリーの統合</h3><p>オンにすると、同じ論文が 2 回載っているエントリーが 1 件にまとめられ、被引用数は合算されます。</p></article>
+      <article style="--c:#fbbc04"><h3>好みに合わせて調整</h3><p>表示する項目を選び、色を自分好みに変え、Scholar のページで不要な部分を非表示にできます。</p></article>
+      <article style="--c:#34a853"><h3>設計段階からプライバシー重視</h3><p>アカウント不要、アクセス解析なし、トラッキングなし。すべての計算はブラウザ内で行われ、ランクの一覧は拡張機能に同梱されています。</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>インストール</h2>
       <ol>
         <li>GitHub からプロジェクトをダウンロードし（緑色の「&lt;&gt; コード」ボタンから「ZIP をダウンロード」）、解凍します。</li>
-        <li>chrome://extensions を開き、「デベロッパー モード」をオンにします。</li>
+        <li><code>chrome://extensions</code> を開き、「デベロッパー モード」をオンにします。</li>
         <li>「パッケージ化されていない拡張機能を読み込む」をクリックし、src フォルダーを選びます。その後、任意の Google Scholar プロフィールを開きます。</li>
       </ol>
       <p class="note">Chrome ウェブストアへの掲載も予定しています。Edge、Brave などの他の Chromium 系ブラウザでも同じ手順で使えます。</p>

@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>How it looks</h2>
-      <figure><img src="../assets/screenshot.png" alt="An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right." loading="eager"><figcaption>An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="The settings page: choose what is shown, with a live preview." loading="lazy"><figcaption>The settings page: choose what is shown, with a live preview.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Highlighted papers: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="The settings page: choose what is shown, with a live preview." width="1360" height="1180" loading="lazy">
+        <figcaption>The settings page: choose what is shown, with a live preview.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Every paper, coloured by your role</h3><p>First, co-first, second and last author rows each get a colour, and your name is marked in the author line.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF and CORE ranks</h3><p>The CCF 2026 and ICORE 2026 rank beside each venue, with the rule that matched it. A venue it cannot place stays unmarked: never a guess.</p></article>
-      <article style="--c:#b36cf6"><h3>A role × rank table</h3><p>Pick a cell to list just those papers, and copy the summary or the list for a CV or a grant form.</p></article>
-      <article style="--c:#fbbc04"><h3>Awards and talks</h3><p>Best papers, test-of-time awards, Oral, Spotlight and Highlight, from the authors' own words and from the official award pages of over 7,000 papers.</p></article>
-      <article style="--c:#34a853"><h3>Cut-off author lists, completed</h3><p>Scholar hides the last authors of long lists. One click reads them from the paper's page, or from Semantic Scholar if you allow it.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicates merged</h3><p>If you switch it on, entries that list one paper twice become one, with the citations added up.</p></article>
-      <article style="--c:#4dd0c4"><h3>Yours to shape</h3><p>Choose what is shown, pick your own colours, hide the parts of Scholar's page you do not need.</p></article>
-      <article style="--c:#9aa0a6"><h3>Private by design</h3><p>No account, no analytics, no tracking. Everything is computed in your browser, and the rank lists ship inside the extension.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF and CORE ranks</h3><p>The CCF 2026 and ICORE 2026 rank beside each venue, with the rule that matched it. A venue it cannot place stays unmarked: never a guess.</p></article>
+      <article style="--c:#fbbc04"><h3>A role × rank table</h3><p>Pick a cell to list just those papers, and copy the summary or the list for a CV or a grant form.</p></article>
+      <article style="--c:#34a853"><h3>Awards and talks</h3><p>Best papers, test-of-time awards, Oral, Spotlight and Highlight, from the authors' own words and from the official award pages of over 7,000 papers.</p></article>
+      <article style="--c:#4d8ff5"><h3>Cut-off author lists, completed</h3><p>Scholar hides the last authors of long lists. One click reads them from the paper's page, or from Semantic Scholar if you allow it.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicates merged</h3><p>If you switch it on, entries that list one paper twice become one, with the citations added up.</p></article>
+      <article style="--c:#fbbc04"><h3>Yours to shape</h3><p>Choose what is shown, pick your own colours, hide the parts of Scholar's page you do not need.</p></article>
+      <article style="--c:#34a853"><h3>Private by design</h3><p>No account, no analytics, no tracking. Everything is computed in your browser, and the rank lists ship inside the extension.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Install</h2>
       <ol>
         <li>Download the project from GitHub (the green Code button, then Download ZIP) and unzip it.</li>
-        <li>Open chrome://extensions and turn on Developer mode.</li>
+        <li>Open <code>chrome://extensions</code> and turn on Developer mode.</li>
         <li>Click “Load unpacked” and choose the src folder. Then open any Google Scholar profile.</li>
       </ol>
       <p class="note">A Chrome Web Store listing may follow. Edge, Brave and other Chromium browsers work the same way.</p>

@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Jak to vypadá</h2>
-      <figure><img src="../assets/screenshot.png" alt="Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo." loading="eager"><figcaption>Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem." loading="lazy"><figcaption>Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Zvýrazněné práce: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem." width="1360" height="1180" loading="lazy">
+        <figcaption>Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Každý článek obarvený podle vaší role</h3><p>Řádky pro prvního, spoluprvního, druhého a posledního autora dostanou vlastní barvu a vaše jméno je v seznamu autorů zvýrazněno.</p></article>
-      <article style="--c:#7c8cf8"><h3>Ranky CCF a CORE</h3><p>Ranky CCF 2026 a ICORE 2026 u každého místa spolu s pravidlem, které ho určilo. Místo, které nelze zařadit, zůstane bez označení: nikdy nic nehádáme.</p></article>
-      <article style="--c:#b36cf6"><h3>Tabulka role × rank</h3><p>Klikněte na buňku a zobrazí se jen tyto články; souhrn nebo seznam můžete zkopírovat do životopisu nebo grantové přihlášky.</p></article>
-      <article style="--c:#fbbc04"><h3>Ocenění a přednášky</h3><p>Nejlepší články, ceny za přetrvávající význam (test of time), Oral, Spotlight a Highlight — z vlastních slov autorů i z oficiálních stránek ocenění více než 7 000 článků.</p></article>
-      <article style="--c:#34a853"><h3>Oříznuté seznamy autorů doplněny</h3><p>Scholar u dlouhých seznamů skrývá poslední autory. Jedním kliknutím je přečte ze stránky publikace nebo ze Semantic Scholar, pokud to povolíte.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicity sloučeny</h3><p>Pokud to zapnete, záznamy, kde je jedna publikace uvedena dvakrát, se spojí v jeden a citace se sečtou.</p></article>
-      <article style="--c:#4dd0c4"><h3>Upravte si podle sebe</h3><p>Vyberte, co se zobrazuje, zvolte si vlastní barvy a skryjte části stránky Scholar, které nepotřebujete.</p></article>
-      <article style="--c:#9aa0a6"><h3>Soukromí už od návrhu</h3><p>Bez účtu, bez analytiky a bez sledování. Vše se počítá ve vašem prohlížeči a seznamy ranků jsou součástí rozšíření.</p></article>
+      <article style="--c:#b36cf6"><h3>Ranky CCF a CORE</h3><p>Ranky CCF 2026 a ICORE 2026 u každého místa spolu s pravidlem, které ho určilo. Místo, které nelze zařadit, zůstane bez označení: nikdy nic nehádáme.</p></article>
+      <article style="--c:#fbbc04"><h3>Tabulka role × rank</h3><p>Klikněte na buňku a zobrazí se jen tyto články; souhrn nebo seznam můžete zkopírovat do životopisu nebo grantové přihlášky.</p></article>
+      <article style="--c:#34a853"><h3>Ocenění a přednášky</h3><p>Nejlepší články, ceny za přetrvávající význam (test of time), Oral, Spotlight a Highlight — z vlastních slov autorů i z oficiálních stránek ocenění více než 7 000 článků.</p></article>
+      <article style="--c:#4d8ff5"><h3>Oříznuté seznamy autorů doplněny</h3><p>Scholar u dlouhých seznamů skrývá poslední autory. Jedním kliknutím je přečte ze stránky publikace nebo ze Semantic Scholar, pokud to povolíte.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicity sloučeny</h3><p>Pokud to zapnete, záznamy, kde je jedna publikace uvedena dvakrát, se spojí v jeden a citace se sečtou.</p></article>
+      <article style="--c:#fbbc04"><h3>Upravte si podle sebe</h3><p>Vyberte, co se zobrazuje, zvolte si vlastní barvy a skryjte části stránky Scholar, které nepotřebujete.</p></article>
+      <article style="--c:#34a853"><h3>Soukromí už od návrhu</h3><p>Bez účtu, bez analytiky a bez sledování. Vše se počítá ve vašem prohlížeči a seznamy ranků jsou součástí rozšíření.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Instalace</h2>
       <ol>
         <li>Stáhněte projekt z GitHubu (zelené tlačítko „Code“, pak „Download ZIP“) a rozbalte ho.</li>
-        <li>Otevřete chrome://extensions a zapněte „Režim pro vývojáře“.</li>
+        <li>Otevřete <code>chrome://extensions</code> a zapněte „Režim pro vývojáře“.</li>
         <li>Klikněte na „Načíst rozbalené rozšíření“ a vyberte složku src. Poté otevřete libovolný profil Google Scholar.</li>
       </ol>
       <p class="note">Možná později přibude záznam v Internetovém obchodě Chrome. Edge, Brave a další prohlížeče na Chromiu fungují stejně.</p>

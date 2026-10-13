@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Giao diện</h2>
-      <figure><img src="../assets/screenshot.png" alt="Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải." loading="eager"><figcaption>Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp." loading="lazy"><figcaption>Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Bài được tô nổi: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp." width="1360" height="1180" loading="lazy">
+        <figcaption>Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Mọi bài báo, tô màu theo vai trò của bạn</h3><p>Các dòng tác giả đầu, đồng tác giả đầu, tác giả thứ hai và tác giả cuối đều có màu riêng, và tên bạn được đánh dấu trong dòng tác giả.</p></article>
-      <article style="--c:#7c8cf8"><h3>Xếp hạng CCF và CORE</h3><p>Xếp hạng CCF 2026 và ICORE 2026 hiển thị cạnh mỗi nơi công bố, kèm quy tắc đã khớp với nó. Nơi công bố không xác định được sẽ không có nhãn: không bao giờ đoán mò.</p></article>
-      <article style="--c:#b36cf6"><h3>Bảng vai trò × xếp hạng</h3><p>Chọn một ô để chỉ liệt kê các bài báo trong ô đó, và sao chép bản tóm tắt hoặc danh sách cho CV hay hồ sơ xin tài trợ.</p></article>
-      <article style="--c:#fbbc04"><h3>Giải thưởng và báo cáo</h3><p>Bài báo xuất sắc, giải thưởng Test of Time, Oral, Spotlight và Highlight, từ lời của chính tác giả và từ trang giải thưởng chính thức của hơn 7.000 bài báo.</p></article>
-      <article style="--c:#34a853"><h3>Danh sách tác giả bị cắt, đã đầy đủ</h3><p>Scholar ẩn các tác giả cuối của danh sách dài. Một cú nhấp chuột đọc chúng từ trang của bài báo, hoặc từ Semantic Scholar nếu bạn cho phép.</p></article>
-      <article style="--c:#f28b82"><h3>Gộp mục trùng lặp</h3><p>Nếu bật, các mục liệt kê cùng một bài báo hai lần sẽ gộp thành một, với số trích dẫn được cộng lại.</p></article>
-      <article style="--c:#4dd0c4"><h3>Theo ý bạn</h3><p>Chọn những gì hiển thị, tự chọn màu sắc, và ẩn các phần trang Scholar mà bạn không cần.</p></article>
-      <article style="--c:#9aa0a6"><h3>Riêng tư ngay từ thiết kế</h3><p>Không tài khoản, không phân tích, không theo dõi. Mọi thứ được tính toán trong trình duyệt của bạn, và danh sách xếp hạng nằm sẵn trong tiện ích.</p></article>
+      <article style="--c:#b36cf6"><h3>Xếp hạng CCF và CORE</h3><p>Xếp hạng CCF 2026 và ICORE 2026 hiển thị cạnh mỗi nơi công bố, kèm quy tắc đã khớp với nó. Nơi công bố không xác định được sẽ không có nhãn: không bao giờ đoán mò.</p></article>
+      <article style="--c:#fbbc04"><h3>Bảng vai trò × xếp hạng</h3><p>Chọn một ô để chỉ liệt kê các bài báo trong ô đó, và sao chép bản tóm tắt hoặc danh sách cho CV hay hồ sơ xin tài trợ.</p></article>
+      <article style="--c:#34a853"><h3>Giải thưởng và báo cáo</h3><p>Bài báo xuất sắc, giải thưởng Test of Time, Oral, Spotlight và Highlight, từ lời của chính tác giả và từ trang giải thưởng chính thức của hơn 7.000 bài báo.</p></article>
+      <article style="--c:#4d8ff5"><h3>Danh sách tác giả bị cắt, đã đầy đủ</h3><p>Scholar ẩn các tác giả cuối của danh sách dài. Một cú nhấp chuột đọc chúng từ trang của bài báo, hoặc từ Semantic Scholar nếu bạn cho phép.</p></article>
+      <article style="--c:#b36cf6"><h3>Gộp mục trùng lặp</h3><p>Nếu bật, các mục liệt kê cùng một bài báo hai lần sẽ gộp thành một, với số trích dẫn được cộng lại.</p></article>
+      <article style="--c:#fbbc04"><h3>Theo ý bạn</h3><p>Chọn những gì hiển thị, tự chọn màu sắc, và ẩn các phần trang Scholar mà bạn không cần.</p></article>
+      <article style="--c:#34a853"><h3>Riêng tư ngay từ thiết kế</h3><p>Không tài khoản, không phân tích, không theo dõi. Mọi thứ được tính toán trong trình duyệt của bạn, và danh sách xếp hạng nằm sẵn trong tiện ích.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Cài đặt</h2>
       <ol>
         <li>Tải dự án từ GitHub (nút xanh “Code”, rồi “Download ZIP”) và giải nén.</li>
-        <li>Mở chrome://extensions và bật “Chế độ dành cho nhà phát triển” (Developer mode).</li>
+        <li>Mở <code>chrome://extensions</code> và bật “Chế độ dành cho nhà phát triển” (Developer mode).</li>
         <li>Nhấn “Tải tiện ích đã giải nén” (Load unpacked) và chọn thư mục src. Sau đó mở bất kỳ hồ sơ Google Scholar nào.</li>
       </ol>
       <p class="note">Có thể sẽ có trang trên Chrome Web Store sau này. Edge, Brave và các trình duyệt Chromium khác hoạt động theo cách tương tự.</p>

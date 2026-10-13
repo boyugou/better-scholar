@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Sådan ser det ud</h2>
-      <figure><img src="../assets/screenshot.png" alt="En opdigtet profil (rigtige kanaler, opdigtede artikler): rækker farvet efter rolle, rangmærker ved siden af hver kanal og resuméet til højre." loading="eager"><figcaption>En opdigtet profil (rigtige kanaler, opdigtede artikler): rækker farvet efter rolle, rangmærker ved siden af hver kanal og resuméet til højre.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Indstillingssiden: vælg, hvad der skal vises, med en live-forhåndsvisning." loading="lazy"><figcaption>Indstillingssiden: vælg, hvad der skal vises, med en live-forhåndsvisning.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="En opdigtet profil (rigtige kanaler, opdigtede artikler): rækker farvet efter rolle, rangmærker ved siden af hver kanal og resuméet til højre." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>En opdigtet profil (rigtige kanaler, opdigtede artikler): rækker farvet efter rolle, rangmærker ved siden af hver kanal og resuméet til højre.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Fremhævede artikler: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Indstillingssiden: vælg, hvad der skal vises, med en live-forhåndsvisning." width="1360" height="1180" loading="lazy">
+        <figcaption>Indstillingssiden: vælg, hvad der skal vises, med en live-forhåndsvisning.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Hver publikation farvet efter din rolle</h3><p>Rækker for første, delt første, anden og sidste forfatter får hver sin farve, og dit navn markeres i forfatterlinjen.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF- og CORE-rangeringer</h3><p>CCF 2026- og ICORE 2026-rangen vises ved siden af hver kanal, sammen med den regel, der matchede den. En kanal, der ikke kan placeres, forbliver umarkeret: aldrig et gæt.</p></article>
-      <article style="--c:#b36cf6"><h3>En tabel over rolle × rang</h3><p>Vælg en celle for kun at se disse artikler, og kopiér resuméet eller listen til et CV eller en ansøgning.</p></article>
-      <article style="--c:#fbbc04"><h3>Priser og foredrag</h3><p>Bedste artikler, test-of-time-priser, Oral, Spotlight og Highlight, hentet fra forfatternes egne ord og fra de officielle prissider for over 7.000 artikler.</p></article>
-      <article style="--c:#34a853"><h3>Afkortede forfatterlister, suppleret</h3><p>Scholar skjuler de sidste forfattere på lange lister. Ét klik læser dem fra publikationens side, eller fra Semantic Scholar, hvis du tillader det.</p></article>
-      <article style="--c:#f28b82"><h3>Dubletter slået sammen</h3><p>Hvis du slår det til, bliver poster, der nævner den samme artikel to gange, til én post, og citationerne lægges sammen.</p></article>
-      <article style="--c:#4dd0c4"><h3>Tilpas efter dit behov</h3><p>Vælg, hvad der vises, vælg dine egne farver, og skjul de dele af Scholars side, du ikke har brug for.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privat fra start</h3><p>Ingen konto, ingen analyse, ingen sporing. Alt beregnes i din browser, og rangeringslisterne ligger i selve udvidelsen.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF- og CORE-rangeringer</h3><p>CCF 2026- og ICORE 2026-rangen vises ved siden af hver kanal, sammen med den regel, der matchede den. En kanal, der ikke kan placeres, forbliver umarkeret: aldrig et gæt.</p></article>
+      <article style="--c:#fbbc04"><h3>En tabel over rolle × rang</h3><p>Vælg en celle for kun at se disse artikler, og kopiér resuméet eller listen til et CV eller en ansøgning.</p></article>
+      <article style="--c:#34a853"><h3>Priser og foredrag</h3><p>Bedste artikler, test-of-time-priser, Oral, Spotlight og Highlight, hentet fra forfatternes egne ord og fra de officielle prissider for over 7.000 artikler.</p></article>
+      <article style="--c:#4d8ff5"><h3>Afkortede forfatterlister, suppleret</h3><p>Scholar skjuler de sidste forfattere på lange lister. Ét klik læser dem fra publikationens side, eller fra Semantic Scholar, hvis du tillader det.</p></article>
+      <article style="--c:#b36cf6"><h3>Dubletter slået sammen</h3><p>Hvis du slår det til, bliver poster, der nævner den samme artikel to gange, til én post, og citationerne lægges sammen.</p></article>
+      <article style="--c:#fbbc04"><h3>Tilpas efter dit behov</h3><p>Vælg, hvad der vises, vælg dine egne farver, og skjul de dele af Scholars side, du ikke har brug for.</p></article>
+      <article style="--c:#34a853"><h3>Privat fra start</h3><p>Ingen konto, ingen analyse, ingen sporing. Alt beregnes i din browser, og rangeringslisterne ligger i selve udvidelsen.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installation</h2>
       <ol>
         <li>Download projektet fra GitHub (den grønne knap „Code“, derefter „Download ZIP“) og pak det ud.</li>
-        <li>Åbn chrome://extensions, og slå Udviklertilstand til.</li>
+        <li>Åbn <code>chrome://extensions</code>, og slå Udviklertilstand til.</li>
         <li>Klik på „Indlæs upakket“ og vælg mappen src. Åbn derefter en hvilken som helst Google Scholar-profil.</li>
       </ol>
       <p class="note">En side i Chrome Web Store kan komme senere. Edge, Brave og andre Chromium-browsere fungerer på samme måde.</p>

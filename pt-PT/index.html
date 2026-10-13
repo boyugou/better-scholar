@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Como fica</h2>
-      <figure><img src="../assets/screenshot.png" alt="Um perfil fictício (revistas e conferências reais, artigos inventados): linhas coloridas por papel, etiquetas de ranking junto a cada publicação e o resumo à direita." loading="eager"><figcaption>Um perfil fictício (revistas e conferências reais, artigos inventados): linhas coloridas por papel, etiquetas de ranking junto a cada publicação e o resumo à direita.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="A página de definições: escolha o que é apresentado, com uma pré-visualização em direto." loading="lazy"><figcaption>A página de definições: escolha o que é apresentado, com uma pré-visualização em direto.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Um perfil fictício (revistas e conferências reais, artigos inventados): linhas coloridas por papel, etiquetas de ranking junto a cada publicação e o resumo à direita." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Um perfil fictício (revistas e conferências reais, artigos inventados): linhas coloridas por papel, etiquetas de ranking junto a cada publicação e o resumo à direita.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Artigos destacados: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="A página de definições: escolha o que é apresentado, com uma pré-visualização em direto." width="1360" height="1180" loading="lazy">
+        <figcaption>A página de definições: escolha o que é apresentado, com uma pré-visualização em direto.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Cada artigo, colorido pelo seu papel</h3><p>As linhas de primeiro autor, coprimeiro autor, segundo autor e último autor recebem cada uma uma cor, e o seu nome é realçado na lista de autores.</p></article>
-      <article style="--c:#7c8cf8"><h3>Rankings CCF e CORE</h3><p>Os rankings CCF 2026 e ICORE 2026 aparecem junto a cada publicação, com a regra que a identificou. O que não consegue situar fica sem assinalar: nunca um palpite.</p></article>
-      <article style="--c:#b36cf6"><h3>Uma tabela de papel × ranking</h3><p>Selecione uma célula para listar apenas esses artigos, e copie o resumo ou a lista para um CV ou um formulário de candidatura a financiamento.</p></article>
-      <article style="--c:#fbbc04"><h3>Prémios e apresentações</h3><p>Melhores artigos, prémios test-of-time, Oral, Spotlight e Highlight, a partir das palavras dos próprios autores e das páginas oficiais de prémios de mais de 7000 artigos.</p></article>
-      <article style="--c:#34a853"><h3>Listas de autores cortadas, completadas</h3><p>O Scholar oculta os últimos autores das listas longas. Um clique lê-os na página do artigo, ou no Semantic Scholar, se o permitir.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicados fundidos</h3><p>Se o ativar, as entradas que listam duas vezes o mesmo artigo passam a ser uma só, com as citações somadas.</p></article>
-      <article style="--c:#4dd0c4"><h3>À sua medida</h3><p>Escolha o que é apresentado, use as suas próprias cores e oculte as partes da página do Scholar de que não precisa.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privacidade desde a conceção</h3><p>Sem conta, sem análises, sem rastreio. Tudo é calculado no seu navegador, e as listas de ranking vêm incluídas na extensão.</p></article>
+      <article style="--c:#b36cf6"><h3>Rankings CCF e CORE</h3><p>Os rankings CCF 2026 e ICORE 2026 aparecem junto a cada publicação, com a regra que a identificou. O que não consegue situar fica sem assinalar: nunca um palpite.</p></article>
+      <article style="--c:#fbbc04"><h3>Uma tabela de papel × ranking</h3><p>Selecione uma célula para listar apenas esses artigos, e copie o resumo ou a lista para um CV ou um formulário de candidatura a financiamento.</p></article>
+      <article style="--c:#34a853"><h3>Prémios e apresentações</h3><p>Melhores artigos, prémios test-of-time, Oral, Spotlight e Highlight, a partir das palavras dos próprios autores e das páginas oficiais de prémios de mais de 7000 artigos.</p></article>
+      <article style="--c:#4d8ff5"><h3>Listas de autores cortadas, completadas</h3><p>O Scholar oculta os últimos autores das listas longas. Um clique lê-os na página do artigo, ou no Semantic Scholar, se o permitir.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicados fundidos</h3><p>Se o ativar, as entradas que listam duas vezes o mesmo artigo passam a ser uma só, com as citações somadas.</p></article>
+      <article style="--c:#fbbc04"><h3>À sua medida</h3><p>Escolha o que é apresentado, use as suas próprias cores e oculte as partes da página do Scholar de que não precisa.</p></article>
+      <article style="--c:#34a853"><h3>Privacidade desde a conceção</h3><p>Sem conta, sem análises, sem rastreio. Tudo é calculado no seu navegador, e as listas de ranking vêm incluídas na extensão.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Instalar</h2>
       <ol>
         <li>Transfira o projeto do GitHub (botão verde “Code” e depois “Download ZIP”) e descomprima-o.</li>
-        <li>Abra chrome://extensions e ative o Modo de programador.</li>
+        <li>Abra <code>chrome://extensions</code> e ative o Modo de programador.</li>
         <li>Clique em “Carregar expandida” e escolha a pasta src. Depois, abra qualquer perfil do Google Scholar.</li>
       </ol>
       <p class="note">Poderá surgir uma página na Chrome Web Store. O Edge, o Brave e outros navegadores baseados em Chromium funcionam da mesma forma.</p>

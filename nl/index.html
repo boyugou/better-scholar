@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Zo ziet het eruit</h2>
-      <figure><img src="../assets/screenshot.png" alt="Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts." loading="eager"><figcaption>Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="De instellingenpagina: kies wat er wordt getoond, met een live voorbeeld." loading="lazy"><figcaption>De instellingenpagina: kies wat er wordt getoond, met een live voorbeeld.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Gemarkeerde papers: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="De instellingenpagina: kies wat er wordt getoond, met een live voorbeeld." width="1360" height="1180" loading="lazy">
+        <figcaption>De instellingenpagina: kies wat er wordt getoond, met een live voorbeeld.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Elke publicatie gekleurd naar jouw rol</h3><p>Rijen voor eerste, gedeeld eerste, tweede en laatste auteur krijgen elk een eigen kleur, en je naam wordt gemarkeerd in de auteursregel.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF- en CORE-rangen</h3><p>De CCF 2026- en ICORE 2026-rang staat naast elk medium, met de regel die erop paste. Een medium dat niet kan worden geplaatst, blijft ongemarkeerd: nooit een gok.</p></article>
-      <article style="--c:#b36cf6"><h3>Een tabel rol × rang</h3><p>Kies een cel om alleen die artikelen te zien, en kopieer de samenvatting of de lijst voor een cv of subsidieaanvraag.</p></article>
-      <article style="--c:#fbbc04"><h3>Prijzen en presentaties</h3><p>Beste artikelen, test-of-time-prijzen, Oral, Spotlight en Highlight, uit de eigen woorden van de auteurs en van de officiële prijzenpagina's van meer dan 7.000 artikelen.</p></article>
-      <article style="--c:#34a853"><h3>Afgekapte auteurslijsten, aangevuld</h3><p>Scholar verbergt de laatste auteurs van lange lijsten. Eén klik leest ze uit de pagina van het artikel, of uit Semantic Scholar als je dat toestaat.</p></article>
-      <article style="--c:#f28b82"><h3>Dubbele items samengevoegd</h3><p>Als je dit aanzet, worden items die één artikel twee keer vermelden, één item, met de citaties opgeteld.</p></article>
-      <article style="--c:#4dd0c4"><h3>Naar jouw wens</h3><p>Kies wat er getoond wordt, kies je eigen kleuren en verberg de delen van de Scholar-pagina die je niet nodig hebt.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privé van nature</h3><p>Geen account, geen analytics, geen tracking. Alles wordt in je browser berekend en de ranglijsten zitten in de extensie zelf.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF- en CORE-rangen</h3><p>De CCF 2026- en ICORE 2026-rang staat naast elk medium, met de regel die erop paste. Een medium dat niet kan worden geplaatst, blijft ongemarkeerd: nooit een gok.</p></article>
+      <article style="--c:#fbbc04"><h3>Een tabel rol × rang</h3><p>Kies een cel om alleen die artikelen te zien, en kopieer de samenvatting of de lijst voor een cv of subsidieaanvraag.</p></article>
+      <article style="--c:#34a853"><h3>Prijzen en presentaties</h3><p>Beste artikelen, test-of-time-prijzen, Oral, Spotlight en Highlight, uit de eigen woorden van de auteurs en van de officiële prijzenpagina's van meer dan 7.000 artikelen.</p></article>
+      <article style="--c:#4d8ff5"><h3>Afgekapte auteurslijsten, aangevuld</h3><p>Scholar verbergt de laatste auteurs van lange lijsten. Eén klik leest ze uit de pagina van het artikel, of uit Semantic Scholar als je dat toestaat.</p></article>
+      <article style="--c:#b36cf6"><h3>Dubbele items samengevoegd</h3><p>Als je dit aanzet, worden items die één artikel twee keer vermelden, één item, met de citaties opgeteld.</p></article>
+      <article style="--c:#fbbc04"><h3>Naar jouw wens</h3><p>Kies wat er getoond wordt, kies je eigen kleuren en verberg de delen van de Scholar-pagina die je niet nodig hebt.</p></article>
+      <article style="--c:#34a853"><h3>Privé van nature</h3><p>Geen account, geen analytics, geen tracking. Alles wordt in je browser berekend en de ranglijsten zitten in de extensie zelf.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installeren</h2>
       <ol>
         <li>Download het project van GitHub (de groene knop “Code”, dan “Download ZIP”) en pak het uit.</li>
-        <li>Open chrome://extensions en zet Ontwikkelaarsmodus aan.</li>
+        <li>Open <code>chrome://extensions</code> en zet Ontwikkelaarsmodus aan.</li>
         <li>Klik op “Uitgepakte extensie laden” en kies de map src. Open daarna een willekeurig Google Scholar-profiel.</li>
       </ol>
       <p class="note">Een vermelding in de Chrome Web Store volgt misschien. Edge, Brave en andere Chromium-browsers werken op dezelfde manier.</p>

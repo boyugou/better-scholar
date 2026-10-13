@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>實際畫面</h2>
-      <figure><img src="../assets/screenshot.png" alt="一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。" loading="eager"><figcaption>一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="設定頁面：選擇要顯示的內容，並可即時預覽。" loading="lazy"><figcaption>設定頁面：選擇要顯示的內容，並可即時預覽。</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。" width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">已標示的論文: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="設定頁面：選擇要顯示的內容，並可即時預覽。" width="1360" height="1180" loading="lazy">
+        <figcaption>設定頁面：選擇要顯示的內容，並可即時預覽。</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>每篇論文，依你的角色著色</h3><p>第一、共同第一、第二與末位作者的列各有一種顏色，你的名字會在作者列中標示出來。</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF 與 CORE 等級</h3><p>每個場所旁顯示 CCF 2026 與 ICORE 2026 的等級，並附上比對所依據的規則。無法判定的場所不做標示：絕不臆測。</p></article>
-      <article style="--c:#b36cf6"><h3>角色 × 等級表</h3><p>點選任一格即可只列出該類論文，並可複製彙整或清單，用於履歷或研究計畫申請表。</p></article>
-      <article style="--c:#fbbc04"><h3>獎項與演講</h3><p>最佳論文、時間考驗獎，以及 Oral、Spotlight、Highlight，資料來自作者本人的說明，以及超過 7,000 篇論文的官方獎項頁面。</p></article>
-      <article style="--c:#34a853"><h3>補全被隱藏的作者列表</h3><p>Scholar 會隱藏長作者列表的末位作者。按一下即可從論文頁面讀取，若你允許，也可從 Semantic Scholar 讀取。</p></article>
-      <article style="--c:#f28b82"><h3>合併重複條目</h3><p>開啟後，列出同一篇論文兩次的條目會合併為一筆，引用次數加總。</p></article>
-      <article style="--c:#4dd0c4"><h3>由你自訂</h3><p>選擇顯示內容、自選顏色，並隱藏你不需要的 Scholar 頁面部分。</p></article>
-      <article style="--c:#9aa0a6"><h3>設計上即保護隱私</h3><p>無需帳號，沒有分析工具，也沒有追蹤。所有運算都在你的瀏覽器中完成，等級名單隨擴充功能一併提供。</p></article>
+      <article style="--c:#b36cf6"><h3>CCF 與 CORE 等級</h3><p>每個場所旁顯示 CCF 2026 與 ICORE 2026 的等級，並附上比對所依據的規則。無法判定的場所不做標示：絕不臆測。</p></article>
+      <article style="--c:#fbbc04"><h3>角色 × 等級表</h3><p>點選任一格即可只列出該類論文，並可複製彙整或清單，用於履歷或研究計畫申請表。</p></article>
+      <article style="--c:#34a853"><h3>獎項與演講</h3><p>最佳論文、時間考驗獎，以及 Oral、Spotlight、Highlight，資料來自作者本人的說明，以及超過 7,000 篇論文的官方獎項頁面。</p></article>
+      <article style="--c:#4d8ff5"><h3>補全被隱藏的作者列表</h3><p>Scholar 會隱藏長作者列表的末位作者。按一下即可從論文頁面讀取，若你允許，也可從 Semantic Scholar 讀取。</p></article>
+      <article style="--c:#b36cf6"><h3>合併重複條目</h3><p>開啟後，列出同一篇論文兩次的條目會合併為一筆，引用次數加總。</p></article>
+      <article style="--c:#fbbc04"><h3>由你自訂</h3><p>選擇顯示內容、自選顏色，並隱藏你不需要的 Scholar 頁面部分。</p></article>
+      <article style="--c:#34a853"><h3>設計上即保護隱私</h3><p>無需帳號，沒有分析工具，也沒有追蹤。所有運算都在你的瀏覽器中完成，等級名單隨擴充功能一併提供。</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>安裝</h2>
       <ol>
         <li>從 GitHub 下載專案（點選綠色的「Code」按鈕，再選擇「Download ZIP」），然後解壓縮。</li>
-        <li>開啟 chrome://extensions，並開啟「開發人員模式」。</li>
+        <li>開啟 <code>chrome://extensions</code>，並開啟「開發人員模式」。</li>
         <li>點選「載入未封裝項目」，選擇 src 資料夾。然後開啟任一 Google Scholar 個人頁面。</li>
       </ol>
       <p class="note">之後可能會上架 Chrome 線上應用程式商店。Edge、Brave 及其他 Chromium 瀏覽器的安裝方式相同。</p>

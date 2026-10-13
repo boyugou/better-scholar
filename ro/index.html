@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Cum arată</h2>
-      <figure><img src="../assets/screenshot.png" alt="Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta." loading="eager"><figcaption>Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Pagina de setări: alege ce se vede, cu o previzualizare live." loading="lazy"><figcaption>Pagina de setări: alege ce se vede, cu o previzualizare live.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Lucrări evidențiate: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Pagina de setări: alege ce se vede, cu o previzualizare live." width="1360" height="1180" loading="lazy">
+        <figcaption>Pagina de setări: alege ce se vede, cu o previzualizare live.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Fiecare lucrare, colorată după rolul tău</h3><p>Rândurile pentru primul autor, co-primul autor, al doilea autor și ultimul autor primesc fiecare o culoare, iar numele tău este marcat în lista autorilor.</p></article>
-      <article style="--c:#7c8cf8"><h3>Ranguri CCF și CORE</h3><p>Rangurile CCF 2026 și ICORE 2026 apar lângă fiecare publicație, împreună cu regula care a potrivit-o. Ce nu poate identifica rămâne nemarcat: niciodată o presupunere.</p></article>
-      <article style="--c:#b36cf6"><h3>Tabel rol × rang</h3><p>Alege o celulă pentru a vedea doar lucrările din ea și copiază rezumatul sau lista pentru un CV sau un formular de grant.</p></article>
-      <article style="--c:#fbbc04"><h3>Premii și prezentări</h3><p>Cele mai bune lucrări, premiile Test of Time, Oral, Spotlight și Highlight, din cuvintele autorilor și din paginile oficiale de premiere ale peste 7.000 de lucrări.</p></article>
-      <article style="--c:#34a853"><h3>Liste de autori tăiate, completate</h3><p>Scholar ascunde ultimii autori din listele lungi. Un clic îi citește de pe pagina lucrării sau de pe Semantic Scholar, dacă permiți.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicate unite</h3><p>Dacă activezi opțiunea, intrările care trec aceeași lucrare de două ori devin una singură, iar citările se adună.</p></article>
-      <article style="--c:#4dd0c4"><h3>Personalizabil</h3><p>Alege ce se afișează, alege-ți culorile și ascunde părțile paginii Scholar de care nu ai nevoie.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privat prin design</h3><p>Fără cont, fără statistici de utilizare, fără urmărire. Totul se calculează în browserul tău, iar listele de ranguri sunt incluse în extensie.</p></article>
+      <article style="--c:#b36cf6"><h3>Ranguri CCF și CORE</h3><p>Rangurile CCF 2026 și ICORE 2026 apar lângă fiecare publicație, împreună cu regula care a potrivit-o. Ce nu poate identifica rămâne nemarcat: niciodată o presupunere.</p></article>
+      <article style="--c:#fbbc04"><h3>Tabel rol × rang</h3><p>Alege o celulă pentru a vedea doar lucrările din ea și copiază rezumatul sau lista pentru un CV sau un formular de grant.</p></article>
+      <article style="--c:#34a853"><h3>Premii și prezentări</h3><p>Cele mai bune lucrări, premiile Test of Time, Oral, Spotlight și Highlight, din cuvintele autorilor și din paginile oficiale de premiere ale peste 7.000 de lucrări.</p></article>
+      <article style="--c:#4d8ff5"><h3>Liste de autori tăiate, completate</h3><p>Scholar ascunde ultimii autori din listele lungi. Un clic îi citește de pe pagina lucrării sau de pe Semantic Scholar, dacă permiți.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicate unite</h3><p>Dacă activezi opțiunea, intrările care trec aceeași lucrare de două ori devin una singură, iar citările se adună.</p></article>
+      <article style="--c:#fbbc04"><h3>Personalizabil</h3><p>Alege ce se afișează, alege-ți culorile și ascunde părțile paginii Scholar de care nu ai nevoie.</p></article>
+      <article style="--c:#34a853"><h3>Privat prin design</h3><p>Fără cont, fără statistici de utilizare, fără urmărire. Totul se calculează în browserul tău, iar listele de ranguri sunt incluse în extensie.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Instalare</h2>
       <ol>
         <li>Descarcă proiectul de pe GitHub (butonul verde „Code”, apoi „Download ZIP”) și dezarhivează-l.</li>
-        <li>Deschide chrome://extensions și activează „Modul dezvoltator” (Developer mode).</li>
+        <li>Deschide <code>chrome://extensions</code> și activează „Modul dezvoltator” (Developer mode).</li>
         <li>Apasă „Încarcă extensie despachetată” (Load unpacked) și alege folderul src. Apoi deschide orice profil Google Scholar.</li>
       </ol>
       <p class="note">Este posibil să apară ulterior o listare în Chrome Web Store. Edge, Brave și celelalte browsere Chromium funcționează la fel.</p>

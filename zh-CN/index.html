@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>界面预览</h2>
-      <figure><img src="../assets/screenshot.png" alt="一个虚构的个人主页（真实的场所，虚构的论文）：按角色着色的行、每个场所旁的等级标签，右侧是汇总。" loading="eager"><figcaption>一个虚构的个人主页（真实的场所，虚构的论文）：按角色着色的行、每个场所旁的等级标签，右侧是汇总。</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="设置页面：选择显示的内容，并可实时预览。" loading="lazy"><figcaption>设置页面：选择显示的内容，并可实时预览。</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="一个虚构的个人主页（真实的场所，虚构的论文）：按角色着色的行、每个场所旁的等级标签，右侧是汇总。" width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>一个虚构的个人主页（真实的场所，虚构的论文）：按角色着色的行、每个场所旁的等级标签，右侧是汇总。</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">高亮论文指标: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="设置页面：选择显示的内容，并可实时预览。" width="1360" height="1180" loading="lazy">
+        <figcaption>设置页面：选择显示的内容，并可实时预览。</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>每篇论文，按你的角色着色</h3><p>第一、共同第一、第二和末位作者各对应一种颜色，你的名字会在作者列表中被标出。</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF 与 CORE 等级</h3><p>每个场所旁显示 CCF 2026 和 ICORE 2026 的等级，并注明匹配所依据的规则。无法确定的场所保持不标：绝不猜测。</p></article>
-      <article style="--c:#b36cf6"><h3>角色 × 等级表</h3><p>点击任一单元格即可只列出对应论文，并可复制汇总或列表，用于简历或基金申请表。</p></article>
-      <article style="--c:#fbbc04"><h3>奖项与报告</h3><p>最佳论文、时间检验奖，以及 Oral、Spotlight、Highlight，数据来自作者本人的说明，以及超过 7000 篇论文的官方奖项页面。</p></article>
-      <article style="--c:#34a853"><h3>补全被折叠的作者列表</h3><p>Scholar 会隐藏长作者列表的末位作者。点一下即可从论文页面读取，若你允许，也可从 Semantic Scholar 读取。</p></article>
-      <article style="--c:#f28b82"><h3>合并重复条目</h3><p>开启后，同一篇论文的重复条目会合并为一条，引用次数相加。</p></article>
-      <article style="--c:#4dd0c4"><h3>按你的需要定制</h3><p>选择显示内容，自选颜色，隐藏你不需要的 Scholar 页面部分。</p></article>
-      <article style="--c:#9aa0a6"><h3>设计上即保护隐私</h3><p>无需账号，没有分析统计，也没有追踪。所有计算都在你的浏览器中完成，等级列表随扩展一同发布。</p></article>
+      <article style="--c:#b36cf6"><h3>CCF 与 CORE 等级</h3><p>每个场所旁显示 CCF 2026 和 ICORE 2026 的等级，并注明匹配所依据的规则。无法确定的场所保持不标：绝不猜测。</p></article>
+      <article style="--c:#fbbc04"><h3>角色 × 等级表</h3><p>点击任一单元格即可只列出对应论文，并可复制汇总或列表，用于简历或基金申请表。</p></article>
+      <article style="--c:#34a853"><h3>奖项与报告</h3><p>最佳论文、时间检验奖，以及 Oral、Spotlight、Highlight，数据来自作者本人的说明，以及超过 7000 篇论文的官方奖项页面。</p></article>
+      <article style="--c:#4d8ff5"><h3>补全被折叠的作者列表</h3><p>Scholar 会隐藏长作者列表的末位作者。点一下即可从论文页面读取，若你允许，也可从 Semantic Scholar 读取。</p></article>
+      <article style="--c:#b36cf6"><h3>合并重复条目</h3><p>开启后，同一篇论文的重复条目会合并为一条，引用次数相加。</p></article>
+      <article style="--c:#fbbc04"><h3>按你的需要定制</h3><p>选择显示内容，自选颜色，隐藏你不需要的 Scholar 页面部分。</p></article>
+      <article style="--c:#34a853"><h3>设计上即保护隐私</h3><p>无需账号，没有分析统计，也没有追踪。所有计算都在你的浏览器中完成，等级列表随扩展一同发布。</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>安装</h2>
       <ol>
         <li>从 GitHub 下载项目（点击绿色的“代码”按钮，再选择“下载 ZIP”），然后解压。</li>
-        <li>打开 chrome://extensions，并开启“开发者模式”。</li>
+        <li>打开 <code>chrome://extensions</code>，并开启“开发者模式”。</li>
         <li>点击“加载已解压的扩展程序”，选择 src 文件夹。然后打开任意一个 Google Scholar 个人主页。</li>
       </ol>
       <p class="note">之后可能会上架 Chrome 应用商店。Edge、Brave 及其他 Chromium 浏览器的安装方式相同。</p>

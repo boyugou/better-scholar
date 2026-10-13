@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>איך זה נראה</h2>
-      <figure><img src="../assets/screenshot.png" alt="פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין." loading="eager"><figcaption>פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה." loading="lazy"><figcaption>דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>פרופיל בדוי (כנסים וכתבי עת אמיתיים, מאמרים מומצאים): שורות צבועות לפי תפקיד, תגיות דירוג ליד כל מקום פרסום, והסיכום מימין.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">מאמרים מודגשים: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה." width="1360" height="1180" loading="lazy">
+        <figcaption>דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>כל מאמר, צבוע לפי תפקידך</h3><p>לשורות של מחבר ראשון, מחבר ראשון שותף, מחבר שני ומחבר אחרון יש צבע משלהן, ושמך מסומן בשורת המחברים.</p></article>
-      <article style="--c:#7c8cf8"><h3>דירוגי CCF ו-CORE</h3><p>דירוג CCF 2026 ו-ICORE 2026 מופיע ליד כל מקום פרסום, יחד עם הכלל שהתאים לו. מקום שהתוסף אינו יכול לשייך נשאר ללא סימון: לעולם לא ניחוש.</p></article>
-      <article style="--c:#b36cf6"><h3>טבלת תפקיד × דירוג</h3><p>בחר תא כדי להציג רק את המאמרים שבו, והעתק את הסיכום או הרשימה לקורות חיים או לטופס מענק.</p></article>
-      <article style="--c:#fbbc04"><h3>פרסים והרצאות</h3><p>מאמרים מצטיינים, פרסי מבחן הזמן, Oral, Spotlight ו-Highlight, מדברי המחברים עצמם ומדפי הפרסים הרשמיים של יותר מ-7,000 מאמרים.</p></article>
-      <article style="--c:#34a853"><h3>רשימות מחברים קטועות, מושלמות</h3><p>Scholar מסתיר את המחברים האחרונים ברשימות ארוכות. לחיצה אחת קוראת אותם מדף המאמר, או מ-Semantic Scholar אם תאשר זאת.</p></article>
-      <article style="--c:#f28b82"><h3>כפילויות אוחדו</h3><p>אם תפעיל זאת, רשומות שמציינות את אותו מאמר פעמיים יהפכו לרשומה אחת, וציטוטיהן יסוכמו.</p></article>
-      <article style="--c:#4dd0c4"><h3>מותאם אישית</h3><p>בחר מה יוצג, בחר צבעים משלך, והסתר את החלקים בדף Scholar שאינך צריך.</p></article>
-      <article style="--c:#9aa0a6"><h3>פרטיות מובנית</h3><p>בלי חשבון, בלי אנליטיקה, בלי מעקב. הכול מחושב בדפדפן שלך, ורשימות הדירוג נמצאות בתוך התוסף.</p></article>
+      <article style="--c:#b36cf6"><h3>דירוגי CCF ו-CORE</h3><p>דירוג CCF 2026 ו-ICORE 2026 מופיע ליד כל מקום פרסום, יחד עם הכלל שהתאים לו. מקום שהתוסף אינו יכול לשייך נשאר ללא סימון: לעולם לא ניחוש.</p></article>
+      <article style="--c:#fbbc04"><h3>טבלת תפקיד × דירוג</h3><p>בחר תא כדי להציג רק את המאמרים שבו, והעתק את הסיכום או הרשימה לקורות חיים או לטופס מענק.</p></article>
+      <article style="--c:#34a853"><h3>פרסים והרצאות</h3><p>מאמרים מצטיינים, פרסי מבחן הזמן, Oral, Spotlight ו-Highlight, מדברי המחברים עצמם ומדפי הפרסים הרשמיים של יותר מ-7,000 מאמרים.</p></article>
+      <article style="--c:#4d8ff5"><h3>רשימות מחברים קטועות, מושלמות</h3><p>Scholar מסתיר את המחברים האחרונים ברשימות ארוכות. לחיצה אחת קוראת אותם מדף המאמר, או מ-Semantic Scholar אם תאשר זאת.</p></article>
+      <article style="--c:#b36cf6"><h3>כפילויות אוחדו</h3><p>אם תפעיל זאת, רשומות שמציינות את אותו מאמר פעמיים יהפכו לרשומה אחת, וציטוטיהן יסוכמו.</p></article>
+      <article style="--c:#fbbc04"><h3>מותאם אישית</h3><p>בחר מה יוצג, בחר צבעים משלך, והסתר את החלקים בדף Scholar שאינך צריך.</p></article>
+      <article style="--c:#34a853"><h3>פרטיות מובנית</h3><p>בלי חשבון, בלי אנליטיקה, בלי מעקב. הכול מחושב בדפדפן שלך, ורשימות הדירוג נמצאות בתוך התוסף.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>התקנה</h2>
       <ol>
         <li>הורד את הפרויקט מ-GitHub (לחצן ה-“Code” הירוק, ואז “Download ZIP”) וחלץ את הקבצים מקובץ ה-ZIP.</li>
-        <li>פתח את chrome://extensions והפעל את מצב מפתחים (Developer mode).</li>
+        <li>פתח את <code>chrome://extensions</code> והפעל את מצב מפתחים (Developer mode).</li>
         <li>לחץ על “Load unpacked” (טעינת תוסף לא ארוז) ובחר את התיקייה src. לאחר מכן פתח כל פרופיל של Google Scholar.</li>
       </ol>
       <p class="note">ייתכן שייווסף בהמשך דף ב-Chrome Web Store. Edge, Brave ודפדפנים אחרים מבוססי Chromium פועלים באותו אופן.</p>

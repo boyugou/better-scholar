@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>실제 화면</h2>
-      <figure><img src="../assets/screenshot.png" alt="가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약." loading="eager"><figcaption>가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다." loading="lazy"><figcaption>설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">강조된 논문: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다." width="1360" height="1180" loading="lazy">
+        <figcaption>설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>모든 논문을 나의 역할별 색으로</h3><p>제1저자, 공동 제1저자, 제2저자, 마지막 저자 행마다 색이 지정되며, 저자 목록에서는 내 이름이 표시됩니다.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF 및 CORE 등급</h3><p>게재처마다 CCF 2026과 ICORE 2026 등급을 해당 규칙과 함께 표시합니다. 등급을 확정할 수 없는 곳은 표시하지 않습니다. 추측은 하지 않습니다.</p></article>
-      <article style="--c:#b36cf6"><h3>역할 × 등급 표</h3><p>칸을 선택하면 해당 논문만 목록으로 보여 주며, 요약이나 목록을 복사해 이력서나 연구비 신청서에 활용할 수 있습니다.</p></article>
-      <article style="--c:#fbbc04"><h3>수상 및 발표</h3><p>최우수 논문, 시간의 검증상, Oral·Spotlight·Highlight를 저자 본인의 설명과 7,000편이 넘는 논문의 공식 수상 페이지에서 모았습니다.</p></article>
-      <article style="--c:#34a853"><h3>잘린 저자 목록 완성</h3><p>Scholar는 긴 저자 목록의 뒷부분 저자를 숨깁니다. 클릭 한 번으로 논문 페이지에서 읽어 오며, 허용하면 Semantic Scholar에서도 가져옵니다.</p></article>
-      <article style="--c:#f28b82"><h3>중복 항목 병합</h3><p>켜 두면 같은 논문이 두 번 나열된 항목을 하나로 합치고, 인용 수는 더해 줍니다.</p></article>
-      <article style="--c:#4dd0c4"><h3>나에게 맞게 설정</h3><p>표시할 항목을 고르고, 색을 직접 정하고, 필요 없는 Scholar 페이지 부분은 숨길 수 있습니다.</p></article>
-      <article style="--c:#9aa0a6"><h3>설계부터 개인정보 보호</h3><p>계정 불필요, 분석 도구 없음, 추적 없음. 모든 계산은 브라우저 안에서 이루어지며, 등급 목록은 확장 프로그램에 포함되어 있습니다.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF 및 CORE 등급</h3><p>게재처마다 CCF 2026과 ICORE 2026 등급을 해당 규칙과 함께 표시합니다. 등급을 확정할 수 없는 곳은 표시하지 않습니다. 추측은 하지 않습니다.</p></article>
+      <article style="--c:#fbbc04"><h3>역할 × 등급 표</h3><p>칸을 선택하면 해당 논문만 목록으로 보여 주며, 요약이나 목록을 복사해 이력서나 연구비 신청서에 활용할 수 있습니다.</p></article>
+      <article style="--c:#34a853"><h3>수상 및 발표</h3><p>최우수 논문, 시간의 검증상, Oral·Spotlight·Highlight를 저자 본인의 설명과 7,000편이 넘는 논문의 공식 수상 페이지에서 모았습니다.</p></article>
+      <article style="--c:#4d8ff5"><h3>잘린 저자 목록 완성</h3><p>Scholar는 긴 저자 목록의 뒷부분 저자를 숨깁니다. 클릭 한 번으로 논문 페이지에서 읽어 오며, 허용하면 Semantic Scholar에서도 가져옵니다.</p></article>
+      <article style="--c:#b36cf6"><h3>중복 항목 병합</h3><p>켜 두면 같은 논문이 두 번 나열된 항목을 하나로 합치고, 인용 수는 더해 줍니다.</p></article>
+      <article style="--c:#fbbc04"><h3>나에게 맞게 설정</h3><p>표시할 항목을 고르고, 색을 직접 정하고, 필요 없는 Scholar 페이지 부분은 숨길 수 있습니다.</p></article>
+      <article style="--c:#34a853"><h3>설계부터 개인정보 보호</h3><p>계정 불필요, 분석 도구 없음, 추적 없음. 모든 계산은 브라우저 안에서 이루어지며, 등급 목록은 확장 프로그램에 포함되어 있습니다.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>설치</h2>
       <ol>
         <li>GitHub에서 프로젝트를 내려받고(녹색 “코드” 버튼 → “ZIP 다운로드”), 압축을 풉니다.</li>
-        <li>chrome://extensions를 열고 “개발자 모드”를 켭니다.</li>
+        <li><code>chrome://extensions</code>를 열고 “개발자 모드”를 켭니다.</li>
         <li>“압축해제된 확장 프로그램을 로드”를 클릭하고 src 폴더를 선택합니다. 그다음 아무 Google Scholar 프로필을 엽니다.</li>
       </ol>
       <p class="note">Chrome 웹 스토어 등록도 예정되어 있습니다. Edge, Brave 등 다른 Chromium 브라우저도 같은 방식으로 사용할 수 있습니다.</p>

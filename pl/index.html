@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Jak to wygląda</h2>
-      <figure><img src="../assets/screenshot.png" alt="Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej." loading="eager"><figcaption>Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo." loading="lazy"><figcaption>Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Wyróżnione prace: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo." width="1360" height="1180" loading="lazy">
+        <figcaption>Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Każda publikacja pokolorowana według twojej roli</h3><p>Wiersze dla pierwszego, współpierwszego, drugiego i ostatniego autora dostają własny kolor, a twoje nazwisko jest wyróżnione w liście autorów.</p></article>
-      <article style="--c:#7c8cf8"><h3>Rangi CCF i CORE</h3><p>Rangi CCF 2026 i ICORE 2026 przy każdym miejscu publikacji, z regułą, która je dopasowała. Miejsce publikacji, którego nie da się rozpoznać, pozostaje bez oznaczenia: nigdy nie zgadujemy.</p></article>
-      <article style="--c:#b36cf6"><h3>Tabela rola × ranga</h3><p>Kliknij komórkę, by zobaczyć tylko te publikacje, i skopiuj podsumowanie lub listę do CV albo wniosku grantowego.</p></article>
-      <article style="--c:#fbbc04"><h3>Nagrody i prezentacje</h3><p>Najlepsze artykuły, nagrody za trwały wpływ (test of time), Oral, Spotlight i Highlight — z własnych słów autorów oraz z oficjalnych stron nagród, dla ponad 7000 publikacji.</p></article>
-      <article style="--c:#34a853"><h3>Ucięte listy autorów, uzupełnione</h3><p>Scholar ukrywa ostatnich autorów w długich listach. Jedno kliknięcie odczytuje ich ze strony publikacji albo z Semantic Scholar, jeśli na to pozwolisz.</p></article>
-      <article style="--c:#f28b82"><h3>Duplikaty scalone</h3><p>Po włączeniu tej opcji wpisy, w których ta sama publikacja występuje dwa razy, łączą się w jeden, a cytowania są sumowane.</p></article>
-      <article style="--c:#4dd0c4"><h3>Dopasuj do siebie</h3><p>Wybierz, co ma być widoczne, ustaw własne kolory i ukryj te części strony Scholar, których nie potrzebujesz.</p></article>
-      <article style="--c:#9aa0a6"><h3>Prywatność z założenia</h3><p>Bez konta, bez analityki i bez śledzenia. Wszystko liczy się w twojej przeglądarce, a listy rang są częścią rozszerzenia.</p></article>
+      <article style="--c:#b36cf6"><h3>Rangi CCF i CORE</h3><p>Rangi CCF 2026 i ICORE 2026 przy każdym miejscu publikacji, z regułą, która je dopasowała. Miejsce publikacji, którego nie da się rozpoznać, pozostaje bez oznaczenia: nigdy nie zgadujemy.</p></article>
+      <article style="--c:#fbbc04"><h3>Tabela rola × ranga</h3><p>Kliknij komórkę, by zobaczyć tylko te publikacje, i skopiuj podsumowanie lub listę do CV albo wniosku grantowego.</p></article>
+      <article style="--c:#34a853"><h3>Nagrody i prezentacje</h3><p>Najlepsze artykuły, nagrody za trwały wpływ (test of time), Oral, Spotlight i Highlight — z własnych słów autorów oraz z oficjalnych stron nagród, dla ponad 7000 publikacji.</p></article>
+      <article style="--c:#4d8ff5"><h3>Ucięte listy autorów, uzupełnione</h3><p>Scholar ukrywa ostatnich autorów w długich listach. Jedno kliknięcie odczytuje ich ze strony publikacji albo z Semantic Scholar, jeśli na to pozwolisz.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplikaty scalone</h3><p>Po włączeniu tej opcji wpisy, w których ta sama publikacja występuje dwa razy, łączą się w jeden, a cytowania są sumowane.</p></article>
+      <article style="--c:#fbbc04"><h3>Dopasuj do siebie</h3><p>Wybierz, co ma być widoczne, ustaw własne kolory i ukryj te części strony Scholar, których nie potrzebujesz.</p></article>
+      <article style="--c:#34a853"><h3>Prywatność z założenia</h3><p>Bez konta, bez analityki i bez śledzenia. Wszystko liczy się w twojej przeglądarce, a listy rang są częścią rozszerzenia.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Instalacja</h2>
       <ol>
         <li>Pobierz projekt z GitHub (zielony przycisk „Code”, potem „Download ZIP”) i rozpakuj go.</li>
-        <li>Otwórz chrome://extensions i włącz „Tryb dewelopera”.</li>
+        <li>Otwórz <code>chrome://extensions</code> i włącz „Tryb dewelopera”.</li>
         <li>Kliknij „Załaduj rozpakowane” i wybierz folder src. Następnie otwórz dowolny profil Google Scholar.</li>
       </ol>
       <p class="note">Być może pojawi się też wpis w Chrome Web Store. Edge, Brave i inne przeglądarki oparte na Chromium działają tak samo.</p>

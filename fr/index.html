@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Aperçu</h2>
-      <figure><img src="../assets/screenshot.png" alt="Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite." loading="eager"><figcaption>Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct." loading="lazy"><figcaption>La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Articles mis en évidence: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct." width="1360" height="1180" loading="lazy">
+        <figcaption>La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Chaque article, coloré selon votre rôle</h3><p>Les lignes premier auteur, co-premier auteur, deuxième auteur et dernier auteur ont chacune leur couleur, et votre nom est mis en évidence dans la liste des auteurs.</p></article>
-      <article style="--c:#7c8cf8"><h3>Classements CCF et CORE</h3><p>Les classements CCF 2026 et ICORE 2026 s'affichent à côté de chaque publication, avec la règle qui l'a identifiée. Une publication non identifiable reste sans marque : jamais de supposition.</p></article>
-      <article style="--c:#b36cf6"><h3>Un tableau rôle × classement</h3><p>Cliquez sur une case pour ne lister que ces articles, et copiez la synthèse ou la liste pour un CV ou un dossier de financement.</p></article>
-      <article style="--c:#fbbc04"><h3>Prix et communications</h3><p>Meilleurs articles, prix du test du temps, Oral, Spotlight et Highlight, d'après les propres mots des auteurs et les pages officielles des prix, pour plus de 7 000 articles.</p></article>
-      <article style="--c:#34a853"><h3>Listes d'auteurs tronquées, complétées</h3><p>Scholar masque les derniers auteurs des longues listes. Un clic les lit sur la page de l'article, ou sur Semantic Scholar si vous l'autorisez.</p></article>
-      <article style="--c:#f28b82"><h3>Doublons fusionnés</h3><p>Si vous l'activez, les entrées qui listent deux fois le même article n'en forment plus qu'une, et les citations sont additionnées.</p></article>
-      <article style="--c:#4dd0c4"><h3>À votre mesure</h3><p>Choisissez ce qui s'affiche, vos propres couleurs, et masquez les parties de la page Scholar dont vous n'avez pas besoin.</p></article>
-      <article style="--c:#9aa0a6"><h3>Confidentialité dès la conception</h3><p>Pas de compte, pas d'analyse d'audience, pas de pistage. Tout est calculé dans votre navigateur, et les listes de classement sont incluses dans l'extension.</p></article>
+      <article style="--c:#b36cf6"><h3>Classements CCF et CORE</h3><p>Les classements CCF 2026 et ICORE 2026 s'affichent à côté de chaque publication, avec la règle qui l'a identifiée. Une publication non identifiable reste sans marque : jamais de supposition.</p></article>
+      <article style="--c:#fbbc04"><h3>Un tableau rôle × classement</h3><p>Cliquez sur une case pour ne lister que ces articles, et copiez la synthèse ou la liste pour un CV ou un dossier de financement.</p></article>
+      <article style="--c:#34a853"><h3>Prix et communications</h3><p>Meilleurs articles, prix du test du temps, Oral, Spotlight et Highlight, d'après les propres mots des auteurs et les pages officielles des prix, pour plus de 7 000 articles.</p></article>
+      <article style="--c:#4d8ff5"><h3>Listes d'auteurs tronquées, complétées</h3><p>Scholar masque les derniers auteurs des longues listes. Un clic les lit sur la page de l'article, ou sur Semantic Scholar si vous l'autorisez.</p></article>
+      <article style="--c:#b36cf6"><h3>Doublons fusionnés</h3><p>Si vous l'activez, les entrées qui listent deux fois le même article n'en forment plus qu'une, et les citations sont additionnées.</p></article>
+      <article style="--c:#fbbc04"><h3>À votre mesure</h3><p>Choisissez ce qui s'affiche, vos propres couleurs, et masquez les parties de la page Scholar dont vous n'avez pas besoin.</p></article>
+      <article style="--c:#34a853"><h3>Confidentialité dès la conception</h3><p>Pas de compte, pas d'analyse d'audience, pas de pistage. Tout est calculé dans votre navigateur, et les listes de classement sont incluses dans l'extension.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installer</h2>
       <ol>
         <li>Téléchargez le projet depuis GitHub (bouton vert « Code », puis « Télécharger le ZIP ») et décompressez-le.</li>
-        <li>Ouvrez chrome://extensions et activez le « Mode développeur ».</li>
+        <li>Ouvrez <code>chrome://extensions</code> et activez le « Mode développeur ».</li>
         <li>Cliquez sur « Charger l'extension non empaquetée » et choisissez le dossier src. Ouvrez ensuite n'importe quel profil Google Scholar.</li>
       </ol>
       <p class="note">Une fiche sur le Chrome Web Store pourrait suivre. Edge, Brave et les autres navigateurs Chromium s'installent de la même façon.</p>

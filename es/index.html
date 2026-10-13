@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Así se ve</h2>
-      <figure><img src="../assets/screenshot.png" alt="Un perfil inventado (publicaciones reales, artículos ficticios): filas coloreadas según el papel, etiquetas de ranking junto a cada publicación y el resumen a la derecha." loading="eager"><figcaption>Un perfil inventado (publicaciones reales, artículos ficticios): filas coloreadas según el papel, etiquetas de ranking junto a cada publicación y el resumen a la derecha.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="La página de ajustes: elige qué se muestra, con una vista previa en directo." loading="lazy"><figcaption>La página de ajustes: elige qué se muestra, con una vista previa en directo.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Un perfil inventado (publicaciones reales, artículos ficticios): filas coloreadas según el papel, etiquetas de ranking junto a cada publicación y el resumen a la derecha." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Un perfil inventado (publicaciones reales, artículos ficticios): filas coloreadas según el papel, etiquetas de ranking junto a cada publicación y el resumen a la derecha.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Artículos resaltados: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="La página de ajustes: elige qué se muestra, con una vista previa en directo." width="1360" height="1180" loading="lazy">
+        <figcaption>La página de ajustes: elige qué se muestra, con una vista previa en directo.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Cada artículo, coloreado según tu papel</h3><p>Las filas de primer autor, coprimer autor, segundo autor y último autor reciben cada una un color, y tu nombre se resalta en la lista de autores.</p></article>
-      <article style="--c:#7c8cf8"><h3>Rankings CCF y CORE</h3><p>Los rankings CCF 2026 e ICORE 2026 aparecen junto a cada publicación, con la regla que la identificó. Lo que no puede ubicar queda sin marcar: nunca adivina.</p></article>
-      <article style="--c:#b36cf6"><h3>Tabla de papel × ranking</h3><p>Haz clic en una celda para listar solo esos artículos, y copia el resumen o la lista para un CV o una solicitud de financiación.</p></article>
-      <article style="--c:#fbbc04"><h3>Premios y charlas</h3><p>Mejores artículos, premios al test del tiempo, Oral, Spotlight y Highlight, a partir de las propias palabras de los autores y de las páginas oficiales de premios de más de 7000 artículos.</p></article>
-      <article style="--c:#34a853"><h3>Listas de autores truncadas, completadas</h3><p>Scholar oculta los últimos autores de las listas largas. Un clic los lee de la página del artículo, o de Semantic Scholar si lo permites.</p></article>
-      <article style="--c:#f28b82"><h3>Duplicados fusionados</h3><p>Si lo activas, las entradas que listan un mismo artículo dos veces se convierten en una, sumando las citas.</p></article>
-      <article style="--c:#4dd0c4"><h3>A tu medida</h3><p>Elige qué se muestra, escoge tus propios colores y oculta las partes de la página de Scholar que no necesitas.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privacidad por diseño</h3><p>Sin cuenta, sin analíticas, sin seguimiento. Todo se calcula en tu navegador, y las listas de rankings vienen incluidas en la extensión.</p></article>
+      <article style="--c:#b36cf6"><h3>Rankings CCF y CORE</h3><p>Los rankings CCF 2026 e ICORE 2026 aparecen junto a cada publicación, con la regla que la identificó. Lo que no puede ubicar queda sin marcar: nunca adivina.</p></article>
+      <article style="--c:#fbbc04"><h3>Tabla de papel × ranking</h3><p>Haz clic en una celda para listar solo esos artículos, y copia el resumen o la lista para un CV o una solicitud de financiación.</p></article>
+      <article style="--c:#34a853"><h3>Premios y charlas</h3><p>Mejores artículos, premios al test del tiempo, Oral, Spotlight y Highlight, a partir de las propias palabras de los autores y de las páginas oficiales de premios de más de 7000 artículos.</p></article>
+      <article style="--c:#4d8ff5"><h3>Listas de autores truncadas, completadas</h3><p>Scholar oculta los últimos autores de las listas largas. Un clic los lee de la página del artículo, o de Semantic Scholar si lo permites.</p></article>
+      <article style="--c:#b36cf6"><h3>Duplicados fusionados</h3><p>Si lo activas, las entradas que listan un mismo artículo dos veces se convierten en una, sumando las citas.</p></article>
+      <article style="--c:#fbbc04"><h3>A tu medida</h3><p>Elige qué se muestra, escoge tus propios colores y oculta las partes de la página de Scholar que no necesitas.</p></article>
+      <article style="--c:#34a853"><h3>Privacidad por diseño</h3><p>Sin cuenta, sin analíticas, sin seguimiento. Todo se calcula en tu navegador, y las listas de rankings vienen incluidas en la extensión.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Instalar</h2>
       <ol>
         <li>Descarga el proyecto desde GitHub (botón verde “Código” y luego “Descargar ZIP”) y descomprímelo.</li>
-        <li>Abre chrome://extensions y activa el modo de desarrollador.</li>
+        <li>Abre <code>chrome://extensions</code> y activa el modo de desarrollador.</li>
         <li>Haz clic en “Cargar descomprimida” y elige la carpeta src. Después abre cualquier perfil de Google Scholar.</li>
       </ol>
       <p class="note">Es posible que más adelante se publique en la Chrome Web Store. Edge, Brave y otros navegadores basados en Chromium funcionan igual.</p>

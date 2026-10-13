@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>So sieht es aus</h2>
-      <figure><img src="../assets/screenshot.png" alt="Ein erfundenes Profil (echte Publikationsorte, erfundene Arbeiten): nach Rolle eingefärbte Zeilen, Rang-Labels neben jedem Publikationsort und die Zusammenfassung rechts." loading="eager"><figcaption>Ein erfundenes Profil (echte Publikationsorte, erfundene Arbeiten): nach Rolle eingefärbte Zeilen, Rang-Labels neben jedem Publikationsort und die Zusammenfassung rechts.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Die Einstellungsseite: Wählen Sie, was angezeigt wird, mit einer Live-Vorschau." loading="lazy"><figcaption>Die Einstellungsseite: Wählen Sie, was angezeigt wird, mit einer Live-Vorschau.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="Ein erfundenes Profil (echte Publikationsorte, erfundene Arbeiten): nach Rolle eingefärbte Zeilen, Rang-Labels neben jedem Publikationsort und die Zusammenfassung rechts." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>Ein erfundenes Profil (echte Publikationsorte, erfundene Arbeiten): nach Rolle eingefärbte Zeilen, Rang-Labels neben jedem Publikationsort und die Zusammenfassung rechts.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Hervorgehobene Paper: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Die Einstellungsseite: Wählen Sie, was angezeigt wird, mit einer Live-Vorschau." width="1360" height="1180" loading="lazy">
+        <figcaption>Die Einstellungsseite: Wählen Sie, was angezeigt wird, mit einer Live-Vorschau.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Jede Publikation, eingefärbt nach Ihrer Rolle</h3><p>Zeilen für Erstautor, Co-Erstautor, Zweitautor und Letztautor erhalten je eine Farbe, und Ihr Name wird in der Autorenzeile markiert.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF- und CORE-Ränge</h3><p>Der CCF-2026- und der ICORE-2026-Rang stehen neben jedem Publikationsort, zusammen mit der Regel, die ihn zugeordnet hat. Ein nicht zuordenbarer Ort bleibt unmarkiert: niemals eine Vermutung.</p></article>
-      <article style="--c:#b36cf6"><h3>Eine Tabelle Rolle × Rang</h3><p>Wählen Sie eine Zelle, um nur diese Arbeiten aufzulisten, und kopieren Sie die Zusammenfassung oder die Liste für einen Lebenslauf oder einen Förderantrag.</p></article>
-      <article style="--c:#fbbc04"><h3>Auszeichnungen und Vorträge</h3><p>Best-Paper-Preise, Test-of-Time-Auszeichnungen sowie Oral, Spotlight und Highlight, aus den eigenen Angaben der Autoren und den offiziellen Preisseiten von über 7.000 Arbeiten.</p></article>
-      <article style="--c:#34a853"><h3>Abgeschnittene Autorenlisten, vervollständigt</h3><p>Scholar blendet die letzten Autoren langer Listen aus. Ein Klick liest sie von der Seite der Arbeit, oder von Semantic Scholar, wenn Sie das erlauben.</p></article>
-      <article style="--c:#f28b82"><h3>Dubletten zusammengeführt</h3><p>Wenn Sie es aktivieren, werden Einträge, die dieselbe Arbeit zweimal aufführen, zu einem zusammengefasst, und die Zitationen werden addiert.</p></article>
-      <article style="--c:#4dd0c4"><h3>Ganz nach Ihren Wünschen</h3><p>Wählen Sie, was angezeigt wird, legen Sie Ihre eigenen Farben fest und blenden Sie die Teile der Scholar-Seite aus, die Sie nicht brauchen.</p></article>
-      <article style="--c:#9aa0a6"><h3>Datenschutz von Anfang an</h3><p>Kein Konto, keine Analyse, kein Tracking. Alles wird in Ihrem Browser berechnet, und die Ranglisten sind in der Erweiterung enthalten.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF- und CORE-Ränge</h3><p>Der CCF-2026- und der ICORE-2026-Rang stehen neben jedem Publikationsort, zusammen mit der Regel, die ihn zugeordnet hat. Ein nicht zuordenbarer Ort bleibt unmarkiert: niemals eine Vermutung.</p></article>
+      <article style="--c:#fbbc04"><h3>Eine Tabelle Rolle × Rang</h3><p>Wählen Sie eine Zelle, um nur diese Arbeiten aufzulisten, und kopieren Sie die Zusammenfassung oder die Liste für einen Lebenslauf oder einen Förderantrag.</p></article>
+      <article style="--c:#34a853"><h3>Auszeichnungen und Vorträge</h3><p>Best-Paper-Preise, Test-of-Time-Auszeichnungen sowie Oral, Spotlight und Highlight, aus den eigenen Angaben der Autoren und den offiziellen Preisseiten von über 7.000 Arbeiten.</p></article>
+      <article style="--c:#4d8ff5"><h3>Abgeschnittene Autorenlisten, vervollständigt</h3><p>Scholar blendet die letzten Autoren langer Listen aus. Ein Klick liest sie von der Seite der Arbeit, oder von Semantic Scholar, wenn Sie das erlauben.</p></article>
+      <article style="--c:#b36cf6"><h3>Dubletten zusammengeführt</h3><p>Wenn Sie es aktivieren, werden Einträge, die dieselbe Arbeit zweimal aufführen, zu einem zusammengefasst, und die Zitationen werden addiert.</p></article>
+      <article style="--c:#fbbc04"><h3>Ganz nach Ihren Wünschen</h3><p>Wählen Sie, was angezeigt wird, legen Sie Ihre eigenen Farben fest und blenden Sie die Teile der Scholar-Seite aus, die Sie nicht brauchen.</p></article>
+      <article style="--c:#34a853"><h3>Datenschutz von Anfang an</h3><p>Kein Konto, keine Analyse, kein Tracking. Alles wird in Ihrem Browser berechnet, und die Ranglisten sind in der Erweiterung enthalten.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installieren</h2>
       <ol>
         <li>Laden Sie das Projekt von GitHub herunter (grüner Button „Code“, dann „Download ZIP“) und entpacken Sie es.</li>
-        <li>Öffnen Sie chrome://extensions und aktivieren Sie den Entwicklermodus.</li>
+        <li>Öffnen Sie <code>chrome://extensions</code> und aktivieren Sie den Entwicklermodus.</li>
         <li>Klicken Sie auf „Entpackte Erweiterung laden“ und wählen Sie den Ordner src. Öffnen Sie danach ein beliebiges Google-Scholar-Profil.</li>
       </ol>
       <p class="note">Ein Eintrag im Chrome Web Store könnte folgen. Edge, Brave und andere Chromium-Browser funktionieren genauso.</p>

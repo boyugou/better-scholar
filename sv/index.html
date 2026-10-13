@@ -104,9 +104,13 @@
   </section>
   <section class="shots">
     <div class="wrap">
-      <h2>Så här ser det ut</h2>
-      <figure><img src="../assets/screenshot.png" alt="En påhittad profil (riktiga publikationskanaler, påhittade artiklar): rader färgade efter roll, rankningsbrickor bredvid varje kanal, sammanfattningen till höger." loading="eager"><figcaption>En påhittad profil (riktiga publikationskanaler, påhittade artiklar): rader färgade efter roll, rankningsbrickor bredvid varje kanal, sammanfattningen till höger.</figcaption></figure>
-      <figure class="small"><img src="../assets/settings.png" alt="Inställningssidan: välj vad som ska visas, med en levande förhandsvisning." loading="lazy"><figcaption>Inställningssidan: välj vad som ska visas, med en levande förhandsvisning.</figcaption></figure>
+      <figure class="hero-shot">
+        <picture>
+          <source media="(max-width: 700px)" srcset="../assets/panel.png">
+          <img src="../assets/screenshot.png" alt="En påhittad profil (riktiga publikationskanaler, påhittade artiklar): rader färgade efter roll, rankningsbrickor bredvid varje kanal, sammanfattningen till höger." width="1360" height="945" loading="eager">
+        </picture>
+        <figcaption>En påhittad profil (riktiga publikationskanaler, påhittade artiklar): rader färgade efter roll, rankningsbrickor bredvid varje kanal, sammanfattningen till höger.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="demo" id="demo">
@@ -130,16 +134,24 @@
       <p class="demo-count">Markerade artiklar: <b id="demo-n">0</b></p>
     </div>
   </section>
+  <section class="shots">
+    <div class="wrap">
+      <figure>
+        <img src="../assets/settings.png" alt="Inställningssidan: välj vad som ska visas, med en levande förhandsvisning." width="1360" height="1180" loading="lazy">
+        <figcaption>Inställningssidan: välj vad som ska visas, med en levande förhandsvisning.</figcaption>
+      </figure>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Varje artikel färgad efter din roll</h3><p>Rader för första, delat första, andra och sista författare får var sin färg, och ditt namn markeras i författarraden.</p></article>
-      <article style="--c:#7c8cf8"><h3>CCF- och CORE-rankningar</h3><p>CCF 2026- och ICORE 2026-rankningen visas bredvid varje publikationskanal, tillsammans med regeln som matchade den. En kanal som inte kan placeras förblir omarkerad: aldrig en gissning.</p></article>
-      <article style="--c:#b36cf6"><h3>En tabell över roll × rankning</h3><p>Välj en cell för att bara se de artiklarna, och kopiera sammanfattningen eller listan till ett CV eller en ansökan.</p></article>
-      <article style="--c:#fbbc04"><h3>Priser och föredrag</h3><p>Bästa artikel, pris för hållbar betydelse (test of time), Oral, Spotlight och Highlight, hämtat från författarnas egna ord och från officiella prissidor för över 7 000 artiklar.</p></article>
-      <article style="--c:#34a853"><h3>Avklippta författarlistor, kompletterade</h3><p>Scholar döljer de sista författarna i långa listor. Ett klick läser in dem från artikelns sida, eller från Semantic Scholar om du tillåter det.</p></article>
-      <article style="--c:#f28b82"><h3>Dubbletter sammanslagna</h3><p>Om du slår på det blir poster som listar samma artikel två gånger en enda post, med citeringarna adderade.</p></article>
-      <article style="--c:#4dd0c4"><h3>Anpassat efter dig</h3><p>Välj vad som visas, välj egna färger och dölj de delar av Scholars sida du inte behöver.</p></article>
-      <article style="--c:#9aa0a6"><h3>Privat från grunden</h3><p>Inget konto, ingen analys, ingen spårning. Allt räknas i din webbläsare, och rankningslistorna ingår i tillägget.</p></article>
+      <article style="--c:#b36cf6"><h3>CCF- och CORE-rankningar</h3><p>CCF 2026- och ICORE 2026-rankningen visas bredvid varje publikationskanal, tillsammans med regeln som matchade den. En kanal som inte kan placeras förblir omarkerad: aldrig en gissning.</p></article>
+      <article style="--c:#fbbc04"><h3>En tabell över roll × rankning</h3><p>Välj en cell för att bara se de artiklarna, och kopiera sammanfattningen eller listan till ett CV eller en ansökan.</p></article>
+      <article style="--c:#34a853"><h3>Priser och föredrag</h3><p>Bästa artikel, pris för hållbar betydelse (test of time), Oral, Spotlight och Highlight, hämtat från författarnas egna ord och från officiella prissidor för över 7 000 artiklar.</p></article>
+      <article style="--c:#4d8ff5"><h3>Avklippta författarlistor, kompletterade</h3><p>Scholar döljer de sista författarna i långa listor. Ett klick läser in dem från artikelns sida, eller från Semantic Scholar om du tillåter det.</p></article>
+      <article style="--c:#b36cf6"><h3>Dubbletter sammanslagna</h3><p>Om du slår på det blir poster som listar samma artikel två gånger en enda post, med citeringarna adderade.</p></article>
+      <article style="--c:#fbbc04"><h3>Anpassat efter dig</h3><p>Välj vad som visas, välj egna färger och dölj de delar av Scholars sida du inte behöver.</p></article>
+      <article style="--c:#34a853"><h3>Privat från grunden</h3><p>Inget konto, ingen analys, ingen spårning. Allt räknas i din webbläsare, och rankningslistorna ingår i tillägget.</p></article>
     </div>
   </section>
   <section id="install" class="install">
@@ -147,7 +159,7 @@
       <h2>Installera</h2>
       <ol>
         <li>Ladda ner projektet från GitHub (den gröna knappen ”Code”, sedan ”Download ZIP”) och packa upp det.</li>
-        <li>Öppna chrome://extensions och aktivera Utvecklarläge.</li>
+        <li>Öppna <code>chrome://extensions</code> och aktivera Utvecklarläge.</li>
         <li>Klicka på ”Läs in uppackat tillägg” och välj mappen src. Öppna sedan valfri Google Scholar-profil.</li>
       </ol>
       <p class="note">En listning i Chrome Web Store kan komma senare. Edge, Brave och andra Chromium-webbläsare fungerar på samma sätt.</p>
