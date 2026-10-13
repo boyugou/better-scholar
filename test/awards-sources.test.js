@@ -2005,3 +2005,9 @@ test("ICS front page: 'BEST PAPER AWARD' and '… RUNNER-UP' headings with a tit
   const h = `<p>BEST PAPER AWARD</p><p>Nearest neighbour search with non-Euclidean distances on GPUs</p><p>Ann Lee, Bo Chan (Purdue University)</p><p>BEST PAPER AWARD RUNNER-UP</p><p>Shared virtual memory design and performance implications</p><p>Cy Dunn (Clemson University); Ed Fox (Lawrence Livermore National Lab); Flo Gray (Clemson</p><p>University)</p>`;
   assert.deepEqual(parseIcsAwards(h, "https://ics2024.github.io/").entries.map((e) => `${e.award} ${e.authors.join("; ")}`), ["best Ann Lee; Bo Chan", "runner-up Cy Dunn; Ed Fox; Flo Gray"]);
 });
+
+test("ECIR best-papers page: label line, authors' line, title, per award; honorable mentions are left out", async () => {
+  const { parseEcirAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Papers Award</p><p>Best Demo</p><p>Ann Lee, Bo Chan and Cy Dunn</p><p>A retrieval and ranking demo for case reports</p><p>Best Short Paper, Honorable Mention</p><p>Ed Fox</p><p>An honoured short paper about retrieval</p><p>Best Short Student Paper</p><p>Flo Gray and Gil Hart</p><p>Scalability of sparse retrieval algorithms</p><p>Best Papers Committee</p>`;
+  assert.deepEqual(parseEcirAwards(h, "https://ecir2025.eu/best-papers-award/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["category A retrieval and ranking demo for case reports | Ann Lee; Bo Chan; Cy Dunn", "student Scalability of sparse retrieval algorithms | Flo Gray; Gil Hart"]);
+});

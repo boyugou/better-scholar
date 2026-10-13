@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6506
+  "count": 6512
  },
  "entries": [
   {
@@ -49401,6 +49401,109 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#Koenderink",
    "evidence": "Koenderink Prize: 2024 “Microsoft COCO: Common Objects in Context” T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, C. Lawrence Zitnick"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "One size doesn’t fit all: Predicting the Number of Examples for In-Context Learning",
+   "authors": [
+    "Manish Chandra",
+    "Debasis Ganguly",
+    "Iadh Ounis"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best Paper: One size doesn’t fit all: Predicting the Number of Examples for In-Context Learning — Manish Chandra, Debasis Ganguly, Iadh Ounis"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "Rank-DistiLLM: Closing the Effectiveness Gap Between Cross-Encoders and LLMs for Passage Re-ranking",
+   "authors": [
+    "Ferdinand Schlatt",
+    "Maik Fröbe",
+    "Harrisen Scells",
+    "Shengyao Zhuang",
+    "Bevan Koopman",
+    "Guido Zuccon",
+    "Benno Stein",
+    "Martin Potthast",
+    "Matthias Hagen"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best Short Paper: Rank-DistiLLM: Closing the Effectiveness Gap Between Cross-Encoders and LLMs for Passage Re-ranking — Ferdinand Schlatt, Maik Fröbe, Harrisen Scells, Shengyao Zhuang, Bevan Koopman, Guido Zuccon, Benno Stein, Martin Potthast, Matthias Hagen"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best IR4Good Paper Award",
+   "title": "FlashCheck: Exploration of Efficient Evidence Retrieval for Fast Fact-Checking",
+   "authors": [
+    "Kevin Nanhekhan",
+    "Venktesh Viswanathan",
+    "Erik Martin",
+    "Henrik Vatndal",
+    "Vinay Setty",
+    "Avishek Anand"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best IR4Good Paper: FlashCheck: Exploration of Efficient Evidence Retrieval for Fast Fact-Checking — Kevin Nanhekhan, Venktesh Viswanathan, Erik Martin, Henrik Vatndal, Vinay Setty, Avishek Anand"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Demo Award",
+   "title": "MedLink: Retrieval and Ranking of Case Reports to assist Clinical Decision Making",
+   "authors": [
+    "Luís Filipe Cunha",
+    "Nuno Guimarães",
+    "Alexandra Mendes",
+    "Ricardo Campos",
+    "Alipio Jorge"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best Demo: MedLink: Retrieval and Ranking of Case Reports to assist Clinical Decision Making — Luís Filipe Cunha, Nuno Guimarães, Alexandra Mendes, Ricardo Campos, Alipio Jorge"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Reproducibility Paper Award",
+   "title": "Reproducing HotFlip for Corpus Poisoning Attacks in Dense Retrieval",
+   "authors": [
+    "Yongkang Li",
+    "Panagiotis Eustratiadis",
+    "Evangelos Kanoulas"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best Reproducibility Paper: Reproducing HotFlip for Corpus Poisoning Attacks in Dense Retrieval — Yongkang Li, Panagiotis Eustratiadis, Evangelos Kanoulas"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Short Student Paper Award",
+   "title": "Investigating the Scalability of Approximate Sparse Retrieval Algorithms to Massive Datasets",
+   "authors": [
+    "Sebastian Bruch",
+    "Franco Maria Nardini",
+    "Cosimo Rulli",
+    "Rossano Venturini",
+    "Leonardo Venuta"
+   ],
+   "track": "main",
+   "source": "https://ecir2025.eu/best-papers-award/",
+   "evidence": "ECIR 2025 Best Short Student Paper: Investigating the Scalability of Approximate Sparse Retrieval Algorithms to Massive Datasets — Sebastian Bruch, Franco Maria Nardini, Cosimo Rulli, Rossano Venturini, Leonardo Venuta"
   },
   {
    "venue": "ECML PKDD",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.55 — 2026-10-12
+
+- ECIR 2025's best paper, best short paper, best short student paper and its demo, IR4Good and reproducibility awards (6 papers; the list had none) from the conference's own best-papers page (`tot.mjs ecir`); the honorable mentions are not read. The list has 6512 awards.
+
 ## 2.10.54 — 2026-10-12
 
 - IPDPS's best papers of 2019–2025 (7 papers) from each year's own front page and ICS 2024's best paper and runner-up from its front page; the list had none of either (`tot.mjs ipdps`, `tot.mjs ics`). The list has 6506 awards.
