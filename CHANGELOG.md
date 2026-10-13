@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.86 — 2026-10-12
+
+- The Web Conference's best paper of 2018 (HighLife) and best paper and best student paper of 2020 (Open Intent Extraction; Mobile App Squatting) from the conference's own pages (`tot.mjs www-year`); the list had WWW's best papers of 2022 and 2024 only. The list has 6807 awards.
+
 ## 2.10.85 — 2026-10-12
 
 - CIDR 2025's two best papers and its two test of time papers (TelegraphCQ and Borealis, with their CIDR 2003 and 2005 years) from the conference's own awards page (`tot.mjs cidr`); the list had none for CIDR. The list has 6804 awards.

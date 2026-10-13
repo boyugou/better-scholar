@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6804
+  "count": 6807
  },
  "entries": [
   {
@@ -112712,6 +112712,21 @@
   {
    "venue": "WWW",
    "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HighLife: Higher-arity Fact Harvesting",
+   "authors": [
+    "Patrick Ernst",
+    "Amy Siu",
+    "Gerhard Weikum"
+   ],
+   "track": "main",
+   "source": "https://www2018.thewebconf.org/awards/",
+   "evidence": "WWW 2018 Best Paper: HighLife: Higher-arity Fact Harvesting — Patrick Ernst, Amy Siu, Gerhard Weikum"
+  },
+  {
+   "venue": "WWW",
+   "year": 2018,
    "award": "tot",
    "awardLabel": "Seoul Test of Time Award",
    "title": "YAGO: A Core of Semantic Knowledge Unifying WordNet and Wikipedia",
@@ -112738,6 +112753,43 @@
    "track": "main",
    "source": "https://www.iw3c2.org/ToT/",
    "evidence": "The Web Conference 2019 Seoul Test of Time Award: Sepandar D. Kamvar, Mario Schlosser and Héctor Garcia-Molina for their paper “The EigenTrust Algorithm for Reputation Management in P2P Networks”"
+  },
+  {
+   "venue": "WWW",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Open Intent Extraction from Natural Language Interactions",
+   "authors": [
+    "Nikhita Vedula",
+    "Nedim Lipka",
+    "Pranav Maneriker",
+    "Srinivasan Parthasarathy"
+   ],
+   "track": "main",
+   "source": "https://www2020.thewebconf.org/",
+   "evidence": "WWW 2020 Best Paper: Open Intent Extraction from Natural Language Interactions — Nikhita Vedula, Nedim Lipka, Pranav Maneriker, Srinivasan Parthasarathy"
+  },
+  {
+   "venue": "WWW",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Mobile App Squatting",
+   "authors": [
+    "Yangyu Hu",
+    "Haoyu Wang",
+    "Ren He",
+    "Li Li",
+    "Gareth Tyson",
+    "Ignacio Castro",
+    "Yao Guo",
+    "Lei Wu",
+    "Guoai Xu"
+   ],
+   "track": "main",
+   "source": "https://www2020.thewebconf.org/",
+   "evidence": "WWW 2020 Best Student Paper: Mobile App Squatting — Yangyu Hu, Haoyu Wang, Ren He, Li Li, Gareth Tyson, Ignacio Castro, Yao Guo, Lei Wu, Guoai Xu"
   },
   {
    "venue": "WWW",

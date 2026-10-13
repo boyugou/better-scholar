@@ -2229,3 +2229,11 @@ test("CIDR awards page: best papers as title and authors lines, test of time pap
   ]);
   assert.equal(parseCidrAwards(h, "https://cidrdb.org/cidr2024/awards.html").entries.length, 0);
 });
+
+test("The Web Conference year pages: 2020's 'Paper Title:' / 'Authors:' lines under Best Paper and Best Student Paper; 2018's 'Best Paper:' over a title and authors; posters and honorable mentions left out", async () => {
+  const { parseWwwYearAwards } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>Congratulations</p><p>Best Paper</p><p>Paper Title: Open intent extraction from natural language interactions</p><p>Authors: Ann Lee (OSU), Bo Chan (Adobe) and Cy Dunn (OSU).</p><p>Best Student Paper</p><p>Paper Title: Mobile app squatting in the wild</p><p>Authors: Ed Fox (BUPT), Flo Gray (BUPT)</p><p>Honorable Mention Paper</p><p>Paper Title: A neural rule grounding framework</p><p>Authors: Gil Hart (USC)</p><p>Best Poster</p><p>Paper Title: Resource allocation for edge clouds</p><p>Authors: Hal Ito (UW)</p>`;
+  assert.deepEqual(parseWwwYearAwards(a, "https://www2020.thewebconf.org/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Open intent extraction from natural language interactions | Ann Lee; Bo Chan; Cy Dunn", "student Mobile app squatting in the wild | Ed Fox; Flo Gray"]);
+  const b = `<p>and the winners are:</p><p>Best Paper:</p><p>HighLife: higher-arity fact harvesting</p><p>Ivy Jones, Kay Lowe and Max Nye</p><p>Best Poster:</p><p>An improved sampler for Bayesian personalized ranking</p><p>Pat Quinn</p>`;
+  assert.deepEqual(parseWwwYearAwards(b, "https://www2018.thewebconf.org/awards/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2018 HighLife: higher-arity fact harvesting | Ivy Jones; Kay Lowe; Max Nye"]);
+});
