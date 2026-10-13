@@ -115,7 +115,7 @@ ${["first", "cofirst", "second", "last"].map((r) => `        <button type="butto
       <div class="demo-card" aria-live="polite">
 ${DEMO.map((d, i) => `        <div class="paper" data-role="${d.role}"><b class="ptitle">${t("demo.paper")} ${i + 1}</b><span class="auth">${demoAuthors(d.role, t("demo.you"))}</span><span class="ven">${d.venue} ${d.chips.map((c) => `<em>${c}</em>`).join("")}</span></div>`).join("\n")}
       </div>
-      <p class="demo-count"><b id="demo-n">0</b> ${t("demo.count")}</p>
+      <p class="demo-count">${t("demo.count")}: <b id="demo-n">0</b></p>
     </div>
   </section>
   <section class="features">
