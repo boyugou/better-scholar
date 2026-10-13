@@ -53,3 +53,10 @@ test("merge-raw: a page's misprinted title that data/exclusions.json corrects do
   assert.equal(r.status, 0, r.stderr);
   assert.match(r.stdout, /\(0 new\)/, r.stdout);
 });
+
+test("the bundled list prints no LaTeX quote marks (`` '' or `x') in a title; merge-raw turns them into typographic quotes", () => {
+  const list = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "awards-2026.json"), "utf8"));
+  const rows = list.awards || list.entries;
+  assert.deepEqual(rows.filter((e) => /``|''|(?:^|[\s(])`[^`']+'/.test(e.title)).map((e) => e.title), []);
+  assert.match(fs.readFileSync(MERGE, "utf8"), /tidyQuotes/);
+});

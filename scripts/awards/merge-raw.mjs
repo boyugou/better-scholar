@@ -33,6 +33,7 @@ const MAX_YEAR = 2026;
 const dataPath = join(root, "data", "awards-2026.json");
 const data = JSON.parse(readFileSync(dataPath, "utf8"));
 const kinds = new Set(Object.keys(awards.KIND));
+const tidyQuotes = (t) => t.replace(/``/g, "\u201c").replace(/\x27\x27/g, "\u201d").replace(/(^|[\s(])`([^`\x27]+)\x27/g, "$1\u2018$2\u2019");
 const key = (e) => [e.venue, e.year, e.award, awards.titleKey(e.title)].join("|");
 // a page's leftover character references ("but &mldr;” Demystifying": a program's data file that was never decoded) become the characters they stand for
 const ENTITIES = { mldr: "…", hellip: "…", amp: "&", lt: "<", gt: ">", quot: "\"", apos: "'", nbsp: " ", ndash: "–", mdash: "—", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”" };
@@ -89,6 +90,7 @@ const NOT_A_NAME = /\[node:|^and\s|\b(?:University|Universit[a-zé]\w*|Institute
 let cleaned = 0;
 for (const e of accepted.values()) {
   if (/[^.]\.$/.test(e.title)) { e.title = e.title.slice(0, -1); cleaned++; }                // a sentence full stop some pages leave after the title
+  if (/``|\x27\x27|(?:^|[\s(])`[^`\x27]+\x27/.test(e.title)) { e.title = tidyQuotes(e.title); cleaned++; }       // LaTeX quote marks some proceedings print as they are typeset: `` '' and `x'
   if (/&[a-z#0-9]+;/i.test(e.title + e.evidence)) { e.title = decode(e.title); e.evidence = decode(e.evidence); cleaned++; }
   const keep = [];
   for (const a of e.authors) if (!NOT_A_NAME.test(a) && !keep.includes(a)) keep.push(a);
