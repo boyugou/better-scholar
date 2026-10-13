@@ -178,7 +178,7 @@
     "message": "1 Rolle durch eine gekürzte Autorenliste verdeckt"
   },
   "resolveBtn": {
-    "message": "Vollständige Listen lesen"
+    "message": "Ganze Listen lesen"
   },
   "resolveHint": {
     "message": "Öffnet die Seite jedes Papers auf Scholar (etwa eine pro Sekunde), um die vollständige Autorenliste zu lesen."
@@ -639,7 +639,7 @@
     "message": "Autorenlisten zuerst über Semantic Scholar lesen"
   },
   "optSemanticLabelHint": {
-    "message": "Beim Klick auf „Vollständige Listen lesen“ wird zuerst Semantic Scholar nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite selbst wird nur für das geöffnet, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
+    "message": "Beim Klick auf „Ganze Listen lesen“ wird zuerst Semantic Scholar nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite selbst wird nur für das geöffnet, was Semantic Scholar nicht kennt. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Hervorgehobene Paper nach Jahr"

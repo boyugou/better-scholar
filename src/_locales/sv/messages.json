@@ -178,7 +178,7 @@
     "message": "1 roll dold av en kortad författarlista"
   },
   "resolveBtn": {
-    "message": "Läs fullständiga listor"
+    "message": "Läs hela listorna"
   },
   "resolveHint": {
     "message": "Öppnar varje artikels sida på Scholar (ungefär en per sekund) för att läsa hela författarlistan."
@@ -639,7 +639,7 @@
     "message": "Läs först författarlistor från Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "När du trycker på ”Läs fullständiga listor” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det Semantic Scholar inte känner till. Det innebär färre förfrågningar till Scholar och färre captcha-koder."
+    "message": "När du trycker på ”Läs hela listorna” frågar tillägget först Semantic Scholar efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det Semantic Scholar inte känner till. Det innebär färre förfrågningar till Scholar och färre CAPTCHA-kontroller."
   },
   "yearsTitle": {
     "message": "Markerade artiklar per år"

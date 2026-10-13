@@ -639,7 +639,7 @@
     "message": "Les forfatterlister først fra Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Når du trykker «Les fulle lister», spør utvidelsen først Semantic Scholar etter hver artikkels fulle forfatterliste (Semantic Scholar får tittelen på artikkelen og ingenting annet), og Scholars egen side åpnes bare for det Semantic Scholar ikke kjenner. Det gir færre forespørsler til Scholar og færre captcha-er."
+    "message": "Når du trykker «Les fulle lister», spør utvidelsen først Semantic Scholar etter hver artikkels fulle forfatterliste (Semantic Scholar får tittelen på artikkelen og ingenting annet), og Scholars egen side åpnes bare for det Semantic Scholar ikke kjenner. Det gir færre forespørsler til Scholar og færre CAPTCHA-er."
   },
   "yearsTitle": {
     "message": "Uthevede artikler per år"
@@ -751,6 +751,6 @@
     "message": "Personvern"
   },
   "optLinkIssues": {
-    "message": "Meld fra om et problem"
+    "message": "Rapporter et problem"
   }
 }

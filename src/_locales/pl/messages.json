@@ -621,7 +621,7 @@
     "message": "Najpierw odczytuj listy autorów z Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy (dostaje tylko tytuł pracy i nic więcej), a stronę samego Scholar otwieramy tylko dla tego, czego on nie zna. Mniej zapytań do Scholar, więc mniej CAPTCHA."
+    "message": "Po naciśnięciu „Odczytaj pełne listy” najpierw pytamy Semantic Scholar o pełną listę autorów każdej pracy (dostaje tylko tytuł pracy i nic więcej), a stronę samego Scholar otwieramy tylko dla tego, czego nie zna Semantic Scholar. Mniej zapytań do Scholar, więc mniej CAPTCHA."
   },
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"

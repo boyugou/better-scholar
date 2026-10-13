@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Citește listele complete"
+    "message": "Citește lista completă"
   },
   "resolveHint": {
     "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
@@ -621,7 +621,7 @@
     "message": "Citește mai întâi listele de autori din Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Când apeși „Citește listele complete”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări (Semantic Scholar primește doar titlul lucrării și nimic altceva), iar pagina Scholar se deschide doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
+    "message": "Când apeși „Citește lista completă”, extensia cere mai întâi de la Semantic Scholar lista completă de autori a fiecărei lucrări (Semantic Scholar primește doar titlul lucrării și nimic altceva), iar pagina Scholar se deschide doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
   },
   "yearsTitle": {
     "message": "Lucrări evidențiate pe an"

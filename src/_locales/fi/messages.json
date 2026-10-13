@@ -178,7 +178,7 @@
     "message": "1 rooli piilossa lyhennetyn kirjoittajaluettelon vuoksi"
   },
   "resolveBtn": {
-    "message": "Lue täydet listat"
+    "message": "Lue täydet luettelot"
   },
   "resolveHint": {
     "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
@@ -639,7 +639,7 @@
     "message": "Lue ensin kirjoittajaluettelot Semantic Scholarilta"
   },
   "optSemanticLabelHint": {
-    "message": "Kun painat “Lue täydet listat”, Semantic Scholarilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua avataan vain siltä osin, mitä Semantic Scholar ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
+    "message": "Kun painat “Lue täydet luettelot”, Semantic Scholarilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua avataan vain siltä osin, mitä Semantic Scholar ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten CAPTCHA-tarkistuksia tulee vähemmän."
   },
   "yearsTitle": {
     "message": "Korostetut artikkelit vuosittain"

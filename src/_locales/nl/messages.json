@@ -178,7 +178,7 @@
     "message": "1 rol verborgen door een afgekapte auteurslijst"
   },
   "resolveBtn": {
-    "message": "Volledige lijsten lezen"
+    "message": "Hele lijsten lezen"
   },
   "resolveHint": {
     "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
@@ -639,7 +639,7 @@
     "message": "Auteurslijsten eerst lezen via Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Bij “Volledige lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper (het ontvangt de titel van de paper en verder niets), en opent de eigen pagina van Scholar alleen voor wat het niet kent. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
+    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper (het ontvangt de titel van de paper en verder niets), en opent de eigen pagina van Scholar alleen voor wat het niet kent. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
   },
   "yearsTitle": {
     "message": "Gemarkeerde papers per jaar"

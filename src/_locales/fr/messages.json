@@ -178,7 +178,7 @@
     "message": "1 rôle masqué par une liste d’auteurs tronquée"
   },
   "resolveBtn": {
-    "message": "Lire les listes complètes"
+    "message": "Lire la liste complète"
   },
   "resolveHint": {
     "message": "Ouvre la page de chaque article sur Scholar (environ un par seconde) pour lire la liste complète des auteurs."
@@ -639,7 +639,7 @@
     "message": "Lire d’abord les listes d’auteurs sur Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Quand vous cliquez sur le bouton « Lire les listes complètes », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar (seul le titre de l’article est envoyé), et la page de Scholar n’est ouverte que pour ce qu’il ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
+    "message": "Quand vous cliquez sur le bouton « Lire la liste complète », la liste complète des auteurs de chaque article est d’abord demandée à Semantic Scholar (seul le titre de l’article est envoyé), et la page de Scholar n’est ouverte que pour ce que Semantic Scholar ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articles mis en évidence par année"

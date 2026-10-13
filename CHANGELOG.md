@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.22.7 — 2026-10-13
+
+From a second-pass review of today's new translations by a reviewer reading all 30 languages (no mistranslation of meaning was found; grammar and consistency):
+
+- **Shorter button names** where the new "Read full lists" was long: German *Ganze Listen lesen*, French *Lire la liste complète*, Romanian *Citește lista completă*, Dutch *Hele lijsten lezen*, Swedish *Läs hela listorna*, Russian *Читать полные списки*; Finnish says *luettelot* like the rest of its file, Czech uses the verb *Přečíst* of its progress line (not *Načíst*, which is *Load all*). The settings hints quote the new names.
+- Hindi has singular forms for the saved-data line and the chart note (it printed "1 पेपरों"); Hungarian says *szerzői lista* everywhere; zh_CN uses its word 发表场所 in the no-ranks note, and both Chinese variants say 优先 / 優先 ("first") in the Semantic Scholar switch; Danish, Finnish, Norwegian and Swedish write CAPTCHA the way their files already do; the report link uses each file's own verb (Danish *Rapportér*, Spanish *Informar de*, Norwegian *Rapporter*, Hebrew *דיווח*); the hint names Semantic Scholar where a bare pronoun could be read as Scholar (German, French, Polish).
+
 ## 2.22.6 — 2026-10-13
 
 From an independent review of 2.22.1–2.22.4 (four confirmed problems):

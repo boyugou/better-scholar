@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Načíst celé seznamy"
+    "message": "Přečíst celé seznamy"
   },
   "resolveHint": {
     "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
@@ -618,10 +618,10 @@
     "message": "Druhé místo, kde najdete to, co Scholar zkracuje."
   },
   "optSemanticLabel": {
-    "message": "Nejprve načítat seznamy autorů ze Semantic Scholar"
+    "message": "Nejprve číst seznamy autorů ze Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Při stisku „Načíst celé seznamy“ se nejprve ptáme Semantic Scholar na úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholaru otevíráme jen u toho, co tam nemají. Méně dotazů na Scholar, tedy méně CAPTCHA."
+    "message": "Po stisku „Přečíst celé seznamy“ rozšíření nejprve požádá Semantic Scholar o úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholar otevře jen pro práce, které Semantic Scholar nezná. Méně dotazů na Scholar, tedy méně CAPTCHA."
   },
   "yearsTitle": {
     "message": "Zvýrazněné práce podle roku"

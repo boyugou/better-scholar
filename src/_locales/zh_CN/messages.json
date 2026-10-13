@@ -273,7 +273,7 @@
     }
   },
   "noRanksNote": {
-    "message": "这个主页上没有任何场所在 $N1$ 名录里；这些名录只覆盖计算机科学。",
+    "message": "这个主页上没有任何发表场所在 $N1$ 名录里；这些名录只覆盖计算机科学。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -618,7 +618,7 @@
     "message": "Scholar 截断的内容，多一个地方可查。"
   },
   "optSemanticLabel": {
-    "message": "用 Semantic Scholar 补全作者列表"
+    "message": "优先用 Semantic Scholar 补全作者列表"
   },
   "optSemanticLabelHint": {
     "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表（只发送论文标题，不发别的），它不认识的才去读 Scholar 自己的页面。对 Scholar 的请求更少，验证码也更少。"
