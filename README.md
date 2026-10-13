@@ -37,7 +37,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   first 100 papers). **Complete** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
 - **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
-  highlighted". **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
+  highlighted"; whenever a filter narrows the list the panel says so ("Showing 25 of 100 papers · Clear"). **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
   presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
   offers **Load all**.
 - **Cleaner profiles, your way** — (all optional, in the settings) merge the entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), hide the "Cited by", "Co-authors" and "Public access" blocks of Scholar's own page, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and complete cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
