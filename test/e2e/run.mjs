@@ -334,6 +334,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.venues", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
 
+    // -- 6a2d. forced colours (Windows high contrast): the row bar becomes a real border, so a role is still seen
+    await page.bringToFront();
+    await page.emulateMedia({ forcedColors: "active" });
+    await eventually(page, () => parseFloat(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).borderInlineStartWidth) === 4);
+    await page.emulateMedia({ forcedColors: null });
+    ok("forced colours: a highlighted row keeps a 4 px border where the system drops the tint and the bar");
+
     // -- 6a3. role colours: a colour picked on the settings page recolours the open profile; "back to the standard" restores
     const rowColor = () => page.evaluate(() => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow);
     const before = await rowColor();

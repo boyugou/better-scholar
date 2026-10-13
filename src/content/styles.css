@@ -241,3 +241,12 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 /* text for screen readers only */
 #rr-panel .rr-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 #rr-panel .rr-scope { margin: -3px 0 5px; }
+
+/* Windows high-contrast / forced colours: the system drops background tints and shadows, so the row bar becomes a real border and a marked name is underlined */
+@media (forced-colors: active) {
+  tr[class*="rr-r-"] > td:first-child { border-inline-start: 4px solid Highlight; }
+  .rr-name { text-decoration: underline; }
+  .rr-chip { border-color: ButtonText; }
+  #rr-panel .rr-stack { outline: 1px solid ButtonText; }
+  #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"] { outline: 2px solid Highlight; }
+}
