@@ -2370,6 +2370,13 @@ test("DAC best paper press release: the date line gives the year, 'Best Paper Re
   assert.deepEqual(parseDacBest(h, "https://dac.com/press-release/the-57th-design-automation-conference-best-paper-awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2020 | Ann Lee; Bo Chan | Algorithm-hardware co-design of adaptive floating-point encodings"]);
 });
 
+test("CEDA conference best paper pages: blocks of title, 'Author(s)', authors (quoted whole line, quoted nickname, 'C. -C.' tidied), optional citation and 'Event Where Awarded' with the year; a nominee citation and a block without an event are left out", async () => {
+  const { parseCedaPaper } = await import("../scripts/awards/tot.mjs");
+  const blk = (title, au, ev, cit) => `<p>Paper</p><p>Paper</p><p>${title}</p><p>Author(s)</p><p>${au}</p>${cit ? `<p>Citation</p><p>${cit}</p>` : ""}${ev ? `<p>Event Where Awarded</p><p>${ev}</p>` : ""}`;
+  const h = `<h1>DATE Best Paper Award | IEEE CEDA</h1><p>Choose Year</p><p>2023</p><p>2022</p>` + blk("SAGERoute: synergistic analog routing with constraints", '"Haoyi Zhang, Xiaohan Gao and Ru Huang"', "2023 Design, Automation and Test in Europe Conference", "Best Paper Awards T-Track") + blk("Gamora: graph learning based symbolic reasoning", 'Nan Wu, Yingjie Li, Cong "Callie" Hao, Yuan Xie', "2023 60th ACM/IEEE Design Automation Conference") + blk("Rethink before releasing your model extraction", "C. -C. Chang, J. Pan and Y. Chen", "2022 Design, Automation and Test in Europe") + blk("A nominated paper that did not win anything", "Al Roe, Bea Poe", "2022 Design, Automation and Test in Europe", "Best Paper Award Nominations") + blk("A journal style block without any event line", "Gil Hart; Hal Ito");
+  assert.deepEqual(parseCedaPaper(h, "https://ieee-ceda.org/paper-award/date-best-paper-award").entries.map((e) => `${e.venue} ${e.year} | ${e.authors.join("; ")}`), ["DATE 2023 | Haoyi Zhang; Xiaohan Gao; Ru Huang", "DATE 2023 | Nan Wu; Yingjie Li; Cong Hao; Yuan Xie", "DATE 2022 | C.-C. Chang; J. Pan; Y. Chen"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

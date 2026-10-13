@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.109 — 2026-10-12
+
+- ASP-DAC's best papers 2006–2024, DAC's 2005–2024 and DATE's 2005–2024 (82 new papers, filling DATE's gaps before 2014 and in 2015, and DAC and ASP-DAC from nothing) from IEEE CEDA's own best paper award pages (`tot.mjs ceda-paper`). The list has 7556 awards.
+
 ## 2.10.108 — 2026-10-12
 
 - DAC's best papers of 2020 and 2024 (2 papers) from the conference's own press releases (`tot.mjs dac-best`); the site has no other year's. The list has 7474 awards.

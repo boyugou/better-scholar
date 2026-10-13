@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7474
+  "count": 7556
  },
  "entries": [
   {
@@ -7540,6 +7540,521 @@
    "paperYear": 2010,
    "source": "https://iacr.org/testoftime/",
    "evidence": "ASIACRYPT 2025 Test of Time Award: Aniket Kate, Gregory M. Zaverucha, and Ian Goldberg “Constant-Size Commitments to Polynomials and Their Applications”"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Constraint-Driven Bus Matrix Synthesis for MPSoC",
+   "authors": [
+    "S. Pasricha",
+    "N. Dutt",
+    "M. Ben-Romdhane"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2006 Best Paper Award: Constraint-Driven Bus Matrix Synthesis for MPSoC — S. Pasricha, N. Dutt and M. Ben-Romdhane"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Post-Routing Redundant Via Insertion for Yield/Reliability Improvement",
+   "authors": [
+    "Kuang-Yao Lee",
+    "Ting-Chi Wang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2006 Best Paper Award: Post-Routing Redundant Via Insertion for Yield/Reliability Improvement — Kuang-Yao Lee and Ting-Chi Wang"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A New Methodology for Interconnect Parasitics Extraction Considering Photo-Lithography Effects",
+   "authors": [
+    "Y. Zhou",
+    "Z. Li",
+    "Y. Tian",
+    "W. Shi",
+    "F. Liu"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2007 Best Paper Award: A New Methodology for Interconnect Parasitics Extraction Considering Photo-Lithography Effects — Y. Zhou, Z. Li, Y. Tian, W. Shi and F. Liu"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Post-Routing Redundant Via Insertion for Yield/Reliability Improvement",
+   "authors": [
+    "Kuang-Yao Lee",
+    "Ting-Chi Wang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2007 Best Paper Award: Post-Routing Redundant Via Insertion for Yield/Reliability Improvement — Kuang-Yao Lee and Ting-Chi Wang"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An efficient, fully nonlinear, variability-aware non-monte-carlo yield estimation procedure with applications to SRAM cells and ring oscillators",
+   "authors": [
+    "Chenjie Gu",
+    "Jaijeet Roychowdhury"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2008 Best Paper Award: An efficient, fully nonlinear, variability-aware non-monte-carlo yield estimation procedure with applications to SRAM cells and ring oscillators — Chenjie Gu and Jaijeet Roychowdhury"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Variability-Driven Module Selection with Joint Design Time Optimization and Post-Silicon Tuning",
+   "authors": [
+    "Feng Wang",
+    "Xiaoxia Wu",
+    "Yuan Xie"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2008 Best Paper Award: Variability-Driven Module Selection with Joint Design Time Optimization and Post-Silicon Tuning — Feng Wang, Xiaoxia Wu and Yuan Xie"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficiently finding the ‘best’ solution with multi-objectives from multiple topologies in topology library of analog circuit",
+   "authors": [
+    "Y. Liu",
+    "M. Yoshioka",
+    "K. Homma",
+    "T. Shibuya"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2009 Best Paper Award: Efficiently finding the ‘best’ solution with multi-objectives from multiple topologies in topology library of analog circuit — Y. Liu, M. Yoshioka, K. Homma and T. Shibuya"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FastYield: Variation-Aware, Layout-Driven Simultaneous Binding and Module Selection for Performance Yield Optimization",
+   "authors": [
+    "G. Lucas",
+    "S. Cromar",
+    "D. Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2009 Best Paper Award: FastYield: Variation-Aware, Layout-Driven Simultaneous Binding and Module Selection for Performance Yield Optimization — G. Lucas, S. Cromar and D. Chen"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A New Graph-theoretic, Multi-objective Layout Decomposition Framework for Double Patterning Lithography",
+   "authors": [
+    "J.-S. Yang",
+    "K. Lu",
+    "M. Cho",
+    "K. Yuan",
+    "D. Z. Pan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2010 Best Paper Award: A New Graph-theoretic, Multi-objective Layout Decomposition Framework for Double Patterning Lithography — J. -S. Yang, K. Lu, M. Cho, K. Yuan and D. Z. Pan"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SCGPSim: A fast SystemC simulator on GPUs",
+   "authors": [
+    "M. Nanjundappa",
+    "H. D. Patel",
+    "B. A. Jose",
+    "S. K. Shukla"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2010 Best Paper Award: SCGPSim: A fast SystemC simulator on GPUs — M. Nanjundappa, H. D. Patel, B. A. Jose and S. K. Shukla"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Co-design of cyber-physical systems via controllers with flexible delay constraints",
+   "authors": [
+    "D. Goswami",
+    "R. Schneider",
+    "S. Chakraborty"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2011 Best Paper Award: Co-design of cyber-physical systems via controllers with flexible delay constraints — D. Goswami, R. Schneider and S. Chakraborty"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EPIC: Efficient prediction of IC manufacturing hotspots with a unified meta-classification formulation",
+   "authors": [
+    "Duo Ding",
+    "Bei Yu",
+    "J. Ghosh",
+    "D. Z. Pan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2012 Best Paper Award: EPIC: Efficient prediction of IC manufacturing hotspots with a unified meta-classification formulation — Duo Ding, Bei Yu, J. Ghosh and D. Z. Pan"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Case for Wireless 3D NoCs for CMPs",
+   "authors": [
+    "Hiroki Matsutani",
+    "Paul Bogdan",
+    "Radu Marculescu",
+    "Yasuhiro Take",
+    "Daisuke Sasaki",
+    "Hao Zhang",
+    "Michihiro Koibuchi",
+    "Tadahiro Kuroda",
+    "Hideharu Amano"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2013 Best Paper Award: A Case for Wireless 3D NoCs for CMPs — Hiroki Matsutani, Paul Bogdan, Radu Marculescu, Yasuhiro Take, Daisuke Sasaki, Hao Zhang, Michihiro Koibuchi, Tadahiro Kuroda, Hideharu Amano"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Flexible packed stencil design with multiple shaping apertures for e-beam lithography",
+   "authors": [
+    "C. Chu",
+    "W.-K. Mak"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2014 Best Paper Award: Flexible packed stencil design with multiple shaping apertures for e-beam lithography — C. Chu and W. -K. Mak"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quantitative Modeling of Racetrack Memory, A Tradeoff among Area, Performance, and Power",
+   "authors": [
+    "Chao Zhang",
+    "Guangyu Sun",
+    "Weiqi Zhang",
+    "Fan Mi",
+    "Hai Li",
+    "W. Zhao"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2015 Best Paper Award: Quantitative Modeling of Racetrack Memory, A Tradeoff among Area, Performance, and Power — Chao Zhang, Guangyu Sun, Weiqi Zhang, Fan Mi, Hai Li and W. Zhao"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lattice-based Boolean diagrams",
+   "authors": [
+    "Ahmed Nassar",
+    "Fadi Kurdahi"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2016 Best Paper Award: Lattice-based Boolean diagrams — Ahmed Nassar, Fadi Kurdahi"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Netlist Reverse Engineering for High-Level Functionality Reconstruction",
+   "authors": [
+    "T. Meade",
+    "S. Zhang",
+    "Y. Jin"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2016 Best Paper Award: Netlist Reverse Engineering for High-Level Functionality Reconstruction — T. Meade, S. Zhang and Y. Jin"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Classification Accuracy Improvement for Neuromorphic Computing Systems with One-level Precision Synapses",
+   "authors": [
+    "Y. Wang",
+    "W. Wen",
+    "L. Song",
+    "H. H. Li"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2017 Best Paper Award: Classification Accuracy Improvement for Neuromorphic Computing Systems with One-level Precision Synapses — Y. Wang, W. Wen, L. Song and H. H. Li"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Spendthrift: Machine Learning Based Resource and Frequency Scaling for Ambient Energy Harvesting Nonvolatile Processors",
+   "authors": [
+    "Kaisheng Ma",
+    "Xueqing Li",
+    "Srivatsa Rangachar Srinivasa",
+    "John Sampson",
+    "Vijaykrishnan Narayanan",
+    "Yongpan Liu",
+    "Yuan Xie"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2017 Best Paper Award: Spendthrift: Machine Learning Based Resource and Frequency Scaling for Ambient Energy Harvesting Nonvolatile Processors — Kaisheng Ma, Xueqing Li, Srivatsa Rangachar Srinivasa, John (Jack) Sampson, Vijaykrishnan Narayanan, Yongpan Liu, Yuan Xie"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Process Variation Aware Data Management for Magnetic Skyrmions Racetrack Memory",
+   "authors": [
+    "F. Chen",
+    "Z. Li",
+    "W. Kang",
+    "W. Zhao",
+    "H. Li",
+    "Y. Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2018 Best Paper Award: Process Variation Aware Data Management for Magnetic Skyrmions Racetrack Memory — F. Chen, Z. Li, W. Kang, W. Zhao, H. Li and Y. Chen"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Energy-Efficient, Low-Latency Realization of Neural Networks through Boolean Logic Minimization",
+   "authors": [
+    "M. Nazemi",
+    "G. Pasandi",
+    "M. Pedram"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2019 Best Paper Award: Energy-Efficient, Low-Latency Realization of Neural Networks through Boolean Logic Minimization — M. Nazemi, G. Pasandi and M. Pedram"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GraphSAR: A Sparsity-Aware Processing-in-Memory Architecture for Large-Scale Graph Processing on ReRAMs",
+   "authors": [
+    "G. Dai",
+    "T. Huang",
+    "Y. Wang",
+    "H. Yang",
+    "J. Wawrzynek"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2019 Best Paper Award: GraphSAR: A Sparsity-Aware Processing-in-Memory Architecture for Large-Scale Graph Processing on ReRAMs — G. Dai, T. Huang, Y. Wang, H. Yang and J. Wawrzynek"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Equivalent Capacitance Guided Dummy Fill Insertion for Timing and Manufacturability",
+   "authors": [
+    "S.-J. Yu",
+    "C.-C. Kao",
+    "C.-H. Huang",
+    "I. H.-R. Jiang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2020 Best Paper Award: Equivalent Capacitance Guided Dummy Fill Insertion for Timing and Manufacturability — S. -J. Yu, C. -C. Kao, C. -H. Huang and I. H. -R. Jiang"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Area-Efficient Optical Neural Networks: An FFT-based Architecture",
+   "authors": [
+    "J. Gu",
+    "Z. Zhao",
+    "C. Feng",
+    "M. Liu",
+    "R. T. Chen",
+    "D. Z. Pan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2020 Best Paper Award: Towards Area-Efficient Optical Neural Networks: An FFT-based Architecture — J. Gu, Z. Zhao, C. Feng, M. Liu, R. T. Chen and D. Z. Pan"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Connection-based Processing-In-Memory Engine Design Based on Resistive Crossbars",
+   "authors": [
+    "S. Zhang",
+    "H. H. Li",
+    "U. Schlichtmann"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2021 Best Paper Award: Connection-based Processing-In-Memory Engine Design Based on Resistive Crossbars — S. Zhang, H. H. Li and U. Schlichtmann"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "TreeNet: Deep Point Cloud Embedding for Routing Tree Construction",
+   "authors": [
+    "Wei Li",
+    "Yuxiao Qu",
+    "Gengjie Chen",
+    "Yuzhe Ma",
+    "Bei Yu"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2021 Best Paper Award: TreeNet: Deep Point Cloud Embedding for Routing Tree Construction — Wei Li; Yuxiao Qu; Gengjie Chen; Yuzhe Ma; Bei Yu"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Net Separation-Oriented Printed Circuit Board Placement via Margin Maximization",
+   "authors": [
+    "C.-K. Cheng",
+    "C.-T. Ho",
+    "C. Holtz"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2022 Best Paper Award: Net Separation-Oriented Printed Circuit Board Placement via Margin Maximization — C. -K. Cheng, C. -T. Ho and C. Holtz"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimal Data Allocation for Graph Processing in Processing-in-Memory Systems",
+   "authors": [
+    "Z. Li",
+    "X. Chen",
+    "Y. Han"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2022 Best Paper Award: Optimal Data Allocation for Graph Processing in Processing-in-Memory Systems — Z. Li, X. Chen and Y. Han"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Approximate Floating-Point FFT Design with Wide Precision-Range and High Energy Efficiency",
+   "authors": [
+    "C. Wen",
+    "Y. Wu",
+    "X. Yin",
+    "C. Zhuo"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2023 Best Paper Award: Approximate Floating-Point FFT Design with Wide Precision-Range and High Energy Efficiency — C. Wen, Y. Wu, X. Yin and C. Zhuo"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rethink before Releasing Your Model: ML Model Extraction Attack in EDA",
+   "authors": [
+    "C.-C. Chang",
+    "J. Pan",
+    "Z. Xie",
+    "J. Hu",
+    "Y. Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2023 Best Paper Award: Rethink before Releasing Your Model: ML Model Extraction Attack in EDA — C. -C. Chang, J. Pan, Z. Xie, J. Hu and Y. Chen"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FineMap: A Fine-grained GPU-parallel LUT Mapping Engine",
+   "authors": [
+    "Tianji Liu",
+    "Lei Chen",
+    "Xing Li",
+    "Mingxuan Yuan",
+    "Evangeline F.Y. Young"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2024 Best Paper Award: FineMap: A Fine-grained GPU-parallel LUT Mapping Engine — Tianji Liu; Lei Chen; Xing Li; Mingxuan Yuan; Evangeline F.Y. Young"
+  },
+  {
+   "venue": "ASP-DAC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SPIRAL: Signal-Power Integrity Co-Analysis for High-Speed Inter-Chiplet Serial Links Validation",
+   "authors": [
+    "X. Dong",
+    "S. Sun",
+    "Y. Jiang",
+    "J. Hu",
+    "D. Gao",
+    "C. Zhuo"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/asp-dac-best-paper-award",
+   "evidence": "ASP-DAC 2024 Best Paper Award: SPIRAL: Signal-Power Integrity Co-Analysis for High-Speed Inter-Chiplet Serial Links Validation — X. Dong, S. Sun, Y. Jiang, J. Hu, D. Gao and C. Zhuo"
   },
   {
    "venue": "ASPLOS",
@@ -47910,6 +48425,360 @@
   },
   {
    "venue": "DAC",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A New Canonical Form for Fast Boolean Matching in Logic Synthesis and Verification",
+   "authors": [
+    "A. Abdollahi",
+    "M. Pedram"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2005 Best Paper Award: A New Canonical Form for Fast Boolean Matching in Logic Synthesis and Verification — A. Abdollahi; M. Pedram"
+  },
+  {
+   "venue": "DAC",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Efficient Algorithm for Statistical Minimization of Total Power under Timing Yield Constraints",
+   "authors": [
+    "M. Mani",
+    "A. Devgan",
+    "M. Orshansky"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2005 Best Paper Award: An Efficient Algorithm for Statistical Minimization of Total Power under Timing Yield Constraints — M. Mani; A. Devgan; M. Orshansky"
+  },
+  {
+   "venue": "DAC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Power grid physics and implications for CAD",
+   "authors": [
+    "S. Pant",
+    "E. Chiprout"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2006 Best Paper Award: Power grid physics and implications for CAD — S. Pant; E. Chiprout"
+  },
+  {
+   "venue": "DAC",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SAT Sweeping Using Local Observability Don't-Cares",
+   "authors": [
+    "Qi Zhu",
+    "N. Kitchen",
+    "A. Kuehlmann",
+    "A. Sangiovanni-Vincentelli"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2006 Best Paper Award: SAT Sweeping Using Local Observability Don't-Cares — Qi Zhu; N. Kitchen; A. Kuehlmann; A. Sangiovanni-Vincentelli"
+  },
+  {
+   "venue": "DAC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Interdependent Latch Setup/HoldTime Characterization via Euler Newton Curve Tracing on State-Transition Equations",
+   "authors": [
+    "Shweta Srivastava",
+    "Jaijeet Roychowdhury"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2007 Best Paper Award: Interdependent Latch Setup/HoldTime Characterization via Euler Newton Curve Tracing on State-Transition Equations — Shweta Srivastava; Jaijeet Roychowdhury"
+  },
+  {
+   "venue": "DAC",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Period Optimization for Hard Real-time Distributed Automotive Systems",
+   "authors": [
+    "Abhijit Davare",
+    "Qi Zhu",
+    "Marco Di Natale",
+    "Claudio Pinello",
+    "Sri Kanajan",
+    "Alberto Sangiovanni-Vincentelli"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2007 Best Paper Award: Period Optimization for Hard Real-time Distributed Automotive Systems — Abhijit Davare; Qi Zhu; Marco Di Natale; Claudio Pinello; Sri Kanajan; Alberto Sangiovanni-Vincentelli"
+  },
+  {
+   "venue": "DAC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "IFRA: Instruction Footprint Recording and Analysis for Post-silicon Bug Localization inProcessors",
+   "authors": [
+    "Sung-Boem Park",
+    "Subhasish Mitra"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2008 Best Paper Award: IFRA: Instruction Footprint Recording and Analysis for Post-silicon Bug Localization inProcessors — Sung-Boem Park; Subhasish Mitra"
+  },
+  {
+   "venue": "DAC",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "WavePipe: Parallel Transient Simulation of Analog and Digital Circuits on Multi-core Sharedmemory Machines",
+   "authors": [
+    "Wei Dong",
+    "Peng Li",
+    "Xiaoji Ye"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2008 Best Paper Award: WavePipe: Parallel Transient Simulation of Analog and Digital Circuits on Multi-core Sharedmemory Machines — Wei Dong; Peng Li; Xiaoji Ye"
+  },
+  {
+   "venue": "DAC",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Robust and Efficient Harmonic Balance (HB) Using Direct Solution of HB Jacobian",
+   "authors": [
+    "Amit Mehrotra",
+    "Abhishek Somani"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2009 Best Paper Award: A Robust and Efficient Harmonic Balance (HB) Using Direct Solution of HB Jacobian — Amit Mehrotra; Abhishek Somani"
+  },
+  {
+   "venue": "DAC",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bayesian Virtual Probe: Minimizing Variation Characterization Cost for Nanoscale IC Technologies via Bayesian Inference",
+   "authors": [
+    "Wangyang Zhang",
+    "Xin Li",
+    "Rob A. Rutenbar"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2010 Best Paper Award: Bayesian Virtual Probe: Minimizing Variation Characterization Cost for Nanoscale IC Technologies via Bayesian Inference — Wangyang Zhang; Xin Li; Rob A. Rutenbar"
+  },
+  {
+   "venue": "DAC",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatic Stability Checking for Large, Linear Analog Integrated Circuits",
+   "authors": [
+    "Parijat Mukherjee",
+    "G. Peter Fang",
+    "Rod Burt",
+    "Peng Li"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2011 Best Paper Award: Automatic Stability Checking for Large, Linear Analog Integrated Circuits — Parijat Mukherjee; G. Peter Fang; Rod Burt; Peng Li"
+  },
+  {
+   "venue": "DAC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Triple patterning aware routing and its comparison with double patterning aware routing in 14nm technology",
+   "authors": [
+    "Qiang Ma",
+    "Hongbo Zhang",
+    "Martin D. F. Wong"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2012 Best Paper Award: Triple patterning aware routing and its comparison with double patterning aware routing in 14nm technology — Qiang Ma; Hongbo Zhang; Martin D. F. Wong"
+  },
+  {
+   "venue": "DAC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scalable vectorless power grid current integrity verification",
+   "authors": [
+    "Zhuo Feng"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2013 Best Paper Award: Scalable vectorless power grid current integrity verification — Zhuo Feng"
+  },
+  {
+   "venue": "DAC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Code Coverage of Assertions Using RTL Source Code Analysis",
+   "authors": [
+    "Viraj Athavale",
+    "Sai Ma",
+    "Samuel Hertz",
+    "Shobha Vasudevan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2014 Best Paper Award: Code Coverage of Assertions Using RTL Source Code Analysis — Viraj Athavale; Sai Ma; Samuel Hertz; Shobha Vasudevan"
+  },
+  {
+   "venue": "DAC",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Containing Timing-Related Certification Cost in Automotive Systems Deploying Complex Hardware",
+   "authors": [
+    "Leonidas Kosmidis",
+    "Eduardo Quiñones",
+    "Jaume Abella",
+    "Glenn Farrall",
+    "Franck Wartel",
+    "Francisco J. Cazorla"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2014 Best Paper Award: Containing Timing-Related Certification Cost in Automotive Systems Deploying Complex Hardware — Leonidas Kosmidis; Eduardo Quiñones; Jaume Abella; Glenn Farrall; Franck Wartel; Francisco J. Cazorla"
+  },
+  {
+   "venue": "DAC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Battery Lifetime-Aware Automotive Climate Control for Electric Vehicles",
+   "authors": [
+    "Korosh Vatanparvar",
+    "Mohammad Abdullah Al Faruque"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2015 Best Paper Award: Battery Lifetime-Aware Automotive Climate Control for Electric Vehicles — Korosh Vatanparvar; Mohammad Abdullah Al Faruque"
+  },
+  {
+   "venue": "DAC",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HAFIX: Hardware-Assisted Flow Integrity Extension",
+   "authors": [
+    "Lucas Davi",
+    "Matthias Hanreich",
+    "Debayan Paul",
+    "Ahmad-Reza Sadeghi",
+    "Patrick Koeberl",
+    "Dean Sullivan",
+    "Orlando Arias",
+    "Yier Jin"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2015 Best Paper Award: HAFIX: Hardware-Assisted Flow Integrity Extension — Lucas Davi; Matthias Hanreich; Debayan Paul; Ahmad-Reza Sadeghi; Patrick Koeberl; Dean Sullivan, Orlando Arias, Yier Jin"
+  },
+  {
+   "venue": "DAC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Accurate Phase-Level Cross-Platform Power and Performance Estimation",
+   "authors": [
+    "Xinnian Zheng",
+    "LIzy K. John",
+    "Andreas Gerstlauer"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2016 Best Paper Award: Accurate Phase-Level Cross-Platform Power and Performance Estimation — Xinnian Zheng, LIzy K. John, Andreas Gerstlauer"
+  },
+  {
+   "venue": "DAC",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributed On-chip Voltage Regulation: Theoretical Stability Foundation, Over-design Reduction and Performance Optimization",
+   "authors": [
+    "Xin Zhan",
+    "Peng Li",
+    "Edgar Sánchez-Sinencio"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2016 Best Paper Award: Distributed On-chip Voltage Regulation: Theoretical Stability Foundation, Over-design Reduction and Performance Optimization — Xin Zhan; Peng Li; Edgar Sánchez-Sinencio"
+  },
+  {
+   "venue": "DAC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Low-Power On-Chip Network Providing Guaranteed Services for Snoopy Coherent and Artificial Neural Network Systems",
+   "authors": [
+    "Bhavya K. Daya",
+    "Li-Shiuan Peh",
+    "Anantha P. Chandrakasan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2017 Best Paper Award: Low-Power On-Chip Network Providing Guaranteed Services for Snoopy Coherent and Artificial Neural Network Systems — Bhavya K. Daya, Li-Shiuan Peh, Anantha P. Chandrakasan"
+  },
+  {
+   "venue": "DAC",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Toward Optimal Legalization for Mixed-Cell-Height Circuit Designs",
+   "authors": [
+    "Jianli Chen",
+    "Ziran Zhu",
+    "Wenxing Zhu",
+    "Yao-Wen Chang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2017 Best Paper Award: Toward Optimal Legalization for Mixed-Cell-Height Circuit Designs — Jianli Chen, Ziran Zhu, Wenxing Zhu, Yao-Wen Chang"
+  },
+  {
+   "venue": "DAC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compensated-DNN: Energy Efficient Low-Precision Deep Neural Networks by Compensating Quantization Errors",
+   "authors": [
+    "Shubham Jain",
+    "Swagath Venkataramani",
+    "Vijayalakshmi Srinivasan",
+    "Jungwook Choi",
+    "Pierce Chuang",
+    "Leland Chang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2018 Best Paper Award: Compensated-DNN: Energy Efficient Low-Precision Deep Neural Networks by Compensating Quantization Errors — Shubham Jain; Swagath Venkataramani; Vijayalakshmi Srinivasan; Jungwook Choi; Pierce Chuang; Leland Chang"
+  },
+  {
+   "venue": "DAC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exact Algorithms for Delay-Bounded Steiner Arborescences",
+   "authors": [
+    "Stephan Held",
+    "Benjamin Rockel"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2018 Best Paper Award: Exact Algorithms for Delay-Bounded Steiner Arborescences — Stephan Held; Benjamin Rockel"
+  },
+  {
+   "venue": "DAC",
    "year": 2020,
    "award": "best",
    "awardLabel": "Best Paper Award (Research Track)",
@@ -47926,7 +48795,94 @@
    ],
    "track": "main",
    "source": "https://dac.com/press-release/the-57th-design-automation-conference-best-paper-awards",
-   "evidence": "DAC 2020 Best Paper Research: Algorithm-Hardware Co-Design of Adaptive Floating-Point Encodings for Resilient Deep Learning Inference — Thierry Tambe, En-Yu Yang, Zishen Wan, Yuntian Deng, Vijay Janapa Reddi, Alexander Rush, David Brooks, Gu-Yeon Wei"
+   "evidence": "DAC 2020 Best Paper Research: Algorithm-Hardware Co-Design of Adaptive Floating-Point Encodings for Resilient Deep Learning Inference — Thierry Tambe, En-Yu Yang, Zishen Wan, Yuntian Deng, Vijay Janapa Reddi, Alexander Rush, David Brooks, Gu-Yeon Wei",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/dac-best-paper-award"
+   ]
+  },
+  {
+   "venue": "DAC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Gemmini: Enabling Systematic Deep-Learning Architecture Evaluation via Full-Stack Integration",
+   "authors": [
+    "Hasan Genc",
+    "Seah Kim",
+    "Alon Amid",
+    "Ameer Haj-Ali",
+    "Vighnesh Iyer",
+    "Pranav Prakash",
+    "Jerry Zhao",
+    "Daniel Grubb",
+    "Harrison Liew",
+    "Howard Mao",
+    "Albert Ou",
+    "Colin Schmidt",
+    "Samuel Steffl",
+    "John Wright",
+    "Ion Stoica",
+    "Jonathan Ragan-Kelley",
+    "Krste Asanović",
+    "Borivoje Nikolic",
+    "Sophia Shao"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2021 Best Paper Award: Gemmini: Enabling Systematic Deep-Learning Architecture Evaluation via Full-Stack Integration — Hasan Genc; Seah Kim; Alon Amid; Ameer Haj-Ali; Vighnesh Iyer; Pranav Prakash; Jerry Zhao; Daniel Grubb; Harrison Liew; Howard Mao; Albert Ou; Colin Schmidt; Samuel Steffl; John Wright; Ion Stoica; Jonathan Ragan-Kelley; Krste Asanović; Borivoje Nikolic; Sophia Shao"
+  },
+  {
+   "venue": "DAC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards a Formally Verified Hardware Root-of-Trust for Data-Oblivious Computing",
+   "authors": [
+    "Lucas Deutschmann",
+    "Johannes Müller",
+    "Mohammad R. Fadiheh",
+    "Dominik Stoffel",
+    "Wolfgang Kunz"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2022 Best Paper Award: Towards a Formally Verified Hardware Root-of-Trust for Data-Oblivious Computing — Lucas Deutschmann, Johannes Müller, Mohammad R. Fadiheh, Dominik Stoffel, Wolfgang Kunz"
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Gamora: Graph Learning based Symbolic Reasoning for Large-Scale Boolean Networks",
+   "authors": [
+    "Nan Wu",
+    "Yingjie Li",
+    "Cong Hao",
+    "Steve Dai",
+    "Cunxi Yu",
+    "Yuan Xie"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2023 Best Paper Award: Gamora: Graph Learning based Symbolic Reasoning for Large-Scale Boolean Networks — Nan Wu, Yingjie Li, Cong \"Callie\" Hao, Steve Dai, Cunxi Yu, Yuan Xie"
+  },
+  {
+   "venue": "DAC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "RL-CCD: Concurrent Clock and Data Optimization using Attention-Based Self-Supervised Reinforcement Learning",
+   "authors": [
+    "Yi-Chen Lu",
+    "Wei-Ting Chan",
+    "Deyuan Guo",
+    "Sudipto Kundu",
+    "Vishal Khandelwal",
+    "Sung Kyu Lim"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/dac-best-paper-award",
+   "evidence": "DAC 2023 Best Paper Award: RL-CCD: Concurrent Clock and Data Optimization using Attention-Based Self-Supervised Reinforcement Learning — Yi-Chen Lu, Wei-Ting Chan, Deyuan Guo, Sudipto Kundu, Vishal Khandelwal, Sung Kyu Lim"
   },
   {
    "venue": "DAC",
@@ -48004,7 +48960,10 @@
    ],
    "track": "main",
    "source": "https://dac.com/press-release/the-61st-dac-chips-to-systems-conference-best-paper-awards",
-   "evidence": "DAC 2024 Best Paper Research: Token-Picker: Accelerating Attention in Text. Generation and Minimized Memory Transfer via Probability Estimation — Junyoung Park, Myeonggu Kang, Yunki Han, YanG-Gon Kim, Lee-Sup Kim [the page misprints the title; the paper is \"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation\" — data/exclusions.json]"
+   "evidence": "DAC 2024 Best Paper Research: Token-Picker: Accelerating Attention in Text. Generation and Minimized Memory Transfer via Probability Estimation — Junyoung Park, Myeonggu Kang, Yunki Han, YanG-Gon Kim, Lee-Sup Kim [the page misprints the title; the paper is \"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation\" — data/exclusions.json]",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/dac-best-paper-award"
+   ]
   },
   {
    "venue": "DAC",
@@ -48064,6 +49023,315 @@
   },
   {
    "venue": "DATE",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Accurate Reliability Evaluation and Enhancement via Probabilistic Transfer Matrices",
+   "authors": [
+    "S. Krishnaswamy",
+    "G. F. Viamontes",
+    "I. L. Markov",
+    "J. P. Hayes"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2005 Best Paper Award (Most Outstanding in the Field of Test): Accurate Reliability Evaluation and Enhancement via Probabilistic Transfer Matrices — S. Krishnaswamy, G. F. Viamontes, I. L. Markov and J. P. Hayes"
+  },
+  {
+   "venue": "DATE",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Application-Specific Design Methodology for STbus Crossbar Generation",
+   "authors": [
+    "S. Murali",
+    "G. De Micheli"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2005 Best Paper Award (Most Outstanding in the Field of CAD): An Application-Specific Design Methodology for STbus Crossbar Generation — S. Murali and G. De Micheli"
+  },
+  {
+   "venue": "DATE",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Design optimization of time- and cost-constrained fault-tolerant distributed embedded systems",
+   "authors": [
+    "V. Izosimov",
+    "P. Pop",
+    "P. Eles",
+    "Z. Peng"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2005 Best Paper Award (Most Outstanding in the Field of Tools): Design optimization of time- and cost-constrained fault-tolerant distributed embedded systems — V. Izosimov, P. Pop, P. Eles and Z. Peng"
+  },
+  {
+   "venue": "DATE",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Effective Technique for Minimizing the Cost of Processor Software-Based Diagnosis in SoCs",
+   "authors": [
+    "P. Bernardi",
+    "E. Sanchez",
+    "M. Schillaci",
+    "G. Squillero",
+    "M. S. Reorda"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2006 Best Paper Award (Most Outstanding in the Field of Test): An Effective Technique for Minimizing the Cost of Processor Software-Based Diagnosis in SoCs — P. Bernardi, E. Sanchez, M. Schillaci, G. Squillero and M. S. Reorda"
+  },
+  {
+   "venue": "DATE",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimizing Sequential Cycles through Shannon Decomposition and Retiming",
+   "authors": [
+    "C. Soviani",
+    "O. Tardieu",
+    "S. A. Edwards"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2006 Best Paper Award (Most Outstanding in the Field of Design Methodologies): Optimizing Sequential Cycles through Shannon Decomposition and Retiming — C. Soviani, O. Tardieu and S. A. Edwards"
+  },
+  {
+   "venue": "DATE",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compositional Specification of Behavioral Semantics",
+   "authors": [
+    "K. Chen",
+    "J. Sztipanovits",
+    "S. Neema"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2007 Best Paper Award (Most Outstanding in the Field of Embedded Software): Compositional Specification of Behavioral Semantics — K. Chen, J. Sztipanovits and S. Neema"
+  },
+  {
+   "venue": "DATE",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Statistical Blockade: A Novel Method for Very Fast Monte Carlo Simulation of Rare Circuit Events, and its Application",
+   "authors": [
+    "A. Singhee",
+    "R. A. Rutenbar"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2007 Best Paper Award (Most Outstanding in the Field of Design Methodologies): Statistical Blockade: A Novel Method for Very Fast Monte Carlo Simulation of Rare Circuit Events, and its Application — A. Singhee and R. A. Rutenbar"
+  },
+  {
+   "venue": "DATE",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Power Balanced Gates Insensitive to Routing Capacitance Mismatch",
+   "authors": [
+    "K. J. Kulikowski",
+    "V. Venkataraman",
+    "Z. Wang",
+    "A. Taubin"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2008 Best Paper Award (Best Paper Awards A-Track): Power Balanced Gates Insensitive to Routing Capacitance Mismatch — K. J. Kulikowski, V. Venkataraman, Z. Wang and A. Taubin"
+  },
+  {
+   "venue": "DATE",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Retargetable Code Optimization for Predicated Execution",
+   "authors": [
+    "M Hohenauer",
+    "R Leupers",
+    "G Ascheid",
+    "H Meyr",
+    "G Bette",
+    "B Singh"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2008 Best Paper Award (Best Paper Awards E-Track): Retargetable Code Optimization for Predicated Execution — M Hohenauer, R Leupers, G Ascheid and H Meyr, G Bette, B Singh"
+  },
+  {
+   "venue": "DATE",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Run-time System for an Extensible Embedded Processor with Dynamic Instruction Set",
+   "authors": [
+    "L. Bauer",
+    "M. Shafique",
+    "S. Kreutz",
+    "J. Henkel"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2008 Best Paper Award (Best Paper Awards D-Track): Run-time System for an Extensible Embedded Processor with Dynamic Instruction Set — L. Bauer, M. Shafique, S. Kreutz and J. Henkel"
+  },
+  {
+   "venue": "DATE",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Gate sizing for large cell-based designs",
+   "authors": [
+    "Stephan Held"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2009 Best Paper Award (Best Paper Awards A-Track): Gate sizing for large cell-based designs — Stephan Held"
+  },
+  {
+   "venue": "DATE",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On linewidth-based yield analysis for nanometer lithography",
+   "authors": [
+    "A. Sreedhar",
+    "S. Kundu"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2009 Best Paper Award (Best Paper Awards T-Track): On linewidth-based yield analysis for nanometer lithography — A. Sreedhar and S. Kundu"
+  },
+  {
+   "venue": "DATE",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Properties of and improvements to time-domain dynamic thermal analysis algorithms",
+   "authors": [
+    "X. Chen",
+    "R. P. Dick",
+    "L. Shang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2010 Best Paper Award (Best Paper Awards D-Track): Properties of and improvements to time-domain dynamic thermal analysis algorithms — X. Chen, R. P. Dick and L. Shang,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Skewed pipelining for parallel simulink simulations",
+   "authors": [
+    "A. Canedo",
+    "T. Yoshizawa",
+    "H. Komatsu"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2010 Best Paper Award (Best Paper Awards E-Track): Skewed pipelining for parallel simulink simulations — A. Canedo, T. Yoshizawa and H. Komatsu"
+  },
+  {
+   "venue": "DATE",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Run-time deadlock detection in networks-on-chip using coupled transitive closure networks",
+   "authors": [
+    "R. Al-Dujaily",
+    "T. Mak",
+    "F. Xia",
+    "A. Yakovlev",
+    "M. Palesi"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2011 Best Paper Award: Run-time deadlock detection in networks-on-chip using coupled transitive closure networks — R. Al-Dujaily, T. Mak, F. Xia, A. Yakovlev and M. Palesi"
+  },
+  {
+   "venue": "DATE",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compositional system-level design exploration with planning of high-level synthesis",
+   "authors": [
+    "H.-Y. Liu",
+    "M. Petracca",
+    "L. P. Carloni"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2012 Best Paper Award: Compositional system-level design exploration with planning of high-level synthesis — H. -Y. Liu, M. Petracca and L. P. Carloni"
+  },
+  {
+   "venue": "DATE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AVICA: An access-time variation insensitive L1 cache architecture",
+   "authors": [
+    "S. Hong",
+    "S. Kim"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2013 Best Paper Award (Best Paper Awards D-Track): AVICA: An access-time variation insensitive L1 cache architecture — S. Hong and S. Kim"
+  },
+  {
+   "venue": "DATE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FIFO cache analysis for WCET estimation: A quantitative approach",
+   "authors": [
+    "N. Guan",
+    "X. Yang",
+    "M. Lv",
+    "W. Yi"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2013 Best Paper Award (Best Paper Awards E-Track): FIFO cache analysis for WCET estimation: A quantitative approach — N. Guan, X. Yang, M. Lv and W. Yi"
+  },
+  {
+   "venue": "DATE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Handling discontinuous effects in modeling spatial correlation of wafer-level analog/RF tests",
+   "authors": [
+    "K. Huang",
+    "N. Kupp",
+    "J. M. Carulli",
+    "Y. Makris"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2013 Best Paper Award (Best Paper Awards T-Track): Handling discontinuous effects in modeling spatial correlation of wafer-level analog/RF tests — K. Huang, N. Kupp, J. M. Carulli and Y. Makris,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SCC thermal model identification via advanced bias-compensated least-squares",
+   "authors": [
+    "R. Diversi",
+    "A. Bartolini",
+    "A. Tilli",
+    "F. Beneventi",
+    "L. Benini"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2013 Best Paper Award (Best Paper Awards A-Track): SCC thermal model identification via advanced bias-compensated least-squares — R. Diversi, A. Bartolini, A. Tilli, F. Beneventi and L. Benini"
+  },
+  {
+   "venue": "DATE",
    "year": 2014,
    "award": "best",
    "awardLabel": "Best Paper Award",
@@ -48074,7 +49342,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
-   "evidence": "DATE 2014 best paper: AN EFFICIENT RELIABLE PUF-BASED CRYPTOGRAPHIC KEY GENERATOR IN 65NM CMOS — Mudit Bhargava, Ken Mai,"
+   "evidence": "DATE 2014 best paper: AN EFFICIENT RELIABLE PUF-BASED CRYPTOGRAPHIC KEY GENERATOR IN 65NM CMOS — Mudit Bhargava, Ken Mai,",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48090,7 +49361,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
-   "evidence": "DATE 2014 best paper: EFFICIENT SMT-BASED ATPG FOR INTERCONNECT OPEN DEFECTS — Dominik Erb, Karsten Scheibler, Matthias Sauer, Bernd Becker,"
+   "evidence": "DATE 2014 best paper: EFFICIENT SMT-BASED ATPG FOR INTERCONNECT OPEN DEFECTS — Dominik Erb, Karsten Scheibler, Matthias Sauer, Bernd Becker,",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48105,7 +49379,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
-   "evidence": "DATE 2014 best paper: MAY-HAPPEN-IN-PARALLEL ANALYSIS BASED ON SEGMENT GRAPHS FOR SAFE ESL MODELS — Weiwei Chen, Xu Han, Rainer Dömer,"
+   "evidence": "DATE 2014 best paper: MAY-HAPPEN-IN-PARALLEL ANALYSIS BASED ON SEGMENT GRAPHS FOR SAFE ESL MODELS — Weiwei Chen, Xu Han, Rainer Dömer,",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48120,7 +49397,56 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
-   "evidence": "DATE 2014 best paper: SCALABILITY BOTTLENECKS DISCOVERY IN MPSOC PLATFORMS USING DATA MINING ON SIMULATION TRACES — Sofiane Lagraa1,2, Alexandre Termier1 and Frédéric Pétrot2"
+   "evidence": "DATE 2014 best paper: SCALABILITY BOTTLENECKS DISCOVERY IN MPSOC PLATFORMS USING DATA MINING ON SIMULATION TRACES — Sofiane Lagraa1,2, Alexandre Termier1 and Frédéric Pétrot2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
+  },
+  {
+   "venue": "DATE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Digital circuits reliability with in-situ monitors in 28nm fully depleted SOI",
+   "authors": [
+    "Marine Saliva",
+    "Florian Cacho",
+    "Vincent Huard",
+    "Xavier Federspiel"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2015 Best Paper Award (Best Paper Awards T-Track): Digital circuits reliability with in-situ monitors in 28nm fully depleted SOI — Marine Saliva, Florian Cacho, Vincent Huard, Xavier Federspiel,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hardware Trojan detection for gate-level ICs using signal correlation based clustering",
+   "authors": [
+    "B. Cakır",
+    "S. Malik"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2015 Best Paper Award (Best Paper Awards A-Track): Hardware Trojan detection for gate-level ICs using signal correlation based clustering — B. Cakır and S. Malik"
+  },
+  {
+   "venue": "DATE",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PhaseNoC: TDM scheduling at the virtual-channel level for efficient network traffic isolation",
+   "authors": [
+    "A. Psarras",
+    "I. Seitanidis",
+    "C. Nicopoulos",
+    "G. Dimitrakopoulos"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/paper-award/date-best-paper-award",
+   "evidence": "DATE 2015 Best Paper Award (Best Paper Awards D-Track): PhaseNoC: TDM scheduling at the virtual-channel level for efficient network traffic isolation — A. Psarras, I. Seitanidis, C. Nicopoulos and G. Dimitrakopoulos"
   },
   {
    "venue": "DATE",
@@ -48136,7 +49462,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
-   "evidence": "DATE 2016 best paper: MODELING FABRICATION NON-UNIFORMITY IN CHIP-SCALE SILICON PHOTONIC INTERCONNECTS — Mahdi Nikdast1 , Gabriela Nicolescu2 , Jelena Trajkovic3 , Odile Liboiron-Ladouceur4"
+   "evidence": "DATE 2016 best paper: MODELING FABRICATION NON-UNIFORMITY IN CHIP-SCALE SILICON PHOTONIC INTERCONNECTS — Mahdi Nikdast1 , Gabriela Nicolescu2 , Jelena Trajkovic3 , Odile Liboiron-Ladouceur4",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48150,7 +49479,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
-   "evidence": "DATE 2016 best paper: OTEM: OPTIMIZED THERMAL AND ENERGY MANAGEMENT FOR HYBRID ELECTRICAL ENERGY STORAGE IN ELECTRIC VEHICLES — Korosh Vatanparvar and Mohammad Al Faruque"
+   "evidence": "DATE 2016 best paper: OTEM: OPTIMIZED THERMAL AND ENERGY MANAGEMENT FOR HYBRID ELECTRICAL ENERGY STORAGE IN ELECTRIC VEHICLES — Korosh Vatanparvar and Mohammad Al Faruque",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48165,7 +49497,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
-   "evidence": "DATE 2016 best paper: PROBABILISTIC WCET ESTIMATION IN PRESENCE OF HARDWARE FOR MITIGATING THE IMPACT OF PERMANENT FAULTS — Damien Hardy1, Isabelle Puaut1, Yiannakis Sazeides2"
+   "evidence": "DATE 2016 best paper: PROBABILISTIC WCET ESTIMATION IN PRESENCE OF HARDWARE FOR MITIGATING THE IMPACT OF PERMANENT FAULTS — Damien Hardy1, Isabelle Puaut1, Yiannakis Sazeides2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48182,7 +49517,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2016/html/date-best-papers-2016.pdf",
-   "evidence": "DATE 2016 best paper: UTILIZING MACROMODELS IN FLOATING RANDOM WALK BASED CAPACITANCE EXTRACTION — Wenjian Yu1, Bolong Zhang1, Chao Zhang1, Haiquan Wang1, Luca Daniel2"
+   "evidence": "DATE 2016 best paper: UTILIZING MACROMODELS IN FLOATING RANDOM WALK BASED CAPACITANCE EXTRACTION — Wenjian Yu1, Bolong Zhang1, Chao Zhang1, Haiquan Wang1, Luca Daniel2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48203,7 +49541,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
-   "evidence": "DATE 2017 best paper: Automatic Place-and-Route of Emerging LED-Driven Wires within a Monolithically-Integrated CMOS+III-V Process — Tushar Krishn 3, Arya Balachandran1, Siau Ben Chiah2, Li Zhang3, Bing Wang3, Cong Wang2, Kenneth Lee Eng Kian3, Jurgen Michel4, Li-Shiuan Peh4"
+   "evidence": "DATE 2017 best paper: Automatic Place-and-Route of Emerging LED-Driven Wires within a Monolithically-Integrated CMOS+III-V Process — Tushar Krishn 3, Arya Balachandran1, Siau Ben Chiah2, Li Zhang3, Bing Wang3, Cong Wang2, Kenneth Lee Eng Kian3, Jurgen Michel4, Li-Shiuan Peh4",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48218,7 +49559,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
-   "evidence": "DATE 2017 best paper: CoSyn: Efficient Single-Cell Analysis Using a Hybrid Microfluidic Platform — Mohamed Ibrahim1, Krishnendu Chakrabarty1 , Ulf Schlichtmann2"
+   "evidence": "DATE 2017 best paper: CoSyn: Efficient Single-Cell Analysis Using a Hybrid Microfluidic Platform — Mohamed Ibrahim1, Krishnendu Chakrabarty1 , Ulf Schlichtmann2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48235,7 +49579,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
-   "evidence": "DATE 2017 best paper: Fast and Waveform-Accurate Hazard-Aware SAT-Based TSOF ATPG — Jan Burchard1, Dominik Erb1, Adit D. Singh2, Sudhakar M. Reddy3, Bernd Becker1"
+   "evidence": "DATE 2017 best paper: Fast and Waveform-Accurate Hazard-Aware SAT-Based TSOF ATPG — Jan Burchard1, Dominik Erb1, Adit D. Singh2, Sudhakar M. Reddy3, Bernd Becker1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48252,7 +49599,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2017/html/date-best-papers-2017.pdf",
-   "evidence": "DATE 2017 best paper: MoDNN: Local Distributed Mobile Computing System for Deep Neural Network — Jiachen Mao1, Xiang Chen2, Kent W. Nixon1, Christopher Krieger3, Yiran Chen1"
+   "evidence": "DATE 2017 best paper: MoDNN: Local Distributed Mobile Computing System for Deep Neural Network — Jiachen Mao1, Xiang Chen2, Kent W. Nixon1, Christopher Krieger3, Yiran Chen1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48267,7 +49617,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
-   "evidence": "DATE 2018 best paper: Buffer-aware bounds to multi-point progressive blocking in priority-preemptive NoCs — Leandro Indrusiak1 , Alan Burns2 , Borislav Nikolic3"
+   "evidence": "DATE 2018 best paper: Buffer-aware bounds to multi-point progressive blocking in priority-preemptive NoCs — Leandro Indrusiak1 , Alan Burns2 , Borislav Nikolic3",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48283,7 +49636,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
-   "evidence": "DATE 2018 best paper: Efficient Verification Of Multi-Property Designs (The Benefit Of Wrong Assumptions) — Eugene Goldberg1 , Matthias Gudemann1 , Daniel Kroening1 , Rajdeep Mukherjee2"
+   "evidence": "DATE 2018 best paper: Efficient Verification Of Multi-Property Designs (The Benefit Of Wrong Assumptions) — Eugene Goldberg1 , Matthias Gudemann1 , Daniel Kroening1 , Rajdeep Mukherjee2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48302,7 +49658,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
-   "evidence": "DATE 2018 best paper: Low-Cost High-Accuracy Variation Characterization for Nanoscale IC Technologies via Novel Learning-based Techniques — Zhijian Pan1 , Miao Li2 , Jian Yao2 , Hong Lu2 , Zuochang Ye1 , Yanfeng Li2 , Yan Wang1"
+   "evidence": "DATE 2018 best paper: Low-Cost High-Accuracy Variation Characterization for Nanoscale IC Technologies via Novel Learning-based Techniques — Zhijian Pan1 , Miao Li2 , Jian Yao2 , Hong Lu2 , Zuochang Ye1 , Yanfeng Li2 , Yan Wang1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48320,7 +49679,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2018/html/date-best-papers-2018.pdf",
-   "evidence": "DATE 2018 best paper: MATIC: Learning Around Errors for Efficient Low-Voltage Neural Network Accelerators — Sung Kim, Patrick Howe, Thierry Moreau, Armin Alaghi, Luis Ceze and Visvesh Sathe"
+   "evidence": "DATE 2018 best paper: MATIC: Learning Around Errors for Efficient Low-Voltage Neural Network Accelerators — Sung Kim, Patrick Howe, Thierry Moreau, Armin Alaghi, Luis Ceze and Visvesh Sathe",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48336,7 +49698,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
-   "evidence": "DATE 2019 best paper: Data Subsetting: A Data-Centric Approach to Approximate Computing — Younghoon Kim1 , Swagath Venkataramani2 , Nitin Chandrachoodan3, Anand Raghunathan1"
+   "evidence": "DATE 2019 best paper: Data Subsetting: A Data-Centric Approach to Approximate Computing — Younghoon Kim1 , Swagath Venkataramani2 , Nitin Chandrachoodan3, Anand Raghunathan1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48351,7 +49716,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
-   "evidence": "DATE 2019 best paper: Enhancing Reliability of STT-MRAM Caches by Eliminating Read Disturbance Accumulation — Elham Cheshmikhani1 , Hamed Farbeh2, Hossein Asadi1"
+   "evidence": "DATE 2019 best paper: Enhancing Reliability of STT-MRAM Caches by Eliminating Read Disturbance Accumulation — Elham Cheshmikhani1 , Hamed Farbeh2, Hossein Asadi1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48372,7 +49740,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
-   "evidence": "DATE 2019 best paper: Error-Shielded Register Renaming Subsystem for a Dynamically Scheduled Out-of-Order Core — Ron Gabor1 , Yiannakis Sazeides2 , Arkady Bramnik1 , Alexandros Andreou2 , Chrysostomos Nicopoulos2 , Yanfeng Li2 , Karyofyllis Patsidis3 , Dimitris Konstantinou3 , Giorgos Dimitrakopoulos"
+   "evidence": "DATE 2019 best paper: Error-Shielded Register Renaming Subsystem for a Dynamically Scheduled Out-of-Order Core — Ron Gabor1 , Yiannakis Sazeides2 , Arkady Bramnik1 , Alexandros Andreou2 , Chrysostomos Nicopoulos2 , Yanfeng Li2 , Karyofyllis Patsidis3 , Dimitris Konstantinou3 , Giorgos Dimitrakopoulos",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48388,7 +49759,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
-   "evidence": "DATE 2019 best paper: When Capacitors Attack: Formal Method Driven Design and Detection of Charge-Domain Trojans — Xiaolong Guo1, Huifeng Zhu2, Yier Jin1 , Xuan Zhang2"
+   "evidence": "DATE 2019 best paper: When Capacitors Attack: Formal Method Driven Design and Detection of Charge-Domain Trojans — Xiaolong Guo1, Huifeng Zhu2, Yier Jin1 , Xuan Zhang2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48406,7 +49780,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
-   "evidence": "DATE 2020 best paper: A Flexible and Scalable NTT Hardware: Applications from Homomorphically Encrypted Deep Learning to Post-Quantum Cryptography — Ahmet Can Mert1, Emre Karabulut2, Erdinc Ozturk1, Erkay Savas1, Michela Becchi2 and Aydin Aysu2"
+   "evidence": "DATE 2020 best paper: A Flexible and Scalable NTT Hardware: Applications from Homomorphically Encrypted Deep Learning to Post-Quantum Cryptography — Ahmet Can Mert1, Emre Karabulut2, Erdinc Ozturk1, Erkay Savas1, Michela Becchi2 and Aydin Aysu2",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48423,7 +49800,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
-   "evidence": "DATE 2020 best paper: DEFCON: Generating and Detecting Failure-prone Instruction Sequences via Stochastic Search — Ioannis Tsiokanos1, Lev Mukhanov2, Giorgis Georgakoudis3, Dimitrios S. Nikolopoulos4 and Georgios Karakonstantis1"
+   "evidence": "DATE 2020 best paper: DEFCON: Generating and Detecting Failure-prone Instruction Sequences via Stochastic Search — Ioannis Tsiokanos1, Lev Mukhanov2, Giorgis Georgakoudis3, Dimitrios S. Nikolopoulos4 and Georgios Karakonstantis1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48441,7 +49821,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
-   "evidence": "DATE 2020 best paper: Impact of Magnetic Coupling and Density on STT-MRAM Performance — Lizhou Wu1, Siddharth Rao2, Mottaqiallah Taouil1, Erik Jan Marinissen1, Gouri Sankar Kar2 and Said Hamdioui1"
+   "evidence": "DATE 2020 best paper: Impact of Magnetic Coupling and Density on STT-MRAM Performance — Lizhou Wu1, Siddharth Rao2, Mottaqiallah Taouil1, Erik Jan Marinissen1, Gouri Sankar Kar2 and Said Hamdioui1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48456,7 +49839,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
-   "evidence": "DATE 2020 best paper: Statistical Time-based Intrusion Detection in Embedded Systems — Nadir Carreon Rascon, Allison Gilbreath and Roman Lysecky"
+   "evidence": "DATE 2020 best paper: Statistical Time-based Intrusion Detection in Embedded Systems — Nadir Carreon Rascon, Allison Gilbreath and Roman Lysecky",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48472,7 +49858,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
-   "evidence": "DATE 2021 best paper: A GPU-accelerated Deep Stereo-LiDAR Fusion for Real-time High-precision Dense Depth Sensing — Haitao Meng, Chonghao Zho, Jianfeng Gu, Gang Chen"
+   "evidence": "DATE 2021 best paper: A GPU-accelerated Deep Stereo-LiDAR Fusion for Real-time High-precision Dense Depth Sensing — Haitao Meng, Chonghao Zho, Jianfeng Gu, Gang Chen",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48488,7 +49877,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
-   "evidence": "DATE 2021 best paper: Adaptive Design of Real-Time Control Systems subject to Sporadic Overruns — Paolo Pazzaglia1, Anne Hamann2, Dirk Ziegenbein2 and Martina Maggio3"
+   "evidence": "DATE 2021 best paper: Adaptive Design of Real-Time Control Systems subject to Sporadic Overruns — Paolo Pazzaglia1, Anne Hamann2, Dirk Ziegenbein2 and Martina Maggio3",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48504,7 +49896,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
-   "evidence": "DATE 2021 best paper: Leveraging Processor Modeling and Verification for General Hardware Modules — Yue Xing, Huaxi Lu, Aarti Gupta and Sharad Malik"
+   "evidence": "DATE 2021 best paper: Leveraging Processor Modeling and Verification for General Hardware Modules — Yue Xing, Huaxi Lu, Aarti Gupta and Sharad Malik",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48521,7 +49916,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
-   "evidence": "DATE 2021 best paper: Microarchitectural Timing Channels and their Prevention on an Open-Source 64-bit RISC-V Core — Nils Wistoff1, Moritz Schneider1, Frank Gurkaynak1, Luca Benini2 and Gernot Heiser3"
+   "evidence": "DATE 2021 best paper: Microarchitectural Timing Channels and their Prevention on an Open-Source 64-bit RISC-V Core — Nils Wistoff1, Moritz Schneider1, Frank Gurkaynak1, Luca Benini2 and Gernot Heiser3",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48537,7 +49935,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
-   "evidence": "DATE 2022 best paper: Algorithm-Hardware Co-Design for Efficient Brain-Inspired Hyperdimensional Learning on Edge — Yang Ni1, Yeseong Kim2, Tajana Rosing3, Mohsen Imani1"
+   "evidence": "DATE 2022 best paper: Algorithm-Hardware Co-Design for Efficient Brain-Inspired Hyperdimensional Learning on Edge — Yang Ni1, Yeseong Kim2, Tajana Rosing3, Mohsen Imani1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48552,7 +49953,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
-   "evidence": "DATE 2022 best paper: Efficient Global Robustness Certification of Neural Networks via Interleaving Twin-Network Encoding — Zhilu Wang1, Chao Huang2, Qi Zhu1"
+   "evidence": "DATE 2022 best paper: Efficient Global Robustness Certification of Neural Networks via Interleaving Twin-Network Encoding — Zhilu Wang1, Chao Huang2, Qi Zhu1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48571,7 +49975,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
-   "evidence": "DATE 2022 best paper: FastGR: Global Routing on CPU-GPU with Heterogeneous Task Graph Scheduler — Siting Liu1, Peiyu Liao1, Rui Zhang2, Zhitang Chen3, Wenlong Lv3, Yibo Lin4, Bei Yu1"
+   "evidence": "DATE 2022 best paper: FastGR: Global Routing on CPU-GPU with Heterogeneous Task Graph Scheduler — Siting Liu1, Peiyu Liao1, Rui Zhang2, Zhitang Chen3, Wenlong Lv3, Yibo Lin4, Bei Yu1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48593,7 +50000,10 @@
    ],
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
-   "evidence": "DATE 2022 best paper: Self-Terminated Write of Multi-Level Cell ReRAM for Efficient Neuromorphic Computing — Zongwu Wang, Zhezhi He, Rui Yang, Shiquan Fan, Jie Lin, Fangxin Liu, Yueyang Jia, Chenxi Yuan, Qidong Tang, Li Jiang"
+   "evidence": "DATE 2022 best paper: Self-Terminated Write of Multi-Level Cell ReRAM for Efficient Neuromorphic Computing — Zongwu Wang, Zhezhi He, Rui Yang, Shiquan Fan, Jie Lin, Fangxin Liu, Yueyang Jia, Chenxi Yuan, Qidong Tang, Li Jiang",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48607,7 +50017,10 @@
    ],
    "track": "main",
    "source": "https://date23.date-conference.com/awards",
-   "evidence": "DATE 2023 best paper: Automated Energy-Efficient DNN Compression under Fine-Grained Accuracy Constraints — Ourania Spantidi and Iraklis Anagnostopoulos"
+   "evidence": "DATE 2023 best paper: Automated Energy-Efficient DNN Compression under Fine-Grained Accuracy Constraints — Ourania Spantidi and Iraklis Anagnostopoulos",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48621,7 +50034,10 @@
    ],
    "track": "main",
    "source": "https://date23.date-conference.com/awards",
-   "evidence": "DATE 2023 best paper: Hardware Efficient Weight-Binarized Spiking Neural Networks — Chengcheng Tang and Jie Han"
+   "evidence": "DATE 2023 best paper: Hardware Efficient Weight-Binarized Spiking Neural Networks — Chengcheng Tang and Jie Han",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48639,7 +50055,10 @@
    ],
    "track": "main",
    "source": "https://date23.date-conference.com/awards",
-   "evidence": "DATE 2023 best paper: PRADA: Point Cloud Recognition Acceleration via Dynamic Approximation — Zhuoran Song, Heng Lu, Gang Li, Li Jiang, Naifeng Jing and Xiaoyao Liang"
+   "evidence": "DATE 2023 best paper: PRADA: Point Cloud Recognition Acceleration via Dynamic Approximation — Zhuoran Song, Heng Lu, Gang Li, Li Jiang, Naifeng Jing and Xiaoyao Liang",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48660,7 +50079,10 @@
    ],
    "track": "main",
    "source": "https://date23.date-conference.com/awards",
-   "evidence": "DATE 2023 best paper: SAGERoute: Synergistic Analog Routing Considering Geometric and Electrical Constraints with Manual Design Compatibility — Haoyi Zhang, Xiaohan Gao, Haoyang Luo, Jiahao Song, Xiyuan Tang, Junhua Liu, Yibo Lin, Runsheng Wang and Ru Huang"
+   "evidence": "DATE 2023 best paper: SAGERoute: Synergistic Analog Routing Considering Geometric and Electrical Constraints with Manual Design Compatibility — Haoyi Zhang, Xiaohan Gao, Haoyang Luo, Jiahao Song, Xiyuan Tang, Junhua Liu, Yibo Lin, Runsheng Wang and Ru Huang",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48676,7 +50098,10 @@
    ],
    "track": "main",
    "source": "https://date24.date-conference.com/awards",
-   "evidence": "DATE 2024 best paper: Efficient Exploration of Cyber-Physical System Architectures Using Contracts and Subgraph Isomorphism — Yifeng Xiao1, Chanwook Oh1, Michele Lora2 and Pierluigi Nuzzo1"
+   "evidence": "DATE 2024 best paper: Efficient Exploration of Cyber-Physical System Architectures Using Contracts and Subgraph Isomorphism — Yifeng Xiao1, Chanwook Oh1, Michele Lora2 and Pierluigi Nuzzo1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48697,7 +50122,10 @@
    ],
    "track": "main",
    "source": "https://date24.date-conference.com/awards",
-   "evidence": "DATE 2024 best paper: FusionArch: A Fusion-Based Accelerator for Point-Based Point Cloud Neural Networks — Xueyuan Liu1, Zhuoran Song1, Guohao Dai1, Gang Li1, Can Xiao2, Yan Xiang2, Dehui Kong2, Ke Xu2 and Xiaoyao Liang1"
+   "evidence": "DATE 2024 best paper: FusionArch: A Fusion-Based Accelerator for Point-Based Point Cloud Neural Networks — Xueyuan Liu1, Zhuoran Song1, Guohao Dai1, Gang Li1, Can Xiao2, Yan Xiang2, Dehui Kong2, Ke Xu2 and Xiaoyao Liang1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48718,7 +50146,10 @@
    ],
    "track": "main",
    "source": "https://date24.date-conference.com/awards",
-   "evidence": "DATE 2024 best paper: HW-SW Optimization of DNNs for Privacy-preserving People Counting on Low-resolution Infrared Arrays — Matteo Risso1, Chen Xie1, Francesco Daghero1, Alessio Burrello2, Seyedmorteza Mollaei1, Marco Castellano3, Enrico Macii1, Massimo Poncino1 and Daniele Jahier Pagliari1"
+   "evidence": "DATE 2024 best paper: HW-SW Optimization of DNNs for Privacy-preserving People Counting on Low-resolution Infrared Arrays — Matteo Risso1, Chen Xie1, Francesco Daghero1, Alessio Burrello2, Seyedmorteza Mollaei1, Marco Castellano3, Enrico Macii1, Massimo Poncino1 and Daniele Jahier Pagliari1",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
@@ -48733,7 +50164,10 @@
    ],
    "track": "main",
    "source": "https://date24.date-conference.com/awards",
-   "evidence": "DATE 2024 best paper: SELCC: Enhancing MLC Reliability and Endurance with Single-Cell Error Correction Codes — Yujin Lim, Dongwhee Kim and Jungrae Kim, Sungkyunkwan University, KR"
+   "evidence": "DATE 2024 best paper: SELCC: Enhancing MLC Reliability and Endurance with Single-Cell Error Correction Codes — Yujin Lim, Dongwhee Kim and Jungrae Kim, Sungkyunkwan University, KR",
+   "alsoAt": [
+    "https://ieee-ceda.org/paper-award/date-best-paper-award"
+   ]
   },
   {
    "venue": "DATE",
