@@ -832,6 +832,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       await setPref(opts, "panel." + part, true);
       await opts.locator("#pv-panel " + sel).first().waitFor({ state: "visible", timeout: 8000 });
     }
+    // the venue list is off until asked and then lists the sample venues; the year bars follow their switch
+    assert.equal(await opts.locator('#pv-panel [data-rr="venues"]').first().isVisible(), false, "the venue list is off by default in the preview too");
+    await setPref(opts, "panel.venues", true);
+    await opts.locator('#pv-panel [data-rr="venues"]').first().waitFor({ state: "visible", timeout: 8000 });
+    assert.ok((await opts.locator('#pv-panel [data-rr="venues"] [data-venue]').count()) >= 3, "the preview lists sample venues");
+    await setPref(opts, "panel.venues", false);
+    await opts.locator('#pv-panel [data-rr="venues"]').first().waitFor({ state: "hidden", timeout: 8000 });
+    assert.equal(await opts.locator('#pv-panel [data-rr="years"]').first().isVisible(), true);
+    await setPref(opts, "panel.years", false);
+    await opts.locator('#pv-panel [data-rr="years"]').first().waitFor({ state: "hidden", timeout: 8000 });
+    await setPref(opts, "panel.years", true);
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
@@ -1051,6 +1062,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
             return out;
           });
           if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+          // the role words of the table (both rankings) stay inside their column: no label runs into a number
+          for (const src of ["ccf", "core"]) {
+            await page.click(`button[data-src="${src}"]`);
+            const spill = await page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-matrix th, #rr-panel .rr-matrix .rr-rolebtn")].filter((e) => e.offsetParent && e.scrollWidth > e.clientWidth + 1).map((e) => e.textContent.trim()));
+            if (spill.length) bad.push(`${lang}/${mode}/${src}: table label spills: ${spill.join(", ")}`);
+          }
           if (mode === "sidebar" && ["ja", "de", "ru", "fi", "th"].includes(lang)) { await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, `lang-${lang}.png`) }); }
         }
       }

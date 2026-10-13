@@ -91,7 +91,11 @@
     const marksSec = h("div", { class: "rr-sec rr-marks", "data-rr": "marks", hidden: true },
       h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", title: t("marksHint") }, t("marksTitle"))), marksRows);
 
-    const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" });
+    // the status lines are drawn again with every update; the list of unrecognised venues keeps its own slot and is only rebuilt when its content changes
+    // (so that a person reading it, or focused in it, is not interrupted by papers arriving)
+    const coverTop = h("div", { class: "rr-cover-top" });
+    const coverList = h("div", { class: "rr-cover-list" });
+    const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" }, coverTop, coverList);
 
     // filters (built once, synced on update)
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
@@ -120,11 +124,11 @@
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
-    // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
     // a bar that says the list is filtered, by how much, and clears every filter
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true });
     // Scholar's page changed under us: the warning is the first thing in the panel
     const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
+    // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir(), lang: B.dom.langTag() }, head, warnBar, filterBar, body, announce);
 
@@ -206,7 +210,7 @@
     }
 
     // (a list the person opened stays open when the panel is drawn again, e.g. while more papers arrive)
-    let unmatchedOpen = false;
+    let unmatchedOpen = false, unmatchedSig = "";
     function renderCoverage(m) {
       const c = m.coverage, parts = m.prefs.panel;
       const lines = [];
@@ -236,26 +240,32 @@
           ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link rr-pill", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
             onClick: () => cb.onAddVariant(sg.name) }, `${sg.name} (${sg.rows})`))));
       }
+      let unmatchedEl = null;
       if (parts.status && c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
-        const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
-          c.unmatched.slice(0, 6).map((u) => "- " + u.venue).join("\n") + "\n\nThe rank they should have (and the venue's full name): ";
-        const copyBtn = h("button", { class: "rr-btn", type: "button", "data-act": "copy-unmatched", onClick: async () => {
-          if (await cb.onCopyUnmatched()) { copyBtn.textContent = t("copied"); setTimeout(() => { copyBtn.textContent = t("copyUnmatched"); }, 1400); }
-        } }, t("copyUnmatched"));
-        lines.push(h("details", { "data-rr": "unmatched", open: unmatchedOpen, onToggle: (e) => { unmatchedOpen = e.target.open; } },
-          h("summary", {}, tn("coverUnmatched", total, [String(total)])),
-          h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
-          h("div", { class: "rr-actions" }, copyBtn,
-            h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink")))));
-      }
+        const sig = JSON.stringify([total, c.unmatched.slice(0, 20)]);
+        if (sig !== unmatchedSig) {
+          unmatchedSig = sig;
+          const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
+            c.unmatched.slice(0, 6).map((u) => "- " + u.venue).join("\n") + "\n\nThe rank they should have (and the venue's full name): ";
+          const copyBtn = h("button", { class: "rr-btn", type: "button", "data-act": "copy-unmatched", onClick: async () => {
+            if (await cb.onCopyUnmatched()) { copyBtn.textContent = t("copied"); setTimeout(() => { copyBtn.textContent = t("copyUnmatched"); }, 1400); }
+          } }, t("copyUnmatched"));
+          unmatchedEl = h("details", { "data-rr": "unmatched", open: unmatchedOpen, onToggle: (e) => { unmatchedOpen = e.target.open; } },
+            h("summary", {}, tn("coverUnmatched", total, [String(total)])),
+            h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
+            h("div", { class: "rr-actions" }, copyBtn,
+              h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
+          coverList.replaceChildren(unmatchedEl);
+        }
+      } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }
       // Scholar changes its markup now and then: say so, at the top, instead of silently showing nothing
       warnBar.hidden = !c.layoutBroken;
       if (c.layoutBroken) {
         warnBar.replaceChildren(t("layoutWarning") + " ",
           h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/user=[^&]+/, "user=…")), target: "_blank", rel: "noopener" }, t("reportLink")));
       }
-      coverSec.replaceChildren(...lines);
+      coverTop.replaceChildren(...lines);
     }
 
     function syncFilters(m) {
@@ -340,7 +350,7 @@
           h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
       }
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
-      coverSec.hidden = !coverSec.childNodes.length;
+      coverSec.hidden = !(coverTop.childNodes.length || coverList.childNodes.length);
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
       if (announce.textContent !== say) announce.textContent = say;
       // a column with nothing in it gives its width to the other
@@ -348,7 +358,7 @@
       if (m.coverage.layoutBroken) {
         for (const sec of [summarySec, marksSec, filtersSec, metricsSec, yearsSec, venuesSec, footSec]) sec.hidden = true;
       }
-      // in the wide layout the year bars and the venue list join the first column (the shorter one): they are looked at like the table and the awards
+      // in the wide layout the year bars join the first column (the shorter one): they are looked at like the table and the awards
       const wide = el.classList.contains("rr-wide");
       if (wide && yearsSec.parentNode !== colAEl) colAEl.append(yearsSec);
       else if (!wide && yearsSec.parentNode !== colBEl) colBEl.insertBefore(yearsSec, venuesSec);

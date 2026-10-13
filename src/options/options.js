@@ -83,7 +83,7 @@
   function keyRow() {
     // (a text field drawn as dots: a real password field would make Chrome offer to save it as a password)
     const input = h("input", { type: "text", class: "key", "data-pref": "s2key", autocomplete: "off", spellcheck: "false", placeholder: "••••••••", "aria-label": t("optSemanticKey"),
-      onChange: async () => { await B.store.saveS2Key(input.value); $("saved").textContent = t("optSaved"); $("saved").classList.add("on"); setTimeout(() => $("saved").classList.remove("on"), 1400); } });
+      onChange: async () => { input.value = input.value.replace(/[^\x21-\x7e]/g, ""); await B.store.saveS2Key(input.value); $("saved").textContent = t("optSaved"); $("saved").classList.add("on"); setTimeout(() => $("saved").classList.remove("on"), 1400); } });
     B.store.loadS2Key().then((k) => { input.value = k; });
     return h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, t("optSemanticKey")), h("span", { class: "hint" }, t("optSemanticKeyHint"))), input);
   }
@@ -202,17 +202,19 @@
   }
   // The summary panel is the one the Scholar page draws (content/panel.js), handed a model built from invented papers
   // with the same rules as content/main.js — so every switch above changes it exactly as it changes a real profile.
-  const P = (role, ccf, core, citations, year, ...markKinds) => ({
-    status: "found", role, venue: { ccf: ccf ? { tier: ccf } : null, core: core ? { rank: core } : null }, citations, year, highlighted: true,
+  const P = (role, ccf, core, citations, year, abbr, ...markKinds) => ({
+    status: "found", role, venue: { ccf: ccf ? { tier: ccf, abbr } : null, core: core ? { rank: core, abbr } : null }, citations, year, highlighted: true,
     marks: markKinds.map((k) => ({ kind: k, group: B.marks.groupOf(k) }))
   });
   const PAPERS = [
-    P("first", "A", "A*", 310, 2025, "best"), P("first", "A", "A", 120, 2024, "oral"), P("first", "B", "B", 64, 2023), P("first", null, null, 8, 2022),
-    P("cofirst", "A", "A*", 190, 2024, "spotlight"), P("second", "B", "B", 71, 2023), P("second", "A", "A", 55, 2022),
-    P("last", "A", "A*", 240, 2025, "tot"), P("last", "C", "C", 12, 2021), P("middle", "A", "A*", 402, 2024, "highlight"), P("middle", "B", "A", 87, 2023), P("middle", null, null, 5, 2020)
+    P("first", "A", "A*", 310, 2025, "ICLR", "best"), P("first", "A", "A", 120, 2024, "NeurIPS", "oral"), P("first", "B", "B", 64, 2023, "WSDM"), P("first", null, null, 8, 2022, ""),
+    P("cofirst", "A", "A*", 190, 2024, "CVPR", "spotlight"), P("second", "B", "B", 71, 2023, "WSDM"), P("second", "A", "A", 55, 2022, "ICML"),
+    P("last", "A", "A*", 240, 2025, "ACL", "tot"), P("last", "C", "C", 12, 2021, "ICANN"), P("middle", "A", "A*", 402, 2024, "ICLR", "highlight"), P("middle", "B", "A", 87, 2023, "NeurIPS"), P("middle", null, null, 5, 2020, "")
   ];
-  const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onMarkGroup", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
+  const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onMarkGroup", "onVenue", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
+  // (in the preview, the panel's link to the settings takes you to the card with the position switches)
+  panelCb.onSettings = () => { const c = document.getElementById("card-1"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: "smooth" }); };
   let panelUi = { collapsed: false, source: "ccf" };
   panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };
   panelCb.onSource = (src) => { panelUi.source = src; renderPreview(); };

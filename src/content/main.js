@@ -231,6 +231,17 @@
     }).map(paperOf);
   }
 
+  // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
+  // filter can be undone) even when the other filters leave it out of the first few
+  function venueList(source) {
+    const list = metrics.topVenues(scoped(source, { skipVenue: true }), 6, prefs.ranks);
+    if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
+      const mine = metrics.topVenues(scoped(source), 99, prefs.ranks).find((v) => v.key === state.venueKey);
+      list.push({ key: state.venueKey, count: mine ? mine.count : 0 });
+    }
+    return list;
+  }
+
   function model() {
     const list = papers();
     const source = currentSource();
@@ -242,7 +253,7 @@
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
-      byYear: metrics.byYear(list), topVenues: metrics.topVenues(scoped(source, { skipVenue: true }), 6, prefs.ranks), venueKey: state.venueKey,
+      byYear: metrics.byYear(list), topVenues: venueList(source), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
@@ -397,9 +408,9 @@
   function refresh() {
     applyMerge();
     for (const row of state.rows) decorate(row);
-    // a venue filter whose venue is no longer in the panel's list (the roles, the merge, the lists or the venue list changed) has no control left to undo it
+    // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
-    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(scoped(currentSource(), { skipVenue: true }), 6, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers(), 9999, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
     if (prefs.panel.show) panel.update(model());
@@ -422,6 +433,8 @@
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
     if (state.markGroup && !(marks.rows(prefs.talkRows).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.marks[g]))) state.markGroup = null;
     if (!prefs.panel.show || !prefs.panel.venues) state.venueKey = null;
+    if (!prefs.panel.summary) state.selection = null;                                   // (a matrix cell, an awards row: their controls are gone, so they must not keep hiding rows)
+    if (!prefs.panel.marks) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
@@ -452,7 +465,7 @@
       if (msg && msg.type === "rr:summary") {
         const list = papers();
         send({
-          ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, edition,
+          ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
           sources: B.prefs.sources(prefs), source: currentSource(),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
           marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)

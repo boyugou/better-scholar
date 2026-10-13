@@ -71,5 +71,17 @@
   // for those the folder is asked for explicitly. "" means the browser's own choice is right.
   const fromBrowser = (ui) => { const base = String(ui || "").split(/[-_]/)[0].toLowerCase(); return base === "nb" || base === "nn" ? "no" : ""; };
 
-  return { fromBrowser, LANGUAGES, codes, normalizeLanguage, normalizeScholarLanguage, scholarHl, isRtl, format };
+  // Which of our folders a browser language is served from (the exact tag, then the language alone, then English), so that the page's `lang`
+  // and the number and list formatting match the words that are shown. A browser language we have no folder for is served in English by Chrome.
+  function resolve(ui) {
+    const parts = String(ui || "").split(/[-_]/), lang = (parts[0] || "").toLowerCase(), region = parts[1] || "";
+    if (lang === "nb" || lang === "nn") return "no";
+    if (lang === "iw") return "he";
+    if (lang === "in") return "id";
+    if (lang === "zh") return /^(TW|HK|MO|Hant)/i.test(region) ? "zh_TW" : "zh_CN";
+    if (lang === "pt") return !region || /^br$/i.test(region) ? "pt_BR" : "pt_PT";
+    return codes.includes(lang) ? lang : "en";
+  }
+
+  return { resolve, fromBrowser, LANGUAGES, codes, normalizeLanguage, normalizeScholarLanguage, scholarHl, isRtl, format };
 });

@@ -34,7 +34,7 @@
     try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rowStyle); } catch (e) { /* no storage: the browser's language */ }
     custom = null;
     if (code === "auto") code = B.i18n.fromBrowser(chrome.i18n.getUILanguage()) || "auto";       // (Norwegian Bokmål / Nynorsk browsers get "no", which Chrome would not pick)
-    language = code === "auto" ? chrome.i18n.getUILanguage() : code;
+    language = code === "auto" ? B.i18n.resolve(chrome.i18n.getUILanguage()) : code;                    // (a browser language we have no folder for is served in English, and its page is marked so)
     if (code !== "auto") {
       try { const r = await chrome.runtime.sendMessage({ type: "rr:messages", lang: code }); if (r && r.ok) custom = r.messages; else language = chrome.i18n.getUILanguage(); } catch (e) { language = chrome.i18n.getUILanguage(); }
     }

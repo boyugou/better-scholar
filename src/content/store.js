@@ -93,7 +93,7 @@
   const clearResolved = () => remove("local", "resolved");
 
   // The optional Semantic Scholar API key: on this device only (never synced), sent only to Semantic Scholar
-  const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k : ""; };
+  const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k.replace(/[^\x21-\x7e]/g, "") : ""; };      // (visible ASCII only: a header cannot carry anything else)
   const saveS2Key = (key) => (key ? set("local", "s2key", key.trim().slice(0, 200)) : remove("local", "s2key"));
 
   B.store = { loadS2Key, saveS2Key, migrate, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };

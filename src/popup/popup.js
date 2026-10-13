@@ -37,6 +37,11 @@
   }
 
   function render(data) {
+    // Scholar's page layout changed: the panel says so and shows nothing else, and so does the popup
+    if (data.layoutBroken) {
+      main.replaceChildren(h("p", { class: "empty" }, t("layoutWarning")), h("div", { class: "actions" }, h("a", { class: "btn", href: B.dom.issueUrl("Scholar page layout changed", ""), target: "_blank", rel: "noopener" }, t("reportLink"))));
+      return;
+    }
     // the lists switched on in the settings; "none" = roles only
     const sources = data.sources || ["ccf", "core"];
     let source = sources.includes(data.source) ? data.source : sources[0] || "none";
@@ -74,7 +79,7 @@
             data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
               : s.absent > 0 ? `${data.loaded - s.absent} ${t("metricsOf")} ${tn("popupPapers", data.loaded, [String(data.loaded)])}` : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         parts.summary ? seg : null, parts.summary ? table : null,
-        parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked").toLowerCase()) : null,
+        parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         parts.summary ? h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),

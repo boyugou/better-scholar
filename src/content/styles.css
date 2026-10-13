@@ -35,6 +35,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   border: 1px solid transparent; border-radius: 9px;
   font: 600 10.5px/1 Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
+.rr-chip { word-spacing: normal; }
 .rr-chip .rr-k { font-weight: 500; color: color-mix(in srgb, currentColor 78%, transparent); }
 .rr-chip b { font-weight: 700; }
 .rr-chip-t1 { background: #fff; color: #3345a8; border-color: #9aa6e0; }
@@ -142,9 +143,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-matrix thead th:not(:first-child){ width: 34px; }
+#rr-panel .rr-matrix thead th:last-child{ width: 42px; }
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
-#rr-panel .rr-matrix tbody th{ text-align: start; white-space: nowrap; }
+#rr-panel .rr-matrix tbody th{ text-align: start; overflow-wrap: anywhere; }
+#rr-panel .rr-rolebtn{ max-width: 100%; text-align: start; overflow-wrap: anywhere; }
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
 #rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
@@ -249,6 +252,11 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   .rr-chip { border-color: ButtonText; }
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
   #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
+  /* masks are drawn with a background colour, which the system would turn into the page colour: keep them in the text colour */
+  #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before { background-color: CanvasText; }
+  #rr-panel input[type="checkbox"] { -webkit-appearance: auto; appearance: auto; width: 16px; height: 16px; border-radius: 0; background: Field; }
+  #rr-panel input[type="checkbox"]::after { display: none; }
+  #rr-panel .rr-seg button[aria-pressed="true"] { outline: 2px solid Highlight; }
   #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"] { outline: 2px solid Highlight; }
 }
 

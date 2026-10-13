@@ -93,3 +93,10 @@ input.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px;
 /* the card links: the end fades out when there are more, and the one in view is kept in sight */
 .toc { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
 [dir="rtl"] .toc { -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(270deg, #000 calc(100% - 28px), transparent); }
+
+/* forced colours: a switch is a real checkbox, so that on and off differ */
+@media (forced-colors: active) {
+  .sw { -webkit-appearance: auto; appearance: auto; width: 18px; height: 18px; border-radius: 0; background: Field; }
+  .sw::after { display: none; }
+  .toc a[aria-current] { outline: 2px solid Highlight; }
+}

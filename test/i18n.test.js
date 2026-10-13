@@ -47,3 +47,9 @@ test("fromBrowser: Norwegian Bokmål and Nynorsk browsers are given the no folde
   for (const ui of ["nb", "nb-NO", "nn", "nn_NO", "NB"]) assert.equal(i18n.fromBrowser(ui), "no", ui);
   for (const ui of ["no", "en-US", "de", "zh-CN", "", undefined]) assert.equal(i18n.fromBrowser(ui), "", String(ui));
 });
+
+test("resolve: the folder a browser language is served from (so that lang and number formatting match the words shown)", () => {
+  const cases = { "en-US": "en", "en": "en", "de-CH": "de", "zh-CN": "zh_CN", "zh": "zh_CN", "zh-Hans": "zh_CN", "zh-TW": "zh_TW", "zh-HK": "zh_TW", "zh-Hant-TW": "zh_TW", "pt": "pt_BR", "pt-BR": "pt_BR", "pt-PT": "pt_PT", "pt-AO": "pt_PT", "nb-NO": "no", "nn": "no", "no": "no", "iw": "he", "in": "id", "es-419": "es", "ca": "en", "fa-IR": "en", "": "en", "ja_JP": "ja" };
+  for (const [ui, want] of Object.entries(cases)) assert.equal(i18n.resolve(ui), want, ui);
+  assert.equal(i18n.resolve(undefined), "en");
+});

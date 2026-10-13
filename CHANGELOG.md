@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.20.1 — 2026-10-13
+
+Fixes from the second independent code review:
+
+- **Table labels no longer run into the numbers** on the CORE tab (and in the popup, and in narrow columns): long role words (Finnish, Dutch, Greek, Polish, German …) wrap inside their column; the last header column is wider. An end-to-end check measures every language on both tabs.
+- **Forced colours (Windows high contrast)**: the fold chevron, the settings icon and the award stars stay visible (they are drawn with masks), the switches are real checkboxes (on and off differ), and the pressed ranking tab is outlined; the same for the settings page and the popup.
+- **A chosen venue stays in the venue list** (pressed, so it can be undone) when another filter would push it out of the first few; the filter is dropped only when the venue cannot exist any more (not when an unrelated filter, say a year range, is set). A matrix cell or an awards row is dropped when its part of the panel is switched off.
+- The page's `lang` and the number and list formatting follow the language the words are actually shown in (a browser language we have no translation for is served in English); the Semantic Scholar key keeps visible ASCII only.
+- The settings preview now lists sample venues (the Top venues switch shows), and the panel's links in it work; the list of unrecognised venues is no longer rebuilt with every update (focus and scroll stay); the popup follows the panel when Scholar's layout has changed; German "not ranked" legend; chip labels no longer inherit the group's word spacing.
+
 ## 2.20.0 — 2026-10-13
 
 - **"Open Scholar in" covers Scholar's search pages too** (a shared search link opened in another language is reopened in yours), not only profiles. It is a second, tiny content script (`content/lang-redirect.js`, run at document start on the same Scholar domains; it checks the path itself, never touches downloads such as `/scholar.bib` or the `/scholar_url` redirects, reads one setting and nothing else). `scripts/update-scholar-domains.sh` writes both lists; the privacy text says so.
