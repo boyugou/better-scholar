@@ -159,7 +159,7 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
 <footer>
   <div class="wrap">
     <span>${t("footer.license")}</span>
-    <a href="${REPO_URL}/blob/main/PRIVACY.md">${t("footer.privacy")}</a>
+    <a href="../privacy/">${t("footer.privacy")}</a>
     <a href="${REPO_URL}/issues">${t("footer.issues")}</a>
     <a href="${REPO_URL}">GitHub</a>
   </div>
@@ -213,6 +213,48 @@ ${languages.map((l) => `<li><a href="${l.code}/" hreflang="${l.code}" lang="${l.
 `;
 }
 
+// PRIVACY.md (kept in src/privacy.md: `npm run sync-privacy` copies it from the extension repository) as one English page
+function inline(text) {
+  return esc(text)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+    .replace(/(https:\/\/[^\s<)]+?)([.,]?)(?=\s|$|<)/g, '<a href="$1">$1</a>$2');
+}
+function privacyPage() {
+  const lines = readFileSync(join(root, "src", "privacy.md"), "utf8").split("\n");
+  let html = "", list = false, para = [];
+  const flush = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>\n`; para = []; } };
+  for (const line of lines) {
+    if (/^# /.test(line)) { flush(); html += `<h1>${inline(line.slice(2))}</h1>\n`; }
+    else if (/^- /.test(line)) { flush(); if (!list) { html += "<ul>\n"; list = true; } else html += "</li>\n"; html += `<li>${inline(line.slice(2))}`; }
+    else if (/^\s+\S/.test(line) && list) html += " " + inline(line.trim());
+    else if (!line.trim()) { if (list) { html += "</li>\n</ul>\n"; list = false; } flush(); }
+    else if (list) { html += "</li>\n</ul>\n"; list = false; para.push(line.trim()); }
+    else para.push(line.trim());
+  }
+  if (list) html += "</li>\n</ul>\n";
+  flush();
+  return `<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy: Scholar Roles &amp; Ranks</title>
+<meta name="description" content="What Scholar Roles &amp; Ranks reads, stores and sends: nothing leaves your browser unless you switch on the Semantic Scholar lookup.">
+<link rel="canonical" href="${SITE_URL}/privacy/">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<header class="top"><div class="wrap bar"><a class="brand" href="../" aria-label="Scholar Roles &amp; Ranks"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Scholar Roles &amp; Ranks</span></a><nav><a href="${REPO_URL}">GitHub</a></nav></div></header>
+<main class="doc"><div class="wrap narrow">
+${html}</div></main>
+</body>
+</html>
+`;
+}
+
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 cpSync(join(root, "src", "assets"), join(out, "assets"), { recursive: true });
@@ -221,12 +263,15 @@ for (const l of languages) {
   writeFileSync(join(out, l.code, "index.html"), page(l));
 }
 writeFileSync(join(out, "index.html"), rootPage());
+mkdirSync(join(out, "privacy"), { recursive: true });
+writeFileSync(join(out, "privacy", "index.html"), privacyPage());
 writeFileSync(join(out, "404.html"), rootPage().replace('location.replace(pick + "/" + location.hash);', 'location.replace(location.pathname.replace(/[^/]*$/, "") + pick + "/");'));
 writeFileSync(join(out, ".nojekyll"), "");
 writeFileSync(join(out, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 writeFileSync(join(out, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${languages.map((l) => `<url><loc>${SITE_URL}/${l.code}/</loc>\n${languages.map((a) => `  <xhtml:link rel="alternate" hreflang="${a.code}" href="${SITE_URL}/${a.code}/"/>`).join("\n")}\n</url>`).join("\n")}
+<url><loc>${SITE_URL}/privacy/</loc></url>
 </urlset>
 `);
 console.log(`built ${languages.length} languages into _site/ (${SITE_URL})`);

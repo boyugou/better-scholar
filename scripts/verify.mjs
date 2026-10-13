@@ -21,7 +21,7 @@ for (const l of languages) {
   for (const [k, v] of Object.entries(s)) if (/[{}]|\$\{|undefined/.test(v)) fail(`${l.code}: suspicious text in ${k}`);
 }
 
-const pages = [["index.html", null], ...languages.map((l) => [`${l.code}/index.html`, l])];
+const pages = [["index.html", null], ["privacy/index.html", null], ...languages.map((l) => [`${l.code}/index.html`, l])];
 for (const [rel, l] of pages) {
   const f = join(site, rel);
   if (!existsSync(f)) { fail("not built: " + rel); continue; }
