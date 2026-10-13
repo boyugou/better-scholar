@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo." loading="lazy"><figcaption>Strona ustawień: wybierz, co ma być widoczne, z podglądem na żywo.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Wypróbuj</h2>
+      <p class="note">Włącz i wyłącz role: przykładowy profil zmienia się tak samo jak prawdziwa strona.</p>
+      <div class="roles" role="group" aria-label="Wypróbuj">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Pierwszy autor</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Współpierwszy autor</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Drugi autor</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Ostatni autor</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Przykładowa publikacja 1</b><span class="auth"><mark>Ty</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Przykładowa publikacja 2</b><span class="auth">B Writer, <mark>Ty</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Przykładowa publikacja 3</b><span class="auth"><mark>Ty</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Przykładowa publikacja 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Ty</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Przykładowa publikacja 5</b><span class="auth">B Writer, C Writer, <mark>Ty</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Przykładowa publikacja 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Ty</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> wyróżnionych publikacji</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Każda publikacja pokolorowana według twojej roli</h3><p>Wiersze dla pierwszego, współpierwszego, drugiego i ostatniego autora dostają własny kolor, a twoje nazwisko jest wyróżnione w liście autorów.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

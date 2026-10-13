@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Halaman pengaturan: pilih apa yang ditampilkan, dengan pratinjau langsung." loading="lazy"><figcaption>Halaman pengaturan: pilih apa yang ditampilkan, dengan pratinjau langsung.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Coba</h2>
+      <p class="note">Nyalakan dan matikan peran: profil contoh ikut berubah, seperti halaman asli.</p>
+      <div class="roles" role="group" aria-label="Coba">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Penulis pertama</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Penulis pertama bersama</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Penulis kedua</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Penulis terakhir</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Contoh makalah 1</b><span class="auth"><mark>Anda</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Contoh makalah 2</b><span class="auth">B Writer, <mark>Anda</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Contoh makalah 3</b><span class="auth"><mark>Anda</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Contoh makalah 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Anda</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Contoh makalah 5</b><span class="auth">B Writer, C Writer, <mark>Anda</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Contoh makalah 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Anda</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> makalah yang disorot</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Setiap makalah, diwarnai sesuai peran Anda</h3><p>Baris penulis pertama, penulis pertama bersama, penulis kedua, dan penulis terakhir masing-masing mendapat warna, dan nama Anda ditandai di daftar penulis.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

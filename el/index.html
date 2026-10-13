@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Η σελίδα ρυθμίσεων: επιλέξτε τι εμφανίζεται, με ζωντανή προεπισκόπηση." loading="lazy"><figcaption>Η σελίδα ρυθμίσεων: επιλέξτε τι εμφανίζεται, με ζωντανή προεπισκόπηση.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Δοκιμάστε</h2>
+      <p class="note">Ενεργοποιήστε ή απενεργοποιήστε τους ρόλους: το δείγμα προφίλ ακολουθεί, όπως η πραγματική σελίδα.</p>
+      <div class="roles" role="group" aria-label="Δοκιμάστε">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Πρώτος συγγραφέας</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Συν-πρώτος συγγραφέας</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Δεύτερος συγγραφέας</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Τελευταίος συγγραφέας</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Δείγμα εργασίας 1</b><span class="auth"><mark>Εσείς</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Δείγμα εργασίας 2</b><span class="auth">B Writer, <mark>Εσείς</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Δείγμα εργασίας 3</b><span class="auth"><mark>Εσείς</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Δείγμα εργασίας 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Εσείς</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Δείγμα εργασίας 5</b><span class="auth">B Writer, C Writer, <mark>Εσείς</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Δείγμα εργασίας 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Εσείς</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> επισημασμένες εργασίες</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Κάθε εργασία, χρωματισμένη με τον ρόλο σας</h3><p>Οι γραμμές του πρώτου, του συν-πρώτου, του δεύτερου και του τελευταίου συγγραφέα παίρνουν η καθεμία δικό της χρώμα, και το όνομά σας σημειώνεται στη γραμμή των συγγραφέων.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

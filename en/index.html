@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="The settings page: choose what is shown, with a live preview." loading="lazy"><figcaption>The settings page: choose what is shown, with a live preview.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Try it</h2>
+      <p class="note">Switch the roles on and off: the sample profile follows, like the real page.</p>
+      <div class="roles" role="group" aria-label="Try it">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>First author</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Co-first author</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Second author</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Last author</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Sample paper 1</b><span class="auth"><mark>You</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Sample paper 2</b><span class="auth">B Writer, <mark>You</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Sample paper 3</b><span class="auth"><mark>You</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Sample paper 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>You</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Sample paper 5</b><span class="auth">B Writer, C Writer, <mark>You</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Sample paper 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>You</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> papers highlighted</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Every paper, coloured by your role</h3><p>First, co-first, second and last author rows each get a colour, and your name is marked in the author line.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

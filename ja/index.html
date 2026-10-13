@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。" loading="lazy"><figcaption>設定ページ：表示する内容を選べます。プレビューはリアルタイムで更新されます。</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>試してみる</h2>
+      <p class="note">役割をオン・オフすると、実際のページと同じようにサンプルのプロフィールも変わります。</p>
+      <div class="roles" role="group" aria-label="試してみる">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>筆頭著者</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>共同筆頭著者</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>第二著者</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>最終著者</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">サンプル論文 1</b><span class="auth"><mark>あなた</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">サンプル論文 2</b><span class="auth">B Writer, <mark>あなた</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">サンプル論文 3</b><span class="auth"><mark>あなた</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">サンプル論文 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>あなた</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">サンプル論文 5</b><span class="auth">B Writer, C Writer, <mark>あなた</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">サンプル論文 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>あなた</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> 件の論文がハイライト中</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>役割ごとに色分けされた全論文</h3><p>筆頭著者、共同筆頭著者、第二著者、最終著者の行にそれぞれ色が付き、著者欄ではあなたの名前が目立つように示されます。</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

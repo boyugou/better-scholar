@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta." loading="lazy"><figcaption>Asetussivu: valitse, mitä näytetään, ja näe muutokset heti esikatselusta.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Kokeile</h2>
+      <p class="note">Kytke roolit päälle ja pois: esimerkkiprofiili seuraa mukana samalla tavalla kuin oikea sivu.</p>
+      <div class="roles" role="group" aria-label="Kokeile">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Ensimmäinen kirjoittaja</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Jaettu ensimmäinen kirjoittaja</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Toinen kirjoittaja</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Viimeinen kirjoittaja</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Esimerkkijulkaisu 1</b><span class="auth"><mark>Sinä</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Esimerkkijulkaisu 2</b><span class="auth">B Writer, <mark>Sinä</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Esimerkkijulkaisu 3</b><span class="auth"><mark>Sinä</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Esimerkkijulkaisu 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Sinä</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Esimerkkijulkaisu 5</b><span class="auth">B Writer, C Writer, <mark>Sinä</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Esimerkkijulkaisu 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Sinä</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> korostettua julkaisua</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Jokainen julkaisu värjätty roolisi mukaan</h3><p>Ensimmäisen, jaetun ensimmäisen, toisen ja viimeisen kirjoittajan rivit saavat oman värinsä, ja nimesi on korostettu kirjoittajariviltä.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="設定頁面：選擇要顯示的內容，並可即時預覽。" loading="lazy"><figcaption>設定頁面：選擇要顯示的內容，並可即時預覽。</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>試試看</h2>
+      <p class="note">開啟或關閉各個角色，範例頁面會隨之變化，就像真實頁面一樣。</p>
+      <div class="roles" role="group" aria-label="試試看">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>第一作者</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>共同第一作者</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>第二作者</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>末位作者</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">範例論文 1</b><span class="auth"><mark>你</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">範例論文 2</b><span class="auth">B Writer, <mark>你</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">範例論文 3</b><span class="auth"><mark>你</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">範例論文 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>你</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">範例論文 5</b><span class="auth">B Writer, C Writer, <mark>你</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">範例論文 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>你</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> 篇論文已標示</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>每篇論文，依你的角色著色</h3><p>第一、共同第一、第二與末位作者的列各有一種顏色，你的名字會在作者列中標示出來。</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

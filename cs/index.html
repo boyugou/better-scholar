@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem." loading="lazy"><figcaption>Stránka nastavení: vyberte, co se má zobrazovat, s živým náhledem.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Vyzkoušejte</h2>
+      <p class="note">Zapínejte a vypínejte role: ukázkový profil se mění stejně jako skutečná stránka.</p>
+      <div class="roles" role="group" aria-label="Vyzkoušejte">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>První autor</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Spoluprvní autor</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Druhý autor</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Poslední autor</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Ukázkový článek 1</b><span class="auth"><mark>Vy</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Ukázkový článek 2</b><span class="auth">B Writer, <mark>Vy</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Ukázkový článek 3</b><span class="auth"><mark>Vy</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Ukázkový článek 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Vy</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Ukázkový článek 5</b><span class="auth">B Writer, C Writer, <mark>Vy</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Ukázkový článek 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Vy</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> zvýrazněných článků</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Každý článek obarvený podle vaší role</h3><p>Řádky pro prvního, spoluprvního, druhého a posledního autora dostanou vlastní barvu a vaše jméno je v seznamu autorů zvýrazněno.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

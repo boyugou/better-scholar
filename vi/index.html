@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp." loading="lazy"><figcaption>Trang cài đặt: chọn những gì hiển thị, có xem trước trực tiếp.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Thử ngay</h2>
+      <p class="note">Bật và tắt vai trò: hồ sơ mẫu sẽ thay đổi theo, giống như trang thật.</p>
+      <div class="roles" role="group" aria-label="Thử ngay">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Tác giả đầu</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Đồng tác giả đầu</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Tác giả thứ hai</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Tác giả cuối</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Bài báo mẫu 1</b><span class="auth"><mark>Bạn</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Bài báo mẫu 2</b><span class="auth">B Writer, <mark>Bạn</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Bài báo mẫu 3</b><span class="auth"><mark>Bạn</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Bài báo mẫu 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Bạn</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Bài báo mẫu 5</b><span class="auth">B Writer, C Writer, <mark>Bạn</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Bài báo mẫu 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Bạn</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> bài báo được tô nổi</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Mọi bài báo, tô màu theo vai trò của bạn</h3><p>Các dòng tác giả đầu, đồng tác giả đầu, tác giả thứ hai và tác giả cuối đều có màu riêng, và tên bạn được đánh dấu trong dòng tác giả.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

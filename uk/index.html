@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Сторінка налаштувань: оберіть, що показувати, із живим попереднім переглядом." loading="lazy"><figcaption>Сторінка налаштувань: оберіть, що показувати, із живим попереднім переглядом.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Спробуйте</h2>
+      <p class="note">Вмикайте й вимикайте ролі: зразок профілю змінюється так само, як справжня сторінка.</p>
+      <div class="roles" role="group" aria-label="Спробуйте">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Перший автор</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Співперший автор</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Другий автор</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Останній автор</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Стаття-приклад 1</b><span class="auth"><mark>Ви</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Стаття-приклад 2</b><span class="auth">B Writer, <mark>Ви</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Стаття-приклад 3</b><span class="auth"><mark>Ви</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Стаття-приклад 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Ви</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Стаття-приклад 5</b><span class="auth">B Writer, C Writer, <mark>Ви</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Стаття-приклад 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Ви</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> виділених статей</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Кожна стаття забарвлена за вашою роллю</h3><p>Рядки для першого, співпершого, другого та останнього автора мають власний колір, а ваше ім'я позначено в переліку авторів.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

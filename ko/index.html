@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다." loading="lazy"><figcaption>설정 페이지: 표시할 항목을 고르고 실시간 미리보기로 확인합니다.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>직접 해 보기</h2>
+      <p class="note">역할을 켜고 끄면, 실제 페이지와 같이 샘플 프로필도 따라 바뀝니다.</p>
+      <div class="roles" role="group" aria-label="직접 해 보기">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>제1저자</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>공동 제1저자</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>제2저자</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>마지막 저자</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">샘플 논문 1</b><span class="auth"><mark>본인</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">샘플 논문 2</b><span class="auth">B Writer, <mark>본인</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">샘플 논문 3</b><span class="auth"><mark>본인</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">샘플 논문 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>본인</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">샘플 논문 5</b><span class="auth">B Writer, C Writer, <mark>본인</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">샘플 논문 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>본인</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> 편의 논문이 강조됨</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>모든 논문을 나의 역할별 색으로</h3><p>제1저자, 공동 제1저자, 제2저자, 마지막 저자 행마다 색이 지정되며, 저자 목록에서는 내 이름이 표시됩니다.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

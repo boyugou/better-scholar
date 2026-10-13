@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה." loading="lazy"><figcaption>דף ההגדרות: בחר מה יוצג, עם תצוגה מקדימה חיה.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>נסה את זה</h2>
+      <p class="note">הדלק וכבה את התפקידים: פרופיל הדוגמה עוקב אחריהם, כמו בדף האמיתי.</p>
+      <div class="roles" role="group" aria-label="נסה את זה">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>מחבר ראשון</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>מחבר ראשון שותף</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>מחבר שני</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>מחבר אחרון</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">מאמר לדוגמה 1</b><span class="auth"><mark>אתם</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">מאמר לדוגמה 2</b><span class="auth">B Writer, <mark>אתם</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">מאמר לדוגמה 3</b><span class="auth"><mark>אתם</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">מאמר לדוגמה 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>אתם</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">מאמר לדוגמה 5</b><span class="auth">B Writer, C Writer, <mark>אתם</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">מאמר לדוגמה 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>אתם</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> מאמרים מודגשים</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>כל מאמר, צבוע לפי תפקידך</h3><p>לשורות של מחבר ראשון, מחבר ראשון שותף, מחבר שני ומחבר אחרון יש צבע משלהן, ושמך מסומן בשורת המחברים.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="หน้าการตั้งค่า: เลือกสิ่งที่จะแสดง พร้อมตัวอย่างสด" loading="lazy"><figcaption>หน้าการตั้งค่า: เลือกสิ่งที่จะแสดง พร้อมตัวอย่างสด</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>ลองดู</h2>
+      <p class="note">เปิดหรือปิดบทบาท โปรไฟล์ตัวอย่างจะเปลี่ยนตาม เหมือนหน้าจริง</p>
+      <div class="roles" role="group" aria-label="ลองดู">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>ผู้เขียนคนแรก</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>ผู้เขียนร่วมคนแรก</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>ผู้เขียนคนที่สอง</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>ผู้เขียนคนสุดท้าย</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">บทความตัวอย่าง 1</b><span class="auth"><mark>คุณ</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">บทความตัวอย่าง 2</b><span class="auth">B Writer, <mark>คุณ</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">บทความตัวอย่าง 3</b><span class="auth"><mark>คุณ</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">บทความตัวอย่าง 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>คุณ</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">บทความตัวอย่าง 5</b><span class="auth">B Writer, C Writer, <mark>คุณ</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">บทความตัวอย่าง 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>คุณ</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> บทความที่ไฮไลต์</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>ทุกบทความ ระบายสีตามบทบาทของคุณ</h3><p>แถวของผู้เขียนคนแรก ผู้เขียนร่วมคนแรก ผู้เขียนคนที่สอง และผู้เขียนคนสุดท้าย แต่ละแถวมีสีของตัวเอง และชื่อของคุณจะถูกทำเครื่องหมายในบรรทัดผู้เขียน</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="Ayarlar sayfası: neyin gösterileceğini canlı önizlemeyle seçin." loading="lazy"><figcaption>Ayarlar sayfası: neyin gösterileceğini canlı önizlemeyle seçin.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Deneyin</h2>
+      <p class="note">Rolleri açıp kapatın: örnek profil, gerçek sayfadaki gibi onları takip eder.</p>
+      <div class="roles" role="group" aria-label="Deneyin">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Birinci yazar</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Ortak birinci yazar</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>İkinci yazar</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Son yazar</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Örnek yayın 1</b><span class="auth"><mark>Siz</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Örnek yayın 2</b><span class="auth">B Writer, <mark>Siz</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Örnek yayın 3</b><span class="auth"><mark>Siz</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Örnek yayın 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Siz</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Örnek yayın 5</b><span class="auth">B Writer, C Writer, <mark>Siz</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Örnek yayın 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Siz</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> vurgulanan yayın</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Her yayın rolünüze göre renklendirilmiş</h3><p>Birinci, ortak birinci, ikinci ve son yazar satırları kendi renklerini alır; adınız yazar satırında vurgulanır.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>

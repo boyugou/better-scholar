@@ -109,6 +109,27 @@
       <figure class="small"><img src="../assets/settings.png" alt="La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct." loading="lazy"><figcaption>La page des réglages : choisissez ce qui s'affiche, avec un aperçu en direct.</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>Essayez</h2>
+      <p class="note">Activez et désactivez les rôles : le profil d'exemple suit, comme la vraie page.</p>
+      <div class="roles" role="group" aria-label="Essayez">
+        <button type="button" class="role-btn" data-role="first" aria-pressed="true"><i></i>Premier auteur</button>
+        <button type="button" class="role-btn" data-role="cofirst" aria-pressed="true"><i></i>Co-premier auteur</button>
+        <button type="button" class="role-btn" data-role="second" aria-pressed="true"><i></i>Deuxième auteur</button>
+        <button type="button" class="role-btn" data-role="last" aria-pressed="true"><i></i>Dernier auteur</button>
+      </div>
+      <div class="demo-card" aria-live="polite">
+        <div class="paper" data-role="first"><b class="ptitle">Article d'exemple 1</b><span class="auth"><mark>Vous</mark>, B Writer, C Writer, D Writer</span><span class="ven">ICLR 2025 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="second"><b class="ptitle">Article d'exemple 2</b><span class="auth">B Writer, <mark>Vous</mark>, C Writer</span><span class="ven">NeurIPS 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="cofirst"><b class="ptitle">Article d'exemple 3</b><span class="auth"><mark>Vous</mark>*, B Writer*, C Writer</span><span class="ven">CVPR 2024 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Article d'exemple 4</b><span class="auth">B Writer, C Writer, D Writer, <mark>Vous</mark></span><span class="ven">ACL 2023 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="middle"><b class="ptitle">Article d'exemple 5</b><span class="auth">B Writer, C Writer, <mark>Vous</mark>, D Writer</span><span class="ven">EMNLP 2022 <em>CCF A</em><em>CORE A*</em></span></div>
+        <div class="paper" data-role="last"><b class="ptitle">Article d'exemple 6</b><span class="auth">B Writer, C Writer, D Writer, <mark>Vous</mark></span><span class="ven">AAAI 2021 <em>CCF A</em><em>CORE A</em></span></div>
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> articles mis en évidence</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
       <article style="--c:#4d8ff5"><h3>Chaque article, coloré selon votre rôle</h3><p>Les lignes premier auteur, co-premier auteur, deuxième auteur et dernier auteur ont chacune leur couleur, et votre nom est mis en évidence dans la liste des auteurs.</p></article>
@@ -148,5 +169,6 @@
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>
