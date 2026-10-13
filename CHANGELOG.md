@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.79 — 2026-10-12
+
+- IEEE ICC 2021's thirteen best papers (a fourth layout: the quoted title and a `by` line apart) and INFOCOM 2026's two best papers, from the conferences' own pages (`tot.mjs icc-best`, `tot.mjs infocom`). The list has 6776 awards.
+
 ## 2.10.78 — 2026-10-12
 
 - IEEE GLOBECOM's best papers of 2022 (16) and 2023 (17) — the totals the pages state — from each year's own Best Paper Awards page (`tot.mjs globecom-best`); the list had none for GLOBECOM. A footnote mark after a name (♭) no longer drops the paper. The list has 6761 awards.

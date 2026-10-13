@@ -2187,3 +2187,9 @@ test("GLOBECOM best paper page: several papers under one heading, a footnote mar
     "Best Paper Award (NGNI) | An intrusion detection system for in-vehicle networks | Pat Quinn; Ray Shaw"
   ]);
 });
+
+test("ICC 2021's page: a capitals heading, the quoted title and a 'by A, B and C' line apart, with no recipients line above", async () => {
+  const { parseIccBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>ICC 2021 Best Paper Awards</p><p>Chair</p><p>Ann Lee, Texas, USA</p><p>SELECTED AREAS IN COMMUNICATIONS</p><p>“Metropolis-Hastings random walk along the gradient descent direction for detection”,</p><p>by Bo Chan, Cy Dunn and Ed Fox</p><p>COMMUNICATION THEORY SYMPOSIUM</p><p>“Tight bounds for the probability of connectivity in random graphs”,</p><p>by Flo Gray and Gil Hart</p><p>Career Fair</p>`;
+  assert.deepEqual(parseIccBest(h, "https://icc2021.ieee-icc.org/program/best-paper-awards").entries.map((e) => `${e.awardLabel} | ${e.authors.join("; ")}`), ["Best Paper Award (SELECTED AREAS IN COMMUNICATIONS) | Bo Chan; Cy Dunn; Ed Fox", "Best Paper Award (COMMUNICATION THEORY) | Flo Gray; Gil Hart"]);
+});

@@ -2619,14 +2619,15 @@ export function parseIeeeVrBest(html, source) {
 }
 
 // An IEEE ICC year's best paper awards page (icc<year>.ieee-icc.org/program/best-paper-awards), after the committee and a line "ICC <year> BEST PAPER AWARDS RECIPIENTS": per symposium a heading line and then the winning paper, in the form of the year —
-// 2025: heading, title, authors with brackets ("A, B and C (Univ, Country); D (Univ)"); 2024: an all-capitals heading, the title and a plain authors' line; 2022: an all-capitals heading and `“Title,” by A, B and C`. 2021 and 2023 print no recipients.
+// 2025: heading, title, authors with brackets ("A, B and C (Univ, Country); D (Univ)"); 2024: an all-capitals heading, the title and a plain authors' line; 2022: an all-capitals heading and `“Title,” by A, B and C`. 2021 prints the title and a `by` line apart; 2023 follows 2024's form.
 export function parseIccBest(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/icc(\d{4})\./.exec(source) || [])[1], 10);
   if (!year || !ls.some((l) => new RegExp(`ICC ${year}`, "i").test(l))) return { entries, skipped: ["no year in the address or page"] };
-  const start = ls.findIndex((l) => /^ICC \d{4} BEST PAPER AWARDS RECIPIENTS$/i.test(l));
-  if (start < 0) return { entries, skipped: ["no recipients list"] };
+  let start = ls.findIndex((l) => /^ICC \d{4} BEST PAPER AWARDS RECIPIENTS$/i.test(l));
+  if (start < 0) start = ls.findIndex((l, i) => l === l.toUpperCase() && /\p{L}{6}/u.test(l) && /^[“"]/.test(ls[i + 1] || "") && /^by /.test(ls[i + 2] || "")) - 1;     // 2021 has no such line: the first capitals heading over a quoted title and a "by" line
+  if (start < -1 || (start === -1 && !/^[“"]/.test(ls[1] || ""))) return { entries, skipped: ["no recipients list"] };
   const end = ls.findIndex((l, i) => i > start && /^(?:Career Fair|Search|Mentoring Program)$/.test(l));
   const caps = (l) => l === l.toUpperCase() && /\p{L}{6}/u.test(l);
   const put = (head, t0, a0) => {
@@ -2638,6 +2639,8 @@ export function parseIccBest(html, source) {
   for (let i = start + 1; i + 1 < stop; i++) {
     const by = /^[“"](.+?),?[”"]\s+by\s+(.+)$/.exec(ls[i + 1]);
     if (by) { put(ls[i], by[1], by[2]); i += 1; continue; }
+    const q = /^[“"](.+?),?[”"],?$/.exec(ls[i + 1] || ""), byl = /^by\s+(.+)$/.exec(ls[i + 2] || "");               // 2021: the quoted title and "by A, B and C" on the next line
+    if (q && byl && caps(ls[i])) { put(ls[i], q[1], byl[1]); i += 2; continue; }
     if (caps(ls[i]) && ls[i + 2] && !caps(ls[i + 1])) { put(ls[i], ls[i + 1], ls[i + 2]); i += 2; continue; }
     if (!/\(/.test(ls[i]) && !/\(/.test(ls[i + 1]) && ls[i + 2] && /\(.*\)/.test(ls[i + 2]) && ls[i + 1].split(" ").length >= 4) { put(ls[i], ls[i + 1], ls[i + 2]); i += 2; }
   }

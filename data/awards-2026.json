@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6761
+  "count": 6776
  },
  "entries": [
   {
@@ -59589,6 +59589,208 @@
   },
   {
    "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING & INTERNET)",
+   "title": "Analysis of Selfish Miner Behavior in the Bitcoin Network",
+   "authors": [
+    "Saeideh Motlagh",
+    "Jelena Misic",
+    "Vojislav Misic"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, NEXT-GENERATION NETWORKING & INTERNET SYMPOSIUM: Analysis of Selfish Miner Behavior in the Bitcoin Network — Saeideh Motlagh, Jelena Misic, Vojislav Misic"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SIGNAL PROCESSING FOR COMMUNICATIONS)",
+   "title": "Design and Analysis of Uplink and Downlink Communications for Federated Learning",
+   "authors": [
+    "Sihui Zheng",
+    "Cong Shen",
+    "Xiang Chen"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, SIGNAL PROCESSING FOR COMMUNICATIONS SYMPOSIUM: Design and Analysis of Uplink and Downlink Communications for Federated Learning — Sihui Zheng, Cong Shen, Xiang Chen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MOBILE & WIRELESS NETWORKS)",
+   "title": "Disconnectivity-Aware Energy-Efficient Cargo-UAV Trajectory Planning with Minimum Handoffs",
+   "authors": [
+    "Nesrine Cherif",
+    "Wael Jaafar",
+    "Halim Yanikomeroglu",
+    "Abbas Yongacoglu"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, MOBILE & WIRELESS NETWORKS SYMPOSIUM: Disconnectivity-Aware Energy-Efficient Cargo-UAV Trajectory Planning with Minimum Handoffs — Nesrine Cherif, Wael Jaafar, Halim Yanikomeroglu, Abbas Yongacoglu"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION QOS, RELIABILITY & MODELING)",
+   "title": "Enhancing the Performance of Industry 4.0 Scenarios via Serverless Processing at the Edge",
+   "authors": [
+    "Armir Bujari",
+    "Antonio Corradi",
+    "Luca Foschini",
+    "Lorenzo Patera",
+    "Andrea Sabbioni"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, COMMUNICATION QOS, RELIABILITY & MODELING SYMPOSIUM: Enhancing the Performance of Industry 4.0 Scenarios via Serverless Processing at the Edge — Armir Bujari, Antonio Corradi, Luca Foschini, Lorenzo Patera, Andrea Sabbioni"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION & INFORMATION SYSTEMS SECURITY)",
+   "title": "Exploiting Physical Presence Sensing to Secure Voice Assistant Systems",
+   "authors": [
+    "Bang Tran",
+    "Shenhui Pan",
+    "Xiaohui Liang",
+    "Honggang Zhang"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, COMMUNICATION & INFORMATION SYSTEMS SECURITY SYMPOSIUM: Exploiting Physical Presence Sensing to Secure Voice Assistant Systems — Bang Tran, Shenhui Pan, Xiaohui Liang, Honggang Zhang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IOT & SENSOR NETWORKS)",
+   "title": "Fast Grant Learning-Based Approach for Machine Type Communications with NOMA",
+   "authors": [
+    "Manal El Tanab",
+    "Walaa Hamouda"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, IOT & SENSOR NETWORKS SYMPOSIUM: Fast Grant Learning-Based Approach for Machine Type Communications with NOMA — Manal El Tanab, Walaa Hamouda"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "How Does Performance Scale with Antenna Number for Extremely Large-Scale MIMO?",
+   "authors": [
+    "Haiquan Lu",
+    "Yong Zeng"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, WIRELESS COMMUNICATIONS SYMPOSIUM: How Does Performance Scale with Antenna Number for Extremely Large-Scale MIMO? — Haiquan Lu, Yong Zeng"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SELECTED AREAS IN COMMUNICATIONS)",
+   "title": "Metropolis-Hastings Random Walk along the Gradient Descent Direction for MIMO Detection",
+   "authors": [
+    "Niranjan M Gowda",
+    "Sundar Krishnamurthy",
+    "Andrey Belogolovy"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, SELECTED AREAS IN COMMUNICATIONS: Metropolis-Hastings Random Walk along the Gradient Descent Direction for MIMO Detection — Niranjan M Gowda, Sundar Krishnamurthy, Andrey Belogolovy"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COGNITIVE RADIO & AI-ENABLED NETWORKS)",
+   "title": "Multiband Spectrum Sensing with Non-exponential Channel Occupancy Times",
+   "authors": [
+    "Hanke Cheng",
+    "Brian L. Mark",
+    "Yariv Ephraim",
+    "Chun-Hung Chen"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, COGNITIVE RADIO & AI-ENABLED NETWORKS SYMPOSIUM: Multiband Spectrum Sensing with Non-exponential Channel Occupancy Times — Hanke Cheng, Brian L. Mark, Yariv Ephraim, Chun-Hung Chen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION SOFTWARE & MULTIMEDIA)",
+   "title": "Neighboring-Aware Caching in Heterogeneous Edge Networks by Actor-Attention-Critic Learning",
+   "authors": [
+    "Yiwei Zhao",
+    "Ruibin Li",
+    "Chenyang Wang",
+    "Xiaofei Wang",
+    "Victor Leung"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, COMMUNICATION SOFTWARE & MULTIMEDIA SYMPOSIUM: Neighboring-Aware Caching in Heterogeneous Edge Networks by Actor-Attention-Critic Learning — Yiwei Zhao, Ruibin Li, Chenyang Wang, Xiaofei Wang, Victor Leung"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GREEN COMMUNICATION SYSTEMS & NETWORKS)",
+   "title": "Optimal EE for Multi-MEC and Blockchain Empowered IoT: A Deep Learning Approach",
+   "authors": [
+    "Lei Wang",
+    "Xiaofang Sun",
+    "Ruihong Jiang",
+    "Wenyi Jiang",
+    "Zhangdui Zhong",
+    "Derrick Wing Kwan Ng"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, GREEN COMMUNICATION SYSTEMS & NETWORKS SYMPOSIUM: Optimal EE for Multi-MEC and Blockchain Empowered IoT: A Deep Learning Approach — Lei Wang, Xiaofang Sun, Ruihong Jiang, Wenyi Jiang, Zhangdui Zhong, Derrick Wing Kwan Ng"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (OPTICAL NETWORKS & SYSTEMS)",
+   "title": "Survivable Distributed Fiber Optic Sensors Placement against Single Link Failure",
+   "authors": [
+    "Zilong Ye",
+    "Philip N. Ji",
+    "Ting Wang"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, OPTICAL NETWORKS & SYSTEMS SYMPOSIUM: Survivable Distributed Fiber Optic Sensors Placement against Single Link Failure — Zilong Ye, Philip N. Ji, Ting Wang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION THEORY)",
+   "title": "Tight Bounds for the Probability of Connectivity in Random K-out Graphs",
+   "authors": [
+    "Mansi Sood",
+    "Osman Yagan"
+   ],
+   "track": "main",
+   "source": "https://icc2021.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2021 Best Paper Award, COMMUNICATION THEORY SYMPOSIUM: Tight Bounds for the Probability of Connectivity in Random K-out Graphs — Mansi Sood, Osman Yagan"
+  },
+  {
+   "venue": "ICC",
    "year": 2022,
    "award": "best",
    "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING & INTERNET)",
@@ -73267,6 +73469,36 @@
    "track": "main",
    "source": "https://infocom2025.ieee-infocom.org/awards",
    "evidence": "INFOCOM 2025 Best Paper Award: Safeguarding WiFi 7 and Beyond: Tackling Protocol-Aware Jamming in Multi-AP Coordination — Munmun Talukder, Linda Jiang Xie"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "BandWeave: Enhanced Channel Estimation in MIMO Networks with Multi-Band Fusion",
+   "authors": [
+    "Khandaker Foysal Haque",
+    "Francesca Meneghello",
+    "Jonathan Ashdown",
+    "Francesco Restuccia"
+   ],
+   "track": "main",
+   "source": "https://infocom2026.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2026 Best Paper Award: BandWeave: Enhanced Channel Estimation in MIMO Networks with Multi-Band Fusion — Khandaker Foysal Haque, Francesca Meneghello, Jonathan Ashdown, Francesco Restuccia"
+  },
+  {
+   "venue": "INFOCOM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "UNI-FI: Integrated Multi-Task Wi-Fi Sensing",
+   "authors": [
+    "Mengning Li",
+    "Wenye Wang"
+   ],
+   "track": "main",
+   "source": "https://infocom2026.ieee-infocom.org/awards",
+   "evidence": "INFOCOM 2026 Best Paper Award: UNI-FI: Integrated Multi-Task Wi-Fi Sensing — Mengning Li, Wenye Wang"
   },
   {
    "venue": "Interspeech",
