@@ -42,3 +42,8 @@ test("every listed language has its own folder, with exactly the English keys an
     assert.ok(m.extName.message.length <= 75 && m.extDescription.message.length <= 132, code + ": store limits");
   }
 });
+
+test("fromBrowser: Norwegian Bokmål and Nynorsk browsers are given the no folder; the others are left to Chrome", () => {
+  for (const ui of ["nb", "nb-NO", "nn", "nn_NO", "NB"]) assert.equal(i18n.fromBrowser(ui), "no", ui);
+  for (const ui of ["no", "en-US", "de", "zh-CN", "", undefined]) assert.equal(i18n.fromBrowser(ui), "", String(ui));
+});

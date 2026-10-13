@@ -67,5 +67,9 @@
     });
   }
 
-  return { LANGUAGES, codes, normalizeLanguage, normalizeScholarLanguage, scholarHl, isRtl, format };
+  // Chrome picks a _locales folder by the browser's own language and does not know that Norwegian Bokmål and Nynorsk (nb, nn) are our "no":
+  // for those the folder is asked for explicitly. "" means the browser's own choice is right.
+  const fromBrowser = (ui) => { const base = String(ui || "").split(/[-_]/)[0].toLowerCase(); return base === "nb" || base === "nn" ? "no" : ""; };
+
+  return { fromBrowser, LANGUAGES, codes, normalizeLanguage, normalizeScholarLanguage, scholarHl, isRtl, format };
 });

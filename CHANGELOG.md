@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.19.2 — 2026-10-13
+
+- A browser set to Norwegian Bokmål or Nynorsk (`nb`, `nn`) now gets the Norwegian interface (Chrome would not have mapped it to the `no` folder and shown English).
+- Accessibility: the list of unrecognised venues can be reached with the keyboard; an axe-core audit tool (`scripts/axe-audit.mjs`) covers the panel in twelve states, the settings page and the popup, and finds nothing.
+
 ## 2.19.1 — 2026-10-13
 
 - With every position switched off the panel says why nothing is highlighted (with a link to the settings) instead of four zeros.
