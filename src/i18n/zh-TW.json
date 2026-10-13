@@ -37,5 +37,14 @@
   "honest.text": "等級採用的是目前的名單，而非發表當時的等級；CCF 名單本身也聲明它並非學術評鑑。擴充功能從不臆測場所：無法判定的會列出，但不加標示。",
   "footer.license": "開放原始碼，採用 Apache License 2.0",
   "footer.privacy": "隱私權",
-  "footer.issues": "回報問題"
+  "footer.issues": "回報問題",
+  "demo.title": "試試看",
+  "demo.hint": "開啟或關閉各個角色，範例頁面會隨之變化，就像真實頁面一樣。",
+  "demo.paper": "範例論文",
+  "demo.you": "你",
+  "demo.role.first": "第一作者",
+  "demo.role.cofirst": "共同第一作者",
+  "demo.role.second": "第二作者",
+  "demo.role.last": "末位作者",
+  "demo.count": "篇論文已標示"
 }

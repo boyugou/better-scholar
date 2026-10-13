@@ -37,5 +37,14 @@
   "honest.text": "Xếp hạng là danh sách hiện tại, không phải xếp hạng tại thời điểm công bố, và chính danh sách CCF cũng nói rằng nó không phải là đánh giá. Tiện ích không bao giờ đoán nơi công bố: những gì không xác định được sẽ được liệt kê, không được đánh dấu.",
   "footer.license": "Mã nguồn mở, Apache License 2.0",
   "footer.privacy": "Quyền riêng tư",
-  "footer.issues": "Báo cáo sự cố"
+  "footer.issues": "Báo cáo sự cố",
+  "demo.title": "Thử ngay",
+  "demo.hint": "Bật và tắt vai trò: hồ sơ mẫu sẽ thay đổi theo, giống như trang thật.",
+  "demo.paper": "Bài báo mẫu",
+  "demo.you": "Bạn",
+  "demo.role.first": "Tác giả đầu",
+  "demo.role.cofirst": "Đồng tác giả đầu",
+  "demo.role.second": "Tác giả thứ hai",
+  "demo.role.last": "Tác giả cuối",
+  "demo.count": "bài báo được tô nổi"
 }

@@ -37,5 +37,14 @@
   "honest.text": "Rangi to aktualne listy, a nie ranga z chwili publikacji, a sama lista CCF zaznacza, że nie jest oceną. Rozszerzenie nigdy nie zgaduje miejsca publikacji: to, czego nie potrafi rozpoznać, jest wypisane, a nie oznaczone.",
   "footer.license": "Open source, licencja Apache License 2.0",
   "footer.privacy": "Prywatność",
-  "footer.issues": "Zgłoś problem"
+  "footer.issues": "Zgłoś problem",
+  "demo.title": "Wypróbuj",
+  "demo.hint": "Włącz i wyłącz role: przykładowy profil zmienia się tak samo jak prawdziwa strona.",
+  "demo.paper": "Przykładowa publikacja",
+  "demo.you": "Ty",
+  "demo.role.first": "Pierwszy autor",
+  "demo.role.cofirst": "Współpierwszy autor",
+  "demo.role.second": "Drugi autor",
+  "demo.role.last": "Ostatni autor",
+  "demo.count": "wyróżnionych publikacji"
 }

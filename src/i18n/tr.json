@@ -37,5 +37,14 @@
   "honest.text": "Sıralamalar, yayın tarihindeki değil, bugünkü listelerdir ve CCF listesinin kendisi bir değerlendirme olmadığını belirtir. Eklenti asla bir yayın yerini tahmin etmez: yerleştirilemeyenler listelenir, işaretlenmez.",
   "footer.license": "Açık kaynak, Apache License 2.0",
   "footer.privacy": "Gizlilik",
-  "footer.issues": "Sorun bildir"
+  "footer.issues": "Sorun bildir",
+  "demo.title": "Deneyin",
+  "demo.hint": "Rolleri açıp kapatın: örnek profil, gerçek sayfadaki gibi onları takip eder.",
+  "demo.paper": "Örnek yayın",
+  "demo.you": "Siz",
+  "demo.role.first": "Birinci yazar",
+  "demo.role.cofirst": "Ortak birinci yazar",
+  "demo.role.second": "İkinci yazar",
+  "demo.role.last": "Son yazar",
+  "demo.count": "vurgulanan yayın"
 }

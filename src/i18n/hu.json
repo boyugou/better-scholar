@@ -37,5 +37,14 @@
   "honest.text": "A rangok a mai listák, nem a megjelenés idején érvényes rangok, és maga a CCF-lista is kimondja, hogy nem értékelés. A bővítmény soha nem tippel: amit nem tud besorolni, az fel van sorolva, nem megjelölve.",
   "footer.license": "Nyílt forráskódú, Apache License 2.0",
   "footer.privacy": "Adatvédelem",
-  "footer.issues": "Probléma jelentése"
+  "footer.issues": "Probléma jelentése",
+  "demo.title": "Próbáld ki",
+  "demo.hint": "Kapcsold be és ki a szerepeket: a mintaprofil követi őket, ahogy a valódi oldal is.",
+  "demo.paper": "Mintacikk",
+  "demo.you": "Te",
+  "demo.role.first": "Első szerző",
+  "demo.role.cofirst": "Társ-első szerző",
+  "demo.role.second": "Második szerző",
+  "demo.role.last": "Utolsó szerző",
+  "demo.count": "kiemelt cikk"
 }

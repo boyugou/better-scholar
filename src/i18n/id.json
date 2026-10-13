@@ -37,5 +37,14 @@
   "honest.text": "Peringkat adalah daftar saat ini, bukan peringkat pada saat terbit, dan daftar CCF sendiri menyatakan bahwa itu bukan penilaian. Ekstensi ini tidak pernah menebak tempat terbit: yang tidak bisa dikenali akan dicantumkan, bukan diberi tanda.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privasi",
-  "footer.issues": "Laporkan masalah"
+  "footer.issues": "Laporkan masalah",
+  "demo.title": "Coba",
+  "demo.hint": "Nyalakan dan matikan peran: profil contoh ikut berubah, seperti halaman asli.",
+  "demo.paper": "Contoh makalah",
+  "demo.you": "Anda",
+  "demo.role.first": "Penulis pertama",
+  "demo.role.cofirst": "Penulis pertama bersama",
+  "demo.role.second": "Penulis kedua",
+  "demo.role.last": "Penulis terakhir",
+  "demo.count": "makalah yang disorot"
 }

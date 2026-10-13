@@ -37,5 +37,14 @@
   "honest.text": "I ranking sono le liste attuali, non il rango al momento della pubblicazione, e la stessa lista CCF dichiara di non essere una valutazione. L'estensione non indovina mai una sede: ciò che non riesce a collocare viene elencato, non segnato.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
-  "footer.issues": "Segnala un problema"
+  "footer.issues": "Segnala un problema",
+  "demo.title": "Provalo",
+  "demo.hint": "Attiva e disattiva i ruoli: il profilo di esempio segue, come la pagina vera.",
+  "demo.paper": "Articolo di esempio",
+  "demo.you": "Tu",
+  "demo.role.first": "Primo autore",
+  "demo.role.cofirst": "Co-primo autore",
+  "demo.role.second": "Secondo autore",
+  "demo.role.last": "Ultimo autore",
+  "demo.count": "articoli evidenziati"
 }

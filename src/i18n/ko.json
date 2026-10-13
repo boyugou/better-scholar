@@ -37,5 +37,14 @@
   "honest.text": "등급은 발표 당시가 아니라 현재 목록 기준이며, CCF 목록 자체도 평가가 아님을 밝히고 있습니다. 이 확장 프로그램은 학술지·학회를 추측하지 않습니다. 판단할 수 없는 것은 표시하지 않고 목록으로 보여 줍니다.",
   "footer.license": "오픈 소스, Apache License 2.0",
   "footer.privacy": "개인정보 처리방침",
-  "footer.issues": "문제 신고"
+  "footer.issues": "문제 신고",
+  "demo.title": "직접 해 보기",
+  "demo.hint": "역할을 켜고 끄면, 실제 페이지와 같이 샘플 프로필도 따라 바뀝니다.",
+  "demo.paper": "샘플 논문",
+  "demo.you": "본인",
+  "demo.role.first": "제1저자",
+  "demo.role.cofirst": "공동 제1저자",
+  "demo.role.second": "제2저자",
+  "demo.role.last": "마지막 저자",
+  "demo.count": "편의 논문이 강조됨"
 }

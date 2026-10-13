@@ -37,5 +37,14 @@
   "honest.text": "Les classements sont les listes actuelles, et non le rang à la date de publication ; la liste CCF elle-même précise qu'elle n'est pas une évaluation. L'extension ne devine jamais une publication : ce qu'elle ne peut pas situer est listé, sans être marqué.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Confidentialité",
-  "footer.issues": "Signaler un problème"
+  "footer.issues": "Signaler un problème",
+  "demo.title": "Essayez",
+  "demo.hint": "Activez et désactivez les rôles : le profil d'exemple suit, comme la vraie page.",
+  "demo.paper": "Article d'exemple",
+  "demo.you": "Vous",
+  "demo.role.first": "Premier auteur",
+  "demo.role.cofirst": "Co-premier auteur",
+  "demo.role.second": "Deuxième auteur",
+  "demo.role.last": "Dernier auteur",
+  "demo.count": "articles mis en évidence"
 }

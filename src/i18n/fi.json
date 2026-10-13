@@ -37,5 +37,14 @@
   "honest.text": "Luokitukset ovat nykyisiä listoja, eivät julkaisuhetken luokituksia, ja CCF-lista itse sanoo, ettei se ole arviointi. Laajennus ei koskaan arvaa foorumia: se, mitä ei voi sijoittaa, luetellaan mutta ei merkitä.",
   "footer.license": "Avoin lähdekoodi, Apache License 2.0",
   "footer.privacy": "Tietosuoja",
-  "footer.issues": "Ilmoita ongelmasta"
+  "footer.issues": "Ilmoita ongelmasta",
+  "demo.title": "Kokeile",
+  "demo.hint": "Kytke roolit päälle ja pois: esimerkkiprofiili seuraa mukana samalla tavalla kuin oikea sivu.",
+  "demo.paper": "Esimerkkijulkaisu",
+  "demo.you": "Sinä",
+  "demo.role.first": "Ensimmäinen kirjoittaja",
+  "demo.role.cofirst": "Jaettu ensimmäinen kirjoittaja",
+  "demo.role.second": "Toinen kirjoittaja",
+  "demo.role.last": "Viimeinen kirjoittaja",
+  "demo.count": "korostettua julkaisua"
 }

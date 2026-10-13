@@ -27,6 +27,27 @@ const FEATURES = [
   ["complete", "#34a853"], ["merge", "#f28b82"], ["yours", "#4dd0c4"], ["private", "#9aa0a6"]
 ];
 
+// The "Try it" demo: six invented papers, the reader's own name at the position that gives the row its role; the buttons switch roles on and off
+const DEMO = [
+  { role: "first", venue: "ICLR 2025", chips: ["CCF A", "CORE A*"] },
+  { role: "second", venue: "NeurIPS 2024", chips: ["CCF A", "CORE A*"] },
+  { role: "cofirst", venue: "CVPR 2024", chips: ["CCF A", "CORE A*"] },
+  { role: "last", venue: "ACL 2023", chips: ["CCF A", "CORE A*"] },
+  { role: "middle", venue: "EMNLP 2022", chips: ["CCF A", "CORE A*"] },
+  { role: "last", venue: "AAAI 2021", chips: ["CCF A", "CORE A"] }
+];
+const OTHERS = ["B Writer", "C Writer", "D Writer"];
+function demoAuthors(role, you) {
+  const me = `<mark>${you}</mark>`;
+  switch (role) {
+    case "first": return [me, ...OTHERS].join(", ");
+    case "cofirst": return [`${me}*`, "B Writer*", "C Writer"].join(", ");
+    case "second": return ["B Writer", me, "C Writer"].join(", ");
+    case "last": return [...OTHERS, me].join(", ");
+    default: return ["B Writer", "C Writer", me, "D Writer"].join(", ");
+  }
+}
+
 function page(lang) {
   const t = (k) => esc(strings[lang.code][k] ?? strings.en[k]);
   const url = `${SITE_URL}/${lang.code}/`;
@@ -84,6 +105,19 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
       <figure class="small"><img src="../assets/settings.png" alt="${t("shot2.caption")}" loading="lazy"><figcaption>${t("shot2.caption")}</figcaption></figure>
     </div>
   </section>
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <h2>${t("demo.title")}</h2>
+      <p class="note">${t("demo.hint")}</p>
+      <div class="roles" role="group" aria-label="${t("demo.title")}">
+${["first", "cofirst", "second", "last"].map((r) => `        <button type="button" class="role-btn" data-role="${r}" aria-pressed="true"><i></i>${t(`demo.role.${r}`)}</button>`).join("\n")}
+      </div>
+      <div class="demo-card" aria-live="polite">
+${DEMO.map((d, i) => `        <div class="paper" data-role="${d.role}"><b class="ptitle">${t("demo.paper")} ${i + 1}</b><span class="auth">${demoAuthors(d.role, t("demo.you"))}</span><span class="ven">${d.venue} ${d.chips.map((c) => `<em>${c}</em>`).join("")}</span></div>`).join("\n")}
+      </div>
+      <p class="demo-count"><b id="demo-n">0</b> ${t("demo.count")}</p>
+    </div>
+  </section>
   <section class="features">
     <div class="wrap grid">
 ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.title`)}</h3><p>${t(`f.${k}.text`)}</p></article>`).join("\n")}
@@ -116,6 +150,7 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
+<script src="../assets/demo.js" defer></script>
 </body>
 </html>
 `;

@@ -37,5 +37,14 @@
   "honest.text": "Os rankings são as listas atuais, não o ranking na data da publicação, e a própria lista da CCF diz que não é uma avaliação. A extensão nunca chuta um veículo: o que não consegue identificar é listado, não marcado.",
   "footer.license": "Código aberto, Apache License 2.0",
   "footer.privacy": "Privacidade",
-  "footer.issues": "Relatar um problema"
+  "footer.issues": "Relatar um problema",
+  "demo.title": "Experimente",
+  "demo.hint": "Ligue e desligue os papéis: o perfil de exemplo acompanha, como na página real.",
+  "demo.paper": "Artigo de exemplo",
+  "demo.you": "Você",
+  "demo.role.first": "Primeiro autor",
+  "demo.role.cofirst": "Coprimeiro autor",
+  "demo.role.second": "Segundo autor",
+  "demo.role.last": "Último autor",
+  "demo.count": "artigos destacados"
 }

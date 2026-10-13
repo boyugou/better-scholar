@@ -37,5 +37,14 @@
   "honest.text": "Ranky jsou aktuální seznamy, nikoli rank v době publikace, a samotný seznam CCF uvádí, že nejde o hodnocení. Rozšíření nikdy nehádá místo: co nelze zařadit, je uvedeno, ale neoznačeno.",
   "footer.license": "Open source, licence Apache License 2.0",
   "footer.privacy": "Ochrana soukromí",
-  "footer.issues": "Nahlásit problém"
+  "footer.issues": "Nahlásit problém",
+  "demo.title": "Vyzkoušejte",
+  "demo.hint": "Zapínejte a vypínejte role: ukázkový profil se mění stejně jako skutečná stránka.",
+  "demo.paper": "Ukázkový článek",
+  "demo.you": "Vy",
+  "demo.role.first": "První autor",
+  "demo.role.cofirst": "Spoluprvní autor",
+  "demo.role.second": "Druhý autor",
+  "demo.role.last": "Poslední autor",
+  "demo.count": "zvýrazněných článků"
 }

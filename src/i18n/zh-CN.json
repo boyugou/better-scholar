@@ -37,5 +37,14 @@
   "honest.text": "等级采用的是当前的名录，而非发表时的等级；CCF 名录本身也声明它不是学术评价。扩展从不猜测场所：无法确定的会列出，但不做标记。",
   "footer.license": "开源，采用 Apache License 2.0",
   "footer.privacy": "隐私",
-  "footer.issues": "反馈问题"
+  "footer.issues": "反馈问题",
+  "demo.title": "试一试",
+  "demo.hint": "打开或关闭各个角色，示例主页会像真实页面一样随之变化。",
+  "demo.paper": "示例论文",
+  "demo.you": "你",
+  "demo.role.first": "第一作者",
+  "demo.role.cofirst": "共同第一作者",
+  "demo.role.second": "第二作者",
+  "demo.role.last": "末位作者",
+  "demo.count": "篇论文已高亮"
 }

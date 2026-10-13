@@ -37,5 +37,14 @@
   "honest.text": "ランクは発表時点のものではなく現在のリストに基づいており、CCF のリスト自体も評価を目的としたものではないと明記しています。拡張機能は掲載先を推測しません。判定できないものは印を付けず、一覧で示します。",
   "footer.license": "オープンソース、Apache License 2.0",
   "footer.privacy": "プライバシー",
-  "footer.issues": "問題を報告"
+  "footer.issues": "問題を報告",
+  "demo.title": "試してみる",
+  "demo.hint": "役割をオン・オフすると、実際のページと同じようにサンプルのプロフィールも変わります。",
+  "demo.paper": "サンプル論文",
+  "demo.you": "あなた",
+  "demo.role.first": "筆頭著者",
+  "demo.role.cofirst": "共同筆頭著者",
+  "demo.role.second": "第二著者",
+  "demo.role.last": "最終著者",
+  "demo.count": "件の論文がハイライト中"
 }

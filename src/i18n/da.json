@@ -37,5 +37,14 @@
   "honest.text": "Rangeringerne er de nuværende lister, ikke rangen på udgivelsestidspunktet, og selve CCF-listen siger, at den ikke er en evaluering. Udvidelsen gætter aldrig på en kanal: det, den ikke kan placere, vises, men markeres ikke.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privatliv",
-  "footer.issues": "Anmeld et problem"
+  "footer.issues": "Anmeld et problem",
+  "demo.title": "Prøv det",
+  "demo.hint": "Slå rollerne til og fra: eksempelprofilen følger med, ligesom den rigtige side.",
+  "demo.paper": "Eksempelartikel",
+  "demo.you": "Du",
+  "demo.role.first": "Første forfatter",
+  "demo.role.cofirst": "Delt første forfatter",
+  "demo.role.second": "Anden forfatter",
+  "demo.role.last": "Sidste forfatter",
+  "demo.count": "fremhævede artikler"
 }

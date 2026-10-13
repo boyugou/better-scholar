@@ -37,5 +37,14 @@
   "honest.text": "Rangurile sunt listele de astăzi, nu rangul de la data publicării, iar lista CCF însăși spune că nu este o evaluare. Extensia nu ghicește niciodată o publicație: ce nu poate identifica este listat, nu marcat.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Confidențialitate",
-  "footer.issues": "Raportează o problemă"
+  "footer.issues": "Raportează o problemă",
+  "demo.title": "Încearcă",
+  "demo.hint": "Activează și dezactivează rolurile: profilul de exemplu urmează, la fel ca pagina reală.",
+  "demo.paper": "Lucrare de exemplu",
+  "demo.you": "Tu",
+  "demo.role.first": "Primul autor",
+  "demo.role.cofirst": "Co-primul autor",
+  "demo.role.second": "Al doilea autor",
+  "demo.role.last": "Ultimul autor",
+  "demo.count": "lucrări evidențiate"
 }

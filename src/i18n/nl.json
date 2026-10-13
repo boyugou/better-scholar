@@ -37,5 +37,14 @@
   "honest.text": "Rangen zijn de huidige lijsten, niet de rang op het moment van publicatie, en de CCF-lijst zelf zegt dat het geen beoordeling is. De extensie raadt nooit een medium: wat niet geplaatst kan worden, wordt vermeld, niet gemarkeerd.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
-  "footer.issues": "Een probleem melden"
+  "footer.issues": "Een probleem melden",
+  "demo.title": "Probeer het",
+  "demo.hint": "Zet de rollen aan en uit: het voorbeeldprofiel volgt, net als de echte pagina.",
+  "demo.paper": "Voorbeeldartikel",
+  "demo.you": "Jij",
+  "demo.role.first": "Eerste auteur",
+  "demo.role.cofirst": "Gedeeld eerste auteur",
+  "demo.role.second": "Tweede auteur",
+  "demo.role.last": "Laatste auteur",
+  "demo.count": "gemarkeerde artikelen"
 }

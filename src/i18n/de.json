@@ -37,5 +37,14 @@
   "honest.text": "Die Ränge sind die heutigen Listen, nicht der Rang zum Zeitpunkt der Veröffentlichung, und die CCF-Liste selbst erklärt, dass sie keine Bewertung ist. Die Erweiterung errät nie einen Publikationsort: Was sie nicht einordnen kann, wird aufgelistet, aber nicht markiert.",
   "footer.license": "Open Source, Apache License 2.0",
   "footer.privacy": "Datenschutz",
-  "footer.issues": "Problem melden"
+  "footer.issues": "Problem melden",
+  "demo.title": "Ausprobieren",
+  "demo.hint": "Schalten Sie die Rollen ein und aus: Das Beispielprofil folgt dabei, wie auf der echten Seite.",
+  "demo.paper": "Beispielarbeit",
+  "demo.you": "Sie",
+  "demo.role.first": "Erstautor",
+  "demo.role.cofirst": "Co-Erstautor",
+  "demo.role.second": "Zweitautor",
+  "demo.role.last": "Letztautor",
+  "demo.count": "hervorgehobene Arbeiten"
 }

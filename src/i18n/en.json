@@ -37,5 +37,14 @@
   "honest.text": "Ranks are today's lists, not the rank at the time of publication, and the CCF list itself says it is not an evaluation. The extension never guesses a venue: what it cannot place is listed, not marked.",
   "footer.license": "Open source, Apache License 2.0",
   "footer.privacy": "Privacy",
-  "footer.issues": "Report a problem"
+  "footer.issues": "Report a problem",
+  "demo.title": "Try it",
+  "demo.hint": "Switch the roles on and off: the sample profile follows, like the real page.",
+  "demo.paper": "Sample paper",
+  "demo.you": "You",
+  "demo.role.first": "First author",
+  "demo.role.cofirst": "Co-first author",
+  "demo.role.second": "Second author",
+  "demo.role.last": "Last author",
+  "demo.count": "papers highlighted"
 }
