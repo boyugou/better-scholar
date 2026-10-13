@@ -52,6 +52,23 @@ PDF is extracted). Edit those, never `src/data/ccf.js` / `core.js` / `awards.js`
 when they are stale. `data/awards-2026.json` entries need an official source URL and a quoted snippet
 that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 
+### Adding an award source
+
+1. Find the organisation's *own* page (the conference series, society or steering committee; never a
+   news item, Wikipedia or an aggregator) that lists winners with the paper's title and authors. A page
+   behind a bot check or a CAPTCHA is skipped, not worked around; record it in `docs/ROADMAP.md`.
+2. Save the page, then add a reader to `scripts/awards/tot.mjs` and register its mode in the dispatch and
+   `PAGES` tables. A PDF is first turned into text with `swift scripts/awards/pdf-text.swift file.pdf > file.txt`
+   (macOS PDFKit); the reader takes that text. Readers refuse what they do not recognise: a heading that
+   names the year, authors that are all person names, a line that is a title and not an author list.
+3. Run `node scripts/awards/tot.mjs <mode> <saved-file> <page-address> > raw.json` and read every entry
+   against the page. The command also drops any entry whose conference the page never mentions.
+4. Add a synthetic-page test in `test/awards-sources.test.js`, the page's host to
+   `test/fixtures/award-source-hosts.json`, then `node scripts/awards/merge-raw.mjs raw.json --write`,
+   `npm run data` and `node scripts/awards/coverage.mjs` (its output is the *Entries* row of `data/README.md`).
+5. A title the page misprints goes in `data/exclusions.json` under `correct`; update `data/README.md`,
+   `README.md`, the changelog and the version, and run `npm test` and `npm run test:e2e`.
+
 ## Chrome first
 
 Features, APIs and UI are designed for Chrome; Edge and other Chromium browsers should simply work.

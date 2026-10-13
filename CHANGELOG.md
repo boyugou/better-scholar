@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.113 — 2026-10-12
+
+- CONTRIBUTING.md: how to add an award source (official pages only, PDFs through `scripts/awards/pdf-text.swift`, the readers' refusals, the venue guard, tests, hosts, corrections).
+
 ## 2.10.112 — 2026-10-12
 
 - The award readers' command line now drops any entry whose conference the saved page never mentions. A fuzz run of every reader over 400 saved pages showed many readers accept a page meant for another (the SPAA reader parsed the RecSys page); every genuine page keeps all its entries.
