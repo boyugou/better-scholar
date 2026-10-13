@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7286
+  "count": 7336
  },
  "entries": [
   {
@@ -109913,6 +109913,786 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "SOUPS 2025: I never reuse passwords! Development and Validation of a Security and Privacy Social Desirability Scale (SP-SDS) for end users without a background in computer science — Laura Marie Abels, University of Bonn; Matthew Smith, University of Bonn and Fraunhofer FKIE; Anna-Marie Ortloff, University of Bonn"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Tight Bounds for Distributed Selection",
+   "authors": [
+    "Fabian Kuhn",
+    "Thomas Locher",
+    "Roger Wattenhofer"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2007 Best Paper Award: Fabian Kuhn, Thomas Locher and Roger Wattenhofer. Tight Bounds for Distributed Selection"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Universal Augmentation Schemes for Network Navigability: Overcoming the √n-Barrier",
+   "authors": [
+    "Pierre Fraigniaud",
+    "Cyril Gavoille",
+    "Emmanuelle Lebhar",
+    "Zvi Lotker",
+    "Adrian Kosowski"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2007 Best Paper Award: Pierre Fraigniaud, Cyril Gavoille, Emmanuelle Lebhar, Zvi Lotker and Adrian Kosowski. Universal Augmentation Schemes for Network Navigability: Overcoming the √n-Barrier"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Utilizing Shared Data in Chip Multiprocessors with the Nahalal Architecture",
+   "authors": [
+    "Zvika Guz",
+    "Idit Keidar",
+    "Avinoam Kolodny",
+    "Uri C. Weiser"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2008 Best Paper Award: Zvika Guz, Idit Keidar, Avinoam Kolodny and Uri C. Weiser. Utilizing Shared Data in Chip Multiprocessors with the Nahalal Architecture"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reducers and Other Cilk++ Hyperobjects",
+   "authors": [
+    "Matteo Frigo",
+    "Pablo Halpern",
+    "Charles E. Leiserson",
+    "Stephen Lewin-Berlin"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2009 Best Paper Award: Matteo Frigo, Pablo Halpern, Charles E. Leiserson, and Stephen Lewin-Berlin. Reducers and Other Cilk++ Hyperobjects"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Basic Network Creation Games",
+   "authors": [
+    "Noga Alon",
+    "Erik D. Demaine",
+    "MohammadTaghi Hajiaghayi",
+    "Tom Leighton"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2010 Best Paper Award: Noga Alon, Erik D. Demaine, MohammadTaghi Hajiaghayi and Tom Leighton. Basic Network Creation Games"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Graph Expansion and Communication Costs of Fast Matrix Multiplication",
+   "authors": [
+    "Grey Ballard",
+    "James Demmel",
+    "Olga Holtz",
+    "Oded Schwartz"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2011 Best Paper Award: Grey Ballard, James Demmel, Olga Holtz, and Oded Schwartz. Graph Expansion and Communication Costs of Fast Matrix Multiplication"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Memory-Mapping Support for Reducer Hyperobjects",
+   "authors": [
+    "I-Ting Lee",
+    "Aamir Shafi",
+    "Charles Leiserson"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2012 Best Paper Award: I-Ting Lee, Aamir Shafi, and Charles Leiserson. Memory-Mapping Support for Reducer Hyperobjects"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Fast Greedy Algorithms in MapReduce and Streaming",
+   "authors": [
+    "Ravi Kumar",
+    "Benjamin Moseley",
+    "Sergei Vassilvitskii",
+    "Andrea Vattani"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2013 Best Paper Award: Ravi Kumar, Benjamin Moseley, Sergei Vassilvitskii and Andrea Vattani. Fast Greedy Algorithms in MapReduce and Streaming"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "IRIS: A Robust Information System Against Insider DoS-Attacks",
+   "authors": [
+    "Martina Eikel",
+    "Christian Scheideler"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2013 Best Paper Award: Martina Eikel and Christian Scheideler. IRIS: A Robust Information System Against Insider DoS-Attacks"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Peeling Algorithms",
+   "authors": [
+    "Justin Thaler",
+    "Michael Mitzenmacher",
+    "Jiayang Jiang"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2014 Best Paper Award: Justin Thaler, Michael Mitzenmacher, and Jiayang Jiang. Parallel Peeling Algorithms"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Speed Scaling in the Non-clairvoyant Model",
+   "authors": [
+    "Yossi Azar",
+    "Nikhil Devanur",
+    "Zhiyi Huang",
+    "Debmalya Panigrahi"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2015 Best Paper Award: Yossi Azar, Nikhil Devanur, Zhiyi Huang and Debmalya Panigrahi. Speed Scaling in the Non-clairvoyant Model"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Lower Bounds for Modern Parallel Computation",
+   "authors": [
+    "Tim Roughgarden",
+    "Sergei Vassilvitskii",
+    "Joshua Wang"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2016 Best Paper Award: Tim Roughgarden, Sergei Vassilvitskii and Joshua Wang. On Lower Bounds for Modern Parallel Computation"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2016,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Lock-free Transactions without Aborts for Linked Data Structures",
+   "authors": [
+    "Deli Zhang",
+    "Damian Dechev"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2016 Outstanding Paper Award: Deli Zhang and Damian Dechev. Lock-free Transactions without Aborts for Linked Data Structures"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2016,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Randomized Approximate Nearest Neighbor Search with Limited Adaptivity",
+   "authors": [
+    "Mingmou Liu",
+    "Xiaoyin Pan",
+    "Yitong Yin"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2016 Outstanding Paper Award: Mingmou Liu, Xiaoyin Pan and Yitong Yin. Randomized Approximate Nearest Neighbor Search with Limited Adaptivity"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2016,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Robust and Probabilistic Failure-Aware Placement",
+   "authors": [
+    "Madhukar Korupolu",
+    "Rajmohan Rajaraman"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2016 Outstanding Paper Award: Madhukar Korupolu and Rajmohan Rajaraman. Robust and Probabilistic Failure-Aware Placement"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributed Partial Clustering",
+   "authors": [
+    "Sudipto Guha",
+    "Yi Li",
+    "Qin Zhang"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2017 Best Paper Award: Sudipto Guha, Yi Li and Qin Zhang. Distributed Partial Clustering"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Randomized Composable Coresets for Matching and Vertex Cover",
+   "authors": [
+    "Sepehr Assadi",
+    "Sanjeev Khanna"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2017 Best Paper Award: Sepehr Assadi and Sanjeev Khanna. Randomized Composable Coresets for Matching and Vertex Cover"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Minimum Cuts in Near-linear Work and Low Depth",
+   "authors": [
+    "Barbara Geissmann",
+    "Lukas Gianinazzi"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2018 Best Paper Award: Barbara Geissmann and Lukas Gianinazzi. Parallel Minimum Cuts in Near-linear Work and Low Depth"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Theoretically Efficient Parallel Graph Algorithms Can be Fast and Scalable",
+   "authors": [
+    "Laxman Dhulipala",
+    "Guy E. Blelloch",
+    "Julian Shun"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2018 Best Paper Award: Laxman Dhulipala, Guy E. Blelloch, and Julian Shun. Theoretically Efficient Parallel Graph Algorithms Can be Fast and Scalable"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Constant-Length Labeling Schemes for Deterministic Radio Broadcast",
+   "authors": [
+    "Faith Ellen",
+    "Barun Gorain",
+    "Avery Miller",
+    "Andrej Pelc"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2019 Best Paper Award: Faith Ellen, Barun Gorain, Avery Miller and Andrej Pelc. Constant-Length Labeling Schemes for Deterministic Radio Broadcast"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Sublinear Algorithms in T-interval Dynamic Networks",
+   "authors": [
+    "Irvan Jahja",
+    "Haifeng Yu"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2020 Best Paper Award: Irvan Jahja and Haifeng Yu. Sublinear Algorithms in T-interval Dynamic Networks"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "A Unified Sparsification Approach for Matching Problems in Graphs of Bounded Neighborhood Independence",
+   "authors": [
+    "Lazar Milenkovic",
+    "Shay Solomon"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2020 Outstanding Paper Award: Lazar Milenkovic and Shay Solomon. A Unified Sparsification Approach for Matching Problems in Graphs of Bounded Neighborhood Independence"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Faster Deterministic All Pairs Shortest Paths in Congest Model",
+   "authors": [
+    "Udit Agarwal",
+    "Vijaya Ramachandran"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2020 Outstanding Paper Award: Udit Agarwal and Vijaya Ramachandran. Faster Deterministic All Pairs Shortest Paths in Congest Model"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Optimal Parallel Algorithms in the Binary-Forking Model",
+   "authors": [
+    "Guy Blelloch",
+    "Jeremy Fineman",
+    "Yan Gu",
+    "Yihan Sun"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2020 Outstanding Paper Award: Guy Blelloch, Jeremy Fineman, Yan Gu and Yihan Sun. Optimal Parallel Algorithms in the Binary-Forking Model"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2020,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Parallel Planar Subgraph Isomorphism and Vertex Connectivity",
+   "authors": [
+    "Lukas Gianinazzi",
+    "Torsten Hoefler"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2020 Outstanding Paper Award: Lukas Gianinazzi and Torsten Hoefler. Parallel Planar Subgraph Isomorphism and Vertex Connectivity"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Minimum Cuts in O(m log^2(n)) Work and Low Depth",
+   "authors": [
+    "Daniel Anderson",
+    "Guy Blelloch"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2021 Best Paper Award: Daniel Anderson and Guy Blelloch. Parallel Minimum Cuts in O(m log^2(n)) Work and Low Depth"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Algorithms for Right-Sizing Heterogeneous Data Centers",
+   "authors": [
+    "Susanne Albers",
+    "Jens Quedenfeld"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2021 Outstanding Paper Award: Susanne Albers and Jens Quedenfeld. Algorithms for Right-Sizing Heterogeneous Data Centers"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Fast Stencil Computations using Fast Fourier Transforms",
+   "authors": [
+    "Zafar Ahmad",
+    "Rezaul Chowdhury",
+    "Rathish Das",
+    "Pramod Ganapathi",
+    "Aaron Gregory",
+    "Yimin Zhu"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2021 Outstanding Paper Award: Zafar Ahmad, Rezaul Chowdhury, Rathish Das, Pramod Ganapathi, Aaron Gregory and Yimin Zhu. Fast Stencil Computations using Fast Fourier Transforms"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Low-Span Parallel Algorithms for the Binary-Forking Model",
+   "authors": [
+    "Zafar Ahmad",
+    "Rezaul Chowdhury",
+    "Rathish Das",
+    "Pramod Ganapathi",
+    "Aaron Gregory",
+    "Mohammad Javanmard"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2021 Outstanding Paper Award: Zafar Ahmad, Rezaul Chowdhury, Rathish Das, Pramod Ganapathi, Aaron Gregory and Mohammad Javanmard. Low-Span Parallel Algorithms for the Binary-Forking Model"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2021,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Non-Clairvoyant Scheduling with Predictions",
+   "authors": [
+    "Sungjin Im",
+    "Ravi Kumar",
+    "Mahshid Montazer Qaem",
+    "Manish Purohit"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2021 Outstanding Paper Award: Sungjin Im, Ravi Kumar, Mahshid Montazer Qaem and Manish Purohit. Non-Clairvoyant Scheduling with Predictions"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parallel Batch-Dynamic Algorithms for k-Core Decomposition and Related Graph Problems",
+   "authors": [
+    "Quanquan C. Liu",
+    "Jessica Shi",
+    "Shangdi Yu",
+    "Laxman Dhulipala",
+    "Julian Shun"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2022 Best Paper Award: Quanquan C. Liu, Jessica Shi, Shangdi Yu, Laxman Dhulipala, and Julian Shun. Parallel Batch-Dynamic Algorithms for k-Core Decomposition and Related Graph Problems"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Online Parallel Paging with Optimal Makespan",
+   "authors": [
+    "Kunal Agrawal",
+    "Michael A. Bender",
+    "Rathish Das",
+    "William Kuszmaul",
+    "Enoch Peserico",
+    "Michele Scquizzato"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2022 Outstanding Paper Award: Kunal Agrawal, Michael A. Bender, Rathish Das, William Kuszmaul, Enoch Peserico, and Michele Scquizzato. Online Parallel Paging with Optimal Makespan"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Parallel Shortest Paths with Negative Edge Weights",
+   "authors": [
+    "Nairen Cao",
+    "Jeremy T. Fineman",
+    "Katina Russell"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2022 Outstanding Paper Award: Nairen Cao, Jeremy T. Fineman, and Katina Russell. Parallel Shortest Paths with Negative Edge Weights"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2022,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "PREP-UC: A Practical Replicated Persistent Universal Construction",
+   "authors": [
+    "Gaetano C. Coccimiglio",
+    "Trevor A. Brown",
+    "Srivatsan Ravi"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2022 Outstanding Paper Award: Gaetano C. Coccimiglio, Trevor A. Brown, and Srivatsan Ravi. PREP-UC: A Practical Replicated Persistent Universal Construction"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Nearly Work-Efficient Parallel DFS in Undirected Graphs",
+   "authors": [
+    "Mohsen Ghaffari",
+    "Christoph Grunau",
+    "Jiahao Qu"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2023 Best Paper Award: Mohsen Ghaffari, Christoph Grunau, and Jiahao Qu. Nearly Work-Efficient Parallel DFS in Undirected Graphs"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Almost Optimal Massively Parallel Algorithms for k-Center Clustering and Diversity Maximization",
+   "authors": [
+    "Alireza Haqi",
+    "Hamid Zarrabi-Zadeh"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2023 Outstanding Paper Award: Alireza Haqi and Hamid Zarrabi-Zadeh. Almost Optimal Massively Parallel Algorithms for k-Center Clustering and Diversity Maximization"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence",
+   "authors": [
+    "Nairen Cao",
+    "Shang-En Huang",
+    "Hsin-Hao Su"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2023 Outstanding Paper Award: Nairen Cao, Shang-En Huang, and Hsin-Hao Su. Nearly Optimal Parallel Algorithms for Longest Increasing Subsequence"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2023,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Provably-Efficient and Internally-Deterministic Parallel Union-Find",
+   "authors": [
+    "Alexander Fedorov",
+    "Diba Hashemi",
+    "Giorgi Nadiradze",
+    "Dan Alistarh"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2023 Outstanding Paper Award: Alexander Fedorov, Diba Hashemi, Giorgi Nadiradze, and Dan Alistarh. Provably-Efficient and Internally-Deterministic Parallel Union-Find"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributed Load Balancing in the Face of Reappearance Dependencies",
+   "authors": [
+    "Kunal Agrawal",
+    "William Kuszmaul",
+    "Zhe Wang",
+    "Jinhao Zhao"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2024 Best Paper Award: Kunal Agrawal, William Kuszmaul, Zhe Wang, and Jinhao Zhao. Distributed Load Balancing in the Face of Reappearance Dependencies"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Expediting Hazard Pointers with Bounded RCU Critical Sections",
+   "authors": [
+    "Jeonghyeon Kim",
+    "Jaehwang Jung",
+    "Jeehoon Kang"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2024 Best Paper Award: Jeonghyeon Kim, Jaehwang Jung, and Jeehoon Kang. Expediting Hazard Pointers with Bounded RCU Critical Sections"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Hardness and Tight Approximations of Demand Strip Packing",
+   "authors": [
+    "Klaus Jansen",
+    "Malin Rau",
+    "Malte Tutas"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2024 Outstanding Paper Award: Klaus Jansen, Malin Rau, and Malte Tutas. Hardness and Tight Approximations of Demand Strip Packing"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Online Load and Graph Balancing for Random Order Inputs",
+   "authors": [
+    "Sungjin Im",
+    "Ravi Kumar",
+    "Shi Li",
+    "Aditya Petety",
+    "Manish Purohit"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2024 Outstanding Paper Award: Sungjin Im, Ravi Kumar, Shi Li, Aditya Petety, and Manish Purohit. Online Load and Graph Balancing for Random Order Inputs"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Parallel and (Nearly) Work-Efficient Dynamic Programming",
+   "authors": [
+    "Xiangyun Ding",
+    "Yan Gu",
+    "Yihan Sun"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2024 Outstanding Paper Award: Xiangyun Ding, Yan Gu, and Yihan Sun. Parallel and (Nearly) Work-Efficient Dynamic Programming"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Don’t Melt Your Cache: Low Associativity with Heat Sink",
+   "authors": [
+    "Michael Bender",
+    "Alex Conway",
+    "Daniel DeLayo",
+    "Martin Farach-Colton",
+    "Jaehyun Han",
+    "Linfeng He",
+    "Rob Johnson",
+    "Sudarsun Kannan",
+    "William Kuszmaul",
+    "Donald Porter",
+    "Evan West"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2025 Distinguished Paper Award: Michael Bender, Alex Conway, Daniel DeLayo, Martin Farach-Colton, Jaehyun Han, Linfeng He, Rob Johnson, Sudarsun Kannan, William Kuszmaul, Donald Porter, and Evan West. Don’t Melt Your Cache: Low Associativity with Heat Sink"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Formal Machine-Verification of MemSnap: An Efficient, Far-Future Linearizable Snapshot Algorithm",
+   "authors": [
+    "Siddhartha Jayanti",
+    "Ugur Yavuz"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2025 Distinguished Paper Award: Siddhartha Jayanti and Ugur Yavuz. Formal Machine-Verification of MemSnap: An Efficient, Far-Future Linearizable Snapshot Algorithm"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Parallel Minimum-Cost Flow in Near-Linear Work and Square Root Depth for Dense Instances",
+   "authors": [
+    "Jan van den Brand",
+    "Hossein Gholizadeh",
+    "Yonggang Jiang",
+    "Tijn de Vos"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2025 Distinguished Paper Award: Jan van den Brand, Hossein Gholizadeh, Yonggang Jiang, and Tijn de Vos. Parallel Minimum-Cost Flow in Near-Linear Work and Square Root Depth for Dense Instances"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Tight Bounds for Online Balanced Partitioning in the Generalized Learning Model",
+   "authors": [
+    "Harald Räcke",
+    "Stefan Schmid",
+    "Ruslan Zabrodin"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2025 Distinguished Paper Award: Harald Räcke, Stefan Schmid, and Ruslan Zabrodin. Tight Bounds for Online Balanced Partitioning in the Generalized Learning Model"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Scheduler Augmentation: A Lightweight, Customizable, Low-Cost Profiling Technique for Fork-Join Parallel Programs",
+   "authors": [
+    "Sam Westrick",
+    "Darshan Dinesh Kumar",
+    "Seong-Heon Jung"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2026 Best Paper Award: Sam Westrick, Darshan Dinesh Kumar, and Seong-Heon Jung. Scheduler Augmentation: A Lightweight, Customizable, Low-Cost Profiling Technique for Fork-Join Parallel Programs"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Energy-Efficient Aggregation and Minimum-Degree Spanning Trees in Radio Networks",
+   "authors": [
+    "Yi-Jun Chang",
+    "Yang Ze Guan"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2026 Outstanding Paper Award: Yi-Jun Chang and Yang Ze Guan. Energy-Efficient Aggregation and Minimum-Degree Spanning Trees in Radio Networks"
+  },
+  {
+   "venue": "SPAA",
+   "year": 2026,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "The Local/Global Disk Problem: How to Use Shared High-Bandwidth Storage Economically",
+   "authors": [
+    "Michael A. Bender",
+    "Philip Bille",
+    "Martin Farach-Colton",
+    "Jeremy Fineman",
+    "Michael Goodrich",
+    "Hanna Komlós",
+    "Inge Li Gørtz",
+    "Bradley C. Kuszmaul",
+    "William Kuszmaul",
+    "Rose Silver",
+    "Todd Veldhuizen",
+    "Renfei Zhou"
+   ],
+   "track": "main",
+   "source": "https://spaa.acm.org/best-paper-award/",
+   "evidence": "SPAA 2026 Outstanding Paper Award: Michael A. Bender, Philip Bille, Martin Farach-Colton, Jeremy Fineman, Michael Goodrich, Hanna Komlós, Inge Li Gørtz, Bradley C. Kuszmaul, William Kuszmaul, Rose Silver, Todd Veldhuizen, Renfei Zhou. The Local/Global Disk Problem: How to Use Shared High-Bandwidth Storage Economically"
   },
   {
    "venue": "STOC",

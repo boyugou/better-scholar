@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.101 — 2026-10-12
+
+- SPAA's best, outstanding and distinguished papers, 2007–2026 (50 papers; the list had none for SPAA) from the SPAA steering committee's own page (`tot.mjs spaa-awards`). The list has 7336 awards.
+
 ## 2.10.100 — 2026-10-12
 
 - RECOMB's best papers and best student / young scientist papers, 2001–2026 (26 papers; the list had none for RECOMB) from the conference series' own awards page (`tot.mjs recomb-awards`). The list has 7286 awards.

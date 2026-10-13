@@ -2327,6 +2327,12 @@ test("RECOMB awards page: 'YYYY: Authors. “Title”.' lines under the best pap
   assert.deepEqual(parseRecombAwards(h, "https://recomb.org/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2025 best | Ann Lee; Bo Chan; Cy Dunn | A deep reinforcement learning framework for haplotype assembly", "2012 best | Ed Fox; Flo Gray | Evolution of genome organization by duplication and loss", "2026 best | Gil Hart; Hal Ito | Optimization-based phenotype randomization for studies", "2024 student | Jo Kim; Al Roe | Secure discovery of genetic relatives across datasets"]);
 });
 
+test("SPAA awards page: a year line ('2025' or '2011:'), the heading (Best / Outstanding / Distinguished Paper[s]:) and one 'Authors. Title' line per paper, a middle initial not splitting the line; the page footer ends the list", async () => {
+  const { parseSpaaAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>2025</p><p>Distinguished Papers:</p><p>Michael A. Bender, Alex Conway, and Evan West. Don’t melt your cache: low associativity with heat</p><p>2024</p><p>Best Papers:</p><p>Ann Lee and Bo Chan. Expediting hazard pointers with bounded critical sections</p><p>Outstanding Papers:</p><p>Cy Dunn. Parallel and nearly work-efficient dynamic programming</p><p>2011:</p><p>Best Paper:</p><p>Ed Fox, Flo Gray, and Gil Hart. Graph expansion and communication costs</p><p>Proudly powered by WordPress</p><p>2007:</p><p>Best Paper:</p><p>Hal Ito. Not read after the footer at all</p>`;
+  assert.deepEqual(parseSpaaAwards(h, "https://spaa.acm.org/best-paper-award/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 distinguished | Michael A. Bender; Alex Conway; Evan West", "2024 best | Ann Lee; Bo Chan", "2024 outstanding | Cy Dunn", "2011 best | Ed Fox; Flo Gray; Gil Hart"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
