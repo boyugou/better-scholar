@@ -2263,3 +2263,17 @@ test("MICCAI best paper page: the winner and the runners-up, one line of authors
   assert.deepEqual(parseMiccaiBest(h, src).entries.map((e) => `${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["best | Ann Lee; Bo Chan; Cy Dunn | Fit pixels, get labels: implicit networks", "runner-up | Ed Fox; Flo Gray | Multifrequency wave inversion"]);
   assert.equal(parseMiccaiBest(h.replace("2025</h2>", "2024</h2>"), src).entries.length, 0);
 });
+
+test("ECAI paper awards page: the main-track outstanding papers (\"M1210. Authors. “Title”\"); the PAIS winner is left out", async () => {
+  const { parseEcaiAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>ECAI 2025 Bologna</p><h3>ECAI Outstanding Paper Awards</h3><p>Each of the following papers is a winner:</p><p>M1210. Ann Lee, Bo Chan and Cy Dunn. &#8220;A framework for agent bias recognition&#8221;</p><p>M8556. Ed Fox and Flo Gray. “Conditional dominance analysis for planning”</p><h3>PAIS Outstanding Paper Award</h3><p>P8580. Gil Hart and Hal Ito. “Sorting parcels with reinforcement learning”</p><p>ORGANIZING SECRETARIAT</p>`;
+  assert.deepEqual(parseEcaiAwards(h, "https://ecai2025.org/paper-awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["outstanding | Ann Lee; Bo Chan; Cy Dunn | A framework for agent bias recognition", "outstanding | Ed Fox; Flo Gray | Conditional dominance analysis for planning"]);
+});
+
+test("SAT awards pages: 2025's 'conferred on the paper Title doi by Authors for …' and 2024's 'Best paper award: “Title”, by Authors' lines; runners-up, test of time and the PhD award are left out", async () => {
+  const { parseSatAwards } = await import("../scripts/awards/tot.mjs");
+  const h25 = `<p>SAT 2025 awards</p><p>The Best Paper Award of SAT 2025 was conferred on the paper</p><p>Streamlining distributed solver design 10.4230/LIPIcs.SAT.2025.27 by Ann Lee, Bo Chan and Cy Dunn for for new bases.</p><p>The Best Student Paper of SAT 2025 was conferred on the paper Enumerating all boolean matches 10.4230/LIPIcs.SAT.2025.22 by</p><p>Ed Fox and Flo Gray for for a new solution.</p><p>The award committee also selected two runners-up: Some Runner Up Paper Title, by Gil Hart</p>`;
+  assert.deepEqual(parseSatAwards(h25, "https://satisfiability.org/SAT25/awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["best | Ann Lee; Bo Chan; Cy Dunn | Streamlining distributed solver design", "student | Ed Fox; Flo Gray | Enumerating all boolean matches"]);
+  const h24 = `<p>SAT 2024 paper awards</p><p>Best paper award: "The strength of the dominance rule", by Ann Lee and Bo Chan</p><p>Best student paper award: “Speeding-up pseudo-Boolean propagation” by Cy Dunn, Ed Fox, and Flo Gray (student author)</p><p>Best student paper runner-up: “Optimal layout synthesis for circuits” by Gil Hart</p><p>SAT 2024 - August</p>`;
+  assert.deepEqual(parseSatAwards(h24, "https://satisfiability.org/SAT24/awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")}`), ["best | Ann Lee; Bo Chan", "student | Cy Dunn; Ed Fox; Flo Gray"]);
+});

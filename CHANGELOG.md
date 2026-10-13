@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.91 — 2026-10-12
+
+- ECAI 2025's three main-track outstanding papers and SAT 2024's and 2025's best paper and best student paper (7 papers; the list had none for either) from the conferences' own awards pages (`tot.mjs ecai-awards`, `sat-awards`). The list has 6830 awards.
+
 ## 2.10.90 — 2026-10-12
 
 - MICCAI 2025's best paper and its two runners-up (3 papers; the list had none for MICCAI) from the conference's own page (`tot.mjs miccai-best`). The list has 6823 awards.

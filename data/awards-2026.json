@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6823
+  "count": 6830
  },
  "entries": [
   {
@@ -48995,6 +48995,53 @@
    "evidence": "Semantic Sensitivities and Inconsistent Predictions: Measuring the Fragility of NLI Models — Outstanding Paper Award"
   },
   {
+   "venue": "ECAI",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Analysing Temporal Reasoning in Description Logics Using Formal Grammars",
+   "authors": [
+    "Camille Bourgaux",
+    "Anton Gnatenko",
+    "Michaël Thomazo"
+   ],
+   "track": "main",
+   "source": "https://ecai2025.org/paper-awards/",
+   "evidence": "ECAI 2025 Outstanding Paper Award: Camille Bourgaux, Anton Gnatenko and Michaël Thomazo. “Analysing Temporal Reasoning in Description Logics Using Formal Grammars”"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Conditional Dominance Analysis for Classical Planning",
+   "authors": [
+    "Anna Wilhelm",
+    "Álvaro Torralba"
+   ],
+   "track": "main",
+   "source": "https://ecai2025.org/paper-awards/",
+   "evidence": "ECAI 2025 Outstanding Paper Award: Anna Wilhelm and Álvaro Torralba. “Conditional Dominance Analysis for Classical Planning”"
+  },
+  {
+   "venue": "ECAI",
+   "year": 2025,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "FAIRGAME: a Framework for AI Agents Bias Recognition using Game Theory",
+   "authors": [
+    "Alessio Buscemi",
+    "Daniele Proverbio",
+    "Alessandro Di Stefano",
+    "The Anh Han",
+    "German Castignani",
+    "Pietro Liò"
+   ],
+   "track": "main",
+   "source": "https://ecai2025.org/paper-awards/",
+   "evidence": "ECAI 2025 Outstanding Paper Award: Alessio Buscemi, Daniele Proverbio, Alessandro Di Stefano, The Anh Han, German Castignani and Pietro Liò. “FAIRGAME: a Framework for AI Agents Bias Recognition using Game Theory”"
+  },
+  {
    "venue": "ECCV",
    "year": 1992,
    "award": "best",
@@ -93262,6 +93309,65 @@
    "track": "main",
    "source": "https://sp2025.ieee-security.org/awards.html",
    "evidence": "Distinguished Paper Awards: Verifiable Boosted Tree Ensembles — Stefano Calzavara, Lorenzo Cazzaro, Claudio Lucchese, Giulio Ermanno Pibiri"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Strength of the Dominance Rule",
+   "authors": [
+    "Leszek Aleksander Kołodziejczyk",
+    "Neil Thapen"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "SAT 2024 Best paper award: “The Strength of the Dominance Rule”, by Leszek Aleksander Kołodziejczyk and Neil Thapen"
+  },
+  {
+   "venue": "SAT",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Speeding-up Pseudo-Boolean Propagation",
+   "authors": [
+    "Robert Nieuwenhuis",
+    "Albert Oliveras",
+    "Enric Rodríguez Carbonell",
+    "Rui Zhao"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT24/awards/",
+   "evidence": "SAT 2024 Best student paper award: “Speeding-up Pseudo-Boolean Propagation”, by Robert Nieuwenhuis, Albert Oliveras, Enric Rodríguez Carbonell, and Rui Zhao (student author)"
+  },
+  {
+   "venue": "SAT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Streamlining Distributed SAT Solver Design",
+   "authors": [
+    "Dominik Schreiber",
+    "Niccolò Rigi-Luperti",
+    "Armin Biere"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT25/awards/",
+   "evidence": "SAT 2025 Best Paper Award was conferred on the paper Streamlining Distributed SAT Solver Design by Dominik Schreiber, Niccolò Rigi-Luperti and Armin Biere"
+  },
+  {
+   "venue": "SAT",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Enumerating All Boolean Matches",
+   "authors": [
+    "Alexander Nadel",
+    "Yogev Shalmon"
+   ],
+   "track": "main",
+   "source": "https://satisfiability.org/SAT25/awards/",
+   "evidence": "SAT 2025 Best Student Paper was conferred on the paper Enumerating All Boolean Matches by Alexander Nadel and Yogev Shalmon"
   },
   {
    "venue": "SC",
