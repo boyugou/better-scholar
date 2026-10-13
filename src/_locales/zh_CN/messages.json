@@ -462,7 +462,7 @@
     "message": "把这里的所有设置恢复为默认值？"
   },
   "optStorage": {
-    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步；不会发送到任何地方。"
+    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步；除非你打开 Semantic Scholar，否则不会发送到任何地方。"
   },
   "optSample": {
     "message": "示例论文"

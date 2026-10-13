@@ -8,8 +8,8 @@ Scholar Roles & Ranks works entirely in your browser.
   `chrome.storage.sync` (so they follow your Chrome account), and — in `chrome.storage.local` — whether the
   panel is folded and a cache of the paper pages you asked it to read (kept at most 90 days). The settings page
   can clear that cache. Nothing else.
-- **What it sends:** nothing. There is no analytics, no tracking, no account, no remote code and no
-  third-party request. The extension's own network activity is **Resolve**, which — only when you click it —
+- **What it sends:** nothing by default. There is no analytics, no tracking, no account, no remote code and no
+  third-party request (the one optional exception is the Semantic Scholar lookup below). The extension's own network activity is **Resolve**, which — only when you click it —
   opens each paper's own page on `scholar.google.*` (same origin, about once a second) to read the full author
   list. It stops at the first CAPTCHA or HTTP 429/503.
 - **Semantic Scholar (off by default):** if you switch on *Semantic Scholar → Complete author lists with Semantic

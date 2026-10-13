@@ -480,7 +480,7 @@
     "message": "要將這些設定全部還原為預設值嗎？"
   },
   "optStorage": {
-    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。不會傳送到任何地方。"
+    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。除非您開啟 Semantic Scholar，否則不會傳送到任何地方。"
   },
   "optSample": {
     "message": "範例論文"

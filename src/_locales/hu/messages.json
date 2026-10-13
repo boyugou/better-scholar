@@ -462,7 +462,7 @@
     "message": "Visszaállítod az összes beállítást az alapértékekre?"
   },
   "optStorage": {
-    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. Semmi nem kerül elküldésre sehová."
+    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. Semmi nem kerül elküldésre sehová, kivéve ha bekapcsolod a Semantic Scholart."
   },
   "optSample": {
     "message": "Minta cikk"

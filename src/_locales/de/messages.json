@@ -480,7 +480,7 @@
     "message": "Alle diese Einstellungen auf die Standardwerte zurücksetzen?"
   },
   "optStorage": {
-    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Es wird nichts irgendwohin gesendet."
+    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Es wird nichts irgendwohin gesendet, außer du schaltest Semantic Scholar ein."
   },
   "optSample": {
     "message": "Beispiel-Paper"

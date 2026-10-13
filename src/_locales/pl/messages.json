@@ -462,7 +462,7 @@
     "message": "Przywrócić wszystkie te ustawienia do wartości domyślnych?"
   },
   "optStorage": {
-    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Nic nie jest nigdzie wysyłane."
+    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Nic nie jest nigdzie wysyłane, chyba że włączysz Semantic Scholar."
   },
   "optSample": {
     "message": "Przykładowa praca"

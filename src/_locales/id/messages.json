@@ -462,7 +462,7 @@
     "message": "Kembalikan semua pengaturan ini ke default?"
   },
   "optStorage": {
-    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Tidak ada yang dikirim ke mana pun."
+    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Tidak ada yang dikirim ke mana pun kecuali Anda mengaktifkan Semantic Scholar."
   },
   "optSample": {
     "message": "Contoh makalah"

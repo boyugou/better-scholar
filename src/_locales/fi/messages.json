@@ -480,7 +480,7 @@
     "message": "Palautetaanko kaikki nämä asetukset oletusarvoihin?"
   },
   "optStorage": {
-    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Mitään ei lähetetä minnekään."
+    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Mitään ei lähetetä minnekään, ellet ota Semantic Scholaria käyttöön."
   },
   "optSample": {
     "message": "Esimerkkiartikkeli"

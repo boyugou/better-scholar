@@ -480,7 +480,7 @@
     "message": "Al deze instellingen terugzetten naar de standaardwaarden?"
   },
   "optStorage": {
-    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. Er wordt niets verstuurd."
+    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. Er wordt niets verstuurd, tenzij je Semantic Scholar inschakelt."
   },
   "optSample": {
     "message": "Voorbeeldpaper"

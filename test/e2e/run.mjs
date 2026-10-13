@@ -364,6 +364,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
     await page.waitForFunction(() => !document.querySelector('[data-act="load-all"]'));
 
+    // -- 6a6. the card links under the header: one per card, each takes its card to the top of the window
+    await opts.bringToFront();
+    const links = await opts.locator(".toc a").count();
+    assert.equal(links, await opts.locator("#controls > section.card").count());
+    await opts.locator(".toc a").nth(3).click();
+    await opts.waitForFunction(() => { const t = document.querySelector("#card-3").getBoundingClientRect().top; return t >= 0 && t < 140; }, null, { timeout: 5000 });
+    await opts.waitForFunction(() => (document.querySelector(".toc a[aria-current]") || {}).dataset?.card === "card-3", null, { timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
+    await opts.evaluate(() => window.scrollTo(0, 0));
+    ok(`settings page: ${links} links to its cards under the header, each one scrolls its card into view`);
+
     // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
     await opts.bringToFront();
     await opts.setViewportSize({ width: 1360, height: 640 });
@@ -449,6 +459,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
+    await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
     await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
     const resolvedExpect = matrixOf(expected(profile, { resolveHidden: true }));

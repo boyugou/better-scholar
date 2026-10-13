@@ -142,6 +142,18 @@
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, cacheNote)));
   showCacheCount();
 
+  // A row of links to the cards, pinned under the header: the page is long. The card in view is marked.
+  const cards = [...$("controls").querySelectorAll(":scope > section.card")];
+  const toc = h("nav", { class: "toc", "aria-label": t("optHeading") },
+    ...cards.map((c, i) => { c.id = "card-" + i; return h("a", { href: "#card-" + i, "data-card": c.id, onClick: (e) => { e.preventDefault(); c.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); } }, c.querySelector("h2").textContent); }));
+  $("controls").prepend(toc);
+  try {
+    const seen = new Set();
+    const mark = () => { const first = cards.find((c) => seen.has(c.id)); toc.querySelectorAll("a").forEach((a) => { if (first && a.dataset.card === first.id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); }); };
+    const io = new IntersectionObserver((entries) => { for (const e of entries) { if (e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id); } mark(); }, { rootMargin: "-70px 0px -55% 0px" });
+    cards.forEach((c) => io.observe(c));
+  } catch (e) { /* no observer: no marker */ }
+
   // ---- the preview -------------------------------------------------------
   // Four invented papers, one per position, with the chips a real one could carry.
   const top = (abbr, name) => ({ ccf: { tier: "A", name, abbr, rule: "acronym" }, core: { rank: "A*", name, abbr, rule: "acronym" } });

@@ -47,7 +47,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   of Awards / Oral / Spotlight / Highlight, the summary panel and each of its parts (the role × rank table, the awards and talks counts, the filters, the citation totals, the loaded-papers status, the name help — keep the filters and totals, say, without the table),
   and whether the whole paper list loads by itself. A live preview shows the result and open Scholar tabs update at once; whatever you switch
   off disappears from the page instead of staying as a control.
-- **Private by design** — no accounts, no analytics, no third-party requests. The
+- **Private by design** — no accounts, no analytics, no tracking, and no third-party request unless you switch on the optional Semantic Scholar lookup (it receives only a paper's title). The
   rankings are bundled in the extension. Settings sync through your Chrome account.
   See [`PRIVACY.md`](PRIVACY.md).
 - **Easy to correct** — a venue that has no rank? *Report* in the panel opens a pre-filled issue with the

@@ -480,7 +480,7 @@
     "message": "Rétablir tous ces réglages à leurs valeurs par défaut ?"
   },
   "optStorage": {
-    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Rien n’est envoyé nulle part."
+    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Rien n’est envoyé nulle part, sauf si vous activez Semantic Scholar."
   },
   "optSample": {
     "message": "Article d’exemple"

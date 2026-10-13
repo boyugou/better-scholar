@@ -480,7 +480,7 @@
     "message": "Bu ayarların tümü varsayılanlara sıfırlansın mı?"
   },
   "optStorage": {
-    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Hiçbir yere bir şey gönderilmez."
+    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Semantic Scholar'ı açmadığınız sürece hiçbir yere bir şey gönderilmez."
   },
   "optSample": {
     "message": "Örnek makale"

@@ -480,7 +480,7 @@
     "message": "Restaurar todas estas configurações para os padrões?"
   },
   "optStorage": {
-    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. Nada é enviado a lugar nenhum."
+    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. Nada é enviado a lugar nenhum, a menos que você ative o Semantic Scholar."
   },
   "optSample": {
     "message": "Artigo de exemplo"

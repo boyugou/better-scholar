@@ -480,7 +480,7 @@
     "message": "Ripristinare tutte queste impostazioni ai valori predefiniti?"
   },
   "optStorage": {
-    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. Non viene inviato nulla da nessuna parte."
+    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. Non viene inviato nulla da nessuna parte, a meno che tu non attivi Semantic Scholar."
   },
   "optSample": {
     "message": "Articolo di esempio"

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.14.1 — 2026-10-12
+
+- Settings page: a row of links to its cards under the header (the page had grown long); the card in view is marked.
+- The privacy wording (settings footer, README, PRIVACY.md) says that nothing is sent anywhere unless you switch on the Semantic Scholar lookup.
+
 ## 2.14.0 — 2026-10-12
 
 - The panel can list **where the highlighted papers appear**: the ranked venues, most papers first; click one to show just its papers. It has its own switch (Top venues) and is off until you turn it on.

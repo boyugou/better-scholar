@@ -480,7 +480,7 @@
     "message": "Återställa alla dessa inställningar till standardvärdena?"
   },
   "optStorage": {
-    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Inget skickas någonstans."
+    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Inget skickas någonstans om du inte aktiverar Semantic Scholar."
   },
   "optSample": {
     "message": "Exempelartikel"
