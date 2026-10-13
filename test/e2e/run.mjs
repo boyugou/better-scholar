@@ -958,12 +958,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       const opts = await openOptions(ctx4);
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), panel: { show: true, summary: true, marks: true, filters: true, metrics: true, years: true, venues: true, status: true, names: true } } }); });
       const langs = fs.readdirSync(path.join(repo, "src/_locales"));
+      // (the open profile reloads itself when the language setting changes: a reload of ours may meet that one half way, so it is asked again)
+      const reloadSafe = async () => { for (let i = 0; i < 4; i++) { try { await page.waitForLoadState("load"); await page.reload(); return; } catch (e) { await page.waitForTimeout(300); } } await page.reload(); };
       const bad = [];
       for (const lang of langs) {
         await opts.evaluate(async (l) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: l } }); }, lang);
         for (const [w, mode] of [[1360, "sidebar"], [760, "wide"]]) {
           await page.setViewportSize({ width: w, height: 900 });
-          await page.reload();
+          await reloadSafe();
           await page.waitForSelector("#rr-panel");
           await page.waitForFunction((m) => document.getElementById("rr-panel").classList.contains("rr-wide") === (m === "wide"), mode);
           const over = await page.evaluate(() => {
