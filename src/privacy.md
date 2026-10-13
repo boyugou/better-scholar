@@ -3,7 +3,8 @@
 Scholar Roles & Ranks works entirely in your browser.
 
 - **What it reads:** the paper list of a Google Scholar *profile* page you have open (titles, author lines,
-  venue lines, years, citation counts). It runs only on `scholar.google.*/citations*` pages.
+  venue lines, years, citation counts). It runs only on `scholar.google.*/citations*` pages. A second, tiny script (the setting *Open Scholar in*) is
+  loaded on Scholar's search and profile pages: it reads that one setting and, if you chose a language, reopens the page with that `hl=`; it reads nothing from the page.
 - **What it stores:** your display settings and the extra name spellings you add per profile, in
   `chrome.storage.sync` (so they follow your Chrome account), and — in `chrome.storage.local` — whether the
   panel is folded and a cache of the paper pages you asked it to read (kept at most 90 days). The settings page
