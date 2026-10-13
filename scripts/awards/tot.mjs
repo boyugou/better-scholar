@@ -162,6 +162,7 @@ const PAGES = {
   ics: "https://ics2024.github.io/",
   ipdps: "https://www.ipdps.org/ipdps2024/",
   ecir: "https://ecir2025.eu/best-papers-award/",
+  "focs-best": "https://focs.computer.org/2025/best-paper-awards/",
   "cikm-year": "https://www.cikm2021.org/programme/best-paper-nominations",
   "www-best": "https://www2022.thewebconf.org/awards",
   sc: "https://sc25.supercomputing.org/program/awards/",
@@ -2134,6 +2135,29 @@ export function parseEcirAwards(html, source) {
   return { entries, skipped };
 }
 
+// FOCS 2025's best-paper page (focs.computer.org/2025/best-paper-awards/): the headings "Best Paper Award co-winners" and "Machtey Award for Best Student Paper co-winners", then per paper a title line and "Authors: A, B, and C" (or "Author: A").
+// Only 2025's site has such a page; the other years' awards pages list the test of time papers (read from the TCMF page).
+export function parseFocsBest(html, source) {
+  const entries = [], skipped = [];
+  const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
+  const year = parseInt((/focs\.computer\.org\/(\d{4})\//.exec(source) || [])[1], 10);
+  if (!year) return { entries, skipped: ["no year in the address"] };
+  const KIND = (l) => (/^Best Paper Award(?: co-winners)?$/i.test(l) ? ["best", "Best Paper Award"] : /^Machtey Award for Best Student Paper(?: co-winners)?$/i.test(l) ? ["student", "Machtey Award for Best Student Paper"] : null);
+  let kind = null;
+  for (let i = 0; i + 1 < ls.length; i++) {
+    const k = KIND(ls[i]);
+    if (k) { kind = k; continue; }
+    if (/^Privacy Policy/.test(ls[i])) break;
+    const a = /^Authors?:\s*(.+)$/.exec(ls[i + 1]);
+    if (!kind || !a) continue;
+    const who = a[1].replace(/\s*\([^()]*\)/g, "").split(/\s*,\s*(?:and\s+)?|\s+and\s+/).map((n) => n.trim()).filter(Boolean), title = cleanTitle(ls[i]);   // ("Mi-Ying (Miryam) Huang": the nickname goes)
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "FOCS", year, award: kind[0], awardLabel: kind[1], title, authors: who, track: "main", source, evidence: `FOCS ${year} ${kind[1]}: ${title} — ${who.join(", ")}` });
+    else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+    i++;
+  }
+  return { entries, skipped };
+}
+
 // The authors may run over several source lines ("…, Pierre-" / "Yves Strub"), the title too; a line that ends in a hyphen is joined to the next without a space.
 // The POPL page writes "(for 2016): Title" for its newest rows and "(for 2006) Title" for the rest. The year heading is the award's, the paper is of the year in
 // the parenthesis. A page's footer ("Page generated …") ends the list.
@@ -2189,7 +2213,7 @@ export function parseFocs(html, source = PAGES.focs) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
-  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, "asplos-year": parseAsplosYear, "sigcomm-year": parseSigcommProgram, "colt-year": parseColtAwards, "corl-year": parseCorlAwards, "rss-year": parseRssAwards, "sosp-program": parseSospProgram, recsys: parseRecsysBest, aistats: parseAistatsAwards, uai: parseUaiAwards, icassp: parseIcasspAwards, coling: parseColingAwards, interspeech: parseInterspeechBest, ecml: parseEcmlAwards, infocom: parseInfocomBest, eurosp: parseEurospAwards, "wsdm-year": parseWsdmYear, "ppopp-year": parsePpoppYear, ics: parseIcsAwards, ipdps: parseIpdpsBest, ecir: parseEcirAwards, "cikm-year": parseCikmNominations, "mobisys-year": parseMobisysYear, "mobicom-year": parseMobicomYear, sc: parseScAwards, "www-best": parseWwwBest, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
+  const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, "asplos-year": parseAsplosYear, "sigcomm-year": parseSigcommProgram, "colt-year": parseColtAwards, "corl-year": parseCorlAwards, "rss-year": parseRssAwards, "sosp-program": parseSospProgram, recsys: parseRecsysBest, aistats: parseAistatsAwards, uai: parseUaiAwards, icassp: parseIcasspAwards, coling: parseColingAwards, interspeech: parseInterspeechBest, ecml: parseEcmlAwards, infocom: parseInfocomBest, eurosp: parseEurospAwards, "wsdm-year": parseWsdmYear, "ppopp-year": parsePpoppYear, ics: parseIcsAwards, ipdps: parseIpdpsBest, ecir: parseEcirAwards, "focs-best": parseFocsBest, "cikm-year": parseCikmNominations, "mobisys-year": parseMobisysYear, "mobicom-year": parseMobicomYear, sc: parseScAwards, "www-best": parseWwwBest, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);

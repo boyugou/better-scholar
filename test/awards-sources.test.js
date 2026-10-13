@@ -2011,3 +2011,9 @@ test("ECIR best-papers page: label line, authors' line, title, per award; honora
   const h = `<p>Best Papers Award</p><p>Best Demo</p><p>Ann Lee, Bo Chan and Cy Dunn</p><p>A retrieval and ranking demo for case reports</p><p>Best Short Paper, Honorable Mention</p><p>Ed Fox</p><p>An honoured short paper about retrieval</p><p>Best Short Student Paper</p><p>Flo Gray and Gil Hart</p><p>Scalability of sparse retrieval algorithms</p><p>Best Papers Committee</p>`;
   assert.deepEqual(parseEcirAwards(h, "https://ecir2025.eu/best-papers-award/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["category A retrieval and ranking demo for case reports | Ann Lee; Bo Chan; Cy Dunn", "student Scalability of sparse retrieval algorithms | Flo Gray; Gil Hart"]);
 });
+
+test("FOCS best-paper page: titles with 'Authors:' lines under the best paper and Machtey headings; a nickname bracket is dropped", async () => {
+  const { parseFocsBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Paper Award co-winners</p><p>Explicit lossless vertex expanders</p><p>Authors: Ann Lee, Bo Chan, and Cy Dunn</p><p>Machtey Award for Best Student Paper co-winners</p><p>Obfuscation of unitary quantum programs</p><p>Authors: Ed (Eddie) Fox and Flo Gray</p><p>Privacy Policy</p>`;
+  assert.deepEqual(parseFocsBest(h, "https://focs.computer.org/2025/best-paper-awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Explicit lossless vertex expanders | Ann Lee; Bo Chan; Cy Dunn", "student Obfuscation of unitary quantum programs | Ed Fox; Flo Gray"]);
+});

@@ -719,8 +719,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("setting off: the list stays at Scholar's first 100 papers and the panel offers 'Load all'");
 
     await setPref(opts, "autoLoad", true);
-    await off.bringToFront();
-    await off.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length > 100, null, { timeout: 15000 });
+    // (a tab presses only while it is the one in front, and the browser sometimes takes a moment to hand the front to it: ask again if it has not started)
+    for (let attempt = 0; attempt < 3; attempt++) {
+      await off.bringToFront();
+      try { await off.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length > 100, null, { timeout: 12000 }); break; } catch (e) { if (attempt === 2) throw e; }
+    }
     await setPref(opts, "autoLoad", false);
     await off.bringToFront();
     await off.waitForFunction(() => !/^Loading/.test((document.querySelector('[data-rr="coverage"]') || {}).textContent || ""), null, { timeout: 15000 });

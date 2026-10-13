@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6515
+  "count": 6520
  },
  "entries": [
   {
@@ -54520,6 +54520,84 @@
    "paperYear": 2004,
    "source": "https://tc.computer.org/tcmf/focs-test-time-award/",
    "evidence": "FOCS 2024 Test of Time Award (2004): Daniele Micciancio: Worst-case to average-case reductions based on Gaussian measures"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Breaking a Long-Standing Barrier: 2-ε Approximation for Steiner Forest",
+   "authors": [
+    "Ali Ahmadi",
+    "Iman Gholami",
+    "MohammadTaghi Hajiaghayi",
+    "Peyman Jabbarzade",
+    "Mohammad Mahdavi"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2025/best-paper-awards/",
+   "evidence": "FOCS 2025 Best Paper Award: Breaking a Long-Standing Barrier: 2-ε Approximation for Steiner Forest — Ali Ahmadi, Iman Gholami, MohammadTaghi Hajiaghayi, Peyman Jabbarzade, Mohammad Mahdavi"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Explicit Lossless Vertex Expanders",
+   "authors": [
+    "Jun-Ting Hsieh",
+    "Alexander Lubotzky",
+    "Sidhanth Mohanty",
+    "Assaf Reiner",
+    "Rachel Yun Zhang"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2025/best-paper-awards/",
+   "evidence": "FOCS 2025 Best Paper Award: Explicit Lossless Vertex Expanders — Jun-Ting Hsieh, Alexander Lubotzky, Sidhanth Mohanty, Assaf Reiner, Rachel Yun Zhang"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quasipolynomial bounds for the corners theorem",
+   "authors": [
+    "Michael Jaber",
+    "Yang P. Liu",
+    "Shachar Lovett",
+    "Anthony Ostuni",
+    "Mehtaab Sawhney"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2025/best-paper-awards/",
+   "evidence": "FOCS 2025 Best Paper Award: Quasipolynomial bounds for the corners theorem — Michael Jaber, Yang P. Liu, Shachar Lovett, Anthony Ostuni, Mehtaab Sawhney"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Gödel in Cryptography: Effectively Zero Knowledge Proofs for NP with No Interaction, No Setup, and Perfect Soundness",
+   "authors": [
+    "Rahul Ilango"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2025/best-paper-awards/",
+   "evidence": "FOCS 2025 Machtey Award for Best Student Paper: Gödel in Cryptography: Effectively Zero Knowledge Proofs for NP with No Interaction, No Setup, and Perfect Soundness — Rahul Ilango"
+  },
+  {
+   "venue": "FOCS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Machtey Award for Best Student Paper",
+   "title": "Obfuscation of Unitary Quantum Programs",
+   "authors": [
+    "Mi-Ying Huang",
+    "Er-Cheng Tang"
+   ],
+   "track": "main",
+   "source": "https://focs.computer.org/2025/best-paper-awards/",
+   "evidence": "FOCS 2025 Machtey Award for Best Student Paper: Obfuscation of Unitary Quantum Programs — Mi-Ying Huang, Er-Cheng Tang"
   },
   {
    "venue": "FOCS",

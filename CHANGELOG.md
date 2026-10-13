@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.57 — 2026-10-12
+
+- FOCS 2025's three best papers and two Machtey Award (best student paper) papers from the conference's own best-paper page (`tot.mjs focs-best`); FOCS had only its test of time papers. The list has 6520 awards.
+- The e2e check "switching the setting on loads the open profile's list" timed out once (a tab presses only while it is in front, and the browser can be slow to hand the front to it); it now asks for the front again, up to three times, before failing.
+
 ## 2.10.56 — 2026-10-12
 
 - Three best papers USENIX's own list has gained since it was last read: FAST 2025 (Ananke), USENIX ATC 2002 (DAFS) and WOOT 2011 (iClass key diversification). Re-reading the live lists is a cheap freshness check.
