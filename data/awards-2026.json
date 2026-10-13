@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6643
+  "count": 6646
  },
  "entries": [
   {
@@ -109449,6 +109449,54 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VM '04: Semantic Remote Attestation—A Virtual Machine Directed Approach to Trusted Computing — Vivek Haldar, University of California, Irvine; Deepak Chandra, University of California, Irvine; Michael Franz, University of California, Irvine"
+  },
+  {
+   "venue": "VRST",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Walk This Beam: Impact of Different Balance Assistance Strategies and Height Exposure on Performance and Physiological Arousal in VR",
+   "authors": [
+    "Dennis Dietz",
+    "Carl Oechsner",
+    "Changkun Ou",
+    "Francesco Chiossi",
+    "Fabio Sarto",
+    "Sven Mayer",
+    "Andreas Butz"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2022/",
+   "evidence": "VRST 2022 Best Paper: Walk This Beam: Impact of Different Balance Assistance Strategies and Height Exposure on Performance and Physiological Arousal in VR — Dennis Dietz, Carl Oechsner, Changkun Ou, Francesco Chiossi, Fabio Sarto, Sven Mayer, Andreas Butz"
+  },
+  {
+   "venue": "VRST",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Intuitive User Interfaces for Real-Time Magnification in Augmented Reality",
+   "authors": [
+    "Ryan Schubert",
+    "Gerd Bruder",
+    "Gregory Welch"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2023/",
+   "evidence": "VRST 2023 Best Paper: Intuitive User Interfaces for Real-Time Magnification in Augmented Reality — Ryan Schubert, Gerd Bruder, Gregory Welch"
+  },
+  {
+   "venue": "VRST",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Stay Vigilant: The Threat of a Replication Crisis in VR Locomotion Research",
+   "authors": [
+    "Daniel Zielasko",
+    "Tim Weissker"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2023/",
+   "evidence": "VRST 2023 Best Paper: Stay Vigilant: The Threat of a Replication Crisis in VR Locomotion Research — Daniel Zielasko, Tim Weissker"
   },
   {
    "venue": "VRST",

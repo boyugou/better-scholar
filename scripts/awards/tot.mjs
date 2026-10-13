@@ -2469,13 +2469,32 @@ export function parseBmvcAwards(html, source) {
 }
 
 // A VRST year's home page (vrst.acm.org/vrst<year>/): under "Best Paper" (2025: "VRST 2025 Paper Awards" above it) a title line and an authors' line per paper, up to the next heading ("Best Paper – Honorable Mention", "Paper Honorable Mentions", "Best Poster", …).
-// Only 2024 and 2025 are laid out like this (2022 wraps the title over lines, 2023 prints the authors first). The page's <title> must name the year.
+// 2022 (a quoted title over lines) and 2023 (the authors before each title, a tie) have their own forms. The page's <title> must name the year.
 export function parseVrstBest(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/vrst(\d{4})/.exec(source) || [])[1], 10);
   const ty = (/<title>[^<]*VRST (\d{4})/i.exec(html) || [])[1];
-  if (!year || (ty && parseInt(ty, 10) !== year) || ![2024, 2025].includes(year)) return { entries, skipped: ["not a page this reader knows"] };
+  if (!year || (ty && parseInt(ty, 10) !== year) || ![2022, 2023, 2024, 2025].includes(year)) return { entries, skipped: ["not a page this reader knows"] };
+  const put = (t0, a0) => {
+    const who = names(a0), title = cleanTitle(t0.replace(/^[“"]|[”"]$/g, ""));
+    if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "VRST", year, award: "best", awardLabel: "Best Paper Award", title, authors: who, track: "main", source, evidence: `VRST ${year} Best Paper: ${title} — ${who.join(", ")}` });
+    else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+  };
+  if (year === 2023) {                                                                    // "Best Papers (tie):" then the authors and the title of each paper
+    const j = ls.findIndex((l) => /^Best Papers \(tie\):$/.test(l));
+    for (let i = j + 1; j >= 0 && i + 1 < ls.length && !/^Best |^Sponsors/.test(ls[i]); i += 2) put(ls[i + 1], ls[i]);
+    return { entries, skipped };
+  }
+  if (year === 2022) {                                                                    // "Best paper award", the quoted title over one or two lines, then the authors, then "Abstract"
+    const j = ls.findIndex((l) => /^Best paper award$/i.test(l));
+    if (j >= 0) {
+      let t = ls[j + 1], n = j + 2;
+      while (t && !/["”]$/.test(t) && ls[n]) t += " " + ls[n++];
+      put(t, ls[n] || "");
+    }
+    return { entries, skipped };
+  }
   const i0 = ls.findIndex((l, i) => l === "Best Paper" && /^(?:Awards|VRST \d{4} Paper Awards)$/.test(ls[i - 1] || ""));
   if (i0 < 0) return { entries, skipped: ["no best paper list"] };
   for (let i = i0 + 1; i + 1 < ls.length; i += 2) {

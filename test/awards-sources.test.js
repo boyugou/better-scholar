@@ -2123,3 +2123,11 @@ test("VRST home page: title and authors lines under 'Best Paper', up to the hono
   assert.deepEqual(parseVrstBest(h, "https://vrst.acm.org/vrst2024/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["An in-situ experiment of mixed reality applications in education | Ann Lee; Bo Chan; Cy Dunn"]);
   assert.equal(parseVrstBest(h, "https://vrst.acm.org/vrst2023/").entries.length, 0);
 });
+
+test("VRST 2023's tie (authors before each title) and 2022's quoted two-line title with its authors below", async () => {
+  const { parseVrstBest } = await import("../scripts/awards/tot.mjs");
+  const a = `<title>VRST 2023</title><p>Awards:</p><p>Best Papers (tie):</p><p>Ann Lee and Bo Chan</p><p>Stay vigilant: the threat of a replication crisis in locomotion research</p><p>Cy Dunn, Ed Fox and Flo Gray</p><p>Intuitive interfaces for real-time magnification in augmented reality</p><p>Best Poster (Expert Voters):</p><p>Gil Hart</p><p>A detectability of hand offset study</p>`;
+  assert.deepEqual(parseVrstBest(a, "https://vrst.acm.org/vrst2023/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Stay vigilant: the threat of a replication crisis in locomotion research | Ann Lee; Bo Chan", "Intuitive interfaces for real-time magnification in augmented reality | Cy Dunn; Ed Fox; Flo Gray"]);
+  const b = `<title>VRST 2022</title><p>AWARDS</p><p>Best paper award</p><p>"Walk this beam: impact of different balance</p><p>assistance strategies on performance in VR"</p><p>Ivy Jones, Kay Lowe</p><p>Abstract</p><p>Honorable Mention Award</p>`;
+  assert.deepEqual(parseVrstBest(b, "https://vrst.acm.org/vrst2022/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Walk this beam: impact of different balance assistance strategies on performance in VR | Ivy Jones; Kay Lowe"]);
+});

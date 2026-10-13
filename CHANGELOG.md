@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.71 — 2026-10-12
+
+- VRST's best papers of 2022 (one) and 2023 (a tie of two), which the home pages print in two further layouts (`tot.mjs vrst-best`). The list has 6646 awards.
+
 ## 2.10.70 — 2026-10-12
 
 - VRST's best papers of 2024 (three) and 2025 (one) from the symposium's own home pages (`tot.mjs vrst-best`); the list had none for VRST. The list has 6643 awards.
