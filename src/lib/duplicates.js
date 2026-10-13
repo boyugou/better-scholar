@@ -27,7 +27,7 @@
   function plan(entries) {
     const groups = new Map();
     entries.forEach((e, i) => {
-      const k = key(e.title, e.authorsText);
+      const k = e.key !== undefined ? e.key : key(e.title, e.authorsText);       // (a caller may hand over keys it computed once)
       if (!k) return;
       if (!groups.has(k)) groups.set(k, []);
       groups.get(k).push(i);

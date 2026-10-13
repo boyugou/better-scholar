@@ -86,10 +86,11 @@
 
   // ---- duplicates: with the setting on, an entry that repeats another is hidden and the most cited one shows the total -------------
 
+  const dupEntry = (r) => ({ key: r.dupKey !== undefined ? r.dupKey : (r.dupKey = B.duplicates.key(r.raw.title, r.raw.authorsText)), citations: r.raw.citations });
   const live = () => state.rows.filter((r) => !r.dupHidden);
   function applyMerge() {
     const on = prefs.mergeDuplicates;
-    const plan = on ? B.duplicates.plan(state.rows.map((r) => ({ title: r.raw.title, authorsText: r.raw.authorsText, citations: r.raw.citations }))) : null;
+    const plan = on ? B.duplicates.plan(state.rows.map(dupEntry)) : null;
     state.rows.forEach((r, i) => {
       r.dupHidden = !!plan && !plan.keep[i];
       r.shown = plan ? plan.citations[i] : r.raw.citations;
@@ -225,7 +226,7 @@
       metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
-        repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map((r) => ({ title: r.raw.title, authorsText: r.raw.authorsText, citations: r.raw.citations }))).keep.filter((k) => !k).length,
+        repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },
