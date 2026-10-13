@@ -41,10 +41,13 @@ data, and why there is no build step.
 | `lib/metrics.js` | h-index / i10, the role × tier summary, matrix filtering, clipboard text. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), press *Show more* until the list is complete (`loadAll`). |
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
+| `lib/duplicates.js` | Entries that are one paper listed twice (same title apart from capitals / accents / punctuation, same first-author surname): which one stays and the citations it shows. Used when the *Merge duplicates* setting is on. |
+| `lib/i18n.js` | The 30 interface languages, Scholar's `hl=` value for each, and Chrome's message format (`format`). |
+| `content/semantic.js` | Optional (setting, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title is the paper's. |
 | `lib/prefs.js` | What to show (`prefs`) and per-device view state (`ui`): shapes, defaults, normalising, migration from the pre-2.2 combined record, and the rules (which ranking the table uses, which marks are visible). |
 | `content/chips.js` | The rank and award / talk chips; shared by the Scholar page and the settings page's preview. |
 | `content/panel.js` | The panel: renders a model, reports intent via callbacks, owns no state. What it shows at all is decided by `prefs`. |
-| `content/main.js` | Wires it together: prefs, filters, decoration, observers, messages to the popup. |
+| `content/main.js` | Wires it together: prefs, filters, decoration, duplicate merging, observers, messages to the popup. Also applies the language (`B.dom.useLanguage()` before anything is drawn; a changed language or Scholar language reloads the page) and the role colours (CSS custom properties `--rr-c-<role>` on `<html>`). |
 | `content/store.js` | `chrome.storage` wrappers + migration; degrades to memory if the extension context disappears. |
 | `options/*` | The settings page: switches saved at once, with a live preview — the real `content/panel.js` handed a model built from invented papers (`panelModel()` in `options.js` follows `main.js`'s `model()`), above sample rows built from `content/chips.js`. |
 | `background.js` | Opens the settings page when the panel asks (a content script cannot). Nothing else. |
