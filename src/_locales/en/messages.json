@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Clear"
+  },
+  "noRolesHint": {
+    "message": "No author position is switched on, so nothing is highlighted."
   }
 }

@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Tøm"
+  },
+  "noRolesHint": {
+    "message": "Ingen forfatterplass er slått på, så ingenting blir uthevet."
   }
 }

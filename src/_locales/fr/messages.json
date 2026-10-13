@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Effacer"
+  },
+  "noRolesHint": {
+    "message": "Aucune position d’auteur n’est activée, donc rien n’est mis en évidence."
   }
 }

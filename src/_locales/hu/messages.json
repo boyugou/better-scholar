@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "Törlés"
+  },
+  "noRolesHint": {
+    "message": "Egyetlen szerzői pozíció sincs bekapcsolva, ezért semmi sincs kiemelve."
   }
 }

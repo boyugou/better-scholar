@@ -218,7 +218,7 @@
       if (parts.status) lines.push(...status);
       if (parts.names && c.absent > 0 && m.nameHints.suggestions.length) {
         lines.push(h("div", { class: "rr-cover-line", "data-rr": "suggest" }, h("span", { class: "rr-note" }, t("variantSuggest")),
-          ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
+          ...m.nameHints.suggestions.map((sg) => h("button", { class: "rr-link rr-pill", type: "button", "data-act": "suggest-variant", title: t("variantSuggestTip", [String(sg.rows)]),
             onClick: () => cb.onAddVariant(sg.name) }, `${sg.name} (${sg.rows})`))));
       }
       if (parts.status && c.unmatched.length) {
@@ -260,6 +260,11 @@
       let scope = roleNames.join(", ");
       try { scope = new Intl.ListFormat(B.dom.langTag(), { style: "long", type: "conjunction" }).format(roleNames); } catch (e) { /* the plain list */ }
       if (scope && (m.filters.yearStart != null || m.filters.yearEnd != null)) scope += " · " + (m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…");
+      if (!roleNames.length) {                                              // nothing is highlighted: say why, instead of four zeros
+        metricsSec.replaceChildren(h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
+          h("div", { class: "rr-faint", "data-rr": "no-roles" }, t("noRolesHint") + " ", h("button", { class: "rr-link", type: "button", onClick: () => cb.onSettings() }, t("settingsOpen"))));
+        return;
+      }
       metricsSec.replaceChildren(...[                                       // (replaceChildren(null) would print "null")
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
         scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,

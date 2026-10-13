@@ -100,16 +100,16 @@
     "message": "CORE"
   },
   "roleFirst": {
-    "message": "Erst"
+    "message": "Erstautor"
   },
   "roleCofirst": {
-    "message": "Ko-Erst"
+    "message": "Ko-Erstautor"
   },
   "roleSecond": {
-    "message": "Zweit"
+    "message": "Zweitautor"
   },
   "roleLast": {
-    "message": "Letzt"
+    "message": "Letztautor"
   },
   "roleMiddle": {
     "message": "Übrige"
@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Löschen"
+  },
+  "noRolesHint": {
+    "message": "Keine Autorenposition ist eingeschaltet, daher wird nichts hervorgehoben."
   }
 }

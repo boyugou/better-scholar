@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Tyhjennä"
+  },
+  "noRolesHint": {
+    "message": "Yhtäkään kirjoittajapaikkaa ei ole kytketty päälle, joten mitään ei korosteta."
   }
 }

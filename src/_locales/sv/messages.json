@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Rensa"
+  },
+  "noRolesHint": {
+    "message": "Ingen författarplats är påslagen, så ingenting markeras."
   }
 }

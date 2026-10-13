@@ -272,3 +272,8 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 #rr-panel:lang(ja), #rr-panel:lang(zh), #rr-panel:lang(ko), #rr-panel:lang(th), #rr-panel:lang(ar), #rr-panel:lang(he) { line-height: 1.6; }
 #rr-panel:lang(th) .rr-faint, #rr-panel:lang(ar) .rr-faint, #rr-panel:lang(he) .rr-faint, #rr-panel:lang(ja) .rr-faint, #rr-panel:lang(zh) .rr-faint, #rr-panel:lang(ko) .rr-faint { font-size: 12px; line-height: 1.55; }
 #rr-panel:lang(ja) { word-break: auto-phrase; }
+#rr-panel .rr-row[hidden] + .rr-year { margin-top: 0; }
+/* a suggested spelling is an action that changes the table: a button-like pill, not a link in a sentence */
+#rr-panel .rr-pill { display: inline-flex; align-items: center; padding: 1px 9px; border: 1px solid #c1c8ef; border-radius: 12px; background: #fff; font-size: 11.5px; }
+#rr-panel .rr-pill:hover { background: #e8f0fe; text-decoration: none; }
+#rr-panel .rr-cover-line[data-rr="suggest"] { flex-wrap: wrap; justify-content: flex-start; }

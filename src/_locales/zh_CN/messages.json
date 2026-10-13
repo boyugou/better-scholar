@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "清除"
+  },
+  "noRolesHint": {
+    "message": "没有打开任何作者位次，所以没有高亮的论文。"
   }
 }

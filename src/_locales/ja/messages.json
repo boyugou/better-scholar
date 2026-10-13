@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "消去"
+  },
+  "noRolesHint": {
+    "message": "著者順がどれもオンになっていないため、何もハイライトされません。"
   }
 }

@@ -343,6 +343,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
     await page.bringToFront();
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
+    assert.match(await page.locator('[data-rr="no-roles"]').textContent(), /No author position is switched on/, "with every role off the panel says why nothing is highlighted");
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, true);
     await setPref(opts, "panel.venues", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
@@ -455,7 +456,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
     assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
+    // the numbers under the filters follow them (the highlighted papers of that cell), and are whole again without it
+    assert.equal(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA), "papers counted in the cell");
     await page.click('[data-act="clear-filters"]');
+    assert.notEqual(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA));
     assert.equal(await visibleRows(page), 100);
     assert.equal(await page.locator('[data-rr="filterbar"]').isVisible(), false, "and the bar goes with the filter");
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');

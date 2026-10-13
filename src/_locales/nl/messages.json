@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Wissen"
+  },
+  "noRolesHint": {
+    "message": "Geen auteurspositie staat aan, dus er wordt niets gemarkeerd."
   }
 }

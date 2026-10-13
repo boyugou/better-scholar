@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Temizle"
+  },
+  "noRolesHint": {
+    "message": "Hiçbir yazar sırası açık değil, bu yüzden hiçbir şey vurgulanmıyor."
   }
 }

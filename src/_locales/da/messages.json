@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Ryd"
+  },
+  "noRolesHint": {
+    "message": "Ingen forfatterplacering er slået til, så intet fremhæves."
   }
 }

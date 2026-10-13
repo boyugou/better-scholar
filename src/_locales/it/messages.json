@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Cancella"
+  },
+  "noRolesHint": {
+    "message": "Nessuna posizione d’autore è attivata, quindi non viene evidenziato nulla."
   }
 }

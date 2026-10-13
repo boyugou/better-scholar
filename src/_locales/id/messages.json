@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "Hapus"
+  },
+  "noRolesHint": {
+    "message": "Tidak ada posisi penulis yang aktif, jadi tidak ada yang disorot."
   }
 }

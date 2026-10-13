@@ -139,15 +139,12 @@
     "message": "تم النسخ"
   },
   "coverLoaded": {
-    "message": "تم تحميل $N1$ ورقة",
+    "message": "الأوراق المحملة: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverLoadedOne": {
-    "message": "تم تحميل ورقة واحدة"
   },
   "loadingAll": {
     "message": "جارٍ التحميل… $N1$",
@@ -164,15 +161,12 @@
     "message": "إلغاء"
   },
   "coverHidden": {
-    "message": "$N1$ أدوار مخفية بسبب اختصار قوائم المؤلفين",
+    "message": "الأدوار المخفية بسبب اختصار قوائم المؤلفين: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverHiddenOne": {
-    "message": "دور واحد مخفي بسبب اختصار قائمة المؤلفين"
   },
   "resolveBtn": {
     "message": "استكمال"
@@ -198,26 +192,20 @@
     "message": "تم."
   },
   "coverAbsent": {
-    "message": "$N1$ ورقة لا يظهر فيها اسم الملف الشخصي في قائمة المؤلفين",
+    "message": "الأوراق التي لا يظهر فيها اسم الملف الشخصي في قائمة المؤلفين: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverAbsentOne": {
-    "message": "ورقة واحدة لا يظهر فيها اسم الملف الشخصي في قائمة المؤلفين"
   },
   "coverUnmatched": {
-    "message": "$N1$ ورقة في منصات نشر بلا تصنيف",
+    "message": "الأوراق في منصات النشر بلا تصنيف: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverUnmatchedOne": {
-    "message": "ورقة واحدة في منصة نشر بلا تصنيف"
   },
   "copyUnmatched": {
     "message": "نسخ القائمة"
@@ -335,15 +323,12 @@
     "message": "جارٍ قراءة الصفحة…"
   },
   "popupPapers": {
-    "message": "$N1$ ورقة",
+    "message": "الأوراق: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "popupPapersOne": {
-    "message": "ورقة واحدة"
   },
   "popupOpenScholar": {
     "message": "فتح Google Scholar"
@@ -454,15 +439,12 @@
     "message": "مسح تفاصيل الأوراق المحفوظة"
   },
   "optCacheCount": {
-    "message": "قوائم مؤلفي $N1$ ورقة محفوظة على هذا الجهاز (قُرئت عبر استكمال، وتُحفظ 90 يومًا).",
+    "message": "قوائم المؤلفين المحفوظة على هذا الجهاز: $N1$ (قُرئت عبر استكمال، وتُحفظ 90 يومًا).",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "optCacheCountOne": {
-    "message": "قائمة مؤلفي ورقة واحدة محفوظة على هذا الجهاز (قُرئت عبر استكمال، وتُحفظ 90 يومًا)."
   },
   "optCacheNone": {
     "message": "لا توجد تفاصيل أوراق محفوظة."
@@ -696,5 +678,8 @@
   },
   "filterClear": {
     "message": "مسح"
+  },
+  "noRolesHint": {
+    "message": "لا يوجد موضع للمؤلف مفعّل، لذلك لا يُبرَز شيء."
   }
 }

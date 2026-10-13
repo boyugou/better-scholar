@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Borrar"
+  },
+  "noRolesHint": {
+    "message": "Ninguna posición de autoría está activada, así que no se resalta nada."
   }
 }

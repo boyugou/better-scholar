@@ -139,15 +139,12 @@
     "message": "Copiat"
   },
   "coverLoaded": {
-    "message": "$N1$ lucrări încărcate",
+    "message": "Lucrările încărcate: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverLoadedOne": {
-    "message": "1 lucrare încărcată"
   },
   "loadingAll": {
     "message": "Se încarcă… $N1$",
@@ -164,15 +161,12 @@
     "message": "Anulează"
   },
   "coverHidden": {
-    "message": "$N1$ roluri ascunse din cauza listelor de autori trunchiate",
+    "message": "Rolurile ascunse din cauza listelor de autori trunchiate: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverHiddenOne": {
-    "message": "1 rol ascuns din cauza unei liste de autori trunchiate"
   },
   "resolveBtn": {
     "message": "Completează"
@@ -198,26 +192,20 @@
     "message": "Gata."
   },
   "coverAbsent": {
-    "message": "$N1$ lucrări în care numele din profil nu apare în lista de autori",
+    "message": "Lucrările în care numele din profil nu apare în lista de autori: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverAbsentOne": {
-    "message": "1 lucrare în care numele din profil nu apare în lista de autori"
   },
   "coverUnmatched": {
-    "message": "$N1$ lucrări la venue-uri fără rang",
+    "message": "Lucrările la venue-uri fără rang: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "coverUnmatchedOne": {
-    "message": "1 lucrare la un venue fără rang"
   },
   "copyUnmatched": {
     "message": "Copiază lista"
@@ -335,15 +323,12 @@
     "message": "Se citește pagina…"
   },
   "popupPapers": {
-    "message": "$N1$ lucrări",
+    "message": "Lucrări: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "popupPapersOne": {
-    "message": "1 lucrare"
   },
   "popupOpenScholar": {
     "message": "Deschide Google Scholar"
@@ -454,15 +439,12 @@
     "message": "Șterge detaliile salvate ale lucrărilor"
   },
   "optCacheCount": {
-    "message": "Listele de autori ale a $N1$ lucrări sunt salvate pe acest dispozitiv (citite cu Completează, păstrate 90 de zile).",
+    "message": "Listele de autori salvate pe acest dispozitiv: $N1$ (citite cu Completează, păstrate 90 de zile).",
     "placeholders": {
       "n1": {
         "content": "$1"
       }
     }
-  },
-  "optCacheCountOne": {
-    "message": "Lista de autori a unei lucrări este salvată pe acest dispozitiv (citită cu Completează, păstrată 90 de zile)."
   },
   "optCacheNone": {
     "message": "Nu sunt salvate detalii ale lucrărilor."
@@ -696,5 +678,8 @@
   },
   "filterClear": {
     "message": "Șterge"
+  },
+  "noRolesHint": {
+    "message": "Nicio poziție de autor nu este activată, așa că nimic nu este evidențiat."
   }
 }

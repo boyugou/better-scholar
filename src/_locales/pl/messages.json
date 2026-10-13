@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "Wyczyść"
+  },
+  "noRolesHint": {
+    "message": "Żadna pozycja autora nie jest włączona, więc nic nie jest wyróżnione."
   }
 }

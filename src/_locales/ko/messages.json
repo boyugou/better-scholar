@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "되돌리기"
+  },
+  "noRolesHint": {
+    "message": "켜진 저자 순서가 없어서 강조되는 것이 없습니다."
   }
 }

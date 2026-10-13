@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "Vymazat"
+  },
+  "noRolesHint": {
+    "message": "Není zapnutá žádná autorská pozice, takže nic není zvýrazněno."
   }
 }

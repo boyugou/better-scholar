@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.19.1 — 2026-10-13
+
+- With every position switched off the panel says why nothing is highlighted (with a link to the settings) instead of four zeros.
+- A suggested spelling of your name is a button-like pill (it changes the table), not a link in a sentence.
+- Translations: Arabic and Romanian counts use the "label: number" form (correct for every number); German role labels are whole words (Erstautor, Zweitautor, Letztautor) so they read in sentences; a Russian calque is fixed.
+- A check that the numbers under the filters follow them.
+
 ## 2.19.0 — 2026-10-13
 
 From a second design review (states and variants):

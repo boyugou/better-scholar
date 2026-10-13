@@ -678,5 +678,8 @@
   },
   "filterClear": {
     "message": "Đặt lại"
+  },
+  "noRolesHint": {
+    "message": "Chưa bật vị trí tác giả nào, nên không có bài nào được tô nổi."
   }
 }

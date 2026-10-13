@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "清除"
+  },
+  "noRolesHint": {
+    "message": "沒有開啟任何作者位次，所以沒有標示的論文。"
   }
 }

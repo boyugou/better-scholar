@@ -696,5 +696,8 @@
   },
   "filterClear": {
     "message": "Limpar"
+  },
+  "noRolesHint": {
+    "message": "Nenhuma posição de autor está ativada, por isso nada fica destacado."
   }
 }
