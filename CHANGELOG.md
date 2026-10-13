@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.61 — 2026-10-12
+
+- MobiSys 2022's two best papers (SPiDR, OmniScatter). Its program page keeps 2021's sessions beside its own, so the reader now counts a "Best Paper!" badge only when the paper's DOI has the proceedings prefix of the page's year (3458864 = 2021, 3498361 = 2022, both read off those years' own pages); 2024's page repeats 2022's and is refused. The list has 6537 awards.
+
 ## 2.10.60 — 2026-10-12
 
 - MobiSys 2023's best paper (Mozart) from its program page (`tot.mjs mobisys-html`, third layout); the reader now refuses a page whose <title> names another year. 2022's and 2024's program pages keep 2021's sessions beside their own, so they stay unread. The list has 6535 awards.

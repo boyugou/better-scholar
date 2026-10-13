@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6535
+  "count": 6537
  },
  "entries": [
   {
@@ -79597,6 +79597,39 @@
    "track": "main",
    "source": "https://www.sigmobile.org/mobisys/2021/program.html",
    "evidence": "MobiSys 2021 Best Paper Award: zTT: Learning-based DVFS with Zero Thermal Throttling for Mobile Devices — Seyeon Kim, Kyungmin Bin, Sangtae Ha, Kyunghan Lee, Song Chong"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "OmniScatter: Extreme Sensitivity mmWave Backscattering Using Commodity FMCW Radar",
+   "authors": [
+    "Kang Min Bae",
+    "Namjo Ahn",
+    "Yoon Chae",
+    "Parth Pathak",
+    "SungMin Sohn",
+    "Song Min Kim"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2022/program.html",
+   "evidence": "MobiSys 2022 Best Paper Award: OmniScatter: Extreme Sensitivity mmWave Backscattering Using Commodity FMCW Radar — Kang Min Bae, Namjo Ahn, Yoon Chae, Parth Pathak, SungMin Sohn, Song Min Kim"
+  },
+  {
+   "venue": "MobiSys",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SPiDR: Ultra-low-power Acoustic Spatial Sensing for Micro-robot Navigation",
+   "authors": [
+    "Yang Bai",
+    "Nakul Garg",
+    "Nirupam Roy"
+   ],
+   "track": "main",
+   "source": "https://www.sigmobile.org/mobisys/2022/program.html",
+   "evidence": "MobiSys 2022 Best Paper Award: SPiDR: Ultra-low-power Acoustic Spatial Sensing for Micro-robot Navigation — Yang Bai, Nakul Garg, Nirupam Roy"
   },
   {
    "venue": "MobiSys",

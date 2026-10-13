@@ -2209,10 +2209,19 @@ export function parseMobisysHtml(html, source) {
     if (any) return { entries, skipped };
   }
   if (year && !h) {                                                                      // 2021: a "Best Paper!" badge before the linked title, the authors in <em> ("Name (Affiliation); Name (Affiliation)")
-    const rb = /<strong>\s*Best Paper!\s*<\/strong>\s*<\/span>\s*<span class="new">\s*<a [^>]*>([^<]+)<\/a>\s*<\/span>\s*<br>\s*<em>([\s\S]*?)<\/em>/g;
+    // a page may keep the sessions of an earlier year beside its own (2022's has 2021's): a paper belongs to the page's year when its DOI shares the prefix most DOIs on the page have
+    const prefixes = {};
+    for (const d of html.matchAll(/doi\.org\/(10\.\d+\/\d+)\.\d+/g)) prefixes[d[1]] = (prefixes[d[1]] || 0) + 1;
+    const home = Object.keys(prefixes).sort((x, y) => prefixes[y] - prefixes[x])[0];
+    // the proceedings of each year whose page was checked (the prefix most DOIs carry on that year's own page); 2024's page repeats 2022's, so a prefix of another year is refused
+    const PROCEEDINGS = { "10.1145/3458864": 2021, "10.1145/3498361": 2022 };
+    if (!home || PROCEEDINGS[home] !== year) return { entries, skipped: [`${year}: the page's papers are of ${PROCEEDINGS[home] || "an unchecked year"} (${home})`] };
+    const rb = /<strong>\s*Best Paper!\s*<\/strong>\s*<\/span>\s*<span class="new(?:-blue)?">\s*(?:<a [^>]*>([^<]+)<\/a>|<strong>([^<]+)<\/strong>)\s*<\/span>\s*<br>\s*<em>([\s\S]*?)<\/em>(?=([\s\S]{0,2500}))/g;
     let b;
     while ((b = rb.exec(html))) {
-      const title = cleanTitle(text(b[1])), who = names(text(b[2]).replace(/;/g, ","));
+      const rest = b[4].split(/<strong>\s*Best Paper!/)[0], doi = (/doi\.org\/(10\.\d+\/\d+)\.\d+/.exec(rest) || /doi\.org\/(10\.\d+\/\d+)\.\d+/.exec(html.slice(b.index, b.index + 400)) || [])[1];
+      const title = cleanTitle(text(b[1] || b[2])), who = names(text(b[3]).replace(/;/g, ","));
+      if (home && doi !== home) { skipped.push(`${year}: ${title.slice(0, 40)} belongs to another year's proceedings (${doi})`); continue; }
       if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "MobiSys", year, award: "best", awardLabel: "Best Paper Award", title, authors: who, track: "main", source, evidence: `MobiSys ${year} Best Paper Award: ${title} — ${who.join(", ")}` });
       else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
     }

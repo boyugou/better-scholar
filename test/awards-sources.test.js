@@ -2032,7 +2032,7 @@ test("MobiSys program pages from their HTML: 2020's best paper list item with it
   const { parseMobisysHtml } = await import("../scripts/awards/tot.mjs");
   const a = `<h3><b>Best Paper Award</b><br></h3><ul class="papers"><li><span>A Fingerprint Biometrics System For Phones</span> <ul><li> <span class="authors">Ann Lee <span class="affl">(Buffalo, SUNY)</span>, Bo Chan <span class="affl">(UCLA)</span></span></li></ul></li></ul><h3><b>Honourable Mentions</b></h3><ul class="papers"><li><span>An Honoured Millimeter Wave Platform</span> <ul><li> <span class="authors">Cy Dunn <span class="affl">(IMDEA)</span></span></li></ul></li></ul>`;
   assert.deepEqual(parseMobisysHtml(a, "https://www.sigmobile.org/mobisys/2020/program/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2020 A Fingerprint Biometrics System For Phones | Ann Lee; Bo Chan"]);
-  const b = `<li><p><span class="badge"> <strong>Best Paper!</strong> </span> <span class="new"> <a href="https://doi.org/x">Learning-based DVFS for Mobile Devices</a> </span> <br><em>Ed Fox (KAIST); Flo Gray (SNU); Gil Hart (Colorado)</em>`;
+  const b = `<li><p><span class="badge"> <strong>Best Paper!</strong> </span> <span class="new"> <a href="https://doi.org/10.1145/3458864.3468161">Learning-based DVFS for Mobile Devices</a> </span> <br><em>Ed Fox (KAIST); Flo Gray (SNU); Gil Hart (Colorado)</em>`;
   assert.deepEqual(parseMobisysHtml(b, "https://www.sigmobile.org/mobisys/2021/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2021 Learning-based DVFS for Mobile Devices | Ed Fox; Flo Gray; Gil Hart"]);
 });
 
@@ -2041,4 +2041,13 @@ test("MobiSys 2023's program page: a red 'Best Paper Award!' line before the bol
   const h = `<title>ACM MobiSys 2023 • Program</title><ul><li> <strong style="color: #ee4042">Best Paper Award!</strong> <p><strong>A Mobile ToF System for Sensing in the Dark</strong> <br><em>Ann Lee, Bo Chan and Cy Dunn (CUHK); Ed Fox (Michigan)</em></p></li></ul>`;
   assert.deepEqual(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2023/program.html").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2023 A Mobile ToF System for Sensing in the Dark | Ann Lee; Bo Chan; Cy Dunn; Ed Fox"]);
   assert.equal(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2022/program.html").entries.length, 0);
+});
+
+test("MobiSys badge pages: only the papers whose DOI carries the page year's proceedings prefix count; a page of another year's papers is refused", async () => {
+  const { parseMobisysHtml } = await import("../scripts/awards/tot.mjs");
+  const badge = (doi, t, a) => `<li><p><span class="badge"> <strong>Best Paper!</strong> </span> <span class="new"> <a href="https://doi.org/${doi}">${t}</a> </span> <br><em>${a}</em> <a href="https://doi.org/${doi}">Paper</a></p></li>`;
+  const filler = Array.from({ length: 5 }, (_, i) => `<a href="https://doi.org/10.1145/3498361.35${i}0001">p</a>`).join("");
+  const h = `<title>ACM MobiSys 2022 • Full Program</title>${badge("10.1145/3458864.3468161", "An older year's thermal throttling paper", "Ann Lee (KAIST)")}${badge("10.1145/3498361.3539775", "Acoustic spatial sensing for micro-robot navigation", "Bo Chan, Cy Dunn (Maryland)")}${filler}`;
+  assert.deepEqual(parseMobisysHtml(h, "https://www.sigmobile.org/mobisys/2022/program.html").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Acoustic spatial sensing for micro-robot navigation | Bo Chan; Cy Dunn"]);
+  assert.equal(parseMobisysHtml(h.replace("2022", "2024"), "https://www.sigmobile.org/mobisys/2024/program.html").entries.length, 0);
 });
