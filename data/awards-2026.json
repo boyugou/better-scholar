@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6512
+  "count": 6515
  },
  "entries": [
   {
@@ -54131,6 +54131,22 @@
    "year": 2025,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
+   "title": "Fast, Transparent Filesystem Microkernel Recovery with Ananke",
+   "authors": [
+    "Jing Liu",
+    "Yifan Dai",
+    "Andrea C. Arpaci-Dusseau",
+    "Remzi H. Arpaci-Dusseau"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/conferences/best-papers",
+   "evidence": "FAST '25: Fast, Transparent Filesystem Microkernel Recovery with Ananke — Jing Liu, Microsoft Research; Yifan Dai, University of Wisconsin–Madison; Andrea C. Arpaci-Dusseau, University of Wisconsin–Madison; Remzi H. Arpaci-Dusseau, University of Wisconsin–Madison"
+  },
+  {
+   "venue": "FAST",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "USENIX Best Paper",
    "title": "Mooncake: Trading More Storage for Less Computation — A KVCache-centric Architecture for Serving LLM Chatbot",
    "authors": [
     "Ruoyu Qin",
@@ -102602,6 +102618,27 @@
    "year": 2002,
    "award": "best",
    "awardLabel": "USENIX Best Paper",
+   "title": "Structure and Performance of the Direct Access File System (DAFS)",
+   "authors": [
+    "Kostas Magoutis",
+    "Salimah Addetia",
+    "Alexandra Fedorova",
+    "Margo Seltzer",
+    "Jeff Chase",
+    "Drew Gallatin",
+    "Richard Kisley",
+    "Rajiv Wickremesinghe",
+    "Eran Gabber"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/conferences/best-papers",
+   "evidence": "USENIX ATC '02: Structure and Performance of the Direct Access File System (DAFS) — Kostas Magoutis, Harvard; Salimah Addetia, Harvard; Alexandra Fedorova, Harvard; Margo Seltzer, Harvard; Jeff Chase, Duke; Drew Gallatin, Duke; Richard Kisley, Duke; Rajiv Wickremesinghe, Duke; Eran Gabber, Lucent"
+  },
+  {
+   "venue": "USENIX ATC",
+   "year": 2002,
+   "award": "best",
+   "awardLabel": "USENIX Best Paper",
    "title": "SWILL: A Simple Embedded Web Server Library",
    "authors": [
     "Sotiria Lampoudi",
@@ -107414,6 +107451,21 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "WOOT '11: Exploiting the Hard-Working DWARF: Trojan and Exploit Techniques with No Native Executable Code — James Oakley, Dartmouth College"
+  },
+  {
+   "venue": "WOOT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "USENIX Best Paper",
+   "title": "Exposing iClass Key Diversification",
+   "authors": [
+    "Flavio D. Garcia",
+    "Gerhard de Koning Gans",
+    "Roel Verdult"
+   ],
+   "track": "main",
+   "source": "https://www.usenix.org/conferences/best-papers",
+   "evidence": "WOOT '11: Exposing iClass Key Diversification — Flavio D. Garcia, Radboud University Nijmegen; Gerhard de Koning Gans, Radboud University Nijmegen; Roel Verdult, Radboud University Nijmegen"
   },
   {
    "venue": "WOOT",

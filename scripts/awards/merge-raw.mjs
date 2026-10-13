@@ -113,6 +113,15 @@ for (const e of accepted.values()) {
   if (x.newTitle && !awards.titleKey(e.evidence).includes(awards.titleKey(e.title))) e.evidence += ` [the page misprints the title; the paper is "${e.title}" — data/exclusions.json]`;
 }
 
+// a corrected title can now equal another row's (the page's misprint merged with the entry already corrected): keep one
+{
+  const seen = new Set();
+  for (const [k, e] of [...accepted]) {
+    const kk = key(e);
+    if (seen.has(kk)) accepted.delete(k); else seen.add(kk);
+  }
+}
+
 // clashes: the same paper listed with two different award kinds at one venue-year
 const byPaper = new Map();
 for (const e of accepted.values()) {

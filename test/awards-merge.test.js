@@ -42,3 +42,14 @@ test("merge-raw without --write leaves the bundled list untouched", () => {
   spawnSync(process.execPath, [MERGE, file], { encoding: "utf8" });
   assert.equal(fs.readFileSync(path.join(__dirname, "..", "data", "awards-2026.json"), "utf8"), before);
 });
+
+test("merge-raw: a page's misprinted title that data/exclusions.json corrects does not duplicate the entry already corrected", () => {
+  const raw = path.join(dir, "misprint.json");
+  fs.writeFileSync(raw, JSON.stringify({ entries: [{
+    venue: "JCDL", year: 2002, award: "best", awardLabel: "Vannevar Bush Best Paper", title: "Collection Systhesis", authors: ["Donna Bergmark"],
+    source: "https://sigir.org/awards/vannevar-bush-best-paper-awards/", evidence: "Vannevar Bush Best Paper: 2002 Collection Systhesis — Donna Bergmark"
+  }] }));
+  const r = spawnSync(process.execPath, [MERGE, raw], { encoding: "utf8" });
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /\(0 new\)/, r.stdout);
+});

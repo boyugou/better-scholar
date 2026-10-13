@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.10.56 — 2026-10-12
+
+- Three best papers USENIX's own list has gained since it was last read: FAST 2025 (Ananke), USENIX ATC 2002 (DAFS) and WOOT 2011 (iClass key diversification). Re-reading the live lists is a cheap freshness check.
+- `merge-raw` kept both a page's misprinted title and the entry already corrected for it (JCDL 2002 "Collection Synthesis" appeared twice); it now drops the duplicate once corrections are applied, and a test covers it. The list has 6515 awards.
+
 ## 2.10.55 — 2026-10-12
 
 - ECIR 2025's best paper, best short paper, best short student paper and its demo, IR4Good and reproducibility awards (6 papers; the list had none) from the conference's own best-papers page (`tot.mjs ecir`); the honorable mentions are not read. The list has 6512 awards.
