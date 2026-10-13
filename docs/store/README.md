@@ -1,6 +1,6 @@
 # Chrome Web Store listing kit
 
-Everything a Web Store listing asks for, ready to paste. (No listing has been made; see `PRIVACY.md` for the policy URL text.)
+Everything a Web Store listing asks for, ready to paste. (No listing has been made.) **Privacy policy URL:** https://boyugou.github.io/scholar-roles-and-ranks/privacy/ (the site's copy of `PRIVACY.md`; `npm run sync-privacy` on the `site` branch refreshes it).
 
 - **Name:** Scholar Roles & Ranks
 - **Summary (≤132):** the `extDescription` of `src/_locales/en/messages.json`.
