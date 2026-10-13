@@ -178,7 +178,7 @@
     "message": "1 roll dold av en kortad författarlista"
   },
   "resolveBtn": {
-    "message": "Lös upp"
+    "message": "Komplettera"
   },
   "resolveHint": {
     "message": "Öppnar varje artikels sida på Scholar (ungefär en per sekund) för att läsa hela författarlistan."
@@ -457,7 +457,7 @@
     "message": "Rensa sparade artikeldetaljer"
   },
   "optCacheCount": {
-    "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (lästa med Lös upp, sparas i 90 dagar).",
+    "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (lästa med Komplettera, sparas i 90 dagar).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Författarlistan för 1 artikel är sparad på den här enheten (läst med Lös upp, sparas i 90 dagar)."
+    "message": "Författarlistan för 1 artikel är sparad på den här enheten (läst med Komplettera, sparas i 90 dagar)."
   },
   "optCacheNone": {
     "message": "Inga artikeldetaljer är sparade."

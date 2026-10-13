@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Feloldás"
+    "message": "Kiegészítés"
   },
   "resolveHint": {
     "message": "Megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet), hogy elolvassa a teljes szerzői listát."
@@ -442,7 +442,7 @@
     "message": "Mentett cikkadatok törlése"
   },
   "optCacheCount": {
-    "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (a Feloldással beolvasva, 90 napig megőrizve).",
+    "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (a Kiegészítéssal beolvasva, 90 napig megőrizve).",
     "placeholders": {
       "n1": {
         "content": "$1"

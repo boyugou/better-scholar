@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.14.4 — 2026-10-12
+
+- The button that reads papers' own pages to fill in cut-off author lists is called **Complete** (it was "Resolve", which says little) in every language, and the texts that mention it follow. Several translations of the old label meant something else ("solve", "confirm") and are corrected.
+- An end-to-end check that every interface language fits the panel and the settings page.
+
 ## 2.14.3 — 2026-10-12
 
 - Settings → Saved data: **Copy details for a bug report** (version, browser, language and the settings; nothing that identifies you), and an issue template that asks for it.

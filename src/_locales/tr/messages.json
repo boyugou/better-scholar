@@ -178,7 +178,7 @@
     "message": "1 rol, kısaltılmış bir yazar listesi yüzünden gizli"
   },
   "resolveBtn": {
-    "message": "Çöz"
+    "message": "Tamamla"
   },
   "resolveHint": {
     "message": "Tam yazar listesini okumak için her makalenin Scholar'daki sayfasını açar (saniyede yaklaşık bir)."
@@ -457,7 +457,7 @@
     "message": "Kayıtlı makale ayrıntılarını temizle"
   },
   "optCacheCount": {
-    "message": "$N1$ makalenin yazar listesi bu cihazda kayıtlı (Çöz ile okundu, 90 gün saklanır).",
+    "message": "$N1$ makalenin yazar listesi bu cihazda kayıtlı (Tamamla ile okundu, 90 gün saklanır).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 makalenin yazar listesi bu cihazda kayıtlı (Çöz ile okundu, 90 gün saklanır)."
+    "message": "1 makalenin yazar listesi bu cihazda kayıtlı (Tamamla ile okundu, 90 gün saklanır)."
   },
   "optCacheNone": {
     "message": "Kayıtlı makale ayrıntısı yok."

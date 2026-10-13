@@ -178,7 +178,7 @@
     "message": "1 posição oculta por uma lista de autores truncada"
   },
   "resolveBtn": {
-    "message": "Resolver"
+    "message": "Completar"
   },
   "resolveHint": {
     "message": "Abre a página de cada artigo no Scholar (cerca de uma por segundo) para ler a lista completa de autores."
@@ -457,7 +457,7 @@
     "message": "Limpar detalhes guardados dos artigos"
   },
   "optCacheCount": {
-    "message": "As listas de autores de $N1$ artigos estão guardadas neste dispositivo (lidas com Resolver, mantidas durante 90 dias).",
+    "message": "As listas de autores de $N1$ artigos estão guardadas neste dispositivo (lidas com Completar, mantidas durante 90 dias).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "A lista de autores de 1 artigo está guardada neste dispositivo (lida com Resolver, mantida durante 90 dias)."
+    "message": "A lista de autores de 1 artigo está guardada neste dispositivo (lida com Completar, mantida durante 90 dias)."
   },
   "optCacheNone": {
     "message": "Não há detalhes de artigos guardados."

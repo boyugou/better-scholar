@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Ustal"
+    "message": "Uzupełnij"
   },
   "resolveHint": {
     "message": "Otwiera stronę każdej pracy w Scholar (mniej więcej jedną na sekundę), aby odczytać pełną listę autorów."
@@ -442,7 +442,7 @@
     "message": "Wyczyść zapisane szczegóły prac"
   },
   "optCacheCount": {
-    "message": "Zapisane na tym urządzeniu listy autorów: $N1$ (odczytane przyciskiem „Ustal”, przechowywane 90 dni).",
+    "message": "Zapisane na tym urządzeniu listy autorów: $N1$ (odczytane przyciskiem „Uzupełnij”, przechowywane 90 dni).",
     "placeholders": {
       "n1": {
         "content": "$1"

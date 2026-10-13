@@ -178,7 +178,7 @@
     "message": "1 rooli piilossa lyhennetyn kirjoittajaluettelon vuoksi"
   },
   "resolveBtn": {
-    "message": "Selvitä"
+    "message": "Täydennä"
   },
   "resolveHint": {
     "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
@@ -457,7 +457,7 @@
     "message": "Tyhjennä tallennetut artikkelitiedot"
   },
   "optCacheCount": {
-    "message": "$N1$ artikkelin kirjoittajaluettelot on tallennettu tälle laitteelle (luettu Selvitä-toiminnolla, säilytetään 90 päivää).",
+    "message": "$N1$ artikkelin kirjoittajaluettelot on tallennettu tälle laitteelle (luettu Täydennä-toiminnolla, säilytetään 90 päivää).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 artikkelin kirjoittajaluettelo on tallennettu tälle laitteelle (luettu Selvitä-toiminnolla, säilytetään 90 päivää)."
+    "message": "1 artikkelin kirjoittajaluettelo on tallennettu tälle laitteelle (luettu Täydennä-toiminnolla, säilytetään 90 päivää)."
   },
   "optCacheNone": {
     "message": "Artikkelitietoja ei ole tallennettu."

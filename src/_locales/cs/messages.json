@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Zjistit"
+    "message": "Doplnit"
   },
   "resolveHint": {
     "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
@@ -442,7 +442,7 @@
     "message": "Vymazat uložené podrobnosti o pracích"
   },
   "optCacheCount": {
-    "message": "Uložené seznamy autorů na tomto zařízení: $N1$ (přečteno tlačítkem „Zjistit“, uchováno 90 dní).",
+    "message": "Uložené seznamy autorů na tomto zařízení: $N1$ (přečteno tlačítkem „Doplnit“, uchováno 90 dní).",
     "placeholders": {
       "n1": {
         "content": "$1"

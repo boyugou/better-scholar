@@ -178,7 +178,7 @@
     "message": "1 rol ascuns din cauza unei liste de autori trunchiate"
   },
   "resolveBtn": {
-    "message": "Rezolvă"
+    "message": "Completează"
   },
   "resolveHint": {
     "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
@@ -195,7 +195,7 @@
     }
   },
   "resolveCaptcha": {
-    "message": "Google a cerut un CAPTCHA. Rezolvă-l într-o filă obișnuită, apoi încearcă din nou."
+    "message": "Google a cerut un CAPTCHA. Completează-l într-o filă obișnuită, apoi încearcă din nou."
   },
   "resolveDone": {
     "message": "Gata."
@@ -457,7 +457,7 @@
     "message": "Șterge detaliile salvate ale lucrărilor"
   },
   "optCacheCount": {
-    "message": "Listele de autori ale a $N1$ lucrări sunt salvate pe acest dispozitiv (citite cu Rezolvă, păstrate 90 de zile).",
+    "message": "Listele de autori ale a $N1$ lucrări sunt salvate pe acest dispozitiv (citite cu Completează, păstrate 90 de zile).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Lista de autori a unei lucrări este salvată pe acest dispozitiv (citită cu Rezolvă, păstrată 90 de zile)."
+    "message": "Lista de autori a unei lucrări este salvată pe acest dispozitiv (citită cu Completează, păstrată 90 de zile)."
   },
   "optCacheNone": {
     "message": "Nu sunt salvate detalii ale lucrărilor."

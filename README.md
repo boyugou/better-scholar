@@ -34,7 +34,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   papers. A chip's tooltip says whether it came from the author's words or from the award list.
 - **Hidden senior-author roles** — Scholar cuts long author lists with `…`, which
   hides the last author on large papers (on one well-known PI's profile, 30 of the
-  first 100 papers). **Resolve** reads those papers' own pages (about one a second,
+  first 100 papers). **Complete** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
 - **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
   highlighted". **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
@@ -90,7 +90,7 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
 - **Venue strings are messy.** What Scholar prints is owner-editable and often
   truncated. Anything unrecognised is listed ("papers at venues without a rank") so you
   can see what is missing; there is no fuzzy guessing.
-- **Resolve** talks to Google Scholar (the paper's own page, same-origin, throttled,
+- **Complete** talks to Google Scholar (the paper's own page, same-origin, throttled,
   cached). Google may show a CAPTCHA after heavy use; it stops at the first sign of
   one and tells you.
 - Search-result pages are not supported: they carry neither the profile owner nor

@@ -178,7 +178,7 @@
     "message": "1 rol verborgen door een afgekapte auteurslijst"
   },
   "resolveBtn": {
-    "message": "Ophalen"
+    "message": "Aanvullen"
   },
   "resolveHint": {
     "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
@@ -457,7 +457,7 @@
     "message": "Opgeslagen paperdetails wissen"
   },
   "optCacheCount": {
-    "message": "De auteurslijsten van $N1$ papers zijn op dit apparaat opgeslagen (gelezen met Ophalen, 90 dagen bewaard).",
+    "message": "De auteurslijsten van $N1$ papers zijn op dit apparaat opgeslagen (gelezen met Aanvullen, 90 dagen bewaard).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "De auteurslijst van 1 paper is op dit apparaat opgeslagen (gelezen met Ophalen, 90 dagen bewaard)."
+    "message": "De auteurslijst van 1 paper is op dit apparaat opgeslagen (gelezen met Aanvullen, 90 dagen bewaard)."
   },
   "optCacheNone": {
     "message": "Er zijn geen paperdetails opgeslagen."

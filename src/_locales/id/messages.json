@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Selesaikan"
+    "message": "Lengkapi"
   },
   "resolveHint": {
     "message": "Membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk membaca daftar penulis lengkap."
@@ -189,7 +189,7 @@
     }
   },
   "resolveCaptcha": {
-    "message": "Google meminta CAPTCHA. Selesaikan di tab biasa, lalu coba lagi."
+    "message": "Google meminta CAPTCHA. Lengkapi di tab biasa, lalu coba lagi."
   },
   "resolveDone": {
     "message": "Selesai."
@@ -442,7 +442,7 @@
     "message": "Hapus detail makalah tersimpan"
   },
   "optCacheCount": {
-    "message": "Daftar penulis $N1$ makalah tersimpan di perangkat ini (dibaca dengan Selesaikan, disimpan 90 hari).",
+    "message": "Daftar penulis $N1$ makalah tersimpan di perangkat ini (dibaca dengan Lengkapi, disimpan 90 hari).",
     "placeholders": {
       "n1": {
         "content": "$1"

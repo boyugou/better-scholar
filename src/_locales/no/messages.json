@@ -178,7 +178,7 @@
     "message": "1 rolle skjult av en forkortet forfatterliste"
   },
   "resolveBtn": {
-    "message": "Avklar"
+    "message": "Fullfør"
   },
   "resolveHint": {
     "message": "Åpner hver artikkels side på Scholar (omtrent én per sekund) for å lese hele forfatterlisten."
@@ -457,7 +457,7 @@
     "message": "Tøm lagrede artikkeldetaljer"
   },
   "optCacheCount": {
-    "message": "Forfatterlister for $N1$ artikler er lagret på denne enheten (lest med Avklar, beholdes i 90 dager).",
+    "message": "Forfatterlister for $N1$ artikler er lagret på denne enheten (lest med Fullfør, beholdes i 90 dager).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Forfatterlisten for 1 artikkel er lagret på denne enheten (lest med Avklar, beholdes i 90 dager)."
+    "message": "Forfatterlisten for 1 artikkel er lagret på denne enheten (lest med Fullfør, beholdes i 90 dager)."
   },
   "optCacheNone": {
     "message": "Ingen artikkeldetaljer er lagret."

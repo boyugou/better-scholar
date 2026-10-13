@@ -178,7 +178,7 @@
     "message": "1 rolle skjult af en afkortet forfatterliste"
   },
   "resolveBtn": {
-    "message": "Afklar"
+    "message": "Fuldfør"
   },
   "resolveHint": {
     "message": "Åbner hver artikels side på Scholar (omkring én i sekundet) for at læse hele forfatterlisten."
@@ -457,7 +457,7 @@
     "message": "Ryd gemte artikeldetaljer"
   },
   "optCacheCount": {
-    "message": "Forfatterlister for $N1$ artikler er gemt på denne enhed (læst med Afklar, gemmes i 90 dage).",
+    "message": "Forfatterlister for $N1$ artikler er gemt på denne enhed (læst med Fuldfør, gemmes i 90 dage).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "Forfatterlisten for 1 artikel er gemt på denne enhed (læst med Afklar, gemmes i 90 dage)."
+    "message": "Forfatterlisten for 1 artikel er gemt på denne enhed (læst med Fuldfør, gemmes i 90 dage)."
   },
   "optCacheNone": {
     "message": "Ingen artikeldetaljer er gemt."

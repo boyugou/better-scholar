@@ -172,7 +172,7 @@
     }
   },
   "resolveBtn": {
-    "message": "Xác định"
+    "message": "Bổ sung"
   },
   "resolveHint": {
     "message": "Mở trang của từng bài trên Scholar (khoảng một bài mỗi giây) để đọc danh sách tác giả đầy đủ."
@@ -442,7 +442,7 @@
     "message": "Xóa chi tiết bài báo đã lưu"
   },
   "optCacheCount": {
-    "message": "Danh sách tác giả của $N1$ bài được lưu trên thiết bị này (đọc bằng Xác định, giữ 90 ngày).",
+    "message": "Danh sách tác giả của $N1$ bài được lưu trên thiết bị này (đọc bằng Bổ sung, giữ 90 ngày).",
     "placeholders": {
       "n1": {
         "content": "$1"

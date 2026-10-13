@@ -193,7 +193,7 @@ Scholar drops the sidebar *below* the list) as the window is resized. Styles are
   Scholar page) and the cache of resolved paper pages (author list + venue), 90 days.
 - Two records with one writer each, so a stale Scholar tab can never overwrite what the settings page saved.
   The pre-2.2 combined `settings` record is split into these once and removed.
-- No other persistence, no remote code, no third-party requests. *Resolve* fetches
+- No other persistence, no remote code, no third-party requests. *Complete* fetches
   `scholar.google.*` itself, same-origin, about once a second, only after a click, and stops
   at the first CAPTCHA or HTTP 429/503.
 

@@ -178,7 +178,7 @@
     "message": "1 role hidden by a truncated author list"
   },
   "resolveBtn": {
-    "message": "Resolve"
+    "message": "Complete"
   },
   "resolveHint": {
     "message": "Opens each paper's page on Scholar (about one per second) to read the full author list."
@@ -457,7 +457,7 @@
     "message": "Clear saved paper details"
   },
   "optCacheCount": {
-    "message": "$N1$ papers' author lists are saved on this device (read with Resolve, kept for 90 days).",
+    "message": "$N1$ papers' author lists are saved on this device (read with Complete, kept for 90 days).",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -465,7 +465,7 @@
     }
   },
   "optCacheCountOne": {
-    "message": "1 paper's author list is saved on this device (read with Resolve, kept for 90 days)."
+    "message": "1 paper's author list is saved on this device (read with Complete, kept for 90 days)."
   },
   "optCacheNone": {
     "message": "No paper details are saved."
