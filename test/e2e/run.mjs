@@ -932,6 +932,48 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the wide panel");
     await page.screenshot({ path: path.join(outDir, "showcase-narrow.png") });
     ok("the fictional showcase profile renders (wide and narrow) with an award from the list");
+
+    // -- 25b. every interface language fits: no panel button cut off, nothing wider than the panel, in the sidebar and in the wide panel
+    {
+      const opts = await openOptions(ctx4);
+      await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), panel: { show: true, summary: true, marks: true, filters: true, metrics: true, years: true, venues: true, status: true, names: true } } }); });
+      const langs = fs.readdirSync(path.join(repo, "src/_locales"));
+      const bad = [];
+      for (const lang of langs) {
+        await opts.evaluate(async (l) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: l } }); }, lang);
+        for (const [w, mode] of [[1360, "sidebar"], [760, "wide"]]) {
+          await page.setViewportSize({ width: w, height: 900 });
+          await page.reload();
+          await page.waitForSelector("#rr-panel");
+          await page.waitForFunction((m) => document.getElementById("rr-panel").classList.contains("rr-wide") === (m === "wide"), mode);
+          const over = await page.evaluate(() => {
+            const p = document.getElementById("rr-panel"), out = [];
+            for (const b of p.querySelectorAll(".rr-btn")) if (b.offsetParent && b.scrollWidth > b.clientWidth + 1) out.push("cut: " + b.textContent.trim());
+            const box = p.getBoundingClientRect();
+            for (const el of p.querySelectorAll("*")) { if (!el.offsetParent) continue; const r = el.getBoundingClientRect(); if (r.width && (r.right > box.right + 1 || r.left < box.left - 1)) { out.push("outside: " + el.className + " " + el.textContent.trim().slice(0, 20)); break; } }
+            return out;
+          });
+          if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+        }
+      }
+      // the settings page and the popup too: nothing makes the page wider than the window, in a narrow window as well
+      const settingsUrl = opts.url();
+      for (const lang of langs) {
+        await opts.evaluate(async (l) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: l } }); }, lang);
+        for (const w of [1360, 420]) {
+          await opts.setViewportSize({ width: w, height: 900 });
+          await opts.goto(settingsUrl);
+          await opts.waitForSelector(".toc a");
+          const wide = await opts.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+          if (wide > 1) bad.push(`${lang}/settings ${w}px: ${wide}px too wide`);
+        }
+      }
+      await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
+      await opts.close();
+      await page.setViewportSize({ width: 1360, height: 900 });
+      assert.deepEqual(bad, [], "a language does not fit the panel");
+      ok(`all ${langs.length} interface languages fit the panel (no cut-off button, nothing outside the box) in the sidebar and in the wide layout`);
+    }
   } finally {
     await ctx4.close();
     await fx4.close();
