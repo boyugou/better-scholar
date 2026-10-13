@@ -2,6 +2,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
+const { slowdown } = require("./helpers/speed.js");
 const path = require("node:path");
 const venues = require("../src/lib/venues.js");
 const ccf = require("../src/data/ccf.js");
@@ -286,7 +287,7 @@ test("resolving is fast enough for large profiles", () => {
   const t0 = Date.now();
   for (let i = 0; i < 3; i++) for (const s of strings) fresh.resolve(s + " ".repeat(i));   // defeat the cache
   const ms = Date.now() - t0;
-  assert.ok(ms < 1000 + 0.25 * strings.length * 3, `resolved ${strings.length * 3} strings in ${ms} ms`);   // (about 0.05 ms each when alone, more when the other test files run beside it; the budget grows with the corpora)
+  assert.ok(ms < (1000 + 0.25 * strings.length * 3) * slowdown(), `resolved ${strings.length * 3} strings in ${ms} ms`);   // (about 0.05 ms each when alone, more when the other test files run beside it; the budget grows with the corpora)
 });
 
 test("NeurIPS Datasets and Benchmarks Track is NeurIPS, in every spelling Scholar prints", () => {

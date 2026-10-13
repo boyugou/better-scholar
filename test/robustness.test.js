@@ -3,6 +3,7 @@
 // string here goes through regular expressions that run on each paper of a profile.
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const { slowdown } = require("./helpers/speed.js");
 const names = require("../src/lib/names.js");
 const venues = require("../src/lib/venues.js");
 const marks = require("../src/lib/marks.js");
@@ -60,7 +61,7 @@ const adversarial = {
 };
 
 test("no adversarial string throws, and each is handled quickly by every library", () => {
-  const slow = [];
+  const slow = [], factor = slowdown();
   for (const [label, s] of Object.entries(adversarial)) {
     const t0 = process.hrtime.bigint();
     assert.doesNotThrow(() => resolver.resolve(s), "venues.resolve: " + label);
@@ -72,7 +73,7 @@ test("no adversarial string throws, and each is handled quickly by every library
     assert.doesNotThrow(() => names.classifyRow(s, owner), "names.classifyRow: " + label);
     assert.doesNotThrow(() => analysis.analyzeRow({ title: s, authorsText: s, venueText: s }, { owner, resolver, awards: index }), "analyzeRow: " + label);
     const ms = Number(process.hrtime.bigint() - t0) / 1e6;
-    if (ms > 3000) slow.push(`${label}: ${Math.round(ms)} ms`);   // catastrophic backtracking is seconds to minutes, not tens of ms
+    if (ms > 3000 * factor) slow.push(`${label}: ${Math.round(ms)} ms`);   // catastrophic backtracking is seconds to minutes, not tens of ms
   }
   assert.deepEqual(slow, [], "inputs that stall the page");
 });
@@ -81,7 +82,7 @@ test("a profile-sized batch of hostile rows stays fast", () => {
   const t0 = Date.now();
   const rows = Object.values(adversarial);
   for (let i = 0; i < 3; i++) for (const s of rows) resolver.resolve(s + i);
-  assert.ok(Date.now() - t0 < 10000, `took ${Date.now() - t0} ms`);
+  assert.ok(Date.now() - t0 < 10000 * slowdown(), `took ${Date.now() - t0} ms`);
 });
 
 test("seeded random Scholar-like strings never throw", () => {
