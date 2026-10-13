@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Korostettujesi artikkelien luokitellut foorumit, yleisimmät ensin; napsauta yhtä listataksesi sen artikkelit."
+  },
+  "optCopyDiagnostics": {
+    "message": "Kopioi tiedot virheraporttia varten"
   }
 }

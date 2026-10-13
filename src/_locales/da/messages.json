@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "De rangerede steder for dine fremhævede artikler, flest først; klik på et for at se dets artikler."
+  },
+  "optCopyDiagnostics": {
+    "message": "Kopiér detaljer til fejlrapport"
   }
 }

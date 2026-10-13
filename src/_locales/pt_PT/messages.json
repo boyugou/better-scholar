@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Os locais com ranking dos seus artigos destacados, do mais frequente para o menos; clique num para listar os seus artigos."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copiar detalhes para relatório de erro"
   }
 }

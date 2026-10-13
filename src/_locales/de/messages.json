@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Die gerankten Venues Ihrer hervorgehobenen Paper, am häufigsten zuerst; ein Klick auf eine zeigt ihre Paper."
+  },
+  "optCopyDiagnostics": {
+    "message": "Details für Fehlerbericht kopieren"
   }
 }

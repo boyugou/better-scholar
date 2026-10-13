@@ -643,5 +643,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Sklasyfikowane miejsca publikacji wyróżnionych prac, od najczęstszych; kliknij jedno, aby zobaczyć jego prace."
+  },
+  "optCopyDiagnostics": {
+    "message": "Skopiuj szczegóły do zgłoszenia błędu"
   }
 }

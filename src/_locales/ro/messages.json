@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Venue-urile cu rang ale lucrărilor evidențiate, cele mai frecvente primele; apăsați pe unul pentru a lista lucrările sale."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copiază detaliile pentru un raport de eroare"
   }
 }

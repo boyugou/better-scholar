@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "De gerankte venues van je gemarkeerde papers, meest voorkomend eerst; klik op een venue om de papers te tonen."
+  },
+  "optCopyDiagnostics": {
+    "message": "Details kopiëren voor bugrapport"
   }
 }

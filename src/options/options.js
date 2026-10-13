@@ -83,6 +83,12 @@
   const card = (title, desc, ...rows) => h("section", { class: "card" }, h("h2", {}, title), desc ? h("p", { class: "desc" }, desc) : null, ...rows);
 
   // ---- the cards --------------------------------------------------------
+  // What a bug report needs and nothing that identifies you: versions, language, the settings, the browser
+  const diagBtn = h("button", { class: "btn", type: "button", "data-act": "copy-diagnostics", onClick: async () => {
+    const m = chrome.runtime.getManifest();
+    const text = ["Scholar Roles & Ranks " + m.version, navigator.userAgent, "interface language: " + B.dom.langTag(), "settings: " + JSON.stringify(prefs)].join("\n");
+    if (await B.dom.copyText(text)) { diagBtn.textContent = t("copied"); setTimeout(() => { diagBtn.textContent = t("optCopyDiagnostics"); }, 1400); }
+  } }, t("optCopyDiagnostics"));
   const cacheNote = h("p", { class: "note" });
   async function showCacheCount() {
     const n = Object.keys(await B.store.loadResolved()).length;
@@ -139,7 +145,7 @@
       option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } })),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
-    card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, cacheNote)));
+    card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, diagBtn, cacheNote)));
   showCacheCount();
 
   // A row of links to the cards, pinned under the header: the page is long. The card in view is marked.

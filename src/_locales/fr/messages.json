@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Les venues classées de vos articles mis en évidence, les plus fréquentes d'abord ; cliquez sur une venue pour lister ses articles."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copier les détails pour un rapport de bogue"
   }
 }

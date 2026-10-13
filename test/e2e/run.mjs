@@ -367,6 +367,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
     await page.waitForFunction(() => !document.querySelector('[data-act="load-all"]'));
 
+    // -- 6a5b. the bug-report details: version, browser, language and the settings, on the clipboard
+    await opts.bringToFront();
+    await opts.click('[data-act="copy-diagnostics"]');
+    const diag = await opts.evaluate(() => navigator.clipboard.readText());
+    assert.match(diag, /^Scholar Roles & Ranks \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"v":3,/s);
+    assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
+    ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
+
     // -- 6a6. the card links under the header: one per card, each takes its card to the top of the window
     await opts.bringToFront();
     const links = await opts.locator(".toc a").count();

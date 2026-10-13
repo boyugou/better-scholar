@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Vurgulanan makalelerinizin sıralaması olan yayın yerleri, en sıktan başlayarak; birine tıklayarak makalelerini listeleyin."
+  },
+  "optCopyDiagnostics": {
+    "message": "Hata raporu için ayrıntıları kopyala"
   }
 }

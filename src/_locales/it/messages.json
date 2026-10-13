@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Le sedi con ranking dei tuoi articoli evidenziati, dalla più frequente; clicca su una per elencarne gli articoli."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copia i dettagli per una segnalazione di bug"
   }
 }

@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Las sedes con rango de tus artículos resaltados, de más a menos frecuentes; haz clic en una para ver sus artículos."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copiar detalles para un informe de error"
   }
 }

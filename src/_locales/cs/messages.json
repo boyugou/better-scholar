@@ -643,5 +643,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Hodnocená publikační místa zvýrazněných prací, od nejčastějších; kliknutím na jedno zobrazíte jeho práce."
+  },
+  "optCopyDiagnostics": {
+    "message": "Zkopírovat podrobnosti pro hlášení chyby"
   }
 }

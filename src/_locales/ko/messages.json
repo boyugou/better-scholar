@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "강조된 논문 중 등급이 있는 게재처를 많은 순으로 보여 줍니다. 게재처를 클릭하면 해당 논문을 나열합니다."
+  },
+  "optCopyDiagnostics": {
+    "message": "버그 신고용 정보 복사"
   }
 }

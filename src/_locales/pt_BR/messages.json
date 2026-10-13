@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Os veículos com ranking dos seus artigos destacados, do mais frequente ao menos; clique em um para listar seus artigos."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copiar detalhes para relatório de bug"
   }
 }

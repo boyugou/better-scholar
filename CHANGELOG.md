@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.14.3 — 2026-10-12
+
+- Settings → Saved data: **Copy details for a bug report** (version, browser, language and the settings; nothing that identifies you), and an issue template that asks for it.
+- Printing or saving a profile as PDF keeps the role colours and chips.
+- The CI run is green again (the package script tripped over a long file listing).
+
 ## 2.14.2 — 2026-10-12
 
 Fixes from an independent review of the newer features:

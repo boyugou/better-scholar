@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "已標示論文所在、有等級的發表處，依篇數由多到少；點一個即可只看它的論文。"
+  },
+  "optCopyDiagnostics": {
+    "message": "複製問題回報所需的資訊"
   }
 }

@@ -643,5 +643,8 @@
   },
   "optPanelVenuesHint": {
     "message": "Venue berperingkat dari makalah yang disorot, yang paling sering di atas; klik satu untuk menampilkan makalahnya."
+  },
+  "optCopyDiagnostics": {
+    "message": "Salin detail untuk laporan bug"
   }
 }

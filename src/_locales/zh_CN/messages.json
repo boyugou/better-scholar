@@ -643,5 +643,8 @@
   },
   "optPanelVenuesHint": {
     "message": "高亮论文所在的、有等级的场所，按篇数从多到少；点一个即可只看它的论文。"
+  },
+  "optCopyDiagnostics": {
+    "message": "复制问题报告所需的信息"
   }
 }

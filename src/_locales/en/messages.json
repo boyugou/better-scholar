@@ -661,5 +661,8 @@
   },
   "optPanelVenuesHint": {
     "message": "The ranked venues of your highlighted papers, most frequent first; click one to list its papers."
+  },
+  "optCopyDiagnostics": {
+    "message": "Copy details for a bug report"
   }
 }

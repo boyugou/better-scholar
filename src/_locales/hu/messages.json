@@ -643,5 +643,8 @@
   },
   "optPanelVenuesHint": {
     "message": "A kiemelt cikkeid rangsorolt venue-i, a leggyakoribbak elöl; kattintással az adott venue cikkeit listázhatod."
+  },
+  "optCopyDiagnostics": {
+    "message": "Részletek másolása hibajelentéshez"
   }
 }
