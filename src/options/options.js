@@ -165,7 +165,7 @@
   $("controls").prepend(toc);
   try {
     const seen = new Set();
-    const mark = () => { const first = cards.find((c) => seen.has(c.id)); toc.querySelectorAll("a").forEach((a) => { if (first && a.dataset.card === first.id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); }); };
+    const mark = () => { const first = cards.find((c) => seen.has(c.id)); toc.querySelectorAll("a").forEach((a) => { if (first && a.dataset.card === first.id) { if (!a.hasAttribute("aria-current")) { a.setAttribute("aria-current", "true"); const box = toc.getBoundingClientRect(), r = a.getBoundingClientRect(); if (r.left < box.left + 8 || r.right > box.right - 8) toc.scrollTo({ left: toc.scrollLeft + (r.left - box.left) - 24, behavior: "auto" }); } } else a.removeAttribute("aria-current"); }); };
     const io = new IntersectionObserver((entries) => { for (const e of entries) { if (e.isIntersecting) seen.add(e.target.id); else seen.delete(e.target.id); } mark(); }, { rootMargin: "-70px 0px -55% 0px" });
     cards.forEach((c) => io.observe(c));
   } catch (e) { /* no observer: no marker */ }

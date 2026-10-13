@@ -76,7 +76,7 @@
     // ---- skeleton --------------------------------------------------------
     const title = h("span", { class: "rr-title" }, t("panelTitle"));
     const settingsBtn = h("button", { class: "rr-icon rr-ico-settings", "data-act": "settings", type: "button", title: t("settingsOpen"), "aria-label": t("settingsOpen"), onClick: () => cb.onSettings() });
-    const collapseBtn = h("button", { class: "rr-icon", "data-act": "collapse", type: "button", onClick: () => cb.onCollapse() });
+    const collapseBtn = h("button", { class: "rr-icon rr-ico-caret", "data-act": "collapse", type: "button", onClick: () => cb.onCollapse() });
     const head = h("header", { class: "rr-head" }, title, settingsBtn, collapseBtn);
 
     const summaryHead = h("div", { class: "rr-sec-head" });
@@ -288,7 +288,6 @@
 
     function update(m) {
       el.classList.toggle("rr-collapsed", !!m.ui.collapsed);
-      collapseBtn.textContent = m.ui.collapsed ? "▸" : "▾";
       collapseBtn.title = t(m.ui.collapsed ? "expand" : "collapse");
       collapseBtn.setAttribute("aria-expanded", String(!m.ui.collapsed));
       filtersSec.hidden = !m.prefs.panel.filters;
@@ -298,15 +297,22 @@
       variantBox.hidden = !m.prefs.panel.names;
       noteBox.hidden = !m.prefs.panel.summary;                              // the note says where the ranks in the table come from
       footSec.hidden = variantBox.hidden && noteBox.hidden;
-      renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
+      renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
       coverSec.hidden = !coverSec.childNodes.length;
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
       if (announce.textContent !== say) announce.textContent = say;
       // a column with nothing in it gives its width to the other
-      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !yearsSec.hidden || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
+      // in the wide layout the year bars and the venue list join the first column (the shorter one): they are looked at like the table and the awards
+      const wide = el.classList.contains("rr-wide");
+      for (const sec of [yearsSec, venuesSec]) {
+        if (wide && sec.parentNode !== colAEl) colAEl.append(sec);
+        else if (!wide && sec.parentNode !== colBEl) colBEl.insertBefore(sec, coverSec);
+      }
+      const extra = !yearsSec.hidden || !venuesSec.hidden;
+      const colA = !summarySec.hidden || !marksSec.hidden || (wide && extra), colB = !filtersSec.hidden || !metricsSec.hidden || (!wide && extra) || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
       el.classList.toggle("rr-onecol", !(colA && colB));
-      syncFilters(m); renderMetrics(m); renderYears(m); renderVenues(m); renderVariants(m);
+      syncFilters(m); renderMetrics(m); renderVariants(m);
       noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
     }
 

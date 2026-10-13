@@ -9,7 +9,6 @@
   document.documentElement.lang = B.dom.langTag();
   document.documentElement.dir = B.dom.dir();
   document.getElementById("title").textContent = t("panelTitle");
-  document.getElementById("ver").textContent = "v" + chrome.runtime.getManifest().version;
   const settings = document.getElementById("settings");
   settings.title = settings.ariaLabel = t("settingsOpen");
   settings.addEventListener("click", () => { chrome.runtime.openOptionsPage(); window.close(); });
@@ -66,7 +65,10 @@
       };
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
-        h("div", { class: "who" }, h("b", {}, data.owner), h("span", {}, tn("popupPapers", data.loaded, [String(data.loaded)]))),
+        h("div", { class: "who" }, h("b", {}, data.owner),
+          // (a paper whose author list does not have the profile name is not in the table: "19 of 20 papers", and the tooltip says why)
+          h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
+            s.absent > 0 ? `${data.loaded - s.absent} ${t("metricsOf")} ${tn("popupPapers", data.loaded, [String(data.loaded)])}` : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         parts.summary ? seg : null, parts.summary ? table : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         parts.summary ? h("div", { class: "actions" },

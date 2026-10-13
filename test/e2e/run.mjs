@@ -943,6 +943,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // a button label is never cut off, in the sidebar and in the wide panel
     const cut = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-btn")].filter((b) => b.offsetParent && b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent.trim()));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the sidebar");
+    if (process.env.E2E_SHOWCASE_H) await page.setViewportSize({ width: 1360, height: parseInt(process.env.E2E_SHOWCASE_H, 10) });      // (the README and website picture: tall enough for the whole panel)
     await page.screenshot({ path: path.join(outDir, "showcase.png") });
     assert.deepEqual(await lowContrast(page, "#rr-panel"), [], "panel (light): text under 4.5:1");
     assert.deepEqual(await unnamed(page, "#rr-panel"), [], "panel: a control without an accessible name");

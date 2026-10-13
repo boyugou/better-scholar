@@ -14,6 +14,10 @@ tr.rr-r-first   > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-first, #
 tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
 tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-second, #f9ab00) !important; }
 tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
+html[dir="rtl"] tr.rr-r-first   > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-first, #1a73e8) !important; }
+html[dir="rtl"] tr.rr-r-cofirst > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
+html[dir="rtl"] tr.rr-r-second  > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-second, #f9ab00) !important; }
+html[dir="rtl"] tr.rr-r-last    > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
 tr.rr-hide { display: none !important; }
 /* Scholar's grey author and venue lines (#777) fall below 4.5:1 on our row tints; the tinted rows use a darker grey */
 tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr-r-last .gs_gray { color: #5f6368; }
@@ -81,11 +85,12 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 /* the one checkbox is drawn as a small switch, like the ones on the settings page */
 #rr-panel input[type="checkbox"] {
   -webkit-appearance: none; appearance: none; position: relative; flex: none; margin: 0; width: 28px; height: 16px; border-radius: 8px;
-  background: #bdc1c6; cursor: pointer; transition: background .15s; border: 0;
+  background: #80868b; cursor: pointer; transition: background .15s; border: 0;
 }
-#rr-panel input[type="checkbox"]::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: transform .15s; }
+#rr-panel input[type="checkbox"]::after { content: ""; position: absolute; top: 2px; inset-inline-start: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: transform .15s; }
 #rr-panel input[type="checkbox"]:checked { background: var(--rr-accent); }
 #rr-panel input[type="checkbox"]:checked::after { transform: translateX(12px); }
+#rr-panel[dir="rtl"] input[type="checkbox"]:checked::after { transform: translateX(-12px); }
 #rr-panel input[type="checkbox"]:focus-visible { outline: 2px solid var(--rr-accent); outline-offset: 2px; }
 #rr-panel input[type="text"] {
   -webkit-appearance: none; appearance: none; font: 12px Arial, sans-serif; color: var(--rr-text); padding: 5px 9px; border: 1px solid #dadce0; border-radius: 7px; background: #fff;
@@ -114,6 +119,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 /* the settings button: a sliders icon (drawn with a mask so it takes the text colour) */
 #rr-panel { --rr-sliders: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 6h8.6M17.4 6H20M4 12h2.6M11.4 12H20M4 18h10.6M19.4 18H20'/%3E%3Ccircle cx='15' cy='6' r='2.4'/%3E%3Ccircle cx='9' cy='12' r='2.4'/%3E%3Ccircle cx='17' cy='18' r='2.4'/%3E%3C/svg%3E"); }
 #rr-panel .rr-ico-settings::before { content: ""; display: block; width: 14px; height: 14px; background: currentColor; -webkit-mask: var(--rr-sliders) center / contain no-repeat; mask: var(--rr-sliders) center / contain no-repeat; }
+/* the fold button: a chevron drawn like the settings icon (it points down when the panel is open, to the side it reads from when folded) */
+#rr-panel { --rr-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); }
+#rr-panel .rr-ico-caret::before { content: ""; display: block; width: 14px; height: 14px; background: currentColor; -webkit-mask: var(--rr-chevron) center / contain no-repeat; mask: var(--rr-chevron) center / contain no-repeat; transition: transform .15s; }
+#rr-panel .rr-ico-caret[aria-expanded="false"]::before { transform: rotate(-90deg); }
+#rr-panel[dir="rtl"] .rr-ico-caret[aria-expanded="false"]::before { transform: rotate(90deg); }
 #rr-panel .rr-sr{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }   /* read by screen readers only */
 #rr-panel .rr-src{ font-size: 11px; font-weight: 700; color: var(--rr-muted); letter-spacing: .02em; }
 #rr-panel.rr-collapsed .rr-body { display: none; }
@@ -169,8 +179,9 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-actions .rr-link{ align-self: center; font-size: 12px; }
 #rr-panel details > summary { cursor: pointer; list-style: none; color: var(--rr-link); }
 #rr-panel details > summary::-webkit-details-marker { display: none; }
-#rr-panel details > summary::before { content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 8px 1px 2px; border-right: 1.5px solid var(--rr-faint); border-bottom: 1.5px solid var(--rr-faint); transform: rotate(-45deg); transition: transform .15s; }
+#rr-panel details > summary::before { content: ""; display: inline-block; width: 5px; height: 5px; margin-block: 0 1px; margin-inline: 2px 8px; border-right: 1.5px solid var(--rr-faint); border-bottom: 1.5px solid var(--rr-faint); transform: rotate(-45deg); transition: transform .15s; }
 #rr-panel details[open] > summary::before { transform: rotate(45deg); }
+#rr-panel[dir="rtl"] details:not([open]) > summary::before { transform: rotate(135deg); }
 #rr-panel .rr-variants{ display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
 #rr-panel .rr-variant{ display: inline-flex; align-items: center; gap: 4px; padding: 2px 5px 2px 9px; border-radius: 12px; background: #f1f3f4; font-size: 11.5px; }
 #rr-panel .rr-variant button{ color: var(--rr-faint); font-size: 14px; line-height: 1; padding: 0 3px; }
