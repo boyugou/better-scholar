@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.17.0 — 2026-10-13
+
+From an independent design review of the screenshots:
+
+- **Panel**: the title is plain text (it looked like a link), section titles are semi-bold and row labels regular (only the numbers are bold), the table has fixed numeric columns with the footer label aligned to the role names and quiet totals, the three copy buttons share one row, the fold button is a drawn chevron (it points to the reading side when folded, also in right-to-left languages), and in the wide layout the year bars and the venue list join the shorter first column. Chips of a row wrap together and start at the text's edge (they used to be indented by their margin), the second-author name mark is darker (contrast), empty table cells are no longer tab stops, the year bars are wider and carry their numbers for screen readers.
+- **Toolbar popup**: the version is gone from the header, the count reads "19 of 20 papers" with the reason in a tooltip when a paper does not have your name, and the table is laid out like the panel's.
+- **Settings**: switches that can be seen (off tracks at 3:1, a dark thumb on the lit track in dark mode), borders that follow the theme, drop-downs drawn like the panel's with their hint above them, card links that fade at the end and follow the card in view, spacing under a card title without a description, nested switches marked with a rule; the right-to-left layout mirrors bars and switches.
+- **Website**: the product is in the first view (and a legible panel-only picture on phones), feature cards use the four role colours instead of eight hues, pressed role buttons are tinted, Japanese and Chinese headings break between phrases, `chrome://extensions` is set as code, headings are centred consistently.
+- Pictures for the README, the website and the Web Store listing are taken again (whole panel, whole settings preview) with a crop tool (`scripts/crop-image.mjs`).
+
 ## 2.16.1 — 2026-10-13
 
 - The panel has a live region for screen readers: when loading stops or **Complete** finishes, the message is announced.
