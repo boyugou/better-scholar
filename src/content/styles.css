@@ -24,9 +24,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
    won or was invited to present is filled instead: gold for an award, silver for an honorable mention,
    slate for a talk level, a dashed outline for a finalist. A chip is shorter than the text line, so a
    row with chips is never taller than one without. */
-.rr-chips { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-inline-start: 6px; vertical-align: middle; }
+/* (separated by real spaces, with no margin: on a wrapped line the group starts at the text's edge; it wraps as one) */
+.rr-chips { display: inline; white-space: nowrap; word-spacing: 2px; }
 .rr-chip {
-  display: inline-flex; align-items: center; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 6px;
+  display: inline-flex; align-items: center; vertical-align: middle; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 6px;
   border: 1px solid transparent; border-radius: 9px;
   font: 600 10.5px/1 Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
@@ -35,7 +36,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-chip-t1 { background: #fff; color: #3345a8; border-color: #9aa6e0; }
 .rr-chip-t2 { background: #fff; color: #5361bd; border-color: #c1c8ef; }
 .rr-chip-t3 { background: #fff; color: #69708a; border-color: #d3d7e3; }
-.rr-chip-t4 { background: #fff; color: #8c92a3; border-color: #e2e5ec; }
+.rr-chip-t4 { background: #fff; color: #727a8f; border-color: #e2e5ec; }
 
 /* awards and talk levels (the panel's Awards & talks rows use the same icons) */
 .rr-chip-mark, #rr-panel .rr-mi {
@@ -58,7 +59,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-name { font-weight: 700; border-radius: 3px; padding: 0 3px; }
 .rr-name-first   { background: color-mix(in srgb, var(--rr-c-first, #1a73e8) 12%, transparent); color: color-mix(in srgb, var(--rr-c-first, #1a73e8) 62%, black); }
 .rr-name-cofirst { background: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 12%, transparent); color: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 62%, black); }
-.rr-name-second  { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 16%, transparent);  color: color-mix(in srgb, var(--rr-c-second, #f9ab00) 62%, black); }
+.rr-name-second  { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 16%, transparent);  color: color-mix(in srgb, var(--rr-c-second, #f9ab00) 48%, black); }
 .rr-name-last    { background: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 12%, transparent);  color: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 62%, black); }
 
 /* ---- panel ------------------------------------------------------------------ */
@@ -107,7 +108,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-dd-list li[aria-selected="true"] { font-weight: 700; }
 #rr-panel .rr-dd-list li[aria-selected="true"]::before { content: ""; position: absolute; left: 10px; top: 50%; width: 4px; height: 8px; margin-top: -6px; border-right: 2px solid var(--rr-accent); border-bottom: 2px solid var(--rr-accent); transform: rotate(40deg); }
 #rr-panel .rr-head{ display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--rr-line); }
-#rr-panel .rr-title{ flex: 1; font-size: 14px; font-weight: 700; color: var(--rr-link); letter-spacing: .01em; }
+#rr-panel .rr-title{ flex: 1; font-size: 14px; font-weight: 600; color: var(--rr-text); letter-spacing: .01em; }
 #rr-panel .rr-icon{ width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 7px; transition: background .15s, color .15s; color: var(--rr-faint); font-size: 16px; line-height: 1; }
 #rr-panel .rr-icon:hover{ background: #f1f3f4; color: var(--rr-text); }
 /* the settings button: a sliders icon (drawn with a mask so it takes the text colour) */
@@ -120,7 +121,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-sec{ padding: 10px 14px; border-bottom: 1px solid var(--rr-line); }
 #rr-panel .rr-sec:last-child{ border-bottom: 0; }
 #rr-panel .rr-sec-head{ display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
-#rr-panel .rr-sec-title{ font-weight: 700; }
+#rr-panel .rr-sec-title{ font-weight: 600; }
 #rr-panel .rr-note{ color: var(--rr-muted); font-size: 12px; }
 #rr-panel .rr-faint{ color: var(--rr-faint); font-size: 11.5px; line-height: 1.35; }
 #rr-panel .rr-link{ color: var(--rr-link); cursor: pointer; }
@@ -129,18 +130,20 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-seg button{ padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; color: var(--rr-muted); letter-spacing: .02em; transition: background .15s, color .15s, box-shadow .15s; }
 #rr-panel .rr-seg button:hover{ color: var(--rr-text); }
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
-#rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+#rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
+#rr-panel .rr-matrix thead th:not(:first-child){ width: 34px; }
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
 #rr-panel .rr-matrix tbody th{ text-align: start; white-space: nowrap; }
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
+#rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
 #rr-panel .rr-dot{ width: 9px; height: 9px; border-radius: 2.5px; flex: none; }
 #rr-panel .rr-cell{ display: inline-block; min-width: 27px; padding: 2px 0; border-radius: 4px; text-align: center; font-weight: 700; }
 #rr-panel .rr-cell.rr-zero{ color: #bdc1c6; font-weight: 400; }
 #rr-panel .rr-cell:hover:not(.rr-zero), #rr-panel .rr-rolebtn:hover{ background: #f1f3f4; }
 #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"]{ background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
-#rr-panel .rr-total{ color: var(--rr-muted); font-weight: 700; padding-inline-start: 4px; }
+#rr-panel .rr-matrix td.rr-total{ color: var(--rr-muted); font-weight: 400; }
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 #rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
 #rr-panel .rr-copybar .rr-btn{ flex: 1 1 auto; padding: 4px 10px; text-align: center; white-space: nowrap; }   /* a label is never cut: the buttons wrap onto a second row in a narrow sidebar */
@@ -148,13 +151,13 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-btn:hover:not([disabled]){ background: #f8f9fa; border-color: #c4c7cc; box-shadow: 0 1px 2px rgba(60,64,67,.14); }
 #rr-panel .rr-btn:active:not([disabled]){ background: #f1f3f4; box-shadow: none; }
 #rr-panel .rr-row{ display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 3px 0; }
-#rr-panel .rr-row > .rr-label{ font-weight: 700; margin-inline-end: 2px; }
+#rr-panel .rr-row > .rr-label{ font-weight: 400; margin-inline-end: 2px; }
 #rr-panel .rr-check{ display: inline-flex; align-items: center; gap: 8px; cursor: pointer; white-space: nowrap; }
 #rr-panel .rr-year{ display: flex; align-items: center; gap: 6px; margin-top: 8px; }
 #rr-panel .rr-dash{ color: var(--rr-faint); }
-#rr-panel .rr-year > .rr-label{ font-weight: 700; }
+#rr-panel .rr-year > .rr-label{ font-weight: 400; color: var(--rr-muted); }
 #rr-panel .rr-metrics .rr-m{ display: flex; justify-content: space-between; align-items: baseline; padding: 2px 0; font-variant-numeric: tabular-nums; }
-#rr-panel .rr-metrics .rr-m > span:first-child{ font-weight: 700; }
+#rr-panel .rr-metrics .rr-m > span:first-child{ font-weight: 400; }
 #rr-panel .rr-m b{ font-size: 14px; }
 #rr-panel .rr-m i{ font-style: normal; color: var(--rr-faint); margin: 0 3px; }
 #rr-panel .rr-cover{ display: grid; gap: 4px; }

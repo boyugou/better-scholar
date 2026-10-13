@@ -259,8 +259,8 @@
       const names = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
       yearsSec.replaceChildren(
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("yearsTitle"))),
-      h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 20 + "px)" },
-        h("div", { class: "rr-bars", role: "img", "aria-label": t("yearsTitle") },
+      h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
+        h("div", { class: "rr-bars", role: "img", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") },
           ...data.map((d) => h("div", { class: "rr-bar", title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n") },
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
               ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))))),

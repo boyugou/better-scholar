@@ -24,7 +24,11 @@
     if (!el.querySelector(".rr-chips, .rr-name")) text = el.textContent || "";
     else {
       const c = el.cloneNode(true);
-      c.querySelectorAll(".rr-chips").forEach((n) => n.remove());
+      c.querySelectorAll(".rr-chips").forEach((n) => {
+        const before = n.previousSibling;
+        if (before && before.nodeType === 3 && before.textContent === " ") before.remove();      // (the space put before the chips)
+        n.remove();
+      });
       text = c.textContent || "";
     }
     return text.replace(/\u00a0/g, " ");

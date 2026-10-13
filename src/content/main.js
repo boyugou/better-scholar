@@ -164,12 +164,21 @@
     row.highlighted = analysis.isHighlighted(a, prefs.roles);
     for (const r of analysis.ROLE_KEYS) tr.classList.toggle("rr-r-" + r, row.highlighted && a.role === r);
     if (venueEl) {
-      venueEl.querySelectorAll(":scope > .rr-chips").forEach((n) => n.remove());
+      venueEl.querySelectorAll(":scope > .rr-chips").forEach((n) => {
+        const before = n.previousSibling;
+        if (before && before.rrSpace) before.remove();                                       // (the space put before the chips)
+        n.remove();
+      });
       const chips = [];
       if (prefs.ranks.ccf && a.venue.ccf) chips.push(chip.tierChip("ccf", a.venue.ccf, edition.ccf));
       if (prefs.ranks.core && a.venue.core) chips.push(chip.tierChip("core", a.venue.core, edition.core));
       for (const m of B.prefs.visibleMarks(prefs, a.marks)) chips.push(chip.markChip(m));
-      if (chips.length) venueEl.append(h("span", { class: "rr-chips" }, chips));
+      if (chips.length) {
+        // the chips of a row stay together (they wrap to the next line as one) and start at the text's edge there: a real space before them, no margin
+        const space = document.createTextNode(" ");
+        space.rrSpace = true;
+        venueEl.append(space, h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c]))));
+      }
     }
     markName(row);
   }

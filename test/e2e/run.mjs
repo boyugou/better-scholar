@@ -772,9 +772,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
       assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), true, `${part} shows by default`);
       await setPref(opts, "panel." + part, false);
-      assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), false, `${part} switch hides it in the preview`);
+      await opts.locator("#pv-panel " + sel).first().waitFor({ state: "hidden", timeout: 8000 }).catch(() => assert.fail(`${part} switch hides it in the preview`));   // (the preview is drawn once the setting is saved: a moment)
       for (const other of ["summary", "marks", "filters", "metrics"]) if (other !== part) assert.equal(await opts.locator(`#pv-panel [data-rr="${other === "summary" ? "matrix" : other}"]`).first().isVisible(), true, `${other} stays when ${part} goes`);
       await setPref(opts, "panel." + part, true);
+      await opts.locator("#pv-panel " + sel).first().waitFor({ state: "visible", timeout: 8000 });
     }
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');

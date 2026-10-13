@@ -198,7 +198,7 @@
     if (prefs.ranks.core) chips.push(B.chips.tierChip("core", s.core, EDITION.core));
     for (const m of B.prefs.visibleMarks(prefs, s.marks)) chips.push(B.chips.markChip(m));
     return h("tr", { class: lit ? "rr-r-" + s.role : "" },
-      h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? h("span", { class: "rr-chips" }, chips) : null)));
+      h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? [" ", h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c])))] : null)));
   }
   // The summary panel is the one the Scholar page draws (content/panel.js), handed a model built from invented papers
   // with the same rules as content/main.js — so every switch above changes it exactly as it changes a real profile.
