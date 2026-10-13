@@ -2,7 +2,7 @@
 
 ## 2.10.127 — 2026-10-12
 
-- FMCAD's best papers and runners-up for 2016 and 2019–2023 (11 papers; the list had none for FMCAD) from the conference's own year pages (`tot.mjs fmcad-awards`, which tries three text forms). The list has 7816 awards.
+- FMCAD's best papers and runners-up for 2016 and 2019–2023 (10 papers; the list had none for FMCAD) from the conference's own year pages (`tot.mjs fmcad-awards`, which tries three text forms). The list has 7816 awards.
 
 ## 2.10.126 — 2026-10-12
 
