@@ -80,6 +80,11 @@
 //   icdm                                                       the ICDM series' best paper page (several layouts over the years)
 //   nips-book-2018, neurips-2022, neurips-2024, icml-tot-2021  single test-of-time papers named by a conference book, a blog post or a virtual-site page
 //
+// Modes added after the table above (each documented on the function it names; the address is the third argument where a year's page has its own address, see PAGES for a sample):
+//   asplos-year  sigcomm-year  colt-year  corl-year  rss-year  sosp-program  ppopp-year  cikm-year  wsdm-year  eurosp  infocom  ipdps  ics      one conference page per year, in the layout of that year
+//   recsys  aistats  uai  icassp  coling  interspeech  ecml  ecir                                                                              a conference's own best-papers / awards page
+//   mobisys-year  mobicom-year  sc  www-best  mobicom  siggraph  icdm  ubicomp  icml-tot-2021  neurips-2022  neurips-2024  nips-book-2018  dac
+//
 //   node scripts/awards/tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops|eurosys|aamas|ec|asplos|iacr|tcc|sigmobile|sensys|pkc|ches|hpca|imc|vis|icde|ismar|icse|lics|lics-dp|aaai|icaps|swsa|sigmm|ht|newton|sigspatial [saved-page.html] > tot.json      (fetches the page when no file is given)
 //   node scripts/awards/merge-raw.mjs tot.json [--write]
 import { readFileSync } from "node:fs";
