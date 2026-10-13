@@ -458,6 +458,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
     // the numbers under the filters follow them (the highlighted papers of that cell), and are whole again without it
     assert.equal(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA), "papers counted in the cell");
+    assert.equal(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), "First, Co-first, Second, and Last · Last, CCF A", "and the block says what it counts");
     await page.click('[data-act="clear-filters"]');
     assert.notEqual(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA));
     assert.equal(await visibleRows(page), 100);

@@ -128,6 +128,21 @@
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir(), lang: B.dom.langTag() }, head, warnBar, filterBar, body, announce);
 
+    // The active filters in the words the panel already uses (the cell, the awards row, the venue, the years, and "Only highlighted" when asked for);
+    // used by the filter bar and by the line that says what the numbers under the filters count
+    function filterParts(m, withOnly) {
+      const parts = [];
+      if (m.selection) {
+        const srcName = m.source === "core" ? t("srcCore") : t("srcCcf");
+        parts.push([m.selection.role ? t(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? t("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
+      }
+      if (m.markGroup) parts.push(t(MARK_KEY[m.markGroup]));
+      if (m.venueKey) parts.push(m.venueKey);
+      if (withOnly && m.filters.onlyHighlighted) parts.push(t("onlyHighlighted"));
+      if (m.filters.yearStart != null || m.filters.yearEnd != null) parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+      return parts;
+    }
+
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
 
@@ -259,7 +274,7 @@
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");
       try { scope = new Intl.ListFormat(B.dom.langTag(), { style: "long", type: "conjunction" }).format(roleNames); } catch (e) { /* the plain list */ }
-      if (scope && (m.filters.yearStart != null || m.filters.yearEnd != null)) scope += " · " + (m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…");
+      if (scope) for (const p of filterParts(m, false)) scope += " · " + p;                  // (the numbers count what the filters let through: say which)
       if (!roleNames.length) {                                              // nothing is highlighted: say why, instead of four zeros
         metricsSec.replaceChildren(h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
           h("div", { class: "rr-faint", "data-rr": "no-roles" }, t("noRolesHint") + " ", h("button", { class: "rr-link", type: "button", onClick: () => cb.onSettings() }, t("settingsOpen"))));
@@ -320,16 +335,7 @@
       footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;
       if (m.filterBar) {
-        // (named with the words the panel already uses: the cell, the awards row, the venue, "Only highlighted", the years)
-        const parts = [];
-        if (m.selection) {
-          const srcName = m.source === "core" ? t("srcCore") : t("srcCcf");
-          parts.push([m.selection.role ? t(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? t("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
-        }
-        if (m.markGroup) parts.push(t(MARK_KEY[m.markGroup]));
-        if (m.venueKey) parts.push(m.venueKey);
-        if (m.filters.onlyHighlighted) parts.push(t("onlyHighlighted"));
-        if (m.filters.yearStart != null || m.filters.yearEnd != null) parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+        const parts = filterParts(m, true);
         filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, " · " + parts.join(" · ")) : null),
           h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
       }
