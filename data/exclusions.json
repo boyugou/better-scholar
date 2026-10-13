@@ -15,6 +15,7 @@
   }
  ],
  "correct": [
+  {"venue":"ICDT","year":2019,"title":"Counting Triangles under Updates in WorstCase Optimal Time","newTitle":"Counting Triangles under Updates in Worst-Case Optimal Time","reason":"databasetheory.org/ICDT/awards prints \"WorstCase\" (the hyphen lost); the paper (Kara, Ngo, Nikolic, Olteanu and Zhang, ICDT 2019) is \"Counting Triangles under Updates in Worst-Case Optimal Time\", so the title matched nothing on Scholar"},
   {
    "venue": "EuroSys",
    "year": 2024,

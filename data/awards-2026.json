@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6830
+  "count": 6857
  },
  "entries": [
   {
@@ -64176,6 +64176,392 @@
    "track": "main",
    "source": "https://icdm.zhonghuapu.com/Awards/BestPapers.shtml",
    "evidence": "ICDM 2025 Best Student Paper Award: HyHG: A Temporal Hypergraph Contrastive Learning Framework for Biomedical Hypothesis Generation — Amir Shariatmadari, Sikun Guo, Nathan Sheffield, Aidong Zhang, Kishlay Jha"
+  },
+  {
+   "venue": "ICDT",
+   "year": 1990,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A closed form for Datalog queries with integer order",
+   "authors": [
+    "Peter Revesz"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 1990 Best Student Paper Award: Peter Revesz — A closed form for Datalog queries with integer order"
+  },
+  {
+   "venue": "ICDT",
+   "year": 1995,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Domain-independent queries on databases with external functions",
+   "authors": [
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 1995 Best Student Paper Award: Dan Suciu — Domain-independent queries on databases with external functions"
+  },
+  {
+   "venue": "ICDT",
+   "year": 1997,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Conjunctive Query Containment Revisited",
+   "authors": [
+    "Chandra Chekuri",
+    "Anand Rajamaran"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 1997 Best Student Paper Award: Chandra Chekuri and Anand Rajamaran — Conjunctive Query Containment Revisited"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Repair Checking in Inconsistent Databases: Algorithms and Complexity",
+   "authors": [
+    "Foto Afrati",
+    "Phokion G. Kolaitis"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2009 Best Paper Award: Foto Afrati and Phokion G. Kolaitis — Repair Checking in Inconsistent Databases: Algorithms and Complexity"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Containment of conjunctive queries on annotated relations",
+   "authors": [
+    "Todd J. Green"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2009 Best Student Paper Award: Todd J. Green — Containment of conjunctive queries on annotated relations"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Composition with target constraints",
+   "authors": [
+    "Marcelo Arenas",
+    "Ronald Fagin",
+    "Alan Nash"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2010 Best Paper Award: Marcelo Arenas, Ronald Fagin, and Alan Nash — Composition with target constraints"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Answering non-monotonic queries in relational data exchange",
+   "authors": [
+    "André Hernich"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2010 Best Student Paper Award: André Hernich — Answering non-monotonic queries in relational data exchange"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Forward XPath and extended register automata on data trees",
+   "authors": [
+    "Diego Figueira"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2010 Best Student Paper Award: Diego Figueira — Forward XPath and extended register automata on data trees"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Reasoning about Data Trees via Integer Linear Programming",
+   "authors": [
+    "Claire David",
+    "Leonid Libkin",
+    "Tony Tan"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2011 Best Paper Award: Claire David, Leonid Libkin, and Tony Tan — Efficient Reasoning about Data Trees via Integer Linear Programming"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Querying Probabilistic Business Processes for Sub-Flows",
+   "authors": [
+    "Daniel Deutch"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2011 Best Student Paper Award: Daniel Deutch — Querying Probabilistic Business Processes for Sub-Flows"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning Schema Mappings",
+   "authors": [
+    "Balder Ten Cate",
+    "Victor Dalmau",
+    "Phokion Kolaitis"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2012 Best Paper Award: Balder Ten Cate, Victor Dalmau, and Phokion Kolaitis — Learning Schema Mappings"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Theory of Pricing Private Data",
+   "authors": [
+    "Chao Li",
+    "Daniel Li",
+    "Gerome Miklau",
+    "Dan Suciu"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2013 Best Paper Award: Chao Li, Daniel Li, Gerome Miklau, and Dan Suciu — A Theory of Pricing Private Data"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reasoning about XML Constraints based on XML-to-relational mappings",
+   "authors": [
+    "Matthias Niewerth",
+    "Thomas Schwentick"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2014 Best Paper Award: Matthias Niewerth, Thomas Schwentick — Reasoning about XML Constraints based on XML-to-relational mappings"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Deciding Correctness with Fairness for Simple Transducer Networks",
+   "authors": [
+    "Tom Ameloot"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2014 Best Student Paper Award: Tom Ameloot — Deciding Correctness with Fairness for Simple Transducer Networks"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Declarative Framework for Linking Entities",
+   "authors": [
+    "Douglas Burdick",
+    "Ronald Fagin",
+    "Phokion Kolaitis",
+    "Lucian Popa",
+    "Wang-Chiew Tan"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2015 Best Paper Award: Douglas Burdick, Ronald Fagin, Phokion Kolaitis, Lucian Popa, and Wang-Chiew Tan — A Declarative Framework for Linking Entities"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Asymptotic Determinacy of Path Queries using Union-of-Paths Views",
+   "authors": [
+    "Nadime Francis"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2015 Best Student Paper Award: Nadime Francis — Asymptotic Determinacy of Path Queries using Union-of-Paths Views"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Beyond Well-Designed SPARQL",
+   "authors": [
+    "Mark Kaminski",
+    "Egor V. Kostylev"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2016 Best Paper Award: Mark Kaminski and Egor V. Kostylev — Beyond Well-Designed SPARQL"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "How Many Variables are Needed to Express an Existential Positive Query?",
+   "authors": [
+    "Simone Bova",
+    "Hubie Chen"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2017 Best Paper Award: Simone Bova and Hubie Chen — How Many Variables are Needed to Express an Existential Positive Query?"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Evaluation and Enumeration Problems for Regular Path Queries",
+   "authors": [
+    "Wim Martens",
+    "Tina Trautner"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2018 Best Paper Award: Wim Martens and Tina Trautner — Evaluation and Enumeration Problems for Regular Path Queries"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Counting Triangles under Updates in Worst-Case Optimal Time",
+   "authors": [
+    "Ahmet Kara",
+    "Hung Q. Ngo",
+    "Milos Nikolic",
+    "Dan Olteanu",
+    "Haozhe Zhang"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2019 Best Paper Award: Ahmet Kara, Hung Q. Ngo, Milos Nikolic, Dan Olteanu and Haozhe Zhang — Counting Triangles under Updates in WorstCase Optimal Time"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Dichotomy for Homomorphism-Closed Queries on Probabilistic Graphs",
+   "authors": [
+    "Antoine Amarilli",
+    "İsmail İlkan Ceylan"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2020 Best Paper Award: Antoine Amarilli and İsmail İlkan Ceylan — A Dichotomy for Homomorphism-Closed Queries on Probabilistic Graphs"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Answer Counting Under Guarded TGDs",
+   "authors": [
+    "Cristina Feier",
+    "Carsten Lutz",
+    "Marcin Przybyłko"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2021 Best Paper Award: Cristina Feier, Carsten Lutz, and Marcin Przybyłko — Answer Counting Under Guarded TGDs"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the Hardness of Category Tree Construction",
+   "authors": [
+    "Shay Gershtein",
+    "Uri Avron",
+    "Ido Guy",
+    "Tova Milo",
+    "Slava Novgorodov"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2022 Best Paper Award: Shay Gershtein, Uri Avron, Ido Guy, Tova Milo, and Slava Novgorodov — On the Hardness of Category Tree Construction"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The I/O Complexity of Enumerating Subgraphs of Constant Sizes",
+   "authors": [
+    "Shiyuan Deng",
+    "Francesco Silvestri",
+    "Yufei Tao"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2023 Best Paper Award: Shiyuan Deng, Francesco Silvestri and Yufei Tao — The I/O Complexity of Enumerating Subgraphs of Constant Sizes"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Finding Smallest Witnesses for Conjunctive Queries",
+   "authors": [
+    "Xiao Hu",
+    "Stavros Sintos"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2024 Best Paper Award: Xiao Hu and Stavros Sintos — Finding Smallest Witnesses for Conjunctive Queries"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Worst-Case Optimal Joins Meet Partition Constraints",
+   "authors": [
+    "Kyle Deeds",
+    "Timo Camillo Merkl"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2025 Best Paper Award: Kyle Deeds and Timo Camillo Merkl — Worst-Case Optimal Joins Meet Partition Constraints"
+  },
+  {
+   "venue": "ICDT",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Worst-Case Optimal Joins Meet Partition Constraints",
+   "authors": [
+    "Kyle Deeds",
+    "Timo Camillo Merkl"
+   ],
+   "track": "main",
+   "source": "https://databasetheory.org/ICDT/awards",
+   "evidence": "ICDT 2025 Best Student Paper Award: Kyle Deeds and Timo Camillo Merkl — Worst-Case Optimal Joins Meet Partition Constraints"
   },
   {
    "venue": "ICFP",

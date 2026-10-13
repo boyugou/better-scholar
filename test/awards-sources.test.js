@@ -2277,3 +2277,9 @@ test("SAT awards pages: 2025's 'conferred on the paper Title doi by Authors for 
   const h24 = `<p>SAT 2024 paper awards</p><p>Best paper award: "The strength of the dominance rule", by Ann Lee and Bo Chan</p><p>Best student paper award: “Speeding-up pseudo-Boolean propagation” by Cy Dunn, Ed Fox, and Flo Gray (student author)</p><p>Best student paper runner-up: “Optimal layout synthesis for circuits” by Gil Hart</p><p>SAT 2024 - August</p>`;
   assert.deepEqual(parseSatAwards(h24, "https://satisfiability.org/SAT24/awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")}`), ["best | Ann Lee; Bo Chan", "student | Cy Dunn; Ed Fox; Flo Gray"]);
 });
+
+test("ICDT awards page: year lines, then best paper / best student paper (alone or joined by 'and'), authors line and title line, a lone 'and' for a second pair; the newcomer awards are left out", async () => {
+  const { parseIcdtAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>ICDT Awards</h1><p>rules</p><p>2025</p><p>Best Paper Award and Best Student Paper Award</p><p>Ann Lee and Bo Chan</p><p>Worst-case optimal joins meet constraints</p><p>2010</p><p>Best Paper Award</p><p>Cy Dunn, Ed Fox, and Flo Gray</p><p>Composition with target constraints</p><p>Best Student Paper Award</p><p>Gil Hart</p><p>Forward paths and extended automata</p><p>and</p><p>Hal Ito</p><p>Answering non-monotonic queries</p><p>2007</p><p>Best Newcomer Award</p><p>Jo Kim</p><p>Complexity of typechecking views</p><p>Search</p>`;
+  assert.deepEqual(parseIcdtAwards(h, "https://databasetheory.org/ICDT/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 best | Ann Lee; Bo Chan", "2025 student | Ann Lee; Bo Chan", "2010 best | Cy Dunn; Ed Fox; Flo Gray", "2010 student | Gil Hart", "2010 student | Hal Ito"]);
+});

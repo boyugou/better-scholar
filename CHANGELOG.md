@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.92 — 2026-10-12
+
+- ICDT's best papers and best student papers, 1990–2025 (27 papers; the list had none for ICDT) from the ICDT council's own awards page (`tot.mjs icdt-awards`). The list has 6857 awards.
+
 ## 2.10.91 — 2026-10-12
 
 - ECAI 2025's three main-track outstanding papers and SAT 2024's and 2025's best paper and best student paper (7 papers; the list had none for either) from the conferences' own awards pages (`tot.mjs ecai-awards`, `sat-awards`). The list has 6830 awards.
