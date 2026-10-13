@@ -52,6 +52,12 @@ PDF is extracted). Edit those, never `src/data/ccf.js` / `core.js` / `awards.js`
 when they are stale. `data/awards-2026.json` entries need an official source URL and a quoted snippet
 that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 
+### Accessibility audit
+
+`node scripts/axe-audit.mjs` runs axe-core (fetched once into the git-ignored `.cache/`, never a dependency) over the panel (light, dark,
+filtered with a list open, every part on, the wide layout, four languages), the settings page (light and dark) and the popup; it
+exits 1 on any violation. Run it after a change to the panel's or the settings page's markup or colours.
+
 ### Adding an award source
 
 1. Find the organisation's *own* page (the conference series, society or steering committee; never a

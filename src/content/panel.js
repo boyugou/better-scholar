@@ -230,7 +230,7 @@
         } }, t("copyUnmatched"));
         lines.push(h("details", { "data-rr": "unmatched", open: unmatchedOpen, onToggle: (e) => { unmatchedOpen = e.target.open; } },
           h("summary", {}, tn("coverUnmatched", total, [String(total)])),
-          h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
+          h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
           h("div", { class: "rr-actions" }, copyBtn,
             h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink")))));
       }

@@ -35,7 +35,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   border: 1px solid transparent; border-radius: 9px;
   font: 600 10.5px/1 Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
-.rr-chip .rr-k { font-weight: 500; opacity: .78; }
+.rr-chip .rr-k { font-weight: 500; color: color-mix(in srgb, currentColor 78%, transparent); }
 .rr-chip b { font-weight: 700; }
 .rr-chip-t1 { background: #fff; color: #3345a8; border-color: #9aa6e0; }
 .rr-chip-t2 { background: #fff; color: #5361bd; border-color: #c1c8ef; }
