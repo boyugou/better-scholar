@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.105 — 2026-10-12
+
+- DATE's four best papers of 2014 (from the same kind of archive PDF; 2015's layout interleaves authors and affiliations and is refused). The list has 7448 awards.
+
 ## 2.10.104 — 2026-10-12
 
 - DATE's best papers 2016–2019 (16 papers; the list had none for DATE) from the conference's own archive PDFs, read through macOS PDFKit (`scripts/awards/pdf-text.swift`, `tot.mjs date-best`). PDFs the sites publish are readable this way, which opens other sources earlier probes had written off as unreadable. The list has 7444 awards.

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7444
+  "count": 7448
  },
  "entries": [
   {
@@ -48024,6 +48024,66 @@
    "track": "main",
    "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
    "evidence": "DAC 2026 Most Influential Paper Award: “First-order Incremental Block-based Statistical Timing Analysis” by Chandu Visweswariah (CURE100 and Croton100), Kaushik Ravindran (Stealth AI Startup), Kerim Kalafala (IBM), Steve G Walker (IBM), Sambasivan Narayan (Apple)"
+  },
+  {
+   "venue": "DATE",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AN EFFICIENT RELIABLE PUF-BASED CRYPTOGRAPHIC KEY GENERATOR IN 65NM CMOS",
+   "authors": [
+    "Mudit Bhargava",
+    "Ken Mai"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
+   "evidence": "DATE 2014 best paper: AN EFFICIENT RELIABLE PUF-BASED CRYPTOGRAPHIC KEY GENERATOR IN 65NM CMOS — Mudit Bhargava, Ken Mai,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EFFICIENT SMT-BASED ATPG FOR INTERCONNECT OPEN DEFECTS",
+   "authors": [
+    "Dominik Erb",
+    "Karsten Scheibler",
+    "Matthias Sauer",
+    "Bernd Becker"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
+   "evidence": "DATE 2014 best paper: EFFICIENT SMT-BASED ATPG FOR INTERCONNECT OPEN DEFECTS — Dominik Erb, Karsten Scheibler, Matthias Sauer, Bernd Becker,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MAY-HAPPEN-IN-PARALLEL ANALYSIS BASED ON SEGMENT GRAPHS FOR SAFE ESL MODELS",
+   "authors": [
+    "Weiwei Chen",
+    "Xu Han",
+    "Rainer Dömer"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
+   "evidence": "DATE 2014 best paper: MAY-HAPPEN-IN-PARALLEL ANALYSIS BASED ON SEGMENT GRAPHS FOR SAFE ESL MODELS — Weiwei Chen, Xu Han, Rainer Dömer,"
+  },
+  {
+   "venue": "DATE",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SCALABILITY BOTTLENECKS DISCOVERY IN MPSOC PLATFORMS USING DATA MINING ON SIMULATION TRACES",
+   "authors": [
+    "Sofiane Lagraa",
+    "Alexandre Termier",
+    "Frédéric Pétrot"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/x/date-best-papers-2014.pdf",
+   "evidence": "DATE 2014 best paper: SCALABILITY BOTTLENECKS DISCOVERY IN MPSOC PLATFORMS USING DATA MINING ON SIMULATION TRACES — Sofiane Lagraa1,2, Alexandre Termier1 and Frédéric Pétrot2"
   },
   {
    "venue": "DATE",

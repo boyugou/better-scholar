@@ -3274,25 +3274,25 @@ export function parseHsccPast(html, source) {
   return { entries, skipped };
 }
 
-// DATE's "date-best-papers-<year>.pdf" (past.date-conference.com/proceedings-archive/<year>/html/…, text from scripts/awards/pdf-text.swift): "The DATE 2018 best papers are:", then per track "D Track" / "A Track" / "T Track" / "E Track" the title (one to three lines, upper case in 2015 and 2016), the authors with affiliation numbers, and the affiliations; "Best Paper Award Nominations" ends the winners.
+// DATE's "date-best-papers-<year>.pdf" (past.date-conference.com/proceedings-archive/<year>/html/…, text from scripts/awards/pdf-text.swift): "The DATE 2018 best papers are:", then per track "D Track" / "A Track" / "T Track" / "E Track" the title (one to three lines, upper case in 2015 and 2016), the authors with affiliation numbers, and the affiliations; "Best Paper Award Nominations" or "Congratulations" ends the winners, and a block whose authors and affiliations interleave (2015) is not read.
 export function parseDateBest(text, source) {
   const entries = [], skipped = [];
   const ls = text.replace(/\\u\{([0-9a-f]+)\}/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).normalize("NFC").replace(ZW, "").replace(/\u00ad/g, "").replace(/[\u2010\u2011\u2012\u2013]/g, "-").replace(/-{2,}/g, "-").split(/\r?\n/).map((x) => x.replace(/[\t\u00a0]+/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
   const i0 = ls.findIndex((l) => /^The DATE \d{4} best papers are:?$/.test(l));
   if (i0 < 0) return { entries, skipped: ["no best papers list"] };
   const year = +/(\d{4})/.exec(ls[i0])[1];
-  if (year < 2016) return { entries, skipped: [`${year}: the authors and affiliations are interleaved in this layout, not read`] };
   const AFFIL = /^\d|\b(?:University|Universit\w*|Institute|Intel|ARM|IBM|Corporation|Laboratories|Research|College|Inc|GmbH|Lab|Technology|Tsinghua|CISTER|NTU)\b/;
   const nameList = (t) => { const w = names(t.replace(/\s*\d+(?:,\d+)*/g, "").replace(/\s+,/g, ",").replace(/^[,\s]+|[,\s]+$/g, "")); return w.length && w.every((n) => isPerson(n) && !n.split(" ").some((x) => /^\p{Lu}{4,}$/u.test(x))) ? w : null; };
   let i = i0 + 1;
-  while (i < ls.length && !/^Best Paper Award Nominations$/i.test(ls[i]) && !/^[A-Z] track$/.test(ls[i])) {
-    if (!/^[A-Z] Track$/.test(ls[i])) { i++; continue; }
+  while (i < ls.length && !/^Best Paper Award Nominations$/i.test(ls[i]) && !/^[A-Z] track:?$/.test(ls[i])) {
+    if (!/^[A-Z] Track:?$/.test(ls[i])) { i++; continue; }
     let j = i + 1;
     const block = [];
-    while (j < ls.length && !/^[A-Z] [Tt]rack$/.test(ls[j]) && !/^Best Paper Award Nominations$/i.test(ls[j])) block.push(ls[j++]);
+    while (j < ls.length && !/^[A-Z] [Tt]rack:?$/.test(ls[j]) && !/^Best Paper Award Nominations$/i.test(ls[j])) block.push(ls[j++]);
     i = j;
     const a = block.findIndex((l, k) => k >= 2 && AFFIL.test(l) && !nameList(l));
     let who = null, k = 0;
+    if (a > 0 && block.slice(a).some((l) => !AFFIL.test(l) && !/^Congratulations/.test(l))) { skipped.push(`${year}: authors and affiliations interleave in ${block[0].slice(0, 40)}`); continue; }
     if (a > 0) for (k = 1; k <= Math.min(3, a - 1); k++) { if (k < a - 1 && !/\p{L}\s*\d|,/u.test(block[k])) continue; who = nameList(block.slice(k, a).join(" ")); if (who && who[0].split(" ").length <= 4) break; who = null; }
     const title = cleanTitle(block.slice(0, k).join(" "));
     if (who && title.length >= 12) entries.push({ venue: "DATE", year, award: "best", awardLabel: "Best Paper Award", title, authors: who, track: "main", source, evidence: `DATE ${year} best paper: ${title} — ${block.slice(k, a).join(" ")}` });
