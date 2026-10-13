@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7698
+  "count": 7758
  },
  "entries": [
   {
@@ -100687,6 +100687,148 @@
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
   },
   {
+   "venue": "Pervasive",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parasitic Mobility for Pervasive Sensor Networks",
+   "authors": [
+    "Mathew Laibowitz",
+    "Joseph Paradiso"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2005 Best Paper Award: Parasitic Mobility for Pervasive Sensor Networks — Mathew Laibowitz, Joseph Paradiso"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Displays in the Wild: Understanding the Dynamics and Evolution of a Display Ecology",
+   "authors": [
+    "Elaine M. Huang",
+    "Elizabeth D. Mynatt",
+    "Jay P. Trimble"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2006 Best Paper Award: Displays in the Wild: Understanding the Dynamics and Evolution of a Display Ecology — Elaine M. Huang, Elizabeth D. Mynatt, Jay P. Trimble"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Shake Well Before Use: Authentication Based on Accelerometer Data",
+   "authors": [
+    "Rene Mayrhofer",
+    "Hans Gellersen"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2007 Best Paper Award: Shake Well Before Use: Authentication Based on Accelerometer Data — Rene Mayrhofer, Hans Gellersen"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Detecting Human Movement by Differential Air Pressure Sensing in HVAC System Ductwork: An Exploration in Infrastructure Mediated Sensing",
+   "authors": [
+    "Shwetak Patel",
+    "Matt Reynolds",
+    "Gregory Abowd"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2008 Best Paper Award: Detecting Human Movement by Differential Air Pressure Sensing in HVAC System Ductwork: An Exploration in Infrastructure Mediated Sensing — Shwetak Patel, Matt Reynolds, Gregory Abowd"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Enabling Pervasive Collaboration with Platform Composition",
+   "authors": [
+    "Trevor Pering",
+    "Roy Want",
+    "Barbara Rosario",
+    "Shivani Sud",
+    "Kent Lyons"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2009 Best Paper Award: Enabling Pervasive Collaboration with Platform Composition — Trevor Pering, Roy Want, Barbara Rosario, Shivani Sud, Kent Lyons"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Common Sense Community: Scaffolding Mobile Sensing and Analysis for Novice Users",
+   "authors": [
+    "Wesley Willett",
+    "Paul M. Aoki",
+    "Neil Kumar",
+    "Sushmita Subramanian",
+    "Allison Woodruff"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2010 Best Paper Award: Common Sense Community: Scaffolding Mobile Sensing and Analysis for Novice Users — Wesley Willett, Paul M. Aoki, Neil Kumar, Sushmita Subramanian, Allison Woodruff"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Learning Time-Based Presence Probabilities",
+   "authors": [
+    "John Krumm",
+    "A.J. Brush"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2011 Best Paper Award: Learning Time-Based Presence Probabilities — John Krumm, A.J. Brush"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Interactive Environment-aware Handheld Projectors for Pervasive Computing Spaces",
+   "authors": [
+    "David Molyneaux",
+    "Shahram Izadi",
+    "David Kim",
+    "Otmar Hilliges",
+    "Steve Hodges",
+    "Xiang Cao",
+    "Alex Butler",
+    "Hans Gellersen"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2012 Best Paper Award: Interactive Environment-aware Handheld Projectors for Pervasive Computing Spaces — David Molyneaux, Shahram Izadi, David Kim, Otmar Hilliges, Steve Hodges, Xiang Cao, Alex Butler, Hans Gellersen"
+  },
+  {
+   "venue": "Pervasive",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Building Applications for Ubiquitous Computing Environments",
+   "authors": [
+    "Christopher K. Hess",
+    "Manuel Roman",
+    "Roy H. Campbell"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "Pervasive 2012 10-year Impact Award: Building Applications for Ubiquitous Computing Environments — Christopher K. Hess, Manuel Roman, Roy H. Campbell"
+  },
+  {
    "venue": "PIMRC",
    "year": 2025,
    "award": "best",
@@ -119433,6 +119575,867 @@
   },
   {
    "venue": "UbiComp",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "At the Flick of a Switch: Detecting and Classifying Unique Electrical Events on the Residential Power Line",
+   "authors": [
+    "Shwetak N. Patel",
+    "Thomas Robertson",
+    "Julie A. Kientz",
+    "Matthew S. Reynolds",
+    "Gregory D. Abowd"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2007 Best Paper Award: At the Flick of a Switch: Detecting and Classifying Unique Electrical Events on the Residential Power Line — Shwetak N. Patel, Thomas Robertson, Julie A. Kientz, Matthew S. Reynolds, Gregory D. Abowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Pedestrian Localisation for Indoor Environments",
+   "authors": [
+    "Oliver Woodman",
+    "Rob Harle"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2008 Best Paper Award: Pedestrian Localisation for Indoor Environments — Oliver Woodman, Rob Harle"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Recognizing Stereotypical Motor Movements in the Laboratory and Classroom: A Case Study with Children on the Autism Spectrum",
+   "authors": [
+    "Fahd Albinali",
+    "Matthew S. Goodwin",
+    "Stephen S. Intille"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2009 Best Paper Award: Recognizing Stereotypical Motor Movements in the Laboratory and Classroom: A Case Study with Children on the Autism Spectrum — Fahd Albinali, Matthew S. Goodwin, Stephen S. Intille"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ElectriSense: Single-Point Sensing Using EMI for Electrical Event Detection and Classification in the Home",
+   "authors": [
+    "Sidhant Gupta",
+    "Matthew S. Reynolds",
+    "Shwetak Patel"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2010 Best Paper Award: ElectriSense: Single-Point Sensing Using EMI for Electrical Event Detection and Classification in the Home — Sidhant Gupta, Matthew S. Reynolds, Shwetak Patel"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Haptic Reassurance in the Pitch Black for an Immersive Theatre Experience",
+   "authors": [
+    "Janet van der Linden",
+    "Yvonne Rogers",
+    "Maria Oshodi",
+    "Adam Spiers",
+    "David McGoran",
+    "Rafael Cronin",
+    "Paul O'Dowd"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2011 Best Paper Award: Haptic Reassurance in the Pitch Black for an Immersive Theatre Experience — Janet van der Linden, Yvonne Rogers, Maria Oshodi, Adam Spiers, David McGoran, Rafael Cronin, Paul O'Dowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Nurturing Natural Sensors",
+   "authors": [
+    "Stacey Kuznetsov",
+    "William Odom",
+    "James Pierce",
+    "Eric Paulos"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2011 Best Paper Award: Nurturing Natural Sensors — Stacey Kuznetsov, William Odom, James Pierce, Eric Paulos"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Privacy by Design - Principles of Privacy-Aware Ubiquitous Systems",
+   "authors": [
+    "Marc Langheinrich"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2011 10-year Impact Award: Privacy by Design - Principles of Privacy-Aware Ubiquitous Systems — Marc Langheinrich"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Ultra-Low-Power Human Body Motion Sensor Using Static Electric Field Sensing",
+   "authors": [
+    "Gabe Cohn",
+    "Sidhant Gupta",
+    "Tien-Jui Lee",
+    "Dan Morris",
+    "Joshua Smith",
+    "Matthew Reynolds",
+    "Desney Tan",
+    "Shwetak Patel"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2012 Best Paper Award: An Ultra-Low-Power Human Body Motion Sensor Using Static Electric Field Sensing — Gabe Cohn, Sidhant Gupta, Tien-Jui Lee, Dan Morris, Joshua Smith, Matthew Reynolds, Desney Tan, Shwetak Patel"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automatically Characterizing Places with Opportunistic CrowdSensing using Smartphones",
+   "authors": [
+    "Yohan Chon",
+    "Nicholas D. Lane",
+    "Fan Li",
+    "Hojung Cha",
+    "Feng Zhao"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2012 Best Paper Award: Automatically Characterizing Places with Opportunistic CrowdSensing using Smartphones — Yohan Chon, Nicholas D. Lane, Fan Li, Hojung Cha, Feng Zhao"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lullaby: A Capture & Access System for Understanding the Sleep Environment",
+   "authors": [
+    "Matthew Kay",
+    "Eun Kyoung Choe",
+    "Jesse Shepherd",
+    "Ben Greenstein",
+    "Nathaniel Watson",
+    "Sunny Consolvo",
+    "Julie Kientz"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2012 Best Paper Award: Lullaby: A Capture & Access System for Understanding the Sleep Environment — Matthew Kay, Eun Kyoung Choe, Jesse Shepherd, Ben Greenstein, Nathaniel Watson, Sunny Consolvo, Julie Kientz"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2012,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "The Personal Server: Changing the Way We Think about Ubiquitous Computing",
+   "authors": [
+    "Roy Want",
+    "Trevor Pering",
+    "Gunner Danneels",
+    "Muthu Kumar",
+    "Murali Sundar",
+    "John Light"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2012 10-year Impact Award: The Personal Server: Changing the Way We Think about Ubiquitous Computing — Roy Want, Trevor Pering, Gunner Danneels, Muthu Kumar, Murali Sundar, John Light"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring Capturable Everyday Memory for Autobiographical Authentication",
+   "authors": [
+    "Sauvik Das",
+    "Eiji Hayashi",
+    "Jason I Hong"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2013 Best Paper Award: Exploring Capturable Everyday Memory for Autobiographical Authentication — Sauvik Das, Eiji Hayashi, Jason I Hong"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Instant Inkjet Circuits: Lab-based Inkjet Printing to Support Rapid Prototyping of UbiComp Devices",
+   "authors": [
+    "Yoshihiro Kawahara",
+    "Steve Hodges",
+    "Benjamin S. Cook",
+    "Cheng Zhang",
+    "Gregory D. Abowd"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2013 Best Paper Award: Instant Inkjet Circuits: Lab-based Inkjet Printing to Support Rapid Prototyping of UbiComp Devices — Yoshihiro Kawahara, Steve Hodges, Benjamin S. Cook, Cheng Zhang, Gregory D. Abowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "It Takes a Network to Get Dinner: Designing Location-based Systems to Address Local Food Needs",
+   "authors": [
+    "Lynn Dombrowski",
+    "Jed R. Brubaker",
+    "Sen H. Hirano",
+    "Melissa Mazmanian",
+    "Gillian R. Hayes"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2013 Best Paper Award: It Takes a Network to Get Dinner: Designing Location-based Systems to Address Local Food Needs — Lynn Dombrowski, Jed R. Brubaker, Sen H. Hirano, Melissa Mazmanian, Gillian R. Hayes"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MACH: My Automated Conversation coacH",
+   "authors": [
+    "Mohammed Hoque",
+    "Matthieu Courgeon",
+    "Jean-Claude Martin",
+    "Bilge Mutlu",
+    "Rosalind W Picard"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2013 Best Paper Award: MACH: My Automated Conversation coacH — Mohammed (Ehsan) Hoque, Matthieu Courgeon, Jean-Claude Martin, Bilge Mutlu, Rosalind W Picard"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Inferring High-Level Behavior from Low-Level Sensors",
+   "authors": [
+    "Donald J. Patterson",
+    "Lin Liao",
+    "Dieter Fox",
+    "Henry Kautz"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2013 10-year Impact Award: Inferring High-Level Behavior from Low-Level Sensors — Donald J. Patterson, Lin Liao, Dieter Fox, Henry Kautz"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Intruders Versus Intrusiveness: Teens' and Parents' Perspectives on Home-Entryway Surveillance",
+   "authors": [
+    "Blase Ur",
+    "Jaeyeon Jung",
+    "Stuart Schechter"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 Best Paper Award: Intruders Versus Intrusiveness: Teens' and Parents' Perspectives on Home-Entryway Surveillance — Blase Ur, Jaeyeon Jung, Stuart Schechter"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Money Walks: A Human-Centric Study on the Economics of Personal Mobile Data",
+   "authors": [
+    "Jacopo Staiano",
+    "Nuria Oliver",
+    "Bruno Lepri",
+    "Rodrigo de Oliveira",
+    "Michele Caraviello",
+    "Nicu Sebe"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 Best Paper Award: Money Walks: A Human-Centric Study on the Economics of Personal Mobile Data — Jacopo Staiano, Nuria Oliver, Bruno Lepri, Rodrigo de Oliveira, Michele Caraviello, Nicu Sebe"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Secure Bootstrapping of Cloud-Managed Ubiquitous Displays",
+   "authors": [
+    "Mohit Sethi",
+    "Elena Oat",
+    "Mario Di Francesco",
+    "Tuomas Aura"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 Best Paper Award: Secure Bootstrapping of Cloud-Managed Ubiquitous Displays — Mohit Sethi, Elena Oat, Mario Di Francesco, Tuomas Aura"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Architecture of Innovation: Tracking Face-to-Face Interactions with Ubicomp Technologies",
+   "authors": [
+    "Chloe Brown",
+    "Christos Efstratiou",
+    "Ilias Leontiadis",
+    "Daniele Quercia",
+    "Cecilia Mascolo",
+    "James Scott",
+    "Peter Key"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 Best Paper Award: The Architecture of Innovation: Tracking Face-to-Face Interactions with Ubicomp Technologies — Chloe Brown, Christos Efstratiou, Ilias Leontiadis, Daniele Quercia, Cecilia Mascolo, James Scott, Peter Key"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Activity Recognition from User-Annotated Acceleration Data",
+   "authors": [
+    "Ling Bao",
+    "Stephen S. Intille"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 10-year Impact Award: Activity Recognition from User-Annotated Acceleration Data — Ling Bao, Stephen S. Intille"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Activity Recognition in the Home Using Simple and Ubiquitous Sensors",
+   "authors": [
+    "Emmanuel Munguia Tapia",
+    "Stephen S. Intille",
+    "Kent Larson"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 10-year Impact Award: Activity Recognition in the Home Using Simple and Ubiquitous Sensors — Emmanuel Munguia Tapia, Stephen S. Intille, Kent Larson"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Particle Filters for Location Estimation in Ubiquitous Computing: A Case Study",
+   "authors": [
+    "Jeffrey Hightower",
+    "Gaetano Borriello"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2014 10-year Impact Award: Particle Filters for Location Estimation in Ubiquitous Computing: A Case Study — Jeffrey Hightower, Gaetano Borriello"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DeepEar: Robust Smartphone Audio Sensing in Unconstrained Acoustic Environments Using Deep Learning",
+   "authors": [
+    "Nicholas Lane",
+    "Petko Georgiev",
+    "Lorena Qendro"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2015 Best Paper Award: DeepEar: Robust Smartphone Audio Sensing in Unconstrained Acoustic Environments Using Deep Learning — Nicholas Lane, Petko Georgiev, Lorena Qendro"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "When Attention is not Scarce - Detecting Boredom from Mobile Phone Usage",
+   "authors": [
+    "Martin Pielot",
+    "Tilman Dingler",
+    "Jose San Pedro",
+    "Nuria Oliver"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2015 Best Paper Award: When Attention is not Scarce - Detecting Boredom from Mobile Phone Usage — Martin Pielot, Tilman Dingler, Jose San Pedro, Nuria Oliver"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Gaetano Borriello Best Student Paper Award",
+   "title": "Enhancing Mobile Apps to Use Sensor Hubs without Programmer Effort",
+   "authors": [
+    "Haichen Shen",
+    "Aruna Balasubramanian",
+    "Anthony Lamarca",
+    "David Wetherall"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2015 Gaetano Borriello Best Student Paper Award: Enhancing Mobile Apps to Use Sensor Hubs without Programmer Effort — Haichen Shen, Aruna Balasubramanian, Anthony Lamarca, David Wetherall"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Learning and Recognizing the Places We Go",
+   "authors": [
+    "Jeffrey Hightower",
+    "Sunny Consolvo",
+    "Anthony LaMarca",
+    "Ian Smith",
+    "Jeff Hughes"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2015 10-year Impact Award: Learning and Recognizing the Places We Go — Jeffrey Hightower, Sunny Consolvo, Anthony LaMarca, Ian Smith, Jeff Hughes"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Place Lab: Device Positioning Using Radio Beacons in the Wild",
+   "authors": [
+    "Anthony LaMarca",
+    "Yatin Chawathe",
+    "Sunny Consolvo",
+    "Jeffrey Hightower",
+    "Ian Smith",
+    "James Scott",
+    "Tim Sohn",
+    "James Howard",
+    "Jeff Hughes",
+    "Fred Potter",
+    "Jason Tabert",
+    "Pauline Powledge",
+    "Gaetano Borriello",
+    "Bill Schilit"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2015 10-year Impact Award: Place Lab: Device Positioning Using Radio Beacons in the Wild — Anthony LaMarca, Yatin Chawathe, Sunny Consolvo, Jeffrey Hightower, Ian Smith, James Scott, Tim Sohn, James Howard, Jeff Hughes, Fred Potter, Jason Tabert, Pauline Powledge, Gaetano Borriello, Bill Schilit"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Discovering Different Kinds of Smartphone Users Through Their Application Usage Behaviors",
+   "authors": [
+    "Sha Zhao",
+    "Julian Ramos",
+    "Jianrong Tao",
+    "Ziwen Jiang",
+    "Shijian Li",
+    "Zhaohui Wu",
+    "Gang Pan",
+    "Anind K. Dey"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 Best Paper Award: Discovering Different Kinds of Smartphone Users Through Their Application Usage Behaviors — Sha Zhao, Julian Ramos, Jianrong Tao, Ziwen Jiang, Shijian Li, Zhaohui Wu, Gang Pan, Anind K. Dey"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "EmotionCheck: Leveraging Bodily Signals and False Feedback to Regulate our Emotions",
+   "authors": [
+    "Jean Costa",
+    "Alexander T. Adams",
+    "Malte F. Jung",
+    "Francois Guimbretiere",
+    "Tanzeem Choudhury"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 Best Paper Award: EmotionCheck: Leveraging Bodily Signals and False Feedback to Regulate our Emotions — Jean Costa, Alexander T. Adams, Malte F. Jung, Francois Guimbretiere, Tanzeem Choudhury"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HemaApp: Noninvasive Blood Screening of Hemoglobin using Smartphone Cameras",
+   "authors": [
+    "Edward J. Wang",
+    "William Li",
+    "Doug Hawkins",
+    "Terry Gernsheimer",
+    "Colette Norby-Slycord",
+    "Shwetak Patel"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 Best Paper Award: HemaApp: Noninvasive Blood Screening of Hemoglobin using Smartphone Cameras — Edward J. Wang, William Li, Doug Hawkins, Terry Gernsheimer, Colette Norby-Slycord, Shwetak Patel"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "WiFinger: Talk to Your Smart Devices with Finger-grained Gesture",
+   "authors": [
+    "Hong Li",
+    "Wei Yang",
+    "Jianxin Wang",
+    "Yang Xu",
+    "Liusheng Huang"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 Best Paper Award: WiFinger: Talk to Your Smart Devices with Finger-grained Gesture — Hong Li, Wei Yang, Jianxin Wang, Yang Xu, Liusheng Huang"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Gaetano Borriello Best Student Paper Award",
+   "title": "PrefMiner: Mining User's Preferences for Intelligent Mobile Notification Management",
+   "authors": [
+    "Abhinav Mehrotra",
+    "Robert Hendley",
+    "Mirco Musolesi"
+   ],
+   "track": "main",
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 Gaetano Borriello Best Student Paper Award: PrefMiner: Mining User's Preferences for Intelligent Mobile Notification Management — Abhinav Mehrotra, Robert Hendley, Mirco Musolesi"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "A Practical Approach To Recognizing Physical Activities",
+   "authors": [
+    "Jonathan Lester",
+    "Tanzeem Choudhury",
+    "Gaetano Borriello"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 10-year Impact Award: A Practical Approach To Recognizing Physical Activities — Jonathan Lester, Tanzeem Choudhury, Gaetano Borriello"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Sensecam: A Retrospective Memory Aid",
+   "authors": [
+    "Steve Hodges",
+    "Lyndsay Williams",
+    "Emma Berry",
+    "Shahram Izadi",
+    "James Srinivasan",
+    "Alex Butler",
+    "Gavin Smyth",
+    "Narinder Kapur",
+    "Ken Wood"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2016 10-year Impact Award: Sensecam: A Retrospective Memory Aid — Steve Hodges, Lyndsay Williams, Emma Berry, Shahram Izadi, James Srinivasan, Alex Butler, Gavin Smyth, Narinder Kapur, Ken Wood"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "At the Flick of a Switch: Detecting and Classifying Unique Electrical Events on the Residential Power Line",
+   "authors": [
+    "Shwetak N. Patel",
+    "Thomas Robertson",
+    "Julie A. Kientz",
+    "Matthew S. Reynolds",
+    "Gregory D. Abowd"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2017 10-year Impact Award: At the Flick of a Switch: Detecting and Classifying Unique Electrical Events on the Residential Power Line — Shwetak N. Patel, Thomas Robertson, Julie A. Kientz, Matthew S. Reynolds, Gregory D. Abowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Inference Attacks on Location Tracks",
+   "authors": [
+    "John Krumm"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2017 10-year Impact Award: Inference Attacks on Location Tracks — John Krumm"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Locating Family Values: A Field Trial of the Whereabouts Clock",
+   "authors": [
+    "Barry A. T. Brown",
+    "Alex S. Taylor",
+    "Shahram Izadi",
+    "Abigail Sellen",
+    "Joseph Kaye",
+    "Rachel Eardley"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2017 10-year Impact Award: Locating Family Values: A Field Trial of the Whereabouts Clock — Barry A. T. Brown, Alex S. Taylor, Shahram Izadi, Abigail Sellen, Joseph Kaye, Rachel Eardley"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Detecting Human Movement by Differential Air Pressure Sensing in HVAC System Ductwork: An Exploration in Infrastructure Mediated Sensing",
+   "authors": [
+    "Shwetak Patel",
+    "Matt Reynolds",
+    "Gregory Abowd"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2018 10-year Impact Award: Detecting Human Movement by Differential Air Pressure Sensing in HVAC System Ductwork: An Exploration in Infrastructure Mediated Sensing — Shwetak Patel, Matt Reynolds, Gregory Abowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Flowers or a Robot Army? Encouraging Awareness & Activity with Personal, Mobile Displays",
+   "authors": [
+    "Sunny Consolvo",
+    "Predrag Klasnja",
+    "David W. McDonald",
+    "Daniel Avrahami",
+    "Jon Froehlich",
+    "Louis LeGrand",
+    "Ryan Libby",
+    "Keith Mosher",
+    "James A. Landay"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2018 10-year Impact Award: Flowers or a Robot Army? Encouraging Awareness & Activity with Personal, Mobile Displays — Sunny Consolvo, Predrag Klasnja, David W. McDonald, Daniel Avrahami, Jon Froehlich, Louis LeGrand, Ryan Libby, Keith Mosher, James A. Landay"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Pedestrian Localisation for Indoor Environments",
+   "authors": [
+    "Oliver Woodman",
+    "Robert Harle"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2018 10-year Impact Award: Pedestrian Localisation for Indoor Environments — Oliver Woodman, Robert Harle"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Adding GPS-Control to Traditional Thermostats: An Exploration of Potential Energy Savings and Design Challenges",
+   "authors": [
+    "Manu Gupta",
+    "Stephen S. Intille",
+    "Kent Larson"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2019 10-year Impact Award: Adding GPS-Control to Traditional Thermostats: An Exploration of Potential Energy Savings and Design Challenges — Manu Gupta, Stephen S. Intille, Kent Larson"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Recognizing daily activities with RFID-based sensors",
+   "authors": [
+    "Michael Buettner",
+    "Richa Prasad",
+    "Matthai Philipose",
+    "David Wetherall"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2019 10-year Impact Award: Recognizing daily activities with RFID-based sensors — Michael Buettner, Richa Prasad, Matthai Philipose, David Wetherall"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "SwimMaster: a wearable assistant for swimmer",
+   "authors": [
+    "Marc Bächlin",
+    "Kilian Förster",
+    "Gerhard Tröster"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2019 10-year Impact Award: SwimMaster: a wearable assistant for swimmer — Marc Bächlin, Kilian Förster, Gerhard Tröster"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "EmotionSense: a Mobile Phones Based Adaptive Platform for Experimental Social Psychology Research",
+   "authors": [
+    "Kiran K. Rachuri",
+    "Mirco Musolesi",
+    "Cecilia Mascolo",
+    "Peter J. Rentfrow",
+    "Chris Longworth",
+    "Andrius Aucinas"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2021 10-year Impact Award: EmotionSense: a Mobile Phones Based Adaptive Platform for Experimental Social Psychology Research — Kiran K. Rachuri, Mirco Musolesi, Cecilia Mascolo, Peter J. Rentfrow, Chris Longworth, Andrius Aucinas"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "PreHeat: Controlling Home Heating Using Occupancy Prediction",
+   "authors": [
+    "James Scott",
+    "A.J. Bernheim Brush",
+    "John Krumm",
+    "Brian Meyers",
+    "Michael Hazas",
+    "Stephen Hodges",
+    "Nicolas Villar"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2021 10-year Impact Award: PreHeat: Controlling Home Heating Using Occupancy Prediction — James Scott, A.J. Bernheim Brush, John Krumm, Brian Meyers, Michael Hazas, Stephen Hodges, Nicolas Villar"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Understanding My Data, Myself: Supporting Self-reflection with Ubicomp Technologies",
+   "authors": [
+    "Ian Li",
+    "Anind K. Dey",
+    "Jodi Forlizzi"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2021 10-year Impact Award: Understanding My Data, Myself: Supporting Self-reflection with Ubicomp Technologies — Ian Li, Anind K. Dey, Jodi Forlizzi"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": ".NET Gadgeteer: A Platform for Custom Devices",
+   "authors": [
+    "Nicolas Villar",
+    "James Scott",
+    "Steve Hodges",
+    "Kerry Hammil",
+    "Colin Miller"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2022 10-year Impact Award: .NET Gadgeteer: A Platform for Custom Devices — Nicolas Villar, James Scott, Steve Hodges, Kerry Hammil, Colin Miller"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "Instant inkjet circuits: lab-based inkjet printing to support rapid prototyping of UbiComp devices",
+   "authors": [
+    "Yoshihiro Kawahara",
+    "Steve Hodges",
+    "Benjamin S. Cook",
+    "Cheng Zhang",
+    "Gregory D. Abowd"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2023 10-year Impact Award: Instant inkjet circuits: lab-based inkjet printing to support rapid prototyping of UbiComp devices — Yoshihiro Kawahara, Steve Hodges, Benjamin S. Cook, Cheng Zhang, Gregory D. Abowd"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "MACH: My Automated Conversation Coach",
+   "authors": [
+    "Mohammed Hoque",
+    "Matthieu Courgeon",
+    "Jean-Claude Martin",
+    "Bilge Mutlu",
+    "Rosalind W. Picard"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2023 10-year Impact Award: MACH: My Automated Conversation Coach — Mohammed (Ehsan) Hoque, Matthieu Courgeon, Jean-Claude Martin, Bilge Mutlu, Rosalind W. Picard"
+  },
+  {
+   "venue": "UbiComp",
    "year": 2024,
    "award": "distinguished",
    "awardLabel": "IMWUT Distinguished Paper Award",
@@ -119591,6 +120594,21 @@
    "venue": "UbiComp",
    "year": 2024,
    "award": "tot",
+   "awardLabel": "10-year Impact Award",
+   "title": "InterruptMe: designing intelligent prompting mechanisms for pervasive applications",
+   "authors": [
+    "Veljko Pejovic",
+    "Mirco Musolesi"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://ubicomp.org/sc/awards.html",
+   "evidence": "UbiComp 2024 10-year Impact Award: InterruptMe: designing intelligent prompting mechanisms for pervasive applications — Veljko Pejovic, Mirco Musolesi"
+  },
+  {
+   "venue": "UbiComp",
+   "year": 2024,
+   "award": "tot",
    "awardLabel": "10-Year Impact Award",
    "title": "StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones",
    "authors": [
@@ -119606,7 +120624,10 @@
    ],
    "track": "main",
    "source": "https://ubicomp.org/ubicomp-iswc-2024/awards/",
-   "evidence": "UbiComp 2024 10-Year Impact Award: StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones — Rui Wang, Fanglin Chen, Zhenyu Chen, Tianxing Li, Gabriella Harari, Stefanie Tignor, Xia Zhou, Dror Ben-Zeev and Andrew T. Campbell"
+   "evidence": "UbiComp 2024 10-Year Impact Award: StudentLife: assessing mental health, academic performance and behavioral trends of college students using smartphones — Rui Wang, Fanglin Chen, Zhenyu Chen, Tianxing Li, Gabriella Harari, Stefanie Tignor, Xia Zhou, Dror Ben-Zeev and Andrew T. Campbell",
+   "alsoAt": [
+    "https://ubicomp.org/sc/awards.html"
+   ]
   },
   {
    "venue": "UbiComp",

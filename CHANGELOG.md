@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.119 — 2026-10-12
+
+- UbiComp's and Pervasive's best papers 2005–2016, best student papers 2015–2016 and 10-year impact papers 2005–2024 (60 papers) from the UbiComp steering committee's own awards page (`tot.mjs ubicomp-sc`). The list has 7758 awards.
+
 ## 2.10.118 — 2026-10-12
 
 - NAACL HLT 2016's best short and long papers and runners-up (7 papers) from the conference's own page (`tot.mjs naacl-best`; two titles' semicolons corrected to colons). The list has 7698 awards.
