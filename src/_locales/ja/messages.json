@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "年ごとに棒を表示し、役割の色で塗り分けます。"
+  },
+  "coverRepeats": {
+    "message": "別の論文と重複する項目：$N1$ 件",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "統合…"
   }
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.13.1 — 2026-10-12
+
+- With merging off, the panel's status says when entries repeat another paper ("Entries that repeat another paper: 3 — Merge…"), with a link to the settings.
+- End-to-end checks for text contrast (panel and settings, light and dark, at least 4.5:1) and for controls without an accessible name.
+- README: the newer options are described.
+
 ## 2.13.0 — 2026-10-12
 
 - The panel gains **Highlighted papers by year**: one bar a year, stacked in the role colours (hover for the numbers). It has its own switch under Summary panel, and is left out of the compact layout.

@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "연도마다 막대 하나, 역할 색으로 표시합니다."
+  },
+  "coverRepeats": {
+    "message": "다른 논문과 중복된 항목 $N1$건",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "합치기…"
   }
 }

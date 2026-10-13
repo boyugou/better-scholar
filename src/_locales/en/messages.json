@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "A bar for each year, in the role colours."
+  },
+  "coverRepeats": {
+    "message": "Entries that repeat another paper: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Merge…"
   }
 }

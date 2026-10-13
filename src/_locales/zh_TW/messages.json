@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "每年一根柱，用各位次的顏色。"
+  },
+  "coverRepeats": {
+    "message": "與另一篇重複的條目：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "合併…"
   }
 }

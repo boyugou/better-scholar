@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "عمود لكل سنة، بألوان الأدوار."
+  },
+  "coverRepeats": {
+    "message": "مدخلات مكررة لورقة أخرى: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "دمج…"
   }
 }

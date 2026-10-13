@@ -197,6 +197,9 @@
             : h("button", { class: "rr-link", type: "button", "data-act": "resolve", onClick: () => cb.onResolve() }, t("resolveBtn"))));
       }
       if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
+      // the same paper listed twice: say so, and where the setting is (the panel itself does not write settings)
+      if (c.repeats > 0) status.push(h("div", { class: "rr-cover-line", "data-rr": "repeats" }, h("span", { class: "rr-note" }, t("coverRepeats", [String(c.repeats)])),
+        h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
       if (c.absent > 0) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
       // spellings of the owner's name found in those very papers: one click adds one
       if (parts.status) lines.push(...status);

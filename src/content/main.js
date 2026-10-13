@@ -215,6 +215,7 @@
       metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list),
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
+        repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map((r) => ({ title: r.raw.title, authorsText: r.raw.authorsText, citations: r.raw.citations }))).keep.filter((k) => !k).length,
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },

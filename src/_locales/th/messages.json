@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "แท่งหนึ่งแท่งต่อหนึ่งปี ในสีของบทบาท"
+  },
+  "coverRepeats": {
+    "message": "รายการที่ซ้ำกับบทความอื่น: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "รวม…"
   }
 }

@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Una barra per anno, nei colori dei ruoli."
+  },
+  "coverRepeats": {
+    "message": "Voci che ripetono un altro articolo: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Unisci…"
   }
 }

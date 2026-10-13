@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Sloupec pro každý rok, v barvách rolí."
+  },
+  "coverRepeats": {
+    "message": "Záznamy duplikující jinou práci: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Sloučit…"
   }
 }

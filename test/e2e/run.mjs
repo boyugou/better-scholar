@@ -275,8 +275,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const shownRows = () => page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length);
     await page.waitForTimeout(300);
     assert.equal(await shownRows(), twin.rows, "duplicates are kept by default");
+    await eventually(page, () => /: 1$/.test((document.querySelector('[data-rr="repeats"] .rr-note') || {}).textContent || ""));
     await setPref(opts, "mergeDuplicates", true);
     await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, twin.rows - 1);
+    assert.equal(await page.locator('[data-rr="repeats"]').count(), 0, "with merging on the repeat hint is gone");
     const merged = await page.evaluate(() => { const a = document.querySelector("#gsc_a_b tr.gsc_a_tr td.gsc_a_c a"); return { text: a.textContent, title: a.title }; });
     assert.equal(merged.text, String(twin.own + 5), "the entry that stays shows the citations of both");
     assert.match(merged.title, /2/, "and says it stands for two entries");

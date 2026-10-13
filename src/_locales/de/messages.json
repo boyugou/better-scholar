@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Ein Balken pro Jahr, in den Rollenfarben."
+  },
+  "coverRepeats": {
+    "message": "Einträge, die ein anderes Paper wiederholen: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Zusammenführen…"
   }
 }

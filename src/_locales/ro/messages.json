@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "O bară pentru fiecare an, în culorile rolurilor."
+  },
+  "coverRepeats": {
+    "message": "Intrări care repetă o altă lucrare: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Îmbină…"
   }
 }

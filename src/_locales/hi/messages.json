@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "हर वर्ष के लिए एक बार, भूमिका के रंगों में।"
+  },
+  "coverRepeats": {
+    "message": "किसी अन्य पेपर को दोहराने वाली प्रविष्टियाँ: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "मिलाएँ…"
   }
 }

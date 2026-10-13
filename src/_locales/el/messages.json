@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Μία ράβδος για κάθε έτος, με τα χρώματα των ρόλων."
+  },
+  "coverRepeats": {
+    "message": "Εγγραφές που επαναλαμβάνουν άλλη εργασία: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Συγχώνευση…"
   }
 }

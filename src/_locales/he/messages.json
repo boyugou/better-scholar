@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "עמודה לכל שנה, בצבעי התפקידים."
+  },
+  "coverRepeats": {
+    "message": "רשומות שחוזרות על מאמר אחר: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "מיזוג…"
   }
 }

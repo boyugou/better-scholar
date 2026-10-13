@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Une barre par année, dans les couleurs des rôles."
+  },
+  "coverRepeats": {
+    "message": "Entrées en double d’un autre article : $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Fusionner…"
   }
 }

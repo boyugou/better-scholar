@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Столбец за каждый год, в цветах ролей."
+  },
+  "coverRepeats": {
+    "message": "Записи, повторяющие другую статью: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Объединить…"
   }
 }

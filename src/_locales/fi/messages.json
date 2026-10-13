@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Palkki jokaiselle vuodelle roolien väreillä."
+  },
+  "coverRepeats": {
+    "message": "Toisen artikkelin kaksoiskappaleet: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Yhdistä…"
   }
 }

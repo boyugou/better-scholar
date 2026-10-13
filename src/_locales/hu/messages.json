@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Egy oszlop minden évhez, a szerepkörök színeiben."
+  },
+  "coverRepeats": {
+    "message": "Más cikket ismétlő bejegyzések: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Összevonás…"
   }
 }

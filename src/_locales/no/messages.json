@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "En stolpe for hvert år, i rollefargene."
+  },
+  "coverRepeats": {
+    "message": "Oppføringer som gjentar en annen artikkel: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Slå sammen…"
   }
 }

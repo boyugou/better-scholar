@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Una barra por año, en los colores de cada rol."
+  },
+  "coverRepeats": {
+    "message": "Entradas que repiten otro artículo: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Combinar…"
   }
 }

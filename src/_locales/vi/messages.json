@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Một cột cho mỗi năm, theo màu vai trò."
+  },
+  "coverRepeats": {
+    "message": "Mục trùng với bài khác: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Gộp…"
   }
 }

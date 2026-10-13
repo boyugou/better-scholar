@@ -641,5 +641,16 @@
   },
   "optPanelYearsHint": {
     "message": "Uma barra por ano, nas cores dos papéis."
+  },
+  "coverRepeats": {
+    "message": "Entradas que repetem outro artigo: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Mesclar…"
   }
 }

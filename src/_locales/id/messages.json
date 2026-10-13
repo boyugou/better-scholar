@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Satu batang untuk setiap tahun, dalam warna peran."
+  },
+  "coverRepeats": {
+    "message": "Entri yang menduplikasi makalah lain: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Gabungkan…"
   }
 }

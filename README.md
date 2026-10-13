@@ -40,6 +40,8 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
   highlighted". **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
   presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
   offers **Load all**.
+- **Cleaner profiles, your way** — (all optional, in the settings) merge the entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), hide the "Cited by", "Co-authors" and "Public access" blocks of Scholar's own page, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and complete cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
+- **30 languages** — the interface follows the browser or the language you pick, and a Scholar profile opened in another language can be reopened in yours.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
   settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
   of Awards / Oral / Spotlight / Highlight, the summary panel and each of its parts (the role × rank table, the awards and talks counts, the filters, the citation totals, the loaded-papers status, the name help — keep the filters and totals, say, without the table),

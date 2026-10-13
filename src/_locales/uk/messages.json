@@ -623,5 +623,16 @@
   },
   "optPanelYearsHint": {
     "message": "Стовпець для кожного року, у кольорах ролей."
+  },
+  "coverRepeats": {
+    "message": "Записи, що дублюють іншу статтю: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Об’єднати…"
   }
 }
