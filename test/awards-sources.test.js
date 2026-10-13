@@ -2093,3 +2093,11 @@ test("IMC program pages: the award on its own line under the title, or written a
   assert.deepEqual(parseImcProgram(b, "https://conferences.sigcomm.org/imc/2021/schedule/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Follow the scent: defeating prefix rotation privacy | Cy Dunn; Ed Fox; kc claffy"]);
   assert.equal(parseImcProgram(a, "https://conferences.sigcomm.org/imc/2024/program/").entries.length, 0);
 });
+
+test("MODELS awards track page: best and SIGSOFT distinguished papers with 'A, B and C' authors; ten year influential papers and reviewers left out. JCDL awards page: quoted titles under the award headings", async () => {
+  const { parseModelsAwards, parseJcdlAwards } = await import("../scripts/awards/tot.mjs");
+  const m = `<p>MODELS 2025 - Awards</p><p>MODELS 25 Awards</p><p>MODELS - The 2025 ten year most influential paper award</p><p>Quick fixing of transformations</p><p>J. Sanchez, E. Guerra and J. de Lara</p><p>Best Foundation Paper</p><p>(sponsored by Springer)</p><p>Hand written code preservation in model transformation</p><p>Ann Lee, Bo Chan and Cy Dunn</p><p>ACM SIGSOFT Distinguished Paper Awards</p><p>Behavioral model correctness evaluation with language models</p><p>Ed Fox and Flo Gray</p><p>Best Reviewer Awards</p>`;
+  assert.deepEqual(parseModelsAwards(m, "https://conf.researchr.org/track/models-2025/models-2025-awards").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Hand written code preservation in model transformation | Ann Lee; Bo Chan; Cy Dunn", "distinguished Behavioral model correctness evaluation with language models | Ed Fox; Flo Gray"]);
+  const j = `<p>Vannevar Bush Best Paper Award</p><p>“How a tortured conference becomes a series”</p><p>Gil Hart, Hal Ito</p><p>Best Short Paper Award</p><p>“What lies beneath: visual question datasets”</p><p>Ivy Jones</p>`;
+  assert.deepEqual(parseJcdlAwards(j, "https://2025.jcdl.org/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best How a tortured conference becomes a series | Gil Hart; Hal Ito", "category What lies beneath: visual question datasets | Ivy Jones"]);
+});

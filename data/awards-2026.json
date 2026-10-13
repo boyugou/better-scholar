@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6579
+  "count": 6585
  },
  "entries": [
   {
@@ -74446,6 +74446,37 @@
    "evidence": "Vannevar Bush Best Paper: 2017 Quill: A Framework for Constructing Negotiated Texts – with a Case Study on the US Constitutional Convention of 1787 — Nicholas Cole, Alfie Abdul-Rahman, Grace Mallon"
   },
   {
+   "venue": "JCDL",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Vannevar Bush Best Paper",
+   "title": "How a Tortured Conference Becomes a Series: An Analysis of Conference Manipulation",
+   "authors": [
+    "Wendeline Swart",
+    "Guillaume Cabanac",
+    "Ophélie Fraisier-Vannier",
+    "Gilles Hubert"
+   ],
+   "track": "main",
+   "source": "https://2025.jcdl.org/awards/",
+   "evidence": "JCDL 2025 Vannevar Bush Best Paper: How a Tortured Conference Becomes a Series: An Analysis of Conference Manipulation — Wendeline Swart, Guillaume Cabanac, Ophélie Fraisier-Vannier, Gilles Hubert"
+  },
+  {
+   "venue": "JCDL",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Short Paper Award",
+   "title": "What Lies Beneath: A Call for Distribution-based Visual Question & Answer Datasets",
+   "authors": [
+    "Jill Naiman",
+    "Daniel Evans",
+    "Jooyoung Seo"
+   ],
+   "track": "main",
+   "source": "https://2025.jcdl.org/awards/",
+   "evidence": "JCDL 2025 Best Short Paper Award: What Lies Beneath: A Call for Distribution-based Visual Question & Answer Datasets — Jill Naiman, Daniel Evans, Jooyoung Seo"
+  },
+  {
    "venue": "JVM",
    "year": 2001,
    "award": "best",
@@ -80349,6 +80380,70 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "ACM / IEEE 27th International Conference on Model Driven Engineering Languages and Systems (MODELS 2024): Christoph Bockisch, Deniz Eren, Sascha Lehmann, Daniel Neufeld and Gabriele Taentzer: Mutation Testing of Java Bytecode: A Model-Driven Approach."
+  },
+  {
+   "venue": "MODELS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Foundation Paper Award",
+   "title": "Hand-Written Code Preservation in Model-to-Text Transformation using Intrinsic Redundancy",
+   "authors": [
+    "Ionut Predoaia",
+    "Sultan Almutairi",
+    "Athanasios Zolotas",
+    "Antonio Garcia-Dominguez",
+    "Dimitris Kolovos"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/models-2025/models-2025-awards",
+   "evidence": "MODELS 2025 Best Foundation Paper Award: Hand-Written Code Preservation in Model-to-Text Transformation using Intrinsic Redundancy — Ionut Predoaia, Sultan Almutairi, Athanasios Zolotas, Antonio Garcia-Dominguez, Dimitris Kolovos"
+  },
+  {
+   "venue": "MODELS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Practice Track Paper Award",
+   "title": "Visual Modeling and Simulation of AUTOSAR Application Layer Models Using Modelica",
+   "authors": [
+    "Peihao Yang",
+    "Tiantian Wang",
+    "Ming Yang",
+    "Xiaohong Su"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/models-2025/models-2025-awards",
+   "evidence": "MODELS 2025 Best Practice Track Paper Award: Visual Modeling and Simulation of AUTOSAR Application Layer Models Using Modelica — Peihao Yang, Tiantian Wang, Ming Yang, Xiaohong Su"
+  },
+  {
+   "venue": "MODELS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper Award",
+   "title": "Complex Model Transformations by Reinforcement Learning with Uncertain Human Guidance",
+   "authors": [
+    "Kyanna Dagenais",
+    "Istvan David"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/models-2025/models-2025-awards",
+   "evidence": "MODELS 2025 ACM SIGSOFT Distinguished Paper Award: Complex Model Transformations by Reinforcement Learning with Uncertain Human Guidance — Kyanna Dagenais, Istvan David"
+  },
+  {
+   "venue": "MODELS",
+   "year": 2025,
+   "award": "distinguished",
+   "awardLabel": "ACM SIGSOFT Distinguished Paper Award",
+   "title": "MCeT: Behavioral Model Correctness Evaluation using Large Language Models",
+   "authors": [
+    "Khaled Ahmed",
+    "Jialing Song",
+    "Boqi Chen",
+    "Ou Wei",
+    "Bingzhou Zheng"
+   ],
+   "track": "main",
+   "source": "https://conf.researchr.org/track/models-2025/models-2025-awards",
+   "evidence": "MODELS 2025 ACM SIGSOFT Distinguished Paper Award: MCeT: Behavioral Model Correctness Evaluation using Large Language Models — Khaled Ahmed, Jialing Song, Boqi Chen, Ou Wei, Bingzhou Zheng"
   },
   {
    "venue": "MSR",

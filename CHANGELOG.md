@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.67 — 2026-10-12
+
+- MODELS 2025's best foundation paper, best practice track paper and two ACM SIGSOFT distinguished papers (conf.researchr.org's awards track) and JCDL 2025's Vannevar Bush best paper and best short paper (`tot.mjs models-awards`, `tot.mjs jcdl-awards`); the list stopped at MODELS 2024 and JCDL 2017. Other years' pages have no such page. The list has 6585 awards.
+
 ## 2.10.66 — 2026-10-12
 
 - IMC's best, best student, best short and distinguished papers of 2018–2022 and 2025 (12 papers; the list had one) from each year's own program page, where the award is written under, after or beside the title in a layout of that year (`tot.mjs imc-year`); the reader refuses a page whose <title> names another year. 2023's and 2024's pages mark no award. The list has 6579 awards.
