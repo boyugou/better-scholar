@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6654
+  "count": 6660
  },
  "entries": [
   {
@@ -109585,6 +109585,106 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VM '04: Semantic Remote Attestation—A Virtual Machine Directed Approach to Trusted Computing — Vivek Haldar, University of California, Irvine; Deepak Chandra, University of California, Irvine; Michael Franz, University of California, Irvine"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Evaluating Text Reading Speed in VR Scenes and 3D Particle Visualizations",
+   "authors": [
+    "Johannes Novotny",
+    "David H. Laidlaw"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: Evaluating Text Reading Speed in VR Scenes and 3D Particle Visualizations — Johannes Novotny PhD, David H. Laidlaw"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Projection Mapping under Environmental Lighting by Replacing Room Lights with Heterogeneous Projectors",
+   "authors": [
+    "Masaki Takeuchi",
+    "Hiroki Kusuyama",
+    "Daisuke Iwai",
+    "Kosuke Sato"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: Projection Mapping under Environmental Lighting by Replacing Room Lights with Heterogeneous Projectors — Masaki Takeuchi, Hiroki Kusuyama, Daisuke Iwai, Kosuke Sato"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Redirection Strategy Switching: Selective Redirection Controller for Dynamic Environment Adaptation",
+   "authors": [
+    "Ho Jung Lee",
+    "Sang-Bin Jeon",
+    "Yong-Hun Cho",
+    "In-Kwon Lee"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: Redirection Strategy Switching: Selective Redirection Controller for Dynamic Environment Adaptation — Ho Jung Lee, Sang-Bin Jeon, Yong-Hun Cho, In-Kwon Lee"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Swift-Eye: Towards Anti-blink Pupil Tracking for Precise and Robust High-Frequency Near-Eye Movement Analysis with Event Cameras",
+   "authors": [
+    "Tongyu Zhang",
+    "Yiran Shen",
+    "Guangrong Zhao",
+    "Lin Wang",
+    "Xiaoming Chen",
+    "Lu Bai",
+    "Yuanfeng Zhou"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: Swift-Eye: Towards Anti-blink Pupil Tracking for Precise and Robust High-Frequency Near-Eye Movement Analysis with Event Cameras — Tongyu Zhang, Yiran Shen, Guangrong Zhao, Lin Wang, Xiaoming Chen, Lu Bai, Yuanfeng Zhou"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Differential Effects of Multisensory Attentional Cues on Task Performance in VR Depending on the Level of Cognitive Load and Cognitive Capacity",
+   "authors": [
+    "Sihyun Jeong",
+    "Jinwook Kim",
+    "Jeongmi Lee"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: The Differential Effects of Multisensory Attentional Cues on Task Performance in VR Depending on the Level of Cognitive Load and Cognitive Capacity — Sihyun Jeong, Jinwook Kim, Jeongmi Lee"
+  },
+  {
+   "venue": "VR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "VR.net: A Real-world Large-scale Dataset for Virtual Reality Motion Sickness Research",
+   "authors": [
+    "Elliott Wen",
+    "Chitralekha Gupta",
+    "Prasanth Sasikumar",
+    "Mark Billinghurst",
+    "James Wilmott",
+    "Emily Skow",
+    "Arindam Dey",
+    "Suranga Nanayakkara"
+   ],
+   "track": "main",
+   "source": "https://ieeevr.org/2024/awards/conference-awards/",
+   "evidence": "IEEE VR 2024 Best Paper: VR.net: A Real-world Large-scale Dataset for Virtual Reality Motion Sickness Research — Elliott Wen, Chitralekha Gupta, Prasanth Sasikumar, Mark Billinghurst, James Wilmott, Emily Skow, Arindam Dey, Suranga Nanayakkara"
   },
   {
    "venue": "VRST",

@@ -2153,3 +2153,9 @@ test("ACM Multimedia: 2025's 'Best Paper' heading, a quoted title and 'Authors:'
   const b = `<p>Best Paper Award Presented to:  Gil Hart, Hal Ito, Ivy Jones</p><p>for the paper titled:</p><p>Combinatorial-dependence audio-queried transformer for segmentation</p><p>Honorable Mention Award Presented to:  Kay Lowe</p><p>for the paper titled:</p><p>Proposal-free refinement for temporal action detection</p>`;
   assert.deepEqual(parseAcmmmAwards(b, "https://2023.acmmm.org/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2023 Combinatorial-dependence audio-queried transformer for segmentation | Gil Hart; Hal Ito; Ivy Jones"]);
 });
+
+test("IEEE VR awards page: the second 'Best Papers' heading, a title, 'Name,' and 'Affiliation;' lines up to 'Abstract'; the honorable mentions are left out; an over-long list is refused", async () => {
+  const { parseIeeeVrBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Papers</p><p>Honorable Mentions</p><p>Best Papers</p><p>A large-scale dataset for virtual reality motion sickness research (Journal: P1422)</p><p>Ann Lee,</p><p>University of Auckland;</p><p>Bo Chan,</p><p>National University of Singapore</p><p>Abstract</p><p>This paper introduces a dataset.</p><p>Best Papers - Honorable Mentions</p><p>An honoured dual-modal speech keyword spotting paper (Journal: P1317)</p><p>Cy Dunn,</p><p>Beihang University</p><p>Abstract</p>`;
+  assert.deepEqual(parseIeeeVrBest(h, "https://ieeevr.org/2024/awards/conference-awards/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["A large-scale dataset for virtual reality motion sickness research | Ann Lee; Bo Chan"]);
+});
