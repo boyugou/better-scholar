@@ -64,6 +64,8 @@ Scholar domain. The interface comes in 30 languages.
 2. Click **Load unpacked** and select this repository's `src/` folder.
 3. Open a Google Scholar author profile.
 
+After updating the folder (`git pull`), click the reload icon on the extension's card at `chrome://extensions` and refresh open Scholar tabs: Chrome keeps the old scripts of an unpacked extension until it is reloaded, while the interface texts are read again at every page load, so an old script can show a text key instead of a word.
+
 No build step, no dependencies. To make a zip (for sharing, or a store upload):
 
 ```bash

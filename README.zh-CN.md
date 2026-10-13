@@ -54,6 +54,8 @@ _English name: Scholar Roles & Ranks_
 2. 点"加载已解压的扩展程序"，选择本仓库的 `src/` 文件夹。
 3. 打开任意 Google Scholar 作者主页。
 
+更新文件夹（`git pull`）之后，请在 `chrome://extensions` 里点该扩展卡片上的“重新加载”，并刷新已打开的 Scholar 页面：Chrome 对已解压的扩展会一直沿用旧脚本，而界面文字每次打开页面都重新读取，所以旧脚本可能显示出文字键名而不是词语。
+
 无需构建、无依赖。打包 zip（用于分享或上架）：
 
 ```bash
