@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.99 — 2026-10-12
+
+- UMAP's best papers 2007–2025 (19) and BPM's best papers and best student papers 2009–2026 (32; the list had none for either) from the UMAP society's and the BPM steering committee's own pages (`tot.mjs umap-best`, `bpm-awards`). The list has 7260 awards.
+
 ## 2.10.98 — 2026-10-12
 
 - ICCAD's McCalla best papers (front-end and back-end) and ten-year retrospective influential papers, 2005–2025 (38 papers; the list had none for ICCAD) from IEEE CEDA's own award page (`tot.mjs mccalla-awards`). The list has 7209 awards.

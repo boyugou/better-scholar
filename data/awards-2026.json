@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7209
+  "count": 7260
  },
  "entries": [
   {
@@ -8654,6 +8654,491 @@
    "track": "main",
    "source": "https://bmvc2025.bmva.org/",
    "evidence": "BMVC 2025 Best Paper Award: Guiding a diffusion model with itself using sliding windows — Nikolas Adaloglou, Tim Kaiser, Damir Iagudin, Markus Kollmann"
+  },
+  {
+   "venue": "BPM",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Symbolic abstraction and deadlock freeness verification of inter-enterprise processes",
+   "authors": [
+    "Kais Klai",
+    "Samir Tata",
+    "Jörg Desel"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2009 Best paper award: Kais Klai, Samir Tata and Jörg Desel: Symbolic abstraction and deadlock freeness verification of inter-enterprise processes"
+  },
+  {
+   "venue": "BPM",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Extending BPM Environments of your choice with performance related Decision Support",
+   "authors": [
+    "Mathias Fritzsche",
+    "Michael Picht",
+    "Wasif Gilani",
+    "Ivor Spence",
+    "John Brown",
+    "Peter Kilpatrick"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2009 Best student paper award: Mathias Fritzsche, Michael Picht, Wasif Gilani, Ivor Spence, John Brown and Peter Kilpatrick: Extending BPM Environments of your choice with performance related Decision Support"
+  },
+  {
+   "venue": "BPM",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Structuring Acyclic Process Models",
+   "authors": [
+    "Artem Polyvyanyy",
+    "Luciano García-Bañuelos",
+    "Marlon Dumas"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2010 Best paper award: Artem Polyvyanyy, Luciano García-Bañuelos and Marlon Dumas: Structuring Acyclic Process Models"
+  },
+  {
+   "venue": "BPM",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Trace Alignment in Process Mining: Opportunities for Process Diagnostics",
+   "authors": [
+    "Jagadeesh Chandra Bose Rantham Prabhakara"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2010 Best student paper award: Jagadeesh Chandra Bose Rantham Prabhakara (with Wil M. P van der Aalst): Trace Alignment in Process Mining: Opportunities for Process Diagnostics"
+  },
+  {
+   "venue": "BPM",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Slice, Mine and Dice: Complexity-Aware automated Discovery of Business Process Models",
+   "authors": [
+    "Chathura C. Ekanayake",
+    "Marlon Dumas",
+    "Luciano García-Bañuelos",
+    "Marcello La Rosa"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2013 Best paper award: Chathura C. Ekanayake, Marlon Dumas, Luciano García-Bañuelos , and Marcello La Rosa: Slice, Mine and Dice: Complexity-Aware automated Discovery of Business Process Models"
+  },
+  {
+   "venue": "BPM",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Conformance Checking in the Large: Partitioning and Topology",
+   "authors": [
+    "Jorge Munoz-Gama"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2013 Best student paper award: Jorge Munoz-Gama (with Josep Carmona and Wil M.P. van der Aalst): Conformance Checking in the Large: Partitioning and Topology"
+  },
+  {
+   "venue": "BPM",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A General Framework for Correlating Business Process Characteristics",
+   "authors": [
+    "Massimiliano de Leoni",
+    "Wil van der Aalst",
+    "Marcus Dees"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2014 Best paper award: Massimiliano de Leoni, Wil van der Aalst and Marcus Dees: A General Framework for Correlating Business Process Characteristics"
+  },
+  {
+   "venue": "BPM",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Behavioral Comparison of Process Models Based on Canonically Reduced Event Structures",
+   "authors": [
+    "Abel Armas-Cervantes"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2014 Best student paper award: Abel Armas-Cervantes (with Paolo Baldan, Marlon Dumas and Luciano García-Bañuelos): Behavioral Comparison of Process Models Based on Canonically Reduced Event Structures"
+  },
+  {
+   "venue": "BPM",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Ensuring Model Consistency in Declarative Process Discovery",
+   "authors": [
+    "Claudio Di Ciccio",
+    "Fabrizio Maria Maggi",
+    "Marco Montali",
+    "Jan Mendling"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2015 Best paper award: Claudio Di Ciccio, Fabrizio Maria Maggi, Marco Montali and Jan Mendling: Ensuring Model Consistency in Declarative Process Discovery"
+  },
+  {
+   "venue": "BPM",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Mining invisible tasks in non-free-choice constructs",
+   "authors": [
+    "Qinlong Guo"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2015 Best student paper award: Qinlong Guo (with Lijie Wen, Jianmin Wang, Zhiqiang Yan and Philip S. Yu): Mining invisible tasks in non-free-choice constructs"
+  },
+  {
+   "venue": "BPM",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Semantics and Analysis of DMN Decision Tables",
+   "authors": [
+    "Diego Calvanese",
+    "Marlon Dumas",
+    "Ülari Laurson",
+    "Fabrizio Maria Maggi",
+    "Marco Montali",
+    "Irene Teinemaa"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2016 Best paper award: Diego Calvanese, Marlon Dumas, Ülari Laurson, Fabrizio Maria Maggi, Marco Montali and Irene Teinemaa: Semantics and Analysisnof DMN Decision Tables [the page misprints the title; the paper is \"Semantics and Analysis of DMN Decision Tables\" — data/exclusions.json]"
+  },
+  {
+   "venue": "BPM",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "From Low-Level Events to Activities - A Pattern-based Approach",
+   "authors": [
+    "Felix Mannhardt"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2016 Best student paper award: Felix Mannhardt (with Massimiliano de Leoni, Wil van der Aalst, Hajo Reijers and Pieter Toussaint): From Low-Level Events to Activities - A Pattern-based Approach"
+  },
+  {
+   "venue": "BPM",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Temporal Network Representation of Event Logs for Improved Performance Modelling in Business Processes",
+   "authors": [
+    "Arik Senderovich",
+    "Matthias Weidlich",
+    "Avigdor Gal"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2017 Best paper award: Arik Senderovich, Matthias Weidlich and Avigdor Gal: Temporal Network Representation of Event Logs for Improved Performance Modelling in Business Processes"
+  },
+  {
+   "venue": "BPM",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "TESSERACT: Time-drifts in Event Streams using Series of Evolving Rolling Averages of Completion Times",
+   "authors": [
+    "Florian Richter"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2017 Best student paper award: Florian Richter (with Thomas Seidl): TESSERACT: Time-drifts in Event Streams using Series of Evolving Rolling Averages of Completion Times"
+  },
+  {
+   "venue": "BPM",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Construction Process Modeling: Representing Activities, Items and their Interplay",
+   "authors": [
+    "Elisa Marengo",
+    "Werner Nutt",
+    "Matthias Perktold"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2018 Best paper award: Elisa Marengo, Werner Nutt and Matthias Perktold: Construction Process Modeling: Representing Activities, Items and their Interplay"
+  },
+  {
+   "venue": "BPM",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Maximizing Synchronization for Aligning Observed and Modelled Behaviour",
+   "authors": [
+    "Vincent Bloemen",
+    "Sebastiaan van Zelst",
+    "Wil M.P. van der Aalst",
+    "Boudewijn van Dongen",
+    "Jaco van de Pol"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2018 Best student paper award: Vincent Bloemen, Sebastiaan van Zelst, Wil M.P. van der Aalst, Boudewijn van Dongen and Jaco van de Pol: Maximizing Synchronization for Aligning Observed and Modelled Behaviour"
+  },
+  {
+   "venue": "BPM",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A First-Order Logic Semantics for Communication-Parametric BPMN Collaborations",
+   "authors": [
+    "Sara Houhou",
+    "Souheib Baarir",
+    "Pascal Poizat",
+    "Philippe Quéinnec"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2019 Best paper award: Sara Houhou, Souheib Baarir, Pascal Poizat and Philippe Quéinnec: A First-Order Logic Semantics for Communication-Parametric BPMN Collaborations"
+  },
+  {
+   "venue": "BPM",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Understanding the Alignment of Employee Appraisals and Rewards with Business Processes",
+   "authors": [
+    "Aygun Shafagatova",
+    "Amy Van Looy"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2019 Best student paper award: Aygun Shafagatova and Amy Van Looy: Understanding the Alignment of Employee Appraisals and Rewards with Business Processes"
+  },
+  {
+   "venue": "BPM",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Consolidated Framework for Implementing Robotic Process Automation Projects",
+   "authors": [
+    "Lukas-Valentin Herm",
+    "Christian Janiesch",
+    "Alexander Helm",
+    "Florian Imgrund",
+    "Kevin Fuchs",
+    "Adrian Hofmann",
+    "Axel Winkelmann"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2020 Best paper award: Lukas-Valentin Herm, Christian Janiesch, Alexander Helm, Florian Imgrund, Kevin Fuchs, Adrian Hofmann and Axel Winkelmann: A Consolidated Framework for Implementing Robotic Process Automation Projects"
+  },
+  {
+   "venue": "BPM",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Looking for Meaning: Discovering Action-Response-Effect Patterns in Business Processes",
+   "authors": [
+    "Jelmer J. Koorn",
+    "Xixi Lu",
+    "Henrik Leopold",
+    "Hajo A. Reijers"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2020 Best student paper award: Jelmer J. Koorn, Xixi Lu, Henrik Leopold and Hajo A. Reijers: Looking for Meaning: Discovering Action-Response-Effect Patterns in Business Processes"
+  },
+  {
+   "venue": "BPM",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CoCoMoT: Conformance Checking of Multi-perspective Processes via SMT",
+   "authors": [
+    "Paolo Felli",
+    "Alessandro Gianola",
+    "Marco Montali",
+    "Andrey Rivkin",
+    "Sarah Winkler"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2021 Best paper award: Paolo Felli, Alessandro Gianola, Marco Montali, Andrey Rivkin, and Sarah Winkler: CoCoMoT: Conformance Checking of Multi-perspective Processes via SMT"
+  },
+  {
+   "venue": "BPM",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Incremental Predictive Process Monitoring: The Next Activity Case",
+   "authors": [
+    "Stephen Pauwels",
+    "Toon Calders"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2021 Best student paper award: Stephen Pauwels and Toon Calders: Incremental Predictive Process Monitoring: The Next Activity Case"
+  },
+  {
+   "venue": "BPM",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Reasoning on Labelled Petri Nets and their Dynamics in a Stochastic Setting",
+   "authors": [
+    "Sander J.J. Leemans",
+    "Fabrizio Maria Maggi",
+    "Marco Montali"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2022 Best paper award: Sander J.J. Leemans, Fabrizio Maria Maggi and Marco Montali: Reasoning on Labelled Petri Nets and their Dynamics in a Stochastic Setting"
+  },
+  {
+   "venue": "BPM",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Analyzing How Process Mining Reports Answer Time Performance Questions",
+   "authors": [
+    "Carlos Capitán-Agudo",
+    "María Salas-Urbano",
+    "Cristina Cabanillas",
+    "Manuel Resinas"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2022 Best student paper award: Carlos Capitán-Agudo, María Salas-Urbano, Cristina Cabanillas and Manuel Resinas: Analyzing How Process Mining Reports Answer Time Performance Questions"
+  },
+  {
+   "venue": "BPM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "POWL: Partially Ordered Workflow Language",
+   "authors": [
+    "Humam Kourani",
+    "Sebastiaan van Zelst"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2023 Best paper award: Humam Kourani and Sebastiaan van Zelst: POWL: Partially Ordered Workflow Language"
+  },
+  {
+   "venue": "BPM",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "On the Cognitive Effects of Abstraction and Fragmentation in Modularized Process Models",
+   "authors": [
+    "Clemens Schreiber",
+    "Amine Abbad-Andaloussi",
+    "Barbara Weber"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2023 Best student paper award: Clemens Schreiber, Amine Abbad-Andaloussi and Barbara Weber: On the Cognitive Effects of Abstraction and Fragmentation in Modularized Process Models"
+  },
+  {
+   "venue": "BPM",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Explanatory Capabilities of Large Language Models in Prescriptive Process Monitoring",
+   "authors": [
+    "Kateryna Kubrak",
+    "Lana Botchorishvili",
+    "Fredrik Milani",
+    "Alexander Nolte",
+    "Marlon Dumas"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2024 Best paper award: Kateryna Kubrak, Lana Botchorishvili, Fredrik Milani, Alexander Nolte and Marlon Dumas: Explanatory Capabilities of Large Language Models in Prescriptive Process Monitoring"
+  },
+  {
+   "venue": "BPM",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Looking for Change: A Computer Vision Approach for Concept Drift Detection in Process Mining",
+   "authors": [
+    "Alexander Kraus",
+    "Han van der Aa"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2024 Best student paper award: Alexander Kraus and Han van der Aa: Looking for Change: A Computer Vision Approach for Concept Drift Detection in Process Mining"
+  },
+  {
+   "venue": "BPM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimization of Activity Batching Policies in Business Processes",
+   "authors": [
+    "Orlenys López-Pintado",
+    "Jannis Rosenbaum",
+    "Marlon Dumas"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2025 Best paper award: Orlenys López-Pintado, Jannis Rosenbaum, Marlon Dumas: Optimization of Activity Batching Policies in Business Processes"
+  },
+  {
+   "venue": "BPM",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "MANTA - Materializing Views on Event Data for Context Exploration in Process Analysis",
+   "authors": [
+    "Maike Basmer",
+    "Hannes Ueck",
+    "Dirk Fahland",
+    "Matthias Weidlich"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2025 Best student paper award: Maike Basmer, Hannes Ueck, Dirk Fahland, Matthias Weidlich: MANTA - Materializing Views on Event Data for Context Exploration in Process Analysis"
+  },
+  {
+   "venue": "BPM",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Compiling Constraint Knowledge into Prescriptive Process Analytics via Neuro-symbolic Outcome Distillation",
+   "authors": [
+    "Gyunam Park"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2026 Best paper award: Gyunam Park: Compiling Constraint Knowledge into Prescriptive Process Analytics via Neuro-symbolic Outcome Distillation"
+  },
+  {
+   "venue": "BPM",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "BRIDGE: A Bayes-Risk-Informed Process Decoder for Suffix Prediction",
+   "authors": [
+    "Xiaomeng He",
+    "Johannes De Smedt",
+    "Seppe Vanden Broucke",
+    "Jochen De Weerdt"
+   ],
+   "track": "main",
+   "source": "https://bpm-conference.org/awards/",
+   "evidence": "BPM 2026 Best student paper award: Xiaomeng He, Johannes De Smedt, Seppe Vanden Broucke and Jochen De Weerdt: BRIDGE: A Bayes-Risk-Informed Process Decoder for Suffix Prediction"
   },
   {
    "venue": "BSDCon",
@@ -112854,6 +113339,312 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10138/35/program",
    "evidence": "UIST 2025 program, Honorable Mention: TwinSpin: A Virtual Ball in a VR Controller Enabling In-Hand 3DoF Rotation — Changsung Lim, Taejun Kim, Geehyuk Lee"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploiting Evidence Analysis in Plan Recognition",
+   "authors": [
+    "Stephanie Elzer"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2007 Best Paper Award: Exploiting Evidence Analysis in Plan Recognition — Stephanie Elzer, University of Millersville, U.S.A. and Sandra Carberry, University of Delaware, U.S.A."
+  },
+  {
+   "venue": "UMAP",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Social Information Access for the Rest of Us: An Exploration of Social YouTube",
+   "authors": [
+    "Maurice Coyle",
+    "Jill Freyne",
+    "Peter Brusilovsky",
+    "Barry Smyth"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2008 Best Paper Award: Social Information Access for the Rest of Us: An Exploration of Social YouTube — Maurice Coyle, Jill Freyne, Peter Brusilovsky, and Barry Smyth"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Tell Me Where You've Lived, And I'll Tell You What You Like: Adapting Interfaces to Cultural Preferences",
+   "authors": [
+    "Katharina Reinecke",
+    "Abraham Bernstein"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2009 Best Paper Award: Tell Me Where You've Lived, And I'll Tell You What You Like: Adapting Interfaces to Cultural Preferences — Katharina Reinecke, Abraham Bernstein, University of Zurich, Switzerland"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Analysis of Strategies for Building Group Profiles",
+   "authors": [
+    "Christophe Senot",
+    "Dimitre Kostadinov",
+    "Makram Bouzid",
+    "Jerome Picault",
+    "Armen Aghasaryan",
+    "Cedric Bernier",
+    "Bell Labs",
+    "Alcatel-Lucent France"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2010 Best Paper Award: Analysis of Strategies for Building Group Profiles — Christophe Senot, Dimitre Kostadinov, Makram Bouzid, Jerome Picault, Armen Aghasaryan, and Cedric Bernier, Bell Labs, Alcatel-Lucent France."
+  },
+  {
+   "venue": "UMAP",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Analyzing User Modeling on Twitter for Personalized News Recommendations",
+   "authors": [
+    "Fabian Abel",
+    "Qi Gao",
+    "Geert-Jan Houben",
+    "Ke Tao"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2011 Best Paper Award: Analyzing User Modeling on Twitter for Personalized News Recommendations — Fabian Abel, Qi Gao, Geert-Jan Houben and Ke Tao"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Users and Noise: Estimating the Magic Barrier of Recommendation Systems",
+   "authors": [
+    "Alan Said",
+    "Brijnesh Jain",
+    "Sascha Narr",
+    "Till Plumbaum"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2012 Best Paper Award: Users and Noise: Estimating the Magic Barrier of Recommendation Systems — Alan Said, Brijnesh Jain, Sascha Narr and Till Plumbaum"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Comparing and Combining Eye Gaze and Interface Actions for Determining User Learning with an Interactive Simulation",
+   "authors": [
+    "Samad Kardan",
+    "Cristina Conati"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2013 Best Paper Award: Comparing and Combining Eye Gaze and Interface Actions for Determining User Learning with an Interactive Simulation — Samad Kardan and Cristina Conati"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Te,Te,Hi,Hi: Eye Gaze Sequence Analysis for Informing User-Adaptive Information Visualizations",
+   "authors": [
+    "Ben Steichen",
+    "Michael M.A. Wu",
+    "Dereck Toker",
+    "Cristina Conati",
+    "Giuseppe Carenini"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2014 Best Paper Award: Te,Te,Hi,Hi: Eye Gaze Sequence Analysis for Informing User-Adaptive Information Visualizations — Ben Steichen, Michael M.A. Wu, Dereck Toker, Cristina Conati and Giuseppe Carenini."
+  },
+  {
+   "venue": "UMAP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Mars and Venus Effect: The Influence of User Gender on the Effectiveness of Adaptive Task Support",
+   "authors": [
+    "Alexandria Katarina Vail",
+    "Kristy Elizabeth Boyer",
+    "Eric N. Wiebe",
+    "James C. Lester"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2015 Best Paper Award: The Mars and Venus Effect: The Influence of User Gender on the Effectiveness of Adaptive Task Support — Alexandria Katarina Vail, Kristy Elizabeth Boyer, Eric N. Wiebe, James C. Lester"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Predicting Individual Differences for Learner Modeling in Intelligent Tutors from Previous Learner Activities",
+   "authors": [
+    "Michael Eagle",
+    "Albert Corbett",
+    "John Stamper",
+    "Bruce Mclaren",
+    "Ryan Baker"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2016 Best Paper Award: Predicting Individual Differences for Learner Modeling in Intelligent Tutors from Previous Learner Activities — Michael Eagle, Albert Corbett, John Stamper, Bruce Mclaren and Ryan Baker"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Experimental Analysis of Mastery Learning Criteria",
+   "authors": [
+    "Radek Pelánek",
+    "Jiří Řihák"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2017 Best Paper Award: Experimental Analysis of Mastery Learning Criteria — Radek Pelánek and Jiří Řihák"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Easy to Please: Separating User Experience from Choice Satisfaction",
+   "authors": [
+    "James Schaffer",
+    "John O'Donovan",
+    "Tobias Höllerer"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2018 Best Paper Award: Easy to Please: Separating User Experience from Choice Satisfaction — James Schaffer, John O'Donovan and Tobias Höllerer."
+  },
+  {
+   "venue": "UMAP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Effect of Values and Technology Use on Exercise: Implications for Personalized Behavior Change Interventions",
+   "authors": [
+    "Yelena Mejova",
+    "Kyriaki Kalimeri"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2019 Best Paper Award: Effect of Values and Technology Use on Exercise: Implications for Personalized Behavior Change Interventions — Yelena Mejova and Kyriaki Kalimeri"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Personalized Recommendation of PoIs to People with Autism",
+   "authors": [
+    "Noemi Mauro",
+    "Liliana Ardissono",
+    "Federica Cena"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2020 Best Paper Award: Personalized Recommendation of PoIs to People with Autism — Noemi Mauro, Liliana Ardissono and Federica Cena, University of Turin, Italy"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Data-Driven Modeling of Learners' Individual Differences for Predicting Engagement and Success in Online Learning",
+   "authors": [
+    "Kamil Akhuseyinoglu",
+    "Peter Brusilovsky"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2021 Best Paper Award: Data-Driven Modeling of Learners' Individual Differences for Predicting Engagement and Success in Online Learning — Kamil Akhuseyinoglu and Peter Brusilovsky (University of Pittsburgh, USA)"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Walking with PACE – Personalized and Automated Coaching Engine",
+   "authors": [
+    "Madhurima Vardhan",
+    "Narayan Hegde",
+    "Srujana Merugu",
+    "Shantanu Prabhat",
+    "Deepak Nathani",
+    "Martin Seneviratne",
+    "Nur Muhammad",
+    "Pranay Reddy",
+    "Sriram Lakshminarasimhan",
+    "Rahul Singh",
+    "Karina Lorenzana",
+    "Eshan Motwani",
+    "Partha Talukdar",
+    "Aravindan Raghuveer"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2022 Best Paper Award: Walking with PACE – Personalized and Automated Coaching Engine — Madhurima Vardhan, Narayan Hegde, Srujana Merugu, Shantanu Prabhat, Deepak Nathani, Martin Seneviratne, Nur Muhammad, Pranay Reddy, Sriram Lakshminarasimhan, Rahul Singh, Karina Lorenzana, Eshan Motwani, Partha Talukdar and Aravindan Raghuveer"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Combining Reinforcement Learning and Spatial Proximity Exploration for New User and New POI Recommendations",
+   "authors": [
+    "David Massimo",
+    "Francesco Ricci"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2023 Best Paper Award: Combining Reinforcement Learning and Spatial Proximity Exploration for New User and New POI Recommendations — David Massimo, Francesco Ricci"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Explaining the Unexplainable: The Impact of Misleading Explanations on Trust in Unreliable Predictions for Hardly Assessable Tasks",
+   "authors": [
+    "Mersedeh Sadeghi",
+    "Daniel Pöttgen",
+    "Patrick Ebel",
+    "Andreas Vogelsang"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2024 Best Paper Award: Explaining the Unexplainable: The Impact of Misleading Explanations on Trust in Unreliable Predictions for Hardly Assessable Tasks — Mersedeh Sadeghi, Daniel Pöttgen, Patrick Ebel, Andreas Vogelsang"
+  },
+  {
+   "venue": "UMAP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Synthetic Voices: Evaluating the Fidelity of LLM-Generated Personas in Representing People’s Financial Wellbeing",
+   "authors": [
+    "Arshnoor Kaur",
+    "Amanda Aird",
+    "Harris Borman",
+    "Andrea Nicastro",
+    "Anna Leontjeva",
+    "Luiz Pizzato",
+    "Dan Jermyn"
+   ],
+   "track": "main",
+   "source": "https://um.org/awards/best-paper-awards",
+   "evidence": "UMAP 2025 Best Paper Award: Synthetic Voices: Evaluating the Fidelity of LLM-Generated Personas in Representing People’s Financial Wellbeing — Arshnoor Kaur, Amanda Aird, Harris Borman, Andrea Nicastro, Anna Leontjeva, Luiz Pizzato, and Dan Jermyn"
   },
   {
    "venue": "USENIX ATC",

@@ -2309,6 +2309,18 @@ test("McCalla award page: per block a title, 'Author(s)', semicolon-separated au
   assert.deepEqual(parseMccallaAwards(h, "https://ieee-ceda.org/awards/william-j-mccalla-award").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2024 best  | Ann Lee; Bo Chan; Cy Dunn", "2024 tot 2015 | Ed Fox; Flo Gray"]);
 });
 
+test("UMAP best paper page: year line, an optional 'The 27th International Conference … awarded the following paper:' sentence, the title and the authors (a trailing affiliation after the last name and a DOI line are dropped)", async () => {
+  const { parseUmapBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Best Paper Award Winners</h1><p>Below the list of award winners thus far.</p><p>2020</p><p>Personalized recommendation of points of interest</p><p>Ann Lee, Bo Chan and Cy Dunn, University of Turin, Italy</p><p>https://doi.org/10.1145/1</p><p>2019</p><p>The 27th International Conference on User Modeling, ACM UMAP 2019, in Larnaca, Cyprus, awarded the following paper:</p><p>Effect of values and technology use on exercise</p><p>Ed Fox and Flo Gray</p><p>James Chen Best Student Paper Awards</p>`;
+  assert.deepEqual(parseUmapBest(h, "https://um.org/awards/best-paper-awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2020 | Ann Lee; Bo Chan; Cy Dunn | Personalized recommendation of points of interest", "2019 | Ed Fox; Flo Gray | Effect of values and technology use on exercise"]);
+});
+
+test("BPM awards page: blocks 'BPM 2025, City', under 'Best paper award' and 'Best student paper award' lines 'Authors: Title'; runners-up, forum and other awards, and 'not awarded this year' are left out", async () => {
+  const { parseBpmAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>BPM 2025, Seville, Spain</p><p>Best paper award</p><p>Ann Lee, Bo Chan, Cy Dunn: Optimization of activity batching policies</p><p>Best student paper award</p><p>Ed Fox (with Flo Gray and Gil Hart): Materializing views on event data</p><p>Runners-Up</p><p>Hal Ito, Jo Kim: Mental maps in process mining</p><p>Industry Forum best paper award</p><p>Al Roe, Bea Poe: Process-powered business intelligence</p><p>BPM 2012, Tallinn, Estonia</p><p>Best paper award</p><p>not awarded this year</p><p>Best student paper award</p><p>not awarded this year</p>`;
+  assert.deepEqual(parseBpmAwards(h, "https://bpm-conference.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 best | Ann Lee; Bo Chan; Cy Dunn", "2025 student | Ed Fox"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
