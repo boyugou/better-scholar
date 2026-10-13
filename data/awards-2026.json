@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6497
+  "count": 6506
  },
  "entries": [
   {
@@ -66741,6 +66741,37 @@
    "evidence": "ICRA Best Student Paper Award 2025: Zhitao Yu, Josh Tran, Claire Li, Aaron Weber, Yash P. Talwekar, and Sawyer Fuller — “TinySense: A Lighter Weight and More Power-Efficient Avionics System for Flying Insect-Scale Robots”"
   },
   {
+   "venue": "ICS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Arkade: k-Nearest Neighbor Search With Non-Euclidean Distances using GPU Ray Tracing",
+   "authors": [
+    "Durga Keerthi Mandarapu",
+    "Vani Nagarajan",
+    "Artem Pelenitsyn",
+    "Milind Kulkarni"
+   ],
+   "track": "main",
+   "source": "https://ics2024.github.io/",
+   "evidence": "ICS 2024 Best Paper Award: Arkade: k-Nearest Neighbor Search With Non-Euclidean Distances using GPU Ray Tracing — Durga Keerthi Mandarapu, Vani Nagarajan, Artem Pelenitsyn, Milind Kulkarni"
+  },
+  {
+   "venue": "ICS",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Shared Virtual Memory: Its Design and Performance Implications for Diverse Applications",
+   "authors": [
+    "Bennett Cooper",
+    "Thomas R.W. Scogland",
+    "Rong Ge"
+   ],
+   "track": "main",
+   "source": "https://ics2024.github.io/",
+   "evidence": "ICS 2024 Best Paper Runner-up: Shared Virtual Memory: Its Design and Performance Implications for Diverse Applications — Bennett Cooper, Thomas R.W. Scogland, Rong Ge"
+  },
+  {
    "venue": "ICSE",
    "year": 1990,
    "award": "tot",
@@ -70041,6 +70072,131 @@
    "track": "main",
    "source": "https://interspeech2024.org/best-paper-award-2024/",
    "evidence": "Interspeech 2024 Best Paper Award: EFFUSE: Efficient Self-Supervised Feature Fusion for E2E ASR in Low Resource and Multilingual Scenarios — Tejes Srivastava, Jiatong Shi, William Chen, Shinji Watanabe"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributed Approximate k-Core Decomposition and Min-Max Edge Orientation: Breaking the Diameter Barrier",
+   "authors": [
+    "T-H. Hubert Chan",
+    "Mauro Sozio",
+    "Bintao Sun"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2019/",
+   "evidence": "IPDPS 2019 Best Paper Award: Distributed Approximate k-Core Decomposition and Min-Max Edge Orientation: Breaking the Diameter Barrier — T-H. Hubert Chan, Mauro Sozio, Bintao Sun"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "XSP: Across-Stack Profiling and Analysis of Machine Learning Models on GPUs",
+   "authors": [
+    "Cheng Li",
+    "Abdul Dakkak",
+    "Jinjun Xiong",
+    "Wei Wei",
+    "Lingjie Xu",
+    "Wen-mei Hwu"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2020/",
+   "evidence": "IPDPS 2020 Best Paper Award: XSP: Across-Stack Profiling and Analysis of Machine Learning Models on GPUs — Cheng Li, Abdul Dakkak, Jinjun Xiong, Wei Wei, Lingjie Xu, Wen-mei Hwu"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "xBGAS: A Global Address Space Extension on RISC-V for High Performance Computing",
+   "authors": [
+    "Xi Wang",
+    "John D. Leidel",
+    "Brody Williams",
+    "Alan Ehret",
+    "Miguel Mark",
+    "Michel A. Kinsy",
+    "Yong Chen"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2021/",
+   "evidence": "IPDPS 2021 Best Paper Award: xBGAS: A Global Address Space Extension on RISC-V for High Performance Computing — Xi Wang, John D. Leidel, Brody Williams, Alan Ehret, Miguel Mark, Michel A. Kinsy, Yong Chen"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "As easy as ABC: Optimal (A)ccountable (B)yzantine (C)onsensus is easy!",
+   "authors": [
+    "Pierre Civit",
+    "Seth Gilbert",
+    "Vincent Gramoli",
+    "Rachid Guerraoui",
+    "Jovan Komatovic"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2022/",
+   "evidence": "IPDPS 2022 Best Paper Award: As easy as ABC: Optimal (A)ccountable (B)yzantine (C)onsensus is easy! — Pierre Civit, Seth Gilbert, Vincent Gramoli, Rachid Guerraoui, Jovan Komatovic"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ByteTransformer: A High-Performance Transformer Boosted for Variable-Length Inputs",
+   "authors": [
+    "Yujia Zhai",
+    "Chengquan Jiang",
+    "Leyuan Wang",
+    "Xiaoying Jia",
+    "Shang Zhang",
+    "Zizhong Chen",
+    "Xin Liu",
+    "Yibo Zhu"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2023/",
+   "evidence": "IPDPS 2023 Best Paper Award: ByteTransformer: A High-Performance Transformer Boosted for Variable-Length Inputs — Yujia Zhai, Chengquan Jiang, Leyuan Wang, Xiaoying Jia, Shang Zhang, Zizhong Chen, Xin Liu, Yibo Zhu"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Performance-Portable Multiphase Flow Solutions with Discontinuous Galerkin Methods",
+   "authors": [
+    "Tobias Flynn",
+    "Robert Manson-Sawko",
+    "Gihan Mudalige"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2024/",
+   "evidence": "IPDPS 2024 Best Paper Award: Performance-Portable Multiphase Flow Solutions with Discontinuous Galerkin Methods — Tobias Flynn, Robert Manson-Sawko, Gihan Mudalige"
+  },
+  {
+   "venue": "IPDPS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Enabling Efficient Error-controlled Lossy Compression for Unstructured Scientific Data",
+   "authors": [
+    "Xuan Wu",
+    "Sheng Di",
+    "Congrong Ren",
+    "Pu Jiao",
+    "Mingze Xia",
+    "Cheng Wang",
+    "Hanqi Guo",
+    "Xin Liang",
+    "Franck Cappello"
+   ],
+   "track": "main",
+   "source": "https://www.ipdps.org/ipdps2025/",
+   "evidence": "IPDPS 2025 Best Paper Award: Enabling Efficient Error-controlled Lossy Compression for Unstructured Scientific Data — Xuan Wu, Sheng Di, Congrong Ren, Pu Jiao, Mingze Xia, Cheng Wang, Hanqi Guo, Xin Liang, Franck Cappello"
   },
   {
    "venue": "ISCA",

@@ -1991,3 +1991,17 @@ test("CIKM best-paper page: 'best paper' / 'runner up' marks before a title endi
   const h = `<p>Full Papers</p><p>best paper A graph network for prescribing detection &dash;</p><p>Ann Lee (CWRU, USA),</p><p>Bo Chan (Auburn, USA)</p><p>runner up Knowledge graph embeddings compared &dash;</p><p>Cy Dunn (Peking University, China)</p><p>A merely nominated paper title here &dash;</p><p>Ed Fox (MIT, USA)</p>`;
   assert.deepEqual(parseCikmNominations(h, "https://www.cikm2021.org/programme/best-paper-nominations").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A graph network for prescribing detection | Ann Lee; Bo Chan", "runner-up Knowledge graph embeddings compared | Cy Dunn"]);
 });
+
+test("IPDPS front page: the title and authors under 'IPDPS <year> Best Paper Award' (a sentence line between, 'Authors:' prefix or bracketed affiliations with semicolons); the candidates and other awards are left out", async () => {
+  const { parseIpdpsBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>IPDPS 2024 Best Paper Award</p><p>The IPDPS 2024 Best Paper Award was presented to the authors of:</p><p>Performance portable flow solutions with Galerkin methods</p><p>Ann Lee (Warwick); Bo Chan (IBM); Cy Dunn (Warwick)</p><p>See Best Paper Candidates here</p><p>IPDPS 2024 Open Source Contribution Award</p>`;
+  assert.deepEqual(parseIpdpsBest(h, "https://www.ipdps.org/ipdps2024/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2024 Performance portable flow solutions with Galerkin methods | Ann Lee; Bo Chan; Cy Dunn"]);
+  const g = `<p>IPDPS 2023 Best Paper Award</p><p>A transformer boosted for variable-length inputs</p><p>Authors: Ed Fox, Flo Gray and Gil Hart</p>`;
+  assert.deepEqual(parseIpdpsBest(g, "https://www.ipdps.org/ipdps2023/").entries.map((e) => e.authors.join("; ")), ["Ed Fox; Flo Gray; Gil Hart"]);
+});
+
+test("ICS front page: 'BEST PAPER AWARD' and '… RUNNER-UP' headings with a title and an authors' line whose bracket may wrap", async () => {
+  const { parseIcsAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>BEST PAPER AWARD</p><p>Nearest neighbour search with non-Euclidean distances on GPUs</p><p>Ann Lee, Bo Chan (Purdue University)</p><p>BEST PAPER AWARD RUNNER-UP</p><p>Shared virtual memory design and performance implications</p><p>Cy Dunn (Clemson University); Ed Fox (Lawrence Livermore National Lab); Flo Gray (Clemson</p><p>University)</p>`;
+  assert.deepEqual(parseIcsAwards(h, "https://ics2024.github.io/").entries.map((e) => `${e.award} ${e.authors.join("; ")}`), ["best Ann Lee; Bo Chan", "runner-up Cy Dunn; Ed Fox; Flo Gray"]);
+});

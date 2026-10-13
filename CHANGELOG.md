@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.54 — 2026-10-12
+
+- IPDPS's best papers of 2019–2025 (7 papers) from each year's own front page and ICS 2024's best paper and runner-up from its front page; the list had none of either (`tot.mjs ipdps`, `tot.mjs ics`). The list has 6506 awards.
+
 ## 2.10.53 — 2026-10-12
 
 - PPoPP's best papers of 2022 and 2023 (4 papers) from the conference's own front pages, and CIKM 2021's best and runner-up papers of its five tracks (12 papers) from its best-paper page; the list had none of either (`tot.mjs ppopp-year`, `tot.mjs cikm-year`). The other years' pages name no winners or print them in a form too loose to read. The list has 6497 awards.
