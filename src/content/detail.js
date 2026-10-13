@@ -58,7 +58,7 @@
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
           if (e.limited) { askSemantic = false; limited = true; }
           else if (e.badKey) { askSemantic = false; badKey = true; }
-          else if (e instanceof TypeError) { askSemantic = false; badKey = true; }                // (a header value the browser refuses is a key that cannot be used)
+          else if (e instanceof TypeError) askSemantic = false;                              // (unreachable: Scholar's own pages are used, quietly)
         }
         await sleep(B.semantic.PACE());
       }

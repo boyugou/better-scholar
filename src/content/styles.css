@@ -253,7 +253,7 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
   #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
   /* masks are drawn with a background colour, which the system would turn into the page colour: keep them in the text colour */
-  #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before { background-color: CanvasText; }
+  #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before, .rr-chip-mark-award[data-mark="runner-up"]::before { background-color: CanvasText; }
   #rr-panel input[type="checkbox"] { -webkit-appearance: auto; appearance: auto; width: 16px; height: 16px; border-radius: 0; background: Field; }
   #rr-panel input[type="checkbox"]::after { display: none; }
   #rr-panel .rr-seg button[aria-pressed="true"] { outline: 2px solid Highlight; }
@@ -285,3 +285,5 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 #rr-panel .rr-pill { display: inline-flex; align-items: center; padding: 1px 9px; border: 1px solid #c1c8ef; border-radius: 12px; background: #fff; font-size: 11.5px; }
 #rr-panel .rr-pill:hover { background: #e8f0fe; text-decoration: none; }
 #rr-panel .rr-cover-line[data-rr="suggest"] { flex-wrap: wrap; justify-content: flex-start; }
+#rr-panel .rr-cover-top, #rr-panel .rr-cover-list { display: contents; }           /* (the two slots of the status section take no space of their own: its lines keep their gap) */
+#rr-panel .rr-m i { margin: 0; }

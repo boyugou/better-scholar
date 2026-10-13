@@ -36,7 +36,7 @@
     if (code === "auto") code = B.i18n.fromBrowser(chrome.i18n.getUILanguage()) || "auto";       // (Norwegian Bokmål / Nynorsk browsers get "no", which Chrome would not pick)
     language = code === "auto" ? B.i18n.resolve(chrome.i18n.getUILanguage()) : code;                    // (a browser language we have no folder for is served in English, and its page is marked so)
     if (code !== "auto") {
-      try { const r = await chrome.runtime.sendMessage({ type: "rr:messages", lang: code }); if (r && r.ok) custom = r.messages; else language = chrome.i18n.getUILanguage(); } catch (e) { language = chrome.i18n.getUILanguage(); }
+      try { const r = await chrome.runtime.sendMessage({ type: "rr:messages", lang: code }); if (r && r.ok) custom = r.messages; else language = B.i18n.resolve(chrome.i18n.getUILanguage()); } catch (e) { language = B.i18n.resolve(chrome.i18n.getUILanguage()); }
     }
     return language;
   }

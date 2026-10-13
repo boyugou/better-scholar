@@ -14,7 +14,7 @@
     const apiKey = await B.store.loadS2Key();                       // (a free key avoids the limit shared by everyone without one)
     const res = await fetch(url, { signal, credentials: "omit", referrerPolicy: "no-referrer", headers: apiKey ? { "x-api-key": apiKey } : {} });
     if (res.status === 404) return null;
-    if (res.status === 401 || res.status === 403) throw Object.assign(new Error("key"), { badKey: true });          // (a key Semantic Scholar does not accept: no point in asking again)
+    if (res.status === 401 || res.status === 403) throw Object.assign(new Error(apiKey ? "key" : "limited"), apiKey ? { badKey: true } : { limited: true });          // (a key Semantic Scholar does not accept: no point in asking again; without a key a refusal is the shared limit)
     if (res.status === 429 || res.status >= 500) throw Object.assign(new Error("limited"), { limited: true });
     if (!res.ok) return null;
     const hit = ((await res.json()).data || [])[0];

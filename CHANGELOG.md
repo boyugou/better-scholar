@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.20.3 — 2026-10-13
+
+From a review of the redirect script and the latest changes:
+
+- **"Open Scholar in"**: only `hl` is replaced in the address (the rest of the query is kept byte for byte, so a query in another encoding is not corrupted; the hash is kept); the loop guard lasts 15 seconds (it used to last for the tab and could block later pages after an aborted redirect), compares case-insensitively, and without a place to keep it there is no redirect at all.
+- A Semantic Scholar 403 without a key is the shared limit, not "your key was refused"; being unable to reach it is not blamed on the key either.
+- The status lines of the panel have their spacing back (a regression of 2.20.1), the runner-up star shows in forced-colours mode, "11 of 12" is not wider than it needs to be, the settings preview's link honours reduced motion.
+
 ## 2.20.2 — 2026-10-13
 
 - "11 of 12" is written in each language's own word order (Hindi puts the total first: "12 में से 11"); the popup's "19 of 20 papers" is one message per language instead of a number, the word "of" and a noun glued together (which read wrongly in Russian, Ukrainian, Czech, Polish, Romanian, Arabic and Hindi).

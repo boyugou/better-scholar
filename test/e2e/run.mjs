@@ -404,9 +404,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     // the same for Scholar's search pages (a shared link), and never for a download
     const origin = new URL(fx.url).origin;
-    await page.goto(`${origin}/scholar?q=graphs&hl=en`);
+    await page.goto(`${origin}/scholar?q=caf%E9&hl=en#top`);
     await page.waitForFunction(() => new URL(location.href).searchParams.get("hl") === "de", null, { timeout: 15000 });
-    assert.equal(new URL(page.url()).searchParams.get("q"), "graphs", "the rest of the address is kept");
+    assert.match(page.url(), /q=caf%E9&hl=de#top$/, "the rest of the address is kept exactly (a query in another encoding is not rewritten), and so is the hash");
     await page.goto(`${origin}/scholar.bib?hl=en`);
     await page.waitForTimeout(500);
     assert.equal(new URL(page.url()).searchParams.get("hl"), "en", "a download is not redirected");
@@ -540,6 +540,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-hidden-roles.png") });
+    // the status lines keep their spacing (the slots of the status section take no room of their own)
+    const gaps = await page.evaluate(() => { const l = [...document.querySelectorAll('[data-rr="coverage"] .rr-cover-line')].map((e) => e.getBoundingClientRect()); return l.slice(1).map((r, i) => Math.round(r.top - l[i].bottom)); });
+    assert.ok(gaps.length >= 1 && gaps.every((g) => g >= 3), "status lines are spaced: " + gaps);
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
     await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
@@ -1089,6 +1092,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         }
       }
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
+      await page.click('button[data-src="ccf"]');                       // (the loop ended on the CORE tab, which is remembered: the pictures show the usual one)
       // every part of the panel on, as a picture (light, dark, and the wide layout)
       await reloadSafe(); await page.waitForSelector("#rr-panel"); await page.bringToFront();       // (a background tab cannot be photographed)
       await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all.png") });
