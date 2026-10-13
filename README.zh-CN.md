@@ -26,7 +26,7 @@ _English name: Scholar Author Roles & Venue Ranks_
   而是列在面板里。
 - **获奖与报告形式**：论文标题或发表信息里写了 *Oral*、*Spotlight*、*Highlight* 或获奖（*Best / Outstanding /
   Distinguished Paper*、*Test of Time*），或者论文在内置的获奖名单里（ACL 系列、ICLR、NeurIPS、ICML；CVPR / ICCV / ECCV 取自计算机视觉基金会（CVF）的官方获奖总表，含时间检验奖；AAAI；
-  IJCAI 2020–2023；USENIX 最佳论文、SIGIR、KDD、SIGSOFT（ICSE / FSE / ASE 等）杰出论文、STOC、SIGCOMM、SIGMOD、PODS、CCS 最佳论文与 IEEE S&P、NDSS、CCS 杰出论文、取自 SIGCHI 官方程序数据的 CHI / CSCW / UIST 等 SIGCHI 会议的最佳论文与荣誉提名、CCS / VLDB / WWW / ISCA / MICRO / USENIX / SIGMOD 的时间检验奖以及 PODC / DISC 的 Dijkstra 奖和 SIGPLAN 的 POPL / PLDI / ICFP / OOPSLA 最具影响力论文奖以及 SIGMETRICS 的最佳论文、学生论文和时间检验奖，以及 SOSP、RecSys、AISTATS、UAI、ICASSP、COLING、Interspeech、ECML PKDD、INFOCOM、Euro S&P、WSDM、PPoPP、CIKM、IPDPS、ICS、ECIR、GECCO、CIDR、BMVC、VRST、HRI、ICC、WCNC、GLOBECOM、CCC、MobiSys、SenSys、IMC、ACM MM、IEEE VR、FOCS、WWW 等会议官方页面上的最佳论文，均取自官方页面，共 6800 余条），就会显示小标签（获奖为金色 ★，荣誉提名为银色，报告形式为灰蓝）；面板里也会统计，点击即可只看那几篇。
+  IJCAI 2020–2023；USENIX 最佳论文、SIGIR、KDD、SIGSOFT（ICSE / FSE / ASE 等）杰出论文、STOC、SIGCOMM、SIGMOD、PODS、CCS 最佳论文与 IEEE S&P、NDSS、CCS 杰出论文、取自 SIGCHI 官方程序数据的 CHI / CSCW / UIST 等 SIGCHI 会议的最佳论文与荣誉提名、CCS / VLDB / WWW / ISCA / MICRO / USENIX / SIGMOD 的时间检验奖以及 PODC / DISC 的 Dijkstra 奖和 SIGPLAN 的 POPL / PLDI / ICFP / OOPSLA 最具影响力论文奖以及 SIGMETRICS 的最佳论文、学生论文和时间检验奖，以及 SOSP、RecSys、AISTATS、UAI、ICASSP、COLING、Interspeech、ECML PKDD、INFOCOM、Euro S&P、WSDM、PPoPP、CIKM、IPDPS、ICS、ECIR、GECCO、CIDR、BMVC、VRST、HRI、ICC、WCNC、GLOBECOM、CCC、MobiSys、SenSys、IMC、ACM MM、IEEE VR、FOCS、WWW 等会议官方页面上的最佳论文，均取自官方页面，共 7000 余条），就会显示小标签（获奖为金色 ★，荣誉提名为银色，报告形式为灰蓝）；面板里也会统计，点击即可只看那几篇。
   悬停提示会说明来自作者自述还是获奖名单。
 - **补全被截断的末位作者**：Scholar 会用 `…` 截断长作者列表，导致看不到大论文里的末位作者
   （某位知名 PI 的前 100 篇里有 30 篇如此）。点 **补全** 会逐篇读取论文页（约每秒一篇，
@@ -82,7 +82,7 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
 |---|---|---|
 | CCF 推荐国际学术会议和期刊目录 | 2026（第七版），386 个会议 + 295 个期刊 | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) 的 PDF，可复现地抽取——见 [`data/README.md`](data/README.md) |
 | CORE 会议等级 | ICORE 2026，800 个已评级会议 | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) 导出 |
-| 论文获奖名单 | 6800 余条（最佳论文、杰出论文、荣誉提名、时间检验奖；不求完整） | [ACL Anthology](https://aclanthology.org) 元数据（CC BY 4.0）、计算机视觉基金会、SIGCHI 和各会议自己的获奖页面——每一条都注明来源页面，见 [`data/README.md`](data/README.md) |
+| 论文获奖名单 | 7000 余条（最佳论文、杰出论文、荣誉提名、时间检验奖；不求完整） | [ACL Anthology](https://aclanthology.org) 元数据（CC BY 4.0）、计算机视觉基金会、SIGCHI 和各会议自己的获奖页面——每一条都注明来源页面，见 [`data/README.md`](data/README.md) |
 
 两份数据仅作参考收录，版权归各自所有者——见 [`NOTICE`](NOTICE)。用 `npm run data` 重新生成。
 

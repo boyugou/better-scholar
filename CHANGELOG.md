@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.93 — 2026-10-12
+
+- Best papers and best student papers of ESA (2005–2026), ICALP (2000–2026), MFCS (2012–2023) from EATCS's own award pages and of SoCG (2012–2026) from the computational geometry community's awards page (225 papers; the list had none for ICALP, MFCS or SoCG and only one ESA year) (`tot.mjs eatcs-paper`, `socg-awards`). The list has 7082 awards.
+
 ## 2.10.92 — 2026-10-12
 
 - ICDT's best papers and best student papers, 1990–2025 (27 papers; the list had none for ICDT) from the ICDT council's own awards page (`tot.mjs icdt-awards`). The list has 6857 awards.

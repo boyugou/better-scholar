@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6857
+  "count": 7082
  },
  "entries": [
   {
@@ -51674,6 +51674,1001 @@
    ]
   },
   {
+   "venue": "ESA",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Shortest Paths in Matrix Multiplication Time",
+   "authors": [
+    "Piotr Sankowski"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2005: Piotr Sankowski: “Shortest Paths in Matrix Multiplication Time”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Dynamic programming and fast matrix multiplication",
+   "authors": [
+    "Frederic Dorn"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2006: Frederic Dorn: “Dynamic programming and fast matrix multiplication”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Robust, generic and efficient construction of envelopes of surfaces in three-dimensional space",
+   "authors": [
+    "Michal Meyerovitch"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2006: Michal Meyerovitch: “Robust, generic and efficient construction of envelopes of surfaces in three-dimensional space”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Online Primal-Dual Algorithms for Maximizing Ad-Auctions Revenue",
+   "authors": [
+    "Niv Buchbinder",
+    "Kamal Jain",
+    "Joseph Naor"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2007: Niv Buchbinder, Kamal Jain, Joseph (Seffi) Naor: “Online Primal-Dual Algorithms for Maximizing Ad-Auctions Revenue”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Order Statistics in the Farey Sequences in Sublinear Time",
+   "authors": [
+    "Jakub Pawlewicz"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2007: Jakub Pawlewicz: “Order Statistics in the Farey Sequences in Sublinear Time”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Better and simpler approximation for the stable marriage problem",
+   "authors": [
+    "Zoltan Kiraly"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2008: Zoltan Kiraly: “Better and simpler approximation for the stable marriage problem”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Deterministic Sampling Algorithm",
+   "authors": [
+    "Anke van Zuylen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2008: Anke van Zuylen: “Deterministic Sampling Algorithm”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Time-Dependent SHARC-Routing",
+   "authors": [
+    "Daniel Delling"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2008: Daniel Delling: “Time-Dependent SHARC-Routing”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Reconstructing 3-colored grids from horizontal and vertical projections is NP-hard",
+   "authors": [
+    "Christoph Dürr",
+    "Flavio Guiñez",
+    "Martín Matamala"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2009: Christoph Dürr, Flavio Guiñez, Martín Matamala: “Reconstructing 3-colored grids from horizontal and vertical projections is NP-hard”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Disproof of the Neighborhood Conjecture with Implications to SAT",
+   "authors": [
+    "Heidi Gebauer"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2009: Heidi Gebauer: “Disproof of the Neighborhood Conjecture with Implications to SAT”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Feasibility Analysis of Sporadic Real-Time Multiprocessor Task Systems",
+   "authors": [
+    "Vincenzo Bonifaci",
+    "Alberto Marchetti-Spaccamela"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2010: Vincenzo Bonifaci and Alberto Marchetti-Spaccamela: “Feasibility Analysis of Sporadic Real-Time Multiprocessor Task Systems”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "When LP is the Cure for Your Matching Woes: Improved Bounds for Stochastic Matchings",
+   "authors": [
+    "Nikhil Bansal",
+    "Anupam Gupta",
+    "Jian Li",
+    "Julian Mestre",
+    "Viswanath Nagarajan",
+    "Atri Rudra"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2010: Nikhil Bansal, Anupam Gupta, Jian Li, Julian Mestre, Viswanath Nagarajan, Atri Rudra: “When LP is the Cure for Your Matching Woes: Improved Bounds for Stochastic Matchings”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Shortest Paths in Planar Graphs with Real Lengths in O(n log2(n)=loglog n)",
+   "authors": [
+    "Shay Mozes",
+    "Christian Wulff-Nilsen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2010: Shay Mozes and Christian Wulff-Nilsen: “Shortest Paths in Planar Graphs with Real Lengths in O(n log2(n)=loglog n)”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Deterministic Discrepancy Minimization",
+   "authors": [
+    "Nikhil Bansal",
+    "Joel Spencer"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2011: Nikhil Bansal and Joel Spencer: “Deterministic Discrepancy Minimization”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Pattern matching in Lempel-Ziv compressed strings: fast, simple, and deterministic",
+   "authors": [
+    "Pawel Gawrychowski"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2011: Pawel Gawrychowski: “Pattern matching in Lempel-Ziv compressed strings: fast, simple, and deterministic”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Average Case Analysis of Java 7's Dual Pivot Quicksort",
+   "authors": [
+    "Sebastian Wild",
+    "Markus E. Nebel"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2012: Sebastian Wild and Markus E. Nebel: “Average Case Analysis of Java 7's Dual Pivot Quicksort”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "The Simplex Tree: An Efficient Data Structure for General Simplicial Complexes",
+   "authors": [
+    "Clément Maria",
+    "Jean-Daniel Boissonnat"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2012: Clément Maria and Jean-Daniel Boissonnat: “The Simplex Tree: An Efficient Data Structure for General Simplicial Complexes”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Approximating Earliest Arrival Flows in Arbitrary Networks",
+   "authors": [
+    "Martin Gross",
+    "Jan-Philipp W. Kappmeier",
+    "Daniel R. Schmidt",
+    "Melanie Schmidt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2012: Martin Gross, Jan-Philipp W. Kappmeier, Daniel R. Schmidt and Melanie Schmidt: “Approximating Earliest Arrival Flows in Arbitrary Networks”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Computing the Greedy Spanner in Linear Space",
+   "authors": [
+    "Sander P. A. Alewijnse",
+    "Quirijn W. Bouts",
+    "Alex P. ten Brink",
+    "Kevin Buchin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2013: Sander P. A. Alewijnse, Quirijn W. Bouts, Alex P. ten Brink and Kevin Buchin: “Computing the Greedy Spanner in Linear Space”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "List H-Coloring a Graph by Removing Few Vertices",
+   "authors": [
+    "Rajesh Chitnis",
+    "Laszlo Egri",
+    "Daniel Marx"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2013: Rajesh Chitnis, Laszlo Egri and Daniel Marx: “List H-Coloring a Graph by Removing Few Vertices”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "A Quantization Framework for Smoothed Analysis on Euclidean Optimization Problems",
+   "authors": [
+    "Radu Curticapean",
+    "Marvin Kunnemann"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2013: Radu Curticapean and Marvin Kunnemann: “A Quantization Framework for Smoothed Analysis on Euclidean Optimization Problems”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Cache-Oblivious Persistence",
+   "authors": [
+    "Pooya Davoodi",
+    "Jeremy Fineman",
+    "John Iacono",
+    "Ozgur Ozkan"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2014: Pooya Davoodi, Jeremy Fineman, John Iacono and Ozgur Ozkan: “Cache-Oblivious Persistence”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Space-Efficient Randomized Algorithms for K-SUM",
+   "authors": [
+    "Joshua Wang"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2014: Joshua Wang: “Space-Efficient Randomized Algorithms for K-SUM”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Consensus Patterns (Probably) Has no EPTAS",
+   "authors": [
+    "Christina Boucher",
+    "Christine Lo",
+    "Daniel Lokshtanov"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2015: Christina Boucher, Christine Lo and Daniel Lokshtanov: “Consensus Patterns (Probably) Has no EPTAS”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Mixing Color Coding-Related Techniques",
+   "authors": [
+    "Meirav Zehavi"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2015: Meirav Zehavi: “Mixing Color Coding-Related Techniques”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Trip-Based Public Transit Routing",
+   "authors": [
+    "Sascha Witt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2015: Sascha Witt: “Trip-Based Public Transit Routing”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "A randomized polynomial kernelization for Vertex Cover with a smaller parameter",
+   "authors": [
+    "Stefan Kratsch"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2016: Stefan Kratsch: “A randomized polynomial kernelization for Vertex Cover with a smaller parameter”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Efficient Embedding of Scale-Free Graphs in the Hyperbolic Plane",
+   "authors": [
+    "Thomas Blaesius",
+    "Tobias Friedrich",
+    "Anton Krohmer",
+    "Soeren Laue"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2016: Thomas Blaesius, Tobias Friedrich, Anton Krohmer and Soeren Laue: “Efficient Embedding of Scale-Free Graphs in the Hyperbolic Plane”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "KADABRA is an ADaptive Algorithm for Betweenness via Random Approximation",
+   "authors": [
+    "Michele Borassi",
+    "Emanuele Natale"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2016: Michele Borassi and Emanuele Natale: “KADABRA is an ADaptive Algorithm for Betweenness via Random Approximation”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "The Strongly Stable Roommates Problem",
+   "authors": [
+    "Adam Kunysz"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2016: Adam Kunysz: “The Strongly Stable Roommates Problem”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Improving TSP tours using dynamic programming over tree decompositions",
+   "authors": [
+    "Marek Cygan",
+    "Lukasz Kowalik",
+    "Arkadiusz Socala"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2017: Marek Cygan, Lukasz Kowalik and Arkadiusz Socala: “Improving TSP tours using dynamic programming over tree decompositions”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Positive-instance driven dynamic programming for treewidth",
+   "authors": [
+    "Hisao Tamaki"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2017: Hisao Tamaki: “Positive-instance driven dynamic programming for treewidth”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Counting restricted homomorphisms via Möbius inversion over matroid lattices",
+   "authors": [
+    "Marc Roth"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2017: Marc Roth: “Counting restricted homomorphisms via Möbius inversion over matroid lattices”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "An exact algorithm for the Steiner forest problem",
+   "authors": [
+    "Daniel R. Schmidt",
+    "Bernd Zey",
+    "François Margot"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2018: Daniel R. Schmidt, Bernd Zey, François Margot: “An exact algorithm for the Steiner forest problem”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Decremental SPQR-trees for Planar Graphs",
+   "authors": [
+    "Jacob Holm",
+    "Giuseppe F. Italiano",
+    "Adam Karczmarz",
+    "Jakub Łącki",
+    "Eva Rotenberg"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2018: Jacob Holm, Giuseppe F. Italiano, Adam Karczmarz, Jakub Łącki, Eva Rotenberg: “Decremental SPQR-trees for Planar Graphs”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "On the complexity of the (approximate) nearest colored node problem",
+   "authors": [
+    "Maximilian Probst"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2018: Maximilian Probst: “On the complexity of the (approximate) nearest colored node problem”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Practical Access to Dynamic Programming on Tree Decompositions",
+   "authors": [
+    "Max Bannach",
+    "Sebastian Berndt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2018: Max Bannach, Sebastian Berndt: “Practical Access to Dynamic Programming on Tree Decompositions”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Efficiently Generating Geometric Inhomogeneous and Hyperbolic Random Graphs",
+   "authors": [
+    "Thomas Bläsius",
+    "Tobias Friedrich",
+    "Maximilian Katzmann",
+    "Ulrich Meyer",
+    "Manuel Penschuck",
+    "Christopher Weyand"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2019: Thomas Bläsius, Tobias Friedrich, Maximilian Katzmann, Ulrich Meyer, Manuel Penschuck and Christopher Weyand: “Efficiently Generating Geometric Inhomogeneous and Hyperbolic Random Graphs”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Fragile Complexity of Comparison-Based Algorithms",
+   "authors": [
+    "Peyman Afshani",
+    "Rolf Fagerberg",
+    "David Hammer",
+    "Riko Jacob",
+    "Irina Kostitsyna",
+    "Ulrich Meyer",
+    "Manuel Penschuck",
+    "Nodari Sitchinava"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2019: Peyman Afshani, Rolf Fagerberg, David Hammer, Riko Jacob, Irina Kostitsyna, Ulrich Meyer, Manuel Penschuck and Nodari Sitchinava: “Fragile Complexity of Comparison-Based Algorithms”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Patching Colors with Tensors",
+   "authors": [
+    "Cornelius Brand"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2019: Cornelius Brand: “Patching Colors with Tensors”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Approximate $CVP_{\\infty}$ in time $2^{0.802 n}$",
+   "authors": [
+    "Moritz Venzin",
+    "Friedrich Eisenbrand"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2020: Moritz Venzin and Friedrich Eisenbrand: “Approximate $CVP_{\\infty}$ in time $2^{0.802 n}$”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Generalizing CGAL Periodic Delaunay Triangulations",
+   "authors": [
+    "Georg Osang",
+    "Mael Rouxel-Labbé",
+    "Monique Teillaud"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2020: Georg Osang, Mael Rouxel-Labbé and Monique Teillaud: “Generalizing CGAL Periodic Delaunay Triangulations”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Improved Prophet Inequalities for Combinatorial Welfare Maximization with (Approximately) Subadditive Agents",
+   "authors": [
+    "Hanrui Zhang"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2020: Hanrui Zhang: “Improved Prophet Inequalities for Combinatorial Welfare Maximization with (Approximately) Subadditive Agents”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Experimental Comparison of PC-Trees and PQ-Trees",
+   "authors": [
+    "Simon D. Fink",
+    "Matthias Pfretzschner",
+    "Ignaz Rutter"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2021: Simon D. Fink, Matthias Pfretzschner and Ignaz Rutter: “Experimental Comparison of PC-Trees and PQ-Trees”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Near-linear-time, Optimal Vertex Cut Sparsifiers in Directed Acyclic Graphs",
+   "authors": [
+    "Zhiyang He",
+    "Jason Li",
+    "Magnus Wahlström"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2021: Zhiyang He, Jason Li and Magnus Wahlström: “Near-linear-time, Optimal Vertex Cut Sparsifiers in Directed Acyclic Graphs”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Determining 4-edge-connected components in linear time",
+   "authors": [
+    "Wojciech Nadara",
+    "Mateusz Radecki",
+    "Marcin Smulewicz",
+    "Marek Sokołowski"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2021: Wojciech Nadara, Mateusz Radecki, Marcin Smulewicz and Marek Sokołowski: “Determining 4-edge-connected components in linear time”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Evidence for Long-Tails in SLS Algorithms",
+   "authors": [
+    "Florian Wörz",
+    "Jan-Hendrik Lorenz"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2021: Florian Wörz and Jan-Hendrik Lorenz: “Evidence for Long-Tails in SLS Algorithms”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "An Empirical Evaluation of k-Means Coresets",
+   "authors": [
+    "Chris Schwiegelshohn",
+    "Omar Ali Sheikh-Omar"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2022: Chris Schwiegelshohn and Omar Ali Sheikh-Omar: “An Empirical Evaluation of k-Means Coresets”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Improved Search of Relevant Points for Nearest-Neighbor Classification",
+   "authors": [
+    "Alejandro Flores-Velazco"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2022: Alejandro Flores-Velazco: “Improved Search of Relevant Points for Nearest-Neighbor Classification”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Insertion Time of Random Walk Cuckoo Hashing below the Peeling Threshold",
+   "authors": [
+    "Stefan Walzer"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2022: Stefan Walzer: “Insertion Time of Random Walk Cuckoo Hashing below the Peeling Threshold”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Approximating Dynamic Time Warping Distance Between Run-Length Encoded Strings",
+   "authors": [
+    "Zoe Xi",
+    "William Kuszmaul"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2022: Zoe Xi and William Kuszmaul: “Approximating Dynamic Time Warping Distance Between Run-Length Encoded Strings”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Combining Predicted and Live Traffic with Time-Dependent A* Potentials",
+   "authors": [
+    "Tim Zeitz",
+    "Nils Werner"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2022: Tim Zeitz and Nils Werner: “Combining Predicted and Live Traffic with Time-Dependent A* Potentials”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Improved Search of Relevant Points for Nearest-Neighbor Classification",
+   "authors": [
+    "Alejandro Flores-Velazco"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2022: Alejandro Flores-Velazco: “Improved Search of Relevant Points for Nearest-Neighbor Classification”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Canonization of a Random Graph by Two Matrix-Vector Multiplications",
+   "authors": [
+    "Oleg Verbitsky",
+    "Maksim Zhukovskii"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2023: Oleg Verbitsky and Maksim Zhukovskii: “Canonization of a Random Graph by Two Matrix-Vector Multiplications”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Counting and Sampling Labeled Chordal Graphs in Polynomial Time",
+   "authors": [
+    "Ursula Hebert-Johnson",
+    "Daniel Lokshtanov",
+    "Eric Vigoda"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2023: Ursula Hebert-Johnson, Daniel Lokshtanov and Eric Vigoda: “Counting and Sampling Labeled Chordal Graphs in Polynomial Time”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Efficient Parallel Output-Sensitive Edit Distance",
+   "authors": [
+    "Xiangyun Ding",
+    "Xiaojun Dong",
+    "Yan Gu",
+    "Youzhe Liu",
+    "Yihan Sun"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2023: Xiangyun Ding, Xiaojun Dong, Yan Gu, Youzhe Liu and Yihan Sun: “Efficient Parallel Output-Sensitive Edit Distance”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Incremental (1-ϵ)-Approximate Dynamic Matching in O(poly(1/ϵ)) Update Time",
+   "authors": [
+    "Joakim Blikstad",
+    "Peter Kiss"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2023: Joakim Blikstad and Peter Kiss: “Incremental (1-ϵ)-Approximate Dynamic Matching in O(poly(1/ϵ)) Update Time”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Even Faster Knapsack via Rectangular Monotone Min-Plus Convolution and Balancing",
+   "authors": [
+    "Karl Bringmann",
+    "Anita Dürr",
+    "Adam Polak"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2024: Karl Bringmann, Anita Dürr and Adam Polak: “Even Faster Knapsack via Rectangular Monotone Min-Plus Convolution and Balancing”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Height-bounded Lempel-Ziv encodings",
+   "authors": [
+    "Hideo Bannai",
+    "Mitsuru Funakoshi",
+    "Diptarama Hendrian",
+    "Myuji Matsuda",
+    "Simon Puglisi"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2024: Hideo Bannai, Mitsuru Funakoshi, Diptarama Hendrian, Myuji Matsuda and Simon Puglisi: “Height-bounded Lempel-Ziv encodings”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Laminar Matroid Secretary: Greedy Strikes Back",
+   "authors": [
+    "Zhiyi Huang",
+    "Zahra Parsaeian",
+    "Zixuan Zhu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2024: Zhiyi Huang, Zahra Parsaeian and Zixuan Zhu: “Laminar Matroid Secretary: Greedy Strikes Back”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Approximation Algorithms for Steiner Connectivity Augmentation",
+   "authors": [
+    "Daniel Hathcock",
+    "Michael Zlatin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2024: Daniel Hathcock and Michael Zlatin: “Approximation Algorithms for Steiner Connectivity Augmentation”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Combined Search and Encoding for Seeds, with an Application to Minimal Perfect Hashing",
+   "authors": [
+    "Hans-Peter Lehmann",
+    "Peter Sanders",
+    "Stefan Walzer",
+    "Jonatan Ziegler"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2025: Hans-Peter Lehmann, Peter Sanders, Stefan Walzer and Jonatan Ziegler: “Combined Search and Encoding for Seeds, with an Application to Minimal Perfect Hashing”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Simpler Universally Optimal Dijkstra",
+   "authors": [
+    "Ivor van der Hoog",
+    "Eva Rotenberg",
+    "Daniel Rutschmann"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2025: Ivor van der Hoog, Eva Rotenberg and Daniel Rutschmann: “Simpler Universally Optimal Dijkstra”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Weighted Matching in a Poly-Streaming Model",
+   "authors": [
+    "Ahammed Ullah",
+    "S M Ferdous",
+    "Alex Pothen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2025: Ahammed Ullah, S M Ferdous and Alex Pothen: “Weighted Matching in a Poly-Streaming Model”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Online Makespan Scheduling under Scenarios",
+   "authors": [
+    "Ekin Ergen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2025: Ekin Ergen: “Online Makespan Scheduling under Scenarios”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "Fast Metric Decompositions in High Dimension",
+   "authors": [
+    "Robert Krauthgamer",
+    "Asaf Petruschka",
+    "Nir Petruschka"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2026: Robert Krauthgamer, Asaf Petruschka and Nir Petruschka: “Fast Metric Decompositions in High Dimension”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "SimdQuickHeap: The QuickHeap Reconsidered",
+   "authors": [
+    "Johannes Breitling",
+    "Ragnar Groot Koerkamp",
+    "Marvin Williams"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2026: Johannes Breitling, Ragnar Groot Koerkamp and Marvin Williams: “SimdQuickHeap: The QuickHeap Reconsidered”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best ESA Paper",
+   "title": "The Power of the Score Sequence of a Tournament",
+   "authors": [
+    "Prantar Ghosh",
+    "Sahil Kuchlous",
+    "Shravan Mehra",
+    "Sagnik Mukhopadhyay"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-esa-paper",
+   "evidence": "Best ESA Paper 2026: Prantar Ghosh, Sahil Kuchlous, Shravan Mehra and Sagnik Mukhopadhyay: “The Power of the Score Sequence of a Tournament”"
+  },
+  {
+   "venue": "ESA",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student ESA Paper",
+   "title": "Greedy Completion for Weighted (α,β)-Spanners",
+   "authors": [
+    "Elad Tzalik"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-esa-paper",
+   "evidence": "Best Student ESA Paper 2026: Elad Tzalik: “Greedy Completion for Weighted (α,β)-Spanners”"
+  },
+  {
    "venue": "ESEC/FSE",
    "year": 2005,
    "award": "distinguished",
@@ -59150,6 +60145,1710 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "ICAC '14: Self-Tuning Intel Transactional Synchronization Extensions — Nuno Diegues, INESC-ID and Instituto Superior Técnico, University of Lisbon; Paolo Romano, INESC-ID and Instituto Superior Técnico, University of Lisbon"
+  },
+  {
+   "venue": "ICALP",
+   "year": 1997,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "An improved master theorem for divide-and-conquer recurrences",
+   "authors": [
+    "Salvador Roura"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 1997: Salvador Roura: “An improved master theorem for divide-and-conquer recurrences”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 1998,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Improved pseudorandom generators for combinatorial rectangles",
+   "authors": [
+    "Chi-Jen Lu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 1998: Chi-Jen Lu: “Improved pseudorandom generators for combinatorial rectangles”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 1998,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Partial-congruence factorization of bisimilarity induced by open maps",
+   "authors": [
+    "Slawomir Lasota"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 1998: Slawomir Lasota: “Partial-congruence factorization of bisimilarity induced by open maps”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 1999,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A connection between the star problem and the finite power property in trace monoids",
+   "authors": [
+    "Daniel Kirsten"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 1999: Daniel Kirsten: “A connection between the star problem and the finite power property in trace monoids”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "An optimal minimum spanning tree algorithm",
+   "authors": [
+    "Seth Pettie",
+    "Vijaya Ramachandran"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2000: Seth Pettie, Vijaya Ramachandran: “An optimal minimum spanning tree algorithm”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Deterministic algorithms for k-SAT based on covering codes and local search",
+   "authors": [
+    "Evgeny Dantsin",
+    "Andreas Goerdt",
+    "Edward A. Hirsch",
+    "Uwe Schöning"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2000: Evgeny Dantsin, Andreas Goerdt, Edward A. Hirsch, Uwe Schöning: “Deterministic algorithms for k-SAT based on covering codes and local search”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2000,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Reasoning about idealized Algol using regular languages",
+   "authors": [
+    "Dan R. Ghica",
+    "Guy McCusker"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2000: Dan R. Ghica, Guy McCusker: “Reasoning about idealized Algol using regular languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2000,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Clique is hard to approximate within n^(1-o(1))",
+   "authors": [
+    "Lars Engebretsen",
+    "Jonas Holmerin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2000: Lars Engebretsen, Jonas Holmerin: “Clique is hard to approximate within n^(1-o(1))”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2000,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "On deciding if deterministic Rabin language is in Büchi class",
+   "authors": [
+    "Tomasz Fryderyk Urbanski"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2000: Tomasz Fryderyk Urbanski: “On deciding if deterministic Rabin language is in Büchi class”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Division is in Uniform TC0",
+   "authors": [
+    "William Hesse"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2001: William Hesse: “Division is in Uniform TC0”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Effective Lossy Queue Languages",
+   "authors": [
+    "Parosh Aziz Abdulla",
+    "Luc Boasson",
+    "Ahmed Bouajjani"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2001: Parosh Aziz Abdulla, Luc Boasson, Ahmed Bouajjani: “Effective Lossy Queue Languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2001,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Division is in Uniform TC0",
+   "authors": [
+    "William Hesse"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2001: William Hesse: “Division is in Uniform TC0”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2002,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Inapproximability Results for Equations over Finite Groups",
+   "authors": [
+    "Lars Engebretsen",
+    "Jonas Holmerin",
+    "Alexander Russell"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2002: Lars Engebretsen, Jonas Holmerin, Alexander Russell: “Inapproximability Results for Equations over Finite Groups”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A Faster All-pairs Shortest Path Algorithm for Real-weighted Sparse Graphs",
+   "authors": [
+    "Seth Pettie"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2002: Seth Pettie: “A Faster All-pairs Shortest Path Algorithm for Real-weighted Sparse Graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2002,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "On Families of Graphs Having a Decidable First Order Theory with Reachability",
+   "authors": [
+    "Colcombet Thomas"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2002: Colcombet Thomas: “On Families of Graphs Having a Decidable First Order Theory with Reachability”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A testing scenario for probabilistic automata",
+   "authors": [
+    "Marielle Stoelinga",
+    "Frits Vaandrager"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2003: Marielle Stoelinga, Frits Vaandrager: “A testing scenario for probabilistic automata”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "The cell probe complexity of succint data structures",
+   "authors": [
+    "Anna Gal",
+    "Peter Bro Miltersen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2003: Anna Gal, Peter Bro Miltersen: “The cell probe complexity of succint data structures”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Quantum query complexity of some graph problems",
+   "authors": [
+    "Christoph Dürr",
+    "Mark Heiligman",
+    "Peter Hoyer",
+    "Mehdi Mhalla"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2004: Christoph Dürr, Mark Heiligman, Peter Hoyer, Mehdi Mhalla: “Quantum query complexity of some graph problems”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2004,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Tree-Walking Automata Cannot Be Determinized",
+   "authors": [
+    "Mikolaj Bojanczyk",
+    "Thomas Colcombet"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2004: Mikolaj Bojanczyk, Thomas Colcombet: “Tree-Walking Automata Cannot Be Determinized”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A new algorithm for optimal constraint satisfaction and its implications",
+   "authors": [
+    "Ryan Williams"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2004: Ryan Williams: “A new algorithm for optimal constraint satisfaction and its implications”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Games With Winning Conditions of High Borel Complexity",
+   "authors": [
+    "Olivier Serre"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2004: Olivier Serre: “Games With Winning Conditions of High Borel Complexity”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Simple Extractors Via Constructions of Cryptographic Pseudo-random Generators",
+   "authors": [
+    "Marius Zimand"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2005: Marius Zimand: “Simple Extractors Via Constructions of Cryptographic Pseudo-random Generators”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Tight Lower Bounds for Query Processing on Streaming and External Memory Data",
+   "authors": [
+    "Martin Grohe",
+    "Christoph Koch",
+    "Nicole Schweikardt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2005: Martin Grohe, Christoph Koch, Nicole Schweikardt: “Tight Lower Bounds for Query Processing on Streaming and External Memory Data”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "On Dynamic Bit-Probe Complexity",
+   "authors": [
+    "Corina E. Patrascu",
+    "Mihai Patrascu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2005: Corina E. Patrascu, Mihai Patrascu: “On Dynamic Bit-Probe Complexity”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Solvability of a System of Bivariate Polynomial Equations over a Finite Field",
+   "authors": [
+    "Neeraj Kayal"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2005: Neeraj Kayal: “Solvability of a System of Bivariate Polynomial Equations over a Finite Field”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2005,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Up-to Techniques for Weak Bisimulation",
+   "authors": [
+    "Damien Pous"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2005: Damien Pous: “Up-to Techniques for Weak Bisimulation”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Efficient Pseudorandom Generators from Exponentially Hard One-Way Functions",
+   "authors": [
+    "Iftach Haitner",
+    "Danny Harnik",
+    "Omer Reingold"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2006: Iftach Haitner, Danny Harnik, Omer Reingold: “Efficient Pseudorandom Generators from Exponentially Hard One-Way Functions”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "On counting homomorphisms to directed acyclic graphs",
+   "authors": [
+    "Leslie Ann Goldberg",
+    "Mike Paterson"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2006: Leslie Ann Goldberg, Mike Paterson: “On counting homomorphisms to directed acyclic graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "The Wadge Hierarchy of Deterministic Tree Languages",
+   "authors": [
+    "Filip Murlak"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2006: Filip Murlak: “The Wadge Hierarchy of Deterministic Tree Languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2006,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Lower Bounds for Complementation of omega-Automata via the Full Automata Technique",
+   "authors": [
+    "Qiqi Yan"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2006: Qiqi Yan: “Lower Bounds for Complementation of omega-Automata via the Full Automata Technique”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A Generalization of Cobham's Theorem to Automata over Real Numbers",
+   "authors": [
+    "Bernard Boigelot",
+    "Julien Brusten"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2007: Bernard Boigelot, Julien Brusten: “A Generalization of Cobham's Theorem to Automata over Real Numbers”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Deterministic History Independent Strategies for Storing Information on Write Once Memories",
+   "authors": [
+    "Tal Moran",
+    "Moni Naor",
+    "Gil Segev"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2007: Tal Moran, Moni Naor, Gil Segev: “Deterministic History Independent Strategies for Storing Information on Write Once Memories”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Holographic algorithms. The Power of Dimensionality Resolved",
+   "authors": [
+    "Jin-Yi Cai",
+    "Pinyan Lu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2007: Jin-Yi Cai, Pinyan Lu: “Holographic algorithms. The Power of Dimensionality Resolved”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Duality and equational theory of regular languages",
+   "authors": [
+    "Mai Gehrke",
+    "Serge Grigorieff",
+    "Jean-Eric Pin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2008: Mai Gehrke, Serge Grigorieff, Jean-Eric Pin: “Duality and equational theory of regular languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Making Classical honest verifier zero-knowledge protocols secure against quantum attacks",
+   "authors": [
+    "Sean Hallgren",
+    "Alexandra Kolla",
+    "Pranab Sen",
+    "Shengyu Zhang"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2008: Sean Hallgren, Alexandra Kolla, Pranab Sen, Shengyu Zhang: “Making Classical honest verifier zero-knowledge protocols secure against quantum attacks”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "The complexity of Boolean formula minimization",
+   "authors": [
+    "David Buchfuhrer",
+    "Christopher Umans"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2008: David Buchfuhrer, Christopher Umans: “The complexity of Boolean formula minimization”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Algorithms for epsilon-approximations of Terrains",
+   "authors": [
+    "Jeff Phillips"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2008: Jeff Phillips: “Algorithms for epsilon-approximations of Terrains”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Weighted Logics for Nested Words and Algebraic Formal Power Series",
+   "authors": [
+    "Christian Mathissen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2008: Christian Mathissen: “Weighted Logics for Nested Words and Algebraic Formal Power Series”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A Better algorithm for random k-SAT",
+   "authors": [
+    "Amin Coja-Oghlan"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2009: Amin Coja-Oghlan: “A Better algorithm for random k-SAT”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Improved Algorithms for Latency Minimization in Wireless Network",
+   "authors": [
+    "Alexander Fanghaenel",
+    "Thomas Kesselheim",
+    "Berthold Voecking"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2009: Alexander Fanghaenel, Thomas Kesselheim, Berthold Voecking: “Improved Algorithms for Latency Minimization in Wireless Network”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "LTL Path Checking is Efficiently Parallelizable",
+   "authors": [
+    "Lars Kuhtz",
+    "Bernd Finkbeiner"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2009: Lars Kuhtz, Bernd Finkbeiner: “LTL Path Checking is Efficiently Parallelizable”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "The complexity of Nash Equilibria in Simple Stochastic Multiplayer Games",
+   "authors": [
+    "Michael Ummels",
+    "Dominik Wojtczak"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2009: Michael Ummels, Dominik Wojtczak: “The complexity of Nash Equilibria in Simple Stochastic Multiplayer Games”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Approximating the Partition Function of the Ferromagnetic Potts Model",
+   "authors": [
+    "Leslie Ann Goldberg",
+    "Mark Jerrum"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2010: Leslie Ann Goldberg, Mark Jerrum: “Approximating the Partition Function of the Ferromagnetic Potts Model”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "On optimal proof systems and logics for PTIME",
+   "authors": [
+    "Yijia Chen",
+    "Jörg Flum"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2010: Yijia Chen, Jörg Flum: “On optimal proof systems and logics for PTIME”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Placing Regenerators in Optical Networks to Safity Multiple Sets of Requests",
+   "authors": [
+    "Georg B. Mertzios",
+    "Ignasi Sau",
+    "Mordechai Shalom",
+    "Shmuel Zaks"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2010: Georg B. Mertzios, Ignasi Sau, Mordechai Shalom, Shmuel Zaks: “Placing Regenerators in Optical Networks to Safity Multiple Sets of Requests”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Algebraic Independence and Blackbox Identity Testing",
+   "authors": [
+    "Malte Beecken",
+    "Johannes Mittmann",
+    "Nitin Saxena"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2011: Malte Beecken, Johannes Mittmann, Nitin Saxena: “Algebraic Independence and Blackbox Identity Testing”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Local Matching Dynamics in Social Networks",
+   "authors": [
+    "Martin Hoefer"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2011: Martin Hoefer: “Local Matching Dynamics in Social Networks”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Regular Languages of Words Over Countable Linear Orderings",
+   "authors": [
+    "Olivier Carton",
+    "Thomas Colcombet",
+    "Gabriele Puppis"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2011: Olivier Carton, Thomas Colcombet, Gabriele Puppis: “Regular Languages of Words Over Countable Linear Orderings”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A 1.488-Approximation Algorithm for the Uncapacitated Facility Location Problem",
+   "authors": [
+    "Shi Li"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2011: Shi Li: “A 1.488-Approximation Algorithm for the Uncapacitated Facility Location Problem”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Fault-Tolerant Compact Routing Schemes for General Graphs",
+   "authors": [
+    "Shiri Chechik"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2011: Shiri Chechik: “Fault-Tolerant Compact Routing Schemes for General Graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Rice’s Theorem for mu-Limit Sets of Cellular Automata",
+   "authors": [
+    "Martin Delacourt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2011: Martin Delacourt: “Rice’s Theorem for mu-Limit Sets of Cellular Automata”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Online Mechanism Design (Randomized Rounding on the Fly)",
+   "authors": [
+    "Piotr Krysta",
+    "Berthold Vöcking"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2012: Piotr Krysta and Berthold Vöcking: “Online Mechanism Design (Randomized Rounding on the Fly)”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Regular Languages are Church-Rosser Congruential",
+   "authors": [
+    "Volker Diekert",
+    "Manfred Kufleitner",
+    "Klaus Reinhardt",
+    "Tobias Walter"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2012: Volker Diekert, Manfred Kufleitner, Klaus Reinhardt and Tobias Walter: “Regular Languages are Church-Rosser Congruential”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "The Complexity of Computing the Sign of the Tutte Polynomial (and consequent #P-hardness of Approximation)",
+   "authors": [
+    "Leslie Ann Goldberg",
+    "Mark Jerrum"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2012: Leslie Ann Goldberg and Mark Jerrum: “The Complexity of Computing the Sign of the Tutte Polynomial (and consequent #P-hardness of Approximation)”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "On the Locality of Some NP-Complete Problems",
+   "authors": [
+    "Leonid Barenboim"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2012: Leonid Barenboim: “On the Locality of Some NP-Complete Problems”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Quantum Adversary (Upper) Bound\" and Anastasios Zouzias : \"A Matrix Hyperbolic Cosine Algorithm and Applications",
+   "authors": [
+    "Shelby Kimmel"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2012: Shelby Kimmel: “Quantum Adversary (Upper) Bound\" and Anastasios Zouzias : \"A Matrix Hyperbolic Cosine Algorithm and Applications”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2012,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "The Complexity of Mean-Payoff Automaton Expression",
+   "authors": [
+    "Yaron Velner"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2012: Yaron Velner: “The Complexity of Mean-Payoff Automaton Expression”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Dual Lower Bounds for Approximate Degree and Markov-Bernstein Inequalities",
+   "authors": [
+    "Mark Bun",
+    "Justin Thaler"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2013: Mark Bun and Justin Thaler: “Dual Lower Bounds for Approximate Degree and Markov-Bernstein Inequalities”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Fast Collaborative Graph Exploration",
+   "authors": [
+    "Dariusz Dereniowski",
+    "Yann Disser",
+    "Adrian Kosowski",
+    "Dominik Pajak",
+    "Przemysław Uznański"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2013: Dariusz Dereniowski, Yann Disser, Adrian Kosowski, Dominik Pajak and Przemysław Uznański: “Fast Collaborative Graph Exploration”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Reachability in Two-Clock Timed Automata is PSPACE-complete",
+   "authors": [
+    "John Fearnley",
+    "Marcin Jurdziński"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2013: John Fearnley and Marcin Jurdziński: “Reachability in Two-Clock Timed Automata is PSPACE-complete”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A maximal entropy stochastic process for a timed automaton",
+   "authors": [
+    "Nicolas Basset"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2013: Nicolas Basset: “A maximal entropy stochastic process for a timed automaton”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Counting matchings of size k is #W[1]-hard",
+   "authors": [
+    "Radu Curticapean"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2013: Radu Curticapean: “Counting matchings of size k is #W[1]-hard”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Online Independent Set Beyond the Worst-Case: Secretaries, Prophets, and Periods",
+   "authors": [
+    "Oliver Göbel",
+    "Martin Hoefer",
+    "Thomas Kesselheim",
+    "Thomas Schleiden",
+    "Berthold Voecking"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2014: Oliver Göbel, Martin Hoefer, Thomas Kesselheim, Thomas Schleiden and Berthold Voecking: “Online Independent Set Beyond the Worst-Case: Secretaries, Prophets, and Periods”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Shortest Two Disjoint Paths in Polynomial Time",
+   "authors": [
+    "Andreas Björklund",
+    "Thore Husfeldt"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2014: Andreas Björklund and Thore Husfeldt: “Shortest Two Disjoint Paths in Polynomial Time”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Ultimate Positivity is Decidable for Simple Linear Recurrence Sequences",
+   "authors": [
+    "Joel Ouaknine",
+    "James Worrell"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2014: Joel Ouaknine and James Worrell: “Ultimate Positivity is Decidable for Simple Linear Recurrence Sequences”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Hardness Results for Intersection Non-Emptiness",
+   "authors": [
+    "Michael Wehar"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2014: Michael Wehar: “Hardness Results for Intersection Non-Emptiness”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Information Theoretical Cryptogenography",
+   "authors": [
+    "Sune K. Jakobsen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2014: Sune K. Jakobsen: “Information Theoretical Cryptogenography”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Near-Optimal Distributed Approximation of Minimum-Weight Connected Dominating Set",
+   "authors": [
+    "Mohsen Ghaffari"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2014: Mohsen Ghaffari: “Near-Optimal Distributed Approximation of Minimum-Weight Connected Dominating Set”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "An Algebraic Geometric Approach to Nivat's Conjecture",
+   "authors": [
+    "Jarkko Kari",
+    "Michal Szabados"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2015: Jarkko Kari and Michal Szabados: “An Algebraic Geometric Approach to Nivat's Conjecture”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Fully Dynamic Matching in Bipartite Graphs",
+   "authors": [
+    "Aaron Bernstein",
+    "Clifford Stein"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2015: Aaron Bernstein and Clifford Stein: “Fully Dynamic Matching in Bipartite Graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Selling two goods optimally",
+   "authors": [
+    "Yiannis Giannakopoulos",
+    "Elias Koutsoupias"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2015: Yiannis Giannakopoulos and Elias Koutsoupias: “Selling two goods optimally”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "An approach to computing downward closures",
+   "authors": [
+    "Georg Zetzsche"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2015: Georg Zetzsche: “An approach to computing downward closures”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "An Improved Combinatorial Algorithm for Boolean Matrix Multiplication",
+   "authors": [
+    "Huacheng Yu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2015: Huacheng Yu: “An Improved Combinatorial Algorithm for Boolean Matrix Multiplication”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Block interpolation: A framework for tight exponential-time counting complexity",
+   "authors": [
+    "Radu Curticapean"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2015: Radu Curticapean: “Block interpolation: A framework for tight exponential-time counting complexity”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Amplifiers for the Moran Process",
+   "authors": [
+    "Andreas Galanis",
+    "Andreas Göbel",
+    "Leslie Ann Goldberg",
+    "John Lapinskas",
+    "David Richerby"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2016: Andreas Galanis, Andreas Göbel, Leslie Ann Goldberg, John Lapinskas and David Richerby: “Amplifiers for the Moran Process”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "An almost Cubic Lower Bound for Depth Three Arithmetic Circuits",
+   "authors": [
+    "Neeraj Kayal",
+    "Chandan Saha",
+    "Sébastien Tavenas"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2016: Neeraj Kayal, Chandan Saha and Sébastien Tavenas: “An almost Cubic Lower Bound for Depth Three Arithmetic Circuits”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Polynomial Time corresponds to Solutions of Polynomial Ordinary Differential Equations of Polynomial Length",
+   "authors": [
+    "Olivier Bournez",
+    "Daniel Graça",
+    "Amaury Pouly"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2016: Olivier Bournez, Daniel Graça and Amaury Pouly: “Polynomial Time corresponds to Solutions of Polynomial Ordinary Differential Equations of Polynomial Length”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "An Optimal Dual Fault Tolerant Reachability Oracle",
+   "authors": [
+    "Keerti Choudhary"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2016: Keerti Choudhary: “An Optimal Dual Fault Tolerant Reachability Oracle”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Analysing Survey Propagation Guided Decimation on Random Formulas",
+   "authors": [
+    "Samuel Hetterich"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2016: Samuel Hetterich: “Analysing Survey Propagation Guided Decimation on Random Formulas”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Characterizing Defin-ability in Decidable Fixpoint Logics",
+   "authors": [
+    "Michael Benedikt",
+    "Pierre Bourhis",
+    "Michael Vanden Boom"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2017: Michael Benedikt, Pierre Bourhis and Michael Vanden Boom: “Characterizing Defin-ability in Decidable Fixpoint Logics”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Directed Hamiltonicity and Out-Branchings via Generalized Laplacians",
+   "authors": [
+    "Andreas Björklund",
+    "Petteri Kaski",
+    "Ioannis Koutis"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2017: Andreas Björklund, Petteri Kaski and Ioannis Koutis: “Directed Hamiltonicity and Out-Branchings via Generalized Laplacians”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Universal Framework for Wireless Scheduling Problems",
+   "authors": [
+    "Eyjólfur Ingi Ásgeirsson",
+    "Magnus M. Halldorsson",
+    "Tigran Tonoyan"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2017: Eyjólfur Ingi Ásgeirsson, Magnus M. Halldorsson and Tigran Tonoyan: “Universal Framework for Wireless Scheduling Problems”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Asynchronous Distributed Automata: A Characterization of the Modal Mu-Fragment",
+   "authors": [
+    "Fabian Reiter"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2017: Fabian Reiter: “Asynchronous Distributed Automata: A Characterization of the Modal Mu-Fragment”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Improved Hardness for Cut, Interdiction, and Firefighter Problems",
+   "authors": [
+    "Euiwoong Lee"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2017: Euiwoong Lee: “Improved Hardness for Cut, Interdiction, and Firefighter Problems”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A polynomial-time approximation algorithm for all-terminal network reliability",
+   "authors": [
+    "Heng Guo",
+    "Mark Jerrum"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2018: Heng Guo and Mark Jerrum: “A polynomial-time approximation algorithm for all-terminal network reliability”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "An optimal bound on the solution sets of one-variable word equations and its consequences",
+   "authors": [
+    "Dirk Nowotka",
+    "Aleksi Saarela"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2018: Dirk Nowotka and Aleksi Saarela: “An optimal bound on the solution sets of one-variable word equations and its consequences”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Polynomial Counting in Anonymous Dynamic Networks with Applications to Anonymous Dynamic Algebraic Computations",
+   "authors": [
+    "Dariusz Kowalski",
+    "Miguel A. Mosteiro"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2018: Dariusz Kowalski and Miguel A. Mosteiro: “Polynomial Counting in Anonymous Dynamic Networks with Applications to Anonymous Dynamic Algebraic Computations”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Quasi-PTAS for Scheduling with Precedences using LP Hierarchies",
+   "authors": [
+    "Shashwat Garg"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2018: Shashwat Garg: “Quasi-PTAS for Scheduling with Precedences using LP Hierarchies”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Uniformization problems for synchronizations of automatic relations on words",
+   "authors": [
+    "Sarah Winter"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2018: Sarah Winter: “Uniformization problems for synchronizations of automatic relations on words”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A Simple Gap-producing Reduction for the Parameterized Set Cover Problem",
+   "authors": [
+    "Bingkai Lin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2019: Bingkai Lin: “A Simple Gap-producing Reduction for the Parameterized Set Cover Problem”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Determinization of Buchi Automata: Unifying the Approaches of Safra and Muller-Schupp",
+   "authors": [
+    "Christof Loding",
+    "Anton Pirogov"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2019: Christof Loding and Anton Pirogov: “Determinization of Buchi Automata: Unifying the Approaches of Safra and Muller-Schupp”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Distributed Reconfiguration of Maximal Independent Sets",
+   "authors": [
+    "Keren Censor-Hillel",
+    "Mikael Rabie"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2019: Keren Censor-Hillel and Mikael Rabie: “Distributed Reconfiguration of Maximal Independent Sets”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "FO = FO3 for linear orders with monotone binary relations",
+   "authors": [
+    "Marie Fortin"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2019: Marie Fortin: “FO = FO3 for linear orders with monotone binary relations”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Improvements in Quantum SDP-Solving with Applications",
+   "authors": [
+    "Joran van Apeldoorn",
+    "Andras Gilyen"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2019: Joran van Apeldoorn and Andras Gilyen: “Improvements in Quantum SDP-Solving with Applications”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Cost automata, safe schemes, and downward closures",
+   "authors": [
+    "David Barozzini",
+    "Lorenzo Clemente",
+    "Thomas Colcombet",
+    "Pawel Parys"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2020: David Barozzini, Lorenzo Clemente, Thomas Colcombet and Pawel Parys: “Cost automata, safe schemes, and downward closures”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Minimum cut in O(m log^2 n) time",
+   "authors": [
+    "Pawel Gawrychowski",
+    "Shay Mozes",
+    "Oren Weimann"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2020: Pawel Gawrychowski, Shay Mozes and Oren Weimann: “Minimum cut in O(m log^2 n) time”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A spectral bound on hypergraph discrepancy",
+   "authors": [
+    "Aditya Potukuchi"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2020: Aditya Potukuchi: “A spectral bound on hypergraph discrepancy”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Finite sequentiality of finitely ambiguous max-plus tree automata",
+   "authors": [
+    "Erik Paul"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2020: Erik Paul: “Finite sequentiality of finitely ambiguous max-plus tree automata”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Deterministic Rounding of Dynamic Fractional Matchings",
+   "authors": [
+    "Sayan Bhattacharya",
+    "Peter Kiss"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2021: Sayan Bhattacharya and Peter Kiss: “Deterministic Rounding of Dynamic Fractional Matchings”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Dynamic Membership for Regular Languages",
+   "authors": [
+    "Antoine Amarilli",
+    "Louis Jachiet",
+    "Charles Paperman"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2021: Antoine Amarilli, Louis Jachiet and Charles Paperman: “Dynamic Membership for Regular Languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Breaking the 2n barrier for 5-coloring and 6-coloring",
+   "authors": [
+    "Or Zamir"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2021: Or Zamir: “Breaking the 2n barrier for 5-coloring and 6-coloring”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Strongly Sublinear Algorithms for Testing Pattern Freeness",
+   "authors": [
+    "Ilan Newman",
+    "Nithin Varma"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2022: Ilan Newman and Nithin Varma: “Strongly Sublinear Algorithms for Testing Pattern Freeness”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Twin-width and types",
+   "authors": [
+    "Jakub Gajarský",
+    "Michał Pilipczuk",
+    "Wojciech Przybyszewski",
+    "Szymon Toruńczyk"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2022: Jakub Gajarský, Michał Pilipczuk, Wojciech Przybyszewski and Szymon Toruńczyk: “Twin-width and types”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Hiding pebbles when the output alphabet is unary",
+   "authors": [
+    "Gaëtan Douéneau-Tabot"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2022: Gaëtan Douéneau-Tabot: “Hiding pebbles when the output alphabet is unary”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A 4/3 Approximation for 2-Vertex-Connectivity",
+   "authors": [
+    "Miguel Bosch Calvo",
+    "Fabrizio Grandoni",
+    "Afrouz Jabal Ameli"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2023: Miguel Bosch Calvo, Fabrizio Grandoni and Afrouz Jabal Ameli: “A 4/3 Approximation for 2-Vertex-Connectivity”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Coverability in VASS Revisited: Improving Rackoff’s Bound to Obtain Conditional Optimality",
+   "authors": [
+    "Marvin Künnemann",
+    "Filip Mazowiecki",
+    "Lia Schütze",
+    "Henry Sinclair-Banks",
+    "Karol Węgrzycki"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2023: Marvin Künnemann, Filip Mazowiecki, Lia Schütze, Henry Sinclair-Banks, and Karol Węgrzycki: “Coverability in VASS Revisited: Improving Rackoff’s Bound to Obtain Conditional Optimality”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Online Learning and Disambiguations of Partial Concept Classes",
+   "authors": [
+    "Tsun-Ming Cheung",
+    "Hamed Hatami",
+    "Pooya Hatami",
+    "Kaave Hosseini"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2023: Tsun-Ming Cheung, Hamed Hatami, Pooya Hatami and Kaave Hosseini: “Online Learning and Disambiguations of Partial Concept Classes”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Minimum Chain Cover in Almost Linear Time",
+   "authors": [
+    "Manuel Cáceres"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2023: Manuel Cáceres: “Minimum Chain Cover in Almost Linear Time”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "The Identity Problem in ℤ ≀ ℤ is decidable",
+   "authors": [
+    "Ruiwen Dong"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2023: Ruiwen Dong: “The Identity Problem in ℤ ≀ ℤ is decidable”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "A Note on Approximating Weighted Nash Social Welfare with Additive Valuations",
+   "authors": [
+    "Yuda Feng",
+    "Shi Li"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2024: Yuda Feng and Shi Li: “A Note on Approximating Weighted Nash Social Welfare with Additive Valuations”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Integer Linear Exponential Programming in NP by Quantifier Elimination",
+   "authors": [
+    "Dmitry Chistikov",
+    "Alessio Mansutti",
+    "Mikhail Starchak"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2024: Dmitry Chistikov, Alessio Mansutti, and Mikhail Starchak: “Integer Linear Exponential Programming in NP by Quantifier Elimination”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "A Faster Algorithm for Pigeonhole Equal Sums",
+   "authors": [
+    "Ce Jin",
+    "Hongxun Wu"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2024: Ce Jin and Hongxun Wu: “A Faster Algorithm for Pigeonhole Equal Sums”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Flattability of Priority Vector Addition Systems",
+   "authors": [
+    "Roland Guttenberg"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2024: Roland Guttenberg: “Flattability of Priority Vector Addition Systems”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Limits of Sequential Local Algorithms on the Random k-XORSAT Problem",
+   "authors": [
+    "Kingsley Yung"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2024: Kingsley Yung: “Limits of Sequential Local Algorithms on the Random k-XORSAT Problem”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "An efficient algorithm to compute the minimum free energy of interacting nucleic acid strands",
+   "authors": [
+    "Ahmed Shalaby",
+    "Damien Woods"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2025: Ahmed Shalaby and Damien Woods: “An efficient algorithm to compute the minimum free energy of interacting nucleic acid strands”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Tree algebras and bisimulation-invariant MSO on finite graphs",
+   "authors": [
+    "Thomas Colcombet",
+    "Amina Doumane",
+    "Denis Kuperberg"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2025: Thomas Colcombet, Amina Doumane and Denis Kuperberg: “Tree algebras and bisimulation-invariant MSO on finite graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "First-Order Intuitionistic Linear Logic and Hypergraph Languages",
+   "authors": [
+    "Tikhon Pshenitsyn"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2025: Tikhon Pshenitsyn: “First-Order Intuitionistic Linear Logic and Hypergraph Languages”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "The Converse of the Real Orthogonal Holant Theorem",
+   "authors": [
+    "Ben Young"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2025: Ben Young: “The Converse of the Real Orthogonal Holant Theorem”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Canonical Labelling of Random Regular Graphs",
+   "authors": [
+    "Mikhail Isaev",
+    "Tamás Makai",
+    "Brendan McKay",
+    "Paweł Prałat",
+    "Jane Tan",
+    "Maksim Zhukovskii"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2026: Mikhail Isaev, Tamás Makai, Brendan McKay, Paweł Prałat, Jane Tan, Maksim Zhukovskii: “Canonical Labelling of Random Regular Graphs”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best ICALP Paper",
+   "title": "Optimal lower bounds for Symmetric Modular Circuits",
+   "authors": [
+    "Benedikt Pago"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icalp-paper",
+   "evidence": "Best ICALP Paper 2026: Benedikt Pago: “Optimal lower bounds for Symmetric Modular Circuits”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Deciding DFA-Primality is NP-Hard",
+   "authors": [
+    "Daniel Alexander Spenner"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2026: Daniel Alexander Spenner: “Deciding DFA-Primality is NP-Hard”"
+  },
+  {
+   "venue": "ICALP",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student ICALP Paper",
+   "title": "Recursive Jump Operators and Optimal Proof Systems",
+   "authors": [
+    "Fabian Egidy"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-student-icalp-paper",
+   "evidence": "Best Student ICALP Paper 2026: Fabian Egidy: “Recursive Jump Operators and Optimal Proof Systems”"
   },
   {
    "venue": "ICAPS",
@@ -81997,6 +84696,210 @@
    "evidence": "LISA '13: dsync: Efficient Block-wise Synchronization of Multi-Gigabyte Binary Data — Thomas Knauth, TU Dresden; Christof Fetzer, TU Dresden"
   },
   {
+   "venue": "MFCS",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "On Two Stronger Versions of Dejean´s Conjectur",
+   "authors": [
+    "Igor Tunev",
+    "Arseny Shur"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2012: Igor Tunev and Arseny Shur: “On Two Stronger Versions of Dejean´s Conjectur”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Improved bounds for reduction to depth 4 and depth 3",
+   "authors": [
+    "Sébastien Tavenas"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2013: Sébastien Tavenas: “Improved bounds for reduction to depth 4 and depth 3”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Minimal Indices for Successor Search",
+   "authors": [
+    "Sarel Cohen",
+    "Amos Fiat",
+    "Moshik Hershcovitch",
+    "Haim Kaplan"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2013: Sarel Cohen, Amos Fiat, Moshik Hershcovitch and Haim Kaplan: “Minimal Indices for Successor Search”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Zero Knowledge and Circuit Minimization",
+   "authors": [
+    "Eric Allender",
+    "Bireswar Das"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2014: Eric Allender and Bireswar Das: “Zero Knowledge and Circuit Minimization”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Strong Inapproximability of the Shortest Reset Word",
+   "authors": [
+    "Paweł Gawrychowski",
+    "Damian Straszak"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2015: Paweł Gawrychowski and Damian Straszak: “Strong Inapproximability of the Shortest Reset Word”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Optimal Sparsification for Some Binary CSPs Using Low-degree Polynomials",
+   "authors": [
+    "Bart M. P. Jansen",
+    "Astrid Pieterse"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2016: Bart M. P. Jansen and Astrid Pieterse: “Optimal Sparsification for Some Binary CSPs Using Low-degree Polynomials”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Eilenberg Theorems for Free",
+   "authors": [
+    "Henning Urbat",
+    "Jiri Adamek",
+    "Liang-Ting Chen",
+    "Stefan Milius"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2017: Henning Urbat, Jiri Adamek, Liang-Ting Chen and Stefan Milius: “Eilenberg Theorems for Free”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Lagrange's Theorem for Binary Squares",
+   "authors": [
+    "Parthasarathy Madhusudan",
+    "Dirk Nowotka",
+    "Aayush Rajasekaran",
+    "Jeffrey Shallit"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2018: Parthasarathy Madhusudan, Dirk Nowotka, Aayush Rajasekaran and Jeffrey Shallit: “Lagrange's Theorem for Binary Squares”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Parity Games: Zielonka's Algorithm in Quasi-Polynomial Time",
+   "authors": [
+    "Paweł Parys"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2019: Paweł Parys: “Parity Games: Zielonka's Algorithm in Quasi-Polynomial Time”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Best Fit Bin Packing with Random Order Revisited",
+   "authors": [
+    "Susanne Albers",
+    "Arindam Khan",
+    "Leon Ladewig"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2020: Susanne Albers, Arindam Khan and Leon Ladewig: “Best Fit Bin Packing with Random Order Revisited”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "Some remarks on deciding equivalence for graph-to-graph transducers",
+   "authors": [
+    "Mikołaj Bojańczyk",
+    "Janusz Schmude"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2020: Mikołaj Bojańczyk and Janusz Schmude: “Some remarks on deciding equivalence for graph-to-graph transducers”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "A Bit of Nondeterminism Makes Pushdown Automata Expressive and Succinct",
+   "authors": [
+    "Shibashis Guha",
+    "Ismaël Jecker",
+    "Karoliina Lehtinen",
+    "Martin Zimmermann"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2021: Shibashis Guha, Ismaël Jecker, Karoliina Lehtinen and Martin Zimmermann: “A Bit of Nondeterminism Makes Pushdown Automata Expressive and Succinct”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "The Hamilton compression of highly symmetric graphs",
+   "authors": [
+    "Petr Gregor",
+    "Arturo Merino",
+    "Torsten Mütze"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2022: Petr Gregor, Arturo Merino, and Torsten Mütze: “The Hamilton compression of highly symmetric graphs”"
+  },
+  {
+   "venue": "MFCS",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best MFCS Paper",
+   "title": "A characterization of functions computable in polynomial time and space over the reals with discrete ordinary differential equations. Simulation of Turing machines with analytic discrete ordinary differential equations",
+   "authors": [
+    "Manon Blanc",
+    "Olivier Bournez"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-mfcs-paper",
+   "evidence": "Best MFCS Paper 2023: Manon Blanc and Olivier Bournez: “A characterization of functions computable in polynomial time and space over the reals with discrete ordinary differential equations. Simulation of Turing machines with analytic discrete ordinary differential equations”"
+  },
+  {
    "venue": "MICCAI",
    "year": 2025,
    "award": "best",
@@ -103510,6 +106413,293 @@
    "track": "main",
    "source": "https://www.sigspatial.org/people/award-recipients/",
    "evidence": "SIGSPATIAL 2025 10-Year Impact Award: Jia Yu, Jinxuan Wu, Mohamed Sarwat “GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Multinerves and Helly numbers of acyclic families",
+   "authors": [
+    "Éric Colin de Verdière",
+    "Grégory Ginot",
+    "Xavier Goaoc"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2012: Éric Colin de Verdière, Grégory Ginot, and Xavier Goaoc, “Multinerves and Helly numbers of acyclic families”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On Topological Changes in the Delaunay Triangulation of Moving Points",
+   "authors": [
+    "Natan Rubin"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2012: Natan Rubin, “On Topological Changes in the Delaunay Triangulation of Moving Points”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Simple Aggregative Algorithm for Counting Triangulations of Planar Point Sets and Related Problems",
+   "authors": [
+    "Victor Alvarez",
+    "Raimund Seidel"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2013: Victor Alvarez and Raimund Seidel, “A Simple Aggregative Algorithm for Counting Triangulations of Planar Point Sets and Related Problems”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Embeddability in the 3-Sphere is Decidable",
+   "authors": [
+    "Jirí Matoušek",
+    "Eric Sedgwick",
+    "Martin Tancer",
+    "Uli Wagner"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2014: Jirí Matoušek, Eric Sedgwick, Martin Tancer, and Uli Wagner, “Embeddability in the 3-Sphere is Decidable”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Combinatorial Discrepancy for Boxes via the γ₂ Norm",
+   "authors": [
+    "Jirí Matoušek",
+    "Aleksandar Nikolov"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2015: Jirí Matoušek and Aleksandar Nikolov, “Combinatorial Discrepancy for Boxes via the γ₂ Norm”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Number of Holes in the Union of Translates of a Convex Set in Three Dimensions",
+   "authors": [
+    "Boris Aronov",
+    "Otfried Cheong",
+    "Michael Gene Dobbins",
+    "Xavier Goaoc"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2016: Boris Aronov, Otfried Cheong, Michael Gene Dobbins, and Xavier Goaoc, “The Number of Holes in the Union of Translates of a Convex Set in Three Dimensions”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Computing the Geometric Intersection Number of Curves",
+   "authors": [
+    "Vincent Despré",
+    "Francis Lazarus"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2017: Vincent Despré and Francis Lazarus, “Computing the Geometric Intersection Number of Curves”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Shellability is NP-complete",
+   "authors": [
+    "Xavier Goaoc",
+    "Pavel Paták",
+    "Zuzana Patáková",
+    "Martin Tancer",
+    "Uli Wagner"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2018: Xavier Goaoc, Pavel Paták, Zuzana Patáková, Martin Tancer, and Uli Wagner, “Shellability is NP-complete”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Almost Tight Lower Bounds for Hard Cutting Problems in Embedded Graphs",
+   "authors": [
+    "Vincent Cohen-Addad",
+    "Éric Colin de Verdière",
+    "Dániel Marx",
+    "Arnaud de Mesmay"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2019: Vincent Cohen-Addad, Éric Colin de Verdière, Dániel Marx, and Arnaud de Mesmay, “Almost Tight Lower Bounds for Hard Cutting Problems in Embedded Graphs”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Convex Hulls of Random Order Types",
+   "authors": [
+    "Xavier Goaoc",
+    "Emo Welzl"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2020: Xavier Goaoc and Emo Welzl, “Convex Hulls of Random Order Types”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lower Bounds for Semialgebraic Range Searching and Stabbing Problems",
+   "authors": [
+    "Peyman Afshani",
+    "Pingan Cheng"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2021: Peyman Afshani and Pingan Cheng, “Lower Bounds for Semialgebraic Range Searching and Stabbing Problems”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Chains, Koch Chains, and Point Sets with Many Triangulations",
+   "authors": [
+    "Daniel Rutschmann",
+    "Manuel Wettstein"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2022: Daniel Rutschmann and Manuel Wettstein, “Chains, Koch Chains, and Point Sets with Many Triangulations”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Sparse Higher Order Čech Filtrations",
+   "authors": [
+    "Mickaël Buchet",
+    "Bianca B. Dornelas",
+    "Michael Kerber"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2023: Mickaël Buchet, Bianca B. Dornelas, and Michael Kerber, “Sparse Higher Order Čech Filtrations”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An O(n log n)-Time Approximation Scheme for Geometric Many-to-Many Matching",
+   "authors": [
+    "Sayan Bandyapadhyay",
+    "Jie Xue"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2024: Sayan Bandyapadhyay and Jie Xue, “An O(n log n)-Time Approximation Scheme for Geometric Many-to-Many Matching”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Practical Software for Triangulating and Simplifying 4-Manifolds",
+   "authors": [
+    "Rhuaidi Antonio Burke"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Student Paper 2024: Rhuaidi Antonio Burke, “Practical Software for Triangulating and Simplifying 4-Manifolds”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Linear Time Algorithm for the Maximum Overlap of Two Convex Polygons Under Translation",
+   "authors": [
+    "Timothy M. Chan",
+    "Isaac M. Hair"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2025: Timothy M. Chan and Isaac M. Hair, “A Linear Time Algorithm for the Maximum Overlap of Two Convex Polygons Under Translation”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Sparse Multicover Bifiltration of Linear Size",
+   "authors": [
+    "Ángel Javier Alonso"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Student Paper 2025: Ángel Javier Alonso, “A Sparse Multicover Bifiltration of Linear Size”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Constructing Doppelgängers of Greedy Geometric Spanners in Practice",
+   "authors": [
+    "Anirban Ghosh"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2026: Anirban Ghosh, “Constructing Doppelgängers of Greedy Geometric Spanners in Practice”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the size of k-irreducible triangulations",
+   "authors": [
+    "Vincent Delecroix",
+    "Oscar Fontaine",
+    "Arnaud de Mesmay"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Paper 2026: Vincent Delecroix, Oscar Fontaine, and Arnaud de Mesmay, “On the size of k-irreducible triangulations”"
+  },
+  {
+   "venue": "SoCG",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Fréchet Distance in the Imbalanced Case",
+   "authors": [
+    "Lotte Blank"
+   ],
+   "track": "main",
+   "source": "https://computational-geometry.org/cg-week/awards/",
+   "evidence": "SoCG Best Student Paper 2026: Lotte Blank, “Fréchet Distance in the Imbalanced Case”"
   },
   {
    "venue": "SOSP",

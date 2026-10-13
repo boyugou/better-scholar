@@ -2283,3 +2283,18 @@ test("ICDT awards page: year lines, then best paper / best student paper (alone 
   const h = `<h1>ICDT Awards</h1><p>rules</p><p>2025</p><p>Best Paper Award and Best Student Paper Award</p><p>Ann Lee and Bo Chan</p><p>Worst-case optimal joins meet constraints</p><p>2010</p><p>Best Paper Award</p><p>Cy Dunn, Ed Fox, and Flo Gray</p><p>Composition with target constraints</p><p>Best Student Paper Award</p><p>Gil Hart</p><p>Forward paths and extended automata</p><p>and</p><p>Hal Ito</p><p>Answering non-monotonic queries</p><p>2007</p><p>Best Newcomer Award</p><p>Jo Kim</p><p>Complexity of typechecking views</p><p>Search</p>`;
   assert.deepEqual(parseIcdtAwards(h, "https://databasetheory.org/ICDT/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 best | Ann Lee; Bo Chan", "2025 student | Ann Lee; Bo Chan", "2010 best | Cy Dunn; Ed Fox; Flo Gray", "2010 student | Gil Hart", "2010 student | Hal Ito"]);
 });
+
+test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
+  const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
+  const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
+  const h = mk("Best ESA Paper", `<p>2025 / Warsaw, Poland</p><p>Track A: Ann Lee, Bo Chan and Cy Dunn: “Combined search and encoding for seeds”</p><p>Track B - Ed Fox : "Weighted matching in a streaming model”</p><p>2006 / Karlsruhe</p><p>Flo Gray "Order statistics in sequences quickly"</p>`);
+  assert.deepEqual(parseEatcsPaper(h, "https://eatcs.org/index.php/best-esa-paper").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2025 best | Ann Lee; Bo Chan; Cy Dunn | Combined search and encoding for seeds", "2025 best | Ed Fox | Weighted matching in a streaming model", "2006 best | Flo Gray | Order statistics in sequences quickly"]);
+  assert.equal(parseEatcsPaper(mk("Best Student ESA Paper", "<p>2025 / X</p><p>Gil Hart: “Online makespan scheduling”</p>"), "https://eatcs.org/index.php/best-student-esa-paper").entries[0].award, "student");
+  assert.equal(parseEatcsPaper(h, "https://eatcs.org/index.php/best-student-esa-paper").entries.length, 0);
+});
+
+test("SoCG awards page: under 'SoCG Best Paper' and 'SoCG Best Student Paper' a year line then 'Authors, “Title”' per winner (a (practice)/(theory) tag allowed); the presentation award is left out", async () => {
+  const { parseSocgAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h2>SoCG Best Paper</h2><p>Winners</p><p>2026</p><p>Ann Lee, “Constructing greedy spanners in practice” (practice)</p><p>Bo Chan, Cy Dunn, and Ed Fox, “On the size of irreducible triangulations” (theory)</p><h2>SoCG Best Student Paper</h2><p>2025</p><p>Flo Gray, “A sparse multicover bifiltration”</p><h2>SoCG Best Student Presentation</h2><p>2025</p><p>Gil Hart: “Nearest neighbor searching”</p>`;
+  assert.deepEqual(parseSocgAwards(h, "https://computational-geometry.org/cg-week/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2026 best | Ann Lee | Constructing greedy spanners in practice", "2026 best | Bo Chan; Cy Dunn; Ed Fox | On the size of irreducible triangulations", "2025 student | Flo Gray | A sparse multicover bifiltration"]);
+});
