@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Salin detail untuk laporan bug"
+  },
+  "optSemanticKey": {
+    "message": "Kunci API (opsional)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Kunci gratis dari semanticscholar.org/product/api menghindari batas permintaan yang dipakai bersama oleh semua orang yang tidak punya kunci. Kunci tetap di perangkat ini (tidak disinkronkan) dan hanya dikirim ke Semantic Scholar."
   }
 }

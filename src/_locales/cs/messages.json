@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Zkopírovat podrobnosti pro hlášení chyby"
+  },
+  "optSemanticKey": {
+    "message": "Klíč API (nepovinný)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Bezplatný klíč z semanticscholar.org/product/api zabrání sdílenému limitu požadavků, který mají všichni bez klíče. Zůstává na tomto zařízení (nesynchronizuje se) a odesílá se jen do Semantic Scholar."
   }
 }

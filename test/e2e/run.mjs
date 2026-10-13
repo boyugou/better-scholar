@@ -488,6 +488,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       try {
         const asked = [];
         await ctxS.route("https://api.semanticscholar.org/**", async (route) => {
+          if (route.request().method() === "OPTIONS") return route.fulfill({ status: 204, headers: { "access-control-allow-origin": "*", "access-control-allow-headers": "x-api-key,content-type", "access-control-allow-methods": "GET,OPTIONS" } });
+          assert.equal(route.request().headers()["x-api-key"], "TESTKEY", "the person's key goes along, in the header");
           const q = new URL(route.request().url()).searchParams;
           asked.push(route.request().url());
           assert.ok(!(route.request().headers()["cookie"]), "no cookies go to Semantic Scholar");
@@ -501,6 +503,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         });
         const optsS = await openOptions(ctxS);
         await setPref(optsS, "semanticScholar", true);
+        await optsS.fill('input[data-pref="s2key"]', "TESTKEY");
+        await optsS.dispatchEvent('input[data-pref="s2key"]', "change");
+        assert.equal(await stored(optsS, "local", "s2key"), "TESTKEY", "the key is kept on this device");
+        assert.equal((await stored(optsS, "sync", "prefs")).s2key, undefined, "and is not in the synced settings");
         const pg = await ctxS.newPage();
         await pg.goto(fxS.url);
         await pg.waitForSelector("#rr-panel");

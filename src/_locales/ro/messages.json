@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Copiază detaliile pentru un raport de eroare"
+  },
+  "optSemanticKey": {
+    "message": "Cheie API (opțională)"
+  },
+  "optSemanticKeyHint": {
+    "message": "O cheie gratuită de la semanticscholar.org/product/api evită limita de cereri comună celor care nu au una. Rămâne pe acest dispozitiv (nu se sincronizează) și se trimite doar către Semantic Scholar."
   }
 }

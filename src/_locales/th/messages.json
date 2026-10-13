@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "คัดลอกรายละเอียดสำหรับรายงานข้อบกพร่อง"
+  },
+  "optSemanticKey": {
+    "message": "คีย์ API (ไม่บังคับ)"
+  },
+  "optSemanticKeyHint": {
+    "message": "คีย์ฟรีจาก semanticscholar.org/product/api ช่วยให้หลีกเลี่ยงขีดจำกัดคำขอที่ผู้ที่ไม่มีคีย์ใช้ร่วมกันได้ คีย์จะอยู่ในอุปกรณ์นี้เท่านั้น (ไม่ซิงก์) และส่งไปที่ Semantic Scholar เท่านั้น"
   }
 }

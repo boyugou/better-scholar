@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Kopioi tiedot virheraporttia varten"
+  },
+  "optSemanticKey": {
+    "message": "API-avain (valinnainen)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Ilmainen avain osoitteesta semanticscholar.org/product/api välttää yhteisen pyyntörajan, jonka kaikki ilman avainta jakavat. Avain pysyy tällä laitteella (ei synkronoidu) ja sitä lähetetään vain Semantic Scholarille."
   }
 }

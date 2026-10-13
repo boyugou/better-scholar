@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Részletek másolása hibajelentéshez"
+  },
+  "optSemanticKey": {
+    "message": "API-kulcs (opcionális)"
+  },
+  "optSemanticKeyHint": {
+    "message": "A semanticscholar.org/product/api címen ingyenesen kapható kulcs elkerüli azt a közös kérésszámkorlátot, amelyet mindenki megoszt, akinek nincs kulcsa. A kulcs ezen az eszközön marad (nem szinkronizálódik), és csak a Semantic Scholarnak küldjük."
   }
 }

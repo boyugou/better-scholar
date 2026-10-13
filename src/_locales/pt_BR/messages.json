@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Copiar detalhes para relatório de bug"
+  },
+  "optSemanticKey": {
+    "message": "Chave de API (opcional)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Uma chave gratuita de semanticscholar.org/product/api evita o limite de requisições compartilhado por quem não tem uma. Ela fica neste dispositivo (não é sincronizada) e é enviada somente ao Semantic Scholar."
   }
 }

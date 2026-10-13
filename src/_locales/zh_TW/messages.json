@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "複製問題回報所需的資訊"
+  },
+  "optSemanticKey": {
+    "message": "API 金鑰（選填）"
+  },
+  "optSemanticKeyHint": {
+    "message": "到 semanticscholar.org/product/api 免費申請一組金鑰，就能避開所有沒有金鑰的人共用的請求上限。金鑰只存在這台裝置上（不會同步），且只會傳送給 Semantic Scholar。"
   }
 }

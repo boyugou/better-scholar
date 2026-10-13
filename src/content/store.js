@@ -92,5 +92,9 @@
   }
   const clearResolved = () => remove("local", "resolved");
 
-  B.store = { migrate, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
+  // The optional Semantic Scholar API key: on this device only (never synced), sent only to Semantic Scholar
+  const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k : ""; };
+  const saveS2Key = (key) => (key ? set("local", "s2key", key.trim().slice(0, 200)) : remove("local", "s2key"));
+
+  B.store = { loadS2Key, saveS2Key, migrate, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
 })();

@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Skopiuj szczegóły do zgłoszenia błędu"
+  },
+  "optSemanticKey": {
+    "message": "Klucz API (opcjonalny)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Bezpłatny klucz z semanticscholar.org/product/api pozwala uniknąć wspólnego limitu zapytań, z którego korzystają wszyscy bez klucza. Klucz pozostaje na tym urządzeniu (nie jest synchronizowany) i jest wysyłany tylko do Semantic Scholar."
   }
 }

@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Kopiér detaljer til fejlrapport"
+  },
+  "optSemanticKey": {
+    "message": "API-nøgle (valgfri)"
+  },
+  "optSemanticKeyHint": {
+    "message": "En gratis nøgle fra semanticscholar.org/product/api undgår den fælles hastighedsgrænse, som alle uden nøgle deler. Den bliver på denne enhed (synkroniseres ikke) og sendes kun til Semantic Scholar."
   }
 }

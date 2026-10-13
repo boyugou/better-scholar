@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Hata raporu için ayrıntıları kopyala"
+  },
+  "optSemanticKey": {
+    "message": "API anahtarı (isteğe bağlı)"
+  },
+  "optSemanticKeyHint": {
+    "message": "semanticscholar.org/product/api adresinden alınan ücretsiz bir anahtar, anahtarı olmayan herkesin paylaştığı istek sınırına takılmanızı önler. Anahtar bu cihazda kalır (eşitlenmez) ve yalnızca Semantic Scholar'a gönderilir."
   }
 }

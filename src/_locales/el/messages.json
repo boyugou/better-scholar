@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Αντιγραφή στοιχείων για αναφορά σφάλματος"
+  },
+  "optSemanticKey": {
+    "message": "Κλειδί API (προαιρετικό)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Ένα δωρεάν κλειδί από το semanticscholar.org/product/api αποφεύγει το όριο αιτημάτων που μοιράζονται όλοι όσοι δεν έχουν κλειδί. Παραμένει σε αυτή τη συσκευή (δεν συγχρονίζεται) και αποστέλλεται μόνο στο Semantic Scholar."
   }
 }

@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Kopiera detaljer till felrapport"
+  },
+  "optSemanticKey": {
+    "message": "API-nyckel (valfri)"
+  },
+  "optSemanticKeyHint": {
+    "message": "En gratis nyckel från semanticscholar.org/product/api undviker den gemensamma gränsen för förfrågningar som alla utan nyckel delar. Den stannar på den här enheten (synkroniseras inte) och skickas bara till Semantic Scholar."
   }
 }

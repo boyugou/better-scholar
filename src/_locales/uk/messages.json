@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Скопіювати відомості для звіту про помилку"
+  },
+  "optSemanticKey": {
+    "message": "Ключ API (необов’язково)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Безкоштовний ключ із semanticscholar.org/product/api дозволяє уникнути спільного ліміту запитів, який мають усі без ключа. Ключ зберігається на цьому пристрої (не синхронізується) і надсилається лише до Semantic Scholar."
   }
 }

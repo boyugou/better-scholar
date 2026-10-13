@@ -79,6 +79,13 @@
     sync();
     return row;
   }
+  // The optional Semantic Scholar API key: a password field, saved when it is left, kept on this device (not in the synced settings)
+  function keyRow() {
+    const input = h("input", { type: "password", class: "key", "data-pref": "s2key", autocomplete: "off", spellcheck: "false", placeholder: "••••••••", "aria-label": t("optSemanticKey"),
+      onChange: async () => { await B.store.saveS2Key(input.value); $("saved").textContent = t("optSaved"); $("saved").classList.add("on"); setTimeout(() => $("saved").classList.remove("on"), 1400); } });
+    B.store.loadS2Key().then((k) => { input.value = k; });
+    return h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, t("optSemanticKey")), h("span", { class: "hint" }, t("optSemanticKeyHint"))), input);
+  }
   const LANGS = B.i18n.LANGUAGES.map(([code, name]) => [code, name]);
   const card = (title, desc, ...rows) => h("section", { class: "card" }, h("h2", {}, title), desc ? h("p", { class: "desc" }, desc) : null, ...rows);
 
@@ -142,7 +149,8 @@
         h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "marks", "years", "venues", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")),
         h("button", { class: "btn", type: "button", "data-act": "panel-full", onClick: () => { for (const k of B.prefs.PANEL_PARTS) prefs.panel[k] = true; save(); } }, t("optPanelFull")))),
     card(t("optSemanticTitle"), t("optSemanticHint"),
-      option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } })),
+      option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } }),
+      keyRow()),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, diagBtn, cacheNote)));

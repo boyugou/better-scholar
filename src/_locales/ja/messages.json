@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "不具合報告用に詳細をコピー"
+  },
+  "optSemanticKey": {
+    "message": "API キー（任意）"
+  },
+  "optSemanticKeyHint": {
+    "message": "semanticscholar.org/product/api で無料のキーを取得すると、キーを持たない全員が共有する利用制限を避けられます。キーはこの端末にのみ保存され（同期されません）、Semantic Scholar にだけ送信されます。"
   }
 }

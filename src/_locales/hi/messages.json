@@ -646,5 +646,11 @@
   },
   "optCopyDiagnostics": {
     "message": "बग रिपोर्ट के लिए विवरण कॉपी करें"
+  },
+  "optSemanticKey": {
+    "message": "API कुंजी (वैकल्पिक)"
+  },
+  "optSemanticKeyHint": {
+    "message": "semanticscholar.org/product/api से मिली मुफ़्त कुंजी उस साझा दर-सीमा से बचाती है, जो बिना कुंजी वाले सभी लोग साथ इस्तेमाल करते हैं। यह कुंजी इसी डिवाइस पर रहती है (सिंक नहीं होती) और केवल Semantic Scholar को भेजी जाती है।"
   }
 }

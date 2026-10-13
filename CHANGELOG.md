@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.15.0 — 2026-10-13
+
+- Semantic Scholar: an **API key** can be given (optional; a free key from semanticscholar.org avoids the rate limit that everyone without one shares). It is kept on this device only (not synced) and sent only to Semantic Scholar, in a header. A unit test now checks that every script in `src/` parses.
+
 ## 2.14.5 — 2026-10-12
 
 - A second-opinion review of all 29 translations against the English: where a publication venue was called a "sede" / "venue" / "sede" (es, fr, it: a headquarters, an arrival), "publikace" (pl, cs: a paper) or similar, it now says conference or journal; award names that meant something else ("service paper award" in ja and ko, "lifetime achievement" in es) are corrected; mixed registers, grammar and terminology are made consistent per language.

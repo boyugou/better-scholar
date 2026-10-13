@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "버그 신고용 정보 복사"
+  },
+  "optSemanticKey": {
+    "message": "API 키(선택 사항)"
+  },
+  "optSemanticKeyHint": {
+    "message": "semanticscholar.org/product/api에서 무료 키를 받으면 키가 없는 모든 사용자가 공유하는 요청 제한을 피할 수 있습니다. 키는 이 기기에만 저장되며(동기화되지 않음) Semantic Scholar에만 전송됩니다."
   }
 }

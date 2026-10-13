@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Copy details for a bug report"
+  },
+  "optSemanticKey": {
+    "message": "API key (optional)"
+  },
+  "optSemanticKeyHint": {
+    "message": "A free key from semanticscholar.org/product/api avoids the rate limit shared by everyone who has none. It stays on this device (not synced) and is sent only to Semantic Scholar."
   }
 }

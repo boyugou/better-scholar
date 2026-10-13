@@ -15,7 +15,8 @@ Scholar Roles & Ranks works entirely in your browser.
 - **Semantic Scholar (off by default):** if you switch on *Semantic Scholar → Complete author lists with Semantic
   Scholar*, then when you click **Complete** the extension first asks `api.semanticscholar.org` for each paper's
   author list (about once a second): the request carries the paper's title and nothing else — no cookies, no
-  referrer, no identifier of you or of the profile. Papers it does not know go to Scholar's own page as above.
+  referrer, no identifier of you or of the profile. If you give an optional Semantic Scholar API key in the settings, it is kept on this device only
+  (`chrome.storage.local`, never synced) and sent only to `api.semanticscholar.org`, as the request's `x-api-key` header. Papers it does not know go to Scholar's own page as above.
 - **Loading the whole paper list:** Scholar shows 100 papers and loads the rest when its own *Show more* button
   is pressed. By default the extension presses that button for you (about once a second, one press at a time, only
   while the tab is the one you are looking at), so the summary covers every paper. The request is made by Scholar's own page script, to Scholar, exactly as if

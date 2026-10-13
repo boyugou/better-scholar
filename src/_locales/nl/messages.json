@@ -664,5 +664,11 @@
   },
   "optCopyDiagnostics": {
     "message": "Details kopiëren voor bugrapport"
+  },
+  "optSemanticKey": {
+    "message": "API-sleutel (optioneel)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Een gratis sleutel van semanticscholar.org/product/api voorkomt de gedeelde limiet die iedereen zonder sleutel deelt. De sleutel blijft op dit apparaat (wordt niet gesynchroniseerd) en wordt alleen naar Semantic Scholar gestuurd."
   }
 }

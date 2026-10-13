@@ -164,3 +164,10 @@ test("text colours on the extension's own surfaces keep a 4.5:1 contrast (found 
   assert.ok(ratio("#0d652d", "#cce5d4") >= 4.5, "the last-author name on its tint");
   assert.ok(ratio("#5f6368", "#e4eefc") >= 4.5 && ratio("#5f6368", "#e4f1e8") >= 4.5, "Scholar's grey lines on the row tints");
 });
+
+test("every script in src/ parses (a syntax slip such as a duplicate declaration would otherwise only show in the browser)", () => {
+  const vm = require("node:vm");
+  for (const f of walk(src).filter((x) => x.endsWith(".js"))) {
+    assert.doesNotThrow(() => new vm.Script(fs.readFileSync(f, "utf8"), { filename: f }), path.relative(src, f));
+  }
+});
