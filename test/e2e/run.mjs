@@ -380,6 +380,25 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const popupMatrix = await popup.evaluate(() => Array.from(document.querySelectorAll("tbody tr")).map((tr) => tr.lastElementChild.textContent));
     assert.ok(popupMatrix.length >= 3);
     await popup.screenshot({ path: path.join(outDir, "popup.png") });
+    await popup.emulateMedia({ colorScheme: "dark" });
+    await popup.waitForTimeout(400);                                 // (the buttons ease their colours over .15 s)
+    // readable in the dark popup: every button's text against its own background is at least 4.5 : 1
+    const lowContrast = await popup.evaluate(() => {
+      const rgb = (c) => c.match(/[\d.]+/g).slice(0, 3).map(Number);
+      const lum = ([r, g, b]) => { const f = (v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
+      const bad = [];
+      for (const b of document.querySelectorAll("button, a.btn")) {
+        if (!b.offsetParent || !b.textContent.trim()) continue;
+        const cs = getComputedStyle(b);
+        if (/rgba\(.*, 0\)|transparent/.test(cs.backgroundColor)) continue;
+        const l1 = lum(rgb(cs.color)), l2 = lum(rgb(cs.backgroundColor)), hi = Math.max(l1, l2), lo = Math.min(l1, l2);
+        if ((hi + 0.05) / (lo + 0.05) < 4.5) bad.push(b.textContent.trim().slice(0, 20));
+      }
+      return bad;
+    });
+    assert.deepEqual(lowContrast, [], "a popup button is unreadable in dark mode");
+    await popup.screenshot({ path: path.join(outDir, "popup-dark.png") });
+    await popup.emulateMedia({ colorScheme: "light" });
     await popup.close();
     ok("toolbar popup renders the active profile's summary (and a hint on other pages)");
 
@@ -552,6 +571,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (let i = 0; i < 50 && (await opts.textContent('[data-act="clear-cache"]')) === "Cleared"; i++) await opts.waitForTimeout(100);
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
+    await opts.emulateMedia({ colorScheme: "dark" });
+    await opts.waitForTimeout(400);
+    await opts.screenshot({ path: path.join(outDir, "settings-dark.png"), fullPage: true });
+    await opts.emulateMedia({ colorScheme: "light" });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");
 
     // -- S8. the panel's settings button opens the settings page
@@ -690,6 +713,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const cut = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-btn")].filter((b) => b.offsetParent && b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent.trim()));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the sidebar");
     await page.screenshot({ path: path.join(outDir, "showcase.png") });
+    await page.emulateMedia({ colorScheme: "dark" });
+    await page.waitForTimeout(400);
+    await page.screenshot({ path: path.join(outDir, "showcase-dark.png") });
+    await page.emulateMedia({ colorScheme: "light" });
     await page.setViewportSize({ width: 760, height: 900 });
     await page.waitForFunction(() => document.getElementById("rr-panel").classList.contains("rr-wide"));
     assert.deepEqual(await cut(), [], "a panel button label is cut off in the wide panel");
