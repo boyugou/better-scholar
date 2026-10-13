@@ -119,3 +119,11 @@ code { font: .92em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; bac
 .install ol, .honest p { margin-inline: auto; }
 .install .note, .honest p { text-align: center; }
 .install .note { margin-top: 14px; }
+
+/* a plain document page (privacy) */
+.doc { padding: 40px 0 60px; }
+.narrow { max-width: 760px; }
+.doc h1 { font-size: 34px; margin-bottom: 18px; }
+.doc ul { padding-inline-start: 1.2em; }
+.doc li { margin: 12px 0; }
+.doc p, .doc li { color: var(--text); }
