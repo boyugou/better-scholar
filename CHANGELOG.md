@@ -2,7 +2,7 @@
 
 ## 2.10.84 — 2026-10-12
 
-- Static security review of the extension code: no `innerHTML`, `eval` or `new Function` anywhere, `storage` is the only permission, and the one `fetch` (the user-triggered read of a paper's page on Scholar) now refuses a link that is not on the page's own origin before it sends cookies.
+- Static security review of the extension code: no `innerHTML`, `eval` or `new Function` anywhere, `storage` is the only permission, and the one `fetch` (the user-triggered read of a paper's page on Scholar) now refuses a link that is not on the page's own origin before it sends cookies; an e2e check rewrites the links to another origin as the page loads and fails if any request is attempted (it fails when the guard is removed, which was checked).
 
 ## 2.10.83 — 2026-10-12
 

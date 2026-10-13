@@ -267,6 +267,25 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => document.querySelectorAll(".rr-name").length > 0);
     ok("the owner's name is marked by default (text untouched, role in the tooltip) and its switch on the settings page undoes it cleanly");
 
+    // -- 10b. a paper link that leaves the page's own origin is never read (cookies go only to Scholar's origin)
+    {
+      const off = await context.newPage();
+      let attempted = 0;
+      context.on("request", (r) => { if (/other-origin\.invalid/.test(r.url())) attempted++; });
+      // (the links are rewritten as the page is parsed, before the extension reads them)
+      await off.addInitScript(() => document.addEventListener("DOMContentLoaded", () => document.querySelectorAll("#gsc_a_b a.gsc_a_at").forEach((a) => { a.setAttribute("href", "http://other-origin.invalid/citations?view_op=view_citation&citation_for_view=x"); })));
+      await off.goto(fx.url);
+      await off.waitForSelector('[data-act="resolve"]');
+      await off.bringToFront();
+      await off.click('[data-act="resolve"]');
+      await off.waitForTimeout(2500);
+      assert.equal(fx.detailRequests(), 0, "no paper page was requested for an off-origin link");
+      assert.equal(attempted, 0, "no request was even attempted to the other origin");
+      assert.equal(await off.locator('[data-act="resolve"]').count(), 1, "the hidden rows stay hidden: nothing was read");
+      await off.close();
+      ok("a paper link that is not on the page's own origin is refused: no request is made and no cookies are sent");
+    }
+
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
