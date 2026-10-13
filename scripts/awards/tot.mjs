@@ -3463,11 +3463,30 @@ export function parseCpAwards(html, source) {
   return { entries, skipped };
 }
 
-// NAACL HLT 2015's "Best papers" page (naacl.org/naacl-hlt-2015/best-paper-awards.html; the other years' pages of that site are gone): after "List of best papers" a title line ending in a colon and an authors line "A, B and C. Affiliation"; the page does not say which is the long and which are the student papers, so all are read as best papers.
+// NAACL HLT's own best papers pages (naacl.org/naacl-hlt-2015/best-paper-awards.html, naacl.org/naacl-hlt-2016/best_papers.html; the other years' pages of that site are gone): after "List of best papers" a title line ending in a colon and an authors line "A, B and C. Affiliation"; the page does not say which is the long and which are the student papers, so all are read as best papers.
 export function parseNaaclBest(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/naacl-hlt-(\d{4})\//.exec(source) || [])[1], 10);
+  const main = ls.findIndex((l) => /^Best Papers: Main Conference$/i.test(l));
+  if (main >= 0 && year) {
+    // 2016's layout: "Best Short Paper", "Short Paper, Runners Up", "Best Long Papers", "Long Paper, Runners Up", then per paper the title, the authors and a long description paragraph
+    if (!new RegExp(`NAACL HLT ${year}`).test(String(html))) return { entries, skipped: ["no best papers for the year"] };
+    let kind = null;
+    for (let i = main + 1; i < ls.length; i++) {
+      const l = ls[i];
+      if (/^Best (?:Short|Long) Papers?$/i.test(l)) { kind = "best"; continue; }
+      if (/^(?:Short|Long) Paper, Runners? Up$/i.test(l)) { kind = "runner-up"; continue; }
+      if (/^Best Papers:/i.test(l) || /^Best Reviewers$/i.test(l) || /^Back to Program$/i.test(l)) { if (entries.length) break; continue; }
+      if (!kind || l.length > 160) continue;
+      const who = names(ls[i + 1] || ""), title = cleanTitle(l);
+      if (who.length && who.every(isPerson) && title.length >= 12 && ls[i + 1].length < 200) {
+        entries.push({ venue: "NAACL", year, award: kind, awardLabel: kind === "best" ? "Best Paper Award" : "Best Paper Runner-up", title, authors: who, track: "main", source, evidence: `NAACL ${year} ${kind === "best" ? "best paper" : "best paper runner-up"}: ${title} — ${ls[i + 1]}` });
+        i++;
+      }
+    }
+    return { entries, skipped };
+  }
   const i0 = ls.findIndex((l) => /^List of best papers$/i.test(l));
   if (!year || i0 < 0 || !ls.some((l) => new RegExp(`NAACL HLT ${year}`).test(l))) return { entries, skipped: ["no best papers list for the year"] };
   for (let i = i0 + 1; i + 1 < ls.length; i++) {

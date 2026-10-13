@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.118 — 2026-10-12
+
+- NAACL HLT 2016's best short and long papers and runners-up (7 papers) from the conference's own page (`tot.mjs naacl-best`; two titles' semicolons corrected to colons). The list has 7698 awards.
+
 ## 2.10.117 — 2026-10-12
 
 - NAACL HLT 2015's three best papers (the ACL Anthology metadata the list reads starts in 2019) from the conference's own page (`tot.mjs naacl-best`). The list has 7691 awards.

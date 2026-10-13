@@ -2415,6 +2415,12 @@ test("NAACL HLT 2015 best papers page: after 'List of best papers' a title line 
   assert.deepEqual(parseNaaclBest(h, "https://naacl.org/naacl-hlt-2015/best-paper-awards.html").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2015 | Manaal Faruqui; Jesse Dodge; Noah A. Smith | Retrofitting word vectors to semantic lexicons", "2015 | Radu Soricut; Franz Och | Unsupervised morphology induction using word embeddings"]);
 });
 
+test("NAACL HLT 2016 best papers page: Best Short Paper / Short Paper, Runners Up / Best Long Papers / Long Paper, Runners Up, then per paper the title, the authors and a long description that is skipped", async () => {
+  const { parseNaaclBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>NAACL HLT 2016 | San Diego, CA</p><p>Best Papers: Main Conference</p><p>Back to Program</p><p>Best Short Paper</p><p>Improving sentence compression by learning to predict gaze</p><p>Sigrid Klerke, Yoav Goldberg and Anders Søgaard</p><p>${"This paper shows how to use gaze measurements to improve models. ".repeat(4)}</p><p>Short Paper, Runners Up</p><p>Patterns of wisdom: discourse-level style in quotations</p><p>Kyle Booten and Marti A. Hearst</p><p>Best Long Papers</p><p>Learning to compose neural networks for question answering</p><p>Jacob Andreas, Marcus Rohrbach, Trevor Darrell and Dan Klein</p><p>Best Reviewers</p>`;
+  assert.deepEqual(parseNaaclBest(h, "https://naacl.org/naacl-hlt-2016/best_papers.html").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2016 best | Sigrid Klerke; Yoav Goldberg; Anders Søgaard", "2016 runner-up | Kyle Booten; Marti A. Hearst", "2016 best | Jacob Andreas; Marcus Rohrbach; Trevor Darrell; Dan Klein"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
