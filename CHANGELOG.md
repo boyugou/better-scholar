@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.68 — 2026-10-12
+
+- GECCO's best papers of 2021–2025 (50 papers, one per track or group of tracks) from each year's own Best Paper Awards page (`tot.mjs gecco-best`); the list had only GECCO's impact awards. The list has 6635 awards.
+
 ## 2.10.67 — 2026-10-12
 
 - MODELS 2025's best foundation paper, best practice track paper and two ACM SIGSOFT distinguished papers (conf.researchr.org's awards track) and JCDL 2025's Vannevar Bush best paper and best short paper (`tot.mjs models-awards`, `tot.mjs jcdl-awards`); the list stopped at MODELS 2024 and JCDL 2017. Other years' pages have no such page. The list has 6585 awards.

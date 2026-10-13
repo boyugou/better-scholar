@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6585
+  "count": 6635
  },
  "entries": [
   {
@@ -55893,6 +55893,127 @@
   {
    "venue": "GECCO",
    "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GP)",
+   "title": "A Generalizability Measure for Program Synthesis with Genetic Programming",
+   "authors": [
+    "Dominik Sobania",
+    "Franz Rothlauf"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, GP Track: A Generalizability Measure for Program Synthesis with Genetic Programming — Dominik Sobania, Franz Rothlauf"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA)",
+   "title": "A Novel Surrogate-assisted Evolutionary Algorithm Applied to Partition-based Ensemble Learning",
+   "authors": [
+    "Arkadiy Dushatskiy",
+    "Tanja Alderliesten",
+    "Peter A. N. Bosman"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, GA Track: A Novel Surrogate-assisted Evolutionary Algorithm Applied to Partition-based Ensemble Learning — Arkadiy Dushatskiy, Tanja Alderliesten, Peter A. N. Bosman"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CS)",
+   "title": "Biodiversity in Evolved Voxel-based Soft Robots",
+   "authors": [
+    "Eric Medvet",
+    "Federico Pigozzi",
+    "Alberto Bartoli",
+    "Marco Rochelli"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, CS Track: Biodiversity in Evolved Voxel-based Soft Robots — Eric Medvet, Federico Pigozzi, Alberto Bartoli, Marco Rochelli"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (RWA)",
+   "title": "Evolutionary Minimization of Traffic Congestion",
+   "authors": [
+    "Maximilian Böther",
+    "Leon Schiller",
+    "Philipp Fischbeck",
+    "Louise Molitor",
+    "Martin S. Krejca",
+    "Tobias Friedrich"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, RWA Track: Evolutionary Minimization of Traffic Congestion — Maximilian Böther, Leon Schiller, Philipp Fischbeck, Louise Molitor, Martin S. Krejca, Tobias Friedrich"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ECOM)",
+   "title": "Genetic Algorithm Niching by (Quasi-)Infinite Memory",
+   "authors": [
+    "Adrian Worring",
+    "Benjamin Eugen Mayer",
+    "Kay Hamacher"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, ECOM Track: Genetic Algorithm Niching by (Quasi-)Infinite Memory — Adrian Worring, Benjamin Eugen Mayer, Kay Hamacher"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EMO)",
+   "title": "Greedy Approximated Hypervolume Subset Selection for Many-objective Optimization",
+   "authors": [
+    "Ke Shang",
+    "Hisao Ishibuchi",
+    "Weiyu Chen"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, EMO Track: Greedy Approximated Hypervolume Subset Selection for Many-objective Optimization — Ke Shang, Hisao Ishibuchi, Weiyu Chen"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EML + GECH + NE)",
+   "title": "Policy Gradient Assisted MAP-Elites",
+   "authors": [
+    "Olle Nilsson",
+    "Antoine Cully"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, EML + GECH + NE Tracks: Policy Gradient Assisted MAP-Elites — Olle Nilsson, Antoine Cully"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ACO-SI + ENUM + THEORY)",
+   "title": "Self-Adjusting Population Sizes for Non-Elitist Evolutionary Algorithms: Why Success Rates Matter",
+   "authors": [
+    "Mario Alejandro Hevia Fajardo",
+    "Dirk Sudholt"
+   ],
+   "track": "main",
+   "source": "https://gecco-2021.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2021 Best Paper Award, ACO-SI + ENUM + THEORY Tracks: Self-Adjusting Population Sizes for Non-Elitist Evolutionary Algorithms: Why Success Rates Matter — Mario Alejandro Hevia Fajardo, Dirk Sudholt"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2021,
    "award": "tot",
    "awardLabel": "SIGEVO Impact Award",
    "title": "Evolving a diversity of creatures through novelty search and local competition",
@@ -55925,6 +56046,168 @@
   {
    "venue": "GECCO",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EML)",
+   "title": "Absumption based on Overgenerality and Condition-Clustering based Specialization for XCS with Continuous-Valued Inputs",
+   "authors": [
+    "Hiroki Shiraishi",
+    "Yohei Hayamizu",
+    "Hiroyuki Sato",
+    "Keiki Takadama"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, EML Track: Absumption based on Overgenerality and Condition-Clustering based Specialization for XCS with Continuous-Valued Inputs — Hiroki Shiraishi, Yohei Hayamizu, Hiroyuki Sato, Keiki Takadama"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ENUM + Theory)",
+   "title": "Crossover for Cardinality Constrained Optimization",
+   "authors": [
+    "Tobias Friedrich",
+    "Timo Kötzing",
+    "Aishwarya Radhakrishnan",
+    "Leon Schiller",
+    "Martin Schirneck",
+    "Georg Tennigkeit",
+    "Simon Wietheger"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, ENUM + Theory Tracks: Crossover for Cardinality Constrained Optimization — Tobias Friedrich, Timo Kötzing, Aishwarya Radhakrishnan, Leon Schiller, Martin Schirneck, Georg Tennigkeit, Simon Wietheger"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NE + SBSE)",
+   "title": "Evolutionary Neural Cascade Search across Supernetworks",
+   "authors": [
+    "Alexander Chebykin",
+    "Tanja Alderliesten",
+    "Peter Bosman"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, NE + SBSE Tracks: Evolutionary Neural Cascade Search across Supernetworks — Alexander Chebykin, Tanja Alderliesten, Peter Bosman"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GP)",
+   "title": "Evolvability Degeneration in Multi-Objective Genetic Programming for Symbolic Regression",
+   "authors": [
+    "Dazhuang Liu",
+    "Marco Virgolin",
+    "Tanja Alderliesten",
+    "Peter Bosman"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, GP Track: Evolvability Degeneration in Multi-Objective Genetic Programming for Symbolic Regression — Dazhuang Liu, Marco Virgolin, Tanja Alderliesten, Peter Bosman"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CS)",
+   "title": "Hierarchical Quality-Diversity for Online Damage Recovery",
+   "authors": [
+    "Maxime Allard",
+    "Simón Smith",
+    "Konstantinos Chatzilygeroudis",
+    "Antoine Cully"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, CS Track: Hierarchical Quality-Diversity for Online Damage Recovery — Maxime Allard, Simón Smith, Konstantinos Chatzilygeroudis, Antoine Cully"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (RWA)",
+   "title": "Learning the Characteristics of Engineering Optimization Problems with Applications in Automotive Crash",
+   "authors": [
+    "Fu Xing Long",
+    "Bas van Stein",
+    "Moritz Frenzel",
+    "Peter Krause",
+    "Markus Gitterle",
+    "Thomas Bäck"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, RWA Track: Learning the Characteristics of Engineering Optimization Problems with Applications in Automotive Crash — Fu Xing Long, Bas van Stein, Moritz Frenzel, Peter Krause, Markus Gitterle, Thomas Bäck"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ECOM)",
+   "title": "Local Ranking Explanation for Genetic Programming Evolved Routing Policies for Uncertain Capacitated Arc Routing Problems",
+   "authors": [
+    "Shaolin Wang",
+    "Yi Mei",
+    "Mengjie Zhang"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, ECOM Track: Local Ranking Explanation for Genetic Programming Evolved Routing Policies for Uncertain Capacitated Arc Routing Problems — Shaolin Wang, Yi Mei, Mengjie Zhang"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA)",
+   "title": "Simple Genetic Operators are Universal Approximators of Probability Distributions (and other Advantages of Expressive Encodings)",
+   "authors": [
+    "Elliot Meyerson",
+    "Xin Qiu",
+    "Risto Miikkulainen"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, GA Track: Simple Genetic Operators are Universal Approximators of Probability Distributions (and other Advantages of Expressive Encodings) — Elliot Meyerson, Xin Qiu, Risto Miikkulainen"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EMO)",
+   "title": "The (1+( , )) Global SEMO Algorithm",
+   "authors": [
+    "Benjamin Doerr",
+    "Omar El Hadri",
+    "Adrien Pinard"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, EMO Track: The (1+( , )) Global SEMO Algorithm — Benjamin Doerr, Omar El Hadri, Adrien Pinard"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GECH)",
+   "title": "Theory-inspired Parameter Control Benchmarks for Dynamic Algorithm Configuration",
+   "authors": [
+    "André Biedenkapp",
+    "Nguyen Dang",
+    "Martin Krejca",
+    "Frank Hutter",
+    "Carola Doerr"
+   ],
+   "track": "main",
+   "source": "https://gecco-2022.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2022 Best Paper Award, GECH Track: Theory-inspired Parameter Control Benchmarks for Dynamic Algorithm Configuration — André Biedenkapp, Nguyen Dang, Martin Krejca, Frank Hutter, Carola Doerr"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "SIGEVO Impact Award",
    "title": "Genetic programming needs better benchmarks",
@@ -55948,6 +56231,170 @@
   {
    "venue": "GECCO",
    "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GECH + Theory)",
+   "title": "Calculating lexicase selection probabilities is NP-Hard",
+   "authors": [
+    "Emily Dolson"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, GECH + Theory Track: Calculating lexicase selection probabilities is NP-Hard — Emily Dolson"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EML)",
+   "title": "Covariance Matrix Adaptation MAP-Annealing",
+   "authors": [
+    "Matthew Fontaine",
+    "Stefanos Nikolaidis"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, EML Track: Covariance Matrix Adaptation MAP-Annealing — Matthew Fontaine, Stefanos Nikolaidis"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA)",
+   "title": "First Improvement Hill Climber with Linkage Learning - on Introducing Dark Gray-Box Optimization into Statistical Linkage Learning Genetic Algorithms",
+   "authors": [
+    "Michal Przewozniczek",
+    "Renato Tinós",
+    "Marcin Komarnicki"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, GA Track: First Improvement Hill Climber with Linkage Learning - on Introducing Dark Gray-Box Optimization into Statistical Linkage Learning Genetic Algorithms — Michal Przewozniczek, Renato Tinós, Marcin Komarnicki"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GP)",
+   "title": "Grammar-guided Linear Genetic Programming for Dynamic Job Shop Scheduling",
+   "authors": [
+    "Zhixing Huang",
+    "Yi Mei",
+    "Fangfang Zhang",
+    "Mengjie Zhang"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, GP Track: Grammar-guided Linear Genetic Programming for Dynamic Job Shop Scheduling — Zhixing Huang, Yi Mei, Fangfang Zhang, Mengjie Zhang"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NE + SBSE)",
+   "title": "Learning by Viewing: Generating Test Inputs for Games by Integrating Human Gameplay Traces in Neuroevolution",
+   "authors": [
+    "Patric Feldmeier",
+    "Gordon Fraser"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, NE + SBSE Tracks: Learning by Viewing: Generating Test Inputs for Games by Integrating Human Gameplay Traces in Neuroevolution — Patric Feldmeier, Gordon Fraser"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CS)",
+   "title": "MAP-Elites with Descriptor-Conditioned Gradients and Archive Distillation into a Single Policy",
+   "authors": [
+    "Maxence Faldor",
+    "Félix Chalumeau",
+    "Manon Flageat",
+    "Antoine Cully"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, CS Track: MAP-Elites with Descriptor-Conditioned Gradients and Archive Distillation into a Single Policy — Maxence Faldor, Félix Chalumeau, Manon Flageat, Antoine Cully"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (RWA)",
+   "title": "Multi-Objective Multi-Gene Genetic Programming for the Prediction of Leakage in Water Distribution Networks",
+   "authors": [
+    "Matthew Hayslep",
+    "Edward Keedwell",
+    "Raziyeh Farmani"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, RWA Track: Multi-Objective Multi-Gene Genetic Programming for the Prediction of Leakage in Water Distribution Networks — Matthew Hayslep, Edward Keedwell, Raziyeh Farmani"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ECOM)",
+   "title": "New Knowledge about the Elementary Landscape Decomposition for Solving the Quadratic Assignment Problem",
+   "authors": [
+    "Xabier Benavide",
+    "Josu Ceberio",
+    "Leticia Hernando",
+    "Jose A. Lozano"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, ECOM Track: New Knowledge about the Elementary Landscape Decomposition for Solving the Quadratic Assignment Problem — Xabier Benavide, Josu Ceberio, Leticia Hernando, Jose A. Lozano"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EMO)",
+   "title": "Pareto Local Optimal Solutions Networks with Compression, Enhanced Visualization and Expressiveness",
+   "authors": [
+    "Arnaud Liefooghe",
+    "Gabriela Ochoa",
+    "Sébastien Verel",
+    "Bilel Derbel"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, EMO Track: Pareto Local Optimal Solutions Networks with Compression, Enhanced Visualization and Expressiveness — Arnaud Liefooghe, Gabriela Ochoa, Sébastien Verel, Bilel Derbel"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ACO-SI)",
+   "title": "The Impact of Morphological Diversity in Robot Swarms",
+   "authors": [
+    "Geoff Nitschke",
+    "Sindiso Mkhatshwa"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, ACO-SI Track: The Impact of Morphological Diversity in Robot Swarms — Geoff Nitschke, Sindiso Mkhatshwa"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ENUM)",
+   "title": "Using Affine Combinations of BBOB Problems for Performance Assessment",
+   "authors": [
+    "Diederick Vermetten",
+    "Furong Ye",
+    "Carola Doerr"
+   ],
+   "track": "main",
+   "source": "https://gecco-2023.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2023 Best Paper Award, ENUM Track: Using Affine Combinations of BBOB Problems for Performance Assessment — Diederick Vermetten, Furong Ye, Carola Doerr"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2023,
    "award": "tot",
    "awardLabel": "SIGEVO Impact Award",
    "title": "Unshackling evolution: Evolving soft robots with multiple materials and a powerful generative encoding",
@@ -55960,6 +56407,149 @@
    "track": "main",
    "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
    "evidence": "GECCO 2023 SIGEVO Impact Award: N. Cheney, R. MacCurdy, J. Clune, H. Lipson. Unshackling evolution: Evolving soft robots with multiple materials and a powerful generative encoding"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EMO)",
+   "title": "Analysis of Real-World Constrained Multi-Objective Problems and Performance Comparison of Multi-Objective Algorithms",
+   "authors": [
+    "Yang Nan",
+    "Hisao Ishibuchi",
+    "Tianye Shu",
+    "Ke Shang"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, EMO Track: Analysis of Real-World Constrained Multi-Objective Problems and Performance Comparison of Multi-Objective Algorithms — Yang Nan, Hisao Ishibuchi, Tianye Shu, Ke Shang"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA + THEORY)",
+   "title": "Evolutionary Computation Meets Graph Drawing: Runtime Analysis for Crossing Minimisation on Layered Graph Drawings",
+   "authors": [
+    "Jakob Baumann",
+    "Ignaz Rutter",
+    "Dirk Sudholt"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, GA + THEORY Track: Evolutionary Computation Meets Graph Drawing: Runtime Analysis for Crossing Minimisation on Layered Graph Drawings — Jakob Baumann, Ignaz Rutter, Dirk Sudholt"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GP)",
+   "title": "Learning Traffic Signal Control via Genetic Programming",
+   "authors": [
+    "Xiao-Cheng Liao",
+    "Yi Mei",
+    "Mengjie Zhang"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, GP Track: Learning Traffic Signal Control via Genetic Programming — Xiao-Cheng Liao, Yi Mei, Mengjie Zhang"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ECOM)",
+   "title": "Letting a Large Neighborhood Search for an Electric Dial-A-Ride Problem Fly: On-The-Fly Charging Station Insertion",
+   "authors": [
+    "Maria Bresich",
+    "Günther Raidl",
+    "Steffen Limmer"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, ECOM Track: Letting a Large Neighborhood Search for an Electric Dial-A-Ride Problem Fly: On-The-Fly Charging Station Insertion — Maria Bresich, Günther Raidl, Steffen Limmer"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ENUM + SI)",
+   "title": "Markov Chain-based Optimization Time Analysis of Bivalent Ant Colony Optimization for Sorting and LeadingOnes",
+   "authors": [
+    "Matthias Kergaßner",
+    "Oliver Keszocze",
+    "Rolf Wanka"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, ENUM + SI Tracks: Markov Chain-based Optimization Time Analysis of Bivalent Ant Colony Optimization for Sorting and LeadingOnes — Matthias Kergaßner, Oliver Keszocze, Rolf Wanka"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (RWA)",
+   "title": "Quality Diversity Approaches for Time-Use Optimisation to Improve Health Outcomes",
+   "authors": [
+    "Adel Nikfarjam",
+    "Ty Stanford",
+    "Aneta Neumann",
+    "Dorothea Dumuid",
+    "Frank Neumann"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, RWA Track: Quality Diversity Approaches for Time-Use Optimisation to Improve Health Outcomes — Adel Nikfarjam, Ty Stanford, Aneta Neumann, Dorothea Dumuid, Frank Neumann"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CS + L4EC)",
+   "title": "Quality with Just Enough Diversity in Evolutionary Policy Search",
+   "authors": [
+    "Paul Templier",
+    "Luca Grillotti",
+    "Emmanuel Rachelson",
+    "Dennis George Wilson",
+    "Antoine Cully"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, CS + L4EC Tracks: Quality with Just Enough Diversity in Evolutionary Policy Search — Paul Templier, Luca Grillotti, Emmanuel Rachelson, Dennis George Wilson, Antoine Cully"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EML)",
+   "title": "Survival-LCS: A Rule-Based Machine Learning Approach to Survival Analysis",
+   "authors": [
+    "Alexa A. Woodward",
+    "Harsh Bandhey",
+    "Jason H. Moore",
+    "Ryan J. Urbanowicz"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, EML Track: Survival-LCS: A Rule-Based Machine Learning Approach to Survival Analysis — Alexa A. Woodward, Harsh Bandhey, Jason H. Moore, Ryan J. Urbanowicz"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GECH + NE)",
+   "title": "Tensorized NeuroEvolution of Augmenting Topologies for GPU Acceleration",
+   "authors": [
+    "Lishuang Wang",
+    "Mengfei Zhao",
+    "Enyu Liu",
+    "Kebin Sun",
+    "Ran Cheng"
+   ],
+   "track": "main",
+   "source": "https://gecco-2024.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2024 Best Paper Award, GECH + NE Track: Tensorized NeuroEvolution of Augmenting Topologies for GPU Acceleration — Lishuang Wang, Mengfei Zhao, Enyu Liu, Kebin Sun, Ran Cheng"
   },
   {
    "venue": "GECCO",
@@ -55990,6 +56580,199 @@
    "track": "main",
    "source": "https://sig.sigevo.org/SIGEVO-Impact-Award",
    "evidence": "GECCO 2024 SIGEVO Impact Award: I. Arnaldo, K. Krawiec, U.-M. O'Reilly. Multiple regression genetic programming"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA + SI)",
+   "title": "Congestion-Aware Multi-Agent Path Planning for Pick-up and Delivery Tasks",
+   "authors": [
+    "Mehrdad Asadi",
+    "Ann Nowé",
+    "Javad Ghofrani"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, GA + SI Tracks: Congestion-Aware Multi-Agent Path Planning for Pick-up and Delivery Tasks — Mehrdad Asadi, Ann Nowé, Javad Ghofrani"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (L4EC)",
+   "title": "Deep reinforcement learning for instance-specific algorithm configuration",
+   "authors": [
+    "Elias Schede",
+    "Moritz Seiler",
+    "Kevin Tierney",
+    "Heike Trautmann"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, L4EC Track: Deep reinforcement learning for instance-specific algorithm configuration — Elias Schede, Moritz Seiler, Kevin Tierney, Heike Trautmann"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GA + SI)",
+   "title": "Empirical Linkage Learning Provably Builds Truthful Models on Concatenated Traps and H-IFF",
+   "authors": [
+    "Marcus Schmidbauer",
+    "Dirk Sudholt"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, GA + SI Tracks: Empirical Linkage Learning Provably Builds Truthful Models on Concatenated Traps and H-IFF — Marcus Schmidbauer, Dirk Sudholt"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EML)",
+   "title": "Evolution of Inherently Interpretable Visual Control Policies",
+   "authors": [
+    "Camilo De La Torre",
+    "Giorgia Nadizar",
+    "Yuri Lavinas",
+    "Hervé Luga",
+    "Dennis Wilson",
+    "Sylvain Cussat-Blanc"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, EML Track: Evolution of Inherently Interpretable Visual Control Policies — Camilo De La Torre, Giorgia Nadizar, Yuri Lavinas, Hervé Luga, Dennis Wilson, Sylvain Cussat-Blanc"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (EMO)",
+   "title": "Exploring Phase-Specific Configuration of Interactive Evolutionary Multiobjective Optimization Methods",
+   "authors": [
+    "Giomara Larraga",
+    "Kaisa Miettinen"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, EMO Track: Exploring Phase-Specific Configuration of Interactive Evolutionary Multiobjective Optimization Methods — Giomara Larraga, Kaisa Miettinen"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (CS + NE)",
+   "title": "Extract-QD Framework: A Generic Approach for Quality-Diversity in Noisy, Stochastic or Uncertain Domains",
+   "authors": [
+    "Manon Flageat",
+    "Johann Huber",
+    "François Helenon",
+    "Stephane Doncieux",
+    "Antoine Cully"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, CS + NE Tracks: Extract-QD Framework: A Generic Approach for Quality-Diversity in Noisy, Stochastic or Uncertain Domains — Manon Flageat, Johann Huber, François Helenon, Stephane Doncieux, Antoine Cully"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ECOM)",
+   "title": "On Revealing the Hidden Problem Structure in Real-World and Theoretical Problems Using Walsh Coefficient Influence",
+   "authors": [
+    "Michal Witold Przewozniczek",
+    "Francisco Chicano",
+    "Renato Tinós",
+    "Jakub Nalepa",
+    "Bogdan Ruszczak",
+    "Agata Maria Wijata"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, ECOM Track: On Revealing the Hidden Problem Structure in Real-World and Theoretical Problems Using Walsh Coefficient Influence — Michal Witold Przewozniczek, Francisco Chicano, Renato Tinós, Jakub Nalepa, Bogdan Ruszczak, Agata Maria Wijata"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (L4EC)",
+   "title": "On the Importance of Reward Design in Reinforcement Learning-based Dynamic Algorithm Configuration: A Case Study on OneMax with (1+λ, λ)-GA",
+   "authors": [
+    "Tai Nguyen",
+    "Phong Le",
+    "André Biedenkapp",
+    "Carola Doerr",
+    "Nguyen Dang"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, L4EC Track: On the Importance of Reward Design in Reinforcement Learning-based Dynamic Algorithm Configuration: A Case Study on OneMax with (1+λ, λ)-GA — Tai Nguyen, Phong Le, André Biedenkapp, Carola Doerr, Nguyen Dang"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (RWA)",
+   "title": "Tomographic Reconstruction with Real-time a priori Acquisition",
+   "authors": [
+    "Muhammad Wishal Khan",
+    "Hooman Oroojeni",
+    "Bal Sanghera",
+    "Tim Blackwell",
+    "Mohammad Majid al-Rifaie"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, RWA Track: Tomographic Reconstruction with Real-time a priori Acquisition — Muhammad Wishal Khan, Hooman Oroojeni, Bal Sanghera, Tim Blackwell, Mohammad Majid al-Rifaie"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GP)",
+   "title": "Transformer Semantic Genetic Programming for Symbolic Regression",
+   "authors": [
+    "Philipp Anthes",
+    "Dominik Sobania",
+    "Franz Rothlauf"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, GP Track: Transformer Semantic Genetic Programming for Symbolic Regression — Philipp Anthes, Dominik Sobania, Franz Rothlauf"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (BBSR + ENUM)",
+   "title": "When Does Neuroevolution Outcompete Reinforcement Learning in Transfer Learning Tasks?",
+   "authors": [
+    "Eleni Nisioti",
+    "Erwan Plantec",
+    "Milton Llera Montero",
+    "Joachim Winther Pedersen",
+    "Sebastian Risi"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, BBSR + ENUM Tracks: When Does Neuroevolution Outcompete Reinforcement Learning in Transfer Learning Tasks? — Eleni Nisioti, Erwan Plantec, Milton Llera Montero, Joachim Winther Pedersen, Sebastian Risi"
+  },
+  {
+   "venue": "GECCO",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GECH + THEORY)",
+   "title": "Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms",
+   "authors": [
+    "Duc-Cuong Dang",
+    "Andre Opris",
+    "Dirk Sudholt"
+   ],
+   "track": "main",
+   "source": "https://gecco-2025.sigevo.org/Best-Paper-Awards",
+   "evidence": "GECCO 2025 Best Paper Award, GECH + THEORY Tracks: Why Dominance Is Not Enough: Lessons from Practical Evolutionary Multi-Objective Algorithms — Duc-Cuong Dang, Andre Opris, Dirk Sudholt"
   },
   {
    "venue": "HotStorage",

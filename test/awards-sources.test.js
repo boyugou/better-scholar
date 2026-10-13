@@ -2101,3 +2101,10 @@ test("MODELS awards track page: best and SIGSOFT distinguished papers with 'A, B
   const j = `<p>Vannevar Bush Best Paper Award</p><p>“How a tortured conference becomes a series”</p><p>Gil Hart, Hal Ito</p><p>Best Short Paper Award</p><p>“What lies beneath: visual question datasets”</p><p>Ivy Jones</p>`;
   assert.deepEqual(parseJcdlAwards(j, "https://2025.jcdl.org/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best How a tortured conference becomes a series | Gil Hart; Hal Ito", "category What lies beneath: visual question datasets | Ivy Jones"]);
 });
+
+test("GECCO best-paper page: a heading per track (group) and the winning paper's title and authors under it; the menu of tracks above and the footer below are not papers; the page must be titled with the year", async () => {
+  const { parseGeccoBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<title>GECCO 2024 | Best Paper Awards</title><p>Best Paper Awards</p><p>CS + L4EC Tracks</p><p>ECOM Track</p><p>CS + L4EC Tracks</p><p>Quality with just enough diversity in evolutionary policy search</p><p>Ann Lee (Toulouse), Bo Chan (Imperial College)</p><p>ECOM Track</p><p>Letting a large neighborhood search for dial-a-ride fly</p><p>Cy Dunn (Vienna), Ed Fox (Vienna)</p><p>About</p><p>GECCO is sponsored by SIGEVO</p>`;
+  assert.deepEqual(parseGeccoBest(h, "https://gecco-2024.sigevo.org/Best-Paper-Awards").entries.map((e) => `${e.awardLabel} | ${e.title} | ${e.authors.join("; ")}`), ["Best Paper Award (CS + L4EC) | Quality with just enough diversity in evolutionary policy search | Ann Lee; Bo Chan", "Best Paper Award (ECOM) | Letting a large neighborhood search for dial-a-ride fly | Cy Dunn; Ed Fox"]);
+  assert.equal(parseGeccoBest(h, "https://gecco-2023.sigevo.org/Best-Paper-Awards").entries.length, 0);
+});
