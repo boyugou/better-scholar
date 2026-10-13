@@ -211,3 +211,10 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
 #rr-panel .rr-stack{ width: 100%; display: flex; flex-direction: column; border-radius: 3px 3px 1px 1px; overflow: hidden; }
 #rr-panel .rr-stack i{ display: block; min-height: 2px; }
 #rr-panel .rr-bars-axis{ display: flex; justify-content: space-between; margin-top: 3px; color: var(--rr-faint); font-size: 11px; font-variant-numeric: tabular-nums; }
+
+/* printing or saving the profile as a PDF keeps the colours, and the panel is not split across pages */
+@media print {
+  tr[class*="rr-r-"] > td, .rr-chips, .rr-chip, .rr-name, #rr-panel .rr-stack i, #rr-panel .rr-dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #rr-panel { break-inside: avoid; box-shadow: none; }
+  #rr-panel .rr-icon, #rr-panel .rr-copybar { display: none; }
+}
