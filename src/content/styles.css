@@ -222,3 +222,6 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
 /* the highlight style (settings → Colours): the bar only, or the tint only */
 html.rr-rows-bar tr[class*="rr-r-"] > td { background: none !important; }
 html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !important; }
+
+/* text for screen readers only */
+#rr-panel .rr-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

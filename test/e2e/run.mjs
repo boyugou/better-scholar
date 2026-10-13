@@ -492,6 +492,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.deepEqual(await readMatrix(page), resolvedExpect);
     assert.equal(fx.detailRequests(), 28);
     ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
+    assert.match(await page.locator('[data-rr="announce"]').textContent(), /Done/, "a screen reader is told when Complete has finished");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
     assert.ok((await page.locator('.gs_gray[title*="paper\'s page"]').count()) > 0, "roles read from a paper's own page say so in a tooltip");
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.16.1 — 2026-10-13
+
+- The panel has a live region for screen readers: when loading stops or **Complete** finishes, the message is announced.
+- The settings page's API key field is a text field drawn as dots (no password-manager prompt).
+- Tests: the timing budgets scale with how busy the machine is, so a loaded laptop or CI runner no longer fails them.
+
 ## 2.16.0 — 2026-10-13
 
 - Settings → Colours: **Row highlight** style: tint and bar (as before), the bar only, or the tint only.

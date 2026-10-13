@@ -119,7 +119,9 @@
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
-    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body);
+    // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
+    const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
+    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body, announce);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
@@ -298,6 +300,8 @@
       footSec.hidden = variantBox.hidden && noteBox.hidden;
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
       coverSec.hidden = !coverSec.childNodes.length;
+      const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
+      if (announce.textContent !== say) announce.textContent = say;
       // a column with nothing in it gives its width to the other
       const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !yearsSec.hidden || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
