@@ -2378,6 +2378,15 @@ test("CEDA conference best paper pages: blocks of title, 'Author(s)', authors (q
   assert.deepEqual(parseCedaPaper(h, "https://ieee-ceda.org/paper-award/date-best-paper-award").entries.map((e) => `${e.venue} ${e.year} | ${e.authors.join("; ")}`), ["DATE 2023 | Haoyi Zhang; Xiaohan Gao; Ru Huang", "DATE 2023 | Nan Wu; Yingjie Li; Cong Hao; Yuan Xie", "DATE 2022 | C.-C. Chang; J. Pan; Y. Chen"]);
 });
 
+test("venueGuard keeps only entries whose conference the page mentions (a reader pointed at the wrong saved page produces none)", async () => {
+  const { venueGuard } = await import("../scripts/awards/tot.mjs");
+  const es = [{ venue: "SPAA", year: 2020 }, { venue: "CODES+ISSS", year: 2019 }, { venue: "S&P", year: 2018 }, { venue: "RecSys", year: 2017 }];
+  const page = "<p>The SPAA best papers</p><p>CODES awards</p><p>IEEE S&amp;P symposium</p>";
+  assert.deepEqual(venueGuard(es, page).kept.map((e) => e.venue), ["SPAA", "CODES+ISSS", "S&P"]);
+  assert.deepEqual(venueGuard(es, page).dropped.map((e) => e.venue), ["RecSys"]);
+  assert.equal(venueGuard(es, "<p>nothing relevant</p>").kept.length, 0);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

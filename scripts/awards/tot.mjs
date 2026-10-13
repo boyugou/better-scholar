@@ -3433,13 +3433,26 @@ export function parseFocs(html, source = PAGES.focs) {
   return { entries, skipped };
 }
 
+// A page that never mentions an entry's conference (a reader pointed at the wrong saved file) cannot have produced it: keep only entries whose venue name — or any word of it of three letters or more — is on the page.
+export function venueGuard(entries, page) {
+  const text = String(page).replace(/&amp;/gi, "&").replace(/<[^>]+>/g, " ").toLowerCase();
+  const kept = [], dropped = [];
+  for (const e of entries) {
+    const words = String(e.venue ?? "").toLowerCase().split(/[\/+\s-]+/).filter((w) => w.length >= 3);
+    (words.length === 0 || words.some((w) => text.includes(w)) ? kept : dropped).push(e);
+  }
+  return { kept, dropped };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file, srcUrl] = process.argv.slice(2);
   const venues = { popl: "POPL", pldi: "PLDI", icfp: "ICFP", oopsla: "OOPSLA" };
   const parse = venues[kind] ? (h, src) => parseSigplan(h, venues[kind], src) : RAS[kind] ? (h, src) => parseRas(h, RAS[kind], src) : { www: parseWww, isca: parseIsca, micro: parseMicro, dijkstra: parseDijkstra, focs: parseFocs, sigops: parseSigopsHof, eurosys: parseEurosysTot, aamas: parseAamas, ec: parseEcTot, asplos: parseAsplosMip, iacr: parseIacrTot, tcc: parseTccTot, sigmobile: parseSigmobileTot, sensys: parseSensysTot, pkc: (h, src) => parseTccTot(h, src, "PKC"), ches: parseChesTot, hpca: parseHpcaTot, imc: parseImcTot, vis: parseVisTot, icde: parseIcdeInfluential, ismar: parseIsmarAwards, icse: parseIcseMip, lics: parseLicsTot, "lics-dp": parseLicsDistinguished, aaai: parseAaaiClassic, icaps: parseIcapsInfluential, swsa: parseSwsaTenYear, sigmm: parseSigmmTot, ht: parseHtEngelbart, doceng: parseDocengBest, newton: parseSigdaNewton, sigspatial: parseSigspatial, sigcse: parseSigcseTot, icwsm: parseIcwsmAwards, etaps: parseEtapsTot, "etaps-bp": parseEtapsBest, gecco: parseGeccoImpact, "kdd-bp": parseKddBest, "kdd-tot": parseKddTot, sigcomm: parseSigcommTot, "nips-book-2018": parseNipsBookTot, dac: parseDacMip, "asplos-year": parseAsplosYear, "sigcomm-year": parseSigcommProgram, "colt-year": parseColtAwards, "corl-year": parseCorlAwards, "rss-year": parseRssAwards, "sosp-program": parseSospProgram, recsys: parseRecsysBest, aistats: parseAistatsAwards, uai: parseUaiAwards, icassp: parseIcasspAwards, coling: parseColingAwards, interspeech: parseInterspeechBest, ecml: parseEcmlAwards, infocom: parseInfocomBest, eurosp: parseEurospAwards, "wsdm-year": parseWsdmYear, "ppopp-year": parsePpoppYear, ics: parseIcsAwards, ipdps: parseIpdpsBest, ecir: parseEcirAwards, "focs-best": parseFocsBest, "ccc-year": parseCccProgram, "mobisys-html": parseMobisysHtml, "sensys-year": parseSensysYear, "isca-best": parseIscaBest, "micro-best": parseMicroBest, "hri-year": parseHriAwards, "imc-year": parseImcProgram, "models-awards": parseModelsAwards, "jcdl-awards": parseJcdlAwards, "gecco-best": parseGeccoBest, "bmvc-awards": parseBmvcAwards, "vrst-best": parseVrstBest, "assets-sui": parseAssetsSuiAwards, "autoui-best": parseAutoUiBest, "acmmm-awards": parseAcmmmAwards, "ieeevr-best": parseIeeeVrBest, "icc-best": parseIccBest, "wcnc-best": parseWcncBest, "globecom-best": parseGlobecomBest, "chiir-best": parseChiirBest, "sigcomm25": parseSigcomm25Awards, "ecml-authors-first": parseEcmlAwardsAuthorsFirst, cidr: parseCidrAwards, "www-year": parseWwwYearAwards, "pimrc-best": parsePimrcBest, "ccnc-awards": parseCcncAwards, "noms-awards": parseNomsAwards, "miccai-best": parseMiccaiBest, "ecai-awards": parseEcaiAwards, "icdt-awards": parseIcdtAwards, "eatcs-paper": parseEatcsPaper, "cade-awards": parseCadeAwards, "dsn-best": parseDsnBest, "tcfpga-best": parseTcfpgaBest, "mccalla-awards": parseMccallaAwards, "umap-best": parseUmapBest, "recomb-awards": parseRecombAwards, "spaa-awards": parseSpaaAwards, "esweek-awards": parseEsweekAwards, "hscc-past": parseHsccPast, "date-best": parseDateBest, "date-awards": parseDateAwards, "dac-best": parseDacBest, "ceda-paper": parseCedaPaper, "bpm-awards": parseBpmAwards, "socg-awards": parseSocgAwards, "sat-awards": parseSatAwards, "cikm-year": parseCikmNominations, "mobisys-year": parseMobisysYear, "mobicom-year": parseMobicomYear, sc: parseScAwards, "www-best": parseWwwBest, mobicom: parseMobicomBest, siggraph: parseSiggraphAwards, icdm: parseIcdmBest, ubicomp: parseUbicompAwards, "icml-tot-2021": (h, src) => parseVirtualTotDetail(h, src), "neurips-2022": parseNeuripsBlogTot, "neurips-2024": parseNeuripsBlogTot }[kind];
   if (!parse) { console.error("usage: tot.mjs www|isca|micro|dijkstra|popl|pldi|icfp|oopsla|focs|sigops [saved-page.html]"); process.exit(2); }
   const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
-  const { entries, skipped } = parse(html, srcUrl || PAGES[kind]);
+  const parsed = parse(html, srcUrl || PAGES[kind]);
+  const { kept: entries, dropped } = venueGuard(parsed.entries, html);
+  const skipped = [...parsed.skipped, ...dropped.map((e) => `dropped: the page never mentions ${e.venue} (${e.year} ${e.title.slice(0, 40)})`)];
   const by = {};
   for (const e of entries) by[e.year] = (by[e.year] || 0) + 1;
   console.error(entries.length + " entries:", JSON.stringify(by));

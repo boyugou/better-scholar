@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.112 — 2026-10-12
+
+- The award readers' command line now drops any entry whose conference the saved page never mentions. A fuzz run of every reader over 400 saved pages showed many readers accept a page meant for another (the SPAA reader parsed the RecSys page); every genuine page keeps all its entries.
+
 ## 2.10.111 — 2026-10-12
 
 - The UMAP reader now refuses pages that are not UMAP's (a fuzz run of the 21 newest readers over 400 saved pages found it was the only one accepting unrelated pages; none crashed).
