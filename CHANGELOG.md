@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.88 — 2026-10-12
+
+- IEEE CCNC's best paper and runner-up of 2025 and best paper and best student paper of 2024 (4 papers; the list had none for CCNC) from the conference's own awards pages (`tot.mjs ccnc-awards`). The list has 6818 awards.
+
 ## 2.10.87 — 2026-10-12
 
 - IEEE PIMRC 2025's seven best papers (four tracks and three workshop sessions) from the symposium's own Best Paper Awards page (`tot.mjs pimrc-best`); the list had none for PIMRC. The list has 6814 awards.

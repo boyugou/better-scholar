@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6814
+  "count": 6818
  },
  "entries": [
   {
@@ -10599,6 +10599,76 @@
    "track": "main",
    "source": "https://www.computationalcomplexity.org/Archive/2025/program.html",
    "evidence": "CCC 2025 Best Student Paper Award: Switching Graph Matrix Norm Bounds: from i.i.d. to Random Regular Graphs — Jeff Xu"
+  },
+  {
+   "venue": "CCNC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Lightweight Aggregate Authentication Protocol for Internet of Drones",
+   "authors": [
+    "Image Bhattarai",
+    "Cong Pu",
+    "Kim-Kwang Raymond Raymond Choo"
+   ],
+   "track": "main",
+   "source": "https://ccnc2024.ieee-ccnc.org/registration/awards",
+   "evidence": "CCNC 2024 Best Paper Award: A Lightweight Aggregate Authentication Protocol for Internet of Drones — Image Bhattarai, Cong Pu, Kim-Kwang Raymond Raymond Choo"
+  },
+  {
+   "venue": "CCNC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Edge-oriented Point Cloud Compression by Moving Object Detection for Realtime Smart Monitoring",
+   "authors": [
+    "Itsuki Takada",
+    "Daiki Nitto",
+    "Yoshihiro Midoh",
+    "Noriyuki Miura",
+    "Jun Shiomi",
+    "Ryoichi Shinkuma"
+   ],
+   "track": "main",
+   "source": "https://ccnc2024.ieee-ccnc.org/registration/awards",
+   "evidence": "CCNC 2024 Best Student Paper Award: Edge-oriented Point Cloud Compression by Moving Object Detection for Realtime Smart Monitoring — Itsuki Takada, Daiki Nitto, Yoshihiro Midoh, Noriyuki Miura, Jun Shiomi, Ryoichi Shinkuma"
+  },
+  {
+   "venue": "CCNC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Task-Oriented Edge-Assisted Cooperative Data Compression, Communications and Computing for UGV-Enhanced Warehouse Logistics",
+   "authors": [
+    "Jiaming Yang",
+    "Zhen Meng",
+    "Xiangmin Xu",
+    "Kan Chen",
+    "Emma Liying Li",
+    "Philip Guodong G. Zhao"
+   ],
+   "track": "main",
+   "source": "https://ccnc2025.ieee-ccnc.org/registration/awards",
+   "evidence": "CCNC 2025 Best Paper Award: Task-Oriented Edge-Assisted Cooperative Data Compression, Communications and Computing for UGV-Enhanced Warehouse Logistics — Jiaming Yang, Zhen Meng, Xiangmin Xu, Kan Chen, Emma Liying Li, Philip Guodong G. Zhao"
+  },
+  {
+   "venue": "CCNC",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Analysis of Scintillation Effects in Terahertz Band Satellite Communications for 6G and Beyond",
+   "authors": [
+    "Sergi Aliaga",
+    "Vitaly Petrov",
+    "Tejinder Singh",
+    "Mohammad Alavirad",
+    "Morris Repeta",
+    "Michael Healy",
+    "Josep M Jornet"
+   ],
+   "track": "main",
+   "source": "https://ccnc2025.ieee-ccnc.org/registration/awards",
+   "evidence": "CCNC 2025 Best Paper Runner-up: Analysis of Scintillation Effects in Terahertz Band Satellite Communications for 6G and Beyond — Sergi Aliaga, Vitaly Petrov, Tejinder Singh, Mohammad Alavirad, Morris Repeta, Michael Healy, Josep M Jornet"
   },
   {
    "venue": "CCS",
