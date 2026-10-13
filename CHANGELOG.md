@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.14.2 — 2026-10-12
+
+Fixes from an independent review of the newer features:
+
+- **Semantic Scholar**: an answer is used only when its title is long enough to name one paper, its authors include the row's first author, and its year is within two of the row's; its venue is no longer used (a merged preprint / publication record could name another version's venue). Switching the setting off stops a run in progress. Rows hidden by *Merge duplicates* are not looked up.
+- A merged talk row's filter follows the talk groups that are switched on, as its count does.
+- A venue filter whose venue leaves the panel's list (roles changed, merge switched on) is dropped instead of leaving rows hidden with no control to undo it.
+- "Open Scholar in" redirects at most once per tab and language (no loop if Scholar answers with another language).
+- Right-to-left: the panel's spacing and borders use logical properties.
+
 ## 2.14.1 — 2026-10-12
 
 - Settings page: a row of links to its cards under the header (the page had grown long); the card in view is marked.

@@ -24,7 +24,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
    won or was invited to present is filled instead: gold for an award, silver for an honorable mention,
    slate for a talk level, a dashed outline for a finalist. A chip is shorter than the text line, so a
    row with chips is never taller than one without. */
-.rr-chips { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-left: 6px; vertical-align: middle; }
+.rr-chips { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-inline-start: 6px; vertical-align: middle; }
 .rr-chip {
   display: inline-flex; align-items: center; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 6px;
   border: 1px solid transparent; border-radius: 9px;
@@ -132,7 +132,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
-#rr-panel .rr-matrix tbody th{ text-align: left; white-space: nowrap; }
+#rr-panel .rr-matrix tbody th{ text-align: start; white-space: nowrap; }
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
 #rr-panel .rr-dot{ width: 9px; height: 9px; border-radius: 2.5px; flex: none; }
@@ -140,7 +140,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-cell.rr-zero{ color: #bdc1c6; font-weight: 400; }
 #rr-panel .rr-cell:hover:not(.rr-zero), #rr-panel .rr-rolebtn:hover{ background: #f1f3f4; }
 #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"]{ background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
-#rr-panel .rr-total{ color: var(--rr-muted); font-weight: 700; padding-left: 4px; }
+#rr-panel .rr-total{ color: var(--rr-muted); font-weight: 700; padding-inline-start: 4px; }
 #rr-panel .rr-actions{ display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
 #rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
 #rr-panel .rr-copybar .rr-btn{ flex: 1 1 auto; padding: 4px 10px; text-align: center; white-space: nowrap; }   /* a label is never cut: the buttons wrap onto a second row in a narrow sidebar */
@@ -148,7 +148,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-btn:hover:not([disabled]){ background: #f8f9fa; border-color: #c4c7cc; box-shadow: 0 1px 2px rgba(60,64,67,.14); }
 #rr-panel .rr-btn:active:not([disabled]){ background: #f1f3f4; box-shadow: none; }
 #rr-panel .rr-row{ display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 3px 0; }
-#rr-panel .rr-row > .rr-label{ font-weight: 700; margin-right: 2px; }
+#rr-panel .rr-row > .rr-label{ font-weight: 700; margin-inline-end: 2px; }
 #rr-panel .rr-check{ display: inline-flex; align-items: center; gap: 8px; cursor: pointer; white-space: nowrap; }
 #rr-panel .rr-year{ display: flex; align-items: center; gap: 6px; margin-top: 8px; }
 #rr-panel .rr-dash{ color: var(--rr-faint); }
@@ -171,14 +171,14 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-variants{ display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
 #rr-panel .rr-variant{ display: inline-flex; align-items: center; gap: 4px; padding: 2px 5px 2px 9px; border-radius: 12px; background: #f1f3f4; font-size: 11.5px; }
 #rr-panel .rr-variant button{ color: var(--rr-faint); font-size: 14px; line-height: 1; padding: 0 3px; }
-#rr-panel .rr-variant-auto{ padding-right: 7px; background: transparent; box-shadow: inset 0 0 0 1px #dadce0; }
+#rr-panel .rr-variant-auto{ padding-inline-end: 7px; background: transparent; box-shadow: inset 0 0 0 1px #dadce0; }
 #rr-panel .rr-add{ display: flex; gap: 6px; }
 
 /* Awards & talks: one row per group, same icons as the chips; click a row to list just those papers */
 #rr-panel .rr-mi { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; flex: none; color: #3a4a5f; }
 #rr-panel .rr-markrows { display: grid; gap: 1px; margin: 0 -6px; }
 #rr-panel .rr-markrow { display: flex; align-items: center; gap: 8px; padding: 3px 6px; border-radius: 4px; }
-#rr-panel .rr-markrow > .rr-lab { flex: 1; text-align: left; }
+#rr-panel .rr-markrow > .rr-lab { flex: 1; text-align: start; }
 #rr-panel .rr-markrow > b { font-variant-numeric: tabular-nums; }
 #rr-panel .rr-markrow:hover { background: #f1f3f4; }
 #rr-panel .rr-markrow[aria-pressed="true"] { background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }
@@ -190,10 +190,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 
 /* Narrow window: the panel sits above the list at full width, in two columns. */
 #rr-panel.rr-wide .rr-body { display: grid; grid-template-columns: minmax(300px, 1.05fr) minmax(260px, 1fr); }
-#rr-panel.rr-wide .rr-col-a { border-right: 1px solid var(--rr-line); }
+#rr-panel.rr-wide .rr-col-a { border-inline-end: 1px solid var(--rr-line); }
 #rr-panel.rr-wide.rr-onecol .rr-body { display: block; }
-#rr-panel.rr-wide.rr-onecol .rr-col-a { border-right: 0; }
-@media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } #rr-panel.rr-wide .rr-col-a { border-right: 0; } }
+#rr-panel.rr-wide.rr-onecol .rr-col-a { border-inline-end: 0; }
+@media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } #rr-panel.rr-wide .rr-col-a { border-inline-end: 0; } }
 
 /* no animation for those who asked the system for less motion */
 @media (prefers-reduced-motion: reduce) { #rr-panel *, #rr-panel *::before, #rr-panel *::after { transition: none !important; } }

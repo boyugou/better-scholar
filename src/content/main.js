@@ -14,10 +14,18 @@
   const headerName = B.scholar.ownerName();
   await B.store.migrate();
   let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
-  // Scholar's own pages in the chosen language: this profile is opened again with that hl= (once; a link already in it stays)
-  if (prefs.scholarLanguage !== "keep") {
+  // Scholar's own pages in the chosen language: when this profile's address names another one it is opened again with that hl=
+  // (at most once per tab and language: should Scholar answer with yet another, it is left as it is rather than looping)
+  if (prefs.scholarLanguage === "keep") { try { sessionStorage.removeItem("rr-hl"); } catch (e) { /* no storage */ } }
+  else {
     const hl = B.i18n.scholarHl(prefs.scholarLanguage), url = new URL(location.href);
-    if (hl && url.searchParams.get("hl") !== hl) { url.searchParams.set("hl", hl); location.replace(url.href); return; }
+    let tried = false;
+    try { tried = sessionStorage.getItem("rr-hl") === hl; } catch (e) { /* no storage */ }
+    if (url.searchParams.get("hl") === hl) { try { sessionStorage.removeItem("rr-hl"); } catch (e) { /* no storage */ } }      // arrived: a later change may redirect again
+    if (hl && url.searchParams.get("hl") !== hl && !tried) {
+      try { sessionStorage.setItem("rr-hl", hl); } catch (e) { /* no storage */ }
+      url.searchParams.set("hl", hl); location.replace(url.href); return;
+    }
   }
   const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
@@ -175,7 +183,7 @@
         if (f.yearStart != null && a.year < f.yearStart) hide = true;
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
-      if (state.markGroup && !marks.inGroup(a, state.markGroup)) hide = true;
+      if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
       if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
       row.raw.tr.classList.toggle("rr-hide", hide);
@@ -292,16 +300,16 @@
     async onResolve() {
       if (state.resolving) return;
       const items = state.rows
-        .filter((r) => analysis.needsDetail(r.a) && r.raw.id && r.raw.href)
+        .filter((r) => !r.dupHidden && analysis.needsDetail(r.a) && r.raw.id && r.raw.href)
         .sort((x, y) => y.a.citations - x.a.citations)
-        .map((r) => ({ id: r.raw.id, href: r.raw.href, title: r.raw.title }));
+        .map((r) => ({ id: r.raw.id, href: r.raw.href, title: r.raw.title, authorsText: r.raw.authorsText, year: r.raw.year }));
       if (!items.length) return;
       resolveAbort = new AbortController();
       state.resolving = { done: 0, total: items.length };
       state.resolveMessage = "";
       refresh();
       const res = await B.detail.resolveAll(items, resolvedCache, {
-        signal: resolveAbort.signal, semantic: prefs.semanticScholar,
+        signal: resolveAbort.signal, semantic: () => prefs.semanticScholar,
         onProgress: (done, total) => { state.resolving = { done, total }; },
         onResult: (id) => {
           const row = state.rows.find((r) => r.raw.id === id);
@@ -362,6 +370,8 @@
 
   function refresh() {
     applyMerge();
+    // a venue filter whose venue is no longer in the panel's list (the roles, the merge or the venue list changed) has no control left to undo it
+    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers()).some((v) => v.key === state.venueKey))) state.venueKey = null;
     for (const row of state.rows) decorate(row);
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
