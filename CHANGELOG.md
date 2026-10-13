@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.131 — 2026-10-12
+
+- Settings: **Scholar's own blocks**: hide the "Cited by" table, the Co-authors list or the Public access box on the profile page (all shown by default). End-to-end check included.
+
 ## 2.10.130 — 2026-10-12
 
 - The panel's three copy buttons keep their full labels in a narrow sidebar (they wrap onto a second row instead of being cut to "Copy summ…"), and the settings preview that scrolls inside itself in a short window fades at its foot to say there is more. Both have end-to-end checks.
