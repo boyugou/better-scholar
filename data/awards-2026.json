@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7806
+  "count": 7816
  },
  "entries": [
   {
@@ -62134,6 +62134,162 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "Feedback Computing '13: Online Resource Management for Data Center with Energy Capping — A. S. M. Hasan Mahmud, Florida International University; Shaolei Ren, Florida International University"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lazy Proofs for DPLL(T)-Based SMT Solvers",
+   "authors": [
+    "Guy Katz",
+    "Clark Barrett",
+    "Cesare Tinelli",
+    "Andrew Reynolds",
+    "Liana Hadarean"
+   ],
+   "track": "main",
+   "source": "https://www.fmcad.org/FMCAD16/awards.html",
+   "evidence": "FMCAD 2016 Best paper award: Guy Katz, Clark Barrett, Cesare Tinelli, Andrew Reynolds and Liana Hadarean: Lazy Proofs for DPLL(T)-Based SMT Solvers (Slides)"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2016,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Property-Directed k-Induction",
+   "authors": [
+    "Dejan Jovanović",
+    "Bruno Dutertre"
+   ],
+   "track": "main",
+   "source": "https://www.fmcad.org/FMCAD16/awards.html",
+   "evidence": "FMCAD 2016 Honorable mention: Dejan Jovanović and Bruno Dutertre: Property-Directed k-Induction (Slides)"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Localizing Quantifiers for DQBF",
+   "authors": [
+    "Aile Ge-Ernst",
+    "Christoph Scholl",
+    "Ralf Wimmer"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD19/awards/",
+   "evidence": "FMCAD 2019 Best Paper: Aile Ge-Ernst, Christoph Scholl and Ralf Wimmer. Localizing Quantifiers for DQBF"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2019,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Extending enumerative function synthesis via SMT-driven classification",
+   "authors": [
+    "Haniel Barbosa",
+    "Andrew Reynolds",
+    "Daniel Larraz",
+    "Cesare Tinelli"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD19/awards/",
+   "evidence": "FMCAD 2019 Honorable Mention: Haniel Barbosa, Andrew Reynolds, Daniel Larraz and Cesare Tinelli. Extending enumerative function synthesis via SMT-driven classification"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Angelic Checking within Static Driver Verifier: Towards high-precision defects without (modeling) cost",
+   "authors": [
+    "Shuvendu Lahiri",
+    "Akash Lal",
+    "Alexander Nutz",
+    "Sridhar Gopinath",
+    "Vladimir Levin",
+    "Rahul Kumar",
+    "Nate Deisinger",
+    "Chetan Bansal",
+    "Jakob Lichtenberg"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD20/awards/",
+   "evidence": "FMCAD 2020 Best Paper: Shuvendu Lahiri, Akash Lal, Alexander Nutz, Sridhar Gopinath, Vladimir Levin, Rahul Kumar, Nate Deisinger, Chetan Bansal and Jakob Lichtenberg. Angelic Checking within Static Driver Verifier: Towards high-precision defects without (modeling) cost"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "A Theoretical Framework for Symbolic Quick Error Detection",
+   "authors": [
+    "Florian Lonsing",
+    "Subhasish Mitra",
+    "Clark Barrett"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD20/awards/",
+   "evidence": "FMCAD 2020 Honorable Mention: Florian Lonsing, Subhasish Mitra and Clark Barrett. A Theoretical Framework for Symbolic Quick Error Detection"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "IC3 with Internal Signals",
+   "authors": [
+    "Rohit Dureja",
+    "Arie Gurfinkel",
+    "Alexander Ivrii",
+    "Yakir Vizel"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD21/awards/",
+   "evidence": "FMCAD 2021 Best Paper Award: Rohit Dureja, Arie Gurfinkel, Alexander Ivrii and Yakir Vizel. IC3 with Internal Signals"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "End-to-End Formal Verification of a RISC-V Processor Extended with Capability Pointers",
+   "authors": [
+    "Dapeng Gao",
+    "Tom Melham"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD21/awards/",
+   "evidence": "FMCAD 2021 Best Paper Runner Up Award: Dapeng Gao and Tom Melham. End-to-End Formal Verification of a RISC-V Processor Extended with Capability Pointers"
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Timed Causal Fanin Analysis for Symbolic Circuit Simulation",
+   "authors": [
+    "Roope Kaivola",
+    "Neta Bar Kama"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD22/awards/",
+   "evidence": "FMCAD 2022 Best Paper Award: Timed Causal Fanin Analysis for Symbolic Circuit Simulation by Roope Kaivola and Neta Bar Kama."
+  },
+  {
+   "venue": "FMCAD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lift-off: Trustworthy ARMv8 semantics from formal specifications",
+   "authors": [
+    "Kait Lam",
+    "Nicholas Coughlin"
+   ],
+   "track": "main",
+   "source": "https://fmcad.org/FMCAD23/awards/",
+   "evidence": "FMCAD 2023 Best Paper Award: Lift-off: Trustworthy ARMv8 semantics from formal specifications by Kait Lam and Nicholas Coughlin."
   },
   {
    "venue": "FOCS",
