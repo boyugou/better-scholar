@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.82 — 2026-10-12
+
+- ECML PKDD 2023's test of time paper and its best and best student papers of the research and ADS tracks (5 entries) from the conference's own awards page, which prints the authors above each title (`tot.mjs ecml-authors-first`); the list had ECML PKDD 2025 only. The list has 6800 awards.
+
 ## 2.10.81 — 2026-10-12
 
 - SIGCOMM 2025's best paper (Mosaic) and best student paper (Edge Caching as Differentiation) from the conference's paper information page, and CHIIR 2025's best paper from its front page (`tot.mjs sigcomm25`, `tot.mjs chiir-best`). The list has 6795 awards.

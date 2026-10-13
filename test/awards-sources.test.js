@@ -2207,3 +2207,13 @@ test("SIGCOMM 2025's paper information page: the best and best student headings 
   const c = `<p>We are delighted to announce the recipients of the Best Paper Award:</p><p>"Fitting to the body: the role of embodiment in beauty information seeking"</p><p>by Hal Ito and Ivy Jones.</p>`;
   assert.deepEqual(parseChiirBest(c, "https://chiir2025.github.io/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Fitting to the body: the role of embodiment in beauty information seeking | Hal Ito; Ivy Jones"]);
 });
+
+test("ECML PKDD 2023's awards page: the authors above each title; the test of time paper's year; the track in the label", async () => {
+  const { parseEcmlAwardsAuthorsFirst } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>ECML PKDD 2023 Awards</p><p>Test of Time Award – from ECML PKDD 2013</p><p>Ann Lee, Bo Chan</p><p>Area under the precision-recall curve estimates</p><p>Reseach Track</p><p>Best Paper</p><p>Cy Dunn, Ed Fox, Flo Gray</p><p>Efficient sampling in Bayesian neural networks by exploiting symmetry</p><p>Best Student Paper (Sponsored by Machine Learning Journal)</p><p>Gil Hart</p><p>Label shift quantification with robustness guarantees</p><p>Privacy policy</p>`;
+  assert.deepEqual(parseEcmlAwardsAuthorsFirst(h, "https://2023.ecmlpkdd.org/awards").entries.map((e) => `${e.award} ${e.paperYear || ""} ${e.awardLabel} | ${e.title} | ${e.authors.join("; ")}`), [
+    "tot 2013 Test of Time Award | Area under the precision-recall curve estimates | Ann Lee; Bo Chan",
+    "best  Best Paper Award (Research Track) | Efficient sampling in Bayesian neural networks by exploiting symmetry | Cy Dunn; Ed Fox; Flo Gray",
+    "student  Best Student Paper Award (Research Track) | Label shift quantification with robustness guarantees | Gil Hart"
+  ]);
+});

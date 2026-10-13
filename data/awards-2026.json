@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6795
+  "count": 6800
  },
  "entries": [
   {
@@ -49836,6 +49836,88 @@
    "track": "main",
    "source": "https://ecir2025.eu/best-papers-award/",
    "evidence": "ECIR 2025 Best Short Student Paper: Investigating the Scalability of Approximate Sparse Retrieval Algorithms to Massive Datasets — Sebastian Bruch, Franco Maria Nardini, Cosimo Rulli, Rossano Venturini, Leonardo Venuta"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (ADS Track)",
+   "title": "RulEth: Genetic Programming-Driven Derivation of Security Rules for Automotive Ethernet",
+   "authors": [
+    "Felix Gail",
+    "Roland Rieke",
+    "Florian Fenzl"
+   ],
+   "track": "main",
+   "source": "https://2023.ecmlpkdd.org/awards",
+   "evidence": "ECML PKDD 2023 Best Paper: RulEth: Genetic Programming-Driven Derivation of Security Rules for Automotive Ethernet — Felix Gail, Roland Rieke, Florian Fenzl"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Research Track)",
+   "title": "Towards Efficient MCMC Sampling in Bayesian Neural Networks by Exploiting Symmetry",
+   "authors": [
+    "Jonas Gregor Wiese",
+    "Lisa Wimmer",
+    "Theodore Papamarkou",
+    "Bernd Bischl",
+    "Stephan Günnemann",
+    "David Rügamer"
+   ],
+   "track": "main",
+   "source": "https://2023.ecmlpkdd.org/awards",
+   "evidence": "ECML PKDD 2023 Best Paper: Towards Efficient MCMC Sampling in Bayesian Neural Networks by Exploiting Symmetry — Jonas Gregor Wiese, Lisa Wimmer, Theodore Papamarkou, Bernd Bischl, Stephan Günnemann, David Rügamer"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award (Research Track)",
+   "title": "Label Shift Quantification with Robustness Guarantees via Distribution Feature Matching",
+   "authors": [
+    "Bastien Dussap",
+    "Gilles Blanchard",
+    "Badr-Eddine Chérief-Abdellatif"
+   ],
+   "track": "main",
+   "source": "https://2023.ecmlpkdd.org/awards",
+   "evidence": "ECML PKDD 2023 Best Student Paper (Sponsored by Machine Learning Journal): Label Shift Quantification with Robustness Guarantees via Distribution Feature Matching — Bastien Dussap, Gilles Blanchard, Badr-Eddine Chérief-Abdellatif"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award (ADS Track)",
+   "title": "Semi-Supervised Social Bot Detection with Initial Residual Relation Attention Networks",
+   "authors": [
+    "Ming Zhou",
+    "Wenzheng Feng",
+    "Yifan Zhu",
+    "Dan Zhang",
+    "Yuxiao Dong",
+    "Jie Tang"
+   ],
+   "track": "main",
+   "source": "https://2023.ecmlpkdd.org/awards",
+   "evidence": "ECML PKDD 2023 Best Student Paper (Sponsored by Data Mining and Knowledge Discovery Journal): Semi-Supervised Social Bot Detection with Initial Residual Relation Attention Networks — Ming Zhou, Wenzheng Feng, Yifan Zhu, Dan Zhang, Yuxiao Dong, Jie Tang"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Area under the Precision-Recall Curve: Point Estimates and Confidence Intervals",
+   "authors": [
+    "Kendrick Boyd",
+    "Kevin H. Eng",
+    "C. David Page"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://2023.ecmlpkdd.org/awards",
+   "evidence": "ECML PKDD 2023 Test of Time Award: Area under the Precision-Recall Curve: Point Estimates and Confidence Intervals — Kendrick Boyd, Kevin H. Eng, C. David Page"
   },
   {
    "venue": "ECML PKDD",
