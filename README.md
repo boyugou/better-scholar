@@ -7,7 +7,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 
 [![test](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml)
 
-[简体中文](README.zh-CN.md)
+[简体中文](README.zh-CN.md) · [Website (30 languages)](https://boyugou.github.io/scholar-roles-and-ranks/)
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
 <p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
