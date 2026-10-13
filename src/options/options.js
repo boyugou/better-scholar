@@ -160,7 +160,7 @@
   // A row of links to the cards, pinned under the header: the page is long. The card in view is marked.
   const cards = [...$("controls").querySelectorAll(":scope > section.card")];
   const toc = h("nav", { class: "toc", "aria-label": t("optHeading") },
-    ...cards.map((c, i) => { c.id = "card-" + i; return h("a", { href: "#card-" + i, "data-card": c.id, onClick: (e) => { e.preventDefault(); window.scrollTo({ top: Math.max(0, c.getBoundingClientRect().top + scrollY - toc.offsetHeight - 12), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });   // (just under the pinned links) } }, c.querySelector("h2").textContent); }));
+    ...cards.map((c, i) => { c.id = "card-" + i; return h("a", { href: "#card-" + i, "data-card": c.id, onClick: (e) => { e.preventDefault(); window.scrollTo({ top: Math.max(0, c.getBoundingClientRect().top + scrollY - toc.offsetHeight - 12), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); } }, c.querySelector("h2").textContent); }));
   $("controls").prepend(toc);
   try {
     const seen = new Set();
