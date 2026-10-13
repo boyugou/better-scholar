@@ -9,8 +9,9 @@
 //   CORE  the ICORE export: same file (sha-256)? and does the portal's list of editions hold a newer one than the bundled one
 // It only reads (two downloads and two pages); it changes nothing.
 //
-// Exit status: 0 current · 1 out of date, or a source that answers but no longer with the file (404, 403 …: moved, removed or refused; what changed
-// and the commands to run are printed) · 2 a source could not be reached (no answer, a 5xx, a challenge page instead of the file: no verdict).
+// Exit status: 0 current · 1 out of date, or a source that says the file is gone (404, 410: moved or removed; what changed and the commands to run are
+// printed) · 2 a source could not be reached or would not answer (no answer, a 5xx, a 403 or other refusal — bot checks answer so —, a challenge page instead of
+// the file: no verdict).
 // Run on a schedule by .github/workflows/data-fresh.yml.
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -23,13 +24,13 @@ const ccf = meta("ccf-2026.json"), core = meta("core-2026.json");
 const problems = [], unreachable = [], notes = [];
 
 const sha = (buf) => createHash("sha256").update(buf).digest("hex");
-class Gone extends Error {}       // the source answers, but not with the file: a 4xx (moved, removed, refused) is a finding, not "unreachable"
+class Gone extends Error {}       // the source says the file is gone (404, 410): a finding. A 403 or another refusal is a block, not a removal: no verdict
 async function get(url, tries = 3) {
   let last;
   for (let i = 0; i < tries; i++) {
     try {
       const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(120000), headers: { "user-agent": "scholar-roles-and-ranks data check (https://github.com/boyugou/scholar-roles-and-ranks)" } });
-      if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429) throw new Gone(`${url}: HTTP ${res.status}`);
+      if (res.status === 404 || res.status === 410) throw new Gone(`${url}: HTTP ${res.status}`);
       if (!res.ok) throw new Error("HTTP " + res.status);
       return Buffer.from(await res.arrayBuffer());
     } catch (e) {

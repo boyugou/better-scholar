@@ -41,13 +41,16 @@ test("co-first marks: a leading group that shares a mark counts; a lone mark, or
   assert.equal(role("A Smith, B Jones, C Lee*, D Kim*", 3), "last", "co-senior authors are last authors");
   assert.equal(role("A Smith, B Jones*, C Lee*, D Kim", 1), "second", "marks that do not begin with the first author are not co-first");
   assert.equal(role("A Smith, B Jones*, C Lee*, D Kim", 2), "middle");
+  assert.equal(role("A Smith*†, B Jones*, C Lee†", 2), "last", "the first author's extra mark does not make the corresponding author co-first");
+  assert.equal(role("A Smith*†, B Jones*, C Lee†, D Kim", 2), "middle");
+  assert.equal(role("A Smith*†, B Jones*†, C Lee*†, D Kim", 2), "cofirst", "a group that shares both marks");
   assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 1), "cofirst");
   assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 2), "middle", "a second group with another mark is not co-first");
   assert.equal(role("A Smith†, B Jones‡, C Lee", 1), "second", "two different marks on the first two are two different notes");
   assert.equal(role("A Smith∗, B Jones*, C Lee", 1), "cofirst", "the star-like characters are one mark");
   assert.equal(role("A Smith✉, B Jones✉, C Lee", 1), "second", "the envelope is a corresponding author, never equal contribution");
   assert.deepEqual(names.parseAuthors("A Smith✉, B Jones*").tokens.map((t) => [t.name, t.cofirst]), [["A Smith", false], ["B Jones", true]]);
-  // the live profile of 2026-10-13 (test/fixtures/profiles/gou-osu.json)
+  // the live profile of 2026-10-13 (test/fixtures/profiles/gou-osu.json): its rows keep the same answers under the old rule and the new one (the cases above are where they differ)
   assert.equal(role("B Gou*, Z Huang*, Y Ning*, Y Gu, M Lin, W Qi, A Kopanev, B Yu, ...", 0), "cofirst");
   assert.equal(role("B Zheng*, B Gou*, S Salisbury*, Z Du*, H Sun, Y Su", 1), "cofirst");
   assert.equal(role("Y Gu*, K Zhang*, Y Ning*, B Zheng*, B Gou, T Xue, C Chang, ...", 4), "middle");
@@ -68,6 +71,12 @@ test("an all-caps initials + surname name (a patent's inventor) is offered as a 
   const lines = ["JA DOUDNA, M Jinek, E Charpentier", "A Smith, JA DOUDNA, B Lee", "X Yu, Z Wang", "JA Doudna, K Chylinski"];
   assert.deepEqual(names.suggestVariants(lines, owner).suggestions, [{ name: "JA DOUDNA", rows: 2 }], "two papers: one click offered");
   assert.deepEqual(names.suggestVariants(lines.slice(0, 1), owner).suggestions, [], "one paper is not enough");
+  assert.deepEqual(names.suggestVariants(lines.slice(0, 3), owner).suggestions, [], "and the same initials written as usual must find the owner somewhere in the profile");
+  // "WU LI" is not "Wei Li" unless the profile itself writes the owner as "WU Li"
+  const wei = { name: "Wei Li", alternates: [] };
+  const shouted = ["WU LI, X ZHANG, Y CHEN", "A WANG, WU LI", "W Li, Q Sun", "Wei Li, K Ho"];
+  assert.deepEqual(names.suggestVariants(shouted, wei).suggestions, [], "nothing offered on the strength of the capitals alone");
+  assert.deepEqual(names.suggestVariants([...shouted, "WU Li, K Ho"], wei).suggestions, [{ name: "WU LI", rows: 2 }], "offered once 'WU Li' is how the profile writes the owner");
   // once the person adds it, it finds the owner
   assert.equal(names.matchesAuthor("JA DOUDNA", { name: "Jennifer Doudna", alternates: ["JA DOUDNA"] }), true);
 });

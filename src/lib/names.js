@@ -174,14 +174,17 @@
     return { name, cofirst: marks.length > 0, marks };
   }
 
-  // How many authors at the front share a mark with the first author ("A*, B*, C": 2). Fewer than two is no group: a lone mark on the first author is a note
-  // or a corresponding author, and marks that begin further down (or another symbol) are not equal contribution of the first authors.
+  // How many authors at the front share a mark ("A*, B*, C": 2). The marks of the group are the ones the first two authors have in common, and it goes on while
+  // an author carries all of them; fewer than two is no group: a lone mark on the first author is a note or a corresponding author, and marks that begin
+  // further down (or another symbol, or an extra symbol of the first author — "A*†, B*, C†": C is the corresponding author) are not equal contribution.
   function leadingGroup(tokens) {
-    const first = tokens[0] && tokens[0].marks;
-    if (!first || !first.length) return 0;
-    let k = 1;
-    while (k < tokens.length && (tokens[k].marks || []).some((m) => first.includes(m))) k++;
-    return k >= 2 ? k : 0;
+    const a = tokens[0] && tokens[0].marks, b = tokens[1] && tokens[1].marks;
+    if (!a || !a.length || !b || !b.length) return 0;
+    const shared = a.filter((m) => b.includes(m));
+    if (!shared.length) return 0;
+    let k = 2;
+    while (k < tokens.length && shared.every((m) => (tokens[k].marks || []).includes(m))) k++;
+    return k;
   }
 
   // Parse "A Smith, B Jones, C Lee" into ordered tokens with co-first flags.
@@ -323,7 +326,15 @@
     }
     const tally = new Map();
     const currentKey = ownerKey(current), permutations = new Map();
-    const isRearranged = (name) => { let v = permutations.get(name); if (v === undefined) { v = isPermutation(name, current.name) || isShoutedInitials(name, current.name); permutations.set(name, v); } return v; };
+    // an all-caps "JA DOUDNA" is offered only when the same initials, written as usual ("JA Doudna"), already find the owner in other papers of the profile: without
+    // that evidence "WU LI" would be offered to "Wei Li", and a click would make every "Wu Li" the owner's
+    const compact = (name) => normalize(name).replace(/ /g, "");
+    const written = new Set();
+    for (let i = 0; i < lists.length; i++) {
+      const at = found(lists[i], authorTexts[i], current, currentKey);
+      if (at >= 0) written.add(compact(lists[i].tokens[at].name));
+    }
+    const isRearranged = (name) => { let v = permutations.get(name); if (v === undefined) { v = isPermutation(name, current.name) || (isShoutedInitials(name, current.name) && written.has(compact(name))); permutations.set(name, v); } return v; };
     for (let i = 0; i < lists.length; i++) {
       const l = lists[i];
       if (l.truncated || found(l, authorTexts[i], current, currentKey) >= 0) continue;

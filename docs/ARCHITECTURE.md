@@ -77,7 +77,7 @@ Matching an author token to the owner (`names.js`):
   reads the other order of a two- or three-part header name **automatically** only when the name
   as printed finds the owner in under 10% of at least 8 rows and the other order in at least 4×
   as many and a quarter of all rows (real case: `Tang Jie`, 0 → 76 of 100 rows). Other
-  rearrangements with initials (`SY Philip` for `Philip S. Yu`, `J Tang`) and an all-caps inventor (`JA DOUDNA`: `isShoutedInitials`; an all-caps name is never read as initials by the matcher) are only **offered**,
+  rearrangements with initials (`SY Philip` for `Philip S. Yu`, `J Tang`) and an all-caps inventor (`JA DOUDNA`: `isShoutedInitials`, only when the same initials written as usual find the owner elsewhere on the profile; an all-caps name is never read as initials by the matcher) are only **offered**,
   from complete author lists that otherwise lack the owner, in at least two papers, as a
   one-click suggestion; the automatic spelling is not stored (it is derived again on every load),
   a suggestion that is accepted becomes an ordinary variant.
@@ -197,7 +197,7 @@ the year bars stay whole: they are where a filter is chosen. A filter whose cont
 after `decorate()`, because a row's `highlighted` is only known once it has been decorated.
 
 What the table and the status block show depends on the profile, not only on the settings. `listComplete()` in `main.js` says the whole list is here: the page offered nothing more at the start,
-or our loader ran to its end (`done`) — not after a cancel or a stall, because Scholar's button is disabled while a request is still in flight. `noRanks()` is true when a list is switched on, the list is complete
+or our loader ran to its end (`done`), or rows arrived that the loader did not ask for and Scholar's button is still off after the moment it needs to come back (a list finished by hand, or a cancelled request answered) — not straight after a cancel or a stall, because the button is disabled while a request is in flight. `noRanks()` is true when a list is switched on, the list is complete
 and no paper has a rank in any list that is on: the table is then by role only (`summarize(list, null)`, heading *Papers by role*, no tier columns, no switch between the lists; the lists that are on stay in
 `sources`, for the note `noRanksNote`; the toolbar popup empties its own `sources`), and a selection on a tier is dropped in `refresh()` (its control is gone). The unranked-venues list keeps its *Report* link:
 a computer-science profile whose venues the lists miss is exactly where a report helps. The status block (`renderCoverage`) leaves out the "N papers loaded" line when it would stand alone — complete,

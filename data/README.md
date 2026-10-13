@@ -82,7 +82,7 @@ badge — the rest of the extension does not depend on it.
 
 `node scripts/check-data-fresh.mjs` downloads both source files again and compares their sha-256 with the ones above, and looks for a
 newer edition (another file behind the CCF page's link, a newer edition in the CORE portal's list). `.github/workflows/data-fresh.yml` runs it
-every Monday; a failed run (GitHub mails it) means a changed file, a new edition, or a source that answers 404 / 403 (moved, removed, refused) — regenerate as described here. A source that cannot be reached at all (no answer, a 5xx, a challenge page instead of the file) is only a warning. GitHub pauses scheduled workflows in a public repository after 60 days without any activity (a commit, or *Enable workflow* on the Actions tab, starts them again). On 2026-10-13 both files were
+every Monday; a failed run (GitHub mails it) means a changed file, a new edition, or a source that answers 404 / 410 (moved, removed) — regenerate as described here. A source that cannot be reached or refuses (no answer, a 5xx, a 403 as bot checks answer, a challenge page instead of the file) is only a warning. GitHub pauses scheduled workflows in a public repository after 60 days without any activity (a commit, or *Enable workflow* on the Actions tab, starts them again). On 2026-10-13 both files were
 byte-identical to the ones the data was built from, and no newer edition was listed.
 
 ## Paper awards — `awards-2026.json`

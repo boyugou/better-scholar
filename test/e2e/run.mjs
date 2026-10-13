@@ -1008,6 +1008,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         await pgM.click('[data-act="load-all"]');
         await eventually(pgM, () => !document.querySelector("#rr-panel [data-tier]") && document.querySelector('[data-rr="filterbar"]').hidden && document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length === 13);
       } finally { await pgM.close().catch(() => {}); await fxM.close(); }
+      // a list finished by hand (Scholar's own button, our loader off) is complete too: the columns go once the button has stayed off
+      const fxH = await start({ slug: "non-cs-demo", pageSize: 5 });
+      const pgH = await ctxN.newPage();
+      try {
+        await pgH.goto(fxH.url);
+        await pgH.waitForSelector('#rr-panel th button[data-tier="none"]');
+        await pgH.bringToFront();
+        await pgH.evaluate(() => document.getElementById("gsc_bpf_more").click());            // (the stand-in sends up to 80 rows a press: all of them)
+        await eventually(pgH, () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 13);
+        assert.equal(await pgH.locator("#gsc_bpf_more").isDisabled(), true);
+        await eventually(pgH, () => !document.querySelector("#rr-panel [data-tier]") && !!document.querySelector('[data-rr="note"]').textContent.startsWith("No venue on this profile"));
+      } finally { await pgH.close().catch(() => {}); await fxH.close(); }
       ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup); a tier selection does not outlive the columns");
     } finally { await ctxN.close(); await fxN.close(); }
   }

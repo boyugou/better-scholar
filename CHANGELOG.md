@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.22.6 — 2026-10-13
+
+From an independent review of 2.22.1–2.22.4 (four confirmed problems):
+
+- **An all-caps inventor is offered only with evidence.** `WU LI` was offered to an owner called `Wei Li` (any short given name passed as "initials"), and one click would then have claimed every mixed-case `Wu Li` too. The all-caps form is now offered only when the same initials written as usual (`WU Li`, `JA Doudna`) already find the owner in other papers of the profile.
+- **The co-first group takes its marks from what the first two authors share** and goes on while an author carries all of them: a first author marked `*†` next to a second marked `*` no longer pulls in a corresponding author marked `†` (`A*†, B*, C†`: C is the last author, not co-first).
+- **A list finished by hand is complete too.** After Scholar's own *Show more* is pressed by the person (auto-load off), after a stall finished by hand, or after a cancelled request is answered, the panel never learned that the whole list was here: a biologist's profile kept empty A / B / C columns and the lone "N papers loaded" line. Rows that our loader did not ask for now start a check: Scholar's button still off after 1.8 s means the list is whole.
+- **The weekly data check only calls 404 and 410 findings.** A 403 is what bot checks and firewalls answer (the repository's own notes record several), so it is "no verdict", not a weekly "out of date" mail.
+- The Chinese README names the all-caps inventor case; the test comment says which live-profile lines pin the co-first rule (none: they answer the same under the old rule).
+
 ## 2.22.5 — 2026-10-13
 
 - **The settings page has links in its footer:** the project's privacy page, *Report a problem* (the issue tracker's template chooser) and GitHub. Plain links that open only when clicked (`PRIVACY.md` says so); the two labels use the words the project site already has in 30 languages.

@@ -466,7 +466,14 @@
   refresh();
 
   const tbody = B.scholar.tbody();
-  if (tbody) new MutationObserver(() => { if (ingest()) scheduleRefresh(); }).observe(tbody, { childList: true });
+  // Rows came that our loader did not ask for (the person pressed Scholar's own "Show more", or a cancelled request was answered): once Scholar has had the moment it
+  // needs to enable its button again and the button is still off, the whole list is here
+  let completeTimer = 0;
+  const checkComplete = () => {
+    clearTimeout(completeTimer);
+    completeTimer = setTimeout(() => { if (!state.loadingAll && !state.complete && !B.scholar.canLoadMore()) { state.complete = true; refresh(); } }, 1800);
+  };
+  if (tbody) new MutationObserver(() => { if (ingest()) { scheduleRefresh(); checkComplete(); } }).observe(tbody, { childList: true });
   // (a window that becomes narrow or wide moves the panel above / beside the list; its sections are arranged for that layout, so they are drawn again)
   window.addEventListener("resize", frame(() => {
     const was = panel.el.classList.contains("rr-wide");
