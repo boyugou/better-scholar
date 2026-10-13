@@ -9,7 +9,7 @@
     "message": "Ruoli e ranking"
   },
   "panelTitle": {
-    "message": "Ruoli d’autore e ranking delle sedi"
+    "message": "Ruoli d’autore e ranking di conferenze e riviste"
   },
   "summaryTitle": {
     "message": "Articoli per ruolo e ranking"
@@ -60,7 +60,7 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "Dalle indicazioni degli autori nel titolo e nel testo della sede di ogni articolo su Scholar (non verificate) e da un elenco incluso di articoli premiati nelle principali conferenze."
+    "message": "Dalle indicazioni degli autori nel titolo e nei dati di pubblicazione di ogni articolo su Scholar (non verificate) e da un elenco incluso di articoli premiati nelle principali conferenze."
   },
   "marksAsWritten": {
     "message": "dalle indicazioni degli autori o dall’elenco dei premi"
@@ -212,7 +212,7 @@
     "message": "1 articolo in cui il nome del profilo non compare tra gli autori"
   },
   "coverUnmatched": {
-    "message": "$N1$ articoli in sedi senza ranking",
+    "message": "$N1$ articoli in conferenze o riviste senza ranking",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -220,7 +220,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 articolo in una sede senza ranking"
+    "message": "1 articolo in una conferenza o rivista senza ranking"
   },
   "copyUnmatched": {
     "message": "Copia elenco"
@@ -379,7 +379,7 @@
     "message": "In grassetto e colorato. Passaci sopra il puntatore per vedere la tua posizione."
   },
   "optRanksTitle": {
-    "message": "Ranking delle sedi"
+    "message": "Ranking di conferenze e riviste"
   },
   "optCcf": {
     "message": "Ranking CCF"
@@ -421,10 +421,10 @@
     "message": "Il numero di articoli premiati e di presentazioni per tipo, con un clic per elencarli."
   },
   "optPanelStatus": {
-    "message": "Articoli caricati e sedi senza ranking"
+    "message": "Articoli caricati e conferenze o riviste senza ranking"
   },
   "optPanelStatusHint": {
-    "message": "Quanti articoli sono caricati, il pulsante «Carica tutto» e l’elenco degli articoli in sedi senza ranking."
+    "message": "Quanti articoli sono caricati, il pulsante «Carica tutto» e l’elenco degli articoli in conferenze o riviste senza ranking."
   },
   "optPanelNames": {
     "message": "Aiuto sulla grafia del nome"
@@ -518,7 +518,7 @@
     "message": "Autori"
   },
   "tsvVenue": {
-    "message": "Sede"
+    "message": "Conferenza/rivista"
   },
   "tsvAwards": {
     "message": "Premi e presentazioni"
@@ -631,7 +631,7 @@
     "message": "Completa gli elenchi degli autori con Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Premendo Completa, chiede prima a semanticscholar.org l'elenco completo degli autori di ogni articolo (invia solo il titolo dell'articolo), e legge la pagina di Scholar solo per ciò che non conosce. Meno richieste a Scholar, quindi meno CAPTCHA."
+    "message": "Premendo Completa, chiede prima a semanticscholar.org l’elenco completo degli autori di ogni articolo (invia solo il titolo dell’articolo), e legge la pagina di Scholar solo per ciò che non conosce. Meno richieste a Scholar, quindi meno CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articoli evidenziati per anno"
@@ -657,10 +657,10 @@
     "message": "Dove compaiono gli articoli evidenziati"
   },
   "optPanelVenues": {
-    "message": "Sedi principali"
+    "message": "Conferenze e riviste principali"
   },
   "optPanelVenuesHint": {
-    "message": "Le sedi con ranking dei tuoi articoli evidenziati, dalla più frequente; clicca su una per elencarne gli articoli."
+    "message": "Le conferenze e riviste con ranking dei tuoi articoli evidenziati, dalla più frequente; clicca su una per elencarne gli articoli."
   },
   "optCopyDiagnostics": {
     "message": "Copia i dettagli per una segnalazione di bug"

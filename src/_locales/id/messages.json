@@ -3,7 +3,7 @@
     "message": "Scholar Peran & Peringkat"
   },
   "extDescription": {
-    "message": "Sorot makalah penulis pertama, ko-pertama, dan terakhir di Google Scholar, plus peringkat CCF / CORE dan ringkasan peran × rank."
+    "message": "Sorot makalah penulis pertama, ko-pertama, dan terakhir di Google Scholar, plus peringkat CCF / CORE dan tabel peran × peringkat."
   },
   "extShortName": {
     "message": "Peran·Rank"
@@ -39,7 +39,7 @@
     "message": "Makalah unggul"
   },
   "mkDistinguished": {
-    "message": "Makalah terpilih"
+    "message": "Makalah terkemuka"
   },
   "mkRunnerUp": {
     "message": "Penghargaan khusus"
@@ -241,7 +241,7 @@
     "message": "Muncul di $1 makalah yang daftar penulisnya tidak menyebut Anda — klik untuk menambahkan ejaan ini"
   },
   "expand": {
-    "message": "Buka"
+    "message": "Perluas"
   },
   "collapse": {
     "message": "Ciutkan"
@@ -382,7 +382,7 @@
     "message": "Penghargaan dan presentasi"
   },
   "optMarkAwardHint": {
-    "message": "Makalah terbaik, unggul, dan terpilih, penghargaan khusus, test of time, dan finalis makalah terbaik."
+    "message": "Makalah terbaik, unggul, dan terkemuka, penghargaan khusus, test of time, dan finalis makalah terbaik."
   },
   "optPanelTitle": {
     "message": "Panel ringkasan"

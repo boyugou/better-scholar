@@ -91,10 +91,10 @@
     "message": "Év"
   },
   "yearStart": {
-    "message": "Tól"
+    "message": "Ettől"
   },
   "yearEnd": {
-    "message": "Ig"
+    "message": "Eddig"
   },
   "srcCcf": {
     "message": "CCF"
@@ -124,7 +124,7 @@
     "message": "Szerep"
   },
   "colTotal": {
-    "message": "Mind"
+    "message": "Összes"
   },
   "tipUnranked": {
     "message": "Nincs rangsorolva"
@@ -217,7 +217,7 @@
     "message": "Jelentés"
   },
   "layoutWarning": {
-    "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat. Kérjük, jelentsd."
+    "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat. Jelentsd, kérlek."
   },
   "variantsTitle": {
     "message": "Nem egyezik a név? Adj meg egy írásmódot"
@@ -285,7 +285,7 @@
     "message": "jelenlegi lista, nem a megjelenéskori rang"
   },
   "tipPosition": {
-    "message": "$N1$. hely a(z) $N2$ közül",
+    "message": "$N1$. hely ($N2$ közül)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -622,7 +622,7 @@
     "message": "Cikkek évenként"
   },
   "optPanelYearsHint": {
-    "message": "Egy oszlop minden évhez, a szerepkörök színeiben."
+    "message": "Egy oszlop minden évhez, a szerepek színeiben."
   },
   "coverRepeats": {
     "message": "Más cikket ismétlő bejegyzések: $N1$",

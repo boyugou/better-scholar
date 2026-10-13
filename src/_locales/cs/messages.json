@@ -9,7 +9,7 @@
     "message": "Role a ranky"
   },
   "panelTitle": {
-    "message": "Role autorů a ranky publikací"
+    "message": "Role autorů a ranky publikačních míst"
   },
   "summaryTitle": {
     "message": "Práce podle role a ranku"
@@ -60,10 +60,10 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "Podle slov samotných autorů v názvu a popisu místa publikace každé práce ve Scholar (neověřeno) a podle přibalené listiny oceněných prací z velkých konferencí."
+    "message": "Podle slov samotných autorů v názvu a popisu místa publikace každé práce ve Scholar (neověřeno) a podle přibaleného seznamu oceněných prací z velkých konferencí."
   },
   "marksAsWritten": {
-    "message": "ze slov autorů nebo z listiny ocenění"
+    "message": "ze slov autorů nebo ze seznamu ocenění"
   },
   "tipMarkAuthor": {
     "message": "Uvedeno autorem (neověřeno): „$N1$“",
@@ -74,7 +74,7 @@
     }
   },
   "tipMarkList": {
-    "message": "V listině ocenění: $N1$ — $N2$",
+    "message": "Na seznamu ocenění: $N1$ — $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -364,7 +364,7 @@
     "message": "Tučně a podbarveně. Najetím myší zobrazíte svou pozici."
   },
   "optRanksTitle": {
-    "message": "Ranky publikací"
+    "message": "Ranky publikačních míst"
   },
   "optCcf": {
     "message": "Rank CCF"
@@ -406,13 +406,13 @@
     "message": "Počet oceněných prací a druhů přednesů; jedním kliknutím je vypíšete."
   },
   "optPanelStatus": {
-    "message": "Načtené práce a publikace bez ranku"
+    "message": "Načtené práce a publikační místa bez ranku"
   },
   "optPanelStatusHint": {
     "message": "Kolik prací je načteno, tlačítko „Načíst vše“ a seznam prací v místech publikace bez ranku."
   },
   "optPanelNames": {
-    "message": "Pomoc s zápisem jména"
+    "message": "Pomoc se zápisem jména"
   },
   "optPanelNamesHint": {
     "message": "„Jméno se nenašlo? Přidejte variantu zápisu“ a nápovědy k vašemu jménu."
@@ -586,13 +586,13 @@
     "message": "Spotlight a highlight"
   },
   "markTalks": {
-    "message": "Přednášky"
+    "message": "Přednesy"
   },
   "optTalkRows": {
     "message": "Řádky v panelu"
   },
   "optTalkRowsHint": {
-    "message": "Jak se počítají typy přednášek. Při sloučení se práce, která jich má více, počítá jen jednou."
+    "message": "Jak se počítají druhy přednesů. Při sloučení se práce, která jich má více, počítá jen jednou."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight a highlight zvlášť"

@@ -3,13 +3,13 @@
     "message": "Scholar : rôles et rangs"
   },
   "extDescription": {
-    "message": "Met en évidence sur Google Scholar vos articles en premier, co-premier ou dernier auteur, rang CCF / CORE et récap rôle × rang."
+    "message": "Met en évidence sur Google Scholar vos articles en premier, co-premier ou dernier auteur, avec rang CCF / CORE et récap rôle × rang."
   },
   "extShortName": {
     "message": "Rôles et rangs"
   },
   "panelTitle": {
-    "message": "Rôles d’auteur et rangs des venues"
+    "message": "Rôles d’auteur et rangs des conférences et revues"
   },
   "summaryTitle": {
     "message": "Articles par rôle et par rang"
@@ -60,7 +60,7 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "D’après ce que les auteurs écrivent eux-mêmes dans le titre et la venue de chaque article sur Scholar (non vérifié), et d’après une liste intégrée d’articles primés dans les grandes conférences."
+    "message": "D’après ce que les auteurs écrivent eux-mêmes dans le titre et les informations de publication de chaque article sur Scholar (non vérifié), et d’après une liste intégrée d’articles primés dans les grandes conférences."
   },
   "marksAsWritten": {
     "message": "d’après les auteurs ou la liste des prix"
@@ -212,7 +212,7 @@
     "message": "1 article où le nom du profil ne figure pas dans la liste des auteurs"
   },
   "coverUnmatched": {
-    "message": "$N1$ articles dans des venues sans rang",
+    "message": "$N1$ articles dans des conférences ou revues sans rang",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -220,7 +220,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 article dans une venue sans rang"
+    "message": "1 article dans une conférence ou revue sans rang"
   },
   "copyUnmatched": {
     "message": "Copier la liste"
@@ -379,7 +379,7 @@
     "message": "En gras et teinté. Survolez-le pour voir votre position."
   },
   "optRanksTitle": {
-    "message": "Rangs des venues"
+    "message": "Rangs des conférences et revues"
   },
   "optCcf": {
     "message": "Rang CCF"
@@ -421,10 +421,10 @@
     "message": "Le nombre d’articles primés et de présentations par niveau, à lister d’un clic."
   },
   "optPanelStatus": {
-    "message": "Articles chargés et venues sans rang"
+    "message": "Articles chargés et conférences ou revues sans rang"
   },
   "optPanelStatusHint": {
-    "message": "Le nombre d’articles chargés, le bouton « Tout charger » et la liste des articles dans des venues sans rang."
+    "message": "Le nombre d’articles chargés, le bouton « Tout charger » et la liste des articles dans des conférences ou revues sans rang."
   },
   "optPanelNames": {
     "message": "Aide pour la graphie du nom"
@@ -518,7 +518,7 @@
     "message": "Auteurs"
   },
   "tsvVenue": {
-    "message": "Venue"
+    "message": "Conférence/revue"
   },
   "tsvAwards": {
     "message": "Prix et présentations"
@@ -610,7 +610,7 @@
     "message": "Lignes du panneau"
   },
   "optTalkRowsHint": {
-    "message": "Mode de comptage des types de présentation. Regroupés, un article qui en possède plusieurs n'est compté qu'une fois."
+    "message": "Mode de comptage des types de présentation. Regroupés, un article qui en possède plusieurs n’est compté qu’une fois."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight et highlight séparés"
@@ -628,10 +628,10 @@
     "message": "Un second endroit où chercher ce que Scholar tronque."
   },
   "optSemanticLabel": {
-    "message": "Compléter les listes d'auteurs avec Semantic Scholar"
+    "message": "Compléter les listes d’auteurs avec Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Avec Compléter, la liste complète des auteurs de chaque article est d'abord demandée à semanticscholar.org (seul le titre de l'article est envoyé), et la page de Scholar n'est lue que pour ce qu'il ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
+    "message": "Avec Compléter, la liste complète des auteurs de chaque article est d’abord demandée à semanticscholar.org (seul le titre de l’article est envoyé), et la page de Scholar n’est lue que pour ce qu’il ne connaît pas. Moins de requêtes vers Scholar, donc moins de CAPTCHA."
   },
   "yearsTitle": {
     "message": "Articles mis en évidence par année"
@@ -657,10 +657,10 @@
     "message": "Où paraissent les articles mis en évidence"
   },
   "optPanelVenues": {
-    "message": "Principales venues"
+    "message": "Principales conférences et revues"
   },
   "optPanelVenuesHint": {
-    "message": "Les venues classées de vos articles mis en évidence, les plus fréquentes d'abord ; cliquez sur une venue pour lister ses articles."
+    "message": "Les conférences et revues classées de vos articles mis en évidence, les plus fréquentes d’abord ; cliquez sur l’une pour lister ses articles."
   },
   "optCopyDiagnostics": {
     "message": "Copier les détails pour un rapport de bogue"

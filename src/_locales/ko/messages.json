@@ -3,7 +3,7 @@
     "message": "Scholar 저자 순서와 등급"
   },
   "extDescription": {
-    "message": "Google Scholar에서 제1저자·공동 제1저자·교신(마지막) 저자 논문을 강조하고, 학회·저널의 CCF / CORE 등급과 순서×등급 요약을 보여 줍니다."
+    "message": "Google Scholar에서 제1저자·공동 제1저자·마지막 저자 논문을 강조하고, 학회·저널의 CCF / CORE 등급과 순서×등급 요약을 보여 줍니다."
   },
   "extShortName": {
     "message": "저자 순서·등급"
@@ -39,10 +39,10 @@
     "message": "우수 논문상"
   },
   "mkDistinguished": {
-    "message": "공로 논문상"
+    "message": "탁월 논문상"
   },
   "mkRunnerUp": {
-    "message": "우수상 후보"
+    "message": "장려상"
   },
   "mkTot": {
     "message": "시간의 시험상"
@@ -397,7 +397,7 @@
     "message": "수상 및 발표"
   },
   "optMarkAwardHint": {
-    "message": "최우수·우수·공로 논문상, 우수상 후보, 시간의 시험상, 최우수 논문상 후보."
+    "message": "최우수·우수·탁월 논문상, 장려상, 시간의 시험상, 최우수 논문상 후보."
   },
   "optPanelTitle": {
     "message": "요약 패널"
@@ -628,10 +628,10 @@
     "message": "Scholar가 잘라낸 내용을 확인할 수 있는 두 번째 곳입니다."
   },
   "optSemanticLabel": {
-    "message": "Semantic Scholar로 저자 목록 완성"
+    "message": "Semantic Scholar로 저자 목록 보완"
   },
   "optSemanticLabelHint": {
-    "message": "'보완'을 누르면 먼저 semanticscholar.org에 각 논문의 전체 저자 목록을 묻고(논문 제목만 보냅니다), 거기서 찾지 못한 것만 Scholar 자체 페이지를 읽습니다. Scholar에 대한 요청이 줄어 CAPTCHA도 줄어듭니다."
+    "message": "“보완”을 누르면 먼저 semanticscholar.org에 각 논문의 전체 저자 목록을 묻고(논문 제목만 보냅니다), 거기서 찾지 못한 것만 Scholar 자체 페이지를 읽습니다. Scholar에 대한 요청이 줄어 CAPTCHA도 줄어듭니다."
   },
   "yearsTitle": {
     "message": "연도별 강조된 논문"
@@ -640,7 +640,7 @@
     "message": "연도별 논문"
   },
   "optPanelYearsHint": {
-    "message": "연도마다 막대 하나, 역할 색으로 표시합니다."
+    "message": "연도마다 막대 하나, 저자 순서별 색으로 표시합니다."
   },
   "coverRepeats": {
     "message": "다른 논문과 중복된 항목 $N1$건",

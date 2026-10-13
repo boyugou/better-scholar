@@ -42,7 +42,7 @@
     "message": "Seçkin makale"
   },
   "mkRunnerUp": {
-    "message": "Övgüye değer anma"
+    "message": "Mansiyon"
   },
   "mkTot": {
     "message": "Test of time"
@@ -397,7 +397,7 @@
     "message": "Ödüller ve sunumlar"
   },
   "optMarkAwardHint": {
-    "message": "En iyi, üstün ve seçkin makale, övgüye değer anma, test of time ve en iyi makale finalistleri."
+    "message": "En iyi, üstün ve seçkin makale, mansiyon, test of time ve en iyi makale finalistleri."
   },
   "optPanelTitle": {
     "message": "Özet paneli"

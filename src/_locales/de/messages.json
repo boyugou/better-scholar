@@ -607,7 +607,7 @@
     "message": "Vorträge"
   },
   "optTalkRows": {
-    "message": "Zeilen im Panel"
+    "message": "Zeilen im Übersichtsfeld"
   },
   "optTalkRowsHint": {
     "message": "Wie die Vortragsarten gezählt werden. Zusammengefasst zählt ein Paper, das mehrere davon hat, nur einmal."
@@ -628,7 +628,7 @@
     "message": "Eine zweite Quelle für das, was Scholar abschneidet."
   },
   "optSemanticLabel": {
-    "message": "Autorenlisten mit Semantic Scholar vervollständigen"
+    "message": "Autorenlisten mit Semantic Scholar ergänzen"
   },
   "optSemanticLabelHint": {
     "message": "Beim Klick auf „Ergänzen“ wird zuerst semanticscholar.org nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite nur für das, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
@@ -660,7 +660,7 @@
     "message": "Top-Venues"
   },
   "optPanelVenuesHint": {
-    "message": "Die gerankten Venues Ihrer hervorgehobenen Paper, am häufigsten zuerst; ein Klick auf eine zeigt ihre Paper."
+    "message": "Die Venues mit Rang deiner hervorgehobenen Paper, die häufigsten zuerst; klicke eine an, um ihre Paper aufzulisten."
   },
   "optCopyDiagnostics": {
     "message": "Details für Fehlerbericht kopieren"

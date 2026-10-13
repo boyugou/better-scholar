@@ -36,19 +36,19 @@
     "message": "Bài báo sinh viên xuất sắc nhất"
   },
   "mkOutstanding": {
-    "message": "Bài báo nổi bật"
+    "message": "Bài báo kiệt xuất"
   },
   "mkDistinguished": {
     "message": "Bài báo ưu tú"
   },
   "mkRunnerUp": {
-    "message": "Đề cử danh dự"
+    "message": "Giải khuyến khích"
   },
   "mkTot": {
     "message": "Test of time"
   },
   "mkFinalist": {
-    "message": "Vòng chung kết bài báo xuất sắc nhất"
+    "message": "Lọt chung kết bài báo xuất sắc nhất"
   },
   "mkOral": {
     "message": "Oral"
@@ -382,7 +382,7 @@
     "message": "Giải thưởng và báo cáo"
   },
   "optMarkAwardHint": {
-    "message": "Bài báo xuất sắc nhất, nổi bật, ưu tú, đề cử danh dự, test of time và vòng chung kết bài xuất sắc nhất."
+    "message": "Bài báo xuất sắc nhất, kiệt xuất, ưu tú, giải khuyến khích, test of time và lọt chung kết bài xuất sắc nhất."
   },
   "optPanelTitle": {
     "message": "Bảng tóm tắt"
@@ -586,13 +586,13 @@
     "message": "Spotlight & Highlight"
   },
   "markTalks": {
-    "message": "Trình bày"
+    "message": "Báo cáo"
   },
   "optTalkRows": {
     "message": "Số dòng trong bảng"
   },
   "optTalkRowsHint": {
-    "message": "Cách đếm các mức trình bày. Bài báo có nhiều hơn một mức được tính một lần."
+    "message": "Cách đếm các mức báo cáo. Bài báo có nhiều hơn một mức được tính một lần."
   },
   "optTalkSeparate": {
     "message": "Oral, Spotlight, Highlight riêng"

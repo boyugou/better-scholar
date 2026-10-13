@@ -3,13 +3,13 @@
     "message": "Scholar: role i rankingi"
   },
   "extDescription": {
-    "message": "Wyróżnia w Google Scholar prace, w których jesteś pierwszym, współpierwszym lub ostatnim autorem, z CCF / CORE i podsumowaniem."
+    "message": "Wyróżnia w Google Scholar prace, w których jesteś pierwszym, współpierwszym lub ostatnim autorem, z rankingami CCF / CORE."
   },
   "extShortName": {
     "message": "Role i rangi"
   },
   "panelTitle": {
-    "message": "Role autorów i rankingi publikacji"
+    "message": "Role autorów i rankingi miejsc publikacji"
   },
   "summaryTitle": {
     "message": "Prace według roli i rankingu"
@@ -232,7 +232,7 @@
     "message": "Usuń"
   },
   "variantAutoTip": {
-    "message": "Dodano automatycznie: nazwa z profilu w odwrotnej kolejności znajduje Cię w $1 pracach"
+    "message": "Dodano automatycznie: nazwisko z profilu w odwrotnej kolejności znajduje Cię w $1 pracach"
   },
   "variantSuggest": {
     "message": "Może Ty:"
@@ -364,7 +364,7 @@
     "message": "Pogrubione i podkolorowane. Najedź kursorem, aby zobaczyć pozycję."
   },
   "optRanksTitle": {
-    "message": "Rankingi publikacji"
+    "message": "Rankingi miejsc publikacji"
   },
   "optCcf": {
     "message": "Ranking CCF"
@@ -406,7 +406,7 @@
     "message": "Liczba nagrodzonych prac i rodzajów wystąpień; jednym kliknięciem pokażesz listę."
   },
   "optPanelStatus": {
-    "message": "Wczytane prace i publikacje bez rankingu"
+    "message": "Wczytane prace i miejsca publikacji bez rankingu"
   },
   "optPanelStatusHint": {
     "message": "Ile prac wczytano, przycisk „Wczytaj wszystko” i lista prac w miejscach publikacji bez rankingu."
@@ -586,7 +586,7 @@
     "message": "Spotlight i highlight"
   },
   "markTalks": {
-    "message": "Prezentacje"
+    "message": "Wystąpienia"
   },
   "optTalkRows": {
     "message": "Wiersze w panelu"

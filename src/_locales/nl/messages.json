@@ -631,7 +631,7 @@
     "message": "Auteurslijsten aanvullen met Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Bij Aanvullen vraagt de extensie eerst semanticscholar.org om de volledige auteurslijst van elke paper (alleen de titel van de paper wordt verstuurd), en leest ze de Scholar-pagina alleen voor wat daar onbekend is. Minder verzoeken aan Scholar, dus minder CAPTCHA's."
+    "message": "Bij Aanvullen vraagt de extensie eerst semanticscholar.org om de volledige auteurslijst van elke paper (alleen de titel van de paper wordt verstuurd), en leest ze de Scholar-pagina alleen voor wat daar onbekend is. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
   },
   "yearsTitle": {
     "message": "Gemarkeerde papers per jaar"
@@ -643,7 +643,7 @@
     "message": "Een balk per jaar, in de rolkleuren."
   },
   "coverRepeats": {
-    "message": "Items die een ander paper dupliceren: $N1$",
+    "message": "Vermeldingen die een ander paper dupliceren: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"

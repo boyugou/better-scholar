@@ -604,13 +604,13 @@
     "message": "Spotlight & highlight"
   },
   "markTalks": {
-    "message": "Foredrag"
+    "message": "Oplæg"
   },
   "optTalkRows": {
     "message": "Rækker i panelet"
   },
   "optTalkRowsHint": {
-    "message": "Sådan tælles foredragsniveauerne. En artikel, der har mere end ét af dem, tælles én gang."
+    "message": "Sådan tælles oplægsniveauerne. En artikel, der har mere end ét af dem, tælles én gang."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight og highlight hver for sig"
@@ -657,7 +657,7 @@
     "message": "Hvor de fremhævede artikler optræder"
   },
   "optPanelVenues": {
-    "message": "Top-steder"
+    "message": "Hyppigste publikationssteder"
   },
   "optPanelVenuesHint": {
     "message": "De rangerede steder for dine fremhævede artikler, flest først; klik på et for at se dets artikler."

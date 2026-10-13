@@ -610,7 +610,7 @@
     "message": "Rader i panelet"
   },
   "optTalkRowsHint": {
-    "message": "Slik telles presentasjonsnivåene. En artikkel som har mer enn ett av dem, telles én gang."
+    "message": "Slik telles foredragsnivåene. En artikkel som har mer enn ett av dem, telles én gang."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight og highlight hver for seg"
@@ -657,7 +657,7 @@
     "message": "Hvor de uthevede artiklene vises"
   },
   "optPanelVenues": {
-    "message": "Toppsteder"
+    "message": "Vanligste publiseringssteder"
   },
   "optPanelVenuesHint": {
     "message": "De rangerte stedene for de uthevede artiklene dine, flest først; klikk på ett for å liste artiklene."

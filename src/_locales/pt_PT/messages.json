@@ -3,7 +3,7 @@
     "message": "Scholar Autoria e Rankings"
   },
   "extDescription": {
-    "message": "No Google Scholar, destaca artigos como primeiro, coprimeiro ou último autor, com CCF / CORE por local e resumo posição × ranking."
+    "message": "No Google Scholar, destaca artigos como primeiro, coprimeiro ou último autor, com CCF / CORE por veículo e resumo posição × ranking."
   },
   "extShortName": {
     "message": "Autoria"
@@ -60,7 +60,7 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "Com base nas palavras dos próprios autores no título e no local de cada artigo no Scholar (não verificadas) e numa lista incluída de artigos premiados em grandes conferências."
+    "message": "Com base nas palavras dos próprios autores no título e no veículo de cada artigo no Scholar (não verificadas) e numa lista incluída de artigos premiados em grandes conferências."
   },
   "marksAsWritten": {
     "message": "pelas palavras dos autores ou pela lista de prémios"
@@ -212,7 +212,7 @@
     "message": "1 artigo em que o nome do perfil não consta da lista de autores"
   },
   "coverUnmatched": {
-    "message": "$N1$ artigos em locais sem ranking",
+    "message": "$N1$ artigos em veículos sem ranking",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -220,7 +220,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artigo num local sem ranking"
+    "message": "1 artigo num veículo sem ranking"
   },
   "copyUnmatched": {
     "message": "Copiar lista"
@@ -277,7 +277,7 @@
     "message": "de"
   },
   "dataNote": {
-    "message": "Os rankings vêm das listas atuais de $N1$, não do ranking na data da publicação. A CCF afirma que sua lista não deve servir de base para avaliação acadêmica.",
+    "message": "Os rankings vêm das listas atuais de $N1$, não do ranking na data da publicação. A CCF afirma que a sua lista não deve servir de base para avaliação académica.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -367,7 +367,7 @@
     "message": "Guardado"
   },
   "optRolesTitle": {
-    "message": "Destacar meus artigos"
+    "message": "Destacar os meus artigos"
   },
   "optRolesHint": {
     "message": "Cada posição tem a sua própria cor de linha. Os artigos em que está no meio ficam sem destaque."
@@ -379,7 +379,7 @@
     "message": "A negrito e com cor. Passe o rato por cima para ver a sua posição."
   },
   "optRanksTitle": {
-    "message": "Rankings dos locais"
+    "message": "Rankings dos veículos"
   },
   "optCcf": {
     "message": "Ranking CCF"
@@ -421,10 +421,10 @@
     "message": "A contagem de artigos premiados e dos tipos de apresentação, com um clique para listá-los."
   },
   "optPanelStatus": {
-    "message": "Artigos carregados e locais sem ranking"
+    "message": "Artigos carregados e veículos sem ranking"
   },
   "optPanelStatusHint": {
-    "message": "Quantos artigos estão carregados, o botão “Carregar tudo” e a lista de artigos em locais sem ranking."
+    "message": "Quantos artigos estão carregados, o botão “Carregar tudo” e a lista de artigos em veículos sem ranking."
   },
   "optPanelNames": {
     "message": "Ajuda com a grafia do nome"
@@ -518,7 +518,7 @@
     "message": "Autores"
   },
   "tsvVenue": {
-    "message": "Local"
+    "message": "Veículo"
   },
   "tsvAwards": {
     "message": "Prémios e apresentações"
@@ -557,13 +557,13 @@
     "message": "Alguns perfis listam o mesmo artigo várias vezes."
   },
   "optMergeLabel": {
-    "message": "Mesclar duplicatas"
+    "message": "Unir duplicados"
   },
   "optMergeLabelHint": {
     "message": "As entradas com o mesmo título (exceto maiúsculas, acentos e pontuação) e o mesmo primeiro autor tornam-se uma só: a mais citada fica e mostra as citações de todas. O painel conta-a uma vez."
   },
   "mergedTip": {
-    "message": "Mesclado de $N1$ entradas: as citações de todas elas",
+    "message": "Unido a partir de $N1$ entradas: as citações de todas elas",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -640,7 +640,7 @@
     "message": "Artigos por ano"
   },
   "optPanelYearsHint": {
-    "message": "Uma barra por ano, nas cores das funções."
+    "message": "Uma barra por ano, nas cores de cada posição."
   },
   "coverRepeats": {
     "message": "Entradas que repetem outro artigo: $N1$",
@@ -651,16 +651,16 @@
     }
   },
   "coverRepeatsAction": {
-    "message": "Mesclar…"
+    "message": "Unir…"
   },
   "venuesTitle": {
     "message": "Onde aparecem os artigos destacados"
   },
   "optPanelVenues": {
-    "message": "Principais locais"
+    "message": "Principais veículos"
   },
   "optPanelVenuesHint": {
-    "message": "Os locais com ranking dos seus artigos destacados, do mais frequente para o menos; clique num para listar os seus artigos."
+    "message": "Os veículos com ranking dos seus artigos destacados, do mais frequente para o menos; clique num para listar os seus artigos."
   },
   "optCopyDiagnostics": {
     "message": "Copiar detalhes para relatório de erro"

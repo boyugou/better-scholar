@@ -625,13 +625,13 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Un al doilea loc unde căutați ce taie Scholar."
+    "message": "Un al doilea loc unde cauți ce taie Scholar."
   },
   "optSemanticLabel": {
     "message": "Completează listele de autori cu Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Când apăsați Completează, se întreabă mai întâi semanticscholar.org lista completă de autori a fiecărei lucrări (se trimite doar titlul lucrării), iar pagina Scholar se citește doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
+    "message": "Când apeși Completează, se întreabă mai întâi semanticscholar.org lista completă de autori a fiecărei lucrări (se trimite doar titlul lucrării), iar pagina Scholar se citește doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
   },
   "yearsTitle": {
     "message": "Lucrări evidențiate pe an"
@@ -660,7 +660,7 @@
     "message": "Venue-urile principale"
   },
   "optPanelVenuesHint": {
-    "message": "Venue-urile cu rang ale lucrărilor evidențiate, cele mai frecvente primele; apăsați pe unul pentru a lista lucrările sale."
+    "message": "Venue-urile cu rang ale lucrărilor evidențiate, cele mai frecvente primele; apasă pe unul pentru a lista lucrările sale."
   },
   "optCopyDiagnostics": {
     "message": "Copiază detaliile pentru un raport de eroare"

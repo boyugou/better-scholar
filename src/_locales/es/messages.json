@@ -3,13 +3,13 @@
     "message": "Scholar: autoría y rangos"
   },
   "extDescription": {
-    "message": "Resalta en Google Scholar tus artículos como primer, coprimer o último autor, con rango CCF / CORE por sede y resumen rol × rango."
+    "message": "Resalta en Google Scholar tus artículos como primer, coprimer o último autor, con rango CCF / CORE y resumen posición × rango."
   },
   "extShortName": {
     "message": "Autoría y rangos"
   },
   "panelTitle": {
-    "message": "Posición de autoría y rangos de las sedes"
+    "message": "Posición de autoría y rangos de congresos y revistas"
   },
   "summaryTitle": {
     "message": "Artículos por posición y rango"
@@ -45,7 +45,7 @@
     "message": "Mención honorífica"
   },
   "mkTot": {
-    "message": "Premio a la trayectoria (test of time)"
+    "message": "Premio Test of Time"
   },
   "mkFinalist": {
     "message": "Finalista a mejor artículo"
@@ -60,7 +60,7 @@
     "message": "Highlight"
   },
   "marksHint": {
-    "message": "Según lo que los propios autores escriben en el título y en la sede de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
+    "message": "Según lo que los propios autores escriben en el título y en los datos de publicación de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
   },
   "marksAsWritten": {
     "message": "según los autores o la lista de premios"
@@ -212,7 +212,7 @@
     "message": "1 artículo en el que el nombre del perfil no figura entre los autores"
   },
   "coverUnmatched": {
-    "message": "$N1$ artículos en sedes sin rango",
+    "message": "$N1$ artículos en congresos o revistas sin rango",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -220,7 +220,7 @@
     }
   },
   "coverUnmatchedOne": {
-    "message": "1 artículo en una sede sin rango"
+    "message": "1 artículo en un congreso o revista sin rango"
   },
   "copyUnmatched": {
     "message": "Copiar lista"
@@ -379,7 +379,7 @@
     "message": "En negrita y con color. Pasa el cursor por encima para ver tu posición."
   },
   "optRanksTitle": {
-    "message": "Rangos de las sedes"
+    "message": "Rangos de congresos y revistas"
   },
   "optCcf": {
     "message": "Rango CCF"
@@ -421,10 +421,10 @@
     "message": "El número de artículos premiados y de ponencias por categoría; un clic para verlos."
   },
   "optPanelStatus": {
-    "message": "Artículos cargados y sedes sin rango"
+    "message": "Artículos cargados y congresos o revistas sin rango"
   },
   "optPanelStatusHint": {
-    "message": "Cuántos artículos están cargados, el botón «Cargar todo» y la lista de artículos en sedes sin rango."
+    "message": "Cuántos artículos están cargados, el botón «Cargar todo» y la lista de artículos en congresos o revistas sin rango."
   },
   "optPanelNames": {
     "message": "Ayuda con la grafía del nombre"
@@ -518,7 +518,7 @@
     "message": "Autores"
   },
   "tsvVenue": {
-    "message": "Sede"
+    "message": "Congreso/revista"
   },
   "tsvAwards": {
     "message": "Premios y ponencias"
@@ -604,13 +604,13 @@
     "message": "Spotlight y highlight"
   },
   "markTalks": {
-    "message": "Presentaciones"
+    "message": "Ponencias"
   },
   "optTalkRows": {
     "message": "Filas del panel"
   },
   "optTalkRowsHint": {
-    "message": "Cómo se cuentan los tipos de presentación. Juntos, un artículo con más de uno cuenta una sola vez."
+    "message": "Cómo se cuentan los tipos de ponencia. Juntos, un artículo con más de uno cuenta una sola vez."
   },
   "optTalkSeparate": {
     "message": "Oral, spotlight y highlight por separado"
@@ -640,7 +640,7 @@
     "message": "Artículos por año"
   },
   "optPanelYearsHint": {
-    "message": "Una barra por año, en los colores de cada rol."
+    "message": "Una barra por año, en los colores de cada posición."
   },
   "coverRepeats": {
     "message": "Entradas que repiten otro artículo: $N1$",
@@ -654,13 +654,13 @@
     "message": "Combinar…"
   },
   "venuesTitle": {
-    "message": "Dónde aparecen los artículos resaltados"
+    "message": "Dónde se publican los artículos resaltados"
   },
   "optPanelVenues": {
-    "message": "Sedes principales"
+    "message": "Principales congresos y revistas"
   },
   "optPanelVenuesHint": {
-    "message": "Las sedes con rango de tus artículos resaltados, de más a menos frecuentes; haz clic en una para ver sus artículos."
+    "message": "Los congresos y revistas con rango de tus artículos resaltados, de más a menos frecuentes; haz clic en uno para ver sus artículos."
   },
   "optCopyDiagnostics": {
     "message": "Copiar detalles para un informe de error"

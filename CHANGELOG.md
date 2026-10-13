@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.14.5 — 2026-10-12
+
+- A second-opinion review of all 29 translations against the English: where a publication venue was called a "sede" / "venue" / "sede" (es, fr, it: a headquarters, an arrival), "publikace" (pl, cs: a paper) or similar, it now says conference or journal; award names that meant something else ("service paper award" in ja and ko, "lifetime achievement" in es) are corrected; mixed registers, grammar and terminology are made consistent per language.
+
 ## 2.14.4 — 2026-10-12
 
 - The button that reads papers' own pages to fill in cut-off author lists is called **Complete** (it was "Resolve", which says little) in every language, and the texts that mention it follow. Several translations of the old label meant something else ("solve", "confirm") and are corrected.

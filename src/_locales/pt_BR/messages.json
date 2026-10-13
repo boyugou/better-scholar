@@ -3,7 +3,7 @@
     "message": "Scholar Autoria e Rankings"
   },
   "extDescription": {
-    "message": "No Google Scholar, destaca artigos como primeiro, coprimeiro ou último autor, com CCF / CORE por veículo e resumo cargo × ranking."
+    "message": "No Google Scholar, destaca artigos como primeiro, coprimeiro ou último autor, com CCF / CORE por veículo e resumo posição × ranking."
   },
   "extShortName": {
     "message": "Autoria"
@@ -640,7 +640,7 @@
     "message": "Artigos por ano"
   },
   "optPanelYearsHint": {
-    "message": "Uma barra por ano, nas cores dos papéis."
+    "message": "Uma barra por ano, nas cores de cada posição."
   },
   "coverRepeats": {
     "message": "Entradas que repetem outro artigo: $N1$",

@@ -3,7 +3,7 @@
     "message": "Scholar Roolit & Luokat"
   },
   "extDescription": {
-    "message": "Korostaa Google Scholarissa artikkelit, joissa olet ensimmäinen, yhteisensimmäinen tai viimeinen kirjoittaja, CCF-/CORE-luokat."
+    "message": "Korostaa Google Scholarissa artikkelit, joissa olet ensimmäinen, yhteisensimmäinen tai viimeinen kirjoittaja; CCF-/CORE-luokat."
   },
   "extShortName": {
     "message": "Roolit"
@@ -628,10 +628,10 @@
     "message": "Toinen paikka etsiä sitä, mitä Scholar katkaisee."
   },
   "optSemanticLabel": {
-    "message": "Täydennä tekijälistat Semantic Scholarilla"
+    "message": "Täydennä kirjoittajaluettelot Semantic Scholarilla"
   },
   "optSemanticLabelHint": {
-    "message": "Kun painat Täydennä, semanticscholar.org kysytään ensin kunkin artikkelin koko tekijälistaa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua luetaan vain siltä osin, mitä semanticscholar.org ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
+    "message": "Kun painat Täydennä, semanticscholar.orgilta kysytään ensin kunkin artikkelin koko kirjoittajaluetteloa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua luetaan vain siltä osin, mitä semanticscholar.org ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
   },
   "yearsTitle": {
     "message": "Korostetut artikkelit vuosittain"

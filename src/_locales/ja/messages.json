@@ -39,10 +39,10 @@
     "message": "優秀論文賞"
   },
   "mkDistinguished": {
-    "message": "功労論文賞"
+    "message": "卓越論文賞"
   },
   "mkRunnerUp": {
-    "message": "次点"
+    "message": "佳作"
   },
   "mkTot": {
     "message": "時の試練賞"
@@ -397,7 +397,7 @@
     "message": "受賞と発表形式"
   },
   "optMarkAwardHint": {
-    "message": "最優秀論文賞、優秀論文賞、功労論文賞、次点、時の試練賞、最優秀論文賞候補。"
+    "message": "最優秀論文賞、優秀論文賞、卓越論文賞、佳作、時の試練賞、最優秀論文賞候補。"
   },
   "optPanelTitle": {
     "message": "集計パネル"
@@ -604,13 +604,13 @@
     "message": "Spotlight と Highlight"
   },
   "markTalks": {
-    "message": "講演"
+    "message": "発表形式"
   },
   "optTalkRows": {
     "message": "パネルの行"
   },
   "optTalkRowsHint": {
-    "message": "講演の種類の数え方です。まとめると、複数に当てはまる論文は1回として数えます。"
+    "message": "発表形式の数え方です。まとめると、複数に当てはまる論文は1回として数えます。"
   },
   "optTalkSeparate": {
     "message": "Oral、Spotlight、Highlight を別々に"
@@ -628,10 +628,10 @@
     "message": "Scholar で途切れた内容を確認できる、もう一つの場所です。"
   },
   "optSemanticLabel": {
-    "message": "Semantic Scholar で著者一覧を補完"
+    "message": "Semantic Scholar で著者リストを補完"
   },
   "optSemanticLabelHint": {
-    "message": "「補完」を押すと、まず semanticscholar.org に各論文の著者一覧全体を問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを読みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
+    "message": "「補完」を押すと、まず semanticscholar.org に各論文の完全な著者リストを問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを読みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
   },
   "yearsTitle": {
     "message": "年別のハイライト論文"
@@ -640,7 +640,7 @@
     "message": "年別の論文数"
   },
   "optPanelYearsHint": {
-    "message": "年ごとに棒を表示し、役割の色で塗り分けます。"
+    "message": "年ごとに棒を表示し、著者順の色で塗り分けます。"
   },
   "coverRepeats": {
     "message": "別の論文と重複する項目：$N1$ 件",
