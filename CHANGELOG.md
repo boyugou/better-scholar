@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.19.0 — 2026-10-13
+
+From a second design review (states and variants):
+
+- **The numbers follow the filters.** The year range, an awards row, a matrix cell and a venue now narrow what *Highlighted papers* (papers, citations, h-index, i10) and the venue list count; the table and the year bars stay whole (they are where a filter is chosen). The block names the range ("First, Second and Last · 2020–2024"). The filter bar says *which* filters ("Showing 25 of 100 papers · Last, CCF A · 2020–2024") and stays when the panel is folded.
+- **Layout warning first.** When Scholar's page layout has changed, the warning is the first thing in the panel, in its own style; the zero table, counts and name help are gone.
+- **Papers whose role is unknown** are a row after the total (they are not in it); **Complete** says what it does and that it asks Scholar before it is pressed; the note on where the ranks come from sits under the table ("CCF 2026 · ICORE 2026", unbreakable and isolated for right-to-left text).
+- Numbers use the language's own digit grouping; the panel carries its language (`lang`) and gets more line height in Japanese, Chinese, Korean, Thai, Arabic and Hebrew; the drop-downs mirror in right-to-left; a list of venues shows "N×" only when N is more than one.
+- **Settings preview**: the four sample rows (what most switches change) are first, with the panel under them; a fade inside the card replaces the mask that smeared the always-light preview in dark mode.
+- **Popup**: shows "Loading… N" while the list is still loading, and a legend for the dash column.
+
 ## 2.18.1 — 2026-10-13
 
 - The long old name is gone from the screen too: the panel's title is the short **Roles & Ranks**, the popup and the settings page say **Scholar Roles & Ranks** (translated names, as in the store listing).

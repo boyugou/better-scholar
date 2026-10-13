@@ -19,6 +19,9 @@
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };
 
+  // a list's name without its edition note, unbreakable and isolated from right-to-left text ("CCF 2026")
+  const listName = (label) => "\u2068" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, "\u00a0") + "\u2069";
+
   function notProfile() {
     main.replaceChildren(
       h("p", { class: "empty" }, t("popupNotProfile")),
@@ -68,13 +71,15 @@
         h("div", { class: "who" }, h("b", {}, data.owner),
           // (a paper whose author list does not have the profile name is not in the table: "19 of 20 papers", and the tooltip says why)
           h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
-            s.absent > 0 ? `${data.loaded - s.absent} ${t("metricsOf")} ${tn("popupPapers", data.loaded, [String(data.loaded)])}` : tn("popupPapers", data.loaded, [String(data.loaded)]))),
+            data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
+              : s.absent > 0 ? `${data.loaded - s.absent} ${t("metricsOf")} ${tn("popupPapers", data.loaded, [String(data.loaded)])}` : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         parts.summary ? seg : null, parts.summary ? table : null,
+        parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked").toLowerCase()) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         parts.summary ? h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
           h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))) : null,
-        parts.summary ? h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => data.edition[k]).join(" · ")])) : null
+        parts.summary ? h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
     draw();

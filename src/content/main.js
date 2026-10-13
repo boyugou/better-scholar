@@ -202,11 +202,12 @@
 
   // ---- panel model --------------------------------------------------------
 
+  const paperOf = (r) => ({
+    status: r.a.status, role: r.a.role, venue: r.a.venue, venueText: r.a.venueText,
+    citations: r.shown, year: r.a.year, highlighted: r.highlighted
+  });
   function papers() {
-    return live().map((r) => ({
-      status: r.a.status, role: r.a.role, venue: r.a.venue, venueText: r.a.venueText,
-      citations: r.shown, year: r.a.year, highlighted: r.highlighted
-    }));
+    return live().map(paperOf);
   }
 
   // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
@@ -226,6 +227,23 @@
   // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range)?
   const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null);
 
+  // The numbers under the filters follow the filters: the year range, an awards row, a matrix cell and a venue narrow what is counted. The table
+  // itself stays whole (it is where a cell is chosen), and so do the year bars (the range is chosen against them); the venue list is not narrowed by its own choice.
+  function scoped(source, { skipVenue = false } = {}) {
+    const f = state.filters;
+    return live().filter((r) => {
+      const a = r.a;
+      if (a.year != null) {
+        if (f.yearStart != null && a.year < f.yearStart) return false;
+        if (f.yearEnd != null && a.year > f.yearEnd) return false;
+      }
+      if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
+      if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
+      if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
+      return true;
+    }).map(paperOf);
+  }
+
   function model() {
     const list = papers();
     const source = currentSource();
@@ -236,7 +254,8 @@
       filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list, 6, prefs.ranks), venueKey: state.venueKey,
+      metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
+      byYear: metrics.byYear(list), topVenues: metrics.topVenues(scoped(source, { skipVenue: true }), 6, prefs.ranks), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
@@ -393,7 +412,7 @@
     for (const row of state.rows) decorate(row);
     // a venue filter whose venue is no longer in the panel's list (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
-    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers(), 6, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(scoped(currentSource(), { skipVenue: true }), 6, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
     if (prefs.panel.show) panel.update(model());
@@ -446,7 +465,7 @@
       if (msg && msg.type === "rr:summary") {
         const list = papers();
         send({
-          ok: true, owner: headerName, loaded: list.length, edition,
+          ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, edition,
           sources: B.prefs.sources(prefs), source: currentSource(),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
           marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)

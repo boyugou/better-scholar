@@ -127,7 +127,7 @@ const unnamed = (page, root) => page.evaluate((sel) => [...document.querySelecto
 // DOM → matrix cells { role: { A, B, C, none, total } }
 const readMatrix = (page) => page.evaluate(() => {
   const out = {};
-  document.querySelectorAll("#rr-panel tbody tr[data-role]").forEach((tr) => {
+  document.querySelectorAll("#rr-panel tr[data-role]").forEach((tr) => {
     const role = tr.dataset.role;
     if (role === "hidden") { out.hidden = parseInt(tr.querySelector(".rr-total").textContent, 10); return; }
     out[role] = {};
@@ -454,7 +454,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await visibleRows(page), lastA);
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
-    assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers`, "the panel says the list is filtered");
+    assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
     await page.click('[data-act="clear-filters"]');
     assert.equal(await visibleRows(page), 100);
     assert.equal(await page.locator('[data-rr="filterbar"]').isVisible(), false, "and the bar goes with the filter");
@@ -1158,7 +1158,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const page = await ctx6.newPage();
     await page.goto(fx6.url);
     await page.waitForSelector("#rr-panel");
-    assert.equal(await page.locator('[data-rr="layout-warning"]').count(), 0);
+    assert.equal(await page.locator('[data-rr="layout-warning"]').isVisible(), false);
     await page.click('[data-rr="unmatched"] summary');
     // the list stays open when the panel is drawn again (a filter changes, more papers arrive)
     await page.check('input[data-act="only"]');
@@ -1186,7 +1186,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.goto(fx7.url);
     await page.waitForSelector("#rr-panel");
     const warn = page.locator('[data-rr="layout-warning"]');
-    assert.equal(await warn.count(), 1);
+    assert.equal(await warn.isVisible(), true);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-layout-warning.png") });
     assert.match(await warn.textContent(), /layout seems to have changed/);
     assert.equal(await page.locator('[data-rr="matrix"]').isVisible(), false, "no table of zeros next to the warning");

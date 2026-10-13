@@ -98,7 +98,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 }
 #rr-panel input[type="text"]:focus { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
 /* the drop-down: a button that shows the choice, and a list under it */
-#rr-panel .rr-dd { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 8px 0 11px; border: 1px solid #dadce0; border-radius: 7px; background: #fff;
+#rr-panel .rr-dd { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding-block: 0; padding-inline: 11px 8px; border: 1px solid #dadce0; border-radius: 7px; background: #fff;
   font: 12px Arial, sans-serif; color: var(--rr-muted); transition: border-color .15s, background .15s, box-shadow .15s; }
 #rr-panel .rr-dd:hover { border-color: #bdc1c6; background: #f8f9fa; }
 #rr-panel .rr-dd[aria-expanded="true"] { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); background: #fff; }
@@ -107,11 +107,11 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-dd[aria-expanded="true"] .rr-dd-caret { transform: rotate(-135deg); margin-top: 3px; }
 #rr-panel .rr-dd-list { position: fixed; z-index: 2147483001; margin: 0; padding: 4px; list-style: none; overflow: auto; background: #fff; border: 1px solid #dadce0; border-radius: 10px;
   box-shadow: 0 8px 24px rgba(60,64,67,.28), 0 2px 6px rgba(60,64,67,.16); font: 12px Arial, sans-serif; color: var(--rr-text); outline: none; }
-#rr-panel .rr-dd-list li { position: relative; padding: 6px 10px 6px 26px; border-radius: 6px; cursor: pointer; white-space: nowrap; outline: none; font-variant-numeric: tabular-nums; }
+#rr-panel .rr-dd-list li { position: relative; padding-block: 6px; padding-inline: 26px 10px; border-radius: 6px; cursor: pointer; white-space: nowrap; outline: none; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-dd-list li:hover { background: #f1f3f4; }
 #rr-panel .rr-dd-list li:focus { background: #e8f0fe; }
 #rr-panel .rr-dd-list li[aria-selected="true"] { font-weight: 700; }
-#rr-panel .rr-dd-list li[aria-selected="true"]::before { content: ""; position: absolute; left: 10px; top: 50%; width: 4px; height: 8px; margin-top: -6px; border-right: 2px solid var(--rr-accent); border-bottom: 2px solid var(--rr-accent); transform: rotate(40deg); }
+#rr-panel .rr-dd-list li[aria-selected="true"]::before { content: ""; position: absolute; inset-inline-start: 10px; top: 50%; width: 4px; height: 8px; margin-top: -6px; border-right: 2px solid var(--rr-accent); border-bottom: 2px solid var(--rr-accent); transform: rotate(40deg); }
 #rr-panel .rr-head{ display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--rr-line); }
 #rr-panel .rr-title{ flex: 1; font-size: 14px; font-weight: 600; color: var(--rr-text); letter-spacing: .01em; }
 #rr-panel .rr-icon{ width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 7px; transition: background .15s, color .15s; color: var(--rr-faint); font-size: 16px; line-height: 1; }
@@ -184,7 +184,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel details[open] > summary::before { transform: rotate(45deg); }
 #rr-panel[dir="rtl"] details:not([open]) > summary::before { transform: rotate(135deg); }
 #rr-panel .rr-variants{ display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
-#rr-panel .rr-variant{ display: inline-flex; align-items: center; gap: 4px; padding: 2px 5px 2px 9px; border-radius: 12px; background: #f1f3f4; font-size: 11.5px; }
+#rr-panel .rr-variant{ display: inline-flex; align-items: center; gap: 4px; padding-block: 2px; padding-inline: 9px 5px; border-radius: 12px; background: #f1f3f4; font-size: 11.5px; }
 #rr-panel .rr-variant button{ color: var(--rr-faint); font-size: 14px; line-height: 1; padding: 0 3px; }
 #rr-panel .rr-variant-auto{ padding-inline-end: 7px; background: transparent; box-shadow: inset 0 0 0 1px #dadce0; }
 #rr-panel .rr-add{ display: flex; gap: 6px; }
@@ -248,9 +248,27 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   .rr-name { text-decoration: underline; }
   .rr-chip { border-color: ButtonText; }
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
+  #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
   #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"] { outline: 2px solid Highlight; }
 }
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }
-#rr-panel.rr-collapsed .rr-filterbar { display: none; }
+#rr-panel .rr-fb-text { flex: 1; min-width: 0; }
+#rr-panel .rr-fb-what { color: var(--rr-muted); }
+
+/* the warning that Scholar's layout changed: the first thing in the panel */
+#rr-panel > .rr-warn { margin: 0; padding: 8px 14px 8px 11px; border-radius: 0; border-bottom: 1px solid var(--rr-line); border-inline-start: 3px solid #f9ab00; }
+#rr-panel .rr-note-src { margin-top: 8px; }
+/* the papers whose position is not known come after the total and are not in it */
+#rr-panel .rr-matrix tfoot .rr-hiddenrow th, #rr-panel .rr-matrix tfoot .rr-hiddenrow td { border-top: 0; padding-top: 1px; color: var(--rr-muted); }
+#rr-panel .rr-matrix tfoot .rr-hiddenrow th { padding-inline-start: 0; }
+#rr-panel .rr-hiddenrow .rr-dot { background: transparent !important; box-shadow: inset 0 0 0 1.5px #9aa0a6; }
+#rr-panel .rr-hiddenrow .rr-total { font-weight: 400; }
+
+/* typography for the scripts that need more air, and headings that wrap in balanced lines */
+#rr-panel .rr-title, #rr-panel .rr-sec-title { text-wrap: balance; }
+#rr-panel .rr-note, #rr-panel .rr-faint { text-wrap: pretty; }
+#rr-panel:lang(ja), #rr-panel:lang(zh), #rr-panel:lang(ko), #rr-panel:lang(th), #rr-panel:lang(ar), #rr-panel:lang(he) { line-height: 1.6; }
+#rr-panel:lang(th) .rr-faint, #rr-panel:lang(ar) .rr-faint, #rr-panel:lang(he) .rr-faint, #rr-panel:lang(ja) .rr-faint, #rr-panel:lang(zh) .rr-faint, #rr-panel:lang(ko) .rr-faint { font-size: 12px; line-height: 1.55; }
+#rr-panel:lang(ja) { word-break: auto-phrase; }

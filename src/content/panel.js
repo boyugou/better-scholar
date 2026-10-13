@@ -82,7 +82,9 @@
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
     const actions = h("div", { class: "rr-actions rr-copybar" });
-    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions);
+    // where the ranks in the table come from: under the table, next to what it explains
+    const noteBox = h("div", { class: "rr-faint rr-note-src", "data-rr": "note" });
+    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions, noteBox);
 
     // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies
     const marksRows = h("div", { class: "rr-markrows" });
@@ -113,8 +115,7 @@
       h("summary", {}, t("variantsTitle")),
       variantList,
       h("div", { class: "rr-add" }, variantInput, h("button", { class: "rr-btn", type: "button", onClick: addVariant }, t("variantAdd"))));
-    const noteBox = h("div", { class: "rr-faint", "data-rr": "note" });
-    const footSec = h("div", { class: "rr-sec" }, variantBox, noteBox);
+    const footSec = h("div", { class: "rr-sec" }, variantBox);
 
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
@@ -122,8 +123,10 @@
     // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
     // a bar that says the list is filtered, by how much, and clears every filter
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true });
+    // Scholar's page changed under us: the warning is the first thing in the panel
+    const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
-    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir() }, head, filterBar, body, announce);
+    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir(), lang: B.dom.langTag() }, head, warnBar, filterBar, body, announce);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
@@ -154,15 +157,17 @@
             "aria-pressed": pressed({ role: r.role, tier: c }), "aria-label": `${t(ROLE_KEY[r.role])} ${tierText(c)}: ${r[c]}`,
             onClick: () => cb.onSelect({ role: r.role, tier: c }) }, r[c] ? String(r[c]) : "·"))),
         h("td", { class: "rr-total" }, String(r.total))));
+      let hiddenRow = null;
       if (s.hidden) {
-        bodyRows.push(h("tr", { "data-role": "hidden", title: t("tipHidden") },
+        hiddenRow = (h("tr", { "data-role": "hidden", class: "rr-hiddenrow", title: t("tipHidden") },
           h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }),
             onClick: () => cb.onSelect({ role: "hidden", tier: undefined }) }, dot("hidden"), t("roleHidden"))),
           s.columns.length ? h("td", { colspan: String(s.columns.length), class: "rr-faint" }, "") : null,
           h("td", { class: "rr-total" }, String(s.hidden))));
       }
       const foot = h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)));
-      matrixBox.replaceChildren(h("table", { class: "rr-matrix" }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot)));
+      // (the papers whose position is not known are not in the total: their row comes after it)
+      matrixBox.replaceChildren(h("table", { class: "rr-matrix" }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
     }
 
     function renderActions() {
@@ -198,16 +203,17 @@
       status.push(loadedLine);
       if (c.loadMessage) status.push(h("div", { class: "rr-faint", "data-rr": "load-msg" }, c.loadMessage));
       if (c.hidden > 0 || c.resolving) {
-        status.push(h("div", { class: "rr-cover-line", title: t("resolveHint") },
+        status.push(h("div", { class: "rr-cover-line" },
           h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
           c.resolving ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelResolve() }, t("cancel"))
             : h("button", { class: "rr-link", type: "button", "data-act": "resolve", onClick: () => cb.onResolve() }, t("resolveBtn"))));
+        if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint" }, t("resolveHint")));        // (what it does, and that it asks Scholar: before it is pressed, not in a tooltip)
       }
       if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg" }, c.resolveMessage));
       // the same paper listed twice: say so, and where the setting is (the panel itself does not write settings)
       if (c.repeats > 0) status.push(h("div", { class: "rr-cover-line", "data-rr": "repeats" }, h("span", { class: "rr-note" }, t("coverRepeats", [String(c.repeats)])),
         h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
-      if (c.absent > 0) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));
+      if (c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));        // (when the layout is broken every paper is "absent": that is the warning's news)
       // spellings of the owner's name found in those very papers: one click adds one
       if (parts.status) lines.push(...status);
       if (parts.names && c.absent > 0 && m.nameHints.suggestions.length) {
@@ -224,14 +230,15 @@
         } }, t("copyUnmatched"));
         lines.push(h("details", { "data-rr": "unmatched", open: unmatchedOpen, onToggle: (e) => { unmatchedOpen = e.target.open; } },
           h("summary", {}, tn("coverUnmatched", total, [String(total)])),
-          h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, h("b", {}, u.count + "× "), u.venue))),
+          h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
           h("div", { class: "rr-actions" }, copyBtn,
             h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink")))));
       }
-      // Scholar changes its markup now and then: say so instead of silently showing nothing
+      // Scholar changes its markup now and then: say so, at the top, instead of silently showing nothing
+      warnBar.hidden = !c.layoutBroken;
       if (c.layoutBroken) {
-        lines.unshift(h("div", { class: "rr-warn", "data-rr": "layout-warning" }, t("layoutWarning") + " ",
-          h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/user=[^&]+/, "user=…")), target: "_blank", rel: "noopener" }, t("reportLink"))));
+        warnBar.replaceChildren(t("layoutWarning") + " ",
+          h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/user=[^&]+/, "user=…")), target: "_blank", rel: "noopener" }, t("reportLink")));
       }
       coverSec.replaceChildren(...lines);
     }
@@ -245,13 +252,14 @@
 
     function renderMetrics(m) {
       const hi = m.metrics.highlighted, all = m.metrics.all;
-      const fmt = (n) => n.toLocaleString("en-US");
+      const fmt = (n) => { try { return n.toLocaleString(B.dom.langTag() + "-u-nu-latn"); } catch (e) { return n.toLocaleString("en-US"); } };
       const row = (key, a, b) => h("div", { class: "rr-m", "data-metric": key },
         h("span", {}, t(key)), h("span", {}, h("b", {}, fmt(a)), h("i", {}, t("metricsOf")), h("span", { class: "rr-faint" }, fmt(b))));
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");
       try { scope = new Intl.ListFormat(B.dom.langTag(), { style: "long", type: "conjunction" }).format(roleNames); } catch (e) { /* the plain list */ }
+      if (scope && (m.filters.yearStart != null || m.filters.yearEnd != null)) scope += " · " + (m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…");
       metricsSec.replaceChildren(...[                                       // (replaceChildren(null) would print "null")
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
         scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,
@@ -304,11 +312,22 @@
       metricsSec.hidden = !m.prefs.panel.metrics;
       summarySec.hidden = !m.prefs.panel.summary;
       variantBox.hidden = !m.prefs.panel.names;
-      noteBox.hidden = !m.prefs.panel.summary;                              // the note says where the ranks in the table come from
-      footSec.hidden = variantBox.hidden && noteBox.hidden;
+      footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;
-      if (m.filterBar) filterBar.replaceChildren(h("span", {}, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)])),
-        h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
+      if (m.filterBar) {
+        // (named with the words the panel already uses: the cell, the awards row, the venue, "Only highlighted", the years)
+        const parts = [];
+        if (m.selection) {
+          const srcName = m.source === "core" ? t("srcCore") : t("srcCcf");
+          parts.push([m.selection.role ? t(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? t("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
+        }
+        if (m.markGroup) parts.push(t(MARK_KEY[m.markGroup]));
+        if (m.venueKey) parts.push(m.venueKey);
+        if (m.filters.onlyHighlighted) parts.push(t("onlyHighlighted"));
+        if (m.filters.yearStart != null || m.filters.yearEnd != null) parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+        filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, " · " + parts.join(" · ")) : null),
+          h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
+      }
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
       coverSec.hidden = !coverSec.childNodes.length;
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
@@ -320,16 +339,15 @@
       }
       // in the wide layout the year bars and the venue list join the first column (the shorter one): they are looked at like the table and the awards
       const wide = el.classList.contains("rr-wide");
-      for (const sec of [yearsSec, venuesSec]) {
-        if (wide && sec.parentNode !== colAEl) colAEl.append(sec);
-        else if (!wide && sec.parentNode !== colBEl) colBEl.insertBefore(sec, coverSec);
-      }
-      const extra = !yearsSec.hidden || !venuesSec.hidden;
-      const colA = !summarySec.hidden || !marksSec.hidden || (wide && extra), colB = !filtersSec.hidden || !metricsSec.hidden || (!wide && extra) || !coverSec.hidden || !footSec.hidden;
+      if (wide && yearsSec.parentNode !== colAEl) colAEl.append(yearsSec);
+      else if (!wide && yearsSec.parentNode !== colBEl) colBEl.insertBefore(yearsSec, venuesSec);
+      const colA = !summarySec.hidden || !marksSec.hidden || (wide && !yearsSec.hidden), colB = !filtersSec.hidden || !metricsSec.hidden || (!wide && !yearsSec.hidden) || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
       el.classList.toggle("rr-onecol", !(colA && colB));
       syncFilters(m); renderMetrics(m); renderVariants(m);
-      noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
+      // (the lists' names without their edition note, unbreakable, and isolated so that right-to-left text cannot reorder them: "CCF 2026 · ICORE 2026")
+      const listName = (label) => "\u2068" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, "\u00a0") + "\u2069";
+      noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ")]);
     }
 
     function flash(kind) {
