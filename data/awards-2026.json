@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6650
+  "count": 6654
  },
  "entries": [
   {
@@ -6350,6 +6350,72 @@
    "track": "main",
    "source": "https://aclanthology.org/2026.acl-long.2003/",
    "evidence": "ViLL-E: Video LLM Embeddings for Retrieval — Outstanding Paper"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "CATR: Combinatorial-Dependence Audio-Queried Transformer for Audio-Visual Video Segmentation",
+   "authors": [
+    "Kexin Li",
+    "Zongxin Yang",
+    "Lei Chen",
+    "Yi Yang",
+    "Jun Xiao"
+   ],
+   "track": "main",
+   "source": "https://2023.acmmm.org/",
+   "evidence": "ACM MM 2023 Best Paper: CATR: Combinatorial-Dependence Audio-Queried Transformer for Audio-Visual Video Segmentation — Kexin Li, Zongxin Yang, Lei Chen, Yi Yang, Jun Xiao"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Cal-SFDA: Source-Free Domain-adaptive Semantic Segmentation with Differentiable Expected Calibration Error",
+   "authors": [
+    "Zixin Wang",
+    "Yadan Luo",
+    "Zhi Chen",
+    "Sen Wang",
+    "Zi Huang"
+   ],
+   "track": "main",
+   "source": "https://2023.acmmm.org/",
+   "evidence": "ACM MM 2023 Best Student Paper: Cal-SFDA: Source-Free Domain-adaptive Semantic Segmentation with Differentiable Expected Calibration Error — Zixin Wang, Yadan Luo, Zhi Chen, Sen Wang, Zi Huang"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Open-Vocabulary 3D Afordance Understanding via Functional Text Enhancement and Multilevel Representation Alignment",
+   "authors": [
+    "Lin Wu",
+    "Wei Wei",
+    "Peizhuo Yu",
+    "Jianglin Lan"
+   ],
+   "track": "main",
+   "source": "https://2025.acmmm.org/awards",
+   "evidence": "ACM MM 2025 Best Paper: Open-Vocabulary 3D Afordance Understanding via Functional Text Enhancement and Multilevel Representation Alignment — Lin Wu, Wei Wei, Peizhuo Yu, Jianglin Lan"
+  },
+  {
+   "venue": "ACM MM",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Building Embodied EvoAgent: A Brain-inspired Paradigm for Bridging Multimodal Large Models and World Models",
+   "authors": [
+    "Junyu Gao",
+    "Xuan Yao",
+    "Yong Rui",
+    "Changsheng Xu"
+   ],
+   "track": "main",
+   "source": "https://2025.acmmm.org/awards",
+   "evidence": "ACM MM 2025 Best Student Paper: Building Embodied EvoAgent: A Brain-inspired Paradigm for Bridging Multimodal Large Models and World Models — Junyu Gao, Xuan Yao, Yong Rui, Changsheng Xu"
   },
   {
    "venue": "AISTATS",

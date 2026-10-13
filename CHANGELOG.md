@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.74 — 2026-10-12
+
+- ACM Multimedia's best paper and best student paper of 2023 and 2025 (4 papers; the list had none for ACM MM) from the conference's own pages (`tot.mjs acmmm-awards`); 2022's page lists candidates only and 2024's names none. The list has 6654 awards.
+
 ## 2.10.73 — 2026-10-12
 
 - AutomotiveUI 2024's best paper (What Characterizes “Situations” in Situation Awareness?): the front page names the title, the proceedings page the authors (`tot.mjs autoui-best`). The list has 6650 awards.
