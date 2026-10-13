@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "of"
-  },
   "dataNote": {
     "message": "Ranks come from today's $N1$ lists, not the rank at publication time. CCF states that its list is not a basis for academic evaluation.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "No author position is switched on, so nothing is highlighted."
+  },
+  "metricsOfN": {
+    "message": "$N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ of $N2$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar did not accept the API key, so Scholar's own pages were used for the rest."
   }
 }

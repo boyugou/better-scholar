@@ -270,9 +270,6 @@
   "mI10": {
     "message": "Indice i10"
   },
-  "metricsOf": {
-    "message": "sur"
-  },
   "dataNote": {
     "message": "Les rangs proviennent des listes actuelles de $N1$, et non du rang au moment de la publication. La CCF précise que sa liste ne doit pas servir de base à l’évaluation académique.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "Aucune position d’auteur n’est activée, donc rien n’est mis en évidence."
+  },
+  "metricsOfN": {
+    "message": "$N1$ sur $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ sur $N2$ articles",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar n’a pas accepté la clé d’API ; pour la suite, les pages de Scholar ont été utilisées."
   }
 }

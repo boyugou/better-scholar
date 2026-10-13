@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "dari"
-  },
   "dataNote": {
     "message": "Peringkat berasal dari daftar $N1$ saat ini, bukan peringkat saat publikasi. CCF menyatakan daftarnya bukan dasar penilaian akademik.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Tidak ada posisi penulis yang aktif, jadi tidak ada yang disorot."
+  },
+  "metricsOfN": {
+    "message": "$N1$ dari $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ dari $N2$ makalah",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar tidak menerima kunci API, jadi sisanya menggunakan halaman Scholar sendiri."
   }
 }

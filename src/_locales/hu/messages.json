@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "/"
-  },
   "dataNote": {
     "message": "A rangok a mai $N1$ listákból származnak, nem a megjelenéskori rangból. A CCF kijelenti, hogy listája nem alapja a tudományos értékelésnek.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Egyetlen szerzői pozíció sincs bekapcsolva, ezért semmi sincs kiemelve."
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ / $N2$ cikk",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "A Semantic Scholar nem fogadta el az API-kulcsot, ezért a továbbiakhoz a Scholar saját oldalait használtuk."
   }
 }

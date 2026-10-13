@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "trên"
-  },
   "dataNote": {
     "message": "Hạng lấy từ danh sách $N1$ hiện hành, không phải hạng tại thời điểm xuất bản. CCF nêu rõ danh sách của họ không phải căn cứ đánh giá học thuật.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Chưa bật vị trí tác giả nào, nên không có bài nào được tô nổi."
+  },
+  "metricsOfN": {
+    "message": "$N1$ trên $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ trên $N2$ bài",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar không chấp nhận khóa API, nên phần còn lại đã dùng trang của chính Scholar."
   }
 }

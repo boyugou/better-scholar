@@ -77,7 +77,7 @@
           // (a paper whose author list does not have the profile name is not in the table: "19 of 20 papers", and the tooltip says why)
           h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
             data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
-              : s.absent > 0 ? `${data.loaded - s.absent} ${t("metricsOf")} ${tn("popupPapers", data.loaded, [String(data.loaded)])}` : tn("popupPapers", data.loaded, [String(data.loaded)]))),
+              : s.absent > 0 ? t("popupPapersOf", [String(data.loaded - s.absent), String(data.loaded)]) : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         parts.summary ? seg : null, parts.summary ? table : null,
         parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,

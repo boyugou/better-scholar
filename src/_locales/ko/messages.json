@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "/"
-  },
   "dataNote": {
     "message": "등급은 논문 발표 당시가 아니라 현재의 $N1$ 목록 기준입니다. CCF는 자사 목록을 학술 평가의 근거로 삼아서는 안 된다고 밝히고 있습니다.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "켜진 저자 순서가 없어서 강조되는 것이 없습니다."
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "논문 $N2$편 중 $N1$편",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar가 API 키를 받아들이지 않아, 나머지는 Scholar 자체 페이지를 사용했습니다."
   }
 }

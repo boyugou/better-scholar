@@ -1062,6 +1062,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
             return out;
           });
           if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+          // "11 of 12" in the language's own order: Hindi puts the total first
+          if (lang === "hi" && mode === "sidebar") {
+            const order = await page.evaluate(() => [...document.querySelector('[data-metric="mPapers"] > span:last-child').childNodes].map((n) => n.nodeName));
+            if (order.join() !== "SPAN,I,B") bad.push(`hi: the total should come first: ${order.join()}`);
+          }
           // the role words of the table (both rankings) stay inside their column: no label runs into a number
           for (const src of ["ccf", "core"]) {
             await page.click(`button[data-src="${src}"]`);

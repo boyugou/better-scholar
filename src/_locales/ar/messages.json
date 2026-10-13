@@ -258,9 +258,6 @@
   "mI10": {
     "message": "معامل i10"
   },
-  "metricsOf": {
-    "message": "من"
-  },
   "dataNote": {
     "message": "التصنيفات مأخوذة من قوائم $N1$ الحالية، لا من التصنيف وقت النشر. تذكر CCF أن قائمتها ليست أساسًا للتقييم الأكاديمي.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "لا يوجد موضع للمؤلف مفعّل، لذلك لا يُبرَز شيء."
+  },
+  "metricsOfN": {
+    "message": "$N1$ من $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "الأوراق: $N1$ من $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "لم تقبل Semantic Scholar مفتاح API، لذلك استُخدمت صفحات Scholar نفسها للباقي."
   }
 }

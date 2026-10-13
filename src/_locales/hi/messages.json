@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "में से"
-  },
   "dataNote": {
     "message": "रैंक आज की $N1$ सूचियों से ली गई हैं, प्रकाशन के समय की रैंक नहीं। CCF के अनुसार उसकी सूची शैक्षणिक मूल्यांकन का आधार नहीं है।",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "लेखक का कोई स्थान चालू नहीं है, इसलिए कुछ भी हाइलाइट नहीं होता।"
+  },
+  "metricsOfN": {
+    "message": "$N2$ में से $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N2$ में से $N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar ने API कुंजी स्वीकार नहीं की, इसलिए बाकी के लिए Scholar के अपने पेज इस्तेमाल किए गए।"
   }
 }

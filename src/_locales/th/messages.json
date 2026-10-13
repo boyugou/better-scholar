@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "จาก"
-  },
   "dataNote": {
     "message": "อันดับมาจากรายชื่อ $N1$ ปัจจุบัน ไม่ใช่อันดับ ณ เวลาที่ตีพิมพ์ CCF ระบุว่ารายชื่อของตนไม่ใช่เกณฑ์ประเมินทางวิชาการ",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "ยังไม่ได้เปิดตำแหน่งผู้เขียนใดเลย จึงไม่มีอะไรถูกไฮไลต์"
+  },
+  "metricsOfN": {
+    "message": "$N1$ จาก $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ จาก $N2$ เรื่อง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar ไม่ยอมรับคีย์ API จึงใช้หน้าของ Scholar เองสำหรับส่วนที่เหลือ"
   }
 }

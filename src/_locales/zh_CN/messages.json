@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10 指数"
   },
-  "metricsOf": {
-    "message": "/"
-  },
   "dataNote": {
     "message": "等级取自当前的 $N1$ 名录，并非论文发表时的等级。CCF 声明其目录不作为学术评价依据。",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "没有打开任何作者位次，所以没有高亮的论文。"
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ / $N2$ 篇论文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar 不接受这个 API 密钥，其余的改为读取 Scholar 自己的页面。"
   }
 }

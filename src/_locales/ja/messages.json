@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10指数"
   },
-  "metricsOf": {
-    "message": "/"
-  },
   "dataNote": {
     "message": "ランクは論文の発表時ではなく、現在の $N1$ リストに基づきます。CCF は、そのリストを学術評価の根拠にしないよう明記しています。",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "著者順がどれもオンになっていないため、何もハイライトされません。"
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N2$ 件中 $N1$ 件の論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar が API キーを受け付けなかったため、残りは Scholar 自身のページを使用しました。"
   }
 }

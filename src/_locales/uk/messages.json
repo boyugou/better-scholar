@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-індекс"
   },
-  "metricsOf": {
-    "message": "з"
-  },
   "dataNote": {
     "message": "Ранги беруться з актуальних списків $N1$, а не на момент публікації. CCF зазначає, що його список не є підставою для академічного оцінювання.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Жодну авторську позицію не увімкнено, тому нічого не виділяється."
+  },
+  "metricsOfN": {
+    "message": "$N1$ з $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "Статей: $N1$ з $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar не прийняв ключ API, тож решту взято зі сторінок самого Scholar."
   }
 }

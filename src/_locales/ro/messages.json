@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "din"
-  },
   "dataNote": {
     "message": "Rangurile provin din listele $N1$ de azi, nu din rangul de la data publicării. CCF precizează că lista sa nu este o bază pentru evaluarea academică.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Nicio poziție de autor nu este activată, așa că nimic nu este evidențiat."
+  },
+  "metricsOfN": {
+    "message": "$N1$ din $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "Lucrări: $N1$ din $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar nu a acceptat cheia API, așa că restul a fost preluat din paginile Scholar."
   }
 }

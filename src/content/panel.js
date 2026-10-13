@@ -278,8 +278,11 @@
     function renderMetrics(m) {
       const hi = m.metrics.highlighted, all = m.metrics.all;
       const fmt = (n) => { try { return n.toLocaleString(B.dom.langTag() + "-u-nu-latn"); } catch (e) { return n.toLocaleString("en-US"); } };
+      // "11 of 12" in the language's own order (Hindi puts the total first): the message carries both numbers, which are put in as styled nodes
+      const ofNodes = (a, b) => t("metricsOfN", ["\uE000", "\uE001"]).split(/(\uE000|\uE001)/).filter(Boolean)
+        .map((part) => (part === "\uE000" ? h("b", {}, fmt(a)) : part === "\uE001" ? h("span", { class: "rr-faint" }, fmt(b)) : h("i", {}, part)));
       const row = (key, a, b) => h("div", { class: "rr-m", "data-metric": key },
-        h("span", {}, t(key)), h("span", {}, h("b", {}, fmt(a)), h("i", {}, t("metricsOf")), h("span", { class: "rr-faint" }, fmt(b))));
+        h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");

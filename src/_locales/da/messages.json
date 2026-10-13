@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10-indeks"
   },
-  "metricsOf": {
-    "message": "af"
-  },
   "dataNote": {
     "message": "Rangerne kommer fra dagens $N1$-lister, ikke rangen på publiceringstidspunktet. CCF angiver, at listen ikke er et grundlag for akademisk evaluering.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "Ingen forfatterplacering er slået til, så intet fremhæves."
+  },
+  "metricsOfN": {
+    "message": "$N1$ af $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ af $N2$ artikler",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar accepterede ikke API-nøglen, så resten blev hentet fra Scholars egne sider."
   }
 }

@@ -270,9 +270,6 @@
   "mI10": {
     "message": "מדד i10"
   },
-  "metricsOf": {
-    "message": "מתוך"
-  },
   "dataNote": {
     "message": "הדירוגים לקוחים מרשימות $N1$ של היום, ולא מהדירוג בזמן הפרסום. CCF מציינת שהרשימה שלה אינה בסיס להערכה אקדמית.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "לא מופעל אף מיקום של מחבר, ולכן שום דבר לא מודגש."
+  },
+  "metricsOfN": {
+    "message": "$N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "מאמרים: $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar לא קיבל את מפתח ה-API, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
   }
 }

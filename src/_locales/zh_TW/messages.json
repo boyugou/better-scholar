@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10 指數"
   },
-  "metricsOf": {
-    "message": "／"
-  },
   "dataNote": {
     "message": "等級依據目前的 $N1$ 清單，並非論文發表當時的等級。CCF 聲明其清單不應作為學術評價的依據。",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "沒有開啟任何作者位次，所以沒有標示的論文。"
+  },
+  "metricsOfN": {
+    "message": "$N1$／$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$／$N2$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar 不接受這個 API 金鑰，其餘改為讀取 Scholar 自己的頁面。"
   }
 }

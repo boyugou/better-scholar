@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.20.2 — 2026-10-13
+
+- "11 of 12" is written in each language's own word order (Hindi puts the total first: "12 में से 11"); the popup's "19 of 20 papers" is one message per language instead of a number, the word "of" and a noun glued together (which read wrongly in Russian, Ukrainian, Czech, Polish, Romanian, Arabic and Hindi).
+- A Semantic Scholar API key that is refused (or cannot be sent) stops further asking and says so, then Scholar's own pages are used.
+
 ## 2.20.1 — 2026-10-13
 
 Fixes from the second independent code review:

@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "z"
-  },
   "dataNote": {
     "message": "Ranky pocházejí z aktuálních seznamů $N1$, ne z doby vydání. CCF uvádí, že její seznam není podkladem pro akademické hodnocení.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Není zapnutá žádná autorská pozice, takže nic není zvýrazněno."
+  },
+  "metricsOfN": {
+    "message": "$N1$ z $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "Práce: $N1$ z $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar nepřijal API klíč, takže zbytek byl načten ze stránek Scholar."
   }
 }

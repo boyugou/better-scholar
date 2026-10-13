@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10-indeksi"
   },
-  "metricsOf": {
-    "message": "/"
-  },
   "dataNote": {
     "message": "Sıralamalar yayın zamanındaki değil, bugünkü $N1$ listelerinden gelir. CCF, listesinin akademik değerlendirmeye esas olmadığını belirtir.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "Hiçbir yazar sırası açık değil, bu yüzden hiçbir şey vurgulanmıyor."
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ / $N2$ makale",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar API anahtarını kabul etmedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
   }
 }

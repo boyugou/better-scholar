@@ -270,9 +270,6 @@
   "mI10": {
     "message": "i10-index"
   },
-  "metricsOf": {
-    "message": "van"
-  },
   "dataNote": {
     "message": "De rangen komen uit de huidige $N1$-lijsten, niet uit de rang ten tijde van publicatie. CCF stelt dat zijn lijst geen basis is voor academische beoordeling.",
     "placeholders": {
@@ -699,5 +696,30 @@
   },
   "noRolesHint": {
     "message": "Geen auteurspositie staat aan, dus er wordt niets gemarkeerd."
+  },
+  "metricsOfN": {
+    "message": "$N1$ van $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "$N1$ van $N2$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar heeft de API-sleutel niet geaccepteerd, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
   }
 }

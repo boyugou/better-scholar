@@ -258,9 +258,6 @@
   "mI10": {
     "message": "i10-индекс"
   },
-  "metricsOf": {
-    "message": "из"
-  },
   "dataNote": {
     "message": "Ранги берутся из актуальных списков $N1$, а не на момент публикации. CCF заявляет, что его список не служит основанием для академической оценки.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Ни одна авторская позиция не включена, поэтому ничего не выделяется."
+  },
+  "metricsOfN": {
+    "message": "$N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "Статей: $N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar не принял ключ API, поэтому остальное взято со страниц самого Scholar."
   }
 }

@@ -258,9 +258,6 @@
   "mI10": {
     "message": "Indeks i10"
   },
-  "metricsOf": {
-    "message": "z"
-  },
   "dataNote": {
     "message": "Rankingi pochodzą z aktualnych list $N1$, a nie z chwili publikacji. CCF zastrzega, że jego lista nie jest podstawą oceny naukowej.",
     "placeholders": {
@@ -681,5 +678,30 @@
   },
   "noRolesHint": {
     "message": "Żadna pozycja autora nie jest włączona, więc nic nie jest wyróżnione."
+  },
+  "metricsOfN": {
+    "message": "$N1$ z $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "popupPapersOf": {
+    "message": "Prace: $N1$ z $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar nie zaakceptował klucza API, więc resztę pobrano z własnych stron Scholar."
   }
 }
