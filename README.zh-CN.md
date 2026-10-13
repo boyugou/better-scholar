@@ -11,7 +11,7 @@ _English name: Scholar Roles & Ranks_
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="Google Scholar 作者主页：按角色着色的论文行、CCF / CORE 等级徽章、获奖标签与右侧的角色 × 等级汇总面板"></p>
 <p align="center"><sub>虚构的作者主页（场所名称真实，论文为虚构）：按作者位次着色的行、场所旁的 CCF / CORE 徽章、右侧的角色 × 等级汇总。</sub></p>
-<p align="center"><img src="docs/settings.png" width="640" alt="设置页：作者位次、等级名录、获奖与报告形式、摘要面板的开关，以及实时预览"></p>
+<p align="center"><img src="docs/settings.png" width="760" alt="设置页：作者位次、等级名录、获奖与报告形式、摘要面板的开关，以及实时预览"></p>
 <p align="center"><sub>设置页（面板或工具栏弹窗里的滑块按钮）：选择显示什么，带实时预览。</sub></p>
 
 - **角色 × 等级汇总**：页面里的一张小矩阵——一作 / 共一 / 二作 / 末位 × CCF A / B / C /

@@ -799,6 +799,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     for (let i = 0; i < 50 && (await opts.textContent('[data-act="clear-cache"]')) === "Cleared"; i++) await opts.waitForTimeout(100);
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.screenshot({ path: path.join(outDir, "settings.png"), fullPage: true });
+    // (the README and website picture: the header, the first cards and the whole live preview, so the window is made tall for it)
+    await opts.setViewportSize({ width: 1360, height: 1500 });
+    for (let i = 0; i < 40 && (await opts.evaluate(() => document.querySelector(".preview").classList.contains("more"))); i++) await opts.waitForTimeout(100);
+    await opts.waitForTimeout(300);
+    await opts.screenshot({ path: path.join(outDir, "settings-top.png"), fullPage: true, clip: { x: 0, y: 0, width: 1360, height: 1180 } });
+    await opts.setViewportSize({ width: 1360, height: 900 });
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (light): text under 4.5:1");
     assert.deepEqual(await unnamed(opts, "body"), [], "settings page: a control without an accessible name");
     await opts.emulateMedia({ colorScheme: "dark" });

@@ -11,7 +11,7 @@ paper, the author's role (first / second / last…) and the venue's **CCF** and
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
 <p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
-<p align="center"><img src="docs/settings.png" width="640" alt="The settings page: switches for author positions, rank lists, awards and talks and the summary panel, with a live preview"></p>
+<p align="center"><img src="docs/settings.png" width="760" alt="The settings page: switches for author positions, rank lists, awards and talks and the summary panel, with a live preview"></p>
 <p align="center"><sub>The settings page (sliders button in the panel or the toolbar popup): choose what is shown, with a live preview.</sub></p>
 
 - **Role × rank summary** — a small matrix in the page: first / co-first / second /
