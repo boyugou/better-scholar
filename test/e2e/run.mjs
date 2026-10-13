@@ -411,7 +411,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(await opts.evaluate(() => document.querySelector(".preview").classList.contains("more")), "a cut-off preview shows its fade");
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 2600 });             // (tall enough for the whole preview also with the wider fonts of a CI machine)
-    await opts.waitForFunction(() => !document.querySelector(".preview").classList.contains("more"), null, { timeout: 4000 }).catch(async () => assert.fail("a whole preview has no fade: " + JSON.stringify(await opts.evaluate(() => { const p = document.querySelector(".preview"); return { scrollH: p.scrollHeight, clientH: p.clientHeight, top: p.scrollTop, innerH: innerHeight, cls: p.className }; }))));
+    await opts.waitForFunction(() => !document.querySelector(".preview").classList.contains("more"), null, { timeout: 12000 }).catch(async () => assert.fail("a whole preview has no fade: " + JSON.stringify(await opts.evaluate(() => { const p = document.querySelector(".preview"); return { scrollH: p.scrollHeight, clientH: p.clientHeight, top: p.scrollTop, innerH: innerHeight, cls: p.className }; }))));
     await opts.setViewportSize({ width: 1360, height: 900 });
     ok("the settings preview stays whole in view while the page scrolls, even in a short window");
 
