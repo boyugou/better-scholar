@@ -36,6 +36,7 @@
       marks: pick(r.marks, MARK_GROUPS),           // award / oral / spotlight / highlight chips and counts
       panel: pick(r.panel, PANEL_PARTS),           // the panel itself and each of its parts: the role × rank table (with its copy buttons and data note), the award / talk counts, the filters, the citation totals, the loaded-papers / unranked-venues status, the name-spelling help
       hide: pickOff(r.hide, HIDE_PARTS),           // Scholar's own blocks to hide (nothing is hidden until asked): they repeat what the panel shows or are not wanted
+      mergeDuplicates: flag(r.mergeDuplicates, false),   // one entry per paper when Scholar lists it twice (title differing in capitals or punctuation)
       autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded
     };
   }

@@ -531,5 +531,25 @@
   },
   "optHideAccessHint": {
     "message": "侧栏里的公开访问方块。"
+  },
+  "optMergeTitle": {
+    "message": "重复条目"
+  },
+  "optMergeHint": {
+    "message": "有些主页会把同一篇论文列出好几次。"
+  },
+  "optMergeLabel": {
+    "message": "合并重复论文"
+  },
+  "optMergeLabelHint": {
+    "message": "标题相同（忽略大小写、重音和标点）且第一作者相同的条目合为一条：保留引用最多的那条，并显示全部条目的引用之和。面板里只计一次。"
+  },
+  "mergedTip": {
+    "message": "由 $N1$ 条合并：显示全部条目的引用之和",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

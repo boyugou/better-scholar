@@ -549,5 +549,25 @@
   },
   "optHideAccessHint": {
     "message": "The public access box in the sidebar."
+  },
+  "optMergeTitle": {
+    "message": "Duplicate entries"
+  },
+  "optMergeHint": {
+    "message": "Some profiles list one paper several times."
+  },
+  "optMergeLabel": {
+    "message": "Merge duplicates"
+  },
+  "optMergeLabelHint": {
+    "message": "Entries with the same title (capitals, accents and punctuation aside) and the same first author become one: the most cited stays and shows the citations of all of them. The panel counts it once."
+  },
+  "mergedTip": {
+    "message": "Merged from $N1$ entries: the citations of all of them",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

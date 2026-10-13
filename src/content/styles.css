@@ -200,3 +200,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 
 /* Scholar's own side blocks, hidden when asked in the settings */
 html.rr-hide-cited #gsc_rsb_cit, html.rr-hide-coauthors #gsc_rsb_co, html.rr-hide-access #gsc_rsb_mnd { display: none !important; }
+
+/* an entry merged into its more cited twin */
+tr.rr-dup { display: none !important; }
+td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offset: 3px; }

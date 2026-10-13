@@ -230,6 +230,31 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     }
     ok("Scholar's own Cited by / Co-authors / Public access blocks are shown by default and each can be hidden from the settings");
 
+    // -- 6a2. merging duplicates: a twin differing only in capitals and punctuation is hidden, the more cited entry shows the total; off by default
+    const twin = await page.evaluate(() => {
+      const tr = document.querySelector("#gsc_a_b tr.gsc_a_tr");
+      const c = tr.cloneNode(true);
+      const a = c.querySelector("a.gsc_a_at");
+      a.textContent = a.textContent.toUpperCase() + ".";
+      a.setAttribute("href", a.getAttribute("href").replace(/citation_for_view=[^&]+/, "citation_for_view=TEST:TWIN"));
+      c.querySelector("td.gsc_a_c a").textContent = "5";
+      document.querySelector("#gsc_a_b").append(c);
+      return { own: parseInt(tr.querySelector("td.gsc_a_c a").textContent, 10), rows: document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length };
+    });
+    const visibleRows = () => page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length);
+    await page.waitForTimeout(300);
+    assert.equal(await visibleRows(), twin.rows, "duplicates are kept by default");
+    await setPref(opts, "mergeDuplicates", true);
+    await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, twin.rows - 1);
+    const merged = await page.evaluate(() => { const a = document.querySelector("#gsc_a_b tr.gsc_a_tr td.gsc_a_c a"); return { text: a.textContent, title: a.title }; });
+    assert.equal(merged.text, String(twin.own + 5), "the entry that stays shows the citations of both");
+    assert.match(merged.title, /2/, "and says it stands for two entries");
+    await setPref(opts, "mergeDuplicates", false);
+    await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, twin.rows);
+    assert.equal(await page.evaluate(() => document.querySelector("#gsc_a_b tr.gsc_a_tr td.gsc_a_c a").textContent), String(twin.own), "switched off: Scholar's own number is back");
+    ok("merge duplicates: off by default; on hides the twin and shows both entries' citations on the one that stays; off restores");
+    await page.evaluate(() => { for (const tr of document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")) if (/TEST:TWIN/.test(tr.innerHTML)) tr.remove(); });
+
     // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
     await opts.bringToFront();
     await opts.setViewportSize({ width: 1360, height: 640 });

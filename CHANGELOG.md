@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.132 — 2026-10-12
+
+- Settings: **Merge duplicates** (off by default). Profiles often list one paper twice, the title differing only in capitals, accents or punctuation. With it on, such entries (same title, same first author) become one: the most cited stays, shows the citations of all of them (underlined, with a tooltip), and the panel counts it once. Tested in `test/duplicates.test.js` and end to end.
+
 ## 2.10.131 — 2026-10-12
 
 - Settings: **Scholar's own blocks**: hide the "Cited by" table, the Co-authors list or the Public access box on the profile page (all shown by default). End-to-end check included.

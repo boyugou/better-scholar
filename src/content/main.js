@@ -69,6 +69,31 @@
     return added;
   }
 
+  // ---- duplicates: with the setting on, an entry that repeats another is hidden and the most cited one shows the total -------------
+
+  const live = () => state.rows.filter((r) => !r.dupHidden);
+  function applyMerge() {
+    const on = prefs.mergeDuplicates;
+    const plan = on ? B.duplicates.plan(state.rows.map((r) => ({ title: r.raw.title, authorsText: r.raw.authorsText, citations: r.raw.citations }))) : null;
+    state.rows.forEach((r, i) => {
+      r.dupHidden = !!plan && !plan.keep[i];
+      r.shown = plan ? plan.citations[i] : r.raw.citations;
+      r.raw.tr.classList.toggle("rr-dup", r.dupHidden);
+      const link = r.raw.tr.querySelector("td.gsc_a_c a");
+      if (!link) return;
+      const merged = plan ? plan.merged[i] : 1;
+      if (merged > 1) {
+        link.textContent = String(plan.citations[i]);
+        link.title = t("mergedTip", [String(merged)]);
+        link.classList.add("rr-merged");
+      } else if (link.classList.contains("rr-merged")) {                                // no longer merged: Scholar's own number and no tooltip
+        link.textContent = String(r.raw.citations || "");
+        link.removeAttribute("title");
+        link.classList.remove("rr-merged");
+      }
+    });
+  }
+
   const reanalyze = () => state.rows.forEach((r) => { r.a = analyzeRaw(r.raw); });
   // the spelling list or the author lists changed: look again at what the rows say, then analyse every row
   const rehint = () => { updateHints(); reanalyze(); };
@@ -136,7 +161,7 @@
   function applyFilters() {
     const f = state.filters;
     const source = currentSource();
-    for (const row of state.rows) {
+    for (const row of live()) {
       const a = row.a;
       let hide = f.onlyHighlighted && !row.highlighted;
       if (a.year != null) {
@@ -152,9 +177,9 @@
   // ---- panel model --------------------------------------------------------
 
   function papers() {
-    return state.rows.map((r) => ({
+    return live().map((r) => ({
       status: r.a.status, role: r.a.role, venue: r.a.venue, venueText: r.a.venueText,
-      citations: r.a.citations, year: r.a.year, highlighted: r.highlighted
+      citations: r.shown, year: r.a.year, highlighted: r.highlighted
     }));
   }
 
@@ -162,11 +187,11 @@
   // on, per its full author list, is not counted) — only the groups the settings page has switched on.
   // The award kinds behind the "Awards" count (only when that group is switched on)
   function markKinds() {
-    return prefs.marks.award ? marks.summarizeKinds(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) }))) : {};
+    return prefs.marks.award ? marks.summarizeKinds(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) }))) : {};
   }
 
   function markCounts() {
-    const counts = marks.summarize(state.rows.filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
+    const counts = marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
     for (const g of marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
     return counts;
   }
@@ -211,11 +236,11 @@
     const header = [t("tsvYear"), t("tsvTitle"), t("tsvAuthors"), t("tsvRole"), t("tsvVenue"), ...(ccfOn ? [t("srcCcf")] : []), ...(coreOn ? [t("srcCore")] : []), t("tsvAwards"), t("tsvCitations")];
     // (a paper whose author list Scholar cut before the owner's name says so; one that does not have the owner has no role)
     const roleOf = (a) => (a.status === "found" ? copyLabels()[a.role] || a.role : a.status === "hidden" ? t("roleHidden") : "");
-    const rows = state.rows.filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+    const rows = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
       const a = r.a;
       const awardsAndTalks = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")).join(", ");
       return [a.year, r.raw.title, r.raw.authorsText, roleOf(a), r.raw.venueText,
-        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, a.citations];
+        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, r.shown];
     });
     return metrics.toRowsTsv(header, rows);
   }
@@ -328,6 +353,7 @@
   }
 
   function refresh() {
+    applyMerge();
     for (const row of state.rows) decorate(row);
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
