@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.85 — 2026-10-12
+
+- CIDR 2025's two best papers and its two test of time papers (TelegraphCQ and Borealis, with their CIDR 2003 and 2005 years) from the conference's own awards page (`tot.mjs cidr`); the list had none for CIDR. The list has 6804 awards.
+
 ## 2.10.84 — 2026-10-12
 
 - Static security review of the extension code: no `innerHTML`, `eval` or `new Function` anywhere, `storage` is the only permission, and the one `fetch` (the user-triggered read of a paper's page on Scholar) now refuses a link that is not on the page's own origin before it sends cookies; an e2e check rewrites the links to another origin as the page loads and fails if any request is attempted (it fails when the guard is removed, which was checked).

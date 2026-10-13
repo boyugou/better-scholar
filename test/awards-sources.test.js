@@ -2217,3 +2217,15 @@ test("ECML PKDD 2023's awards page: the authors above each title; the test of ti
     "student  Best Student Paper Award (Research Track) | Label shift quantification with robustness guarantees | Gil Hart"
   ]);
 });
+
+test("CIDR awards page: best papers as title and authors lines, test of time papers with the title, authors and a 'CIDR <year>' line; the page must be titled with the year", async () => {
+  const { parseCidrAwards } = await import("../scripts/awards/tot.mjs");
+  const menu = Array.from({ length: 21 }, (_, i) => `<p>Menu item ${i}</p>`).join("");
+  const h = `<p>CIDR 2025</p>${menu}<p>Best Paper Award</p><p>Beyond relations: a case for the entity-relationship abstraction</p><p>Ann Lee (University of Maryland)</p><p>Towards foundation database models</p><p>Bo Chan (TU Darmstadt), Cy Dunn (Google)</p><p>Test of Time Award</p><p>These systems inspired new functionality in streaming systems.</p><p>Continuous dataflow processing for an uncertain world</p><p>Ed Fox, Flo Gray (UC Berkeley)</p><p>CIDR 2003</p><p>© 2025 CIDR Conference</p>`;
+  assert.deepEqual(parseCidrAwards(h, "https://cidrdb.org/cidr2025/awards.html").entries.map((e) => `${e.award} ${e.paperYear || ""} ${e.title} | ${e.authors.join("; ")}`), [
+    "best  Beyond relations: a case for the entity-relationship abstraction | Ann Lee",
+    "best  Towards foundation database models | Bo Chan; Cy Dunn",
+    "tot 2003 Continuous dataflow processing for an uncertain world | Ed Fox; Flo Gray"
+  ]);
+  assert.equal(parseCidrAwards(h, "https://cidrdb.org/cidr2024/awards.html").entries.length, 0);
+});

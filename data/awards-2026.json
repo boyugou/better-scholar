@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6800
+  "count": 6804
  },
  "entries": [
   {
@@ -38783,6 +38783,86 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10134/33/program",
    "evidence": "CI 2025 program, Honorable Mention: Quo Vadis, HCOMP? A Review of 12 Years of Research at the Frontier of Human Computation and Crowdsourcing — Jonas Oppenlaender, Ujwal Gadiraju, Simo Hosio"
+  },
+  {
+   "venue": "CIDR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Beyond Relations: A Case for Elevating to the Entity-Relationship Abstraction",
+   "authors": [
+    "Amol Deshpande"
+   ],
+   "track": "main",
+   "source": "https://cidrdb.org/cidr2025/awards.html",
+   "evidence": "CIDR 2025 Best Paper Award: Beyond Relations: A Case for Elevating to the Entity-Relationship Abstraction — Amol Deshpande"
+  },
+  {
+   "venue": "CIDR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards Foundation Database Models",
+   "authors": [
+    "Johannes Wehrstein",
+    "Carsten Binnig",
+    "Fatma Ozcan",
+    "Shobha Vasudevan",
+    "Yu Gan",
+    "Yawen Wang"
+   ],
+   "track": "main",
+   "source": "https://cidrdb.org/cidr2025/awards.html",
+   "evidence": "CIDR 2025 Best Paper Award: Towards Foundation Database Models — Johannes Wehrstein, Carsten Binnig, Fatma Ozcan, Shobha Vasudevan, Yu Gan, Yawen Wang"
+  },
+  {
+   "venue": "CIDR",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "TelegraphCQ: Continuous Dataflow Processing for an Uncertain World",
+   "authors": [
+    "Sirish Chandrasekaran",
+    "Amol Deshpande",
+    "Mike Franklin",
+    "Joseph Hellerstein",
+    "Wei Hong",
+    "Sailesh Krishnamurthy",
+    "Sam Madden",
+    "Vijayshankar Raman",
+    "Fred Reiss",
+    "Mehul Shah"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://cidrdb.org/cidr2025/awards.html",
+   "evidence": "CIDR 2025 Test of Time Award: TelegraphCQ: Continuous Dataflow Processing for an Uncertain World — Sirish Chandrasekaran, Amol Deshpande, Mike Franklin, Joseph Hellerstein, Wei Hong, Sailesh Krishnamurthy, Sam Madden, Vijayshankar Raman, Fred Reiss, Mehul Shah"
+  },
+  {
+   "venue": "CIDR",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Design of the Borealis Stream Processing Engine",
+   "authors": [
+    "Daniel Abadi",
+    "Yanif Ahmad",
+    "Magdalena Balazinska",
+    "Ugur Cetintemel",
+    "Mitch Cherniack",
+    "Jeong-Hyon Hwang",
+    "Wolfgang Lindner",
+    "Anurag S. Maskey",
+    "Alexander Rasin",
+    "Esther Ryvkina",
+    "Nesime Tatbul",
+    "Ying Xing",
+    "Stan Zdonik"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://cidrdb.org/cidr2025/awards.html",
+   "evidence": "CIDR 2025 Test of Time Award: The Design of the Borealis Stream Processing Engine — Daniel Abadi, Yanif Ahmad, Magdalena Balazinska, Ugur Cetintemel, Mitch Cherniack, Jeong-Hyon Hwang, Wolfgang Lindner, Anurag S. Maskey, Alexander Rasin, Esther Ryvkina, Nesime Tatbul, Ying Xing, Stan Zdonik"
   },
   {
    "venue": "CIKM",
