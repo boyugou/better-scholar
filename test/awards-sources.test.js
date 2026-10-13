@@ -2394,6 +2394,15 @@ test("SCA award pages: 'Best Paper' and 'Best Paper, Honourable Mention(s)' labe
   assert.equal(parseScaAwards("<p>SCA 2022 Awards</p><p>The winner of the Early Career Research Award is Dr Daniel Holden</p>", "https://computeranimation.org/2022/awards.html").entries.length, 0);
 });
 
+test("MIDDLEWARE award pages: the heading nearest above the table gives the award (the menu names all three), then per paper a year line (with Runner-up / Honorable Mention), the title and the authors; the test-of-time paper is ten years older than the award year", async () => {
+  const { parseMiddlewareAwards } = await import("../scripts/awards/tot.mjs");
+  const page = (head, rows) => `<p>Test of Time Award</p><p>Best Paper Award</p><p>Best Student Paper Award</p><h1>${head}</h1><p>MIDDLEWARE selects awards.</p><p>Year</p><p>Paper</p><p>Authors</p>${rows}<p>Last updated: October 10, 2026</p>`;
+  const best = page("Best Paper Award", "<p>2024</p><p>Banyan: fast rotating leader BFT</p><p>Ann Lee, Bo Chan (ETH Zurich, Switzerland) and Cy Dunn</p><p>2024 Runner-up</p><p>Chasing lightspeed consensus with Mercury</p><p>Ed Fox (University of Passau, Germany), Flo Gray</p>");
+  assert.deepEqual(parseMiddlewareAwards(best, "https://middleware-conf.github.io/awards/best-paper/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2024 best | Ann Lee; Bo Chan; Cy Dunn", "2024 runner-up | Ed Fox; Flo Gray"]);
+  const tot = page("Test of Time Award", "<p>2024*</p><p>Mitigating interference in cloud services by reconfiguration</p><p>Gil Hart (Purdue University, USA) and Hal Ito (IBM Research, India)</p>");
+  assert.deepEqual(parseMiddlewareAwards(tot, "https://middleware-conf.github.io/awards/test-of-time/").entries.map((e) => `${e.year} ${e.award} ${e.paperYear}`), ["2024 tot 2014"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

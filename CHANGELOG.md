@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.115 — 2026-10-12
+
+- MIDDLEWARE's best papers 2007–2025, best student papers 2013–2025 and test-of-time papers 2007–2025, with runners-up (52 papers; the list had none for MIDDLEWARE) from the series' own award pages (`tot.mjs middleware-awards`). The list has 7618 awards.
+
 ## 2.10.114 — 2026-10-12
 
 - SCA's best papers and honourable mentions 2024–2026 (10 papers; the list had none for SCA) from the symposium's own award pages (`tot.mjs sca-awards`). The list has 7566 awards.

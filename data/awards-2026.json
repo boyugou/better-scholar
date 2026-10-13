@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7566
+  "count": 7618
  },
  "entries": [
   {
@@ -91662,6 +91662,862 @@
    "paperYear": 2007,
    "source": "https://www.sigmicro.org/awards/tot/",
    "evidence": "MICRO 2025 Test of Time Award: MICRO 2007: Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0 — Naveen Muralimanohar, Rajeev Balasubramonian, Norman P. Jouppi"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Vector-Field Consistency for Ad-Hoc Gaming",
+   "authors": [
+    "Nuno Santos",
+    "Luis Veiga",
+    "Paulo Ferreira"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2007 Best Paper Award: Vector-Field Consistency for Ad-Hoc Gaming — Nuno Santos, Luis Veiga and Paulo Ferreira (INESC-ID/Technical University of Lisbon)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Burstiness in multi-tier applications: symptoms, causes, and new models",
+   "authors": [
+    "Ningfang Mi",
+    "Giuliano Casale",
+    "Ludmila Cherkasova",
+    "Evgenia Smirni"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2008 Best Paper Award: Burstiness in multi-tier applications: symptoms, causes, and new models — Ningfang Mi, Giuliano Casale (College of William and Mary, USA), Ludmila Cherkasova (HP Labs, USA) and Evgenia Smirni (College of William and Mary, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Towards end-to-end quality of service: controlling I/O interference in shared storage servers",
+   "authors": [
+    "Gokul Soundararajan",
+    "Christiana Amza"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2008 Best Paper Award: Towards end-to-end quality of service: controlling I/O interference in shared storage servers — Gokul Soundararajan and Christiana Amza (University of Toronto, Canada)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MANETKit: supporting the dynamic deployment and reconfiguration of ad-hoc routing protocols",
+   "authors": [
+    "Rajiv Ramdhany",
+    "Paul Grace",
+    "Geoff Coulson",
+    "David Hutchison"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2009 Best Paper Award: MANETKit: supporting the dynamic deployment and reconfiguration of ad-hoc routing protocols — Rajiv Ramdhany, Paul Grace, Geoff Coulson, David Hutchison (Lancaster University, UK)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "A gossip-style failure detection service",
+   "authors": [
+    "Robbert van Renesse",
+    "Yaron Minsky",
+    "Mark Hayden"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2009 Test of Time Award: A gossip-style failure detection service — Robbert van Renesse, Yaron Minsky and Mark Hayden (Cornell University, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2009,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "An architecture for next generation middleware",
+   "authors": [
+    "Gordon S. Blair",
+    "Geoff Coulson",
+    "Philippe Robin",
+    "Michael Papathomas"
+   ],
+   "track": "main",
+   "paperYear": 1999,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2009 Test of Time Award: An architecture for next generation middleware — Gordon S. Blair, Geoff Coulson, Philippe Robin and Michael Papathomas (Lancaster University, UK)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Parametric subscriptions for content-based publish/subscribe networks",
+   "authors": [
+    "K. R. Jayaram",
+    "Chamikara Jayalath",
+    "Patrick Eugster"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2010 Best Paper Award: Parametric subscriptions for content-based publish/subscribe networks — K. R. Jayaram, Chamikara Jayalath and Patrick Eugster (Purdue University, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2010,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Monitoring, security, and dynamic configuration with the dynamicTAO reflective ORB",
+   "authors": [
+    "Fabio Kon",
+    "Manuel Román",
+    "Ping Liu",
+    "Jina Mao",
+    "Tomonori Yamane",
+    "Claudio Magalhã",
+    "Roy H. Campbell"
+   ],
+   "track": "main",
+   "paperYear": 2000,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2010 Test of Time Award: Monitoring, security, and dynamic configuration with the dynamicTAO reflective ORB — Fabio Kon, Manuel Román, Ping Liu, Jina Mao, Tomonori Yamane, Claudio Magalhã and Roy H. Campbell (UIUC, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Contrail: Enabling Decentralized Social Networks on Smartphones",
+   "authors": [
+    "Patrick Stuedi",
+    "Iqbal Mohomed",
+    "Z. Morley Mao",
+    "Mahesh Balakrishnan",
+    "Venugopalan Ramasubramanian",
+    "Doug Terry",
+    "Ted Wobber"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2011 Best Paper Award: Contrail: Enabling Decentralized Social Networks on Smartphones — Patrick Stuedi (IBM Research Zurich, Switzerland), Iqbal Mohomed (IBM T. J. Watson, USA), Z. Morley Mao (U Michigan, USA), Mahesh Balakrishnan, Venugopalan Ramasubramanian, Doug Terry and Ted Wobber (Microsoft Research, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2011,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems",
+   "authors": [
+    "Antony I. T. Rowstron",
+    "Peter Druschel"
+   ],
+   "track": "main",
+   "paperYear": 2001,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2011 Test of Time Award: Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems — Antony I. T. Rowstron (Microsoft Research, UK) and Peter Druschel (Rice University, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Unifying thread-level speculation and transactional memory",
+   "authors": [
+    "João Barreto",
+    "Aleksandar Dragojevic",
+    "Paulo Ferreira",
+    "Ricardo Filipe",
+    "Rachid Guerraoui"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2012 Best Paper Award: Unifying thread-level speculation and transactional memory — João Barreto (INESC-ID/TU Lisbon, Portugal), Aleksandar Dragojevic (EPFL, Switzerland), Paulo Ferreira, Ricardo Filipe (INESC-ID/TU Lisbon, Portugal), Rachid Guerraoui (EPFL, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Views and Transactional Storage for Large Graphs",
+   "authors": [
+    "Michael M. Lee",
+    "Indrajit Roy",
+    "Alvin AuYoung",
+    "Vanish Talwar",
+    "K. R. Jayaram",
+    "Yuanyuan Zhou"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2013 Best Paper Award: Views and Transactional Storage for Large Graphs — Michael M. Lee (UCSD, USA), Indrajit Roy, Alvin AuYoung, Vanish Talwar, K. R. Jayaram (HP Labs, USA) and Yuanyuan Zhou (UCSD, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Testing Idempotence for Infrastructure as Code",
+   "authors": [
+    "Waldemmar Hummer",
+    "Florian Rosenberg",
+    "Fábio Oliveira",
+    "Tamar Eilam"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2013 Best Student Paper Award: Testing Idempotence for Infrastructure as Code — Waldemmar Hummer (TU Wien, Austria), Florian Rosenberg, Fábio Oliveira and Tamar Eilam (IBM T. J. Watson Research Center, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2013,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Efficient Peer-to-Peer Keyword Searching",
+   "authors": [
+    "Patrick Reynolds",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2003,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2013 Test of Time Award: Efficient Peer-to-Peer Keyword Searching — Patrick Reynolds and Amin Vahdat (Duke University, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Consensus Inside",
+   "authors": [
+    "Tudor David",
+    "Rachid Guerraoui",
+    "Maysam Yabandeh"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2014 Best Paper Award: Consensus Inside — Tudor David, Rachid Guerraoui (EPFL, Switzerland), Maysam Yabandeh (Twitter Inc. USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Slider: incremental sliding window analytics",
+   "authors": [
+    "Pramod Bhatotia",
+    "Umut A. Acar",
+    "Flavio P. Junqueira",
+    "Rodrigo Rodrigues"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2014 Best Student Paper Award: Slider: incremental sliding window analytics — Pramod Bhatotia (MPI-SWS, Germany), Umut A. Acar (CMU, USA and INRIA, France), Flavio P. Junqueira (Microsoft Research, UK) and Rodrigo Rodrigues (NOVA Univ. Lisbon, Portugal)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2014,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Peer Sampling Service: Experimental Evaluation of Unstructured Gossip-Based Implementations",
+   "authors": [
+    "Márk Jelasity",
+    "Rachid Guearraoui",
+    "Anne-Marie Kermarrec",
+    "Maarten van Steen"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2014 Test of Time Award: The Peer Sampling Service: Experimental Evaluation of Unstructured Gossip-Based Implementations — Márk Jelasity (U. Bologna, Italy), Rachid Guearraoui (EPFL, Switzerland), Anne-Marie Kermarrec (INRIA Rennes, France) and Maarten van Steen (Vrije Universiteit, Holland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Managing the Energy-Delay Tradeoff in Mobile Applications with Tempus",
+   "authors": [
+    "Nima Nikzad",
+    "Marjan Radi",
+    "Octav Chipara",
+    "William G. Griswold"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2015 Best Paper Award: Managing the Energy-Delay Tradeoff in Mobile Applications with Tempus — Nima Nikzad (UCSD, USA), Marjan Radi, Octav Chipara (University of Iowa, USA), William G. Griswold (UCSD, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Configuring Distributed Computations Using Response Surfaces",
+   "authors": [
+    "Adem Efe Gancer",
+    "David Bindel",
+    "Emin Gün Sirer",
+    "Robbert van Renesse"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2015 Best Student Paper Award: Configuring Distributed Computations Using Response Surfaces — Adem Efe Gancer, David Bindel, Emin Gün Sirer and Robbert van Renesse (Cornell University, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2015,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Composite subscriptions in content-based publish/ subscribe systems",
+   "authors": [
+    "Guoli Li",
+    "Hans-Arno Jacobsen"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2015 Test of Time Award: Composite subscriptions in content-based publish/ subscribe systems — Guoli Li and Hans-Arno Jacobsen (University of Toronto, Canada)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Locking Made Easy",
+   "authors": [
+    "Jelena Antic",
+    "Georgios Chatzopoulos",
+    "Rachid Guerraoui",
+    "Vasileios Trigonakis"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2016 Best Paper Award: Locking Made Easy — Jelena Antic, Georgios Chatzopoulos, Rachid Guerraoui, Vasileios Trigonakis (EPFL, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Bifrost: Supporting Continuous Deployment with Automated Enactment of Multi-Phase Live Testing Strategies",
+   "authors": [
+    "Gerald Schermann",
+    "Dominik Schöni",
+    "Philipp Leitner",
+    "Harald C. Gall"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2016 Best Student Paper Award: Bifrost: Supporting Continuous Deployment with Automated Enactment of Multi-Phase Live Testing Strategies — Gerald Schermann, Dominik Schöni, Philipp Leitner and Harald C. Gall (University of Zurich, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2016,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Enforcing performance isolation across virtual machines in Xen",
+   "authors": [
+    "Diwaker Gupta",
+    "Ludmila Cherkasova",
+    "Rob Gardner",
+    "Amin Vahdat"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2016 Test of Time Award: Enforcing performance isolation across virtual machines in Xen — Diwaker Gupta (UCSD, USA), Ludmila Cherkasova, Rob Gardner (HP Labs, USA) and Amin Vahdat (UCSD, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A programming model for application-defined multipath TCP scheduling",
+   "authors": [
+    "Alexander Frömmgen",
+    "Amr Rizk",
+    "Tobias Erbshäußer",
+    "Max Weller",
+    "Boris Koldehofe",
+    "Alejandro Buchmann",
+    "Ralf Steinmetz"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2017 Best Paper Award: A programming model for application-defined multipath TCP scheduling — Alexander Frömmgen, Amr Rizk, Tobias Erbshäußer, Max Weller, Boris Koldehofe, Alejandro Buchmann, and Ralf Steinmetz (TU Darmstadt, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Swayam: distributed autoscaling to meet SLAs of machine learning inference services with resource efficiency",
+   "authors": [
+    "Arpan Gujarati",
+    "Sameh Elnikety",
+    "Yuxiong He",
+    "Kathryn McKinley",
+    "Björn B. Brandenburg"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2017 Best Student Paper Award: Swayam: distributed autoscaling to meet SLAs of machine learning inference services with resource efficiency — Arpan Gujarati (MPI-SWS, Germany), Sameh Elnikety, Yuxiong He (Microsoft Research, USA), Kathryn McKinley (Google, USA) and Björn B. Brandenburg (MPI-SWS, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2017,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "R-OSGi: Distributed Applications through Software Modularization",
+   "authors": [
+    "Jan S. Rellermeyer",
+    "Gustavo Alonso",
+    "Timothy Roscoe"
+   ],
+   "track": "main",
+   "paperYear": 2007,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2017 Test of Time Award: R-OSGi: Distributed Applications through Software Modularization — Jan S. Rellermeyer, Gustavo Alonso and Timothy Roscoe (ETH Zurich, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "QueCC: A Queue-oriented, Control-free Concurrency Architecture",
+   "authors": [
+    "Thamir M. Qadah",
+    "Mohammad Sadoghi"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2018 Best Paper Award: QueCC: A Queue-oriented, Control-free Concurrency Architecture — Thamir M. Qadah (Purdue University, USA) and Mohammad Sadoghi (UC Davis, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Adaptive Software Cache Management",
+   "authors": [
+    "Gil Einziger",
+    "Ohad Eytan",
+    "Roy Friedman",
+    "Benjamin Manes"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2018 Best Student Paper Award: Adaptive Software Cache Management — Gil Einziger (Ben Gurion Uni, Israel), Ohad Eytan (Technion, Israel), Roy Friedman (Technion, Israel) and Benjamin Manes"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "pMapper: power and migration cost aware application placement in virtualized systems",
+   "authors": [
+    "Akshat Verma",
+    "Puneet Ahuja",
+    "Anindya Neogi"
+   ],
+   "track": "main",
+   "paperYear": 2008,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2018 Test of Time Award: pMapper: power and migration cost aware application placement in virtualized systems — Akshat Verma, (IBM Research, India), Puneet Ahuja, (IIT Delhi, India), Anindya Neogi (IBM Research, India)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ReLAQS: Reducing Latency for Multi-Tenant Approximate Queries via Scheduling",
+   "authors": [
+    "Logan Stafman",
+    "Andrew Or",
+    "Michael J. Freedman"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2019 Best Paper Award: ReLAQS: Reducing Latency for Multi-Tenant Approximate Queries via Scheduling — Logan Stafman, Andrew Or and Michael J. Freedman (Princeton University)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Lazarus: Automatic Management of Diversity in BFT Systems",
+   "authors": [
+    "Miguel Garcia",
+    "Alysson Bessani",
+    "Nuno Neves"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2019 Best Student Paper Award: Lazarus: Automatic Management of Diversity in BFT Systems — Miguel Garcia, Alysson Bessani and Nuno Neves (University of Lisbon, Portugal)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Calling the cloud: enabling mobile phones as interfaces to cloud applications",
+   "authors": [
+    "Ioana Giurgiu",
+    "Oriana Riva",
+    "Dejan Juric",
+    "Ivan Krivulev",
+    "Gustavo Alonso"
+   ],
+   "track": "main",
+   "paperYear": 2009,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2019 Test of Time Award: Calling the cloud: enabling mobile phones as interfaces to cloud applications — Ioana Giurgiu, Oriana Riva, Dejan Juric, Ivan Krivulev, Gustavo Alonso (ETH Zurich, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FLeet: Online Federated Learning via Staleness Awareness and Performance Prediction",
+   "authors": [
+    "Georgios Damaskinos",
+    "Rachid Guerraoui",
+    "Anne-Marie Kermarrec",
+    "Vlad Nitu",
+    "Rhicheek Patra",
+    "Francois Taiani"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2020 Best Paper Award: FLeet: Online Federated Learning via Staleness Awareness and Performance Prediction — Georgios Damaskinos, Rachid Guerraoui, Anne-Marie Kermarrec (EPFL, Switzerland), Vlad Nitu (INSA Lyon, France), Rhicheek Patra (EPFL, Switzerland), and Francois Taiani (IRISA France)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Resilient Cloud-based Replication with Low Latency",
+   "authors": [
+    "Michael Eischer",
+    "Tobias Distler"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2020 Best Student Paper Award: Resilient Cloud-based Replication with Low Latency — Michael Eischer and Tobias Distler (Friedrich-Alexander University Erlangen-Nürnberg (FAU), Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "FLEX: a slot allocation scheduling optimizer for MapReduce workloads",
+   "authors": [
+    "Joel Wolf",
+    "Deepak Rajan",
+    "Kirsten Hildrum",
+    "Rohit Khandekar",
+    "Vibhore Kumar",
+    "Sujay Parekh",
+    "Kun-Lung Wu",
+    "Andrey Balmin"
+   ],
+   "track": "main",
+   "paperYear": 2010,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2020 Test of Time Award: FLEX: a slot allocation scheduling optimizer for MapReduce workloads — Joel Wolf, Deepak Rajan, Kirsten Hildrum, Rohit Khandekar, Vibhore Kumar, Sujay Parekh, Kun-Lung Wu and Andrey Balmin (IBM Research, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SwitchFlow: preemptive multitasking for deep learning",
+   "authors": [
+    "Xiaofeng Wu",
+    "Jia Rao",
+    "Wei Chen",
+    "Hang Huang",
+    "Chris H Q Ding",
+    "Heng Huang"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2021 Best Paper Award: SwitchFlow: preemptive multitasking for deep learning — Xiaofeng Wu, Jia Rao (U. Texas at Arlington, USA), Wei Chen (NVIDIA, USA), Hang Huang (Huazong University of Science and Technology, China), Chris H Q Ding (U. Texas at Arlington, USA), Heng Huang (U. Pittsburgh, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Sizeless: predicting the optimal size of serverless functions",
+   "authors": [
+    "Simon Eismann",
+    "Johannes Grohmann",
+    "Cristina Abad",
+    "Nikolas Herbst",
+    "Samuel Kounev"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2021 Best Student Paper Award: Sizeless: predicting the optimal size of serverless functions — Simon Eismann, Johannes Grohmann (U. Wurzburg, Germany), Cristina Abad (ESPOL, Ecuador), Nikolas Herbst and Samuel Kounev (U. Wurzburg, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "GreenWare: greening cloud-scale data centers to maximize the use of renewable energy",
+   "authors": [
+    "Yanwei Zhang",
+    "Yefu Wang",
+    "Xiaorui Wang"
+   ],
+   "track": "main",
+   "paperYear": 2011,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2021 Test of Time Award: GreenWare: greening cloud-scale data centers to maximize the use of renewable energy — Yanwei Zhang, Yefu Wang (U. Tennessee, Knoxville, USA) and Xiaorui Wang (U. Tennessee, Knoxville, USA and The Ohio State University, Columbus, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MicroEdge: a multi-tenant edge cluster system architecture for scalable camera processing",
+   "authors": [
+    "Difei Cao",
+    "Jinsun Yoo",
+    "Zhuangdi Xu",
+    "Enrique Saurez",
+    "Harshit Gupta",
+    "Tushar Krishna",
+    "Umakishore Ramachandran"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2022 Best Paper Award: MicroEdge: a multi-tenant edge cluster system architecture for scalable camera processing — Difei Cao, Jinsun Yoo, Zhuangdi Xu, Enrique Saurez, Harshit Gupta, Tushar Krishna, Umakishore Ramachandran (Georgia Institute of Technology)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "CGX: Adaptive System Support for Communication-Efficient Deep Learning",
+   "authors": [
+    "Ilia Markov",
+    "Hamidreza Ramezanikebrya",
+    "Dan Alistarh"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2022 Best Paper Runner-up: CGX: Adaptive System Support for Communication-Efficient Deep Learning — Ilia Markov (IST Austria), Hamidreza Ramezanikebrya (University of British Columbia, Canada), Dan Alistarh (IST Austria)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Shielding Federated Learning Systems against Inference Attacks with ARM TrustZone",
+   "authors": [
+    "Aghiles Ait Messaoud",
+    "Vlad Nitu",
+    "Sonia Ben Mokhtar",
+    "Valerio Schiavoni"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2022 Best Paper Runner-up: Shielding Federated Learning Systems against Inference Attacks with ARM TrustZone — Aghiles Ait Messaoud, Vlad Nitu (INSA Lyon, France), Sonia Ben Mokhtar (LIRIS CNRS, France), Valerio Schiavoni (University of Neuchâtel, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "SPADE: Support for Provenance Auditing in Distributed Environments",
+   "authors": [
+    "Ashish Gehani",
+    "Dawood Tariq"
+   ],
+   "track": "main",
+   "paperYear": 2012,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2022 Test of Time Award: SPADE: Support for Provenance Auditing in Distributed Environments — Ashish Gehani, Dawood Tariq (SRI International)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Testing Idempotence for Infrastructure as Code",
+   "authors": [
+    "Waldemar Hummer",
+    "Florian Rosenberg",
+    "Fabio Oliveira",
+    "Tamar Eilam"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2023 Test of Time Award: Testing Idempotence for Infrastructure as Code — Waldemar Hummer (TU Wien, Austria), Florian Rosenberg, Fabio Oliveira and Tamar Eilam (IBM Research, USA)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Banyan: Fast Rotating Leader BFT",
+   "authors": [
+    "Yann Vonlanthen",
+    "Jakub Sliwinski",
+    "Massimo Albarello",
+    "Roger Wattenhofer"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2024 Best Paper Award: Banyan: Fast Rotating Leader BFT — Yann Vonlanthen, Jakub Sliwinski, Massimo Albarello, Roger Wattenhofer (ETH Zurich, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "Chasing Lightspeed Consensus: Fast Wide-Area Byzantine Replication with Mercury",
+   "authors": [
+    "Christian Berger",
+    "Lívio Rodrigues",
+    "Hans P. Reiser",
+    "Vinicius Cogo",
+    "Alysson Bessani"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2024 Best Paper Runner-up: Chasing Lightspeed Consensus: Fast Wide-Area Byzantine Replication with Mercury — Christian Berger (University of Passau, Germany), Lívio Rodrigues (Universidade de Lisboa, Portugal), Hans P. Reiser (Reykjavik University, Iceland), Vinicius Cogo, Alysson Bessani (Universidade de Lisboa, Portugal)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "L3: Latency-aware Load Balancing in Multi-Cluster Service Mesh",
+   "authors": [
+    "Olivier Michaelis",
+    "Stefan Schmid",
+    "Habib Mostafaei"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2024 Best Student Paper Award: L3: Latency-aware Load Balancing in Multi-Cluster Service Mesh — Olivier Michaelis, Stefan Schmid (TU Berlin, Germany), Habib Mostafaei (Eindhoven University of Technology, Netherlands)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Mitigating interference in cloud services by middleware reconfiguration",
+   "authors": [
+    "Amiya Maji",
+    "Subrata Mitra",
+    "Bowen Zhou",
+    "Saurabh Bagchi",
+    "Akshat Verma"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2024 Test of Time Award: Mitigating interference in cloud services by middleware reconfiguration — Amiya Maji, Subrata Mitra, Bowen Zhou, Saurabh Bagchi (Purdue University, USA) and Akshat Verma (IBM Research, India)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Recipe: Hardware-Accelerated Replication Protocols",
+   "authors": [
+    "Dimitra Giantsidi",
+    "Emmanouil Giortamis",
+    "Julian Pritzi",
+    "Maurice Bailleu",
+    "Manos Kapritsos",
+    "Pramod Bhatotia"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2025 Best Paper Award: Recipe: Hardware-Accelerated Replication Protocols — Dimitra Giantsidi (Microsoft Research Cambridge, UK), Emmanouil Giortamis, Julian Pritzi (TU Munich, Germany), Maurice Bailleu (Huawei Research), Manos Kapritsos (University of Michigan, USA), Pramod Bhatotia (TU Munich, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honorable Mention",
+   "title": "HARP: Energy-Aware and Adaptive Management of Heterogeneous Processors",
+   "authors": [
+    "Till Smejkal",
+    "Robert Khasanov",
+    "Jeronimo Castrillon",
+    "Hermann Härtig"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-paper/",
+   "evidence": "Middleware 2025 Best Paper Honorable Mention: HARP: Energy-Aware and Adaptive Management of Heterogeneous Processors — Till Smejkal, Robert Khasanov, Jeronimo Castrillon, Hermann Härtig (TU Dresden, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Best Student Paper Honorable Mention",
+   "title": "Stabl: The Sensitivity of Blockchains to Failures",
+   "authors": [
+    "Vincent Gramoli",
+    "Rachid Guerraoui",
+    "Andrei Lebedev",
+    "Gauthier Voron"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2025 Best Student Paper Honorable Mention: Stabl: The Sensitivity of Blockchains to Failures — Vincent Gramoli (University of Sydney and Redbelly Network, Australia), Rachid Guerraoui (EPFL, Switzerland), Andrei Lebedev (University of Sydney, Australia), Gauthier Voron (EPFL, Switzerland)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Full Trust Alchemist: Reforging Attestation for Cloud-based Confidential Workloads",
+   "authors": [
+    "Anna Galanou",
+    "Florian Lubitz",
+    "Hajeong Jeon",
+    "Christof Fetzer",
+    "Rüdiger Kapitza"
+   ],
+   "track": "main",
+   "source": "https://middleware-conf.github.io/awards/best-student-paper/",
+   "evidence": "Middleware 2025 Best Student Paper Award: Full Trust Alchemist: Reforging Attestation for Cloud-based Confidential Workloads — Anna Galanou, Florian Lubitz (TU Dresden, Germany), Hajeong Jeon (RWTH Aachen, Germany), Christof Fetzer (TU Dresden, Germany), Rüdiger Kapitza (FAU Erlangen-Nürnberg, Germany)"
+  },
+  {
+   "venue": "Middleware",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "R-Storm: Resource-Aware Scheduling in Storm",
+   "authors": [
+    "Boyang Peng",
+    "Mohammad Hosseini",
+    "Zhihao Hong",
+    "Reza Farivar",
+    "Roy Campbell"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://middleware-conf.github.io/awards/test-of-time/",
+   "evidence": "Middleware 2025 Test of Time Award: R-Storm: Resource-Aware Scheduling in Storm — Boyang Peng, Mohammad Hosseini, Zhihao Hong (UIUC, USA), Reza Farivar (Yahoo, USA) and Roy Campbell (UIUC, USA)"
   },
   {
    "venue": "MobiCom",
