@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.80 — 2026-10-12
+
+- IEEE ICC 2019's sixteen best papers (a fifth layout: `Paper Title:`, `Authors:` and one `Name (Affiliation)` line per author) from the conference's own page (`tot.mjs icc-best`). The list has 6792 awards.
+
 ## 2.10.79 — 2026-10-12
 
 - IEEE ICC 2021's thirteen best papers (a fourth layout: the quoted title and a `by` line apart) and INFOCOM 2026's two best papers, from the conferences' own pages (`tot.mjs icc-best`, `tot.mjs infocom`). The list has 6776 awards.

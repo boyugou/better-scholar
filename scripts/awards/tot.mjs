@@ -2625,6 +2625,20 @@ export function parseIccBest(html, source) {
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/icc(\d{4})\./.exec(source) || [])[1], 10);
   if (!year || !ls.some((l) => new RegExp(`ICC ${year}`, "i").test(l))) return { entries, skipped: ["no year in the address or page"] };
+  if (ls.some((l) => /^Paper Title:/.test(l))) {                                          // 2019: "Symposium – X", "Paper Title: T", "Authors:" and one "Name (Affiliation)" line per author
+    for (let i = 0; i < ls.length; i++) {
+      const t = /^Paper Title:\s*(.+)$/.exec(ls[i]);
+      if (!t || !/^Authors:?$/.test(ls[i + 1] || "")) continue;
+      const who = [];
+      for (let j = i + 2; j < ls.length && /\(.*\)$/.test(ls[j]) && !/^(?:Symposium|Paper Title)/.test(ls[j]); j++) who.push(...names(ls[j]));
+      let head = "";
+      for (let k = i - 1; k >= 0 && !head; k--) if (/^Symposium/.test(ls[k])) head = ls[k].replace(/^Symposium\s*[–-]\s*/, "");
+      const title = cleanTitle(t[1]);
+      if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "ICC", year, award: "best", awardLabel: `Best Paper Award (${head})`, title, authors: who, track: "main", source, evidence: `ICC ${year} Best Paper Award, ${head}: ${title} — ${who.join(", ")}` });
+      else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+    }
+    return { entries, skipped };
+  }
   let start = ls.findIndex((l) => /^ICC \d{4} BEST PAPER AWARDS RECIPIENTS$/i.test(l));
   if (start < 0) start = ls.findIndex((l, i) => l === l.toUpperCase() && /\p{L}{6}/u.test(l) && /^[“"]/.test(ls[i + 1] || "") && /^by /.test(ls[i + 2] || "")) - 1;     // 2021 has no such line: the first capitals heading over a quoted title and a "by" line
   if (start < -1 || (start === -1 && !/^[“"]/.test(ls[1] || ""))) return { entries, skipped: ["no recipients list"] };

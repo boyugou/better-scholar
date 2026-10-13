@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6776
+  "count": 6792
  },
  "entries": [
   {
@@ -59586,6 +59586,270 @@
    "track": "main",
    "source": "https://2024.ieeeicassp.org/awards/",
    "evidence": "ICASSP 2024 Best Student Paper Award: STAR: Distilling Speech Temporal Relation for Lightweight Speech Self-Supervised Learning Models — Kangwook Jang, Sungnyun Kim, Hoirin Kim"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications (WC))",
+   "title": "Angle-Domain MmWave MIMO NOMA Systems: Analysis and Design",
+   "authors": [
+    "Xiaoling Hu",
+    "Caijun Zhong",
+    "Yu Han",
+    "Xiaoming Chen",
+    "Junhui Zhao",
+    "Zhaoyang Zhang"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Wireless Communications (WC): Angle-Domain MmWave MIMO NOMA Systems: Analysis and Design — Xiaoling Hu, Caijun Zhong, Yu Han, Xiaoming Chen, Junhui Zhao, Zhaoyang Zhang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Selected Areas in Communications (SAC))",
+   "title": "Big Data Analytics for User Association Characterization in Large-Scale WiFi System",
+   "authors": [
+    "Feng Lyu",
+    "Ju Ren",
+    "Nan Cheng",
+    "Peng Yang",
+    "Minglu Li",
+    "Yaoxue Zhang",
+    "Xuemin Shen"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Selected Areas in Communications (SAC): Big Data Analytics for User Association Characterization in Large-Scale WiFi System — Feng Lyu, Ju Ren, Nan Cheng, Peng Yang, Minglu Li, Yaoxue Zhang, Xuemin Shen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Optical Networks and Systems (ONS))",
+   "title": "Cognitive management and control for wavelength assignment and reconfiguration in optical networks",
+   "authors": [
+    "Anny Xijia Zheng",
+    "Vincent W.S. Chan"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Optical Networks and Systems (ONS): Cognitive management and control for wavelength assignment and reconfiguration in optical networks — Anny Xijia Zheng, Vincent W.S. Chan"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications (WC))",
+   "title": "D2D-Aided Multi-Antenna Multicasting",
+   "authors": [
+    "Placido Mursia",
+    "Italo Atzeni",
+    "David Gesbert",
+    "Mari Kobayashi"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Wireless Communications (WC): D2D-Aided Multi-Antenna Multicasting — Placido Mursia, Italo Atzeni, David Gesbert, Mari Kobayashi"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Cognitive Radio and Networks (CRN))",
+   "title": "Deep Reinforcement Learning for Modulation and Coding Scheme Selection in Cognitive HetNets",
+   "authors": [
+    "Lin Zhang",
+    "Junjie Tan",
+    "Ying-Chang Liang Gang Feng",
+    "Dusit Niyato"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Cognitive Radio and Networks (CRN): Deep Reinforcement Learning for Modulation and Coding Scheme Selection in Cognitive HetNets — Lin Zhang, Junjie Tan, Ying-Chang Liang Gang Feng, Dusit Niyato"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Ad Hoc and Sensor Networks (AHSN))",
+   "title": "Distributed Hierarchical Information Acquisition Systems Based on AUV Enabled Sensor Networks",
+   "authors": [
+    "Kai Zhang",
+    "Jun Du",
+    "Jingjing Wang",
+    "Chunxiao Jiang",
+    "Yong Ren",
+    "Abderrahim Benslimane"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Ad Hoc and Sensor Networks (AHSN): Distributed Hierarchical Information Acquisition Systems Based on AUV Enabled Sensor Networks — Kai Zhang, Jun Du, Jingjing Wang, Chunxiao Jiang, Yong Ren, Abderrahim Benslimane"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Next-Generation Networking and Internet (NGNI))",
+   "title": "DQ Scheduler: Deep Reinforcement Learning Based Controller Synchronization in Distributed SDN",
+   "authors": [
+    "Ziyao Zhang",
+    "Liang Ma",
+    "Konstantinos Poularakis",
+    "Kin K. Leung",
+    "Lingfei Wu"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Next-Generation Networking and Internet (NGNI): DQ Scheduler: Deep Reinforcement Learning Based Controller Synchronization in Distributed SDN — Ziyao Zhang, Liang Ma, Konstantinos Poularakis, Kin K. Leung, Lingfei Wu"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Selected Areas in Communications: (SAC))",
+   "title": "GPS Spoofing Detection and Mitigation in PMUs Using Distributed Multiple Directional Antennas",
+   "authors": [
+    "Sriramya Bhamidipati",
+    "Kyeong Jin Kim",
+    "Hongbo Sun",
+    "Philip V. Orlik"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Selected Areas in Communications: (SAC): GPS Spoofing Detection and Mitigation in PMUs Using Distributed Multiple Directional Antennas — Sriramya Bhamidipati, Kyeong Jin Kim, Hongbo Sun, Philip V. Orlik"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Green Communication Systems and Networks (GCSN))",
+   "title": "Joint Computation and Communication Resource Allocation for Energy-Efficient Mobile Edge Networks",
+   "authors": [
+    "Johnson Opadere",
+    "Qiang Liu",
+    "Ning Zhang",
+    "Tao Han"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Green Communication Systems and Networks (GCSN): Joint Computation and Communication Resource Allocation for Energy-Efficient Mobile Edge Networks — Johnson Opadere, Qiang Liu, Ning Zhang, Tao Han"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Selected Areas in Communications: Internet of Things (SAC-IoT))",
+   "title": "On the Effect of Multi-Packet Reception on Redundant Gateways in LoRAWANs",
+   "authors": [
+    "Minming Ni",
+    "Mehdi Jafarizadeh",
+    "Rong Zheng"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Selected Areas in Communications: Internet of Things (SAC-IoT): On the Effect of Multi-Packet Reception on Redundant Gateways in LoRAWANs — Minming Ni, Mehdi Jafarizadeh, Rong Zheng"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Mobile and Wireless Networks (MWN))",
+   "title": "Position-Attitude Prediction based Beam Tracking for UAV mmWave Communications",
+   "authors": [
+    "Jinglin Zhang",
+    "Wenjun Xu",
+    "Hui Gao",
+    "Miao Pan",
+    "Zhiyong Feng",
+    "Zhu Han"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Mobile and Wireless Networks (MWN): Position-Attitude Prediction based Beam Tracking for UAV mmWave Communications — Jinglin Zhang, Wenjun Xu, Hui Gao, Miao Pan, Zhiyong Feng, Zhu Han"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Signal Processing for Communications (SPC))",
+   "title": "Secure Downlink Massive MIMO NOMA Network in the Presence of a Multiple-Antenna Eavesdropper",
+   "authors": [
+    "Nam-Phong Nguyen",
+    "Octavia A. Dobre",
+    "Long D. Nguyen",
+    "Chuyen T. Nguyen",
+    "H. Vincent Poor"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Signal Processing for Communications (SPC): Secure Downlink Massive MIMO NOMA Network in the Presence of a Multiple-Antenna Eavesdropper — Nam-Phong Nguyen, Octavia A. Dobre, Long D. Nguyen, Chuyen T. Nguyen, H. Vincent Poor"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication QoS, Reliability and Modeling(CQRM))",
+   "title": "STORNS: Stochastic Radio Access Network Slicing",
+   "authors": [
+    "Vincenzo Sciancalepore",
+    "Marco Di Renzo",
+    "Xavier Costa-Perez"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Communication QoS, Reliability and Modeling(CQRM): STORNS: Stochastic Radio Access Network Slicing — Vincenzo Sciancalepore, Marco Di Renzo, Xavier Costa-Perez"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication Theory (CT))",
+   "title": "The Need for Alignment in Rate-Efficient Distributed Two-Sided Secure Matrix Computation",
+   "authors": [
+    "Seyedhamed Ebadifar",
+    "Jaber Kakar",
+    "Aydin Sezgin"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Communication Theory (CT): The Need for Alignment in Rate-Efficient Distributed Two-Sided Secure Matrix Computation — Seyedhamed Ebadifar, Jaber Kakar, Aydin Sezgin"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication and Information Systems Security (CISS))",
+   "title": "Towards Motion Invariant Authentication for On-Body IoT Devices",
+   "authors": [
+    "Yong Huang",
+    "Mengnian Xu",
+    "Wei Wang",
+    "Hao Wang",
+    "Tao Jiang",
+    "Qian Zhang"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Communication and Information Systems Security (CISS): Towards Motion Invariant Authentication for On-Body IoT Devices — Yong Huang, Mengnian Xu, Wei Wang, Hao Wang, Tao Jiang, Qian Zhang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication Software, Services and Multimedia Applications (CSSMA))",
+   "title": "UAV-Aided Data Dissemination Protocol with Dynamic Trajectory Scheduling in VANETs",
+   "authors": [
+    "Rongqing Zhang",
+    "Fanhui Zeng",
+    "Xiang Cheng",
+    "Liuqing Yang"
+   ],
+   "track": "main",
+   "source": "https://icc2019.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2019 Best Paper Award, Communication Software, Services and Multimedia Applications (CSSMA): UAV-Aided Data Dissemination Protocol with Dynamic Trajectory Scheduling in VANETs — Rongqing Zhang, Fanhui Zeng, Xiang Cheng, Liuqing Yang"
   },
   {
    "venue": "ICC",
