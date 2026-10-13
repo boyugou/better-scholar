@@ -4,7 +4,7 @@
 
 From an independent review of 2.22.6–2.22.8:
 
-- **A spelling in capitals matches only capitals.** Accepting the offered `WU LI` still made every mixed-case `Wu Li` the owner's, at full strength (so `Wu Li, X Yang, Wei Li` put the owner first). A spelling that is all capitals now finds only an author written in capitals; the owner's own name is unchanged.
+- **A spelling in capitals matches only capitals.** Accepting the offered `WU LI` still made every mixed-case `Wu Li` the owner's, at full strength (so `Wu Li, X Yang, Wei Li` put the owner first). A spelling that is all capitals now finds only an author written in capitals; the owner's own name is unchanged (and, when the profile's own name is in capitals, the spellings derived from it — the other order — still find ordinary authors).
 - **A press of *Show more* drops the pending "list complete" check.** The button is off while a request is in flight, so a second press within the check's 1.8 s, answered slowly, made the panel call a partial list complete (the lone "papers loaded" line gone, the tier columns gone on a profile with nothing ranked yet). The check now starts only after the last press is answered (end-to-end step with a stand-in that answers in three seconds).
 - **A cut `Proceedings of the IEEE …` is no journal.** The journal's own line is short and has a volume; a line cut right after "IEEE" is the start of a conference's (CVPR, ICCV …), and was badged CCF A as the journal.
 - **The co-first group goes on while an author carries one of the marks the first two share** (`A*†, B*†, C*`: C is co-first again); `A*†, B*, C†` still makes C the last author.

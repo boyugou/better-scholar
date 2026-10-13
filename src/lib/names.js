@@ -154,7 +154,8 @@
     let best = 0;
     for (const v of variants) {
       // a spelling in capitals ("JA DOUDNA", offered from a patent) names the capitals: it must not make every "Wu Li" the owner's, as an ordinary spelling would
-      if (v !== owner.name && isAllCaps(v) && !isAllCaps(authorText)) continue;
+      // (not when the profile's own name is in capitals: its rearrangements, which the page derives, are in capitals too)
+      if (v !== owner.name && isAllCaps(v) && !isAllCaps(authorText) && !isAllCaps(owner.name)) continue;
       best = Math.max(best, strength(a, v));
     }
     return best;

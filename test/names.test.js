@@ -85,6 +85,9 @@ test("an all-caps initials + surname name (a patent's inventor) is offered as a 
   assert.equal(names.matchesAuthor("Wu Li", caps), false, "an ordinary 'Wu Li' is somebody else");
   assert.equal(names.classifyRow("Wu Li, X Yang, Wei Li", caps).role, "last", "and does not take the owner's place in the author line");
   assert.equal(names.matchesAuthor("Wei Li", caps), true);
+  // a profile whose own name is in capitals: the spellings derived from it (the other order) are in capitals too, and find ordinary authors
+  assert.equal(names.matchesAuthor("Tang Jie", { name: "JIE TANG", alternates: ["TANG JIE"] }), true);
+  assert.equal(names.matchesAuthor("J Tang", { name: "JIE TANG", alternates: [] }), true);
 });
 
 test("middle initials: profile 'Geoffrey Hinton' matches 'GE Hinton'", () => {
