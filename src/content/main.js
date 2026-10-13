@@ -33,6 +33,7 @@
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
     loadingAll: false,
+    complete: false,                            // the whole list is here: the page offered nothing more at the start, or our loader ran to its end
     loadMessage: "",                           // why loading the rest of the list stopped, when it was not asked to
     resolving: null,                            // { done, total }
     resolveMessage: ""
@@ -54,11 +55,14 @@
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
   // the ranking the panel's table uses (null when both lists are switched off)
   const currentSource = () => B.prefs.source(prefs, ui);
+  // Is the whole list here? Only when the page offered nothing more at the start, or our loader ran to its end ("done"): after a cancel or a stall Scholar's
+  // button can be disabled just because a request is still in flight, which says nothing.
+  const listComplete = () => state.complete && !state.loadingAll && !B.scholar.canLoadMore();
   // Nothing on the profile is on a list that is switched on (a biologist's, say) and nothing more is coming: the tier columns and the switch between the lists
   // would be empty, so the table is by role only (the model says so in `noRanks`; the lists that are on stay in `sources`, for the note)
   function noRanks(list) {
     const on = B.prefs.sources(prefs);
-    return on.length > 0 && list.length > 0 && !B.scholar.canLoadMore() && !state.loadingAll && !on.some((s) => list.some((p) => p.status !== "absent" && p.venue && p.venue[s]));       // (a paper that is not the owner's is not in the table)
+    return on.length > 0 && list.length > 0 && listComplete() && !on.some((s) => list.some((p) => p.venue && p.venue[s]));
   }
 
   // ---- rows ---------------------------------------------------------------
@@ -262,7 +266,7 @@
       metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
       byYear: metrics.byYear(list), topVenues: venueList(source), venueKey: state.venueKey,
       coverage: {
-        loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
+        loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
@@ -408,6 +412,7 @@
       ingest();
       if (restartAuto) { restartAuto = false; if (prefs.autoLoad) setTimeout(() => startLoad("auto"), 0); }
       state.loadMessage = stopped === "stalled" ? t("loadStalled", [String(state.rows.length)]) : "";
+      if (stopped === "done") state.complete = true;
       refresh();
     }
   }
@@ -418,6 +423,8 @@
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
     if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers(), 9999, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    // with no tier columns left (nothing on the profile is ranked) a selection on a tier has no control to undo it
+    if (state.selection && state.selection.tier && noRanks(papers())) state.selection = state.selection.role ? { role: state.selection.role, tier: undefined } : null;
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
     if (prefs.panel.show) panel.update(model());
@@ -453,6 +460,7 @@
   // ---- boot ---------------------------------------------------------------
 
   ingest();
+  state.complete = !B.scholar.canLoadMore();                                          // (a profile of up to a hundred papers: Scholar's button is disabled from the start)
   B.scholar.place(panel.el);
   refresh();
 

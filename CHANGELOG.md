@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.22.2 — 2026-10-13
+
+From an independent review of 2.21 and 2.22 (eight confirmed problems):
+
+- **"Nothing on this profile is ranked" is only said when the whole list is here.** After *Cancel* or a stall Scholar's *Show more* button can be disabled just because a request is still in flight, which the loader used to read as "complete": the table lost its columns and the note spoke for a profile that was only partly loaded. The panel now knows the list is complete only when the page offered nothing more at the start or the loader ran to its end; the same flag keeps the "N papers loaded" line and *Load all* visible after a cancel.
+- A paper whose author list does not name the owner counts too: its venue chip is drawn, so the note must not say that no venue is on a list.
+- The toolbar popup's *Role hidden* row no longer spans columns that are not there (an HTML `colspan="0"` made a third cell under a two-column header on every profile outside computer science with a cut-off author list).
+- A selection made on a tier while the list was still loading is dropped when the tier columns go (nothing was left to undo it).
+- With the layout warning (the totals are hidden) the "N papers loaded" line stays.
+- The unranked-venues list keeps its *Report* link on every profile: a computer-science profile whose venues the lists miss is exactly where a report helps.
+- **The weekly data check** treats a 4xx answer (404, 403: moved, removed, refused) as a finding instead of "no verdict", flags a second catalogue file offered next to the bundled one as a new edition, calls a web page served instead of the PDF or the CSV "no verdict" instead of "the file has changed", and `data/README.md` says GitHub pauses scheduled workflows after 60 days without activity.
+- The markup test compares whole names with their `#` or `.` (`#gsc_a_t` was only covered by `.gsc_a_t`; it is listed now). Docs and comments no longer call *Read full lists* "Resolve" or "Complete", and the architecture note says what `sources` holds.
+
 ## 2.22.1 — 2026-10-13
 
 - **A mark after an author's name no longer makes that author "co-first" wherever it stands.** Until now any trailing mark (`*`, `†`, `#` …) on the profile owner's name meant *Co-first*, so a last author marked as a corresponding author (`…, C Lee*`) or a co-senior one (`…, C Lee*, D Kim*`) was shown as co-first. Now the owner is co-first only inside the leading group of authors that share a mark with the first author (`A*, B*, C`: at least two); a lone mark, a mark further down, or a second group with another symbol (`A†, B†, C‡, D‡`: C and D) says nothing about the role, and the envelope `✉` (a corresponding author) is never read as equal contribution. The star-like characters `*`, `∗`, `⁎` are one mark. A real profile read on the live page (co-first stars, cut lists, Orals) pins the roles in `test/real-profile.test.js` and the end-to-end run.

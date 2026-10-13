@@ -196,11 +196,12 @@ highlighted papers, citations, h-index, i10, the venue list — the venue list i
 the year bars stay whole: they are where a filter is chosen. A filter whose control has gone (a venue that left the list) is dropped in `refresh()`
 after `decorate()`, because a row's `highlighted` is only known once it has been decorated.
 
-What the table and the status block show depends on the profile, not only on the settings. `noRanks()` in `main.js` is true when a list is switched on, everything is loaded
-(nothing to load, nothing loading) and no paper that is the owner's has a rank in any list that is on: the model then has no sources, the table is by role only
-(`summarize(list, null)`, heading *Papers by role*), the note says the lists cover computer science (`noRanksNote`), and the unranked-venues list has no *Report* link (nothing is missing from the lists). The filters
-keep the source they had. The status block (`renderCoverage`) leaves out the "N papers loaded" line when it would stand alone — loaded, nothing to load, nothing else to say — and
-the totals are shown; the section then hides itself.
+What the table and the status block show depends on the profile, not only on the settings. `listComplete()` in `main.js` says the whole list is here: the page offered nothing more at the start,
+or our loader ran to its end (`done`) — not after a cancel or a stall, because Scholar's button is disabled while a request is still in flight. `noRanks()` is true when a list is switched on, the list is complete
+and no paper has a rank in any list that is on: the table is then by role only (`summarize(list, null)`, heading *Papers by role*, no tier columns, no switch between the lists; the lists that are on stay in
+`sources`, for the note `noRanksNote`; the toolbar popup empties its own `sources`), and a selection on a tier is dropped in `refresh()` (its control is gone). The unranked-venues list keeps its *Report* link:
+a computer-science profile whose venues the lists miss is exactly where a report helps. The status block (`renderCoverage`) leaves out the "N papers loaded" line when it would stand alone — complete,
+not loading, nothing else to say — and the totals are shown (not with the layout warning, which hides them); the section hides itself when nothing else is left.
 
 Layout: in the wide layout (window narrow, panel above the list) `update()` moves the year bars into the first column; the arrangement is redone when
 the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
@@ -226,12 +227,12 @@ the window crosses the breakpoint. When Scholar's layout has changed (`layoutBro
 | `test/metrics.test.js` | h-index, the matrix, filtering, clipboard text |
 | `test/extension.test.js` | manifest, load order, locales, bundle freshness |
 | `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
-| `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, the whole list loading by itself, *Load all*, *Resolve*, clipboard, persistence, popup, i18n |
+| `test/e2e/run.mjs` | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, the whole list loading by itself, *Load all*, *Read full lists*, clipboard, persistence, popup, i18n |
 
 The stand-in mimics Scholar's DOM, but only the real page can confirm that it still does. On
 2026-10-11 the built content script was run once on a live profile (injected into a normal browser
 tab): all 100 visible rows got the same role and CCF / CORE tiers as the library computes from the
-same strings, *Load all* (real "Show more") and *Resolve* (three real paper pages) behaved, and the
+same strings, *Load all* (real "Show more") and *Read full lists* (three real paper pages) behaved, and the
 panel sat where designed. That check found that Scholar prints a no-break space before the "…" that
 truncates a venue; the matcher already treated it as a space, and tests and the stand-in now include
 it. This is a manual check, not part of CI: Scholar serves CAPTCHAs to automated browsers, so do not

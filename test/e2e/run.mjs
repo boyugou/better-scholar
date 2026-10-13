@@ -967,9 +967,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await pg.locator("#rr-panel .rr-summary .rr-sec-title").textContent(), "Papers by role", "the heading does not promise ranks");
       assert.match(await pg.locator('[data-rr="note"]').textContent(), /^No venue on this profile is on the .*CCF.2026.*ICORE.2026.* lists, which cover computer science\.$/s);
       const mx = await readMatrix(pg);
-      assert.deepEqual([mx.first.total, mx.second.total, mx.last.total], [5, 4, 3], "the roles are counted as before");
-      assert.equal(await pg.locator('[data-rr="unmatched"] .rr-list li').count(), 12, "the venues are still listed for whoever wants them");
-      assert.equal(await pg.locator('[data-act="report-unmatched"]').count(), 0, "but nothing is missing from the lists, so there is nothing to report");
+      assert.deepEqual([mx.first.total, mx.second.total, mx.last.total, mx.hidden], [5, 4, 3, 1], "the roles are counted as before, one paper's list is cut off");
+      assert.equal(await pg.locator('[data-rr="unmatched"] .rr-list li').count(), 13, "the venues are still listed for whoever wants them");
+      assert.equal(await pg.locator('[data-act="report-unmatched"]').count(), 1, "and can still be reported (a computer-science profile whose venues the lists miss is where a report helps)");
       await pg.bringToFront(); await pg.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-ranks.png") });
       // the toolbar popup tells the same story
       const popN = await ctxN.newPage();
@@ -984,8 +984,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await popN.locator("thead th").count(), 2, "the popup's table has the role and the total, no tier columns");
       assert.match(await popN.textContent("#main"), /No venue on this profile is on the .*CCF.2026.*ICORE.2026.* lists/s);
       assert.doesNotMatch(await popN.textContent("#main"), /Not ranked|Ranks come from/, "no legend or edition note for ranks that are not there");
+      assert.deepEqual(await popN.evaluate(() => [...document.querySelectorAll("tr")].map((tr) => tr.children.length)), [2, 2, 2, 2, 2, 2], "every row, the cut-off one too, has the role and the total: no cell spans columns that are not there");
       await popN.close();
-      ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup)");
+      // a selection made on a tier while the list was still loading does not outlive the columns: nothing is left to undo it
+      const fxM = await start({ slug: "non-cs-demo", pageSize: 5 });
+      try {
+        const pgM = await ctxN.newPage();
+        await pgM.goto(fxM.url);
+        await pgM.waitForSelector('#rr-panel th button[data-tier="none"]');
+        await pgM.click('#rr-panel th button[data-tier="none"]');
+        assert.equal(await pgM.locator('[data-rr="filterbar"]').isVisible(), true, "while the list loads the tier column is there, and the selection filters");
+        await eventually(pgM, () => !document.querySelector("#rr-panel [data-tier]") && document.querySelector('[data-rr="filterbar"]').hidden && document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length === 13);
+        await pgM.close();
+      } finally { await fxM.close(); }
+      ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup); a tier selection does not outlive the columns");
     } finally { await ctxN.close(); await fxN.close(); }
   }
 

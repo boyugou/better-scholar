@@ -128,7 +128,7 @@
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true });
     // Scholar's page changed under us: the warning is the first thing in the panel
     const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
-    // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
+    // What a screen reader is told when the panel's status changes (loading stopped, reading the full lists finished): a live region that stays in the page
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir(), lang: B.dom.langTag() }, head, warnBar, filterBar, body, announce);
 
@@ -235,8 +235,8 @@
       if (c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent" }, tn("coverAbsent", c.absent, [String(c.absent)])));        // (when the layout is broken every paper is "absent": that is the warning's news)
       // spellings of the owner's name found in those very papers: one click adds one
       // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
-      const countShown = parts.metrics && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
-      const lone = status.length === 1 && !c.loadingAll && !c.canLoadMore && countShown;
+      const countShown = parts.metrics && !c.layoutBroken && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
+      const lone = status.length === 1 && !c.loadingAll && c.complete && countShown;
       if (parts.status && !lone) lines.push(...status);
       if (parts.names && c.absent > 0 && m.nameHints.suggestions.length) {
         lines.push(h("div", { class: "rr-cover-line", "data-rr": "suggest" }, h("span", { class: "rr-note" }, t("variantSuggest")),
@@ -246,7 +246,7 @@
       let unmatchedEl = null;
       if (parts.status && c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
-        const sig = JSON.stringify([total, c.unmatched.slice(0, 20), !!m.noRanks]);
+        const sig = JSON.stringify([total, c.unmatched.slice(0, 20)]);
         if (sig !== unmatchedSig) {
           unmatchedSig = sig;
           const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
@@ -258,8 +258,7 @@
             h("summary", {}, tn("coverUnmatched", total, [String(total)])),
             h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
             h("div", { class: "rr-actions" }, copyBtn,
-              m.noRanks ? null                                                       // (a profile outside computer science: its venues are not missing from the lists, so there is nothing to report)
-                : h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
+              h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
           coverList.replaceChildren(unmatchedEl);
         }
       } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }

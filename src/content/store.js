@@ -7,7 +7,7 @@
 //   sync  prefs      what to show — written by the settings page
 //   local ui         { collapsed, source } — written by the Scholar page
 //   sync  variants   { profileId: [name spellings] }
-//   local resolved   { paperId: { ts, authors } } — author lists read with "Resolve"
+//   local resolved   { paperId: { ts, authors } } — author lists read with "Read full lists"
 //   sync  settings   the pre-2.2 combined record; read once by migrate() and removed
 (function () {
   "use strict";
