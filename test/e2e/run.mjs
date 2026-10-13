@@ -161,7 +161,18 @@ async function openOptions(context) {
 // (a background tab neither paints nor can be screenshotted, so each helper first brings its own tab to the front)
 const setPref = async (p, key, on) => { await p.bringToFront(); await p.setChecked(`input[data-pref="${key}"]`, on); };
 const stored = (p, area, key) => p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]);
-const eventually = async (page, fn, arg) => { await page.bringToFront(); return page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); };
+// (waitForFunction evaluates its predicate as a string, which the extension pages' content security policy -- scripts from 'self' only -- can refuse
+// on some builds: these pages are polled with evaluate instead)
+const pollPage = async (p, fn, arg, timeout = 10000) => {
+  const t0 = Date.now();
+  for (;;) {
+    if (await p.evaluate(fn, arg)) return;
+    if (Date.now() - t0 > timeout) throw new Error("timed out waiting for: " + fn.toString().slice(0, 100));
+    await p.waitForTimeout(100);
+  }
+};
+
+const eventually = async (page, fn, arg) => { await page.bringToFront(); return page.url().startsWith("chrome-extension://") ? pollPage(page, fn, arg) : page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); };
 
 (async () => {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -293,13 +304,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const rowsOf = () => opts.locator(".preview [data-mark-group]").evaluateAll((els) => els.map((e) => e.getAttribute("data-mark-group") + "=" + e.querySelector("b").textContent));
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight=1", "highlight=1"]);
     await opts.selectOption('select[data-pref="talkRows"]', "pair");
-    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 3);
+    await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 3);
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight+highlight=2"]);
     await opts.selectOption('select[data-pref="talkRows"]', "talks");
-    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 2);
+    await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 2);
     assert.deepEqual(await rowsOf(), ["award=2", "oral+spotlight+highlight=3"]);
     await opts.selectOption('select[data-pref="talkRows"]', "separate");
-    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 4);
+    await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 4);
     ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
 
     // -- 6a2c. the venue list (off until asked): the ranked venues of the highlighted papers, most papers first; a click lists just those papers
@@ -350,11 +361,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     await opts.selectOption('select[data-pref="language"]', "ja");
     await page.waitForFunction((x) => (document.querySelector("#rr-panel") || {}).getAttribute && document.querySelector("#rr-panel").getAttribute("aria-label") === x, jaTitle, { timeout: 15000 });
-    await opts.waitForFunction((x) => document.title.startsWith(x), jaTitle, { timeout: 15000 });
+    await pollPage(opts, (x) => document.title.startsWith(x), jaTitle, 15000);
     assert.equal(await opts.locator('select[data-pref="language"]').inputValue(), "ja");
     await opts.selectOption('select[data-pref="language"]', "ar");
     await page.waitForFunction(() => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").dir === "rtl", null, { timeout: 15000 });
-    await opts.waitForFunction(() => document.documentElement.dir === "rtl", null, { timeout: 15000 });
+    await pollPage(opts, () => document.documentElement.dir === "rtl", null, 15000);
     await opts.waitForTimeout(400);
     await opts.screenshot({ path: path.join(outDir, "settings-ar.png"), fullPage: true });
     await page.bringToFront(); await page.waitForTimeout(400);
@@ -411,7 +422,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(await opts.evaluate(() => document.querySelector(".preview").classList.contains("more")), "a cut-off preview shows its fade");
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 2600 });             // (tall enough for the whole preview also with the wider fonts of a CI machine)
-    await opts.waitForFunction(() => !document.querySelector(".preview").classList.contains("more"), null, { timeout: 12000 }).catch(async () => assert.fail("a whole preview has no fade: " + JSON.stringify(await opts.evaluate(() => { const p = document.querySelector(".preview"); return { scrollH: p.scrollHeight, clientH: p.clientHeight, top: p.scrollTop, innerH: innerHeight, cls: p.className }; }))));
+    await pollPage(opts, () => !document.querySelector(".preview").classList.contains("more"), null, 12000).catch(async () => assert.fail("a whole preview has no fade: " + JSON.stringify(await opts.evaluate(() => { const p = document.querySelector(".preview"); return { scrollH: p.scrollHeight, clientH: p.clientHeight, top: p.scrollTop, innerH: innerHeight, cls: p.className }; }))));
     await opts.setViewportSize({ width: 1360, height: 900 });
     ok("the settings preview stays whole in view while the page scrolls, even in a short window");
 
