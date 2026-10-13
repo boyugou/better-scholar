@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.70 — 2026-10-12
+
+- VRST's best papers of 2024 (three) and 2025 (one) from the symposium's own home pages (`tot.mjs vrst-best`); the list had none for VRST. The list has 6643 awards.
+
 ## 2.10.69 — 2026-10-12
 
 - BMVC's best paper of 2022 (Trans2k) and its two best student papers, and 2025's best paper (Guiding a diffusion model with itself using sliding windows), from the conference's own pages (`tot.mjs bmvc-awards`); the list had none for BMVC. The list has 6639 awards.

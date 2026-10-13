@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6639
+  "count": 6643
  },
  "entries": [
   {
@@ -109449,6 +109449,82 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "VM '04: Semantic Remote Attestation—A Virtual Machine Directed Approach to Trusted Computing — Vivek Haldar, University of California, Irvine; Deepak Chandra, University of California, Irvine; Michael Franz, University of California, Irvine"
+  },
+  {
+   "venue": "VRST",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring User Placement for VR Remote Collaboration in a Constrained Passenger Space",
+   "authors": [
+    "Daniel Medeiros",
+    "Graham Wilson",
+    "Mauricio Sousa",
+    "Nadia Pantidi",
+    "Mark McGill",
+    "Stephen Anthony Brewster"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2024/",
+   "evidence": "VRST 2024 Best Paper: Exploring User Placement for VR Remote Collaboration in a Constrained Passenger Space — Daniel Medeiros, Graham Wilson, Mauricio Sousa, Nadia Pantidi, Mark McGill, Stephen Anthony Brewster"
+  },
+  {
+   "venue": "VRST",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Generative Terrain Authoring with Mid-air Hand Sketching in Virtual Reality",
+   "authors": [
+    "Yushen Hu",
+    "Keru Wang",
+    "Zhu Wang",
+    "Yuli Shao",
+    "Jan Plass",
+    "Ken Perlin"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2024/",
+   "evidence": "VRST 2024 Best Paper: Generative Terrain Authoring with Mid-air Hand Sketching in Virtual Reality — Yushen Hu, Keru Wang, Zhu Wang, Yuli Shao, Jan Plass, Ken Perlin"
+  },
+  {
+   "venue": "VRST",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Stand Alone or Stay Together: An In-situ Experiment of Mixed-Reality Applications in Embryonic Anatomy Education",
+   "authors": [
+    "Danny Schott",
+    "Matthias Kunz",
+    "Florian Heinrich",
+    "Jonas Mandel",
+    "Anne Albrecht",
+    "Rüdiger Braun-Dullaeus",
+    "Christian Hansen"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2024/",
+   "evidence": "VRST 2024 Best Paper: Stand Alone or Stay Together: An In-situ Experiment of Mixed-Reality Applications in Embryonic Anatomy Education — Danny Schott, Matthias Kunz, Florian Heinrich, Jonas Mandel, Anne Albrecht, Rüdiger Braun-Dullaeus, Christian Hansen"
+  },
+  {
+   "venue": "VRST",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "See It and Hear It: Multimodal Guidance in MR-Based Neurosurgical Simulation for Skill Retention",
+   "authors": [
+    "Pasquale Cascarano",
+    "Andrea Loretti",
+    "Luca Zanuttini",
+    "Daniele Giunchi",
+    "Riccardo Bovo",
+    "Shirin Hajahmadi",
+    "Giacomo Vallasciani",
+    "Matteo Martinoni",
+    "Gustavo Marfia"
+   ],
+   "track": "main",
+   "source": "https://vrst.acm.org/vrst2025/",
+   "evidence": "VRST 2025 Best Paper: See It and Hear It: Multimodal Guidance in MR-Based Neurosurgical Simulation for Skill Retention — Pasquale Cascarano, Andrea Loretti, Luca Zanuttini, Daniele Giunchi, Riccardo Bovo, Shirin Hajahmadi, Giacomo Vallasciani, Matteo Martinoni, Gustavo Marfia"
   },
   {
    "venue": "WOOT",

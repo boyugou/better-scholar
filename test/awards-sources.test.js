@@ -2116,3 +2116,10 @@ test("BMVC award pages: 2022's headings over title and bracketed authors (semico
   const b = `<p>The Best Paper Award was awarded to</p><p>Gil Hart, Hal Ito, Ivy Jones</p><p>for their paper "Guiding a diffusion model with itself using sliding windows".</p><p>The Best Presentation Award was awarded to</p><p>Kay Lowe</p><p>for their paper "Atomizer: generalizing to unseen modalities".</p>`;
   assert.deepEqual(parseBmvcAwards(b, "https://bmvc2025.bmva.org/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2025 Guiding a diffusion model with itself using sliding windows | Gil Hart; Hal Ito; Ivy Jones"]);
 });
+
+test("VRST home page: title and authors lines under 'Best Paper', up to the honorable mentions; only 2024 and 2025 are read", async () => {
+  const { parseVrstBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<title>VRST 2024</title><p>General Chairs</p><p>Awards</p><p>Best Paper</p><p>An in-situ experiment of mixed reality applications in education</p><p>Ann Lee, Bo Chan, Cy Dunn</p><p>Best Paper – Honorable Mention</p><p>An honoured motion tracking evaluation</p><p>Ed Fox</p>`;
+  assert.deepEqual(parseVrstBest(h, "https://vrst.acm.org/vrst2024/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["An in-situ experiment of mixed reality applications in education | Ann Lee; Bo Chan; Cy Dunn"]);
+  assert.equal(parseVrstBest(h, "https://vrst.acm.org/vrst2023/").entries.length, 0);
+});
