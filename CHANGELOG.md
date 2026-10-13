@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.77 — 2026-10-12
+
+- IEEE WCNC's best papers of 2022–2024 (12 papers, one per track; the list had none for WCNC) from each year's own Best Paper Awards page (`tot.mjs wcnc-best`). The list has 6728 awards.
+
 ## 2.10.76 — 2026-10-12
 
 - IEEE ICC's best papers of 2022–2025 (56 papers, one per symposium; the list had none for ICC) from each year's own Best Paper Awards page, which prints them in three layouts (`tot.mjs icc-best`). 2021's page prints no recipients; GLOBECOM 2025's runs names together and is not read. The list has 6716 awards.

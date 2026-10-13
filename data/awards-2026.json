@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6716
+  "count": 6728
  },
  "entries": [
   {
@@ -110739,6 +110739,207 @@
    "track": "main",
    "source": "https://vrst.acm.org/vrst2025/",
    "evidence": "VRST 2025 Best Paper: See It and Hear It: Multimodal Guidance in MR-Based Neurosurgical Simulation for Skill Retention — Pasquale Cascarano, Andrea Loretti, Luca Zanuttini, Daniele Giunchi, Riccardo Bovo, Shirin Hajahmadi, Giacomo Vallasciani, Matteo Martinoni, Gustavo Marfia"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 3)",
+   "title": "Delay Estimation in Dense Multipath Environments using Time Series Segmentation",
+   "authors": [
+    "Sebastian Kram",
+    "Christopher Kraus",
+    "Maximilian Stahlke",
+    "Tobias Feigl",
+    "Jörn Thielecke",
+    "Christopher Mutschler"
+   ],
+   "track": "main",
+   "source": "https://wcnc2022.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2022 Best Paper Award, Track 3: Delay Estimation in Dense Multipath Environments using Time Series Segmentation — Sebastian Kram, Christopher Kraus, Maximilian Stahlke, Tobias Feigl, Jörn Thielecke, Christopher Mutschler"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 4)",
+   "title": "Differential Phase Compensation in Over-the-air Precoding Test-bed for a Multi-beam Satellite",
+   "authors": [
+    "Liz Martinez Marrero",
+    "Juan Duncan",
+    "Jorge Querol",
+    "Nicola Maturo",
+    "Jevgenij Krivochiza",
+    "Symeon Chatzinotas",
+    "Björn Ottersten"
+   ],
+   "track": "main",
+   "source": "https://wcnc2022.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2022 Best Paper Award, Track 4: Differential Phase Compensation in Over-the-air Precoding Test-bed for a Multi-beam Satellite — Liz Martinez Marrero, Juan Duncan, Jorge Querol, Nicola Maturo, Jevgenij Krivochiza, Symeon Chatzinotas, Björn Ottersten"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "Probabilistic Node Selection for Federated Learning with Heterogeneous Data in Mobile Edge",
+   "authors": [
+    "Hongda Wu",
+    "Ping Wang"
+   ],
+   "track": "main",
+   "source": "https://wcnc2022.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2022 Best Paper Award, Track 2: Probabilistic Node Selection for Federated Learning with Heterogeneous Data in Mobile Edge — Hongda Wu, Ping Wang"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "The Channel Capacity of General Complex-Valued Load Modulation for Backscatter Communication",
+   "authors": [
+    "Gregor Dumphart",
+    "Johannes Sager",
+    "Armin Wittneben"
+   ],
+   "track": "main",
+   "source": "https://wcnc2022.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2022 Best Paper Award, Track 1: The Channel Capacity of General Complex-Valued Load Modulation for Backscatter Communication — Gregor Dumphart, Johannes Sager, Armin Wittneben"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "Conditional Generative Adversarial Network Aided Digital Twin Network Modeling for Massive MIMO Optimization",
+   "authors": [
+    "Weiliang He",
+    "Cheng Zhang",
+    "Juan Deng",
+    "Qingbi Zheng",
+    "Yongming Huang",
+    "Xiaohu You"
+   ],
+   "track": "main",
+   "source": "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2023 Best Paper Award, Track 2: Conditional Generative Adversarial Network Aided Digital Twin Network Modeling for Massive MIMO Optimization — Weiliang He, Cheng Zhang, Juan Deng, Qingbi Zheng, Yongming Huang, Xiaohu You"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "Integrated Sensing and Communication for Joint GPS Spoofing and Jamming Detection in Vehicular V2X Networks",
+   "authors": [
+    "Ali Krayani",
+    "Gabriele Barabino",
+    "Lucio Marcenaro",
+    "Carlo S Regazzoni"
+   ],
+   "track": "main",
+   "source": "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2023 Best Paper Award, Track 1: Integrated Sensing and Communication for Joint GPS Spoofing and Jamming Detection in Vehicular V2X Networks — Ali Krayani, Gabriele Barabino, Lucio Marcenaro, Carlo S Regazzoni"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 4)",
+   "title": "Performance of 802.11be Wi-Fi 7 with Multi-Link Operation on AR Applications",
+   "authors": [
+    "Molham Alsakati",
+    "Charlie Pettersson",
+    "Sebastian Max",
+    "Vishnu Narayanan Moothedath",
+    "James Gross"
+   ],
+   "track": "main",
+   "source": "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2023 Best Paper Award, Track 4: Performance of 802.11be Wi-Fi 7 with Multi-Link Operation on AR Applications — Molham Alsakati, Charlie Pettersson, Sebastian Max, Vishnu Narayanan Moothedath, James Gross"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 3)",
+   "title": "UAV-aided Two-tier Computation Offloading for Marine Communication Networks: An Incentive-based Approach",
+   "authors": [
+    "Luo Zhishen",
+    "Minghui Dai",
+    "Yuan Wu",
+    "Liping Qian",
+    "Bin Lin",
+    "Zhou Su"
+   ],
+   "track": "main",
+   "source": "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2023 Best Paper Award, Track 3: UAV-aided Two-tier Computation Offloading for Marine Communication Networks: An Incentive-based Approach — Luo Zhishen, Minghui Dai, Yuan Wu, Liping Qian, Bin Lin, Zhou Su"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 2)",
+   "title": "Channel Cycle Time: A New Measure of Short-term Fairness",
+   "authors": [
+    "Pengfei Shen",
+    "Yulin Shao",
+    "Haoyuan Pan",
+    "Lu Lu",
+    "Yonina C. Eldar"
+   ],
+   "track": "main",
+   "source": "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2024 Best Paper Award, Track 2: Channel Cycle Time: A New Measure of Short-term Fairness — Pengfei Shen, Yulin Shao, Haoyuan Pan, Lu Lu, Yonina C. Eldar"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 3)",
+   "title": "Denoising Diffusion Probabilistic Models for Hardware-Impaired Communications",
+   "authors": [
+    "Mehdi Letafati",
+    "Samad Ali",
+    "Matti Latva-aho"
+   ],
+   "track": "main",
+   "source": "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2024 Best Paper Award, Track 3: Denoising Diffusion Probabilistic Models for Hardware-Impaired Communications — Mehdi Letafati, Samad Ali, Matti Latva-aho"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 1)",
+   "title": "Moving Target Sensing for ISAC Systems in Clutter Environment",
+   "authors": [
+    "Dongqi Luo",
+    "Huihui Wu",
+    "Hongliang Luo",
+    "Bo Lin",
+    "Feifei Gao"
+   ],
+   "track": "main",
+   "source": "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2024 Best Paper Award, Track 1: Moving Target Sensing for ISAC Systems in Clutter Environment — Dongqi Luo, Huihui Wu, Hongliang Luo, Bo Lin, Feifei Gao"
+  },
+  {
+   "venue": "WCNC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Track 4)",
+   "title": "Near Field Computational Imaging with RIS Generated Virtual Masks",
+   "authors": [
+    "Yuhua Jiang",
+    "Feifei Gao",
+    "Yimin Liu",
+    "Shi Jin",
+    "Tiejun Cui"
+   ],
+   "track": "main",
+   "source": "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards",
+   "evidence": "WCNC 2024 Best Paper Award, Track 4: Near Field Computational Imaging with RIS Generated Virtual Masks — Yuhua Jiang, Feifei Gao, Yimin Liu, Shi Jin, Tiejun Cui"
   },
   {
    "venue": "WOOT",

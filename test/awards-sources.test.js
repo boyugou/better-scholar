@@ -2169,3 +2169,10 @@ test("ICC best paper pages: 2025's heading, title and authors with brackets; 202
   const c = `<p>ICC 2022 Best Paper Awards Recipients</p><p>COGNITIVE RADIO & AI-ENABLED NETWORKS SYMPOSIUM</p><p>“Fine-grained service offloading in collaborative edge computing,” by Kay Lowe, Lee Moss, and Max Nye</p><p>Search</p>`;
   assert.deepEqual(parseIccBest(c, "https://icc2022.ieee-icc.org/program/best-paper-awards").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Fine-grained service offloading in collaborative edge computing | Kay Lowe; Lee Moss; Max Nye"]);
 });
+
+test("WCNC best paper pages: a 'Track N' line, the title and the authors (brackets in 2023) per track; the page must be titled with the year", async () => {
+  const { parseWcncBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<title>Best Paper Awards | IEEE Wireless Communications and Networking Conference - 2023 IEEE WCNC</title><p>Menu</p><p>Congratulations to our Best Papers Awards Winners</p><p>Track 1</p><p>Integrated sensing and communication for spoofing and jamming detection</p><p>Ann Lee (Genova, Italy); Bo Chan (Queen Mary, UK)</p><p>Track 2</p><p>Conditional generative adversarial networks for digital twin modeling</p><p>Cy Dunn and Ed Fox (Southeast University, China)</p><p>Workshops</p>`;
+  assert.deepEqual(parseWcncBest(h, "https://wcnc2023.ieee-wcnc.org/program/best-paper-awards").entries.map((e) => `${e.awardLabel} | ${e.authors.join("; ")}`), ["Best Paper Award (Track 1) | Ann Lee; Bo Chan", "Best Paper Award (Track 2) | Cy Dunn; Ed Fox"]);
+  assert.equal(parseWcncBest(h, "https://wcnc2024.ieee-wcnc.org/program/best-paper-awards").entries.length, 0);
+});
