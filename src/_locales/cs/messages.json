@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Bezplatný klíč z semanticscholar.org/product/api zabrání sdílenému limitu požadavků, který mají všichni bez klíče. Zůstává na tomto zařízení (nesynchronizuje se) a odesílá se jen do Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar požádal o zpomalení, takže zbytek byl načten ze stránek Scholar."
   }
 }

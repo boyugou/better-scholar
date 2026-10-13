@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "คีย์ฟรีจาก semanticscholar.org/product/api ช่วยให้หลีกเลี่ยงขีดจำกัดคำขอที่ผู้ที่ไม่มีคีย์ใช้ร่วมกันได้ คีย์จะอยู่ในอุปกรณ์นี้เท่านั้น (ไม่ซิงก์) และส่งไปที่ Semantic Scholar เท่านั้น"
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar ขอให้ลดความเร็วลง จึงใช้หน้าของ Scholar เองสำหรับส่วนที่เหลือ"
   }
 }

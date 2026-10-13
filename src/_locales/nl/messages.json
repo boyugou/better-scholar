@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Een gratis sleutel van semanticscholar.org/product/api voorkomt de gedeelde limiet die iedereen zonder sleutel deelt. De sleutel blijft op dit apparaat (wordt niet gesynchroniseerd) en wordt alleen naar Semantic Scholar gestuurd."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar vroeg om te vertragen, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
   }
 }

@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "semanticscholar.org/product/api से मिली मुफ़्त कुंजी उस साझा दर-सीमा से बचाती है, जो बिना कुंजी वाले सभी लोग साथ इस्तेमाल करते हैं। यह कुंजी इसी डिवाइस पर रहती है (सिंक नहीं होती) और केवल Semantic Scholar को भेजी जाती है।"
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar ने धीमा करने को कहा, इसलिए बाकी के लिए Scholar के अपने पेज इस्तेमाल किए गए।"
   }
 }

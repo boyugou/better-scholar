@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "semanticscholar.org/product/api에서 무료 키를 받으면 키가 없는 모든 사용자가 공유하는 요청 제한을 피할 수 있습니다. 키는 이 기기에만 저장되며(동기화되지 않음) Semantic Scholar에만 전송됩니다."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar가 속도를 늦춰 달라고 요청하여, 나머지는 Scholar 자체 페이지를 사용했습니다."
   }
 }

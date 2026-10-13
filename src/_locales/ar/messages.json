@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "يتجنّب مفتاح مجاني من semanticscholar.org/product/api حدّ الطلبات المشترك الذي يتقاسمه كل من لا مفتاح له. يبقى على هذا الجهاز (لا يُزامَن) ولا يُرسل إلا إلى Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "طلبت Semantic Scholar التمهل، لذلك استُخدمت صفحات Scholar نفسها للباقي."
   }
 }

@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Ένα δωρεάν κλειδί από το semanticscholar.org/product/api αποφεύγει το όριο αιτημάτων που μοιράζονται όλοι όσοι δεν έχουν κλειδί. Παραμένει σε αυτή τη συσκευή (δεν συγχρονίζεται) και αποστέλλεται μόνο στο Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Το Semantic Scholar ζήτησε επιβράδυνση, οπότε για το υπόλοιπο χρησιμοποιήθηκαν οι σελίδες του ίδιου του Scholar."
   }
 }

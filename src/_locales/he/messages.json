@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "מפתח חינמי מ-semanticscholar.org/product/api מונע את מגבלת הבקשות המשותפת שחולקים כל מי שאין לו מפתח. המפתח נשאר במכשיר הזה (אינו מסונכרן) ונשלח רק אל Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar ביקש להאט, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
   }
 }

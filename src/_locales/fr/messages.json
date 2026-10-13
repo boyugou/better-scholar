@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Une clé gratuite obtenue sur semanticscholar.org/product/api évite la limite de requêtes partagée par tous ceux qui n’en ont pas. Elle reste sur cet appareil (non synchronisée) et n’est envoyée qu’à Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar a demandé de ralentir ; pour la suite, les pages de Scholar ont été utilisées."
   }
 }

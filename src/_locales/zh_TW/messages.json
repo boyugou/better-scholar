@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "到 semanticscholar.org/product/api 免費申請一組金鑰，就能避開所有沒有金鑰的人共用的請求上限。金鑰只存在這台裝置上（不會同步），且只會傳送給 Semantic Scholar。"
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar 要求放慢速度，其餘改為讀取 Scholar 自己的頁面。"
   }
 }

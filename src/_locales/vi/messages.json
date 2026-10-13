@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Khóa miễn phí lấy từ semanticscholar.org/product/api giúp tránh giới hạn yêu cầu dùng chung mà những ai không có khóa đều phải chia sẻ. Khóa chỉ lưu trên thiết bị này (không đồng bộ) và chỉ được gửi tới Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar yêu cầu chậm lại, nên phần còn lại đã dùng trang của chính Scholar."
   }
 }

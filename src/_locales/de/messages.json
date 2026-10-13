@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Ein kostenloser Schlüssel von semanticscholar.org/product/api vermeidet das gemeinsame Abfragelimit, das alle ohne Schlüssel teilen. Er bleibt auf diesem Gerät (wird nicht synchronisiert) und wird nur an Semantic Scholar gesendet."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar bat, langsamer zu werden, daher wurden für den Rest die eigenen Seiten von Scholar genutzt."
   }
 }

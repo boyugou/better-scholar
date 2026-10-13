@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "En gratis nyckel från semanticscholar.org/product/api undviker den gemensamma gränsen för förfrågningar som alla utan nyckel delar. Den stannar på den här enheten (synkroniseras inte) och skickas bara till Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar bad om att sakta ner, så resten hämtades från Scholars egna sidor."
   }
 }

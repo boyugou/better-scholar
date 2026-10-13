@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Bezpłatny klucz z semanticscholar.org/product/api pozwala uniknąć wspólnego limitu zapytań, z którego korzystają wszyscy bez klucza. Klucz pozostaje na tym urządzeniu (nie jest synchronizowany) i jest wysyłany tylko do Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar poprosił o zwolnienie, więc resztę pobrano z własnych stron Scholar."
   }
 }

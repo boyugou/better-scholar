@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "semanticscholar.org/product/api adresinden alınan ücretsiz bir anahtar, anahtarı olmayan herkesin paylaştığı istek sınırına takılmanızı önler. Anahtar bu cihazda kalır (eşitlenmez) ve yalnızca Semantic Scholar'a gönderilir."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar yavaşlamasını istedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
   }
 }

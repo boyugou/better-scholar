@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.15.1 — 2026-10-13
+
+- When Semantic Scholar asks to slow down during Complete, the rest is read from Scholar's own pages and the status says so (in every language).
+
 ## 2.15.0 — 2026-10-13
 
 - Semantic Scholar: an **API key** can be given (optional; a free key from semanticscholar.org avoids the rate limit that everyone without one shares). It is kept on this device only (not synced) and sent only to Semantic Scholar, in a header. A unit test now checks that every script in `src/` parses.

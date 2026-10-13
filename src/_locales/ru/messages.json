@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "Бесплатный ключ на semanticscholar.org/product/api избавляет от общего лимита запросов, который делят все, у кого ключа нет. Он хранится на этом устройстве (не синхронизируется) и отправляется только в Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar попросил снизить частоту запросов, поэтому остальное взято со страниц самого Scholar."
   }
 }

@@ -321,7 +321,7 @@
       B.store.saveResolved(resolvedCache);
       state.resolving = null;
       resolveAbort = null;
-      state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "cancelled" ? "" : t("resolveDone");
+      state.resolveMessage = res.stopped === "captcha" ? t("resolveCaptcha") : res.stopped === "cancelled" ? "" : res.semanticLimited ? t("resolveDone") + " " + t("resolveSemanticBusy") : t("resolveDone");
       rehint();
       refresh();
     },

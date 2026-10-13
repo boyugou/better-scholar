@@ -652,5 +652,8 @@
   },
   "optSemanticKeyHint": {
     "message": "在 semanticscholar.org/product/api 免费申请的密钥，可避开无密钥用户共用的速率限制。它只保存在本机（不同步），也只发送给 Semantic Scholar。"
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar 要求放慢，其余的改为读取 Scholar 自己的页面。"
   }
 }

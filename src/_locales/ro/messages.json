@@ -670,5 +670,8 @@
   },
   "optSemanticKeyHint": {
     "message": "O cheie gratuită de la semanticscholar.org/product/api evită limita de cereri comună celor care nu au una. Rămâne pe acest dispozitiv (nu se sincronizează) și se trimite doar către Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar a cerut să încetinim, așa că restul a fost preluat din paginile Scholar."
   }
 }

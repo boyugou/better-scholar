@@ -494,6 +494,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
           asked.push(route.request().url());
           assert.ok(!(route.request().headers()["cookie"]), "no cookies go to Semantic Scholar");
           const r = fxS.profile.rows.find((x) => x.title.trim() === q.get("query"));
+          if (asked.length === 3) return route.fulfill({ status: 429, headers: { "access-control-allow-origin": "*" }, body: "{}" });   // Semantic Scholar asks to slow down: no further question is put to it
           if (r && asked.length === 1) {                                  // one answer that is another paper's author list: it must not be used
             return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": "*" }, body: JSON.stringify({ data: [{ title: r.title, authors: [{ name: "Zed Nobody" }] }] }) });
           }
@@ -516,8 +517,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         await pg.click('[data-act="resolve"]');
         await pg.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 30000 });
         assert.deepEqual(await readMatrix(pg), resolvedExpect, "the same roles as when Scholar's own pages are read");
-        assert.equal(fxS.detailRequests(), 1, "only the paper whose Semantic Scholar answer did not fit (another first author) was read from Scholar's own page");
-        assert.equal(asked.length, 28);
+        assert.equal(fxS.detailRequests(), 27, "Scholar's own page is read for the paper whose answer did not fit (another first author) and for everything after Semantic Scholar asked to slow down");
+        assert.match(await pg.locator('[data-rr="resolve-msg"]').textContent(), /asked to slow down/);
+        assert.equal(asked.length, 3, "after the 429 it is not asked again");
         assert.ok(asked.every((u) => u.startsWith("https://api.semanticscholar.org/graph/v1/paper/search/match?") && !/user=|TEST/.test(u)), "only the title is sent");
         ok("Semantic Scholar: cut-off author lists completed from its API (title only); an answer whose first author is not the row's is refused and that paper is read from Scholar instead");
       } finally { await ctxS.close(); await fxS.close(); }
