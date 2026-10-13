@@ -136,3 +136,11 @@ test("byYear: highlighted papers per year and role, every year in between, none 
   assert.deepEqual(out.map((e) => [e.year, e.first, e.last, e.second, e.total]), [[2020, 1, 1, 0, 2], [2021, 0, 0, 0, 0], [2022, 0, 0, 1, 1]]);
   assert.deepEqual(m.byYear([]), []);
 });
+
+test("topVenues: ranked venues of the highlighted papers, most papers first, ties by name, at most n", () => {
+  const v = (abbr, highlighted = true) => ({ highlighted, venue: { ccf: { abbr, name: abbr + " full" } } });
+  const rows = [v("ICML"), v("ICML"), v("NeurIPS"), v("ACL"), v("ACL"), v("CVPR", false), { highlighted: true, venue: {} }, { highlighted: true, venue: { core: { name: "Journal Of Things" } } }];
+  assert.deepEqual(m.topVenues(rows), [{ key: "ACL", count: 2 }, { key: "ICML", count: 2 }, { key: "Journal Of Things", count: 1 }, { key: "NeurIPS", count: 1 }]);
+  assert.equal(m.topVenues(rows, 2).length, 2);
+  assert.equal(m.venueKey(undefined), "");
+});

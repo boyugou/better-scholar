@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Unisci…"
+  },
+  "venuesTitle": {
+    "message": "Dove compaiono gli articoli evidenziati"
+  },
+  "optPanelVenues": {
+    "message": "Sedi principali"
+  },
+  "optPanelVenuesHint": {
+    "message": "Le sedi con ranking dei tuoi articoli evidenziati, dalla più frequente; clicca su una per elencarne gli articoli."
   }
 }

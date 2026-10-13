@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "統合…"
+  },
+  "venuesTitle": {
+    "message": "ハイライトした論文の掲載先"
+  },
+  "optPanelVenues": {
+    "message": "主な掲載先"
+  },
+  "optPanelVenuesHint": {
+    "message": "ハイライトした論文の、ランク付けされた掲載先を件数の多い順に表示します。掲載先をクリックすると、その論文を一覧できます。"
   }
 }

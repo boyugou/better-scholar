@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Combinar…"
+  },
+  "venuesTitle": {
+    "message": "Dónde aparecen los artículos resaltados"
+  },
+  "optPanelVenues": {
+    "message": "Sedes principales"
+  },
+  "optPanelVenuesHint": {
+    "message": "Las sedes con rango de tus artículos resaltados, de más a menos frecuentes; haz clic en una para ver sus artículos."
   }
 }

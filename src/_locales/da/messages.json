@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Slå sammen…"
+  },
+  "venuesTitle": {
+    "message": "Hvor de fremhævede artikler optræder"
+  },
+  "optPanelVenues": {
+    "message": "Top-steder"
+  },
+  "optPanelVenuesHint": {
+    "message": "De rangerede steder for dine fremhævede artikler, flest først; klik på et for at se dets artikler."
   }
 }

@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Fusionner…"
+  },
+  "venuesTitle": {
+    "message": "Où paraissent les articles mis en évidence"
+  },
+  "optPanelVenues": {
+    "message": "Principales venues"
+  },
+  "optPanelVenuesHint": {
+    "message": "Les venues classées de vos articles mis en évidence, les plus fréquentes d'abord ; cliquez sur une venue pour lister ses articles."
   }
 }

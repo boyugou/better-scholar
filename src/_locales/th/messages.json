@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "รวม…"
+  },
+  "venuesTitle": {
+    "message": "งานที่ไฮไลต์ไปปรากฏที่ใด"
+  },
+  "optPanelVenues": {
+    "message": "venue ยอดนิยม"
+  },
+  "optPanelVenuesHint": {
+    "message": "venue ที่มีอันดับของงานที่ไฮไลต์ เรียงจากมากไปน้อย คลิกหนึ่งรายการเพื่อดูงานในนั้น"
   }
 }

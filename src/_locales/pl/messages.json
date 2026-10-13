@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "Scal…"
+  },
+  "venuesTitle": {
+    "message": "Gdzie pojawiają się wyróżnione prace"
+  },
+  "optPanelVenues": {
+    "message": "Najczęstsze miejsca publikacji"
+  },
+  "optPanelVenuesHint": {
+    "message": "Sklasyfikowane miejsca publikacji wyróżnionych prac, od najczęstszych; kliknij jedno, aby zobaczyć jego prace."
   }
 }

@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Merge…"
+  },
+  "venuesTitle": {
+    "message": "Where the highlighted papers appear"
+  },
+  "optPanelVenues": {
+    "message": "Top venues"
+  },
+  "optPanelVenuesHint": {
+    "message": "The ranked venues of your highlighted papers, most frequent first; click one to list its papers."
   }
 }

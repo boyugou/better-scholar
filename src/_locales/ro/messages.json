@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Îmbină…"
+  },
+  "venuesTitle": {
+    "message": "Unde apar lucrările evidențiate"
+  },
+  "optPanelVenues": {
+    "message": "Venue-urile principale"
+  },
+  "optPanelVenuesHint": {
+    "message": "Venue-urile cu rang ale lucrărilor evidențiate, cele mai frecvente primele; apăsați pe unul pentru a lista lucrările sale."
   }
 }

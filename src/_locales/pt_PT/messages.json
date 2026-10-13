@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Mesclar…"
+  },
+  "venuesTitle": {
+    "message": "Onde aparecem os artigos destacados"
+  },
+  "optPanelVenues": {
+    "message": "Principais locais"
+  },
+  "optPanelVenuesHint": {
+    "message": "Os locais com ranking dos seus artigos destacados, do mais frequente para o menos; clique num para listar os seus artigos."
   }
 }

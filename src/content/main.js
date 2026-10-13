@@ -34,6 +34,7 @@
   const state = {
     rows: [],                                   // { raw, a: analysis, highlighted }
     selection: null,                            // matrix cell / row / column filter
+    venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
     loadingAll: false,
@@ -175,6 +176,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
       if (state.markGroup && !marks.inGroup(a, state.markGroup)) hide = true;
+      if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
       row.raw.tr.classList.toggle("rr-hide", hide);
     }
@@ -212,7 +214,7 @@
       selection: state.selection, filters: state.filters,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list),
+      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map((r) => ({ title: r.raw.title, authorsText: r.raw.authorsText, citations: r.raw.citations }))).keep.filter((k) => !k).length,
@@ -269,6 +271,7 @@
       state.selection = same || (sel.role === undefined && sel.tier === undefined) ? null : sel;
       refresh();
     },
+    onVenue(k) { state.venueKey = state.venueKey === k ? null : k; refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
     onYear(start, end) {
@@ -381,6 +384,7 @@
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
     if (state.markGroup && !(marks.rows(prefs.talkRows).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.marks[g]))) state.markGroup = null;
+    if (!prefs.panel.show || !prefs.panel.venues) state.venueKey = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row

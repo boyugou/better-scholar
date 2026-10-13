@@ -102,6 +102,7 @@
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics" });
     const yearsSec = h("div", { class: "rr-sec rr-years", "data-rr": "years" });
+    const venuesSec = h("div", { class: "rr-sec rr-venues", "data-rr": "venues" });
 
     // name variants (input kept stable across updates)
     const variantList = h("div", { class: "rr-variants" });
@@ -116,7 +117,7 @@
     const footSec = h("div", { class: "rr-sec" }, variantBox, noteBox);
 
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
-    const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, coverSec, footSec);
+    const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body);
 
@@ -265,6 +266,17 @@
         h("div", { class: "rr-bars-axis" }, h("span", {}, String(data[0].year)), h("span", {}, String(data[data.length - 1].year)))));
     }
 
+    // The venues the highlighted papers appear in, most frequent first; click one to list its papers
+    function renderVenues(m) {
+      const list = m.topVenues || [];
+      venuesSec.hidden = !m.prefs.panel.venues || !list.length;
+      if (venuesSec.hidden) return;
+      venuesSec.replaceChildren(
+        h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("venuesTitle"))),
+        h("div", { class: "rr-markrows" }, ...list.map((v) => h("button", { class: "rr-markrow", type: "button", "data-venue": v.key, "aria-pressed": String(m.venueKey === v.key), onClick: () => cb.onVenue(v.key) },
+          h("span", { class: "rr-lab" }, v.key), h("b", {}, String(v.count))))));
+    }
+
     function renderVariants(m) {
       variantList.replaceChildren(
         ...m.nameHints.auto.map((v) => h("span", { class: "rr-variant rr-variant-auto", title: t("variantAutoTip", [String(v.rows)]) }, v.name)),
@@ -287,10 +299,10 @@
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
       coverSec.hidden = !coverSec.childNodes.length;
       // a column with nothing in it gives its width to the other
-      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !yearsSec.hidden || !coverSec.hidden || !footSec.hidden;
+      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !yearsSec.hidden || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
       el.classList.toggle("rr-onecol", !(colA && colB));
-      syncFilters(m); renderMetrics(m); renderYears(m); renderVariants(m);
+      syncFilters(m); renderMetrics(m); renderYears(m); renderVenues(m); renderVariants(m);
       noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
     }
 

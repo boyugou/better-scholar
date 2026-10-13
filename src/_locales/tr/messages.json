@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Birleştir…"
+  },
+  "venuesTitle": {
+    "message": "Vurgulanan makalelerin yayınlandığı yerler"
+  },
+  "optPanelVenues": {
+    "message": "Başlıca yayın yerleri"
+  },
+  "optPanelVenuesHint": {
+    "message": "Vurgulanan makalelerinizin sıralaması olan yayın yerleri, en sıktan başlayarak; birine tıklayarak makalelerini listeleyin."
   }
 }

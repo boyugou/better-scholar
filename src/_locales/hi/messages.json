@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "मिलाएँ…"
+  },
+  "venuesTitle": {
+    "message": "हाइलाइट किए गए पेपर कहाँ छपे हैं"
+  },
+  "optPanelVenues": {
+    "message": "शीर्ष venue"
+  },
+  "optPanelVenuesHint": {
+    "message": "आपके हाइलाइट किए गए पेपर के रैंक वाले venue, सबसे ज़्यादा से पहले; किसी एक पर क्लिक करके उसके पेपर देखें।"
   }
 }

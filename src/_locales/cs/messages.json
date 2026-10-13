@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "Sloučit…"
+  },
+  "venuesTitle": {
+    "message": "Kde se zvýrazněné práce objevují"
+  },
+  "optPanelVenues": {
+    "message": "Hlavní publikační místa"
+  },
+  "optPanelVenuesHint": {
+    "message": "Hodnocená publikační místa zvýrazněných prací, od nejčastějších; kliknutím na jedno zobrazíte jeho práce."
   }
 }

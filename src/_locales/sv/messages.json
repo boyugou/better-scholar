@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Slå ihop…"
+  },
+  "venuesTitle": {
+    "message": "Var de markerade artiklarna förekommer"
+  },
+  "optPanelVenues": {
+    "message": "Främsta publiceringsställen"
+  },
+  "optPanelVenuesHint": {
+    "message": "De rankade publiceringsställena för dina markerade artiklar, vanligast först; klicka på ett för att lista dess artiklar."
   }
 }

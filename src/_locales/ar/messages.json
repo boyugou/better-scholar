@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "دمج…"
+  },
+  "venuesTitle": {
+    "message": "أين تظهر الأبحاث المميّزة"
+  },
+  "optPanelVenues": {
+    "message": "أهم منصات النشر"
+  },
+  "optPanelVenuesHint": {
+    "message": "منصات النشر المصنّفة لأوراقك المميّزة، من الأكثر تكرارًا إلى الأقل؛ انقر على منصة لعرض أوراقها."
   }
 }

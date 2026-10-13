@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "Gộp…"
+  },
+  "venuesTitle": {
+    "message": "Các bài được tô nổi xuất hiện ở đâu"
+  },
+  "optPanelVenues": {
+    "message": "Venue hàng đầu"
+  },
+  "optPanelVenuesHint": {
+    "message": "Các venue có xếp hạng của bài được tô nổi, xếp theo số bài từ nhiều đến ít; nhấp vào một venue để liệt kê bài của nó."
   }
 }

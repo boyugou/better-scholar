@@ -302,6 +302,22 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 4);
     ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
 
+    // -- 6a2c. the venue list (off until asked): the ranked venues of the highlighted papers, most papers first; a click lists just those papers
+    assert.equal(await page.locator('[data-rr="venues"]').isVisible(), false, "the venue list is off by default");
+    await opts.bringToFront();
+    await setPref(opts, "panel.venues", true);
+    await eventually(page, () => document.querySelectorAll('[data-rr="venues"] [data-venue]').length > 1);
+    const venueRows = await page.locator('[data-rr="venues"] [data-venue]').evaluateAll((els) => els.map((e) => [e.dataset.venue, parseInt(e.querySelector("b").textContent, 10)]));
+    assert.ok(venueRows.every((v, i) => i === 0 || venueRows[i - 1][1] >= v[1]), "most papers first");
+    const wantVenue = all.filter((p) => p.highlighted && ((p.venue.ccf && (p.venue.ccf.abbr || p.venue.ccf.name)) || (p.venue.core && (p.venue.core.abbr || p.venue.core.name))) === venueRows[0][0]).length;
+    assert.equal(venueRows[0][1], wantVenue, "the count matches the library");
+    await page.bringToFront();
+    await page.click(`[data-venue="${venueRows[0][0]}"]`);
+    await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, venueRows[0][1]);
+    await page.click(`[data-venue="${venueRows[0][0]}"]`);
+    await setPref(opts, "panel.venues", false);
+    ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
+
     // -- 6a3. role colours: a colour picked on the settings page recolours the open profile; "back to the standard" restores
     const rowColor = () => page.evaluate(() => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow);
     const before = await rowColor();
@@ -713,11 +729,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     }
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, status: false, names: false });
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
     await opts.click('[data-act="panel-full"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, prefsLib.defaults().panel);
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, Object.fromEntries(prefsLib.PANEL_PARTS.map((k) => [k, true])));
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await setPref(opts, "panel.show", true);

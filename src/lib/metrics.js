@@ -56,6 +56,23 @@
     return out;
   }
 
+  // The venue a ranked paper belongs to, by its usual short name ("NeurIPS"), or "" when it matched no list
+  function venueKey(venue) {
+    const v = venue || {};
+    return (v.ccf && (v.ccf.abbr || v.ccf.name)) || (v.core && (v.core.abbr || v.core.name)) || "";
+  }
+
+  // Where the highlighted papers were published: ranked venues, most papers first (ties by name), at most `n`.
+  function topVenues(rows, n = 6) {
+    const counts = new Map();
+    for (const r of rows) {
+      if (!r.highlighted) continue;
+      const k = venueKey(r.venue);
+      if (k) counts.set(k, (counts.get(k) || 0) + 1);
+    }
+    return [...counts].map(([key, count]) => ({ key, count })).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)).slice(0, n);
+  }
+
   // The tier a row falls in for the chosen ranking source: 'A' / 'B' / … or 'none'.
   function tierOf(row, source) {
     const v = row.venue || {};
@@ -154,5 +171,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
 });

@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "Gabungkan…"
+  },
+  "venuesTitle": {
+    "message": "Tempat makalah yang disorot muncul"
+  },
+  "optPanelVenues": {
+    "message": "Venue teratas"
+  },
+  "optPanelVenuesHint": {
+    "message": "Venue berperingkat dari makalah yang disorot, yang paling sering di atas; klik satu untuk menampilkan makalahnya."
   }
 }

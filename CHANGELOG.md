@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.14.0 — 2026-10-12
+
+- The panel can list **where the highlighted papers appear**: the ranked venues, most papers first; click one to show just its papers. It has its own switch (Top venues) and is off until you turn it on.
+
 ## 2.13.1 — 2026-10-12
 
 - With merging off, the panel's status says when entries repeat another paper ("Entries that repeat another paper: 3 — Merge…"), with a link to the settings.

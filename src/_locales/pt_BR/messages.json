@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Mesclar…"
+  },
+  "venuesTitle": {
+    "message": "Onde aparecem os artigos destacados"
+  },
+  "optPanelVenues": {
+    "message": "Principais veículos"
+  },
+  "optPanelVenuesHint": {
+    "message": "Os veículos com ranking dos seus artigos destacados, do mais frequente ao menos; clique em um para listar seus artigos."
   }
 }

@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Zusammenführen…"
+  },
+  "venuesTitle": {
+    "message": "Wo die hervorgehobenen Paper erscheinen"
+  },
+  "optPanelVenues": {
+    "message": "Top-Venues"
+  },
+  "optPanelVenuesHint": {
+    "message": "Die gerankten Venues Ihrer hervorgehobenen Paper, am häufigsten zuerst; ein Klick auf eine zeigt ihre Paper."
   }
 }

@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Συγχώνευση…"
+  },
+  "venuesTitle": {
+    "message": "Πού εμφανίζονται οι επισημασμένες εργασίες"
+  },
+  "optPanelVenues": {
+    "message": "Κορυφαία venue"
+  },
+  "optPanelVenuesHint": {
+    "message": "Τα venue με βαθμίδα των επισημασμένων εργασιών σας, από το πιο συχνό· πατήστε ένα για να δείτε τις εργασίες του."
   }
 }

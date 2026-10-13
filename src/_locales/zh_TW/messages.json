@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "合併…"
+  },
+  "venuesTitle": {
+    "message": "已標示論文的發表處"
+  },
+  "optPanelVenues": {
+    "message": "常見發表處"
+  },
+  "optPanelVenuesHint": {
+    "message": "已標示論文所在、有等級的發表處，依篇數由多到少；點一個即可只看它的論文。"
   }
 }

@@ -652,5 +652,14 @@
   },
   "coverRepeatsAction": {
     "message": "Samenvoegen…"
+  },
+  "venuesTitle": {
+    "message": "Waar de gemarkeerde papers verschijnen"
+  },
+  "optPanelVenues": {
+    "message": "Topvenues"
+  },
+  "optPanelVenuesHint": {
+    "message": "De gerankte venues van je gemarkeerde papers, meest voorkomend eerst; klik op een venue om de papers te tonen."
   }
 }

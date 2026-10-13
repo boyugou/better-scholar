@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "合并…"
+  },
+  "venuesTitle": {
+    "message": "高亮论文发表在哪里"
+  },
+  "optPanelVenues": {
+    "message": "常见发表场所"
+  },
+  "optPanelVenuesHint": {
+    "message": "高亮论文所在的、有等级的场所，按篇数从多到少；点一个即可只看它的论文。"
   }
 }

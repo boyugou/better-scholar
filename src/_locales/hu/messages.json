@@ -634,5 +634,14 @@
   },
   "coverRepeatsAction": {
     "message": "Összevonás…"
+  },
+  "venuesTitle": {
+    "message": "Hol jelennek meg a kiemelt cikkek"
+  },
+  "optPanelVenues": {
+    "message": "Főbb venue-k"
+  },
+  "optPanelVenuesHint": {
+    "message": "A kiemelt cikkeid rangsorolt venue-i, a leggyakoribbak elöl; kattintással az adott venue cikkeit listázhatod."
   }
 }
