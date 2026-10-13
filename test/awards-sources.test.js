@@ -2131,3 +2131,11 @@ test("VRST 2023's tie (authors before each title) and 2022's quoted two-line tit
   const b = `<title>VRST 2022</title><p>AWARDS</p><p>Best paper award</p><p>"Walk this beam: impact of different balance</p><p>assistance strategies on performance in VR"</p><p>Ivy Jones, Kay Lowe</p><p>Abstract</p><p>Honorable Mention Award</p>`;
   assert.deepEqual(parseVrstBest(b, "https://vrst.acm.org/vrst2022/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Walk this beam: impact of different balance assistance strategies on performance in VR | Ivy Jones; Kay Lowe"]);
 });
+
+test("ASSETS home page: a title over lines, then one author per line (affiliate asterisk, 'Dr', the institution line left out); SUI: authors above the title", async () => {
+  const { parseAssetsSuiAwards } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>ASSETS 2025 Awards</p><p>Best Paper</p><p>Alternative approaches to access among disabled workers in</p><p>the digital economy of the future</p><p>Ann Lee</p><p>Bo Chan*</p><p>Dr Cy Dunn</p><p>Northeastern University</p><p>Best Student Paper</p><p>Bridging cross neurotype communication differences with generative tools</p><p>Ed Fox</p><p>Flo Gray</p><p>Tufts University</p><p>SIGACCESS ASSETS Paper Impact Award</p>`;
+  assert.deepEqual(parseAssetsSuiAwards(a, "https://assets25.sigaccess.org/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Alternative approaches to access among disabled workers in the digital economy of the future | Ann Lee; Bo Chan; Cy Dunn", "student Bridging cross neurotype communication differences with generative tools | Ed Fox; Flo Gray"]);
+  const b = `<p>SUI 2024 Paper Awards</p><p>Best Paper Award</p><p>Gil Hart, Hal Ito, and Ivy Jones</p><p>Augmenting virtual spatial interfaces with physics-based visual motion cues</p><p>Best Paper Honorable Mention Award</p><p>Kay Lowe</p><p>An honoured handray guiding study</p>`;
+  assert.deepEqual(parseAssetsSuiAwards(b, "https://sui.acm.org/2024/").entries.map((e) => `${e.venue} ${e.title} | ${e.authors.join("; ")}`), ["SUI Augmenting virtual spatial interfaces with physics-based visual motion cues | Gil Hart; Hal Ito; Ivy Jones"]);
+});

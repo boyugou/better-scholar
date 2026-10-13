@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6646
+  "count": 6649
  },
  "entries": [
   {
@@ -8470,6 +8470,42 @@
    "track": "main",
    "source": "https://www.asplos-conference.org/awards/",
    "evidence": "ASPLOS 2026 Influential Paper Award: Overshadow: A Virtualization-Based Approach to Retrofitting Protection in Commodity Operating Systems — Xiaoxin Chen, Tal Garfinkel, E. Christopher Lewis, Pratap Subrahmanyam, Carl A. Waldspurger, Dan Boneh, Jeffrey Dwoskin, Dan R.K. Ports"
+  },
+  {
+   "venue": "ASSETS",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "As Someone Who is Disabled, I am so thankful for Sex Work”: Alternative Approaches to Access Among Disabled Sex-Workers",
+   "authors": [
+    "Jay Rodolitz",
+    "Megan Hofmann",
+    "Ada Lerner",
+    "Madiha Tabassum",
+    "Vaughn Hamilton",
+    "Butterfly Hope"
+   ],
+   "track": "main",
+   "source": "https://assets25.sigaccess.org/",
+   "evidence": "ASSETS 2025 Best Paper: As Someone Who is Disabled, I am so thankful for Sex Work”: Alternative Approaches to Access Among Disabled Sex-Workers — Jay Rodolitz, Megan Hofmann, Ada Lerner, Madiha Tabassum, Vaughn Hamilton, Butterfly Hope"
+  },
+  {
+   "venue": "ASSETS",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "NeuroBridge: Using Generative AI to Bridge Cross-neurotype Communication Differences through Neurotypical Perspective-taking",
+   "authors": [
+    "Rukhshan Haroon",
+    "Kyle Wigdor",
+    "Zihan Yang",
+    "Nicole Toumanios",
+    "Eileen T. Crehan",
+    "Fahad Dogar"
+   ],
+   "track": "main",
+   "source": "https://assets25.sigaccess.org/",
+   "evidence": "ASSETS 2025 Best Student Paper: NeuroBridge: Using Generative AI to Bridge Cross-neurotype Communication Differences through Neurotypical Perspective-taking — Rukhshan Haroon, Kyle Wigdor, Zihan Yang, Nicole Toumanios, Eileen T. Crehan, Fahad Dogar"
   },
   {
    "venue": "BMVC",
@@ -102690,6 +102726,22 @@
    "paperYear": 2005,
    "source": "https://sigact.org/prizes/stoc_tot.html",
    "evidence": "STOC 2026 Test of Time (20 Years): Omer Reingold, “Undirected ST-connectivity in log-space”, 2005."
+  },
+  {
+   "venue": "SUI",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Augmenting Virtual Spatial UIs with Physics- and Direction-Based Visual Motion Cues to Non-Disruptively Mitigate Motion Sickness",
+   "authors": [
+    "Zhanyan Qiu",
+    "Mark McGill",
+    "Katharina Margareta Theresa Pöhlmann",
+    "Stephen Anthony Brewster"
+   ],
+   "track": "main",
+   "source": "https://sui.acm.org/2024/",
+   "evidence": "SUI 2024 Best Paper: Augmenting Virtual Spatial UIs with Physics- and Direction-Based Visual Motion Cues to Non-Disruptively Mitigate Motion Sickness — Zhanyan Qiu, Mark McGill, Katharina Margareta Theresa Pöhlmann, Stephen Anthony Brewster"
   },
   {
    "venue": "TACAS",
