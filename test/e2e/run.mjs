@@ -989,6 +989,29 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     } finally { await ctxN.close(); await fxN.close(); }
   }
 
+  // -- 20d. a real profile, read on the live Scholar page (13 papers: co-first stars, cut author lists, Orals in the venue field): the panel shows what the live page showed
+  {
+    const fxG = await start({ slug: "gou-osu", pageSize: 100 });
+    const ctxG = await launch();
+    try {
+      const pg = await ctxG.newPage();
+      await pg.goto(fxG.url);
+      await pg.waitForSelector("#rr-panel");
+      await eventually(pg, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      assert.deepEqual(await readMatrix(pg), {
+        first: { A: 1, B: 0, C: 0, none: 0, total: 1 },
+        cofirst: { A: 1, B: 0, C: 0, none: 1, total: 2 },
+        second: { A: 1, B: 0, C: 0, none: 0, total: 1 },
+        last: { A: 0, B: 0, C: 0, none: 0, total: 0 },
+        middle: { A: 1, B: 1, C: 0, none: 5, total: 7 },
+        hidden: 2
+      });
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip-mark[data-mark="oral"]').count(), 3, "the three Orals the author wrote");
+      assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
+      ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");
+    } finally { await ctxG.close(); await fxG.close(); }
+  }
+
   // -- 21. award and talk markers the authors wrote (synthetic profile; look-alikes must stay unmarked)
   const fx3 = await start({ slug: "marks-demo", pageSize: 100 });
   const ctx3 = await launch();

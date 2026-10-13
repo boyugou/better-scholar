@@ -1,0 +1,71 @@
+{
+ "owner": "Boyu Gou",
+ "note": "All 13 rows of a public Google Scholar profile (its owner's own), read in the owner's Chrome on 2026-10-13: [authors, venue, title] exactly as Scholar prints them. Co-first stars, truncated author lists, an Oral written in the venue field, Findings and demo tracks, a journal and a preprint. The panel on the live page showed First 1, Co-first 2, Second 1, Last 0, Other 7 and 2 papers whose roles are hidden.",
+ "rows": [
+  [
+   "B Zheng, B Gou, J Kil, H Sun, Y Su",
+   "ICML 2024, 2024",
+   "GPT-4V(ision) is a Generalist Web Agent, if Grounded"
+  ],
+  [
+   "B Gou, R Wang, B Zheng, Y Xie, C Chang, Y Shu, H Sun, Y Su",
+   "ICLR 2025 (Oral), 2024",
+   "Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents"
+  ],
+  [
+   "T Xue, W Qi, T Shi, CH Song, B Gou, D Song, H Sun, Y Su",
+   "COLM 2025, 2025",
+   "An Illusion of Progress? Assessing the Current State of Web Agents"
+  ],
+  [
+   "Y Gu*, K Zhang*, Y Ning*, B Zheng*, B Gou, T Xue, C Chang, ...",
+   "TMLR, 2024",
+   "Is Your LLM Secretly a World Model of the Internet? Model-Based Planning for Web Agents"
+  ],
+  [
+   "B Gou*, Z Huang*, Y Ning*, Y Gu, M Lin, W Qi, A Kopanev, B Yu, ...",
+   "NeurIPS 2025 Datasets and Benchmarks Track, 2025",
+   "Mind2Web 2: Evaluating Agentic Search with Agent-as-a-Judge"
+  ],
+  [
+   "K Zhang, X Chen, B Liu, T Xue, Z Liao, Z Liu, X Wang, Y Ning, Z Chen, ...",
+   "ICML 2026, 2025",
+   "Agent Learning via Early Experience"
+  ],
+  [
+   "V Pahuja, Y Lu, C Rosset, B Gou, A Mitra, S Whitehead, Y Su, ...",
+   "ACL 2025 Findings, 2025",
+   "Explorer: Scaling Exploration-driven Web Trajectory Synthesis for Multimodal Web Agents"
+  ],
+  [
+   "B Yu, FN Baker, Z Chen, G Herb, B Gou, D Adu-Ampratwum, X Ning, ...",
+   "NAACL 2025 Findings, 2024",
+   "ChemToolAgent: The Impact of Tools on Language Agents for Chemistry Problem Solving"
+  ],
+  [
+   "B Zheng*, B Gou*, S Salisbury*, Z Du*, H Sun, Y Su",
+   "EMNLP 2024 System Demonstrations, 2024",
+   "WebOlympus: An Open Platform for Web Agents on Live Websites"
+  ],
+  [
+   "Y Song, K Ramaneti, Z Sheikh, Z Chen, B Gou, T Xie, Y Xu, D Zhang, ...",
+   "ICLR 2026 (Oral), 2025",
+   "Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents"
+  ],
+  [
+   "J Xie, T Lin, Z Wang, Y Ning, Y Yao, T Xue, Z Zhang, Z Li, K Zhang, Y Wu, ...",
+   "NeurIPS 2026, 2026",
+   "QUEST: Training Frontier Deep Research Agents with Fully Synthetic Tasks"
+  ],
+  [
+   "Y Ning, Z Zhang, YK Lal, B Gou, J Li, W Ruan, C Ye, R Gupta, D Yang, ...",
+   "EMNLP 2026 (Oral), 2026",
+   "SkillHarm: Lifecycle-Aware Skill-Based Attacks via Automated Construction"
+  ],
+  [
+   "Z Liao, Y Lu, B Gou, H Sun, A Awadallah",
+   "arXiv, 2025",
+   "Beyond Clicking: A Step Towards Generalist GUI Grounding via Text Dragging"
+  ]
+ ]
+}
