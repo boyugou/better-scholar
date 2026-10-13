@@ -977,6 +977,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         }
       }
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
+      // every part of the panel on, as a picture (light, dark, and the wide layout)
+      await page.reload(); await page.waitForSelector("#rr-panel");
+      await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all.png") });
+      await page.emulateMedia({ colorScheme: "dark" }); await page.waitForTimeout(400);
+      await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-all-dark.png") });
+      await page.emulateMedia({ colorScheme: "light" });
       await opts.close();
       await page.setViewportSize({ width: 1360, height: 900 });
       assert.deepEqual(bad, [], "a language does not fit the panel");
