@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- four role-coloured rows on dark: the shape stays readable at 16 px -->
+  <rect width="32" height="32" rx="7" fill="#1e2740"/>
+  <rect x="4" y="5" width="10" height="4.5" rx="2.25" fill="#4d8ff5"/><rect x="16" y="5" width="12" height="4.5" rx="2.25" fill="#fff" fill-opacity=".25"/>
+  <rect x="4" y="11.5" width="10" height="4.5" rx="2.25" fill="#b36cf6"/><rect x="16" y="11.5" width="9" height="4.5" rx="2.25" fill="#fff" fill-opacity=".25"/>
+  <rect x="4" y="18" width="10" height="4.5" rx="2.25" fill="#fbbc04"/><rect x="16" y="18" width="11" height="4.5" rx="2.25" fill="#fff" fill-opacity=".25"/>
+  <rect x="4" y="24.5" width="10" height="4.5" rx="2.25" fill="#34a853"/><rect x="16" y="24.5" width="7" height="4.5" rx="2.25" fill="#fff" fill-opacity=".25"/>
+</svg>

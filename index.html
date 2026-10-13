@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scholar Roles &amp; Ranks: your authorship and venue ranks on Google Scholar</title>
+<meta name="description" content="A free Chrome extension that marks your role (first, co-first, second, last author) and the CCF / CORE rank of the venue on every paper of a Google Scholar profile, and sums it up in one table.">
+<link rel="canonical" href="https://boyugou.github.io/scholar-roles-and-ranks/">
+<link rel="alternate" hreflang="en" href="https://boyugou.github.io/scholar-roles-and-ranks/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://boyugou.github.io/scholar-roles-and-ranks/zh-CN/">
+<link rel="alternate" hreflang="zh-TW" href="https://boyugou.github.io/scholar-roles-and-ranks/zh-TW/">
+<link rel="alternate" hreflang="ja" href="https://boyugou.github.io/scholar-roles-and-ranks/ja/">
+<link rel="alternate" hreflang="ko" href="https://boyugou.github.io/scholar-roles-and-ranks/ko/">
+<link rel="alternate" hreflang="es" href="https://boyugou.github.io/scholar-roles-and-ranks/es/">
+<link rel="alternate" hreflang="fr" href="https://boyugou.github.io/scholar-roles-and-ranks/fr/">
+<link rel="alternate" hreflang="de" href="https://boyugou.github.io/scholar-roles-and-ranks/de/">
+<link rel="alternate" hreflang="it" href="https://boyugou.github.io/scholar-roles-and-ranks/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://boyugou.github.io/scholar-roles-and-ranks/pt-BR/">
+<link rel="alternate" hreflang="pt-PT" href="https://boyugou.github.io/scholar-roles-and-ranks/pt-PT/">
+<link rel="alternate" hreflang="ru" href="https://boyugou.github.io/scholar-roles-and-ranks/ru/">
+<link rel="alternate" hreflang="uk" href="https://boyugou.github.io/scholar-roles-and-ranks/uk/">
+<link rel="alternate" hreflang="pl" href="https://boyugou.github.io/scholar-roles-and-ranks/pl/">
+<link rel="alternate" hreflang="cs" href="https://boyugou.github.io/scholar-roles-and-ranks/cs/">
+<link rel="alternate" hreflang="nl" href="https://boyugou.github.io/scholar-roles-and-ranks/nl/">
+<link rel="alternate" hreflang="sv" href="https://boyugou.github.io/scholar-roles-and-ranks/sv/">
+<link rel="alternate" hreflang="da" href="https://boyugou.github.io/scholar-roles-and-ranks/da/">
+<link rel="alternate" hreflang="fi" href="https://boyugou.github.io/scholar-roles-and-ranks/fi/">
+<link rel="alternate" hreflang="no" href="https://boyugou.github.io/scholar-roles-and-ranks/no/">
+<link rel="alternate" hreflang="tr" href="https://boyugou.github.io/scholar-roles-and-ranks/tr/">
+<link rel="alternate" hreflang="ar" href="https://boyugou.github.io/scholar-roles-and-ranks/ar/">
+<link rel="alternate" hreflang="he" href="https://boyugou.github.io/scholar-roles-and-ranks/he/">
+<link rel="alternate" hreflang="hi" href="https://boyugou.github.io/scholar-roles-and-ranks/hi/">
+<link rel="alternate" hreflang="id" href="https://boyugou.github.io/scholar-roles-and-ranks/id/">
+<link rel="alternate" hreflang="vi" href="https://boyugou.github.io/scholar-roles-and-ranks/vi/">
+<link rel="alternate" hreflang="th" href="https://boyugou.github.io/scholar-roles-and-ranks/th/">
+<link rel="alternate" hreflang="el" href="https://boyugou.github.io/scholar-roles-and-ranks/el/">
+<link rel="alternate" hreflang="hu" href="https://boyugou.github.io/scholar-roles-and-ranks/hu/">
+<link rel="alternate" hreflang="ro" href="https://boyugou.github.io/scholar-roles-and-ranks/ro/">
+<link rel="alternate" hreflang="x-default" href="https://boyugou.github.io/scholar-roles-and-ranks/en/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/styles.css">
+<script>
+(function () {
+  var codes = ["en","zh-CN","zh-TW","ja","ko","es","fr","de","it","pt-BR","pt-PT","ru","uk","pl","cs","nl","sv","da","fi","no","tr","ar","he","hi","id","vi","th","el","hu","ro"], pick = "en";
+  try { var saved = localStorage.getItem("rr-lang"); if (saved && codes.indexOf(saved) >= 0) pick = saved; else throw 0; } catch (e) {
+    var prefs = navigator.languages || [navigator.language || "en"], found = false;
+    for (var i = 0; i < prefs.length && !found; i++) {
+      var p = String(prefs[i]).replace("_", "-"), low = p.toLowerCase();
+      var alias = { "zh": "zh-CN", "zh-hans": "zh-CN", "zh-sg": "zh-CN", "zh-hant": "zh-TW", "zh-hk": "zh-TW", "zh-mo": "zh-TW", "pt": "pt-BR", "nb": "no", "nn": "no", "iw": "he", "in": "id" };
+      var cand = alias[low] || p;
+      for (var j = 0; j < codes.length; j++) if (codes[j].toLowerCase() === cand.toLowerCase() || codes[j].toLowerCase() === cand.split("-")[0].toLowerCase()) { pick = codes[j]; found = true; break; }
+    }
+  }
+  location.replace(pick + "/" + location.hash);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=en/"></noscript>
+</head>
+<body class="redirect">
+<main class="wrap"><h1>Scholar Roles &amp; Ranks</h1>
+<ul>
+<li><a href="en/" hreflang="en" lang="en" dir="ltr">English</a></li>
+<li><a href="zh-CN/" hreflang="zh-CN" lang="zh-CN" dir="ltr">简体中文</a></li>
+<li><a href="zh-TW/" hreflang="zh-TW" lang="zh-TW" dir="ltr">繁體中文</a></li>
+<li><a href="ja/" hreflang="ja" lang="ja" dir="ltr">日本語</a></li>
+<li><a href="ko/" hreflang="ko" lang="ko" dir="ltr">한국어</a></li>
+<li><a href="es/" hreflang="es" lang="es" dir="ltr">Español</a></li>
+<li><a href="fr/" hreflang="fr" lang="fr" dir="ltr">Français</a></li>
+<li><a href="de/" hreflang="de" lang="de" dir="ltr">Deutsch</a></li>
+<li><a href="it/" hreflang="it" lang="it" dir="ltr">Italiano</a></li>
+<li><a href="pt-BR/" hreflang="pt-BR" lang="pt-BR" dir="ltr">Português (Brasil)</a></li>
+<li><a href="pt-PT/" hreflang="pt-PT" lang="pt-PT" dir="ltr">Português (Portugal)</a></li>
+<li><a href="ru/" hreflang="ru" lang="ru" dir="ltr">Русский</a></li>
+<li><a href="uk/" hreflang="uk" lang="uk" dir="ltr">Українська</a></li>
+<li><a href="pl/" hreflang="pl" lang="pl" dir="ltr">Polski</a></li>
+<li><a href="cs/" hreflang="cs" lang="cs" dir="ltr">Čeština</a></li>
+<li><a href="nl/" hreflang="nl" lang="nl" dir="ltr">Nederlands</a></li>
+<li><a href="sv/" hreflang="sv" lang="sv" dir="ltr">Svenska</a></li>
+<li><a href="da/" hreflang="da" lang="da" dir="ltr">Dansk</a></li>
+<li><a href="fi/" hreflang="fi" lang="fi" dir="ltr">Suomi</a></li>
+<li><a href="no/" hreflang="no" lang="no" dir="ltr">Norsk</a></li>
+<li><a href="tr/" hreflang="tr" lang="tr" dir="ltr">Türkçe</a></li>
+<li><a href="ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a></li>
+<li><a href="he/" hreflang="he" lang="he" dir="rtl">עברית</a></li>
+<li><a href="hi/" hreflang="hi" lang="hi" dir="ltr">हिन्दी</a></li>
+<li><a href="id/" hreflang="id" lang="id" dir="ltr">Bahasa Indonesia</a></li>
+<li><a href="vi/" hreflang="vi" lang="vi" dir="ltr">Tiếng Việt</a></li>
+<li><a href="th/" hreflang="th" lang="th" dir="ltr">ไทย</a></li>
+<li><a href="el/" hreflang="el" lang="el" dir="ltr">Ελληνικά</a></li>
+<li><a href="hu/" hreflang="hu" lang="hu" dir="ltr">Magyar</a></li>
+<li><a href="ro/" hreflang="ro" lang="ro" dir="ltr">Română</a></li>
+</ul></main>
+</body>
+</html>
