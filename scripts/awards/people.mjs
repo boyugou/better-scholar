@@ -6,5 +6,5 @@ const PARTICLE = /^(?:van|von|der|den|de|del|della|di|da|dos|du|la|le|bin|ibn|al
 export function isPerson(n) {
   const t = n.replace(/\s+/g, " ").trim().split(" ");
   return t.length >= 2 && t.length <= 5 && !/[:?!0-9]/.test(n) &&
-    t.every((w, i) => /^\p{Lu}[\p{L}'’-]*$/u.test(w) || /^\p{Lu}(?:\.?-?\p{Lu})*\.?$/u.test(w) || /^\p{Lu}\p{Ll}\.$/u.test(w) || (i > 0 && PARTICLE.test(w)));
+    t.every((w, i) => /^\p{Lu}[\p{L}\p{M}'’-]*$/u.test(w) || /^\p{Lu}(?:\.?-?\p{Lu})*\.?$/u.test(w) || /^\p{Lu}\p{Ll}\.$/u.test(w) || (i > 0 && PARTICLE.test(w)));
 }

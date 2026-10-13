@@ -2403,6 +2403,12 @@ test("MIDDLEWARE award pages: the heading nearest above the table gives the awar
   assert.deepEqual(parseMiddlewareAwards(tot, "https://middleware-conf.github.io/awards/test-of-time/").entries.map((e) => `${e.year} ${e.award} ${e.paperYear}`), ["2024 tot 2014"]);
 });
 
+test("ACP paper awards page: 'CP 2025' headings, 'Label: Authors. Title' lines that may wrap (an initial at the start of the authors does not end them), lists of unlabelled lines under Runners-Up / Honorable Mentions, ligatures and the dotless-i accent normalised", async () => {
+  const { parseCpAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Paper Awards</h1><h2>CP 2025</h2><p>Best Technical Paper: J. Christopher Beck, Ryo</p><p>Kuroiwa and Allen Z. Zhong. Transition dominance in domain-independent dynamic programming</p><p>Best Application Paper: Ignace Bleukx and Tias Guns. Modeling and explaining an industrial workforce problem</p><h2>CP 2009</h2><p>Best Research Track Paper: Petr Vil\u0131\u0301m. Edge finding filtering algorithm for discrete cumulative resources.</p><p>Runners-Up:</p><p>Geo\ufb00rey Chu and Peter Stuckey. Using relaxations in maximum density still life.</p><p>CP 2001 was the first conference to have paper awards.</p>`;
+  assert.deepEqual(parseCpAwards(h, "https://www.a4cp.org/awards/paper-awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2025 best | J. Christopher Beck; Ryo Kuroiwa; Allen Z. Zhong | Transition dominance in domain-independent dynamic programming", "2025 category | Ignace Bleukx; Tias Guns | Modeling and explaining an industrial workforce problem", "2009 best | Petr Vilím | Edge finding filtering algorithm for discrete cumulative resources", "2009 runner-up | Geoffrey Chu; Peter Stuckey | Using relaxations in maximum density still life"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7618
+  "count": 7688
  },
  "entries": [
   {
@@ -41762,6 +41762,1054 @@
    "track": "main",
    "source": "https://2025.corl.org/program/awards",
    "evidence": "CoRL 2025 Best Student Paper Award: Visual Imitation Enables Contextual Humanoid Control — Arthur Allshire, Hongsuk Choi, Junyi Zhang, David McAllister, Anthony Zhang, Chung Min Kim, Trevor Darrell, Pieter Abbeel, Jitendra Malik, Angjoo Kanazawa"
+  },
+  {
+   "venue": "CP",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Technical Program Paper",
+   "title": "Branch-and-Check: A Hybrid Framework Integrating Mixed Integer Programming and Constraint Logic Programming",
+   "authors": [
+    "Erlendur S. Thorsteinsson"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2001 Best Technical Program Papers: Erlendur S. Thorsteinsson. Branch-and-Check: A Hybrid Framework Integrating Mixed Integer Programming and Constraint Logic Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2001,
+   "award": "best",
+   "awardLabel": "Best Technical Program Paper",
+   "title": "Hybrid Benders Decomposition Algorithms in Constraint Logic Programming",
+   "authors": [
+    "Andrew Eremin",
+    "Mark Wallace"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2001 Best Technical Program Papers: Andrew Eremin and Mark Wallace. Hybrid Benders Decomposition Algorithms in Constraint Logic Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2001,
+   "award": "category",
+   "awardLabel": "Best Innovative Applications Program Paper",
+   "title": "Fast Optimal Instruction Scheduling for Single-Issue Processors with Arbitrary Latencies",
+   "authors": [
+    "Peter van Beek",
+    "Kent Wilken"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2001 Best Innovative Applications Program Paper: Peter van Beek and Kent Wilken. Fast Optimal Instruction Scheduling for Single-Issue Processors with Arbitrary Latencies"
+  },
+  {
+   "venue": "CP",
+   "year": 2003,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Control Abstractions by Local Search",
+   "authors": [
+    "Pascal van Hentenryck",
+    "Laurent Michel"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2003 Best Paper: Pascal van Hentenryck and Laurent Michel. Control Abstractions by Local Search"
+  },
+  {
+   "venue": "CP",
+   "year": 2004,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Consistency and Random Constraint Satisfaction Models with a High Constraint Tightness",
+   "authors": [
+    "Yong Gao",
+    "Joseph Culberson"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2004 Distinguished Papers: Yong Gao and Joseph Culberson. Consistency and Random Constraint Satisfaction Models with a High Constraint Tightness"
+  },
+  {
+   "venue": "CP",
+   "year": 2004,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Constraint-Based Combinators for Local Search",
+   "authors": [
+    "Pascal van Hentenryck",
+    "Laurent Michel",
+    "Liyuan Liu"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2004 Distinguished Papers: Pascal van Hentenryck, Laurent Michel, and Liyuan Liu. Constraint-Based Combinators for Local Search"
+  },
+  {
+   "venue": "CP",
+   "year": 2004,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Statistical Regimes Across Constrainedness Regions",
+   "authors": [
+    "Carla P. Gomes",
+    "Cèsar Fernández",
+    "Bart Selman",
+    "Christian Bessiere"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2004 Distinguished Papers: Carla P. Gomes, Cèsar Fernández, Bart Selman, and Christian Bessiere. Statistical Regimes Across Constrainedness Regions"
+  },
+  {
+   "venue": "CP",
+   "year": 2004,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Unary Resource Constraint with Optional Activities",
+   "authors": [
+    "Petr Vilím",
+    "Roman Barták",
+    "Ondřej Čepek"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2004 Distinguished Papers: Petr Vilím, Roman Barták, and Ondřej Čepek. Unary Resource Constraint with Optional Activities"
+  },
+  {
+   "venue": "CP",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Dynamic Ordering for Asynchronous Backtracking on DisCSPs",
+   "authors": [
+    "Roie Zivan",
+    "Amnon Meisels"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2005 Best Papers: Roie Zivan and Amnon Meisels. Dynamic Ordering for Asynchronous Backtracking on DisCSPs"
+  },
+  {
+   "venue": "CP",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Symmetry Definitions for Constraint Satisfaction Problems",
+   "authors": [
+    "David Cohen",
+    "Peter Jeavons",
+    "Christopher Jefferson",
+    "Karen E. Petrie",
+    "Barbara M. Smith"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2005 Best Papers: David Cohen, Peter Jeavons, Christopher Jefferson, Karen E. Petrie, and Barbara M. Smith. Symmetry Definitions for Constraint Satisfaction Problems"
+  },
+  {
+   "venue": "CP",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Revisiting the Sequence Constraint",
+   "authors": [
+    "Willem-Jan van Hoeve",
+    "Gilles Pesant",
+    "Louis-Martin Rousseau",
+    "Ashish Sabharwal"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2006 Best Paper: Willem-Jan van Hoeve, Gilles Pesant, Louis-Martin Rousseau, and Ashish Sabharwal. Revisiting the Sequence Constraint"
+  },
+  {
+   "venue": "CP",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Solution Counting Algorithms for Constraint-Centered Search Heuristics",
+   "authors": [
+    "Alessandro Zanarini",
+    "Gilles Pesant"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2007 Best Paper: Alessandro Zanarini and Gilles Pesant. Solution Counting Algorithms for Constraint-Centered Search Heuristics"
+  },
+  {
+   "venue": "CP",
+   "year": 2007,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Propagation = Lazy Clause Generation",
+   "authors": [
+    "Olga Ohrimenko",
+    "Peter J. Stuckey",
+    "Michael Codish"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2007 Best Student Paper: Olga Ohrimenko, Peter J. Stuckey, and Michael Codish. Propagation = Lazy Clause Generation"
+  },
+  {
+   "venue": "CP",
+   "year": 2008,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper",
+   "title": "A New Framework for Sharp and Efficient Resolution of NCSP with Manifolds of Solutions",
+   "authors": [
+    "Alexandre Goldsztejn",
+    "Laurent Granvilliers"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2008 Best Research Track Paper: Alexandre Goldsztejn and Laurent Granvilliers. A New Framework for Sharp and Efficient Resolution of NCSP with Manifolds of Solutions"
+  },
+  {
+   "venue": "CP",
+   "year": 2008,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Planning and Scheduling the Operation of a Very Large Oil Pipeline Network",
+   "authors": [
+    "Arnaldo Moura",
+    "Cid de Souza",
+    "André Cirè",
+    "Tony Lopes"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2008 Best Application Track Paper: Arnaldo Moura, Cid de Souza, André Cirè, and Tony Lopes. Planning and Scheduling the Operation of a Very Large Oil Pipeline Network"
+  },
+  {
+   "venue": "CP",
+   "year": 2008,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "A Branch and Bound Algorithm for Numerical MAX-CSP",
+   "authors": [
+    "Jean-Marie Normand",
+    "Alexandre Goldsztejn",
+    "Marc Christia",
+    "Frédéric Benhamou"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2008 Best Student Paper: Jean-Marie Normand, Alexandre Goldsztejn, Marc Christia, and Frédéric Benhamou. A Branch and Bound Algorithm for Numerical MAX-CSP"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper",
+   "title": "Edge Finding Filtering Algorithm for Discrete Cumulative Resources in O(kn log n)",
+   "authors": [
+    "Petr Vilím"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Best Research Track Paper: Petr Vilím. Edge Finding Filtering Algorithm for Discrete Cumulative Resources in O(kn log n)"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "A Hybrid Constraint Model for the Routing and Wavelength Assignment Problem",
+   "authors": [
+    "Helmut Simonis"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Best Application Track Paper: Helmut Simonis. A Hybrid Constraint Model for the Routing and Wavelength Assignment Problem"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Runners-Up",
+   "title": "Conflict Resolution",
+   "authors": [
+    "Konstantin Korovin",
+    "Nestan Tsiskaridze",
+    "Andrei Voronkov"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Runners-Up: Konstantin Korovin, Nestan Tsiskaridze, and Andrei Voronkov. Conflict Resolution"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Runners-Up",
+   "title": "Failed Value Consistencies for Constraint Satisfaction",
+   "authors": [
+    "Christophe Lecoutre",
+    "Olivier Roussel"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Runners-Up: Christophe Lecoutre and Olivier Roussel. Failed Value Consistencies for Constraint Satisfaction"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Runners-Up",
+   "title": "On the Power of Clause-Learning SAT Solvers with Restarts",
+   "authors": [
+    "Knot Pipatsrisawat",
+    "Adnan Darwiche"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Runners-Up: Knot Pipatsrisawat and Adnan Darwiche. On the Power of Clause-Learning SAT Solvers with Restarts"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "runner-up",
+   "awardLabel": "Runner-Up",
+   "title": "Using Relaxations in Maximum Density Still Life",
+   "authors": [
+    "Geoffrey Chu",
+    "Peter Stuckey",
+    "Maria Garcia de la Banda"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Runner-Up: Geoffrey Chu, Peter Stuckey, and Maria Garcia de la Banda. Using Relaxations in Maximum Density Still Life"
+  },
+  {
+   "venue": "CP",
+   "year": 2009,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On the Power of Clause-Learning SAT Solvers with Restarts",
+   "authors": [
+    "Knot Pipatsrisawat",
+    "Adnan Darwiche"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2009 Best Student Paper: Knot Pipatsrisawat and Adnan Darwiche. On the Power of Clause-Learning SAT Solvers with Restarts"
+  },
+  {
+   "venue": "CP",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper",
+   "title": "Testing Expressibility Is Hard",
+   "authors": [
+    "Ross Willard"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2010 Best Research Track Paper: Ross Willard. Testing Expressibility Is Hard"
+  },
+  {
+   "venue": "CP",
+   "year": 2010,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Applying Constraint Programming to Identification and Assignment of Service Professionals",
+   "authors": [
+    "Sigal Asaf",
+    "Haggai Eran",
+    "Yossi Richter",
+    "Daniel P. Connors",
+    "Donna L. Gresh",
+    "Julio Ortega",
+    "Michael J. Mcinnis"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2010 Best Application Track Paper: Sigal Asaf, Haggai Eran, Yossi Richter, Daniel P. Connors, Donna L. Gresh, Julio Ortega, and Michael J. Mcinnis. Applying Constraint Programming to Identification and Assignment of Service Professionals"
+  },
+  {
+   "venue": "CP",
+   "year": 2010,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Computing the Density of States of Boolean Formulas",
+   "authors": [
+    "Stefano Ermon",
+    "Carla Gomes",
+    "Bart Selman"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2010 Best Student Paper: Stefano Ermon, Carla Gomes, and Bart Selman. Computing the Density of States of Boolean Formulas"
+  },
+  {
+   "venue": "CP",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper",
+   "title": "On Minimal Constraint Networks",
+   "authors": [
+    "Georg Gottlob"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2011 Best Research Track Paper: Georg Gottlob. On Minimal Constraint Networks"
+  },
+  {
+   "venue": "CP",
+   "year": 2011,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "The Design of Cryptographic Substitution Boxes Using CSPs",
+   "authors": [
+    "Venkatesh Ramamoorthy",
+    "Marius Silaghi",
+    "Toshihiro Matsui",
+    "Katsutoshi Hirayama",
+    "Makoto Yokoo"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2011 Best Application Track Paper: Venkatesh Ramamoorthy, Marius Silaghi, Toshihiro Matsui, Katsutoshi Hirayama, and Makoto Yokoo. The Design of Cryptographic Substitution Boxes Using CSPs"
+  },
+  {
+   "venue": "CP",
+   "year": 2011,
+   "award": "runner-up",
+   "awardLabel": "Runner-Up",
+   "title": "Optimal Carpet Cutting",
+   "authors": [
+    "Andreas Schutt",
+    "Peter J. Stuckey",
+    "Andrew R. Verden"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2011 Runner-Up: Andreas Schutt, Peter J. Stuckey, and Andrew R. Verden. Optimal Carpet Cutting"
+  },
+  {
+   "venue": "CP",
+   "year": 2011,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Octagonal Domains for Continuous Constraints",
+   "authors": [
+    "Marie Pelleau",
+    "Charlotte Truchet",
+    "Frédéric Benhamou"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2011 Best Student Paper: Marie Pelleau, Charlotte Truchet, and Frédéric Benhamou. Octagonal Domains for Continuous Constraints"
+  },
+  {
+   "venue": "CP",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Main Track Paper",
+   "title": "A Generic Method for Identifying and Exploiting Dominance Relations",
+   "authors": [
+    "Geoffrey Chu",
+    "Peter Stuckey"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2012 Best Main Track Paper: Geoffrey Chu and Peter Stuckey. A Generic Method for Identifying and Exploiting Dominance Relations"
+  },
+  {
+   "venue": "CP",
+   "year": 2012,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Scheduling Scientific Experiments on the Rosetta/Philae Mission",
+   "authors": [
+    "Gilles Simonin",
+    "Christian Artigues",
+    "Emmanuel Hebrard",
+    "Pierre Lopez"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2012 Best Application Track Paper: Gilles Simonin, Christian Artigues, Emmanuel Hebrard, and Pierre Lopez. Scheduling Scientific Experiments on the Rosetta/Philae Mission"
+  },
+  {
+   "venue": "CP",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "An Optimal Arc Consistency Algorithm for a Chain of Atmost Constraints with Cardinality",
+   "authors": [
+    "Mohamed Siala",
+    "Emmanuel Hebrard",
+    "Marie-José Huguet"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2012 Honorable Mentions: Mohamed Siala, Emmanuel Hebrard, and Marie-José Huguet. An Optimal Arc Consistency Algorithm for a Chain of Atmost Constraints with Cardinality"
+  },
+  {
+   "venue": "CP",
+   "year": 2012,
+   "award": "runner-up",
+   "awardLabel": "Honorable Mention",
+   "title": "Max-Sur-CSP on Two Elements",
+   "authors": [
+    "Hannes Uppman"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2012 Honorable Mentions: Hannes Uppman. Max-Sur-CSP on Two Elements"
+  },
+  {
+   "venue": "CP",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Technical Track Paper",
+   "title": "Parallel Discrepancy-Based Search",
+   "authors": [
+    "Thierry Moisan",
+    "Jonathan Gaudreault",
+    "Claude-Guy Quimper"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2013 Best Technical Track Paper: Thierry Moisan, Jonathan Gaudreault, and Claude-Guy Quimper. Parallel Discrepancy-Based Search"
+  },
+  {
+   "venue": "CP",
+   "year": 2013,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Bin Packing with Linear Usage Costs – An Application to Energy Management in Data Centres",
+   "authors": [
+    "Hadrien Cambazard",
+    "Deepak Mehta",
+    "Barry O’Sullivan",
+    "Helmut Simonis"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2013 Best Application Track Paper: Hadrien Cambazard, Deepak Mehta, Barry O’Sullivan, and Helmut Simonis. Bin Packing with Linear Usage Costs – An Application to Energy Management in Data Centres"
+  },
+  {
+   "venue": "CP",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Filtering AtMostNValue with Difference Constraints: Application to the Shift Minimisation Personnel Task Scheduling Problem",
+   "authors": [
+    "Jean-Guillaume Fages",
+    "Tanguy Lapègue"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2013 Best Student Paper: Jean-Guillaume Fages and Tanguy Lapègue. Filtering AtMostNValue with Difference Constraints: Application to the Shift Minimisation Personnel Task Scheduling Problem"
+  },
+  {
+   "venue": "CP",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Technical Track Paper",
+   "title": "On Broken Triangles",
+   "authors": [
+    "Martin Cooper",
+    "Achref El Mouelhi",
+    "Cyril Terrioux",
+    "Bruno Zanuttini"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2014 Best Technical Track Paper: Martin Cooper, Achref El Mouelhi, Cyril Terrioux, and Bruno Zanuttini. On Broken Triangles"
+  },
+  {
+   "venue": "CP",
+   "year": 2014,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Using CP in Automatic Test Generation for ABB Robotics’ Paint Control System",
+   "authors": [
+    "Morten Mossige",
+    "Arnaud Gotlieb",
+    "Hein Meling"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2014 Best Application Track Paper: Morten Mossige, Arnaud Gotlieb, and Hein Meling. Using CP in Automatic Test Generation for ABB Robotics’ Paint Control System"
+  },
+  {
+   "venue": "CP",
+   "year": 2014,
+   "award": "runner-up",
+   "awardLabel": "Runner-Up",
+   "title": "A Complete Solver for Constraint Games",
+   "authors": [
+    "Thi-Van-Anh Nguyen",
+    "Arnaud Lallouet"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2014 Runner-Up: Thi-Van-Anh Nguyen and Arnaud Lallouet. A Complete Solver for Constraint Games"
+  },
+  {
+   "venue": "CP",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On Compiling CNF into Decision-DNNF",
+   "authors": [
+    "Umut Oztok",
+    "Adnan Darwiche"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2014 Best Student Paper: Umut Oztok and Adnan Darwiche. On Compiling CNF into Decision-DNNF"
+  },
+  {
+   "venue": "CP",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Technical Track Paper",
+   "title": "Projection, Consistency, and George Boole",
+   "authors": [
+    "John N. Hooker"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2015 Best Technical Track Paper: John N. Hooker. Projection, Consistency, and George Boole"
+  },
+  {
+   "venue": "CP",
+   "year": 2015,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Fleet Design Optimisation from Historical Data using Constraint Programming and Large Neighbourhood Search",
+   "authors": [
+    "Philip Kilby",
+    "Tommaso Urli"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2015 Best Application Track Paper: Philip Kilby and Tommaso Urli. Fleet Design Optimisation from Historical Data using Constraint Programming and Large Neighbourhood Search"
+  },
+  {
+   "venue": "CP",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "On Computing Minimal Independent Support and Its Applications to Sampling and Counting",
+   "authors": [
+    "Alexander Ivrii",
+    "Sharad Malik",
+    "Kuldeep S. Meel",
+    "Moshe Vardi"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2015 Best Student Paper: Alexander Ivrii, Sharad Malik, Kuldeep S. Meel, and Moshe Vardi. On Computing Minimal Independent Support and Its Applications to Sampling and Counting"
+  },
+  {
+   "venue": "CP",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Graphical Models for Optimal Power Flow",
+   "authors": [
+    "Krishnamurthy Dvijotham",
+    "Michael Chertkov",
+    "Pascal van Hentenryck",
+    "Marc Vuffray",
+    "Sidhant Misra"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2016 Best Paper: Krishnamurthy Dvijotham, Michael Chertkov, Pascal van Hentenryck, Marc Vuffray and Sidhant Misra. Graphical Models for Optimal Power Flow"
+  },
+  {
+   "venue": "CP",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "A Constraint Programming Approach to Multi-Robot Task Allocation and Scheduling in Retirement Homes",
+   "authors": [
+    "Kyle E.C. Booth",
+    "Goldie Nejat",
+    "J. Christopher Beck"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2016 Distinguished Student Paper: Kyle E.C. Booth, Goldie Nejat, and J. Christopher Beck. A Constraint Programming Approach to Multi-Robot Task Allocation and Scheduling in Retirement Homes"
+  },
+  {
+   "venue": "CP",
+   "year": 2016,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Almost-Stable Matchings in the Hospitals/Residents Problem with Couples",
+   "authors": [
+    "David Manlove",
+    "Iain McBride",
+    "James Trimble"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2016 Distinguished Paper: David Manlove, Iain McBride, and James Trimble. Almost-Stable Matchings in the Hospitals/Residents Problem with Couples"
+  },
+  {
+   "venue": "CP",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "The Dichotomy for Conservative Constraint Satisfaction Is Polynomially Decidable",
+   "authors": [
+    "Clément Carbonnel"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2016 Best Student Paper: Clément Carbonnel. The Dichotomy for Conservative Constraint Satisfaction Is Polynomially Decidable"
+  },
+  {
+   "venue": "CP",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Arc Consistency via Linear Programming",
+   "authors": [
+    "Grigori German",
+    "Olivier Briant",
+    "Hadrien Cambazard",
+    "Vincent Jost"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2017 Best Paper: Grigori German, Olivier Briant, Hadrien Cambazard, and Vincent Jost. Arc Consistency via Linear Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "Improved Filtering for the Bin-Packing with Cardinality Constraint",
+   "authors": [
+    "Guillaume Derval",
+    "Jean-Charles Regin",
+    "Pierre Schaus"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2017 Distinguished Student Paper: Guillaume Derval, Jean-Charles Regin, and Pierre Schaus. Improved Filtering for the Bin-Packing with Cardinality Constraint"
+  },
+  {
+   "venue": "CP",
+   "year": 2017,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper",
+   "title": "Reduced Cost Fixing in MaxSAT",
+   "authors": [
+    "Fahiem Bacchus",
+    "Antti Hyttinen",
+    "Matti Järvisalo",
+    "Paul Saikko"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2017 Distinguished Paper: Fahiem Bacchus, Antti Hyttinen, Matti Järvisalo, and Paul Saikko. Reduced Cost Fixing in MaxSAT"
+  },
+  {
+   "venue": "CP",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Optimal Torpedo Scheduling",
+   "authors": [
+    "Adrian Goldwaser",
+    "Andreas Schutt"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2017 Best Student Paper: Adrian Goldwaser and Andreas Schutt. Optimal Torpedo Scheduling"
+  },
+  {
+   "venue": "CP",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Clause Learning and New Bounds for Graph Coloring",
+   "authors": [
+    "Emmanuel Hebrard",
+    "George Katsirelos"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2018 Best Paper: Emmanuel Hebrard and George Katsirelos. Clause Learning and New Bounds for Graph Coloring"
+  },
+  {
+   "venue": "CP",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Generic Constraint-based Block Modeling using Constraint Programming",
+   "authors": [
+    "Alex Mattenet",
+    "Ian Davidson",
+    "Siegfried Nijssen",
+    "Pierre Schaus"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2019 Best Paper: Alex Mattenet, Ian Davidson, Siegfried Nijssen, and Pierre Schaus. Generic Constraint-based Block Modeling using Constraint Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Student Paper",
+   "title": "The Flexible and Real-Time Commute Trip Sharing Problems",
+   "authors": [
+    "Mohd Hafiz Hasan",
+    "Pascal van Hentenryck"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2019 Distinguished Student Paper: Mohd Hafiz Hasan and Pascal van Hentenryck. The Flexible and Real-Time Commute Trip Sharing Problems"
+  },
+  {
+   "venue": "CP",
+   "year": 2019,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Vehicle Routing by Learning from Historical Solutions",
+   "authors": [
+    "Rocsildes Canoy",
+    "Tias Guns"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2019 Best Student Paper: Rocsildes Canoy and Tias Guns. Vehicle Routing by Learning from Historical Solutions"
+  },
+  {
+   "venue": "CP",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Technical Track Paper",
+   "title": "Finding the Hardest Formulas for Resolution",
+   "authors": [
+    "Tomáš Peitl",
+    "Stefan Szeider"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2020 Best Technical Track Paper: Tomáš Peitl and Stefan Szeider. Finding the Hardest Formulas for Resolution"
+  },
+  {
+   "venue": "CP",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best CP/ML Track Paper",
+   "title": "Computing Optimal Decision Sets with SAT",
+   "authors": [
+    "Jinqiang Yu",
+    "Alexey Ignatiev",
+    "Peter Stuckey",
+    "Pierre Le Bodic"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2020 Best CP/ML Track Paper: Jinqiang Yu, Alexey Ignatiev, Peter Stuckey, and Pierre Le Bodic. Computing Optimal Decision Sets with SAT"
+  },
+  {
+   "venue": "CP",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Constraint-Based Software Diversification for Efficient Mitigation of Code-Reuse Attacks",
+   "authors": [
+    "Rodothea Myrsini Tsoupidi",
+    "Roberto Castañeda Lozano",
+    "Benoit Baudry"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2020 Best Application Track Paper: Rodothea Myrsini Tsoupidi, Roberto Castañeda Lozano, and Benoit Baudry. Constraint-Based Software Diversification for Efficient Mitigation of Code-Reuse Attacks"
+  },
+  {
+   "venue": "CP",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Combining Clause Learning and Branch and Bound for MaxSAT",
+   "authors": [
+    "Chu-Min Li",
+    "Zhenxing Xu",
+    "Jordi Coll",
+    "Felip Manya",
+    "Djamal Habet",
+    "Kun He"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2021 Best Paper: Chu-Min Li, Zhenxing Xu, Jordi Coll, Felip Manya, Djamal Habet, and Kun He. Combining Clause Learning and Branch and Bound for MaxSAT"
+  },
+  {
+   "venue": "CP",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Peel-and-Bound: Generating Stronger Relaxed Bounds with Multivalued Decision Diagrams",
+   "authors": [
+    "Isaac Rudich",
+    "Quentin Cappart",
+    "Louis-Martin Rousseau"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2022 Best Paper: Isaac Rudich, Quentin Cappart and Louis-Martin Rousseau. Peel-and-Bound: Generating Stronger Relaxed Bounds with Multivalued Decision Diagrams"
+  },
+  {
+   "venue": "CP",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Exploiting Functional Constraints in Generating Dominance Breaking Nogoods for Constraint Optimization",
+   "authors": [
+    "Jimmy H. M. Lee",
+    "Allen Z. Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2022 Best Student Paper: Jimmy H. M. Lee and Allen Z. Zhong. Exploiting Functional Constraints in Generating Dominance Breaking Nogoods for Constraint Optimization"
+  },
+  {
+   "venue": "CP",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "Proof Logging for Smart Extensional Constraints",
+   "authors": [
+    "Mathew J. McIlree",
+    "Ciaran McCreesh"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2023 Best Paper: Mathew J. McIlree and Ciaran McCreesh. Proof Logging for Smart Extensional Constraints"
+  },
+  {
+   "venue": "CP",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Exploring Hydrogen Supply/Demand Networks: Modeller and Domain Expert views",
+   "authors": [
+    "Matthias Klapperstueck",
+    "Frits De Nijs",
+    "Ilankaikone Senthooran",
+    "Jack Lee-Kopij",
+    "Maria Garcia De La Banda",
+    "Michael Wybrow"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2023 Best Application Track Paper: Matthias Klapperstueck, Frits De Nijs, Ilankaikone Senthooran, Jack Lee-Kopij, Maria Garcia De La Banda and Michael Wybrow. Exploring Hydrogen Supply/Demand Networks: Modeller and Domain Expert views"
+  },
+  {
+   "venue": "CP",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Main Track Paper",
+   "title": "An Efficient Local Search Solver for Mixed Integer Programming",
+   "authors": [
+    "Peng Lin",
+    "Mengchuan Zou",
+    "Shaowei Cai"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2024 Best Main Track Paper: Peng Lin, Mengchuan Zou and Shaowei Cai. An Efficient Local Search Solver for Mixed Integer Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Application Track Paper",
+   "title": "Learning Effect and Compound Activities in High Multiplicity RCPSP: Application to Satellite Production",
+   "authors": [
+    "Duc Anh Le",
+    "Stephanie Roussel",
+    "Christophe Lecoutre",
+    "Anouck Chan"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2024 Best Application Track Paper: Duc Anh Le, Stephanie Roussel, Christophe Lecoutre and Anouck Chan. Learning Effect and Compound Activities in High Multiplicity RCPSP: Application to Satellite Production"
+  },
+  {
+   "venue": "CP",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best ML Track Paper",
+   "title": "Learning Lagrangian Multipliers for the Travelling Salesman Problem",
+   "authors": [
+    "Augustin Parjadis",
+    "Quentin Cappart",
+    "Bistra Dilkina",
+    "Aaron Ferber",
+    "Louis-Martin Rousseau"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2024 Best ML Track Paper: Augustin Parjadis, Quentin Cappart, Bistra Dilkina, Aaron Ferber and Louis-Martin Rousseau. Learning Lagrangian Multipliers for the Travelling Salesman Problem"
+  },
+  {
+   "venue": "CP",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Technical Paper",
+   "title": "Transition Dominance in Domain-Independent Dynamic Programming",
+   "authors": [
+    "J. Christopher Beck",
+    "Ryo Kuroiwa",
+    "Jimmy H. M. Lee",
+    "Peter J. Stuckey",
+    "Allen Z. Zhong"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2025 Best Technical Paper: J. Christopher Beck, Ryo Kuroiwa, Jimmy H. M. Lee, Peter J. Stuckey, and Allen Z. Zhong. Transition Dominance in Domain-Independent Dynamic Programming"
+  },
+  {
+   "venue": "CP",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Application Paper",
+   "title": "Modeling and Explaining an Industrial Workforce Allocation and Scheduling Problem",
+   "authors": [
+    "Ignace Bleukx",
+    "Ryma Boumazouza",
+    "Tias Guns",
+    "Nadine Laage",
+    "Guillaume Poveda"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2025 Best Application Paper: Ignace Bleukx, Ryma Boumazouza, Tias Guns, Nadine Laage, and Guillaume Poveda. Modeling and Explaining an Industrial Workforce Allocation and Scheduling Problem"
+  },
+  {
+   "venue": "CP",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper",
+   "title": "Symmetric Core Learning for Pseudo-Boolean Optimization by Implicit Hitting Sets",
+   "authors": [
+    "Hannes Ihalainen",
+    "Jeremias Berg",
+    "Matti Järvisalo",
+    "Bart Bogaerts"
+   ],
+   "track": "main",
+   "source": "https://www.a4cp.org/awards/paper-awards",
+   "evidence": "CP 2025 Best Student Paper: Hannes Ihalainen, Jeremias Berg, Matti Järvisalo, and Bart Bogaerts. Symmetric Core Learning for Pseudo-Boolean Optimization by Implicit Hitting Sets"
   },
   {
    "venue": "CRYPTO",

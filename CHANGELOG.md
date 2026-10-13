@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.116 — 2026-10-12
+
+- CP's paper awards 2001–2025 (70 papers; the list had none for CP) from the Association for Constraint Programming's own page (`tot.mjs cp-awards`). The shared name check now accepts combining accents (Vilı́m). The list has 7688 awards.
+
 ## 2.10.115 — 2026-10-12
 
 - MIDDLEWARE's best papers 2007–2025, best student papers 2013–2025 and test-of-time papers 2007–2025, with runners-up (52 papers; the list had none for MIDDLEWARE) from the series' own award pages (`tot.mjs middleware-awards`). The list has 7618 awards.
