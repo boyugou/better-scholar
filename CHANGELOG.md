@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.120 — 2026-10-12
+
+- UAI 2024's outstanding paper and outstanding student paper (2 papers; the UAI reader now takes the "Outstanding" labels and a separate "by Authors" line). SOSP 2019's awards page and UAI's earlier years' pages were looked at and not read (wrapped lines; 404). The list has 7760 awards.
+
 ## 2.10.119 — 2026-10-12
 
 - UbiComp's and Pervasive's best papers 2005–2016, best student papers 2015–2016 and 10-year impact papers 2005–2024 (60 papers) from the UbiComp steering committee's own awards page (`tot.mjs ubicomp-sc`). The list has 7758 awards.

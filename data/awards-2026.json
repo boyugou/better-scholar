@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7758
+  "count": 7760
  },
  "entries": [
   {
@@ -119525,6 +119525,35 @@
    "track": "main",
    "source": "https://auai.org/uai2023/awards",
    "evidence": "UAI 2023 Best Student Paper: Learning from Low Rank Tensor Data: A Random Tensor Theory Perspective — Mohamed El Amine Seddik, Malik Tiomoko, Alexis Decurninge, Maxime Guillaud, Maxim Panov"
+  },
+  {
+   "venue": "UAI",
+   "year": 2024,
+   "award": "outstanding",
+   "awardLabel": "Outstanding Paper Award",
+   "title": "Approximate Bayesian Computation with Path Signatures",
+   "authors": [
+    "Joel Dyer",
+    "Patrick Cannon",
+    "Sebastian M Schmon"
+   ],
+   "track": "main",
+   "source": "https://www.auai.org/uai2024/best_papers",
+   "evidence": "UAI 2024 Outstanding Paper: Approximate Bayesian Computation with Path Signatures — Joel Dyer, Patrick Cannon, Sebastian M Schmon"
+  },
+  {
+   "venue": "UAI",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Outstanding Student Paper Award",
+   "title": "Learning Accurate and Interpretable Decision Trees",
+   "authors": [
+    "Maria Florina Balcan",
+    "Dravyansh Sharma"
+   ],
+   "track": "main",
+   "source": "https://www.auai.org/uai2024/best_papers",
+   "evidence": "UAI 2024 Outstanding Student Paper: Learning Accurate and Interpretable Decision Trees — Maria Florina Balcan, Dravyansh Sharma"
   },
   {
    "venue": "UAI",

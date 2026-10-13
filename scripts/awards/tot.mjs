@@ -1874,10 +1874,10 @@ export function parseUaiAwards(html, source) {
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const year = parseInt((/uai(\d{4})/.exec(source) || [])[1], 10);
   if (!year) return { entries, skipped: ["no year in the address"] };
-  const HEAD = /^(Best (?:Student )?Paper(?: Runner-?up)?)(?: Award)?:\s*(.*)$/i;
+  const HEAD = /^((?:Best|Outstanding) (?:Student )?Paper(?: Runner-?up)?)(?: Award)?:\s*(.*)$/i;
   const add = (label, t0, a0) => {
     const who = a0.replace(/\([^()]*\)/g, " ").split(/\s*,\s*(?:and\s+)?|\s+and\s+/).map((n) => n.replace(/\s+/g, " ").trim()).filter(Boolean), title = cleanTitle(t0);
-    const kind = /runner/i.test(label) ? ["runner-up", "Best Paper Runner-up"] : /student/i.test(label) ? ["student", "Best Student Paper Award"] : ["best", "Best Paper Award"];
+    const out = /^Outstanding/i.test(label), kind = /runner/i.test(label) ? ["runner-up", out ? "Outstanding Paper Runner-up" : "Best Paper Runner-up"] : /student/i.test(label) ? ["student", out ? "Outstanding Student Paper Award" : "Best Student Paper Award"] : out ? ["outstanding", "Outstanding Paper Award"] : ["best", "Best Paper Award"];
     if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "UAI", year, award: kind[0], awardLabel: kind[1], title, authors: who, track: "main", source, evidence: `UAI ${year} ${label}: ${title} — ${who.join(", ")}` });
     else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
   };
@@ -1886,7 +1886,7 @@ export function parseUaiAwards(html, source) {
     if (!m) continue;
     const inline = /^(.+?),?\s+by\s+(.+)$/.exec(m[2]);
     if (inline) add(m[1], inline[1], inline[2]);
-    else if (!m[2] && ls[i + 1] && ls[i + 2] && !HEAD.test(ls[i + 1])) { add(m[1], ls[i + 1], ls[i + 2]); i += 2; }
+    else if (!m[2] && ls[i + 1] && ls[i + 2] && !HEAD.test(ls[i + 1])) { add(m[1], ls[i + 1], ls[i + 2].replace(/^by\s+/i, "")); i += 2; }   // (2024 prints "by Authors" on its own line)
   }
   return { entries, skipped };
 }

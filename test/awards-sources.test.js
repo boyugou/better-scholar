@@ -2427,6 +2427,12 @@ test("UbiComp steering committee awards page: newest-first blocks 'UbiComp 2016'
   assert.deepEqual(parseUbicompSc(h, "https://ubicomp.org/sc/awards.html").entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["UbiComp 2016 student  | Ann Lee; Bo Chan; Cy Dunn", "UbiComp 2016 best  | Ed Fox; Flo Gray; Gil Hart", "UbiComp 2016 tot 2006 | Hal Ito; Jo Kim", "UbiComp 2014 best  | Bea Poe; Cal Moe", "Pervasive 2013 best  | Di Lao; Ev Pan"]);
 });
 
+test("UAI award page, 2024's layout: 'Outstanding Paper Award:' and 'Outstanding Student Paper Award:' headings, the title, then 'by Authors' on its own line", async () => {
+  const { parseUaiAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>UAI 2024 - Outstanding papers</h1><p>Outstanding Paper Award:</p><p>Approximate Bayesian computation with path signatures</p><p>by Joel Dyer, Patrick Cannon and Sebastian M Schmon</p><p>Outstanding Student Paper Award:</p><p>Learning accurate and interpretable decision trees</p><p>by Maria Florina Balcan and Dravyansh Sharma</p><p>Sponsors</p>`;
+  assert.deepEqual(parseUaiAwards(h, "https://www.auai.org/uai2024/best_papers").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2024 outstanding | Joel Dyer; Patrick Cannon; Sebastian M Schmon", "2024 student | Maria Florina Balcan; Dravyansh Sharma"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
