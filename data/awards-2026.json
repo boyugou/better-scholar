@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7082
+  "count": 7093
  },
  "entries": [
   {
@@ -67595,6 +67595,166 @@
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
    "evidence": "International Conference on Global Software Engineering (ICGSE 2019): Ricardo Britto, Darja Smite, Lars-Ola Damm, and Jürgen Börstler: Performance Evolution of Newcomers in Large-Scale Distributed Software Projects: An Industrial Case Study"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Local Confluence for Rules with Nested Application Conditions",
+   "authors": [
+    "Hartmut Ehrig",
+    "Annegret Habel",
+    "Leen Lambers",
+    "Fernando Orejas",
+    "Ulrike Golas"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2010: Hartmut Ehrig, Annegret Habel, Leen Lambers, Fernando Orejas and Ulrike Golas: “Local Confluence for Rules with Nested Application Conditions”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Pattern-based Graph Abstraction",
+   "authors": [
+    "Arend Rensink",
+    "Eduardo Zambon"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2012: Arend Rensink and Eduardo Zambon: “Pattern-based Graph Abstraction”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Transformation and Refinement of Rigid Structures",
+   "authors": [
+    "Vincent Danos",
+    "Reiko Heckel",
+    "Pawel Sobocinski"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2014: Vincent Danos, Reiko Heckel and Pawel Sobocinski: “Transformation and Refinement of Rigid Structures”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Predictive Top-Down Parsing for Hyperedge Replacement Grammars",
+   "authors": [
+    "Frank Drewes",
+    "Berthold Hoffmann",
+    "Mark Minas"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2015: Frank Drewes, Berthold Hoffmann, and Mark Minas: “Predictive Top-Down Parsing for Hyperedge Replacement Grammars”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Sesqui-Pushout Rewriting with Type Refinements",
+   "authors": [
+    "Michael Löwe"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2016: Michael Löwe: “Sesqui-Pushout Rewriting with Type Refinements”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Granularity of Conflicts and Dependencies in Graph Transformation Systems",
+   "authors": [
+    "Kristopher Born",
+    "Leen Lambers",
+    "Daniel Strüber",
+    "Gabriele Taentzer"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2017: Kristopher Born, Leen Lambers, Daniel Strüber and Gabriele Taentzer: “Granularity of Conflicts and Dependencies in Graph Transformation Systems”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Knowledge representation and update in hierarchies of graphs",
+   "authors": [
+    "Russ Harmer",
+    "Eugenia Oshurko"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2019: Russ Harmer and Eugenia Oshurko: “Knowledge representation and update in hierarchies of graphs”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Powerful and NP-complete: Hypergraph Lambek grammars",
+   "authors": [
+    "Tikhon Pshenitsyn"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2021: Tikhon Pshenitsyn: “Powerful and NP-complete: Hypergraph Lambek grammars”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Graph Rewriting Components",
+   "authors": [
+    "Reiko Heckel",
+    "Andrea Corradini",
+    "Fabio Gadducci"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2022: Reiko Heckel, Andrea Corradini and Fabio Gadducci: “Graph Rewriting Components”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Mechanised DPO Theory: Uniqueness of Derivations and Church-Rosser Theorem",
+   "authors": [
+    "Robert Söldner",
+    "Detlef Plump"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2023: Robert Söldner and Detlef Plump: “Mechanised DPO Theory: Uniqueness of Derivations and Church-Rosser Theorem”"
+  },
+  {
+   "venue": "ICGT",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best ICGT Paper",
+   "title": "Causal Graph Dynamics and Kan Extensions",
+   "authors": [
+    "Luidnel Maignan",
+    "Antoine Spicher"
+   ],
+   "track": "main",
+   "source": "https://eatcs.org/index.php/best-icgt-paper",
+   "evidence": "Best ICGT Paper 2024: Luidnel Maignan and Antoine Spicher: “Causal Graph Dynamics and Kan Extensions”"
   },
   {
    "venue": "ICLR",

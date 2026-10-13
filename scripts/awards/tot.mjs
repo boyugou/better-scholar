@@ -2975,7 +2975,7 @@ export function parseIcdtAwards(html, source) {
 }
 
 // EATCS's "Best <conference> Paper" / "Best Student <conference> Paper" pages (eatcs.org/index.php/best-esa-paper, …): after "A brief history of the prize follows below." a line "2025 / Warsaw, Poland", then one line per winner, "[Track A: ]Authors: “Title”" (the colon may be missing).
-const EATCS_VENUE = { ESA: "ESA", ICALP: "ICALP", MFCS: "MFCS" };
+const EATCS_VENUE = { ESA: "ESA", ICALP: "ICALP", MFCS: "MFCS", ICGT: "ICGT" };
 export function parseEatcsPaper(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);

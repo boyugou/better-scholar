@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.94 — 2026-10-12
+
+- ICGT's best papers 2010–2024 (11 papers) from EATCS's own award page (`tot.mjs eatcs-paper`); EATCS's ETAPS page mixes the member conferences' papers (already read from etaps.org) and its CCC student page has no history list, so neither is read. The list has 7093 awards.
+
 ## 2.10.93 — 2026-10-12
 
 - Best papers and best student papers of ESA (2005–2026), ICALP (2000–2026), MFCS (2012–2023) from EATCS's own award pages and of SoCG (2012–2026) from the computational geometry community's awards page (225 papers; the list had none for ICALP, MFCS or SoCG and only one ESA year) (`tot.mjs eatcs-paper`, `socg-awards`). The list has 7082 awards.
