@@ -987,17 +987,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.doesNotMatch(await popN.textContent("#main"), /Not ranked|Ranks come from/, "no legend or edition note for ranks that are not there");
       assert.deepEqual(await popN.evaluate(() => [...document.querySelectorAll("tr")].map((tr) => tr.children.length)), [2, 2, 2, 2, 2, 2], "every row, the cut-off one too, has the role and the total: no cell spans columns that are not there");
       await popN.close();
-      // a selection made on a tier while the list was still loading does not outlive the columns: nothing is left to undo it
+      // a selection made on a tier while the list is incomplete does not outlive the columns: nothing is left to undo it
+      // (the list is not loaded by itself here: the click comes first, then "Load all")
+      const optsN = await openOptions(ctxN);
+      await setPref(optsN, "autoLoad", false);
       const fxM = await start({ slug: "non-cs-demo", pageSize: 5 });
+      const pgM = await ctxN.newPage();
       try {
-        const pgM = await ctxN.newPage();
         await pgM.goto(fxM.url);
         await pgM.waitForSelector('#rr-panel th button[data-tier="none"]');
+        await pgM.bringToFront();
         await pgM.click('#rr-panel th button[data-tier="none"]');
-        assert.equal(await pgM.locator('[data-rr="filterbar"]').isVisible(), true, "while the list loads the tier column is there, and the selection filters");
+        assert.equal(await pgM.locator('[data-rr="filterbar"]').isVisible(), true, "while the list is incomplete the tier column is there, and the selection filters");
+        await pgM.click('[data-act="load-all"]');
         await eventually(pgM, () => !document.querySelector("#rr-panel [data-tier]") && document.querySelector('[data-rr="filterbar"]').hidden && document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length === 13);
-        await pgM.close();
-      } finally { await fxM.close(); }
+      } finally { await pgM.close().catch(() => {}); await fxM.close(); }
       ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup); a tier selection does not outlive the columns");
     } finally { await ctxN.close(); await fxN.close(); }
   }

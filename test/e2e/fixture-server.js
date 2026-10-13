@@ -118,7 +118,7 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
   });
   return new Promise((resolve) => server.listen(port, "127.0.0.1", () => resolve({
     server, profile, port: server.address().port, url: `http://127.0.0.1:${server.address().port}/citations?user=TEST&hl=en`,
-    detailRequests: () => detailRequests, detailHls: () => detailHls.slice(), close: () => new Promise((r) => server.close(r))
+    detailRequests: () => detailRequests, detailHls: () => detailHls.slice(), close: () => new Promise((r) => { server.close(r); if (server.closeAllConnections) server.closeAllConnections(); })      // (a page still open must not keep a failing run from reporting why: no wait for its connections)
   })));
 }
 
