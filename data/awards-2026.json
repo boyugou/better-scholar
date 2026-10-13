@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7448
+  "count": 7460
  },
  "entries": [
   {
@@ -48352,6 +48352,211 @@
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2019/html/date-best-papers-2019.pdf",
    "evidence": "DATE 2019 best paper: When Capacitors Attack: Formal Method Driven Design and Detection of Charge-Domain Trojans — Xiaolong Guo1, Huifeng Zhu2, Yier Jin1 , Xuan Zhang2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Flexible and Scalable NTT Hardware: Applications from Homomorphically Encrypted Deep Learning to Post-Quantum Cryptography",
+   "authors": [
+    "Ahmet Can Mert",
+    "Emre Karabulut",
+    "Erdinc Ozturk",
+    "Erkay Savas",
+    "Michela Becchi",
+    "Aydin Aysu"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
+   "evidence": "DATE 2020 best paper: A Flexible and Scalable NTT Hardware: Applications from Homomorphically Encrypted Deep Learning to Post-Quantum Cryptography — Ahmet Can Mert1, Emre Karabulut2, Erdinc Ozturk1, Erkay Savas1, Michela Becchi2 and Aydin Aysu2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "DEFCON: Generating and Detecting Failure-prone Instruction Sequences via Stochastic Search",
+   "authors": [
+    "Ioannis Tsiokanos",
+    "Lev Mukhanov",
+    "Giorgis Georgakoudis",
+    "Dimitrios S. Nikolopoulos",
+    "Georgios Karakonstantis"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
+   "evidence": "DATE 2020 best paper: DEFCON: Generating and Detecting Failure-prone Instruction Sequences via Stochastic Search — Ioannis Tsiokanos1, Lev Mukhanov2, Giorgis Georgakoudis3, Dimitrios S. Nikolopoulos4 and Georgios Karakonstantis1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Impact of Magnetic Coupling and Density on STT-MRAM Performance",
+   "authors": [
+    "Lizhou Wu",
+    "Siddharth Rao",
+    "Mottaqiallah Taouil",
+    "Erik Jan Marinissen",
+    "Gouri Sankar Kar",
+    "Said Hamdioui"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
+   "evidence": "DATE 2020 best paper: Impact of Magnetic Coupling and Density on STT-MRAM Performance — Lizhou Wu1, Siddharth Rao2, Mottaqiallah Taouil1, Erik Jan Marinissen1, Gouri Sankar Kar2 and Said Hamdioui1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Statistical Time-based Intrusion Detection in Embedded Systems",
+   "authors": [
+    "Nadir Carreon Rascon",
+    "Allison Gilbreath",
+    "Roman Lysecky"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2020/html/bestpaper.html",
+   "evidence": "DATE 2020 best paper: Statistical Time-based Intrusion Detection in Embedded Systems — Nadir Carreon Rascon, Allison Gilbreath and Roman Lysecky"
+  },
+  {
+   "venue": "DATE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A GPU-accelerated Deep Stereo-LiDAR Fusion for Real-time High-precision Dense Depth Sensing",
+   "authors": [
+    "Haitao Meng",
+    "Chonghao Zho",
+    "Jianfeng Gu",
+    "Gang Chen"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
+   "evidence": "DATE 2021 best paper: A GPU-accelerated Deep Stereo-LiDAR Fusion for Real-time High-precision Dense Depth Sensing — Haitao Meng, Chonghao Zho, Jianfeng Gu, Gang Chen"
+  },
+  {
+   "venue": "DATE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Adaptive Design of Real-Time Control Systems subject to Sporadic Overruns",
+   "authors": [
+    "Paolo Pazzaglia",
+    "Anne Hamann",
+    "Dirk Ziegenbein",
+    "Martina Maggio"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
+   "evidence": "DATE 2021 best paper: Adaptive Design of Real-Time Control Systems subject to Sporadic Overruns — Paolo Pazzaglia1, Anne Hamann2, Dirk Ziegenbein2 and Martina Maggio3"
+  },
+  {
+   "venue": "DATE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Leveraging Processor Modeling and Verification for General Hardware Modules",
+   "authors": [
+    "Yue Xing",
+    "Huaxi Lu",
+    "Aarti Gupta",
+    "Sharad Malik"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
+   "evidence": "DATE 2021 best paper: Leveraging Processor Modeling and Verification for General Hardware Modules — Yue Xing, Huaxi Lu, Aarti Gupta and Sharad Malik"
+  },
+  {
+   "venue": "DATE",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Microarchitectural Timing Channels and their Prevention on an Open-Source 64-bit RISC-V Core",
+   "authors": [
+    "Nils Wistoff",
+    "Moritz Schneider",
+    "Frank Gurkaynak",
+    "Luca Benini",
+    "Gernot Heiser"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2021/html/bestpaper.html",
+   "evidence": "DATE 2021 best paper: Microarchitectural Timing Channels and their Prevention on an Open-Source 64-bit RISC-V Core — Nils Wistoff1, Moritz Schneider1, Frank Gurkaynak1, Luca Benini2 and Gernot Heiser3"
+  },
+  {
+   "venue": "DATE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Algorithm-Hardware Co-Design for Efficient Brain-Inspired Hyperdimensional Learning on Edge",
+   "authors": [
+    "Yang Ni",
+    "Yeseong Kim",
+    "Tajana Rosing",
+    "Mohsen Imani"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
+   "evidence": "DATE 2022 best paper: Algorithm-Hardware Co-Design for Efficient Brain-Inspired Hyperdimensional Learning on Edge — Yang Ni1, Yeseong Kim2, Tajana Rosing3, Mohsen Imani1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Global Robustness Certification of Neural Networks via Interleaving Twin-Network Encoding",
+   "authors": [
+    "Zhilu Wang",
+    "Chao Huang",
+    "Qi Zhu"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
+   "evidence": "DATE 2022 best paper: Efficient Global Robustness Certification of Neural Networks via Interleaving Twin-Network Encoding — Zhilu Wang1, Chao Huang2, Qi Zhu1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FastGR: Global Routing on CPU-GPU with Heterogeneous Task Graph Scheduler",
+   "authors": [
+    "Siting Liu",
+    "Peiyu Liao",
+    "Rui Zhang",
+    "Zhitang Chen",
+    "Wenlong Lv",
+    "Yibo Lin",
+    "Bei Yu"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
+   "evidence": "DATE 2022 best paper: FastGR: Global Routing on CPU-GPU with Heterogeneous Task Graph Scheduler — Siting Liu1, Peiyu Liao1, Rui Zhang2, Zhitang Chen3, Wenlong Lv3, Yibo Lin4, Bei Yu1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Self-Terminated Write of Multi-Level Cell ReRAM for Efficient Neuromorphic Computing",
+   "authors": [
+    "Zongwu Wang",
+    "Zhezhi He",
+    "Rui Yang",
+    "Shiquan Fan",
+    "Jie Lin",
+    "Fangxin Liu",
+    "Yueyang Jia",
+    "Chenxi Yuan",
+    "Qidong Tang",
+    "Li Jiang"
+   ],
+   "track": "main",
+   "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
+   "evidence": "DATE 2022 best paper: Self-Terminated Write of Multi-Level Cell ReRAM for Efficient Neuromorphic Computing — Zongwu Wang, Zhezhi He, Rui Yang, Shiquan Fan, Jie Lin, Fangxin Liu, Yueyang Jia, Chenxi Yuan, Qidong Tang, Li Jiang"
   },
   {
    "venue": "DIS",

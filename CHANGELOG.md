@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.106 — 2026-10-12
+
+- DATE's best papers 2020–2022 (12 papers) from the archive's `bestpaper.html` pages; the DATE reader takes HTML as well as PDF text, and no longer takes a university line for an author. The list has 7460 awards.
+
 ## 2.10.105 — 2026-10-12
 
 - DATE's four best papers of 2014 (from the same kind of archive PDF; 2015's layout interleaves authors and affiliations and is refused). The list has 7448 awards.
