@@ -82,8 +82,9 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
   (no empty rank columns) and says why; the roles, years, totals and the rest work in any field.
 - **Roles come from Scholar's author text.** Initials are matched flexibly
   (`GE Hinton` = `Geoffrey Hinton`; `Jane` ≠ `John`), but two different people can
-  collide on `W Wang`. Co-first marks (†, ∗ …) are honoured when present — Scholar
-  rarely preserves them. A profile name written surname first (`Tang Jie` on the profile, `J Tang` in the
+  collide on `W Wang`. Equal-contribution marks (†, ∗, # …) count when the first author and at least one other
+  leading author carry them (`A*, B*, C`); a lone mark, or one further down (a corresponding or co-senior author), says nothing about
+  the role. Scholar rarely preserves marks at all. A profile name written surname first (`Tang Jie` on the profile, `J Tang` in the
   papers) is read the other way round automatically when the page itself shows that this finds you and the
   name as printed hardly does; other rearrangements Scholar prints (`SY Philip` for `Philip S. Yu`) are offered
   with one click when they occur in at least two papers. Anything else: **Add a spelling** in the panel.

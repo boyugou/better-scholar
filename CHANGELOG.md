@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.22.1 — 2026-10-13
+
+- **A mark after an author's name no longer makes that author "co-first" wherever it stands.** Until now any trailing mark (`*`, `†`, `#` …) on the profile owner's name meant *Co-first*, so a last author marked as a corresponding author (`…, C Lee*`) or a co-senior one (`…, C Lee*, D Kim*`) was shown as co-first. Now the owner is co-first only inside the leading group of authors that share a mark with the first author (`A*, B*, C`: at least two); a lone mark, a mark further down, or a second group with another symbol (`A†, B†, C‡, D‡`: C and D) says nothing about the role, and the envelope `✉` (a corresponding author) is never read as equal contribution. The star-like characters `*`, `∗`, `⁎` are one mark. A real profile read on the live page (co-first stars, cut lists, Orals) pins the roles in `test/real-profile.test.js` and the end-to-end run.
+
 ## 2.22.0 — 2026-10-13
 
 - **A profile outside computer science no longer gets an empty rank table.** CCF and CORE rank computer-science venues; when everything is loaded and none of a profile's papers is on a list that is switched on (a biologist's, a physicist's), the table counts papers by role only (heading *Papers by role*, no empty A / B / C columns, no CCF | CORE switch), the note says the lists cover computer science (`noRanksNote`), the unranked-venues list stays but has no *Report* link (nothing is missing from the lists), and the toolbar popup follows. While papers are still loading, or as soon as one paper is ranked, the columns are there as before. The copied summary and table follow (roles and totals). A synthetic biologist's profile and an end-to-end step cover it.

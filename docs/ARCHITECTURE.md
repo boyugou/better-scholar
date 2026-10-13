@@ -82,7 +82,8 @@ Matching an author token to the owner (`names.js`):
   one-click suggestion; the automatic spelling is not stored (it is derived again on every load),
   a suggestion that is accepted becomes an ordinary variant.
 
-Roles (`roleFor`): co-first (shared-first mark) → first (position 0) → last (final
+Roles (`roleFor`): co-first (the owner is inside the leading group of authors that share a mark with the first author — `A*, B*, C`, at least two; a lone mark or
+one further down, a corresponding or co-senior author, says nothing; the envelope ✉ is never equal contribution) → first (position 0) → last (final
 position, only if the list is *not* truncated) → second (position 1) → middle. In a
 two-author paper the second author is the senior (last) author. Middle authors are not
 highlighted.

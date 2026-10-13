@@ -29,8 +29,28 @@ test("roleFor: first, second, last, middle; a 2-author paper's second author is 
   assert.equal(names.roleFor(0, t(1), false), "first");
   // a truncated list never claims the last slot
   assert.equal(names.roleFor(4, t(5), true), "middle");
-  const co = t(3); co[2].cofirst = true;
-  assert.equal(names.roleFor(2, co, false), "cofirst");
+  const co = t(3); co[0].cofirst = co[1].cofirst = true; co[0].marks = co[1].marks = ["*"];
+  assert.equal(names.roleFor(1, co, false), "cofirst");
+});
+
+test("co-first marks: a leading group that shares a mark counts; a lone mark, or one further down (a corresponding or co-senior author), does not", () => {
+  const role = (text, i) => { const r = names.parseAuthors(text); return names.roleFor(i, r.tokens, r.truncated); };
+  assert.deepEqual(["A Smith*, B Jones*, C Lee"].flatMap((s) => [0, 1, 2].map((i) => role(s, i))), ["cofirst", "cofirst", "last"]);
+  assert.equal(role("A Smith*, B Jones, C Lee", 0), "first", "a lone mark on the first author is a note or a corresponding author");
+  assert.equal(role("A Smith, B Jones, C Lee*", 2), "last", "a corresponding author at the end is the last author");
+  assert.equal(role("A Smith, B Jones, C Lee*, D Kim*", 3), "last", "co-senior authors are last authors");
+  assert.equal(role("A Smith, B Jones*, C Lee*, D Kim", 1), "second", "marks that do not begin with the first author are not co-first");
+  assert.equal(role("A Smith, B Jones*, C Lee*, D Kim", 2), "middle");
+  assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 1), "cofirst");
+  assert.equal(role("A Smith†, B Jones†, C Lee‡, D Kim‡", 2), "middle", "a second group with another mark is not co-first");
+  assert.equal(role("A Smith†, B Jones‡, C Lee", 1), "second", "two different marks on the first two are two different notes");
+  assert.equal(role("A Smith∗, B Jones*, C Lee", 1), "cofirst", "the star-like characters are one mark");
+  assert.equal(role("A Smith✉, B Jones✉, C Lee", 1), "second", "the envelope is a corresponding author, never equal contribution");
+  assert.deepEqual(names.parseAuthors("A Smith✉, B Jones*").tokens.map((t) => [t.name, t.cofirst]), [["A Smith", false], ["B Jones", true]]);
+  // the live profile of 2026-10-13 (test/fixtures/profiles/gou-osu.json)
+  assert.equal(role("B Gou*, Z Huang*, Y Ning*, Y Gu, M Lin, W Qi, A Kopanev, B Yu, ...", 0), "cofirst");
+  assert.equal(role("B Zheng*, B Gou*, S Salisbury*, Z Du*, H Sun, Y Su", 1), "cofirst");
+  assert.equal(role("Y Gu*, K Zhang*, Y Ning*, B Zheng*, B Gou, T Xue, C Chang, ...", 4), "middle");
 });
 
 test("middle initials: profile 'Geoffrey Hinton' matches 'GE Hinton'", () => {

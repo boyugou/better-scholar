@@ -10,8 +10,11 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 
-  // Footnote marks authors use for "equal contribution" / "corresponding".
-  const COFIRST_SYMBOLS = ["†", "‡", "§", "*", "#", "✉", "⁎", "∗"];
+  // Footnote marks authors put after a name. In a group at the front of the list ("A*, B*, C") they mean "equal contribution"; alone, or on someone
+  // further down ("..., C*": a corresponding author, or a co-senior one), they mean something else. The envelope only ever means the second.
+  const COFIRST_SYMBOLS = ["†", "‡", "§", "*", "#", "⁎", "∗"];
+  const CORRESPONDING_SYMBOLS = ["✉"];
+  const canonicalMark = (sym) => (sym === "∗" || sym === "⁎" ? "*" : sym);       // (the star-like characters are one mark)
 
   // Latin letters with no Unicode decomposition, so NFD alone leaves them behind.
   const SPECIAL_LETTERS = {
@@ -153,22 +156,32 @@
 
   const matchesAuthor = (authorText, owner) => matchStrength(authorText, owner) > 0;
 
-  // Strip trailing co-first markers from one raw author token.
-  // "Jane Doe†" -> { name: "Jane Doe", cofirst: true }
+  // Strip trailing footnote marks from one raw author token; `marks` are the ones that can mean equal contribution (the envelope is dropped, it never does).
+  // "Jane Doe†" -> { name: "Jane Doe", cofirst: true, marks: ["†"] }
   function splitCofirst(token) {
     let name = token.trim();
-    let cofirst = false;
+    const marks = [];
     for (let changed = true; changed;) {
       changed = false;
-      for (const sym of COFIRST_SYMBOLS) {
+      for (const sym of [...COFIRST_SYMBOLS, ...CORRESPONDING_SYMBOLS]) {
         if (name.endsWith(sym)) {
           name = name.slice(0, -sym.length).trim();
-          cofirst = true;
+          if (!CORRESPONDING_SYMBOLS.includes(sym)) marks.unshift(canonicalMark(sym));
           changed = true;
         }
       }
     }
-    return { name, cofirst };
+    return { name, cofirst: marks.length > 0, marks };
+  }
+
+  // How many authors at the front share a mark with the first author ("A*, B*, C": 2). Fewer than two is no group: a lone mark on the first author is a note
+  // or a corresponding author, and marks that begin further down (or another symbol) are not equal contribution of the first authors.
+  function leadingGroup(tokens) {
+    const first = tokens[0] && tokens[0].marks;
+    if (!first || !first.length) return 0;
+    let k = 1;
+    while (k < tokens.length && (tokens[k].marks || []).some((m) => first.includes(m))) k++;
+    return k >= 2 ? k : 0;
   }
 
   // Parse "A Smith, B Jones, C Lee" into ordered tokens with co-first flags.
@@ -199,10 +212,11 @@
   }
 
   // Role of the author at `idx`: 'cofirst' | 'first' | 'last' | 'second' | 'middle'.
+  // Co-first only for an author inside the leading group that shares a mark ("A*, B*, C"); a mark anywhere else says nothing about the role.
   // In a two-author paper the second author is the senior (last) author. A
   // truncated list never claims the last slot.
   function roleFor(idx, tokens, truncated) {
-    if (tokens[idx].cofirst) return "cofirst";
+    if (tokens[idx].cofirst && idx < leadingGroup(tokens)) return "cofirst";
     if (idx === 0) return "first";
     if (idx === tokens.length - 1 && !truncated) return "last";
     if (idx === 1) return "second";
@@ -312,7 +326,7 @@
   }
 
   return {
-    COFIRST_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
-    matchStrength, matchesAuthor, splitCofirst, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, suggestVariants
+    COFIRST_SYMBOLS, CORRESPONDING_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
+    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, suggestVariants
   };
 });
