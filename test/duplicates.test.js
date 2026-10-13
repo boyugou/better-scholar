@@ -31,3 +31,19 @@ test("a different first author is a different paper; so is a short title or a mi
 test("an abbreviated first author still matches the full name", () => {
   assert.deepEqual(dup.plan([e("A fairly long shared title here", "J Smith, B Lee", 4), e("A fairly long shared title here", "John Smith, B Lee", 9)]).keep, [false, true]);
 });
+
+test("plan: on random profiles every entry is counted exactly once and the citations are conserved", () => {
+  let seed = 7;
+  const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+  const titles = ["Deep Residual Learning for Image Recognition", "deep residual learning for image-recognition", "A Survey of Graph Neural Networks and Their Uses", "Attention Is All You Need Really", "ATTENTION IS ALL YOU NEED, REALLY!", "Short", "Another Unrelated Paper About Operating Systems"];
+  const authors = ["K He, X Zhang", "Kaiming He", "A Vaswani, N Shazeer", "", "...", "L Zhu"];
+  for (let round = 0; round < 200; round++) {
+    const entries = Array.from({ length: 1 + Math.floor(rnd() * 30) }, () => ({ title: titles[Math.floor(rnd() * titles.length)], authorsText: authors[Math.floor(rnd() * authors.length)], citations: Math.floor(rnd() * 500) }));
+    const p = dup.plan(entries);
+    const total = entries.reduce((n, e) => n + e.citations, 0);
+    const kept = entries.map((e, i) => (p.keep[i] ? p.citations[i] : 0)).reduce((a, b) => a + b, 0);
+    assert.equal(kept, total, "the citations shown add up to the citations there are");
+    assert.equal(entries.reduce((n, _, i) => n + (p.keep[i] ? p.merged[i] : 0), 0), entries.length, "every entry stands for exactly one entry that stays");
+    entries.forEach((e, i) => { if (!p.keep[i]) assert.ok(p.merged[i] === 1 && p.citations[i] === e.citations, "an entry that goes is left untouched"); });
+  }
+});
