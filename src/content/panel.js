@@ -312,6 +312,10 @@
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
       if (announce.textContent !== say) announce.textContent = say;
       // a column with nothing in it gives its width to the other
+      // Scholar's page changed under us: the table, the counts and the filters would all be zeros, which is worse than nothing, so only the warning and the loading status stay
+      if (m.coverage.layoutBroken) {
+        for (const sec of [summarySec, marksSec, filtersSec, metricsSec, yearsSec, venuesSec, footSec]) sec.hidden = true;
+      }
       // in the wide layout the year bars and the venue list join the first column (the shorter one): they are looked at like the table and the awards
       const wide = el.classList.contains("rr-wide");
       for (const sec of [yearsSec, venuesSec]) {

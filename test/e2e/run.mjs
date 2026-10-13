@@ -1174,6 +1174,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await warn.count(), 1);
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-layout-warning.png") });
     assert.match(await warn.textContent(), /layout seems to have changed/);
+    assert.equal(await page.locator('[data-rr="matrix"]').isVisible(), false, "no table of zeros next to the warning");
     assert.match(await warn.locator("a").getAttribute("href"), /issues\/new\?title=Scholar%20page%20layout%20changed/);
     ok("a page whose author lines cannot be read says so, with a way to report it");
   } finally {
