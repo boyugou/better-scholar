@@ -330,6 +330,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // a venue filter whose venue leaves the list (no role is highlighted now) is dropped, not left hiding rows with no control to undo it
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, false);
     await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
+    await page.bringToFront();
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, true);
     await setPref(opts, "panel.venues", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
@@ -440,6 +442,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), lastA);
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
     assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers`, "the panel says the list is filtered");
     await page.click('[data-act="clear-filters"]');
     assert.equal(await visibleRows(page), 100);
@@ -510,6 +513,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 11. resolve hidden roles from each paper's own page
     const hiddenBefore = (await readMatrix(page)).hidden;
     assert.equal(hiddenBefore, 28);
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-hidden-roles.png") });
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
     await page.click('[data-act="resolve"]');
     await page.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 20000 });
@@ -1012,6 +1016,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
             return out;
           });
           if (over.length) bad.push(`${lang}/${mode}: ${over.join("; ")}`);
+          if (mode === "sidebar" && ["ja", "de", "ru", "fi", "th"].includes(lang)) { await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, `lang-${lang}.png`) }); }
         }
       }
       // the settings page and the popup too: nothing makes the page wider than the window, in a narrow window as well
@@ -1144,6 +1149,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     assert.equal(await page.locator('[data-rr="layout-warning"]').count(), 0);
     await page.click('[data-rr="unmatched"] summary');
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-unmatched.png") });
     await page.click('[data-act="copy-unmatched"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /^\d+× \S/m);
@@ -1166,6 +1172,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     const warn = page.locator('[data-rr="layout-warning"]');
     assert.equal(await warn.count(), 1);
+    await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-layout-warning.png") });
     assert.match(await warn.textContent(), /layout seems to have changed/);
     assert.match(await warn.locator("a").getAttribute("href"), /issues\/new\?title=Scholar%20page%20layout%20changed/);
     ok("a page whose author lines cannot be read says so, with a way to report it");
