@@ -2321,6 +2321,12 @@ test("BPM awards page: blocks 'BPM 2025, City', under 'Best paper award' and 'Be
   assert.deepEqual(parseBpmAwards(h, "https://bpm-conference.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2025 best | Ann Lee; Bo Chan; Cy Dunn", "2025 student | Ed Fox"]);
 });
 
+test("RECOMB awards page: 'YYYY: Authors. “Title”.' lines under the best paper and best student headings ('for the contribution' tolerated, an unclosed quote tolerated); the poster awards are left out", async () => {
+  const { parseRecombAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h2>Best Paper Awards</h2><p>2025: Ann Lee, Bo Chan and Cy Dunn. “A deep reinforcement learning framework for haplotype assembly”.</p><p>2012: Ed Fox, Flo Gray for the contribution “Evolution of genome organization by duplication and loss”.</p><p>2026: Gil Hart and Hal Ito. “Optimization-based phenotype randomization for studies</p><h2>Best Student / Young Scientist Paper Awards</h2><p>2024: Jo Kim, Al Roe. “Secure discovery of genetic relatives across datasets”.</p><h2>Best Poster Awards</h2><p>2024: Bea Poe. “A poster title that is not read at all”.</p>`;
+  assert.deepEqual(parseRecombAwards(h, "https://recomb.org/awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2025 best | Ann Lee; Bo Chan; Cy Dunn | A deep reinforcement learning framework for haplotype assembly", "2012 best | Ed Fox; Flo Gray | Evolution of genome organization by duplication and loss", "2026 best | Gil Hart; Hal Ito | Optimization-based phenotype randomization for studies", "2024 student | Jo Kim; Al Roe | Secure discovery of genetic relatives across datasets"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

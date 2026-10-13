@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7260
+  "count": 7286
  },
  "entries": [
   {
@@ -97263,6 +97263,402 @@
    "track": "main",
    "source": "https://ppopp23.sigplan.org/",
    "evidence": "PPoPP 2023 Best Paper Award: Provably Fast and Space-Efficient Parallel Biconnectivity — Xiaojun Dong, Letong Wang, Yan Gu, Yihan Sun"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2001,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Algorithms for phylogenetic fingerprinting",
+   "authors": [
+    "Mathieu Blanchette"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2001 Best Student Paper: Mathieu Blanchette. “Algorithms for phylogenetic fingerprinting”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2003,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Efficient exact value computation and applications to biosequence analysis",
+   "authors": [
+    "Gill Bejerano"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2003 Best Student Paper: Gill Bejerano. “Efficient exact value computation and applications to biosequence analysis”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2004,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A discriminative model for identifying spatial cis-regulatory modules",
+   "authors": [
+    "Eran Segal",
+    "Roded Sharan"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2004 Best Student Paper: Eran Segal and Roded Sharan. “A discriminative model for identifying spatial cis-regulatory modules”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An algorithmic framework for predicting side-effects of drugs",
+   "authors": [
+    "Nir Atias",
+    "Roded Sharan"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2010 Best Paper: Nir Atias and Roded Sharan. “An algorithmic framework for predicting side-effects of drugs”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Rich parametrization improves RNA structure prediction",
+   "authors": [
+    "Shay Zakov",
+    "Yoav Goldberg",
+    "Michael Elhadad",
+    "Michal Ziv-Ukelson"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2011 Best Paper: Shay Zakov, Yoav Goldberg, Michael Elhadad and Michal Ziv-Ukelson. “Rich parametrization improves RNA structure prediction”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Evolution of genome organization by duplication and loss: a linear programming approach",
+   "authors": [
+    "Patrick Holloway",
+    "Krister Swenson",
+    "David Ardell",
+    "Nadia El-Mabrouk"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2012 Best Paper: Patrick Holloway, Krister Swenson, David Ardell and Nadia El-Mabrouk. “Evolution of genome organization by duplication and loss: a linear programming approach”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Genome-wide survival analysis of somatic mutations in cancer",
+   "authors": [
+    "Fabio Vandin",
+    "Alexandra Papoutsaki",
+    "Ben Raphael",
+    "Eli Upfahl"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2013 Best Paper: Fabio Vandin, Alexandra Papoutsaki, Ben Raphael, and Eli Upfahl. “Genome-wide survival analysis of somatic mutations in cancer”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MRFalign: protein homology detection through alignment of markov random fields",
+   "authors": [
+    "Jianzhu Ma",
+    "Sheng Wang",
+    "Zhiyong Wang",
+    "Jinbo Xu"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2014 Best Paper: Jianzhu Ma, Sheng Wang, Zhiyong Wang and Jinbo Xu. “MRFalign: protein homology detection through alignment of markov random fields”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "HapTree: A Novel Bayesian Framework for Single Individual Polyplotyping using NGS Data",
+   "authors": [
+    "Emily Berger",
+    "Deniz Yorukoglu",
+    "Jian Peng",
+    "Bonnie Berger"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2014 Best Student Paper: Emily Berger, Deniz Yorukoglu, Jian Peng and Bonnie Berger. “HapTree: A Novel Bayesian Framework for Single Individual Polyplotyping using NGS Data”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A symmetric length-aware enrichment test",
+   "authors": [
+    "David Manescu",
+    "Uri Keich"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2015 Best Paper: David Manescu and Uri Keich. “A symmetric length-aware enrichment test”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Shall we dense? Comparing design strategies for time series expression experiments",
+   "authors": [
+    "Emre Sefer",
+    "Ziv Bar-Joseph"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2016 Best Paper: Emre Sefer and Ziv Bar-Joseph. “Shall we dense? Comparing design strategies for time series expression experiments”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NetREX: Network Rewriting using EXpression - towards context specific regulatory networks",
+   "authors": [
+    "Yijie Wang",
+    "Dong-Yeon Cho",
+    "Hangnoh Lee",
+    "Brian Oliver",
+    "Teresa Przytycka"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2017 Best Paper: Yijie Wang, Dong-Yeon Cho, Hangnoh Lee, Brian Oliver and Teresa Przytycka. “NetREX: Network Rewriting using EXpression - towards context specific regulatory networks”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Circular networks from distorted metrics",
+   "authors": [
+    "Sebastien Roch",
+    "Kun-Chieh Wang"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2018 Best Paper: Sebastien Roch and Kun-Chieh Wang. “Circular networks from distorted metrics”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2018,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Latent variable model for aligning barcoded short-reads improves downstream analyses",
+   "authors": [
+    "Ariya Shajii",
+    "Ibrahim Numanagić",
+    "Bonnie Berger"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2018 Best Student Paper: Ariya Shajii, Ibrahim Numanagić and Bonnie Berger. “Latent variable model for aligning barcoded short-reads improves downstream analyses”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "AdaFDR: a fast, powerful and covariate-adaptive approach to multiple hypothesis testing",
+   "authors": [
+    "Martin J. Zhang",
+    "Fei Xia",
+    "James Zou"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2019 Best Paper: Martin J. Zhang, Fei Xia, James Zou. “AdaFDR: a fast, powerful and covariate-adaptive approach to multiple hypothesis testing”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Representation of k-mer sets using spectrum-preserving string sets",
+   "authors": [
+    "Amatur Rahman",
+    "Paul Medvedev"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2020 Best Paper: Amatur Rahman and Paul Medvedev. “Representation of k-mer sets using spectrum-preserving string sets”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Robust inference of kinase activity using functional networks",
+   "authors": [
+    "Serhan Yılmaz",
+    "Marzieh Ayati",
+    "Daniela Schlatzer",
+    "A. Ercüment Çiçek",
+    "Mark R. Chance",
+    "Mehmet Koyutürk"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2021 Best Paper: Serhan Yılmaz, Marzieh Ayati, Daniela Schlatzer, A. Ercüment Çiçek, Mark R. Chance and Mehmet Koyutürk. “Robust inference of kinase activity using functional networks”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Minimizer-space de Bruijn graphs: whole-genome assembly of long reads in minutes on a personal computer",
+   "authors": [
+    "Barış Ekim",
+    "Bonnie Berger",
+    "Rayan Chikhi"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2021 Best Student Paper: Barış Ekim, Bonnie Berger and Rayan Chikhi. “Minimizer-space de Bruijn graphs: whole-genome assembly of long reads in minutes on a personal computer”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HOGVAX: Exploiting peptide overlaps to maximize population coverage in vaccine design with application to SARS-CoV-2",
+   "authors": [
+    "Sara C. Schulte",
+    "Alexander Dilthey",
+    "Gunnar W. Klau"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2023 Best Paper: Sara C. Schulte, Alexander Dilthey and Gunnar W. Klau. “HOGVAX: Exploiting peptide overlaps to maximize population coverage in vaccine design with application to SARS-CoV-2”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "HOGVAX: Exploiting peptide overlaps to maximize population coverage in vaccine design with application to SARS-CoV-2",
+   "authors": [
+    "Sara C. Schulte",
+    "Alexander Dilthey",
+    "Gunnar W. Klau"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2023 Best Student Paper: Sara C. Schulte, Alexander Dilthey and Gunnar W. Klau. “HOGVAX: Exploiting peptide overlaps to maximize population coverage in vaccine design with application to SARS-CoV-2”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Centrifuger: lossless compression of microbial genomes for efficient and accurate metagenomic sequence classification",
+   "authors": [
+    "Li Song",
+    "Ben Langmead"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2024 Best Paper: Li Song and Ben Langmead. “Centrifuger: lossless compression of microbial genomes for efficient and accurate metagenomic sequence classification”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Secure Discovery of Genetic Relatives across Large-Scale and Distributed Genomic Datasets",
+   "authors": [
+    "Matthew M. Hong",
+    "David Froelicher",
+    "Ricky Magner",
+    "Victoria Popic",
+    "Bonnie Berger",
+    "Hyunghoon Cho"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2024 Best Student Paper: Matthew M. Hong, David Froelicher, Ricky Magner, Victoria Popic, Bonnie Berger, and Hyunghoon Cho. “Secure Discovery of Genetic Relatives across Large-Scale and Distributed Genomic Datasets”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ralphi: a deep reinforcement learning framework for haplotype assembly",
+   "authors": [
+    "Enzo Battistella",
+    "Anant Maheshwari",
+    "Barış Ekim",
+    "Bonnie Berger",
+    "Victoria Popic"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2025 Best Paper: Enzo Battistella, Anant Maheshwari, Barış Ekim, Bonnie Berger and Victoria Popic. “ralphi: a deep reinforcement learning framework for haplotype assembly”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "TarDis: Achieving Robust and Structured Disentanglement of Multiple Covariates",
+   "authors": [
+    "Kemal Inecik",
+    "Aleyna Kara",
+    "Antony Rose",
+    "Muzlifah Haniffa",
+    "Fabian Theis"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2025 Best Student Paper: Kemal Inecik, Aleyna Kara, Antony Rose, Muzlifah Haniffa and Fabian Theis. “TarDis: Achieving Robust and Structured Disentanglement of Multiple Covariates”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "GOPHER: Optimization-based Phenotype Randomization for Genome-Wide Association Studies with Differential Privacy",
+   "authors": [
+    "Anupama Nandi",
+    "Seth Neel",
+    "Hyunghoon Cho"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2026 Best Paper: Anupama Nandi, Seth Neel and Hyunghoon Cho. “GOPHER: Optimization-based Phenotype Randomization for Genome-Wide Association Studies with Differential Privacy”"
+  },
+  {
+   "venue": "RECOMB",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Multi-modal tissue-aware graph neural network for in silico genetic discovery",
+   "authors": [
+    "Anusha Aggarwal",
+    "Ksenia Sokolova",
+    "Olga Troyanskaya"
+   ],
+   "track": "main",
+   "source": "https://recomb.org/awards",
+   "evidence": "RECOMB 2026 Best Student Paper: Anusha Aggarwal, Ksenia Sokolova, Olga Troyanskaya. “Multi-modal tissue-aware graph neural network for in silico genetic discovery”"
   },
   {
    "venue": "RecSys",
