@@ -81,7 +81,8 @@
   }
   // The optional Semantic Scholar API key: a password field, saved when it is left, kept on this device (not in the synced settings)
   function keyRow() {
-    const input = h("input", { type: "password", class: "key", "data-pref": "s2key", autocomplete: "off", spellcheck: "false", placeholder: "••••••••", "aria-label": t("optSemanticKey"),
+    // (a text field drawn as dots: a real password field would make Chrome offer to save it as a password)
+    const input = h("input", { type: "text", class: "key", "data-pref": "s2key", autocomplete: "off", spellcheck: "false", placeholder: "••••••••", "aria-label": t("optSemanticKey"),
       onChange: async () => { await B.store.saveS2Key(input.value); $("saved").textContent = t("optSaved"); $("saved").classList.add("on"); setTimeout(() => $("saved").classList.remove("on"), 1400); } });
     B.store.loadS2Key().then((k) => { input.value = k; });
     return h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, t("optSemanticKey")), h("span", { class: "hint" }, t("optSemanticKeyHint"))), input);

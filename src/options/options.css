@@ -80,5 +80,5 @@ input.clr { width: 40px; height: 26px; padding: 0; border: 1px solid #dadce0; bo
 .toc a[aria-current] { color: var(--text); font-weight: 600; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--card)); }
 .toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .card { scroll-margin-top: 56px; }
-input.key { font: inherit; font-size: 13px; width: 170px; padding: 5px 8px; border: 1px solid #dadce0; border-radius: 6px; background: var(--card); color: var(--text); }
+input.key { -webkit-text-security: disc; font: inherit; font-size: 13px; width: 170px; padding: 5px 8px; border: 1px solid #dadce0; border-radius: 6px; background: var(--card); color: var(--text); }
 input.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
