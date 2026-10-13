@@ -57,7 +57,7 @@ that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 1. Find the organisation's *own* page (the conference series, society or steering committee; never a
    news item, Wikipedia or an aggregator) that lists winners with the paper's title and authors. A page
    behind a bot check or a CAPTCHA is skipped, not worked around; record it in `docs/ROADMAP.md`.
-2. Save the page, then add a reader to `scripts/awards/tot.mjs` and register its mode in the dispatch and
+2. Save the page (`node scripts/page-cache.mjs <https-url>` keeps a copy in the git-ignored `.cache/pages/` and prints its path; a page already saved is not fetched again), then add a reader to `scripts/awards/tot.mjs` and register its mode in the dispatch and
    `PAGES` tables. A PDF is first turned into text with `swift scripts/awards/pdf-text.swift file.pdf > file.txt`
    (macOS PDFKit); the reader takes that text. Readers refuse what they do not recognise: a heading that
    names the year, authors that are all person names, a line that is a title and not an author list.

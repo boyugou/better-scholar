@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "أدوار Scholar وتصنيفاتها"
+  },
+  "extDescription": {
+    "message": "يبرز أبحاثك كمؤلف أول أو مؤلف أول مشارك أو أخير في Google Scholar مع تصنيف CCF / CORE لكل منصة نشر وملخص الدور × التصنيف."
+  },
+  "extShortName": {
+    "message": "الأدوار"
+  },
+  "panelTitle": {
+    "message": "أدوار المؤلفين وتصنيفات منصات النشر"
+  },
+  "summaryTitle": {
+    "message": "الأبحاث حسب الدور والتصنيف"
+  },
+  "marksTitle": {
+    "message": "الجوائز والعروض"
+  },
+  "markAward": {
+    "message": "الجوائز"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "أفضل ورقة بحثية"
+  },
+  "mkBestStudent": {
+    "message": "أفضل ورقة بحثية لطالب"
+  },
+  "mkOutstanding": {
+    "message": "ورقة بحثية متميزة"
+  },
+  "mkDistinguished": {
+    "message": "ورقة بحثية مرموقة"
+  },
+  "mkRunnerUp": {
+    "message": "تنويه شرفي"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "من المتأهلين لنهائيات أفضل ورقة"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "من كلمات المؤلفين أنفسهم في عنوان كل ورقة ونص منصة نشرها على Scholar (دون تحقق)، ومن قائمة مضمّنة للأوراق الفائزة بجوائز في المؤتمرات الكبرى."
+  },
+  "marksAsWritten": {
+    "message": "من كلمات المؤلفين أنفسهم أو من قائمة الجوائز"
+  },
+  "tipMarkAuthor": {
+    "message": "كتبه المؤلف (دون تحقق): «$N1$»",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "في قائمة الجوائز: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "المميّزة فقط"
+  },
+  "yearLabel": {
+    "message": "السنة"
+  },
+  "yearStart": {
+    "message": "من"
+  },
+  "yearEnd": {
+    "message": "إلى"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "الأول"
+  },
+  "roleCofirst": {
+    "message": "أول مشارك"
+  },
+  "roleSecond": {
+    "message": "الثاني"
+  },
+  "roleLast": {
+    "message": "الأخير"
+  },
+  "roleMiddle": {
+    "message": "أخرى"
+  },
+  "roleHidden": {
+    "message": "مخفي"
+  },
+  "colRole": {
+    "message": "الدور"
+  },
+  "colTotal": {
+    "message": "الكل"
+  },
+  "tipUnranked": {
+    "message": "بلا تصنيف"
+  },
+  "tipHidden": {
+    "message": "اختصر Scholar قائمة المؤلفين، لذا لا يظهر ترتيب صاحب الملف"
+  },
+  "copySummary": {
+    "message": "نسخ الملخص"
+  },
+  "copyTable": {
+    "message": "نسخ كجدول"
+  },
+  "copied": {
+    "message": "تم النسخ"
+  },
+  "coverLoaded": {
+    "message": "تم تحميل $N1$ ورقة",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "تم تحميل ورقة واحدة"
+  },
+  "loadingAll": {
+    "message": "جارٍ التحميل… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "تحميل الكل"
+  },
+  "cancel": {
+    "message": "إلغاء"
+  },
+  "coverHidden": {
+    "message": "$N1$ أدوار مخفية بسبب اختصار قوائم المؤلفين",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "دور واحد مخفي بسبب اختصار قائمة المؤلفين"
+  },
+  "resolveBtn": {
+    "message": "استكمال"
+  },
+  "resolveHint": {
+    "message": "يفتح صفحة كل ورقة على Scholar (نحو ورقة في الثانية) لقراءة قائمة المؤلفين كاملة."
+  },
+  "resolving": {
+    "message": "جارٍ قراءة صفحات الأوراق… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "طلبت Google حل CAPTCHA. حلّها في تبويب عادي ثم أعد المحاولة."
+  },
+  "resolveDone": {
+    "message": "تم."
+  },
+  "coverAbsent": {
+    "message": "$N1$ ورقة لا يظهر فيها اسم الملف الشخصي في قائمة المؤلفين",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "ورقة واحدة لا يظهر فيها اسم الملف الشخصي في قائمة المؤلفين"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ ورقة في منصات نشر بلا تصنيف",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "ورقة واحدة في منصة نشر بلا تصنيف"
+  },
+  "copyUnmatched": {
+    "message": "نسخ القائمة"
+  },
+  "reportLink": {
+    "message": "إبلاغ"
+  },
+  "layoutWarning": {
+    "message": "يبدو أن تخطيط صفحة Scholar تغيّر: لا تستطيع الإضافة قراءة أسطر المؤلفين. يُرجى الإبلاغ عن ذلك."
+  },
+  "variantsTitle": {
+    "message": "الاسم لا يطابق؟ أضف صيغة كتابة"
+  },
+  "variantsPlaceholder": {
+    "message": "مثال: Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "إضافة"
+  },
+  "variantRemove": {
+    "message": "إزالة"
+  },
+  "variantAutoTip": {
+    "message": "أُضيفت تلقائيًا: اسم ملفك الشخصي بالترتيب المعاكس يجدك في $1 ورقة"
+  },
+  "variantSuggest": {
+    "message": "ربما أنت:"
+  },
+  "variantSuggestTip": {
+    "message": "يظهر في $1 ورقة لا تذكرك قائمة مؤلفيها بطريقة أخرى — انقر لإضافة هذه الصيغة"
+  },
+  "expand": {
+    "message": "توسيع"
+  },
+  "collapse": {
+    "message": "طي"
+  },
+  "metricsTitle": {
+    "message": "الأبحاث المميّزة"
+  },
+  "mPapers": {
+    "message": "الأبحاث"
+  },
+  "mCitations": {
+    "message": "الاستشهادات"
+  },
+  "mH": {
+    "message": "معامل h"
+  },
+  "mI10": {
+    "message": "معامل i10"
+  },
+  "metricsOf": {
+    "message": "من"
+  },
+  "dataNote": {
+    "message": "التصنيفات مأخوذة من قوائم $N1$ الحالية، لا من التصنيف وقت النشر. تذكر CCF أن قائمتها ليست أساسًا للتقييم الأكاديمي.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "طابق بالاسم"
+  },
+  "ruleAcronym": {
+    "message": "طابق بالاختصار"
+  },
+  "rulePrefix": {
+    "message": "طابق بالجزء الظاهر من اسم مختصر"
+  },
+  "tipToday": {
+    "message": "القائمة الحالية، لا التصنيف وقت النشر"
+  },
+  "tipPosition": {
+    "message": "الترتيب $N1$ من $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "من صفحة الورقة"
+  },
+  "copyFirst": {
+    "message": "المؤلف الأول"
+  },
+  "copyCofirst": {
+    "message": "مؤلف أول مشارك"
+  },
+  "copySecond": {
+    "message": "المؤلف الثاني"
+  },
+  "copyLast": {
+    "message": "المؤلف الأخير"
+  },
+  "copyMiddle": {
+    "message": "مواضع أخرى"
+  },
+  "tsvRole": {
+    "message": "الدور"
+  },
+  "tsvTotal": {
+    "message": "الإجمالي"
+  },
+  "popupNotProfile": {
+    "message": "افتح ملف مؤلف على Google Scholar لترى ملخصه هنا."
+  },
+  "popupReading": {
+    "message": "جارٍ قراءة الصفحة…"
+  },
+  "popupPapers": {
+    "message": "$N1$ ورقة",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "ورقة واحدة"
+  },
+  "popupOpenScholar": {
+    "message": "فتح Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "الإعدادات"
+  },
+  "optHeading": {
+    "message": "الإعدادات"
+  },
+  "optPreviewTitle": {
+    "message": "معاينة"
+  },
+  "optPreviewNote": {
+    "message": "أوراق نموذجية كما ستظهر في ملف Scholar الشخصي. «A Author» هو أنت."
+  },
+  "optSaved": {
+    "message": "تم الحفظ"
+  },
+  "optRolesTitle": {
+    "message": "إبراز أبحاثي"
+  },
+  "optRolesHint": {
+    "message": "لكل موضع لون صف خاص به. تبقى الأوراق التي تكون فيها في المنتصف بلا تمييز."
+  },
+  "optMarkName": {
+    "message": "تمييز اسمي في سطر المؤلفين"
+  },
+  "optMarkNameHint": {
+    "message": "بخط عريض ولون خفيف. مرّر المؤشر عليه لترى ترتيبك."
+  },
+  "optRanksTitle": {
+    "message": "تصنيفات منصات النشر"
+  },
+  "optCcf": {
+    "message": "تصنيف CCF"
+  },
+  "optCcfHint": {
+    "message": "قائمة الاتحاد الصيني للحاسوب، الإصدار السابع (2026)."
+  },
+  "optCore": {
+    "message": "تصنيف CORE"
+  },
+  "optCoreHint": {
+    "message": "تصنيف CORE للمؤتمرات، ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "الجوائز والعروض"
+  },
+  "optMarkAwardHint": {
+    "message": "أفضل ورقة ومتميزة ومرموقة، والتنويه الشرفي، وTest of time، ومتأهلو نهائيات أفضل ورقة."
+  },
+  "optPanelTitle": {
+    "message": "لوحة الملخص"
+  },
+  "optPanelShow": {
+    "message": "إظهار لوحة الملخص"
+  },
+  "optPanelShowHint": {
+    "message": "جدول الدور × التصنيف في صفحة الملف الشخصي. إيقاف: تُميَّز قائمة الأوراق فقط."
+  },
+  "optPanelSummary": {
+    "message": "جدول الدور × التصنيف"
+  },
+  "optPanelSummaryHint": {
+    "message": "جدول أبحاثك حسب الموضع والتصنيف، مع أزرار النسخ وملاحظة مصدر التصنيفات."
+  },
+  "optPanelMarks": {
+    "message": "أعداد الجوائز والعروض"
+  },
+  "optPanelMarksHint": {
+    "message": "عدد الأوراق الفائزة بجوائز ومستويات العروض، ونقرة واحدة تعرضها."
+  },
+  "optPanelStatus": {
+    "message": "الأوراق المحمّلة ومنصات النشر غير المصنّفة"
+  },
+  "optPanelStatusHint": {
+    "message": "عدد الأوراق المحمّلة، وزر «تحميل الكل»، وقائمة الأوراق في منصات نشر بلا تصنيف."
+  },
+  "optPanelNames": {
+    "message": "مساعدة في كتابة الاسم"
+  },
+  "optPanelNamesHint": {
+    "message": "«الاسم لا يطابق؟ أضف صيغة كتابة» والاقتراحات المتعلقة باسمك."
+  },
+  "optPanelCompact": {
+    "message": "مضغوط: المرشّحات ومجاميع الاستشهادات فقط"
+  },
+  "optPanelFull": {
+    "message": "كل شيء"
+  },
+  "optPanelFilters": {
+    "message": "المرشّحات"
+  },
+  "optPanelFiltersHint": {
+    "message": "الأوراق المميّزة فقط ونطاق سنوات."
+  },
+  "optPanelMetrics": {
+    "message": "مجاميع الاستشهادات"
+  },
+  "optPanelMetricsHint": {
+    "message": "عدد الأوراق المميّزة واستشهاداتها ومعامل h ومعامل i10."
+  },
+  "optDataTitle": {
+    "message": "البيانات المحفوظة"
+  },
+  "optClearCache": {
+    "message": "مسح تفاصيل الأوراق المحفوظة"
+  },
+  "optCacheCount": {
+    "message": "قوائم مؤلفي $N1$ ورقة محفوظة على هذا الجهاز (قُرئت عبر استكمال، وتُحفظ 90 يومًا).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "قائمة مؤلفي ورقة واحدة محفوظة على هذا الجهاز (قُرئت عبر استكمال، وتُحفظ 90 يومًا)."
+  },
+  "optCacheNone": {
+    "message": "لا توجد تفاصيل أوراق محفوظة."
+  },
+  "optCleared": {
+    "message": "تم المسح"
+  },
+  "optReset": {
+    "message": "إعادة التعيين إلى الافتراضي"
+  },
+  "optResetConfirm": {
+    "message": "هل تريد إعادة كل هذه الإعدادات إلى قيمها الافتراضية؟"
+  },
+  "optStorage": {
+    "message": "تُخزَّن الإعدادات في متصفحك وتتزامن مع ملف Chrome الخاص بك. لا يُرسل أي شيء إلى أي مكان."
+  },
+  "optSample": {
+    "message": "ورقة نموذجية"
+  },
+  "optLoadTitle": {
+    "message": "قائمة الأوراق"
+  },
+  "optAutoLoad": {
+    "message": "تحميل كل الأوراق تلقائيًا"
+  },
+  "optAutoLoadHint": {
+    "message": "يعرض Scholar في البداية الأوراق الأولى فقط. تضغط الإضافة نيابةً عنك على زر «عرض المزيد» في Scholar نحو مرة كل ثانية حتى تُحمَّل القائمة كاملة، وتتوقف إذا كفّ Scholar عن الاستجابة. إيقاف: تعرض اللوحة «تحميل الكل» بدلًا من ذلك."
+  },
+  "loadStalled": {
+    "message": "لم يرسل Scholar مزيدًا من الأوراق (تم تحميل $N1$). جرّب «تحميل الكل» مرة أخرى بعد قليل.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "جائزة فئة"
+  },
+  "copyPapers": {
+    "message": "نسخ الأوراق"
+  },
+  "tsvYear": {
+    "message": "السنة"
+  },
+  "tsvTitle": {
+    "message": "العنوان"
+  },
+  "tsvAuthors": {
+    "message": "المؤلفون"
+  },
+  "tsvVenue": {
+    "message": "منصة النشر"
+  },
+  "tsvAwards": {
+    "message": "الجوائز والعروض"
+  },
+  "tsvCitations": {
+    "message": "الاستشهادات"
+  },
+  "optHideTitle": {
+    "message": "كتل Scholar الخاصة"
+  },
+  "optHideHint": {
+    "message": "أخفِ أجزاء من صفحة الملف الشخصي تكرر اللوحة أو لا تستخدمها. لا يُخفى شيء حتى تفعّله."
+  },
+  "optHideCited": {
+    "message": "استشهد بها"
+  },
+  "optHideCitedHint": {
+    "message": "جدول الاستشهادات ومعامل h ومعامل i10 ورسمه البياني: تعرض اللوحة المجاميع نفسها للأوراق المميّزة."
+  },
+  "optHideCo": {
+    "message": "المؤلفون المشاركون"
+  },
+  "optHideCoHint": {
+    "message": "قائمة المؤلفين المشاركين في الشريط الجانبي."
+  },
+  "optHideAccess": {
+    "message": "الوصول العام"
+  },
+  "optHideAccessHint": {
+    "message": "مربع الوصول العام في الشريط الجانبي."
+  },
+  "optMergeTitle": {
+    "message": "المدخلات المكررة"
+  },
+  "optMergeHint": {
+    "message": "تعرض بعض الملفات الشخصية الورقة نفسها عدة مرات."
+  },
+  "optMergeLabel": {
+    "message": "دمج المكررات"
+  },
+  "optMergeLabelHint": {
+    "message": "المدخلات ذات العنوان نفسه (بصرف النظر عن الأحرف الكبيرة والتشكيل وعلامات الترقيم) والمؤلف الأول نفسه تصبح مدخلًا واحدًا: يبقى الأكثر استشهادًا ويعرض استشهادات الجميع. تحسبه اللوحة مرة واحدة."
+  },
+  "mergedTip": {
+    "message": "دُمج من $N1$ مدخلات: استشهادات جميعها",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "اللغة"
+  },
+  "optLanguageHint": {
+    "message": "لغة هذه الإضافة وصفحات Scholar التي تفتحها."
+  },
+  "optLanguageUi": {
+    "message": "لغة الإضافة"
+  },
+  "optLanguageAuto": {
+    "message": "اتباع المتصفح"
+  },
+  "optLanguageScholar": {
+    "message": "فتح Scholar بلغة"
+  },
+  "optLanguageScholarHint": {
+    "message": "ملف Scholar الشخصي الذي تفتحه بلغة أخرى (عبر رابط مشارَك مثلًا) يُعاد فتحه بهذه اللغة."
+  },
+  "optLanguageKeep": {
+    "message": "تركه كما هو"
+  },
+  "optColorsTitle": {
+    "message": "الألوان"
+  },
+  "optColorsHint": {
+    "message": "لون كل دور تأليفي: الصفوف وعلامات الاسم واللوحة ونافذة شريط الأدوات."
+  },
+  "optColorsReset": {
+    "message": "العودة إلى الألوان الافتراضية"
+  }
+}

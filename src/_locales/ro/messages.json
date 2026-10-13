@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Roluri și clasamente"
+  },
+  "extDescription": {
+    "message": "Evidențiază în Google Scholar lucrările ca prim, coprim și ultim autor, cu rangul CCF / CORE al venue-ului și un tabel rol × rang."
+  },
+  "extShortName": {
+    "message": "Roluri·Rang"
+  },
+  "panelTitle": {
+    "message": "Roluri de autor și ranguri ale venue-urilor"
+  },
+  "summaryTitle": {
+    "message": "Lucrări după rol și rang"
+  },
+  "marksTitle": {
+    "message": "Premii și prezentări"
+  },
+  "markAward": {
+    "message": "Premii"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Cea mai bună lucrare"
+  },
+  "mkBestStudent": {
+    "message": "Cea mai bună lucrare de student"
+  },
+  "mkOutstanding": {
+    "message": "Lucrare remarcabilă"
+  },
+  "mkDistinguished": {
+    "message": "Lucrare distinsă"
+  },
+  "mkRunnerUp": {
+    "message": "Mențiune de onoare"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalistă la cea mai bună lucrare"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Din cuvintele autorilor înșiși din titlul și textul venue-ului fiecărei lucrări de pe Scholar (neverificate) și dintr-o listă inclusă de lucrări premiate la conferințe importante."
+  },
+  "marksAsWritten": {
+    "message": "din cuvintele autorilor sau din lista de premii"
+  },
+  "tipMarkAuthor": {
+    "message": "Scris de autor (neverificat): „$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "În lista de premii: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Doar cele evidențiate"
+  },
+  "yearLabel": {
+    "message": "An"
+  },
+  "yearStart": {
+    "message": "De la"
+  },
+  "yearEnd": {
+    "message": "Până la"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Prim"
+  },
+  "roleCofirst": {
+    "message": "Coprim"
+  },
+  "roleSecond": {
+    "message": "Al doilea"
+  },
+  "roleLast": {
+    "message": "Ultim"
+  },
+  "roleMiddle": {
+    "message": "Altele"
+  },
+  "roleHidden": {
+    "message": "Ascuns"
+  },
+  "colRole": {
+    "message": "Rol"
+  },
+  "colTotal": {
+    "message": "Toate"
+  },
+  "tipUnranked": {
+    "message": "Fără rang"
+  },
+  "tipHidden": {
+    "message": "Scholar a trunchiat lista de autori, deci poziția titularului profilului nu este vizibilă"
+  },
+  "copySummary": {
+    "message": "Copiază rezumatul"
+  },
+  "copyTable": {
+    "message": "Copiază ca tabel"
+  },
+  "copied": {
+    "message": "Copiat"
+  },
+  "coverLoaded": {
+    "message": "$N1$ lucrări încărcate",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 lucrare încărcată"
+  },
+  "loadingAll": {
+    "message": "Se încarcă… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Încarcă tot"
+  },
+  "cancel": {
+    "message": "Anulează"
+  },
+  "coverHidden": {
+    "message": "$N1$ roluri ascunse din cauza listelor de autori trunchiate",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 rol ascuns din cauza unei liste de autori trunchiate"
+  },
+  "resolveBtn": {
+    "message": "Rezolvă"
+  },
+  "resolveHint": {
+    "message": "Deschide pagina fiecărei lucrări pe Scholar (aproximativ una pe secundă) pentru a citi lista completă de autori."
+  },
+  "resolving": {
+    "message": "Se citesc paginile lucrărilor… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google a cerut un CAPTCHA. Rezolvă-l într-o filă obișnuită, apoi încearcă din nou."
+  },
+  "resolveDone": {
+    "message": "Gata."
+  },
+  "coverAbsent": {
+    "message": "$N1$ lucrări în care numele din profil nu apare în lista de autori",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 lucrare în care numele din profil nu apare în lista de autori"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ lucrări la venue-uri fără rang",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 lucrare la un venue fără rang"
+  },
+  "copyUnmatched": {
+    "message": "Copiază lista"
+  },
+  "reportLink": {
+    "message": "Raportează"
+  },
+  "layoutWarning": {
+    "message": "Aspectul paginii Scholar pare să se fi schimbat: extensia nu poate citi rândurile cu autori. Te rugăm să raportezi."
+  },
+  "variantsTitle": {
+    "message": "Numele nu se potrivește? Adaugă o grafie"
+  },
+  "variantsPlaceholder": {
+    "message": "de ex. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Adaugă"
+  },
+  "variantRemove": {
+    "message": "Elimină"
+  },
+  "variantAutoTip": {
+    "message": "Adăugat automat: numele din profil în ordine inversă te găsește în $1 lucrări"
+  },
+  "variantSuggest": {
+    "message": "Poate tu:"
+  },
+  "variantSuggestTip": {
+    "message": "Apare în $1 lucrări a căror listă de autori nu te menționează altfel — clic pentru a adăuga această grafie"
+  },
+  "expand": {
+    "message": "Extinde"
+  },
+  "collapse": {
+    "message": "Restrânge"
+  },
+  "metricsTitle": {
+    "message": "Lucrări evidențiate"
+  },
+  "mPapers": {
+    "message": "Lucrări"
+  },
+  "mCitations": {
+    "message": "Citări"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "din"
+  },
+  "dataNote": {
+    "message": "Rangurile provin din listele $N1$ de azi, nu din rangul de la data publicării. CCF precizează că lista sa nu este o bază pentru evaluarea academică.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Potrivit după nume"
+  },
+  "ruleAcronym": {
+    "message": "Potrivit după acronim"
+  },
+  "rulePrefix": {
+    "message": "Potrivit după partea vizibilă a unui nume trunchiat"
+  },
+  "tipToday": {
+    "message": "lista curentă, nu rangul de la publicare"
+  },
+  "tipPosition": {
+    "message": "poziția $N1$ din $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "din pagina lucrării"
+  },
+  "copyFirst": {
+    "message": "Prim autor"
+  },
+  "copyCofirst": {
+    "message": "Coprim autor"
+  },
+  "copySecond": {
+    "message": "Al doilea autor"
+  },
+  "copyLast": {
+    "message": "Ultim autor"
+  },
+  "copyMiddle": {
+    "message": "Alte poziții"
+  },
+  "tsvRole": {
+    "message": "Rol"
+  },
+  "tsvTotal": {
+    "message": "Total"
+  },
+  "popupNotProfile": {
+    "message": "Deschide un profil de autor Google Scholar pentru a vedea aici rezumatul."
+  },
+  "popupReading": {
+    "message": "Se citește pagina…"
+  },
+  "popupPapers": {
+    "message": "$N1$ lucrări",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 lucrare"
+  },
+  "popupOpenScholar": {
+    "message": "Deschide Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Setări"
+  },
+  "optHeading": {
+    "message": "Setări"
+  },
+  "optPreviewTitle": {
+    "message": "Previzualizare"
+  },
+  "optPreviewNote": {
+    "message": "Lucrări de exemplu, așa cum vor arăta pe un profil Scholar. „A Author” ești tu."
+  },
+  "optSaved": {
+    "message": "Salvat"
+  },
+  "optRolesTitle": {
+    "message": "Evidențiază lucrările mele"
+  },
+  "optRolesHint": {
+    "message": "Fiecare poziție are culoarea ei de rând. Lucrările în care ești la mijloc rămân simple."
+  },
+  "optMarkName": {
+    "message": "Marchează-mi numele în rândul autorilor"
+  },
+  "optMarkNameHint": {
+    "message": "Aldin și colorat. Treci cu cursorul peste el pentru a vedea poziția ta."
+  },
+  "optRanksTitle": {
+    "message": "Ranguri ale venue-urilor"
+  },
+  "optCcf": {
+    "message": "Rang CCF"
+  },
+  "optCcfHint": {
+    "message": "Lista China Computer Federation, ediția a 7-a (2026)."
+  },
+  "optCore": {
+    "message": "Rang CORE"
+  },
+  "optCoreHint": {
+    "message": "Clasamentul conferințelor CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Premii și prezentări"
+  },
+  "optMarkAwardHint": {
+    "message": "Cea mai bună lucrare, lucrare remarcabilă și distinsă, mențiune de onoare, test of time și finaliste la cea mai bună lucrare."
+  },
+  "optPanelTitle": {
+    "message": "Panou de rezumat"
+  },
+  "optPanelShow": {
+    "message": "Arată panoul de rezumat"
+  },
+  "optPanelShowHint": {
+    "message": "Tabelul rol × rang pe pagina profilului. Dezactivat: este marcată doar lista de lucrări."
+  },
+  "optPanelSummary": {
+    "message": "Tabel rol × rang"
+  },
+  "optPanelSummaryHint": {
+    "message": "Tabelul lucrărilor tale după poziție și rang, cu butoanele de copiere și nota despre sursa rangurilor."
+  },
+  "optPanelMarks": {
+    "message": "Numărul de premii și prezentări"
+  },
+  "optPanelMarksHint": {
+    "message": "Numărul de lucrări premiate și de niveluri de prezentare, cu listă la un clic."
+  },
+  "optPanelStatus": {
+    "message": "Lucrări încărcate și venue-uri fără rang"
+  },
+  "optPanelStatusHint": {
+    "message": "Câte lucrări sunt încărcate, butonul „Încarcă tot” și lista lucrărilor de la venue-uri fără rang."
+  },
+  "optPanelNames": {
+    "message": "Ajutor pentru grafia numelui"
+  },
+  "optPanelNamesHint": {
+    "message": "„Numele nu se potrivește? Adaugă o grafie” și sugestiile pentru numele tău."
+  },
+  "optPanelCompact": {
+    "message": "Compact: doar filtre și totaluri de citări"
+  },
+  "optPanelFull": {
+    "message": "Tot"
+  },
+  "optPanelFilters": {
+    "message": "Filtre"
+  },
+  "optPanelFiltersHint": {
+    "message": "Doar lucrările evidențiate și un interval de ani."
+  },
+  "optPanelMetrics": {
+    "message": "Totaluri de citări"
+  },
+  "optPanelMetricsHint": {
+    "message": "Lucrările, citările, h-index și i10-index ale lucrărilor evidențiate."
+  },
+  "optDataTitle": {
+    "message": "Date salvate"
+  },
+  "optClearCache": {
+    "message": "Șterge detaliile salvate ale lucrărilor"
+  },
+  "optCacheCount": {
+    "message": "Listele de autori ale a $N1$ lucrări sunt salvate pe acest dispozitiv (citite cu Rezolvă, păstrate 90 de zile).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "Lista de autori a unei lucrări este salvată pe acest dispozitiv (citită cu Rezolvă, păstrată 90 de zile)."
+  },
+  "optCacheNone": {
+    "message": "Nu sunt salvate detalii ale lucrărilor."
+  },
+  "optCleared": {
+    "message": "Șters"
+  },
+  "optReset": {
+    "message": "Revino la valorile implicite"
+  },
+  "optResetConfirm": {
+    "message": "Readuci toate aceste setări la valorile implicite?"
+  },
+  "optStorage": {
+    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Nimic nu este trimis nicăieri."
+  },
+  "optSample": {
+    "message": "Lucrare de exemplu"
+  },
+  "optLoadTitle": {
+    "message": "Lista de lucrări"
+  },
+  "optAutoLoad": {
+    "message": "Încarcă automat toate lucrările"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar arată la început doar primele lucrări. Aceasta apasă în locul tău propriul buton „Afișează mai multe”, aproximativ o dată pe secundă, până se încarcă toată lista, și se oprește dacă Scholar nu mai răspunde. Dezactivat: panoul oferă în schimb „Încarcă tot”."
+  },
+  "loadStalled": {
+    "message": "Scholar nu a mai trimis lucrări ($N1$ încărcate). Încearcă din nou „Încarcă tot” peste puțin timp.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Premiu pe categorie"
+  },
+  "copyPapers": {
+    "message": "Copiază lucrările"
+  },
+  "tsvYear": {
+    "message": "An"
+  },
+  "tsvTitle": {
+    "message": "Titlu"
+  },
+  "tsvAuthors": {
+    "message": "Autori"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Premii și prezentări"
+  },
+  "tsvCitations": {
+    "message": "Citări"
+  },
+  "optHideTitle": {
+    "message": "Blocurile proprii ale Scholar"
+  },
+  "optHideHint": {
+    "message": "Ascunde părțile paginii de profil care repetă panoul sau pe care nu le folosești. Nimic nu este ascuns până nu activezi."
+  },
+  "optHideCited": {
+    "message": "Citat de"
+  },
+  "optHideCitedHint": {
+    "message": "Tabelul de citări, h-index și i10-index și graficul lui: panoul arată aceleași totaluri pentru lucrările evidențiate."
+  },
+  "optHideCo": {
+    "message": "Coautori"
+  },
+  "optHideCoHint": {
+    "message": "Lista de coautori din bara laterală."
+  },
+  "optHideAccess": {
+    "message": "Acces public"
+  },
+  "optHideAccessHint": {
+    "message": "Caseta de acces public din bara laterală."
+  },
+  "optMergeTitle": {
+    "message": "Intrări duplicate"
+  },
+  "optMergeHint": {
+    "message": "Unele profiluri listează aceeași lucrare de mai multe ori."
+  },
+  "optMergeLabel": {
+    "message": "Îmbină duplicatele"
+  },
+  "optMergeLabelHint": {
+    "message": "Intrările cu același titlu (ignorând majusculele, diacriticele și punctuația) și același prim autor devin una singură: cea mai citată rămâne și arată citările tuturor. Panoul o numără o singură dată."
+  },
+  "mergedTip": {
+    "message": "Îmbinat din $N1$ intrări: citările tuturor",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Limba"
+  },
+  "optLanguageHint": {
+    "message": "Limba acestei extensii și a paginilor Scholar pe care le deschizi."
+  },
+  "optLanguageUi": {
+    "message": "Limba extensiei"
+  },
+  "optLanguageAuto": {
+    "message": "Ca browserul"
+  },
+  "optLanguageScholar": {
+    "message": "Deschide Scholar în"
+  },
+  "optLanguageScholarHint": {
+    "message": "Un profil Scholar deschis într-o altă limbă (de exemplu dintr-un link distribuit) se redeschide în aceasta."
+  },
+  "optLanguageKeep": {
+    "message": "Lasă cum este"
+  },
+  "optColorsTitle": {
+    "message": "Culori"
+  },
+  "optColorsHint": {
+    "message": "Culoarea fiecărui rol de autor: rânduri, marcajul numelui, panoul și fereastra din bara de instrumente."
+  },
+  "optColorsReset": {
+    "message": "Înapoi la culorile standard"
+  }
+}

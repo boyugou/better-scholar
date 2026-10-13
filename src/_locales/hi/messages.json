@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar भूमिका और रैंक"
+  },
+  "extDescription": {
+    "message": "Google Scholar पर प्रथम, सह-प्रथम और अंतिम लेखक वाले पेपर हाइलाइट करें, CCF / CORE रैंक और भूमिका × रैंक सारांश के साथ।"
+  },
+  "extShortName": {
+    "message": "भूमिका·रैंक"
+  },
+  "panelTitle": {
+    "message": "लेखक भूमिकाएँ और venue रैंक"
+  },
+  "summaryTitle": {
+    "message": "भूमिका और रैंक के अनुसार पेपर"
+  },
+  "marksTitle": {
+    "message": "पुरस्कार और टॉक"
+  },
+  "markAward": {
+    "message": "पुरस्कार"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "सर्वश्रेष्ठ पेपर"
+  },
+  "mkBestStudent": {
+    "message": "सर्वश्रेष्ठ छात्र पेपर"
+  },
+  "mkOutstanding": {
+    "message": "उत्कृष्ट पेपर"
+  },
+  "mkDistinguished": {
+    "message": "विशिष्ट पेपर"
+  },
+  "mkRunnerUp": {
+    "message": "उल्लेखनीय सम्मान"
+  },
+  "mkTot": {
+    "message": "Test of Time"
+  },
+  "mkFinalist": {
+    "message": "सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Scholar पर हर पेपर के शीर्षक और venue टेक्स्ट में लेखकों के अपने शब्दों से (जाँचा नहीं गया), और प्रमुख सम्मेलनों के पुरस्कृत पेपरों की एक बंडल की गई सूची से।"
+  },
+  "marksAsWritten": {
+    "message": "लेखकों के अपने शब्दों या पुरस्कार सूची से"
+  },
+  "tipMarkAuthor": {
+    "message": "लेखक द्वारा लिखा गया (जाँचा नहीं गया): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "पुरस्कार सूची में: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "केवल हाइलाइट किए गए"
+  },
+  "yearLabel": {
+    "message": "वर्ष"
+  },
+  "yearStart": {
+    "message": "से"
+  },
+  "yearEnd": {
+    "message": "तक"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "प्रथम"
+  },
+  "roleCofirst": {
+    "message": "सह-प्रथम"
+  },
+  "roleSecond": {
+    "message": "द्वितीय"
+  },
+  "roleLast": {
+    "message": "अंतिम"
+  },
+  "roleMiddle": {
+    "message": "अन्य"
+  },
+  "roleHidden": {
+    "message": "छिपा"
+  },
+  "colRole": {
+    "message": "भूमिका"
+  },
+  "colTotal": {
+    "message": "कुल"
+  },
+  "tipUnranked": {
+    "message": "रैंक नहीं"
+  },
+  "tipHidden": {
+    "message": "Scholar ने लेखक सूची छोटी कर दी है, इसलिए प्रोफ़ाइल स्वामी का स्थान दिखाई नहीं देता"
+  },
+  "copySummary": {
+    "message": "सारांश कॉपी करें"
+  },
+  "copyTable": {
+    "message": "तालिका के रूप में कॉपी करें"
+  },
+  "copied": {
+    "message": "कॉपी हो गया"
+  },
+  "coverLoaded": {
+    "message": "$N1$ पेपर लोड हुए",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "लोड हो रहा है… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "सभी लोड करें"
+  },
+  "cancel": {
+    "message": "रद्द करें"
+  },
+  "coverHidden": {
+    "message": "छोटी की गई लेखक सूचियों के कारण $N1$ भूमिकाएँ छिपी हैं",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "पूरा करें"
+  },
+  "resolveHint": {
+    "message": "पूरी लेखक सूची पढ़ने के लिए Scholar पर हर पेपर का पेज खोलता है (लगभग प्रति सेकंड एक)।"
+  },
+  "resolving": {
+    "message": "पेपर पेज पढ़े जा रहे हैं… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google ने CAPTCHA माँगा है। उसे सामान्य टैब में हल करें, फिर दोबारा कोशिश करें।"
+  },
+  "resolveDone": {
+    "message": "हो गया।"
+  },
+  "coverAbsent": {
+    "message": "$N1$ पेपर जिनकी लेखक सूची में प्रोफ़ाइल का नाम नहीं है",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "बिना रैंक वाले venue के $N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "सूची कॉपी करें"
+  },
+  "reportLink": {
+    "message": "रिपोर्ट करें"
+  },
+  "layoutWarning": {
+    "message": "लगता है Scholar के पेज का लेआउट बदल गया है: यह एक्सटेंशन लेखक पंक्तियाँ नहीं पढ़ पा रहा। कृपया इसकी रिपोर्ट करें।"
+  },
+  "variantsTitle": {
+    "message": "नाम नहीं मिल रहा? कोई वर्तनी जोड़ें"
+  },
+  "variantsPlaceholder": {
+    "message": "उदा. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "जोड़ें"
+  },
+  "variantRemove": {
+    "message": "हटाएँ"
+  },
+  "variantAutoTip": {
+    "message": "अपने आप जोड़ा गया: आपके प्रोफ़ाइल नाम का उलटा क्रम $1 पेपरों में आपको ढूँढता है"
+  },
+  "variantSuggest": {
+    "message": "शायद आप:"
+  },
+  "variantSuggestTip": {
+    "message": "$1 पेपरों में दिखता है जिनकी लेखक सूची में अन्यथा आपका नाम नहीं है — यह वर्तनी जोड़ने के लिए क्लिक करें"
+  },
+  "expand": {
+    "message": "फैलाएँ"
+  },
+  "collapse": {
+    "message": "समेटें"
+  },
+  "metricsTitle": {
+    "message": "हाइलाइट किए गए पेपर"
+  },
+  "mPapers": {
+    "message": "पेपर"
+  },
+  "mCitations": {
+    "message": "उद्धरण"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "में से"
+  },
+  "dataNote": {
+    "message": "रैंक आज की $N1$ सूचियों से ली गई हैं, प्रकाशन के समय की रैंक नहीं। CCF के अनुसार उसकी सूची शैक्षणिक मूल्यांकन का आधार नहीं है।",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "नाम से मिलान"
+  },
+  "ruleAcronym": {
+    "message": "संक्षिप्त नाम से मिलान"
+  },
+  "rulePrefix": {
+    "message": "छोटे किए गए नाम के दिखाई देने वाले हिस्से से मिलान"
+  },
+  "tipToday": {
+    "message": "वर्तमान सूची, प्रकाशन के समय की रैंक नहीं"
+  },
+  "tipPosition": {
+    "message": "स्थान $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "पेपर के पेज से"
+  },
+  "copyFirst": {
+    "message": "प्रथम लेखक"
+  },
+  "copyCofirst": {
+    "message": "सह-प्रथम लेखक"
+  },
+  "copySecond": {
+    "message": "द्वितीय लेखक"
+  },
+  "copyLast": {
+    "message": "अंतिम लेखक"
+  },
+  "copyMiddle": {
+    "message": "अन्य स्थान"
+  },
+  "tsvRole": {
+    "message": "भूमिका"
+  },
+  "tsvTotal": {
+    "message": "कुल"
+  },
+  "popupNotProfile": {
+    "message": "यहाँ सारांश देखने के लिए Google Scholar का कोई लेखक प्रोफ़ाइल खोलें।"
+  },
+  "popupReading": {
+    "message": "पेज पढ़ा जा रहा है…"
+  },
+  "popupPapers": {
+    "message": "$N1$ पेपर",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar खोलें"
+  },
+  "settingsOpen": {
+    "message": "सेटिंग्स"
+  },
+  "optHeading": {
+    "message": "सेटिंग्स"
+  },
+  "optPreviewTitle": {
+    "message": "पूर्वावलोकन"
+  },
+  "optPreviewNote": {
+    "message": "नमूना पेपर, जैसे वे Scholar प्रोफ़ाइल पर दिखेंगे। “A Author” आप हैं।"
+  },
+  "optSaved": {
+    "message": "सहेजा गया"
+  },
+  "optRolesTitle": {
+    "message": "मेरे पेपर हाइलाइट करें"
+  },
+  "optRolesHint": {
+    "message": "हर स्थान का अपना पंक्ति रंग होता है। जिन पेपरों में आप बीच में हैं, वे सादे रहते हैं।"
+  },
+  "optMarkName": {
+    "message": "लेखक पंक्ति में मेरा नाम चिह्नित करें"
+  },
+  "optMarkNameHint": {
+    "message": "गहरा और रंगीन। आपका स्थान देखने के लिए उस पर कर्सर ले जाएँ।"
+  },
+  "optRanksTitle": {
+    "message": "Venue रैंक"
+  },
+  "optCcf": {
+    "message": "CCF रैंक"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federation सूची, 7वाँ संस्करण (2026)।"
+  },
+  "optCore": {
+    "message": "CORE रैंक"
+  },
+  "optCoreHint": {
+    "message": "CORE सम्मेलन रैंकिंग, ICORE 2026।"
+  },
+  "optMarksTitle": {
+    "message": "पुरस्कार और टॉक"
+  },
+  "optMarkAwardHint": {
+    "message": "सर्वश्रेष्ठ, उत्कृष्ट और विशिष्ट पेपर, उल्लेखनीय सम्मान, test of time और सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट।"
+  },
+  "optPanelTitle": {
+    "message": "सारांश पैनल"
+  },
+  "optPanelShow": {
+    "message": "सारांश पैनल दिखाएँ"
+  },
+  "optPanelShowHint": {
+    "message": "प्रोफ़ाइल पेज पर भूमिका × रैंक तालिका। बंद होने पर: केवल पेपर सूची चिह्नित होती है।"
+  },
+  "optPanelSummary": {
+    "message": "भूमिका × रैंक तालिका"
+  },
+  "optPanelSummaryHint": {
+    "message": "स्थान और रैंक के अनुसार आपके पेपरों की तालिका, कॉपी बटनों और रैंक के स्रोत के नोट के साथ।"
+  },
+  "optPanelMarks": {
+    "message": "पुरस्कार और टॉक की गिनती"
+  },
+  "optPanelMarksHint": {
+    "message": "पुरस्कृत पेपरों और टॉक स्तरों की गिनती, एक क्लिक में सूची।"
+  },
+  "optPanelStatus": {
+    "message": "लोड हुए पेपर और बिना रैंक वाले venue"
+  },
+  "optPanelStatusHint": {
+    "message": "कितने पेपर लोड हुए, “सभी लोड करें” बटन, और बिना रैंक वाले venue के पेपरों की सूची।"
+  },
+  "optPanelNames": {
+    "message": "नाम वर्तनी सहायता"
+  },
+  "optPanelNamesHint": {
+    "message": "“नाम नहीं मिल रहा? कोई वर्तनी जोड़ें” और आपके नाम के सुझाव।"
+  },
+  "optPanelCompact": {
+    "message": "संक्षिप्त: केवल फ़िल्टर और उद्धरण कुल"
+  },
+  "optPanelFull": {
+    "message": "सब कुछ"
+  },
+  "optPanelFilters": {
+    "message": "फ़िल्टर"
+  },
+  "optPanelFiltersHint": {
+    "message": "केवल हाइलाइट किए गए पेपर, और वर्ष सीमा।"
+  },
+  "optPanelMetrics": {
+    "message": "उद्धरण कुल"
+  },
+  "optPanelMetricsHint": {
+    "message": "हाइलाइट किए गए पेपरों के पेपर, उद्धरण, h-index और i10-index।"
+  },
+  "optDataTitle": {
+    "message": "सहेजा गया डेटा"
+  },
+  "optClearCache": {
+    "message": "सहेजे गए पेपर विवरण साफ़ करें"
+  },
+  "optCacheCount": {
+    "message": "इस डिवाइस पर $N1$ पेपरों की लेखक सूचियाँ सहेजी गई हैं (“पूरा करें” से पढ़ी गईं, 90 दिन तक रखी जाती हैं)।",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "कोई पेपर विवरण सहेजा नहीं गया है।"
+  },
+  "optCleared": {
+    "message": "साफ़ हो गया"
+  },
+  "optReset": {
+    "message": "डिफ़ॉल्ट पर रीसेट करें"
+  },
+  "optResetConfirm": {
+    "message": "इन सभी सेटिंग्स को डिफ़ॉल्ट पर रीसेट करें?"
+  },
+  "optStorage": {
+    "message": "सेटिंग्स आपके ब्राउज़र में सहेजी जाती हैं और आपकी Chrome प्रोफ़ाइल के साथ सिंक होती हैं। कुछ भी कहीं नहीं भेजा जाता।"
+  },
+  "optSample": {
+    "message": "नमूना पेपर"
+  },
+  "optLoadTitle": {
+    "message": "पेपर सूची"
+  },
+  "optAutoLoad": {
+    "message": "सभी पेपर अपने आप लोड करें"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar शुरू में केवल पहले कुछ पेपर दिखाता है। यह आपके लिए उसका अपना “और दिखाएँ” बटन लगभग हर सेकंड दबाता है, जब तक पूरी सूची लोड न हो जाए, और Scholar के जवाब देना बंद करने पर रुक जाता है। बंद होने पर: पैनल इसके बजाय “सभी लोड करें” देता है।"
+  },
+  "loadStalled": {
+    "message": "Scholar ने और पेपर नहीं भेजे ($N1$ लोड हुए)। थोड़ी देर बाद “सभी लोड करें” फिर आज़माएँ।",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "श्रेणी पुरस्कार"
+  },
+  "copyPapers": {
+    "message": "पेपर कॉपी करें"
+  },
+  "tsvYear": {
+    "message": "वर्ष"
+  },
+  "tsvTitle": {
+    "message": "शीर्षक"
+  },
+  "tsvAuthors": {
+    "message": "लेखक"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "पुरस्कार और टॉक"
+  },
+  "tsvCitations": {
+    "message": "उद्धरण"
+  },
+  "optHideTitle": {
+    "message": "Scholar के अपने ब्लॉक"
+  },
+  "optHideHint": {
+    "message": "प्रोफ़ाइल पेज के वे हिस्से छिपाएँ जो पैनल को दोहराते हैं या जिनका आप उपयोग नहीं करते। चालू करने तक कुछ नहीं छिपता।"
+  },
+  "optHideCited": {
+    "message": "उद्धृत किया गया"
+  },
+  "optHideCitedHint": {
+    "message": "उद्धरण, h-index और i10-index की तालिका और उसका ग्राफ़: पैनल हाइलाइट किए गए पेपरों के लिए वही कुल दिखाता है।"
+  },
+  "optHideCo": {
+    "message": "सह-लेखक"
+  },
+  "optHideCoHint": {
+    "message": "साइडबार में सह-लेखकों की सूची।"
+  },
+  "optHideAccess": {
+    "message": "सार्वजनिक पहुँच"
+  },
+  "optHideAccessHint": {
+    "message": "साइडबार में सार्वजनिक पहुँच का बॉक्स।"
+  },
+  "optMergeTitle": {
+    "message": "दोहराई गई प्रविष्टियाँ"
+  },
+  "optMergeHint": {
+    "message": "कुछ प्रोफ़ाइलों में एक ही पेपर कई बार सूचीबद्ध होता है।"
+  },
+  "optMergeLabel": {
+    "message": "दोहराव मिलाएँ"
+  },
+  "optMergeLabelHint": {
+    "message": "एक ही शीर्षक (बड़े अक्षर, उच्चारण चिह्न और विराम चिह्न छोड़कर) और एक ही प्रथम लेखक वाली प्रविष्टियाँ एक बन जाती हैं: सबसे अधिक उद्धृत रहती है और सभी के उद्धरण दिखाती है। पैनल इसे एक बार गिनता है।"
+  },
+  "mergedTip": {
+    "message": "$N1$ प्रविष्टियों से मिलाया गया: सभी के उद्धरण",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "भाषा"
+  },
+  "optLanguageHint": {
+    "message": "इस एक्सटेंशन की भाषा, और आपके खोले गए Scholar पेजों की।"
+  },
+  "optLanguageUi": {
+    "message": "एक्सटेंशन की भाषा"
+  },
+  "optLanguageAuto": {
+    "message": "ब्राउज़र के अनुसार"
+  },
+  "optLanguageScholar": {
+    "message": "Scholar इस भाषा में खोलें"
+  },
+  "optLanguageScholarHint": {
+    "message": "दूसरी भाषा में खोला गया Scholar प्रोफ़ाइल (जैसे साझा किया गया लिंक) इस भाषा में दोबारा खोला जाता है।"
+  },
+  "optLanguageKeep": {
+    "message": "जैसा है वैसा रहने दें"
+  },
+  "optColorsTitle": {
+    "message": "रंग"
+  },
+  "optColorsHint": {
+    "message": "हर लेखक भूमिका का रंग: पंक्तियाँ, नाम चिह्न, पैनल और टूलबार पॉपअप।"
+  },
+  "optColorsReset": {
+    "message": "मानक रंगों पर लौटें"
+  }
+}

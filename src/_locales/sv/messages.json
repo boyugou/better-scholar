@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Roller & Rank"
+  },
+  "extDescription": {
+    "message": "Markerar på Google Scholar artiklar där du är första-, delad första- eller sistaförfattare, med CCF-/CORE-rank och roll × rank."
+  },
+  "extShortName": {
+    "message": "Roller&Rank"
+  },
+  "panelTitle": {
+    "message": "Författarroller & publiceringsrank"
+  },
+  "summaryTitle": {
+    "message": "Artiklar efter roll och rank"
+  },
+  "marksTitle": {
+    "message": "Priser & presentationer"
+  },
+  "markAward": {
+    "message": "Priser"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Bästa artikel"
+  },
+  "mkBestStudent": {
+    "message": "Bästa studentartikel"
+  },
+  "mkOutstanding": {
+    "message": "Enastående artikel"
+  },
+  "mkDistinguished": {
+    "message": "Framstående artikel"
+  },
+  "mkRunnerUp": {
+    "message": "Hedersomnämnande"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalist för bästa artikel"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Hämtas från författarnas egna ord i varje artikels titel och publiceringsställe på Scholar (inte kontrollerat) samt från en inbyggd lista över prisbelönta artiklar vid stora konferenser."
+  },
+  "marksAsWritten": {
+    "message": "från författarnas egna ord eller prislistan"
+  },
+  "tipMarkAuthor": {
+    "message": "Skrivet av författaren (inte kontrollerat): ”$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "På prislistan: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Endast markerade"
+  },
+  "yearLabel": {
+    "message": "År"
+  },
+  "yearStart": {
+    "message": "Från"
+  },
+  "yearEnd": {
+    "message": "Till"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Första"
+  },
+  "roleCofirst": {
+    "message": "Delad första"
+  },
+  "roleSecond": {
+    "message": "Andra"
+  },
+  "roleLast": {
+    "message": "Sista"
+  },
+  "roleMiddle": {
+    "message": "Övriga"
+  },
+  "roleHidden": {
+    "message": "Dold"
+  },
+  "colRole": {
+    "message": "Roll"
+  },
+  "colTotal": {
+    "message": "Alla"
+  },
+  "tipUnranked": {
+    "message": "Ingen rank"
+  },
+  "tipHidden": {
+    "message": "Scholar har kortat författarlistan, så profilägarens plats syns inte"
+  },
+  "copySummary": {
+    "message": "Kopiera sammanfattning"
+  },
+  "copyTable": {
+    "message": "Kopiera som tabell"
+  },
+  "copied": {
+    "message": "Kopierat"
+  },
+  "coverLoaded": {
+    "message": "$N1$ artiklar inlästa",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 artikel inläst"
+  },
+  "loadingAll": {
+    "message": "Läser in… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Läs in alla"
+  },
+  "cancel": {
+    "message": "Avbryt"
+  },
+  "coverHidden": {
+    "message": "$N1$ roller dolda av kortade författarlistor",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 roll dold av en kortad författarlista"
+  },
+  "resolveBtn": {
+    "message": "Lös upp"
+  },
+  "resolveHint": {
+    "message": "Öppnar varje artikels sida på Scholar (ungefär en per sekund) för att läsa hela författarlistan."
+  },
+  "resolving": {
+    "message": "Läser artikelsidor… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google begärde en CAPTCHA. Lös den i en vanlig flik och försök igen."
+  },
+  "resolveDone": {
+    "message": "Klart."
+  },
+  "coverAbsent": {
+    "message": "$N1$ artiklar där profilnamnet inte finns i författarlistan",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 artikel där profilnamnet inte finns i författarlistan"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ artiklar på ställen utan rank",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 artikel på ett ställe utan rank"
+  },
+  "copyUnmatched": {
+    "message": "Kopiera lista"
+  },
+  "reportLink": {
+    "message": "Rapportera"
+  },
+  "layoutWarning": {
+    "message": "Scholars sidlayout verkar ha ändrats: tillägget kan inte läsa författarraderna. Rapportera det gärna."
+  },
+  "variantsTitle": {
+    "message": "Matchar inte namnet? Lägg till en stavning"
+  },
+  "variantsPlaceholder": {
+    "message": "t.ex. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Lägg till"
+  },
+  "variantRemove": {
+    "message": "Ta bort"
+  },
+  "variantAutoTip": {
+    "message": "Tillagd automatiskt: ditt profilnamn i omvänd ordning hittar dig i $1 artiklar"
+  },
+  "variantSuggest": {
+    "message": "Kanske du:"
+  },
+  "variantSuggestTip": {
+    "message": "Förekommer i $1 artiklar vars författarlista inte nämner dig på annat sätt — klicka för att lägga till stavningen"
+  },
+  "expand": {
+    "message": "Visa mer"
+  },
+  "collapse": {
+    "message": "Dölj"
+  },
+  "metricsTitle": {
+    "message": "Markerade artiklar"
+  },
+  "mPapers": {
+    "message": "Artiklar"
+  },
+  "mCitations": {
+    "message": "Citeringar"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "av"
+  },
+  "dataNote": {
+    "message": "Rankerna kommer från dagens $N1$-listor, inte rankningen vid publiceringen. CCF anger att listan inte är en grund för akademisk utvärdering.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Matchad på namn"
+  },
+  "ruleAcronym": {
+    "message": "Matchad på akronym"
+  },
+  "rulePrefix": {
+    "message": "Matchad på den synliga delen av ett kortat namn"
+  },
+  "tipToday": {
+    "message": "aktuell lista, inte rankningen vid publiceringen"
+  },
+  "tipPosition": {
+    "message": "plats $N1$ av $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "från artikelns sida"
+  },
+  "copyFirst": {
+    "message": "Förstaförfattare"
+  },
+  "copyCofirst": {
+    "message": "Delad förstaförfattare"
+  },
+  "copySecond": {
+    "message": "Andraförfattare"
+  },
+  "copyLast": {
+    "message": "Sistaförfattare"
+  },
+  "copyMiddle": {
+    "message": "Övriga platser"
+  },
+  "tsvRole": {
+    "message": "Roll"
+  },
+  "tsvTotal": {
+    "message": "Totalt"
+  },
+  "popupNotProfile": {
+    "message": "Öppna en författarprofil på Google Scholar för att se sammanfattningen här."
+  },
+  "popupReading": {
+    "message": "Läser sidan…"
+  },
+  "popupPapers": {
+    "message": "$N1$ artiklar",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 artikel"
+  },
+  "popupOpenScholar": {
+    "message": "Öppna Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Inställningar"
+  },
+  "optHeading": {
+    "message": "Inställningar"
+  },
+  "optPreviewTitle": {
+    "message": "Förhandsvisning"
+  },
+  "optPreviewNote": {
+    "message": "Exempelartiklar så som de ser ut på en Scholar-profil. ”A Author” är du."
+  },
+  "optSaved": {
+    "message": "Sparat"
+  },
+  "optRolesTitle": {
+    "message": "Markera mina artiklar"
+  },
+  "optRolesHint": {
+    "message": "Varje plats får sin egen radfärg. Artiklar där du står i mitten förblir omarkerade."
+  },
+  "optMarkName": {
+    "message": "Markera mitt namn i författarraden"
+  },
+  "optMarkNameHint": {
+    "message": "Fetstil och färgton. Håll muspekaren över det för att se din plats."
+  },
+  "optRanksTitle": {
+    "message": "Rank för publiceringsställen"
+  },
+  "optCcf": {
+    "message": "CCF-rank"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federations lista, 7:e upplagan (2026)."
+  },
+  "optCore": {
+    "message": "CORE-rank"
+  },
+  "optCoreHint": {
+    "message": "CORE:s konferensrankning, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Priser och presentationer"
+  },
+  "optMarkAwardHint": {
+    "message": "Bästa, enastående och framstående artikel, hedersomnämnande, test of time och finalister för bästa artikel."
+  },
+  "optPanelTitle": {
+    "message": "Sammanfattningspanel"
+  },
+  "optPanelShow": {
+    "message": "Visa sammanfattningspanelen"
+  },
+  "optPanelShowHint": {
+    "message": "Roll × rank-tabellen på profilsidan. Av: bara artikellistan markeras."
+  },
+  "optPanelSummary": {
+    "message": "Roll × rank-tabell"
+  },
+  "optPanelSummaryHint": {
+    "message": "Tabellen över dina artiklar efter plats och rank, med kopieringsknapparna och noten om var rankerna kommer ifrån."
+  },
+  "optPanelMarks": {
+    "message": "Antal priser och presentationer"
+  },
+  "optPanelMarksHint": {
+    "message": "Antalet prisbelönta artiklar och presentationsnivåer, ett klick listar dem."
+  },
+  "optPanelStatus": {
+    "message": "Inlästa artiklar och orankade ställen"
+  },
+  "optPanelStatusHint": {
+    "message": "Hur många artiklar som är inlästa, knappen ”Läs in alla” och listan över artiklar på ställen utan rank."
+  },
+  "optPanelNames": {
+    "message": "Hjälp med namnstavning"
+  },
+  "optPanelNamesHint": {
+    "message": "”Matchar inte namnet? Lägg till en stavning” och förslagen för ditt namn."
+  },
+  "optPanelCompact": {
+    "message": "Kompakt: bara filter och citeringssummor"
+  },
+  "optPanelFull": {
+    "message": "Allt"
+  },
+  "optPanelFilters": {
+    "message": "Filter"
+  },
+  "optPanelFiltersHint": {
+    "message": "Endast markerade artiklar och ett årsintervall."
+  },
+  "optPanelMetrics": {
+    "message": "Citeringssummor"
+  },
+  "optPanelMetricsHint": {
+    "message": "Artiklar, citeringar, h-index och i10-index för de markerade artiklarna."
+  },
+  "optDataTitle": {
+    "message": "Sparad data"
+  },
+  "optClearCache": {
+    "message": "Rensa sparade artikeldetaljer"
+  },
+  "optCacheCount": {
+    "message": "Författarlistor för $N1$ artiklar är sparade på den här enheten (lästa med Lös upp, sparas i 90 dagar).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "Författarlistan för 1 artikel är sparad på den här enheten (läst med Lös upp, sparas i 90 dagar)."
+  },
+  "optCacheNone": {
+    "message": "Inga artikeldetaljer är sparade."
+  },
+  "optCleared": {
+    "message": "Rensat"
+  },
+  "optReset": {
+    "message": "Återställ standard"
+  },
+  "optResetConfirm": {
+    "message": "Återställa alla dessa inställningar till standardvärdena?"
+  },
+  "optStorage": {
+    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Inget skickas någonstans."
+  },
+  "optSample": {
+    "message": "Exempelartikel"
+  },
+  "optLoadTitle": {
+    "message": "Artikellista"
+  },
+  "optAutoLoad": {
+    "message": "Läs in alla artiklar automatiskt"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar visar först bara de första artiklarna. Tillägget trycker på Scholars egen knapp ”Visa fler” åt dig, ungefär en gång i sekunden, tills hela listan är inläst, och slutar om Scholar slutar svara. Av: panelen erbjuder ”Läs in alla” i stället."
+  },
+  "loadStalled": {
+    "message": "Scholar skickade inga fler artiklar ($N1$ inlästa). Försök med ”Läs in alla” igen om en stund.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategoripris"
+  },
+  "copyPapers": {
+    "message": "Kopiera artiklar"
+  },
+  "tsvYear": {
+    "message": "År"
+  },
+  "tsvTitle": {
+    "message": "Titel"
+  },
+  "tsvAuthors": {
+    "message": "Författare"
+  },
+  "tsvVenue": {
+    "message": "Publiceringsställe"
+  },
+  "tsvAwards": {
+    "message": "Priser & presentationer"
+  },
+  "tsvCitations": {
+    "message": "Citeringar"
+  },
+  "optHideTitle": {
+    "message": "Scholars egna block"
+  },
+  "optHideHint": {
+    "message": "Dölj delar av profilsidan som upprepar panelen eller som du inte använder. Inget döljs förrän du slår på det."
+  },
+  "optHideCited": {
+    "message": "Citerad av"
+  },
+  "optHideCitedHint": {
+    "message": "Tabellen med citeringar, h-index och i10-index samt dess diagram: panelen visar samma summor för de markerade artiklarna."
+  },
+  "optHideCo": {
+    "message": "Medförfattare"
+  },
+  "optHideCoHint": {
+    "message": "Listan över medförfattare i sidofältet."
+  },
+  "optHideAccess": {
+    "message": "Öppen tillgång"
+  },
+  "optHideAccessHint": {
+    "message": "Rutan för öppen tillgång i sidofältet."
+  },
+  "optMergeTitle": {
+    "message": "Dubbletter"
+  },
+  "optMergeHint": {
+    "message": "Vissa profiler listar en artikel flera gånger."
+  },
+  "optMergeLabel": {
+    "message": "Slå ihop dubbletter"
+  },
+  "optMergeLabelHint": {
+    "message": "Poster med samma titel (bortsett från versaler, accenter och skiljetecken) och samma förstaförfattare blir en: den mest citerade blir kvar och visar allas citeringar. Panelen räknar den en gång."
+  },
+  "mergedTip": {
+    "message": "Sammanslagen från $N1$ poster: citeringarna från alla",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Språk"
+  },
+  "optLanguageHint": {
+    "message": "Språket för det här tillägget och för de Scholar-sidor du öppnar."
+  },
+  "optLanguageUi": {
+    "message": "Tilläggets språk"
+  },
+  "optLanguageAuto": {
+    "message": "Följ webbläsaren"
+  },
+  "optLanguageScholar": {
+    "message": "Öppna Scholar på"
+  },
+  "optLanguageScholarHint": {
+    "message": "En Scholar-profil som du öppnar på ett annat språk (till exempel via en delad länk) öppnas på nytt på det här."
+  },
+  "optLanguageKeep": {
+    "message": "Lämna som den är"
+  },
+  "optColorsTitle": {
+    "message": "Färger"
+  },
+  "optColorsHint": {
+    "message": "Färgen för varje författarroll: rader, namnmarkeringar, panelen och verktygsfältets popup."
+  },
+  "optColorsReset": {
+    "message": "Tillbaka till standardfärgerna"
+  }
+}

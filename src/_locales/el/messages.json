@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Ρόλοι & Βαθμίδες"
+  },
+  "extDescription": {
+    "message": "Επισημαίνει στο Google Scholar εργασίες πρώτου, κοινού πρώτου και τελευταίου συγγραφέα, με βαθμίδες CCF / CORE και σύνοψη ρόλων."
+  },
+  "extShortName": {
+    "message": "Ρόλοι·Βαθμ."
+  },
+  "panelTitle": {
+    "message": "Ρόλοι συγγραφέα και βαθμίδες venue"
+  },
+  "summaryTitle": {
+    "message": "Εργασίες ανά ρόλο και βαθμίδα"
+  },
+  "marksTitle": {
+    "message": "Βραβεία και ομιλίες"
+  },
+  "markAward": {
+    "message": "Βραβεία"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Καλύτερη εργασία"
+  },
+  "mkBestStudent": {
+    "message": "Καλύτερη φοιτητική εργασία"
+  },
+  "mkOutstanding": {
+    "message": "Εξαιρετική εργασία"
+  },
+  "mkDistinguished": {
+    "message": "Διακεκριμένη εργασία"
+  },
+  "mkRunnerUp": {
+    "message": "Εύφημη μνεία"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Φιναλίστ καλύτερης εργασίας"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Από τα λόγια των ίδιων των συγγραφέων στον τίτλο και το κείμενο venue κάθε εργασίας στο Scholar (δεν ελέγχονται) και από ενσωματωμένη λίστα βραβευμένων εργασιών σε μεγάλα συνέδρια."
+  },
+  "marksAsWritten": {
+    "message": "από τα λόγια των συγγραφέων ή τη λίστα βραβείων"
+  },
+  "tipMarkAuthor": {
+    "message": "Γράφτηκε από τον συγγραφέα (δεν ελέγχεται): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Στη λίστα βραβείων: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Μόνο επισημασμένες"
+  },
+  "yearLabel": {
+    "message": "Έτος"
+  },
+  "yearStart": {
+    "message": "Από"
+  },
+  "yearEnd": {
+    "message": "Έως"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Πρώτος"
+  },
+  "roleCofirst": {
+    "message": "Κοινός πρώτος"
+  },
+  "roleSecond": {
+    "message": "Δεύτερος"
+  },
+  "roleLast": {
+    "message": "Τελευταίος"
+  },
+  "roleMiddle": {
+    "message": "Άλλη θέση"
+  },
+  "roleHidden": {
+    "message": "Κρυφό"
+  },
+  "colRole": {
+    "message": "Ρόλος"
+  },
+  "colTotal": {
+    "message": "Όλες"
+  },
+  "tipUnranked": {
+    "message": "Χωρίς βαθμίδα"
+  },
+  "tipHidden": {
+    "message": "Το Scholar έκοψε τη λίστα συγγραφέων, οπότε η θέση του κατόχου του προφίλ δεν φαίνεται"
+  },
+  "copySummary": {
+    "message": "Αντιγραφή σύνοψης"
+  },
+  "copyTable": {
+    "message": "Αντιγραφή ως πίνακα"
+  },
+  "copied": {
+    "message": "Αντιγράφηκε"
+  },
+  "coverLoaded": {
+    "message": "Φορτώθηκαν $N1$ εργασίες",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "Φορτώθηκε 1 εργασία"
+  },
+  "loadingAll": {
+    "message": "Φόρτωση… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Φόρτωση όλων"
+  },
+  "cancel": {
+    "message": "Άκυρο"
+  },
+  "coverHidden": {
+    "message": "$N1$ ρόλοι κρύβονται λόγω κομμένων λιστών συγγραφέων",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 ρόλος κρύβεται λόγω κομμένης λίστας συγγραφέων"
+  },
+  "resolveBtn": {
+    "message": "Επίλυση"
+  },
+  "resolveHint": {
+    "message": "Ανοίγει τη σελίδα κάθε εργασίας στο Scholar (περίπου μία το δευτερόλεπτο) για να διαβάσει την πλήρη λίστα συγγραφέων."
+  },
+  "resolving": {
+    "message": "Ανάγνωση σελίδων εργασιών… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Η Google ζήτησε CAPTCHA. Λύστε το σε μια κανονική καρτέλα και δοκιμάστε ξανά."
+  },
+  "resolveDone": {
+    "message": "Έτοιμο."
+  },
+  "coverAbsent": {
+    "message": "$N1$ εργασίες όπου το όνομα του προφίλ δεν υπάρχει στη λίστα συγγραφέων",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 εργασία όπου το όνομα του προφίλ δεν υπάρχει στη λίστα συγγραφέων"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ εργασίες σε venue χωρίς βαθμίδα",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 εργασία σε venue χωρίς βαθμίδα"
+  },
+  "copyUnmatched": {
+    "message": "Αντιγραφή λίστας"
+  },
+  "reportLink": {
+    "message": "Αναφορά"
+  },
+  "layoutWarning": {
+    "message": "Η διάταξη της σελίδας του Scholar φαίνεται να άλλαξε: η επέκταση δεν μπορεί να διαβάσει τις γραμμές συγγραφέων. Παρακαλούμε αναφέρετέ το."
+  },
+  "variantsTitle": {
+    "message": "Δεν ταιριάζει το όνομα; Προσθέστε ορθογραφία"
+  },
+  "variantsPlaceholder": {
+    "message": "π.χ. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Προσθήκη"
+  },
+  "variantRemove": {
+    "message": "Αφαίρεση"
+  },
+  "variantAutoTip": {
+    "message": "Προστέθηκε αυτόματα: το όνομα του προφίλ σας με αντίστροφη σειρά σας βρίσκει σε $1 εργασίες"
+  },
+  "variantSuggest": {
+    "message": "Ίσως εσείς:"
+  },
+  "variantSuggestTip": {
+    "message": "Εμφανίζεται σε $1 εργασίες όπου η λίστα συγγραφέων δεν σας κατονομάζει — κάντε κλικ για να προσθέσετε αυτή την ορθογραφία"
+  },
+  "expand": {
+    "message": "Ανάπτυξη"
+  },
+  "collapse": {
+    "message": "Σύμπτυξη"
+  },
+  "metricsTitle": {
+    "message": "Επισημασμένες εργασίες"
+  },
+  "mPapers": {
+    "message": "Εργασίες"
+  },
+  "mCitations": {
+    "message": "Αναφορές"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "από"
+  },
+  "dataNote": {
+    "message": "Οι βαθμίδες προέρχονται από τις σημερινές λίστες $N1$, όχι από τη βαθμίδα τη στιγμή της δημοσίευσης. Η CCF δηλώνει ότι η λίστα της δεν αποτελεί βάση για ακαδημαϊκή αξιολόγηση.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Αντιστοίχιση με όνομα"
+  },
+  "ruleAcronym": {
+    "message": "Αντιστοίχιση με ακρωνύμιο"
+  },
+  "rulePrefix": {
+    "message": "Αντιστοίχιση με το ορατό τμήμα κομμένου ονόματος"
+  },
+  "tipToday": {
+    "message": "τρέχουσα λίστα, όχι η βαθμίδα τη στιγμή της δημοσίευσης"
+  },
+  "tipPosition": {
+    "message": "θέση $N1$ από $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "από τη σελίδα της εργασίας"
+  },
+  "copyFirst": {
+    "message": "Πρώτος συγγραφέας"
+  },
+  "copyCofirst": {
+    "message": "Κοινός πρώτος συγγραφέας"
+  },
+  "copySecond": {
+    "message": "Δεύτερος συγγραφέας"
+  },
+  "copyLast": {
+    "message": "Τελευταίος συγγραφέας"
+  },
+  "copyMiddle": {
+    "message": "Άλλες θέσεις"
+  },
+  "tsvRole": {
+    "message": "Ρόλος"
+  },
+  "tsvTotal": {
+    "message": "Σύνολο"
+  },
+  "popupNotProfile": {
+    "message": "Ανοίξτε ένα προφίλ συγγραφέα στο Google Scholar για να δείτε εδώ τη σύνοψή του."
+  },
+  "popupReading": {
+    "message": "Ανάγνωση της σελίδας…"
+  },
+  "popupPapers": {
+    "message": "$N1$ εργασίες",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 εργασία"
+  },
+  "popupOpenScholar": {
+    "message": "Άνοιγμα του Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Ρυθμίσεις"
+  },
+  "optHeading": {
+    "message": "Ρυθμίσεις"
+  },
+  "optPreviewTitle": {
+    "message": "Προεπισκόπηση"
+  },
+  "optPreviewNote": {
+    "message": "Δείγμα εργασιών όπως θα φαίνονται σε προφίλ Scholar. Το «A Author» είστε εσείς."
+  },
+  "optSaved": {
+    "message": "Αποθηκεύτηκε"
+  },
+  "optRolesTitle": {
+    "message": "Επισήμανση των εργασιών μου"
+  },
+  "optRolesHint": {
+    "message": "Κάθε θέση έχει δικό της χρώμα γραμμής. Οι εργασίες όπου είστε στη μέση μένουν απλές."
+  },
+  "optMarkName": {
+    "message": "Σήμανση του ονόματός μου στη γραμμή συγγραφέων"
+  },
+  "optMarkNameHint": {
+    "message": "Έντονο και χρωματισμένο. Περάστε το δείκτη από πάνω για να δείτε τη θέση σας."
+  },
+  "optRanksTitle": {
+    "message": "Βαθμίδες venue"
+  },
+  "optCcf": {
+    "message": "Βαθμίδα CCF"
+  },
+  "optCcfHint": {
+    "message": "Λίστα της China Computer Federation, 7η έκδοση (2026)."
+  },
+  "optCore": {
+    "message": "Βαθμίδα CORE"
+  },
+  "optCoreHint": {
+    "message": "Κατάταξη συνεδρίων CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Βραβεία και ομιλίες"
+  },
+  "optMarkAwardHint": {
+    "message": "Καλύτερη, εξαιρετική και διακεκριμένη εργασία, εύφημη μνεία, test of time και φιναλίστ καλύτερης εργασίας."
+  },
+  "optPanelTitle": {
+    "message": "Πίνακας σύνοψης"
+  },
+  "optPanelShow": {
+    "message": "Εμφάνιση του πίνακα σύνοψης"
+  },
+  "optPanelShowHint": {
+    "message": "Ο πίνακας ρόλου × βαθμίδας στη σελίδα προφίλ. Ανενεργό: σημαίνεται μόνο η λίστα εργασιών."
+  },
+  "optPanelSummary": {
+    "message": "Πίνακας ρόλου × βαθμίδας"
+  },
+  "optPanelSummaryHint": {
+    "message": "Ο πίνακας των εργασιών σας ανά θέση και βαθμίδα, με τα κουμπιά αντιγραφής και τη σημείωση για την προέλευση των βαθμίδων."
+  },
+  "optPanelMarks": {
+    "message": "Μετρητές βραβείων και ομιλιών"
+  },
+  "optPanelMarksHint": {
+    "message": "Ο αριθμός βραβευμένων εργασιών και επιπέδων ομιλίας, με ένα κλικ για λίστα."
+  },
+  "optPanelStatus": {
+    "message": "Φορτωμένες εργασίες και venue χωρίς βαθμίδα"
+  },
+  "optPanelStatusHint": {
+    "message": "Πόσες εργασίες έχουν φορτωθεί, το κουμπί «Φόρτωση όλων» και η λίστα εργασιών σε venue χωρίς βαθμίδα."
+  },
+  "optPanelNames": {
+    "message": "Βοήθεια ορθογραφίας ονόματος"
+  },
+  "optPanelNamesHint": {
+    "message": "«Δεν ταιριάζει το όνομα; Προσθέστε ορθογραφία» και οι προτάσεις για το όνομά σας."
+  },
+  "optPanelCompact": {
+    "message": "Συμπαγές: μόνο φίλτρα και σύνολα αναφορών"
+  },
+  "optPanelFull": {
+    "message": "Όλα"
+  },
+  "optPanelFilters": {
+    "message": "Φίλτρα"
+  },
+  "optPanelFiltersHint": {
+    "message": "Μόνο επισημασμένες εργασίες και εύρος ετών."
+  },
+  "optPanelMetrics": {
+    "message": "Σύνολα αναφορών"
+  },
+  "optPanelMetricsHint": {
+    "message": "Εργασίες, αναφορές, h-index και i10-index των επισημασμένων εργασιών."
+  },
+  "optDataTitle": {
+    "message": "Αποθηκευμένα δεδομένα"
+  },
+  "optClearCache": {
+    "message": "Εκκαθάριση αποθηκευμένων στοιχείων εργασιών"
+  },
+  "optCacheCount": {
+    "message": "Οι λίστες συγγραφέων $N1$ εργασιών είναι αποθηκευμένες σε αυτή τη συσκευή (διαβάστηκαν με την Επίλυση, κρατούνται 90 ημέρες).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "Η λίστα συγγραφέων 1 εργασίας είναι αποθηκευμένη σε αυτή τη συσκευή (διαβάστηκε με την Επίλυση, κρατιέται 90 ημέρες)."
+  },
+  "optCacheNone": {
+    "message": "Δεν υπάρχουν αποθηκευμένα στοιχεία εργασιών."
+  },
+  "optCleared": {
+    "message": "Εκκαθαρίστηκε"
+  },
+  "optReset": {
+    "message": "Επαναφορά προεπιλογών"
+  },
+  "optResetConfirm": {
+    "message": "Επαναφορά όλων αυτών των ρυθμίσεων στις προεπιλογές;"
+  },
+  "optStorage": {
+    "message": "Οι ρυθμίσεις αποθηκεύονται στο πρόγραμμα περιήγησης και συγχρονίζονται με το προφίλ σας στο Chrome. Τίποτα δεν στέλνεται πουθενά."
+  },
+  "optSample": {
+    "message": "Δείγμα εργασίας"
+  },
+  "optLoadTitle": {
+    "message": "Λίστα εργασιών"
+  },
+  "optAutoLoad": {
+    "message": "Αυτόματη φόρτωση όλων των εργασιών"
+  },
+  "optAutoLoadHint": {
+    "message": "Αρχικά το Scholar δείχνει μόνο τις πρώτες εργασίες. Αυτή η επιλογή πατά για εσάς το δικό του κουμπί «Εμφάνιση περισσότερων», περίπου μία φορά το δευτερόλεπτο, μέχρι να φορτωθεί ολόκληρη η λίστα, και σταματά αν το Scholar πάψει να απαντά. Ανενεργό: ο πίνακας προσφέρει το «Φόρτωση όλων»."
+  },
+  "loadStalled": {
+    "message": "Το Scholar δεν έστειλε άλλες εργασίες (φορτώθηκαν $N1$). Δοκιμάστε ξανά το «Φόρτωση όλων» σε λίγο.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Βραβείο κατηγορίας"
+  },
+  "copyPapers": {
+    "message": "Αντιγραφή εργασιών"
+  },
+  "tsvYear": {
+    "message": "Έτος"
+  },
+  "tsvTitle": {
+    "message": "Τίτλος"
+  },
+  "tsvAuthors": {
+    "message": "Συγγραφείς"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Βραβεία και ομιλίες"
+  },
+  "tsvCitations": {
+    "message": "Αναφορές"
+  },
+  "optHideTitle": {
+    "message": "Τα δικά του μπλοκ του Scholar"
+  },
+  "optHideHint": {
+    "message": "Κρύψτε τμήματα της σελίδας προφίλ που επαναλαμβάνουν τον πίνακα ή που δεν χρησιμοποιείτε. Τίποτα δεν κρύβεται μέχρι να το ενεργοποιήσετε."
+  },
+  "optHideCited": {
+    "message": "Αναφέρθηκε από"
+  },
+  "optHideCitedHint": {
+    "message": "Ο πίνακας αναφορών, h-index και i10-index και το γράφημά του: ο πίνακας σύνοψης δείχνει τα ίδια σύνολα για τις επισημασμένες εργασίες."
+  },
+  "optHideCo": {
+    "message": "Συνεργάτες"
+  },
+  "optHideCoHint": {
+    "message": "Η λίστα συνεργατών στην πλαϊνή στήλη."
+  },
+  "optHideAccess": {
+    "message": "Δημόσια πρόσβαση"
+  },
+  "optHideAccessHint": {
+    "message": "Το πλαίσιο δημόσιας πρόσβασης στην πλαϊνή στήλη."
+  },
+  "optMergeTitle": {
+    "message": "Διπλές καταχωρίσεις"
+  },
+  "optMergeHint": {
+    "message": "Ορισμένα προφίλ αναφέρουν την ίδια εργασία πολλές φορές."
+  },
+  "optMergeLabel": {
+    "message": "Συγχώνευση διπλότυπων"
+  },
+  "optMergeLabelHint": {
+    "message": "Καταχωρίσεις με τον ίδιο τίτλο (αγνοώντας κεφαλαία, τόνους και σημεία στίξης) και τον ίδιο πρώτο συγγραφέα γίνονται μία: μένει η πιο αναφερόμενη και δείχνει τις αναφορές όλων. Ο πίνακας τη μετρά μία φορά."
+  },
+  "mergedTip": {
+    "message": "Συγχωνεύθηκε από $N1$ καταχωρίσεις: οι αναφορές όλων",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Γλώσσα"
+  },
+  "optLanguageHint": {
+    "message": "Η γλώσσα αυτής της επέκτασης και των σελίδων Scholar που ανοίγετε."
+  },
+  "optLanguageUi": {
+    "message": "Γλώσσα επέκτασης"
+  },
+  "optLanguageAuto": {
+    "message": "Ίδια με το πρόγραμμα περιήγησης"
+  },
+  "optLanguageScholar": {
+    "message": "Άνοιγμα του Scholar στα"
+  },
+  "optLanguageScholarHint": {
+    "message": "Ένα προφίλ Scholar που ανοίγετε σε άλλη γλώσσα (π.χ. από κοινόχρηστο σύνδεσμο) ανοίγει ξανά σε αυτή."
+  },
+  "optLanguageKeep": {
+    "message": "Να μείνει όπως είναι"
+  },
+  "optColorsTitle": {
+    "message": "Χρώματα"
+  },
+  "optColorsHint": {
+    "message": "Το χρώμα κάθε ρόλου συγγραφέα: γραμμές, σήμανση ονόματος, πίνακας σύνοψης και αναδυόμενο παράθυρο της γραμμής εργαλείων."
+  },
+  "optColorsReset": {
+    "message": "Επαναφορά στα τυπικά χρώματα"
+  }
+}

@@ -21,22 +21,44 @@
     return el;
   }
 
+  // The interface language. Followed from the browser (chrome.i18n) unless the settings name another one: then the strings of that
+  // language, asked of the background page, are used (`custom`, in Chrome's messages.json shape).
+  let custom = null, language = "";
+  function lookup(key, subs) {
+    if (custom && custom[key]) return B.i18n.format(custom[key], subs);
+    try { return chrome.i18n.getMessage(key, subs); } catch (e) { return ""; /* extension context gone */ }
+  }
+  // Reads the language setting and loads its strings. Call once, before anything is drawn.
+  async function useLanguage() {
+    let code = "auto";
+    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); } catch (e) { /* no storage: the browser's language */ }
+    custom = null;
+    language = code === "auto" ? chrome.i18n.getUILanguage() : code;
+    if (code !== "auto") {
+      try { const r = await chrome.runtime.sendMessage({ type: "rr:messages", lang: code }); if (r && r.ok) custom = r.messages; else language = chrome.i18n.getUILanguage(); } catch (e) { language = chrome.i18n.getUILanguage(); }
+    }
+    return language;
+  }
+  // The role colours the settings chose, as custom properties on the page root (a role without one keeps the stylesheet's own colour)
+  function applyColors(colors) {
+    for (const role of ["first", "cofirst", "second", "last"]) {
+      const c = colors && colors[role];
+      if (c) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);
+    }
+  }
+  const dir = () => (B.i18n.isRtl(language) ? "rtl" : "ltr");
+  const langTag = () => String(language).replace("_", "-");
+
   // chrome.i18n lookup; falls back to the key so a missing string is visible, not blank.
   function t(key, subs) {
-    try {
-      const m = chrome.i18n.getMessage(key, subs);
-      if (m) return m;
-    } catch (e) { /* extension context gone */ }
-    return key;
+    return lookup(key, subs) || key;
   }
 
   // Like t() but prefers "<key>One" when n === 1 (English singular); other locales simply omit it.
   function tn(key, n, subs) {
     if (n === 1) {
-      try {
-        const m = chrome.i18n.getMessage(key + "One", subs);
-        if (m) return m;
-      } catch (e) { /* fall through */ }
+      const m = lookup(key + "One", subs);
+      if (m) return m;
     }
     return t(key, subs);
   }
@@ -75,5 +97,5 @@
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }
 
-  B.dom = { h, t, tn, copyText, sleep, frame, issueUrl };
+  B.dom = { h, t, tn, applyColors, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl };
 })();

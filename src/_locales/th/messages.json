@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar บทบาทและอันดับ"
+  },
+  "extDescription": {
+    "message": "ไฮไลต์งานที่คุณเป็นผู้เขียนคนแรก ร่วมคนแรก หรือคนสุดท้ายบน Google Scholar พร้อมอันดับ CCF / CORE และสรุปบทบาท × อันดับ"
+  },
+  "extShortName": {
+    "message": "บทบาท·อันดับ"
+  },
+  "panelTitle": {
+    "message": "บทบาทผู้เขียนและอันดับ venue"
+  },
+  "summaryTitle": {
+    "message": "งานวิจัยตามบทบาทและอันดับ"
+  },
+  "marksTitle": {
+    "message": "รางวัลและการนำเสนอ"
+  },
+  "markAward": {
+    "message": "รางวัล"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Best paper"
+  },
+  "mkBestStudent": {
+    "message": "Best student paper"
+  },
+  "mkOutstanding": {
+    "message": "Outstanding paper"
+  },
+  "mkDistinguished": {
+    "message": "Distinguished paper"
+  },
+  "mkRunnerUp": {
+    "message": "Honorable mention"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "เข้ารอบ Best paper"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "จากคำที่ผู้เขียนเขียนเองในชื่อเรื่องและข้อความ venue ของแต่ละงานบน Scholar (ไม่ได้ตรวจสอบ) และจากรายชื่องานที่ได้รับรางวัลในการประชุมสำคัญที่มาพร้อมส่วนขยาย"
+  },
+  "marksAsWritten": {
+    "message": "จากคำของผู้เขียนเองหรือรายชื่องานที่ได้รับรางวัล"
+  },
+  "tipMarkAuthor": {
+    "message": "ผู้เขียนระบุเอง (ไม่ได้ตรวจสอบ): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "อยู่ในรายชื่องานที่ได้รับรางวัล: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "เฉพาะที่ไฮไลต์"
+  },
+  "yearLabel": {
+    "message": "ปี"
+  },
+  "yearStart": {
+    "message": "ตั้งแต่"
+  },
+  "yearEnd": {
+    "message": "ถึง"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "คนแรก"
+  },
+  "roleCofirst": {
+    "message": "ร่วมคนแรก"
+  },
+  "roleSecond": {
+    "message": "คนที่สอง"
+  },
+  "roleLast": {
+    "message": "คนสุดท้าย"
+  },
+  "roleMiddle": {
+    "message": "อื่น ๆ"
+  },
+  "roleHidden": {
+    "message": "ซ่อนอยู่"
+  },
+  "colRole": {
+    "message": "บทบาท"
+  },
+  "colTotal": {
+    "message": "ทั้งหมด"
+  },
+  "tipUnranked": {
+    "message": "ไม่มีอันดับ"
+  },
+  "tipHidden": {
+    "message": "Scholar ตัดรายชื่อผู้เขียนให้สั้นลง จึงมองไม่เห็นตำแหน่งของเจ้าของโปรไฟล์"
+  },
+  "copySummary": {
+    "message": "คัดลอกสรุป"
+  },
+  "copyTable": {
+    "message": "คัดลอกเป็นตาราง"
+  },
+  "copied": {
+    "message": "คัดลอกแล้ว"
+  },
+  "coverLoaded": {
+    "message": "โหลดแล้ว $N1$ เรื่อง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "กำลังโหลด… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "โหลดทั้งหมด"
+  },
+  "cancel": {
+    "message": "ยกเลิก"
+  },
+  "coverHidden": {
+    "message": "ซ่อนบทบาท $N1$ รายการเพราะรายชื่อผู้เขียนถูกตัด",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "ตรวจสอบ"
+  },
+  "resolveHint": {
+    "message": "เปิดหน้าของแต่ละงานบน Scholar (ประมาณวินาทีละหนึ่งเรื่อง) เพื่ออ่านรายชื่อผู้เขียนฉบับเต็ม"
+  },
+  "resolving": {
+    "message": "กำลังอ่านหน้างานวิจัย… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google ขอให้ทำ CAPTCHA โปรดทำในแท็บปกติ แล้วลองอีกครั้ง"
+  },
+  "resolveDone": {
+    "message": "เสร็จแล้ว"
+  },
+  "coverAbsent": {
+    "message": "$N1$ เรื่องที่ไม่มีชื่อโปรไฟล์ในรายชื่อผู้เขียน",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "$N1$ เรื่องใน venue ที่ไม่มีอันดับ",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "คัดลอกรายการ"
+  },
+  "reportLink": {
+    "message": "รายงาน"
+  },
+  "layoutWarning": {
+    "message": "เลย์เอาต์ของ Scholar น่าจะเปลี่ยนไป ส่วนขยายนี้จึงอ่านบรรทัดผู้เขียนไม่ได้ โปรดแจ้งให้เราทราบ"
+  },
+  "variantsTitle": {
+    "message": "ชื่อไม่ตรง? เพิ่มตัวสะกด"
+  },
+  "variantsPlaceholder": {
+    "message": "เช่น Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "เพิ่ม"
+  },
+  "variantRemove": {
+    "message": "ลบ"
+  },
+  "variantAutoTip": {
+    "message": "เพิ่มโดยอัตโนมัติ: ชื่อโปรไฟล์ของคุณในลำดับกลับกันพบคุณใน $1 เรื่อง"
+  },
+  "variantSuggest": {
+    "message": "อาจเป็นคุณ:"
+  },
+  "variantSuggestTip": {
+    "message": "ปรากฏใน $1 เรื่องที่รายชื่อผู้เขียนไม่ได้ระบุชื่อคุณ — คลิกเพื่อเพิ่มตัวสะกดนี้"
+  },
+  "expand": {
+    "message": "ขยาย"
+  },
+  "collapse": {
+    "message": "ย่อ"
+  },
+  "metricsTitle": {
+    "message": "งานที่ไฮไลต์"
+  },
+  "mPapers": {
+    "message": "งานวิจัย"
+  },
+  "mCitations": {
+    "message": "การอ้างอิง"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "จาก"
+  },
+  "dataNote": {
+    "message": "อันดับมาจากรายชื่อ $N1$ ปัจจุบัน ไม่ใช่อันดับ ณ เวลาที่ตีพิมพ์ CCF ระบุว่ารายชื่อของตนไม่ใช่เกณฑ์ประเมินทางวิชาการ",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "จับคู่จากชื่อ"
+  },
+  "ruleAcronym": {
+    "message": "จับคู่จากตัวย่อ"
+  },
+  "rulePrefix": {
+    "message": "จับคู่จากส่วนที่มองเห็นของชื่อที่ถูกตัด"
+  },
+  "tipToday": {
+    "message": "รายชื่อปัจจุบัน ไม่ใช่อันดับ ณ เวลาที่ตีพิมพ์"
+  },
+  "tipPosition": {
+    "message": "ตำแหน่งที่ $N1$ จาก $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "จากหน้าของงานวิจัย"
+  },
+  "copyFirst": {
+    "message": "ผู้เขียนคนแรก"
+  },
+  "copyCofirst": {
+    "message": "ผู้เขียนร่วมคนแรก"
+  },
+  "copySecond": {
+    "message": "ผู้เขียนคนที่สอง"
+  },
+  "copyLast": {
+    "message": "ผู้เขียนคนสุดท้าย"
+  },
+  "copyMiddle": {
+    "message": "ตำแหน่งอื่น ๆ"
+  },
+  "tsvRole": {
+    "message": "บทบาท"
+  },
+  "tsvTotal": {
+    "message": "รวม"
+  },
+  "popupNotProfile": {
+    "message": "เปิดโปรไฟล์ผู้เขียนบน Google Scholar เพื่อดูสรุปที่นี่"
+  },
+  "popupReading": {
+    "message": "กำลังอ่านหน้า…"
+  },
+  "popupPapers": {
+    "message": "$N1$ เรื่อง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "เปิด Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "การตั้งค่า"
+  },
+  "optHeading": {
+    "message": "การตั้งค่า"
+  },
+  "optPreviewTitle": {
+    "message": "ตัวอย่าง"
+  },
+  "optPreviewNote": {
+    "message": "งานตัวอย่างตามที่จะปรากฏบนโปรไฟล์ Scholar “A Author” คือคุณ"
+  },
+  "optSaved": {
+    "message": "บันทึกแล้ว"
+  },
+  "optRolesTitle": {
+    "message": "ไฮไลต์งานของฉัน"
+  },
+  "optRolesHint": {
+    "message": "แต่ละตำแหน่งมีสีแถวของตัวเอง งานที่คุณอยู่ตรงกลางจะไม่เปลี่ยน"
+  },
+  "optMarkName": {
+    "message": "เน้นชื่อฉันในบรรทัดผู้เขียน"
+  },
+  "optMarkNameHint": {
+    "message": "ตัวหนาและมีสี วางเมาส์เหนือชื่อเพื่อดูตำแหน่งของคุณ"
+  },
+  "optRanksTitle": {
+    "message": "อันดับ venue"
+  },
+  "optCcf": {
+    "message": "อันดับ CCF"
+  },
+  "optCcfHint": {
+    "message": "รายชื่อของ China Computer Federation ฉบับที่ 7 (2026)"
+  },
+  "optCore": {
+    "message": "อันดับ CORE"
+  },
+  "optCoreHint": {
+    "message": "การจัดอันดับการประชุม CORE, ICORE 2026"
+  },
+  "optMarksTitle": {
+    "message": "รางวัลและการนำเสนอ"
+  },
+  "optMarkAwardHint": {
+    "message": "Best, outstanding และ distinguished paper, honorable mention, test of time และผู้เข้ารอบ best paper"
+  },
+  "optPanelTitle": {
+    "message": "แผงสรุป"
+  },
+  "optPanelShow": {
+    "message": "แสดงแผงสรุป"
+  },
+  "optPanelShowHint": {
+    "message": "ตารางบทบาท × อันดับบนหน้าโปรไฟล์ เมื่อปิด: จะทำเครื่องหมายเฉพาะรายการงานวิจัย"
+  },
+  "optPanelSummary": {
+    "message": "ตารางบทบาท × อันดับ"
+  },
+  "optPanelSummaryHint": {
+    "message": "ตารางงานของคุณตามตำแหน่งและอันดับ พร้อมปุ่มคัดลอกและหมายเหตุแหล่งที่มาของอันดับ"
+  },
+  "optPanelMarks": {
+    "message": "จำนวนรางวัลและการนำเสนอ"
+  },
+  "optPanelMarksHint": {
+    "message": "จำนวนงานที่ได้รับรางวัลและระดับการนำเสนอ คลิกครั้งเดียวเพื่อดูรายการ"
+  },
+  "optPanelStatus": {
+    "message": "งานที่โหลดแล้วและ venue ที่ไม่มีอันดับ"
+  },
+  "optPanelStatusHint": {
+    "message": "จำนวนงานที่โหลดแล้ว ปุ่ม “โหลดทั้งหมด” และรายการงานใน venue ที่ไม่มีอันดับ"
+  },
+  "optPanelNames": {
+    "message": "ตัวช่วยตัวสะกดชื่อ"
+  },
+  "optPanelNamesHint": {
+    "message": "“ชื่อไม่ตรง? เพิ่มตัวสะกด” และคำแนะนำสำหรับชื่อของคุณ"
+  },
+  "optPanelCompact": {
+    "message": "กะทัดรัด: เฉพาะตัวกรองและยอดอ้างอิง"
+  },
+  "optPanelFull": {
+    "message": "ทั้งหมด"
+  },
+  "optPanelFilters": {
+    "message": "ตัวกรอง"
+  },
+  "optPanelFiltersHint": {
+    "message": "เฉพาะงานที่ไฮไลต์ และช่วงปี"
+  },
+  "optPanelMetrics": {
+    "message": "ยอดอ้างอิง"
+  },
+  "optPanelMetricsHint": {
+    "message": "จำนวนงาน การอ้างอิง h-index และ i10-index ของงานที่ไฮไลต์"
+  },
+  "optDataTitle": {
+    "message": "ข้อมูลที่บันทึกไว้"
+  },
+  "optClearCache": {
+    "message": "ล้างรายละเอียดงานวิจัยที่บันทึกไว้"
+  },
+  "optCacheCount": {
+    "message": "บันทึกรายชื่อผู้เขียนของ $N1$ เรื่องไว้ในอุปกรณ์นี้ (อ่านด้วยปุ่มตรวจสอบ เก็บไว้ 90 วัน)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "ไม่มีรายละเอียดงานวิจัยที่บันทึกไว้"
+  },
+  "optCleared": {
+    "message": "ล้างแล้ว"
+  },
+  "optReset": {
+    "message": "คืนค่าเริ่มต้น"
+  },
+  "optResetConfirm": {
+    "message": "คืนการตั้งค่าเหล่านี้ทั้งหมดเป็นค่าเริ่มต้นหรือไม่?"
+  },
+  "optStorage": {
+    "message": "การตั้งค่าเก็บไว้ในเบราว์เซอร์และซิงก์กับโปรไฟล์ Chrome ของคุณ ไม่มีสิ่งใดถูกส่งออกไปที่ไหน"
+  },
+  "optSample": {
+    "message": "งานตัวอย่าง"
+  },
+  "optLoadTitle": {
+    "message": "รายการงานวิจัย"
+  },
+  "optAutoLoad": {
+    "message": "โหลดงานทั้งหมดโดยอัตโนมัติ"
+  },
+  "optAutoLoadHint": {
+    "message": "ตอนแรก Scholar แสดงเฉพาะงานช่วงแรก ตัวเลือกนี้กดปุ่ม “แสดงเพิ่มเติม” ของ Scholar ให้คุณประมาณวินาทีละครั้งจนโหลดครบทั้งรายการ และหยุดเมื่อ Scholar ไม่ตอบสนอง เมื่อปิด: แผงจะมีปุ่ม “โหลดทั้งหมด” ให้แทน"
+  },
+  "loadStalled": {
+    "message": "Scholar ไม่ส่งงานเพิ่มแล้ว (โหลดแล้ว $N1$) ลองกด “โหลดทั้งหมด” อีกครั้งในอีกสักครู่",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "รางวัลประเภทย่อย"
+  },
+  "copyPapers": {
+    "message": "คัดลอกงานวิจัย"
+  },
+  "tsvYear": {
+    "message": "ปี"
+  },
+  "tsvTitle": {
+    "message": "ชื่อเรื่อง"
+  },
+  "tsvAuthors": {
+    "message": "ผู้เขียน"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "รางวัลและการนำเสนอ"
+  },
+  "tsvCitations": {
+    "message": "การอ้างอิง"
+  },
+  "optHideTitle": {
+    "message": "ส่วนเดิมของ Scholar"
+  },
+  "optHideHint": {
+    "message": "ซ่อนส่วนของหน้าโปรไฟล์ที่ซ้ำกับแผงสรุปหรือที่คุณไม่ได้ใช้ จะไม่มีอะไรถูกซ่อนจนกว่าคุณจะเปิด"
+  },
+  "optHideCited": {
+    "message": "อ้างอิงโดย"
+  },
+  "optHideCitedHint": {
+    "message": "ตารางการอ้างอิง h-index และ i10-index พร้อมกราฟ: แผงสรุปแสดงยอดเดียวกันสำหรับงานที่ไฮไลต์"
+  },
+  "optHideCo": {
+    "message": "ผู้เขียนร่วม"
+  },
+  "optHideCoHint": {
+    "message": "รายชื่อผู้เขียนร่วมในแถบด้านข้าง"
+  },
+  "optHideAccess": {
+    "message": "การเข้าถึงสาธารณะ"
+  },
+  "optHideAccessHint": {
+    "message": "กล่องการเข้าถึงสาธารณะในแถบด้านข้าง"
+  },
+  "optMergeTitle": {
+    "message": "รายการซ้ำ"
+  },
+  "optMergeHint": {
+    "message": "บางโปรไฟล์แสดงงานเดียวกันหลายครั้ง"
+  },
+  "optMergeLabel": {
+    "message": "รวมรายการซ้ำ"
+  },
+  "optMergeLabelHint": {
+    "message": "รายการที่ชื่อเรื่องเหมือนกัน (ไม่นับตัวพิมพ์ใหญ่ เครื่องหมายกำกับเสียง และเครื่องหมายวรรคตอน) และผู้เขียนคนแรกคนเดียวกันจะรวมเป็นหนึ่ง: รายการที่ถูกอ้างอิงมากที่สุดจะเหลืออยู่และแสดงการอ้างอิงของทุกรายการ แผงสรุปนับเป็นหนึ่งเรื่อง"
+  },
+  "mergedTip": {
+    "message": "รวมจาก $N1$ รายการ: การอ้างอิงของทุกรายการ",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "ภาษา"
+  },
+  "optLanguageHint": {
+    "message": "ภาษาของส่วนขยายนี้ และของหน้า Scholar ที่คุณเปิด"
+  },
+  "optLanguageUi": {
+    "message": "ภาษาของส่วนขยาย"
+  },
+  "optLanguageAuto": {
+    "message": "ตามเบราว์เซอร์"
+  },
+  "optLanguageScholar": {
+    "message": "เปิด Scholar เป็นภาษา"
+  },
+  "optLanguageScholarHint": {
+    "message": "โปรไฟล์ Scholar ที่คุณเปิดในภาษาอื่น (เช่นจากลิงก์ที่แชร์มา) จะถูกเปิดใหม่ในภาษานี้"
+  },
+  "optLanguageKeep": {
+    "message": "คงไว้ตามเดิม"
+  },
+  "optColorsTitle": {
+    "message": "สี"
+  },
+  "optColorsHint": {
+    "message": "สีของแต่ละบทบาทผู้เขียน: แถว เครื่องหมายชื่อ แผงสรุป และป๊อปอัปบนแถบเครื่องมือ"
+  },
+  "optColorsReset": {
+    "message": "กลับเป็นสีมาตรฐาน"
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Autorenrollen & Ränge"
+  },
+  "extDescription": {
+    "message": "Hebt auf Google Scholar Erst-, Ko-Erst- und Letztautor-Paper hervor, mit CCF-/CORE-Rang je Venue und Übersicht Rolle × Rang."
+  },
+  "extShortName": {
+    "message": "Rollen & Ränge"
+  },
+  "panelTitle": {
+    "message": "Autorenrollen und Venue-Ränge"
+  },
+  "summaryTitle": {
+    "message": "Paper nach Rolle und Rang"
+  },
+  "marksTitle": {
+    "message": "Auszeichnungen & Vorträge"
+  },
+  "markAward": {
+    "message": "Preise"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Best Paper"
+  },
+  "mkBestStudent": {
+    "message": "Best Student Paper"
+  },
+  "mkOutstanding": {
+    "message": "Outstanding Paper"
+  },
+  "mkDistinguished": {
+    "message": "Distinguished Paper"
+  },
+  "mkRunnerUp": {
+    "message": "Lobende Erwähnung"
+  },
+  "mkTot": {
+    "message": "Test of Time"
+  },
+  "mkFinalist": {
+    "message": "Best-Paper-Finalist"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Nach den Angaben der Autoren in Titel und Venue-Text jedes Papers auf Scholar (ungeprüft) sowie einer mitgelieferten Liste preisgekrönter Paper bedeutender Konferenzen."
+  },
+  "marksAsWritten": {
+    "message": "nach Angabe der Autoren oder der Preisliste"
+  },
+  "tipMarkAuthor": {
+    "message": "Vom Autor angegeben (ungeprüft): „$N1$“",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "In der Preisliste: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Nur Hervorgehobene"
+  },
+  "yearLabel": {
+    "message": "Jahr"
+  },
+  "yearStart": {
+    "message": "Von"
+  },
+  "yearEnd": {
+    "message": "Bis"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Erst"
+  },
+  "roleCofirst": {
+    "message": "Ko-Erst"
+  },
+  "roleSecond": {
+    "message": "Zweit"
+  },
+  "roleLast": {
+    "message": "Letzt"
+  },
+  "roleMiddle": {
+    "message": "Übrige"
+  },
+  "roleHidden": {
+    "message": "Verdeckt"
+  },
+  "colRole": {
+    "message": "Rolle"
+  },
+  "colTotal": {
+    "message": "Alle"
+  },
+  "tipUnranked": {
+    "message": "Ohne Rang"
+  },
+  "tipHidden": {
+    "message": "Scholar hat die Autorenliste gekürzt, daher ist die Position des Profilinhabers nicht sichtbar"
+  },
+  "copySummary": {
+    "message": "Übersicht kopieren"
+  },
+  "copyTable": {
+    "message": "Als Tabelle kopieren"
+  },
+  "copied": {
+    "message": "Kopiert"
+  },
+  "coverLoaded": {
+    "message": "$N1$ Paper geladen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 Paper geladen"
+  },
+  "loadingAll": {
+    "message": "Lädt… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Alle laden"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "coverHidden": {
+    "message": "$N1$ Rollen durch gekürzte Autorenlisten verdeckt",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 Rolle durch eine gekürzte Autorenliste verdeckt"
+  },
+  "resolveBtn": {
+    "message": "Auflösen"
+  },
+  "resolveHint": {
+    "message": "Öffnet die Seite jedes Papers auf Scholar (etwa eine pro Sekunde), um die vollständige Autorenliste zu lesen."
+  },
+  "resolving": {
+    "message": "Paper-Seiten werden gelesen… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google verlangt ein CAPTCHA. Löse es in einem normalen Tab und versuche es erneut."
+  },
+  "resolveDone": {
+    "message": "Fertig."
+  },
+  "coverAbsent": {
+    "message": "$N1$ Paper, bei denen der Profilname nicht in der Autorenliste steht",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 Paper, bei dem der Profilname nicht in der Autorenliste steht"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ Paper in Venues ohne Rang",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 Paper in einer Venue ohne Rang"
+  },
+  "copyUnmatched": {
+    "message": "Liste kopieren"
+  },
+  "reportLink": {
+    "message": "Melden"
+  },
+  "layoutWarning": {
+    "message": "Das Seitenlayout von Scholar scheint sich geändert zu haben: Diese Erweiterung kann die Autorenzeilen nicht lesen. Bitte melde das."
+  },
+  "variantsTitle": {
+    "message": "Name passt nicht? Schreibweise hinzufügen"
+  },
+  "variantsPlaceholder": {
+    "message": "z. B. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Hinzufügen"
+  },
+  "variantRemove": {
+    "message": "Entfernen"
+  },
+  "variantAutoTip": {
+    "message": "Automatisch hinzugefügt: Dein Profilname in umgekehrter Reihenfolge findet dich in $1 Papern"
+  },
+  "variantSuggest": {
+    "message": "Vielleicht du:"
+  },
+  "variantSuggestTip": {
+    "message": "Kommt in $1 Papern vor, deren Autorenliste dich sonst nicht nennt – klicken, um diese Schreibweise hinzuzufügen"
+  },
+  "expand": {
+    "message": "Ausklappen"
+  },
+  "collapse": {
+    "message": "Einklappen"
+  },
+  "metricsTitle": {
+    "message": "Hervorgehobene Paper"
+  },
+  "mPapers": {
+    "message": "Paper"
+  },
+  "mCitations": {
+    "message": "Zitierungen"
+  },
+  "mH": {
+    "message": "h-Index"
+  },
+  "mI10": {
+    "message": "i10-Index"
+  },
+  "metricsOf": {
+    "message": "von"
+  },
+  "dataNote": {
+    "message": "Die Ränge stammen aus den aktuellen $N1$-Listen, nicht aus dem Rang zum Zeitpunkt der Veröffentlichung. Die CCF weist darauf hin, dass ihre Liste keine Grundlage für wissenschaftliche Bewertungen ist.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Per Name zugeordnet"
+  },
+  "ruleAcronym": {
+    "message": "Per Akronym zugeordnet"
+  },
+  "rulePrefix": {
+    "message": "Über den sichtbaren Teil eines gekürzten Namens zugeordnet"
+  },
+  "tipToday": {
+    "message": "aktuelle Liste, nicht der Rang zur Veröffentlichung"
+  },
+  "tipPosition": {
+    "message": "Position $N1$ von $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "von der Seite des Papers"
+  },
+  "copyFirst": {
+    "message": "Erstautor"
+  },
+  "copyCofirst": {
+    "message": "Ko-Erstautor"
+  },
+  "copySecond": {
+    "message": "Zweitautor"
+  },
+  "copyLast": {
+    "message": "Letztautor"
+  },
+  "copyMiddle": {
+    "message": "Übrige Positionen"
+  },
+  "tsvRole": {
+    "message": "Rolle"
+  },
+  "tsvTotal": {
+    "message": "Gesamt"
+  },
+  "popupNotProfile": {
+    "message": "Öffne ein Google-Scholar-Autorenprofil, um hier die Übersicht zu sehen."
+  },
+  "popupReading": {
+    "message": "Seite wird gelesen…"
+  },
+  "popupPapers": {
+    "message": "$N1$ Paper",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 Paper"
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar öffnen"
+  },
+  "settingsOpen": {
+    "message": "Einstellungen"
+  },
+  "optHeading": {
+    "message": "Einstellungen"
+  },
+  "optPreviewTitle": {
+    "message": "Vorschau"
+  },
+  "optPreviewNote": {
+    "message": "Beispiel-Paper, wie sie in einem Scholar-Profil aussehen. „A Author“ bist du."
+  },
+  "optSaved": {
+    "message": "Gespeichert"
+  },
+  "optRolesTitle": {
+    "message": "Meine Paper hervorheben"
+  },
+  "optRolesHint": {
+    "message": "Jede Position bekommt eine eigene Zeilenfarbe. Paper, bei denen du in der Mitte stehst, bleiben unverändert."
+  },
+  "optMarkName": {
+    "message": "Meinen Namen in der Autorenzeile markieren"
+  },
+  "optMarkNameHint": {
+    "message": "Fett und farbig hinterlegt. Mit der Maus darüber fahren zeigt deine Position."
+  },
+  "optRanksTitle": {
+    "message": "Venue-Ränge"
+  },
+  "optCcf": {
+    "message": "CCF-Rang"
+  },
+  "optCcfHint": {
+    "message": "Liste der China Computer Federation, 7. Ausgabe (2026)."
+  },
+  "optCore": {
+    "message": "CORE-Rang"
+  },
+  "optCoreHint": {
+    "message": "CORE-Konferenzranking, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Auszeichnungen und Vorträge"
+  },
+  "optMarkAwardHint": {
+    "message": "Best, Outstanding und Distinguished Paper, lobende Erwähnung, Test of Time und Best-Paper-Finalisten."
+  },
+  "optPanelTitle": {
+    "message": "Übersichtsfeld"
+  },
+  "optPanelShow": {
+    "message": "Übersichtsfeld anzeigen"
+  },
+  "optPanelShowHint": {
+    "message": "Die Tabelle Rolle × Rang auf der Profilseite. Aus: Nur die Paper-Liste wird markiert."
+  },
+  "optPanelSummary": {
+    "message": "Tabelle Rolle × Rang"
+  },
+  "optPanelSummaryHint": {
+    "message": "Die Tabelle deiner Paper nach Position und Rang, mit den Kopieren-Schaltflächen und dem Hinweis zur Herkunft der Ränge."
+  },
+  "optPanelMarks": {
+    "message": "Anzahl Auszeichnungen und Vorträge"
+  },
+  "optPanelMarksHint": {
+    "message": "Die Anzahl preisgekrönter Paper und Vortragsarten, per Klick aufzulisten."
+  },
+  "optPanelStatus": {
+    "message": "Geladene Paper und Venues ohne Rang"
+  },
+  "optPanelStatusHint": {
+    "message": "Wie viele Paper geladen sind, die Schaltfläche „Alle laden“ und die Liste der Paper in Venues ohne Rang."
+  },
+  "optPanelNames": {
+    "message": "Hilfe zur Namensschreibweise"
+  },
+  "optPanelNamesHint": {
+    "message": "„Name passt nicht? Schreibweise hinzufügen“ und die Vorschläge für deinen Namen."
+  },
+  "optPanelCompact": {
+    "message": "Kompakt: nur Filter und Zitierungssummen"
+  },
+  "optPanelFull": {
+    "message": "Alles"
+  },
+  "optPanelFilters": {
+    "message": "Filter"
+  },
+  "optPanelFiltersHint": {
+    "message": "Nur hervorgehobene Paper und ein Zeitraum."
+  },
+  "optPanelMetrics": {
+    "message": "Zitierungssummen"
+  },
+  "optPanelMetricsHint": {
+    "message": "Paper, Zitierungen, h-Index und i10-Index der hervorgehobenen Paper."
+  },
+  "optDataTitle": {
+    "message": "Gespeicherte Daten"
+  },
+  "optClearCache": {
+    "message": "Gespeicherte Paper-Details löschen"
+  },
+  "optCacheCount": {
+    "message": "Die Autorenlisten von $N1$ Papern sind auf diesem Gerät gespeichert (mit „Auflösen“ gelesen, 90 Tage aufbewahrt).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "Die Autorenliste von 1 Paper ist auf diesem Gerät gespeichert (mit „Auflösen“ gelesen, 90 Tage aufbewahrt)."
+  },
+  "optCacheNone": {
+    "message": "Es sind keine Paper-Details gespeichert."
+  },
+  "optCleared": {
+    "message": "Gelöscht"
+  },
+  "optReset": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "optResetConfirm": {
+    "message": "Alle diese Einstellungen auf die Standardwerte zurücksetzen?"
+  },
+  "optStorage": {
+    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Es wird nichts irgendwohin gesendet."
+  },
+  "optSample": {
+    "message": "Beispiel-Paper"
+  },
+  "optLoadTitle": {
+    "message": "Paper-Liste"
+  },
+  "optAutoLoad": {
+    "message": "Alle Paper automatisch laden"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar zeigt zunächst nur die ersten Paper. Diese Option drückt für dich dessen Schaltfläche „Mehr anzeigen“, etwa einmal pro Sekunde, bis die ganze Liste geladen ist, und hört auf, wenn Scholar nicht mehr antwortet. Aus: Das Feld bietet stattdessen „Alle laden“ an."
+  },
+  "loadStalled": {
+    "message": "Scholar hat keine weiteren Paper geliefert ($N1$ geladen). Versuche „Alle laden“ in einem Moment erneut.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategoriepreis"
+  },
+  "copyPapers": {
+    "message": "Paper kopieren"
+  },
+  "tsvYear": {
+    "message": "Jahr"
+  },
+  "tsvTitle": {
+    "message": "Titel"
+  },
+  "tsvAuthors": {
+    "message": "Autoren"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Auszeichnungen & Vorträge"
+  },
+  "tsvCitations": {
+    "message": "Zitierungen"
+  },
+  "optHideTitle": {
+    "message": "Eigene Bereiche von Scholar"
+  },
+  "optHideHint": {
+    "message": "Blendet Teile der Profilseite aus, die das Übersichtsfeld wiederholen oder die du nicht nutzt. Nichts wird ausgeblendet, bis du es einschaltest."
+  },
+  "optHideCited": {
+    "message": "Zitiert von"
+  },
+  "optHideCitedHint": {
+    "message": "Die Tabelle mit Zitierungen, h-Index und i10-Index samt Diagramm: Das Übersichtsfeld zeigt dieselben Summen für die hervorgehobenen Paper."
+  },
+  "optHideCo": {
+    "message": "Koautoren"
+  },
+  "optHideCoHint": {
+    "message": "Die Koautorenliste in der Seitenleiste."
+  },
+  "optHideAccess": {
+    "message": "Öffentlicher Zugang"
+  },
+  "optHideAccessHint": {
+    "message": "Der Kasten „Öffentlicher Zugang“ in der Seitenleiste."
+  },
+  "optMergeTitle": {
+    "message": "Doppelte Einträge"
+  },
+  "optMergeHint": {
+    "message": "Manche Profile führen ein Paper mehrfach auf."
+  },
+  "optMergeLabel": {
+    "message": "Duplikate zusammenführen"
+  },
+  "optMergeLabelHint": {
+    "message": "Einträge mit demselben Titel (ohne Groß-/Kleinschreibung, Akzente und Satzzeichen) und demselben Erstautor werden zu einem: Der meistzitierte bleibt und zeigt die Zitierungen aller. Das Übersichtsfeld zählt ihn nur einmal."
+  },
+  "mergedTip": {
+    "message": "Aus $N1$ Einträgen zusammengeführt: die Zitierungen aller",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Sprache"
+  },
+  "optLanguageHint": {
+    "message": "Die Sprache dieser Erweiterung und der Scholar-Seiten, die du öffnest."
+  },
+  "optLanguageUi": {
+    "message": "Sprache der Erweiterung"
+  },
+  "optLanguageAuto": {
+    "message": "Dem Browser folgen"
+  },
+  "optLanguageScholar": {
+    "message": "Scholar öffnen in"
+  },
+  "optLanguageScholarHint": {
+    "message": "Ein Scholar-Profil, das du in einer anderen Sprache öffnest (z. B. über einen geteilten Link), wird in dieser erneut geöffnet."
+  },
+  "optLanguageKeep": {
+    "message": "Unverändert lassen"
+  },
+  "optColorsTitle": {
+    "message": "Farben"
+  },
+  "optColorsHint": {
+    "message": "Die Farbe jeder Autorenrolle: Zeilen, Namensmarkierungen, Übersichtsfeld und Popup der Symbolleiste."
+  },
+  "optColorsReset": {
+    "message": "Zurück zu den Standardfarben"
+  }
+}

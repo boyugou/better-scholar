@@ -1,6 +1,6 @@
-# 谷歌学术：作者位次与会议期刊等级
+# Scholar 位次与等级
 
-_English name: Scholar Author Roles & Venue Ranks_
+_English name: Scholar Roles & Ranks_
 
 **一眼看出每篇论文：你是第几作者、发在什么级别。** 这是一个 Chrome 扩展，读取
 [Google Scholar](https://scholar.google.com) 作者主页，为每篇论文标出作者角色

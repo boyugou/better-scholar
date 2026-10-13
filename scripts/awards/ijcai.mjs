@@ -54,7 +54,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const [year, where] = process.argv.slice(2);
   if (!/^(?:19|20)\d{2}$/.test(year || "") || !where) { console.error("usage: ijcai.mjs <year> <url-or-saved.html>"); process.exit(2); }
   const isUrl = /^https:\/\//.test(where);
-  const html = isUrl ? await (await fetch(where, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text() : readFileSync(where, "utf8");
+  const html = isUrl ? await (await fetch(where, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text() : readFileSync(where, "utf8");
   const entries = parse(html, { year: parseInt(year, 10), source: isUrl ? where : `https://ijcai-${year.slice(2)}.org/distinguished-paper-awards/` });
   console.error(entries.length + " entries");
   process.stdout.write(JSON.stringify({ entries }, null, 1) + "\n");

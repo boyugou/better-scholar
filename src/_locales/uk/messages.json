@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar: ролі та ранги"
+  },
+  "extDescription": {
+    "message": "Виділяє в Google Scholar статті, де ви перший, співперший чи останній автор, з рангами CCF / CORE та зведенням «роль × ранг»."
+  },
+  "extShortName": {
+    "message": "Ролі й ранги"
+  },
+  "panelTitle": {
+    "message": "Ролі авторів і ранги видань"
+  },
+  "summaryTitle": {
+    "message": "Статті за роллю та рангом"
+  },
+  "marksTitle": {
+    "message": "Нагороди та доповіді"
+  },
+  "markAward": {
+    "message": "Нагороди"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Найкраща стаття"
+  },
+  "mkBestStudent": {
+    "message": "Найкраща студентська стаття"
+  },
+  "mkOutstanding": {
+    "message": "Видатна стаття"
+  },
+  "mkDistinguished": {
+    "message": "Відзначена стаття"
+  },
+  "mkRunnerUp": {
+    "message": "Почесна згадка"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Фіналіст найкращої статті"
+  },
+  "mkOral": {
+    "message": "Усна доповідь"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "За власними словами авторів у назві та описі видання кожної статті в Scholar (не перевіряються) і за вбудованим списком відзначених статей великих конференцій."
+  },
+  "marksAsWritten": {
+    "message": "за словами авторів або за списком нагород"
+  },
+  "tipMarkAuthor": {
+    "message": "Вказано автором (не перевірено): «$N1$»",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "У списку нагород: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Лише виділені"
+  },
+  "yearLabel": {
+    "message": "Рік"
+  },
+  "yearStart": {
+    "message": "Від"
+  },
+  "yearEnd": {
+    "message": "До"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Перший"
+  },
+  "roleCofirst": {
+    "message": "Співперший"
+  },
+  "roleSecond": {
+    "message": "Другий"
+  },
+  "roleLast": {
+    "message": "Останній"
+  },
+  "roleMiddle": {
+    "message": "Інші"
+  },
+  "roleHidden": {
+    "message": "Приховано"
+  },
+  "colRole": {
+    "message": "Роль"
+  },
+  "colTotal": {
+    "message": "Усі"
+  },
+  "tipUnranked": {
+    "message": "Без рангу"
+  },
+  "tipHidden": {
+    "message": "Scholar обрізав список авторів, тож позицію власника профілю не видно"
+  },
+  "copySummary": {
+    "message": "Копіювати зведення"
+  },
+  "copyTable": {
+    "message": "Копіювати таблицею"
+  },
+  "copied": {
+    "message": "Скопійовано"
+  },
+  "coverLoaded": {
+    "message": "Завантажено статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Завантаження… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Завантажити всі"
+  },
+  "cancel": {
+    "message": "Скасувати"
+  },
+  "coverHidden": {
+    "message": "Ролей приховано через обрізані списки авторів: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Уточнити"
+  },
+  "resolveHint": {
+    "message": "Відкриває сторінку кожної статті в Scholar (приблизно по одній на секунду), щоб прочитати повний список авторів."
+  },
+  "resolving": {
+    "message": "Читання сторінок статей… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google запросив CAPTCHA. Пройдіть її у звичайній вкладці й повторіть."
+  },
+  "resolveDone": {
+    "message": "Готово."
+  },
+  "coverAbsent": {
+    "message": "Статей, де імені з профілю немає серед авторів: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "Статей у виданнях без рангу: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Копіювати список"
+  },
+  "reportLink": {
+    "message": "Повідомити"
+  },
+  "layoutWarning": {
+    "message": "Схоже, верстка Scholar змінилася: розширення не може прочитати рядки авторів. Будь ласка, повідомте про це."
+  },
+  "variantsTitle": {
+    "message": "Ім’я не знаходиться? Додайте написання"
+  },
+  "variantsPlaceholder": {
+    "message": "напр. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Додати"
+  },
+  "variantRemove": {
+    "message": "Вилучити"
+  },
+  "variantAutoTip": {
+    "message": "Додано автоматично: ім’я з вашого профілю в іншому порядку знаходить вас у $1 статтях"
+  },
+  "variantSuggest": {
+    "message": "Можливо, ви:"
+  },
+  "variantSuggestTip": {
+    "message": "Трапляється у $1 статтях, де вас інакше немає в списку авторів — натисніть, щоб додати це написання"
+  },
+  "expand": {
+    "message": "Розгорнути"
+  },
+  "collapse": {
+    "message": "Згорнути"
+  },
+  "metricsTitle": {
+    "message": "Виділені статті"
+  },
+  "mPapers": {
+    "message": "Статті"
+  },
+  "mCitations": {
+    "message": "Цитування"
+  },
+  "mH": {
+    "message": "h-індекс"
+  },
+  "mI10": {
+    "message": "i10-індекс"
+  },
+  "metricsOf": {
+    "message": "з"
+  },
+  "dataNote": {
+    "message": "Ранги беруться з актуальних списків $N1$, а не на момент публікації. CCF зазначає, що його список не є підставою для академічного оцінювання.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Знайдено за назвою"
+  },
+  "ruleAcronym": {
+    "message": "Знайдено за абревіатурою"
+  },
+  "rulePrefix": {
+    "message": "Знайдено за видимою частиною обрізаної назви"
+  },
+  "tipToday": {
+    "message": "актуальний список, а не ранг на момент публікації"
+  },
+  "tipPosition": {
+    "message": "позиція $N1$ з $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "зі сторінки статті"
+  },
+  "copyFirst": {
+    "message": "Перший автор"
+  },
+  "copyCofirst": {
+    "message": "Співперший автор"
+  },
+  "copySecond": {
+    "message": "Другий автор"
+  },
+  "copyLast": {
+    "message": "Останній автор"
+  },
+  "copyMiddle": {
+    "message": "Інші позиції"
+  },
+  "tsvRole": {
+    "message": "Роль"
+  },
+  "tsvTotal": {
+    "message": "Усього"
+  },
+  "popupNotProfile": {
+    "message": "Відкрийте профіль автора в Google Scholar, щоб побачити тут зведення."
+  },
+  "popupReading": {
+    "message": "Читання сторінки…"
+  },
+  "popupPapers": {
+    "message": "Статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Відкрити Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Налаштування"
+  },
+  "optHeading": {
+    "message": "Налаштування"
+  },
+  "optPreviewTitle": {
+    "message": "Попередній перегляд"
+  },
+  "optPreviewNote": {
+    "message": "Приклади статей так, як вони виглядають у профілі Scholar. «A Author» — це ви."
+  },
+  "optSaved": {
+    "message": "Збережено"
+  },
+  "optRolesTitle": {
+    "message": "Виділяти мої статті"
+  },
+  "optRolesHint": {
+    "message": "Для кожної позиції — свій колір рядка. Статті, де ви посередині списку, лишаються без виділення."
+  },
+  "optMarkName": {
+    "message": "Позначати моє ім’я в рядку авторів"
+  },
+  "optMarkNameHint": {
+    "message": "Жирним і кольором. Наведіть курсор, щоб побачити позицію."
+  },
+  "optRanksTitle": {
+    "message": "Ранги видань"
+  },
+  "optCcf": {
+    "message": "Ранг CCF"
+  },
+  "optCcfHint": {
+    "message": "Список China Computer Federation, 7-ма редакція (2026)."
+  },
+  "optCore": {
+    "message": "Ранг CORE"
+  },
+  "optCoreHint": {
+    "message": "Рейтинг конференцій CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Нагороди та доповіді"
+  },
+  "optMarkAwardHint": {
+    "message": "Найкраща, видатна й відзначена стаття, почесна згадка, test of time та фіналісти найкращої статті."
+  },
+  "optPanelTitle": {
+    "message": "Панель зведення"
+  },
+  "optPanelShow": {
+    "message": "Показувати панель зведення"
+  },
+  "optPanelShowHint": {
+    "message": "Таблиця «роль × ранг» на сторінці профілю. Вимк.: позначається лише список статей."
+  },
+  "optPanelSummary": {
+    "message": "Таблиця «роль × ранг»"
+  },
+  "optPanelSummaryHint": {
+    "message": "Таблиця ваших статей за позицією та рангом з кнопками копіювання й поясненням, звідки беруться ранги."
+  },
+  "optPanelMarks": {
+    "message": "Кількість нагород і доповідей"
+  },
+  "optPanelMarksHint": {
+    "message": "Кількість відзначених статей і видів доповідей; одним кліком — список."
+  },
+  "optPanelStatus": {
+    "message": "Завантажені статті та видання без рангу"
+  },
+  "optPanelStatusHint": {
+    "message": "Скільки статей завантажено, кнопка «Завантажити всі» і список статей у виданнях без рангу."
+  },
+  "optPanelNames": {
+    "message": "Допомога з написанням імені"
+  },
+  "optPanelNamesHint": {
+    "message": "«Ім’я не знаходиться? Додайте написання» та підказки для вашого імені."
+  },
+  "optPanelCompact": {
+    "message": "Компактно: лише фільтри й підсумки цитувань"
+  },
+  "optPanelFull": {
+    "message": "Усе"
+  },
+  "optPanelFilters": {
+    "message": "Фільтри"
+  },
+  "optPanelFiltersHint": {
+    "message": "Лише виділені статті та діапазон років."
+  },
+  "optPanelMetrics": {
+    "message": "Підсумки цитувань"
+  },
+  "optPanelMetricsHint": {
+    "message": "Статті, цитування, h-індекс та i10-індекс виділених статей."
+  },
+  "optDataTitle": {
+    "message": "Збережені дані"
+  },
+  "optClearCache": {
+    "message": "Очистити збережені відомості про статті"
+  },
+  "optCacheCount": {
+    "message": "Списків авторів збережено на цьому пристрої: $N1$ (прочитані кнопкою «Уточнити», зберігаються 90 днів).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Відомості про статті не збережено."
+  },
+  "optCleared": {
+    "message": "Очищено"
+  },
+  "optReset": {
+    "message": "Скинути налаштування"
+  },
+  "optResetConfirm": {
+    "message": "Скинути всі ці налаштування до типових?"
+  },
+  "optStorage": {
+    "message": "Налаштування зберігаються в браузері та синхронізуються з профілем Chrome. Нічого нікуди не надсилається."
+  },
+  "optSample": {
+    "message": "Приклад статті"
+  },
+  "optLoadTitle": {
+    "message": "Список статей"
+  },
+  "optAutoLoad": {
+    "message": "Завантажувати всі статті автоматично"
+  },
+  "optAutoLoadHint": {
+    "message": "Спочатку Scholar показує лише перші статті. Розширення саме натискає його кнопку «Показати більше» приблизно раз на секунду, доки не завантажиться весь список, і зупиняється, якщо Scholar перестає відповідати. Вимк.: на панелі буде кнопка «Завантажити всі»."
+  },
+  "loadStalled": {
+    "message": "Scholar більше не надсилає статті (завантажено: $N1$). Спробуйте «Завантажити всі» ще раз трохи згодом.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Нагорода в категорії"
+  },
+  "copyPapers": {
+    "message": "Копіювати статті"
+  },
+  "tsvYear": {
+    "message": "Рік"
+  },
+  "tsvTitle": {
+    "message": "Назва"
+  },
+  "tsvAuthors": {
+    "message": "Автори"
+  },
+  "tsvVenue": {
+    "message": "Видання"
+  },
+  "tsvAwards": {
+    "message": "Нагороди та доповіді"
+  },
+  "tsvCitations": {
+    "message": "Цитування"
+  },
+  "optHideTitle": {
+    "message": "Власні блоки Scholar"
+  },
+  "optHideHint": {
+    "message": "Приховайте частини сторінки профілю, які повторюють панель або не потрібні вам. Доки ви не ввімкнете, нічого не приховується."
+  },
+  "optHideCited": {
+    "message": "Цитується"
+  },
+  "optHideCitedHint": {
+    "message": "Таблиця цитувань, h-індексу та i10-індексу і її графік: панель показує ті самі підсумки для виділених статей."
+  },
+  "optHideCo": {
+    "message": "Співавтори"
+  },
+  "optHideCoHint": {
+    "message": "Список співавторів на бічній панелі."
+  },
+  "optHideAccess": {
+    "message": "Відкритий доступ"
+  },
+  "optHideAccessHint": {
+    "message": "Блок відкритого доступу на бічній панелі."
+  },
+  "optMergeTitle": {
+    "message": "Дублікати записів"
+  },
+  "optMergeHint": {
+    "message": "У деяких профілях одну статтю вказано кілька разів."
+  },
+  "optMergeLabel": {
+    "message": "Об’єднувати дублікати"
+  },
+  "optMergeLabelHint": {
+    "message": "Записи з однаковою назвою (без урахування регістру, діакритики й розділових знаків) і першим автором зливаються в один: лишається найцитованіший, з цитуваннями всіх. Панель рахує його один раз."
+  },
+  "mergedTip": {
+    "message": "Об’єднано записів: $N1$; враховано цитування всіх",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Мова"
+  },
+  "optLanguageHint": {
+    "message": "Мова розширення та сторінок Scholar, які ви відкриваєте."
+  },
+  "optLanguageUi": {
+    "message": "Мова розширення"
+  },
+  "optLanguageAuto": {
+    "message": "Як у браузері"
+  },
+  "optLanguageScholar": {
+    "message": "Відкривати Scholar мовою"
+  },
+  "optLanguageScholarHint": {
+    "message": "Профіль Scholar, відкритий іншою мовою (наприклад, за надісланим посиланням), відкривається заново цією."
+  },
+  "optLanguageKeep": {
+    "message": "Не змінювати"
+  },
+  "optColorsTitle": {
+    "message": "Кольори"
+  },
+  "optColorsHint": {
+    "message": "Колір кожної авторської позиції: рядки, позначки імені, панель і спливне вікно на панелі інструментів."
+  },
+  "optColorsReset": {
+    "message": "Повернути стандартні кольори"
+  }
+}

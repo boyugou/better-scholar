@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar: autoría y rangos"
+  },
+  "extDescription": {
+    "message": "Resalta en Google Scholar tus artículos como primer, coprimer o último autor, con rango CCF / CORE por sede y resumen rol × rango."
+  },
+  "extShortName": {
+    "message": "Autoría y rangos"
+  },
+  "panelTitle": {
+    "message": "Posición de autoría y rangos de las sedes"
+  },
+  "summaryTitle": {
+    "message": "Artículos por posición y rango"
+  },
+  "marksTitle": {
+    "message": "Premios y ponencias"
+  },
+  "markAward": {
+    "message": "Premios"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Mejor artículo"
+  },
+  "mkBestStudent": {
+    "message": "Mejor artículo de estudiante"
+  },
+  "mkOutstanding": {
+    "message": "Artículo sobresaliente"
+  },
+  "mkDistinguished": {
+    "message": "Artículo distinguido"
+  },
+  "mkRunnerUp": {
+    "message": "Mención honorífica"
+  },
+  "mkTot": {
+    "message": "Premio a la trayectoria (test of time)"
+  },
+  "mkFinalist": {
+    "message": "Finalista a mejor artículo"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Según lo que los propios autores escriben en el título y en la sede de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
+  },
+  "marksAsWritten": {
+    "message": "según los autores o la lista de premios"
+  },
+  "tipMarkAuthor": {
+    "message": "Escrito por el autor (sin verificar): «$N1$»",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "En la lista de premios: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Solo resaltados"
+  },
+  "yearLabel": {
+    "message": "Año"
+  },
+  "yearStart": {
+    "message": "Desde"
+  },
+  "yearEnd": {
+    "message": "Hasta"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Primero"
+  },
+  "roleCofirst": {
+    "message": "Coprimero"
+  },
+  "roleSecond": {
+    "message": "Segundo"
+  },
+  "roleLast": {
+    "message": "Último"
+  },
+  "roleMiddle": {
+    "message": "Otros"
+  },
+  "roleHidden": {
+    "message": "Oculto"
+  },
+  "colRole": {
+    "message": "Posición"
+  },
+  "colTotal": {
+    "message": "Todos"
+  },
+  "tipUnranked": {
+    "message": "Sin rango"
+  },
+  "tipHidden": {
+    "message": "Scholar acortó la lista de autores, así que no se ve la posición del titular del perfil"
+  },
+  "copySummary": {
+    "message": "Copiar resumen"
+  },
+  "copyTable": {
+    "message": "Copiar como tabla"
+  },
+  "copied": {
+    "message": "Copiado"
+  },
+  "coverLoaded": {
+    "message": "$N1$ artículos cargados",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 artículo cargado"
+  },
+  "loadingAll": {
+    "message": "Cargando… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Cargar todo"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "coverHidden": {
+    "message": "$N1$ posiciones ocultas por listas de autores acortadas",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 posición oculta por una lista de autores acortada"
+  },
+  "resolveBtn": {
+    "message": "Completar"
+  },
+  "resolveHint": {
+    "message": "Abre la página de cada artículo en Scholar (aprox. uno por segundo) para leer la lista completa de autores."
+  },
+  "resolving": {
+    "message": "Leyendo páginas de artículos… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google ha pedido un CAPTCHA. Resuélvelo en una pestaña normal y vuelve a intentarlo."
+  },
+  "resolveDone": {
+    "message": "Listo."
+  },
+  "coverAbsent": {
+    "message": "$N1$ artículos en los que el nombre del perfil no figura entre los autores",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 artículo en el que el nombre del perfil no figura entre los autores"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ artículos en sedes sin rango",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 artículo en una sede sin rango"
+  },
+  "copyUnmatched": {
+    "message": "Copiar lista"
+  },
+  "reportLink": {
+    "message": "Informar"
+  },
+  "layoutWarning": {
+    "message": "Parece que el diseño de la página de Scholar ha cambiado: esta extensión no puede leer las líneas de autores. Por favor, infórmalo."
+  },
+  "variantsTitle": {
+    "message": "¿No coincide tu nombre? Añade una grafía"
+  },
+  "variantsPlaceholder": {
+    "message": "p. ej., Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Añadir"
+  },
+  "variantRemove": {
+    "message": "Quitar"
+  },
+  "variantAutoTip": {
+    "message": "Añadida automáticamente: el nombre de tu perfil en el otro orden te encuentra en $1 artículos"
+  },
+  "variantSuggest": {
+    "message": "¿Quizá tú?"
+  },
+  "variantSuggestTip": {
+    "message": "Aparece en $1 artículos cuya lista de autores no te nombra de otro modo: haz clic para añadir esta grafía"
+  },
+  "expand": {
+    "message": "Expandir"
+  },
+  "collapse": {
+    "message": "Contraer"
+  },
+  "metricsTitle": {
+    "message": "Artículos resaltados"
+  },
+  "mPapers": {
+    "message": "Artículos"
+  },
+  "mCitations": {
+    "message": "Citas"
+  },
+  "mH": {
+    "message": "Índice h"
+  },
+  "mI10": {
+    "message": "Índice i10"
+  },
+  "metricsOf": {
+    "message": "de"
+  },
+  "dataNote": {
+    "message": "Los rangos proceden de las listas actuales de $N1$, no del rango en el momento de la publicación. CCF indica que su lista no debe usarse como base para la evaluación académica.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Coincide por nombre"
+  },
+  "ruleAcronym": {
+    "message": "Coincide por siglas"
+  },
+  "rulePrefix": {
+    "message": "Coincide por la parte visible de un nombre acortado"
+  },
+  "tipToday": {
+    "message": "lista actual, no el rango en la publicación"
+  },
+  "tipPosition": {
+    "message": "posición $N1$ de $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "de la página del artículo"
+  },
+  "copyFirst": {
+    "message": "Primer autor"
+  },
+  "copyCofirst": {
+    "message": "Coprimer autor"
+  },
+  "copySecond": {
+    "message": "Segundo autor"
+  },
+  "copyLast": {
+    "message": "Último autor"
+  },
+  "copyMiddle": {
+    "message": "Otras posiciones"
+  },
+  "tsvRole": {
+    "message": "Posición"
+  },
+  "tsvTotal": {
+    "message": "Total"
+  },
+  "popupNotProfile": {
+    "message": "Abre un perfil de autor de Google Scholar para ver aquí su resumen."
+  },
+  "popupReading": {
+    "message": "Leyendo la página…"
+  },
+  "popupPapers": {
+    "message": "$N1$ artículos",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 artículo"
+  },
+  "popupOpenScholar": {
+    "message": "Abrir Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Ajustes"
+  },
+  "optHeading": {
+    "message": "Ajustes"
+  },
+  "optPreviewTitle": {
+    "message": "Vista previa"
+  },
+  "optPreviewNote": {
+    "message": "Artículos de ejemplo tal como se verán en un perfil de Scholar. «A Author» eres tú."
+  },
+  "optSaved": {
+    "message": "Guardado"
+  },
+  "optRolesTitle": {
+    "message": "Resaltar mis artículos"
+  },
+  "optRolesHint": {
+    "message": "Cada posición tiene su propio color de fila. Los artículos en los que estás en medio quedan sin resaltar."
+  },
+  "optMarkName": {
+    "message": "Marcar mi nombre en la línea de autores"
+  },
+  "optMarkNameHint": {
+    "message": "En negrita y con color. Pasa el cursor por encima para ver tu posición."
+  },
+  "optRanksTitle": {
+    "message": "Rangos de las sedes"
+  },
+  "optCcf": {
+    "message": "Rango CCF"
+  },
+  "optCcfHint": {
+    "message": "Lista de la Federación China de Computación, 7.ª edición (2026)."
+  },
+  "optCore": {
+    "message": "Rango CORE"
+  },
+  "optCoreHint": {
+    "message": "Clasificación de congresos CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Premios y ponencias"
+  },
+  "optMarkAwardHint": {
+    "message": "Mejor artículo, artículo sobresaliente y distinguido, mención honorífica, test of time y finalistas a mejor artículo."
+  },
+  "optPanelTitle": {
+    "message": "Panel de resumen"
+  },
+  "optPanelShow": {
+    "message": "Mostrar el panel de resumen"
+  },
+  "optPanelShowHint": {
+    "message": "La tabla de posición × rango en la página del perfil. Desactivado: solo se marca la lista de artículos."
+  },
+  "optPanelSummary": {
+    "message": "Tabla de posición × rango"
+  },
+  "optPanelSummaryHint": {
+    "message": "La tabla de tus artículos por posición y rango, con sus botones de copiar y la nota sobre el origen de los rangos."
+  },
+  "optPanelMarks": {
+    "message": "Recuento de premios y ponencias"
+  },
+  "optPanelMarksHint": {
+    "message": "El número de artículos premiados y de ponencias por categoría; un clic para verlos."
+  },
+  "optPanelStatus": {
+    "message": "Artículos cargados y sedes sin rango"
+  },
+  "optPanelStatusHint": {
+    "message": "Cuántos artículos están cargados, el botón «Cargar todo» y la lista de artículos en sedes sin rango."
+  },
+  "optPanelNames": {
+    "message": "Ayuda con la grafía del nombre"
+  },
+  "optPanelNamesHint": {
+    "message": "«¿No coincide tu nombre? Añade una grafía» y las sugerencias para tu nombre."
+  },
+  "optPanelCompact": {
+    "message": "Compacto: solo filtros y totales de citas"
+  },
+  "optPanelFull": {
+    "message": "Todo"
+  },
+  "optPanelFilters": {
+    "message": "Filtros"
+  },
+  "optPanelFiltersHint": {
+    "message": "Solo artículos resaltados y un intervalo de años."
+  },
+  "optPanelMetrics": {
+    "message": "Totales de citas"
+  },
+  "optPanelMetricsHint": {
+    "message": "Artículos, citas, índice h e índice i10 de los artículos resaltados."
+  },
+  "optDataTitle": {
+    "message": "Datos guardados"
+  },
+  "optClearCache": {
+    "message": "Borrar los datos de artículos guardados"
+  },
+  "optCacheCount": {
+    "message": "Las listas de autores de $N1$ artículos están guardadas en este dispositivo (leídas con Completar, se conservan 90 días).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "La lista de autores de 1 artículo está guardada en este dispositivo (leída con Completar, se conserva 90 días)."
+  },
+  "optCacheNone": {
+    "message": "No hay datos de artículos guardados."
+  },
+  "optCleared": {
+    "message": "Borrado"
+  },
+  "optReset": {
+    "message": "Restablecer valores"
+  },
+  "optResetConfirm": {
+    "message": "¿Restablecer todos estos ajustes a sus valores predeterminados?"
+  },
+  "optStorage": {
+    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. No se envía nada a ningún sitio."
+  },
+  "optSample": {
+    "message": "Artículo de ejemplo"
+  },
+  "optLoadTitle": {
+    "message": "Lista de artículos"
+  },
+  "optAutoLoad": {
+    "message": "Cargar todos los artículos automáticamente"
+  },
+  "optAutoLoadHint": {
+    "message": "Al principio Scholar solo muestra los primeros artículos. Esta opción pulsa por ti su botón «Mostrar más», aproximadamente una vez por segundo, hasta cargar toda la lista, y se detiene si Scholar deja de responder. Desactivada: el panel ofrece «Cargar todo»."
+  },
+  "loadStalled": {
+    "message": "Scholar no envió más artículos ($N1$ cargados). Vuelve a probar «Cargar todo» en un momento.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Premio de categoría"
+  },
+  "copyPapers": {
+    "message": "Copiar artículos"
+  },
+  "tsvYear": {
+    "message": "Año"
+  },
+  "tsvTitle": {
+    "message": "Título"
+  },
+  "tsvAuthors": {
+    "message": "Autores"
+  },
+  "tsvVenue": {
+    "message": "Sede"
+  },
+  "tsvAwards": {
+    "message": "Premios y ponencias"
+  },
+  "tsvCitations": {
+    "message": "Citas"
+  },
+  "optHideTitle": {
+    "message": "Bloques propios de Scholar"
+  },
+  "optHideHint": {
+    "message": "Oculta partes de la página del perfil que repiten el panel o que no usas. No se oculta nada hasta que lo actives."
+  },
+  "optHideCited": {
+    "message": "Citado por"
+  },
+  "optHideCitedHint": {
+    "message": "La tabla de citas, índice h e índice i10 y su gráfico: el panel muestra los mismos totales de los artículos resaltados."
+  },
+  "optHideCo": {
+    "message": "Coautores"
+  },
+  "optHideCoHint": {
+    "message": "La lista de coautores de la barra lateral."
+  },
+  "optHideAccess": {
+    "message": "Acceso público"
+  },
+  "optHideAccessHint": {
+    "message": "El cuadro de acceso público de la barra lateral."
+  },
+  "optMergeTitle": {
+    "message": "Entradas duplicadas"
+  },
+  "optMergeHint": {
+    "message": "Algunos perfiles listan un mismo artículo varias veces."
+  },
+  "optMergeLabel": {
+    "message": "Combinar duplicados"
+  },
+  "optMergeLabelHint": {
+    "message": "Las entradas con el mismo título (sin contar mayúsculas, acentos ni puntuación) y el mismo primer autor pasan a ser una: se queda la más citada y muestra las citas de todas. El panel la cuenta una sola vez."
+  },
+  "mergedTip": {
+    "message": "Combinada a partir de $N1$ entradas: las citas de todas ellas",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Idioma"
+  },
+  "optLanguageHint": {
+    "message": "El idioma de esta extensión y de las páginas de Scholar que abres."
+  },
+  "optLanguageUi": {
+    "message": "Idioma de la extensión"
+  },
+  "optLanguageAuto": {
+    "message": "Seguir el navegador"
+  },
+  "optLanguageScholar": {
+    "message": "Abrir Scholar en"
+  },
+  "optLanguageScholarHint": {
+    "message": "Un perfil de Scholar que abras en otro idioma (un enlace compartido, por ejemplo) se vuelve a abrir en este."
+  },
+  "optLanguageKeep": {
+    "message": "Dejar como está"
+  },
+  "optColorsTitle": {
+    "message": "Colores"
+  },
+  "optColorsHint": {
+    "message": "El color de cada posición de autoría: filas, marcas del nombre, el panel y la ventana de la barra de herramientas."
+  },
+  "optColorsReset": {
+    "message": "Volver a los colores estándar"
+  }
+}

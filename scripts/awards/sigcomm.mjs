@@ -53,7 +53,7 @@ export function parse(html, source = URL_PAGE) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const file = process.argv[2];
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(URL_PAGE, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(URL_PAGE, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
   const { entries, notes } = parse(html);
   console.error(entries.length + " entries");
   for (const n of notes) console.error("note:", n);

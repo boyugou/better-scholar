@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Scholar Author Roles & Venue Ranks"
+    "message": "Scholar Roles & Ranks"
   },
   "extDescription": {
     "message": "Highlight first-, co-first- and last-author papers on Google Scholar, with each venue's CCF / CORE rank and a role × rank summary."
@@ -569,5 +569,35 @@
         "content": "$1"
       }
     }
+  },
+  "optLanguageTitle": {
+    "message": "Language"
+  },
+  "optLanguageHint": {
+    "message": "The language of this extension, and of the Scholar pages you open."
+  },
+  "optLanguageUi": {
+    "message": "Extension language"
+  },
+  "optLanguageAuto": {
+    "message": "Follow the browser"
+  },
+  "optLanguageScholar": {
+    "message": "Open Scholar in"
+  },
+  "optLanguageScholarHint": {
+    "message": "A Scholar profile you open in another language (a shared link, say) is opened again in this one."
+  },
+  "optLanguageKeep": {
+    "message": "Leave as it is"
+  },
+  "optColorsTitle": {
+    "message": "Colours"
+  },
+  "optColorsHint": {
+    "message": "The colour of each authorship role: rows, name marks, the panel and the toolbar popup."
+  },
+  "optColorsReset": {
+    "message": "Back to the standard colours"
   }
 }

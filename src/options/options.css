@@ -67,3 +67,7 @@ button.btn.danger { border-color: #d93025; color: #d93025; }
 button.btn.danger:hover { background: #fce8e6; border-color: #d93025; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+select.sel { font: inherit; font-size: 13px; padding: 5px 8px; max-width: 220px; border: 1px solid #dadce0; border-radius: 6px; background: var(--card); color: var(--text); cursor: pointer; }
+select.sel:hover { border-color: var(--btn-line); }
+select.sel:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input.clr { width: 40px; height: 26px; padding: 0; border: 1px solid #dadce0; border-radius: 6px; background: none; cursor: pointer; }

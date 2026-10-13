@@ -64,7 +64,7 @@ export function parseProgram(program) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const get = async (url) => {
-  const r = await fetch(url, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } });
+  const r = await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } });
   if (!r.ok) throw new Error(`${url}: ${r.status}`);
   return r.json();
 };

@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar 著者順とランク"
+  },
+  "extDescription": {
+    "message": "Google Scholar で筆頭・共同筆頭・最終著者の論文をハイライトし、各会議・ジャーナルの CCF / CORE ランクと、著者順×ランクの集計を表示します。"
+  },
+  "extShortName": {
+    "message": "著者順とランク"
+  },
+  "panelTitle": {
+    "message": "著者順と会議・ジャーナルのランク"
+  },
+  "summaryTitle": {
+    "message": "著者順・ランク別の論文数"
+  },
+  "marksTitle": {
+    "message": "受賞と発表形式"
+  },
+  "markAward": {
+    "message": "受賞"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "最優秀論文賞"
+  },
+  "mkBestStudent": {
+    "message": "最優秀学生論文賞"
+  },
+  "mkOutstanding": {
+    "message": "優秀論文賞"
+  },
+  "mkDistinguished": {
+    "message": "功労論文賞"
+  },
+  "mkRunnerUp": {
+    "message": "次点"
+  },
+  "mkTot": {
+    "message": "時の試練賞"
+  },
+  "mkFinalist": {
+    "message": "最優秀論文賞候補"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Scholar 上の各論文のタイトルや掲載誌の文言にある著者自身の記載（未検証）と、主要会議の受賞論文リスト（内蔵）に基づきます。"
+  },
+  "marksAsWritten": {
+    "message": "著者の記載または受賞リストによる"
+  },
+  "tipMarkAuthor": {
+    "message": "著者の記載（未検証）：「$N1$」",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "受賞リストに掲載：$N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "ハイライトのみ"
+  },
+  "yearLabel": {
+    "message": "年"
+  },
+  "yearStart": {
+    "message": "開始"
+  },
+  "yearEnd": {
+    "message": "終了"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "筆頭"
+  },
+  "roleCofirst": {
+    "message": "共同筆頭"
+  },
+  "roleSecond": {
+    "message": "2番目"
+  },
+  "roleLast": {
+    "message": "最終"
+  },
+  "roleMiddle": {
+    "message": "その他"
+  },
+  "roleHidden": {
+    "message": "不明"
+  },
+  "colRole": {
+    "message": "著者順"
+  },
+  "colTotal": {
+    "message": "合計"
+  },
+  "tipUnranked": {
+    "message": "ランクなし"
+  },
+  "tipHidden": {
+    "message": "Scholar が著者リストを省略しているため、プロフィール本人の順位が表示されません"
+  },
+  "copySummary": {
+    "message": "集計をコピー"
+  },
+  "copyTable": {
+    "message": "表としてコピー"
+  },
+  "copied": {
+    "message": "コピーしました"
+  },
+  "coverLoaded": {
+    "message": "$N1$ 件の論文を読み込み済み",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 件の論文を読み込み済み"
+  },
+  "loadingAll": {
+    "message": "読み込み中… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "すべて読み込む"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "coverHidden": {
+    "message": "$N1$ 件は著者リストの省略により著者順が不明",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 件は著者リストの省略により著者順が不明"
+  },
+  "resolveBtn": {
+    "message": "補完"
+  },
+  "resolveHint": {
+    "message": "各論文の Scholar のページを（約 1 秒に 1 件）開き、完全な著者リストを読み取ります。"
+  },
+  "resolving": {
+    "message": "論文ページを読み取り中… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google が CAPTCHA を求めています。通常のタブで解決してから、もう一度お試しください。"
+  },
+  "resolveDone": {
+    "message": "完了しました。"
+  },
+  "coverAbsent": {
+    "message": "$N1$ 件は著者リストにプロフィールの名前がありません",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 件は著者リストにプロフィールの名前がありません"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ 件はランクのない掲載先の論文です",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 件はランクのない掲載先の論文です"
+  },
+  "copyUnmatched": {
+    "message": "リストをコピー"
+  },
+  "reportLink": {
+    "message": "報告"
+  },
+  "layoutWarning": {
+    "message": "Scholar のページ構成が変わったようで、この拡張機能は著者の行を読み取れません。ご報告ください。"
+  },
+  "variantsTitle": {
+    "message": "名前が一致しない場合は表記を追加"
+  },
+  "variantsPlaceholder": {
+    "message": "例：Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "追加"
+  },
+  "variantRemove": {
+    "message": "削除"
+  },
+  "variantAutoTip": {
+    "message": "自動追加：プロフィール名の姓名を入れ替えると $1 件の論文で見つかります"
+  },
+  "variantSuggest": {
+    "message": "ご本人では？"
+  },
+  "variantSuggestTip": {
+    "message": "ほかの表記では著者に含まれない $1 件の論文に登場します。クリックでこの表記を追加"
+  },
+  "expand": {
+    "message": "展開"
+  },
+  "collapse": {
+    "message": "折りたたむ"
+  },
+  "metricsTitle": {
+    "message": "ハイライトした論文"
+  },
+  "mPapers": {
+    "message": "論文数"
+  },
+  "mCitations": {
+    "message": "被引用数"
+  },
+  "mH": {
+    "message": "h指数"
+  },
+  "mI10": {
+    "message": "i10指数"
+  },
+  "metricsOf": {
+    "message": "/"
+  },
+  "dataNote": {
+    "message": "ランクは論文の発表時ではなく、現在の $N1$ リストに基づきます。CCF は、そのリストを学術評価の根拠にしないよう明記しています。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "名称で一致"
+  },
+  "ruleAcronym": {
+    "message": "略称で一致"
+  },
+  "rulePrefix": {
+    "message": "省略された名称の表示部分で一致"
+  },
+  "tipToday": {
+    "message": "現在のリストによるもので、発表時のランクではありません"
+  },
+  "tipPosition": {
+    "message": "$N2$ 人中 $N1$ 番目",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "論文ページより"
+  },
+  "copyFirst": {
+    "message": "筆頭著者"
+  },
+  "copyCofirst": {
+    "message": "共同筆頭著者"
+  },
+  "copySecond": {
+    "message": "2番目の著者"
+  },
+  "copyLast": {
+    "message": "最終著者"
+  },
+  "copyMiddle": {
+    "message": "その他の順位"
+  },
+  "tsvRole": {
+    "message": "著者順"
+  },
+  "tsvTotal": {
+    "message": "合計"
+  },
+  "popupNotProfile": {
+    "message": "Google Scholar の著者プロフィールを開くと、ここに集計が表示されます。"
+  },
+  "popupReading": {
+    "message": "ページを読み取り中…"
+  },
+  "popupPapers": {
+    "message": "$N1$ 件の論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 件の論文"
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar を開く"
+  },
+  "settingsOpen": {
+    "message": "設定"
+  },
+  "optHeading": {
+    "message": "設定"
+  },
+  "optPreviewTitle": {
+    "message": "プレビュー"
+  },
+  "optPreviewNote": {
+    "message": "Scholar のプロフィールでの表示例です。「A Author」があなたです。"
+  },
+  "optSaved": {
+    "message": "保存しました"
+  },
+  "optRolesTitle": {
+    "message": "自分の論文をハイライト"
+  },
+  "optRolesHint": {
+    "message": "著者順ごとに行の色を設定できます。中間の著者順の論文はそのままです。"
+  },
+  "optMarkName": {
+    "message": "著者の行で自分の名前を強調"
+  },
+  "optMarkNameHint": {
+    "message": "太字と色付きで表示します。ポインタを合わせると順位が表示されます。"
+  },
+  "optRanksTitle": {
+    "message": "会議・ジャーナルのランク"
+  },
+  "optCcf": {
+    "message": "CCF ランク"
+  },
+  "optCcfHint": {
+    "message": "中国計算機学会（CCF）の推薦リスト、第 7 版（2026）。"
+  },
+  "optCore": {
+    "message": "CORE ランク"
+  },
+  "optCoreHint": {
+    "message": "CORE 会議ランキング、ICORE 2026。"
+  },
+  "optMarksTitle": {
+    "message": "受賞と発表形式"
+  },
+  "optMarkAwardHint": {
+    "message": "最優秀論文賞、優秀論文賞、功労論文賞、次点、時の試練賞、最優秀論文賞候補。"
+  },
+  "optPanelTitle": {
+    "message": "集計パネル"
+  },
+  "optPanelShow": {
+    "message": "集計パネルを表示"
+  },
+  "optPanelShowHint": {
+    "message": "プロフィールページの著者順×ランクの表です。オフにすると論文リストのマーク付けだけを行います。"
+  },
+  "optPanelSummary": {
+    "message": "著者順×ランクの表"
+  },
+  "optPanelSummaryHint": {
+    "message": "著者順とランク別の論文数の表。コピーボタンと、ランクの出典の注記を含みます。"
+  },
+  "optPanelMarks": {
+    "message": "受賞・発表の件数"
+  },
+  "optPanelMarksHint": {
+    "message": "受賞論文と発表形式ごとの件数。クリックで一覧を表示します。"
+  },
+  "optPanelStatus": {
+    "message": "読み込み済みの論文とランクなしの掲載先"
+  },
+  "optPanelStatusHint": {
+    "message": "読み込んだ論文数、「すべて読み込む」ボタン、ランクのない掲載先の論文リスト。"
+  },
+  "optPanelNames": {
+    "message": "名前の表記サポート"
+  },
+  "optPanelNamesHint": {
+    "message": "「名前が一致しない場合は表記を追加」と、お名前の候補。"
+  },
+  "optPanelCompact": {
+    "message": "コンパクト：絞り込みと被引用数のみ"
+  },
+  "optPanelFull": {
+    "message": "すべて"
+  },
+  "optPanelFilters": {
+    "message": "絞り込み"
+  },
+  "optPanelFiltersHint": {
+    "message": "ハイライトした論文のみ、および年の範囲。"
+  },
+  "optPanelMetrics": {
+    "message": "被引用数の集計"
+  },
+  "optPanelMetricsHint": {
+    "message": "ハイライトした論文の論文数、被引用数、h指数、i10指数。"
+  },
+  "optDataTitle": {
+    "message": "保存データ"
+  },
+  "optClearCache": {
+    "message": "保存した論文情報を消去"
+  },
+  "optCacheCount": {
+    "message": "$N1$ 件の論文の著者リストをこの端末に保存しています（「補完」で取得、90 日間保持）。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "1 件の論文の著者リストをこの端末に保存しています（「補完」で取得、90 日間保持）。"
+  },
+  "optCacheNone": {
+    "message": "保存された論文情報はありません。"
+  },
+  "optCleared": {
+    "message": "消去しました"
+  },
+  "optReset": {
+    "message": "初期設定に戻す"
+  },
+  "optResetConfirm": {
+    "message": "これらの設定をすべて初期設定に戻しますか？"
+  },
+  "optStorage": {
+    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。外部には何も送信されません。"
+  },
+  "optSample": {
+    "message": "サンプル論文"
+  },
+  "optLoadTitle": {
+    "message": "論文リスト"
+  },
+  "optAutoLoad": {
+    "message": "すべての論文を自動で読み込む"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar は最初、先頭の論文しか表示しません。この設定では、Scholar の「もっと見る」ボタンを約 1 秒に 1 回、代わりに押して全件を読み込み、Scholar の応答が止まると中断します。オフの場合は、パネルに「すべて読み込む」が表示されます。"
+  },
+  "loadStalled": {
+    "message": "Scholar からこれ以上論文が届きません（$N1$ 件を読み込み済み）。しばらくしてからもう一度「すべて読み込む」をお試しください。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "部門賞"
+  },
+  "copyPapers": {
+    "message": "論文をコピー"
+  },
+  "tsvYear": {
+    "message": "年"
+  },
+  "tsvTitle": {
+    "message": "タイトル"
+  },
+  "tsvAuthors": {
+    "message": "著者"
+  },
+  "tsvVenue": {
+    "message": "掲載先"
+  },
+  "tsvAwards": {
+    "message": "受賞と発表形式"
+  },
+  "tsvCitations": {
+    "message": "被引用数"
+  },
+  "optHideTitle": {
+    "message": "Scholar 標準のブロック"
+  },
+  "optHideHint": {
+    "message": "パネルと重複する部分や使わない部分をプロフィールページで非表示にします。オンにするまでは何も隠しません。"
+  },
+  "optHideCited": {
+    "message": "被引用数"
+  },
+  "optHideCitedHint": {
+    "message": "被引用数・h指数・i10指数の表とグラフ。パネルにはハイライトした論文の同じ集計が表示されます。"
+  },
+  "optHideCo": {
+    "message": "共著者"
+  },
+  "optHideCoHint": {
+    "message": "サイドバーの共著者リスト。"
+  },
+  "optHideAccess": {
+    "message": "公開アクセス"
+  },
+  "optHideAccessHint": {
+    "message": "サイドバーの公開アクセスのボックス。"
+  },
+  "optMergeTitle": {
+    "message": "重複エントリ"
+  },
+  "optMergeHint": {
+    "message": "プロフィールによっては、同じ論文が複数回掲載されています。"
+  },
+  "optMergeLabel": {
+    "message": "重複を統合"
+  },
+  "optMergeLabelHint": {
+    "message": "タイトル（大文字・小文字、アクセント、句読点の違いを除く）と筆頭著者が同じエントリを 1 件にまとめます。最も被引用数の多いものを残し、全エントリの被引用数を合算して表示します。パネルでは 1 件として数えます。"
+  },
+  "mergedTip": {
+    "message": "$N1$ 件のエントリを統合：すべての被引用数を合算",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "言語"
+  },
+  "optLanguageHint": {
+    "message": "この拡張機能の言語と、開く Scholar ページの言語です。"
+  },
+  "optLanguageUi": {
+    "message": "拡張機能の言語"
+  },
+  "optLanguageAuto": {
+    "message": "ブラウザに合わせる"
+  },
+  "optLanguageScholar": {
+    "message": "Scholar を開く言語"
+  },
+  "optLanguageScholarHint": {
+    "message": "別の言語で開いた Scholar のプロフィール（共有リンクなど）は、この言語で開き直します。"
+  },
+  "optLanguageKeep": {
+    "message": "そのままにする"
+  },
+  "optColorsTitle": {
+    "message": "色"
+  },
+  "optColorsHint": {
+    "message": "著者順ごとの色：論文の行、名前のマーク、パネル、ツールバーのポップアップ。"
+  },
+  "optColorsReset": {
+    "message": "標準の色に戻す"
+  }
+}

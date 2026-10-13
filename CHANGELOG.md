@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.11.0 — 2026-10-12
+
+- **30 languages.** Settings → Language: follow the browser, or pick any of 30 (English, 简体中文, 繁體中文, 日本語, 한국어, Español, Français, Deutsch, Italiano, Português ×2, Русский, Українська, Polski, Čeština, Nederlands, Svenska, Dansk, Suomi, Norsk, Türkçe, العربية, עברית, हिन्दी, Bahasa Indonesia, Tiếng Việt, ไทย, Ελληνικά, Magyar, Română). The panel, popup and settings redraw at once; Arabic and Hebrew read right to left. A second choice, **Open Scholar in**, opens a profile again with that `hl=` when its address says another language (a shared link, say).
+- **Role colours.** Settings → Colours: a colour for each authorship role, used by rows, name marks, the panel and the popup; one button goes back to the standard colours. (Chrome 111 or newer, for `color-mix`.)
+- The extension is now called **Scholar Roles & Ranks**.
+- `scripts/page-cache.mjs` keeps a copy of each public page the data scripts read in the git-ignored `.cache/pages/`.
+
 ## 2.10.132 — 2026-10-12
 
 - Settings: **Merge duplicates** (off by default). Profiles often list one paper twice, the title differing only in capitals, accents or punctuation. With it on, such entries (same title, same first author) become one: the most cited stays, shows the citations of all of them (underlined, with a tooltip), and the panel counts it once. Tested in `test/duplicates.test.js` and end to end.

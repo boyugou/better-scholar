@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar szerepek és ranglisták"
+  },
+  "extDescription": {
+    "message": "Kiemeli a Google Scholaron az első, társelső és utolsó szerzős cikkeidet, CCF / CORE rangokkal és szerep × rang összesítéssel."
+  },
+  "extShortName": {
+    "message": "Szerep·Rang"
+  },
+  "panelTitle": {
+    "message": "Szerzői szerepek és venue-rangok"
+  },
+  "summaryTitle": {
+    "message": "Cikkek szerep és rang szerint"
+  },
+  "marksTitle": {
+    "message": "Díjak és előadások"
+  },
+  "markAward": {
+    "message": "Díjak"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Legjobb cikk"
+  },
+  "mkBestStudent": {
+    "message": "Legjobb diákcikk"
+  },
+  "mkOutstanding": {
+    "message": "Kiemelkedő cikk"
+  },
+  "mkDistinguished": {
+    "message": "Kitüntetett cikk"
+  },
+  "mkRunnerUp": {
+    "message": "Dicséretes említés"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Legjobb cikk döntőse"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "A szerzők saját szavaiból a Scholaron az egyes cikkek címében és venue-szövegében (nincs ellenőrizve), valamint a nagy konferenciák díjnyertes cikkeinek beépített listájából."
+  },
+  "marksAsWritten": {
+    "message": "a szerzők saját szavaiból vagy a díjlistából"
+  },
+  "tipMarkAuthor": {
+    "message": "A szerző írta (nincs ellenőrizve): „$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "A díjlistán: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Csak a kiemeltek"
+  },
+  "yearLabel": {
+    "message": "Év"
+  },
+  "yearStart": {
+    "message": "Tól"
+  },
+  "yearEnd": {
+    "message": "Ig"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Első"
+  },
+  "roleCofirst": {
+    "message": "Társelső"
+  },
+  "roleSecond": {
+    "message": "Második"
+  },
+  "roleLast": {
+    "message": "Utolsó"
+  },
+  "roleMiddle": {
+    "message": "Egyéb"
+  },
+  "roleHidden": {
+    "message": "Rejtett"
+  },
+  "colRole": {
+    "message": "Szerep"
+  },
+  "colTotal": {
+    "message": "Mind"
+  },
+  "tipUnranked": {
+    "message": "Nincs rangsorolva"
+  },
+  "tipHidden": {
+    "message": "A Scholar megcsonkította a szerzők listáját, ezért a profil tulajdonosának helye nem látszik"
+  },
+  "copySummary": {
+    "message": "Összesítés másolása"
+  },
+  "copyTable": {
+    "message": "Másolás táblázatként"
+  },
+  "copied": {
+    "message": "Másolva"
+  },
+  "coverLoaded": {
+    "message": "$N1$ cikk betöltve",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Betöltés… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Összes betöltése"
+  },
+  "cancel": {
+    "message": "Mégse"
+  },
+  "coverHidden": {
+    "message": "$N1$ szerep rejtve a megcsonkított szerzői listák miatt",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Feloldás"
+  },
+  "resolveHint": {
+    "message": "Megnyitja az egyes cikkek oldalát a Scholaron (kb. másodpercenként egyet), hogy elolvassa a teljes szerzői listát."
+  },
+  "resolving": {
+    "message": "Cikkoldalak olvasása… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "A Google CAPTCHA-t kért. Oldd meg egy szokásos lapon, majd próbáld újra."
+  },
+  "resolveDone": {
+    "message": "Kész."
+  },
+  "coverAbsent": {
+    "message": "$N1$ cikk, amelynek szerzői listájában nincs ott a profil neve",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "$N1$ cikk rang nélküli venue-ban",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Lista másolása"
+  },
+  "reportLink": {
+    "message": "Jelentés"
+  },
+  "layoutWarning": {
+    "message": "Úgy tűnik, a Scholar oldalának felépítése megváltozott: a bővítmény nem tudja olvasni a szerzői sorokat. Kérjük, jelentsd."
+  },
+  "variantsTitle": {
+    "message": "Nem egyezik a név? Adj meg egy írásmódot"
+  },
+  "variantsPlaceholder": {
+    "message": "pl. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Hozzáadás"
+  },
+  "variantRemove": {
+    "message": "Eltávolítás"
+  },
+  "variantAutoTip": {
+    "message": "Automatikusan hozzáadva: a profilneved fordított sorrendben $1 cikkben talál meg"
+  },
+  "variantSuggest": {
+    "message": "Talán te vagy:"
+  },
+  "variantSuggestTip": {
+    "message": "$1 cikkben szerepel, amelynek szerzői listája más módon nem nevez meg — kattints az írásmód hozzáadásához"
+  },
+  "expand": {
+    "message": "Kibontás"
+  },
+  "collapse": {
+    "message": "Összecsukás"
+  },
+  "metricsTitle": {
+    "message": "Kiemelt cikkek"
+  },
+  "mPapers": {
+    "message": "Cikk"
+  },
+  "mCitations": {
+    "message": "Hivatkozás"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "/"
+  },
+  "dataNote": {
+    "message": "A rangok a mai $N1$ listákból származnak, nem a megjelenéskori rangból. A CCF kijelenti, hogy listája nem alapja a tudományos értékelésnek.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Névvel egyeztetve"
+  },
+  "ruleAcronym": {
+    "message": "Rövidítéssel egyeztetve"
+  },
+  "rulePrefix": {
+    "message": "A csonkolt név látható részével egyeztetve"
+  },
+  "tipToday": {
+    "message": "jelenlegi lista, nem a megjelenéskori rang"
+  },
+  "tipPosition": {
+    "message": "$N1$. hely a(z) $N2$ közül",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "a cikk oldaláról"
+  },
+  "copyFirst": {
+    "message": "Első szerző"
+  },
+  "copyCofirst": {
+    "message": "Társelső szerző"
+  },
+  "copySecond": {
+    "message": "Második szerző"
+  },
+  "copyLast": {
+    "message": "Utolsó szerző"
+  },
+  "copyMiddle": {
+    "message": "Egyéb helyek"
+  },
+  "tsvRole": {
+    "message": "Szerep"
+  },
+  "tsvTotal": {
+    "message": "Összesen"
+  },
+  "popupNotProfile": {
+    "message": "Nyiss meg egy Google Scholar szerzői profilt, hogy itt lásd az összesítését."
+  },
+  "popupReading": {
+    "message": "Az oldal olvasása…"
+  },
+  "popupPapers": {
+    "message": "$N1$ cikk",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar megnyitása"
+  },
+  "settingsOpen": {
+    "message": "Beállítások"
+  },
+  "optHeading": {
+    "message": "Beállítások"
+  },
+  "optPreviewTitle": {
+    "message": "Előnézet"
+  },
+  "optPreviewNote": {
+    "message": "Minta cikkek, ahogy egy Scholar-profilon megjelennek. Az „A Author” te vagy."
+  },
+  "optSaved": {
+    "message": "Mentve"
+  },
+  "optRolesTitle": {
+    "message": "Cikkeim kiemelése"
+  },
+  "optRolesHint": {
+    "message": "Minden pozíciónak saját sorszíne van. Azok a cikkek, ahol középen állsz, egyszerűek maradnak."
+  },
+  "optMarkName": {
+    "message": "Nevem jelölése a szerzői sorban"
+  },
+  "optMarkNameHint": {
+    "message": "Félkövér és színezett. Vidd rá az egeret, hogy lásd a helyedet."
+  },
+  "optRanksTitle": {
+    "message": "Venue-rangok"
+  },
+  "optCcf": {
+    "message": "CCF-rang"
+  },
+  "optCcfHint": {
+    "message": "A China Computer Federation listája, 7. kiadás (2026)."
+  },
+  "optCore": {
+    "message": "CORE-rang"
+  },
+  "optCoreHint": {
+    "message": "CORE konferencia-rangsor, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Díjak és előadások"
+  },
+  "optMarkAwardHint": {
+    "message": "Legjobb, kiemelkedő és kitüntetett cikk, dicséretes említés, test of time és a legjobb cikk döntősei."
+  },
+  "optPanelTitle": {
+    "message": "Összesítő panel"
+  },
+  "optPanelShow": {
+    "message": "Összesítő panel megjelenítése"
+  },
+  "optPanelShowHint": {
+    "message": "A szerep × rang táblázat a profiloldalon. Kikapcsolva: csak a cikklista kap jelölést."
+  },
+  "optPanelSummary": {
+    "message": "Szerep × rang táblázat"
+  },
+  "optPanelSummaryHint": {
+    "message": "A cikkeid táblázata pozíció és rang szerint, a Másolás gombokkal és a rangok forrásáról szóló megjegyzéssel."
+  },
+  "optPanelMarks": {
+    "message": "Díjak és előadások száma"
+  },
+  "optPanelMarksHint": {
+    "message": "A díjnyertes cikkek és az előadásszintek száma, egy kattintással listázható."
+  },
+  "optPanelStatus": {
+    "message": "Betöltött cikkek és rang nélküli venue-k"
+  },
+  "optPanelStatusHint": {
+    "message": "Hány cikk van betöltve, az „Összes betöltése” gomb, és a rang nélküli venue-k cikkeinek listája."
+  },
+  "optPanelNames": {
+    "message": "Névírási segítség"
+  },
+  "optPanelNamesHint": {
+    "message": "„Nem egyezik a név? Adj meg egy írásmódot” és a nevedre vonatkozó javaslatok."
+  },
+  "optPanelCompact": {
+    "message": "Kompakt: csak szűrők és hivatkozásösszegek"
+  },
+  "optPanelFull": {
+    "message": "Minden"
+  },
+  "optPanelFilters": {
+    "message": "Szűrők"
+  },
+  "optPanelFiltersHint": {
+    "message": "Csak a kiemelt cikkek és egy évtartomány."
+  },
+  "optPanelMetrics": {
+    "message": "Hivatkozásösszegek"
+  },
+  "optPanelMetricsHint": {
+    "message": "A kiemelt cikkek száma, hivatkozásai, h-indexe és i10-indexe."
+  },
+  "optDataTitle": {
+    "message": "Mentett adatok"
+  },
+  "optClearCache": {
+    "message": "Mentett cikkadatok törlése"
+  },
+  "optCacheCount": {
+    "message": "$N1$ cikk szerzői listája van mentve ezen az eszközön (a Feloldással beolvasva, 90 napig megőrizve).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Nincsenek mentett cikkadatok."
+  },
+  "optCleared": {
+    "message": "Törölve"
+  },
+  "optReset": {
+    "message": "Alaphelyzet"
+  },
+  "optResetConfirm": {
+    "message": "Visszaállítod az összes beállítást az alapértékekre?"
+  },
+  "optStorage": {
+    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. Semmi nem kerül elküldésre sehová."
+  },
+  "optSample": {
+    "message": "Minta cikk"
+  },
+  "optLoadTitle": {
+    "message": "Cikklista"
+  },
+  "optAutoLoad": {
+    "message": "Az összes cikk automatikus betöltése"
+  },
+  "optAutoLoadHint": {
+    "message": "A Scholar eleinte csak az első cikkeket mutatja. Ez helyetted megnyomja a saját „Továbbiak megjelenítése” gombját, kb. másodpercenként, amíg az egész lista be nem töltődik, és megáll, ha a Scholar nem válaszol. Kikapcsolva: a panel az „Összes betöltése” gombot kínálja."
+  },
+  "loadStalled": {
+    "message": "A Scholar nem küldött több cikket ($N1$ betöltve). Próbáld újra az „Összes betöltése” gombot egy kis idő múlva.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategóriadíj"
+  },
+  "copyPapers": {
+    "message": "Cikkek másolása"
+  },
+  "tsvYear": {
+    "message": "Év"
+  },
+  "tsvTitle": {
+    "message": "Cím"
+  },
+  "tsvAuthors": {
+    "message": "Szerzők"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Díjak és előadások"
+  },
+  "tsvCitations": {
+    "message": "Hivatkozások"
+  },
+  "optHideTitle": {
+    "message": "A Scholar saját blokkjai"
+  },
+  "optHideHint": {
+    "message": "Elrejti a profiloldal azon részeit, amelyek ismétlik a panelt vagy nem használod őket. Semmi sem rejtődik el, amíg be nem kapcsolod."
+  },
+  "optHideCited": {
+    "message": "Hivatkozók"
+  },
+  "optHideCitedHint": {
+    "message": "A hivatkozások, h-index és i10-index táblázata és grafikonja: a panel ugyanezeket az összegeket mutatja a kiemelt cikkekre."
+  },
+  "optHideCo": {
+    "message": "Társszerzők"
+  },
+  "optHideCoHint": {
+    "message": "A társszerzők listája az oldalsávban."
+  },
+  "optHideAccess": {
+    "message": "Nyilvános hozzáférés"
+  },
+  "optHideAccessHint": {
+    "message": "A nyilvános hozzáférés doboza az oldalsávban."
+  },
+  "optMergeTitle": {
+    "message": "Dupla bejegyzések"
+  },
+  "optMergeHint": {
+    "message": "Néhány profil ugyanazt a cikket többször is felsorolja."
+  },
+  "optMergeLabel": {
+    "message": "Duplák összevonása"
+  },
+  "optMergeLabelHint": {
+    "message": "Az azonos című (a nagybetűket, ékezeteket és írásjeleket figyelmen kívül hagyva) és azonos első szerzős bejegyzések eggyé válnak: a legtöbbet idézett marad, és mindegyik hivatkozásait mutatja. A panel egyszer számolja."
+  },
+  "mergedTip": {
+    "message": "$N1$ bejegyzésből összevonva: mindegyik hivatkozásai",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Nyelv"
+  },
+  "optLanguageHint": {
+    "message": "E bővítmény és a megnyitott Scholar-oldalak nyelve."
+  },
+  "optLanguageUi": {
+    "message": "A bővítmény nyelve"
+  },
+  "optLanguageAuto": {
+    "message": "A böngészőét követi"
+  },
+  "optLanguageScholar": {
+    "message": "A Scholar megnyitása ezen a nyelven"
+  },
+  "optLanguageScholarHint": {
+    "message": "Egy másik nyelven megnyitott Scholar-profil (például megosztott linkről) újra megnyílik ezen a nyelven."
+  },
+  "optLanguageKeep": {
+    "message": "Marad, ahogy van"
+  },
+  "optColorsTitle": {
+    "message": "Színek"
+  },
+  "optColorsHint": {
+    "message": "Az egyes szerzői szerepek színe: sorok, névjelölés, panel és az eszköztár felugró ablaka."
+  },
+  "optColorsReset": {
+    "message": "Vissza az alapszínekhez"
+  }
+}

@@ -83,7 +83,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   const parse = { current: parseCurrent, archive: parseArchive }[kind];
   if (!parse) { console.error("usage: vldb.mjs current|archive [saved-page.html]"); process.exit(2); }
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, PAGES[kind]);
   const by = {};
   for (const e of entries) by[e.year] = (by[e.year] || 0) + 1;

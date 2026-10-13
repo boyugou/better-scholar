@@ -7,11 +7,14 @@
   const { h, t, tn } = B.dom;
   const $ = (id) => document.getElementById(id);
 
-  const ROLE_COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
+  const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)" };
+  const ROLE_DEFAULT = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
   const ROLE_NAME = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast" };   // "First author", …
   const MARK_NAME = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
 
-  document.documentElement.lang = chrome.i18n.getUILanguage();
+  await B.dom.useLanguage();
+  document.documentElement.lang = B.dom.langTag();
+  document.documentElement.dir = B.dom.dir();
   document.title = t("panelTitle") + " — " + t("optHeading");
   $("title").textContent = t("panelTitle");
   $("sub").textContent = t("optHeading");
@@ -27,6 +30,7 @@
   let savedTimer = 0;
   async function save() {
     await B.store.savePrefs(prefs);
+    B.dom.applyColors(prefs.colors);
     renderPreview();
     syncers.forEach((fn) => fn());
     $("saved").textContent = t("optSaved");
@@ -54,6 +58,28 @@
     sync();
     return row;
   }
+  // A choice among several values: a label, an optional hint and a drop-down (`choices`: [[value, label], …])
+  function choice({ key, label, hint, choices, get, set, after }) {
+    const sel = h("select", { class: "sel", "data-pref": key, onChange: () => { const was = get(); set(sel.value); save().then(() => { if (after && was !== get()) after(); }); } },
+      choices.map(([v, l]) => h("option", { value: v }, l)));
+    const row = h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, label), hint ? h("span", { class: "hint" }, hint) : null), sel);
+    const sync = () => { sel.value = get(); };
+    syncers.push(sync);
+    sync();
+    return row;
+  }
+  // A role's colour: a picker; while it moves the page is recoloured without saving, and when it is let go the choice is saved
+  function colorRow(role) {
+    const input = h("input", { type: "color", class: "clr", "data-pref": "colors." + role, "aria-label": t(ROLE_NAME[role]),
+      onInput: () => { prefs.colors[role] = input.value; B.dom.applyColors(prefs.colors); renderPreview(); },
+      onChange: () => { prefs.colors[role] = input.value; save(); } });
+    const row = h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, h("span", { class: "swatch", style: "background:" + ROLE_COLOR[role] }), t(ROLE_NAME[role]))), input);
+    const sync = () => { input.value = prefs.colors[role] || ROLE_DEFAULT[role]; };
+    syncers.push(sync);
+    sync();
+    return row;
+  }
+  const LANGS = B.i18n.LANGUAGES.map(([code, name]) => [code, name]);
   const card = (title, desc, ...rows) => h("section", { class: "card" }, h("h2", {}, title), desc ? h("p", { class: "desc" }, desc) : null, ...rows);
 
   // ---- the cards --------------------------------------------------------
@@ -80,9 +106,15 @@
   resetBox.append(resetBtn);
 
   $("controls").append(
+    card(t("optLanguageTitle"), t("optLanguageHint"),
+      choice({ key: "language", label: t("optLanguageUi"), choices: [["auto", t("optLanguageAuto")], ...LANGS], get: () => prefs.language, set: (v) => { prefs.language = v; }, after: () => location.reload() }),
+      choice({ key: "scholarLanguage", label: t("optLanguageScholar"), hint: t("optLanguageScholarHint"), choices: [["keep", t("optLanguageKeep")], ...LANGS], get: () => prefs.scholarLanguage, set: (v) => { prefs.scholarLanguage = v; } })),
     card(t("optRolesTitle"), t("optRolesHint"),
       ...B.prefs.ROLES.map((role) => option({ key: "roles." + role, label: t(ROLE_NAME[role]), swatch: ROLE_COLOR[role], get: () => prefs.roles[role], set: (v) => { prefs.roles[role] = v; } })),
       option({ key: "markName", label: t("optMarkName"), hint: t("optMarkNameHint"), get: () => prefs.markName, set: (v) => { prefs.markName = v; } })),
+    card(t("optColorsTitle"), t("optColorsHint"),
+      ...B.prefs.ROLES.map(colorRow),
+      h("div", { class: "row" }, h("button", { class: "btn", type: "button", "data-act": "colors-reset", onClick: () => { for (const r of B.prefs.ROLES) prefs.colors[r] = ""; B.dom.applyColors(prefs.colors); save(); } }, t("optColorsReset")))),
     card(t("optRanksTitle"), null,
       option({ key: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint"), get: () => prefs.ranks.ccf, set: (v) => { prefs.ranks.ccf = v; } }),
       option({ key: "ranks.core", label: t("optCore"), hint: t("optCoreHint"), get: () => prefs.ranks.core, set: (v) => { prefs.ranks.core = v; } })),
@@ -185,5 +217,5 @@
   hint();
 
   // another settings tab (or Reset) changed something
-  B.store.onPrefsChanged((next) => { prefs = next; renderPreview(); syncers.forEach((fn) => fn()); });
+  B.store.onPrefsChanged((next) => { prefs = next; B.dom.applyColors(prefs.colors); renderPreview(); syncers.forEach((fn) => fn()); });
 })();

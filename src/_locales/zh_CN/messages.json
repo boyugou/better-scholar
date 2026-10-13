@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "谷歌学术：作者位次与会议期刊等级"
+    "message": "Scholar 位次与等级"
   },
   "extDescription": {
     "message": "在谷歌学术（Google Scholar）作者主页上，高亮一作、共一、二作和末位作者的论文，标出会议/期刊的 CCF / CORE 等级，并按位次×等级汇总。"
@@ -551,5 +551,35 @@
         "content": "$1"
       }
     }
+  },
+  "optLanguageTitle": {
+    "message": "语言"
+  },
+  "optLanguageHint": {
+    "message": "本扩展的界面语言，以及你打开的 Scholar 页面的语言。"
+  },
+  "optLanguageUi": {
+    "message": "扩展语言"
+  },
+  "optLanguageAuto": {
+    "message": "跟随浏览器"
+  },
+  "optLanguageScholar": {
+    "message": "以此语言打开 Scholar"
+  },
+  "optLanguageScholarHint": {
+    "message": "用别的语言打开的 Scholar 主页（比如别人分享的链接）会用这种语言重新打开。"
+  },
+  "optLanguageKeep": {
+    "message": "保持原样"
+  },
+  "optColorsTitle": {
+    "message": "颜色"
+  },
+  "optColorsHint": {
+    "message": "每种作者位次的颜色：论文行、名字标记、面板和工具栏弹窗。"
+  },
+  "optColorsReset": {
+    "message": "恢复默认颜色"
   }
 }

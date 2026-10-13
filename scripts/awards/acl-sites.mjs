@@ -75,7 +75,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (!venue || !(year >= 1990 && year <= 2026) || !where) { console.error("usage: acl-sites.mjs <venue> <year> <url-or-saved.html> [--source <url>]"); process.exit(2); }
   const isUrl = /^https:\/\//.test(where);
   if (!isUrl && !source) { console.error("a saved page needs --source <the page's url>"); process.exit(2); }
-  const html = isUrl ? await (await fetch(where, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text() : readFileSync(where, "utf8");
+  const html = isUrl ? await (await fetch(where, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text() : readFileSync(where, "utf8");
   const { entries, skipped } = parse(html, { venue, year, source: source || where });
   const by = {};
   for (const e of entries) by[e.awardLabel] = (by[e.awardLabel] || 0) + 1;

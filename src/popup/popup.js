@@ -5,7 +5,9 @@
   const { h, t, tn, copyText } = B.dom;
   const metrics = B.metrics;
 
-  document.documentElement.lang = chrome.i18n.getUILanguage();
+  await B.dom.useLanguage();
+  document.documentElement.lang = B.dom.langTag();
+  document.documentElement.dir = B.dom.dir();
   document.getElementById("title").textContent = t("panelTitle");
   document.getElementById("ver").textContent = "v" + chrome.runtime.getManifest().version;
   const settings = document.getElementById("settings");
@@ -13,7 +15,7 @@
   settings.addEventListener("click", () => { chrome.runtime.openOptionsPage(); window.close(); });
   const main = document.getElementById("main");
 
-  const COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6" };
+  const COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6" };
   const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
   const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };

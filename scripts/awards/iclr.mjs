@@ -127,7 +127,7 @@ export function parseFactSheet(txt, { year = 2021, source } = {}) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [mode, a, b] = process.argv.slice(2);
-  const UA = { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } };
+  const UA = { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } };
   let result;
   if (mode === "blog" && /^(?:19|20)\d{2}$/.test(a || "") && b) {
     const isUrl = /^https:\/\//.test(b);

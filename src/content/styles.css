@@ -6,14 +6,14 @@
 /* ---- paper rows ----------------------------------------------------------
    The role tints the whole row (title, cited-by, year) plus a 4px accent bar on its
    first cell. Four hues, one per role; the panel legend uses the same colours. */
-tr.rr-r-first   > td { background: rgba(26,115,232,.12) !important; }
-tr.rr-r-cofirst > td { background: rgba(161,66,244,.12) !important; }
-tr.rr-r-second  > td { background: rgba(249,171,0,.14)  !important; }
-tr.rr-r-last    > td { background: rgba(30,142,62,.12)  !important; }
-tr.rr-r-first   > td:first-child { box-shadow: inset 4px 0 0 #1a73e8 !important; }
-tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 #a142f4 !important; }
-tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 #f9ab00 !important; }
-tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 #1e8e3e !important; }
+tr.rr-r-first   > td { background: color-mix(in srgb, var(--rr-c-first, #1a73e8) 12%, transparent) !important; }
+tr.rr-r-cofirst > td { background: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 12%, transparent) !important; }
+tr.rr-r-second  > td { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 14%, transparent)  !important; }
+tr.rr-r-last    > td { background: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 12%, transparent)  !important; }
+tr.rr-r-first   > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-first, #1a73e8) !important; }
+tr.rr-r-cofirst > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
+tr.rr-r-second  > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-second, #f9ab00) !important; }
+tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
 tr.rr-hide { display: none !important; }
 /* Scholar's grey author and venue lines (#777) fall below 4.5:1 on our row tints; the tinted rows use a darker grey */
 tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr-r-last .gs_gray { color: #5f6368; }
@@ -56,10 +56,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-chip-mark-finalist::before { -webkit-mask-image: var(--rr-star-o); mask-image: var(--rr-star-o); }
 
 .rr-name { font-weight: 700; border-radius: 3px; padding: 0 3px; }
-.rr-name-first   { background: rgba(26,115,232,.12); color: #174ea6; }
-.rr-name-cofirst { background: rgba(161,66,244,.12); color: #7b1fa2; }
-.rr-name-second  { background: rgba(249,171,0,.16);  color: #8a5a00; }
-.rr-name-last    { background: rgba(30,142,62,.12);  color: #0d652d; }
+.rr-name-first   { background: color-mix(in srgb, var(--rr-c-first, #1a73e8) 12%, transparent); color: color-mix(in srgb, var(--rr-c-first, #1a73e8) 62%, black); }
+.rr-name-cofirst { background: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 12%, transparent); color: color-mix(in srgb, var(--rr-c-cofirst, #a142f4) 62%, black); }
+.rr-name-second  { background: color-mix(in srgb, var(--rr-c-second, #f9ab00) 16%, transparent);  color: color-mix(in srgb, var(--rr-c-second, #f9ab00) 62%, black); }
+.rr-name-last    { background: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 12%, transparent);  color: color-mix(in srgb, var(--rr-c-last, #1e8e3e) 62%, black); }
 
 /* ---- panel ------------------------------------------------------------------ */
 #rr-panel, #rr-panel * { box-sizing: border-box; }

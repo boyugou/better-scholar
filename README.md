@@ -1,4 +1,4 @@
-# Scholar Author Roles & Venue Ranks
+# Scholar Roles & Ranks
 
 **See who led each paper — and how its venue ranks.** A Chrome extension that
 reads a [Google Scholar](https://scholar.google.com) profile and shows, for every

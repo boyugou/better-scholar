@@ -7,7 +7,7 @@
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
   const { h, t, tn, issueUrl } = B.dom;
 
-  const ROLE_COLOR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e", middle: "#9aa0a6", hidden: "#dadce0" };
+  const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6", hidden: "#dadce0" };
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
   const ROLE_KEY = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle", hidden: "roleHidden" };
 
@@ -117,7 +117,7 @@
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
-    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle") }, head, body);
+    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);

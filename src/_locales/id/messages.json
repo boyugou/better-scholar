@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar Peran & Peringkat"
+  },
+  "extDescription": {
+    "message": "Sorot makalah penulis pertama, ko-pertama, dan terakhir di Google Scholar, plus peringkat CCF / CORE dan ringkasan peran × rank."
+  },
+  "extShortName": {
+    "message": "Peran·Rank"
+  },
+  "panelTitle": {
+    "message": "Peran penulis & peringkat venue"
+  },
+  "summaryTitle": {
+    "message": "Makalah menurut peran dan peringkat"
+  },
+  "marksTitle": {
+    "message": "Penghargaan & presentasi"
+  },
+  "markAward": {
+    "message": "Penghargaan"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Makalah terbaik"
+  },
+  "mkBestStudent": {
+    "message": "Makalah mahasiswa terbaik"
+  },
+  "mkOutstanding": {
+    "message": "Makalah unggul"
+  },
+  "mkDistinguished": {
+    "message": "Makalah terpilih"
+  },
+  "mkRunnerUp": {
+    "message": "Penghargaan khusus"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalis makalah terbaik"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Dari kata-kata penulis sendiri pada judul dan teks venue tiap makalah di Scholar (tidak diverifikasi), dan dari daftar bawaan makalah pemenang penghargaan di konferensi besar."
+  },
+  "marksAsWritten": {
+    "message": "dari kata-kata penulis sendiri atau daftar penghargaan"
+  },
+  "tipMarkAuthor": {
+    "message": "Ditulis oleh penulis (tidak diverifikasi): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Ada di daftar penghargaan: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Hanya yang disorot"
+  },
+  "yearLabel": {
+    "message": "Tahun"
+  },
+  "yearStart": {
+    "message": "Dari"
+  },
+  "yearEnd": {
+    "message": "Sampai"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Pertama"
+  },
+  "roleCofirst": {
+    "message": "Ko-pertama"
+  },
+  "roleSecond": {
+    "message": "Kedua"
+  },
+  "roleLast": {
+    "message": "Terakhir"
+  },
+  "roleMiddle": {
+    "message": "Lainnya"
+  },
+  "roleHidden": {
+    "message": "Tersembunyi"
+  },
+  "colRole": {
+    "message": "Peran"
+  },
+  "colTotal": {
+    "message": "Semua"
+  },
+  "tipUnranked": {
+    "message": "Tanpa peringkat"
+  },
+  "tipHidden": {
+    "message": "Scholar memotong daftar penulis, sehingga posisi pemilik profil tidak terlihat"
+  },
+  "copySummary": {
+    "message": "Salin ringkasan"
+  },
+  "copyTable": {
+    "message": "Salin sebagai tabel"
+  },
+  "copied": {
+    "message": "Tersalin"
+  },
+  "coverLoaded": {
+    "message": "$N1$ makalah dimuat",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Memuat… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Muat semua"
+  },
+  "cancel": {
+    "message": "Batal"
+  },
+  "coverHidden": {
+    "message": "$N1$ peran tersembunyi karena daftar penulis dipotong",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Selesaikan"
+  },
+  "resolveHint": {
+    "message": "Membuka halaman tiap makalah di Scholar (sekitar satu per detik) untuk membaca daftar penulis lengkap."
+  },
+  "resolving": {
+    "message": "Membaca halaman makalah… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google meminta CAPTCHA. Selesaikan di tab biasa, lalu coba lagi."
+  },
+  "resolveDone": {
+    "message": "Selesai."
+  },
+  "coverAbsent": {
+    "message": "$N1$ makalah yang daftar penulisnya tidak memuat nama profil",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "$N1$ makalah di venue tanpa peringkat",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Salin daftar"
+  },
+  "reportLink": {
+    "message": "Laporkan"
+  },
+  "layoutWarning": {
+    "message": "Tata letak halaman Scholar tampaknya berubah: ekstensi ini tidak dapat membaca baris penulis. Mohon laporkan."
+  },
+  "variantsTitle": {
+    "message": "Nama tidak cocok? Tambahkan ejaan"
+  },
+  "variantsPlaceholder": {
+    "message": "mis. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Tambah"
+  },
+  "variantRemove": {
+    "message": "Hapus"
+  },
+  "variantAutoTip": {
+    "message": "Ditambahkan otomatis: nama profil Anda dengan urutan terbalik menemukan Anda di $1 makalah"
+  },
+  "variantSuggest": {
+    "message": "Mungkin Anda:"
+  },
+  "variantSuggestTip": {
+    "message": "Muncul di $1 makalah yang daftar penulisnya tidak menyebut Anda — klik untuk menambahkan ejaan ini"
+  },
+  "expand": {
+    "message": "Buka"
+  },
+  "collapse": {
+    "message": "Ciutkan"
+  },
+  "metricsTitle": {
+    "message": "Makalah yang disorot"
+  },
+  "mPapers": {
+    "message": "Makalah"
+  },
+  "mCitations": {
+    "message": "Sitasi"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "dari"
+  },
+  "dataNote": {
+    "message": "Peringkat berasal dari daftar $N1$ saat ini, bukan peringkat saat publikasi. CCF menyatakan daftarnya bukan dasar penilaian akademik.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Cocok menurut nama"
+  },
+  "ruleAcronym": {
+    "message": "Cocok menurut akronim"
+  },
+  "rulePrefix": {
+    "message": "Cocok menurut bagian nama terpotong yang terlihat"
+  },
+  "tipToday": {
+    "message": "daftar saat ini, bukan peringkat saat publikasi"
+  },
+  "tipPosition": {
+    "message": "posisi $N1$ dari $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "dari halaman makalah"
+  },
+  "copyFirst": {
+    "message": "Penulis pertama"
+  },
+  "copyCofirst": {
+    "message": "Penulis ko-pertama"
+  },
+  "copySecond": {
+    "message": "Penulis kedua"
+  },
+  "copyLast": {
+    "message": "Penulis terakhir"
+  },
+  "copyMiddle": {
+    "message": "Posisi lainnya"
+  },
+  "tsvRole": {
+    "message": "Peran"
+  },
+  "tsvTotal": {
+    "message": "Total"
+  },
+  "popupNotProfile": {
+    "message": "Buka profil penulis Google Scholar untuk melihat ringkasannya di sini."
+  },
+  "popupReading": {
+    "message": "Membaca halaman…"
+  },
+  "popupPapers": {
+    "message": "$N1$ makalah",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Buka Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Pengaturan"
+  },
+  "optHeading": {
+    "message": "Pengaturan"
+  },
+  "optPreviewTitle": {
+    "message": "Pratinjau"
+  },
+  "optPreviewNote": {
+    "message": "Contoh makalah seperti tampilannya di profil Scholar. “A Author” adalah Anda."
+  },
+  "optSaved": {
+    "message": "Tersimpan"
+  },
+  "optRolesTitle": {
+    "message": "Sorot makalah saya"
+  },
+  "optRolesHint": {
+    "message": "Setiap posisi punya warna baris sendiri. Makalah dengan posisi Anda di tengah tetap polos."
+  },
+  "optMarkName": {
+    "message": "Tandai nama saya di baris penulis"
+  },
+  "optMarkNameHint": {
+    "message": "Tebal dan berwarna. Arahkan kursor untuk melihat posisi Anda."
+  },
+  "optRanksTitle": {
+    "message": "Peringkat venue"
+  },
+  "optCcf": {
+    "message": "Peringkat CCF"
+  },
+  "optCcfHint": {
+    "message": "Daftar China Computer Federation, edisi ke-7 (2026)."
+  },
+  "optCore": {
+    "message": "Peringkat CORE"
+  },
+  "optCoreHint": {
+    "message": "Peringkat konferensi CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Penghargaan dan presentasi"
+  },
+  "optMarkAwardHint": {
+    "message": "Makalah terbaik, unggul, dan terpilih, penghargaan khusus, test of time, dan finalis makalah terbaik."
+  },
+  "optPanelTitle": {
+    "message": "Panel ringkasan"
+  },
+  "optPanelShow": {
+    "message": "Tampilkan panel ringkasan"
+  },
+  "optPanelShowHint": {
+    "message": "Tabel peran × peringkat di halaman profil. Nonaktif: hanya daftar makalah yang ditandai."
+  },
+  "optPanelSummary": {
+    "message": "Tabel peran × peringkat"
+  },
+  "optPanelSummaryHint": {
+    "message": "Tabel makalah Anda menurut posisi dan peringkat, dengan tombol Salin dan catatan asal peringkat."
+  },
+  "optPanelMarks": {
+    "message": "Jumlah penghargaan dan presentasi"
+  },
+  "optPanelMarksHint": {
+    "message": "Jumlah makalah pemenang penghargaan dan tingkat presentasi, satu klik untuk melihat daftarnya."
+  },
+  "optPanelStatus": {
+    "message": "Makalah termuat dan venue tanpa peringkat"
+  },
+  "optPanelStatusHint": {
+    "message": "Jumlah makalah yang dimuat, tombol “Muat semua”, dan daftar makalah di venue tanpa peringkat."
+  },
+  "optPanelNames": {
+    "message": "Bantuan ejaan nama"
+  },
+  "optPanelNamesHint": {
+    "message": "“Nama tidak cocok? Tambahkan ejaan” dan saran untuk nama Anda."
+  },
+  "optPanelCompact": {
+    "message": "Ringkas: hanya filter dan total sitasi"
+  },
+  "optPanelFull": {
+    "message": "Semuanya"
+  },
+  "optPanelFilters": {
+    "message": "Filter"
+  },
+  "optPanelFiltersHint": {
+    "message": "Hanya makalah yang disorot, dan rentang tahun."
+  },
+  "optPanelMetrics": {
+    "message": "Total sitasi"
+  },
+  "optPanelMetricsHint": {
+    "message": "Makalah, sitasi, h-index, dan i10-index dari makalah yang disorot."
+  },
+  "optDataTitle": {
+    "message": "Data tersimpan"
+  },
+  "optClearCache": {
+    "message": "Hapus detail makalah tersimpan"
+  },
+  "optCacheCount": {
+    "message": "Daftar penulis $N1$ makalah tersimpan di perangkat ini (dibaca dengan Selesaikan, disimpan 90 hari).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Tidak ada detail makalah yang tersimpan."
+  },
+  "optCleared": {
+    "message": "Terhapus"
+  },
+  "optReset": {
+    "message": "Kembalikan ke default"
+  },
+  "optResetConfirm": {
+    "message": "Kembalikan semua pengaturan ini ke default?"
+  },
+  "optStorage": {
+    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Tidak ada yang dikirim ke mana pun."
+  },
+  "optSample": {
+    "message": "Contoh makalah"
+  },
+  "optLoadTitle": {
+    "message": "Daftar makalah"
+  },
+  "optAutoLoad": {
+    "message": "Muat semua makalah otomatis"
+  },
+  "optAutoLoadHint": {
+    "message": "Awalnya Scholar hanya menampilkan beberapa makalah pertama. Ini menekan tombol “Tampilkan lebih banyak” milik Scholar untuk Anda, sekitar sekali per detik, sampai seluruh daftar termuat, dan berhenti jika Scholar tidak merespons. Nonaktif: panel menawarkan “Muat semua”."
+  },
+  "loadStalled": {
+    "message": "Scholar tidak mengirim makalah lagi ($N1$ dimuat). Coba “Muat semua” lagi sebentar lagi.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Penghargaan kategori"
+  },
+  "copyPapers": {
+    "message": "Salin makalah"
+  },
+  "tsvYear": {
+    "message": "Tahun"
+  },
+  "tsvTitle": {
+    "message": "Judul"
+  },
+  "tsvAuthors": {
+    "message": "Penulis"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Penghargaan & presentasi"
+  },
+  "tsvCitations": {
+    "message": "Sitasi"
+  },
+  "optHideTitle": {
+    "message": "Blok bawaan Scholar"
+  },
+  "optHideHint": {
+    "message": "Sembunyikan bagian halaman profil yang mengulang panel atau tidak Anda pakai. Tidak ada yang disembunyikan sampai Anda mengaktifkannya."
+  },
+  "optHideCited": {
+    "message": "Dikutip oleh"
+  },
+  "optHideCitedHint": {
+    "message": "Tabel sitasi, h-index, dan i10-index beserta grafiknya: panel menampilkan total yang sama untuk makalah yang disorot."
+  },
+  "optHideCo": {
+    "message": "Rekan penulis"
+  },
+  "optHideCoHint": {
+    "message": "Daftar rekan penulis di bilah samping."
+  },
+  "optHideAccess": {
+    "message": "Akses publik"
+  },
+  "optHideAccessHint": {
+    "message": "Kotak akses publik di bilah samping."
+  },
+  "optMergeTitle": {
+    "message": "Entri ganda"
+  },
+  "optMergeHint": {
+    "message": "Beberapa profil mencantumkan satu makalah berkali-kali."
+  },
+  "optMergeLabel": {
+    "message": "Gabungkan entri ganda"
+  },
+  "optMergeLabelHint": {
+    "message": "Entri dengan judul yang sama (tanpa memperhitungkan huruf besar, aksen, dan tanda baca) dan penulis pertama yang sama digabung menjadi satu: yang paling banyak dikutip dipertahankan dan menampilkan sitasi semuanya. Panel menghitungnya satu kali."
+  },
+  "mergedTip": {
+    "message": "Digabung dari $N1$ entri: sitasi semuanya",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Bahasa"
+  },
+  "optLanguageHint": {
+    "message": "Bahasa ekstensi ini, dan halaman Scholar yang Anda buka."
+  },
+  "optLanguageUi": {
+    "message": "Bahasa ekstensi"
+  },
+  "optLanguageAuto": {
+    "message": "Ikuti browser"
+  },
+  "optLanguageScholar": {
+    "message": "Buka Scholar dalam"
+  },
+  "optLanguageScholarHint": {
+    "message": "Profil Scholar yang Anda buka dalam bahasa lain (misalnya dari tautan yang dibagikan) dibuka ulang dalam bahasa ini."
+  },
+  "optLanguageKeep": {
+    "message": "Biarkan apa adanya"
+  },
+  "optColorsTitle": {
+    "message": "Warna"
+  },
+  "optColorsHint": {
+    "message": "Warna setiap peran penulis: baris, tanda nama, panel, dan popup bilah alat."
+  },
+  "optColorsReset": {
+    "message": "Kembali ke warna standar"
+  }
+}

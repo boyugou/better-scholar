@@ -67,7 +67,7 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
 });
 
 test("pages: the popup and the settings page load only files that exist, dependencies first", () => {
-  for (const [page, scripts] of [["popup/popup.html", ["lib/metrics.js", "content/dom.js", "popup/popup.js"]], ["options/options.html", ["lib/prefs.js", "lib/marks.js", "lib/metrics.js", "content/dom.js", "content/chips.js", "content/panel.js", "content/store.js", "options/options.js"]]]) {
+  for (const [page, scripts] of [["popup/popup.html", ["lib/i18n.js", "lib/metrics.js", "content/dom.js", "popup/popup.js"]], ["options/options.html", ["lib/i18n.js", "lib/prefs.js", "lib/marks.js", "lib/metrics.js", "content/dom.js", "content/chips.js", "content/panel.js", "content/store.js", "options/options.js"]]]) {
     const html = read(page);
     const refs = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join(path.posix.dirname(page), m[1])));
     assert.deepEqual(refs, scripts, page);
@@ -76,13 +76,16 @@ test("pages: the popup and the settings page load only files that exist, depende
   }
 });
 
-test("background.js only relays 'open the settings page'", () => {
+test("background.js only opens the settings page and hands out this extension's own language files", () => {
   const code = read("background.js").replace(/^\s*\/\/.*$/gm, "");
   assert.match(code, /chrome\.runtime\.onMessage\.addListener/);
   assert.match(code, /chrome\.runtime\.openOptionsPage\(\)/);
-  assert.match(code, /sender\.id === chrome\.runtime\.id/, "only this extension's own scripts may ask");
-  for (const bad of ["fetch(", "XMLHttpRequest", "WebSocket", "chrome.storage", "chrome.tabs", "chrome.scripting", "importScripts", "eval("]) assert.ok(!code.includes(bad), "background.js must not use " + bad);
-  assert.ok(code.split("\n").filter((l) => l.trim()).length <= 8, "keep it tiny");
+  assert.match(code, /sender\.id !== chrome\.runtime\.id/, "only this extension's own scripts may ask");
+  // the one fetch reads a file of this package, nothing from the network
+  assert.equal((code.match(/fetch\(/g) || []).length, 1);
+  assert.match(code, /fetch\(chrome\.runtime\.getURL\("_locales\//);
+  for (const bad of ["XMLHttpRequest", "WebSocket", "chrome.storage", "chrome.tabs", "chrome.scripting", "importScripts", "eval(", "http"]) assert.ok(!code.includes(bad), "background.js must not use " + bad);
+  assert.ok(code.split("\n").filter((l) => l.trim()).length <= 16, "keep it tiny");
 });
 
 test("locales: same keys in every language, manifest strings defined", () => {

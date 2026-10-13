@@ -15,3 +15,6 @@ DerivedData/
 
 # Node (if tooling is added later)
 node_modules/
+
+# Saved copies of the public pages the data scripts read (scripts/page-cache.mjs)
+/.cache/

@@ -50,7 +50,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (files.length) for (const f of files) entries.push(...parse(readFileSync(f, "utf8")));
   else {
     for (let page = 0; page < 12; page++) {
-      const html = await (await fetch(`${BASE}?page=${page}`, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads the public best-papers list)" } })).text();
+      const html = await (await fetch(`${BASE}?page=${page}`, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads the public best-papers list)" } })).text();
       const got = parse(html, { source: BASE });
       if (!got.length) break;
       entries.push(...got);

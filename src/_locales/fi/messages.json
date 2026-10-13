@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Roolit & Luokat"
+  },
+  "extDescription": {
+    "message": "Korostaa Google Scholarissa artikkelit, joissa olet ensimmäinen, yhteisensimmäinen tai viimeinen kirjoittaja, CCF-/CORE-luokat."
+  },
+  "extShortName": {
+    "message": "Roolit"
+  },
+  "panelTitle": {
+    "message": "Kirjoittajaroolit & julkaisufoorumien luokat"
+  },
+  "summaryTitle": {
+    "message": "Artikkelit roolin ja luokan mukaan"
+  },
+  "marksTitle": {
+    "message": "Palkinnot & esitykset"
+  },
+  "markAward": {
+    "message": "Palkinnot"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Paras artikkeli"
+  },
+  "mkBestStudent": {
+    "message": "Paras opiskelija-artikkeli"
+  },
+  "mkOutstanding": {
+    "message": "Erinomainen artikkeli"
+  },
+  "mkDistinguished": {
+    "message": "Ansioitunut artikkeli"
+  },
+  "mkRunnerUp": {
+    "message": "Kunniamaininta"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Parhaan artikkelin finalisti"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Perustuu kirjoittajien omiin sanoihin artikkelin otsikossa ja julkaisupaikassa Scholarissa (ei tarkistettu) sekä mukana tulevaan luetteloon suurten konferenssien palkituista artikkeleista."
+  },
+  "marksAsWritten": {
+    "message": "kirjoittajien omista sanoista tai palkintoluettelosta"
+  },
+  "tipMarkAuthor": {
+    "message": "Kirjoittajan itsensä kirjoittama (ei tarkistettu): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Palkintoluettelossa: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Vain korostetut"
+  },
+  "yearLabel": {
+    "message": "Vuosi"
+  },
+  "yearStart": {
+    "message": "Alkaen"
+  },
+  "yearEnd": {
+    "message": "Päättyen"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Ensimmäinen"
+  },
+  "roleCofirst": {
+    "message": "Yhteisensimmäinen"
+  },
+  "roleSecond": {
+    "message": "Toinen"
+  },
+  "roleLast": {
+    "message": "Viimeinen"
+  },
+  "roleMiddle": {
+    "message": "Muu"
+  },
+  "roleHidden": {
+    "message": "Piilossa"
+  },
+  "colRole": {
+    "message": "Rooli"
+  },
+  "colTotal": {
+    "message": "Kaikki"
+  },
+  "tipUnranked": {
+    "message": "Ei luokkaa"
+  },
+  "tipHidden": {
+    "message": "Scholar lyhensi kirjoittajaluettelon, joten profiilin omistajan paikka ei näy"
+  },
+  "copySummary": {
+    "message": "Kopioi yhteenveto"
+  },
+  "copyTable": {
+    "message": "Kopioi taulukkona"
+  },
+  "copied": {
+    "message": "Kopioitu"
+  },
+  "coverLoaded": {
+    "message": "$N1$ artikkelia ladattu",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 artikkeli ladattu"
+  },
+  "loadingAll": {
+    "message": "Ladataan… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Lataa kaikki"
+  },
+  "cancel": {
+    "message": "Peruuta"
+  },
+  "coverHidden": {
+    "message": "$N1$ roolia piilossa lyhennettyjen kirjoittajaluetteloiden vuoksi",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 rooli piilossa lyhennetyn kirjoittajaluettelon vuoksi"
+  },
+  "resolveBtn": {
+    "message": "Selvitä"
+  },
+  "resolveHint": {
+    "message": "Avaa jokaisen artikkelin sivun Scholarissa (noin yksi sekunnissa) koko kirjoittajaluettelon lukemiseksi."
+  },
+  "resolving": {
+    "message": "Luetaan artikkelisivuja… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google pyysi CAPTCHA-tarkistuksen. Ratkaise se tavallisessa välilehdessä ja yritä uudelleen."
+  },
+  "resolveDone": {
+    "message": "Valmis."
+  },
+  "coverAbsent": {
+    "message": "$N1$ artikkelia, joissa profiilin nimeä ei ole kirjoittajaluettelossa",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 artikkeli, jossa profiilin nimeä ei ole kirjoittajaluettelossa"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ artikkelia foorumeilla ilman luokkaa",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 artikkeli foorumilla ilman luokkaa"
+  },
+  "copyUnmatched": {
+    "message": "Kopioi luettelo"
+  },
+  "reportLink": {
+    "message": "Ilmoita"
+  },
+  "layoutWarning": {
+    "message": "Scholarin sivun ulkoasu näyttää muuttuneen: laajennus ei pysty lukemaan kirjoittajarivejä. Ilmoita siitä."
+  },
+  "variantsTitle": {
+    "message": "Nimi ei täsmää? Lisää kirjoitusasu"
+  },
+  "variantsPlaceholder": {
+    "message": "esim. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Lisää"
+  },
+  "variantRemove": {
+    "message": "Poista"
+  },
+  "variantAutoTip": {
+    "message": "Lisätty automaattisesti: profiilisi nimi päinvastaisessa järjestyksessä löytää sinut $1 artikkelista"
+  },
+  "variantSuggest": {
+    "message": "Ehkä sinä:"
+  },
+  "variantSuggestTip": {
+    "message": "Esiintyy $1 artikkelissa, joiden kirjoittajaluettelo ei muuten mainitse sinua — lisää tämä kirjoitusasu napsauttamalla"
+  },
+  "expand": {
+    "message": "Laajenna"
+  },
+  "collapse": {
+    "message": "Tiivistä"
+  },
+  "metricsTitle": {
+    "message": "Korostetut artikkelit"
+  },
+  "mPapers": {
+    "message": "Artikkelit"
+  },
+  "mCitations": {
+    "message": "Viittaukset"
+  },
+  "mH": {
+    "message": "h-indeksi"
+  },
+  "mI10": {
+    "message": "i10-indeksi"
+  },
+  "metricsOf": {
+    "message": "/"
+  },
+  "dataNote": {
+    "message": "Luokat perustuvat nykyisiin $N1$-luetteloihin, eivät julkaisuhetken luokkaan. CCF toteaa, ettei sen luetteloa ole tarkoitettu akateemisen arvioinnin perustaksi.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Täsmäsi nimen perusteella"
+  },
+  "ruleAcronym": {
+    "message": "Täsmäsi lyhenteen perusteella"
+  },
+  "rulePrefix": {
+    "message": "Täsmäsi lyhennetyn nimen näkyvän osan perusteella"
+  },
+  "tipToday": {
+    "message": "nykyinen luettelo, ei julkaisuhetken luokka"
+  },
+  "tipPosition": {
+    "message": "paikka $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "artikkelin sivulta"
+  },
+  "copyFirst": {
+    "message": "Ensimmäinen kirjoittaja"
+  },
+  "copyCofirst": {
+    "message": "Yhteisensimmäinen kirjoittaja"
+  },
+  "copySecond": {
+    "message": "Toinen kirjoittaja"
+  },
+  "copyLast": {
+    "message": "Viimeinen kirjoittaja"
+  },
+  "copyMiddle": {
+    "message": "Muut paikat"
+  },
+  "tsvRole": {
+    "message": "Rooli"
+  },
+  "tsvTotal": {
+    "message": "Yhteensä"
+  },
+  "popupNotProfile": {
+    "message": "Avaa Google Scholarin kirjoittajaprofiili nähdäksesi sen yhteenvedon tässä."
+  },
+  "popupReading": {
+    "message": "Luetaan sivua…"
+  },
+  "popupPapers": {
+    "message": "$N1$ artikkelia",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 artikkeli"
+  },
+  "popupOpenScholar": {
+    "message": "Avaa Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Asetukset"
+  },
+  "optHeading": {
+    "message": "Asetukset"
+  },
+  "optPreviewTitle": {
+    "message": "Esikatselu"
+  },
+  "optPreviewNote": {
+    "message": "Esimerkkiartikkelit sellaisina kuin ne näkyvät Scholar-profiilissa. “A Author” olet sinä."
+  },
+  "optSaved": {
+    "message": "Tallennettu"
+  },
+  "optRolesTitle": {
+    "message": "Korosta artikkelini"
+  },
+  "optRolesHint": {
+    "message": "Jokaisella paikalla on oma rivinvärinsä. Artikkelit, joissa olet keskellä, pysyvät tavallisina."
+  },
+  "optMarkName": {
+    "message": "Merkitse nimeni kirjoittajariville"
+  },
+  "optMarkNameHint": {
+    "message": "Lihavoitu ja värjätty. Näet paikkasi viemällä osoittimen sen päälle."
+  },
+  "optRanksTitle": {
+    "message": "Julkaisufoorumien luokat"
+  },
+  "optCcf": {
+    "message": "CCF-luokka"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federationin luettelo, 7. painos (2026)."
+  },
+  "optCore": {
+    "message": "CORE-luokka"
+  },
+  "optCoreHint": {
+    "message": "CORE-konferenssiluokitus, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Palkinnot ja esitykset"
+  },
+  "optMarkAwardHint": {
+    "message": "Paras, erinomainen ja ansioitunut artikkeli, kunniamaininta, test of time sekä parhaan artikkelin finalistit."
+  },
+  "optPanelTitle": {
+    "message": "Yhteenvetopaneeli"
+  },
+  "optPanelShow": {
+    "message": "Näytä yhteenvetopaneeli"
+  },
+  "optPanelShowHint": {
+    "message": "Rooli × luokka -taulukko profiilisivulla. Pois: vain artikkeliluettelo merkitään."
+  },
+  "optPanelSummary": {
+    "message": "Rooli × luokka -taulukko"
+  },
+  "optPanelSummaryHint": {
+    "message": "Taulukko artikkeleistasi paikan ja luokan mukaan, kopiointipainikkeineen ja huomautuksineen luokkien lähteestä."
+  },
+  "optPanelMarks": {
+    "message": "Palkintojen ja esitysten määrät"
+  },
+  "optPanelMarksHint": {
+    "message": "Palkittujen artikkelien ja esitystasojen määrä; yksi napsautus näyttää ne."
+  },
+  "optPanelStatus": {
+    "message": "Ladatut artikkelit ja luokittelemattomat foorumit"
+  },
+  "optPanelStatusHint": {
+    "message": "Montako artikkelia on ladattu, “Lataa kaikki” -painike ja luettelo artikkeleista foorumeilla, joilla ei ole luokkaa."
+  },
+  "optPanelNames": {
+    "message": "Nimen kirjoitusasun apu"
+  },
+  "optPanelNamesHint": {
+    "message": "“Nimi ei täsmää? Lisää kirjoitusasu” ja ehdotukset nimellesi."
+  },
+  "optPanelCompact": {
+    "message": "Tiivis: vain suodattimet ja viittausten summat"
+  },
+  "optPanelFull": {
+    "message": "Kaikki"
+  },
+  "optPanelFilters": {
+    "message": "Suodattimet"
+  },
+  "optPanelFiltersHint": {
+    "message": "Vain korostetut artikkelit ja vuosiväli."
+  },
+  "optPanelMetrics": {
+    "message": "Viittausten summat"
+  },
+  "optPanelMetricsHint": {
+    "message": "Korostettujen artikkelien määrä, viittaukset, h-indeksi ja i10-indeksi."
+  },
+  "optDataTitle": {
+    "message": "Tallennetut tiedot"
+  },
+  "optClearCache": {
+    "message": "Tyhjennä tallennetut artikkelitiedot"
+  },
+  "optCacheCount": {
+    "message": "$N1$ artikkelin kirjoittajaluettelot on tallennettu tälle laitteelle (luettu Selvitä-toiminnolla, säilytetään 90 päivää).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "1 artikkelin kirjoittajaluettelo on tallennettu tälle laitteelle (luettu Selvitä-toiminnolla, säilytetään 90 päivää)."
+  },
+  "optCacheNone": {
+    "message": "Artikkelitietoja ei ole tallennettu."
+  },
+  "optCleared": {
+    "message": "Tyhjennetty"
+  },
+  "optReset": {
+    "message": "Palauta oletukset"
+  },
+  "optResetConfirm": {
+    "message": "Palautetaanko kaikki nämä asetukset oletusarvoihin?"
+  },
+  "optStorage": {
+    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Mitään ei lähetetä minnekään."
+  },
+  "optSample": {
+    "message": "Esimerkkiartikkeli"
+  },
+  "optLoadTitle": {
+    "message": "Artikkeliluettelo"
+  },
+  "optAutoLoad": {
+    "message": "Lataa kaikki artikkelit automaattisesti"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar näyttää aluksi vain ensimmäiset artikkelit. Laajennus painaa puolestasi Scholarin omaa “Näytä lisää” -painiketta noin kerran sekunnissa, kunnes koko luettelo on ladattu, ja lopettaa, jos Scholar lakkaa vastaamasta. Pois: paneeli tarjoaa sen sijaan “Lataa kaikki” -painiketta."
+  },
+  "loadStalled": {
+    "message": "Scholar ei lähettänyt enempää artikkeleita ($N1$ ladattu). Yritä “Lataa kaikki” uudelleen hetken päästä.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategoriapalkinto"
+  },
+  "copyPapers": {
+    "message": "Kopioi artikkelit"
+  },
+  "tsvYear": {
+    "message": "Vuosi"
+  },
+  "tsvTitle": {
+    "message": "Otsikko"
+  },
+  "tsvAuthors": {
+    "message": "Kirjoittajat"
+  },
+  "tsvVenue": {
+    "message": "Julkaisufoorumi"
+  },
+  "tsvAwards": {
+    "message": "Palkinnot & esitykset"
+  },
+  "tsvCitations": {
+    "message": "Viittaukset"
+  },
+  "optHideTitle": {
+    "message": "Scholarin omat lohkot"
+  },
+  "optHideHint": {
+    "message": "Piilota profiilisivun osat, jotka toistavat paneelin tai joita et käytä. Mitään ei piiloteta, ennen kuin otat sen käyttöön."
+  },
+  "optHideCited": {
+    "message": "Viittauksia"
+  },
+  "optHideCitedHint": {
+    "message": "Viittaukset, h-indeksi ja i10-indeksi -taulukko kaavioineen: paneeli näyttää samat summat korostetuille artikkeleille."
+  },
+  "optHideCo": {
+    "message": "Yhteiskirjoittajat"
+  },
+  "optHideCoHint": {
+    "message": "Yhteiskirjoittajien luettelo sivupalkissa."
+  },
+  "optHideAccess": {
+    "message": "Avoin saatavuus"
+  },
+  "optHideAccessHint": {
+    "message": "Avoimen saatavuuden ruutu sivupalkissa."
+  },
+  "optMergeTitle": {
+    "message": "Kaksoiskappaleet"
+  },
+  "optMergeHint": {
+    "message": "Joissakin profiileissa sama artikkeli on luettelossa useita kertoja."
+  },
+  "optMergeLabel": {
+    "message": "Yhdistä kaksoiskappaleet"
+  },
+  "optMergeLabelHint": {
+    "message": "Merkinnät, joilla on sama otsikko (isoja kirjaimia, aksentteja ja välimerkkejä lukuun ottamatta) ja sama ensimmäinen kirjoittaja, yhdistetään yhdeksi: eniten viitattu jää ja näyttää kaikkien viittaukset. Paneeli laskee sen kerran."
+  },
+  "mergedTip": {
+    "message": "Yhdistetty $N1$ merkinnästä: kaikkien viittaukset",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Kieli"
+  },
+  "optLanguageHint": {
+    "message": "Tämän laajennuksen ja avaamiesi Scholar-sivujen kieli."
+  },
+  "optLanguageUi": {
+    "message": "Laajennuksen kieli"
+  },
+  "optLanguageAuto": {
+    "message": "Seuraa selainta"
+  },
+  "optLanguageScholar": {
+    "message": "Avaa Scholar kielellä"
+  },
+  "optLanguageScholarHint": {
+    "message": "Scholar-profiili, jonka avaat toisella kielellä (esimerkiksi jaetusta linkistä), avataan uudelleen tällä kielellä."
+  },
+  "optLanguageKeep": {
+    "message": "Jätä ennalleen"
+  },
+  "optColorsTitle": {
+    "message": "Värit"
+  },
+  "optColorsHint": {
+    "message": "Jokaisen kirjoittajaroolin väri: rivit, nimimerkinnät, paneeli ja työkalupalkin ponnahdusikkuna."
+  },
+  "optColorsReset": {
+    "message": "Palauta oletusvärit"
+  }
+}

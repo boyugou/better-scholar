@@ -68,7 +68,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const file = process.argv[3];
   if (!(year >= 2017 && year <= 2026)) { console.error("usage: ndss.mjs <year 2017–2026> [saved-page.html]"); process.exit(2); }
   const url = `https://www.ndss-symposium.org/ndss${year}/`;
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "scholar-author-roles-and-venue-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, { year, source: url });
   const by = {};
   for (const e of entries) by[e.awardLabel] = (by[e.awardLabel] || 0) + 1;

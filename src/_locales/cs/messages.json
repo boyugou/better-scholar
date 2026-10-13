@@ -1,0 +1,585 @@
+{
+  "extName": {
+    "message": "Scholar: role a ranky"
+  },
+  "extDescription": {
+    "message": "Zvýrazní na Google Scholar práce, kde jste první, spoluprvní nebo poslední autor, s CCF / CORE rankem a přehledem role × rank."
+  },
+  "extShortName": {
+    "message": "Role a ranky"
+  },
+  "panelTitle": {
+    "message": "Role autorů a ranky publikací"
+  },
+  "summaryTitle": {
+    "message": "Práce podle role a ranku"
+  },
+  "marksTitle": {
+    "message": "Ocenění a přednesy"
+  },
+  "markAward": {
+    "message": "Ocenění"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Nejlepší práce"
+  },
+  "mkBestStudent": {
+    "message": "Nejlepší studentská práce"
+  },
+  "mkOutstanding": {
+    "message": "Vynikající práce"
+  },
+  "mkDistinguished": {
+    "message": "Význačná práce"
+  },
+  "mkRunnerUp": {
+    "message": "Čestné uznání"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalista nejlepší práce"
+  },
+  "mkOral": {
+    "message": "Ústní přednes"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Podle slov samotných autorů v názvu a popisu místa publikace každé práce ve Scholar (neověřeno) a podle přibalené listiny oceněných prací z velkých konferencí."
+  },
+  "marksAsWritten": {
+    "message": "ze slov autorů nebo z listiny ocenění"
+  },
+  "tipMarkAuthor": {
+    "message": "Uvedeno autorem (neověřeno): „$N1$“",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "V listině ocenění: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Jen zvýrazněné"
+  },
+  "yearLabel": {
+    "message": "Rok"
+  },
+  "yearStart": {
+    "message": "Od"
+  },
+  "yearEnd": {
+    "message": "Do"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "První"
+  },
+  "roleCofirst": {
+    "message": "Spoluprvní"
+  },
+  "roleSecond": {
+    "message": "Druhý"
+  },
+  "roleLast": {
+    "message": "Poslední"
+  },
+  "roleMiddle": {
+    "message": "Ostatní"
+  },
+  "roleHidden": {
+    "message": "Skrytá"
+  },
+  "colRole": {
+    "message": "Role"
+  },
+  "colTotal": {
+    "message": "Vše"
+  },
+  "tipUnranked": {
+    "message": "Bez ranku"
+  },
+  "tipHidden": {
+    "message": "Scholar zkrátil seznam autorů, takže pozice majitele profilu není vidět"
+  },
+  "copySummary": {
+    "message": "Kopírovat přehled"
+  },
+  "copyTable": {
+    "message": "Kopírovat jako tabulku"
+  },
+  "copied": {
+    "message": "Zkopírováno"
+  },
+  "coverLoaded": {
+    "message": "Načtené práce: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Načítání… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Načíst vše"
+  },
+  "cancel": {
+    "message": "Zrušit"
+  },
+  "coverHidden": {
+    "message": "Role skryté zkrácenými seznamy autorů: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Zjistit"
+  },
+  "resolveHint": {
+    "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
+  },
+  "resolving": {
+    "message": "Čtení stránek prací… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google požádal o CAPTCHA. Vyřešte ji v běžné záložce a zkuste to znovu."
+  },
+  "resolveDone": {
+    "message": "Hotovo."
+  },
+  "coverAbsent": {
+    "message": "Práce, kde jméno z profilu není mezi autory: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "Práce v místech publikace bez ranku: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Kopírovat seznam"
+  },
+  "reportLink": {
+    "message": "Nahlásit"
+  },
+  "layoutWarning": {
+    "message": "Zdá se, že se změnilo rozvržení stránky Scholar: rozšíření nemůže přečíst řádky s autory. Nahlaste to prosím."
+  },
+  "variantsTitle": {
+    "message": "Jméno se nenašlo? Přidejte variantu zápisu"
+  },
+  "variantsPlaceholder": {
+    "message": "např. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Přidat"
+  },
+  "variantRemove": {
+    "message": "Odebrat"
+  },
+  "variantAutoTip": {
+    "message": "Přidáno automaticky: jméno z profilu v opačném pořadí vás najde v $1 pracích"
+  },
+  "variantSuggest": {
+    "message": "Možná vy:"
+  },
+  "variantSuggestTip": {
+    "message": "Objevuje se v $1 pracích, kde vás seznam autorů jinak neuvádí — kliknutím tuto variantu přidáte"
+  },
+  "expand": {
+    "message": "Rozbalit"
+  },
+  "collapse": {
+    "message": "Sbalit"
+  },
+  "metricsTitle": {
+    "message": "Zvýrazněné práce"
+  },
+  "mPapers": {
+    "message": "Práce"
+  },
+  "mCitations": {
+    "message": "Citace"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "metricsOf": {
+    "message": "z"
+  },
+  "dataNote": {
+    "message": "Ranky pocházejí z aktuálních seznamů $N1$, ne z doby vydání. CCF uvádí, že její seznam není podkladem pro akademické hodnocení.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Nalezeno podle názvu"
+  },
+  "ruleAcronym": {
+    "message": "Nalezeno podle zkratky"
+  },
+  "rulePrefix": {
+    "message": "Nalezeno podle viditelné části zkráceného názvu"
+  },
+  "tipToday": {
+    "message": "aktuální seznam, ne rank v době vydání"
+  },
+  "tipPosition": {
+    "message": "pozice $N1$ z $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "ze stránky práce"
+  },
+  "copyFirst": {
+    "message": "První autor"
+  },
+  "copyCofirst": {
+    "message": "Spoluprvní autor"
+  },
+  "copySecond": {
+    "message": "Druhý autor"
+  },
+  "copyLast": {
+    "message": "Poslední autor"
+  },
+  "copyMiddle": {
+    "message": "Ostatní pozice"
+  },
+  "tsvRole": {
+    "message": "Role"
+  },
+  "tsvTotal": {
+    "message": "Celkem"
+  },
+  "popupNotProfile": {
+    "message": "Otevřete profil autora v Google Scholar a uvidíte tu jeho přehled."
+  },
+  "popupReading": {
+    "message": "Čtení stránky…"
+  },
+  "popupPapers": {
+    "message": "Práce: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Otevřít Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Nastavení"
+  },
+  "optHeading": {
+    "message": "Nastavení"
+  },
+  "optPreviewTitle": {
+    "message": "Náhled"
+  },
+  "optPreviewNote": {
+    "message": "Ukázkové práce tak, jak budou vypadat na profilu Scholar. „A Author“ jste vy."
+  },
+  "optSaved": {
+    "message": "Uloženo"
+  },
+  "optRolesTitle": {
+    "message": "Zvýrazňovat moje práce"
+  },
+  "optRolesHint": {
+    "message": "Každá pozice má vlastní barvu řádku. Práce, kde jste uprostřed seznamu, zůstanou bez zvýraznění."
+  },
+  "optMarkName": {
+    "message": "Označit mé jméno v řádku autorů"
+  },
+  "optMarkNameHint": {
+    "message": "Tučně a podbarveně. Najetím myší zobrazíte svou pozici."
+  },
+  "optRanksTitle": {
+    "message": "Ranky publikací"
+  },
+  "optCcf": {
+    "message": "Rank CCF"
+  },
+  "optCcfHint": {
+    "message": "Seznam China Computer Federation, 7. vydání (2026)."
+  },
+  "optCore": {
+    "message": "Rank CORE"
+  },
+  "optCoreHint": {
+    "message": "Žebříček konferencí CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Ocenění a přednesy"
+  },
+  "optMarkAwardHint": {
+    "message": "Nejlepší, vynikající a význačná práce, čestné uznání, test of time a finalisté nejlepší práce."
+  },
+  "optPanelTitle": {
+    "message": "Panel s přehledem"
+  },
+  "optPanelShow": {
+    "message": "Zobrazit panel s přehledem"
+  },
+  "optPanelShowHint": {
+    "message": "Tabulka role × rank na stránce profilu. Vyp.: označí se jen seznam prací."
+  },
+  "optPanelSummary": {
+    "message": "Tabulka role × rank"
+  },
+  "optPanelSummaryHint": {
+    "message": "Tabulka vašich prací podle pozice a ranku s tlačítky kopírování a poznámkou o původu ranků."
+  },
+  "optPanelMarks": {
+    "message": "Počty ocenění a přednesů"
+  },
+  "optPanelMarksHint": {
+    "message": "Počet oceněných prací a druhů přednesů; jedním kliknutím je vypíšete."
+  },
+  "optPanelStatus": {
+    "message": "Načtené práce a publikace bez ranku"
+  },
+  "optPanelStatusHint": {
+    "message": "Kolik prací je načteno, tlačítko „Načíst vše“ a seznam prací v místech publikace bez ranku."
+  },
+  "optPanelNames": {
+    "message": "Pomoc s zápisem jména"
+  },
+  "optPanelNamesHint": {
+    "message": "„Jméno se nenašlo? Přidejte variantu zápisu“ a nápovědy k vašemu jménu."
+  },
+  "optPanelCompact": {
+    "message": "Kompaktně: jen filtry a součty citací"
+  },
+  "optPanelFull": {
+    "message": "Vše"
+  },
+  "optPanelFilters": {
+    "message": "Filtry"
+  },
+  "optPanelFiltersHint": {
+    "message": "Jen zvýrazněné práce a rozsah let."
+  },
+  "optPanelMetrics": {
+    "message": "Součty citací"
+  },
+  "optPanelMetricsHint": {
+    "message": "Práce, citace, h-index a i10-index zvýrazněných prací."
+  },
+  "optDataTitle": {
+    "message": "Uložená data"
+  },
+  "optClearCache": {
+    "message": "Vymazat uložené podrobnosti o pracích"
+  },
+  "optCacheCount": {
+    "message": "Uložené seznamy autorů na tomto zařízení: $N1$ (přečteno tlačítkem „Zjistit“, uchováno 90 dní).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Nejsou uloženy žádné podrobnosti o pracích."
+  },
+  "optCleared": {
+    "message": "Vymazáno"
+  },
+  "optReset": {
+    "message": "Obnovit výchozí"
+  },
+  "optResetConfirm": {
+    "message": "Obnovit všechna tato nastavení na výchozí hodnoty?"
+  },
+  "optStorage": {
+    "message": "Nastavení se ukládá v prohlížeči a synchronizuje s profilem Chrome. Nic se nikam neodesílá."
+  },
+  "optSample": {
+    "message": "Ukázková práce"
+  },
+  "optLoadTitle": {
+    "message": "Seznam prací"
+  },
+  "optAutoLoad": {
+    "message": "Načíst všechny práce automaticky"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar zprvu ukáže jen první práce. Rozšíření za vás zhruba jednou za sekundu stiskne jeho tlačítko „Zobrazit další“, dokud se nenačte celý seznam, a zastaví se, když Scholar přestane odpovídat. Vyp.: panel nabídne „Načíst vše“."
+  },
+  "loadStalled": {
+    "message": "Scholar už neposlal další práce (načteno: $N1$). Zkuste „Načíst vše“ za chvíli znovu.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Ocenění v kategorii"
+  },
+  "copyPapers": {
+    "message": "Kopírovat práce"
+  },
+  "tsvYear": {
+    "message": "Rok"
+  },
+  "tsvTitle": {
+    "message": "Název"
+  },
+  "tsvAuthors": {
+    "message": "Autoři"
+  },
+  "tsvVenue": {
+    "message": "Místo publikace"
+  },
+  "tsvAwards": {
+    "message": "Ocenění a přednesy"
+  },
+  "tsvCitations": {
+    "message": "Citace"
+  },
+  "optHideTitle": {
+    "message": "Vlastní bloky Scholar"
+  },
+  "optHideHint": {
+    "message": "Skryjte části stránky profilu, které opakují panel nebo je nepoužíváte. Dokud to nezapnete, nic se neskrývá."
+  },
+  "optHideCited": {
+    "message": "Citováno"
+  },
+  "optHideCitedHint": {
+    "message": "Tabulka citací, h-indexu a i10-indexu a její graf: panel ukazuje stejné součty pro zvýrazněné práce."
+  },
+  "optHideCo": {
+    "message": "Spoluautoři"
+  },
+  "optHideCoHint": {
+    "message": "Seznam spoluautorů v postranním panelu."
+  },
+  "optHideAccess": {
+    "message": "Veřejný přístup"
+  },
+  "optHideAccessHint": {
+    "message": "Pole veřejného přístupu v postranním panelu."
+  },
+  "optMergeTitle": {
+    "message": "Duplicitní záznamy"
+  },
+  "optMergeHint": {
+    "message": "Některé profily uvádějí jednu práci vícekrát."
+  },
+  "optMergeLabel": {
+    "message": "Sloučit duplicity"
+  },
+  "optMergeLabelHint": {
+    "message": "Záznamy se stejným názvem (bez ohledu na velikost písmen, diakritiku a interpunkci) a stejným prvním autorem se sloučí v jeden: zůstane nejcitovanější, s citacemi všech. Panel ho počítá jednou."
+  },
+  "mergedTip": {
+    "message": "Sloučeno záznamů: $N1$; započtené citace všech",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Jazyk"
+  },
+  "optLanguageHint": {
+    "message": "Jazyk tohoto rozšíření a stránek Scholar, které otevíráte."
+  },
+  "optLanguageUi": {
+    "message": "Jazyk rozšíření"
+  },
+  "optLanguageAuto": {
+    "message": "Podle prohlížeče"
+  },
+  "optLanguageScholar": {
+    "message": "Otevírat Scholar v jazyce"
+  },
+  "optLanguageScholarHint": {
+    "message": "Profil Scholar otevřený v jiném jazyce (například ze sdíleného odkazu) se otevře znovu v tomto."
+  },
+  "optLanguageKeep": {
+    "message": "Nechat beze změny"
+  },
+  "optColorsTitle": {
+    "message": "Barvy"
+  },
+  "optColorsHint": {
+    "message": "Barva každé autorské pozice: řádky, označení jména, panel a vyskakovací okno na panelu nástrojů."
+  },
+  "optColorsReset": {
+    "message": "Zpět na standardní barvy"
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "extName": {
+    "message": "Scholar Roller & Rang"
+  },
+  "extDescription": {
+    "message": "Fremhæver på Google Scholar artikler, hvor du er første-, delt første- eller sidsteforfatter, med CCF-/CORE-rang og rolle × rang."
+  },
+  "extShortName": {
+    "message": "Roller&Rang"
+  },
+  "panelTitle": {
+    "message": "Forfatterroller & publikationsrang"
+  },
+  "summaryTitle": {
+    "message": "Artikler efter rolle og rang"
+  },
+  "marksTitle": {
+    "message": "Priser & oplæg"
+  },
+  "markAward": {
+    "message": "Priser"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Bedste artikel"
+  },
+  "mkBestStudent": {
+    "message": "Bedste studenterartikel"
+  },
+  "mkOutstanding": {
+    "message": "Enestående artikel"
+  },
+  "mkDistinguished": {
+    "message": "Fremragende artikel"
+  },
+  "mkRunnerUp": {
+    "message": "Hædrende omtale"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalist til bedste artikel"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Fra forfatternes egne ord i hver artikels titel og publikationssted på Scholar (ikke kontrolleret) og fra en indbygget liste over prisvindende artikler ved store konferencer."
+  },
+  "marksAsWritten": {
+    "message": "fra forfatternes egne ord eller prislisten"
+  },
+  "tipMarkAuthor": {
+    "message": "Skrevet af forfatteren (ikke kontrolleret): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "På prislisten: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Kun fremhævede"
+  },
+  "yearLabel": {
+    "message": "År"
+  },
+  "yearStart": {
+    "message": "Fra"
+  },
+  "yearEnd": {
+    "message": "Til"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Første"
+  },
+  "roleCofirst": {
+    "message": "Delt første"
+  },
+  "roleSecond": {
+    "message": "Anden"
+  },
+  "roleLast": {
+    "message": "Sidste"
+  },
+  "roleMiddle": {
+    "message": "Øvrige"
+  },
+  "roleHidden": {
+    "message": "Skjult"
+  },
+  "colRole": {
+    "message": "Rolle"
+  },
+  "colTotal": {
+    "message": "Alle"
+  },
+  "tipUnranked": {
+    "message": "Ingen rang"
+  },
+  "tipHidden": {
+    "message": "Scholar har afkortet forfatterlisten, så profilejerens placering kan ikke ses"
+  },
+  "copySummary": {
+    "message": "Kopiér oversigt"
+  },
+  "copyTable": {
+    "message": "Kopiér som tabel"
+  },
+  "copied": {
+    "message": "Kopieret"
+  },
+  "coverLoaded": {
+    "message": "$N1$ artikler indlæst",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 artikel indlæst"
+  },
+  "loadingAll": {
+    "message": "Indlæser… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Indlæs alle"
+  },
+  "cancel": {
+    "message": "Annullér"
+  },
+  "coverHidden": {
+    "message": "$N1$ roller skjult af afkortede forfatterlister",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 rolle skjult af en afkortet forfatterliste"
+  },
+  "resolveBtn": {
+    "message": "Afklar"
+  },
+  "resolveHint": {
+    "message": "Åbner hver artikels side på Scholar (omkring én i sekundet) for at læse hele forfatterlisten."
+  },
+  "resolving": {
+    "message": "Læser artikelsider… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google bad om en CAPTCHA. Løs den i et almindeligt faneblad, og prøv igen."
+  },
+  "resolveDone": {
+    "message": "Færdig."
+  },
+  "coverAbsent": {
+    "message": "$N1$ artikler hvor profilnavnet ikke står på forfatterlisten",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 artikel hvor profilnavnet ikke står på forfatterlisten"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ artikler på steder uden rang",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 artikel på et sted uden rang"
+  },
+  "copyUnmatched": {
+    "message": "Kopiér liste"
+  },
+  "reportLink": {
+    "message": "Rapportér"
+  },
+  "layoutWarning": {
+    "message": "Scholars sidelayout ser ud til at være ændret: udvidelsen kan ikke læse forfatterlinjerne. Rapportér det gerne."
+  },
+  "variantsTitle": {
+    "message": "Passer navnet ikke? Tilføj en stavemåde"
+  },
+  "variantsPlaceholder": {
+    "message": "fx Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Tilføj"
+  },
+  "variantRemove": {
+    "message": "Fjern"
+  },
+  "variantAutoTip": {
+    "message": "Tilføjet automatisk: dit profilnavn i omvendt rækkefølge finder dig i $1 artikler"
+  },
+  "variantSuggest": {
+    "message": "Måske dig:"
+  },
+  "variantSuggestTip": {
+    "message": "Forekommer i $1 artikler, hvis forfatterliste ellers ikke nævner dig — klik for at tilføje denne stavemåde"
+  },
+  "expand": {
+    "message": "Udvid"
+  },
+  "collapse": {
+    "message": "Skjul"
+  },
+  "metricsTitle": {
+    "message": "Fremhævede artikler"
+  },
+  "mPapers": {
+    "message": "Artikler"
+  },
+  "mCitations": {
+    "message": "Citationer"
+  },
+  "mH": {
+    "message": "h-indeks"
+  },
+  "mI10": {
+    "message": "i10-indeks"
+  },
+  "metricsOf": {
+    "message": "af"
+  },
+  "dataNote": {
+    "message": "Rangerne kommer fra dagens $N1$-lister, ikke rangen på publiceringstidspunktet. CCF angiver, at listen ikke er et grundlag for akademisk evaluering.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Matchet på navn"
+  },
+  "ruleAcronym": {
+    "message": "Matchet på akronym"
+  },
+  "rulePrefix": {
+    "message": "Matchet på den synlige del af et afkortet navn"
+  },
+  "tipToday": {
+    "message": "nuværende liste, ikke rangen på publiceringstidspunktet"
+  },
+  "tipPosition": {
+    "message": "placering $N1$ af $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "fra artiklens side"
+  },
+  "copyFirst": {
+    "message": "Førsteforfatter"
+  },
+  "copyCofirst": {
+    "message": "Delt førsteforfatter"
+  },
+  "copySecond": {
+    "message": "Andenforfatter"
+  },
+  "copyLast": {
+    "message": "Sidsteforfatter"
+  },
+  "copyMiddle": {
+    "message": "Øvrige placeringer"
+  },
+  "tsvRole": {
+    "message": "Rolle"
+  },
+  "tsvTotal": {
+    "message": "I alt"
+  },
+  "popupNotProfile": {
+    "message": "Åbn en forfatterprofil på Google Scholar for at se oversigten her."
+  },
+  "popupReading": {
+    "message": "Læser siden…"
+  },
+  "popupPapers": {
+    "message": "$N1$ artikler",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 artikel"
+  },
+  "popupOpenScholar": {
+    "message": "Åbn Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Indstillinger"
+  },
+  "optHeading": {
+    "message": "Indstillinger"
+  },
+  "optPreviewTitle": {
+    "message": "Forhåndsvisning"
+  },
+  "optPreviewNote": {
+    "message": "Eksempelartikler, som de ser ud på en Scholar-profil. “A Author” er dig."
+  },
+  "optSaved": {
+    "message": "Gemt"
+  },
+  "optRolesTitle": {
+    "message": "Fremhæv mine artikler"
+  },
+  "optRolesHint": {
+    "message": "Hver placering får sin egen rækkefarve. Artikler, hvor du står i midten, forbliver uden markering."
+  },
+  "optMarkName": {
+    "message": "Markér mit navn i forfatterlinjen"
+  },
+  "optMarkNameHint": {
+    "message": "Fed og farvet. Hold musen over det for at se din placering."
+  },
+  "optRanksTitle": {
+    "message": "Rang for publikationssteder"
+  },
+  "optCcf": {
+    "message": "CCF-rang"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federations liste, 7. udgave (2026)."
+  },
+  "optCore": {
+    "message": "CORE-rang"
+  },
+  "optCoreHint": {
+    "message": "CORE-konferencerangering, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Priser og oplæg"
+  },
+  "optMarkAwardHint": {
+    "message": "Bedste, enestående og fremragende artikel, hædrende omtale, test of time og finalister til bedste artikel."
+  },
+  "optPanelTitle": {
+    "message": "Oversigtspanel"
+  },
+  "optPanelShow": {
+    "message": "Vis oversigtspanelet"
+  },
+  "optPanelShowHint": {
+    "message": "Tabellen rolle × rang på profilsiden. Fra: kun artikellisten markeres."
+  },
+  "optPanelSummary": {
+    "message": "Tabel over rolle × rang"
+  },
+  "optPanelSummaryHint": {
+    "message": "Tabellen over dine artikler efter placering og rang, med kopiknapperne og noten om, hvor rangerne kommer fra."
+  },
+  "optPanelMarks": {
+    "message": "Antal priser og oplæg"
+  },
+  "optPanelMarksHint": {
+    "message": "Antallet af prisvindende artikler og oplægsniveauer, ét klik viser dem."
+  },
+  "optPanelStatus": {
+    "message": "Indlæste artikler og steder uden rang"
+  },
+  "optPanelStatusHint": {
+    "message": "Hvor mange artikler der er indlæst, knappen “Indlæs alle” og listen over artikler på steder uden rang."
+  },
+  "optPanelNames": {
+    "message": "Hjælp til navnestavning"
+  },
+  "optPanelNamesHint": {
+    "message": "“Passer navnet ikke? Tilføj en stavemåde” og forslagene til dit navn."
+  },
+  "optPanelCompact": {
+    "message": "Kompakt: kun filtre og citationssummer"
+  },
+  "optPanelFull": {
+    "message": "Det hele"
+  },
+  "optPanelFilters": {
+    "message": "Filtre"
+  },
+  "optPanelFiltersHint": {
+    "message": "Kun fremhævede artikler og et årsinterval."
+  },
+  "optPanelMetrics": {
+    "message": "Citationssummer"
+  },
+  "optPanelMetricsHint": {
+    "message": "Artikler, citationer, h-indeks og i10-indeks for de fremhævede artikler."
+  },
+  "optDataTitle": {
+    "message": "Gemte data"
+  },
+  "optClearCache": {
+    "message": "Ryd gemte artikeldetaljer"
+  },
+  "optCacheCount": {
+    "message": "Forfatterlister for $N1$ artikler er gemt på denne enhed (læst med Afklar, gemmes i 90 dage).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "Forfatterlisten for 1 artikel er gemt på denne enhed (læst med Afklar, gemmes i 90 dage)."
+  },
+  "optCacheNone": {
+    "message": "Ingen artikeldetaljer er gemt."
+  },
+  "optCleared": {
+    "message": "Ryddet"
+  },
+  "optReset": {
+    "message": "Nulstil til standard"
+  },
+  "optResetConfirm": {
+    "message": "Nulstille alle disse indstillinger til standardværdierne?"
+  },
+  "optStorage": {
+    "message": "Indstillingerne gemmes i din browser og synkroniseres med din Chrome-profil. Intet sendes nogen steder hen."
+  },
+  "optSample": {
+    "message": "Eksempelartikel"
+  },
+  "optLoadTitle": {
+    "message": "Artikelliste"
+  },
+  "optAutoLoad": {
+    "message": "Indlæs alle artikler automatisk"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar viser først kun de første artikler. Udvidelsen trykker på Scholars egen knap “Vis flere” for dig, omkring én gang i sekundet, til hele listen er indlæst, og stopper, hvis Scholar holder op med at svare. Fra: panelet tilbyder i stedet “Indlæs alle”."
+  },
+  "loadStalled": {
+    "message": "Scholar sendte ikke flere artikler ($N1$ indlæst). Prøv “Indlæs alle” igen om lidt.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategoripris"
+  },
+  "copyPapers": {
+    "message": "Kopiér artikler"
+  },
+  "tsvYear": {
+    "message": "År"
+  },
+  "tsvTitle": {
+    "message": "Titel"
+  },
+  "tsvAuthors": {
+    "message": "Forfattere"
+  },
+  "tsvVenue": {
+    "message": "Publikationssted"
+  },
+  "tsvAwards": {
+    "message": "Priser & oplæg"
+  },
+  "tsvCitations": {
+    "message": "Citationer"
+  },
+  "optHideTitle": {
+    "message": "Scholars egne blokke"
+  },
+  "optHideHint": {
+    "message": "Skjul dele af profilsiden, der gentager panelet, eller som du ikke bruger. Intet skjules, før du slår det til."
+  },
+  "optHideCited": {
+    "message": "Citeret af"
+  },
+  "optHideCitedHint": {
+    "message": "Tabellen med citationer, h-indeks og i10-indeks og dens graf: panelet viser de samme summer for de fremhævede artikler."
+  },
+  "optHideCo": {
+    "message": "Medforfattere"
+  },
+  "optHideCoHint": {
+    "message": "Listen over medforfattere i sidepanelet."
+  },
+  "optHideAccess": {
+    "message": "Offentlig adgang"
+  },
+  "optHideAccessHint": {
+    "message": "Boksen om offentlig adgang i sidepanelet."
+  },
+  "optMergeTitle": {
+    "message": "Dubletter"
+  },
+  "optMergeHint": {
+    "message": "Nogle profiler viser en artikel flere gange."
+  },
+  "optMergeLabel": {
+    "message": "Slå dubletter sammen"
+  },
+  "optMergeLabelHint": {
+    "message": "Poster med samme titel (bortset fra store bogstaver, accenter og tegnsætning) og samme førsteforfatter bliver til én: den mest citerede bliver og viser alles citationer. Panelet tæller den én gang."
+  },
+  "mergedTip": {
+    "message": "Slået sammen fra $N1$ poster: citationerne fra dem alle",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Sprog"
+  },
+  "optLanguageHint": {
+    "message": "Sproget i denne udvidelse og på de Scholar-sider, du åbner."
+  },
+  "optLanguageUi": {
+    "message": "Udvidelsens sprog"
+  },
+  "optLanguageAuto": {
+    "message": "Følg browseren"
+  },
+  "optLanguageScholar": {
+    "message": "Åbn Scholar på"
+  },
+  "optLanguageScholarHint": {
+    "message": "En Scholar-profil, du åbner på et andet sprog (fx via et delt link), åbnes igen på dette."
+  },
+  "optLanguageKeep": {
+    "message": "Lad den være"
+  },
+  "optColorsTitle": {
+    "message": "Farver"
+  },
+  "optColorsHint": {
+    "message": "Farven for hver forfatterrolle: rækker, navnemarkeringer, panelet og værktøjslinjens popup."
+  },
+  "optColorsReset": {
+    "message": "Tilbage til standardfarverne"
+  }
+}

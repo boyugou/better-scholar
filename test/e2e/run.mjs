@@ -241,9 +241,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       document.querySelector("#gsc_a_b").append(c);
       return { own: parseInt(tr.querySelector("td.gsc_a_c a").textContent, 10), rows: document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length };
     });
-    const visibleRows = () => page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length);
+    const shownRows = () => page.evaluate(() => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length);
     await page.waitForTimeout(300);
-    assert.equal(await visibleRows(), twin.rows, "duplicates are kept by default");
+    assert.equal(await shownRows(), twin.rows, "duplicates are kept by default");
     await setPref(opts, "mergeDuplicates", true);
     await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, twin.rows - 1);
     const merged = await page.evaluate(() => { const a = document.querySelector("#gsc_a_b tr.gsc_a_tr td.gsc_a_c a"); return { text: a.textContent, title: a.title }; });
@@ -254,6 +254,42 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.evaluate(() => document.querySelector("#gsc_a_b tr.gsc_a_tr td.gsc_a_c a").textContent), String(twin.own), "switched off: Scholar's own number is back");
     ok("merge duplicates: off by default; on hides the twin and shows both entries' citations on the one that stays; off restores");
     await page.evaluate(() => { for (const tr of document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")) if (/TEST:TWIN/.test(tr.innerHTML)) tr.remove(); });
+
+    // -- 6a3. role colours: a colour picked on the settings page recolours the open profile; "back to the standard" restores
+    const rowColor = () => page.evaluate(() => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow);
+    const before = await rowColor();
+    await opts.bringToFront();
+    await opts.locator('input[data-pref="colors.first"]').evaluate((el) => { el.value = "#ff0000"; el.dispatchEvent(new Event("input", { bubbles: true })); el.dispatchEvent(new Event("change", { bubbles: true })); });
+    await eventually(page, () => /255, 0, 0/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
+    await opts.click('[data-act="colors-reset"]');
+    await eventually(page, () => /26, 115, 232/.test(getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow));
+    assert.equal(await rowColor(), before);
+    ok("role colours: a picked colour recolours the open profile, and 'Back to the standard colours' restores it");
+
+    // -- 6a4. language: choosing one in the settings re-draws the open profile and the settings page in it; "Follow the browser" brings English back
+    const jaTitle = JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", "ja", "messages.json"), "utf8")).panelTitle.message;
+    const enTitle = JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", "en", "messages.json"), "utf8")).panelTitle.message;
+    await opts.bringToFront();
+    await opts.selectOption('select[data-pref="language"]', "ja");
+    await page.waitForFunction((x) => (document.querySelector("#rr-panel") || {}).getAttribute && document.querySelector("#rr-panel").getAttribute("aria-label") === x, jaTitle, { timeout: 15000 });
+    await opts.waitForFunction((x) => document.title.startsWith(x), jaTitle, { timeout: 15000 });
+    assert.equal(await opts.locator('select[data-pref="language"]').inputValue(), "ja");
+    await opts.selectOption('select[data-pref="language"]', "auto");
+    await page.waitForFunction((x) => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").getAttribute("aria-label") === x, enTitle, { timeout: 15000 });
+    ok("language: picking Japanese redraws the open profile and the settings page in it; 'Follow the browser' brings English back");
+    // -- 6a5. "Open Scholar in": a profile opened in another language is opened again with the chosen one; "Leave as it is" stops that
+    await opts.bringToFront();
+    await opts.selectOption('select[data-pref="scholarLanguage"]', "de");
+    await page.waitForFunction(() => new URL(location.href).searchParams.get("hl") === "de", null, { timeout: 15000 });
+    await opts.selectOption('select[data-pref="scholarLanguage"]', "keep");
+    await page.goto(fx.url);
+    await page.waitForSelector("#rr-panel");
+    assert.equal(new URL(page.url()).searchParams.get("hl"), "en", "left as it is");
+    ok("Scholar language: a chosen language is put on the open profile's address (hl=), and 'Leave as it is' leaves it alone");
+    // (the page was loaded afresh: bring the whole list back for what follows)
+    await page.click('[data-act="load-all"]');
+    await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });
+    await page.waitForFunction(() => !document.querySelector('[data-act="load-all"]'));
 
     // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
     await opts.bringToFront();

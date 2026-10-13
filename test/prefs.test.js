@@ -14,6 +14,9 @@ test("defaults: everything on, complete, and a fresh object each time", () => {
     panel: { show: true, summary: true, marks: true, filters: true, metrics: true, status: true, names: true },
     hide: { cited: false, coauthors: false, access: false },
     mergeDuplicates: false,
+    language: "auto",
+    scholarLanguage: "keep",
+    colors: { first: "", cofirst: "", second: "", last: "" },
     autoLoad: true
   });
   d.roles.first = false;

@@ -8,11 +8,17 @@
 
   const { venues, analysis, metrics, marks, names, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
+  await B.dom.useLanguage();
 
   const profileId = B.scholar.profileId();
   const headerName = B.scholar.ownerName();
   await B.store.migrate();
   let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
+  // Scholar's own pages in the chosen language: this profile is opened again with that hl= (once; a link already in it stays)
+  if (prefs.scholarLanguage !== "keep") {
+    const hl = B.i18n.scholarHl(prefs.scholarLanguage), url = new URL(location.href);
+    if (hl && url.searchParams.get("hl") !== hl) { url.searchParams.set("hl", hl); location.replace(url.href); return; }
+  }
   const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
   const resolvedCache = await B.store.loadResolved();
@@ -362,12 +368,15 @@
   // Scholar's own blocks the settings ask to hide (a class on <html>, styled in styles.css)
   const prefsHide = (p) => { for (const k of B.prefs.HIDE_PARTS) document.documentElement.classList.toggle("rr-hide-" + k, !!p.hide[k]); };
   prefsHide(prefs);
+  B.dom.applyColors(prefs.colors);
   const scheduleRefresh = frame(refresh);
 
   // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
   // gone must not keep hiding rows, so those are cleared.
   B.store.onPrefsChanged((next) => {
+    if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
+    B.dom.applyColors(next.colors);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;

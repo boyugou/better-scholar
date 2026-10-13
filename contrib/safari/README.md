@@ -22,7 +22,7 @@ copies `AuthorRolesVenueRanks.app` to `/Applications`.
 
 Then, in Safari:
 
-1. **Settings → Extensions** → enable **Scholar Author Roles & Venue Ranks**.
+1. **Settings → Extensions** → enable **Scholar Roles & Ranks**.
 2. For local unsigned builds, also enable **Develop → Allow Unsigned Extensions**
    (this resets every time Safari restarts).
 

@@ -1,4 +1,4 @@
-# Scholar Author Roles & Venue Ranks
+# Scholar Roles & Ranks
 
 Chrome (Manifest V3) extension for Google Scholar profiles: authorship roles × CCF / CORE
 venue ranks, as row colours, venue chips and a role × rank summary. See `README.md` and

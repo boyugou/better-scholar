@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "2.10.132",
+  "version": "2.11.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
-  "minimum_chrome_version": "110",
+  "minimum_chrome_version": "111",
   "permissions": [
     "storage"
   ],
@@ -225,6 +225,7 @@
         "content/styles.css"
       ],
       "js": [
+        "lib/i18n.js",
         "lib/names.js",
         "lib/venues.js",
         "lib/metrics.js",
