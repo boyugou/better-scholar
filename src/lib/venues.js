@@ -514,8 +514,10 @@
     // "… Computer graphics and …": cut after a connective, so the name goes on — what is visible equals no complete
     // name (it is not CGI; it is SIGGRAPH's "… on Computer Graphics and Interactive Techniques"); only the prefix rule may speak
     const danglingStop = p.truncated && (() => { const k = canonTokensKeepStops(p.plain, "full"); return k.length > 0 && STOP.has(k[k.length - 1]); })();
-    // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"
-    const publisherOnly = ORG.has(squash(p.plain));
+    // a venue that is only a publisher ("ACM, 2011", "IEEE") is a book or report, not "Journal of the ACM"; with the years, ordinals and the cut taken out too
+    // ("2019 IEEE", "2023 IEEE 39th …": Scholar's cut-off form of a conference of the IEEE) it still says no more than the publisher —
+    // only the two journals titled "Proceedings of the IEEE" / "…National Academy of Sciences" name themselves by it
+    const publisherOnly = ORG.has(squash(p.plain)) || (!JOURNAL_PROCEEDINGS.test(p.plain.trim()) && (() => { const k = canonTokens(p.plain, "full"); return k.length > 0 && k.every((t) => ORG.has(t)); })());
     // a cut-off string that ends in the acronym of a real venue ("Medical Image Computing and Computer Assisted Intervention− MICCAI
     // 2017 …", Springer's series form) has said its whole name before the acronym: the variant without acronyms may speak too
     const endsInAcronym = p.truncated && (() => {

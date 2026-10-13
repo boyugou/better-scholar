@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.22.8 — 2026-10-13
+
+- **A publisher with only a year, an ordinal or the cut is no venue.** Read on the live pages of Scholar's search results: the source line is cut to fit, and `2023 IEEE 39th …` (a cut-off conference of the IEEE) was badged CCF A as the journal *Proceedings of the IEEE*; so were `2019 IEEE …`, `IEEE 39th …`, `The 39th IEEE …` and a bare `2019 IEEE` — a wrong badge, which the principles do not allow. A string whose words, once years, ordinals and the cut are taken out, are only organisations (IEEE, ACM, SIAM, USENIX …) now says no more than the publisher; the two journals literally titled *Proceedings of the IEEE* / *…National Academy of Sciences* still match. Regression test over every organisation and form; none of the 1,000+ real corpus strings changed.
+- Eighteen real search-result source lines joined the venue corpus; `docs/ROADMAP.md` records why Scholar's search results are not supported (three of twenty could be ranked, the rest are cut beyond use) and that CORE's portal ids are stable across editions while CCF's older editions are the blocker for ranks at publication time.
+
 ## 2.22.7 — 2026-10-13
 
 From a second-pass review of today's new translations by a reviewer reading all 30 languages (no mistranslation of meaning was found; grammar and consistency):

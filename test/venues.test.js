@@ -349,6 +349,16 @@ test("'Proceedings of the ACM Web Conference 2024' is WWW", () => {
   }
 });
 
+test("a publisher with only a year, an ordinal or the cut is no venue (Scholar's search results print 'Advances in neural …', '2023 IEEE 39th …'): not Proceedings of the IEEE", () => {
+  // read on the live search page of 2026-10-13: "2023 IEEE 39th …, 2023" was badged CCF A as the journal Proceedings of the IEEE
+  for (const s of ["2023 IEEE 39th …, 2023", "2019 IEEE …", "2019 IEEE …, 2019", "IEEE 39th …", "2019 IEEE", "The 39th IEEE …", "2019 IEEE/IEEE …", "2019 ACM …", "ACM 2019", "2020 SIAM …, 2020", "2019 USENIX …"]) assert.equal(brief(s), "", s);
+  // the journals that are literally titled that way still are
+  assert.equal(brief("Proceedings of the IEEE 108 (3), 2020"), "CCF A Proc. IEEE");
+  assert.equal(brief("Proceedings of the IEEE, 1-17, 2014"), "CCF A Proc. IEEE");
+  // and a conference of the IEEE that says what it is is its own
+  assert.equal(brief("2023 IEEE 39th International Conference on Data Engineering (ICDE), 2023"), "CCF A ICDE · CORE A* ICDE");
+});
+
 test("a bare publisher is not a venue: the ACL Anthology's publisher name, AAAI Press, NIPS Foundation", () => {
   // seen on a real profile: a NAACL paper printed as just "Association for Computational Linguistics, 2013" (it was badged ACL)
   for (const s of ["Association for Computational Linguistics, 2013", "Association for Computational Linguistics", "The Association for Computational Linguistics, 2015",
