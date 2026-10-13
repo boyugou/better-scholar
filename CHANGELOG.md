@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.22.5 — 2026-10-13
+
+- **The settings page has links in its footer:** the project's privacy page, *Report a problem* (the issue tracker's template chooser) and GitHub. Plain links that open only when clicked (`PRIVACY.md` says so); the two labels use the words the project site already has in 30 languages.
+- The settings page's footer is a row of the page's grid and the preview spans it, so the preview stays whole in view down to the end of the page whatever the footer's height (a footer of two lines — the longer languages — used to push the preview's top out of the window at the end of the page).
+
 ## 2.22.4 — 2026-10-13
 
 From a biologist's real profile (100 papers, read in the user's own Chrome; `test/fixtures/profiles/doudna.json`):

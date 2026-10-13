@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar tidak menerima kunci API, jadi sisanya menggunakan halaman Scholar sendiri."
+  },
+  "optLinkPrivacy": {
+    "message": "Privasi"
+  },
+  "optLinkIssues": {
+    "message": "Laporkan masalah"
   }
 }

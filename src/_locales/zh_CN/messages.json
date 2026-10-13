@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar 不接受这个 API 密钥，其余的改为读取 Scholar 自己的页面。"
+  },
+  "optLinkPrivacy": {
+    "message": "隐私"
+  },
+  "optLinkIssues": {
+    "message": "反馈问题"
   }
 }

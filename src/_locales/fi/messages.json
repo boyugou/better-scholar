@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar ei hyväksynyt API-avainta, joten loppuun käytettiin Scholarin omia sivuja."
+  },
+  "optLinkPrivacy": {
+    "message": "Tietosuoja"
+  },
+  "optLinkIssues": {
+    "message": "Ilmoita ongelmasta"
   }
 }

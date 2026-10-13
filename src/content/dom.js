@@ -102,5 +102,5 @@
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }
 
-  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl };
+  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl, REPO };
 })();

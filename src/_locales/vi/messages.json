@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar không chấp nhận khóa API, nên phần còn lại đã dùng trang của chính Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Quyền riêng tư"
+  },
+  "optLinkIssues": {
+    "message": "Báo cáo sự cố"
   }
 }

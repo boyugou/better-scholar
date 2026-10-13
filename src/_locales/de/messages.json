@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar hat den API-Schlüssel nicht akzeptiert, daher wurden für den Rest die eigenen Seiten von Scholar genutzt."
+  },
+  "optLinkPrivacy": {
+    "message": "Datenschutz"
+  },
+  "optLinkIssues": {
+    "message": "Problem melden"
   }
 }

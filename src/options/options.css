@@ -19,11 +19,13 @@ body { margin: 0; background: var(--ground); color: var(--text);
 #saved.on { opacity: 1; }
 
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 450px; gap: 22px; align-items: start; }
-.preview { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; overscroll-behavior: contain; border-radius: 12px; }   /* always whole in view: it scrolls inside itself when the window is shorter, and its bottom stays clear of the page's end, where the sticky box would otherwise be pushed up */
+.grid > main { grid-column: 1; grid-row: 1; }
+.grid > .foot { grid-column: 1; grid-row: 2; }                       /* (the footer is a row of the grid and the preview spans it: the preview can stay in view down to the end of the page, however many lines the footer takes) */
+.preview { position: sticky; top: 16px; grid-column: 2; grid-row: 1 / span 2; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; overscroll-behavior: contain; border-radius: 12px; }   /* always whole in view: it scrolls inside itself when the window is shorter, and its bottom stays clear of the page's end, where the sticky box would otherwise be pushed up */
 .preview > .card { margin: 0; }
 .preview { color-scheme: light; }                  /* (scrollbars and form controls inside the always-light preview stay light) */
 .preview.more::after { content: ""; position: sticky; bottom: 0; display: block; height: 30px; margin-top: -30px; background: linear-gradient(transparent, #fff); pointer-events: none; }
-@media (max-width: 940px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; order: -1; max-height: none; overflow: visible; } .preview.more::after { display: none; } }
+@media (max-width: 940px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; order: -1; grid-column: 1; grid-row: auto; max-height: none; overflow: visible; } .grid > main, .grid > .foot { grid-row: auto; } .preview.more::after { display: none; } }
 
 .card { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 16px; overflow: hidden; }
 .card > h2 { margin: 0; padding: 14px 18px 10px; font-size: 14px; font-weight: 600; }
@@ -58,8 +60,11 @@ button.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px
 .pv a { font: 14px/1.35 Arial, sans-serif; color: #1a0dab; }
 .pv .g { color: #5f6368; font: 12px/1.45 Arial, sans-serif; }
 
-.foot { margin-top: 8px; color: var(--faint); font-size: 12.5px; }
-.foot #ver { margin-inline-start: 6px; }
+.foot { margin-top: 8px; color: var(--faint); font-size: 12.5px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; }
+.foot .links { display: flex; flex-wrap: wrap; gap: 2px 16px; margin-inline-start: auto; }
+.foot .links a { color: var(--muted); text-decoration: none; }
+.foot .links a:hover { color: var(--text); text-decoration: underline; }
+.foot .links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 #pv-panel { margin: 0 0 12px; }
 .opt.sub { padding-inline-start: 34px; background: var(--sub); box-shadow: inset 2px 0 0 var(--line); }
 [dir="rtl"] .opt.sub { box-shadow: inset -2px 0 0 var(--line); }

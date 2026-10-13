@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar nepřijal API klíč, takže zbytek byl načten ze stránek Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Ochrana soukromí"
+  },
+  "optLinkIssues": {
+    "message": "Nahlásit problém"
   }
 }

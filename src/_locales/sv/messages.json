@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar godtog inte API-nyckeln, så resten hämtades från Scholars egna sidor."
+  },
+  "optLinkPrivacy": {
+    "message": "Integritet"
+  },
+  "optLinkIssues": {
+    "message": "Rapportera ett problem"
   }
 }

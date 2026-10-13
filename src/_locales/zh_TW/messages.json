@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar 不接受這個 API 金鑰，其餘改為讀取 Scholar 自己的頁面。"
+  },
+  "optLinkPrivacy": {
+    "message": "隱私權"
+  },
+  "optLinkIssues": {
+    "message": "回報問題"
   }
 }

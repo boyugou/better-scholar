@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "A Semantic Scholar nem fogadta el az API-kulcsot, ezért a továbbiakhoz a Scholar saját oldalait használtuk."
+  },
+  "optLinkPrivacy": {
+    "message": "Adatvédelem"
+  },
+  "optLinkIssues": {
+    "message": "Probléma jelentése"
   }
 }

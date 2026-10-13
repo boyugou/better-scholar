@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar לא קיבל את מפתח ה-API, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
+  },
+  "optLinkPrivacy": {
+    "message": "פרטיות"
+  },
+  "optLinkIssues": {
+    "message": "דווח על בעיה"
   }
 }

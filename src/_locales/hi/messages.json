@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar ने API कुंजी स्वीकार नहीं की, इसलिए बाकी के लिए Scholar के अपने पेज इस्तेमाल किए गए।"
+  },
+  "optLinkPrivacy": {
+    "message": "गोपनीयता"
+  },
+  "optLinkIssues": {
+    "message": "समस्या की रिपोर्ट करें"
   }
 }

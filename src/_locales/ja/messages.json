@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar が API キーを受け付けなかったため、残りは Scholar 自身のページを使用しました。"
+  },
+  "optLinkPrivacy": {
+    "message": "プライバシー"
+  },
+  "optLinkIssues": {
+    "message": "問題を報告"
   }
 }

@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar did not accept the API key, so Scholar's own pages were used for the rest."
+  },
+  "optLinkPrivacy": {
+    "message": "Privacy"
+  },
+  "optLinkIssues": {
+    "message": "Report a problem"
   }
 }

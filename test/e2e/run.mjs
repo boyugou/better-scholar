@@ -430,6 +430,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.match(diag, /^Scholar Roles & Ranks \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"v":3,/s);
     assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
+    // the footer points at the project's own pages, as plain links that open only when clicked
+    assert.deepEqual(await opts.evaluate(() => [...document.querySelectorAll(".foot .links a")].map((a) => [a.textContent, a.href, a.target, a.rel])), [
+      ["Privacy", "https://boyugou.github.io/scholar-roles-and-ranks/privacy/", "_blank", "noopener"],
+      ["Report a problem", "https://github.com/boyugou/scholar-roles-and-ranks/issues/new/choose", "_blank", "noopener"],
+      ["GitHub", "https://github.com/boyugou/scholar-roles-and-ranks", "_blank", "noopener"]
+    ]);
 
     // -- 6a6. the card links under the header: one per card, each takes its card to the top of the window
     await opts.bringToFront();

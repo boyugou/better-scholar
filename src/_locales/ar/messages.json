@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "لم تقبل Semantic Scholar مفتاح API، لذلك استُخدمت صفحات Scholar نفسها للباقي."
+  },
+  "optLinkPrivacy": {
+    "message": "الخصوصية"
+  },
+  "optLinkIssues": {
+    "message": "الإبلاغ عن مشكلة"
   }
 }

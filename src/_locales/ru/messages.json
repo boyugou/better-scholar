@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar не принял ключ API, поэтому остальное взято со страниц самого Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Конфиденциальность"
+  },
+  "optLinkIssues": {
+    "message": "Сообщить о проблеме"
   }
 }

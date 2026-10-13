@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar ไม่ยอมรับคีย์ API จึงใช้หน้าของ Scholar เองสำหรับส่วนที่เหลือ"
+  },
+  "optLinkPrivacy": {
+    "message": "ความเป็นส่วนตัว"
+  },
+  "optLinkIssues": {
+    "message": "รายงานปัญหา"
   }
 }

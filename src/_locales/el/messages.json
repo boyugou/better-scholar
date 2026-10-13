@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Το Semantic Scholar δεν αποδέχθηκε το κλειδί API, οπότε για το υπόλοιπο χρησιμοποιήθηκαν οι σελίδες του ίδιου του Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Απόρρητο"
+  },
+  "optLinkIssues": {
+    "message": "Αναφορά προβλήματος"
   }
 }

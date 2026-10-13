@@ -24,7 +24,8 @@ Scholar Roles & Ranks works entirely in your browser.
   you had clicked; the extension adds no request and no permission. It stops at once if Scholar stops sending
   papers. The setting *Paper list → Load all papers automatically* turns it off (the panel then offers *Load all*).
 - **Links:** the *Report* links in the panel are ordinary links to this project's GitHub issue tracker; they
-  open only when you click them and carry only the venue text you can see in the panel.
+  open only when you click them and carry only the venue text you can see in the panel. The footer of the settings page has
+  three more, to this project's privacy page, its issue tracker and its GitHub page; they, too, open only when you click them and carry nothing.
 - **Permissions:** `storage` only. No host permissions beyond the content-script matches, no `tabs`/`activeTab`.
   The only background code is a small service worker that opens the settings page when the panel's
   settings button asks, and hands a page the interface strings of the language you chose (read from the

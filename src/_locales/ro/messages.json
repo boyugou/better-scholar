@@ -725,5 +725,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar nu a acceptat cheia API, așa că restul a fost preluat din paginile Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Confidențialitate"
+  },
+  "optLinkIssues": {
+    "message": "Raportează o problemă"
   }
 }

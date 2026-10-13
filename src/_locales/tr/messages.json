@@ -746,5 +746,11 @@
   },
   "resolveSemanticKey": {
     "message": "Semantic Scholar API anahtarını kabul etmedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
+  },
+  "optLinkPrivacy": {
+    "message": "Gizlilik"
+  },
+  "optLinkIssues": {
+    "message": "Sorun bildir"
   }
 }
