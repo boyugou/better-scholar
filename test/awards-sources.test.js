@@ -2237,3 +2237,9 @@ test("The Web Conference year pages: 2020's 'Paper Title:' / 'Authors:' lines un
   const b = `<p>and the winners are:</p><p>Best Paper:</p><p>HighLife: higher-arity fact harvesting</p><p>Ivy Jones, Kay Lowe and Max Nye</p><p>Best Poster:</p><p>An improved sampler for Bayesian personalized ranking</p><p>Pat Quinn</p>`;
   assert.deepEqual(parseWwwYearAwards(b, "https://www2018.thewebconf.org/awards/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2018 HighLife: higher-arity fact harvesting | Ivy Jones; Kay Lowe; Max Nye"]);
 });
+
+test("PIMRC best paper page: 'Track: …', 'Paper #…', the title and the authors with brackets per paper, after the recipients line", async () => {
+  const { parsePimrcBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>Best Paper Awards</p><p>PIMRC 2025 BEST PAPER AWARDS RECIPIENTS</p><p>Track:  T1-20: Learning for Communications 2</p><p>Paper #1571139091</p><p>Scenario diversity assessment for data down scaling in wireless AI</p><p>Ann Lee, Bo Chan and Cy Dunn (Zhejiang University, China)</p><p>WS01-S2: AFDM and Emerging Waveforms</p><p>Paper # 1571158216</p><p>Affine frequency division multiplexing with practical filters</p><p>Ed Fox (Sun Yat-sen University, China); Flo Gray (SCUT, China)</p>`;
+  assert.deepEqual(parsePimrcBest(h, "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards").entries.map((e) => `${e.awardLabel} | ${e.authors.join("; ")}`), ["Best Paper Award (Learning for Communications 2) | Ann Lee; Bo Chan; Cy Dunn", "Best Paper Award (WS01-S2: AFDM and Emerging Waveforms) | Ed Fox; Flo Gray"]);
+});

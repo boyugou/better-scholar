@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.87 — 2026-10-12
+
+- IEEE PIMRC 2025's seven best papers (four tracks and three workshop sessions) from the symposium's own Best Paper Awards page (`tot.mjs pimrc-best`); the list had none for PIMRC. The list has 6814 awards.
+
 ## 2.10.86 — 2026-10-12
 
 - The Web Conference's best paper of 2018 (HighLife) and best paper and best student paper of 2020 (Open Intent Extraction; Mobile App Squatting) from the conference's own pages (`tot.mjs www-year`); the list had WWW's best papers of 2022 and 2024 only. The list has 6807 awards.

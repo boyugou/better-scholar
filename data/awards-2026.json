@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6807
+  "count": 6814
  },
  "entries": [
   {
@@ -88944,6 +88944,126 @@
    "track": "main",
    "source": "https://www.usenix.org/conferences/best-papers",
    "evidence": "OSDI '26: μShell: A Microkernel-based FPGA Shell Architecture — Jiyang Chen, Technical University of Munich; Anubhav Panda, Technical University of Munich; Harshavardhan Unnibhavi, Technical University of Munich; Atsushi Koshiba, Tokyo University of Science; Pramod Bhatotia, Technical University of Munich"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Sensing and Communications)",
+   "title": "A Detection Scheme for Joint Radar and Communications Enabled Rogue Base Stations",
+   "authors": [
+    "Shreesh Mohalik",
+    "Ahmet Burak Ozyurt",
+    "John Thompson"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, T4-15: Sensing and Communications: A Detection Scheme for Joint Radar and Communications Enabled Rogue Base Stations — Shreesh Mohalik, Ahmet Burak Ozyurt, John Thompson"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WS01-S2: AFDM and Emerging Waveforms)",
+   "title": "Affine Frequency Division Multiplexing with Practical DAC and ADC Filters",
+   "authors": [
+    "Yuqing Liu",
+    "Yanqun Tang",
+    "Haoran Yin",
+    "Ruiqi Cao",
+    "Miaowen Wen"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, WS01-S2: AFDM and Emerging Waveforms: Affine Frequency Division Multiplexing with Practical DAC and ADC Filters — Yuqing Liu, Yanqun Tang, Haoran Yin, Ruiqi Cao, Miaowen Wen"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Mobility Analytics and Route Resilience)",
+   "title": "An Explainable AI Framework for Dynamic Resource Management in Vehicular Network Slicing",
+   "authors": [
+    "Haochen Sun",
+    "Yifan Liu",
+    "Ahmed Al-Tahmeesschi",
+    "Swarna Bindu Chetty",
+    "Syed Ali Raza Zaidi",
+    "Avishek Nag",
+    "Hamed Ahmadi"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, T3-20: Mobility Analytics and Route Resilience: An Explainable AI Framework for Dynamic Resource Management in Vehicular Network Slicing — Haochen Sun, Yifan Liu, Ahmed Al-Tahmeesschi, Swarna Bindu Chetty, Syed Ali Raza Zaidi, Avishek Nag, Hamed Ahmadi"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WS02-S2: Integrated Sensing, AI, and Communication II)",
+   "title": "Bistatic Non-Line-of-Sight Environment Sensing in Wireless Networks",
+   "authors": [
+    "Weijie Zhou",
+    "Zhaoyang Zhang",
+    "Xin Tong",
+    "Jingze Che",
+    "Zhaohui Yang",
+    "Lei Liu"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, WS02-S2: Integrated Sensing, AI, and Communication II: Bistatic Non-Line-of-Sight Environment Sensing in Wireless Networks — Weijie Zhou, Zhaoyang Zhang, Xin Tong, Jingze Che, Zhaohui Yang, Lei Liu"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Resource Management)",
+   "title": "Implicit Channel Quality-Driven Lightweight Resource Allocation in OFDMA WiFi Networks",
+   "authors": [
+    "Qiaohan Zhang",
+    "Philipp Schulz",
+    "Gerhard P. Fettweis"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, T2-2: Resource Management: Implicit Channel Quality-Driven Lightweight Resource Allocation in OFDMA WiFi Networks — Qiaohan Zhang, Philipp Schulz, Gerhard P. Fettweis"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WS13-S2: Short Range Wireless Communications, Localization and Sensing)",
+   "title": "NearLink: Emerging Short Range Wireless Standard with Ultra-Low Latency and Ultra-High Reliability",
+   "authors": [
+    "Zhan Yu",
+    "ZiChen Xie",
+    "Qian Yu",
+    "Kang Wang",
+    "Hang Fang",
+    "Weihua Li",
+    "Zhan Guo"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, WS13-S2: Short Range Wireless Communications, Localization and Sensing: NearLink: Emerging Short Range Wireless Standard with Ultra-Low Latency and Ultra-High Reliability — Zhan Yu, ZiChen Xie, Qian Yu, Kang Wang, Hang Fang, Weihua Li, Zhan Guo"
+  },
+  {
+   "venue": "PIMRC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Learning for Communications 2)",
+   "title": "Scenario Diversity Assessment for Data Down Scaling in Wireless AI: a Geometric Feature-Based Approach",
+   "authors": [
+    "Ridong Li",
+    "Zhaoyang Zhang",
+    "Zirui Chen",
+    "Zhaohui Yang",
+    "Richeng Jin"
+   ],
+   "track": "main",
+   "source": "https://pimrc2025.ieee-pimrc.org/program/best-paper-awards",
+   "evidence": "PIMRC 2025 Best Paper Award, T1-20: Learning for Communications 2: Scenario Diversity Assessment for Data Down Scaling in Wireless AI: a Geometric Feature-Based Approach — Ridong Li, Zhaoyang Zhang, Zirui Chen, Zhaohui Yang, Richeng Jin"
   },
   {
    "venue": "PKC",
