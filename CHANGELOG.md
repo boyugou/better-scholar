@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.124 — 2026-10-12
+
+- The International Semantic Web Conference's best research, student, resource and in-use track papers of 2022, 2023 and 2024 (12 papers) from the conference's own award pages (`tot.mjs iswc-semweb`; the Wearable-computing ISWC pages are a different series). The list has 7802 awards.
+
 ## 2.10.123 — 2026-10-12
 
 - ECIR 2024's and 2020's best, short, IR4Good, industry and reproducibility papers with their honourable mentions (14 papers) from the conferences' own award pages (`tot.mjs ecir-labelled`; the page of 2021 describes the awards in prose, 2019's answers 502, 2022's 406). The list has 7790 awards.

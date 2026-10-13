@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7790
+  "count": 7802
  },
  "entries": [
   {
@@ -88029,6 +88029,71 @@
   {
    "venue": "ISWC",
    "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper Award",
+   "title": "Efficient Dependency Analysis for Rule-Based Ontologies",
+   "authors": [
+    "Larry González",
+    "Alex Ivliev",
+    "Markus Krötzsch",
+    "Stephan Mennicke"
+   ],
+   "track": "main",
+   "source": "https://iswc2022.semanticweb.org/index.php/awards/index.html",
+   "evidence": "ISWC 2022 Best Research Track Paper Award: Efficient Dependency Analysis for Rule-Based Ontologies — Larry González, Alex Ivliev, Markus Krötzsch, Stephan Mennicke"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best In-Use Track Paper Award",
+   "title": "Leveraging Knowledge Graph Technologies to Assess Journals and Conferences at Springer Nature",
+   "authors": [
+    "Simone Angioni",
+    "Angelo Antonio Salatino",
+    "Francesco Osborne",
+    "Aliaksandr Birukou",
+    "Diego Reforgiato",
+    "Enrico Motta"
+   ],
+   "track": "main",
+   "source": "https://iswc2022.semanticweb.org/index.php/awards/index.html",
+   "evidence": "ISWC 2022 Best In-Use Track Paper Award: Leveraging Knowledge Graph Technologies to Assess Journals and Conferences at Springer Nature — Simone Angioni, Angelo Antonio Salatino, Francesco Osborne, Aliaksandr Birukou, Diego Reforgiato and Enrico Motta."
+  },
+  {
+   "venue": "ISWC",
+   "year": 2022,
+   "award": "category",
+   "awardLabel": "Best Resource Track Paper Award",
+   "title": "LODChain: Strengthen the Connectivity of your RDF Dataset to the Rest LOD Cloud",
+   "authors": [
+    "Michalis Mountantonakis",
+    "Yannis Tzitzikas"
+   ],
+   "track": "main",
+   "source": "https://iswc2022.semanticweb.org/index.php/awards/index.html",
+   "evidence": "ISWC 2022 Best Resource Track Paper Award: LODChain: Strengthen the Connectivity of your RDF Dataset to the Rest LOD Cloud — Michalis Mountantonakis and Yannis Tzitzikas"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Research Track Student Paper Award",
+   "title": "Faithful Embeddings for EL++ Knowledge Bases",
+   "authors": [
+    "Bo Xiong",
+    "Nico Potyka",
+    "Trung-Kien Tran",
+    "Mojtaba Nayyeri",
+    "Steffen Staab"
+   ],
+   "track": "main",
+   "source": "https://iswc2022.semanticweb.org/index.php/awards/index.html",
+   "evidence": "ISWC 2022 Best Research Track Student Paper Award: Faithful Embeddings for EL++ Knowledge Bases — Bo Xiong, Nico Potyka, Trung-Kien Tran, Mojtaba Nayyeri, Steffen Staab"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2022,
    "award": "tot",
    "awardLabel": "Ten-Year Award",
    "title": "Semantic Sentiment Analysis of Twitter",
@@ -88041,6 +88106,73 @@
    "paperYear": 2012,
    "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
    "evidence": "ISWC 2022 SWSA Ten-Year Award: Hassan Saif, Yulan He, Harith Alani “Semantic Sentiment Analysis of Twitter”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper Award",
+   "title": "Spatial Link Prediction with Spatial and Semantic Embeddings",
+   "authors": [
+    "Genivika Mann",
+    "Alishiba Dsouza",
+    "Ran Yu",
+    "Elena Demidova"
+   ],
+   "track": "main",
+   "source": "https://iswc2023.semanticweb.org/awards/",
+   "evidence": "ISWC 2023 Best Research Track Paper Award: Spatial Link Prediction with Spatial and Semantic Embeddings — Genivika Mann, Alishiba Dsouza, Ran Yu and Elena Demidova"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best In-Use Track Paper Award",
+   "title": "Aviation Certification Powered by the Semantic Web Stack",
+   "authors": [
+    "Paul Cuddihy",
+    "Daniel Russell",
+    "Eric Mertens",
+    "Kit Siu",
+    "Dave Archer",
+    "Jenny Weisenberg Williams"
+   ],
+   "track": "main",
+   "source": "https://iswc2023.semanticweb.org/awards/",
+   "evidence": "ISWC 2023 Best In-Use Track Paper Award: Aviation Certification Powered by the Semantic Web Stack — Paul Cuddihy, Daniel Russell, Eric Mertens, Kit Siu, Dave Archer and Jenny Weisenberg Williams"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2023,
+   "award": "category",
+   "awardLabel": "Best Resource Track Paper Award",
+   "title": "SemOpenAlex: The Scientific Landscape in 26 Billion RDF Triples",
+   "authors": [
+    "Michael Färber",
+    "Johan Krause",
+    "David Lamprecht",
+    "Linn Aung",
+    "Peter Haase"
+   ],
+   "track": "main",
+   "source": "https://iswc2023.semanticweb.org/awards/",
+   "evidence": "ISWC 2023 Best Resource Track Paper Award: SemOpenAlex: The Scientific Landscape in 26 Billion RDF Triples — Michael Färber, Johan Krause, David Lamprecht, Linn Aung and Peter Haase"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2023,
+   "award": "student",
+   "awardLabel": "Best Research Track Student Paper Award",
+   "title": "Iterative Geographic Entity Alignment with Cross-Attention",
+   "authors": [
+    "Alishiba Dsouza",
+    "Ran Yu",
+    "Moritz Windoffer",
+    "Elena Demidova"
+   ],
+   "track": "main",
+   "source": "https://iswc2023.semanticweb.org/awards/",
+   "evidence": "ISWC 2023 Best Research Track Student Paper Award: Iterative Geographic Entity Alignment with Cross-Attention — Alishiba Dsouza, Ran Yu, Moritz Windoffer and Elena Demidova"
   },
   {
    "venue": "ISWC",
@@ -88058,6 +88190,74 @@
    "paperYear": 2013,
    "source": "https://swsa.semanticweb.org/awards/swsa-ten-year-award/",
    "evidence": "ISWC 2023 SWSA Ten-Year Award: Jay Pujara, Hui Miao, Lise Getoor, William Cohen “Knowledge graph identification”"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Research Track Paper Award",
+   "title": "Relationships are Complicated! An Analysis of Relationships Between Datasets on the Web",
+   "authors": [
+    "Kate Lin",
+    "Tarfah Alrashed",
+    "Natasha Noy"
+   ],
+   "track": "main",
+   "source": "https://iswc2024.semanticweb.org/awards/",
+   "evidence": "ISWC 2024 Best Research Track Paper Award: Relationships are Complicated! An Analysis of Relationships Between Datasets on the Web — Kate Lin, Tarfah Alrashed and Natasha Noy"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Resource Track Paper Award",
+   "title": "CimpleKG: A Continuously Updated Knowledge Graph on Misinformation, Factors and Fact-Checks",
+   "authors": [
+    "Gregoire Burel",
+    "Martino Mensio",
+    "Youri Peskine",
+    "Raphaël Troncy",
+    "Paolo Papotti",
+    "Harith Alani"
+   ],
+   "track": "main",
+   "source": "https://iswc2024.semanticweb.org/awards/",
+   "evidence": "ISWC 2024 Best Resource Track Paper Award: CimpleKG: A Continuously Updated Knowledge Graph on Misinformation, Factors and Fact-Checks — Gregoire Burel, Martino Mensio, Youri Peskine, Raphaël Troncy, Paolo Papotti and Harith Alani"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best In-Use Track Paper Award",
+   "title": "Intelligent Urban Traffic Management via Semantic Interoperability across Multiple Heterogeneous Mobility Data Sources",
+   "authors": [
+    "Mario Scrocca",
+    "Marco Grassi",
+    "Marco Comerio",
+    "Valentina Anita Carriero",
+    "Tiago Delgado Dias",
+    "Ana Vieira Da Silva",
+    "Irene Celino"
+   ],
+   "track": "main",
+   "source": "https://iswc2024.semanticweb.org/awards/",
+   "evidence": "ISWC 2024 Best In-Use Track Paper Award: Intelligent Urban Traffic Management via Semantic Interoperability across Multiple Heterogeneous Mobility Data Sources — Mario Scrocca, Marco Grassi, Marco Comerio, Valentina Anita Carriero, Tiago Delgado Dias, Ana Vieira Da Silva and Irene Celino"
+  },
+  {
+   "venue": "ISWC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Research Track Student Paper Award",
+   "title": "PathFinder: Returning Paths in Graph Queries",
+   "authors": [
+    "Benjamín Farías",
+    "Wim Martens",
+    "Carlos Rojas",
+    "Domagoj Vrgoč"
+   ],
+   "track": "main",
+   "source": "https://iswc2024.semanticweb.org/awards/",
+   "evidence": "ISWC 2024 Best Research Track Student Paper Award: PathFinder: Returning Paths in Graph Queries — Benjamín Farías, Wim Martens, Carlos Rojas and Domagoj Vrgoč"
   },
   {
    "venue": "ISWC",

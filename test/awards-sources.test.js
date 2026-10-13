@@ -2453,6 +2453,16 @@ test("ECIR award pages in the label-over-title layout: labels (Best Paper, Best 
   assert.deepEqual(parseEcirLabelled(h, "https://www.ecir2024.org/awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")}`), ["best | Nachshon Cohen; Hedda Cohen Indelman; Yaron Fairstein", "runner-up | Shubham Chatterjee; Iain Mackie; Jeff Dalton", "runner-up | Eugene Yang; Dawn Lawrie", "category | Unni Krishnan; Alistair Moffat; Justin Zobel"]);
 });
 
+test("ISWC (Semantic Web) award pages in their three layouts (2023: heading, authors, quoted title; 2022: 'Best Paper -- Research Track', a Prize line, title, authors; 2024: 'Best Paper Award, Research Track', quoted title, authors); nominees are left out", async () => {
+  const { parseIswcSemWeb } = await import("../scripts/awards/tot.mjs");
+  const h23 = `<h1>Awards - ISWC 2023</h1><p>Best Research Track Paper Award</p><p>Genivika Mann, Alishiba Dsouza, Ran Yu and Elena Demidova</p><p>“Spatial link prediction with spatial and semantic embeddings”</p><p>Best Resource Track Paper Award</p><p>Michael Färber, Johan Krause and Peter Haase</p><p>“SemOpenAlex: the scientific landscape in 26 billion triples”</p>`;
+  assert.deepEqual(parseIswcSemWeb(h23, "https://iswc2023.semanticweb.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2023 best | Genivika Mann; Alishiba Dsouza; Ran Yu; Elena Demidova", "2023 category | Michael Färber; Johan Krause; Peter Haase"]);
+  const h22 = `<h1>ISWC 2022 Awards</h1><p>Best Student Paper -- Research Track</p><p>Prize: 1000 USD Sponsor: Artificial Intelligence Journal</p><p>Faithful embeddings for EL++ knowledge bases</p><p>Bo Xiong, Nico Potyka, Steffen Staab</p>`;
+  assert.deepEqual(parseIswcSemWeb(h22, "https://iswc2022.semanticweb.org/index.php/awards/index.html").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2022 student | Bo Xiong; Nico Potyka; Steffen Staab"]);
+  const h24 = `<h1>ISWC 2024 Awards</h1><p>Best Paper Award, In-Use Track</p><p>“Intelligent urban traffic management via semantic interoperability”</p><p>Mario Scrocca, Marco Grassi and Irene Celino</p><p>Other Nominees:</p><p>Sebastian Barzaghi, Ivan Heibi. Developing application profiles for digitisation</p>`;
+  assert.deepEqual(parseIswcSemWeb(h24, "https://iswc2024.semanticweb.org/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2024 category | Mario Scrocca; Marco Grassi; Irene Celino"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
