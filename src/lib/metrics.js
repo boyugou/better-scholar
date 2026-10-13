@@ -57,17 +57,18 @@
   }
 
   // The venue a ranked paper belongs to, by its usual short name ("NeurIPS"), or "" when it matched no list
-  function venueKey(venue) {
-    const v = venue || {};
-    return (v.ccf && (v.ccf.abbr || v.ccf.name)) || (v.core && (v.core.abbr || v.core.name)) || "";
+  // `lists` says which rankings are switched on ({ ccf, core }, both by default): a venue only a switched-off list knows has no key
+  function venueKey(venue, lists) {
+    const v = venue || {}, on = lists || {};
+    return (on.ccf !== false && v.ccf && (v.ccf.abbr || v.ccf.name)) || (on.core !== false && v.core && (v.core.abbr || v.core.name)) || "";
   }
 
   // Where the highlighted papers were published: ranked venues, most papers first (ties by name), at most `n`.
-  function topVenues(rows, n = 6) {
+  function topVenues(rows, n = 6, lists) {
     const counts = new Map();
     for (const r of rows) {
       if (!r.highlighted) continue;
-      const k = venueKey(r.venue);
+      const k = venueKey(r.venue, lists);
       if (k) counts.set(k, (counts.get(k) || 0) + 1);
     }
     return [...counts].map(([key, count]) => ({ key, count })).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)).slice(0, n);

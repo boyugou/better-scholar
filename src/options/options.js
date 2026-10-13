@@ -15,8 +15,8 @@
   await B.dom.useLanguage();
   document.documentElement.lang = B.dom.langTag();
   document.documentElement.dir = B.dom.dir();
-  document.title = t("panelTitle") + " — " + t("optHeading");
-  $("title").textContent = t("panelTitle");
+  document.title = t("extName") + " — " + t("optHeading");
+  $("title").textContent = t("extName");
   $("sub").textContent = t("optHeading");
   $("pv-title").textContent = t("optPreviewTitle");
   $("pv-note").textContent = t("optPreviewNote");
@@ -225,7 +225,7 @@
       ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
       marks: counts, markKinds: prefs.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
-      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS), venueKey: null,
+      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, prefs.ranks), venueKey: null,
       coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
       variants: [], nameHints: { auto: [], suggestions: [] }

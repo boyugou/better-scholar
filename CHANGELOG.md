@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.18.1 — 2026-10-13
+
+- The long old name is gone from the screen too: the panel's title is the short **Roles & Ranks**, the popup and the settings page say **Scholar Roles & Ranks** (translated names, as in the store listing).
+- A list opened in the panel ("N papers at venues without a rank") stays open when the panel is drawn again (a filter changes, more papers arrive); it used to fold itself.
+- A venue filter is dropped as soon as the change that removes its venue from the list (one role switched off), not one redraw later; the venue list follows the rankings that are switched on.
+- When Scholar's layout has changed, the panel shows the warning and the loading status instead of a table of zeros.
+
 ## 2.18.0 — 2026-10-13
 
 - **A filter bar.** When any filter narrows the paper list (a matrix cell, an awards row, a venue, "only highlighted", a year range), the panel says so under its header — "Showing 25 of 100 papers · Clear" — and one click clears every filter. A filter that matched nothing is no longer a silent blank list.

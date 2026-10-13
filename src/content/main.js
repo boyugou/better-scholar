@@ -194,7 +194,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
-      if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue) !== state.venueKey)) hide = true;
+      if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
       row.raw.tr.classList.toggle("rr-hide", hide);
     }
@@ -236,7 +236,7 @@
       filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list), venueKey: state.venueKey,
+      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list, 6, prefs.ranks), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
@@ -390,9 +390,10 @@
 
   function refresh() {
     applyMerge();
-    // a venue filter whose venue is no longer in the panel's list (the roles, the merge or the venue list changed) has no control left to undo it
-    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers()).some((v) => v.key === state.venueKey))) state.venueKey = null;
     for (const row of state.rows) decorate(row);
+    // a venue filter whose venue is no longer in the panel's list (the roles, the merge, the lists or the venue list changed) has no control left to undo it
+    // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
+    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers(), 6, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
     applyFilters();
     panel.el.hidden = !prefs.panel.show;
     if (prefs.panel.show) panel.update(model());

@@ -8,9 +8,6 @@
   "extShortName": {
     "message": "저자 순서·등급"
   },
-  "panelTitle": {
-    "message": "저자 순서와 학회·저널 등급"
-  },
   "summaryTitle": {
     "message": "저자 순서·등급별 논문"
   },

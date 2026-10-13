@@ -327,6 +327,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.bringToFront();
     await page.click(`[data-venue="${venueRows[0][0]}"]`);
     await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, venueRows[0][1]);
+    // a venue filter whose venue leaves the list on a single change (the one role that owns all of its papers is switched off) is dropped on that change
+    const keyOf = (p) => (p.venue.ccf && (p.venue.ccf.abbr || p.venue.ccf.name)) || (p.venue.core && (p.venue.core.abbr || p.venue.core.name)) || "";
+    const ownRoles = new Set(all.filter((p) => p.highlighted && keyOf(p) === venueRows[0][0]).map((p) => p.role));
+    assert.equal(ownRoles.size, 1, "the fixture's most frequent venue is one role's");
+    const ownRole = [...ownRoles][0];
+    await setPref(opts, "roles." + ownRole, false);
+    await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
+    await setPref(opts, "roles." + ownRole, true);
+    await page.bringToFront();
+    await page.click(`[data-venue="${venueRows[0][0]}"]`);
+    await eventually(page, (n) => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((r) => getComputedStyle(r).display !== "none").length === n, venueRows[0][1]);
     // a venue filter whose venue leaves the list (no role is highlighted now) is dropped, not left hiding rows with no control to undo it
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, false);
     await eventually(page, () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).every((r) => getComputedStyle(r).display !== "none"));
@@ -367,8 +378,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("row highlight style: bar only, tint only and both change the open profile at once");
 
     // -- 6a4. language: choosing one in the settings re-draws the open profile and the settings page in it; "Follow the browser" brings English back
-    const jaTitle = JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", "ja", "messages.json"), "utf8")).panelTitle.message;
-    const enTitle = JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", "en", "messages.json"), "utf8")).panelTitle.message;
+    const loc = (code, key) => JSON.parse(fs.readFileSync(path.join(here, "..", "..", "src", "_locales", code, "messages.json"), "utf8"))[key].message;
+    const jaTitle = loc("ja", "extName"), enTitle = loc("en", "extName");
     await opts.bringToFront();
     await opts.selectOption('select[data-pref="language"]', "ja");
     await page.waitForFunction((x) => (document.querySelector("#rr-panel") || {}).getAttribute && document.querySelector("#rr-panel").getAttribute("aria-label") === x, jaTitle, { timeout: 15000 });
@@ -1149,6 +1160,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.waitForSelector("#rr-panel");
     assert.equal(await page.locator('[data-rr="layout-warning"]').count(), 0);
     await page.click('[data-rr="unmatched"] summary');
+    // the list stays open when the panel is drawn again (a filter changes, more papers arrive)
+    await page.check('input[data-act="only"]');
+    assert.equal(await page.evaluate(() => document.querySelector('[data-rr="unmatched"]').open), true, "an opened list is not closed by a redraw");
+    await page.uncheck('input[data-act="only"]');
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-unmatched.png") });
     await page.click('[data-act="copy-unmatched"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());

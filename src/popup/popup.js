@@ -8,7 +8,7 @@
   await B.dom.useLanguage();
   document.documentElement.lang = B.dom.langTag();
   document.documentElement.dir = B.dom.dir();
-  document.getElementById("title").textContent = t("panelTitle");
+  document.getElementById("title").textContent = t("extName");
   const settings = document.getElementById("settings");
   settings.title = settings.ariaLabel = t("settingsOpen");
   settings.addEventListener("click", () => { chrome.runtime.openOptionsPage(); window.close(); });

@@ -74,7 +74,7 @@
     const ui = { flash: null };
 
     // ---- skeleton --------------------------------------------------------
-    const title = h("span", { class: "rr-title" }, t("panelTitle"));
+    const title = h("span", { class: "rr-title" }, t("extShortName"));
     const settingsBtn = h("button", { class: "rr-icon rr-ico-settings", "data-act": "settings", type: "button", title: t("settingsOpen"), "aria-label": t("settingsOpen"), onClick: () => cb.onSettings() });
     const collapseBtn = h("button", { class: "rr-icon rr-ico-caret", "data-act": "collapse", type: "button", onClick: () => cb.onCollapse() });
     const head = h("header", { class: "rr-head" }, title, settingsBtn, collapseBtn);
@@ -123,7 +123,7 @@
     // a bar that says the list is filtered, by how much, and clears every filter
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true });
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
-    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, filterBar, body, announce);
+    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("extName"), dir: B.dom.dir() }, head, filterBar, body, announce);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
@@ -185,6 +185,8 @@
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 
+    // (a list the person opened stays open when the panel is drawn again, e.g. while more papers arrive)
+    let unmatchedOpen = false;
     function renderCoverage(m) {
       const c = m.coverage, parts = m.prefs.panel;
       const lines = [];
@@ -220,7 +222,7 @@
         const copyBtn = h("button", { class: "rr-btn", type: "button", "data-act": "copy-unmatched", onClick: async () => {
           if (await cb.onCopyUnmatched()) { copyBtn.textContent = t("copied"); setTimeout(() => { copyBtn.textContent = t("copyUnmatched"); }, 1400); }
         } }, t("copyUnmatched"));
-        lines.push(h("details", { "data-rr": "unmatched" },
+        lines.push(h("details", { "data-rr": "unmatched", open: unmatchedOpen, onToggle: (e) => { unmatchedOpen = e.target.open; } },
           h("summary", {}, tn("coverUnmatched", total, [String(total)])),
           h("ul", { class: "rr-list" }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, h("b", {}, u.count + "× "), u.venue))),
           h("div", { class: "rr-actions" }, copyBtn,
