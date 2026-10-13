@@ -2041,16 +2041,16 @@ export function parseInfocomBest(html, source) {
 export function parseEurospAwards(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
-  const year = parseInt((/EuroSP(\d{4})/.exec(source) || [])[1], 10);
+  const year = parseInt(((/EuroSP(\d{4})/i.exec(source) || [])[1]), 10);
   if (!year) return { entries, skipped: ["no year in the address"] };
-  const KIND = (l) => (/^Distinguished Papers?$|^Distinguished Paper Award(?: Winners?)?$/i.test(l) ? ["distinguished", "Distinguished Paper Award"] : /^Distinguished Paper Award Runners?-?Up$/i.test(l) ? ["runner-up", "Distinguished Paper Runner-up"] : null);
+  const KIND = (l) => (/^Distinguished Papers?$|^Distinguished Paper Awards?(?: Winners?)?$/i.test(l) ? ["distinguished", "Distinguished Paper Award"] : /^Test-of-Time Awards?$/i.test(l) ? ["tot", "Test of Time Award"] : /^Distinguished Paper Award Runners?-?Up$/i.test(l) ? ["runner-up", "Distinguished Paper Runner-up"] : null);
   const STOP = /^(?:Accepted Papers|IEEE Euro S&P \d{4}|Distinguished Paper Award Finalists|Noteworthy|Distinguished Reviewers|Outstanding)/i;
   const isAuth = (l, i) => /\(/.test(l) || /^\(/.test(ls[i + 1] || "");
   let kind = null, cur = null;
   const flush = () => {
     if (cur && cur.a.length) {
       const who = names(cur.a.join(" "));
-      if (who.length && who.every(isPerson)) entries.push({ venue: "EuroS&P", year, award: kind[0], awardLabel: kind[1], title: cleanTitle(cur.t), authors: who, track: "main", source, evidence: `EuroS&P ${year} ${kind[1]}: ${cleanTitle(cur.t)} — ${who.join(", ")}` });
+      if (who.length && who.every(isPerson)) entries.push({ venue: "EuroS&P", year, award: kind[0], awardLabel: kind[1], title: cleanTitle(cur.t), authors: who, track: "main", source, evidence: `EuroS&P ${year} ${kind[1]}: ${cleanTitle(cur.t)} — ${who.join(", ")}`, ...(kind[0] === "tot" ? { paperYear: year - 10 } : {}) });
       else skipped.push(`${year}: not read: ${cur.t.slice(0, 50)}`);
     }
     cur = null;

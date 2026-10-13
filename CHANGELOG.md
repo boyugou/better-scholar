@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.122 — 2026-10-12
+
+- EuroS&P 2026's four distinguished papers and two test-of-time papers (6 papers) from the symposium's own site (the `eurosp` reader takes the eurosp<year> host, the plural award headings and the test-of-time awards). EuroS&P 2023's page lists no winners under its heading. The list has 7776 awards.
+
 ## 2.10.121 — 2026-10-12
 
 - ECML PKDD 2026's best papers and test-of-time paper and 2020's best, student and runner-up papers (10 papers) from the conference's own award pages (the `ecml` reader takes the 2026 and 2020 layouts too). The list has 7770 awards.

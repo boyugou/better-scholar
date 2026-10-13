@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7770
+  "count": 7776
  },
  "entries": [
   {
@@ -59818,6 +59818,110 @@
    "track": "main",
    "source": "https://www.ieee-security.org/TC/EuroSP2025/accepted_and_awards.html",
    "evidence": "EuroS&P 2025 Distinguished Paper Award: Rubicon: Precise Microarchitectural Attacks with Page-Granular Massaging — Matej Bölcskei, Patrick Jattke, Johannes Wikner, Kaveh Razavi"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "ARVO: Atlas of Reproducible Vulnerabilities for Open-Source Software",
+   "authors": [
+    "Xiang Mei",
+    "Jordi Del Castillo",
+    "Pulkit Singh Singaria",
+    "Haoran Xi",
+    "Abdelouahab Benchikh",
+    "Tiffany Bao",
+    "Ruoyu Wang",
+    "Yan Shoshitaishvili",
+    "Adam Doupé",
+    "Hammond Pearce",
+    "Brendan Dolan-Gavitt"
+   ],
+   "track": "main",
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Distinguished Paper Award: ARVO: Atlas of Reproducible Vulnerabilities for Open-Source Software — Xiang Mei, Jordi Del Castillo, Pulkit Singh Singaria, Haoran Xi, Abdelouahab Benchikh, Tiffany Bao, Ruoyu Wang, Yan Shoshitaishvili, Adam Doupé, Hammond Pearce, Brendan Dolan-Gavitt"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Bandwidth Efficient Partial Authorized PSI",
+   "authors": [
+    "Tjitske Ollie Koster",
+    "Francesca Falzon",
+    "Evangelia Anna Markatou"
+   ],
+   "track": "main",
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Distinguished Paper Award: Bandwidth Efficient Partial Authorized PSI — Tjitske Ollie Koster, Francesca Falzon, Evangelia Anna Markatou"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Helltrap: Transforming physical machines into UEFI rootkit trap",
+   "authors": [
+    "Darius Suciu",
+    "Jake Christensen",
+    "Radu Sion"
+   ],
+   "track": "main",
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Distinguished Paper Award: Helltrap: Transforming physical machines into UEFI rootkit trap — Darius Suciu, Jake Christensen, Radu Sion"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Security-by-Design for LLM-Based Code Generation: Leveraging Internal Representations for Concept-Driven Steering Mechanisms",
+   "authors": [
+    "Maximilian Wendlinger",
+    "Daniel Kowatsch",
+    "Konstantin Böttinger",
+    "Philip Sperl"
+   ],
+   "track": "main",
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Distinguished Paper Award: Security-by-Design for LLM-Based Code Generation: Leveraging Internal Representations for Concept-Driven Steering Mechanisms — Maximilian Wendlinger, Daniel Kowatsch, Konstantin Böttinger, Philip Sperl"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "Argon2: New Generation of Memory-Hard Functions for Password Hashing and Other Applications",
+   "authors": [
+    "Alex Biryukov",
+    "Daniel Dinu",
+    "Dmitry Khovratovich"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Test of Time Award: Argon2: New Generation of Memory-Hard Functions for Password Hashing and Other Applications — Alex Biryukov, Daniel Dinu, Dmitry Khovratovich"
+  },
+  {
+   "venue": "EuroS&P",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test of Time Award",
+   "title": "The Limitations of Deep Learning in Adversarial Settings",
+   "authors": [
+    "Nicolas Papernot",
+    "Patrick McDaniel",
+    "Somesh Jha",
+    "Matt Fredrikson",
+    "Z. Berkay Celik",
+    "Ananthram Swami"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://eurosp2026.ieee-security.org/accepted_and_awards.html",
+   "evidence": "EuroS&P 2026 Test of Time Award: The Limitations of Deep Learning in Adversarial Settings — Nicolas Papernot, Patrick McDaniel, Somesh Jha, Matt Fredrikson, Z. Berkay Celik, Ananthram Swami"
   },
   {
    "venue": "EuroSys",

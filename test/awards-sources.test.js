@@ -2441,6 +2441,12 @@ test("ECML PKDD award pages, 2026's layout ('Best Paper Award - Research Track',
   assert.deepEqual(parseEcmlAwards(h20, "https://ecmlpkdd2020.net/programme/awards/").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")}`), ["2020 best | Stephan Sloth Lorenzen; Ninh Pham", "2020 runner-up | Skander Karkar; Ibrahim Ayed"]);
 });
 
+test("EuroS&P 2026's own site: 'Distinguished Paper Awards' and 'Test-of-Time Awards' headings with a title and an authors' line (affiliations in brackets) each; the year comes from the eurosp<year> host", async () => {
+  const { parseEurospAwards } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>Awards</h1><h2>Distinguished Paper Awards</h2><p>Bandwidth efficient partial authorized PSI</p><p>Tjitske Ollie Koster (TU Delft), Francesca Falzon (ETH Zurich)</p><h2>Test-of-Time Awards</h2><p>The limitations of deep learning in adversarial settings</p><p>Nicolas Papernot (Penn State University), Patrick McDaniel (Penn State University)</p><p>Accepted Papers</p>`;
+  assert.deepEqual(parseEurospAwards(h, "https://eurosp2026.ieee-security.org/accepted_and_awards.html").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2026 distinguished  | Tjitske Ollie Koster; Francesca Falzon", "2026 tot 2016 | Nicolas Papernot; Patrick McDaniel"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
