@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.20.0 — 2026-10-13
+
+- **"Open Scholar in" covers Scholar's search pages too** (a shared search link opened in another language is reopened in yours), not only profiles. It is a second, tiny content script (`content/lang-redirect.js`, run at document start on the same Scholar domains; it checks the path itself, never touches downloads such as `/scholar.bib` or the `/scholar_url` redirects, reads one setting and nothing else). `scripts/update-scholar-domains.sh` writes both lists; the privacy text says so.
+- The line under *Highlighted papers* names every filter the numbers follow (cell, awards row, venue, years), not only the years.
+
 ## 2.19.2 — 2026-10-13
 
 - A browser set to Norwegian Bokmål or Nynorsk (`nb`, `nn`) now gets the Norwegian interface (Chrome would not have mapped it to the `no` folder and shown English).

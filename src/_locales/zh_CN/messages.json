@@ -565,7 +565,7 @@
     "message": "以此语言打开 Scholar"
   },
   "optLanguageScholarHint": {
-    "message": "用别的语言打开的 Scholar 主页（比如别人分享的链接）会用这种语言重新打开。"
+    "message": "用别的语言打开的 Scholar 页面（比如别人分享的链接）会用这种语言重新打开。"
   },
   "optLanguageKeep": {
     "message": "保持原样"

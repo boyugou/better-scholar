@@ -109,6 +109,10 @@ function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en"
       res.setHeader("content-type", "text/html; charset=utf-8");
       return res.end(profilePage(profile, { pageSize, header, stopAfter }));
     }
+    if (u.pathname === "/scholar" || u.pathname === "/scholar.bib") {                         // (search results, and a download the language redirect must leave alone)
+      res.setHeader("content-type", u.pathname.endsWith(".bib") ? "text/plain" : "text/html; charset=utf-8");
+      return res.end(u.pathname.endsWith(".bib") ? "@article{x}" : "<!doctype html><title>search</title><body>results</body>");
+    }
     if (u.pathname === "/favicon.ico") { res.statusCode = 204; return res.end(); }
     res.statusCode = 404; res.end("not found");
   });

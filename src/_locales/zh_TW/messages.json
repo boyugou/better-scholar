@@ -583,7 +583,7 @@
     "message": "以此語言開啟 Scholar"
   },
   "optLanguageScholarHint": {
-    "message": "若您開啟的 Scholar 作者頁面是其他語言（例如他人分享的連結），會改以此語言重新開啟。"
+    "message": "若您開啟的 Scholar 頁面是其他語言（例如他人分享的連結），會改以此語言重新開啟。"
   },
   "optLanguageKeep": {
     "message": "維持不變"

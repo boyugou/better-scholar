@@ -43,6 +43,7 @@ data, and why there is no build step.
 | `content/detail.js` | Read a paper's own page for its full author list (user-triggered, throttled, stops at a CAPTCHA). |
 | `lib/duplicates.js` | Entries that are one paper listed twice (same title apart from capitals / accents / punctuation, same first-author surname): which one stays and the citations it shows. Used when the *Merge duplicates* setting is on. |
 | `lib/i18n.js` | The 30 interface languages, Scholar's `hl=` value for each, and Chrome's message format (`format`). |
+| `content/lang-redirect.js` | The setting *Open Scholar in*: a second, tiny content script (run at document start on `scholar.google.*/*`, checks the path itself: search and profile pages only, never downloads) that reopens a page with the chosen `hl=`, once per tab and language. It reads one setting and nothing else. |
 | `content/semantic.js` | Optional (setting, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title is the paper's. |
 | `lib/prefs.js` | What to show (`prefs`) and per-device view state (`ui`): shapes, defaults, normalising, migration from the pre-2.2 combined record, and the rules (which ranking the table uses, which marks are visible). |
 | `content/chips.js` | The rank and award / talk chips; shared by the Scholar page and the settings page's preview. |

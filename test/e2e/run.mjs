@@ -61,6 +61,7 @@ fs.cpSync(path.join(repo, "src"), extDir, { recursive: true });
 const manifestPath = path.join(extDir, "manifest.json");
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 manifest.content_scripts[0].matches = ["http://127.0.0.1/citations*"];
+manifest.content_scripts[1].matches = ["http://127.0.0.1/*"];
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 // Give the test copy a small award list aimed at the synthetic "marks-demo" profile (the shipped list is
 // checked by test/awards.test.js; these entries only exercise the page behaviour).
@@ -401,13 +402,22 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.selectOption('select[data-pref="scholarLanguage"]', "de");
     await page.waitForFunction(() => new URL(location.href).searchParams.get("hl") === "de", null, { timeout: 15000 });
     await page.waitForSelector("#rr-panel");
+    // the same for Scholar's search pages (a shared link), and never for a download
+    const origin = new URL(fx.url).origin;
+    await page.goto(`${origin}/scholar?q=graphs&hl=en`);
+    await page.waitForFunction(() => new URL(location.href).searchParams.get("hl") === "de", null, { timeout: 15000 });
+    assert.equal(new URL(page.url()).searchParams.get("q"), "graphs", "the rest of the address is kept");
+    await page.goto(`${origin}/scholar.bib?hl=en`);
+    await page.waitForTimeout(500);
+    assert.equal(new URL(page.url()).searchParams.get("hl"), "en", "a download is not redirected");
+    await page.goto(fx.url.replace("hl=en", "hl=de"));
     await opts.selectOption('select[data-pref="scholarLanguage"]', "keep");
     await page.waitForLoadState("load");
     await page.waitForTimeout(600);                                   // (the open profile reloads itself once for the changed setting)
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");
     assert.equal(new URL(page.url()).searchParams.get("hl"), "en", "left as it is");
-    ok("Scholar language: a chosen language is put on the open profile's address (hl=), and 'Leave as it is' leaves it alone");
+    ok("Scholar language: a chosen language is put on a profile's and a search page's address (hl=), a download is left alone, and 'Leave as it is' leaves everything alone");
     // (the page was loaded afresh: bring the whole list back for what follows)
     await page.click('[data-act="load-all"]');
     await page.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 15000 });

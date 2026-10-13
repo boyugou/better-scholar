@@ -33,19 +33,25 @@ test("manifest: MV3, least privilege, nothing in the background but the options-
   assert.ok(Number(manifest.minimum_chrome_version) >= 110);
 });
 
-test("manifest: runs only on Scholar profile pages, on every Scholar domain", () => {
+test("manifest: the panel runs only on Scholar profile pages, the language redirect on Scholar's search and profile pages; both on every Scholar domain", () => {
   const cs = manifest.content_scripts;
-  assert.equal(cs.length, 1);
+  assert.equal(cs.length, 2);
   const m = cs[0].matches;
   assert.equal(m.length, 187);
   assert.equal(new Set(m).size, m.length, "no duplicate patterns");
   assert.equal(m[0], "https://scholar.google.com/citations*");
   for (const p of m) assert.match(p, /^https:\/\/scholar\.google\.[a-z.]+\/citations\*$/, p);
+  // the redirect: the same domains, whole sites (it checks the path itself), a tiny script at document start and nothing else
+  const r = cs[1];
+  assert.deepEqual(r.matches, m.map((p) => p.replace(/\/citations\*$/, "/*")));
+  assert.deepEqual(r.js, ["lib/i18n.js", "content/lang-redirect.js"]);
+  assert.equal(r.run_at, "document_start");
+  assert.equal(r.css, undefined);
 });
 
 test("manifest: every referenced file exists, and scripts load in dependency order", () => {
   const cs = manifest.content_scripts[0];
-  for (const f of [...cs.js, ...cs.css, manifest.action.default_popup, manifest.options_ui.page, manifest.background.service_worker, ...Object.values(manifest.icons), ...Object.values(manifest.action.default_icon)]) {
+  for (const f of [...manifest.content_scripts.flatMap((c) => [...c.js, ...(c.css || [])]), manifest.action.default_popup, manifest.options_ui.page, manifest.background.service_worker, ...Object.values(manifest.icons), ...Object.values(manifest.action.default_icon)]) {
     assert.ok(fs.existsSync(path.join(src, f)), "missing " + f);
   }
   const idx = (f) => cs.js.indexOf(f);
@@ -62,7 +68,7 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
   const pages = read("popup/popup.html") + read("options/options.html");
   for (const f of walk(path.join(src, "lib")).concat(walk(path.join(src, "content"))).filter((x) => x.endsWith(".js"))) {
     const rel = path.relative(src, f).split(path.sep).join("/");
-    assert.ok(cs.js.includes(rel) || pages.includes("../" + rel), `${rel} is not loaded anywhere`);
+    assert.ok(manifest.content_scripts.some((c) => c.js.includes(rel)) || pages.includes("../" + rel), `${rel} is not loaded anywhere`);
   }
 });
 

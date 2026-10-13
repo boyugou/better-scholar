@@ -565,7 +565,7 @@
     "message": "Deschide Scholar în"
   },
   "optLanguageScholarHint": {
-    "message": "Un profil Scholar deschis într-o altă limbă (de exemplu dintr-un link distribuit) se redeschide în aceasta."
+    "message": "O pagină Scholar deschisă într-o altă limbă (de exemplu dintr-un link distribuit) se redeschide în aceasta."
   },
   "optLanguageKeep": {
     "message": "Lasă cum este"

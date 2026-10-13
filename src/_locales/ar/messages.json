@@ -565,7 +565,7 @@
     "message": "فتح Scholar بلغة"
   },
   "optLanguageScholarHint": {
-    "message": "ملف Scholar الشخصي الذي تفتحه بلغة أخرى (عبر رابط مشارَك مثلًا) يُعاد فتحه بهذه اللغة."
+    "message": "صفحة Scholar التي تفتحها بلغة أخرى (عبر رابط مشارَك مثلًا) يُعاد فتحها بهذه اللغة."
   },
   "optLanguageKeep": {
     "message": "تركه كما هو"

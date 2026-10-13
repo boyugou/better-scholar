@@ -583,7 +583,7 @@
     "message": "Scholar を開く言語"
   },
   "optLanguageScholarHint": {
-    "message": "別の言語で開いた Scholar のプロフィール（共有リンクなど）は、この言語で開き直します。"
+    "message": "別の言語で開いた Scholar のページ（共有リンクなど）は、この言語で開き直します。"
   },
   "optLanguageKeep": {
     "message": "そのままにする"

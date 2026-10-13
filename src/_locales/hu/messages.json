@@ -565,7 +565,7 @@
     "message": "A Scholar megnyitása ezen a nyelven"
   },
   "optLanguageScholarHint": {
-    "message": "Egy másik nyelven megnyitott Scholar-profil (például megosztott linkről) újra megnyílik ezen a nyelven."
+    "message": "Egy másik nyelven megnyitott Scholar-oldal (például megosztott linkről) újra megnyílik ezen a nyelven."
   },
   "optLanguageKeep": {
     "message": "Marad, ahogy van"

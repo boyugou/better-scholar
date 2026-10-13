@@ -7,7 +7,9 @@
 # TLD — "https://scholar.google.*/*" is rejected — so the domains have to be
 # enumerated. This regenerates the content script's `matches` from Google's own
 # published list, keeping scholar.google.com first. The extension only acts on
-# profile pages, so each pattern is scoped to /citations*.
+# profile pages, so each pattern of the main content script is scoped to /citations*;
+# the small "Open Scholar in" redirect script (content/lang-redirect.js) lists the same
+# domains with /* (it checks the path itself and does nothing else).
 #
 # Run it when Google adds a country domain; the diff is the review.
 #
@@ -38,6 +40,7 @@ with open(manifest_path) as f:
     manifest = json.load(f, object_pairs_hook=collections.OrderedDict)
 
 manifest["content_scripts"][0]["matches"] = patterns
+manifest["content_scripts"][1]["matches"] = ["https://scholar.%s/*" % d for d in ordered]
 
 with open(manifest_path, "w") as f:
     json.dump(manifest, f, indent=2, ensure_ascii=False)

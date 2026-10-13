@@ -565,7 +565,7 @@
     "message": "Otevírat Scholar v jazyce"
   },
   "optLanguageScholarHint": {
-    "message": "Profil Scholar otevřený v jiném jazyce (například ze sdíleného odkazu) se otevře znovu v tomto."
+    "message": "Stránka Scholar otevřená v jiném jazyce (například ze sdíleného odkazu) se otevře znovu v tomto."
   },
   "optLanguageKeep": {
     "message": "Nechat beze změny"

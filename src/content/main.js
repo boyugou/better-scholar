@@ -14,19 +14,6 @@
   const headerName = B.scholar.ownerName();
   await B.store.migrate();
   let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
-  // Scholar's own pages in the chosen language: when this profile's address names another one it is opened again with that hl=
-  // (at most once per tab and language: should Scholar answer with yet another, it is left as it is rather than looping)
-  if (prefs.scholarLanguage === "keep") { try { sessionStorage.removeItem("rr-hl"); } catch (e) { /* no storage */ } }
-  else {
-    const hl = B.i18n.scholarHl(prefs.scholarLanguage), url = new URL(location.href);
-    let tried = false;
-    try { tried = sessionStorage.getItem("rr-hl") === hl; } catch (e) { /* no storage */ }
-    if (url.searchParams.get("hl") === hl) { try { sessionStorage.removeItem("rr-hl"); } catch (e) { /* no storage */ } }      // arrived: a later change may redirect again
-    if (hl && url.searchParams.get("hl") !== hl && !tried) {
-      try { sessionStorage.setItem("rr-hl", hl); } catch (e) { /* no storage */ }
-      url.searchParams.set("hl", hl); location.replace(url.href); return;
-    }
-  }
   const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
   const resolvedCache = await B.store.loadResolved();
