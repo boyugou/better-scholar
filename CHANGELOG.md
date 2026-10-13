@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.108 — 2026-10-12
+
+- DAC's best papers of 2020 and 2024 (2 papers) from the conference's own press releases (`tot.mjs dac-best`); the site has no other year's. The list has 7474 awards.
+
 ## 2.10.107 — 2026-10-12
 
 - DATE's best papers 2023–2025 (12 papers) from each year's own site (`tot.mjs date-awards`). The list has 7472 awards.

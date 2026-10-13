@@ -2364,6 +2364,12 @@ test("DATE site award pages (2023-2025): per track the title, authors and affili
   assert.deepEqual(parseDateAwards(h24, "https://date24.date-conference.com/awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2024 | Yujin Lim; Dongwhee Kim; Jungrae Kim | SELCC: Enhancing MLC reliability with single-cell error correction codes", "2024 | Yifeng Xiao; Chanwook Oh; Pierluigi Nuzzo | Efficient exploration of cyber-physical system architectures using contracts"]);
 });
 
+test("DAC best paper press release: the date line gives the year, 'Best Paper Research' the title and then 'Name, Affiliation' lines; the nominees are left out", async () => {
+  const { parseDacBest } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>The 57th Design Automation Conference Best Paper Awards | DAC</h1><p>Aug 10, 2020</p><p>The 57th Design Automation Conference Best Paper Awards</p><p>Nominated Best Paper Research Track Candidates:</p><p>COEXE: A co-execution architecture for services</p><p>Best Paper Research</p><p>Algorithm-hardware co-design of adaptive floating-point encodings</p><p>Ann Lee, Harvard University, Cambridge, MA</p><p>Bo Chan, Harvard University, Cambridge, MA</p><p>“The Research Track submissions for DAC 2020 increased,” said someone</p><p>Best Papers Designer Track Front-End</p>`;
+  assert.deepEqual(parseDacBest(h, "https://dac.com/press-release/the-57th-design-automation-conference-best-paper-awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2020 | Ann Lee; Bo Chan | Algorithm-hardware co-design of adaptive floating-point encodings"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

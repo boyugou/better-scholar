@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7472
+  "count": 7474
  },
  "entries": [
   {
@@ -47910,6 +47910,26 @@
   },
   {
    "venue": "DAC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Research Track)",
+   "title": "Algorithm-Hardware Co-Design of Adaptive Floating-Point Encodings for Resilient Deep Learning Inference",
+   "authors": [
+    "Thierry Tambe",
+    "En-Yu Yang",
+    "Zishen Wan",
+    "Yuntian Deng",
+    "Vijay Janapa Reddi",
+    "Alexander Rush",
+    "David Brooks",
+    "Gu-Yeon Wei"
+   ],
+   "track": "main",
+   "source": "https://dac.com/press-release/the-57th-design-automation-conference-best-paper-awards",
+   "evidence": "DAC 2020 Best Paper Research: Algorithm-Hardware Co-Design of Adaptive Floating-Point Encodings for Resilient Deep Learning Inference — Thierry Tambe, En-Yu Yang, Zishen Wan, Yuntian Deng, Vijay Janapa Reddi, Alexander Rush, David Brooks, Gu-Yeon Wei"
+  },
+  {
+   "venue": "DAC",
    "year": 2023,
    "award": "tot",
    "awardLabel": "Most Influential Paper Award",
@@ -47968,6 +47988,23 @@
    "paperYear": 1999,
    "source": "https://www.dac.com/2027/dac-most-influential-papers-award",
    "evidence": "DAC 2023 Most Influential Paper Award: “Symbolic Model Checking Using SAT Procedures Instead of BDDs” by A. Biere, A. Cimatti, E.M. Clarke, M. Fujita, Y. Zhu, 36th DAC, 1999."
+  },
+  {
+   "venue": "DAC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Research Track)",
+   "title": "Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation",
+   "authors": [
+    "Junyoung Park",
+    "Myeonggu Kang",
+    "Yunki Han",
+    "YanG-Gon Kim",
+    "Lee-Sup Kim"
+   ],
+   "track": "main",
+   "source": "https://dac.com/press-release/the-61st-dac-chips-to-systems-conference-best-paper-awards",
+   "evidence": "DAC 2024 Best Paper Research: Token-Picker: Accelerating Attention in Text. Generation and Minimized Memory Transfer via Probability Estimation — Junyoung Park, Myeonggu Kang, Yunki Han, YanG-Gon Kim, Lee-Sup Kim [the page misprints the title; the paper is \"Token-Picker: Accelerating Attention in Text Generation with Minimized Memory Transfer via Probability Estimation\" — data/exclusions.json]"
   },
   {
    "venue": "DAC",
