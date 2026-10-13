@@ -185,6 +185,18 @@ between the right sidebar (wide window) and the space above the list (narrow win
 Scholar drops the sidebar *below* the list) as the window is resized. Styles are scoped under
 `#rr-panel` and out-rank the reset that stops Scholar's global button/input styles bleeding in.
 
+### Filters and what they scope
+
+`state` in `main.js` holds the filters: `selection` (a matrix cell), `markGroup` (an awards / talk row), `venueKey` (a venue of the top-venues list)
+and `filters` (`onlyHighlighted`, a year range). `applyFilters()` toggles `rr-hide` on rows; `filtering()` says whether any is on, which shows the
+panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*). The numbers under the filters follow them (`scoped()`:
+highlighted papers, citations, h-index, i10, the venue list — the venue list is not narrowed by its own choice), while the role × rank table and
+the year bars stay whole: they are where a filter is chosen. A filter whose control has gone (a venue that left the list) is dropped in `refresh()`
+after `decorate()`, because a row's `highlighted` is only known once it has been decorated.
+
+Layout: in the wide layout (window narrow, panel above the list) `update()` moves the year bars into the first column; the arrangement is redone when
+the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
+
 ## Storage and privacy
 
 - `chrome.storage.sync`: `prefs` (what to show — written **only** by the settings page) and per-profile
