@@ -2108,3 +2108,11 @@ test("GECCO best-paper page: a heading per track (group) and the winning paper's
   assert.deepEqual(parseGeccoBest(h, "https://gecco-2024.sigevo.org/Best-Paper-Awards").entries.map((e) => `${e.awardLabel} | ${e.title} | ${e.authors.join("; ")}`), ["Best Paper Award (CS + L4EC) | Quality with just enough diversity in evolutionary policy search | Ann Lee; Bo Chan", "Best Paper Award (ECOM) | Letting a large neighborhood search for dial-a-ride fly | Cy Dunn; Ed Fox"]);
   assert.equal(parseGeccoBest(h, "https://gecco-2023.sigevo.org/Best-Paper-Awards").entries.length, 0);
 });
+
+test("BMVC award pages: 2022's headings over title and bracketed authors (semicolons, a bracket continued on its own line), 2025's prose 'awarded to … for their paper “Title”'; honourable mentions left out", async () => {
+  const { parseBmvcAwards } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>Best Paper Award</p><p>Unlocking deep models for transparent object tracking</p><p>Ann Lee (Ljubljana); Bo Chan (CTU Prague)</p><p>Best Paper Award Honourable Mention</p><p>Volumetric relightable faces for rendering</p><p>Cy Dunn (MPI)</p><p>Best Student Paper Award</p><p>Event based non-rigid reconstruction from contours</p><p>Ed Fox (MPI); Flo Gray (TU Munich)</p><p>Sponsors</p>`;
+  assert.deepEqual(parseBmvcAwards(a, "https://bmvc2022.org/programme/paper-awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Unlocking deep models for transparent object tracking | Ann Lee; Bo Chan", "student Event based non-rigid reconstruction from contours | Ed Fox; Flo Gray"]);
+  const b = `<p>The Best Paper Award was awarded to</p><p>Gil Hart, Hal Ito, Ivy Jones</p><p>for their paper "Guiding a diffusion model with itself using sliding windows".</p><p>The Best Presentation Award was awarded to</p><p>Kay Lowe</p><p>for their paper "Atomizer: generalizing to unseen modalities".</p>`;
+  assert.deepEqual(parseBmvcAwards(b, "https://bmvc2025.bmva.org/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2025 Guiding a diffusion model with itself using sliding windows | Gil Hart; Hal Ito; Ivy Jones"]);
+});

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6635
+  "count": 6639
  },
  "entries": [
   {
@@ -8470,6 +8470,70 @@
    "track": "main",
    "source": "https://www.asplos-conference.org/awards/",
    "evidence": "ASPLOS 2026 Influential Paper Award: Overshadow: A Virtualization-Based Approach to Retrofitting Protection in Commodity Operating Systems — Xiaoxin Chen, Tal Garfinkel, E. Christopher Lewis, Pratap Subrahmanyam, Carl A. Waldspurger, Dan Boneh, Jeffrey Dwoskin, Dan R.K. Ports"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Trans2k: Unlocking the Power of Deep Models for Transparent Object Tracking",
+   "authors": [
+    "Alan Lukezic",
+    "Žiga Trojer",
+    "Jiri Matas",
+    "Matej Kristan"
+   ],
+   "track": "main",
+   "source": "https://bmvc2022.org/programme/paper-awards/",
+   "evidence": "BMVC 2022 Best Paper Award: Trans2k: Unlocking the Power of Deep Models for Transparent Object Tracking — Alan Lukezic, Žiga Trojer, Jiri Matas, Matej Kristan"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Event-based Non-Rigid Reconstruction from Contours",
+   "authors": [
+    "Yuxuan Xue",
+    "Haolong Li",
+    "Stefan Leutenegger",
+    "Joerg Stueckler"
+   ],
+   "track": "main",
+   "source": "https://bmvc2022.org/programme/paper-awards/",
+   "evidence": "BMVC 2022 Best Student Paper Award: Event-based Non-Rigid Reconstruction from Contours — Yuxuan Xue, Haolong Li, Stefan Leutenegger, Joerg Stueckler"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "In the Eye of Transformer: Global-Local Correlation for Egocentric Gaze Estimation",
+   "authors": [
+    "Bolin Lai",
+    "Miao Liu",
+    "Fiona Ryan",
+    "James Rehg"
+   ],
+   "track": "main",
+   "source": "https://bmvc2022.org/programme/paper-awards/",
+   "evidence": "BMVC 2022 Best Student Paper Award: In the Eye of Transformer: Global-Local Correlation for Egocentric Gaze Estimation — Bolin Lai, Miao Liu, Fiona Ryan, James Rehg"
+  },
+  {
+   "venue": "BMVC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Guiding a diffusion model with itself using sliding windows",
+   "authors": [
+    "Nikolas Adaloglou",
+    "Tim Kaiser",
+    "Damir Iagudin",
+    "Markus Kollmann"
+   ],
+   "track": "main",
+   "source": "https://bmvc2025.bmva.org/",
+   "evidence": "BMVC 2025 Best Paper Award: Guiding a diffusion model with itself using sliding windows — Nikolas Adaloglou, Tim Kaiser, Damir Iagudin, Markus Kollmann"
   },
   {
    "venue": "BSDCon",

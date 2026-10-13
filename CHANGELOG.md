@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.69 — 2026-10-12
+
+- BMVC's best paper of 2022 (Trans2k) and its two best student papers, and 2025's best paper (Guiding a diffusion model with itself using sliding windows), from the conference's own pages (`tot.mjs bmvc-awards`); the list had none for BMVC. The list has 6639 awards.
+
 ## 2.10.68 — 2026-10-12
 
 - GECCO's best papers of 2021–2025 (50 papers, one per track or group of tracks) from each year's own Best Paper Awards page (`tot.mjs gecco-best`); the list had only GECCO's impact awards. The list has 6635 awards.
