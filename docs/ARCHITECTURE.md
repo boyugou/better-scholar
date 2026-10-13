@@ -203,6 +203,10 @@ and no paper has a rank in any list that is on: the table is then by role only (
 a computer-science profile whose venues the lists miss is exactly where a report helps. The status block (`renderCoverage`) leaves out the "N papers loaded" line when it would stand alone — complete,
 not loading, nothing else to say — and the totals are shown (not with the layout warning, which hides them); the section hides itself when nothing else is left.
 
+The year chart is `metrics.yearBars()`: one bar a year for the highlighted papers, at most the last 50 (`YEAR_BARS`; two real veterans' profiles span 44 and 45 years, and above 24 bars the gap between bars shrinks to 1 px) counted back from the newest year that can be real (next year at
+the latest: a typo such as 2099 draws nothing), starting at the first year that has a paper; Scholar sometimes dates a paper 1803, which would stretch the chart over two centuries and leave
+every bar a pixel wide. The papers before the first bar are counted (`byYearOlder`) and said in the first axis label's tooltip and in the chart's accessible name (`yearsOlder`).
+
 Layout: in the wide layout (window narrow, panel above the list) `update()` moves the year bars into the first column; the arrangement is redone when
 the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
 

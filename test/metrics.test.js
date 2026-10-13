@@ -137,6 +137,23 @@ test("byYear: highlighted papers per year and role, every year in between, none 
   assert.deepEqual(m.byYear([]), []);
 });
 
+test("yearBars: the last 50 years only; a paper dated 1803 or a typo year ahead does not stretch the chart, a whole career still fits", () => {
+  const r = (year, role = "first") => ({ year, role, highlighted: true });
+  const out = m.yearBars([r(1803), r(1960), r(1980), r(2000), r(2025), r(2026, "last"), r(2099)], { now: 2026 });
+  assert.deepEqual([out.bars[0].year, out.bars[out.bars.length - 1].year, out.bars.length], [1980, 2026, 47], "the window is 1977–2026; it starts at the first year with a paper");
+  assert.equal(out.older, 2, "1803 and 1960 are not drawn, and counted");
+  assert.deepEqual([1980, 2000, 2025, 2026].map((y) => out.bars.find((b) => b.year === y).total), [1, 1, 1, 1]);
+  const veteran = m.yearBars([r(1981), r(2024)], { now: 2026 });              // (the real profile of a veteran: 44 years)
+  assert.deepEqual([veteran.bars.length, veteran.older], [44, 0]);
+  assert.ok(!out.bars.some((b) => b.year > 2027), "2099 is no year: nothing is drawn for it");
+  const small = m.yearBars([r(2020), r(2022)], { now: 2026 });
+  assert.deepEqual(small.bars.map((b) => b.year), [2020, 2021, 2022]);
+  assert.equal(small.older, 0);
+  assert.deepEqual(m.yearBars([]), { bars: [], older: 0 });
+  assert.equal(m.yearBars([r(1990), r(2026)], { now: 2026, maxYears: 5 }).older, 1, "the window is a parameter");
+  assert.equal(m.YEAR_BARS, 50);
+});
+
 test("topVenues: ranked venues of the highlighted papers, most papers first, ties by name, at most n", () => {
   const v = (abbr, highlighted = true) => ({ highlighted, venue: { ccf: { abbr, name: abbr + " full" } } });
   const rows = [v("ICML"), v("ICML"), v("NeurIPS"), v("ACL"), v("ACL"), v("CVPR", false), { highlighted: true, venue: {} }, { highlighted: true, venue: { core: { name: "Journal Of Things" } } }];

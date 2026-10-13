@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Markerade artiklar per år"
   },
+  "yearsOlder": {
+    "message": "$N1$ äldre artiklar visas inte",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 äldre artikel visas inte"
+  },
   "optPanelYears": {
     "message": "Artiklar per år"
   },

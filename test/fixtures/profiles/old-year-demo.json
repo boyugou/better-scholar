@@ -1,0 +1,9 @@
+{
+ "owner": "Jane Doe",
+ "note": "SYNTHETIC (not a real profile): three papers, one of which Scholar dates 1803 (as happens with a wrong date), so that the year chart is not stretched over two centuries. Used by the end-to-end test only.",
+ "rows": [
+  ["J Doe, A Smith, B Lee", "ICML 2024, 2024", "A recent paper"],
+  ["A Smith, J Doe", "NeurIPS 2023, 2023", "A paper of the year before"],
+  ["B Lee, A Smith, J Doe", "Annals of Nothing 12, 1-9, 1803", "A paper that Scholar dates two centuries ago"]
+ ]
+}

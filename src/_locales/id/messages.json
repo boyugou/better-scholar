@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Makalah yang disorot per tahun"
   },
+  "yearsOlder": {
+    "message": "$N1$ makalah yang lebih lama tidak ditampilkan",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Makalah per tahun"
   },

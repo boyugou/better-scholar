@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Wyróżnione prace według lat"
   },
+  "yearsOlder": {
+    "message": "Starsze prace poza wykresem: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Prace według lat"
   },

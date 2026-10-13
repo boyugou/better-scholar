@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "各年份的高亮论文"
   },
+  "yearsOlder": {
+    "message": "另有 $N1$ 篇更早的论文未画出",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "按年份统计"
   },

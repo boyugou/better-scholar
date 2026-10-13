@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "各年份的已標示論文"
   },
+  "yearsOlder": {
+    "message": "未顯示 $N1$ 篇更早的論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "未顯示 1 篇更早的論文"
+  },
   "optPanelYears": {
     "message": "依年份統計"
   },

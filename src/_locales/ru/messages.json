@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Выделенные статьи по годам"
   },
+  "yearsOlder": {
+    "message": "Не показано более ранних статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Статьи по годам"
   },

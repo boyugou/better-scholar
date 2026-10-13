@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Zvýrazněné práce podle roku"
   },
+  "yearsOlder": {
+    "message": "Nevykreslené starší práce: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Práce podle roku"
   },

@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Bài được tô nổi theo năm"
   },
+  "yearsOlder": {
+    "message": "$N1$ bài cũ hơn không được hiển thị",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Bài theo năm"
   },

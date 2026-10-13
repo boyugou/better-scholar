@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Επισημασμένες εργασίες ανά έτος"
   },
+  "yearsOlder": {
+    "message": "Δεν εμφανίζονται $N1$ παλαιότερες εργασίες",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "Δεν εμφανίζεται 1 παλαιότερη εργασία"
+  },
   "optPanelYears": {
     "message": "Εργασίες ανά έτος"
   },

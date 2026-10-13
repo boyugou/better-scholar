@@ -256,6 +256,7 @@
     const list = papers();
     const source = currentSource();
     const bare = noRanks(list);
+    const yearBars = metrics.yearBars(list);
     const summary = metrics.summarize(list, bare ? null : source);
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
@@ -264,7 +265,7 @@
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
-      byYear: metrics.byYear(list), topVenues: venueList(source), venueKey: state.venueKey,
+      byYear: yearBars.bars, byYearOlder: yearBars.older, topVenues: venueList(source), venueKey: state.venueKey,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,

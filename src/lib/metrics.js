@@ -56,6 +56,18 @@
     return out;
   }
 
+  // The bars of the year chart: at most the last `maxYears` years (a whole career fits: the real profiles of two veterans span 44 and 45 years), up to the newest year that can be
+  // real (next year at the latest, so a typo such as 2099 draws nothing). A paper Scholar dates 1803 would otherwise stretch the chart over two centuries and leave every bar a
+  // pixel wide; `older` counts the highlighted papers before the first bar.
+  const YEAR_BARS = 50;
+  function yearBars(rows, { maxYears = YEAR_BARS, now = new Date().getFullYear() } = {}) {
+    const all = byYear(rows.filter((r) => r.year == null || r.year <= now + 1));
+    if (all.length <= maxYears) return { bars: all, older: 0 };
+    const cut = all.length - maxYears, bars = all.slice(cut);
+    while (bars.length > 1 && !bars[0].total) bars.shift();                       // (the chart starts at a year that has a paper, not at an empty stretch)
+    return { bars, older: all.slice(0, cut).reduce((n, e) => n + e.total, 0) };
+  }
+
   // The venue a ranked paper belongs to, by its usual short name ("NeurIPS"), or "" when it matched no list
   // `lists` says which rankings are switched on ({ ccf, core }, both by default): a venue only a switched-off list knows has no key
   function venueKey(venue, lists) {
@@ -172,5 +184,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
 });

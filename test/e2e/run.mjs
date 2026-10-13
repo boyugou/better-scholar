@@ -543,6 +543,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // the status lines keep their spacing (the slots of the status section take no room of their own)
     const gaps = await page.evaluate(() => { const l = [...document.querySelectorAll('[data-rr="coverage"] .rr-cover-line')].map((e) => e.getBoundingClientRect()); return l.slice(1).map((r, i) => Math.round(r.top - l[i].bottom)); });
     assert.ok(gaps.length >= 1 && gaps.every((g) => g >= 3), "status lines are spaced: " + gaps);
+    assert.ok(await page.locator('[data-act="resolve"]').evaluate((b) => b.getBoundingClientRect().height < 24), "the action beside a status note keeps its words on one line (the note wraps instead)");
     assert.match(await page.locator('[data-rr="resolve-hint"]').textContent(), /^Opens each paper's page on Scholar/, "before it is pressed the panel says what Read full lists does: it opens Scholar's pages");
     assert.doesNotMatch(await page.locator('[data-rr="resolve-hint"]').textContent(), /Semantic/, "and does not name Semantic Scholar while that setting is off");
     await page.bringToFront();                                       // (a background tab's timers are slowed to one a second)
@@ -1022,6 +1023,27 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
       ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");
     } finally { await ctxG.close(); await fxG.close(); }
+  }
+
+  // -- 20e. a paper that Scholar dates 1803 does not stretch the year chart over two centuries (a user's screenshot: every bar a pixel wide)
+  {
+    const fxY = await start({ slug: "old-year-demo", pageSize: 100 });
+    const ctxY = await launch();
+    try {
+      const pg = await ctxY.newPage();
+      await pg.goto(fxY.url);
+      await pg.waitForSelector("#rr-panel");
+      await eventually(pg, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      assert.equal(await pg.locator("#gsc_a_b tr.gsc_a_tr").count(), 3);
+      assert.deepEqual(await pg.locator("#rr-panel .rr-bars-axis span").allTextContents(), ["2023", "2024"], "the chart covers at most the last fifty years, from the first year that has a paper");
+      assert.equal(await pg.locator("#rr-panel .rr-bar").count(), 2);
+      assert.equal(await pg.locator("#rr-panel .rr-bars-axis span").first().getAttribute("title"), "1 older paper is not drawn", "the older paper is said on hover");
+      assert.match(await pg.locator("#rr-panel .rr-bars").getAttribute("aria-label"), /1 older paper is not drawn/, "and to screen readers");
+      const widths = await pg.locator("#rr-panel .rr-bar").evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().width)));
+      assert.ok(widths.every((w) => w >= 12), "the bars are wide enough to see: " + widths);
+      await pg.bringToFront(); await pg.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-old-year.png") });
+      ok("a paper Scholar dates 1803 does not stretch the year chart: at most the last fifty years are drawn and the older paper is said on hover");
+    } finally { await ctxY.close(); await fxY.close(); }
   }
 
   // -- 21. award and talk markers the authors wrote (synthetic profile; look-alikes must stay unmarked)

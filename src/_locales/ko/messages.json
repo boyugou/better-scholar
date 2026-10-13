@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "연도별 강조된 논문"
   },
+  "yearsOlder": {
+    "message": "더 오래된 논문 $N1$편은 그려지지 않음",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "더 오래된 논문 1편은 그려지지 않음"
+  },
   "optPanelYears": {
     "message": "연도별 논문"
   },

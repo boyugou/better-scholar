@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Hervorgehobene Paper nach Jahr"
   },
+  "yearsOlder": {
+    "message": "$N1$ ältere Paper werden nicht dargestellt",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 älteres Paper wird nicht dargestellt"
+  },
   "optPanelYears": {
     "message": "Paper nach Jahr"
   },

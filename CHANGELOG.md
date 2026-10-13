@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.22.3 — 2026-10-13
+
+- **The year chart no longer collapses when a paper has a wrong date.** From a user's screenshot: one paper that Scholar dates 1803 stretched "Highlighted papers by year" over 1803–2026 and left every bar a pixel wide. The chart now draws at most the last 50 years (a whole career fits: the real profiles of two veterans span 44 and 45 years; counted back from the newest year that can be real: a typo such as 2099 draws nothing; the gap between bars shrinks above 24 bars) and starts at the first year inside them that has a paper; the papers before it are counted and said on hover over the first year and to screen readers ("1 older paper is not drawn"). The numbers, the table and the year filter still count every paper.
+- **"Read full lists" no longer breaks in two** beside a status note (the renamed button is longer than the old one-word label): the action keeps its width, up to 55% of the row, and the note beside it wraps instead. Unit test for `metrics.yearBars` and an end-to-end step on a synthetic profile with a paper dated 1803.
+
 ## 2.22.2 — 2026-10-13
 
 From an independent review of 2.21 and 2.22 (eight confirmed problems):

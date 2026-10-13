@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Articoli evidenziati per anno"
   },
+  "yearsOlder": {
+    "message": "$N1$ articoli più vecchi non sono rappresentati",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 articolo più vecchio non è rappresentato"
+  },
   "optPanelYears": {
     "message": "Articoli per anno"
   },

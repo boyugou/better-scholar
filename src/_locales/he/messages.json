@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "מאמרים מודגשים לפי שנה"
   },
+  "yearsOlder": {
+    "message": "$N1$ מאמרים ישנים יותר אינם מוצגים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "מאמר אחד ישן יותר אינו מוצג"
+  },
   "optPanelYears": {
     "message": "מאמרים לפי שנה"
   },

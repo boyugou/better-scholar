@@ -175,6 +175,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-m i{ font-style: normal; color: var(--rr-faint); margin: 0 3px; }
 #rr-panel .rr-cover{ display: grid; gap: 4px; }
 #rr-panel .rr-cover-line{ display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#rr-panel .rr-cover-line:not([data-rr="suggest"]) > .rr-link{ flex: 0 0 auto; max-width: 55%; text-align: end; }          /* (the action keeps its width, so "Read full lists" does not break in two: the note beside it wraps instead) */
 #rr-panel .rr-list{ max-height: 150px; overflow: auto; margin: 4px 0 0; padding: 0; list-style: none; font-size: 11.5px; color: var(--rr-muted); }
 #rr-panel .rr-list li{ padding: 1px 0; overflow-wrap: anywhere; }
 #rr-panel .rr-list b{ color: var(--rr-text); }

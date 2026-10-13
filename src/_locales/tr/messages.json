@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Yıllara göre vurgulanan makaleler"
   },
+  "yearsOlder": {
+    "message": "$N1$ daha eski makale gösterilmiyor",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 daha eski makale gösterilmiyor"
+  },
   "optPanelYears": {
     "message": "Yıllara göre makaleler"
   },

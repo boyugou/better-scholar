@@ -644,6 +644,17 @@
   "yearsTitle": {
     "message": "Artigos destacados por ano"
   },
+  "yearsOlder": {
+    "message": "$N1$ artigos mais antigos não aparecem no gráfico",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 artigo mais antigo não aparece no gráfico"
+  },
   "optPanelYears": {
     "message": "Artigos por ano"
   },

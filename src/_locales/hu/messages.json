@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "Kiemelt cikkek évenként"
   },
+  "yearsOlder": {
+    "message": "$N1$ régebbi cikk nincs ábrázolva",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "Cikkek évenként"
   },

@@ -626,6 +626,14 @@
   "yearsTitle": {
     "message": "الأبحاث المميّزة حسب السنة"
   },
+  "yearsOlder": {
+    "message": "الأبحاث الأقدم غير المرسومة: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "optPanelYears": {
     "message": "الأبحاث حسب السنة"
   },

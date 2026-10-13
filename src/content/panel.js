@@ -309,16 +309,17 @@
       yearsSec.hidden = !m.prefs.panel.years || data.length < 2;
       if (yearsSec.hidden) return;
       const top = Math.max(...data.map((d) => d.total));
+      const older = m.byYearOlder || 0, olderNote = older ? tn("yearsOlder", older, [String(older)]) : "";        // (papers before the last fifty years are not drawn: said on hover and to screen readers)
       const names = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
       yearsSec.replaceChildren(
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("yearsTitle"))),
       h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
-        h("div", { class: "rr-bars", role: "img", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") },
+        h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "img", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => h("div", { class: "rr-bar", title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n") },
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
               ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))))),
         ),
-        h("div", { class: "rr-bars-axis" }, h("span", {}, String(data[0].year)), h("span", {}, String(data[data.length - 1].year)))));
+        h("div", { class: "rr-bars-axis" }, h("span", { title: older ? olderNote : null }, String(data[0].year)), h("span", {}, String(data[data.length - 1].year)))));
     }
 
     // The venues the highlighted papers appear in, most frequent first; click one to list its papers
