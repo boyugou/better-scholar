@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7410
+  "count": 7428
  },
  "entries": [
   {
@@ -62494,6 +62494,280 @@
    "track": "main",
    "source": "https://humanrobotinteraction.org/2025/awards/",
    "evidence": "HRI 2025 Best Paper Award (Demonstrations): What Would Jim Henson Do? Roleplaying Human-Robot Collaborations Through Puppeteering — James L. Dwyer, Stine S. Johansen, Jared Donovan, Markus Rittenbruch, Rafael Gomez"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Optimal Scheduling for Constant-Rate Multi-Mode System",
+   "authors": [
+    "Rajeev Alur",
+    "Ashutosh Trivedi",
+    "Dominik Wojtczak"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2012 Best Paper Award: Rajeev Alur, Ashutosh Trivedi,and Dominik Wojtczak. Optimal Scheduling for Constant-Rate Multi-Mode System"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Lyapunov analysis of rigid body systems with impacts and friction via sums-of-squares",
+   "authors": [
+    "Michael Posa",
+    "Mark Tobenkin",
+    "Russ Tedrake"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2013 Best Paper Award: Michael Posa, Mark Tobenkin, and Russ Tedrake. Lyapunov analysis of rigid body systems with impacts and friction via sums-of-squares"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2013,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Approximating acceptance probabilities of CTMC-paths on multi-clock deterministic timed automata",
+   "authors": [
+    "Hongfei Fu"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2013 Best Student Paper Award: Hongfei Fu. Approximating acceptance probabilities of CTMC-paths on multi-clock deterministic timed automata"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2014,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Dynamic multi-domain bipedal walking with atrias through slip based human-inspired control",
+   "authors": [
+    "Ayonga Hereid",
+    "Shishir Kolathaya",
+    "Mikhail S. Jones",
+    "Johnathan Van Why",
+    "Jonathan W. Hurst",
+    "Aaron D. Ames"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2014 Best Student Paper Award: Ayonga Hereid, Shishir Kolathaya, Mikhail S. Jones, Johnathan Van Why, Jonathan W. Hurst, and Aaron D. Ames. Dynamic multi-domain bipedal walking with atrias through slip based human-inspired control"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2015,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Efficient finite abstraction of mixed monotone systems",
+   "authors": [
+    "Sam Coogan",
+    "Murat Arcak"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2015 Best Student Paper Award: Sam Coogan, Murat Arcak. Efficient finite abstraction of mixed monotone systems"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2016,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Symbolic-Numeric Reachability Analysis of Closed-Loop Control Software",
+   "authors": [
+    "Aditya Zutshi",
+    "Sriram Sankaranarayanan",
+    "Jyotirmoy V. Deshmukh",
+    "Xiaoqing Jin"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2016 Best Student Paper Award: Aditya Zutshi, Sriram Sankaranarayanan, Jyotirmoy V. Deshmukh and Xiaoqing Jin. Symbolic-Numeric Reachability Analysis of Closed-Loop Control Software"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2017,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Forward stochastic reachability analysis for uncontrolled linear systems using Fourier transforms",
+   "authors": [
+    "Abraham Vinod",
+    "Baisravan Homchaudhuri",
+    "Meeko Oishi"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2017 Best Student Paper Award: Abraham Vinod, Baisravan Homchaudhuri and Meeko Oishi. Forward stochastic reachability analysis for uncontrolled linear systems using Fourier transforms"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Bisimulations, logics, and trace distributions for stochastic systems with rewards",
+   "authors": [
+    "Daniel Gburek",
+    "Christel Baier"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2018 Best Paper Award: Daniel Gburek and Christel Baier. Bisimulations, logics, and trace distributions for stochastic systems with rewards"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2018,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Reachability of uncertain linear systems using zonotopes",
+   "authors": [
+    "Antoine Girard"
+   ],
+   "track": "main",
+   "paperYear": 2005,
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2018 Test-of-Time Award: Antoine Girard. Reachability of uncertain linear systems using zonotopes"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On topological entropy and stability of switched linear systems",
+   "authors": [
+    "Guosong Yang",
+    "Joao Hespanha",
+    "Daniel Liberzon"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2019 Best Paper Award: Guosong Yang, Joao Hespanha and Daniel Liberzon. On topological entropy and stability of switched linear systems"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2019,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Reachability analysis via face lifting",
+   "authors": [
+    "Thao Dang",
+    "Oded Maler"
+   ],
+   "track": "main",
+   "paperYear": 1998,
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2019 Test-of-Time Award: Thao Dang and Oded Maler. Reachability analysis via face lifting"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Worst-case topological entropy and minimal data rate for state observation of switched linear systems",
+   "authors": [
+    "Guillaume Berger",
+    "Raphaël Jungers"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2020 Best Paper Award: Guillaume Berger and Raphaël Jungers. Worst-case topological entropy and minimal data rate for state observation of switched linear systems"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2020,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "A feedback control motivation for generalized solutions to hybrid systems",
+   "authors": [
+    "Ricardo Sanfelice",
+    "Rafal Goebel",
+    "Andrew Teel"
+   ],
+   "track": "main",
+   "paperYear": 2006,
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2020 Test-of-Time Award: Ricardo Sanfelice, Rafal Goebel, and Andrew Teel. A feedback control motivation for generalized solutions to hybrid systems"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Verifiably Safe Exploration for End-to-End Reinforcement Learning",
+   "authors": [
+    "Nathan Hunt",
+    "Nathan Fulton",
+    "Sara Magliacane",
+    "Nghia Hoang",
+    "Subhro Das",
+    "Armando Solar-Lezama"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2021 Best Paper Award: Nathan Hunt, Nathan Fulton, Sara Magliacane, Nghia Hoang, Subhro Das and Armando Solar-Lezama. Verifiably Safe Exploration for End-to-End Reinforcement Learning"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2021,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Safety verification of hybrid systems using barrier certificates",
+   "authors": [
+    "Stephen Prajna",
+    "Ali Jadbabaie"
+   ],
+   "track": "main",
+   "paperYear": 2004,
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2021 Test-of-Time Award: Stephen Prajna and Ali Jadbabaie. Safety verification of hybrid systems using barrier certificates"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Verifying Switched System Stability With Logic",
+   "authors": [
+    "Yong Kiam Tan",
+    "Stefan Mitsch",
+    "André Platzer"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2022 Best Paper Award: Yong Kiam Tan, Stefan Mitsch and André Platzer. Verifying Switched System Stability With Logic"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "On the Optimal Control Law for Linear Discrete Time Hybrid Systems",
+   "authors": [
+    "Alberto Bemporad",
+    "Francesco Borrelli",
+    "Manfred Morari"
+   ],
+   "track": "main",
+   "paperYear": 2002,
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2022 Test-of-Time Award: Alberto Bemporad, Francesco Borrelli and Manfred Morari. On the Optimal Control Law for Linear Discrete Time Hybrid Systems"
+  },
+  {
+   "venue": "HSCC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Distributionally Robust Strategy Synthesis for Switched Stochastic Systems",
+   "authors": [
+    "Ibón Gracia Merino",
+    "Dimitris Boskos",
+    "Luca Laurenti",
+    "Manuel Mazo Jr"
+   ],
+   "track": "main",
+   "source": "https://hscc.acm.org/2025/previous-hscc-editions/",
+   "evidence": "HSCC 2023 Best Paper Award: Ibón Gracia Merino, Dimitris Boskos, Luca Laurenti and Manuel Mazo Jr. Distributionally Robust Strategy Synthesis for Switched Stochastic Systems"
   },
   {
    "venue": "HT",

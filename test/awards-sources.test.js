@@ -2339,6 +2339,12 @@ test("ESWEEK best paper and test-of-time page: per year 'CASES|CODES+ISSS|EMSOFT
   assert.deepEqual(parseEsweekAwards(h, "https://2024.esweek.org/?p=613").entries.map((e) => `${e.venue} ${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["CASES 2024 best  | Ann Lee; Bo Chan; Cy Dunn", "EMSOFT 2024 best  | Ed Fox; Flo Gray; Gil Hart", "EMSOFT 2024 tot 2008 | Hal Ito; Jo Kim", "CODES+ISSS 2016 best  | Al Roe; Siddhartha; Bea Poe"]);
 });
 
+test("HSCC past conferences page: test-of-time lines '2022: Authors. Title. HSCC 2002.' (no paper year, not read) and best paper lines '2022: (BP|BSP) Authors. Title.'", async () => {
+  const { parseHsccPast } = await import("../scripts/awards/tot.mjs");
+  const h = `<h3>Test-of-time Award Winners</h3><p>2023: Ann Lee. A hybrid systems verifier. Past HyTech</p><p>2022: Bo Chan, Cy Dunn and Ed Fox. On the optimal control law for linear discrete time hybrid systems. HSCC 2002.</p><h3>Recent HSCC Best Paper (BP) and Best Student Paper (BSP) Award Winners</h3><p>2023: (BP) Flo Gray, Gil Hart and Manuel A. Mazo Jr. Distributionally robust strategy synthesis for switched systems</p><p>2017: (BSP) Hal Ito. Forward stochastic reachability analysis for linear systems.</p><p>Home</p>`;
+  assert.deepEqual(parseHsccPast(h, "https://hscc.acm.org/2025/previous-hscc-editions/").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2022 tot 2002 | Bo Chan; Cy Dunn; Ed Fox", "2023 best  | Flo Gray; Gil Hart; Manuel A. Mazo Jr", "2017 student  | Hal Ito"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

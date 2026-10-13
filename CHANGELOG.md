@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.103 — 2026-10-12
+
+- HSCC's best papers and best student papers 2012–2023 and test-of-time papers 2018–2022 (18 papers; the list had none for HSCC) from the conference's own past-conferences page (`tot.mjs hscc-past`). The list has 7428 awards.
+
 ## 2.10.102 — 2026-10-12
 
 - Best papers 2005–2024 and test-of-time papers 2019–2024 of the three Embedded Systems Week conferences CASES, CODES+ISSS and EMSOFT (74 papers; the list had none for any of them) from ESWEEK 2024's own award page (`tot.mjs esweek-awards`). The list has 7410 awards.
