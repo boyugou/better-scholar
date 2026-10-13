@@ -77,7 +77,7 @@ Matching an author token to the owner (`names.js`):
   reads the other order of a two- or three-part header name **automatically** only when the name
   as printed finds the owner in under 10% of at least 8 rows and the other order in at least 4×
   as many and a quarter of all rows (real case: `Tang Jie`, 0 → 76 of 100 rows). Other
-  rearrangements with initials (`SY Philip` for `Philip S. Yu`, `J Tang`) are only **offered**,
+  rearrangements with initials (`SY Philip` for `Philip S. Yu`, `J Tang`) and an all-caps inventor (`JA DOUDNA`: `isShoutedInitials`; an all-caps name is never read as initials by the matcher) are only **offered**,
   from complete author lists that otherwise lack the owner, in at least two papers, as a
   one-click suggestion; the automatic spelling is not stored (it is derived again on every load),
   a suggestion that is accepted becomes an ordinary variant.

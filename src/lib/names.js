@@ -268,11 +268,27 @@
     return written >= 1;
   }
 
+  // An all-caps author name — "JA DOUDNA", as patent databases print an inventor — is not read as initials plus surname when matching (an all-caps name is just
+  // shouting, and "WU LI" is not "Wei Li"), so such a name is only ever offered, never used: would it be the owner's surname with initials that fit the owner's
+  // given names, if its short leading words were read as initials?
+  function isShoutedInitials(authorName, ownerName) {
+    const raw = fold(authorName).trim();
+    if (!/[A-Z]/.test(raw) || raw !== raw.toUpperCase()) return false;
+    const words = raw.split(/\s+/);
+    if (words.length < 2) return false;
+    const a = nameParts(authorName), o = nameParts(ownerName, { owner: true });
+    if (!a.last || !o.last || !sameSurname(a, o) || !o.givens.length) return false;
+    const given = words.slice(0, -1);
+    if (!given.every((w) => /^[A-Z]{1,3}$/.test(w))) return false;
+    return givensCompatible(given.flatMap((w) => w.toLowerCase().split("")), o.givens);
+  }
+
   // What the page itself says about how the owner's name is spelled, from the rows read so far.
   //   auto         spellings to use without asking: the profile name in the other order, when the name as printed finds the
   //                owner in hardly any paper and the other order in many ("Tang Jie" on the profile, "J Tang" in the papers)
   //   suggestions  spellings to offer: author names, in at least two papers whose complete author lists do not otherwise
-  //                contain the owner, that are the owner's name rearranged ("SY Philip")
+  //                contain the owner, that are the owner's name rearranged ("SY Philip") or the owner's surname in capitals with
+  //                initials ("JA DOUDNA")
   //
   // It runs again over every row read so far each time a page of rows is loaded, so what it works out about a row — the parsed author
   // line, where an owner's spelling finds the owner in it, whether a name is a rearrangement of the owner's — is remembered.
@@ -307,7 +323,7 @@
     }
     const tally = new Map();
     const currentKey = ownerKey(current), permutations = new Map();
-    const isRearranged = (name) => { let v = permutations.get(name); if (v === undefined) { v = isPermutation(name, current.name); permutations.set(name, v); } return v; };
+    const isRearranged = (name) => { let v = permutations.get(name); if (v === undefined) { v = isPermutation(name, current.name) || isShoutedInitials(name, current.name); permutations.set(name, v); } return v; };
     for (let i = 0; i < lists.length; i++) {
       const l = lists[i];
       if (l.truncated || found(l, authorTexts[i], current, currentKey) >= 0) continue;
@@ -327,6 +343,6 @@
 
   return {
     COFIRST_SYMBOLS, CORRESPONDING_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
-    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, suggestVariants
+    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
   };
 });

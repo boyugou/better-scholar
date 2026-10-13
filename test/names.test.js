@@ -53,6 +53,25 @@ test("co-first marks: a leading group that shares a mark counts; a lone mark, or
   assert.equal(role("Y Gu*, K Zhang*, Y Ning*, B Zheng*, B Gou, T Xue, C Chang, ...", 4), "middle");
 });
 
+test("an all-caps initials + surname name (a patent's inventor) is offered as a spelling, never used by itself", () => {
+  const owner = { name: "Jennifer Doudna", alternates: [] };
+  assert.equal(names.matchesAuthor("JA DOUDNA", owner), false, "an all-caps name is just shouting: it is not read as initials");
+  assert.equal(names.matchesAuthor("JA Doudna", owner), true);
+  assert.equal(names.isShoutedInitials("JA DOUDNA", "Jennifer Doudna"), true);
+  assert.equal(names.isShoutedInitials("J DOUDNA", "Jennifer Doudna"), true);
+  assert.equal(names.isShoutedInitials("KJ DOUDNA", "Jennifer Doudna"), false, "the initials must fit the given names");
+  assert.equal(names.isShoutedInitials("JA DOUDNA", "Jane Smith"), false, "and the surname must be the owner's");
+  assert.equal(names.isShoutedInitials("JA Doudna", "Jennifer Doudna"), false, "only an all-caps name");
+  assert.equal(names.isShoutedInitials("DOUDNA", "Jennifer Doudna"), false);
+  assert.equal(names.isShoutedInitials("JENNIFER DOUDNA", "Jennifer Doudna"), false, "a whole given name is not initials (and the usual matching finds it)");
+  assert.equal(names.matchesAuthor("JENNIFER DOUDNA", owner), true);
+  const lines = ["JA DOUDNA, M Jinek, E Charpentier", "A Smith, JA DOUDNA, B Lee", "X Yu, Z Wang", "JA Doudna, K Chylinski"];
+  assert.deepEqual(names.suggestVariants(lines, owner).suggestions, [{ name: "JA DOUDNA", rows: 2 }], "two papers: one click offered");
+  assert.deepEqual(names.suggestVariants(lines.slice(0, 1), owner).suggestions, [], "one paper is not enough");
+  // once the person adds it, it finds the owner
+  assert.equal(names.matchesAuthor("JA DOUDNA", { name: "Jennifer Doudna", alternates: ["JA DOUDNA"] }), true);
+});
+
 test("middle initials: profile 'Geoffrey Hinton' matches 'GE Hinton'", () => {
   assert.ok(match("GE Hinton", "Geoffrey Hinton"));
   assert.ok(match("G Hinton", "Geoffrey Hinton"));

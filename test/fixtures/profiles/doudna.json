@@ -1,0 +1,506 @@
+{
+ "owner": "Jennifer Doudna",
+ "note": "First 100 rows (by citations) of the public Google Scholar profile of a biologist, read in the user's own Chrome on 2026-10-13: [authors, venue, title] exactly as Scholar prints them (the venue line ends with the year column). A non-computer-science profile: long author lists, patents, a book; no venue is on a CCF / CORE list.",
+ "rows": [
+  [
+   "M Jinek, K Chylinski, I Fonfara, M Hauer, JA Doudna, E Charpentier",
+   "science 337 (6096), 816-821, 2012",
+   "A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity"
+  ],
+  [
+   "JA Doudna, E Charpentier",
+   "Science 346 (6213), 1258096, 2014",
+   "The new frontier of genome engineering with CRISPR-Cas9"
+  ],
+  [
+   "LS Qi, MH Larson, LA Gilbert, JA Doudna, JS Weissman, AP Arkin, ...",
+   "Cell 152 (5), 1173-1183, 2013",
+   "Repurposing CRISPR as an RNA-guided platform for sequence-specific control of gene expression"
+  ],
+  [
+   "LA Gilbert, MH Larson, L Morsut, Z Liu, GA Brar, SE Torres, ...",
+   "Cell 154 (2), 442-451, 2013",
+   "CRISPR-mediated modular RNA-guided regulation of transcription in eukaryotes"
+  ],
+  [
+   "JS Chen, E Ma, LB Harrington, M Da Costa, X Tian, JM Palefsky, ...",
+   "Science 360 (6387), 436-439, 2018",
+   "CRISPR-Cas12a target binding unleashes indiscriminate single-stranded DNase activity"
+  ],
+  [
+   "P Horvath, R Barrangou",
+   "Science 327 (5962), 167-170, 2010",
+   "CRISPR/Cas, the immune system of bacteria and archaea"
+  ],
+  [
+   "M Jinek, A East, A Cheng, S Lin, E Ma, J Doudna",
+   "elife 2, e00471, 2013",
+   "RNA-programmed genome editing in human cells"
+  ],
+  [
+   "F Jiang, JA Doudna",
+   "Annual review of biophysics 46, 505-529, 2017",
+   "CRISPR–Cas9 structures and mechanisms"
+  ],
+  [
+   "B Wiedenheft, SH Sternberg, JA Doudna",
+   "Nature 482 (7385), 331-338, 2012",
+   "RNA-guided genetic silencing systems in bacteria and archaea"
+  ],
+  [
+   "SH Sternberg, S Redding, M Jinek, EC Greene, JA Doudna",
+   "Nature 507 (7490), 62-67, 2014",
+   "DNA interrogation by the CRISPR RNA-guided endonuclease Cas9"
+  ],
+  [
+   "V Pattanayak, S Lin, JP Guilinger, E Ma, JA Doudna, DR Liu",
+   "Nature biotechnology 31 (9), 839-843, 2013",
+   "High-throughput profiling of off-target DNA cleavage reveals RNA-programmed Cas9 nuclease specificity"
+  ],
+  [
+   "M Jinek, F Jiang, DW Taylor, SH Sternberg, E Kaya, E Ma, C Anders, ...",
+   "Science 343 (6176), 1247997, 2014",
+   "Structures of Cas9 endonucleases reveal RNA-mediated conformational activation"
+  ],
+  [
+   "JH Cate, AR Gooding, E Podell, K Zhou, BL Golden, CE Kundrot, ...",
+   "Science 273 (5282), 1678-1685, 1996",
+   "Crystal structure of a group I ribozyme domain: principles of RNA packing"
+  ],
+  [
+   "GJ Knott, JA Doudna",
+   "Science 361 (6405), 866-869, 2018",
+   "CRISPR-Cas guides the future of genetic engineering"
+  ],
+  [
+   "S Lin, BT Staahl, RK Alla, JA Doudna",
+   "elife 3, e04766, 2014",
+   "Enhanced homology-directed human genome engineering by controlled timing of CRISPR/Cas9 delivery"
+  ],
+  [
+   "RC Wilson, JA Doudna",
+   "Annual review of biophysics 42, 217-239, 2013",
+   "Molecular mechanisms of RNA interference"
+  ],
+  [
+   "A East-Seletsky, MR O’Connell, SC Knight, D Burstein, JHD Cate, R Tjian, ...",
+   "Nature 538 (7624), 270-273, 2016",
+   "Two distinct RNase activities of CRISPR-C2c2 enable guide-RNA processing and RNA detection"
+  ],
+  [
+   "JS Chen, YS Dagdas, BP Kleinstiver, MM Welch, AA Sousa, ...",
+   "Nature 550 (7676), 407-410, 2017",
+   "Enhanced proofreading governs CRISPR–Cas9 targeting accuracy"
+  ],
+  [
+   "LB Harrington, D Burstein, JS Chen, D Paez-Espino, E Ma, IP Witte, ...",
+   "Science 362 (6416), 839-842, 2018",
+   "Programmed DNA destruction by miniature CRISPR-Cas14 enzymes"
+  ],
+  [
+   "R Barrangou, JA Doudna",
+   "Nature biotechnology 34 (9), 933-941, 2016",
+   "Applications of CRISPR technologies in research and beyond"
+  ],
+  [
+   "IJ MacRae, K Zhou, F Li, A Repic, AN Brooks, WZ Cande, PD Adams, ...",
+   "Science 311 (5758), 195-198, 2006",
+   "Structural basis for double-stranded RNA processing by Dicer"
+  ],
+  [
+   "JA Doudna",
+   "Nature 578 (7794), 229-236, 2020",
+   "The promise and challenge of therapeutic genome editing"
+  ],
+  [
+   "AV Wright, JK Nuñez, JA Doudna",
+   "Cell 164 (1), 29-44, 2016",
+   "Biology and applications of CRISPR systems: harnessing nature’s toolbox for genome engineering"
+  ],
+  [
+   "JY Wang, JA Doudna",
+   "Science 379 (6629), eadd8643, 2023",
+   "CRISPR technology: A decade of genome editing is only the beginning"
+  ],
+  [
+   "MF Richter, KT Zhao, E Eton, A Lapinaite, GA Newby, BW Thuronyi, ...",
+   "Nature biotechnology 38 (7), 883-891, 2020",
+   "Phage-assisted evolution of an adenine base editor with improved Cas domain compatibility and activity"
+  ],
+  [
+   "RE Haurwitz, M Jinek, B Wiedenheft, K Zhou, JA Doudna",
+   "Science 329 (5997), 1355-1358, 2010",
+   "Sequence-and structure-specific RNA processing by a CRISPR endonuclease"
+  ],
+  [
+   "P Fozouni, S Son, MD de León Derby, GJ Knott, CN Gray, MV D’Ambrosio, ...",
+   "Cell 184 (2), 323-333. e9, 2021",
+   "Amplification-free detection of SARS-CoV-2 with CRISPR-Cas13a and mobile phone microscopy"
+  ],
+  [
+   "JA DOUDNA, M Jinek, E Charpentier, K Chylinski",
+   "US Patent 10,266,850, 2019",
+   "Methods and compositions for rna-directed target dna modification and for rna-directed modulation of transcription"
+  ],
+  [
+   "JA Doudna, TR Cech",
+   "Nature 418 (6894), 222-228, 2002",
+   "The chemical repertoire of natural ribozymes"
+  ],
+  [
+   "M Jinek, JA Doudna",
+   "nature 457 (7228), 405-412, 2009",
+   "A three-dimensional view of the molecular machinery of RNA interference"
+  ],
+  [
+   "D Baltimore, P Berg, M Botchan, D Carroll, RA Charo, G Church, JE Corn, ...",
+   "Science 348 (6230), 36-38, 2015",
+   "A prudent path forward for genomic engineering and germline gene modification"
+  ],
+  [
+   "AR Ferré-D'Amaré, K Zhou, JA Doudna",
+   "Nature 395 (6702), 567-574, 1998",
+   "Crystal structure of a hepatitis delta virus ribozyme"
+  ],
+  [
+   "K Schumann, S Lin, E Boyer, DR Simeonov, M Subramaniam, RE Gate, ...",
+   "Proceedings of the National Academy of Sciences 112 (33), 10437-10442, 2015",
+   "Generation of knock-in primary human T cells using Cas9 ribonucleoproteins"
+  ],
+  [
+   "K Lee, M Conboy, HM Park, F Jiang, HJ Kim, MA Dewitt, VA Mackley, ...",
+   "Nature biomedical engineering 1 (11), 889-901, 2017",
+   "Nanoparticle delivery of Cas9 ribonucleoprotein and donor DNA in vivo induces homology-directed DNA repair"
+  ],
+  [
+   "F Jiang, DW Taylor, JS Chen, JE Kornfeld, K Zhou, AJ Thompson, ...",
+   "Science 351 (6275), 867-871, 2016",
+   "Structures of a CRISPR-Cas9 R-loop complex primed for DNA cleavage"
+  ],
+  [
+   "MR O’Connell, BL Oakes, SH Sternberg, A East-Seletsky, M Kaplan, ...",
+   "Nature 516 (7530), 263-266, 2014",
+   "Programmable RNA recognition and cleavage by CRISPR/Cas9"
+  ],
+  [
+   "SH Sternberg, B LaFrance, M Kaplan, JA Doudna",
+   "Nature 527 (7576), 110-113, 2015",
+   "Conformational control of DNA target cleavage by CRISPR–Cas9"
+  ],
+  [
+   "MM Jore, M Lundgren, E Van Duijn, JB Bultema, ER Westra, ...",
+   "Nature structural & molecular biology 18 (5), 529-536, 2011",
+   "Structural basis for CRISPR RNA-guided DNA recognition by Cascade"
+  ],
+  [
+   "D Burstein, LB Harrington, SC Strutt, AJ Probst, K Anantharaman, ...",
+   "Nature 542 (7640), 237-241, 2017",
+   "New CRISPR–Cas systems from uncultivated microbes"
+  ],
+  [
+   "F Jiang, K Zhou, L Ma, S Gressel, JA Doudna",
+   "Science 348 (6242), 1477-1481, 2015",
+   "A Cas9–guide RNA complex preorganized for target DNA recognition"
+  ],
+  [
+   "B Wiedenheft, E van Duijn, JB Bultema, SP Waghmare, K Zhou, ...",
+   "Proceedings of the National Academy of Sciences 108 (25), 10092-10097, 2011",
+   "RNA-guided complex from a bacterial immune system enhances target recognition through seed sequence interactions"
+  ],
+  [
+   "P Pausch, B Al-Shayeb, E Bisom-Rapp, CA Tsuchida, Z Li, BF Cress, ...",
+   "Science 369 (6501), 333-337, 2020",
+   "CRISPR-CasΦ from huge phages is a hypercompact genome editor"
+  ],
+  [
+   "JK Nuñez, PJ Kranzusch, J Noeske, AV Wright, CW Davies, JA Doudna",
+   "Nature structural & molecular biology 21 (6), 528-534, 2014",
+   "Cas1–Cas2 complex formation mediates spacer acquisition during CRISPR–Cas adaptive immunity"
+  ],
+  [
+   "CMT Spahn, JS Kieft, RA Grassucci, PA Penczek, K Zhou, JA Doudna, ...",
+   "Science 291 (5510), 1959-1962, 2001",
+   "Hepatitis C Virus IRES RNA-Induced Changes in the Conformation of the 40S Ribosomal Subunit"
+  ],
+  [
+   "DA Nelles, MY Fang, MR O’Connell, JL Xu, SJ Markmiller, JA Doudna, ...",
+   "Cell 165 (2), 488-496, 2016",
+   "Programmable RNA tracking in live cells with CRISPR/Cas9"
+  ],
+  [
+   "IJ MacRae, E Ma, M Zhou, CV Robinson, JA Doudna",
+   "Proceedings of the National Academy of Sciences 105 (2), 512-517, 2008",
+   "In vitro reconstitution of the human RISC-loading complex"
+  ],
+  [
+   "B Wiedenheft, GC Lander, K Zhou, MM Jore, SJJ Brouns, J Van Der Oost, ...",
+   "Nature 477 (7365), 486-489, 2011",
+   "Structures of the RNA-guided surveillance complex from a bacterial immune system"
+  ],
+  [
+   "EA Doherty, JA Doudna",
+   "Annual review of biochemistry 69 (1), 597-615, 2000",
+   "Ribozyme structures and mechanisms"
+  ],
+  [
+   "RT Batey, RP Rambo, JA Doudna",
+   "Angewandte Chemie International Edition 38 (16), 2326-2343, 1999",
+   "Tertiary motifs in RNA structure and folding"
+  ],
+  [
+   "B Al-Shayeb, R Sachdeva, LX Chen, F Ward, P Munk, A Devoto, ...",
+   "Nature 578 (7795), 425-431, 2020",
+   "Clades of huge phages from across Earth’s ecosystems"
+  ],
+  [
+   "SA Mortimer, MA Kidwell, JA Doudna",
+   "Nature Reviews Genetics 15 (7), 469-479, 2014",
+   "Insights into RNA structure and function from genome-wide studies"
+  ],
+  [
+   "C Fellmann, BG Gowen, PC Lin, JA Doudna, JE Corn",
+   "Nature reviews Drug discovery 16 (2), 89-100, 2017",
+   "Cornerstones of CRISPR–Cas in drug discovery and therapy"
+  ],
+  [
+   "J Doudna, S Sternberg",
+   "Random House, 2017",
+   "A crack in creation: The new power to control evolution"
+  ],
+  [
+   "JJ Liu, N Orlova, BL Oakes, E Ma, HB Spinner, KLM Baney, J Chuck, ...",
+   "Nature 566 (7743), 218-223, 2019",
+   "CasX enzymes comprise a distinct family of RNA-guided genome editors"
+  ],
+  [
+   "MR Fabian, G Mathonnet, T Sundermeier, H Mathys, JT Zipprich, ...",
+   "Molecular cell 35 (6), 868-880, 2009",
+   "Mammalian miRNA RISC recruits CAF1 and PABP to affect PABP-dependent deadenylation"
+  ],
+  [
+   "SH Sternberg, JA Doudna",
+   "Molecular cell 58 (4), 568-574, 2015",
+   "Expanding the biologist’s toolkit with CRISPR-Cas9"
+  ],
+  [
+   "JK Nuñez, ASY Lee, A Engelman, JA Doudna",
+   "Nature 519 (7542), 193-198, 2015",
+   "Integrase-mediated spacer acquisition during CRISPR–Cas adaptive immunity"
+  ],
+  [
+   "JB Lucks, SA Mortimer, C Trapnell, S Luo, S Aviran, GP Schroth, ...",
+   "Proceedings of the National Academy of Sciences 108 (27), 11063-11068, 2011",
+   "Multiplexed RNA structure characterization with selective 2′-hydroxyl acylation analyzed by primer extension sequencing (SHAPE-Seq)"
+  ],
+  [
+   "JS Kieft, K Zhou, R Jubin, JA Doudna",
+   "Rna 7 (2), 194-206, 2001",
+   "Mechanism of ribosome recruitment by hepatitis C IRES RNA"
+  ],
+  [
+   "RT Batey, RP Rambo, L Lucast, B Rha, JA Doudna",
+   "Science 287 (5456), 1232-1239, 2000",
+   "Crystal structure of the ribonucleoprotein core of the signal recognition particle"
+  ],
+  [
+   "A Mehle, JA Doudna",
+   "Proceedings of the National Academy of Sciences 106 (50), 21312-21316, 2009",
+   "Adaptive strategies of the influenza virus polymerase for replication in humans"
+  ],
+  [
+   "PJ Kranzusch, ASY Lee, JM Berger, JA Doudna",
+   "Cell reports 3 (5), 1362-1368, 2013",
+   "Structure of human cGAS reveals a conserved family of second-messenger enzymes in innate immunity"
+  ],
+  [
+   "JH Cate, AR Gooding, E Podell, K Zhou, BL Golden, AA Szewczak, ...",
+   "Science 273 (5282), 1696-1699, 1996",
+   "RNA tertiary structure mediation by adenosine platforms"
+  ],
+  [
+   "ASY Lee, PJ Kranzusch, JA Doudna, JHD Cate",
+   "Nature 536 (7614), 96-99, 2016",
+   "eIF3d is an mRNA cap-binding protein that is required for specialized translation initiation"
+  ],
+  [
+   "BT Staahl, M Benekareddy, C Coulon-Bainier, AA Banfal, SN Floor, ...",
+   "Nature biotechnology 35 (5), 431-434, 2017",
+   "Efficient genome editing in the mouse brain by local delivery of engineered Cas9 ribonucleoprotein complexes"
+  ],
+  [
+   "SC Knight, L Xie, W Deng, B Guglielmi, LB Witkowsky, L Bosanac, ...",
+   "Science 350 (6262), 823-826, 2015",
+   "Dynamics of CRISPR-Cas9 genome interrogation in living cells"
+  ],
+  [
+   "IJ MacRae, K Zhou, JA Doudna",
+   "Nature structural & molecular biology 14 (10), 934-940, 2007",
+   "Structural determinants of RNA recognition and cleavage by Dicer"
+  ],
+  [
+   "DG Sashital, B Wiedenheft, JA Doudna",
+   "Molecular cell 46 (5), 606-615, 2012",
+   "Mechanism of foreign DNA selection in a bacterial adaptive immune system"
+  ],
+  [
+   "J Shin, F Jiang, JJ Liu, NL Bray, BJ Rauch, SH Baik, E Nogales, ...",
+   "Science advances 3 (7), e1701620, 2017",
+   "Disabling Cas9 by an anti-CRISPR DNA mimic"
+  ],
+  [
+   "JH Cate, RL Hanna, JA Doudna",
+   "Nature structural biology 4 (7), 553-558, 1997",
+   "A magnesium ion core at the heart of a ribozyme domain"
+  ],
+  [
+   "AV Wright, SH Sternberg, DW Taylor, BT Staahl, JA Bardales, JE Kornfeld, ...",
+   "Proceedings of the National Academy of Sciences 112 (10), 2984-2989, 2015",
+   "Rational design of a split-Cas9 enzyme complex"
+  ],
+  [
+   "E Charpentier, JA Doudna",
+   "Nature 495 (7439), 50-51, 2013",
+   "Rewriting a genome"
+  ],
+  [
+   "RHJ Staals, Y Zhu, DW Taylor, JE Kornfeld, K Sharma, A Barendregt, ...",
+   "Molecular cell 56 (4), 518-530, 2014",
+   "RNA targeting by the type III-A CRISPR-Cas Csm complex of Thermus thermophilus"
+  ],
+  [
+   "A East-Seletsky, MR O’Connell, D Burstein, GJ Knott, JA Doudna",
+   "Molecular cell 66 (3), 373-383. e3, 2017",
+   "RNA targeting by functionally orthogonal type VI-A CRISPR-Cas enzymes"
+  ],
+  [
+   "A Ke, K Zhou, F Ding, JHD Cate, JA Doudna",
+   "Nature 429 (6988), 201-205, 2004",
+   "A conformational switch controls hepatitis delta virus ribozyme catalysis"
+  ],
+  [
+   "AM Syed, TY Taha, T Tabata, IP Chen, A Ciling, MM Khalid, B Sreekumar, ...",
+   "Science 374 (6575), 1626-1632, 2021",
+   "Rapid assessment of SARS-CoV-2–evolved variants using virus-like particles"
+  ],
+  [
+   "SN Floor, JA Doudna",
+   "elife 5, e10921, 2016",
+   "Tunable protein synthesis by transcript isoforms in human cells"
+  ],
+  [
+   "RE Haurwitz, JA DOUDNA, B Wiedenheft, M Jinek",
+   "US Patent 9,115,348, 2015",
+   "Endoribonuclease compositions and methods of use thereof"
+  ],
+  [
+   "RC Wilson, A Tambe, MA Kidwell, CL Noland, CP Schneider, JA Doudna",
+   "Molecular cell 57 (3), 397-407, 2015",
+   "Dicer-TRBP complex formation ensures accurate mammalian microRNA biogenesis"
+  ],
+  [
+   "BE Rubin, S Diamond, BF Cress, A Crits-Christoph, YC Lou, AL Borges, ...",
+   "Nature microbiology 7 (1), 34-47, 2022",
+   "Species-and site-specific genome editing in complex bacterial communities"
+  ],
+  [
+   "DG Sashital, M Jinek, JA Doudna",
+   "Nature structural & molecular biology 18 (6), 680-687, 2011",
+   "An RNA-induced conformational change required for CRISPR RNA cleavage by the endoribonuclease Cse3"
+  ],
+  [
+   "B Wiedenheft, K Zhou, M Jinek, SM Coyle, W Ma, JA Doudna",
+   "Structure 17 (6), 904-912, 2009",
+   "Structural basis for DNase activity of a conserved protein implicated in CRISPR-mediated genome defense"
+  ],
+  [
+   "HW Wang, C Noland, B Siridechadilok, DW Taylor, E Ma, K Felderer, ...",
+   "Nature structural & molecular biology 16 (11), 1148-1153, 2009",
+   "Structural insights into RNA processing by the human RISC-loading complex"
+  ],
+  [
+   "YS Dagdas, JS Chen, SH Sternberg, JA Doudna, A Yildiz",
+   "Science advances 3 (8), eaao0027, 2017",
+   "A conformational checkpoint between DNA binding and cleavage by CRISPR-Cas9"
+  ],
+  [
+   "MA Moreno-Mateos, JP Fernandez, R Rouet, CE Vejnar, MA Lane, E Mis, ...",
+   "Nature communications 8 (1), 2024, 2017",
+   "CRISPR-Cpf1 mediates efficient homology-directed repair and temperature-controlled genome editing"
+  ],
+  [
+   "B Siridechadilok, CS Fraser, RJ Hall, JA Doudna, E Nogales",
+   "Science 310 (5753), 1513-1515, 2005",
+   "Structural roles for human translation factor eIF3 in initiation of protein synthesis"
+  ],
+  [
+   "LB Harrington, KW Doxzen, E Ma, JJ Liu, GJ Knott, A Edraki, B Garcia, ...",
+   "Cell 170 (6), 1224-1233. e15, 2017",
+   "A broad-spectrum inhibitor of CRISPR-Cas9"
+  ],
+  [
+   "X Chen, Y Shen, W Draper, JD Buenrostro, U Litzenburger, SW Cho, ...",
+   "Nature methods 13 (12), 1013-1020, 2016",
+   "ATAC-see reveals the accessible genome by transposase-mediated imaging and sequencing"
+  ],
+  [
+   "IJ MacRae, JA Doudna",
+   "Current opinion in structural biology 17 (1), 138-145, 2007",
+   "Ribonuclease revisited: structural insights into ribonuclease III family enzymes"
+  ],
+  [
+   "D Singh, SH Sternberg, J Fei, JA Doudna, T Ha",
+   "Nature communications 7 (1), 12778, 2016",
+   "Real-time observation of DNA recognition and rejection by the RNA-guided endonuclease Cas9"
+  ],
+  [
+   "M Zhou, AM Sandercock, CS Fraser, G Ridlova, E Stephens, ...",
+   "Proceedings of the National Academy of Sciences 105 (47), 18139-18144, 2008",
+   "Mass spectrometry reveals modularity and a complete subunit interaction map of the eukaryotic translation factor eIF3"
+  ],
+  [
+   "CS Fraser, JA Doudna",
+   "Nature Reviews Microbiology 5 (1), 29-38, 2007",
+   "Structural and mechanistic insights into hepatitis C viral translation initiation"
+  ],
+  [
+   "EA Doherty, RT Batey, B Masquida, JA Doudna",
+   "Nature structural biology 8 (4), 339-343, 2001",
+   "A universal mode of helix packing in RNA"
+  ],
+  [
+   "RHJ Staals, Y Agari, S Maki-Yonekura, Y Zhu, DW Taylor, E Van Duijn, ...",
+   "Molecular cell 52 (1), 135-145, 2013",
+   "Structure and activity of the RNA-targeting Type III-B CRISPR-Cas complex of Thermus thermophilus"
+  ],
+  [
+   "PJ Kranzusch, SC Wilson, ASY Lee, JM Berger, JA Doudna, RE Vance",
+   "Molecular cell 59 (6), 891-903, 2015",
+   "Ancient origin of cGAS-STING reveals mechanism of universal 2′, 3′ cGAMP signaling"
+  ],
+  [
+   "JA Doudna, JW Szostak",
+   "Nature 339 (6225), 519-522, 1989",
+   "RNA-catalysed synthesis of complementary-strand RNA"
+  ],
+  [
+   "HY Lee, K Zhou, AM Smith, CL Noland, JA Doudna",
+   "Nucleic acids research 41 (13), 6568-6576, 2013",
+   "Differential roles of human Dicer-binding proteins TRBP and PACT in small RNA processing"
+  ],
+  [
+   "AP May, RE Haurwitz, JA DOUDNA, JM Berger, MM Carter, P Donohoue",
+   "US Patent App. 14/206,319, 2014",
+   "Compositions and methods of nucleic acid-targeting nucleic acids"
+  ],
+  [
+   "JH Cate, JA Doudna",
+   "Structure 4 (10), 1221-1229, 1996",
+   "Metal-binding sites in the major groove of a large ribozyme domain"
+  ],
+  [
+   "E Ma, IJ MacRae, JF Kirsch, JA Doudna",
+   "Journal of molecular biology 380 (1), 237-243, 2008",
+   "Autoinhibition of human dicer by its internal helicase domain"
+  ]
+ ]
+}

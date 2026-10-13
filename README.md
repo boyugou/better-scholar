@@ -86,7 +86,7 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
   leading author carry them (`A*, B*, C`); a lone mark, or one further down (a corresponding or co-senior author), says nothing about
   the role. Scholar rarely preserves marks at all. A profile name written surname first (`Tang Jie` on the profile, `J Tang` in the
   papers) is read the other way round automatically when the page itself shows that this finds you and the
-  name as printed hardly does; other rearrangements Scholar prints (`SY Philip` for `Philip S. Yu`) are offered
+  name as printed hardly does; other rearrangements Scholar prints (`SY Philip` for `Philip S. Yu`) and an inventor in capitals (`JA DOUDNA` in a patent) are offered
   with one click when they occur in at least two papers. Anything else: **Add a spelling** in the panel.
 - **Awards are not exhaustive.** The award list covers the venues above and only the years their pages
   publish; a paper that is not on it has no award chip. Talk levels (*Oral*, *Spotlight*) are only what the

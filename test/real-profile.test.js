@@ -53,3 +53,31 @@ test("the role × rank table of the live page, from the same rows", () => {
 test("talk levels the authors wrote in the venue field: three Orals, nothing else", () => {
   assert.deepEqual(analysed.map((a) => a.marks.map((m) => m.kind).join("+")), ["", "oral", "", "", "", "", "", "", "", "oral", "", "oral", ""]);
 });
+
+// ---- a second real profile, outside computer science: the first 100 rows of a biologist's (test/fixtures/profiles/doudna.json), read in the same way. The live panel showed
+// First 5, Second 0, Last 42, Other 11, 38 roles hidden by cut-off author lists, 4 papers whose list does not name the owner, and no paper at a ranked venue.
+const names = require("../src/lib/names.js");
+const bio = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures", "profiles", "doudna.json"), "utf8"));
+const bioRows = bio.rows.map(([authorsText, venueText, title]) => ({ title, authorsText, venueText, year: parseInt(/(\d{4})\D*$/.exec(venueText)[1], 10) }));
+const bioTable = (alternates) => {
+  const an = bioRows.map((raw) => analysis.analyzeRow(raw, { owner: { name: bio.owner, alternates }, resolver }));
+  const s = metrics.summarize(an.map((a, i) => ({ status: a.status, role: a.role, venue: a.venue, citations: 1, year: bioRows[i].year, highlighted: true })), "ccf");
+  return { an, totals: Object.fromEntries(s.rows.map((r) => [r.role, r.total])), hidden: s.hidden, absent: s.absent };
+};
+
+test("a biologist's real profile: roles as the live panel showed them, nothing ranked", () => {
+  const t = bioTable([]);
+  assert.deepEqual(t.totals, { first: 5, second: 0, last: 42, middle: 11 });
+  assert.deepEqual([t.hidden, t.absent], [38, 4]);
+  assert.equal(t.an.filter((a) => a.venue.ccf || a.venue.core).length, 0, "no journal of this field is on a CCF or CORE list, and none is taken for one");
+  const bars = metrics.yearBars(bioRows.map((r, i) => ({ year: r.year, role: t.an[i].role, highlighted: true })), { now: 2026 });
+  assert.deepEqual([bars.bars[0].year, bars.bars[bars.bars.length - 1].year, bars.older], [1989, 2023, 0]);
+});
+
+test("a biologist's real profile: the three patents that print the inventor as 'JA DOUDNA' are offered as one click, and then counted", () => {
+  const texts = bioRows.map((r) => r.authorsText);
+  assert.deepEqual(names.suggestVariants(texts, { name: bio.owner, alternates: [] }).suggestions, [{ name: "JA DOUDNA", rows: 3 }]);
+  const t = bioTable(["JA DOUDNA"]);
+  assert.deepEqual(t.totals, { first: 6, second: 1, last: 42, middle: 12 }, "first, second and a middle author of the three patents");
+  assert.deepEqual([t.hidden, t.absent], [38, 1]);
+});

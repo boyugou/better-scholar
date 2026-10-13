@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.22.4 — 2026-10-13
+
+From a biologist's real profile (100 papers, read in the user's own Chrome; `test/fixtures/profiles/doudna.json`):
+
+- **An inventor printed in capitals is offered as a spelling.** Patent databases print the lead inventor as `JA DOUDNA`; an all-caps name is not read as initials plus surname (it would make `WU LI` match `Wei Li`), so three of the hundred papers counted as "papers where the profile name is not in the author list". Such a name — all capitals, the owner's surname, one to three leading words of one to three capitals that fit the owner's given names — is now offered as one click when it stands in at least two papers whose lists lack the owner ("Maybe you: JA DOUDNA (3)"), never used on its own; one click counts the three patents (first, second, middle).
+- The real profile pins the rest of what the live panel showed (First 5, Second 0, Last 42, Other 11, 38 roles hidden by cut-off lists, no paper at a ranked venue, years 1989–2023) in `test/real-profile.test.js` and an end-to-end step.
+
 ## 2.22.3 — 2026-10-13
 
 - **The year chart no longer collapses when a paper has a wrong date.** From a user's screenshot: one paper that Scholar dates 1803 stretched "Highlighted papers by year" over 1803–2026 and left every bar a pixel wide. The chart now draws at most the last 50 years (a whole career fits: the real profiles of two veterans span 44 and 45 years; counted back from the newest year that can be real: a typo such as 2099 draws nothing; the gap between bars shrinks above 24 bars) and starts at the first year inside them that has a paper; the papers before it are counted and said on hover over the first year and to screen readers ("1 older paper is not drawn"). The numbers, the table and the year filter still count every paper.

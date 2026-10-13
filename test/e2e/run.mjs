@@ -1029,6 +1029,31 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     } finally { await ctxG.close(); await fxG.close(); }
   }
 
+  // -- 20f. a biologist's real profile (100 papers read on the live page: long author lists, patents, a book): the table is by role only, and the inventor
+  // printed as "JA DOUDNA" is offered as one click and then counted
+  {
+    const fxB = await start({ slug: "doudna", pageSize: 100 });
+    const ctxB = await launch();
+    try {
+      const pg = await ctxB.newPage();
+      await pg.goto(fxB.url);
+      await pg.waitForSelector("#rr-panel");
+      await eventually(pg, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      assert.equal(await pg.locator("#rr-panel [data-tier]").count(), 0, "nothing in this field is on a list: no tier columns");
+      const before = await readMatrix(pg);
+      assert.deepEqual([before.first.total, before.second.total, before.last.total, before.middle.total, before.hidden], [5, 0, 42, 11, 38], "the numbers of the live panel");
+      assert.match(await pg.locator('[data-rr="absent"]').textContent(), /^4 papers where the profile name is not in the author list/);
+      const pill = pg.locator('[data-act="suggest-variant"]');
+      assert.equal(await pill.count(), 1);
+      assert.equal((await pill.textContent()).trim(), "JA DOUDNA (3)");
+      await pill.click();
+      await eventually(pg, () => /^1 paper where the profile name is not in the author list/.test(document.querySelector('[data-rr="absent"]').textContent));
+      const after = await readMatrix(pg);
+      assert.deepEqual([after.first.total, after.second.total, after.last.total, after.middle.total, after.hidden], [6, 1, 42, 12, 38], "the three patents are counted now");
+      ok("a biologist's real profile: by role only, and 'JA DOUDNA' (three patents) is one click from being counted");
+    } finally { await ctxB.close(); await fxB.close(); }
+  }
+
   // -- 20e. a paper that Scholar dates 1803 does not stretch the year chart over two centuries (a user's screenshot: every bar a pixel wide)
   {
     const fxY = await start({ slug: "old-year-demo", pageSize: 100 });
