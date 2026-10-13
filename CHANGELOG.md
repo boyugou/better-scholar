@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.128 — 2026-10-12
+
+- KR's Ray Reiter best papers, runners-up and Marco Cadoli best student papers for 2020–2022, 2024 and 2025 (14 papers; the list had none for KR) from the conference's own proceedings prefaces, read through macOS PDFKit (`tot.mjs kr-preface`). The list has 7830 awards.
+
 ## 2.10.127 — 2026-10-12
 
 - FMCAD's best papers and runners-up for 2016 and 2019–2023 (10 papers; the list had none for FMCAD) from the conference's own year pages (`tot.mjs fmcad-awards`, which tries three text forms). The list has 7816 awards.

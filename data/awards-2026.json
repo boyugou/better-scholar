@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7816
+  "count": 7830
  },
  "entries": [
   {
@@ -91097,6 +91097,218 @@
    "track": "main",
    "source": "https://kdd.org/awards/view/2025-sigkdd-test-of-time-award-winners",
    "evidence": "KDD 2025 Test of Time Award for Research: Hao Wang, Naiyan Wang, Dit-Yan Yeung: Collaborative Deep Learning for Recommender Systems"
+  },
+  {
+   "venue": "KR",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Ray Reiter Best Paper Award",
+   "title": "Comparing Weak Admissibility Semantics to their Dung-style Counterparts – Reduct, Modularization, and Strong Equivalence in Abstract Argumentation",
+   "authors": [
+    "Ringo Baumann",
+    "Gerhard Brewka",
+    "Markus Ulbricht"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2020/kr2020-preface.pdf",
+   "evidence": "KR 2020 Ray Reiter Best Paper Award: “Comparing Weak Admissibility Semantics to their Dung-style Counterparts – Reduct, Modularization, and Strong Equivalence in Abstract Argumentation”, by Ringo Baumann, Gerhard Brewka, and Markus Ulbricht"
+  },
+  {
+   "venue": "KR",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Ray Reiter Best Paper Award Runner-Up",
+   "title": "Logical Separability of Incomplete Data under Ontologies",
+   "authors": [
+    "Jean Christoph Jung",
+    "Carsten Lutz",
+    "Hadrien Pulcini",
+    "Frank Wolter"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2020/kr2020-preface.pdf",
+   "evidence": "KR 2020 Ray Reiter Best Paper Award Runner-Up: “Logical Separability of Incomplete Data under Ontologies”, by Jean Christoph Jung, Carsten Lutz, Hadrien Pulcini, and Frank Wolter"
+  },
+  {
+   "venue": "KR",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Marco Cadoli Best Student Paper Award",
+   "title": "Treewidth-Aware Reductions of Normal ASP to SAT – Is Normal ASP Harder than SAT After All?",
+   "authors": [
+    "Markus Hecher"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2020/kr2020-preface.pdf",
+   "evidence": "KR 2020 Marco Cadoli Best Student Paper Award: “Treewidth-Aware Reductions of Normal ASP to SAT – Is Normal ASP Harder than SAT After All?”, by Markus Hecher"
+  },
+  {
+   "venue": "KR",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Ray Reiter Best Paper Award",
+   "title": "Capturing Homomorphism-Closed Decidable Queries with Existential Rules",
+   "authors": [
+    "Camille Bourgaux",
+    "David Carral",
+    "Markus Krötzsch",
+    "Sebastian Rudolph",
+    "Michaël Thomazo"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2021/kr2021-preface.pdf",
+   "evidence": "KR 2021 Ray Reiter Best Paper Award: “Capturing Homomorphism-Closed Decidable Queries with Existential Rules”, by Camille Bourgaux, David Carral, Markus Krötzsch, Sebastian Rudolph, and Michaël Thomazo"
+  },
+  {
+   "venue": "KR",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Ray Reiter Best Paper Award Runner-Up",
+   "title": "How to Approximate Ontology-Mediated Queries",
+   "authors": [
+    "Anneke Haga",
+    "Carsten Lutz",
+    "Leif Sabellek",
+    "Frank Wolter"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2021/kr2021-preface.pdf",
+   "evidence": "KR 2021 Ray Reiter Best Paper Award Runner-Up: “How to Approximate Ontology-Mediated Queries”, by Anneke Haga, Carsten Lutz, Leif Sabellek, and Frank Wolter"
+  },
+  {
+   "venue": "KR",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Marco Cadoli Best Student Paper Award",
+   "title": "On the Progression of Belief",
+   "authors": [
+    "Daxin Liu",
+    "Qihui Feng"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2021/kr2021-preface.pdf",
+   "evidence": "KR 2021 Marco Cadoli Best Student Paper Award: “On the Progression of Belief”, by Daxin Liu and Qihui Feng"
+  },
+  {
+   "venue": "KR",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Ray Reiter Best Paper Award",
+   "title": "The Topology of Surprise",
+   "authors": [
+    "Alexandru Baltag",
+    "Nick Bezhanishvili",
+    "David Fernández-Duque"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2022/kr2022-preface.pdf",
+   "evidence": "KR 2022 Ray Reiter Best Paper Award: “The Topology of Surprise”, by Alexandru Baltag, Nick Bezhanishvili and David Fernández-Duque"
+  },
+  {
+   "venue": "KR",
+   "year": 2022,
+   "award": "runner-up",
+   "awardLabel": "Ray Reiter Best Paper Award Runner-Up",
+   "title": "Conservative Extensions for Existential Rules",
+   "authors": [
+    "Jean Christoph Jung",
+    "Carsten Lutz",
+    "Jerzy Marcinkowski"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2022/kr2022-preface.pdf",
+   "evidence": "KR 2022 Ray Reiter Best Paper Award Runner-Up: “Conservative Extensions for Existential Rules”, by Jean Christoph Jung, Carsten Lutz, and Jerzy Marcinkowski"
+  },
+  {
+   "venue": "KR",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Marco Cadoli Best Student Paper Award",
+   "title": "Finite Entailment of UCRPQs over ALC Ontologies",
+   "authors": [
+    "Victor Gutierrez-Basulto",
+    "Albert Gutowski",
+    "Yazmin Ibanez-Garcia",
+    "Filip Murlak"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2022/kr2022-preface.pdf",
+   "evidence": "KR 2022 Marco Cadoli Best Student Paper Award: “Finite Entailment of UCRPQs over ALC Ontologies”, by Victor Gutierrez-Basulto, Albert Gutowski, Yazmin Ibanez-Garcia, and Filip Murlak"
+  },
+  {
+   "venue": "KR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Ray Reiter Best Paper Award",
+   "title": "Contractions Based on Optimal Repairs",
+   "authors": [
+    "Franz Baader",
+    "Renata Wassermann"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2024/kr2024-preface.pdf",
+   "evidence": "KR 2024 Ray Reiter Best Paper Award: “Contractions Based on Optimal Repairs”, by Franz Baader and Renata Wassermann"
+  },
+  {
+   "venue": "KR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Ray Reiter Best Paper Award Runner-Up",
+   "title": "Shapley Value Computation in Ontology-Mediated Query Answering",
+   "authors": [
+    "Meghyn Bienvenu",
+    "Diego Figueira",
+    "Pierre Lafourcade"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2024/kr2024-preface.pdf",
+   "evidence": "KR 2024 Ray Reiter Best Paper Award Runner-Up: “Shapley Value Computation in Ontology-Mediated Query Answering”, by Meghyn Bienvenu, Diego Figueira and Pierre Lafourcade"
+  },
+  {
+   "venue": "KR",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Ray Reiter Best Paper Award",
+   "title": "Finite Axiomatizability by Disjunctive Existential Rules",
+   "authors": [
+    "Marco Calautti",
+    "Marco Console",
+    "Andreas Pieris"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2025/kr2025-preface.pdf",
+   "evidence": "KR 2025 Ray Reiter Best Paper Award: “Finite Axiomatizability by Disjunctive Existential Rules”, by Marco Calautti, Marco Console, and Andreas Pieris"
+  },
+  {
+   "venue": "KR",
+   "year": 2025,
+   "award": "runner-up",
+   "awardLabel": "Ray Reiter Best Paper Award Runner-Up",
+   "title": "Minimal Model Reasoning in Description Logics: Don’t Try This at Home!",
+   "authors": [
+    "Federica Di Stefano",
+    "Quentin Manière",
+    "Magdalena Ortiz",
+    "Mantas Simkus"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2025/kr2025-preface.pdf",
+   "evidence": "KR 2025 Ray Reiter Best Paper Award Runner-Up: “Minimal Model Reasoning in Description Logics: Don’t Try This at Home!”, by Federica Di Stefano, Quentin Manière, Magdalena Ortiz, and Mantas Simkus"
+  },
+  {
+   "venue": "KR",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Marco Cadoli Best Student Paper Award",
+   "title": "Efficient Volume Computation for SMT Formulas",
+   "authors": [
+    "Arijit Shaw",
+    "Uddalok Sarkar",
+    "Kuldeep S. Meel"
+   ],
+   "track": "main",
+   "source": "https://proceedings.kr.org/2025/kr2025-preface.pdf",
+   "evidence": "KR 2025 Marco Cadoli Best Student Paper Award: “Efficient Volume Computation for SMT Formulas”, by Arijit Shaw, Uddalok Sarkar, and Kuldeep S. Meel"
   },
   {
    "venue": "LEET",
