@@ -29,7 +29,7 @@
   "f.private.title": "Privacy by design",
   "f.private.text": "Nessun account, nessuna analisi, nessun tracciamento. Tutto viene calcolato nel tuo browser, e le liste di ranking sono incluse nell'estensione.",
   "install.title": "Installa",
-  "install.step1": "Scarica il progetto da GitHub (pulsante verde “Codice”, poi “Scarica ZIP”) e decomprimilo.",
+  "install.step1": "Scarica il progetto da GitHub (pulsante verde “Code”, poi “Download ZIP”) e decomprimilo.",
   "install.step2": "Apri chrome://extensions e attiva la Modalità sviluppatore.",
   "install.step3": "Clicca su “Carica estensione non pacchettizzata” e scegli la cartella src. Poi apri un qualsiasi profilo di Google Scholar.",
   "install.note": "Potrebbe seguire una scheda nel Chrome Web Store. Edge, Brave e gli altri browser Chromium funzionano allo stesso modo.",

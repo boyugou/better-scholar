@@ -29,7 +29,7 @@
   "f.private.title": "設計段階からプライバシー重視",
   "f.private.text": "アカウント不要、アクセス解析なし、トラッキングなし。すべての計算はブラウザ内で行われ、ランクの一覧は拡張機能に同梱されています。",
   "install.title": "インストール",
-  "install.step1": "GitHub からプロジェクトをダウンロードし（緑色の「<> Code」ボタンから「ZIP をダウンロード」）、解凍します。",
+  "install.step1": "GitHub からプロジェクトをダウンロードし（緑色の「<> コード」ボタンから「ZIP をダウンロード」）、解凍します。",
   "install.step2": "chrome://extensions を開き、「デベロッパー モード」をオンにします。",
   "install.step3": "「パッケージ化されていない拡張機能を読み込む」をクリックし、src フォルダーを選びます。その後、任意の Google Scholar プロフィールを開きます。",
   "install.note": "Chrome ウェブストアへの掲載も予定しています。Edge、Brave などの他の Chromium 系ブラウザでも同じ手順で使えます。",
