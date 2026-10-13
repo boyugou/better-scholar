@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.65 — 2026-10-12
+
+- HRI's best papers of 2022 (5) and 2025 (7 of the full and short tracks, and 4 of alt.HRI, late-breaking reports and demonstrations as categories) from the conference's own awards pages (`tot.mjs hri-year`); the list had HRI 2020 and 2024 only. The honorable mentions are not read. The list has 6567 awards.
+
 ## 2.10.64 — 2026-10-12
 
 - The best papers of ISCA 2024 (Constable) and 2025 (two) and of MICRO 2022 (Whisper, Hermes), from the conferences' own front pages (`tot.mjs isca-best`, `tot.mjs micro-best`); the list had only their influential / test of time papers for those years. The list has 6551 awards.

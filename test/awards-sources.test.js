@@ -2076,3 +2076,11 @@ test("ISCA front page: quoted 'Title by Authors' lines (the page's 'y' typo too)
   const m = `<p>MICRO 2022: Home</p><p>Best Paper Awards</p><p>Gil Hart, Hal Ito,</p><p>and Ivy Jones, for "Profile-guided branch</p><p>elimination for data centers"</p><p>The other best paper nominees (as noted)</p>`;
   assert.deepEqual(parseMicroBest(m, "https://www.microarch.org/micro55/").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2022 Profile-guided branch elimination for data centers | Gil Hart; Hal Ito; Ivy Jones"]);
 });
+
+test("HRI awards pages: 2025's 'Best paper: “Title“, Authors.' lines under track headings (honorable mentions left out), 2022's 'Best Paper Award' heading over a title and authors", async () => {
+  const { parseHriAwards } = await import("../scripts/awards/tot.mjs");
+  const a = `<p>Full Papers</p><p>Design</p><p>Best paper: “Attending to the labour of human-robot collaboration“, Ann Lee, Bo Chan.</p><p>Honorable mention: “An honoured design paper title“, Cy Dunn.</p><p>Demonstrations</p><p>Best paper: “Roleplaying human-robot collaborations through puppets“, Ed Fox, Flo Gray.</p><p>Full Papers Outstanding Reviewers</p>`;
+  assert.deepEqual(parseHriAwards(a, "https://humanrobotinteraction.org/2025/awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Attending to the labour of human-robot collaboration | Ann Lee; Bo Chan", "category Roleplaying human-robot collaborations through puppets | Ed Fox; Flo Gray"]);
+  const b = `<p>Full Papers</p><p>Design:</p><p>Best Paper Award</p><p>Machine-like behaviors for robot navigation in elevators</p><p>Gil Hart, Hal Ito</p><p>Honorable Mention</p><p>An honoured cognitively assistive paper</p><p>Ivy Jones</p>`;
+  assert.deepEqual(parseHriAwards(b, "https://humanrobotinteraction.org/2022/awards/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Machine-like behaviors for robot navigation in elevators | Gil Hart; Hal Ito"]);
+});

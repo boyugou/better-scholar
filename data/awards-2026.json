@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6551
+  "count": 6567
  },
  "entries": [
   {
@@ -56425,6 +56425,82 @@
   },
   {
    "venue": "HRI",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring Machine-like Behaviors for a Socially Acceptable Robot Navigation in Elevators",
+   "authors": [
+    "Danilo Gallo",
+    "Shreepriya Gonzalez-Jimenez",
+    "Antonietta Maria Grasso",
+    "Cecile Boulard",
+    "Tommaso Colombino"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2022/awards/",
+   "evidence": "HRI 2022 Best Paper Award: Exploring Machine-like Behaviors for a Socially Acceptable Robot Navigation in Elevators — Danilo Gallo, Shreepriya Gonzalez-Jimenez, Antonietta Maria Grasso, Cecile Boulard, Tommaso Colombino"
+  },
+  {
+   "venue": "HRI",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Memory-Based Personalization for Fostering a Long-Term Child-Robot Relationship",
+   "authors": [
+    "Mike E.U. Ligthart",
+    "Mark Neerincx",
+    "Koen Hindriks"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2022/awards/",
+   "evidence": "HRI 2022 Best Paper Award: Memory-Based Personalization for Fostering a Long-Term Child-Robot Relationship — Mike E.U. Ligthart, Mark Neerincx, Koen Hindriks"
+  },
+  {
+   "venue": "HRI",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "MIND MELD: Personalized Meta-Learning for Robot-Centric Imitation Learning",
+   "authors": [
+    "Mariah Schrum",
+    "Erin Hedlund",
+    "Nina Moorman",
+    "Matthew Gombolay"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2022/awards/",
+   "evidence": "HRI 2022 Best Paper Award: MIND MELD: Personalized Meta-Learning for Robot-Centric Imitation Learning — Mariah Schrum, Erin Hedlund, Nina Moorman, Matthew Gombolay"
+  },
+  {
+   "venue": "HRI",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "More than words: A Framework for Human-Robot Dialog Designs",
+   "authors": [
+    "James M Berzuk",
+    "James E. Young"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2022/awards/",
+   "evidence": "HRI 2022 Best Paper Award: More than words: A Framework for Human-Robot Dialog Designs — James M Berzuk, James E. Young"
+  },
+  {
+   "venue": "HRI",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "REGROUP: A Robot-Centric Group Detection and Tracking System",
+   "authors": [
+    "Angelique Taylor",
+    "Laurel D. Riek"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2022/awards/",
+   "evidence": "HRI 2022 Best Paper Award: REGROUP: A Robot-Centric Group Detection and Tracking System — Angelique Taylor, Laurel D. Riek"
+  },
+  {
+   "venue": "HRI",
    "year": 2024,
    "award": "best",
    "awardLabel": "Best Paper",
@@ -56708,6 +56784,180 @@
    "track": "main",
    "source": "https://files.sigchi.org/conference/cache/10109/39/program",
    "evidence": "HRI 2024 program, Honorable Mention: Workspace Optimization Techniques to Improve Prediction of Human Motion During Human-Robot Collaboration — Yi-Shiuan Tung, Matthew B Luebbers, Alessandro Roncone, Bradley Hayes"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "An Interaction Specification Language for Robot Application Development",
+   "authors": [
+    "David Porfirio",
+    "Mark Roberts",
+    "Laura M. Hiatt"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: An Interaction Specification Language for Robot Application Development — David Porfirio, Mark Roberts, Laura M. Hiatt"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Applying General Turn-taking Models to Conversational Human-Robot Interaction",
+   "authors": [
+    "Gabriel Skantze",
+    "Bahar Irfan"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: Applying General Turn-taking Models to Conversational Human-Robot Interaction — Gabriel Skantze, Bahar Irfan"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Gaze Behavior During a Long-Term, In-Home, Social Robot Intervention for Children with ASD",
+   "authors": [
+    "Rebecca Ramnauth",
+    "Frederick Shic",
+    "Brian Scassellati"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: Gaze Behavior During a Long-Term, In-Home, Social Robot Intervention for Children with ASD — Rebecca Ramnauth, Frederick Shic, Brian Scassellati"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "ImageInThat: Manipulating Images to Convey User Instructions to Robots",
+   "authors": [
+    "Karthik Mahadevan",
+    "Blaine Lewis",
+    "Jiannan Li",
+    "Bilge Mutlu",
+    "Anthony Tang",
+    "Tovi Grossman"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: ImageInThat: Manipulating Images to Convey User Instructions to Robots — Karthik Mahadevan, Blaine Lewis, Jiannan Li, Bilge Mutlu, Anthony Tang, Tovi Grossman"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Minding the Stop-Gap: Attending to the “Temporary,” Unplanned, and Added Labor of Human-Robot Collaboration in Context",
+   "authors": [
+    "Hee Rin Lee",
+    "Sarah Fox",
+    "EunJeong Cheon",
+    "Samantha Shorey"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: Minding the Stop-Gap: Attending to the “Temporary,” Unplanned, and Added Labor of Human-Robot Collaboration in Context — Hee Rin Lee, Sarah Fox, EunJeong Cheon, Samantha Shorey"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "More Than Automation: User Insights into the Functionality and Interface of Wheelchair-Mounted Robotic Arms",
+   "authors": [
+    "Lesong Jia",
+    "Breelyn Kane Styler",
+    "Na Du"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: More Than Automation: User Insights into the Functionality and Interface of Wheelchair-Mounted Robotic Arms — Lesong Jia, Breelyn Kane Styler, Na Du"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Raising Stars: Influences of Robotic Peer Liking on Emergent Leadership",
+   "authors": [
+    "Elior Carsenti",
+    "Adi Manor",
+    "Agam Oberlender",
+    "Avi Parush",
+    "Hadas Erel"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award: Raising Stars: Influences of Robotic Peer Liking on Emergent Leadership — Elior Carsenti, Adi Manor, Agam Oberlender, Avi Parush, Hadas Erel"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Late Breaking Reports)",
+   "title": "Redrawing Boundaries: Systemic Impacts of Rehabilitation Robots in Clinical Care Settings",
+   "authors": [
+    "Amirhossein Asadi",
+    "Damith Herath",
+    "Grant Shaw",
+    "Glenda Caldwell",
+    "Elizabeth Williams"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award (Late Breaking Reports): Redrawing Boundaries: Systemic Impacts of Rehabilitation Robots in Clinical Care Settings — Amirhossein Asadi, Damith Herath, Grant Shaw, Glenda Caldwell, Elizabeth Williams"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Paper Award (alt.HRI)",
+   "title": "RoboCup Soccer Autonomy Uprising: How Crowds, Referees, and Humanoid Robots Are Redefining the Future of Human-Robot Interaction",
+   "authors": [
+    "Filippo Sanfilippo",
+    "Timothy Wiley",
+    "Rebekah Rousi"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award (alt.HRI): RoboCup Soccer Autonomy Uprising: How Crowds, Referees, and Humanoid Robots Are Redefining the Future of Human-Robot Interaction — Filippo Sanfilippo, Timothy Wiley, Rebekah Rousi"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Demonstrations)",
+   "title": "Social Queue: Interactive Robots for Enhancing Public Waiting-in-Line Experience",
+   "authors": [
+    "Yixiao Zhang",
+    "Jared Teiger",
+    "Sadie Martin"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award (Demonstrations): Social Queue: Interactive Robots for Enhancing Public Waiting-in-Line Experience — Yixiao Zhang, Jared Teiger, Sadie Martin"
+  },
+  {
+   "venue": "HRI",
+   "year": 2025,
+   "award": "category",
+   "awardLabel": "Best Paper Award (Demonstrations)",
+   "title": "What Would Jim Henson Do? Roleplaying Human-Robot Collaborations Through Puppeteering",
+   "authors": [
+    "James L. Dwyer",
+    "Stine S. Johansen",
+    "Jared Donovan",
+    "Markus Rittenbruch",
+    "Rafael Gomez"
+   ],
+   "track": "main",
+   "source": "https://humanrobotinteraction.org/2025/awards/",
+   "evidence": "HRI 2025 Best Paper Award (Demonstrations): What Would Jim Henson Do? Roleplaying Human-Robot Collaborations Through Puppeteering — James L. Dwyer, Stine S. Johansen, Jared Donovan, Markus Rittenbruch, Rafael Gomez"
   },
   {
    "venue": "HT",
