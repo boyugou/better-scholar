@@ -2058,3 +2058,11 @@ test("MobiSys 2015's program page: the plural heading 'Best Papers' under Awards
   const h = `<p>MobiSys 2015 - The 13th International Conference</p>${lead}<p>Awards</p><p>Best Papers</p><p>Accelerating mobile applications through replication</p><p>Ann Lee, Bo Chan (University of Michigan)</p><p>Speculation for low-latency mobile cloud gaming</p><p>Cy Dunn, Ed Fox (Microsoft Research)</p><p>Best Poster</p>`;
   assert.deepEqual(parseMobisysYear(h, "https://www.sigmobile.org/mobisys/2015/program.php").entries.map((e) => `${e.year} ${e.title} | ${e.authors.join("; ")}`), ["2015 Accelerating mobile applications through replication | Ann Lee; Bo Chan", "2015 Speculation for low-latency mobile cloud gaming | Cy Dunn; Ed Fox"]);
 });
+
+test("SenSys year pages: title and authors with brackets under 'Best Paper Award' and the runner-up heading (2024), the quoted 'Best paper:' form with initials (2021); honorable mentions left out", async () => {
+  const { parseSensysYear } = await import("../scripts/awards/tot.mjs");
+  const a = `<title>Program</title><p>SenSys 2024</p><p>Best Paper Award</p><p>A processor-sharing architecture for deployments</p><p>Ann Lee (UESTC), Bo Chan (UESTC)</p><p>Best Paper Runner-up Award</p><p>Bandwidth-conserving telepresence via semantic communication</p><p>Cy Dunn (GMU), Ed Fox (UMass)</p><p>Best Paper Honorable Mentions</p><p>An honoured authentication paper title</p><p>Flo Gray (Clemson)</p>`;
+  assert.deepEqual(parseSensysYear(a, "https://sensys.acm.org/2024/program/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best A processor-sharing architecture for deployments | Ann Lee; Bo Chan", "runner-up Bandwidth-conserving telepresence via semantic communication | Cy Dunn; Ed Fox"]);
+  const b = `<title>ACM SenSys 2021</title><p>Conference in Coimbra</p><p>Best paper:</p><p>"Ultra-low SNR LoRa communication with neural demodulation" -</p><p>C. Li, H. Guo, S. Tong</p><p>Best Presentation at the PhD Forum</p>`;
+  assert.deepEqual(parseSensysYear(b, "https://sensys.acm.org/2021/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Ultra-low SNR LoRa communication with neural demodulation | C. Li; H. Guo; S. Tong"]);
+});

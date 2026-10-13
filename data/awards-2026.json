@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6539
+  "count": 6546
  },
  "entries": [
   {
@@ -89437,6 +89437,80 @@
   },
   {
    "venue": "SenSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Deep Compressive Offloading: Speeding Up Neural Network Inference by Trading Edge Computation for Network Latency",
+   "authors": [
+    "Shuochao Yao",
+    "Jinyang Li",
+    "Dongxin Liu",
+    "Tianshi Wang",
+    "Shengzhong Liu",
+    "Huajie Shao",
+    "Tarek Abdelzaher"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2020/",
+   "evidence": "SenSys 2020 Best Paper Award: Deep Compressive Offloading: Speeding Up Neural Network Inference by Trading Edge Computation for Network Latency — Shuochao Yao, Jinyang Li, Dongxin Liu, Tianshi Wang, Shengzhong Liu, Huajie Shao, Tarek Abdelzaher"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Zero-Wire: A Deterministic and Low-Latency Wireless Bus through Symbol-Synchronous Transmission of Optical Signals",
+   "authors": [
+    "Jonathan Oostvogels",
+    "Fan Yang",
+    "Sam Michiels",
+    "Danny Hughes"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2020/",
+   "evidence": "SenSys 2020 Best Paper Award: Zero-Wire: A Deterministic and Low-Latency Wireless Bus through Symbol-Synchronous Transmission of Optical Signals — Jonathan Oostvogels, Fan Yang, Sam Michiels, Danny Hughes"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "NELoRa: Towards Ultra-low SNR LoRa Communication with Neural-enhanced Demodulation",
+   "authors": [
+    "C. Li",
+    "H. Guo",
+    "S. Tong",
+    "X. Zeng",
+    "Z. Cao",
+    "M. Zhang",
+    "Q. Yan",
+    "L. Xiao",
+    "J. Wang",
+    "Y. Liu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2021/",
+   "evidence": "SenSys 2021 Best Paper Award: NELoRa: Towards Ultra-low SNR LoRa Communication with Neural-enhanced Demodulation — C. Li, H. Guo, S. Tong, X. Zeng, Z. Cao, M. Zhang, Q. Yan, L. Xiao, J. Wang, Y. Liu"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2021,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "LIMU-BERT: Unleashing the Potential of Unlabeled Data for IMU Sensing Applications",
+   "authors": [
+    "H. Xu",
+    "P. Zhou",
+    "R. Tan",
+    "M. Li",
+    "G. Shen"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2021/",
+   "evidence": "SenSys 2021 Best Paper Runner-up: LIMU-BERT: Unleashing the Potential of Unlabeled Data for IMU Sensing Applications — H. Xu, P. Zhou, R. Tan, M. Li, G. Shen"
+  },
+  {
+   "venue": "SenSys",
    "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -89593,6 +89667,65 @@
    "track": "main",
    "source": "https://sensys.acm.org/tot/",
    "evidence": "SenSys 2023 Test of Time Award: Lufeng Mo (Zhejiang Forestry University), Yuan He, Yunhao Liu (Hong Kong University of Science and Technoloty), Jizhong Zhao (Xi'an Jiaotong University), Shaojie Tang, Xiangyang Li (Illinois Institue of Technology), Guojun Dai (Hangzhou Dianzi University) “Canopy closure estimates with GreenOrbs: sustainable sensing in the forest”"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Processor-Sharing Internet of Things Architecture for Large-scale Deployment",
+   "authors": [
+    "Qianhe Meng",
+    "Han Wang",
+    "Chong Zhang",
+    "Yihang Song",
+    "Songfan Li",
+    "Li Lu",
+    "Hongzi Zhu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2024/program/",
+   "evidence": "SenSys 2024 Best Paper Award: Processor-Sharing Internet of Things Architecture for Large-scale Deployment — Qianhe Meng, Han Wang, Chong Zhang, Yihang Song, Songfan Li, Li Lu, Hongzi Zhu"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "AdaFlow: Opportunistic Inference on Asynchronous Mobile Data with Generalized Affinity Control",
+   "authors": [
+    "Fengmin Wu",
+    "Sicong Liu",
+    "Kehao Zhu",
+    "Xiaochen Li",
+    "Bin Guo",
+    "Zhiwen Yu",
+    "Hongkai Wen",
+    "Xiangrui Xu",
+    "Lehao Wang",
+    "Xiangyu Liu"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2024/program/",
+   "evidence": "SenSys 2024 Best Paper Runner-up: AdaFlow: Opportunistic Inference on Asynchronous Mobile Data with Generalized Affinity Control — Fengmin Wu, Sicong Liu, Kehao Zhu, Xiaochen Li, Bin Guo, Zhiwen Yu, Hongkai Wen, Xiangrui Xu, Lehao Wang, Xiangyu Liu"
+  },
+  {
+   "venue": "SenSys",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Runner-up",
+   "title": "MagicStream: Bandwidth-conserving Immersive Telepresence via Semantic Communication",
+   "authors": [
+    "Ruizhi Cheng",
+    "Nan Wu",
+    "Vu Le",
+    "Eugene Chai",
+    "Matteo Varvello",
+    "Bo Han"
+   ],
+   "track": "main",
+   "source": "https://sensys.acm.org/2024/program/",
+   "evidence": "SenSys 2024 Best Paper Runner-up: MagicStream: Bandwidth-conserving Immersive Telepresence via Semantic Communication — Ruizhi Cheng, Nan Wu, Vu Le, Eugene Chai, Matteo Varvello, Bo Han"
   },
   {
    "venue": "SIGCOMM",

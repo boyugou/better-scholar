@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.63 — 2026-10-12
+
+- SenSys's best papers and runners-up of 2020, 2021 and 2024 (7 papers; the list had only its test of time papers) from each year's own page (`tot.mjs sensys-year`); 2018's and 2019's pages name a title without authors. The list has 6546 awards.
+
 ## 2.10.62 — 2026-10-12
 
 - MobiSys 2015's two best papers (Flip-Flop Replication, Outatime) from its program page: the reader now takes the plural heading "Best Papers" too (`tot.mjs mobisys-year`). The list has 6539 awards.
