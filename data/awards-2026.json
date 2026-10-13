@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7776
+  "count": 7790
  },
  "entries": [
   {
@@ -54973,6 +54973,234 @@
    "track": "main",
    "source": "https://www.thecvf.com/?page_id=413#Koenderink",
    "evidence": "Koenderink Prize: 2024 “Microsoft COCO: Common Objects in Context” T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollár, C. Lawrence Zitnick"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "bias goggles – Graph-based Computation of the Bias of Web Domains through the Eyes of Users",
+   "authors": [
+    "Panagiotis Papadakos",
+    "Giannis Konstantakis"
+   ],
+   "track": "main",
+   "source": "https://ecir2020.org/awards/",
+   "evidence": "ECIR 2020 Best Paper: bias goggles – Graph-based Computation of the Bias of Web Domains through the Eyes of Users — Panagiotis Papadakos and Giannis Konstantakis"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Crowdsourcing Truthfulness: The Impact of Judgment Scale and Assessor Bias",
+   "authors": [
+    "David La Barbera",
+    "Kevin Roitero",
+    "Damiano Spina",
+    "Stefano Mizzaro",
+    "Gianluca Demartini"
+   ],
+   "track": "main",
+   "source": "https://ecir2020.org/awards/",
+   "evidence": "ECIR 2020 Best Short Paper: Crowdsourcing Truthfulness: The Impact of Judgment Scale and Assessor Bias — David La Barbera, Kevin Roitero, Damiano Spina, Stefano Mizzaro and Gianluca Demartini"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2020,
+   "award": "category",
+   "awardLabel": "Best Industrial Impact Paper Award",
+   "title": "Generation of Synthetic Query Auto Completion Logs",
+   "authors": [
+    "Unni Krishnan",
+    "Alistair Moffat",
+    "Justin Zobel",
+    "Bodo Billerbeck"
+   ],
+   "track": "main",
+   "source": "https://ecir2020.org/awards/",
+   "evidence": "ECIR 2020 Best Industrial Impact Paper Award: Generation of Synthetic Query Auto Completion Logs — Unni Krishnan, Alistair Moffat, Justin Zobel and Bodo Billerbeck"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Industrial Impact Paper Honorable Mention",
+   "title": "Answering Event-Related Questions over Long-term News Article Archives",
+   "authors": [
+    "Jiexin Wang",
+    "Adam Jatowt",
+    "Masatoshi Yoshikawa",
+    "Michael Färber"
+   ],
+   "track": "main",
+   "source": "https://ecir2020.org/awards/",
+   "evidence": "ECIR 2020 Industrial Impact Paper Honorable Mention: Answering Event-Related Questions over Long-term News Article Archives — Jiexin Wang, Adam Jatowt, Masatoshi Yoshikawa and Michael Färber"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Short Paper Honorable Mentions",
+   "title": "Contextualized Embeddings in Named-Entity Recognition: An Empirical Study on Generalization",
+   "authors": [
+    "Bruno Taillé",
+    "Vincent Guigue",
+    "Patrick Gallinari"
+   ],
+   "track": "main",
+   "source": "https://ecir2020.org/awards/",
+   "evidence": "ECIR 2020 Short Paper Honorable Mentions: Contextualized Embeddings in Named-Entity Recognition: An Empirical Study on Generalization — Bruno Taillé, Vincent Guigue and Patrick Gallinari"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper",
+   "title": "InDi: Informative and Diverse Sampling for Dense Retrieval",
+   "authors": [
+    "Nachshon Cohen",
+    "Hedda Cohen Indelman",
+    "Yaron Fairstein",
+    "Guy Kushilevitz"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Paper: InDi: Informative and Diverse Sampling for Dense Retrieval — Nachshon Cohen, Hedda Cohen Indelman, Yaron Fairstein and Guy Kushilevitz"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Industry Track Paper",
+   "title": "Let’s Get It Started: Fostering the Discoverability of New Releases on Deezer",
+   "authors": [
+    "Léa Briand",
+    "Théo Bontempelli",
+    "Walid Bendada",
+    "Mathieu Morlon",
+    "François Rigaud",
+    "Benjamin Chapus",
+    "Thomas Bouabça",
+    "Guillaume Salha-Galvan"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Industry Track Paper: Let’s Get It Started: Fostering the Discoverability of New Releases on Deezer — Léa Briand, Théo Bontempelli, Walid Bendada, Mathieu Morlon, François Rigaud, Benjamin Chapus, Thomas Bouabça and Guillaume Salha-Galvan"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best IR4Good Paper",
+   "title": "Measuring Gender Bias in a Ranked List using Term-based Representations",
+   "authors": [
+    "Amin Abolghasemi",
+    "Leif Azzopardi",
+    "Arian Askari",
+    "Maarten de Rijke",
+    "Suzan Verberne"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best IR4Good Paper: Measuring Gender Bias in a Ranked List using Term-based Representations — Amin Abolghasemi, Leif Azzopardi, Arian Askari, Maarten de Rijke and Suzan Verberne"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "category",
+   "awardLabel": "Best Short Paper",
+   "title": "Towards Reliable and Factual Response Generation: Detecting Unanswerable Questions in Information-Seeking Conversations",
+   "authors": [
+    "Weronika Łajewska",
+    "Krisztian Balog"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Short Paper: Towards Reliable and Factual Response Generation: Detecting Unanswerable Questions in Information-Seeking Conversations — Weronika Łajewska and Krisztian Balog"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Short Paper Honourable Mention",
+   "title": "Context-Aware Query Term Difficulty Estimation for Performance Prediction",
+   "authors": [
+    "Abbas Saleminezhad",
+    "Negar Arabzadeh",
+    "Soosan Beheshti",
+    "Ebrahim Bagheri"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Short Paper Honourable Mention: Context-Aware Query Term Difficulty Estimation for Performance Prediction — Abbas Saleminezhad, Negar Arabzadeh, Soosan Beheshti and Ebrahim Bagheri"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best IR4Good Paper Honourable Mention",
+   "title": "Countering Mainstream Bias via End-to-End Adaptive Local Learning",
+   "authors": [
+    "Jinhao Pan",
+    "Ziwei Zhu",
+    "Jianling Wang",
+    "Allen Lin",
+    "James Caverlee"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best IR4Good Paper Honourable Mention: Countering Mainstream Bias via End-to-End Adaptive Local Learning — Jinhao Pan, Ziwei Zhu, Jianling Wang, Allen Lin and James Caverlee"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mentions",
+   "title": "DREQ: Document Re-Ranking Using Entity-based Query Understanding",
+   "authors": [
+    "Shubham Chatterjee",
+    "Iain Mackie",
+    "Jeff Dalton"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Paper Honourable Mentions: DREQ: Document Re-Ranking Using Entity-based Query Understanding — Shubham Chatterjee, Iain Mackie and Jeff Dalton"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Industry Track Paper Honourable Mention",
+   "title": "Lottery4CVR: Neuron-Connection Level Sharing for Multi-Task Learning in Video Conversion Rate Prediction",
+   "authors": [
+    "Xuanji Xiao",
+    "Jimmy Chen",
+    "Yuzhen Liu",
+    "Xing Yao",
+    "Pei Liu",
+    "Chaosheng Fan"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Industry Track Paper Honourable Mention: Lottery4CVR: Neuron-Connection Level Sharing for Multi-Task Learning in Video Conversion Rate Prediction — Xuanji Xiao, Jimmy Chen, Yuzhen Liu, Xing Yao, Pei Liu and Chaosheng Fan"
+  },
+  {
+   "venue": "ECIR",
+   "year": 2024,
+   "award": "runner-up",
+   "awardLabel": "Best Paper Honourable Mentions",
+   "title": "Translate-Distill: Learning Cross-Language Dense Retrieval by Translation and Distillation",
+   "authors": [
+    "Eugene Yang",
+    "Dawn Lawrie",
+    "James Mayfield",
+    "Douglas Oard",
+    "Scott Miller"
+   ],
+   "track": "main",
+   "source": "https://www.ecir2024.org/awards/",
+   "evidence": "ECIR 2024 Best Paper Honourable Mentions: Translate-Distill: Learning Cross-Language Dense Retrieval by Translation and Distillation — Eugene Yang, Dawn Lawrie, James Mayfield, Douglas Oard and Scott Miller"
   },
   {
    "venue": "ECIR",

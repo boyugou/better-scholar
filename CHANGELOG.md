@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.123 — 2026-10-12
+
+- ECIR 2024's and 2020's best, short, IR4Good, industry and reproducibility papers with their honourable mentions (14 papers) from the conferences' own award pages (`tot.mjs ecir-labelled`; the page of 2021 describes the awards in prose, 2019's answers 502, 2022's 406). The list has 7790 awards.
+
 ## 2.10.122 — 2026-10-12
 
 - EuroS&P 2026's four distinguished papers and two test-of-time papers (6 papers) from the symposium's own site (the `eurosp` reader takes the eurosp<year> host, the plural award headings and the test-of-time awards). EuroS&P 2023's page lists no winners under its heading. The list has 7776 awards.

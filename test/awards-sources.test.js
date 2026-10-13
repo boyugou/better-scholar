@@ -2447,6 +2447,12 @@ test("EuroS&P 2026's own site: 'Distinguished Paper Awards' and 'Test-of-Time Aw
   assert.deepEqual(parseEurospAwards(h, "https://eurosp2026.ieee-security.org/accepted_and_awards.html").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2026 distinguished  | Tjitske Ollie Koster; Francesca Falzon", "2026 tot 2016 | Nicolas Papernot; Patrick McDaniel"]);
 });
 
+test("ECIR award pages in the label-over-title layout: labels (Best Paper, Best Short Paper, Best IR4Good Paper, … with an Award suffix or Honourable Mention(s)) then title and authors pairs; demos and committee lines are left out", async () => {
+  const { parseEcirLabelled } = await import("../scripts/awards/tot.mjs");
+  const h = `<h1>ECIR 2024 Best Paper Awards</h1><p>The ECIR 2024 Best Paper Awards Committee consisted of: A B (X University)</p><p>Best Paper</p><p>InDi: informative and diverse sampling for dense retrieval</p><p>Nachshon Cohen, Hedda Cohen Indelman and Yaron Fairstein</p><p>Best Paper Honourable Mentions</p><p>DREQ: document re-ranking using entity-based query understanding</p><p>Shubham Chatterjee, Iain Mackie and Jeff Dalton</p><p>Translate-Distill: learning cross-language dense retrieval</p><p>Eugene Yang and Dawn Lawrie</p><p>Best Demo</p><p>An LLM-based physiotherapy advisor</p><p>Ann Lee and Bo Chan</p><p>Best Industrial Impact Paper Award</p><p>Generation of synthetic query auto completion logs.</p><p>Unni Krishnan, Alistair Moffat and Justin Zobel</p>`;
+  assert.deepEqual(parseEcirLabelled(h, "https://www.ecir2024.org/awards/").entries.map((e) => `${e.award} | ${e.authors.join("; ")}`), ["best | Nachshon Cohen; Hedda Cohen Indelman; Yaron Fairstein", "runner-up | Shubham Chatterjee; Iain Mackie; Jeff Dalton", "runner-up | Eugene Yang; Dawn Lawrie", "category | Unni Krishnan; Alistair Moffat; Justin Zobel"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
