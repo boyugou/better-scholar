@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Tilbake til standardfargene"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight og highlight"
+  },
+  "markTalks": {
+    "message": "Foredrag"
+  },
+  "optTalkRows": {
+    "message": "Rader i panelet"
+  },
+  "optTalkRowsHint": {
+    "message": "Slik telles presentasjonsnivåene. En artikkel som har mer enn ett av dem, telles én gang."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight og highlight hver for seg"
+  },
+  "optTalkPair": {
+    "message": "Spotlight og highlight på én rad"
+  },
+  "optTalkAll": {
+    "message": "Alle tre på én rad"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Et annet sted å lete etter det Scholar kutter av."
+  },
+  "optSemanticLabel": {
+    "message": "Fullstendige forfatterlister med Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Når du trykker Fullfør, spør semanticscholar.org først etter hver artikkels fulle forfatterliste (bare tittelen sendes), og Scholars egen side leses bare for det den ikke kjenner. Det gir færre forespørsler til Scholar og færre captcha-er."
   }
 }

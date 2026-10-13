@@ -119,7 +119,8 @@
       option({ key: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint"), get: () => prefs.ranks.ccf, set: (v) => { prefs.ranks.ccf = v; } }),
       option({ key: "ranks.core", label: t("optCore"), hint: t("optCoreHint"), get: () => prefs.ranks.core, set: (v) => { prefs.ranks.core = v; } })),
     card(t("optMarksTitle"), t("marksHint"),
-      ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } }))),
+      ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } })),
+      choice({ key: "talkRows", label: t("optTalkRows"), hint: t("optTalkRowsHint"), choices: [["separate", t("optTalkSeparate")], ["pair", t("optTalkPair")], ["talks", t("optTalkAll")]], get: () => prefs.talkRows, set: (v) => { prefs.talkRows = v; } })),
     card(t("optMergeTitle"), t("optMergeHint"),
       option({ key: "mergeDuplicates", label: t("optMergeLabel"), hint: t("optMergeLabelHint"), get: () => prefs.mergeDuplicates, set: (v) => { prefs.mergeDuplicates = v; } })),
     card(t("optHideTitle"), t("optHideHint"),
@@ -134,6 +135,8 @@
       h("div", { class: "row" },
         h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "marks", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")),
         h("button", { class: "btn", type: "button", "data-act": "panel-full", onClick: () => { for (const k of B.prefs.PANEL_PARTS) prefs.panel[k] = true; save(); } }, t("optPanelFull")))),
+    card(t("optSemanticTitle"), t("optSemanticHint"),
+      option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } })),
     card(t("optLoadTitle"), null,
       option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
     card(t("optDataTitle"), null, h("div", { class: "row" }, clearBtn, resetBox, cacheNote)));
@@ -189,8 +192,7 @@
   function panelModel() {
     const source = B.prefs.source(prefs, panelUi);
     const visible = (p) => ({ marks: B.prefs.visibleMarks(prefs, p.marks) });
-    const counts = B.marks.summarize(PAPERS);
-    for (const g of B.marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
+    const counts = B.marks.summarize(PAPERS.map(visible), prefs.talkRows);
     return {
       ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },

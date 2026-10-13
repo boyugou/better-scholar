@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Kembali ke warna standar"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight & highlight"
+  },
+  "markTalks": {
+    "message": "Presentasi"
+  },
+  "optTalkRows": {
+    "message": "Baris di panel"
+  },
+  "optTalkRowsHint": {
+    "message": "Cara menghitung tingkat presentasi. Makalah yang memiliki lebih dari satu tingkat dihitung sekali."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight, highlight terpisah"
+  },
+  "optTalkPair": {
+    "message": "Spotlight dan highlight digabung"
+  },
+  "optTalkAll": {
+    "message": "Ketiganya digabung"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Tempat kedua untuk mencari yang dipotong Scholar."
+  },
+  "optSemanticLabel": {
+    "message": "Lengkapi daftar penulis dengan Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Saat menekan Lengkapi, semanticscholar.org lebih dulu ditanya tentang daftar penulis lengkap tiap makalah (hanya judul makalah yang dikirim), dan halaman Scholar sendiri hanya dibuka untuk yang tidak diketahuinya. Permintaan ke Scholar lebih sedikit, jadi CAPTCHA juga lebih sedikit."
   }
 }

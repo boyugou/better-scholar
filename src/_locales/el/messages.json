@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Επαναφορά στα τυπικά χρώματα"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight και Highlight"
+  },
+  "markTalks": {
+    "message": "Ομιλίες"
+  },
+  "optTalkRows": {
+    "message": "Γραμμές στον πίνακα"
+  },
+  "optTalkRowsHint": {
+    "message": "Πώς μετρώνται τα επίπεδα ομιλιών. Μια εργασία με περισσότερα από ένα από αυτά μετράει μία φορά."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight χωριστά"
+  },
+  "optTalkPair": {
+    "message": "Spotlight και Highlight μαζί"
+  },
+  "optTalkAll": {
+    "message": "Και τα τρία μαζί"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Δεύτερη πηγή για ό,τι κόβει το Scholar."
+  },
+  "optSemanticLabel": {
+    "message": "Συμπλήρωση λιστών συγγραφέων με το Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Όταν πατάτε Συμπλήρωση, ζητείται πρώτα από το semanticscholar.org η πλήρης λίστα συγγραφέων κάθε εργασίας (στέλνεται μόνο ο τίτλος της εργασίας)· η σελίδα του Scholar διαβάζεται μόνο για ό,τι δεν γνωρίζει εκείνο. Λιγότερα αιτήματα προς το Scholar, άρα και λιγότερα CAPTCHA."
   }
 }

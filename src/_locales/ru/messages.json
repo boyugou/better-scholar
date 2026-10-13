@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Вернуть стандартные цвета"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight и Highlight"
+  },
+  "markTalks": {
+    "message": "Доклады"
+  },
+  "optTalkRows": {
+    "message": "Строки в панели"
+  },
+  "optTalkRowsHint": {
+    "message": "Как считаются типы докладов. При объединении статья, имеющая несколько таких типов, учитывается один раз."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight и Highlight отдельно"
+  },
+  "optTalkPair": {
+    "message": "Spotlight и Highlight вместе"
+  },
+  "optTalkAll": {
+    "message": "Все три вместе"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Второй источник для того, что Scholar обрезает."
+  },
+  "optSemanticLabel": {
+    "message": "Дополнять списки авторов через Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "При нажатии «Дополнить» сначала запрашивается полный список авторов каждой статьи у semanticscholar.org (отправляется только название статьи), а страница самого Scholar открывается только для того, что там не нашлось. Меньше запросов к Scholar, значит и меньше CAPTCHA."
   }
 }

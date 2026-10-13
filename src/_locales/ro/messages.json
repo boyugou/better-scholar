@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Înapoi la culorile standard"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight și Highlight"
+  },
+  "markTalks": {
+    "message": "Prezentări"
+  },
+  "optTalkRows": {
+    "message": "Rânduri în panou"
+  },
+  "optTalkRowsHint": {
+    "message": "Cum se numără nivelurile de prezentare. O lucrare care are mai multe dintre ele se numără o singură dată."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight separate"
+  },
+  "optTalkPair": {
+    "message": "Spotlight și Highlight împreună"
+  },
+  "optTalkAll": {
+    "message": "Toate trei împreună"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Un al doilea loc unde căutați ce taie Scholar."
+  },
+  "optSemanticLabel": {
+    "message": "Completează listele de autori cu Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Când apăsați Completează, se întreabă mai întâi semanticscholar.org lista completă de autori a fiecărei lucrări (se trimite doar titlul lucrării), iar pagina Scholar se citește doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
   }
 }

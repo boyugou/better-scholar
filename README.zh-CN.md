@@ -53,7 +53,7 @@ _English name: Scholar Roles & Ranks_
 无需构建、无依赖。打包 zip（用于分享或上架）：
 
 ```bash
-scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip
+scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<version>.zip
 ```
 
 ## 它能知道什么、不能知道什么

@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "標準の色に戻す"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight と Highlight"
+  },
+  "markTalks": {
+    "message": "講演"
+  },
+  "optTalkRows": {
+    "message": "パネルの行"
+  },
+  "optTalkRowsHint": {
+    "message": "講演の種類の数え方です。まとめると、複数に当てはまる論文は1回として数えます。"
+  },
+  "optTalkSeparate": {
+    "message": "Oral、Spotlight、Highlight を別々に"
+  },
+  "optTalkPair": {
+    "message": "Spotlight と Highlight を1行にまとめる"
+  },
+  "optTalkAll": {
+    "message": "3つをまとめて1行に"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Scholar で途切れた内容を確認できる、もう一つの場所です。"
+  },
+  "optSemanticLabel": {
+    "message": "Semantic Scholar で著者一覧を補完"
+  },
+  "optSemanticLabelHint": {
+    "message": "「補完」を押すと、まず semanticscholar.org に各論文の著者一覧全体を問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを読みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
   }
 }

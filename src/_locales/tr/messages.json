@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Standart renklere dön"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight ve highlight"
+  },
+  "markTalks": {
+    "message": "Sunumlar"
+  },
+  "optTalkRows": {
+    "message": "Panelde satırlar"
+  },
+  "optTalkRowsHint": {
+    "message": "Sunum düzeylerinin nasıl sayıldığı. Birden fazlasına sahip bir makale bir kez sayılır."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight ve highlight ayrı"
+  },
+  "optTalkPair": {
+    "message": "Spotlight ve highlight birlikte"
+  },
+  "optTalkAll": {
+    "message": "Üçü birlikte"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Scholar'ın kestiklerini aramak için ikinci bir yer."
+  },
+  "optSemanticLabel": {
+    "message": "Yazar listelerini Semantic Scholar ile tamamla"
+  },
+  "optSemanticLabelHint": {
+    "message": "Tamamla'ya basıldığında önce her makalenin tam yazar listesi için semanticscholar.org'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca semanticscholar.org'un bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
   }
 }

@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Przywróć standardowe kolory"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight i highlight"
+  },
+  "markTalks": {
+    "message": "Prezentacje"
+  },
+  "optTalkRows": {
+    "message": "Wiersze w panelu"
+  },
+  "optTalkRowsHint": {
+    "message": "Sposób liczenia rodzajów wystąpień. Po połączeniu praca mająca więcej niż jeden z nich liczy się raz."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight i highlight osobno"
+  },
+  "optTalkPair": {
+    "message": "Spotlight i highlight razem"
+  },
+  "optTalkAll": {
+    "message": "Wszystkie trzy razem"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Drugie miejsce, w którym sprawdzisz to, co Scholar ucina."
+  },
+  "optSemanticLabel": {
+    "message": "Uzupełniaj listy autorów z Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Po naciśnięciu „Uzupełnij” najpierw pytamy semanticscholar.org o pełną listę autorów każdej pracy (wysyłany jest tylko tytuł pracy), a stronę samego Scholar czytamy tylko dla tego, czego tam nie ma. Mniej zapytań do Scholar, więc mniej CAPTCHA."
   }
 }

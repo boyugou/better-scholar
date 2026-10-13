@@ -161,17 +161,24 @@
     return KINDS.filter((k) => byKind.has(k)).map((k) => byKind.get(k));
   }
 
-  // Counts for the panel: papers per group (a paper counts once per group) among `papers`,
-  // each `{ marks: [...] }`. Groups with no paper are left out.
-  function summarize(papers) {
+  // The panel's rows. Talk levels may be shown together: "pair" puts spotlight and highlight in one row, "talks" puts oral too.
+  // A merged row's id joins its members with "+" ("spotlight+highlight"); a paper counts once in it however many of them it has.
+  const TALK_ROWS = ["separate", "pair", "talks"];
+  const MERGED = { pair: ["spotlight", "highlight"], talks: ["oral", "spotlight", "highlight"] };
+  const members = (id) => String(id).split("+");
+  function rows(mode) {
+    const m = MERGED[mode];
+    return m ? ["award", ...GROUPS.filter((g) => g !== "award" && !m.includes(g) && GROUPS.indexOf(g) < GROUPS.indexOf(m[0])), m.join("+")] : GROUPS.slice();
+  }
+
+  // Counts for the panel: papers per row (a paper counts once per row) among `papers`, each `{ marks: [...] }`.
+  // Rows with no paper are left out.
+  function summarize(papers, mode) {
     const counts = {};
+    const ids = rows(mode);
     for (const p of papers) {
-      const seen = new Set();
-      for (const m of p.marks || []) {
-        if (!GROUPS.includes(m.group) || seen.has(m.group)) continue;
-        seen.add(m.group);
-        counts[m.group] = (counts[m.group] || 0) + 1;
-      }
+      const have = new Set((p.marks || []).map((m) => m.group));
+      for (const id of ids) if (members(id).some((g) => have.has(g))) counts[id] = (counts[id] || 0) + 1;
     }
     return counts;
   }
@@ -186,7 +193,7 @@
     return counts;
   }
 
-  const inGroup = (paper, group) => (paper.marks || []).some((m) => m.group === group);
+  const inGroup = (paper, group) => members(group).some((g) => (paper.marks || []).some((m) => m.group === g));
 
-  return { KINDS, GROUPS, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
+  return { KINDS, GROUPS, TALK_ROWS, rows, members, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
 });

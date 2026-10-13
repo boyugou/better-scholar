@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Voltar às cores padrão"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight e highlight"
+  },
+  "markTalks": {
+    "message": "Apresentações"
+  },
+  "optTalkRows": {
+    "message": "Linhas no painel"
+  },
+  "optTalkRowsHint": {
+    "message": "Como os tipos de apresentação são contados. Juntos, um artigo com mais de um deles conta uma vez só."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight e highlight separados"
+  },
+  "optTalkPair": {
+    "message": "Spotlight e highlight juntos"
+  },
+  "optTalkAll": {
+    "message": "Os três juntos"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Um segundo lugar para ver o que o Scholar corta."
+  },
+  "optSemanticLabel": {
+    "message": "Completar listas de autores com o Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Ao pressionar Completar, primeiro pergunta ao semanticscholar.org a lista completa de autores de cada artigo (envia apenas o título do artigo), e lê a página do próprio Scholar só para o que ele não conhece. Menos pedidos ao Scholar, portanto menos CAPTCHAs."
   }
 }

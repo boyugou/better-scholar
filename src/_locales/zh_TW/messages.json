@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "還原預設顏色"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight 與 Highlight"
+  },
+  "markTalks": {
+    "message": "報告形式"
+  },
+  "optTalkRows": {
+    "message": "面板裡的行"
+  },
+  "optTalkRowsHint": {
+    "message": "報告形式如何計數。合併後，同時具有多種的論文只算一次。"
+  },
+  "optTalkSeparate": {
+    "message": "Oral、Spotlight、Highlight 分開"
+  },
+  "optTalkPair": {
+    "message": "Spotlight 與 Highlight 合為一行"
+  },
+  "optTalkAll": {
+    "message": "三種合為一行"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Scholar 截斷的內容，多一個地方可查。"
+  },
+  "optSemanticLabel": {
+    "message": "用 Semantic Scholar 補全作者列表"
+  },
+  "optSemanticLabelHint": {
+    "message": "按下「補全」時，先向 semanticscholar.org 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
   }
 }

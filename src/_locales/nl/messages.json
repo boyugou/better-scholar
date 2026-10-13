@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Terug naar de standaardkleuren"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight en highlight"
+  },
+  "markTalks": {
+    "message": "Presentaties"
+  },
+  "optTalkRows": {
+    "message": "Rijen in het paneel"
+  },
+  "optTalkRowsHint": {
+    "message": "Hoe de presentatietypen worden geteld. Samen geteld telt een paper met meer dan één ervan maar één keer."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight en highlight apart"
+  },
+  "optTalkPair": {
+    "message": "Spotlight en highlight samen"
+  },
+  "optTalkAll": {
+    "message": "Alle drie samen"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Een tweede plek om te zoeken naar wat Scholar afkapt."
+  },
+  "optSemanticLabel": {
+    "message": "Auteurslijsten aanvullen met Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Bij Aanvullen vraagt de extensie eerst semanticscholar.org om de volledige auteurslijst van elke paper (alleen de titel van de paper wordt verstuurd), en leest ze de Scholar-pagina alleen voor wat daar onbekend is. Minder verzoeken aan Scholar, dus minder CAPTCHA's."
   }
 }

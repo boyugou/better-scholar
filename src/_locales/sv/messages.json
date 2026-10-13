@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Tillbaka till standardfärgerna"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight & highlight"
+  },
+  "markTalks": {
+    "message": "Talks"
+  },
+  "optTalkRows": {
+    "message": "Rader i panelen"
+  },
+  "optTalkRowsHint": {
+    "message": "Så räknas nivåerna för presentationer. En artikel som har fler än en av dem räknas en gång."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight och highlight var för sig"
+  },
+  "optTalkPair": {
+    "message": "Spotlight och highlight tillsammans"
+  },
+  "optTalkAll": {
+    "message": "Alla tre tillsammans"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "En andra plats att leta på för det Scholar klipper av."
+  },
+  "optSemanticLabel": {
+    "message": "Komplettera författarlistor med Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "När du trycker på Komplettera frågar tillägget först semanticscholar.org efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det semanticscholar.org inte känner till. Det innebär färre förfrågningar till Scholar och färre captcha-koder."
   }
 }

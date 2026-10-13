@@ -197,9 +197,7 @@
   }
 
   function markCounts() {
-    const counts = marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: r.a.marks })));
-    for (const g of marks.GROUPS) if (!prefs.marks[g]) delete counts[g];
-    return counts;
+    return marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) })), prefs.talkRows);
   }
 
   // Most rows without an author line means Scholar's markup moved under us.
@@ -230,9 +228,9 @@
     first: t("copyFirst"), cofirst: t("copyCofirst"), second: t("copySecond"), last: t("copyLast"), middle: t("copyMiddle")
   });
 
-  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const marksLine = (counts) => {
-    const parts = marks.GROUPS.filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
+    const parts = marks.rows(prefs.talkRows).filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
     return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
   };
 
@@ -292,14 +290,14 @@
       const items = state.rows
         .filter((r) => analysis.needsDetail(r.a) && r.raw.id && r.raw.href)
         .sort((x, y) => y.a.citations - x.a.citations)
-        .map((r) => ({ id: r.raw.id, href: r.raw.href }));
+        .map((r) => ({ id: r.raw.id, href: r.raw.href, title: r.raw.title }));
       if (!items.length) return;
       resolveAbort = new AbortController();
       state.resolving = { done: 0, total: items.length };
       state.resolveMessage = "";
       refresh();
       const res = await B.detail.resolveAll(items, resolvedCache, {
-        signal: resolveAbort.signal,
+        signal: resolveAbort.signal, semantic: prefs.semanticScholar,
         onProgress: (done, total) => { state.resolving = { done, total }; },
         onResult: (id) => {
           const row = state.rows.find((r) => r.raw.id === id);
@@ -381,7 +379,7 @@
     const wasAuto = prefs.autoLoad;
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
-    if (state.markGroup && !prefs.marks[state.markGroup]) state.markGroup = null;
+    if (state.markGroup && !(marks.rows(prefs.talkRows).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.marks[g]))) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
@@ -410,7 +408,7 @@
           ok: true, owner: headerName, loaded: list.length, edition,
           sources: B.prefs.sources(prefs), source: currentSource(),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-          marks: markCounts(), parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
+          marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
         });
       }
       return false;

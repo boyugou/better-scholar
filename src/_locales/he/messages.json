@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "חזרה לצבעי ברירת המחדל"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight ו-Highlight"
+  },
+  "markTalks": {
+    "message": "הרצאות"
+  },
+  "optTalkRows": {
+    "message": "שורות בחלונית"
+  },
+  "optTalkRowsHint": {
+    "message": "אופן ספירת רמות ההרצאה. מאמר שיש בו יותר מאחת מהן נספר פעם אחת."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight ו-Highlight בנפרד"
+  },
+  "optTalkPair": {
+    "message": "Spotlight ו-Highlight יחד"
+  },
+  "optTalkAll": {
+    "message": "שלושתם יחד"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "מקום שני לחפש בו את מה ש-Scholar חותך."
+  },
+  "optSemanticLabel": {
+    "message": "השלמת רשימות מחברים באמצעות Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "בלחיצה על השלמה, תחילה נשאל את semanticscholar.org על רשימת המחברים המלאה של כל מאמר (נשלחת כותרת המאמר בלבד), ודף Scholar עצמו ייקרא רק למה שהאתר הזה לא מכיר. פחות בקשות ל-Scholar, ולכן פחות CAPTCHA."
   }
 }

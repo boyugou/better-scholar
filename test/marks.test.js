@@ -170,3 +170,15 @@ test("styled letters (mathematical bold, full-width) read as plain ones, and sev
   assert.deepEqual(kinds("Oral Oncology (Review)"), []);
   assert.deepEqual(kinds("Notes on Spotlight Detection (Oral history of the lab)"), []);
 });
+
+test("talk rows: apart by default, spotlight + highlight together, or all three together; a paper counts once per row", () => {
+  const P = (...groups) => ({ marks: groups.map((group) => ({ group })) });
+  const papers = [P("oral"), P("spotlight"), P("highlight"), P("spotlight", "highlight"), P("award", "oral"), P()];
+  assert.deepEqual(marks.rows("separate"), ["award", "oral", "spotlight", "highlight"]);
+  assert.deepEqual(marks.rows("pair"), ["award", "oral", "spotlight+highlight"]);
+  assert.deepEqual(marks.rows("talks"), ["award", "oral+spotlight+highlight"]);
+  assert.deepEqual(marks.summarize(papers), { award: 1, oral: 2, spotlight: 2, highlight: 2 });
+  assert.deepEqual(marks.summarize(papers, "pair"), { award: 1, oral: 2, "spotlight+highlight": 3 });
+  assert.deepEqual(marks.summarize(papers, "talks"), { award: 1, "oral+spotlight+highlight": 5 });
+  assert.ok(marks.inGroup(P("highlight"), "spotlight+highlight") && !marks.inGroup(P("oral"), "spotlight+highlight") && marks.inGroup(P("oral"), "oral+spotlight+highlight"));
+});

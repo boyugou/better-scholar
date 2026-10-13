@@ -8,7 +8,7 @@
   const { h, t, tn, issueUrl } = B.dom;
 
   const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6", hidden: "#dadce0" };
-  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const ROLE_KEY = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle", hidden: "roleHidden" };
 
   const sameSel = (a, b) => !!a && !!b && a.role === b.role && a.tier === b.tier;
@@ -169,7 +169,7 @@
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {
       const counts = m.marks || {};
-      const groups = B.marks.GROUPS.filter((g) => counts[g]);
+      const groups = B.marks.rows(m.prefs.talkRows).filter((g) => counts[g]);
       marksSec.hidden = !groups.length || !m.prefs.panel.marks;
       // the award count's parts, on hover: best papers and test-of-time awards apart from the honorable mentions
       const kinds = m.markKinds || {};

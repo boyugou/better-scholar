@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Về màu tiêu chuẩn"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight & Highlight"
+  },
+  "markTalks": {
+    "message": "Trình bày"
+  },
+  "optTalkRows": {
+    "message": "Số dòng trong bảng"
+  },
+  "optTalkRowsHint": {
+    "message": "Cách đếm các mức trình bày. Bài báo có nhiều hơn một mức được tính một lần."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight riêng"
+  },
+  "optTalkPair": {
+    "message": "Spotlight và Highlight chung một dòng"
+  },
+  "optTalkAll": {
+    "message": "Cả ba chung một dòng"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Nơi thứ hai để tìm những gì Scholar bị cắt bớt."
+  },
+  "optSemanticLabel": {
+    "message": "Bổ sung đầy đủ danh sách tác giả bằng Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Khi nhấn Bổ sung, trước hết hỏi semanticscholar.org danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
   }
 }

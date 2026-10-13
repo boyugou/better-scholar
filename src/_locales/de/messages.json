@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Zurück zu den Standardfarben"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight und Highlight"
+  },
+  "markTalks": {
+    "message": "Vorträge"
+  },
+  "optTalkRows": {
+    "message": "Zeilen im Panel"
+  },
+  "optTalkRowsHint": {
+    "message": "Wie die Vortragsarten gezählt werden. Zusammengefasst zählt ein Paper, das mehrere davon hat, nur einmal."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight und Highlight getrennt"
+  },
+  "optTalkPair": {
+    "message": "Spotlight und Highlight zusammen"
+  },
+  "optTalkAll": {
+    "message": "Alle drei zusammen"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Eine zweite Quelle für das, was Scholar abschneidet."
+  },
+  "optSemanticLabel": {
+    "message": "Autorenlisten mit Semantic Scholar vervollständigen"
+  },
+  "optSemanticLabelHint": {
+    "message": "Beim Klick auf „Vervollständigen“ wird zuerst semanticscholar.org nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite nur für das, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
   }
 }

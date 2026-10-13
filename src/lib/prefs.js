@@ -39,6 +39,8 @@
       hide: pickOff(r.hide, HIDE_PARTS),           // Scholar's own blocks to hide (nothing is hidden until asked): they repeat what the panel shows or are not wanted
       mergeDuplicates: flag(r.mergeDuplicates, false),   // one entry per paper when Scholar lists it twice (title differing in capitals or punctuation)
       colors: Object.fromEntries(ROLES.map((k) => [k, hex(r.colors && r.colors[k])])),   // a role's own colour ("#rrggbb"), or "" for the built-in one
+      talkRows: ["separate", "pair", "talks"].includes(r.talkRows) ? r.talkRows : "separate",   // the panel's talk rows: apart, spotlight + highlight together, or all three together
+      semanticScholar: flag(r.semanticScholar, false),   // ask Semantic Scholar (titles only) for a cut-off author list before Scholar's own page
       language: /^[a-z]{2,3}(_[A-Z]{2})?$/.test(r.language) ? r.language : "auto",   // the interface language: "auto" follows the browser, otherwise a folder of _locales (lib/i18n.js lists them)
       scholarLanguage: /^[a-z]{2,3}(_[A-Z]{2})?$/.test(r.scholarLanguage) ? r.scholarLanguage : "keep",   // the language Scholar's pages are opened in: "keep" leaves the address alone
       autoLoad: flag(r.autoLoad, true)             // press Scholar's own "Show more" until the whole paper list is loaded

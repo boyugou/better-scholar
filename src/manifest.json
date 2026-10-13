@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "2.11.0",
+  "version": "2.12.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
   "minimum_chrome_version": "111",
@@ -242,6 +242,7 @@
         "content/chips.js",
         "content/store.js",
         "content/scholar.js",
+        "content/semantic.js",
         "content/detail.js",
         "content/panel.js",
         "content/main.js"

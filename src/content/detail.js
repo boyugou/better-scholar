@@ -45,10 +45,21 @@
 
   // items: [{ id, href }]. cache: { [id]: { authors, venue, ts } } is updated in place.
   // Calls onProgress(done, total) and onResult(id, entry); returns { done, stopped }.
-  async function resolveAll(items, cache, { onProgress, onResult, signal } = {}) {
-    let done = 0;
+  async function resolveAll(items, cache, { onProgress, onResult, signal, semantic = false } = {}) {
+    let done = 0, askSemantic = semantic;
     for (const item of items) {
       if (signal && signal.aborted) return { done, stopped: "cancelled" };
+      // Semantic Scholar first when the settings allow it (items carry the title); a miss or a slow-down sends the paper to Scholar's own page
+      if (!cache[item.id] && askSemantic && item.title) {
+        try {
+          const d = await B.semantic.lookup(item.title, signal);
+          if (d) cache[item.id] = { authors: d.authors, venue: d.venue, ts: Date.now(), via: "semantic" };
+        } catch (e) {
+          if (e.name === "AbortError") return { done, stopped: "cancelled" };
+          if (e.limited) askSemantic = false;
+        }
+        await sleep(B.semantic.PACE());
+      }
       if (!cache[item.id]) {
         try {
           const d = await fetchDetail(item.href, signal);

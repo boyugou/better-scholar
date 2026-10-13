@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "กลับเป็นสีมาตรฐาน"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight และ Highlight"
+  },
+  "markTalks": {
+    "message": "การนำเสนอ"
+  },
+  "optTalkRows": {
+    "message": "จำนวนแถวในแผง"
+  },
+  "optTalkRowsHint": {
+    "message": "วิธีนับระดับการนำเสนอ งานที่มีมากกว่าหนึ่งระดับจะนับเพียงครั้งเดียว"
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight แยกกัน"
+  },
+  "optTalkPair": {
+    "message": "Spotlight และ Highlight รวมกัน"
+  },
+  "optTalkAll": {
+    "message": "รวมทั้งสามระดับ"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "อีกแหล่งสำหรับหาข้อมูลที่ Scholar ตัดทิ้ง"
+  },
+  "optSemanticLabel": {
+    "message": "เติมรายชื่อผู้เขียนให้ครบด้วย Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "เมื่อกดเติมข้อมูล ระบบจะถาม semanticscholar.org ถึงรายชื่อผู้เขียนฉบับเต็มของแต่ละงานก่อน (ส่งเฉพาะชื่อเรื่องของงาน) และจะอ่านหน้าของ Scholar เฉพาะส่วนที่ไม่รู้เท่านั้น ส่งคำขอไปยัง Scholar น้อยลง จึงเจอ CAPTCHA น้อยลงด้วย"
   }
 }

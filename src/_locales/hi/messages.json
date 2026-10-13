@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "मानक रंगों पर लौटें"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight और Highlight"
+  },
+  "markTalks": {
+    "message": "टॉक"
+  },
+  "optTalkRows": {
+    "message": "पैनल में पंक्तियाँ"
+  },
+  "optTalkRowsHint": {
+    "message": "टॉक के स्तर कैसे गिने जाते हैं। जिस पेपर में इनमें से एक से ज़्यादा हों, वह एक बार गिना जाता है।"
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight अलग-अलग"
+  },
+  "optTalkPair": {
+    "message": "Spotlight और Highlight एक साथ"
+  },
+  "optTalkAll": {
+    "message": "तीनों एक साथ"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "वह जानकारी ढूँढने की दूसरी जगह जो Scholar छोड़ देता है।"
+  },
+  "optSemanticLabel": {
+    "message": "Semantic Scholar से लेखक सूची पूरी करें"
+  },
+  "optSemanticLabelHint": {
+    "message": "पूरा करें दबाने पर पहले semanticscholar.org से हर पेपर की पूरी लेखक सूची माँगी जाती है (सिर्फ़ पेपर का शीर्षक भेजा जाता है), और Scholar का अपना पेज केवल उसी के लिए पढ़ा जाता है जो वह नहीं जानता। Scholar पर अनुरोध कम, इसलिए CAPTCHA भी कम।"
   }
 }

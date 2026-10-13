@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.12.0 — 2026-10-12
+
+- **Talk rows.** Settings → Awards and talks → Rows in the panel: show Oral, Spotlight and Highlight apart (as before), Spotlight and Highlight in one row, or all three in one row ("Talks"). A paper with several counts once; clicking a merged row lists its papers.
+- **Semantic Scholar** (off by default). Settings → Semantic Scholar: when you press Complete, each paper's full author list is asked of semanticscholar.org first (only the title is sent; the answer is used only when its title is the same paper's), and Scholar's own page is read only for what it does not know: fewer requests to Scholar, fewer CAPTCHAs.
+- A new icon: four rows in the four role colours on dark, with the rank badge.
+- The GitHub repository is now `boyugou/scholar-roles-and-ranks`.
+
 ## 2.11.0 — 2026-10-12
 
 - **30 languages.** Settings → Language: follow the browser, or pick any of 30 (English, 简体中文, 繁體中文, 日本語, 한국어, Español, Français, Deutsch, Italiano, Português ×2, Русский, Українська, Polski, Čeština, Nederlands, Svenska, Dansk, Suomi, Norsk, Türkçe, العربية, עברית, हिन्दी, Bahasa Indonesia, Tiếng Việt, ไทย, Ελληνικά, Magyar, Română). The panel, popup and settings redraw at once; Arabic and Hebrew read right to left. A second choice, **Open Scholar in**, opens a profile again with that `hl=` when its address says another language (a shared link, say).

@@ -1,9 +1,9 @@
 # Architecture
 
 This is a Manifest V3 extension built for Chrome. It is a **content script, a popup and a
-settings page**: one permission (`storage`), a four-line service worker whose only job is to open the
-settings page for the panel's button, and no network access of its own except the optional, user-triggered read of
-a paper's own page on Scholar. (It also presses Scholar's own *Show more* button for you, by default — the page's
+settings page**: one permission (`storage`), a small service worker whose only jobs are to open the
+settings page for the panel's button and to hand over the strings of the chosen interface language, and no network access of its own except the optional, user-triggered read of
+a paper's own page on Scholar (and, only if switched on, a title lookup at Semantic Scholar's public API). (It also presses Scholar's own *Show more* button for you, by default — the page's
 script makes that request, see [Loading the whole list](#loading-the-whole-list).) The same
 `src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
 [Platform policy](#platform-policy-chrome-first)).

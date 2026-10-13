@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Back to the standard colours"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight & highlight"
+  },
+  "markTalks": {
+    "message": "Talks"
+  },
+  "optTalkRows": {
+    "message": "Rows in the panel"
+  },
+  "optTalkRowsHint": {
+    "message": "How the talk levels are counted. Together, a paper that has more than one of them counts once."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight, highlight apart"
+  },
+  "optTalkPair": {
+    "message": "Spotlight and highlight together"
+  },
+  "optTalkAll": {
+    "message": "All three together"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "A second place to look for what Scholar cuts off."
+  },
+  "optSemanticLabel": {
+    "message": "Complete author lists with Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "When you press Complete, ask semanticscholar.org for each paper's full author list first (it sends the paper's title and nothing else), and Scholar's own page only for what it does not know. Fewer requests to Scholar, so fewer CAPTCHAs."
   }
 }

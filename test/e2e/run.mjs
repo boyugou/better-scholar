@@ -255,6 +255,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("merge duplicates: off by default; on hides the twin and shows both entries' citations on the one that stays; off restores");
     await page.evaluate(() => { for (const tr of document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")) if (/TEST:TWIN/.test(tr.innerHTML)) tr.remove(); });
 
+    // -- 6a2b. talk rows: oral / spotlight / highlight can share a row in the panel (a paper with several counts once)
+    await opts.bringToFront();
+    const rowsOf = () => opts.locator(".preview [data-mark-group]").evaluateAll((els) => els.map((e) => e.getAttribute("data-mark-group") + "=" + e.querySelector("b").textContent));
+    assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight=1", "highlight=1"]);
+    await opts.selectOption('select[data-pref="talkRows"]', "pair");
+    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 3);
+    assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight+highlight=2"]);
+    await opts.selectOption('select[data-pref="talkRows"]', "talks");
+    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 2);
+    assert.deepEqual(await rowsOf(), ["award=2", "oral+spotlight+highlight=3"]);
+    await opts.selectOption('select[data-pref="talkRows"]', "separate");
+    await opts.waitForFunction(() => document.querySelectorAll(".preview [data-mark-group]").length === 4);
+    ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
+
     // -- 6a3. role colours: a colour picked on the settings page recolours the open profile; "back to the standard" restores
     const rowColor = () => page.evaluate(() => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow);
     const before = await rowColor();
@@ -288,7 +302,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     await opts.selectOption('select[data-pref="scholarLanguage"]', "de");
     await page.waitForFunction(() => new URL(location.href).searchParams.get("hl") === "de", null, { timeout: 15000 });
+    await page.waitForSelector("#rr-panel");
     await opts.selectOption('select[data-pref="scholarLanguage"]', "keep");
+    await page.waitForLoadState("load");
+    await page.waitForTimeout(600);                                   // (the open profile reloads itself once for the changed setting)
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");
     assert.equal(new URL(page.url()).searchParams.get("hl"), "en", "left as it is");
@@ -391,6 +408,39 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("'Resolve' reads 28 paper pages; the hidden senior-author rows become 'last'");
     console.log("      matrix after resolve:", JSON.stringify(resolvedExpect));
     assert.ok((await page.locator('.gs_gray[title*="paper\'s page"]').count()) > 0, "roles read from a paper's own page say so in a tooltip");
+
+    // -- 11b. Semantic Scholar: with the setting on, cut-off author lists come from its API (title only), and Scholar's own pages are not read
+    {
+      const fxS = await start({ slug: "ion-stoica", pageSize: 20 });
+      const ctxS = await launch();
+      try {
+        const asked = [];
+        await ctxS.route("https://api.semanticscholar.org/**", async (route) => {
+          const q = new URL(route.request().url()).searchParams;
+          asked.push(route.request().url());
+          assert.ok(!(route.request().headers()["cookie"]), "no cookies go to Semantic Scholar");
+          const r = fxS.profile.rows.find((x) => x.title.trim() === q.get("query"));
+          const visible = r ? r.authors.split(/,\s*/).filter((t) => t && !/\.\.\.|…/.test(t)) : [];
+          await route.fulfill({ status: r ? 200 : 404, contentType: "application/json", headers: { "access-control-allow-origin": "*" },
+            body: JSON.stringify(r ? { data: [{ title: r.title, venue: "", authors: [...visible, fxS.profile.owner].map((name) => ({ name })) }] } : { error: "Title match not found" }) });
+        });
+        const optsS = await openOptions(ctxS);
+        await setPref(optsS, "semanticScholar", true);
+        const pg = await ctxS.newPage();
+        await pg.goto(fxS.url);
+        await pg.waitForSelector("#rr-panel");
+        await pg.bringToFront();
+        await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 30000 });
+        await pg.waitForSelector('[data-act="resolve"]');
+        await pg.click('[data-act="resolve"]');
+        await pg.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 30000 });
+        assert.deepEqual(await readMatrix(pg), resolvedExpect, "the same roles as when Scholar's own pages are read");
+        assert.equal(fxS.detailRequests(), 0, "Scholar's own paper pages were not read");
+        assert.equal(asked.length, 28);
+        assert.ok(asked.every((u) => u.startsWith("https://api.semanticscholar.org/graph/v1/paper/search/match?") && !/user=|TEST/.test(u)), "only the title is sent");
+        ok("Semantic Scholar: 28 cut-off author lists completed from its API (title only), with no read of Scholar's own paper pages");
+      } finally { await ctxS.close(); await fxS.close(); }
+    }
 
     // -- 12. clipboard
     await page.click('[data-act="copy-text"]');
@@ -913,7 +963,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const unmatched = metrics.unmatchedVenues(expected(fx6.profile));
     assert.equal(text, unmatched.map((u) => `${u.count}× ${u.venue}`).join("\n"));
     const href = await page.getAttribute('[data-act="report-unmatched"]', "href");
-    assert.match(href, /^https:\/\/github\.com\/boyugou\/scholar-author-roles-and-venue-ranks\/issues\/new\?title=Venue%20not%20recognised&body=/);
+    assert.match(href, /^https:\/\/github\.com\/boyugou\/scholar-roles-and-ranks\/issues\/new\?title=Venue%20not%20recognised&body=/);
     assert.ok(decodeURIComponent(href).includes(unmatched[0].venue), "the report names an unrecognised venue");
     assert.ok(href.length < 4000);
     ok("unrecognised venues: Copy list matches the library, and the Report link carries them to the issue tracker");

@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Zpět na standardní barvy"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight a highlight"
+  },
+  "markTalks": {
+    "message": "Přednášky"
+  },
+  "optTalkRows": {
+    "message": "Řádky v panelu"
+  },
+  "optTalkRowsHint": {
+    "message": "Jak se počítají typy přednášek. Při sloučení se práce, která jich má více, počítá jen jednou."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight a highlight zvlášť"
+  },
+  "optTalkPair": {
+    "message": "Spotlight a highlight dohromady"
+  },
+  "optTalkAll": {
+    "message": "Všechny tři dohromady"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Druhé místo, kde najdete to, co Scholar zkracuje."
+  },
+  "optSemanticLabel": {
+    "message": "Doplňovat seznamy autorů ze Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Při stisku Doplnit se nejprve ptáme semanticscholar.org na úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholaru čteme jen u toho, co tam nemají. Méně dotazů na Scholar, tedy méně CAPTCHA."
   }
 }

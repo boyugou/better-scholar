@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "Palauta oletusvärit"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight ja highlight"
+  },
+  "markTalks": {
+    "message": "Esitykset"
+  },
+  "optTalkRows": {
+    "message": "Rivit paneelissa"
+  },
+  "optTalkRowsHint": {
+    "message": "Näin esitystasot lasketaan. Artikkeli, jolla on useampi kuin yksi taso, lasketaan kerran."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight ja highlight erikseen"
+  },
+  "optTalkPair": {
+    "message": "Spotlight ja highlight yhdessä"
+  },
+  "optTalkAll": {
+    "message": "Kaikki kolme yhdessä"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Toinen paikka etsiä sitä, mitä Scholar katkaisee."
+  },
+  "optSemanticLabel": {
+    "message": "Täydennä tekijälistat Semantic Scholarilla"
+  },
+  "optSemanticLabelHint": {
+    "message": "Kun painat Täydennä, semanticscholar.org kysytään ensin kunkin artikkelin koko tekijälistaa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua luetaan vain siltä osin, mitä semanticscholar.org ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
   }
 }

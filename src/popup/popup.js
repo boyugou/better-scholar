@@ -17,7 +17,7 @@
 
   const COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6" };
   const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
-  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
+  const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };
 
   function notProfile() {
@@ -56,7 +56,7 @@
           s.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")), h("td", { colspan: String(s.columns.length), class: "z" }, ""), h("td", { class: "t" }, String(s.hidden))) : null),
         h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
       const parts = data.parts || { summary: true, marks: true };
-      const markParts = !parts.marks ? [] : ["award", "oral", "spotlight", "highlight"].filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
+      const markParts = !parts.marks ? [] : B.marks.rows(data.talkRows).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
       const marksLine = markParts.length ? t("marksTitle") + ": " + markParts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
       const copy = (kind) => async (e) => {
         const text = kind === "tsv"

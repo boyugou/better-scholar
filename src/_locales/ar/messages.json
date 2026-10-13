@@ -599,5 +599,38 @@
   },
   "optColorsReset": {
     "message": "العودة إلى الألوان الافتراضية"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight و Highlight"
+  },
+  "markTalks": {
+    "message": "المحاضرات"
+  },
+  "optTalkRows": {
+    "message": "الصفوف في اللوحة"
+  },
+  "optTalkRowsHint": {
+    "message": "طريقة احتساب مستويات المحاضرات. الورقة التي تنطبق عليها أكثر من واحدة منها تُحسب مرة واحدة."
+  },
+  "optTalkSeparate": {
+    "message": "Oral، Spotlight، Highlight كلٌّ على حدة"
+  },
+  "optTalkPair": {
+    "message": "Spotlight و Highlight معًا"
+  },
+  "optTalkAll": {
+    "message": "الثلاثة معًا"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "مكان ثانٍ للبحث عما تقطعه Scholar."
+  },
+  "optSemanticLabel": {
+    "message": "إكمال قوائم المؤلفين عبر Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "عند الضغط على إكمال، يُسأل semanticscholar.org أولًا عن قائمة المؤلفين الكاملة لكل ورقة (يُرسل عنوان الورقة فقط)، ولا تُقرأ صفحة Scholar إلا لما لا يعرفه. طلبات أقل إلى Scholar، وبالتالي CAPTCHA أقل."
   }
 }

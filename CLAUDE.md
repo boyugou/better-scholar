@@ -22,7 +22,10 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
   (`test/fixtures`). When changing them, run `npm test`, *review* any snapshot diff in
   `test/venues.test.js`, and only then `npm run test:update`. Add new real strings to the corpora.
 - Ranks are the current lists, not the rank at publication — keep saying so in the UI.
-- No network access of its own beyond the user-triggered read of a paper's page on Scholar itself.
+- No network access of its own beyond the user-triggered read of a paper's page on Scholar itself and, only when
+  the user switches it on (`semanticScholar`, off by default), a title lookup at Semantic Scholar's public API (titles only,
+  no cookies, no referrer). Sensible further Scholar / Semantic Scholar features are welcome; keep them opt-in and keep the
+  privacy text (PRIVACY.md) true.
   The one other thing it does on Scholar is press Scholar's own "Show more" button for you (the
   `autoLoad` setting, on by default; Scholar's page makes that request, about one a second, and
   the loader gives up at the first stall). No analytics, no remote code, no new permissions
@@ -44,7 +47,7 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
   `data/core-2026.json` from the ICORE export via `scripts/core/build-core.mjs`.
 - `src/data/aliases.js` is hand-curated: names Scholar prints that differ from the official titles.
   Every alias must point at a real dataset row (tested).
-- `scripts/package-chrome.sh` → `dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip` (`dist/` is git-ignored).
+- `scripts/package-chrome.sh` → `dist/scholar-roles-and-ranks-chrome-<version>.zip` (`dist/` is git-ignored).
 - `scripts/update-scholar-domains.sh` regenerates the Scholar domain list in `src/manifest.json` —
   don't edit that list by hand.
 - User-visible strings live in `src/_locales/{en,zh_CN}/messages.json`; keep both in sync (tested).

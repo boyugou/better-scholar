@@ -5,7 +5,7 @@ reads a [Google Scholar](https://scholar.google.com) profile and shows, for ever
 paper, the author's role (first / second / last…) and the venue's **CCF** and
 **CORE** rank — then adds them up: *"first-author CCF-A papers: 4"*.
 
-[![test](https://github.com/boyugou/scholar-author-roles-and-venue-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-author-roles-and-venue-ranks/actions/workflows/test.yml)
+[![test](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml)
 
 [简体中文](README.zh-CN.md)
 
@@ -65,7 +65,7 @@ Scholar domain. English and 简体中文 UI.
 No build step, no dependencies. To make a zip (for sharing, or a store upload):
 
 ```bash
-scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-chrome-<version>.zip
+scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<version>.zip
 ```
 
 ## What it can and cannot know

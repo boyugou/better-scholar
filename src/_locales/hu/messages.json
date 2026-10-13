@@ -581,5 +581,38 @@
   },
   "optColorsReset": {
     "message": "Vissza az alapszínekhez"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight és Highlight"
+  },
+  "markTalks": {
+    "message": "Előadások"
+  },
+  "optTalkRows": {
+    "message": "Sorok a panelen"
+  },
+  "optTalkRowsHint": {
+    "message": "Az előadásszintek számítása. A több szintet is kapott cikk egyszer számít."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight és highlight külön"
+  },
+  "optTalkPair": {
+    "message": "Spotlight és highlight együtt"
+  },
+  "optTalkAll": {
+    "message": "Mind a három együtt"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Második hely annak keresésére, amit a Scholar levág."
+  },
+  "optSemanticLabel": {
+    "message": "Szerzőlisták kiegészítése a Semantic Scholarral"
+  },
+  "optSemanticLabelHint": {
+    "message": "A Kiegészítés gombra kattintva először a semanticscholar.org kérdezi le minden cikk teljes szerzőlistáját (csak a cikk címe kerül elküldésre), a Scholar saját oldalát pedig csak arra olvassa be, amit az nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
   }
 }
