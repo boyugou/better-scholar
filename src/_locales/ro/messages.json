@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "Doar fundalul"
+  },
+  "filterShowing": {
+    "message": "Lucrări afișate: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Șterge"
   }
 }

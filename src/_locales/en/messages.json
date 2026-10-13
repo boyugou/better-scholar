@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "Tint only"
+  },
+  "filterShowing": {
+    "message": "Showing $N1$ of $N2$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Clear"
   }
 }

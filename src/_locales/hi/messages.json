@@ -667,5 +667,19 @@
   },
   "optRowStyleTint": {
     "message": "केवल हल्का रंग"
+  },
+  "filterShowing": {
+    "message": "दिखाए गए पेपर: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "साफ़ करें"
   }
 }

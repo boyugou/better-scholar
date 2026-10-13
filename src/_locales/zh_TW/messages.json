@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "僅底色"
+  },
+  "filterShowing": {
+    "message": "顯示 $N1$ / $N2$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "清除"
   }
 }

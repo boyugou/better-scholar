@@ -667,5 +667,19 @@
   },
   "optRowStyleTint": {
     "message": "เฉพาะพื้นหลัง"
+  },
+  "filterShowing": {
+    "message": "แสดง $N1$ จาก $N2$ เรื่อง",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "ล้าง"
   }
 }

@@ -667,5 +667,19 @@
   },
   "optRowStyleTint": {
     "message": "Hanya latar"
+  },
+  "filterShowing": {
+    "message": "Menampilkan $N1$ dari $N2$ makalah",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Hapus"
   }
 }

@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "背景色のみ"
+  },
+  "filterShowing": {
+    "message": "$N2$ 件中 $N1$ 件の論文を表示",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "消去"
   }
 }

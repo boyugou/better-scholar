@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.18.0 — 2026-10-13
+
+- **A filter bar.** When any filter narrows the paper list (a matrix cell, an awards row, a venue, "only highlighted", a year range), the panel says so under its header — "Showing 25 of 100 papers · Clear" — and one click clears every filter. A filter that matched nothing is no longer a silent blank list.
+- The "Highlighted papers" block names the roles it counts ("First, Second and Last"), so "highlighted" is defined where it is used.
+- The wide layout rearranges itself when the window is resized across the breakpoint (the year bars and venue list join the first column).
+- Windows high-contrast (forced colours): a highlighted row keeps a 4 px border, names are underlined, chips and bars keep outlines.
+
 ## 2.17.0 — 2026-10-13
 
 From an independent design review of the screenshots:

@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "רקע בלבד"
+  },
+  "filterShowing": {
+    "message": "מאמרים מוצגים: $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "ניקוי"
   }
 }

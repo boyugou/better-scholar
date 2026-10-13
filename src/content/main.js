@@ -223,6 +223,9 @@
   // Most rows without an author line means Scholar's markup moved under us.
   const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
 
+  // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range)?
+  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null);
+
   function model() {
     const list = papers();
     const source = currentSource();
@@ -230,6 +233,7 @@
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary,
       selection: state.selection, filters: state.filters,
+      filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list), topVenues: metrics.topVenues(list), venueKey: state.venueKey,
@@ -287,6 +291,12 @@
     onSelect(sel) {
       const same = state.selection && state.selection.role === sel.role && state.selection.tier === sel.tier;
       state.selection = same || (sel.role === undefined && sel.tier === undefined) ? null : sel;
+      refresh();
+    },
+    // every filter off at once (the panel's bar says how many papers are shown and offers this)
+    onClearFilters() {
+      state.selection = null; state.markGroup = null; state.venueKey = null;
+      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
       refresh();
     },
     onVenue(k) { state.venueKey = state.venueKey === k ? null : k; refresh(); },
@@ -421,7 +431,12 @@
 
   const tbody = B.scholar.tbody();
   if (tbody) new MutationObserver(() => { if (ingest()) scheduleRefresh(); }).observe(tbody, { childList: true });
-  window.addEventListener("resize", frame(() => B.scholar.place(panel.el)));
+  // (a window that becomes narrow or wide moves the panel above / beside the list; its sections are arranged for that layout, so they are drawn again)
+  window.addEventListener("resize", frame(() => {
+    const was = panel.el.classList.contains("rr-wide");
+    B.scholar.place(panel.el);
+    if (panel.el.classList.contains("rr-wide") !== was) refresh();
+  }));
   if (prefs.autoLoad) startLoad("auto");
 
   // The toolbar popup asks for the current summary.

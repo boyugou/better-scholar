@@ -250,3 +250,7 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
   #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"] { outline: 2px solid Highlight; }
 }
+
+/* "Showing 25 of 100 papers · Clear": the list is filtered */
+#rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }
+#rr-panel.rr-collapsed .rr-filterbar { display: none; }

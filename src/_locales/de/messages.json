@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "Nur Hintergrund"
+  },
+  "filterShowing": {
+    "message": "$N1$ von $N2$ Paper angezeigt",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Löschen"
   }
 }

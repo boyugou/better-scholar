@@ -667,5 +667,19 @@
   },
   "optRowStyleTint": {
     "message": "Лише фон"
+  },
+  "filterShowing": {
+    "message": "Показано статей: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Очистити"
   }
 }

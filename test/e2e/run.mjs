@@ -440,6 +440,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), lastA);
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
+    assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers`, "the panel says the list is filtered");
+    await page.click('[data-act="clear-filters"]');
+    assert.equal(await visibleRows(page), 100);
+    assert.equal(await page.locator('[data-rr="filterbar"]').isVisible(), false, "and the bar goes with the filter");
+    await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), 100);
     ok(`clicking last × CCF-A shows exactly ${lastA} papers; clicking again clears`);

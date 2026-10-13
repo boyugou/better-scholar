@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "لون خلفية فقط"
+  },
+  "filterShowing": {
+    "message": "الأوراق المعروضة: $N1$ من $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "مسح"
   }
 }

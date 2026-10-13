@@ -120,8 +120,10 @@
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
     // What a screen reader is told when the panel's status changes (loading stopped, Complete finished): a live region that stays in the page
+    // a bar that says the list is filtered, by how much, and clears every filter
+    const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true });
     const announce = h("div", { class: "rr-sr", role: "status", "aria-live": "polite", "data-rr": "announce" });
-    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body, announce);
+    const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, filterBar, body, announce);
 
     // ---- renderers -------------------------------------------------------
     const tierText = (c) => (c === "none" ? "–" : c);
@@ -302,6 +304,9 @@
       variantBox.hidden = !m.prefs.panel.names;
       noteBox.hidden = !m.prefs.panel.summary;                              // the note says where the ranks in the table come from
       footSec.hidden = variantBox.hidden && noteBox.hidden;
+      filterBar.hidden = !m.filterBar;
+      if (m.filterBar) filterBar.replaceChildren(h("span", {}, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)])),
+        h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
       coverSec.hidden = !coverSec.childNodes.length;
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");

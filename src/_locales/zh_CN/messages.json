@@ -667,5 +667,19 @@
   },
   "optRowStyleTint": {
     "message": "只要底色"
+  },
+  "filterShowing": {
+    "message": "显示 $N1$ / $N2$ 篇论文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "清除"
   }
 }

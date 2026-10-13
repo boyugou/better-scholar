@@ -685,5 +685,19 @@
   },
   "optRowStyleTint": {
     "message": "Endast bakgrund"
+  },
+  "filterShowing": {
+    "message": "Visade artiklar: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Rensa"
   }
 }
