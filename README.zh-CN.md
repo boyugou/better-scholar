@@ -82,10 +82,13 @@ scripts/package-chrome.sh      # → dist/scholar-author-roles-and-venue-ranks-c
 |---|---|---|
 | CCF 推荐国际学术会议和期刊目录 | 2026（第七版），386 个会议 + 295 个期刊 | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) 的 PDF，可复现地抽取——见 [`data/README.md`](data/README.md) |
 | CORE 会议等级 | ICORE 2026，800 个已评级会议 | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) 导出 |
+| 论文获奖名单 | 6800 余条（最佳论文、杰出论文、荣誉提名、时间检验奖；不求完整） | [ACL Anthology](https://aclanthology.org) 元数据（CC BY 4.0）、计算机视觉基金会、SIGCHI 和各会议自己的获奖页面——每一条都注明来源页面，见 [`data/README.md`](data/README.md) |
 
 两份数据仅作参考收录，版权归各自所有者——见 [`NOTICE`](NOTICE)。用 `npm run data` 重新生成。
 
 ## 开发
+
+欢迎贡献——[`CONTRIBUTING.md`](CONTRIBUTING.md) 说明了如何用真实字符串修正一个场所。
 
 ```bash
 npm test            # 单元测试：姓名、场所（真实主页语料）、指标、包结构
