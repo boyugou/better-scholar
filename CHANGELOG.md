@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.76 — 2026-10-12
+
+- IEEE ICC's best papers of 2022–2025 (56 papers, one per symposium; the list had none for ICC) from each year's own Best Paper Awards page, which prints them in three layouts (`tot.mjs icc-best`). 2021's page prints no recipients; GLOBECOM 2025's runs names together and is not read. The list has 6716 awards.
+
 ## 2.10.75 — 2026-10-12
 
 - IEEE VR 2024's six best papers (VR.net, Swift-Eye, …) from the conference's awards page (`tot.mjs ieeevr-best`; the list had none for IEEE VR). 2023's page lists best papers, honorable mentions and nominees under one heading, so the reader refuses it. The list has 6660 awards.

@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6660
+  "count": 6716
  },
  "entries": [
   {
@@ -59044,6 +59044,936 @@
    "track": "main",
    "source": "https://2024.ieeeicassp.org/awards/",
    "evidence": "ICASSP 2024 Best Student Paper Award: STAR: Distilling Speech Temporal Relation for Lightweight Speech Self-Supervised Learning Models — Kangwook Jang, Sungnyun Kim, Hoirin Kim"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING & INTERNET)",
+   "title": "Cellular Traffic Prediction Using Deep Convolutional Neural Network with Attention Mechanism",
+   "authors": [
+    "Zihuan Wang",
+    "Vincent W.S. Wong"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, NEXT-GENERATION NETWORKING & INTERNET SYMPOSIUM: Cellular Traffic Prediction Using Deep Convolutional Neural Network with Attention Mechanism — Zihuan Wang, Vincent W.S. Wong"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Channel Customization for RISs-assisted mmWave MIMO Communication Systems",
+   "authors": [
+    "Weicong Chen",
+    "Chao-Kai Wen",
+    "Xiao Li",
+    "Shi Jin"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, WIRELESS COMMUNICATIONS SYMPOSIUM: Channel Customization for RISs-assisted mmWave MIMO Communication Systems — Weicong Chen, Chao-Kai Wen, Xiao Li, Shi Jin"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SELECTED AREAS IN COMMUNICATIONS)",
+   "title": "Cooperative Reinforcement Learning Aided Dynamic Routing in UAV Swarm Networks",
+   "authors": [
+    "Zunliang Wang",
+    "Haipeng Yao",
+    "Tianle Mai",
+    "Zehui Xiong",
+    "F. Richard Yu"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, SELECTED AREAS IN COMMUNICATIONS: Cooperative Reinforcement Learning Aided Dynamic Routing in UAV Swarm Networks — Zunliang Wang, Haipeng Yao, Tianle Mai, Zehui Xiong, F. Richard Yu"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (OPTICAL NETWORKS & SYSTEMS)",
+   "title": "Dynamic LiFi Attocellular Networks Slicing for 5G Services",
+   "authors": [
+    "Hamada Alshaer",
+    "Harald Haas"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, OPTICAL NETWORKS & SYSTEMS SYMPOSIUM: Dynamic LiFi Attocellular Networks Slicing for 5G Services — Hamada Alshaer, Harald Haas"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION QOS, RELIABILITY & MODELING)",
+   "title": "Enhanced C-V2X Uplink Resource Allocation Using Vehicle Maneuver Prediction",
+   "authors": [
+    "Khaled Mohamed Kord",
+    "Ahmed Elbery",
+    "Sameh Sorour",
+    "Hossam S. Hassanein",
+    "Akram Bin Sediq",
+    "Ali Afana",
+    "Hatem Abou-Zeid"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, COMMUNICATION QOS, RELIABILITY & MODELING SYMPOSIUM: Enhanced C-V2X Uplink Resource Allocation Using Vehicle Maneuver Prediction — Khaled Mohamed Kord, Ahmed Elbery, Sameh Sorour, Hossam S. Hassanein, Akram Bin Sediq, Ali Afana, Hatem Abou-Zeid"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COGNITIVE RADIO & AI-ENABLED NETWORKS)",
+   "title": "Fine-Grained Service Offloading in B5G/6G Collaborative Edge Computing Based on Graph Neural Networks",
+   "authors": [
+    "Junye Zhang",
+    "Peng Yu",
+    "Lei Feng",
+    "Wenjing Li",
+    "Mingyu Zhao",
+    "Xueqiang Yan",
+    "Jianjun Wu"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, COGNITIVE RADIO & AI-ENABLED NETWORKS SYMPOSIUM: Fine-Grained Service Offloading in B5G/6G Collaborative Edge Computing Based on Graph Neural Networks — Junye Zhang, Peng Yu, Lei Feng, Wenjing Li, Mingyu Zhao, Xueqiang Yan, Jianjun Wu"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION THEORY)",
+   "title": "Information Bottleneck Receivers for ISI Channels",
+   "authors": [
+    "Philipp Mohr",
+    "Maximilian Stark",
+    "Gerhard Bauch"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, COMMUNICATION THEORY SYMPOSIUM: Information Bottleneck Receivers for ISI Channels — Philipp Mohr, Maximilian Stark, Gerhard Bauch"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MOBILE & WIRELESS NETWORKS)",
+   "title": "Inter-Cell Slicing Resource Partitioning via Coordinated Multi-Agent Deep Reinforcement Learning",
+   "authors": [
+    "Tianlun Hu",
+    "Qi Liao",
+    "Qiang Liu",
+    "Dan Wellington",
+    "Georg Carle"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, MOBILE & WIRELESS NETWORKS SYMPOSIUM: Inter-Cell Slicing Resource Partitioning via Coordinated Multi-Agent Deep Reinforcement Learning — Tianlun Hu, Qi Liao, Qiang Liu, Dan Wellington, Georg Carle"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION SOFTWARE & MULTIMEDIA)",
+   "title": "Intrusion Detection for Softwarized Networks with Semi-supervised Federated Learning",
+   "authors": [
+    "Ons Aouedi",
+    "Kandaraj Piamrat",
+    "Guillaume Muller",
+    "Kamal Singh"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, COMMUNICATION SOFTWARE & MULTIMEDIA SYMPOSIUM: Intrusion Detection for Softwarized Networks with Semi-supervised Federated Learning — Ons Aouedi, Kandaraj Piamrat, Guillaume Muller, Kamal Singh"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GREEN COMMUNICATION SYSTEMS & NETWORKS)",
+   "title": "On the Tradeoff between Energy, Precision, and Accuracy in Federated Quantized Neural Networks",
+   "authors": [
+    "Minsu Kim",
+    "Walid Saad",
+    "Mohammad Mozaffari",
+    "Mérouane Debbah"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, GREEN COMMUNICATION SYSTEMS & NETWORKS SYMPOSIUM: On the Tradeoff between Energy, Precision, and Accuracy in Federated Quantized Neural Networks — Minsu Kim, Walid Saad, Mohammad Mozaffari, Mérouane Debbah"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (“Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper)",
+   "title": "ProductAE: Toward Training Larger Channel Codes Based on Neural Product Codes",
+   "authors": [
+    "Mohammad Vahid Jamali",
+    "Hamid Saber",
+    "Homayoon Hatami",
+    "Jung Hyun Bae"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, “Efficient Error-correcting Output Codes for Adversarial Learning Robustness,” by Li Wan, Tansu Alpcan, Emanuele Viterbo, and Margreta Kuijper: ProductAE: Toward Training Larger Channel Codes Based on Neural Product Codes — Mohammad Vahid Jamali, Hamid Saber, Homayoon Hatami, Jung Hyun Bae"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SIGNAL PROCESSING FOR COMMUNICATIONS)",
+   "title": "Sensing for Beamforming: An IRS-Enabled Integrated Sensing and Communication Framework",
+   "authors": [
+    "Chenxi Liu",
+    "Xiaoling Hu",
+    "Mugen Peng",
+    "Caijun Zhong"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, SIGNAL PROCESSING FOR COMMUNICATIONS SYMPOSIUM: Sensing for Beamforming: An IRS-Enabled Integrated Sensing and Communication Framework — Chenxi Liu, Xiaoling Hu, Mugen Peng, Caijun Zhong"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IOT & SENSOR NETWORKS)",
+   "title": "TagSense: Robust Wheat Moisture and Temperature Sensing Using a Passive RFID Tag",
+   "authors": [
+    "Erbo Shen",
+    "Weidong Yang",
+    "Xuyu Wang",
+    "Shiwen Mao",
+    "Wei Bin"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, IOT & SENSOR NETWORKS SYMPOSIUM: TagSense: Robust Wheat Moisture and Temperature Sensing Using a Passive RFID Tag — Erbo Shen, Weidong Yang, Xuyu Wang, Shiwen Mao, Wei Bin"
+  },
+  {
+   "venue": "ICC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION & INFORMATION SYSTEMS SECURITY)",
+   "title": "Towards Accurate DGA Detection based on Siamese Network with Insufficient Training Samples",
+   "authors": [
+    "Xiaoyan Hu",
+    "Miao Li",
+    "Guang Cheng",
+    "Ruidong Li",
+    "Hua Wu",
+    "Jian Gong"
+   ],
+   "track": "main",
+   "source": "https://icc2022.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2022 Best Paper Award, COMMUNICATION & INFORMATION SYSTEMS SECURITY SYMPOSIUM: Towards Accurate DGA Detection based on Siamese Network with Insufficient Training Samples — Xiaoyan Hu, Miao Li, Guang Cheng, Ruidong Li, Hua Wu, Jian Gong"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION QOS, RELIABILITY, & MODELING)",
+   "title": "Deployment Model for Parallelized Service Function Chains with Considering Traffic-Delay Dependency",
+   "authors": [
+    "Chenlu Zhang",
+    "Takehiro Sato",
+    "Eiji Oki"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, COMMUNICATION QOS, RELIABILITY, & MODELING: Deployment Model for Parallelized Service Function Chains with Considering Traffic-Delay Dependency — Chenlu Zhang, Takehiro Sato, Eiji Oki"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GREEN COMMUNICATION SYSTEMS & NETWORKS)",
+   "title": "Energy-Efficient and Privacy-Preserved Incentive Mechanism for Federated Learning in Mobile Edge Computing",
+   "authors": [
+    "Jingyuan Liu",
+    "Zheng Chang",
+    "Geyong Min",
+    "Yan Zhang"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, GREEN COMMUNICATION SYSTEMS & NETWORKS: Energy-Efficient and Privacy-Preserved Incentive Mechanism for Federated Learning in Mobile Edge Computing — Jingyuan Liu, Zheng Chang, Geyong Min, Yan Zhang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SIGNAL PROCESSING FOR COMMUNICATIONS)",
+   "title": "Enhancing Indoor-to-Outdoor mmWave Communication with Transparent Amplifying Intelligent Surface",
+   "authors": [
+    "Bin Liu",
+    "Qing Wang",
+    "Sofie Pollin"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, SIGNAL PROCESSING FOR COMMUNICATIONS: Enhancing Indoor-to-Outdoor mmWave Communication with Transparent Amplifying Intelligent Surface — Bin Liu, Qing Wang, Sofie Pollin"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION SOFTWARE & MULTIMEDIA)",
+   "title": "Hierarchical Reinforcement Learning Based Traffic Steering in Multi-RAT 5G Deployments",
+   "authors": [
+    "Md Arafat Habib",
+    "Hao Zhou",
+    "Pedro Enrique Iturria-Rivera",
+    "Medhat Elsayed",
+    "Majid Bavand",
+    "Raimundas Gaigalas",
+    "Yigit Ozcan",
+    "Melike Erol-Kantarci"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, COMMUNICATION SOFTWARE & MULTIMEDIA: Hierarchical Reinforcement Learning Based Traffic Steering in Multi-RAT 5G Deployments — Md Arafat Habib, Hao Zhou, Pedro Enrique Iturria-Rivera, Medhat Elsayed, Majid Bavand, Raimundas Gaigalas, Yigit Ozcan, Melike Erol-Kantarci"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IOT & SENSOR NETWORKS)",
+   "title": "Joint Optimization of Energy and Delay in Task Offloading Process of Electric Connected Vehicles",
+   "authors": [
+    "Jian Qiu",
+    "Bomin Mao",
+    "Jiajia Liu"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, IOT & SENSOR NETWORKS SYMPOSIUM: Joint Optimization of Energy and Delay in Task Offloading Process of Electric Connected Vehicles — Jian Qiu, Bomin Mao, Jiajia Liu"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MOBILE & WIRELESS NETWORKS)",
+   "title": "Joint Trajectory Optimization and Mobile-Edge Computation Offloading for Multi-UAV-Connected System",
+   "authors": [
+    "Yang Li",
+    "Liang Ye",
+    "WeiXiao Meng",
+    "Cheng Li"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, MOBILE & WIRELESS NETWORKS: Joint Trajectory Optimization and Mobile-Edge Computation Offloading for Multi-UAV-Connected System — Yang Li, Liang Ye, WeiXiao Meng, Cheng Li"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (OPTICAL NETWORKS & SYSTEMS)",
+   "title": "Laser-Based Indoor Wireless Communication for Mobile Devices Aided by Stabiliser: Mobility and Outage Analysis",
+   "authors": [
+    "Juncheng Li",
+    "Mohammad Dehghani Soltani",
+    "Harald Haas",
+    "Majid Safari"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, OPTICAL NETWORKS & SYSTEMS: Laser-Based Indoor Wireless Communication for Mobile Devices Aided by Stabiliser: Mobility and Outage Analysis — Juncheng Li, Mohammad Dehghani Soltani, Harald Haas, Majid Safari"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Low-Complexity Precoding for Extremely Large-Scale MIMO Over Non-Stationary Channels",
+   "authors": [
+    "Bokai Xu",
+    "Zhe Wang",
+    "Huahua Xiao",
+    "Jiayi Zhang",
+    "Bo Ai",
+    "Derrick Wing Kwan Ng"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, WIRELESS COMMUNICATIONS: Low-Complexity Precoding for Extremely Large-Scale MIMO Over Non-Stationary Channels — Bokai Xu, Zhe Wang, Huahua Xiao, Jiayi Zhang, Bo Ai, Derrick Wing Kwan Ng"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COGNITIVE RADIO & AI-ENABLED NETWORKS)",
+   "title": "Mem-DeepSC: A Semantic Communication System with Memory",
+   "authors": [
+    "Zhijin Qin",
+    "Huiqiang Xie",
+    "Xiaoming Tao"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, COGNITIVE RADIO & AI-ENABLED NETWORKS: Mem-DeepSC: A Semantic Communication System with Memory — Zhijin Qin, Huiqiang Xie, Xiaoming Tao"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION THEORY)",
+   "title": "Rate-Privacy-Storage Tradeoff in Federated Learning with Top r Sparsification",
+   "authors": [
+    "Sajani Vithana",
+    "Sennur Ulukus"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, COMMUNICATION THEORY: Rate-Privacy-Storage Tradeoff in Federated Learning with Top r Sparsification — Sajani Vithana, Sennur Ulukus"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING & INTERNET)",
+   "title": "RL meets Multi-Link Operation in IEEE 802.11be: Multi-Headed Recurrent Soft-Actor Critic-based Traffic Allocation",
+   "authors": [
+    "Pedro Enrique Iturria-Rivera",
+    "Marcel Chenier",
+    "Bernard Herscovici",
+    "Burak Kantarci",
+    "Melike Erol-Kantarci"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, NEXT-GENERATION NETWORKING & INTERNET: RL meets Multi-Link Operation in IEEE 802.11be: Multi-Headed Recurrent Soft-Actor Critic-based Traffic Allocation — Pedro Enrique Iturria-Rivera, Marcel Chenier, Bernard Herscovici, Burak Kantarci, Melike Erol-Kantarci"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Stacked Intelligent Metasurfaces for Multiuser Beamforming in the Wave Domain",
+   "authors": [
+    "Jiancheng An",
+    "Marco Di Renzo",
+    "Mérouane Debbah",
+    "Chau Yuen"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, WIRELESS COMMUNICATIONS: Stacked Intelligent Metasurfaces for Multiuser Beamforming in the Wave Domain — Jiancheng An, Marco Di Renzo, Mérouane Debbah, Chau Yuen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION & INFORMATION SYSTEM SECURITY)",
+   "title": "Unsupervised Wireless Diarization: A Potential New Attack on Encrypted Wireless Networks",
+   "authors": [
+    "C. Nicolas Barati",
+    "Bishal Lamichhane",
+    "Siyu Liao",
+    "Eric Graves",
+    "Ananthram Swami",
+    "Ashutosh Sabharwal"
+   ],
+   "track": "main",
+   "source": "https://icc2023.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2023 Best Paper Award, COMMUNICATION & INFORMATION SYSTEM SECURITY: Unsupervised Wireless Diarization: A Potential New Attack on Encrypted Wireless Networks — C. Nicolas Barati, Bishal Lamichhane, Siyu Liao, Eric Graves, Ananthram Swami, Ashutosh Sabharwal"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (NEXT-GENERATION NETWORKING & INTERNET)",
+   "title": "A Traffic-aware Trust Model Based on Edge Computing for Underwater Wireless Sensor Networks",
+   "authors": [
+    "Rongxin Zhu",
+    "Azzedine Boukerche",
+    "Pengcheng Li",
+    "Qiuling Yang"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, NEXT-GENERATION NETWORKING & INTERNET: A Traffic-aware Trust Model Based on Edge Computing for Underwater Wireless Sensor Networks — Rongxin Zhu, Azzedine Boukerche, Pengcheng Li, Qiuling Yang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION SOFTWARE & MULTIMEDIA)",
+   "title": "Adaptive 360-Degree Video Streaming with Multi-window and Stochastic Viewport Prediction",
+   "authors": [
+    "Weichao Feng",
+    "Yu Dai",
+    "Shuoyao Wang"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, COMMUNICATION SOFTWARE & MULTIMEDIA: Adaptive 360-Degree Video Streaming with Multi-window and Stochastic Viewport Prediction — Weichao Feng, Yu Dai, Shuoyao Wang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION QOS, RELIABILITY, & MODELING)",
+   "title": "AI-enabled Traffic Flow-Prediction and Function-Configuration for 5G Networks: An Integrated Design of High Reliability and Low Cost",
+   "authors": [
+    "Qianqian Pan",
+    "Akihiro Nakao"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, COMMUNICATION QOS, RELIABILITY, & MODELING: AI-enabled Traffic Flow-Prediction and Function-Configuration for 5G Networks: An Integrated Design of High Reliability and Low Cost — Qianqian Pan, Akihiro Nakao"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COGNITIVE RADIO & AI-ENABLED NETWORKS)",
+   "title": "Channel Prediction-Enhanced Intelligent Resource Allocation for Dynamic Spectrum-Sharing Networks",
+   "authors": [
+    "Lu Yuan",
+    "Fuhui Zhou",
+    "Qihui Wu",
+    "Derrick Wing Kwan Ng"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, COGNITIVE RADIO & AI-ENABLED NETWORKS: Channel Prediction-Enhanced Intelligent Resource Allocation for Dynamic Spectrum-Sharing Networks — Lu Yuan, Fuhui Zhou, Qihui Wu, Derrick Wing Kwan Ng"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (MOBILE & WIRELESS NETWORKS)",
+   "title": "Digital versus Analog Transmissions for Federated Learning over Wireless Networks",
+   "authors": [
+    "Jiacheng Yao",
+    "Wei Xu",
+    "Zhaohui Yang",
+    "Xiaohu You",
+    "Mehdi Bennis",
+    "H. Vincent Poor"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, MOBILE & WIRELESS NETWORKS: Digital versus Analog Transmissions for Federated Learning over Wireless Networks — Jiacheng Yao, Wei Xu, Zhaohui Yang, Xiaohu You, Mehdi Bennis, H. Vincent Poor"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SIGNAL PROCESSING FOR COMMUNICATIONS)",
+   "title": "Joint Transceiver Design for MIMO Radar With One-Bit DACs and ADCs",
+   "authors": [
+    "Qi Lin",
+    "Hong Shen",
+    "Wei Xu",
+    "Chunming Zhao",
+    "Xiaohu You"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, SIGNAL PROCESSING FOR COMMUNICATIONS: Joint Transceiver Design for MIMO Radar With One-Bit DACs and ADCs — Qi Lin, Hong Shen, Wei Xu, Chunming Zhao, Xiaohu You"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (WIRELESS COMMUNICATIONS)",
+   "title": "Learning-based Deterministic Scheduling for TSN and 5G Integrated Networks",
+   "authors": [
+    "Ruibin Guo",
+    "Dong Yang",
+    "Weiting Zhang",
+    "Qingyu Cai",
+    "Hongke Zhang",
+    "Xuemin Sherman Shen"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, WIRELESS COMMUNICATIONS: Learning-based Deterministic Scheduling for TSN and 5G Integrated Networks — Ruibin Guo, Dong Yang, Weiting Zhang, Qingyu Cai, Hongke Zhang, Xuemin Sherman Shen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION THEORY)",
+   "title": "On the Information Leakage Performance of Secure Finite Blocklength Transmissions over Rayleigh Fading Channels",
+   "authors": [
+    "Milad Tatar Mamaghani",
+    "Xiangyun Zhou",
+    "Nan Yang",
+    "Lee Swindlehurst",
+    "H. Vincent Poor"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, COMMUNICATION THEORY: On the Information Leakage Performance of Secure Finite Blocklength Transmissions over Rayleigh Fading Channels — Milad Tatar Mamaghani, Xiangyun Zhou, Nan Yang, Lee Swindlehurst, H. Vincent Poor"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IOT & SENSOR NETWORKS)",
+   "title": "PEOPLEx: PEdestrian Opportunistic Positioning LEveraging IMU, UWB, BLE and WiFi",
+   "authors": [
+    "Pierre-Yves Lajoie",
+    "Bobak H Hamed Baghi",
+    "Sachini Herath",
+    "Francois Hogan",
+    "Xue Liu",
+    "Gregory Dudek"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, IOT & SENSOR NETWORKS SYMPOSIUM: PEOPLEx: PEdestrian Opportunistic Positioning LEveraging IMU, UWB, BLE and WiFi — Pierre-Yves Lajoie, Bobak H Hamed Baghi, Sachini Herath, Francois Hogan, Xue Liu, Gregory Dudek"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (GREEN COMMUNICATION SYSTEMS & NETWORKS)",
+   "title": "Power-Managed Data Centers for Sustainable Computing",
+   "authors": [
+    "Emi Zeger",
+    "Nicholas Bambos",
+    "Mert Pilanci"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, GREEN COMMUNICATION SYSTEMS & NETWORKS: Power-Managed Data Centers for Sustainable Computing — Emi Zeger, Nicholas Bambos, Mert Pilanci"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (OPTICAL NETWORKS & SYSTEMS)",
+   "title": "Secret Key Generation in Multi-Mode Fiber Channels: Channel Measurements and Achievable Rates",
+   "authors": [
+    "Pin-Hsun Lin",
+    "Paul Nowitzki",
+    "Eduard A Jorswieck",
+    "Dennis Pohlea",
+    "Jürgen Czarske"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, OPTICAL NETWORKS & SYSTEMS: Secret Key Generation in Multi-Mode Fiber Channels: Channel Measurements and Achievable Rates — Pin-Hsun Lin, Paul Nowitzki, Eduard A Jorswieck, Dennis Pohlea, Jürgen Czarske"
+  },
+  {
+   "venue": "ICC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award (COMMUNICATION & INFORMATION SYSTEM SECURITY)",
+   "title": "Secure, Available, Verifiable, and Efficient Range Query Processing on Outsourced Datasets",
+   "authors": [
+    "Meng Li",
+    "Jianbo Gao",
+    "Zijian Zhang",
+    "Mauro Conti",
+    "Mamoun Alazab"
+   ],
+   "track": "main",
+   "source": "https://icc2024.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2024 Best Paper Award, COMMUNICATION & INFORMATION SYSTEM SECURITY: Secure, Available, Verifiable, and Efficient Range Query Processing on Outsourced Datasets — Meng Li, Jianbo Gao, Zijian Zhang, Mauro Conti, Mamoun Alazab"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC-Machine Learning for Communications)",
+   "title": "Adaptive AUV Hunting Policy with Covert Communication via Diffusion Model",
+   "authors": [
+    "Xu Guo",
+    "Xiangwang Hou",
+    "Minrui Xu",
+    "Jianrui Chen",
+    "Jingjing Wang",
+    "Jun Du",
+    "Yong Ren"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, SAC-Machine Learning for Communications: Adaptive AUV Hunting Policy with Covert Communication via Diffusion Model — Xu Guo, Xiangwang Hou, Minrui Xu, Jianrui Chen, Jingjing Wang, Jun Du, Yong Ren"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Next-Generation Networking and Internet)",
+   "title": "ANSB: An Optimized Network Slicing Scheme for Adaptive Load Balancing in 5G Core Network",
+   "authors": [
+    "Lam Thanh-Son Nguyen",
+    "Nadjib Aitsaadi",
+    "Cedric Adjih"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Next-Generation Networking and Internet: ANSB: An Optimized Network Slicing Scheme for Adaptive Load Balancing in 5G Core Network — Lam Thanh-Son Nguyen, Nadjib Aitsaadi, Cedric Adjih"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Mobile and Wireless Networks)",
+   "title": "Capacity and Power Consumption of Multi-Layer 6G Networks Using the Upper Mid-Band",
+   "authors": [
+    "David López-Pérez",
+    "Nicola Piovesan",
+    "Giovanni Geraci"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Mobile and Wireless Networks: Capacity and Power Consumption of Multi-Layer 6G Networks Using the Upper Mid-Band — David López-Pérez, Nicola Piovesan, Giovanni Geraci"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications)",
+   "title": "Covert ISAC: Towards Collusive Detection",
+   "authors": [
+    "Yujie Wu",
+    "Chengwen Xing",
+    "Jie Tang",
+    "Nan Zhao",
+    "Xiu Yin Zhang",
+    "Kai Kit Wong",
+    "George K. Karagiannidis"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Wireless Communications: Covert ISAC: Towards Collusive Detection — Yujie Wu, Chengwen Xing, Jie Tang, Nan Zhao, Xiu Yin Zhang, Kai Kit Wong, George K. Karagiannidis"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication Software and Multimedia)",
+   "title": "Edge-Assisted Data Selection and Continuous Training Framework for AI Services under Resource-Constrained Networks",
+   "authors": [
+    "Menna Helmy",
+    "Alaa Awad Abdellatif",
+    "Amr Mohamed",
+    "Ahmed Refaey Hussein",
+    "Aiman Erbad"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Communication Software and Multimedia: Edge-Assisted Data Selection and Continuous Training Framework for AI Services under Resource-Constrained Networks — Menna Helmy, Alaa Awad Abdellatif, Amr Mohamed, Ahmed Refaey Hussein, Aiman Erbad"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Signal Processing for Communications)",
+   "title": "Energy Efficiency Maximization for Movable Antenna-Enhanced System Based on Statistical CSI",
+   "authors": [
+    "Xintai Chen",
+    "Biqian Feng",
+    "Yongpeng Wu",
+    "Wenjun Zhang"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Signal Processing for Communications: Energy Efficiency Maximization for Movable Antenna-Enhanced System Based on Statistical CSI — Xintai Chen, Biqian Feng, Yongpeng Wu, Wenjun Zhang"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IoT and Sensor Networks)",
+   "title": "GenFi: Enhancing WiFi-based Human Activity Recognition to Unseen Scenario via Feature Disentanglement and Meta-Learning",
+   "authors": [
+    "Han Liu",
+    "Yi Li",
+    "Biplab Sikdar"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, IoT and Sensor Networks Symposium: GenFi: Enhancing WiFi-based Human Activity Recognition to Unseen Scenario via Feature Disentanglement and Meta-Learning — Han Liu, Yi Li, Biplab Sikdar"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication and Information Systems Security)",
+   "title": "GFuzz4CAN: A Generative Model-based Fuzzing Method for In-vehicle Controller Area Network",
+   "authors": [
+    "Yuhan Wu",
+    "Li Lu",
+    "Yuli Wu",
+    "Shuguo Zhuo",
+    "Zhan Qin",
+    "Kui Ren"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Communication and Information Systems Security: GFuzz4CAN: A Generative Model-based Fuzzing Method for In-vehicle Controller Area Network — Yuhan Wu, Li Lu, Yuli Wu, Shuguo Zhuo, Zhan Qin, Kui Ren"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Wireless Communications)",
+   "title": "Improving Cell-Free Massive MIMO Through Channel Map-Based Angle Domain Multiple Access",
+   "authors": [
+    "Shuaifei Chen",
+    "Cheng-Xiang Wang",
+    "Junling Li",
+    "Chen Huang",
+    "Hengtai Chang",
+    "Yunfei Chen"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Wireless Communications: Improving Cell-Free Massive MIMO Through Channel Map-Based Angle Domain Multiple Access — Shuaifei Chen, Cheng-Xiang Wang, Junling Li, Chen Huang, Hengtai Chang, Yunfei Chen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication Theory)",
+   "title": "NCAirFL: CSI-Free Over-the-Air Federated Learning Based on Non-Coherent Detection",
+   "authors": [
+    "Haifeng Wen",
+    "Nicolò Michelusi",
+    "Osvaldo Simeone",
+    "Hong Xing"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Communication Theory: NCAirFL: CSI-Free Over-the-Air Federated Learning Based on Non-Coherent Detection — Haifeng Wen, Nicolò Michelusi, Osvaldo Simeone, Hong Xing"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Next-Generation Networking and Internet)",
+   "title": "Network GDT: GenAI based Digital Twin for Automated Network Performance Evaluation",
+   "authors": [
+    "Sukhdeep Singh",
+    "Swaraj Kumar",
+    "Moonki Hong",
+    "Ashish Jain",
+    "Madhan Raj Kanagarathinam",
+    "Krishna M Sivalingam",
+    "Hemant Narsani"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Next-Generation Networking and Internet: Network GDT: GenAI based Digital Twin for Automated Network Performance Evaluation — Sukhdeep Singh, Swaraj Kumar, Moonki Hong, Ashish Jain, Madhan Raj Kanagarathinam, Krishna M Sivalingam, Hemant Narsani"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (IoT and Sensor Networks)",
+   "title": "Online Asynchronous Flow Scheduling Mechanism for 5G-TSN Networks",
+   "authors": [
+    "Sifan Long",
+    "Qing Zhang",
+    "Linfeng Luo",
+    "Ming Zhao",
+    "Fengxiao Tang",
+    "Nei Kato"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, IoT and Sensor Networks Symposium: Online Asynchronous Flow Scheduling Mechanism for 5G-TSN Networks — Sifan Long, Qing Zhang, Linfeng Luo, Ming Zhao, Fengxiao Tang, Nei Kato"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Optical Networks and Systems)",
+   "title": "OWC4DT: A 25 Gbps Plug-and-Play Self-Alignment Optical Wireless Communication System for Distributed Training in Data Center",
+   "authors": [
+    "Tianyi Lin",
+    "Siyuan Wang",
+    "Hongming Zhang",
+    "Jian Song"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Optical Networks and Systems: OWC4DT: A 25 Gbps Plug-and-Play Self-Alignment Optical Wireless Communication System for Distributed Training in Data Center — Tianyi Lin, Siyuan Wang, Hongming Zhang, Jian Song"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Cognitive Radio and AI-Enabled Networks)",
+   "title": "Predictive Beamforming for OTFS-Enabled Ultra Reliable Low Latency Vehicular Communications",
+   "authors": [
+    "Tiankai Jiang",
+    "Jianzhe Xue",
+    "Zhanxi Ma",
+    "Jiacheng Wang",
+    "Haibo Zhou",
+    "Xuemin Sherman Shen"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Cognitive Radio and AI-Enabled Networks: Predictive Beamforming for OTFS-Enabled Ultra Reliable Low Latency Vehicular Communications — Tiankai Jiang, Jianzhe Xue, Zhanxi Ma, Jiacheng Wang, Haibo Zhou, Xuemin Sherman Shen"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (SAC-Integrated Sensing and Communication)",
+   "title": "Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR",
+   "authors": [
+    "Tao Du",
+    "Jie Yang",
+    "Fan Liu",
+    "Jiaxiang Guo",
+    "Shuqiang Xia",
+    "Chao-Kai Wen",
+    "Shi Jin"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, SAC-Integrated Sensing and Communication: Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR — Tao Du, Jie Yang, Fan Liu, Jiaxiang Guo, Shuqiang Xia, Chao-Kai Wen, Shi Jin"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication QoS, Reliability and Modeling)",
+   "title": "TaM: A Terrain-Aware Markovian Mobility Model for VANets",
+   "authors": [
+    "Asma Baig",
+    "Sharief Oteafy"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Communication QoS, Reliability and Modeling: TaM: A Terrain-Aware Markovian Mobility Model for VANets — Asma Baig, Sharief Oteafy"
+  },
+  {
+   "venue": "ICC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award (Communication and Information Systems Security)",
+   "title": "User Behavior-Based Dynamic Authentication Design for Enhanced Identity Security",
+   "authors": [
+    "Ye Zhang",
+    "Feng Wang",
+    "Jianbin Zeng",
+    "Lutong Chen",
+    "Xuanbo Huang",
+    "Zhonghui Li",
+    "Kaiping Xue"
+   ],
+   "track": "main",
+   "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
+   "evidence": "ICC 2025 Best Paper Award, Communication and Information Systems Security: User Behavior-Based Dynamic Authentication Design for Enhanced Identity Security — Ye Zhang, Feng Wang, Jianbin Zeng, Lutong Chen, Xuanbo Huang, Zhonghui Li, Kaiping Xue"
   },
   {
    "venue": "ICCV",
