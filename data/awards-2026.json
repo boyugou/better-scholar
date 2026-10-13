@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7460
+  "count": 7472
  },
  "entries": [
   {
@@ -48557,6 +48557,215 @@
    "track": "main",
    "source": "https://past.date-conference.com/proceedings-archive/2022/html/bestpaper.html",
    "evidence": "DATE 2022 best paper: Self-Terminated Write of Multi-Level Cell ReRAM for Efficient Neuromorphic Computing — Zongwu Wang, Zhezhi He, Rui Yang, Shiquan Fan, Jie Lin, Fangxin Liu, Yueyang Jia, Chenxi Yuan, Qidong Tang, Li Jiang"
+  },
+  {
+   "venue": "DATE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Automated Energy-Efficient DNN Compression under Fine-Grained Accuracy Constraints",
+   "authors": [
+    "Ourania Spantidi",
+    "Iraklis Anagnostopoulos"
+   ],
+   "track": "main",
+   "source": "https://date23.date-conference.com/awards",
+   "evidence": "DATE 2023 best paper: Automated Energy-Efficient DNN Compression under Fine-Grained Accuracy Constraints — Ourania Spantidi and Iraklis Anagnostopoulos"
+  },
+  {
+   "venue": "DATE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Hardware Efficient Weight-Binarized Spiking Neural Networks",
+   "authors": [
+    "Chengcheng Tang",
+    "Jie Han"
+   ],
+   "track": "main",
+   "source": "https://date23.date-conference.com/awards",
+   "evidence": "DATE 2023 best paper: Hardware Efficient Weight-Binarized Spiking Neural Networks — Chengcheng Tang and Jie Han"
+  },
+  {
+   "venue": "DATE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "PRADA: Point Cloud Recognition Acceleration via Dynamic Approximation",
+   "authors": [
+    "Zhuoran Song",
+    "Heng Lu",
+    "Gang Li",
+    "Li Jiang",
+    "Naifeng Jing",
+    "Xiaoyao Liang"
+   ],
+   "track": "main",
+   "source": "https://date23.date-conference.com/awards",
+   "evidence": "DATE 2023 best paper: PRADA: Point Cloud Recognition Acceleration via Dynamic Approximation — Zhuoran Song, Heng Lu, Gang Li, Li Jiang, Naifeng Jing and Xiaoyao Liang"
+  },
+  {
+   "venue": "DATE",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SAGERoute: Synergistic Analog Routing Considering Geometric and Electrical Constraints with Manual Design Compatibility",
+   "authors": [
+    "Haoyi Zhang",
+    "Xiaohan Gao",
+    "Haoyang Luo",
+    "Jiahao Song",
+    "Xiyuan Tang",
+    "Junhua Liu",
+    "Yibo Lin",
+    "Runsheng Wang",
+    "Ru Huang"
+   ],
+   "track": "main",
+   "source": "https://date23.date-conference.com/awards",
+   "evidence": "DATE 2023 best paper: SAGERoute: Synergistic Analog Routing Considering Geometric and Electrical Constraints with Manual Design Compatibility — Haoyi Zhang, Xiaohan Gao, Haoyang Luo, Jiahao Song, Xiyuan Tang, Junhua Liu, Yibo Lin, Runsheng Wang and Ru Huang"
+  },
+  {
+   "venue": "DATE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Efficient Exploration of Cyber-Physical System Architectures Using Contracts and Subgraph Isomorphism",
+   "authors": [
+    "Yifeng Xiao",
+    "Chanwook Oh",
+    "Michele Lora",
+    "Pierluigi Nuzzo"
+   ],
+   "track": "main",
+   "source": "https://date24.date-conference.com/awards",
+   "evidence": "DATE 2024 best paper: Efficient Exploration of Cyber-Physical System Architectures Using Contracts and Subgraph Isomorphism — Yifeng Xiao1, Chanwook Oh1, Michele Lora2 and Pierluigi Nuzzo1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "FusionArch: A Fusion-Based Accelerator for Point-Based Point Cloud Neural Networks",
+   "authors": [
+    "Xueyuan Liu",
+    "Zhuoran Song",
+    "Guohao Dai",
+    "Gang Li",
+    "Can Xiao",
+    "Yan Xiang",
+    "Dehui Kong",
+    "Ke Xu",
+    "Xiaoyao Liang"
+   ],
+   "track": "main",
+   "source": "https://date24.date-conference.com/awards",
+   "evidence": "DATE 2024 best paper: FusionArch: A Fusion-Based Accelerator for Point-Based Point Cloud Neural Networks — Xueyuan Liu1, Zhuoran Song1, Guohao Dai1, Gang Li1, Can Xiao2, Yan Xiang2, Dehui Kong2, Ke Xu2 and Xiaoyao Liang1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "HW-SW Optimization of DNNs for Privacy-preserving People Counting on Low-resolution Infrared Arrays",
+   "authors": [
+    "Matteo Risso",
+    "Chen Xie",
+    "Francesco Daghero",
+    "Alessio Burrello",
+    "Seyedmorteza Mollaei",
+    "Marco Castellano",
+    "Enrico Macii",
+    "Massimo Poncino",
+    "Daniele Jahier Pagliari"
+   ],
+   "track": "main",
+   "source": "https://date24.date-conference.com/awards",
+   "evidence": "DATE 2024 best paper: HW-SW Optimization of DNNs for Privacy-preserving People Counting on Low-resolution Infrared Arrays — Matteo Risso1, Chen Xie1, Francesco Daghero1, Alessio Burrello2, Seyedmorteza Mollaei1, Marco Castellano3, Enrico Macii1, Massimo Poncino1 and Daniele Jahier Pagliari1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "SELCC: Enhancing MLC Reliability and Endurance with Single-Cell Error Correction Codes",
+   "authors": [
+    "Yujin Lim",
+    "Dongwhee Kim",
+    "Jungrae Kim"
+   ],
+   "track": "main",
+   "source": "https://date24.date-conference.com/awards",
+   "evidence": "DATE 2024 best paper: SELCC: Enhancing MLC Reliability and Endurance with Single-Cell Error Correction Codes — Yujin Lim, Dongwhee Kim and Jungrae Kim, Sungkyunkwan University, KR"
+  },
+  {
+   "venue": "DATE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Lightweight CNN for Real Time Pre Impact Fall Detection",
+   "authors": [
+    "Cristian Turetta",
+    "Muhammed Toqeer Ali",
+    "Florenc Demrozi",
+    "Graziano Pravadelli"
+   ],
+   "track": "main",
+   "source": "https://date25.date-conference.com/awards",
+   "evidence": "DATE 2025 best paper: A Lightweight CNN for Real Time Pre Impact Fall Detection — Cristian Turetta 1, Muhammed Toqeer Ali 1, Florenc Demrozi 2 and Graziano Pravadelli 1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "A Soft Error Tolerant Flip Flop for eFPGA Configuration Hardening in 22nm FinFET Process",
+   "authors": [
+    "Prashanth Mohan",
+    "Siddharth Das",
+    "Oguz Aatli",
+    "Josh Joffrion",
+    "Ken Mai"
+   ],
+   "track": "main",
+   "source": "https://date25.date-conference.com/awards",
+   "evidence": "DATE 2025 best paper: A Soft Error Tolerant Flip Flop for eFPGA Configuration Hardening in 22nm FinFET Process — Prashanth Mohan 1, Siddharth Das 1, Oguz Aatli 1, Josh Joffrion 2 and Ken Mai 1"
+  },
+  {
+   "venue": "DATE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Cocktail: Chunk Adaptive Mixed Precision Quantization for Long Context LLM Inference",
+   "authors": [
+    "Wei Tao",
+    "Bin Zhang",
+    "Xiaoyang Qu",
+    "Jiguang Wan",
+    "Jianzong Wang"
+   ],
+   "track": "main",
+   "source": "https://date25.date-conference.com/awards",
+   "evidence": "DATE 2025 best paper: Cocktail: Chunk Adaptive Mixed Precision Quantization for Long Context LLM Inference — Wei Tao 1, Bin Zhang 1, Xiaoyang Qu 2, Jiguang Wan 1 and Jianzong Wang 2"
+  },
+  {
+   "venue": "DATE",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Timing Driven Global Placement by Efficient Critical Path Extraction",
+   "authors": [
+    "Yunqi Shi",
+    "Siyuan Xu",
+    "Shixiong Kai",
+    "Xi Lin",
+    "Ke Xue",
+    "Mingxuan Yuan",
+    "Chao Qian"
+   ],
+   "track": "main",
+   "source": "https://date25.date-conference.com/awards",
+   "evidence": "DATE 2025 best paper: Timing Driven Global Placement by Efficient Critical Path Extraction — Yunqi Shi 1, Siyuan Xu 2, Shixiong Kai 2, Xi Lin 1, Ke Xue 1, Mingxuan Yuan 3 and Chao Qian 1"
   },
   {
    "venue": "DIS",

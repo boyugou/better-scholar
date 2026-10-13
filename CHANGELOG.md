@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.107 — 2026-10-12
+
+- DATE's best papers 2023–2025 (12 papers) from each year's own site (`tot.mjs date-awards`). The list has 7472 awards.
+
 ## 2.10.106 — 2026-10-12
 
 - DATE's best papers 2020–2022 (12 papers) from the archive's `bestpaper.html` pages; the DATE reader takes HTML as well as PDF text, and no longer takes a university line for an author. The list has 7460 awards.

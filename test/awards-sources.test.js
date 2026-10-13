@@ -2356,6 +2356,14 @@ test("DATE best papers PDF text: per 'X Track' a (wrapped) title, the authors wi
   assert.equal(parseDateBest(txt(2015, interleaved), "https://past.date-conference.com/proceedings-archive/2015/html/date-best-papers-2015.pdf").entries.length, 0);
 });
 
+test("DATE site award pages (2023-2025): per track the title, authors and affiliation, or the authors, affiliation and the title ending in '(Session …)'; an institution after the authors on the same line is not an author; the reviewer awards are left out", async () => {
+  const { parseDateAwards } = await import("../scripts/awards/tot.mjs");
+  const h25 = "<h2>DATE 2025</h2><h3>Best Paper Awards</h3><h3>D Track</h3><p>Timing driven global placement by efficient critical path extraction</p><p>Yunqi Shi 1, Siyuan Xu 2 and Chao Qian 1</p><p>1 Nanjing University, CN</p><p>(Session BPA01)</p><h3>Outstanding Reviewer Awards</h3><p>D Track</p><p>Chang Meng, EPFL</p>";
+  assert.deepEqual(parseDateAwards(h25, "https://date25.date-conference.com/awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2025 | Yunqi Shi; Siyuan Xu; Chao Qian | Timing driven global placement by efficient critical path extraction"]);
+  const h24 = "<h2>DATE 2024</h2><h3>DATE Best Paper Awards</h3><h3>T-Track:</h3><p>Yujin Lim, Dongwhee Kim and Jungrae Kim, Sungkyunkwan University, KR</p><p>SELCC: Enhancing MLC reliability with single-cell error correction codes (Session BPA02 Reliability)</p><h3>E-Track:</h3><p>Yifeng Xiao1, Chanwook Oh1 and Pierluigi Nuzzo1</p><p>1University of Southern California, US</p><p>Efficient exploration of cyber-physical system architectures using contracts (Session BPA04 Novel)</p><h3>Outstanding Reviewer Awards</h3>";
+  assert.deepEqual(parseDateAwards(h24, "https://date24.date-conference.com/awards").entries.map((e) => `${e.year} | ${e.authors.join("; ")} | ${e.title}`), ["2024 | Yujin Lim; Dongwhee Kim; Jungrae Kim | SELCC: Enhancing MLC reliability with single-cell error correction codes", "2024 | Yifeng Xiao; Chanwook Oh; Pierluigi Nuzzo | Efficient exploration of cyber-physical system architectures using contracts"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;
