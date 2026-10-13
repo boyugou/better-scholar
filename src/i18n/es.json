@@ -37,7 +37,7 @@
   "honest.text": "Los rankings son las listas actuales, no el ranking en el momento de la publicación, y la propia lista CCF indica que no es una evaluación. La extensión nunca adivina una publicación: lo que no puede ubicar se muestra, pero no se marca.",
   "footer.license": "Código abierto, Apache License 2.0",
   "footer.privacy": "Privacidad",
-  "footer.issues": "Notificar un problema",
+  "footer.issues": "Informar de un problema",
   "demo.title": "Pruébalo",
   "demo.hint": "Activa y desactiva los roles: el perfil de ejemplo cambia igual que la página real.",
   "demo.paper": "Artículo de ejemplo",
