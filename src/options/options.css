@@ -19,9 +19,9 @@ body { margin: 0; background: var(--ground); color: var(--text);
 #saved.on { opacity: 1; }
 
 .grid { display: grid; grid-template-columns: minmax(0, 1fr) 450px; gap: 22px; align-items: start; }
-.preview { position: sticky; top: 16px; align-self: start; }
+.preview { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; overscroll-behavior: contain; border-radius: 12px; }   /* always whole in view: it scrolls inside itself when the window is shorter, and its bottom stays clear of the page's end, where the sticky box would otherwise be pushed up */
 .preview > .card { margin: 0; }
-@media (max-width: 940px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; order: -1; } }
+@media (max-width: 940px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; order: -1; max-height: none; overflow: visible; } }
 
 .card { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 16px; overflow: hidden; }
 .card > h2 { margin: 0; padding: 14px 18px 2px; font-size: 14px; font-weight: 600; }

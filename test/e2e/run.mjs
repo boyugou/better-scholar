@@ -219,6 +219,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, (n) => document.querySelectorAll("tr.rr-r-last").length === n, lastRows);
     ok("role switches on the settings page recolour the open profile at once");
 
+    // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
+    await opts.bringToFront();
+    await opts.setViewportSize({ width: 1360, height: 640 });
+    for (const y of [0, 300, 99999]) {
+      await opts.evaluate((yy) => window.scrollTo(0, yy), y);
+      const r = await opts.evaluate(() => { const b = document.querySelector(".preview").getBoundingClientRect(); return { top: b.top, bottom: b.bottom, vh: innerHeight }; });
+      assert.ok(r.top >= 0 && r.bottom <= r.vh, `the preview left the window at scroll ${y}: ${JSON.stringify(r)}`);
+    }
+    await opts.evaluate(() => window.scrollTo(0, 0));
+    await opts.setViewportSize({ width: 1360, height: 900 });
+    ok("the settings preview stays whole in view while the page scrolls, even in a short window");
+
     // -- 7. matrix cell filters the list
     const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');

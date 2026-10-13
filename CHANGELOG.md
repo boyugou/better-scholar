@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.129 — 2026-10-12
+
+- The settings page's preview stays whole in view while the page scrolls: it is pinned below the top and never taller than the window (it scrolls inside itself in a short window), so it is no longer pushed up and cut off at the end of the page. A new end-to-end check scrolls a short window to the top, middle and end.
+
 ## 2.10.128 — 2026-10-12
 
 - KR's Ray Reiter best papers, runners-up and Marco Cadoli best student papers for 2020–2022, 2024 and 2025 (14 papers; the list had none for KR) from the conference's own proceedings prefaces, read through macOS PDFKit (`tot.mjs kr-preface`). The list has 7830 awards.
