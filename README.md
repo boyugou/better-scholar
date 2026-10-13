@@ -11,6 +11,7 @@ build.mjs             builds _site/ (no dependencies); every link is relative, s
 scripts/verify.mjs    every language has every string, every link resolves, lang/dir are right
 scripts/deploy.sh     build + verify + publish to the gh-pages branch (no CI needed)
 scripts/render-assets.mjs   dev tool: apple-touch-icon.png and og.png
+scripts/axe-audit.mjs       dev tool: axe-core accessibility audit of the built pages
 ```
 
 ## Use

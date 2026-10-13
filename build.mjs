@@ -81,7 +81,7 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <body>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href="./"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Scholar Roles &amp; Ranks</span></a>
+    <a class="brand" href="./" aria-label="Scholar Roles &amp; Ranks"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Scholar Roles &amp; Ranks</span></a>
     <nav>
       <a href="${REPO_URL}">${t("nav.github")}</a>
       <a class="btn small" href="#install">${t("nav.install")}</a>
