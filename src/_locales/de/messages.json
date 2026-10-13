@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Beim Klick auf „Vervollständigen“ wird zuerst semanticscholar.org nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite nur für das, was dort unbekannt ist. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
+  },
+  "yearsTitle": {
+    "message": "Hervorgehobene Paper nach Jahr"
+  },
+  "optPanelYears": {
+    "message": "Paper nach Jahr"
+  },
+  "optPanelYearsHint": {
+    "message": "Ein Balken pro Jahr, in den Rollenfarben."
   }
 }

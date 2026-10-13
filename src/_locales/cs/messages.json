@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Při stisku Doplnit se nejprve ptáme semanticscholar.org na úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholaru čteme jen u toho, co tam nemají. Méně dotazů na Scholar, tedy méně CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "Zvýrazněné práce podle roku"
+  },
+  "optPanelYears": {
+    "message": "Práce podle roku"
+  },
+  "optPanelYearsHint": {
+    "message": "Sloupec pro každý rok, v barvách rolí."
   }
 }

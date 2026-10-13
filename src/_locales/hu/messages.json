@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "A Kiegészítés gombra kattintva először a semanticscholar.org kérdezi le minden cikk teljes szerzőlistáját (csak a cikk címe kerül elküldésre), a Scholar saját oldalát pedig csak arra olvassa be, amit az nem ismer. Kevesebb kérés megy a Scholarhoz, így kevesebb CAPTCHA is."
+  },
+  "yearsTitle": {
+    "message": "Kiemelt cikkek évenként"
+  },
+  "optPanelYears": {
+    "message": "Cikkek évenként"
+  },
+  "optPanelYearsHint": {
+    "message": "Egy oszlop minden évhez, a szerepkörök színeiben."
   }
 }

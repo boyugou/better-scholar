@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "按下「補全」時，先向 semanticscholar.org 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
+  },
+  "yearsTitle": {
+    "message": "各年份的已標示論文"
+  },
+  "optPanelYears": {
+    "message": "依年份統計"
+  },
+  "optPanelYearsHint": {
+    "message": "每年一根柱，用各位次的顏色。"
   }
 }

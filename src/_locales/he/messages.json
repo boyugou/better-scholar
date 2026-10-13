@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "בלחיצה על השלמה, תחילה נשאל את semanticscholar.org על רשימת המחברים המלאה של כל מאמר (נשלחת כותרת המאמר בלבד), ודף Scholar עצמו ייקרא רק למה שהאתר הזה לא מכיר. פחות בקשות ל-Scholar, ולכן פחות CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "מאמרים מודגשים לפי שנה"
+  },
+  "optPanelYears": {
+    "message": "מאמרים לפי שנה"
+  },
+  "optPanelYearsHint": {
+    "message": "עמודה לכל שנה, בצבעי התפקידים."
   }
 }

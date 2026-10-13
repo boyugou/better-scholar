@@ -101,6 +101,7 @@
       h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list));
 
     const metricsSec = h("div", { class: "rr-sec rr-metrics", "data-rr": "metrics" });
+    const yearsSec = h("div", { class: "rr-sec rr-years", "data-rr": "years" });
 
     // name variants (input kept stable across updates)
     const variantList = h("div", { class: "rr-variants" });
@@ -115,7 +116,7 @@
     const footSec = h("div", { class: "rr-sec" }, variantBox, noteBox);
 
     const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
-    const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, coverSec, footSec);
+    const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
     const el = h("section", { id: "rr-panel", "data-rr": "panel", role: "region", "aria-label": t("panelTitle"), dir: B.dom.dir() }, head, body);
 
@@ -243,6 +244,24 @@
         row("mH", hi.h, all.h), row("mI10", hi.i10, all.i10));
     }
 
+    // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers)
+    function renderYears(m) {
+      const data = m.byYear || [];
+      yearsSec.hidden = !m.prefs.panel.years || data.length < 2;
+      if (yearsSec.hidden) return;
+      const top = Math.max(...data.map((d) => d.total));
+      const names = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
+      yearsSec.replaceChildren(
+        h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("yearsTitle"))),
+      h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 20 + "px)" },
+        h("div", { class: "rr-bars", role: "img", "aria-label": t("yearsTitle") },
+          ...data.map((d) => h("div", { class: "rr-bar", title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n") },
+            h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
+              ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))))),
+        ),
+        h("div", { class: "rr-bars-axis" }, h("span", {}, String(data[0].year)), h("span", {}, String(data[data.length - 1].year)))));
+    }
+
     function renderVariants(m) {
       variantList.replaceChildren(
         ...m.nameHints.auto.map((v) => h("span", { class: "rr-variant rr-variant-auto", title: t("variantAutoTip", [String(v.rows)]) }, v.name)),
@@ -265,10 +284,10 @@
       renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m);
       coverSec.hidden = !coverSec.childNodes.length;
       // a column with nothing in it gives its width to the other
-      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !coverSec.hidden || !footSec.hidden;
+      const colA = !summarySec.hidden || !marksSec.hidden, colB = !filtersSec.hidden || !metricsSec.hidden || !yearsSec.hidden || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
       el.classList.toggle("rr-onecol", !(colA && colB));
-      syncFilters(m); renderMetrics(m); renderVariants(m);
+      syncFilters(m); renderMetrics(m); renderYears(m); renderVariants(m);
       noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => m.edition[s]).join(" · ")]);
     }
 

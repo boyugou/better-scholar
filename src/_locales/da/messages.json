@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Når du trykker på Fuldfør, spørger semanticscholar.org først efter hver artikels fulde forfatterliste (der sendes kun artiklens titel), og Scholars egen side læses kun for det, den ikke kender. Det giver færre forespørgsler til Scholar og færre captcha'er."
+  },
+  "yearsTitle": {
+    "message": "Fremhævede artikler pr. år"
+  },
+  "optPanelYears": {
+    "message": "Artikler pr. år"
+  },
+  "optPanelYearsHint": {
+    "message": "En søjle for hvert år, i rollefarverne."
   }
 }

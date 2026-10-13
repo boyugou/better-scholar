@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Po naciśnięciu „Uzupełnij” najpierw pytamy semanticscholar.org o pełną listę autorów każdej pracy (wysyłany jest tylko tytuł pracy), a stronę samego Scholar czytamy tylko dla tego, czego tam nie ma. Mniej zapytań do Scholar, więc mniej CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "Wyróżnione prace według lat"
+  },
+  "optPanelYears": {
+    "message": "Prace według lat"
+  },
+  "optPanelYearsHint": {
+    "message": "Słupek dla każdego roku, w kolorach ról."
   }
 }

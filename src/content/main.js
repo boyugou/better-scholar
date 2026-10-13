@@ -212,7 +212,7 @@
       selection: state.selection, filters: state.filters,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: metrics.citationMetrics(list),
+      metrics: metrics.citationMetrics(list), byYear: metrics.byYear(list),
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),

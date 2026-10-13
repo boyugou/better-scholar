@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Kun painat Täydennä, semanticscholar.org kysytään ensin kunkin artikkelin koko tekijälistaa (lähetetään vain artikkelin otsikko). Scholarin omaa sivua luetaan vain siltä osin, mitä semanticscholar.org ei tiedä. Scholarille tehdään vähemmän pyyntöjä, joten captchoja tulee vähemmän."
+  },
+  "yearsTitle": {
+    "message": "Korostetut artikkelit vuosittain"
+  },
+  "optPanelYears": {
+    "message": "Artikkelit vuosittain"
+  },
+  "optPanelYearsHint": {
+    "message": "Palkki jokaiselle vuodelle roolien väreillä."
   }
 }

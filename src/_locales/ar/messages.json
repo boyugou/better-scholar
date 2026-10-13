@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "عند الضغط على إكمال، يُسأل semanticscholar.org أولًا عن قائمة المؤلفين الكاملة لكل ورقة (يُرسل عنوان الورقة فقط)، ولا تُقرأ صفحة Scholar إلا لما لا يعرفه. طلبات أقل إلى Scholar، وبالتالي CAPTCHA أقل."
+  },
+  "yearsTitle": {
+    "message": "الأبحاث المميّزة حسب السنة"
+  },
+  "optPanelYears": {
+    "message": "الأبحاث حسب السنة"
+  },
+  "optPanelYearsHint": {
+    "message": "عمود لكل سنة، بألوان الأدوار."
   }
 }

@@ -680,7 +680,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     }
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, status: false, names: false });
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, status: false, names: false });
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
     await opts.click('[data-act="panel-full"]');

@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Bij Aanvullen vraagt de extensie eerst semanticscholar.org om de volledige auteurslijst van elke paper (alleen de titel van de paper wordt verstuurd), en leest ze de Scholar-pagina alleen voor wat daar onbekend is. Minder verzoeken aan Scholar, dus minder CAPTCHA's."
+  },
+  "yearsTitle": {
+    "message": "Gemarkeerde papers per jaar"
+  },
+  "optPanelYears": {
+    "message": "Papers per jaar"
+  },
+  "optPanelYearsHint": {
+    "message": "Een balk per jaar, in de rolkleuren."
   }
 }

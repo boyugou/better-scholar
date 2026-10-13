@@ -129,11 +129,11 @@
     card(t("optPanelTitle"), null,
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
-        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
+        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["years", t("optPanelYears"), t("optPanelYearsHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
         .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show })),
       // two shortcuts over the switches above
       h("div", { class: "row" },
-        h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "marks", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")),
+        h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "marks", "years", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")),
         h("button", { class: "btn", type: "button", "data-act": "panel-full", onClick: () => { for (const k of B.prefs.PANEL_PARTS) prefs.panel[k] = true; save(); } }, t("optPanelFull")))),
     card(t("optSemanticTitle"), t("optSemanticHint"),
       option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } })),
@@ -197,7 +197,7 @@
       ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
       marks: counts, markKinds: prefs.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
-      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS),
+      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS),
       coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
       variants: [], nameHints: { auto: [], suggestions: [] }

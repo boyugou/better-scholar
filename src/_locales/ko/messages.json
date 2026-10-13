@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "'완성'을 누르면 먼저 semanticscholar.org에 각 논문의 전체 저자 목록을 묻고(논문 제목만 보냅니다), 거기서 찾지 못한 것만 Scholar 자체 페이지를 읽습니다. Scholar에 대한 요청이 줄어 CAPTCHA도 줄어듭니다."
+  },
+  "yearsTitle": {
+    "message": "연도별 강조된 논문"
+  },
+  "optPanelYears": {
+    "message": "연도별 논문"
+  },
+  "optPanelYearsHint": {
+    "message": "연도마다 막대 하나, 역할 색으로 표시합니다."
   }
 }

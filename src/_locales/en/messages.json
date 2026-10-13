@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "When you press Complete, ask semanticscholar.org for each paper's full author list first (it sends the paper's title and nothing else), and Scholar's own page only for what it does not know. Fewer requests to Scholar, so fewer CAPTCHAs."
+  },
+  "yearsTitle": {
+    "message": "Highlighted papers by year"
+  },
+  "optPanelYears": {
+    "message": "Papers by year"
+  },
+  "optPanelYearsHint": {
+    "message": "A bar for each year, in the role colours."
   }
 }

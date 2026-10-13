@@ -40,6 +40,22 @@
     return { highlighted: pick(rows.filter((r) => r.highlighted)), all: pick(rows) };
   }
 
+  // Highlighted papers per year and role, oldest first, every year between the first and the last (a year with none has zeros):
+  // [{ year, first, cofirst, second, last, total }]. Rows without a year are left out.
+  function byYear(rows) {
+    const per = new Map();
+    for (const r of rows) {
+      if (!r.highlighted || r.year == null || !["first", "cofirst", "second", "last"].includes(r.role)) continue;
+      if (!per.has(r.year)) per.set(r.year, { year: r.year, first: 0, cofirst: 0, second: 0, last: 0, total: 0 });
+      const e = per.get(r.year);
+      e[r.role]++; e.total++;
+    }
+    if (!per.size) return [];
+    const years = [...per.keys()], out = [];
+    for (let y = Math.min(...years); y <= Math.max(...years); y++) out.push(per.get(y) || { year: y, first: 0, cofirst: 0, second: 0, last: 0, total: 0 });
+    return out;
+  }
+
   // The tier a row falls in for the chosen ranking source: 'A' / 'B' / … or 'none'.
   function tierOf(row, source) {
     const v = row.venue || {};
@@ -138,5 +154,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
 });

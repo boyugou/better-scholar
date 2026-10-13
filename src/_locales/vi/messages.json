@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Khi nhấn Bổ sung, trước hết hỏi semanticscholar.org danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
+  },
+  "yearsTitle": {
+    "message": "Bài được tô nổi theo năm"
+  },
+  "optPanelYears": {
+    "message": "Bài theo năm"
+  },
+  "optPanelYearsHint": {
+    "message": "Một cột cho mỗi năm, theo màu vai trò."
   }
 }

@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "「補完」を押すと、まず semanticscholar.org に各論文の著者一覧全体を問い合わせます（送るのは論文のタイトルだけです）。そこで分からなかったものだけ Scholar 自身のページを読みます。Scholar へのリクエストが減り、CAPTCHA も減ります。"
+  },
+  "yearsTitle": {
+    "message": "年別のハイライト論文"
+  },
+  "optPanelYears": {
+    "message": "年別の論文数"
+  },
+  "optPanelYearsHint": {
+    "message": "年ごとに棒を表示し、役割の色で塗り分けます。"
   }
 }

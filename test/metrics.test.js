@@ -129,3 +129,10 @@ test("toRowsTsv: a header and one line per row; a tab or a line break inside a f
   assert.equal(m.toRowsTsv(["T", "N"], [["=HYPERLINK(\"http://x\",\"y\")", -3], ["+1 and -1 ways", "@user"], ["-Omics at scale", "x=y"]]),
     "T\tN\n\"'=HYPERLINK(\"\"http://x\"\",\"\"y\"\")\"\t-3\n'+1 and -1 ways\t'@user\n'-Omics at scale\tx=y");
 });
+
+test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
+  const r = (year, role, highlighted = true) => ({ year, role, highlighted });
+  const out = m.byYear([r(2020, "first"), r(2020, "last"), r(2022, "second"), r(2022, "first", false), r(null, "first"), r(2021, "middle")]);
+  assert.deepEqual(out.map((e) => [e.year, e.first, e.last, e.second, e.total]), [[2020, 1, 1, 0, 2], [2021, 0, 0, 0, 0], [2022, 0, 0, 1, 1]]);
+  assert.deepEqual(m.byYear([]), []);
+});

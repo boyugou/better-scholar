@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Når du trykker Fullfør, spør semanticscholar.org først etter hver artikkels fulle forfatterliste (bare tittelen sendes), og Scholars egen side leses bare for det den ikke kjenner. Det gir færre forespørsler til Scholar og færre captcha-er."
+  },
+  "yearsTitle": {
+    "message": "Uthevede artikler per år"
+  },
+  "optPanelYears": {
+    "message": "Artikler per år"
+  },
+  "optPanelYearsHint": {
+    "message": "En stolpe for hvert år, i rollefargene."
   }
 }

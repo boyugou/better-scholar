@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.13.0 — 2026-10-12
+
+- The panel gains **Highlighted papers by year**: one bar a year, stacked in the role colours (hover for the numbers). It has its own switch under Summary panel, and is left out of the compact layout.
+
 ## 2.12.0 — 2026-10-12
 
 - **Talk rows.** Settings → Awards and talks → Rows in the panel: show Oral, Spotlight and Highlight apart (as before), Spotlight and Highlight in one row, or all three in one row ("Talks"). A paper with several counts once; clicking a merged row lists its papers.

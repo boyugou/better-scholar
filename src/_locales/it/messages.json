@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Premendo Completa, chiede prima a semanticscholar.org l'elenco completo degli autori di ogni articolo (invia solo il titolo dell'articolo), e legge la pagina di Scholar solo per ciò che non conosce. Meno richieste a Scholar, quindi meno CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "Articoli evidenziati per anno"
+  },
+  "optPanelYears": {
+    "message": "Articoli per anno"
+  },
+  "optPanelYearsHint": {
+    "message": "Una barra per anno, nei colori dei ruoli."
   }
 }

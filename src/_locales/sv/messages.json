@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "När du trycker på Komplettera frågar tillägget först semanticscholar.org efter varje artikels fullständiga författarlista (det skickar bara artikelns titel). Scholars egen sida läses bara för det semanticscholar.org inte känner till. Det innebär färre förfrågningar till Scholar och färre captcha-koder."
+  },
+  "yearsTitle": {
+    "message": "Markerade artiklar per år"
+  },
+  "optPanelYears": {
+    "message": "Artiklar per år"
+  },
+  "optPanelYearsHint": {
+    "message": "En stapel för varje år, i rollfärgerna."
   }
 }

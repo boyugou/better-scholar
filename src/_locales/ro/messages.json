@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Când apăsați Completează, se întreabă mai întâi semanticscholar.org lista completă de autori a fiecărei lucrări (se trimite doar titlul lucrării), iar pagina Scholar se citește doar pentru ce nu știe acesta. Mai puține cereri către Scholar, deci și mai puține CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "Lucrări evidențiate pe an"
+  },
+  "optPanelYears": {
+    "message": "Lucrări pe an"
+  },
+  "optPanelYearsHint": {
+    "message": "O bară pentru fiecare an, în culorile rolurilor."
   }
 }

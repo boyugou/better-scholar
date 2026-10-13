@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Saat menekan Lengkapi, semanticscholar.org lebih dulu ditanya tentang daftar penulis lengkap tiap makalah (hanya judul makalah yang dikirim), dan halaman Scholar sendiri hanya dibuka untuk yang tidak diketahuinya. Permintaan ke Scholar lebih sedikit, jadi CAPTCHA juga lebih sedikit."
+  },
+  "yearsTitle": {
+    "message": "Makalah yang disorot per tahun"
+  },
+  "optPanelYears": {
+    "message": "Makalah per tahun"
+  },
+  "optPanelYearsHint": {
+    "message": "Satu batang untuk setiap tahun, dalam warna peran."
   }
 }

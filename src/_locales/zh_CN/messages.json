@@ -614,5 +614,14 @@
   },
   "optSemanticLabelHint": {
     "message": "点“补全”时，先向 semanticscholar.org 询问每篇论文的完整作者列表（只发送论文标题，不发别的），它不认识的才去读 Scholar 自己的页面。对 Scholar 的请求更少，验证码也更少。"
+  },
+  "yearsTitle": {
+    "message": "各年份的高亮论文"
+  },
+  "optPanelYears": {
+    "message": "按年份统计"
+  },
+  "optPanelYearsHint": {
+    "message": "每年一根柱，用各位次的颜色。"
   }
 }

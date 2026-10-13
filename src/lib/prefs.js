@@ -15,7 +15,7 @@
   const ROLES = ["first", "cofirst", "second", "last"];
   const RANKS = ["ccf", "core"];
   const MARK_GROUPS = ["award", "oral", "spotlight", "highlight"];
-  const PANEL_PARTS = ["show", "summary", "marks", "filters", "metrics", "status", "names"];
+  const PANEL_PARTS = ["show", "summary", "marks", "filters", "metrics", "years", "status", "names"];
   const HIDE_PARTS = ["cited", "coauthors", "access"];     // Scholar's own side blocks that can be hidden: "Cited by", "Co-authors", "Public access"
 
   const flag = (v, fallback) => (typeof v === "boolean" ? v : fallback);

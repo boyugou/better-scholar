@@ -632,5 +632,14 @@
   },
   "optSemanticLabelHint": {
     "message": "Tamamla'ya basıldığında önce her makalenin tam yazar listesi için semanticscholar.org'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca semanticscholar.org'un bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
+  },
+  "yearsTitle": {
+    "message": "Yıllara göre vurgulanan makaleler"
+  },
+  "optPanelYears": {
+    "message": "Yıllara göre makaleler"
+  },
+  "optPanelYearsHint": {
+    "message": "Her yıl için rol renklerinde bir çubuk."
   }
 }
