@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6520
+  "count": 6530
  },
  "entries": [
   {
@@ -10281,6 +10281,140 @@
    "track": "main",
    "source": "https://etaps.org/awards/best-paper/",
    "evidence": "ETAPS 2011 Springer Best Student Paper Award: Sebastian Buchwald, Andreas Zwinkau, Thomas Bersch. SSA-based register allocation with PBQP"
+  },
+  {
+   "venue": "CCC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "On the Complexity of Branching Proofs",
+   "authors": [
+    "Daniel Dadush",
+    "Samarth Tiwari"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2020/program.html",
+   "evidence": "CCC 2020 Best Paper Award: On the Complexity of Branching Proofs — Daniel Dadush, Samarth Tiwari"
+  },
+  {
+   "venue": "CCC",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Connecting Perebor Conjectures: Towards a Search to Decision Reduction for Minimizing Formulas",
+   "authors": [
+    "Rahul Ilango"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2020/program.html",
+   "evidence": "CCC 2020 Best Student Paper Award: Connecting Perebor Conjectures: Towards a Search to Decision Reduction for Minimizing Formulas — Rahul Ilango"
+  },
+  {
+   "venue": "CCC",
+   "year": 2021,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "A Lower Bound for Polynomial Calculus with Extension Rule",
+   "authors": [
+    "Yaroslav Alekseev"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2021/program.html",
+   "evidence": "CCC 2021 Best Student Paper Award: A Lower Bound for Polynomial Calculus with Extension Rule — Yaroslav Alekseev"
+  },
+  {
+   "venue": "CCC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "The Acrobatics of BQP",
+   "authors": [
+    "Scott Aaronson",
+    "Devon Ingram",
+    "William Kretschmer"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2022/program.html",
+   "evidence": "CCC 2022 Best Paper Award: The Acrobatics of BQP — Scott Aaronson, Devon Ingram, William Kretschmer"
+  },
+  {
+   "venue": "CCC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Derandomization from Time-Space Tradeoffs",
+   "authors": [
+    "Oliver Korten"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2022/program.html",
+   "evidence": "CCC 2022 Best Student Paper Award: Derandomization from Time-Space Tradeoffs — Oliver Korten"
+  },
+  {
+   "venue": "CCC",
+   "year": 2022,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Improved Pseudorandom Generators for AC^0 Circuits",
+   "authors": [
+    "Xin Lyu"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2022/program.html",
+   "evidence": "CCC 2022 Best Student Paper Award: Improved Pseudorandom Generators for AC^0 Circuits — Xin Lyu"
+  },
+  {
+   "venue": "CCC",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Low-depth algebraic circuit lower bounds over any field",
+   "authors": [
+    "Michael A. Forbes"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2024/program.html",
+   "evidence": "CCC 2024 Best Paper Award: Low-depth algebraic circuit lower bounds over any field — Michael A. Forbes"
+  },
+  {
+   "venue": "CCC",
+   "year": 2024,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Derandomizing Logspace with a Small Shared Hard Drive",
+   "authors": [
+    "Edward Pyne"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2024/program.html",
+   "evidence": "CCC 2024 Best Student Paper Award: Derandomizing Logspace with a Small Shared Hard Drive — Edward Pyne"
+  },
+  {
+   "venue": "CCC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Quantum Threshold is Powerful",
+   "authors": [
+    "Jackson Morris",
+    "Daniel Grier"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2025/program.html",
+   "evidence": "CCC 2025 Best Paper Award: Quantum Threshold is Powerful — Jackson Morris, Daniel Grier"
+  },
+  {
+   "venue": "CCC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "Switching Graph Matrix Norm Bounds: from i.i.d. to Random Regular Graphs",
+   "authors": [
+    "Jeff Xu"
+   ],
+   "track": "main",
+   "source": "https://www.computationalcomplexity.org/Archive/2025/program.html",
+   "evidence": "CCC 2025 Best Student Paper Award: Switching Graph Matrix Norm Bounds: from i.i.d. to Random Regular Graphs — Jeff Xu"
   },
   {
    "venue": "CCS",

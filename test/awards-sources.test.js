@@ -2017,3 +2017,13 @@ test("FOCS best-paper page: titles with 'Authors:' lines under the best paper an
   const h = `<p>Best Paper Award co-winners</p><p>Explicit lossless vertex expanders</p><p>Authors: Ann Lee, Bo Chan, and Cy Dunn</p><p>Machtey Award for Best Student Paper co-winners</p><p>Obfuscation of unitary quantum programs</p><p>Authors: Ed (Eddie) Fox and Flo Gray</p><p>Privacy Policy</p>`;
   assert.deepEqual(parseFocsBest(h, "https://focs.computer.org/2025/best-paper-awards/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["best Explicit lossless vertex expanders | Ann Lee; Bo Chan; Cy Dunn", "student Obfuscation of unitary quantum programs | Ed Fox; Flo Gray"]);
 });
+
+test("CCC program page: winners tagged under the title, inline after it, or by a heading above it; a wrapped title is joined; untagged talks are left out", async () => {
+  const { parseCccProgram } = await import("../scripts/awards/tot.mjs");
+  const h = `<p>14:00</p><p>Switching graph matrix norm</p><p>Bounds: from random graphs to regular ones (paper, talk)</p><p>(winner - Best student paper award)</p><p>Jeff Xu</p><p>14:30</p><p>An ordinary talk about complexity (paper, talk)</p><p>Ann Lee, Bo Chan</p><p>15:00</p><p>Derandomization from time-space tradeoffs (co-winner Best student paper)</p><p>Cy Dunn</p><p>16:00</p><p>Best paper award</p><p>On the complexity of branching proofs</p><p>Ed Fox and Flo Gray</p>`;
+  assert.deepEqual(parseCccProgram(h, "https://www.computationalcomplexity.org/Archive/2022/program.html").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), [
+    "student Switching graph matrix norm Bounds: from random graphs to regular ones | Jeff Xu",
+    "student Derandomization from time-space tradeoffs | Cy Dunn",
+    "best On the complexity of branching proofs | Ed Fox; Flo Gray"
+  ]);
+});

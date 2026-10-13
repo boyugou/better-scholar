@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.58 — 2026-10-12
+
+- The Computational Complexity Conference's best and best student papers of 2020–2022, 2024 and 2025 (the list had none) from the winning talks tagged in each year's own program page (`tot.mjs ccc-year`). 2023's page names none. The list has 6530 awards.
+
 ## 2.10.57 — 2026-10-12
 
 - FOCS 2025's three best papers and two Machtey Award (best student paper) papers from the conference's own best-paper page (`tot.mjs focs-best`); FOCS had only its test of time papers. The list has 6520 awards.
