@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 6567
+  "count": 6579
  },
  "entries": [
   {
@@ -70180,6 +70180,177 @@
   },
   {
    "venue": "IMC",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Coming of Age: A Longitudinal Study of TLS Deployment",
+   "authors": [
+    "Platon Kotzias",
+    "Abbas Razaghpanah",
+    "Johanna Amann",
+    "Kenneth G. Paterson",
+    "Narseo Vallina-Rodriguez",
+    "Juan Caballero"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2018/program/",
+   "evidence": "IMC 2018 Distinguished Paper Award: Coming of Age: A Longitudinal Study of TLS Deployment — Platon Kotzias, Abbas Razaghpanah, Johanna Amann, Kenneth G. Paterson, Narseo Vallina-Rodriguez, Juan Caballero"
+  },
+  {
+   "venue": "IMC",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "On the Origins of Memes by Means of Fringe Web Communities",
+   "authors": [
+    "Savvas Zannettou",
+    "Tristan Caulfield",
+    "Jeremy Blackburn",
+    "Emiliano De Cristofaro",
+    "Michael Sirivianos",
+    "Gianluca Stringhini",
+    "Guillermo Suarez-Tangil"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2018/program/",
+   "evidence": "IMC 2018 Distinguished Paper Award: On the Origins of Memes by Means of Fringe Web Communities — Savvas Zannettou, Tristan Caulfield, Jeremy Blackburn, Emiliano De Cristofaro, Michael Sirivianos, Gianluca Stringhini, Guillermo Suarez-Tangil"
+  },
+  {
+   "venue": "IMC",
+   "year": 2018,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Tracing Cross Border Web Tracking",
+   "authors": [
+    "Costas Iordanou",
+    "Georgios Smaragdakis",
+    "Ingmar Poese",
+    "Nikolaos Laoutaris"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2018/program/",
+   "evidence": "IMC 2018 Distinguished Paper Award: Tracing Cross Border Web Tracking — Costas Iordanou, Georgios Smaragdakis, Ingmar Poese, Nikolaos Laoutaris"
+  },
+  {
+   "venue": "IMC",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Profiling BGP Serial Hijackers: Capturing Persistent Misbehavior in the Global Routing Table long slides",
+   "authors": [
+    "Cecilia Testart",
+    "Philipp Richter",
+    "Alistair King",
+    "Alberto Dainotti",
+    "David Clark"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2019/program/",
+   "evidence": "IMC 2019 Distinguished Paper Award: Profiling BGP Serial Hijackers: Capturing Persistent Misbehavior in the Global Routing Table long slides — Cecilia Testart, Philipp Richter, Alistair King, Alberto Dainotti, David Clark"
+  },
+  {
+   "venue": "IMC",
+   "year": 2019,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Roll, Roll, Roll your Root: A Comprehensive Analysis of the First Ever DNSSEC Root KSK Rollover long slides",
+   "authors": [
+    "Moritz Müller",
+    "Matthew Thomas",
+    "Duane Wessels",
+    "Wes Hardaker",
+    "Taejoong Chung",
+    "Willem Toorop",
+    "Roland van Rijswijk-Deij"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2019/program/",
+   "evidence": "IMC 2019 Distinguished Paper Award: Roll, Roll, Roll your Root: A Comprehensive Analysis of the First Ever DNSSEC Root KSK Rollover long slides — Moritz Müller, Matthew Thomas, Duane Wessels, Wes Hardaker, Taejoong Chung, Willem Toorop, Roland van Rijswijk-Deij"
+  },
+  {
+   "venue": "IMC",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Exploring the “Internet from space” with Hypatia",
+   "authors": [
+    "Simon Kassing",
+    "Debopam Bhattacherjee",
+    "André Baptista Águas",
+    "Jens Eirik Saethre",
+    "Ankit Singla"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2020/schedule/",
+   "evidence": "IMC 2020 Best Paper Award: Exploring the “Internet from space” with Hypatia — Simon Kassing, Debopam Bhattacherjee, André Baptista Águas, Jens Eirik Saethre, Ankit Singla"
+  },
+  {
+   "venue": "IMC",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Follow the scent: defeating IPv6 prefix rotation privacy",
+   "authors": [
+    "Erik Rye",
+    "Robert Beverly",
+    "kc claffy"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2021/schedule/",
+   "evidence": "IMC 2021 Best Paper Award: Follow the scent: defeating IPv6 prefix rotation privacy — Erik Rye, Robert Beverly, kc claffy"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "Best Short Paper Award",
+   "title": "The Best of Both Worlds: High Availability CDN Routing Without Compromising Control",
+   "authors": [
+    "Jiangchen Zhu",
+    "Kevin Vermeulen",
+    "Italo Cunha",
+    "Ethan Katz-Bassett",
+    "Matt Calder"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2022/program/",
+   "evidence": "IMC 2022 Best Short Paper Award: The Best of Both Worlds: High Availability CDN Routing Without Compromising Control — Jiangchen Zhu, Kevin Vermeulen, Italo Cunha, Ethan Katz-Bassett, Matt Calder"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "Measurement and Analysis of Implied Identity in Ad Delivery Optimization",
+   "authors": [
+    "Levi Kaplan",
+    "Nicole Gerzon",
+    "Alan Mislove",
+    "Piotr Sapiezynski"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2022/program/",
+   "evidence": "IMC 2022 Distinguished Paper Award: Measurement and Analysis of Implied Identity in Ad Delivery Optimization — Levi Kaplan, Nicole Gerzon, Alan Mislove, Piotr Sapiezynski"
+  },
+  {
+   "venue": "IMC",
+   "year": 2022,
+   "award": "distinguished",
+   "awardLabel": "Distinguished Paper Award",
+   "title": "The Importance of Contextualization of Crowdsourced Active Speed Test Measurements",
+   "authors": [
+    "Udit Paul",
+    "Jiamo Liu",
+    "Arpit Gupta",
+    "Mengyang Gu",
+    "Elizabeth Belding"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2022/program/",
+   "evidence": "IMC 2022 Distinguished Paper Award: The Importance of Contextualization of Crowdsourced Active Speed Test Measurements — Udit Paul, Jiamo Liu, Arpit Gupta, Mengyang Gu, Elizabeth Belding"
+  },
+  {
+   "venue": "IMC",
    "year": 2022,
    "award": "tot",
    "awardLabel": "Test of Time Award",
@@ -70265,6 +70436,43 @@
    "paperYear": 2012,
    "source": "https://sigcomm.hosting2.acm.org/awards/IMC-test-of-time-award",
    "evidence": "IMC 2023 Test of Time Award: S. Shunmuga Krishnan, Ramesh K. Sitaraman “Video Stream Quality Impacts Viewer Behavior: Inferring Causality Using Quasi-Experimental Designs”"
+  },
+  {
+   "venue": "IMC",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "Best Paper Award",
+   "title": "Congestion Patterns in a Large-scale RDMA Datacenter",
+   "authors": [
+    "Soudeh Ghorbani",
+    "Yimeng Zhao",
+    "Srikanth Sundaresan",
+    "Ying Zhang",
+    "Yijing Zeng",
+    "Abhigyan Sharma",
+    "Prashanth Kannan",
+    "Cristian Lumezanu"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2025/program/",
+   "evidence": "IMC 2025 Best Paper Award: Congestion Patterns in a Large-scale RDMA Datacenter — Soudeh Ghorbani, Yimeng Zhao, Srikanth Sundaresan, Ying Zhang, Yijing Zeng, Abhigyan Sharma, Prashanth Kannan, Cristian Lumezanu"
+  },
+  {
+   "venue": "IMC",
+   "year": 2025,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award",
+   "title": "LACeS: an Open, Fast, Responsible and Efficient Longitudinal Anycast Census System",
+   "authors": [
+    "Remi Hendriks",
+    "Matthew Luckie",
+    "Mattijs Jonker",
+    "Raffaele Sommese",
+    "Roland van Rijswijk-Deij"
+   ],
+   "track": "main",
+   "source": "https://conferences.sigcomm.org/imc/2025/program/",
+   "evidence": "IMC 2025 Best Student Paper Award: LACeS: an Open, Fast, Responsible and Efficient Longitudinal Anycast Census System — Remi Hendriks, Matthew Luckie, Mattijs Jonker, Raffaele Sommese, Roland van Rijswijk-Deij"
   },
   {
    "venue": "IMX",

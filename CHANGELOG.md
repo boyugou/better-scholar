@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.66 — 2026-10-12
+
+- IMC's best, best student, best short and distinguished papers of 2018–2022 and 2025 (12 papers; the list had one) from each year's own program page, where the award is written under, after or beside the title in a layout of that year (`tot.mjs imc-year`); the reader refuses a page whose <title> names another year. 2023's and 2024's pages mark no award. The list has 6579 awards.
+
 ## 2.10.65 — 2026-10-12
 
 - HRI's best papers of 2022 (5) and 2025 (7 of the full and short tracks, and 4 of alt.HRI, late-breaking reports and demonstrations as categories) from the conference's own awards pages (`tot.mjs hri-year`); the list had HRI 2020 and 2024 only. The honorable mentions are not read. The list has 6567 awards.

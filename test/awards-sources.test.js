@@ -2084,3 +2084,12 @@ test("HRI awards pages: 2025's 'Best paper: “Title“, Authors.' lines under t
   const b = `<p>Full Papers</p><p>Design:</p><p>Best Paper Award</p><p>Machine-like behaviors for robot navigation in elevators</p><p>Gil Hart, Hal Ito</p><p>Honorable Mention</p><p>An honoured cognitively assistive paper</p><p>Ivy Jones</p>`;
   assert.deepEqual(parseHriAwards(b, "https://humanrobotinteraction.org/2022/awards/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Machine-like behaviors for robot navigation in elevators | Gil Hart; Hal Ito"]);
 });
+
+test("IMC program pages: the award on its own line under the title, or written after it; the page must be titled with the year; a lower-case name is kept", async () => {
+  const { parseImcProgram } = await import("../scripts/awards/tot.mjs");
+  const a = `<title>ACM IMC 2022 - Program</title><p>Sessions</p><p>Measurement of implied identity in ad delivery  long    video</p><p>Distinguished Paper Award</p><p>Ann Lee (Northeastern), Bo Chan (Northeastern)</p><p>Abstract</p>`;
+  assert.deepEqual(parseImcProgram(a, "https://conferences.sigcomm.org/imc/2022/program/").entries.map((e) => `${e.award} ${e.title} | ${e.authors.join("; ")}`), ["distinguished Measurement of implied identity in ad delivery | Ann Lee; Bo Chan"]);
+  const b = `<title>ACM IMC 2021 - Schedule</title><p>Sessions</p><p>Follow the scent: defeating prefix rotation privacy  Best Paper Award (video)</p><p>Cy Dunn (CMAND); Ed Fox (NPS); kc claffy (CAIDA)</p>`;
+  assert.deepEqual(parseImcProgram(b, "https://conferences.sigcomm.org/imc/2021/schedule/").entries.map((e) => `${e.title} | ${e.authors.join("; ")}`), ["Follow the scent: defeating prefix rotation privacy | Cy Dunn; Ed Fox; kc claffy"]);
+  assert.equal(parseImcProgram(a, "https://conferences.sigcomm.org/imc/2024/program/").entries.length, 0);
+});
