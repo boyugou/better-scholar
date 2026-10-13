@@ -1959,9 +1959,39 @@ export function parseInterspeechBest(html, source) {
 export function parseEcmlAwards(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
-  const year = parseInt((/ecmlpkdd\.org\/(\d{4})\//.exec(source) || [])[1], 10);
+  const ym = /ecmlpkdd\.org\/(\d{4})\//.exec(source) || /ecmlpkdd(\d{4})\./.exec(source) || [], year = parseInt(ym[1], 10);
   if (!year) return { entries, skipped: ["no year in the address"] };
   const KIND = (l) => (/^Test of Time$/i.test(l) ? ["tot", "Test of Time Award"] : /^Best Student Paper (?:Research|Applied Data Science) Track$/i.test(l) ? ["student", l + " Award"] : /^Best Paper (?:Research|Applied Data Science) Track$/i.test(l) ? ["best", l + " Award"] : null);
+  // 2026's layout: "Best Paper Award - Research Track", "Best Student Paper Award – Research Track", "Test-of-Time Award", each followed by the title and the authors' line.
+  // 2020's layout: "Best (Student) Machine Learning Paper Award" / "Best Data Mining Paper Award" / "Best Applied Data Science Paper Award", "Sponsored by …", the title, "Authors: A; B; C", the abstract; under "Winners" and then "Runners-up".
+  const B = (l) => /^Best (Student )?Paper Award\s*[-\u2013]\s*(?:Research|Applied Data Science) Track$/i.exec(l) || /^Test-of-Time Award$/i.exec(l);
+  if (ls.some(B)) {
+    for (let i = 0; i < ls.length; i++) {
+      const m = B(ls[i]);
+      if (!m) continue;
+      const tot = /^Test/i.test(ls[i]), student = !!m[1], title = cleanTitle(ls[i + 1] || ""), who = names(ls[i + 2] || "");
+      if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "ECML PKDD", year, award: tot ? "tot" : student ? "student" : "best", awardLabel: ls[i].replace(/\s+/g, " "), title, authors: who, track: "main", source, evidence: `ECML PKDD ${year} ${ls[i]}: ${title} — ${ls[i + 2]}`, ...(tot ? { paperYear: year - 10 } : {}) });
+      else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+      i += 2;
+    }
+    return { entries, skipped };
+  }
+  if (ls.some((l) => /^Authors: /.test(l)) && ls.some((l) => /^Best (?:Student )?(?:Machine Learning|Data Mining|Applied Data Science) Paper Award$|^Best (?:\(Student\) )?Machine Learning Paper Award$/i.test(l))) {
+    let label = null, runners = false;
+    for (let i = 0; i < ls.length; i++) {
+      const l = ls[i];
+      if (/^Runners?-up/i.test(l)) { runners = true; continue; }
+      if (/^Test of Time/i.test(l) || /^Part of ECML/i.test(l)) break;   // (the test-of-time paper follows the runners-up)
+      if (/^Best (?:\((Student)\) )?(?:Student )?(?:Machine Learning|Data Mining|Applied Data Science) Paper Award$/i.test(l)) { label = l; continue; }
+      const am = label && /^Authors: (.+)$/.exec(ls[i + 1] || "");
+      if (!am || /^Sponsored by|^Authors:|^Abstract:/.test(l)) continue;
+      const who = names(am[1].replace(/;/g, ",")), title = cleanTitle(l), student = /Student/i.test(label);
+      if (who.length && who.every(isPerson) && title.length >= 8) entries.push({ venue: "ECML PKDD", year, award: runners ? "runner-up" : student ? "student" : "best", awardLabel: runners ? `${label} (runner-up)` : label, title, authors: who, track: "main", source, evidence: `ECML PKDD ${year} ${label}${runners ? " (runner-up)" : ""}: ${title} — ${am[1]}` });
+      else skipped.push(`${year}: not read: ${title.slice(0, 50)}`);
+      i++;
+    }
+    return { entries, skipped };
+  }
   let kind = null;
   for (const l of ls) {
     const k = KIND(l);

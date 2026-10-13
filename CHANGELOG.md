@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.121 — 2026-10-12
+
+- ECML PKDD 2026's best papers and test-of-time paper and 2020's best, student and runner-up papers (10 papers) from the conference's own award pages (the `ecml` reader takes the 2026 and 2020 layouts too). The list has 7770 awards.
+
 ## 2.10.120 — 2026-10-12
 
 - UAI 2024's outstanding paper and outstanding student paper (2 papers; the UAI reader now takes the "Outstanding" labels and a separate "by Authors" line). SOSP 2019's awards page and UAI's earlier years' pages were looked at and not read (wrapped lines; 404). The list has 7760 awards.

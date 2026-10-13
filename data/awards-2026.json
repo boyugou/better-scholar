@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7760
+  "count": 7770
  },
  "entries": [
   {
@@ -55079,6 +55079,105 @@
   },
   {
    "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Applied Data Science Paper Award",
+   "title": "Learning to Simulate on Sparse Trajectory Data",
+   "authors": [
+    "Hua Wei",
+    "Chacha Chen",
+    "Chang Liu",
+    "Guanjie Zheng",
+    "Zhenhui Li"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best Applied Data Science Paper Award: Learning to Simulate on Sparse Trajectory Data — Hua Wei; Chacha Chen; Chang Liu; Guanjie Zheng; Zhenhui Li"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "Best Data Mining Paper Award",
+   "title": "Revisiting Wedge Sampling for Budgeted Maximum Inner Product Search",
+   "authors": [
+    "Stephan Sloth Lorenzen",
+    "Ninh Pham"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best Data Mining Paper Award: Revisiting Wedge Sampling for Budgeted Maximum Inner Product Search — Stephan Sloth Lorenzen; Ninh Pham"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Student Machine Learning Paper Award (runner-up)",
+   "title": "A Principle of Least Action for the Training of Neural Networks",
+   "authors": [
+    "Skander Karkar",
+    "Ibrahim Ayed",
+    "Emmanuel de Bézenac",
+    "Patrick Gallinari"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best Student Machine Learning Paper Award (runner-up): A Principle of Least Action for the Training of Neural Networks — Skander Karkar, Ibrahim Ayed, Emmanuel de Bézenac, Patrick Gallinari"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "runner-up",
+   "awardLabel": "Best Student Machine Learning Paper Award (runner-up)",
+   "title": "Learning a Contextual and Topological Representation of Areas-of-Interest for On-Demand Delivery Application",
+   "authors": [
+    "Mingxuan Yue",
+    "Tianshu Sun",
+    "Fan Wu",
+    "Lixia Wu",
+    "Yinghui Xu",
+    "Cyrus Shahabi"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best Student Machine Learning Paper Award (runner-up): Learning a Contextual and Topological Representation of Areas-of-Interest for On-Demand Delivery Application — Mingxuan Yue, Tianshu Sun, Fan Wu, Lixia Wu, Yinghui Xu, Cyrus Shahabi"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best (Student) Machine Learning Paper Award",
+   "title": "Robust Domain Adaptation: Representations, Weights and Inductive Bias",
+   "authors": [
+    "Victor Bouvier",
+    "Philippe Very",
+    "Clément Chastagnol",
+    "Myriam Tami",
+    "Céline Hudelot"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best (Student) Machine Learning Paper Award: Robust Domain Adaptation: Representations, Weights and Inductive Bias — Victor Bouvier; Philippe Very; Clément Chastagnol; Myriam Tami; Céline Hudelot"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2020,
+   "award": "student",
+   "awardLabel": "Best Student Data Mining Paper Award",
+   "title": "SpecGreedy: Unified Dense Subgraph Detection",
+   "authors": [
+    "Wenjie Feng",
+    "Shenghua Liu",
+    "Danai Koutra",
+    "Huawei Shen",
+    "Xueqi Cheng"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd2020.net/programme/awards/",
+   "evidence": "ECML PKDD 2020 Best Student Data Mining Paper Award: SpecGreedy: Unified Dense Subgraph Detection — Wenjie Feng, Shenghua Liu, Danai Koutra, Huawei Shen, Xueqi Cheng"
+  },
+  {
+   "venue": "ECML PKDD",
    "year": 2023,
    "award": "best",
    "awardLabel": "Best Paper Award (ADS Track)",
@@ -55244,6 +55343,66 @@
    "track": "main",
    "source": "https://ecmlpkdd.org/2025/awards/",
    "evidence": "ECML PKDD 2025 Test of Time Award: Difference Target Propagation — Dong-Hyun Lee, Saizheng Zhang, Asja Fischer, Yoshua Bengio"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award - Research Track",
+   "title": "Across the Loss Landscape with Progressive Growth",
+   "authors": [
+    "Paul Caillon",
+    "Christophe Cerisara",
+    "Alexandre Allauzen"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2026/awards/",
+   "evidence": "ECML PKDD 2026 Best Paper Award - Research Track: Across the Loss Landscape with Progressive Growth — Paul Caillon, Christophe Cerisara, Alexandre Allauzen"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2026,
+   "award": "best",
+   "awardLabel": "Best Paper Award - Applied Data Science Track",
+   "title": "Surprised by Attention: Predictable Query Dynamics for Time Series Anomaly Detection",
+   "authors": [
+    "Kadir-Kaan Özer",
+    "Rene Ebeling",
+    "Markus Enzweiler"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2026/awards/",
+   "evidence": "ECML PKDD 2026 Best Paper Award - Applied Data Science Track: Surprised by Attention: Predictable Query Dynamics for Time Series Anomaly Detection — Kadir-Kaan Özer, Rene Ebeling, Markus Enzweiler"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2026,
+   "award": "student",
+   "awardLabel": "Best Student Paper Award – Research Track",
+   "title": "Learning in Matching Games with Bandit Feedback",
+   "authors": [
+    "Andreas Athanasopoulos",
+    "Christos Dimitrakakis"
+   ],
+   "track": "main",
+   "source": "https://ecmlpkdd.org/2026/awards/",
+   "evidence": "ECML PKDD 2026 Best Student Paper Award – Research Track: Learning in Matching Games with Bandit Feedback — Andreas Athanasopoulos, Christos Dimitrakakis"
+  },
+  {
+   "venue": "ECML PKDD",
+   "year": 2026,
+   "award": "tot",
+   "awardLabel": "Test-of-Time Award",
+   "title": "Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition",
+   "authors": [
+    "Hamed Karimi",
+    "Julie Nutini",
+    "Mark Schmidt"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://ecmlpkdd.org/2026/awards/",
+   "evidence": "ECML PKDD 2026 Test-of-Time Award: Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak–Łojasiewicz Condition — Hamed Karimi, Julie Nutini, Mark Schmidt"
   },
   {
    "venue": "EMNLP",
