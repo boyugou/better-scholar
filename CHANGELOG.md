@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.10.98 — 2026-10-12
+
+- ICCAD's McCalla best papers (front-end and back-end) and ten-year retrospective influential papers, 2005–2025 (38 papers; the list had none for ICCAD) from IEEE CEDA's own award page (`tot.mjs mccalla-awards`). The list has 7209 awards.
+
 ## 2.10.97 — 2026-10-12
 
 - FPGA's best papers 2011–2026 and FCCM's best papers and runner-up 2010–2026 (35 papers; the list had none for either) from the IEEE TCFPGA community's award pages (`tot.mjs tcfpga-best`). The list has 7171 awards.

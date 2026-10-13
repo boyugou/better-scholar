@@ -2302,6 +2302,13 @@ test("TCFPGA award pages: a year line ('2025' or '2025, City'), then a title lin
   assert.deepEqual(parseTcfpgaBest(h, "https://tcfpga.org/books/community-awards/page/fccm-best-paper-awards").entries.map((e) => `${e.year} ${e.award} | ${e.authors.join("; ")} | ${e.title}`), ["2024 best | Ann Lee; Bo Chan; Cy Dunn | A congestion-aware timing-driven placer accelerated by GPUs", "2023 best | Gil Hart; Hal Ito | A machine learning approach to predicting routing difficulty", "2023 runner-up | Jo Kim; Al Roe | Fast trace-based simulation for synthesis"]);
 });
 
+test("McCalla award page: per block a title, 'Author(s)', semicolon-separated authors, 'Citation' and the award (front/back-end read as best papers, the ten-year retrospective as a test of time with the publication year), and the year from the event", async () => {
+  const { parseMccallaAwards } = await import("../scripts/awards/tot.mjs");
+  const blk = (title, au, cit, ev, pub) => `<p>Paper</p><p>Paper</p><p>${title}</p><p>Author(s)</p><p>${au}</p>${pub ? `<p>Publication Date</p><p>${pub}</p>` : ""}<p>Citation</p><p>${cit}</p><p>Event Where Awarded</p><p>${ev}</p>`;
+  const h = `<h1>William J. McCalla ICCAD Best Paper Award | IEEE CEDA</h1><p>Choose Year</p><p>2024</p><p>2023</p><p>2024</p>` + blk("An agile framework for accelerator development", "Ann Lee; Bo Chan; Cy Dunn", "Front-End Category", "2024 ACM/IEEE International Conference on Computer-Aided Design") + blk("A high-performance timing analysis tool", "Ed Fox; Flo Gray", "Ten Year Retrospective Influential Paper Award", "2024 ACM/IEEE International Conference on Computer-Aided Design", "February 2015") + blk("Some unrelated lifetime item here", "Gil Hart", "Service Award", "2024 ICCAD");
+  assert.deepEqual(parseMccallaAwards(h, "https://ieee-ceda.org/awards/william-j-mccalla-award").entries.map((e) => `${e.year} ${e.award} ${e.paperYear || ""} | ${e.authors.join("; ")}`), ["2024 best  | Ann Lee; Bo Chan; Cy Dunn", "2024 tot 2015 | Ed Fox; Flo Gray"]);
+});
+
 test("EATCS best paper pages: after the history line, 'year / place' then one line per winner — a 'Track A: ' or 'Track A - ' prefix, the authors, a colon (or none), the quoted title; the student page marks the award", async () => {
   const { parseEatcsPaper } = await import("../scripts/awards/tot.mjs");
   const mk = (head, body) => `<ul><li>Best ESA Paper</li></ul>` + "<p>x</p>".repeat(30) + `<h1>${head}</h1><p>Beginning in 2007, EATCS sponsors an award.</p><p>A brief history of the prize follows below.</p>${body}<p>We use cookies to improve</p>`;

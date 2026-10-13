@@ -4,7 +4,7 @@
   "edition": "2026-10",
   "scope": "main-conference paper awards (best / outstanding / distinguished / runner-up / student / test of time) of the listed venues, 1990-2026, from official award pages",
   "note": "Not exhaustive: a paper that is not listed simply has no mark. Every entry carries the official page it was read from and a quoted snippet; see data/README.md.",
-  "count": 7171
+  "count": 7209
  },
  "entries": [
   {
@@ -65030,6 +65030,616 @@
    "track": "main",
    "source": "https://icc2025.ieee-icc.org/program/best-paper-awards",
    "evidence": "ICC 2025 Best Paper Award, Communication and Information Systems Security: User Behavior-Based Dynamic Authentication Design for Enhanced Identity Security — Ye Zhang, Feng Wang, Jianbin Zeng, Lutong Chen, Xuanbo Huang, Zhonghui Li, Kaiping Xue"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2005,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "FastSies: A Fast Stochastic Integral Equation Solver for Modeling the Rough Surface Effect",
+   "authors": [
+    "Zhenhai Zhu",
+    "Jacob K. White"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2005 Front-End Award: FastSies: A Fast Stochastic Integral Equation Solver for Modeling the Rough Surface Effect — Zhenhai Zhu, Jacob K. White"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2006,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Joint Design-Time and Post-Silicon Minimization of Parametric Yield Loss using Adjustable Robust Optimization",
+   "authors": [
+    "Murari Mani",
+    "Ashish K. Singh",
+    "Michael Orshansky"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2006 Front-End Award: Joint Design-Time and Post-Silicon Minimization of Parametric Yield Loss using Adjustable Robust Optimization — Murari Mani, Ashish K. Singh, Michael Orshansky"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2007,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Approximation Algorithm for the Temperature-aware Scheduling Problem",
+   "authors": [
+    "Sushu Zhang",
+    "Karam S. Chatha"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2007 Front-End Award: Approximation Algorithm for the Temperature-aware Scheduling Problem — Sushu Zhang, Karam S. Chatha"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2009,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "TAPE: Thermal-aware agent-based power econom multi/many-core architectures",
+   "authors": [
+    "Thomas Ebi",
+    "Mohammad Abdullah Al Faruque",
+    "Jörg Henkel"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2009 Front-End Award: TAPE: Thermal-aware agent-based power econom multi/many-core architectures — Thomas Ebi; Mohammad Abdullah Al Faruque; Jörg Henkel"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2010,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "SimPL: An Effective Placement Algorithm",
+   "authors": [
+    "Myung-Chul Kim",
+    "Dong-Jin Lee",
+    "Igor L. Markov"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2010 Front-End Award: SimPL: An Effective Placement Algorithm — Myung-Chul Kim; Dong-Jin Lee; Igor L. Markov"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Formal Verification of Phase-Locked Loops Using Reachability Analysis and Continuization",
+   "authors": [
+    "Matthias Althoff",
+    "Soner Yaldiz",
+    "Akshay Rajhans",
+    "Xin Li",
+    "Bruce H. Krogh",
+    "Larry Pileggi"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2011 Front-End Award: Formal Verification of Phase-Locked Loops Using Reachability Analysis and Continuization — Matthias Althoff; Soner Yaldiz; Akshay Rajhans; Xin Li; Bruce H. Krogh; Larry Pileggi"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2011,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Gate Sizing and Device Technology Selection Algorithms for High-Performance Industrial Designs",
+   "authors": [
+    "Muhammet Mustafa Ozdal",
+    "Steven Burns",
+    "Jiang Hu"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2011 Front-End Award: Gate Sizing and Device Technology Selection Algorithms for High-Performance Industrial Designs — Muhammet Mustafa Ozdal; Steven Burns; Jiang Hu"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2012,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Stability Assurance and Design Optimization of Large Power Delivery Networks with Multiple On-Chip Voltage Regulators",
+   "authors": [
+    "Suming Lai",
+    "Boyuan Yan",
+    "Peng Li"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2012 Front-End Award: Stability Assurance and Design Optimization of Large Power Delivery Networks with Multiple On-Chip Voltage Regulators — Suming Lai; Boyuan Yan; Peng Li"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Improved SAT-based ATPG: More constraints, better compaction",
+   "authors": [
+    "Stephan Eggersglüß",
+    "Robert Wille",
+    "Rolf Drechsler"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2013 Front-End Award: Improved SAT-based ATPG: More constraints, better compaction — Stephan Eggersglüß; Robert Wille; Rolf Drechsler"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2013,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Methodology for standard cell compliance and detailed placement for triple patterning lithography",
+   "authors": [
+    "Bei Yu",
+    "Xiaoqing Xu",
+    "Jhih-Rong Gao",
+    "David Z. Pan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2013 Back-End Award: Methodology for standard cell compliance and detailed placement for triple patterning lithography — Bei Yu; Xiaoqing Xu; Jhih-Rong Gao; David Z. Pan"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Modeling and analysis of nonstationary low-frequency noise in circuit simulators: Enabling non Monte Carlo techniques",
+   "authors": [
+    "Ahmet Gokcen Mahmutoglu",
+    "Alper Demir"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2014 Back-End Award: Modeling and analysis of nonstationary low-frequency noise in circuit simulators: Enabling non Monte Carlo techniques — Ahmet Gokcen Mahmutoglu; Alper Demir"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2014,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Using multi-level cell STT-RAM for fast and energy-efficient local checkpointing",
+   "authors": [
+    "Ping Chi",
+    "Cong Xu",
+    "Tao Zhang",
+    "Xiangyu Dong",
+    "Yuan Xie"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2014 Front-End Award: Using multi-level cell STT-RAM for fast and energy-efficient local checkpointing — Ping Chi; Cong Xu; Tao Zhang; Xiangyu Dong; Yuan Xie"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "A polyhedral-based SystemC modeling and generation framework for effective low-power design space exploration",
+   "authors": [
+    "Wei Zuo",
+    "Warren Kemmerer",
+    "Jong Bin Lim",
+    "Louis-Noël Pouchet",
+    "Andrey Ayupov",
+    "Taemin Kim",
+    "Kyungtae Han",
+    "Deming Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2015 Front-End Award: A polyhedral-based SystemC modeling and generation framework for effective low-power design space exploration — Wei Zuo; Warren Kemmerer; Jong Bin Lim; Louis-Noël Pouchet; Andrey Ayupov; Taemin Kim; Kyungtae Han; Deming Chen"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2015,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Defect clustering-aware spare-TSV allocation for 3D ICs",
+   "authors": [
+    "Shengcheng Wang",
+    "Mehdi Tahoori",
+    "Krishnendu Chakrabarty"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2015 Back-End Award: Defect clustering-aware spare-TSV allocation for 3D ICs — Shengcheng Wang; Mehdi Tahoori; Krishnendu Chakrabarty"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Fast physics-based electromigration checking for on-die power grids",
+   "authors": [
+    "Sandeep Chatterjee",
+    "Valeriy Sukharev",
+    "Farid N. Najm"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2016 Back-End Award: Fast physics-based electromigration checking for on-die power grids — Sandeep Chatterjee; Valeriy Sukharev; Farid N. Najm"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2016,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Malicious LUT: A stealthy FPGA Trojan injected and triggered by the design flow",
+   "authors": [
+    "Christian Krieg",
+    "Clifford Wolf",
+    "Axel Jantsch"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2016 Front-End Award: Malicious LUT: A stealthy FPGA Trojan injected and triggered by the design flow — Christian Krieg; Clifford Wolf; Axel Jantsch"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "COMBA: A comprehensive model-based analysis framework for high level synthesis of real applications",
+   "authors": [
+    "Jieru Zhao",
+    "Liang Feng",
+    "Sharad Sinha",
+    "Yun Liang",
+    "Bingsheng He"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2017 Front-End Award: COMBA: A comprehensive model-based analysis framework for high level synthesis of real applications — Jieru Zhao; Liang Feng; Sharad Sinha; Yun (Eric) Liang; Bingsheng He"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2017,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "SALT: Provably good routing topology by a novel steiner shallow-light tree algorithm",
+   "authors": [
+    "Gengjie Chen",
+    "Peishan Tu",
+    "Evangeline F. Y. Young"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2017 Back-End Award: SALT: Provably good routing topology by a novel steiner shallow-light tree algorithm — Gengjie Chen; Peishan Tu; Evangeline F. Y. Young"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "DNNBuilder: an Automated Tool for Building High-Performance DNN Hardware Accelerators for FPGAs",
+   "authors": [
+    "Xiaofan Zhang",
+    "Junsong Wang",
+    "Chao Zhu",
+    "Yonghua Lin",
+    "Jinjun Xiong",
+    "Wen-Mei Hwu",
+    "Deming Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2018 Front-End Award: DNNBuilder: an Automated Tool for Building High-Performance DNN Hardware Accelerators for FPGAs — Xiaofan Zhang; Junsong Wang; Chao Zhu; Yonghua Lin; Jinjun Xiong; Wen-Mei Hwu; Deming Chen"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2018,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "PolyCleaner: Clean Your Polynomials Before Backward Rewriting to Verify Million-Gate Multipliers",
+   "authors": [
+    "Alireza Mahzoon",
+    "Daniel Große",
+    "Rolf Drechsler"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2018 Back-End Award: PolyCleaner: Clean Your Polynomials Before Backward Rewriting to Verify Million-Gate Multipliers — Alireza Mahzoon; Daniel Große; Rolf Drechsler"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Analyzing and Modeling In-Storage Computing Workloads On EISC — An FPGA-Based System-Level Emulation Platform",
+   "authors": [
+    "Zhenyuan Ruan",
+    "Tong He",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2019 Front-End Award: Analyzing and Modeling In-Storage Computing Workloads On EISC — An FPGA-Based System-Level Emulation Platform — Zhenyuan Ruan; Tong He; Jason Cong"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2019,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Power Grid Fixing for Electromigration-induced Voltage Failures",
+   "authors": [
+    "Zahi Moudallal",
+    "Valeriy Sukharev",
+    "Farid N. Najm"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2019 Back-End Award: Power Grid Fixing for Electromigration-induced Voltage Failures — Zahi Moudallal; Valeriy Sukharev; Farid N. Najm"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Electromigration Checking Using a Stochastic Effective Current Model",
+   "authors": [
+    "Adam Issa",
+    "Valeriy Sukharev",
+    "Farid N. Najm"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2020 Back-End Award: Electromigration Checking Using a Stochastic Effective Current Model — Adam Issa; Valeriy Sukharev; Farid N. Najm"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2020,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "HyperFuzzing for SoC Security Validation",
+   "authors": [
+    "Sujit Kumar Muduli",
+    "Gourav Takhar",
+    "Pramod Subramanayan"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2020 Front-End Award: HyperFuzzing for SoC Security Validation — Sujit Kumar Muduli; Gourav Takhar; Pramod Subramanayan"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Analytical Modeling of Transient Electromigration Stress based on Boundary Reflections",
+   "authors": [
+    "Mohammad Abdullah Al Shohel",
+    "Vidya A. Chhabria",
+    "Nestor Evmorfopoulos",
+    "Sachin S. Sapatnekar"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2021 Back-End Award: Analytical Modeling of Transient Electromigration Stress based on Boundary Reflections — Mohammad Abdullah Al Shohel; Vidya A. Chhabria; Nestor Evmorfopoulos; Sachin S. Sapatnekar"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2021,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "BOOM-Explorer: RISC-V BOOM Microarchitecture Design Space Exploration Framework",
+   "authors": [
+    "Chen Bai",
+    "Qi Sun",
+    "Jianwang Zhai",
+    "Yuzhe Ma",
+    "Bei Yu",
+    "Martin D.F. Wong"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2021 Front-End Award: BOOM-Explorer: RISC-V BOOM Microarchitecture Design Space Exploration Framework — Chen Bai; Qi Sun; Jianwang Zhai; Yuzhe Ma; Bei Yu; Martin D.F. Wong"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Attack Directories on ARM big.LITTLE Processors",
+   "authors": [
+    "Zili Kou",
+    "Sharad Sinha",
+    "Wenjian He",
+    "Wei Zhang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2022 Front-End Award: Attack Directories on ARM big.LITTLE Processors — Zili Kou; Sharad Sinha; Wenjian He; Wei Zhang"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2022,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "SpecPart: A Supervised Spectral Framework for Hypergraph Partitioning Solution Improvement",
+   "authors": [
+    "Ismail Bustany",
+    "Andrew B. Kahng",
+    "Ioannis Koutis",
+    "Bodhisatta Pramanik",
+    "Zhiang Wang"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2022 Back-End Award: SpecPart: A Supervised Spectral Framework for Hypergraph Partitioning Solution Improvement — Ismail Bustany; Andrew B. Kahng; Ioannis Koutis; Bodhisatta Pramanik; Zhiang Wang"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2022,
+   "award": "tot",
+   "awardLabel": "Ten Year Retrospective Influential Paper Award",
+   "title": "On reconfiguration-oriented approximate adder design and its application",
+   "authors": [
+    "Rong Ye",
+    "Ting-Chi Wang",
+    "Feng Yuan",
+    "Rakesh Kumar",
+    "Qiang Ku"
+   ],
+   "track": "main",
+   "paperYear": 2013,
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2022 Ten Year Retrospective Influential Paper Award: On reconfiguration-oriented approximate adder design and its application — Rong Ye; Ting-Chi Wang; Feng Yuan; Rakesh Kumar; Qiang Ku"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Improving Realistic Worst-Case Performance of NVCiM DNN Accelerators Through Training with Right-Censored Gaussian Noise",
+   "authors": [
+    "Zheyu Yan",
+    "Yifan Qin",
+    "Wujie Wen",
+    "X. Sharon Hu",
+    "Yiyu Shi"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2023 Back-End Category: Improving Realistic Worst-Case Performance of NVCiM DNN Accelerators Through Training with Right-Censored Gaussian Noise — Zheyu Yan; Yifan Qin; Wujie Wen; X. Sharon Hu; Yiyu Shi"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2023,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "Striving for Both Quality and Speed: Logic Synthesis for Practical Garbled Circuits",
+   "authors": [
+    "Mingfei Yu",
+    "Giovanni De Micheli"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2023 Front-End Category: Striving for Both Quality and Speed: Logic Synthesis for Practical Garbled Circuits — Mingfei Yu; Giovanni De Micheli"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2023,
+   "award": "tot",
+   "awardLabel": "Ten Year Retrospective Influential Paper Award",
+   "title": "Reduction and IR-drop compensations techniques for reliable neuromorphic computing systems",
+   "authors": [
+    "Beiye Liu",
+    "Hai Li",
+    "Yiran Chen",
+    "Xin Li",
+    "Tingwen Huang",
+    "Qing Wu",
+    "Mark Barnell"
+   ],
+   "track": "main",
+   "paperYear": 2014,
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2023 Ten Year Retrospective Influential Paper Award: Reduction and IR-drop compensations techniques for reliable neuromorphic computing systems — Beiye Liu; Hai (Helen) Li; Yiran Chen; Xin Li; Tingwen Huang; Qing Wu; Mark Barnell"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "A Neural-Ordinary-Differential-Equations Based Generic Approach for Process Modeling in DTCO: A Case Study in Chemical-Mechanical Planarization and Copper Plating",
+   "authors": [
+    "Yue Qian",
+    "Lan Chen"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2024 Back-End Category: A Neural-Ordinary-Differential-Equations Based Generic Approach for Process Modeling in DTCO: A Case Study in Chemical-Mechanical Planarization and Copper Plating — Yue Qian; Lan Chen"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2024,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "An Agile Framework for Efficient LLM Accelerator Development and Model Inference",
+   "authors": [
+    "Lvcheng Chen",
+    "Ying Wu",
+    "Chenyi Wen",
+    "Shizhang Wang",
+    "Li Zhang",
+    "Bei Yu",
+    "Qi Sun",
+    "Cheng Zhuo"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2024 Front-End Category: An Agile Framework for Efficient LLM Accelerator Development and Model Inference — Lvcheng Chen; Ying Wu; Chenyi Wen; Shizhang Wang; Li Zhang; Bei Yu; Qi Sun; Cheng Zhuo"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2024,
+   "award": "tot",
+   "awardLabel": "Ten Year Retrospective Influential Paper Award",
+   "title": "OpenTimer: A high-performance timing analysis tool",
+   "authors": [
+    "Tsung-Wei Huang",
+    "Martin D.F. Wong"
+   ],
+   "track": "main",
+   "paperYear": 2015,
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2024 Ten Year Retrospective Influential Paper Award: OpenTimer: A high-performance timing analysis tool — Tsung-Wei Huang; Martin D.F. Wong"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Front-End)",
+   "title": "LaZagna: An Open-Source Framework for Flexible 3D FPGA Architectural Exploration",
+   "authors": [
+    "Ismael Youssef",
+    "Hang Yang",
+    "Cong Hao"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2025 Front-End Award: LaZagna: An Open-Source Framework for Flexible 3D FPGA Architectural Exploration — Ismael Youssef, Hang Yang, Cong Hao"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2025,
+   "award": "best",
+   "awardLabel": "William J. McCalla ICCAD Best Paper Award (Back-End)",
+   "title": "Semidefinite Programming-Based Decoupling Capacitor Placement for Power Distribution Network Optimization",
+   "authors": [
+    "Zong-Ying Cai",
+    "Wei-Han Mao",
+    "Yao-Wen Chang",
+    "Yang Lu",
+    "Jerry Bai",
+    "Bin-Chyi Tseng"
+   ],
+   "track": "main",
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2025 Back-End Award: Semidefinite Programming-Based Decoupling Capacitor Placement for Power Distribution Network Optimization — Zong-Ying Cai, Wei-Han Mao, Yao-Wen Chang, Yang Lu, Jerry Bai, Bin-Chyi Tseng"
+  },
+  {
+   "venue": "ICCAD",
+   "year": 2025,
+   "award": "tot",
+   "awardLabel": "Ten Year Retrospective Influential Paper Award",
+   "title": "Caffeine: Towards uniformed representation and acceleration for deep convolutional neural networks",
+   "authors": [
+    "Chen Zhang",
+    "Zhenman Fang",
+    "Peipei Zhou",
+    "Peichen Pan",
+    "Jason Cong"
+   ],
+   "track": "main",
+   "paperYear": 2016,
+   "source": "https://ieee-ceda.org/awards/william-j-mccalla-award",
+   "evidence": "ICCAD 2025 Ten Year Retrospective Influential Paper Award: Caffeine: Towards uniformed representation and acceleration for deep convolutional neural networks — Chen Zhang; Zhenman Fang; Peipei Zhou; Peichen Pan; Jason Cong"
   },
   {
    "venue": "ICCV",
