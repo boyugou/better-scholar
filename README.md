@@ -77,6 +77,9 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
   academic evaluation*, and counts only full papers at conferences — the extension excludes
   Findings, workshops, demos, posters and similar tracks, but cannot tell a short
   paper from a full one in Scholar's text.
+- **The lists are computer science's.** CCF and CORE rank computer-science venues; a biologist's or a
+  physicist's journals are not on them. When no paper of a profile is, the table counts papers by role only
+  (no empty rank columns) and says why; the roles, years, totals and the rest work in any field.
 - **Roles come from Scholar's author text.** Initials are matched flexibly
   (`GE Hinton` = `Geoffrey Hinton`; `Jane` ≠ `John`), but two different people can
   collide on `W Wang`. Co-first marks (†, ∗ …) are honoured when present — Scholar

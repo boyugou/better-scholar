@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artikler efter rolle og rang"
   },
+  "summaryTitleRoles": {
+    "message": "Artikler efter rolle"
+  },
   "marksTitle": {
     "message": "Priser & oplæg"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Rangerne kommer fra dagens $N1$-lister, ikke rangen på publiceringstidspunktet. CCF angiver, at listen ikke er et grundlag for akademisk evaluering.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Ingen af publikationsstederne på denne profil står på $N1$-listerne, som dækker datalogi.",
     "placeholders": {
       "n1": {
         "content": "$1"

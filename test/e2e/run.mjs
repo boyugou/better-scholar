@@ -953,6 +953,42 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     } finally { await ctxC.close(); await fxC.close(); }
   }
 
+  // -- 20c. a profile none of whose venues is on a list (a biologist's): the table is by role only (no empty tier columns, no switch between the lists) and the note says why
+  {
+    const fxN = await start({ slug: "non-cs-demo", pageSize: 100 });
+    const ctxN = await launch();
+    try {
+      const pg = await ctxN.newPage();
+      await pg.goto(fxN.url);
+      await pg.waitForSelector("#rr-panel");
+      await eventually(pg, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      assert.equal(await pg.locator("#rr-panel [data-tier]").count(), 0, "nothing is ranked: no tier columns");
+      assert.equal(await pg.locator("#rr-panel .rr-seg").count(), 0, "and no switch between the lists");
+      assert.equal(await pg.locator("#rr-panel .rr-summary .rr-sec-title").textContent(), "Papers by role", "the heading does not promise ranks");
+      assert.match(await pg.locator('[data-rr="note"]').textContent(), /^No venue on this profile is on the .*CCF.2026.*ICORE.2026.* lists, which cover computer science\.$/s);
+      const mx = await readMatrix(pg);
+      assert.deepEqual([mx.first.total, mx.second.total, mx.last.total], [5, 4, 3], "the roles are counted as before");
+      assert.equal(await pg.locator('[data-rr="unmatched"] .rr-list li').count(), 12, "the venues are still listed for whoever wants them");
+      assert.equal(await pg.locator('[data-act="report-unmatched"]').count(), 0, "but nothing is missing from the lists, so there is nothing to report");
+      await pg.bringToFront(); await pg.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-ranks.png") });
+      // the toolbar popup tells the same story
+      const popN = await ctxN.newPage();
+      await popN.goto(`chrome-extension://${extId}/popup/popup.html`);
+      const tabN = await popN.evaluate(async () => {
+        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+        return null;
+      });
+      assert.ok(tabN != null, "the profile answers the popup");
+      await popN.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tabN}`);
+      await popN.waitForSelector(".who");
+      assert.equal(await popN.locator("thead th").count(), 2, "the popup's table has the role and the total, no tier columns");
+      assert.match(await popN.textContent("#main"), /No venue on this profile is on the .*CCF.2026.*ICORE.2026.* lists/s);
+      assert.doesNotMatch(await popN.textContent("#main"), /Not ranked|Ranks come from/, "no legend or edition note for ranks that are not there");
+      await popN.close();
+      ok("a profile with no venue on any list: the table is by role only and the note says the lists cover computer science (panel and popup)");
+    } finally { await ctxN.close(); await fxN.close(); }
+  }
+
   // -- 21. award and talk markers the authors wrote (synthetic profile; look-alikes must stay unmarked)
   const fx3 = await start({ slug: "marks-demo", pageSize: 100 });
   const ctx3 = await launch();

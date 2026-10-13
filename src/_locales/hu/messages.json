@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Cikkek szerep és rang szerint"
   },
+  "summaryTitleRoles": {
+    "message": "Cikkek szerep szerint"
+  },
   "marksTitle": {
     "message": "Díjak és előadások"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "A rangok a mai $N1$ listákból származnak, nem a megjelenéskori rangból. A CCF kijelenti, hogy listája nem alapja a tudományos értékelésnek.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Ezen a profilon egyetlen venue sem szerepel a $N1$ listákon, amelyek a számítástudományt fedik le.",
     "placeholders": {
       "n1": {
         "content": "$1"

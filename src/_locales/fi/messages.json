@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artikkelit roolin ja luokan mukaan"
   },
+  "summaryTitleRoles": {
+    "message": "Artikkelit roolin mukaan"
+  },
   "marksTitle": {
     "message": "Palkinnot & esitykset"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Luokat perustuvat nykyisiin $N1$-luetteloihin, eivät julkaisuhetken luokkaan. CCF toteaa, ettei sen luetteloa ole tarkoitettu akateemisen arvioinnin perustaksi.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Yksikään tämän profiilin julkaisufoorumi ei ole $N1$-luetteloissa, jotka kattavat tietojenkäsittelytieteen.",
     "placeholders": {
       "n1": {
         "content": "$1"

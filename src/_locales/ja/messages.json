@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "著者順・ランク別の論文数"
   },
+  "summaryTitleRoles": {
+    "message": "著者順別の論文数"
+  },
   "marksTitle": {
     "message": "受賞と発表形式"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "ランクは論文の発表時ではなく、現在の $N1$ リストに基づきます。CCF は、そのリストを学術評価の根拠にしないよう明記しています。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "このプロフィールの掲載先はどれも $N1$ リストに載っておらず、これらのリストはコンピュータサイエンスを対象としています。",
     "placeholders": {
       "n1": {
         "content": "$1"

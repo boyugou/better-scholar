@@ -43,7 +43,8 @@
       return;
     }
     // the lists switched on in the settings; "none" = roles only
-    const sources = data.sources || ["ccf", "core"];
+    const listed = data.sources || ["ccf", "core"];
+    const sources = data.noRanks ? [] : listed;                     // (nothing on this profile is on a list that is on: roles only)
     let source = sources.includes(data.source) ? data.source : sources[0] || "none";
     const labels = () => Object.fromEntries(Object.entries(COPY).map(([k, v]) => [k, t(v)]));
     const draw = () => {
@@ -84,7 +85,7 @@
         parts.summary ? h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
           h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))) : null,
-        parts.summary ? h("p", { class: "note" }, t("dataNote", [(sources.length ? sources : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
+        parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
     draw();

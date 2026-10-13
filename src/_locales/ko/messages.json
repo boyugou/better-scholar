@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "저자 순서·등급별 논문"
   },
+  "summaryTitleRoles": {
+    "message": "저자 순서별 논문"
+  },
   "marksTitle": {
     "message": "수상 및 발표"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "등급은 논문 발표 당시가 아니라 현재의 $N1$ 목록 기준입니다. CCF는 자사 목록을 학술 평가의 근거로 삼아서는 안 된다고 밝히고 있습니다.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "이 프로필의 게재처 중 어느 곳도 컴퓨터 과학 분야를 다루는 $N1$ 목록에 없습니다.",
     "placeholders": {
       "n1": {
         "content": "$1"

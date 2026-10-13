@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Makalah menurut peran dan peringkat"
   },
+  "summaryTitleRoles": {
+    "message": "Makalah menurut peran"
+  },
   "marksTitle": {
     "message": "Penghargaan & presentasi"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "Peringkat berasal dari daftar $N1$ saat ini, bukan peringkat saat publikasi. CCF menyatakan daftarnya bukan dasar penilaian akademik.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Tidak ada venue di profil ini yang masuk daftar $N1$, yang mencakup ilmu komputer.",
     "placeholders": {
       "n1": {
         "content": "$1"

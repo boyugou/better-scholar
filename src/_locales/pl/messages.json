@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Prace według roli i rankingu"
   },
+  "summaryTitleRoles": {
+    "message": "Prace według roli"
+  },
   "marksTitle": {
     "message": "Nagrody i wystąpienia"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "Rankingi pochodzą z aktualnych list $N1$, a nie z chwili publikacji. CCF zastrzega, że jego lista nie jest podstawą oceny naukowej.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Żadne miejsce publikacji w tym profilu nie znajduje się na listach $N1$, które obejmują informatykę.",
     "placeholders": {
       "n1": {
         "content": "$1"

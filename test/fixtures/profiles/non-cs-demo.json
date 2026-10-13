@@ -1,0 +1,18 @@
+{
+ "owner": "Maria Rossi",
+ "note": "SYNTHETIC (not a real profile): twelve papers of a biologist at journals no computer-science list ranks. Used by the end-to-end test only.",
+ "rows": [
+  ["M Rossi, J Park, L Chen, K Novak", "Nature 612, 123-130, 2022", "Cell fate decisions in the developing gut"],
+  ["L Chen, M Rossi, K Novak", "Cell 185 (4), 600-615, 2022", "A map of stem-cell lineages"],
+  ["J Park, M Rossi", "Proceedings of the National Academy of Sciences 119 (12), e2118, 2022", "Signalling gradients and tissue size"],
+  ["K Novak, J Park, L Chen, M Rossi", "Science 376, 440-447, 2022", "Chromatin states across tissues"],
+  ["M Rossi, K Novak", "Nature Communications 12, 1-12, 2021", "Organoid models of the intestine"],
+  ["T Silva, M Rossi, J Park, L Chen, K Novak, R Gupta", "The Lancet 397 (10270), 220-232, 2021", "A trial of a gut-microbiome intervention"],
+  ["M Rossi, T Silva", "eLife 10, e63444, 2021", "Imaging stem-cell division in vivo"],
+  ["R Gupta, M Rossi, L Chen", "Developmental Cell 56 (9), 1301-1315, 2021", "Mechanics of epithelial folding"],
+  ["M Rossi, L Chen, J Park", "Genes & Development 34, 1-14, 2020", "Enhancers that switch gut genes on"],
+  ["K Novak, M Rossi", "Journal of Cell Biology 219 (5), e201912, 2020", "Cytoskeleton dynamics during division"],
+  ["J Park, M Rossi, T Silva, K Novak", "Molecular Cell 77 (3), 500-512, 2020", "Protein turnover in stem cells"],
+  ["M Rossi, J Park, L Chen, T Silva, K Novak, R Gupta, A Lee", "Nature Genetics 51, 1100-1108, 2019", "Genome-wide variants of gut disease"]
+ ]
+}

@@ -195,6 +195,12 @@ highlighted papers, citations, h-index, i10, the venue list — the venue list i
 the year bars stay whole: they are where a filter is chosen. A filter whose control has gone (a venue that left the list) is dropped in `refresh()`
 after `decorate()`, because a row's `highlighted` is only known once it has been decorated.
 
+What the table and the status block show depends on the profile, not only on the settings. `noRanks()` in `main.js` is true when a list is switched on, everything is loaded
+(nothing to load, nothing loading) and no paper that is the owner's has a rank in any list that is on: the model then has no sources, the table is by role only
+(`summarize(list, null)`, heading *Papers by role*), the note says the lists cover computer science (`noRanksNote`), and the unranked-venues list has no *Report* link (nothing is missing from the lists). The filters
+keep the source they had. The status block (`renderCoverage`) leaves out the "N papers loaded" line when it would stand alone — loaded, nothing to load, nothing else to say — and
+the totals are shown; the section then hides itself.
+
 Layout: in the wide layout (window narrow, panel above the list) `update()` moves the year bars into the first column; the arrangement is redone when
 the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
 

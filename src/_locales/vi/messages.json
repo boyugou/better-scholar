@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Bài báo theo vai trò và hạng"
   },
+  "summaryTitleRoles": {
+    "message": "Bài báo theo vai trò"
+  },
   "marksTitle": {
     "message": "Giải thưởng & báo cáo"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "Hạng lấy từ danh sách $N1$ hiện hành, không phải hạng tại thời điểm xuất bản. CCF nêu rõ danh sách của họ không phải căn cứ đánh giá học thuật.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Không có venue nào trong hồ sơ này nằm trong danh sách $N1$, vốn bao quát khoa học máy tính.",
     "placeholders": {
       "n1": {
         "content": "$1"

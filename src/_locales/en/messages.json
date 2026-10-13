@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Papers by role and rank"
   },
+  "summaryTitleRoles": {
+    "message": "Papers by role"
+  },
   "marksTitle": {
     "message": "Awards & talks"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Ranks come from today's $N1$ lists, not the rank at publication time. CCF states that its list is not a basis for academic evaluation.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "No venue on this profile is on the $N1$ lists, which cover computer science.",
     "placeholders": {
       "n1": {
         "content": "$1"

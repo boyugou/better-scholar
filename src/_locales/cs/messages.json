@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Práce podle role a ranku"
   },
+  "summaryTitleRoles": {
+    "message": "Práce podle role"
+  },
   "marksTitle": {
     "message": "Ocenění a přednesy"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "Ranky pocházejí z aktuálních seznamů $N1$, ne z doby vydání. CCF uvádí, že její seznam není podkladem pro akademické hodnocení.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Na tomto profilu není žádné místo publikace zařazeno do seznamů $N1$, které pokrývají informatiku.",
     "placeholders": {
       "n1": {
         "content": "$1"

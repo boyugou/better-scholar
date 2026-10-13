@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artiklar efter roll och rank"
   },
+  "summaryTitleRoles": {
+    "message": "Artiklar efter roll"
+  },
   "marksTitle": {
     "message": "Priser & presentationer"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Rankerna kommer från dagens $N1$-listor, inte rankningen vid publiceringen. CCF anger att listan inte är en grund för akademisk utvärdering.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Inget av profilens publiceringsställen finns med på $N1$-listorna, som täcker datavetenskap.",
     "placeholders": {
       "n1": {
         "content": "$1"

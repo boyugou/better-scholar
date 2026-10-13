@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Articles par rôle et par rang"
   },
+  "summaryTitleRoles": {
+    "message": "Articles par rôle"
+  },
   "marksTitle": {
     "message": "Prix et présentations"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Les rangs proviennent des listes actuelles de $N1$, et non du rang au moment de la publication. La CCF précise que sa liste ne doit pas servir de base à l’évaluation académique.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Aucune conférence ni revue de ce profil ne figure dans les listes de $N1$, qui couvrent l’informatique.",
     "placeholders": {
       "n1": {
         "content": "$1"

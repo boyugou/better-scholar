@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Paper nach Rolle und Rang"
   },
+  "summaryTitleRoles": {
+    "message": "Paper nach Rolle"
+  },
   "marksTitle": {
     "message": "Auszeichnungen & Vorträge"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Die Ränge stammen aus den aktuellen $N1$-Listen, nicht aus dem Rang zum Zeitpunkt der Veröffentlichung. Die CCF weist darauf hin, dass ihre Liste keine Grundlage für wissenschaftliche Bewertungen ist.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Keine der Venues in diesem Profil steht auf den $N1$-Listen, die Informatik abdecken.",
     "placeholders": {
       "n1": {
         "content": "$1"

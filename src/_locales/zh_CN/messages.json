@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "按角色与等级统计"
   },
+  "summaryTitleRoles": {
+    "message": "按角色统计"
+  },
   "marksTitle": {
     "message": "获奖与报告形式"
   },
@@ -263,6 +266,14 @@
   },
   "dataNote": {
     "message": "等级取自当前的 $N1$ 名录，并非论文发表时的等级。CCF 声明其目录不作为学术评价依据。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "这个主页上没有任何场所在 $N1$ 名录里；这些名录只覆盖计算机科学。",
     "placeholders": {
       "n1": {
         "content": "$1"

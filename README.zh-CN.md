@@ -66,6 +66,8 @@ scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<versio
   也显示 `CCF A`。CCF 还声明其目录**不作为学术评价依据**，且会议只计 full paper——
   本扩展会排除 Findings、Workshop、Demo、Poster 等轨道，但无法从 Scholar 文本里区分
   short paper 与 full paper。
+- **榜单是计算机科学的。** CCF 和 CORE 只给计算机领域的发表场所定级；生物、物理等领域的期刊不在其中。
+  一个主页上没有任何论文在榜单里时，表格只按角色统计（不显示空的等级列）并说明原因；角色、年份、总数等其余功能在任何领域都能用。
 - **角色来自 Scholar 的作者文本。** 缩写做了宽松匹配（`GE Hinton` = `Geoffrey Hinton`，
   `Jane` ≠ `John`），但两个不同的人仍可能在 `W Wang` 上撞车。共一标记（†、∗ 等）存在时会
   被识别——不过 Scholar 很少保留它们。主页姓名写成“姓在前”（主页是 `Tang Jie`，论文里是 `J Tang`）时，

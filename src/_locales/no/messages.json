@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artikler etter rolle og rang"
   },
+  "summaryTitleRoles": {
+    "message": "Artikler etter rolle"
+  },
   "marksTitle": {
     "message": "Priser og foredrag"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Rangene kommer fra dagens $N1$-lister, ikke rangen på publiseringstidspunktet. CCF opplyser at listen ikke er grunnlag for akademisk evaluering.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Ingen av publiseringsstedene på denne profilen står på $N1$-listene, som dekker informatikk.",
     "placeholders": {
       "n1": {
         "content": "$1"

@@ -78,6 +78,13 @@ confirmed when this was added: the data is included with attribution for referen
 covered by this project's licence. If CORE objects, remove `data/core-2026.json` and the CORE
 badge — the rest of the extension does not depend on it.
 
+## Keeping the rank data current
+
+`node scripts/check-data-fresh.mjs` downloads both source files again and compares their sha-256 with the ones above, and looks for a
+newer edition (another file behind the CCF page's link, a newer edition in the CORE portal's list). `.github/workflows/data-fresh.yml` runs it
+every Monday; a failed run (GitHub mails it) means a changed file or a new edition — regenerate as described here. On 2026-10-13 both files were
+byte-identical to the ones the data was built from, and no newer edition was listed.
+
 ## Paper awards — `awards-2026.json`
 
 Award-winning papers, so a paper can carry a ★ chip even when its author did not write the award on

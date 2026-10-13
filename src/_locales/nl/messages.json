@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Papers per rol en rang"
   },
+  "summaryTitleRoles": {
+    "message": "Papers per rol"
+  },
   "marksTitle": {
     "message": "Prijzen en talks"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "De rangen komen uit de huidige $N1$-lijsten, niet uit de rang ten tijde van publicatie. CCF stelt dat zijn lijst geen basis is voor academische beoordeling.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Geen enkele venue van dit profiel staat op de $N1$-lijsten, die de informatica bestrijken.",
     "placeholders": {
       "n1": {
         "content": "$1"

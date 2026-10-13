@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "依位次與等級統計論文"
   },
+  "summaryTitleRoles": {
+    "message": "依位次統計論文"
+  },
   "marksTitle": {
     "message": "獲獎與報告形式"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "等級依據目前的 $N1$ 清單，並非論文發表當時的等級。CCF 聲明其清單不應作為學術評價的依據。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "本頁的發表處都不在 $N1$ 清單上，這些清單涵蓋資訊科學。",
     "placeholders": {
       "n1": {
         "content": "$1"

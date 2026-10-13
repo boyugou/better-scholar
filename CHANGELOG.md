@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.22.0 — 2026-10-13
+
+- **A profile outside computer science no longer gets an empty rank table.** CCF and CORE rank computer-science venues; when everything is loaded and none of a profile's papers is on a list that is switched on (a biologist's, a physicist's), the table counts papers by role only (heading *Papers by role*, no empty A / B / C columns, no CCF | CORE switch), the note says the lists cover computer science (`noRanksNote`), the unranked-venues list stays but has no *Report* link (nothing is missing from the lists), and the toolbar popup follows. While papers are still loading, or as soon as one paper is ranked, the columns are there as before. The copied summary and table follow (roles and totals). A synthetic biologist's profile and an end-to-end step cover it.
+- With both lists switched off the heading is *Papers by role* too, and the note about where ranks come from is gone (it described ranks that are not shown).
+- README (both languages) says the lists are computer science's and what a profile outside it shows.
+- **The rank data is checked every week against its official sources.** `scripts/check-data-fresh.mjs` downloads the CCF catalogue and the ICORE export again, compares their sha-256 with the ones the data was built from and looks for a newer edition (another file behind the CCF page's link, a newer edition in the CORE portal's list); `.github/workflows/data-fresh.yml` runs it every Monday and fails (GitHub mails it) when something changed, with a warning only when a source cannot be reached. Checked today: both files are byte-identical to the bundled ones, and no newer edition is listed.
+
 ## 2.21.0 — 2026-10-13
 
 From a check against Scholar's live pages (a real profile and one of its paper pages, read in the author's own Chrome) and the first design review's last open point:

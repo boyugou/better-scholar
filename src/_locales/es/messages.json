@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artículos por posición y rango"
   },
+  "summaryTitleRoles": {
+    "message": "Artículos por posición"
+  },
   "marksTitle": {
     "message": "Premios y ponencias"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Los rangos proceden de las listas actuales de $N1$, no del rango en el momento de la publicación. CCF indica que su lista no debe usarse como base para la evaluación académica.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Ningún congreso ni revista de este perfil figura en las listas de $N1$, que abarcan la informática.",
     "placeholders": {
       "n1": {
         "content": "$1"

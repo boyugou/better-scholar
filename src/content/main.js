@@ -54,6 +54,12 @@
   const analyzeRaw = (raw) => analysis.analyzeRow(raw, { owner: owner(), resolver, resolved: resolvedCache[raw.id], venueWord, awards });
   // the ranking the panel's table uses (null when both lists are switched off)
   const currentSource = () => B.prefs.source(prefs, ui);
+  // Nothing on the profile is on a list that is switched on (a biologist's, say) and nothing more is coming: the tier columns and the switch between the lists
+  // would be empty, so the table is by role only (the model says so in `noRanks`; the lists that are on stay in `sources`, for the note)
+  function noRanks(list) {
+    const on = B.prefs.sources(prefs);
+    return on.length > 0 && list.length > 0 && !B.scholar.canLoadMore() && !state.loadingAll && !on.some((s) => list.some((p) => p.status !== "absent" && p.venue && p.venue[s]));       // (a paper that is not the owner's is not in the table)
+  }
 
   // ---- rows ---------------------------------------------------------------
 
@@ -245,9 +251,10 @@
   function model() {
     const list = papers();
     const source = currentSource();
-    const summary = metrics.summarize(list, source);
+    const bare = noRanks(list);
+    const summary = metrics.summarize(list, bare ? null : source);
     return {
-      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary,
+      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
       selection: state.selection, filters: state.filters,
       filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
@@ -296,7 +303,7 @@
     return metrics.toText(m.summary, {
       owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(),
       extra: [marksLine(m.marks)].filter(Boolean),
-      edition: m.source ? `${edition[m.source]} — ${t("tipToday")}` : ""
+      edition: m.source && !m.noRanks ? `${edition[m.source]} — ${t("tipToday")}` : ""
     });
   }
 
@@ -466,7 +473,7 @@
         const list = papers();
         send({
           ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
-          sources: B.prefs.sources(prefs), source: currentSource(),
+          sources: B.prefs.sources(prefs), source: currentSource(), noRanks: noRanks(list),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
           marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
         });

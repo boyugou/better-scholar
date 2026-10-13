@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Role ve sıralamaya göre makaleler"
   },
+  "summaryTitleRoles": {
+    "message": "Role göre makaleler"
+  },
   "marksTitle": {
     "message": "Ödüller ve sunumlar"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Sıralamalar yayın zamanındaki değil, bugünkü $N1$ listelerinden gelir. CCF, listesinin akademik değerlendirmeye esas olmadığını belirtir.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Bu profildeki hiçbir yayın yeri, bilgisayar bilimlerini kapsayan $N1$ listelerinde yer almıyor.",
     "placeholders": {
       "n1": {
         "content": "$1"

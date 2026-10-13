@@ -20,6 +20,17 @@ function walk(dir, out = []) {
   return out;
 }
 
+test("scripts/check-data-fresh.mjs is valid and reads the addresses and checksums the datasets record", () => {
+  const r = spawnSync(process.execPath, ["--check", path.join(root, "scripts", "check-data-fresh.mjs")], { encoding: "utf8" });
+  assert.equal(r.status, 0, r.stderr);
+  const meta = (f) => JSON.parse(fs.readFileSync(path.join(root, "data", f), "utf8")).meta;
+  for (const k of ["pdfUrl", "pdfSha256", "indexPage"]) assert.ok(meta("ccf-2026.json")[k], "ccf meta." + k);
+  for (const k of ["exportUrl", "csvSha256", "portal", "edition"]) assert.ok(meta("core-2026.json")[k], "core meta." + k);
+  assert.match(meta("ccf-2026.json").pdfSha256, /^[0-9a-f]{64}$/);
+  assert.match(meta("core-2026.json").csvSha256, /^[0-9a-f]{64}$/);
+  assert.ok(fs.readFileSync(path.join(root, ".github", "workflows", "data-fresh.yml"), "utf8").includes("scripts/check-data-fresh.mjs"), "the weekly workflow runs it");
+});
+
 test("manifest: MV3, least privilege, nothing in the background but the options-page relay", () => {
   assert.equal(manifest.manifest_version, 3);
   assert.deepEqual(manifest.permissions, ["storage"]);

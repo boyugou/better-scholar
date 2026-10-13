@@ -11,6 +11,9 @@
   "summaryTitle": {
     "message": "Artigos por posição e ranking"
   },
+  "summaryTitleRoles": {
+    "message": "Artigos por posição"
+  },
   "marksTitle": {
     "message": "Prêmios e apresentações"
   },
@@ -275,6 +278,14 @@
   },
   "dataNote": {
     "message": "Os rankings vêm das listas atuais de $N1$, não do ranking na data da publicação. A CCF afirma que sua lista não deve servir de base para avaliação acadêmica.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Nenhum veículo deste perfil está nas listas de $N1$, que cobrem a ciência da computação.",
     "placeholders": {
       "n1": {
         "content": "$1"

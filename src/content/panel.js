@@ -153,11 +153,11 @@
     // The ranking tab: a switch between the lists that are on, a plain label when only one is, nothing when none is.
     function renderSummaryHead(m) {
       const name = (src) => t(src === "ccf" ? "srcCcf" : "srcCore");
-      const control = m.sources.length > 1
+      const control = m.noRanks ? null : m.sources.length > 1
         ? h("span", { class: "rr-seg", role: "group" },
           ...m.sources.map((src) => h("button", { type: "button", "data-src": src, "aria-pressed": String(m.source === src), onClick: () => cb.onSource(src) }, name(src))))
         : m.sources.length === 1 ? h("span", { class: "rr-src" }, name(m.sources[0])) : null;
-      summaryHead.replaceChildren(...[h("span", { class: "rr-sec-title" }, t("summaryTitle")), control].filter(Boolean));   // (replaceChildren(null) would print "null")
+      summaryHead.replaceChildren(...[h("span", { class: "rr-sec-title" }, t(m.noRanks || !m.sources.length ? "summaryTitleRoles" : "summaryTitle")), control].filter(Boolean));   // (replaceChildren(null) would print "null")
     }
 
     function renderMatrix(m) {
@@ -246,7 +246,7 @@
       let unmatchedEl = null;
       if (parts.status && c.unmatched.length) {
         const total = c.unmatched.reduce((a, b) => a + b.count, 0);
-        const sig = JSON.stringify([total, c.unmatched.slice(0, 20)]);
+        const sig = JSON.stringify([total, c.unmatched.slice(0, 20), !!m.noRanks]);
         if (sig !== unmatchedSig) {
           unmatchedSig = sig;
           const report = "Venue strings from a Google Scholar profile that have no CCF / CORE rank here:\n\n" +
@@ -258,7 +258,8 @@
             h("summary", {}, tn("coverUnmatched", total, [String(total)])),
             h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
             h("div", { class: "rr-actions" }, copyBtn,
-              h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
+              m.noRanks ? null                                                       // (a profile outside computer science: its venues are not missing from the lists, so there is nothing to report)
+                : h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
           coverList.replaceChildren(unmatchedEl);
         }
       } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }
@@ -374,7 +375,9 @@
       syncFilters(m); renderMetrics(m); renderVariants(m);
       // (the lists' names without their edition note, unbreakable, and isolated so that right-to-left text cannot reorder them: "CCF 2026 · ICORE 2026")
       const listName = (label) => "\u2068" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, "\u00a0") + "\u2069";
-      noteBox.textContent = t("dataNote", [(m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ")]);
+      const lists = (m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ");
+      noteBox.textContent = m.noRanks ? t("noRanksNote", [lists]) : m.sources.length ? t("dataNote", [lists]) : "";        // (no lists on: nothing to say about where ranks come from)
+      noteBox.hidden = !noteBox.textContent;
     }
 
     function flash(kind) {

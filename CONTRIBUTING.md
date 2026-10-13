@@ -57,6 +57,10 @@ PDF is extracted). Edit those, never `src/data/ccf.js` / `core.js` / `awards.js`
 when they are stale. `data/awards-2026.json` entries need an official source URL and a quoted snippet
 that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 
+Rank data is checked against its official sources every Monday (`.github/workflows/data-fresh.yml`, which runs
+`node scripts/check-data-fresh.mjs`); when that run fails, the CCF catalogue or the ICORE export changed or a newer edition
+appeared, and the data should be regenerated as `data/README.md` describes.
+
 ### Accessibility audit
 
 `node scripts/axe-audit.mjs` runs axe-core (fetched once into the git-ignored `.cache/`, never a dependency) over the panel (light, dark,
