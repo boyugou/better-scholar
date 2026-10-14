@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
-[![Tests](https://img.shields.io/badge/tests-415%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Tests](https://img.shields.io/badge/tests-416%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
 [![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
 [![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
@@ -24,11 +24,11 @@
 <table>
   <tr>
     <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar profile with role colours, CCF/CORE chips, and interactive summary matrix" width="460"></td>
-    <td align="center" width="50%"><img src="docs/settings.png" alt="Settings page with live preview, author position toggles, and fine-grained controls" width="460"></td>
+    <td align="center" width="50%"><img src="docs/settings.png" alt="Settings page with live preview, author position toggles, theme presets, and fine-grained controls" width="460"></td>
   </tr>
   <tr>
     <td align="center"><sub>Profile decoration: author position tints, CCF & CORE chips, interactive panel & filters</sub></td>
-    <td align="center"><sub>Settings page: live preview, role toggles, custom colours, export & privacy controls</sub></td>
+    <td align="center"><sub>Settings Studio: live preview, academic theme palettes, WCAG contrast verification, role toggles</sub></td>
   </tr>
 </table>
 
@@ -43,8 +43,9 @@ Better Scholar is a Manifest V3 browser extension that turns [Google Scholar](ht
 - **Authorship role detection.** Distinguishes first, co-first (shared contribution symbols `*`, `†`), second, and senior/last authors. Automatically highlights the owner's name in author lists with detailed position tooltips.
 - **Bundled conference awards & talk levels.** Recognises 7,830+ official paper awards (Best Paper, Outstanding, Distinguished, Test of Time) across top CS venues, plus author-written Oral / Spotlight / Highlight labels.
 - **Interactive impact filtering.** Click any cell in the Role × Rank matrix, or click the **H-index** and **i10-index** rows to instantly filter the publication list to your H-core or high-impact papers.
-- **Instant search & query operators.** Press `/` to focus the search bar. Filter instantly by title, author, venue, acronym, award, or structured operators (`ccf:a`, `role:first`, `>100`, `year:>=2021`). Press `Escape` anywhere to clear.
+- **Instant search with operator autocomplete.** Press `/` to focus the search bar. As you type operator prefixes (`role:`, `ccf:`, `core:`, `>`, `has:`), an interactive suggestion popover appears. Use <kbd>↑</kbd> / <kbd>↓</kbd> and <kbd>Enter</kbd> / <kbd>Tab</kbd> to autocomplete. Press <kbd>Escape</kbd> anywhere to clear.
 - **1-Click multi-format export.** Copy publication data to clipboard as BibTeX (with compile-ready LaTeX escaping and Scholar URLs), APA 7th edition, JSON, Markdown, CSV, Summary text, or Tab-separated table. Export directly from the in-page panel or the toolbar popup on any profile.
+- **Academic Theme Studio & Design System.** Includes 5 coordinated color presets (`Classic Scholar`, `Ocean Sapphire`, `Sunset Orchid`, `High Contrast Pro`, `Nordic Slate`), per-role color customization with live WCAG AA contrast ratio calculations, full-width segmented controls, and a searchable language selector.
 - **AI & Web Agent DOM Event Bridge.** Native CustomEvent bus on `document` (`better-scholar:ping`, `better-scholar:request-papers`, `better-scholar:request-export`, `better-scholar:query`) and runtime messaging (`rr:papers`, `rr:export`) for headless AI agents and research workflows.
 - **30 languages.** Packed with translations for 30 locales. Supports bidirectional Scholar language synchronisation (`hl=`).
 - **Private by design.** No accounts, no telemetry, no tracking, and no external network calls. Syncs user preferences through your browser's native `chrome.storage.sync`. See [`PRIVACY.md`](PRIVACY.md).
@@ -65,7 +66,7 @@ owner & author roles        CCF / CORE tier matcher        awards & talk levels
         │                            │                            │
         └────────────────────────────┼────────────────────────────┘
                                      ▼
-                              content/main.js
+                               content/main.js
                      (reactive state, query filters, DOM observers)
                         │                       │
                         ▼                       ▼
@@ -74,6 +75,7 @@ owner & author roles        CCF / CORE tier matcher        awards & talk levels
                h-core & year bars)        marked owner names)
                         │
                         ├─► 1-Click Export (BibTeX, APA, JSON, Markdown, CSV)
+                        ├─► Operator Autocomplete (`role:`, `ccf:`, `>100`)
                         └─► Agent DOM Event Bridge (`better-scholar:*` CustomEvents)
 ```
 
@@ -107,7 +109,7 @@ The parsing core in `src/lib/` is completely **pure** (free of DOM and `chrome.*
 
 ## Instant Search & Query Operators
 
-Press `/` anywhere on a Google Scholar profile to instantly jump to the search box. Combine free text with structured operator tokens:
+Press `/` anywhere on a Google Scholar profile to instantly jump to the search box, or click the `/` keyboard badge. When typing operator prefixes (`role:`, `ccf:`, `core:`, `>`, `has:`), Better Scholar displays an accessible autocomplete menu with color-coded category badges. Use <kbd>↑</kbd> / <kbd>↓</kbd> to select and <kbd>Enter</kbd> or <kbd>Tab</kbd> to accept.
 
 | Operator | Syntax Examples | Description |
 |---|---|---|

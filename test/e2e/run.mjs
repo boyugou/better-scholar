@@ -662,7 +662,22 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
     await clearBtn.click();
     assert.equal(await pillCites.getAttribute("aria-pressed"), "false");
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, steps matches with Enter, shows count badge, operator pills toggle, and focuses on /");
+    // Operator suggestion dropdown: typing "role:" opens autocomplete menu
+    await queryInput.fill("role:");
+    const suggestMenu = page.locator("#rr-panel .rr-search-suggest");
+    assert.equal(await suggestMenu.isVisible(), true, "operator suggestion menu opens on role: prefix");
+    const suggestItems = page.locator("#rr-panel .rr-suggest-item");
+    assert.ok((await suggestItems.count()) >= 4, "shows role suggestions");
+    // Arrow down highlights first suggestion (role:first)
+    await queryInput.press("ArrowDown");
+    assert.equal(await suggestItems.first().evaluate((el) => el.classList.contains("rr-suggest-active")), true);
+    // Pressing Enter selects role:first
+    await queryInput.press("Enter");
+    assert.equal(await queryInput.inputValue(), "role:first ");
+    assert.equal(await suggestMenu.isVisible(), false, "menu closes after choosing suggestion");
+    assert.ok((await visibleRows(page)) > 0, "filter by role:first yields matching rows");
+    await clearBtn.click();
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, steps matches with Enter, shows count badge, operator pills toggle, focuses on /, and auto-completes operator suggestions");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");

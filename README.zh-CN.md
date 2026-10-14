@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
-[![Tests](https://img.shields.io/badge/tests-415%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Tests](https://img.shields.io/badge/tests-416%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
 [![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
 [![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
@@ -24,11 +24,11 @@
 <table>
   <tr>
     <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar 作者主页：按角色着色的行、场所旁的 CCF / CORE 徽章、右侧的角色 × 等级汇总面板" width="460"></td>
-    <td align="center" width="50%"><img src="docs/settings.png" alt="设置页：作者位次、等级名录、获奖与报告形式、摘要面板的开关，以及实时预览" width="460"></td>
+    <td align="center" width="50%"><img src="docs/settings.png" alt="设置工作台：实时预览、作者位次开关、学术调色板预设与无障碍对比度检测" width="460"></td>
   </tr>
   <tr>
     <td align="center"><sub>主页增强：作者位次着色、CCF 与 CORE 徽章、交互式汇总面板与多维筛选</sub></td>
-    <td align="center"><sub>设置页：实时所见即所得预览、角色开关、自定义配色、导出与隐私控制</sub></td>
+    <td align="center"><sub>设置工作台：所见即所得实时预览、学术主题调色板、WCAG 对比度核验、位次开关</sub></td>
   </tr>
 </table>
 
@@ -43,8 +43,9 @@ Better Scholar 是一款遵循 Manifest V3 规范的浏览器扩展程序，专�
 - **细致的作者角色识别**：精准区分一作、共一（共同第一作者标记 `*`、`†`）、二作与末位通讯作者；在作者行中智能高亮学者姓名并提示位次。
 - **内置 7,830+ 篇官方权威获奖论文**：收录来自各顶会官网及 ACL Anthology 的最佳论文、杰出论文、时间检验奖，并结合解析作者自述的 Oral / Spotlight / Highlight 报告形式。
 - **交互式影响力过滤**：点击角色 × 等级矩阵中的任意单元格，或点击 **h-index** / **i10-index** 指标行，一键过滤出核心高引论文列表。
-- **即时检索与高级运算符**：在主页按 `/` 键即可聚焦搜索框，支持标题、作者、场所、缩写、年份及结构化操作符（`ccf:a`、`role:first`、`>100`、`year:>=2021`）。按 <kbd>Escape</kbd> 键随时一键清空复位。
+- **即时检索与操作符自动补全**：在主页按 `/` 键即可聚焦搜索框。当输入操作符前缀（如 `role:`、`ccf:`、`core:`、`>`、`has:`）或按下方向键 <kbd>↓</kbd> 时，自动弹出精美分类建议菜单，按 <kbd>Enter</kbd> 或 <kbd>Tab</kbd> 自动补全。按 <kbd>Escape</kbd> 随时一键清空复位。
 - **一键多格式学术导出**：支持一键复制标准且严谨的 BibTeX（含 LaTeX 特殊字符转义与 Scholar 直链）、APA 第 7 版、JSON、Markdown、RFC-4180 CSV、纯文本列表与表格。可在学者主页侧边面板或扩展工具栏弹出页中随时一键导出。
+- **学术主题工作台与设计系统**：内置 5 套精选学术配色预设（`Classic Scholar`、`Ocean Sapphire`、`Sunset Orchid`、`High Contrast Pro`、`Nordic Slate`），支持每个角色独立取色并实时计算 WCAG 2.1 AA 对比度，采用全宽分段选择器（Segmented Controls）及支持快速检索的语言选择器。
 - **AI 与 Web 智能体 DOM 事件桥梁**：在页面 `document` 上提供原生 CustomEvent 事件总线与 Chrome runtime 消息，便于大模型自动化程序、抓取脚本和开发者控制台直接调用。
 - **30 种国际化语言**：提供 30 种语言的完整本地化翻译，并支持与 Scholar 界面的语言参数（`hl=`）双向智能同步。
 - **严苛的隐私保护**：无账号体系、无追踪器、无数据统计、无多余网络请求。所有用户偏好仅通过浏览器原生 `chrome.storage.sync` 安全同步。详见 [`PRIVACY.md`](PRIVACY.md)。
@@ -65,7 +66,7 @@ Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取�
         │                            │                            │
         └────────────────────────────┼────────────────────────────┘
                                      ▼
-                              content/main.js
+                               content/main.js
                      (响应式状态流、多重查询筛选、DOM 观察器)
                         │                       │
                         ▼                       ▼
@@ -74,6 +75,7 @@ Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取�
               H-core 过滤与年份图谱)       学者姓名高亮标注)
                         │
                         ├─► 1-Click 一键导出 (BibTeX, APA, JSON, Markdown, CSV)
+                        ├─► 操作符自动建议补全 (`role:`, `ccf:`, `>100`)
                         └─► 智能体 DOM 事件桥梁 (`better-scholar:*` CustomEvents)
 ```
 
@@ -107,7 +109,7 @@ Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取�
 
 ## 即时搜索与高级查询运算符
 
-在 Scholar 学者主页上随时按下键盘的 `/` 键即可自动聚焦搜索栏。支持自由文本多词与（AND）匹配，并支持以下结构化运算符：
+在 Scholar 学者主页上随时按下键盘的 `/` 键或点击 `/` 徽章即可聚焦搜索栏。当您输入操作符前缀（如 `role:`、`ccf:`、`core:`、`>`、`has:`）或按下键盘方向键 <kbd>↓</kbd> 时，搜索框将自动弹出色彩分明的交互式操作符建议补全菜单。支持方向键选择，按 <kbd>Enter</kbd> 或 <kbd>Tab</kbd> 快速自动补全。
 
 | 运算符类别 | 语法示例 | 说明 |
 |---|---|---|

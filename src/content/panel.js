@@ -100,8 +100,134 @@
     // filters (built once, synced on update)
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
-    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", title: "/ to search · >100 cites · >2020 year · ccf:a · role:first · has:award" }, "/");
+    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", title: "/ to search · >100 cites · >2020 year · ccf:a · role:first · has:award", onClick: () => {
+      queryInput.focus();
+      openPopularSuggestions();
+    } }, "/");
+
+    // Autocomplete / suggestion popover for search operators
+    const suggestList = h("ul", { class: "rr-search-suggest", role: "listbox", "aria-label": t("filterPlaceholder"), hidden: true });
+
+    const OPERATOR_ITEMS = [
+      { op: "role:first", group: "author", tag: "ROLE", label: "role:first", desc: t("roleFirst") },
+      { op: "role:last", group: "author", tag: "ROLE", label: "role:last", desc: t("roleLast") },
+      { op: "role:cofirst", group: "author", tag: "ROLE", label: "role:cofirst", desc: t("roleCofirst") },
+      { op: "role:second", group: "author", tag: "ROLE", label: "role:second", desc: t("roleSecond") },
+      { op: "ccf:a", group: "tier", tag: "RANK", label: "ccf:a", desc: "CCF A" },
+      { op: "ccf:b", group: "tier", tag: "RANK", label: "ccf:b", desc: "CCF B" },
+      { op: "core:a*", group: "tier", tag: "RANK", label: "core:a*", desc: "CORE A*" },
+      { op: "core:a", group: "tier", tag: "RANK", label: "core:a", desc: "CORE A" },
+      { op: ">100", group: "cite", tag: "CITES", label: ">100", desc: ">100" },
+      { op: ">500", group: "cite", tag: "CITES", label: ">500", desc: ">500" },
+      { op: ">1000", group: "cite", tag: "CITES", label: ">1000", desc: ">1000" },
+      { op: ">2020", group: "year", tag: "YEAR", label: ">2020", desc: ">2020" },
+      { op: "has:award", group: "mark", tag: "HONORS", label: "has:award", desc: t("markAward") },
+      { op: "has:talk", group: "mark", tag: "HONORS", label: "has:talk", desc: t("markOral") }
+    ];
+
+    let activeSuggestIdx = -1;
+    let currentSuggestions = [];
+
+    function closeSuggest() {
+      suggestList.hidden = true;
+      activeSuggestIdx = -1;
+      currentSuggestions = [];
+      suggestList.replaceChildren();
+    }
+
+    function highlightSuggestItem(idx) {
+      const items = [...suggestList.children];
+      items.forEach((el, i) => {
+        const isSel = i === idx;
+        el.classList.toggle("rr-suggest-active", isSel);
+        el.setAttribute("aria-selected", String(isSel));
+        if (isSel) el.scrollIntoView({ block: "nearest" });
+      });
+    }
+
+    function getCurrentWordInfo() {
+      const val = queryInput.value;
+      const selEnd = queryInput.selectionEnd != null ? queryInput.selectionEnd : val.length;
+      const left = val.slice(0, selEnd);
+      const match = left.match(/(\S+)$/);
+      if (!match) return { word: "", start: selEnd, end: selEnd };
+      return { word: match[1], start: match.index, end: selEnd };
+    }
+
+    function applySuggestion(item) {
+      if (!item) return;
+      const val = queryInput.value;
+      const { word, start, end } = getCurrentWordInfo();
+      let next;
+      if (word) {
+        next = val.slice(0, start) + item.op + " " + val.slice(end);
+      } else {
+        next = (val.trim() ? val.trim() + " " : "") + item.op + " ";
+      }
+      queryInput.value = next.replace(/\s+/g, " ");
+      syncSearchUI();
+      cb.onQuery(queryInput.value);
+      closeSuggest();
+      queryInput.focus();
+    }
+
+    function renderSuggestions() {
+      activeSuggestIdx = -1;
+      suggestList.hidden = false;
+      suggestList.replaceChildren(...currentSuggestions.map((item) => {
+        const catBadge = h("span", { class: `rr-suggest-cat rr-scat-${item.group}` }, item.tag);
+        const opCode = h("code", { class: "rr-suggest-op" }, item.op);
+        const descText = h("span", { class: "rr-suggest-desc" }, item.desc);
+        return h("li", {
+          class: "rr-suggest-item",
+          role: "option",
+          "aria-selected": "false",
+          "data-op": item.op,
+          onPointerdown: (e) => {
+            e.preventDefault();
+            applySuggestion(item);
+          }
+        }, catBadge, opCode, descText);
+      }));
+    }
+
+    function updateSuggestions() {
+      const { word } = getCurrentWordInfo();
+      const w = word.toLowerCase().trim();
+      if (!w) {
+        closeSuggest();
+        return;
+      }
+      const isOpPattern = /^(?:r|role|c|ccf|core|t|tier|rank|y|year|h|has|is):/i.test(w) ||
+                          /^[><=]/.test(w) ||
+                          ["role", "ccf", "core", "tier", "rank", "cites", "cite", "year", "has", "is", ">", "<"].includes(w);
+      if (!isOpPattern) {
+        closeSuggest();
+        return;
+      }
+      currentSuggestions = OPERATOR_ITEMS.filter((item) => {
+        return item.op.toLowerCase().startsWith(w) ||
+               item.op.toLowerCase().includes(w) ||
+               item.desc.toLowerCase().includes(w);
+      });
+      if (!currentSuggestions.length) {
+        closeSuggest();
+        return;
+      }
+      renderSuggestions();
+    }
+
+    function openPopularSuggestions() {
+      currentSuggestions = OPERATOR_ITEMS.slice(0, 8);
+      renderSuggestions();
+    }
+
+    document.addEventListener("pointerdown", (e) => {
+      if (!searchRow.contains(e.target)) closeSuggest();
+    }, true);
+
     const clearSearchBtn = h("button", { class: "rr-search-clear", type: "button", "data-act": "clear-query", title: t("filterClear"), "aria-label": t("filterClear"), hidden: true, onClick: () => {
+      closeSuggest();
       queryInput.value = "";
       syncSearchUI();
       cb.onQuery("");
@@ -132,6 +258,7 @@
         "data-op": p.op,
         "aria-pressed": "false",
         onClick: () => {
+          closeSuggest();
           queryInput.value = toggleToken(queryInput.value, btn.getAttribute("data-op"));
           syncSearchUI();
           cb.onQuery(queryInput.value);
@@ -163,20 +290,64 @@
         searchCount.textContent = "";
       }
     }
-    queryInput.addEventListener("input", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
-    queryInput.addEventListener("search", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
+    queryInput.addEventListener("input", () => {
+      syncSearchUI();
+      cb.onQuery(queryInput.value);
+      updateSuggestions();
+    });
+    queryInput.addEventListener("search", () => {
+      syncSearchUI();
+      cb.onQuery(queryInput.value);
+      updateSuggestions();
+    });
     queryInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
+      if (e.key === "ArrowDown") {
+        if (suggestList.hidden) {
+          openPopularSuggestions();
+          if (currentSuggestions.length) {
+            e.preventDefault();
+            activeSuggestIdx = 0;
+            highlightSuggestItem(0);
+          }
+        } else if (currentSuggestions.length) {
+          e.preventDefault();
+          activeSuggestIdx = (activeSuggestIdx + 1) % currentSuggestions.length;
+          highlightSuggestItem(activeSuggestIdx);
+        }
+      } else if (e.key === "ArrowUp") {
+        if (!suggestList.hidden && currentSuggestions.length) {
+          e.preventDefault();
+          if (activeSuggestIdx > 0) {
+            activeSuggestIdx--;
+            highlightSuggestItem(activeSuggestIdx);
+          } else {
+            activeSuggestIdx = -1;
+            highlightSuggestItem(-1);
+          }
+        }
+      } else if (e.key === "Tab") {
+        if (!suggestList.hidden && currentSuggestions.length) {
+          e.preventDefault();
+          const pick = activeSuggestIdx >= 0 ? currentSuggestions[activeSuggestIdx] : currentSuggestions[0];
+          applySuggestion(pick);
+        }
+      } else if (e.key === "Enter") {
         e.preventDefault();
-        if (queryInput.value.trim()) cb.onSearchNext(e.shiftKey ? -1 : 1);
+        if (!suggestList.hidden && activeSuggestIdx >= 0 && currentSuggestions[activeSuggestIdx]) {
+          applySuggestion(currentSuggestions[activeSuggestIdx]);
+        } else {
+          closeSuggest();
+          if (queryInput.value.trim()) cb.onSearchNext(e.shiftKey ? -1 : 1);
+        }
       } else if (e.key === "Escape") {
+        closeSuggest();
         queryInput.value = "";
         syncSearchUI();
         cb.onQuery("");
         queryInput.blur();
       }
     });
-    const searchRow = h("div", { class: "rr-search" }, queryInput, searchCount, kbdHint, clearSearchBtn);
+    const searchRow = h("div", { class: "rr-search" }, queryInput, searchCount, kbdHint, clearSearchBtn, suggestList);
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
@@ -278,9 +449,22 @@
 
     function renderActions() {
       const btn = (kind, key) =>
-        h("button", { class: "rr-btn", type: "button", "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind), onClick: () => cb.onCopy(kind) },
-          ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
-      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("apa", "copyApa"), btn("bibtex", "copyBibtex"), btn("markdown", "copyMarkdown"), btn("json", "copyJson"), btn("csv", "exportCsv"));
+        h("button", {
+          class: "rr-btn" + (ui.flash === kind ? " rr-btn-flashed" : ""),
+          type: "button",
+          "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind),
+          onClick: () => cb.onCopy(kind)
+        }, ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
+      actions.replaceChildren(
+        btn("text", "copySummary"),
+        btn("tsv", "copyTable"),
+        btn("papers", "copyPapers"),
+        btn("apa", "copyApa"),
+        btn("bibtex", "copyBibtex"),
+        btn("markdown", "copyMarkdown"),
+        btn("json", "copyJson"),
+        btn("csv", "exportCsv")
+      );
     }
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
