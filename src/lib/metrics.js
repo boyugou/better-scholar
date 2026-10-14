@@ -205,18 +205,25 @@
     return "\uFEFF" + [header, ...rows].map((r) => r.map(cell).join(",")).join("\r\n");
   }
 
+  // Escapes LaTeX special characters (%, &, _, #, $) in BibTeX field values so that
+  // exported entries compile cleanly in TeX/Overleaf without unescaped comment/alignment errors.
+  function escapeBibTeX(text) {
+    if (!text) return "";
+    return String(text).replace(/(?<!\\)([%&_#$])/g, "\\$1");
+  }
+
   // Synthesizes standard, well-formed BibTeX entries for an array of paper items.
   // Generates clean citekeys (e.g. stoica2001chord), formats authors with " and ",
-  // and includes rankings/awards in the note field.
+  // escapes LaTeX special characters, includes direct URLs, and puts rankings/awards in note.
   function toBibTeX(papers, { ccfOn = true, coreOn = true } = {}) {
     const stopWords = new Set(["a", "an", "the", "on", "in", "for", "and", "of", "to", "with", "at", "by", "from", "towards"]);
     const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
 
     return papers.map((p) => {
-      const title = clean(p.title);
+      const title = escapeBibTeX(clean(p.title));
       const authors = clean(p.authorsText)
         .split(/,\s*/)
-        .map((a) => a.trim())
+        .map((a) => escapeBibTeX(a.trim()))
         .filter((a) => a && !/^(?:\.\.\.|…)$/.test(a));
       const firstAuthor = authors[0] || "";
       const lastName = firstAuthor.split(/\s+/).pop()?.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() || "paper";
@@ -226,7 +233,7 @@
       const key = `${lastName}${year || "nodate"}${word}`;
 
       const v = p.venue || {};
-      const vt = clean(p.venueText);
+      const vt = escapeBibTeX(clean(p.venueText));
       let type = "inproceedings";
       let venueField = "booktitle";
 
@@ -248,16 +255,19 @@
       if (ccfOn && v.ccf && v.ccf.tier) notes.push(`CCF ${v.ccf.tier}`);
       if (coreOn && v.core && v.core.rank) notes.push(`CORE ${v.core.rank}`);
       if (Array.isArray(p.awards)) {
-        for (const aw of p.awards) if (aw) notes.push(clean(aw));
+        for (const aw of p.awards) if (aw) notes.push(escapeBibTeX(clean(aw)));
       } else if (p.awards) {
-        notes.push(clean(p.awards));
+        notes.push(escapeBibTeX(clean(p.awards)));
       }
+
+      const url = p.href ? (p.href.startsWith("http") ? p.href : "https://scholar.google.com" + p.href) : null;
 
       const fields = [
         `  title = {${title}}`,
         authors.length ? `  author = {${authors.join(" and ")}}` : null,
         venueField && vt ? `  ${venueField} = {${vt}}` : null,
         year ? `  year = {${year}}` : null,
+        url ? `  url = {${url}}` : null,
         notes.length ? `  note = {${notes.join(", ")}}` : null
       ].filter(Boolean);
 

@@ -1,4 +1,4 @@
-/* Scholar Roles & Ranks — styles injected on Google Scholar profile pages.
+/* Better Scholar — styles injected on Google Scholar profile pages.
    Scholar renders light regardless of OS appearance, so everything here is light.
    Panel rules are scoped under #rr-panel and reset the widgets Scholar styles
    globally (buttons, inputs) so they cannot bleed in. */

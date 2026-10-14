@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.33.0 — 2026-10-14
+
+- **Advanced Query Operators for Quick Search (`analysis.matchesQuery`)**:
+  - Upgraded the quick search input (`/` shortcut) with instant query operators:
+    - **Citation thresholds**: `>100`, `>=50`, `<10`, `<=5`, `cites:>500`, `c:>=100` filter papers by citation volume in real time.
+    - **Year ranges**: `>2020`, `<=2015`, `year:>=2021`, `y:>2019`.
+    - **Rank / Tier selectors**: `ccf:a`, `ccf:b`, `core:a*`, `core:a`, `tier:a`, `rank:b`.
+    - **Role selectors**: `role:first`, `role:last`, `role:second`, `r:cofirst`.
+    - **Award / Talk filters**: `has:award`, `is:award`, `has:talk`, `is:talk`.
+  - Seamlessly combines operators with free-text multi-token search (e.g. `ccf:a role:first >1000 >2015 has:award CVPR`).
+  - Extracted as a pure, dependency-free library function (`src/lib/analysis.js`) covered by dedicated unit tests (`test/query.test.js`).
+- **Compile-Ready BibTeX LaTeX Escaping & Direct URL Integration**:
+  - Escapes special LaTeX characters (`%`, `&`, `_`, `#`, `$`) across title, authors, venue, and awards in generated BibTeX entries, preventing fatal TeX syntax errors and comment line truncation.
+  - Automatically incorporates the direct `url = {https://scholar.google.com/...}` field when copying BibTeX entries.
+- **Brand Consistency**:
+  - Updated toolbar popup window title in `src/popup/popup.html` and stylesheet banner in `src/content/styles.css` to Better Scholar.
+
 ## 2.32.0 — 2026-10-14
 
 - **Interactive H-Core & i10 Impact Filtering**:

@@ -168,6 +168,20 @@ test("toBibTeX: generates standard BibTeX entries with citekey, author and, book
   assert.ok(bib.includes("@inproceedings{vaswani2017attention,"));
   assert.ok(bib.includes("  author = {A Vaswani and N Shazeer},"));
   assert.ok(bib.includes("  note = {CCF A}"));
+
+  const latexSpecial = [
+    {
+      title: "100% Analysis of C++ & Rust: A #1 Study of $X_y$",
+      authorsText: "A Author",
+      year: 2024,
+      venueText: "ACM Conference on Security & Privacy",
+      href: "/citations?view_op=view_citation&citation_for_view=456"
+    }
+  ];
+  const bibSpecial = m.toBibTeX(latexSpecial);
+  assert.ok(bibSpecial.includes("  title = {100\\% Analysis of C++ \\& Rust: A \\#1 Study of \\$X\\_y\\$},"));
+  assert.ok(bibSpecial.includes("  booktitle = {ACM Conference on Security \\& Privacy},"));
+  assert.ok(bibSpecial.includes("  url = {https://scholar.google.com/citations?view_op=view_citation&citation_for_view=456}"));
 });
 
 test("toMarkdown: standard publication list in markdown format", () => {

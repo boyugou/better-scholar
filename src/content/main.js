@@ -182,36 +182,7 @@
     markName(row);
   }
 
-  function rowMatchesQuery(row, q) {
-    if (!q) return true;
-    const tokens = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    if (!tokens.length) return true;
-    const raw = row.raw, a = row.a;
-    const title = (raw.title || "").toLowerCase();
-    const authors = (raw.authorsText || "").toLowerCase();
-    const venue = (raw.venueText || "").toLowerCase();
-    const v = a.venue || {};
-    const ccfAbbr = (v.ccf && v.ccf.abbr || "").toLowerCase();
-    const ccfName = (v.ccf && v.ccf.name || "").toLowerCase();
-    const coreAbbr = (v.core && v.core.abbr || "").toLowerCase();
-    const coreName = (v.core && v.core.name || "").toLowerCase();
-    const year = a.year != null ? String(a.year) : "";
-    const role = a.role || "";
-    const marksText = (a.marks || []).map((m) => (m.kind || "") + " " + (m.label || "") + " " + (m.text || "")).join(" ").toLowerCase();
-
-    return tokens.every((tok) =>
-      title.includes(tok) ||
-      authors.includes(tok) ||
-      venue.includes(tok) ||
-      ccfAbbr.includes(tok) ||
-      ccfName.includes(tok) ||
-      coreAbbr.includes(tok) ||
-      coreName.includes(tok) ||
-      year === tok ||
-      role === tok ||
-      marksText.includes(tok)
-    );
-  }
+  const rowMatchesQuery = (row, q) => analysis.matchesQuery(row, q);
 
   function applyFilters() {
     const f = state.filters;
@@ -369,7 +340,8 @@
         venueText: r.raw.venueText,
         year: a.year,
         venue: a.venue,
-        awards
+        awards,
+        href: r.raw.href
       };
     });
     return metrics.toBibTeX(items, { ccfOn, coreOn });

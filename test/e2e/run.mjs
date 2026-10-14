@@ -620,6 +620,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await queryInput.fill("Stoica 2001");
     assert.ok((await visibleRows(page)) > 0, "multi-token search matches across author and year");
     await clearBtn.click();
+    // Advanced query operators: >500 citations, ccf:a tier
+    await queryInput.fill(">500");
+    const countOver500 = (await visibleRows(page));
+    assert.ok(countOver500 > 0 && countOver500 < all.length, "numeric citation comparison filters correctly");
+    await queryInput.fill("ccf:a");
+    const countCcfA = (await visibleRows(page));
+    assert.ok(countCcfA > 0, "rank operator ccf:a filters to CCF A papers");
+    await clearBtn.click();
     // Pressing "/" anywhere on the page focuses the search query input
     const kbdHint = page.locator("#rr-panel .rr-search-kbd");
     assert.equal(await kbdHint.count(), 1, "shows / keyboard hint badge");
