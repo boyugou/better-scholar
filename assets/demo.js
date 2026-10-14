@@ -247,6 +247,22 @@
     }).join("\n\n");
   }
 
+  function generateApa(items) {
+    return items.map(function (p) {
+      var authors = p.authors.split(",").map(function (a) {
+        var parts = a.trim().split(/\s+/);
+        if (parts.length <= 1) return a.trim();
+        var last = parts.pop();
+        var initials = parts.map(function (pt) { return pt.charAt(0) + "."; }).join(" ");
+        return last + ", " + initials;
+      });
+      var authorStr = authors.length === 1 ? authors[0] : (authors.slice(0, -1).join(", ") + ", & " + authors[authors.length - 1]);
+      if (!/[.!?]$/.test(authorStr)) authorStr += ".";
+      var titleStr = p.title + (/[.!?]$/.test(p.title) ? "" : ".");
+      return authorStr + " (" + p.year + "). " + titleStr + " *" + p.venue + "*.";
+    }).join("\n\n");
+  }
+
   function generateCsv(items) {
     var header = "Title,Authors,Venue,Year,Citations,Role,CCF,CORE,Award\n";
     var rows = items.map(function (p) {
@@ -262,6 +278,7 @@
     if (!codeDisplay) return;
     var text = "";
     if (activeExportTab === "bibtex") text = generateBibtex(visibleItems);
+    else if (activeExportTab === "apa") text = generateApa(visibleItems);
     else if (activeExportTab === "json") text = generateJson(visibleItems);
     else if (activeExportTab === "markdown") text = generateMarkdown(visibleItems);
     else if (activeExportTab === "csv") text = generateCsv(visibleItems);
@@ -341,6 +358,7 @@
       var visible = getVisiblePapers();
       var text = "";
       if (fmt === "bibtex") text = generateBibtex(visible);
+      else if (fmt === "apa") text = generateApa(visible);
       else if (fmt === "json") text = generateJson(visible);
       else if (fmt === "markdown") text = generateMarkdown(visible);
       else if (fmt === "csv") text = generateCsv(visible);
