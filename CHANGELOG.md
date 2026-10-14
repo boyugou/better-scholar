@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.22.10 — 2026-10-13
+
+- **A year far in the past no longer costs what it spans.** The year chart expanded every year between a profile's oldest and newest paper before it cut the window, so a page value such as -1e9 (Scholar never prints one, but a page's text is not trusted) would have looped a billion times. The window is now found first and only it is expanded: the same bars and the same "older" count for every real profile (the year chart's tests are unchanged), and a far-past year costs a millisecond.
+- The robustness tests cover the year chart with hostile years (NaN, infinities, strings, fractions, far past and future), and the new search and author-name functions with the same adversarial strings.
+
 ## 2.22.9 — 2026-10-13
 
 From an independent review of 2.22.6–2.22.8:

@@ -9,6 +9,7 @@ const venues = require("../src/lib/venues.js");
 const marks = require("../src/lib/marks.js");
 const awards = require("../src/lib/awards.js");
 const analysis = require("../src/lib/analysis.js");
+const metrics = require("../src/lib/metrics.js");
 const ccf = require("../src/data/ccf.js");
 const core = require("../src/data/core.js");
 const aliases = require("../src/data/aliases.js");
@@ -72,10 +73,28 @@ test("no adversarial string throws, and each is handled quickly by every library
     assert.doesNotThrow(() => names.parseAuthors(s), "names.parseAuthors: " + label);
     assert.doesNotThrow(() => names.classifyRow(s, owner), "names.classifyRow: " + label);
     assert.doesNotThrow(() => analysis.analyzeRow({ title: s, authorsText: s, venueText: s }, { owner, resolver, awards: index }), "analyzeRow: " + label);
+    assert.doesNotThrow(() => names.suggestVariants([s, s], owner), "names.suggestVariants: " + label);
+    assert.doesNotThrow(() => names.isShoutedInitials(s, owner.name), "names.isShoutedInitials: " + label);
+    assert.doesNotThrow(() => names.leadingGroup(names.parseAuthors(s).tokens), "names.leadingGroup: " + label);
     const ms = Number(process.hrtime.bigint() - t0) / 1e6;
     if (ms > 3000 * factor) slow.push(`${label}: ${Math.round(ms)} ms`);   // catastrophic backtracking is seconds to minutes, not tens of ms
   }
   assert.deepEqual(slow, [], "inputs that stall the page");
+});
+
+test("the year chart takes any year: far-past and far-future years are counted, never drawn, and cost no more than the window", () => {
+  const years = [NaN, Infinity, -Infinity, 1e308, -1e308, -1e9, -5, 0, 1, "2020", null, undefined, 2.5, 2099, 1e15, 2020, 2021];
+  const rows = years.map((y) => ({ year: y, role: "first", highlighted: true }));
+  rows.push({ year: 2019, role: "middle", highlighted: true }, { year: 2018, role: "first", highlighted: false });   // (not counted: a middle author, not highlighted)
+  const before = JSON.stringify(rows);
+  const t0 = Date.now();
+  const out = metrics.yearBars(rows, { now: 2026 });
+  assert.ok(Date.now() - t0 < 2000 * slowdown(), `took ${Date.now() - t0} ms`);
+  assert.equal(JSON.stringify(rows), before, "the rows are not changed");
+  assert.deepEqual(out.bars.map((b) => [b.year, b.total]), [[2020, 1], [2021, 1]], "only the real years inside the window are drawn");
+  assert.equal(out.older, 5, "the far past is counted as older, not drawn");
+  const lone = metrics.yearBars([{ year: -1e9, role: "first", highlighted: true }], { now: 2026 });
+  assert.deepEqual([lone.bars.length, lone.older], [1, 0], "a profile of one far-past paper draws that one bar (the panel shows a chart from two bars)");
 });
 
 test("a profile-sized batch of hostile rows stays fast", () => {

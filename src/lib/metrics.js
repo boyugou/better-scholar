@@ -60,12 +60,16 @@
   // real (next year at the latest, so a typo such as 2099 draws nothing). A paper Scholar dates 1803 would otherwise stretch the chart over two centuries and leave every bar a
   // pixel wide; `older` counts the highlighted papers before the first bar.
   const YEAR_BARS = 50;
+  // The window is found first and only it is expanded: a page's year far in the past (-1e9 would be a billion empty years) must not cost what it spans.
   function yearBars(rows, { maxYears = YEAR_BARS, now = new Date().getFullYear() } = {}) {
-    const all = byYear(rows.filter((r) => r.year == null || r.year <= now + 1));
-    if (all.length <= maxYears) return { bars: all, older: 0 };
-    const cut = all.length - maxYears, bars = all.slice(cut);
-    while (bars.length > 1 && !bars[0].total) bars.shift();                       // (the chart starts at a year that has a paper, not at an empty stretch)
-    return { bars, older: all.slice(0, cut).reduce((n, e) => n + e.total, 0) };
+    const counted = rows.filter((r) => r.highlighted && Number.isInteger(r.year) && r.year <= now + 1 && ["first", "cofirst", "second", "last"].includes(r.role));
+    if (!counted.length) return { bars: [], older: 0 };
+    let newest = -Infinity;
+    for (const r of counted) if (r.year > newest) newest = r.year;
+    const from = newest - maxYears + 1;
+    const inWindow = counted.filter((r) => r.year >= from);
+    // (the chart starts at the first year inside the window that has a paper, not at an empty stretch; the papers before it are `older`)
+    return { bars: byYear(inWindow), older: counted.length - inWindow.length };
   }
 
   // The venue a ranked paper belongs to, by its usual short name ("NeurIPS"), or "" when it matched no list
