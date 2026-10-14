@@ -1306,12 +1306,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       const settingsUrl = opts.url();
       for (const lang of langs) {
         await opts.evaluate(async (l) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: l } }); }, lang);
-        for (const w of [1360, 420]) {
+        for (const w of [1360, 940, 420]) {
           await opts.setViewportSize({ width: w, height: 900 });
           await opts.goto(settingsUrl);
           await opts.waitForSelector(".toc a");
           const wide = await opts.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
           if (wide > 1) bad.push(`${lang}/settings ${w}px: ${wide}px too wide`);
+          // every button of a row (the Enable all / Disable all pairs, Compact, the colour resets …) is whole and inside its card
+          const cut = await opts.evaluate(() => [...document.querySelectorAll(".row .btn")].filter((b) => b.offsetParent && (b.scrollWidth > b.clientWidth + 1 || b.getBoundingClientRect().right > b.closest("section.card").getBoundingClientRect().right + 1)).map((b) => b.textContent.trim()));
+          if (cut.length) bad.push(`${lang}/settings ${w}px: cut or outside its card: ${cut.join(", ")}`);
         }
       }
       await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...r.prefs, language: "auto" } }); });
@@ -1324,7 +1327,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       await page.emulateMedia({ colorScheme: "light" });
       await opts.close();
       await page.setViewportSize({ width: 1360, height: 900 });
-      assert.deepEqual(bad, [], "a language does not fit the panel");
+      assert.deepEqual(bad, [], "a language does not fit the panel or the settings page");
       ok(`all ${langs.length} interface languages fit the panel (no cut-off button, nothing outside the box) in the sidebar and in the wide layout`);
     }
   } finally {
