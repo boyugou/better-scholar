@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "Salin makalah"
   },
+  "copyBibtex": {
+    "message": "Salin BibTeX"
+  },
   "exportCsv": {
     "message": "Ekspor CSV"
   },

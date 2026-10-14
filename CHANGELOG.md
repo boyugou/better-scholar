@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.28.0 — 2026-10-14
+
+- **Direct BibTeX Citation Export ("Copy BibTeX")**:
+  - Adds a new "Copy BibTeX" button to the panel action bar.
+  - Generates standard, clean BibTeX entries (`toBibTeX`) with semantic entry types (`@inproceedings`, `@article`, `@misc`) derived from publication venue analysis.
+  - Automatically formats author lists with RFC/BibTeX-compliant ` and ` delimiters while pruning trailing truncation ellipsis.
+  - Generates deterministic, human-readable citation keys in the standard `firstAuthorYearFirstWord` format (e.g. `vaswani2017attention`, `he2016deep`).
+  - Preserves venue rankings (CCF, CORE) and distinguished paper awards inside standard BibTeX `note = {...}` fields.
+  - Respects active filters (exports only filtered papers if filters are applied, or all loaded papers).
+  - Fully localized across all 30 languages with native button labels and clipboard confirmation flash.
+- **Search & Filter Empty-State Accent**:
+  - Enhances visual feedback when active filters or search queries match 0 papers (`.rr-fb-empty`).
+  - Applies a high-visibility warm amber accent and warning icon in the active filter bar, clearly communicating that the zero-result view is due to current filter constraints rather than missing data.
+
 ## 2.27.0 — 2026-10-14
 
 - **Direct CSV Export ("Export CSV")**:

@@ -547,6 +547,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await queryInput.inputValue(), "");
     assert.equal(await clearBtn.isVisible(), false);
     assert.equal(await visibleRows(page), all.length);
+    // When a search query matches 0 papers, filterbar gets empty-state accent class
+    await queryInput.fill("nonexistentqueryxyz12345");
+    assert.equal(await visibleRows(page), 0);
+    assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 1, "filterbar has empty-state class when 0 papers match");
+    await clearBtn.click();
+    assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 0);
     // Pressing "/" anywhere on the page focuses the search query input
     const kbdHint = page.locator("#rr-panel .rr-search-kbd");
     assert.equal(await kbdHint.count(), 1, "shows / keyboard hint badge");
@@ -554,7 +560,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.keyboard.press("/");
     assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.getAttribute("data-act")), "filter-query", "pressing / focuses the search query input");
     await queryInput.press("Escape");
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, has inline clear button, and focuses on /");
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, has inline clear button, empty state, and focuses on /");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");
@@ -680,6 +686,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(onlyRows.length < paperRows.length);
     await page.uncheck('input[data-act="only"]');
     ok("Copy papers puts the papers shown (the filters count) on the clipboard, one line each, with role, ranks, awards and citations");
+
+    // "Copy BibTeX": standard BibTeX for papers shown
+    await page.click('[data-act="copy-bibtex"]');
+    const bibtex = await page.evaluate(() => navigator.clipboard.readText());
+    assert.ok(bibtex.includes("@inproceedings{") || bibtex.includes("@article{"));
+    assert.ok(bibtex.includes("  title = {"));
+    assert.ok(bibtex.includes("  author = {"));
+    assert.ok(bibtex.includes("  year = {"));
+    assert.equal(await page.locator('[data-act="copy-bibtex"]').textContent(), "Copied");
+    ok("Copy BibTeX generates standard BibTeX entries with citekey, formatted authors and note");
 
     // "Export CSV": downloads RFC-4180 CSV with UTF-8 BOM and sanitized filename
     const [download] = await Promise.all([

@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "Sao chép bài báo"
   },
+  "copyBibtex": {
+    "message": "Sao chép BibTeX"
+  },
   "exportCsv": {
     "message": "Xuất CSV"
   },

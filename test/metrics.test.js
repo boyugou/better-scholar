@@ -141,6 +141,35 @@ test("toRowsCsv: RFC-4180 CSV with UTF-8 BOM, escaped quotes and commas, CRLF en
   assert.equal(lines[2], ',"\'=HYPERLINK(""http://x"",""y"")",-5');
 });
 
+test("toBibTeX: generates standard BibTeX entries with citekey, author and, booktitle/journal, rankings note", () => {
+  const papers = [
+    {
+      title: "Deep Residual Learning for Image Recognition",
+      authorsText: "K He, X Zhang, S Ren, J Sun, …",
+      year: 2016,
+      venueText: "Proceedings of the IEEE conference on computer vision and pattern recognition",
+      venue: { ccf: { tier: "A" }, core: { rank: "A*" } },
+      awards: ["Best Paper Award"]
+    },
+    {
+      title: "Attention Is All You Need",
+      authorsText: "A Vaswani, N Shazeer",
+      year: 2017,
+      venueText: "Advances in Neural Information Processing Systems",
+      venue: { ccf: { tier: "A" } }
+    }
+  ];
+  const bib = m.toBibTeX(papers);
+  assert.ok(bib.includes("@inproceedings{he2016deep,"));
+  assert.ok(bib.includes("  title = {Deep Residual Learning for Image Recognition},"));
+  assert.ok(bib.includes("  author = {K He and X Zhang and S Ren and J Sun},"));
+  assert.ok(bib.includes("  year = {2016},"));
+  assert.ok(bib.includes("  note = {CCF A, CORE A*, Best Paper Award}"));
+  assert.ok(bib.includes("@inproceedings{vaswani2017attention,"));
+  assert.ok(bib.includes("  author = {A Vaswani and N Shazeer},"));
+  assert.ok(bib.includes("  note = {CCF A}"));
+});
+
 test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
   const r = (year, role, highlighted = true) => ({ year, role, highlighted });
   const out = m.byYear([r(2020, "first"), r(2020, "last"), r(2022, "second"), r(2022, "first", false), r(null, "first"), r(2021, "middle")]);

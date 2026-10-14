@@ -223,7 +223,7 @@
       const btn = (kind, key) =>
         h("button", { class: "rr-btn", type: "button", "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind), onClick: () => cb.onCopy(kind) },
           ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
-      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("csv", "exportCsv"));
+      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("bibtex", "copyBibtex"), btn("csv", "exportCsv"));
     }
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
@@ -407,6 +407,7 @@
       variantBox.hidden = !m.prefs.panel.names;
       footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;
+      filterBar.classList.toggle("rr-fb-empty", !!(m.filterBar && m.filterBar.shown === 0));
       if (m.filterBar) {
         const parts = filterParts(m, true);
         filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, " · " + parts.join(" · ")) : null),

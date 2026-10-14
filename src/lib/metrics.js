@@ -205,6 +205,66 @@
     return "\uFEFF" + [header, ...rows].map((r) => r.map(cell).join(",")).join("\r\n");
   }
 
+  // Synthesizes standard, well-formed BibTeX entries for an array of paper items.
+  // Generates clean citekeys (e.g. stoica2001chord), formats authors with " and ",
+  // and includes rankings/awards in the note field.
+  function toBibTeX(papers, { ccfOn = true, coreOn = true } = {}) {
+    const stopWords = new Set(["a", "an", "the", "on", "in", "for", "and", "of", "to", "with", "at", "by", "from", "towards"]);
+    const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
+
+    return papers.map((p) => {
+      const title = clean(p.title);
+      const authors = clean(p.authorsText)
+        .split(/,\s*/)
+        .map((a) => a.trim())
+        .filter((a) => a && !/^(?:\.\.\.|…)$/.test(a));
+      const firstAuthor = authors[0] || "";
+      const lastName = firstAuthor.split(/\s+/).pop()?.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() || "paper";
+      const year = p.year ? String(p.year) : "";
+      const words = title.toLowerCase().match(/[a-z0-9]+/g) || [];
+      const word = words.find((w) => !stopWords.has(w) && w.length >= 3) || words[0] || "paper";
+      const key = `${lastName}${year || "nodate"}${word}`;
+
+      const v = p.venue || {};
+      const vt = clean(p.venueText);
+      let type = "inproceedings";
+      let venueField = "booktitle";
+
+      if (/patent\b/i.test(vt)) {
+        type = "misc";
+        venueField = "howpublished";
+      } else if (/arxiv\b|biorxiv\b|medrxiv\b/i.test(vt) || /journal|transactions|letters|review|annals|nature|science|ieee\/acm trans/i.test(vt)) {
+        type = "article";
+        venueField = "journal";
+      } else if (v.ccf || v.core || /conference|symposium|proceedings|workshop|annual|proc\./i.test(vt)) {
+        type = "inproceedings";
+        venueField = "booktitle";
+      } else if (!vt) {
+        type = "misc";
+        venueField = "";
+      }
+
+      const notes = [];
+      if (ccfOn && v.ccf && v.ccf.tier) notes.push(`CCF ${v.ccf.tier}`);
+      if (coreOn && v.core && v.core.rank) notes.push(`CORE ${v.core.rank}`);
+      if (Array.isArray(p.awards)) {
+        for (const aw of p.awards) if (aw) notes.push(clean(aw));
+      } else if (p.awards) {
+        notes.push(clean(p.awards));
+      }
+
+      const fields = [
+        `  title = {${title}}`,
+        authors.length ? `  author = {${authors.join(" and ")}}` : null,
+        venueField && vt ? `  ${venueField} = {${vt}}` : null,
+        year ? `  year = {${year}}` : null,
+        notes.length ? `  note = {${notes.join(", ")}}` : null
+      ].filter(Boolean);
+
+      return `@${type}{${key},\n${fields.join(",\n")}\n}`;
+    }).join("\n\n");
+  }
+
   function toTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
     const head = [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total];
     const lines = [head.join("\t")];
@@ -213,5 +273,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv, toBibTeX };
 });

@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "คัดลอกงานวิจัย"
   },
+  "copyBibtex": {
+    "message": "คัดลอก BibTeX"
+  },
   "exportCsv": {
     "message": "ส่งออก CSV"
   },

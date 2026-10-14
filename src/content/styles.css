@@ -288,6 +288,8 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }
+#rr-panel .rr-filterbar.rr-fb-empty { background: #fef7e0; border-bottom-color: #fce8b2; }
+#rr-panel .rr-filterbar.rr-fb-empty .rr-fb-text { color: #b06000; font-weight: 600; }
 #rr-panel .rr-fb-text { flex: 1; min-width: 0; }
 #rr-panel .rr-fb-what { color: var(--rr-muted); }
 

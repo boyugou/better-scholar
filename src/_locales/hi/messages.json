@@ -510,6 +510,9 @@
   "copyPapers": {
     "message": "पेपर कॉपी करें"
   },
+  "copyBibtex": {
+    "message": "BibTeX कॉपी करें"
+  },
   "exportCsv": {
     "message": "CSV निर्यात करें"
   },

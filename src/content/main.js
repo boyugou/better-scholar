@@ -329,6 +329,23 @@
     return metrics.toRowsCsv(header, rows);
   }
 
+  function papersBibtex() {
+    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
+    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+      const a = r.a;
+      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+      return {
+        title: r.raw.title,
+        authorsText: r.raw.authorsText,
+        venueText: r.raw.venueText,
+        year: a.year,
+        venue: a.venue,
+        awards
+      };
+    });
+    return metrics.toBibTeX(items, { ccfOn, coreOn });
+  }
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
@@ -370,6 +387,11 @@
         const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
         B.dom.downloadFile((safe || "scholar") + "-papers.csv", csv);
         panel.flash("csv");
+        return;
+      }
+      if (kind === "bibtex") {
+        const text = papersBibtex();
+        if (await copyText(text)) panel.flash("bibtex");
         return;
       }
       const m = model();

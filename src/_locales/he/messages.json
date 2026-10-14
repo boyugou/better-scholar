@@ -525,6 +525,9 @@
   "copyPapers": {
     "message": "העתקת מאמרים"
   },
+  "copyBibtex": {
+    "message": "העתק BibTeX"
+  },
   "exportCsv": {
     "message": "ייצוא CSV"
   },

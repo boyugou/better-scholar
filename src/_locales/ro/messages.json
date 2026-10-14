@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "Copiază lucrările"
   },
+  "copyBibtex": {
+    "message": "Copiază BibTeX"
+  },
   "exportCsv": {
     "message": "Exportă CSV"
   },

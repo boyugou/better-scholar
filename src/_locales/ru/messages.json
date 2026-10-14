@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "Копировать статьи"
   },
+  "copyBibtex": {
+    "message": "Копировать BibTeX"
+  },
   "exportCsv": {
     "message": "Экспорт CSV"
   },

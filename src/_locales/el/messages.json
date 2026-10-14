@@ -525,6 +525,9 @@
   "copyPapers": {
     "message": "Αντιγραφή εργασιών"
   },
+  "copyBibtex": {
+    "message": "Αντιγραφή BibTeX"
+  },
   "exportCsv": {
     "message": "Εξαγωγή CSV"
   },

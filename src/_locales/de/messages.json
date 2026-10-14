@@ -525,6 +525,9 @@
   "copyPapers": {
     "message": "Paper kopieren"
   },
+  "copyBibtex": {
+    "message": "BibTeX kopieren"
+  },
   "exportCsv": {
     "message": "CSV exportieren"
   },

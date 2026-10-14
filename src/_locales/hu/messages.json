@@ -507,6 +507,9 @@
   "copyPapers": {
     "message": "Cikkek másolása"
   },
+  "copyBibtex": {
+    "message": "BibTeX másolása"
+  },
   "exportCsv": {
     "message": "CSV exportálása"
   },
