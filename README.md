@@ -199,7 +199,7 @@ better-scholar/
 │   └── _locales/           Translations for 30 interface languages
 ├── data/                   Official ranking datasets (CCF PDF extract & ICORE export)
 ├── scripts/                Build tools, CCF extractor, domain updater, packaging
-├── test/                   Comprehensive test suites (415 unit tests + 76 e2e checks)
+├── test/                   Comprehensive test suites (416 unit tests + 76 e2e checks)
 │   ├── fixtures/           Real-world Google Scholar profile and venue corpora
 │   └── e2e/                Chromium end-to-end tests with fixture server
 ├── docs/                   Architecture documentation, store assets, roadmaps
@@ -213,11 +213,21 @@ better-scholar/
 All tests run on Node.js without third-party dependencies:
 
 ```bash
-npm test            # Run all 415 unit tests (names, venues, metrics, i18n, integrity)
+npm test            # Run all 416 unit tests (names, venues, metrics, i18n, integrity)
 npm run test:e2e    # Run all 76 Chromium E2E checks with headless browser & mock Scholar server
 npm run test:update # Review and update snapshots when venue rules are intentionally improved
 npm run data        # Rebuild src/data/{ccf,core}.js from data/*.json
 ```
+
+---
+
+## Documentation & Governance
+
+- [**AI & Agent Interoperability Guide (`AGENTS.md`)**](AGENTS.md): Event bus protocols, message APIs, and headless automation.
+- [**Development Roadmap (`ROADMAP.md`)**](ROADMAP.md): Architectural pillars, recent milestones, and upcoming technical lanes.
+- [**Contributing Guidelines (`CONTRIBUTING.md`)**](CONTRIBUTING.md): Code style, testing standards, and pull request workflows.
+- [**Security Policy (`SECURITY.md`)**](SECURITY.md): Vulnerability reporting instructions and supported versions.
+- [**Privacy Policy (`PRIVACY.md`)**](PRIVACY.md): Offline-first, local-only data processing guarantees.
 
 ---
 

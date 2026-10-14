@@ -221,6 +221,16 @@ npm run data        # 基于 data/*.json 重新生成 src/data/{ccf,core}.js 产
 
 ---
 
+## 文档与工程规范
+
+- [**AI 与自动化 Agent 接入指南（`AGENTS.md`）**](AGENTS.md)：页面 DOM 事件总线、扩展通信协议及无头自动化规格。
+- [**技术路线图（`ROADMAP.md`）**](ROADMAP.md)：架构基石、近期里程碑与后续演进方向。
+- [**贡献指南（`CONTRIBUTING.md`）**](CONTRIBUTING.md)：代码规范、测试准则与代码审查标准。
+- [**安全政策（`SECURITY.md`）**](SECURITY.md)：私密安全漏洞提报机制与版本支持策略。
+- [**隐私协议（`PRIVACY.md`）**](PRIVACY.md)：纯本地计算与无数据上传隐私承诺。
+
+---
+
 ## 数据来源与说明
 
 | 名录 / 数据集 | 版本 | 覆盖范围 | 官方权威来源 |
