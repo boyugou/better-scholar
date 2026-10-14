@@ -70,7 +70,13 @@
         const text = kind === "tsv"
           ? metrics.toTsv(s, { label: labels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
           : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), extra: marksLine ? [marksLine] : [], edition: source === "none" ? "" : `${data.edition[source]} — ${t("tipToday")}` });
-        if (await copyText(text)) { const b = e.target; const old = b.textContent; b.textContent = t("copied"); setTimeout(() => (b.textContent = old), 1200); }
+        if (await copyText(text)) {
+          const b = e.target.closest("button") || e.target;
+          const old = b.textContent;
+          b.textContent = t("copied");
+          b.classList.add("btn-flashed");
+          setTimeout(() => { b.textContent = old; b.classList.remove("btn-flashed"); }, 1200);
+        }
       };
       const copyExport = (format) => async (e) => {
         const forced = parseInt(new URLSearchParams(location.search).get("tab"), 10);
@@ -79,10 +85,11 @@
         try {
           const res = await chrome.tabs.sendMessage(tab.id, { type: "rr:export", format });
           if (res && res.text && (await copyText(res.text))) {
-            const b = e.target;
+            const b = e.target.closest("button") || e.target;
             const old = b.textContent;
             b.textContent = t("copied");
-            setTimeout(() => (b.textContent = old), 1200);
+            b.classList.add("btn-flashed");
+            setTimeout(() => { b.textContent = old; b.classList.remove("btn-flashed"); }, 1200);
           }
         } catch (err) { /* tab unavailable */ }
       };
@@ -97,13 +104,13 @@
         parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         parts.summary && parts.copy !== false ? h("div", { class: "actions" },
-          h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
-          h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("bibtex") }, t("copyBibtex")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("markdown") }, t("copyMarkdown")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("apa") }, t("copyApa")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("json") }, t("copyJson")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("csv") }, t("exportCsv"))) : null,
+          h("button", { class: "btn", "data-act": "copy-text", type: "button", onClick: copy("text") }, t("copySummary")),
+          h("button", { class: "btn", "data-act": "copy-tsv", type: "button", onClick: copy("tsv") }, t("copyTable")),
+          h("button", { class: "btn", "data-act": "copy-bibtex", type: "button", onClick: copyExport("bibtex") }, t("copyBibtex")),
+          h("button", { class: "btn", "data-act": "copy-markdown", type: "button", onClick: copyExport("markdown") }, t("copyMarkdown")),
+          h("button", { class: "btn", "data-act": "copy-apa", type: "button", onClick: copyExport("apa") }, t("copyApa")),
+          h("button", { class: "btn", "data-act": "copy-json", type: "button", onClick: copyExport("json") }, t("copyJson")),
+          h("button", { class: "btn", "data-act": "copy-csv", type: "button", onClick: copyExport("csv") }, t("exportCsv"))) : null,
         parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
