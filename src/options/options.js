@@ -64,11 +64,12 @@
     return row;
   }
   // "Enable all" / "Disable all" under a group of switches: every switch of the group is set and saved as one change (the switches re-sync from the prefs)
-  function bulk(group, sets, ...extra) {
+  function bulk(group, sets, title, ...extra) {
     const all = (v) => { for (const set of sets) set(v); save(); };
-    return h("div", { class: "row bulk" }, ...extra,
+    return h("div", { class: "row bulk", role: "group", "aria-label": title },
       h("button", { class: "btn", type: "button", "data-act": "all-on", "data-group": group, onClick: () => all(true) }, t("optAllOn")),
-      h("button", { class: "btn", type: "button", "data-act": "all-off", "data-group": group, onClick: () => all(false) }, t("optAllOff")));
+      h("button", { class: "btn", type: "button", "data-act": "all-off", "data-group": group, onClick: () => all(false) }, t("optAllOff")),
+      ...extra);
   }
 
   // A choice among several values: a label, an optional hint and a drop-down (`choices`: [[value, label], …])
@@ -139,7 +140,7 @@
     card(t("optRolesTitle"), t("optRolesHint"),
       ...B.prefs.ROLES.map((role) => option({ key: "roles." + role, label: t(ROLE_NAME[role]), swatch: ROLE_COLOR[role], get: () => prefs.roles[role], set: (v) => { prefs.roles[role] = v; } })),
       option({ key: "markName", label: t("optMarkName"), hint: t("optMarkNameHint"), get: () => prefs.markName, set: (v) => { prefs.markName = v; } }),
-      bulk("roles", B.prefs.ROLES.map((role) => (v) => { prefs.roles[role] = v; }))),
+      bulk("roles", [...B.prefs.ROLES.map((role) => (v) => { prefs.roles[role] = v; }), (v) => { prefs.markName = v; }], t("optRolesTitle"))),
     card(t("optColorsTitle"), t("optColorsHint"),
       ...B.prefs.ROLES.map(colorRow),
       choice({ key: "rowStyle", label: t("optRowStyle"), choices: [["full", t("optRowStyleFull")], ["bar", t("optRowStyleBar")], ["tint", t("optRowStyleTint")]], get: () => prefs.rowStyle, set: (v) => { prefs.rowStyle = v; } }),
@@ -147,24 +148,23 @@
     card(t("optRanksTitle"), null,
       option({ key: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint"), get: () => prefs.ranks.ccf, set: (v) => { prefs.ranks.ccf = v; } }),
       option({ key: "ranks.core", label: t("optCore"), hint: t("optCoreHint"), get: () => prefs.ranks.core, set: (v) => { prefs.ranks.core = v; } }),
-      bulk("ranks", ["ccf", "core"].map((k) => (v) => { prefs.ranks[k] = v; }))),
+      bulk("ranks", ["ccf", "core"].map((k) => (v) => { prefs.ranks[k] = v; }), t("optRanksTitle"))),
     card(t("optMarksTitle"), t("marksHint"),
       ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } })),
-      bulk("marks", B.prefs.MARK_GROUPS.map((g) => (v) => { prefs.marks[g] = v; })),
+      bulk("marks", B.prefs.MARK_GROUPS.map((g) => (v) => { prefs.marks[g] = v; }), t("optMarksTitle")),
       choice({ key: "talkRows", label: t("optTalkRows"), hint: t("optTalkRowsHint"), choices: [["separate", t("optTalkSeparate")], ["pair", t("optTalkPair")], ["talks", t("optTalkAll")]], get: () => prefs.talkRows, set: (v) => { prefs.talkRows = v; } })),
     card(t("optMergeTitle"), t("optMergeHint"),
       option({ key: "mergeDuplicates", label: t("optMergeLabel"), hint: t("optMergeLabelHint"), get: () => prefs.mergeDuplicates, set: (v) => { prefs.mergeDuplicates = v; } })),
     card(t("optHideTitle"), t("optHideHint"),
       ...[["cited", "optHideCited", "optHideCitedHint"], ["coauthors", "optHideCo", "optHideCoHint"], ["access", "optHideAccess", "optHideAccessHint"]]
-        .map(([part, label, hint]) => option({ key: "hide." + part, label: t(label), hint: t(hint), get: () => prefs.hide[part], set: (v) => { prefs.hide[part] = v; } })),
-      bulk("hide", ["cited", "coauthors", "access"].map((part) => (v) => { prefs.hide[part] = v; }))),
+        .map(([part, label, hint]) => option({ key: "hide." + part, label: t(label), hint: t(hint), get: () => prefs.hide[part], set: (v) => { prefs.hide[part] = v; } }))),
     card(t("optPanelTitle"), null,
       option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
       ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["copy", t("optPanelCopy"), t("optPanelCopyHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
         ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["years", t("optPanelYears"), t("optPanelYearsHint")], ["venues", t("optPanelVenues"), t("optPanelVenuesHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
-        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show })),
+        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show || (part === "copy" && !prefs.panel.summary) })),
       // "Compact" is a preset; "Enable all" / "Disable all" set every part of the panel but the panel itself (its own switch above)
-      bulk("panel", B.prefs.PANEL_PARTS.filter((k) => k !== "show").map((k) => (v) => { prefs.panel[k] = v; }),
+      bulk("panel", [...B.prefs.PANEL_PARTS.filter((k) => k !== "show").map((k) => (v) => { prefs.panel[k] = v; }), (v) => { if (v) prefs.panel.show = true; }], t("optPanelTitle"),
         h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => { for (const k of ["summary", "copy", "marks", "years", "venues", "status", "names"]) prefs.panel[k] = false; for (const k of ["filters", "metrics"]) prefs.panel[k] = true; prefs.panel.show = true; save(); } }, t("optPanelCompact")))),
     card(t("optSemanticTitle"), t("optSemanticHint"),
       option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } }),

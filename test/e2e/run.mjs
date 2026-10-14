@@ -866,23 +866,30 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await setPref(opts, "panel.show", true);
-    // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved; the page follows
+    // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved (polled: the switches re-sync after the save)
     const groups = [
-      ["roles", ["roles.first", "roles.cofirst", "roles.second", "roles.last"]],
+      ["roles", ["roles.first", "roles.cofirst", "roles.second", "roles.last", "markName"]],
       ["ranks", ["ranks.ccf", "ranks.core"]],
       ["marks", ["marks.award", "marks.oral", "marks.spotlight", "marks.highlight"]],
-      ["hide", ["hide.cited", "hide.coauthors", "hide.access"]],
       ["panel", ["panel.summary", "panel.copy", "panel.marks", "panel.filters", "panel.metrics", "panel.years", "panel.venues", "panel.status", "panel.names"]]
     ];
+    const at = (o, path) => path.split(".").reduce((x, k) => x && x[k], o);
     const beforeBulk = Object.fromEntries(await opts.$$eval("input[data-pref]", (els) => els.map((e) => [e.dataset.pref, e.checked])));
+    const switchesAre = (keys, val) => pollPage(opts, ([ks, v]) => ks.every((k) => document.querySelector(`input[data-pref="${k}"]`).checked === v), [keys, val]);
     for (const [group, keys] of groups) {
       await opts.click(`[data-act="all-off"][data-group="${group}"]`);
-      for (const k of keys) assert.equal(await opts.isChecked(`input[data-pref="${k}"]`), false, `${k} is off after Disable all`);
+      await switchesAre(keys, false);
+      const off = await stored(opts, "sync", "prefs");
+      for (const k of keys) assert.equal(at(off, k), false, `${k} is stored as off after Disable all (${group})`);
       await opts.click(`[data-act="all-on"][data-group="${group}"]`);
-      for (const k of keys) assert.equal(await opts.isChecked(`input[data-pref="${k}"]`), true, `${k} is on after Enable all`);
+      await switchesAre(keys, true);
+      const on = await stored(opts, "sync", "prefs");
+      for (const k of keys) assert.equal(at(on, k), true, `${k} is stored as on after Enable all (${group})`);
     }
     assert.equal(await opts.isChecked('input[data-pref="panel.show"]'), true, "the panel's own switch is not one of the groups");
+    assert.equal(await opts.locator('[data-act="all-on"][data-group="panel"]').getAttribute("disabled"), null, "the panel's buttons are never disabled");
     for (const [, keys] of groups) for (const k of keys) await setPref(opts, k, beforeBulk[k]);
+    assert.equal(await opts.locator('[role="group"][aria-label]').count() >= 4, true, "each group of buttons is labelled with its card");
     ok("'Enable all' / 'Disable all' under each group of switches set the whole group at once and save it");
     // the copy row follows its switch in the panel and in the toolbar popup
     const popupActions = async () => {

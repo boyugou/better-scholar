@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.23.1 — 2026-10-13
+
+From an independent review of 2.23.0:
+
+- **The panel's Enable all also shows the panel**, as *Everything* did (2.23.0 said the two were the same thing, and did not say that). Its buttons are never greyed out, and *Compact* / *Enable all* / *Disable all* wrap as a line of their own rather than splitting the pair.
+- **Mark my name belongs to the author-positions group**: *Disable all* turns it off too, *Enable all* on (it did nothing while no row was highlighted).
+- **The Copy buttons switch is greyed out while the table is off** (its buttons are in the table).
+- **No Enable all / Disable all on the Scholar-blocks card**: its switches say "hide", so the pair would have read backwards.
+- Each group of buttons is labelled with its card for screen readers. The settings test waits for each save and checks the stored values.
+
 ## 2.23.0 — 2026-10-13
 
 From the owner's suggestions while the work was going on:
