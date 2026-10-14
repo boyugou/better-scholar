@@ -98,6 +98,16 @@ const DEMO = [
   }
 ];
 
+// the operator cards of the search section: [key, the sample tokens shown on the card]
+const OPERATORS = [
+  ["cite", '<code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code>'],
+  ["tier", "<code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code>"],
+  ["role", "<code>role:first</code> <code>role:last</code> <code>r:cofirst</code>"],
+  ["year", "<code>&gt;2020</code> <code>year:&gt;=2021</code>"],
+  ["honors", "<code>has:award</code> <code>has:talk</code>"],
+  ["reset", "<kbd>Escape</kbd>"]
+];
+
 function demoAuthors(authors, you) {
   return authors.map((a) => {
     if (a.startsWith("Ion Stoica")) {
@@ -179,7 +189,7 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
     </div>
   </section>
 
-  <section class="demo" id="demo">
+  <section class="demo" id="demo" data-copied="${t("export.copied")}" data-empty="${t("export.empty")}">
     <div class="wrap">
       <h2>${t("demo.title")}</h2>
       <p class="note">${t("demo.hint")}</p>
@@ -209,11 +219,11 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
           <div class="mockup-search-row">
             <div class="search-wrap">
               <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="demo-search-input" placeholder="Search papers or use operators: >1000, ccf:a, role:first..." autocomplete="off">
+              <input type="text" id="demo-search-input" placeholder="${t("demo.search")}" aria-label="${t("demo.search")}" autocomplete="off">
               <kbd class="kbd">/</kbd>
             </div>
             <div class="pill-group" id="demo-operator-pills">
-              <button type="button" class="pill active" data-query="">All</button>
+              <button type="button" class="pill active" data-query="">${t("demo.all")}</button>
               <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
               <button type="button" class="pill" data-query="role:first">role:first</button>
               <button type="button" class="pill" data-query=">1000">&gt;1000</button>
@@ -244,19 +254,19 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
             <div class="mockup-panel-col">
               <div class="mini-panel">
                 <div class="mini-panel-header">
-                  <span>Roles &amp; Ranks</span>
+                  <span>${t("demo.panel")}</span>
                   <span class="mini-badge">CCF</span>
                 </div>
                 <div class="matrix-table-wrap">
                   <table class="mini-matrix">
                     <thead>
-                      <tr><th>Role</th><th>A</th><th>B</th><th>C</th><th>None</th></tr>
+                      <tr><th>${t("demo.col.role")}</th><th>A</th><th>B</th><th>C</th><th>${t("demo.col.none")}</th></tr>
                     </thead>
                     <tbody>
-                      <tr data-matrix-role="first"><td class="rlabel">First</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="cofirst"><td class="rlabel">Co-1st</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="second"><td class="rlabel">Second</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
-                      <tr data-matrix-role="last"><td class="rlabel">Last</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
+                      <tr data-matrix-role="first"><td class="rlabel">${t("demo.role.first")}</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="cofirst"><td class="rlabel">${t("demo.role.cofirst")}</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="second"><td class="rlabel">${t("demo.role.second")}</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
+                      <tr data-matrix-role="last"><td class="rlabel">${t("demo.role.last")}</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -288,8 +298,8 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
 
   <section class="export-section">
     <div class="wrap">
-      <h2>1-Click Academic Export</h2>
-      <p class="note">Instant, compile-ready publication formats for CVs, grant applications, research agents, and spreadsheets.</p>
+      <h2>${t("export.title")}</h2>
+      <p class="note">${t("export.note")}</p>
       <div class="export-card">
         <div class="export-tabs" role="tablist">
           <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
@@ -300,7 +310,7 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview"><code id="export-code-display"></code></pre>
-          <button type="button" class="copy-code-btn" id="copy-export-display">Copy to clipboard</button>
+          <button type="button" class="copy-code-btn" id="copy-export-display" data-label="${t("export.copy")}">${t("export.copy")}</button>
         </div>
       </div>
     </div>
@@ -308,39 +318,14 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Instant Search &amp; Query Operators</h2>
-      <p class="note">Press <kbd>/</kbd> anywhere on Google Scholar to power through large publication corpora.</p>
+      <h2>${t("ops.title")}</h2>
+      <p class="note">${t("ops.note").replace("[/]", "<kbd>/</kbd>")}</p>
       <div class="operators-grid">
-        <div class="op-card">
-          <div class="op-header"><code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code></div>
-          <p class="op-title">Citation Thresholds</p>
-          <p class="op-desc">Filter papers having citations above or below any threshold number.</p>
-        </div>
-        <div class="op-card">
-          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Venue Ranking Tiers</p>
-          <p class="op-desc">Isolate publications in top CCF or CORE ranked conferences and journals.</p>
-        </div>
-        <div class="op-card">
-          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>r:cofirst</code></div>
-          <p class="op-title">Authorship Roles</p>
-          <p class="op-desc">Filter by student first author, co-first, second, or senior last author.</p>
-        </div>
-        <div class="op-card">
-          <div class="op-header"><code>&gt;2020</code> <code>year:&gt;=2021</code></div>
-          <p class="op-title">Publication Year Ranges</p>
-          <p class="op-desc">Filter papers published after, before, or within specific years.</p>
-        </div>
-        <div class="op-card">
-          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Honors &amp; Presentations</p>
-          <p class="op-desc">Isolate Best Paper, Test of Time, Oral, Spotlight, or Highlight works.</p>
-        </div>
-        <div class="op-card">
-          <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">One-Key Reset</p>
-          <p class="op-desc">Instantly clears all active search queries, matrix filters, and metric selections.</p>
-        </div>
+${OPERATORS.map(([k, head]) => `        <div class="op-card">
+          <div class="op-header">${head}</div>
+          <p class="op-title">${t(`ops.${k}.title`)}</p>
+          <p class="op-desc">${t(`ops.${k}.text`)}</p>
+        </div>`).join("\n")}
       </div>
     </div>
   </section>

@@ -19,6 +19,8 @@
   var copyCodeBtn = document.getElementById("copy-export-display");
   var exportTabs = [].slice.call(document.querySelectorAll(".export-tabs .tab-btn"));
   var activeExportTab = "bibtex";
+  var copiedText = root.getAttribute("data-copied") || "Copied!";
+  var emptyText = root.getAttribute("data-empty") || "No matching publications.";
 
   // Data structure for the demo papers
   var demoData = [
@@ -282,7 +284,7 @@
     else if (activeExportTab === "json") text = generateJson(visibleItems);
     else if (activeExportTab === "markdown") text = generateMarkdown(visibleItems);
     else if (activeExportTab === "csv") text = generateCsv(visibleItems);
-    codeDisplay.textContent = text || "// No matching publications found.";
+    codeDisplay.textContent = text || "// " + emptyText;
   }
 
   // Role button click handlers
@@ -365,7 +367,7 @@
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () {
-          showToast("Copied " + fmt.toUpperCase() + " (" + visible.length + " papers) to clipboard!");
+          showToast(fmt.toUpperCase() + " (" + visible.length + "): " + copiedText);
         });
       }
       // Also switch active tab in showcase
@@ -390,9 +392,9 @@
     copyCodeBtn.addEventListener("click", function () {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(codeDisplay.textContent).then(function () {
-          showToast("Copied to clipboard!");
-          copyCodeBtn.textContent = "Copied!";
-          setTimeout(function () { copyCodeBtn.textContent = "Copy to clipboard"; }, 2000);
+          showToast(copiedText);
+          copyCodeBtn.textContent = copiedText;
+          setTimeout(function () { copyCodeBtn.textContent = copyCodeBtn.getAttribute("data-label") || "Copy"; }, 2000);
         });
       }
     });
