@@ -366,6 +366,37 @@
     return metrics.toMarkdown(items, { ccfOn, coreOn });
   }
 
+  function papersJson(filtered = true) {
+    const list = filtered ? live().filter((r) => !r.raw.tr.classList.contains("rr-hide")) : live();
+    const payload = {
+      owner: headerName,
+      source: currentSource(),
+      total: list.length,
+      papers: list.map((r) => {
+        const a = r.a;
+        const v = a.venue || {};
+        return {
+          id: r.raw.id,
+          title: r.raw.title,
+          authors: r.raw.authorsText,
+          venue: r.raw.venueText,
+          year: a.year,
+          citations: r.shown,
+          role: a.role,
+          status: a.status,
+          highlighted: r.highlighted,
+          rank: {
+            ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null,
+            core: v.core ? { rank: v.core.rank, name: v.core.name } : null
+          },
+          marks: B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")),
+          url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
+        };
+      })
+    };
+    return JSON.stringify(payload, null, 2);
+  }
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
@@ -449,6 +480,11 @@
       if (kind === "markdown") {
         const text = papersMarkdown();
         if (await copyText(text)) panel.flash("markdown");
+        return;
+      }
+      if (kind === "json") {
+        const text = papersJson(true);
+        if (await copyText(text)) panel.flash("json");
         return;
       }
       const m = model();
@@ -661,6 +697,7 @@
         else if (format === "markdown") text = papersMarkdown();
         else if (format === "csv") text = papersCsv();
         else if (format === "tsv") text = papersText();
+        else if (format === "json") text = papersJson(msg.filtered !== false);
         else text = summaryText();
         send({ ok: true, format, text });
         return false;
@@ -679,13 +716,161 @@
     });
   } catch (e) { /* extension context gone */ }
 
-  // Listen for agent-native custom query events on document
+  // Agent-native DOM CustomEvent bus on document:
+  // Allows web agents, devtools, console scripts, and external automation running in page context
+  // to query, filter, inspect, and export high-fidelity academic metrics and paper records.
+  document.documentElement.dataset.betterScholar = "ready";
+
+  document.addEventListener("better-scholar:ping", (e) => {
+    const detail = (e && e.detail) || {};
+    document.dispatchEvent(new CustomEvent("better-scholar:pong", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        ready: true,
+        owner: headerName,
+        total: state.rows.length,
+        complete: listComplete()
+      }
+    }));
+  });
+
   document.addEventListener("better-scholar:query", (e) => {
     const detail = (e && e.detail) || {};
     if (detail.query !== undefined) {
       state.filters.query = (detail.query || "").trim().toLowerCase();
       refresh();
+      document.dispatchEvent(new CustomEvent("better-scholar:response-query", {
+        detail: {
+          requestId: detail.requestId || null,
+          ok: true,
+          query: state.filters.query,
+          matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
+          totalCount: live().length
+        }
+      }));
     }
+  });
+
+  document.addEventListener("better-scholar:filter", (e) => {
+    const detail = (e && e.detail) || {};
+    if (detail.query !== undefined) state.filters.query = (detail.query || "").trim().toLowerCase();
+    if (detail.onlyHighlighted !== undefined) state.filters.onlyHighlighted = !!detail.onlyHighlighted;
+    if (detail.yearStart !== undefined) state.filters.yearStart = detail.yearStart;
+    if (detail.yearEnd !== undefined) state.filters.yearEnd = detail.yearEnd;
+    if (detail.minCitations !== undefined) state.filters.minCitations = detail.minCitations;
+    refresh();
+    document.dispatchEvent(new CustomEvent("better-scholar:response-filter", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
+        totalCount: live().length
+      }
+    }));
+  });
+
+  document.addEventListener("better-scholar:clear-filters", (e) => {
+    const detail = (e && e.detail) || {};
+    state.filters = { query: "", onlyHighlighted: false, yearStart: null, yearEnd: null, minCitations: null };
+    state.selection = null;
+    state.markGroup = null;
+    state.venueKey = null;
+    refresh();
+    document.dispatchEvent(new CustomEvent("better-scholar:response-clear-filters", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        totalCount: live().length
+      }
+    }));
+  });
+
+  document.addEventListener("better-scholar:request-papers", (e) => {
+    const detail = (e && e.detail) || {};
+    const filtered = detail.filteredOnly !== false;
+    const list = filtered ? live().filter((r) => !r.raw.tr.classList.contains("rr-hide")) : live();
+    const papers = list.map((r) => {
+      const a = r.a;
+      const v = a.venue || {};
+      return {
+        id: r.raw.id,
+        title: r.raw.title,
+        authors: r.raw.authorsText,
+        venue: r.raw.venueText,
+        year: a.year,
+        citations: r.shown,
+        role: a.role,
+        status: a.status,
+        highlighted: r.highlighted,
+        rank: {
+          ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null,
+          core: v.core ? { rank: v.core.rank, name: v.core.name } : null
+        },
+        marks: B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")),
+        url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
+      };
+    });
+    document.dispatchEvent(new CustomEvent("better-scholar:response-papers", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        owner: headerName,
+        total: state.rows.length,
+        count: papers.length,
+        complete: listComplete(),
+        papers
+      }
+    }));
+  });
+
+  document.addEventListener("better-scholar:request-summary", (e) => {
+    const detail = (e && e.detail) || {};
+    const list = papers();
+    document.dispatchEvent(new CustomEvent("better-scholar:response-summary", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        owner: headerName,
+        loaded: list.length,
+        loadingAll: state.loadingAll,
+        layoutBroken: layoutBroken(),
+        edition,
+        sources: B.prefs.sources(prefs),
+        source: currentSource(),
+        noRanks: noRanks(list),
+        summaries: {
+          ccf: metrics.summarize(list, "ccf"),
+          core: metrics.summarize(list, "core"),
+          none: metrics.summarize(list, null)
+        },
+        marks: markCounts(),
+        metrics: {
+          highlighted: metrics.citationMetrics(scoped(currentSource())).highlighted,
+          all: metrics.citationMetrics(list).all
+        }
+      }
+    }));
+  });
+
+  document.addEventListener("better-scholar:request-export", (e) => {
+    const detail = (e && e.detail) || {};
+    const format = detail.format || "json";
+    let text = "";
+    if (format === "bibtex") text = papersBibtex();
+    else if (format === "markdown") text = papersMarkdown();
+    else if (format === "csv") text = papersCsv();
+    else if (format === "tsv") text = papersText();
+    else if (format === "json") text = papersJson(detail.filteredOnly !== false);
+    else text = summaryText();
+    document.dispatchEvent(new CustomEvent("better-scholar:response-export", {
+      detail: {
+        requestId: detail.requestId || null,
+        ok: true,
+        format,
+        text
+      }
+    }));
   });
 
 })();

@@ -807,6 +807,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.locator('[data-act="copy-markdown"]').textContent(), "Copied");
     ok("Copy Markdown generates structured markdown publication list with links, venue, and citations");
 
+    // "Copy JSON": structured JSON for papers shown
+    await page.click('[data-act="copy-json"]');
+    const jsonStr = await page.evaluate(() => navigator.clipboard.readText());
+    const parsedJson = JSON.parse(jsonStr);
+    assert.equal(parsedJson.owner, "Ion Stoica");
+    assert.equal(parsedJson.total, 100);
+    assert.ok(Array.isArray(parsedJson.papers) && parsedJson.papers.length === 100);
+    assert.equal(parsedJson.papers[0].title, profile.rows[0].title);
+    assert.equal(await page.locator('[data-act="copy-json"]').textContent(), "Copied");
+    ok("Copy JSON puts structured publication array on clipboard with rank, role and citation count");
+
     // "Export CSV": downloads RFC-4180 CSV with UTF-8 BOM and sanitized filename
     const [download] = await Promise.all([
       page.waitForEvent("download"),
@@ -1116,15 +1127,66 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       for (const t of await chrome.tabs.query({})) {
         try {
           const p = await chrome.tabs.sendMessage(t.id, { type: "rr:papers" });
-          const ex = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "markdown" });
-          if (p && p.ok && ex && ex.ok) return { paperCount: p.papers.length, mdLength: ex.text.length };
+          const exMd = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "markdown" });
+          const exJson = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "json" });
+          if (p && p.ok && exMd && exMd.ok && exJson && exJson.ok) {
+            return { paperCount: p.papers.length, mdLength: exMd.text.length, jsonTotal: JSON.parse(exJson.text).total };
+          }
         } catch (e) { /* not profile */ }
       }
       return null;
     });
     assert.ok(agentTest && agentTest.paperCount > 0, "agent can query papers via rr:papers");
-    assert.ok(agentTest && agentTest.mdLength > 0, "agent can export via rr:export");
+    assert.ok(agentTest && agentTest.mdLength > 0, "agent can export markdown via rr:export");
+    assert.equal(agentTest.jsonTotal, 100, "agent can export JSON via rr:export");
     ok("agent-native messaging (rr:papers, rr:export) returns structured data to external callers");
+
+    // Agent-Native DOM Event Bridge (page-context CustomEvents)
+    const bridgeTest = await page.evaluate(async () => {
+      const pingP = new Promise((resolve) => document.addEventListener("better-scholar:pong", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:ping", { detail: { requestId: "req-1" } }));
+      const pong = await pingP;
+
+      const papersP = new Promise((resolve) => document.addEventListener("better-scholar:response-papers", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:request-papers", { detail: { requestId: "req-2" } }));
+      const respPapers = await papersP;
+
+      const summaryP = new Promise((resolve) => document.addEventListener("better-scholar:response-summary", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:request-summary", { detail: { requestId: "req-3" } }));
+      const respSummary = await summaryP;
+
+      const exportP = new Promise((resolve) => document.addEventListener("better-scholar:response-export", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "json", requestId: "req-4" } }));
+      const respExport = await exportP;
+
+      const queryP = new Promise((resolve) => document.addEventListener("better-scholar:response-query", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:query", { detail: { query: ">800", requestId: "req-5" } }));
+      const respQuery = await queryP;
+
+      const clearP = new Promise((resolve) => document.addEventListener("better-scholar:response-clear-filters", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:clear-filters", { detail: { requestId: "req-6" } }));
+      const respClear = await clearP;
+
+      return {
+        isReady: document.documentElement.dataset.betterScholar === "ready",
+        pong,
+        papersCount: respPapers.papers.length,
+        hasSummary: !!respSummary.summaries,
+        exportJsonValid: Array.isArray(JSON.parse(respExport.text).papers),
+        queryMatched: respQuery.matchedCount,
+        clearedCount: respClear.totalCount
+      };
+    });
+
+    assert.equal(bridgeTest.isReady, true, "dataset.betterScholar is ready");
+    assert.equal(bridgeTest.pong.ok, true, "pong returned ok");
+    assert.equal(bridgeTest.pong.requestId, "req-1");
+    assert.ok(bridgeTest.papersCount > 0, "request-papers returned paper array");
+    assert.equal(bridgeTest.hasSummary, true, "request-summary returned summaries");
+    assert.equal(bridgeTest.exportJsonValid, true, "request-export returned valid JSON papers");
+    assert.ok(bridgeTest.queryMatched > 0, "better-scholar:query filtered papers");
+    assert.ok(bridgeTest.clearedCount > bridgeTest.queryMatched, "better-scholar:clear-filters restored count");
+    ok("agent-native DOM CustomEvent bridge supports ping, request-papers, request-summary, request-export, query, and clear-filters in page context");
 
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
     await opts.reload();

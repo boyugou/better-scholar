@@ -531,6 +531,9 @@
   "copyMarkdown": {
     "message": "Markdown 복사"
   },
+  "copyJson": {
+    "message": "JSON 복사"
+  },
   "exportCsv": {
     "message": "CSV 내보내기"
   },

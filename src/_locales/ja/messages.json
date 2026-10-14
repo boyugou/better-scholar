@@ -531,6 +531,9 @@
   "copyMarkdown": {
     "message": "Markdownをコピー"
   },
+  "copyJson": {
+    "message": "JSON をコピー"
+  },
   "exportCsv": {
     "message": "CSV出力"
   },

@@ -531,6 +531,9 @@
   "copyMarkdown": {
     "message": "Kopier Markdown"
   },
+  "copyJson": {
+    "message": "Kopier JSON"
+  },
   "exportCsv": {
     "message": "Eksporter CSV"
   },

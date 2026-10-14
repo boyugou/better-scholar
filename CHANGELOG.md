@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.36.0 — 2026-10-14
+
+- **Agent-Native DOM CustomEvent Bridge**:
+  - Established a robust, bidirectional page-context CustomEvent bridge on `document`, allowing external AI web agents (Playwright, Puppeteer, Selenium, Browserbase, Claude Computer Use), devtools consoles, and bookmarklets to command and extract pre-analyzed academic data directly across the isolated world boundary.
+  - Synchronous readiness indicator: `document.documentElement.dataset.betterScholar = "ready"`.
+  - Supports `better-scholar:ping` (`pong`), `better-scholar:request-papers` (`response-papers`), `better-scholar:request-summary` (`response-summary`), `better-scholar:request-export` (`response-export`), `better-scholar:query` (`response-query`), `better-scholar:filter` (`response-filter`), and `better-scholar:clear-filters` (`response-clear-filters`).
+- **1-Click Copy JSON & Structured Programmatic Export**:
+  - Added dedicated `[Copy JSON]` button to the panel copybar, fully synchronized across all 30 languages.
+  - Formats loaded/filtered publications as clean, highly structured JSON containing titles, cleaned authors, disambiguated venues, CCF/CORE rankings, author roles, award marks, citations, and URLs.
+  - Enhanced `rr:export` extension runtime message handler with `format: "json"`.
+- **Comprehensive Verification**:
+  - Expanded E2E tests in `test/e2e/run.mjs` with full assertions for clipboard JSON extraction and real-time DOM CustomEvent bridge communication (75/75 passed).
+  - Maintained 100% test pass rate (415 unit tests) and 0 WCAG 2.1 AAA violations across all themes and locales.
+
 ## 2.35.0 — 2026-10-14
 
 - **Interactive Search Operator Pills**:
