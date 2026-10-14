@@ -1369,7 +1369,7 @@ was reproduced, fixed and measured against the 8,395 real venue strings in the t
 - **Special interest groups.** *ACM SIGSAC Workshop on Programming Languages and …* (PLAS) read as the SIGOPS workshop PLOS: a SIG the
   venue's names never mention now needs a rare word to stand on. In the fallback that reads the event words in front of a common word,
   every organisation the string names must be among the venue's own (*ACM/IEEE … Information …* was the ACM's CIKM, *ACM SIGPLAN …
-  Software …* the ACM/IEEE ICSE), and the other list's rivals include the names that do not begin with an organisation.
+  Software …* the ACM/IEEE ICSE), and the other list's candidates include the names that do not begin with an organisation.
 - **An exact name with another event word is the fallback.** *IEEE International Symposium on Neural Networks (ISNN)* read as the IEEE
   Joint *Conference* on Neural Networks (IJCNN): the looser variants, which find the symposium that says "symposium", now come first.
 - Aliases: MobiCom's 1990s name *ACM/IEEE International Conference on Mobile Computing and Networking* (the three real strings keep
