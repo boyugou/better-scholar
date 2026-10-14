@@ -143,7 +143,10 @@
       if (m.markGroup) parts.push(t(MARK_KEY[m.markGroup]));
       if (m.venueKey) parts.push(m.venueKey);
       if (withOnly && m.filters.onlyHighlighted) parts.push(t("onlyHighlighted"));
-      if (m.filters.yearStart != null || m.filters.yearEnd != null) parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+      if (m.filters.yearStart != null || m.filters.yearEnd != null) {
+        if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
+        else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
+      }
       return parts;
     }
 
@@ -303,7 +306,7 @@
         row("mH", hi.h, all.h), row("mI10", hi.i10, all.i10)].filter(Boolean));
     }
 
-    // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers)
+    // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers; click to filter)
     function renderYears(m) {
       const data = m.byYear || [];
       yearsSec.hidden = !m.prefs.panel.years || data.length < 2;
@@ -314,11 +317,24 @@
       yearsSec.replaceChildren(
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("yearsTitle"))),
       h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
-        h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "img", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
-          ...data.map((d) => h("div", { class: "rr-bar", title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n") },
+        h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
+          ...data.map((d) => {
+            const isSelected = m.filters.yearStart === d.year && m.filters.yearEnd === d.year;
+            const disabled = !d.total;
+            return h("button", {
+              class: "rr-bar", type: "button", "data-year": String(d.year), "aria-pressed": String(isSelected),
+              disabled: disabled ? true : null, tabindex: disabled ? "-1" : null,
+              "aria-label": String(d.year) + ": " + (d.total ? String(d.total) : "0"),
+              title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n"),
+              onClick: () => {
+                if (disabled) return;
+                if (isSelected) cb.onYear("", "");
+                else cb.onYear(String(d.year), String(d.year));
+              }
+            },
             h("div", { class: "rr-stack", style: "height:" + Math.max(d.total ? 6 : 0, Math.round(d.total / top * 100)) + "%" },
-              ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))))),
-        ),
+              ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))));
+          })),
         h("div", { class: "rr-bars-axis" }, h("span", { title: older ? olderNote : null }, String(data[0].year)), h("span", {}, String(data[data.length - 1].year)))));
     }
 

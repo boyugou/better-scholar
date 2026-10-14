@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.24.0 — 2026-10-14
+
+- **Interactive year chart (click to filter by year)**:
+  - Clicking any year bar directly filters the paper list to that year; clicking the active bar clears the filter.
+  - The year drop-downs (`yearStart` and `yearEnd`) synchronize with the clicked year automatically.
+  - The active year bar is highlighted with an accent ring and `aria-pressed="true"`.
+  - Empty years (0 papers) are disabled and unfocusable; bars have hover brightness response and full keyboard accessibility.
+  - The filter bar formats a single-year selection cleanly (e.g. `2024` rather than `2024–2024`).
+  - High-contrast / forced-colors outline support and accessible `role="group"` on the bars container.
+
 ## 2.23.1 — 2026-10-13
 
 From an independent review of 2.23.0:

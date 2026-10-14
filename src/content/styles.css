@@ -226,7 +226,11 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
 
 /* highlighted papers per year */
 #rr-panel .rr-bars{ display: flex; align-items: flex-end; gap: 3px; height: 44px; margin-top: 4px; }
-#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; height: 100%; display: flex; align-items: flex-end; cursor: default; }
+#rr-panel .rr-bar{ flex: 1 1 0; min-width: 3px; height: 100%; display: flex; align-items: flex-end; cursor: pointer; border-radius: 3px 3px 1px 1px; }
+#rr-panel .rr-bar[disabled]{ cursor: default; opacity: .3; }
+#rr-panel .rr-bar:not([disabled]):hover .rr-stack{ filter: brightness(.92); }
+#rr-panel .rr-bar[aria-pressed="true"] .rr-stack{ outline: 2px solid var(--rr-accent); outline-offset: 1px; }
+#rr-panel .rr-bar:focus-visible{ outline: 2px solid var(--rr-accent); outline-offset: 1px; }
 #rr-panel .rr-stack{ width: 100%; display: flex; flex-direction: column; border-radius: 3px 3px 1px 1px; overflow: hidden; }
 #rr-panel .rr-stack i{ display: block; min-height: 2px; }
 #rr-panel .rr-bars-axis{ display: flex; justify-content: space-between; margin-top: 3px; color: var(--rr-faint); font-size: 11px; font-variant-numeric: tabular-nums; }
@@ -258,7 +262,7 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel input[type="checkbox"] { -webkit-appearance: auto; appearance: auto; width: 16px; height: 16px; border-radius: 0; background: Field; }
   #rr-panel input[type="checkbox"]::after { display: none; }
   #rr-panel .rr-seg button[aria-pressed="true"] { outline: 2px solid Highlight; }
-  #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"] { outline: 2px solid Highlight; }
+  #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"], #rr-panel .rr-bar[aria-pressed="true"] .rr-stack { outline: 2px solid Highlight; }
 }
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */

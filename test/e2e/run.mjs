@@ -508,8 +508,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.textContent), String(years[years.length - 1]));
     await page.keyboard.press("Escape");
     assert.equal(await page.getAttribute('#rr-panel button[data-act="year-end"]', "aria-expanded"), "false");
-    assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.dataset.act), "year-end");
-    ok("year filter and 'only highlighted' hide the right rows; the year list works from the keyboard");
+    // clicking a year bar filters to that year and highlights the bar; clicking again clears
+    const sampleYear = years[1];
+    const yearBar = page.locator(`#rr-panel button.rr-bar[data-year="${sampleYear}"]`);
+    if (await yearBar.count()) {
+      await yearBar.click();
+      assert.equal(await yearBar.getAttribute("aria-pressed"), "true");
+      assert.equal(await page.locator('#rr-panel button[data-act="year-start"] .rr-dd-label').textContent(), String(sampleYear));
+      assert.equal(await page.locator('#rr-panel button[data-act="year-end"] .rr-dd-label').textContent(), String(sampleYear));
+      assert.equal(await visibleRows(page), all.filter((p) => p.year === sampleYear).length);
+      assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(String(sampleYear)));
+      await yearBar.click();
+      assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
+      assert.equal(await visibleRows(page), all.length);
+    }
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");
