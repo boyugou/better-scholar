@@ -122,7 +122,7 @@
     </div>
   </section>
 
-  <section class="demo" id="demo">
+  <section class="demo" id="demo" data-copied="कॉपी हो गया!" data-empty="कोई मेल खाता प्रकाशन नहीं मिला।">
     <div class="wrap">
       <h2>आज़माएँ</h2>
       <p class="note">भूमिकाएँ चालू और बंद करें: नमूना प्रोफ़ाइल भी वैसे ही बदलती है, जैसे असली पेज पर।</p>
@@ -152,11 +152,11 @@
           <div class="mockup-search-row">
             <div class="search-wrap">
               <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="demo-search-input" placeholder="Search papers or use operators: >1000, ccf:a, role:first..." autocomplete="off">
+              <input type="text" id="demo-search-input" placeholder="शोधपत्र खोजें या ऑपरेटर इस्तेमाल करें: &gt;1000, ccf:a, role:first..." aria-label="शोधपत्र खोजें या ऑपरेटर इस्तेमाल करें: &gt;1000, ccf:a, role:first..." autocomplete="off">
               <kbd class="kbd">/</kbd>
             </div>
             <div class="pill-group" id="demo-operator-pills">
-              <button type="button" class="pill active" data-query="">All</button>
+              <button type="button" class="pill active" data-query="">सभी</button>
               <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
               <button type="button" class="pill" data-query="role:first">role:first</button>
               <button type="button" class="pill" data-query=">1000">&gt;1000</button>
@@ -245,19 +245,19 @@
             <div class="mockup-panel-col">
               <div class="mini-panel">
                 <div class="mini-panel-header">
-                  <span>Roles &amp; Ranks</span>
+                  <span>भूमिकाएँ और रैंक</span>
                   <span class="mini-badge">CCF</span>
                 </div>
                 <div class="matrix-table-wrap">
                   <table class="mini-matrix">
                     <thead>
-                      <tr><th>Role</th><th>A</th><th>B</th><th>C</th><th>None</th></tr>
+                      <tr><th>भूमिका</th><th>A</th><th>B</th><th>C</th><th>कोई नहीं</th></tr>
                     </thead>
                     <tbody>
-                      <tr data-matrix-role="first"><td class="rlabel">First</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="cofirst"><td class="rlabel">Co-1st</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="second"><td class="rlabel">Second</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
-                      <tr data-matrix-role="last"><td class="rlabel">Last</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
+                      <tr data-matrix-role="first"><td class="rlabel">प्रथम लेखक</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="cofirst"><td class="rlabel">सह-प्रथम लेखक</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="second"><td class="rlabel">द्वितीय लेखक</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
+                      <tr data-matrix-role="last"><td class="rlabel">अंतिम लेखक</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -289,8 +289,8 @@
 
   <section class="export-section">
     <div class="wrap">
-      <h2>1-Click Academic Export</h2>
-      <p class="note">Instant, compile-ready publication formats for CVs, grant applications, research agents, and spreadsheets.</p>
+      <h2>एक क्लिक में अकादमिक एक्सपोर्ट</h2>
+      <p class="note">सीवी, अनुदान फ़ॉर्म, LaTeX दस्तावेज़ों, AI एजेंट और स्प्रेडशीट के लिए सीधे पेस्ट करने योग्य प्रकाशन सूचियाँ।</p>
       <div class="export-card">
         <div class="export-tabs" role="tablist">
           <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
@@ -301,7 +301,7 @@
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview"><code id="export-code-display"></code></pre>
-          <button type="button" class="copy-code-btn" id="copy-export-display">Copy to clipboard</button>
+          <button type="button" class="copy-code-btn" id="copy-export-display" data-label="क्लिपबोर्ड पर कॉपी करें">क्लिपबोर्ड पर कॉपी करें</button>
         </div>
       </div>
     </div>
@@ -309,38 +309,38 @@
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Instant Search &amp; Query Operators</h2>
-      <p class="note">Press <kbd>/</kbd> anywhere on Google Scholar to power through large publication corpora.</p>
+      <h2>तुरंत खोज और क्वेरी ऑपरेटर</h2>
+      <p class="note">Scholar प्रोफ़ाइल पर कहीं भी <kbd>/</kbd> दबाएँ और पूरी सूची में एक साथ खोजें।</p>
       <div class="operators-grid">
         <div class="op-card">
           <div class="op-header"><code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code></div>
-          <p class="op-title">Citation Thresholds</p>
-          <p class="op-desc">Filter papers having citations above or below any threshold number.</p>
+          <p class="op-title">उद्धरण सीमा</p>
+          <p class="op-desc">आप जो भी संख्या लिखें, उससे अधिक या कम उद्धरण वाले शोधपत्र रखें।</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Venue Ranking Tiers</p>
-          <p class="op-desc">Isolate publications in top CCF or CORE ranked conferences and journals.</p>
+          <p class="op-title">प्रकाशन स्थल की रैंक श्रेणियाँ</p>
+          <p class="op-desc">केवल CCF या CORE रैंक वाले सम्मेलनों और जर्नलों के शोधपत्र दिखाएँ।</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>role:first</code> <code>role:last</code> <code>r:cofirst</code></div>
-          <p class="op-title">Authorship Roles</p>
-          <p class="op-desc">Filter by student first author, co-first, second, or senior last author.</p>
+          <p class="op-title">लेखक की भूमिकाएँ</p>
+          <p class="op-desc">प्रथम, सह-प्रथम, द्वितीय या अंतिम (वरिष्ठ) लेखक के अनुसार फ़िल्टर करें।</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>&gt;2020</code> <code>year:&gt;=2021</code></div>
-          <p class="op-title">Publication Year Ranges</p>
-          <p class="op-desc">Filter papers published after, before, or within specific years.</p>
+          <p class="op-title">प्रकाशन वर्ष</p>
+          <p class="op-desc">आपके चुने वर्षों के बाद, पहले या उनके भीतर प्रकाशित शोधपत्र।</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Honors &amp; Presentations</p>
-          <p class="op-desc">Isolate Best Paper, Test of Time, Oral, Spotlight, or Highlight works.</p>
+          <p class="op-title">पुरस्कार और वार्ताएँ</p>
+          <p class="op-desc">Best Paper, Test of Time, Oral, Spotlight और Highlight शोधपत्र खोजें।</p>
         </div>
         <div class="op-card">
           <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">One-Key Reset</p>
-          <p class="op-desc">Instantly clears all active search queries, matrix filters, and metric selections.</p>
+          <p class="op-title">एक कुंजी में रीसेट</p>
+          <p class="op-desc">सभी खोजों, तालिका चयनों और फ़िल्टरों को एक साथ साफ़ करता है।</p>
         </div>
       </div>
     </div>

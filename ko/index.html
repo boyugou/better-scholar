@@ -122,7 +122,7 @@
     </div>
   </section>
 
-  <section class="demo" id="demo">
+  <section class="demo" id="demo" data-copied="복사되었습니다!" data-empty="일치하는 논문이 없습니다.">
     <div class="wrap">
       <h2>직접 해 보기</h2>
       <p class="note">역할을 켜고 끄면, 실제 페이지와 같이 샘플 프로필도 따라 바뀝니다.</p>
@@ -152,11 +152,11 @@
           <div class="mockup-search-row">
             <div class="search-wrap">
               <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="demo-search-input" placeholder="Search papers or use operators: >1000, ccf:a, role:first..." autocomplete="off">
+              <input type="text" id="demo-search-input" placeholder="논문 검색 또는 연산자 사용: &gt;1000, ccf:a, role:first..." aria-label="논문 검색 또는 연산자 사용: &gt;1000, ccf:a, role:first..." autocomplete="off">
               <kbd class="kbd">/</kbd>
             </div>
             <div class="pill-group" id="demo-operator-pills">
-              <button type="button" class="pill active" data-query="">All</button>
+              <button type="button" class="pill active" data-query="">전체</button>
               <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
               <button type="button" class="pill" data-query="role:first">role:first</button>
               <button type="button" class="pill" data-query=">1000">&gt;1000</button>
@@ -245,19 +245,19 @@
             <div class="mockup-panel-col">
               <div class="mini-panel">
                 <div class="mini-panel-header">
-                  <span>Roles &amp; Ranks</span>
+                  <span>역할 및 등급</span>
                   <span class="mini-badge">CCF</span>
                 </div>
                 <div class="matrix-table-wrap">
                   <table class="mini-matrix">
                     <thead>
-                      <tr><th>Role</th><th>A</th><th>B</th><th>C</th><th>None</th></tr>
+                      <tr><th>역할</th><th>A</th><th>B</th><th>C</th><th>없음</th></tr>
                     </thead>
                     <tbody>
-                      <tr data-matrix-role="first"><td class="rlabel">First</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="cofirst"><td class="rlabel">Co-1st</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="second"><td class="rlabel">Second</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
-                      <tr data-matrix-role="last"><td class="rlabel">Last</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
+                      <tr data-matrix-role="first"><td class="rlabel">제1저자</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="cofirst"><td class="rlabel">공동 제1저자</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="second"><td class="rlabel">제2저자</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
+                      <tr data-matrix-role="last"><td class="rlabel">마지막 저자</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -289,8 +289,8 @@
 
   <section class="export-section">
     <div class="wrap">
-      <h2>1-Click Academic Export</h2>
-      <p class="note">Instant, compile-ready publication formats for CVs, grant applications, research agents, and spreadsheets.</p>
+      <h2>원클릭 학술 내보내기</h2>
+      <p class="note">이력서, 연구비 신청서, LaTeX 문서, AI 에이전트, 스프레드시트에 바로 붙여넣을 수 있는 논문 목록입니다.</p>
       <div class="export-card">
         <div class="export-tabs" role="tablist">
           <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
@@ -301,7 +301,7 @@
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview"><code id="export-code-display"></code></pre>
-          <button type="button" class="copy-code-btn" id="copy-export-display">Copy to clipboard</button>
+          <button type="button" class="copy-code-btn" id="copy-export-display" data-label="클립보드에 복사">클립보드에 복사</button>
         </div>
       </div>
     </div>
@@ -309,38 +309,38 @@
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Instant Search &amp; Query Operators</h2>
-      <p class="note">Press <kbd>/</kbd> anywhere on Google Scholar to power through large publication corpora.</p>
+      <h2>즉시 검색과 검색 연산자</h2>
+      <p class="note">Scholar 프로필 어디서든 <kbd>/</kbd> 키를 누르면 전체 목록을 한 번에 검색할 수 있습니다.</p>
       <div class="operators-grid">
         <div class="op-card">
           <div class="op-header"><code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code></div>
-          <p class="op-title">Citation Thresholds</p>
-          <p class="op-desc">Filter papers having citations above or below any threshold number.</p>
+          <p class="op-title">피인용 수 기준</p>
+          <p class="op-desc">입력한 숫자보다 피인용 수가 많거나 적은 논문만 남깁니다.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Venue Ranking Tiers</p>
-          <p class="op-desc">Isolate publications in top CCF or CORE ranked conferences and journals.</p>
+          <p class="op-title">학술지·학회 등급</p>
+          <p class="op-desc">CCF 또는 CORE 등급이 매겨진 학회와 학술지의 논문만 표시합니다.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>role:first</code> <code>role:last</code> <code>r:cofirst</code></div>
-          <p class="op-title">Authorship Roles</p>
-          <p class="op-desc">Filter by student first author, co-first, second, or senior last author.</p>
+          <p class="op-title">저자 역할</p>
+          <p class="op-desc">제1저자, 공동 제1저자, 제2저자, 마지막(교신) 저자로 필터링합니다.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>&gt;2020</code> <code>year:&gt;=2021</code></div>
-          <p class="op-title">Publication Year Ranges</p>
-          <p class="op-desc">Filter papers published after, before, or within specific years.</p>
+          <p class="op-title">출판 연도</p>
+          <p class="op-desc">선택한 연도 이후, 이전 또는 해당 기간에 출판된 논문을 보여줍니다.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Honors &amp; Presentations</p>
-          <p class="op-desc">Isolate Best Paper, Test of Time, Oral, Spotlight, or Highlight works.</p>
+          <p class="op-title">수상 및 발표</p>
+          <p class="op-desc">Best Paper, Test of Time, Oral, Spotlight, Highlight 논문을 찾아보세요.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">One-Key Reset</p>
-          <p class="op-desc">Instantly clears all active search queries, matrix filters, and metric selections.</p>
+          <p class="op-title">키 하나로 초기화</p>
+          <p class="op-desc">모든 검색, 표 선택, 필터를 한 번에 해제합니다.</p>
         </div>
       </div>
     </div>

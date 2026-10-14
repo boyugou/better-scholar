@@ -122,7 +122,7 @@
     </div>
   </section>
 
-  <section class="demo" id="demo">
+  <section class="demo" id="demo" data-copied="Скопійовано!" data-empty="Відповідних публікацій немає.">
     <div class="wrap">
       <h2>Спробуйте</h2>
       <p class="note">Вмикайте й вимикайте ролі: зразок профілю змінюється так само, як справжня сторінка.</p>
@@ -152,11 +152,11 @@
           <div class="mockup-search-row">
             <div class="search-wrap">
               <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="demo-search-input" placeholder="Search papers or use operators: >1000, ccf:a, role:first..." autocomplete="off">
+              <input type="text" id="demo-search-input" placeholder="Шукайте статті або використовуйте оператори: &gt;1000, ccf:a, role:first..." aria-label="Шукайте статті або використовуйте оператори: &gt;1000, ccf:a, role:first..." autocomplete="off">
               <kbd class="kbd">/</kbd>
             </div>
             <div class="pill-group" id="demo-operator-pills">
-              <button type="button" class="pill active" data-query="">All</button>
+              <button type="button" class="pill active" data-query="">Усі</button>
               <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
               <button type="button" class="pill" data-query="role:first">role:first</button>
               <button type="button" class="pill" data-query=">1000">&gt;1000</button>
@@ -245,19 +245,19 @@
             <div class="mockup-panel-col">
               <div class="mini-panel">
                 <div class="mini-panel-header">
-                  <span>Roles &amp; Ranks</span>
+                  <span>Ролі та ранги</span>
                   <span class="mini-badge">CCF</span>
                 </div>
                 <div class="matrix-table-wrap">
                   <table class="mini-matrix">
                     <thead>
-                      <tr><th>Role</th><th>A</th><th>B</th><th>C</th><th>None</th></tr>
+                      <tr><th>Роль</th><th>A</th><th>B</th><th>C</th><th>Немає</th></tr>
                     </thead>
                     <tbody>
-                      <tr data-matrix-role="first"><td class="rlabel">First</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="cofirst"><td class="rlabel">Co-1st</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="second"><td class="rlabel">Second</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
-                      <tr data-matrix-role="last"><td class="rlabel">Last</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
+                      <tr data-matrix-role="first"><td class="rlabel">Перший автор</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="cofirst"><td class="rlabel">Співперший автор</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="second"><td class="rlabel">Другий автор</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
+                      <tr data-matrix-role="last"><td class="rlabel">Останній автор</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -289,8 +289,8 @@
 
   <section class="export-section">
     <div class="wrap">
-      <h2>1-Click Academic Export</h2>
-      <p class="note">Instant, compile-ready publication formats for CVs, grant applications, research agents, and spreadsheets.</p>
+      <h2>Академічний експорт в один клік</h2>
+      <p class="note">Готові до вставлення списки публікацій для резюме, грантових заявок, документів LaTeX, ШІ-агентів і електронних таблиць.</p>
       <div class="export-card">
         <div class="export-tabs" role="tablist">
           <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
@@ -301,7 +301,7 @@
         </div>
         <div class="code-preview-wrap">
           <pre class="code-preview"><code id="export-code-display"></code></pre>
-          <button type="button" class="copy-code-btn" id="copy-export-display">Copy to clipboard</button>
+          <button type="button" class="copy-code-btn" id="copy-export-display" data-label="Копіювати в буфер обміну">Копіювати в буфер обміну</button>
         </div>
       </div>
     </div>
@@ -309,38 +309,38 @@
 
   <section class="operators-section">
     <div class="wrap">
-      <h2>Instant Search &amp; Query Operators</h2>
-      <p class="note">Press <kbd>/</kbd> anywhere on Google Scholar to power through large publication corpora.</p>
+      <h2>Миттєвий пошук і оператори запитів</h2>
+      <p class="note">Натисніть <kbd>/</kbd> будь-де в профілі Scholar, щоб шукати одразу по всьому списку.</p>
       <div class="operators-grid">
         <div class="op-card">
           <div class="op-header"><code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code></div>
-          <p class="op-title">Citation Thresholds</p>
-          <p class="op-desc">Filter papers having citations above or below any threshold number.</p>
+          <p class="op-title">Порогові значення цитувань</p>
+          <p class="op-desc">Залишайте статті з більшою або меншою кількістю цитувань, ніж будь-яке введене вами число.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
-          <p class="op-title">Venue Ranking Tiers</p>
-          <p class="op-desc">Isolate publications in top CCF or CORE ranked conferences and journals.</p>
+          <p class="op-title">Рівні рангу видань</p>
+          <p class="op-desc">Показуйте лише статті з конференцій і журналів із рангом CCF або CORE.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>role:first</code> <code>role:last</code> <code>r:cofirst</code></div>
-          <p class="op-title">Authorship Roles</p>
-          <p class="op-desc">Filter by student first author, co-first, second, or senior last author.</p>
+          <p class="op-title">Ролі автора</p>
+          <p class="op-desc">Фільтруйте за першим, співпершим, другим або останнім (старшим) автором.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>&gt;2020</code> <code>year:&gt;=2021</code></div>
-          <p class="op-title">Publication Year Ranges</p>
-          <p class="op-desc">Filter papers published after, before, or within specific years.</p>
+          <p class="op-title">Роки публікації</p>
+          <p class="op-desc">Статті, опубліковані після, до або в межах вибраних вами років.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
-          <p class="op-title">Honors &amp; Presentations</p>
-          <p class="op-desc">Isolate Best Paper, Test of Time, Oral, Spotlight, or Highlight works.</p>
+          <p class="op-title">Нагороди та доповіді</p>
+          <p class="op-desc">Знаходьте статті Best Paper, Test of Time, Oral, Spotlight і Highlight.</p>
         </div>
         <div class="op-card">
           <div class="op-header"><kbd>Escape</kbd></div>
-          <p class="op-title">One-Key Reset</p>
-          <p class="op-desc">Instantly clears all active search queries, matrix filters, and metric selections.</p>
+          <p class="op-title">Скидання однією клавішею</p>
+          <p class="op-desc">Одразу очищає всі пошукові запити, вибрані рядки таблиці та фільтри.</p>
         </div>
       </div>
     </div>
