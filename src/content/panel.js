@@ -99,6 +99,7 @@
 
     // filters (built once, synced on update)
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
+    const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
     const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true" }, "/");
     const clearSearchBtn = h("button", { class: "rr-search-clear", type: "button", "data-act": "clear-query", title: t("filterClear"), "aria-label": t("filterClear"), hidden: true, onClick: () => {
       queryInput.value = "";
@@ -106,22 +107,34 @@
       cb.onQuery("");
       queryInput.focus();
     } }, "×");
-    function syncSearchUI() {
+    function syncSearchUI(m) {
       const hasText = !!queryInput.value;
       clearSearchBtn.hidden = !hasText;
       kbdHint.hidden = hasText;
+      if (m && m.searchMatch) {
+        const { count, cursor } = m.searchMatch;
+        searchCount.hidden = false;
+        searchCount.classList.toggle("rr-search-count-empty", count === 0);
+        searchCount.textContent = count === 0 ? "0" : (cursor >= 0 ? `${cursor + 1} / ${count}` : String(count));
+      } else if (!hasText) {
+        searchCount.hidden = true;
+        searchCount.textContent = "";
+      }
     }
     queryInput.addEventListener("input", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
     queryInput.addEventListener("search", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
     queryInput.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (queryInput.value.trim()) cb.onSearchNext(e.shiftKey ? -1 : 1);
+      } else if (e.key === "Escape") {
         queryInput.value = "";
         syncSearchUI();
         cb.onQuery("");
         queryInput.blur();
       }
     });
-    const searchRow = h("div", { class: "rr-search" }, queryInput, kbdHint, clearSearchBtn);
+    const searchRow = h("div", { class: "rr-search" }, queryInput, searchCount, kbdHint, clearSearchBtn);
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
@@ -303,7 +316,7 @@
 
     function syncFilters(m) {
       if (queryInput.value.trim().toLowerCase() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
-      syncSearchUI();
+      syncSearchUI(m);
       onlyCb.checked = !!m.filters.onlyHighlighted;
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
       yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");

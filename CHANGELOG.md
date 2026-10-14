@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.29.0 — 2026-10-14
+
+- **Interactive Search Match Counter & Enter / Shift+Enter Match Stepping**:
+  - Adds an inline match count pill (`.rr-search-count`) inside the search input box that displays real-time matching paper counts (e.g. `12` or `0` when no matches).
+  - Matches 0 papers dynamically display a high-contrast amber/red alert pill (`.rr-search-count-empty`) with zero matches.
+  - Pressing `Enter` inside the search query input smoothly scrolls the viewport to the first matching paper on the page.
+  - Pressing `Enter` repeatedly cycles forward through matching papers; pressing `Shift+Enter` cycles backward.
+  - The match counter dynamically updates to show current match position (e.g. `1 / 12`, `2 / 12`).
+  - Active matched rows receive an elegant, non-destructive focus glow animation (`.rr-row-focused`).
+  - Full screen reader polite live announcement (`aria-live="polite"`), high-contrast forced-colors support, and RTL layout compliance.
+
 ## 2.28.0 — 2026-10-14
 
 - **Direct BibTeX Citation Export ("Copy BibTeX")**:

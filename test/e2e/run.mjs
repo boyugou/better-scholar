@@ -534,22 +534,42 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // quick search query filter: typing filters by title and author, clear button and Esc clear
     const queryInput = page.locator('#rr-panel input[data-act="filter-query"]');
     const clearBtn = page.locator('#rr-panel button[data-act="clear-query"]');
+    const searchCount = page.locator("#rr-panel .rr-search-count");
     assert.equal(await queryInput.count(), 1, "search query input exists in filters section");
     assert.equal(await clearBtn.isVisible(), false, "clear button hidden when search is empty");
+    assert.equal(await searchCount.isVisible(), false, "search count badge hidden when search is empty");
     const testWord = profile.rows[0].title.split(/\s+/).find((w) => w.length >= 4 && /^[a-zA-Z]+$/.test(w)) || "paper";
     await queryInput.fill(testWord);
     assert.equal(await clearBtn.isVisible(), true, "clear button visible when search has input");
+    assert.equal(await searchCount.isVisible(), true, "search count badge visible when search has input");
     const expectedQueryCount = profile.rows.filter((r) => (r.title || "").toLowerCase().includes(testWord.toLowerCase()) || (r.authors || "").toLowerCase().includes(testWord.toLowerCase())).length;
     assert.equal(await visibleRows(page), expectedQueryCount);
+    assert.equal(await searchCount.textContent(), String(expectedQueryCount));
     assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(testWord.toLowerCase()));
+    // Pressing Enter navigates to the first match and adds focused glow class
+    await queryInput.press("Enter");
+    assert.equal(await searchCount.textContent(), `1 / ${expectedQueryCount}`);
+    assert.equal(await page.locator("tr.gsc_a_tr.rr-row-focused").count(), 1);
+    if (expectedQueryCount > 1) {
+      await queryInput.press("Enter");
+      assert.equal(await searchCount.textContent(), `2 / ${expectedQueryCount}`);
+      assert.equal(await page.locator("tr.gsc_a_tr.rr-row-focused").count(), 1);
+      await queryInput.press("Shift+Enter");
+      assert.equal(await searchCount.textContent(), `1 / ${expectedQueryCount}`);
+      assert.equal(await page.locator("tr.gsc_a_tr.rr-row-focused").count(), 1);
+    }
     // Clicking clear button clears the search input, hides the button, and resets visible rows
     await clearBtn.click();
     assert.equal(await queryInput.inputValue(), "");
     assert.equal(await clearBtn.isVisible(), false);
+    assert.equal(await searchCount.isVisible(), false);
+    assert.equal(await page.locator("tr.gsc_a_tr.rr-row-focused").count(), 0);
     assert.equal(await visibleRows(page), all.length);
     // When a search query matches 0 papers, filterbar gets empty-state accent class
     await queryInput.fill("nonexistentqueryxyz12345");
     assert.equal(await visibleRows(page), 0);
+    assert.equal(await searchCount.textContent(), "0");
+    assert.equal(await searchCount.evaluate((el) => el.classList.contains("rr-search-count-empty")), true);
     assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 1, "filterbar has empty-state class when 0 papers match");
     await clearBtn.click();
     assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 0);
@@ -560,7 +580,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.keyboard.press("/");
     assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.getAttribute("data-act")), "filter-query", "pressing / focuses the search query input");
     await queryInput.press("Escape");
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, has inline clear button, empty state, and focuses on /");
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, steps matches with Enter, shows count badge, and focuses on /");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");

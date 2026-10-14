@@ -17,8 +17,17 @@ tr.rr-r-last    > td:first-child { box-shadow: inset 4px 0 0 var(--rr-c-last, #1
 html[dir="rtl"] tr.rr-r-first   > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-first, #1a73e8) !important; }
 html[dir="rtl"] tr.rr-r-cofirst > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-cofirst, #a142f4) !important; }
 html[dir="rtl"] tr.rr-r-second  > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-second, #f9ab00) !important; }
-html[dir="rtl"] tr.rr-r-last    > td:first-child { box-shadow: inset -4px 0 0 var(--rr-c-last, #1e8e3e) !important; }
 tr.rr-hide { display: none !important; }
+@keyframes rr-row-glow {
+  0% { outline-color: var(--rr-accent, #1a73e8); background-color: rgba(26, 115, 232, 0.14); }
+  70% { outline-color: var(--rr-accent, #1a73e8); background-color: rgba(26, 115, 232, 0.14); }
+  100% { outline-color: transparent; }
+}
+tr.gsc_a_tr.rr-row-focused {
+  outline: 2px solid var(--rr-accent, #1a73e8);
+  outline-offset: -2px;
+  animation: rr-row-glow 1.4s ease-out forwards;
+}
 /* Scholar's grey author and venue lines (#777) fall below 4.5:1 on our row tints; the tinted rows use a darker grey */
 tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr-r-last .gs_gray { color: #5f6368; }
 
@@ -100,7 +109,16 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel input[type="text"]:focus, #rr-panel input[type="search"]:focus { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
 #rr-panel .rr-search { position: relative; margin-bottom: 8px; }
 #rr-panel .rr-search-input { padding-inline-end: 28px; }
+#rr-panel .rr-search-input:not(:placeholder-shown) { padding-inline-end: 72px; }
 #rr-panel .rr-search-input::-webkit-search-cancel-button { display: none; }
+#rr-panel .rr-search-count {
+  position: absolute; inset-inline-end: 27px; top: 50%; transform: translateY(-50%);
+  font: 11px system-ui, -apple-system, sans-serif; line-height: 1; padding: 2px 6px;
+  border-radius: 9px; background: #e8eaed; color: #3c4043;
+  font-variant-numeric: tabular-nums; pointer-events: none; white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+#rr-panel .rr-search-count.rr-search-count-empty { background: #fce8e6; color: #c5221f; font-weight: 600; }
 #rr-panel .rr-search-kbd {
   position: absolute; inset-inline-end: 7px; top: 50%; transform: translateY(-50%);
   font: 11px system-ui, -apple-system, sans-serif; line-height: 1; padding: 2px 5px;
@@ -108,7 +126,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   pointer-events: none; transition: opacity .15s;
 }
 #rr-panel .rr-search:focus-within .rr-search-kbd,
-#rr-panel .rr-search-input:not(:placeholder-shown) + .rr-search-kbd {
+#rr-panel .rr-search-input:not(:placeholder-shown) ~ .rr-search-kbd {
   opacity: 0;
 }
 #rr-panel .rr-search-clear {
@@ -284,6 +302,9 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel input[type="checkbox"]::after { display: none; }
   #rr-panel .rr-seg button[aria-pressed="true"] { outline: 2px solid Highlight; }
   #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"], #rr-panel .rr-markrow[aria-pressed="true"], #rr-panel .rr-bar[aria-pressed="true"] .rr-stack { outline: 2px solid Highlight; }
+  #rr-panel .rr-search-count { border: 1px solid ButtonText; }
+  #rr-panel .rr-search-count.rr-search-count-empty { border: 2px solid Highlight; }
+  tr.gsc_a_tr.rr-row-focused { outline: 3px solid Highlight !important; }
 }
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */

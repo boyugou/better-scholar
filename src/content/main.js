@@ -32,6 +32,7 @@
     venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
     filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" },
+    searchCursor: -1,
     venuesExpanded: false,
     loadingAll: false,
     complete: false,                            // the whole list is here (see listComplete)
@@ -272,6 +273,7 @@
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
       selection: state.selection, filters: state.filters,
+      searchMatch: state.filters.query ? { count: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, cursor: state.searchCursor } : null,
       filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
@@ -355,6 +357,27 @@
     });
   }
 
+  function clearFocusedRow() {
+    document.querySelectorAll("tr.gsc_a_tr.rr-row-focused").forEach((tr) => tr.classList.remove("rr-row-focused"));
+  }
+
+  function stepSearchMatch(direction) {
+    const visible = live().filter((r) => !r.raw.tr.classList.contains("rr-hide"));
+    if (!visible.length) return;
+    if (state.searchCursor < 0) {
+      state.searchCursor = direction > 0 ? 0 : visible.length - 1;
+    } else {
+      state.searchCursor = (state.searchCursor + direction + visible.length) % visible.length;
+    }
+    clearFocusedRow();
+    const target = visible[state.searchCursor];
+    if (target && target.raw.tr) {
+      target.raw.tr.classList.add("rr-row-focused");
+      target.raw.tr.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    panel.update(model());
+  }
+
   const panel = B.panel.create({
     onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
     onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
@@ -363,22 +386,30 @@
     onSelect(sel) {
       const same = state.selection && state.selection.role === sel.role && state.selection.tier === sel.tier;
       state.selection = same || (sel.role === undefined && sel.tier === undefined) ? null : sel;
+      state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
     // every filter off at once (the panel's bar says how many papers are shown and offers this)
     onClearFilters() {
       state.selection = null; state.markGroup = null; state.venueKey = null;
       Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
+      state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
-    onVenue(k) { state.venueKey = state.venueKey === k ? null : k; refresh(); },
+    onVenue(k) { state.venueKey = state.venueKey === k ? null : k; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onToggleVenues() { state.venuesExpanded = !state.venuesExpanded; refresh(); },
-    onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
-    onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
-    onQuery(q) { state.filters.query = (q || "").trim().toLowerCase(); refresh(); },
+    onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; state.searchCursor = -1; clearFocusedRow(); refresh(); },
+    onOnly(on) { state.filters.onlyHighlighted = on; state.searchCursor = -1; clearFocusedRow(); refresh(); },
+    onQuery(q) {
+      state.filters.query = (q || "").trim().toLowerCase();
+      state.searchCursor = -1; clearFocusedRow();
+      refresh();
+    },
+    onSearchNext(dir) { stepSearchMatch(dir); },
     onYear(start, end) {
       state.filters.yearStart = start === "" ? null : parseInt(start, 10);
       state.filters.yearEnd = end === "" ? null : parseInt(end, 10);
+      state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
     async onCopy(kind) {
