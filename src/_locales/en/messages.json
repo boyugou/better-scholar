@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "Copy BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Copy Markdown"
+  },
   "exportCsv": {
     "message": "Export CSV"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "cites / paper (avg)"
   },
   "popupPapersOf": {
     "message": "$N1$ of $N2$ papers",

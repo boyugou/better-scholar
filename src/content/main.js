@@ -182,6 +182,37 @@
     markName(row);
   }
 
+  function rowMatchesQuery(row, q) {
+    if (!q) return true;
+    const tokens = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!tokens.length) return true;
+    const raw = row.raw, a = row.a;
+    const title = (raw.title || "").toLowerCase();
+    const authors = (raw.authorsText || "").toLowerCase();
+    const venue = (raw.venueText || "").toLowerCase();
+    const v = a.venue || {};
+    const ccfAbbr = (v.ccf && v.ccf.abbr || "").toLowerCase();
+    const ccfName = (v.ccf && v.ccf.name || "").toLowerCase();
+    const coreAbbr = (v.core && v.core.abbr || "").toLowerCase();
+    const coreName = (v.core && v.core.name || "").toLowerCase();
+    const year = a.year != null ? String(a.year) : "";
+    const role = a.role || "";
+    const marksText = (a.marks || []).map((m) => (m.kind || "") + " " + (m.label || "") + " " + (m.text || "")).join(" ").toLowerCase();
+
+    return tokens.every((tok) =>
+      title.includes(tok) ||
+      authors.includes(tok) ||
+      venue.includes(tok) ||
+      ccfAbbr.includes(tok) ||
+      ccfName.includes(tok) ||
+      coreAbbr.includes(tok) ||
+      coreName.includes(tok) ||
+      year === tok ||
+      role === tok ||
+      marksText.includes(tok)
+    );
+  }
+
   function applyFilters() {
     const f = state.filters;
     const source = currentSource();
@@ -192,10 +223,7 @@
         if (f.yearStart != null && a.year < f.yearStart) hide = true;
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
-      if (f.query) {
-        const q = f.query, title = (row.raw.title || "").toLowerCase(), authors = (row.raw.authorsText || "").toLowerCase();
-        if (!title.includes(q) && !authors.includes(q)) hide = true;
-      }
+      if (f.query && !rowMatchesQuery(row, f.query)) hide = true;
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
       if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
@@ -240,10 +268,7 @@
         if (f.yearStart != null && a.year < f.yearStart) return false;
         if (f.yearEnd != null && a.year > f.yearEnd) return false;
       }
-      if (f.query) {
-        const q = f.query, title = (r.raw.title || "").toLowerCase(), authors = (r.raw.authorsText || "").toLowerCase();
-        if (!title.includes(q) && !authors.includes(q)) return false;
-      }
+      if (f.query && !rowMatchesQuery(r, f.query)) return false;
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
       if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
@@ -348,6 +373,25 @@
     return metrics.toBibTeX(items, { ccfOn, coreOn });
   }
 
+  function papersMarkdown() {
+    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
+    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+      const a = r.a;
+      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+      return {
+        title: r.raw.title,
+        authorsText: r.raw.authorsText,
+        venueText: r.raw.venueText,
+        year: a.year,
+        venue: a.venue,
+        awards,
+        citations: r.shown,
+        href: r.raw.href
+      };
+    });
+    return metrics.toMarkdown(items, { ccfOn, coreOn });
+  }
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
@@ -423,6 +467,11 @@
       if (kind === "bibtex") {
         const text = papersBibtex();
         if (await copyText(text)) panel.flash("bibtex");
+        return;
+      }
+      if (kind === "markdown") {
+        const text = papersMarkdown();
+        if (await copyText(text)) panel.flash("markdown");
         return;
       }
       const m = model();
@@ -590,7 +639,7 @@
 
   if (prefs.autoLoad) startLoad("auto");
 
-  // The toolbar popup asks for the current summary.
+  // The toolbar popup or external agents ask for the summary or papers.
   try {
     chrome.runtime.onMessage.addListener((msg, _sender, send) => {
       if (msg && msg.type === "rr:summary") {
@@ -601,9 +650,57 @@
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
           marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, copy: prefs.panel.copy, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
         });
+        return false;
+      }
+      if (msg && msg.type === "rr:papers") {
+        const list = live().map((r) => ({
+          id: r.raw.id,
+          title: r.raw.title,
+          authors: r.raw.authorsText,
+          venue: r.raw.venueText,
+          year: r.a.year,
+          citations: r.shown,
+          role: r.a.role,
+          status: r.a.status,
+          highlighted: r.highlighted,
+          ccf: (r.a.venue && r.a.venue.ccf && r.a.venue.ccf.tier) || null,
+          core: (r.a.venue && r.a.venue.core && r.a.venue.core.rank) || null,
+          marks: r.a.marks || []
+        }));
+        send({ ok: true, owner: headerName, papers: list });
+        return false;
+      }
+      if (msg && msg.type === "rr:export") {
+        const format = msg.format || "markdown";
+        let text = "";
+        if (format === "bibtex") text = papersBibtex();
+        else if (format === "markdown") text = papersMarkdown();
+        else if (format === "csv") text = papersCsv();
+        else if (format === "tsv") text = papersText();
+        else text = summaryText();
+        send({ ok: true, format, text });
+        return false;
+      }
+      if (msg && msg.type === "rr:filter") {
+        if (msg.query !== undefined) state.filters.query = (msg.query || "").trim().toLowerCase();
+        if (msg.onlyHighlighted !== undefined) state.filters.onlyHighlighted = !!msg.onlyHighlighted;
+        if (msg.yearStart !== undefined) state.filters.yearStart = msg.yearStart;
+        if (msg.yearEnd !== undefined) state.filters.yearEnd = msg.yearEnd;
+        refresh();
+        send({ ok: true, shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length });
+        return false;
       }
       return false;
     });
   } catch (e) { /* extension context gone */ }
+
+  // Listen for agent-native custom query events on document
+  document.addEventListener("better-scholar:query", (e) => {
+    const detail = (e && e.detail) || {};
+    if (detail.query !== undefined) {
+      state.filters.query = (detail.query || "").trim().toLowerCase();
+      refresh();
+    }
+  });
 
 })();

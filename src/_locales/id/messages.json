@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Salin BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Salin Markdown"
+  },
   "exportCsv": {
     "message": "Ekspor CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "kutipan / artikel (rata-rata)"
   },
   "popupPapersOf": {
     "message": "$N1$ dari $N2$ makalah",

@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Sao chép BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Sao chép Markdown"
+  },
   "exportCsv": {
     "message": "Xuất CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "trích dẫn / bài (TB)"
   },
   "popupPapersOf": {
     "message": "$N1$ trên $N2$ bài",

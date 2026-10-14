@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "העתק BibTeX"
   },
+  "copyMarkdown": {
+    "message": "העתק Markdown"
+  },
   "exportCsv": {
     "message": "ייצוא CSV"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "ציטוטים / מאמר (ממוצע)"
   },
   "popupPapersOf": {
     "message": "מאמרים: $N1$ מתוך $N2$",

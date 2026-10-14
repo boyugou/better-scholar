@@ -513,6 +513,9 @@
   "copyBibtex": {
     "message": "BibTeX कॉपी करें"
   },
+  "copyMarkdown": {
+    "message": "Markdown कॉपी करें"
+  },
   "exportCsv": {
     "message": "CSV निर्यात करें"
   },
@@ -735,6 +738,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "उद्धरण / शोधपत्र (औसत)"
   },
   "popupPapersOf": {
     "message": "$N2$ में से $N1$ पेपर",

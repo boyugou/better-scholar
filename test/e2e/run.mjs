@@ -586,6 +586,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 1, "filterbar has empty-state class when 0 papers match");
     await clearBtn.click();
     assert.equal(await page.locator("#rr-panel .rr-filterbar.rr-fb-empty").count(), 0);
+    // Multi-token / multi-field search: "Stoica 2001" matches papers by Stoica in 2001
+    await queryInput.fill("Stoica 2001");
+    assert.ok((await visibleRows(page)) > 0, "multi-token search matches across author and year");
+    await clearBtn.click();
     // Pressing "/" anywhere on the page focuses the search query input
     const kbdHint = page.locator("#rr-panel .rr-search-kbd");
     assert.equal(await kbdHint.count(), 1, "shows / keyboard hint badge");
@@ -729,6 +733,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(bibtex.includes("  year = {"));
     assert.equal(await page.locator('[data-act="copy-bibtex"]').textContent(), "Copied");
     ok("Copy BibTeX generates standard BibTeX entries with citekey, formatted authors and note");
+
+    // "Copy Markdown": standard Markdown list for papers shown
+    await page.click('[data-act="copy-markdown"]');
+    const md = await page.evaluate(() => navigator.clipboard.readText());
+    assert.ok(md.includes("1. **[") || md.includes("1. **"));
+    assert.ok(md.includes("Cited by"));
+    assert.equal(await page.locator('[data-act="copy-markdown"]').textContent(), "Copied");
+    ok("Copy Markdown generates structured markdown publication list with links, venue, and citations");
 
     // "Export CSV": downloads RFC-4180 CSV with UTF-8 BOM and sanitized filename
     const [download] = await Promise.all([
@@ -1033,6 +1045,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => document.querySelector(".rr-copybar").hidden === false);
     assert.equal(await popupActions(), 1, "and come back with it");
     ok("the copy row (Copy summary, Copy as table, Copy papers) has its own switch, in the panel and in the popup");
+
+    // Agent-native messaging: rr:papers and rr:export
+    const agentTest = await opts.evaluate(async () => {
+      for (const t of await chrome.tabs.query({})) {
+        try {
+          const p = await chrome.tabs.sendMessage(t.id, { type: "rr:papers" });
+          const ex = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "markdown" });
+          if (p && p.ok && ex && ex.ok) return { paperCount: p.papers.length, mdLength: ex.text.length };
+        } catch (e) { /* not profile */ }
+      }
+      return null;
+    });
+    assert.ok(agentTest && agentTest.paperCount > 0, "agent can query papers via rr:papers");
+    assert.ok(agentTest && agentTest.mdLength > 0, "agent can export via rr:export");
+    ok("agent-native messaging (rr:papers, rr:export) returns structured data to external callers");
 
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
     await opts.reload();

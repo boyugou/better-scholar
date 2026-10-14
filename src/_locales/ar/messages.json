@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "نسخ BibTeX"
   },
+  "copyMarkdown": {
+    "message": "نسخ Markdown"
+  },
   "exportCsv": {
     "message": "تصدير CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "استشهادات / بحث (متوسط)"
   },
   "popupPapersOf": {
     "message": "الأوراق: $N1$ من $N2$",

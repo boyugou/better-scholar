@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.31.0 — 2026-10-14
+
+- **Direct Markdown Publication Export ("Copy Markdown")**:
+  - Adds a dedicated "Copy Markdown" button to the panel action bar.
+  - Generates clean, GitHub-Flavored Markdown publication lists with direct paper hyperlinks, complete author lines, italics venue and year, bold ranking tiers (CCF / CORE), award highlights, and formatted citation counts.
+  - Symmetrical 6-button action bar (Summary, Table, Papers / BibTeX, Markdown, CSV) that neatly wraps across all screen sizes and all 30 interface languages without text truncation.
+- **Multi-Field & Multi-Token Instant Quick Search**:
+  - Upgrades quick search to support multi-token conjunctive (AND) queries across paper titles, author lines, venue text, venue acronyms (e.g. `CVPR`, `SIGCOMM`, `NeurIPS`), venue full names, publication years (e.g. `2024`), author roles, and award keywords.
+  - Enables fluid compound queries such as `"Stoica 2001"`, `"He CVPR"`, or `"Best Paper 2023"`.
+- **Agent-Native Programmatic Query & Messaging APIs**:
+  - Added direct runtime messaging handlers for web agents, automation scripts, and external tools:
+    - `{ type: "rr:papers" }`: returns full structured JSON objects for all parsed papers (title, authors, venue, year, citations, role, CCF/CORE tiers, awards).
+    - `{ type: "rr:export", format: "markdown" | "bibtex" | "csv" | "tsv" | "summary" }`: exports formatted text directly in any format.
+    - `{ type: "rr:filter", query, onlyHighlighted, yearStart, yearEnd }`: programmatically updates active filters and returns matching paper counts.
+  - Added custom DOM event listener `better-scholar:query` on `document`.
+
 ## 2.30.0 — 2026-10-14
 
 - **Product Rebrand to Better Scholar (`boyugou/better-scholar`)**:

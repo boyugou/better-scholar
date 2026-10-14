@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "BibTeX másolása"
   },
+  "copyMarkdown": {
+    "message": "Markdown másolása"
+  },
   "exportCsv": {
     "message": "CSV exportálása"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "idézet / cikk (átlag)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ cikk",

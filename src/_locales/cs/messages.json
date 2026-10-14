@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Kopírovat BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Kopírovat Markdown"
+  },
   "exportCsv": {
     "message": "Exportovat CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "citací / článek (průměr)"
   },
   "popupPapersOf": {
     "message": "Práce: $N1$ z $N2$",

@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "Αντιγραφή BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Αντιγραφή Markdown"
+  },
   "exportCsv": {
     "message": "Εξαγωγή CSV"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "αναφορές / εργασία (μέσος όρος)"
   },
   "popupPapersOf": {
     "message": "$N1$ από $N2$ εργασίες",

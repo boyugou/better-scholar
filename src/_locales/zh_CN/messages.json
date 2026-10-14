@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "复制 BibTeX"
   },
+  "copyMarkdown": {
+    "message": "复制 Markdown"
+  },
   "exportCsv": {
     "message": "导出 CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "篇均引用"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ 篇论文",

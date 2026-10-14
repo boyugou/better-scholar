@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Kopiuj BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Kopiuj Markdown"
+  },
   "exportCsv": {
     "message": "Eksportuj CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "cytowań / artykuł (średnio)"
   },
   "popupPapersOf": {
     "message": "Prace: $N1$ z $N2$",

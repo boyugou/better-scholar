@@ -236,7 +236,7 @@
       const btn = (kind, key) =>
         h("button", { class: "rr-btn", type: "button", "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind), onClick: () => cb.onCopy(kind) },
           ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
-      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("bibtex", "copyBibtex"), btn("csv", "exportCsv"));
+      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("bibtex", "copyBibtex"), btn("markdown", "copyMarkdown"), btn("csv", "exportCsv"));
     }
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.

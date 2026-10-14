@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "คัดลอก BibTeX"
   },
+  "copyMarkdown": {
+    "message": "คัดลอก Markdown"
+  },
   "exportCsv": {
     "message": "ส่งออก CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "การอ้างอิง / บทความ (เฉลี่ย)"
   },
   "popupPapersOf": {
     "message": "$N1$ จาก $N2$ เรื่อง",

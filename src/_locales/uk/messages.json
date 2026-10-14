@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Копіювати BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Копіювати Markdown"
+  },
   "exportCsv": {
     "message": "Експорт CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "цитувань / стаття (сер.)"
   },
   "popupPapersOf": {
     "message": "Статей: $N1$ з $N2$",

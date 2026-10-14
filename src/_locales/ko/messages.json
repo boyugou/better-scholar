@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "BibTeX 복사"
   },
+  "copyMarkdown": {
+    "message": "Markdown 복사"
+  },
   "exportCsv": {
     "message": "CSV 내보내기"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "논문당 인용 (평균)"
   },
   "popupPapersOf": {
     "message": "논문 $N2$편 중 $N1$편",

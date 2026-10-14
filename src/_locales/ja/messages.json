@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "BibTeXコピー"
   },
+  "copyMarkdown": {
+    "message": "Markdownをコピー"
+  },
   "exportCsv": {
     "message": "CSV出力"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "引用/論文 (平均)"
   },
   "popupPapersOf": {
     "message": "$N2$ 件中 $N1$ 件の論文",

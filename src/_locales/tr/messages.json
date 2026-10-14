@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "BibTeX kopyala"
   },
+  "copyMarkdown": {
+    "message": "Markdown Kopyala"
+  },
   "exportCsv": {
     "message": "CSV dışa aktar"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "atıf / makale (ort.)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ makale",

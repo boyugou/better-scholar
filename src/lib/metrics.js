@@ -265,6 +265,42 @@
     }).join("\n\n");
   }
 
+  // Formats paper items into standard academic Markdown list entries:
+  // 1. **[Title](url)**  
+  //    Authors  
+  //    *Venue*, Year · **CCF A** · ★ Best Paper Award · Cited by 1,234
+  function toMarkdown(papers, { ccfOn = true, coreOn = true } = {}) {
+    const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
+    return papers.map((p, i) => {
+      const title = clean(p.title);
+      const authors = clean(p.authorsText);
+      const venue = clean(p.venueText);
+      const year = p.year ? String(p.year) : "";
+      const v = p.venue || {};
+      const ranks = [];
+      if (ccfOn && v.ccf && v.ccf.tier) ranks.push(`CCF ${v.ccf.tier}`);
+      if (coreOn && v.core && v.core.rank) ranks.push(`CORE ${v.core.rank}`);
+      const rankPart = ranks.length ? `**${ranks.join(" · ")}**` : "";
+      const awards = Array.isArray(p.awards) ? p.awards.filter(Boolean).map(clean) : p.awards ? [clean(p.awards)] : [];
+      const awardPart = awards.length ? awards.map((a) => `★ ${a}`).join(" · ") : "";
+      const citePart = Number.isFinite(p.citations) && p.citations > 0 ? `Cited by ${p.citations.toLocaleString("en-US")}` : "";
+
+      const meta = [];
+      if (venue && year && !new RegExp(`(?:^|\\D)${year}(?:\\D|$)`).test(venue)) meta.push(`*${venue}*, ${year}`);
+      else if (venue) meta.push(`*${venue}*`);
+      else if (year) meta.push(year);
+      if (rankPart) meta.push(rankPart);
+      if (awardPart) meta.push(awardPart);
+      if (citePart) meta.push(citePart);
+
+      const titlePart = p.href ? `**[${title}](${p.href.startsWith("http") ? p.href : "https://scholar.google.com" + p.href})**` : `**${title}**`;
+      const lines = [`${i + 1}. ${titlePart}`];
+      if (authors) lines.push(`   ${authors}`);
+      if (meta.length) lines.push(`   ${meta.join(" · ")}`);
+      return lines.join("  \n");
+    }).join("\n\n");
+  }
+
   function toTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
     const head = [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total];
     const lines = [head.join("\t")];
@@ -273,5 +309,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv, toBibTeX };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv, toBibTeX, toMarkdown };
 });

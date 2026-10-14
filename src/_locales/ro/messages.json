@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Copiază BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Copiază Markdown"
+  },
   "exportCsv": {
     "message": "Exportă CSV"
   },
@@ -729,6 +732,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "citări / articol (medie)"
   },
   "popupPapersOf": {
     "message": "Lucrări: $N1$ din $N2$",

@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "Kopioi BibTeX"
   },
+  "copyMarkdown": {
+    "message": "Kopioi Markdown"
+  },
   "exportCsv": {
     "message": "Vie CSV"
   },
@@ -750,6 +753,9 @@
         "content": "$2"
       }
     }
+  },
+  "metricsAvgCites": {
+    "message": "viittausta / artikkeli (ka.)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ artikkelia",

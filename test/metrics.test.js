@@ -170,6 +170,37 @@ test("toBibTeX: generates standard BibTeX entries with citekey, author and, book
   assert.ok(bib.includes("  note = {CCF A}"));
 });
 
+test("toMarkdown: standard publication list in markdown format", () => {
+  const papers = [
+    {
+      title: "Deep Residual Learning for Image Recognition",
+      authorsText: "K He, X Zhang, S Ren, J Sun",
+      year: 2016,
+      venueText: "Proceedings of the IEEE conference on computer vision and pattern recognition",
+      venue: { ccf: { tier: "A" }, core: { rank: "A*" } },
+      awards: ["Best Paper Award"],
+      citations: 180000,
+      href: "/citations?view_op=view_citation&citation_for_view=123"
+    },
+    {
+      title: "Attention Is All You Need",
+      authorsText: "A Vaswani, N Shazeer",
+      year: 2017,
+      venueText: "Advances in Neural Information Processing Systems, 2017",
+      venue: { ccf: { tier: "A" } },
+      citations: 120000
+    }
+  ];
+  const md = m.toMarkdown(papers);
+  assert.ok(md.includes("1. **[Deep Residual Learning for Image Recognition](https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123)**"));
+  assert.ok(md.includes("   K He, X Zhang, S Ren, J Sun"));
+  assert.ok(md.includes("**CCF A · CORE A***"));
+  assert.ok(md.includes("★ Best Paper Award"));
+  assert.ok(md.includes("Cited by 180,000"));
+  assert.ok(md.includes("2. **Attention Is All You Need**"));
+  assert.ok(md.includes("   *Advances in Neural Information Processing Systems, 2017* · **CCF A** · Cited by 120,000"));
+});
+
 test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
   const r = (year, role, highlighted = true) => ({ year, role, highlighted });
   const out = m.byYear([r(2020, "first"), r(2020, "last"), r(2022, "second"), r(2022, "first", false), r(null, "first"), r(2021, "middle")]);
