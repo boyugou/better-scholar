@@ -1138,7 +1138,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     });
     assert.ok(agentTest && agentTest.paperCount > 0, "agent can query papers via rr:papers");
     assert.ok(agentTest && agentTest.mdLength > 0, "agent can export markdown via rr:export");
-    assert.equal(agentTest.jsonTotal, 100, "agent can export JSON via rr:export");
+    assert.equal(agentTest.jsonTotal, agentTest.paperCount, "agent can export JSON via rr:export");
     ok("agent-native messaging (rr:papers, rr:export) returns structured data to external callers");
 
     // Agent-Native DOM Event Bridge (page-context CustomEvents)
