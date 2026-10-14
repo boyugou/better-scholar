@@ -98,7 +98,18 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
   width: 100%; min-width: 0; outline: none; transition: border-color .15s, box-shadow .15s;
 }
 #rr-panel input[type="text"]:focus, #rr-panel input[type="search"]:focus { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
-#rr-panel .rr-search { margin-bottom: 8px; }
+#rr-panel .rr-search { position: relative; margin-bottom: 8px; }
+#rr-panel .rr-search-input { padding-inline-end: 28px; }
+#rr-panel .rr-search-kbd {
+  position: absolute; inset-inline-end: 7px; top: 50%; transform: translateY(-50%);
+  font: 11px system-ui, -apple-system, sans-serif; line-height: 1; padding: 2px 5px;
+  border: 1px solid #dadce0; border-radius: 4px; background: #f8f9fa; color: var(--rr-muted);
+  pointer-events: none; transition: opacity .15s;
+}
+#rr-panel .rr-search:focus-within .rr-search-kbd,
+#rr-panel .rr-search-input:not(:placeholder-shown) + .rr-search-kbd {
+  opacity: 0;
+}
 /* the drop-down: a button that shows the choice, and a list under it */
 #rr-panel .rr-dd { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding-block: 0; padding-inline: 11px 8px; border: 1px solid #dadce0; border-radius: 7px; background: #fff;
   font: 12px Arial, sans-serif; color: var(--rr-muted); transition: border-color .15s, background .15s, box-shadow .15s; }
@@ -256,7 +267,7 @@ html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 @media (forced-colors: active) {
   tr[class*="rr-r-"] > td:first-child { border-inline-start: 4px solid Highlight; }
   .rr-name { text-decoration: underline; }
-  .rr-chip { border-color: ButtonText; }
+  .rr-chip, #rr-panel .rr-search-kbd { border-color: ButtonText; }
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
   #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
   /* masks are drawn with a background colour, which the system would turn into the page colour: keep them in the text colour */

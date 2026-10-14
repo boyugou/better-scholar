@@ -497,6 +497,24 @@
     B.scholar.place(panel.el);
     if (panel.el.classList.contains("rr-wide") !== was) refresh();
   }));
+
+  // Pressing "/" focuses the in-page quick search filter (unless already typing in an editable field)
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const active = document.activeElement;
+      const tag = active ? active.tagName.toLowerCase() : "";
+      if (tag === "input" || tag === "textarea" || tag === "select" || (active && active.isContentEditable)) return;
+      if (!prefs.panel.show || !prefs.panel.filters) return;
+      e.preventDefault();
+      if (ui.collapsed) {
+        ui.collapsed = false;
+        B.store.saveUi(ui);
+        refresh();
+      }
+      panel.focusSearch();
+    }
+  });
+
   if (prefs.autoLoad) startLoad("auto");
 
   // The toolbar popup asks for the current summary.

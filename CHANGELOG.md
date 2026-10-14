@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.25.1 — 2026-10-14
+
+- **Keyboard shortcut `/` to focus quick search**:
+  - Pressing `/` anywhere on a Google Scholar profile page immediately focuses and selects the search query filter input.
+  - Automatically expands the panel if currently collapsed so matching results and filters are instantly accessible.
+  - Safe navigation: ignores typing when focus is already within an input, textarea, select, or editable element.
+  - Subtle visual affordance: displays an elegant `<kbd>/</kbd>` badge inside the search bar that fades out on focus or when input is non-empty. Full forced-colors and RTL support.
+
 ## 2.25.0 — 2026-10-14
 
 - **In-page quick search filter**:

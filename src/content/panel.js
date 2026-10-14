@@ -102,7 +102,8 @@
     queryInput.addEventListener("input", () => cb.onQuery(queryInput.value));
     queryInput.addEventListener("search", () => cb.onQuery(queryInput.value));
     queryInput.addEventListener("keydown", (e) => { if (e.key === "Escape") { queryInput.value = ""; cb.onQuery(""); queryInput.blur(); } });
-    const searchRow = h("div", { class: "rr-search" }, queryInput);
+    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true" }, "/");
+    const searchRow = h("div", { class: "rr-search" }, queryInput, kbdHint);
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
@@ -418,7 +419,12 @@
       setTimeout(() => { ui.flash = null; renderActions(); }, 1400);
     }
 
-    return { el, update, flash };
+    function focusSearch() {
+      queryInput.focus();
+      queryInput.select();
+    }
+
+    return { el, update, flash, focusSearch };
   }
 
   B.panel = { create };

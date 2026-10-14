@@ -543,7 +543,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await queryInput.press("Escape");
     assert.equal(await queryInput.inputValue(), "");
     assert.equal(await visibleRows(page), all.length);
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query");
+    // Pressing "/" anywhere on the page focuses the search query input
+    const kbdHint = page.locator("#rr-panel .rr-search-kbd");
+    assert.equal(await kbdHint.count(), 1, "shows / keyboard hint badge");
+    assert.equal(await kbdHint.textContent(), "/");
+    await page.keyboard.press("/");
+    assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.getAttribute("data-act")), "filter-query", "pressing / focuses the search query input");
+    await queryInput.press("Escape");
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query and focuses on /");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");
