@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Đặt lại"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ trích dẫn",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Chưa bật vị trí tác giả nào, nên không có bài nào được tô nổi."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "trích dẫn / bài (TB)"
+  "tipFilterH": {
+    "message": "Lọc các bài báo h-core (≥$N1$ trích dẫn)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Lọc các bài báo i10 (≥10 trích dẫn)"
   },
   "popupPapersOf": {
     "message": "$N1$ trên $N2$ bài",

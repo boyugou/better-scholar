@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Ryd"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citeringer",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Ingen forfatterplacering er slået til, så intet fremhæves."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citeringer / artikel (gns.)"
+  "tipFilterH": {
+    "message": "Filtrer til h-kerne artikler (≥$N1$ citeringer)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrer til i10 artikler (≥10 citeringer)"
   },
   "popupPapersOf": {
     "message": "$N1$ af $N2$ artikler",

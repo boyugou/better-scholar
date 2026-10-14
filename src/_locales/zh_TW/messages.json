@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "清除"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ 次引用",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "沒有開啟任何作者位次，所以沒有標示的論文。"
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "篇均引用"
+  "tipFilterH": {
+    "message": "篩選 h-core 核心論文（引用 ≥$N1$）",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "篩選 i10 論文（引用 ≥10）"
   },
   "popupPapersOf": {
     "message": "$N1$／$N2$ 篇論文",

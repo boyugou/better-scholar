@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Cancella"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citazioni",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Nessuna posizione d’autore è attivata, quindi non viene evidenziato nulla."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citazioni / articolo (media)"
+  "tipFilterH": {
+    "message": "Filtra sul nucleo h (≥$N1$ citazioni)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtra sugli articoli i10 (≥10 citazioni)"
   },
   "popupPapersOf": {
     "message": "$N1$ di $N2$ articoli",

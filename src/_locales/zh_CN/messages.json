@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "清除"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ 次引用",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "没有打开任何作者位次，所以没有高亮的论文。"
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "篇均引用"
+  "tipFilterH": {
+    "message": "筛选 h-core 核心论文（引用 ≥$N1$）",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "筛选 i10 论文（引用 ≥10）"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ 篇论文",

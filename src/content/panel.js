@@ -187,6 +187,7 @@
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
       }
       if (m.filters.query) parts.push(`"${m.filters.query}"`);
+      if (m.filters.minCitations != null) parts.push(t("filterMinCites", [String(m.filters.minCitations)]));
       return parts;
     }
 
@@ -334,6 +335,22 @@
         return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null },
           h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
+      const btnRow = (key, a, b, threshold) => {
+        const isPressed = m.filters.minCitations === threshold && threshold > 0;
+        const title = threshold > 0 ? t(key === "mH" ? "tipFilterH" : "tipFilterI10", [String(threshold)]) : null;
+        return h("button", {
+          class: "rr-m rr-m-btn" + (isPressed ? " rr-m-active" : ""),
+          type: "button",
+          "data-metric": key,
+          "aria-pressed": String(isPressed),
+          disabled: threshold <= 0 ? true : null,
+          title,
+          onClick: () => {
+            if (threshold <= 0) return;
+            cb.onMinCitations(isPressed ? null : threshold);
+          }
+        }, h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
+      };
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");
@@ -348,7 +365,7 @@
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
         scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,
         row("mPapers", hi.papers, all.papers, true), row("mCitations", hi.citations, all.citations, true),
-        row("mH", hi.h, all.h, false), row("mI10", hi.i10, all.i10, false)].filter(Boolean));
+        btnRow("mH", hi.h, all.h, hi.h), btnRow("mI10", hi.i10, all.i10, 10)].filter(Boolean));
     }
 
     // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers; click to filter)

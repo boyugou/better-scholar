@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Șterge"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citări",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Nicio poziție de autor nu este activată, așa că nimic nu este evidențiat."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citări / articol (medie)"
+  "tipFilterH": {
+    "message": "Filtrează la lucrările din nucleul h (≥$N1$ citări)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrează la lucrările i10 (≥10 citări)"
   },
   "popupPapersOf": {
     "message": "Lucrări: $N1$ din $N2$",

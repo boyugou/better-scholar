@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Wyczyść"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ cytowań",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Żadna pozycja autora nie jest włączona, więc nic nie jest wyróżnione."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "cytowań / artykuł (średnio)"
+  "tipFilterH": {
+    "message": "Filtruj do prac h-core (≥$N1$ cytowań)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtruj do prac i10 (≥10 cytowań)"
   },
   "popupPapersOf": {
     "message": "Prace: $N1$ z $N2$",

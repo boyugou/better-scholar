@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Очистить"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ цитирований",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Ни одна авторская позиция не включена, поэтому ничего не выделяется."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "цитирований / статья (ср.)"
+  "tipFilterH": {
+    "message": "Фильтровать по h-ядру (≥$N1$ цитирований)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Фильтровать по статьям i10 (≥10 цитирований)"
   },
   "popupPapersOf": {
     "message": "Статей: $N1$ из $N2$",

@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Löschen"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ Zitationen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Keine Autorenposition ist eingeschaltet, daher wird nichts hervorgehoben."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "Zitate / Arbeit (Ø)"
+  "tipFilterH": {
+    "message": "Auf h-Kern filtern (≥$N1$ Zitationen)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Auf i10-Arbeiten filtern (≥10 Zitationen)"
   },
   "popupPapersOf": {
     "message": "$N1$ von $N2$ Paper",

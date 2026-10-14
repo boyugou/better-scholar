@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Εκκαθάριση"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ αναφορές",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Δεν είναι ενεργοποιημένη καμία θέση συγγραφέα, οπότε δεν επισημαίνεται τίποτα."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "αναφορές / εργασία (μέσος όρος)"
+  "tipFilterH": {
+    "message": "Φιλτράρισμα σε εργασίες πυρήνα h (≥$N1$ αναφορές)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Φιλτράρισμα σε εργασίες i10 (≥10 αναφορές)"
   },
   "popupPapersOf": {
     "message": "$N1$ από $N2$ εργασίες",

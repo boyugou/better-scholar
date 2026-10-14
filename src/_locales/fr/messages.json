@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Effacer"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citations",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Aucune position d’auteur n’est activée, donc rien n’est mis en évidence."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citations / article (moy.)"
+  "tipFilterH": {
+    "message": "Filtrer sur le cœur h (≥$N1$ citations)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrer sur les articles i10 (≥10 citations)"
   },
   "popupPapersOf": {
     "message": "$N1$ sur $N2$ articles",

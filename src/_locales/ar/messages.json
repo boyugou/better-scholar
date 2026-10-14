@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "مسح"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ استشهاد",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "لا يوجد موضع للمؤلف مفعّل، لذلك لا يُبرَز شيء."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "استشهادات / بحث (متوسط)"
+  "tipFilterH": {
+    "message": "تصفية لأبحاث النواة h (≥$N1$ استشهاد)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "تصفية لأبحاث i10 (≥10 استشهادات)"
   },
   "popupPapersOf": {
     "message": "الأوراق: $N1$ من $N2$",

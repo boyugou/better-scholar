@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Hapus"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ kutipan",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Tidak ada posisi penulis yang aktif, jadi tidak ada yang disorot."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "kutipan / artikel (rata-rata)"
+  "tipFilterH": {
+    "message": "Filter ke makalah h-core (≥$N1$ kutipan)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filter ke makalah i10 (≥10 kutipan)"
   },
   "popupPapersOf": {
     "message": "$N1$ dari $N2$ makalah",

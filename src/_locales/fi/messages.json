@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Tyhjennä"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ viittausta",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Yhtäkään kirjoittajapaikkaa ei ole kytketty päälle, joten mitään ei korosteta."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "viittausta / artikkeli (ka.)"
+  "tipFilterH": {
+    "message": "Suodata h-ydinjulkaisuihin (≥$N1$ viittausta)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Suodata i10-julkaisuihin (≥10 viittausta)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ artikkelia",

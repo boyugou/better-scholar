@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "ล้าง"
   },
+  "filterMinCites": {
+    "message": "การอ้างอิง ≥$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "ยังไม่ได้เปิดตำแหน่งผู้เขียนใดเลย จึงไม่มีอะไรถูกไฮไลต์"
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "การอ้างอิง / บทความ (เฉลี่ย)"
+  "tipFilterH": {
+    "message": "กรองเฉพาะบทความ h-core (การอ้างอิง ≥$N1$)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "กรองเฉพาะบทความ i10 (การอ้างอิง ≥10)"
   },
   "popupPapersOf": {
     "message": "$N1$ จาก $N2$ เรื่อง",

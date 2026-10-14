@@ -31,7 +31,7 @@
     selection: null,                            // matrix cell / row / column filter
     venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
-    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" },
+    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null },
     searchCursor: -1,
     venuesExpanded: false,
     loadingAll: false,
@@ -224,6 +224,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
       if (f.query && !rowMatchesQuery(row, f.query)) hide = true;
+      if (f.minCitations != null && row.shown < f.minCitations) hide = true;
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
       if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
@@ -256,7 +257,7 @@
   const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
 
   // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range, or a search query)?
-  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query);
+  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query || state.filters.minCitations != null);
 
   // The numbers under the filters follow the filters: the year range, an awards row, a matrix cell and a venue narrow what is counted. The table
   // itself stays whole (it is where a cell is chosen), and so do the year bars (the range is chosen against them); the venue list is not narrowed by its own choice.
@@ -269,6 +270,7 @@
         if (f.yearEnd != null && a.year > f.yearEnd) return false;
       }
       if (f.query && !rowMatchesQuery(r, f.query)) return false;
+      if (f.minCitations != null && r.shown < f.minCitations) return false;
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
       if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
@@ -436,7 +438,7 @@
     // every filter off at once (the panel's bar says how many papers are shown and offers this)
     onClearFilters() {
       state.selection = null; state.markGroup = null; state.venueKey = null;
-      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
+      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null });
       state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
@@ -444,6 +446,7 @@
     onToggleVenues() { state.venuesExpanded = !state.venuesExpanded; refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; state.searchCursor = -1; clearFocusedRow(); refresh(); },
+    onMinCitations(cites) { state.filters.minCitations = cites; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onQuery(q) {
       state.filters.query = (q || "").trim().toLowerCase();
       state.searchCursor = -1; clearFocusedRow();
@@ -686,6 +689,7 @@
         if (msg.onlyHighlighted !== undefined) state.filters.onlyHighlighted = !!msg.onlyHighlighted;
         if (msg.yearStart !== undefined) state.filters.yearStart = msg.yearStart;
         if (msg.yearEnd !== undefined) state.filters.yearEnd = msg.yearEnd;
+        if (msg.minCitations !== undefined) state.filters.minCitations = msg.minCitations;
         refresh();
         send({ ok: true, shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length });
         return false;

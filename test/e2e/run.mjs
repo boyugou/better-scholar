@@ -506,6 +506,36 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await visibleRows(page), 100);
     ok(`clicking last × CCF-A shows exactly ${lastA} papers; clicking again clears`);
 
+    // -- 7b. metrics H-core and i10 impact filtering
+    const hButton = page.locator('#rr-panel button.rr-m[data-metric="mH"]');
+    const i10Button = page.locator('#rr-panel button.rr-m[data-metric="mI10"]');
+    if (await hButton.count()) {
+      const hVal = Number(await hButton.locator("b").textContent());
+      if (hVal > 0) {
+        await hButton.click();
+        assert.equal(await hButton.getAttribute("aria-pressed"), "true");
+        const hFilteredRows = all.filter((p) => (p.citations || 0) >= hVal).length;
+        assert.equal(await visibleRows(page), hFilteredRows);
+        assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(`≥${hVal}`));
+        // Clicking again clears
+        await hButton.click();
+        assert.equal(await hButton.getAttribute("aria-pressed"), "false");
+        assert.equal(await visibleRows(page), all.length);
+      }
+    }
+    if (await i10Button.count()) {
+      await i10Button.click();
+      assert.equal(await i10Button.getAttribute("aria-pressed"), "true");
+      const i10FilteredRows = all.filter((p) => (p.citations || 0) >= 10).length;
+      assert.equal(await visibleRows(page), i10FilteredRows);
+      assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), /≥10/);
+      // Clear via filterbar clear button
+      await page.click('[data-act="clear-filters"]');
+      assert.equal(await i10Button.getAttribute("aria-pressed"), "false");
+      assert.equal(await visibleRows(page), all.length);
+    }
+    ok("clicking H-index and i10 metric rows filters papers to ≥h and ≥10 citations; clicking again or clearing resets");
+
     // -- 8. CORE tab
     await page.click('button[data-src="core"]');
     assert.deepEqual(await readMatrix(page), matrixOf(all, "core"));

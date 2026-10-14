@@ -725,6 +725,14 @@
   "filterClear": {
     "message": "साफ़ करें"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ उद्धरण",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "लेखक का कोई स्थान चालू नहीं है, इसलिए कुछ भी हाइलाइट नहीं होता।"
   },
@@ -739,8 +747,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "उद्धरण / शोधपत्र (औसत)"
+  "tipFilterH": {
+    "message": "h-कोर शोधपत्रों पर फ़िल्टर करें (≥$N1$ उद्धरण)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "i10 शोधपत्रों पर फ़िल्टर करें (≥10 उद्धरण)"
   },
   "popupPapersOf": {
     "message": "$N2$ में से $N1$ पेपर",

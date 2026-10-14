@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Tøm"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ siteringer",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Ingen forfatterplass er slått på, så ingenting blir uthevet."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "siteringer / artikkel (snitt)"
+  "tipFilterH": {
+    "message": "Filtrer til h-kjerne artikler (≥$N1$ siteringer)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrer til i10 artikler (≥10 siteringer)"
   },
   "popupPapersOf": {
     "message": "$N1$ av $N2$ artikler",

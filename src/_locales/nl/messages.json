@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Wissen"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citaties",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Geen auteurspositie staat aan, dus er wordt niets gemarkeerd."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citaties / paper (gem.)"
+  "tipFilterH": {
+    "message": "Filteren op h-kern papers (≥$N1$ citaties)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filteren op i10 papers (≥10 citaties)"
   },
   "popupPapersOf": {
     "message": "$N1$ van $N2$ papers",

@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "ניקוי"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ ציטוטים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "לא מופעל אף מיקום של מחבר, ולכן שום דבר לא מודגש."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "ציטוטים / מאמר (ממוצע)"
+  "tipFilterH": {
+    "message": "סנן למאמרי ליבת h (≥$N1$ ציטוטים)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "סנן למאמרי i10 (≥10 ציטוטים)"
   },
   "popupPapersOf": {
     "message": "מאמרים: $N1$ מתוך $N2$",

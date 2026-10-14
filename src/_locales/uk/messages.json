@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Очистити"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ цитувань",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Жодну авторську позицію не увімкнено, тому нічого не виділяється."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "цитувань / стаття (сер.)"
+  "tipFilterH": {
+    "message": "Фільтрувати до робіт h-ядра (≥$N1$ цитувань)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Фільтрувати до робіт i10 (≥10 цитувань)"
   },
   "popupPapersOf": {
     "message": "Статей: $N1$ з $N2$",

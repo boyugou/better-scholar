@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Törlés"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ idézet",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Egyetlen szerzői pozíció sincs bekapcsolva, ezért semmi sincs kiemelve."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "idézet / cikk (átlag)"
+  "tipFilterH": {
+    "message": "Szűrés a h-mag cikkekre (≥$N1$ idézet)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Szűrés az i10 cikkekre (≥10 idézet)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ cikk",

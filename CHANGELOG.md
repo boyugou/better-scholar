@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.32.0 — 2026-10-14
+
+- **Interactive H-Core & i10 Impact Filtering**:
+  - The metrics summary card now turns the **h-index** and **i10-index** rows into interactive filter buttons.
+  - Clicking the **h-index** row instantly isolates the researcher's core corpus—filtering visible papers to exactly those with $\ge h$ citations.
+  - Clicking the **i10-index** row isolates all high-impact papers with $\ge 10$ citations.
+  - Seamlessly combines with existing role, ranking (CCF / CORE), year span, and search query filters.
+  - The filter bar dynamically shows the active citation threshold (e.g., `≥25 citations`), and clicking the active metric row or clicking the "Clear" button resets the view.
+  - Fully localized across all 30 languages with zero accessibility violations (WCAG 2.1 AAA).
+  - Programmatic filtering support added to the agent messaging API (`{ type: "rr:filter", minCitations: N }`).
+
 ## 2.31.0 — 2026-10-14
 
 - **Direct Markdown Publication Export ("Copy Markdown")**:

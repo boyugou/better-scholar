@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Clear"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citations",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "No author position is switched on, so nothing is highlighted."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "cites / paper (avg)"
+  "tipFilterH": {
+    "message": "Filter to h-core papers (≥$N1$ citations)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filter to i10 papers (≥10 citations)"
   },
   "popupPapersOf": {
     "message": "$N1$ of $N2$ papers",

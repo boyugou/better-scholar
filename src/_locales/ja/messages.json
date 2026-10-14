@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "消去"
   },
+  "filterMinCites": {
+    "message": "引用数 ≥ $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "著者順がどれもオンになっていないため、何もハイライトされません。"
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "引用/論文 (平均)"
+  "tipFilterH": {
+    "message": "hコア論文に絞り込み（引用数 ≥ $N1$）",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "i10論文に絞り込み（引用数 ≥ 10）"
   },
   "popupPapersOf": {
     "message": "$N2$ 件中 $N1$ 件の論文",

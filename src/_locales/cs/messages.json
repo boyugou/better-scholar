@@ -719,6 +719,14 @@
   "filterClear": {
     "message": "Vymazat"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citací",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Není zapnutá žádná autorská pozice, takže nic není zvýrazněno."
   },
@@ -733,8 +741,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citací / článek (průměr)"
+  "tipFilterH": {
+    "message": "Filtrovat na práce h-jádra (≥$N1$ citací)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrovat na práce i10 (≥10 citací)"
   },
   "popupPapersOf": {
     "message": "Práce: $N1$ z $N2$",

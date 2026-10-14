@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Temizle"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ atıf",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Hiçbir yazar sırası açık değil, bu yüzden hiçbir şey vurgulanmıyor."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "atıf / makale (ort.)"
+  "tipFilterH": {
+    "message": "h-çekirdek makalelerine filtrele (≥$N1$ atıf)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "i10 makalelerine filtrele (≥10 atıf)"
   },
   "popupPapersOf": {
     "message": "$N1$ / $N2$ makale",

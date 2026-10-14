@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "Rensa"
   },
+  "filterMinCites": {
+    "message": "≥$N1$ citeringar",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "Ingen författarplats är påslagen, så ingenting markeras."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "citeringar / artikel (snitt)"
+  "tipFilterH": {
+    "message": "Filtrera till h-kärnartiklar (≥$N1$ citeringer)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filtrera till i10-artiklar (≥10 citeringer)"
   },
   "popupPapersOf": {
     "message": "$N1$ av $N2$ artiklar",

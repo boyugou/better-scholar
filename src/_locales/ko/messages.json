@@ -740,6 +740,14 @@
   "filterClear": {
     "message": "되돌리기"
   },
+  "filterMinCites": {
+    "message": "인용수 ≥ $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "noRolesHint": {
     "message": "켜진 저자 순서가 없어서 강조되는 것이 없습니다."
   },
@@ -754,8 +762,16 @@
       }
     }
   },
-  "metricsAvgCites": {
-    "message": "논문당 인용 (평균)"
+  "tipFilterH": {
+    "message": "h-코어 논문 필터링 (인용수 ≥ $N1$)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "i10 논문 필터링 (인용수 ≥ 10)"
   },
   "popupPapersOf": {
     "message": "논문 $N2$편 중 $N1$편",
