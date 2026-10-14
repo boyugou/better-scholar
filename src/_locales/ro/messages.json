@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Afișează mai puține"
+  },
+  "optHideCitedTable": {
+    "message": "Tabel cu valorile citărilor"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabelul cu citări, indicele h și indicele i10 din bara laterală."
+  },
+  "optHideCitedChart": {
+    "message": "Graficul citărilor pe an"
+  },
+  "optHideCitedChartHint": {
+    "message": "Histograma anuală a citărilor din bara laterală."
+  },
+  "optConfigTitle": {
+    "message": "Configurare și presetări"
+  },
+  "optConfigHint": {
+    "message": "Exportați sau importați setările ca JSON sau TOML, aplicați presetări sau configurați cu un agent AI."
+  },
+  "optConfigCopy": {
+    "message": "Copiază configurația (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Exportă fișier"
+  },
+  "optConfigImport": {
+    "message": "Importă din clipboard"
+  },
+  "optConfigImportFile": {
+    "message": "Importă fișier"
+  },
+  "optConfigEditor": {
+    "message": "Lipește sau editează configurația (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Aplică configurația"
+  },
+  "optConfigPreset": {
+    "message": "Presetări"
+  },
+  "optPresetSenior": {
+    "message": "Focalizare pe autorul principal"
+  },
+  "optPresetFirst": {
+    "message": "Focalizare pe primul autor"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalist"
+  },
+  "optViewCache": {
+    "message": "Vezi detaliile salvate"
+  },
+  "optCacheTitle": {
+    "message": "Detalii articole salvate"
+  },
+  "optCacheSearch": {
+    "message": "Filtrează articolele salvate…"
+  },
+  "optCacheCopy": {
+    "message": "Copiază memoria cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Nu au fost salvate încă detalii despre articole pe acest dispozitiv."
   }
 }

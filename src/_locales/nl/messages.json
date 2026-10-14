@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Minder tonen"
+  },
+  "optHideCitedTable": {
+    "message": "Citatiemetriektabel"
+  },
+  "optHideCitedTableHint": {
+    "message": "De tabel met citaties, h-index en i10-index in de zijbalk."
+  },
+  "optHideCitedChart": {
+    "message": "Grafiek met citaties per jaar"
+  },
+  "optHideCitedChartHint": {
+    "message": "Het jaarlijkse citatiehistogram in de zijbalk."
+  },
+  "optConfigTitle": {
+    "message": "Configuratie & voorinstellingen"
+  },
+  "optConfigHint": {
+    "message": "Exporteer of importeer instellingen als JSON of TOML, pas voorinstellingen toe of configureer met een AI-agent."
+  },
+  "optConfigCopy": {
+    "message": "Configuratie kopiëren (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Bestand exporteren"
+  },
+  "optConfigImport": {
+    "message": "Importeren van klembord"
+  },
+  "optConfigImportFile": {
+    "message": "Bestand importeren"
+  },
+  "optConfigEditor": {
+    "message": "Configuratie plakken of bewerken (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Configuratie toepassen"
+  },
+  "optConfigPreset": {
+    "message": "Voorinstellingen"
+  },
+  "optPresetSenior": {
+    "message": "Focus op senior auteur"
+  },
+  "optPresetFirst": {
+    "message": "Focus op eerste auteur"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistisch"
+  },
+  "optViewCache": {
+    "message": "Opgeslagen details bekijken"
+  },
+  "optCacheTitle": {
+    "message": "Opgeslagen artikeldetails"
+  },
+  "optCacheSearch": {
+    "message": "Gecachte artikelen filteren…"
+  },
+  "optCacheCopy": {
+    "message": "Cache kopiëren (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Er zijn nog geen artikeldetails opgeslagen op dit apparaat."
   }
 }

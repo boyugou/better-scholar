@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Pokaż mniej"
+  },
+  "optHideCitedTable": {
+    "message": "Tabela wskaźników cytowań"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabela cytowań, indeksu h i indeksu i10 na pasku bocznym."
+  },
+  "optHideCitedChart": {
+    "message": "Wykres cytowań według lat"
+  },
+  "optHideCitedChartHint": {
+    "message": "Roczny histogram cytowań na pasku bocznym."
+  },
+  "optConfigTitle": {
+    "message": "Konfiguracja i profile"
+  },
+  "optConfigHint": {
+    "message": "Eksportuj lub importuj ustawienia jako JSON lub TOML, stosuj profile lub konfiguruj za pomocą agenta AI."
+  },
+  "optConfigCopy": {
+    "message": "Kopiuj konfigurację (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Eksportuj do pliku"
+  },
+  "optConfigImport": {
+    "message": "Importuj ze schowka"
+  },
+  "optConfigImportFile": {
+    "message": "Importuj plik"
+  },
+  "optConfigEditor": {
+    "message": "Wklej lub edytuj konfigurację (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Zastosuj konfigurację"
+  },
+  "optConfigPreset": {
+    "message": "Profile"
+  },
+  "optPresetSenior": {
+    "message": "Nacisk na starszego autora"
+  },
+  "optPresetFirst": {
+    "message": "Nacisk na pierwszego autora"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistyczny"
+  },
+  "optViewCache": {
+    "message": "Wyświetl zapisane szczegóły"
+  },
+  "optCacheTitle": {
+    "message": "Zapisane szczegóły publikacji"
+  },
+  "optCacheSearch": {
+    "message": "Filtruj zapisane publikacje…"
+  },
+  "optCacheCopy": {
+    "message": "Kopiuj pamięć podręczną (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Na tym urządzeniu nie zapisano jeszcze szczegółów żadnej publikacji."
   }
 }

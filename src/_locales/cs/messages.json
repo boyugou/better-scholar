@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Zobrazit méně"
+  },
+  "optHideCitedTable": {
+    "message": "Tabulka metrik citací"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabulka citací, h-indexu a i10-indexu v postranním panelu."
+  },
+  "optHideCitedChart": {
+    "message": "Graf citací za rok"
+  },
+  "optHideCitedChartHint": {
+    "message": "Roční histogram citací v postranním panelu."
+  },
+  "optConfigTitle": {
+    "message": "Konfigurace a předvolby"
+  },
+  "optConfigHint": {
+    "message": "Exportujte nebo importujte nastavení jako JSON nebo TOML, použijte předvolby nebo konfigurujte pomocí agenta AI."
+  },
+  "optConfigCopy": {
+    "message": "Kopírovat konfiguraci (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Exportovat soubor"
+  },
+  "optConfigImport": {
+    "message": "Importovat ze schránky"
+  },
+  "optConfigImportFile": {
+    "message": "Importovat soubor"
+  },
+  "optConfigEditor": {
+    "message": "Vložit nebo upravit konfiguraci (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Použít konfiguraci"
+  },
+  "optConfigPreset": {
+    "message": "Předvolby"
+  },
+  "optPresetSenior": {
+    "message": "Důraz na vedoucího autora"
+  },
+  "optPresetFirst": {
+    "message": "Důraz na prvního autora"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistický"
+  },
+  "optViewCache": {
+    "message": "Zobrazit uložené podrobnosti"
+  },
+  "optCacheTitle": {
+    "message": "Uložené podrobnosti článků"
+  },
+  "optCacheSearch": {
+    "message": "Filtrovat články v mezipaměti…"
+  },
+  "optCacheCopy": {
+    "message": "Kopírovat mezipaměť (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Na tomto zařízení zatím nebyly uloženy žádné podrobnosti o článcích."
   }
 }

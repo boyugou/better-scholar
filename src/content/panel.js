@@ -329,8 +329,11 @@
       // "11 of 12" in the language's own order (Hindi puts the total first): the message carries both numbers, which are put in as styled nodes
       const ofNodes = (a, b) => t("metricsOfN", ["\uE000", "\uE001"]).split(/(\uE000|\uE001)/).filter(Boolean)
         .map((part) => (part === "\uE000" ? h("b", {}, fmt(a)) : part === "\uE001" ? h("span", { class: "rr-faint" }, fmt(b)) : h("i", {}, part)));
-      const row = (key, a, b) => h("div", { class: "rr-m", "data-metric": key },
-        h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
+      const row = (key, a, b, withPct) => {
+        const pct = withPct && b > 0 ? Math.round((a / b) * 100) : null;
+        return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null },
+          h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
+      };
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");
@@ -344,8 +347,8 @@
       metricsSec.replaceChildren(...[                                       // (replaceChildren(null) would print "null")
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
         scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,
-        row("mPapers", hi.papers, all.papers), row("mCitations", hi.citations, all.citations),
-        row("mH", hi.h, all.h), row("mI10", hi.i10, all.i10)].filter(Boolean));
+        row("mPapers", hi.papers, all.papers, true), row("mCitations", hi.citations, all.citations, true),
+        row("mH", hi.h, all.h, false), row("mI10", hi.i10, all.i10, false)].filter(Boolean));
     }
 
     // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers; click to filter)

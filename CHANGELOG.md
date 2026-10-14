@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.30.0 — 2026-10-14
+
+- **Product Rebrand to Better Scholar (`boyugou/better-scholar`)**:
+  - Official renaming of the repository and extension across all codebase references, URLs, documentation, store assets, and 30 translation files.
+  - Published updated multilingual product documentation and website at GitHub Pages (`https://boyugou.github.io/better-scholar/`).
+- **Fine-Grained Scholar Sidebar Hiding**:
+  - Adds independent controls to hide the "Cited by" metrics table (`#gsc_rsb_st`) or the yearly citation bar chart (`.gsc_md_hist_b`) without forcing an all-or-nothing sidebar removal.
+  - Granular switches added to the options settings and verified in Scholar markup contract tests.
+- **AI / Agent-Native Configuration Export & Import (JSON / TOML)**:
+  - Added 1-click configuration export and import via clipboard or `.json` file downloads.
+  - Supports dependency-free parsing of standard JSON and TOML/INI configuration blocks, enabling web agents, CLI scripts, and power users to configure palettes, active ranking systems, and display settings in a single operation.
+  - Built-in quick presets: Senior author focus, First author focus, and Minimalist.
+  - Interactive direct configuration editor textarea for rapid pasting and fine-tuning.
+- **Saved Paper Details Cache Viewer**:
+  - Added an accessible modal dialog in Settings to inspect cached paper details (`resolved` store) previously hidden behind "Clear saved paper details".
+  - Includes real-time search filtering across cached titles, venues, and author lists, plus 1-click "Copy cache (JSON)" for diagnostics.
+- **Dynamic Percentage Breakdown in Metrics**:
+  - Metrics cards (e.g., first author, senior author, CCF/CORE tiers) now calculate and display percentage tooltips (e.g. `15 / 30 · 50%`) dynamically without altering child DOM structures.
+- **Real-Time Settings Search Filter**:
+  - Added a search filter bar at the top of the Options page, allowing users to instantly highlight and filter settings sections, switches, and preferences.
+
 ## 2.29.0 — 2026-10-14
 
 - **Interactive Search Match Counter & Enter / Shift+Enter Match Stepping**:

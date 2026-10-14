@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Згорнути"
+  },
+  "optHideCitedTable": {
+    "message": "Таблиця показників цитування"
+  },
+  "optHideCitedTableHint": {
+    "message": "Таблиця цитувань, h-індексу та i10-індексу на бічній панелі."
+  },
+  "optHideCitedChart": {
+    "message": "Графік цитувань за роками"
+  },
+  "optHideCitedChartHint": {
+    "message": "Гістограма щорічних цитувань на бічній панелі."
+  },
+  "optConfigTitle": {
+    "message": "Конфігурація та пресети"
+  },
+  "optConfigHint": {
+    "message": "Експортуйте або імпортуйте налаштування як JSON або TOML, застосовуйте пресети або налаштовуйте через ШІ-агента."
+  },
+  "optConfigCopy": {
+    "message": "Копіювати конфіг (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Експорт у файл"
+  },
+  "optConfigImport": {
+    "message": "Імпорт з буфера обміну"
+  },
+  "optConfigImportFile": {
+    "message": "Імпорт файлу"
+  },
+  "optConfigEditor": {
+    "message": "Вставити або редагувати конфіг (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Застосувати конфігурацію"
+  },
+  "optConfigPreset": {
+    "message": "Пресети"
+  },
+  "optPresetSenior": {
+    "message": "Акцент на старшого автора"
+  },
+  "optPresetFirst": {
+    "message": "Акцент на першого автора"
+  },
+  "optPresetMinimal": {
+    "message": "Мінімалізм"
+  },
+  "optViewCache": {
+    "message": "Перегляд збережених даних"
+  },
+  "optCacheTitle": {
+    "message": "Збережені дані статей"
+  },
+  "optCacheSearch": {
+    "message": "Пошук у збережених статтях…"
+  },
+  "optCacheCopy": {
+    "message": "Копіювати кеш (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "На цьому пристрої ще не збережено даних статей."
   }
 }

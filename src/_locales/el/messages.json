@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Εμφάνιση λιγότερων"
+  },
+  "optHideCitedTable": {
+    "message": "Πίνακας μετρικών αναφορών"
+  },
+  "optHideCitedTableHint": {
+    "message": "Ο πίνακας αναφορών, h-index και i10-index στην πλαϊνή γραμμή."
+  },
+  "optHideCitedChart": {
+    "message": "Γράφημα αναφορών ανά έτος"
+  },
+  "optHideCitedChartHint": {
+    "message": "Το ετήσιο ιστόγραμμα αναφορών στην πλαϊνή γραμμή."
+  },
+  "optConfigTitle": {
+    "message": "Διαμόρφωση & προεπιλογές"
+  },
+  "optConfigHint": {
+    "message": "Εξαγωγή ή εισαγωγή ρυθμίσεων ως JSON ή TOML, εφαρμογή προεπιλογών ή διαμόρφωση με πράκτορα AI."
+  },
+  "optConfigCopy": {
+    "message": "Αντιγραφή διαμόρφωσης (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Εξαγωγή αρχείου"
+  },
+  "optConfigImport": {
+    "message": "Εισαγωγή από το πρόχειρο"
+  },
+  "optConfigImportFile": {
+    "message": "Εισαγωγή αρχείου"
+  },
+  "optConfigEditor": {
+    "message": "Επικόλληση ή επεξεργασία διαμόρφωσης (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Εφαρμογή διαμόρφωσης"
+  },
+  "optConfigPreset": {
+    "message": "Προεπιλογές"
+  },
+  "optPresetSenior": {
+    "message": "Εστίαση στον κύριο συγγραφέα"
+  },
+  "optPresetFirst": {
+    "message": "Εστίαση στον πρώτο συγγραφέα"
+  },
+  "optPresetMinimal": {
+    "message": "Μινιμαλιστικό"
+  },
+  "optViewCache": {
+    "message": "Προβολή αποθηκευμένων λεπτομερειών"
+  },
+  "optCacheTitle": {
+    "message": "Αποθηκευμένες λεπτομέρειες εργασιών"
+  },
+  "optCacheSearch": {
+    "message": "Φιλτράρισμα αποθηκευμένων εργασιών…"
+  },
+  "optCacheCopy": {
+    "message": "Αντιγραφή προσωρινής μνήμης (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Δεν έχουν αποθηκευτεί ακόμη λεπτομέρειες εργασιών σε αυτήν τη συσκευή."
   }
 }

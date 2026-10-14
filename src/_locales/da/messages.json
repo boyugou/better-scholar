@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Vis færre"
+  },
+  "optHideCitedTable": {
+    "message": "Citeringsmetriktabel"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabellen med citeringer, h-indeks og i10-indeks i sidepanelet."
+  },
+  "optHideCitedChart": {
+    "message": "Graf over citeringer pr. år"
+  },
+  "optHideCitedChartHint": {
+    "message": "Det årlige citeringshistogram i sidepanelet."
+  },
+  "optConfigTitle": {
+    "message": "Konfiguration og forudindstillinger"
+  },
+  "optConfigHint": {
+    "message": "Eksportér eller importér indstillinger som JSON eller TOML, anvend forudindstillinger eller konfigurér med en AI-agent."
+  },
+  "optConfigCopy": {
+    "message": "Kopiér konfiguration (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Eksportér fil"
+  },
+  "optConfigImport": {
+    "message": "Importér fra udklipsholder"
+  },
+  "optConfigImportFile": {
+    "message": "Importér fil"
+  },
+  "optConfigEditor": {
+    "message": "Indsæt eller redigér konfiguration (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Anvend konfiguration"
+  },
+  "optConfigPreset": {
+    "message": "Forudindstillinger"
+  },
+  "optPresetSenior": {
+    "message": "Fokus på seniorforfatter"
+  },
+  "optPresetFirst": {
+    "message": "Fokus på førsteforfatter"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistisk"
+  },
+  "optViewCache": {
+    "message": "Vis gemte detaljer"
+  },
+  "optCacheTitle": {
+    "message": "Gemte artikeldetaljer"
+  },
+  "optCacheSearch": {
+    "message": "Filtrér gemte artikler…"
+  },
+  "optCacheCopy": {
+    "message": "Kopiér cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Der er endnu ikke gemt nogen artikeldetaljer på denne enhed."
   }
 }

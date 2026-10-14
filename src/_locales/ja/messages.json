@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "折りたたむ"
+  },
+  "optHideCitedTable": {
+    "message": "引用指標テーブル"
+  },
+  "optHideCitedTableHint": {
+    "message": "サイドバーの引用数、h-index、i10-index のテーブル。"
+  },
+  "optHideCitedChart": {
+    "message": "年別引用数グラフ"
+  },
+  "optHideCitedChartHint": {
+    "message": "サイドバーの年別引用数ヒストグラム。"
+  },
+  "optConfigTitle": {
+    "message": "設定とプリセット"
+  },
+  "optConfigHint": {
+    "message": "設定を JSON または TOML 形式でエクスポート/インポート、プリセットを適用、または AI エージェントで一括設定。"
+  },
+  "optConfigCopy": {
+    "message": "設定をコピー (JSON)"
+  },
+  "optConfigExport": {
+    "message": "ファイル書き出し"
+  },
+  "optConfigImport": {
+    "message": "クリップボードから読み込み"
+  },
+  "optConfigImportFile": {
+    "message": "ファイルを読み込み"
+  },
+  "optConfigEditor": {
+    "message": "設定の貼り付け・編集 (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "設定を適用"
+  },
+  "optConfigPreset": {
+    "message": "プリセット"
+  },
+  "optPresetSenior": {
+    "message": "シニア・責任著者優先"
+  },
+  "optPresetFirst": {
+    "message": "第一著者優先"
+  },
+  "optPresetMinimal": {
+    "message": "ミニマル"
+  },
+  "optViewCache": {
+    "message": "保存済み詳細を表示"
+  },
+  "optCacheTitle": {
+    "message": "保存済み論文詳細"
+  },
+  "optCacheSearch": {
+    "message": "キャッシュされた論文を検索…"
+  },
+  "optCacheCopy": {
+    "message": "キャッシュをコピー (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "このデバイスにはまだ論文の詳細が保存されていません。"
   }
 }

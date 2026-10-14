@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Show fewer"
+  },
+  "optHideCitedTable": {
+    "message": "Citation metrics table"
+  },
+  "optHideCitedTableHint": {
+    "message": "The citations, h-index and i10-index table in the sidebar."
+  },
+  "optHideCitedChart": {
+    "message": "Citations per year chart"
+  },
+  "optHideCitedChartHint": {
+    "message": "The yearly citation histogram in the sidebar."
+  },
+  "optConfigTitle": {
+    "message": "Configuration & presets"
+  },
+  "optConfigHint": {
+    "message": "Export or import settings as JSON or TOML, apply presets, or configure with an AI agent."
+  },
+  "optConfigCopy": {
+    "message": "Copy config (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Export file"
+  },
+  "optConfigImport": {
+    "message": "Import from clipboard"
+  },
+  "optConfigImportFile": {
+    "message": "Import file"
+  },
+  "optConfigEditor": {
+    "message": "Paste or edit config (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Apply configuration"
+  },
+  "optConfigPreset": {
+    "message": "Presets"
+  },
+  "optPresetSenior": {
+    "message": "Senior author focus"
+  },
+  "optPresetFirst": {
+    "message": "First author focus"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalist"
+  },
+  "optViewCache": {
+    "message": "View saved details"
+  },
+  "optCacheTitle": {
+    "message": "Saved Paper Details"
+  },
+  "optCacheSearch": {
+    "message": "Filter cached papers…"
+  },
+  "optCacheCopy": {
+    "message": "Copy cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "No paper details have been saved on this device yet."
   }
 }

@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "收起"
+  },
+  "optHideCitedTable": {
+    "message": "引用指標表格"
+  },
+  "optHideCitedTableHint": {
+    "message": "側邊欄中的引用數、h-index 與 i10-index 表格。"
+  },
+  "optHideCitedChart": {
+    "message": "每年引用統計圖"
+  },
+  "optHideCitedChartHint": {
+    "message": "側邊欄中的歷年引用統計長條圖。"
+  },
+  "optConfigTitle": {
+    "message": "設定與預設"
+  },
+  "optConfigHint": {
+    "message": "以 JSON 或 TOML 格式匯出或匯入設定，套用快速預設，或配合 AI 自動化配置。"
+  },
+  "optConfigCopy": {
+    "message": "複製設定 (JSON)"
+  },
+  "optConfigExport": {
+    "message": "匯出檔案"
+  },
+  "optConfigImport": {
+    "message": "從剪貼簿匯入"
+  },
+  "optConfigImportFile": {
+    "message": "匯入檔案"
+  },
+  "optConfigEditor": {
+    "message": "貼上或編輯設定 (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "套用設定"
+  },
+  "optConfigPreset": {
+    "message": "快速預設"
+  },
+  "optPresetSenior": {
+    "message": "資深/通訊作者偏好"
+  },
+  "optPresetFirst": {
+    "message": "第一作者偏好"
+  },
+  "optPresetMinimal": {
+    "message": "極簡風格"
+  },
+  "optViewCache": {
+    "message": "查看已儲存詳情"
+  },
+  "optCacheTitle": {
+    "message": "已儲存論文詳情"
+  },
+  "optCacheSearch": {
+    "message": "搜尋已快取論文…"
+  },
+  "optCacheCopy": {
+    "message": "複製快取 (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "此裝置上尚未儲存任何論文詳情。"
   }
 }

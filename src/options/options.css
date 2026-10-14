@@ -90,6 +90,16 @@ input.clr { width: 40px; height: 26px; padding: 0; border: 1px solid var(--btn-l
 .toc a[aria-current] { color: var(--text); font-weight: 600; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--card)); }
 .toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .card { scroll-margin-top: 56px; }
+.opt-search-box { margin: 0 0 16px 0; }
+.opt-search {
+  width: 100%; padding: 8px 12px; font: inherit; font-size: 13px;
+  border: 1px solid var(--btn-line); border-radius: 8px;
+  background: var(--card); color: var(--text); outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.opt-search:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
 input.key { -webkit-text-security: disc; font: inherit; font-size: 13px; width: 170px; padding: 5px 8px; border: 1px solid var(--btn-line); border-radius: 6px; background: var(--card); color: var(--text); }
 input.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
@@ -99,9 +109,48 @@ input.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px;
 .toc { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
 [dir="rtl"] .toc { -webkit-mask-image: linear-gradient(270deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(270deg, #000 calc(100% - 28px), transparent); }
 
+/* Configuration editor & presets */
+.presets { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.btn.sub { padding: 4px 10px; font-size: 12px; background: color-mix(in srgb, var(--btn-line) 20%, transparent); }
+.config-editor { margin-top: 10px; }
+.config-editor summary { cursor: pointer; display: inline-flex; list-style: none; user-select: none; }
+.config-editor summary::-webkit-details-marker { display: none; }
+.config-editor-body { margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+.config-text {
+  width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px; line-height: 1.4; padding: 8px 10px; border: 1px solid var(--btn-line);
+  border-radius: 6px; background: var(--card); color: var(--text); resize: vertical; outline: none;
+}
+.config-text:focus { border-color: var(--accent); }
+.config-status { font-size: 12px; color: var(--accent); opacity: 0; transition: opacity .15s; }
+.config-status.on { opacity: 1; }
+
+/* Saved paper cache modal */
+.cache-modal {
+  border: 1px solid var(--line); border-radius: 12px; background: var(--ground); color: var(--text);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.24); max-width: 800px; width: 90vw; max-height: 85vh;
+  padding: 20px; overflow: hidden; display: flex; flex-direction: column;
+}
+.cache-modal::backdrop { background: rgba(0,0,0,0.45); backdrop-filter: blur(2px); }
+.cache-modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.cache-modal-head h2 { margin: 0; font-size: 16px; }
+.cache-close {
+  background: none; border: none; font-size: 20px; line-height: 1; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 4px;
+}
+.cache-close:hover { color: var(--text); }
+.cache-table-wrap { overflow-y: auto; flex: 1 1 auto; border: 1px solid var(--line); border-radius: 6px; background: var(--card); max-height: 50vh; }
+.cache-table { width: 100%; border-collapse: collapse; font-size: 12.5px; text-align: left; }
+.cache-table th { position: sticky; top: 0; background: var(--ground); padding: 8px 10px; border-bottom: 1px solid var(--line); font-weight: 600; color: var(--muted); }
+.cache-table td { padding: 8px 10px; border-bottom: 1px solid color-mix(in srgb, var(--line) 40%, transparent); vertical-align: top; }
+.cache-table tr:last-child td { border-bottom: none; }
+.cache-id { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 /* forced colours: a switch is a real checkbox, so that on and off differ */
 @media (forced-colors: active) {
   .sw { -webkit-appearance: auto; appearance: auto; width: 18px; height: 18px; border-radius: 0; background: Field; }
   .sw::after { display: none; }
   .toc a[aria-current] { outline: 2px solid Highlight; }
+  .opt-search { border: 1px solid ButtonText; }
+  .cache-modal { border: 2px solid ButtonText; }
+  .config-text { border: 1px solid ButtonText; }
 }

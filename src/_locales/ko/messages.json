@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "접기"
+  },
+  "optHideCitedTable": {
+    "message": "인용 지표 테이블"
+  },
+  "optHideCitedTableHint": {
+    "message": "사이드바의 인용수, h-index 및 i10-index 테이블입니다."
+  },
+  "optHideCitedChart": {
+    "message": "연도별 인용 차트"
+  },
+  "optHideCitedChartHint": {
+    "message": "사이드바의 연도별 인용 히스토그램입니다."
+  },
+  "optConfigTitle": {
+    "message": "설정 및 프리셋"
+  },
+  "optConfigHint": {
+    "message": "설정을 JSON 또는 TOML 형식으로 내보내거나 가져오고, 프리셋을 적용하거나 AI 에이전트로 구성하세요."
+  },
+  "optConfigCopy": {
+    "message": "설정 복사 (JSON)"
+  },
+  "optConfigExport": {
+    "message": "파일 내보내기"
+  },
+  "optConfigImport": {
+    "message": "클립보드에서 가져오기"
+  },
+  "optConfigImportFile": {
+    "message": "파일 가져오기"
+  },
+  "optConfigEditor": {
+    "message": "설정 붙여넣기 또는 편집 (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "설정 적용"
+  },
+  "optConfigPreset": {
+    "message": "프리셋"
+  },
+  "optPresetSenior": {
+    "message": "교신/책임 저자 중심"
+  },
+  "optPresetFirst": {
+    "message": "제1저자 중심"
+  },
+  "optPresetMinimal": {
+    "message": "미니멀"
+  },
+  "optViewCache": {
+    "message": "저장된 세부 정보 보기"
+  },
+  "optCacheTitle": {
+    "message": "저장된 논문 세부 정보"
+  },
+  "optCacheSearch": {
+    "message": "캐시된 논문 검색…"
+  },
+  "optCacheCopy": {
+    "message": "캐시 복사 (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "이 기기에 아직 저장된 논문 세부 정보가 없습니다."
   }
 }

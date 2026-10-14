@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Mostrar menos"
+  },
+  "optHideCitedTable": {
+    "message": "Tabela de métricas de citações"
+  },
+  "optHideCitedTableHint": {
+    "message": "A tabela de citações, índice h e índice i10 na barra lateral."
+  },
+  "optHideCitedChart": {
+    "message": "Gráfico de citações por ano"
+  },
+  "optHideCitedChartHint": {
+    "message": "O histograma de citações anuais na barra lateral."
+  },
+  "optConfigTitle": {
+    "message": "Configuração e predefinições"
+  },
+  "optConfigHint": {
+    "message": "Exporte ou importe configurações como JSON ou TOML, aplique predefinições ou configure com um agente de IA."
+  },
+  "optConfigCopy": {
+    "message": "Copiar configuração (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Exportar arquivo"
+  },
+  "optConfigImport": {
+    "message": "Importar da área de transferência"
+  },
+  "optConfigImportFile": {
+    "message": "Importar arquivo"
+  },
+  "optConfigEditor": {
+    "message": "Colar ou editar configuração (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Aplicar configuração"
+  },
+  "optConfigPreset": {
+    "message": "Predefinições"
+  },
+  "optPresetSenior": {
+    "message": "Autor sênior / correspondente"
+  },
+  "optPresetFirst": {
+    "message": "Primeiro autor"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalista"
+  },
+  "optViewCache": {
+    "message": "Ver detalhes salvos"
+  },
+  "optCacheTitle": {
+    "message": "Detalhes de artigos salvos"
+  },
+  "optCacheSearch": {
+    "message": "Filtrar artigos em cache…"
+  },
+  "optCacheCopy": {
+    "message": "Copiar cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Nenhum detalhe de artigo foi salvo neste dispositivo ainda."
   }
 }

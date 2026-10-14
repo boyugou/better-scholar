@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "عرض أقل"
+  },
+  "optHideCitedTable": {
+    "message": "جدول مقاييس الاقتباسات"
+  },
+  "optHideCitedTableHint": {
+    "message": "جدول الاقتباسات ومؤشر h ومؤشر i10 في الشريط الجانبي."
+  },
+  "optHideCitedChart": {
+    "message": "رسم بياني للاقتباسات سنوياً"
+  },
+  "optHideCitedChartHint": {
+    "message": "الرسم البياني التكراري السنوي للاقتباسات في الشريط الجانبي."
+  },
+  "optConfigTitle": {
+    "message": "الإعدادات والملفات الجاهزة"
+  },
+  "optConfigHint": {
+    "message": "تصدير أو استيراد الإعدادات بتنسيق JSON أو TOML، أو تطبيق الإعدادات المسبقة، أو التهيئة بواسطة وكيل ذكاء اصطناعي."
+  },
+  "optConfigCopy": {
+    "message": "نسخ الإعدادات (JSON)"
+  },
+  "optConfigExport": {
+    "message": "تصدير ملف"
+  },
+  "optConfigImport": {
+    "message": "استيراد من الحافظة"
+  },
+  "optConfigImportFile": {
+    "message": "استيراد ملف"
+  },
+  "optConfigEditor": {
+    "message": "لصق أو تحرير الإعدادات (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "تطبيق الإعدادات"
+  },
+  "optConfigPreset": {
+    "message": "إعدادات مسبقة"
+  },
+  "optPresetSenior": {
+    "message": "التركيز على المؤلف الرئيسي"
+  },
+  "optPresetFirst": {
+    "message": "التركيز على المؤلف الأول"
+  },
+  "optPresetMinimal": {
+    "message": "مبسط"
+  },
+  "optViewCache": {
+    "message": "عرض التفاصيل المحفوظة"
+  },
+  "optCacheTitle": {
+    "message": "تفاصيل الأوراق البحثية المحفوظة"
+  },
+  "optCacheSearch": {
+    "message": "تصفية الأوراق المخزنة…"
+  },
+  "optCacheCopy": {
+    "message": "نسخ الذاكرة المؤقتة (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "لم يتم حفظ أي تفاصيل للأوراق البحثية على هذا الجهاز بعد."
   }
 }

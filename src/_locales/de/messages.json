@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Weniger anzeigen"
+  },
+  "optHideCitedTable": {
+    "message": "Zitationsmetriken-Tabelle"
+  },
+  "optHideCitedTableHint": {
+    "message": "Die Tabelle mit Zitationen, h-Index und i10-Index in der Seitenleiste."
+  },
+  "optHideCitedChart": {
+    "message": "Zitationen pro Jahr Diagramm"
+  },
+  "optHideCitedChartHint": {
+    "message": "Das jährliche Zitationshistogramm in der Seitenleiste."
+  },
+  "optConfigTitle": {
+    "message": "Konfiguration & Voreinstellungen"
+  },
+  "optConfigHint": {
+    "message": "Einstellungen als JSON oder TOML exportieren oder importieren, Voreinstellungen anwenden oder mit einem KI-Agenten konfigurieren."
+  },
+  "optConfigCopy": {
+    "message": "Konfiguration kopieren (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Datei exportieren"
+  },
+  "optConfigImport": {
+    "message": "Aus Zwischenablage importieren"
+  },
+  "optConfigImportFile": {
+    "message": "Datei importieren"
+  },
+  "optConfigEditor": {
+    "message": "Konfiguration einfügen oder bearbeiten (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Konfiguration anwenden"
+  },
+  "optConfigPreset": {
+    "message": "Voreinstellungen"
+  },
+  "optPresetSenior": {
+    "message": "Senior- / Korrespondenzautor"
+  },
+  "optPresetFirst": {
+    "message": "Erstautor"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistisch"
+  },
+  "optViewCache": {
+    "message": "Gespeicherte Details anzeigen"
+  },
+  "optCacheTitle": {
+    "message": "Gespeicherte Artikeldetails"
+  },
+  "optCacheSearch": {
+    "message": "Zwischengespeicherte Artikel filtern…"
+  },
+  "optCacheCopy": {
+    "message": "Cache kopieren (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Auf diesem Gerät wurden noch keine Artikeldetails gespeichert."
   }
 }

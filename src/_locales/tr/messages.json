@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Daha az göster"
+  },
+  "optHideCitedTable": {
+    "message": "Atıf metrikleri tablosu"
+  },
+  "optHideCitedTableHint": {
+    "message": "Kenar çubuğundaki atıflar, h-endeksi ve i10-endeksi tablosu."
+  },
+  "optHideCitedChart": {
+    "message": "Yıllık atıf grafiği"
+  },
+  "optHideCitedChartHint": {
+    "message": "Kenar çubuğundaki yıllık atıf histogramı."
+  },
+  "optConfigTitle": {
+    "message": "Yapılandırma ve hazır ayarlar"
+  },
+  "optConfigHint": {
+    "message": "Ayarları JSON veya TOML olarak dışa/içe aktarın, hazır ayarları uygulayın veya bir yapay zeka aracısıyla yapılandırın."
+  },
+  "optConfigCopy": {
+    "message": "Yapılandırmayı kopyala (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Dosyayı dışa aktar"
+  },
+  "optConfigImport": {
+    "message": "Panodan içe aktar"
+  },
+  "optConfigImportFile": {
+    "message": "Dosya içe aktar"
+  },
+  "optConfigEditor": {
+    "message": "Yapılandırmayı yapıştır veya düzenle (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Yapılandırmayı uygula"
+  },
+  "optConfigPreset": {
+    "message": "Hazır Ayarlar"
+  },
+  "optPresetSenior": {
+    "message": "Kıdemli / sorumlu yazar odaklı"
+  },
+  "optPresetFirst": {
+    "message": "İlk yazar odaklı"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalist"
+  },
+  "optViewCache": {
+    "message": "Kayıtlı ayrıntıları görüntüle"
+  },
+  "optCacheTitle": {
+    "message": "Kayıtlı Makale Ayrıntıları"
+  },
+  "optCacheSearch": {
+    "message": "Önbelleğe alınan makaleleri filtrele…"
+  },
+  "optCacheCopy": {
+    "message": "Önbelleği kopyala (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Bu cihazda henüz kayıtlı makale ayrıntısı yok."
   }
 }

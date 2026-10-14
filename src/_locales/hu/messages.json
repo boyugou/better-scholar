@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Kevesebb"
+  },
+  "optHideCitedTable": {
+    "message": "Idézettségi mutatós táblázat"
+  },
+  "optHideCitedTableHint": {
+    "message": "Az idézetek, h-index és i10-index táblázat az oldalsávban."
+  },
+  "optHideCitedChart": {
+    "message": "Évenkénti idézettségi grafikon"
+  },
+  "optHideCitedChartHint": {
+    "message": "Az éves idézettségi hisztogram az oldalsávban."
+  },
+  "optConfigTitle": {
+    "message": "Konfiguráció és előbeállítások"
+  },
+  "optConfigHint": {
+    "message": "Beállítások exportálása vagy importálása JSON vagy TOML formátumban, előbeállítások alkalmazása vagy AI-ügynökkel történő beállítás."
+  },
+  "optConfigCopy": {
+    "message": "Konfiguráció másolása (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Fájl exportálása"
+  },
+  "optConfigImport": {
+    "message": "Importálás a vágólapról"
+  },
+  "optConfigImportFile": {
+    "message": "Fájl importálása"
+  },
+  "optConfigEditor": {
+    "message": "Konfiguráció beillesztése vagy szerkesztése (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Konfiguráció alkalmazása"
+  },
+  "optConfigPreset": {
+    "message": "Előbeállítások"
+  },
+  "optPresetSenior": {
+    "message": "Senior szerző fókusz"
+  },
+  "optPresetFirst": {
+    "message": "Első szerző fókusz"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalista"
+  },
+  "optViewCache": {
+    "message": "Mentett részletek megtekintése"
+  },
+  "optCacheTitle": {
+    "message": "Mentett cikkrészletek"
+  },
+  "optCacheSearch": {
+    "message": "Mentett cikkek szűrése…"
+  },
+  "optCacheCopy": {
+    "message": "Gyorsítótár másolása (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Még nincsenek mentett cikkrészletek ezen az eszközön."
   }
 }

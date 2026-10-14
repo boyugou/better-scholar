@@ -23,6 +23,8 @@
     ["#gsc_a_t", "the paper table (the panel is placed by it when the wrapper is missing)", "some"],
     [".gsc_rsb", "the right-hand sidebar", "some"],
     ["#gsc_rsb_cit", "sidebar: Cited by (can be hidden)", "some"],
+    ["#gsc_rsb_st", "sidebar: Cited by table (can be hidden)", "maybe"],
+    [".gsc_md_hist_b", "sidebar: Cited by year chart (can be hidden)", "maybe"],
     ["#gsc_rsb_co", "sidebar: Co-authors (can be hidden)", "maybe"],
     ["#gsc_rsb_mnd", "sidebar: Public access (can be hidden)", "maybe"]
   ];

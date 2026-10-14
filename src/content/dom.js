@@ -107,7 +107,7 @@
 
   // The only places this extension points a user at: its own issue tracker, as plain links they may click.
   // Nothing is sent anywhere by the extension itself.
-  const REPO = "https://github.com/boyugou/scholar-roles-and-ranks";
+  const REPO = "https://github.com/boyugou/better-scholar";
   function issueUrl(title, body) {
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }

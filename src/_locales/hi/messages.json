@@ -764,5 +764,68 @@
   },
   "venuesShowFewer": {
     "message": "कम दिखाएं"
+  },
+  "optHideCitedTable": {
+    "message": "उद्धरण मेट्रिक्स तालिका"
+  },
+  "optHideCitedTableHint": {
+    "message": "साइडबार में उद्धरण, h-इंडेक्स और i10-इंडेक्स तालिका।"
+  },
+  "optHideCitedChart": {
+    "message": "प्रति वर्ष उद्धरण चार्ट"
+  },
+  "optHideCitedChartHint": {
+    "message": "साइडबार में वार्षिक उद्धरण हिस्टोग्राम।"
+  },
+  "optConfigTitle": {
+    "message": "कॉन्फ़िगरेशन और प्रीसेट"
+  },
+  "optConfigHint": {
+    "message": "JSON या TOML के रूप में सेटिंग्स निर्यात या आयात करें, प्रीसेट लागू करें, या AI एजेंट से कॉन्फ़िगर करें।"
+  },
+  "optConfigCopy": {
+    "message": "कॉन्फ़िगरेशन कॉपी करें (JSON)"
+  },
+  "optConfigExport": {
+    "message": "फ़ाइल निर्यात करें"
+  },
+  "optConfigImport": {
+    "message": "क्लिपबोर्ड से आयात करें"
+  },
+  "optConfigImportFile": {
+    "message": "फ़ाइल आयात करें"
+  },
+  "optConfigEditor": {
+    "message": "कॉन्फ़िगरेशन चिपकाएँ या संपादित करें (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "कॉन्फ़िगरेशन लागू करें"
+  },
+  "optConfigPreset": {
+    "message": "प्रीसेट"
+  },
+  "optPresetSenior": {
+    "message": "वरिष्ठ लेखक प्राथमिकता"
+  },
+  "optPresetFirst": {
+    "message": "प्रथम लेखक प्राथमिकता"
+  },
+  "optPresetMinimal": {
+    "message": "न्यूनतम"
+  },
+  "optViewCache": {
+    "message": "सहेजे गए विवरण देखें"
+  },
+  "optCacheTitle": {
+    "message": "सहेजे गए शोधपत्र विवरण"
+  },
+  "optCacheSearch": {
+    "message": "कैश किए गए शोधपत्र खोजें…"
+  },
+  "optCacheCopy": {
+    "message": "कैश कॉपी करें (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "इस डिवाइस पर अभी तक कोई शोधपत्र विवरण सहेजा नहीं गया है।"
   }
 }

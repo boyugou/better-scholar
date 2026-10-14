@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Свернуть"
+  },
+  "optHideCitedTable": {
+    "message": "Таблица показателей цитирования"
+  },
+  "optHideCitedTableHint": {
+    "message": "Таблица цитирований, h-индекса и i10-индекса на боковой панели."
+  },
+  "optHideCitedChart": {
+    "message": "График цитирований по годам"
+  },
+  "optHideCitedChartHint": {
+    "message": "Гистограмма ежегодных цитирований на боковой панели."
+  },
+  "optConfigTitle": {
+    "message": "Конфигурация и пресеты"
+  },
+  "optConfigHint": {
+    "message": "Экспортируйте или импортируйте настройки в формате JSON или TOML, применяйте пресеты или настраивайте через ИИ-агента."
+  },
+  "optConfigCopy": {
+    "message": "Копировать конфиг (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Экспорт в файл"
+  },
+  "optConfigImport": {
+    "message": "Импорт из буфера обмена"
+  },
+  "optConfigImportFile": {
+    "message": "Импорт файла"
+  },
+  "optConfigEditor": {
+    "message": "Вставить или изменить конфиг (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Применить конфигурацию"
+  },
+  "optConfigPreset": {
+    "message": "Пресеты"
+  },
+  "optPresetSenior": {
+    "message": "Акцент на старшего автора"
+  },
+  "optPresetFirst": {
+    "message": "Акцент на первого автора"
+  },
+  "optPresetMinimal": {
+    "message": "Минимализм"
+  },
+  "optViewCache": {
+    "message": "Просмотр сохраненных данных"
+  },
+  "optCacheTitle": {
+    "message": "Сохраненные данные статей"
+  },
+  "optCacheSearch": {
+    "message": "Поиск в сохраненных статьях…"
+  },
+  "optCacheCopy": {
+    "message": "Копировать кэш (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "На этом устройстве пока не сохранено данных статей."
   }
 }

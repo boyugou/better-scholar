@@ -12,7 +12,7 @@ test("defaults: everything on, complete, and a fresh object each time", () => {
     ranks: { ccf: true, core: true },
     marks: { award: true, oral: true, spotlight: true, highlight: true },
     panel: { show: true, summary: true, copy: true, marks: true, filters: true, metrics: true, years: true, venues: false, status: true, names: true },
-    hide: { cited: false, coauthors: false, access: false },
+    hide: { cited: false, citedTable: false, citedChart: false, coauthors: false, access: false },
     mergeDuplicates: false,
     talkRows: "separate",
     semanticScholar: false,
@@ -39,6 +39,11 @@ test("normalize: keeps real choices, drops unknown keys, repairs wrong types, ne
   assert.equal(prefs.normalize({ autoLoad: false }).autoLoad, false);
   assert.equal(prefs.normalize({ autoLoad: "no" }).autoLoad, true, "a non-boolean falls back to the default");
   assert.equal("other" in n, false);
+  // hide normalization: legacy cited carries over, fine-grained control works
+  assert.deepEqual(prefs.normalize({ hide: { cited: true } }).hide, { cited: true, citedTable: true, citedChart: true, coauthors: false, access: false });
+  assert.deepEqual(prefs.normalize({ hide: { citedTable: true, citedChart: false } }).hide, { cited: false, citedTable: true, citedChart: false, coauthors: false, access: false });
+  assert.deepEqual(prefs.normalize({ hide: { citedTable: false, citedChart: true } }).hide, { cited: false, citedTable: false, citedChart: true, coauthors: false, access: false });
+  assert.deepEqual(prefs.normalize({ hide: { citedTable: true, citedChart: true } }).hide, { cited: true, citedTable: true, citedChart: true, coauthors: false, access: false });
   for (const junk of [undefined, null, 0, "x", [], [1, 2], true, () => 1]) assert.deepEqual(prefs.normalize(junk), prefs.defaults());
   assert.deepEqual(prefs.normalize(prefs.normalize(n)), n, "idempotent");
 });

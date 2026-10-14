@@ -273,6 +273,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       await setPref(opts, key, false);
       await eventually(page, (i) => getComputedStyle(document.getElementById(i)).display !== "none", id);
     }
+    // fine-grained sidebar hiding: table only or chart only
+    await setPref(opts, "hide.citedTable", true);
+    await eventually(page, () => getComputedStyle(document.getElementById("gsc_rsb_st")).display === "none");
+    assert.equal(await page.evaluate(() => getComputedStyle(document.querySelector(".gsc_md_hist_b")).display !== "none"), true, "chart remains visible when table is hidden");
+    await setPref(opts, "hide.citedTable", false);
+    await eventually(page, () => getComputedStyle(document.getElementById("gsc_rsb_st")).display !== "none");
+
+    await setPref(opts, "hide.citedChart", true);
+    await eventually(page, () => getComputedStyle(document.querySelector(".gsc_md_hist_b")).display === "none");
+    assert.equal(await page.evaluate(() => getComputedStyle(document.getElementById("gsc_rsb_st")).display !== "none"), true, "table remains visible when chart is hidden");
+    await setPref(opts, "hide.citedChart", false);
+    await eventually(page, () => getComputedStyle(document.querySelector(".gsc_md_hist_b")).display !== "none");
     ok("Scholar's own Cited by / Co-authors / Public access blocks are shown by default and each can be hidden from the settings");
 
     // -- 6a2. merging duplicates: a twin differing only in capitals and punctuation is hidden, the more cited entry shows the total; off by default
@@ -441,9 +453,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
     // the footer points at the project's own pages, as plain links that open only when clicked
     assert.deepEqual(await opts.evaluate(() => [...document.querySelectorAll(".foot .links a")].map((a) => [a.textContent, a.href, a.target, a.rel])), [
-      ["Privacy", "https://boyugou.github.io/scholar-roles-and-ranks/privacy/", "_blank", "noopener"],
-      ["Report a problem", "https://github.com/boyugou/scholar-roles-and-ranks/issues/new/choose", "_blank", "noopener"],
-      ["GitHub", "https://github.com/boyugou/scholar-roles-and-ranks", "_blank", "noopener"]
+      ["Privacy", "https://boyugou.github.io/better-scholar/privacy/", "_blank", "noopener"],
+      ["Report a problem", "https://github.com/boyugou/better-scholar/issues/new/choose", "_blank", "noopener"],
+      ["GitHub", "https://github.com/boyugou/better-scholar", "_blank", "noopener"]
     ]);
 
     // -- 6a6. the card links under the header: one per card, each takes its card to the top of the window
@@ -481,8 +493,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.getAttribute('button.rr-cell[data-role="last"][data-tier="A"]', "aria-pressed"), "true");
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-filtered.png") });
     assert.equal(await page.locator('[data-rr="filterbar"] > span').textContent(), `Showing ${lastA} of 100 papers · Last, CCF A`, "the panel says the list is filtered, and by what");
-    // the numbers under the filters follow them (the highlighted papers of that cell), and are whole again without it
     assert.equal(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA), "papers counted in the cell");
+    assert.match(await page.locator('[data-metric="mPapers"]').getAttribute("title"), /^\d+%$/, "mPapers has percentage title");
+    assert.match(await page.locator('[data-metric="mCitations"]').getAttribute("title"), /^\d+%$/, "mCitations has percentage title");
     assert.equal(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), "First, Co-first, Second, and Last · Last, CCF A", "and the block says what it counts");
     await page.click('[data-act="clear-filters"]');
     assert.notEqual(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA));
@@ -920,6 +933,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await opts.locator("#preview tr.rr-r-last").count(), 0, "the preview reflects the migrated 'last' switch");
     assert.equal(await opts.locator('#preview .rr-chip[data-kind="core"]').count(), 0);
     assert.equal(await opts.locator("#preview .rr-name").count(), 0);
+    // quick settings search filter
+    const optSearch = opts.locator(".opt-search");
+    assert.equal(await optSearch.count(), 1, "settings search filter exists");
+    await optSearch.fill("core");
+    assert.equal(await opts.locator("#card-3").isVisible(), true, "ranks card matches core query");
+    assert.equal(await opts.locator("#card-0").isVisible(), false, "language card is hidden");
+    await optSearch.press("Escape");
+    assert.equal(await optSearch.inputValue(), "");
+    assert.equal(await opts.locator("#card-0").isVisible(), true, "escape restores cards");
+
     await opts.click('[data-act="reset"]');
     await opts.click('[data-act="reset-cancel"]');                        // (it asks on the page: "No" leaves the settings alone)
     assert.equal(await opts.locator('[data-act="reset"]').count(), 1);
@@ -1015,6 +1038,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.reload();
     await opts.waitForSelector('[data-act="clear-cache"]');
     assert.match(await opts.textContent(".row .note"), /^\d+ papers' author lists are saved/);
+
+    // view saved details modal
+    await opts.click('[data-act="view-cache"]');
+    await opts.waitForSelector(".cache-modal", { state: "visible" });
+    assert.ok((await opts.locator(".cache-table tbody tr").count()) > 0, "cache modal shows cached papers");
+    await opts.click('[data-act="close-cache"]');
+    await opts.waitForSelector(".cache-modal", { state: "detached" });
+
+    // presets and configuration editor
+    await opts.click('[data-preset="senior"]');
+    assert.equal((await stored(opts, "sync", "prefs")).roles.first, false);
+    assert.equal((await stored(opts, "sync", "prefs")).roles.last, true);
+    await opts.click(".config-editor summary");
+    await opts.locator('[data-act="config-input"]').fill('{\n  "rowStyle": "tint"\n}');
+    await opts.click('[data-act="config-apply"]');
+    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "tint");
+
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
     assert.equal(await stored(opts, "local", "resolved"), undefined);
@@ -1545,7 +1585,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const unmatched = metrics.unmatchedVenues(expected(fx6.profile));
     assert.equal(text, unmatched.map((u) => `${u.count}× ${u.venue}`).join("\n"));
     const href = await page.getAttribute('[data-act="report-unmatched"]', "href");
-    assert.match(href, /^https:\/\/github\.com\/boyugou\/scholar-roles-and-ranks\/issues\/new\?title=Venue%20not%20recognised&body=/);
+    assert.match(href, /^https:\/\/github\.com\/boyugou\/better-scholar\/issues\/new\?title=Venue%20not%20recognised&body=/);
     assert.ok(decodeURIComponent(href).includes(unmatched[0].venue), "the report names an unrecognised venue");
     assert.ok(href.length < 4000);
     ok("unrecognised venues: Copy list matches the library, and the Report link carries them to the issue tracker");

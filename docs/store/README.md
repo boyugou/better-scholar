@@ -1,8 +1,8 @@
 # Chrome Web Store listing kit
 
-Everything a Web Store listing asks for, ready to paste. (No listing has been made.) **Privacy policy URL:** https://boyugou.github.io/scholar-roles-and-ranks/privacy/ (the site's copy of `PRIVACY.md`; `npm run sync-privacy` on the `site` branch refreshes it).
+Everything a Web Store listing asks for, ready to paste. (No listing has been made.) **Privacy policy URL:** https://boyugou.github.io/better-scholar/privacy/ (the site's copy of `PRIVACY.md`; `npm run sync-privacy` on the `site` branch refreshes it).
 
-- **Name:** Scholar Roles & Ranks
+- **Name:** Better Scholar
 - **Summary (≤132):** the `extDescription` of `src/_locales/en/messages.json`.
 - **Category:** Productivity. **Language:** English (30 interface languages are packaged).
 - **Screenshots (1280×800):** `shot-1.png` (a profile with the panel), `shot-2.png` (the settings page).

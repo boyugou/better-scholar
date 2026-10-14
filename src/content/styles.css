@@ -257,7 +257,13 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 @media (prefers-reduced-motion: reduce) { #rr-panel *, #rr-panel *::before, #rr-panel *::after { transition: none !important; } }
 
 /* Scholar's own side blocks, hidden when asked in the settings */
-html.rr-hide-cited #gsc_rsb_cit, html.rr-hide-coauthors #gsc_rsb_co, html.rr-hide-access #gsc_rsb_mnd { display: none !important; }
+html.rr-hide-cited #gsc_rsb_cit,
+html.rr-hide-citedTable #gsc_rsb_st,
+html.rr-hide-citedChart #gsc_rsb_cit .gsc_md_hist_b,
+html.rr-hide-citedTable.rr-hide-citedChart #gsc_rsb_cit,
+html.rr-hide-coauthors #gsc_rsb_co,
+html.rr-hide-access #gsc_rsb_mnd { display: none !important; }
+html.rr-hide-citedTable #gsc_rsb_cit .gsc_md_hist_b { border-top: none; }
 
 /* an entry merged into its more cited twin */
 tr.rr-dup { display: none !important; }

@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Tampilkan lebih sedikit"
+  },
+  "optHideCitedTable": {
+    "message": "Tabel metrik sitasi"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabel sitasi, indeks h, dan indeks i10 di bilah samping."
+  },
+  "optHideCitedChart": {
+    "message": "Grafik sitasi per tahun"
+  },
+  "optHideCitedChartHint": {
+    "message": "Histogram sitasi tahunan di bilah samping."
+  },
+  "optConfigTitle": {
+    "message": "Konfigurasi & preset"
+  },
+  "optConfigHint": {
+    "message": "Ekspor atau impor pengaturan sebagai JSON atau TOML, terapkan preset, atau konfigurasikan dengan agen AI."
+  },
+  "optConfigCopy": {
+    "message": "Salin konfigurasi (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Ekspor berkas"
+  },
+  "optConfigImport": {
+    "message": "Impor dari papan klip"
+  },
+  "optConfigImportFile": {
+    "message": "Impor berkas"
+  },
+  "optConfigEditor": {
+    "message": "Tempel atau edit konfigurasi (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Terapkan konfigurasi"
+  },
+  "optConfigPreset": {
+    "message": "Preset"
+  },
+  "optPresetSenior": {
+    "message": "Fokus penulis senior"
+  },
+  "optPresetFirst": {
+    "message": "Fokus penulis pertama"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalis"
+  },
+  "optViewCache": {
+    "message": "Lihat detail tersimpan"
+  },
+  "optCacheTitle": {
+    "message": "Detail Makalah Tersimpan"
+  },
+  "optCacheSearch": {
+    "message": "Saring makalah yang di-cache…"
+  },
+  "optCacheCopy": {
+    "message": "Salin cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Belum ada detail makalah yang disimpan di perangkat ini."
   }
 }

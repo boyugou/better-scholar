@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "Thu gọn"
+  },
+  "optHideCitedTable": {
+    "message": "Bảng số liệu trích dẫn"
+  },
+  "optHideCitedTableHint": {
+    "message": "Bảng trích dẫn, chỉ số h và chỉ số i10 ở thanh bên."
+  },
+  "optHideCitedChart": {
+    "message": "Biểu đồ trích dẫn theo năm"
+  },
+  "optHideCitedChartHint": {
+    "message": "Biểu đồ tần suất trích dẫn hàng năm ở thanh bên."
+  },
+  "optConfigTitle": {
+    "message": "Cấu hình & cài đặt sẵn"
+  },
+  "optConfigHint": {
+    "message": "Xuất hoặc nhập cài đặt dưới dạng JSON hoặc TOML, áp dụng cài đặt sẵn hoặc định cấu hình bằng trợ lý AI."
+  },
+  "optConfigCopy": {
+    "message": "Sao chép cấu hình (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Xuất tệp"
+  },
+  "optConfigImport": {
+    "message": "Nhập từ bảng nhớ tạm"
+  },
+  "optConfigImportFile": {
+    "message": "Nhập tệp"
+  },
+  "optConfigEditor": {
+    "message": "Dán hoặc chỉnh sửa cấu hình (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Áp dụng cấu hình"
+  },
+  "optConfigPreset": {
+    "message": "Cài đặt sẵn"
+  },
+  "optPresetSenior": {
+    "message": "Ưu tiên tác giả liên hệ/chính"
+  },
+  "optPresetFirst": {
+    "message": "Ưu tiên tác giả đầu tiên"
+  },
+  "optPresetMinimal": {
+    "message": "Tối giản"
+  },
+  "optViewCache": {
+    "message": "Xem chi tiết đã lưu"
+  },
+  "optCacheTitle": {
+    "message": "Chi tiết bài báo đã lưu"
+  },
+  "optCacheSearch": {
+    "message": "Lọc các bài báo đã lưu…"
+  },
+  "optCacheCopy": {
+    "message": "Sao chép bộ nhớ đệm (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Chưa có chi tiết bài báo nào được lưu trên thiết bị này."
   }
 }

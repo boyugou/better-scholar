@@ -47,7 +47,7 @@ Chrome-first change breaks it, that is acceptable: note it, don't contort the Ch
   `data/core-2026.json` from the ICORE export via `scripts/core/build-core.mjs`.
 - `src/data/aliases.js` is hand-curated: names Scholar prints that differ from the official titles.
   Every alias must point at a real dataset row (tested).
-- `scripts/package-chrome.sh` → `dist/scholar-roles-and-ranks-chrome-<version>.zip` (`dist/` is git-ignored).
+- `scripts/package-chrome.sh` → `dist/better-scholar-chrome-<version>.zip` (`dist/` is git-ignored).
 - `scripts/update-scholar-domains.sh` regenerates the Scholar domain list in `src/manifest.json` —
   don't edit that list by hand.
-- User-visible strings live in `src/_locales/{en,zh_CN}/messages.json`; keep both in sync (tested).
+- User-visible strings live in `src/_locales/*/messages.json` (30 languages); keep all in sync (tested).

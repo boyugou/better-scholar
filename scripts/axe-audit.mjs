@@ -63,7 +63,9 @@ await run(page, "panel, wide layout (narrow window)", "#rr-panel");
 await page.setViewportSize({ width: 1360, height: 900 });
 for (const lang of ["ar", "ja", "th", "de"]) {
   await setPrefs({ language: lang });
-  await page.reload(); await page.bringToFront(); await page.waitForSelector("#rr-panel", { state: "attached" }); await page.waitForTimeout(1200);
+  await page.waitForTimeout(1200);
+  await page.bringToFront();
+  await page.waitForSelector("#rr-panel", { state: "attached" });
   await run(page, `panel in ${lang}`, "#rr-panel");
 }
 await setPrefs({ language: "auto" });

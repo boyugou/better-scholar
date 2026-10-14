@@ -758,5 +758,68 @@
   },
   "venuesShowFewer": {
     "message": "แสดงน้อยลง"
+  },
+  "optHideCitedTable": {
+    "message": "ตารางตัวชี้วัดการอ้างอิง"
+  },
+  "optHideCitedTableHint": {
+    "message": "ตารางการอ้างอิง, ดัชนี h และดัชนี i10 ในแถบด้านข้าง"
+  },
+  "optHideCitedChart": {
+    "message": "กราฟการอ้างอิงต่อปี"
+  },
+  "optHideCitedChartHint": {
+    "message": "ฮิสโตแกรมการอ้างอิงรายปีในแถบด้านข้าง"
+  },
+  "optConfigTitle": {
+    "message": "การกำหนดค่าและค่าที่ตั้งไว้ล่วงหน้า"
+  },
+  "optConfigHint": {
+    "message": "ส่งออกหรือนำเข้าการตั้งค่าเป็น JSON หรือ TOML ใช้ค่าที่ตั้งไว้ล่วงหน้า หรือกำหนดค่าด้วย AI"
+  },
+  "optConfigCopy": {
+    "message": "คัดลอกการกำหนดค่า (JSON)"
+  },
+  "optConfigExport": {
+    "message": "ส่งออกไฟล์"
+  },
+  "optConfigImport": {
+    "message": "นำเข้าจากคลิปบอร์ด"
+  },
+  "optConfigImportFile": {
+    "message": "นำเข้าไฟล์"
+  },
+  "optConfigEditor": {
+    "message": "วางหรือแก้ไขการกำหนดค่า (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "นำการกำหนดค่าไปใช้"
+  },
+  "optConfigPreset": {
+    "message": "ค่าที่ตั้งไว้ล่วงหน้า"
+  },
+  "optPresetSenior": {
+    "message": "เน้นผู้เขียนหลัก/อาวุโส"
+  },
+  "optPresetFirst": {
+    "message": "เน้นผู้เขียนคนแรก"
+  },
+  "optPresetMinimal": {
+    "message": "มินิมอล"
+  },
+  "optViewCache": {
+    "message": "ดูรายละเอียดที่บันทึกไว้"
+  },
+  "optCacheTitle": {
+    "message": "รายละเอียดบทความที่บันทึกไว้"
+  },
+  "optCacheSearch": {
+    "message": "ค้นหาบทความที่บันทึกไว้…"
+  },
+  "optCacheCopy": {
+    "message": "คัดลอกแคช (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "ยังไม่มีการบันทึกรายละเอียดบทความในอุปกรณ์นี้"
   }
 }

@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Näytä vähemmän"
+  },
+  "optHideCitedTable": {
+    "message": "Viittausmetriikkataulukko"
+  },
+  "optHideCitedTableHint": {
+    "message": "Viittausten, h-indeksin ja i10-indeksin taulukko sivupalkissa."
+  },
+  "optHideCitedChart": {
+    "message": "Vuosittainen viittauskaavio"
+  },
+  "optHideCitedChartHint": {
+    "message": "Vuosittainen viittaushistogrammi sivupalkissa."
+  },
+  "optConfigTitle": {
+    "message": "Asetukset ja esiasetukset"
+  },
+  "optConfigHint": {
+    "message": "Vie tai tuo asetukset JSON- tai TOML-muodossa, käytä esiasetuksia tai määritä tekoälyagentilla."
+  },
+  "optConfigCopy": {
+    "message": "Kopioi asetukset (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Vie tiedosto"
+  },
+  "optConfigImport": {
+    "message": "Tuo leikepöydältä"
+  },
+  "optConfigImportFile": {
+    "message": "Tuo tiedosto"
+  },
+  "optConfigEditor": {
+    "message": "Liitä tai muokkaa asetuksia (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Ota asetukset käyttöön"
+  },
+  "optConfigPreset": {
+    "message": "Esiasetukset"
+  },
+  "optPresetSenior": {
+    "message": "Vastuullisen kirjoittajan painotus"
+  },
+  "optPresetFirst": {
+    "message": "Ensimmäisen kirjoittajan painotus"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistinen"
+  },
+  "optViewCache": {
+    "message": "Näytä tallennetut tiedot"
+  },
+  "optCacheTitle": {
+    "message": "Tallennetut artikkelitiedot"
+  },
+  "optCacheSearch": {
+    "message": "Suodata tallennettuja artikkeleita…"
+  },
+  "optCacheCopy": {
+    "message": "Kopioi välimuisti (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Tälle laitteelle ei ole vielä tallennettu artikkelitietoja."
   }
 }

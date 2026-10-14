@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "הצג פחות"
+  },
+  "optHideCitedTable": {
+    "message": "טבלת מדדי ציטוטים"
+  },
+  "optHideCitedTableHint": {
+    "message": "טבלת הציטוטים, מדד h ומדד i10 בסרגל הצד."
+  },
+  "optHideCitedChart": {
+    "message": "תרשים ציטוטים שנתי"
+  },
+  "optHideCitedChartHint": {
+    "message": "היסטוגרמת הציטוטים השנתית בסרגל הצד."
+  },
+  "optConfigTitle": {
+    "message": "תצורה ופרופילים מוכנים"
+  },
+  "optConfigHint": {
+    "message": "ייצוא או ייבוא הגדרות בתבנית JSON או TOML, החלת פרופילים או הגדרה באמצעות סוכן בינה מלאכותית."
+  },
+  "optConfigCopy": {
+    "message": "העתקת תצורה (JSON)"
+  },
+  "optConfigExport": {
+    "message": "ייצוא קובץ"
+  },
+  "optConfigImport": {
+    "message": "ייבוא מלוח הגזירים"
+  },
+  "optConfigImportFile": {
+    "message": "ייבוא קובץ"
+  },
+  "optConfigEditor": {
+    "message": "הדבקה או עריכה של תצורה (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "החלת תצורה"
+  },
+  "optConfigPreset": {
+    "message": "פרופילים"
+  },
+  "optPresetSenior": {
+    "message": "התמקדות במחבר בכיר"
+  },
+  "optPresetFirst": {
+    "message": "התמקדות במחבר ראשון"
+  },
+  "optPresetMinimal": {
+    "message": "מינימליסטי"
+  },
+  "optViewCache": {
+    "message": "הצגת פרטים שמורים"
+  },
+  "optCacheTitle": {
+    "message": "פרטי מאמרים שמורים"
+  },
+  "optCacheSearch": {
+    "message": "סינון מאמרים שמורים…"
+  },
+  "optCacheCopy": {
+    "message": "העתקת מטמון (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "עדיין לא נשמרו פרטי מאמרים במכשיר זה."
   }
 }

@@ -779,5 +779,68 @@
   },
   "venuesShowFewer": {
     "message": "Visa mindre"
+  },
+  "optHideCitedTable": {
+    "message": "Tabell för citeringsstatistik"
+  },
+  "optHideCitedTableHint": {
+    "message": "Tabellen med citeringar, h-index och i10-index i sidofältet."
+  },
+  "optHideCitedChart": {
+    "message": "Diagram över citeringar per år"
+  },
+  "optHideCitedChartHint": {
+    "message": "Det årliga citeringshistogrammet i sidofältet."
+  },
+  "optConfigTitle": {
+    "message": "Konfiguration och förinställningar"
+  },
+  "optConfigHint": {
+    "message": "Exportera eller importera inställningar som JSON eller TOML, använd förinställningar eller konfigurera med en AI-agent."
+  },
+  "optConfigCopy": {
+    "message": "Kopiera konfiguration (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Exportera fil"
+  },
+  "optConfigImport": {
+    "message": "Importera från urklipp"
+  },
+  "optConfigImportFile": {
+    "message": "Importera fil"
+  },
+  "optConfigEditor": {
+    "message": "Klistra in eller redigera konfiguration (JSON / TOML)"
+  },
+  "optConfigApply": {
+    "message": "Tillämpa konfiguration"
+  },
+  "optConfigPreset": {
+    "message": "Förinställningar"
+  },
+  "optPresetSenior": {
+    "message": "Fokus på seniorförfattare"
+  },
+  "optPresetFirst": {
+    "message": "Fokus på förstaförfattare"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistisk"
+  },
+  "optViewCache": {
+    "message": "Visa sparade uppgifter"
+  },
+  "optCacheTitle": {
+    "message": "Sparade artikeluppgifter"
+  },
+  "optCacheSearch": {
+    "message": "Filtrera sparade artiklar…"
+  },
+  "optCacheCopy": {
+    "message": "Kopiera cache (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Inga artikeluppgifter har sparats på den här enheten än."
   }
 }

@@ -2,9 +2,9 @@
 
 **Supercharge Google Scholar profiles.** A Chrome extension that reads a [Google Scholar](https://scholar.google.com) profile and shows, for every paper, the author's role (first / co-first / second / last…), CCF and CORE venue ranks, conference awards, year distribution charts, and instant in-page search — then adds them up: *"first-author CCF-A papers: 4"*.
 
-[![test](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml)
+[![test](https://github.com/boyugou/better-scholar/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/better-scholar/actions/workflows/test.yml)
 
-[简体中文](README.zh-CN.md) · [Website (30 languages)](https://boyugou.github.io/scholar-roles-and-ranks/)
+[简体中文](README.zh-CN.md) · [Website (30 languages)](https://boyugou.github.io/better-scholar/)
 
 <p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
 <p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
@@ -66,7 +66,7 @@ After updating the folder (`git pull`), click the reload icon on the extension's
 No build step, no dependencies. To make a zip (for sharing, or a store upload):
 
 ```bash
-scripts/package-chrome.sh      # → dist/scholar-roles-and-ranks-chrome-<version>.zip
+scripts/package-chrome.sh      # → dist/better-scholar-chrome-<version>.zip
 ```
 
 ## What it can and cannot know
