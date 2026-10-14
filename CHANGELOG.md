@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.38.0 — 2026-10-14
+
+- **Academic Citation Export (APA 7th Edition)**:
+  - Added pure `toApa(papers)` formatter in `src/lib/metrics.js`, generating standard APA 7th edition reference list entries (`Authors (Year). Title. *Venue*. URL`).
+  - Implemented smart author name parsing and abbreviation from Google Scholar records (supports initial-splitting e.g. `MF Kaashoek` $\rightarrow$ `Kaashoek, M. F.`, `JA Doudna` $\rightarrow$ `Doudna, J. A.`, and Chinese family-name-first order), multi-author ampersand formatting, and punctuation normalization.
+  - Added dedicated `[Copy APA]` button in the in-page panel copybar with live copy confirmation feedback (`panel.flash("apa")`).
+  - Added full translation for `copyApa` across all 30 supported languages.
+  - Extended runtime messaging (`rr:export` with `format: "apa"`) and the DOM CustomEvent bridge (`better-scholar:request-export` with `format: "apa"`).
+- **Toolbar Popup Feature Parity & Direct Citations**:
+  - Elevated the Chrome extension toolbar popup (`src/popup/`):
+  - Users can now copy citations in any format (BibTeX, APA, Markdown, JSON, TSV, Summary) directly from the toolbar popup on any active Google Scholar profile without having to scroll the page.
+  - Responsive flex button grid with clean layout and 100% WCAG 2.1 AA contrast compliance in both light and dark themes.
+- **Verification & Test Suite Expansion**:
+  - Expanded unit test suite to 416 tests (`test/metrics.test.js`) covering single/multiple/truncated author handling and formatting.
+  - Expanded Playwright E2E test suite (`test/e2e/run.mjs`) verifying clipboard APA copying, agent messaging, and DOM bridge event flow (76/76 checks passing).
+
 ## 2.37.0 — 2026-10-14
 
 - **Extension Settings Page UI/UX Redesign**:

@@ -215,6 +215,47 @@ test("toMarkdown: standard publication list in markdown format", () => {
   assert.ok(md.includes("   *Advances in Neural Information Processing Systems, 2017* · **CCF A** · Cited by 120,000"));
 });
 
+test("toApa: standard publication list in APA 7th edition format", () => {
+  const papers = [
+    {
+      title: "Chord: A scalable peer-to-peer lookup service for internet applications",
+      authorsText: "I Stoica, R Morris, D Karger, MF Kaashoek, H Balakrishnan",
+      year: 2001,
+      venueText: "ACM SIGCOMM Computer Communication Review",
+      venue: { ccf: { tier: "A" } },
+      awards: ["Test of Time Award"],
+      href: "/citations?view_op=view_citation&citation_for_view=123"
+    },
+    {
+      title: "A Mathematical Theory of Communication",
+      authorsText: "CE Shannon",
+      year: 1948,
+      venueText: "The Bell System Technical Journal"
+    },
+    {
+      title: "Attention Is All You Need",
+      authorsText: "A Vaswani, N Shazeer",
+      year: 2017,
+      venueText: "Advances in Neural Information Processing Systems"
+    },
+    {
+      title: "Massive Multi-Author Study",
+      authorsText: "A Alpha, B Beta, C Gamma, D Delta, ...",
+      venueText: "Preprint"
+    }
+  ];
+
+  const apa = m.toApa(papers);
+  assert.ok(apa.includes("Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. *ACM SIGCOMM Computer Communication Review*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123"));
+  assert.ok(apa.includes("Shannon, C. E. (1948). A Mathematical Theory of Communication. *The Bell System Technical Journal*."));
+  assert.ok(apa.includes("Vaswani, A., & Shazeer, N. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems*."));
+  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. *Preprint*."));
+
+  const apaWithRanks = m.toApa([papers[0]], { includeRanks: true, includeAwards: true });
+  assert.ok(apaWithRanks.includes("[CCF A]"));
+  assert.ok(apaWithRanks.includes("[★ Test of Time Award]"));
+});
+
 test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
   const r = (year, role, highlighted = true) => ({ year, role, highlighted });
   const out = m.byYear([r(2020, "first"), r(2020, "last"), r(2022, "second"), r(2022, "first", false), r(null, "first"), r(2021, "middle")]);

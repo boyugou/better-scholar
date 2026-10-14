@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "BibTeX másolása"
   },
+  "copyApa": {
+    "message": "APA másolása"
+  },
   "copyMarkdown": {
     "message": "Markdown másolása"
   },

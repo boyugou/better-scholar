@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "BibTeX kopiëren"
   },
+  "copyApa": {
+    "message": "APA kopiëren"
+  },
   "copyMarkdown": {
     "message": "Kopieer Markdown"
   },

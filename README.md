@@ -44,7 +44,7 @@ Better Scholar is a Manifest V3 browser extension that turns [Google Scholar](ht
 - **Bundled conference awards & talk levels.** Recognises 7,830+ official paper awards (Best Paper, Outstanding, Distinguished, Test of Time) across top CS venues, plus author-written Oral / Spotlight / Highlight labels.
 - **Interactive impact filtering.** Click any cell in the Role × Rank matrix, or click the **H-index** and **i10-index** rows to instantly filter the publication list to your H-core or high-impact papers.
 - **Instant search & query operators.** Press `/` to focus the search bar. Filter instantly by title, author, venue, acronym, award, or structured operators (`ccf:a`, `role:first`, `>100`, `year:>=2021`). Press `Escape` anywhere to clear.
-- **1-Click multi-format export.** Copy publication data to clipboard as BibTeX (with compile-ready LaTeX escaping and Scholar URLs), JSON, Markdown, CSV, Summary text, or Tab-separated table.
+- **1-Click multi-format export.** Copy publication data to clipboard as BibTeX (with compile-ready LaTeX escaping and Scholar URLs), APA 7th edition, JSON, Markdown, CSV, Summary text, or Tab-separated table. Export directly from the in-page panel or the toolbar popup on any profile.
 - **AI & Web Agent DOM Event Bridge.** Native CustomEvent bus on `document` (`better-scholar:ping`, `better-scholar:request-papers`, `better-scholar:request-export`, `better-scholar:query`) and runtime messaging (`rr:papers`, `rr:export`) for headless AI agents and research workflows.
 - **30 languages.** Packed with translations for 30 locales. Supports bidirectional Scholar language synchronisation (`hl=`).
 - **Private by design.** No accounts, no telemetry, no tracking, and no external network calls. Syncs user preferences through your browser's native `chrome.storage.sync`. See [`PRIVACY.md`](PRIVACY.md).
@@ -73,11 +73,11 @@ owner & author roles        CCF / CORE tier matcher        awards & talk levels
               (role × rank matrix,       (role tints, rank chips,
                h-core & year bars)        marked owner names)
                         │
-                        ├─► 1-Click Export (BibTeX, JSON, Markdown, CSV)
+                        ├─► 1-Click Export (BibTeX, APA, JSON, Markdown, CSV)
                         └─► Agent DOM Event Bridge (`better-scholar:*` CustomEvents)
 ```
 
-The parsing core in `src/lib/` is completely **pure** (free of DOM and `chrome.*` APIs). Each file attaches to `globalThis.RolesRanks` in the extension and exports as CommonJS under Node.js, allowing the entire 415-test suite to execute directly without compilation.
+The parsing core in `src/lib/` is completely **pure** (free of DOM and `chrome.*` APIs). Each file attaches to `globalThis.RolesRanks` in the extension and exports as CommonJS under Node.js, allowing the entire 416-test suite to execute directly without compilation.
 
 ## Key Features
 
@@ -126,6 +126,7 @@ Press `/` anywhere on a Google Scholar profile to instantly jump to the search b
 Export filtered or full publication lists with a single click:
 
 - **Copy BibTeX:** Generates standard, compile-ready BibTeX entries with citekeys (`AuthorYear`), properly escaped LaTeX characters (`&`, `%`, `_`), and canonical Google Scholar URLs.
+- **Copy APA:** Synthesizes standard APA 7th edition reference lists (`Authors (Year). Title. *Venue*. URL`) ideal for CVs, faculty dossiers, grant proposals, and papers.
 - **Copy JSON:** Exports structured academic records including titles, authors, venues, year, citation counts, role classifications, CCF/CORE tiers, and awards.
 - **Copy Markdown:** Produces formatted GitHub-Flavored Markdown publication lists with hyperlinked titles and bold tier chips.
 - **Export CSV:** Downloads an RFC-4180 compliant CSV file with UTF-8 BOM encoding for seamless Excel import.

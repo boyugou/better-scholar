@@ -366,6 +366,25 @@
     return metrics.toMarkdown(items, { ccfOn, coreOn });
   }
 
+  function papersApa() {
+    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
+    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+      const a = r.a;
+      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+      return {
+        title: r.raw.title,
+        authorsText: r.raw.authorsText,
+        venueText: r.raw.venueText,
+        year: a.year,
+        venue: a.venue,
+        awards,
+        citations: r.shown,
+        href: r.raw.href
+      };
+    });
+    return metrics.toApa(items, { ccfOn, coreOn });
+  }
+
   function papersJson(filtered = true) {
     const list = filtered ? live().filter((r) => !r.raw.tr.classList.contains("rr-hide")) : live();
     const payload = {
@@ -480,6 +499,11 @@
       if (kind === "markdown") {
         const text = papersMarkdown();
         if (await copyText(text)) panel.flash("markdown");
+        return;
+      }
+      if (kind === "apa") {
+        const text = papersApa();
+        if (await copyText(text)) panel.flash("apa");
         return;
       }
       if (kind === "json") {
@@ -695,6 +719,7 @@
         let text = "";
         if (format === "bibtex") text = papersBibtex();
         else if (format === "markdown") text = papersMarkdown();
+        else if (format === "apa") text = papersApa();
         else if (format === "csv") text = papersCsv();
         else if (format === "tsv") text = papersText();
         else if (format === "json") text = papersJson(msg.filtered !== false);
@@ -859,6 +884,7 @@
     let text = "";
     if (format === "bibtex") text = papersBibtex();
     else if (format === "markdown") text = papersMarkdown();
+    else if (format === "apa") text = papersApa();
     else if (format === "csv") text = papersCsv();
     else if (format === "tsv") text = papersText();
     else if (format === "json") text = papersJson(detail.filteredOnly !== false);

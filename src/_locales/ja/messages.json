@@ -528,6 +528,9 @@
   "copyBibtex": {
     "message": "BibTeXコピー"
   },
+  "copyApa": {
+    "message": "APAコピー"
+  },
   "copyMarkdown": {
     "message": "Markdownをコピー"
   },

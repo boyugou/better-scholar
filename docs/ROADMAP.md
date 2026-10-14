@@ -3,6 +3,17 @@
 Ideas that are worth doing but not done, with the reasoning, so they are not rediscovered
 from scratch. Roughly in order of value.
 
+## Citation and data exports
+
+**Built — multi-format publication and metrics exports** (`src/lib/metrics.js`, `src/content/main.js`, `src/popup/popup.js`, 2026-10-14). Users can export publication lists and citation metrics in 1 click across multiple formats:
+- **BibTeX**: Compile-ready LaTeX escaping (`%`, `&`, `_`, `#`, `$`), deterministic `AuthorYearTitle` citekey synthesis, direct Google Scholar URLs, and CCF/CORE tier notes.
+- **APA 7th Edition**: Standard reference list formatting (`Authors (Year). Title. *Venue*. URL`) with initial splitting (`MF Kaashoek` $\rightarrow$ `Kaashoek, M. F.`), Chinese family-name-first order handling, and multi-author ampersand formatting.
+- **GitHub-Flavored Markdown**: Structured academic publication list with hyperlinked titles and bold ranking badges.
+- **Structured JSON**: Complete machine-readable publication array with role classifications, CCF/CORE tiers, citations, and awards.
+- **RFC-4180 CSV**: Clean CSV download with UTF-8 BOM encoding for seamless Excel import.
+- **Plain text & TSV**: Role × rank matrix summary for grant proposals, tenure dossiers, and CVs.
+Available directly in the in-page sidebar copybar, in the toolbar popup on any active Scholar tab, via runtime messaging (`rr:export`), and via the agent DOM CustomEvent bridge (`better-scholar:request-export`).
+
 ## Awards and talk levels
 
 **Built — what the authors wrote** (`src/lib/marks.js`, 2026-10-11). A paper whose title or venue text

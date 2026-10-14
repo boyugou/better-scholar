@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "نسخ BibTeX"
   },
+  "copyApa": {
+    "message": "نسخ APA"
+  },
   "copyMarkdown": {
     "message": "نسخ Markdown"
   },

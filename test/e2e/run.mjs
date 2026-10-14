@@ -805,7 +805,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(md.includes("1. **[") || md.includes("1. **"));
     assert.ok(md.includes("Cited by"));
     assert.equal(await page.locator('[data-act="copy-markdown"]').textContent(), "Copied");
-    ok("Copy Markdown generates structured markdown publication list with links, venue, and citations");
+    // "Copy APA": standard APA 7th edition publication list
+    await page.click('[data-act="copy-apa"]');
+    const apa = await page.evaluate(() => navigator.clipboard.readText());
+    assert.ok(apa.includes("(2001).") || apa.includes("(2010)."));
+    assert.ok(apa.includes("Stoica, I.") || apa.includes("Paper number 1"));
+    assert.equal(await page.locator('[data-act="copy-apa"]').textContent(), "Copied");
+    ok("Copy APA generates standard APA 7th reference list with authors, year, title and venue");
 
     // "Copy JSON": structured JSON for papers shown
     await page.click('[data-act="copy-json"]');
@@ -1129,8 +1135,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
           const p = await chrome.tabs.sendMessage(t.id, { type: "rr:papers" });
           const exMd = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "markdown" });
           const exJson = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "json" });
-          if (p && p.ok && exMd && exMd.ok && exJson && exJson.ok) {
-            return { paperCount: p.papers.length, mdLength: exMd.text.length, jsonTotal: JSON.parse(exJson.text).total };
+          const exApa = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "apa" });
+          if (p && p.ok && exMd && exMd.ok && exJson && exJson.ok && exApa && exApa.ok) {
+            return { paperCount: p.papers.length, mdLength: exMd.text.length, jsonTotal: JSON.parse(exJson.text).total, apaLength: exApa.text.length };
           }
         } catch (e) { /* not profile */ }
       }
@@ -1138,6 +1145,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     });
     assert.ok(agentTest && agentTest.paperCount > 0, "agent can query papers via rr:papers");
     assert.ok(agentTest && agentTest.mdLength > 0, "agent can export markdown via rr:export");
+    assert.ok(agentTest && agentTest.apaLength > 0, "agent can export APA via rr:export");
     assert.equal(agentTest.jsonTotal, agentTest.paperCount, "agent can export JSON via rr:export");
     ok("agent-native messaging (rr:papers, rr:export) returns structured data to external callers");
 
@@ -1159,6 +1167,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "json", requestId: "req-4" } }));
       const respExport = await exportP;
 
+      const exportApaP = new Promise((resolve) => document.addEventListener("better-scholar:response-export", (e) => resolve(e.detail), { once: true }));
+      document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "apa", requestId: "req-apa" } }));
+      const respApa = await exportApaP;
+
       const queryP = new Promise((resolve) => document.addEventListener("better-scholar:response-query", (e) => resolve(e.detail), { once: true }));
       document.dispatchEvent(new CustomEvent("better-scholar:query", { detail: { query: ">800", requestId: "req-5" } }));
       const respQuery = await queryP;
@@ -1173,6 +1185,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
         papersCount: respPapers.papers.length,
         hasSummary: !!respSummary.summaries,
         exportJsonValid: Array.isArray(JSON.parse(respExport.text).papers),
+        apaLength: (respApa.text || "").length,
         queryMatched: respQuery.matchedCount,
         clearedCount: respClear.totalCount
       };
@@ -1184,6 +1197,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(bridgeTest.papersCount > 0, "request-papers returned paper array");
     assert.equal(bridgeTest.hasSummary, true, "request-summary returned summaries");
     assert.equal(bridgeTest.exportJsonValid, true, "request-export returned valid JSON papers");
+    assert.ok(bridgeTest.apaLength > 0, "request-export returned valid APA citations");
     assert.ok(bridgeTest.queryMatched > 0, "better-scholar:query filtered papers");
     assert.ok(bridgeTest.clearedCount > bridgeTest.queryMatched, "better-scholar:clear-filters restored count");
     ok("agent-native DOM CustomEvent bridge supports ping, request-papers, request-summary, request-export, query, and clear-filters in page context");

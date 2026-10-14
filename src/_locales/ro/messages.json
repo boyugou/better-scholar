@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Copiază BibTeX"
   },
+  "copyApa": {
+    "message": "Copiază APA"
+  },
   "copyMarkdown": {
     "message": "Copiază Markdown"
   },

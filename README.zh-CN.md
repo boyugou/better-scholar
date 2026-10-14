@@ -44,7 +44,7 @@ Better Scholar 是一款遵循 Manifest V3 规范的浏览器扩展程序，专�
 - **内置 7,830+ 篇官方权威获奖论文**：收录来自各顶会官网及 ACL Anthology 的最佳论文、杰出论文、时间检验奖，并结合解析作者自述的 Oral / Spotlight / Highlight 报告形式。
 - **交互式影响力过滤**：点击角色 × 等级矩阵中的任意单元格，或点击 **h-index** / **i10-index** 指标行，一键过滤出核心高引论文列表。
 - **即时检索与高级运算符**：在主页按 `/` 键即可聚焦搜索框，支持标题、作者、场所、缩写、年份及结构化操作符（`ccf:a`、`role:first`、`>100`、`year:>=2021`）。按 <kbd>Escape</kbd> 键随时一键清空复位。
-- **一键多格式学术导出**：支持一键复制标准且严谨的 BibTeX（含 LaTeX 特殊字符转义与 Scholar 直链）、JSON、Markdown、RFC-4180 CSV、纯文本列表与表格。
+- **一键多格式学术导出**：支持一键复制标准且严谨的 BibTeX（含 LaTeX 特殊字符转义与 Scholar 直链）、APA 第 7 版、JSON、Markdown、RFC-4180 CSV、纯文本列表与表格。可在学者主页侧边面板或扩展工具栏弹出页中随时一键导出。
 - **AI 与 Web 智能体 DOM 事件桥梁**：在页面 `document` 上提供原生 CustomEvent 事件总线与 Chrome runtime 消息，便于大模型自动化程序、抓取脚本和开发者控制台直接调用。
 - **30 种国际化语言**：提供 30 种语言的完整本地化翻译，并支持与 Scholar 界面的语言参数（`hl=`）双向智能同步。
 - **严苛的隐私保护**：无账号体系、无追踪器、无数据统计、无多余网络请求。所有用户偏好仅通过浏览器原生 `chrome.storage.sync` 安全同步。详见 [`PRIVACY.md`](PRIVACY.md)。
@@ -73,11 +73,11 @@ Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取�
              (角色 × 等级矩阵面板、       (位次行着色、场所等级徽章、
               H-core 过滤与年份图谱)       学者姓名高亮标注)
                         │
-                        ├─► 1-Click 一键导出 (BibTeX, JSON, Markdown, CSV)
+                        ├─► 1-Click 一键导出 (BibTeX, APA, JSON, Markdown, CSV)
                         └─► 智能体 DOM 事件桥梁 (`better-scholar:*` CustomEvents)
 ```
 
-`src/lib/` 目录下的所有解析核心代码均保持 **Pure**（纯函数式，不依赖任何 DOM 或 `chrome.*` API），在浏览器环境下挂载至 `globalThis.RolesRanks`，在 Node.js 环境下作为 CommonJS 模块导出，使得 415 个单元测试无需任何构建编译即可瞬间全绿运行。
+`src/lib/` 目录下的所有解析核心代码均保持 **Pure**（纯函数式，不依赖任何 DOM 或 `chrome.*` API），在浏览器环境下挂载至 `globalThis.RolesRanks`，在 Node.js 环境下作为 CommonJS 模块导出，使得 416 个单元测试无需任何构建编译即可瞬间全绿运行。
 
 ## 核心功能
 
@@ -126,6 +126,7 @@ Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取�
 无论是在完整列表还是当前筛选视图下，均可一键完成多格式导出：
 
 - **复制 BibTeX**：生成标准的 BibTeX 条目，自动生成 `AuthorYear` 引用键，严格转义 LaTeX 特殊字符（`&`、`%`、`_` 等），并附带 Scholar 原生论文直链。
+- **复制 APA**：自动生成符合 APA 第 7 版规范的标准学术参考文献列表（`Authors (Year). Title. *Venue*. URL`），适用于个人简历（CV）、基金申报、职称评审及论文引用。
 - **复制 JSON**：导出富结构化学术对象数组，包含论文标题、完整作者、发表场所、年份、引用数、作者角色、CCF/CORE 等级与获奖信息。
 - **复制 Markdown**：生成符合 GitHub 规范的精美 Markdown 发表清单，标题自动带链接，等级加粗高亮。
 - **导出 CSV**：一键下载符合 RFC-4180 标准并带有 UTF-8 BOM 编码的 CSV 文件，在 Excel / Numbers 中打开完全杜绝中文乱码。
@@ -196,7 +197,7 @@ better-scholar/
 │   └── _locales/           30 种界面语言的多语言国际化翻译字典
 ├── data/                   权威名录原始数据集（CCF 官方 PDF 解析脚本与 ICORE 导出数据）
 ├── scripts/                数据提取、自动化测试、图标生成与打包脚本
-├── test/                   完备测试体系（415 项单元测试 + 76 项端到端真实交互测试）
+├── test/                   完备测试体系（416 项单元测试 + 76 项端到端真实交互测试）
 │   ├── fixtures/           真实 Google Scholar 学者主页与发表场所测试语料
 │   └── e2e/                Chromium 端到端自动化测试与本地仿真服务器
 ├── docs/                   架构设计文档、应用商店物料与路线规划
@@ -210,7 +211,7 @@ better-scholar/
 全部测试均在 Node.js 环境下免依赖原生运行：
 
 ```bash
-npm test            # 运行全部 415 项单元测试（姓名解析、场所匹配、指标、多语言及完整性）
+npm test            # 运行全部 416 项单元测试（姓名解析、场所匹配、指标、多语言及完整性）
 npm run test:e2e    # 运行全部 76 项 Chromium 端到端真实交互测试
 npm run test:update # 当有意改进场所匹配规则时，审查并更新测试快照
 npm run data        # 基于 data/*.json 重新生成 src/data/{ccf,core}.js 产物

@@ -311,6 +311,95 @@
     }).join("\n\n");
   }
 
+  // Formats author names into APA 7th style:
+  // "I Stoica" -> "Stoica, I."
+  // "MF Kaashoek" -> "Kaashoek, M. F."
+  // "JA Doudna" -> "Doudna, J. A."
+  // "Jane Doe" -> "Doe, J."
+  function formatApaAuthor(name) {
+    const raw = String(name || "").trim();
+    if (!raw || /^(?:\.\.\.|…)$/.test(raw)) return "";
+    if (raw.includes(",")) {
+      const parts = raw.split(",").map((p) => p.trim()).filter(Boolean);
+      const last = parts[0];
+      const given = parts.slice(1).join(" ");
+      const initials = given
+        ? given.split(/\s+/).map((p) => (/^[A-Z]{2,3}$/.test(p) ? p.split("").join(". ") + "." : p.endsWith(".") ? p : p.charAt(0).toUpperCase() + ".")).join(" ")
+        : "";
+      return initials ? `${last}, ${initials}` : last;
+    }
+    const parts = raw.split(/\s+/).filter(Boolean);
+    if (!parts.length) return "";
+    if (parts.length === 1) return parts[0];
+    const last = parts.pop();
+    const initials = parts.map((p) => {
+      if (/^[A-Z]{2,3}$/.test(p)) return p.split("").join(". ") + ".";
+      if (p.endsWith(".")) return p;
+      return p.charAt(0).toUpperCase() + ".";
+    }).join(" ");
+    return `${last}, ${initials}`;
+  }
+
+  // Synthesizes standard APA 7th edition reference list entries:
+  // Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. *ACM SIGCOMM Computer Communication Review*, 31(4), 149–160. https://...
+  function toApa(papers, { ccfOn = true, coreOn = true, includeRanks = false, includeAwards = false } = {}) {
+    const clean = (s) => String(s == null ? "" : s).replace(/[\r\n\t]+/g, " ").trim();
+
+    return papers.map((p) => {
+      const rawAuthors = clean(p.authorsText);
+      const hasMore = /(?:\.\.\.|…)/.test(rawAuthors);
+      const authorList = rawAuthors
+        .split(/,\s*/)
+        .map(formatApaAuthor)
+        .filter(Boolean);
+
+      let authorPart = "";
+      if (authorList.length === 1) {
+        authorPart = authorList[0];
+      } else if (authorList.length === 2) {
+        authorPart = `${authorList[0]}, & ${authorList[1]}`;
+      } else if (authorList.length > 2 && authorList.length <= 20) {
+        if (hasMore) {
+          authorPart = `${authorList.join(", ")}, …`;
+        } else {
+          authorPart = `${authorList.slice(0, -1).join(", ")}, & ${authorList[authorList.length - 1]}`;
+        }
+      } else if (authorList.length > 20) {
+        authorPart = `${authorList.slice(0, 19).join(", ")}, … ${authorList[authorList.length - 1]}`;
+      }
+      if (authorPart && !/[.!?…]$/.test(authorPart)) authorPart += ".";
+
+      const yearPart = p.year ? `(${p.year}).` : "(n.d.).";
+
+      let title = clean(p.title);
+      if (title && !/[.?!]$/.test(title)) title += ".";
+
+      const venue = clean(p.venueText);
+      let venuePart = "";
+      if (venue) {
+        venuePart = venue.endsWith(".") ? `*${venue}*` : `*${venue}*.`;
+      }
+
+      const extra = [];
+      const v = p.venue || {};
+      if (includeRanks) {
+        const ranks = [];
+        if (ccfOn && v.ccf && v.ccf.tier) ranks.push(`CCF ${v.ccf.tier}`);
+        if (coreOn && v.core && v.core.rank) ranks.push(`CORE ${v.core.rank}`);
+        if (ranks.length) extra.push(`[${ranks.join(" · ")}]`);
+      }
+      if (includeAwards) {
+        const awards = Array.isArray(p.awards) ? p.awards.filter(Boolean).map(clean) : p.awards ? [clean(p.awards)] : [];
+        if (awards.length) extra.push(`[★ ${awards.join(" · ")}]`);
+      }
+
+      const url = p.href ? (p.href.startsWith("http") ? p.href : "https://scholar.google.com" + p.href) : "";
+
+      const segments = [authorPart, yearPart, title, venuePart, ...extra, url].filter(Boolean);
+      return segments.join(" ");
+    }).join("\n\n");
+  }
+
   function toTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
     const head = [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total];
     const lines = [head.join("\t")];
@@ -319,5 +408,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv, toBibTeX, toMarkdown };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv, toBibTeX, toMarkdown, toApa };
 });

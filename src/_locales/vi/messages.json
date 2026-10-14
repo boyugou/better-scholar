@@ -510,6 +510,9 @@
   "copyBibtex": {
     "message": "Sao chép BibTeX"
   },
+  "copyApa": {
+    "message": "Sao chép APA"
+  },
   "copyMarkdown": {
     "message": "Sao chép Markdown"
   },
