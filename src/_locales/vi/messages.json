@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Sao chép bài báo"
   },
+  "exportCsv": {
+    "message": "Xuất CSV"
+  },
+  "exported": {
+    "message": "Đã xuất"
+  },
   "tsvYear": {
     "message": "Năm"
   },

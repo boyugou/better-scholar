@@ -194,6 +194,17 @@
     return [header, ...rows].map((r) => r.map(cell).join("\t")).join("\n");
   }
 
+  // RFC-4180 compliant CSV serializer with UTF-8 BOM (\uFEFF) for Excel, Sheets, and pandas.
+  // Fields with commas, quotes, semicolons, or line breaks are quoted, quotes doubled. Formula protection applied.
+  function toRowsCsv(header, rows) {
+    const cell = (v) => {
+      const s = String(v == null ? "" : v).replace(/[\r\n]+/g, " ").trim();
+      const safe = /^[=+\-@]/.test(s) && !/^[+-]?\d+(?:[.,]\d+)?$/.test(s) ? "'" + s : s;
+      return /[",;\n\r]/.test(safe) ? '"' + safe.replace(/"/g, '""') + '"' : safe;
+    };
+    return "\uFEFF" + [header, ...rows].map((r) => r.map(cell).join(",")).join("\r\n");
+  }
+
   function toTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
     const head = [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total];
     const lines = [head.join("\t")];
@@ -202,5 +213,5 @@
     return lines.join("\n");
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv };
+  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues, toText, toTsv, toRowsTsv, toRowsCsv };
 });

@@ -99,11 +99,29 @@
 
     // filters (built once, synced on update)
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
-    queryInput.addEventListener("input", () => cb.onQuery(queryInput.value));
-    queryInput.addEventListener("search", () => cb.onQuery(queryInput.value));
-    queryInput.addEventListener("keydown", (e) => { if (e.key === "Escape") { queryInput.value = ""; cb.onQuery(""); queryInput.blur(); } });
     const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true" }, "/");
-    const searchRow = h("div", { class: "rr-search" }, queryInput, kbdHint);
+    const clearSearchBtn = h("button", { class: "rr-search-clear", type: "button", "data-act": "clear-query", title: t("filterClear"), "aria-label": t("filterClear"), hidden: true, onClick: () => {
+      queryInput.value = "";
+      syncSearchUI();
+      cb.onQuery("");
+      queryInput.focus();
+    } }, "×");
+    function syncSearchUI() {
+      const hasText = !!queryInput.value;
+      clearSearchBtn.hidden = !hasText;
+      kbdHint.hidden = hasText;
+    }
+    queryInput.addEventListener("input", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
+    queryInput.addEventListener("search", () => { syncSearchUI(); cb.onQuery(queryInput.value); });
+    queryInput.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        queryInput.value = "";
+        syncSearchUI();
+        cb.onQuery("");
+        queryInput.blur();
+      }
+    });
+    const searchRow = h("div", { class: "rr-search" }, queryInput, kbdHint, clearSearchBtn);
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
@@ -203,9 +221,9 @@
 
     function renderActions() {
       const btn = (kind, key) =>
-        h("button", { class: "rr-btn", type: "button", "data-act": "copy-" + kind, onClick: () => cb.onCopy(kind) },
-          ui.flash === kind ? t("copied") : t(key));
-      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"));
+        h("button", { class: "rr-btn", type: "button", "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind), onClick: () => cb.onCopy(kind) },
+          ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
+      actions.replaceChildren(btn("text", "copySummary"), btn("tsv", "copyTable"), btn("papers", "copyPapers"), btn("csv", "exportCsv"));
     }
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
@@ -285,6 +303,7 @@
 
     function syncFilters(m) {
       if (queryInput.value.trim().toLowerCase() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
+      syncSearchUI();
       onlyCb.checked = !!m.filters.onlyHighlighted;
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
       yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");

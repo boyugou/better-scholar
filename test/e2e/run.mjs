@@ -531,17 +531,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
       assert.equal(await visibleRows(page), all.length);
     }
-    // quick search query filter: typing filters by title and author, Esc clears
+    // quick search query filter: typing filters by title and author, clear button and Esc clear
     const queryInput = page.locator('#rr-panel input[data-act="filter-query"]');
+    const clearBtn = page.locator('#rr-panel button[data-act="clear-query"]');
     assert.equal(await queryInput.count(), 1, "search query input exists in filters section");
+    assert.equal(await clearBtn.isVisible(), false, "clear button hidden when search is empty");
     const testWord = profile.rows[0].title.split(/\s+/).find((w) => w.length >= 4 && /^[a-zA-Z]+$/.test(w)) || "paper";
     await queryInput.fill(testWord);
+    assert.equal(await clearBtn.isVisible(), true, "clear button visible when search has input");
     const expectedQueryCount = profile.rows.filter((r) => (r.title || "").toLowerCase().includes(testWord.toLowerCase()) || (r.authors || "").toLowerCase().includes(testWord.toLowerCase())).length;
     assert.equal(await visibleRows(page), expectedQueryCount);
     assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(testWord.toLowerCase()));
-    // Pressing Escape clears the search input and resets visible rows
-    await queryInput.press("Escape");
+    // Clicking clear button clears the search input, hides the button, and resets visible rows
+    await clearBtn.click();
     assert.equal(await queryInput.inputValue(), "");
+    assert.equal(await clearBtn.isVisible(), false);
     assert.equal(await visibleRows(page), all.length);
     // Pressing "/" anywhere on the page focuses the search query input
     const kbdHint = page.locator("#rr-panel .rr-search-kbd");
@@ -550,7 +554,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.keyboard.press("/");
     assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.getAttribute("data-act")), "filter-query", "pressing / focuses the search query input");
     await queryInput.press("Escape");
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query and focuses on /");
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, has inline clear button, and focuses on /");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");
@@ -676,6 +680,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok(onlyRows.length < paperRows.length);
     await page.uncheck('input[data-act="only"]');
     ok("Copy papers puts the papers shown (the filters count) on the clipboard, one line each, with role, ranks, awards and citations");
+
+    // "Export CSV": downloads RFC-4180 CSV with UTF-8 BOM and sanitized filename
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.click('[data-act="copy-csv"]')
+    ]);
+    assert.equal(download.suggestedFilename(), "Ion_Stoica-papers.csv");
+    const stream = await download.createReadStream();
+    const chunks = [];
+    for await (const chunk of stream) chunks.push(chunk);
+    const csvStr = Buffer.concat(chunks).toString("utf8");
+    assert.ok(csvStr.startsWith("\uFEFF"), "starts with UTF-8 BOM");
+    const csvRows = csvStr.slice(1).split("\r\n");
+    assert.equal(csvRows[0], "Year,Title,Authors,Role,Venue,CCF,CORE,Awards & talks,Citations");
+    assert.equal(csvRows.length, 1 + 100);
+    assert.equal(await page.locator('[data-act="copy-csv"]').textContent(), "Exported");
+    ok("Export CSV downloads an RFC-4180 CSV with UTF-8 BOM, sanitized filename, and confirmation");
 
     // -- 13. collapse persists
     await page.click('[data-act="collapse"]');

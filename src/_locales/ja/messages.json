@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "論文をコピー"
   },
+  "exportCsv": {
+    "message": "CSV出力"
+  },
+  "exported": {
+    "message": "出力完了"
+  },
   "tsvYear": {
     "message": "年"
   },

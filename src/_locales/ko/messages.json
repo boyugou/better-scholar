@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "논문 복사"
   },
+  "exportCsv": {
+    "message": "CSV 내보내기"
+  },
+  "exported": {
+    "message": "내보냄"
+  },
   "tsvYear": {
     "message": "연도"
   },

@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "Copy papers"
   },
+  "exportCsv": {
+    "message": "Export CSV"
+  },
+  "exported": {
+    "message": "Exported"
+  },
   "tsvYear": {
     "message": "Year"
   },

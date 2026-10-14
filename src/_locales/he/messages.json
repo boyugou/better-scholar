@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "העתקת מאמרים"
   },
+  "exportCsv": {
+    "message": "ייצוא CSV"
+  },
+  "exported": {
+    "message": "יוצא"
+  },
   "tsvYear": {
     "message": "שנה"
   },

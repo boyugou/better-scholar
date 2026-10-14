@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.27.0 — 2026-10-14
+
+- **Direct CSV Export ("Export CSV")**:
+  - Adds an instant one-click CSV export button to the panel actions.
+  - Generates RFC-4180 compliant CSV with standard quote escaping, CRLF line endings, and spreadsheet formula injection protection.
+  - Automatically prepends a UTF-8 Byte Order Mark (`\uFEFF`) so Microsoft Excel (macOS & Windows), Google Sheets, Numbers, and Pandas decode international characters (Chinese, Japanese, accents, Cyrillic, Arabic) without encoding corruption.
+  - Respects active filters (exports only filtered papers if filters are applied, or all loaded papers).
+  - Sanitizes filename to `${Author_Name}-papers.csv`.
+  - Fully translated and localized across all 30 languages with native "Export CSV" / "Exported" button feedback.
+- **Search Query Quick-Clear Button & WebKit Reset**:
+  - Adds an inline quick-clear button (`×`) inside the search filter box that appears dynamically when input contains text.
+  - Clicking clears the query, hides the clear button, restores the `<kbd>/</kbd>` shortcut hint, refocuses the search input, and resets visible rows.
+  - Resets WebKit's native search cancel button for clean, consistent cross-platform presentation.
+
 ## 2.26.0 — 2026-10-14
 
 - **Project Rebranding: Better Scholar**:

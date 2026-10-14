@@ -100,6 +100,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel input[type="text"]:focus, #rr-panel input[type="search"]:focus { border-color: var(--rr-accent); box-shadow: 0 0 0 3px rgba(26,115,232,.15); }
 #rr-panel .rr-search { position: relative; margin-bottom: 8px; }
 #rr-panel .rr-search-input { padding-inline-end: 28px; }
+#rr-panel .rr-search-input::-webkit-search-cancel-button { display: none; }
 #rr-panel .rr-search-kbd {
   position: absolute; inset-inline-end: 7px; top: 50%; transform: translateY(-50%);
   font: 11px system-ui, -apple-system, sans-serif; line-height: 1; padding: 2px 5px;
@@ -110,6 +111,13 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-search-input:not(:placeholder-shown) + .rr-search-kbd {
   opacity: 0;
 }
+#rr-panel .rr-search-clear {
+  position: absolute; inset-inline-end: 7px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 0; background: #dadce0; color: #5f6368; font-size: 13px; line-height: 1;
+  cursor: pointer; padding: 0; transition: background .15s, color .15s;
+}
+#rr-panel .rr-search-clear:hover { background: #bdc1c6; color: #202124; }
 /* the drop-down: a button that shows the choice, and a list under it */
 #rr-panel .rr-dd { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding-block: 0; padding-inline: 11px 8px; border: 1px solid #dadce0; border-radius: 7px; background: #fff;
   font: 12px Arial, sans-serif; color: var(--rr-muted); transition: border-color .15s, background .15s, box-shadow .15s; }

@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Копіювати статті"
   },
+  "exportCsv": {
+    "message": "Експорт CSV"
+  },
+  "exported": {
+    "message": "Експортовано"
+  },
   "tsvYear": {
     "message": "Рік"
   },

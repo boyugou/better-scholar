@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Salin makalah"
   },
+  "exportCsv": {
+    "message": "Ekspor CSV"
+  },
+  "exported": {
+    "message": "Diekspor"
+  },
   "tsvYear": {
     "message": "Tahun"
   },

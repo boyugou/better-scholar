@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Kopírovat práce"
   },
+  "exportCsv": {
+    "message": "Exportovat CSV"
+  },
+  "exported": {
+    "message": "Exportováno"
+  },
   "tsvYear": {
     "message": "Rok"
   },

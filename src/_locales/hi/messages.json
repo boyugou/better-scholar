@@ -510,6 +510,12 @@
   "copyPapers": {
     "message": "पेपर कॉपी करें"
   },
+  "exportCsv": {
+    "message": "CSV निर्यात करें"
+  },
+  "exported": {
+    "message": "निर्यात किया गया"
+  },
   "tsvYear": {
     "message": "वर्ष"
   },

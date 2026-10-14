@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Cikkek másolása"
   },
+  "exportCsv": {
+    "message": "CSV exportálása"
+  },
+  "exported": {
+    "message": "Exportálva"
+  },
   "tsvYear": {
     "message": "Év"
   },

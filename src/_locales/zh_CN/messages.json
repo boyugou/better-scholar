@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "复制论文列表"
   },
+  "exportCsv": {
+    "message": "导出 CSV"
+  },
+  "exported": {
+    "message": "已导出"
+  },
   "tsvYear": {
     "message": "年份"
   },

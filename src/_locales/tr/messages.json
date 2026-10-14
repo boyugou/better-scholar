@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "Makaleleri kopyala"
   },
+  "exportCsv": {
+    "message": "CSV dışa aktar"
+  },
+  "exported": {
+    "message": "Dışa aktarıldı"
+  },
   "tsvYear": {
     "message": "Yıl"
   },

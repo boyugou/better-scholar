@@ -95,6 +95,16 @@
     };
   }
 
+  function downloadFile(filename, text, mimeType = "text/csv;charset=utf-8;") {
+    const blob = new Blob([text], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = h("a", { href: url, download: filename, style: "display:none" });
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   // The only places this extension points a user at: its own issue tracker, as plain links they may click.
   // Nothing is sent anywhere by the extension itself.
   const REPO = "https://github.com/boyugou/scholar-roles-and-ranks";
@@ -102,5 +112,5 @@
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }
 
-  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

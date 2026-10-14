@@ -316,6 +316,19 @@
     return metrics.toRowsTsv(header, rows);
   }
 
+  function papersCsv() {
+    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
+    const header = [t("tsvYear"), t("tsvTitle"), t("tsvAuthors"), t("tsvRole"), t("tsvVenue"), ...(ccfOn ? [t("srcCcf")] : []), ...(coreOn ? [t("srcCore")] : []), t("tsvAwards"), t("tsvCitations")];
+    const roleOf = (a) => (a.status === "found" ? copyLabels()[a.role] || a.role : a.status === "hidden" ? t("roleHidden") : "");
+    const rows = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
+      const a = r.a;
+      const awardsAndTalks = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")).join(", ");
+      return [a.year, r.raw.title, r.raw.authorsText, roleOf(a), r.raw.venueText,
+        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, r.shown];
+    });
+    return metrics.toRowsCsv(header, rows);
+  }
+
   function summaryText() {
     const m = model();
     return metrics.toText(m.summary, {
@@ -352,6 +365,13 @@
       refresh();
     },
     async onCopy(kind) {
+      if (kind === "csv") {
+        const csv = papersCsv();
+        const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
+        B.dom.downloadFile((safe || "scholar") + "-papers.csv", csv);
+        panel.flash("csv");
+        return;
+      }
       const m = model();
       const text = kind === "tsv"
         ? metrics.toTsv(m.summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })

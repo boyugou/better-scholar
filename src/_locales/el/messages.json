@@ -525,6 +525,12 @@
   "copyPapers": {
     "message": "Αντιγραφή εργασιών"
   },
+  "exportCsv": {
+    "message": "Εξαγωγή CSV"
+  },
+  "exported": {
+    "message": "Εξήχθη"
+  },
   "tsvYear": {
     "message": "Έτος"
   },

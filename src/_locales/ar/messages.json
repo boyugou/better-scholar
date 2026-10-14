@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "نسخ الأوراق"
   },
+  "exportCsv": {
+    "message": "تصدير CSV"
+  },
+  "exported": {
+    "message": "تم التصدير"
+  },
   "tsvYear": {
     "message": "السنة"
   },

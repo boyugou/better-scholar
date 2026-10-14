@@ -507,6 +507,12 @@
   "copyPapers": {
     "message": "Копировать статьи"
   },
+  "exportCsv": {
+    "message": "Экспорт CSV"
+  },
+  "exported": {
+    "message": "Экспортировано"
+  },
   "tsvYear": {
     "message": "Год"
   },
