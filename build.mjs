@@ -9,8 +9,8 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = dirname(fileURLToPath(import.meta.url));
-const SITE_URL = (process.env.SITE_URL || "https://boyugou.github.io/scholar-roles-and-ranks").replace(/\/$/, "");
-const REPO_URL = (process.env.REPO_URL || "https://github.com/boyugou/scholar-roles-and-ranks").replace(/\/$/, "");
+const SITE_URL = (process.env.SITE_URL || "https://boyugou.github.io/better-scholar").replace(/\/$/, "");
+const REPO_URL = (process.env.REPO_URL || "https://github.com/boyugou/better-scholar").replace(/\/$/, "");
 const out = join(root, "_site");
 const languages = JSON.parse(readFileSync(join(root, "src", "languages.json"), "utf8"));
 const strings = Object.fromEntries(languages.map((l) => [l.code, JSON.parse(readFileSync(join(root, "src", "i18n", l.code + ".json"), "utf8"))]));

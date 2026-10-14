@@ -32,4 +32,4 @@ Scholar Roles & Ranks works entirely in your browser.
   extension's own files); it has no network or storage access.
 - **Rank data** (CCF, CORE) and the award list are bundled in the extension and never fetched.
 
-Questions or concerns: open an issue at https://github.com/boyugou/scholar-roles-and-ranks/issues.
+Questions or concerns: open an issue at https://github.com/boyugou/better-scholar/issues.
