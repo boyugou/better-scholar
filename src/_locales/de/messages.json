@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Die Tabelle deiner Paper nach Position und Rang, mit den Kopieren-Schaltflächen und dem Hinweis zur Herkunft der Ränge."
   },
+  "optPanelCopy": {
+    "message": "Kopieren-Schaltflächen"
+  },
+  "optPanelCopyHint": {
+    "message": "Die Schaltflächen „Übersicht kopieren“, „Als Tabelle kopieren“ und „Paper kopieren“ unter der Tabelle."
+  },
   "optPanelMarks": {
     "message": "Anzahl Auszeichnungen und Vorträge"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Kompakt: nur Filter und Zitierungssummen"
   },
-  "optPanelFull": {
-    "message": "Alles"
+  "optAllOn": {
+    "message": "Alle einschalten"
+  },
+  "optAllOff": {
+    "message": "Alle ausschalten"
   },
   "optPanelFilters": {
     "message": "Filter"

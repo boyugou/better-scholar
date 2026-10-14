@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Bảng bài báo của bạn theo vị trí và hạng, kèm các nút Sao chép và ghi chú về nguồn của hạng."
   },
+  "optPanelCopy": {
+    "message": "Các nút Sao chép"
+  },
+  "optPanelCopyHint": {
+    "message": "Các nút “Sao chép tóm tắt”, “Sao chép dạng bảng” và “Sao chép bài báo” dưới bảng."
+  },
   "optPanelMarks": {
     "message": "Số giải thưởng và báo cáo"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Gọn: chỉ bộ lọc và tổng trích dẫn"
   },
-  "optPanelFull": {
-    "message": "Tất cả"
+  "optAllOn": {
+    "message": "Bật tất cả"
+  },
+  "optAllOff": {
+    "message": "Tắt tất cả"
   },
   "optPanelFilters": {
     "message": "Bộ lọc"

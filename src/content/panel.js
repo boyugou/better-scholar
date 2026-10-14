@@ -348,6 +348,7 @@
       onlyRow.hidden = !Object.values(m.prefs.roles).some(Boolean);          // with no role highlighted there is nothing to filter to
       metricsSec.hidden = !m.prefs.panel.metrics;
       summarySec.hidden = !m.prefs.panel.summary;
+      actions.hidden = !m.prefs.panel.copy;                                      // (the Copy summary / as table / papers buttons: their own switch)
       variantBox.hidden = !m.prefs.panel.names;
       footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;

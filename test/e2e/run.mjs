@@ -837,7 +837,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "marks.award", true);
     // the preview holds the real panel, and each of its parts has its own switch
     assert.equal(await opts.locator('#pv-panel #rr-panel [data-rr="matrix"] table').count(), 1);
-    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
+    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["copy", '[data-act="copy-text"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
       assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), true, `${part} shows by default`);
       await setPref(opts, "panel." + part, false);
       await opts.locator("#pv-panel " + sel).first().waitFor({ state: "hidden", timeout: 8000 }).catch(() => assert.fail(`${part} switch hides it in the preview`));   // (the preview is drawn once the setting is saved: a moment)
@@ -858,14 +858,54 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.years", true);
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, copy: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
-    await opts.click('[data-act="panel-full"]');
+    await opts.click('[data-act="all-on"][data-group="panel"]');       // (the panel card's Enable all)
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel, Object.fromEntries(prefsLib.PANEL_PARTS.map((k) => [k, true])));
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await setPref(opts, "panel.show", true);
+    // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved; the page follows
+    const groups = [
+      ["roles", ["roles.first", "roles.cofirst", "roles.second", "roles.last"]],
+      ["ranks", ["ranks.ccf", "ranks.core"]],
+      ["marks", ["marks.award", "marks.oral", "marks.spotlight", "marks.highlight"]],
+      ["hide", ["hide.cited", "hide.coauthors", "hide.access"]],
+      ["panel", ["panel.summary", "panel.copy", "panel.marks", "panel.filters", "panel.metrics", "panel.years", "panel.venues", "panel.status", "panel.names"]]
+    ];
+    const beforeBulk = Object.fromEntries(await opts.$$eval("input[data-pref]", (els) => els.map((e) => [e.dataset.pref, e.checked])));
+    for (const [group, keys] of groups) {
+      await opts.click(`[data-act="all-off"][data-group="${group}"]`);
+      for (const k of keys) assert.equal(await opts.isChecked(`input[data-pref="${k}"]`), false, `${k} is off after Disable all`);
+      await opts.click(`[data-act="all-on"][data-group="${group}"]`);
+      for (const k of keys) assert.equal(await opts.isChecked(`input[data-pref="${k}"]`), true, `${k} is on after Enable all`);
+    }
+    assert.equal(await opts.isChecked('input[data-pref="panel.show"]'), true, "the panel's own switch is not one of the groups");
+    for (const [, keys] of groups) for (const k of keys) await setPref(opts, k, beforeBulk[k]);
+    ok("'Enable all' / 'Disable all' under each group of switches set the whole group at once and save it");
+    // the copy row follows its switch in the panel and in the toolbar popup
+    const popupActions = async () => {
+      const pc = await context.newPage();
+      await pc.goto(`chrome-extension://${extId}/popup/popup.html`);
+      const tab = await pc.evaluate(async () => {
+        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+        return null;
+      });
+      await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
+      await pc.waitForSelector(".who");
+      const n = await pc.locator(".actions").count();
+      await pc.close();
+      return n;
+    };
+    await setPref(opts, "panel.copy", false);
+    await eventually(page, () => document.querySelector(".rr-copybar").hidden === true);
+    assert.equal(await popupActions(), 0, "the popup's copy buttons go with their switch");
+    await setPref(opts, "panel.copy", true);
+    await eventually(page, () => document.querySelector(".rr-copybar").hidden === false);
+    assert.equal(await popupActions(), 1, "and come back with it");
+    ok("the copy row (Copy summary, Copy as table, Copy papers) has its own switch, in the panel and in the popup");
+
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
     await opts.reload();
     await opts.waitForSelector('[data-act="clear-cache"]');

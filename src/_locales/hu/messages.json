@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "A cikkeid táblázata pozíció és rang szerint, a Másolás gombokkal és a rangok forrásáról szóló megjegyzéssel."
   },
+  "optPanelCopy": {
+    "message": "Másolás gombok"
+  },
+  "optPanelCopyHint": {
+    "message": "A táblázat alatti „Összesítés másolása”, „Másolás táblázatként” és „Cikkek másolása” gombok."
+  },
   "optPanelMarks": {
     "message": "Díjak és előadások száma"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Kompakt: csak szűrők és hivatkozásösszegek"
   },
-  "optPanelFull": {
-    "message": "Minden"
+  "optAllOn": {
+    "message": "Összes bekapcsolása"
+  },
+  "optAllOff": {
+    "message": "Összes kikapcsolása"
   },
   "optPanelFilters": {
     "message": "Szűrők"

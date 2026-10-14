@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Tabellen over dine artikler efter placering og rang, med kopiknapperne og noten om, hvor rangerne kommer fra."
   },
+  "optPanelCopy": {
+    "message": "Kopiknapper"
+  },
+  "optPanelCopyHint": {
+    "message": "Knapperne “Kopiér oversigt”, “Kopiér som tabel” og “Kopiér artikler” under tabellen."
+  },
   "optPanelMarks": {
     "message": "Antal priser og oplæg"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Kompakt: kun filtre og citationssummer"
   },
-  "optPanelFull": {
-    "message": "Det hele"
+  "optAllOn": {
+    "message": "Slå alle til"
+  },
+  "optAllOff": {
+    "message": "Slå alle fra"
   },
   "optPanelFilters": {
     "message": "Filtre"

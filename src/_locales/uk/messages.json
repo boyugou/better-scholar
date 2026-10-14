@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Таблиця ваших статей за позицією та рангом з кнопками копіювання й поясненням, звідки беруться ранги."
   },
+  "optPanelCopy": {
+    "message": "Кнопки копіювання"
+  },
+  "optPanelCopyHint": {
+    "message": "Кнопки «Копіювати зведення», «Копіювати таблицею» й «Копіювати статті» під таблицею."
+  },
   "optPanelMarks": {
     "message": "Кількість нагород і доповідей"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Компактно: лише фільтри й підсумки цитувань"
   },
-  "optPanelFull": {
-    "message": "Усе"
+  "optAllOn": {
+    "message": "Увімкнути всі"
+  },
+  "optAllOff": {
+    "message": "Вимкнути всі"
   },
   "optPanelFilters": {
     "message": "Фільтри"

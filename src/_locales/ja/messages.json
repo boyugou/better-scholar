@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "著者順とランク別の論文数の表。コピーボタンと、ランクの出典の注記を含みます。"
   },
+  "optPanelCopy": {
+    "message": "コピーボタン"
+  },
+  "optPanelCopyHint": {
+    "message": "表の下の「集計をコピー」、「表としてコピー」、「論文をコピー」ボタン。"
+  },
   "optPanelMarks": {
     "message": "受賞・発表の件数"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "コンパクト：絞り込みと被引用数のみ"
   },
-  "optPanelFull": {
-    "message": "すべて"
+  "optAllOn": {
+    "message": "すべてオンにする"
+  },
+  "optAllOff": {
+    "message": "すべてオフにする"
   },
   "optPanelFilters": {
     "message": "絞り込み"

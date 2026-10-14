@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "依位次與等級統計您論文的表格，含複製按鈕及等級來源說明。"
   },
+  "optPanelCopy": {
+    "message": "複製按鈕"
+  },
+  "optPanelCopyHint": {
+    "message": "表格下方的「複製摘要」、「複製為表格」和「複製論文」按鈕。"
+  },
   "optPanelMarks": {
     "message": "獲獎與報告統計"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "精簡：僅篩選與引用統計"
   },
-  "optPanelFull": {
-    "message": "完整"
+  "optAllOn": {
+    "message": "全部開啟"
+  },
+  "optAllOff": {
+    "message": "全部關閉"
   },
   "optPanelFilters": {
     "message": "篩選"

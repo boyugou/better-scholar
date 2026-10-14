@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "The table of your papers by position and rank, with its Copy buttons and the note on where the ranks come from."
   },
+  "optPanelCopy": {
+    "message": "Copy buttons"
+  },
+  "optPanelCopyHint": {
+    "message": "The Copy summary, Copy as table and Copy papers buttons under the table."
+  },
   "optPanelMarks": {
     "message": "Awards and talks counts"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Compact: filters and citation totals only"
   },
-  "optPanelFull": {
-    "message": "Everything"
+  "optAllOn": {
+    "message": "Enable all"
+  },
+  "optAllOff": {
+    "message": "Disable all"
   },
   "optPanelFilters": {
     "message": "Filters"

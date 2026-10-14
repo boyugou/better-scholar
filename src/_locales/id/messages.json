@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Tabel makalah Anda menurut posisi dan peringkat, dengan tombol Salin dan catatan asal peringkat."
   },
+  "optPanelCopy": {
+    "message": "Tombol Salin"
+  },
+  "optPanelCopyHint": {
+    "message": "Tombol “Salin ringkasan”, “Salin sebagai tabel”, dan “Salin makalah” di bawah tabel."
+  },
   "optPanelMarks": {
     "message": "Jumlah penghargaan dan presentasi"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Ringkas: hanya filter dan total sitasi"
   },
-  "optPanelFull": {
-    "message": "Semuanya"
+  "optAllOn": {
+    "message": "Aktifkan semua"
+  },
+  "optAllOff": {
+    "message": "Nonaktifkan semua"
   },
   "optPanelFilters": {
     "message": "Filter"

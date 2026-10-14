@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Le tableau de vos articles par position et par rang, avec ses boutons Copier et la note sur l’origine des rangs."
   },
+  "optPanelCopy": {
+    "message": "Boutons Copier"
+  },
+  "optPanelCopyHint": {
+    "message": "Les boutons « Copier le récapitulatif », « Copier sous forme de tableau » et « Copier les articles » sous le tableau."
+  },
   "optPanelMarks": {
     "message": "Décompte des prix et présentations"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Compact : filtres et totaux de citations seulement"
   },
-  "optPanelFull": {
-    "message": "Tout"
+  "optAllOn": {
+    "message": "Tout activer"
+  },
+  "optAllOff": {
+    "message": "Tout désactiver"
   },
   "optPanelFilters": {
     "message": "Filtres"

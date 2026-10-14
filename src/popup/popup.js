@@ -82,7 +82,7 @@
         parts.summary ? seg : null, parts.summary ? table : null,
         parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
-        parts.summary ? h("div", { class: "actions" },
+        parts.summary && parts.copy !== false ? h("div", { class: "actions" },
           h("button", { class: "btn", type: "button", onClick: copy("text") }, t("copySummary")),
           h("button", { class: "btn", type: "button", onClick: copy("tsv") }, t("copyTable"))) : null,
         parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null

@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "按作者位置和排名统计论文的表格，连同“复制”按钮和排名来源说明。"
   },
+  "optPanelCopy": {
+    "message": "复制按钮"
+  },
+  "optPanelCopyHint": {
+    "message": "表格下方的“复制摘要”、“复制为表格”和“复制论文列表”按钮。"
+  },
   "optPanelMarks": {
     "message": "奖项与报告统计"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "精简：只留筛选和引用统计"
   },
-  "optPanelFull": {
-    "message": "全部显示"
+  "optAllOn": {
+    "message": "全部开启"
+  },
+  "optAllOff": {
+    "message": "全部关闭"
   },
   "optPanelFilters": {
     "message": "筛选"

@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "ตารางงานของคุณตามตำแหน่งและอันดับ พร้อมปุ่มคัดลอกและหมายเหตุแหล่งที่มาของอันดับ"
   },
+  "optPanelCopy": {
+    "message": "ปุ่มคัดลอก"
+  },
+  "optPanelCopyHint": {
+    "message": "ปุ่ม “คัดลอกสรุป” “คัดลอกเป็นตาราง” และ “คัดลอกงานวิจัย” ใต้ตาราง"
+  },
   "optPanelMarks": {
     "message": "จำนวนรางวัลและการนำเสนอ"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "กะทัดรัด: เฉพาะตัวกรองและยอดอ้างอิง"
   },
-  "optPanelFull": {
-    "message": "ทั้งหมด"
+  "optAllOn": {
+    "message": "เปิดทั้งหมด"
+  },
+  "optAllOff": {
+    "message": "ปิดทั้งหมด"
   },
   "optPanelFilters": {
     "message": "ตัวกรอง"

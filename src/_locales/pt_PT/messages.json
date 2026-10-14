@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "A tabela dos seus artigos por posição e ranking, com os botões Copiar e a nota sobre a origem dos rankings."
   },
+  "optPanelCopy": {
+    "message": "Botões de copiar"
+  },
+  "optPanelCopyHint": {
+    "message": "Os botões “Copiar resumo”, “Copiar como tabela” e “Copiar artigos” abaixo da tabela."
+  },
   "optPanelMarks": {
     "message": "Contagem de prémios e apresentações"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Compacto: só filtros e totais de citações"
   },
-  "optPanelFull": {
-    "message": "Tudo"
+  "optAllOn": {
+    "message": "Ativar tudo"
+  },
+  "optAllOff": {
+    "message": "Desativar tudo"
   },
   "optPanelFilters": {
     "message": "Filtros"

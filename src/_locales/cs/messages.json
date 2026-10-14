@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Tabulka vašich prací podle pozice a ranku s tlačítky kopírování a poznámkou o původu ranků."
   },
+  "optPanelCopy": {
+    "message": "Tlačítka kopírování"
+  },
+  "optPanelCopyHint": {
+    "message": "Tlačítka „Kopírovat přehled“, „Kopírovat jako tabulku“ a „Kopírovat práce“ pod tabulkou."
+  },
   "optPanelMarks": {
     "message": "Počty ocenění a přednesů"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Kompaktně: jen filtry a součty citací"
   },
-  "optPanelFull": {
-    "message": "Vše"
+  "optAllOn": {
+    "message": "Zapnout vše"
+  },
+  "optAllOff": {
+    "message": "Vypnout vše"
   },
   "optPanelFilters": {
     "message": "Filtry"

@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Taulukko artikkeleistasi paikan ja luokan mukaan, kopiointipainikkeineen ja huomautuksineen luokkien lähteestä."
   },
+  "optPanelCopy": {
+    "message": "Kopiointipainikkeet"
+  },
+  "optPanelCopyHint": {
+    "message": "Taulukon alla olevat painikkeet “Kopioi yhteenveto”, “Kopioi taulukkona” ja “Kopioi artikkelit”."
+  },
   "optPanelMarks": {
     "message": "Palkintojen ja esitysten määrät"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Tiivis: vain suodattimet ja viittausten summat"
   },
-  "optPanelFull": {
-    "message": "Kaikki"
+  "optAllOn": {
+    "message": "Ota kaikki käyttöön"
+  },
+  "optAllOff": {
+    "message": "Poista kaikki käytöstä"
   },
   "optPanelFilters": {
     "message": "Suodattimet"

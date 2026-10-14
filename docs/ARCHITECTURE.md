@@ -172,7 +172,7 @@ started, and switching it on starts one on the open profile. `loadAll` returns w
 
 ## The panel
 
-Every part of the panel has its own switch in `prefs.panel` (`show`, then `summary` — the role × rank table with its Copy buttons and data note —, `marks`, `filters`, `metrics`, `status` — loaded papers and unranked venues —, `names`).
+Every part of the panel has its own switch in `prefs.panel` (`show`, then `summary` — the role × rank table and its data note —, `copy` — the Copy summary / as table / papers row, shown with the table in the panel and the popup —, `marks`, `filters`, `metrics`, `status` — loaded papers and unranked venues —, `names`).
 `panel.update()` hides a section whose switch is off and lets a column with nothing in it give its width to the other (`rr-onecol`); the layout-changed warning is never hidden. The toolbar popup obeys `summary` and
 `marks` too (`main.js` sends them with its reply). A part added later needs: a `PANEL_PARTS` entry (default on), a settings row in both locales, a preview effect (the preview runs the same panel) and an end-to-end check.
 The controls are components of the panel's own, not the system's: the year range is `dropdown()` (button, fixed-position list, arrow keys, Escape, click outside), the one checkbox is styled as a switch (`role="switch"`).

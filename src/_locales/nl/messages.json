@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "De tabel van je papers per positie en rang, met de kopieerknoppen en de toelichting over de herkomst van de rangen."
   },
+  "optPanelCopy": {
+    "message": "Kopieerknoppen"
+  },
+  "optPanelCopyHint": {
+    "message": "De knoppen “Overzicht kopiëren”, “Kopiëren als tabel” en “Papers kopiëren” onder de tabel."
+  },
   "optPanelMarks": {
     "message": "Aantallen prijzen en talks"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Compact: alleen filters en citatietotalen"
   },
-  "optPanelFull": {
-    "message": "Alles"
+  "optAllOn": {
+    "message": "Alles aanzetten"
+  },
+  "optAllOff": {
+    "message": "Alles uitzetten"
   },
   "optPanelFilters": {
     "message": "Filters"

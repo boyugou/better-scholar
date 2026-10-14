@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "स्थान और रैंक के अनुसार आपके पेपरों की तालिका, कॉपी बटनों और रैंक के स्रोत के नोट के साथ।"
   },
+  "optPanelCopy": {
+    "message": "कॉपी बटन"
+  },
+  "optPanelCopyHint": {
+    "message": "तालिका के नीचे के “सारांश कॉपी करें”, “तालिका के रूप में कॉपी करें” और “पेपर कॉपी करें” बटन।"
+  },
   "optPanelMarks": {
     "message": "पुरस्कार और टॉक की गिनती"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "संक्षिप्त: केवल फ़िल्टर और उद्धरण कुल"
   },
-  "optPanelFull": {
-    "message": "सब कुछ"
+  "optAllOn": {
+    "message": "सभी चालू करें"
+  },
+  "optAllOff": {
+    "message": "सभी बंद करें"
   },
   "optPanelFilters": {
     "message": "फ़िल्टर"

@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Tabela Twoich prac według pozycji i rankingu, z przyciskami kopiowania i uwagą o pochodzeniu rankingów."
   },
+  "optPanelCopy": {
+    "message": "Przyciski kopiowania"
+  },
+  "optPanelCopyHint": {
+    "message": "Przyciski „Kopiuj zestawienie”, „Kopiuj jako tabelę” i „Kopiuj prace” pod tabelą."
+  },
   "optPanelMarks": {
     "message": "Liczba nagród i wystąpień"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Zwięźle: tylko filtry i sumy cytowań"
   },
-  "optPanelFull": {
-    "message": "Wszystko"
+  "optAllOn": {
+    "message": "Włącz wszystko"
+  },
+  "optAllOff": {
+    "message": "Wyłącz wszystko"
   },
   "optPanelFilters": {
     "message": "Filtry"

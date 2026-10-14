@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.23.0 — 2026-10-13
+
+From the owner's suggestions while the work was going on:
+
+- **The copy row has its own switch.** *Copy summary*, *Copy as table* and *Copy papers* under the table can be hidden (*Copy buttons* in the panel's parts), in the panel and in the toolbar popup; the table and its note stay.
+- **"Enable all" / "Disable all" under each group of switches**: the author positions, the rank lists, the awards and talks, the Scholar blocks to hide, and the panel's parts (the panel itself stays as it is). Each group changes at once and is saved. The panel card's *Everything* is now its *Enable all*.
+
 ## 2.22.10 — 2026-10-13
 
 - **A year far in the past no longer costs what it spans.** The year chart expanded every year between a profile's oldest and newest paper before it cut the window, so a page value such as -1e9 (Scholar never prints one, but a page's text is not trusted) would have looped a billion times. The window is now found first and only it is expanded: the same bars and the same "older" count for every real profile (the year chart's tests are unchanged), and a far-past year costs a millisecond.

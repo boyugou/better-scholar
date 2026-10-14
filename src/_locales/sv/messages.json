@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Tabellen över dina artiklar efter plats och rank, med kopieringsknapparna och noten om var rankerna kommer ifrån."
   },
+  "optPanelCopy": {
+    "message": "Kopieringsknappar"
+  },
+  "optPanelCopyHint": {
+    "message": "Knapparna ”Kopiera sammanfattning”, ”Kopiera som tabell” och ”Kopiera artiklar” under tabellen."
+  },
   "optPanelMarks": {
     "message": "Antal priser och presentationer"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Kompakt: bara filter och citeringssummor"
   },
-  "optPanelFull": {
-    "message": "Allt"
+  "optAllOn": {
+    "message": "Slå på alla"
+  },
+  "optAllOff": {
+    "message": "Stäng av alla"
   },
   "optPanelFilters": {
     "message": "Filter"

@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "Makalelerinizin sıraya ve sıralamaya göre tablosu; Kopyala düğmeleri ve sıralamaların kaynağına dair not ile birlikte."
   },
+  "optPanelCopy": {
+    "message": "Kopyala düğmeleri"
+  },
+  "optPanelCopyHint": {
+    "message": "Tablonun altındaki “Özeti kopyala”, “Tablo olarak kopyala” ve “Makaleleri kopyala” düğmeleri."
+  },
   "optPanelMarks": {
     "message": "Ödül ve sunum sayıları"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "Kompakt: yalnızca filtreler ve atıf toplamları"
   },
-  "optPanelFull": {
-    "message": "Her şey"
+  "optAllOn": {
+    "message": "Tümünü aç"
+  },
+  "optAllOff": {
+    "message": "Tümünü kapat"
   },
   "optPanelFilters": {
     "message": "Filtreler"

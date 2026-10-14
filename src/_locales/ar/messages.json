@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "جدول أبحاثك حسب الموضع والتصنيف، مع أزرار النسخ وملاحظة مصدر التصنيفات."
   },
+  "optPanelCopy": {
+    "message": "أزرار النسخ"
+  },
+  "optPanelCopyHint": {
+    "message": "أزرار «نسخ الملخص» و«نسخ كجدول» و«نسخ الأوراق» أسفل الجدول."
+  },
   "optPanelMarks": {
     "message": "أعداد الجوائز والعروض"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "مضغوط: المرشّحات ومجاميع الاستشهادات فقط"
   },
-  "optPanelFull": {
-    "message": "كل شيء"
+  "optAllOn": {
+    "message": "تفعيل الكل"
+  },
+  "optAllOff": {
+    "message": "إيقاف الكل"
   },
   "optPanelFilters": {
     "message": "المرشّحات"

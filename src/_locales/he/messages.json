@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "טבלת המאמרים שלכם לפי מיקום ודירוג, עם לחצני ההעתקה והערה על מקור הדירוגים."
   },
+  "optPanelCopy": {
+    "message": "לחצני העתקה"
+  },
+  "optPanelCopyHint": {
+    "message": "לחצני ״העתקת הסיכום״, ״העתקה כטבלה״ ו״העתקת מאמרים״ שמתחת לטבלה."
+  },
   "optPanelMarks": {
     "message": "מספר פרסים והרצאות"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "קומפקטי: מסננים וסכומי ציטוטים בלבד"
   },
-  "optPanelFull": {
-    "message": "הכול"
+  "optAllOn": {
+    "message": "הפעלת הכול"
+  },
+  "optAllOff": {
+    "message": "כיבוי הכול"
   },
   "optPanelFilters": {
     "message": "מסננים"

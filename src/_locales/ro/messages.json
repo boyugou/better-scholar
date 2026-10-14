@@ -407,6 +407,12 @@
   "optPanelSummaryHint": {
     "message": "Tabelul lucrărilor tale după poziție și rang, cu butoanele de copiere și nota despre sursa rangurilor."
   },
+  "optPanelCopy": {
+    "message": "Butoane de copiere"
+  },
+  "optPanelCopyHint": {
+    "message": "Butoanele „Copiază rezumatul”, „Copiază ca tabel” și „Copiază lucrările” de sub tabel."
+  },
   "optPanelMarks": {
     "message": "Numărul de premii și prezentări"
   },
@@ -428,8 +434,11 @@
   "optPanelCompact": {
     "message": "Compact: doar filtre și totaluri de citări"
   },
-  "optPanelFull": {
-    "message": "Tot"
+  "optAllOn": {
+    "message": "Activează tot"
+  },
+  "optAllOff": {
+    "message": "Dezactivează tot"
   },
   "optPanelFilters": {
     "message": "Filtre"

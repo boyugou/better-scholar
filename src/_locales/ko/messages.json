@@ -422,6 +422,12 @@
   "optPanelSummaryHint": {
     "message": "저자 순서와 등급별 논문 표로, 복사 버튼과 등급 출처 안내가 함께 있습니다."
   },
+  "optPanelCopy": {
+    "message": "복사 버튼"
+  },
+  "optPanelCopyHint": {
+    "message": "표 아래의 “요약 복사”, “표로 복사”, “논문 복사” 버튼."
+  },
   "optPanelMarks": {
     "message": "수상·발표 개수"
   },
@@ -443,8 +449,11 @@
   "optPanelCompact": {
     "message": "간단히: 필터와 인용 합계만"
   },
-  "optPanelFull": {
-    "message": "모두"
+  "optAllOn": {
+    "message": "모두 켜기"
+  },
+  "optAllOff": {
+    "message": "모두 끄기"
   },
   "optPanelFilters": {
     "message": "필터"

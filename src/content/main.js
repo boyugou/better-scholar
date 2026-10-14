@@ -493,7 +493,7 @@
           ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
           sources: B.prefs.sources(prefs), source: currentSource(), noRanks: noRanks(list),
           summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-          marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
+          marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, copy: prefs.panel.copy, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
         });
       }
       return false;
