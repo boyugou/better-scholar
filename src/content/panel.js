@@ -98,11 +98,18 @@
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" }, coverTop, coverList);
 
     // filters (built once, synced on update)
+    const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
+    queryInput.addEventListener("input", () => cb.onQuery(queryInput.value));
+    queryInput.addEventListener("search", () => cb.onQuery(queryInput.value));
+    queryInput.addEventListener("keydown", (e) => { if (e.key === "Escape") { queryInput.value = ""; cb.onQuery(""); queryInput.blur(); } });
+    const searchRow = h("div", { class: "rr-search" }, queryInput);
+
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
     const yearStart = dropdown("year-start", t("yearStart"), () => cb.onYear(yearStart.value, yearEnd.value));
     const yearEnd = dropdown("year-end", t("yearEnd"), () => cb.onYear(yearStart.value, yearEnd.value));
     const onlyRow = h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")));
     const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters" },
+      searchRow,
       onlyRow,
       h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list));
 
@@ -147,6 +154,7 @@
         if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
       }
+      if (m.filters.query) parts.push(`"${m.filters.query}"`);
       return parts;
     }
 
@@ -275,6 +283,7 @@
     }
 
     function syncFilters(m) {
+      if (queryInput.value.trim().toLowerCase() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
       onlyCb.checked = !!m.filters.onlyHighlighted;
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
       yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");
@@ -343,10 +352,16 @@
       const list = m.topVenues || [];
       venuesSec.hidden = !m.prefs.panel.venues || !list.length;
       if (venuesSec.hidden) return;
-      venuesSec.replaceChildren(
+      const rows = list.map((v) => h("button", { class: "rr-markrow", type: "button", "data-venue": v.key, "aria-pressed": String(m.venueKey === v.key), onClick: () => cb.onVenue(v.key) },
+        h("span", { class: "rr-lab" }, v.key), h("b", {}, String(v.count))));
+      const moreRow = m.venuesHasMore
+        ? h("div", { class: "rr-venues-more" }, h("button", { class: "rr-link", type: "button", "data-act": "toggle-venues", onClick: () => cb.onToggleVenues() }, t(m.venuesExpanded ? "venuesShowFewer" : "venuesShowMore")))
+        : null;
+      venuesSec.replaceChildren(...[
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("venuesTitle"))),
-        h("div", { class: "rr-markrows" }, ...list.map((v) => h("button", { class: "rr-markrow", type: "button", "data-venue": v.key, "aria-pressed": String(m.venueKey === v.key), onClick: () => cb.onVenue(v.key) },
-          h("span", { class: "rr-lab" }, v.key), h("b", {}, String(v.count))))));
+        h("div", { class: "rr-markrows" }, ...rows),
+        moreRow
+      ].filter(Boolean));
     }
 
     function renderVariants(m) {

@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Laporkan masalah"
+  },
+  "filterPlaceholder": {
+    "message": "Filter berdasarkan judul atau penulis…"
+  },
+  "venuesShowMore": {
+    "message": "Tampilkan lebih banyak"
+  },
+  "venuesShowFewer": {
+    "message": "Tampilkan lebih sedikit"
   }
 }

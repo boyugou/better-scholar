@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "Rapportér et problem"
+  },
+  "filterPlaceholder": {
+    "message": "Filtrer efter titel eller forfatter…"
+  },
+  "venuesShowMore": {
+    "message": "Vis mere"
+  },
+  "venuesShowFewer": {
+    "message": "Vis færre"
   }
 }

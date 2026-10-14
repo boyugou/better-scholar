@@ -31,7 +31,8 @@
     selection: null,                            // matrix cell / row / column filter
     venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
-    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
+    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" },
+    venuesExpanded: false,
     loadingAll: false,
     complete: false,                            // the whole list is here (see listComplete)
     loadMessage: "",                           // why loading the rest of the list stopped, when it was not asked to
@@ -190,6 +191,10 @@
         if (f.yearStart != null && a.year < f.yearStart) hide = true;
         if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
       }
+      if (f.query) {
+        const q = f.query, title = (row.raw.title || "").toLowerCase(), authors = (row.raw.authorsText || "").toLowerCase();
+        if (!title.includes(q) && !authors.includes(q)) hide = true;
+      }
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
       if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey)) hide = true;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
@@ -221,8 +226,8 @@
   // Most rows without an author line means Scholar's markup moved under us.
   const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
 
-  // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range)?
-  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null);
+  // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range, or a search query)?
+  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query);
 
   // The numbers under the filters follow the filters: the year range, an awards row, a matrix cell and a venue narrow what is counted. The table
   // itself stays whole (it is where a cell is chosen), and so do the year bars (the range is chosen against them); the venue list is not narrowed by its own choice.
@@ -234,6 +239,10 @@
         if (f.yearStart != null && a.year < f.yearStart) return false;
         if (f.yearEnd != null && a.year > f.yearEnd) return false;
       }
+      if (f.query) {
+        const q = f.query, title = (r.raw.title || "").toLowerCase(), authors = (r.raw.authorsText || "").toLowerCase();
+        if (!title.includes(q) && !authors.includes(q)) return false;
+      }
       if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
       if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
       if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
@@ -244,7 +253,8 @@
   // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
   // filter can be undone) even when the other filters leave it out of the first few
   function venueList(source) {
-    const list = metrics.topVenues(scoped(source, { skipVenue: true }), 6, prefs.ranks);
+    const max = state.venuesExpanded ? 24 : 6;
+    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, prefs.ranks);
     if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
       const mine = metrics.topVenues(scoped(source), 99, prefs.ranks).find((v) => v.key === state.venueKey);
       list.push({ key: state.venueKey, count: mine ? mine.count : 0 });
@@ -258,6 +268,7 @@
     const bare = noRanks(list);
     const yearBars = metrics.yearBars(list);
     const summary = metrics.summarize(list, bare ? null : source);
+    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, prefs.ranks);
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
       selection: state.selection, filters: state.filters,
@@ -265,7 +276,9 @@
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
-      byYear: yearBars.bars, byYearOlder: yearBars.older, topVenues: venueList(source), venueKey: state.venueKey,
+      byYear: yearBars.bars, byYearOlder: yearBars.older,
+      topVenues: venueList(source), venueKey: state.venueKey,
+      venuesHasMore: allVenues.length > 6, venuesExpanded: state.venuesExpanded,
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
@@ -325,12 +338,14 @@
     // every filter off at once (the panel's bar says how many papers are shown and offers this)
     onClearFilters() {
       state.selection = null; state.markGroup = null; state.venueKey = null;
-      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
+      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
       refresh();
     },
     onVenue(k) { state.venueKey = state.venueKey === k ? null : k; refresh(); },
+    onToggleVenues() { state.venuesExpanded = !state.venuesExpanded; refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; refresh(); },
+    onQuery(q) { state.filters.query = (q || "").trim().toLowerCase(); refresh(); },
     onYear(start, end) {
       state.filters.yearStart = start === "" ? null : parseInt(start, 10);
       state.filters.yearEnd = end === "" ? null : parseInt(end, 10);
@@ -451,7 +466,7 @@
     if (!prefs.panel.summary) state.selection = null;                                   // (a matrix cell, an awards row: their controls are gone, so they must not keep hiding rows)
     if (!prefs.panel.marks) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
-    if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null });
+    if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
     if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now

@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Повідомити про проблему"
+  },
+  "filterPlaceholder": {
+    "message": "Фільтр за назвою або автором…"
+  },
+  "venuesShowMore": {
+    "message": "Показати більше"
+  },
+  "venuesShowFewer": {
+    "message": "Згорнути"
   }
 }

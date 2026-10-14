@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Báo cáo sự cố"
+  },
+  "filterPlaceholder": {
+    "message": "Lọc theo tiêu đề hoặc tác giả…"
+  },
+  "venuesShowMore": {
+    "message": "Xem thêm"
+  },
+  "venuesShowFewer": {
+    "message": "Thu gọn"
   }
 }

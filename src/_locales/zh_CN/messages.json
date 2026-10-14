@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "反馈问题"
+  },
+  "filterPlaceholder": {
+    "message": "按标题或作者过滤…"
+  },
+  "venuesShowMore": {
+    "message": "显示更多"
+  },
+  "venuesShowFewer": {
+    "message": "收起"
   }
 }

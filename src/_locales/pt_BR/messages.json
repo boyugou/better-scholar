@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "Relatar um problema"
+  },
+  "filterPlaceholder": {
+    "message": "Filtrar por título ou autor…"
+  },
+  "venuesShowMore": {
+    "message": "Mostrar mais"
+  },
+  "venuesShowFewer": {
+    "message": "Mostrar menos"
   }
 }

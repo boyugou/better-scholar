@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "Sorun bildir"
+  },
+  "filterPlaceholder": {
+    "message": "Başlığa veya yazara göre filtrele…"
+  },
+  "venuesShowMore": {
+    "message": "Daha fazla göster"
+  },
+  "venuesShowFewer": {
+    "message": "Daha az göster"
   }
 }

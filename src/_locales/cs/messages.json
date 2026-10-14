@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Nahlásit problém"
+  },
+  "filterPlaceholder": {
+    "message": "Filtrovat podle názvu nebo autora…"
+  },
+  "venuesShowMore": {
+    "message": "Zobrazit více"
+  },
+  "venuesShowFewer": {
+    "message": "Zobrazit méně"
   }
 }

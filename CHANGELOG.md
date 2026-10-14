@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.25.0 — 2026-10-14
+
+- **In-page quick search filter**:
+  - Adds an instant search input (`type="search"`) to the panel's filter section.
+  - Matches dynamically against paper titles and author strings across all loaded papers.
+  - Shows active query in the filter bar (e.g. `"query"`); pressing `Escape` or clearing the input immediately resets visible papers.
+  - Full keyboard, screen reader (`aria-label`), and localized placeholder across all 30 languages.
+- **Expandable top venues list**:
+  - The top venues section now shows up to 24 venues with an interactive "Show more" / "Show fewer" toggle when a profile has more than 6 ranked venues.
+  - Preserves compact default view (top 6 venues) while offering quick exploration of broader publication venues.
+  - Localized across all 30 languages.
+
 ## 2.24.0 — 2026-10-14
 
 - **Interactive year chart (click to filter by year)**:

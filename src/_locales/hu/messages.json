@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Probléma jelentése"
+  },
+  "filterPlaceholder": {
+    "message": "Szűrés cím vagy szerző szerint…"
+  },
+  "venuesShowMore": {
+    "message": "Több megjelenítése"
+  },
+  "venuesShowFewer": {
+    "message": "Kevesebb"
   }
 }

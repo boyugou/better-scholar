@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "回報問題"
+  },
+  "filterPlaceholder": {
+    "message": "依標題或作者篩選…"
+  },
+  "venuesShowMore": {
+    "message": "顯示更多"
+  },
+  "venuesShowFewer": {
+    "message": "收起"
   }
 }

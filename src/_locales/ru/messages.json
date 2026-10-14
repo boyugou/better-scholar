@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Сообщить о проблеме"
+  },
+  "filterPlaceholder": {
+    "message": "Фильтр по названию или автору…"
+  },
+  "venuesShowMore": {
+    "message": "Показать ещё"
+  },
+  "venuesShowFewer": {
+    "message": "Свернуть"
   }
 }

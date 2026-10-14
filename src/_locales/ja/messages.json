@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "問題を報告"
+  },
+  "filterPlaceholder": {
+    "message": "タイトルまたは著者で絞り込み…"
+  },
+  "venuesShowMore": {
+    "message": "もっと見る"
+  },
+  "venuesShowFewer": {
+    "message": "折りたたむ"
   }
 }

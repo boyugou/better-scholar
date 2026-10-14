@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "รายงานปัญหา"
+  },
+  "filterPlaceholder": {
+    "message": "กรองตามชื่อบทความหรือผู้แต่ง…"
+  },
+  "venuesShowMore": {
+    "message": "แสดงเพิ่มเติม"
+  },
+  "venuesShowFewer": {
+    "message": "แสดงน้อยลง"
   }
 }

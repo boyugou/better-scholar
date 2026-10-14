@@ -323,6 +323,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => document.querySelectorAll('[data-rr="venues"] [data-venue]').length > 1);
     const venueRows = await page.locator('[data-rr="venues"] [data-venue]').evaluateAll((els) => els.map((e) => [e.dataset.venue, parseInt(e.querySelector("b").textContent, 10)]));
     assert.ok(venueRows.every((v, i) => i === 0 || venueRows[i - 1][1] >= v[1]), "most papers first");
+    const toggleVenuesBtn = page.locator('#rr-panel button[data-act="toggle-venues"]');
+    if (await toggleVenuesBtn.count()) {
+      const initialVenueCount = await page.locator('[data-rr="venues"] [data-venue]').count();
+      assert.equal(initialVenueCount, 6, "initially capped at top 6 venues");
+      await toggleVenuesBtn.click();
+      assert.ok((await page.locator('[data-rr="venues"] [data-venue]').count()) > 6, "expanding venues reveals more than 6");
+      await toggleVenuesBtn.click();
+      assert.equal(await page.locator('[data-rr="venues"] [data-venue]').count(), initialVenueCount, "collapsing venues restores top 6");
+    }
     const wantVenue = all.filter((p) => p.highlighted && ((p.venue.ccf && (p.venue.ccf.abbr || p.venue.ccf.name)) || (p.venue.core && (p.venue.core.abbr || p.venue.core.name))) === venueRows[0][0]).length;
     assert.equal(venueRows[0][1], wantVenue, "the count matches the library");
     await page.bringToFront();
@@ -522,7 +531,19 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
       assert.equal(await visibleRows(page), all.length);
     }
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard");
+    // quick search query filter: typing filters by title and author, Esc clears
+    const queryInput = page.locator('#rr-panel input[data-act="filter-query"]');
+    assert.equal(await queryInput.count(), 1, "search query input exists in filters section");
+    const testWord = profile.rows[0].title.split(/\s+/).find((w) => w.length >= 4 && /^[a-zA-Z]+$/.test(w)) || "paper";
+    await queryInput.fill(testWord);
+    const expectedQueryCount = profile.rows.filter((r) => (r.title || "").toLowerCase().includes(testWord.toLowerCase()) || (r.authors || "").toLowerCase().includes(testWord.toLowerCase())).length;
+    assert.equal(await visibleRows(page), expectedQueryCount);
+    assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(testWord.toLowerCase()));
+    // Pressing Escape clears the search input and resets visible rows
+    await queryInput.press("Escape");
+    assert.equal(await queryInput.inputValue(), "");
+    assert.equal(await visibleRows(page), all.length);
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");

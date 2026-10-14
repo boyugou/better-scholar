@@ -761,5 +761,14 @@
   },
   "optLinkIssues": {
     "message": "Ilmoita ongelmasta"
+  },
+  "filterPlaceholder": {
+    "message": "Suodata otsikon tai kirjoittajan mukaan…"
+  },
+  "venuesShowMore": {
+    "message": "Näytä lisää"
+  },
+  "venuesShowFewer": {
+    "message": "Näytä vähemmän"
   }
 }

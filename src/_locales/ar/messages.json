@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "الإبلاغ عن مشكلة"
+  },
+  "filterPlaceholder": {
+    "message": "تصفية حسب العنوان أو المؤلف…"
+  },
+  "venuesShowMore": {
+    "message": "عرض المزيد"
+  },
+  "venuesShowFewer": {
+    "message": "عرض أقل"
   }
 }

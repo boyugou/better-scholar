@@ -746,5 +746,14 @@
   },
   "optLinkIssues": {
     "message": "समस्या की रिपोर्ट करें"
+  },
+  "filterPlaceholder": {
+    "message": "शीर्षक या लेखक के अनुसार फ़िल्टर करें…"
+  },
+  "venuesShowMore": {
+    "message": "और दिखाएं"
+  },
+  "venuesShowFewer": {
+    "message": "कम दिखाएं"
   }
 }

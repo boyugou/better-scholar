@@ -740,5 +740,14 @@
   },
   "optLinkIssues": {
     "message": "Raportează o problemă"
+  },
+  "filterPlaceholder": {
+    "message": "Filtrează după titlu sau autor…"
+  },
+  "venuesShowMore": {
+    "message": "Afișează mai multe"
+  },
+  "venuesShowFewer": {
+    "message": "Afișează mai puține"
   }
 }
