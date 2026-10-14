@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Vai trò & Xếp hạng"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Tô nổi bài báo tác giả đầu, đồng tác giả đầu và cuối trên Google Scholar, kèm hạng CCF / CORE của venue và bảng vai trò × hạng."
+    "message": "Nâng cao Google Scholar: vai trò tác giả, xếp hạng CCF & CORE, giải thưởng hội nghị, biểu đồ theo năm và tìm kiếm tức thì."
   },
   "extShortName": {
-    "message": "Vai trò·Hạng"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Bài báo theo vai trò và hạng"

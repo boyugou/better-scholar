@@ -1,9 +1,6 @@
-# Scholar Roles & Ranks
+# Better Scholar
 
-**See who led each paper — and how its venue ranks.** A Chrome extension that
-reads a [Google Scholar](https://scholar.google.com) profile and shows, for every
-paper, the author's role (first / second / last…) and the venue's **CCF** and
-**CORE** rank — then adds them up: *"first-author CCF-A papers: 4"*.
+**Supercharge Google Scholar profiles.** A Chrome extension that reads a [Google Scholar](https://scholar.google.com) profile and shows, for every paper, the author's role (first / co-first / second / last…), CCF and CORE venue ranks, conference awards, year distribution charts, and instant in-page search — then adds them up: *"first-author CCF-A papers: 4"*.
 
 [![test](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/scholar-roles-and-ranks/actions/workflows/test.yml)
 

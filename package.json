@@ -1,7 +1,7 @@
 {
-  "name": "scholar-roles-and-ranks",
+  "name": "better-scholar",
   "private": true,
-  "description": "Chrome extension: authorship roles and CCF/CORE venue ranks on Google Scholar. No dependencies; this file only wires up the test runner.",
+  "description": "Better Scholar — Supercharge Google Scholar: author roles, CCF & CORE ranks, awards, and instant search. Zero dependencies.",
   "scripts": {
     "test": "node --test test/*.test.js",
     "test:update": "UPDATE_SNAPSHOTS=1 node --test test/*.test.js",

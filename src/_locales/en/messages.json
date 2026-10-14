@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roles & Ranks"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Highlight first-, co-first- and last-author papers on Google Scholar, with each venue's CCF / CORE rank and a role × rank summary."
+    "message": "Enhance Google Scholar: authorship roles, CCF & CORE ranks, conference awards, year distribution charts, and instant search."
   },
   "extShortName": {
-    "message": "Roles & Ranks"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Papers by role and rank"

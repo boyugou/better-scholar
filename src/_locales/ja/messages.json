@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar 著者順とランク"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar で筆頭・共同筆頭・最終著者の論文をハイライトし、各会議・ジャーナルの CCF / CORE ランクと、著者順×ランクの集計を表示します。"
+    "message": "Google Scholar 著者順、CCF / CORE ランク、主要学会の受賞歴、年度グラフ、即時検索で研究者プロフィールを強化します。"
   },
   "extShortName": {
-    "message": "著者順とランク"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "著者順・ランク別の論文数"

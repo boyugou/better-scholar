@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Rollen & Rangen"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Markeert op Google Scholar papers als eerste, gedeeld eerste of laatste auteur, met CCF- en CORE-rang per venue en rol × rang."
+    "message": "Verbeter Google Scholar: auteursrollen, CCF- en CORE-rangen, conferentieprijzen, jaargrafieken en direct zoeken."
   },
   "extShortName": {
-    "message": "Rollen"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Papers per rol en rang"

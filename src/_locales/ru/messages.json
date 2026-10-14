@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar: роли и ранги"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Выделяет в Google Scholar статьи, где вы первый, со-первый или последний автор, с рангами CCF / CORE и сводкой «роль × ранг»."
+    "message": "Улучшение Google Scholar: порядок соавторов, ранги CCF и CORE, награды конференций, графики по годам и мгновенный поиск."
   },
   "extShortName": {
-    "message": "Роли и ранги"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Статьи по роли и рангу"

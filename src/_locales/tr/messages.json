@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roller ve Sıralamalar"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar'da birinci, eş birinci veya son yazar olduğunuz makaleleri vurgular; CCF / CORE sıralaması ve rol × sıralama ekler."
+    "message": "Google Scholar profilini geliştirin: yazar rolleri, CCF ve CORE sıralamaları, konferans ödülleri, yıl grafiği ve anında arama."
   },
   "extShortName": {
-    "message": "Rol & Sıra"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Role ve sıralamaya göre makaleler"

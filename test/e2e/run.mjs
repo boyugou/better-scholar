@@ -191,7 +191,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const page = await context.newPage();
     await page.goto(fx.url);
     await page.waitForSelector("#rr-panel");
-    console.log("Roles & Ranks e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
+    console.log("Better Scholar e2e — Chromium", context.browser() ? context.browser().version() : "", "| extension", extId);
 
     // -- 1. panel lands in the right-hand sidebar on a wide window
     const place = await page.evaluate(() => {
@@ -436,7 +436,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     await opts.click('[data-act="copy-diagnostics"]');
     const diag = await opts.evaluate(() => navigator.clipboard.readText());
-    assert.match(diag, /^Scholar Roles & Ranks \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"v":3,/s);
+    assert.match(diag, /^Better Scholar \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"v":3,/s);
     assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
     // the footer points at the project's own pages, as plain links that open only when clicked

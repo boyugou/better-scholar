@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roller & Rank"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Markerar på Google Scholar artiklar där du är första-, delad första- eller sistaförfattare, med CCF-/CORE-rank och roll × rank."
+    "message": "Förbättra Google Scholar: författarroller, CCF- och CORE-rankningar, konferenspriser, årsdiagram och snabbsökning."
   },
   "extShortName": {
-    "message": "Roller&Rank"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Artiklar efter roll och rank"

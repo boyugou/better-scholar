@@ -1,11 +1,6 @@
-# Scholar 位次与等级
+# Better Scholar
 
-_English name: Scholar Roles & Ranks_
-
-**一眼看出每篇论文：你是第几作者、发在什么级别。** 这是一个 Chrome 扩展，读取
-[Google Scholar](https://scholar.google.com) 作者主页，为每篇论文标出作者角色
-（一作 / 二作 / 末位……）以及发表场所的 **CCF** 与 **CORE** 等级，并汇总成一张表：
-*"一作 CCF-A 论文：4 篇"*。
+**谷歌学术学者主页全面增强。** 这是一个 Chrome 扩展，读取 [Google Scholar](https://scholar.google.com) 作者主页，智能识别作者角色（一作 / 共一 / 二作 / 通讯或末位……），标出发表场所的 **CCF** 与 **CORE** 等级及顶会奖项，提供年份图谱与站内即时检索，并按角色×等级汇总：*"一作 CCF-A 论文：4 篇"*。
 
 [English](README.md)
 

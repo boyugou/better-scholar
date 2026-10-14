@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Autorenrollen & Ränge"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Hebt auf Google Scholar Erst-, Ko-Erst- und Letztautor-Paper hervor, mit CCF-/CORE-Rang je Venue und Übersicht Rolle × Rang."
+    "message": "Google Scholar Profile erweitern: Autorenrollen, CCF- & CORE-Ränge, Konferenzpreise, Jahresdiagramme und Sofortsuche."
   },
   "extShortName": {
-    "message": "Rollen & Ränge"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Paper nach Rolle und Rang"

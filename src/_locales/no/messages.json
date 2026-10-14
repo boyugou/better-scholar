@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roller & Rang"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Uthever artikler der du er første-, delt første- eller sisteforfatter på Google Scholar, med CCF-/CORE-rang og rolle × rang."
+    "message": "Forbedre Google Scholar: forfatterroller, CCF- og CORE-rangeringer, konferansepriser, årsdiagrammer og umiddelbart søk."
   },
   "extShortName": {
-    "message": "Roller&Rang"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Artikler etter rolle og rang"

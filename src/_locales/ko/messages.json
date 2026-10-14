@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar 저자 순서와 등급"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar에서 제1저자·공동 제1저자·마지막 저자 논문을 강조하고, 학회·저널의 CCF / CORE 등급과 순서×등급 요약을 보여 줍니다."
+    "message": "Google Scholar 프로필 향상: 저자 순서, CCF 및 CORE 등급, 학회 수상 내역, 연도별 차트 및 즉각적인 검색 기능 제공."
   },
   "extShortName": {
-    "message": "저자 순서·등급"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "저자 순서·등급별 논문"

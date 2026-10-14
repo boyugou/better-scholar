@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar : rôles et rangs"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Met en évidence sur Google Scholar vos articles en premier, co-premier ou dernier auteur, avec rang CCF / CORE et récap rôle × rang."
+    "message": "Améliorez Google Scholar : rôles d’auteur, rangs CCF & CORE, prix de conférences, graphiques annuels et recherche instantanée."
   },
   "extShortName": {
-    "message": "Rôles et rangs"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Articles par rôle et par rang"

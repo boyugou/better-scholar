@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar: role a ranky"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Zvýrazní na Google Scholar práce, kde jste první, spoluprvní nebo poslední autor, s CCF / CORE rankem a přehledem role × rank."
+    "message": "Vylepšete Google Scholar: autorské role, hodnocení CCF a CORE, ocenění z konferencí, grafy podle let a okamžité vyhledávání."
   },
   "extShortName": {
-    "message": "Role a ranky"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Práce podle role a ranku"

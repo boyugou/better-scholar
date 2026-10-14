@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roluri și clasamente"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Evidențiază în Google Scholar lucrările ca prim, coprim și ultim autor, cu rangul CCF / CORE al venue-ului și un tabel rol × rang."
+    "message": "Îmbunătățiți Google Scholar: roluri de autor, clasamente CCF și CORE, premii de conferințe, grafice anuale și căutare instantanee."
   },
   "extShortName": {
-    "message": "Roluri·Rang"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Lucrări după rol și rang"

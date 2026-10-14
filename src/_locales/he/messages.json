@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar תפקידים ודירוגים"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "מדגיש ב-Google Scholar מאמרים שבהם אתם מחברים ראשונים, משותפים ראשונים או אחרונים, עם דירוג CCF / CORE וסיכום תפקיד × דירוג."
+    "message": "שדרוג Google Scholar: תפקידי מחברים, דירוגי CCF ו-CORE, פרסי כנסים, גרפים לפי שנים וחיפוש מיידי."
   },
   "extShortName": {
-    "message": "תפקידים"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "מאמרים לפי תפקיד ודירוג"

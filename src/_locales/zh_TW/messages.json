@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar 作者位次與等級"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在 Google 學術搜尋作者頁面標示第一作者、共同第一作者與最後作者的論文，附上各會議／期刊的 CCF / CORE 等級，並依位次與等級彙整。"
+    "message": "谷歌學術學者首頁增強：署名位次、CCF 與 CORE 等級、頂會獎項、年份圖譜與即時檢索。"
   },
   "extShortName": {
-    "message": "位次與等級"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "依位次與等級統計論文"

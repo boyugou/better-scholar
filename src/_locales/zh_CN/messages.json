@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar 位次与等级"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "在谷歌学术（Google Scholar）作者主页上，高亮一作、共一、二作和末位作者的论文，标出会议/期刊的 CCF / CORE 等级，并按位次×等级汇总。"
+    "message": "谷歌学术学者主页增强：署名位次、CCF 与 CORE 等级、顶会奖项、年份图谱与即时检索。"
   },
   "extShortName": {
-    "message": "位次与等级"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "按角色与等级统计"

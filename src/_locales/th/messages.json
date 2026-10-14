@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar บทบาทและอันดับ"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "ไฮไลต์งานที่คุณเป็นผู้เขียนคนแรก ร่วมคนแรก หรือคนสุดท้ายบน Google Scholar พร้อมอันดับ CCF / CORE และสรุปบทบาท × อันดับ"
+    "message": "เพิ่มประสิทธิภาพ Google Scholar: บทบาทผู้เขียน อันดับ CCF และ CORE รางวัลการประชุม กราฟรายปี และการค้นหาทันที"
   },
   "extShortName": {
-    "message": "บทบาท·อันดับ"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "งานวิจัยตามบทบาทและอันดับ"

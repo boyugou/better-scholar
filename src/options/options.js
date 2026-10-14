@@ -108,7 +108,7 @@
   // What a bug report needs and nothing that identifies you: versions, language, the settings, the browser
   const diagBtn = h("button", { class: "btn", type: "button", "data-act": "copy-diagnostics", onClick: async () => {
     const m = chrome.runtime.getManifest();
-    const text = ["Scholar Roles & Ranks " + m.version, navigator.userAgent, "interface language: " + B.dom.langTag(), "settings: " + JSON.stringify(prefs)].join("\n");
+    const text = ["Better Scholar " + m.version, navigator.userAgent, "interface language: " + B.dom.langTag(), "settings: " + JSON.stringify(prefs)].join("\n");
     if (await B.dom.copyText(text)) { diagBtn.textContent = t("copied"); setTimeout(() => { diagBtn.textContent = t("optCopyDiagnostics"); }, 1400); }
   } }, t("optCopyDiagnostics"));
   const cacheNote = h("p", { class: "note" });

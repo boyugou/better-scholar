@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "أدوار Scholar وتصنيفاتها"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "يبرز أبحاثك كمؤلف أول أو مؤلف أول مشارك أو أخير في Google Scholar مع تصنيف CCF / CORE لكل منصة نشر وملخص الدور × التصنيف."
+    "message": "تحسين Google Scholar: أدوار التأليف، تصنيفات CCF وCORE، جوائز المؤتمرات، مخططات السنوات والبحث الفوري."
   },
   "extShortName": {
-    "message": "الأدوار"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "الأبحاث حسب الدور والتصنيف"

@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Peran & Peringkat"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Sorot makalah penulis pertama, ko-pertama, dan terakhir di Google Scholar, plus peringkat CCF / CORE dan tabel peran × peringkat."
+    "message": "Tingkatkan Google Scholar: peran penulis, peringkat CCF & CORE, penghargaan konferensi, grafik tahunan, dan pencarian instan."
   },
   "extShortName": {
-    "message": "Peran·Rank"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Makalah menurut peran dan peringkat"

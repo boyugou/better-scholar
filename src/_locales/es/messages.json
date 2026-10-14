@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar: autoría y rangos"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Resalta en Google Scholar tus artículos como primer, coprimer o último autor, con rango CCF / CORE y resumen posición × rango."
+    "message": "Mejore Google Scholar: roles de autor, clasificaciones CCF y CORE, premios de conferencias, gráficos por año y búsqueda instantánea."
   },
   "extShortName": {
-    "message": "Autoría y rangos"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Artículos por posición y rango"

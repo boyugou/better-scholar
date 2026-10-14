@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar भूमिका और रैंक"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar पर प्रथम, सह-प्रथम और अंतिम लेखक वाले पेपर हाइलाइट करें, CCF / CORE रैंक और भूमिका × रैंक सारांश के साथ।"
+    "message": "Google Scholar प्रोफाइल को बेहतर बनाएं: लेखक भूमिकाएं, CCF व CORE रैंक, सम्मेलन पुरस्कार, वार्षिक चार्ट और त्वरित खोज।"
   },
   "extShortName": {
-    "message": "भूमिका·रैंक"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "भूमिका और रैंक के अनुसार पेपर"

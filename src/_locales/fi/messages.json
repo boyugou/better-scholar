@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Roolit & Luokat"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Korostaa Google Scholarissa artikkelit, joissa olet ensimmäinen, yhteisensimmäinen tai viimeinen kirjoittaja; CCF-/CORE-luokat."
+    "message": "Paranna Google Scholaria: tekijäroolit, CCF- ja CORE-luokitukset, konferenssipalkinnot, vuosikaaviot ja pikahaku."
   },
   "extShortName": {
-    "message": "Roolit"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Artikkelit roolin ja luokan mukaan"

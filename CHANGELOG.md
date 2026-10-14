@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.26.0 — 2026-10-14
+
+- **Project Rebranding: Better Scholar**:
+  - The extension is officially rebranded to **Better Scholar** across all 30 supported interface languages.
+  - Refined product positioning from a narrow authorship/ranking highlighter to an all-in-one productivity layer for Google Scholar.
+  - Updated store descriptions, settings page titles, and diagnostic details.
+
 ## 2.25.2 — 2026-10-14
 
 - **Rich metadata tooltips for Top Venues**:

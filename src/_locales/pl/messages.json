@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar: role i rankingi"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Wyróżnia w Google Scholar prace, w których jesteś pierwszym, współpierwszym lub ostatnim autorem, z rankingami CCF / CORE."
+    "message": "Ulepsz Google Scholar: role autorów, rankingi CCF i CORE, nagrody konferencyjne, wykresy roczne i błyskawiczne wyszukiwanie."
   },
   "extShortName": {
-    "message": "Role i rangi"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Prace według roli i rankingu"

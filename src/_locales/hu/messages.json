@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar szerepek és ranglisták"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Kiemeli a Google Scholaron az első, társelső és utolsó szerzős cikkeidet, CCF / CORE rangokkal és szerep × rang összesítéssel."
+    "message": "Google Scholar bővítmény: szerzőségi szerepek, CCF és CORE rangok, konferenciadíjak, éves diagramok és azonnali keresés."
   },
   "extShortName": {
-    "message": "Szerep·Rang"
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Cikkek szerep és rang szerint"

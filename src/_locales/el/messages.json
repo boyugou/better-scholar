@@ -1,12 +1,12 @@
 {
   "extName": {
-    "message": "Scholar Ρόλοι & Βαθμίδες"
+    "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Επισημαίνει στο Google Scholar εργασίες πρώτου, κοινού πρώτου και τελευταίου συγγραφέα, με βαθμίδες CCF / CORE και σύνοψη ρόλων."
+    "message": "Αναβαθμίστε το Google Scholar: ρόλοι συγγραφέων, κατατάξεις CCF & CORE, βραβεία συνεδρίων, ετήσια γραφήματα και άμεση αναζήτηση."
   },
   "extShortName": {
-    "message": "Ρόλοι·Βαθμ."
+    "message": "Better Scholar"
   },
   "summaryTitle": {
     "message": "Εργασίες ανά ρόλο και βαθμίδα"
