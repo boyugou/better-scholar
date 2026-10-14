@@ -4,7 +4,7 @@ import fs from "node:fs"; import path from "node:path";
 // extension repo's .cache/axe.min.js after its `node scripts/axe-audit.mjs`). Exit code 1 on any violation.
 import { fileURLToPath } from "node:url";
 const site = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-const root = process.env.EXT_REPO || path.join(site, "..", "google-scholar-highlighter");
+const root = process.env.EXT_REPO || path.join(site, "..", "better-scholar");
 const { pw, chromiumPath } = await import(pathToFileURL(path.join(root, "test/e2e/find-browser.mjs")).href);
 const axeSrc = fs.readFileSync(process.env.AXE_FILE || path.join(root, ".cache/axe.min.js"), "utf8");
 const b = await pw.chromium.launch({ executablePath: chromiumPath });

@@ -272,6 +272,7 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
                 </div>
                 <div class="mini-export-bar">
                   <button type="button" class="export-btn" data-export="bibtex">BibTeX</button>
+                  <button type="button" class="export-btn" data-export="apa">APA</button>
                   <button type="button" class="export-btn" data-export="json">JSON</button>
                   <button type="button" class="export-btn" data-export="markdown">Markdown</button>
                   <button type="button" class="export-btn" data-export="csv">CSV</button>
@@ -292,6 +293,7 @@ ${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" d
       <div class="export-card">
         <div class="export-tabs" role="tablist">
           <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
+          <button type="button" class="tab-btn" data-tab="apa" role="tab">APA 7th Edition</button>
           <button type="button" class="tab-btn" data-tab="json" role="tab">Structured JSON</button>
           <button type="button" class="tab-btn" data-tab="markdown" role="tab">GitHub Markdown</button>
           <button type="button" class="tab-btn" data-tab="csv" role="tab">RFC-4180 CSV</button>
