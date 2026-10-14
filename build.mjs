@@ -78,12 +78,12 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/styles.css">
 <meta name="theme-color" content="#161d33">
-<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Scholar Roles & Ranks", applicationCategory: "BrowserApplication", operatingSystem: "Chrome, Chromium browsers", description: strings[lang.code]["meta.description"] ?? strings.en["meta.description"], inLanguage: lang.code, url, image: `${SITE_URL}/assets/og.png`, license: "https://www.apache.org/licenses/LICENSE-2.0", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }).replace(/</g, "\\u003c")}</script>
+<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Better Scholar", applicationCategory: "BrowserApplication", operatingSystem: "Chrome, Chromium browsers", description: strings[lang.code]["meta.description"] ?? strings.en["meta.description"], inLanguage: lang.code, url, image: `${SITE_URL}/assets/og.png`, license: "https://www.apache.org/licenses/LICENSE-2.0", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }).replace(/</g, "\\u003c")}</script>
 </head>
 <body>
 <header class="top">
   <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Scholar Roles &amp; Ranks"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Scholar Roles &amp; Ranks</span></a>
+    <a class="brand" href="./" aria-label="Better Scholar"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Better Scholar</span></a>
     <nav>
       <a href="${REPO_URL}">${t("nav.github")}</a>
       <a class="btn small" href="#install">${t("nav.install")}</a>
@@ -204,7 +204,7 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <noscript><meta http-equiv="refresh" content="0; url=en/"></noscript>
 </head>
 <body class="redirect">
-<main class="wrap"><h1>Scholar Roles &amp; Ranks</h1>
+<main class="wrap"><h1>Better Scholar</h1>
 <ul>
 ${languages.map((l) => `<li><a href="${l.code}/" hreflang="${l.code}" lang="${l.code}" dir="${l.dir}">${esc(l.name)}</a></li>`).join("\n")}
 </ul></main>
@@ -240,14 +240,14 @@ function privacyPage() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy: Scholar Roles &amp; Ranks</title>
-<meta name="description" content="What Scholar Roles &amp; Ranks reads, stores and sends: nothing leaves your browser unless you switch on the Semantic Scholar lookup.">
+<title>Privacy: Better Scholar</title>
+<meta name="description" content="What Better Scholar reads, stores and sends: nothing leaves your browser unless you switch on the Semantic Scholar lookup.">
 <link rel="canonical" href="${SITE_URL}/privacy/">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<header class="top"><div class="wrap bar"><a class="brand" href="../" aria-label="Scholar Roles &amp; Ranks"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Scholar Roles &amp; Ranks</span></a><nav><a href="${REPO_URL}">GitHub</a></nav></div></header>
+<header class="top"><div class="wrap bar"><a class="brand" href="../" aria-label="Better Scholar"><img src="../assets/icon.svg" width="30" height="30" alt=""><span>Better Scholar</span></a><nav><a href="${REPO_URL}">GitHub</a></nav></div></header>
 <main class="doc"><div class="wrap narrow">
 ${html}</div></main>
 </body>
