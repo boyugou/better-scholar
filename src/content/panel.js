@@ -353,8 +353,12 @@
       const list = m.topVenues || [];
       venuesSec.hidden = !m.prefs.panel.venues || !list.length;
       if (venuesSec.hidden) return;
-      const rows = list.map((v) => h("button", { class: "rr-markrow", type: "button", "data-venue": v.key, "aria-pressed": String(m.venueKey === v.key), onClick: () => cb.onVenue(v.key) },
-        h("span", { class: "rr-lab" }, v.key), h("b", {}, String(v.count))));
+      const rows = list.map((v) => {
+        const ranks = [v.ccf ? `CCF ${v.ccf}` : "", v.core ? `CORE ${v.core}` : ""].filter(Boolean).join(" · ");
+        const title = (v.name && v.name !== v.key ? `${v.name}` : v.key) + (ranks ? ` (${ranks})` : "");
+        return h("button", { class: "rr-markrow", type: "button", "data-venue": v.key, title: title || null, "aria-pressed": String(m.venueKey === v.key), onClick: () => cb.onVenue(v.key) },
+          h("span", { class: "rr-lab" }, v.key), h("b", {}, String(v.count)));
+      });
       const moreRow = m.venuesHasMore
         ? h("div", { class: "rr-venues-more" }, h("button", { class: "rr-link", type: "button", "data-act": "toggle-venues", onClick: () => cb.onToggleVenues() }, t(m.venuesExpanded ? "venuesShowFewer" : "venuesShowMore")))
         : null;

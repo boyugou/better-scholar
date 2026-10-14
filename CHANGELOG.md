@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.25.2 — 2026-10-14
+
+- **Rich metadata tooltips for Top Venues**:
+  - Hovering over any conference or journal in the Top Venues list displays the venue's full title and CCF tier / CORE rank (e.g. `IEEE/CVF Conference on Computer Vision and Pattern Recognition (CCF A · CORE A*)`).
+  - Active venue filters outside the top 6 preserve complete metadata when synthesized into the list.
+
 ## 2.25.1 — 2026-10-14
 
 - **Keyboard shortcut `/` to focus quick search**:

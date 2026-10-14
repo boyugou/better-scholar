@@ -157,7 +157,12 @@ test("yearBars: the last 50 years only; a paper dated 1803 or a typo year ahead 
 test("topVenues: ranked venues of the highlighted papers, most papers first, ties by name, at most n", () => {
   const v = (abbr, highlighted = true) => ({ highlighted, venue: { ccf: { abbr, name: abbr + " full" } } });
   const rows = [v("ICML"), v("ICML"), v("NeurIPS"), v("ACL"), v("ACL"), v("CVPR", false), { highlighted: true, venue: {} }, { highlighted: true, venue: { core: { name: "Journal Of Things" } } }];
-  assert.deepEqual(m.topVenues(rows), [{ key: "ACL", count: 2 }, { key: "ICML", count: 2 }, { key: "Journal Of Things", count: 1 }, { key: "NeurIPS", count: 1 }]);
+  assert.deepEqual(m.topVenues(rows), [
+    { key: "ACL", count: 2, name: "ACL full", ccf: null, core: null },
+    { key: "ICML", count: 2, name: "ICML full", ccf: null, core: null },
+    { key: "Journal Of Things", count: 1, name: "Journal Of Things", ccf: null, core: null },
+    { key: "NeurIPS", count: 1, name: "NeurIPS full", ccf: null, core: null }
+  ]);
   assert.equal(m.topVenues(rows, 2).length, 2);
   assert.equal(m.venueKey(undefined), "");
 });

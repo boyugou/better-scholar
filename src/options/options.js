@@ -244,6 +244,7 @@
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
       marks: counts, markKinds: prefs.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
       years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, prefs.ranks), venueKey: null,
+      venuesHasMore: false, venuesExpanded: false,
       coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
       variants: [], nameHints: { auto: [], suggestions: [] }

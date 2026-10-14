@@ -82,12 +82,26 @@
   // Where the highlighted papers were published: ranked venues, most papers first (ties by name), at most `n`.
   function topVenues(rows, n = 6, lists) {
     const counts = new Map();
+    const meta = new Map();
     for (const r of rows) {
       if (!r.highlighted) continue;
       const k = venueKey(r.venue, lists);
-      if (k) counts.set(k, (counts.get(k) || 0) + 1);
+      if (k) {
+        counts.set(k, (counts.get(k) || 0) + 1);
+        if (!meta.has(k)) {
+          const v = r.venue || {};
+          meta.set(k, {
+            name: (v.ccf && v.ccf.name) || (v.core && v.core.name) || k,
+            ccf: v.ccf ? v.ccf.tier : null,
+            core: v.core ? v.core.rank : null
+          });
+        }
+      }
     }
-    return [...counts].map(([key, count]) => ({ key, count })).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)).slice(0, n);
+    return [...counts].map(([key, count]) => {
+      const m = meta.get(key) || {};
+      return { key, count, name: m.name || key, ccf: m.ccf || null, core: m.core || null };
+    }).sort((a, b) => b.count - a.count || a.key.localeCompare(b.key)).slice(0, n);
   }
 
   // The tier a row falls in for the chosen ranking source: 'A' / 'B' / … or 'none'.

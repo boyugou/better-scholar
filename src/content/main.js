@@ -257,7 +257,7 @@
     const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, prefs.ranks);
     if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
       const mine = metrics.topVenues(scoped(source), 99, prefs.ranks).find((v) => v.key === state.venueKey);
-      list.push({ key: state.venueKey, count: mine ? mine.count : 0 });
+      list.push({ key: state.venueKey, count: mine ? mine.count : 0, name: mine ? mine.name : state.venueKey, ccf: mine ? mine.ccf : null, core: mine ? mine.core : null });
     }
     return list;
   }
