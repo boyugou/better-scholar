@@ -34,10 +34,10 @@
 
   let savedTimer = 0;
   async function save() {
-    await B.store.savePrefs(prefs);
     B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rowStyle);
     renderPreview();
     syncers.forEach((fn) => fn());
+    await B.store.savePrefs(prefs);
     $("saved").textContent = t("optSaved");
     $("saved").classList.add("on");
     clearTimeout(savedTimer);
@@ -82,13 +82,112 @@
     sync();
     return row;
   }
-  // A role's colour: a picker; while it moves the page is recoloured without saving, and when it is let go the choice is saved
+  // Curated palette dots for quick academic theme selection
+  const ROLE_PALETTES = {
+    first:   ["#1a73e8", "#2563eb", "#0284c7", "#4f46e5", "#0d9488", "#dc2626"],
+    cofirst: ["#a142f4", "#9333ea", "#7c3aed", "#c026d3", "#6366f1", "#db2777"],
+    second:  ["#f9ab00", "#d97706", "#ea580c", "#ca8a04", "#eab308", "#f59e0b"],
+    last:    ["#1e8e3e", "#16a34a", "#059669", "#15803d", "#047857", "#10b981"]
+  };
+
+  // A role's colour: curated quick-dots + live swatch pill + hex label + fine-tune color picker
   function colorRow(role) {
-    const input = h("input", { type: "color", class: "clr", "data-pref": "colors." + role, "aria-label": t(ROLE_NAME[role]),
-      onInput: () => { prefs.colors[role] = input.value; B.dom.applyColors(prefs.colors); renderPreview(); },
-      onChange: () => { prefs.colors[role] = input.value; save(); } });
-    const row = h("label", { class: "opt" }, h("span", { class: "txt" }, h("span", { class: "name" }, h("span", { class: "swatch", style: "background:" + ROLE_COLOR[role] }), t(ROLE_NAME[role]))), input);
-    const sync = () => { input.value = prefs.colors[role] || ROLE_DEFAULT[role]; };
+    const defaultColor = ROLE_DEFAULT[role];
+    const roleLabel = t(ROLE_NAME[role]);
+
+    const input = h("input", {
+      type: "color",
+      class: "clr",
+      "data-pref": "colors." + role,
+      "aria-label": roleLabel,
+      onInput: () => {
+        const val = input.value;
+        prefs.colors[role] = val;
+        B.dom.applyColors(prefs.colors);
+        renderPreview();
+        updateVisuals(val);
+      },
+      onChange: () => {
+        const val = input.value;
+        prefs.colors[role] = val;
+        save();
+        updateVisuals(val);
+      }
+    });
+
+    const liveDot = h("span", { class: "color-dot-live", style: "background: " + defaultColor });
+    const hexLabel = h("span", { class: "color-hex" }, defaultColor.toUpperCase());
+    const pill = h("label", { class: "color-pill", "aria-label": `${roleLabel} ${t("optColorsTitle")}` },
+      liveDot,
+      hexLabel,
+      input);
+
+    const palette = ROLE_PALETTES[role] || [];
+    const dotButtons = palette.map((color) => {
+      const dot = h("button", {
+        type: "button",
+        class: "color-dot-btn",
+        style: `background: ${color};`,
+        "aria-label": `${roleLabel}: ${color}`,
+        title: color,
+        onClick: (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          input.value = color;
+          prefs.colors[role] = color;
+          B.dom.applyColors(prefs.colors);
+          renderPreview();
+          save();
+          updateVisuals(color);
+        }
+      });
+      return { color, el: dot };
+    });
+
+    const resetBtn = h("button", {
+      type: "button",
+      class: "btn sub color-reset-btn",
+      "aria-label": `${t("optColorsReset")}: ${roleLabel}`,
+      title: t("optColorsReset"),
+      onClick: (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        prefs.colors[role] = "";
+        B.dom.applyColors(prefs.colors);
+        save();
+        updateVisuals(defaultColor);
+      }
+    }, "↺");
+
+    function updateVisuals(colorVal) {
+      const current = (colorVal || defaultColor).toLowerCase();
+      liveDot.style.background = current;
+      hexLabel.textContent = current.toUpperCase();
+      dotButtons.forEach(({ color, el }) => {
+        const match = color.toLowerCase() === current;
+        el.classList.toggle("active", match);
+        el.setAttribute("aria-pressed", match ? "true" : "false");
+      });
+      const isCustom = current !== defaultColor.toLowerCase();
+      resetBtn.style.display = isCustom ? "inline-flex" : "none";
+    }
+
+    const row = h("div", { class: "opt color-opt" },
+      h("span", { class: "txt" },
+        h("span", { class: "name" },
+          h("span", { class: "swatch", style: "background:" + ROLE_COLOR[role] }),
+          roleLabel)),
+      h("div", { class: "color-ctrl" },
+        h("div", { class: "color-palette", role: "group", "aria-label": `${roleLabel} palette` },
+          ...dotButtons.map((d) => d.el)),
+        pill,
+        resetBtn));
+
+    const sync = () => {
+      const cur = prefs.colors[role] || defaultColor;
+      input.value = cur;
+      updateVisuals(cur);
+    };
     syncers.push(sync);
     sync();
     return row;
@@ -130,7 +229,7 @@
     const resolved = await B.store.loadResolved();
     const entries = Object.entries(resolved).sort((a, b) => (b[1].ts || 0) - (a[1].ts || 0));
 
-    const search = h("input", { type: "search", class: "opt-search", placeholder: t("optCacheSearch"), "aria-label": t("optCacheSearch") });
+    const search = h("input", { type: "search", class: "cache-search-input", placeholder: t("optCacheSearch"), "aria-label": t("optCacheSearch") });
     const countSpan = h("span", { class: "faint" });
     const tbody = h("tbody", {});
 
@@ -166,12 +265,12 @@
       }
     } }, t("optCacheCopy"));
 
-    const closeBtn = h("button", { class: "btn", type: "button", "data-act": "close-cache", onClick: () => cacheDialog.close() }, t("cancel"));
+    const closeBtn = h("button", { class: "btn", type: "button", "data-act": "close-cache", "aria-label": t("cancel"), onClick: () => cacheDialog.close() }, t("cancel"));
 
     cacheDialog = h("dialog", { class: "cache-modal" },
       h("div", { class: "cache-modal-head" },
         h("h2", {}, t("optCacheTitle")),
-        h("button", { class: "cache-close", type: "button", onClick: () => cacheDialog.close() }, "×")),
+        h("button", { class: "cache-close", type: "button", "aria-label": t("cancel"), title: t("cancel"), onClick: () => cacheDialog.close() }, "×")),
       h("div", { class: "row", style: "gap: 8px; margin: 12px 0;" }, search, copyJsonBtn),
       h("div", { style: "margin-bottom: 8px;" }, countSpan),
       h("div", { class: "cache-table-wrap" },
@@ -319,10 +418,16 @@
   };
 
   const presetRow = h("div", { class: "row presets", role: "group", "aria-label": t("optConfigPreset") },
-    h("span", { class: "faint" }, t("optConfigPreset") + ":"),
-    h("button", { class: "btn sub", type: "button", "data-preset": "senior", onClick: () => applyPreset("senior") }, t("optPresetSenior")),
-    h("button", { class: "btn sub", type: "button", "data-preset": "first", onClick: () => applyPreset("first") }, t("optPresetFirst")),
-    h("button", { class: "btn sub", type: "button", "data-preset": "minimal", onClick: () => applyPreset("minimal") }, t("optPresetMinimal")));
+    h("span", { class: "presets-title faint" }, t("optConfigPreset") + ":"),
+    h("button", { class: "btn preset-chip", type: "button", "data-preset": "senior", onClick: () => applyPreset("senior") },
+      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🎓"),
+      t("optPresetSenior")),
+    h("button", { class: "btn preset-chip", type: "button", "data-preset": "first", onClick: () => applyPreset("first") },
+      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🥇"),
+      t("optPresetFirst")),
+    h("button", { class: "btn preset-chip", type: "button", "data-preset": "minimal", onClick: () => applyPreset("minimal") },
+      h("span", { class: "preset-badge", "aria-hidden": "true" }, "⚡"),
+      t("optPresetMinimal")));
 
   const configText = h("textarea", { class: "config-text", "data-act": "config-input", "aria-label": t("optConfigEditor"), rows: "6", spellcheck: "false", placeholder: '{\n  "colors": {\n    "first": "#1a73e8",\n    "last": "#1e8e3e"\n  }\n}' });
   const configApplyBtn = h("button", { class: "btn primary", type: "button", "data-act": "config-apply", onClick: async () => {
@@ -397,9 +502,16 @@
   const toc = h("nav", { class: "toc", "aria-label": t("optHeading") },
     ...cards.map((c, i) => { c.id = "card-" + i; return h("a", { href: "#card-" + i, "data-card": c.id, onClick: (e) => { e.preventDefault(); window.scrollTo({ top: Math.max(0, c.getBoundingClientRect().top + scrollY - toc.offsetHeight - 12), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); } }, c.querySelector("h2").textContent); }));
   const searchInput = h("input", { type: "search", class: "opt-search", "data-act": "filter-settings", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
-  const searchBox = h("div", { class: "opt-search-box" }, searchInput);
+  const searchIcon = h("span", { class: "opt-search-icon", "aria-hidden": "true" });
+  const searchClear = h("button", { class: "opt-search-clear", type: "button", "aria-label": t("cancel"), title: t("cancel"), onClick: () => { searchInput.value = ""; filterSettings(""); searchInput.focus(); } });
+  searchClear.hidden = true;
+  const searchKbd = h("kbd", { class: "opt-search-kbd", "aria-hidden": "true" }, "/");
+  const searchBox = h("div", { class: "opt-search-box" }, searchIcon, searchInput, searchClear, searchKbd);
+
   function filterSettings(query) {
     const q = (query || "").trim().toLowerCase();
+    searchClear.hidden = !q;
+    searchKbd.hidden = !!q;
     cards.forEach((card, idx) => {
       const h2 = (card.querySelector("h2")?.textContent || "").toLowerCase();
       const desc = (card.querySelector(".desc")?.textContent || "").toLowerCase();
@@ -428,6 +540,13 @@
       searchInput.value = "";
       filterSettings("");
       searchInput.blur();
+    }
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "/" && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
     }
   });
   $("controls").prepend(toc, searchBox);
