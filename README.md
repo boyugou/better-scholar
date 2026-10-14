@@ -11,10 +11,17 @@
 <p align="center"><img src="docs/settings.png" width="760" alt="The settings page: switches for author positions, rank lists, awards and talks and the summary panel, with a live preview"></p>
 <p align="center"><sub>The settings page (sliders button in the panel or the toolbar popup): choose what is shown, with a live preview.</sub></p>
 
-- **Role × rank summary** — a small matrix in the page: first / co-first / second /
+- **Role × rank summary & multi-format export** — a small matrix in the page: first / co-first / second /
   last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
-  list exactly those papers. *Copy summary* and *Copy as table* put the matrix on the clipboard for a CV or an application form;
-  *Copy papers* copies the papers shown (so the cell you clicked) as one line each — role, ranks, awards, citations.
+  list exactly those papers. Export with 1-click: *Copy summary* and *Copy as table* put the matrix on the clipboard for a CV or an application form;
+  *Copy papers* exports plain text (one line each with role, ranks, awards, citations); *Copy Markdown* generates clean GitHub-Flavored Markdown publication entries with clickable links and formatted tiers; *Copy BibTeX* generates compile-ready, LaTeX-escaped BibTeX entries with direct Scholar URLs.
+- **Instant quick search & advanced operators** — press `/` to instantly search papers by title, authors, venue, acronyms, awards, or years with multi-token AND matching. Power through large corpora with query operators:
+  - Citation thresholds: `>100`, `>=50`, `<10`
+  - Publication years: `>2020`, `<=2015`, `year:>=2021`
+  - Venue tiers: `ccf:a`, `ccf:b`, `core:a*`, `core:a`
+  - Author roles: `role:first`, `role:last`, `role:second`, `r:cofirst`
+  - Distinctions: `has:award`, `is:award`, `has:talk`
+  - Combine seamlessly: `ccf:a role:first >100 >2020 CVPR`. Press `Escape` anywhere to clear all filters.
 - **Role colours on every paper** — each row is tinted by the author's position
   (blue first, purple co-first, amber second, green last) and your name in the author line is marked
   (hover it: "First author · position 1 of 8"). Quiet rank chips (`CCF A`, `CORE A*`) sit on the venue
@@ -33,11 +40,11 @@
   hides the last author on large papers (on one well-known PI's profile, 30 of the
   first 100 papers). **Read full lists** reads those papers' own pages (about one a second,
   only when you click) and fills the roles in.
-- **Metrics** for the highlighted papers (papers, citations, h-index, i10), a year range, "only
-  highlighted"; whenever a filter narrows the list the panel says so ("Showing 25 of 100 papers · Clear"). **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
+- **Metrics & interactive impact filtering** — view papers, citations, h-index, and i10-index for highlighted papers, plus year ranges and distribution charts. The **h-index** and **i10-index** rows are interactive filter buttons: click to instantly isolate your H-core ($\ge h$ citations) or high-impact ($\ge 10$ citations) publications. Whenever a filter narrows the list the panel says so ("Showing 25 of 100 papers · Clear"). **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
   presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
   offers **Load all**.
-- **Cleaner profiles, your way** — (all optional, in the settings) merge the entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), hide the "Cited by", "Co-authors" and "Public access" blocks of Scholar's own page, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and read cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
+- **Cleaner profiles & fine-grained hiding** — (all optional, in the settings) merge duplicate entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), independently hide Scholar's "Cited by" metrics table or yearly citation chart, hide "Co-authors" and "Public access" blocks, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and read cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
+- **AI & Agent-native configuration & APIs** — 1-click export and import your full extension configuration and profile identity via clean JSON or TOML. Web agents and automated research workflows can query the profile state via runtime messages (`rr:papers`, `rr:filter`, `rr:export`) or DOM custom events (`better-scholar:query`). Inspect cached resolved papers anytime with the built-in Saved Paper Details Cache Viewer in Settings.
 - **30 languages** — the interface follows the browser or the language you pick, and a Scholar profile or search page opened in another language (a shared link, say) can be reopened in yours.
 - **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
   settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
@@ -146,7 +153,7 @@ src/                     the extension — load this folder in Chrome
   data/                  bundled rankings (generated) and curated venue aliases
   popup/                 toolbar popup (the same summary for the active tab)
   options/               settings page: what to show, with a live preview
-  _locales/              English, 简体中文
+  _locales/              30 languages (English, Chinese, Japanese, German, Arabic, etc.)
 data/                    ranking datasets + provenance (source of src/data/*.js)
 scripts/                 data builders (CCF PDF, ICORE), packaging, icon renderer
 test/                    unit tests, real-profile fixtures, end-to-end test
