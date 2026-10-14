@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.34.0 — 2026-10-14
+
+- **Global Escape Key Filter Clearing & Search Operator Tooltip**:
+  - Pressing `Escape` anywhere on a Google Scholar profile page now instantly clears all active filters (role × rank matrix selection, awards, venues, year range, search queries, citation thresholds) and resets the view back to the full paper corpus.
+  - Hovering over the `/` search keyboard shortcut badge displays an instant tooltip guide summarizing query operators (`/ to search · >100 cites · >2020 year · ccf:a · role:first · has:award`).
+  - Added dedicated end-to-end verification in `test/e2e/run.mjs`.
+
 ## 2.33.0 — 2026-10-14
 
 - **Advanced Query Operators for Quick Search (`analysis.matchesQuery`)**:

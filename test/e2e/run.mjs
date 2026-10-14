@@ -500,11 +500,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.click('[data-act="clear-filters"]');
     assert.notEqual(await page.locator('[data-metric="mPapers"] b').textContent(), String(lastA));
     assert.equal(await visibleRows(page), 100);
-    assert.equal(await page.locator('[data-rr="filterbar"]').isVisible(), false, "and the bar goes with the filter");
+    await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
+    assert.equal(await visibleRows(page), lastA);
+    await page.keyboard.press("Escape");
+    assert.equal(await visibleRows(page), 100);
+    assert.equal(await page.locator('[data-rr="filterbar"]').isVisible(), false, "pressing Escape clears active filter");
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     await page.click('button.rr-cell[data-role="last"][data-tier="A"]');
     assert.equal(await visibleRows(page), 100);
-    ok(`clicking last × CCF-A shows exactly ${lastA} papers; clicking again clears`);
+    ok(`clicking last × CCF-A shows exactly ${lastA} papers; pressing Escape or clicking again clears`);
 
     // -- 7b. metrics H-core and i10 impact filtering
     const hButton = page.locator('#rr-panel button.rr-m[data-metric="mH"]');

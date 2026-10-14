@@ -396,6 +396,13 @@
     panel.update(model());
   }
 
+  function clearAllFilters() {
+    state.selection = null; state.markGroup = null; state.venueKey = null;
+    Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null });
+    state.searchCursor = -1; clearFocusedRow();
+    refresh();
+  }
+
   const panel = B.panel.create({
     onCollapse() { ui.collapsed = !ui.collapsed; B.store.saveUi(ui); refresh(); },
     onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
@@ -408,12 +415,7 @@
       refresh();
     },
     // every filter off at once (the panel's bar says how many papers are shown and offers this)
-    onClearFilters() {
-      state.selection = null; state.markGroup = null; state.venueKey = null;
-      Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null });
-      state.searchCursor = -1; clearFocusedRow();
-      refresh();
-    },
+    onClearFilters() { clearAllFilters(); },
     onVenue(k) { state.venueKey = state.venueKey === k ? null : k; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onToggleVenues() { state.venuesExpanded = !state.venuesExpanded; refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; state.searchCursor = -1; clearFocusedRow(); refresh(); },
@@ -595,12 +597,14 @@
     if (panel.el.classList.contains("rr-wide") !== was) refresh();
   }));
 
-  // Pressing "/" focuses the in-page quick search filter (unless already typing in an editable field)
+  // Pressing "/" focuses the in-page quick search filter; pressing Escape outside an input clears active filters
   window.addEventListener("keydown", (e) => {
+    const active = document.activeElement;
+    const tag = active ? active.tagName.toLowerCase() : "";
+    const inInput = tag === "input" || tag === "textarea" || tag === "select" || (active && active.isContentEditable);
+
     if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      const active = document.activeElement;
-      const tag = active ? active.tagName.toLowerCase() : "";
-      if (tag === "input" || tag === "textarea" || tag === "select" || (active && active.isContentEditable)) return;
+      if (inInput) return;
       if (!prefs.panel.show || !prefs.panel.filters) return;
       e.preventDefault();
       if (ui.collapsed) {
@@ -609,6 +613,11 @@
         refresh();
       }
       panel.focusSearch();
+    } else if (e.key === "Escape" && !inInput) {
+      if (filtering()) {
+        e.preventDefault();
+        clearAllFilters();
+      }
     }
   });
 

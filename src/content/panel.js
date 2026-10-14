@@ -100,7 +100,7 @@
     // filters (built once, synced on update)
     const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
-    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true" }, "/");
+    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", title: "/ to search · >100 cites · >2020 year · ccf:a · role:first · has:award" }, "/");
     const clearSearchBtn = h("button", { class: "rr-search-clear", type: "button", "data-act": "clear-query", title: t("filterClear"), "aria-label": t("filterClear"), hidden: true, onClick: () => {
       queryInput.value = "";
       syncSearchUI();
