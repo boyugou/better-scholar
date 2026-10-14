@@ -102,7 +102,8 @@
           h("button", { class: "btn", type: "button", onClick: copyExport("bibtex") }, t("copyBibtex")),
           h("button", { class: "btn", type: "button", onClick: copyExport("markdown") }, t("copyMarkdown")),
           h("button", { class: "btn", type: "button", onClick: copyExport("apa") }, t("copyApa")),
-          h("button", { class: "btn", type: "button", onClick: copyExport("json") }, t("copyJson"))) : null,
+          h("button", { class: "btn", type: "button", onClick: copyExport("json") }, t("copyJson")),
+          h("button", { class: "btn", type: "button", onClick: copyExport("csv") }, t("exportCsv"))) : null,
         parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
