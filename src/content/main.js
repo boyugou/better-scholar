@@ -748,11 +748,16 @@
 
   document.addEventListener("better-scholar:ping", (e) => {
     const detail = (e && e.detail) || {};
+    const id = detail.requestId || detail.nonce || null;
+    let ver = "2.38.0";
+    try { ver = chrome.runtime.getManifest().version; } catch (err) {}
     document.dispatchEvent(new CustomEvent("better-scholar:pong", {
       detail: {
-        requestId: detail.requestId || null,
+        requestId: id,
+        nonce: id,
         ok: true,
         ready: true,
+        version: ver,
         owner: headerName,
         total: state.rows.length,
         complete: listComplete()
@@ -765,15 +770,17 @@
     if (detail.query !== undefined) {
       state.filters.query = (detail.query || "").trim().toLowerCase();
       refresh();
-      document.dispatchEvent(new CustomEvent("better-scholar:response-query", {
-        detail: {
-          requestId: detail.requestId || null,
-          ok: true,
-          query: state.filters.query,
-          matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
-          totalCount: live().length
-        }
-      }));
+      const id = detail.requestId || detail.nonce || null;
+      const respDetail = {
+        requestId: id,
+        nonce: id,
+        ok: true,
+        query: state.filters.query,
+        matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
+        totalCount: live().length
+      };
+      document.dispatchEvent(new CustomEvent("better-scholar:response-query", { detail: respDetail }));
+      document.dispatchEvent(new CustomEvent("better-scholar:query-result", { detail: respDetail }));
     }
   });
 
@@ -785,14 +792,16 @@
     if (detail.yearEnd !== undefined) state.filters.yearEnd = detail.yearEnd;
     if (detail.minCitations !== undefined) state.filters.minCitations = detail.minCitations;
     refresh();
-    document.dispatchEvent(new CustomEvent("better-scholar:response-filter", {
-      detail: {
-        requestId: detail.requestId || null,
-        ok: true,
-        matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
-        totalCount: live().length
-      }
-    }));
+    const id = detail.requestId || detail.nonce || null;
+    const respDetail = {
+      requestId: id,
+      nonce: id,
+      ok: true,
+      matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
+      totalCount: live().length
+    };
+    document.dispatchEvent(new CustomEvent("better-scholar:response-filter", { detail: respDetail }));
+    document.dispatchEvent(new CustomEvent("better-scholar:filtered", { detail: respDetail }));
   });
 
   document.addEventListener("better-scholar:clear-filters", (e) => {
@@ -802,13 +811,15 @@
     state.markGroup = null;
     state.venueKey = null;
     refresh();
-    document.dispatchEvent(new CustomEvent("better-scholar:response-clear-filters", {
-      detail: {
-        requestId: detail.requestId || null,
-        ok: true,
-        totalCount: live().length
-      }
-    }));
+    const id = detail.requestId || detail.nonce || null;
+    const respDetail = {
+      requestId: id,
+      nonce: id,
+      ok: true,
+      totalCount: live().length
+    };
+    document.dispatchEvent(new CustomEvent("better-scholar:response-clear-filters", { detail: respDetail }));
+    document.dispatchEvent(new CustomEvent("better-scholar:filters-cleared", { detail: respDetail }));
   });
 
   document.addEventListener("better-scholar:request-papers", (e) => {
@@ -828,6 +839,8 @@
         role: a.role,
         status: a.status,
         highlighted: r.highlighted,
+        ccf: (v.ccf && v.ccf.tier) || null,
+        core: (v.core && v.core.rank) || null,
         rank: {
           ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null,
           core: v.core ? { rank: v.core.rank, name: v.core.name } : null
@@ -836,46 +849,54 @@
         url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
       };
     });
-    document.dispatchEvent(new CustomEvent("better-scholar:response-papers", {
-      detail: {
-        requestId: detail.requestId || null,
-        ok: true,
-        owner: headerName,
-        total: state.rows.length,
-        count: papers.length,
-        complete: listComplete(),
-        papers
-      }
-    }));
+    const id = detail.requestId || detail.nonce || null;
+    const respDetail = {
+      requestId: id,
+      nonce: id,
+      ok: true,
+      owner: headerName,
+      total: state.rows.length,
+      count: papers.length,
+      complete: listComplete(),
+      papers
+    };
+    document.dispatchEvent(new CustomEvent("better-scholar:response-papers", { detail: respDetail }));
+    document.dispatchEvent(new CustomEvent("better-scholar:papers", { detail: respDetail }));
   });
 
   document.addEventListener("better-scholar:request-summary", (e) => {
     const detail = (e && e.detail) || {};
     const list = papers();
-    document.dispatchEvent(new CustomEvent("better-scholar:response-summary", {
-      detail: {
-        requestId: detail.requestId || null,
-        ok: true,
-        owner: headerName,
-        loaded: list.length,
-        loadingAll: state.loadingAll,
-        layoutBroken: layoutBroken(),
-        edition,
-        sources: B.prefs.sources(prefs),
-        source: currentSource(),
-        noRanks: noRanks(list),
-        summaries: {
-          ccf: metrics.summarize(list, "ccf"),
-          core: metrics.summarize(list, "core"),
-          none: metrics.summarize(list, null)
-        },
-        marks: markCounts(),
-        metrics: {
-          highlighted: metrics.citationMetrics(scoped(currentSource())).highlighted,
-          all: metrics.citationMetrics(list).all
-        }
+    const id = detail.requestId || detail.nonce || null;
+    const respDetail = {
+      requestId: id,
+      nonce: id,
+      ok: true,
+      owner: headerName,
+      loaded: list.length,
+      loadingAll: state.loadingAll,
+      layoutBroken: layoutBroken(),
+      edition,
+      sources: B.prefs.sources(prefs),
+      source: currentSource(),
+      noRanks: noRanks(list),
+      summary: {
+        ccf: metrics.summarize(list, "ccf"),
+        core: metrics.summarize(list, "core")
+      },
+      summaries: {
+        ccf: metrics.summarize(list, "ccf"),
+        core: metrics.summarize(list, "core"),
+        none: metrics.summarize(list, null)
+      },
+      marks: markCounts(),
+      metrics: {
+        highlighted: metrics.citationMetrics(scoped(currentSource())).highlighted,
+        all: metrics.citationMetrics(list).all
       }
-    }));
+    };
+    document.dispatchEvent(new CustomEvent("better-scholar:response-summary", { detail: respDetail }));
+    document.dispatchEvent(new CustomEvent("better-scholar:summary", { detail: respDetail }));
   });
 
   document.addEventListener("better-scholar:request-export", (e) => {
@@ -889,14 +910,16 @@
     else if (format === "tsv") text = papersText();
     else if (format === "json") text = papersJson(detail.filteredOnly !== false);
     else text = summaryText();
-    document.dispatchEvent(new CustomEvent("better-scholar:response-export", {
-      detail: {
-        requestId: detail.requestId || null,
-        ok: true,
-        format,
-        text
-      }
-    }));
+    const id = detail.requestId || detail.nonce || null;
+    const respDetail = {
+      requestId: id,
+      nonce: id,
+      ok: true,
+      format,
+      text
+    };
+    document.dispatchEvent(new CustomEvent("better-scholar:response-export", { detail: respDetail }));
+    document.dispatchEvent(new CustomEvent("better-scholar:export", { detail: respDetail }));
   });
 
 })();
