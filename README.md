@@ -1,166 +1,242 @@
+<div align="center">
+
+<img src="assets/icon.svg" alt="Better Scholar" width="128" height="128">
+
 # Better Scholar
 
-**Supercharge Google Scholar profiles.** A Chrome extension that reads a [Google Scholar](https://scholar.google.com) profile and shows, for every paper, the author's role (first / co-first / second / last…), CCF and CORE venue ranks, conference awards, year distribution charts, and instant in-page search — then adds them up: *"first-author CCF-A papers: 4"*.
+**Supercharge Google Scholar. Author roles, CCF & CORE ranks, awards, impact metrics, and instant search — with zero dependencies.**
 
-[![test](https://github.com/boyugou/better-scholar/actions/workflows/test.yml/badge.svg)](https://github.com/boyugou/better-scholar/actions/workflows/test.yml)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
+[![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
+[![Tests](https://img.shields.io/badge/tests-415%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
+[![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
+[![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
 
-[简体中文](README.zh-CN.md) · [Website (30 languages)](https://boyugou.github.io/better-scholar/)
+[Website (30 Languages)](https://boyugou.github.io/better-scholar/) · [简体中文](README.zh-CN.md) · [Install](#install) · [Key Features](#key-features) · [Search Operators](#instant-search--query-operators) · [Architecture](#how-it-works) · [Export Formats](#multi-format-export) · [AI & Web Agents](#ai--agent-native-dom-bridge) · [Privacy](PRIVACY.md)
 
-<p align="center"><img src="docs/screenshot.png" width="900" alt="A Google Scholar profile with role colours, CCF / CORE rank chips, award chips and the role × rank summary panel"></p>
-<p align="center"><sub>A fictional profile (real venue names, invented papers): rows tinted by author role, CCF / CORE chips on the venue line, the role × rank summary on the right.</sub></p>
-<p align="center"><img src="docs/settings.png" width="760" alt="The settings page: switches for author positions, rank lists, awards and talks and the summary panel, with a live preview"></p>
-<p align="center"><sub>The settings page (sliders button in the panel or the toolbar popup): choose what is shown, with a live preview.</sub></p>
+<br>
 
-- **Role × rank summary & multi-format export** — a small matrix in the page: first / co-first / second /
-  last × CCF A / B / C / unranked (switch to CORE A\* / A / B / C). Click a cell to
-  list exactly those papers. Export with 1-click: *Copy summary* and *Copy as table* put the matrix on the clipboard for a CV or an application form;
-  *Copy papers* exports plain text (one line each with role, ranks, awards, citations); *Copy JSON* exports rich structured academic objects with rankings, author roles, citations, and URLs; *Copy Markdown* generates clean GitHub-Flavored Markdown publication entries with clickable links and formatted tiers; *Copy BibTeX* generates compile-ready, LaTeX-escaped BibTeX entries with direct Scholar URLs; *Export CSV* downloads an RFC-4180 CSV file.
-- **Instant quick search & advanced operators** — press `/` to instantly search papers by title, authors, venue, acronyms, awards, or years with multi-token AND matching. Power through large corpora with query operators:
-  - Citation thresholds: `>100`, `>=50`, `<10`
-  - Publication years: `>2020`, `<=2015`, `year:>=2021`
-  - Venue tiers: `ccf:a`, `ccf:b`, `core:a*`, `core:a`
-  - Author roles: `role:first`, `role:last`, `role:second`, `r:cofirst`
-  - Distinctions: `has:award`, `is:award`, `has:talk`
-  - Combine seamlessly: `ccf:a role:first >100 >2020 CVPR`. Press `Escape` anywhere to clear all filters.
-- **Role colours on every paper** — each row is tinted by the author's position
-  (blue first, purple co-first, amber second, green last) and your name in the author line is marked
-  (hover it: "First author · position 1 of 8"). Quiet rank chips (`CCF A`, `CORE A*`) sit on the venue
-  line; hover one to see which venue it matched, by which rule, and the list edition.
-- **Accurate, explainable venue matching** — built against real Scholar data, not
-  guesses. Conferences and journals are matched separately; truncated names
-  (`…on Computer Vision and Pattern …`), `ISCA 2014 42 (3)`, `[arXiv…]` annotations,
-  `Findings`/workshop/demo tracks are all handled. When a venue is not recognised the
-  panel lists it instead of guessing.
-- **Awards and talk levels** — a paper gets a small chip (gold ★ for an award, silver for an honorable mention, slate for a talk level) when its title or venue
-  text says *Oral*, *Spotlight*, *Highlight* or an award (*Best / Outstanding / Distinguished Paper*, *Test
-  of Time*), or when it is on a bundled list of award-winning papers from the conferences' own award pages
-  (the ACL family, ICLR, NeurIPS and ICML; CVPR, ICCV and ECCV from the Computer Vision Foundation's own award list, test-of-time prizes included; AAAI; IJCAI 2020–2023; USENIX's best papers; SIGIR and KDD; the SIGSOFT distinguished papers of ICSE, FSE and ASE; STOC and SIGCOMM best papers, the IEEE S&P and NDSS distinguished papers, SIGMOD and PODS best papers, the ACM CCS best and distinguished papers, the best papers and honorable mentions of CHI, CSCW, UIST and other SIGCHI conferences from SIGCHI's own programs, and the test-of-time awards of CCS, VLDB, WWW, ISCA, MICRO, USENIX and SIGMOD, with PODC / DISC's Dijkstra Prize SIGPLAN's Most Influential Paper Awards of POPL, PLDI, ICFP and OOPSLA, and SIGMETRICS's best, student and test-of-time papers). The panel counts them and a click lists just those
-  papers. A chip's tooltip says whether it came from the author's words or from the award list.
-- **Hidden senior-author roles** — Scholar cuts long author lists with `…`, which
-  hides the last author on large papers (on one well-known PI's profile, 30 of the
-  first 100 papers). **Read full lists** reads those papers' own pages (about one a second,
-  only when you click) and fills the roles in.
-- **Metrics & interactive impact filtering** — view papers, citations, h-index, and i10-index for highlighted papers, plus year ranges and distribution charts. The **h-index** and **i10-index** rows are interactive filter buttons: click to instantly isolate your H-core ($\ge h$ citations) or high-impact ($\ge 10$ citations) publications. Whenever a filter narrows the list the panel says so ("Showing 25 of 100 papers · Clear"). **The whole paper list loads by itself**: Scholar shows only the first papers and hides the rest behind *Show more*, so the extension
-  presses that button for you (about once a second, and it stops at once if Scholar stops answering). A setting turns it off; the panel then
-  offers **Load all**.
-- **Cleaner profiles & fine-grained hiding** — (all optional, in the settings) merge duplicate entries that list one paper twice (same title apart from capitals and punctuation, same first author: the most cited stays and shows the sum), independently hide Scholar's "Cited by" metrics table or yearly citation chart, hide "Co-authors" and "Public access" blocks, pick your own role colours, see highlighted papers by year, put Oral / Spotlight / Highlight in one row, and read cut-off author lists from Semantic Scholar first (it receives only the title) so Scholar sees fewer requests.
-- **AI & Agent-native configuration & APIs** — 1-click export and import your full extension configuration and profile identity via clean JSON or TOML. Web agents, automated crawlers, and devtools consoles can query and command Better Scholar directly via page-context CustomEvents on `document` (`better-scholar:ping`, `better-scholar:request-papers`, `better-scholar:request-summary`, `better-scholar:request-export`, `better-scholar:query`, `better-scholar:filter`, `better-scholar:clear-filters`) or runtime messaging (`rr:papers`, `rr:filter`, `rr:export`). Inspect cached resolved papers anytime with the built-in Saved Paper Details Cache Viewer in Settings.
-- **30 languages** — the interface follows the browser or the language you pick, and a Scholar profile or search page opened in another language (a shared link, say) can be reopened in yours.
-- **You decide what is shown** — the sliders button (in the panel header and the toolbar popup) opens a
-  settings page: which author positions to colour, whether to mark your name, the CCF and CORE chips, each
-  of Awards / Oral / Spotlight / Highlight, the summary panel and each of its parts (the role × rank table, its copy buttons, the awards and talks counts, the filters, the citation totals, the loaded-papers status, the name help — keep the filters and totals, say, without the table),
-  and whether the whole paper list loads by itself. Each group of switches has *Enable all* and *Disable all*. A live preview shows the result and open Scholar tabs update at once; whatever you switch
-  off disappears from the page instead of staying as a control.
-- **Private by design** — no accounts, no analytics, no tracking, and no third-party request unless you switch on the optional Semantic Scholar lookup (it receives only a paper's title). The
-  rankings are bundled in the extension. Settings sync through your Chrome account.
-  See [`PRIVACY.md`](PRIVACY.md).
-- **Easy to correct** — a venue that has no rank? *Report* in the panel opens a pre-filled issue with the
-  venue text (and *Copy list* copies it); see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+<img src="docs/screenshot.png" alt="Better Scholar on Google Scholar Profile" width="920">
 
-It works on **profile pages** (`scholar.google.com/citations?user=…`) on every
-Scholar domain. The interface comes in 30 languages.
+<br><br>
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar profile with role colours, CCF/CORE chips, and interactive summary matrix" width="460"></td>
+    <td align="center" width="50%"><img src="docs/settings.png" alt="Settings page with live preview, author position toggles, and fine-grained controls" width="460"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Profile decoration: author position tints, CCF & CORE chips, interactive panel & filters</sub></td>
+    <td align="center"><sub>Settings page: live preview, role toggles, custom colours, export & privacy controls</sub></td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+Better Scholar is a Manifest V3 browser extension that turns [Google Scholar](https://scholar.google.com) profile pages into an analytical, high-fidelity academic workspace. It automatically infers authorship roles (first, co-first, second, last author), matches publication venues against **CCF** (2026 7th ed) and **CORE** (ICORE 2026) catalogues, surfaces conference distinctions and awards, computes interactive impact metrics, and provides keyboard-driven instant search with query operators.
+
+- **Local-first & Zero dependencies.** Completely self-contained. No external runtime dependencies, no build step, no npm bundle overhead. Load `src/` directly in Developer mode.
+- **Precision-first venue matching.** Venues and journals are parsed separately through strict multi-stage token canonicalisation. Zero fuzzy substring guessing. When a venue is unrecognised, the panel lists it explicitly rather than assigning a speculative badge.
+- **Authorship role detection.** Distinguishes first, co-first (shared contribution symbols `*`, `†`), second, and senior/last authors. Automatically highlights the owner's name in author lists with detailed position tooltips.
+- **Bundled conference awards & talk levels.** Recognises 7,830+ official paper awards (Best Paper, Outstanding, Distinguished, Test of Time) across top CS venues, plus author-written Oral / Spotlight / Highlight labels.
+- **Interactive impact filtering.** Click any cell in the Role × Rank matrix, or click the **H-index** and **i10-index** rows to instantly filter the publication list to your H-core or high-impact papers.
+- **Instant search & query operators.** Press `/` to focus the search bar. Filter instantly by title, author, venue, acronym, award, or structured operators (`ccf:a`, `role:first`, `>100`, `year:>=2021`). Press `Escape` anywhere to clear.
+- **1-Click multi-format export.** Copy publication data to clipboard as BibTeX (with compile-ready LaTeX escaping and Scholar URLs), JSON, Markdown, CSV, Summary text, or Tab-separated table.
+- **AI & Web Agent DOM Event Bridge.** Native CustomEvent bus on `document` (`better-scholar:ping`, `better-scholar:request-papers`, `better-scholar:request-export`, `better-scholar:query`) and runtime messaging (`rr:papers`, `rr:export`) for headless AI agents and research workflows.
+- **30 languages.** Packed with translations for 30 locales. Supports bidirectional Scholar language synchronisation (`hl=`).
+- **Private by design.** No accounts, no telemetry, no tracking, and no external network calls. Syncs user preferences through your browser's native `chrome.storage.sync`. See [`PRIVACY.md`](PRIVACY.md).
+
+## How it works
+
+```
+Google Scholar Profile DOM  ──► content/scholar.js (DOM reader & polite auto-loader)
+                                     │ raw rows: title, authors text, venue text, citations, year
+                                     ▼
+                                lib/analysis.js
+                                     │
+        ┌────────────────────────────┼────────────────────────────┐
+        ▼                            ▼                            ▼
+  lib/names.js                 lib/venues.js                lib/marks.js
+owner & author roles        CCF / CORE tier matcher        awards & talk levels
+(first, co-first, last...)    ◄── ccf.js, core.js, aliases   ◄── bundled awards.js
+        │                            │                            │
+        └────────────────────────────┼────────────────────────────┘
+                                     ▼
+                              content/main.js
+                     (reactive state, query filters, DOM observers)
+                        │                       │
+                        ▼                       ▼
+                content/panel.js         Row Decorations
+              (role × rank matrix,       (role tints, rank chips,
+               h-core & year bars)        marked owner names)
+                        │
+                        ├─► 1-Click Export (BibTeX, JSON, Markdown, CSV)
+                        └─► Agent DOM Event Bridge (`better-scholar:*` CustomEvents)
+```
+
+The parsing core in `src/lib/` is completely **pure** (free of DOM and `chrome.*` APIs). Each file attaches to `globalThis.RolesRanks` in the extension and exports as CommonJS under Node.js, allowing the entire 415-test suite to execute directly without compilation.
+
+## Key Features
+
+### 1. Authorship Roles & Name Marking
+- **Positions recognized:** First author, Co-first (equal contribution marks `*`, `†`), Second author, and Last author (senior author).
+- **Owner highlighting:** Highlights the profile owner's name in author strings (e.g. `"First author · position 1 of 8"`).
+- **Hidden senior-author resolution:** When Google Scholar cuts off long author lists with `…`, **Read full lists** retrieves complete author lists asynchronously from paper detail pages, resolving previously hidden senior authorship.
+- **Name variants & CJK reordering:** Automatically handles initials clustering (`GE Hinton` $\leftrightarrow$ `Geoffrey Hinton`) and Chinese family-name-first order (`Zhang Wei` $\leftrightarrow$ `W Zhang`).
+
+### 2. Explainable Venue Matching (CCF & CORE)
+- **Precision over recall:** Matches strictly by canonical token equality, strong acronym boundaries, and unambiguous prefix lookups.
+- **Separate conference & journal indices:** Correctly disambiguates homonymous events (e.g., IEEE Transactions vs. annual symposia).
+- **Secondary track filtering:** Excludes non-archival tracks (workshops, demos, posters, extended abstracts) unless the official venue name itself includes the term.
+- **Transparent provenance:** Hover any badge to inspect the exact matching rule, official venue title, and dataset edition.
+
+### 3. Bundled Paper Awards & Distinctions
+- **7,830+ Curated Awards:** Rigorously cross-referenced from official conference award pages and the ACL Anthology. Covers Best Papers, Outstanding Papers, Distinguished Papers, and Test of Time prizes across major computer science venues (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, OSDI, SOSP, and dozens more).
+- **Presentation tiers:** Detects author-written *Oral*, *Spotlight*, and *Highlight* distinctions with precision filters to avoid false positives (e.g. *Oral Oncology*).
+
+### 4. Interactive Summary Panel & Impact Filtering
+- **Role × Rank Matrix:** Toggle between CCF and CORE rankings. Click any cell to isolate matching publications in the DOM.
+- **H-Core & High-Impact Filters:** Click the **h-index** row to show publications with citations $\ge h$. Click the **i10-index** row for publications with $\ge 10$ citations.
+- **Publication timeline:** Visualises up to 50 years of publication output with clickable year bars.
+- **Polite automatic loader:** Google Scholar shows only 20 or 100 papers per page. Better Scholar automatically clicks "Show more" until the full list is loaded, respecting rate limits and failing soft if Scholar stalls.
+
+---
+
+## Instant Search & Query Operators
+
+Press `/` anywhere on a Google Scholar profile to instantly jump to the search box. Combine free text with structured operator tokens:
+
+| Operator | Syntax Examples | Description |
+|---|---|---|
+| **Citations** | `>100`, `>=50`, `<10` | Filter publications meeting citation threshold |
+| **Year** | `>2020`, `<=2015`, `year:>=2021` | Filter publications by publication year |
+| **Venue Tier** | `ccf:a`, `ccf:b`, `core:a*`, `core:a` | Match CCF or CORE tier |
+| **Author Role** | `role:first`, `role:last`, `role:second`, `r:cofirst` | Match specific authorship role |
+| **Distinctions**| `has:award`, `is:award`, `has:talk` | Filter award winners or oral/spotlight talks |
+| **Combined** | `ccf:a role:first >100 >2020 CVPR` | Multi-token AND filtering across all fields |
+| **Reset** | Press <kbd>Escape</kbd> or click *Clear* | Clear all active search queries and filters |
+
+---
+
+## Multi-Format Export
+
+Export filtered or full publication lists with a single click:
+
+- **Copy BibTeX:** Generates standard, compile-ready BibTeX entries with citekeys (`AuthorYear`), properly escaped LaTeX characters (`&`, `%`, `_`), and canonical Google Scholar URLs.
+- **Copy JSON:** Exports structured academic records including titles, authors, venues, year, citation counts, role classifications, CCF/CORE tiers, and awards.
+- **Copy Markdown:** Produces formatted GitHub-Flavored Markdown publication lists with hyperlinked titles and bold tier chips.
+- **Export CSV:** Downloads an RFC-4180 compliant CSV file with UTF-8 BOM encoding for seamless Excel import.
+- **Copy Summary / Table:** Copies the Role × Rank summary table as plain text or tab-separated spreadsheet values.
+
+---
+
+## AI & Agent-Native DOM Bridge
+
+Better Scholar includes a first-class DOM event bridge for AI agents, browser automation tools, and devtools consoles operating directly in the page context:
+
+```javascript
+// 1. Check readiness and retrieve profile overview
+document.addEventListener("better-scholar:pong", (e) => console.log("Profile:", e.detail));
+document.dispatchEvent(new CustomEvent("better-scholar:ping", { detail: { requestId: "req-1" } }));
+
+// 2. Query structured paper array
+document.addEventListener("better-scholar:response-papers", (e) => console.log("Papers:", e.detail.papers));
+document.dispatchEvent(new CustomEvent("better-scholar:request-papers", { detail: { requestId: "req-2" } }));
+
+// 3. Export formatted BibTeX or JSON directly
+document.addEventListener("better-scholar:response-export", (e) => console.log("Export:", e.detail.text));
+document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "bibtex", requestId: "req-3" } }));
+
+// 4. Trigger programmatic search filtering
+document.dispatchEvent(new CustomEvent("better-scholar:query", { detail: { query: "ccf:a role:first >100", requestId: "req-4" } }));
+```
+
+External extension components can also communicate via Chrome runtime messaging using `{ type: "rr:papers" }`, `{ type: "rr:export", format: "json" }`, or `{ type: "rr:filter" }`.
+
+---
 
 ## Install
 
-**Chrome** (also Edge and other Chromium browsers):
+### Chrome & Chromium Browsers (Edge, Brave, Arc, Opera)
 
-1. Open `chrome://extensions` and enable **Developer mode**.
-2. Click **Load unpacked** and select this repository's `src/` folder.
-3. Open a Google Scholar author profile.
+1. Clone or download this repository.
+2. Open `chrome://extensions` in your browser.
+3. Turn on **Developer mode** in the top-right corner.
+4. Click **Load unpacked** and select the [`src/`](src/) directory.
+5. Navigate to any Google Scholar author profile (e.g. `scholar.google.com/citations?user=...`).
 
-After updating the folder (`git pull`), click the reload icon on the extension's card at `chrome://extensions` and refresh open Scholar tabs: Chrome keeps the old scripts of an unpacked extension until it is reloaded, while the interface texts are read again at every page load, so an old script can show a text key instead of a word.
+> [!TIP]
+> After pulling updates (`git pull`), click the reload icon on the Better Scholar card at `chrome://extensions` and refresh open Scholar tabs.
 
-No build step, no dependencies. To make a zip (for sharing, or a store upload):
+### Packaged Distribution
 
-```bash
-scripts/package-chrome.sh      # → dist/better-scholar-chrome-<version>.zip
-```
-
-## What it can and cannot know
-
-- **Ranks are today's, not the rank at publication time.** A 2009 paper in a venue
-  that is CCF-A now shows `CCF A`. CCF also states that its list is *not a basis for
-  academic evaluation*, and counts only full papers at conferences — the extension excludes
-  Findings, workshops, demos, posters and similar tracks, but cannot tell a short
-  paper from a full one in Scholar's text.
-- **The lists are computer science's.** CCF and CORE rank computer-science venues; a biologist's or a
-  physicist's journals are not on them. When no paper of a profile is, the table counts papers by role only
-  (no empty rank columns) and says why; the roles, years, totals and the rest work in any field.
-- **Roles come from Scholar's author text.** Initials are matched flexibly
-  (`GE Hinton` = `Geoffrey Hinton`; `Jane` ≠ `John`), but two different people can
-  collide on `W Wang`. Equal-contribution marks (†, ∗, # …) count when the first author and at least one other
-  leading author carry them (`A*, B*, C`); a lone mark, or one further down (a corresponding or co-senior author), says nothing about
-  the role. Scholar rarely preserves marks at all. A profile name written surname first (`Tang Jie` on the profile, `J Tang` in the
-  papers) is read the other way round automatically when the page itself shows that this finds you and the
-  name as printed hardly does; other rearrangements Scholar prints (`SY Philip` for `Philip S. Yu`) and an inventor in capitals (`JA DOUDNA` in a patent, when the same initials written as usual already find you elsewhere on the profile) are offered
-  with one click when they occur in at least two papers. Anything else: **Add a spelling** in the panel.
-- **Awards are not exhaustive.** The award list covers the venues above and only the years their pages
-  publish; a paper that is not on it has no award chip. Talk levels (*Oral*, *Spotlight*) are only what the
-  author wrote — Scholar's text rarely carries them — and look-alikes such as *Oral Oncology* are never marked.
-- **Venue strings are messy.** What Scholar prints is owner-editable and often
-  truncated. Anything unrecognised is listed ("papers at venues without a rank") so you
-  can see what is missing; there is no fuzzy guessing.
-- **Read full lists** talks to Google Scholar (the paper's own page, same-origin, throttled,
-  cached). Google may show a CAPTCHA after heavy use; it stops at the first sign of
-  one and tells you.
-- Search-result pages are not supported: they carry neither the profile owner nor
-  complete venue names.
-
-## Data
-
-| Dataset | Edition | Source |
-|---|---|---|
-| CCF recommended venues | 2026 (7th edition), 386 conferences + 295 journals | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) PDF, extracted reproducibly — see [`data/README.md`](data/README.md) |
-| CORE conference ranks | ICORE 2026, 800 ranked conferences | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) export |
-| Paper awards | 7830 paper awards (ACL family, ICLR, NeurIPS, ICML, CVPR, ICCV, ECCV, AAAI, IJCAI 2020–2023, USENIX, SIGIR, KDD, SIGSOFT, STOC, SIGCOMM, S&P, CCS, NDSS, SIGMOD, PODS, VLDB, WWW, ISCA, MICRO, PODC / DISC, POPL / PLDI / ICFP / OOPSLA, SIGMETRICS, FOCS, SIGOPS Hall of Fame, SOSP's, RecSys's, AISTATS's, UAI's, ICASSP's, COLING's, Interspeech's, ECML PKDD's, INFOCOM's, Euro S&P's, WSDM's, PPoPP's, CIKM's, IPDPS's, ICS's, ECIR's, GECCO's, CIDR's, BMVC's, VRST's, HRI's, ICC's, WCNC's, GLOBECOM's, CCC's, CCNC's, PIMRC's, NOMS's, MICCAI's, ECAI's, SAT's, ICDT's, ESA's, ICALP's, MFCS's, ICGT's, SoCG's, CADE's, IJCAR's, DSN's, FPGA's, FCCM's, ICCAD's, UMAP's, BPM's, RECOMB's, SPAA's, CASES's, CODES+ISSS's, EMSOFT's, HSCC's, DATE's, ASP-DAC's, MobiSys's, ACM MM's, IEEE VR's, ASSETS's and AutomotiveUI's best papers, EuroSys test of time, AAMAS's and ASPLOS's influential papers, the IACR test of time (CRYPTO / EUROCRYPT / ASIACRYPT), the TCC, PKC and CHES tests of time, HPCA's, IMC's and IEEE VIS's test of time, ICDE's influential papers, ISMAR's best and impact papers, ICSE's most influential papers, LICS's test of time and distinguished papers, AAAI's classic papers, ICAPS's influential papers, ISWC's ten-year papers, SIGMM's test of time, Hypertext's and DocEng's best papers, SIGDA's Newton technical impact award, SIGSPATIAL's best and 10-year impact papers, SIGCSE's test of time, ICWSM's test of time and best papers, SIGMOBILE's and SenSys's test of time (SenSys's best papers 2020, 2021 and 2024 too), SIGecom's test of time, and CHI, CSCW, UIST and other SIGCHI conferences; best papers, honorable mentions and test-of-time awards; not exhaustive) | [ACL Anthology](https://aclanthology.org) metadata (CC BY 4.0), the Computer Vision Foundation's, SIGCHI's and each conference's own awards pages — every entry cites its page; see [`data/README.md`](data/README.md) |
-
-The rank lists are included for reference and are the property of their owners — see
-[`NOTICE`](NOTICE). Regenerate with `npm run data`.
-
-## Development
-
-Contributions welcome — [`CONTRIBUTING.md`](CONTRIBUTING.md) explains how to fix a venue with real strings.
+To generate a clean production zip for sharing or upload:
 
 ```bash
-npm test            # unit tests: names, venues (real-profile corpora), metrics, package checks
-npm run test:e2e    # loads the extension into Chromium against a local Scholar stand-in
-npm run data        # rebuild src/data/*.js from data/*.json
+scripts/package-chrome.sh      # Outputs to dist/better-scholar-chrome-<version>.zip
 ```
 
-The e2e test needs Playwright and a Chromium build (branded Chrome ≥137 ignores
-`--load-extension`); see the header of [`test/e2e/run.mjs`](test/e2e/run.mjs).
-Architecture and the matching rules: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+---
 
-## Platform policy
-
-Chrome is the main line. Features, extension APIs and UI/UX are designed for Chrome;
-compatibility with other browsers never constrains them.
-
-| Browser | Status |
-|---------|--------|
-| **Chrome** | **Primary** — developed and checked here first. |
-| Edge, Brave, other Chromium | Expected to work (same MV3 package); not regularly tested. |
-| Safari (macOS) | **Best-effort / experimental.** Lives in [`contrib/safari`](contrib/safari/README.md); may lag behind or break, with no support commitment. |
-
-## Repository layout
+## Repository Layout
 
 ```
-src/                     the extension — load this folder in Chrome
-  manifest.json          MV3, permission: storage only; content script on /citations* pages
-  background.js          four lines: opens the settings page when the panel's button asks
-  lib/                   pure logic: names, venues (matcher), metrics, marks, awards, prefs, analysis
-  content/               Scholar adapter, panel UI, chips, detail-page reader, styles
-  data/                  bundled rankings (generated) and curated venue aliases
-  popup/                 toolbar popup (the same summary for the active tab)
-  options/               settings page: what to show, with a live preview
-  _locales/              30 languages (English, Chinese, Japanese, German, Arabic, etc.)
-data/                    ranking datasets + provenance (source of src/data/*.js)
-scripts/                 data builders (CCF PDF, ICORE), packaging, icon renderer
-test/                    unit tests, real-profile fixtures, end-to-end test
-contrib/safari/          best-effort Safari wrapper
-docs/                    architecture
+better-scholar/
+├── src/                    Chrome Manifest V3 extension (load unpacked from here)
+│   ├── manifest.json       Permissions: storage only; content scripts on Scholar
+│   ├── background.js       Relays settings page requests
+│   ├── content/            Scholar adapter, panel UI, chips, detail reader, styles
+│   ├── lib/                Pure logic: names, venues, metrics, marks, awards, prefs
+│   ├── data/               Bundled CCF/CORE rankings & curated venue aliases
+│   ├── options/            Settings page with live preview and configuration manager
+│   ├── popup/              Toolbar popup with quick summary matrix
+│   └── _locales/           Translations for 30 interface languages
+├── data/                   Official ranking datasets (CCF PDF extract & ICORE export)
+├── scripts/                Build tools, CCF extractor, domain updater, packaging
+├── test/                   Comprehensive test suites (415 unit tests + 76 e2e checks)
+│   ├── fixtures/           Real-world Google Scholar profile and venue corpora
+│   └── e2e/                Chromium end-to-end tests with fixture server
+├── docs/                   Architecture documentation, store assets, roadmaps
+└── contrib/safari/         Best-effort Safari wrapper generator
 ```
+
+---
+
+## Development & Testing
+
+All tests run on Node.js without third-party dependencies:
+
+```bash
+npm test            # Run all 415 unit tests (names, venues, metrics, i18n, integrity)
+npm run test:e2e    # Run all 76 Chromium E2E checks with headless browser & mock Scholar server
+npm run test:update # Review and update snapshots when venue rules are intentionally improved
+npm run data        # Rebuild src/data/{ccf,core}.js from data/*.json
+```
+
+---
+
+## Data Provenance
+
+| Dataset | Edition | Scope | Official Source |
+|---|---|---|---|
+| **CCF Recommendations** | 2026 (7th Edition) | 386 Conferences + 295 Journals | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) (Reproducibly extracted from official PDF) |
+| **CORE Conference Ranks** | ICORE 2026 | 800 Ranked Conferences | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) (Official export) |
+| **Conference Awards** | Curated Corpus | 7830 paper awards | [ACL Anthology](https://aclanthology.org), Computer Vision Foundation (CVF), ACM SIGs, IEEE TCs |
+
+Ranking lists are the property of their respective creators and are included for reference — see [`NOTICE`](NOTICE).
+
+---
+
+## Platform Policy
+
+Chrome is the primary supported platform. Architectural, API, and UI/UX decisions are tailored for Chrome Manifest V3. No shims or polyfills are used to compromise Chrome functionality for other browsers. Other Chromium-based browsers (Edge, Brave) run the identical package. Experimental Safari support lives in [`contrib/safari/`](contrib/safari/README.md) as a generated wrapper.
+
+---
 
 ## License
 
-Licensed under the [Apache License 2.0](LICENSE). Ranking data is excluded — see [`NOTICE`](NOTICE).
+Licensed under the [Apache License 2.0](LICENSE).
+Ranking datasets remain the property of their respective organizations (see [`NOTICE`](NOTICE)).

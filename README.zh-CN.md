@@ -1,114 +1,242 @@
+<div align="center">
+
+<img src="assets/icon.svg" alt="Better Scholar" width="128" height="128">
+
 # Better Scholar
 
-**谷歌学术学者主页全面增强。** 这是一个 Chrome 扩展，读取 [Google Scholar](https://scholar.google.com) 作者主页，智能识别作者角色（一作 / 共一 / 二作 / 通讯或末位……），标出发表场所的 **CCF** 与 **CORE** 等级及顶会奖项，提供年份图谱与站内即时检索，并按角色×等级汇总：*"一作 CCF-A 论文：4 篇"*。
+**谷歌学术学者主页全面增强。作者角色识别、CCF 与 CORE 会议期刊等级、顶会奖项、影响力指标与即时搜索 — 零依赖。**
 
-[English](README.md)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
+[![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
+[![Tests](https://img.shields.io/badge/tests-415%20passed%20·%2076%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
+[![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
+[![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
 
-<p align="center"><img src="docs/screenshot.png" width="900" alt="Google Scholar 作者主页：按角色着色的论文行、CCF / CORE 等级徽章、获奖标签与右侧的角色 × 等级汇总面板"></p>
-<p align="center"><sub>虚构的作者主页（场所名称真实，论文为虚构）：按作者位次着色的行、场所旁的 CCF / CORE 徽章、右侧的角色 × 等级汇总。</sub></p>
-<p align="center"><img src="docs/settings.png" width="760" alt="设置页：作者位次、等级名录、获奖与报告形式、摘要面板的开关，以及实时预览"></p>
-<p align="center"><sub>设置页（面板或工具栏弹窗里的滑块按钮）：选择显示什么，带实时预览。</sub></p>
+[官方网站（30 种语言）](https://boyugou.github.io/better-scholar/) · [English](README.md) · [安装使用](#安装使用) · [核心功能](#核心功能) · [搜索操作符](#即时搜索与高级查询运算符) · [工作原理](#工作原理) · [多格式导出](#多格式一键导出) · [AI 与智能体接口](#ai-与网页智能体-dom-事件桥梁) · [隐私政策](PRIVACY.md)
 
-- **角色 × 等级汇总与多格式导出**：页面里的一张小矩阵——一作 / 共一 / 二作 / 末位 × CCF A / B / C /
-  未收录（可切换为 CORE A\* / A / B / C）。点击任一格即可只看那几篇；一键导出支持：**复制摘要**、**复制为表格**（便于粘进申报材料或简历）、**复制论文列表**（纯文本一行一篇）、**复制 JSON**（包含结构化等级、角色、引用与论文直链数据）、**复制 Markdown**（生成带跳转链接和加粗等级的排版列表）、**复制 BibTeX**（包含 LaTeX 特殊字符转义与直链 Scholar 网址）、**导出 CSV**（符合 RFC-4180 标准的文件下载）。
-- **即时搜索与高级查询运算符**：按 `/` 键立即聚焦搜索框，支持标题、作者、场所、缩写、奖项和年份的多词与（AND）匹配；支持专业学术检索操作符：
-  - 引用门槛：`>100`、`>=50`、`<10`
-  - 发表年份：`>2020`、`<=2015`、`year:>=2021`
-  - 等级筛选：`ccf:a`、`ccf:b`、`core:a*`、`core:a`
-  - 作者角色：`role:first`、`role:last`、`role:second`、`r:cofirst`
-  - 特殊荣誉：`has:award`、`is:award`、`has:talk`
-  - 支持组合复合检索，如 `ccf:a role:first >100 >2020 CVPR`。在页面任意处按 `Escape` 键可一键复位清空所有筛选。
-- **每篇论文的角色着色**：整行按作者位置着色（蓝=一作，紫=共一，琥珀=二作，绿=末位），
-  作者行里你的名字会被标出（悬停可看到"一作 · 第 1 位 / 共 8 位"）；场所旁有低调的
-  `CCF A`、`CORE A*` 徽章，悬停可看到匹配到哪个会议/期刊、依据什么规则、名录版本。
-- **可解释的场所匹配**：基于真实 Scholar 数据反复打磨，而不是靠猜。会议和期刊分开匹配；
-  能处理被截断的名称（`…on Computer Vision and Pattern …`）、`ISCA 2014 42 (3)`、
-  `[arXiv…]` 注释，以及 Findings / Workshop / Demo 等非主会议轨道。认不出的场所不会乱标，
-  而是列在面板里。
-- **获奖与报告形式**：论文标题或发表信息里写了 *Oral*、*Spotlight*、*Highlight* 或获奖（*Best / Outstanding /
-  Distinguished Paper*、*Test of Time*），或者论文在内置的获奖名单里（ACL 系列、ICLR、NeurIPS、ICML；CVPR / ICCV / ECCV 取自计算机视觉基金会（CVF）的官方获奖总表，含时间检验奖；AAAI；
-  IJCAI 2020–2023；USENIX 最佳论文、SIGIR、KDD、SIGSOFT（ICSE / FSE / ASE 等）杰出论文、STOC、SIGCOMM、SIGMOD、PODS、CCS 最佳论文与 IEEE S&P、NDSS、CCS 杰出论文、取自 SIGCHI 官方程序数据的 CHI / CSCW / UIST 等 SIGCHI 会议的最佳论文与荣誉提名、CCS / VLDB / WWW / ISCA / MICRO / USENIX / SIGMOD 的时间检验奖以及 PODC / DISC 的 Dijkstra 奖和 SIGPLAN 的 POPL / PLDI / ICFP / OOPSLA 最具影响力论文奖以及 SIGMETRICS 的最佳论文、学生论文和时间检验奖，以及 SOSP、RecSys、AISTATS、UAI、ICASSP、COLING、Interspeech、ECML PKDD、INFOCOM、Euro S&P、WSDM、PPoPP、CIKM、IPDPS、ICS、ECIR、GECCO、CIDR、BMVC、VRST、HRI、ICC、WCNC、GLOBECOM、CCC、MobiSys、SenSys、IMC、ACM MM、IEEE VR、FOCS、WWW 等会议官方页面上的最佳论文，均取自官方页面，共 7000 余条），就会显示小标签（获奖为金色 ★，荣誉提名为银色，报告形式为灰蓝）；面板里也会统计，点击即可只看那几篇。
-  悬停提示会说明来自作者自述还是获奖名单。
-- **补全被截断的末位作者**：Scholar 会用 `…` 截断长作者列表，导致看不到大论文里的末位作者
-  （某位知名 PI 的前 100 篇里有 30 篇如此）。点 **补全** 会逐篇读取论文页（约每秒一篇，
-  仅在你点击时）把角色补上。
-- **指标与交互式影响力过滤**：高亮论文的篇数、引用、h 指数、i10；年份范围、"只显示高亮"。指标表里的 **h 指数** 与 **i10 指数** 行为交互式按钮：点击一键过滤 H-Core 核心论文（$\ge h$ 引用）或高引论文（$\ge 10$ 引用）。**整个论文列表自动加载**：Scholar 起初只显示 100 篇，其余藏在“显示更多”后面，扩展会替你点击这个按钮（约每秒一次，Scholar 不再响应就立即停止）；可在设置里关闭，关闭后面板提供 **全部加载** 按钮。
-- **更干净的主页与细粒度隐藏**（均为可选，在设置里）：合并把同一篇论文列了两次的条目（标题只差大小写和标点、第一作者相同：保留引用最多的一条并显示总和）；可独立隐藏 Scholar 自带的“被引用次数”统计表或历年引用条形图；隐藏“合著者”“公开访问”；自选各位次的颜色；按年份查看高亮论文；把 Oral / Spotlight / Highlight 合成一行；先向 Semantic Scholar（只收到标题）补全被截断的作者列表，让 Scholar 少收到请求。
-- **AI 与智能体配置导入导出及接口**：支持在设置页一键导出或导入整套配置与学者身份信息（提供无外部依赖的 JSON / TOML 纯文本格式）；支持外部 AI Web 智能体、自动化程序或控制台脚本通过页面上下文的 DOM 自定义事件（`better-scholar:ping`、`better-scholar:request-papers`、`better-scholar:request-summary`、`better-scholar:request-export`、`better-scholar:query`、`better-scholar:filter`、`better-scholar:clear-filters`）或扩展 runtime 消息（`rr:papers`、`rr:filter`、`rr:export`）直接命令与高速提取学术数据；设置页提供“查看已缓存论文详情”交互弹窗。
-- **30 种语言**：界面跟随浏览器或你选定的语言；用别的语言打开的 Scholar 主页或搜索页（比如别人分享的链接）可以用你的语言重新打开。
-- **显示什么由你决定**：面板标题栏和工具栏弹窗里的滑块按钮会打开设置页——给哪些作者位次着色、
-  是否标出你的名字、CCF / CORE 徽章、获奖 / Oral / Spotlight / Highlight 各自开关，是否显示
-  摘要面板，以及面板的每个部分（角色 × 排名表格、表格下的复制按钮、奖项与报告统计、筛选、引用统计、已加载论文状态、名字拼写帮助）各自开关——只关表格、保留筛选和引用统计也行，
-  还有“精简”快捷按钮；每组开关下方都有“全部开启”“全部关闭”；以及是否自动加载整个论文列表。设置页的预览就是真实的面板，已打开的 Scholar 页面立即生效；关掉的东西会从页面上
-  消失，而不是留着一个开关。
-- **隐私**：无账号、无统计、无追踪；除非你打开可选的 Semantic Scholar 查询（它只收到论文标题），否则没有任何第三方请求；名录内置在扩展里；设置通过你的 Chrome 账号同步。
+<br>
 
-- **易于纠正**：某个场所没有等级？面板里的 *Report* 会打开预填了场所文字的 issue（*复制列表*也可复制），见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
+<img src="docs/screenshot.png" alt="Better Scholar 在谷歌学术作者主页上的展示" width="920">
 
-适用于**作者主页**（`scholar.google.com/citations?user=…`），覆盖所有 Scholar 域名。
-界面提供 30 种语言（简体中文、英文、日文等）。
+<br><br>
 
-## 安装
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar 作者主页：按角色着色的行、场所旁的 CCF / CORE 徽章、右侧的角色 × 等级汇总面板" width="460"></td>
+    <td align="center" width="50%"><img src="docs/settings.png" alt="设置页：作者位次、等级名录、获奖与报告形式、摘要面板的开关，以及实时预览" width="460"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>主页增强：作者位次着色、CCF 与 CORE 徽章、交互式汇总面板与多维筛选</sub></td>
+    <td align="center"><sub>设置页：实时所见即所得预览、角色开关、自定义配色、导出与隐私控制</sub></td>
+  </tr>
+</table>
 
-**Chrome**（Edge 等 Chromium 浏览器同理）：
+</div>
 
-1. 打开 `chrome://extensions`，开启"开发者模式"。
-2. 点"加载已解压的扩展程序"，选择本仓库的 `src/` 文件夹。
-3. 打开任意 Google Scholar 作者主页。
+---
 
-更新文件夹（`git pull`）之后，请在 `chrome://extensions` 里点该扩展卡片上的“重新加载”，并刷新已打开的 Scholar 页面：Chrome 对已解压的扩展会一直沿用旧脚本，而界面文字每次打开页面都重新读取，所以旧脚本可能显示出文字键名而不是词语。
+Better Scholar 是一款遵循 Manifest V3 规范的浏览器扩展程序，专为 [Google Scholar](https://scholar.google.com) 学者主页打造。它能自动解析作者位次（一作、共一、二作、末位/通讯作者），对照 **CCF**（2026 第七版）与 **CORE**（ICORE 2026）权威名录精准标示发表场所等级，匹配顶会最佳论文等学术奖项，呈现 H-core 等交互式学术影响力指标，并提供支持复合学术操作符的快捷键即时检索。
 
-无需构建、无依赖。打包 zip（用于分享或上架）：
+- **本地优先与零外部依赖**：代码库完全自成一体，无 npm runtime 依赖，无打包构建步骤，直接以源码模式加载即可运行。
+- **查准率绝对优先**：期刊与会议采用分立的多阶段 Token 规范化匹配，杜绝模糊拼串或猜词归类。无法精准匹配的场所列入面板，绝不标注错误徽章。
+- **细致的作者角色识别**：精准区分一作、共一（共同第一作者标记 `*`、`†`）、二作与末位通讯作者；在作者行中智能高亮学者姓名并提示位次。
+- **内置 7,830+ 篇官方权威获奖论文**：收录来自各顶会官网及 ACL Anthology 的最佳论文、杰出论文、时间检验奖，并结合解析作者自述的 Oral / Spotlight / Highlight 报告形式。
+- **交互式影响力过滤**：点击角色 × 等级矩阵中的任意单元格，或点击 **h-index** / **i10-index** 指标行，一键过滤出核心高引论文列表。
+- **即时检索与高级运算符**：在主页按 `/` 键即可聚焦搜索框，支持标题、作者、场所、缩写、年份及结构化操作符（`ccf:a`、`role:first`、`>100`、`year:>=2021`）。按 <kbd>Escape</kbd> 键随时一键清空复位。
+- **一键多格式学术导出**：支持一键复制标准且严谨的 BibTeX（含 LaTeX 特殊字符转义与 Scholar 直链）、JSON、Markdown、RFC-4180 CSV、纯文本列表与表格。
+- **AI 与 Web 智能体 DOM 事件桥梁**：在页面 `document` 上提供原生 CustomEvent 事件总线与 Chrome runtime 消息，便于大模型自动化程序、抓取脚本和开发者控制台直接调用。
+- **30 种国际化语言**：提供 30 种语言的完整本地化翻译，并支持与 Scholar 界面的语言参数（`hl=`）双向智能同步。
+- **严苛的隐私保护**：无账号体系、无追踪器、无数据统计、无多余网络请求。所有用户偏好仅通过浏览器原生 `chrome.storage.sync` 安全同步。详见 [`PRIVACY.md`](PRIVACY.md)。
 
-```bash
-scripts/package-chrome.sh      # → dist/better-scholar-chrome-<version>.zip
+## 工作原理
+
+```
+Google Scholar 学者主页 DOM ──► content/scholar.js (页面 DOM 读取与平滑自动翻页)
+                                     │ 原始数据行：标题、作者列表、场所文本、引用数、年份
+                                     ▼
+                                lib/analysis.js
+                                     │
+        ┌────────────────────────────┼────────────────────────────┐
+        ▼                            ▼                            ▼
+  lib/names.js                 lib/venues.js                lib/marks.js
+学者与作者角色推断             CCF / CORE 场所精准匹配        奖项与报告等级识别
+(一作、共一、二作、末位...)     ◄── ccf.js, core.js, aliases   ◄── 内置 awards.js (7,830+)
+        │                            │                            │
+        └────────────────────────────┼────────────────────────────┘
+                                     ▼
+                              content/main.js
+                     (响应式状态流、多重查询筛选、DOM 观察器)
+                        │                       │
+                        ▼                       ▼
+                content/panel.js         论文行视觉增强
+             (角色 × 等级矩阵面板、       (位次行着色、场所等级徽章、
+              H-core 过滤与年份图谱)       学者姓名高亮标注)
+                        │
+                        ├─► 1-Click 一键导出 (BibTeX, JSON, Markdown, CSV)
+                        └─► 智能体 DOM 事件桥梁 (`better-scholar:*` CustomEvents)
 ```
 
-## 它能知道什么、不能知道什么
+`src/lib/` 目录下的所有解析核心代码均保持 **Pure**（纯函数式，不依赖任何 DOM 或 `chrome.*` API），在浏览器环境下挂载至 `globalThis.RolesRanks`，在 Node.js 环境下作为 CommonJS 模块导出，使得 415 个单元测试无需任何构建编译即可瞬间全绿运行。
 
-- **等级是当前名录的等级，不是发表时的等级。** 2009 年发在如今是 CCF-A 的会议上的论文，
-  也显示 `CCF A`。CCF 还声明其目录**不作为学术评价依据**，且会议只计 full paper——
-  本扩展会排除 Findings、Workshop、Demo、Poster 等轨道，但无法从 Scholar 文本里区分
-  short paper 与 full paper。
-- **榜单是计算机科学的。** CCF 和 CORE 只给计算机领域的发表场所定级；生物、物理等领域的期刊不在其中。
-  一个主页上没有任何论文在榜单里时，表格只按角色统计（不显示空的等级列）并说明原因；角色、年份、总数等其余功能在任何领域都能用。
-- **角色来自 Scholar 的作者文本。** 缩写做了宽松匹配（`GE Hinton` = `Geoffrey Hinton`，
-  `Jane` ≠ `John`），但两个不同的人仍可能在 `W Wang` 上撞车。共一标记（†、∗、# 等）出现在
-  第一作者和至少另一位前排作者身上时才算（`A*, B*, C`）；单独一个标记、或标在后面的作者上（通讯作者、共同末位）不说明角色——不过 Scholar 很少保留这些标记。主页姓名写成“姓在前”（主页是 `Tang Jie`，论文里是 `J Tang`）时，
-  若页面本身的数据显示倒过来才能找到你，会自动按另一种顺序匹配；Scholar 打印出的其他换位写法
-  （如 `Philip S. Yu` 在论文里是 `SY Philip`），以及专利里全大写的发明人（`JA DOUDNA`；前提是同一缩写以普通写法 `JA Doudna` 在主页的其他论文里已能找到你）出现在至少两篇论文里时，会在面板里给出一键添加的建议。
-  其余情况可用面板里的 **添加一种写法**。
-- **获奖名单不求完整。** 名单只覆盖上面列出的会议和各会议官方页面公布的年份；不在名单上的论文不会有获奖标签。
-  报告形式（*Oral*、*Spotlight*）只来自作者自己写的文字，Scholar 的文字里很少有，`Oral Oncology` 之类也不会被标出。
-- **场所字符串很乱。** Scholar 显示的内容可由主页所有者编辑，且常被截断。认不出的会列在
-  "发表场所未收录"里供你查看；不做模糊猜测。
-- **补全** 会访问 Google Scholar（论文自己的页面，同源、限速、缓存）。大量使用后 Google
-  可能弹出验证码；扩展一遇到就会停下并提示。
-- 不支持搜索结果页：那里既没有主页所有者，也没有完整的场所名称。
+## 核心功能
 
-## 数据
+### 1. 作者位次判定与姓名智能标注
+- **覆盖角色**：第一作者（First）、共同第一作者（Co-first，带 `*`、`†` 等标记）、第二作者（Second）、末位作者（Last，通常为资深指导教师/通讯作者）。
+- **姓名高亮标注**：在论文作者列表中直接标出学者本人姓名，悬停可查看位次详情（如 `"一作 · 第 1 位 / 共 8 位"`）。
+- **末位作者截断补全**：针对 Scholar 用 `…` 省略长作者列表导致看不到末位作者的情况，提供 **补全** 功能，逐篇异步请求详情页获取完整作者列表。
+- **缩写聚合与中文语序自适应**：智能处理姓名缩写聚合（如 `GE Hinton` 匹配 `Geoffrey Hinton`）以及中文姓名首尾互换问题（如 `Zhang Wei` 对应 `W Zhang`）。
 
-| 数据集 | 版本 | 来源 |
+### 2. 可解释的发表场所匹配（CCF 与 CORE）
+- **查准率绝对优先**：通过全词 Token 规范化、强缩写括号及前缀判定，不进行任何猜测性模糊匹配。
+- **期刊与会议独立索引**：彻底解决同名会议与期刊混淆问题（例如 IEEE Transactions 与年度 Symposium 的区分）。
+- **非主会轨道过滤**：自动排除 Findings、Workshop、Demo、Poster 等非正式主录用论文，避免虚标等级。
+- **来源透明可查**：鼠标悬停在任意徽章上，均可查看匹配规则、官方刊物会议全称及对应的名录版本。
+
+### 3. 内置顶会学术荣誉与奖项
+- **7,830+ 篇官方权威获奖记录**：全面采纳 ACL Anthology、计算机视觉基金会（CVF）、ACM SIG 与 IEEE 官方获奖名单，涵盖 NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB 等数十个核心领域的最佳论文（Best Paper）、杰出论文（Distinguished/Outstanding）及时间检验奖（Test of Time）。
+- **报告形式提取**：精准提取作者在发表信息中自述的 *Oral*、*Spotlight*、*Highlight*，并设有专用反误报规则。
+
+### 4. 交互式汇总面板与学术影响力指标
+- **角色 × 等级矩阵**：一键切换查看 CCF 与 CORE 分级统计，点击任一单元格即可只显示对应的论文子集。
+- **H-Core 与高引论文交互过滤**：面板中的 **h 指数** 与 **i10 指数** 行为可点击按钮，点击即可秒级圈定您的核心论文集（$\ge h$ 次引用）或高影响力论文（$\ge 10$ 次引用）。
+- **年份分布条形图**：展示多达 50 年的论文发表趋势，支持通过年份滑块或条形图点击即时过滤。
+- **礼貌且优雅的列表自动加载**：自动替您点击 Scholar 的“显示更多”直至加载完毕，频率克制，遭遇网络卡顿时优雅容错降级。
+
+---
+
+## 即时搜索与高级查询运算符
+
+在 Scholar 学者主页上随时按下键盘的 `/` 键即可自动聚焦搜索栏。支持自由文本多词与（AND）匹配，并支持以下结构化运算符：
+
+| 运算符类别 | 语法示例 | 说明 |
 |---|---|---|
-| CCF 推荐国际学术会议和期刊目录 | 2026（第七版），386 个会议 + 295 个期刊 | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/) 的 PDF，可复现地抽取——见 [`data/README.md`](data/README.md) |
-| CORE 会议等级 | ICORE 2026，800 个已评级会议 | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/) 导出 |
-| 论文获奖名单 | 7000 余条（最佳论文、杰出论文、荣誉提名、时间检验奖；不求完整） | [ACL Anthology](https://aclanthology.org) 元数据（CC BY 4.0）、计算机视觉基金会、SIGCHI 和各会议自己的获奖页面——每一条都注明来源页面，见 [`data/README.md`](data/README.md) |
+| **引用阈值** | `>100`、`>=50`、`<10` | 筛选满足引用数条件的论文 |
+| **发表年份** | `>2020`、`<=2015`、`year:>=2021` | 按发表年份区间过滤 |
+| **场所等级** | `ccf:a`、`ccf:b`、`core:a*`、`core:a` | 筛选特定 CCF 或 CORE 评级的论文 |
+| **作者角色** | `role:first`、`role:last`、`role:second`、`r:cofirst` | 筛选学者处于特定位次的论文 |
+| **荣誉荣誉** | `has:award`、`is:award`、`has:talk` | 筛选获得顶会奖项或口头报告的论文 |
+| **复合检索** | `ccf:a role:first >100 >2020 CVPR` | 跨所有字段的高级组合检索 |
+| **重置筛选** | 按 <kbd>Escape</kbd> 键或点击 *清空* | 随时清空当前所有搜索词与过滤状态 |
 
-两份数据仅作参考收录，版权归各自所有者——见 [`NOTICE`](NOTICE)。用 `npm run data` 重新生成。
+---
 
-## 开发
+## 多格式一键导出
 
-欢迎贡献——[`CONTRIBUTING.md`](CONTRIBUTING.md) 说明了如何用真实字符串修正一个场所。
+无论是在完整列表还是当前筛选视图下，均可一键完成多格式导出：
 
-```bash
-npm test            # 单元测试：姓名、场所（真实主页语料）、指标、包结构
-npm run test:e2e    # 把扩展装进 Chromium，对本地的 Scholar 仿页做端到端测试
-npm run data        # 由 data/*.json 重建 src/data/*.js
+- **复制 BibTeX**：生成标准的 BibTeX 条目，自动生成 `AuthorYear` 引用键，严格转义 LaTeX 特殊字符（`&`、`%`、`_` 等），并附带 Scholar 原生论文直链。
+- **复制 JSON**：导出富结构化学术对象数组，包含论文标题、完整作者、发表场所、年份、引用数、作者角色、CCF/CORE 等级与获奖信息。
+- **复制 Markdown**：生成符合 GitHub 规范的精美 Markdown 发表清单，标题自动带链接，等级加粗高亮。
+- **导出 CSV**：一键下载符合 RFC-4180 标准并带有 UTF-8 BOM 编码的 CSV 文件，在 Excel / Numbers 中打开完全杜绝中文乱码。
+- **复制摘要 / 表格**：以纯文本格式或制表符分隔（TSV）格式复制角色 × 等级矩阵，方便直接贴入个人简历或项目申请书。
+
+---
+
+## AI 与网页智能体 DOM 事件桥梁
+
+Better Scholar 为外部网页智能体、自动化无头脚本与浏览器控制台提供了原生的页面级 CustomEvent 事件总线：
+
+```javascript
+// 1. 检查扩展就绪状态并获取学者概要
+document.addEventListener("better-scholar:pong", (e) => console.log("学者主页信息:", e.detail));
+document.dispatchEvent(new CustomEvent("better-scholar:ping", { detail: { requestId: "req-1" } }));
+
+// 2. 获取当前结构化论文数据对象
+document.addEventListener("better-scholar:response-papers", (e) => console.log("论文列表:", e.detail.papers));
+document.dispatchEvent(new CustomEvent("better-scholar:request-papers", { detail: { requestId: "req-2" } }));
+
+// 3. 直接导出格式化的 BibTeX 或 JSON 字符串
+document.addEventListener("better-scholar:response-export", (e) => console.log("导出文本:", e.detail.text));
+document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "bibtex", requestId: "req-3" } }));
+
+// 4. 程序化执行复合检索过滤
+document.dispatchEvent(new CustomEvent("better-scholar:query", { detail: { query: "ccf:a role:first >100", requestId: "req-4" } }));
 ```
 
-架构与匹配规则见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。Chrome 是主线；Safari 仅为尽力而为
-（[`contrib/safari`](contrib/safari/README.md)）。
+此外，扩展内部与外部扩展间亦支持通过标准 Chrome runtime 消息（如 `{ type: "rr:papers" }`、`{ type: "rr:export", format: "json" }`、`{ type: "rr:filter" }`）进行直接交互通信。
 
-## 许可
+---
 
-[Apache License 2.0](LICENSE)。名录数据不在此许可范围内——见 [`NOTICE`](NOTICE)。
+## 安装使用
+
+### Chrome 与 Chromium 内核浏览器（Edge, Brave, Arc, Opera 等）
+
+1. 下载或克隆本仓库到本地。
+2. 在浏览器地址栏访问 `chrome://extensions`。
+3. 打开右上角的 **开发者模式**（Developer mode）开关。
+4. 点击左上角的 **加载已解压的扩展程序**（Load unpacked），选择本仓库的 [`src/`](src/) 文件夹。
+5. 打开任意 Google Scholar 学者主页（如 `scholar.google.com/citations?user=...`）。
+
+> [!TIP]
+> 仓库代码更新（`git pull`）后，只需在 `chrome://extensions` 页面找到 Better Scholar 卡片，点击“刷新”图标，并刷新已打开的 Scholar 标签页即可立即生效。
+
+### 打包分发文件
+
+如需生成供分享或上传的应用商店 zip 包：
+
+```bash
+scripts/package-chrome.sh      # 自动生成 dist/better-scholar-chrome-<version>.zip
+```
+
+---
+
+## 代码库目录结构
+
+```
+better-scholar/
+├── src/                    Chrome Manifest V3 扩展源码（开发者模式从此目录加载）
+│   ├── manifest.json       权限配置：仅需 storage；匹配 Google Scholar 主页
+│   ├── background.js       后台服务脚本：中继打开设置页请求
+│   ├── content/            页面交互：Scholar DOM 适配、面板 UI、徽章渲染、详情解析、样式
+│   ├── lib/                纯函数核心：姓名推断、场所匹配、指标统计、奖项解析、偏好设置
+│   ├── data/               内置 CCF/CORE 名录数据及精选场所别名映射
+│   ├── options/            设置页面：实时所见即所得面板预览与偏好配置管理
+│   ├── popup/              工具栏弹出浮层：快速展示当前主页的学术矩阵概要
+│   └── _locales/           30 种界面语言的多语言国际化翻译字典
+├── data/                   权威名录原始数据集（CCF 官方 PDF 解析脚本与 ICORE 导出数据）
+├── scripts/                数据提取、自动化测试、图标生成与打包脚本
+├── test/                   完备测试体系（415 项单元测试 + 76 项端到端真实交互测试）
+│   ├── fixtures/           真实 Google Scholar 学者主页与发表场所测试语料
+│   └── e2e/                Chromium 端到端自动化测试与本地仿真服务器
+├── docs/                   架构设计文档、应用商店物料与路线规划
+└── contrib/safari/         实验性 Safari 原生扩展转换脚本
+```
+
+---
+
+## 开发与测试
+
+全部测试均在 Node.js 环境下免依赖原生运行：
+
+```bash
+npm test            # 运行全部 415 项单元测试（姓名解析、场所匹配、指标、多语言及完整性）
+npm run test:e2e    # 运行全部 76 项 Chromium 端到端真实交互测试
+npm run test:update # 当有意改进场所匹配规则时，审查并更新测试快照
+npm run data        # 基于 data/*.json 重新生成 src/data/{ccf,core}.js 产物
+```
+
+---
+
+## 数据来源与说明
+
+| 名录 / 数据集 | 版本 | 覆盖范围 | 官方权威来源 |
+|---|---|---|---|
+| **中国计算机学会（CCF）推荐目录** | 2026 年（第七版） | 386 个学术会议 + 295 本学术期刊 | [ccf.org.cn](https://www.ccf.org.cn/Academic_Evaluation/By_category/)（从官方发布 PDF 中无损抽取） |
+| **CORE Conference Ranks** | ICORE 2026 | 800 个评级学术会议 | [portal.core.edu.au](https://portal.core.edu.au/conf-ranks/)（官方权威导出） |
+| **顶会学术荣誉与奖项库** | 官方汇编语料 | 7,830+ 篇经过严格核实的获奖论文 | [ACL Anthology](https://aclanthology.org)、CVF 基金会、ACM 各专业委员会、IEEE 专委会官方奖项总表 |
+
+名录与榜单数据版权归各发布机构所有，本扩展收录仅供学术参考，详见 [`NOTICE`](NOTICE)。
+
+---
+
+## 平台策略
+
+Chrome 为项目首要且核心支持的目标平台。所有架构选型、扩展 API 及 UI/UX 体验均面向 Chrome Manifest V3 最佳实践构建，绝不因兼容其他非 Chromium 浏览器而对核心功能做任何妥协或降级。基于 Chromium 的 Edge、Brave 等浏览器均可直接无缝运行同一套扩展。Safari 实验性支持位于 [`contrib/safari/`](contrib/safari/README.md)。
+
+---
+
+## 开源协议
+
+本项目采用 [Apache License 2.0](LICENSE) 开源协议。
+收录的学术评级名录与奖项数据版权归属各相关委员会所有（参见 [`NOTICE`](NOTICE)）。
