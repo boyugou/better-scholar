@@ -143,7 +143,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const parse = PARSERS[conf] && PARSERS[conf][year];
   if (!parse) { console.error("usage: ml-archive.mjs neurips <2014–2018> | icml <2017|2018> [saved-page.html]"); process.exit(2); }
   const url = urlOf(conf, year);
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
   const entries = parse(html, url);
   const by = {};
   for (const e of entries) by[e.awardLabel] = (by[e.awardLabel] || 0) + 1;

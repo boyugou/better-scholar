@@ -78,7 +78,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const year = parseInt(process.argv[2], 10);
   const file = process.argv[3];
   if (!(year >= 2016 && year <= 2026)) { console.error("usage: sp.mjs <year 2016–2026> [saved-page.html]"); process.exit(2); }
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(URLS(year), { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(URLS(year), { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, { year, source: URLS(year) });
   const by = {};
   for (const e of entries) by[e.awardLabel] = (by[e.awardLabel] || 0) + 1;

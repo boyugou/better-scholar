@@ -43,7 +43,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const spec of PAGES) {
     const source = `https://sigir.org/awards/${spec.slug}/`;
     const html = dir ? readFileSync(join(dir, spec.file), "utf8")
-      : await (await fetch(source, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+      : await (await fetch(source, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
     entries.push(...parse(html, spec, source));
     if (!dir) await new Promise((r) => setTimeout(r, 1000));
   }

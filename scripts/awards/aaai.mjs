@@ -119,7 +119,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const classic = process.argv.includes("--classic");
   const file = process.argv.slice(2).find((a) => !a.startsWith("--"));
   const url = classic ? URL_CLASSIC : URL_PAGE;
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(url, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
   const { entries, skipped } = classic ? parseClassic(html) : parse(html);
   const by = {};
   for (const e of entries) by[e.awardLabel] = (by[e.awardLabel] || 0) + 1;

@@ -80,7 +80,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     let html;
     try {
       html = dir ? readFileSync(join(dir, `rr-kdd-${year}.html`), "utf8")
-        : await (await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+        : await (await fetch(url, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
     } catch (e) { console.error(year, "unreadable"); continue; }
     const got = parse(html, year);
     console.error(year, got.length, "entries");

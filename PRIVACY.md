@@ -1,6 +1,6 @@
 # Privacy
 
-Scholar Roles & Ranks works entirely in your browser.
+Better Scholar works entirely in your browser.
 
 - **What it reads:** the paper list of a Google Scholar *profile* page you have open (titles, author lines,
   venue lines, years, citation counts). It runs only on `scholar.google.*/citations*` pages. A second, tiny script (the setting *Open Scholar in*) is

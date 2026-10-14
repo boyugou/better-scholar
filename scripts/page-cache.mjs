@@ -19,7 +19,7 @@ export async function cachedPage(url, { refresh = false } = {}) {
   if (!/^https:\/\//.test(url)) throw new Error("https only: " + url);
   const file = cachedPath(url);
   if (!refresh && existsSync(file)) return file;
-  const res = await fetch(url, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } });
+  const res = await fetch(url, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } });
   if (!res.ok) throw new Error(`${res.status} for ${url}`);
   const body = Buffer.from(await res.arrayBuffer());
   if (/captcha|are you a robot|unusual traffic|checking your browser/i.test(body.subarray(0, 4000).toString("utf8"))) throw new Error("bot check, not saved: " + url);

@@ -29,7 +29,7 @@ async function get(url, tries = 3) {
   let last;
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(120000), headers: { "user-agent": "scholar-roles-and-ranks data check (https://github.com/boyugou/scholar-roles-and-ranks)" } });
+      const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(120000), headers: { "user-agent": "better-scholar data check (https://github.com/boyugou/better-scholar)" } });
       if (res.status === 404 || res.status === 410) throw new Gone(`${url}: HTTP ${res.status}`);
       if (!res.ok) throw new Error("HTTP " + res.status);
       return Buffer.from(await res.arrayBuffer());

@@ -110,7 +110,7 @@ export function parse(html, source = URL_) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const file = process.argv[2];
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(URL_, { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(URL_, { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
   const { entries, skipped } = parse(html, URL_);
   const by = {};
   for (const e of entries) by[e.award] = (by[e.award] || 0) + 1;

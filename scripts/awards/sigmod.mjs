@@ -144,7 +144,7 @@ export function parseTot(html, source = PAGES.tot) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, file] = process.argv.slice(2);
   if (!PAGES[kind]) { console.error("usage: sigmod.mjs sigmod|pods|tot [saved-page.html]"); process.exit(2); }
-  const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "scholar-roles-and-ranks award reader (reads one public page)" } })).text();
+  const html = file ? readFileSync(file, "utf8") : await (await fetch(PAGES[kind], { headers: { "user-agent": "better-scholar award reader (reads one public page)" } })).text();
   const r = kind === "pods" ? { entries: parsePods(html), skipped: [] } : kind === "tot" ? parseTot(html) : parseSigmod(html);
   const by = {};
   for (const e of r.entries) by[e.year] = (by[e.year] || 0) + 1;
