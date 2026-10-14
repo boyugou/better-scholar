@@ -262,7 +262,7 @@
   } }, t("optConfigCopy"));
 
   const exportConfigBtn = h("button", { class: "btn", type: "button", "data-act": "config-export", onClick: () => {
-    B.dom.downloadFile("better-scholar-config.json", "application/json", JSON.stringify(prefs, null, 2));
+    B.dom.downloadFile("better-scholar-config.json", JSON.stringify(prefs, null, 2), "application/json");
   } }, t("optConfigExport"));
 
   const pasteConfigBtn = h("button", { class: "btn", type: "button", "data-act": "config-import", onClick: async () => {

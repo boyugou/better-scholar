@@ -96,6 +96,9 @@
   }
 
   function downloadFile(filename, text, mimeType = "text/csv;charset=utf-8;") {
+    if (typeof text === "string" && (text === "application/json" || text.startsWith("text/")) && typeof mimeType === "string" && !mimeType.startsWith("text/") && !mimeType.startsWith("application/")) {
+      const tmp = text; text = mimeType; mimeType = tmp;
+    }
     const blob = new Blob([text], { type: mimeType });
     const url = URL.createObjectURL(blob);
     const a = h("a", { href: url, download: filename, style: "display:none" });

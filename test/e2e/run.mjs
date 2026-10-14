@@ -1209,6 +1209,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.click('[data-act="config-apply"]');
     assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "tint");
 
+    // export config file download
+    const [cfgDownload] = await Promise.all([
+      opts.waitForEvent("download"),
+      opts.click('[data-act="config-export"]')
+    ]);
+    assert.equal(cfgDownload.suggestedFilename(), "better-scholar-config.json");
+    const cfgStream = await cfgDownload.createReadStream();
+    const cfgChunks = [];
+    for await (const chunk of cfgStream) cfgChunks.push(chunk);
+    const cfgParsed = JSON.parse(Buffer.concat(cfgChunks).toString("utf8"));
+    assert.equal(cfgParsed.rowStyle, "tint");
+    assert.equal(cfgParsed.roles.last, true);
+    ok("configuration export downloads valid better-scholar-config.json with active preferences");
+
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
     assert.equal(await stored(opts, "local", "resolved"), undefined);
