@@ -28,25 +28,84 @@ const FEATURES = [
   ["complete", "#4d8ff5"], ["merge", "#b36cf6"], ["yours", "#fbbc04"], ["private", "#34a853"]
 ];
 
-// The "Try it" demo: six invented papers, the reader's own name at the position that gives the row its role; the buttons switch roles on and off
+// Rich interactive demo dataset: representative high-impact publications
 const DEMO = [
-  { role: "first", venue: "ICLR 2025", chips: ["CCF A", "CORE A*"] },
-  { role: "second", venue: "NeurIPS 2024", chips: ["CCF A", "CORE A*"] },
-  { role: "cofirst", venue: "CVPR 2024", chips: ["CCF A", "CORE A*"] },
-  { role: "last", venue: "ACL 2023", chips: ["CCF A", "CORE A*"] },
-  { role: "middle", venue: "EMNLP 2022", chips: ["CCF A", "CORE A*"] },
-  { role: "last", venue: "AAAI 2021", chips: ["CCF A", "CORE A"] }
-];
-const OTHERS = ["B Writer", "C Writer", "D Writer"];
-function demoAuthors(role, you) {
-  const me = `<mark>${you}</mark>`;
-  switch (role) {
-    case "first": return [me, ...OTHERS].join(", ");
-    case "cofirst": return [`${me}*`, "B Writer*", "C Writer"].join(", ");
-    case "second": return ["B Writer", me, "C Writer"].join(", ");
-    case "last": return [...OTHERS, me].join(", ");
-    default: return ["B Writer", "C Writer", me, "D Writer"].join(", ");
+  {
+    id: "p1",
+    role: "first",
+    title: "Chord: A Scalable Peer-to-peer Lookup Protocol for Internet Applications",
+    venue: "ACM SIGCOMM",
+    year: 2001,
+    citations: 24510,
+    chips: ["CCF A", "CORE A*"],
+    award: "★ Test of Time",
+    authors: ["Ion Stoica", "Robert Morris", "David Karger", "M. Frans Kaashoek", "Hari Balakrishnan"]
+  },
+  {
+    id: "p2",
+    role: "last",
+    title: "Spark: Cluster Computing with Working Sets",
+    venue: "USENIX HotCloud",
+    year: 2010,
+    citations: 16840,
+    chips: [],
+    award: "★ Best Paper",
+    authors: ["Matei Zaharia", "Mosharaf Chowdhury", "Michael J. Franklin", "Scott Shenker", "Ion Stoica"]
+  },
+  {
+    id: "p3",
+    role: "last",
+    title: "Ray: A Distributed Framework for Emerging AI Applications",
+    venue: "USENIX OSDI",
+    year: 2018,
+    citations: 4120,
+    chips: ["CCF A", "CORE A*"],
+    award: "",
+    authors: ["Philipp Moritz", "Robert Nishihara", "Stephanie Wang", "Alexey Tumanov", "Ion Stoica"]
+  },
+  {
+    id: "p4",
+    role: "first",
+    title: "An Architecture for Bounded-Latency Services in the Internet",
+    venue: "IEEE Transactions on Networking",
+    year: 2001,
+    citations: 2890,
+    chips: ["CCF A"],
+    award: "",
+    authors: ["Ion Stoica", "Hui Zhang"]
+  },
+  {
+    id: "p5",
+    role: "second",
+    title: "Coflow: A Networking Abstraction for Cluster Applications",
+    venue: "ACM HotNets",
+    year: 2012,
+    citations: 1350,
+    chips: [],
+    award: "★ Best Paper",
+    authors: ["Mosharaf Chowdhury", "Ion Stoica"]
+  },
+  {
+    id: "p6",
+    role: "cofirst",
+    title: "L2P-FL: Latency-aware Personalized Federated Learning",
+    venue: "IEEE INFOCOM",
+    year: 2024,
+    citations: 185,
+    chips: ["CCF A", "CORE A*"],
+    award: "Oral",
+    authors: ["Ion Stoica*", "A Collaborator*", "B Researcher", "C Scientist"]
   }
+];
+
+function demoAuthors(authors, you) {
+  return authors.map((a) => {
+    if (a.startsWith("Ion Stoica")) {
+      const star = a.includes("*") ? "*" : "";
+      return `<mark>${you}${star}</mark>`;
+    }
+    return esc(a);
+  }).join(", ");
 }
 
 function page(lang) {
@@ -58,6 +117,7 @@ function page(lang) {
 ${menu.map((l) => `          <li><a href="../${l.code}/" hreflang="${l.code}" lang="${l.code}" dir="${l.dir}"${l.code === lang.code ? ' aria-current="true"' : ""}>${esc(l.name)}</a></li>`).join("\n")}
         </ul>
       </details>`;
+
   return `<!doctype html>
 <html lang="${lang.code}" dir="${lang.dir}">
 <head>
@@ -94,6 +154,11 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <main>
   <section class="hero">
     <div class="wrap">
+      <div class="hero-badges">
+        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
+        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> 100% Offline &amp; Private</span>
+        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> 0 Dependencies</span>
+      </div>
       <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
       <h1>${t("hero.title")}</h1>
       <p class="lead">${t("hero.sub")}</p>
@@ -101,6 +166,7 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
       <p class="note">${t("hero.note")}</p>
     </div>
   </section>
+
   <section class="shots">
     <div class="wrap">
       <figure class="hero-shot">
@@ -112,19 +178,171 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
       </figure>
     </div>
   </section>
+
   <section class="demo" id="demo">
     <div class="wrap">
       <h2>${t("demo.title")}</h2>
       <p class="note">${t("demo.hint")}</p>
-      <div class="roles" role="group" aria-label="${t("demo.title")}">
-${["first", "cofirst", "second", "last"].map((r) => `        <button type="button" class="role-btn" data-role="${r}" aria-pressed="true"><i></i>${t(`demo.role.${r}`)}</button>`).join("\n")}
+      <div class="mockup-window">
+        <div class="mockup-bar" aria-hidden="true">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="mockup-title">Google Scholar — Ion Stoica · Better Scholar Active</div>
+          <div class="window-spacer"></div>
+        </div>
+        <div class="mockup-body">
+          <div class="scholar-header">
+            <div class="scholar-avatar" aria-hidden="true">IS</div>
+            <div class="scholar-meta">
+              <div class="scholar-name">Ion Stoica <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+              <div class="scholar-affil">Professor of Computer Science, UC Berkeley · ACM Fellow</div>
+              <div class="scholar-stats">
+                <span><strong>184,200+</strong> Citations</span>
+                <span><strong>h-index:</strong> 142</span>
+                <span><strong>i10-index:</strong> 380</span>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-search-row">
+            <div class="search-wrap">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="demo-search-input" placeholder="Search papers or use operators: >1000, ccf:a, role:first..." autocomplete="off">
+              <kbd class="kbd">/</kbd>
+            </div>
+            <div class="pill-group" id="demo-operator-pills">
+              <button type="button" class="pill active" data-query="">All</button>
+              <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
+              <button type="button" class="pill" data-query="role:first">role:first</button>
+              <button type="button" class="pill" data-query=">1000">&gt;1000</button>
+              <button type="button" class="pill" data-query="year:>=2020">&ge;2020</button>
+              <button type="button" class="pill" data-query="has:award">has:award</button>
+            </div>
+          </div>
+          <div class="roles" role="group" aria-label="${t("demo.title")}">
+${["first", "cofirst", "second", "last"].map((r) => `            <button type="button" class="role-btn" data-role="${r}" aria-pressed="true"><i></i>${t(`demo.role.${r}`)}</button>`).join("\n")}
+          </div>
+          <div class="mockup-content-grid">
+            <div class="mockup-papers-col">
+              <div class="demo-card" id="demo-papers-list" aria-live="polite">
+${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" data-id="${d.id}" data-citations="${d.citations}" data-year="${d.year}" data-venue="${esc(d.venue)}" data-award="${esc(d.award)}" data-chips="${d.chips.join(",")}" data-title="${esc(d.title)}">
+                  <div class="paper-main">
+                    <b class="ptitle">${esc(d.title)}</b>
+                    <span class="auth">${demoAuthors(d.authors, t("demo.you"))}</span>
+                    <span class="ven">${esc(d.venue)} (${d.year}) ${d.chips.map((c) => `<em class="${c.startsWith("CCF") ? "chip-ccf" : "chip-core"}">${c}</em>`).join("")}${d.award ? `<span class="award-chip">${esc(d.award)}</span>` : ""}</span>
+                  </div>
+                  <div class="paper-meta">
+                    <span class="cites" title="Citations">${d.citations.toLocaleString()}</span>
+                    <span class="year">${d.year}</span>
+                  </div>
+                </div>`).join("\n")}
+              </div>
+              <p class="demo-count">${t("demo.count")}: <b id="demo-n">6</b></p>
+            </div>
+            <div class="mockup-panel-col">
+              <div class="mini-panel">
+                <div class="mini-panel-header">
+                  <span>Roles &amp; Ranks</span>
+                  <span class="mini-badge">CCF</span>
+                </div>
+                <div class="matrix-table-wrap">
+                  <table class="mini-matrix">
+                    <thead>
+                      <tr><th>Role</th><th>A</th><th>B</th><th>C</th><th>None</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr data-matrix-role="first"><td class="rlabel">First</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="cofirst"><td class="rlabel">Co-1st</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
+                      <tr data-matrix-role="second"><td class="rlabel">Second</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
+                      <tr data-matrix-role="last"><td class="rlabel">Last</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mini-metrics">
+                  <button type="button" class="metric-btn" id="demo-hcore" title="Filter to publications with &ge;142 citations">
+                    <span>H-Core (&ge;142)</span>
+                    <strong>6</strong>
+                  </button>
+                  <button type="button" class="metric-btn" id="demo-i10" title="Filter to publications with &ge;10 citations">
+                    <span>i10-index (&ge;10)</span>
+                    <strong>6</strong>
+                  </button>
+                </div>
+                <div class="mini-export-bar">
+                  <button type="button" class="export-btn" data-export="bibtex">BibTeX</button>
+                  <button type="button" class="export-btn" data-export="json">JSON</button>
+                  <button type="button" class="export-btn" data-export="markdown">Markdown</button>
+                  <button type="button" class="export-btn" data-export="csv">CSV</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="toast-notification" id="demo-toast" aria-live="polite"></div>
       </div>
-      <div class="demo-card" aria-live="polite">
-${DEMO.map((d, i) => `        <div class="paper" data-role="${d.role}"><b class="ptitle">${t("demo.paper")} ${i + 1}</b><span class="auth">${demoAuthors(d.role, t("demo.you"))}</span><span class="ven">${d.venue} ${d.chips.map((c) => `<em>${c}</em>`).join("")}</span></div>`).join("\n")}
-      </div>
-      <p class="demo-count">${t("demo.count")}: <b id="demo-n">0</b></p>
     </div>
   </section>
+
+  <section class="export-section">
+    <div class="wrap">
+      <h2>1-Click Academic Export</h2>
+      <p class="note">Instant, compile-ready publication formats for CVs, grant applications, research agents, and spreadsheets.</p>
+      <div class="export-card">
+        <div class="export-tabs" role="tablist">
+          <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
+          <button type="button" class="tab-btn" data-tab="json" role="tab">Structured JSON</button>
+          <button type="button" class="tab-btn" data-tab="markdown" role="tab">GitHub Markdown</button>
+          <button type="button" class="tab-btn" data-tab="csv" role="tab">RFC-4180 CSV</button>
+        </div>
+        <div class="code-preview-wrap">
+          <pre class="code-preview"><code id="export-code-display"></code></pre>
+          <button type="button" class="copy-code-btn" id="copy-export-display">Copy to clipboard</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="operators-section">
+    <div class="wrap">
+      <h2>Instant Search &amp; Query Operators</h2>
+      <p class="note">Press <kbd>/</kbd> anywhere on Google Scholar to power through large publication corpora.</p>
+      <div class="operators-grid">
+        <div class="op-card">
+          <div class="op-header"><code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code></div>
+          <p class="op-title">Citation Thresholds</p>
+          <p class="op-desc">Filter papers having citations above or below any threshold number.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header"><code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code></div>
+          <p class="op-title">Venue Ranking Tiers</p>
+          <p class="op-desc">Isolate publications in top CCF or CORE ranked conferences and journals.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header"><code>role:first</code> <code>role:last</code> <code>r:cofirst</code></div>
+          <p class="op-title">Authorship Roles</p>
+          <p class="op-desc">Filter by student first author, co-first, second, or senior last author.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header"><code>&gt;2020</code> <code>year:&gt;=2021</code></div>
+          <p class="op-title">Publication Year Ranges</p>
+          <p class="op-desc">Filter papers published after, before, or within specific years.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header"><code>has:award</code> <code>has:talk</code></div>
+          <p class="op-title">Honors &amp; Presentations</p>
+          <p class="op-desc">Isolate Best Paper, Test of Time, Oral, Spotlight, or Highlight works.</p>
+        </div>
+        <div class="op-card">
+          <div class="op-header"><kbd>Escape</kbd></div>
+          <p class="op-title">One-Key Reset</p>
+          <p class="op-desc">Instantly clears all active search queries, matrix filters, and metric selections.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="shots">
     <div class="wrap">
       <figure>
@@ -133,11 +351,13 @@ ${DEMO.map((d, i) => `        <div class="paper" data-role="${d.role}"><b class=
       </figure>
     </div>
   </section>
+
   <section class="features">
     <div class="wrap grid">
 ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.title`)}</h3><p>${t(`f.${k}.text`)}</p></article>`).join("\n")}
     </div>
   </section>
+
   <section id="install" class="install">
     <div class="wrap">
       <h2>${t("install.title")}</h2>
@@ -149,6 +369,7 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
       <p class="note">${t("install.note")}</p>
     </div>
   </section>
+
   <section class="honest">
     <div class="wrap">
       <h2>${t("honest.title")}</h2>
@@ -213,7 +434,7 @@ ${languages.map((l) => `<li><a href="${l.code}/" hreflang="${l.code}" lang="${l.
 `;
 }
 
-// PRIVACY.md (kept in src/privacy.md: `npm run sync-privacy` copies it from the extension repository) as one English page
+// PRIVACY.md as one English page
 function inline(text) {
   return esc(text)
     .replace(/`([^`]+)`/g, "<code>$1</code>")

@@ -7,6 +7,6 @@
     "verify": "node build.mjs && node scripts/verify.mjs",
     "deploy": "scripts/deploy.sh",
     "dev": "node build.mjs && python3 -m http.server 8080 --directory _site",
-    "sync-privacy": "cp ../google-scholar-highlighter/PRIVACY.md src/privacy.md"
+    "sync-privacy": "cp ../../PRIVACY.md src/privacy.md 2>/dev/null || cp PRIVACY.md src/privacy.md"
   }
 }
