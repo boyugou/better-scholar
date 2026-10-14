@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.37.0 — 2026-10-14
+
+- **Extension Settings Page UI/UX Redesign**:
+  - Overhauled the settings page (`src/options/`) with modern design standards, elevated card aesthetics, and category iconography.
+  - Replaced crude native color pickers with a custom interactive **Color Control Widget**:
+    - Curated quick-select color palette dots for academic authorship roles (`First`, `Co-first`, `Second`, `Last`).
+    - Modern color pill featuring a live circular swatch, uppercase monospace HEX badge, and seamless overlay for arbitrary fine-tune selection.
+    - Dedicated single-click reset button per role.
+  - Redesigned toggle switch (`.sw`) physics with smooth cubic-bezier transitions, spring active thumb expansion, and layered shadows.
+  - Enhanced select dropdowns (`select.sel`) with modern borders, clean SVG chevrons, and active focus rings.
+  - Transformed preset selectors into tactile chips (`🎓 Senior author focus`, `🥇 First author focus`, `⚡ Minimalist`).
+  - Added global quick search filter with SVG icon, clear button, and `/` shortcut key.
+  - Refactored settings update cycle to render DOM synchronously before asynchronous storage write, eliminating latency in preview updates.
+  - Verified 100% WCAG 2.1 AA contrast compliance in both light and dark themes across all 30 languages.
+- **Documentation & Website Visual Synchronization**:
+  - Updated high-resolution settings screenshots in `docs/` and synced with READMEs.
+  - Rebuilt and deployed static marketing site on `site` and `gh-pages` branches with refreshed UI mockups.
+
 ## 2.36.0 — 2026-10-14
 
 - **Agent-Native DOM CustomEvent Bridge**:
