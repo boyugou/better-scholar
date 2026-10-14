@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.35.0 — 2026-10-14
+
+- **Interactive Search Operator Pills**:
+  - Added a row of tactile, 1-click operator pills under the instant search input (`[CCF A]`, `[>100]`, `[First author]`, `[Awards]`).
+  - Clicking any pill toggles the corresponding operator (`ccf:a`, `>100`, `role:first`, `has:award`) into the search query in real time, updating the paper filter instantly while retaining focus for free-text search.
+  - Dynamically adapts to active ranking preferences (switches to `CORE A*` when CORE is enabled instead of CCF).
+  - Synchronizes active state (`aria-pressed="true"`, `.rr-spill-active`) with manual query input and clears seamlessly on `Escape` or clear.
+  - Fully localized across 30 languages with 100% WCAG 2.1 AAA accessibility compliance.
+- **Brand Consistency & User-Agent Modernization**:
+  - Modernized metadata across `PRIVACY.md`, `NOTICE`, and all offline award fetchers to Better Scholar.
+  - Rebuilt and deployed synchronized 30-language documentation to GitHub Pages.
+
 ## 2.34.0 — 2026-10-14
 
 - **Global Escape Key Filter Clearing & Search Operator Tooltip**:

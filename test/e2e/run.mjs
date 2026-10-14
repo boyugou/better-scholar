@@ -639,7 +639,30 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.keyboard.press("/");
     assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.getAttribute("data-act")), "filter-query", "pressing / focuses the search query input");
     await queryInput.press("Escape");
-    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, steps matches with Enter, shows count badge, and focuses on /");
+    // Quick search operator pills
+    const pills = page.locator("#rr-panel .rr-search-pills .rr-spill");
+    assert.equal(await pills.count(), 4, "4 quick operator pills render");
+    const pillCcf = page.locator('#rr-panel .rr-spill[data-op="ccf:a"]');
+    const pillCites = page.locator('#rr-panel .rr-spill[data-op=">100"]');
+    assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
+    // Clicking CCF A pill activates operator
+    await pillCcf.click();
+    assert.equal(await queryInput.inputValue(), "ccf:a");
+    assert.equal(await pillCcf.getAttribute("aria-pressed"), "true");
+    assert.equal(await visibleRows(page), countCcfA);
+    // Clicking >100 pill appends second operator
+    await pillCites.click();
+    assert.equal(await queryInput.inputValue(), "ccf:a >100");
+    assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
+    assert.equal(await pillCcf.getAttribute("aria-pressed"), "true");
+    // Clicking CCF A again toggles it off
+    await pillCcf.click();
+    assert.equal(await queryInput.inputValue(), ">100");
+    assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
+    assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
+    await clearBtn.click();
+    assert.equal(await pillCites.getAttribute("aria-pressed"), "false");
+    ok("year filter and 'only highlighted' hide the right rows; year bars filter on click; the year list works from the keyboard; search input filters on query, steps matches with Enter, shows count badge, operator pills toggle, and focuses on /");
 
     // -- 10. the owner's name is marked by default, with the role in a tooltip; switching it off keeps the tooltip on the line
     assert.ok((await page.locator(".rr-name").count()) > 0, "the owner's name is marked by default");

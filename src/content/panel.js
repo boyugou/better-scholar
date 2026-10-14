@@ -107,10 +107,52 @@
       cb.onQuery("");
       queryInput.focus();
     } }, "×");
+
+    function toggleToken(query, token) {
+      const parts = (query || "").trim().split(/\s+/).filter(Boolean);
+      const idx = parts.indexOf(token);
+      if (idx >= 0) parts.splice(idx, 1);
+      else parts.push(token);
+      return parts.join(" ");
+    }
+    function hasToken(query, token) {
+      return (query || "").trim().split(/\s+/).filter(Boolean).includes(token);
+    }
+
+    const pillDefs = [
+      { op: "ccf:a", label: "CCF A" },
+      { op: ">100", label: ">100" },
+      { op: "role:first", label: t("roleFirst") },
+      { op: "has:award", label: t("markAward") }
+    ];
+    const pillEls = pillDefs.map((p) => {
+      const btn = h("button", {
+        type: "button",
+        class: "rr-spill",
+        "data-op": p.op,
+        "aria-pressed": "false",
+        onClick: () => {
+          queryInput.value = toggleToken(queryInput.value, btn.getAttribute("data-op"));
+          syncSearchUI();
+          cb.onQuery(queryInput.value);
+          queryInput.focus();
+        }
+      }, p.label);
+      return { ...p, btn };
+    });
+    const searchPills = h("div", { class: "rr-search-pills", role: "group", "aria-label": t("optPanelFilters") },
+      ...pillEls.map((p) => p.btn));
+
     function syncSearchUI(m) {
       const hasText = !!queryInput.value;
       clearSearchBtn.hidden = !hasText;
       kbdHint.hidden = hasText;
+      pillEls.forEach((p) => {
+        const op = p.btn.getAttribute("data-op");
+        const active = hasToken(queryInput.value, op);
+        p.btn.classList.toggle("rr-spill-active", active);
+        p.btn.setAttribute("aria-pressed", String(active));
+      });
       if (m && m.searchMatch) {
         const { count, cursor } = m.searchMatch;
         searchCount.hidden = false;
@@ -142,6 +184,7 @@
     const onlyRow = h("div", { class: "rr-row" }, h("label", { class: "rr-check" }, onlyCb, t("onlyHighlighted")));
     const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters" },
       searchRow,
+      searchPills,
       onlyRow,
       h("div", { class: "rr-year" }, h("span", { class: "rr-label" }, t("yearLabel")), yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list));
 
@@ -437,6 +480,20 @@
       metricsSec.hidden = !m.prefs.panel.metrics;
       summarySec.hidden = !m.prefs.panel.summary;
       actions.hidden = !m.prefs.panel.copy;                                      // (the Copy summary / as table / papers buttons: their own switch)
+      const rankPill = pillEls[0];
+      if (m && m.prefs && m.prefs.ranks) {
+        if (!m.prefs.ranks.ccf && m.prefs.ranks.core) {
+          rankPill.btn.setAttribute("data-op", "core:a*");
+          rankPill.btn.textContent = "CORE A*";
+          rankPill.btn.hidden = false;
+        } else if (!m.prefs.ranks.ccf && !m.prefs.ranks.core) {
+          rankPill.btn.hidden = true;
+        } else {
+          rankPill.btn.setAttribute("data-op", "ccf:a");
+          rankPill.btn.textContent = "CCF A";
+          rankPill.btn.hidden = false;
+        }
+      }
       variantBox.hidden = !m.prefs.panel.names;
       footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;
