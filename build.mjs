@@ -368,6 +368,9 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
   <div class="wrap">
     <span>${t("footer.license")}</span>
     <a href="../privacy/">${t("footer.privacy")}</a>
+    <a href="${REPO_URL}/blob/main/ROADMAP.md">Roadmap</a>
+    <a href="${REPO_URL}/blob/main/AGENTS.md">Agent API</a>
+    <a href="${REPO_URL}/blob/main/SECURITY.md">Security</a>
     <a href="${REPO_URL}/issues">${t("footer.issues")}</a>
     <a href="${REPO_URL}">GitHub</a>
   </div>
