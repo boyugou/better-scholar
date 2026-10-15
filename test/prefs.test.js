@@ -263,3 +263,13 @@ test("the record fits what chrome.storage.sync takes: 8 KB for an item, so the w
   const worst = prefs.apply(prefs.defaults(), { colors: { first: "#abcdef", cofirst: "#abcdef", second: "#abcdef", last: "#abcdef" }, panel: { order: [...prefs.SECTIONS].reverse(), copy: { order: [...prefs.COPY_BUTTONS].reverse() }, filters: { pills: { order: [...prefs.PILLS].reverse() } } } }).prefs;
   assert.ok(Buffer.byteLength(JSON.stringify(worst)) < 4096, "the settings: " + Buffer.byteLength(JSON.stringify(worst)) + " bytes");
 });
+
+test("the quick filters that are drawn: in their order, those that are on and can find something", () => {
+  const set = (patch) => prefs.apply(prefs.defaults(), patch).prefs;
+  assert.deepEqual(prefs.pills(prefs.defaults()), ["ccfA", "cites100", "first", "award"]);
+  assert.deepEqual(prefs.pills(set({ panel: { filters: { pills: { order: ["award", "first"], cites100: false } } } })), ["award", "first", "ccfA"]);
+  assert.deepEqual(prefs.pills(set({ rows: { ccf: false }, panel: { table: { ccf: false } } })), ["cites100", "first", "award"], "CCF is drawn nowhere: nothing to find with ccf:a");
+  assert.deepEqual(prefs.pills(set({ rows: { award: false }, panel: { marks: { award: false } } })), ["ccfA", "cites100", "first"]);
+  assert.deepEqual(prefs.pills(set({ panel: { filters: { pills: { talk: true, coreA: true, last: true } } } })), ["ccfA", "coreA", "cites100", "first", "last", "award", "talk"]);
+  assert.deepEqual(prefs.pills(set({ rows: { oral: false, spotlight: false, highlight: false }, panel: { marks: { oral: false, spotlight: false, highlight: false }, filters: { pills: { talk: true } } } })), ["ccfA", "cites100", "first", "award"], "no talk is drawn: no quick filter for talks");
+});

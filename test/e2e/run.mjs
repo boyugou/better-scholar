@@ -161,11 +161,13 @@ async function openOptions(context) {
   return p;
 }
 // (a background tab neither paints nor can be screenshotted, so each helper first brings its own tab to the front)
-const setPref = async (p, key, on) => { await p.bringToFront(); await p.setChecked(`input[data-pref="${key}"]`, on); };
+const setPref = async (p, key, on) => { await p.bringToFront(); await p.setChecked(`input[data-pref="${key}"]`, on); await settle(p); };      // (a setting is set once it is written)
 // a rank list (ccf, core) or a kind of mark (award, oral, …) on or off everywhere it is drawn: the chips on the rows, and the table's tab or the count row
 const setList = async (p, list, on) => { await setPref(p, "rows." + list, on); await setPref(p, "panel.table." + list, on); };
 const setMark = async (p, group, on) => { await setPref(p, "rows." + group, on); await setPref(p, "panel.marks." + group, on); };
-const stored = (p, area, key) => p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]);
+// (the settings page writes what it was told a moment later than it was told, at most 85 times a minute: a read of its settings waits for that write)
+const settle = (p) => pollPage(p, () => !document.body.hasAttribute("data-rr-pending")).catch(() => {});
+const stored = async (p, area, key) => { if (area === "sync" && key === "prefs" && p.url().endsWith("/options/options.html")) await settle(p); return p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]); };
 // (waitForFunction evaluates its predicate as a string, which the extension pages' content security policy -- scripts from 'self' only -- can refuse
 // on some builds: these pages are polled with evaluate instead)
 const pollPage = async (p, fn, arg, timeout = 10000) => {
@@ -177,7 +179,7 @@ const pollPage = async (p, fn, arg, timeout = 10000) => {
   }
 };
 
-const eventually = async (page, fn, arg) => { await page.bringToFront(); return page.url().startsWith("chrome-extension://") ? pollPage(page, fn, arg) : page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); };
+const eventually = async (page, fn, arg) => { await page.bringToFront(); try { return page.url().startsWith("chrome-extension://") ? await pollPage(page, fn, arg) : await page.waitForFunction(fn, arg, { polling: 100, timeout: 10000 }); } catch (e) { e.message += "\n  while waiting for: " + fn.toString().slice(0, 200); throw e; } };
 
 (async () => {
   const fx = await start({ slug: "ion-stoica", pageSize: 20 });
@@ -421,6 +423,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "panel-ar.png") });
     await opts.selectOption('select[data-pref="language"]', "auto");
     await page.waitForFunction((x) => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").getAttribute("aria-label") === x, enTitle, { timeout: 15000 });
+    await pollPage(opts, (x) => document.title.startsWith(x), enTitle, 15000);                  // (the settings page has been drawn again in English: it reloads once the setting is written)
+    await page.waitForSelector("html[data-rr-ready]");                                           // (the profile has been drawn again and listens for settings: a change made while it loads would be missed)
     ok("language: picking Japanese redraws the open profile and the settings page in it; 'Follow the browser' brings English back");
     // -- 6a5. "Open Scholar in": a profile opened in another language is opened again with the chosen one; "Leave as it is" stops that
     await opts.bringToFront();
@@ -1006,6 +1010,87 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.isChecked('input[data-act="only"]'), false);
     ok("every role switched off: the 'Only highlighted' filter is cleared and hidden");
 
+    // -- S3c. every thing the panel draws has its own switch, and the parts and the buttons have an order
+    const patchPrefs = async (patch) => { await settle(opts); return opts.evaluate(async (pt) => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, pt).prefs }); }, patch); };
+    const count = (sel) => page.locator("#rr-panel " + sel).count();
+    const sectionOrder = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-body > [data-section]")].filter((e) => !e.hidden).map((e) => e.dataset.section));
+    const defaultOrder = await sectionOrder();
+    assert.ok(defaultOrder.length >= 5 && defaultOrder.join() === [...defaultOrder].sort((x, y) => prefsLib.SECTIONS.indexOf(x) - prefsLib.SECTIONS.indexOf(y)).join(), "the parts, in the default order: " + defaultOrder);
+    // the title bar
+    assert.equal(await count(".rr-title"), 1);
+    await patchPrefs({ panel: { header: { name: false } } });
+    await eventually(page, () => document.querySelector("#rr-panel .rr-title").hidden);
+    assert.equal(await page.locator('#rr-panel [data-act="settings"]').isVisible(), true, "the other buttons stay");
+    await page.click('[data-act="collapse"]');                                       // (folded, with the button still there)
+    await eventually(page, () => document.getElementById("rr-panel").classList.contains("rr-collapsed"));
+    await patchPrefs({ panel: { header: { fold: false } } });
+    await eventually(page, () => !document.getElementById("rr-panel").classList.contains("rr-collapsed") && document.querySelector('[data-act="collapse"]').hidden);
+    assert.equal(await page.locator("#rr-panel .rr-body").isVisible(), true, "with no fold button a panel folded earlier is open: it could not be opened again");
+    await patchPrefs({ panel: { header: { settings: false } } });
+    await eventually(page, () => document.querySelector(".rr-head").hidden);
+    await patchPrefs({ panel: { header: { name: true, settings: true, fold: true } } });
+    await eventually(page, () => document.getElementById("rr-panel").classList.contains("rr-collapsed") && !document.querySelector(".rr-head").hidden);
+    await page.click('[data-act="collapse"]');
+    await eventually(page, () => !document.getElementById("rr-panel").classList.contains("rr-collapsed"));
+    // the table: the title, the totals, the "not ranked" column, the Other row, the note
+    assert.ok((await count(".rr-matrix th.rr-col-total")) === 1 && (await count('.rr-matrix tr[data-role="middle"]')) === 1 && (await count('.rr-matrix button[data-tier="none"]')) > 0);
+    await patchPrefs({ panel: { table: { total: false, unranked: false, other: false, note: false, title: false } } });
+    await eventually(page, () => !document.querySelector(".rr-matrix th.rr-col-total") && !document.querySelector('.rr-matrix button[data-tier="none"]') && !document.querySelector('.rr-matrix tr[data-role="middle"]'));
+    assert.deepEqual([await count(".rr-matrix .rr-total"), await count(".rr-matrix tfoot tr"), await page.locator('[data-rr="note"]').isHidden(), await count(".rr-summary .rr-sec-title")], [0, 0, true, 0], "no totals, no note, no title");
+    assert.equal(await count(".rr-matrix thead th"), 1 + 3, "only the rank columns are left (and the empty corner)");
+    await patchPrefs({ panel: { table: { total: true, unranked: true, other: true, note: true, title: true } } });
+    await eventually(page, () => document.querySelector(".rr-matrix th.rr-col-total") && document.querySelector('.rr-matrix tr[data-role="middle"]') && !document.querySelector('[data-rr="note"]').hidden);
+    // the order of the buttons and of the parts, and the quick filters
+    await patchPrefs({ panel: { copy: { order: ["csv", "json"] }, order: ["metrics", "table"], filters: { pills: { order: ["award", "first"], cites100: false } } } });
+    await eventually(page, () => document.querySelector('[data-rr="export-row"] button').dataset.act === "copy-csv");
+    assert.deepEqual((await page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act))).slice(0, 3), ["copy-csv", "copy-json", "copy-summary"], "the copy buttons in the order of the settings");
+    assert.deepEqual((await sectionOrder()).slice(0, 2), ["metrics", "table"], "the parts in the order of the settings");
+    assert.deepEqual(await page.locator("#rr-panel .rr-spill").evaluateAll((els) => els.map((e) => e.dataset.pill)), ["award", "first", "ccfA"], "the quick filters: in order, those that are off left out");
+    await setList(opts, "ccf", false);
+    await eventually(page, () => !document.querySelector('.rr-spill[data-pill="ccfA"]'));
+    await setList(opts, "ccf", true);
+    await patchPrefs({ panel: { order: prefsLib.defaults().panel.order, copy: { order: prefsLib.COPY_BUTTONS }, filters: { pills: { order: prefsLib.PILLS, cites100: true } } } });
+    await eventually(page, () => document.querySelector('[data-rr="export-row"] button').dataset.act === "copy-summary" && document.querySelector('.rr-spill[data-pill="ccfA"]'));
+    // the filters: each thing has its switch, and a filter whose control goes is cleared
+    await page.fill(".rr-search-input", "role:first");
+    await eventually(page, () => document.querySelector('[data-rr="filterbar"]') && !document.querySelector('[data-rr="filterbar"]').hidden);
+    await patchPrefs({ panel: { filters: { bar: false } } });
+    await eventually(page, () => document.querySelector('[data-rr="filterbar"]').hidden);
+    assert.ok((await visibleRows(page)) < 20, "the bar is only the words about the filter: it filters without it");
+    await patchPrefs({ panel: { filters: { bar: true, search: false, pills: { ccfA: false, cites100: false, first: false, award: false } } } });
+    await eventually(page, () => document.querySelector(".rr-search").hidden && document.querySelector(".rr-search-pills").hidden);
+    assert.equal(await visibleRows(page), 20, "search words with no box and no quick filter left to undo them are cleared");
+    await patchPrefs({ panel: { filters: { search: true, pills: { ccfA: true, cites100: true, first: true, award: true } } } });
+    await eventually(page, () => !document.querySelector(".rr-search").hidden && !document.querySelector(".rr-search-pills").hidden);
+    await page.mouse.click(2, 2);                                                   // (the search box's suggestions are open over the year list: a click elsewhere closes them)
+    await pickYear(page, "year-start", rows20.map((p) => p.year).filter(Boolean).sort()[Math.floor(rows20.length / 2)]);
+    assert.ok((await visibleRows(page)) < 20, "a year range filters");
+    await patchPrefs({ panel: { filters: { years: false }, years: { show: false } } });
+    await eventually(page, () => document.querySelector(".rr-year").hidden);
+    assert.equal(await visibleRows(page), 20, "a year range with no dropdown and no bar to undo it is cleared");
+    await patchPrefs({ panel: { filters: { years: true, only: false }, years: { show: true } } });
+    await eventually(page, () => !document.querySelector(".rr-year").hidden && document.querySelector('[data-act="only"]').closest(".rr-row").hidden);
+    await patchPrefs({ panel: { filters: { only: true } } });
+    // the citation totals and the year chart
+    assert.equal(await count(".rr-m"), 4);
+    await patchPrefs({ panel: { metrics: { title: false, scope: false, papers: false, h: false, of: false }, years: { title: false, axis: false } } });
+    await eventually(page, () => document.querySelectorAll('[data-rr="metrics"] .rr-m').length === 2 && !document.querySelector(".rr-bars-axis"));
+    assert.deepEqual([await count('[data-rr="metrics"] .rr-sec-title'), await count('[data-rr="metrics"] .rr-scope'), await count('[data-rr="metrics"] .rr-m .rr-faint'), await count('[data-rr="years"] .rr-sec-title')], [0, 0, 0, 0]);
+    await patchPrefs({ panel: { metrics: { title: true, scope: true, papers: true, h: true, of: true }, years: { title: true, axis: true } } });
+    await eventually(page, () => document.querySelectorAll('[data-rr="metrics"] .rr-m').length === 4 && document.querySelector(".rr-bars-axis"));
+    // the h-index papers: the button goes with its switch, and so does the filter it made
+    await page.click('[data-metric="mH"]');
+    await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
+    assert.ok((await visibleRows(page)) < 20);
+    await patchPrefs({ panel: { metrics: { h: false } } });
+    await eventually(page, () => !document.querySelector('[data-metric="mH"]'));
+    assert.equal(await visibleRows(page), 20, "the papers behind the h-index are shown again when its button goes");
+    await patchPrefs({ panel: { metrics: { h: true }, names: { add: false } } });
+    await eventually(page, () => document.querySelector('[data-rr="variants"]').hidden);
+    await patchPrefs({ panel: { names: { add: true } } });
+    await eventually(page, () => !document.querySelector('[data-rr="variants"]').hidden);
+    ok("every thing the panel draws has its own switch (title bar, table, totals, filters, citation totals, year chart, name help), the parts and the buttons follow their order, and a filter whose control goes is cleared");
+
     // -- S4. the toolbar popup follows the settings
     await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
@@ -1114,6 +1199,24 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.years.show", false);
     await opts.locator('#pv-panel [data-rr="years"]').first().waitFor({ state: "hidden", timeout: 8000 });
     await setPref(opts, "panel.years.show", true);
+    // the settings follow the preview: with everything switched on, the panel's parts and the things in them are in the order of the settings, top to bottom
+    // (the chips and the name mark are in every row and the "of N" in every number, so only the panel's own parts have one place each)
+    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); const all = B.prefs.apply(r.prefs, B.prefs.PRESETS.all).prefs; await chrome.storage.sync.set({ prefs: B.prefs.apply(all, { panel: { filters: { pills: Object.fromEntries(B.prefs.PILLS.map((id) => [id, true])) } } }).prefs }); });
+    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 9 && document.querySelector("#pv-panel [data-rr=\"venues\"]") && !document.querySelector("#pv-panel [data-rr=\"venues\"]").hidden);
+    const panelPaths = prefsLib.SETTINGS.map((x) => x.path).filter((x) => x.startsWith("panel.") && x !== "panel.metrics.of");
+    const where = await opts.evaluate((paths) => {
+      const aside = document.querySelector(".preview"), base = aside.getBoundingClientRect();
+      return paths.map((p) => { const el = aside.querySelector(`#pv-panel [data-rr-part="${p}"]`); if (!el) return null; const r = el.getBoundingClientRect(); if (!r.width && !r.height) return null; return { p, y: Math.round(r.top - base.top + aside.scrollTop), x: Math.round(r.left - base.left) }; }).filter(Boolean);
+    }, panelPaths);
+    const missing = panelPaths.filter((x) => !where.some((w) => w.p === x));
+    assert.deepEqual(missing.filter((x) => !["panel.show", "panel.order", "panel.filters.bar", "panel.copy.order", "panel.filters.pills.order", "panel.marks.grouping"].includes(x)), [], "every part of the panel is drawn in the preview, so that it can be pointed at");
+    for (let i = 1; i < where.length; i++) {
+      const a = where[i - 1], b = where[i];
+      assert.ok(b.y > a.y + 6 || (b.y >= a.y - 6 && b.x >= a.x - 2), `the settings follow the preview: ${a.p} (${a.y}, ${a.x}) comes before ${b.p} (${b.y}, ${b.x})`);
+    }
+    await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, { panel: { venues: { show: false }, filters: { pills: B.prefs.defaults().panel.filters.pills } } }).prefs }); });
+    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 4);
+    ok("the settings are in the order of the preview: the parts of the panel and the things in them, top to bottom");
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
     const compact = (await stored(opts, "sync", "prefs")).panel;
@@ -1121,12 +1224,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
     await opts.click('[data-act="all-on"][data-group="panel"]');       // (the panel card's Enable all)
+    await pollPage(opts, async () => { const p = (await chrome.storage.sync.get("prefs")).prefs.panel; return ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"].every((id) => p[id].show); });
     const everyPart = (await stored(opts, "sync", "prefs")).panel;
     assert.deepEqual([prefsLib.SECTIONS.filter((id) => !everyPart[id].show), Object.values(everyPart.header).every(Boolean)], [[], true], "Enable all brings back every part (the venue list too) and the title bar");
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await opts.click('[data-act="all-on"][data-group="panel"]');       // (Enable all of the panel's parts shows the panel too)
-    assert.equal((await stored(opts, "sync", "prefs")).panel.show, true);
+    await pollPage(opts, async () => (await chrome.storage.sync.get("prefs")).prefs.panel.show === true);
     await pollPage(opts, () => document.querySelector('input[data-pref="panel.show"]').checked === true);
     // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved (polled: the switches re-sync after the save)
     const groups = [

@@ -1056,5 +1056,8 @@
   },
   "optRowStyleNone": {
     "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
   }
 }

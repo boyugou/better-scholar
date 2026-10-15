@@ -380,6 +380,7 @@
 
     // the parts, by the ids of the settings' panel.order
     const sections = { table: summarySec, copy: copySec, marks: marksSec, filters: filtersSec, metrics: metricsSec, years: yearsSec, venues: venuesSec, status: coverSec, names: namesSec };
+    for (const [id, sec] of Object.entries(sections)) sec.setAttribute("data-section", id);
     const body = h("div", { class: "rr-body" });
     // a bar that says the list is filtered, by how much, and clears every filter
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") });
@@ -596,10 +597,7 @@
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
       yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");
       yearEnd.setOptions(opts(t("yearEnd")), m.filters.yearEnd != null ? String(m.filters.yearEnd) : "");
-      // the quick filters, in the panel's order: those switched on that can find something (a rank list or a kind of mark that nothing draws finds nothing)
-      const lists = B.prefs.lists(m.prefs);
-      const finds = { ccfA: lists.ccf, coreA: lists.core, award: B.prefs.markShown(m.prefs, "award"), talk: ["oral", "spotlight", "highlight"].some((g) => B.prefs.markShown(m.prefs, g)) };
-      const ids = fp.pills.order.filter((id) => fp.pills[id] && finds[id] !== false);
+      const ids = B.prefs.pills(m.prefs);                                                // (the quick filters, in the panel's order)
       searchPills.replaceChildren(...ids.map((id) => pillEls.get(id)));
       searchPills.hidden = !ids.length;
       searchRow.hidden = !fp.search;

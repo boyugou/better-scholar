@@ -180,6 +180,8 @@ body {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+#saved.bad { color: var(--danger); background: var(--danger-bg); border-color: var(--danger-border); }
+#saved.bad::before { content: "!"; }
 
 /* ==========================================================================
    Main Grid Layout

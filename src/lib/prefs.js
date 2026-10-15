@@ -107,7 +107,8 @@
         { label: "optPanelOrder", hint: "optPanelOrderHint", parent: "panel.show" }),
       bool("panel.header.name", true, "The panel's title at the top.", { label: "optHeadName", parent: "panel.show" }),
       bool("panel.header.settings", true, "The button in the panel's title bar that opens the settings page.", { label: "optHeadSettings", parent: "panel.show" }),
-      bool("panel.header.fold", true, "The button that folds the panel to its title bar. Off: the panel is always open.", { label: "optHeadFold", parent: "panel.show" })
+      bool("panel.header.fold", true, "The button that folds the panel to its title bar. Off: the panel is always open.", { label: "optHeadFold", parent: "panel.show" }),
+      bool("panel.filters.bar", true, "The bar under the title bar that says how many papers the filters leave, and clears them (drawn only while a filter is on).", { label: "optFiltersBar", parent: "panel.show" })
     ]),
     card("table", "optPanelSummary", "optPanelSummaryHint", part("table", "The table of your papers by position and rank (also the toolbar popup's table).", [
       ["title", true, "optPartTitle", "The title line of the table."],
@@ -143,8 +144,7 @@
       ...PILLS.map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn).`,
         { label: PILL_LABEL[id], parent: "panel.filters.show", group: "optFiltersQuick" })),
       bool("panel.filters.only", true, "The \"Only highlighted\" switch (absent while no position is highlighted).", { label: "onlyHighlighted", parent: "panel.filters.show" }),
-      bool("panel.filters.years", true, "The year range: From and To.", { label: "optFiltersYears", parent: "panel.filters.show" }),
-      bool("panel.filters.bar", true, "The bar that says how many papers the filters leave, and clears them.", { label: "optFiltersBar", parent: "panel.filters.show" })
+      bool("panel.filters.years", true, "The year range: From and To.", { label: "optFiltersYears", parent: "panel.filters.show" })
     ]),
     card("metrics", "optPanelMetrics", "optPanelMetricsHint", part("metrics", "Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones.", [
       ["title", true, "optPartTitle", "The title line of the citation totals."],
@@ -322,6 +322,12 @@
   const chipMarks = (prefs, marks) => (marks || []).filter((m) => !!prefs.rows[markKey(m.group)]);            // for the chips on the rows
   const panelMarks = (prefs, marks) => (marks || []).filter((m) => !!prefs.panel.marks[markKey(m.group)]);    // for the counts in the panel and the popup
 
+  // The quick filters that are drawn, in their order: those switched on that can find something (a rank list or a kind of mark that nothing draws finds nothing)
+  function pills(prefs) {
+    const l = lists(prefs), finds = { ccfA: l.ccf, coreA: l.core, award: markShown(prefs, "award"), talk: ["oral", "spotlight", "highlight"].some((g) => markShown(prefs, g)) };
+    return prefs.panel.filters.pills.order.filter((id) => prefs.panel.filters.pills[id] && finds[id] !== false);
+  }
+
   // The rank lists the table has a tab for, and the one it uses: the remembered one if it is on, otherwise the first that is, otherwise none (the table then shows roles only).
   const sources = (prefs) => RANKS.filter((k) => prefs.panel.table[k]);
   function source(prefs, ui) {
@@ -333,5 +339,5 @@
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
   return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, CARDS, SETTINGS, PRESETS, defaults, normalize, normalizeUi, flatten, apply,
-    listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, sources, source, copyButtons };
+    listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });

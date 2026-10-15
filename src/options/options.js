@@ -156,19 +156,46 @@
   const shownLanguage = prefs.language;                 // (the page is drawn in this one: a change of the interface language reloads it)
   const syncers = [];
 
-  let savedTimer = 0;
-  async function save() {
+  // chrome.storage.sync takes 120 writes a minute and says nothing when it refuses one. A change is shown at once and written at once, unless a write was made a moment
+  // ago: then the latest state is written when that moment is over, so a run of changes (a bulk switch, a drag, typing a name) costs a few writes, not one for each.
+  // The echo of a write comes back from storage as a change: it is not taken for somebody else's (the state of this page is newer), and a change made elsewhere while this
+  // page has one of its own to write loses to it.
+  const WRITE_GAP = 600;                                                        // (100 writes a minute at the fastest)
+  let savedTimer = 0, lastWrite = 0, writeTimer = 0, dirty = false, inFlight = false, waiters = [];
+  const written = [];                                                           // (what the last writes were: their echoes)
+  const isEcho = (next) => dirty || inFlight || written.includes(JSON.stringify(next));
+  function status(text, bad) {
+    $("saved").textContent = text;
+    $("saved").classList.toggle("bad", !!bad);
+    $("saved").classList.add("on");
+    clearTimeout(savedTimer);
+    savedTimer = setTimeout(() => $("saved").classList.remove("on"), bad ? 6000 : 1400);
+  }
+  async function flush() {
+    writeTimer = 0;
+    if (!dirty) return;
+    dirty = false; inFlight = true; lastWrite = Date.now();
+    written.push(JSON.stringify(B.prefs.normalize(prefs))); written.splice(0, written.length - 8);
+    const ok = await B.store.savePrefs(prefs);
+    inFlight = false;
+    if (!dirty) document.body.removeAttribute("data-rr-pending");
+    const done = waiters; waiters = [];
+    done.forEach((resolve) => resolve(ok));
+    if (ok && prefs.language !== shownLanguage && !dirty) { location.reload(); return; }
+    status(ok ? t("optSaved") : t("optSaveFailed"), !ok);
+  }
+  // (the page's own state is changed and drawn first; the returned promise settles when the write has been made)
+  function save() {
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
     renderPreview();
     syncers.forEach((fn) => fn());
-    await B.store.savePrefs(prefs);
-    if (prefs.language !== shownLanguage) { location.reload(); return; }
-    $("saved").textContent = t("optSaved");
-    $("saved").classList.add("on");
-    clearTimeout(savedTimer);
-    savedTimer = setTimeout(() => $("saved").classList.remove("on"), 1400);
+    dirty = true;
+    document.body.setAttribute("data-rr-pending", "");
+    if (!writeTimer) writeTimer = setTimeout(flush, Math.max(0, lastWrite + WRITE_GAP - Date.now()));
+    return new Promise((resolve) => waiters.push(resolve));
   }
+  window.addEventListener("pagehide", () => { if (dirty) flush(); });
 
   // A setting is its path in the record (lib/prefs.js SETTINGS); every control below is found by it: `data-pref="<path>"` (the settings reference for agents says so).
   const at = (path) => path.split(".").reduce((o, k) => o[k], prefs);
@@ -248,7 +275,7 @@
   // A language: the plain list of the languages (each in its own name) with the setting's own "none" first. The interface language reloads the page once chosen.
   function languageSelect({ path, label, hint, none, reload }) {
     const d = described(label, hint);
-    const sel = h("select", { class: "sel", "data-pref": path, ...d.ids, onChange: () => { put(path, sel.value); save().then(() => { if (reload) location.reload(); }); } },
+    const sel = h("select", { class: "sel", "data-pref": path, ...d.ids, onChange: () => { put(path, sel.value); save(); } },
       h("option", { value: none[0] }, none[1]), ...B.i18n.LANGUAGES.map(([code, name]) => h("option", { value: code, lang: code.replace("_", "-") }, name)));
     const row = h("div", { class: "opt" }, h("span", { class: "txt" }, d.name, d.hint), sel);
     const sync = () => { sel.value = at(path); };
@@ -449,9 +476,7 @@
       onChange: async () => {
         input.value = input.value.replace(/[^\x21-\x7e]/g, "");
         await B.store.saveS2Key(input.value);
-        $("saved").textContent = t("optSaved");
-        $("saved").classList.add("on");
-        setTimeout(() => $("saved").classList.remove("on"), 1400);
+        status(t("optSaved"));
       }
     });
     B.store.loadS2Key().then((k) => { input.value = k; });
@@ -799,30 +824,33 @@
   // ---- the preview -------------------------------------------------------
   const top = (abbr, name) => ({ ccf: { tier: "A", name, abbr, rule: "acronym" }, core: { rank: "A*", name, abbr, rule: "acronym" } });
   const SAMPLES = [
-    { role: "first", authors: ["A Author", "B Writer", "C Writer", "D Writer"], me: 0, venue: "ICLR 2025 (Oral)",
-      ...top("ICLR", "International Conference on Learning Representations"), marks: [{ kind: "oral", group: "oral", source: "author", text: "Oral" }] },
-    { role: "second", authors: ["B Writer", "A Author", "C Writer"], me: 1, venue: "NeurIPS 2024",
-      ...top("NeurIPS", "Conference on Neural Information Processing Systems"),
-      marks: [{ kind: "best", group: "award", source: "list", awardLabel: "Best Paper Award", venue: "NeurIPS", year: 2024 }] },
-    { role: "cofirst", authors: ["A Author*", "B Writer*", "C Writer"], me: 0, venue: "CVPR 2024 (Highlight)",
-      ...top("CVPR", "IEEE/CVF Conference on Computer Vision and Pattern Recognition"), marks: [{ kind: "highlight", group: "highlight", source: "author", text: "Highlight" }] },
-    { role: "last", authors: ["B Writer", "C Writer", "D Writer", "A Author"], me: 3, venue: "ACL 2023 (Spotlight)",
-      ...top("ACL", "Annual Meeting of the Association for Computational Linguistics"), marks: [{ kind: "spotlight", group: "spotlight", source: "author", text: "Spotlight" }] }
+    // (in the order of the settings: the four positions, and each paper carries the next of the chips the settings name)
+    { role: "first", authors: ["A Author", "B Writer", "C Writer", "D Writer"], me: 0, venue: "ICLR 2025",
+      ...top("ICLR", "International Conference on Learning Representations"),
+      marks: [{ kind: "best", group: "award", source: "list", awardLabel: "Best Paper Award", venue: "ICLR", year: 2025 }] },
+    { role: "cofirst", authors: ["A Author*", "B Writer*", "C Writer"], me: 0, venue: "CVPR 2024 (Oral)",
+      ...top("CVPR", "IEEE/CVF Conference on Computer Vision and Pattern Recognition"), marks: [{ kind: "oral", group: "oral", source: "author", text: "Oral" }] },
+    { role: "second", authors: ["B Writer", "A Author", "C Writer"], me: 1, venue: "NeurIPS 2024 (Spotlight)",
+      ...top("NeurIPS", "Conference on Neural Information Processing Systems"), marks: [{ kind: "spotlight", group: "spotlight", source: "author", text: "Spotlight" }] },
+    { role: "last", authors: ["B Writer", "C Writer", "D Writer", "A Author"], me: 3, venue: "ACL 2023 (Highlight)",
+      ...top("ACL", "Annual Meeting of the Association for Computational Linguistics"), marks: [{ kind: "highlight", group: "highlight", source: "author", text: "Highlight" }] }
   ];
   const EDITION = { ccf: "CCF 2026 (7th edition)", core: "ICORE 2026" };
 
+  // (what a setting draws carries its path, so that the page can point from the setting to it)
+  const marked = (el, path) => { el.setAttribute("data-rr-part", path); return el; };
   function sampleRow(s, i) {
     const lit = prefs.roles[s.role];
     const authors = h("div", { class: "g" });
     s.authors.forEach((name, k) => {
       if (k) authors.append(", ");
-      authors.append(k === s.me && lit && prefs.rows.name ? h("span", { class: "rr-name rr-name-" + s.role }, name) : name);
+      authors.append(k === s.me && lit && prefs.rows.name ? h("span", { class: "rr-name rr-name-" + s.role, "data-rr-part": "rows.name" }, name) : name);
     });
     const chips = [];
-    if (prefs.rows.ccf) chips.push(B.chips.tierChip("ccf", s.ccf, EDITION.ccf));
-    if (prefs.rows.core) chips.push(B.chips.tierChip("core", s.core, EDITION.core));
-    for (const m of B.prefs.chipMarks(prefs, s.marks)) chips.push(B.chips.markChip(m));
-    return h("tr", { class: lit ? "rr-r-" + s.role : "" },
+    if (prefs.rows.ccf) chips.push(marked(B.chips.tierChip("ccf", s.ccf, EDITION.ccf), "rows.ccf"));
+    if (prefs.rows.core) chips.push(marked(B.chips.tierChip("core", s.core, EDITION.core), "rows.core"));
+    for (const m of B.prefs.chipMarks(prefs, s.marks)) chips.push(marked(B.chips.markChip(m), "rows." + (m.group === "finalist" ? "award" : m.group)));
+    return h("tr", { class: lit ? "rr-r-" + s.role : "", ...(lit ? { "data-rr-part": "roles." + s.role } : {}) },
       h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? [" ", h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c])))] : null)));
   }
 
@@ -830,10 +858,13 @@
     status: "found", role, venue: { ccf: ccf ? { tier: ccf, abbr } : null, core: core ? { rank: core, abbr } : null }, citations, year, highlighted: true,
     marks: markKinds.map((k) => ({ kind: k, group: B.marks.groupOf(k) }))
   });
+  // a paper whose author list is cut off (its position is not known), and one whose list does not have the owner at all
+  const Q = (status) => ({ status, role: null, venue: { ccf: null, core: null }, citations: 3, year: 2022, highlighted: false, marks: [] });
   const PAPERS = [
     P("first", "A", "A*", 310, 2025, "ICLR", "best"), P("first", "A", "A", 120, 2024, "NeurIPS", "oral"), P("first", "B", "B", 64, 2023, "WSDM"), P("first", null, null, 8, 2022, ""),
     P("cofirst", "A", "A*", 190, 2024, "CVPR", "spotlight"), P("second", "B", "B", 71, 2023, "WSDM"), P("second", "A", "A", 55, 2022, "ICML"),
-    P("last", "A", "A*", 240, 2025, "ACL", "tot"), P("last", "C", "C", 12, 2021, "ICANN"), P("middle", "A", "A*", 402, 2024, "ICLR", "highlight"), P("middle", "B", "A", 87, 2023, "NeurIPS"), P("middle", null, null, 5, 2020, "")
+    P("last", "A", "A*", 240, 2025, "ACL", "tot"), P("last", "C", "C", 12, 2021, "ICANN"), P("middle", "A", "A*", 402, 2024, "ICLR", "highlight"), P("middle", "B", "A", 87, 2023, "NeurIPS"), P("middle", null, null, 5, 2020, ""),
+    Q("hidden"), Q("absent")
   ];
   const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onSearchNext", "onImpact", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
@@ -853,9 +884,9 @@
       marks: counts, markKinds: prefs.panel.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
       years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, B.prefs.lists(prefs)), venueKey: null,
       venuesHasMore: false, venuesExpanded: false,
-      coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
+      coverage: { loaded: PAPERS.length, canLoadMore: true, complete: false, loadingAll: false, loadMessage: "", repeats: 1, hidden: 1, absent: 1, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
-      variants: [], nameHints: { auto: [], suggestions: [] }
+      variants: [], nameHints: { auto: [], suggestions: [{ name: "Author A", rows: 2 }] }
     };
   }
 
@@ -876,6 +907,7 @@
   hint();
 
   B.store.onPrefsChanged((next) => {
+    if (isEcho(next)) return;
     prefs = next;
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);

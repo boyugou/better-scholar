@@ -519,8 +519,22 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rows.style);
   const scheduleRefresh = frame(refresh);
 
-  // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
-  // gone must not keep hiding rows, so those are cleared.
+  // A filter whose control the settings took away must not keep hiding rows (nothing could undo it): when the settings change, the filters left without a
+  // control are cleared. (A matrix cell, an awards row, a venue, the search words, "only highlighted", a year, the h-index or i10 papers: each has its own switch.)
+  function pruneFilters() {
+    const p = prefs.panel, f = state.filters, sel = state.selection;
+    if (!p.show) { state.selection = null; state.markGroup = null; state.venueKey = null; Object.assign(f, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null }); return; }
+    if (sel && !(p.table.show && (sel.tier !== "none" || p.table.unranked) && (sel.role !== "middle" || p.table.other) && (sel.role !== "hidden" || p.table.hidden))) state.selection = null;
+    if (state.markGroup && !(p.marks.show && marks.rows(p.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => p.marks[g]))) state.markGroup = null;
+    if (!p.venues.show) state.venueKey = null;
+    if (!(p.filters.show && (p.filters.search || B.prefs.pills(prefs).length))) f.query = "";
+    if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)
+    const range = p.filters.show && p.filters.years;
+    if (!range && !(p.years.show && f.yearStart === f.yearEnd)) { f.yearStart = null; f.yearEnd = null; }                      // (the year bars can only choose one year)
+    if (f.impact && !(p.metrics.show && p.metrics[f.impact])) f.impact = null;
+  }
+
+  // The settings page saved something (in this or any other tab): show it at once.
   B.store.onPrefsChanged((next) => {
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
@@ -529,15 +543,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const wasAuto = prefs.autoLoad;
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
-    if (state.markGroup && !(marks.rows(prefs.panel.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.panel.marks[g]))) state.markGroup = null;
-    if (!prefs.panel.show || !prefs.panel.venues.show) state.venueKey = null;
-    if (!prefs.panel.table.show) state.selection = null;                                   // (a matrix cell, an awards row: their controls are gone, so they must not keep hiding rows)
-    if (!prefs.panel.marks.show) state.markGroup = null;
-    if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
-    if (!prefs.panel.show || !prefs.panel.filters.show) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
-    if (!prefs.panel.show) state.filters.minCitations = null;
-    if (!prefs.panel.show || !prefs.panel.metrics.show) state.filters.impact = null;              // (the h-index and i10 buttons are part of the totals)
-    if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
+    pruneFilters();
     refresh();
     if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
     else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began

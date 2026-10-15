@@ -23,10 +23,11 @@
     }
     return mem[area][key];
   }
+  // true when the value was written; false when Chrome refused it (a quota) or the extension context is gone (the value is then kept in memory only)
   async function set(area, key, value) {
     mem[area][key] = value;
-    if (!live()) return;
-    try { await chrome.storage[area].set({ [key]: value }); } catch (e) { /* quota or context loss */ }
+    if (!live()) return false;
+    try { await chrome.storage[area].set({ [key]: value }); return true; } catch (e) { return false; }
   }
   async function remove(area, key) {
     delete mem[area][key];
@@ -35,7 +36,7 @@
   }
 
   const loadPrefs = async () => B.prefs.normalize(await get("sync", "prefs"));
-  const savePrefs = (prefs) => set("sync", "prefs", B.prefs.normalize(prefs));
+  const savePrefs = (prefs) => set("sync", "prefs", B.prefs.normalize(prefs));       // → true when written
 
   const loadUi = async () => B.prefs.normalizeUi(await get("local", "ui"));
   const saveUi = (ui) => set("local", "ui", B.prefs.normalizeUi(ui));

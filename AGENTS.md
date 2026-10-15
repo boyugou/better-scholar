@@ -55,6 +55,7 @@ Rules:
 | `panel.header.name` | true / false | `true` | The panel's title at the top. |
 | `panel.header.settings` | true / false | `true` | The button in the panel's title bar that opens the settings page. |
 | `panel.header.fold` | true / false | `true` | The button that folds the panel to its title bar. Off: the panel is always open. |
+| `panel.filters.bar` | true / false | `true` | The bar under the title bar that says how many papers the filters leave, and clears them (drawn only while a filter is on). |
 | `panel.table.show` | true / false | `true` | The table of your papers by position and rank (also the toolbar popup's table). |
 | `panel.table.title` | true / false | `true` | The title line of the table. |
 | `panel.table.ccf` | true / false | `true` | A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use. |
@@ -95,7 +96,6 @@ Rules:
 | `panel.filters.pills.talk` | true / false | `false` | Quick filter: a button that adds has:talk to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.only` | true / false | `true` | The "Only highlighted" switch (absent while no position is highlighted). |
 | `panel.filters.years` | true / false | `true` | The year range: From and To. |
-| `panel.filters.bar` | true / false | `true` | The bar that says how many papers the filters leave, and clears them. |
 | `panel.metrics.show` | true / false | `true` | Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones. |
 | `panel.metrics.title` | true / false | `true` | The title line of the citation totals. |
 | `panel.metrics.scope` | true / false | `true` | The line that says which positions the numbers count ("First, Co-first, Second and Last"). |
@@ -131,7 +131,7 @@ Language codes: en (English), zh_CN (简体中文), zh_TW (繁體中文), ja (�
 
 ### Presets
 Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:
-- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"rows":{"name":true,"style":"full","ccf":true,"core":true,"award":true,"oral":true,"spotlight":true,"highlight":true},"panel":{"show":true,"header":{"name":true,"settings":true,"fold":true},"table":{"show":true,"title":true,"ccf":true,"core":true,"unranked":true,"total":true,"other":true,"hidden":true,"note":true},"copy":{"show":true,"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true},"marks":{"show":true,"title":true,"award":true,"oral":true,"spotlight":true,"highlight":true,"grouping":"separate"},"filters":{"show":true,"search":true,"only":true,"years":true,"bar":true},"metrics":{"show":true,"title":true,"scope":true,"papers":true,"citations":true,"h":true,"i10":true,"of":true},"years":{"show":true,"title":true,"axis":true},"venues":{"show":true,"title":true},"status":{"show":true,"loaded":true,"cutoff":true,"repeats":true,"absent":true,"unranked":true},"names":{"show":true,"hints":true,"add":true}},"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"mergeDuplicates":true,"autoLoad":true}`
+- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"rows":{"name":true,"style":"full","ccf":true,"core":true,"award":true,"oral":true,"spotlight":true,"highlight":true},"panel":{"show":true,"header":{"name":true,"settings":true,"fold":true},"filters":{"bar":true,"show":true,"search":true,"only":true,"years":true},"table":{"show":true,"title":true,"ccf":true,"core":true,"unranked":true,"total":true,"other":true,"hidden":true,"note":true},"copy":{"show":true,"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true},"marks":{"show":true,"title":true,"award":true,"oral":true,"spotlight":true,"highlight":true,"grouping":"separate"},"metrics":{"show":true,"title":true,"scope":true,"papers":true,"citations":true,"h":true,"i10":true,"of":true},"years":{"show":true,"title":true,"axis":true},"venues":{"show":true,"title":true},"status":{"show":true,"loaded":true,"cutoff":true,"repeats":true,"absent":true,"unranked":true},"names":{"show":true,"hints":true,"add":true}},"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"mergeDuplicates":true,"autoLoad":true}`
 - `last`: `{"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rows":{"style":"full"}}`
 - `first`: `{"roles":{"first":true,"cofirst":true,"second":false,"last":false},"rows":{"style":"full"}}`
 - `minimal`: `{"rows":{"style":"tint"},"hide":{"citedTable":true,"access":true},"panel":{"show":true,"table":{"show":false},"copy":{"show":false},"marks":{"show":false},"filters":{"show":true},"metrics":{"show":true},"years":{"show":false},"venues":{"show":false},"status":{"show":false},"names":{"show":false}}}`
