@@ -44,10 +44,7 @@
   const RTL = new Set(["ar", "he"]);
   const codes = LANGUAGES.map((l) => l[0]);
 
-  // a stored setting: "auto" (follow the browser) or one of the folders above; anything else is "auto"
-  const normalizeLanguage = (v) => (codes.includes(v) ? v : "auto");
-  // the same for the language Scholar's own pages are opened in: "keep" (do not touch the address) or one of the folders
-  const normalizeScholarLanguage = (v) => (codes.includes(v) ? v : "keep");
+  // Scholar's own `hl` for a folder above; "" for anything else ("keep", an unknown value): then the address is left alone
   const scholarHl = (code) => { const l = LANGUAGES.find((x) => x[0] === code); return l ? l[2] : ""; };
   const isRtl = (code) => RTL.has(String(code || "").split(/[-_]/)[0]);
 
@@ -83,5 +80,5 @@
     return codes.includes(lang) ? lang : "en";
   }
 
-  return { resolve, fromBrowser, LANGUAGES, codes, normalizeLanguage, normalizeScholarLanguage, scholarHl, isRtl, format };
+  return { resolve, fromBrowser, LANGUAGES, codes, scholarHl, isRtl, format };
 });

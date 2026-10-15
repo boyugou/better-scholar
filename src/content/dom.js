@@ -115,5 +115,8 @@
     return REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(String(body || "").slice(0, 1200));
   }
 
-  B.dom = { h, t, tn, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
+  const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
+
+  B.dom = { h, t, tn, COPY_LABEL, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

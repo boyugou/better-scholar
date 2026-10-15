@@ -3,7 +3,6 @@
   "use strict";
   const B = globalThis.RolesRanks;
   const { h, t, tn, copyText } = B.dom;
-  const metrics = B.metrics;
 
   await B.dom.useLanguage();
   document.documentElement.lang = B.dom.langTag();
@@ -17,7 +16,6 @@
   const COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6" };
   const ROLE = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", middle: "roleMiddle" };
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
-  const COPY = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", middle: "copyMiddle" };
 
   // a list's name without its edition note, unbreakable and isolated from right-to-left text ("CCF 2026")
   const listName = (label) => "\u2068" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, "\u00a0") + "\u2069";
@@ -28,12 +26,16 @@
       h("div", { class: "actions" }, h("a", { class: "btn primary", href: "https://scholar.google.com/", target: "_blank", rel: "noopener" }, t("popupOpenScholar"))));
   }
 
-  async function ask() {
-    // ?tab=<id> lets the end-to-end test aim the popup at a specific tab
+  // The page's own tab (?tab=<id> lets the end-to-end test aim the popup at a specific tab) and a call to it: { ok: true, result } | { ok: false, error }
+  async function pageTab() {
     const forced = parseInt(new URLSearchParams(location.search).get("tab"), 10);
     const [tab] = Number.isFinite(forced) ? [{ id: forced }] : await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab || tab.id == null) return null;
-    try { return await chrome.tabs.sendMessage(tab.id, { type: "rr:summary" }); } catch (e) { return null; }
+    return tab && tab.id != null ? tab : null;
+  }
+  async function call(method, params) {
+    const tab = await pageTab();
+    if (!tab) return null;
+    try { return await chrome.tabs.sendMessage(tab.id, { type: "rr:call", method, params }); } catch (e) { return null; }
   }
 
   function render(data) {
@@ -46,7 +48,6 @@
     const listed = data.sources || ["ccf", "core"];
     const sources = data.noRanks ? [] : listed;                     // (nothing on this profile is on a list that is on: roles only)
     let source = sources.includes(data.source) ? data.source : sources[0] || "none";
-    const labels = () => Object.fromEntries(Object.entries(COPY).map(([k, v]) => [k, t(v)]));
     const draw = () => {
       const s = data.summaries[source];
       const tier = (c) => (c === "none" ? "–" : c);
@@ -65,34 +66,27 @@
         h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
       const parts = data.parts || { summary: true, marks: true };
       const markParts = !parts.marks ? [] : B.marks.rows(data.talkRows).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
-      const marksLine = markParts.length ? t("marksTitle") + ": " + markParts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
-      const copy = (kind) => async (e) => {
-        const text = kind === "tsv"
-          ? metrics.toTsv(s, { label: labels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-          : metrics.toText(s, { owner: data.owner, label: labels(), notRanked: t("tipUnranked").toLowerCase(), extra: marksLine ? [marksLine] : [], edition: source === "none" ? "" : `${data.edition[source]} — ${t("tipToday")}` });
-        if (await copyText(text)) {
-          const b = e.target.closest("button") || e.target;
-          const old = b.textContent;
-          b.textContent = t("copied");
-          b.classList.add("btn-flashed");
-          setTimeout(() => { b.textContent = old; b.classList.remove("btn-flashed"); }, 1200);
-        }
+      // A copy button: the text comes from the page (the same as the panel's button) and goes to the clipboard — the CSV to a file. What there is to say is said on the button.
+      const say = (button, text) => {
+        const old = button.dataset.label || (button.dataset.label = button.textContent);
+        clearTimeout(button.rrTimer);
+        button.textContent = text;
+        button.classList.add("btn-flashed");
+        button.rrTimer = setTimeout(() => { button.textContent = old; button.classList.remove("btn-flashed"); }, 1200);
       };
-      const copyExport = (format) => async (e) => {
-        const forced = parseInt(new URLSearchParams(location.search).get("tab"), 10);
-        const [tab] = Number.isFinite(forced) ? [{ id: forced }] : await chrome.tabs.query({ active: true, currentWindow: true });
-        if (!tab || tab.id == null) return;
-        try {
-          const res = await chrome.tabs.sendMessage(tab.id, { type: "rr:export", format });
-          if (res && res.text && (await copyText(res.text))) {
-            const b = e.target.closest("button") || e.target;
-            const old = b.textContent;
-            b.textContent = t("copied");
-            b.classList.add("btn-flashed");
-            setTimeout(() => { b.textContent = old; b.classList.remove("btn-flashed"); }, 1200);
-          }
-        } catch (err) { /* tab unavailable */ }
+      const deliver = (kind) => async (e) => {
+        const button = e.target.closest("button") || e.target;
+        const paperFormat = kind !== "summary" && kind !== "table";
+        if (paperFormat && !data.shown) { say(button, t("copyEmpty")); return; }
+        const res = await call("export", { format: kind, ...(paperFormat ? {} : { source }) });
+        if (!res || !res.ok) return;
+        if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
+        else if (await copyText(res.result.text)) say(button, t("copied"));
       };
+      const copyBar = data.copyButtons.length ? h("div", { class: "actions" },
+        ...data.copyButtons.map((kind) => h("button", { class: "btn", "data-act": "copy-" + kind, type: "button", onClick: deliver(kind) }, t(B.dom.COPY_LABEL[kind])))) : null;
+      // (the exports follow the page's filters: when they leave out papers, the popup says how many it takes)
+      const shownNote = copyBar && data.shown !== data.loaded ? h("p", { class: "note", "data-rr": "shown" }, t("popupExportsShown", [String(data.shown)])) : null;
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
         h("div", { class: "who" }, h("b", {}, data.owner),
@@ -103,14 +97,8 @@
         parts.summary ? seg : null, parts.summary ? table : null,
         parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
-        parts.summary && parts.copy !== false ? h("div", { class: "actions" },
-          h("button", { class: "btn", "data-act": "copy-text", type: "button", onClick: copy("text") }, t("copySummary")),
-          h("button", { class: "btn", "data-act": "copy-tsv", type: "button", onClick: copy("tsv") }, t("copyTable")),
-          h("button", { class: "btn", "data-act": "copy-bibtex", type: "button", onClick: copyExport("bibtex") }, t("copyBibtex")),
-          h("button", { class: "btn", "data-act": "copy-markdown", type: "button", onClick: copyExport("markdown") }, t("copyMarkdown")),
-          h("button", { class: "btn", "data-act": "copy-apa", type: "button", onClick: copyExport("apa") }, t("copyApa")),
-          h("button", { class: "btn", "data-act": "copy-json", type: "button", onClick: copyExport("json") }, t("copyJson")),
-          h("button", { class: "btn", "data-act": "copy-csv", type: "button", onClick: copyExport("csv") }, t("exportCsv"))) : null,
+        copyBar,
+        shownNote,
         parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
@@ -118,6 +106,6 @@
   }
 
   main.replaceChildren(h("p", { class: "empty" }, t("popupReading")));
-  const data = await ask();
-  if (data && data.ok) render(data); else notProfile();
+  const answer = await call("summary");
+  if (answer && answer.ok) render(answer.result); else notProfile();
 })();

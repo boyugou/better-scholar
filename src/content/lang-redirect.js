@@ -13,7 +13,7 @@
   const clear = () => { try { sessionStorage.removeItem(KEY); } catch (e) { /* no storage */ } };
   stored.then((r) => {
     const prefs = (r && r.prefs) || {};
-    const hl = B.i18n.scholarHl(B.i18n.normalizeScholarLanguage(prefs.scholarLanguage));
+    const hl = B.i18n.scholarHl(prefs.scholarLanguage);                                  // ("" for "keep" and for anything that is not a language we have)
     if (!hl) { clear(); return; }
     if ((new URLSearchParams(location.search).get("hl") || "").toLowerCase() === hl.toLowerCase()) { clear(); return; }       // arrived: a later change may redirect again
     // At most once per tab and language within a short while: should Scholar answer with yet another language, it is left as it is rather than looped over.

@@ -353,6 +353,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupPapersOne": {
     "message": "1 Paper"
   },
@@ -404,6 +412,12 @@
   "optMarksTitle": {
     "message": "Auszeichnungen und Vorträge"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Best, Outstanding und Distinguished Paper, lobende Erwähnung, Test of Time und Best-Paper-Finalisten."
   },
@@ -420,13 +434,7 @@
     "message": "Tabelle Rolle × Rang"
   },
   "optPanelSummaryHint": {
-    "message": "Die Tabelle deiner Paper nach Position und Rang, mit den Kopieren-Schaltflächen und dem Hinweis zur Herkunft der Ränge."
-  },
-  "optPanelCopy": {
-    "message": "Kopieren-Schaltflächen"
-  },
-  "optPanelCopyHint": {
-    "message": "Die Schaltflächen „Übersicht kopieren“, „Als Tabelle kopieren“ und „Paper kopieren“ unter der Tabelle."
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "Anzahl Auszeichnungen und Vorträge"
@@ -540,6 +548,9 @@
   "exportCsv": {
     "message": "CSV exportieren"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "Exportiert"
   },
@@ -634,6 +645,27 @@
   },
   "optColorsReset": {
     "message": "Zurück zu den Standardfarben"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight und Highlight"
@@ -802,6 +834,9 @@
   "filterPlaceholder": {
     "message": "Nach Titel oder Autor filtern…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "Mehr anzeigen"
   },
@@ -824,7 +859,7 @@
     "message": "Konfiguration & Voreinstellungen"
   },
   "optConfigHint": {
-    "message": "Einstellungen als JSON oder TOML exportieren oder importieren, Voreinstellungen anwenden oder mit einem KI-Agenten konfigurieren."
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "Konfiguration kopieren (JSON)"
@@ -832,26 +867,54 @@
   "optConfigExport": {
     "message": "Datei exportieren"
   },
-  "optConfigImport": {
-    "message": "Aus Zwischenablage importieren"
-  },
   "optConfigImportFile": {
     "message": "Datei importieren"
   },
   "optConfigEditor": {
-    "message": "Konfiguration einfügen oder bearbeiten (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Konfiguration anwenden"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "Voreinstellungen"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "Alle Funktionen"
-  },
-  "optPresetSenior": {
-    "message": "Senior- / Korrespondenzautor"
   },
   "optPresetFirst": {
     "message": "Erstautor"
@@ -861,6 +924,12 @@
   },
   "optViewCache": {
     "message": "Gespeicherte Details anzeigen"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "Gespeicherte Artikeldetails"
@@ -873,5 +942,22 @@
   },
   "optCacheEmpty": {
     "message": "Auf diesem Gerät wurden noch keine Artikeldetails gespeichert."
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

@@ -353,6 +353,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupPapersOne": {
     "message": "1 εργασία"
   },
@@ -404,6 +412,12 @@
   "optMarksTitle": {
     "message": "Βραβεία και ομιλίες"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Καλύτερη, εξαιρετική και διακεκριμένη εργασία, εύφημη μνεία, test of time και φιναλίστ καλύτερης εργασίας."
   },
@@ -420,13 +434,7 @@
     "message": "Πίνακας ρόλου × βαθμίδας"
   },
   "optPanelSummaryHint": {
-    "message": "Ο πίνακας των εργασιών σας ανά θέση και βαθμίδα, με τα κουμπιά αντιγραφής και τη σημείωση για την προέλευση των βαθμίδων."
-  },
-  "optPanelCopy": {
-    "message": "Κουμπιά αντιγραφής"
-  },
-  "optPanelCopyHint": {
-    "message": "Τα κουμπιά «Αντιγραφή σύνοψης», «Αντιγραφή ως πίνακα» και «Αντιγραφή εργασιών» κάτω από τον πίνακα ρόλου × βαθμίδας."
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "Μετρητές βραβείων και ομιλιών"
@@ -540,6 +548,9 @@
   "exportCsv": {
     "message": "Εξαγωγή CSV"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "Εξήχθη"
   },
@@ -634,6 +645,27 @@
   },
   "optColorsReset": {
     "message": "Επαναφορά στα τυπικά χρώματα"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight και Highlight"
@@ -802,6 +834,9 @@
   "filterPlaceholder": {
     "message": "Φίλτρο κατά τίτλο ή συγγραφέα…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "Εμφάνιση περισσότερων"
   },
@@ -824,7 +859,7 @@
     "message": "Διαμόρφωση & προεπιλογές"
   },
   "optConfigHint": {
-    "message": "Εξαγωγή ή εισαγωγή ρυθμίσεων ως JSON ή TOML, εφαρμογή προεπιλογών ή διαμόρφωση με πράκτορα AI."
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "Αντιγραφή διαμόρφωσης (JSON)"
@@ -832,26 +867,54 @@
   "optConfigExport": {
     "message": "Εξαγωγή αρχείου"
   },
-  "optConfigImport": {
-    "message": "Εισαγωγή από το πρόχειρο"
-  },
   "optConfigImportFile": {
     "message": "Εισαγωγή αρχείου"
   },
   "optConfigEditor": {
-    "message": "Επικόλληση ή επεξεργασία διαμόρφωσης (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Εφαρμογή διαμόρφωσης"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "Προεπιλογές"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "Όλες οι λειτουργίες"
-  },
-  "optPresetSenior": {
-    "message": "Εστίαση στον κύριο συγγραφέα"
   },
   "optPresetFirst": {
     "message": "Εστίαση στον πρώτο συγγραφέα"
@@ -861,6 +924,12 @@
   },
   "optViewCache": {
     "message": "Προβολή αποθηκευμένων λεπτομερειών"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "Αποθηκευμένες λεπτομέρειες εργασιών"
@@ -873,5 +942,22 @@
   },
   "optCacheEmpty": {
     "message": "Δεν έχουν αποθηκευτεί ακόμη λεπτομέρειες εργασιών σε αυτήν τη συσκευή."
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

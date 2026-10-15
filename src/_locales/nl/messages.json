@@ -353,6 +353,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupPapersOne": {
     "message": "1 paper"
   },
@@ -404,6 +412,12 @@
   "optMarksTitle": {
     "message": "Prijzen en talks"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Beste, outstanding en distinguished paper, eervolle vermelding, test of time en finalisten voor beste paper."
   },
@@ -420,13 +434,7 @@
     "message": "Tabel rol × rang"
   },
   "optPanelSummaryHint": {
-    "message": "De tabel van je papers per positie en rang, met de kopieerknoppen en de toelichting over de herkomst van de rangen."
-  },
-  "optPanelCopy": {
-    "message": "Kopieerknoppen"
-  },
-  "optPanelCopyHint": {
-    "message": "De knoppen “Overzicht kopiëren”, “Kopiëren als tabel” en “Papers kopiëren” onder de tabel."
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "Aantallen prijzen en talks"
@@ -540,6 +548,9 @@
   "exportCsv": {
     "message": "CSV exporteren"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "Geëxporteerd"
   },
@@ -634,6 +645,27 @@
   },
   "optColorsReset": {
     "message": "Terug naar de standaardkleuren"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight en highlight"
@@ -802,6 +834,9 @@
   "filterPlaceholder": {
     "message": "Filteren op titel of auteur…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "Meer tonen"
   },
@@ -824,7 +859,7 @@
     "message": "Configuratie & voorinstellingen"
   },
   "optConfigHint": {
-    "message": "Exporteer of importeer instellingen als JSON of TOML, pas voorinstellingen toe of configureer met een AI-agent."
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "Configuratie kopiëren (JSON)"
@@ -832,26 +867,54 @@
   "optConfigExport": {
     "message": "Bestand exporteren"
   },
-  "optConfigImport": {
-    "message": "Importeren van klembord"
-  },
   "optConfigImportFile": {
     "message": "Bestand importeren"
   },
   "optConfigEditor": {
-    "message": "Configuratie plakken of bewerken (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Configuratie toepassen"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "Voorinstellingen"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "Alle functies"
-  },
-  "optPresetSenior": {
-    "message": "Focus op senior auteur"
   },
   "optPresetFirst": {
     "message": "Focus op eerste auteur"
@@ -861,6 +924,12 @@
   },
   "optViewCache": {
     "message": "Opgeslagen details bekijken"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "Opgeslagen artikeldetails"
@@ -873,5 +942,22 @@
   },
   "optCacheEmpty": {
     "message": "Er zijn nog geen artikeldetails opgeslagen op dit apparaat."
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

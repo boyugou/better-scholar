@@ -56,8 +56,8 @@ button.btn, a.btn { font: inherit; font-weight: 600; padding: 5px 12px; border: 
   -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
   mask-size: contain; mask-repeat: no-repeat; mask-position: center;
 }
-.actions button.btn[data-act="copy-text"]::before { -webkit-mask-image: var(--ico-summary); mask-image: var(--ico-summary); }
-.actions button.btn[data-act="copy-tsv"]::before { -webkit-mask-image: var(--ico-table); mask-image: var(--ico-table); }
+.actions button.btn[data-act="copy-summary"]::before { -webkit-mask-image: var(--ico-summary); mask-image: var(--ico-summary); }
+.actions button.btn[data-act="copy-table"]::before { -webkit-mask-image: var(--ico-table); mask-image: var(--ico-table); }
 .actions button.btn[data-act="copy-bibtex"]::before { -webkit-mask-image: var(--ico-bibtex); mask-image: var(--ico-bibtex); }
 .actions button.btn[data-act="copy-markdown"]::before { -webkit-mask-image: var(--ico-markdown); mask-image: var(--ico-markdown); }
 .actions button.btn[data-act="copy-apa"]::before { -webkit-mask-image: var(--ico-apa); mask-image: var(--ico-apa); }

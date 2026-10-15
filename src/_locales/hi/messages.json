@@ -341,6 +341,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupOpenScholar": {
     "message": "Google Scholar खोलें"
   },
@@ -389,6 +397,12 @@
   "optMarksTitle": {
     "message": "पुरस्कार और टॉक"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "सर्वश्रेष्ठ, उत्कृष्ट और विशिष्ट पेपर, उल्लेखनीय सम्मान, test of time और सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट।"
   },
@@ -405,13 +419,7 @@
     "message": "भूमिका × रैंक तालिका"
   },
   "optPanelSummaryHint": {
-    "message": "स्थान और रैंक के अनुसार आपके पेपरों की तालिका, कॉपी बटनों और रैंक के स्रोत के नोट के साथ।"
-  },
-  "optPanelCopy": {
-    "message": "कॉपी बटन"
-  },
-  "optPanelCopyHint": {
-    "message": "तालिका के नीचे के “सारांश कॉपी करें”, “तालिका के रूप में कॉपी करें” और “पेपर कॉपी करें” बटन।"
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "पुरस्कार और टॉक की गिनती"
@@ -525,6 +533,9 @@
   "exportCsv": {
     "message": "CSV निर्यात करें"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "निर्यात किया गया"
   },
@@ -619,6 +630,27 @@
   },
   "optColorsReset": {
     "message": "मानक रंगों पर लौटें"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight और Highlight"
@@ -787,6 +819,9 @@
   "filterPlaceholder": {
     "message": "शीर्षक या लेखक के अनुसार फ़िल्टर करें…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "और दिखाएं"
   },
@@ -809,7 +844,7 @@
     "message": "कॉन्फ़िगरेशन और प्रीसेट"
   },
   "optConfigHint": {
-    "message": "JSON या TOML के रूप में सेटिंग्स निर्यात या आयात करें, प्रीसेट लागू करें, या AI एजेंट से कॉन्फ़िगर करें।"
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "कॉन्फ़िगरेशन कॉपी करें (JSON)"
@@ -817,26 +852,54 @@
   "optConfigExport": {
     "message": "फ़ाइल निर्यात करें"
   },
-  "optConfigImport": {
-    "message": "क्लिपबोर्ड से आयात करें"
-  },
   "optConfigImportFile": {
     "message": "फ़ाइल आयात करें"
   },
   "optConfigEditor": {
-    "message": "कॉन्फ़िगरेशन चिपकाएँ या संपादित करें (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "कॉन्फ़िगरेशन लागू करें"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "प्रीसेट"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "सभी सुविधाएँ"
-  },
-  "optPresetSenior": {
-    "message": "वरिष्ठ लेखक प्राथमिकता"
   },
   "optPresetFirst": {
     "message": "प्रथम लेखक प्राथमिकता"
@@ -846,6 +909,12 @@
   },
   "optViewCache": {
     "message": "सहेजे गए विवरण देखें"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "सहेजे गए शोधपत्र विवरण"
@@ -858,5 +927,22 @@
   },
   "optCacheEmpty": {
     "message": "इस डिवाइस पर अभी तक कोई शोधपत्र विवरण सहेजा नहीं गया है।"
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

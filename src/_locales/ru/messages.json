@@ -341,6 +341,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupOpenScholar": {
     "message": "Открыть Google Scholar"
   },
@@ -389,6 +397,12 @@
   "optMarksTitle": {
     "message": "Награды и доклады"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Лучшая, выдающаяся и отмеченная статья, почётное упоминание, test of time и финалисты лучшей статьи."
   },
@@ -405,13 +419,7 @@
     "message": "Таблица «роль × ранг»"
   },
   "optPanelSummaryHint": {
-    "message": "Таблица ваших статей по позиции и рангу с кнопками копирования и пояснением, откуда берутся ранги."
-  },
-  "optPanelCopy": {
-    "message": "Кнопки копирования"
-  },
-  "optPanelCopyHint": {
-    "message": "Кнопки «Копировать сводку», «Копировать таблицей» и «Копировать статьи» под таблицей."
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "Число наград и докладов"
@@ -522,6 +530,9 @@
   "exportCsv": {
     "message": "Экспорт CSV"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "Экспортировано"
   },
@@ -616,6 +627,27 @@
   },
   "optColorsReset": {
     "message": "Вернуть стандартные цвета"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight и Highlight"
@@ -781,6 +813,9 @@
   "filterPlaceholder": {
     "message": "Фильтр по названию или автору…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "Показать ещё"
   },
@@ -803,7 +838,7 @@
     "message": "Конфигурация и пресеты"
   },
   "optConfigHint": {
-    "message": "Экспортируйте или импортируйте настройки в формате JSON или TOML, применяйте пресеты или настраивайте через ИИ-агента."
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "Копировать конфиг (JSON)"
@@ -811,26 +846,54 @@
   "optConfigExport": {
     "message": "Экспорт в файл"
   },
-  "optConfigImport": {
-    "message": "Импорт из буфера обмена"
-  },
   "optConfigImportFile": {
     "message": "Импорт файла"
   },
   "optConfigEditor": {
-    "message": "Вставить или изменить конфиг (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Применить конфигурацию"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "Пресеты"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "Все функции"
-  },
-  "optPresetSenior": {
-    "message": "Акцент на старшего автора"
   },
   "optPresetFirst": {
     "message": "Акцент на первого автора"
@@ -840,6 +903,12 @@
   },
   "optViewCache": {
     "message": "Просмотр сохраненных данных"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "Сохраненные данные статей"
@@ -852,5 +921,22 @@
   },
   "optCacheEmpty": {
     "message": "На этом устройстве пока не сохранено данных статей."
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

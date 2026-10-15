@@ -76,6 +76,12 @@
       s("ellipse", { cx: "12", cy: "5", rx: "9", ry: "3" }),
       s("path", { d: "M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" }),
       s("path", { d: "M3 12c0 1.66 4 3 9 3s9-1.34 9-3" })),
+    duplicate: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("rect", { x: "9", y: "9", width: "13", height: "13", rx: "2" }),
+      s("path", { d: "M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" })),
+    terminal: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("polyline", { points: "4 17 10 11 4 5" }),
+      s("line", { x1: "12", y1: "19", x2: "20", y2: "19" })),
     sparkles: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("path", { d: "m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" })),
     barDiagram: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
@@ -94,13 +100,15 @@
     2: { icon: "palette", color: "#9333ea", bg: "rgba(147, 51, 234, 0.12)" },
     3: { icon: "columns", color: "#d97706", bg: "rgba(217, 119, 6, 0.12)" },
     4: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
-    5: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
-    6: { icon: "eye", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
-    7: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
-    8: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
-    9: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
-    10: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
-    11: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
+    5: { icon: "duplicate", color: "#0f766e", bg: "rgba(15, 118, 110, 0.12)" },
+    6: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
+    7: { icon: "eye", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
+    8: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
+    9: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
+    10: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
+    11: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
+    12: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
+    13: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
   };
 
   function makeIconBadge({ icon, color, bg }) {
@@ -112,7 +120,6 @@
   const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)" };
   const ROLE_DEFAULT = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
   const ROLE_NAME = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast" };
-  const ROLE_SHORT = { first: "1st", cofirst: "Co-1st", second: "2nd", last: "Senior" };
   const MARK_NAME = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
 
   await B.dom.useLanguage();
@@ -136,7 +143,6 @@
     $(id).textContent = text;
   }
 
-  await B.store.migrate();
   let prefs = await B.store.loadPrefs();
   const syncers = [];
 
@@ -153,23 +159,21 @@
     savedTimer = setTimeout(() => $("saved").classList.remove("on"), 1400);
   }
 
-  // One switch: a label, an optional hint and colour swatch, a getter and a setter on the prefs
-  function option({ key, label, hint, swatch, get, set, off, sub }) {
-    const input = h("input", {
-      type: "checkbox",
-      role: "switch",
-      class: "sw",
-      "data-pref": key,
-      "aria-label": label,
-      onChange: () => { set(input.checked); save(); }
-    });
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") },
-      h("span", { class: "txt" },
-        h("span", { class: "name" }, swatch ? h("span", { class: "swatch", style: "background:" + swatch }) : null, label),
-        hint ? h("span", { class: "hint" }, hint) : null),
-      input);
+  // A setting is its path in the record (lib/prefs.js SETTINGS); every control below is found by it: `data-pref="<path>"` (the settings reference for agents says so).
+  const at = (path) => path.split(".").reduce((o, k) => o[k], prefs);
+  const put = (path, value) => { const keys = path.split("."); keys.slice(0, -1).reduce((o, k) => o[k], prefs)[keys[keys.length - 1]] = value; };
+  let uid = 0;
+  // the name of a control is its label; its hint is what a screen reader reads after it
+  const described = (label, hint) => { const id = "opt-" + ++uid; return { name: h("span", { class: "name", id: id + "-n" }, label), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+
+  // One switch
+  function option({ path, label, hint, swatch, sub, off }) {
+    const d = described(label, hint);
+    const input = h("input", { type: "checkbox", role: "switch", class: "sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
+    if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") }, h("span", { class: "txt" }, d.name, d.hint), input);
     const sync = () => {
-      input.checked = !!get();
+      input.checked = !!at(path);
       const disabled = off ? off() : false;
       input.disabled = disabled;
       row.classList.toggle("disabled", disabled);
@@ -179,246 +183,38 @@
     return row;
   }
 
-  // "Enable all" / "Disable all" under a group of switches
-  function bulk(group, sets, title, ...extra) {
-    const all = (v) => { for (const set of sets) set(v); save(); };
+  // "Enable all" / "Disable all" under a group of switches: every one of `paths` is set, and saved as one change
+  // (`enables`: switches that Enable all also turns on, such as the panel itself for its parts)
+  function bulk(group, paths, title, { enables = [] } = {}, ...extra) {
+    const all = (v) => { for (const path of paths) put(path, v); if (v) for (const path of enables) put(path, true); save(); };
     return h("div", { class: "row bulk", role: "group", "aria-label": title },
       h("button", { class: "btn", type: "button", "data-act": "all-on", "data-group": group, "aria-label": `${t("optAllOn")}: ${title}`, onClick: () => all(true) }, t("optAllOn")),
       h("button", { class: "btn", type: "button", "data-act": "all-off", "data-group": group, "aria-label": `${t("optAllOff")}: ${title}`, onClick: () => all(false) }, t("optAllOff")),
       ...extra);
   }
 
-  // Segmented Control: replaces crude select for small choices (rowStyle, talkRows)
-  function segmented({ key, label, hint, choices, icons = {}, get, set, after }) {
-    const sel = h("select", {
-      class: "sel sel-hidden-accessible",
-      "data-pref": key,
-      "aria-label": label,
-      onChange: () => {
-        const was = get();
-        set(sel.value);
-        syncSegmented(sel.value);
-        save().then(() => { if (after && was !== get()) after(); });
-      }
-    }, choices.map(([v, l]) => h("option", { value: v }, l)));
-
-    const buttons = choices.map(([val, text]) => {
-      const iconSvg = icons[val] ? icons[val]() : null;
-      const btn = h("button", {
-        type: "button",
-        class: "seg-btn",
-        "data-val": val,
-        "aria-pressed": "false",
-        "aria-label": `${label}: ${text}`,
-        onClick: (e) => {
-          e.preventDefault();
-          const was = get();
-          if (was === val) return;
-          sel.value = val;
-          set(val);
-          syncSegmented(val);
-          save().then(() => { if (after && was !== val) after(); });
-        }
-      }, iconSvg, h("span", { class: "seg-text" }, text));
-      return { val, btn };
+  // A choice among a few values, as radio buttons drawn as one segmented control (the arrow keys move between them, as in any radio group)
+  function segmented({ path, label, hint, choices, icons = {} }) {
+    const d = described(label, hint);
+    const radios = choices.map(([value, text]) => {
+      const input = h("input", { type: "radio", class: "seg-radio", name: "seg-" + path, value, "data-pref": path, onChange: () => { if (input.checked) { put(path, value); save(); } } });
+      return { value, input, label: h("label", { class: "seg-btn", "data-val": value }, input, icons[value] ? icons[value]() : null, h("span", { class: "seg-text" }, text)) };
     });
-
-    const segGroup = h("div", { class: "seg-control", role: "radiogroup", "aria-label": label },
-      ...buttons.map((b) => b.btn));
-
-    function syncSegmented(activeVal) {
-      buttons.forEach(({ val, btn }) => {
-        const active = val === activeVal;
-        btn.classList.toggle("active", active);
-        btn.setAttribute("aria-pressed", active ? "true" : "false");
-      });
-    }
-
-    const row = h("div", { class: "opt opt-segmented" },
-      h("span", { class: "txt" },
-        h("span", { class: "name" }, label),
-        hint ? h("span", { class: "hint" }, hint) : null),
-      segGroup,
-      sel);
-
-    const sync = () => {
-      const v = get();
-      sel.value = v;
-      syncSegmented(v);
-    };
+    const row = h("div", { class: "opt opt-segmented" }, h("span", { class: "txt" }, d.name, d.hint),
+      h("div", { class: "seg-control", role: "radiogroup", ...d.ids }, ...radios.map((r) => r.label)));
+    const sync = () => radios.forEach(({ value, input, label: lab }) => { const on = at(path) === value; input.checked = on; lab.classList.toggle("active", on); });
     syncers.push(sync);
     sync();
     return row;
   }
 
-  // Searchable Custom Language Picker: replaces crude native select
-  function customLanguagePicker({ key, label, hint, choices, get, set, after }) {
-    const sel = h("select", {
-      class: "sel sel-hidden-accessible",
-      "data-pref": key,
-      "aria-label": label,
-      onChange: () => {
-        const was = get();
-        set(sel.value);
-        updateTrigger(sel.value);
-        save().then(() => { if (after && was !== get()) after(); });
-      }
-    }, choices.map(([v, l]) => h("option", { value: v }, l)));
-
-    const triggerBadge = h("span", { class: "custom-select-badge" }, "EN");
-    const triggerLabel = h("span", { class: "custom-select-label" }, "English");
-    const chevron = s("svg", { class: "custom-select-chevron", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.2" },
-      s("path", { d: "M6 9l6 6 6-6" }));
-
-    const triggerBtn = h("button", {
-      type: "button",
-      class: "custom-select-trigger",
-      "aria-label": label,
-      "aria-haspopup": "listbox",
-      "aria-expanded": "false",
-      onClick: (e) => {
-        e.stopPropagation();
-        togglePopover();
-      }
-    }, triggerBadge, triggerLabel, chevron);
-
-    const searchIcon = s("svg", { class: "custom-select-search-ico", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.2", "stroke-linecap": "round", "stroke-linejoin": "round" },
-      s("circle", { cx: "11", cy: "11", r: "7" }),
-      s("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" }));
-
-    const searchInput = h("input", {
-      type: "text",
-      class: "custom-select-search",
-      placeholder: `${t("optLanguageTitle")}…`,
-      "aria-label": t("optLanguageTitle"),
-      autocomplete: "off",
-      spellcheck: "false"
-    });
-
-    const searchWrap = h("div", { class: "custom-select-search-wrap" }, searchIcon, searchInput);
-    const listContainer = h("div", { class: "custom-select-list", role: "listbox", "aria-label": label });
-    const popover = h("div", { class: "custom-select-popover", style: "display: none;" }, searchWrap, listContainer);
-    const wrap = h("div", { class: "custom-select-wrap" }, triggerBtn, popover, sel);
-
-    function updateTrigger(val) {
-      const match = choices.find(([v]) => v === val);
-      const text = match ? match[1] : val;
-      const code = val === "auto" ? "AUTO" : val === "keep" ? "KEEP" : val.toUpperCase();
-      triggerBadge.textContent = code;
-      triggerLabel.textContent = text;
-    }
-
-    let focusedIndex = -1;
-
-    function renderList(query) {
-      const q = (query || "").trim().toLowerCase();
-      const filtered = choices.filter(([v, l]) => !q || v.toLowerCase().includes(q) || l.toLowerCase().includes(q));
-      focusedIndex = -1;
-      listContainer.replaceChildren(...filtered.map(([v, l], idx) => {
-        const active = v === get();
-        const checkIcon = active
-          ? s("svg", { class: "custom-select-check", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round", "stroke-linejoin": "round" },
-              s("polyline", { points: "20 6 9 17 4 12" }))
-          : null;
-        const item = h("div", {
-          class: "custom-select-item" + (active ? " active" : ""),
-          role: "option",
-          "data-idx": String(idx),
-          "aria-selected": active ? "true" : "false",
-          onClick: (e) => {
-            e.stopPropagation();
-            selectValue(v);
-          }
-        },
-        h("span", { class: "custom-select-item-label" }, checkIcon, h("span", {}, l)),
-        h("span", { class: "custom-select-item-sub" }, v));
-        return item;
-      }));
-    }
-
-    function selectValue(v) {
-      const was = get();
-      sel.value = v;
-      set(v);
-      updateTrigger(v);
-      closePopover();
-      save().then(() => { if (after && was !== v) after(); });
-    }
-
-    function openPopover() {
-      popover.style.display = "flex";
-      wrap.classList.add("open");
-      triggerBtn.setAttribute("aria-expanded", "true");
-      renderList("");
-      searchInput.value = "";
-      setTimeout(() => searchInput.focus(), 10);
-      document.addEventListener("click", onDocClick);
-      document.addEventListener("keydown", onDocKey);
-    }
-
-    function closePopover() {
-      popover.style.display = "none";
-      wrap.classList.remove("open");
-      triggerBtn.setAttribute("aria-expanded", "false");
-      document.removeEventListener("click", onDocClick);
-      document.removeEventListener("keydown", onDocKey);
-    }
-
-    function togglePopover() {
-      if (popover.style.display === "none") openPopover();
-      else closePopover();
-    }
-
-    function onDocClick(e) {
-      if (!wrap.contains(e.target)) closePopover();
-    }
-
-    function onDocKey(e) {
-      if (e.key === "Escape") {
-        closePopover();
-        triggerBtn.focus();
-        return;
-      }
-      const items = Array.from(listContainer.querySelectorAll(".custom-select-item"));
-      if (!items.length) return;
-      if (e.key === "ArrowDown") {
-        e.preventDefault();
-        focusedIndex = (focusedIndex + 1) % items.length;
-        updateFocus(items);
-      } else if (e.key === "ArrowUp") {
-        e.preventDefault();
-        focusedIndex = (focusedIndex - 1 + items.length) % items.length;
-        updateFocus(items);
-      } else if (e.key === "Enter" && focusedIndex >= 0 && items[focusedIndex]) {
-        e.preventDefault();
-        items[focusedIndex].click();
-      }
-    }
-
-    function updateFocus(items) {
-      items.forEach((it, i) => {
-        if (i === focusedIndex) {
-          it.classList.add("focused");
-          it.scrollIntoView({ block: "nearest" });
-        } else {
-          it.classList.remove("focused");
-        }
-      });
-    }
-
-    searchInput.addEventListener("input", () => renderList(searchInput.value));
-
-    const row = h("div", { class: "opt opt-custom-select" },
-      h("span", { class: "txt" },
-        h("span", { class: "name" }, label),
-        hint ? h("span", { class: "hint" }, hint) : null),
-      wrap);
-
-    const sync = () => {
-      const v = get();
-      sel.value = v;
-      updateTrigger(v);
-    };
+  // A language: the plain list of the languages (each in its own name) with the setting's own "none" first. The interface language reloads the page once chosen.
+  function languageSelect({ path, label, hint, none, reload }) {
+    const d = described(label, hint);
+    const sel = h("select", { class: "sel", "data-pref": path, ...d.ids, onChange: () => { put(path, sel.value); save().then(() => { if (reload) location.reload(); }); } },
+      h("option", { value: none[0] }, none[1]), ...B.i18n.LANGUAGES.map(([code, name]) => h("option", { value: code, lang: code.replace("_", "-") }, name)));
+    const row = h("div", { class: "opt" }, h("span", { class: "txt" }, d.name, d.hint), sel);
+    const sync = () => { sel.value = at(path); };
     syncers.push(sync);
     sync();
     return row;
@@ -426,11 +222,11 @@
 
   // Academic Color Theme Presets
   const THEME_PRESETS = [
-    { id: "scholar", name: "Classic Scholar", colors: { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" } },
-    { id: "ocean", name: "Ocean Sapphire", colors: { first: "#0284c7", cofirst: "#6366f1", second: "#0d9488", last: "#059669" } },
-    { id: "sunset", name: "Sunset Orchid", colors: { first: "#db2777", cofirst: "#9333ea", second: "#ea580c", last: "#16a34a" } },
-    { id: "contrast", name: "High Contrast", colors: { first: "#0047ba", cofirst: "#6a1b9a", second: "#c2410c", last: "#0b6623" } },
-    { id: "nordic", name: "Nordic Slate", colors: { first: "#3b82f6", cofirst: "#8b5cf6", second: "#f59e0b", last: "#10b981" } }
+    { id: "scholar", name: "optThemeDefault", colors: { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" } },
+    { id: "ocean", name: "optThemeCool", colors: { first: "#0284c7", cofirst: "#6366f1", second: "#0d9488", last: "#059669" } },
+    { id: "sunset", name: "optThemeWarm", colors: { first: "#db2777", cofirst: "#9333ea", second: "#ea580c", last: "#16a34a" } },
+    { id: "contrast", name: "optThemeStrong", colors: { first: "#0047ba", cofirst: "#6a1b9a", second: "#c2410c", last: "#0b6623" } },
+    { id: "nordic", name: "optThemeSoft", colors: { first: "#3b82f6", cofirst: "#8b5cf6", second: "#f59e0b", last: "#10b981" } }
   ];
 
   // Curated Color Palettes per Role
@@ -452,17 +248,11 @@
     return 0.2126 * r + 0.7152 * g + 0.0722 * b;
   }
 
-  function getContrastBadge(hex) {
-    const l1 = calculateLuminance(hex);
-    const rLight = 1.05 / (l1 + 0.05);
-    const ratioLight = Math.max(rLight, 1 / rLight);
-    const rDark = (l1 + 0.05) / 0.07;
-    const ratioDark = Math.max(rDark, 1 / rDark);
-    const bestRatio = Math.max(ratioLight, ratioDark);
-    const isPass = ratioLight >= 4.5 || ratioDark >= 4.5;
-    const isAAA = bestRatio >= 7.0;
-    const label = isAAA ? `AAA ${bestRatio.toFixed(1)}:1` : isPass ? `AA ${bestRatio.toFixed(1)}:1` : `${bestRatio.toFixed(1)}:1`;
-    return { isPass, label };
+  // The row's bar is drawn in the role's colour on Scholar's white page: 3:1 (the WCAG rule for graphics) keeps it visible. (The marked name in the author line is the
+  // colour mixed with black, read on its own tint, and is always legible; the colour is what has to stand out.)
+  function barContrast(hex) {
+    const ratio = 1.05 / (calculateLuminance(hex) + 0.05);
+    return { pass: ratio >= 3, label: ratio.toFixed(1) + ":1" };
   }
 
   // Theme Studio Bar Component
@@ -474,18 +264,18 @@
         type: "button",
         class: "theme-preset-card",
         "data-theme-preset": p.id,
-        "aria-label": `${p.name} theme preset`,
+        "aria-label": `${t("optThemes")}: ${t(p.name)}`,
         onClick: (e) => {
           e.preventDefault();
           for (const [r, c] of Object.entries(p.colors)) prefs.colors[r] = c;
           B.dom.applyColors(prefs.colors);
           save();
         }
-      }, h("span", { class: "theme-swatch-strip" }, ...dots), p.name);
+      }, h("span", { class: "theme-swatch-strip" }, ...dots), t(p.name));
       return { preset: p, el: btn };
     });
 
-    const bar = h("div", { class: "theme-presets-bar", role: "group", "aria-label": "Theme Presets" },
+    const bar = h("div", { class: "theme-presets-bar", role: "group", "aria-label": t("optThemes") },
       ...chips.map((c) => c.el));
 
     const sync = () => {
@@ -503,7 +293,6 @@
   function roleStudioCard(role) {
     const defaultColor = ROLE_DEFAULT[role];
     const roleLabel = t(ROLE_NAME[role]);
-    const shortBadge = ROLE_SHORT[role] || role;
 
     const input = h("input", {
       type: "color",
@@ -528,9 +317,9 @@
     const previewChip = h("span", { class: "role-swatch-badge", style: `background: ${defaultColor};`, "aria-hidden": "true" });
     const liveDot = h("span", { class: "color-dot-live", style: `background: ${defaultColor};` });
     const hexLabel = h("span", { class: "color-hex" }, defaultColor.toUpperCase());
-    const contrastPill = h("span", { class: "contrast-badge pass" }, "AA 4.8:1");
+    const contrastPill = h("span", { class: "contrast-badge pass", title: t("optContrastTip") });
 
-    const pill = h("label", { class: "hex-input-pill", "aria-label": `${roleLabel} color code` },
+    const pill = h("label", { class: "hex-input-pill", "aria-label": roleLabel },
       liveDot,
       hexLabel,
       input);
@@ -584,8 +373,8 @@
       });
       const isCustom = current !== defaultColor.toLowerCase();
       resetBtn.style.display = isCustom ? "inline-flex" : "none";
-      const { isPass, label } = getContrastBadge(current);
-      contrastPill.className = "contrast-badge " + (isPass ? "pass" : "warn");
+      const { pass, label } = barContrast(current);
+      contrastPill.className = "contrast-badge " + (pass ? "pass" : "warn");
       contrastPill.textContent = label;
     }
 
@@ -594,7 +383,7 @@
         previewChip,
         h("span", { class: "name" }, roleLabel)),
       h("div", { class: "role-studio-controls" },
-        h("div", { class: "curated-palette-row", role: "group", "aria-label": `${roleLabel} curated palette` },
+        h("div", { class: "curated-palette-row", role: "group", "aria-label": roleLabel },
           ...dotButtons.map((d) => d.el)),
         pill,
         contrastPill,
@@ -691,20 +480,16 @@
 
     const renderList = (filterText) => {
       const q = (filterText || "").trim().toLowerCase();
-      const filtered = entries.filter(([id, d]) => {
-        if (!q) return true;
-        return id.toLowerCase().includes(q) || (d.authors || "").toLowerCase().includes(q) || (d.venue || "").toLowerCase().includes(q);
-      });
-      countSpan.textContent = tn("optCacheCount", filtered.length, [String(filtered.length)]);
+      const filtered = entries.filter(([, d]) => !q || (d.authors || "").toLowerCase().includes(q) || (d.venue || "").toLowerCase().includes(q));
+      countSpan.textContent = t("optCacheShown", [String(filtered.length), String(entries.length)]);
       if (!filtered.length) {
-        tbody.replaceChildren(h("tr", {}, h("td", { colspan: "4", class: "faint", style: "text-align: center; padding: 24px;" }, t("optCacheEmpty"))));
+        tbody.replaceChildren(h("tr", {}, h("td", { colspan: "3", class: "faint", style: "text-align: center; padding: 24px;" }, t("optCacheEmpty"))));
         return;
       }
-      tbody.replaceChildren(...filtered.map(([id, d]) => {
-        const dateStr = d.ts ? new Date(d.ts).toLocaleDateString() : "";
+      tbody.replaceChildren(...filtered.map(([, d]) => {
+        const dateStr = d.ts ? new Date(d.ts).toLocaleDateString(B.dom.langTag()) : "";
         const viaStr = d.via === "semantic" ? "Semantic Scholar" : "Google Scholar";
         return h("tr", {},
-          h("td", { class: "cache-id", title: id }, id.length > 32 ? id.slice(0, 30) + "…" : id),
           h("td", {}, d.authors || "—"),
           h("td", {}, d.venue || "—"),
           h("td", { class: "faint" }, `${viaStr} (${dateStr})`));
@@ -727,17 +512,17 @@
       }
     }, t("optCacheCopy"));
 
-    const closeBtn = h("button", { class: "btn", type: "button", "data-act": "close-cache", "aria-label": t("cancel"), onClick: () => cacheDialog.close() }, t("cancel"));
+    const closeBtn = h("button", { class: "btn", type: "button", "data-act": "close-cache", onClick: () => cacheDialog.close() }, t("optCacheClose"));
 
-    cacheDialog = h("dialog", { class: "cache-modal" },
+    cacheDialog = h("dialog", { class: "cache-modal", "aria-labelledby": "cache-title" },
       h("div", { class: "cache-modal-head" },
-        h("h2", {}, t("optCacheTitle")),
-        h("button", { class: "cache-close", type: "button", "aria-label": t("cancel"), title: t("cancel"), onClick: () => cacheDialog.close() }, "×")),
+        h("h2", { id: "cache-title" }, t("optCacheTitle")),
+        h("button", { class: "cache-close", type: "button", "aria-label": t("optCacheClose"), title: t("optCacheClose"), onClick: () => cacheDialog.close() }, "×")),
       h("div", { class: "row", style: "gap: 8px; margin: 12px 0;" }, search, copyJsonBtn),
       h("div", { style: "margin-bottom: 8px;" }, countSpan),
       h("div", { class: "cache-table-wrap" },
         h("table", { class: "cache-table" },
-          h("thead", {}, h("tr", {}, h("th", {}, "ID"), h("th", {}, "Authors"), h("th", {}, "Venue"), h("th", {}, "Source"))),
+          h("thead", {}, h("tr", {}, h("th", {}, t("tsvAuthors")), h("th", {}, t("tsvVenue")), h("th", {}, t("optCacheSource")))),
           tbody)),
       h("div", { class: "row", style: "justify-content: flex-end; margin-top: 16px;" }, closeBtn));
 
@@ -759,288 +544,113 @@
   }
   resetBox.append(resetBtn);
 
-  // Configuration parser & apply
-  function parseConfig(text) {
-    const trimmed = (text || "").trim();
-    if (!trimmed) throw new Error("Empty configuration");
-    if (trimmed.startsWith("{")) return JSON.parse(trimmed);
-    const res = {};
-    let cur = res;
-    for (let line of trimmed.split(/\r?\n/)) {
-      line = line.replace(/#.*$/, "").trim();
-      if (!line) continue;
-      const sec = line.match(/^\[([a-zA-Z0-9_.-]+)\]$/);
-      if (sec) {
-        const parts = sec[1].split(".");
-        let target = res;
-        for (const p of parts) { target[p] = target[p] || {}; target = target[p]; }
-        cur = target;
-        continue;
-      }
-      const kv = line.match(/^([a-zA-Z0-9_.-]+)\s*=\s*(.*)$/);
-      if (kv) {
-        const k = kv[1].trim();
-        let raw = kv[2].trim();
-        if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) raw = raw.slice(1, -1);
-        let val = raw;
-        if (raw === "true") val = true;
-        else if (raw === "false") val = false;
-        else if (!isNaN(Number(raw)) && raw !== "") val = Number(raw);
-        if (k.includes(".")) {
-          const parts = k.split(".");
-          let target = res;
-          for (let i = 0; i < parts.length - 1; i++) { target[parts[i]] = target[parts[i]] || {}; target = target[parts[i]]; }
-          target[parts[parts.length - 1]] = val;
-        } else {
-          cur[k] = val;
-        }
-      }
-    }
-    return res;
+  // ---- Configuration: the record as JSON, in and out. Whatever comes in is a patch that lib/prefs.js apply() lays over the settings and reports ----
+  const configStatus = h("div", { class: "config-status", role: "status", "aria-live": "polite", "data-rr": "config-status" });
+  const say = (lines, bad) => { configStatus.replaceChildren(...lines.map((line) => h("p", {}, line))); configStatus.classList.toggle("bad", bad); };
+  async function applyPatch(patch) {
+    const r = B.prefs.apply(prefs, patch);
+    prefs = r.prefs;
+    if (r.applied.length) await save();
+    const lines = [];
+    if (r.applied.length) lines.push(t("optConfigApplied", [String(r.applied.length)]));
+    else if (!r.ignored.length) lines.push(t("optConfigNothing"));
+    if (r.ignored.length) lines.push(t("optConfigIgnored") + " " + r.ignored.map((x) => (x.path || "·") + ": " + x.reason).join("; "));
+    say(lines, r.ignored.length > 0);
   }
-
-  async function applyImportedConfig(data) {
-    const merged = { ...prefs, ...data };
-    for (const group of ["colors", "roles", "ranks", "marks", "panel", "hide"]) {
-      if (data[group] && typeof data[group] === "object") merged[group] = { ...prefs[group], ...data[group] };
-    }
-    prefs = B.prefs.normalize(merged);
-    await save();
+  async function applyConfig(text) {
+    let patch;
+    try { patch = JSON.parse(text); } catch (e) { say([t("optConfigError", [String(e.message).slice(0, 120)])], true); return; }
+    await applyPatch(patch);
   }
+  const done = (button, label) => { button.textContent = t("copied"); setTimeout(() => { button.textContent = label; }, 1400); };
+  const recordJson = () => JSON.stringify(prefs, null, 2);
 
-  const configStatus = h("span", { class: "config-status", role: "status" });
-  function flashConfigStatus(msg) {
-    configStatus.textContent = msg;
-    configStatus.classList.add("on");
-    setTimeout(() => { configStatus.classList.remove("on"); configStatus.textContent = ""; }, 2200);
-  }
+  const copyConfigBtn = h("button", { class: "btn", type: "button", "data-act": "config-copy", onClick: async () => { if (await B.dom.copyText(recordJson())) done(copyConfigBtn, t("optConfigCopy")); } }, t("optConfigCopy"));
+  const exportConfigBtn = h("button", { class: "btn", type: "button", "data-act": "config-export", onClick: () => B.dom.downloadFile("better-scholar-config.json", recordJson(), "application/json") }, t("optConfigExport"));
+  const fileInput = h("input", { type: "file", accept: ".json,application/json", style: "display:none", "aria-label": t("optConfigImportFile"), onChange: (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => applyConfig(String(reader.result));
+    reader.readAsText(file);
+    fileInput.value = "";
+  } });
+  const importFileBtn = h("button", { class: "btn", type: "button", "data-act": "config-import-file", onClick: () => fileInput.click() }, t("optConfigImportFile"));
 
-  const copyConfigBtn = h("button", {
-    class: "btn",
-    type: "button",
-    "data-act": "config-copy",
-    "aria-label": t("optConfigCopy"),
-    onClick: async () => {
-      const text = JSON.stringify(prefs, null, 2);
-      if (await B.dom.copyText(text)) {
-        copyConfigBtn.textContent = t("copied");
-        setTimeout(() => { copyConfigBtn.textContent = t("optConfigCopy"); }, 1400);
-      }
-    }
-  }, t("optConfigCopy"));
-
-  const exportConfigBtn = h("button", {
-    class: "btn",
-    type: "button",
-    "data-act": "config-export",
-    "aria-label": t("optConfigExport"),
-    onClick: () => {
-      B.dom.downloadFile("better-scholar-config.json", JSON.stringify(prefs, null, 2), "application/json");
-    }
-  }, t("optConfigExport"));
-
-  const pasteConfigBtn = h("button", {
-    class: "btn",
-    type: "button",
-    "data-act": "config-import",
-    "aria-label": t("optConfigImport"),
-    onClick: async () => {
-      try {
-        const text = await navigator.clipboard.readText();
-        const parsed = parseConfig(text);
-        await applyImportedConfig(parsed);
-        flashConfigStatus(t("optSaved"));
-      } catch (e) {
-        flashConfigStatus("Invalid format");
-      }
-    }
-  }, t("optConfigImport"));
-
-  const fileInput = h("input", {
-    type: "file",
-    accept: ".json,.toml,.txt",
-    "aria-label": t("optConfigImportFile"),
-    style: "display:none",
-    onChange: (e) => {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = async () => {
-        try {
-          const parsed = parseConfig(reader.result);
-          await applyImportedConfig(parsed);
-          flashConfigStatus(t("optSaved"));
-        } catch (err) {
-          flashConfigStatus("Invalid file");
-        }
-      };
-      reader.readAsText(file);
-      fileInput.value = "";
-    }
-  });
-
-  const importFileBtn = h("button", { class: "btn", type: "button", "data-act": "config-import-file", "aria-label": t("optConfigImportFile"), onClick: () => fileInput.click() }, t("optConfigImportFile"));
-
-  const applyPreset = async (type) => {
-    if (type === "full") {
-      prefs.roles = { first: true, cofirst: true, second: true, last: true };
-      prefs.markName = true;
-      prefs.ranks = { ccf: true, core: true };
-      prefs.marks = { award: true, oral: true, spotlight: true, highlight: true };
-      prefs.rowStyle = "full";
-      prefs.talkRows = "separate";
-      prefs.autoLoad = true;
-      prefs.mergeDuplicates = true;
-      prefs.semanticScholar = true;
-      prefs.hide = { cited: false, citedTable: false, citedChart: false, coauthors: false, access: false };
-      for (const k of ["show", "summary", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]) {
-        prefs.panel[k] = true;
-      }
-    } else if (type === "senior") {
-      prefs.roles = { first: false, cofirst: false, second: false, last: true };
-      prefs.ranks = { ccf: true, core: true };
-      prefs.rowStyle = "full";
-    } else if (type === "first") {
-      prefs.roles = { first: true, cofirst: true, second: false, last: false };
-      prefs.ranks = { ccf: true, core: true };
-      prefs.rowStyle = "full";
-    } else if (type === "minimal") {
-      prefs.rowStyle = "tint";
-      prefs.hide.citedTable = true;
-      prefs.hide.access = true;
-      for (const k of ["summary", "copy", "marks", "years", "venues", "status", "names"]) prefs.panel[k] = false;
-      prefs.panel.filters = true;
-      prefs.panel.metrics = true;
-      prefs.panel.show = true;
-    }
-    await save();
-    flashConfigStatus(t("optSaved"));
-  };
-
+  // the ready-made patches (lib/prefs.js PRESETS)
+  const presetBtn = (id, label) => h("button", { class: "btn preset-chip", type: "button", "data-preset": id, onClick: () => applyPatch(B.prefs.PRESETS[id]) }, label);
   const presetRow = h("div", { class: "row presets", role: "group", "aria-label": t("optConfigPreset") },
     h("span", { class: "presets-title faint" }, t("optConfigPreset") + ":"),
-    h("button", { class: "btn preset-chip", type: "button", "data-preset": "full", "aria-label": t("optPresetFull"), onClick: () => applyPreset("full") },
-      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🚀"),
-      t("optPresetFull")),
-    h("button", { class: "btn preset-chip", type: "button", "data-preset": "senior", "aria-label": t("optPresetSenior"), onClick: () => applyPreset("senior") },
-      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🎓"),
-      t("optPresetSenior")),
-    h("button", { class: "btn preset-chip", type: "button", "data-preset": "first", "aria-label": t("optPresetFirst"), onClick: () => applyPreset("first") },
-      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🥇"),
-      t("optPresetFirst")),
-    h("button", { class: "btn preset-chip", type: "button", "data-preset": "minimal", "aria-label": t("optPresetMinimal"), onClick: () => applyPreset("minimal") },
-      h("span", { class: "preset-badge", "aria-hidden": "true" }, "⚡"),
-      t("optPresetMinimal")));
+    presetBtn("all", t("optPresetFull")), presetBtn("last", t("optPresetLast")), presetBtn("first", t("optPresetFirst")), presetBtn("minimal", t("optPresetMinimal")));
 
-  const configText = h("textarea", { class: "config-text", "data-act": "config-input", "aria-label": t("optConfigEditor"), rows: "6", spellcheck: "false", placeholder: '{\n  "colors": {\n    "first": "#1a73e8",\n    "last": "#1e8e3e"\n  }\n}' });
-  const configApplyBtn = h("button", {
-    class: "btn primary",
-    type: "button",
-    "data-act": "config-apply",
-    "aria-label": t("optConfigApply"),
-    onClick: async () => {
-      try {
-        const parsed = parseConfig(configText.value);
-        await applyImportedConfig(parsed);
-        flashConfigStatus(t("optSaved"));
-      } catch (e) {
-        flashConfigStatus("Invalid: " + (e.message || e));
-      }
-    }
-  }, t("optConfigApply"));
-
+  const configText = h("textarea", { class: "config-text", "data-act": "config-input", "aria-label": t("optConfigEditor"), rows: "6", spellcheck: "false", placeholder: '{\n  "panel": { "years": false },\n  "rowStyle": "bar"\n}' });
+  const configApplyBtn = h("button", { class: "btn primary", type: "button", "data-act": "config-apply", onClick: () => applyConfig(configText.value) }, t("optConfigApply"));
   const configDetails = h("details", { class: "config-editor" },
-    h("summary", { class: "btn sub", "aria-label": t("optConfigEditor") }, t("optConfigEditor")),
-    h("div", { class: "config-editor-body" }, configText, h("div", { class: "row" }, configApplyBtn, configStatus)));
+    h("summary", { class: "btn sub" }, t("optConfigEditor")),
+    h("div", { class: "config-editor-body" }, configText, h("div", { class: "row" }, configApplyBtn)));
+
+  // what an AI assistant needs to set the extension up: every setting, its values, this user's current ones and how to hand the answer back (lib/agent.js)
+  const agentBtn = h("button", { class: "btn primary", type: "button", "data-act": "agent-guide-copy", onClick: async () => {
+    if (await B.dom.copyText(B.agent.guide({ current: prefs, version: chrome.runtime.getManifest().version }))) done(agentBtn, t("optAgentCopy"));
+  } }, t("optAgentCopy"));
 
   // ---- Assemble Cards ----
+  const paths = (group, keys) => keys.map((k) => group + "." + k);
   $("controls").append(
     card(0, t("optLanguageTitle"), t("optLanguageHint"),
-      customLanguagePicker({ key: "language", label: t("optLanguageUi"), choices: [["auto", t("optLanguageAuto")], ...LANGS], get: () => prefs.language, set: (v) => { prefs.language = v; }, after: () => location.reload() }),
-      customLanguagePicker({ key: "scholarLanguage", label: t("optLanguageScholar"), hint: t("optLanguageScholarHint"), choices: [["keep", t("optLanguageKeep")], ...LANGS], get: () => prefs.scholarLanguage, set: (v) => { prefs.scholarLanguage = v; } })),
+      languageSelect({ path: "language", label: t("optLanguageUi"), none: ["auto", t("optLanguageAuto")], reload: true }),
+      languageSelect({ path: "scholarLanguage", label: t("optLanguageScholar"), hint: t("optLanguageScholarHint"), none: ["keep", t("optLanguageKeep")] })),
     card(1, t("optRolesTitle"), t("optRolesHint"),
-      ...B.prefs.ROLES.map((role) => option({ key: "roles." + role, label: t(ROLE_NAME[role]), swatch: ROLE_COLOR[role], get: () => prefs.roles[role], set: (v) => { prefs.roles[role] = v; } })),
-      option({ key: "markName", label: t("optMarkName"), hint: t("optMarkNameHint"), get: () => prefs.markName, set: (v) => { prefs.markName = v; } }),
-      bulk("roles", [...B.prefs.ROLES.map((role) => (v) => { prefs.roles[role] = v; }), (v) => { prefs.markName = v; }], t("optRolesTitle"))),
+      ...B.prefs.ROLES.map((role) => option({ path: "roles." + role, label: t(ROLE_NAME[role]), swatch: ROLE_COLOR[role] })),
+      option({ path: "markName", label: t("optMarkName"), hint: t("optMarkNameHint") }),
+      bulk("roles", [...paths("roles", B.prefs.ROLES), "markName"], t("optRolesTitle"))),
     card(2, t("optColorsTitle"), t("optColorsHint"),
       themePresetsBar(),
       ...B.prefs.ROLES.map(roleStudioCard),
-      segmented({
-        key: "rowStyle",
-        label: t("optRowStyle"),
-        choices: [["full", t("optRowStyleFull")], ["bar", t("optRowStyleBar")], ["tint", t("optRowStyleTint")]],
-        icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram },
-        get: () => prefs.rowStyle,
-        set: (v) => { prefs.rowStyle = v; }
-      }),
+      segmented({ path: "rowStyle", label: t("optRowStyle"), choices: [["full", t("optRowStyleFull")], ["bar", t("optRowStyleBar")], ["tint", t("optRowStyleTint")]],
+        icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram } }),
       h("div", { class: "row" },
-        h("button", {
-          class: "btn",
-          type: "button",
-          "data-act": "colors-reset",
-          "aria-label": t("optColorsReset"),
-          onClick: () => {
-            for (const r of B.prefs.ROLES) prefs.colors[r] = "";
-            B.dom.applyColors(prefs.colors);
-            save();
-          }
-        }, t("optColorsReset")))),
+        h("button", { class: "btn", type: "button", "data-act": "colors-reset", onClick: () => { for (const r of B.prefs.ROLES) prefs.colors[r] = ""; save(); } }, t("optColorsReset")))),
     card(3, t("optRanksTitle"), null,
-      option({ key: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint"), get: () => prefs.ranks.ccf, set: (v) => { prefs.ranks.ccf = v; } }),
-      option({ key: "ranks.core", label: t("optCore"), hint: t("optCoreHint"), get: () => prefs.ranks.core, set: (v) => { prefs.ranks.core = v; } }),
-      bulk("ranks", ["ccf", "core"].map((k) => (v) => { prefs.ranks[k] = v; }), t("optRanksTitle"))),
+      option({ path: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint") }),
+      option({ path: "ranks.core", label: t("optCore"), hint: t("optCoreHint") }),
+      bulk("ranks", paths("ranks", B.prefs.RANKS), t("optRanksTitle"))),
     card(4, t("optMarksTitle"), t("marksHint"),
-      ...B.prefs.MARK_GROUPS.map((g) => option({ key: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "", get: () => prefs.marks[g], set: (v) => { prefs.marks[g] = v; } })),
-      bulk("marks", B.prefs.MARK_GROUPS.map((g) => (v) => { prefs.marks[g] = v; }), t("optMarksTitle")),
-      segmented({
-        key: "talkRows",
-        label: t("optTalkRows"),
-        hint: t("optTalkRowsHint"),
-        choices: [["separate", t("optTalkSeparate")], ["pair", t("optTalkPair")], ["talks", t("optTalkAll")]],
-        get: () => prefs.talkRows,
-        set: (v) => { prefs.talkRows = v; }
-      })),
-    card(5, t("optMergeTitle"), t("optMergeHint"),
-      option({ key: "mergeDuplicates", label: t("optMergeLabel"), hint: t("optMergeLabelHint"), get: () => prefs.mergeDuplicates, set: (v) => { prefs.mergeDuplicates = v; } })),
-    card(6, t("optHideTitle"), t("optHideHint"),
-      option({ key: "hide.cited", label: t("optHideCited"), hint: t("optHideCitedHint"), get: () => prefs.hide.citedTable && prefs.hide.citedChart, set: (v) => { prefs.hide.cited = v; prefs.hide.citedTable = v; prefs.hide.citedChart = v; } }),
-      option({ key: "hide.citedTable", sub: true, label: t("optHideCitedTable"), hint: t("optHideCitedTableHint"), get: () => prefs.hide.citedTable, set: (v) => { prefs.hide.citedTable = v; prefs.hide.cited = prefs.hide.citedTable && prefs.hide.citedChart; } }),
-      option({ key: "hide.citedChart", sub: true, label: t("optHideCitedChart"), hint: t("optHideCitedChartHint"), get: () => prefs.hide.citedChart, set: (v) => { prefs.hide.citedChart = v; prefs.hide.cited = prefs.hide.citedTable && prefs.hide.citedChart; } }),
-      option({ key: "hide.coauthors", label: t("optHideCo"), hint: t("optHideCoHint"), get: () => prefs.hide.coauthors, set: (v) => { prefs.hide.coauthors = v; } }),
-      option({ key: "hide.access", label: t("optHideAccess"), hint: t("optHideAccessHint"), get: () => prefs.hide.access, set: (v) => { prefs.hide.access = v; } }),
-      bulk("hide", [
-        (v) => { prefs.hide.cited = v; prefs.hide.citedTable = v; prefs.hide.citedChart = v; },
-        (v) => { prefs.hide.coauthors = v; },
-        (v) => { prefs.hide.access = v; }
-      ], t("optHideTitle"))),
-    card(7, t("optPanelTitle"), null,
-      option({ key: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint"), get: () => prefs.panel.show, set: (v) => { prefs.panel.show = v; } }),
-      ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["copy", t("optPanelCopy"), t("optPanelCopyHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
-        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["years", t("optPanelYears"), t("optPanelYearsHint")], ["venues", t("optPanelVenues"), t("optPanelVenuesHint")], ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
-        .map(([part, label, hint]) => option({ key: "panel." + part, sub: true, label, hint, get: () => prefs.panel[part], set: (v) => { prefs.panel[part] = v; }, off: () => !prefs.panel.show || (part === "copy" && !prefs.panel.summary) })),
-      bulk("panel", [...B.prefs.PANEL_PARTS.filter((k) => k !== "show").map((k) => (v) => { prefs.panel[k] = v; }), (v) => { if (v) prefs.panel.show = true; }], t("optPanelTitle"),
-        h("button", {
-          class: "btn",
-          type: "button",
-          "data-act": "panel-compact",
-          "aria-label": t("optPanelCompact"),
-          onClick: () => {
-            for (const k of ["summary", "copy", "marks", "years", "venues", "status", "names"]) prefs.panel[k] = false;
-            for (const k of ["filters", "metrics"]) prefs.panel[k] = true;
-            prefs.panel.show = true;
-            save();
-          }
-        }, t("optPanelCompact")))),
-    card(8, t("optSemanticTitle"), t("optSemanticHint"),
-      option({ key: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint"), get: () => prefs.semanticScholar, set: (v) => { prefs.semanticScholar = v; } }),
+      ...B.prefs.MARK_GROUPS.map((g) => option({ path: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "" })),
+      bulk("marks", paths("marks", B.prefs.MARK_GROUPS), t("optMarksTitle")),
+      segmented({ path: "talkRows", label: t("optTalkRows"), hint: t("optTalkRowsHint"), choices: [["separate", t("optTalkSeparate")], ["pair", t("optTalkPair")], ["talks", t("optTalkAll")]] })),
+    card(5, t("optCopyTitle"), t("optCopyHint"),
+      ...B.prefs.COPY_BUTTONS.map((k) => option({ path: "copy." + k, label: t(B.dom.COPY_LABEL[k]) })),
+      bulk("copy", paths("copy", B.prefs.COPY_BUTTONS), t("optCopyTitle"))),
+    card(6, t("optMergeTitle"), t("optMergeHint"),
+      option({ path: "mergeDuplicates", label: t("optMergeLabel"), hint: t("optMergeLabelHint") })),
+    card(7, t("optHideTitle"), t("optHideHint"),
+      option({ path: "hide.cited", label: t("optHideCited"), hint: t("optHideCitedHint") }),
+      option({ path: "hide.citedTable", sub: true, label: t("optHideCitedTable"), hint: t("optHideCitedTableHint"), off: () => prefs.hide.cited }),
+      option({ path: "hide.citedChart", sub: true, label: t("optHideCitedChart"), hint: t("optHideCitedChartHint"), off: () => prefs.hide.cited }),
+      option({ path: "hide.coauthors", label: t("optHideCo"), hint: t("optHideCoHint") }),
+      option({ path: "hide.access", label: t("optHideAccess"), hint: t("optHideAccessHint") })),
+    card(8, t("optPanelTitle"), null,
+      option({ path: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint") }),
+      ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
+        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["years", t("optPanelYears"), t("optPanelYearsHint")], ["venues", t("optPanelVenues"), t("optPanelVenuesHint")],
+        ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
+        .map(([part, label, hint]) => option({ path: "panel." + part, sub: true, label, hint, off: () => !prefs.panel.show })),
+      bulk("panel", paths("panel", B.prefs.PANEL_PARTS.filter((k) => k !== "show")), t("optPanelTitle"), { enables: ["panel.show"] },
+        h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => applyPatch({ panel: { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false } }) }, t("optPanelCompact")))),
+    card(9, t("optSemanticTitle"), t("optSemanticHint"),
+      option({ path: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint") }),
       keyRow()),
-    card(9, t("optLoadTitle"), null,
-      option({ key: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint"), get: () => prefs.autoLoad, set: (v) => { prefs.autoLoad = v; } })),
-    card(10, t("optConfigTitle"), t("optConfigHint"),
+    card(10, t("optLoadTitle"), null,
+      option({ path: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint") })),
+    card(11, t("optAgentTitle"), t("optAgentHint"),
+      h("div", { class: "row" }, agentBtn)),
+    card(12, t("optConfigTitle"), t("optConfigHint"),
       presetRow,
-      h("div", { class: "row" }, copyConfigBtn, exportConfigBtn, pasteConfigBtn, importFileBtn, fileInput),
-      configDetails),
-    card(11, t("optDataTitle"), null, h("div", { class: "row" }, viewBtn, clearBtn, resetBox, diagBtn, cacheNote)));
+      h("div", { class: "row" }, copyConfigBtn, exportConfigBtn, importFileBtn, fileInput),
+      configDetails,
+      configStatus),
+    card(13, t("optDataTitle"), null, h("div", { class: "row" }, viewBtn, clearBtn, resetBox, diagBtn, cacheNote)));
   showCacheCount();
 
   // Sticky TOC Navigation
@@ -1064,9 +674,9 @@
       }, titleText);
     }));
 
-  const searchInput = h("input", { type: "search", class: "opt-search", "data-act": "filter-settings", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
+  const searchInput = h("input", { type: "search", class: "opt-search", "data-act": "filter-settings", placeholder: t("optSearchPlaceholder"), "aria-label": t("optSearchPlaceholder") });
   const searchIcon = h("span", { class: "opt-search-icon", "aria-hidden": "true" });
-  const searchClear = h("button", { class: "opt-search-clear", type: "button", "aria-label": t("cancel"), title: t("cancel"), onClick: () => { searchInput.value = ""; filterSettings(""); searchInput.focus(); } });
+  const searchClear = h("button", { class: "opt-search-clear", type: "button", "aria-label": t("optSearchClear"), title: t("optSearchClear"), onClick: () => { searchInput.value = ""; filterSettings(""); searchInput.focus(); } });
   searchClear.hidden = true;
   const searchKbd = h("kbd", { class: "opt-search-kbd", "aria-hidden": "true" }, "/");
   const searchBox = h("div", { class: "opt-search-box" }, searchIcon, searchInput, searchClear, searchKbd);
@@ -1179,7 +789,7 @@
     P("cofirst", "A", "A*", 190, 2024, "CVPR", "spotlight"), P("second", "B", "B", 71, 2023, "WSDM"), P("second", "A", "A", 55, 2022, "ICML"),
     P("last", "A", "A*", 240, 2025, "ACL", "tot"), P("last", "C", "C", 12, 2021, "ICANN"), P("middle", "A", "A*", 402, 2024, "ICLR", "highlight"), P("middle", "B", "A", 87, 2023, "NeurIPS"), P("middle", null, null, 5, 2020, "")
   ];
-  const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
+  const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onSearchNext", "onImpact", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
   panelCb.onSettings = () => { const c = document.getElementById("card-1"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
   let panelUi = { collapsed: false, source: "ccf" };

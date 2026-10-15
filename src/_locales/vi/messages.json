@@ -341,6 +341,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupOpenScholar": {
     "message": "Mở Google Scholar"
   },
@@ -389,6 +397,12 @@
   "optMarksTitle": {
     "message": "Giải thưởng và báo cáo"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Bài báo xuất sắc nhất, kiệt xuất, ưu tú, giải khuyến khích, test of time và lọt chung kết bài xuất sắc nhất."
   },
@@ -405,13 +419,7 @@
     "message": "Bảng vai trò × hạng"
   },
   "optPanelSummaryHint": {
-    "message": "Bảng bài báo của bạn theo vị trí và hạng, kèm các nút Sao chép và ghi chú về nguồn của hạng."
-  },
-  "optPanelCopy": {
-    "message": "Các nút Sao chép"
-  },
-  "optPanelCopyHint": {
-    "message": "Các nút “Sao chép tóm tắt”, “Sao chép dạng bảng” và “Sao chép bài báo” dưới bảng."
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "Số giải thưởng và báo cáo"
@@ -522,6 +530,9 @@
   "exportCsv": {
     "message": "Xuất CSV"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "Đã xuất"
   },
@@ -616,6 +627,27 @@
   },
   "optColorsReset": {
     "message": "Về màu tiêu chuẩn"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight & Highlight"
@@ -781,6 +813,9 @@
   "filterPlaceholder": {
     "message": "Lọc theo tiêu đề hoặc tác giả…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "Xem thêm"
   },
@@ -803,7 +838,7 @@
     "message": "Cấu hình & cài đặt sẵn"
   },
   "optConfigHint": {
-    "message": "Xuất hoặc nhập cài đặt dưới dạng JSON hoặc TOML, áp dụng cài đặt sẵn hoặc định cấu hình bằng trợ lý AI."
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "Sao chép cấu hình (JSON)"
@@ -811,26 +846,54 @@
   "optConfigExport": {
     "message": "Xuất tệp"
   },
-  "optConfigImport": {
-    "message": "Nhập từ bảng nhớ tạm"
-  },
   "optConfigImportFile": {
     "message": "Nhập tệp"
   },
   "optConfigEditor": {
-    "message": "Dán hoặc chỉnh sửa cấu hình (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Áp dụng cấu hình"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "Cài đặt sẵn"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "Bật tất cả tính năng"
-  },
-  "optPresetSenior": {
-    "message": "Ưu tiên tác giả liên hệ/chính"
   },
   "optPresetFirst": {
     "message": "Ưu tiên tác giả đầu tiên"
@@ -840,6 +903,12 @@
   },
   "optViewCache": {
     "message": "Xem chi tiết đã lưu"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "Chi tiết bài báo đã lưu"
@@ -852,5 +921,22 @@
   },
   "optCacheEmpty": {
     "message": "Chưa có chi tiết bài báo nào được lưu trên thiết bị này."
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }

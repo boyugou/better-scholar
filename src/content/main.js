@@ -6,13 +6,12 @@
   const B = globalThis.RolesRanks;
   if (!B || !B.scholar || !B.data || !B.data.ccf || !B.data.core || !B.scholar.isProfile()) return;
 
-  const { venues, analysis, metrics, marks, names, chips: chip } = B;
+  const { venues, analysis, metrics, marks, names, formats, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
   await B.dom.useLanguage();
 
   const profileId = B.scholar.profileId();
   const headerName = B.scholar.ownerName();
-  await B.store.migrate();
   let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
   const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
@@ -31,7 +30,7 @@
     selection: null,                            // matrix cell / row / column filter
     venueKey: null,                             // a venue of the panel's venue list: only its papers are shown
     markGroup: null,                            // 'award' | 'oral' | 'spotlight' | 'highlight' filter
-    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null },
+    filters: { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null },     // impact: null | "h" | "i10" — the highlighted papers behind that number
     searchCursor: -1,
     venuesExpanded: false,
     loadingAll: false,
@@ -182,24 +181,39 @@
     markName(row);
   }
 
-  const rowMatchesQuery = (row, q) => analysis.matchesQuery(row, q);
+  // The search box's query, compiled once per query (and per set of marks that count)
+  let compiled = { key: null, matcher: null };
+  function matcher() {
+    const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (prefs.marks[g] ? 1 : 0)).join("");
+    if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks)) };
+    return compiled.matcher;
+  }
+
+  // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
+  // highlighted papers the other filters let through; at least 10 for i10. 0: no such filter.
+  const impactMin = (source) => (state.filters.impact === "h" ? metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted.h : state.filters.impact === "i10" ? 10 : 0);
+
+  // Do the filters let this row through? `skipVenue`: leave the venue choice out (the venue list is not narrowed by its own choice).
+  function passes(row, source, min, { skipVenue = false } = {}) {
+    const f = state.filters, a = row.a;
+    if (a.year != null) {
+      if (f.yearStart != null && a.year < f.yearStart) return false;
+      if (f.yearEnd != null && a.year > f.yearEnd) return false;
+    }
+    if (f.query && !matcher().test(row)) return false;
+    if (f.minCitations != null && row.shown < f.minCitations) return false;
+    if (min && !(row.highlighted && row.shown >= min)) return false;
+    if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
+    if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
+    if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
+    return true;
+  }
 
   function applyFilters() {
-    const f = state.filters;
-    const source = currentSource();
+    const source = currentSource(), min = impactMin(source);
     for (const row of live()) {
-      const a = row.a;
-      let hide = f.onlyHighlighted && !row.highlighted;
-      if (a.year != null) {
-        if (f.yearStart != null && a.year < f.yearStart) hide = true;
-        if (f.yearEnd != null && a.year > f.yearEnd) hide = true;
-      }
-      if (f.query && !rowMatchesQuery(row, f.query)) hide = true;
-      if (f.minCitations != null && row.shown < f.minCitations) hide = true;
-      if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) hide = true;
-      if (state.venueKey && (!row.highlighted || metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey)) hide = true;
-      if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) hide = true;
-      row.raw.tr.classList.toggle("rr-hide", hide);
+      const hide = (state.filters.onlyHighlighted && !row.highlighted) || (state.venueKey && !row.highlighted) || !passes(row, source, min);
+      row.raw.tr.classList.toggle("rr-hide", !!hide);
     }
   }
 
@@ -228,25 +242,13 @@
   const layoutBroken = () => state.rows.length >= 5 && state.rows.filter((r) => !r.raw.authorsText.trim()).length / state.rows.length >= 0.5;
 
   // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range, or a search query)?
-  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query || state.filters.minCitations != null);
+  const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query || state.filters.minCitations != null || state.filters.impact);
 
   // The numbers under the filters follow the filters: the year range, an awards row, a matrix cell and a venue narrow what is counted. The table
   // itself stays whole (it is where a cell is chosen), and so do the year bars (the range is chosen against them); the venue list is not narrowed by its own choice.
-  function scoped(source, { skipVenue = false } = {}) {
-    const f = state.filters;
-    return live().filter((r) => {
-      const a = r.a;
-      if (a.year != null) {
-        if (f.yearStart != null && a.year < f.yearStart) return false;
-        if (f.yearEnd != null && a.year > f.yearEnd) return false;
-      }
-      if (f.query && !rowMatchesQuery(r, f.query)) return false;
-      if (f.minCitations != null && r.shown < f.minCitations) return false;
-      if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
-      if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
-      if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
-      return true;
-    }).map(paperOf);
+  function scoped(source, { skipVenue = false, skipImpact = false } = {}) {
+    const min = skipImpact ? 0 : impactMin(source);
+    return live().filter((r) => passes(r, source, min, { skipVenue })).map(paperOf);
   }
 
   // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
@@ -271,11 +273,11 @@
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
       selection: state.selection, filters: state.filters,
-      searchMatch: state.filters.query ? { count: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, cursor: state.searchCursor } : null,
-      filterBar: filtering() ? { shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length, total: live().length } : null,
+      searchMatch: matcher().empty ? null : { count: shownRows().length, cursor: state.searchCursor, errors: matcher().errors },
+      filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
       marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
-      metrics: { highlighted: metrics.citationMetrics(scoped(source)).highlighted, all: metrics.citationMetrics(list).all },
+      metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all },
       byYear: yearBars.bars, byYearOlder: yearBars.older,
       topVenues: venueList(source), venueKey: state.venueKey,
       venuesHasMore: allVenues.length > 6, venuesExpanded: state.venuesExpanded,
@@ -301,128 +303,65 @@
     return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
   };
 
-  // "Copy papers": the papers the page shows now (the filters count), one line each
-  function papersText() {
-    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
-    const header = [t("tsvYear"), t("tsvTitle"), t("tsvAuthors"), t("tsvRole"), t("tsvVenue"), ...(ccfOn ? [t("srcCcf")] : []), ...(coreOn ? [t("srcCore")] : []), t("tsvAwards"), t("tsvCitations")];
-    // (a paper whose author list Scholar cut before the owner's name says so; one that does not have the owner has no role)
-    const roleOf = (a) => (a.status === "found" ? copyLabels()[a.role] || a.role : a.status === "hidden" ? t("roleHidden") : "");
-    const rows = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
-      const a = r.a;
-      const awardsAndTalks = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")).join(", ");
-      return [a.year, r.raw.title, r.raw.authorsText, roleOf(a), r.raw.venueText,
-        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, r.shown];
-    });
-    return metrics.toRowsTsv(header, rows);
-  }
-
-  function papersCsv() {
-    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
-    const header = [t("tsvYear"), t("tsvTitle"), t("tsvAuthors"), t("tsvRole"), t("tsvVenue"), ...(ccfOn ? [t("srcCcf")] : []), ...(coreOn ? [t("srcCore")] : []), t("tsvAwards"), t("tsvCitations")];
-    const roleOf = (a) => (a.status === "found" ? copyLabels()[a.role] || a.role : a.status === "hidden" ? t("roleHidden") : "");
-    const rows = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
-      const a = r.a;
-      const awardsAndTalks = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")).join(", ");
-      return [a.year, r.raw.title, r.raw.authorsText, roleOf(a), r.raw.venueText,
-        ...(ccfOn ? [a.venue.ccf ? a.venue.ccf.tier : ""] : []), ...(coreOn ? [a.venue.core ? a.venue.core.rank : ""] : []), awardsAndTalks, r.shown];
-    });
-    return metrics.toRowsCsv(header, rows);
-  }
-
-  function papersBibtex() {
-    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
-    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
-      const a = r.a;
-      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+  // ---- what the page shows, as records and as text --------------------------------------------------------------------------------------------
+  // The papers the page shows now (the filters count) as plain records: what every copy button, the toolbar popup and the page-event calls are made from
+  // (the shape is described at the top of lib/formats.js).
+  const isShown = (r) => !r.raw.tr.classList.contains("rr-hide");
+  const shownRows = (filtered = true) => (filtered ? live().filter(isShown) : live());
+  const markLabels = (a) => B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+  const KIND = { C: "conference", J: "journal" };
+  function paperRecords(filtered = true) {
+    return shownRows(filtered).map((r) => {
+      const a = r.a, v = a.venue || {}, resolved = resolvedCache[r.raw.id];
       return {
-        title: r.raw.title,
-        authorsText: r.raw.authorsText,
-        venueText: r.raw.venueText,
-        year: a.year,
-        venue: a.venue,
-        awards,
-        href: r.raw.href
+        id: r.raw.id, title: r.raw.title,
+        authors: (resolved && resolved.authors) || r.raw.authorsText,                // (the whole list once "Read full lists" has read it)
+        venue: (resolved && resolved.venue) || r.raw.venueText,
+        year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
+        type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
+        rank: { ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: v.core ? { rank: v.core.rank, name: v.core.name } : null },
+        marks: markLabels(a),
+        url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
       };
     });
-    return metrics.toBibTeX(items, { ccfOn, coreOn });
   }
 
-  function papersMarkdown() {
-    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
-    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
-      const a = r.a;
-      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
-      return {
-        title: r.raw.title,
-        authorsText: r.raw.authorsText,
-        venueText: r.raw.venueText,
-        year: a.year,
-        venue: a.venue,
-        awards,
-        citations: r.shown,
-        href: r.raw.href
-      };
-    });
-    return metrics.toMarkdown(items, { ccfOn, coreOn });
+  const tableLabels = () => ({ year: t("tsvYear"), title: t("tsvTitle"), authors: t("tsvAuthors"), role: t("tsvRole"), venue: t("tsvVenue"), ccf: t("srcCcf"), core: t("srcCore"),
+    awards: t("tsvAwards"), citations: t("tsvCitations"), hidden: t("roleHidden"), roles: copyLabels() });
+
+  // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
+  // (default: the panel's own; "none": by role only).
+  function exportText(kind, { source } = {}) {
+    const ctx = { ccfOn: prefs.ranks.ccf, coreOn: prefs.ranks.core };
+    if (kind === "summary" || kind === "table") {
+      const list = papers();
+      const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
+      const summary = metrics.summarize(list, src);
+      return kind === "table"
+        ? formats.summaryTsv(summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(), extra: [marksLine(markCounts())].filter(Boolean),
+          edition: src ? `${edition[src]} — ${t("tipToday")}` : "" });
+    }
+    const records = paperRecords();
+    switch (kind) {
+      case "papers": return formats.papersTsv(records, { labels: tableLabels(), ...ctx });
+      case "csv": return formats.papersCsv(records, { labels: tableLabels(), ...ctx });
+      case "bibtex": return formats.bibtex(records, ctx);
+      case "markdown": return formats.markdown(records, ctx);
+      case "apa": return formats.apa(records);
+      default: return formats.json({ owner: headerName, source: currentSource(), papers: records });          // "json" (a call's format is checked before it gets here)
+    }
   }
 
-  function papersApa() {
-    const ccfOn = prefs.ranks.ccf, coreOn = prefs.ranks.core;
-    const items = live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).map((r) => {
-      const a = r.a;
-      const awards = B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
-      return {
-        title: r.raw.title,
-        authorsText: r.raw.authorsText,
-        venueText: r.raw.venueText,
-        year: a.year,
-        venue: a.venue,
-        awards,
-        citations: r.shown,
-        href: r.raw.href
-      };
-    });
-    return metrics.toApa(items, { ccfOn, coreOn });
-  }
-
-  function papersJson(filtered = true) {
-    const list = filtered ? live().filter((r) => !r.raw.tr.classList.contains("rr-hide")) : live();
-    const payload = {
-      owner: headerName,
-      source: currentSource(),
-      total: list.length,
-      papers: list.map((r) => {
-        const a = r.a;
-        const v = a.venue || {};
-        return {
-          id: r.raw.id,
-          title: r.raw.title,
-          authors: r.raw.authorsText,
-          venue: r.raw.venueText,
-          year: a.year,
-          citations: r.shown,
-          role: a.role,
-          status: a.status,
-          highlighted: r.highlighted,
-          rank: {
-            ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null,
-            core: v.core ? { rank: v.core.rank, name: v.core.name } : null
-          },
-          marks: B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")),
-          url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
-        };
-      })
-    };
-    return JSON.stringify(payload, null, 2);
-  }
-
-  function summaryText() {
-    const m = model();
-    return metrics.toText(m.summary, {
-      owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(),
-      extra: [marksLine(m.marks)].filter(Boolean),
-      edition: m.source && !m.noRanks ? `${edition[m.source]} — ${t("tipToday")}` : ""
-    });
+  // A copy button pressed: the text goes to the clipboard, or (CSV) to a file; what there is to say is said on the button
+  async function deliver(kind) {
+    if (kind !== "summary" && kind !== "table" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
+    const text = exportText(kind);
+    if (kind === "csv") {
+      const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
+      B.dom.downloadFile((safe || "scholar") + "-papers.csv", text);
+      panel.flash(kind);
+    } else if (await copyText(text)) panel.flash(kind);
   }
 
   function clearFocusedRow() {
@@ -441,14 +380,14 @@
     const target = visible[state.searchCursor];
     if (target && target.raw.tr) {
       target.raw.tr.classList.add("rr-row-focused");
-      target.raw.tr.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.raw.tr.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
     }
     panel.update(model());
   }
 
   function clearAllFilters() {
     state.selection = null; state.markGroup = null; state.venueKey = null;
-    Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null });
+    Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null });
     state.searchCursor = -1; clearFocusedRow();
     refresh();
   }
@@ -470,9 +409,9 @@
     onToggleVenues() { state.venuesExpanded = !state.venuesExpanded; refresh(); },
     onMarkGroup(g) { state.markGroup = state.markGroup === g ? null : g; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onOnly(on) { state.filters.onlyHighlighted = on; state.searchCursor = -1; clearFocusedRow(); refresh(); },
-    onMinCitations(cites) { state.filters.minCitations = cites; state.searchCursor = -1; clearFocusedRow(); refresh(); },
+    onImpact(kind) { state.filters.impact = state.filters.impact === kind ? null : kind; state.searchCursor = -1; clearFocusedRow(); refresh(); },
     onQuery(q) {
-      state.filters.query = (q || "").trim().toLowerCase();
+      state.filters.query = (q || "").trim();
       state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
@@ -483,40 +422,7 @@
       state.searchCursor = -1; clearFocusedRow();
       refresh();
     },
-    async onCopy(kind) {
-      if (kind === "csv") {
-        const csv = papersCsv();
-        const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
-        B.dom.downloadFile((safe || "scholar") + "-papers.csv", csv);
-        panel.flash("csv");
-        return;
-      }
-      if (kind === "bibtex") {
-        const text = papersBibtex();
-        if (await copyText(text)) panel.flash("bibtex");
-        return;
-      }
-      if (kind === "markdown") {
-        const text = papersMarkdown();
-        if (await copyText(text)) panel.flash("markdown");
-        return;
-      }
-      if (kind === "apa") {
-        const text = papersApa();
-        if (await copyText(text)) panel.flash("apa");
-        return;
-      }
-      if (kind === "json") {
-        const text = papersJson(true);
-        if (await copyText(text)) panel.flash("json");
-        return;
-      }
-      const m = model();
-      const text = kind === "tsv"
-        ? metrics.toTsv(m.summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-        : kind === "papers" ? papersText() : summaryText();
-      if (await copyText(text)) panel.flash(kind);
-    },
+    onCopy(kind) { return deliver(kind); },
     onLoadAll() { return startLoad("manual"); },
     onCancelLoad() { if (loadAbort) loadAbort.abort(); },
     onCopyUnmatched() { return copyText(metrics.unmatchedVenues(papers()).map((u) => `${u.count}× ${u.venue}`).join("\n")); },
@@ -626,6 +532,8 @@
     if (!prefs.panel.marks) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
     if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
+    if (!prefs.panel.show) state.filters.minCitations = null;
+    if (!prefs.panel.show || !prefs.panel.metrics) state.filters.impact = null;              // (the h-index and i10 buttons are part of the totals)
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
     if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
@@ -657,269 +565,56 @@
     if (panel.el.classList.contains("rr-wide") !== was) refresh();
   }));
 
-  // Pressing "/" focuses the in-page quick search filter; pressing Escape outside an input clears active filters
+  // "/" focuses the search box; Escape clears the filters when nothing else has taken it: not a menu or the search box (which handle their own), nor anything of Scholar's
+  // own (its menus and dialogs keep the key), so only a key pressed on the page itself or in the panel counts.
   window.addEventListener("keydown", (e) => {
-    const active = document.activeElement;
-    const tag = active ? active.tagName.toLowerCase() : "";
-    const inInput = tag === "input" || tag === "textarea" || tag === "select" || (active && active.isContentEditable);
-
-    if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      if (inInput) return;
+    if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    const el = e.target instanceof Element ? e.target : document.body;
+    const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
+    if (e.key === "/" && !typing) {
       if (!prefs.panel.show || !prefs.panel.filters) return;
       e.preventDefault();
-      if (ui.collapsed) {
-        ui.collapsed = false;
-        B.store.saveUi(ui);
-        refresh();
-      }
+      if (ui.collapsed) { ui.collapsed = false; B.store.saveUi(ui); refresh(); }
       panel.focusSearch();
-    } else if (e.key === "Escape" && !inInput) {
-      if (filtering()) {
-        e.preventDefault();
-        clearAllFilters();
-      }
+    } else if (e.key === "Escape" && !typing && (el === document.body || el === document.documentElement || panel.el.contains(el) || el.closest("tr.gsc_a_tr")) && filtering()) {
+      e.preventDefault();
+      clearAllFilters();
     }
   });
 
   if (prefs.autoLoad) startLoad("auto");
 
-  // The toolbar popup or external agents ask for the summary or papers.
-  try {
-    chrome.runtime.onMessage.addListener((msg, _sender, send) => {
-      if (msg && msg.type === "rr:summary") {
-        const list = papers();
-        send({
-          ok: true, owner: headerName, loaded: list.length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
-          sources: B.prefs.sources(prefs), source: currentSource(), noRanks: noRanks(list),
-          summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-          marks: markCounts(), talkRows: prefs.talkRows, parts: { summary: prefs.panel.summary, copy: prefs.panel.copy, marks: prefs.panel.marks }       // (the settings page's switches for the table and the awards & talks counts apply to the popup as well)
-        });
-        return false;
-      }
-      if (msg && msg.type === "rr:papers") {
-        const list = live().map((r) => ({
-          id: r.raw.id,
-          title: r.raw.title,
-          authors: r.raw.authorsText,
-          venue: r.raw.venueText,
-          year: r.a.year,
-          citations: r.shown,
-          role: r.a.role,
-          status: r.a.status,
-          highlighted: r.highlighted,
-          ccf: (r.a.venue && r.a.venue.ccf && r.a.venue.ccf.tier) || null,
-          core: (r.a.venue && r.a.venue.core && r.a.venue.core.rank) || null,
-          marks: r.a.marks || []
-        }));
-        send({ ok: true, owner: headerName, papers: list });
-        return false;
-      }
-      if (msg && msg.type === "rr:export") {
-        const format = msg.format || "markdown";
-        let text = "";
-        if (format === "bibtex") text = papersBibtex();
-        else if (format === "markdown") text = papersMarkdown();
-        else if (format === "apa") text = papersApa();
-        else if (format === "csv") text = papersCsv();
-        else if (format === "tsv") text = papersText();
-        else if (format === "json") text = papersJson(msg.filtered !== false);
-        else text = summaryText();
-        send({ ok: true, format, text });
-        return false;
-      }
-      if (msg && msg.type === "rr:filter") {
-        if (msg.query !== undefined) state.filters.query = (msg.query || "").trim().toLowerCase();
-        if (msg.onlyHighlighted !== undefined) state.filters.onlyHighlighted = !!msg.onlyHighlighted;
-        if (msg.yearStart !== undefined) state.filters.yearStart = msg.yearStart;
-        if (msg.yearEnd !== undefined) state.filters.yearEnd = msg.yearEnd;
-        if (msg.minCitations !== undefined) state.filters.minCitations = msg.minCitations;
-        refresh();
-        send({ ok: true, shown: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length });
-        return false;
-      }
-      return false;
-    });
-  } catch (e) { /* extension context gone */ }
-
-  // Agent-native DOM CustomEvent bus on document:
-  // Allows web agents, devtools, console scripts, and external automation running in page context
-  // to query, filter, inspect, and export high-fidelity academic metrics and paper records.
-  document.documentElement.dataset.betterScholar = "ready";
-
-  document.addEventListener("better-scholar:ping", (e) => {
-    const detail = (e && e.detail) || {};
-    const id = detail.requestId || detail.nonce || null;
-    let ver = "";                                                  // (the manifest is the only place the version is written; it is unreadable once the extension was reloaded under an open page)
-    try { ver = chrome.runtime.getManifest().version; } catch (err) { /* extension context gone */ }
-    document.dispatchEvent(new CustomEvent("better-scholar:pong", {
-      detail: {
-        requestId: id,
-        nonce: id,
-        ok: true,
-        ready: true,
-        version: ver,
-        owner: headerName,
-        total: state.rows.length,
-        complete: listComplete()
-      }
-    }));
-  });
-
-  document.addEventListener("better-scholar:query", (e) => {
-    const detail = (e && e.detail) || {};
-    if (detail.query !== undefined) {
-      state.filters.query = (detail.query || "").trim().toLowerCase();
-      refresh();
-      const id = detail.requestId || detail.nonce || null;
-      const respDetail = {
-        requestId: id,
-        nonce: id,
-        ok: true,
-        query: state.filters.query,
-        matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
-        totalCount: live().length
-      };
-      document.dispatchEvent(new CustomEvent("better-scholar:response-query", { detail: respDetail }));
-      document.dispatchEvent(new CustomEvent("better-scholar:query-result", { detail: respDetail }));
-    }
-  });
-
-  document.addEventListener("better-scholar:filter", (e) => {
-    const detail = (e && e.detail) || {};
-    if (detail.query !== undefined) state.filters.query = (detail.query || "").trim().toLowerCase();
-    if (detail.onlyHighlighted !== undefined) state.filters.onlyHighlighted = !!detail.onlyHighlighted;
-    if (detail.yearStart !== undefined) state.filters.yearStart = detail.yearStart;
-    if (detail.yearEnd !== undefined) state.filters.yearEnd = detail.yearEnd;
-    if (detail.minCitations !== undefined) state.filters.minCitations = detail.minCitations;
-    refresh();
-    const id = detail.requestId || detail.nonce || null;
-    const respDetail = {
-      requestId: id,
-      nonce: id,
-      ok: true,
-      matchedCount: live().filter((r) => !r.raw.tr.classList.contains("rr-hide")).length,
-      totalCount: live().length
-    };
-    document.dispatchEvent(new CustomEvent("better-scholar:response-filter", { detail: respDetail }));
-    document.dispatchEvent(new CustomEvent("better-scholar:filtered", { detail: respDetail }));
-  });
-
-  document.addEventListener("better-scholar:clear-filters", (e) => {
-    const detail = (e && e.detail) || {};
-    state.filters = { query: "", onlyHighlighted: false, yearStart: null, yearEnd: null, minCitations: null };
-    state.selection = null;
-    state.markGroup = null;
-    state.venueKey = null;
-    refresh();
-    const id = detail.requestId || detail.nonce || null;
-    const respDetail = {
-      requestId: id,
-      nonce: id,
-      ok: true,
-      totalCount: live().length
-    };
-    document.dispatchEvent(new CustomEvent("better-scholar:response-clear-filters", { detail: respDetail }));
-    document.dispatchEvent(new CustomEvent("better-scholar:filters-cleared", { detail: respDetail }));
-  });
-
-  document.addEventListener("better-scholar:request-papers", (e) => {
-    const detail = (e && e.detail) || {};
-    const filtered = detail.filteredOnly !== false;
-    const list = filtered ? live().filter((r) => !r.raw.tr.classList.contains("rr-hide")) : live();
-    const papers = list.map((r) => {
-      const a = r.a;
-      const v = a.venue || {};
+  // ---- the calls (lib/agent.js has the list and what each takes) ----------------------------------------------------------------------------------
+  // Made by the toolbar popup (the extension's own messages) and by scripts on the page (page events): content/bridge.js carries both, after checking the parameters.
+  const VERSION = (() => { try { return chrome.runtime.getManifest().version; } catch (e) { return ""; } })();     // (unreadable once the extension was reloaded under an open page)
+  const filterState = () => ({ shown: shownRows().length, total: live().length, filters: { ...state.filters }, errors: matcher().errors });
+  const methods = {
+    ping: () => ({ version: VERSION, owner: headerName, loaded: live().length, complete: listComplete() }),
+    summary: () => {
+      const list = papers(), source = currentSource();
       return {
-        id: r.raw.id,
-        title: r.raw.title,
-        authors: r.raw.authorsText,
-        venue: r.raw.venueText,
-        year: a.year,
-        citations: r.shown,
-        role: a.role,
-        status: a.status,
-        highlighted: r.highlighted,
-        ccf: (v.ccf && v.ccf.tier) || null,
-        core: (v.core && v.core.rank) || null,
-        rank: {
-          ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null,
-          core: v.core ? { rank: v.core.rank, name: v.core.name } : null
-        },
-        marks: B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : "")),
-        url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
+        owner: headerName, loaded: list.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
+        sources: B.prefs.sources(prefs), source, noRanks: noRanks(list),
+        summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
+        marks: markCounts(), talkRows: prefs.talkRows,
+        metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all },
+        parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }, copyButtons: B.prefs.copyButtons(prefs)         // (the settings page's switches apply to the popup as well)
       };
-    });
-    const id = detail.requestId || detail.nonce || null;
-    const respDetail = {
-      requestId: id,
-      nonce: id,
-      ok: true,
-      owner: headerName,
-      total: state.rows.length,
-      count: papers.length,
-      complete: listComplete(),
-      papers
-    };
-    document.dispatchEvent(new CustomEvent("better-scholar:response-papers", { detail: respDetail }));
-    document.dispatchEvent(new CustomEvent("better-scholar:papers", { detail: respDetail }));
-  });
-
-  document.addEventListener("better-scholar:request-summary", (e) => {
-    const detail = (e && e.detail) || {};
-    const list = papers();
-    const id = detail.requestId || detail.nonce || null;
-    const respDetail = {
-      requestId: id,
-      nonce: id,
-      ok: true,
-      owner: headerName,
-      loaded: list.length,
-      loadingAll: state.loadingAll,
-      layoutBroken: layoutBroken(),
-      edition,
-      sources: B.prefs.sources(prefs),
-      source: currentSource(),
-      noRanks: noRanks(list),
-      summary: {
-        ccf: metrics.summarize(list, "ccf"),
-        core: metrics.summarize(list, "core")
-      },
-      summaries: {
-        ccf: metrics.summarize(list, "ccf"),
-        core: metrics.summarize(list, "core"),
-        none: metrics.summarize(list, null)
-      },
-      marks: markCounts(),
-      metrics: {
-        highlighted: metrics.citationMetrics(scoped(currentSource())).highlighted,
-        all: metrics.citationMetrics(list).all
-      }
-    };
-    document.dispatchEvent(new CustomEvent("better-scholar:response-summary", { detail: respDetail }));
-    document.dispatchEvent(new CustomEvent("better-scholar:summary", { detail: respDetail }));
-  });
-
-  document.addEventListener("better-scholar:request-export", (e) => {
-    const detail = (e && e.detail) || {};
-    const format = detail.format || "json";
-    let text = "";
-    if (format === "bibtex") text = papersBibtex();
-    else if (format === "markdown") text = papersMarkdown();
-    else if (format === "apa") text = papersApa();
-    else if (format === "csv") text = papersCsv();
-    else if (format === "tsv") text = papersText();
-    else if (format === "json") text = papersJson(detail.filteredOnly !== false);
-    else text = summaryText();
-    const id = detail.requestId || detail.nonce || null;
-    const respDetail = {
-      requestId: id,
-      nonce: id,
-      ok: true,
-      format,
-      text
-    };
-    document.dispatchEvent(new CustomEvent("better-scholar:response-export", { detail: respDetail }));
-    document.dispatchEvent(new CustomEvent("better-scholar:export", { detail: respDetail }));
-  });
-
+    },
+    papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
+    export: ({ format, source }) => ({ format, text: exportText(format, { source }) }),
+    filter: (p) => {
+      // (a filter with no control left to undo it would hide rows for good)
+      if (!prefs.panel.show) throw new Error("the panel is off in the settings, so nothing could undo a filter");
+      const f = state.filters;
+      if ("query" in p) f.query = p.query.trim();
+      for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) f[k] = p[k];
+      if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
+      state.searchCursor = -1; clearFocusedRow();
+      refresh();
+      return filterState();
+    },
+    clearFilters: () => { clearAllFilters(); return filterState(); }
+  };
+  B.bridge.install(methods);
 })();

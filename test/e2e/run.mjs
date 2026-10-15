@@ -318,13 +318,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     const rowsOf = () => opts.locator(".preview [data-mark-group]").evaluateAll((els) => els.map((e) => e.getAttribute("data-mark-group") + "=" + e.querySelector("b").textContent));
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight=1", "highlight=1"]);
-    await opts.selectOption('select[data-pref="talkRows"]', "pair");
+    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="pair"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 3);
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight+highlight=2"]);
-    await opts.selectOption('select[data-pref="talkRows"]', "talks");
+    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="talks"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 2);
     assert.deepEqual(await rowsOf(), ["award=2", "oral+spotlight+highlight=3"]);
-    await opts.selectOption('select[data-pref="talkRows"]', "separate");
+    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="separate"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 4);
     ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
 
@@ -390,13 +390,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // the highlight style: bar only (no tint) / tint only (no bar) / both
     const look = () => page.evaluate(() => { const td = document.querySelector("tr.rr-r-first > td:first-child"), c = getComputedStyle(td); return { tint: c.backgroundColor !== "rgba(0, 0, 0, 0)" && c.backgroundColor !== "transparent", bar: c.boxShadow !== "none" }; });
     assert.deepEqual(await look(), { tint: true, bar: true });
-    await opts.selectOption('select[data-pref="rowStyle"]', "bar");
+    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="bar"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none" && getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).backgroundColor === "rgba(0, 0, 0, 0)");
     assert.deepEqual(await look(), { tint: false, bar: true });
-    await opts.selectOption('select[data-pref="rowStyle"]', "tint");
+    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="tint"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow === "none");
     assert.deepEqual(await look(), { tint: true, bar: false });
-    await opts.selectOption('select[data-pref="rowStyle"]', "full");
+    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="full"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none");
     ok("row highlight style: bar only, tint only and both change the open profile at once");
 
@@ -448,7 +448,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     await opts.click('[data-act="copy-diagnostics"]');
     const diag = await opts.evaluate(() => navigator.clipboard.readText());
-    assert.match(diag, /^Better Scholar \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"v":3,/s);
+    assert.match(diag, /^Better Scholar \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"language":"auto",/s);
     assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
     // the footer points at the project's own pages, as plain links that open only when clicked
@@ -518,7 +518,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       if (hVal > 0) {
         await hButton.click();
         assert.equal(await hButton.getAttribute("aria-pressed"), "true");
-        const hFilteredRows = all.filter((p) => (p.citations || 0) >= hVal).length;
+        const hFilteredRows = all.filter((p) => p.highlighted && (p.citations || 0) >= hVal).length;       // (the highlighted papers behind the number)
         assert.equal(await visibleRows(page), hFilteredRows);
         assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(`≥${hVal}`));
         // Clicking again clears
@@ -530,7 +530,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     if (await i10Button.count()) {
       await i10Button.click();
       assert.equal(await i10Button.getAttribute("aria-pressed"), "true");
-      const i10FilteredRows = all.filter((p) => (p.citations || 0) >= 10).length;
+      const i10FilteredRows = all.filter((p) => p.highlighted && (p.citations || 0) >= 10).length;
       assert.equal(await visibleRows(page), i10FilteredRows);
       assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), /≥10/);
       // Clear via filterbar clear button
@@ -538,7 +538,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await i10Button.getAttribute("aria-pressed"), "false");
       assert.equal(await visibleRows(page), all.length);
     }
-    ok("clicking H-index and i10 metric rows filters papers to ≥h and ≥10 citations; clicking again or clearing resets");
+    ok("clicking H-index and i10 metric rows shows the highlighted papers behind the number (≥h and ≥10 citations); clicking again or clearing resets");
 
     // -- 8. CORE tab
     await page.click('button[data-src="core"]');
@@ -592,7 +592,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const expectedQueryCount = profile.rows.filter((r) => (r.title || "").toLowerCase().includes(testWord.toLowerCase()) || (r.authors || "").toLowerCase().includes(testWord.toLowerCase())).length;
     assert.equal(await visibleRows(page), expectedQueryCount);
     assert.equal(await searchCount.textContent(), String(expectedQueryCount));
-    assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(testWord.toLowerCase()));
+    assert.match(await page.locator("#rr-panel .rr-fb-what").textContent(), new RegExp(testWord), "the filter bar says what was typed, as it was typed");
     // Pressing Enter navigates to the first match and adds focused glow class
     await queryInput.press("Enter");
     assert.equal(await searchCount.textContent(), `1 / ${expectedQueryCount}`);
@@ -624,10 +624,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await queryInput.fill("Stoica 2001");
     assert.ok((await visibleRows(page)) > 0, "multi-token search matches across author and year");
     await clearBtn.click();
-    // Advanced query operators: >500 citations, ccf:a tier
-    await queryInput.fill(">500");
+    // Advanced query operators: cites:>500, ccf:a tier (a number alone is a word: no operator without its name)
+    await queryInput.fill("cites:>500");
     const countOver500 = (await visibleRows(page));
     assert.ok(countOver500 > 0 && countOver500 < all.length, "numeric citation comparison filters correctly");
+    assert.equal(countOver500, all.filter((p) => (p.citations || 0) > 500).length);
+    await queryInput.fill(">500");
+    assert.equal(await visibleRows(page), 0, "'>500' without an operator is a word");
+    await queryInput.fill("ccf:x");
+    assert.equal(await visibleRows(page), 0, "an operator with a value it does not take finds nothing …");
+    assert.equal(await queryInput.getAttribute("aria-invalid"), "true", "… and the box says it could not be read");
+    assert.match(await queryInput.getAttribute("title"), /^ccf:x — the venue's CCF rank/);
+    await queryInput.fill("   ");
+    assert.equal(await searchCount.isVisible(), false, "a query of spaces is no query: no count");
+    assert.equal(await visibleRows(page), all.length);
+    assert.equal(await queryInput.getAttribute("aria-invalid"), "false");
     await queryInput.fill("ccf:a");
     const countCcfA = (await visibleRows(page));
     assert.ok(countCcfA > 0, "rank operator ccf:a filters to CCF A papers");
@@ -643,7 +654,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const pills = page.locator("#rr-panel .rr-search-pills .rr-spill");
     assert.equal(await pills.count(), 4, "4 quick operator pills render");
     const pillCcf = page.locator('#rr-panel .rr-spill[data-op="ccf:a"]');
-    const pillCites = page.locator('#rr-panel .rr-spill[data-op=">100"]');
+    const pillCites = page.locator('#rr-panel .rr-spill[data-op="cites:>100"]');
     assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
     // Clicking CCF A pill activates operator
     await pillCcf.click();
@@ -652,25 +663,42 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await visibleRows(page), countCcfA);
     // Clicking >100 pill appends second operator
     await pillCites.click();
-    assert.equal(await queryInput.inputValue(), "ccf:a >100");
+    assert.equal(await queryInput.inputValue(), "ccf:a cites:>100");
     assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
     assert.equal(await pillCcf.getAttribute("aria-pressed"), "true");
     // Clicking CCF A again toggles it off
     await pillCcf.click();
-    assert.equal(await queryInput.inputValue(), ">100");
+    assert.equal(await queryInput.inputValue(), "cites:>100");
     assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
     assert.equal(await pillCites.getAttribute("aria-pressed"), "true");
     await clearBtn.click();
     assert.equal(await pillCites.getAttribute("aria-pressed"), "false");
-    // Operator suggestion dropdown: typing "role:" opens autocomplete menu
-    await queryInput.fill("role:");
+    // Operator suggestion dropdown: an ordinary word offers nothing; "role:" opens the autocomplete menu (a combobox for a screen reader)
     const suggestMenu = page.locator("#rr-panel .rr-search-suggest");
+    await queryInput.fill("role");
+    assert.equal(await suggestMenu.isVisible(), false, "an ordinary word opens no menu: Tab moves on from it");
+    await queryInput.fill("role:");
     assert.equal(await suggestMenu.isVisible(), true, "operator suggestion menu opens on role: prefix");
+    assert.deepEqual(await queryInput.evaluate((el) => [el.getAttribute("role"), el.getAttribute("aria-expanded"), el.getAttribute("aria-controls"), document.getElementById(el.getAttribute("aria-controls")).getAttribute("role")]), ["combobox", "true", "rr-suggest", "listbox"]);
     const suggestItems = page.locator("#rr-panel .rr-suggest-item");
     assert.ok((await suggestItems.count()) >= 4, "shows role suggestions");
+    const box = await suggestMenu.boundingBox();
+    assert.ok(box.y + box.height <= 800, "the list is placed with fixed coordinates: inside the window, not clipped by the panel");
+    // Escape: the list first (the text stays), then the text
+    await queryInput.press("Escape");
+    assert.equal(await suggestMenu.isVisible(), false);
+    assert.equal(await queryInput.inputValue(), "role:", "the first Escape only closes the list");
+    await queryInput.fill("role:");
+    // Tab takes a suggestion only when one was chosen with the arrows; otherwise it moves on and the text stays
+    await queryInput.press("Tab");
+    assert.equal(await queryInput.inputValue(), "role:", "Tab does not take a suggestion nobody chose");
+    await queryInput.fill("");
+    await queryInput.fill("role:");
     // Arrow down highlights first suggestion (role:first)
+    await queryInput.focus();
     await queryInput.press("ArrowDown");
     assert.equal(await suggestItems.first().evaluate((el) => el.classList.contains("rr-suggest-active")), true);
+    assert.equal(await queryInput.getAttribute("aria-activedescendant"), "rr-suggest-0");
     // Pressing Enter selects role:first
     await queryInput.press("Enter");
     assert.equal(await queryInput.inputValue(), "role:first ");
@@ -777,12 +805,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     }
 
     // -- 12. clipboard
-    await page.click('[data-act="copy-text"]');
+    await page.click('[data-act="copy-summary"]');
     const clip = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF rank/);
     assert.match(clip, /Last author: \d+ \(/);
     assert.match(clip, /CCF 2026 \(7th edition\)/);
-    await page.click('[data-act="copy-tsv"]');
+    await page.click('[data-act="copy-table"]');
     const tsv = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(tsv.split("\n")[0], /^Role\tA\tB\tC\tNot ranked\tTotal$/);
     ok("Copy summary / Copy as table put the expected text on the clipboard");
@@ -884,7 +912,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await popup.waitForSelector("#main");
     assert.match(await popup.textContent("#main"), /Open a Google Scholar author profile/);
     const tabId = await popup.evaluate(async () => {
-      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
       return null;
     });
     assert.ok(tabId != null, "a profile tab answers the popup's message");
@@ -939,7 +967,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.locator("#rr-panel button.rr-cell").count(), 0, "no tier columns when both lists are off");
     assert.deepEqual(await readMatrix(page), matrixOf(rows20, null));
     assert.doesNotMatch(await page.textContent("#rr-panel"), /\bnull\b|undefined/, "no stray null / undefined in the panel");
-    await page.click('[data-act="copy-text"]');
+    await page.click('[data-act="copy-summary"]');
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Ion Stoica — 20 papers on Google Scholar, by authorship role\n/);
     await setPref(opts, "ranks.ccf", true);
     await setPref(opts, "ranks.core", true);
@@ -980,7 +1008,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const pop = await context.newPage();
     await pop.goto(`chrome-extension://${extId}/popup/popup.html`);
     const profileTab = await pop.evaluate(async () => {
-      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
       return null;
     });
     await pop.goto(`chrome-extension://${extId}/popup/popup.html?tab=${profileTab}`);
@@ -989,13 +1017,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal((await pop.textContent(".src")).trim(), "CORE");
     assert.equal(await pop.locator("table").count(), 1);
     await pop.close();
-    // the table's switch applies to the popup too: no table, no Copy buttons, no data note; the name and paper count stay
+    // the table's switch applies to the popup too: no table, no data note (the copy buttons have their own switches); the name and paper count stay
     await setPref(opts, "panel.summary", false);
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
     const pop2 = await context.newPage();
     await pop2.goto(`chrome-extension://${extId}/popup/popup.html?tab=${profileTab}`);
     await pop2.waitForSelector(".who");
-    assert.equal(await pop2.locator("table, .actions, .note, .seg").count(), 0);
+    assert.equal(await pop2.locator("table, .note, .seg").count(), 0);
+    assert.equal(await pop2.locator(".actions button").count(), 8, "the copy buttons do not depend on the table");
     await pop2.close();
     await setPref(opts, "panel.summary", true);
     await setPref(opts, "ranks.ccf", true);
@@ -1015,31 +1044,26 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await eventually(page, () => document.querySelectorAll("tr.rr-r-last").length > 0);
     ok("view state (collapsed, ranking tab) and preferences are stored separately");
 
-    // -- S6. the pre-2.2 combined settings are split once and removed
+    // -- S6. a stored record with a wrong part is read as far as it is right: the wrong part falls back to its default
     await opts.evaluate(async () => {
-      await chrome.storage.sync.remove("prefs");
-      await chrome.storage.local.remove("ui");
-      await chrome.storage.sync.set({ settings: { v: 2, roles: { first: true, cofirst: true, second: true, last: false }, badges: { ccf: true, core: false, marks: true }, markName: false, matrixSource: "core", collapsed: true } });
+      await chrome.storage.sync.set({ prefs: { roles: { first: true, cofirst: true, second: true, last: false }, ranks: { ccf: true, core: false }, markName: false, rowStyle: "stripes", panel: "no", bogus: 1 } });
+      await chrome.storage.local.set({ ui: { collapsed: true, source: "core" } });
     });
     await page.reload();
     await page.waitForSelector("#rr-panel");
     assert.equal(await page.locator("tr.rr-r-last").count(), 0);
     assert.equal(await page.locator('.rr-chip[data-kind="core"]').count(), 0);
     assert.equal(await page.locator(".rr-name").count(), 0);
+    assert.ok(await page.locator("tr.rr-r-first").count() > 0, "the parts that are right are used: first-author rows are coloured");
     assert.ok(await page.evaluate(() => document.getElementById("rr-panel").classList.contains("rr-collapsed")));
-    const migrated = await stored(opts, "sync", "prefs");
-    assert.equal(migrated.roles.last, false);
-    assert.equal(migrated.ranks.core, false);
-    assert.equal(migrated.markName, false);
-    assert.equal(await stored(opts, "sync", "settings"), undefined, "the old record is removed");
-    assert.deepEqual(await stored(opts, "local", "ui"), { collapsed: true, source: "core" });
-    ok("settings from the previous version carry over (roles, rank lists, collapsed) and the old record is removed");
+    assert.ok(await page.locator('[data-rr="matrix"]').count() > 0, "a panel record that is no record at all: every part is on");
+    ok("a stored record with wrong parts is read as far as it is right, the rest is the defaults");
 
     // -- S7. the settings page: preview, reset, clearing the saved paper details
     await opts.reload();
     await opts.waitForSelector('input[data-pref="roles.last"]');
     assert.equal(await opts.locator("#preview tr").count(), 4);
-    assert.equal(await opts.locator("#preview tr.rr-r-last").count(), 0, "the preview reflects the migrated 'last' switch");
+    assert.equal(await opts.locator("#preview tr.rr-r-last").count(), 0, "the preview reflects the stored 'last' switch");
     assert.equal(await opts.locator('#preview .rr-chip[data-kind="core"]').count(), 0);
     assert.equal(await opts.locator("#preview .rr-name").count(), 0);
     // quick settings search filter
@@ -1067,7 +1091,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "marks.award", true);
     // the preview holds the real panel, and each of its parts has its own switch
     assert.equal(await opts.locator('#pv-panel #rr-panel [data-rr="matrix"] table').count(), 1);
-    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["copy", '[data-act="copy-text"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
+    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
       assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), true, `${part} shows by default`);
       await setPref(opts, "panel." + part, false);
       await opts.locator("#pv-panel " + sel).first().waitFor({ state: "hidden", timeout: 8000 }).catch(() => assert.fail(`${part} switch hides it in the preview`));   // (the preview is drawn once the setting is saved: a moment)
@@ -1088,20 +1112,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(opts, "panel.years", true);
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, copy: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
     await opts.click('[data-act="all-on"][data-group="panel"]');       // (the panel card's Enable all)
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel, Object.fromEntries(prefsLib.PANEL_PARTS.map((k) => [k, true])));
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
-    await setPref(opts, "panel.show", true);
+    await opts.click('[data-act="all-on"][data-group="panel"]');       // (Enable all of the panel's parts shows the panel too)
+    assert.equal((await stored(opts, "sync", "prefs")).panel.show, true);
+    await pollPage(opts, () => document.querySelector('input[data-pref="panel.show"]').checked === true);
     // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved (polled: the switches re-sync after the save)
     const groups = [
       ["roles", ["roles.first", "roles.cofirst", "roles.second", "roles.last", "markName"]],
       ["ranks", ["ranks.ccf", "ranks.core"]],
       ["marks", ["marks.award", "marks.oral", "marks.spotlight", "marks.highlight"]],
-      ["panel", ["panel.summary", "panel.copy", "panel.marks", "panel.filters", "panel.metrics", "panel.years", "panel.venues", "panel.status", "panel.names"]]
+      ["copy", prefsLib.COPY_BUTTONS.map((k) => "copy." + k)],
+      ["panel", prefsLib.PANEL_PARTS.filter((k) => k !== "show").map((k) => "panel." + k)]
     ];
     const at = (o, path) => path.split(".").reduce((x, k) => x && x[k], o);
     const beforeBulk = Object.fromEntries(await opts.$$eval("input[data-pref]", (els) => els.map((e) => [e.dataset.pref, e.checked])));
@@ -1116,106 +1143,116 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       const on = await stored(opts, "sync", "prefs");
       for (const k of keys) assert.equal(at(on, k), true, `${k} is stored as on after Enable all (${group})`);
     }
-    assert.equal(await opts.isChecked('input[data-pref="panel.show"]'), true, "the panel's own switch is not one of the groups");
+    assert.equal(await opts.isChecked('input[data-pref="panel.show"]'), true, "Disable all of the panel's parts leaves the panel's own switch alone");
     assert.equal(await opts.locator('[data-act="all-on"][data-group="panel"]').getAttribute("disabled"), null, "the panel's buttons are never disabled");
     for (const [, keys] of groups) for (const k of keys) await setPref(opts, k, beforeBulk[k]);
     assert.equal(await opts.locator('[role="group"][aria-label]').count() >= 4, true, "each group of buttons is labelled with its card");
     ok("'Enable all' / 'Disable all' under each group of switches set the whole group at once and save it");
-    // the copy row follows its switch in the panel and in the toolbar popup
-    const popupActions = async () => {
+
+    // the copy row: one button for each format that is on, in the panel and in the toolbar popup, whether or not the table is shown; with none on there is no row
+    const popupButtons = async () => {
       const pc = await context.newPage();
-      await pc.goto(`chrome-extension://${extId}/popup/popup.html`);
-      const tab = await pc.evaluate(async () => {
-        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
-        return null;
-      });
-      await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
-      await pc.waitForSelector(".who");
-      const n = await pc.locator(".actions").count();
-      await pc.close();
-      return n;
+      try {
+        await pc.goto(`chrome-extension://${extId}/popup/popup.html`);
+        const tab = await pc.evaluate(async () => {
+          for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+          return null;
+        });
+        await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
+        await pc.waitForSelector(".who");
+        return await pc.locator(".actions button").evaluateAll((els) => els.map((e) => e.dataset.act));
+      } finally { await pc.close(); }
     };
-    await setPref(opts, "panel.copy", false);
-    await eventually(page, () => document.querySelector(".rr-copybar").hidden === true);
-    assert.equal(await popupActions(), 0, "the popup's copy buttons go with their switch");
-    await setPref(opts, "panel.copy", true);
-    await eventually(page, () => document.querySelector(".rr-copybar").hidden === false);
-    assert.equal(await popupActions(), 1, "and come back with it");
-    ok("the copy row (Copy summary, Copy as table, Copy papers) has its own switch, in the panel and in the popup");
+    const panelButtons = () => page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act));
+    const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k);
+    assert.deepEqual(await panelButtons(), ALL_COPY, "the panel's copy row: every format, in the order of the settings");
+    assert.deepEqual(await popupButtons(), ALL_COPY, "and the popup's");
+    await setPref(opts, "copy.bibtex", false);
+    await setPref(opts, "copy.csv", false);
+    await eventually(page, () => !document.querySelector('[data-act="copy-bibtex"]') && !document.querySelector('[data-act="copy-csv"]') && !!document.querySelector('[data-act="copy-json"]'));
+    assert.deepEqual(await panelButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
+    assert.deepEqual(await popupButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
+    await setPref(opts, "panel.summary", false);                                    // (the row does not belong to the table)
+    await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden && !document.querySelector('[data-rr="export-row"]').hidden);
+    assert.equal(await page.locator('[data-act="copy-json"]').count(), 1, "the copy row stays without the table");
+    await setPref(opts, "panel.summary", true);
+    await opts.click('[data-act="all-off"][data-group="copy"]');
+    await eventually(page, () => document.querySelector('[data-rr="export-row"]').hidden === true);
+    assert.deepEqual(await popupButtons(), [], "no copy button on: no row in the popup either");
+    await opts.click('[data-act="all-on"][data-group="copy"]');
+    await eventually(page, () => document.querySelector('[data-rr="export-row"]').hidden === false);
+    assert.deepEqual(await popupButtons(), ALL_COPY);
+    ok("the copy row has a switch for each format, in the panel and in the popup; it stands without the table, and with none on there is no row");
 
-    // Agent-native messaging: rr:papers and rr:export
-    const agentTest = await opts.evaluate(async () => {
-      for (const t of await chrome.tabs.query({})) {
-        try {
-          const p = await chrome.tabs.sendMessage(t.id, { type: "rr:papers" });
-          const exMd = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "markdown" });
-          const exJson = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "json" });
-          const exApa = await chrome.tabs.sendMessage(t.id, { type: "rr:export", format: "apa" });
-          if (p && p.ok && exMd && exMd.ok && exJson && exJson.ok && exApa && exApa.ok) {
-            return { paperCount: p.papers.length, mdLength: exMd.text.length, jsonTotal: JSON.parse(exJson.text).total, apaLength: exApa.text.length };
-          }
-        } catch (e) { /* not profile */ }
-      }
+    // The calls (lib/agent.js), on the extension's own messages: the toolbar popup's transport
+    const call = (method, params) => opts.evaluate(async ([m, p]) => {
+      for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: m, params: p }); if (r && (r.ok || r.error)) return r; } catch (e) { /* not a profile */ } }
       return null;
+    }, [method, params]);
+    const papersRes = await call("papers");
+    assert.ok(papersRes.ok && papersRes.result.papers.length > 0 && papersRes.result.total >= papersRes.result.papers.length, "papers: the records");
+    assert.deepEqual(Object.keys(papersRes.result.papers[0]).sort(), ["authors", "citations", "highlighted", "id", "marks", "rank", "role", "status", "title", "type", "url", "venue", "year"]);
+    const exMd = await call("export", { format: "markdown" });
+    const exApa = await call("export", { format: "apa" });
+    const exJson = await call("export", { format: "json" });
+    assert.ok(exMd.ok && exMd.result.text.startsWith("1. **") && exApa.ok && exApa.result.text.length > 0, "export: markdown and APA");
+    assert.equal(JSON.parse(exJson.result.text).total, papersRes.result.papers.length, "export json: the same papers");
+    assert.match((await call("export", { format: "summary", source: "none" })).result.text, /by authorship role\n/, "export summary: by role only when asked");
+    assert.equal((await call("export", { format: "docx" })).ok, false);
+    assert.match((await call("export", { format: "docx" })).error, /"format" must be one of: summary, table/);
+    assert.match((await call("nope")).error, /unknown method "nope"/);
+    const bad = await call("filter", { yearStart: "soon" });
+    assert.equal(bad.ok, false);
+    assert.match(bad.error, /integer from 1000 to 3000/);
+    ok("the calls of lib/agent.js over the extension's own messages: papers, export in every format, errors for what is not a call");
+
+    // The same calls from the page: page events (an AI browsing agent, the DevTools console)
+    const bridge = await page.evaluate(async () => {
+      let n = 0;
+      const call = (method, params) => new Promise((resolve) => {
+        const id = "call-" + ++n;
+        const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
+        document.addEventListener("better-scholar:response", on);
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method, params } }));
+      });
+      const out = { marker: document.documentElement.getAttribute("data-rr-ready") };
+      out.ping = await call("ping");
+      const papers = await call("papers");
+      out.papers = papers.result.papers.length;
+      out.summary = await call("summary");
+      out.json = JSON.parse((await call("export", { format: "json" })).result.text).papers.length;
+      out.filtered = await call("filter", { query: "cites:>800" });
+      out.shownRows = [...document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")].filter((r) => getComputedStyle(r).display !== "none").length;
+      out.badQuery = await call("filter", { query: "ccf:x" });
+      out.badType = await call("filter", { minCitations: "many" });
+      out.unknown = await call("settings", {});
+      out.impact = await call("filter", { query: "", impact: "h" });
+      out.cleared = await call("clearFilters");
+      // an event that is no request, and a request with no id, are answered or ignored without harm
+      document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: "junk" }));
+      document.dispatchEvent(new CustomEvent("better-scholar:request"));
+      out.noId = await new Promise((resolve) => { const on = (e) => { document.removeEventListener("better-scholar:response", on); resolve(e.detail); }; document.addEventListener("better-scholar:response", on); document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { method: "ping" } })); });
+      return out;
     });
-    assert.ok(agentTest && agentTest.paperCount > 0, "agent can query papers via rr:papers");
-    assert.ok(agentTest && agentTest.mdLength > 0, "agent can export markdown via rr:export");
-    assert.ok(agentTest && agentTest.apaLength > 0, "agent can export APA via rr:export");
-    assert.equal(agentTest.jsonTotal, agentTest.paperCount, "agent can export JSON via rr:export");
-    ok("agent-native messaging (rr:papers, rr:export) returns structured data to external callers");
-
-    // Agent-Native DOM Event Bridge (page-context CustomEvents)
-    const bridgeTest = await page.evaluate(async () => {
-      const pingP = new Promise((resolve) => document.addEventListener("better-scholar:pong", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:ping", { detail: { requestId: "req-1" } }));
-      const pong = await pingP;
-
-      const papersP = new Promise((resolve) => document.addEventListener("better-scholar:response-papers", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:request-papers", { detail: { requestId: "req-2" } }));
-      const respPapers = await papersP;
-
-      const summaryP = new Promise((resolve) => document.addEventListener("better-scholar:response-summary", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:request-summary", { detail: { requestId: "req-3" } }));
-      const respSummary = await summaryP;
-
-      const exportP = new Promise((resolve) => document.addEventListener("better-scholar:response-export", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "json", requestId: "req-4" } }));
-      const respExport = await exportP;
-
-      const exportApaP = new Promise((resolve) => document.addEventListener("better-scholar:response-export", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:request-export", { detail: { format: "apa", requestId: "req-apa" } }));
-      const respApa = await exportApaP;
-
-      const queryP = new Promise((resolve) => document.addEventListener("better-scholar:response-query", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:query", { detail: { query: ">800", requestId: "req-5" } }));
-      const respQuery = await queryP;
-
-      const clearP = new Promise((resolve) => document.addEventListener("better-scholar:response-clear-filters", (e) => resolve(e.detail), { once: true }));
-      document.dispatchEvent(new CustomEvent("better-scholar:clear-filters", { detail: { requestId: "req-6" } }));
-      const respClear = await clearP;
-
-      return {
-        isReady: document.documentElement.dataset.betterScholar === "ready",
-        pong,
-        papersCount: respPapers.papers.length,
-        hasSummary: !!respSummary.summaries,
-        exportJsonValid: Array.isArray(JSON.parse(respExport.text).papers),
-        apaLength: (respApa.text || "").length,
-        queryMatched: respQuery.matchedCount,
-        clearedCount: respClear.totalCount
-      };
-    });
-
-    assert.equal(bridgeTest.isReady, true, "dataset.betterScholar is ready");
-    assert.equal(bridgeTest.pong.ok, true, "pong returned ok");
-    assert.equal(bridgeTest.pong.requestId, "req-1");
-    assert.ok(bridgeTest.papersCount > 0, "request-papers returned paper array");
-    assert.equal(bridgeTest.hasSummary, true, "request-summary returned summaries");
-    assert.equal(bridgeTest.exportJsonValid, true, "request-export returned valid JSON papers");
-    assert.ok(bridgeTest.apaLength > 0, "request-export returned valid APA citations");
-    assert.ok(bridgeTest.queryMatched > 0, "better-scholar:query filtered papers");
-    assert.ok(bridgeTest.clearedCount > bridgeTest.queryMatched, "better-scholar:clear-filters restored count");
-    ok("agent-native DOM CustomEvent bridge supports ping, request-papers, request-summary, request-export, query, and clear-filters in page context");
+    assert.equal(bridge.marker, "true", "the page is told the extension is ready");
+    assert.deepEqual([bridge.ping.ok, bridge.ping.id, typeof bridge.ping.result.version, bridge.ping.result.loaded > 0], [true, "call-1", "string", true], "ping: the id comes back");
+    assert.equal(bridge.ping.result.version, manifest.version, "ping: the version is the manifest's");
+    assert.ok(bridge.papers > 0 && bridge.json === bridge.papers, "papers and the json export agree");
+    assert.ok(bridge.summary.ok && bridge.summary.result.summaries.ccf.rows.length > 0 && bridge.summary.result.shown === bridge.papers && Array.isArray(bridge.summary.result.copyButtons), "summary: the numbers behind the panel");
+    assert.ok(bridge.filtered.ok && bridge.filtered.result.shown > 0 && bridge.filtered.result.shown < bridge.filtered.result.total, "filter: a query narrows the list");
+    assert.equal(bridge.shownRows, bridge.filtered.result.shown, "and the page shows exactly those papers");
+    assert.deepEqual(bridge.filtered.result.errors, []);
+    assert.equal(bridge.badQuery.ok, true);
+    assert.equal(bridge.badQuery.result.shown, 0, "an operator with a value it does not take matches nothing");
+    assert.match(bridge.badQuery.result.errors[0], /^ccf:x — the venue's CCF rank/, "and says why");
+    assert.equal(bridge.badType.ok, false);
+    assert.match(bridge.badType.error, /"minCitations" must be an integer/);
+    assert.equal(bridge.unknown.ok, false, "the settings are not reachable from the page");
+    assert.match(bridge.unknown.error, /unknown method "settings"/);
+    assert.ok(bridge.impact.ok && bridge.impact.result.shown > 0 && bridge.impact.result.shown <= bridge.impact.result.total, "filter: the h-index papers");
+    assert.equal(bridge.cleared.result.shown, bridge.cleared.result.total, "clearFilters: every paper again");
+    assert.equal(bridge.noId.id, null, "a request with no id is answered with null");
+    ok("the calls of lib/agent.js from the page (better-scholar:request / response): ping, papers, summary, export, filter with a report of what could not be read, clearFilters; the settings are out of reach");
 
     assert.ok((await stored(opts, "local", "resolved")) !== undefined, "'Read full lists' left a cache of paper details");
     await opts.reload();
@@ -1229,23 +1266,61 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.click('[data-act="close-cache"]');
     await opts.waitForSelector(".cache-modal", { state: "detached" });
 
-    // presets and configuration editor
-    await opts.click('[data-preset="full"]');
-    const fullPrefs = await stored(opts, "sync", "prefs");
-    assert.equal(fullPrefs.roles.first, true);
-    assert.equal(fullPrefs.roles.last, true);
-    assert.equal(fullPrefs.mergeDuplicates, true);
-    assert.equal(fullPrefs.panel.venues, true);
-    assert.equal(fullPrefs.semanticScholar, true);
-    assert.equal(fullPrefs.hide.access, false);
-
-    await opts.click('[data-preset="senior"]');
+    // presets, the configuration editor and what it reports
+    await opts.click('[data-preset="all"]');
+    const allPrefs = await stored(opts, "sync", "prefs");
+    assert.deepEqual([allPrefs.roles.first, allPrefs.roles.last, allPrefs.mergeDuplicates, allPrefs.panel.venues, allPrefs.hide.access], [true, true, true, true, false]);
+    assert.deepEqual(Object.values(allPrefs.copy), prefsLib.COPY_BUTTONS.map(() => true));
+    assert.equal(allPrefs.semanticScholar, false, "no preset switches a network call on");
+    await opts.click('[data-preset="last"]');
     assert.equal((await stored(opts, "sync", "prefs")).roles.first, false);
     assert.equal((await stored(opts, "sync", "prefs")).roles.last, true);
+    const status = opts.locator('[data-rr="config-status"]');
+    await pollPage(opts, () => /Changes applied/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
     await opts.click(".config-editor summary");
-    await opts.locator('[data-act="config-input"]').fill('{\n  "rowStyle": "tint"\n}');
+    // a patch: what is right is applied, what is not is named with the reason
+    await opts.locator('[data-act="config-input"]').fill('{\n  "rowStyle": "tint",\n  "panel": { "years": false, "bogus": 1, "venues": "yes" },\n  "nope": 2,\n  "panel.copy": false\n}');
     await opts.click('[data-act="config-apply"]');
-    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "tint");
+    await pollPage(opts, () => /Changes applied: 2/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    const report = await status.textContent();
+    for (const part of ["panel.bogus: unknown setting", "panel.venues: must be true or false", "nope: unknown setting", "panel.copy: unknown setting"]) assert.ok(report.includes(part), part + " in: " + report);
+    assert.equal(await status.evaluate((el) => el.classList.contains("bad")), true, "a report with something ignored is marked");
+    const patched = await stored(opts, "sync", "prefs");
+    assert.deepEqual([patched.rowStyle, patched.panel.years, patched.panel.venues, "nope" in patched], ["tint", false, true, false]);
+    assert.equal(await opts.isChecked('input[data-pref="panel.years"]'), false, "the switches follow");
+    // not JSON, and the same change again
+    await opts.locator('[data-act="config-input"]').fill("rowStyle = bar");
+    await opts.click('[data-act="config-apply"]');
+    await pollPage(opts, () => /not valid JSON/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "tint", "nothing changed");
+    await opts.locator('[data-act="config-input"]').fill('{ "rowStyle": "tint" }');
+    await opts.click('[data-act="config-apply"]');
+    await pollPage(opts, () => /Nothing to change/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    await opts.locator('[data-act="config-input"]').fill("[1, 2]");
+    await opts.click('[data-act="config-apply"]');
+    await pollPage(opts, () => /must be a JSON object/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    ok("presets (none switches a network call on) and the configuration editor: a patch is applied and reported, what is not a setting is named, what is not JSON changes nothing");
+
+    // the guide for AI agents: one click puts the whole reference, with this user's own settings, on the clipboard
+    await opts.click('[data-act="agent-guide-copy"]');
+    const guide = await opts.evaluate(() => navigator.clipboard.readText());
+    assert.ok(guide.startsWith(`# Better Scholar ${manifest.version} — guide for AI agents`));
+    for (const s of prefsLib.SETTINGS) assert.ok(guide.includes("`" + s.path + "`"), s.path);
+    const record = JSON.parse(/### Current settings of this user\n```json\n([\s\S]*?)\n```/.exec(guide)[1]);
+    assert.deepEqual(record, await stored(opts, "sync", "prefs"), "the guide carries the user's settings as they are");
+    assert.ok(guide.includes("better-scholar:request") && guide.includes("`cites:>100`"));
+    // …and what an agent answers goes straight into the editor
+    await opts.locator('[data-act="config-input"]').fill(JSON.stringify({ rowStyle: "bar", copy: { csv: false } }));
+    await opts.click('[data-act="config-apply"]');
+    await pollPage(opts, () => /Changes applied: 2/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    assert.deepEqual([(await stored(opts, "sync", "prefs")).rowStyle, (await stored(opts, "sync", "prefs")).copy.csv], ["bar", false]);
+    ok("the guide for AI agents: every setting, this user's own record, the page calls; the answer applies from the editor");
+
+    // every setting has its control on the settings page, found by its path (the guide says so), and no control names a setting that does not exist
+    const controls = await opts.$$eval("[data-pref]", (els) => els.map((e) => e.dataset.pref));
+    const paths = prefsLib.SETTINGS.map((s) => s.path);
+    assert.deepEqual(paths.filter((p) => !controls.includes(p)), [], "a setting with no control");
+    assert.deepEqual([...new Set(controls)].filter((c) => !paths.includes(c) && c !== "s2key"), [], "a control with no setting");
 
     // export config file download
     const [cfgDownload] = await Promise.all([
@@ -1257,9 +1332,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const cfgChunks = [];
     for await (const chunk of cfgStream) cfgChunks.push(chunk);
     const cfgParsed = JSON.parse(Buffer.concat(cfgChunks).toString("utf8"));
-    assert.equal(cfgParsed.rowStyle, "tint");
-    assert.equal(cfgParsed.roles.last, true);
-    ok("configuration export downloads valid better-scholar-config.json with active preferences");
+    assert.deepEqual(cfgParsed, await stored(opts, "sync", "prefs"), "the file is the record");
+    // …and a file of that shape is read back
+    await opts.setInputFiles('input[type="file"]', { name: "c.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ rowStyle: "full" })) });
+    await pollPage(opts, () => /Changes applied: 1/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
+    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "full");
+    ok("configuration export downloads the record as better-scholar-config.json; a file is read back as a patch");
 
     await opts.click('[data-act="clear-cache"]');
     await eventually(opts, () => /^No paper details are saved/.test(document.querySelector(".row .note").textContent));
@@ -1379,7 +1457,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       const popN = await ctxN.newPage();
       await popN.goto(`chrome-extension://${extId}/popup/popup.html`);
       const tabN = await popN.evaluate(async () => {
-        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
+        for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } }
         return null;
       });
       assert.ok(tabN != null, "the profile answers the popup");
@@ -1535,7 +1613,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await pill("award").click();
     assert.equal(await visibleRows(page), 10);
     ok("a pill lists exactly those papers, and clicking again clears it");
-    await page.click('[data-act="copy-text"]');
+    await page.click('[data-act="copy-summary"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /Awards & talks: Awards 4, Oral 2, Spotlight 1 \(from the authors' own words or the award list\)/);
     ok("Copy summary includes the awards and talks line");
@@ -1550,7 +1628,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="award"]').count(), 0);
     assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="oral"]').count(), 1);
     assert.ok((await page.locator('.rr-chip-mark[data-group="oral"]').count()) > 0, "talk levels keep their own switch");
-    await page.click('[data-act="copy-text"]');
+    await page.click('[data-act="copy-summary"]');
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Awards & talks: Oral 2, Spotlight 1 /m);
     for (const g of ["oral", "spotlight"]) await setPref(optsM, "marks." + g, false);
     await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length === 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 0);
@@ -1563,7 +1641,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await setPref(optsM, "panel.summary", false);
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
     assert.equal(await page.locator('[data-rr="matrix"] table').isVisible(), false);
-    assert.equal(await page.locator('[data-act="copy-text"]').isVisible(), false, "the Copy buttons belong to the table");
+    assert.equal(await page.locator('[data-act="copy-summary"]').isVisible(), true, "the copy row stays when the table goes: it has its own switches");
     for (const part of ["filters", "metrics", "coverage"]) assert.equal(await page.locator(`[data-rr="${part}"]`).isVisible(), true, `${part} stays`);
     assert.equal(await page.locator('[data-rr="marks"]').isVisible(), true, "the awards and talks counts stay");
     await setPref(optsM, "panel.status", false);

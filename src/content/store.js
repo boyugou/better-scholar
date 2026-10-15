@@ -8,7 +8,6 @@
 //   local ui         { collapsed, source } — written by the Scholar page
 //   sync  variants   { profileId: [name spellings] }
 //   local resolved   { paperId: { ts, authors } } — author lists read with "Read full lists"
-//   sync  settings   the pre-2.2 combined record; read once by migrate() and removed
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -35,27 +34,10 @@
     try { await chrome.storage[area].remove(key); } catch (e) { /* context loss */ }
   }
 
-  // Older versions kept everything in one `settings` record. Split it once, then forget it.
-  async function migrate() {
-    if ((await get("sync", "prefs")) !== undefined) return;
-    const legacy = await get("sync", "settings");
-    if (legacy === undefined) return;
-    const { prefs, ui } = B.prefs.fromLegacy(legacy);
-    await set("sync", "prefs", prefs);
-    await set("local", "ui", ui);
-    await remove("sync", "settings");
-  }
-
-  async function loadPrefs() {
-    const stored = await get("sync", "prefs");
-    return stored === undefined ? B.prefs.fromLegacy(await get("sync", "settings")).prefs : B.prefs.normalize(stored);
-  }
+  const loadPrefs = async () => B.prefs.normalize(await get("sync", "prefs"));
   const savePrefs = (prefs) => set("sync", "prefs", B.prefs.normalize(prefs));
 
-  async function loadUi() {
-    const stored = await get("local", "ui");
-    return stored === undefined ? B.prefs.fromLegacy(await get("sync", "settings")).ui : B.prefs.normalizeUi(stored);
-  }
+  const loadUi = async () => B.prefs.normalizeUi(await get("local", "ui"));
   const saveUi = (ui) => set("local", "ui", B.prefs.normalizeUi(ui));
 
   // Run `fn(newPrefs)` whenever the settings page saves (from any tab); returns a function that stops listening.
@@ -96,5 +78,5 @@
   const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k.replace(/[^\x21-\x7e]/g, "") : ""; };      // (visible ASCII only: a header cannot carry anything else)
   const saveS2Key = (key) => (key ? set("local", "s2key", key.trim().slice(0, 200)) : remove("local", "s2key"));
 
-  B.store = { loadS2Key, saveS2Key, migrate, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
+  B.store = { loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
 })();

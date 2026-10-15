@@ -83,28 +83,6 @@ test("unmatchedVenues lists unplaced venues, ignoring preprints and secondary tr
   assert.deepEqual(m.unmatchedVenues(rows), [{ venue: "Some Obscure Journal 4 (2), 1-9", count: 2 }]);
 });
 
-test("toText / toTsv", () => {
-  const s = m.summarize([paper("first", "A"), paper("first", null), paper("last", "B")], "ccf");
-  const text = m.toText(s, { owner: "Jane Doe", edition: "CCF 2026 (7th edition)" });
-  assert.match(text, /^Jane Doe — 3 papers on Google Scholar, by authorship role and CCF rank/);
-  assert.match(text, /First author: 2 \(A: 1, unranked: 1\)/);
-  assert.match(text, /Last author: 1 \(B: 1\)/);
-  assert.match(text, /CCF 2026 \(7th edition\)$/);
-  const tsv = m.toTsv(s).split("\n");
-  assert.equal(tsv[0], "Role\tA\tB\tC\tUnranked\tTotal");
-  assert.equal(tsv[1], "First author\t1\t0\t0\t1\t2");
-  assert.equal(tsv[tsv.length - 1], "\t1\t1\t0\t1\t3");
-});
-
-test("toText appends extra lines (the awards and talks line) before the edition", () => {
-  const s = m.summarize([{ status: "found", role: "first", venue: {}, citations: 1 }], "ccf");
-  const text = m.toText(s, { owner: "Jane Doe", extra: ["Awards & talks: Awards 1"], edition: "CCF 2026" });
-  const lines = text.split("\n");
-  assert.equal(lines[lines.length - 2], "Awards & talks: Awards 1");
-  assert.equal(lines[lines.length - 1], "CCF 2026");
-  assert.ok(!m.toText(s, {}).includes("Awards"));
-});
-
 test("summarize with no ranking (both rank lists switched off): roles only, no tier columns", () => {
   const rows = [paper("first", "A"), paper("first", null), paper("last", "B"), paper(null, null), { status: "absent", role: null, venue: {}, citations: 0 }];
   const s = m.summarize(rows, null);
@@ -114,146 +92,7 @@ test("summarize with no ranking (both rank lists switched off): roles only, no t
   assert.equal(s.totals.total, 3);
   assert.equal(s.hidden, 1);
   assert.equal(s.absent, 1);
-  const text = m.toText(s, { owner: "A Author" });
-  assert.match(text, /^A Author — 5 papers on Google Scholar, by authorship role$/m);
-  assert.match(text, /^First author: 2$/m, "no empty parentheses");
-  assert.equal(m.toTsv(s).split("\n")[0], "Role\tTotal");
   assert.ok(m.inSelection(paper("first", "A"), { role: "first" }, null));
-});
-
-test("toRowsTsv: a header and one line per row; a tab or a line break inside a field is a space; missing values are empty", () => {
-  assert.equal(m.toRowsTsv(["Year", "Title", "Citations"], [[2023, "A\ttab and\nnewline", 12], [null, "Plain", 0], [2020, undefined, ""]]),
-    "Year\tTitle\tCitations\n2023\tA tab and newline\t12\n\tPlain\t0\n2020\t\t");
-  assert.equal(m.toRowsTsv(["A"], []), "A");
-  assert.equal(m.toRowsTsv(["T", "N"], [["=HYPERLINK(\"http://x\",\"y\")", -3], ["+1 and -1 ways", "@user"], ["-Omics at scale", "x=y"]]),
-    "T\tN\n\"'=HYPERLINK(\"\"http://x\"\",\"\"y\"\")\"\t-3\n'+1 and -1 ways\t'@user\n'-Omics at scale\tx=y");
-});
-
-test("toRowsCsv: RFC-4180 CSV with UTF-8 BOM, escaped quotes and commas, CRLF endings, formula protection", () => {
-  const out = m.toRowsCsv(["Year", "Title", "Authors"], [
-    [2024, 'Attention is "All" You Need', "Vaswani, A., Shazeer, N."],
-    [null, "=HYPERLINK(\"http://x\",\"y\")", -5]
-  ]);
-  assert.ok(out.startsWith("\uFEFF"), "starts with UTF-8 BOM");
-  const lines = out.slice(1).split("\r\n");
-  assert.equal(lines[0], "Year,Title,Authors");
-  assert.equal(lines[1], '2024,"Attention is ""All"" You Need","Vaswani, A., Shazeer, N."');
-  assert.equal(lines[2], ',"\'=HYPERLINK(""http://x"",""y"")",-5');
-});
-
-test("toBibTeX: generates standard BibTeX entries with citekey, author and, booktitle/journal, rankings note", () => {
-  const papers = [
-    {
-      title: "Deep Residual Learning for Image Recognition",
-      authorsText: "K He, X Zhang, S Ren, J Sun, …",
-      year: 2016,
-      venueText: "Proceedings of the IEEE conference on computer vision and pattern recognition",
-      venue: { ccf: { tier: "A" }, core: { rank: "A*" } },
-      awards: ["Best Paper Award"]
-    },
-    {
-      title: "Attention Is All You Need",
-      authorsText: "A Vaswani, N Shazeer",
-      year: 2017,
-      venueText: "Advances in Neural Information Processing Systems",
-      venue: { ccf: { tier: "A" } }
-    }
-  ];
-  const bib = m.toBibTeX(papers);
-  assert.ok(bib.includes("@inproceedings{he2016deep,"));
-  assert.ok(bib.includes("  title = {Deep Residual Learning for Image Recognition},"));
-  assert.ok(bib.includes("  author = {K He and X Zhang and S Ren and J Sun},"));
-  assert.ok(bib.includes("  year = {2016},"));
-  assert.ok(bib.includes("  note = {CCF A, CORE A*, Best Paper Award}"));
-  assert.ok(bib.includes("@inproceedings{vaswani2017attention,"));
-  assert.ok(bib.includes("  author = {A Vaswani and N Shazeer},"));
-  assert.ok(bib.includes("  note = {CCF A}"));
-
-  const latexSpecial = [
-    {
-      title: "100% Analysis of C++ & Rust: A #1 Study of $X_y$",
-      authorsText: "A Author",
-      year: 2024,
-      venueText: "ACM Conference on Security & Privacy",
-      href: "/citations?view_op=view_citation&citation_for_view=456"
-    }
-  ];
-  const bibSpecial = m.toBibTeX(latexSpecial);
-  assert.ok(bibSpecial.includes("  title = {100\\% Analysis of C++ \\& Rust: A \\#1 Study of \\$X\\_y\\$},"));
-  assert.ok(bibSpecial.includes("  booktitle = {ACM Conference on Security \\& Privacy},"));
-  assert.ok(bibSpecial.includes("  url = {https://scholar.google.com/citations?view_op=view_citation&citation_for_view=456}"));
-});
-
-test("toMarkdown: standard publication list in markdown format", () => {
-  const papers = [
-    {
-      title: "Deep Residual Learning for Image Recognition",
-      authorsText: "K He, X Zhang, S Ren, J Sun",
-      year: 2016,
-      venueText: "Proceedings of the IEEE conference on computer vision and pattern recognition",
-      venue: { ccf: { tier: "A" }, core: { rank: "A*" } },
-      awards: ["Best Paper Award"],
-      citations: 180000,
-      href: "/citations?view_op=view_citation&citation_for_view=123"
-    },
-    {
-      title: "Attention Is All You Need",
-      authorsText: "A Vaswani, N Shazeer",
-      year: 2017,
-      venueText: "Advances in Neural Information Processing Systems, 2017",
-      venue: { ccf: { tier: "A" } },
-      citations: 120000
-    }
-  ];
-  const md = m.toMarkdown(papers);
-  assert.ok(md.includes("1. **[Deep Residual Learning for Image Recognition](https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123)**"));
-  assert.ok(md.includes("   K He, X Zhang, S Ren, J Sun"));
-  assert.ok(md.includes("**CCF A · CORE A***"));
-  assert.ok(md.includes("★ Best Paper Award"));
-  assert.ok(md.includes("Cited by 180,000"));
-  assert.ok(md.includes("2. **Attention Is All You Need**"));
-  assert.ok(md.includes("   *Advances in Neural Information Processing Systems, 2017* · **CCF A** · Cited by 120,000"));
-});
-
-test("toApa: standard publication list in APA 7th edition format", () => {
-  const papers = [
-    {
-      title: "Chord: A scalable peer-to-peer lookup service for internet applications",
-      authorsText: "I Stoica, R Morris, D Karger, MF Kaashoek, H Balakrishnan",
-      year: 2001,
-      venueText: "ACM SIGCOMM Computer Communication Review",
-      venue: { ccf: { tier: "A" } },
-      awards: ["Test of Time Award"],
-      href: "/citations?view_op=view_citation&citation_for_view=123"
-    },
-    {
-      title: "A Mathematical Theory of Communication",
-      authorsText: "CE Shannon",
-      year: 1948,
-      venueText: "The Bell System Technical Journal"
-    },
-    {
-      title: "Attention Is All You Need",
-      authorsText: "A Vaswani, N Shazeer",
-      year: 2017,
-      venueText: "Advances in Neural Information Processing Systems"
-    },
-    {
-      title: "Massive Multi-Author Study",
-      authorsText: "A Alpha, B Beta, C Gamma, D Delta, ...",
-      venueText: "Preprint"
-    }
-  ];
-
-  const apa = m.toApa(papers);
-  assert.ok(apa.includes("Stoica, I., Morris, R., Karger, D., Kaashoek, M. F., & Balakrishnan, H. (2001). Chord: A scalable peer-to-peer lookup service for internet applications. *ACM SIGCOMM Computer Communication Review*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123"));
-  assert.ok(apa.includes("Shannon, C. E. (1948). A Mathematical Theory of Communication. *The Bell System Technical Journal*."));
-  assert.ok(apa.includes("Vaswani, A., & Shazeer, N. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems*."));
-  assert.ok(apa.includes("Alpha, A., Beta, B., Gamma, C., Delta, D., … (n.d.). Massive Multi-Author Study. *Preprint*."));
-
-  const apaWithRanks = m.toApa([papers[0]], { includeRanks: true, includeAwards: true });
-  assert.ok(apaWithRanks.includes("[CCF A]"));
-  assert.ok(apaWithRanks.includes("[★ Test of Time Award]"));
 });
 
 test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
@@ -291,4 +130,15 @@ test("topVenues: ranked venues of the highlighted papers, most papers first, tie
   ]);
   assert.equal(m.topVenues(rows, 2).length, 2);
   assert.equal(m.venueKey(undefined), "");
+});
+
+test("topVenues: one short name that stands for two venues gives no name and no ranks; ranks of a list that is off are not given", () => {
+  const venue = (name, ccf, core) => ({ highlighted: true, venue: { ccf: ccf ? { abbr: "ASE", name, tier: ccf } : null, core: core ? { abbr: "ASE", name, rank: core } : null } });
+  // the conference ASE (CCF A, CORE A*) and the journal ASE (CCF B) share their short name
+  const mixed = [venue("International Conference on Automated Software Engineering", "A", "A*"), venue("Automated Software Engineering", "B", null)];
+  assert.deepEqual(m.topVenues(mixed), [{ key: "ASE", count: 2, name: "ASE", ccf: null, core: null }]);
+  assert.deepEqual(m.topVenues([mixed[1], mixed[0]]), m.topVenues(mixed), "whichever comes first");
+  const same = [venue("International Conference on Automated Software Engineering", "A", "A*"), venue("International Conference on Automated Software Engineering", "A", "A*")];
+  assert.deepEqual(m.topVenues(same), [{ key: "ASE", count: 2, name: "International Conference on Automated Software Engineering", ccf: "A", core: "A*" }]);
+  assert.deepEqual(m.topVenues(same, 6, { ccf: false, core: true }), [{ key: "ASE", count: 2, name: "International Conference on Automated Software Engineering", ccf: null, core: "A*" }]);
 });

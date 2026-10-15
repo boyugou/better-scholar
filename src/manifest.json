@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extName__",
   "short_name": "__MSG_extShortName__",
-  "version": "2.38.1",
+  "version": "2.39.0",
   "description": "__MSG_extDescription__",
   "default_locale": "en",
   "minimum_chrome_version": "111",
@@ -233,7 +233,10 @@
         "lib/awards.js",
         "lib/duplicates.js",
         "lib/prefs.js",
+        "lib/query.js",
+        "lib/formats.js",
         "lib/analysis.js",
+        "lib/agent.js",
         "data/aliases.js",
         "data/ccf.js",
         "data/core.js",
@@ -245,6 +248,7 @@
         "content/semantic.js",
         "content/detail.js",
         "content/panel.js",
+        "content/bridge.js",
         "content/main.js"
       ],
       "run_at": "document_idle"

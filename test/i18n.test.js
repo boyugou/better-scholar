@@ -14,12 +14,10 @@ test("format: placeholders, arguments and dollar signs as Chrome reads them", ()
   assert.equal(i18n.format(undefined), "");
 });
 
-test("settings values: anything unknown means auto / keep", () => {
-  assert.equal(i18n.normalizeLanguage("ja"), "ja");
-  assert.equal(i18n.normalizeLanguage("klingon"), "auto");
-  assert.equal(i18n.normalizeScholarLanguage("zh_CN"), "zh_CN");
-  assert.equal(i18n.normalizeScholarLanguage(7), "keep");
+test("Scholar's language for a folder; \"keep\" and anything unknown leave the address alone", () => {
   assert.equal(i18n.scholarHl("zh_CN"), "zh-CN");
+  assert.equal(i18n.scholarHl("he"), "iw");
+  for (const none of ["keep", "klingon", 7, undefined, null]) assert.equal(i18n.scholarHl(none), "");
   assert.ok(i18n.isRtl("ar") && i18n.isRtl("he") && !i18n.isRtl("en"));
 });
 

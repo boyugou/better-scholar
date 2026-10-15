@@ -81,10 +81,12 @@
 
     const summaryHead = h("div", { class: "rr-sec-head" });
     const matrixBox = h("div", { "data-rr": "matrix" });
-    const actions = h("div", { class: "rr-actions rr-copybar" });
     // where the ranks in the table come from: under the table, next to what it explains
     const noteBox = h("div", { class: "rr-faint rr-note-src", "data-rr": "note" });
-    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, actions, noteBox);
+    const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, noteBox);
+    // the copy row: one button for each format that is switched on (the settings' copy.*), whether or not the table is shown
+    const actions = h("div", { class: "rr-actions rr-copybar" });
+    const copySec = h("div", { class: "rr-sec rr-copy", "data-rr": "export-row" }, actions);
 
     // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies
     const marksRows = h("div", { class: "rr-markrows" });
@@ -98,32 +100,22 @@
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage" }, coverTop, coverList);
 
     // filters (built once, synced on update)
-    const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder") });
+    const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", placeholder: t("filterPlaceholder"), "aria-label": t("filterPlaceholder"), maxlength: "500",
+      role: "combobox", "aria-autocomplete": "list", "aria-expanded": "false", "aria-controls": "rr-suggest" });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
-    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", title: "/ to search · >100 cites · >2020 year · ccf:a · role:first · has:award", onClick: () => {
+    const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", title: t("searchShortcut") + " · " + B.query.OPERATORS.map((o) => o.example).join(" · "), onClick: () => {
       queryInput.focus();
       openPopularSuggestions();
     } }, "/");
 
     // Autocomplete / suggestion popover for search operators
-    const suggestList = h("ul", { class: "rr-search-suggest", role: "listbox", "aria-label": t("filterPlaceholder"), hidden: true });
+    const suggestList = h("ul", { class: "rr-search-suggest", id: "rr-suggest", role: "listbox", "aria-label": t("filterPlaceholder"), hidden: true });
 
-    const OPERATOR_ITEMS = [
-      { op: "role:first", group: "author", tag: "ROLE", label: "role:first", desc: t("roleFirst") },
-      { op: "role:last", group: "author", tag: "ROLE", label: "role:last", desc: t("roleLast") },
-      { op: "role:cofirst", group: "author", tag: "ROLE", label: "role:cofirst", desc: t("roleCofirst") },
-      { op: "role:second", group: "author", tag: "ROLE", label: "role:second", desc: t("roleSecond") },
-      { op: "ccf:a", group: "tier", tag: "RANK", label: "ccf:a", desc: "CCF A" },
-      { op: "ccf:b", group: "tier", tag: "RANK", label: "ccf:b", desc: "CCF B" },
-      { op: "core:a*", group: "tier", tag: "RANK", label: "core:a*", desc: "CORE A*" },
-      { op: "core:a", group: "tier", tag: "RANK", label: "core:a", desc: "CORE A" },
-      { op: ">100", group: "cite", tag: "CITES", label: ">100", desc: ">100" },
-      { op: ">500", group: "cite", tag: "CITES", label: ">500", desc: ">500" },
-      { op: ">1000", group: "cite", tag: "CITES", label: ">1000", desc: ">1000" },
-      { op: ">2020", group: "year", tag: "YEAR", label: ">2020", desc: ">2020" },
-      { op: "has:award", group: "mark", tag: "HONORS", label: "has:award", desc: t("markAward") },
-      { op: "has:talk", group: "mark", tag: "HONORS", label: "has:talk", desc: t("markOral") }
-    ];
+    // the operators of lib/query.js, in the panel's own words (the group's name is the column it filters: Year, CCF, Role …)
+    const OP_GROUP = { cites: "cite", year: "year", ccf: "tier", core: "tier", role: "author", has: "mark" };
+    const OP_TAG = { cites: "tsvCitations", year: "tsvYear", ccf: "srcCcf", core: "srcCore", role: "tsvRole", has: "tsvAwards" };
+    const OP_DESC = { "role:first": "roleFirst", "role:cofirst": "roleCofirst", "role:second": "roleSecond", "role:last": "roleLast", "has:award": "markAward", "has:talk": "markTalks" };
+    const OPERATOR_ITEMS = B.query.OPERATORS.flatMap((o) => o.suggest.map((op) => ({ op, name: o.name, group: OP_GROUP[o.name], tag: t(OP_TAG[o.name]), desc: OP_DESC[op] ? t(OP_DESC[op]) : "" })));
 
     let activeSuggestIdx = -1;
     let currentSuggestions = [];
@@ -133,6 +125,10 @@
       activeSuggestIdx = -1;
       currentSuggestions = [];
       suggestList.replaceChildren();
+      queryInput.setAttribute("aria-expanded", "false");
+      queryInput.removeAttribute("aria-activedescendant");
+      window.removeEventListener("resize", closeSuggest);
+      window.removeEventListener("scroll", closeSuggest, true);
     }
 
     function highlightSuggestItem(idx) {
@@ -141,17 +137,17 @@
         const isSel = i === idx;
         el.classList.toggle("rr-suggest-active", isSel);
         el.setAttribute("aria-selected", String(isSel));
-        if (isSel) el.scrollIntoView({ block: "nearest" });
+        if (isSel) { el.scrollIntoView({ block: "nearest" }); queryInput.setAttribute("aria-activedescendant", el.id); }
       });
+      if (idx < 0) queryInput.removeAttribute("aria-activedescendant");
     }
 
     function getCurrentWordInfo() {
       const val = queryInput.value;
-      const selEnd = queryInput.selectionEnd != null ? queryInput.selectionEnd : val.length;
-      const left = val.slice(0, selEnd);
-      const match = left.match(/(\S+)$/);
-      if (!match) return { word: "", start: selEnd, end: selEnd };
-      return { word: match[1], start: match.index, end: selEnd };
+      const end = queryInput.selectionEnd != null ? queryInput.selectionEnd : val.length;
+      let start = end;
+      while (start > 0 && !/\s/.test(val[start - 1])) start--;                 // (a scan back from the caret: a pattern anchored at the end is slow on a long line)
+      return { word: val.slice(start, end), start, end };
     }
 
     function applySuggestion(item) {
@@ -174,12 +170,15 @@
     function renderSuggestions() {
       activeSuggestIdx = -1;
       suggestList.hidden = false;
-      suggestList.replaceChildren(...currentSuggestions.map((item) => {
+      queryInput.setAttribute("aria-expanded", "true");
+      placeSuggest();
+      suggestList.replaceChildren(...currentSuggestions.map((item, n) => {
         const catBadge = h("span", { class: `rr-suggest-cat rr-scat-${item.group}` }, item.tag);
         const opCode = h("code", { class: "rr-suggest-op" }, item.op);
         const descText = h("span", { class: "rr-suggest-desc" }, item.desc);
         return h("li", {
           class: "rr-suggest-item",
+          id: "rr-suggest-" + n,
           role: "option",
           "aria-selected": "false",
           "data-op": item.op,
@@ -191,35 +190,29 @@
       }));
     }
 
+    // The word at the caret begins an operator (it has its colon): offer that operator's values. An ordinary word offers nothing (ArrowDown, or the "/" hint, opens the common ones).
     function updateSuggestions() {
-      const { word } = getCurrentWordInfo();
-      const w = word.toLowerCase().trim();
-      if (!w) {
-        closeSuggest();
-        return;
-      }
-      const isOpPattern = /^(?:r|role|c|ccf|core|t|tier|rank|y|year|h|has|is):/i.test(w) ||
-                          /^[><=]/.test(w) ||
-                          ["role", "ccf", "core", "tier", "rank", "cites", "cite", "year", "has", "is", ">", "<"].includes(w);
-      if (!isOpPattern) {
-        closeSuggest();
-        return;
-      }
-      currentSuggestions = OPERATOR_ITEMS.filter((item) => {
-        return item.op.toLowerCase().startsWith(w) ||
-               item.op.toLowerCase().includes(w) ||
-               item.desc.toLowerCase().includes(w);
-      });
-      if (!currentSuggestions.length) {
-        closeSuggest();
-        return;
-      }
-      renderSuggestions();
+      const w = getCurrentWordInfo().word.toLowerCase();
+      const at = w.indexOf(":");
+      currentSuggestions = at < 1 ? [] : OPERATOR_ITEMS.filter((item) => item.name === w.slice(0, at) && item.op.startsWith(w));
+      if (currentSuggestions.length) renderSuggestions(); else closeSuggest();
     }
 
     function openPopularSuggestions() {
-      currentSuggestions = OPERATOR_ITEMS.slice(0, 8);
+      currentSuggestions = B.query.POPULAR.map((op) => OPERATOR_ITEMS.find((item) => item.op === op)).filter(Boolean);
       renderSuggestions();
+    }
+
+    // The list is placed with fixed coordinates, as the year lists are: the panel's own overflow cannot clip it
+    function placeSuggest() {
+      const r = queryInput.getBoundingClientRect();
+      suggestList.style.left = r.left + "px";
+      suggestList.style.minWidth = r.width + "px";
+      const room = window.innerHeight - r.bottom - 12;
+      suggestList.style.maxHeight = Math.max(120, Math.min(260, room)) + "px";
+      suggestList.style.top = r.bottom + 4 + "px";
+      window.addEventListener("resize", closeSuggest);
+      window.addEventListener("scroll", closeSuggest, true);
     }
 
     document.addEventListener("pointerdown", (e) => {
@@ -247,7 +240,7 @@
 
     const pillDefs = [
       { op: "ccf:a", label: "CCF A" },
-      { op: ">100", label: ">100" },
+      { op: "cites:>100", label: ">100" },
       { op: "role:first", label: t("roleFirst") },
       { op: "has:award", label: t("markAward") }
     ];
@@ -280,12 +273,17 @@
         p.btn.classList.toggle("rr-spill-active", active);
         p.btn.setAttribute("aria-pressed", String(active));
       });
-      if (m && m.searchMatch) {
-        const { count, cursor } = m.searchMatch;
+      // (a query that says nothing — spaces — has no count; an operator the panel could not read says so on the box)
+      const sm = m && m.searchMatch;
+      if (m) {
+        queryInput.setAttribute("aria-invalid", sm && sm.errors.length ? "true" : "false");
+        queryInput.title = sm && sm.errors.length ? sm.errors.join("\n") : "";
+      }
+      if (sm) {
         searchCount.hidden = false;
-        searchCount.classList.toggle("rr-search-count-empty", count === 0);
-        searchCount.textContent = count === 0 ? "0" : (cursor >= 0 ? `${cursor + 1} / ${count}` : String(count));
-      } else if (!hasText) {
+        searchCount.classList.toggle("rr-search-count-empty", sm.count === 0);
+        searchCount.textContent = sm.count === 0 ? "0" : (sm.cursor >= 0 ? `${sm.cursor + 1} / ${sm.count}` : String(sm.count));
+      } else if (m || !hasText) {
         searchCount.hidden = true;
         searchCount.textContent = "";
       }
@@ -326,11 +324,9 @@
           }
         }
       } else if (e.key === "Tab") {
-        if (!suggestList.hidden && currentSuggestions.length) {
-          e.preventDefault();
-          const pick = activeSuggestIdx >= 0 ? currentSuggestions[activeSuggestIdx] : currentSuggestions[0];
-          applySuggestion(pick);
-        }
+        // Tab takes the suggestion that was chosen with the arrows, and nothing else: it still moves on from the box
+        if (!suggestList.hidden && activeSuggestIdx >= 0 && !e.shiftKey) { e.preventDefault(); applySuggestion(currentSuggestions[activeSuggestIdx]); }
+        else closeSuggest();
       } else if (e.key === "Enter") {
         e.preventDefault();
         if (!suggestList.hidden && activeSuggestIdx >= 0 && currentSuggestions[activeSuggestIdx]) {
@@ -340,7 +336,8 @@
           if (queryInput.value.trim()) cb.onSearchNext(e.shiftKey ? -1 : 1);
         }
       } else if (e.key === "Escape") {
-        closeSuggest();
+        e.preventDefault();                                                      // (the key is taken: the page's own Escape, which clears the filters, leaves it alone)
+        if (!suggestList.hidden) { closeSuggest(); return; }                       // (first Escape: the list; the next one: the text)
         queryInput.value = "";
         syncSearchUI();
         cb.onQuery("");
@@ -374,7 +371,7 @@
       h("div", { class: "rr-add" }, variantInput, h("button", { class: "rr-btn", type: "button", onClick: addVariant }, t("variantAdd"))));
     const footSec = h("div", { class: "rr-sec" }, variantBox);
 
-    const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, marksSec);
+    const colAEl = h("div", { class: "rr-col rr-col-a" }, summarySec, copySec, marksSec);
     const colBEl = h("div", { class: "rr-col rr-col-b" }, filtersSec, metricsSec, yearsSec, venuesSec, coverSec, footSec);
     const body = h("div", { class: "rr-body" }, colAEl, colBEl);
     // a bar that says the list is filtered, by how much, and clears every filter
@@ -402,6 +399,8 @@
       }
       if (m.filters.query) parts.push(`"${m.filters.query}"`);
       if (m.filters.minCitations != null) parts.push(t("filterMinCites", [String(m.filters.minCitations)]));
+      // (the impact filter is chosen against the numbers, which it does not narrow: it is named in the filter bar only)
+      if (withOnly && m.filterBar && m.filterBar.impact) parts.push(t(m.filterBar.impact.kind === "h" ? "mH" : "mI10"), t("filterMinCites", [String(m.filterBar.impact.min)]));
       return parts;
     }
 
@@ -447,25 +446,17 @@
       matrixBox.replaceChildren(h("table", { class: "rr-matrix" }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
     }
 
-    function renderActions() {
-      const btn = (kind, key) =>
-        h("button", {
-          class: "rr-btn" + (ui.flash === kind ? " rr-btn-flashed" : ""),
-          type: "button",
-          "data-act": (kind === "csv" ? "copy-csv" : "copy-" + kind),
-          onClick: () => cb.onCopy(kind)
-        }, ui.flash === kind ? (kind === "csv" ? t("exported") : t("copied")) : t(key));
-      actions.replaceChildren(
-        btn("text", "copySummary"),
-        btn("tsv", "copyTable"),
-        btn("papers", "copyPapers"),
-        btn("apa", "copyApa"),
-        btn("bibtex", "copyBibtex"),
-        btn("markdown", "copyMarkdown"),
-        btn("json", "copyJson"),
-        btn("csv", "exportCsv")
-      );
+    function renderActions(m) {
+      const on = B.prefs.copyButtons(m.prefs);
+      copySec.hidden = !on.length;
+      actions.replaceChildren(...on.map((kind) => {
+        const flashed = ui.flash && ui.flash.kind === kind;
+        return h("button", { class: "rr-btn" + (flashed ? " rr-btn-flashed" : ""), type: "button", "data-act": "copy-" + kind, onClick: () => cb.onCopy(kind) },
+          flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
+      }));
     }
+    // what a copy button says for a moment after it was pressed: done, or why nothing was copied
+    const flashText = () => (ui.flash.mode === "empty" ? t("copyEmpty") : ui.flash.kind === "csv" ? t("exported") : t("copied"));
 
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {
@@ -562,20 +553,18 @@
         return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null },
           h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
-      const btnRow = (key, a, b, threshold) => {
-        const isPressed = m.filters.minCitations === threshold && threshold > 0;
+      const btnRow = (key, a, b, impact, threshold) => {
+        const isPressed = m.filters.impact === impact;
         const title = threshold > 0 ? t(key === "mH" ? "tipFilterH" : "tipFilterI10", [String(threshold)]) : null;
+        const idle = a <= 0 && !isPressed;                                   // (nothing behind the number: nothing to show; a pressed button can always be released)
         return h("button", {
           class: "rr-m rr-m-btn" + (isPressed ? " rr-m-active" : ""),
           type: "button",
           "data-metric": key,
           "aria-pressed": String(isPressed),
-          disabled: threshold <= 0 ? true : null,
+          disabled: idle ? true : null,
           title,
-          onClick: () => {
-            if (threshold <= 0) return;
-            cb.onMinCitations(isPressed ? null : threshold);
-          }
+          onClick: () => cb.onImpact(impact)
         }, h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
@@ -592,7 +581,7 @@
         h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title" }, t("metricsTitle"))),
         scope ? h("div", { class: "rr-faint rr-scope" }, scope) : null,
         row("mPapers", hi.papers, all.papers, true), row("mCitations", hi.citations, all.citations, true),
-        btnRow("mH", hi.h, all.h, hi.h), btnRow("mI10", hi.i10, all.i10, 10)].filter(Boolean));
+        btnRow("mH", hi.h, all.h, "h", hi.h), btnRow("mI10", hi.i10, all.i10, "i10", 10)].filter(Boolean));
     }
 
     // Highlighted papers per year: one bar a year, stacked by role in the role colours (hover for the numbers; click to filter)
@@ -655,7 +644,10 @@
           h("button", { type: "button", "aria-label": t("variantRemove"), onClick: () => cb.onRemoveVariant(v) }, "×"))));
     }
 
+    let lastModel = null;
     function update(m) {
+      lastModel = m;
+      const focused = focusKeyOf(document.activeElement);
       el.classList.toggle("rr-collapsed", !!m.ui.collapsed);
       collapseBtn.title = t(m.ui.collapsed ? "expand" : "collapse");
       collapseBtn.setAttribute("aria-expanded", String(!m.ui.collapsed));
@@ -663,7 +655,6 @@
       onlyRow.hidden = !Object.values(m.prefs.roles).some(Boolean);          // with no role highlighted there is nothing to filter to
       metricsSec.hidden = !m.prefs.panel.metrics;
       summarySec.hidden = !m.prefs.panel.summary;
-      actions.hidden = !m.prefs.panel.copy;                                      // (the Copy summary / as table / papers buttons: their own switch)
       const rankPill = pillEls[0];
       if (m && m.prefs && m.prefs.ranks) {
         if (!m.prefs.ranks.ccf && m.prefs.ranks.core) {
@@ -678,6 +669,7 @@
           rankPill.btn.hidden = false;
         }
       }
+      pillEls[3].btn.hidden = !m.prefs.marks.award;                             // (the awards pill: has:award finds what the awards switch hides)
       variantBox.hidden = !m.prefs.panel.names;
       footSec.hidden = variantBox.hidden;
       filterBar.hidden = !m.filterBar;
@@ -687,20 +679,20 @@
         filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, " · " + parts.join(" · ")) : null),
           h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
       }
-      renderSummaryHead(m); renderMatrix(m); renderActions(); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
+      renderSummaryHead(m); renderMatrix(m); renderActions(m); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m);
       coverSec.hidden = !(coverTop.childNodes.length || coverList.childNodes.length);
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
       if (announce.textContent !== say) announce.textContent = say;
       // a column with nothing in it gives its width to the other
       // Scholar's page changed under us: the table, the counts and the filters would all be zeros, which is worse than nothing, so only the warning and the loading status stay
       if (m.coverage.layoutBroken) {
-        for (const sec of [summarySec, marksSec, filtersSec, metricsSec, yearsSec, venuesSec, footSec]) sec.hidden = true;
+        for (const sec of [summarySec, copySec, marksSec, filtersSec, metricsSec, yearsSec, venuesSec, footSec]) sec.hidden = true;
       }
       // in the wide layout the year bars join the first column (the shorter one): they are looked at like the table and the awards
       const wide = el.classList.contains("rr-wide");
       if (wide && yearsSec.parentNode !== colAEl) colAEl.append(yearsSec);
       else if (!wide && yearsSec.parentNode !== colBEl) colBEl.insertBefore(yearsSec, venuesSec);
-      const colA = !summarySec.hidden || !marksSec.hidden || (wide && !yearsSec.hidden), colB = !filtersSec.hidden || !metricsSec.hidden || (!wide && !yearsSec.hidden) || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
+      const colA = !summarySec.hidden || !copySec.hidden || !marksSec.hidden || (wide && !yearsSec.hidden), colB = !filtersSec.hidden || !metricsSec.hidden || (!wide && !yearsSec.hidden) || !venuesSec.hidden || !coverSec.hidden || !footSec.hidden;
       colAEl.hidden = !colA; colBEl.hidden = !colB;
       el.classList.toggle("rr-onecol", !(colA && colB));
       syncFilters(m); renderMetrics(m); renderVariants(m);
@@ -709,12 +701,31 @@
       const lists = (m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ");
       noteBox.textContent = m.noRanks ? t("noRanksNote", [lists]) : m.sources.length ? t("dataNote", [lists]) : "";        // (no lists on: nothing to say about where ranks come from)
       noteBox.hidden = !noteBox.textContent;
+      restoreFocus(focused);
     }
 
-    function flash(kind) {
-      ui.flash = kind;
-      renderActions();
-      setTimeout(() => { ui.flash = null; renderActions(); }, 1400);
+    // A control the panel draws again keeps the keyboard where it was: when the focus fell to the page with the old control, it is put on the one with the same name
+    const FOCUS_ATTRS = ["data-year", "data-metric", "data-venue", "data-mark-group", "data-role", "data-tier", "data-act", "data-src"];
+    const sectionOf = (node) => { const sec = node.closest("[data-rr]"); return sec ? sec.getAttribute("data-rr") : ""; };
+    function focusKeyOf(node) {
+      if (!node || node === document.body || !el.contains(node)) return null;
+      const attrs = FOCUS_ATTRS.map((a) => node.getAttribute(a));
+      return attrs.some((v) => v != null) ? { sec: sectionOf(node), tag: node.tagName, attrs } : null;
+    }
+    function restoreFocus(key) {
+      if (!key || (document.activeElement && document.activeElement !== document.body && el.contains(document.activeElement))) return;
+      const again = [...el.querySelectorAll(key.tag)].find((n) => sectionOf(n) === key.sec && FOCUS_ATTRS.every((a, i) => n.getAttribute(a) === key.attrs[i]) && !n.hidden && !n.disabled);
+      if (again) again.focus({ preventScroll: true });
+    }
+
+    // `mode` "empty": nothing was copied, the button says why; said to a screen reader too
+    let flashTimer = 0;
+    function flash(kind, mode) {
+      ui.flash = { kind, mode };
+      if (lastModel) renderActions(lastModel);
+      announce.textContent = flashText();
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(() => { ui.flash = null; if (lastModel) renderActions(lastModel); announce.textContent = ""; }, 1400);
     }
 
     function focusSearch() {

@@ -341,6 +341,14 @@
       }
     }
   },
+  "popupExportsShown": {
+    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
   "popupOpenScholar": {
     "message": "เปิด Google Scholar"
   },
@@ -389,6 +397,12 @@
   "optMarksTitle": {
     "message": "รางวัลและการนำเสนอ"
   },
+  "optCopyTitle": {
+    "message": "Copy & export"
+  },
+  "optCopyHint": {
+    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+  },
   "optMarkAwardHint": {
     "message": "Best, outstanding และ distinguished paper, honorable mention, test of time และผู้เข้ารอบ best paper"
   },
@@ -405,13 +419,7 @@
     "message": "ตารางบทบาท × อันดับ"
   },
   "optPanelSummaryHint": {
-    "message": "ตารางงานของคุณตามตำแหน่งและอันดับ พร้อมปุ่มคัดลอกและหมายเหตุแหล่งที่มาของอันดับ"
-  },
-  "optPanelCopy": {
-    "message": "ปุ่มคัดลอก"
-  },
-  "optPanelCopyHint": {
-    "message": "ปุ่ม “คัดลอกสรุป” “คัดลอกเป็นตาราง” และ “คัดลอกงานวิจัย” ใต้ตาราง"
+    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
   },
   "optPanelMarks": {
     "message": "จำนวนรางวัลและการนำเสนอ"
@@ -522,6 +530,9 @@
   "exportCsv": {
     "message": "ส่งออก CSV"
   },
+  "copyEmpty": {
+    "message": "Nothing to copy"
+  },
   "exported": {
     "message": "ส่งออกแล้ว"
   },
@@ -616,6 +627,27 @@
   },
   "optColorsReset": {
     "message": "กลับเป็นสีมาตรฐาน"
+  },
+  "optThemes": {
+    "message": "Colour themes"
+  },
+  "optThemeDefault": {
+    "message": "Default"
+  },
+  "optThemeCool": {
+    "message": "Cool"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "High contrast"
+  },
+  "optThemeSoft": {
+    "message": "Soft"
+  },
+  "optContrastTip": {
+    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight และ Highlight"
@@ -781,6 +813,9 @@
   "filterPlaceholder": {
     "message": "กรองตามชื่อบทความหรือผู้แต่ง…"
   },
+  "searchShortcut": {
+    "message": "Press / to search"
+  },
   "venuesShowMore": {
     "message": "แสดงเพิ่มเติม"
   },
@@ -803,7 +838,7 @@
     "message": "การกำหนดค่าและค่าที่ตั้งไว้ล่วงหน้า"
   },
   "optConfigHint": {
-    "message": "ส่งออกหรือนำเข้าการตั้งค่าเป็น JSON หรือ TOML ใช้ค่าที่ตั้งไว้ล่วงหน้า หรือกำหนดค่าด้วย AI"
+    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
   },
   "optConfigCopy": {
     "message": "คัดลอกการกำหนดค่า (JSON)"
@@ -811,26 +846,54 @@
   "optConfigExport": {
     "message": "ส่งออกไฟล์"
   },
-  "optConfigImport": {
-    "message": "นำเข้าจากคลิปบอร์ด"
-  },
   "optConfigImportFile": {
     "message": "นำเข้าไฟล์"
   },
   "optConfigEditor": {
-    "message": "วางหรือแก้ไขการกำหนดค่า (JSON / TOML)"
+    "message": "Paste or edit a configuration (JSON)"
   },
   "optConfigApply": {
     "message": "นำการกำหนดค่าไปใช้"
   },
+  "optConfigApplied": {
+    "message": "Changes applied: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Nothing to change: the settings already say that."
+  },
+  "optConfigIgnored": {
+    "message": "Not applied:"
+  },
+  "optConfigError": {
+    "message": "This is not valid JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI agents"
+  },
+  "optAgentHint": {
+    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+  },
+  "optAgentCopy": {
+    "message": "Copy guide for agents"
+  },
   "optConfigPreset": {
     "message": "ค่าที่ตั้งไว้ล่วงหน้า"
   },
+  "optPresetLast": {
+    "message": "Last author focus"
+  },
   "optPresetFull": {
     "message": "เปิดทุกฟังก์ชัน"
-  },
-  "optPresetSenior": {
-    "message": "เน้นผู้เขียนหลัก/อาวุโส"
   },
   "optPresetFirst": {
     "message": "เน้นผู้เขียนคนแรก"
@@ -840,6 +903,12 @@
   },
   "optViewCache": {
     "message": "ดูรายละเอียดที่บันทึกไว้"
+  },
+  "optSearchPlaceholder": {
+    "message": "Search the settings…"
+  },
+  "optSearchClear": {
+    "message": "Clear the search"
   },
   "optCacheTitle": {
     "message": "รายละเอียดบทความที่บันทึกไว้"
@@ -852,5 +921,22 @@
   },
   "optCacheEmpty": {
     "message": "ยังไม่มีการบันทึกรายละเอียดบทความในอุปกรณ์นี้"
+  },
+  "optCacheShown": {
+    "message": "Shown: $N1$ of $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Read from"
+  },
+  "optCacheClose": {
+    "message": "Close"
   }
 }
