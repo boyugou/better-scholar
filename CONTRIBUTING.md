@@ -7,6 +7,8 @@ Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later 
 ```bash
 npm test                              # 429 unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
 npm run test:e2e                      # 78 checks: the real extension in Chromium against a local Scholar stand-in
+npm run build:demo                    # dist/demo/: the settings page as a static folder for the website (see docs/ARCHITECTURE.md, The web demo)
+npm run test:demo                     # 12 checks: that folder in a plain Chromium page, no extension
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
@@ -108,8 +110,9 @@ popup. A unit test (`test/extension.test.js`) keeps the faint text colours at a 
 
 The project site (30 languages) lives on the orphan branch `site` (source) and `gh-pages` (the built pages; GitHub Pages serves them). Work on it in
 a worktree: `git worktree add ../scholar-roles-and-ranks-site site`. There: `npm run verify` builds and checks, `npm run deploy` builds, checks and
-pushes `gh-pages` (no CI involved). Its pictures come from this repository's end-to-end run
-(`E2E_SCALE=2 E2E_SHOWCASE_H=1080 E2E_OUT=/tmp/pics npm run test:e2e`, then `scripts/crop-image.mjs`), and its privacy page is a copy of
+pushes `gh-pages` (no CI involved). Its build reads this repository (`EXT_DIR`, by default `../google-scholar-highlighter`): the hero picture is
+`store/chrome/images/screenshot-1.jpg` (`npm run store:images`), and the *Try it* section is the settings page itself, built into the site by
+`node scripts/build-demo.mjs --out <site>/_site/demo` (see [The web demo](docs/ARCHITECTURE.md#the-web-demo)). Its privacy page is a copy of
 `PRIVACY.md` (`npm run sync-privacy` there after changing it here).
 
 ### Adding an award source

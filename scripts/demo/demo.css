@@ -1,0 +1,23 @@
+/* The one thing the web demo adds to the settings page: a quiet line above it that says the demo keeps its changes in this browser.
+   It borrows the page's own colour tokens (options.css), so the dark theme follows without a rule of its own. */
+.rr-demo-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px 10px;
+  padding: 7px 16px;
+  background: var(--accent-tint);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 12.5px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+.rr-demo-note b {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

@@ -304,6 +304,29 @@ The preview is the real `content/panel.js`, handed a model built from invented p
 follows `main.js`'s `model()`), above sample rows built from `content/chips.js`. It is always Scholar's light page, whatever
 the system theme.
 
+## The web demo
+
+The settings page also runs in an ordinary web page: the project site embeds it as its *Try it* section, and a visitor can open it on its own.
+`npm run build:demo` (`scripts/build-demo.mjs`) writes `dist/demo/`, a static copy of the real page. The builder reads the page `options_ui` names in
+the manifest and copies exactly what that page names (scripts, stylesheets, pictures, what a stylesheet's `url()` names), each at the same path
+under `src/`, plus the icons and every language's `messages.json`; it takes the page's own `<script>` tags out and puts one tag in their place,
+for `scripts/demo/shim.js`, whose `data-` attributes carry the scripts, in the page's order, and the version. `--out <dir>` writes somewhere else (the
+site's build asks for its own `_site/demo` that way). Serve the folder over http (`python3 -m http.server -d dist/demo`): from `file://` the browser
+refuses to read the strings.
+
+The shim is the only addition, a `window.chrome` with just what the page and its libraries touch: `chrome.storage.sync` and `local` (`get` with
+Chrome's key, list, defaults and everything forms; `set`; `remove`; copies in and out, `onChanged` with a real `changes` object for the page that wrote and
+for the demo open in another tab), `chrome.i18n` (`getMessage` answers at once, from the strings of English and of the interface language, which the shim
+fetches before it adds the page's scripts; `getUILanguage`) and `chrome.runtime` (`id`, `getManifest`, `getURL`, `openOptionsPage`, `onMessage`, and
+`sendMessage` for `rr:messages`, answered as `background.js` answers it). The settings are kept in `localStorage` under the prefix `rr-demo:` (in memory
+when `localStorage` is not there). `?lang=` (a site code such as `zh-CN`, or a folder such as `zh_CN`) is what `getUILanguage()` returns, otherwise the
+browser's language, and `lib/i18n.js` `resolve()` picks the folder, as in the extension. A page that starts asking for more of `chrome.*` fails with a
+TypeError in the shim: add what it needs there. The demo asks for its own files only (`test/e2e/demo.mjs` checks that), and adds one quiet line
+(`scripts/demo/demo.css`) saying that its changes stay in this browser.
+
+It is not the extension: there is no Scholar page to redraw (the preview is all there is), the language settings only save a value, and the Semantic Scholar
+key field keeps whatever a visitor types in their own `localStorage`.
+
 ## Calls: page events and the popup
 
 `lib/agent.js` lists the calls; `content/main.js` implements them (`methods`); `content/bridge.js` carries them.
@@ -352,7 +375,7 @@ particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
 
 ## Testing
 
-`npm test` runs the unit tests (`node --test test/*.test.js`, 429 tests); `npm run test:e2e` runs the end-to-end checks (78).
+`npm test` runs the unit tests (`node --test test/*.test.js`, 429 tests); `npm run test:e2e` runs the end-to-end checks (78); `npm run test:demo` the web demo's (12).
 
 | Suite | What it proves |
 |-------|----------------|
@@ -368,8 +391,10 @@ particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
 | `test/agent.test.js` | `validate`, the table of calls, that `main.js` implements exactly those calls, the guide |
 | `test/i18n.test.js` | every listed language has its folder with exactly the English keys and placeholders |
 | `test/extension.test.js` | manifest, load order, locales, bundle freshness, no remote code, text contrast |
+| `test/demo-build.test.js` | the web demo's builder: the files it copies and the order of the page's scripts, and what it refuses (an inline script, a remote file, a folder that holds the repository) |
 | `test/loader.test.js`, `test/robustness.test.js`, `test/markup-check.test.js` | the *Show more* loader; hostile input; the list of Scholar selectors that `scripts/check-scholar-markup.js` checks |
 | `test/e2e/run.mjs` (78 checks) | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, search, the h-index and i10 buttons, the whole list loading by itself, *Load all*, *Read full lists*, Semantic Scholar, clipboard and downloads, persistence, popup, settings page (every setting has its control), presets and the configuration editor, the agent guide, the page events, i18n |
+| `test/e2e/demo.mjs` (12 checks) | the web demo (`scripts/build-demo.mjs`) in a plain Chromium page, no extension: the build's contents, the cards and the real panel, a switch changes the preview and survives a reload, a second tab follows, presets and the configuration editor, `?lang=` (hyphen and underscore forms, right to left), no `localStorage`, no console error and no request to another origin |
 | `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
 | `scripts/axe-audit.mjs` | not part of CI: axe-core 4.10's default rules over the panel (light, dark system, filtered, every part on, narrow window, four languages), the settings page (light, dark) and the popup without a profile; exit 1 on any violation |
 
