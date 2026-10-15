@@ -90,7 +90,7 @@
   const valueOf = (s) => (s.kind === "bool" ? "true / false" : s.kind === "color" ? "\"#rrggbb\" or \"\"" : s.kind === "choice" ? s.values.map((v) => `"${v}"`).join(" / ") : `"${s.none}" or a language code`);
   const json = (v) => JSON.stringify(v);
 
-  // `current`: the user's settings (omit for the defaults). `version`: the extension's version.
+  // `current`: the user's settings as the record (the settings page's copy passes them); omitted, the guide is the reference alone (AGENTS.md). `version`: the extension's version.
   function guide({ current, version } = {}) {
     const now = prefs.normalize(current);
     const settings = prefs.SETTINGS.map((s) => `| ${code(s.path)} | ${valueOf(s)} | ${code(json(s.def))} | ${cell(s.doc)} |`);
@@ -138,11 +138,7 @@
       "Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:",
       ...presets,
       "",
-      "### Current settings of this user",
-      "```json",
-      JSON.stringify(now, null, 2),
-      "```",
-      "",
+      ...(current === undefined ? [] : ["### Current settings of this user", "```json", JSON.stringify(now, null, 2), "```", ""]),
       "## Page events",
       "",
       `On a profile page the extension marks the document with ${code(`${EVENTS.marker}="ready"`)} (on ${code("<html>")}) once it is running; a script on the page can then make calls. This works with the setting ${code("agentBridge")} on (the default), and the page cannot tell the extension is here with it off. It reads what the page shows and sets the page's filters; it cannot read or change the settings.`,

@@ -76,14 +76,17 @@ test("the guide: every setting, preset, call, parameter and operator is in it; i
   assert.ok(!/@|https?:\/\/(?!scholar\.google)/.test(g.replace(/semanticscholar/gi, "")), "no address of a person or a service in it");
 });
 
-test("the guide's examples are accepted by the settings: the one JSON example and every preset apply with nothing ignored", () => {
+test("the guide's examples are accepted by the settings: the one JSON example applies with nothing ignored", () => {
   const g = agent.guide({});
   const example = JSON.parse(/Example[^\n]*\n```json\n(.*)\n```/.exec(g)[1]);
   assert.deepEqual(prefs.apply(prefs.defaults(), example).ignored, []);
   assert.ok(prefs.apply(prefs.defaults(), example).applied.length >= 3);
-  // the current settings in the guide are the ones given, as the record
+});
+
+test("the guide carries this user's record when it is given, and no record when it is not", () => {
   const mine = prefs.apply(prefs.defaults(), { rowStyle: "bar", panel: { years: false } }).prefs;
-  const block = /### Current settings of this user\n```json\n([\s\S]*?)\n```/.exec(agent.guide({ current: mine }))[1];
-  assert.deepEqual(JSON.parse(block), mine);
-  assert.deepEqual(JSON.parse(/### Current settings of this user\n```json\n([\s\S]*?)\n```/.exec(g)[1]), prefs.defaults(), "none given: the defaults");
+  const block = (text) => /### Current settings of this user\n```json\n([\s\S]*?)\n```/.exec(text)[1];
+  assert.deepEqual(JSON.parse(block(agent.guide({ current: mine }))), mine);
+  assert.deepEqual(JSON.parse(block(agent.guide({ current: prefs.defaults() }))), prefs.defaults());
+  assert.equal(/Current settings of this user/.test(agent.guide({})), false, "no record given: the reference alone");
 });

@@ -19,3 +19,4 @@ node_modules/
 
 # Saved copies of the public pages the data scripts read (scripts/page-cache.mjs)
 /.cache/
+/.claude/worktrees/
