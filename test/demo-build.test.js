@@ -37,17 +37,22 @@ test("the real page: its scripts in its order, every file it names, every langua
   assert.equal(r.status, 0, r.stderr);
   const manifest = JSON.parse(fs.readFileSync(path.join(root, "src", "manifest.json"), "utf8"));
   const page = fs.readFileSync(path.join(root, "src", manifest.options_ui.page), "utf8");
-  const wanted = [...page.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join("options", m[1])));
+  // what the page itself says it loads, as paths under src/ (read here from the page, as the builder reads it: nothing is listed by hand)
+  const attr = (tag, name) => { const m = new RegExp(`\\s${name}\\s*=\\s*"([^"]*)"`, "i").exec(tag); return m ? m[1] : null; };
+  const named = (rel) => path.posix.normalize(path.posix.join(path.posix.dirname(manifest.options_ui.page), rel));
+  const wanted = [...page.matchAll(/<script\b[^>]*>/g)].map((m) => named(attr(m[0], "src")));
+  const sheets = [...page.matchAll(/<link\b[^>]*>/g)].filter((m) => attr(m[0], "rel") === "stylesheet").map((m) => named(attr(m[0], "href")));
+  assert.ok(wanted.length > 0 && sheets.length > 0, "the page loads scripts and stylesheets");
   const html = fs.readFileSync(path.join(out, "index.html"), "utf8");
   assert.deepEqual(/data-scripts="([^"]+)"/.exec(html)[1].split(" "), wanted);
   assert.equal(html.match(/<script\b[^>]*\bsrc=/g).length, 1, "the stand-in's tag is the only script that loads a file");
-  assert.ok(html.indexOf("demo-shim.js") > html.indexOf('id="controls"'), "it comes after the page's own markup, like the scripts did");
+  assert.match(html, /<script src="demo-shim\.js"[^>]*><\/script>\s*<\/body>/, "it stands where the page's scripts stood: the end of the body, after the page's own markup");
   assert.match(html, new RegExp(`data-version="${manifest.version}"`));
   for (const m of html.matchAll(/\b(?:src|href)="([^"#:]+)"/g)) assert.ok(fs.existsSync(path.join(out, m[1])), `index.html names ${m[1]}`);
   const folders = fs.readdirSync(path.join(root, "src", "_locales"));
   for (const f of folders) assert.ok(fs.existsSync(path.join(out, "_locales", f, "messages.json")), "strings of " + f);
   assert.ok(fs.existsSync(path.join(out, "demo-shim.js")) && fs.existsSync(path.join(out, "demo.css")));
-  assert.ok(!/__MSG_|chrome-extension:\/\//.test(wanted.concat(["options/options.css", "content/styles.css"]).map((f) => fs.readFileSync(path.join(out, f), "utf8")).join("\n")), "nothing only an extension can read");
+  assert.ok(!/__MSG_|chrome-extension:\/\//.test(wanted.concat(sheets).map((f) => fs.readFileSync(path.join(out, f), "utf8")).join("\n")), "nothing only an extension can read");
 });
 
 test("a small page: files keep their paths under src/, a stylesheet's url() travels with it, the icon is the favicon", () => {

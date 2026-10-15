@@ -98,8 +98,10 @@ try {
   // -- 1. what the build wrote
   const index = fs.readFileSync(path.join(root, "index.html"), "utf8");
   const listed = /data-scripts="([^"]+)"/.exec(index)[1].split(" ");
-  assert.ok(listed.length >= 8 && listed.every((f) => fs.existsSync(path.join(root, f))), "every script the page loads is in the folder");
-  assert.equal(listed[0], "lib/i18n.js", "the page's own order is kept");
+  const pageRel = manifest.options_ui.page;
+  const own = [...fs.readFileSync(path.join(repo, "src", pageRel), "utf8").matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join(path.posix.dirname(pageRel), m[1])));
+  assert.deepEqual(listed, own, "the scripts the page loads, in the page's own order");
+  assert.ok(listed.length > 0 && listed.every((f) => fs.existsSync(path.join(root, f))), "every script the page loads is in the folder");
   assert.ok(!/<script\b[^>]*\bsrc="(?!demo-shim\.js)/.test(index), "no script of the page is left in index.html (the stand-in adds them)");
   assert.equal(new RegExp(`data-version="${manifest.version}"`).test(index), true, "the version is the manifest's");
   assert.deepEqual(fs.readdirSync(path.join(root, "_locales")).sort(), [...codes].sort(), "the strings of every language are in the folder");
