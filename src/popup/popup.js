@@ -83,10 +83,10 @@
         const button = e.target.closest("button") || e.target;
         const paperFormat = kind !== "summary" && kind !== "table";
         if (paperFormat && !data.shown) { say(button, t("copyEmpty"), false); return; }
-        const res = await call("export", { format: kind, ...(paperFormat ? {} : { source }) });
+        const res = await call("export", { format: kind, html: true, ...(paperFormat ? {} : { source }) });
         if (!res || !res.ok) return;
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
-        else if (await copyText(res.result.text)) say(button, t("copied"));
+        else if (await copyText(res.result.text, res.result.html)) say(button, t("copied"));
       };
       const copyKinds = prefs.panel.copy.show ? B.prefs.copyButtons(prefs) : [];
       const copyBar = copyKinds.length ? h("div", { class: "actions" },

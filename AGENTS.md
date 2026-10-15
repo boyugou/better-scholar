@@ -239,7 +239,8 @@ The papers or the summary as text, in the format of a copy button.
 Parameters:
   - `format` (required): summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180).
   - `source`: Which ranking summary and table use (default: the one the panel shows; none: by role only). The other formats ignore it.
-Result: { format, text }
+  - `html`: true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text.
+Result: { format, text, html? } — `html` only when asked for, and only for table, papers and apa.
 
 ### `filter`
 Narrow the list the page shows (the filters of the panel). Only the filters named are changed; null clears a number.

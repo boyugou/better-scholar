@@ -334,16 +334,22 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   const tableLabels = () => ({ year: t("tsvYear"), title: t("tsvTitle"), authors: t("tsvAuthors"), role: t("tsvRole"), venue: t("tsvVenue"), ccf: t("srcCcf"), core: t("srcCore"),
     awards: t("tsvAwards"), citations: t("tsvCitations"), hidden: td("roleHidden"), roles: copyLabels() });
 
+  // The summary of the papers by role and rank, from the list the panel counts. `source`: the ranking it uses (default: the panel's own; "none": by role only).
+  function summaryOf(source) {
+    const list = papers();
+    const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
+    return { summary: metrics.summarize(list, src), src };
+  }
+  const summaryWords = () => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked") });
+
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
   function exportText(kind, { source } = {}) {
     const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core };
     if (kind === "summary" || kind === "table") {
-      const list = papers();
-      const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
-      const summary = metrics.summarize(list, src);
+      const { summary, src } = summaryOf(source);
       return kind === "table"
-        ? formats.summaryTsv(summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked") })
+        ? formats.summaryTsv(summary, summaryWords())
         : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts())].filter(Boolean),
           edition: src ? `${edition[src]} — ${t("tipToday")}` : "" });
     }
@@ -358,6 +364,14 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     }
   }
 
+  // The second flavour of a copy button, for a word processor: a real table for the table and the papers, real italics for APA; "" for the others (their text is the whole of it)
+  function exportHtml(kind, { source } = {}) {
+    if (kind === "table") return formats.summaryHtml(summaryOf(source).summary, summaryWords());
+    if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core });
+    if (kind === "apa") return formats.apaHtml(paperRecords());
+    return "";
+  }
+
   // A copy button pressed: the text goes to the clipboard, or (CSV) to a file; what there is to say is said on the button
   async function deliver(kind) {
     if (kind !== "summary" && kind !== "table" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
@@ -366,7 +380,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
       B.dom.downloadFile((safe || "scholar") + "-papers.csv", text);
       panel.flash(kind);
-    } else if (await copyText(text)) panel.flash(kind);
+    } else if (await copyText(text, exportHtml(kind))) panel.flash(kind);
   }
 
   function clearFocusedRow() {
@@ -613,7 +627,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       };
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
-    export: ({ format, source }) => ({ format, text: exportText(format, { source }) }),
+    export: ({ format, source, html }) => ({ format, text: exportText(format, { source }), ...(html ? { html: exportHtml(format, { source }) } : {}) }),
     filter: (p) => {
       // (a filter with no control left to undo it would hide rows for good)
       if (!prefs.panel.show) throw new Error("the panel is off in the settings, so nothing could undo a filter");

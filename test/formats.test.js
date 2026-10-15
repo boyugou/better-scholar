@@ -170,3 +170,36 @@ test("the text formats: a journal titled as a proceedings, a name with 'and', ac
   assert.ok(!/… Name24/.test(cut), "a cut list does not name its last visible author as the last");
   assert.match(f.markdown([paper({ authors: "- Jane Doe" })]), /\n {3}\\- Jane Doe/);
 });
+
+test("html: the tables are real tables, every text is escaped, a spreadsheet formula is made text, the header is the same as the text form's", () => {
+  const t = f.papersHtml([paper({ title: "A <b>bold</b> & \"quoted\" title", authors: "A <i>Author</i>", year: 2020 }), paper({ title: "=HYPERLINK(\"http://x\")" })], { labels });
+  assert.match(t, /^<table border="1" cellspacing="0" cellpadding="4">\n<thead><tr><th>Year<\/th><th>Title<\/th><th>Authors<\/th><th>Role<\/th><th>Venue<\/th><th>CCF<\/th><th>CORE<\/th><th>Awards<\/th><th>Cited by<\/th><\/tr><\/thead>/);
+  assert.equal((t.match(/<tr>/g) || []).length, 3, "the header and the two papers");
+  assert.ok(t.includes("<td>A &lt;b&gt;bold&lt;/b&gt; &amp; &quot;quoted&quot; title</td>"), t);
+  assert.ok(t.includes("<td>A &lt;i&gt;Author&lt;/i&gt;</td>"));
+  assert.ok(t.includes("<td>&#39;=HYPERLINK(&quot;http://x&quot;)</td>"), "a formula is text: the leading apostrophe, as in the tab-separated form");
+  assert.doesNotMatch(t, /<b>|<i>|<script/i, "nothing a title says is markup");
+  const tsvHeader = f.papersTsv([paper()], { labels }).split("\n")[0].split("\t");
+  assert.deepEqual([...f.papersHtml([paper()], { labels }).matchAll(/<th>([^<]*)<\/th>/g)].map((m) => m[1]), tsvHeader);
+  // the lists that are off leave their columns out, as in the text form
+  assert.doesNotMatch(f.papersHtml([paper()], { labels, ccfOn: false, coreOn: false }), /<th>CCF<\/th>|<th>CORE<\/th>/);
+  // the summary table: a row per role, then the totals
+  const summary = metrics.summarize([row("first", "A"), row("first", "B"), row("last", "A")], "ccf");
+  const sh = f.summaryHtml(summary, { label: labels.roles, header: "Role", total: "Total", notRanked: "Unranked" });
+  const cells = [...sh.matchAll(/<tr>(.*)<\/tr>/g)].map((m) => [...m[1].matchAll(/<t[hd]>([^<]*)<\/t[hd]>/g)].map((c) => c[1]));
+  assert.deepEqual(cells, f.summaryTsv(summary, { label: labels.roles }).split("\n").map((l) => l.split("\t")), "the same cells as the tab-separated table");
+  assert.deepEqual(f.summaryTable(summary).rows.at(-1)[0], "", "the totals row has no role");
+});
+
+test("html: the reference list has real italics for the venue (the full stop stays outside), a link for a web address only, a hanging indent, and the text form is unchanged", () => {
+  const list = [paper({ authors: "I Stoica, R Morris", year: 2001, venue: "ACM SIGCOMM <CCR>", title: "Chord & co" }), paper({ venue: "Nature.", url: "javascript:alert(1)" }), paper({ venue: "", url: "" })];
+  const html = f.apaHtml(list).split("\n");
+  assert.equal(html.length, 3, "a paragraph each");
+  assert.ok(html[0].startsWith('<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">Stoica, I., &amp; Morris, R. (2001). Chord &amp; co. <i>ACM SIGCOMM &lt;CCR&gt;</i>. <a href="https://scholar.google.com/citations?view_op=view_citation&amp;citation_for_view=123">'), html[0]);
+  assert.ok(html[1].includes("<i>Nature.</i> javascript:alert(1)</p>"), "the venue's own full stop is inside the italics, and a script address is only text");
+  assert.doesNotMatch(html[1], /<a /);
+  assert.doesNotMatch(html[2], /<i>|<a /, "no venue, no address: nothing to italicise or link");
+  // the text form (asterisks for the italics) is what it was
+  assert.equal(f.apa(list).split("\n\n")[0], "Stoica, I., & Morris, R. (2001). Chord & co. *ACM SIGCOMM <CCR>*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123");
+  assert.ok(f.apa(list).split("\n\n")[1].includes("*Nature.* javascript:alert(1)"));
+});

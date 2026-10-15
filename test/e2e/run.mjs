@@ -821,12 +821,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.click('[data-act="copy-table"]');
     const tsv = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(tsv.split("\n")[0], /^Role\tA\tB\tC\tNot ranked\tTotal$/);
-    ok("Copy summary / Copy as table put the expected text on the clipboard");
+    // (the clipboard's flavours: the table also has its HTML, a real table for a word processor; the summary is text only)
+    const flavours = () => page.evaluate(async () => { const out = {}; for (const item of await navigator.clipboard.read()) for (const type of item.types) out[type] = await (await item.getType(type)).text(); return out; });
+    const richTable = await flavours();
+    assert.equal(richTable["text/plain"], tsv);
+    assert.match(richTable["text/html"], /<table[^>]*>[\s\S]*<th>Role<\/th><th>A<\/th><th>B<\/th><th>C<\/th><th>Not ranked<\/th><th>Total<\/th>/);
+    ok("Copy summary / Copy as table put the expected text on the clipboard, and the table also as a real table (HTML)");
     // "Copy papers": the papers shown now, one line each
     await page.click('[data-act="copy-papers"]');
     const paperRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n").map((l) => l.split("\t"));
     assert.deepEqual(paperRows[0], ["Year", "Title", "Authors", "Role", "Venue", "CCF", "CORE", "Awards & talks", "Citations"]);
     assert.equal(paperRows.length, 1 + 100, "the header and the hundred papers loaded");
+    assert.equal(((await flavours())["text/html"].match(/<tr>/g) || []).length, 1 + 100, "the papers also as a real table: the header and the hundred papers");
     const exp = expected(profile);
     assert.equal(paperRows[1][1], profile.rows[0].title);
     assert.equal(paperRows[1][8], String(profile.rows[0].cites));
@@ -861,6 +867,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const apa = await page.evaluate(() => navigator.clipboard.readText());
     assert.ok(apa.includes("(2001).") || apa.includes("(2010)."));
     assert.ok(apa.includes("Stoica, I.") || apa.includes("Paper number 1"));
+    const apaFlavours = await flavours();
+    assert.match(apaFlavours["text/html"], /<p style="[^"]*text-indent:-0\.5in">[^<]*<i>[^<]+<\/i>/, "the APA list also with real italics for a word processor");
+    assert.equal(apaFlavours["text/plain"], apa);
     assert.equal(await page.locator('[data-act="copy-apa"]').textContent(), "Copied");
     ok("Copy APA generates standard APA 7th reference list with authors, year, title and venue");
 

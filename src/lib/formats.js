@@ -42,12 +42,17 @@
     return lines.join("\n");
   }
 
-  // The summary table, tab-separated, for a spreadsheet.
-  function summaryTsv(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
-    const lines = [[header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total].join("\t")];
-    for (const r of summary.rows) lines.push([label[r.role], ...summary.columns.map((c) => r[c]), r.total].join("\t"));
-    lines.push(["", ...summary.columns.map((c) => summary.totals[c]), summary.totals.total].join("\t"));
-    return lines.join("\n");
+  // The summary table: a header and one row per role, then the totals.
+  function summaryTable(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
+    return {
+      header: [header, ...summary.columns.map((c) => (c === NONE ? notRanked : c)), total],
+      rows: [...summary.rows.map((r) => [label[r.role], ...summary.columns.map((c) => r[c]), r.total]), ["", ...summary.columns.map((c) => summary.totals[c]), summary.totals.total]]
+    };
+  }
+  // The same table, tab-separated, for a spreadsheet.
+  function summaryTsv(summary, opts) {
+    const t = summaryTable(summary, opts);
+    return [t.header, ...t.rows].map((r) => r.join("\t")).join("\n");
   }
 
   // ---- tables: tab-separated and CSV ----------------------------------------------------------------------------------------------------------
@@ -84,6 +89,18 @@
   }
   const papersTsv = (papers, ctx) => { const t = table(papers, ctx); return rowsTsv(t.header, t.rows); };
   const papersCsv = (papers, ctx) => { const t = table(papers, ctx); return rowsCsv(t.header, t.rows); };
+
+  // ---- the clipboard's second flavour: HTML -------------------------------------------------------------------------------------------------------
+  // A word processor (Word, Docs, Pages) takes what is on the clipboard as HTML where a spreadsheet or a text box takes the text: the same table becomes a real table
+  // there and the reference list gets real italics. Every text is escaped; a cell is as safe as in the tab-separated form (a spreadsheet reads HTML cells too).
+  const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ESC[c]);
+  function rowsHtml(header, rows) {
+    const cell = (tag) => (v) => `<${tag}>${esc(formulaSafe(clean(v)))}</${tag}>`;
+    return `<table border="1" cellspacing="0" cellpadding="4">\n<thead><tr>${header.map(cell("th")).join("")}</tr></thead>\n<tbody>\n${rows.map((r) => `<tr>${r.map(cell("td")).join("")}</tr>`).join("\n")}\n</tbody>\n</table>`;
+  }
+  const papersHtml = (papers, ctx) => { const t = table(papers, ctx); return rowsHtml(t.header, t.rows); };
+  const summaryHtml = (summary, opts) => { const t = summaryTable(summary, opts); return rowsHtml(t.header, t.rows); };
 
   // ---- BibTeX -----------------------------------------------------------------------------------------------------------------------------------
   // Everything that means something to TeX is made into the text it spells, so that an entry compiles whatever the title says (and a title cannot carry a command).
@@ -191,26 +208,33 @@
     return `${parts.slice(at).join(" ")}, ${initialsOf(parts.slice(0, at).join(" "))}`;
   }
 
-  // Reference-list entries: Authors (Year). Title. *Venue*. url   (the asterisks mark the italics, as in a Markdown or plain-text reference list)
-  function apa(papers) {
-    return papers.map((p) => {
-      const { names, cut } = authorList(p.authors);
-      const list = names.map(apaAuthor).filter(Boolean);
-      let by = "";
-      if (list.length === 1) by = list[0] + (cut ? ", …" : "");
-      else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
-      else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
-      else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
-      if (by && !/[.!?…]$/.test(by)) by += ".";
-      let title = clean(p.title);
-      if (title && !/[.?!]$/.test(title)) title += ".";
-      const venue = clean(p.venue);
-      return [by, p.year ? `(${p.year}).` : "(n.d.).", title, venue ? (venue.endsWith(".") ? `*${venue}*` : `*${venue}*.`) : "", p.url].filter(Boolean).join(" ");
-    }).join("\n\n");
+  // One reference as pieces: { t } text, { t, em: true } italics (its full stop follows outside them unless the venue's own text ends with one), { t, url: true } the address.
+  function apaPieces(p) {
+    const { names, cut } = authorList(p.authors);
+    const list = names.map(apaAuthor).filter(Boolean);
+    let by = "";
+    if (list.length === 1) by = list[0] + (cut ? ", …" : "");
+    else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
+    else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
+    else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
+    if (by && !/[.!?…]$/.test(by)) by += ".";
+    let title = clean(p.title);
+    if (title && !/[.?!]$/.test(title)) title += ".";
+    const venue = clean(p.venue);
+    return [by && { t: by }, { t: p.year ? `(${p.year}).` : "(n.d.)." }, title && { t: title }, venue && { t: venue, em: true, dot: !venue.endsWith(".") }, p.url && { t: p.url, url: true }].filter(Boolean);
   }
+
+  // Reference-list entries: Authors (Year). Title. *Venue*. url   (the asterisks mark the italics, as in a Markdown or plain-text reference list)
+  const apa = (papers) => papers.map((p) => apaPieces(p).map((x) => (x.em ? `*${x.t}*${x.dot ? "." : ""}` : x.t)).join(" ")).join("\n\n");
+
+  // The same list for a word processor: a paragraph each, the venue in real italics, the address a link (web addresses only), a hanging indent of half an inch (APA 7)
+  const apaHtml = (papers) => papers.map((p) => {
+    const html = apaPieces(p).map((x) => (x.em ? `<i>${esc(x.t)}</i>${x.dot ? "." : ""}` : x.url && /^https?:\/\//i.test(x.t) ? `<a href="${esc(x.t)}">${esc(x.t)}</a>` : esc(x.t))).join(" ");
+    return `<p style="margin:0 0 0.6em 0.5in;text-indent:-0.5in">${html}</p>`;
+  }).join("\n");
 
   // ---- JSON ---------------------------------------------------------------------------------------------------------------------------------------
   const json = ({ owner, source, papers }) => JSON.stringify({ owner, source, total: papers.length, papers }, null, 2);
 
-  return { ROLE_LABEL, summaryText, summaryTsv, rowsTsv, rowsCsv, table, papersTsv, papersCsv, bibtex, markdown, apa, apaAuthor, json };
+  return { ROLE_LABEL, summaryText, summaryTable, summaryTsv, summaryHtml, rowsTsv, rowsCsv, rowsHtml, table, papersTsv, papersCsv, papersHtml, bibtex, markdown, apa, apaHtml, apaAuthor, json };
 });

@@ -88,7 +88,14 @@
     return t(key, subs);
   }
 
-  async function copyText(text) {
+  // The text goes to the clipboard. With `html` the clipboard holds both: a word processor takes the HTML (a real table, real italics) where a text box or a spreadsheet takes the text.
+  async function copyText(text, html) {
+    if (html && typeof ClipboardItem === "function") {
+      try {
+        await navigator.clipboard.write([new ClipboardItem({ "text/plain": new Blob([text], { type: "text/plain" }), "text/html": new Blob([html], { type: "text/html" }) })]);
+        return true;
+      } catch (e) { /* the text alone, below */ }
+    }
     try {
       await navigator.clipboard.writeText(text);
       return true;
