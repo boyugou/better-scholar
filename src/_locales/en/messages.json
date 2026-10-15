@@ -497,7 +497,7 @@
     "message": "Reset all of these settings to their defaults?"
   },
   "optStorage": {
-    "message": "Settings are stored in your browser and sync with your Chrome profile. Nothing is sent anywhere unless you switch on Semantic Scholar."
+    "message": "Settings stay in your browser and sync with your Chrome profile. Scholar pages are read only when you open them, and paper titles go to Semantic Scholar only if you switch that on."
   },
   "optSample": {
     "message": "Sample paper"
