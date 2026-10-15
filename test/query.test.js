@@ -104,3 +104,9 @@ test("a hostile query is read quickly and cannot be made to run long", () => {
   assert.ok(Date.now() - t0 < 2000, "took " + (Date.now() - t0) + " ms");
   assert.equal(query.parse("a ".repeat(100000)).terms.length < 4100, true, "the query is cut at 8000 characters");
 });
+
+test("a ranking that is switched off is not searched", () => {
+  assert.equal(analysis.queryMatcher("ccf:a", undefined, { ccf: false, core: true }).test(paper), false);
+  assert.equal(analysis.queryMatcher("core:a*", undefined, { ccf: false, core: true }).test(paper), true);
+  assert.equal(analysis.queryMatcher("CVPR", undefined, { ccf: false, core: false }).test(paper), true, "the venue's text is not a rank");
+});

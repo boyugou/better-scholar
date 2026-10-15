@@ -95,6 +95,7 @@
     const venue = clean(p.venue);
     if (!venue) return { type: "misc", field: "" };
     if (/patent\b/i.test(venue)) return { type: "misc", field: "howpublished" };
+    if (/^proceedings of the (?:ieee|national academy of sciences)$/i.test(venue)) return { type: "article", field: "journal" };   // (journals literally titled so)
     if (/arxiv\b|biorxiv\b|medrxiv\b/i.test(venue) || p.type === "journal") return { type: "article", field: "journal" };
     if (p.type === "conference") return { type: "inproceedings", field: "booktitle" };
     if (/journal|transactions|letters|review|annals|magazine|ieee\/acm trans/i.test(venue)) return { type: "article", field: "journal" };
@@ -122,7 +123,7 @@
       const notes = [...rankNotes(p, ctx), ...p.marks.map(tex)];
       const fields = [
         `  title = {${tex(p.title)}}`,
-        names.length ? `  author = {${[...names.map(tex), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
+        names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(n))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
         field && venue ? `  ${field} = {${venue}}` : null,
         year ? `  year = {${year}}` : null,
         p.url ? `  url = {${p.url}}` : null,
@@ -139,6 +140,8 @@
   // What the authors typed cannot become markup: the characters Markdown reads are escaped (and a title cannot close its own link).
   const md = (s) => clean(s).replace(/[\\`*_{}[\]()<>#|~]/g, "\\$&");
   const mdUrl = (u) => u.replace(/[()\s<>]/g, (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase().padStart(2, "0"));
+  // a line that begins like a list ("- Name", "1. Name") would become one: its marker is escaped
+  const mdLead = (s) => s.replace(/^(\s*)([-+])(?=\s)/, "$1\\$2").replace(/^(\s*)(\d+)([.)])(?=\s)/, "$1$2\\$3");
   function markdown(papers, ctx = {}) {
     return papers.map((p, i) => {
       const title = md(p.title), venue = md(p.venue), year = p.year ? String(p.year) : "";
@@ -151,7 +154,7 @@
       if (p.marks.length) meta.push(p.marks.map((m) => `★ ${md(m)}`).join(" · "));
       if (Number.isFinite(p.citations) && p.citations > 0) meta.push(`Cited by ${p.citations.toLocaleString("en-US")}`);
       const lines = [`${i + 1}. ${p.url ? `**[${title}](${mdUrl(p.url)})**` : `**${title}**`}`];
-      if (clean(p.authors)) lines.push(`   ${md(p.authors)}`);
+      if (clean(p.authors)) lines.push(`   ${mdLead(md(p.authors))}`);
       if (meta.length) lines.push(`   ${meta.join(" · ")}`);
       return lines.join("  \n");
     }).join("\n\n");
@@ -159,11 +162,21 @@
 
   // ---- APA 7th edition ----------------------------------------------------------------------------------------------------------------------------
   // The words that belong to the surname when they stand in front of it ("van der Maaten", "de León").
-  const PARTICLE = new Set(["van", "von", "der", "den", "de", "del", "della", "di", "da", "dos", "das", "du", "la", "le", "ter", "ten", "bin", "ibn", "al", "el", "st", "st."]);
-  const initialsOf = (given) => given.split(/\s+/).filter(Boolean).map((g) => (/^[A-Z]{2,3}$/.test(g) ? g.split("").join(". ") + "." : g.split("-").map((x) => (x.endsWith(".") ? x : x.charAt(0).toUpperCase() + ".")).join("-"))).join(" ");
+  const PARTICLE = new Set(["van", "von", "der", "den", "de", "del", "della", "di", "da", "dos", "das", "du", "la", "le", "ter", "ten"]);
+  const initialsOf = (given) => given.split(/\s+/).filter(Boolean).map((g) => (/^\p{Lu}{2,3}$/u.test(g) ? g.split("").join(". ") + "." : g.split("-").map((x) => (x.endsWith(".") ? x : x.charAt(0).toUpperCase() + ".")).join("-"))).join(" ");
 
   // "I Stoica" → "Stoica, I."; "MF Kaashoek" → "Kaashoek, M. F."; "L van der Maaten" → "van der Maaten, L."; "Jane Doe" → "Doe, J."
+  // "Smith Jr." and "Smith II" keep their suffix after the initials (APA: "Smith, J., Jr.")
   function apaAuthor(name) {
+    const raw = clean(name);
+    const m = /\s+(jr\.?|sr\.?|i{2,3}|iv)$/i.exec(raw);
+    if (!m || CUT.test(raw)) return apaName(raw);
+    const s = m[1].toLowerCase(), suffix = s.startsWith("jr") ? "Jr." : s.startsWith("sr") ? "Sr." : s.toUpperCase();
+    const base = apaName(raw.slice(0, m.index));
+    return base ? `${base}, ${suffix}` : "";
+  }
+
+  function apaName(name) {
     const raw = clean(name);
     if (!raw || CUT.test(raw)) return "";
     if (raw.includes(",")) {
@@ -186,7 +199,7 @@
       let by = "";
       if (list.length === 1) by = list[0] + (cut ? ", …" : "");
       else if (list.length === 2 && !cut) by = `${list[0]}, & ${list[1]}`;
-      else if (list.length > 20) by = `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;
+      else if (list.length > 20) by = cut ? `${list.slice(0, 19).join(", ")}, …` : `${list.slice(0, 19).join(", ")}, … ${list[list.length - 1]}`;   // (a cut list does not know its last author)
       else if (list.length > 1) by = cut ? `${list.join(", ")}, …` : `${list.slice(0, -1).join(", ")}, & ${list[list.length - 1]}`;
       if (by && !/[.!?…]$/.test(by)) by += ".";
       let title = clean(p.title);

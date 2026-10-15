@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "논문 1편"
   },
@@ -413,10 +405,10 @@
     "message": "수상 및 발표"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "복사 및 내보내기"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "표시된 논문 또는 요약을 텍스트로 복사하거나 저장하는 버튼을 고릅니다. 패널과 도구 모음 팝업에도 같은 버튼이 나타납니다. 모두 끄면 복사 버튼 줄이 나타나지 않습니다."
   },
   "optMarkAwardHint": {
     "message": "최우수·우수·탁월 논문상, 장려상, 시간의 시험상, 최우수 논문상 후보."
@@ -434,7 +426,7 @@
     "message": "순서×등급 표"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "논문을 순서와 등급별로 정리한 표입니다. 등급의 출처에 대한 안내도 함께 있습니다."
   },
   "optPanelMarks": {
     "message": "수상·발표 개수"
@@ -549,7 +541,7 @@
     "message": "CSV 내보내기"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "복사할 내용 없음"
   },
   "exported": {
     "message": "내보냄"
@@ -647,25 +639,25 @@
     "message": "기본 색상으로 되돌리기"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "색상 테마"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "기본"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "차가운 색"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "따뜻한 색"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "고대비"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "부드러운 색"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Scholar의 흰 페이지와 이 색의 대비. 3:1 이상이면 행의 막대가 잘 보입니다."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight 및 Highlight"
@@ -835,7 +827,7 @@
     "message": "제목 또는 저자로 필터링…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "/ 키를 눌러 검색"
   },
   "venuesShowMore": {
     "message": "더보기"
@@ -859,7 +851,7 @@
     "message": "설정 및 프리셋"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "JSON 형식의 설정: 복사하거나, 파일로 저장하거나, 파일을 불러오거나, 편집기에 변경 내용을 붙여 넣을 수 있습니다. 프리셋은 이름을 적은 항목만 바꾸며, 페이지는 적용한 항목과 적용하지 않은 항목을 알려 줍니다."
   },
   "optConfigCopy": {
     "message": "설정 복사 (JSON)"
@@ -871,13 +863,13 @@
     "message": "파일 가져오기"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "설정 붙여넣기·편집 (JSON)"
   },
   "optConfigApply": {
     "message": "설정 적용"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "적용된 변경: $N1$건",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "바꿀 것이 없습니다. 설정에 이미 그렇게 되어 있습니다."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "적용하지 않음:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "올바른 JSON이 아닙니다: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI 에이전트"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "모든 설정, 각 설정의 값, 현재 선택을 담은 안내를 복사하세요. AI 도우미에 붙여 넣고 원하는 것을 말한 다음, 받은 답변을 아래 설정 편집기에 붙여 넣고 “설정 적용”을 누르세요."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "에이전트용 안내 복사"
   },
   "optConfigPreset": {
     "message": "프리셋"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "마지막 저자 중심"
   },
   "optPresetFull": {
     "message": "모든 기능 켜기"
@@ -926,10 +918,10 @@
     "message": "저장된 세부 정보 보기"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "설정 검색…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "검색 지우기"
   },
   "optCacheTitle": {
     "message": "저장된 논문 세부 정보"
@@ -944,7 +936,7 @@
     "message": "이 기기에 아직 저장된 논문 세부 정보가 없습니다."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "$N2$편 중 $N1$편 표시",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "출처"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "닫기"
   }
 }

@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Buka Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "Penghargaan dan presentasi"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Salin & ekspor"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Pilih tombol mana yang menyalin atau menyimpan makalah yang ditampilkan, atau ringkasan, sebagai teks. Panel dan popup bilah alat menawarkan tombol yang sama; jika tidak ada yang aktif, tidak ada baris salin."
   },
   "optMarkAwardHint": {
     "message": "Makalah terbaik, unggul, dan terkemuka, penghargaan khusus, test of time, dan finalis makalah terbaik."
@@ -419,7 +411,7 @@
     "message": "Tabel peran × peringkat"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabel makalah Anda menurut posisi dan peringkat, dengan catatan tentang sumber peringkat."
   },
   "optPanelMarks": {
     "message": "Jumlah penghargaan dan presentasi"
@@ -531,7 +523,7 @@
     "message": "Ekspor CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Tidak ada yang disalin"
   },
   "exported": {
     "message": "Diekspor"
@@ -629,25 +621,25 @@
     "message": "Kembali ke warna standar"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Tema warna"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Bawaan"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Sejuk"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Hangat"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Kontras tinggi"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Lembut"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Kontras warna ini dengan halaman putih Scholar. 3:1 atau lebih membuat bilah baris tetap terlihat."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
@@ -814,7 +806,7 @@
     "message": "Filter berdasarkan judul atau penulis…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Tekan / untuk mencari"
   },
   "venuesShowMore": {
     "message": "Tampilkan lebih banyak"
@@ -838,7 +830,7 @@
     "message": "Konfigurasi & preset"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Pengaturan dalam JSON: salin, simpan ke berkas, muat berkas, atau tempel perubahan ke editor. Preset hanya mengubah yang disebutkannya, dan halaman menunjukkan apa yang diterapkan dan apa yang diabaikan."
   },
   "optConfigCopy": {
     "message": "Salin konfigurasi (JSON)"
@@ -850,13 +842,13 @@
     "message": "Impor berkas"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Tempel atau ubah konfigurasi (JSON)"
   },
   "optConfigApply": {
     "message": "Terapkan konfigurasi"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Perubahan diterapkan: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Tidak ada yang perlu diubah: pengaturan sudah sesuai."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Tidak diterapkan:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Ini bukan JSON yang valid: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Agen AI"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Salin panduan yang memuat semua pengaturan, nilainya, dan pilihan Anda saat ini. Tempel ke asisten AI Anda, sampaikan apa yang Anda inginkan, lalu tempel jawabannya ke editor konfigurasi di bawah dan tekan Terapkan konfigurasi."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Salin panduan agen AI"
   },
   "optConfigPreset": {
     "message": "Preset"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Fokus penulis terakhir"
   },
   "optPresetFull": {
     "message": "Semua fitur"
@@ -905,10 +897,10 @@
     "message": "Lihat detail tersimpan"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Cari pengaturan…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Hapus pencarian"
   },
   "optCacheTitle": {
     "message": "Detail Makalah Tersimpan"
@@ -923,7 +915,7 @@
     "message": "Belum ada detail makalah yang disimpan di perangkat ini."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Ditampilkan: $N1$ dari $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Dibaca dari"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Tutup"
   }
 }

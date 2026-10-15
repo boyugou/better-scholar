@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Google Scholar खोलें"
   },
@@ -398,10 +390,10 @@
     "message": "पुरस्कार और टॉक"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "कॉपी और निर्यात"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "चुनें कि कौन-से बटन दिखाए गए पेपर या सारांश को टेक्स्ट के रूप में कॉपी या सहेजते हैं। पैनल और टूलबार पॉपअप में वही बटन होते हैं; कोई भी चालू न हो, तो कॉपी की पंक्ति नहीं दिखती।"
   },
   "optMarkAwardHint": {
     "message": "सर्वश्रेष्ठ, उत्कृष्ट और विशिष्ट पेपर, उल्लेखनीय सम्मान, test of time और सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट।"
@@ -419,7 +411,7 @@
     "message": "भूमिका × रैंक तालिका"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "आपके पेपर की तालिका, स्थिति और रैंक के अनुसार, साथ में यह नोट कि रैंक कहाँ से आते हैं।"
   },
   "optPanelMarks": {
     "message": "पुरस्कार और टॉक की गिनती"
@@ -534,7 +526,7 @@
     "message": "CSV निर्यात करें"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "कॉपी करने को कुछ नहीं"
   },
   "exported": {
     "message": "निर्यात किया गया"
@@ -632,25 +624,25 @@
     "message": "मानक रंगों पर लौटें"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "रंग थीम"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "डिफ़ॉल्ट"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "ठंडा"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "गरम"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "उच्च कंट्रास्ट"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "नरम"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Scholar के सफ़ेद पेज के मुकाबले इस रंग का कंट्रास्ट। 3:1 या उससे अधिक होने पर पंक्ति की पट्टी दिखती रहती है।"
   },
   "markSpotlightHighlight": {
     "message": "Spotlight और Highlight"
@@ -820,7 +812,7 @@
     "message": "शीर्षक या लेखक के अनुसार फ़िल्टर करें…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "/ दबाकर खोजें"
   },
   "venuesShowMore": {
     "message": "और दिखाएं"
@@ -844,7 +836,7 @@
     "message": "कॉन्फ़िगरेशन और प्रीसेट"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "सेटिंग्स JSON के रूप में: उन्हें कॉपी करें, फ़ाइल में सहेजें, फ़ाइल लोड करें, या एडिटर में कोई बदलाव पेस्ट करें। प्रीसेट सिर्फ़ उन्हीं सेटिंग्स को बदलता है जिनका वह नाम लेता है, और पेज बताता है कि उसने क्या लागू किया और क्या नज़रअंदाज़ किया।"
   },
   "optConfigCopy": {
     "message": "कॉन्फ़िगरेशन कॉपी करें (JSON)"
@@ -856,13 +848,13 @@
     "message": "फ़ाइल आयात करें"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "कॉन्फ़िगरेशन (JSON) पेस्ट करें या संपादित करें"
   },
   "optConfigApply": {
     "message": "कॉन्फ़िगरेशन लागू करें"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "बदलाव लागू किए गए: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -870,13 +862,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "बदलने के लिए कुछ नहीं: सेटिंग्स में यह पहले से ही है।"
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "लागू नहीं हुआ:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "यह वैध JSON नहीं है: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -884,19 +876,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI एजेंट"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "हर सेटिंग, उसके मान और आपकी मौजूदा पसंद की सूची देने वाली गाइड कॉपी करें। उसे अपने AI सहायक में पेस्ट करें, बताएँ कि आपको क्या चाहिए, फिर नीचे के कॉन्फ़िगरेशन एडिटर में उसका जवाब पेस्ट करें और कॉन्फ़िगरेशन लागू करें बटन दबाएँ।"
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "AI के लिए गाइड कॉपी करें"
   },
   "optConfigPreset": {
     "message": "प्रीसेट"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "अंतिम लेखक प्राथमिकता"
   },
   "optPresetFull": {
     "message": "सभी सुविधाएँ"
@@ -911,10 +903,10 @@
     "message": "सहेजे गए विवरण देखें"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "सेटिंग्स में खोजें…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "खोज साफ़ करें"
   },
   "optCacheTitle": {
     "message": "सहेजे गए शोधपत्र विवरण"
@@ -929,7 +921,7 @@
     "message": "इस डिवाइस पर अभी तक कोई शोधपत्र विवरण सहेजा नहीं गया है।"
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "दिखाए गए: $N2$ में से $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -940,9 +932,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "स्रोत"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "बंद करें"
   }
 }

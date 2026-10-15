@@ -86,7 +86,8 @@
     const summarySec = h("div", { class: "rr-sec rr-summary" }, summaryHead, matrixBox, noteBox);
     // the copy row: one button for each format that is switched on (the settings' copy.*), whether or not the table is shown
     const actions = h("div", { class: "rr-actions rr-copybar" });
-    const copySec = h("div", { class: "rr-sec rr-copy", "data-rr": "export-row" }, actions);
+    const flashSr = h("span", { class: "rr-sr", role: "status", "aria-live": "polite" });       // what a copy button says, for a screen reader (apart from the status lines)
+    const copySec = h("div", { class: "rr-sec rr-copy", "data-rr": "export-row" }, actions, flashSr);
 
     // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies
     const marksRows = h("div", { class: "rr-markrows" });
@@ -117,9 +118,13 @@
     const OP_DESC = { "role:first": "roleFirst", "role:cofirst": "roleCofirst", "role:second": "roleSecond", "role:last": "roleLast", "has:award": "markAward", "has:talk": "markTalks" };
     const OPERATOR_ITEMS = B.query.OPERATORS.flatMap((o) => o.suggest.map((op) => ({ op, name: o.name, group: OP_GROUP[o.name], tag: t(OP_TAG[o.name]), desc: OP_DESC[op] ? t(OP_DESC[op]) : "" })));
 
+    // a word that names an operator but has no colon yet is completed, not kept
+    const OPERATOR_NAME = /^(?:role|ccf|core|cites|year|has)$/i;
     let activeSuggestIdx = -1;
     let currentSuggestions = [];
 
+    // (the list scrolls itself, with the arrow keys: that is not a reason to close it)
+    const onSuggestScroll = (e) => { if (!suggestList.contains(e.target)) closeSuggest(); };
     function closeSuggest() {
       suggestList.hidden = true;
       activeSuggestIdx = -1;
@@ -128,7 +133,7 @@
       queryInput.setAttribute("aria-expanded", "false");
       queryInput.removeAttribute("aria-activedescendant");
       window.removeEventListener("resize", closeSuggest);
-      window.removeEventListener("scroll", closeSuggest, true);
+      window.removeEventListener("scroll", onSuggestScroll, true);
     }
 
     function highlightSuggestItem(idx) {
@@ -155,7 +160,7 @@
       const val = queryInput.value;
       const { word, start, end } = getCurrentWordInfo();
       let next;
-      if (word) {
+      if (word && (word.includes(":") || OPERATOR_NAME.test(word))) {
         next = val.slice(0, start) + item.op + " " + val.slice(end);
       } else {
         next = (val.trim() ? val.trim() + " " : "") + item.op + " ";
@@ -208,11 +213,12 @@
       const r = queryInput.getBoundingClientRect();
       suggestList.style.left = r.left + "px";
       suggestList.style.minWidth = r.width + "px";
-      const room = window.innerHeight - r.bottom - 12;
-      suggestList.style.maxHeight = Math.max(120, Math.min(260, room)) + "px";
-      suggestList.style.top = r.bottom + 4 + "px";
+      const below = window.innerHeight - r.bottom - 12, up = below < 150 && r.top > below;
+      suggestList.style.maxHeight = Math.max(120, Math.min(260, up ? r.top - 12 : below)) + "px";
+      if (up) { suggestList.style.top = ""; suggestList.style.bottom = (window.innerHeight - r.top + 4) + "px"; }
+      else { suggestList.style.bottom = ""; suggestList.style.top = r.bottom + 4 + "px"; }
       window.addEventListener("resize", closeSuggest);
-      window.addEventListener("scroll", closeSuggest, true);
+      window.addEventListener("scroll", onSuggestScroll, true);
     }
 
     document.addEventListener("pointerdown", (e) => {
@@ -449,11 +455,14 @@
     function renderActions(m) {
       const on = B.prefs.copyButtons(m.prefs);
       copySec.hidden = !on.length;
+      const focused = focusKeyOf(document.activeElement);                 // (the buttons are drawn again: the keyboard stays on the one that had the focus)
       actions.replaceChildren(...on.map((kind) => {
         const flashed = ui.flash && ui.flash.kind === kind;
-        return h("button", { class: "rr-btn" + (flashed ? " rr-btn-flashed" : ""), type: "button", "data-act": "copy-" + kind, onClick: () => cb.onCopy(kind) },
+        const cls = "rr-btn" + (flashed && ui.flash.mode !== "empty" ? " rr-btn-flashed" : "");
+        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, onClick: () => cb.onCopy(kind) },
           flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
       }));
+      restoreFocus(focused);
     }
     // what a copy button says for a moment after it was pressed: done, or why nothing was copied
     const flashText = () => (ui.flash.mode === "empty" ? t("copyEmpty") : ui.flash.kind === "csv" ? t("exported") : t("copied"));
@@ -534,7 +543,7 @@
     }
 
     function syncFilters(m) {
-      if (queryInput.value.trim().toLowerCase() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
+      if (queryInput.value.trim() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
       syncSearchUI(m);
       onlyCb.checked = !!m.filters.onlyHighlighted;
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
@@ -723,9 +732,9 @@
     function flash(kind, mode) {
       ui.flash = { kind, mode };
       if (lastModel) renderActions(lastModel);
-      announce.textContent = flashText();
+      flashSr.textContent = flashText();
       clearTimeout(flashTimer);
-      flashTimer = setTimeout(() => { ui.flash = null; if (lastModel) renderActions(lastModel); announce.textContent = ""; }, 1400);
+      flashTimer = setTimeout(() => { ui.flash = null; if (lastModel) renderActions(lastModel); flashSr.textContent = ""; }, 1400);
     }
 
     function focusSearch() {

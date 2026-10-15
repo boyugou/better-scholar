@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "فتح Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "الجوائز والعروض"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "النسخ والتصدير"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "الأزرار التي تنسخ الأوراق المعروضة أو الملخص كنص، أو تحفظها. تعرض اللوحة ونافذة شريط الأدوات المنبثقة الأزرار نفسها، وإذا لم يكن أي منها مفعّلًا فلا يظهر صف النسخ."
   },
   "optMarkAwardHint": {
     "message": "أفضل ورقة ومتميزة ومرموقة، والتنويه الشرفي، وTest of time، ومتأهلو نهائيات أفضل ورقة."
@@ -419,7 +411,7 @@
     "message": "جدول الدور × التصنيف"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "جدول أوراقك حسب الموضع والتصنيف، مع ملاحظة عن مصدر التصنيفات."
   },
   "optPanelMarks": {
     "message": "أعداد الجوائز والعروض"
@@ -531,7 +523,7 @@
     "message": "تصدير CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "لا شيء للنسخ"
   },
   "exported": {
     "message": "تم التصدير"
@@ -629,25 +621,25 @@
     "message": "العودة إلى الألوان الافتراضية"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "سمات الألوان"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "افتراضي"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "بارد"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "دافئ"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "تباين عالٍ"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "ناعم"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "تباين هذا اللون مع صفحة Scholar البيضاء. نسبة 3:1 أو أكثر تُبقي شريط الصف مرئيًا."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight و Highlight"
@@ -814,7 +806,7 @@
     "message": "تصفية حسب العنوان أو المؤلف…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "اضغط / للبحث"
   },
   "venuesShowMore": {
     "message": "عرض المزيد"
@@ -838,7 +830,7 @@
     "message": "الإعدادات والملفات الجاهزة"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "الإعدادات بصيغة JSON: انسخها، أو احفظها في ملف، أو حمّل ملفًا، أو الصق تغييرًا في المحرر. الإعداد المسبق يغيّر ما يذكره فقط، وتوضح الصفحة ما طُبّق وما لم يُطبَّق."
   },
   "optConfigCopy": {
     "message": "نسخ الإعدادات (JSON)"
@@ -850,13 +842,13 @@
     "message": "استيراد ملف"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "الصق الإعدادات أو عدّلها (JSON)"
   },
   "optConfigApply": {
     "message": "تطبيق الإعدادات"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "تم تطبيق التغييرات: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "لا شيء يتغير: الإعدادات على هذا الوضع بالفعل."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "لم تُطبَّق:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "هذا ليس JSON صالحًا: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "وكلاء الذكاء الاصطناعي"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "انسخ دليلًا يسرد كل إعداد وقيمه واختياراتك الحالية. الصقه لمساعد الذكاء الاصطناعي لديك، واذكر ما تريد، ثم الصق رده في محرر الإعدادات أدناه، واضغط «تطبيق الإعدادات»."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "نسخ الدليل للوكلاء"
   },
   "optConfigPreset": {
     "message": "إعدادات مسبقة"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "التركيز على المؤلف الأخير"
   },
   "optPresetFull": {
     "message": "جميع الميزات"
@@ -905,10 +897,10 @@
     "message": "عرض التفاصيل المحفوظة"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "ابحث في الإعدادات…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "مسح البحث"
   },
   "optCacheTitle": {
     "message": "تفاصيل الأوراق البحثية المحفوظة"
@@ -923,7 +915,7 @@
     "message": "لم يتم حفظ أي تفاصيل للأوراق البحثية على هذا الجهاز بعد."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "معروض: $N1$ من $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "المصدر"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "إغلاق"
   }
 }

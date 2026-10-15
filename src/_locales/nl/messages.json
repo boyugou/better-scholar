@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 paper"
   },
@@ -413,10 +405,10 @@
     "message": "Prijzen en talks"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopiëren en exporteren"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Welke knoppen de getoonde papers of het overzicht als tekst kopiëren of opslaan. Het paneel en de popup van de werkbalk bieden dezelfde knoppen; staat er geen enkele aan, dan is er geen kopieerrij."
   },
   "optMarkAwardHint": {
     "message": "Beste, outstanding en distinguished paper, eervolle vermelding, test of time en finalisten voor beste paper."
@@ -434,7 +426,7 @@
     "message": "Tabel rol × rang"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "De tabel van je papers op positie en rang, met de toelichting over waar de rangen vandaan komen."
   },
   "optPanelMarks": {
     "message": "Aantallen prijzen en talks"
@@ -549,7 +541,7 @@
     "message": "CSV exporteren"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Niets om te kopiëren"
   },
   "exported": {
     "message": "Geëxporteerd"
@@ -647,25 +639,25 @@
     "message": "Terug naar de standaardkleuren"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Kleurthema’s"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Standaard"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Koel"
   },
   "optThemeWarm": {
     "message": "Warm"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Hoog contrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Zacht"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Contrast van deze kleur met de witte pagina van Scholar. 3:1 of meer houdt de balk van de rij zichtbaar."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight en highlight"
@@ -835,7 +827,7 @@
     "message": "Filteren op titel of auteur…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Druk op / om te zoeken"
   },
   "venuesShowMore": {
     "message": "Meer tonen"
@@ -859,7 +851,7 @@
     "message": "Configuratie & voorinstellingen"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Instellingen als JSON: kopiëren, opslaan in een bestand, een bestand laden of een wijziging in de editor plakken. Een voorinstelling wijzigt alleen wat erin genoemd staat, en de pagina meldt wat is toegepast en wat niet."
   },
   "optConfigCopy": {
     "message": "Configuratie kopiëren (JSON)"
@@ -871,13 +863,13 @@
     "message": "Bestand importeren"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "JSON plakken of bewerken"
   },
   "optConfigApply": {
     "message": "Configuratie toepassen"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Wijzigingen toegepast: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Niets om te wijzigen: de instellingen staan al zo."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Niet toegepast:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Dit is geen geldige JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI-agents"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Kopieer een gids met elke instelling, de waarden ervan en je huidige keuzes. Plak die in je AI-assistent, zeg wat je wilt en plak het antwoord daarna in de configuratie-editor hieronder en druk op Configuratie toepassen."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Agentengids kopiëren"
   },
   "optConfigPreset": {
     "message": "Voorinstellingen"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Focus op laatste auteur"
   },
   "optPresetFull": {
     "message": "Alle functies"
@@ -926,10 +918,10 @@
     "message": "Opgeslagen details bekijken"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Instellingen doorzoeken…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Zoekopdracht wissen"
   },
   "optCacheTitle": {
     "message": "Opgeslagen artikeldetails"
@@ -944,7 +936,7 @@
     "message": "Er zijn nog geen artikeldetails opgeslagen op dit apparaat."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Getoond: $N1$ van $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Bron"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Sluiten"
   }
 }

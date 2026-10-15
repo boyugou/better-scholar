@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Відкрити Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "Нагороди та доповіді"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Копіювання та експорт"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Які кнопки копіюють або зберігають показані статті чи зведення як текст. Панель і спливаюче вікно на панелі інструментів пропонують ті самі кнопки. Якщо жодну не увімкнено, рядка копіювання немає."
   },
   "optMarkAwardHint": {
     "message": "Найкраща, видатна й відзначена стаття, почесна згадка, test of time та фіналісти найкращої статті."
@@ -419,7 +411,7 @@
     "message": "Таблиця «роль × ранг»"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Таблиця ваших статей за позицією та рангом, із приміткою про те, звідки взято ранги."
   },
   "optPanelMarks": {
     "message": "Кількість нагород і доповідей"
@@ -531,7 +523,7 @@
     "message": "Експорт CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Нічого копіювати"
   },
   "exported": {
     "message": "Експортовано"
@@ -629,25 +621,25 @@
     "message": "Повернути стандартні кольори"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Колірні теми"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Типова"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Холодна"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Тепла"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Високий контраст"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "М’яка"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Контраст цього кольору з білою сторінкою Scholar. Значення 3:1 і вище залишає смужку рядка видимою."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight і Highlight"
@@ -814,7 +806,7 @@
     "message": "Фільтр за назвою або автором…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Натисніть / для пошуку"
   },
   "venuesShowMore": {
     "message": "Показати більше"
@@ -838,7 +830,7 @@
     "message": "Конфігурація та пресети"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Налаштування у форматі JSON: скопіюйте їх, збережіть у файл, завантажте файл або вставте зміну в редактор. Пресет змінює лише те, що в ньому названо. Сторінка повідомляє, що застосовано, а що пропущено."
   },
   "optConfigCopy": {
     "message": "Копіювати конфіг (JSON)"
@@ -850,13 +842,13 @@
     "message": "Імпорт файлу"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Вставити конфіг (JSON)"
   },
   "optConfigApply": {
     "message": "Застосувати конфігурацію"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Зміни застосовано: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Нічого змінювати: налаштування вже такі."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Не застосовано:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Це некоректний JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "ШІ-агенти"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Скопіюйте посібник, у якому перелічено всі налаштування, їхні значення та ваш поточний вибір. Вставте його у свого ШІ-асистента, опишіть, чого хочете, потім вставте його відповідь в редактор конфіга нижче та натисніть «Застосувати конфігурацію»."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Копіювати посібник"
   },
   "optConfigPreset": {
     "message": "Пресети"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Акцент на останнього автора"
   },
   "optPresetFull": {
     "message": "Усі функції"
@@ -905,10 +897,10 @@
     "message": "Перегляд збережених даних"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Пошук у налаштуваннях…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Очистити пошук"
   },
   "optCacheTitle": {
     "message": "Збережені дані статей"
@@ -923,7 +915,7 @@
     "message": "На цьому пристрої ще не збережено даних статей."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Показано: $N1$ з $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Джерело"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Закрити"
   }
 }

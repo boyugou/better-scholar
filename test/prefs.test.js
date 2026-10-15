@@ -178,3 +178,9 @@ test("marks: each group has its switch, a finalist follows the awards", () => {
   assert.deepEqual(kinds(prefs.normalize({ marks: { award: false, oral: false, spotlight: false, highlight: false } })), []);
   assert.deepEqual(prefs.visibleMarks(prefs.defaults(), undefined), []);
 });
+
+test("a dotted key is not a second syntax, whichever setting it names", () => {
+  const r = prefs.apply(prefs.defaults(), { "panel.years": false });
+  assert.deepEqual([r.applied, r.unchanged, r.ignored.map((x) => x.path)], [[], [], ["panel.years"]]);
+  assert.equal(r.prefs.panel.years, true);
+});

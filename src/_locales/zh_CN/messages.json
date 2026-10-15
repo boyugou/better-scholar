@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "打开 Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "获奖与报告形式"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "复制与导出"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "哪些按钮会把显示的论文或摘要以文本形式复制或保存。面板和工具栏弹出窗口提供的是同样的按钮；全部关闭时，就没有复制行。"
   },
   "optMarkAwardHint": {
     "message": "最佳论文、杰出论文、优秀论文、荣誉提名、时间检验奖，以及最佳论文入围。"
@@ -419,7 +411,7 @@
     "message": "角色 × 排名表格"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "你的论文表格，按位置和排名列出，并附排名来源的说明。"
   },
   "optPanelMarks": {
     "message": "奖项与报告统计"
@@ -531,7 +523,7 @@
     "message": "导出 CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "没有可复制的内容"
   },
   "exported": {
     "message": "已导出"
@@ -629,25 +621,25 @@
     "message": "恢复默认颜色"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "配色主题"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "默认"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "冷色"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "暖色"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "高对比度"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "柔和"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "此颜色与 Scholar 白色页面的对比度。3:1 或更高时，行内色条仍然可见。"
   },
   "markSpotlightHighlight": {
     "message": "Spotlight 与 Highlight"
@@ -814,7 +806,7 @@
     "message": "按标题或作者过滤…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "按 / 键搜索"
   },
   "venuesShowMore": {
     "message": "显示更多"
@@ -838,7 +830,7 @@
     "message": "配置与预设"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "设置以 JSON 形式呈现：可以复制、保存为文件、从文件载入，或把修改粘贴到编辑框中。预设只改变它列出的内容，页面会说明已应用了什么、忽略了什么。"
   },
   "optConfigCopy": {
     "message": "复制配置 (JSON)"
@@ -850,13 +842,13 @@
     "message": "导入文件"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "粘贴或编辑配置 (JSON)"
   },
   "optConfigApply": {
     "message": "应用配置"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "已应用 $N1$ 项更改",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "无需更改：设置已经是这样了。"
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "未应用："
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "这不是有效的 JSON：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI 智能体"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "复制一份指南，其中列出所有设置、它们的取值以及你当前的选择。把它粘贴给你的 AI 助手，说明你的需求，然后把它的回复粘贴到下方的配置编辑框中，再点击“应用配置”。"
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "复制智能体指南"
   },
   "optConfigPreset": {
     "message": "快速预设"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "末位作者偏好"
   },
   "optPresetFull": {
     "message": "全功能开启"
@@ -905,10 +897,10 @@
     "message": "查看已保存详情"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "搜索设置…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "清除搜索"
   },
   "optCacheTitle": {
     "message": "已保存论文详情"
@@ -923,7 +915,7 @@
     "message": "此设备上尚未保存任何论文详情。"
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "已显示：$N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "来源"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "关闭"
   }
 }

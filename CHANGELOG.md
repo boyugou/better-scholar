@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.39.1 — 2026-10-15
+
+From an independent review of 2.39.0:
+
+- **Search box**: capital letters no longer drop the spaces you type.
+- **Suggestions**: the list stays open while it scrolls itself, opens upwards when there is no room below, and completes an operator name (`role` → `role:first`) instead of replacing a word that was not an operator.
+- **Copy feedback**: "Nothing to copy" is not styled as success; a copy keeps the keyboard focus; the announcement is no longer overwritten by the next refresh. The popup has an icon for Copy papers and no longer shows the paper-count note.
+- **H-index filter**: an h-index of 0 shows nothing instead of everything.
+- **Rankings that are switched off** are not searched (`ccf:`, `core:`) and are not returned by the `papers` call.
+- **Settings**: a dotted key (`"panel.years"`) is an unknown setting; a change of interface language reloads the settings page however it was made.
+- **Agent guide**: the page marker is `data-rr-ready="true"`; an event id is a string or a number.
+- **Exports**: BibTeX entries for the PNAS and IEEE proceedings titles are articles; a name with a bare "and" is braced; APA handles accented initials, `Jr.`/`II` suffixes and cut author lists without a last author; a Markdown author line that starts like a list is escaped.
+
 ## 2.39.0 — 2026-10-14
 
 A clean rewrite of how settings, copy buttons and agent access work, after an independent review of 2.24–2.38. Nothing is kept for compatibility: stored settings of older versions are not read, and the names of events, messages and presets changed.

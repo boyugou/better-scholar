@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 artikkeli"
   },
@@ -413,10 +405,10 @@
     "message": "Palkinnot ja esitykset"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopiointi ja vienti"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Painikkeet, jotka kopioivat tai tallentavat näytetyt artikkelit tai yhteenvedon tekstinä. Paneeli ja työkalupalkin ponnahdusikkuna tarjoavat samat; jos mitään ei ole päällä, kopiointirivi puuttuu."
   },
   "optMarkAwardHint": {
     "message": "Paras, erinomainen ja ansioitunut artikkeli, kunniamaininta, test of time sekä parhaan artikkelin finalistit."
@@ -434,7 +426,7 @@
     "message": "Rooli × luokka -taulukko"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Taulukko artikkeleistasi paikan ja luokan mukaan sekä huomautus siitä, mistä luokat ovat peräisin."
   },
   "optPanelMarks": {
     "message": "Palkintojen ja esitysten määrät"
@@ -549,7 +541,7 @@
     "message": "Vie CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Ei kopioitavaa"
   },
   "exported": {
     "message": "Viety"
@@ -647,25 +639,25 @@
     "message": "Palauta oletusvärit"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Väriteemat"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Oletus"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Viileä"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Lämmin"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Suuri kontrasti"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Pehmeä"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Tämän värin kontrasti Scholarin valkoista sivua vasten. Vähintään 3:1 pitää rivin palkin näkyvissä."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight ja highlight"
@@ -835,7 +827,7 @@
     "message": "Suodata otsikon tai kirjoittajan mukaan…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Hae painamalla /"
   },
   "venuesShowMore": {
     "message": "Näytä lisää"
@@ -859,7 +851,7 @@
     "message": "Asetukset ja esiasetukset"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Asetukset JSON-muodossa: kopioi ne, tallenna tiedostoon, lataa tiedosto tai liitä muutos editoriin. Esiasetus muuttaa vain sitä, minkä se mainitsee, ja sivu kertoo, mitä se otti käyttöön ja mitä ei."
   },
   "optConfigCopy": {
     "message": "Kopioi asetukset (JSON)"
@@ -871,13 +863,13 @@
     "message": "Tuo tiedosto"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Liitä tai muokkaa asetuksia (JSON)"
   },
   "optConfigApply": {
     "message": "Ota asetukset käyttöön"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Muutokset otettiin käyttöön: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Ei muutettavaa: asetukset ovat jo tämän mukaiset."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Ei otettu käyttöön:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Tämä ei ole kelvollinen JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Tekoälyagentit"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Kopioi opas, joka luettelee jokaisen asetuksen, sen arvot ja nykyiset valintasi. Liitä se tekoälyavustajallesi, kerro, mitä haluat, ja liitä sitten sen vastaus alla olevaan asetusten editoriin ja paina “Ota asetukset käyttöön” -painiketta."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Kopioi opas agenteille"
   },
   "optConfigPreset": {
     "message": "Esiasetukset"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Viimeisen kirjoittajan painotus"
   },
   "optPresetFull": {
     "message": "Kaikki toiminnot"
@@ -926,10 +918,10 @@
     "message": "Näytä tallennetut tiedot"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Hae asetuksista…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Tyhjennä haku"
   },
   "optCacheTitle": {
     "message": "Tallennetut artikkelitiedot"
@@ -944,7 +936,7 @@
     "message": "Tälle laitteelle ei ole vielä tallennettu artikkelitietoja."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Näytetään: $N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Lähde"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Sulje"
   }
 }

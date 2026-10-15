@@ -144,6 +144,7 @@
   }
 
   let prefs = await B.store.loadPrefs();
+  const shownLanguage = prefs.language;                 // (the page is drawn in this one: a change of the interface language reloads it)
   const syncers = [];
 
   let savedTimer = 0;
@@ -153,6 +154,7 @@
     renderPreview();
     syncers.forEach((fn) => fn());
     await B.store.savePrefs(prefs);
+    if (prefs.language !== shownLanguage) { location.reload(); return; }
     $("saved").textContent = t("optSaved");
     $("saved").classList.add("on");
     clearTimeout(savedTimer);

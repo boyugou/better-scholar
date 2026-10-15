@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 篇論文"
   },
@@ -413,10 +405,10 @@
     "message": "獲獎與報告形式"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "複製與匯出"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "哪些按鈕會把顯示的論文或摘要以文字形式複製或儲存。面板和工具列彈出視窗提供的是同樣的按鈕；全部關閉時，就沒有複製列。"
   },
   "optMarkAwardHint": {
     "message": "最佳論文、傑出論文、卓越論文、榮譽提名、時間考驗獎與最佳論文入圍。"
@@ -434,7 +426,7 @@
     "message": "位次×等級表"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "您的論文表格，依位次與等級列出，並附等級來源的說明。"
   },
   "optPanelMarks": {
     "message": "獲獎與報告統計"
@@ -549,7 +541,7 @@
     "message": "匯出 CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "沒有可複製的內容"
   },
   "exported": {
     "message": "已匯出"
@@ -647,25 +639,25 @@
     "message": "還原預設顏色"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "配色主題"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "預設"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "冷色"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "暖色"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "高對比"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "柔和"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "此顏色與 Scholar 白色頁面的對比。3:1 或更高時，列的色條仍可見。"
   },
   "markSpotlightHighlight": {
     "message": "Spotlight 與 Highlight"
@@ -835,7 +827,7 @@
     "message": "依標題或作者篩選…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "按 / 鍵搜尋"
   },
   "venuesShowMore": {
     "message": "顯示更多"
@@ -859,7 +851,7 @@
     "message": "設定與預設"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "以 JSON 形式提供的設定：可以複製、儲存為檔案、載入檔案，或把變更貼到編輯框中。預設只會改變它列出的項目，頁面會說明已套用了什麼、略過了什麼。"
   },
   "optConfigCopy": {
     "message": "複製設定 (JSON)"
@@ -871,13 +863,13 @@
     "message": "匯入檔案"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "貼上或編輯設定 (JSON)"
   },
   "optConfigApply": {
     "message": "套用設定"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "已套用 $N1$ 項變更",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "無需變更：設定已是這樣了。"
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "未套用："
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "這不是有效的 JSON：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI 代理"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "複製一份指南，其中列出所有設定、它們的值以及您目前的選擇。把它貼給您的 AI 助手，說明您的需求，再把它的回覆貼到下方的設定編輯框中，然後按「套用設定」。"
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "複製代理指南"
   },
   "optConfigPreset": {
     "message": "快速預設"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "最後作者偏好"
   },
   "optPresetFull": {
     "message": "全功能開啟"
@@ -926,10 +918,10 @@
     "message": "查看已儲存詳情"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "搜尋設定…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "清除搜尋"
   },
   "optCacheTitle": {
     "message": "已儲存論文詳情"
@@ -944,7 +936,7 @@
     "message": "此裝置上尚未儲存任何論文詳情。"
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "已顯示：$N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "來源"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "關閉"
   }
 }

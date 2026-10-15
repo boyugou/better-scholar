@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "מאמר אחד"
   },
@@ -413,10 +405,10 @@
     "message": "פרסים והרצאות"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "העתקה וייצוא"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "בחרו אילו כפתורים מעתיקים או שומרים את המאמרים המוצגים, או את הסיכום, כטקסט. הלוח והחלון הקופץ מסרגל הכלים מציעים את אותם כפתורים; אם אף אחד מהם לא פעיל, אין שורת העתקה."
   },
   "optMarkAwardHint": {
     "message": "המאמר הטוב ביותר, מאמר יוצא דופן ומאמר מצטיין, אזכור מיוחד, Test of time ומועמדים לגמר המאמר הטוב ביותר."
@@ -434,7 +426,7 @@
     "message": "טבלת תפקיד × דירוג"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "הטבלה של המאמרים שלכם לפי מיקום ודירוג, עם הערה על מקור הדירוגים."
   },
   "optPanelMarks": {
     "message": "מספר פרסים והרצאות"
@@ -549,7 +541,7 @@
     "message": "ייצוא CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "אין מה להעתיק"
   },
   "exported": {
     "message": "יוצא"
@@ -647,25 +639,25 @@
     "message": "חזרה לצבעי ברירת המחדל"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "ערכות צבעים"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "ברירת מחדל"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "קרה"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "חמה"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "ניגודיות גבוהה"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "עדינה"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "הניגודיות של הצבע הזה מול דף Scholar הלבן. יחס של 3:1 או יותר משאיר את פס השורה גלוי."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight ו-Highlight"
@@ -835,7 +827,7 @@
     "message": "סינון לפי כותרת או מחבר…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "לחצו / כדי לחפש"
   },
   "venuesShowMore": {
     "message": "הצג עוד"
@@ -859,7 +851,7 @@
     "message": "תצורה ופרופילים מוכנים"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "הגדרות כ-JSON: אפשר להעתיק אותן, לשמור לקובץ, לטעון קובץ או להדביק שינוי בעורך. פרופיל מוכן משנה רק את מה שהוא מציין, והדף מציין מה הוחל ומה לא הוחל."
   },
   "optConfigCopy": {
     "message": "העתקת תצורה (JSON)"
@@ -871,13 +863,13 @@
     "message": "ייבוא קובץ"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "להדביק או לערוך תצורה (JSON)"
   },
   "optConfigApply": {
     "message": "החלת תצורה"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "השינויים הוחלו: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "אין מה לשנות: ההגדרות כבר מציינות זאת."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "לא הוחל:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "זה אינו JSON תקין: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "סוכני AI"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "העתיקו מדריך שמפרט כל הגדרה, את הערכים שלה ואת הבחירות הנוכחיות שלכם. הדביקו אותו לעוזר ה-AI שלכם, כתבו מה תרצו, ואז הדביקו את התשובה שלו בעורך התצורה שלמטה ולחצו על החלת תצורה."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "העתקת מדריך לסוכני AI"
   },
   "optConfigPreset": {
     "message": "פרופילים"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "התמקדות במחבר אחרון"
   },
   "optPresetFull": {
     "message": "כל התכונות"
@@ -926,10 +918,10 @@
     "message": "הצגת פרטים שמורים"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "חיפוש בהגדרות…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "ניקוי החיפוש"
   },
   "optCacheTitle": {
     "message": "פרטי מאמרים שמורים"
@@ -944,7 +936,7 @@
     "message": "עדיין לא נשמרו פרטי מאמרים במכשיר זה."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "מוצגים: $N1$ מתוך $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "מקור"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "סגירה"
   }
 }

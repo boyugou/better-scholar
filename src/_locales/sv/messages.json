@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 artikel"
   },
@@ -413,10 +405,10 @@
     "message": "Priser och presentationer"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopiera och exportera"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Vilka knappar som kopierar eller sparar de visade artiklarna, eller sammanfattningen, som text. Panelen och verktygsfältets popup-ruta har samma knappar; om ingen är påslagen finns ingen kopieringsrad."
   },
   "optMarkAwardHint": {
     "message": "Bästa, enastående och framstående artikel, hedersomnämnande, test of time och finalister för bästa artikel."
@@ -434,7 +426,7 @@
     "message": "Roll × rank-tabell"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabellen över dina artiklar efter position och rank, med en notis om varifrån rankningarna kommer."
   },
   "optPanelMarks": {
     "message": "Antal priser och presentationer"
@@ -549,7 +541,7 @@
     "message": "Exportera CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Inget att kopiera"
   },
   "exported": {
     "message": "Exporterad"
@@ -647,25 +639,25 @@
     "message": "Tillbaka till standardfärgerna"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Färgteman"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Standard"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Sval"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Varm"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Hög kontrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Mjuk"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Kontrasten mellan den här färgen och Scholars vita sida. 3:1 eller mer gör att radens stapel syns."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight & highlight"
@@ -835,7 +827,7 @@
     "message": "Filtrera efter titel eller författare…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Tryck / för att söka"
   },
   "venuesShowMore": {
     "message": "Visa mer"
@@ -859,7 +851,7 @@
     "message": "Konfiguration och förinställningar"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Inställningar som JSON: kopiera dem, spara dem i en fil, läs in en fil eller klistra in en ändring i redigeraren. En förinställning ändrar bara det den anger, och sidan visar vad den tillämpade och vad den ignorerade."
   },
   "optConfigCopy": {
     "message": "Kopiera konfiguration (JSON)"
@@ -871,13 +863,13 @@
     "message": "Importera fil"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Klistra in konfig (JSON)"
   },
   "optConfigApply": {
     "message": "Tillämpa konfiguration"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Ändringar tillämpade: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Inget att ändra: inställningarna anger redan det."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Inte tillämpat:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Detta är inte giltig JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI-agenter"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Kopiera en guide som listar varje inställning, dess värden och dina nuvarande val. Klistra in den i din AI-assistent, säg vad du vill ha och klistra sedan in svaret i konfigredigeraren nedan och tryck på ”Tillämpa konfiguration”."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Kopiera agentguide"
   },
   "optConfigPreset": {
     "message": "Förinställningar"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Fokus på sistaförfattare"
   },
   "optPresetFull": {
     "message": "Alla funktioner"
@@ -926,10 +918,10 @@
     "message": "Visa sparade uppgifter"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Sök i inställningarna…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Rensa sökningen"
   },
   "optCacheTitle": {
     "message": "Sparade artikeluppgifter"
@@ -944,7 +936,7 @@
     "message": "Inga artikeluppgifter har sparats på den här enheten än."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Visade: $N1$ av $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Källa"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Stäng"
   }
 }

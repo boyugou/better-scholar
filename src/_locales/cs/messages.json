@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Otevřít Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "Ocenění a přednesy"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopírování a export"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Tlačítka, která kopírují nebo ukládají zobrazené práce, případně souhrn, jako text. Panel a vyskakovací okno na panelu nástrojů nabízejí stejná tlačítka; když není zapnuto žádné, řádek kopírování se nezobrazí."
   },
   "optMarkAwardHint": {
     "message": "Nejlepší, vynikající a význačná práce, čestné uznání, test of time a finalisté nejlepší práce."
@@ -419,7 +411,7 @@
     "message": "Tabulka role × rank"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabulka vašich prací podle pozice a ranku, s poznámkou o tom, odkud ranky pocházejí."
   },
   "optPanelMarks": {
     "message": "Počty ocenění a přednesů"
@@ -531,7 +523,7 @@
     "message": "Exportovat CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Není co kopírovat"
   },
   "exported": {
     "message": "Exportováno"
@@ -629,25 +621,25 @@
     "message": "Zpět na standardní barvy"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Barevné motivy"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Výchozí"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Chladný"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Teplý"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Vysoký kontrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Jemný"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Kontrast této barvy vůči bílé stránce Scholar. Hodnota 3:1 a více udrží pruh řádku viditelný."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight a highlight"
@@ -814,7 +806,7 @@
     "message": "Filtrovat podle názvu nebo autora…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Stiskněte / pro hledání"
   },
   "venuesShowMore": {
     "message": "Zobrazit více"
@@ -838,7 +830,7 @@
     "message": "Konfigurace a předvolby"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Nastavení jako JSON: zkopírujte je, uložte do souboru, načtěte soubor nebo vložte změnu do editoru. Předvolba mění jen to, co uvádí, a stránka ukáže, co uplatnila a co ne."
   },
   "optConfigCopy": {
     "message": "Kopírovat konfiguraci (JSON)"
@@ -850,13 +842,13 @@
     "message": "Importovat soubor"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Vložte nebo upravte konfiguraci (JSON)"
   },
   "optConfigApply": {
     "message": "Použít konfiguraci"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Změny byly použity: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Není co měnit: nastavení už to tak má."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Neuplatněno:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Toto není platný JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI agenti"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Zkopírujte návod, který vypisuje každé nastavení, jeho hodnoty a vaše současné volby. Předejte ho svému asistentovi AI, řekněte, co chcete, a pak jeho odpověď vložte do editoru konfigurace níže a stiskněte „Použít konfiguraci“."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Kopírovat návod pro AI"
   },
   "optConfigPreset": {
     "message": "Předvolby"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Důraz na posledního autora"
   },
   "optPresetFull": {
     "message": "Všechny funkce"
@@ -905,10 +897,10 @@
     "message": "Zobrazit uložené podrobnosti"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Hledat v nastavení…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Vymazat hledání"
   },
   "optCacheTitle": {
     "message": "Uložené podrobnosti článků"
@@ -923,7 +915,7 @@
     "message": "Na tomto zařízení zatím nebyly uloženy žádné podrobnosti o článcích."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Zobrazeno: $N1$ z $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Zdroj"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Zavřít"
   }
 }

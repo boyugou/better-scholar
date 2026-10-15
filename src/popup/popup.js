@@ -67,17 +67,17 @@
       const parts = data.parts || { summary: true, marks: true };
       const markParts = !parts.marks ? [] : B.marks.rows(data.talkRows).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
       // A copy button: the text comes from the page (the same as the panel's button) and goes to the clipboard — the CSV to a file. What there is to say is said on the button.
-      const say = (button, text) => {
+      const say = (button, text, ok = true) => {
         const old = button.dataset.label || (button.dataset.label = button.textContent);
         clearTimeout(button.rrTimer);
         button.textContent = text;
-        button.classList.add("btn-flashed");
+        if (ok) button.classList.add("btn-flashed");
         button.rrTimer = setTimeout(() => { button.textContent = old; button.classList.remove("btn-flashed"); }, 1200);
       };
       const deliver = (kind) => async (e) => {
         const button = e.target.closest("button") || e.target;
         const paperFormat = kind !== "summary" && kind !== "table";
-        if (paperFormat && !data.shown) { say(button, t("copyEmpty")); return; }
+        if (paperFormat && !data.shown) { say(button, t("copyEmpty"), false); return; }
         const res = await call("export", { format: kind, ...(paperFormat ? {} : { source }) });
         if (!res || !res.ok) return;
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
@@ -85,8 +85,6 @@
       };
       const copyBar = data.copyButtons.length ? h("div", { class: "actions" },
         ...data.copyButtons.map((kind) => h("button", { class: "btn", "data-act": "copy-" + kind, type: "button", onClick: deliver(kind) }, t(B.dom.COPY_LABEL[kind])))) : null;
-      // (the exports follow the page's filters: when they leave out papers, the popup says how many it takes)
-      const shownNote = copyBar && data.shown !== data.loaded ? h("p", { class: "note", "data-rr": "shown" }, t("popupExportsShown", [String(data.shown)])) : null;
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
         h("div", { class: "who" }, h("b", {}, data.owner),
@@ -98,7 +96,6 @@
         parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
         markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
         copyBar,
-        shownNote,
         parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };

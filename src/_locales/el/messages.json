@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 εργασία"
   },
@@ -413,10 +405,10 @@
     "message": "Βραβεία και ομιλίες"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Αντιγραφή & εξαγωγή"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Κουμπιά που αντιγράφουν ή αποθηκεύουν ως κείμενο τις εμφανιζόμενες εργασίες ή τη σύνοψη. Το πάνελ και το αναδυόμενο παράθυρο της γραμμής εργαλείων προσφέρουν τα ίδια· όταν δεν είναι ενεργό κανένα, δεν υπάρχει γραμμή αντιγραφής."
   },
   "optMarkAwardHint": {
     "message": "Καλύτερη, εξαιρετική και διακεκριμένη εργασία, εύφημη μνεία, test of time και φιναλίστ καλύτερης εργασίας."
@@ -434,7 +426,7 @@
     "message": "Πίνακας ρόλου × βαθμίδας"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Ο πίνακας των εργασιών σας ανά θέση και βαθμίδα, με τη σημείωση για την προέλευση των βαθμίδων."
   },
   "optPanelMarks": {
     "message": "Μετρητές βραβείων και ομιλιών"
@@ -549,7 +541,7 @@
     "message": "Εξαγωγή CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Τίποτα για αντιγραφή"
   },
   "exported": {
     "message": "Εξήχθη"
@@ -647,25 +639,25 @@
     "message": "Επαναφορά στα τυπικά χρώματα"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Χρωματικά θέματα"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Προεπιλεγμένο"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Ψυχρό"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Θερμό"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Υψηλή αντίθεση"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Απαλό"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Η αντίθεση αυτού του χρώματος με τη λευκή σελίδα του Scholar. Το 3:1 ή περισσότερο κρατά ορατή την μπάρα της γραμμής."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight και Highlight"
@@ -835,7 +827,7 @@
     "message": "Φίλτρο κατά τίτλο ή συγγραφέα…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Πατήστε / για αναζήτηση"
   },
   "venuesShowMore": {
     "message": "Εμφάνιση περισσότερων"
@@ -859,7 +851,7 @@
     "message": "Διαμόρφωση & προεπιλογές"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Ρυθμίσεις ως JSON: αντιγράψτε τις, αποθηκεύστε τις σε αρχείο, φορτώστε ένα αρχείο ή επικολλήστε μια αλλαγή στον επεξεργαστή. Μια προεπιλογή αλλάζει μόνο όσα αναφέρει, και η σελίδα λέει τι εφάρμοσε και τι δεν εφάρμοσε."
   },
   "optConfigCopy": {
     "message": "Αντιγραφή διαμόρφωσης (JSON)"
@@ -871,13 +863,13 @@
     "message": "Εισαγωγή αρχείου"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Επικολλήστε ή επεξεργαστείτε μια διαμόρφωση (JSON)"
   },
   "optConfigApply": {
     "message": "Εφαρμογή διαμόρφωσης"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Εφαρμόστηκαν αλλαγές: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Δεν υπάρχει τίποτα να αλλάξει: οι ρυθμίσεις είναι ήδη έτσι."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Δεν εφαρμόστηκαν:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Αυτό δεν είναι έγκυρο JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Πράκτορες AI"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Αντιγράψτε έναν οδηγό που απαριθμεί κάθε ρύθμιση, τις τιμές της και τις τρέχουσες επιλογές σας. Επικολλήστε τον στον βοηθό σας AI, πείτε τι θέλετε, και μετά επικολλήστε την απάντησή του στον παρακάτω επεξεργαστή διαμόρφωσης και πατήστε «Εφαρμογή διαμόρφωσης»."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Αντιγραφή οδηγού για AI"
   },
   "optConfigPreset": {
     "message": "Προεπιλογές"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Εστίαση στον τελευταίο συγγραφέα"
   },
   "optPresetFull": {
     "message": "Όλες οι λειτουργίες"
@@ -926,10 +918,10 @@
     "message": "Προβολή αποθηκευμένων λεπτομερειών"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Αναζήτηση στις ρυθμίσεις…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Καθαρισμός αναζήτησης"
   },
   "optCacheTitle": {
     "message": "Αποθηκευμένες λεπτομέρειες εργασιών"
@@ -944,7 +936,7 @@
     "message": "Δεν έχουν αποθηκευτεί ακόμη λεπτομέρειες εργασιών σε αυτήν τη συσκευή."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Εμφανίζονται: $N1$ από $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Πηγή"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Κλείσιμο"
   }
 }

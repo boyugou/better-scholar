@@ -158,3 +158,15 @@ test("json: the owner, the ranking and the papers' records", () => {
   assert.deepEqual([out.owner, out.source, out.total, out.papers.length], ["Jane Doe", "ccf", 1, 1]);
   assert.equal(out.papers[0].rank.ccf.tier, "A");
 });
+
+test("the text formats: a journal titled as a proceedings, a name with 'and', accents, particles, suffixes, cut lists, list markers", () => {
+  assert.match(f.bibtex([paper({ venue: "Proceedings of the National Academy of Sciences", type: null, rank: { ccf: null, core: null } })]), /^@article\{/);
+  assert.ok(f.bibtex([paper({ authors: "R and D Team, B Lee" })]).includes("author = {{R and D Team} and B Lee}"));
+  assert.equal(f.apaAuthor("ÉD Ölund"), "Ölund, É. D.");
+  assert.equal(f.apaAuthor("Xiao Bin Li"), "Li, X. B.");
+  assert.equal(f.apaAuthor("L van der Maaten"), "van der Maaten, L.");
+  assert.equal(f.apaAuthor("Robert Smith Jr."), "Smith, R., Jr.");
+  const cut = f.apa([paper({ authors: Array.from({ length: 25 }, (_, i) => `A Name${i}`).join(", ") + ", …" })]);
+  assert.ok(!/… Name24/.test(cut), "a cut list does not name its last visible author as the last");
+  assert.match(f.markdown([paper({ authors: "- Jane Doe" })]), /\n {3}\\- Jane Doe/);
+});

@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 article"
   },
@@ -413,10 +405,10 @@
     "message": "Prix et présentations"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Copier et exporter"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Choisissez les boutons qui copient ou enregistrent les articles affichés, ou le récapitulatif, en texte. Le panneau et la fenêtre de la barre d’outils proposent les mêmes ; sans aucun bouton activé, il n’y a pas de ligne de copie."
   },
   "optMarkAwardHint": {
     "message": "Meilleur article, article remarquable ou distingué, mention honorable, test of time et finalistes du meilleur article."
@@ -434,7 +426,7 @@
     "message": "Tableau rôle × rang"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Le tableau de vos articles par position et par rang, avec la note sur l’origine des rangs."
   },
   "optPanelMarks": {
     "message": "Décompte des prix et présentations"
@@ -549,7 +541,7 @@
     "message": "Exporter CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Rien à copier"
   },
   "exported": {
     "message": "Exporté"
@@ -647,25 +639,25 @@
     "message": "Revenir aux couleurs standard"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Thèmes de couleurs"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Par défaut"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Froid"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Chaud"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Contraste élevé"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Doux"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Contraste de cette couleur avec la page blanche de Scholar. Un rapport de 3:1 ou plus garde visible la barre de la ligne."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight et highlight"
@@ -835,7 +827,7 @@
     "message": "Filtrer par titre ou auteur…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Appuyez sur / pour rechercher"
   },
   "venuesShowMore": {
     "message": "Afficher plus"
@@ -859,7 +851,7 @@
     "message": "Configuration et préréglages"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Réglages en JSON : copiez-les, enregistrez-les dans un fichier, chargez un fichier, ou collez une modification dans l’éditeur. Un préréglage ne modifie que ce qu’il nomme, et la page indique ce qu’il a appliqué et ce qu’il a ignoré."
   },
   "optConfigCopy": {
     "message": "Copier la configuration (JSON)"
@@ -871,13 +863,13 @@
     "message": "Importer un fichier"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Collez ou modifiez une configuration (JSON)"
   },
   "optConfigApply": {
     "message": "Appliquer la configuration"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Modifications appliquées : $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Rien à modifier : les réglages disent déjà cela."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Non appliqués :"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Ce n’est pas du JSON valide : $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Agents IA"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Copiez un guide qui énumère chaque réglage, ses valeurs et vos choix actuels. Collez-le dans votre assistant IA, dites-lui ce que vous voulez, puis collez sa réponse dans l’éditeur de configuration ci-dessous et appuyez sur Appliquer la configuration."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Copier le guide IA"
   },
   "optConfigPreset": {
     "message": "Préréglages"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Dernier auteur"
   },
   "optPresetFull": {
     "message": "Toutes les fonctions"
@@ -926,10 +918,10 @@
     "message": "Voir les détails enregistrés"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Rechercher dans les réglages…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Effacer la recherche"
   },
   "optCacheTitle": {
     "message": "Détails des articles enregistrés"
@@ -944,7 +936,7 @@
     "message": "Aucun détail d'article n'a encore été enregistré sur cet appareil."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Affichés : $N1$ sur $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Lu depuis"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Fermer"
   }
 }

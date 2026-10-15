@@ -184,14 +184,15 @@
   // The search box's query, compiled once per query (and per set of marks that count)
   let compiled = { key: null, matcher: null };
   function matcher() {
-    const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (prefs.marks[g] ? 1 : 0)).join("");
-    if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks)) };
+    const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (prefs.marks[g] ? 1 : 0)).join("") + (prefs.ranks.ccf ? "c" : "-") + (prefs.ranks.core ? "c" : "-");
+    if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks), { ccf: prefs.ranks.ccf, core: prefs.ranks.core }) };
     return compiled.matcher;
   }
 
   // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
   // highlighted papers the other filters let through; at least 10 for i10. 0: no such filter.
-  const impactMin = (source) => (state.filters.impact === "h" ? metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted.h : state.filters.impact === "i10" ? 10 : 0);
+  // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
+const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
   // Do the filters let this row through? `skipVenue`: leave the venue choice out (the venue list is not narrowed by its own choice).
   function passes(row, source, min, { skipVenue = false } = {}) {
@@ -319,7 +320,7 @@
         venue: (resolved && resolved.venue) || r.raw.venueText,
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
-        rank: { ccf: v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: v.core ? { rank: v.core.rank, name: v.core.name } : null },
+        rank: { ccf: prefs.ranks.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: prefs.ranks.core && v.core ? { rank: v.core.rank, name: v.core.name } : null },
         marks: markLabels(a),
         url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
       };

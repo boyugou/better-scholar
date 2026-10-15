@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Deschide Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "Premii și prezentări"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Copiere și export"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Ce butoane copiază sau salvează ca text lucrările afișate sau rezumatul. Panoul și fereastra din bara de instrumente oferă aceleași butoane; dacă niciunul nu este activat, nu există rând de copiere."
   },
   "optMarkAwardHint": {
     "message": "Cea mai bună lucrare, lucrare remarcabilă și distinsă, mențiune de onoare, test of time și finaliste la cea mai bună lucrare."
@@ -419,7 +411,7 @@
     "message": "Tabel rol × rang"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabelul lucrărilor tale după rol și rang, cu nota despre originea rangurilor."
   },
   "optPanelMarks": {
     "message": "Numărul de premii și prezentări"
@@ -531,7 +523,7 @@
     "message": "Exportă CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Nimic de copiat"
   },
   "exported": {
     "message": "Exportat"
@@ -629,25 +621,25 @@
     "message": "Înapoi la culorile standard"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Teme de culori"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Implicit"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Rece"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Cald"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Contrast ridicat"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Blând"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Contrastul acestei culori față de pagina albă a Scholar. 3:1 sau mai mult păstrează bara rândului vizibilă."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight și Highlight"
@@ -814,7 +806,7 @@
     "message": "Filtrează după titlu sau autor…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Apasă / pentru a căuta"
   },
   "venuesShowMore": {
     "message": "Afișează mai multe"
@@ -838,7 +830,7 @@
     "message": "Configurare și presetări"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Setări în format JSON: copiază-le, salvează-le într-un fișier, încarcă un fișier sau lipește o modificare în editor. O presetare schimbă doar ce numește, iar pagina arată ce s-a aplicat și ce nu."
   },
   "optConfigCopy": {
     "message": "Copiază configurația (JSON)"
@@ -850,13 +842,13 @@
     "message": "Importă fișier"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Lipește/editează JSON"
   },
   "optConfigApply": {
     "message": "Aplică configurația"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Modificări aplicate: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Nimic de schimbat: setările sunt deja așa."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Nu s-a aplicat:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Acesta nu este un JSON valid: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Agenți AI"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Copiază un ghid care enumeră fiecare setare, valorile ei și alegerile tale actuale. Lipește-l în asistentul tău AI, spune ce vrei, apoi lipește răspunsul în editorul de configurare de mai jos și apasă Aplică configurația."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Copiază ghidul pentru AI"
   },
   "optConfigPreset": {
     "message": "Presetări"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Accent pe ultimul autor"
   },
   "optPresetFull": {
     "message": "Toate funcțiile"
@@ -905,10 +897,10 @@
     "message": "Vezi detaliile salvate"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Caută în setări…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Șterge căutarea"
   },
   "optCacheTitle": {
     "message": "Detalii articole salvate"
@@ -923,7 +915,7 @@
     "message": "Nu au fost salvate încă detalii despre articole pe acest dispozitiv."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Afișate: $N1$ din $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Sursă"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Închide"
   }
 }

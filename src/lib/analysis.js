@@ -55,10 +55,11 @@
   // The test a search query makes of a paper row, built once per query (lib/query.js has the language): `test(row)` for a row of the page's list
   // ({ raw: { title, authorsText, venueText }, a: the analysis, shown: the citations counted }), and the terms of the query that could not be read.
   // `marksOf(row)` says which marks count (the ones the settings leave on).
-  function queryMatcher(q, marksOf = (row) => row.a.marks || []) {
+  function queryMatcher(q, marksOf = (row) => row.a.marks || [], ranksOn = {}) {
     const parsed = query.parse(q);
     const fields = (row) => {
-      const { raw, a } = row, v = a.venue || {}, found = marksOf(row);
+      const { raw, a } = row, v0 = a.venue || {}, found = marksOf(row);
+      const v = { ccf: ranksOn.ccf === false ? null : v0.ccf, core: ranksOn.core === false ? null : v0.core };      // (a list that is switched off is not searched either)
       const low = (x) => String(x || "").toLowerCase();
       return {
         text: [raw.title, raw.authorsText, raw.venueText, v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,

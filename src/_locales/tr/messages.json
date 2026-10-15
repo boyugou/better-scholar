@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 makale"
   },
@@ -413,10 +405,10 @@
     "message": "Ödüller ve sunumlar"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopyala ve dışa aktar"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Gösterilen makaleleri ya da özeti metin olarak kopyalayan veya kaydeden düğmeler. Panel ve araç çubuğu açılır penceresi aynı düğmeleri sunar; hiçbiri açık değilse kopyalama satırı yoktur."
   },
   "optMarkAwardHint": {
     "message": "En iyi, üstün ve seçkin makale, mansiyon, test of time ve en iyi makale finalistleri."
@@ -434,7 +426,7 @@
     "message": "Rol × sıralama tablosu"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Makalelerinizin konum ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
   },
   "optPanelMarks": {
     "message": "Ödül ve sunum sayıları"
@@ -549,7 +541,7 @@
     "message": "CSV dışa aktar"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Kopyalanacak şey yok"
   },
   "exported": {
     "message": "Dışa aktarıldı"
@@ -647,25 +639,25 @@
     "message": "Standart renklere dön"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Renk temaları"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Varsayılan"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Serin"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Sıcak"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Yüksek kontrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Yumuşak"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Bu rengin Scholar'ın beyaz sayfasıyla kontrastı. 3:1 ve üzeri, satırın çubuğunu görünür tutar."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight ve highlight"
@@ -835,7 +827,7 @@
     "message": "Başlığa veya yazara göre filtrele…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Aramak için / tuşuna basın"
   },
   "venuesShowMore": {
     "message": "Daha fazla göster"
@@ -859,7 +851,7 @@
     "message": "Yapılandırma ve hazır ayarlar"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Ayarlar JSON olarak: kopyalayın, bir dosyaya kaydedin, bir dosya yükleyin ya da düzenleyiciye bir değişiklik yapıştırın. Hazır ayar yalnızca adını verdiği şeyi değiştirir; sayfa neyi uyguladığını ve neyi yok saydığını söyler."
   },
   "optConfigCopy": {
     "message": "Yapılandırmayı kopyala (JSON)"
@@ -871,13 +863,13 @@
     "message": "Dosya içe aktar"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "JSON'u yapıştır/düzenle"
   },
   "optConfigApply": {
     "message": "Yapılandırmayı uygula"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Uygulanan değişiklik: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Değiştirilecek bir şey yok: ayarlar zaten böyle."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Uygulanmadı:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Geçerli bir JSON değil: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Yapay zekâ ajanları"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu yapay zekâ asistanınıza yapıştırın, ne istediğinizi söyleyin, sonra yanıtını aşağıdaki JSON düzenleyicisine yapıştırıp “Yapılandırmayı uygula” düğmesine basın."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Ajan rehberini kopyala"
   },
   "optConfigPreset": {
     "message": "Hazır Ayarlar"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Son yazar odaklı"
   },
   "optPresetFull": {
     "message": "Tüm özellikler"
@@ -926,10 +918,10 @@
     "message": "Kayıtlı ayrıntıları görüntüle"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Ayarlarda ara…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Aramayı temizle"
   },
   "optCacheTitle": {
     "message": "Kayıtlı Makale Ayrıntıları"
@@ -944,7 +936,7 @@
     "message": "Bu cihazda henüz kayıtlı makale ayrıntısı yok."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Gösterilen: $N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Kaynak"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Kapat"
   }
 }

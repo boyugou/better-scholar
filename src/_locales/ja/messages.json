@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 件の論文"
   },
@@ -413,10 +405,10 @@
     "message": "受賞と発表形式"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "コピーと出力"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "表示中の論文、または集計を、テキストとしてコピーまたは保存するボタンを選びます。パネルとツールバーのポップアップにも同じボタンがあります。すべてオフのときは、コピーの行は表示されません。"
   },
   "optMarkAwardHint": {
     "message": "最優秀論文賞、優秀論文賞、卓越論文賞、佳作、時の試練賞、最優秀論文賞候補。"
@@ -434,7 +426,7 @@
     "message": "著者順×ランクの表"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "著者順とランク別に並べた論文の表です。ランクの出典に関する注記を含みます。"
   },
   "optPanelMarks": {
     "message": "受賞・発表の件数"
@@ -549,7 +541,7 @@
     "message": "CSV出力"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "コピーするものがありません"
   },
   "exported": {
     "message": "出力完了"
@@ -647,25 +639,25 @@
     "message": "標準の色に戻す"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "カラーテーマ"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "標準"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "寒色"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "暖色"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "高コントラスト"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "ソフト"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "この色と Scholar の白いページとのコントラスト。3:1 以上なら、行のバーが見えたままになります。"
   },
   "markSpotlightHighlight": {
     "message": "Spotlight と Highlight"
@@ -835,7 +827,7 @@
     "message": "タイトルまたは著者で絞り込み…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "/ キーで検索"
   },
   "venuesShowMore": {
     "message": "もっと見る"
@@ -859,7 +851,7 @@
     "message": "設定とプリセット"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "設定は JSON 形式です。コピーしたり、ファイルに保存・読み込みしたり、エディターに貼り付けて変更したりできます。プリセットに含まれる項目だけを変更し、ページには適用した項目と無視した項目が表示されます。"
   },
   "optConfigCopy": {
     "message": "設定をコピー (JSON)"
@@ -871,13 +863,13 @@
     "message": "ファイルを読み込み"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "設定を貼り付けまたは編集 (JSON)"
   },
   "optConfigApply": {
     "message": "設定を適用"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "適用した変更：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "変更はありません：設定にすでに同じ内容が入っています。"
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "未適用："
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "有効な JSON ではありません：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AIエージェント"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "すべての設定、その値、現在の選択を一覧にしたガイドをコピーします。AIアシスタントに貼り付けて希望を伝え、返ってきた回答を下の設定エディターに貼り付けて「設定を適用」を押します。"
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "AIエージェント用ガイドをコピー"
   },
   "optConfigPreset": {
     "message": "プリセット"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "最終著者優先"
   },
   "optPresetFull": {
     "message": "全機能有効"
@@ -926,10 +918,10 @@
     "message": "保存済み詳細を表示"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "設定を検索…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "検索をクリア"
   },
   "optCacheTitle": {
     "message": "保存済み論文詳細"
@@ -944,7 +936,7 @@
     "message": "このデバイスにはまだ論文の詳細が保存されていません。"
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "表示中：$N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "取得元"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "閉じる"
   }
 }

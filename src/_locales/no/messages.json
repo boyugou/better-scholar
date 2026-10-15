@@ -353,14 +353,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupPapersOne": {
     "message": "1 artikkel"
   },
@@ -413,10 +405,10 @@
     "message": "Priser og foredrag"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopier og eksporter"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Hvilke knapper som kopierer eller lagrer de viste artiklene, eller oversikten, som tekst. Panelet og verktøylinjens popup viser de samme knappene. Er ingen slått på, finnes ingen kopieringsrad."
   },
   "optMarkAwardHint": {
     "message": "Beste, enestående og fremragende artikkel, hederlig omtale, test of time og finalister for beste artikkel."
@@ -434,7 +426,7 @@
     "message": "Tabell over rolle × rang"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabellen over artiklene dine etter plass og rang, med en merknad om hvor rangene kommer fra."
   },
   "optPanelMarks": {
     "message": "Antall priser og foredrag"
@@ -549,7 +541,7 @@
     "message": "Eksporter CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Ingenting å kopiere"
   },
   "exported": {
     "message": "Eksportert"
@@ -647,25 +639,25 @@
     "message": "Tilbake til standardfargene"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Fargetemaer"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Standard"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Kjølig"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Varm"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Høy kontrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Myk"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Kontrasten mellom denne fargen og den hvite Scholar-siden. 3:1 eller mer gjør at radens stolpe er synlig."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight og highlight"
@@ -835,7 +827,7 @@
     "message": "Filtrer etter tittel eller forfatter…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Trykk / for å søke"
   },
   "venuesShowMore": {
     "message": "Vis mer"
@@ -859,7 +851,7 @@
     "message": "Konfigurasjon og forhåndsinnstillinger"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Innstillinger som JSON: kopier dem, lagre dem i en fil, last inn en fil, eller lim inn en endring i redigeringsfeltet. En forhåndsinnstilling endrer bare det den nevner, og siden viser hva som ble brukt og hva som ikke ble brukt."
   },
   "optConfigCopy": {
     "message": "Kopier konfigurasjon (JSON)"
@@ -871,13 +863,13 @@
     "message": "Importer fil"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Lim inn eller endre JSON"
   },
   "optConfigApply": {
     "message": "Bruk konfigurasjon"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Endringer brukt: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -885,13 +877,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Ingenting å endre: innstillingene står allerede slik."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Ikke brukt:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Dette er ikke gyldig JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -899,19 +891,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "KI-agenter"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Kopier en veiledning som lister opp alle innstillinger, verdiene deres og valgene du har nå. Lim den inn i KI-assistenten, si hva du vil, og lim så svaret inn i konfigurasjonseditoren nedenfor og trykk på Bruk konfigurasjon."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Kopier agentveiledning"
   },
   "optConfigPreset": {
     "message": "Forhåndsinnstillinger"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Fokus på sisteforfatter"
   },
   "optPresetFull": {
     "message": "Alle funksjoner"
@@ -926,10 +918,10 @@
     "message": "Vis lagrede detaljer"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Søk i innstillingene…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Tøm søket"
   },
   "optCacheTitle": {
     "message": "Lagrede artikkeldetaljer"
@@ -944,7 +936,7 @@
     "message": "Ingen artikkeldetaljer er lagret på denne enheten ennå."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Vist: $N1$ av $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -955,9 +947,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Kilde"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Lukk"
   }
 }

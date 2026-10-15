@@ -144,6 +144,7 @@
     if (!plain(patch)) return { prefs, applied, unchanged, ignored: [{ path: "", reason: "must be a JSON object" }] };
     (function walk(node, prefix) {
       for (const key of Object.keys(node)) {
+        if (key.includes(".")) { ignored.push({ path: prefix ? prefix + "." + key : key, reason: "unknown setting" }); continue; }   // (the shape is the record's: no dotted keys)
         const path = prefix ? prefix + "." + key : key, value = node[key], s = BY_PATH.get(path);
         if (s) {
           const why = problem(s, value);

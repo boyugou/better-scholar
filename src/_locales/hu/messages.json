@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Google Scholar megnyitása"
   },
@@ -398,10 +390,10 @@
     "message": "Díjak és előadások"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Másolás és exportálás"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Válaszd ki, mely gombok másolják vagy mentik szövegként a megjelenített cikkeket vagy az összesítést. A panel és az eszköztár felugró ablaka ugyanezeket kínálja; ha egyik sincs bekapcsolva, a másolósor nem látszik."
   },
   "optMarkAwardHint": {
     "message": "Legjobb, kiemelkedő és kitüntetett cikk, dicséretes említés, test of time és a legjobb cikk döntősei."
@@ -419,7 +411,7 @@
     "message": "Szerep × rang táblázat"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "A cikkeid táblázata pozíció és rang szerint, a rangok eredetére vonatkozó megjegyzéssel."
   },
   "optPanelMarks": {
     "message": "Díjak és előadások száma"
@@ -531,7 +523,7 @@
     "message": "CSV exportálása"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Nincs mit másolni"
   },
   "exported": {
     "message": "Exportálva"
@@ -629,25 +621,25 @@
     "message": "Vissza az alapszínekhez"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Színtémák"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Alapértelmezett"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Hideg"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Meleg"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Nagy kontraszt"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Lágy"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Ennek a színnek a kontrasztja a Scholar fehér oldalával. A 3:1 vagy nagyobb arány láthatóvá teszi a sor sávját."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight és Highlight"
@@ -814,7 +806,7 @@
     "message": "Szűrés cím vagy szerző szerint…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Nyomd meg a / billentyűt a kereséshez"
   },
   "venuesShowMore": {
     "message": "Több megjelenítése"
@@ -838,7 +830,7 @@
     "message": "Konfiguráció és előbeállítások"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "A beállítások JSON-ként: másold ki őket, mentsd el fájlba, tölts be egy fájlt, vagy illeszd be a módosítást a szerkesztőbe. Az előbeállítás csak azt változtatja meg, amit megnevez, az oldal pedig megmondja, mit alkalmazott és mit hagyott figyelmen kívül."
   },
   "optConfigCopy": {
     "message": "Konfiguráció másolása (JSON)"
@@ -850,13 +842,13 @@
     "message": "Fájl importálása"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Illessz be vagy szerkessz egy konfigurációt (JSON)"
   },
   "optConfigApply": {
     "message": "Konfiguráció alkalmazása"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Alkalmazott módosítások: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Nincs mit módosítani: a beállítások már ezt tartalmazzák."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Nem alkalmazva:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "Ez nem érvényes JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "AI-ügynökök"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Másold ki az útmutatót, amely felsorolja az összes beállítást, azok értékeit és a jelenlegi választásaidat. Illeszd be az AI-asszisztensedbe, mondd el, mit szeretnél, majd az asszisztens válaszát illeszd be az alábbi konfigurációszerkesztőbe, és nyomd meg a Konfiguráció alkalmazása gombot."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "AI-útmutató másolása"
   },
   "optConfigPreset": {
     "message": "Előbeállítások"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Utolsó szerző fókusz"
   },
   "optPresetFull": {
     "message": "Minden funkció"
@@ -905,10 +897,10 @@
     "message": "Mentett részletek megtekintése"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Beállítások keresése…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Keresés törlése"
   },
   "optCacheTitle": {
     "message": "Mentett cikkrészletek"
@@ -923,7 +915,7 @@
     "message": "Még nincsenek mentett cikkrészletek ezen az eszközön."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Megjelenítve: $N1$ / $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Forrás"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Bezárás"
   }
 }

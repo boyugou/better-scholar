@@ -341,14 +341,6 @@
       }
     }
   },
-  "popupExportsShown": {
-    "message": "Copies and exports take the $N1$ papers the page shows now (filtered)",
-    "placeholders": {
-      "n1": {
-        "content": "$1"
-      }
-    }
-  },
   "popupOpenScholar": {
     "message": "Otwórz Google Scholar"
   },
@@ -398,10 +390,10 @@
     "message": "Nagrody i wystąpienia"
   },
   "optCopyTitle": {
-    "message": "Copy & export"
+    "message": "Kopiowanie i eksport"
   },
   "optCopyHint": {
-    "message": "Which buttons copy or save the papers shown, or the summary, as text. The panel and the toolbar popup offer the same ones; with none on, there is no copy row."
+    "message": "Przyciski, które kopiują lub zapisują jako tekst pokazane prace albo zestawienie. Panel i okienko na pasku narzędzi mają te same przyciski; gdy żaden nie jest włączony, wiersz kopiowania się nie pokazuje."
   },
   "optMarkAwardHint": {
     "message": "Najlepsza, wybitna i wyróżniona praca, wyróżnienie, test of time oraz finaliści najlepszej pracy."
@@ -419,7 +411,7 @@
     "message": "Tabela rola × ranking"
   },
   "optPanelSummaryHint": {
-    "message": "The table of your papers by position and rank, with the note on where the ranks come from."
+    "message": "Tabela prac według pozycji i rankingu, wraz z notą o tym, skąd pochodzą rankingi."
   },
   "optPanelMarks": {
     "message": "Liczba nagród i wystąpień"
@@ -531,7 +523,7 @@
     "message": "Eksportuj CSV"
   },
   "copyEmpty": {
-    "message": "Nothing to copy"
+    "message": "Nie ma czego kopiować"
   },
   "exported": {
     "message": "Wyeksportowano"
@@ -629,25 +621,25 @@
     "message": "Przywróć standardowe kolory"
   },
   "optThemes": {
-    "message": "Colour themes"
+    "message": "Motywy kolorów"
   },
   "optThemeDefault": {
-    "message": "Default"
+    "message": "Domyślny"
   },
   "optThemeCool": {
-    "message": "Cool"
+    "message": "Chłodny"
   },
   "optThemeWarm": {
-    "message": "Warm"
+    "message": "Ciepły"
   },
   "optThemeStrong": {
-    "message": "High contrast"
+    "message": "Wysoki kontrast"
   },
   "optThemeSoft": {
-    "message": "Soft"
+    "message": "Łagodny"
   },
   "optContrastTip": {
-    "message": "Contrast of this colour with Scholar's white page. 3:1 or more keeps the row's bar visible."
+    "message": "Kontrast tego koloru z białą stroną Scholar. Wartość 3:1 lub więcej sprawia, że pasek wiersza jest widoczny."
   },
   "markSpotlightHighlight": {
     "message": "Spotlight i highlight"
@@ -814,7 +806,7 @@
     "message": "Filtruj według tytułu lub autora…"
   },
   "searchShortcut": {
-    "message": "Press / to search"
+    "message": "Naciśnij /, aby szukać"
   },
   "venuesShowMore": {
     "message": "Pokaż więcej"
@@ -838,7 +830,7 @@
     "message": "Konfiguracja i profile"
   },
   "optConfigHint": {
-    "message": "Settings as JSON: copy them, save them to a file, load a file, or paste a change into the editor. A preset changes only what it names, and the page says what it applied and what it ignored."
+    "message": "Ustawienia jako JSON: skopiuj je, zapisz do pliku, wczytaj plik lub wklej zmianę do edytora. Profil zmienia tylko to, co wymienia, a strona pokazuje, co zastosowano, a czego nie."
   },
   "optConfigCopy": {
     "message": "Kopiuj konfigurację (JSON)"
@@ -850,13 +842,13 @@
     "message": "Importuj plik"
   },
   "optConfigEditor": {
-    "message": "Paste or edit a configuration (JSON)"
+    "message": "Wklej lub edytuj JSON"
   },
   "optConfigApply": {
     "message": "Zastosuj konfigurację"
   },
   "optConfigApplied": {
-    "message": "Changes applied: $N1$",
+    "message": "Zastosowane zmiany: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -864,13 +856,13 @@
     }
   },
   "optConfigNothing": {
-    "message": "Nothing to change: the settings already say that."
+    "message": "Nic do zmiany: ustawienia są już takie."
   },
   "optConfigIgnored": {
-    "message": "Not applied:"
+    "message": "Nie zastosowano:"
   },
   "optConfigError": {
-    "message": "This is not valid JSON: $N1$",
+    "message": "To nie jest prawidłowy JSON: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -878,19 +870,19 @@
     }
   },
   "optAgentTitle": {
-    "message": "AI agents"
+    "message": "Agenci AI"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Skopiuj przewodnik, który wymienia wszystkie ustawienia, ich wartości i bieżące wybory. Wklej go do asystenta AI, napisz, czego chcesz, a następnie wklej jego odpowiedź do edytora konfiguracji poniżej i naciśnij Zastosuj konfigurację."
   },
   "optAgentCopy": {
-    "message": "Copy guide for agents"
+    "message": "Kopiuj przewodnik dla AI"
   },
   "optConfigPreset": {
     "message": "Profile"
   },
   "optPresetLast": {
-    "message": "Last author focus"
+    "message": "Nacisk: ostatni autor"
   },
   "optPresetFull": {
     "message": "Wszystkie funkcje"
@@ -905,10 +897,10 @@
     "message": "Wyświetl zapisane szczegóły"
   },
   "optSearchPlaceholder": {
-    "message": "Search the settings…"
+    "message": "Szukaj w ustawieniach…"
   },
   "optSearchClear": {
-    "message": "Clear the search"
+    "message": "Wyczyść wyszukiwanie"
   },
   "optCacheTitle": {
     "message": "Zapisane szczegóły publikacji"
@@ -923,7 +915,7 @@
     "message": "Na tym urządzeniu nie zapisano jeszcze szczegółów żadnej publikacji."
   },
   "optCacheShown": {
-    "message": "Shown: $N1$ of $N2$",
+    "message": "Pokazano: $N1$ z $N2$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -934,9 +926,9 @@
     }
   },
   "optCacheSource": {
-    "message": "Read from"
+    "message": "Źródło"
   },
   "optCacheClose": {
-    "message": "Close"
+    "message": "Zamknij"
   }
 }
