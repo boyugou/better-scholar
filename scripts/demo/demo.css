@@ -17,6 +17,9 @@
 
 .rr-embedded .rr-demo-note { display: none; }
 
+/* the footer's sentence is about the extension (its settings sync with the Chrome profile); a demo's are kept in this browser's site data */
+#storage { display: none; }
+
 .rr-demo-note b {
   color: var(--accent);
   font-size: 11px;

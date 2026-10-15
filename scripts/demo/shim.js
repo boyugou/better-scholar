@@ -28,17 +28,20 @@
   const areas = { sync: Object.create(null), local: Object.create(null) };
   const listeners = new Set();
   const slot = (area, key) => PREFIX + area + ":" + key;
+  // Kept in this page only, never in the origin's localStorage (which other pages of the same host can read): a key typed into a demo is a key typed into a toy
+  const MEMORY_ONLY = new Set(["local:s2key"]);
   const parseSlot = (name) => { const m = name && name.startsWith(PREFIX) ? /^([a-z]+):(.*)$/.exec(name.slice(PREFIX.length)) : null; return m && areas[m[1]] ? { area: m[1], key: m[2] } : null; };
 
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const name = localStorage.key(i), at = parseSlot(name);
-      if (!at) continue;
+      if (!at || MEMORY_ONLY.has(at.area + ":" + at.key)) continue;
       try { areas[at.area][at.key] = JSON.parse(localStorage.getItem(name)); } catch (e) { /* not JSON: not ours */ }
     }
   } catch (e) { /* no localStorage */ }
 
   function persist(area, key, value) {
+    if (MEMORY_ONLY.has(area + ":" + key)) return;
     try {
       if (value === undefined) localStorage.removeItem(slot(area, key));
       else localStorage.setItem(slot(area, key), JSON.stringify(value));

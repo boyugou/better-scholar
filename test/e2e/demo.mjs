@@ -92,7 +92,8 @@ const until = async (page, fn, arg, timeout = 10000) => {
   }
 };
 const ccfChips = (page) => page.locator('#preview .rr-chip[data-kind="ccf"]').count();
-const stored = (page) => page.evaluate(() => JSON.parse(localStorage.getItem("rr-demo:sync:prefs")));
+// (the page writes a change a moment after it is made, at most 100 times a minute: a read of what it saved waits for that write)
+const stored = async (page) => { await until(page, () => !document.body.hasAttribute("data-rr-pending")); return page.evaluate(() => JSON.parse(localStorage.getItem("rr-demo:sync:prefs"))); };
 
 try {
   // -- 1. what the build wrote
@@ -119,7 +120,7 @@ try {
   assert.ok((await A.locator("#preview tr").count()) >= 3, "the sample rows are drawn");
   assert.ok(await A.locator("#pv-panel #rr-panel").isVisible(), "the real panel is in the preview");
   assert.ok((await ccfChips(A)) > 0, "the rows carry rank chips");
-  assert.equal(await A.locator('input[data-pref="ranks.ccf"]').isChecked(), true);
+  assert.equal(await A.locator('input[data-pref="rows.ccf"]').isChecked(), true);
   ok("the page renders its cards, the preview rows and the real panel, in English");
 
   // -- 3. the demo's own note
@@ -142,7 +143,7 @@ try {
 
   // -- 4. a switch changes the preview, and says it is saved
   const before = await ccfChips(A);
-  await A.setChecked('input[data-pref="ranks.ccf"]', false);
+  await A.setChecked('input[data-pref="rows.ccf"]', false);
   await until(A, () => document.querySelectorAll('#preview .rr-chip[data-kind="ccf"]').length === 0);
   assert.ok(before > 0 && (await ccfChips(A)) === 0, "the rank chips go with the switch");
   await until(A, () => document.getElementById("saved").classList.contains("on"));
@@ -150,41 +151,41 @@ try {
   ok("clicking a switch changes the preview and says Saved");
 
   // -- 5. it persists: in localStorage, under the demo's prefix, and across a reload
-  assert.equal((await stored(A)).ranks.ccf, false);
+  assert.equal((await stored(A)).rows.ccf, false);
   const keys = await A.evaluate(() => Object.keys(localStorage));
   assert.ok(keys.length > 0 && keys.every((k) => k.startsWith("rr-demo:")), "everything the demo keeps is under its own prefix: " + keys);
   await A.reload();
-  await A.waitForSelector('input[data-pref="ranks.ccf"]');
-  assert.equal(await A.locator('input[data-pref="ranks.ccf"]').isChecked(), false, "the switch is still off");
+  await A.waitForSelector('input[data-pref="rows.ccf"]');
+  assert.equal(await A.locator('input[data-pref="rows.ccf"]').isChecked(), false, "the switch is still off");
   assert.equal(await ccfChips(A), 0, "and the preview agrees");
   ok("the change is kept in localStorage (rr-demo:…) and survives a reload");
 
   // -- 6. a second tab of the demo follows the first (the page opened on its own, next to the one in the website)
   const B = await newPage(a.context);
   await B.goto(origin + "/");
-  await B.waitForSelector('input[data-pref="ranks.core"]');
-  assert.equal(await B.locator('input[data-pref="ranks.ccf"]').isChecked(), false, "the second tab starts from what the first saved");
-  assert.equal(await B.locator('input[data-pref="ranks.core"]').isChecked(), true);
-  await A.setChecked('input[data-pref="ranks.core"]', false);
-  await until(B, () => !document.querySelector('input[data-pref="ranks.core"]').checked);
+  await B.waitForSelector('input[data-pref="rows.core"]');
+  assert.equal(await B.locator('input[data-pref="rows.ccf"]').isChecked(), false, "the second tab starts from what the first saved");
+  assert.equal(await B.locator('input[data-pref="rows.core"]').isChecked(), true);
+  await A.setChecked('input[data-pref="rows.core"]', false);
+  await until(B, () => !document.querySelector('input[data-pref="rows.core"]').checked);
   await until(B, () => document.querySelectorAll("#preview .rr-chip").length > 0 && document.querySelectorAll('#preview .rr-chip[data-kind="core"]').length === 0);
   ok("a second tab of the demo follows the first (chrome.storage.onChanged)");
 
   // -- 7. the page's own buttons work on the stand-in: Enable all, a preset, the configuration editor
-  await A.click('button[data-act="all-on"][data-group="ranks"]');
-  await until(A, () => document.querySelector('input[data-pref="ranks.ccf"]').checked && document.querySelector('input[data-pref="ranks.core"]').checked);
+  await A.click('button[data-act="all-on"][data-group="chips"]');
+  await until(A, () => document.querySelector('input[data-pref="rows.ccf"]').checked && document.querySelector('input[data-pref="rows.core"]').checked);
   await A.click('button[data-preset="minimal"]');
-  await until(A, (rowStyle) => document.documentElement.classList.contains("rr-rows-" + rowStyle) && !document.querySelector('input[data-pref="panel.summary"]').checked, PRESETS.minimal.rowStyle);
-  assert.equal((await stored(A)).rowStyle, PRESETS.minimal.rowStyle);
+  await until(A, (rowStyle) => document.documentElement.classList.contains("rr-rows-" + rowStyle) && !document.querySelector('input[data-pref="panel.table.show"]').checked, PRESETS.minimal.rows.style);
+  assert.equal((await stored(A)).rows.style, PRESETS.minimal.rows.style);
   await A.click("details.config-editor > summary");
-  await A.fill('textarea[data-act="config-input"]', '{ "rowStyle": "bar" }');
+  await A.fill('textarea[data-act="config-input"]', '{ "rows": { "style": "bar" } }');
   await A.click('button[data-act="config-apply"]');
   await until(A, () => document.documentElement.classList.contains("rr-rows-bar"));
-  assert.equal((await stored(A)).rowStyle, "bar");
+  assert.equal((await stored(A)).rows.style, "bar");
   await A.click('button[data-act="reset"]');
   await A.click('button[data-act="reset-confirm"]');
-  await until(A, () => document.querySelector('input[data-pref="panel.summary"]').checked && !document.documentElement.classList.contains("rr-rows-bar"));
-  assert.equal((await stored(A)).rowStyle, "full");
+  await until(A, () => document.querySelector('input[data-pref="panel.table.show"]').checked && !document.documentElement.classList.contains("rr-rows-bar"));
+  assert.equal((await stored(A)).rows.style, "full");
   ok("Enable all, a preset, the configuration editor and Reset to defaults work");
 
   // -- 7b. what the page asks of the browser itself works in a web page: the clipboard, a download, a modal dialog
@@ -242,11 +243,11 @@ try {
   // -- 11. without localStorage (a private window, blocked site data) the page still works, in memory
   const blocked = await open("", { init: () => Object.defineProperty(window, "localStorage", { get() { throw new DOMException("denied", "SecurityError"); } }) });
   assert.equal(await ccfChips(blocked.page) > 0, true);
-  await blocked.page.setChecked('input[data-pref="ranks.ccf"]', false);
+  await blocked.page.setChecked('input[data-pref="rows.ccf"]', false);
   await until(blocked.page, () => document.querySelectorAll('#preview .rr-chip[data-kind="ccf"]').length === 0);
   await blocked.page.reload();
-  await blocked.page.waitForSelector('input[data-pref="ranks.ccf"]');
-  assert.equal(await blocked.page.locator('input[data-pref="ranks.ccf"]').isChecked(), true, "nothing was kept: the defaults are back");
+  await blocked.page.waitForSelector('input[data-pref="rows.ccf"]');
+  assert.equal(await blocked.page.locator('input[data-pref="rows.ccf"]').isChecked(), true, "nothing was kept: the defaults are back");
   await blocked.context.close();
   ok("without localStorage the page works and keeps its changes in memory only");
 

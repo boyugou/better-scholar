@@ -150,6 +150,13 @@ console — and can tell from the attribute that the extension is installed. The
 - They cannot change any setting or anything in storage, they make no network request, and they do not return the
   settings record, the Semantic Scholar key or the name spellings.
 
+## The website's demo
+
+The project's website has a page that runs the extension's settings page in an ordinary browser tab, so that you can try it (`/demo/`, also shown inside
+the home page). It is not the extension: it reads no Scholar page, sends nothing and has no account. It keeps your choices in this website's `localStorage`
+(keys that begin with `rr-demo:`) in your own browser, until you clear the site's data; the Semantic Scholar key field of that page is not kept at all.
+The website is served by GitHub Pages, which sees the requests for its files as any web host does.
+
 ## Permissions
 
 The extension asks for one permission, `storage`. It declares no host permissions (its scripts run only on the
