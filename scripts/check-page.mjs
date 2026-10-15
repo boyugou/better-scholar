@@ -66,8 +66,8 @@ try {
     await page.waitForTimeout(600);
     assert.equal(await page.evaluate(() => scrollY), y0, "the page moved when the frame loaded");
     const frame = frameOf(page);
-    await frame.locator("#pv-panel button.rr-dd").first().click();                       // the real panel's drop-down opens (and scrolls its own list into view)
-    await frame.locator('a[data-card="card-3"]').click();                              // a link to a card of the settings, which scrolls the page inside
+    await frame.locator("button.rr-dd").first().click();                                 // the real panel's drop-down opens (and scrolls its own list into view)
+    await frame.locator(".toc a").nth(3).click();                                        // a link to a card of the settings, which scrolls the page inside
     await frame.locator('input[data-pref="roles.first"]').focus();
     await frame.locator('input[data-pref="roles.first"]').press("Space");
     await page.waitForTimeout(500);
@@ -76,29 +76,32 @@ try {
   }
   ok("the page does not scroll when the frame loads or when a menu, a link or a switch inside it is used");
 
-  // -- the keyboard gets out: Tab from the last control of the page inside goes on to the page, Shift+Tab from the first goes back, the skip link jumps past
+  // -- the keyboard gets out: Tab from the link before the frame goes through the whole page inside and on to the page after it (the export tabs), Shift+Tab
+  //    from there goes back in, and the skip link jumps past all of it
+  let presses = 0;
   {
     const { context, page } = await open("en", 1360);
     await page.locator(".try-frame").scrollIntoViewIfNeeded();
     await ready(page);
-    const frame = frameOf(page);
-    await frame.locator("#lnk-source").focus();                                         // the last link of the page inside (GitHub)
+    const after = () => page.evaluate(() => document.activeElement.id === "tab-bibtex");      // (the first control of the page after the frame)
+    await page.locator(".try-open").focus();
     await page.keyboard.press("Tab");
-    assert.equal(await page.evaluate(() => document.activeElement.id), "tab-bibtex", "Tab from the last control of the frame did not reach the page after it");
+    assert.equal(await page.evaluate(() => document.activeElement.tagName), "IFRAME", "Tab from the link before the frame did not go into it");
+    presses = 1;
+    while (!(await after()) && presses < 600) { await page.keyboard.press("Tab"); presses++; }
+    assert.ok(presses > 30 && presses < 600, `Tab left the frame after ${presses} presses (the page inside has dozens of controls, and no trap)`);
     await page.keyboard.press("Shift+Tab");                                              // back into the frame, to its last control
     assert.equal(await page.evaluate(() => document.activeElement.tagName), "IFRAME");
-    assert.equal(await frame.locator("#lnk-source").evaluate((el) => el === el.ownerDocument.activeElement), true);
+    await page.keyboard.press("Tab");
+    assert.equal(await after(), true, "Tab from the last control of the frame did not reach the page after it");
     await page.locator(".try-bar .skip").focus();
     assert.equal(await page.locator(".try-bar .skip").evaluate((el) => el.getBoundingClientRect().width > 40), true, "the skip link is seen when it has the focus");
     await page.keyboard.press("Enter");
     await page.keyboard.press("Tab");
-    assert.equal(await page.evaluate(() => document.activeElement.id), "tab-bibtex", "the skip link did not go past the frame");
-    await page.locator(".try-open").focus();
-    await page.keyboard.press("Tab");                                                    // from the link, into the frame (its first control)
-    assert.equal(await page.evaluate(() => document.activeElement.tagName), "IFRAME");
+    assert.equal(await after(), true, "the skip link did not go past the frame");
     await context.close();
   }
-  ok("keyboard: Tab leaves the frame at its end, Shift+Tab goes back in, the skip link jumps past it, the link before it is reached first");
+  ok(`keyboard: Tab goes through the frame (${presses} presses) and out at its end, Shift+Tab goes back in, the skip link jumps past it`);
 
   // -- the link opens the same demo on its own, in the page's language; changes made in the frame are there too
   {

@@ -13,7 +13,7 @@ scripts/deploy.sh     build + verify + publish to the gh-pages branch (no CI nee
 scripts/render-assets.mjs   dev tool: apple-touch-icon.png and og.png
 scripts/axe-audit.mjs       dev tool: axe-core accessibility audit of the built pages
 scripts/check-page.mjs      dev tool: the "Try" section and the export samples in a browser (no sideways scroll from a phone up, the keyboard gets out of the frame, ...)
-scripts/serve.mjs           a small static server for _site (the two tools above use it; the demo needs http)
+scripts/serve.mjs           a small static server for _site, for the two tools above (the demo needs http, not file://)
 ```
 
 ## What comes from the extension's repository
@@ -36,7 +36,7 @@ denylist (the researchers the old demo used) over everything the build writes, t
 
 ```bash
 npm run verify     # build and check
-npm run dev        # build and serve at http://localhost:8080 (scripts/serve.mjs)
+npm run dev        # build and serve at http://localhost:8080
 npm run check      # the Try section and the export samples in a browser (after a build; needs Playwright, found through EXT_DIR)
 npm run deploy     # build, check, push gh-pages
 EXT_DIR=/path/to/google-scholar-highlighter npm run verify     # when the extension's repository is elsewhere

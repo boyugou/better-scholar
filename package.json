@@ -6,7 +6,7 @@
     "build": "node build.mjs",
     "verify": "node build.mjs && node scripts/verify.mjs",
     "deploy": "scripts/deploy.sh",
-    "dev": "node build.mjs && node scripts/serve.mjs 8080",
+    "dev": "node build.mjs && python3 -m http.server 8080 --directory _site",
     "check": "node scripts/check-page.mjs",
     "sync-privacy": "cp ../../PRIVACY.md src/privacy.md 2>/dev/null || cp PRIVACY.md src/privacy.md"
   }
