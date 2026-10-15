@@ -157,4 +157,16 @@ Scholar pages listed in `manifest.json`), and no `tabs`, `activeTab`, `scripting
 permission. The toolbar popup asks Chrome for the active tab's id and sends a message to the extension's own script
 in that tab.
 
+## Chrome Web Store user data policy
+
+Better Scholar's use of the information it reads complies with the Chrome Web Store User Data Policy, including the
+Limited Use requirements:
+
+- It uses the paper details it reads only to provide what you see in the page and the popup: the highlighted rows,
+  the rank and award chips, the summaries, the filters and the text of the copy and export buttons.
+- It does not sell the information, does not transfer it to anyone except as described under *What it sends* (a
+  paper's title to Semantic Scholar, only if you switch that on, and requests to Google Scholar itself), and does
+  not use it for advertising or for credit or lending decisions.
+- No person at the project can read it: the project receives none of it.
+
 Questions or concerns: open an issue at https://github.com/boyugou/better-scholar/issues.
