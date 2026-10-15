@@ -452,6 +452,38 @@ body {
 .opt.opt-color { cursor: default; }
 input.chip-clr { width: 38px; height: 28px; padding: 2px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent; cursor: pointer; }
 
+/* The preview as a place to edit (editor.js): a tag over the part under the pointer, a rail at the left edge of a part of the panel, a bar where a dragged part would go */
+.preview > .card { position: relative; }
+.pv-edit-hint { padding-top: 0 !important; margin-top: -6px; font-size: 12px; color: var(--faint); }
+.pv-tag, .pv-rail {
+  position: absolute; z-index: 30; display: flex; gap: 1px; padding: 2px; border-radius: 8px; background: var(--accent); box-shadow: 0 4px 14px rgba(15, 23, 42, 0.28); user-select: none;
+}
+.pv-rail { flex-direction: column; width: 24px; }
+.pv-btn {
+  min-width: 22px; height: 20px; padding: 0 4px; border: 0; border-radius: 5px; background: none; color: #fff; font: inherit; font-size: 12px; line-height: 1; cursor: pointer;
+}
+.pv-btn:hover { background: rgba(255, 255, 255, 0.24); }
+.pv-btn.pv-grip { cursor: grab; letter-spacing: -1px; }
+.pv-drop { position: absolute; z-index: 31; border-radius: 2px; background: var(--accent); pointer-events: none; box-shadow: 0 0 0 2px var(--accent-ring); }
+body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select: none; }
+.pv-dragged { opacity: 0.4; }
+.pv-hot { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.pv-rename {
+  position: absolute; z-index: 40; display: grid; gap: 3px; padding: 6px 8px 5px; border: 1px solid var(--accent); border-radius: 10px; background: #fff; color: #202124;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+}
+.pv-rename-input { width: 100%; padding: 4px 8px; border: 1px solid #cbd5e1; border-radius: 7px; font: 13px Arial, sans-serif; color: #202124; background: #fff; }
+.pv-rename-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.pv-rename-hint { font: 11px Arial, sans-serif; color: #5f6368; }
+.pv-tray { margin: 0 16px 10px; border: 1px dashed var(--btn-line); border-radius: 10px; font-size: 12.5px; }
+.pv-tray > summary { padding: 6px 10px; cursor: pointer; color: var(--muted); font-weight: 600; }
+.pv-tray-list { display: flex; flex-wrap: wrap; gap: 6px; padding: 2px 10px 10px; }
+.pv-chip {
+  padding: 3px 10px; border: 1px solid var(--btn-line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 12px; cursor: pointer;
+}
+.pv-chip:hover { border-color: var(--accent); color: var(--accent); }
+.pv-chip:focus-visible, .pv-tray > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 .swatch {
   width: 11px;
   height: 11px;

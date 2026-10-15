@@ -139,6 +139,7 @@
   $("sub").textContent = t("optHeading");
   $("pv-title").replaceChildren(makeIconBadge({ icon: "sparkles", color: "#1a73e8", bg: "rgba(26, 115, 232, 0.12)" }), h("span", { class: "card-title-text" }, t("optPreviewTitle")));
   $("pv-note").textContent = t("optPreviewNote");
+  $("pv-hint").textContent = t("optPreviewEdit");
   $("storage").textContent = t("optStorage");
   $("ver").textContent = "v" + chrome.runtime.getManifest().version;
   $("lnk-privacy").parentNode.setAttribute("aria-label", t("extName"));
@@ -970,12 +971,41 @@
     };
   }
 
+  let editor = null;
   function renderPreview() {
     $("pv-panel").hidden = !prefs.panel.show;
     if (prefs.panel.show) { if (!$("pv-panel").contains(panel.el)) $("pv-panel").append(panel.el); panel.update(panelModel()); }
     $("preview").replaceChildren(...SAMPLES.map(sampleRow));
+    if (editor) editor.refresh();
   }
   renderPreview();
+
+  // The preview is edited from itself as well as from the controls (editor.js): the words it needs from this page
+  const partName = (path) => {
+    const row = SETTING.get(path);
+    if (!row) return path;
+    if (path === "panel.show") return t("optPanelTitle");
+    if (path.endsWith(".show")) return t(cardOf(row.card).title);                                // (a part of the panel: its card's title)
+    if (row.card === "panel") return t(row.label);                                              // (the title bar's parts, the filter bar)
+    return `${t(cardOf(row.card).title)} · ${t(row.label)}`;
+  };
+  // the switches that draw something on the preview and are off: each can be turned on again from the tray (what hangs on a part that is off waits until the part is on)
+  const PART_OF = /^panel\.(table|copy|marks|filters|metrics|years|venues|status|names)\./;
+  const hiddenParts = () => B.prefs.SETTINGS.filter((s) => {
+    if (s.kind !== "bool" || !/^(panel|rows|roles)\./.test(s.path) || at(s.path)) return false;
+    if (s.path === "panel.show") return true;
+    if (!s.path.startsWith("panel.")) return true;
+    if (!at("panel.show")) return false;                                                         // (the panel itself is off: it is what waits)
+    const part = PART_OF.exec(s.path);
+    return !part || s.path.endsWith(".show") || at(`panel.${part[1]}.show`);
+  }).map((s) => ({ path: s.path, name: partName(s.path) }));
+  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts });
+  // from the controls to the preview: the part a setting draws is outlined while the pointer or the keyboard is on the setting
+  const settingOf = (target) => { const row = target.closest && target.closest(".opt, .role-studio-card"); const el = row && row.querySelector("[data-pref]"); return el ? el.dataset.pref : null; };
+  const point = (path) => (path && path.startsWith("labels.") ? editor.highlight(null, path.slice(7)) : editor.highlight(path || null));
+  $("controls").addEventListener("pointerover", (e) => point(settingOf(e.target)));
+  $("controls").addEventListener("focusin", (e) => point(settingOf(e.target)));
+  for (const type of ["pointerleave", "focusout"]) $("controls").addEventListener(type, () => editor.highlight(null));
 
   // (the preview is Scholar's own page, which is always light: it does not follow the system theme, and there is nothing to switch)
   const pvAside = document.querySelector(".preview");

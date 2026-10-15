@@ -8,6 +8,9 @@
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
   const { h, t, tn, issueUrl } = B.dom;
   const P = (path) => ({ "data-rr-part": path });
+  // what the settings page's preview needs to edit the panel in place: the message key of a text a person can name (data-rr-label), and where a list can be put in another order
+  // (data-rr-order on its container, data-rr-item on each item: the setting's path, and the item's id)
+  const L = (key) => ({ "data-rr-label": key });
 
   const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)", middle: "#9aa0a6", hidden: "#dadce0" };
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
@@ -76,7 +79,7 @@
 
     // ---- skeleton --------------------------------------------------------
     // (the words are set by relabel(), which update() runs first: a name the person typed in the settings is then used at once)
-    const title = h("span", { class: "rr-title", ...P("panel.header.name") });
+    const title = h("span", { class: "rr-title", ...P("panel.header.name"), ...L("extShortName") });
     const settingsBtn = h("button", { class: "rr-icon rr-ico-settings", "data-act": "settings", type: "button", ...P("panel.header.settings"), onClick: () => cb.onSettings() });
     const collapseBtn = h("button", { class: "rr-icon rr-ico-caret", "data-act": "collapse", type: "button", ...P("panel.header.fold"), onClick: () => cb.onCollapse() });
     const head = h("header", { class: "rr-head" }, title, settingsBtn, collapseBtn);
@@ -87,12 +90,12 @@
     const noteBox = h("div", { class: "rr-faint rr-note-src", "data-rr": "note", ...P("panel.table.note") });
     const summarySec = h("div", { class: "rr-sec rr-summary", ...P("panel.table.show") }, summaryHead, matrixBox, noteBox);
     // the copy row: one button for each format that is switched on (the settings' panel.copy.*), whether or not the table is shown
-    const actions = h("div", { class: "rr-actions rr-copybar" });
+    const actions = h("div", { class: "rr-actions rr-copybar", "data-rr-order": "panel.copy.order", "data-rr-axis": "x" });
     const flashSr = h("span", { class: "rr-sr", role: "status", "aria-live": "polite" });       // what a copy button says, for a screen reader (apart from the status lines)
     const copySec = h("div", { class: "rr-sec rr-copy", "data-rr": "export-row", ...P("panel.copy.show") }, actions, flashSr);
 
     // Awards & talks: one row per group that occurs; the section is absent when nothing qualifies
-    const marksTitle = h("span", { class: "rr-sec-title", ...P("panel.marks.title") });
+    const marksTitle = h("span", { class: "rr-sec-title", ...P("panel.marks.title"), ...L("marksTitle") });
     const marksHead = h("div", { class: "rr-sec-head" }, marksTitle);
     const marksRows = h("div", { class: "rr-markrows" });
     const marksSec = h("div", { class: "rr-sec rr-marks", "data-rr": "marks", hidden: true, ...P("panel.marks.show") }, marksHead, marksRows);
@@ -249,6 +252,7 @@
     }
 
     // The quick filters: one button for each of the settings' panel.filters.pills.* (built once, put in the panel's order, and only the ones that can find something)
+    const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks" };
     const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
     const pillEls = new Map(B.prefs.PILLS.map((id) => {
       const btn = h("button", {
@@ -257,7 +261,7 @@
         "data-op": B.prefs.PILL_OPERATORS[id],
         "data-pill": id,
         "aria-pressed": "false",
-        ...P("panel.filters.pills." + id),
+        ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
         onClick: () => {
           closeSuggest();
           queryInput.value = toggleToken(queryInput.value, B.prefs.PILL_OPERATORS[id]);
@@ -268,7 +272,7 @@
       });
       return [id, btn];
     }));
-    const searchPills = h("div", { class: "rr-search-pills", role: "group" });
+    const searchPills = h("div", { class: "rr-search-pills", role: "group", "data-rr-order": "panel.filters.pills.order", "data-rr-axis": "x" });
 
     function syncSearchUI(m) {
       const hasText = !!queryInput.value;
@@ -353,13 +357,14 @@
     const searchRow = h("div", { class: "rr-search", ...P("panel.filters.search") }, queryInput, searchCount, kbdHint, clearSearchBtn, suggestList);
 
     const onlyCb = h("input", { type: "checkbox", role: "switch", "data-act": "only", onChange: (e) => cb.onOnly(e.target.checked) });
-    const onlyLabel = h("label", { class: "rr-check" }, onlyCb);
+    const onlyLabel = h("label", { class: "rr-check", ...L("onlyHighlighted") }, onlyCb);
     const onlyText = document.createTextNode("");
     onlyLabel.append(onlyText);
     const yearStart = dropdown("year-start", "", () => cb.onYear(yearStart.value, yearEnd.value));
     const yearEnd = dropdown("year-end", "", () => cb.onYear(yearStart.value, yearEnd.value));
     const onlyRow = h("div", { class: "rr-row", ...P("panel.filters.only") }, onlyLabel);
-    const yearLabel = h("span", { class: "rr-label" });
+    const yearLabel = h("span", { class: "rr-label", ...L("yearLabel") });
+    yearStart.el.setAttribute("data-rr-label", "yearStart"); yearEnd.el.setAttribute("data-rr-label", "yearEnd");
     const yearRow = h("div", { class: "rr-year", ...P("panel.filters.years") }, yearLabel, yearStart.el, h("span", { class: "rr-dash" }, "–"), yearEnd.el, yearStart.list, yearEnd.list);
     const filtersSec = h("div", { class: "rr-sec rr-filters", "data-rr": "filters", ...P("panel.filters.show") }, searchRow, searchPills, onlyRow, yearRow);
 
@@ -373,7 +378,7 @@
     const variantInput = h("input", { type: "text", "data-act": "variant-input" });
     const addVariant = () => { const v = variantInput.value.trim(); if (v) { cb.onAddVariant(v); variantInput.value = ""; } };
     variantInput.addEventListener("keydown", (e) => { if (e.key === "Enter") addVariant(); });
-    const variantSummary = h("summary", {});
+    const variantSummary = h("summary", { ...L("variantsTitle") });
     const variantAddBtn = h("button", { class: "rr-btn", type: "button", onClick: addVariant });
     const variantBox = h("details", { "data-rr": "variants", ...P("panel.names.add") }, variantSummary, variantList, h("div", { class: "rr-add" }, variantInput, variantAddBtn));
     const namesSec = h("div", { class: "rr-sec rr-names", ...P("panel.names.show") }, suggestBox, variantBox);
@@ -381,7 +386,7 @@
     // the parts, by the ids of the settings' panel.order
     const sections = { table: summarySec, copy: copySec, marks: marksSec, filters: filtersSec, metrics: metricsSec, years: yearsSec, venues: venuesSec, status: coverSec, names: namesSec };
     for (const [id, sec] of Object.entries(sections)) sec.setAttribute("data-section", id);
-    const body = h("div", { class: "rr-body" });
+    const body = h("div", { class: "rr-body", "data-rr-order": "panel.order" });
     // a bar that says the list is filtered, by how much, and clears every filter
     const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") });
     // Scholar's page changed under us: the warning is the first thing in the panel
@@ -444,7 +449,8 @@
         ? h("span", { class: "rr-seg", role: "group" },
           ...m.sources.map((src) => h("button", { type: "button", "data-src": src, "aria-pressed": String(m.source === src), ...P("panel.table." + src), onClick: () => cb.onSource(src) }, name(src))))
         : m.sources.length === 1 ? h("span", { class: "rr-src", ...P("panel.table." + m.sources[0]) }, name(m.sources[0])) : null;
-      const heading = tp.title ? h("span", { class: "rr-sec-title", ...P("panel.table.title") }, t(m.noRanks || !m.sources.length ? "summaryTitleRoles" : "summaryTitle")) : null;
+      const titleKey = m.noRanks || !m.sources.length ? "summaryTitleRoles" : "summaryTitle";
+      const heading = tp.title ? h("span", { class: "rr-sec-title", ...P("panel.table.title"), ...L(titleKey) }, t(titleKey)) : null;
       summaryHead.replaceChildren(...[heading, control].filter(Boolean));        // (replaceChildren(null) would print "null")
       summaryHead.hidden = !heading && !control;
     }
@@ -455,7 +461,7 @@
       const pressed = (x) => String(sameSel(sel, x));
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);                    // (the tiers belong to the list's tab; the "not ranked" column has its own switch)
       const tierPart = (c) => (c === "none" ? P("panel.table.unranked") : m.source ? P("panel.table." + m.source) : {});
-      const totalHead = tp.total ? h("th", { class: "rr-col-total", ...P("panel.table.total") }, t("colTotal")) : null;
+      const totalHead = tp.total ? h("th", { class: "rr-col-total", ...P("panel.table.total"), ...L("colTotal") }, t("colTotal")) : null;
       const headRow = h("tr", {}, h("th", {}, h("span", { class: "rr-sr" }, t("colRole"))),
         ...cols.map((c) => h("th", { ...tierPart(c) },
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
@@ -463,7 +469,7 @@
         totalHead);
       const rows = s.rows.filter((r) => r.role !== "middle" || tp.other);
       const bodyRows = rows.map((r) => h("tr", { "data-role": r.role, ...(r.role === "middle" ? P("panel.table.other") : {}) },
-        h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": r.role, "aria-pressed": pressed({ role: r.role, tier: undefined }),
+        h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": r.role, "aria-pressed": pressed({ role: r.role, tier: undefined }), ...L(ROLE_KEY[r.role]),
           onClick: () => cb.onSelect({ role: r.role, tier: undefined }) }, dot(r.role), t(ROLE_KEY[r.role]))),
         ...cols.map((c) => h("td", { ...tierPart(c) },
           h("button", { class: "rr-cell" + (r[c] ? "" : " rr-zero"), type: "button", tabindex: r[c] ? null : "-1", "data-role": r.role, "data-tier": c,
@@ -473,13 +479,13 @@
       let hiddenRow = null;
       if (s.hidden && tp.hidden) {
         hiddenRow = (h("tr", { "data-role": "hidden", class: "rr-hiddenrow", title: t("tipHidden"), ...P("panel.table.hidden") },
-          h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }),
+          h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }), ...L("roleHidden"),
             onClick: () => cb.onSelect({ role: "hidden", tier: undefined }) }, dot("hidden"), t("roleHidden"))),
           // (the count is the row's only number: with no total column it takes the room of the columns)
           tp.total ? [cols.length ? h("td", { colspan: String(cols.length), class: "rr-faint" }, "") : null, h("td", { class: "rr-total" }, String(s.hidden))]
             : h("td", { colspan: String(Math.max(1, cols.length)), class: "rr-total" }, String(s.hidden))));
       }
-      const foot = tp.total ? h("tr", { ...P("panel.table.total") }, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total))) : null;
+      const foot = tp.total ? h("tr", { ...P("panel.table.total") }, h("th", { ...L("colTotal") }, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total))) : null;
       // (the papers whose position is not known are not in the total: their row comes after it)
       matrixBox.replaceChildren(h("table", { class: "rr-matrix" + (tp.total ? "" : " rr-no-total") }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
     }
@@ -491,7 +497,7 @@
       actions.replaceChildren(...on.map((kind) => {
         const flashed = ui.flash && ui.flash.kind === kind;
         const cls = "rr-btn" + (flashed && ui.flash.mode !== "empty" ? " rr-btn-flashed" : "");
-        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, ...P("panel.copy." + kind), onClick: () => cb.onCopy(kind) },
+        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
           flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
       }));
       restoreFocus(focused);
@@ -509,7 +515,7 @@
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
       marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
-        "aria-pressed": String(m.markGroup === g), ...P("panel.marks." + B.marks.members(g)[0]), onClick: () => cb.onMarkGroup(g) },
+        "aria-pressed": String(m.markGroup === g), ...P("panel.marks." + B.marks.members(g)[0]), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 
@@ -521,7 +527,7 @@
       const loadedLine = h("div", { class: "rr-cover-line", ...P("panel.status.loaded") },
         h("span", { class: "rr-note" }, c.loadingAll ? t("loadingAll", [String(c.loaded)]) : tn("coverLoaded", c.loaded, [String(c.loaded)])),
         c.loadingAll ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelLoad() }, t("cancel"))
-          : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-act": "load-all", onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
+          : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-act": "load-all", ...L("loadAll"), onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
       const status = [];
       if (sp.loaded) {
         status.push(loadedLine);
@@ -532,7 +538,7 @@
           status.push(h("div", { class: "rr-cover-line", ...P("panel.status.cutoff") },
             h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
             c.resolving ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelResolve() }, t("cancel"))
-              : h("button", { class: "rr-link", type: "button", "data-act": "resolve", onClick: () => cb.onResolve() }, t("resolveBtn"))));
+              : h("button", { class: "rr-link", type: "button", "data-act": "resolve", ...L("resolveBtn"), onClick: () => cb.onResolve() }, t("resolveBtn"))));
           if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint", ...P("panel.status.cutoff") }, t(m.prefs.semanticScholar ? "resolveHintSemantic" : "resolveHint")));        // (what it does and who it asks, titles included: before it is pressed, not in a tooltip)
         }
         if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg", ...P("panel.status.cutoff") }, c.resolveMessage));
@@ -615,7 +621,7 @@
         .map((part) => (part === "" ? h("b", {}, fmt(a)) : part === "" ? h("span", { class: "rr-faint", ...P("panel.metrics.of") }, fmt(b)) : h("i", {}, part))));
       const row = (key, a, b, withPct, path) => {
         const pct = withPct && b > 0 ? Math.round((a / b) * 100) : null;
-        return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null, ...P(path) },
+        return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null, ...P(path), ...L(key) },
           h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
       const btnRow = (key, a, b, impact, threshold, path) => {
@@ -629,11 +635,11 @@
           "aria-pressed": String(isPressed),
           disabled: idle ? true : null,
           title,
-          ...P(path),
+          ...P(path), ...L(key),
           onClick: () => cb.onImpact(impact)
         }, h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
-      const heading = mp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.metrics.title") }, t("metricsTitle"))) : null;
+      const heading = mp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.metrics.title"), ...L("metricsTitle") }, t("metricsTitle"))) : null;
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
       const roleNames = B.prefs.ROLES.filter((r) => m.prefs.roles[r]).map((r) => t(ROLE_KEY[r]));
       let scope = roleNames.join(", ");
@@ -662,7 +668,7 @@
       const older = m.byYearOlder || 0, olderNote = older ? tn("yearsOlder", older, [String(older)]) : "";        // (papers before the last fifty years are not drawn: said on hover and to screen readers)
       const names = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
       yearsSec.replaceChildren(...[
-        yp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.years.title") }, t("yearsTitle"))) : null,
+        yp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.years.title"), ...L("yearsTitle") }, t("yearsTitle"))) : null,
       h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
         h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
@@ -700,7 +706,7 @@
         ? h("div", { class: "rr-venues-more" }, h("button", { class: "rr-link", type: "button", "data-act": "toggle-venues", onClick: () => cb.onToggleVenues() }, t(m.venuesExpanded ? "venuesShowFewer" : "venuesShowMore")))
         : null;
       venuesSec.replaceChildren(...[
-        vp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.venues.title") }, t("venuesTitle"))) : null,
+        vp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.venues.title"), ...L("venuesTitle") }, t("venuesTitle"))) : null,
         h("div", { class: "rr-markrows" }, ...rows),
         moreRow
       ].filter(Boolean));

@@ -1326,6 +1326,86 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, { panel: { venues: { show: false }, filters: { pills: B.prefs.defaults().panel.filters.pills } } }).prefs }); });
     await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 4);
     ok("the settings are in the order of the preview: the parts of the panel and the things in them, top to bottom");
+    // -- the preview is edited from itself, as well as from the controls: ✕ hides a thing, a rail hides or moves a part, a double-click renames, a tray shows again
+    await opts.setViewportSize({ width: 1360, height: 1500 });
+    await opts.bringToFront();
+    const resetPreview = async () => { await settle(opts); await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, { panel: { show: true, order: B.prefs.defaults().panel.order, copy: { order: B.prefs.COPY_BUTTONS }, venues: { show: false } } }).prefs }); }); };
+    await opts.hover("#pv-panel th.rr-col-total");
+    await opts.locator(".pv-tag .pv-x").click();
+    await settle(opts);
+    assert.equal(await opts.isChecked('input[data-pref="panel.table.total"]'), false, "a thing hidden on the preview: the switch on the left follows");
+    assert.equal(await opts.locator("#pv-panel th.rr-col-total").count(), 0);
+    await opts.locator(".pv-tray summary").click();
+    await opts.locator('.pv-chip[data-restore="panel.table.total"]').click();
+    await settle(opts);
+    assert.equal(await opts.locator("#pv-panel th.rr-col-total").count(), 1, "the tray shows it again");
+    // a part: hidden from its rail
+    await opts.hover('#pv-panel [data-section="metrics"] .rr-sec-title');
+    await opts.locator(".pv-rail .pv-x").click();
+    await settle(opts);
+    assert.equal(await opts.isChecked('input[data-pref="panel.metrics.show"]'), false);
+    assert.equal(await opts.locator('#pv-panel [data-section="metrics"]').isVisible(), false);
+    await opts.locator('.pv-chip[data-restore="panel.metrics.show"]').click();
+    await settle(opts);
+    assert.equal(await opts.locator('#pv-panel [data-section="metrics"]').isVisible(), true);
+    // a part: moved by the grip of its rail (the copy row goes under the awards and talks)
+    const drag = async (from, to, toAt) => {
+      const a = await from.boundingBox(), b = await to.boundingBox();
+      await opts.mouse.move(a.x + a.width / 2, a.y + a.height / 2);
+      await opts.mouse.down();
+      await opts.mouse.move(a.x + a.width / 2, a.y + a.height / 2 + 6, { steps: 3 });
+      await opts.mouse.move(b.x + b.width / 2, toAt === "after" ? b.y + b.height - 3 : b.y + 3, { steps: 12 });
+      await opts.mouse.up();
+    };
+    await opts.hover('#pv-panel [data-section="copy"]', { position: { x: 4, y: 4 } });
+    await drag(opts.locator(".pv-rail .pv-grip"), opts.locator('#pv-panel [data-section="marks"]'), "after");
+    await settle(opts);
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel.order.slice(0, 3), ["table", "marks", "copy"], "a part moved by its grip: the order of the settings follows");
+    assert.deepEqual(await opts.locator("#pv-panel .rr-body > [data-section]").evaluateAll((els) => els.filter((e) => !e.hidden).map((e) => e.dataset.section).slice(0, 3)), ["table", "marks", "copy"], "…and the preview");
+    assert.deepEqual(await opts.locator('.order-list[data-pref="panel.order"] li').evaluateAll((els) => els.map((e) => e.dataset.id).slice(0, 3)), ["table", "marks", "copy"], "…and the list on the left");
+    // a button: moved by the grip in its tag (CSV before the first)
+    await opts.hover('#pv-panel [data-act="copy-csv"]');
+    await drag(opts.locator(".pv-tag .pv-grip"), opts.locator('#pv-panel [data-act="copy-summary"]'), "before");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).panel.copy.order[0], "csv", "a button moved by its grip");
+    assert.equal(await opts.locator('#pv-panel [data-rr="export-row"] button').first().getAttribute("data-act"), "copy-csv");
+    // Escape gives a drag up
+    await opts.hover('#pv-panel [data-section="copy"]', { position: { x: 4, y: 4 } });
+    const grip = await opts.locator(".pv-rail .pv-grip").boundingBox();
+    await opts.mouse.move(grip.x + 4, grip.y + 4); await opts.mouse.down(); await opts.mouse.move(grip.x + 4, grip.y + 400, { steps: 8 }); await opts.keyboard.press("Escape"); await opts.mouse.up();
+    await settle(opts);
+    assert.deepEqual((await stored(opts, "sync", "prefs")).panel.order.slice(0, 3), ["table", "marks", "copy"], "Escape: nothing moved");
+    // a name: a double-click, an input over the text, Enter
+    await opts.dblclick('#pv-panel [data-rr="metrics"] .rr-sec-title');
+    await opts.locator(".pv-rename-input").fill("Output");
+    await opts.locator(".pv-rename-input").press("Enter");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).labels.metricsTitle, "Output");
+    assert.equal(await opts.inputValue('input[data-pref="labels.metricsTitle"]'), "Output", "the field on the left follows");
+    assert.equal((await opts.locator('#pv-panel [data-rr="metrics"] .rr-sec-title').textContent()).trim(), "Output");
+    await opts.hover('#pv-panel [data-rr="metrics"] .rr-sec-title');
+    await opts.locator(".pv-tag .pv-edit").click();                                         // (the pencil does the same as the double-click; an empty box is the standard name)
+    await opts.locator(".pv-rename-input").fill("");
+    await opts.locator(".pv-rename-input").press("Enter");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).labels.metricsTitle, "", "an empty name: the standard one");
+    await opts.dblclick('#pv-panel [data-rr="metrics"] .rr-sec-title');
+    await opts.locator(".pv-rename-input").fill("Cancelled");
+    await opts.locator(".pv-rename-input").press("Escape");
+    await settle(opts);
+    assert.equal((await stored(opts, "sync", "prefs")).labels.metricsTitle, "", "Escape: the name is not kept");
+    // from a setting to what it draws: the part is outlined while the pointer is on the setting (and the name's field points at the text)
+    await opts.hover('label:has(input[data-pref="panel.copy.json"])');
+    assert.equal(await opts.locator('#pv-panel [data-act="copy-json"]').evaluate((el) => el.classList.contains("pv-hot")), true, "a setting points at what it draws");
+    await opts.hover('.opt:has(input[data-pref="labels.mH"])');
+    assert.equal(await opts.locator('#pv-panel [data-metric="mH"]').evaluate((el) => el.classList.contains("pv-hot")), true, "so does a name's field");
+    await opts.mouse.move(5, 5);
+    assert.equal(await opts.locator(".pv-hot").count(), 0);
+    await opts.locator('[data-act="reset"]').click(); await opts.locator('[data-act="reset-confirm"]').click(); await settle(opts);
+    await resetPreview();
+    await opts.setViewportSize({ width: 1360, height: 900 });
+    ok("the preview is edited from itself: ✕ hides a thing, a rail hides or moves a part, a grip moves a button, a double-click renames, the tray shows a thing again, and a setting points at what it draws");
+
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
     const compact = (await stored(opts, "sync", "prefs")).panel;

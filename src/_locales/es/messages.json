@@ -1107,5 +1107,31 @@
   },
   "optChipThemeMono": {
     "message": "Monochrome"
+  },
+  "optPreviewEdit": {
+    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+  },
+  "optHide": {
+    "message": "Hide"
+  },
+  "optRename": {
+    "message": "Rename"
+  },
+  "optDragMove": {
+    "message": "Drag to move"
+  },
+  "optHiddenTray": {
+    "message": "Hidden: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Show again"
+  },
+  "optRenameHint": {
+    "message": "Enter keeps it · Esc cancels · empty: the standard name"
   }
 }

@@ -39,7 +39,7 @@
       if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
     } else lines.push(t("tipMarkAuthor", [mark.text]));
     return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
-      title: lines.join("\n") }, name);
+      ...(MARK_TEXT[mark.kind] ? { "data-rr-label": MARK_TEXT[mark.kind] } : {}), title: lines.join("\n") }, name);
   }
 
   // The kind's name in the interface language, for counts ("Best paper 5 · Honorable mention 47")
