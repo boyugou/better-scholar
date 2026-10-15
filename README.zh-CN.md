@@ -45,7 +45,7 @@ Better Scholar 是一款遵循 Manifest V3 规范的浏览器扩展程序，专�
 - **交互式影响力过滤**：点击角色 × 等级矩阵中的任意单元格，或点击 **h-index** / **i10-index** 指标行，一键过滤出核心高引论文列表。
 - **即时检索与操作符自动补全**：在主页按 `/` 键即可聚焦搜索框。当输入操作符前缀（如 `role:`、`ccf:`、`core:`、`>`、`has:`）或按下方向键 <kbd>↓</kbd> 时，自动弹出精美分类建议菜单，按 <kbd>Enter</kbd> 或 <kbd>Tab</kbd> 自动补全。按 <kbd>Escape</kbd> 随时一键清空复位。
 - **一键多格式学术导出**：支持一键复制标准且严谨的 BibTeX（含 LaTeX 特殊字符转义与 Scholar 直链）、APA 第 7 版、JSON、Markdown、RFC-4180 CSV、纯文本列表与表格。可在学者主页侧边面板或扩展工具栏弹出页中随时一键导出。
-- **学术主题工作台与设计系统**：内置 5 套精选学术配色预设（`Classic Scholar`、`Ocean Sapphire`、`Sunset Orchid`、`High Contrast Pro`、`Nordic Slate`），支持每个角色独立取色并实时计算 WCAG 2.1 AA 对比度，采用全宽分段选择器（Segmented Controls）及支持快速检索的语言选择器。
+- **一键配置预设与学术主题工作台**：提供一键配置预设（`🚀 全功能开启`、`🎓 资深/通讯作者优先`、`🥇 一作优先`、`⚡ 极简风格`），5 套精选学术配色预设（`Classic Scholar`、`Ocean Sapphire`、`Sunset Orchid`、`High Contrast Pro`、`Nordic Slate`），支持角色级颜色自定义、实时 WCAG 2.1 AA 对比度校验、无缝分段切换按钮与可即时搜索的语言选择器。
 - **AI 与 Web 智能体 DOM 事件桥梁**：在页面 `document` 上提供原生 CustomEvent 事件总线与 Chrome runtime 消息，便于大模型自动化程序、抓取脚本和开发者控制台直接调用。
 - **30 种国际化语言**：提供 30 种语言的完整本地化翻译，并支持与 Scholar 界面的语言参数（`hl=`）双向智能同步。
 - **严苛的隐私保护**：无账号体系、无追踪器、无数据统计、无多余网络请求。所有用户偏好仅通过浏览器原生 `chrome.storage.sync` 安全同步。详见 [`PRIVACY.md`](PRIVACY.md)。
