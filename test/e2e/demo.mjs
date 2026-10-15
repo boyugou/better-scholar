@@ -36,6 +36,8 @@ const messagesOf = (folder) => JSON.parse(fs.readFileSync(path.join(root, "_loca
 
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".png": "image/png" };
 const server = http.createServer((req, res) => {
+  // a page of the same origin that holds the demo in a frame, as the website's pages do (it is not part of the demo)
+  if (new URL(req.url, "http://x").pathname === "/__host") { res.writeHead(200, { "content-type": TYPES[".html"] }).end('<!doctype html><title>host</title><iframe src="/?lang=de" style="width:1040px;height:700px;border:0"></iframe>'); return; }
   let file = path.normalize(path.join(root, decodeURIComponent(new URL(req.url, "http://x").pathname)));
   if (file !== root && !file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
@@ -56,7 +58,7 @@ const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${msg}`);
 
 // A page in a context of its own (`locale`: the browser's language; `init`: a script that runs before the page's own).
 async function open(search = "", { locale = "en-US", init } = {}) {
-  const context = await browser.newContext({ viewport: { width: 1360, height: 900 }, locale });
+  const context = await browser.newContext({ viewport: { width: 1360, height: 900 }, locale, permissions: ["clipboard-read", "clipboard-write"] });
   if (init) await context.addInitScript(init);
   await context.route(/^https?:/, (route) => {
     const url = route.request().url();
@@ -125,6 +127,17 @@ try {
   assert.equal(await note.getAttribute("lang"), "en");
   ok("a note says the demo keeps its changes in this browser only");
 
+  // -- 3b. in a frame of the website (same origin, ?lang=) the page works, in that language, and the note stays out of the way: the website says it
+  const host = await newPage(a.context);
+  await host.goto(origin + "/__host");
+  const inner = host.frameLocator("iframe");
+  await inner.locator('input[data-pref="roles.last"]').waitFor();
+  assert.equal(await inner.locator("#sub").textContent(), messagesOf("de").optHeading.message, "the frame is in the language it was asked for");
+  assert.equal(await inner.locator(".rr-demo-note").isVisible(), false, "the note is not shown in the website's frame");
+  assert.equal(await inner.locator("html").getAttribute("lang"), "de");
+  await host.close();
+  ok("in a same-origin frame (the website's) the page works in the language asked for, without the note");
+
   // -- 4. a switch changes the preview, and says it is saved
   const before = await ccfChips(A);
   await A.setChecked('input[data-pref="ranks.ccf"]', false);
@@ -171,6 +184,20 @@ try {
   await until(A, () => document.querySelector('input[data-pref="panel.summary"]').checked && !document.documentElement.classList.contains("rr-rows-bar"));
   assert.equal((await stored(A)).rowStyle, "full");
   ok("Enable all, a preset, the configuration editor and Reset to defaults work");
+
+  // -- 7b. what the page asks of the browser itself works in a web page: the clipboard, a download, a modal dialog
+  await A.click('button[data-act="config-copy"]');
+  assert.deepEqual(JSON.parse(await A.evaluate(() => navigator.clipboard.readText())), await stored(A), "Copy config (JSON) puts the settings on the clipboard");
+  await A.click('button[data-act="agent-guide-copy"]');
+  const guide = await A.evaluate(() => navigator.clipboard.readText());
+  assert.ok(guide.length > 1000 && guide.includes("roles.first"), "the guide for AI agents is on the clipboard");
+  const [file] = await Promise.all([A.waitForEvent("download"), A.click('button[data-act="config-export"]')]);
+  assert.equal(file.suggestedFilename(), "better-scholar-config.json");
+  await A.click('button[data-act="view-cache"]');
+  assert.equal(await A.locator("dialog.cache-modal").evaluate((d) => d.open), true, "the saved-details window opens");
+  await A.click('button[data-act="close-cache"]');
+  await until(A, () => !document.querySelector("dialog.cache-modal"));
+  ok("the clipboard, a download and a modal dialog work in a web page (Copy config, the agent guide, Export file, the saved-details window)");
   await a.context.close();
 
   // -- 8. ?lang= sets the interface language: the site's codes (zh-CN, pt-BR, the hyphen form), a _locales folder (zh_TW) and a right-to-left language

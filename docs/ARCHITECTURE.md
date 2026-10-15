@@ -322,7 +322,8 @@ fetches before it adds the page's scripts; `getUILanguage`) and `chrome.runtime`
 when `localStorage` is not there). `?lang=` (a site code such as `zh-CN`, or a folder such as `zh_CN`) is what `getUILanguage()` returns, otherwise the
 browser's language, and `lib/i18n.js` `resolve()` picks the folder, as in the extension. A page that starts asking for more of `chrome.*` fails with a
 TypeError in the shim: add what it needs there. The demo asks for its own files only (`test/e2e/demo.mjs` checks that), and adds one quiet line
-(`scripts/demo/demo.css`) saying that its changes stay in this browser.
+(`scripts/demo/demo.css`) saying that its changes stay in this browser; inside a frame, as on the website, which says it in the visitor's language, the
+line is not shown.
 
 It is not the extension: there is no Scholar page to redraw (the preview is all there is), the language settings only save a value, and the Semantic Scholar
 key field keeps whatever a visitor types in their own `localStorage`.
@@ -375,7 +376,7 @@ particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
 
 ## Testing
 
-`npm test` runs the unit tests (`node --test test/*.test.js`, 429 tests); `npm run test:e2e` runs the end-to-end checks (78); `npm run test:demo` the web demo's (12).
+`npm test` runs the unit tests (`node --test test/*.test.js`, 429 tests); `npm run test:e2e` runs the end-to-end checks (78); `npm run test:demo` the web demo's (14).
 
 | Suite | What it proves |
 |-------|----------------|
@@ -394,7 +395,7 @@ particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
 | `test/demo-build.test.js` | the web demo's builder: the files it copies and the order of the page's scripts, and what it refuses (an inline script, a remote file, a folder that holds the repository) |
 | `test/loader.test.js`, `test/robustness.test.js`, `test/markup-check.test.js` | the *Show more* loader; hostile input; the list of Scholar selectors that `scripts/check-scholar-markup.js` checks |
 | `test/e2e/run.mjs` (78 checks) | the real extension in Chromium against a local Scholar stand-in: placement, matrix = library result, filters, search, the h-index and i10 buttons, the whole list loading by itself, *Load all*, *Read full lists*, Semantic Scholar, clipboard and downloads, persistence, popup, settings page (every setting has its control), presets and the configuration editor, the agent guide, the page events, i18n |
-| `test/e2e/demo.mjs` (12 checks) | the web demo (`scripts/build-demo.mjs`) in a plain Chromium page, no extension: the build's contents, the cards and the real panel, a switch changes the preview and survives a reload, a second tab follows, presets and the configuration editor, `?lang=` (hyphen and underscore forms, right to left), no `localStorage`, no console error and no request to another origin |
+| `test/e2e/demo.mjs` (14 checks) | the web demo (`scripts/build-demo.mjs`) in a plain Chromium page, no extension: the build's contents, the cards and the real panel, in a same-origin frame as on the website, a switch changes the preview and survives a reload, a second tab follows, presets, the configuration editor, the clipboard, a download and a dialog, `?lang=` (hyphen and underscore forms, right to left), no `localStorage`, no console error and no request to another origin |
 | `scripts/check-saved-profile.mjs` | not part of `npm test`: the same real extension on a *real saved* Scholar profile page (offline) — selector contract plus tints / chips / marks against the libraries. Run it when Scholar's markup may have changed. |
 | `scripts/axe-audit.mjs` | not part of CI: axe-core 4.10's default rules over the panel (light, dark system, filtered, every part on, narrow window, four languages), the settings page (light, dark) and the popup without a profile; exit 1 on any violation |
 

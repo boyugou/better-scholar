@@ -124,6 +124,7 @@ const version = manifest.version;
 const note = `<div class="rr-demo-note" role="note" lang="en" dir="ltr"><b>Demo</b> <span>Your changes are kept in this browser only.</span></div>`;
 const head = [
   `<meta name="robots" content="noindex">`,                                           // (an app, not a page to find: the website holds the words)
+  `<script>if (self !== top) document.documentElement.classList.add("rr-embedded")</script>`,   // (in the website's frame its own words say what the note says, in the visitor's language)
   `<link rel="icon" href="${iconRel}">`,
   `<link rel="stylesheet" href="${STYLE}">`,
   ...scripts.map((s) => `<link rel="preload" as="script" href="${s}">`)               // (the stand-in adds the scripts one after the other: this fetches them all at once)

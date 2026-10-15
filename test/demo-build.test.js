@@ -40,7 +40,7 @@ test("the real page: its scripts in its order, every file it names, every langua
   const wanted = [...page.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join("options", m[1])));
   const html = fs.readFileSync(path.join(out, "index.html"), "utf8");
   assert.deepEqual(/data-scripts="([^"]+)"/.exec(html)[1].split(" "), wanted);
-  assert.equal(html.match(/<script\b/g).length, 1, "the stand-in's tag is the only script tag");
+  assert.equal(html.match(/<script\b[^>]*\bsrc=/g).length, 1, "the stand-in's tag is the only script that loads a file");
   assert.ok(html.indexOf("demo-shim.js") > html.indexOf('id="controls"'), "it comes after the page's own markup, like the scripts did");
   assert.match(html, new RegExp(`data-version="${manifest.version}"`));
   for (const m of html.matchAll(/\b(?:src|href)="([^"#:]+)"/g)) assert.ok(fs.existsSync(path.join(out, m[1])), `index.html names ${m[1]}`);
