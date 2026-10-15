@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.38.1 — 2026-10-14
+
+- **The settings preview is always Scholar's light page.** Google Scholar has no dark theme, and the system's dark mode changes nothing on it, but the preview drew its sample page dark when the system was dark (the highlighted name was nearly invisible there), and its *Light / Dark* switch could not undo that. The switch is gone (it previewed a page that does not exist); the preview keeps the light colours whatever the system theme is, while the settings page and the toolbar popup, which are the extension's own pages, still follow the system. An end-to-end check pins it.
+
 ## 2.38.0 — 2026-10-14
 
 - **Academic Citation Export (APA 7th Edition)**:

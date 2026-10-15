@@ -1210,39 +1210,8 @@
   }
   renderPreview();
 
-  // Preview Theme Switcher (Light / Dark Scholar simulation)
+  // (the preview is Scholar's own page, which is always light: it does not follow the system theme, and there is nothing to switch)
   const pvAside = document.querySelector(".preview");
-  const pvThemeBar = h("div", { class: "pv-theme-toggle", role: "group", "aria-label": "Preview Theme" });
-  const lightPvBtn = h("button", {
-    type: "button",
-    class: "pv-theme-btn active",
-    "aria-pressed": "true",
-    "aria-label": "Preview on light Google Scholar",
-    onClick: () => {
-      pvAside.classList.remove("pv-dark");
-      lightPvBtn.classList.add("active");
-      lightPvBtn.setAttribute("aria-pressed", "true");
-      darkPvBtn.classList.remove("active");
-      darkPvBtn.setAttribute("aria-pressed", "false");
-    }
-  }, "☀️ Light");
-
-  const darkPvBtn = h("button", {
-    type: "button",
-    class: "pv-theme-btn",
-    "aria-pressed": "false",
-    "aria-label": "Preview on dark Google Scholar",
-    onClick: () => {
-      pvAside.classList.add("pv-dark");
-      darkPvBtn.classList.add("active");
-      darkPvBtn.setAttribute("aria-pressed", "true");
-      lightPvBtn.classList.remove("active");
-      lightPvBtn.setAttribute("aria-pressed", "false");
-    }
-  }, "🌙 Dark");
-
-  pvThemeBar.append(lightPvBtn, darkPvBtn);
-  $("pv-title").parentNode.append(pvThemeBar);
 
   const hint = () => pvAside.classList.toggle("more", pvAside.scrollHeight - pvAside.scrollTop - pvAside.clientHeight > 2);
   pvAside.addEventListener("scroll", hint, { passive: true });

@@ -4,9 +4,13 @@
    controls, custom theme studio, and accessible micro-elevations.
    ========================================================================== */
 
-:root {
-  color-scheme: light dark;
+:root { color-scheme: light dark; }
 
+/* The preview is Scholar's own page, which is always light: it keeps the light tokens (declared here on the element itself, so the dark block below,
+   which only sets them on :root, never reaches it), whatever the system theme is. */
+.preview { color-scheme: light; }
+
+:root, .preview {
   /* Color Palette — Light Mode (Strict WCAG 2.1 AA Compliance >= 4.5:1) */
   --text: #1e293b;            /* Slate 800 (14.6:1 contrast on white) */
   --muted: #475569;           /* Slate 600 (7.6:1 contrast on white) */
@@ -84,13 +88,6 @@
     --danger: #f87171;
     --danger-bg: rgba(248, 113, 113, 0.14);
     --danger-border: rgba(248, 113, 113, 0.3);
-
-    /* Preview Canvas Tokens */
-    --pv-bg: #1e293b;
-    --pv-text: #f8fafc;
-    --pv-muted: #cbd5e1;
-    --pv-link: #8ab4f8;
-    --pv-border: #334155;
   }
 }
 
@@ -1442,37 +1439,6 @@ input.key:focus-visible {
   gap: 8px;
 }
 
-.pv-theme-toggle {
-  display: inline-flex;
-  gap: 2px;
-  background: var(--chip-bg);
-  border: 1px solid var(--chip-border);
-  border-radius: 8px;
-  padding: 2px;
-}
-
-.pv-theme-btn {
-  padding: 3px 8px;
-  font-size: 11.5px;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.pv-theme-btn:hover {
-  color: var(--text);
-}
-
-.pv-theme-btn.active {
-  background: var(--card);
-  color: var(--text);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-}
-
 .pv {
   width: 100%;
   border-collapse: collapse;
@@ -1506,23 +1472,6 @@ input.key:focus-visible {
 
 #pv-panel {
   margin: 0 0 14px;
-}
-
-/* Dark Canvas Mode for Preview */
-.preview.pv-dark {
-  --pv-bg: #202124;
-  --pv-text: #e8eaed;
-  --pv-muted: #9aa0a6;
-  --pv-link: #8ab4f8;
-  --pv-border: #3c4043;
-}
-
-.preview.pv-dark > .card {
-  background: #202124;
-}
-
-.preview.pv-dark .pv td {
-  background: #202124;
 }
 
 /* ==========================================================================

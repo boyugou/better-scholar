@@ -1280,6 +1280,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.emulateMedia({ colorScheme: "dark" });
     await opts.waitForTimeout(400);
     assert.deepEqual(await lowContrast(opts, "body"), [], "settings page (dark): text under 4.5:1");
+    // the preview is Scholar's own page, which is always light: the system's dark theme does not darken it, and there is no Light / Dark switch to mislead
+    assert.deepEqual(await opts.evaluate(() => ({
+      card: getComputedStyle(document.querySelector(".preview > .card")).backgroundColor,
+      title: getComputedStyle(document.querySelector("#preview a")).color,
+      switches: document.querySelectorAll(".pv-theme-toggle, .pv-theme-btn").length
+    })), { card: "rgb(255, 255, 255)", title: "rgb(26, 13, 171)", switches: 0 }, "the preview stays Scholar's light page when the system is dark");
     await opts.bringToFront(); await opts.screenshot({ path: path.join(outDir, "settings-dark.png"), fullPage: true });
     await opts.emulateMedia({ colorScheme: "light" });
     ok("settings page: the preview follows the switches, Reset restores the defaults, saved paper details can be cleared");

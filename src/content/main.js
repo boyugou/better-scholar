@@ -749,8 +749,8 @@
   document.addEventListener("better-scholar:ping", (e) => {
     const detail = (e && e.detail) || {};
     const id = detail.requestId || detail.nonce || null;
-    let ver = "2.38.0";
-    try { ver = chrome.runtime.getManifest().version; } catch (err) {}
+    let ver = "";                                                  // (the manifest is the only place the version is written; it is unreadable once the extension was reloaded under an open page)
+    try { ver = chrome.runtime.getManifest().version; } catch (err) { /* extension context gone */ }
     document.dispatchEvent(new CustomEvent("better-scholar:pong", {
       detail: {
         requestId: id,
