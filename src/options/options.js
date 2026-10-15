@@ -153,6 +153,7 @@
   }
 
   let prefs = await B.store.loadPrefs();
+  B.dom.setLabels(prefs.labels);
   const shownLanguage = prefs.language;                 // (the page is drawn in this one: a change of the interface language reloads it)
   const syncers = [];
 
@@ -186,6 +187,7 @@
   }
   // (the page's own state is changed and drawn first; the returned promise settles when the write has been made)
   function save() {
+    B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
     renderPreview();
@@ -202,14 +204,37 @@
   const put = (path, value) => { const keys = path.split("."); keys.slice(0, -1).reduce((o, k) => o[k], prefs)[keys[keys.length - 1]] = value; };
   let uid = 0;
   // the name of a control is its label; its hint is what a screen reader reads after it
-  const described = (label, hint) => { const id = "opt-" + ++uid; return { name: h("span", { class: "name", id: id + "-n" }, label), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+  const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, words), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+
+  // A name: the text of a title or a name on the screen, in the person's own words, in every language. Empty is the built-in text, shown in grey: what the field would say.
+  // (It is shown in the preview as it is typed and saved when the field is left or Enter is pressed; Escape gives the old name back.)
+  function nameEdit(row, off) {
+    const path = row.path, key = row.label;
+    let before = "";
+    const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off",
+      placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
+      onFocus: () => { before = at(path); },
+      onInput: () => { put(path, input.value); B.dom.setLabels(prefs.labels); renderPreview(); },
+      onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
+      onKeydown: (e) => {
+        if (e.key === "Enter") { e.preventDefault(); input.blur(); }
+        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); B.dom.setLabels(prefs.labels); renderPreview(); }
+      } });
+    const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
+      onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");
+    const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; };
+    syncers.push(sync);
+    sync();
+    return h("span", { class: "name-edit" }, input, reset);
+  }
 
   // One switch
-  function option({ path, label, hint, swatch, sub, off }) {
+  function option({ path, label, hint, swatch, sub, off, name, key }) {
     const d = described(label, hint);
-    const input = h("input", { type: "checkbox", role: "switch", class: "sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
+    if (key) syncers.push(() => { d.words.nodeValue = t(key); });                    // (a switch is named by what it shows: when that is renamed, so is it)
+    const input = h("input", { type: "checkbox", role: "switch", class: "sw", id: d.id + "-sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
     if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") }, h("span", { class: "txt" }, d.name, d.hint), input);
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, off) : null, input);
     const sync = () => {
       input.checked = !!at(path);
       const disabled = off ? off() : false;
@@ -675,10 +700,11 @@
   const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id));
 
   // the control of one row, by what the row is
-  function control(row, rows) {
+  function control(row, rows, name) {
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
     switch (row.kind) {
-      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row) });
+      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
+      case "text": return row.inline ? null : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
@@ -702,11 +728,12 @@
   const cardsOfPrefs = B.prefs.CARDS.map((c) => {
     const kids = c.id === "colors" ? [themePresetsBar(), ...B.prefs.ROLES.map(roleStudioCard)] : [];
     let group = null;
-    for (const row of c.rows) {
+    c.rows.forEach((row, i) => {
       if (row.group !== group) { group = row.group; if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
-      const el = control(row, c.rows);
+      const next = c.rows[i + 1];
+      const el = control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
       if (el) kids.push(el);
-    }
+    });
     if (c.id === "colors") kids.push(h("div", { class: "row" }, colorsResetBtn));
     if (c.id === "semantic") kids.push(keyRow());
     const end = bulkOf(c, ...(c.id === "panel" ? [compactBtn] : []));
@@ -909,6 +936,7 @@
   B.store.onPrefsChanged((next) => {
     if (isEcho(next)) return;
     prefs = next;
+    B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
     renderPreview();

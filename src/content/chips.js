@@ -25,9 +25,10 @@
   // Chip text: the kind in the interface language. A named category keeps the name it was given.
   const MARK_TEXT = {
     best: "mkBest", "best-student": "mkBestStudent", outstanding: "mkOutstanding", distinguished: "mkDistinguished",
-    "runner-up": "mkRunnerUp", tot: "mkTot", finalist: "mkFinalist", oral: "mkOral", spotlight: "mkSpotlight", highlight: "mkHighlight"
+    "runner-up": "mkRunnerUp", tot: "mkTot", finalist: "mkFinalist", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight"
   };
-  const markLabel = (mark) => (MARK_TEXT[mark.kind] ? t(MARK_TEXT[mark.kind]) : mark.label);
+  // `standard`: the words as the language has them, not the person's own names (for what a machine reads: the exports)
+  const markLabel = (mark, standard) => (MARK_TEXT[mark.kind] ? (standard ? B.dom.tDefault : t)(MARK_TEXT[mark.kind]) : mark.label);
 
   // A paper's standing: an award from the bundled list, or what the author wrote ("Oral", "Best Paper Award"…).
   function markChip(mark) {

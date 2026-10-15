@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalis makalah terbaik"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Dari kata-kata penulis sendiri pada judul dan teks venue tiap makalah di Scholar (tidak diverifikasi), dan dari daftar bawaan makalah pemenang penghargaan di konferensi besar."
   },
@@ -1038,5 +1029,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

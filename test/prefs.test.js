@@ -39,12 +39,13 @@ test("the table of settings: every row is whole, the cards hold them in the orde
   const paths = prefs.SETTINGS.map((s) => s.path);
   assert.equal(new Set(paths).size, paths.length, "no path twice");
   for (const s of prefs.SETTINGS) {
-    assert.ok(["bool", "color", "choice", "language", "order"].includes(s.kind), s.path + ": a known kind");
+    assert.ok(["bool", "color", "choice", "language", "order", "text"].includes(s.kind), s.path + ": a known kind");
     assert.ok(typeof s.doc === "string" && s.doc.length > 20 && /[.)]$/.test(s.doc), s.path + ": says what it does, in a sentence");
     assert.equal(prefs.apply({}, nest(s.path, s.def)).ignored.length, 0, s.path + ": its own default is accepted");
     if (s.kind === "choice") assert.ok(s.values.includes(s.def), s.path + ": the default is one of the values");
     if (s.kind === "language") assert.ok(s.none === s.def && !i18n.codes.includes(s.none), s.path + ": the default is the 'none' word");
     if (s.kind === "order") assert.deepEqual([...s.def].sort(), [...s.values].sort(), s.path + ": the default order has every id once");
+    if (s.kind === "text") assert.ok(s.def === "" && s.max === prefs.NAME_MAX && s.path === "labels." + s.label, s.path + ": a name, empty by default, called by its message key");
     if (s.kind !== "color") assert.ok(en[s.label], s.path + ": the label " + s.label + " is a message");
     if (s.hint) assert.ok(en[s.hint], s.path + ": the hint is a message");
     if (s.group) assert.ok(en[s.group], s.path + ": the group's name is a message");
@@ -272,4 +273,45 @@ test("the quick filters that are drawn: in their order, those that are on and ca
   assert.deepEqual(prefs.pills(set({ rows: { award: false }, panel: { marks: { award: false } } })), ["ccfA", "cites100", "first"]);
   assert.deepEqual(prefs.pills(set({ panel: { filters: { pills: { talk: true, coreA: true, last: true } } } })), ["ccfA", "coreA", "cites100", "first", "last", "award", "talk"]);
   assert.deepEqual(prefs.pills(set({ rows: { oral: false, spotlight: false, highlight: false }, panel: { marks: { oral: false, spotlight: false, highlight: false }, filters: { pills: { talk: true } } } })), ["ccfA", "cites100", "first", "award"], "no talk is drawn: no quick filter for talks");
+});
+
+test("names: a text of the screen in the person's own words; every one is a single piece of the catalogue, and its row says what it is", () => {
+  const keys = Object.keys(prefs.NAMES);
+  assert.equal(new Set(keys).size, keys.length);
+  assert.deepEqual(prefs.SETTINGS.filter((s) => s.kind === "text").map((s) => s.label).sort(), [...keys].sort(), "a name for each, once");
+  for (const [key, [where, words]] of Object.entries(prefs.NAMES)) {
+    assert.equal(en[key] && en[key].message, words, key + ": the English words here are the catalogue's");
+    assert.ok(!/\$/.test(words) && !en[key + "One"] && !en[key].placeholders, key + ": nothing is put into it, and it has no plural");
+    assert.ok(where.length > 8, key);
+    const row = prefs.SETTINGS.find((s) => s.path === "labels." + key);
+    assert.ok(row.doc.includes(JSON.stringify(words)) && row.doc.includes(where), key + ": the row says where it is drawn and what it says");
+    assert.ok(words.length <= 36, key);
+  }
+  // a name is on the row of its switch (inline) or on its own, and never before the part it belongs to
+  for (const s of prefs.SETTINGS.filter((x) => x.kind === "text")) { if (s.parent) assert.ok(prefs.SETTINGS.some((x) => x.path === s.parent), s.path); }
+});
+
+test("names: one line of at most 30 characters; anything else is left out with the reason", () => {
+  const set = (patch) => prefs.apply(prefs.defaults(), patch);
+  assert.equal(prefs.defaults().labels.metricsTitle, "");
+  assert.equal(set({ labels: { metricsTitle: "  My   papers \n" } }).prefs.labels.metricsTitle, "My papers", "trimmed, on one line");
+  assert.equal(set({ labels: { metricsTitle: "我的论文" } }).prefs.labels.metricsTitle, "我的论文");
+  assert.equal(set({ labels: { metricsTitle: "x".repeat(30) } }).ignored.length, 0);
+  const long = set({ labels: { metricsTitle: "x".repeat(31), mH: 5, roleFirst: "Lead", nonsense: "x" } });
+  assert.deepEqual(long.ignored.map((x) => x.path), ["labels.metricsTitle", "labels.mH", "labels.nonsense"]);
+  assert.match(long.ignored[0].reason, /at most 30 characters/);
+  assert.equal(long.prefs.labels.roleFirst, "Lead", "the rest is applied");
+  assert.deepEqual(set({ labels: { roleFirst: "" } }).unchanged, ["labels.roleFirst"], "empty is the built-in text: not a change");
+  assert.equal(prefs.normalize({ labels: { mH: "a".repeat(40), mI10: "ok" } }).labels.mH, "", "a stored name that is too long is the built-in text");
+  assert.equal(prefs.normalize({ labels: { mI10: " ok " } }).labels.mI10, "ok");
+  assert.equal(prefs.normalize({ labels: "no" }).labels.mH, "");
+});
+
+test("the record, with every name at its longest in a language that takes three bytes a character, fits chrome.storage.sync's 8 KB for an item", () => {
+  const labels = Object.fromEntries(Object.keys(prefs.NAMES).map((k) => [k, "字".repeat(prefs.NAME_MAX)]));
+  const worst = prefs.apply(prefs.defaults(), { labels, colors: { first: "#abcdef", cofirst: "#abcdef", second: "#abcdef", last: "#abcdef" },
+    panel: { order: [...prefs.SECTIONS].reverse(), copy: { order: [...prefs.COPY_BUTTONS].reverse() }, filters: { pills: { order: [...prefs.PILLS].reverse() } } } });
+  assert.deepEqual(worst.ignored, []);
+  const bytes = Buffer.byteLength(JSON.stringify(worst.prefs)) + "prefs".length;
+  assert.ok(bytes < 7400, "the record is " + bytes + " bytes");
 });

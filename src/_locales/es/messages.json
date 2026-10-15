@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalista a mejor artículo"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Según lo que los propios autores escriben en el título y en los datos de publicación de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
   },
@@ -1059,5 +1050,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

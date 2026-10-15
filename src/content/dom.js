@@ -24,7 +24,11 @@
   // The interface language. Followed from the browser (chrome.i18n) unless the settings name another one: then the strings of that
   // language, asked of the background page, are used (`custom`, in Chrome's messages.json shape).
   let custom = null, language = "";
+  // The names the person gave things in the settings (lib/prefs.js NAMES; the settings' `labels`, normalized): a name replaces the translation, in every language
+  let labels = {};
+  const setLabels = (map) => { labels = map && typeof map === "object" ? map : {}; };
   function lookup(key, subs) {
+    if (labels[key]) return labels[key];
     if (custom && custom[key]) return B.i18n.format(custom[key], subs);
     try { return chrome.i18n.getMessage(key, subs); } catch (e) { return ""; /* extension context gone */ }
   }
@@ -57,6 +61,13 @@
   // chrome.i18n lookup; falls back to the key so a missing string is visible, not blank.
   function t(key, subs) {
     return lookup(key, subs) || key;
+  }
+
+  // The words as the language has them, whatever the person called the thing: for what a machine reads (the exports) and for the settings page's own placeholders
+  function tDefault(key, subs) {
+    const named = labels;
+    labels = {};
+    try { return t(key, subs); } finally { labels = named; }
   }
 
   // Like t() but prefers "<key>One" when n === 1 (English singular); other locales simply omit it.
@@ -118,5 +129,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, COPY_LABEL, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

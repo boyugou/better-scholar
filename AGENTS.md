@@ -25,6 +25,7 @@ Rules:
 - The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.
 - What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.
 - Colours are `"#rrggbb"` only; `""` restores the built-in colour of a role.
+- A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `""` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words.
 - A language is a code from the list below. Changing `language` reloads the settings page.
 - Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.
 
@@ -50,40 +51,74 @@ Rules:
 | `rows.oral` | true / false | `true` | An "Oral" chip (a talk level the authors wrote in the venue) on a paper. |
 | `rows.spotlight` | true / false | `true` | A "Spotlight" chip on a paper. |
 | `rows.highlight` | true / false | `true` | A "Highlight" chip on a paper. |
+| `labels.mkBest` | text, at most 30 characters | `""` | The text of the chip of a best paper award (default: "Best paper"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkBestStudent` | text, at most 30 characters | `""` | The text of the chip of a best student paper award (default: "Best student paper"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkOutstanding` | text, at most 30 characters | `""` | The text of the chip of an outstanding paper award (default: "Outstanding paper"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkDistinguished` | text, at most 30 characters | `""` | The text of the chip of a distinguished paper award (default: "Distinguished paper"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkRunnerUp` | text, at most 30 characters | `""` | The text of the chip of an honorable mention (default: "Honorable mention"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkTot` | text, at most 30 characters | `""` | The text of the chip of a test of time award (default: "Test of time"): your own words, in every language; "" brings the built-in text back. |
+| `labels.mkFinalist` | text, at most 30 characters | `""` | The text of the chip of a best paper finalist (default: "Best paper finalist"): your own words, in every language; "" brings the built-in text back. |
 | `panel.show` | true / false | `true` | The panel in the right-hand column: off hides all of it and every panel.* setting then has no effect. |
 | `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
 | `panel.header.name` | true / false | `true` | The panel's title at the top. |
+| `labels.extShortName` | text, at most 30 characters | `""` | The text of the panel's title (default: "Better Scholar"): your own words, in every language; "" brings the built-in text back. |
 | `panel.header.settings` | true / false | `true` | The button in the panel's title bar that opens the settings page. |
 | `panel.header.fold` | true / false | `true` | The button that folds the panel to its title bar. Off: the panel is always open. |
 | `panel.filters.bar` | true / false | `true` | The bar under the title bar that says how many papers the filters leave, and clears them (drawn only while a filter is on). |
 | `panel.table.show` | true / false | `true` | The table of your papers by position and rank (also the toolbar popup's table). |
 | `panel.table.title` | true / false | `true` | The title line of the table. |
+| `labels.summaryTitle` | text, at most 30 characters | `""` | The text of the title of the role × rank table (default: "Papers by role and rank"): your own words, in every language; "" brings the built-in text back. |
+| `labels.summaryTitleRoles` | text, at most 30 characters | `""` | The text of the table's title when no venue of the profile is ranked (default: "Papers by role"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.ccf` | true / false | `true` | A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use. |
 | `panel.table.core` | true / false | `true` | A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use. |
 | `panel.table.unranked` | true / false | `true` | The column of papers whose venue has no rank (drawn as “–”). |
+| `labels.tipUnranked` | text, at most 30 characters | `""` | The text of the name of the unranked column (its tooltip, the popup's legend) (default: "Not ranked"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.total` | true / false | `true` | The totals: the All column and the All row. |
+| `labels.colTotal` | text, at most 30 characters | `""` | The text of the totals column and row of the table (default: "All"): your own words, in every language; "" brings the built-in text back. |
+| `labels.roleFirst` | text, at most 30 characters | `""` | The text of the first-author role wherever the panel names it (table, quick filter, filter bar, chart) (default: "First"): your own words, in every language; "" brings the built-in text back. |
+| `labels.roleCofirst` | text, at most 30 characters | `""` | The text of the co-first role wherever the panel names it (default: "Co-first"): your own words, in every language; "" brings the built-in text back. |
+| `labels.roleSecond` | text, at most 30 characters | `""` | The text of the second-author role wherever the panel names it (default: "Second"): your own words, in every language; "" brings the built-in text back. |
+| `labels.roleLast` | text, at most 30 characters | `""` | The text of the last-author role wherever the panel names it (default: "Last"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.other` | true / false | `true` | The "Other" row: papers where you are neither first, co-first, second nor last author. |
+| `labels.roleMiddle` | text, at most 30 characters | `""` | The text of the row of the table for the other positions (default: "Other"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.hidden` | true / false | `true` | The "Hidden" row: papers whose cut-off author list does not show your position. |
+| `labels.roleHidden` | text, at most 30 characters | `""` | The text of the row of the table for papers whose position is not visible (default: "Hidden"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.note` | true / false | `true` | The note under the table that says the ranks are today's lists, not the rank at publication. |
 | `panel.copy.show` | true / false | `true` | The row of copy and export buttons (also the toolbar popup's). |
 | `panel.copy.order` | list of ids | `["summary","table","papers","apa","bibtex","markdown","json","csv"]` | The copy buttons, left to right: a list of ids (summary, table, papers, apa, bibtex, markdown, json, csv). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
 | `panel.copy.summary` | true / false | `true` | Copy button: the summary table as plain text (panel and toolbar popup). |
+| `labels.copySummary` | text, at most 30 characters | `""` | The text of the Copy summary button (default: "Copy summary"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.table` | true / false | `true` | Copy button: the summary table as tab-separated cells, for a spreadsheet. |
+| `labels.copyTable` | text, at most 30 characters | `""` | The text of the Copy as table button (default: "Copy as table"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.papers` | true / false | `true` | Copy button: the list of papers shown, as plain text. |
+| `labels.copyPapers` | text, at most 30 characters | `""` | The text of the Copy papers button (default: "Copy papers"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.apa` | true / false | `true` | Copy button: the papers shown as APA 7th edition references. |
+| `labels.copyApa` | text, at most 30 characters | `""` | The text of the Copy APA button (default: "Copy APA"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.bibtex` | true / false | `true` | Copy button: the papers shown as BibTeX entries. |
+| `labels.copyBibtex` | text, at most 30 characters | `""` | The text of the Copy BibTeX button (default: "Copy BibTeX"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.markdown` | true / false | `true` | Copy button: the papers shown as a Markdown list. |
+| `labels.copyMarkdown` | text, at most 30 characters | `""` | The text of the Copy Markdown button (default: "Copy Markdown"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.json` | true / false | `true` | Copy button: the papers shown as JSON, with roles, ranks and marks. |
+| `labels.copyJson` | text, at most 30 characters | `""` | The text of the Copy JSON button (default: "Copy JSON"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.csv` | true / false | `true` | Copy button: the papers shown as CSV (RFC 4180). |
+| `labels.exportCsv` | text, at most 30 characters | `""` | The text of the Export CSV button (default: "Export CSV"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.show` | true / false | `true` | The awards and talks counts: one click lists those papers. |
 | `panel.marks.title` | true / false | `true` | The title line of the awards and talks counts. |
+| `labels.marksTitle` | text, at most 30 characters | `""` | The text of the title of the awards and talks counts (default: "Awards & talks"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.award` | true / false | `true` | A count row for award-winning papers. |
+| `labels.markAward` | text, at most 30 characters | `""` | The text of the awards count row and quick filter (default: "Awards"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.oral` | true / false | `true` | A count row for "Oral" papers. |
+| `labels.markOral` | text, at most 30 characters | `""` | The text of the Oral count row and chip (default: "Oral"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.spotlight` | true / false | `true` | A count row for "Spotlight" papers. |
+| `labels.markSpotlight` | text, at most 30 characters | `""` | The text of the Spotlight count row and chip (default: "Spotlight"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.highlight` | true / false | `true` | A count row for "Highlight" papers. |
+| `labels.markHighlight` | text, at most 30 characters | `""` | The text of the Highlight count row and chip (default: "Highlight"): your own words, in every language; "" brings the built-in text back. |
+| `labels.markSpotlightHighlight` | text, at most 30 characters | `""` | The text of the count row that joins spotlight and highlight (default: "Spotlight & highlight"): your own words, in every language; "" brings the built-in text back. |
+| `labels.markTalks` | text, at most 30 characters | `""` | The text of the count row that joins all talks, and the Talks quick filter (default: "Talks"): your own words, in every language; "" brings the built-in text back. |
 | `panel.marks.grouping` | "separate" / "pair" / "talks" | `"separate"` | How the panel counts talks: "separate" one row each for oral, spotlight and highlight; "pair" spotlight and highlight together; "talks" all three together. |
 | `panel.filters.show` | true / false | `true` | The search box and the filters. |
 | `panel.filters.search` | true / false | `true` | The search box, with its suggestions and the number of papers it finds. |
+| `labels.filterPlaceholder` | text, at most 30 characters | `""` | The text of the hint in the search box (default: "Filter title or author…"): your own words, in every language; "" brings the built-in text back. |
 | `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
 | `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.coreA` | true / false | `false` | Quick filter: a button that adds core:a* to the search (left out while nothing of that kind is drawn). |
@@ -95,29 +130,43 @@ Rules:
 | `panel.filters.pills.award` | true / false | `true` | Quick filter: a button that adds has:award to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.talk` | true / false | `false` | Quick filter: a button that adds has:talk to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.only` | true / false | `true` | The "Only highlighted" switch (absent while no position is highlighted). |
+| `labels.onlyHighlighted` | text, at most 30 characters | `""` | The text of the Only highlighted switch (default: "Only highlighted"): your own words, in every language; "" brings the built-in text back. |
 | `panel.filters.years` | true / false | `true` | The year range: From and To. |
+| `labels.yearLabel` | text, at most 30 characters | `""` | The text of the label of the year range (default: "Year"): your own words, in every language; "" brings the built-in text back. |
+| `labels.yearStart` | text, at most 30 characters | `""` | The text of the From of the year range (default: "From"): your own words, in every language; "" brings the built-in text back. |
+| `labels.yearEnd` | text, at most 30 characters | `""` | The text of the To of the year range (default: "To"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.show` | true / false | `true` | Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones. |
 | `panel.metrics.title` | true / false | `true` | The title line of the citation totals. |
+| `labels.metricsTitle` | text, at most 30 characters | `""` | The text of the title of the citation totals (default: "Highlighted papers"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.scope` | true / false | `true` | The line that says which positions the numbers count ("First, Co-first, Second and Last"). |
 | `panel.metrics.papers` | true / false | `true` | The number of papers. |
+| `labels.mPapers` | text, at most 30 characters | `""` | The text of the number of papers (default: "Papers"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.citations` | true / false | `true` | The number of citations. |
+| `labels.mCitations` | text, at most 30 characters | `""` | The text of the number of citations (default: "Citations"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.h` | true / false | `true` | The h-index, a button that lists the papers behind it. |
+| `labels.mH` | text, at most 30 characters | `""` | The text of the h-index (default: "h-index"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.i10` | true / false | `true` | The i10-index, a button that lists the papers behind it. |
+| `labels.mI10` | text, at most 30 characters | `""` | The text of the i10-index (default: "i10-index"): your own words, in every language; "" brings the built-in text back. |
 | `panel.metrics.of` | true / false | `true` | The "of N" beside each number: the figure over all papers, not only the highlighted ones. |
 | `panel.years.show` | true / false | `true` | The papers-per-year chart (a click on a year filters the list). |
 | `panel.years.title` | true / false | `true` | The title line of the chart. |
+| `labels.yearsTitle` | text, at most 30 characters | `""` | The text of the title of the year chart (default: "Highlighted papers by year"): your own words, in every language; "" brings the built-in text back. |
 | `panel.years.axis` | true / false | `true` | The first and the last year under the bars. |
 | `panel.venues.show` | true / false | `false` | The venues you publish at most, with their ranks. Off until asked. |
 | `panel.venues.title` | true / false | `true` | The title line of the venue list. |
+| `labels.venuesTitle` | text, at most 30 characters | `""` | The text of the title of the venue list (default: "Where the highlighted papers appear"): your own words, in every language; "" brings the built-in text back. |
 | `panel.status.show` | true / false | `true` | The status lines: how many papers are loaded, what could not be read, the button that reads full author lists. |
 | `panel.status.loaded` | true / false | `true` | How many papers are loaded, and the Load all button. |
+| `labels.loadAll` | text, at most 30 characters | `""` | The text of the Load all button (default: "Load all"): your own words, in every language; "" brings the built-in text back. |
 | `panel.status.cutoff` | true / false | `true` | The papers whose author list Scholar cut off, and the button that reads the full lists. |
+| `labels.resolveBtn` | text, at most 30 characters | `""` | The text of the Read full lists button (default: "Read full lists"): your own words, in every language; "" brings the built-in text back. |
 | `panel.status.repeats` | true / false | `true` | The line about entries that repeat another paper. |
 | `panel.status.absent` | true / false | `true` | The line about papers whose author list does not name you. |
 | `panel.status.unranked` | true / false | `true` | The list of papers at venues without a rank, with its Copy and Report buttons. |
 | `panel.names.show` | true / false | `true` | Help with spellings of your name that Scholar prints differently. |
 | `panel.names.hints` | true / false | `true` | The spellings of your name found in your papers, one click to add one. |
 | `panel.names.add` | true / false | `true` | The box where you add a spelling by hand. |
+| `labels.variantsTitle` | text, at most 30 characters | `""` | The text of the heading of the name help (default: "Name not matching? Add a spelling"): your own words, in every language; "" brings the built-in text back. |
 | `hide.cited` | true / false | `false` | Hide Scholar's whole "Cited by" block in the right-hand column (table and chart). |
 | `hide.citedTable` | true / false | `false` | Hide only the table of the "Cited by" block (All / Since …). No effect while hide.cited is on. |
 | `hide.citedChart` | true / false | `false` | Hide only the year chart of the "Cited by" block. No effect while hide.cited is on. |

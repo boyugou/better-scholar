@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "最佳論文入圍"
   },
-  "mkOral": {
-    "message": "口頭報告"
-  },
-  "mkSpotlight": {
-    "message": "聚光報告"
-  },
-  "mkHighlight": {
-    "message": "亮點報告"
-  },
   "marksHint": {
     "message": "依據作者在 Scholar 上於各論文標題與發表處文字中自行標註的內容（未經查證），以及內建的各大會議獲獎論文清單。"
   },
@@ -1059,5 +1050,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

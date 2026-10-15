@@ -8,11 +8,13 @@
 
   const { venues, analysis, metrics, marks, names, formats, chips: chip } = B;
   const { h, t, copyText, frame } = B.dom;
+  const td = B.dom.tDefault;                       // (the exports keep the language's own words, not the names the person gave things on the screen)
   await B.dom.useLanguage();
 
   const profileId = B.scholar.profileId();
   const headerName = B.scholar.ownerName();
   let prefs = await B.store.loadPrefs();          // what to show: written by the settings page
+  B.dom.setLabels(prefs.labels);
   const ui = await B.store.loadUi();              // { collapsed, source }: written here
   let variants = await B.store.loadVariants(profileId);
   const resolvedCache = await B.store.loadResolved();
@@ -301,8 +303,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
 
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const marksLine = (counts) => {
-    const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
-    return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
+    const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => td(MARK_KEY[g]) + " " + counts[g]);
+    return parts.length ? td("marksTitle") + ": " + parts.join(", ") + " (" + td("marksAsWritten") + ")" : "";
   };
 
   // ---- what the page shows, as records and as text --------------------------------------------------------------------------------------------
@@ -310,7 +312,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // (the shape is described at the top of lib/formats.js).
   const isShown = (r) => !r.raw.tr.classList.contains("rr-hide");
   const shownRows = (filtered = true) => (filtered ? live().filter(isShown) : live());
-  const markLabels = (a) => B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
+  const markLabels = (a) => B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m, true) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
   const KIND = { C: "conference", J: "journal" };
   function paperRecords(filtered = true) {
     const shown = B.prefs.lists(prefs);
@@ -330,7 +332,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   }
 
   const tableLabels = () => ({ year: t("tsvYear"), title: t("tsvTitle"), authors: t("tsvAuthors"), role: t("tsvRole"), venue: t("tsvVenue"), ccf: t("srcCcf"), core: t("srcCore"),
-    awards: t("tsvAwards"), citations: t("tsvCitations"), hidden: t("roleHidden"), roles: copyLabels() });
+    awards: t("tsvAwards"), citations: t("tsvCitations"), hidden: td("roleHidden"), roles: copyLabels() });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
@@ -341,8 +343,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
       const summary = metrics.summarize(list, src);
       return kind === "table"
-        ? formats.summaryTsv(summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: t("tipUnranked") })
-        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: t("tipUnranked").toLowerCase(), extra: [marksLine(markCounts())].filter(Boolean),
+        ? formats.summaryTsv(summary, { label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked") })
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts())].filter(Boolean),
           edition: src ? `${edition[src]} — ${t("tipToday")}` : "" });
     }
     const records = paperRecords();
@@ -539,6 +541,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
     B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rows.style);
+    B.dom.setLabels(next.labels);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;

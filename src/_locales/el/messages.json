@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Φιναλίστ καλύτερης εργασίας"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Από τα λόγια των ίδιων των συγγραφέων στον τίτλο και στο μέσο δημοσίευσης κάθε εργασίας στο Scholar (δεν ελέγχονται) και από ενσωματωμένη λίστα βραβευμένων εργασιών σε μεγάλα συνέδρια."
   },
@@ -1059,5 +1050,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

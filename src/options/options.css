@@ -394,6 +394,49 @@ body {
   box-shadow: inset -3px 0 0 var(--line);
 }
 
+/* A heading over a run of rows that belong together */
+.opt-group {
+  margin: 0;
+  padding: 12px 20px 4px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* An order: the parts (or buttons) of a list, top to bottom, with the buttons that move them; a part that is switched off is dimmed and keeps its place */
+.opt.opt-order { flex-direction: column; align-items: stretch; gap: 8px; cursor: default; }
+.order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.order-item.off { opacity: 0.55; }
+.order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); }
+.order-btn {
+  width: 28px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
+  font: inherit; font-size: 10px; line-height: 1; cursor: pointer;
+}
+.order-btn:hover:not(:disabled) { background: var(--hover); color: var(--text); }
+.order-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.order-btn:disabled { opacity: 0.3; cursor: default; }
+
+/* A name: the person's own words for a title or a name on the screen (empty: the built-in text, in grey) */
+.opt.opt-name { cursor: default; }
+.name-edit { display: inline-flex; align-items: center; gap: 4px; flex: none; cursor: default; user-select: text; }
+.name-input {
+  width: 172px; max-width: 42vw; padding: 5px 10px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent;
+  color: var(--text); font: inherit; font-size: 12.5px; cursor: text;
+}
+.name-input::placeholder { color: var(--faint); opacity: 0.85; }
+.name-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.name-input:disabled { opacity: 0.6; }
+.name-reset {
+  width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--muted); font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
+}
+.name-reset:hover { background: var(--hover); color: var(--text); }
+.name-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media (max-width: 560px) { .opt.opt-named { flex-wrap: wrap; } .opt.opt-named .name-edit { order: 3; width: 100%; } .name-input { width: 100%; max-width: none; flex: 1; } }
+
 .swatch {
   width: 11px;
   height: 11px;

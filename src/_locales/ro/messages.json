@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalistă la cea mai bună lucrare"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Din cuvintele autorilor înșiși din titlul și textul venue-ului fiecărei lucrări de pe Scholar (neverificate) și dintr-o listă inclusă de lucrări premiate la conferințe importante."
   },
@@ -1038,5 +1029,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Scholar पर हर पेपर के शीर्षक और venue टेक्स्ट में लेखकों के अपने शब्दों से (जाँचा नहीं गया), और प्रमुख सम्मेलनों के पुरस्कृत पेपरों की एक बंडल की गई सूची से।"
   },
@@ -1044,5 +1035,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

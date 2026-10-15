@@ -110,5 +110,5 @@
 
   main.replaceChildren(h("p", { class: "empty" }, t("popupReading")));
   const answer = await call("summary");
-  if (answer && answer.ok) render(answer.result, await B.store.loadPrefs(), await B.store.loadUi()); else notProfile();
+  if (answer && answer.ok) { const prefs = await B.store.loadPrefs(); B.dom.setLabels(prefs.labels); render(answer.result, prefs, await B.store.loadUi()); } else notProfile();
 })();

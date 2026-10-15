@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Фіналіст найкращої статті"
   },
-  "mkOral": {
-    "message": "Усна доповідь"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "За власними словами авторів у назві та описі видання кожної статті в Scholar (не перевіряються) і за вбудованим списком відзначених статей великих конференцій."
   },
@@ -1038,5 +1029,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }

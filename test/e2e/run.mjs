@@ -1091,6 +1091,66 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await eventually(page, () => !document.querySelector('[data-rr="variants"]').hidden);
     ok("every thing the panel draws has its own switch (title bar, table, totals, filters, citation totals, year chart, name help), the parts and the buttons follow their order, and a filter whose control goes is cleared");
 
+    // -- S3d. names: the person's own words for a title or a name on the screen, in every language; what a machine reads keeps the standard words
+    const nameOf = async (key, words) => { const f = opts.locator(`input[data-pref="labels.${key}"]`); await f.fill(words); await f.press("Enter"); await settle(opts); };
+    await opts.bringToFront();
+    await nameOf("metricsTitle", "My papers");
+    await nameOf("roleFirst", "Lead");
+    await nameOf("copySummary", "My summary");
+    await nameOf("marksTitle", "Prizes");
+    await eventually(page, () => document.querySelector('[data-rr="metrics"] .rr-sec-title').textContent === "My papers" && document.querySelector('[data-act="copy-summary"]').textContent === "My summary");
+    assert.match(await page.locator('#rr-panel tr[data-role="first"] .rr-rolebtn').textContent(), /Lead/, "the role is named in the table…");
+    assert.equal((await page.locator('#rr-panel .rr-spill[data-pill="first"]').textContent()).trim(), "Lead", "…and in its quick filter");
+    assert.match(await page.locator('[data-rr="metrics"] .rr-scope').textContent(), /^Lead, /, "…and in the line that says which positions count");
+    await opts.bringToFront();
+    assert.equal((await opts.locator('#pv-panel [data-rr="metrics"] .rr-sec-title').textContent()).trim(), "My papers", "the preview follows");
+    assert.equal((await opts.locator('label:has(input[data-pref="panel.copy.summary"]) .name').textContent()).trim(), "My summary", "a switch is named by what it shows");
+    assert.equal(await opts.locator('input[data-pref="labels.copySummary"]').getAttribute("placeholder"), "Copy summary", "the field says what the standard name is");
+    const popupNames = async () => { const pc = await context.newPage(); try { await pc.goto(`chrome-extension://${extId}/popup/popup.html`); const tab = await pc.evaluate(async () => { for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } } return null; }); await pc.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`); await pc.waitForSelector(".who"); return await pc.evaluate(() => ({ buttons: [...document.querySelectorAll(".actions button")].map((b) => b.textContent.trim()), rows: [...document.querySelectorAll("tbody th")].map((e) => e.textContent.trim()) })); } finally { await pc.close(); } };
+    const popupNow = await popupNames();
+    assert.ok(popupNow.buttons.includes("My summary") && popupNow.rows.includes("Lead"), "the popup uses the names too: " + JSON.stringify(popupNow));
+    // what a machine reads keeps the standard words
+    await page.bringToFront();
+    await page.click('[data-act="copy-summary"]');
+    const summaryText = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(summaryText, /First author/);
+    assert.doesNotMatch(summaryText, /Lead|Prizes|My papers/, "the copied summary has the standard words");
+    await page.click('[data-act="copy-json"]');
+    assert.doesNotMatch(await page.evaluate(() => navigator.clipboard.readText()), /Lead|Prizes|My papers/);
+    // a name beats the translation, whatever the language: Japanese everywhere but where the person chose the words
+    const ja = JSON.parse(fs.readFileSync(path.join(repo, "src/_locales/ja/messages.json"), "utf8"));
+    await opts.bringToFront();
+    await opts.selectOption('select[data-pref="language"]', "ja");
+    await page.waitForFunction((x) => { const e = document.querySelector('[data-rr="years"] .rr-sec-title'); return e && e.textContent === x; }, ja.yearsTitle.message, { timeout: 15000 });
+    await page.waitForSelector("html[data-rr-ready]");
+    await pollPage(opts, () => document.documentElement.lang === "ja", null, 15000);
+    assert.equal((await page.locator('[data-rr="metrics"] .rr-sec-title').textContent()).trim(), "My papers", "a name is shown in every language");
+    assert.equal((await page.locator('[data-rr="years"] .rr-sec-title').textContent()).trim(), ja.yearsTitle.message, "what has no name of its own is in the language");
+    assert.equal((await opts.locator('#pv-panel [data-rr="metrics"] .rr-sec-title').textContent()).trim(), "My papers");
+    assert.equal(await opts.locator('input[data-pref="labels.copySummary"]').getAttribute("placeholder"), ja.copySummary.message, "the field says what the language's standard name is");
+    await opts.selectOption('select[data-pref="language"]', "auto");
+    await page.waitForFunction(() => { const e = document.querySelector('[data-rr="years"] .rr-sec-title'); return e && e.textContent === "Highlighted papers by year"; }, null, { timeout: 15000 });
+    await page.waitForSelector("html[data-rr-ready]");
+    await pollPage(opts, () => document.documentElement.lang === "en", null, 15000);
+    // "back to the standard name" brings the standard text back, and an empty field is the same
+    await opts.locator('label:has(input[data-pref="panel.copy.summary"]) .name-reset').click();
+    await settle(opts);
+    await opts.locator('input[data-pref="labels.roleFirst"]').fill("");
+    await opts.locator('input[data-pref="labels.roleFirst"]').press("Enter");
+    await settle(opts);
+    await opts.locator('input[data-pref="labels.metricsTitle"]').fill("x".repeat(40));
+    assert.equal(await opts.locator('input[data-pref="labels.metricsTitle"]').inputValue(), "x".repeat(30), "a name is cut at 30 characters");
+    await opts.locator('input[data-pref="labels.metricsTitle"]').press("Escape");
+    assert.equal(await opts.locator('input[data-pref="labels.metricsTitle"]').inputValue(), "My papers", "Escape gives the old name back");
+    await opts.locator('input[data-pref="labels.metricsTitle"]').fill("");
+    await opts.locator('input[data-pref="labels.metricsTitle"]').press("Enter");
+    await opts.locator('input[data-pref="labels.marksTitle"]').fill("");
+    await opts.locator('input[data-pref="labels.marksTitle"]').press("Enter");
+    await settle(opts);
+    await eventually(page, () => document.querySelector('[data-rr="metrics"] .rr-sec-title').textContent === "Highlighted papers" && document.querySelector('[data-act="copy-summary"]').textContent === "Copy summary");
+    assert.deepEqual(Object.values((await stored(opts, "sync", "prefs")).labels).filter(Boolean), [], "every name is back to the standard");
+    ok("names: your own words for a title, a column or a button, on the page, in the preview and in the popup, in every language, while the exports keep the standard words");
+
     // -- S4. the toolbar popup follows the settings
     await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));

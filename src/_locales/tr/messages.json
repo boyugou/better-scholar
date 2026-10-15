@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "En iyi makale finalisti"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Scholar'da her makalenin başlığındaki ve yayın yeri metnindeki yazarların kendi sözlerinden (doğrulanmadı) ve büyük konferanslardaki ödüllü makalelerin yerleşik bir listesinden alınır."
   },
@@ -1059,5 +1050,14 @@
   },
   "optSaveFailed": {
     "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  },
+  "optNameTip": {
+    "message": "Your own name for this, in every language. Empty: the standard name."
+  },
+  "optNameOf": {
+    "message": "name"
+  },
+  "optNameReset": {
+    "message": "Back to the standard name"
   }
 }
