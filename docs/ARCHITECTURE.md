@@ -325,8 +325,9 @@ TypeError in the shim: add what it needs there. The demo asks for its own files 
 (`scripts/demo/demo.css`) saying that its changes stay in this browser; inside a frame, as on the website, which says it in the visitor's language, the
 line is not shown.
 
-It is not the extension: there is no Scholar page to redraw (the preview is all there is), the language settings only save a value, and the Semantic Scholar
-key field keeps whatever a visitor types in their own `localStorage`.
+It is not the extension: there is no Scholar page to redraw (the preview is all there is), *Open Scholar in* and the Semantic Scholar switch only save a
+value, the page's footer still says the settings sync with a Chrome profile, and the Semantic Scholar key field keeps whatever a visitor types in their own
+`localStorage` (the origin's, which other pages of the same host share).
 
 ## Calls: page events and the popup
 
