@@ -393,7 +393,7 @@
     "message": "显示摘要面板"
   },
   "optPanelShowHint": {
-    "message": "主页上的“角色 × 等级”统计表。关闭后只在论文列表里做标记。"
+    "message": "个人主页右侧一栏中的面板。关闭时：只标注论文列表。"
   },
   "optPanelSummary": {
     "message": "角色 × 排名表格"
@@ -408,7 +408,7 @@
     "message": "已加载论文与无排名 venue"
   },
   "optPanelStatusHint": {
-    "message": "已加载论文数、“加载全部”按钮，以及无排名 venue 的论文列表。"
+    "message": "已加载的论文数、“全部加载”按钮、无法读取的内容，以及发表场所未收录的论文列表。"
   },
   "optPanelNames": {
     "message": "名字拼写帮助"
@@ -429,7 +429,7 @@
     "message": "筛选"
   },
   "optPanelFiltersHint": {
-    "message": "只显示高亮论文，以及年份范围。"
+    "message": "搜索框、快速筛选、“只显示高亮”开关和年份范围。"
   },
   "optPanelMetrics": {
     "message": "引用统计"
@@ -917,64 +917,64 @@
     "message": "关闭"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "每篇论文上的标签"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "论文发表场所后的小标签：等级，以及获奖或报告形式。"
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "各部分的顺序"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "从上到下排列。关闭的部分仍保留原位。"
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "顶部名称"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "设置按钮"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "收起按钮"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "显示此部分"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "标题"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF 标签页及列"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE 标签页及列"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "“未收录”列"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "合计（列和行）"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "“其他”行"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "“未显示”行"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "关于等级来源的说明"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "按钮的顺序"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "搜索框"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "快速筛选的顺序"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "快速筛选"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -983,124 +983,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "引用超过 100 次"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "年份范围"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "“显示 N / M 篇论文”横条"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "列出计入统计的作者位置的一行"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "每个数字旁的“/ N”"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "首年和末年"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "已加载论文和“全部加载”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "被截断的作者列表和“补全”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "重复的条目"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "未列出本人姓名的论文"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "发表场所未收录的论文"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "在你的论文中找到的拼写"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "上移"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "下移"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "不上色"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "未保存：Chrome 限制了设置的写入频率。请稍候片刻后再修改。"
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "你为此设置的名称，适用于所有语言。留空：使用标准名称。"
   },
   "optNameOf": {
-    "message": "name"
+    "message": "名称"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "恢复标准名称"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "外观"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "颜色"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "标签样式"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "描边"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "柔和"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "实心"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "仅文字"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "标签形状"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "圆角"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "直角"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "等级标签的文字"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "列表与等级(CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "仅等级(A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "现成样式"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "每个列表一种颜色"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "单色"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "将鼠标悬停在某部分上即可隐藏(✕)或移动(⠿)。双击名称可重命名。"
   },
   "optHide": {
-    "message": "Hide"
+    "message": "隐藏"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "重命名"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "拖动以移动"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "已隐藏：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1108,9 +1108,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "重新显示"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter 保留 · Esc 取消 · 留空：标准名称"
   }
 }

@@ -103,6 +103,7 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Role × rank table** for CCF or CORE: a click on a cell, a role or a rank lists those papers.
 - **Copy row:** one button for each format switched on in the settings ([Copy and export](#copy-and-export)).
 - **Awards and talks counts:** a click lists those papers.
+- **Yours to arrange:** every part and every thing in it has its own switch, the parts (and the copy buttons and quick filters) can be put in any order, and titles, columns and buttons can be given your own names ([the settings page](#5-the-settings-page)).
 - **Search box and filters:** words and [operators](#search-operators), quick buttons (CCF A, >100 citations, First author, Award), *Only highlighted*, and a year range from two drop-downs.
 - **Citation totals:** papers, citations, h-index and i10-index of the highlighted papers, each out of the total for all papers. The **h-index button** lists the highlighted papers with at least *h* citations (*h* counted over the highlighted papers the other filters let through); the **i10-index button** lists those with at least 10.
 - **Papers by year:** a bar per year for the highlighted papers, stacked by role, over the last 50 years at most; a click on a bar filters to that year.
@@ -114,29 +115,36 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Toolbar popup:** for the profile in the open tab, the same table, the awards and talks counts, and the copy buttons, under the same switches.
 
 ### 5. The settings page
-Each change is saved at once and open Scholar tabs redraw. A live preview shows sample rows and the real panel. The cards, in order:
+Each change is saved at once and open Scholar tabs redraw. The preview on the right is the real panel over sample rows, and it is **an editor, not only a picture**: the cards on the left follow it from top to bottom, hovering a setting outlines what it draws, and hovering a part of the preview offers ✕ to hide it, ⠿ to move it and ✎ (or a double-click) to rename it; a tray above the preview shows what was hidden again. Both sides change the same settings.
+
+- **A switch for every thing.** Each part of the panel (the table, the copy row, awards and talks, the filters, the citation totals, the year chart, the venue list, the status lines, the name help) and each thing in it (a title, a column or row of the table, a button, a quick filter, a number) has its own switch. A switch decides what is *drawn*; what you see is what you search and copy.
+- **Order.** The parts of the panel, the copy buttons and the quick filters can be put in any order: drag them on the preview, or use the buttons on the left.
+- **Your own names.** 48 titles, columns, buttons and chip words can be given your own name. A name replaces the translation in every language; the exports, the search operators and the page calls keep the standard words.
+- **Chip looks.** Outline, soft, solid or text only; rounded or square; with the list's name or the tier alone; a colour for each of CCF, CORE, awards and talks; six ready-made looks.
+
+The cards, in the order of the preview:
 
 | Card | What it holds |
 |---|---|
 | Language | Extension language (or follow the browser); *Open Scholar in* |
 | Highlight my papers | A switch per role; *Mark my name in the author line* |
-| Colours | Five colour themes (Default, Cool, Warm, High contrast, Soft); a colour per role, with a contrast badge; row highlight: tint and bar, bar only, tint only |
-| Venue ranks | CCF, CORE |
-| Awards and talks | Awards, Oral, Spotlight, Highlight; how talks are counted in the panel |
-| Copy & export | One switch per format |
-| Duplicate entries | *Merge duplicates* |
+| Colours | Five colour themes (Default, Cool, Warm, High contrast, Soft); a colour per role, with a contrast badge; row highlight: tint and bar, bar only, tint only, none |
+| Chips on each paper | CCF, CORE, award and talk chips; the names of the award chips; the chips' look (six ready-made looks, style, shape, words, colours) |
+| Summary panel | The panel; the order of its parts; the title bar's parts; the bar that says the list is filtered; *Compact* |
+| Role × rank table, Copy & export, Awards and talks, Filters, Citation totals, Papers by year, Top venues, Loaded papers and unranked venues, Name spelling help | One card for each part of the panel: its switch, a switch (and a name) for each thing in it, and where it has one an order |
 | Scholar's own blocks | Hide *Cited by* (or only its table or its chart), *Co-authors*, *Public access* |
-| Summary panel | The panel and each of its parts; *Compact* |
-| Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
+| Duplicate entries | *Merge duplicates* |
 | Paper list | *Load all papers automatically* |
+| Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
 | AI agents | *Copy guide for agents* |
 | Configuration & presets | Presets *All features*, *Last author focus*, *First author focus*, *Minimalist*; *Copy config (JSON)*, *Export file*, *Import file*, and a JSON editor |
 | Saved data | *View saved details*, *Clear saved paper details*, *Reset to defaults*, *Copy details for a bug report* |
 
-- **Configuration is JSON only.** The editor and *Import file* take a patch in the shape of the exported record, such as `{ "panel": { "years": false }, "rowStyle": "bar" }`; the page says what it applied and what it ignored, and why. A preset changes only the settings it names, and no preset switches Semantic Scholar on.
-- **Settings of older versions are not migrated.** The stored record is read setting by setting: a value whose name and type still match a setting is kept, anything else falls back to its default, and the combined `settings` record of versions before 2.2 is not read.
+- **Configuration is JSON only.** The editor and *Import file* take a patch in the shape of the exported record, such as `{ "panel": { "years": { "show": false }, "copy": { "order": ["bibtex", "summary"] } }, "rows": { "style": "bar" }, "labels": { "metricsTitle": "My papers" } }`; the page says what it applied and what it ignored, and why. A preset changes only the settings it names, and no preset switches Semantic Scholar on.
+- **Settings of older versions are not migrated.** The stored record is read setting by setting: a value whose name and type still match a setting is kept, anything else falls back to its default.
 - **Contrast badge:** each role colour shows its contrast with Scholar's white page and warns below 3:1, the WCAG minimum for graphics, which keeps the row's bar visible.
 - A search box above the cards filters the settings; `/` focuses it.
+- Chrome accepts 120 writes a minute to synced settings; the page writes at most about 100 and says when Chrome refuses one.
 
 ### 6. Languages
 The extension speaks 30 languages: English, 简体中文, 繁體中文, 日本語, 한국어, Español, Français, Deutsch, Italiano, Português (Brasil), Português (Portugal), Русский, Українська, Polski, Čeština, Nederlands, Svenska, Dansk, Suomi, Norsk, Türkçe, العربية, עברית, हिन्दी, Bahasa Indonesia, Tiếng Việt, ไทย, Ελληνικά, Magyar and Română. It follows the browser unless you pick one. *Open Scholar in* opens Scholar's search and author pages (`/scholar`, `/citations`) in a language you choose, by setting Scholar's `hl=`.
@@ -212,7 +220,7 @@ The request's `detail` is `{ id, method, params }`; an `id` that is a string or 
 | Call | Parameters | Result |
 |---|---|---|
 | `ping` | none | `{ version, owner, loaded, complete }` |
-| `summary` | none | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, and which lists, panel parts and copy buttons are on |
+| `summary` | none | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals |
 | `papers` | `filtered` (default `true`: the papers the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
 | `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table) | `{ format, text }` |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors }` |

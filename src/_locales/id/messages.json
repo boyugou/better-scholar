@@ -393,7 +393,7 @@
     "message": "Tampilkan panel ringkasan"
   },
   "optPanelShowHint": {
-    "message": "Tabel peran × peringkat di halaman profil. Nonaktif: hanya daftar makalah yang ditandai."
+    "message": "Panel di kolom kanan halaman profil. Mati: hanya daftar makalah yang diberi tanda."
   },
   "optPanelSummary": {
     "message": "Tabel peran × peringkat"
@@ -408,7 +408,7 @@
     "message": "Makalah termuat dan venue tanpa peringkat"
   },
   "optPanelStatusHint": {
-    "message": "Jumlah makalah yang dimuat, tombol “Muat semua”, dan daftar makalah di venue tanpa peringkat."
+    "message": "Berapa makalah yang sudah dimuat, tombol “Muat semua”, yang tidak bisa dibaca, dan daftar makalah di venue tanpa peringkat."
   },
   "optPanelNames": {
     "message": "Bantuan ejaan nama"
@@ -429,7 +429,7 @@
     "message": "Filter"
   },
   "optPanelFiltersHint": {
-    "message": "Hanya makalah yang disorot, dan rentang tahun."
+    "message": "Kotak pencarian, filter cepat, sakelar “Hanya yang disorot”, dan rentang tahun."
   },
   "optPanelMetrics": {
     "message": "Total sitasi"
@@ -917,64 +917,64 @@
     "message": "Tutup"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Label di setiap makalah"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Label kecil setelah venue makalah: peringkatnya, serta penghargaan atau presentasi."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Urutan bagian"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Dari atas ke bawah. Bagian yang dimatikan tetap di tempatnya."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Nama di atas"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Tombol Pengaturan"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Tombol Ciutkan"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Tampilkan bagian ini"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Judul"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Tab dan kolom CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Tab dan kolom CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Kolom “Tanpa peringkat”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Total (kolom dan baris)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Baris “Lainnya”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Baris “Tersembunyi”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Catatan tentang sumber peringkat"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Urutan tombol"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Kotak pencarian"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Urutan filter cepat"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Filter cepat"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -983,124 +983,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Lebih dari 100 kutipan"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Rentang tahun"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Bilah “Menampilkan N dari M makalah”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Baris yang menyebut posisi yang dihitung"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“dari N” di samping setiap angka"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Tahun pertama dan terakhir"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Makalah yang dimuat, dan “Muat semua”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Daftar penulis yang terpotong, dan “Baca daftar lengkap”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Entri berulang"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Makalah tanpa nama Anda"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Makalah di venue tanpa peringkat"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Ejaan nama yang ditemukan di makalah Anda"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Pindahkan ke atas"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Pindahkan ke bawah"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Tanpa warna"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Tidak tersimpan: Chrome membatasi seberapa sering pengaturan dapat ditulis. Tunggu sebentar, lalu coba lagi."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "Nama Anda sendiri untuk ini, dalam semua bahasa. Kosong: nama standar."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "nama"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Kembali ke nama standar"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Tampilan"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Warna"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Gaya label"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Garis tepi"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Lembut"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Penuh"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Hanya teks"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Bentuk label"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Membulat"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Persegi"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Teks label peringkat"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Daftar dan tingkat (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Hanya tingkat (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Tampilan siap pakai"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Warna per daftar"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Arahkan kursor ke bagian untuk menyembunyikannya (✕) atau memindahkannya (⠿). Klik ganda nama untuk mengganti namanya."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Sembunyikan"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Ganti nama"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Seret untuk memindahkan"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Tersembunyi: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1108,9 +1108,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Tampilkan lagi"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter menyimpan · Esc membatalkan · kosong: nama standar"
   }
 }

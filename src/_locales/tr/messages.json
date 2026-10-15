@@ -408,7 +408,7 @@
     "message": "Özet panelini göster"
   },
   "optPanelShowHint": {
-    "message": "Profil sayfasındaki rol × sıralama tablosu. Kapalı: yalnızca makale listesi işaretlenir."
+    "message": "Profil sayfasının sağ sütunundaki panel. Kapalıyken yalnızca makale listesi işaretlenir."
   },
   "optPanelSummary": {
     "message": "Rol × sıralama tablosu"
@@ -423,7 +423,7 @@
     "message": "Yüklenen makaleler ve sıralaması olmayan yayın yerleri"
   },
   "optPanelStatusHint": {
-    "message": "Kaç makalenin yüklendiği, “Tümünü yükle” düğmesi ve sıralaması olmayan yayın yerlerindeki makalelerin listesi."
+    "message": "Kaç makalenin yüklendiği, “Tümünü yükle” düğmesi, okunamayanlar ve sıralaması olmayan yayın yerlerindeki makalelerin listesi."
   },
   "optPanelNames": {
     "message": "Ad yazımı yardımı"
@@ -444,7 +444,7 @@
     "message": "Filtreler"
   },
   "optPanelFiltersHint": {
-    "message": "Yalnızca vurgulanan makaleler ve bir yıl aralığı."
+    "message": "Arama kutusu, hızlı filtreler, “Yalnızca vurgulananlar” anahtarı ve yıl aralığı."
   },
   "optPanelMetrics": {
     "message": "Atıf toplamları"
@@ -938,64 +938,64 @@
     "message": "Kapat"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Her makaledeki etiketler"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Makalenin yayın yerinden sonra gelen küçük etiketler: sıralaması, ödüller veya sunumlar."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Bölümlerin sırası"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Üstten alta. Kapalı bir bölüm yerini korur."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Üstteki ad"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Ayarlar düğmesi"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Daraltma düğmesi"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Bu bölümü göster"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Başlık"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF sekmesi ve sütunları"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE sekmesi ve sütunları"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "“Sıralanmamış” sütunu"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Toplamlar (sütun ve satır)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "“Diğer” satırı"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "“Gizli” satırı"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Sıralamaların kaynağına ilişkin not"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Düğmelerin sırası"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Arama kutusu"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Hızlı filtrelerin sırası"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Hızlı filtreler"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1004,124 +1004,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "100'den fazla atıf"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Yıl aralığı"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "“Gösterilen makale: N / M” çubuğu"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Hangi konumların sayıldığını belirten satır"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "Her sayının yanındaki “/ N”"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "İlk ve son yıl"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Yüklenen makaleler ve Tümünü yükle"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Kısaltılmış yazar listeleri ve Tam listeleri oku"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Tekrarlanan kayıtlar"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Adınızın geçmediği makaleler"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Sıralamasız yayın yerlerindeki makaleler"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Makalelerinizde bulunan yazımlar"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Yukarı taşı"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Aşağı taşı"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Renk yok"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Kaydedilmedi: Chrome, ayarların ne sıklıkla yazılabileceğini sınırlar. Bir süre bekleyip yeniden değiştirin."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "Bunun için kendi adınız, her dilde. Boş: standart ad."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "ad"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Standart ada dön"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Görünüm"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Renkler"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Etiket stili"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Çerçeveli"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Yumuşak"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Dolu"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Yalnızca metin"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Etiket biçimi"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Yuvarlak"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Köşeli"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Sıralama etiketinin metni"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Liste ve düzey (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Yalnızca düzey (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Hazır stiller"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Her liste için renk"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Tek renkli"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Bir bölümün üzerine gelerek gizleyin (✕) veya taşıyın (⠿). Bir adı değiştirmek için üzerine çift tıklayın."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Gizle"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Yeniden adlandır"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Taşımak için sürükle"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Gizli: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1129,9 +1129,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Yeniden göster"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter kaydeder · Esc iptal eder · boş: standart ad"
   }
 }

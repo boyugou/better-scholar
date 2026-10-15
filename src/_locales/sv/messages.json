@@ -408,7 +408,7 @@
     "message": "Visa sammanfattningspanelen"
   },
   "optPanelShowHint": {
-    "message": "Roll × rank-tabellen på profilsidan. Av: bara artikellistan markeras."
+    "message": "Panelen i högerspalten på en profilsida. Av: bara artikellistan markeras."
   },
   "optPanelSummary": {
     "message": "Roll × rank-tabell"
@@ -423,7 +423,7 @@
     "message": "Inlästa artiklar och orankade ställen"
   },
   "optPanelStatusHint": {
-    "message": "Hur många artiklar som är inlästa, knappen ”Läs in alla” och listan över artiklar på ställen utan rank."
+    "message": "Hur många artiklar som lästs in, knappen ”Läs in alla”, vad som inte gick att läsa och listan över artiklar på publiceringsställen utan rank."
   },
   "optPanelNames": {
     "message": "Hjälp med namnstavning"
@@ -444,7 +444,7 @@
     "message": "Filter"
   },
   "optPanelFiltersHint": {
-    "message": "Endast markerade artiklar och ett årsintervall."
+    "message": "Sökrutan, snabbfiltren, reglaget ”Endast markerade” och årsintervallet."
   },
   "optPanelMetrics": {
     "message": "Citeringssummor"
@@ -938,64 +938,64 @@
     "message": "Stäng"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Etiketter på varje artikel"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "De små etiketterna efter publiceringsstället: artikelns rank, samt priser eller presentationer."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Ordning på delarna"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Uppifrån och ned. En del som är avslagen behåller sin plats."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Namnet överst"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Inställningsknapp"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Ihopfällningsknapp"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Visa den här delen"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Rubrik"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF-fliken och kolumnerna"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE-fliken och kolumnerna"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Kolumnen ”Ingen rank”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Summor (kolumn och rad)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Raden ”Övriga”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Raden ”Dold”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Anteckning om varifrån rankningarna kommer"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Ordning på knapparna"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Sökruta"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Ordning på snabbfiltren"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Snabbfilter"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1004,124 +1004,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Fler än 100 citeringar"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Årsintervall"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Raden ”Visade artiklar: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Raden som anger vilka positioner som räknas"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "”av N” bredvid varje tal"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Första och sista år"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Inlästa artiklar och Läs in alla"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Kortade författarlistor och Läs hela listorna"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Upprepade poster"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Artiklar utan ditt namn"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Artiklar på ställen utan rank"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Stavningar som hittats i dina artiklar"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Flytta upp"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Flytta ned"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Ingen färg"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Inte sparat: Chrome begränsar hur ofta inställningar kan sparas. Vänta en stund och ändra igen."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "Ditt eget namn för detta, på alla språk. Tomt: standardnamnet."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "namn"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Tillbaka till standardnamnet"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Utseende"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Färger"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Etikettstil"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Kontur"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Mjuk"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Fylld"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Endast text"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Etikettform"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Rundad"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Kantig"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Text på rank-etiketten"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Lista och nivå (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Endast nivå (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Färdiga stilar"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Färg per lista"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Håll muspekaren över en del för att dölja den (✕) eller flytta den (⠿). Dubbelklicka på ett namn för att byta namn."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Dölj"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Byt namn"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Dra för att flytta"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Dolda: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1129,9 +1129,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Visa igen"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter behåller · Esc avbryter · tomt: standardnamnet"
   }
 }

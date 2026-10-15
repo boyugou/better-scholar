@@ -408,7 +408,7 @@
     "message": "Mostrar o painel de resumo"
   },
   "optPanelShowHint": {
-    "message": "A tabela posição × ranking na página do perfil. Desativado: só a lista de artigos é marcada."
+    "message": "O painel na coluna da direita de uma página de perfil. Desativado: só a lista de artigos é marcada."
   },
   "optPanelSummary": {
     "message": "Tabela posição × ranking"
@@ -423,7 +423,7 @@
     "message": "Artigos carregados e veículos sem ranking"
   },
   "optPanelStatusHint": {
-    "message": "Quantos artigos estão carregados, o botão “Carregar tudo” e a lista de artigos em veículos sem ranking."
+    "message": "Quantos artigos foram carregados, o botão “Carregar tudo”, o que não foi possível ler e a lista de artigos em veículos sem ranking."
   },
   "optPanelNames": {
     "message": "Ajuda com a grafia do nome"
@@ -444,7 +444,7 @@
     "message": "Filtros"
   },
   "optPanelFiltersHint": {
-    "message": "Só artigos destacados e um intervalo de anos."
+    "message": "A caixa de pesquisa, os filtros rápidos, o interruptor “Só destacados” e o intervalo de anos."
   },
   "optPanelMetrics": {
     "message": "Totais de citações"
@@ -938,64 +938,64 @@
     "message": "Fechar"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Etiquetas em cada artigo"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "As pequenas etiquetas a seguir ao veículo de cada artigo: o ranking, e prémios ou apresentações."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Ordem das partes"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "De cima para baixo. Uma parte desativada mantém o seu lugar."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Nome no topo"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Botão de definições"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Botão de recolher"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Mostrar esta parte"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Título"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Separador e colunas do CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Separador e colunas do CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Coluna “Sem ranking”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Totais (coluna e linha)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Linha “Outros”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Linha “Oculto”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Nota sobre a origem dos rankings"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Ordem dos botões"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Caixa de pesquisa"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Ordem dos filtros rápidos"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Filtros rápidos"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1004,124 +1004,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Mais de 100 citações"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Intervalo de anos"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Barra “Artigos mostrados: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Linha com as posições que contam"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“de N” ao lado de cada número"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Primeiro e último ano"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Artigos carregados e Carregar tudo"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Listas de autores truncadas e Ler listas completas"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Entradas repetidas"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Artigos sem o seu nome"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Artigos em veículos sem ranking"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Grafias encontradas nos seus artigos"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Mover para cima"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Mover para baixo"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Sem cor"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Não guardado: o Chrome limita a frequência com que as definições podem ser gravadas. Aguarde um pouco e altere de novo."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "O seu próprio nome para isto, em todos os idiomas. Vazio: o nome predefinido."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "nome"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Repor o nome predefinido"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Aspeto"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Cores"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Estilo das etiquetas"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Contorno"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Suave"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Sólido"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Só texto"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Forma das etiquetas"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Arredondado"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Quadrado"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Texto da etiqueta de ranking"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Lista e nível (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Só o nível (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Estilos prontos"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Cor por lista"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Monocromático"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Passe o cursor sobre uma parte para a ocultar (✕) ou mover (⠿). Faça duplo clique num nome para o mudar."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Ocultar"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Mudar o nome"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Arrastar para mover"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Ocultos: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1129,9 +1129,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Mostrar novamente"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter mantém · Esc cancela · vazio: o nome predefinido"
   }
 }

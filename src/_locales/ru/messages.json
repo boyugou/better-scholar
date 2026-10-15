@@ -393,7 +393,7 @@
     "message": "Показывать панель сводки"
   },
   "optPanelShowHint": {
-    "message": "Таблица «роль × ранг» на странице профиля. Выкл.: размечается только список статей."
+    "message": "Панель в правом столбце страницы профиля. Выкл.: отмечается только список статей."
   },
   "optPanelSummary": {
     "message": "Таблица «роль × ранг»"
@@ -408,7 +408,7 @@
     "message": "Загруженные статьи и издания без ранга"
   },
   "optPanelStatusHint": {
-    "message": "Сколько статей загружено, кнопка «Загрузить все» и список статей в изданиях без ранга."
+    "message": "Сколько статей загружено, кнопка «Загрузить все», что не удалось прочитать, и список статей в изданиях без ранга."
   },
   "optPanelNames": {
     "message": "Помощь с написанием имени"
@@ -429,7 +429,7 @@
     "message": "Фильтры"
   },
   "optPanelFiltersHint": {
-    "message": "Только выделенные статьи и диапазон лет."
+    "message": "Строка поиска, быстрые фильтры, переключатель «Только выделенные» и диапазон лет."
   },
   "optPanelMetrics": {
     "message": "Итоги цитирований"
@@ -917,64 +917,64 @@
     "message": "Закрыть"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Метки у каждой статьи"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Небольшие метки после издания статьи: ранги, а также награды или доклады."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Порядок разделов"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Сверху вниз. Выключенный раздел сохраняет своё место."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Название сверху"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Кнопка настроек"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Кнопка сворачивания"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Показывать этот раздел"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Заголовок"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Вкладка CCF и столбцы"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Вкладка CORE и столбцы"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Столбец «Без ранга»"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Итоги (столбец и строка)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Строка «Прочие»"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Строка «Скрыто»"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Примечание об источнике рангов"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Порядок кнопок"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Строка поиска"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Порядок быстрых фильтров"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Быстрые фильтры"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -983,124 +983,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Более 100 цитирований"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Диапазон лет"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Строка «Показано статей: N / M»"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Строка с учитываемыми ролями"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "«из N» рядом с каждым числом"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Первый и последний год"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Загруженные статьи и Загрузить все"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Обрезанные списки авторов и Читать полные списки"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Повторяющиеся записи"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Статьи без вашего имени"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Статьи в изданиях без ранга"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Написания, найденные в ваших статьях"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Переместить вверх"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Переместить вниз"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Без цвета"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Не сохранено: Chrome ограничивает частоту записи настроек. Подождите немного и измените снова."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "Своё название для этого, на любом языке. Пусто: стандартное название."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "название"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Вернуть стандартное название"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Вид"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Цвета"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Стиль меток"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Контур"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Мягкий"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Сплошной"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Только текст"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Форма меток"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Скруглённый"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Квадратный"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Текст метки ранга"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Список и уровень (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Только уровень (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Готовые стили"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Цвет для каждого списка"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Монохромный"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Наведите на раздел, чтобы скрыть (✕) или переместить (⠿). Дважды щёлкните название, чтобы переименовать."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Скрыть"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Переименовать"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Перетащить"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Скрыто: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1108,9 +1108,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Показать снова"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter сохраняет · Esc отменяет · пусто: стандартное название"
   }
 }

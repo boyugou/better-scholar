@@ -408,7 +408,7 @@
     "message": "Overzichtspaneel tonen"
   },
   "optPanelShowHint": {
-    "message": "De tabel rol × rang op een profielpagina. Uit: alleen de paperlijst wordt gemarkeerd."
+    "message": "Het paneel in de rechterkolom van een profielpagina. Uit: alleen de lijst met papers wordt gemarkeerd."
   },
   "optPanelSummary": {
     "message": "Tabel rol × rang"
@@ -423,7 +423,7 @@
     "message": "Geladen papers en venues zonder rang"
   },
   "optPanelStatusHint": {
-    "message": "Hoeveel papers zijn geladen, de knop “Alles laden” en de lijst met papers bij venues zonder rang."
+    "message": "Hoeveel papers er geladen zijn, de knop “Alles laden”, wat niet gelezen kon worden, en de lijst met papers bij publicatiekanalen zonder rang."
   },
   "optPanelNames": {
     "message": "Hulp bij naamspelling"
@@ -444,7 +444,7 @@
     "message": "Filters"
   },
   "optPanelFiltersHint": {
-    "message": "Alleen gemarkeerde papers en een jaarbereik."
+    "message": "Het zoekvak, de snelfilters, de schakelaar voor alleen gemarkeerde papers en het jaarbereik."
   },
   "optPanelMetrics": {
     "message": "Citatietotalen"
@@ -938,64 +938,64 @@
     "message": "Sluiten"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Labels bij elk paper"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "De kleine labels na het publicatiekanaal van een paper: de rangen, en prijzen of presentaties."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Volgorde van de onderdelen"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Van boven naar beneden. Een uitgeschakeld onderdeel behoudt zijn plek."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Naam bovenaan"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Instellingenknop"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Inklapknop"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Dit onderdeel tonen"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Titel"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF-tabblad en kolommen"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE-tabblad en kolommen"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Kolom “Geen rang”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Totalen (kolom en rij)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Rij “Overig”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Rij “Verborgen”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Opmerking over waar de rangen vandaan komen"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Volgorde van de knoppen"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Zoekvak"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Volgorde van de snelfilters"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Snelfilters"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1004,124 +1004,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Meer dan 100 citaties"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Jaarbereik"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Balk “Getoonde papers: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Regel met de rollen die meetellen"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“van N” naast elk getal"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Eerste en laatste jaar"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Geladen papers en Alles laden"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Afgekapte auteurslijsten en Hele lijsten lezen"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Dubbele vermeldingen"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Papers zonder jouw naam"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Papers bij publicatiekanalen zonder rang"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Spellingen die in je papers staan"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Omhoog verplaatsen"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Omlaag verplaatsen"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Geen kleur"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Niet opgeslagen: Chrome beperkt hoe vaak instellingen kunnen worden geschreven. Wacht even en wijzig het opnieuw."
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "Je eigen naam hiervoor, in elke taal. Leeg: de standaardnaam."
   },
   "optNameOf": {
-    "message": "name"
+    "message": "naam"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "Terug naar de standaardnaam"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "Uiterlijk"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "Kleuren"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "Stijl van de labels"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "Omlijnd"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "Zacht"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "Vol"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "Alleen tekst"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "Vorm van de labels"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "Afgerond"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "Vierkant"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "Tekst van de rang-labels"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "Lijst en niveau (CCF A)"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "Alleen niveau (A)"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "Kant-en-klare stijlen"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "Kleur per lijst"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "Monochroom"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Wijs een onderdeel aan om het te verbergen (✕) of te verplaatsen (⠿). Dubbelklik op een naam om die te hernoemen."
   },
   "optHide": {
-    "message": "Hide"
+    "message": "Verbergen"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "Hernoemen"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "Sleep om te verplaatsen"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "Verborgen: $N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1129,9 +1129,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "Opnieuw tonen"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter bewaart · Esc annuleert · leeg: de standaardnaam"
   }
 }

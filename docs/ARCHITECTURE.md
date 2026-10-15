@@ -47,11 +47,12 @@ code on real Scholar data, and why there is no build step.
 | `lib/query.js` | The search language. `OPERATORS` — `cites`, `year` (compared with `>` `>=` `<` `<=` `=`), `ccf`, `core`, `role`, `has` — each with its value pattern, an example, the suggestions and a line of documentation; `POPULAR` (what the panel offers on an empty box); `parse(q)` → `{ terms, errors }` (an operator with a value it does not take becomes a term that matches nothing, named in `errors`); `matches(parsed, fields)`. The panel's suggestions, the agent guide and the matcher all read `OPERATORS`. |
 | `lib/metrics.js` | h-index / i10 and the citation totals (highlighted and all), the role × tier summary (`summarize`, by role only with `source` null), matrix selection, the year bars (`yearBars`, at most `YEAR_BARS` = 50 years), top venues, unmatched venues. |
 | `lib/formats.js` | The text of the copy buttons, the popup and the `export` call: `summaryText`, `summaryTsv`, `papersTsv`, `papersCsv`, `bibtex`, `markdown`, `apa`, `json` (see [Exports](#exports)). Titles and names are treated as untrusted text. |
-| `lib/prefs.js` | The settings, as one table: `SETTINGS`, a row per setting `{ path, kind, def, doc }` (kind: `bool`, `choice`, `color`, `language`). Derived from it: `defaults()`, `normalize(raw)` (a complete, well-typed record; unknown keys dropped, wrong values back to the default), `apply(current, patch)` → `{ prefs, applied, unchanged, ignored }` (imports, presets, the editor), `flatten()`, the groups `ROLES`, `RANKS`, `MARK_GROUPS`, `PANEL_PARTS`, `HIDE_PARTS`, `COPY_BUTTONS`. Also `PRESETS` (`all`, `last`, `first`, `minimal`), `normalizeUi` and the rules: which ranking the table uses (`sources`, `source`), which copy buttons are on (`copyButtons`), which marks are visible (`groupOn`, `visibleMarks`). |
+| `lib/prefs.js` | The screen, described once: `CARDS`, a card for each part of what the extension draws in the order it is drawn (`{ id, title, hint, rows }`; the settings page lists them in that order beside the preview), and `SETTINGS`, the cards' rows in one list `{ path, kind, def, doc, label, … }` (kind: `bool`, `choice`, `color`, `language`, `order`, `text`). Derived from it: `defaults()`, `normalize(raw)` (a complete, well-typed record; unknown keys dropped, wrong values back to the default; an order is always a whole permutation), `apply(current, patch)` → `{ prefs, applied, unchanged, ignored }` (imports, presets, the editor), `flatten()`. Also `NAMES` (the 48 texts a person can name: where each is drawn and its English words, checked against the catalogue), `PRESETS` (`all`, `last`, `first`, `minimal`), `CHIP_THEMES`, `normalizeUi`, and the rules: what is drawn (`listShown`, `lists`, `markShown`, `visibleMarks` for the search and the exports, `chipMarks` for the rows, `panelMarks` for the counts), the quick filters that are drawn (`pills`), which ranking the table uses (`sources`, `source`) and which copy buttons are on, in order (`copyButtons`). |
+| `lib/palette.js` | The chips' colours from one colour per family (`ccf`, `core`, `award`, `talk`): `vars(family, hex)` → the custom properties (`--rr-ccf-1-ink`, …; the tiers fade, the text on a solid fill is white or near black by contrast), `on`, `mix`, `contrast`. `styles.css` reads them with the built-in colours as the fallback of each. |
 | `lib/agent.js` | The calls of the page events and the popup: `METHODS` (`ping`, `summary`, `papers`, `export`, `filter`, `clearFilters`, each with its parameters and result), `validate(method, params)`, `EVENTS` (`better-scholar:request`, `better-scholar:response`, the marker `data-rr-ready`), `FORMATS` (= `COPY_BUTTONS`), and `guide({ current, version })`: the Markdown guide for AI agents, written from `SETTINGS`, `PRESETS`, `METHODS` and `OPERATORS`. |
 | `lib/i18n.js` | The 30 interface languages, Scholar's `hl=` value for each, and Chrome's message format (`format`). |
-| `content/dom.js` | `h()` (elements and text nodes, never `innerHTML`), `t` / `tn` (`chrome.i18n`, or the chosen language's strings from the service worker), `useLanguage()`, the role colours as CSS custom properties `--rr-c-<role>` on `<html>` (`applyColors`), the row style (`applyRowStyle`), `copyText`, `downloadFile`, `issueUrl`, and the copy buttons' labels (`COPY_LABEL`). |
-| `content/chips.js` | The rank and award / talk chips; shared by the Scholar page and the settings page's preview. |
+| `content/dom.js` | `h()` (elements and text nodes, never `innerHTML`), `t` / `tn` (a name the person gave the thing first, then the chosen language's strings from the service worker, then `chrome.i18n`; `setLabels`, `tDefault` for what a machine reads), `useLanguage()`, the role colours as CSS custom properties `--rr-c-<role>` on `<html>` (`applyColors`), the row style (`applyRowStyle`), the chips' look and colours (`applyChips`), `copyText`, `downloadFile`, `issueUrl`, and the copy buttons' labels (`COPY_LABEL`). |
+| `content/chips.js` | The rank and award / talk chips (what the panel marks for the editor: `data-rr-label`); shared by the Scholar page and the settings page's preview. |
 | `content/store.js` | `chrome.storage` wrappers for every key (see [Storage](#storage-and-privacy)) and `onPrefsChanged`; degrades to memory if the extension context disappears. |
 | `content/scholar.js` | Read rows, place the panel (sidebar when wide, above the list when narrow), press *Show more* until the list is complete (`loadAll`). |
 | `content/semantic.js` | Optional (setting `semanticScholar`, off by default): one title lookup at Semantic Scholar's public API for a cut-off author list, used before Scholar's own page by `detail.js`; an answer counts only when its title, first author and year agree. |
@@ -60,8 +61,8 @@ code on real Scholar data, and why there is no build step.
 | `content/bridge.js` | Carries the calls of `lib/agent.js` on two transports — the extension's own messages (`{ type: "rr:call", method, params }`, the popup) and page events — after `validate`; answers `{ id, ok: true, result }` or `{ id, ok: false, error }`; sets `data-rr-ready="true"` on `<html>`. What a call does is in `main.js`. |
 | `content/main.js` | Wires it together: settings, filters, decoration, duplicate merging, observers, the keys (`/`, `Escape`), the calls (`methods`, handed to `bridge.install`). Also applies the language (`B.dom.useLanguage()` before anything is drawn; a changed language or Scholar language reloads the page) and the role colours. |
 | `content/lang-redirect.js` | The setting *Open Scholar in*: a second, tiny content script (run at document start on `scholar.google.*/*`, checks the path itself: `/scholar` and `/citations` only — search, profiles, author search, paper details — never downloads or redirects) that reopens a page with the chosen `hl=`, once per tab and language. It reads one setting and nothing else. |
-| `options/*` | The settings page (below). |
-| `popup/*` | The toolbar popup: asks the active tab for `summary`, draws the table, the awards and talks line and the copy buttons that are on; a button asks for `export` and copies the text (CSV: a file). |
+| `options/*` | The settings page (below): `options.js` builds it from `CARDS`, `editor.js` makes the preview a place to edit. |
+| `popup/*` | The toolbar popup: asks the active tab for `summary` and reads the settings itself, then draws the table, the awards and talks line and the copy buttons the settings leave on, in their order and under their names; a button asks for `export` and copies the text (CSV: a file). |
 | `background.js` | Opens the settings page when the panel asks (a content script cannot), and hands a page the strings of the chosen language from the extension's own `_locales`. Nothing else. |
 | `data/*.js` | **Generated** from `data/*.json` by `scripts/build-data.mjs` (`ccf.js`, `core.js`, `awards.js`); `aliases.js` is curated by hand. |
 
@@ -72,7 +73,7 @@ The main content script runs at `document_idle` on `https://scholar.google.<doma
 
 ```
 lib/i18n.js → lib/names.js → lib/venues.js → lib/metrics.js → lib/marks.js → lib/awards.js → lib/duplicates.js →
-lib/prefs.js → lib/query.js → lib/formats.js → lib/analysis.js → lib/agent.js →
+lib/prefs.js → lib/palette.js → lib/query.js → lib/formats.js → lib/analysis.js → lib/agent.js →
 data/aliases.js → data/ccf.js → data/core.js → data/awards.js →
 content/dom.js → content/chips.js → content/store.js → content/scholar.js → content/semantic.js → content/detail.js →
 content/panel.js → content/bridge.js → content/main.js
@@ -81,10 +82,10 @@ content/panel.js → content/bridge.js → content/main.js
 `prefs` needs `i18n`; `awards` needs `names`; `duplicates` needs `names` and `awards`; `analysis` needs `names`,
 `marks` and `query`; `agent` needs `prefs`, `i18n` and `query`; the `content/` files need `dom`; `main.js` comes last
 and calls `bridge.install`. The second content script — `lib/i18n.js`, `content/lang-redirect.js` — runs at
-`document_start` on every page of the same domains. The popup loads `lib/i18n.js`, `lib/marks.js`,
-`content/dom.js`, `popup/popup.js`; the settings page loads `lib/i18n.js`, `lib/prefs.js`, `lib/query.js`,
-`lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `content/dom.js`, `content/chips.js`, `content/panel.js`,
-`content/store.js`, `options/options.js`.
+`document_start` on every page of the same domains. The popup loads `lib/i18n.js`, `lib/prefs.js`, `lib/marks.js`,
+`content/dom.js`, `content/store.js`, `popup/popup.js`; the settings page loads `lib/i18n.js`, `lib/prefs.js`,
+`lib/palette.js`, `lib/query.js`, `lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `content/dom.js`, `content/chips.js`,
+`content/panel.js`, `content/store.js`, `options/editor.js`, `options/options.js`.
 
 ## Author detection and roles
 
@@ -218,16 +219,23 @@ between the right sidebar (wide window) and the space above the list (narrow win
 Scholar drops the sidebar *below* the list) as the window is resized. Styles are scoped under
 `#rr-panel` and out-rank the reset that stops Scholar's global button/input styles bleeding in.
 
-What it shows is decided by the settings, never by the panel itself (it holds only per-visit view state: folded or not, the
-ranking tab). The parts are the `panel.*` rows of `SETTINGS` (`PANEL_PARTS`): `show` (the whole panel), `summary` (the role ×
-rank table and its data note), `marks` (awards and talks counts), `filters` (search box, quick buttons, *Only highlighted*, the
-year range), `metrics` (citation totals, with the h-index and i10 buttons), `years` (papers per year), `venues` (top venues; the
-only part off by default), `status` (loaded papers, *Load all*, *Read full lists*, repeats, unranked venues) and `names` (name
-spellings). The copy row is not a part: it holds one button per `copy.*` switch that is on (`prefs.copyButtons`), whether or not
-the table is shown, and is hidden when none is. `panel.update()` hides a section whose switch is off and lets a column with nothing
-in it give its width to the other (`rr-onecol`); the layout-changed warning is never hidden. A part added later needs: a row
-in `SETTINGS` (`panel.<part>`), its words in every `src/_locales/*/messages.json`, a switch on the settings page (`data-pref`),
-a preview effect (the preview runs the same panel) and an end-to-end check.
+What it shows, and in what order, is decided by the settings, never by the panel itself (it holds only per-visit view state: folded
+or not, the ranking tab). The parts are the `panel.<part>.show` rows of `SETTINGS` and the order is `panel.order` (`SECTIONS`):
+`table` (the role × rank table and its note), `copy` (one button for each `panel.copy.*` switch that is on, in `panel.copy.order`),
+`marks` (awards and talks counts), `filters` (the search box, the quick filters in `panel.filters.pills.order`, *Only highlighted*, the
+year range), `metrics` (citation totals), `years` (papers per year), `venues` (the only part off by default), `status` (loaded
+papers, *Load all*, *Read full lists*, repeats, absent names, unranked venues) and `names` (the spellings found, the box that adds
+one). Every thing in a part has its own switch (`panel.table.total`, `panel.metrics.h`, …), so what is drawn is described one thing
+at a time; the title bar (`panel.header.*`) and the bar that says the list is filtered (`panel.filters.bar`) are the panel's own.
+The parts are flat children of one container in the order of `panel.order`; in the wide layout (above the list) CSS columns run
+them in two columns, top to bottom, and `rr-onecol` says there is one. A thing carries `data-rr-part="<its switch's path>"`, a text
+that can be named `data-rr-label="<message key>"`, and a list that can be put in another order `data-rr-order` with `data-rr-item` on
+its items: the settings page's editor reads those. The words are set by `relabel()` before every update, so a name typed in the
+settings is used at once. A thing that nothing draws is also left out of the search and the exports ("what you see is what you
+search and copy": `prefs.lists`, `prefs.visibleMarks`); a filter whose control the settings took away is cleared (`pruneFilters`
+in `main.js`). A part added later needs: a row in `CARDS` (its words in every `src/_locales/*/messages.json`), the panel drawing
+it under that switch with `data-rr-part`, a place in the preview's sample, and an end-to-end check (the control and the order of
+the settings against the preview are checked for every row).
 The controls are components of the panel's own, not the system's: the year range is `dropdown()` (button, fixed-position list,
 arrow keys, Escape, click outside), the one checkbox is styled as a switch (`role="switch"`), the search box is a combobox whose
 suggestion list is placed with fixed coordinates.
@@ -277,23 +285,31 @@ the window crosses the breakpoint. When Scholar's layout has changed (`layoutBro
 ## The toolbar popup
 
 The popup sends `{ type: "rr:call", method: "summary" }` to the active tab (`chrome.tabs.sendMessage`; no `tabs`
-permission is needed for that). The answer carries the three summaries (CCF, CORE, by role only), the awards and talks
-counts, `parts` (`panel.summary`, `panel.marks`) and `copyButtons`, so the popup obeys the same switches as the panel. A
-copy button asks for `export` and copies the text; CSV is saved as a file. A tab that is not a profile gets no answer, and the
-popup offers to open Google Scholar.
+permission is needed for that). The answer carries the numbers only: the three summaries (CCF, CORE, by role only), the awards and
+talks counts, the citation totals. What to draw is read from the settings by the popup itself (`B.store.loadPrefs()`), so it obeys the
+same switches, order and names as the panel. A copy button asks for `export` and copies the text; CSV is saved as a file. A tab that
+is not a profile gets no answer, and the popup offers to open Google Scholar.
 
 ## The settings page
 
-`options.js` builds the page from the same table: every control carries `data-pref="<path>"` (the API key's field is
-`data-pref="s2key"`, not a setting), and an end-to-end check fails when a `SETTINGS` row has no control or a control names no
-setting. A change is saved at once (`store.savePrefs`); open Scholar tabs redraw on `chrome.storage.onChanged`. The cards, in
-order: *Language* (interface language, *Open Scholar in*), *Highlight my papers* (roles, *Mark my name*), *Colours* (five
-themes, a colour per role with a contrast badge against Scholar's white page — a warning below 3:1 — and the row style),
-*Venue ranks*, *Awards and talks* (and the talk rows), *Copy & export* (a switch per format), *Duplicate entries*, *Scholar's
-own blocks*, *Summary panel* (the panel and its parts, *Compact*), *Semantic Scholar* (the switch and the optional API key),
-*Paper list* (`autoLoad`), *AI agents* (*Copy guide for agents*: `agent.guide({ current, version })` to the clipboard),
-*Configuration & presets* and *Saved data* (view and clear the saved paper details, reset, copy diagnostics). Groups of
+`options.js` builds the page from `CARDS`: a card for each, in that order, which is the order of the preview from top to bottom (an
+end-to-end check measures it). A switch is a `bool` row; the switches of a part hang on its `show` switch (`parent`) and are
+greyed while it is off; a name (`text` row) sits on the row of its switch; an order (`order` row) is a list with move buttons.
+Every control carries `data-pref="<path>"` (the API key's field is `data-pref="s2key"`, not a setting), and an end-to-end
+check fails when a `SETTINGS` row has no control or a control names no setting. Bespoke parts: the colour studio, the chip looks
+(ready-made looks drawn on their own buttons: the look is a few inherited custom properties, so the nearest class wins), the key
+field, the configuration card, the saved data. A change is shown at once and written within 600 ms (`chrome.storage.sync` takes 120
+writes a minute and refuses silently: runs of changes are coalesced, a refused write is shown, and the page's own echoes are not
+taken for another tab's change); open Scholar tabs redraw on `chrome.storage.onChanged`. The cards: *Language*, *Highlight my
+papers*, *Colours*, *Chips on each paper* (and their look), *Summary panel*, one card for each part of the panel, *Scholar's own
+blocks*, *Duplicate entries*, *Paper list*, *Semantic Scholar*, *AI agents*, *Configuration & presets* and *Saved data*. Groups of
 switches have *Enable all* / *Disable all*. A search box and a row of links to the cards sit above them.
+
+The preview is an editor, not only a picture (`options/editor.js`). Hovering a setting outlines what it draws; hovering a thing in
+the preview shows a tag (✕ hides it, ✎ renames it, ⠿ moves it where it has an order) and a part of the panel a rail (hide, move);
+a double-click renames; a tray lists what is hidden, one click to show it. The overlays are children of the preview's card, placed
+by measuring, because the preview is drawn again after every change; all of it changes the same record as the controls (`put` /
+`save`), so the two sides are one.
 
 *Configuration & presets*: a preset (`PRESETS`: *All features*, *Last author focus*, *First author focus*, *Minimalist*), the
 JSON editor and *Import file* all go through `prefs.apply()`, and the page reports what was applied and what was ignored, with
@@ -359,7 +375,7 @@ particles (`van der Maaten, L.`). JSON is `{ owner, source, total, papers }`.
 
 | Area | Key | What | Written by |
 |---|---|---|---|
-| `chrome.storage.sync` | `prefs` | The settings record (`SETTINGS`) | the settings page only |
+| `chrome.storage.sync` | `prefs` | The settings record (`SETTINGS`), names and orders included: under 7 KB at its worst (a test), the item limit is 8 KB | the settings page only |
 | `chrome.storage.sync` | `variants` | `{ profileId: [spellings] }`, at most 8 per profile, 40 profiles | the Scholar page |
 | `chrome.storage.local` | `ui` | `{ collapsed, source }` | the Scholar page only |
 | `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000 | the Scholar page; cleared from the settings page |

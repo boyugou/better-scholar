@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.40.0 — 2026-10-15
+
+Yours to arrange: the settings page follows the screen, every thing has a switch, the preview is an editor, and names and chip looks are settings too. Nothing is kept for compatibility: the paths of the settings changed (`rowStyle` → `rows.style`, `copy.*` → `panel.copy.*`, `panel.summary` → `panel.table.show`, …), and a stored record of an older version is read as far as it matches and otherwise starts from the defaults.
+
+- **The screen is described once** (`lib/prefs.js`, `CARDS`): a card for each part of what is drawn, in the order it is drawn, with its settings; `SETTINGS`, the defaults, the validation, the presets and the guide for AI agents are derived from it. The settings page is made from it, one card for each part of the panel, in the order of the preview (an end-to-end check measures that).
+- **A switch for every thing the panel draws** — the title bar's parts, the table's title, tabs, “not ranked” column, totals, “Other” and “Hidden” rows and note, each copy button, each count row, the search box, each quick filter, *Only highlighted*, the year range, the filter bar, each citation number, the year chart's title and axis, the venue list, each status line, the name help. A switch decides what is drawn: chips on the rows (`rows.*`) and the table's tabs and count rows (`panel.*`) are separate; what nothing draws is also left out of the search and the exports. A filter whose control goes is cleared.
+- **Order**: the parts of the panel (`panel.order`), the copy buttons and the quick filters can be put in any order.
+- **Names**: 48 titles, columns, buttons and chip words (`labels.<message key>`) can be named; a name replaces the translation in every language, the exports keep the standard words.
+- **Chip looks**: outline, soft, solid or text only, rounded or square, the list's name or the tier alone, a colour for CCF, CORE, awards and talks, six ready-made looks (`lib/palette.js`; the default is pixel for pixel what it was).
+- **The preview is an editor** (`options/editor.js`): hover a thing for ✕ (hide), ✎ (rename) and ⠿ (move); a rail at the left edge of a part of the panel hides or moves the part; a double-click renames; a tray shows what was hidden again; a setting outlines what it draws.
+- **The settings page writes at most about 100 times a minute** (Chrome's `storage.sync` takes 120 and refuses silently), shows a refused write, and does not take its own echoes for another tab's change.
+- The `summary` call returns the numbers only (not the display settings); the popup reads the settings itself and obeys the same switches, order and names. The guide says what the extension asks of the network and what `clearFilters` returns; the result keys of every call are checked against it.
+- The website's home page runs the real settings page as a demo (`/demo/`, built by `scripts/build-demo.mjs`); the showcase profile and the demo use no real person's name.
+
 ## 2.39.2 — 2026-10-15
 
 Wording that must match the code (privacy review for the Chrome Web Store):

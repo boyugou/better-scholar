@@ -408,7 +408,7 @@
     "message": "集計パネルを表示"
   },
   "optPanelShowHint": {
-    "message": "プロフィールページの著者順×ランクの表です。オフにすると論文リストのマーク付けだけを行います。"
+    "message": "プロフィールページの右側の列にあるパネル。オフのときは、論文リストだけに印が付きます。"
   },
   "optPanelSummary": {
     "message": "著者順×ランクの表"
@@ -423,7 +423,7 @@
     "message": "読み込み済みの論文とランクなしの掲載先"
   },
   "optPanelStatusHint": {
-    "message": "読み込んだ論文数、「すべて読み込む」ボタン、ランクのない掲載先の論文リスト。"
+    "message": "読み込んだ論文数、「すべて読み込む」ボタン、読み取れなかったもの、ランクのない掲載先の論文リスト。"
   },
   "optPanelNames": {
     "message": "名前の表記サポート"
@@ -444,7 +444,7 @@
     "message": "絞り込み"
   },
   "optPanelFiltersHint": {
-    "message": "ハイライトした論文のみ、および年の範囲。"
+    "message": "検索欄、クイックフィルター、「ハイライトのみ」のスイッチ、年の範囲。"
   },
   "optPanelMetrics": {
     "message": "被引用数の集計"
@@ -938,64 +938,64 @@
     "message": "閉じる"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "各論文のラベル"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "論文の掲載先の後ろに付く小さなラベル：そのランク、および受賞と発表形式。"
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "各部分の順序"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "上から下へ。オフの部分も位置は保たれます。"
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "上部の名前"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "設定ボタン"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "折りたたみボタン"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "この部分を表示"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "タイトル"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCFのタブと列"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "COREのタブと列"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "「ランクなし」の列"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "合計（列と行）"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "「その他」の行"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "「不明」の行"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "ランクの出典に関する注記"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "ボタンの順序"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "検索欄"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "クイックフィルターの順序"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "クイックフィルター"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1004,124 +1004,124 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "引用数 100 超"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "年の範囲"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "「M 件中 N 件の論文を表示」のバー"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "集計に含まれる著者順を示す行"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "各数字の横の「/ N」"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "最初と最後の年"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "読み込んだ論文と「すべて読み込む」"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "途中で切れた著者リストと「完全なリストを読み取る」"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "重複したエントリ"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "自分の名前がない論文"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "ランクのない掲載先の論文"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "論文で見つかった名前の表記"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "上に移動"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "下に移動"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "色なし"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "保存されませんでした。Chrome は設定を書き込める回数を制限しています。少し待ってから、もう一度変更してください。"
   },
   "optNameTip": {
-    "message": "Your own name for this, in every language. Empty: the standard name."
+    "message": "この項目に付ける自分の名前（すべての言語で共通）。空欄なら標準の名前。"
   },
   "optNameOf": {
-    "message": "name"
+    "message": "名前"
   },
   "optNameReset": {
-    "message": "Back to the standard name"
+    "message": "標準の名前に戻す"
   },
   "optChipLook": {
-    "message": "Look"
+    "message": "見た目"
   },
   "optChipColors": {
-    "message": "Colours"
+    "message": "色"
   },
   "optChipStyle": {
-    "message": "Chip style"
+    "message": "ラベルのスタイル"
   },
   "optChipOutline": {
-    "message": "Outline"
+    "message": "枠線"
   },
   "optChipSoft": {
-    "message": "Soft"
+    "message": "ソフト"
   },
   "optChipSolid": {
-    "message": "Solid"
+    "message": "塗りつぶし"
   },
   "optChipText": {
-    "message": "Text only"
+    "message": "テキストのみ"
   },
   "optChipShape": {
-    "message": "Chip shape"
+    "message": "ラベルの形"
   },
   "optChipPill": {
-    "message": "Rounded"
+    "message": "角丸"
   },
   "optChipSquare": {
-    "message": "Square"
+    "message": "四角"
   },
   "optChipLabel": {
-    "message": "Rank chip text"
+    "message": "ランクラベルの文字"
   },
   "optChipLabelFull": {
-    "message": "List and tier (CCF A)"
+    "message": "リストと等級（CCF A）"
   },
   "optChipLabelTier": {
-    "message": "Tier only (A)"
+    "message": "等級のみ（A）"
   },
   "optChipThemes": {
-    "message": "Chip looks"
+    "message": "プリセット"
   },
   "optChipThemeLists": {
-    "message": "Colour per list"
+    "message": "リストごとに色分け"
   },
   "optChipThemeMono": {
-    "message": "Monochrome"
+    "message": "単色"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "部分にカーソルを合わせると、非表示（✕）や移動（⠿）ができます。名前をダブルクリックすると名前を変えられます。"
   },
   "optHide": {
-    "message": "Hide"
+    "message": "非表示"
   },
   "optRename": {
-    "message": "Rename"
+    "message": "名前を変更"
   },
   "optDragMove": {
-    "message": "Drag to move"
+    "message": "ドラッグで移動"
   },
   "optHiddenTray": {
-    "message": "Hidden: $N1$",
+    "message": "非表示：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1129,9 +1129,9 @@
     }
   },
   "optShowAgain": {
-    "message": "Show again"
+    "message": "再表示"
   },
   "optRenameHint": {
-    "message": "Enter keeps it · Esc cancels · empty: the standard name"
+    "message": "Enter で確定 · Esc で取り消し · 空欄：標準の名前"
   }
 }
