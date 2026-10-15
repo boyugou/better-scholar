@@ -162,6 +162,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 | `ccf:` | `ccf:a`、`ccf:b`、`ccf:c` | 场所的 CCF 等级 |
 | `core:` | `core:a*`、`core:a`、`core:b`、`core:c` | 场所的 CORE 等级 |
 | `role:` | `role:first`、`role:cofirst`、`role:second`、`role:last`、`role:middle` | 你在作者列表中的位次（`middle`：不属于前四种） |
+| `type:` | `type:conference`、`type:journal` | 名录所记的发表场所类型：会议或期刊（没有等级的场所没有类型） |
 | `has:` | `has:award`、`has:talk` | 最佳论文奖或候选标记；Oral、Spotlight 或 Highlight 标记 |
 | 普通词 | `ccf:a role:first cites:>100 detection` | 组合使用：所有条件都须满足 |
 

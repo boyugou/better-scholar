@@ -55,6 +55,7 @@
   // The test a search query makes of a paper row, built once per query (lib/query.js has the language): `test(row)` for a row of the page's list
   // ({ raw: { title, authorsText, venueText }, a: the analysis, shown: the citations counted }), and the terms of the query that could not be read.
   // `marksOf(row)` says which marks count (the ones the settings leave on).
+  const KIND = { C: "conference", J: "journal" };           // (what the rank lists call a venue's kind)
   function queryMatcher(q, marksOf = (row) => row.a.marks || [], ranksOn = {}) {
     const parsed = query.parse(q);
     const fields = (row) => {
@@ -69,6 +70,7 @@
         role: low(a.role),
         ccf: v.ccf && v.ccf.tier ? low(v.ccf.tier) : null,
         core: v.core && v.core.rank ? low(v.core.rank) : null,
+        type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
         award: found.some((m) => m.group === "award" || m.group === "finalist"),
         talk: found.some((m) => m.group === "oral" || m.group === "spotlight" || m.group === "highlight")
       };

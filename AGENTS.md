@@ -267,6 +267,7 @@ The search box and `filter { query }` take words and operators separated by spac
 - `ccf:a` — the venue's CCF rank: a, b or c.
 - `core:a*` — the venue's CORE rank: a*, a, b or c.
 - `role:first` — your position in the author list: first, cofirst, second, last, or middle (none of those four).
+- `type:journal` — the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind).
 - `has:award` — has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark.
 
 ## Rules for working on this repository

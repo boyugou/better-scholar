@@ -110,3 +110,15 @@ test("a ranking that is switched off is not searched", () => {
   assert.equal(analysis.queryMatcher("core:a*", undefined, { ccf: false, core: true }).test(paper), true);
   assert.equal(analysis.queryMatcher("CVPR", undefined, { ccf: false, core: false }).test(paper), true, "the venue's text is not a rank");
 });
+
+test("matching: type: the kind of venue the rank lists say it is; a venue without a rank has none; a list that is off does not tell it", () => {
+  const conf = { ...paper, a: { ...paper.a, venue: { ccf: { kind: "C", tier: "A", abbr: "CVPR", name: "CVPR" }, core: { kind: "C", rank: "A*", abbr: "CVPR", name: "CVPR" } } } };
+  const jour = { ...paper, a: { ...paper.a, venue: { ccf: { kind: "J", tier: "A", abbr: "TPAMI", name: "IEEE Transactions on Pattern Analysis and Machine Intelligence" }, core: null } } };
+  const none = { ...paper, a: { ...paper.a, venue: {} } };
+  assert.deepEqual(["type:conference", "type:journal"].map((q) => test_(q, conf)), [true, false]);
+  assert.deepEqual(["type:conference", "type:journal"].map((q) => test_(q, jour)), [false, true]);
+  assert.deepEqual(["type:conference", "type:journal"].map((q) => test_(q, none)), [false, false]);
+  assert.equal(analysis.queryMatcher("type:journal", () => [], { ccf: false, core: true }).test(jour), false, "CCF is off: its kind is not searched either");
+  const bad = analysis.queryMatcher("type:book");
+  assert.deepEqual([bad.test(conf), bad.errors.length], [false, 1]);
+});

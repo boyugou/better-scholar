@@ -162,6 +162,7 @@ Press `/` on a profile to focus the search box (when the panel and its filters a
 | `ccf:` | `ccf:a`, `ccf:b`, `ccf:c` | the venue's CCF rank |
 | `core:` | `core:a*`, `core:a`, `core:b`, `core:c` | the venue's CORE rank |
 | `role:` | `role:first`, `role:cofirst`, `role:second`, `role:last`, `role:middle` | your position in the author list (`middle`: none of the other four) |
+| `type:` | `type:conference`, `type:journal` | the kind of venue the rank lists say it is (a venue without a rank has none) |
 | `has:` | `has:award`, `has:talk` | a best-paper award or finalist mark; an Oral, Spotlight or Highlight mark |
 | words | `ccf:a role:first cites:>100 detection` | everything together: all terms must match |
 
