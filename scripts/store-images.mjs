@@ -77,7 +77,7 @@ fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 // the shipped award list, plus the one (fictional) award of the fictional showcase profile, as in the end-to-end test
 const awardsLib = require(path.join(repo, "src", "lib", "awards.js"));
 const shipped = require(path.join(repo, "src", "data", "awards.js"));
-const awards = { meta: shipped.meta, items: [...shipped.items, [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("S Patel"), "OSDI", 2023, "best", "Best Paper Award"]] };
+const awards = { meta: shipped.meta, items: [...shipped.items, [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("C Writer"), "OSDI", 2023, "best", "Best Paper Award"]] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(awards)} });\n`);
 // unpacked-extension id = first 32 hex of sha256(realpath), digits mapped to a–p

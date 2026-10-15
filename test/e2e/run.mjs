@@ -70,7 +70,7 @@ const awardsLib = require(path.join(repo, "src/lib/awards.js"));
 const testAwards = { meta: { label: "test list", edition: "test", count: 2 }, items: [
   [awardsLib.titleKey("A Plain Preprint"), awardsLib.surnameKey("A Smith"), "ICLR", 2023, "best", "Best Paper Award"],
   [awardsLib.titleKey("Deep Things for Recognition"), awardsLib.surnameKey("J Doe"), "CVPR", 2016, "best", "Best Paper Award"],
-  [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("S Patel"), "OSDI", 2023, "best", "Best Paper Award"]   // the fictional showcase profile
+  [awardsLib.titleKey("Fast Recovery for Disaggregated Memory"), awardsLib.surnameKey("C Writer"), "OSDI", 2023, "best", "Best Paper Award"]   // the fictional showcase profile
 ] };
 fs.writeFileSync(path.join(extDir, "data", "awards.js"),
   `(globalThis.RolesRanks = globalThis.RolesRanks || {}).data = Object.assign(globalThis.RolesRanks.data || {}, { awards: ${JSON.stringify(testAwards)} });\n`);
