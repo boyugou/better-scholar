@@ -1,18 +1,28 @@
 # Roadmap
 
-Ideas that are worth doing but not done, with the reasoning, so they are not rediscovered
-from scratch. Roughly in order of value.
+Ideas that are worth doing but not done, with the reasoning, and what was considered and set aside, with the
+reasons — so that neither is rediscovered from scratch. Roughly in order of value. What has been built is in
+[`CHANGELOG.md`](../CHANGELOG.md); a built item stays here only where it explains a limit or a next step.
+[`ROADMAP.md`](../ROADMAP.md) at the root of the repository is the index of this page.
 
-## Citation and data exports
+## Exports
 
-**Built — multi-format publication and metrics exports** (`src/lib/metrics.js`, `src/content/main.js`, `src/popup/popup.js`, 2026-10-14). Users can export publication lists and citation metrics in 1 click across multiple formats:
-- **BibTeX**: Compile-ready LaTeX escaping (`%`, `&`, `_`, `#`, `$`), deterministic `AuthorYearTitle` citekey synthesis, direct Google Scholar URLs, and CCF/CORE tier notes.
-- **APA 7th Edition**: Standard reference list formatting (`Authors (Year). Title. *Venue*. URL`) with initial splitting (`MF Kaashoek` $\rightarrow$ `Kaashoek, M. F.`), Chinese family-name-first order handling, and multi-author ampersand formatting.
-- **GitHub-Flavored Markdown**: Structured academic publication list with hyperlinked titles and bold ranking badges.
-- **Structured JSON**: Complete machine-readable publication array with role classifications, CCF/CORE tiers, citations, and awards.
-- **RFC-4180 CSV**: Clean CSV download with UTF-8 BOM encoding for seamless Excel import.
-- **Plain text & TSV**: Role × rank matrix summary for grant proposals, tenure dossiers, and CVs.
-Available directly in the in-page sidebar copybar, in the toolbar popup on any active Scholar tab, via runtime messaging (`rr:export`), and via the agent DOM CustomEvent bridge (`better-scholar:request-export`).
+**Built** (2.28–2.39). Eight formats, each a button in the panel's copy row and in the toolbar popup with its own
+switch under *Settings → Copy & export*: the summary as text, the summary table (tab-separated), the papers
+(tab-separated), APA 7th edition, BibTeX, Markdown, JSON, and CSV (saved as a file). The text is made by
+`src/lib/formats.js`; the same formats answer the `export` page call. The README's *Copy and export* has the details
+(BibTeX keys such as `vaswani2017attention`, escaping, formula protection in the CSV and tab-separated text).
+
+**Next — more citation styles.** IEEE and the ACM reference format are not there. A new style is one more copy
+format: a row `copy.<format>` in `SETTINGS`, its text in `lib/formats.js`, its case in `exportText()`
+(`content/main.js`), its label in every language and an end-to-end check (`CONTRIBUTING.md`, *Adding a setting*).
+
+## Data freshness
+
+**Built.** `.github/workflows/data-fresh.yml` runs `scripts/check-data-fresh.mjs` every Monday: the run fails when
+the official CCF file or the ICORE export changed, is gone, or a newer edition is offered, and when a source cannot
+be reached (no verdict). Regenerating the data stays a manual, reviewed step (`data/README.md`): a new CCF PDF needs
+its extraction checked, as the 2022 layout showed (see *Tier at publication time* under *Considered and set aside*).
 
 ## Awards and talk levels
 
@@ -40,8 +50,6 @@ request with 403 and are not worked around. Add a reader only after reading the 
 line by line; test it with synthetic pages and a few well-known winners.
 The independent list at jeffhuang.com/best_paper_awards (no licence, no award levels) is only a cross-check; a paper it names but no
 official page does is left out. The test-of-time rows whose award page omitted the paper title (NeurIPS 2025, ICML 2022 and 2026) are read now (2.9.39).
-
-*Accessibility audit (2026-10-12):* axe-core 4.10 (from cdnjs, injected into the Playwright pages of `test/e2e`, not a dependency) on the settings page (light and dark), the panel (also with the year list open, and in the Compact and Everything presets) and the popup: after 2.10.83 no violation remains that the extension owns (the three left — one main landmark, a level-one heading, content in landmarks — belong to the stand-in Scholar page). A Tab walk through the panel reaches all 34 controls in reading order, each with a visible focus style and an accessible name. axe reported one dark-mode chip contrast failure mid-transition; the computed colours (white pill, #3345a8 text, 8.6:1) show it is not real.
 
 *Non-CS profiles (2026-10-12):* Scholar answers profile requests with its CAPTCHA redirect (not worked around), so no real non-CS profile could be read. As a stand-in, 400 works of ten non-CS fields (biology, physics, medicine, economics, chemistry, mathematics, psychology, geology, history, law; OpenAlex sample, 2018+, no key or e-mail in the request) went through the venue matcher and the award list: 389 venue strings, one ranked — a mathematician's paper in *IEEE TCAD*, a true CCF A match — and no title equal to an award paper. A second pass fed 800 journal names and abbreviations (800 random journals with over 5,000 works, `api.openalex.org/sources?filter=type:journal,works_count:>5000&sample=100&seed=<n>`) to the matcher: 12 ranked, every one a journal that really is on the CCF list (*TSE*, *TMM*, *JSS*, *Cognition*, *Journal of Symbolic Logic* …), none wrongly. To repeat it: fetch `api.openalex.org/works?filter=concepts.id:<id>,type:article&sample=40&select=title,primary_location` per field and run `createResolver(...).resolve("<source> 12 (3), 100-110, 2021")`.
 
@@ -102,11 +110,6 @@ official page does is left out. The test-of-time rows whose award page omitted t
 
 A web search for "<venue> best paper awards list" has found the series' own page twice (ICDM, SIGGRAPH) where menus did not.
 
-## Tier at publication time
-
-Tiers are those of the current lists, and the panel says so. Showing the tier *in the paper's year* was
-looked at on 2026-10-13 and set aside; the findings are under *Considered and set aside* below.
-
 ## Venue matching coverage
 
 Unrecognised venues are listed in the panel. Feed real unrecognised strings back into
@@ -114,30 +117,56 @@ Unrecognised venues are listed in the panel. Feed real unrecognised strings back
 A DBLP-derived alias table (the official catalogue prints a DBLP URL per venue) could extend
 coverage offline without runtime network access.
 
-## Other surfaces
+## Other ideas, not started
 
-DBLP person pages are the best-aligned second surface for CCF users (exact venue keys, full
-ordered author lists; no citation counts, so no h-index there). Semantic Scholar is lower
-priority: its API licence forbids shipping a key, the shared pool rate-limits, and author IDs
-contain misattributions.
+- **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
+  Nordic and East Asian romanisations). Like every name rule, only from real Scholar strings added to
+  `test/fixtures`, never guessed: a wrong owner match is a wrong role.
+- **A list of the keys in the panel** (`/`, `Escape`, the arrows, `Enter`, `Tab`). Today the `/` hint's tooltip
+  names the shortcut and the operators.
+- **User-defined weighting of ranks**, a score per role and rank. The panel shows CCF's own statement that its list
+  is not a basis for academic evaluation; a score would have to keep saying so.
+- **An MCP server** for AI assistants outside the browser. An extension reaches a program outside the browser only
+  through native messaging: a new permission (`nativeMessaging`) and a program the user installs, which the
+  permission policy asks a very good reason for. Agents that drive a browser already have the page events and the
+  agent guide.
+- **End-to-end pictures at other display scalings** (Chromium only — other engines are out of scope by the platform
+  policy). The end-to-end run already takes `E2E_SCALE` for the website's pictures; nothing compares them yet.
+
+## Accessibility
+
+What is checked: `node scripts/axe-audit.mjs` runs axe-core 4.10's default rules over the panel on the local Scholar
+stand-in (light, with the system in dark mode, filtered with the unranked-venue list open, every part on, the
+narrow-window layout, in Arabic, Japanese, Thai and German), the settings page (light and dark) and the toolbar popup
+(no profile tab), and exits 1 on any violation; it is run by hand, not in CI. A unit test keeps the faint text
+colours at a contrast of 4.5:1 or more, and the settings page rates each role colour against Scholar's white page
+(3:1). None of this is a claim of conformance to a WCAG level.
+
+*Audit of 2026-10-12* (axe-core 4.10, then injected into the end-to-end pages): on the settings page (light and dark),
+the panel (also with the year list open, and in two presets of that version) and the popup, after 2.10.83 no
+violation remained that the extension owns (the three left — one main landmark, a level-one heading, content in
+landmarks — belong to the stand-in Scholar page). A Tab walk through the panel reached all 34 controls in reading
+order, each with a visible focus style and an accessible name. axe reported one dark-mode chip contrast failure
+mid-transition; the computed colours (white pill, #3345a8 text, 8.6:1) showed it was not real.
 
 ## Considered and set aside (2026-10-13)
 
 So that they are not rediscovered from scratch:
 
-- **DBLP person pages** (the best-aligned second surface: `li.entry` ids are DBLP keys such as `conf/cvpr/HeZRS16`, and 679 of the 681 CCF venues carry their `dblp` URL, so the match could be exact). A scripted request to `dblp.org` is now answered with a proof-of-work bot check ("Making sure you're not a bot!"), which is not worked around, so there is no real page to develop against; a reader written from memory of the markup would break the "develop against real data" rule. Revisit if a saved page is supplied.
-- **Semantic Scholar author pages** (summary only; the data would come from `/author/<id>/papers`). The author-ID graph contains misattributions (the profile of a well-known author returned another person's paper in its first three results), so roles computed from it would carry wrong badges; the shared unauthenticated pool also rate-limits within a handful of requests. The opt-in title lookup for cut-off author lists (2.12.0, with a precision check on first author and year) is the safe part of that idea.
+- **DBLP person pages** (the best-aligned second surface for CCF users: `li.entry` ids are DBLP keys such as `conf/cvpr/HeZRS16`, and 679 of the 681 CCF venues carry their `dblp` URL, so the match could be exact; full ordered author lists, but no citation counts, so no h-index there). A scripted request to `dblp.org` is now answered with a proof-of-work bot check ("Making sure you're not a bot!"), which is not worked around, so there is no real page to develop against; a reader written from memory of the markup would break the "develop against real data" rule. Revisit if a saved page is supplied.
+- **Semantic Scholar author pages** (summary only; the data would come from `/author/<id>/papers`). The author-ID graph contains misattributions (the profile of a well-known author returned another person's paper in its first three results), so roles computed from it would carry wrong badges; the shared unauthenticated pool also rate-limits within a handful of requests, and the API's licence does not allow shipping a key with the extension (the optional key in the settings is the user's own). The opt-in title lookup for cut-off author lists (2.12.0, with a precision check on first author and year) is the safe part of that idea.
 - **Preprint → published venue through Semantic Scholar**: its record merges versions, so a venue can belong to another version of the paper (the same reason its venue is not used in the author-list lookup).
 - **SCImago / JCR quartiles for journals outside the CCF list**: licensing of redistributed data is unclear and matching ~30k journal titles exactly is a large data build for a content script that runs on every profile.
 - **Sorting the paper list by rank or role**: Scholar re-renders the list when its own sort headers are used and appends rows on *Show more*; keeping a reordered list consistent with both would be fragile for little gain next to the cell filters.
-- **Frequent co-authors**: the key would be surname + initial, which merges different people ("J Wang"); a wrong claim about who someone works with is worse than none.
-- **Rank chips on Scholar's search results**. Evaluated on 2026-10-13 (two queries, ten results each, through the user's own Chrome; Scholar's CAPTCHA answers scripts): a result's source line is cut to fit — authors (`N Parmar…`) and venue (`Advances in neural …, 2017`, `International Conference on …, 2026`, `IEEE Transactions …, 2026`, `Proceedings of the 26th …, 2017`, `2023 IEEE 39th …`) — so of the twenty results the resolver ranks three (`ACM Transactions on Storage (ToS)`, `Proceedings of the 2012 ACM SIGMOD …`, `ICASSP 2021-2021 …`; the strings are in the venue corpus), the arXiv ones are rightly unranked and the other thirteen or so are cut beyond use. (The same read found a real wrong badge, fixed in 2.22.8: `2023 IEEE 39th …` was taken for the journal *Proceedings of the IEEE*.) A chip on one result in seven, with no way to say that a missing chip means "cut off" and not "unranked", would read as broken; attempting to resolve these would require querying an external server database, which contradicts our zero-external-network, privacy-first offline architecture. The publisher host (`proceedings.neurips.cc`, `proceedings.iclr.cc`) names two series, but `dl.acm.org`, `ieeexplore.ieee.org` and `aclanthology.org` name none. Revisit only if Scholar stops cutting the line.
+- **Frequent co-authors, and comparing roles across co-authors**: the key would be surname + initial, which merges different people ("J Wang"); a wrong claim about who someone works with is worse than none.
+- **Rank chips on Scholar's search results**. Evaluated on 2026-10-13 (two queries, ten results each, through the user's own Chrome; Scholar's CAPTCHA answers scripts): a result's source line is cut to fit — authors (`N Parmar…`) and venue (`Advances in neural …, 2017`, `International Conference on …, 2026`, `IEEE Transactions …, 2026`, `Proceedings of the 26th …, 2017`, `2023 IEEE 39th …`) — so of the twenty results the resolver ranks three (`ACM Transactions on Storage (ToS)`, `Proceedings of the 2012 ACM SIGMOD …`, `ICASSP 2021-2021 …`; the strings are in the venue corpus), the arXiv ones are rightly unranked and the other thirteen or so are cut beyond use. (The same read found a real wrong badge, fixed in 2.22.8: `2023 IEEE 39th …` was taken for the journal *Proceedings of the IEEE*.) A chip on one result in seven, with no way to say that a missing chip means "cut off" and not "unranked", would read as broken; resolving the cut ones would need a request per result to an outside service, and the extension makes no such request (its one request outside Scholar is the opt-in Semantic Scholar title lookup for a cut-off author list). The publisher host (`proceedings.neurips.cc`, `proceedings.iclr.cc`) names two series, but `dl.acm.org`, `ieeexplore.ieee.org` and `aclanthology.org` name none. Revisit only if Scholar stops cutting the line.
 - **Tier at publication time** (CCF 2019 / 2022 and earlier ICORE editions instead of today's lists). The data side is uneven. CORE is easy and exact: the portal exports every edition (ERA2010, CORE2013 / 2014 / 2017 / 2018 / 2020 / 2021 / 2023, ICORE2026) as the same CSV, and its ids are stable (checked 2026-10-13: 953 of ICORE2026's 987 rows have the same id and the same venue in CORE2023, none a different one). CCF is the blocker, and CCF is what the main audience reads: its sources are there, CCF's own site serves the 2019 catalogue (`https://www.ccf.org.cn/ccf/contentcore/resource/download?ID=99185`, 74 pages, sha-256 `3ad7de2a…0729`) and the 2022 one (attached to the notice of 2025-05-09, `…download?ID=5CB6670D4D81C9197633DF76D9843ED98D61484435CC1D2FB27663252659138E`, 73 pages, sha-256 `dda21c1a…a28b`); the 2013 and 2015 editions have announcement pages only. But `scripts/ccf/build-ccf.mjs` stops on the 2022 layout (the journal column is headed 刊物简称, and cells sit 4–8 pt from their row's serial, so rows cannot be told apart), so each edition needs its own geometry pass and audit, with no independent totals to check against. Matching a venue across editions needs a stable identity (renames, venues dropped from today's list) that only a hand-made table would give, and institutions disagree on which edition counts (the latest, or the one in force). A mode that works for CORE and not for CCF would be half a feature, and a wrong or missing badge in a mode meant for evaluators costs more than the limitation the note already states. Revisit if someone asks for it and brings the policy they need.
 
 ## Distribution
 
-Stores are a nice-to-have, not a requirement; GitHub plus *Load unpacked* is the primary route.
-When listing: the permission set is already minimal (`storage`); a one-page privacy statement,
-1280×800 screenshots, and per-store listing text are what remains (Edge's policy asks that listings
-not mention other browsers). The Edge Add-ons store is the more reachable one from mainland China;
-the Chrome Web Store is blocked there without a proxy.
+Stores are a nice-to-have, not a requirement; GitHub plus *Load unpacked* is the primary route, and no store
+listing has been made. The listing kit is ready in [`docs/store/README.md`](store/README.md): the description,
+1280×800 screenshots, promo tiles and the answers to the privacy form; the privacy policy is the website's copy of
+`PRIVACY.md`, and the permission set is already minimal (`storage`). What remains is the per-store listing itself
+(Edge's policy asks that listings not mention other browsers). The Edge Add-ons store is the more reachable one
+from mainland China; the Chrome Web Store is blocked there without a proxy.

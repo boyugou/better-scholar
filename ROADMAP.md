@@ -1,42 +1,54 @@
 # Roadmap
 
-This document outlines the architectural pillars, current state, and strategic development lanes for **Better Scholar**.
+The roadmap, with the reasoning behind each item, is [`docs/ROADMAP.md`](docs/ROADMAP.md); this page is its index.
+What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
 
----
+## What every item must keep
 
-## 1. Architectural Pillars
+- **Precision over recall**: a missing badge is fine, a wrong one is not; matching and name rules are tuned on real
+  Scholar strings (`test/fixtures`).
+- **A pure core**: `src/lib/` has no DOM and no `chrome.*`, runs under `node --test`, and needs no build step.
+- **No network use of its own** beyond *Read full lists* (Scholar's own paper pages, after a click) and the opt-in
+  Semantic Scholar title lookup; anything new that sends data is off by default, and `PRIVACY.md` says what it sends.
+- **Today's lists**: ranks are the current CCF and CORE lists, not the rank at publication time, and the interface
+  says so.
+- **Chrome first**: other Chromium browsers run the same package; Safari is best-effort.
 
-- **Pure Functional Core**: All algorithms for venue resolution (`src/lib/venues.js`), author role extraction (`src/lib/names.js`), citation analytics (`src/lib/metrics.js`), and honors parsing (`src/lib/marks.js`) remain zero-dependency, side-effect-free, and execute directly under Node.js (`node --test`).
-- **Zero Build / Unpacked Native Loading**: The extension source code in `src/` loads directly into Chromium browsers as an unpacked extension with zero bundling or transpile steps.
-- **Offline & Local-First**: No remote servers, user tracking, or telemetry. All parsing and caching remain exclusively within the local browser environment.
-- **Agent Interoperability**: First-class programmatic integration via DOM `CustomEvent` bus and Chrome runtime messaging, enabling seamless consumption by autonomous AI agents, scrapers, and developer tools.
-- **Universal Accessibility (WCAG 2.1 AA)**: Strictly maintained contrast ratios ($\ge 4.5:1$ for text), keyboard operability, screen reader semantics (`aria-live`, semantic tables), and reduced-motion compliance across 30 supported languages.
+## Next
 
----
+- **More award sources**, only where the organisation's own page lists the winners; the pages that were probed and
+  why they were not read are listed in [*Known gaps*](docs/ROADMAP.md#awards-and-talk-levels).
+- **Venue matching coverage**: real unrecognised strings into `test/fixtures` and `src/data/aliases.js`; a DBLP-derived
+  alias table could extend coverage offline ([details](docs/ROADMAP.md#venue-matching-coverage)).
+- **More citation styles** (IEEE, the ACM reference format), each one more copy format
+  ([details](docs/ROADMAP.md#exports)).
+- **Other ideas, not started** ([details](docs/ROADMAP.md#other-ideas-not-started)): name spellings beyond today's
+  rules, from real strings only; a list of the keys in the panel; user-defined weighting of ranks; an MCP server
+  (it would need the `nativeMessaging` permission and a program installed outside the browser); end-to-end pictures
+  at other display scalings, in Chromium.
+- **A store listing**: optional; the kit is ready in `docs/store/` ([details](docs/ROADMAP.md#distribution)).
 
-## 2. Recent Milestones (v2.38.0)
+## Set aside
 
-- [x] **Search Operator Autocomplete & Suggestion Popover**: Real-time accessible popover for query prefixes (`role:`, `ccf:`, `core:`, `>`, `has:`) with arrow navigation, cursor insertion, and category badges.
-- [x] **Action Bar Micro Vector SVG Icons**: Replaced plain text buttons with vector icons and emerald flash transition feedback.
-- [x] **Toolbar Popup Feature Parity**: Added RFC-4180 CSV export alongside BibTeX, APA 7th, Markdown, JSON, and TSV in the browser popup.
-- [x] **Academic Theme Studio**: Live palette editor with instant WCAG 2.1 AA contrast validation and customizable role highlight styles.
-- [x] **Profile Cache Inspector**: Direct inspection and management of cached paper details in the settings interface.
-- [x] **Multi-language Expansion**: Complete UI and documentation parity across 30 languages.
+Each with its reason in [*Considered and set aside*](docs/ROADMAP.md#considered-and-set-aside-2026-10-13):
 
----
+- **Tier at publication time**: the older CCF catalogues need their own extraction and audit, and a mode that works
+  for CORE but not for CCF would be half a feature.
+- **DBLP person pages**: `dblp.org` answers scripted requests with a bot check, so there is no real page to develop
+  against.
+- **Semantic Scholar author pages, and its venues**: its author ids contain misattributions and its records merge
+  versions of a paper; the opt-in title lookup for cut-off author lists is the safe part.
+- **SCImago / JCR quartiles**: unclear licensing, and a large data build.
+- **Sorting the paper list by rank or role**: fragile against Scholar's own sorting and *Show more*, for little gain
+  next to the filters.
+- **Frequent co-authors, and comparing roles across co-authors**: surname + initial merges different people.
+- **Rank chips on Scholar's search results**: the venue line there is cut short, so most results could not be ranked.
 
-## 3. Upcoming Lanes & Future Work
+## Built, and taken off this list
 
-### Lane A: Algorithmic Resolution & Data Freshness
-- [ ] **Automated CCF & CORE Dataset Syncing**: Continuous CI probe to verify and sync with upstream official conference and journal ranking updates.
-- [ ] **Advanced Name Disambiguation Heuristics**: Expanded handling of composite, hyphenated, and multilingual author name conventions (e.g., Iberian, Nordic, East Asian Latinizations).
-- [ ] **Extended Citation Formats**: Add support for IEEE citation format and ACM reference format alongside existing APA 7th and BibTeX exporters.
-
-### Lane B: UI/UX & Interaction Polish
-- [ ] **Interactive Keyboard Shortcuts Overlay**: In-panel modal displaying all shortcut keys (`/`, `Esc`, `Tab`, `Enter`, `↑`/`↓`) with visual keycaps.
-- [ ] **Custom Ranking Weighting / Metric Presets**: User-configurable formulas for customized departmental evaluation criteria.
-- [ ] **Quick Compare Mode**: Side-by-side author role comparison across multiple co-authors.
-
-### Lane C: Agent Bridge & Developer Tooling
-- [ ] **MCP (Model Context Protocol) Server Integration**: Native MCP server wrapper allowing LLMs (Claude, Gemini, ChatGPT) to interact with Better Scholar sessions.
-- [ ] **Playwright Test Matrix Expansion**: Automated visual regression testing across different operating system display scalings and browser engines.
+- The weekly check of the rank data against its official sources: `.github/workflows/data-fresh.yml`.
+- Search operators with suggestions; eight copy and export formats, each with its own switch, also in the toolbar
+  popup; the viewer of saved paper details; the guide for AI agents and the page events; 30 interface languages.
+  See [`CHANGELOG.md`](CHANGELOG.md).
+- Accessibility is checked, not certified: what `scripts/axe-audit.mjs` and the tests check is in
+  [*Accessibility*](docs/ROADMAP.md#accessibility).

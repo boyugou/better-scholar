@@ -1,13 +1,16 @@
 # Contributing
 
 Thanks for helping. The extension has no runtime dependencies and no build step; everything below
-runs with Node ≥ 20.
+runs with Node ≥ 20. The end-to-end test, the saved-page check and the accessibility audit also need
+Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later ignores `--load-extension`).
 
 ```bash
-npm test            # unit tests (names, venues, marks, awards, metrics, package checks)
-npm run test:e2e    # loads the extension in Chromium against a local Scholar stand-in (needs Playwright)
-npm run data        # rebuild src/data/*.js from data/*.json
-npm run check:profile -- page.html   # the extension on a real saved Scholar page (see below)
+npm test                              # 429 unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
+npm run test:e2e                      # 78 checks: the real extension in Chromium against a local Scholar stand-in
+npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
+npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
+npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
+node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
 ```
 
 ## The one principle: precision over recall
@@ -31,6 +34,36 @@ links out.
    appeared, moved or vanished — and only then run `npm run test:update`.
 4. Add a targeted regression test in `test/venues.test.js` for the bug you fixed.
 
+## Adding a setting
+
+The settings are one table, `SETTINGS` in `src/lib/prefs.js`. Defaults, validation (`normalize`), patches
+(`apply`: the presets, the configuration editor, *Import file*) and the guide for AI agents (`lib/agent.js`) are
+all derived from it, so a setting is added in one place:
+
+1. **A row in `SETTINGS`**: `bool(path, default, doc)`, `choice(path, values, default, doc)`, `color(path, doc)`
+   or `language(path, none, doc)`. The path is where the value lives in the stored record (`panel.years` is
+   `{ panel: { years } }`); the doc is the line the agent guide shows. Put it next to its group: the groups
+   `roles`, `ranks`, `marks`, `hide`, `panel` and `copy` (`ROLES`, `PANEL_PARTS`, `COPY_BUTTONS` …) are read from
+   the table, so a new `panel.<part>` or `copy.<format>` row joins its group by itself.
+2. **Its effect**: read `prefs.<path>` where it acts (`content/main.js`, `content/panel.js`, the popup). A new
+   panel part needs its section hidden in `panel.update()`; a new copy format needs its text in
+   `lib/formats.js`, its case in `exportText()` (`content/main.js`) and its label in `COPY_LABEL`
+   (`content/dom.js`).
+3. **Its control on the settings page** (`src/options/options.js`), carrying `data-pref="<path>"`:
+   `option()` for a switch, `segmented()` for a choice, `languageSelect()` for a language. The end-to-end check
+   "every setting has its control on the settings page" (in `test/e2e/run.mjs`) fails when a setting has no
+   control or a control names no setting.
+4. **Its words in every language**: the label and the hint go into all 30 `src/_locales/*/messages.json`.
+   `test/i18n.test.js` fails when a folder lacks a key of the English one, and `test/extension.test.js` when the
+   code asks for a string English lacks or English holds a string nothing uses.
+5. **The preview**, when it changes what a page draws: `renderPreview()` and `panelModel()` in `options.js` run the
+   real panel and chips.
+6. **An end-to-end check** of what it does, and a decision on the presets (`PRESETS`: a preset changes only what
+   it names; `test/prefs.test.js` keeps every preset a valid patch).
+
+A setting that sends anything over the network must be off by default, no preset may switch it on, and
+`PRIVACY.md` must say what it sends and where.
+
 ## When Scholar changes its markup
 
 The panel shows a layout warning when most rows have no author line. To see exactly what broke, save a
@@ -43,7 +76,7 @@ npm run check:profile -- page.html [--owner "Name"] [--shot out.png]
 It loads the unmodified extension in Chromium, serves that file offline as a Scholar profile, and
 checks that every selector in `src/content/scholar.js` still exists and that the row tints, rank chips
 and award marks it drew equal the pure libraries' result for an independent reading of the same HTML.
-Nothing is fetched or sent. (Needs Playwright and Chromium, like the end-to-end test.)
+Nothing is fetched or sent.
 
 To check the live site instead, paste `scripts/check-scholar-markup.js` into the DevTools console of a real
 profile page and of a paper's own page ("View article"): it counts every Scholar class and id the extension
@@ -58,14 +91,18 @@ when they are stale. `data/awards-2026.json` entries need an official source URL
 that contains the title (`scripts/awards/merge-raw.mjs` checks this).
 
 Rank data is checked against its official sources every Monday (`.github/workflows/data-fresh.yml`, which runs
-`node scripts/check-data-fresh.mjs`); when that run fails, the CCF catalogue or the ICORE export changed or a newer edition
-appeared, and the data should be regenerated as `data/README.md` describes.
+`node scripts/check-data-fresh.mjs`). The run fails with exit 1 when the CCF catalogue or the ICORE export changed,
+is gone, or a newer edition is offered — then regenerate the data as `data/README.md` describes — and with exit 2
+when a source could not be reached or refused the check (no verdict: look again later, or by hand).
 
 ### Accessibility audit
 
-`node scripts/axe-audit.mjs` runs axe-core (fetched once into the git-ignored `.cache/`, never a dependency) over the panel (light, dark,
-filtered with a list open, every part on, the wide layout, four languages), the settings page (light and dark) and the popup; it
-exits 1 on any violation. Run it after a change to the panel's or the settings page's markup or colours.
+`node scripts/axe-audit.mjs` runs axe-core 4.10's default rules (fetched once from cdnjs into the git-ignored
+`.cache/`, never a dependency) over the panel on the local Scholar stand-in — light, with the system in dark mode,
+filtered with the unranked-venue list open, every part on, the narrow-window layout, and in Arabic, Japanese, Thai
+and German — the settings page (light and dark) and the toolbar popup (no profile tab). It exits 1 on any violation.
+It is not part of CI: run it after a change to the markup or the colours of the panel, the settings page or the
+popup. A unit test (`test/extension.test.js`) keeps the faint text colours at a contrast of 4.5:1 or more.
 
 ### The website
 
@@ -90,7 +127,8 @@ pushes `gh-pages` (no CI involved). Its pictures come from this repository's end
    `test/fixtures/award-source-hosts.json`, then `node scripts/awards/merge-raw.mjs raw.json --write`,
    `npm run data` and `node scripts/awards/coverage.mjs` (its output is the *Entries* row of `data/README.md`).
 5. A title the page misprints goes in `data/exclusions.json` under `correct`; update `data/README.md`,
-   `README.md`, the changelog and the version, and run `npm test` and `npm run test:e2e`.
+   `README.md` and `README.zh-CN.md` (the award count), the changelog and the version, and run `npm test` and
+   `npm run test:e2e`.
 
 ## Chrome first
 
@@ -100,7 +138,10 @@ Safari lives in `contrib/safari` as a best-effort wrapper and must never constra
 ## Conventions
 
 - `src/lib/` is pure (no DOM, no `chrome.*`) so it stays unit-testable in Node.
-- Everything the extension adds to Scholar's DOM is prefixed `rr-`; the shared namespace is
-  `globalThis.RolesRanks`.
-- User-visible strings live in `src/_locales/{en,zh_CN}/messages.json`; keep both in sync (tested).
+- Everything the extension adds to Scholar's DOM is prefixed `rr-` (ids, classes, `data-rr-*`); the shared
+  namespace is `globalThis.RolesRanks`.
+- User-visible strings live in `src/_locales/<language>/messages.json`, one folder for each of the 30 languages
+  listed in `src/lib/i18n.js`. Every folder has exactly the English keys with the same placeholders (English
+  may add `…One` singular forms); `test/i18n.test.js` checks it. `README.md` and `README.zh-CN.md` say the same
+  thing in the same structure.
 - Plain, descriptive names — no coined words.
