@@ -425,7 +425,7 @@ function readme() {
 
 Made by \`npm run store:images\` (scripts/store-images.mjs), which rewrites every file here, this one included: edit the
 words in the script, not here. The screenshots are of the real extension running in Chromium on the end-to-end test's stand-in
-Scholar page, with the fictional showcase profile "Alex Chen" (\`test/fixtures/profiles/showcase.json\`); no real person's data,
+Scholar page, with the fictional showcase profile "Alex Example" (\`test/fixtures/profiles/showcase.json\`); no real person's data,
 no Google or Scholar logo. Screenshots and promo tiles are JPEG (quality ${QUALITY}, no alpha).
 
 ${shots}
