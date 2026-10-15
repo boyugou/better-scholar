@@ -34,15 +34,16 @@ const { codes } = require(path.join(repo, "src", "lib", "i18n.js"));
 const { PRESETS } = require(path.join(repo, "src", "lib", "prefs.js"));
 const messagesOf = (folder) => JSON.parse(fs.readFileSync(path.join(root, "_locales", folder, "messages.json"), "utf8"));
 
+const problems = [];                 // console errors, uncaught errors, failed requests: none is allowed
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".png": "image/png" };
 const server = http.createServer((req, res) => {
   // a page of the same origin that holds the demo in a frame, as the website's pages do (it is not part of the demo)
-  if (new URL(req.url, "http://x").pathname === "/__host") { res.writeHead(200, { "content-type": TYPES[".html"] }).end('<!doctype html><title>host</title><iframe src="/?lang=de" style="width:1040px;height:700px;border:0"></iframe>'); return; }
+  if (new URL(req.url, "http://x").pathname === "/__host") { res.writeHead(200, { "content-type": TYPES[".html"] }).end('<!doctype html><title>host</title><link rel="icon" href="data:,"><iframe src="/?lang=de" style="width:1040px;height:700px;border:0"></iframe>'); return; }
   let file = path.normalize(path.join(root, decodeURIComponent(new URL(req.url, "http://x").pathname)));
   if (file !== root && !file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
   fs.readFile(file, (err, data) => {
-    if (err) res.writeHead(404).end("not found");
+    if (err) { problems.push("404 on the server: " + new URL(req.url, "http://x").pathname); res.writeHead(404).end("not found"); }   // (the browser's own favicon request is not among Playwright's events, the server sees it)
     else res.writeHead(200, { "content-type": TYPES[path.extname(file)] || "application/octet-stream" }).end(data);
   });
 });
@@ -50,7 +51,6 @@ await new Promise((ok) => server.listen(0, "127.0.0.1", ok));
 const origin = `http://127.0.0.1:${server.address().port}`;
 
 const browser = await pw.chromium.launch({ executablePath: chromiumPath, args: process.env.CI ? ["--no-sandbox"] : [] });
-const problems = [];                 // console errors, uncaught errors, failed requests: none is allowed
 const outside = [];                  // requests to anywhere but the demo's own server
 
 let step = 0;
