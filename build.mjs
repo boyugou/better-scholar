@@ -1,17 +1,53 @@
 #!/usr/bin/env node
 // Builds the site into _site/: one page per language (/<code>/), a root page that sends visitors to their language,
-// a sitemap with hreflang alternates, and the assets. No dependencies. Every link is relative, so the site works at any
-// base path (a GitHub Pages project site lives under /<repo>/).
+// a sitemap with hreflang alternates, the assets, and the web demo (/demo/). No dependencies. Every link is relative, so
+// the site works at any base path (a GitHub Pages project site lives under /<repo>/).
 //   SITE_URL   the public address, used only for canonical / sitemap / social-card links
 //   REPO_URL   the extension's GitHub repository
-import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync, existsSync } from "node:fs";
-import { join, dirname } from "node:path";
+//   EXT_DIR    the extension's repository on this machine (default: ../google-scholar-highlighter, next to this one). The site takes three
+//              things from it at build time and keeps no copy: the hero picture (store/chrome/images/screenshot-1.jpg), the demo (its own
+//              scripts/build-demo.mjs builds the real settings page into _site/demo) and the text of the export samples (src/lib/formats.js).
+import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, copyFileSync, readdirSync, existsSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { createRequire } from "node:module";
+import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = dirname(fileURLToPath(import.meta.url));
 const SITE_URL = (process.env.SITE_URL || "https://boyugou.github.io/better-scholar").replace(/\/$/, "");
 const REPO_URL = (process.env.REPO_URL || "https://github.com/boyugou/better-scholar").replace(/\/$/, "");
+const EXT_DIR = resolve(process.env.EXT_DIR || join(root, "..", "google-scholar-highlighter"));
 const out = join(root, "_site");
+
+// What the extension's repository must hold for this build: said plainly, because the likeliest cause of a failure is a wrong EXT_DIR
+const HERO = join(EXT_DIR, "store", "chrome", "images", "screenshot-1.jpg");
+const needed = (file, what) => {
+  if (existsSync(file)) return file;
+  console.error(`build: ${what} not found: ${file}\n  EXT_DIR (${EXT_DIR}) must be the extension's repository, at a commit that has it. Set EXT_DIR=/path/to/google-scholar-highlighter.`);
+  process.exit(1);
+};
+needed(HERO, "the hero picture");
+const DEMO_BUILDER = needed(join(EXT_DIR, "scripts", "build-demo.mjs"), "the demo builder (scripts/build-demo.mjs)");
+const FORMATS = needed(join(EXT_DIR, "src", "lib", "formats.js"), "the export code (src/lib/formats.js)");
+const EXT_WORDS = needed(join(EXT_DIR, "src", "_locales", "en", "messages.json"), "the extension's English strings");
+
+// the size of a JPEG, read from its header: the page states it, so that nothing moves while the picture loads
+function jpegSize(file) {
+  const b = readFileSync(file);
+  if (b[0] !== 0xff || b[1] !== 0xd8) throw new Error(file + " is not a JPEG");
+  for (let i = 2; i + 9 < b.length;) {
+    if (b[i] !== 0xff) { i++; continue; }
+    const marker = b[i + 1];
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) return { height: b.readUInt16BE(i + 5), width: b.readUInt16BE(i + 7) };
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  throw new Error("no size in " + file);
+}
+const hero = jpegSize(HERO);
+// The store screenshot has a headline and a line of English above its browser window (scripts/store-images.mjs there: the window starts 156 px down).
+// The page says the same in its own words and its own language, so the picture is shown from just above the window: this many pixels are cut at the top.
+// (0 shows all of it. A new layout of the picture needs a look at the page: the figure below is the place.)
+const HERO_CUT = 140;
 const languages = JSON.parse(readFileSync(join(root, "src", "languages.json"), "utf8"));
 const strings = Object.fromEntries(languages.map((l) => [l.code, JSON.parse(readFileSync(join(root, "src", "i18n", l.code + ".json"), "utf8"))]));
 
@@ -28,75 +64,40 @@ const FEATURES = [
   ["complete", "#4d8ff5"], ["merge", "#b36cf6"], ["yours", "#fbbc04"], ["private", "#34a853"]
 ];
 
-// Rich interactive demo dataset: representative high-impact publications
-const DEMO = [
-  {
-    id: "p1",
-    role: "first",
-    title: "Chord: A Scalable Peer-to-peer Lookup Protocol for Internet Applications",
-    venue: "ACM SIGCOMM",
-    year: 2001,
-    citations: 24510,
-    chips: ["CCF A", "CORE A*"],
-    award: "★ Test of Time",
-    authors: ["Ion Stoica", "Robert Morris", "David Karger", "M. Frans Kaashoek", "Hari Balakrishnan"]
-  },
-  {
-    id: "p2",
-    role: "last",
-    title: "Spark: Cluster Computing with Working Sets",
-    venue: "USENIX HotCloud",
-    year: 2010,
-    citations: 16840,
-    chips: [],
-    award: "★ Best Paper",
-    authors: ["Matei Zaharia", "Mosharaf Chowdhury", "Michael J. Franklin", "Scott Shenker", "Ion Stoica"]
-  },
-  {
-    id: "p3",
-    role: "last",
-    title: "Ray: A Distributed Framework for Emerging AI Applications",
-    venue: "USENIX OSDI",
-    year: 2018,
-    citations: 4120,
-    chips: ["CCF A", "CORE A*"],
-    award: "",
-    authors: ["Philipp Moritz", "Robert Nishihara", "Stephanie Wang", "Alexey Tumanov", "Ion Stoica"]
-  },
-  {
-    id: "p4",
-    role: "first",
-    title: "An Architecture for Bounded-Latency Services in the Internet",
-    venue: "IEEE Transactions on Networking",
-    year: 2001,
-    citations: 2890,
-    chips: ["CCF A"],
-    award: "",
-    authors: ["Ion Stoica", "Hui Zhang"]
-  },
-  {
-    id: "p5",
-    role: "second",
-    title: "Coflow: A Networking Abstraction for Cluster Applications",
-    venue: "ACM HotNets",
-    year: 2012,
-    citations: 1350,
-    chips: [],
-    award: "★ Best Paper",
-    authors: ["Mosharaf Chowdhury", "Ion Stoica"]
-  },
-  {
-    id: "p6",
-    role: "cofirst",
-    title: "L2P-FL: Latency-aware Personalized Federated Learning",
-    venue: "IEEE INFOCOM",
-    year: 2024,
-    citations: 185,
-    chips: ["CCF A", "CORE A*"],
-    award: "Oral",
-    authors: ["Ion Stoica*", "A Collaborator*", "B Researcher", "C Scientist"]
-  }
-];
+// The export section shows what the extension's own export code writes (src/lib/formats.js of EXT_DIR) for the invented papers of the settings
+// page's preview, where "A Author" is you: the text a copy button puts on the clipboard, never sample output made by hand, and no real person's papers.
+const formats = createRequire(import.meta.url)(FORMATS);
+const words = JSON.parse(readFileSync(EXT_WORDS, "utf8"));
+const w = (key) => { if (!words[key]) throw new Error(`the extension's English strings have no "${key}"`); return words[key].message; };
+const EXPORTS = [["bibtex", "BibTeX (LaTeX-Ready)"], ["apa", "APA 7th Edition"], ["json", "Structured JSON"], ["markdown", "GitHub Markdown"], ["csv", "RFC-4180 CSV"]];
+
+function exportSamples() {
+  const ranked = (name, ccf, core) => ({ ccf: { tier: ccf, name }, core: { rank: core, name } });
+  const paper = (n, authors, venue, year, citations, role, name, marks) => ({
+    id: "sample-" + n, title: "Sample paper " + n, authors, venue, year, citations, role, status: "found", highlighted: true, type: "conference",
+    rank: ranked(name, "A", "A*"), marks, url: ""
+  });
+  const papers = [
+    paper(1, "A Author, B Writer, C Writer, D Writer", "ICLR 2025 (Oral)", 2025, 48, "first", "International Conference on Learning Representations", [w("mkOral")]),
+    paper(2, "B Writer, A Author, C Writer", "NeurIPS 2024", 2024, 133, "second", "Conference on Neural Information Processing Systems", [w("mkBest") + " (NeurIPS 2024)"]),
+    paper(3, "A Author*, B Writer*, C Writer", "CVPR 2024 (Highlight)", 2024, 27, "cofirst", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", [w("mkHighlight")]),
+    paper(4, "B Writer, C Writer, D Writer, A Author", "ACL 2023 (Spotlight)", 2023, 215, "last", "Annual Meeting of the Association for Computational Linguistics", [w("mkSpotlight")])
+  ];
+  const labels = {
+    year: w("tsvYear"), title: w("tsvTitle"), authors: w("tsvAuthors"), role: w("tsvRole"), venue: w("tsvVenue"), ccf: w("srcCcf"), core: w("srcCore"),
+    awards: w("tsvAwards"), citations: w("tsvCitations"), hidden: w("roleHidden"),
+    roles: { first: w("copyFirst"), cofirst: w("copyCofirst"), second: w("copySecond"), last: w("copyLast"), middle: w("copyMiddle") }
+  };
+  const ctx = { ccfOn: true, coreOn: true };
+  return {
+    bibtex: formats.bibtex(papers, ctx),
+    apa: formats.apa(papers),
+    json: formats.json({ owner: "A Author", source: "ccf", papers }),
+    markdown: formats.markdown(papers, ctx),
+    csv: formats.papersCsv(papers, { labels, ...ctx }).replace(/^\ufeff/, "").replace(/\r\n/g, "\n")      // (the byte-order mark is for Excel, the line ends for a file)
+  };
+}
+const samples = exportSamples();
 
 // the operator cards of the search section: [key, the sample tokens shown on the card]
 const OPERATORS = [
@@ -108,19 +109,10 @@ const OPERATORS = [
   ["reset", "<kbd>Escape</kbd>"]
 ];
 
-function demoAuthors(authors, you) {
-  return authors.map((a) => {
-    if (a.startsWith("Ion Stoica")) {
-      const star = a.includes("*") ? "*" : "";
-      return `<mark>${you}${star}</mark>`;
-    }
-    return esc(a);
-  }).join(", ");
-}
-
 function page(lang) {
   const t = (k) => esc(strings[lang.code][k] ?? strings.en[k]).replace(/chrome:\/\/extensions/g, "<code>chrome://extensions</code>");
   const url = `${SITE_URL}/${lang.code}/`;
+  const demoUrl = `../demo/?lang=${lang.code}`;           // (the settings page, in this page's language: the demo reads ?lang= as the browser's language)
   const switcher = `<details class="lang">
         <summary aria-label="${t("nav.language")}"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>${esc(lang.name)}</span></summary>
         <ul class="lang-menu">
@@ -180,137 +172,40 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
   <section class="shots">
     <div class="wrap">
       <figure class="hero-shot">
-        <picture>
-          <source media="(max-width: 700px)" srcset="../assets/panel.png">
-          <img src="../assets/screenshot.png" alt="${t("shot.caption")}" width="1360" height="945" loading="eager">
-        </picture>
+        <div class="hero-frame" style="aspect-ratio: ${hero.width} / ${hero.height - HERO_CUT}">
+          <img src="../assets/hero.jpg" alt="${t("shot.caption")}" width="${hero.width}" height="${hero.height}" fetchpriority="high" decoding="async">
+        </div>
         <figcaption>${t("shot.caption")}</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="demo" id="demo" data-copied="${t("export.copied")}" data-empty="${t("export.empty")}">
+  <section class="try" id="try">
     <div class="wrap">
       <h2>${t("demo.title")}</h2>
       <p class="note">${t("demo.hint")}</p>
-      <div class="mockup-window">
-        <div class="mockup-bar" aria-hidden="true">
-          <div class="window-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <div class="mockup-title">Google Scholar — Ion Stoica · Better Scholar Active</div>
-          <div class="window-spacer"></div>
-        </div>
-        <div class="mockup-body">
-          <div class="scholar-header">
-            <div class="scholar-avatar" aria-hidden="true">IS</div>
-            <div class="scholar-meta">
-              <div class="scholar-name">Ion Stoica <svg class="verified-icon" width="16" height="16" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-              <div class="scholar-affil">Professor of Computer Science, UC Berkeley · ACM Fellow</div>
-              <div class="scholar-stats">
-                <span><strong>184,200+</strong> Citations</span>
-                <span><strong>h-index:</strong> 142</span>
-                <span><strong>i10-index:</strong> 380</span>
-              </div>
-            </div>
-          </div>
-          <div class="mockup-search-row">
-            <div class="search-wrap">
-              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" id="demo-search-input" placeholder="${t("demo.search")}" aria-label="${t("demo.search")}" autocomplete="off">
-              <kbd class="kbd">/</kbd>
-            </div>
-            <div class="pill-group" id="demo-operator-pills">
-              <button type="button" class="pill active" data-query="">${t("demo.all")}</button>
-              <button type="button" class="pill" data-query="ccf:a">ccf:a</button>
-              <button type="button" class="pill" data-query="role:first">role:first</button>
-              <button type="button" class="pill" data-query=">1000">&gt;1000</button>
-              <button type="button" class="pill" data-query="year:>=2020">&ge;2020</button>
-              <button type="button" class="pill" data-query="has:award">has:award</button>
-            </div>
-          </div>
-          <div class="roles" role="group" aria-label="${t("demo.title")}">
-${["first", "cofirst", "second", "last"].map((r) => `            <button type="button" class="role-btn" data-role="${r}" aria-pressed="true"><i></i>${t(`demo.role.${r}`)}</button>`).join("\n")}
-          </div>
-          <div class="mockup-content-grid">
-            <div class="mockup-papers-col">
-              <div class="demo-card" id="demo-papers-list" aria-live="polite">
-${DEMO.map((d, i) => `                <div class="paper" data-role="${d.role}" data-id="${d.id}" data-citations="${d.citations}" data-year="${d.year}" data-venue="${esc(d.venue)}" data-award="${esc(d.award)}" data-chips="${d.chips.join(",")}" data-title="${esc(d.title)}">
-                  <div class="paper-main">
-                    <b class="ptitle">${esc(d.title)}</b>
-                    <span class="auth">${demoAuthors(d.authors, t("demo.you"))}</span>
-                    <span class="ven">${esc(d.venue)} (${d.year}) ${d.chips.map((c) => `<em class="${c.startsWith("CCF") ? "chip-ccf" : "chip-core"}">${c}</em>`).join("")}${d.award ? `<span class="award-chip">${esc(d.award)}</span>` : ""}</span>
-                  </div>
-                  <div class="paper-meta">
-                    <span class="cites" title="Citations">${d.citations.toLocaleString()}</span>
-                    <span class="year">${d.year}</span>
-                  </div>
-                </div>`).join("\n")}
-              </div>
-              <p class="demo-count">${t("demo.count")}: <b id="demo-n">6</b></p>
-            </div>
-            <div class="mockup-panel-col">
-              <div class="mini-panel">
-                <div class="mini-panel-header">
-                  <span>${t("demo.panel")}</span>
-                  <span class="mini-badge">CCF</span>
-                </div>
-                <div class="matrix-table-wrap">
-                  <table class="mini-matrix">
-                    <thead>
-                      <tr><th>${t("demo.col.role")}</th><th>A</th><th>B</th><th>C</th><th>${t("demo.col.none")}</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr data-matrix-role="first"><td class="rlabel">${t("demo.role.first")}</td><td class="cell" data-filter="first:A">2</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="cofirst"><td class="rlabel">${t("demo.role.cofirst")}</td><td class="cell" data-filter="cofirst:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td></tr>
-                      <tr data-matrix-role="second"><td class="rlabel">${t("demo.role.second")}</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="second:none">1</td></tr>
-                      <tr data-matrix-role="last"><td class="rlabel">${t("demo.role.last")}</td><td class="cell" data-filter="last:A">1</td><td class="cell zero">0</td><td class="cell zero">0</td><td class="cell" data-filter="last:none">1</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="mini-metrics">
-                  <button type="button" class="metric-btn" id="demo-hcore" title="Filter to publications with &ge;142 citations">
-                    <span>H-Core (&ge;142)</span>
-                    <strong>6</strong>
-                  </button>
-                  <button type="button" class="metric-btn" id="demo-i10" title="Filter to publications with &ge;10 citations">
-                    <span>i10-index (&ge;10)</span>
-                    <strong>6</strong>
-                  </button>
-                </div>
-                <div class="mini-export-bar">
-                  <button type="button" class="export-btn" data-export="bibtex">BibTeX</button>
-                  <button type="button" class="export-btn" data-export="apa">APA</button>
-                  <button type="button" class="export-btn" data-export="json">JSON</button>
-                  <button type="button" class="export-btn" data-export="markdown">Markdown</button>
-                  <button type="button" class="export-btn" data-export="csv">CSV</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="toast-notification" id="demo-toast" aria-live="polite"></div>
+      <div class="try-bar">
+        <a class="skip" href="#after-try">${t("demo.skip")}</a>
+        <p>${t("demo.local")}</p>
+        <a class="try-open" href="${demoUrl}" target="_blank" rel="noopener">${t("demo.open")}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></a>
+      </div>
+      <div class="try-frame">
+        <iframe src="${demoUrl}" title="${t("demo.frame")}" loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
-  <section class="export-section">
+  <section class="export-section" id="after-try">
     <div class="wrap">
       <h2>${t("export.title")}</h2>
       <p class="note">${t("export.note")}</p>
       <div class="export-card">
-        <div class="export-tabs" role="tablist">
-          <button type="button" class="tab-btn active" data-tab="bibtex" role="tab">BibTeX (LaTeX-Ready)</button>
-          <button type="button" class="tab-btn" data-tab="apa" role="tab">APA 7th Edition</button>
-          <button type="button" class="tab-btn" data-tab="json" role="tab">Structured JSON</button>
-          <button type="button" class="tab-btn" data-tab="markdown" role="tab">GitHub Markdown</button>
-          <button type="button" class="tab-btn" data-tab="csv" role="tab">RFC-4180 CSV</button>
+        <div class="export-tabs" role="tablist" aria-label="${t("export.title")}">
+${EXPORTS.map(([k, label], i) => `          <button type="button" class="tab-btn${i ? "" : " active"}" role="tab" id="tab-${k}" aria-selected="${i ? "false" : "true"}" aria-controls="export-${k}"${i ? ' tabindex="-1"' : ""}>${label}</button>`).join("\n")}
         </div>
         <div class="code-preview-wrap">
-          <pre class="code-preview"><code id="export-code-display"></code></pre>
-          <button type="button" class="copy-code-btn" id="copy-export-display" data-label="${t("export.copy")}">${t("export.copy")}</button>
+${EXPORTS.map(([k], i) => `          <pre class="code-preview" role="tabpanel" id="export-${k}" aria-labelledby="tab-${k}" tabindex="0"${i ? " hidden" : ""}><code>${esc(samples[k])}</code></pre>`).join("\n")}
+          <button type="button" class="copy-code-btn" data-label="${t("export.copy")}" data-copied="${t("export.copied")}">${t("export.copy")}</button>
         </div>
       </div>
     </div>
@@ -327,15 +222,6 @@ ${OPERATORS.map(([k, head]) => `        <div class="op-card">
           <p class="op-desc">${t(`ops.${k}.text`)}</p>
         </div>`).join("\n")}
       </div>
-    </div>
-  </section>
-
-  <section class="shots">
-    <div class="wrap">
-      <figure>
-        <img src="../assets/settings.png" alt="${t("shot2.caption")}" width="1360" height="1180" loading="lazy">
-        <figcaption>${t("shot2.caption")}</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -376,7 +262,6 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
   </div>
 </footer>
 <script src="../assets/site.js" defer></script>
-<script src="../assets/demo.js" defer></script>
 </body>
 </html>
 `;
@@ -469,6 +354,9 @@ ${html}</div></main>
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 cpSync(join(root, "src", "assets"), join(out, "assets"), { recursive: true });
+copyFileSync(HERO, join(out, "assets", "hero.jpg"));            // (the extension's own picture: nothing of it is kept in this repository)
+// the demo is the extension's own build of its real settings page (what it does, and what it needs: docs/ARCHITECTURE.md there, "The web demo")
+execFileSync(process.execPath, [DEMO_BUILDER, "--out", join(out, "demo")], { stdio: "inherit" });
 for (const l of languages) {
   mkdirSync(join(out, l.code), { recursive: true });
   writeFileSync(join(out, l.code, "index.html"), page(l));

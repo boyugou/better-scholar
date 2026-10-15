@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Build the site and publish it to the gh-pages branch (GitHub Pages: Settings → Pages → Deploy from a branch → gh-pages / root).
 # No CI needed: run this on your machine. The branch holds only the built site.
+# The build reads the extension's repository (EXT_DIR, default ../google-scholar-highlighter): the hero picture, the demo of the real settings page
+# and the export samples come from it, so run this where that checkout exists and is at the commit the site should show. build.mjs and
+# verify.mjs (below) stop the deploy when it is missing, when the demo is incomplete or when a real person's name is anywhere in the build.
 #   scripts/deploy.sh            build, verify, commit and push gh-pages
 #   scripts/deploy.sh --dry-run  build and verify only
 set -euo pipefail

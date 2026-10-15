@@ -1,6 +1,5 @@
-/* Better Scholar: Marketing Website Styles.
-   Light and dark theme follow system preference; role colours match extension.
-   Elevated glassmorphism, responsive window mockup, and interactive playground. */
+/* Better Scholar: the website's styles.
+   Light and dark theme follow the system preference; the role colours are the extension's. */
 :root {
   --bg: #f8fafc; --surface: #ffffff; --surface-subtle: #f1f5f9; --text: #0f172a; --muted: #475569; --line: #e2e8f0;
   --accent: #1a5fd0; --accent-ink: #ffffff; --accent-hover: #164eb0;
@@ -55,6 +54,18 @@ h1, h2, h3, h4 { line-height: 1.25; margin: 0; letter-spacing: -0.02em; font-wei
 nav { display: flex; align-items: center; gap: 16px; }
 nav > a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
 nav > a:hover { color: var(--text); text-decoration: none; }
+.brand span, .btn, details.lang > summary { white-space: nowrap; }
+/* a phone's top bar holds the brand, the install button and the language menu, in a row that has to fit the longest word for "Install" (Installieren):
+   the GitHub link is in the hero and the footer, the sizes are smaller, and on the narrowest screens the menu is the globe alone (it has its name) */
+@media (max-width: 520px) {
+  .bar, nav { gap: 8px; }
+  nav > a:not(.btn) { display: none; }
+  .brand { gap: 8px; font-size: 15px; }
+  .brand img { width: 26px; height: 26px; }
+  .btn.small { padding: 6px 12px; font-size: 13px; }
+  details.lang > summary { padding: 6px 10px; font-size: 13px; }
+}
+@media (max-width: 420px) { details.lang > summary > span { display: none; } }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -146,293 +157,56 @@ details.lang[open] > summary, details.lang > summary:hover { color: var(--text);
 .cta { margin: 32px 0 12px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .note { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
 
-/* Screenshots */
+/* The hero picture: the extension's own store screenshot, shown from the top of its browser window (build.mjs says how much of it is cut above) */
 .shots { padding: 12px 0 32px; }
 figure { margin: 0 auto; text-align: center; max-width: 960px; }
 figure.hero-shot { max-width: 1020px; }
-figure img { border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-lg); background: var(--surface); }
+.hero-frame { border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow-lg); background: var(--surface); overflow: hidden; }
+.hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: bottom; }
 figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
 
-/* Interactive Scholar Workspace Mockup */
-.demo { padding: 48px 0 24px; }
-.demo h2 { font-size: 28px; text-align: center; font-weight: 750; }
-.demo > .wrap > .note { text-align: center; margin: 8px auto 24px; max-width: 60ch; }
-
-.mockup-window {
-  max-width: 1020px;
+/* Try it: the extension's own settings page, running in an iframe (the demo of the extension's repository, built into /demo/) */
+.try { padding: 48px 0 24px; }
+.try h2 { font-size: 28px; text-align: center; font-weight: 750; }
+.try .wrap { position: relative; }
+.try .wrap > .note { text-align: center; margin: 8px auto 20px; max-width: 62ch; }
+.try-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 20px;
+  max-width: 1060px;
+  margin: 0 auto 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.try-bar p { margin: 0; }
+.try-open { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.try-frame {
+  max-width: 1060px;
   margin: 0 auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
-  position: relative;
 }
-.mockup-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  background: var(--surface-subtle);
-  border-bottom: 1px solid var(--line);
-}
-.window-dots { display: flex; gap: 8px; }
-.window-dots .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-.dot.red { background: #ff5f56; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #27c93f; }
-.mockup-title { font-size: 13px; font-weight: 600; color: var(--muted); font-family: ui-monospace, monospace; }
-.window-spacer { width: 50px; }
-.mockup-body { padding: 22px; }
-
-/* Scholar Profile Mini Header */
-.scholar-header {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 18px;
-}
-.scholar-avatar {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1a5fd0, #b36cf6);
-  color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
-}
-.scholar-meta { flex-grow: 1; }
-.scholar-name { font-size: 20px; font-weight: 750; display: flex; align-items: center; gap: 6px; }
-.verified-icon { vertical-align: middle; }
-.scholar-affil { font-size: 13.5px; color: var(--muted); margin: 2px 0 6px; }
-.scholar-stats { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--muted); }
-.scholar-stats span strong { color: var(--text); }
-
-/* Mockup Search Row */
-.mockup-search-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-}
-.search-wrap {
-  position: relative;
-  flex: 1 1 300px;
-  display: flex;
-  align-items: center;
-}
-.search-wrap .search-icon { position: absolute; inset-inline-start: 12px; color: var(--muted); pointer-events: none; }
-.search-wrap input {
-  width: 100%;
-  padding: 9px 36px 9px 38px;
-  font: inherit;
-  font-size: 14px;
-  background: var(--surface-subtle);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--text);
-  outline: none;
-  transition: all 0.15s ease;
-}
-.search-wrap input:focus { border-color: var(--accent); background: var(--surface); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
-.search-wrap .kbd {
-  position: absolute;
-  inset-inline-end: 12px;
-  font-size: 11px;
-  font-family: ui-monospace, monospace;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 1px 6px;
-  color: var(--muted);
-}
-.pill-group { display: flex; flex-wrap: wrap; gap: 6px; }
-.pill-group .pill {
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--muted);
-  font: inherit;
-  font-size: 12.5px;
-  font-family: ui-monospace, monospace;
-  padding: 5px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.pill-group .pill:hover { border-color: var(--accent); color: var(--text); }
-.pill-group .pill.active { background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); border-color: var(--accent); font-weight: 600; }
-
-/* Role Toggles */
-.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-.role-btn {
-  --c: #1a73e8;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+.try-frame iframe { display: block; width: 100%; height: 900px; border: 0; }
+/* the page inside lays itself out in one column below 960px, and a phone's own scroll must not get stuck in it: it stays shorter than the screen */
+@media (max-width: 1000px) { .try-frame iframe { height: clamp(520px, 80svh, 1000px); } }
+/* keyboard users: a way past the ~100 controls of the page inside (shown when it has the focus, hidden otherwise) */
+.skip { position: absolute; inset-inline-start: -9999px; top: 0; z-index: 5; }
+.skip:focus {
+  inset-inline-start: 0;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid var(--line);
   background: var(--surface);
-  color: var(--text);
-  font: inherit;
-  font-size: 13.5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.role-btn i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
-.role-btn[data-role="cofirst"] { --c: #a142f4; }
-.role-btn[data-role="second"] { --c: #f9ab00; }
-.role-btn[data-role="last"] { --c: #1e8e3e; }
-.role-btn[aria-pressed="true"] { background: color-mix(in srgb, var(--c) 12%, var(--surface)); border-color: color-mix(in srgb, var(--c) 50%, var(--line)); font-weight: 600; }
-.role-btn[aria-pressed="false"] { color: var(--muted); opacity: 0.65; }
-.role-btn[aria-pressed="false"] i { background: transparent; box-shadow: inset 0 0 0 2px var(--muted); }
-
-/* Mockup Content Grid: Papers Left, Mini-Panel Right */
-.mockup-content-grid { display: grid; grid-template-columns: 1fr 270px; gap: 18px; align-items: start; }
-@media (max-width: 860px) { .mockup-content-grid { grid-template-columns: 1fr; } }
-
-.demo-card {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-}
-.paper {
-  --c: transparent;
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 13px 18px;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.15s ease, box-shadow 0.15s ease;
-}
-.paper:last-child { border-bottom: 0; }
-.paper[data-role="first"] { --c: #1a73e8; }
-.paper[data-role="cofirst"] { --c: #a142f4; }
-.paper[data-role="second"] { --c: #f9ab00; }
-.paper[data-role="last"] { --c: #1e8e3e; }
-.paper.lit { background: color-mix(in srgb, var(--c) 12%, transparent); box-shadow: inset 4px 0 0 var(--c); }
-[dir="rtl"] .paper.lit { box-shadow: inset -4px 0 0 var(--c); }
-
-.paper-main { flex-grow: 1; min-width: 0; }
-.ptitle { display: block; color: var(--accent); font-size: 15px; font-weight: 600; margin-bottom: 3px; }
-.auth { display: block; color: var(--muted); font-size: 13px; margin-bottom: 3px; }
-.auth mark { background: color-mix(in srgb, var(--c) 25%, transparent); color: var(--text); font-weight: 700; padding: 1px 4px; border-radius: 4px; }
-.ven { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: var(--muted); font-size: 12.5px; }
-.ven em {
-  font-style: normal;
-  font-size: 11px;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 1px 7px;
-  white-space: nowrap;
-}
-.chip-ccf { background: #e8f0fe; color: #174ea6; border: 1px solid #c2e7ff; }
-.chip-core { background: #f3e8fd; color: #7627bb; border: 1px solid #e1c3fc; }
-.award-chip {
-  font-size: 11px;
-  font-weight: 700;
-  background: #fef7e0;
-  color: #b06000;
-  border: 1px solid #fde293;
-  border-radius: 999px;
-  padding: 1px 7px;
-}
-.paper-meta { flex-shrink: 0; text-align: end; font-size: 13px; color: var(--muted); }
-.paper-meta .cites { display: block; font-weight: 600; color: var(--text); }
-.paper-meta .year { display: block; font-size: 12px; }
-.demo-count { text-align: center; color: var(--muted); font-size: 13.5px; margin: 12px 0 0; }
-.demo-count b { color: var(--text); font-size: 16px; }
-
-/* Mini Floating Panel */
-.mini-panel {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: 14px;
-}
-.mini-panel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border: 1px solid var(--accent);
   font-size: 14px;
-  font-weight: 700;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 10px;
-}
-.mini-badge {
-  font-size: 11px;
   font-weight: 600;
-  padding: 2px 8px;
-  background: var(--surface-subtle);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--muted);
+  box-shadow: var(--shadow);
 }
-.mini-matrix {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-.mini-matrix th, .mini-matrix td {
-  padding: 5px 4px;
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-}
-.mini-matrix th { font-weight: 600; color: var(--muted); }
-.mini-matrix td.rlabel { font-weight: 600; text-align: start; }
-.mini-matrix td.cell {
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.mini-matrix td.cell:hover:not(.zero) { background: color-mix(in srgb, var(--accent) 20%, transparent); color: var(--accent); font-weight: 700; }
-.mini-matrix td.cell.selected { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
-.mini-matrix td.zero { color: var(--muted); opacity: 0.4; cursor: default; }
-
-.mini-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
-.metric-btn {
-  background: var(--surface-subtle);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px 8px;
-  text-align: start;
-  cursor: pointer;
-  font: inherit;
-  transition: all 0.15s ease;
-}
-.metric-btn span { display: block; font-size: 10.5px; color: var(--muted); }
-.metric-btn strong { display: block; font-size: 15px; color: var(--text); }
-.metric-btn:hover { border-color: var(--accent); }
-.metric-btn.active { background: color-mix(in srgb, var(--accent) 15%, transparent); border-color: var(--accent); }
-
-.mini-export-bar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
-.export-btn {
-  background: var(--surface-subtle);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 6px;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text);
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-.export-btn:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 
 /* Export Showcase Section */
 .export-section { padding: 48px 0 24px; }
@@ -502,6 +276,9 @@ figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
   transition: all 0.15s ease;
 }
 .copy-code-btn:hover { border-color: var(--accent); color: var(--accent); }
+.code-preview:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* on a narrow screen the code runs under the copy button: it gets a row of its own */
+@media (max-width: 700px) { .code-preview { padding-top: 46px; } }
 
 /* Operators Section */
 .operators-section { padding: 48px 0 24px; }
@@ -545,26 +322,6 @@ ol { margin: 0 auto; padding-inline-start: 1.4em; max-width: 68ch; }
 ol li { margin: 12px 0; font-size: 16px; }
 .honest p { max-width: 68ch; color: var(--muted); margin: 0 auto; text-align: center; font-size: 16px; line-height: 1.7; }
 .install .note { text-align: center; margin-top: 20px; }
-
-/* Toast Notification */
-.toast-notification {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  background: #0f172a;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 600;
-  box-shadow: var(--shadow-lg);
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 50;
-}
-.toast-notification.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* Footer */
 footer { padding: 36px 0 54px; color: var(--muted); font-size: 14.5px; border-top: 1px solid var(--line); }

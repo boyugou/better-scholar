@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Dev tool: renders src/assets/apple-touch-icon.png (180) and og.png (1200x630) from the icon and a small HTML card.
-// Needs Playwright + Chromium (PLAYWRIGHT_PATH / CHROMIUM_PATH, or the usual caches). The results are committed; this is only for changes.
+// Dev tool: renders src/assets/apple-touch-icon.png (180) and og.png (1200x630, the card a shared link shows) from the icon and a small HTML card:
+// the name and the one line of the store listing, no screenshot and no one's name. Needs Playwright + Chromium (PLAYWRIGHT_PATH / CHROMIUM_PATH, or the
+// usual caches). The results are committed; this is only for changes.
 import { createRequire } from "node:module";
 import fs from "node:fs";
 import os from "node:os";
@@ -31,8 +32,8 @@ await shot(`<body style="margin:0;background:#161d33">${sized(180)}</body>`, 180
 await shot(`<body style="margin:0;width:1200px;height:630px;background:linear-gradient(160deg,#27324f,#101626);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#fff;display:flex;align-items:center">
 <div style="padding:0 90px;display:flex;gap:56px;align-items:center;width:100%">
   <div>${sized(220)}</div>
-  <div><div style="font-size:70px;font-weight:750;letter-spacing:-.02em;line-height:1.05">Scholar Roles &amp; Ranks</div>
-  <div style="margin-top:22px;font-size:32px;color:#b9c4de;line-height:1.35;max-width:640px">Your authorship role and the venue's CCF / CORE rank on every paper of a Google Scholar profile.</div>
+  <div><div style="font-size:78px;font-weight:750;letter-spacing:-.02em;line-height:1.05">Better Scholar</div>
+  <div style="margin-top:22px;font-size:32px;color:#b9c4de;line-height:1.35;max-width:640px">Your authorship role and each venue's CCF and CORE rank, on every Scholar profile.</div>
   <div style="display:flex;gap:10px;margin-top:34px"><i style="width:70px;height:16px;border-radius:8px;background:#4d8ff5"></i><i style="width:70px;height:16px;border-radius:8px;background:#b36cf6"></i><i style="width:70px;height:16px;border-radius:8px;background:#fbbc04"></i><i style="width:70px;height:16px;border-radius:8px;background:#34a853"></i></div></div>
 </div></body>`, 1200, 630, "og.png");
 await browser.close();
