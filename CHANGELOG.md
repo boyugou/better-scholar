@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.39.2 — 2026-10-15
+
+Wording that must match the code (privacy review for the Chrome Web Store):
+
+- The settings say what is sent: Scholar pages are read only when you open them, and paper titles go to Semantic Scholar only if you switch that on (the old "nothing is sent anywhere" was not true of the Scholar pages).
+- PRIVACY.md is the policy on the site, with the page events, the clipboard and the downloads; the homepage badge says "Runs in your browser" instead of "100% Offline".
+- The store material for the owner is in `store/` (checklist, listing text, the claims behind each sentence, the package check, the screenshots).
+
 ## 2.39.1 — 2026-10-15
 
 From an independent review of 2.39.0:
