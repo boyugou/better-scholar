@@ -26,7 +26,7 @@ What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
   rules, from real strings only; a list of the keys in the panel; user-defined weighting of ranks; an MCP server
   (it would need the `nativeMessaging` permission and a program installed outside the browser); end-to-end pictures
   at other display scalings, in Chromium.
-- **A store listing**: optional; the kit is ready in `docs/store/` ([details](docs/ROADMAP.md#distribution)).
+- **A store listing**: optional; the kit is ready in `store/` ([details](docs/ROADMAP.md#distribution)).
 
 ## Set aside
 

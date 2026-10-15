@@ -17,18 +17,26 @@
 
 <br>
 
-<img src="docs/screenshot.png" alt="Better Scholar on a Google Scholar profile" width="920">
+<img src="store/chrome/images/screenshot-1.jpg" alt="Better Scholar on a Google Scholar profile" width="920">
 
 <br><br>
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar profile with role colours, CCF and CORE chips, and the summary panel" width="460"></td>
-    <td align="center" width="50%"><img src="docs/settings.png" alt="Settings page with a live preview, colour themes, a contrast badge for each role colour and the role switches" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-2.jpg" alt="The panel: the role × rank table, copy and export buttons, awards and talks, filters" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-3.jpg" alt="Searching with role:first ccf:a cites:>100 narrows the list and its totals" width="460"></td>
   </tr>
   <tr>
-    <td align="center"><sub>Profile: role colours, CCF and CORE chips, the summary panel and its filters</sub></td>
-    <td align="center"><sub>Settings page: live preview, colour themes, a contrast badge for each role colour, role switches</sub></td>
+    <td align="center"><sub>The panel: role × rank table, copy / export, awards and talks, filters</sub></td>
+    <td align="center"><sub>Search: <code>role:first ccf:a cites:&gt;100</code> narrows the list and the totals</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-4.jpg" alt="The settings page with a switch for every part and a live preview" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-5.jpg" alt="The toolbar popup with the open profile's table and the copy and export buttons" width="460"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Settings: a switch for every part, live preview</sub></td>
+    <td align="center"><sub>Toolbar popup: the table and the copy / export buttons</sub></td>
   </tr>
 </table>
 

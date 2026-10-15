@@ -165,7 +165,7 @@ So that they are not rediscovered from scratch:
 ## Distribution
 
 Stores are a nice-to-have, not a requirement; GitHub plus *Load unpacked* is the primary route, and no store
-listing has been made. The listing kit is ready in [`docs/store/README.md`](store/README.md): the description,
+listing has been made. The listing kit is ready in [`store/README.md`](../store/README.md): the description,
 1280×800 screenshots, promo tiles and the answers to the privacy form; the privacy policy is the website's copy of
 `PRIVACY.md`, and the permission set is already minimal (`storage`). What remains is the per-store listing itself
 (Edge's policy asks that listings not mention other browsers). The Edge Add-ons store is the more reachable one

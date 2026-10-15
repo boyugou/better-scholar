@@ -17,18 +17,26 @@
 
 <br>
 
-<img src="docs/screenshot.png" alt="Better Scholar 在谷歌学术作者主页上的展示" width="920">
+<img src="store/chrome/images/screenshot-1.jpg" alt="Better Scholar 在谷歌学术作者主页上的展示" width="920">
 
 <br><br>
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="docs/store/shot-1.png" alt="Google Scholar 作者主页：按角色着色的行、CCF 与 CORE 徽章、汇总面板" width="460"></td>
-    <td align="center" width="50%"><img src="docs/settings.png" alt="设置页：实时预览、配色主题、每种角色颜色的对比度标记与角色开关" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-2.jpg" alt="侧栏面板：角色 × 等级表、复制与导出按钮、奖项与报告、筛选" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-3.jpg" alt="用 role:first ccf:a cites:>100 搜索，列表与总计随之收窄" width="460"></td>
   </tr>
   <tr>
-    <td align="center"><sub>作者主页：角色着色、CCF 与 CORE 徽章、汇总面板及其筛选</sub></td>
-    <td align="center"><sub>设置页：实时预览、配色主题、每种角色颜色的对比度标记、角色开关</sub></td>
+    <td align="center"><sub>面板：角色 × 等级表、复制 / 导出、奖项与报告、筛选</sub></td>
+    <td align="center"><sub>搜索：<code>role:first ccf:a cites:&gt;100</code>，列表与总计随之收窄</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-4.jpg" alt="设置页：每个部分都有开关，带实时预览" width="460"></td>
+    <td align="center" width="50%"><img src="store/chrome/images/screenshot-5.jpg" alt="工具栏弹窗：当前主页的表格与复制 / 导出按钮" width="460"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>设置页：每个部分都有开关，实时预览</sub></td>
+    <td align="center"><sub>工具栏弹窗：表格与复制 / 导出按钮</sub></td>
   </tr>
 </table>
 
