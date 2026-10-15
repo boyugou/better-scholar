@@ -53,7 +53,7 @@
     clearFilters: {
       doc: "Remove every filter: the search, a table cell, an awards row, a venue, the year range.",
       params: {},
-      result: "{ shown, total }"
+      result: "{ shown, total, filters, errors } — as `filter` returns it, after the filters are cleared."
     }
   };
 
@@ -102,7 +102,7 @@
     return [
       `# Better Scholar${version ? " " + version : ""} — guide for AI agents`,
       "",
-      "Better Scholar is a Chrome extension for Google Scholar profile pages (scholar.google.*/citations). It colours the rows where the profile's owner is first, co-first, second or last author, adds venue rank chips (CCF 2026 and CORE/ICORE 2026 lists), award and talk chips (Oral, Spotlight, Highlight, best paper), and a panel with a role × rank table, filters, citation totals and copy / export buttons. Everything runs in the browser; nothing is sent anywhere, except paper titles to Semantic Scholar when `semanticScholar` is on.",
+      "Better Scholar is a Chrome extension for Google Scholar profile pages (scholar.google.*/citations). It colours the rows where the profile's owner is first, co-first, second or last author, adds venue rank chips (CCF 2026 and CORE/ICORE 2026 lists), award and talk chips (Oral, Spotlight, Highlight, best paper), and a panel with a role × rank table, filters, citation totals and copy / export buttons. Everything runs in the browser. What it asks of the network: Scholar's own pages (the \"Show more\" button when `autoLoad` is on, and a paper's page when the user presses the button that reads full author lists), and paper titles to Semantic Scholar when `semanticScholar` is on. Nothing else is sent.",
       "",
       "Two things you can do:",
       "1. **Set it up for the user** — decide the settings from what they ask for (\"Settings\" below) and give them one JSON object to paste.",
