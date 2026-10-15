@@ -1,0 +1,1063 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "שדרוג Google Scholar: תפקידי מחברים, דירוגי CCF ו-CORE, פרסי כנסים, גרפים לפי שנים וחיפוש מיידי."
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "מאמרים לפי תפקיד ודירוג"
+  },
+  "summaryTitleRoles": {
+    "message": "מאמרים לפי תפקיד"
+  },
+  "marksTitle": {
+    "message": "פרסים והרצאות"
+  },
+  "markAward": {
+    "message": "פרסים"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "המאמר הטוב ביותר"
+  },
+  "mkBestStudent": {
+    "message": "מאמר הסטודנטים הטוב ביותר"
+  },
+  "mkOutstanding": {
+    "message": "מאמר יוצא דופן"
+  },
+  "mkDistinguished": {
+    "message": "מאמר מצטיין"
+  },
+  "mkRunnerUp": {
+    "message": "אזכור מיוחד"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "מועמד לגמר המאמר הטוב ביותר"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "מילותיהם של המחברים עצמם בכותרת כל מאמר ובטקסט הבמה ב-Scholar (ללא בדיקה), ורשימה מובנית של מאמרים זוכי פרסים בכנסים גדולים."
+  },
+  "marksAsWritten": {
+    "message": "ממילות המחברים עצמם או מרשימת הפרסים"
+  },
+  "tipMarkAuthor": {
+    "message": "נכתב על ידי המחבר (ללא בדיקה): ״$N1$״",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "ברשימת הפרסים: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "מודגשים בלבד"
+  },
+  "yearLabel": {
+    "message": "שנה"
+  },
+  "yearStart": {
+    "message": "מ-"
+  },
+  "yearEnd": {
+    "message": "עד"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "ראשון"
+  },
+  "roleCofirst": {
+    "message": "ראשון משותף"
+  },
+  "roleSecond": {
+    "message": "שני"
+  },
+  "roleLast": {
+    "message": "אחרון"
+  },
+  "roleMiddle": {
+    "message": "אחר"
+  },
+  "roleHidden": {
+    "message": "מוסתר"
+  },
+  "colRole": {
+    "message": "תפקיד"
+  },
+  "colTotal": {
+    "message": "הכול"
+  },
+  "tipUnranked": {
+    "message": "ללא דירוג"
+  },
+  "tipHidden": {
+    "message": "Scholar קיצר את רשימת המחברים, ולכן מיקומו של בעל הפרופיל אינו נראה"
+  },
+  "copySummary": {
+    "message": "העתקת הסיכום"
+  },
+  "copyTable": {
+    "message": "העתקה כטבלה"
+  },
+  "copied": {
+    "message": "הועתק"
+  },
+  "coverLoaded": {
+    "message": "נטענו $N1$ מאמרים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "נטען מאמר אחד"
+  },
+  "loadingAll": {
+    "message": "טוען… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "טעינת הכול"
+  },
+  "cancel": {
+    "message": "ביטול"
+  },
+  "coverHidden": {
+    "message": "$N1$ תפקידים מוסתרים בגלל רשימות מחברים מקוצרות",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "תפקיד אחד מוסתר בגלל רשימת מחברים מקוצרת"
+  },
+  "resolveBtn": {
+    "message": "קריאת רשימות מלאות"
+  },
+  "resolveHint": {
+    "message": "פותח את דף כל מאמר ב-Scholar (כמאמר אחד בשנייה) כדי לקרוא את רשימת המחברים המלאה."
+  },
+  "resolveHintSemantic": {
+    "message": "מבקש תחילה מ-Semantic Scholar את רשימת המחברים של כל מאמר (נשלחת כותרת המאמר בלבד), ואז פותח את דף כל מאמר ב-Scholar (כמאמר אחד בשנייה) עבור השאר."
+  },
+  "resolving": {
+    "message": "קורא רשימות מחברים… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google ביקשה CAPTCHA. פתרו אותו בלשונית רגילה ונסו שוב."
+  },
+  "resolveDone": {
+    "message": "הסתיים."
+  },
+  "coverAbsent": {
+    "message": "$N1$ מאמרים שבהם שם הפרופיל אינו ברשימת המחברים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "מאמר אחד שבו שם הפרופיל אינו ברשימת המחברים"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ מאמרים בבמות ללא דירוג",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "מאמר אחד בבמה ללא דירוג"
+  },
+  "copyUnmatched": {
+    "message": "העתקת הרשימה"
+  },
+  "reportLink": {
+    "message": "דיווח"
+  },
+  "layoutWarning": {
+    "message": "נראה שפריסת הדף של Scholar השתנתה: התוסף אינו מצליח לקרוא את שורות המחברים. נא לדווח על כך."
+  },
+  "variantsTitle": {
+    "message": "השם לא תואם? הוסיפו איות"
+  },
+  "variantsPlaceholder": {
+    "message": "למשל Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "הוספה"
+  },
+  "variantRemove": {
+    "message": "הסרה"
+  },
+  "variantAutoTip": {
+    "message": "נוסף אוטומטית: שם הפרופיל שלכם בסדר הפוך מזהה אתכם ב-$1 מאמרים"
+  },
+  "variantSuggest": {
+    "message": "אולי אתם:"
+  },
+  "variantSuggestTip": {
+    "message": "מופיע ב-$1 מאמרים שרשימת המחברים שלהם אינה מזכירה אתכם בדרך אחרת — לחצו כדי להוסיף איות זה"
+  },
+  "expand": {
+    "message": "הרחבה"
+  },
+  "collapse": {
+    "message": "כיווץ"
+  },
+  "metricsTitle": {
+    "message": "מאמרים מודגשים"
+  },
+  "mPapers": {
+    "message": "מאמרים"
+  },
+  "mCitations": {
+    "message": "ציטוטים"
+  },
+  "mH": {
+    "message": "מדד h"
+  },
+  "mI10": {
+    "message": "מדד i10"
+  },
+  "dataNote": {
+    "message": "הדירוגים לקוחים מרשימות $N1$ של היום, ולא מהדירוג בזמן הפרסום. CCF מציינת שהרשימה שלה אינה בסיס להערכה אקדמית.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "אף אחת מבמות הפרסום בפרופיל הזה אינה מופיעה ברשימות $N1$, שמכסות את מדעי המחשב.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "הותאם לפי שם"
+  },
+  "ruleAcronym": {
+    "message": "הותאם לפי ראשי תיבות"
+  },
+  "rulePrefix": {
+    "message": "הותאם לפי החלק הנראה של שם מקוצר"
+  },
+  "tipToday": {
+    "message": "הרשימה העדכנית, לא הדירוג בזמן הפרסום"
+  },
+  "tipPosition": {
+    "message": "מקום $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "מדף המאמר"
+  },
+  "copyFirst": {
+    "message": "מחבר ראשון"
+  },
+  "copyCofirst": {
+    "message": "מחבר ראשון משותף"
+  },
+  "copySecond": {
+    "message": "מחבר שני"
+  },
+  "copyLast": {
+    "message": "מחבר אחרון"
+  },
+  "copyMiddle": {
+    "message": "מיקומים אחרים"
+  },
+  "tsvRole": {
+    "message": "תפקיד"
+  },
+  "tsvTotal": {
+    "message": "סך הכול"
+  },
+  "popupNotProfile": {
+    "message": "פתחו פרופיל מחבר ב-Google Scholar כדי לראות כאן את הסיכום שלו."
+  },
+  "popupReading": {
+    "message": "קורא את הדף…"
+  },
+  "popupPapers": {
+    "message": "$N1$ מאמרים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "מאמר אחד"
+  },
+  "popupOpenScholar": {
+    "message": "פתיחת Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "הגדרות"
+  },
+  "optHeading": {
+    "message": "הגדרות"
+  },
+  "optPreviewTitle": {
+    "message": "תצוגה מקדימה"
+  },
+  "optPreviewNote": {
+    "message": "מאמרים לדוגמה כפי שייראו בפרופיל Scholar. ״A Author״ הוא אתם."
+  },
+  "optSaved": {
+    "message": "נשמר"
+  },
+  "optRolesTitle": {
+    "message": "הדגשת המאמרים שלי"
+  },
+  "optRolesHint": {
+    "message": "לכל מיקום צבע שורה משלו. מאמרים שבהם אתם באמצע נשארים רגילים."
+  },
+  "optMarkName": {
+    "message": "סימון השם שלי בשורת המחברים"
+  },
+  "optMarkNameHint": {
+    "message": "מודגש וצבוע. העבירו עליו את העכבר כדי לראות את המיקום שלכם."
+  },
+  "optCcf": {
+    "message": "דירוג CCF"
+  },
+  "optCcfHint": {
+    "message": "רשימת ה-China Computer Federation, המהדורה השביעית (2026)."
+  },
+  "optCore": {
+    "message": "דירוג CORE"
+  },
+  "optCoreHint": {
+    "message": "דירוג הכנסים של CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "פרסים והרצאות"
+  },
+  "optCopyTitle": {
+    "message": "העתקה וייצוא"
+  },
+  "optCopyHint": {
+    "message": "בחרו אילו כפתורים מעתיקים או שומרים את המאמרים המוצגים, או את הסיכום, כטקסט. הלוח והחלון הקופץ מסרגל הכלים מציעים את אותם כפתורים; אם אף אחד מהם לא פעיל, אין שורת העתקה."
+  },
+  "optMarkAwardHint": {
+    "message": "המאמר הטוב ביותר, מאמר יוצא דופן ומאמר מצטיין, אזכור מיוחד, Test of time ומועמדים לגמר המאמר הטוב ביותר."
+  },
+  "optPanelTitle": {
+    "message": "לוח סיכום"
+  },
+  "optPanelShow": {
+    "message": "הצגת לוח הסיכום"
+  },
+  "optPanelShowHint": {
+    "message": "טבלת תפקיד × דירוג בדף הפרופיל. כבוי: רק רשימת המאמרים מסומנת."
+  },
+  "optPanelSummary": {
+    "message": "טבלת תפקיד × דירוג"
+  },
+  "optPanelSummaryHint": {
+    "message": "הטבלה של המאמרים שלכם לפי מיקום ודירוג, עם הערה על מקור הדירוגים."
+  },
+  "optPanelMarksHint": {
+    "message": "מספר המאמרים זוכי הפרסים ורמות ההרצאה, ולחיצה אחת מציגה אותם."
+  },
+  "optPanelStatus": {
+    "message": "מאמרים שנטענו ובמות ללא דירוג"
+  },
+  "optPanelStatusHint": {
+    "message": "כמה מאמרים נטענו, הלחצן ״טעינת הכול״ ורשימת המאמרים בבמות ללא דירוג."
+  },
+  "optPanelNames": {
+    "message": "עזרה באיות השם"
+  },
+  "optPanelNamesHint": {
+    "message": "״השם לא תואם? הוסיפו איות״ וההצעות לשם שלכם."
+  },
+  "optPanelCompact": {
+    "message": "קומפקטי: מסננים וסכומי ציטוטים בלבד"
+  },
+  "optAllOn": {
+    "message": "הפעלת הכול"
+  },
+  "optAllOff": {
+    "message": "כיבוי הכול"
+  },
+  "optPanelFilters": {
+    "message": "מסננים"
+  },
+  "optPanelFiltersHint": {
+    "message": "מאמרים מודגשים בלבד וטווח שנים."
+  },
+  "optPanelMetrics": {
+    "message": "סכומי ציטוטים"
+  },
+  "optPanelMetricsHint": {
+    "message": "מספר המאמרים המודגשים, הציטוטים שלהם, מדד h ומדד i10."
+  },
+  "optDataTitle": {
+    "message": "נתונים שמורים"
+  },
+  "optClearCache": {
+    "message": "ניקוי פרטי מאמרים שמורים"
+  },
+  "optCacheCount": {
+    "message": "רשימות המחברים של $N1$ מאמרים שמורות במכשיר זה (נשמרות 90 יום).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "רשימת המחברים של מאמר אחד שמורה במכשיר זה (נשמרת 90 יום)."
+  },
+  "optCacheNone": {
+    "message": "אין פרטי מאמרים שמורים."
+  },
+  "optCleared": {
+    "message": "נוקה"
+  },
+  "optReset": {
+    "message": "איפוס לברירות מחדל"
+  },
+  "optResetConfirm": {
+    "message": "לאפס את כל ההגדרות האלה לברירות המחדל?"
+  },
+  "optStorage": {
+    "message": "ההגדרות נשמרות בדפדפן שלכם ומסתנכרנות עם פרופיל Chrome שלכם. דפי Scholar נקראים רק כשפותחים אותם, וכותרות המאמרים נשלחות ל-Semantic Scholar רק אם מפעילים את זה."
+  },
+  "optSample": {
+    "message": "מאמר לדוגמה"
+  },
+  "optLoadTitle": {
+    "message": "רשימת מאמרים"
+  },
+  "optAutoLoad": {
+    "message": "טעינה אוטומטית של כל המאמרים"
+  },
+  "optAutoLoadHint": {
+    "message": "בהתחלה Scholar מציג רק את המאמרים הראשונים. התוסף לוחץ במקומכם על הלחצן ״הצג עוד״ של Scholar, בערך פעם בשנייה, עד שכל הרשימה נטענת, ונעצר אם Scholar מפסיק להגיב. כבוי: הלוח מציע במקום זאת ״טעינת הכול״."
+  },
+  "loadStalled": {
+    "message": "Scholar לא שלח עוד מאמרים (נטענו $N1$). נסו שוב ״טעינת הכול״ בעוד רגע.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "פרס קטגוריה"
+  },
+  "copyPapers": {
+    "message": "העתקת מאמרים"
+  },
+  "copyBibtex": {
+    "message": "העתק BibTeX"
+  },
+  "copyApa": {
+    "message": "העתק APA"
+  },
+  "copyMarkdown": {
+    "message": "העתק Markdown"
+  },
+  "copyJson": {
+    "message": "העתק JSON"
+  },
+  "exportCsv": {
+    "message": "ייצוא CSV"
+  },
+  "copyEmpty": {
+    "message": "אין מה להעתיק"
+  },
+  "exported": {
+    "message": "יוצא"
+  },
+  "tsvYear": {
+    "message": "שנה"
+  },
+  "tsvTitle": {
+    "message": "כותרת"
+  },
+  "tsvAuthors": {
+    "message": "מחברים"
+  },
+  "tsvVenue": {
+    "message": "במת פרסום"
+  },
+  "tsvAwards": {
+    "message": "פרסים והרצאות"
+  },
+  "tsvCitations": {
+    "message": "ציטוטים"
+  },
+  "optHideTitle": {
+    "message": "הבלוקים של Scholar עצמו"
+  },
+  "optHideHint": {
+    "message": "הסתירו חלקים בדף הפרופיל שחוזרים על הלוח או שאינכם משתמשים בהם. שום דבר לא מוסתר עד שתפעילו זאת."
+  },
+  "optHideCited": {
+    "message": "צוטט על ידי"
+  },
+  "optHideCitedHint": {
+    "message": "טבלת הציטוטים, מדד h ומדד i10 והגרף שלה: הלוח מציג את אותם סכומים עבור המאמרים המודגשים."
+  },
+  "optHideCo": {
+    "message": "שותפים למחקר"
+  },
+  "optHideCoHint": {
+    "message": "רשימת השותפים למחקר בסרגל הצד."
+  },
+  "optHideAccess": {
+    "message": "גישה ציבורית"
+  },
+  "optHideAccessHint": {
+    "message": "תיבת הגישה הציבורית בסרגל הצד."
+  },
+  "optMergeTitle": {
+    "message": "רשומות כפולות"
+  },
+  "optMergeHint": {
+    "message": "בחלק מהפרופילים אותו מאמר מופיע כמה פעמים."
+  },
+  "optMergeLabel": {
+    "message": "מיזוג כפילויות"
+  },
+  "optMergeLabelHint": {
+    "message": "רשומות עם אותה כותרת (פרט לאותיות גדולות, סימנים דיאקריטיים ופיסוק) ואותו מחבר ראשון הופכות לרשומה אחת: המצוטטת ביותר נשארת ומציגה את הציטוטים של כולן. הלוח סופר אותה פעם אחת."
+  },
+  "mergedTip": {
+    "message": "אוחד מ-$N1$ רשומות: הציטוטים של כולן",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "שפה"
+  },
+  "optLanguageHint": {
+    "message": "השפה של התוסף הזה ושל דפי Scholar שאתם פותחים."
+  },
+  "optLanguageUi": {
+    "message": "שפת התוסף"
+  },
+  "optLanguageAuto": {
+    "message": "לפי הדפדפן"
+  },
+  "optLanguageScholar": {
+    "message": "פתיחת Scholar בשפה"
+  },
+  "optLanguageScholarHint": {
+    "message": "דף Scholar שאתם פותחים בשפה אחרת (למשל מקישור ששותף) ייפתח שוב בשפה זו."
+  },
+  "optLanguageKeep": {
+    "message": "להשאיר כמו שהוא"
+  },
+  "optColorsTitle": {
+    "message": "צבעים"
+  },
+  "optColorsHint": {
+    "message": "הצבע של כל תפקיד מחבר: שורות, סימוני שם, הלוח וחלון סרגל הכלים."
+  },
+  "optColorsReset": {
+    "message": "חזרה לצבעי ברירת המחדל"
+  },
+  "optThemes": {
+    "message": "ערכות צבעים"
+  },
+  "optThemeDefault": {
+    "message": "ברירת מחדל"
+  },
+  "optThemeCool": {
+    "message": "קרה"
+  },
+  "optThemeWarm": {
+    "message": "חמה"
+  },
+  "optThemeStrong": {
+    "message": "ניגודיות גבוהה"
+  },
+  "optThemeSoft": {
+    "message": "עדינה"
+  },
+  "optContrastTip": {
+    "message": "הניגודיות של הצבע הזה מול דף Scholar הלבן. יחס של 3:1 או יותר משאיר את פס השורה גלוי."
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight ו-Highlight"
+  },
+  "markTalks": {
+    "message": "הרצאות"
+  },
+  "optTalkRows": {
+    "message": "שורות בלוח"
+  },
+  "optTalkRowsHint": {
+    "message": "אופן ספירת רמות ההרצאה. מאמר שיש בו יותר מאחת מהן נספר פעם אחת."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight ו-Highlight בנפרד"
+  },
+  "optTalkPair": {
+    "message": "Spotlight ו-Highlight יחד"
+  },
+  "optTalkAll": {
+    "message": "שלושתם יחד"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "מקום שני לחפש בו את מה ש-Scholar חותך."
+  },
+  "optSemanticLabel": {
+    "message": "קריאת רשימות מחברים מ-Semantic Scholar תחילה"
+  },
+  "optSemanticLabelHint": {
+    "message": "בלחיצה על הלחצן ״קריאת רשימות מלאות״, תחילה נשאל את Semantic Scholar על רשימת המחברים המלאה של כל מאמר (נשלחת כותרת המאמר בלבד), ודף Scholar עצמו ייפתח רק למה ש-Semantic Scholar לא מכיר. פחות בקשות ל-Scholar, ולכן פחות CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "מאמרים מודגשים לפי שנה"
+  },
+  "yearsOlder": {
+    "message": "$N1$ מאמרים ישנים יותר אינם מוצגים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "מאמר אחד ישן יותר אינו מוצג"
+  },
+  "optPanelYears": {
+    "message": "מאמרים לפי שנה"
+  },
+  "optPanelYearsHint": {
+    "message": "עמודה לכל שנה, בצבעי התפקידים."
+  },
+  "coverRepeats": {
+    "message": "רשומות שחוזרות על מאמר אחר: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "מיזוג…"
+  },
+  "venuesTitle": {
+    "message": "היכן מופיעים המאמרים המודגשים"
+  },
+  "optPanelVenues": {
+    "message": "במות מובילות"
+  },
+  "optPanelVenuesHint": {
+    "message": "הבמות המדורגות של המאמרים המודגשים שלכם, מהנפוצה ביותר; לחיצה על במה מציגה את מאמריה."
+  },
+  "optCopyDiagnostics": {
+    "message": "העתקת פרטים לדיווח על באג"
+  },
+  "optSemanticKey": {
+    "message": "מפתח API (אופציונלי)"
+  },
+  "optSemanticKeyHint": {
+    "message": "מפתח חינמי מ-semanticscholar.org/product/api מונע את מגבלת הבקשות המשותפת שחולקים כל מי שאין לו מפתח. המפתח נשאר במכשיר הזה (אינו מסונכרן) ונשלח רק אל Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar ביקש להאט, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
+  },
+  "optRowStyle": {
+    "message": "הדגשת שורות"
+  },
+  "optRowStyleFull": {
+    "message": "רקע ופס"
+  },
+  "optRowStyleBar": {
+    "message": "פס בלבד"
+  },
+  "optRowStyleTint": {
+    "message": "רקע בלבד"
+  },
+  "filterShowing": {
+    "message": "מאמרים מוצגים: $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "ניקוי"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ ציטוטים",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "לא מופעל אף מיקום של מחבר, ולכן שום דבר לא מודגש."
+  },
+  "metricsOfN": {
+    "message": "$N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "סנן למאמרי ליבת h (≥$N1$ ציטוטים)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "סנן למאמרי i10 (≥10 ציטוטים)"
+  },
+  "popupPapersOf": {
+    "message": "מאמרים: $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar לא קיבל את מפתח ה-API, ולכן לשאר נעשה שימוש בדפי Scholar עצמם."
+  },
+  "optLinkPrivacy": {
+    "message": "פרטיות"
+  },
+  "optLinkIssues": {
+    "message": "דיווח על בעיה"
+  },
+  "filterPlaceholder": {
+    "message": "סינון לפי כותרת או מחבר…"
+  },
+  "searchShortcut": {
+    "message": "לחצו / כדי לחפש"
+  },
+  "venuesShowMore": {
+    "message": "הצג עוד"
+  },
+  "venuesShowFewer": {
+    "message": "הצג פחות"
+  },
+  "optHideCitedTable": {
+    "message": "טבלת מדדי ציטוטים"
+  },
+  "optHideCitedTableHint": {
+    "message": "טבלת הציטוטים, מדד h ומדד i10 בסרגל הצד."
+  },
+  "optHideCitedChart": {
+    "message": "תרשים ציטוטים שנתי"
+  },
+  "optHideCitedChartHint": {
+    "message": "היסטוגרמת הציטוטים השנתית בסרגל הצד."
+  },
+  "optConfigTitle": {
+    "message": "תצורה ופרופילים מוכנים"
+  },
+  "optConfigHint": {
+    "message": "הגדרות כ-JSON: אפשר להעתיק אותן, לשמור לקובץ, לטעון קובץ או להדביק שינוי בעורך. פרופיל מוכן משנה רק את מה שהוא מציין, והדף מציין מה הוחל ומה לא הוחל."
+  },
+  "optConfigCopy": {
+    "message": "העתקת תצורה (JSON)"
+  },
+  "optConfigExport": {
+    "message": "ייצוא קובץ"
+  },
+  "optConfigImportFile": {
+    "message": "ייבוא קובץ"
+  },
+  "optConfigEditor": {
+    "message": "להדביק או לערוך תצורה (JSON)"
+  },
+  "optConfigApply": {
+    "message": "החלת תצורה"
+  },
+  "optConfigApplied": {
+    "message": "השינויים הוחלו: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "אין מה לשנות: ההגדרות כבר מציינות זאת."
+  },
+  "optConfigIgnored": {
+    "message": "לא הוחל:"
+  },
+  "optConfigError": {
+    "message": "זה אינו JSON תקין: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "סוכני AI"
+  },
+  "optAgentHint": {
+    "message": "העתיקו מדריך שמפרט כל הגדרה, את הערכים שלה ואת הבחירות הנוכחיות שלכם. הדביקו אותו לעוזר ה-AI שלכם, כתבו מה תרצו, ואז הדביקו את התשובה שלו בעורך התצורה שלמטה ולחצו על החלת תצורה."
+  },
+  "optAgentCopy": {
+    "message": "העתקת מדריך לסוכני AI"
+  },
+  "optConfigPreset": {
+    "message": "פרופילים"
+  },
+  "optPresetLast": {
+    "message": "התמקדות במחבר אחרון"
+  },
+  "optPresetFull": {
+    "message": "כל התכונות"
+  },
+  "optPresetFirst": {
+    "message": "התמקדות במחבר ראשון"
+  },
+  "optPresetMinimal": {
+    "message": "מינימליסטי"
+  },
+  "optViewCache": {
+    "message": "הצגת פרטים שמורים"
+  },
+  "optSearchPlaceholder": {
+    "message": "חיפוש בהגדרות…"
+  },
+  "optSearchClear": {
+    "message": "ניקוי החיפוש"
+  },
+  "optCacheTitle": {
+    "message": "פרטי מאמרים שמורים"
+  },
+  "optCacheSearch": {
+    "message": "סינון מאמרים שמורים…"
+  },
+  "optCacheCopy": {
+    "message": "העתקת מטמון (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "עדיין לא נשמרו פרטי מאמרים במכשיר זה."
+  },
+  "optCacheShown": {
+    "message": "מוצגים: $N1$ מתוך $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "מקור"
+  },
+  "optCacheClose": {
+    "message": "סגירה"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}

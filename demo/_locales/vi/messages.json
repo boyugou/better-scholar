@@ -1,0 +1,1042 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "Nâng cao Google Scholar: vai trò tác giả, xếp hạng CCF & CORE, giải thưởng hội nghị, biểu đồ theo năm và tìm kiếm tức thì."
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "Bài báo theo vai trò và hạng"
+  },
+  "summaryTitleRoles": {
+    "message": "Bài báo theo vai trò"
+  },
+  "marksTitle": {
+    "message": "Giải thưởng & báo cáo"
+  },
+  "markAward": {
+    "message": "Giải thưởng"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Bài báo xuất sắc nhất"
+  },
+  "mkBestStudent": {
+    "message": "Bài báo sinh viên xuất sắc nhất"
+  },
+  "mkOutstanding": {
+    "message": "Bài báo kiệt xuất"
+  },
+  "mkDistinguished": {
+    "message": "Bài báo ưu tú"
+  },
+  "mkRunnerUp": {
+    "message": "Giải khuyến khích"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Lọt chung kết bài báo xuất sắc nhất"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Dựa trên chính lời của tác giả trong tiêu đề và phần venue của từng bài trên Scholar (không kiểm chứng), và danh sách kèm theo các bài đoạt giải tại hội nghị lớn."
+  },
+  "marksAsWritten": {
+    "message": "từ lời của tác giả hoặc danh sách giải thưởng"
+  },
+  "tipMarkAuthor": {
+    "message": "Do tác giả viết (không kiểm chứng): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Có trong danh sách giải thưởng: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Chỉ bài được tô nổi"
+  },
+  "yearLabel": {
+    "message": "Năm"
+  },
+  "yearStart": {
+    "message": "Từ"
+  },
+  "yearEnd": {
+    "message": "Đến"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Đầu"
+  },
+  "roleCofirst": {
+    "message": "Đồng đầu"
+  },
+  "roleSecond": {
+    "message": "Thứ hai"
+  },
+  "roleLast": {
+    "message": "Cuối"
+  },
+  "roleMiddle": {
+    "message": "Khác"
+  },
+  "roleHidden": {
+    "message": "Bị ẩn"
+  },
+  "colRole": {
+    "message": "Vai trò"
+  },
+  "colTotal": {
+    "message": "Tất cả"
+  },
+  "tipUnranked": {
+    "message": "Chưa xếp hạng"
+  },
+  "tipHidden": {
+    "message": "Scholar đã rút gọn danh sách tác giả nên không thấy vị trí của chủ hồ sơ"
+  },
+  "copySummary": {
+    "message": "Sao chép tóm tắt"
+  },
+  "copyTable": {
+    "message": "Sao chép dạng bảng"
+  },
+  "copied": {
+    "message": "Đã sao chép"
+  },
+  "coverLoaded": {
+    "message": "Đã tải $N1$ bài",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Đang tải… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Tải tất cả"
+  },
+  "cancel": {
+    "message": "Hủy"
+  },
+  "coverHidden": {
+    "message": "$N1$ vai trò bị ẩn do danh sách tác giả bị rút gọn",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Đọc danh sách đầy đủ"
+  },
+  "resolveHint": {
+    "message": "Mở trang của từng bài trên Scholar (khoảng một bài mỗi giây) để đọc danh sách tác giả đầy đủ."
+  },
+  "resolveHintSemantic": {
+    "message": "Trước hết hỏi Semantic Scholar danh sách tác giả của từng bài (chỉ gửi tiêu đề bài báo), sau đó mở trang của các bài còn lại trên Scholar (khoảng một bài mỗi giây)."
+  },
+  "resolving": {
+    "message": "Đang đọc danh sách tác giả… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google yêu cầu CAPTCHA. Hãy giải ở một tab thông thường rồi thử lại."
+  },
+  "resolveDone": {
+    "message": "Xong."
+  },
+  "coverAbsent": {
+    "message": "$N1$ bài có danh sách tác giả không chứa tên hồ sơ",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "$N1$ bài ở venue chưa xếp hạng",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Sao chép danh sách"
+  },
+  "reportLink": {
+    "message": "Báo lỗi"
+  },
+  "layoutWarning": {
+    "message": "Bố cục trang Scholar dường như đã thay đổi: tiện ích này không đọc được dòng tác giả. Vui lòng báo lỗi."
+  },
+  "variantsTitle": {
+    "message": "Tên không khớp? Thêm cách viết"
+  },
+  "variantsPlaceholder": {
+    "message": "ví dụ: Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Thêm"
+  },
+  "variantRemove": {
+    "message": "Xóa"
+  },
+  "variantAutoTip": {
+    "message": "Tự động thêm: tên hồ sơ của bạn theo thứ tự ngược lại tìm thấy bạn trong $1 bài"
+  },
+  "variantSuggest": {
+    "message": "Có thể là bạn:"
+  },
+  "variantSuggestTip": {
+    "message": "Xuất hiện trong $1 bài mà danh sách tác giả không nêu tên bạn — nhấp để thêm cách viết này"
+  },
+  "expand": {
+    "message": "Mở rộng"
+  },
+  "collapse": {
+    "message": "Thu gọn"
+  },
+  "metricsTitle": {
+    "message": "Bài được tô nổi"
+  },
+  "mPapers": {
+    "message": "Bài báo"
+  },
+  "mCitations": {
+    "message": "Trích dẫn"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "dataNote": {
+    "message": "Hạng lấy từ danh sách $N1$ hiện hành, không phải hạng tại thời điểm xuất bản. CCF nêu rõ danh sách của họ không phải căn cứ đánh giá học thuật.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Không có venue nào trong hồ sơ này nằm trong danh sách $N1$, vốn bao quát khoa học máy tính.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Khớp theo tên"
+  },
+  "ruleAcronym": {
+    "message": "Khớp theo tên viết tắt"
+  },
+  "rulePrefix": {
+    "message": "Khớp theo phần nhìn thấy của tên bị rút gọn"
+  },
+  "tipToday": {
+    "message": "danh sách hiện hành, không phải hạng lúc xuất bản"
+  },
+  "tipPosition": {
+    "message": "vị trí $N1$ trên $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "từ trang của bài báo"
+  },
+  "copyFirst": {
+    "message": "Tác giả đầu"
+  },
+  "copyCofirst": {
+    "message": "Đồng tác giả đầu"
+  },
+  "copySecond": {
+    "message": "Tác giả thứ hai"
+  },
+  "copyLast": {
+    "message": "Tác giả cuối"
+  },
+  "copyMiddle": {
+    "message": "Các vị trí khác"
+  },
+  "tsvRole": {
+    "message": "Vai trò"
+  },
+  "tsvTotal": {
+    "message": "Tổng"
+  },
+  "popupNotProfile": {
+    "message": "Hãy mở hồ sơ tác giả trên Google Scholar để xem tóm tắt tại đây."
+  },
+  "popupReading": {
+    "message": "Đang đọc trang…"
+  },
+  "popupPapers": {
+    "message": "$N1$ bài",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Mở Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Cài đặt"
+  },
+  "optHeading": {
+    "message": "Cài đặt"
+  },
+  "optPreviewTitle": {
+    "message": "Xem trước"
+  },
+  "optPreviewNote": {
+    "message": "Các bài mẫu như sẽ hiện trên hồ sơ Scholar. “A Author” là bạn."
+  },
+  "optSaved": {
+    "message": "Đã lưu"
+  },
+  "optRolesTitle": {
+    "message": "Tô nổi bài của tôi"
+  },
+  "optRolesHint": {
+    "message": "Mỗi vị trí có một màu dòng riêng. Bài mà bạn ở giữa danh sách giữ nguyên."
+  },
+  "optMarkName": {
+    "message": "Đánh dấu tên tôi trong dòng tác giả"
+  },
+  "optMarkNameHint": {
+    "message": "In đậm và tô màu. Di chuột lên để xem vị trí của bạn."
+  },
+  "optCcf": {
+    "message": "Hạng CCF"
+  },
+  "optCcfHint": {
+    "message": "Danh sách của Liên đoàn Máy tính Trung Quốc, lần thứ 7 (2026)."
+  },
+  "optCore": {
+    "message": "Hạng CORE"
+  },
+  "optCoreHint": {
+    "message": "Xếp hạng hội nghị CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Giải thưởng và báo cáo"
+  },
+  "optCopyTitle": {
+    "message": "Sao chép và xuất"
+  },
+  "optCopyHint": {
+    "message": "Nút nào sao chép hoặc lưu các bài báo đang hiển thị, hoặc bản tóm tắt, dưới dạng văn bản. Bảng tóm tắt và cửa sổ bật lên trên thanh công cụ có cùng các nút này; nếu không bật nút nào thì không có hàng sao chép."
+  },
+  "optMarkAwardHint": {
+    "message": "Bài báo xuất sắc nhất, kiệt xuất, ưu tú, giải khuyến khích, test of time và lọt chung kết bài xuất sắc nhất."
+  },
+  "optPanelTitle": {
+    "message": "Bảng tóm tắt"
+  },
+  "optPanelShow": {
+    "message": "Hiện bảng tóm tắt"
+  },
+  "optPanelShowHint": {
+    "message": "Bảng vai trò × hạng trên trang hồ sơ. Tắt: chỉ đánh dấu danh sách bài báo."
+  },
+  "optPanelSummary": {
+    "message": "Bảng vai trò × hạng"
+  },
+  "optPanelSummaryHint": {
+    "message": "Bảng các bài báo của bạn theo vị trí và hạng, kèm ghi chú về nguồn gốc các hạng."
+  },
+  "optPanelMarksHint": {
+    "message": "Số bài đoạt giải và các mức báo cáo, một cú nhấp để xem danh sách."
+  },
+  "optPanelStatus": {
+    "message": "Bài đã tải và venue chưa xếp hạng"
+  },
+  "optPanelStatusHint": {
+    "message": "Số bài đã tải, nút “Tải tất cả” và danh sách bài ở venue chưa xếp hạng."
+  },
+  "optPanelNames": {
+    "message": "Hỗ trợ cách viết tên"
+  },
+  "optPanelNamesHint": {
+    "message": "“Tên không khớp? Thêm cách viết” và các gợi ý cho tên của bạn."
+  },
+  "optPanelCompact": {
+    "message": "Gọn: chỉ bộ lọc và tổng trích dẫn"
+  },
+  "optAllOn": {
+    "message": "Bật tất cả"
+  },
+  "optAllOff": {
+    "message": "Tắt tất cả"
+  },
+  "optPanelFilters": {
+    "message": "Bộ lọc"
+  },
+  "optPanelFiltersHint": {
+    "message": "Chỉ bài được tô nổi và khoảng năm."
+  },
+  "optPanelMetrics": {
+    "message": "Tổng trích dẫn"
+  },
+  "optPanelMetricsHint": {
+    "message": "Số bài, trích dẫn, h-index và i10-index của các bài được tô nổi."
+  },
+  "optDataTitle": {
+    "message": "Dữ liệu đã lưu"
+  },
+  "optClearCache": {
+    "message": "Xóa chi tiết bài báo đã lưu"
+  },
+  "optCacheCount": {
+    "message": "Danh sách tác giả của $N1$ bài được lưu trên thiết bị này (giữ 90 ngày).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Chưa lưu chi tiết bài báo nào."
+  },
+  "optCleared": {
+    "message": "Đã xóa"
+  },
+  "optReset": {
+    "message": "Đặt lại mặc định"
+  },
+  "optResetConfirm": {
+    "message": "Đặt lại tất cả cài đặt này về mặc định?"
+  },
+  "optStorage": {
+    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Trang Scholar chỉ được đọc khi bạn mở chúng, còn tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
+  },
+  "optSample": {
+    "message": "Bài mẫu"
+  },
+  "optLoadTitle": {
+    "message": "Danh sách bài báo"
+  },
+  "optAutoLoad": {
+    "message": "Tự động tải tất cả bài báo"
+  },
+  "optAutoLoadHint": {
+    "message": "Ban đầu Scholar chỉ hiện vài bài đầu. Tùy chọn này bấm nút “Hiển thị thêm” của chính Scholar thay bạn, khoảng một lần mỗi giây, cho đến khi tải hết danh sách, và dừng nếu Scholar ngừng phản hồi. Tắt: bảng sẽ đưa ra nút “Tải tất cả”."
+  },
+  "loadStalled": {
+    "message": "Scholar không gửi thêm bài nào (đã tải $N1$). Hãy thử “Tải tất cả” lại sau giây lát.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Giải theo hạng mục"
+  },
+  "copyPapers": {
+    "message": "Sao chép bài báo"
+  },
+  "copyBibtex": {
+    "message": "Sao chép BibTeX"
+  },
+  "copyApa": {
+    "message": "Sao chép APA"
+  },
+  "copyMarkdown": {
+    "message": "Sao chép Markdown"
+  },
+  "copyJson": {
+    "message": "Sao chép JSON"
+  },
+  "exportCsv": {
+    "message": "Xuất CSV"
+  },
+  "copyEmpty": {
+    "message": "Không có gì để sao chép"
+  },
+  "exported": {
+    "message": "Đã xuất"
+  },
+  "tsvYear": {
+    "message": "Năm"
+  },
+  "tsvTitle": {
+    "message": "Tiêu đề"
+  },
+  "tsvAuthors": {
+    "message": "Tác giả"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Giải thưởng & báo cáo"
+  },
+  "tsvCitations": {
+    "message": "Trích dẫn"
+  },
+  "optHideTitle": {
+    "message": "Khối gốc của Scholar"
+  },
+  "optHideHint": {
+    "message": "Ẩn các phần của trang hồ sơ lặp lại bảng tóm tắt hoặc bạn không dùng. Không có gì bị ẩn cho đến khi bạn bật."
+  },
+  "optHideCited": {
+    "message": "Được trích dẫn bởi"
+  },
+  "optHideCitedHint": {
+    "message": "Bảng trích dẫn, h-index, i10-index và biểu đồ của nó: bảng tóm tắt hiện cùng các tổng đó cho các bài được tô nổi."
+  },
+  "optHideCo": {
+    "message": "Đồng tác giả"
+  },
+  "optHideCoHint": {
+    "message": "Danh sách đồng tác giả ở thanh bên."
+  },
+  "optHideAccess": {
+    "message": "Truy cập công khai"
+  },
+  "optHideAccessHint": {
+    "message": "Khung truy cập công khai ở thanh bên."
+  },
+  "optMergeTitle": {
+    "message": "Mục trùng lặp"
+  },
+  "optMergeHint": {
+    "message": "Một số hồ sơ liệt kê một bài nhiều lần."
+  },
+  "optMergeLabel": {
+    "message": "Gộp mục trùng lặp"
+  },
+  "optMergeLabelHint": {
+    "message": "Các mục cùng tiêu đề (không kể chữ hoa, dấu và dấu câu) và cùng tác giả đầu được gộp thành một: mục được trích dẫn nhiều nhất giữ lại và hiện trích dẫn của tất cả. Bảng tóm tắt chỉ đếm một lần."
+  },
+  "mergedTip": {
+    "message": "Gộp từ $N1$ mục: trích dẫn của tất cả",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Ngôn ngữ"
+  },
+  "optLanguageHint": {
+    "message": "Ngôn ngữ của tiện ích này và của các trang Scholar bạn mở."
+  },
+  "optLanguageUi": {
+    "message": "Ngôn ngữ tiện ích"
+  },
+  "optLanguageAuto": {
+    "message": "Theo trình duyệt"
+  },
+  "optLanguageScholar": {
+    "message": "Mở Scholar bằng"
+  },
+  "optLanguageScholarHint": {
+    "message": "Trang Scholar bạn mở bằng ngôn ngữ khác (ví dụ từ liên kết được chia sẻ) sẽ được mở lại bằng ngôn ngữ này."
+  },
+  "optLanguageKeep": {
+    "message": "Giữ nguyên"
+  },
+  "optColorsTitle": {
+    "message": "Màu sắc"
+  },
+  "optColorsHint": {
+    "message": "Màu của từng vai trò tác giả: dòng, dấu tên, bảng tóm tắt và cửa sổ trên thanh công cụ."
+  },
+  "optColorsReset": {
+    "message": "Về màu tiêu chuẩn"
+  },
+  "optThemes": {
+    "message": "Chủ đề màu"
+  },
+  "optThemeDefault": {
+    "message": "Mặc định"
+  },
+  "optThemeCool": {
+    "message": "Lạnh"
+  },
+  "optThemeWarm": {
+    "message": "Ấm"
+  },
+  "optThemeStrong": {
+    "message": "Tương phản cao"
+  },
+  "optThemeSoft": {
+    "message": "Dịu nhẹ"
+  },
+  "optContrastTip": {
+    "message": "Độ tương phản của màu này với nền trắng của Scholar. Từ 3:1 trở lên, thanh của hàng vẫn nhìn thấy được."
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight & Highlight"
+  },
+  "markTalks": {
+    "message": "Báo cáo"
+  },
+  "optTalkRows": {
+    "message": "Số dòng trong bảng"
+  },
+  "optTalkRowsHint": {
+    "message": "Cách đếm các mức báo cáo. Bài báo có nhiều hơn một mức được tính một lần."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight, Highlight riêng"
+  },
+  "optTalkPair": {
+    "message": "Spotlight và Highlight chung một dòng"
+  },
+  "optTalkAll": {
+    "message": "Cả ba chung một dòng"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Nơi thứ hai để tìm những gì Scholar bị cắt bớt."
+  },
+  "optSemanticLabel": {
+    "message": "Đọc danh sách tác giả từ Semantic Scholar trước"
+  },
+  "optSemanticLabelHint": {
+    "message": "Khi nhấn “Đọc danh sách đầy đủ”, trước hết hỏi Semantic Scholar danh sách tác giả đầy đủ của từng bài (chỉ gửi tiêu đề bài báo), và chỉ đọc trang của Scholar cho những gì nó không biết. Ít yêu cầu gửi đến Scholar hơn, nên cũng ít CAPTCHA hơn."
+  },
+  "yearsTitle": {
+    "message": "Bài được tô nổi theo năm"
+  },
+  "yearsOlder": {
+    "message": "$N1$ bài cũ hơn không được hiển thị",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optPanelYears": {
+    "message": "Bài theo năm"
+  },
+  "optPanelYearsHint": {
+    "message": "Một cột cho mỗi năm, theo màu vai trò."
+  },
+  "coverRepeats": {
+    "message": "Mục trùng với bài khác: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Gộp…"
+  },
+  "venuesTitle": {
+    "message": "Các bài được tô nổi xuất hiện ở đâu"
+  },
+  "optPanelVenues": {
+    "message": "Venue hàng đầu"
+  },
+  "optPanelVenuesHint": {
+    "message": "Các venue có xếp hạng của bài được tô nổi, xếp theo số bài từ nhiều đến ít; nhấp vào một venue để liệt kê bài của nó."
+  },
+  "optCopyDiagnostics": {
+    "message": "Sao chép chi tiết để báo lỗi"
+  },
+  "optSemanticKey": {
+    "message": "Khóa API (không bắt buộc)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Khóa miễn phí lấy từ semanticscholar.org/product/api giúp tránh giới hạn yêu cầu dùng chung mà những ai không có khóa đều phải chia sẻ. Khóa chỉ lưu trên thiết bị này (không đồng bộ) và chỉ được gửi tới Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar yêu cầu chậm lại, nên phần còn lại đã dùng trang của chính Scholar."
+  },
+  "optRowStyle": {
+    "message": "Tô sáng dòng"
+  },
+  "optRowStyleFull": {
+    "message": "Nền và thanh"
+  },
+  "optRowStyleBar": {
+    "message": "Chỉ thanh"
+  },
+  "optRowStyleTint": {
+    "message": "Chỉ nền"
+  },
+  "filterShowing": {
+    "message": "Hiển thị $N1$ trên tổng $N2$ bài",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Đặt lại"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ trích dẫn",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "Chưa bật vị trí tác giả nào, nên không có bài nào được tô nổi."
+  },
+  "metricsOfN": {
+    "message": "$N1$ trên $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "Lọc các bài báo h-core (≥$N1$ trích dẫn)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Lọc các bài báo i10 (≥10 trích dẫn)"
+  },
+  "popupPapersOf": {
+    "message": "$N1$ trên $N2$ bài",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar không chấp nhận khóa API, nên phần còn lại đã dùng trang của chính Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Quyền riêng tư"
+  },
+  "optLinkIssues": {
+    "message": "Báo cáo sự cố"
+  },
+  "filterPlaceholder": {
+    "message": "Lọc theo tiêu đề hoặc tác giả…"
+  },
+  "searchShortcut": {
+    "message": "Nhấn / để tìm kiếm"
+  },
+  "venuesShowMore": {
+    "message": "Xem thêm"
+  },
+  "venuesShowFewer": {
+    "message": "Thu gọn"
+  },
+  "optHideCitedTable": {
+    "message": "Bảng số liệu trích dẫn"
+  },
+  "optHideCitedTableHint": {
+    "message": "Bảng trích dẫn, chỉ số h và chỉ số i10 ở thanh bên."
+  },
+  "optHideCitedChart": {
+    "message": "Biểu đồ trích dẫn theo năm"
+  },
+  "optHideCitedChartHint": {
+    "message": "Biểu đồ tần suất trích dẫn hàng năm ở thanh bên."
+  },
+  "optConfigTitle": {
+    "message": "Cấu hình & cài đặt sẵn"
+  },
+  "optConfigHint": {
+    "message": "Cài đặt dưới dạng JSON: sao chép, lưu thành tệp, tải một tệp, hoặc dán thay đổi vào trình soạn thảo. Cài đặt sẵn chỉ đổi những gì nó nêu tên, và trang cho biết đã áp dụng gì và bỏ qua gì."
+  },
+  "optConfigCopy": {
+    "message": "Sao chép cấu hình (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Xuất tệp"
+  },
+  "optConfigImportFile": {
+    "message": "Nhập tệp"
+  },
+  "optConfigEditor": {
+    "message": "Dán hoặc sửa JSON"
+  },
+  "optConfigApply": {
+    "message": "Áp dụng cấu hình"
+  },
+  "optConfigApplied": {
+    "message": "Đã áp dụng thay đổi: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Không có gì để thay đổi: cài đặt đã như vậy."
+  },
+  "optConfigIgnored": {
+    "message": "Không được áp dụng:"
+  },
+  "optConfigError": {
+    "message": "Đây không phải JSON hợp lệ: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "Tác nhân AI"
+  },
+  "optAgentHint": {
+    "message": "Sao chép một hướng dẫn liệt kê mọi cài đặt, giá trị và lựa chọn hiện tại của bạn. Dán vào trợ lý AI, nêu điều bạn muốn, rồi dán câu trả lời vào trình soạn thảo JSON bên dưới và nhấn “Áp dụng cấu hình”."
+  },
+  "optAgentCopy": {
+    "message": "Sao chép hướng dẫn"
+  },
+  "optConfigPreset": {
+    "message": "Cài đặt sẵn"
+  },
+  "optPresetLast": {
+    "message": "Ưu tiên tác giả cuối"
+  },
+  "optPresetFull": {
+    "message": "Bật tất cả tính năng"
+  },
+  "optPresetFirst": {
+    "message": "Ưu tiên tác giả đầu tiên"
+  },
+  "optPresetMinimal": {
+    "message": "Tối giản"
+  },
+  "optViewCache": {
+    "message": "Xem chi tiết đã lưu"
+  },
+  "optSearchPlaceholder": {
+    "message": "Tìm trong cài đặt…"
+  },
+  "optSearchClear": {
+    "message": "Xóa tìm kiếm"
+  },
+  "optCacheTitle": {
+    "message": "Chi tiết bài báo đã lưu"
+  },
+  "optCacheSearch": {
+    "message": "Lọc các bài báo đã lưu…"
+  },
+  "optCacheCopy": {
+    "message": "Sao chép bộ nhớ đệm (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Chưa có chi tiết bài báo nào được lưu trên thiết bị này."
+  },
+  "optCacheShown": {
+    "message": "Hiển thị $N1$ trên $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Nguồn"
+  },
+  "optCacheClose": {
+    "message": "Đóng"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}

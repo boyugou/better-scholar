@@ -1,0 +1,1063 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "谷歌學術學者首頁增強：署名位次、CCF 與 CORE 等級、頂會獎項、年份圖譜與即時檢索。"
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "依位次與等級統計論文"
+  },
+  "summaryTitleRoles": {
+    "message": "依位次統計論文"
+  },
+  "marksTitle": {
+    "message": "獲獎與報告形式"
+  },
+  "markAward": {
+    "message": "獲獎"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "最佳論文"
+  },
+  "mkBestStudent": {
+    "message": "最佳學生論文"
+  },
+  "mkOutstanding": {
+    "message": "傑出論文"
+  },
+  "mkDistinguished": {
+    "message": "卓越論文"
+  },
+  "mkRunnerUp": {
+    "message": "榮譽提名"
+  },
+  "mkTot": {
+    "message": "時間考驗獎"
+  },
+  "mkFinalist": {
+    "message": "最佳論文入圍"
+  },
+  "mkOral": {
+    "message": "口頭報告"
+  },
+  "mkSpotlight": {
+    "message": "聚光報告"
+  },
+  "mkHighlight": {
+    "message": "亮點報告"
+  },
+  "marksHint": {
+    "message": "依據作者在 Scholar 上於各論文標題與發表處文字中自行標註的內容（未經查證），以及內建的各大會議獲獎論文清單。"
+  },
+  "marksAsWritten": {
+    "message": "來自作者自行標註或獲獎清單"
+  },
+  "tipMarkAuthor": {
+    "message": "作者自行標註（未經查證）：「$N1$」",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "在獲獎清單中：$N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "只看已標示的"
+  },
+  "yearLabel": {
+    "message": "年份"
+  },
+  "yearStart": {
+    "message": "起"
+  },
+  "yearEnd": {
+    "message": "迄"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "第一作者"
+  },
+  "roleCofirst": {
+    "message": "共同第一"
+  },
+  "roleSecond": {
+    "message": "第二作者"
+  },
+  "roleLast": {
+    "message": "最後作者"
+  },
+  "roleMiddle": {
+    "message": "其他"
+  },
+  "roleHidden": {
+    "message": "被隱藏"
+  },
+  "colRole": {
+    "message": "位次"
+  },
+  "colTotal": {
+    "message": "合計"
+  },
+  "tipUnranked": {
+    "message": "未收錄等級"
+  },
+  "tipHidden": {
+    "message": "Scholar 截短了作者列表，看不到本頁擁有者的排序位置"
+  },
+  "copySummary": {
+    "message": "複製摘要"
+  },
+  "copyTable": {
+    "message": "複製為表格"
+  },
+  "copied": {
+    "message": "已複製"
+  },
+  "coverLoaded": {
+    "message": "已載入 $N1$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "已載入 1 篇論文"
+  },
+  "loadingAll": {
+    "message": "載入中… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "全部載入"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "coverHidden": {
+    "message": "$N1$ 篇的位次因作者列表被截短而無法判斷",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 篇的位次因作者列表被截短而無法判斷"
+  },
+  "resolveBtn": {
+    "message": "補全"
+  },
+  "resolveHint": {
+    "message": "逐一開啟各論文在 Scholar 上的頁面（約每秒一篇），讀取完整作者列表。"
+  },
+  "resolveHintSemantic": {
+    "message": "先向 Semantic Scholar 查詢每篇論文的作者列表（只傳送論文標題），其餘論文則逐一開啟它們在 Scholar 上的頁面（約每秒一篇）。"
+  },
+  "resolving": {
+    "message": "正在讀取作者列表… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google 要求完成驗證碼。請在一般分頁中完成後再試一次。"
+  },
+  "resolveDone": {
+    "message": "完成。"
+  },
+  "coverAbsent": {
+    "message": "$N1$ 篇論文的作者列表中找不到本頁姓名",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 篇論文的作者列表中找不到本頁姓名"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ 篇論文的發表處沒有等級",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 篇論文的發表處沒有等級"
+  },
+  "copyUnmatched": {
+    "message": "複製清單"
+  },
+  "reportLink": {
+    "message": "回報"
+  },
+  "layoutWarning": {
+    "message": "Scholar 的頁面版面似乎已更動，本擴充功能無法讀取作者行。請回報此問題。"
+  },
+  "variantsTitle": {
+    "message": "姓名對不上？新增一種拼法"
+  },
+  "variantsPlaceholder": {
+    "message": "例如：Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "新增"
+  },
+  "variantRemove": {
+    "message": "移除"
+  },
+  "variantAutoTip": {
+    "message": "已自動新增：將頁面姓名前後對調後，可在 $1 篇論文中找到您"
+  },
+  "variantSuggest": {
+    "message": "可能是您："
+  },
+  "variantSuggestTip": {
+    "message": "出現在 $1 篇作者列表中原本未列出您的論文裡——點擊即可新增此拼法"
+  },
+  "expand": {
+    "message": "展開"
+  },
+  "collapse": {
+    "message": "收合"
+  },
+  "metricsTitle": {
+    "message": "已標示的論文"
+  },
+  "mPapers": {
+    "message": "論文"
+  },
+  "mCitations": {
+    "message": "引用次數"
+  },
+  "mH": {
+    "message": "h 指數"
+  },
+  "mI10": {
+    "message": "i10 指數"
+  },
+  "dataNote": {
+    "message": "等級依據目前的 $N1$ 清單，並非論文發表當時的等級。CCF 聲明其清單不應作為學術評價的依據。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "本頁的發表處都不在 $N1$ 清單上，這些清單涵蓋資訊科學。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "依名稱比對"
+  },
+  "ruleAcronym": {
+    "message": "依縮寫比對"
+  },
+  "rulePrefix": {
+    "message": "依被截短名稱的可見部分比對"
+  },
+  "tipToday": {
+    "message": "目前的清單，非發表當時的等級"
+  },
+  "tipPosition": {
+    "message": "第 $N1$ 位，共 $N2$ 位",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "來自論文頁面"
+  },
+  "copyFirst": {
+    "message": "第一作者"
+  },
+  "copyCofirst": {
+    "message": "共同第一作者"
+  },
+  "copySecond": {
+    "message": "第二作者"
+  },
+  "copyLast": {
+    "message": "最後作者"
+  },
+  "copyMiddle": {
+    "message": "其他位次"
+  },
+  "tsvRole": {
+    "message": "位次"
+  },
+  "tsvTotal": {
+    "message": "合計"
+  },
+  "popupNotProfile": {
+    "message": "開啟 Google 學術搜尋的作者頁面，即可在此查看摘要。"
+  },
+  "popupReading": {
+    "message": "正在讀取頁面…"
+  },
+  "popupPapers": {
+    "message": "$N1$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 篇論文"
+  },
+  "popupOpenScholar": {
+    "message": "開啟 Google 學術搜尋"
+  },
+  "settingsOpen": {
+    "message": "設定"
+  },
+  "optHeading": {
+    "message": "設定"
+  },
+  "optPreviewTitle": {
+    "message": "預覽"
+  },
+  "optPreviewNote": {
+    "message": "範例論文在 Scholar 作者頁面上的樣子。「A Author」就是您。"
+  },
+  "optSaved": {
+    "message": "已儲存"
+  },
+  "optRolesTitle": {
+    "message": "標示我的論文"
+  },
+  "optRolesHint": {
+    "message": "每種位次各有一種列底色。您排在中間的論文維持原樣。"
+  },
+  "optMarkName": {
+    "message": "在作者行中標出我的姓名"
+  },
+  "optMarkNameHint": {
+    "message": "粗體並加底色。將游標移上去可看到您的排序位置。"
+  },
+  "optCcf": {
+    "message": "CCF 等級"
+  },
+  "optCcfHint": {
+    "message": "中國計算機學會推薦目錄，第七版（2026）。"
+  },
+  "optCore": {
+    "message": "CORE 等級"
+  },
+  "optCoreHint": {
+    "message": "CORE 會議排名，ICORE 2026。"
+  },
+  "optMarksTitle": {
+    "message": "獲獎與報告形式"
+  },
+  "optCopyTitle": {
+    "message": "複製與匯出"
+  },
+  "optCopyHint": {
+    "message": "哪些按鈕會把顯示的論文或摘要以文字形式複製或儲存。面板和工具列彈出視窗提供的是同樣的按鈕；全部關閉時，就沒有複製列。"
+  },
+  "optMarkAwardHint": {
+    "message": "最佳論文、傑出論文、卓越論文、榮譽提名、時間考驗獎與最佳論文入圍。"
+  },
+  "optPanelTitle": {
+    "message": "摘要面板"
+  },
+  "optPanelShow": {
+    "message": "顯示摘要面板"
+  },
+  "optPanelShowHint": {
+    "message": "作者頁面上的位次×等級表。關閉後，只標示論文列表。"
+  },
+  "optPanelSummary": {
+    "message": "位次×等級表"
+  },
+  "optPanelSummaryHint": {
+    "message": "您的論文表格，依位次與等級列出，並附等級來源的說明。"
+  },
+  "optPanelMarksHint": {
+    "message": "獲獎論文與各級報告的數量，點一下即可列出。"
+  },
+  "optPanelStatus": {
+    "message": "已載入論文與無等級的發表處"
+  },
+  "optPanelStatusHint": {
+    "message": "已載入的論文數、「全部載入」按鈕，以及發表處沒有等級的論文清單。"
+  },
+  "optPanelNames": {
+    "message": "姓名拼法輔助"
+  },
+  "optPanelNamesHint": {
+    "message": "「姓名對不上？新增一種拼法」及對您姓名的建議。"
+  },
+  "optPanelCompact": {
+    "message": "精簡：僅篩選與引用統計"
+  },
+  "optAllOn": {
+    "message": "全部開啟"
+  },
+  "optAllOff": {
+    "message": "全部關閉"
+  },
+  "optPanelFilters": {
+    "message": "篩選"
+  },
+  "optPanelFiltersHint": {
+    "message": "只看已標示的論文，以及年份範圍。"
+  },
+  "optPanelMetrics": {
+    "message": "引用統計"
+  },
+  "optPanelMetricsHint": {
+    "message": "已標示論文的篇數、引用次數、h 指數與 i10 指數。"
+  },
+  "optDataTitle": {
+    "message": "已儲存的資料"
+  },
+  "optClearCache": {
+    "message": "清除已儲存的論文資料"
+  },
+  "optCacheCount": {
+    "message": "此裝置上儲存了 $N1$ 篇論文的作者列表（保留 90 天）。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "此裝置上儲存了 1 篇論文的作者列表（保留 90 天）。"
+  },
+  "optCacheNone": {
+    "message": "沒有儲存任何論文資料。"
+  },
+  "optCleared": {
+    "message": "已清除"
+  },
+  "optReset": {
+    "message": "還原預設值"
+  },
+  "optResetConfirm": {
+    "message": "要將這些設定全部還原為預設值嗎？"
+  },
+  "optStorage": {
+    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。Scholar 頁面僅在您開啟時才會讀取；只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
+  },
+  "optSample": {
+    "message": "範例論文"
+  },
+  "optLoadTitle": {
+    "message": "論文列表"
+  },
+  "optAutoLoad": {
+    "message": "自動載入全部論文"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar 起初只顯示前幾篇論文。此選項會代您按下其「顯示更多」按鈕，約每秒一次，直到載入整份列表，Scholar 不再回應時即停止。關閉後，面板會改為提供「全部載入」。"
+  },
+  "loadStalled": {
+    "message": "Scholar 沒有再傳來論文（已載入 $N1$ 篇）。請稍後再按一次「全部載入」。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "分項獎"
+  },
+  "copyPapers": {
+    "message": "複製論文"
+  },
+  "copyBibtex": {
+    "message": "複製 BibTeX"
+  },
+  "copyApa": {
+    "message": "複製 APA"
+  },
+  "copyMarkdown": {
+    "message": "複製 Markdown"
+  },
+  "copyJson": {
+    "message": "複製 JSON"
+  },
+  "exportCsv": {
+    "message": "匯出 CSV"
+  },
+  "copyEmpty": {
+    "message": "沒有可複製的內容"
+  },
+  "exported": {
+    "message": "已匯出"
+  },
+  "tsvYear": {
+    "message": "年份"
+  },
+  "tsvTitle": {
+    "message": "標題"
+  },
+  "tsvAuthors": {
+    "message": "作者"
+  },
+  "tsvVenue": {
+    "message": "發表處"
+  },
+  "tsvAwards": {
+    "message": "獲獎與報告"
+  },
+  "tsvCitations": {
+    "message": "引用次數"
+  },
+  "optHideTitle": {
+    "message": "Scholar 原有區塊"
+  },
+  "optHideHint": {
+    "message": "隱藏作者頁面上與面板重複或您用不到的部分。開啟之前不會隱藏任何內容。"
+  },
+  "optHideCited": {
+    "message": "引用次數"
+  },
+  "optHideCitedHint": {
+    "message": "引用次數、h 指數與 i10 指數的表格及圖表：面板會顯示已標示論文的相同統計。"
+  },
+  "optHideCo": {
+    "message": "合著者"
+  },
+  "optHideCoHint": {
+    "message": "側邊欄中的合著者列表。"
+  },
+  "optHideAccess": {
+    "message": "公開存取"
+  },
+  "optHideAccessHint": {
+    "message": "側邊欄中的公開存取方塊。"
+  },
+  "optMergeTitle": {
+    "message": "重複項目"
+  },
+  "optMergeHint": {
+    "message": "有些作者頁面會把同一篇論文列出多次。"
+  },
+  "optMergeLabel": {
+    "message": "合併重複項目"
+  },
+  "optMergeLabelHint": {
+    "message": "標題相同（不計大小寫、重音與標點）且第一作者相同的項目會合併為一筆：保留引用次數最多的，並顯示全部項目的引用總數。面板只計一次。"
+  },
+  "mergedTip": {
+    "message": "由 $N1$ 筆項目合併：顯示全部項目的引用總數",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "語言"
+  },
+  "optLanguageHint": {
+    "message": "本擴充功能的語言，以及您開啟的 Scholar 頁面的語言。"
+  },
+  "optLanguageUi": {
+    "message": "擴充功能語言"
+  },
+  "optLanguageAuto": {
+    "message": "跟隨瀏覽器"
+  },
+  "optLanguageScholar": {
+    "message": "以此語言開啟 Scholar"
+  },
+  "optLanguageScholarHint": {
+    "message": "若您開啟的 Scholar 頁面是其他語言（例如他人分享的連結），會改以此語言重新開啟。"
+  },
+  "optLanguageKeep": {
+    "message": "維持不變"
+  },
+  "optColorsTitle": {
+    "message": "顏色"
+  },
+  "optColorsHint": {
+    "message": "每種作者位次的顏色：論文列、姓名標記、面板與工具列彈出視窗。"
+  },
+  "optColorsReset": {
+    "message": "還原預設顏色"
+  },
+  "optThemes": {
+    "message": "配色主題"
+  },
+  "optThemeDefault": {
+    "message": "預設"
+  },
+  "optThemeCool": {
+    "message": "冷色"
+  },
+  "optThemeWarm": {
+    "message": "暖色"
+  },
+  "optThemeStrong": {
+    "message": "高對比"
+  },
+  "optThemeSoft": {
+    "message": "柔和"
+  },
+  "optContrastTip": {
+    "message": "此顏色與 Scholar 白色頁面的對比。3:1 或更高時，列的色條仍可見。"
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight 與 Highlight"
+  },
+  "markTalks": {
+    "message": "報告形式"
+  },
+  "optTalkRows": {
+    "message": "面板裡的行"
+  },
+  "optTalkRowsHint": {
+    "message": "報告形式如何計數。合併後，同時具有多種的論文只算一次。"
+  },
+  "optTalkSeparate": {
+    "message": "Oral、Spotlight、Highlight 分開"
+  },
+  "optTalkPair": {
+    "message": "Spotlight 與 Highlight 合為一行"
+  },
+  "optTalkAll": {
+    "message": "三種合為一行"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Scholar 截斷的內容，多一個地方可查。"
+  },
+  "optSemanticLabel": {
+    "message": "優先用 Semantic Scholar 補全作者列表"
+  },
+  "optSemanticLabelHint": {
+    "message": "按下「補全」時，先向 Semantic Scholar 詢問每篇論文的完整作者列表（只傳送論文標題，不傳其他資料），它不認得的才去讀 Scholar 自己的頁面。對 Scholar 的請求更少，驗證碼也更少。"
+  },
+  "yearsTitle": {
+    "message": "各年份的已標示論文"
+  },
+  "yearsOlder": {
+    "message": "未顯示 $N1$ 篇更早的論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "未顯示 1 篇更早的論文"
+  },
+  "optPanelYears": {
+    "message": "依年份統計"
+  },
+  "optPanelYearsHint": {
+    "message": "每年一根柱，用各位次的顏色。"
+  },
+  "coverRepeats": {
+    "message": "與另一篇重複的條目：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "合併…"
+  },
+  "venuesTitle": {
+    "message": "已標示論文的發表處"
+  },
+  "optPanelVenues": {
+    "message": "常見發表處"
+  },
+  "optPanelVenuesHint": {
+    "message": "已標示論文所在、有等級的發表處，依篇數由多到少；點一個即可只看它的論文。"
+  },
+  "optCopyDiagnostics": {
+    "message": "複製問題回報所需的資訊"
+  },
+  "optSemanticKey": {
+    "message": "API 金鑰（選填）"
+  },
+  "optSemanticKeyHint": {
+    "message": "到 semanticscholar.org/product/api 免費申請一組金鑰，就能避開所有沒有金鑰的人共用的請求上限。金鑰只存在這台裝置上（不會同步），且只會傳送給 Semantic Scholar。"
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar 要求放慢速度，其餘改為讀取 Scholar 自己的頁面。"
+  },
+  "optRowStyle": {
+    "message": "列標示"
+  },
+  "optRowStyleFull": {
+    "message": "底色與色條"
+  },
+  "optRowStyleBar": {
+    "message": "僅色條"
+  },
+  "optRowStyleTint": {
+    "message": "僅底色"
+  },
+  "filterShowing": {
+    "message": "顯示 $N1$ / $N2$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "清除"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ 次引用",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "沒有開啟任何作者位次，所以沒有標示的論文。"
+  },
+  "metricsOfN": {
+    "message": "$N1$／$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "篩選 h-core 核心論文（引用 ≥$N1$）",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "篩選 i10 論文（引用 ≥10）"
+  },
+  "popupPapersOf": {
+    "message": "$N1$／$N2$ 篇論文",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar 不接受這個 API 金鑰，其餘改為讀取 Scholar 自己的頁面。"
+  },
+  "optLinkPrivacy": {
+    "message": "隱私權"
+  },
+  "optLinkIssues": {
+    "message": "回報問題"
+  },
+  "filterPlaceholder": {
+    "message": "依標題或作者篩選…"
+  },
+  "searchShortcut": {
+    "message": "按 / 鍵搜尋"
+  },
+  "venuesShowMore": {
+    "message": "顯示更多"
+  },
+  "venuesShowFewer": {
+    "message": "收起"
+  },
+  "optHideCitedTable": {
+    "message": "引用指標表格"
+  },
+  "optHideCitedTableHint": {
+    "message": "側邊欄中的引用數、h-index 與 i10-index 表格。"
+  },
+  "optHideCitedChart": {
+    "message": "每年引用統計圖"
+  },
+  "optHideCitedChartHint": {
+    "message": "側邊欄中的歷年引用統計長條圖。"
+  },
+  "optConfigTitle": {
+    "message": "設定與預設"
+  },
+  "optConfigHint": {
+    "message": "以 JSON 形式提供的設定：可以複製、儲存為檔案、載入檔案，或把變更貼到編輯框中。預設只會改變它列出的項目，頁面會說明已套用了什麼、略過了什麼。"
+  },
+  "optConfigCopy": {
+    "message": "複製設定 (JSON)"
+  },
+  "optConfigExport": {
+    "message": "匯出檔案"
+  },
+  "optConfigImportFile": {
+    "message": "匯入檔案"
+  },
+  "optConfigEditor": {
+    "message": "貼上或編輯設定 (JSON)"
+  },
+  "optConfigApply": {
+    "message": "套用設定"
+  },
+  "optConfigApplied": {
+    "message": "已套用 $N1$ 項變更",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "無需變更：設定已是這樣了。"
+  },
+  "optConfigIgnored": {
+    "message": "未套用："
+  },
+  "optConfigError": {
+    "message": "這不是有效的 JSON：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI 代理"
+  },
+  "optAgentHint": {
+    "message": "複製一份指南，其中列出所有設定、它們的值以及您目前的選擇。把它貼給您的 AI 助手，說明您的需求，再把它的回覆貼到下方的設定編輯框中，然後按「套用設定」。"
+  },
+  "optAgentCopy": {
+    "message": "複製代理指南"
+  },
+  "optConfigPreset": {
+    "message": "快速預設"
+  },
+  "optPresetLast": {
+    "message": "最後作者偏好"
+  },
+  "optPresetFull": {
+    "message": "全功能開啟"
+  },
+  "optPresetFirst": {
+    "message": "第一作者偏好"
+  },
+  "optPresetMinimal": {
+    "message": "極簡風格"
+  },
+  "optViewCache": {
+    "message": "查看已儲存詳情"
+  },
+  "optSearchPlaceholder": {
+    "message": "搜尋設定…"
+  },
+  "optSearchClear": {
+    "message": "清除搜尋"
+  },
+  "optCacheTitle": {
+    "message": "已儲存論文詳情"
+  },
+  "optCacheSearch": {
+    "message": "搜尋已快取論文…"
+  },
+  "optCacheCopy": {
+    "message": "複製快取 (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "此裝置上尚未儲存任何論文詳情。"
+  },
+  "optCacheShown": {
+    "message": "已顯示：$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "來源"
+  },
+  "optCacheClose": {
+    "message": "關閉"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}

@@ -1,0 +1,1042 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "Улучшение Google Scholar: порядок соавторов, ранги CCF и CORE, награды конференций, графики по годам и мгновенный поиск."
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "Статьи по роли и рангу"
+  },
+  "summaryTitleRoles": {
+    "message": "Статьи по роли"
+  },
+  "marksTitle": {
+    "message": "Награды и доклады"
+  },
+  "markAward": {
+    "message": "Награды"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Лучшая статья"
+  },
+  "mkBestStudent": {
+    "message": "Лучшая студенческая статья"
+  },
+  "mkOutstanding": {
+    "message": "Выдающаяся статья"
+  },
+  "mkDistinguished": {
+    "message": "Отмеченная статья"
+  },
+  "mkRunnerUp": {
+    "message": "Почётное упоминание"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Финалист лучшей статьи"
+  },
+  "mkOral": {
+    "message": "Устный доклад"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "По собственным словам авторов в названии и описании издания каждой статьи в Scholar (не проверяются) и по встроенному списку награждённых статей крупных конференций."
+  },
+  "marksAsWritten": {
+    "message": "по словам авторов или по списку наград"
+  },
+  "tipMarkAuthor": {
+    "message": "Указано автором (не проверено): «$N1$»",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "В списке наград: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Только выделенные"
+  },
+  "yearLabel": {
+    "message": "Год"
+  },
+  "yearStart": {
+    "message": "От"
+  },
+  "yearEnd": {
+    "message": "До"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Первый"
+  },
+  "roleCofirst": {
+    "message": "Со-первый"
+  },
+  "roleSecond": {
+    "message": "Второй"
+  },
+  "roleLast": {
+    "message": "Последний"
+  },
+  "roleMiddle": {
+    "message": "Прочие"
+  },
+  "roleHidden": {
+    "message": "Скрыто"
+  },
+  "colRole": {
+    "message": "Роль"
+  },
+  "colTotal": {
+    "message": "Все"
+  },
+  "tipUnranked": {
+    "message": "Без ранга"
+  },
+  "tipHidden": {
+    "message": "Scholar обрезал список авторов, поэтому позиция владельца профиля не видна"
+  },
+  "copySummary": {
+    "message": "Копировать сводку"
+  },
+  "copyTable": {
+    "message": "Копировать таблицей"
+  },
+  "copied": {
+    "message": "Скопировано"
+  },
+  "coverLoaded": {
+    "message": "Загружено статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadingAll": {
+    "message": "Загрузка… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Загрузить все"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "coverHidden": {
+    "message": "Ролей скрыто из-за обрезанных списков авторов: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "resolveBtn": {
+    "message": "Читать полные списки"
+  },
+  "resolveHint": {
+    "message": "Открывает страницу каждой статьи в Scholar (примерно по одной в секунду), чтобы прочитать полный список авторов."
+  },
+  "resolveHintSemantic": {
+    "message": "Сначала запрашивает у Semantic Scholar список авторов каждой статьи (отправляется только название статьи), а затем открывает в Scholar страницы оставшихся статей (примерно по одной в секунду)."
+  },
+  "resolving": {
+    "message": "Чтение списков авторов… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google запросил CAPTCHA. Пройдите её в обычной вкладке и повторите."
+  },
+  "resolveDone": {
+    "message": "Готово."
+  },
+  "coverAbsent": {
+    "message": "Статей, где имени из профиля нет среди авторов: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatched": {
+    "message": "Статей в изданиях без ранга: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "copyUnmatched": {
+    "message": "Копировать список"
+  },
+  "reportLink": {
+    "message": "Сообщить"
+  },
+  "layoutWarning": {
+    "message": "Похоже, вёрстка Scholar изменилась: расширение не может прочитать строки авторов. Пожалуйста, сообщите об этом."
+  },
+  "variantsTitle": {
+    "message": "Имя не совпадает? Добавьте написание"
+  },
+  "variantsPlaceholder": {
+    "message": "напр. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Добавить"
+  },
+  "variantRemove": {
+    "message": "Удалить"
+  },
+  "variantAutoTip": {
+    "message": "Добавлено автоматически: имя из вашего профиля в другом порядке находит вас в статьях: $1"
+  },
+  "variantSuggest": {
+    "message": "Возможно, вы:"
+  },
+  "variantSuggestTip": {
+    "message": "Встречается в статьях, где вас иначе нет в списке авторов ($1) — нажмите, чтобы добавить это написание"
+  },
+  "expand": {
+    "message": "Развернуть"
+  },
+  "collapse": {
+    "message": "Свернуть"
+  },
+  "metricsTitle": {
+    "message": "Выделенные статьи"
+  },
+  "mPapers": {
+    "message": "Статьи"
+  },
+  "mCitations": {
+    "message": "Цитирования"
+  },
+  "mH": {
+    "message": "h-индекс"
+  },
+  "mI10": {
+    "message": "i10-индекс"
+  },
+  "dataNote": {
+    "message": "Ранги берутся из актуальных списков $N1$, а не на момент публикации. CCF заявляет, что его список не служит основанием для академической оценки.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Ни одно из изданий этого профиля не входит в списки $N1$, которые охватывают компьютерные науки.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Найдено по названию"
+  },
+  "ruleAcronym": {
+    "message": "Найдено по аббревиатуре"
+  },
+  "rulePrefix": {
+    "message": "Найдено по видимой части обрезанного названия"
+  },
+  "tipToday": {
+    "message": "актуальный список, а не ранг на момент публикации"
+  },
+  "tipPosition": {
+    "message": "позиция $N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "со страницы статьи"
+  },
+  "copyFirst": {
+    "message": "Первый автор"
+  },
+  "copyCofirst": {
+    "message": "Со-первый автор"
+  },
+  "copySecond": {
+    "message": "Второй автор"
+  },
+  "copyLast": {
+    "message": "Последний автор"
+  },
+  "copyMiddle": {
+    "message": "Прочие позиции"
+  },
+  "tsvRole": {
+    "message": "Роль"
+  },
+  "tsvTotal": {
+    "message": "Всего"
+  },
+  "popupNotProfile": {
+    "message": "Откройте профиль автора в Google Scholar, чтобы увидеть здесь сводку."
+  },
+  "popupReading": {
+    "message": "Чтение страницы…"
+  },
+  "popupPapers": {
+    "message": "Статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupOpenScholar": {
+    "message": "Открыть Google Scholar"
+  },
+  "settingsOpen": {
+    "message": "Настройки"
+  },
+  "optHeading": {
+    "message": "Настройки"
+  },
+  "optPreviewTitle": {
+    "message": "Предпросмотр"
+  },
+  "optPreviewNote": {
+    "message": "Примеры статей так, как они выглядят в профиле Scholar. «A Author» — это вы."
+  },
+  "optSaved": {
+    "message": "Сохранено"
+  },
+  "optRolesTitle": {
+    "message": "Выделять мои статьи"
+  },
+  "optRolesHint": {
+    "message": "Для каждой позиции — свой цвет строки. Статьи, где вы в середине списка, остаются без выделения."
+  },
+  "optMarkName": {
+    "message": "Отмечать моё имя в строке авторов"
+  },
+  "optMarkNameHint": {
+    "message": "Жирным и цветом. Наведите курсор, чтобы увидеть позицию."
+  },
+  "optCcf": {
+    "message": "Ранг CCF"
+  },
+  "optCcfHint": {
+    "message": "Список China Computer Federation, 7-я редакция (2026)."
+  },
+  "optCore": {
+    "message": "Ранг CORE"
+  },
+  "optCoreHint": {
+    "message": "Рейтинг конференций CORE, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Награды и доклады"
+  },
+  "optCopyTitle": {
+    "message": "Копирование и экспорт"
+  },
+  "optCopyHint": {
+    "message": "Какие кнопки копируют или сохраняют показанные статьи или сводку в виде текста. Панель и всплывающее окно на панели инструментов предлагают те же кнопки. Если ни одна не включена, строки копирования нет."
+  },
+  "optMarkAwardHint": {
+    "message": "Лучшая, выдающаяся и отмеченная статья, почётное упоминание, test of time и финалисты лучшей статьи."
+  },
+  "optPanelTitle": {
+    "message": "Панель сводки"
+  },
+  "optPanelShow": {
+    "message": "Показывать панель сводки"
+  },
+  "optPanelShowHint": {
+    "message": "Таблица «роль × ранг» на странице профиля. Выкл.: размечается только список статей."
+  },
+  "optPanelSummary": {
+    "message": "Таблица «роль × ранг»"
+  },
+  "optPanelSummaryHint": {
+    "message": "Таблица ваших статей по позиции и рангу, с примечанием о том, откуда взяты ранги."
+  },
+  "optPanelMarksHint": {
+    "message": "Число награждённых статей и видов докладов; в один клик — список."
+  },
+  "optPanelStatus": {
+    "message": "Загруженные статьи и издания без ранга"
+  },
+  "optPanelStatusHint": {
+    "message": "Сколько статей загружено, кнопка «Загрузить все» и список статей в изданиях без ранга."
+  },
+  "optPanelNames": {
+    "message": "Помощь с написанием имени"
+  },
+  "optPanelNamesHint": {
+    "message": "«Имя не совпадает? Добавьте написание» и подсказки для вашего имени."
+  },
+  "optPanelCompact": {
+    "message": "Компактно: только фильтры и итоги цитирований"
+  },
+  "optAllOn": {
+    "message": "Включить все"
+  },
+  "optAllOff": {
+    "message": "Выключить все"
+  },
+  "optPanelFilters": {
+    "message": "Фильтры"
+  },
+  "optPanelFiltersHint": {
+    "message": "Только выделенные статьи и диапазон лет."
+  },
+  "optPanelMetrics": {
+    "message": "Итоги цитирований"
+  },
+  "optPanelMetricsHint": {
+    "message": "Статьи, цитирования, h-индекс и i10-индекс выделенных статей."
+  },
+  "optDataTitle": {
+    "message": "Сохранённые данные"
+  },
+  "optClearCache": {
+    "message": "Очистить сохранённые сведения о статьях"
+  },
+  "optCacheCount": {
+    "message": "Списков авторов сохранено на этом устройстве: $N1$ (хранятся 90 дней).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheNone": {
+    "message": "Сведения о статьях не сохранены."
+  },
+  "optCleared": {
+    "message": "Очищено"
+  },
+  "optReset": {
+    "message": "Сбросить настройки"
+  },
+  "optResetConfirm": {
+    "message": "Сбросить все эти настройки к значениям по умолчанию?"
+  },
+  "optStorage": {
+    "message": "Настройки хранятся в браузере и синхронизируются с профилем Chrome. Страницы Scholar читаются только тогда, когда вы их открываете, а названия статей отправляются в Semantic Scholar, только если вы это включите."
+  },
+  "optSample": {
+    "message": "Пример статьи"
+  },
+  "optLoadTitle": {
+    "message": "Список статей"
+  },
+  "optAutoLoad": {
+    "message": "Загружать все статьи автоматически"
+  },
+  "optAutoLoadHint": {
+    "message": "Сначала Scholar показывает только первые статьи. Расширение само нажимает его кнопку «Показать ещё» примерно раз в секунду, пока не загрузится весь список, и останавливается, если Scholar перестаёт отвечать. Выкл.: на панели будет кнопка «Загрузить все»."
+  },
+  "loadStalled": {
+    "message": "Scholar больше не присылает статьи (загружено: $N1$). Попробуйте «Загрузить все» ещё раз чуть позже.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Награда в категории"
+  },
+  "copyPapers": {
+    "message": "Копировать статьи"
+  },
+  "copyBibtex": {
+    "message": "Копировать BibTeX"
+  },
+  "copyApa": {
+    "message": "Копировать APA"
+  },
+  "copyMarkdown": {
+    "message": "Копировать Markdown"
+  },
+  "copyJson": {
+    "message": "Копировать JSON"
+  },
+  "exportCsv": {
+    "message": "Экспорт CSV"
+  },
+  "copyEmpty": {
+    "message": "Нечего копировать"
+  },
+  "exported": {
+    "message": "Экспортировано"
+  },
+  "tsvYear": {
+    "message": "Год"
+  },
+  "tsvTitle": {
+    "message": "Название"
+  },
+  "tsvAuthors": {
+    "message": "Авторы"
+  },
+  "tsvVenue": {
+    "message": "Издание"
+  },
+  "tsvAwards": {
+    "message": "Награды и доклады"
+  },
+  "tsvCitations": {
+    "message": "Цитирования"
+  },
+  "optHideTitle": {
+    "message": "Собственные блоки Scholar"
+  },
+  "optHideHint": {
+    "message": "Скройте части страницы профиля, которые повторяют панель или не нужны вам. Пока вы не включите, ничего не скрывается."
+  },
+  "optHideCited": {
+    "message": "Цитируется"
+  },
+  "optHideCitedHint": {
+    "message": "Таблица цитирований, h-индекса и i10-индекса и её график: панель показывает те же итоги для выделенных статей."
+  },
+  "optHideCo": {
+    "message": "Соавторы"
+  },
+  "optHideCoHint": {
+    "message": "Список соавторов на боковой панели."
+  },
+  "optHideAccess": {
+    "message": "Открытый доступ"
+  },
+  "optHideAccessHint": {
+    "message": "Блок открытого доступа на боковой панели."
+  },
+  "optMergeTitle": {
+    "message": "Дубликаты записей"
+  },
+  "optMergeHint": {
+    "message": "В некоторых профилях одна статья указана несколько раз."
+  },
+  "optMergeLabel": {
+    "message": "Объединять дубликаты"
+  },
+  "optMergeLabelHint": {
+    "message": "Записи с одинаковым названием (без учёта регистра, диакритики и знаков препинания) и первым автором сливаются в одну: остаётся самая цитируемая, с цитированиями всех. Панель считает её один раз."
+  },
+  "mergedTip": {
+    "message": "Объединено записей: $N1$; учтены цитирования всех",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Язык"
+  },
+  "optLanguageHint": {
+    "message": "Язык расширения и открываемых вами страниц Scholar."
+  },
+  "optLanguageUi": {
+    "message": "Язык расширения"
+  },
+  "optLanguageAuto": {
+    "message": "Как в браузере"
+  },
+  "optLanguageScholar": {
+    "message": "Открывать Scholar на языке"
+  },
+  "optLanguageScholarHint": {
+    "message": "Страница Scholar, открытая на другом языке (например, по присланной ссылке), открывается заново на этом."
+  },
+  "optLanguageKeep": {
+    "message": "Не менять"
+  },
+  "optColorsTitle": {
+    "message": "Цвета"
+  },
+  "optColorsHint": {
+    "message": "Цвет каждой авторской позиции: строки, отметки имени, панель и всплывающее окно на панели инструментов."
+  },
+  "optColorsReset": {
+    "message": "Вернуть стандартные цвета"
+  },
+  "optThemes": {
+    "message": "Цветовые темы"
+  },
+  "optThemeDefault": {
+    "message": "По умолчанию"
+  },
+  "optThemeCool": {
+    "message": "Холодная"
+  },
+  "optThemeWarm": {
+    "message": "Тёплая"
+  },
+  "optThemeStrong": {
+    "message": "Высокий контраст"
+  },
+  "optThemeSoft": {
+    "message": "Мягкая"
+  },
+  "optContrastTip": {
+    "message": "Контраст этого цвета с белой страницей Scholar. Значение 3:1 и выше оставляет полоску строки видимой."
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight и Highlight"
+  },
+  "markTalks": {
+    "message": "Доклады"
+  },
+  "optTalkRows": {
+    "message": "Строки в панели"
+  },
+  "optTalkRowsHint": {
+    "message": "Как считаются типы докладов. При объединении статья, имеющая несколько таких типов, учитывается один раз."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, Spotlight и Highlight отдельно"
+  },
+  "optTalkPair": {
+    "message": "Spotlight и Highlight вместе"
+  },
+  "optTalkAll": {
+    "message": "Все три вместе"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Второй источник для того, что Scholar обрезает."
+  },
+  "optSemanticLabel": {
+    "message": "Сначала читать списки авторов из Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "При нажатии «Читать полные списки» сначала запрашивается полный список авторов каждой статьи у Semantic Scholar (отправляется только название статьи), а страница самого Scholar открывается только для того, что там не нашлось. Меньше запросов к Scholar, значит и меньше CAPTCHA."
+  },
+  "yearsTitle": {
+    "message": "Выделенные статьи по годам"
+  },
+  "yearsOlder": {
+    "message": "Не показано более ранних статей: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optPanelYears": {
+    "message": "Статьи по годам"
+  },
+  "optPanelYearsHint": {
+    "message": "Столбец за каждый год, в цветах ролей."
+  },
+  "coverRepeats": {
+    "message": "Записи, повторяющие другую статью: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Объединить…"
+  },
+  "venuesTitle": {
+    "message": "Где появляются выделенные статьи"
+  },
+  "optPanelVenues": {
+    "message": "Основные издания"
+  },
+  "optPanelVenuesHint": {
+    "message": "Ранжируемые издания ваших выделенных статей, сначала самые частые; нажмите на издание, чтобы показать его статьи."
+  },
+  "optCopyDiagnostics": {
+    "message": "Скопировать сведения для отчёта об ошибке"
+  },
+  "optSemanticKey": {
+    "message": "Ключ API (необязательно)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Бесплатный ключ на semanticscholar.org/product/api избавляет от общего лимита запросов, который делят все, у кого ключа нет. Он хранится на этом устройстве (не синхронизируется) и отправляется только в Semantic Scholar."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar попросил снизить частоту запросов, поэтому остальное взято со страниц самого Scholar."
+  },
+  "optRowStyle": {
+    "message": "Подсветка строк"
+  },
+  "optRowStyleFull": {
+    "message": "Фон и полоса"
+  },
+  "optRowStyleBar": {
+    "message": "Только полоса"
+  },
+  "optRowStyleTint": {
+    "message": "Только фон"
+  },
+  "filterShowing": {
+    "message": "Показано статей: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Очистить"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ цитирований",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "Ни одна авторская позиция не включена, поэтому ничего не выделяется."
+  },
+  "metricsOfN": {
+    "message": "$N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "Фильтровать по h-ядру (≥$N1$ цитирований)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Фильтровать по статьям i10 (≥10 цитирований)"
+  },
+  "popupPapersOf": {
+    "message": "Статей: $N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar не принял ключ API, поэтому остальное взято со страниц самого Scholar."
+  },
+  "optLinkPrivacy": {
+    "message": "Конфиденциальность"
+  },
+  "optLinkIssues": {
+    "message": "Сообщить о проблеме"
+  },
+  "filterPlaceholder": {
+    "message": "Фильтр по названию или автору…"
+  },
+  "searchShortcut": {
+    "message": "Нажмите / для поиска"
+  },
+  "venuesShowMore": {
+    "message": "Показать ещё"
+  },
+  "venuesShowFewer": {
+    "message": "Свернуть"
+  },
+  "optHideCitedTable": {
+    "message": "Таблица показателей цитирования"
+  },
+  "optHideCitedTableHint": {
+    "message": "Таблица цитирований, h-индекса и i10-индекса на боковой панели."
+  },
+  "optHideCitedChart": {
+    "message": "График цитирований по годам"
+  },
+  "optHideCitedChartHint": {
+    "message": "Гистограмма ежегодных цитирований на боковой панели."
+  },
+  "optConfigTitle": {
+    "message": "Конфигурация и пресеты"
+  },
+  "optConfigHint": {
+    "message": "Настройки в виде JSON: скопируйте их, сохраните в файл, загрузите файл или вставьте изменение в редактор. Пресет меняет только то, что в нём названо. Страница сообщает, что применено, а что пропущено."
+  },
+  "optConfigCopy": {
+    "message": "Копировать конфиг (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Экспорт в файл"
+  },
+  "optConfigImportFile": {
+    "message": "Импорт файла"
+  },
+  "optConfigEditor": {
+    "message": "Вставить конфиг (JSON)"
+  },
+  "optConfigApply": {
+    "message": "Применить конфигурацию"
+  },
+  "optConfigApplied": {
+    "message": "Изменения применены: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Нечего менять: настройки уже такие."
+  },
+  "optConfigIgnored": {
+    "message": "Не применено:"
+  },
+  "optConfigError": {
+    "message": "Это некорректный JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "ИИ-агенты"
+  },
+  "optAgentHint": {
+    "message": "Скопируйте руководство, в котором перечислены все настройки, их значения и ваш текущий выбор. Вставьте его в чат с ИИ-ассистентом, опишите, что вам нужно, затем вставьте его ответ в редактор конфига ниже и нажмите «Применить конфигурацию»."
+  },
+  "optAgentCopy": {
+    "message": "Копировать руководство"
+  },
+  "optConfigPreset": {
+    "message": "Пресеты"
+  },
+  "optPresetLast": {
+    "message": "Акцент на последнего автора"
+  },
+  "optPresetFull": {
+    "message": "Все функции"
+  },
+  "optPresetFirst": {
+    "message": "Акцент на первого автора"
+  },
+  "optPresetMinimal": {
+    "message": "Минимализм"
+  },
+  "optViewCache": {
+    "message": "Просмотр сохраненных данных"
+  },
+  "optSearchPlaceholder": {
+    "message": "Поиск по настройкам…"
+  },
+  "optSearchClear": {
+    "message": "Очистить поиск"
+  },
+  "optCacheTitle": {
+    "message": "Сохраненные данные статей"
+  },
+  "optCacheSearch": {
+    "message": "Поиск в сохраненных статьях…"
+  },
+  "optCacheCopy": {
+    "message": "Копировать кэш (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "На этом устройстве пока не сохранено данных статей."
+  },
+  "optCacheShown": {
+    "message": "Показано: $N1$ из $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Источник"
+  },
+  "optCacheClose": {
+    "message": "Закрыть"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}

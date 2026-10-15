@@ -1,0 +1,1063 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "Google Scholar profilini geliştirin: yazar rolleri, CCF ve CORE sıralamaları, konferans ödülleri, yıl grafiği ve anında arama."
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "Role ve sıralamaya göre makaleler"
+  },
+  "summaryTitleRoles": {
+    "message": "Role göre makaleler"
+  },
+  "marksTitle": {
+    "message": "Ödüller ve sunumlar"
+  },
+  "markAward": {
+    "message": "Ödüller"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "En iyi makale"
+  },
+  "mkBestStudent": {
+    "message": "En iyi öğrenci makalesi"
+  },
+  "mkOutstanding": {
+    "message": "Üstün makale"
+  },
+  "mkDistinguished": {
+    "message": "Seçkin makale"
+  },
+  "mkRunnerUp": {
+    "message": "Mansiyon"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "En iyi makale finalisti"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Scholar'da her makalenin başlığındaki ve yayın yeri metnindeki yazarların kendi sözlerinden (doğrulanmadı) ve büyük konferanslardaki ödüllü makalelerin yerleşik bir listesinden alınır."
+  },
+  "marksAsWritten": {
+    "message": "yazarların kendi sözlerinden veya ödül listesinden"
+  },
+  "tipMarkAuthor": {
+    "message": "Yazar tarafından yazılmış (doğrulanmadı): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Ödül listesinde: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Yalnızca vurgulananlar"
+  },
+  "yearLabel": {
+    "message": "Yıl"
+  },
+  "yearStart": {
+    "message": "Başlangıç"
+  },
+  "yearEnd": {
+    "message": "Bitiş"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Birinci"
+  },
+  "roleCofirst": {
+    "message": "Eş birinci"
+  },
+  "roleSecond": {
+    "message": "İkinci"
+  },
+  "roleLast": {
+    "message": "Son"
+  },
+  "roleMiddle": {
+    "message": "Diğer"
+  },
+  "roleHidden": {
+    "message": "Gizli"
+  },
+  "colRole": {
+    "message": "Rol"
+  },
+  "colTotal": {
+    "message": "Tümü"
+  },
+  "tipUnranked": {
+    "message": "Sıralanmamış"
+  },
+  "tipHidden": {
+    "message": "Scholar yazar listesini kısalttı, bu yüzden profil sahibinin sırası görünmüyor"
+  },
+  "copySummary": {
+    "message": "Özeti kopyala"
+  },
+  "copyTable": {
+    "message": "Tablo olarak kopyala"
+  },
+  "copied": {
+    "message": "Kopyalandı"
+  },
+  "coverLoaded": {
+    "message": "$N1$ makale yüklendi",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 makale yüklendi"
+  },
+  "loadingAll": {
+    "message": "Yükleniyor… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Tümünü yükle"
+  },
+  "cancel": {
+    "message": "İptal"
+  },
+  "coverHidden": {
+    "message": "$N1$ rol, kısaltılmış yazar listeleri yüzünden gizli",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 rol, kısaltılmış bir yazar listesi yüzünden gizli"
+  },
+  "resolveBtn": {
+    "message": "Tam listeleri oku"
+  },
+  "resolveHint": {
+    "message": "Tam yazar listesini okumak için her makalenin Scholar'daki sayfasını açar (saniyede yaklaşık bir)."
+  },
+  "resolveHintSemantic": {
+    "message": "Önce her makalenin yazar listesini Semantic Scholar'a sorar (yalnızca makalenin başlığı gönderilir), ardından kalan makalelerin Scholar'daki sayfalarını açar (saniyede yaklaşık bir)."
+  },
+  "resolving": {
+    "message": "Yazar listeleri okunuyor… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google CAPTCHA istedi. Normal bir sekmede çözüp tekrar deneyin."
+  },
+  "resolveDone": {
+    "message": "Tamamlandı."
+  },
+  "coverAbsent": {
+    "message": "Profil adının yazar listesinde olmadığı $N1$ makale",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "Profil adının yazar listesinde olmadığı 1 makale"
+  },
+  "coverUnmatched": {
+    "message": "Sıralaması olmayan yayın yerlerinde $N1$ makale",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "Sıralaması olmayan bir yayın yerinde 1 makale"
+  },
+  "copyUnmatched": {
+    "message": "Listeyi kopyala"
+  },
+  "reportLink": {
+    "message": "Bildir"
+  },
+  "layoutWarning": {
+    "message": "Scholar'ın sayfa düzeni değişmiş görünüyor: bu eklenti yazar satırlarını okuyamıyor. Lütfen bildirin."
+  },
+  "variantsTitle": {
+    "message": "Ad eşleşmiyor mu? Bir yazım ekleyin"
+  },
+  "variantsPlaceholder": {
+    "message": "örn. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Ekle"
+  },
+  "variantRemove": {
+    "message": "Kaldır"
+  },
+  "variantAutoTip": {
+    "message": "Otomatik eklendi: profil adınızın ters sıradaki hali sizi $1 makalede buluyor"
+  },
+  "variantSuggest": {
+    "message": "Belki siz:"
+  },
+  "variantSuggestTip": {
+    "message": "Yazar listesinde başka türlü adınız geçmeyen $1 makalede görünüyor — bu yazımı eklemek için tıklayın"
+  },
+  "expand": {
+    "message": "Genişlet"
+  },
+  "collapse": {
+    "message": "Daralt"
+  },
+  "metricsTitle": {
+    "message": "Vurgulanan makaleler"
+  },
+  "mPapers": {
+    "message": "Makale"
+  },
+  "mCitations": {
+    "message": "Atıf"
+  },
+  "mH": {
+    "message": "h-indeksi"
+  },
+  "mI10": {
+    "message": "i10-indeksi"
+  },
+  "dataNote": {
+    "message": "Sıralamalar yayın zamanındaki değil, bugünkü $N1$ listelerinden gelir. CCF, listesinin akademik değerlendirmeye esas olmadığını belirtir.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Bu profildeki hiçbir yayın yeri, bilgisayar bilimlerini kapsayan $N1$ listelerinde yer almıyor.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Ada göre eşleşti"
+  },
+  "ruleAcronym": {
+    "message": "Kısaltmaya göre eşleşti"
+  },
+  "rulePrefix": {
+    "message": "Kısaltılmış adın görünen kısmına göre eşleşti"
+  },
+  "tipToday": {
+    "message": "güncel liste, yayın zamanındaki sıralama değil"
+  },
+  "tipPosition": {
+    "message": "$N2$ yazardan $N1$. sıra",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "makalenin sayfasından"
+  },
+  "copyFirst": {
+    "message": "Birinci yazar"
+  },
+  "copyCofirst": {
+    "message": "Eş birinci yazar"
+  },
+  "copySecond": {
+    "message": "İkinci yazar"
+  },
+  "copyLast": {
+    "message": "Son yazar"
+  },
+  "copyMiddle": {
+    "message": "Diğer sıralar"
+  },
+  "tsvRole": {
+    "message": "Rol"
+  },
+  "tsvTotal": {
+    "message": "Toplam"
+  },
+  "popupNotProfile": {
+    "message": "Özetini burada görmek için bir Google Scholar yazar profili açın."
+  },
+  "popupReading": {
+    "message": "Sayfa okunuyor…"
+  },
+  "popupPapers": {
+    "message": "$N1$ makale",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 makale"
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar'ı aç"
+  },
+  "settingsOpen": {
+    "message": "Ayarlar"
+  },
+  "optHeading": {
+    "message": "Ayarlar"
+  },
+  "optPreviewTitle": {
+    "message": "Önizleme"
+  },
+  "optPreviewNote": {
+    "message": "Örnek makaleler, Scholar profilinde görünecekleri şekilde. “A Author” sizsiniz."
+  },
+  "optSaved": {
+    "message": "Kaydedildi"
+  },
+  "optRolesTitle": {
+    "message": "Makalelerimi vurgula"
+  },
+  "optRolesHint": {
+    "message": "Her sıranın kendi satır rengi vardır. Ortada olduğunuz makaleler sade kalır."
+  },
+  "optMarkName": {
+    "message": "Yazar satırında adımı işaretle"
+  },
+  "optMarkNameHint": {
+    "message": "Kalın ve renkli. Sıranızı görmek için üzerine gelin."
+  },
+  "optCcf": {
+    "message": "CCF sıralaması"
+  },
+  "optCcfHint": {
+    "message": "China Computer Federation listesi, 7. baskı (2026)."
+  },
+  "optCore": {
+    "message": "CORE sıralaması"
+  },
+  "optCoreHint": {
+    "message": "CORE konferans sıralaması, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Ödüller ve sunumlar"
+  },
+  "optCopyTitle": {
+    "message": "Kopyala ve dışa aktar"
+  },
+  "optCopyHint": {
+    "message": "Gösterilen makaleleri ya da özeti metin olarak kopyalayan veya kaydeden düğmeler. Panel ve araç çubuğu açılır penceresi aynı düğmeleri sunar; hiçbiri açık değilse kopyalama satırı yoktur."
+  },
+  "optMarkAwardHint": {
+    "message": "En iyi, üstün ve seçkin makale, mansiyon, test of time ve en iyi makale finalistleri."
+  },
+  "optPanelTitle": {
+    "message": "Özet paneli"
+  },
+  "optPanelShow": {
+    "message": "Özet panelini göster"
+  },
+  "optPanelShowHint": {
+    "message": "Profil sayfasındaki rol × sıralama tablosu. Kapalı: yalnızca makale listesi işaretlenir."
+  },
+  "optPanelSummary": {
+    "message": "Rol × sıralama tablosu"
+  },
+  "optPanelSummaryHint": {
+    "message": "Makalelerinizin konum ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
+  },
+  "optPanelMarksHint": {
+    "message": "Ödüllü makale ve sunum düzeyi sayısı; tek tıkla listelenir."
+  },
+  "optPanelStatus": {
+    "message": "Yüklenen makaleler ve sıralaması olmayan yayın yerleri"
+  },
+  "optPanelStatusHint": {
+    "message": "Kaç makalenin yüklendiği, “Tümünü yükle” düğmesi ve sıralaması olmayan yayın yerlerindeki makalelerin listesi."
+  },
+  "optPanelNames": {
+    "message": "Ad yazımı yardımı"
+  },
+  "optPanelNamesHint": {
+    "message": "“Ad eşleşmiyor mu? Bir yazım ekleyin” ve adınız için öneriler."
+  },
+  "optPanelCompact": {
+    "message": "Kompakt: yalnızca filtreler ve atıf toplamları"
+  },
+  "optAllOn": {
+    "message": "Tümünü aç"
+  },
+  "optAllOff": {
+    "message": "Tümünü kapat"
+  },
+  "optPanelFilters": {
+    "message": "Filtreler"
+  },
+  "optPanelFiltersHint": {
+    "message": "Yalnızca vurgulanan makaleler ve bir yıl aralığı."
+  },
+  "optPanelMetrics": {
+    "message": "Atıf toplamları"
+  },
+  "optPanelMetricsHint": {
+    "message": "Vurgulanan makalelerin sayısı, atıfları, h-indeksi ve i10-indeksi."
+  },
+  "optDataTitle": {
+    "message": "Kayıtlı veriler"
+  },
+  "optClearCache": {
+    "message": "Kayıtlı makale ayrıntılarını temizle"
+  },
+  "optCacheCount": {
+    "message": "$N1$ makalenin yazar listesi bu cihazda kayıtlı (90 gün saklanır).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "1 makalenin yazar listesi bu cihazda kayıtlı (90 gün saklanır)."
+  },
+  "optCacheNone": {
+    "message": "Kayıtlı makale ayrıntısı yok."
+  },
+  "optCleared": {
+    "message": "Temizlendi"
+  },
+  "optReset": {
+    "message": "Varsayılanlara sıfırla"
+  },
+  "optResetConfirm": {
+    "message": "Bu ayarların tümü varsayılanlara sıfırlansın mı?"
+  },
+  "optStorage": {
+    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Scholar sayfaları yalnızca siz açtığınızda okunur; makale başlıkları ise yalnızca bu seçeneği açarsanız Semantic Scholar'a gönderilir."
+  },
+  "optSample": {
+    "message": "Örnek makale"
+  },
+  "optLoadTitle": {
+    "message": "Makale listesi"
+  },
+  "optAutoLoad": {
+    "message": "Tüm makaleleri otomatik yükle"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar başlangıçta yalnızca ilk makaleleri gösterir. Eklenti, listenin tamamı yüklenene kadar Scholar'ın kendi “Daha fazla göster” düğmesine sizin yerinize yaklaşık saniyede bir basar; Scholar yanıt vermeyi keserse durur. Kapalı: panel bunun yerine “Tümünü yükle” sunar."
+  },
+  "loadStalled": {
+    "message": "Scholar daha fazla makale göndermedi ($N1$ yüklendi). Biraz sonra “Tümünü yükle”yi yeniden deneyin.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Kategori ödülü"
+  },
+  "copyPapers": {
+    "message": "Makaleleri kopyala"
+  },
+  "copyBibtex": {
+    "message": "BibTeX kopyala"
+  },
+  "copyApa": {
+    "message": "APA kopyala"
+  },
+  "copyMarkdown": {
+    "message": "Markdown Kopyala"
+  },
+  "copyJson": {
+    "message": "JSON kopyala"
+  },
+  "exportCsv": {
+    "message": "CSV dışa aktar"
+  },
+  "copyEmpty": {
+    "message": "Kopyalanacak şey yok"
+  },
+  "exported": {
+    "message": "Dışa aktarıldı"
+  },
+  "tsvYear": {
+    "message": "Yıl"
+  },
+  "tsvTitle": {
+    "message": "Başlık"
+  },
+  "tsvAuthors": {
+    "message": "Yazarlar"
+  },
+  "tsvVenue": {
+    "message": "Yayın yeri"
+  },
+  "tsvAwards": {
+    "message": "Ödüller ve sunumlar"
+  },
+  "tsvCitations": {
+    "message": "Atıf"
+  },
+  "optHideTitle": {
+    "message": "Scholar'ın kendi blokları"
+  },
+  "optHideHint": {
+    "message": "Profil sayfasında panelin tekrarı olan veya kullanmadığınız bölümleri gizleyin. Siz açana kadar hiçbir şey gizlenmez."
+  },
+  "optHideCited": {
+    "message": "Alıntılanma"
+  },
+  "optHideCitedHint": {
+    "message": "Atıf, h-indeksi ve i10-indeksi tablosu ve grafiği: panel, vurgulanan makaleler için aynı toplamları gösterir."
+  },
+  "optHideCo": {
+    "message": "Ortak yazarlar"
+  },
+  "optHideCoHint": {
+    "message": "Kenar çubuğundaki ortak yazar listesi."
+  },
+  "optHideAccess": {
+    "message": "Herkese açık erişim"
+  },
+  "optHideAccessHint": {
+    "message": "Kenar çubuğundaki herkese açık erişim kutusu."
+  },
+  "optMergeTitle": {
+    "message": "Yinelenen kayıtlar"
+  },
+  "optMergeHint": {
+    "message": "Bazı profiller bir makaleyi birkaç kez listeler."
+  },
+  "optMergeLabel": {
+    "message": "Yinelenenleri birleştir"
+  },
+  "optMergeLabelHint": {
+    "message": "Başlığı (büyük harf, vurgu ve noktalama dışında) ve birinci yazarı aynı olan kayıtlar tek kayıt olur: en çok atıf alan kalır ve hepsinin atıflarını gösterir. Panel onu bir kez sayar."
+  },
+  "mergedTip": {
+    "message": "$N1$ kayıttan birleştirildi: hepsinin atıfları",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Dil"
+  },
+  "optLanguageHint": {
+    "message": "Bu eklentinin ve açtığınız Scholar sayfalarının dili."
+  },
+  "optLanguageUi": {
+    "message": "Eklenti dili"
+  },
+  "optLanguageAuto": {
+    "message": "Tarayıcıyı izle"
+  },
+  "optLanguageScholar": {
+    "message": "Scholar'ı şu dilde aç"
+  },
+  "optLanguageScholarHint": {
+    "message": "Başka bir dilde açtığınız (örneğin paylaşılan bir bağlantıdan) Scholar sayfası bu dilde yeniden açılır."
+  },
+  "optLanguageKeep": {
+    "message": "Olduğu gibi bırak"
+  },
+  "optColorsTitle": {
+    "message": "Renkler"
+  },
+  "optColorsHint": {
+    "message": "Her yazar rolünün rengi: satırlar, ad işaretleri, panel ve araç çubuğu açılır penceresi."
+  },
+  "optColorsReset": {
+    "message": "Standart renklere dön"
+  },
+  "optThemes": {
+    "message": "Renk temaları"
+  },
+  "optThemeDefault": {
+    "message": "Varsayılan"
+  },
+  "optThemeCool": {
+    "message": "Serin"
+  },
+  "optThemeWarm": {
+    "message": "Sıcak"
+  },
+  "optThemeStrong": {
+    "message": "Yüksek kontrast"
+  },
+  "optThemeSoft": {
+    "message": "Yumuşak"
+  },
+  "optContrastTip": {
+    "message": "Bu rengin Scholar'ın beyaz sayfasıyla kontrastı. 3:1 ve üzeri, satırın çubuğunu görünür tutar."
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight ve highlight"
+  },
+  "markTalks": {
+    "message": "Sunumlar"
+  },
+  "optTalkRows": {
+    "message": "Panelde satırlar"
+  },
+  "optTalkRowsHint": {
+    "message": "Sunum düzeylerinin nasıl sayıldığı. Birden fazlasına sahip bir makale bir kez sayılır."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight ve highlight ayrı"
+  },
+  "optTalkPair": {
+    "message": "Spotlight ve highlight birlikte"
+  },
+  "optTalkAll": {
+    "message": "Üçü birlikte"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Scholar'ın kestiklerini aramak için ikinci bir yer."
+  },
+  "optSemanticLabel": {
+    "message": "Yazar listelerini önce Semantic Scholar'dan oku"
+  },
+  "optSemanticLabelHint": {
+    "message": "“Tam listeleri oku”ya basıldığında önce her makalenin tam yazar listesi için Semantic Scholar'a sorulur (yalnızca makalenin başlığı gönderilir). Scholar'ın kendi sayfası yalnızca Semantic Scholar'ın bilmediği kısım için okunur. Scholar'a daha az istek gider, dolayısıyla daha az CAPTCHA çıkar."
+  },
+  "yearsTitle": {
+    "message": "Yıllara göre vurgulanan makaleler"
+  },
+  "yearsOlder": {
+    "message": "$N1$ daha eski makale gösterilmiyor",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 daha eski makale gösterilmiyor"
+  },
+  "optPanelYears": {
+    "message": "Yıllara göre makaleler"
+  },
+  "optPanelYearsHint": {
+    "message": "Her yıl için rol renklerinde bir çubuk."
+  },
+  "coverRepeats": {
+    "message": "Başka bir makaleyi tekrarlayan kayıtlar: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Birleştir…"
+  },
+  "venuesTitle": {
+    "message": "Vurgulanan makalelerin yayınlandığı yerler"
+  },
+  "optPanelVenues": {
+    "message": "Başlıca yayın yerleri"
+  },
+  "optPanelVenuesHint": {
+    "message": "Vurgulanan makalelerinizin sıralaması olan yayın yerleri, en sıktan başlayarak; birine tıklayarak makalelerini listeleyin."
+  },
+  "optCopyDiagnostics": {
+    "message": "Hata raporu için ayrıntıları kopyala"
+  },
+  "optSemanticKey": {
+    "message": "API anahtarı (isteğe bağlı)"
+  },
+  "optSemanticKeyHint": {
+    "message": "semanticscholar.org/product/api adresinden alınan ücretsiz bir anahtar, anahtarı olmayan herkesin paylaştığı istek sınırına takılmanızı önler. Anahtar bu cihazda kalır (eşitlenmez) ve yalnızca Semantic Scholar'a gönderilir."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar yavaşlamasını istedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
+  },
+  "optRowStyle": {
+    "message": "Satır vurgusu"
+  },
+  "optRowStyleFull": {
+    "message": "Zemin ve çubuk"
+  },
+  "optRowStyleBar": {
+    "message": "Yalnız çubuk"
+  },
+  "optRowStyleTint": {
+    "message": "Yalnız zemin"
+  },
+  "filterShowing": {
+    "message": "Gösterilen makale: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Temizle"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ atıf",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "Hiçbir yazar sırası açık değil, bu yüzden hiçbir şey vurgulanmıyor."
+  },
+  "metricsOfN": {
+    "message": "$N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "h-çekirdek makalelerine filtrele (≥$N1$ atıf)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "i10 makalelerine filtrele (≥10 atıf)"
+  },
+  "popupPapersOf": {
+    "message": "$N1$ / $N2$ makale",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar API anahtarını kabul etmedi, bu yüzden kalanlar için Scholar'ın kendi sayfaları kullanıldı."
+  },
+  "optLinkPrivacy": {
+    "message": "Gizlilik"
+  },
+  "optLinkIssues": {
+    "message": "Sorun bildir"
+  },
+  "filterPlaceholder": {
+    "message": "Başlığa veya yazara göre filtrele…"
+  },
+  "searchShortcut": {
+    "message": "Aramak için / tuşuna basın"
+  },
+  "venuesShowMore": {
+    "message": "Daha fazla göster"
+  },
+  "venuesShowFewer": {
+    "message": "Daha az göster"
+  },
+  "optHideCitedTable": {
+    "message": "Atıf metrikleri tablosu"
+  },
+  "optHideCitedTableHint": {
+    "message": "Kenar çubuğundaki atıflar, h-endeksi ve i10-endeksi tablosu."
+  },
+  "optHideCitedChart": {
+    "message": "Yıllık atıf grafiği"
+  },
+  "optHideCitedChartHint": {
+    "message": "Kenar çubuğundaki yıllık atıf histogramı."
+  },
+  "optConfigTitle": {
+    "message": "Yapılandırma ve hazır ayarlar"
+  },
+  "optConfigHint": {
+    "message": "Ayarlar JSON olarak: kopyalayın, bir dosyaya kaydedin, bir dosya yükleyin ya da düzenleyiciye bir değişiklik yapıştırın. Hazır ayar yalnızca adını verdiği şeyi değiştirir; sayfa neyi uyguladığını ve neyi yok saydığını söyler."
+  },
+  "optConfigCopy": {
+    "message": "Yapılandırmayı kopyala (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Dosyayı dışa aktar"
+  },
+  "optConfigImportFile": {
+    "message": "Dosya içe aktar"
+  },
+  "optConfigEditor": {
+    "message": "JSON'u yapıştır/düzenle"
+  },
+  "optConfigApply": {
+    "message": "Yapılandırmayı uygula"
+  },
+  "optConfigApplied": {
+    "message": "Uygulanan değişiklik: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Değiştirilecek bir şey yok: ayarlar zaten böyle."
+  },
+  "optConfigIgnored": {
+    "message": "Uygulanmadı:"
+  },
+  "optConfigError": {
+    "message": "Geçerli bir JSON değil: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "Yapay zekâ ajanları"
+  },
+  "optAgentHint": {
+    "message": "Her ayarı, değerlerini ve şu anki seçimlerinizi listeleyen bir rehber kopyalayın. Bunu yapay zekâ asistanınıza yapıştırın, ne istediğinizi söyleyin, sonra yanıtını aşağıdaki JSON düzenleyicisine yapıştırıp “Yapılandırmayı uygula” düğmesine basın."
+  },
+  "optAgentCopy": {
+    "message": "Ajan rehberini kopyala"
+  },
+  "optConfigPreset": {
+    "message": "Hazır Ayarlar"
+  },
+  "optPresetLast": {
+    "message": "Son yazar odaklı"
+  },
+  "optPresetFull": {
+    "message": "Tüm özellikler"
+  },
+  "optPresetFirst": {
+    "message": "İlk yazar odaklı"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalist"
+  },
+  "optViewCache": {
+    "message": "Kayıtlı ayrıntıları görüntüle"
+  },
+  "optSearchPlaceholder": {
+    "message": "Ayarlarda ara…"
+  },
+  "optSearchClear": {
+    "message": "Aramayı temizle"
+  },
+  "optCacheTitle": {
+    "message": "Kayıtlı Makale Ayrıntıları"
+  },
+  "optCacheSearch": {
+    "message": "Önbelleğe alınan makaleleri filtrele…"
+  },
+  "optCacheCopy": {
+    "message": "Önbelleği kopyala (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Bu cihazda henüz kayıtlı makale ayrıntısı yok."
+  },
+  "optCacheShown": {
+    "message": "Gösterilen: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Kaynak"
+  },
+  "optCacheClose": {
+    "message": "Kapat"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}

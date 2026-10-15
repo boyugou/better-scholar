@@ -1,0 +1,1063 @@
+{
+  "extName": {
+    "message": "Better Scholar"
+  },
+  "extDescription": {
+    "message": "Verbeter Google Scholar: auteursrollen, CCF- en CORE-rangen, conferentieprijzen, jaargrafieken en direct zoeken."
+  },
+  "extShortName": {
+    "message": "Better Scholar"
+  },
+  "summaryTitle": {
+    "message": "Papers per rol en rang"
+  },
+  "summaryTitleRoles": {
+    "message": "Papers per rol"
+  },
+  "marksTitle": {
+    "message": "Prijzen en talks"
+  },
+  "markAward": {
+    "message": "Prijzen"
+  },
+  "markOral": {
+    "message": "Oral"
+  },
+  "markSpotlight": {
+    "message": "Spotlight"
+  },
+  "markHighlight": {
+    "message": "Highlight"
+  },
+  "mkBest": {
+    "message": "Beste paper"
+  },
+  "mkBestStudent": {
+    "message": "Beste studentenpaper"
+  },
+  "mkOutstanding": {
+    "message": "Outstanding paper"
+  },
+  "mkDistinguished": {
+    "message": "Distinguished paper"
+  },
+  "mkRunnerUp": {
+    "message": "Eervolle vermelding"
+  },
+  "mkTot": {
+    "message": "Test of time"
+  },
+  "mkFinalist": {
+    "message": "Finalist beste paper"
+  },
+  "mkOral": {
+    "message": "Oral"
+  },
+  "mkSpotlight": {
+    "message": "Spotlight"
+  },
+  "mkHighlight": {
+    "message": "Highlight"
+  },
+  "marksHint": {
+    "message": "Gebaseerd op de eigen woorden van de auteurs in de titel en venue-tekst van elke paper op Scholar (niet gecontroleerd) en op een meegeleverde lijst van bekroonde papers op grote conferenties."
+  },
+  "marksAsWritten": {
+    "message": "uit de eigen woorden van de auteurs of de prijzenlijst"
+  },
+  "tipMarkAuthor": {
+    "message": "Geschreven door de auteur (niet gecontroleerd): “$N1$”",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipMarkList": {
+    "message": "Op de prijzenlijst: $N1$ — $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "onlyHighlighted": {
+    "message": "Alleen gemarkeerd"
+  },
+  "yearLabel": {
+    "message": "Jaar"
+  },
+  "yearStart": {
+    "message": "Van"
+  },
+  "yearEnd": {
+    "message": "Tot"
+  },
+  "srcCcf": {
+    "message": "CCF"
+  },
+  "srcCore": {
+    "message": "CORE"
+  },
+  "roleFirst": {
+    "message": "Eerste"
+  },
+  "roleCofirst": {
+    "message": "Gedeeld eerste"
+  },
+  "roleSecond": {
+    "message": "Tweede"
+  },
+  "roleLast": {
+    "message": "Laatste"
+  },
+  "roleMiddle": {
+    "message": "Overig"
+  },
+  "roleHidden": {
+    "message": "Verborgen"
+  },
+  "colRole": {
+    "message": "Rol"
+  },
+  "colTotal": {
+    "message": "Alle"
+  },
+  "tipUnranked": {
+    "message": "Geen rang"
+  },
+  "tipHidden": {
+    "message": "Scholar heeft de auteurslijst afgekapt, dus de positie van de profieleigenaar is niet zichtbaar"
+  },
+  "copySummary": {
+    "message": "Overzicht kopiëren"
+  },
+  "copyTable": {
+    "message": "Kopiëren als tabel"
+  },
+  "copied": {
+    "message": "Gekopieerd"
+  },
+  "coverLoaded": {
+    "message": "$N1$ papers geladen",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverLoadedOne": {
+    "message": "1 paper geladen"
+  },
+  "loadingAll": {
+    "message": "Laden… $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "loadAll": {
+    "message": "Alles laden"
+  },
+  "cancel": {
+    "message": "Annuleren"
+  },
+  "coverHidden": {
+    "message": "$N1$ rollen verborgen door afgekapte auteurslijsten",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverHiddenOne": {
+    "message": "1 rol verborgen door een afgekapte auteurslijst"
+  },
+  "resolveBtn": {
+    "message": "Hele lijsten lezen"
+  },
+  "resolveHint": {
+    "message": "Opent de pagina van elke paper op Scholar (ongeveer één per seconde) om de volledige auteurslijst te lezen."
+  },
+  "resolveHintSemantic": {
+    "message": "Vraagt eerst Semantic Scholar om de auteurslijst van elke paper (het ontvangt alleen de titel), en opent daarna de pagina’s van de overige papers op Scholar (ongeveer één per seconde)."
+  },
+  "resolving": {
+    "message": "Auteurslijsten lezen… $N1$/$N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveCaptcha": {
+    "message": "Google vroeg om een CAPTCHA. Los die op in een gewoon tabblad en probeer het opnieuw."
+  },
+  "resolveDone": {
+    "message": "Klaar."
+  },
+  "coverAbsent": {
+    "message": "$N1$ papers waarin de profielnaam niet in de auteurslijst staat",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverAbsentOne": {
+    "message": "1 paper waarin de profielnaam niet in de auteurslijst staat"
+  },
+  "coverUnmatched": {
+    "message": "$N1$ papers bij venues zonder rang",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverUnmatchedOne": {
+    "message": "1 paper bij een venue zonder rang"
+  },
+  "copyUnmatched": {
+    "message": "Lijst kopiëren"
+  },
+  "reportLink": {
+    "message": "Melden"
+  },
+  "layoutWarning": {
+    "message": "De opmaak van Scholar lijkt gewijzigd: deze extensie kan de auteursregels niet lezen. Meld dit alsjeblieft."
+  },
+  "variantsTitle": {
+    "message": "Naam niet gevonden? Voeg een spelling toe"
+  },
+  "variantsPlaceholder": {
+    "message": "bijv. Zhang Wei"
+  },
+  "variantAdd": {
+    "message": "Toevoegen"
+  },
+  "variantRemove": {
+    "message": "Verwijderen"
+  },
+  "variantAutoTip": {
+    "message": "Automatisch toegevoegd: je profielnaam in de andere volgorde vindt je in $1 papers"
+  },
+  "variantSuggest": {
+    "message": "Misschien jij:"
+  },
+  "variantSuggestTip": {
+    "message": "Komt voor in $1 papers waarvan de auteurslijst je verder niet noemt — klik om deze spelling toe te voegen"
+  },
+  "expand": {
+    "message": "Uitklappen"
+  },
+  "collapse": {
+    "message": "Inklappen"
+  },
+  "metricsTitle": {
+    "message": "Gemarkeerde papers"
+  },
+  "mPapers": {
+    "message": "Papers"
+  },
+  "mCitations": {
+    "message": "Citaties"
+  },
+  "mH": {
+    "message": "h-index"
+  },
+  "mI10": {
+    "message": "i10-index"
+  },
+  "dataNote": {
+    "message": "De rangen komen uit de huidige $N1$-lijsten, niet uit de rang ten tijde van publicatie. CCF stelt dat zijn lijst geen basis is voor academische beoordeling.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRanksNote": {
+    "message": "Geen enkele venue van dit profiel staat op de $N1$-lijsten, die de informatica bestrijken.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "ruleName": {
+    "message": "Gevonden op naam"
+  },
+  "ruleAcronym": {
+    "message": "Gevonden op afkorting"
+  },
+  "rulePrefix": {
+    "message": "Gevonden op het zichtbare deel van een afgekapte naam"
+  },
+  "tipToday": {
+    "message": "huidige lijst, niet de rang bij publicatie"
+  },
+  "tipPosition": {
+    "message": "positie $N1$ van $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFromPage": {
+    "message": "van de paperpagina"
+  },
+  "copyFirst": {
+    "message": "Eerste auteur"
+  },
+  "copyCofirst": {
+    "message": "Gedeeld eerste auteur"
+  },
+  "copySecond": {
+    "message": "Tweede auteur"
+  },
+  "copyLast": {
+    "message": "Laatste auteur"
+  },
+  "copyMiddle": {
+    "message": "Overige posities"
+  },
+  "tsvRole": {
+    "message": "Rol"
+  },
+  "tsvTotal": {
+    "message": "Totaal"
+  },
+  "popupNotProfile": {
+    "message": "Open een Google Scholar-auteursprofiel om hier het overzicht te zien."
+  },
+  "popupReading": {
+    "message": "Pagina lezen…"
+  },
+  "popupPapers": {
+    "message": "$N1$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupPapersOne": {
+    "message": "1 paper"
+  },
+  "popupOpenScholar": {
+    "message": "Google Scholar openen"
+  },
+  "settingsOpen": {
+    "message": "Instellingen"
+  },
+  "optHeading": {
+    "message": "Instellingen"
+  },
+  "optPreviewTitle": {
+    "message": "Voorbeeld"
+  },
+  "optPreviewNote": {
+    "message": "Voorbeeldpapers zoals ze op een Scholar-profiel verschijnen. “A Author” ben jij."
+  },
+  "optSaved": {
+    "message": "Opgeslagen"
+  },
+  "optRolesTitle": {
+    "message": "Mijn papers markeren"
+  },
+  "optRolesHint": {
+    "message": "Elke positie krijgt een eigen rijkleur. Papers waarin je in het midden staat, blijven neutraal."
+  },
+  "optMarkName": {
+    "message": "Mijn naam markeren in de auteursregel"
+  },
+  "optMarkNameHint": {
+    "message": "Vet en gekleurd. Wijs ernaar om je positie te zien."
+  },
+  "optCcf": {
+    "message": "CCF-rang"
+  },
+  "optCcfHint": {
+    "message": "Lijst van de China Computer Federation, 7e editie (2026)."
+  },
+  "optCore": {
+    "message": "CORE-rang"
+  },
+  "optCoreHint": {
+    "message": "CORE-conferentierangschikking, ICORE 2026."
+  },
+  "optMarksTitle": {
+    "message": "Prijzen en talks"
+  },
+  "optCopyTitle": {
+    "message": "Kopiëren en exporteren"
+  },
+  "optCopyHint": {
+    "message": "Welke knoppen de getoonde papers of het overzicht als tekst kopiëren of opslaan. Het paneel en de popup van de werkbalk bieden dezelfde knoppen; staat er geen enkele aan, dan is er geen kopieerrij."
+  },
+  "optMarkAwardHint": {
+    "message": "Beste, outstanding en distinguished paper, eervolle vermelding, test of time en finalisten voor beste paper."
+  },
+  "optPanelTitle": {
+    "message": "Overzichtspaneel"
+  },
+  "optPanelShow": {
+    "message": "Overzichtspaneel tonen"
+  },
+  "optPanelShowHint": {
+    "message": "De tabel rol × rang op een profielpagina. Uit: alleen de paperlijst wordt gemarkeerd."
+  },
+  "optPanelSummary": {
+    "message": "Tabel rol × rang"
+  },
+  "optPanelSummaryHint": {
+    "message": "De tabel van je papers op positie en rang, met de toelichting over waar de rangen vandaan komen."
+  },
+  "optPanelMarksHint": {
+    "message": "Het aantal bekroonde papers en talkniveaus; met één klik zie je de lijst."
+  },
+  "optPanelStatus": {
+    "message": "Geladen papers en venues zonder rang"
+  },
+  "optPanelStatusHint": {
+    "message": "Hoeveel papers zijn geladen, de knop “Alles laden” en de lijst met papers bij venues zonder rang."
+  },
+  "optPanelNames": {
+    "message": "Hulp bij naamspelling"
+  },
+  "optPanelNamesHint": {
+    "message": "“Naam niet gevonden? Voeg een spelling toe” en de suggesties voor je naam."
+  },
+  "optPanelCompact": {
+    "message": "Compact: alleen filters en citatietotalen"
+  },
+  "optAllOn": {
+    "message": "Alles aanzetten"
+  },
+  "optAllOff": {
+    "message": "Alles uitzetten"
+  },
+  "optPanelFilters": {
+    "message": "Filters"
+  },
+  "optPanelFiltersHint": {
+    "message": "Alleen gemarkeerde papers en een jaarbereik."
+  },
+  "optPanelMetrics": {
+    "message": "Citatietotalen"
+  },
+  "optPanelMetricsHint": {
+    "message": "Papers, citaties, h-index en i10-index van de gemarkeerde papers."
+  },
+  "optDataTitle": {
+    "message": "Opgeslagen gegevens"
+  },
+  "optClearCache": {
+    "message": "Opgeslagen paperdetails wissen"
+  },
+  "optCacheCount": {
+    "message": "De auteurslijsten van $N1$ papers zijn op dit apparaat opgeslagen (90 dagen bewaard).",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optCacheCountOne": {
+    "message": "De auteurslijst van 1 paper is op dit apparaat opgeslagen (90 dagen bewaard)."
+  },
+  "optCacheNone": {
+    "message": "Er zijn geen paperdetails opgeslagen."
+  },
+  "optCleared": {
+    "message": "Gewist"
+  },
+  "optReset": {
+    "message": "Standaardwaarden herstellen"
+  },
+  "optResetConfirm": {
+    "message": "Al deze instellingen terugzetten naar de standaardwaarden?"
+  },
+  "optStorage": {
+    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. Scholar-pagina's worden alleen gelezen wanneer je ze opent, en paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
+  },
+  "optSample": {
+    "message": "Voorbeeldpaper"
+  },
+  "optLoadTitle": {
+    "message": "Paperlijst"
+  },
+  "optAutoLoad": {
+    "message": "Alle papers automatisch laden"
+  },
+  "optAutoLoadHint": {
+    "message": "Scholar toont eerst alleen de eerste papers. Dit drukt voor jou op de eigen knop “Meer weergeven”, ongeveer één keer per seconde, tot de hele lijst is geladen, en stopt als Scholar niet meer antwoordt. Uit: het paneel biedt “Alles laden” aan."
+  },
+  "loadStalled": {
+    "message": "Scholar stuurde geen papers meer ($N1$ geladen). Probeer zo meteen “Alles laden” opnieuw.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "mkCategory": {
+    "message": "Categorieprijs"
+  },
+  "copyPapers": {
+    "message": "Papers kopiëren"
+  },
+  "copyBibtex": {
+    "message": "BibTeX kopiëren"
+  },
+  "copyApa": {
+    "message": "APA kopiëren"
+  },
+  "copyMarkdown": {
+    "message": "Kopieer Markdown"
+  },
+  "copyJson": {
+    "message": "JSON kopiëren"
+  },
+  "exportCsv": {
+    "message": "CSV exporteren"
+  },
+  "copyEmpty": {
+    "message": "Niets om te kopiëren"
+  },
+  "exported": {
+    "message": "Geëxporteerd"
+  },
+  "tsvYear": {
+    "message": "Jaar"
+  },
+  "tsvTitle": {
+    "message": "Titel"
+  },
+  "tsvAuthors": {
+    "message": "Auteurs"
+  },
+  "tsvVenue": {
+    "message": "Venue"
+  },
+  "tsvAwards": {
+    "message": "Prijzen en talks"
+  },
+  "tsvCitations": {
+    "message": "Citaties"
+  },
+  "optHideTitle": {
+    "message": "Eigen blokken van Scholar"
+  },
+  "optHideHint": {
+    "message": "Verberg delen van de profielpagina die het paneel herhalen of die je niet gebruikt. Er wordt niets verborgen tot je het aanzet."
+  },
+  "optHideCited": {
+    "message": "Geciteerd door"
+  },
+  "optHideCitedHint": {
+    "message": "De tabel met citaties, h-index en i10-index en de bijbehorende grafiek: het paneel toont dezelfde totalen voor de gemarkeerde papers."
+  },
+  "optHideCo": {
+    "message": "Medeauteurs"
+  },
+  "optHideCoHint": {
+    "message": "De lijst met medeauteurs in de zijbalk."
+  },
+  "optHideAccess": {
+    "message": "Openbare toegang"
+  },
+  "optHideAccessHint": {
+    "message": "Het vak voor openbare toegang in de zijbalk."
+  },
+  "optMergeTitle": {
+    "message": "Dubbele vermeldingen"
+  },
+  "optMergeHint": {
+    "message": "Sommige profielen vermelden één paper meerdere keren."
+  },
+  "optMergeLabel": {
+    "message": "Dubbelen samenvoegen"
+  },
+  "optMergeLabelHint": {
+    "message": "Vermeldingen met dezelfde titel (hoofdletters, accenten en leestekens daargelaten) en dezelfde eerste auteur worden één: de meest geciteerde blijft en toont de citaties van alle. Het paneel telt hem één keer."
+  },
+  "mergedTip": {
+    "message": "Samengevoegd uit $N1$ vermeldingen: de citaties van alle",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLanguageTitle": {
+    "message": "Taal"
+  },
+  "optLanguageHint": {
+    "message": "De taal van deze extensie en van de Scholar-pagina’s die je opent."
+  },
+  "optLanguageUi": {
+    "message": "Taal van de extensie"
+  },
+  "optLanguageAuto": {
+    "message": "Browser volgen"
+  },
+  "optLanguageScholar": {
+    "message": "Scholar openen in"
+  },
+  "optLanguageScholarHint": {
+    "message": "Een Scholar-pagina die je in een andere taal opent (bijvoorbeeld via een gedeelde link) wordt opnieuw in deze taal geopend."
+  },
+  "optLanguageKeep": {
+    "message": "Laten zoals het is"
+  },
+  "optColorsTitle": {
+    "message": "Kleuren"
+  },
+  "optColorsHint": {
+    "message": "De kleur van elke auteurspositie: rijen, naammarkeringen, het paneel en de popup van de werkbalk."
+  },
+  "optColorsReset": {
+    "message": "Terug naar de standaardkleuren"
+  },
+  "optThemes": {
+    "message": "Kleurthema’s"
+  },
+  "optThemeDefault": {
+    "message": "Standaard"
+  },
+  "optThemeCool": {
+    "message": "Koel"
+  },
+  "optThemeWarm": {
+    "message": "Warm"
+  },
+  "optThemeStrong": {
+    "message": "Hoog contrast"
+  },
+  "optThemeSoft": {
+    "message": "Zacht"
+  },
+  "optContrastTip": {
+    "message": "Contrast van deze kleur met de witte pagina van Scholar. 3:1 of meer houdt de balk van de rij zichtbaar."
+  },
+  "markSpotlightHighlight": {
+    "message": "Spotlight en highlight"
+  },
+  "markTalks": {
+    "message": "Presentaties"
+  },
+  "optTalkRows": {
+    "message": "Rijen in het paneel"
+  },
+  "optTalkRowsHint": {
+    "message": "Hoe de presentatietypen worden geteld. Samen geteld telt een paper met meer dan één ervan maar één keer."
+  },
+  "optTalkSeparate": {
+    "message": "Oral, spotlight en highlight apart"
+  },
+  "optTalkPair": {
+    "message": "Spotlight en highlight samen"
+  },
+  "optTalkAll": {
+    "message": "Alle drie samen"
+  },
+  "optSemanticTitle": {
+    "message": "Semantic Scholar"
+  },
+  "optSemanticHint": {
+    "message": "Een tweede plek om te zoeken naar wat Scholar afkapt."
+  },
+  "optSemanticLabel": {
+    "message": "Auteurslijsten eerst lezen via Semantic Scholar"
+  },
+  "optSemanticLabelHint": {
+    "message": "Bij “Hele lijsten lezen” vraagt de extensie eerst Semantic Scholar om de volledige auteurslijst van elke paper (het ontvangt de titel van de paper en verder niets), en opent de eigen pagina van Scholar alleen voor wat het niet kent. Minder verzoeken aan Scholar, dus minder CAPTCHA’s."
+  },
+  "yearsTitle": {
+    "message": "Gemarkeerde papers per jaar"
+  },
+  "yearsOlder": {
+    "message": "$N1$ oudere papers staan niet in de grafiek",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "yearsOlderOne": {
+    "message": "1 oudere paper staat niet in de grafiek"
+  },
+  "optPanelYears": {
+    "message": "Papers per jaar"
+  },
+  "optPanelYearsHint": {
+    "message": "Een balk per jaar, in de rolkleuren."
+  },
+  "coverRepeats": {
+    "message": "Vermeldingen die een ander paper dupliceren: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "coverRepeatsAction": {
+    "message": "Samenvoegen…"
+  },
+  "venuesTitle": {
+    "message": "Waar de gemarkeerde papers verschijnen"
+  },
+  "optPanelVenues": {
+    "message": "Topvenues"
+  },
+  "optPanelVenuesHint": {
+    "message": "De gerankte venues van je gemarkeerde papers, meest voorkomend eerst; klik op een venue om de papers te tonen."
+  },
+  "optCopyDiagnostics": {
+    "message": "Details kopiëren voor bugrapport"
+  },
+  "optSemanticKey": {
+    "message": "API-sleutel (optioneel)"
+  },
+  "optSemanticKeyHint": {
+    "message": "Een gratis sleutel van semanticscholar.org/product/api voorkomt de gedeelde limiet die iedereen zonder sleutel deelt. De sleutel blijft op dit apparaat (wordt niet gesynchroniseerd) en wordt alleen naar Semantic Scholar gestuurd."
+  },
+  "resolveSemanticBusy": {
+    "message": "Semantic Scholar vroeg om te vertragen, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
+  },
+  "optRowStyle": {
+    "message": "Rijmarkering"
+  },
+  "optRowStyleFull": {
+    "message": "Achtergrond en balk"
+  },
+  "optRowStyleBar": {
+    "message": "Alleen balk"
+  },
+  "optRowStyleTint": {
+    "message": "Alleen achtergrond"
+  },
+  "filterShowing": {
+    "message": "Getoonde papers: $N1$ / $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterClear": {
+    "message": "Wissen"
+  },
+  "filterMinCites": {
+    "message": "≥$N1$ citaties",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "noRolesHint": {
+    "message": "Geen auteurspositie staat aan, dus er wordt niets gemarkeerd."
+  },
+  "metricsOfN": {
+    "message": "$N1$ van $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "tipFilterH": {
+    "message": "Filteren op h-kern papers (≥$N1$ citaties)",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "tipFilterI10": {
+    "message": "Filteren op i10 papers (≥10 citaties)"
+  },
+  "popupPapersOf": {
+    "message": "$N1$ van $N2$ papers",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "resolveSemanticKey": {
+    "message": "Semantic Scholar heeft de API-sleutel niet geaccepteerd, dus voor de rest zijn de eigen pagina's van Scholar gebruikt."
+  },
+  "optLinkPrivacy": {
+    "message": "Privacy"
+  },
+  "optLinkIssues": {
+    "message": "Een probleem melden"
+  },
+  "filterPlaceholder": {
+    "message": "Filteren op titel of auteur…"
+  },
+  "searchShortcut": {
+    "message": "Druk op / om te zoeken"
+  },
+  "venuesShowMore": {
+    "message": "Meer tonen"
+  },
+  "venuesShowFewer": {
+    "message": "Minder tonen"
+  },
+  "optHideCitedTable": {
+    "message": "Citatiemetriektabel"
+  },
+  "optHideCitedTableHint": {
+    "message": "De tabel met citaties, h-index en i10-index in de zijbalk."
+  },
+  "optHideCitedChart": {
+    "message": "Grafiek met citaties per jaar"
+  },
+  "optHideCitedChartHint": {
+    "message": "Het jaarlijkse citatiehistogram in de zijbalk."
+  },
+  "optConfigTitle": {
+    "message": "Configuratie & voorinstellingen"
+  },
+  "optConfigHint": {
+    "message": "Instellingen als JSON: kopiëren, opslaan in een bestand, een bestand laden of een wijziging in de editor plakken. Een voorinstelling wijzigt alleen wat erin genoemd staat, en de pagina meldt wat is toegepast en wat niet."
+  },
+  "optConfigCopy": {
+    "message": "Configuratie kopiëren (JSON)"
+  },
+  "optConfigExport": {
+    "message": "Bestand exporteren"
+  },
+  "optConfigImportFile": {
+    "message": "Bestand importeren"
+  },
+  "optConfigEditor": {
+    "message": "JSON plakken of bewerken"
+  },
+  "optConfigApply": {
+    "message": "Configuratie toepassen"
+  },
+  "optConfigApplied": {
+    "message": "Wijzigingen toegepast: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optConfigNothing": {
+    "message": "Niets om te wijzigen: de instellingen staan al zo."
+  },
+  "optConfigIgnored": {
+    "message": "Niet toegepast:"
+  },
+  "optConfigError": {
+    "message": "Dit is geen geldige JSON: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optAgentTitle": {
+    "message": "AI-agents"
+  },
+  "optAgentHint": {
+    "message": "Kopieer een gids met elke instelling, de waarden ervan en je huidige keuzes. Plak die in je AI-assistent, zeg wat je wilt en plak het antwoord daarna in de configuratie-editor hieronder en druk op Configuratie toepassen."
+  },
+  "optAgentCopy": {
+    "message": "Agentengids kopiëren"
+  },
+  "optConfigPreset": {
+    "message": "Voorinstellingen"
+  },
+  "optPresetLast": {
+    "message": "Focus op laatste auteur"
+  },
+  "optPresetFull": {
+    "message": "Alle functies"
+  },
+  "optPresetFirst": {
+    "message": "Focus op eerste auteur"
+  },
+  "optPresetMinimal": {
+    "message": "Minimalistisch"
+  },
+  "optViewCache": {
+    "message": "Opgeslagen details bekijken"
+  },
+  "optSearchPlaceholder": {
+    "message": "Instellingen doorzoeken…"
+  },
+  "optSearchClear": {
+    "message": "Zoekopdracht wissen"
+  },
+  "optCacheTitle": {
+    "message": "Opgeslagen artikeldetails"
+  },
+  "optCacheSearch": {
+    "message": "Gecachte artikelen filteren…"
+  },
+  "optCacheCopy": {
+    "message": "Cache kopiëren (JSON)"
+  },
+  "optCacheEmpty": {
+    "message": "Er zijn nog geen artikeldetails opgeslagen op dit apparaat."
+  },
+  "optCacheShown": {
+    "message": "Getoond: $N1$ van $N2$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      },
+      "n2": {
+        "content": "$2"
+      }
+    }
+  },
+  "optCacheSource": {
+    "message": "Bron"
+  },
+  "optCacheClose": {
+    "message": "Sluiten"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
+  },
+  "optSaveFailed": {
+    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+  }
+}
