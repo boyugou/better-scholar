@@ -479,7 +479,7 @@
     "message": "Przywrócić wszystkie te ustawienia do wartości domyślnych?"
   },
   "optStorage": {
-    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Nic nie jest nigdzie wysyłane, chyba że włączysz Semantic Scholar."
+    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Strony Scholar są odczytywane tylko wtedy, gdy je otworzysz, a tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
   },
   "optSample": {
     "message": "Przykładowa praca"

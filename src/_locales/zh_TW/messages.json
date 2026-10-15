@@ -497,7 +497,7 @@
     "message": "要將這些設定全部還原為預設值嗎？"
   },
   "optStorage": {
-    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。除非您開啟 Semantic Scholar，否則不會傳送到任何地方。"
+    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。Scholar 頁面僅在您開啟時才會讀取；只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
   },
   "optSample": {
     "message": "範例論文"

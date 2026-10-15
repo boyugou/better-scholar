@@ -479,7 +479,7 @@
     "message": "Readuci toate aceste setări la valorile implicite?"
   },
   "optStorage": {
-    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Nimic nu este trimis nicăieri, decât dacă activezi Semantic Scholar."
+    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Paginile Scholar sunt citite doar atunci când le deschizi, iar titlurile lucrărilor sunt trimise către Semantic Scholar doar dacă activezi asta."
   },
   "optSample": {
     "message": "Lucrare de exemplu"

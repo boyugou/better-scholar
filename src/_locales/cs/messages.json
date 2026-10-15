@@ -479,7 +479,7 @@
     "message": "Obnovit všechna tato nastavení na výchozí hodnoty?"
   },
   "optStorage": {
-    "message": "Nastavení se ukládá v prohlížeči a synchronizuje s profilem Chrome. Nic se nikam neodesílá, pokud nezapnete Semantic Scholar."
+    "message": "Nastavení se ukládá v prohlížeči a synchronizuje s profilem Chrome. Stránky Scholar se čtou jen tehdy, když je otevřete, a názvy prací se posílají do Semantic Scholar jen tehdy, když to zapnete."
   },
   "optSample": {
     "message": "Ukázková práce"

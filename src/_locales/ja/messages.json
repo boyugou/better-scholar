@@ -497,7 +497,7 @@
     "message": "これらの設定をすべて初期設定に戻しますか？"
   },
   "optStorage": {
-    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。外部には何も送信されません。ただし Semantic Scholar をオンにした場合は除きます。"
+    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。Scholar のページは開いたときにだけ読み取られ、論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
   },
   "optSample": {
     "message": "サンプル論文"

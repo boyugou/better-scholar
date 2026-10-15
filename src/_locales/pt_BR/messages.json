@@ -497,7 +497,7 @@
     "message": "Restaurar todas estas configurações para os padrões?"
   },
   "optStorage": {
-    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. Nada é enviado a lugar nenhum, a menos que você ative o Semantic Scholar."
+    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. As páginas do Scholar só são lidas quando você as abre, e os títulos dos artigos só são enviados ao Semantic Scholar se você ativar essa opção."
   },
   "optSample": {
     "message": "Artigo de exemplo"

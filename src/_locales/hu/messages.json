@@ -479,7 +479,7 @@
     "message": "Visszaállítod az összes beállítást az alapértékekre?"
   },
   "optStorage": {
-    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. Semmi nem kerül elküldésre sehová, kivéve ha bekapcsolod a Semantic Scholart."
+    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. A Scholar-oldalakat csak akkor olvassa be a bővítmény, amikor megnyitod őket, a cikkek címei pedig csak akkor kerülnek a Semantic Scholarhoz, ha bekapcsolod ezt."
   },
   "optSample": {
     "message": "Minta cikk"

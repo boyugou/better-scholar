@@ -479,7 +479,7 @@
     "message": "Đặt lại tất cả cài đặt này về mặc định?"
   },
   "optStorage": {
-    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Không có gì được gửi đi đâu cả, trừ khi bạn bật Semantic Scholar."
+    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Trang Scholar chỉ được đọc khi bạn mở chúng, còn tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
   },
   "optSample": {
     "message": "Bài mẫu"

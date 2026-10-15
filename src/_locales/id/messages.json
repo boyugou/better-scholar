@@ -479,7 +479,7 @@
     "message": "Kembalikan semua pengaturan ini ke default?"
   },
   "optStorage": {
-    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Tidak ada yang dikirim ke mana pun kecuali Anda mengaktifkan Semantic Scholar."
+    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Halaman Scholar hanya dibaca saat Anda membukanya, dan judul makalah hanya dikirim ke Semantic Scholar jika Anda mengaktifkannya."
   },
   "optSample": {
     "message": "Contoh makalah"

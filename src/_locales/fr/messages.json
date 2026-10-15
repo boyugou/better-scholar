@@ -497,7 +497,7 @@
     "message": "Rétablir tous ces réglages à leurs valeurs par défaut ?"
   },
   "optStorage": {
-    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Rien n’est envoyé nulle part, sauf si vous activez Semantic Scholar."
+    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Les pages Scholar ne sont lues que lorsque vous les ouvrez, et les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
   },
   "optSample": {
     "message": "Article d’exemple"

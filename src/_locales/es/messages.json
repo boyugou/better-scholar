@@ -497,7 +497,7 @@
     "message": "¿Restablecer todos estos ajustes a sus valores predeterminados?"
   },
   "optStorage": {
-    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. No se envía nada a ningún sitio, a menos que actives Semantic Scholar."
+    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. Las páginas de Scholar solo se leen cuando las abres, y los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
   },
   "optSample": {
     "message": "Artículo de ejemplo"

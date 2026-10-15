@@ -497,7 +497,7 @@
     "message": "Repor todas estas definições nos valores predefinidos?"
   },
   "optStorage": {
-    "message": "As definições ficam guardadas no seu navegador e sincronizam com o seu perfil do Chrome. Nada é enviado para lado nenhum, a menos que ative o Semantic Scholar."
+    "message": "As definições ficam guardadas no seu navegador e sincronizam com o seu perfil do Chrome. As páginas do Scholar só são lidas quando as abre, e os títulos dos artigos só são enviados para o Semantic Scholar se ativar esta opção."
   },
   "optSample": {
     "message": "Artigo de exemplo"

@@ -497,7 +497,7 @@
     "message": "Tilbakestille alle disse innstillingene til standardverdiene?"
   },
   "optStorage": {
-    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Ingenting sendes noe sted med mindre du slår på Semantic Scholar."
+    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Scholar-sider leses bare når du åpner dem, og artikkeltitler sendes bare til Semantic Scholar hvis du slår det på."
   },
   "optSample": {
     "message": "Eksempelartikkel"
