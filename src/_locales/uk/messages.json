@@ -826,6 +826,9 @@
   "optConfigPreset": {
     "message": "Пресети"
   },
+  "optPresetFull": {
+    "message": "Усі функції"
+  },
   "optPresetSenior": {
     "message": "Акцент на старшого автора"
   },

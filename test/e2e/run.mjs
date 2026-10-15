@@ -1230,6 +1230,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.waitForSelector(".cache-modal", { state: "detached" });
 
     // presets and configuration editor
+    await opts.click('[data-preset="full"]');
+    const fullPrefs = await stored(opts, "sync", "prefs");
+    assert.equal(fullPrefs.roles.first, true);
+    assert.equal(fullPrefs.roles.last, true);
+    assert.equal(fullPrefs.mergeDuplicates, true);
+    assert.equal(fullPrefs.panel.venues, true);
+    assert.equal(fullPrefs.semanticScholar, true);
+    assert.equal(fullPrefs.hide.access, false);
+
     await opts.click('[data-preset="senior"]');
     assert.equal((await stored(opts, "sync", "prefs")).roles.first, false);
     assert.equal((await stored(opts, "sync", "prefs")).roles.last, true);

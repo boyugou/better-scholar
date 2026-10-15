@@ -847,6 +847,9 @@
   "optConfigPreset": {
     "message": "Predefinições"
   },
+  "optPresetFull": {
+    "message": "Todos os recursos"
+  },
   "optPresetSenior": {
     "message": "Autor sênior / correspondente"
   },

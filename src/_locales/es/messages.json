@@ -847,6 +847,9 @@
   "optConfigPreset": {
     "message": "Ajustes preestablecidos"
   },
+  "optPresetFull": {
+    "message": "Todas las funciones"
+  },
   "optPresetSenior": {
     "message": "Autor sénior / correspondencia"
   },

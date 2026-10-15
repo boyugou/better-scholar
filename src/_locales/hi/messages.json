@@ -832,6 +832,9 @@
   "optConfigPreset": {
     "message": "प्रीसेट"
   },
+  "optPresetFull": {
+    "message": "सभी सुविधाएँ"
+  },
   "optPresetSenior": {
     "message": "वरिष्ठ लेखक प्राथमिकता"
   },

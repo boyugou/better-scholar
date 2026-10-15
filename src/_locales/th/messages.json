@@ -826,6 +826,9 @@
   "optConfigPreset": {
     "message": "ค่าที่ตั้งไว้ล่วงหน้า"
   },
+  "optPresetFull": {
+    "message": "เปิดทุกฟังก์ชัน"
+  },
   "optPresetSenior": {
     "message": "เน้นผู้เขียนหลัก/อาวุโส"
   },

@@ -826,6 +826,9 @@
   "optConfigPreset": {
     "message": "Předvolby"
   },
+  "optPresetFull": {
+    "message": "Všechny funkce"
+  },
   "optPresetSenior": {
     "message": "Důraz na vedoucího autora"
   },

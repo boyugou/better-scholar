@@ -826,6 +826,9 @@
   "optConfigPreset": {
     "message": "Preset"
   },
+  "optPresetFull": {
+    "message": "Semua fitur"
+  },
   "optPresetSenior": {
     "message": "Fokus penulis senior"
   },

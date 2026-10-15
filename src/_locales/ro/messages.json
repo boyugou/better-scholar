@@ -826,6 +826,9 @@
   "optConfigPreset": {
     "message": "Presetări"
   },
+  "optPresetFull": {
+    "message": "Toate funcțiile"
+  },
   "optPresetSenior": {
     "message": "Focalizare pe autorul principal"
   },

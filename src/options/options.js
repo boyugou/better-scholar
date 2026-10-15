@@ -275,21 +275,29 @@
       class: "custom-select-trigger",
       "aria-label": label,
       "aria-haspopup": "listbox",
+      "aria-expanded": "false",
       onClick: (e) => {
         e.stopPropagation();
         togglePopover();
       }
     }, triggerBadge, triggerLabel, chevron);
 
+    const searchIcon = s("svg", { class: "custom-select-search-ico", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.2", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("circle", { cx: "11", cy: "11", r: "7" }),
+      s("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" }));
+
     const searchInput = h("input", {
-      type: "search",
+      type: "text",
       class: "custom-select-search",
-      placeholder: t("filterPlaceholder"),
-      "aria-label": t("filterPlaceholder")
+      placeholder: `${t("optLanguageTitle")}…`,
+      "aria-label": t("optLanguageTitle"),
+      autocomplete: "off",
+      spellcheck: "false"
     });
 
+    const searchWrap = h("div", { class: "custom-select-search-wrap" }, searchIcon, searchInput);
     const listContainer = h("div", { class: "custom-select-list", role: "listbox", "aria-label": label });
-    const popover = h("div", { class: "custom-select-popover", style: "display: none;" }, searchInput, listContainer);
+    const popover = h("div", { class: "custom-select-popover", style: "display: none;" }, searchWrap, listContainer);
     const wrap = h("div", { class: "custom-select-wrap" }, triggerBtn, popover, sel);
 
     function updateTrigger(val) {
@@ -300,34 +308,50 @@
       triggerLabel.textContent = text;
     }
 
+    let focusedIndex = -1;
+
     function renderList(query) {
       const q = (query || "").trim().toLowerCase();
       const filtered = choices.filter(([v, l]) => !q || v.toLowerCase().includes(q) || l.toLowerCase().includes(q));
-      listContainer.replaceChildren(...filtered.map(([v, l]) => {
+      focusedIndex = -1;
+      listContainer.replaceChildren(...filtered.map(([v, l], idx) => {
         const active = v === get();
+        const checkIcon = active
+          ? s("svg", { class: "custom-select-check", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-width": "2.5", "stroke-linecap": "round", "stroke-linejoin": "round" },
+              s("polyline", { points: "20 6 9 17 4 12" }))
+          : null;
         const item = h("div", {
           class: "custom-select-item" + (active ? " active" : ""),
           role: "option",
+          "data-idx": String(idx),
           "aria-selected": active ? "true" : "false",
-          onClick: () => {
-            const was = get();
-            sel.value = v;
-            set(v);
-            updateTrigger(v);
-            closePopover();
-            save().then(() => { if (after && was !== v) after(); });
+          onClick: (e) => {
+            e.stopPropagation();
+            selectValue(v);
           }
-        }, h("span", {}, l), h("span", { class: "custom-select-item-sub" }, v));
+        },
+        h("span", { class: "custom-select-item-label" }, checkIcon, h("span", {}, l)),
+        h("span", { class: "custom-select-item-sub" }, v));
         return item;
       }));
+    }
+
+    function selectValue(v) {
+      const was = get();
+      sel.value = v;
+      set(v);
+      updateTrigger(v);
+      closePopover();
+      save().then(() => { if (after && was !== v) after(); });
     }
 
     function openPopover() {
       popover.style.display = "flex";
       wrap.classList.add("open");
+      triggerBtn.setAttribute("aria-expanded", "true");
       renderList("");
       searchInput.value = "";
-      searchInput.focus();
+      setTimeout(() => searchInput.focus(), 10);
       document.addEventListener("click", onDocClick);
       document.addEventListener("keydown", onDocKey);
     }
@@ -335,6 +359,7 @@
     function closePopover() {
       popover.style.display = "none";
       wrap.classList.remove("open");
+      triggerBtn.setAttribute("aria-expanded", "false");
       document.removeEventListener("click", onDocClick);
       document.removeEventListener("keydown", onDocKey);
     }
@@ -349,7 +374,36 @@
     }
 
     function onDocKey(e) {
-      if (e.key === "Escape") closePopover();
+      if (e.key === "Escape") {
+        closePopover();
+        triggerBtn.focus();
+        return;
+      }
+      const items = Array.from(listContainer.querySelectorAll(".custom-select-item"));
+      if (!items.length) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        focusedIndex = (focusedIndex + 1) % items.length;
+        updateFocus(items);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        focusedIndex = (focusedIndex - 1 + items.length) % items.length;
+        updateFocus(items);
+      } else if (e.key === "Enter" && focusedIndex >= 0 && items[focusedIndex]) {
+        e.preventDefault();
+        items[focusedIndex].click();
+      }
+    }
+
+    function updateFocus(items) {
+      items.forEach((it, i) => {
+        if (i === focusedIndex) {
+          it.classList.add("focused");
+          it.scrollIntoView({ block: "nearest" });
+        } else {
+          it.classList.remove("focused");
+        }
+      });
     }
 
     searchInput.addEventListener("input", () => renderList(searchInput.value));
@@ -828,7 +882,21 @@
   const importFileBtn = h("button", { class: "btn", type: "button", "data-act": "config-import-file", "aria-label": t("optConfigImportFile"), onClick: () => fileInput.click() }, t("optConfigImportFile"));
 
   const applyPreset = async (type) => {
-    if (type === "senior") {
+    if (type === "full") {
+      prefs.roles = { first: true, cofirst: true, second: true, last: true };
+      prefs.markName = true;
+      prefs.ranks = { ccf: true, core: true };
+      prefs.marks = { award: true, oral: true, spotlight: true, highlight: true };
+      prefs.rowStyle = "full";
+      prefs.talkRows = "separate";
+      prefs.autoLoad = true;
+      prefs.mergeDuplicates = true;
+      prefs.semanticScholar = true;
+      prefs.hide = { cited: false, citedTable: false, citedChart: false, coauthors: false, access: false };
+      for (const k of ["show", "summary", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]) {
+        prefs.panel[k] = true;
+      }
+    } else if (type === "senior") {
       prefs.roles = { first: false, cofirst: false, second: false, last: true };
       prefs.ranks = { ccf: true, core: true };
       prefs.rowStyle = "full";
@@ -851,6 +919,9 @@
 
   const presetRow = h("div", { class: "row presets", role: "group", "aria-label": t("optConfigPreset") },
     h("span", { class: "presets-title faint" }, t("optConfigPreset") + ":"),
+    h("button", { class: "btn preset-chip", type: "button", "data-preset": "full", "aria-label": t("optPresetFull"), onClick: () => applyPreset("full") },
+      h("span", { class: "preset-badge", "aria-hidden": "true" }, "🚀"),
+      t("optPresetFull")),
     h("button", { class: "btn preset-chip", type: "button", "data-preset": "senior", "aria-label": t("optPresetSenior"), onClick: () => applyPreset("senior") },
       h("span", { class: "preset-badge", "aria-hidden": "true" }, "🎓"),
       t("optPresetSenior")),
