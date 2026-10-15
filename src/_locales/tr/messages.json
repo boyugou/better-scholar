@@ -386,9 +386,6 @@
   "optMarkNameHint": {
     "message": "Kalın ve renkli. Sıranızı görmek için üzerine gelin."
   },
-  "optRanksTitle": {
-    "message": "Yayın yeri sıralamaları"
-  },
   "optCcf": {
     "message": "CCF sıralaması"
   },
@@ -427,9 +424,6 @@
   },
   "optPanelSummaryHint": {
     "message": "Makalelerinizin konum ve sıralamaya göre tablosu; sıralamaların nereden geldiğine dair bir notla birlikte."
-  },
-  "optPanelMarks": {
-    "message": "Ödül ve sunum sayıları"
   },
   "optPanelMarksHint": {
     "message": "Ödüllü makale ve sunum düzeyi sayısı; tek tıkla listelenir."
@@ -951,5 +945,116 @@
   },
   "optCacheClose": {
     "message": "Kapat"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
   }
 }

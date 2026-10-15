@@ -386,9 +386,6 @@
   "optMarkNameHint": {
     "message": "Bold and tinted. Hover it to see your position."
   },
-  "optRanksTitle": {
-    "message": "Venue ranks"
-  },
   "optCcf": {
     "message": "CCF rank"
   },
@@ -420,16 +417,13 @@
     "message": "Show the summary panel"
   },
   "optPanelShowHint": {
-    "message": "The role × rank table on a profile page. Off: only the paper list is marked up."
+    "message": "The panel in the right-hand column of a profile page. Off: only the paper list is marked up."
   },
   "optPanelSummary": {
     "message": "Role × rank table"
   },
   "optPanelSummaryHint": {
     "message": "The table of your papers by position and rank, with the note on where the ranks come from."
-  },
-  "optPanelMarks": {
-    "message": "Awards and talks counts"
   },
   "optPanelMarksHint": {
     "message": "The count of award-winning papers and talk levels, one click to list them."
@@ -438,7 +432,7 @@
     "message": "Loaded papers and unranked venues"
   },
   "optPanelStatusHint": {
-    "message": "How many papers are loaded, the “Load all” button, and the list of papers at venues without a rank."
+    "message": "How many papers are loaded, the “Load all” button, what could not be read, and the list of papers at venues without a rank."
   },
   "optPanelNames": {
     "message": "Name spelling help"
@@ -459,7 +453,7 @@
     "message": "Filters"
   },
   "optPanelFiltersHint": {
-    "message": "Only highlighted papers, and a year range."
+    "message": "The search box, the quick filters, the highlighted-only switch and the year range."
   },
   "optPanelMetrics": {
     "message": "Citation totals"
@@ -951,5 +945,116 @@
   },
   "optCacheClose": {
     "message": "Close"
+  },
+  "optChipsTitle": {
+    "message": "Chips on each paper"
+  },
+  "optChipsHint": {
+    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+  },
+  "optPanelOrder": {
+    "message": "Order of the parts"
+  },
+  "optPanelOrderHint": {
+    "message": "From top to bottom. A part that is switched off keeps its place."
+  },
+  "optHeadName": {
+    "message": "Name at the top"
+  },
+  "optHeadSettings": {
+    "message": "Settings button"
+  },
+  "optHeadFold": {
+    "message": "Fold button"
+  },
+  "optShowSection": {
+    "message": "Show this part"
+  },
+  "optPartTitle": {
+    "message": "Title"
+  },
+  "optTableCcf": {
+    "message": "CCF tab and columns"
+  },
+  "optTableCore": {
+    "message": "CORE tab and columns"
+  },
+  "optTableUnranked": {
+    "message": "“Not ranked” column"
+  },
+  "optTableTotal": {
+    "message": "Totals (column and row)"
+  },
+  "optTableOther": {
+    "message": "“Other” row"
+  },
+  "optTableHidden": {
+    "message": "“Hidden” row"
+  },
+  "optTableNote": {
+    "message": "Note on where the ranks come from"
+  },
+  "optOrderButtons": {
+    "message": "Order of the buttons"
+  },
+  "optFiltersSearch": {
+    "message": "Search box"
+  },
+  "optOrderPills": {
+    "message": "Order of the quick filters"
+  },
+  "optFiltersQuick": {
+    "message": "Quick filters"
+  },
+  "optPillCcfA": {
+    "message": "CCF A"
+  },
+  "optPillCoreA": {
+    "message": "CORE A*"
+  },
+  "optPillCites": {
+    "message": "More than 100 citations"
+  },
+  "optFiltersYears": {
+    "message": "Year range"
+  },
+  "optFiltersBar": {
+    "message": "“Showing N of M” bar"
+  },
+  "optMetricsScope": {
+    "message": "Line naming the positions that count"
+  },
+  "optMetricsOf": {
+    "message": "“of N” beside each number"
+  },
+  "optYearsAxis": {
+    "message": "First and last year"
+  },
+  "optStatusLoaded": {
+    "message": "Papers loaded, and Load all"
+  },
+  "optStatusCutoff": {
+    "message": "Cut-off author lists, and Read full lists"
+  },
+  "optStatusRepeats": {
+    "message": "Repeated entries"
+  },
+  "optStatusAbsent": {
+    "message": "Papers without your name"
+  },
+  "optStatusUnranked": {
+    "message": "Papers at unranked venues"
+  },
+  "optNamesHints": {
+    "message": "Spellings found in your papers"
+  },
+  "optMoveUp": {
+    "message": "Move up"
+  },
+  "optMoveDown": {
+    "message": "Move down"
+  },
+  "optRowStyleNone": {
+    "message": "No colour"
   }
 }

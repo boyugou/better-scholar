@@ -1,72 +1,123 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const prefs = require("../src/lib/prefs.js");
 const i18n = require("../src/lib/i18n.js");
+const query = require("../src/lib/query.js");
+
+const en = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/_locales/en/messages.json"), "utf8"));
+function nest(p, value) { const out = {}; let at = out; const keys = p.split("."); for (const k of keys.slice(0, -1)) at = at[k] = {}; at[keys[keys.length - 1]] = value; return out; }
+const bools = (group) => prefs.SETTINGS.filter((s) => s.kind === "bool" && s.path.startsWith(group + ".")).map((s) => s.path);
 
 test("defaults: complete, in the table's order, and a fresh object each time", () => {
   const d = prefs.defaults();
-  assert.deepEqual(d, {
-    language: "auto",
-    scholarLanguage: "keep",
-    roles: { first: true, cofirst: true, second: true, last: true },
-    markName: true,
-    colors: { first: "", cofirst: "", second: "", last: "" },
-    rowStyle: "full",
-    ranks: { ccf: true, core: true },
-    marks: { award: true, oral: true, spotlight: true, highlight: true },
-    talkRows: "separate",
-    mergeDuplicates: false,
-    hide: { cited: false, citedTable: false, citedChart: false, coauthors: false, access: false },
-    panel: { show: true, summary: true, marks: true, filters: true, metrics: true, years: true, venues: false, status: true, names: true },
-    copy: { summary: true, table: true, papers: true, apa: true, bibtex: true, markdown: true, json: true, csv: true },
-    semanticScholar: false,
-    autoLoad: true
-  });
   assert.deepEqual(Object.keys(d), [...new Set(prefs.SETTINGS.map((s) => s.path.split(".")[0]))], "the record's keys follow the table");
+  assert.deepEqual(d.roles, { first: true, cofirst: true, second: true, last: true });
+  assert.deepEqual(d.colors, { first: "", cofirst: "", second: "", last: "" });
+  assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, award: true, oral: true, spotlight: true, highlight: true });
+  assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
+  assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
+  assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "first", "cofirst", "second", "last", "award", "talk"]);
+  assert.equal(d.panel.venues.show, false, "the venue list is off until asked");
+  assert.equal(d.panel.marks.grouping, "separate");
+  assert.deepEqual(prefs.PILLS.filter((id) => d.panel.filters.pills[id]), ["ccfA", "cites100", "first", "award"], "the quick filters that were always there");
+  assert.deepEqual([d.mergeDuplicates, d.autoLoad, d.semanticScholar, d.language, d.scholarLanguage], [false, true, false, "auto", "keep"]);
+  assert.equal(Object.values(d.hide).some(Boolean), false, "nothing of Scholar's own is hidden until asked");
+  // every part and every thing in it is on, except what is off for a reason
+  for (const p of prefs.SETTINGS.filter((s) => s.kind === "bool" && /^(panel|rows|roles)\./.test(s.path) && !s.path.startsWith("panel.filters.pills."))) {
+    assert.equal(prefs.normalize({})[p.path.split(".")[0]] !== undefined && p.def, p.path === "panel.venues.show" ? false : true, p.path);
+  }
   d.roles.first = false;
+  d.panel.order.reverse();
   assert.equal(prefs.defaults().roles.first, true);
+  assert.equal(prefs.defaults().panel.order[0], "table", "the lists are copies");
 });
 
-test("the table of settings: every row is whole, and the groups the code uses are the table's", () => {
+test("the table of settings: every row is whole, the cards hold them in the order they are drawn, and the words exist", () => {
   const paths = prefs.SETTINGS.map((s) => s.path);
   assert.equal(new Set(paths).size, paths.length, "no path twice");
   for (const s of prefs.SETTINGS) {
-    assert.ok(["bool", "color", "choice", "language"].includes(s.kind), s.path + ": a known kind");
+    assert.ok(["bool", "color", "choice", "language", "order"].includes(s.kind), s.path + ": a known kind");
     assert.ok(typeof s.doc === "string" && s.doc.length > 20 && /[.)]$/.test(s.doc), s.path + ": says what it does, in a sentence");
     assert.equal(prefs.apply({}, nest(s.path, s.def)).ignored.length, 0, s.path + ": its own default is accepted");
     if (s.kind === "choice") assert.ok(s.values.includes(s.def), s.path + ": the default is one of the values");
     if (s.kind === "language") assert.ok(s.none === s.def && !i18n.codes.includes(s.none), s.path + ": the default is the 'none' word");
+    if (s.kind === "order") assert.deepEqual([...s.def].sort(), [...s.values].sort(), s.path + ": the default order has every id once");
+    if (s.kind !== "color") assert.ok(en[s.label], s.path + ": the label " + s.label + " is a message");
+    if (s.hint) assert.ok(en[s.hint], s.path + ": the hint is a message");
+    if (s.group) assert.ok(en[s.group], s.path + ": the group's name is a message");
+    if (s.parent) assert.ok(paths.indexOf(s.parent) >= 0 && paths.indexOf(s.parent) < paths.indexOf(s.path), s.path + ": hangs on a switch above it");
+  }
+  for (const c of prefs.CARDS) {
+    assert.ok(en[c.title], c.id + ": the title is a message");
+    if (c.hint) assert.ok(en[c.hint], c.id + ": the description is a message");
   }
   assert.deepEqual(prefs.flatten(prefs.defaults()).map((x) => x.path), paths, "the record has exactly the table's settings");
   assert.deepEqual([prefs.ROLES, prefs.RANKS, prefs.MARK_GROUPS], [["first", "cofirst", "second", "last"], ["ccf", "core"], ["award", "oral", "spotlight", "highlight"]]);
-  assert.deepEqual(prefs.PANEL_PARTS, ["show", "summary", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
   assert.deepEqual(prefs.COPY_BUTTONS, ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
   assert.deepEqual(prefs.HIDE_PARTS, ["cited", "citedTable", "citedChart", "coauthors", "access"]);
+  // a part of the panel has a card of its own, and the cards follow the panel's default order
+  assert.deepEqual(prefs.SECTIONS.map((id) => prefs.CARDS.findIndex((c) => c.id === id)).every((i) => i >= 0), true);
+  const at = prefs.SECTIONS.map((id) => prefs.CARDS.findIndex((c) => c.id === id));
+  assert.deepEqual(at, [...at].sort((a, b) => a - b), "the part cards are in the order of the panel");
+  for (const id of prefs.SECTIONS) assert.ok(paths.includes(`panel.${id}.show`), id + " has its own switch");
 });
-function nest(path, value) { const out = {}; let at = out; const keys = path.split("."); for (const k of keys.slice(0, -1)) at = at[k] = {}; at[keys[keys.length - 1]] = value; return out; }
+
+test("the quick filters: each is one valid term of the search language, of the kind its name says", () => {
+  for (const [id, op] of Object.entries(prefs.PILL_OPERATORS)) {
+    const r = query.parse(op);
+    assert.deepEqual([r.errors, r.terms.length], [[], 1], id);
+  }
+  assert.deepEqual(prefs.PILLS, Object.keys(prefs.PILL_OPERATORS));
+  assert.deepEqual(bools("panel.filters.pills"), prefs.PILLS.map((id) => "panel.filters.pills." + id));
+});
 
 test("normalize: keeps real choices, drops unknown keys, repairs wrong values, never throws", () => {
-  const n = prefs.normalize({ roles: { first: false, last: "no", bogus: true }, ranks: { core: false }, markName: 0, marks: null, panel: { show: false, extra: 1 }, copy: { csv: false, text: false }, other: 1 });
+  const n = prefs.normalize({ roles: { first: false, last: "no", bogus: true }, rows: { core: false, name: 0 }, panel: { show: false, extra: 1, table: { total: false, ccf: "yes" }, marks: null }, other: 1 });
   assert.equal(n.roles.first, false);
   assert.equal(n.roles.last, true, "a non-boolean falls back to the default");
   assert.equal("bogus" in n.roles, false);
-  assert.deepEqual(n.ranks, { ccf: true, core: false });
-  assert.equal(n.markName, true);
-  assert.deepEqual(n.marks, prefs.defaults().marks);
-  assert.deepEqual(n.panel, { ...prefs.defaults().panel, show: false });
-  assert.deepEqual(n.copy, { ...prefs.defaults().copy, csv: false }, "only the buttons the table names");
+  assert.deepEqual([n.rows.core, n.rows.name, n.rows.ccf], [false, true, true]);
+  assert.equal(n.panel.show, false);
+  assert.deepEqual([n.panel.table.total, n.panel.table.ccf], [false, true]);
+  assert.deepEqual(n.panel.marks, prefs.defaults().panel.marks);
+  assert.equal("extra" in n.panel, false);
   assert.equal("other" in n, false);
   assert.equal(prefs.normalize({ autoLoad: false }).autoLoad, false);
   assert.equal(prefs.normalize({ autoLoad: "no" }).autoLoad, true);
-  assert.equal(prefs.normalize({ rowStyle: "bar" }).rowStyle, "bar");
-  assert.equal(prefs.normalize({ rowStyle: "stripes" }).rowStyle, "full");
-  assert.equal(prefs.normalize({ talkRows: "pair" }).talkRows, "pair");
-  assert.equal(prefs.normalize({ talkRows: 3 }).talkRows, "separate");
+  assert.equal(prefs.normalize({ rows: { style: "bar" } }).rows.style, "bar");
+  assert.equal(prefs.normalize({ rows: { style: "none" } }).rows.style, "none");
+  assert.equal(prefs.normalize({ rows: { style: "stripes" } }).rows.style, "full");
+  assert.equal(prefs.normalize({ panel: { marks: { grouping: "pair" } } }).panel.marks.grouping, "pair");
+  assert.equal(prefs.normalize({ panel: { marks: { grouping: 3 } } }).panel.marks.grouping, "separate");
   assert.equal(prefs.normalize({ colors: { first: "#ABCDEF", last: "red", second: "#12345", cofirst: 7 } }).colors.first, "#abcdef", "a colour is lower-cased");
   assert.deepEqual(prefs.normalize({ colors: { first: "#ABCDEF", last: "red", second: "#12345", cofirst: 7 } }).colors, { first: "#abcdef", cofirst: "", second: "", last: "" });
   for (const junk of [undefined, null, 0, "x", [], [1, 2], true, () => 1]) assert.deepEqual(prefs.normalize(junk), prefs.defaults());
   assert.deepEqual(prefs.normalize(prefs.normalize(n)), n, "idempotent");
+});
+
+test("an order is always a whole permutation: ids left out follow in the default order, an unknown or repeated id spoils the list", () => {
+  const first = prefs.normalize({ panel: { order: ["filters", "table"] } }).panel.order;
+  assert.deepEqual(first, ["filters", "table", "copy", "marks", "metrics", "years", "venues", "status", "names"], "named first, the rest after");
+  assert.deepEqual(prefs.normalize({ panel: { order: ["names", "table", "names"] } }).panel.order, prefs.defaults().panel.order, "a repeated id: the default");
+  assert.deepEqual(prefs.normalize({ panel: { order: ["table", "bogus"] } }).panel.order, prefs.defaults().panel.order, "an unknown id: the default");
+  assert.deepEqual(prefs.normalize({ panel: { order: "table" } }).panel.order, prefs.defaults().panel.order);
+  assert.deepEqual(prefs.normalize({ panel: { copy: { order: ["json", "csv"] } } }).panel.copy.order, ["json", "csv", "summary", "table", "papers", "apa", "bibtex", "markdown"]);
+  // switching a part off never takes it out of its list
+  const off = prefs.apply(prefs.defaults(), { panel: { years: { show: false }, copy: { json: false } } }).prefs;
+  assert.deepEqual([off.panel.order, off.panel.copy.order], [prefs.defaults().panel.order, prefs.defaults().panel.copy.order]);
+
+  const r = prefs.apply(prefs.defaults(), { panel: { order: ["metrics", "table", "metrics"], copy: { order: ["csv", "nope"] }, filters: { pills: { order: ["last", "first"] } } } });
+  assert.deepEqual(r.ignored.map((x) => x.path), ["panel.order", "panel.copy.order"]);
+  assert.match(r.ignored[0].reason, /listed twice/);
+  assert.match(r.ignored[1].reason, /unknown id: "nope" \(ids: summary, table/);
+  assert.deepEqual(r.applied, [{ path: "panel.filters.pills.order", from: prefs.defaults().panel.filters.pills.order, to: ["last", "first", "ccfA", "coreA", "cites100", "cofirst", "second", "award", "talk"] }]);
+  assert.equal(prefs.apply(prefs.defaults(), { panel: { order: prefs.defaults().panel.order } }).unchanged[0], "panel.order", "the same order: not a change");
+  assert.equal(prefs.apply(prefs.defaults(), { panel: { order: ["table"] } }).unchanged[0], "panel.order", "a list that says what already is: not a change");
+  assert.match(prefs.apply(prefs.defaults(), { panel: { order: "x" } }).ignored[0].reason, /list of ids/);
+  assert.match(prefs.apply(prefs.defaults(), { panel: { order: [1] } }).ignored[0].reason, /list of ids/);
 });
 
 test("languages: a folder we have, or the 'none' word; nothing else", () => {
@@ -88,29 +139,30 @@ test("normalize does not read through the prototype", () => {
 
 test("apply: a patch is laid over the record and reported; nothing in it can break the record", () => {
   const base = prefs.defaults();
-  const r = prefs.apply(base, { panel: { years: false, venues: true }, rowStyle: "bar", colors: { first: "#ABCDEF" }, markName: true });
+  const r = prefs.apply(base, { panel: { years: { show: false }, venues: { show: true } }, rows: { style: "bar", name: true }, colors: { first: "#ABCDEF" } });
   assert.deepEqual(r.applied, [
-    { path: "panel.years", from: true, to: false },
-    { path: "panel.venues", from: false, to: true },
-    { path: "rowStyle", from: "full", to: "bar" },
-    { path: "colors.first", from: "", to: "#abcdef" }
-  ]);
-  assert.deepEqual(r.unchanged, ["markName"], "the same value: not a change");
+    { path: "rows.style", from: "full", to: "bar" },
+    { path: "colors.first", from: "", to: "#abcdef" },
+    { path: "panel.venues.show", from: false, to: true },
+    { path: "panel.years.show", from: true, to: false }
+  ].sort((a, b) => r.applied.findIndex((x) => x.path === a.path) - r.applied.findIndex((x) => x.path === b.path)), "every change, with what it was");
+  assert.deepEqual(r.unchanged, ["rows.name"], "the same value: not a change");
   assert.deepEqual(r.ignored, []);
-  assert.equal(r.prefs.panel.years, false);
-  assert.equal(r.prefs.roles.first, true, "what the patch does not name stays");
+  assert.equal(r.prefs.panel.years.show, false);
+  assert.equal(r.prefs.panel.years.title, true, "what the patch does not name stays");
+  assert.equal(r.prefs.roles.first, true);
   assert.deepEqual(base, prefs.defaults(), "the record given is not changed");
   assert.deepEqual(prefs.normalize(r.prefs), r.prefs);
 
-  const bad = prefs.apply(base, { panel: { years: "no", bogus: 1 }, "panel.copy": false, hide: 5, rowStyle: "stripes", colors: { first: "red" }, language: "klingon", copy: { csv: false }, extra: {} });
-  assert.deepEqual(bad.applied, [{ path: "copy.csv", from: true, to: false }], "the good part of a patch is applied");
-  assert.deepEqual(bad.ignored.map((x) => x.path), ["panel.years", "panel.bogus", "panel.copy", "hide", "rowStyle", "colors.first", "language", "extra"]);
-  assert.match(bad.ignored.find((x) => x.path === "rowStyle").reason, /one of: full, bar, tint/);
+  const bad = prefs.apply(base, { panel: { years: { show: "no", bogus: 1 }, "panel.copy": false, table: 5 }, hide: 5, rows: { style: "stripes" }, colors: { first: "red" }, language: "klingon", extra: {}, "panel.show": false });
+  assert.deepEqual(bad.applied, []);
+  assert.deepEqual(bad.ignored.map((x) => x.path), ["panel.years.show", "panel.years.bogus", "panel.panel.copy", "panel.table", "hide", "rows.style", "colors.first", "language", "extra", "panel.show"]);
+  assert.match(bad.ignored.find((x) => x.path === "rows.style").reason, /one of: full, bar, tint, none/);
   assert.match(bad.ignored.find((x) => x.path === "colors.first").reason, /#rrggbb/);
   assert.match(bad.ignored.find((x) => x.path === "language").reason, /"auto" or one of: en, zh_CN/);
-  assert.equal(bad.ignored.find((x) => x.path === "panel.bogus").reason, "unknown setting");
-  assert.equal(bad.ignored.find((x) => x.path === "panel.copy").reason, "unknown setting", "dotted paths are not a second syntax: the shape is the record's");
-  assert.equal(bad.ignored.find((x) => x.path === "hide").reason, "must be an object");
+  assert.equal(bad.ignored.find((x) => x.path === "panel.years.bogus").reason, "unknown setting");
+  assert.equal(bad.ignored.find((x) => x.path === "panel.table").reason, "must be an object");
+  assert.equal(bad.ignored.find((x) => x.path === "panel.show").reason, "unknown setting", "dotted paths are not a second syntax: the shape is the record's");
   for (const junk of [null, 5, "x", [], [{ panel: {} }]]) {
     const j = prefs.apply(base, junk);
     assert.deepEqual([j.applied, j.unchanged, j.ignored], [[], [], [{ path: "", reason: "must be a JSON object" }]]);
@@ -129,19 +181,26 @@ test("presets are patches the table accepts, and each does what its name says", 
     const r = prefs.apply(base, patch);
     assert.deepEqual(r.ignored, [], name + ": every key is a setting, with an accepted value");
   }
-  const all = prefs.apply(prefs.normalize({ panel: { years: false, show: false }, copy: { csv: false }, hide: { access: true }, roles: { last: false }, semanticScholar: false, language: "ja" }), prefs.PRESETS.all).prefs;
-  assert.deepEqual(prefs.PANEL_PARTS.filter((k) => !all.panel[k]), []);
-  assert.deepEqual(prefs.COPY_BUTTONS.filter((k) => !all.copy[k]), []);
+  const messy = prefs.normalize({ panel: { years: { show: false }, show: false, copy: { csv: false, show: false }, header: { fold: false } }, rows: { ccf: false, style: "bar" }, hide: { access: true }, roles: { last: false }, semanticScholar: false, language: "ja" });
+  const all = prefs.apply(messy, prefs.PRESETS.all).prefs;
+  const get = (o, p) => p.split(".").reduce((x, k) => x[k], o);
+  const parts = prefs.SETTINGS.filter((s) => s.kind === "bool" && /^(roles|rows|panel)\./.test(s.path) && !s.path.startsWith("panel.filters.pills."));
+  assert.ok(parts.length > 60);
+  assert.deepEqual(parts.filter((s) => get(all, s.path) !== true).map((s) => s.path), [], "every part and every thing in it is on");
+  assert.deepEqual(prefs.COPY_BUTTONS.filter((k) => !all.panel.copy[k]), []);
   assert.deepEqual(prefs.HIDE_PARTS.filter((k) => all.hide[k]), []);
-  assert.deepEqual(prefs.ROLES.filter((k) => !all.roles[k]), []);
+  assert.equal(all.rows.style, "full");
   assert.equal(all.semanticScholar, false, "no preset switches a network call on");
   assert.equal(all.language, "ja", "nor touches the language");
+  assert.deepEqual(all.panel.filters.pills, prefs.defaults().panel.filters.pills, "nor the quick filters the person chose");
   for (const p of Object.values(prefs.PRESETS)) assert.equal(p.semanticScholar, undefined);
   assert.deepEqual(prefs.apply(base, prefs.PRESETS.last).prefs.roles, { first: false, cofirst: false, second: false, last: true });
   assert.deepEqual(prefs.apply(base, prefs.PRESETS.first).prefs.roles, { first: true, cofirst: true, second: false, last: false });
   const min = prefs.apply(base, prefs.PRESETS.minimal).prefs;
-  assert.deepEqual(prefs.PANEL_PARTS.filter((k) => min.panel[k]), ["show", "filters", "metrics"]);
-  assert.deepEqual(prefs.copyButtons(min), []);
+  assert.deepEqual(prefs.SECTIONS.filter((id) => min.panel[id].show), ["filters", "metrics"]);
+  assert.equal(min.panel.show, true);
+  assert.equal(min.rows.style, "tint");
+  assert.deepEqual(prefs.copyButtons(min).length, 8, "the buttons themselves stay on: the copy row is hidden as a part");
 });
 
 test("normalizeUi", () => {
@@ -150,37 +209,57 @@ test("normalizeUi", () => {
   assert.deepEqual(prefs.normalizeUi({ collapsed: "yes", source: "x" }), { collapsed: false, source: "ccf" });
 });
 
-test("the ranking the table uses: the remembered one if it is on, else the first that is, else none", () => {
-  const p = (ccf, core) => prefs.normalize({ ranks: { ccf, core } });
+test("the ranking the table uses: the remembered one if it has a tab, else the first that has, else none", () => {
+  const p = (ccf, core) => prefs.normalize({ panel: { table: { ccf, core } } });
   assert.deepEqual(prefs.sources(p(true, true)), ["ccf", "core"]);
   assert.equal(prefs.source(p(true, true), { source: "core" }), "core");
-  assert.equal(prefs.source(p(true, false), { source: "core" }), "ccf", "CORE is off, so the table falls back to CCF");
+  assert.equal(prefs.source(p(true, false), { source: "core" }), "ccf", "CORE has no tab, so the table falls back to CCF");
   assert.equal(prefs.source(p(false, true), { source: "ccf" }), "core");
   assert.equal(prefs.source(p(false, false), { source: "ccf" }), null);
   assert.deepEqual(prefs.sources(p(false, false)), []);
 });
 
-test("the copy buttons that are on, in the order they are drawn", () => {
+test("the copy buttons that are on, in the order the settings give", () => {
   assert.deepEqual(prefs.copyButtons(prefs.defaults()), ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
-  assert.deepEqual(prefs.copyButtons(prefs.normalize({ copy: { summary: false, table: false, apa: false } })), ["papers", "bibtex", "markdown", "json", "csv"]);
-  assert.deepEqual(prefs.copyButtons(prefs.normalize({ copy: Object.fromEntries(prefs.COPY_BUTTONS.map((k) => [k, false])) })), []);
+  assert.deepEqual(prefs.copyButtons(prefs.normalize({ panel: { copy: { summary: false, table: false, apa: false } } })), ["papers", "bibtex", "markdown", "json", "csv"]);
+  assert.deepEqual(prefs.copyButtons(prefs.normalize({ panel: { copy: { order: ["csv", "json"], summary: false } } })), ["csv", "json", "table", "papers", "apa", "bibtex", "markdown"]);
+  assert.deepEqual(prefs.copyButtons(prefs.normalize({ panel: { copy: Object.fromEntries(prefs.COPY_BUTTONS.map((k) => [k, false])) } })), []);
 });
 
-test("marks: each group has its switch, a finalist follows the awards", () => {
-  const only = (group) => prefs.normalize({ marks: { award: false, oral: false, spotlight: false, highlight: false, [group]: true } });
+test("what is drawn: a rank list or a kind of mark is searched and exported while a chip, a table tab or a count row shows it", () => {
+  const set = (patch) => prefs.apply(prefs.defaults(), patch).prefs;
+  assert.deepEqual(prefs.lists(prefs.defaults()), { ccf: true, core: true });
+  assert.deepEqual(prefs.lists(set({ rows: { ccf: false } })), { ccf: true, core: true }, "no CCF chip, but the table still has its tab");
+  assert.deepEqual(prefs.lists(set({ rows: { ccf: false }, panel: { table: { ccf: false } } })), { ccf: false, core: true });
+  assert.deepEqual(prefs.lists(set({ rows: { core: false }, panel: { table: { show: false } } })), { ccf: true, core: false }, "with the table hidden only the chips are left");
+  assert.deepEqual(prefs.lists(set({ rows: { ccf: false, core: false }, panel: { table: { show: false } } })), { ccf: false, core: false }, "a hidden table shows nothing");
+  assert.deepEqual(prefs.sources(set({ rows: { ccf: false }, panel: { table: { ccf: true } } })), ["ccf", "core"], "the table's tabs follow the table's switches only");
+
   const marks = [{ kind: "best", group: "award" }, { kind: "finalist", group: "finalist" }, { kind: "oral", group: "oral" }, { kind: "spotlight", group: "spotlight" }, { kind: "highlight", group: "highlight" }];
-  const kinds = (p) => prefs.visibleMarks(p, marks).map((m) => m.kind);
-  assert.deepEqual(kinds(prefs.defaults()), ["best", "finalist", "oral", "spotlight", "highlight"]);
-  assert.deepEqual(kinds(only("award")), ["best", "finalist"]);
-  assert.deepEqual(kinds(only("oral")), ["oral"]);
-  assert.deepEqual(kinds(only("spotlight")), ["spotlight"]);
-  assert.deepEqual(kinds(only("highlight")), ["highlight"]);
-  assert.deepEqual(kinds(prefs.normalize({ marks: { award: false, oral: false, spotlight: false, highlight: false } })), []);
+  const kinds = (fn, p) => fn(p, marks).map((m) => m.kind);
+  assert.deepEqual(kinds(prefs.visibleMarks, prefs.defaults()), ["best", "finalist", "oral", "spotlight", "highlight"]);
+  assert.deepEqual(kinds(prefs.chipMarks, prefs.defaults()), ["best", "finalist", "oral", "spotlight", "highlight"]);
+  assert.deepEqual(kinds(prefs.panelMarks, prefs.defaults()), ["best", "finalist", "oral", "spotlight", "highlight"]);
+  const noChips = set({ rows: { award: false, oral: false, spotlight: false, highlight: false } });
+  assert.deepEqual(kinds(prefs.chipMarks, noChips), []);
+  assert.deepEqual(kinds(prefs.panelMarks, noChips), ["best", "finalist", "oral", "spotlight", "highlight"]);
+  assert.deepEqual(kinds(prefs.visibleMarks, noChips), ["best", "finalist", "oral", "spotlight", "highlight"], "still counted in the panel: still searched");
+  const noCounts = set({ rows: { oral: false, spotlight: false, highlight: false }, panel: { marks: { oral: false, spotlight: false, highlight: false } } });
+  assert.deepEqual(kinds(prefs.visibleMarks, noCounts), ["best", "finalist"], "a finalist follows the awards");
+  assert.deepEqual(kinds(prefs.chipMarks, noCounts), ["best", "finalist"]);
+  const none = set({ rows: { award: false, oral: false, spotlight: false, highlight: false }, panel: { marks: { show: false } } });
+  assert.deepEqual(kinds(prefs.visibleMarks, none), [], "nothing draws a mark");
   assert.deepEqual(prefs.visibleMarks(prefs.defaults(), undefined), []);
+  assert.deepEqual(prefs.markShown(set({ panel: { marks: { award: false } }, rows: { award: false } }), "finalist"), false);
 });
 
 test("a dotted key is not a second syntax, whichever setting it names", () => {
-  const r = prefs.apply(prefs.defaults(), { "panel.years": false });
-  assert.deepEqual([r.applied, r.unchanged, r.ignored.map((x) => x.path)], [[], [], ["panel.years"]]);
-  assert.equal(r.prefs.panel.years, true);
+  const r = prefs.apply(prefs.defaults(), { "panel.years.show": false });
+  assert.deepEqual([r.applied, r.unchanged, r.ignored.map((x) => x.path)], [[], [], ["panel.years.show"]]);
+  assert.equal(r.prefs.panel.years.show, true);
+});
+
+test("the record fits what chrome.storage.sync takes: 8 KB for an item, so the worst case is checked here", () => {
+  const worst = prefs.apply(prefs.defaults(), { colors: { first: "#abcdef", cofirst: "#abcdef", second: "#abcdef", last: "#abcdef" }, panel: { order: [...prefs.SECTIONS].reverse(), copy: { order: [...prefs.COPY_BUTTONS].reverse() }, filters: { pills: { order: [...prefs.PILLS].reverse() } } } }).prefs;
+  assert.ok(Buffer.byteLength(JSON.stringify(worst)) < 4096, "the settings: " + Buffer.byteLength(JSON.stringify(worst)) + " bytes");
 });

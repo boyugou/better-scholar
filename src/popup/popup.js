@@ -38,34 +38,39 @@
     try { return await chrome.tabs.sendMessage(tab.id, { type: "rr:call", method, params }); } catch (e) { return null; }
   }
 
-  function render(data) {
+  // `prefs`: the settings (what the table, the awards line and the copy row draw, in what order, under what names — the same switches as the panel's), `ui`: the ranking the panel's table last used
+  function render(data, prefs, ui) {
     // Scholar's page layout changed: the panel says so and shows nothing else, and so does the popup
     if (data.layoutBroken) {
       main.replaceChildren(h("p", { class: "empty" }, t("layoutWarning")), h("div", { class: "actions" }, h("a", { class: "btn", href: B.dom.issueUrl("Scholar page layout changed", ""), target: "_blank", rel: "noopener" }, t("reportLink"))));
       return;
     }
-    // the lists switched on in the settings; "none" = roles only
-    const listed = data.sources || ["ccf", "core"];
+    // the lists the table has a tab for; "none" = roles only
+    const listed = B.prefs.sources(prefs);
     const sources = data.noRanks ? [] : listed;                     // (nothing on this profile is on a list that is on: roles only)
-    let source = sources.includes(data.source) ? data.source : sources[0] || "none";
+    let source = sources.includes(B.prefs.source(prefs, ui)) ? B.prefs.source(prefs, ui) : sources[0] || "none";
+    const tp = prefs.panel.table;
     const draw = () => {
       const s = data.summaries[source];
       const tier = (c) => (c === "none" ? "–" : c);
       const name = (k) => t(k === "ccf" ? "srcCcf" : "srcCore");
-      const seg = sources.length > 1
+      const seg = !tp.show ? null : sources.length > 1
         ? h("div", { class: "seg", role: "group" },
           ...sources.map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, name(k))))
         : sources.length === 1 ? h("div", { class: "src" }, name(sources[0])) : null;
+      const cols = s.columns.filter((c) => c !== "none" || tp.unranked);
+      // (the count of the "hidden" row is its only number: with no total column it takes the room of the columns)
+      const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")),
+        tp.total ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
       const table = h("table", {},
-        h("thead", {}, h("tr", {}, h("th", {}), ...s.columns.map((c) => h("th", {}, tier(c))), h("th", {}, t("colTotal")))),
-        h("tbody", {}, ...s.rows.map((r) => h("tr", {},
+        h("thead", {}, h("tr", {}, h("th", {}), ...cols.map((c) => h("th", {}, tier(c))), tp.total ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
+        h("tbody", {}, ...s.rows.filter((r) => r.role !== "middle" || tp.other).map((r) => h("tr", {},
           h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
-          ...s.columns.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),
-          h("td", { class: "t" }, String(r.total)))),
-          s.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")), s.columns.length ? h("td", { colspan: String(s.columns.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))) : null),
-        h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...s.columns.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))));
-      const parts = data.parts || { summary: true, marks: true };
-      const markParts = !parts.marks ? [] : B.marks.rows(data.talkRows).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
+          ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),
+          tp.total ? h("td", { class: "t" }, String(r.total)) : null)), hiddenRow),
+        tp.total ? h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))) : null);
+      const mp = prefs.panel.marks;
+      const markParts = !mp.show ? [] : B.marks.rows(mp.grouping).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
       // A copy button: the text comes from the page (the same as the panel's button) and goes to the clipboard — the CSV to a file. What there is to say is said on the button.
       const say = (button, text, ok = true) => {
         const old = button.dataset.label || (button.dataset.label = button.textContent);
@@ -83,8 +88,9 @@
         if (kind === "csv") { B.dom.downloadFile(((data.owner || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_") || "scholar") + "-papers.csv", res.result.text); say(button, t("exported")); }
         else if (await copyText(res.result.text)) say(button, t("copied"));
       };
-      const copyBar = data.copyButtons.length ? h("div", { class: "actions" },
-        ...data.copyButtons.map((kind) => h("button", { class: "btn", "data-act": "copy-" + kind, type: "button", onClick: deliver(kind) }, t(B.dom.COPY_LABEL[kind])))) : null;
+      const copyKinds = prefs.panel.copy.show ? B.prefs.copyButtons(prefs) : [];
+      const copyBar = copyKinds.length ? h("div", { class: "actions" },
+        ...copyKinds.map((kind) => h("button", { class: "btn", "data-act": "copy-" + kind, type: "button", onClick: deliver(kind) }, t(B.dom.COPY_LABEL[kind])))) : null;
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
         h("div", { class: "who" }, h("b", {}, data.owner),
@@ -92,11 +98,11 @@
           h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
             data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
               : s.absent > 0 ? t("popupPapersOf", [String(data.loaded - s.absent), String(data.loaded)]) : tn("popupPapers", data.loaded, [String(data.loaded)]))),
-        parts.summary ? seg : null, parts.summary ? table : null,
-        parts.summary && source !== "none" ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
-        markParts.length ? h("p", { class: "marks", title: t("marksHint") }, h("b", {}, t("marksTitle") + ": "), markParts.join(" · ")) : null,
+        tp.show ? seg : null, tp.show ? table : null,
+        tp.show && source !== "none" && tp.unranked ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
+        markParts.length ? h("p", { class: "marks", title: t("marksHint") }, mp.title ? h("b", {}, t("marksTitle") + ": ") : null, markParts.join(" · ")) : null,
         copyBar,
-        parts.summary && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
+        tp.show && tp.note && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));
     };
     draw();
@@ -104,5 +110,5 @@
 
   main.replaceChildren(h("p", { class: "empty" }, t("popupReading")));
   const answer = await call("summary");
-  if (answer && answer.ok) render(answer.result); else notProfile();
+  if (answer && answer.ok) render(answer.result, await B.store.loadPrefs(), await B.store.loadUi()); else notProfile();
 })();

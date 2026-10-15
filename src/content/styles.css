@@ -209,7 +209,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel.rr-collapsed .rr-body { display: none; }
 #rr-panel.rr-collapsed .rr-head { border-bottom: 0; }
 #rr-panel .rr-sec{ padding: 10px 14px; border-bottom: 1px solid var(--rr-line); }
-#rr-panel .rr-sec:last-child{ border-bottom: 0; }
+#rr-panel .rr-body { margin-bottom: -1px; }          /* (every part ends in its rule; the last one's is cut off by the panel's own edge) */
+#rr-panel.rr-bare .rr-head { border-bottom: 0; }
+#rr-panel .rr-head-notitle { justify-content: flex-end; }
+#rr-panel .rr-body > .rr-sec { break-inside: avoid; }
 #rr-panel .rr-sec-head{ display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
 #rr-panel .rr-sec-title{ font-weight: 600; }
 #rr-panel .rr-note{ color: var(--rr-muted); font-size: 12px; }
@@ -222,7 +225,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-matrix thead th:not(:first-child){ width: 34px; }
-#rr-panel .rr-matrix thead th:last-child{ width: 42px; }
+#rr-panel .rr-matrix thead th.rr-col-total{ width: 42px; }
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
 #rr-panel .rr-matrix tbody th{ text-align: start; overflow-wrap: anywhere; }
@@ -323,16 +326,9 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-venues-more { margin-top: 6px; font-size: 11.5px; }
 #rr-panel [hidden] { display: none !important; }
 
-/* In the sidebar the two columns stack, so the first column's last section needs its divider back. */
-#rr-panel .rr-col-a > .rr-sec:last-child { border-bottom: 1px solid var(--rr-line); }
-#rr-panel.rr-wide .rr-col-a > .rr-sec:last-child { border-bottom: 0; }
-
-/* Narrow window: the panel sits above the list at full width, in two columns. */
-#rr-panel.rr-wide .rr-body { display: grid; grid-template-columns: minmax(300px, 1.05fr) minmax(260px, 1fr); }
-#rr-panel.rr-wide .rr-col-a { border-inline-end: 1px solid var(--rr-line); }
-#rr-panel.rr-wide.rr-onecol .rr-body { display: block; }
-#rr-panel.rr-wide.rr-onecol .rr-col-a { border-inline-end: 0; }
-@media (max-width: 640px) { #rr-panel.rr-wide .rr-body { display: block; } #rr-panel.rr-wide .rr-col-a { border-inline-end: 0; } }
+/* Narrow window: the panel sits above the list at full width, and its parts run in two columns (top to bottom in the first, then the second), or in one when there is no room for two or only one part is shown. */
+#rr-panel.rr-wide .rr-body { columns: 2 280px; column-gap: 0; column-rule: 1px solid var(--rr-line); }
+#rr-panel.rr-wide.rr-onecol .rr-body { column-count: 1; column-rule: 0; }
 
 /* no animation for those who asked the system for less motion */
 @media (prefers-reduced-motion: reduce) { #rr-panel *, #rr-panel *::before, #rr-panel *::after { transition: none !important; } tr.gsc_a_tr.rr-row-focused { animation: none; } }
@@ -371,6 +367,8 @@ td.gsc_a_c a.rr-merged { text-decoration: underline dotted; text-underline-offse
 /* the highlight style (settings → Colours): the bar only, or the tint only */
 html.rr-rows-bar tr[class*="rr-r-"] > td { background: none !important; }
 html.rr-rows-tint tr[class*="rr-r-"] > td:first-child { box-shadow: none !important; }
+html.rr-rows-none tr[class*="rr-r-"] > td { background: none !important; }
+html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !important; }
 
 /* text for screen readers only */
 #rr-panel .rr-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

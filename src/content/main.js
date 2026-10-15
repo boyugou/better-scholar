@@ -132,7 +132,7 @@
     if (!row.highlighted) return;
     const tip = roleTip(row.a);
     const tipOnLine = () => { el.title = tip; el.dataset.rrTip = ""; };
-    if (!prefs.markName || row.a.fromDetail) return tipOnLine();
+    if (!prefs.rows.name || row.a.fromDetail) return tipOnLine();
     const text = el.textContent;
     let cursor = 0, pos = -1;
     row.a.tokens.forEach((tok, i) => {
@@ -148,8 +148,8 @@
   // What decorate() draws on a row, as a string: when it is the same as last time nothing is touched (a long list is decorated once, not once per batch)
   function decorKey(row) {
     const a = row.a, v = a.venue || {};
-    return [analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.markName, prefs.ranks.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.ranks.core && v.core ? v.core.rank + v.core.name : "",
-      B.prefs.visibleMarks(prefs, a.marks).map((m) => m.kind + m.source + (m.venue || "") + (m.year || "") + (m.text || "")).join(","), prefs.roles.first, prefs.roles.cofirst, prefs.roles.second, prefs.roles.last,
+    return [analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.rows.name, prefs.rows.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.rows.core && v.core ? v.core.rank + v.core.name : "",
+      B.prefs.chipMarks(prefs, a.marks).map((m) => m.kind + m.source + (m.venue || "") + (m.year || "") + (m.text || "")).join(","), prefs.roles.first, prefs.roles.cofirst, prefs.roles.second, prefs.roles.last,
       row.raw.authorsEl ? row.raw.authorsEl.isConnected : 0, row.raw.venueEl ? row.raw.venueEl.querySelector(":scope > .rr-chips") !== null : 0].join("|");
   }
 
@@ -168,9 +168,9 @@
         n.remove();
       });
       const chips = [];
-      if (prefs.ranks.ccf && a.venue.ccf) chips.push(chip.tierChip("ccf", a.venue.ccf, edition.ccf));
-      if (prefs.ranks.core && a.venue.core) chips.push(chip.tierChip("core", a.venue.core, edition.core));
-      for (const m of B.prefs.visibleMarks(prefs, a.marks)) chips.push(chip.markChip(m));
+      if (prefs.rows.ccf && a.venue.ccf) chips.push(chip.tierChip("ccf", a.venue.ccf, edition.ccf));
+      if (prefs.rows.core && a.venue.core) chips.push(chip.tierChip("core", a.venue.core, edition.core));
+      for (const m of B.prefs.chipMarks(prefs, a.marks)) chips.push(chip.markChip(m));
       if (chips.length) {
         // the chips of a row stay together (they wrap to the next line as one) and start at the text's edge there: a real space before them, no margin
         const space = document.createTextNode(" ");
@@ -184,8 +184,9 @@
   // The search box's query, compiled once per query (and per set of marks that count)
   let compiled = { key: null, matcher: null };
   function matcher() {
-    const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (prefs.marks[g] ? 1 : 0)).join("") + (prefs.ranks.ccf ? "c" : "-") + (prefs.ranks.core ? "c" : "-");
-    if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks), { ccf: prefs.ranks.ccf, core: prefs.ranks.core }) };
+    const lists = B.prefs.lists(prefs);
+    const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (B.prefs.markShown(prefs, g) ? 1 : 0)).join("") + (lists.ccf ? "c" : "-") + (lists.core ? "c" : "-");
+    if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks), lists) };
     return compiled.matcher;
   }
 
@@ -204,8 +205,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (f.query && !matcher().test(row)) return false;
     if (f.minCitations != null && row.shown < f.minCitations) return false;
     if (min && !(row.highlighted && row.shown >= min)) return false;
-    if (state.markGroup && !marks.inGroup({ marks: B.prefs.visibleMarks(prefs, a.marks) }, state.markGroup)) return false;
-    if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, prefs.ranks) !== state.venueKey) return false;
+    if (state.markGroup && !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup)) return false;
+    if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs)) !== state.venueKey) return false;
     if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
     return true;
   }
@@ -229,14 +230,14 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   }
 
   // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
-  // on, per its full author list, is not counted) — only the groups the settings page has switched on.
-  // The award kinds behind the "Awards" count (only when that group is switched on)
+  // on, per its full author list, is not counted) — only the groups whose count row the settings page has switched on.
+  // The award kinds behind the "Awards" count (only when that row is switched on)
   function markKinds() {
-    return prefs.marks.award ? marks.summarizeKinds(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) }))) : {};
+    return prefs.panel.marks.award ? marks.summarizeKinds(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.panelMarks(prefs, r.a.marks) }))) : {};
   }
 
   function markCounts() {
-    return marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.visibleMarks(prefs, r.a.marks) })), prefs.talkRows);
+    return marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.panelMarks(prefs, r.a.marks) })), prefs.panel.marks.grouping);
   }
 
   // Most rows without an author line means Scholar's markup moved under us.
@@ -256,9 +257,9 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // filter can be undone) even when the other filters leave it out of the first few
   function venueList(source) {
     const max = state.venuesExpanded ? 24 : 6;
-    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, prefs.ranks);
+    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, B.prefs.lists(prefs));
     if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
-      const mine = metrics.topVenues(scoped(source), 99, prefs.ranks).find((v) => v.key === state.venueKey);
+      const mine = metrics.topVenues(scoped(source), 99, B.prefs.lists(prefs)).find((v) => v.key === state.venueKey);
       list.push({ key: state.venueKey, count: mine ? mine.count : 0, name: mine ? mine.name : state.venueKey, ccf: mine ? mine.ccf : null, core: mine ? mine.core : null });
     }
     return list;
@@ -270,7 +271,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const bare = noRanks(list);
     const yearBars = metrics.yearBars(list);
     const summary = metrics.summarize(list, bare ? null : source);
-    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, prefs.ranks);
+    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs));
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
       selection: state.selection, filters: state.filters,
@@ -300,7 +301,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
 
   const MARK_KEY = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight", "spotlight+highlight": "markSpotlightHighlight", "oral+spotlight+highlight": "markTalks" };
   const marksLine = (counts) => {
-    const parts = marks.rows(prefs.talkRows).filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
+    const parts = marks.rows(prefs.panel.marks.grouping).filter((g) => counts[g]).map((g) => t(MARK_KEY[g]) + " " + counts[g]);
     return parts.length ? t("marksTitle") + ": " + parts.join(", ") + " (" + t("marksAsWritten") + ")" : "";
   };
 
@@ -312,6 +313,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   const markLabels = (a) => B.prefs.visibleMarks(prefs, a.marks).map((m) => B.chips.markLabel(m) + (m.source === "list" && m.venue ? ` (${m.venue} ${m.year})` : ""));
   const KIND = { C: "conference", J: "journal" };
   function paperRecords(filtered = true) {
+    const shown = B.prefs.lists(prefs);
     return shownRows(filtered).map((r) => {
       const a = r.a, v = a.venue || {}, resolved = resolvedCache[r.raw.id];
       return {
@@ -320,7 +322,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
         venue: (resolved && resolved.venue) || r.raw.venueText,
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
-        rank: { ccf: prefs.ranks.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: prefs.ranks.core && v.core ? { rank: v.core.rank, name: v.core.name } : null },
+        rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name } : null },
         marks: markLabels(a),
         url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
       };
@@ -333,7 +335,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
   function exportText(kind, { source } = {}) {
-    const ctx = { ccfOn: prefs.ranks.ccf, coreOn: prefs.ranks.core };
+    const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core };
     if (kind === "summary" || kind === "table") {
       const list = papers();
       const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
@@ -504,7 +506,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     for (const row of state.rows) decorate(row);
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
-    if (state.venueKey && !(prefs.panel.venues && metrics.topVenues(papers(), 9999, prefs.ranks).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    if (state.venueKey && !(prefs.panel.venues.show && metrics.topVenues(papers(), 9999, B.prefs.lists(prefs)).some((v) => v.key === state.venueKey))) state.venueKey = null;
     // with no tier columns left (nothing on the profile is ranked) a selection on a tier has no control to undo it
     if (state.selection && state.selection.tier && noRanks(papers())) state.selection = state.selection.role ? { role: state.selection.role, tier: undefined } : null;
     applyFilters();
@@ -514,7 +516,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // Scholar's own blocks the settings ask to hide (a class on <html>, styled in styles.css)
   const prefsHide = (p) => { for (const k of B.prefs.HIDE_PARTS) document.documentElement.classList.toggle("rr-hide-" + k, !!p.hide[k]); };
   prefsHide(prefs);
-  B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rowStyle);
+  B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rows.style);
   const scheduleRefresh = frame(refresh);
 
   // The settings page saved something (in this or any other tab): show it at once. A filter whose control is
@@ -522,19 +524,19 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   B.store.onPrefsChanged((next) => {
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
-    B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rowStyle);
+    B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rows.style);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
-    if (state.markGroup && !(marks.rows(prefs.talkRows).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.marks[g]))) state.markGroup = null;
-    if (!prefs.panel.show || !prefs.panel.venues) state.venueKey = null;
-    if (!prefs.panel.summary) state.selection = null;                                   // (a matrix cell, an awards row: their controls are gone, so they must not keep hiding rows)
-    if (!prefs.panel.marks) state.markGroup = null;
+    if (state.markGroup && !(marks.rows(prefs.panel.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => prefs.panel.marks[g]))) state.markGroup = null;
+    if (!prefs.panel.show || !prefs.panel.venues.show) state.venueKey = null;
+    if (!prefs.panel.table.show) state.selection = null;                                   // (a matrix cell, an awards row: their controls are gone, so they must not keep hiding rows)
+    if (!prefs.panel.marks.show) state.markGroup = null;
     if (!prefs.panel.show) { state.selection = null; state.markGroup = null; }
-    if (!prefs.panel.show || !prefs.panel.filters) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
+    if (!prefs.panel.show || !prefs.panel.filters.show) Object.assign(state.filters, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "" });
     if (!prefs.panel.show) state.filters.minCitations = null;
-    if (!prefs.panel.show || !prefs.panel.metrics) state.filters.impact = null;              // (the h-index and i10 buttons are part of the totals)
+    if (!prefs.panel.show || !prefs.panel.metrics.show) state.filters.impact = null;              // (the h-index and i10 buttons are part of the totals)
     if (!Object.values(prefs.roles).some(Boolean)) state.filters.onlyHighlighted = false;     // nothing is highlighted: the filter would hide every row
     refresh();
     if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
@@ -573,7 +575,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const el = e.target instanceof Element ? e.target : document.body;
     const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
     if (e.key === "/" && !typing) {
-      if (!prefs.panel.show || !prefs.panel.filters) return;
+      if (!prefs.panel.show || !prefs.panel.filters.show) return;
       e.preventDefault();
       if (ui.collapsed) { ui.collapsed = false; B.store.saveUi(ui); refresh(); }
       panel.focusSearch();
@@ -595,11 +597,10 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       const list = papers(), source = currentSource();
       return {
         owner: headerName, loaded: list.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
-        sources: B.prefs.sources(prefs), source, noRanks: noRanks(list),
+        noRanks: noRanks(list),
         summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-        marks: markCounts(), talkRows: prefs.talkRows,
-        metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all },
-        parts: { summary: prefs.panel.summary, marks: prefs.panel.marks }, copyButtons: B.prefs.copyButtons(prefs)         // (the settings page's switches apply to the popup as well)
+        marks: markCounts(),
+        metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }
       };
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),

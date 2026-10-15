@@ -33,6 +33,7 @@ const venues = require(path.join(repo, "src/lib/venues.js"));
 const metrics = require(path.join(repo, "src/lib/metrics.js"));
 const analysis = require(path.join(repo, "src/lib/analysis.js"));
 const prefsLib = require(path.join(repo, "src/lib/prefs.js"));
+const agentLib = require(path.join(repo, "src/lib/agent.js"));
 const ccf = require(path.join(repo, "src/data/ccf.js"));
 const core = require(path.join(repo, "src/data/core.js"));
 const aliases = require(path.join(repo, "src/data/aliases.js"));
@@ -161,6 +162,9 @@ async function openOptions(context) {
 }
 // (a background tab neither paints nor can be screenshotted, so each helper first brings its own tab to the front)
 const setPref = async (p, key, on) => { await p.bringToFront(); await p.setChecked(`input[data-pref="${key}"]`, on); };
+// a rank list (ccf, core) or a kind of mark (award, oral, …) on or off everywhere it is drawn: the chips on the rows, and the table's tab or the count row
+const setList = async (p, list, on) => { await setPref(p, "rows." + list, on); await setPref(p, "panel.table." + list, on); };
+const setMark = async (p, group, on) => { await setPref(p, "rows." + group, on); await setPref(p, "panel.marks." + group, on); };
 const stored = (p, area, key) => p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]);
 // (waitForFunction evaluates its predicate as a string, which the extension pages' content security policy -- scripts from 'self' only -- can refuse
 // on some builds: these pages are polled with evaluate instead)
@@ -318,20 +322,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.bringToFront();
     const rowsOf = () => opts.locator(".preview [data-mark-group]").evaluateAll((els) => els.map((e) => e.getAttribute("data-mark-group") + "=" + e.querySelector("b").textContent));
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight=1", "highlight=1"]);
-    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="pair"])');
+    await opts.click('label.seg-btn:has(input[data-pref="panel.marks.grouping"][value="pair"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 3);
     assert.deepEqual(await rowsOf(), ["award=2", "oral=1", "spotlight+highlight=2"]);
-    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="talks"])');
+    await opts.click('label.seg-btn:has(input[data-pref="panel.marks.grouping"][value="talks"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 2);
     assert.deepEqual(await rowsOf(), ["award=2", "oral+spotlight+highlight=3"]);
-    await opts.click('label.seg-btn:has(input[data-pref="talkRows"][value="separate"])');
+    await opts.click('label.seg-btn:has(input[data-pref="panel.marks.grouping"][value="separate"])');
     await pollPage(opts, () => document.querySelectorAll(".preview [data-mark-group]").length === 4);
     ok("talk rows: spotlight + highlight, or all three talk levels, can share one row of the panel; the counts follow");
 
     // -- 6a2c. the venue list (off until asked): the ranked venues of the highlighted papers, most papers first; a click lists just those papers
     assert.equal(await page.locator('[data-rr="venues"]').isVisible(), false, "the venue list is off by default");
     await opts.bringToFront();
-    await setPref(opts, "panel.venues", true);
+    await setPref(opts, "panel.venues.show", true);
     await eventually(page, () => document.querySelectorAll('[data-rr="venues"] [data-venue]').length > 1);
     const venueRows = await page.locator('[data-rr="venues"] [data-venue]').evaluateAll((els) => els.map((e) => [e.dataset.venue, parseInt(e.querySelector("b").textContent, 10)]));
     assert.ok(venueRows.every((v, i) => i === 0 || venueRows[i - 1][1] >= v[1]), "most papers first");
@@ -367,7 +371,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await page.bringToFront(); await page.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-roles.png") });
     assert.match(await page.locator('[data-rr="no-roles"]').textContent(), /No author position is switched on/, "with every role off the panel says why nothing is highlighted");
     for (const r of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + r, true);
-    await setPref(opts, "panel.venues", false);
+    await setPref(opts, "panel.venues.show", false);
     ok("venue list: off by default; on, it lists the ranked venues most papers first, and a click shows just that venue's papers");
 
     // -- 6a2d. forced colours (Windows high contrast): the row bar becomes a real border, so a role is still seen
@@ -390,13 +394,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // the highlight style: bar only (no tint) / tint only (no bar) / both
     const look = () => page.evaluate(() => { const td = document.querySelector("tr.rr-r-first > td:first-child"), c = getComputedStyle(td); return { tint: c.backgroundColor !== "rgba(0, 0, 0, 0)" && c.backgroundColor !== "transparent", bar: c.boxShadow !== "none" }; });
     assert.deepEqual(await look(), { tint: true, bar: true });
-    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="bar"])');
+    await opts.click('label.seg-btn:has(input[data-pref="rows.style"][value="bar"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none" && getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).backgroundColor === "rgba(0, 0, 0, 0)");
     assert.deepEqual(await look(), { tint: false, bar: true });
-    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="tint"])');
+    await opts.click('label.seg-btn:has(input[data-pref="rows.style"][value="tint"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow === "none");
     assert.deepEqual(await look(), { tint: true, bar: false });
-    await opts.click('label.seg-btn:has(input[data-pref="rowStyle"][value="full"])');
+    await opts.click('label.seg-btn:has(input[data-pref="rows.style"][value="full"])');
     await eventually(page, () => getComputedStyle(document.querySelector("tr.rr-r-first > td:first-child")).boxShadow !== "none");
     ok("row highlight style: bar only, tint only and both change the open profile at once");
 
@@ -465,8 +469,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await opts.emulateMedia({ reducedMotion: "reduce" });                // (no smooth scrolling to wait for: it is slow on a CI machine)
     await opts.locator(".toc a").nth(3).click();
     // (polled with evaluate: the settings page's content security policy has no 'unsafe-eval', which waitForFunction needs on some builds)
-    for (let i = 0; i < 50; i++) { const t = await opts.evaluate(() => document.querySelector("#card-3").getBoundingClientRect().top); if (t >= 0 && t < 140) break; await opts.waitForTimeout(100); if (i === 49) assert.fail("the card did not come to the top: " + JSON.stringify(await opts.evaluate(() => ({ top: document.querySelector("#card-3").getBoundingClientRect().top, y: scrollY, h: innerHeight, doc: document.documentElement.scrollHeight })))); }
-    await opts.locator('.toc a[data-card="card-3"][aria-current]').waitFor({ timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
+    for (let i = 0; i < 50; i++) { const t = await opts.evaluate(() => document.querySelector("#card-chips").getBoundingClientRect().top); if (t >= 0 && t < 140) break; await opts.waitForTimeout(100); if (i === 49) assert.fail("the card did not come to the top: " + JSON.stringify(await opts.evaluate(() => ({ top: document.querySelector("#card-3").getBoundingClientRect().top, y: scrollY, h: innerHeight, doc: document.documentElement.scrollHeight })))); }
+    await opts.locator('.toc a[data-card="card-chips"][aria-current]').waitFor({ timeout: 5000 }).catch(() => assert.fail("the link of the card in view is marked"));
     await opts.emulateMedia({ reducedMotion: "no-preference" });
     await opts.evaluate(() => window.scrollTo(0, 0));
     ok(`settings page: ${links} links to its cards under the header, each one scrolls its card into view`);
@@ -712,10 +716,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const textBefore = await page.locator("#gsc_a_b tr.gsc_a_tr").first().locator(".gs_gray").first().textContent();
     assert.equal(textBefore, profile.rows[0].authors, "marking a name must not change the text");
     assert.match(await page.locator(".rr-name").first().getAttribute("title"), /author · position \d+ of \d+/);
-    await setPref(opts, "markName", false);
+    await setPref(opts, "rows.name", false);
     await eventually(page, () => document.querySelectorAll(".rr-name").length === 0);
     assert.ok((await page.locator('tr[class*="rr-r-"] .gs_gray[title]').count()) > 0, "the role tooltip stays on the author line");
-    await setPref(opts, "markName", true);
+    await setPref(opts, "rows.name", true);
     await eventually(page, () => document.querySelectorAll(".rr-name").length > 0);
     ok("the owner's name is marked by default (text untouched, role in the tooltip) and its switch on the settings page undoes it cleanly");
 
@@ -957,20 +961,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
 
     // -- S2. rank switches: CORE off → no CORE chips and no tab; both off → roles only
     const rows20 = expected(first20, { resolveHidden: true });   // (step 11's Read full lists is cached, so the reload keeps it)
-    await setPref(opts, "ranks.core", false);
+    await setList(opts, "core", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="core"]'));
     assert.equal(await page.locator("#rr-panel button[data-src]").count(), 0);
     assert.equal((await page.textContent("#rr-panel .rr-src")).trim(), "CCF");
     assert.deepEqual(await readMatrix(page), matrixOf(rows20, "ccf"));
-    await setPref(opts, "ranks.ccf", false);
+    await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
     assert.equal(await page.locator("#rr-panel button.rr-cell").count(), 0, "no tier columns when both lists are off");
     assert.deepEqual(await readMatrix(page), matrixOf(rows20, null));
     assert.doesNotMatch(await page.textContent("#rr-panel"), /\bnull\b|undefined/, "no stray null / undefined in the panel");
     await page.click('[data-act="copy-summary"]');
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Ion Stoica — 20 papers on Google Scholar, by authorship role\n/);
-    await setPref(opts, "ranks.ccf", true);
-    await setPref(opts, "ranks.core", true);
+    await setList(opts, "ccf", true);
+    await setList(opts, "core", true);
     await eventually(page, () => document.querySelector('.rr-chip[data-kind="core"]') && document.querySelector("#rr-panel button[data-src]"));
     ok("CORE off: no CORE chips or tab, table by CCF; both off: roles only, copy text says so; back on restores both");
 
@@ -979,16 +983,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const highlighted20 = rows20.filter((p) => p.highlighted).length;
     assert.ok(highlighted20 < 20 && highlighted20 > 0);
     assert.equal(await visibleRows(page), highlighted20, "the filter is active");
-    await setPref(opts, "panel.filters", false);
+    await setPref(opts, "panel.filters.show", false);
     await eventually(page, () => document.querySelector('[data-rr="filters"]').hidden);
     assert.equal(await visibleRows(page), 20, "a filter whose control is gone no longer hides rows");
-    await setPref(opts, "panel.metrics", false);
+    await setPref(opts, "panel.metrics.show", false);
     await eventually(page, () => document.querySelector('[data-rr="metrics"]').hidden);
     await setPref(opts, "panel.show", false);
     await eventually(page, () => document.getElementById("rr-panel").hidden);
     assert.ok((await page.locator("tr.rr-r-last").count()) > 0, "rows stay decorated with the panel off");
-    assert.ok(await opts.locator('input[data-pref="panel.filters"]').isDisabled(), "the panel's sub-switches are greyed out while it is off");
-    for (const key of ["panel.show", "panel.filters", "panel.metrics"]) await setPref(opts, key, true);
+    assert.ok(await opts.locator('input[data-pref="panel.filters.show"]').isDisabled(), "the panel's sub-switches are greyed out while it is off");
+    for (const key of ["panel.show", "panel.filters.show", "panel.metrics.show"]) await setPref(opts, key, true);
     await eventually(page, () => !document.getElementById("rr-panel").hidden && !document.querySelector('[data-rr="filters"]').hidden && !document.querySelector('[data-rr="metrics"]').hidden);
     ok("panel switches hide the filters, the citation totals and the whole panel; a hidden filter stops filtering");
 
@@ -1003,7 +1007,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     ok("every role switched off: the 'Only highlighted' filter is cleared and hidden");
 
     // -- S4. the toolbar popup follows the settings
-    await setPref(opts, "ranks.ccf", false);
+    await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
     const pop = await context.newPage();
     await pop.goto(`chrome-extension://${extId}/popup/popup.html`);
@@ -1018,7 +1022,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await pop.locator("table").count(), 1);
     await pop.close();
     // the table's switch applies to the popup too: no table, no data note (the copy buttons have their own switches); the name and paper count stay
-    await setPref(opts, "panel.summary", false);
+    await setPref(opts, "panel.table.show", false);
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
     const pop2 = await context.newPage();
     await pop2.goto(`chrome-extension://${extId}/popup/popup.html?tab=${profileTab}`);
@@ -1026,8 +1030,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await pop2.locator("table, .note, .seg").count(), 0);
     assert.equal(await pop2.locator(".actions button").count(), 8, "the copy buttons do not depend on the table");
     await pop2.close();
-    await setPref(opts, "panel.summary", true);
-    await setPref(opts, "ranks.ccf", true);
+    await setPref(opts, "panel.table.show", true);
+    await setList(opts, "ccf", true);
     await eventually(page, () => document.querySelector('.rr-chip[data-kind="ccf"]') && document.querySelector('[data-rr="matrix"] table'));
     ok("the popup shows only the rank lists that are switched on, and follows the table's switch");
 
@@ -1046,7 +1050,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
 
     // -- S6. a stored record with a wrong part is read as far as it is right: the wrong part falls back to its default
     await opts.evaluate(async () => {
-      await chrome.storage.sync.set({ prefs: { roles: { first: true, cofirst: true, second: true, last: false }, ranks: { ccf: true, core: false }, markName: false, rowStyle: "stripes", panel: "no", bogus: 1 } });
+      await chrome.storage.sync.set({ prefs: { roles: { first: true, cofirst: true, second: true, last: false }, rows: { core: false, name: false, style: "stripes" }, panel: "no", bogus: 1 } });
       await chrome.storage.local.set({ ui: { collapsed: true, source: "core" } });
     });
     await page.reload();
@@ -1070,11 +1074,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const optSearch = opts.locator(".opt-search");
     assert.equal(await optSearch.count(), 1, "settings search filter exists");
     await optSearch.fill("core");
-    assert.equal(await opts.locator("#card-3").isVisible(), true, "ranks card matches core query");
-    assert.equal(await opts.locator("#card-0").isVisible(), false, "language card is hidden");
+    assert.equal(await opts.locator("#card-chips").isVisible(), true, "the chips card matches the core query");
+    assert.equal(await opts.locator("#card-language").isVisible(), false, "language card is hidden");
     await optSearch.press("Escape");
     assert.equal(await optSearch.inputValue(), "");
-    assert.equal(await opts.locator("#card-0").isVisible(), true, "escape restores cards");
+    assert.equal(await opts.locator("#card-language").isVisible(), true, "escape restores cards");
 
     await opts.click('[data-act="reset"]');
     await opts.click('[data-act="reset-cancel"]');                        // (it asks on the page: "No" leaves the settings alone)
@@ -1086,37 +1090,39 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.equal(await opts.locator("#preview tr[class*='rr-r-']").count(), 4);
     assert.equal(await opts.locator("#preview .rr-name").count(), 4);
     assert.ok((await opts.locator("#preview .rr-chip-mark").count()) >= 4);
-    await setPref(opts, "marks.award", false);
+    await setMark(opts, "award", false);
     assert.equal(await opts.locator("#preview .rr-chip-mark-award").count(), 0);
-    await setPref(opts, "marks.award", true);
+    await setMark(opts, "award", true);
     // the preview holds the real panel, and each of its parts has its own switch
     assert.equal(await opts.locator('#pv-panel #rr-panel [data-rr="matrix"] table').count(), 1);
-    for (const [part, sel] of [["summary", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
+    for (const [part, sel] of [["table", '[data-rr="matrix"]'], ["marks", '[data-rr="marks"]'], ["filters", '[data-rr="filters"]'], ["metrics", '[data-rr="metrics"]'], ["status", '[data-rr="coverage"] [data-act="load-all"]'], ["names", '[data-rr="variants"]']]) {
       assert.equal(await opts.locator("#pv-panel " + sel).first().isVisible(), true, `${part} shows by default`);
-      await setPref(opts, "panel." + part, false);
+      await setPref(opts, `panel.${part}.show`, false);
       await opts.locator("#pv-panel " + sel).first().waitFor({ state: "hidden", timeout: 8000 }).catch(() => assert.fail(`${part} switch hides it in the preview`));   // (the preview is drawn once the setting is saved: a moment)
-      for (const other of ["summary", "marks", "filters", "metrics"]) if (other !== part) assert.equal(await opts.locator(`#pv-panel [data-rr="${other === "summary" ? "matrix" : other}"]`).first().isVisible(), true, `${other} stays when ${part} goes`);
-      await setPref(opts, "panel." + part, true);
+      for (const other of ["table", "marks", "filters", "metrics"]) if (other !== part) assert.equal(await opts.locator(`#pv-panel [data-rr="${other === "table" ? "matrix" : other}"]`).first().isVisible(), true, `${other} stays when ${part} goes`);
+      await setPref(opts, `panel.${part}.show`, true);
       await opts.locator("#pv-panel " + sel).first().waitFor({ state: "visible", timeout: 8000 });
     }
     // the venue list is off until asked and then lists the sample venues; the year bars follow their switch
     assert.equal(await opts.locator('#pv-panel [data-rr="venues"]').first().isVisible(), false, "the venue list is off by default in the preview too");
-    await setPref(opts, "panel.venues", true);
+    await setPref(opts, "panel.venues.show", true);
     await opts.locator('#pv-panel [data-rr="venues"]').first().waitFor({ state: "visible", timeout: 8000 });
     assert.ok((await opts.locator('#pv-panel [data-rr="venues"] [data-venue]').count()) >= 3, "the preview lists sample venues");
-    await setPref(opts, "panel.venues", false);
+    await setPref(opts, "panel.venues.show", false);
     await opts.locator('#pv-panel [data-rr="venues"]').first().waitFor({ state: "hidden", timeout: 8000 });
     assert.equal(await opts.locator('#pv-panel [data-rr="years"]').first().isVisible(), true);
-    await setPref(opts, "panel.years", false);
+    await setPref(opts, "panel.years.show", false);
     await opts.locator('#pv-panel [data-rr="years"]').first().waitFor({ state: "hidden", timeout: 8000 });
-    await setPref(opts, "panel.years", true);
+    await setPref(opts, "panel.years.show", true);
     // the two shortcuts: compact (filters and citation totals only) and everything
     await opts.click('[data-act="panel-compact"]');
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false });
+    const compact = (await stored(opts, "sync", "prefs")).panel;
+    assert.deepEqual(prefsLib.SECTIONS.map((id) => compact[id].show), [false, false, false, true, true, false, false, false, false]);
     assert.equal(await opts.locator('#pv-panel [data-rr="matrix"]').first().isVisible(), false);
     assert.equal(await opts.locator('#pv-panel [data-rr="metrics"]').first().isVisible(), true);
     await opts.click('[data-act="all-on"][data-group="panel"]');       // (the panel card's Enable all)
-    assert.deepEqual((await stored(opts, "sync", "prefs")).panel, Object.fromEntries(prefsLib.PANEL_PARTS.map((k) => [k, true])));
+    const everyPart = (await stored(opts, "sync", "prefs")).panel;
+    assert.deepEqual([prefsLib.SECTIONS.filter((id) => !everyPart[id].show), Object.values(everyPart.header).every(Boolean)], [[], true], "Enable all brings back every part (the venue list too) and the title bar");
     await setPref(opts, "panel.show", false);
     assert.equal(await opts.locator("#pv-panel").isVisible(), false, "no panel in the preview when the panel is off");
     await opts.click('[data-act="all-on"][data-group="panel"]');       // (Enable all of the panel's parts shows the panel too)
@@ -1124,11 +1130,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await pollPage(opts, () => document.querySelector('input[data-pref="panel.show"]').checked === true);
     // "Enable all" / "Disable all" under each group of switches: the group changes at once and is saved (polled: the switches re-sync after the save)
     const groups = [
-      ["roles", ["roles.first", "roles.cofirst", "roles.second", "roles.last", "markName"]],
-      ["ranks", ["ranks.ccf", "ranks.core"]],
-      ["marks", ["marks.award", "marks.oral", "marks.spotlight", "marks.highlight"]],
-      ["copy", prefsLib.COPY_BUTTONS.map((k) => "copy." + k)],
-      ["panel", prefsLib.PANEL_PARTS.filter((k) => k !== "show").map((k) => "panel." + k)]
+      ["highlight", ["roles.first", "roles.cofirst", "roles.second", "roles.last", "rows.name"]],
+      ["chips", ["rows.ccf", "rows.core", "rows.award", "rows.oral", "rows.spotlight", "rows.highlight"]],
+      ["marks", ["panel.marks.show", "panel.marks.title", "panel.marks.award", "panel.marks.oral", "panel.marks.spotlight", "panel.marks.highlight"]],
+      ["copy", ["panel.copy.show", ...prefsLib.COPY_BUTTONS.map((k) => "panel.copy." + k)]],
+      ["panel", ["panel.header.name", "panel.header.settings", "panel.header.fold", ...prefsLib.SECTIONS.map((id) => `panel.${id}.show`)]]
     ];
     const at = (o, path) => path.split(".").reduce((x, k) => x && x[k], o);
     const beforeBulk = Object.fromEntries(await opts.$$eval("input[data-pref]", (els) => els.map((e) => [e.dataset.pref, e.checked])));
@@ -1167,15 +1173,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const ALL_COPY = prefsLib.COPY_BUTTONS.map((k) => "copy-" + k);
     assert.deepEqual(await panelButtons(), ALL_COPY, "the panel's copy row: every format, in the order of the settings");
     assert.deepEqual(await popupButtons(), ALL_COPY, "and the popup's");
-    await setPref(opts, "copy.bibtex", false);
-    await setPref(opts, "copy.csv", false);
+    await setPref(opts, "panel.copy.bibtex", false);
+    await setPref(opts, "panel.copy.csv", false);
     await eventually(page, () => !document.querySelector('[data-act="copy-bibtex"]') && !document.querySelector('[data-act="copy-csv"]') && !!document.querySelector('[data-act="copy-json"]'));
     assert.deepEqual(await panelButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
     assert.deepEqual(await popupButtons(), ALL_COPY.filter((a) => a !== "copy-bibtex" && a !== "copy-csv"));
-    await setPref(opts, "panel.summary", false);                                    // (the row does not belong to the table)
+    await setPref(opts, "panel.table.show", false);                                    // (the row does not belong to the table)
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden && !document.querySelector('[data-rr="export-row"]').hidden);
     assert.equal(await page.locator('[data-act="copy-json"]').count(), 1, "the copy row stays without the table");
-    await setPref(opts, "panel.summary", true);
+    await setPref(opts, "panel.table.show", true);
     await opts.click('[data-act="all-off"][data-group="copy"]');
     await eventually(page, () => document.querySelector('[data-rr="export-row"]').hidden === true);
     assert.deepEqual(await popupButtons(), [], "no copy button on: no row in the popup either");
@@ -1238,7 +1244,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.deepEqual([bridge.ping.ok, bridge.ping.id, typeof bridge.ping.result.version, bridge.ping.result.loaded > 0], [true, "call-1", "string", true], "ping: the id comes back");
     assert.equal(bridge.ping.result.version, manifest.version, "ping: the version is the manifest's");
     assert.ok(bridge.papers > 0 && bridge.json === bridge.papers, "papers and the json export agree");
-    assert.ok(bridge.summary.ok && bridge.summary.result.summaries.ccf.rows.length > 0 && bridge.summary.result.shown === bridge.papers && Array.isArray(bridge.summary.result.copyButtons), "summary: the numbers behind the panel");
+    assert.ok(bridge.summary.ok && bridge.summary.result.summaries.ccf.rows.length > 0 && bridge.summary.result.shown === bridge.papers, "summary: the numbers behind the panel");
+    // what each call answers is what the guide says it answers (the keys of the result, as lib/agent.js documents them)
+    const documented = (doc) => { let depth = 0, cur = "", keys = []; for (const ch of /^\{ (.*?) \}(?: —|$)/.exec(doc)[1]) { if (ch === "{") depth++; if (ch === "}") depth--; if (ch === "," && depth === 0) { keys.push(cur); cur = ""; } else cur += ch; } keys.push(cur); return keys.map((k) => k.split(":")[0].trim()).sort(); };
+    for (const [method, answer] of [["ping", bridge.ping], ["summary", bridge.summary], ["filter", bridge.filtered], ["clearFilters", bridge.cleared]]) assert.deepEqual(Object.keys(answer.result).sort(), documented(agentLib.METHODS[method].result), method + ": the answer has the keys the guide documents");
     assert.ok(bridge.filtered.ok && bridge.filtered.result.shown > 0 && bridge.filtered.result.shown < bridge.filtered.result.total, "filter: a query narrows the list");
     assert.equal(bridge.shownRows, bridge.filtered.result.shown, "and the page shows exactly those papers");
     assert.deepEqual(bridge.filtered.result.errors, []);
@@ -1269,8 +1278,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // presets, the configuration editor and what it reports
     await opts.click('[data-preset="all"]');
     const allPrefs = await stored(opts, "sync", "prefs");
-    assert.deepEqual([allPrefs.roles.first, allPrefs.roles.last, allPrefs.mergeDuplicates, allPrefs.panel.venues, allPrefs.hide.access], [true, true, true, true, false]);
-    assert.deepEqual(Object.values(allPrefs.copy), prefsLib.COPY_BUTTONS.map(() => true));
+    assert.deepEqual([allPrefs.roles.first, allPrefs.roles.last, allPrefs.mergeDuplicates, allPrefs.panel.venues.show, allPrefs.hide.access], [true, true, true, true, false]);
+    assert.deepEqual(prefsLib.COPY_BUTTONS.map((k) => allPrefs.panel.copy[k]), prefsLib.COPY_BUTTONS.map(() => true));
     assert.equal(allPrefs.semanticScholar, false, "no preset switches a network call on");
     await opts.click('[data-preset="last"]');
     assert.equal((await stored(opts, "sync", "prefs")).roles.first, false);
@@ -1279,21 +1288,21 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     await pollPage(opts, () => /Changes applied/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
     await opts.click(".config-editor summary");
     // a patch: what is right is applied, what is not is named with the reason
-    await opts.locator('[data-act="config-input"]').fill('{\n  "rowStyle": "tint",\n  "panel": { "years": false, "bogus": 1, "venues": "yes" },\n  "nope": 2,\n  "panel.copy": false\n}');
+    await opts.locator('[data-act="config-input"]').fill('{\n  "rows": { "style": "tint" },\n  "panel": { "years": { "show": false }, "bogus": 1, "venues": { "show": "yes" }, "order": ["names", "names"] },\n  "nope": 2,\n  "panel.copy": false\n}');
     await opts.click('[data-act="config-apply"]');
     await pollPage(opts, () => /Changes applied: 2/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
     const report = await status.textContent();
-    for (const part of ["panel.bogus: unknown setting", "panel.venues: must be true or false", "nope: unknown setting", "panel.copy: unknown setting"]) assert.ok(report.includes(part), part + " in: " + report);
+    for (const part of ["panel.bogus: unknown setting", "panel.venues.show: must be true or false", "panel.order: an id is listed twice", "nope: unknown setting", "panel.copy: unknown setting"]) assert.ok(report.includes(part), part + " in: " + report);
     assert.equal(await status.evaluate((el) => el.classList.contains("bad")), true, "a report with something ignored is marked");
     const patched = await stored(opts, "sync", "prefs");
-    assert.deepEqual([patched.rowStyle, patched.panel.years, patched.panel.venues, "nope" in patched], ["tint", false, true, false]);
-    assert.equal(await opts.isChecked('input[data-pref="panel.years"]'), false, "the switches follow");
+    assert.deepEqual([patched.rows.style, patched.panel.years.show, patched.panel.venues.show, "nope" in patched], ["tint", false, true, false]);
+    assert.equal(await opts.isChecked('input[data-pref="panel.years.show"]'), false, "the switches follow");
     // not JSON, and the same change again
-    await opts.locator('[data-act="config-input"]').fill("rowStyle = bar");
+    await opts.locator('[data-act="config-input"]').fill("rows.style = bar");
     await opts.click('[data-act="config-apply"]');
     await pollPage(opts, () => /not valid JSON/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
-    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "tint", "nothing changed");
-    await opts.locator('[data-act="config-input"]').fill('{ "rowStyle": "tint" }');
+    assert.equal((await stored(opts, "sync", "prefs")).rows.style, "tint", "nothing changed");
+    await opts.locator('[data-act="config-input"]').fill('{ "rows": { "style": "tint" } }');
     await opts.click('[data-act="config-apply"]');
     await pollPage(opts, () => /Nothing to change/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
     await opts.locator('[data-act="config-input"]').fill("[1, 2]");
@@ -1310,10 +1319,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.deepEqual(record, await stored(opts, "sync", "prefs"), "the guide carries the user's settings as they are");
     assert.ok(guide.includes("better-scholar:request") && guide.includes("`cites:>100`"));
     // …and what an agent answers goes straight into the editor
-    await opts.locator('[data-act="config-input"]').fill(JSON.stringify({ rowStyle: "bar", copy: { csv: false } }));
+    await opts.locator('[data-act="config-input"]').fill(JSON.stringify({ rows: { style: "bar" }, panel: { copy: { csv: false } } }));
     await opts.click('[data-act="config-apply"]');
     await pollPage(opts, () => /Changes applied: 2/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
-    assert.deepEqual([(await stored(opts, "sync", "prefs")).rowStyle, (await stored(opts, "sync", "prefs")).copy.csv], ["bar", false]);
+    assert.deepEqual([(await stored(opts, "sync", "prefs")).rows.style, (await stored(opts, "sync", "prefs")).panel.copy.csv], ["bar", false]);
     ok("the guide for AI agents: every setting, this user's own record, the page calls; the answer applies from the editor");
 
     // every setting has its control on the settings page, found by its path (the guide says so), and no control names a setting that does not exist
@@ -1334,9 +1343,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const cfgParsed = JSON.parse(Buffer.concat(cfgChunks).toString("utf8"));
     assert.deepEqual(cfgParsed, await stored(opts, "sync", "prefs"), "the file is the record");
     // …and a file of that shape is read back
-    await opts.setInputFiles('input[type="file"]', { name: "c.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ rowStyle: "full" })) });
+    await opts.setInputFiles('input[type="file"]', { name: "c.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ rows: { style: "full" } })) });
     await pollPage(opts, () => /Changes applied: 1/.test(document.querySelector('[data-rr="config-status"]').textContent), null);
-    assert.equal((await stored(opts, "sync", "prefs")).rowStyle, "full");
+    assert.equal((await stored(opts, "sync", "prefs")).rows.style, "full");
     ok("configuration export downloads the record as better-scholar-config.json; a file is read back as a patch");
 
     await opts.click('[data-act="clear-cache"]');
@@ -1429,7 +1438,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
       assert.equal(await pg.locator('[data-rr="coverage"]').isHidden(), true, "a complete, fully ranked profile has no status block");
       assert.match(await pg.locator('[data-rr="metrics"]').textContent(), /Papers\s*3\s*of\s*3/, "the count is in the totals");
       const optsC = await openOptions(ctxC);
-      await setPref(optsC, "panel.metrics", false);                    // without the totals the count is nowhere else: the line comes back
+      await setPref(optsC, "panel.metrics.show", false);                    // without the totals the count is nowhere else: the line comes back
       await eventually(pg, () => !document.querySelector('[data-rr="coverage"]').hidden && /3 papers loaded/.test(document.querySelector('[data-rr="coverage"]').textContent));
       ok("with nothing else to say the status block is gone (the totals show the count); it returns when the totals are switched off");
     } finally { await ctxC.close(); await fxC.close(); }
@@ -1622,7 +1631,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     const optsM = await openOptions(ctx3);
     await pill("award").click();
     assert.equal(await visibleRows(page), 4);
-    await setPref(optsM, "marks.award", false);
+    await setMark(optsM, "award", false);
     await eventually(page, () => document.querySelectorAll('.rr-chip-mark[data-group="award"], .rr-chip-mark[data-group="finalist"]').length === 0);
     assert.equal(await visibleRows(page), 10, "switching a group off also ends a filter on it");
     assert.equal(await page.locator('#rr-panel .rr-markrow[data-mark-group="award"]').count(), 0);
@@ -1630,24 +1639,24 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     assert.ok((await page.locator('.rr-chip-mark[data-group="oral"]').count()) > 0, "talk levels keep their own switch");
     await page.click('[data-act="copy-summary"]');
     assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^Awards & talks: Oral 2, Spotlight 1 /m);
-    for (const g of ["oral", "spotlight"]) await setPref(optsM, "marks." + g, false);
+    for (const g of ["oral", "spotlight"]) await setMark(optsM, g, false);
     await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length === 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 0);
     assert.equal(await page.locator('[data-rr="marks"]').isHidden(), true, "no Awards & talks section when every group is off");
-    for (const g of ["award", "oral", "spotlight"]) await setPref(optsM, "marks." + g, true);
+    for (const g of ["award", "oral", "spotlight"]) await setMark(optsM, g, true);
     await eventually(page, () => document.querySelectorAll(".rr-chip-mark").length > 0 && document.querySelectorAll("#rr-panel .rr-markrow").length === 3);
     ok("each Awards & talks group has its own switch on the settings page: chips, panel rows, counts and an active filter follow");
 
     // each part of the panel has its own switch: the role × rank table can go while the filters and totals stay
-    await setPref(optsM, "panel.summary", false);
+    await setPref(optsM, "panel.table.show", false);
     await eventually(page, () => document.querySelector('[data-rr="matrix"]').closest(".rr-sec").hidden);
     assert.equal(await page.locator('[data-rr="matrix"] table').isVisible(), false);
     assert.equal(await page.locator('[data-act="copy-summary"]').isVisible(), true, "the copy row stays when the table goes: it has its own switches");
     for (const part of ["filters", "metrics", "coverage"]) assert.equal(await page.locator(`[data-rr="${part}"]`).isVisible(), true, `${part} stays`);
     assert.equal(await page.locator('[data-rr="marks"]').isVisible(), true, "the awards and talks counts stay");
-    await setPref(optsM, "panel.status", false);
-    await setPref(optsM, "panel.names", false);
-    await eventually(page, () => document.querySelector('[data-rr="coverage"]').hidden && document.querySelector('[data-rr="variants"]').hidden);
-    await setPref(optsM, "panel.summary", true); await setPref(optsM, "panel.status", true); await setPref(optsM, "panel.names", true);
+    await setPref(optsM, "panel.status.show", false);
+    await setPref(optsM, "panel.names.show", false);
+    await eventually(page, () => document.querySelector('[data-rr="coverage"]').hidden && document.querySelector('[data-rr="variants"]').closest(".rr-sec").hidden);
+    await setPref(optsM, "panel.table.show", true); await setPref(optsM, "panel.status.show", true); await setPref(optsM, "panel.names.show", true);
     await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1 && !document.querySelector('[data-rr="coverage"]').hidden);
     ok("each part of the panel has its own switch: the role × rank table, the loaded-papers status and the name help can go, the rest stays");
   } finally {
@@ -1696,7 +1705,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); return 
     // -- 25b. every interface language fits: no panel button cut off, nothing wider than the panel, in the sidebar and in the wide panel
     {
       const opts = await openOptions(ctx4);
-      await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), panel: { show: true, summary: true, marks: true, filters: true, metrics: true, years: true, venues: true, status: true, names: true } } }); });
+      await opts.evaluate(async () => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), panel: { venues: { show: true } } } }); });
       const langs = fs.readdirSync(path.join(repo, "src/_locales"));
       // (the open profile reloads itself when the language setting changes: a reload of ours may meet that one half way, so it is asked again)
       const reloadSafe = async () => { for (let i = 0; i < 4; i++) { try { await page.waitForLoadState("load"); await page.reload(); return; } catch (e) { await page.waitForTimeout(300); } } await page.reload(); };

@@ -14,14 +14,16 @@ Two things you can do:
 2. Reply with **one JSON object** that holds only the settings to change, in the shape of the record under "Current settings" (nested objects, as in the examples; no dotted paths). Leave out what stays as it is.
 3. The user pastes it into *Settings → Configuration → Config editor* and presses **Apply** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.
 
-Example — years chart off, last-author rows only, bar-style rows:
+Example — years chart off, BibTeX and summary buttons first, last-author rows only, bar-style rows:
 ```json
-{"panel":{"years":false},"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rowStyle":"bar"}
+{"panel":{"years":{"show":false},"copy":{"order":["bibtex","summary"]}},"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rows":{"style":"bar"}}
 ```
 
 Rules:
 - `semanticScholar` sends paper titles to a third party: turn it on only if the user asks for it. No preset touches it.
-- `panel.show: false` hides the whole panel; every `panel.*` part then has no effect. The `copy.*` buttons live in the panel (and in the toolbar popup): with no copy button on, there is no copy row.
+- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel; every other `panel.*` setting then has no effect. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).
+- The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.
+- What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.
 - Colours are `"#rrggbb"` only; `""` restores the built-in colour of a role.
 - A language is a code from the list below. Changing `language` reloads the settings page.
 - Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.
@@ -36,53 +38,103 @@ Rules:
 | `roles.cofirst` | true / false | `true` | Highlight the rows where you are one of several co-first authors (equal-contribution marks such as * or †). |
 | `roles.second` | true / false | `true` | Highlight the rows where you are the second author. |
 | `roles.last` | true / false | `true` | Highlight the rows where you are the last author. |
-| `markName` | true / false | `true` | Mark your own name in the author line of a highlighted row (bold, tinted). |
+| `rows.name` | true / false | `true` | Mark your own name in the author line of a highlighted row (bold, tinted). |
 | `colors.first` | "#rrggbb" or "" | `""` | Row colour of the first-author role, "#rrggbb"; "" is the built-in blue. |
 | `colors.cofirst` | "#rrggbb" or "" | `""` | Row colour of the co-first role, "#rrggbb"; "" is the built-in purple. |
 | `colors.second` | "#rrggbb" or "" | `""` | Row colour of the second-author role, "#rrggbb"; "" is the built-in amber. |
 | `colors.last` | "#rrggbb" or "" | `""` | Row colour of the last-author role, "#rrggbb"; "" is the built-in green. |
-| `rowStyle` | "full" / "bar" / "tint" | `"full"` | How a highlighted row looks: "full" is a tint and a bar at the left edge, "bar" the bar only, "tint" the tint only. |
-| `ranks.ccf` | true / false | `true` | Show CCF ranks (chips on rows, a tab in the panel's table). |
-| `ranks.core` | true / false | `true` | Show CORE ranks (chips on rows, a tab in the panel's table). |
-| `marks.award` | true / false | `true` | Show award chips (best paper and the like) and their count in the panel. |
-| `marks.oral` | true / false | `true` | Show "Oral" chips (a talk level the authors wrote in the venue) and their count. |
-| `marks.spotlight` | true / false | `true` | Show "Spotlight" chips and their count. |
-| `marks.highlight` | true / false | `true` | Show "Highlight" chips and their count. |
-| `talkRows` | "separate" / "pair" / "talks" | `"separate"` | How the panel counts talks: "separate" one row each for oral, spotlight and highlight; "pair" spotlight and highlight together; "talks" all three together. |
-| `mergeDuplicates` | true / false | `false` | Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation). |
+| `rows.style` | "full" / "bar" / "tint" / "none" | `"full"` | How a highlighted row looks: "full" is a tint and a bar at the left edge, "bar" the bar only, "tint" the tint only, "none" leaves the row as Scholar draws it. |
+| `rows.ccf` | true / false | `true` | A CCF rank chip after the venue of a paper. |
+| `rows.core` | true / false | `true` | A CORE rank chip after the venue of a paper. |
+| `rows.award` | true / false | `true` | An award chip (best paper and the like) on a paper. |
+| `rows.oral` | true / false | `true` | An "Oral" chip (a talk level the authors wrote in the venue) on a paper. |
+| `rows.spotlight` | true / false | `true` | A "Spotlight" chip on a paper. |
+| `rows.highlight` | true / false | `true` | A "Highlight" chip on a paper. |
+| `panel.show` | true / false | `true` | The panel in the right-hand column: off hides all of it and every panel.* setting then has no effect. |
+| `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
+| `panel.header.name` | true / false | `true` | The panel's title at the top. |
+| `panel.header.settings` | true / false | `true` | The button in the panel's title bar that opens the settings page. |
+| `panel.header.fold` | true / false | `true` | The button that folds the panel to its title bar. Off: the panel is always open. |
+| `panel.table.show` | true / false | `true` | The table of your papers by position and rank (also the toolbar popup's table). |
+| `panel.table.title` | true / false | `true` | The title line of the table. |
+| `panel.table.ccf` | true / false | `true` | A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use. |
+| `panel.table.core` | true / false | `true` | A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use. |
+| `panel.table.unranked` | true / false | `true` | The column of papers whose venue has no rank (drawn as “–”). |
+| `panel.table.total` | true / false | `true` | The totals: the All column and the All row. |
+| `panel.table.other` | true / false | `true` | The "Other" row: papers where you are neither first, co-first, second nor last author. |
+| `panel.table.hidden` | true / false | `true` | The "Hidden" row: papers whose cut-off author list does not show your position. |
+| `panel.table.note` | true / false | `true` | The note under the table that says the ranks are today's lists, not the rank at publication. |
+| `panel.copy.show` | true / false | `true` | The row of copy and export buttons (also the toolbar popup's). |
+| `panel.copy.order` | list of ids | `["summary","table","papers","apa","bibtex","markdown","json","csv"]` | The copy buttons, left to right: a list of ids (summary, table, papers, apa, bibtex, markdown, json, csv). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
+| `panel.copy.summary` | true / false | `true` | Copy button: the summary table as plain text (panel and toolbar popup). |
+| `panel.copy.table` | true / false | `true` | Copy button: the summary table as tab-separated cells, for a spreadsheet. |
+| `panel.copy.papers` | true / false | `true` | Copy button: the list of papers shown, as plain text. |
+| `panel.copy.apa` | true / false | `true` | Copy button: the papers shown as APA 7th edition references. |
+| `panel.copy.bibtex` | true / false | `true` | Copy button: the papers shown as BibTeX entries. |
+| `panel.copy.markdown` | true / false | `true` | Copy button: the papers shown as a Markdown list. |
+| `panel.copy.json` | true / false | `true` | Copy button: the papers shown as JSON, with roles, ranks and marks. |
+| `panel.copy.csv` | true / false | `true` | Copy button: the papers shown as CSV (RFC 4180). |
+| `panel.marks.show` | true / false | `true` | The awards and talks counts: one click lists those papers. |
+| `panel.marks.title` | true / false | `true` | The title line of the awards and talks counts. |
+| `panel.marks.award` | true / false | `true` | A count row for award-winning papers. |
+| `panel.marks.oral` | true / false | `true` | A count row for "Oral" papers. |
+| `panel.marks.spotlight` | true / false | `true` | A count row for "Spotlight" papers. |
+| `panel.marks.highlight` | true / false | `true` | A count row for "Highlight" papers. |
+| `panel.marks.grouping` | "separate" / "pair" / "talks" | `"separate"` | How the panel counts talks: "separate" one row each for oral, spotlight and highlight; "pair" spotlight and highlight together; "talks" all three together. |
+| `panel.filters.show` | true / false | `true` | The search box and the filters. |
+| `panel.filters.search` | true / false | `true` | The search box, with its suggestions and the number of papers it finds. |
+| `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
+| `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.coreA` | true / false | `false` | Quick filter: a button that adds core:a* to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.cites100` | true / false | `true` | Quick filter: a button that adds cites:>100 to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.first` | true / false | `true` | Quick filter: a button that adds role:first to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.cofirst` | true / false | `false` | Quick filter: a button that adds role:cofirst to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.second` | true / false | `false` | Quick filter: a button that adds role:second to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.last` | true / false | `false` | Quick filter: a button that adds role:last to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.award` | true / false | `true` | Quick filter: a button that adds has:award to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.talk` | true / false | `false` | Quick filter: a button that adds has:talk to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.only` | true / false | `true` | The "Only highlighted" switch (absent while no position is highlighted). |
+| `panel.filters.years` | true / false | `true` | The year range: From and To. |
+| `panel.filters.bar` | true / false | `true` | The bar that says how many papers the filters leave, and clears them. |
+| `panel.metrics.show` | true / false | `true` | Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones. |
+| `panel.metrics.title` | true / false | `true` | The title line of the citation totals. |
+| `panel.metrics.scope` | true / false | `true` | The line that says which positions the numbers count ("First, Co-first, Second and Last"). |
+| `panel.metrics.papers` | true / false | `true` | The number of papers. |
+| `panel.metrics.citations` | true / false | `true` | The number of citations. |
+| `panel.metrics.h` | true / false | `true` | The h-index, a button that lists the papers behind it. |
+| `panel.metrics.i10` | true / false | `true` | The i10-index, a button that lists the papers behind it. |
+| `panel.metrics.of` | true / false | `true` | The "of N" beside each number: the figure over all papers, not only the highlighted ones. |
+| `panel.years.show` | true / false | `true` | The papers-per-year chart (a click on a year filters the list). |
+| `panel.years.title` | true / false | `true` | The title line of the chart. |
+| `panel.years.axis` | true / false | `true` | The first and the last year under the bars. |
+| `panel.venues.show` | true / false | `false` | The venues you publish at most, with their ranks. Off until asked. |
+| `panel.venues.title` | true / false | `true` | The title line of the venue list. |
+| `panel.status.show` | true / false | `true` | The status lines: how many papers are loaded, what could not be read, the button that reads full author lists. |
+| `panel.status.loaded` | true / false | `true` | How many papers are loaded, and the Load all button. |
+| `panel.status.cutoff` | true / false | `true` | The papers whose author list Scholar cut off, and the button that reads the full lists. |
+| `panel.status.repeats` | true / false | `true` | The line about entries that repeat another paper. |
+| `panel.status.absent` | true / false | `true` | The line about papers whose author list does not name you. |
+| `panel.status.unranked` | true / false | `true` | The list of papers at venues without a rank, with its Copy and Report buttons. |
+| `panel.names.show` | true / false | `true` | Help with spellings of your name that Scholar prints differently. |
+| `panel.names.hints` | true / false | `true` | The spellings of your name found in your papers, one click to add one. |
+| `panel.names.add` | true / false | `true` | The box where you add a spelling by hand. |
 | `hide.cited` | true / false | `false` | Hide Scholar's whole "Cited by" block in the right-hand column (table and chart). |
 | `hide.citedTable` | true / false | `false` | Hide only the table of the "Cited by" block (All / Since …). No effect while hide.cited is on. |
 | `hide.citedChart` | true / false | `false` | Hide only the year chart of the "Cited by" block. No effect while hide.cited is on. |
 | `hide.coauthors` | true / false | `false` | Hide Scholar's "Co-authors" block. |
 | `hide.access` | true / false | `false` | Hide Scholar's "Public access" block. |
-| `panel.show` | true / false | `true` | The panel in the right-hand column: off hides all of it and every panel.* and copy.* setting then has no effect. |
-| `panel.summary` | true / false | `true` | Panel part: the table of your papers by position and rank, with the note on where the ranks come from. |
-| `panel.marks` | true / false | `true` | Panel part: the awards and talks counts. |
-| `panel.filters` | true / false | `true` | Panel part: the search box and the filters (only highlighted, a year range). |
-| `panel.metrics` | true / false | `true` | Panel part: citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones. |
-| `panel.years` | true / false | `true` | Panel part: the papers-per-year chart (a click on a year filters the list). |
-| `panel.venues` | true / false | `false` | Panel part: the venues you publish at most, with their ranks. Off until asked. |
-| `panel.status` | true / false | `true` | Panel part: how many papers are loaded, what could not be read, the button that reads full author lists. |
-| `panel.names` | true / false | `true` | Panel part: help with spellings of your name that Scholar prints differently. |
-| `copy.summary` | true / false | `true` | Copy button: the summary table as plain text (panel and toolbar popup). |
-| `copy.table` | true / false | `true` | Copy button: the summary table as tab-separated cells, for a spreadsheet. |
-| `copy.papers` | true / false | `true` | Copy button: the list of papers shown, as plain text. |
-| `copy.apa` | true / false | `true` | Copy button: the papers shown as APA 7th edition references. |
-| `copy.bibtex` | true / false | `true` | Copy button: the papers shown as BibTeX entries. |
-| `copy.markdown` | true / false | `true` | Copy button: the papers shown as a Markdown list. |
-| `copy.json` | true / false | `true` | Copy button: the papers shown as JSON, with roles, ranks and marks. |
-| `copy.csv` | true / false | `true` | Copy button: the papers shown as CSV (RFC 4180). |
-| `semanticScholar` | true / false | `false` | Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before opening the paper's Scholar page. Sends titles to a third party: leave off unless the user asks for it. |
+| `mergeDuplicates` | true / false | `false` | Count a paper once when Scholar lists it twice (titles that differ only in capitals or punctuation). |
 | `autoLoad` | true / false | `true` | Press Scholar's own "Show more" button until the whole paper list is loaded, as the profile opens. |
+| `semanticScholar` | true / false | `false` | Ask Semantic Scholar's public API (paper titles only, no cookies) for a cut-off author list before opening the paper's Scholar page. Sends titles to a third party: leave off unless the user asks for it. |
 
 Language codes: en (English), zh_CN (简体中文), zh_TW (繁體中文), ja (日本語), ko (한국어), es (Español), fr (Français), de (Deutsch), it (Italiano), pt_BR (Português (Brasil)), pt_PT (Português (Portugal)), ru (Русский), uk (Українська), pl (Polski), cs (Čeština), nl (Nederlands), sv (Svenska), da (Dansk), fi (Suomi), no (Norsk), tr (Türkçe), ar (العربية), he (עברית), hi (हिन्दी), id (Bahasa Indonesia), vi (Tiếng Việt), th (ไทย), el (Ελληνικά), hu (Magyar), ro (Română).
 
 ### Presets
 Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:
-- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"markName":true,"rowStyle":"full","ranks":{"ccf":true,"core":true},"marks":{"award":true,"oral":true,"spotlight":true,"highlight":true},"talkRows":"separate","mergeDuplicates":true,"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"panel":{"show":true,"summary":true,"marks":true,"filters":true,"metrics":true,"years":true,"venues":true,"status":true,"names":true},"copy":{"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true},"autoLoad":true}`
-- `last`: `{"roles":{"first":false,"cofirst":false,"second":false,"last":true},"ranks":{"ccf":true,"core":true},"rowStyle":"full"}`
-- `first`: `{"roles":{"first":true,"cofirst":true,"second":false,"last":false},"ranks":{"ccf":true,"core":true},"rowStyle":"full"}`
-- `minimal`: `{"rowStyle":"tint","hide":{"citedTable":true,"access":true},"panel":{"show":true,"summary":false,"marks":false,"filters":true,"metrics":true,"years":false,"venues":false,"status":false,"names":false},"copy":{"summary":false,"table":false,"papers":false,"apa":false,"bibtex":false,"markdown":false,"json":false,"csv":false}}`
+- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"rows":{"name":true,"style":"full","ccf":true,"core":true,"award":true,"oral":true,"spotlight":true,"highlight":true},"panel":{"show":true,"header":{"name":true,"settings":true,"fold":true},"table":{"show":true,"title":true,"ccf":true,"core":true,"unranked":true,"total":true,"other":true,"hidden":true,"note":true},"copy":{"show":true,"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true},"marks":{"show":true,"title":true,"award":true,"oral":true,"spotlight":true,"highlight":true,"grouping":"separate"},"filters":{"show":true,"search":true,"only":true,"years":true,"bar":true},"metrics":{"show":true,"title":true,"scope":true,"papers":true,"citations":true,"h":true,"i10":true,"of":true},"years":{"show":true,"title":true,"axis":true},"venues":{"show":true,"title":true},"status":{"show":true,"loaded":true,"cutoff":true,"repeats":true,"absent":true,"unranked":true},"names":{"show":true,"hints":true,"add":true}},"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"mergeDuplicates":true,"autoLoad":true}`
+- `last`: `{"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rows":{"style":"full"}}`
+- `first`: `{"roles":{"first":true,"cofirst":true,"second":false,"last":false},"rows":{"style":"full"}}`
+- `minimal`: `{"rows":{"style":"tint"},"hide":{"citedTable":true,"access":true},"panel":{"show":true,"table":{"show":false},"copy":{"show":false},"marks":{"show":false},"filters":{"show":true},"metrics":{"show":true},"years":{"show":false},"venues":{"show":false},"status":{"show":false},"names":{"show":false}}}`
 
 ## Page events
 
@@ -109,7 +161,7 @@ Result: { version, owner, loaded, complete } — the extension's version, the pr
 ### `summary`
 The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics.
 Parameters: none.
-Result: { owner, loaded, shown, loadingAll, layoutBroken, edition, sources, source, noRanks, summaries: { ccf, core, none }, marks, talkRows, metrics: { highlighted, all }, parts, copyButtons } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent }.
+Result: { owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }.
 
 ### `papers`
 The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.

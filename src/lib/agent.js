@@ -23,7 +23,7 @@
     summary: {
       doc: "The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics.",
       params: {},
-      result: "{ owner, loaded, shown, loadingAll, layoutBroken, edition, sources, source, noRanks, summaries: { ccf, core, none }, marks, talkRows, metrics: { highlighted, all }, parts, copyButtons } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent }."
+      result: "{ owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }."
     },
     papers: {
       doc: "The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.",
@@ -87,7 +87,7 @@
   // ---- the guide ------------------------------------------------------------------------------------------------------------------------
   const code = (s) => "`" + s + "`";
   const cell = (s) => String(s).replace(/\|/g, "\\|");
-  const valueOf = (s) => (s.kind === "bool" ? "true / false" : s.kind === "color" ? "\"#rrggbb\" or \"\"" : s.kind === "choice" ? s.values.map((v) => `"${v}"`).join(" / ") : `"${s.none}" or a language code`);
+  const valueOf = (s) => (s.kind === "bool" ? "true / false" : s.kind === "color" ? "\"#rrggbb\" or \"\"" : s.kind === "choice" ? s.values.map((v) => `"${v}"`).join(" / ") : s.kind === "order" ? "list of ids" : `"${s.none}" or a language code`);
   const json = (v) => JSON.stringify(v);
 
   // `current`: the user's settings as the record (the settings page's copy passes them); omitted, the guide is the reference alone (AGENTS.md). `version`: the extension's version.
@@ -114,14 +114,16 @@
       "2. Reply with **one JSON object** that holds only the settings to change, in the shape of the record under \"Current settings\" (nested objects, as in the examples; no dotted paths). Leave out what stays as it is.",
       "3. The user pastes it into *Settings → Configuration → Config editor* and presses **Apply** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.",
       "",
-      "Example — years chart off, last-author rows only, bar-style rows:",
+      "Example — years chart off, BibTeX and summary buttons first, last-author rows only, bar-style rows:",
       "```json",
-      json({ panel: { years: false }, roles: { first: false, cofirst: false, second: false, last: true }, rowStyle: "bar" }),
+      json({ panel: { years: { show: false }, copy: { order: ["bibtex", "summary"] } }, roles: { first: false, cofirst: false, second: false, last: true }, rows: { style: "bar" } }),
       "```",
       "",
       "Rules:",
       "- `semanticScholar` sends paper titles to a third party: turn it on only if the user asks for it. No preset touches it.",
-      "- `panel.show: false` hides the whole panel; every `panel.*` part then has no effect. The `copy.*` buttons live in the panel (and in the toolbar popup): with no copy button on, there is no copy row.",
+      "- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel; every other `panel.*` setting then has no effect. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).",
+      "- The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.",
+      "- What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.",
       "- Colours are `\"#rrggbb\"` only; `\"\"` restores the built-in colour of a role.",
       "- A language is a code from the list below. Changing `language` reloads the settings page.",
       "- Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.",

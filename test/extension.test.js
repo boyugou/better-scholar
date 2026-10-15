@@ -84,7 +84,7 @@ test("manifest: every referenced file exists, and scripts load in dependency ord
 });
 
 test("pages: the popup and the settings page load only files that exist, dependencies first", () => {
-  for (const [page, scripts] of [["popup/popup.html", ["lib/i18n.js", "lib/marks.js", "content/dom.js", "popup/popup.js"]], ["options/options.html", ["lib/i18n.js", "lib/prefs.js", "lib/query.js", "lib/agent.js", "lib/marks.js", "lib/metrics.js", "content/dom.js", "content/chips.js", "content/panel.js", "content/store.js", "options/options.js"]]]) {
+  for (const [page, scripts] of [["popup/popup.html", ["lib/i18n.js", "lib/prefs.js", "lib/marks.js", "content/dom.js", "content/store.js", "popup/popup.js"]], ["options/options.html", ["lib/i18n.js", "lib/prefs.js", "lib/query.js", "lib/agent.js", "lib/marks.js", "lib/metrics.js", "content/dom.js", "content/chips.js", "content/panel.js", "content/store.js", "options/options.js"]]]) {
     const html = read(page);
     const refs = [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => path.posix.normalize(path.posix.join(path.posix.dirname(page), m[1])));
     assert.deepEqual(refs, scripts, page);

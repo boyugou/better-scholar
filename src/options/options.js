@@ -84,6 +84,8 @@
       s("line", { x1: "12", y1: "19", x2: "20", y2: "19" })),
     sparkles: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("path", { d: "m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" })),
+    noneDiagram: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2", "stroke-dasharray": "3 3" })),
     barDiagram: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2" }),
       s("line", { x1: "7", y1: "4", x2: "7", y2: "20", "stroke-width": "3" })),
@@ -94,21 +96,29 @@
       s("rect", { x: "3", y: "4", width: "18", height: "16", rx: "2", fill: "currentColor", "fill-opacity": "0.2" }))
   };
 
+  // the badge of each card (the ids are lib/prefs.js CARDS')
   const CARD_ICONS = {
-    0: { icon: "globe", color: "#4f46e5", bg: "rgba(79, 70, 229, 0.12)" },
-    1: { icon: "users", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" },
-    2: { icon: "palette", color: "#9333ea", bg: "rgba(147, 51, 234, 0.12)" },
-    3: { icon: "columns", color: "#d97706", bg: "rgba(217, 119, 6, 0.12)" },
-    4: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
-    5: { icon: "duplicate", color: "#0f766e", bg: "rgba(15, 118, 110, 0.12)" },
-    6: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
-    7: { icon: "eye", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
-    8: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
-    9: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
-    10: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
-    11: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
-    12: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
-    13: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
+    language: { icon: "globe", color: "#4f46e5", bg: "rgba(79, 70, 229, 0.12)" },
+    highlight: { icon: "users", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" },
+    colors: { icon: "palette", color: "#9333ea", bg: "rgba(147, 51, 234, 0.12)" },
+    chips: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
+    panel: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
+    table: { icon: "columns", color: "#d97706", bg: "rgba(217, 119, 6, 0.12)" },
+    copy: { icon: "duplicate", color: "#0f766e", bg: "rgba(15, 118, 110, 0.12)" },
+    marks: { icon: "star", color: "#ca8a04", bg: "rgba(202, 138, 4, 0.12)" },
+    filters: { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" },
+    metrics: { icon: "chart", color: "#0891b2", bg: "rgba(8, 145, 178, 0.12)" },
+    years: { icon: "chart", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
+    venues: { icon: "columns", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
+    status: { icon: "database", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
+    names: { icon: "users", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
+    hide: { icon: "eye", color: "#475569", bg: "rgba(71, 85, 105, 0.12)" },
+    merge: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
+    load: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
+    semantic: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
+    agent: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
+    config: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
+    data: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
   };
 
   function makeIconBadge({ icon, color, bg }) {
@@ -120,7 +130,6 @@
   const ROLE_COLOR = { first: "var(--rr-c-first, #1a73e8)", cofirst: "var(--rr-c-cofirst, #a142f4)", second: "var(--rr-c-second, #f9ab00)", last: "var(--rr-c-last, #1e8e3e)" };
   const ROLE_DEFAULT = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
   const ROLE_NAME = { first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast" };
-  const MARK_NAME = { award: "markAward", oral: "markOral", spotlight: "markSpotlight", highlight: "markHighlight" };
 
   await B.dom.useLanguage();
   document.documentElement.lang = B.dom.langTag();
@@ -150,7 +159,7 @@
   let savedTimer = 0;
   async function save() {
     B.dom.applyColors(prefs.colors);
-    B.dom.applyRowStyle(prefs.rowStyle);
+    B.dom.applyRowStyle(prefs.rows.style);
     renderPreview();
     syncers.forEach((fn) => fn());
     await B.store.savePrefs(prefs);
@@ -208,6 +217,32 @@
     syncers.push(sync);
     sync();
     return row;
+  }
+
+  // An order: the parts (or buttons) of a list, top to bottom, each with the buttons that move it. The ids a switch hides are dimmed, not removed: they keep their place.
+  function orderList({ path, label, hint, nameOf, offOf }) {
+    const d = described(label, hint);
+    const list = h("ol", { class: "order-list", "data-pref": path, ...d.ids });
+    let focus = null;                                                      // (the button that was pressed: the list is drawn again, and the keyboard must stay on it)
+    const move = (id, by) => {
+      const order = at(path).slice(), i = order.indexOf(id), j = i + by;
+      if (j < 0 || j >= order.length) return;
+      [order[i], order[j]] = [order[j], order[i]];
+      focus = { id, act: by < 0 ? "move-up" : "move-down" };
+      put(path, order);
+      save();
+    };
+    const sync = () => {
+      const order = at(path);
+      list.replaceChildren(...order.map((id, i) => h("li", { class: "order-item" + (offOf(id) ? " off" : ""), "data-id": id },
+        h("span", { class: "order-name" }, nameOf(id)),
+        h("button", { type: "button", class: "order-btn", "data-act": "move-up", "aria-label": `${nameOf(id)}: ${t("optMoveUp")}`, title: t("optMoveUp"), disabled: i === 0, onClick: () => move(id, -1) }, "▲"),
+        h("button", { type: "button", class: "order-btn", "data-act": "move-down", "aria-label": `${nameOf(id)}: ${t("optMoveDown")}`, title: t("optMoveDown"), disabled: i === order.length - 1, onClick: () => move(id, 1) }, "▼"))));
+      if (focus) { const b = list.querySelector(`[data-id="${focus.id}"] [data-act="${focus.act}"]`) || list.querySelector(`[data-id="${focus.id}"] .order-btn:not([disabled])`); if (b) b.focus(); focus = null; }
+    };
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "opt opt-order" }, h("span", { class: "txt" }, d.name, d.hint), list);
   }
 
   // A language: the plain list of the languages (each in its own name) with the setting's own "none" first. The interface language reloads the page once chosen.
@@ -428,10 +463,10 @@
   }
 
   const LANGS = B.i18n.LANGUAGES.map(([code, name]) => [code, name]);
-  const card = (idx, title, desc, ...rows) => {
-    const iconObj = CARD_ICONS[idx] || { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" };
+  const card = (id, title, desc, ...rows) => {
+    const iconObj = CARD_ICONS[id] || { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" };
     const h2 = h("h2", {}, makeIconBadge(iconObj), h("span", { class: "card-title-text" }, title));
-    return h("section", { class: "card" }, h2, desc ? h("p", { class: "desc" }, desc) : null, ...rows);
+    return h("section", { class: "card", id: "card-" + id }, h2, desc ? h("p", { class: "desc" }, desc) : null, ...rows);
   };
 
   // ---- Diagnostic & Storage Controls ----
@@ -585,7 +620,7 @@
     h("span", { class: "presets-title faint" }, t("optConfigPreset") + ":"),
     presetBtn("all", t("optPresetFull")), presetBtn("last", t("optPresetLast")), presetBtn("first", t("optPresetFirst")), presetBtn("minimal", t("optPresetMinimal")));
 
-  const configText = h("textarea", { class: "config-text", "data-act": "config-input", "aria-label": t("optConfigEditor"), rows: "6", spellcheck: "false", placeholder: '{\n  "panel": { "years": false },\n  "rowStyle": "bar"\n}' });
+  const configText = h("textarea", { class: "config-text", "data-act": "config-input", "aria-label": t("optConfigEditor"), rows: "6", spellcheck: "false", placeholder: '{\n  "panel": { "years": { "show": false } },\n  "rows": { "style": "bar" }\n}' });
   const configApplyBtn = h("button", { class: "btn primary", type: "button", "data-act": "config-apply", onClick: () => applyConfig(configText.value) }, t("optConfigApply"));
   const configDetails = h("details", { class: "config-editor" },
     h("summary", { class: "btn sub" }, t("optConfigEditor")),
@@ -596,74 +631,83 @@
     if (await B.dom.copyText(B.agent.guide({ current: prefs, version: chrome.runtime.getManifest().version }))) done(agentBtn, t("optAgentCopy"));
   } }, t("optAgentCopy"));
 
-  // ---- Assemble Cards ----
-  const paths = (group, keys) => keys.map((k) => group + "." + k);
+  // ---- Assemble Cards: one for each card of lib/prefs.js CARDS, in that order — the order of the preview, top to bottom ----
+  const SETTING = new Map(B.prefs.SETTINGS.map((x) => [x.path, x]));
+  // a setting has no effect while a switch it hangs on says so (its own, and that one's own, and so on)
+  const inert = (row) => {
+    for (let child = row; child.parent; child = SETTING.get(child.parent)) { const on = !!at(child.parent); if (child.invert ? on : !on) return true; }
+    return false;
+  };
+  const CHOICES = {
+    "rows.style": { labels: { full: "optRowStyleFull", bar: "optRowStyleBar", tint: "optRowStyleTint", none: "optRowStyleNone" },
+      icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram, none: ICONS.noneDiagram } },
+    "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} }
+  };
+  const NONE_WORD = { language: "optLanguageAuto", scholarLanguage: "optLanguageKeep" };
+  const cardOf = (id) => B.prefs.CARDS.find((c) => c.id === id);
+  // the name of an item of an order list: a part is named by its card, a button by its own switch; it is dimmed while its switch is off
+  const itemName = (path, id) => t(path === "panel.order" ? cardOf(id).title : SETTING.get(path.replace(/\.order$/, "." + id)).label);
+  const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id));
+
+  // the control of one row, by what the row is
+  function control(row, rows) {
+    const label = t(row.label), hint = row.hint ? t(row.hint) : "";
+    switch (row.kind) {
+      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row) });
+      case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons }); }
+      case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id) });
+      case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
+      default: return null;                                                     // (the colours have their own studio)
+    }
+  }
+
+  // "Enable all" / "Disable all" for the switches of a card; turning them on also turns on what they hang on outside the card (the panel itself, for its parts)
+  function bulkOf(c, ...extra) {
+    // (the panel's own card switches its title bar and its parts; the panel itself is what they hang on, and is turned on with them but never off by them)
+    const bools = c.id === "panel" ? [...c.rows.filter((r) => r.kind === "bool" && r.path.startsWith("panel.header.")), ...B.prefs.SECTIONS.map((id) => SETTING.get(`panel.${id}.show`))]
+      : c.rows.filter((r) => r.kind === "bool");
+    if (bools.length < 2) return extra.length ? h("div", { class: "row bulk" }, ...extra) : null;
+    const outside = new Set();
+    for (const r of bools) for (let p = r.parent; p && !bools.some((x) => x.path === p); p = SETTING.get(p).parent) outside.add(p);
+    return bulk(c.id, bools.map((r) => r.path), t(c.title), { enables: [...outside] }, ...extra);
+  }
+
+  const colorsResetBtn = h("button", { class: "btn", type: "button", "data-act": "colors-reset", onClick: () => { for (const r of B.prefs.ROLES) prefs.colors[r] = ""; save(); } }, t("optColorsReset"));
+  const compactBtn = h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => applyPatch({ panel: B.prefs.PRESETS.minimal.panel }) }, t("optPanelCompact"));
+  const cardsOfPrefs = B.prefs.CARDS.map((c) => {
+    const kids = c.id === "colors" ? [themePresetsBar(), ...B.prefs.ROLES.map(roleStudioCard)] : [];
+    let group = null;
+    for (const row of c.rows) {
+      if (row.group !== group) { group = row.group; if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
+      const el = control(row, c.rows);
+      if (el) kids.push(el);
+    }
+    if (c.id === "colors") kids.push(h("div", { class: "row" }, colorsResetBtn));
+    if (c.id === "semantic") kids.push(keyRow());
+    const end = bulkOf(c, ...(c.id === "panel" ? [compactBtn] : []));
+    if (end) kids.push(end);
+    return card(c.id, t(c.title), c.hint ? t(c.hint) : null, ...kids);
+  });
   $("controls").append(
-    card(0, t("optLanguageTitle"), t("optLanguageHint"),
-      languageSelect({ path: "language", label: t("optLanguageUi"), none: ["auto", t("optLanguageAuto")], reload: true }),
-      languageSelect({ path: "scholarLanguage", label: t("optLanguageScholar"), hint: t("optLanguageScholarHint"), none: ["keep", t("optLanguageKeep")] })),
-    card(1, t("optRolesTitle"), t("optRolesHint"),
-      ...B.prefs.ROLES.map((role) => option({ path: "roles." + role, label: t(ROLE_NAME[role]), swatch: ROLE_COLOR[role] })),
-      option({ path: "markName", label: t("optMarkName"), hint: t("optMarkNameHint") }),
-      bulk("roles", [...paths("roles", B.prefs.ROLES), "markName"], t("optRolesTitle"))),
-    card(2, t("optColorsTitle"), t("optColorsHint"),
-      themePresetsBar(),
-      ...B.prefs.ROLES.map(roleStudioCard),
-      segmented({ path: "rowStyle", label: t("optRowStyle"), choices: [["full", t("optRowStyleFull")], ["bar", t("optRowStyleBar")], ["tint", t("optRowStyleTint")]],
-        icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram } }),
-      h("div", { class: "row" },
-        h("button", { class: "btn", type: "button", "data-act": "colors-reset", onClick: () => { for (const r of B.prefs.ROLES) prefs.colors[r] = ""; save(); } }, t("optColorsReset")))),
-    card(3, t("optRanksTitle"), null,
-      option({ path: "ranks.ccf", label: t("optCcf"), hint: t("optCcfHint") }),
-      option({ path: "ranks.core", label: t("optCore"), hint: t("optCoreHint") }),
-      bulk("ranks", paths("ranks", B.prefs.RANKS), t("optRanksTitle"))),
-    card(4, t("optMarksTitle"), t("marksHint"),
-      ...B.prefs.MARK_GROUPS.map((g) => option({ path: "marks." + g, label: t(MARK_NAME[g]), hint: g === "award" ? t("optMarkAwardHint") : "" })),
-      bulk("marks", paths("marks", B.prefs.MARK_GROUPS), t("optMarksTitle")),
-      segmented({ path: "talkRows", label: t("optTalkRows"), hint: t("optTalkRowsHint"), choices: [["separate", t("optTalkSeparate")], ["pair", t("optTalkPair")], ["talks", t("optTalkAll")]] })),
-    card(5, t("optCopyTitle"), t("optCopyHint"),
-      ...B.prefs.COPY_BUTTONS.map((k) => option({ path: "copy." + k, label: t(B.dom.COPY_LABEL[k]) })),
-      bulk("copy", paths("copy", B.prefs.COPY_BUTTONS), t("optCopyTitle"))),
-    card(6, t("optMergeTitle"), t("optMergeHint"),
-      option({ path: "mergeDuplicates", label: t("optMergeLabel"), hint: t("optMergeLabelHint") })),
-    card(7, t("optHideTitle"), t("optHideHint"),
-      option({ path: "hide.cited", label: t("optHideCited"), hint: t("optHideCitedHint") }),
-      option({ path: "hide.citedTable", sub: true, label: t("optHideCitedTable"), hint: t("optHideCitedTableHint"), off: () => prefs.hide.cited }),
-      option({ path: "hide.citedChart", sub: true, label: t("optHideCitedChart"), hint: t("optHideCitedChartHint"), off: () => prefs.hide.cited }),
-      option({ path: "hide.coauthors", label: t("optHideCo"), hint: t("optHideCoHint") }),
-      option({ path: "hide.access", label: t("optHideAccess"), hint: t("optHideAccessHint") })),
-    card(8, t("optPanelTitle"), null,
-      option({ path: "panel.show", label: t("optPanelShow"), hint: t("optPanelShowHint") }),
-      ...[["summary", t("optPanelSummary"), t("optPanelSummaryHint")], ["marks", t("optPanelMarks"), t("optPanelMarksHint")], ["filters", t("optPanelFilters"), t("optPanelFiltersHint")],
-        ["metrics", t("optPanelMetrics"), t("optPanelMetricsHint")], ["years", t("optPanelYears"), t("optPanelYearsHint")], ["venues", t("optPanelVenues"), t("optPanelVenuesHint")],
-        ["status", t("optPanelStatus"), t("optPanelStatusHint")], ["names", t("optPanelNames"), t("optPanelNamesHint")]]
-        .map(([part, label, hint]) => option({ path: "panel." + part, sub: true, label, hint, off: () => !prefs.panel.show })),
-      bulk("panel", paths("panel", B.prefs.PANEL_PARTS.filter((k) => k !== "show")), t("optPanelTitle"), { enables: ["panel.show"] },
-        h("button", { class: "btn", type: "button", "data-act": "panel-compact", onClick: () => applyPatch({ panel: { show: true, summary: false, marks: false, filters: true, metrics: true, years: false, venues: false, status: false, names: false } }) }, t("optPanelCompact")))),
-    card(9, t("optSemanticTitle"), t("optSemanticHint"),
-      option({ path: "semanticScholar", label: t("optSemanticLabel"), hint: t("optSemanticLabelHint") }),
-      keyRow()),
-    card(10, t("optLoadTitle"), null,
-      option({ path: "autoLoad", label: t("optAutoLoad"), hint: t("optAutoLoadHint") })),
-    card(11, t("optAgentTitle"), t("optAgentHint"),
+    ...cardsOfPrefs,
+    card("agent", t("optAgentTitle"), t("optAgentHint"),
       h("div", { class: "row" }, agentBtn)),
-    card(12, t("optConfigTitle"), t("optConfigHint"),
+    card("config", t("optConfigTitle"), t("optConfigHint"),
       presetRow,
       h("div", { class: "row" }, copyConfigBtn, exportConfigBtn, importFileBtn, fileInput),
       configDetails,
       configStatus),
-    card(13, t("optDataTitle"), null, h("div", { class: "row" }, viewBtn, clearBtn, resetBox, diagBtn, cacheNote)));
+    card("data", t("optDataTitle"), null, h("div", { class: "row" }, viewBtn, clearBtn, resetBox, diagBtn, cacheNote)));
   showCacheCount();
 
   // Sticky TOC Navigation
   const cards = [...$("controls").querySelectorAll(":scope > section.card")];
   const toc = h("nav", { class: "toc", "aria-label": t("optHeading") },
-    ...cards.map((c, i) => {
-      c.id = "card-" + i;
+    ...cards.map((c) => {
       const titleSpan = c.querySelector(".card-title-text");
       const titleText = titleSpan ? titleSpan.textContent : c.querySelector("h2").textContent;
       return h("a", {
-        href: "#card-" + i,
+        href: "#" + c.id,
         "data-card": c.id,
         "aria-label": titleText,
         onClick: (e) => {
@@ -772,12 +816,12 @@
     const authors = h("div", { class: "g" });
     s.authors.forEach((name, k) => {
       if (k) authors.append(", ");
-      authors.append(k === s.me && lit && prefs.markName ? h("span", { class: "rr-name rr-name-" + s.role }, name) : name);
+      authors.append(k === s.me && lit && prefs.rows.name ? h("span", { class: "rr-name rr-name-" + s.role }, name) : name);
     });
     const chips = [];
-    if (prefs.ranks.ccf) chips.push(B.chips.tierChip("ccf", s.ccf, EDITION.ccf));
-    if (prefs.ranks.core) chips.push(B.chips.tierChip("core", s.core, EDITION.core));
-    for (const m of B.prefs.visibleMarks(prefs, s.marks)) chips.push(B.chips.markChip(m));
+    if (prefs.rows.ccf) chips.push(B.chips.tierChip("ccf", s.ccf, EDITION.ccf));
+    if (prefs.rows.core) chips.push(B.chips.tierChip("core", s.core, EDITION.core));
+    for (const m of B.prefs.chipMarks(prefs, s.marks)) chips.push(B.chips.markChip(m));
     return h("tr", { class: lit ? "rr-r-" + s.role : "" },
       h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? [" ", h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c])))] : null)));
   }
@@ -793,7 +837,7 @@
   ];
   const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onSearchNext", "onImpact", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
-  panelCb.onSettings = () => { const c = document.getElementById("card-1"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
+  panelCb.onSettings = () => { const c = document.getElementById("card-highlight"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
   let panelUi = { collapsed: false, source: "ccf" };
   panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };
   panelCb.onSource = (src) => { panelUi.source = src; renderPreview(); };
@@ -801,13 +845,13 @@
 
   function panelModel() {
     const source = B.prefs.source(prefs, panelUi);
-    const visible = (p) => ({ marks: B.prefs.visibleMarks(prefs, p.marks) });
-    const counts = B.marks.summarize(PAPERS.map(visible), prefs.talkRows);
+    const visible = (p) => ({ marks: B.prefs.panelMarks(prefs, p.marks) });
+    const counts = B.marks.summarize(PAPERS.map(visible), prefs.panel.marks.grouping);
     return {
       ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
-      marks: counts, markKinds: prefs.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
-      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, prefs.ranks), venueKey: null,
+      marks: counts, markKinds: prefs.panel.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
+      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, B.prefs.lists(prefs)), venueKey: null,
       venuesHasMore: false, venuesExpanded: false,
       coverage: { loaded: PAPERS.length, canLoadMore: true, loadingAll: false, loadMessage: "", hidden: 0, absent: 0, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
@@ -834,7 +878,7 @@
   B.store.onPrefsChanged((next) => {
     prefs = next;
     B.dom.applyColors(prefs.colors);
-    B.dom.applyRowStyle(prefs.rowStyle);
+    B.dom.applyRowStyle(prefs.rows.style);
     renderPreview();
     syncers.forEach((fn) => fn());
   });

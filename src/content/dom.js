@@ -31,7 +31,7 @@
   // Reads the language setting and loads its strings. Call once, before anything is drawn.
   async function useLanguage() {
     let code = "auto";
-    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rowStyle); } catch (e) { /* no storage: the browser's language */ }
+    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rows && r.prefs.rows.style); } catch (e) { /* no storage: the browser's language */ }
     custom = null;
     if (code === "auto") code = B.i18n.fromBrowser(chrome.i18n.getUILanguage()) || "auto";       // (Norwegian Bokmål / Nynorsk browsers get "no", which Chrome would not pick)
     language = code === "auto" ? B.i18n.resolve(chrome.i18n.getUILanguage()) : code;                    // (a browser language we have no folder for is served in English, and its page is marked so)
@@ -49,7 +49,7 @@
   }
   // How highlighted rows look: a class on <html> (styled in styles.css); "full" is the plain default
   function applyRowStyle(style) {
-    for (const k of ["bar", "tint"]) document.documentElement.classList.toggle("rr-rows-" + k, style === k);
+    for (const k of ["bar", "tint", "none"]) document.documentElement.classList.toggle("rr-rows-" + k, style === k);
   }
   const dir = () => (B.i18n.isRtl(language) ? "rtl" : "ltr");
   const langTag = () => String(language).replace("_", "-");
