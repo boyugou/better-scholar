@@ -437,6 +437,21 @@ body {
 .name-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 @media (max-width: 560px) { .opt.opt-named { flex-wrap: wrap; } .opt.opt-named .name-edit { order: 3; width: 100%; } .name-input { width: 100%; max-width: none; flex: 1; } }
 
+/* The looks of the chips: a button for each, drawn in its own look; a colour of a family of chips */
+.chip-themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; padding: 12px 20px 8px; border-top: 1px solid var(--line); }
+.chip-theme {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 8px 10px; border: 1px solid var(--btn-line); border-radius: 10px; background: var(--card);
+  color: var(--text); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.chip-theme:hover { background: var(--hover); }
+.chip-theme.active { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
+.chip-theme:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chip-sample { display: inline-flex; align-items: center; }
+.chip-sample .rr-chips { white-space: nowrap; }
+.seg-btn .chip-sample { margin-inline-end: 6px; }
+.opt.opt-color { cursor: default; }
+input.chip-clr { width: 38px; height: 28px; padding: 2px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent; cursor: pointer; }
+
 .swatch {
   width: 11px;
   height: 11px;

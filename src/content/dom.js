@@ -35,7 +35,7 @@
   // Reads the language setting and loads its strings. Call once, before anything is drawn.
   async function useLanguage() {
     let code = "auto";
-    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rows && r.prefs.rows.style); } catch (e) { /* no storage: the browser's language */ }
+    try { const r = await chrome.storage.sync.get("prefs"); code = (r.prefs && r.prefs.language) || "auto"; applyColors(r.prefs && r.prefs.colors); applyRowStyle(r.prefs && r.prefs.rows && r.prefs.rows.style); applyChips(r.prefs && r.prefs.chips, r.prefs && r.prefs.colors); } catch (e) { /* no storage: the browser's language */ }
     custom = null;
     if (code === "auto") code = B.i18n.fromBrowser(chrome.i18n.getUILanguage()) || "auto";       // (Norwegian Bokmål / Nynorsk browsers get "no", which Chrome would not pick)
     language = code === "auto" ? B.i18n.resolve(chrome.i18n.getUILanguage()) : code;                    // (a browser language we have no folder for is served in English, and its page is marked so)
@@ -50,6 +50,15 @@
       const c = colors && colors[role];
       if (c) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);
     }
+  }
+  // How the chips look: classes on <html> for the style, the shape and the words (styles.css turns them into a few custom properties), and the colours the
+  // person picked as custom properties (lib/palette.js makes them; a family with no pick keeps the stylesheet's own)
+  function applyChips(chips, colors) {
+    const root = document.documentElement, c = chips || {};
+    for (const [group, values] of [["style", ["outline", "soft", "solid", "text"]], ["shape", ["pill", "square"]], ["label", ["full", "tier"]]]) for (const v of values) root.classList.toggle("rr-chips-" + v, c[group] === v);
+    if (!B.palette) return;
+    for (const name of B.palette.NAMES) root.style.removeProperty(name);
+    for (const family of B.palette.FAMILIES) if (colors && colors[family]) for (const [name, value] of Object.entries(B.palette.vars(family, colors[family]))) root.style.setProperty(name, value);
   }
   // How highlighted rows look: a class on <html> (styled in styles.css); "full" is the plain default
   function applyRowStyle(style) {
@@ -129,5 +138,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

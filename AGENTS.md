@@ -58,6 +58,13 @@ Rules:
 | `labels.mkRunnerUp` | text, at most 30 characters | `""` | The text of the chip of an honorable mention (default: "Honorable mention"): your own words, in every language; "" brings the built-in text back. |
 | `labels.mkTot` | text, at most 30 characters | `""` | The text of the chip of a test of time award (default: "Test of time"): your own words, in every language; "" brings the built-in text back. |
 | `labels.mkFinalist` | text, at most 30 characters | `""` | The text of the chip of a best paper finalist (default: "Best paper finalist"): your own words, in every language; "" brings the built-in text back. |
+| `chips.style` | "outline" / "soft" / "solid" / "text" | `"outline"` | How the chips are drawn: "outline" a border on white (rank chips) or a tint with a border (awards, talks), "soft" a tint without a border, "solid" a filled chip with readable text, "text" coloured words with no box. |
+| `chips.shape` | "pill" / "square" | `"pill"` | The corners of the chips: "pill" fully rounded, "square" almost square. |
+| `chips.label` | "full" / "tier" | `"full"` | The words of the rank chips: "full" the list and the tier (CCF A), "tier" the tier alone (A; the tooltip still names the list). |
+| `colors.ccf` | "#rrggbb" or "" | `""` | Colour of the CCF chips, "#rrggbb"; "" is the built-in indigo (the weaker tiers fade towards grey). |
+| `colors.core` | "#rrggbb" or "" | `""` | Colour of the CORE chips, "#rrggbb"; "" is the built-in indigo. |
+| `colors.award` | "#rrggbb" or "" | `""` | Colour of the award chips, "#rrggbb"; "" is the built-in gold. |
+| `colors.talk` | "#rrggbb" or "" | `""` | Colour of the talk chips (Oral, Spotlight, Highlight), "#rrggbb"; "" is the built-in slate. |
 | `panel.show` | true / false | `true` | The panel in the right-hand column: off hides all of it and every panel.* setting then has no effect. |
 | `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
 | `panel.header.name` | true / false | `true` | The panel's title at the top. |
@@ -184,6 +191,15 @@ Ready-made patches (the settings page has a button for each); a preset changes o
 - `last`: `{"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rows":{"style":"full"}}`
 - `first`: `{"roles":{"first":true,"cofirst":true,"second":false,"last":false},"rows":{"style":"full"}}`
 - `minimal`: `{"rows":{"style":"tint"},"hide":{"citedTable":true,"access":true},"panel":{"show":true,"table":{"show":false},"copy":{"show":false},"marks":{"show":false},"filters":{"show":true},"metrics":{"show":true},"years":{"show":false},"venues":{"show":false},"status":{"show":false},"names":{"show":false}}}`
+
+### Chip looks
+Ready-made looks for the chips (the settings page has a button for each); each names every chip setting, so it replaces the look that was there:
+- `outline`: `{"chips":{"style":"outline","shape":"pill","label":"full"},"colors":{"ccf":"","core":"","award":"","talk":""}}`
+- `soft`: `{"chips":{"style":"soft","shape":"pill","label":"full"},"colors":{"ccf":"","core":"","award":"","talk":""}}`
+- `solid`: `{"chips":{"style":"solid","shape":"pill","label":"full"},"colors":{"ccf":"","core":"","award":"","talk":""}}`
+- `text`: `{"chips":{"style":"text","shape":"pill","label":"tier"},"colors":{"ccf":"","core":"","award":"","talk":""}}`
+- `lists`: `{"chips":{"style":"soft","shape":"pill","label":"full"},"colors":{"ccf":"#2563eb","core":"#0d9488","award":"#d97706","talk":"#7c3aed"}}`
+- `mono`: `{"chips":{"style":"soft","shape":"square","label":"full"},"colors":{"ccf":"#475569","core":"#475569","award":"#475569","talk":"#475569"}}`
 
 ## Page events
 

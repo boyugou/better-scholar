@@ -166,7 +166,15 @@
       bool("rows.oral", true, "An \"Oral\" chip (a talk level the authors wrote in the venue) on a paper.", { label: "markOral" }),
       bool("rows.spotlight", true, "A \"Spotlight\" chip on a paper.", { label: "markSpotlight" }),
       bool("rows.highlight", true, "A \"Highlight\" chip on a paper.", { label: "markHighlight" }),
-      ...names("mkBest", "mkBestStudent", "mkOutstanding", "mkDistinguished", "mkRunnerUp", "mkTot", "mkFinalist")
+      ...names("mkBest", "mkBestStudent", "mkOutstanding", "mkDistinguished", "mkRunnerUp", "mkTot", "mkFinalist"),
+      choice("chips.style", ["outline", "soft", "solid", "text"], "outline", "How the chips are drawn: \"outline\" a border on white (rank chips) or a tint with a border (awards, talks), \"soft\" a tint without a border, \"solid\" a filled chip with readable text, \"text\" coloured words with no box.",
+        { label: "optChipStyle", group: "optChipLook" }),
+      choice("chips.shape", ["pill", "square"], "pill", "The corners of the chips: \"pill\" fully rounded, \"square\" almost square.", { label: "optChipShape", group: "optChipLook" }),
+      choice("chips.label", ["full", "tier"], "full", "The words of the rank chips: \"full\" the list and the tier (CCF A), \"tier\" the tier alone (A; the tooltip still names the list).", { label: "optChipLabel", group: "optChipLook" }),
+      color("colors.ccf", "Colour of the CCF chips, \"#rrggbb\"; \"\" is the built-in indigo (the weaker tiers fade towards grey).", { label: "srcCcf", group: "optChipColors" }),
+      color("colors.core", "Colour of the CORE chips, \"#rrggbb\"; \"\" is the built-in indigo.", { label: "srcCore", group: "optChipColors" }),
+      color("colors.award", "Colour of the award chips, \"#rrggbb\"; \"\" is the built-in gold.", { label: "markAward", group: "optChipColors" }),
+      color("colors.talk", "Colour of the talk chips (Oral, Spotlight, Highlight), \"#rrggbb\"; \"\" is the built-in slate.", { label: "markTalks", group: "optChipColors" })
     ]),
 
     // the panel, top to bottom
@@ -383,6 +391,18 @@
     }
   };
 
+  // Ready-made looks for the chips (the settings page has a button for each; a patch like any other, kept valid by a test). Each names every chip setting, so that it
+  // replaces the look that was there.
+  const NO_COLORS = { ccf: "", core: "", award: "", talk: "" };
+  const CHIP_THEMES = [
+    { id: "outline", name: "optChipOutline", patch: { chips: { style: "outline", shape: "pill", label: "full" }, colors: NO_COLORS } },
+    { id: "soft", name: "optChipSoft", patch: { chips: { style: "soft", shape: "pill", label: "full" }, colors: NO_COLORS } },
+    { id: "solid", name: "optChipSolid", patch: { chips: { style: "solid", shape: "pill", label: "full" }, colors: NO_COLORS } },
+    { id: "text", name: "optChipText", patch: { chips: { style: "text", shape: "pill", label: "tier" }, colors: NO_COLORS } },
+    { id: "lists", name: "optChipThemeLists", patch: { chips: { style: "soft", shape: "pill", label: "full" }, colors: { ccf: "#2563eb", core: "#0d9488", award: "#d97706", talk: "#7c3aed" } } },
+    { id: "mono", name: "optChipThemeMono", patch: { chips: { style: "soft", shape: "square", label: "full" }, colors: { ccf: "#475569", core: "#475569", award: "#475569", talk: "#475569" } } }
+  ];
+
   function normalizeUi(raw) {
     const r = raw && typeof raw === "object" ? raw : {};
     return { collapsed: r.collapsed === true, source: r.source === "core" ? "core" : "ccf" };
@@ -416,6 +436,6 @@
   // The copy buttons that are switched on, in the order the panel and the popup draw them.
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
-  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, defaults, normalize, normalizeUi, flatten, apply,
+  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply,
     listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });

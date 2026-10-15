@@ -95,6 +95,7 @@
     const now = prefs.normalize(current);
     const settings = prefs.SETTINGS.map((s) => `| ${code(s.path)} | ${valueOf(s)} | ${code(json(s.def))} | ${cell(s.doc)} |`);
     const presets = Object.entries(prefs.PRESETS).map(([name, patch]) => `- ${code(name)}: ${code(json(patch))}`);
+    const looks = prefs.CHIP_THEMES.map((th) => `- ${code(th.id)}: ${code(json(th.patch))}`);
     const calls = Object.entries(METHODS).map(([name, m]) => {
       const params = Object.entries(m.params).map(([k, p]) => `  - ${code(k)}${p.required ? " (required)" : ""}: ${p.doc}${p.type === "choice" ? "" : ""}`);
       return [`### ${code(name)}`, m.doc, params.length ? "Parameters:" : "Parameters: none.", ...params, `Result: ${m.result}`].join("\n");
@@ -140,6 +141,10 @@
       "### Presets",
       "Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:",
       ...presets,
+      "",
+      "### Chip looks",
+      "Ready-made looks for the chips (the settings page has a button for each); each names every chip setting, so it replaces the look that was there:",
+      ...looks,
       "",
       ...(current === undefined ? [] : ["### Current settings of this user", "```json", JSON.stringify(now, null, 2), "```", ""]),
       "## Page events",

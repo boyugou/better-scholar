@@ -518,7 +518,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // Scholar's own blocks the settings ask to hide (a class on <html>, styled in styles.css)
   const prefsHide = (p) => { for (const k of B.prefs.HIDE_PARTS) document.documentElement.classList.toggle("rr-hide-" + k, !!p.hide[k]); };
   prefsHide(prefs);
-  B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rows.style);
+  B.dom.applyColors(prefs.colors); B.dom.applyRowStyle(prefs.rows.style); B.dom.applyChips(prefs.chips, prefs.colors);
   const scheduleRefresh = frame(refresh);
 
   // A filter whose control the settings took away must not keep hiding rows (nothing could undo it): when the settings change, the filters left without a
@@ -540,7 +540,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   B.store.onPrefsChanged((next) => {
     if (next.language !== prefs.language || next.scholarLanguage !== prefs.scholarLanguage) { location.reload(); return; }      // the panel's words (or Scholar's) are changed at once by a fresh load
     prefsHide(next);
-    B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rows.style);
+    B.dom.applyColors(next.colors); B.dom.applyRowStyle(next.rows.style); B.dom.applyChips(next.chips, next.colors);
     B.dom.setLabels(next.labels);
     const before = currentSource();
     const wasAuto = prefs.autoLoad;

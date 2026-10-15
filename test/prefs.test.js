@@ -15,7 +15,8 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   const d = prefs.defaults();
   assert.deepEqual(Object.keys(d), [...new Set(prefs.SETTINGS.map((s) => s.path.split(".")[0]))], "the record's keys follow the table");
   assert.deepEqual(d.roles, { first: true, cofirst: true, second: true, last: true });
-  assert.deepEqual(d.colors, { first: "", cofirst: "", second: "", last: "" });
+  assert.deepEqual(d.colors, { first: "", cofirst: "", second: "", last: "", ccf: "", core: "", award: "", talk: "" });
+  assert.deepEqual(d.chips, { style: "outline", shape: "pill", label: "full" });
   assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, award: true, oral: true, spotlight: true, highlight: true });
   assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
   assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
@@ -94,7 +95,7 @@ test("normalize: keeps real choices, drops unknown keys, repairs wrong values, n
   assert.equal(prefs.normalize({ panel: { marks: { grouping: "pair" } } }).panel.marks.grouping, "pair");
   assert.equal(prefs.normalize({ panel: { marks: { grouping: 3 } } }).panel.marks.grouping, "separate");
   assert.equal(prefs.normalize({ colors: { first: "#ABCDEF", last: "red", second: "#12345", cofirst: 7 } }).colors.first, "#abcdef", "a colour is lower-cased");
-  assert.deepEqual(prefs.normalize({ colors: { first: "#ABCDEF", last: "red", second: "#12345", cofirst: 7 } }).colors, { first: "#abcdef", cofirst: "", second: "", last: "" });
+  assert.deepEqual(prefs.normalize({ colors: { first: "#ABCDEF", last: "red", second: "#12345", cofirst: 7 } }).colors, { first: "#abcdef", cofirst: "", second: "", last: "", ccf: "", core: "", award: "", talk: "" });
   for (const junk of [undefined, null, 0, "x", [], [1, 2], true, () => 1]) assert.deepEqual(prefs.normalize(junk), prefs.defaults());
   assert.deepEqual(prefs.normalize(prefs.normalize(n)), n, "idempotent");
 });

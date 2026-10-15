@@ -233,6 +233,7 @@
         "lib/awards.js",
         "lib/duplicates.js",
         "lib/prefs.js",
+        "lib/palette.js",
         "lib/query.js",
         "lib/formats.js",
         "lib/analysis.js",

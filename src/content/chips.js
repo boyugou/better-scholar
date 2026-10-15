@@ -18,7 +18,7 @@
       t(RULE_TEXT[info.rule] || "ruleName"),
       edition + " — " + t("tipToday")
     ];
-    return h("span", { class: "rr-chip rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
+    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
       h("span", { class: "rr-k" }, source), " ", h("b", {}, tier));
   }
 

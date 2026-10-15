@@ -190,6 +190,7 @@
     B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
+    B.dom.applyChips(prefs.chips, prefs.colors);
     renderPreview();
     syncers.forEach((fn) => fn());
     dirty = true;
@@ -691,8 +692,59 @@
   const CHOICES = {
     "rows.style": { labels: { full: "optRowStyleFull", bar: "optRowStyleBar", tint: "optRowStyleTint", none: "optRowStyleNone" },
       icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram, none: ICONS.noneDiagram } },
-    "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} }
+    "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} },
+    // (a mini chip in each button shows the look it makes)
+    "chips.style": { labels: { outline: "optChipOutline", soft: "optChipSoft", solid: "optChipSolid", text: "optChipText" },
+      icons: Object.fromEntries(["outline", "soft", "solid", "text"].map((k) => [k, () => chipSample(`rr-chips-${k} rr-chips-pill rr-chips-full`, { tier: "A", ccf: true })])) },
+    "chips.shape": { labels: { pill: "optChipPill", square: "optChipSquare" }, icons: { pill: () => chipSample("rr-chips-outline rr-chips-pill rr-chips-full", { tier: "A", ccf: true }), square: () => chipSample("rr-chips-outline rr-chips-square rr-chips-full", { tier: "A", ccf: true }) } },
+    "chips.label": { labels: { full: "optChipLabelFull", tier: "optChipLabelTier" }, icons: {} }
   };
+
+  // A few chips drawn in a look of their own: the wrapper carries the look's classes and colours, which the chips' styles read (the settings page shows the looks on buttons)
+  // `colors`: the picked colours of the look ({ ccf, core, award, talk }), none for the built-in ones
+  function chipSample(classes, { tier = "A", ccf = false, colors = {}, more = false } = {}) {
+    const bare = (el) => { el.removeAttribute("title"); return el; };
+    const chips = [bare(B.chips.tierChip("ccf", { tier, name: "", abbr: "", rule: "name" }, ""))];
+    if (!ccf) chips.push(bare(B.chips.tierChip("core", { rank: "A*", name: "", abbr: "", rule: "name" }, "")));
+    if (more) chips.push(bare(B.chips.markChip({ kind: "best", group: "award", source: "author", text: "" })), bare(B.chips.markChip({ kind: "oral", group: "oral", source: "author", text: "" })));
+    const el = h("span", { class: "chip-sample " + classes }, h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c]))));
+    // (a family with no colour of its own has the built-in one, whatever the page's chips are coloured: `initial` makes the stylesheet's fallback count)
+    for (const family of B.palette.FAMILIES) {
+      const own = colors[family] ? B.palette.vars(family, colors[family]) : {};
+      for (const name of B.palette.BY_FAMILY[family]) el.style.setProperty(name, own[name] || "initial");
+    }
+    return el;
+  }
+
+  // The ready-made looks of the chips (lib/prefs.js CHIP_THEMES): a button for each, drawn in its own look
+  function chipThemesBar() {
+    const buttons = B.prefs.CHIP_THEMES.map((theme) => {
+      const look = theme.patch.chips;
+      const classes = `rr-chips-${look.style} rr-chips-${look.shape} rr-chips-${look.label}`;
+      const btn = h("button", { type: "button", class: "chip-theme", "data-chip-theme": theme.id, "aria-label": `${t("optChipThemes")}: ${t(theme.name)}`, onClick: () => applyPatch(theme.patch) },
+        chipSample(classes, { more: true, colors: theme.patch.colors }), h("span", { class: "chip-theme-name" }, t(theme.name)));
+      return { theme, btn };
+    });
+    const sync = () => buttons.forEach(({ theme, btn }) => btn.classList.toggle("active", B.prefs.apply(prefs, theme.patch).applied.length === 0));
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "chip-themes", role: "group", "aria-label": t("optChipThemes") }, ...buttons.map((b) => b.btn));
+  }
+
+  // The colour of a family of chips: a picker and a button that puts the built-in colour back (the built-in is what the picker shows until a colour is picked)
+  function chipColor(row) {
+    const family = row.path.split(".")[1], def = B.palette.DEFAULTS[family];
+    const d = described(t(row.label), "");
+    const input = h("input", { type: "color", class: "clr chip-clr", "data-pref": row.path, "aria-label": `${t(row.label)}: ${t("optChipColors")}`,
+      onInput: () => { put(row.path, input.value); B.dom.applyChips(prefs.chips, prefs.colors); renderPreview(); },
+      onChange: () => { put(row.path, input.value); save(); } });
+    const reset = h("button", { type: "button", class: "name-reset", "data-act": "chip-color-reset", title: t("optColorsReset"), "aria-label": `${t(row.label)}: ${t("optColorsReset")}`,
+      onClick: () => { put(row.path, ""); save(); } }, "↺");
+    const sync = () => { input.value = at(row.path) || def; reset.hidden = !at(row.path); };
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "opt opt-color" }, h("span", { class: "txt" }, d.name), h("span", { class: "name-edit" }, input, reset));
+  }
   const NONE_WORD = { language: "optLanguageAuto", scholarLanguage: "optLanguageKeep" };
   const cardOf = (id) => B.prefs.CARDS.find((c) => c.id === id);
   // the name of an item of an order list: a part is named by its card, a button by its own switch; it is dimmed while its switch is off
@@ -708,7 +760,8 @@
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
-      default: return null;                                                     // (the colours have their own studio)
+      case "color": return B.prefs.ROLES.includes(row.path.split(".")[1]) ? null : chipColor(row);        // (the role colours have their own studio)
+      default: return null;
     }
   }
 
@@ -729,7 +782,7 @@
     const kids = c.id === "colors" ? [themePresetsBar(), ...B.prefs.ROLES.map(roleStudioCard)] : [];
     let group = null;
     c.rows.forEach((row, i) => {
-      if (row.group !== group) { group = row.group; if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
+      if (row.group !== group) { group = row.group; if (group === "optChipLook") kids.push(chipThemesBar()); if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
       const next = c.rows[i + 1];
       const el = control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
       if (el) kids.push(el);
@@ -939,6 +992,7 @@
     B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
+    B.dom.applyChips(prefs.chips, prefs.colors);
     renderPreview();
     syncers.forEach((fn) => fn());
   });

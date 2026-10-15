@@ -1038,5 +1038,53 @@
   },
   "optNameReset": {
     "message": "Back to the standard name"
+  },
+  "optChipLook": {
+    "message": "Look"
+  },
+  "optChipColors": {
+    "message": "Colours"
+  },
+  "optChipStyle": {
+    "message": "Chip style"
+  },
+  "optChipOutline": {
+    "message": "Outline"
+  },
+  "optChipSoft": {
+    "message": "Soft"
+  },
+  "optChipSolid": {
+    "message": "Solid"
+  },
+  "optChipText": {
+    "message": "Text only"
+  },
+  "optChipShape": {
+    "message": "Chip shape"
+  },
+  "optChipPill": {
+    "message": "Rounded"
+  },
+  "optChipSquare": {
+    "message": "Square"
+  },
+  "optChipLabel": {
+    "message": "Rank chip text"
+  },
+  "optChipLabelFull": {
+    "message": "List and tier (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Tier only (A)"
+  },
+  "optChipThemes": {
+    "message": "Chip looks"
+  },
+  "optChipThemeLists": {
+    "message": "Colour per list"
+  },
+  "optChipThemeMono": {
+    "message": "Monochrome"
   }
 }

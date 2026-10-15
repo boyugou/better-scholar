@@ -1151,6 +1151,55 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(Object.values((await stored(opts, "sync", "prefs")).labels).filter(Boolean), [], "every name is back to the standard");
     ok("names: your own words for a title, a column or a button, on the page, in the preview and in the popup, in every language, while the exports keep the standard words");
 
+    // -- S3e. the look of the chips: a style, a shape, the words of the rank chips, a colour for each family, and ready-made looks
+    // (a colour mixed by the stylesheet is reported as color(srgb …): painted on a canvas it is read back as plain rgb)
+    const chipStyleOn = (pg, sel) => pg.locator(sel).first().evaluate((el) => {
+      const px = (c) => { const x = document.createElement("canvas").getContext("2d"); x.clearRect(0, 0, 1, 1); x.fillStyle = c; x.fillRect(0, 0, 1, 1); const d = x.getImageData(0, 0, 1, 1).data; return d[3] === 0 ? "transparent" : d[3] === 255 ? `rgb(${d[0]}, ${d[1]}, ${d[2]})` : `rgba(${d[0]}, ${d[1]}, ${d[2]}, ${d[3]})`; };
+      const c = getComputedStyle(el), k = el.querySelector(".rr-k");
+      return { color: px(c.color), bg: px(c.backgroundColor), border: px(c.borderTopColor), radius: c.borderTopLeftRadius, k: k ? getComputedStyle(k).display : "" };
+    });
+    const chipStyle = (sel) => chipStyleOn(page, sel);
+    const previewChip = async (sel) => { await opts.bringToFront(); return chipStyleOn(opts, "#preview " + sel); };       // (the settings page's preview has award and talk chips, whatever the profile has)
+    const rank = '.rr-chip[data-kind="ccf"][data-tier="A"]';
+    const plain = await chipStyle(rank);
+    assert.deepEqual([plain.color, plain.bg, plain.radius], ["rgb(51, 69, 168)", "rgb(255, 255, 255)", "9px"], "the built-in look: indigo on white, rounded");
+    await patchPrefs({ chips: { style: "soft" } });
+    await eventually(page, () => document.documentElement.classList.contains("rr-chips-soft"));
+    const soft = await chipStyle(rank);
+    assert.ok(soft.bg !== "rgb(255, 255, 255)" && soft.border === "transparent" && soft.color === plain.color, "soft: a tint, no outline: " + JSON.stringify(soft));
+    await patchPrefs({ chips: { style: "solid" } });
+    await eventually(page, () => document.documentElement.classList.contains("rr-chips-solid"));
+    const solid = await chipStyle(rank);
+    assert.deepEqual([solid.bg, solid.color], ["rgb(51, 69, 168)", "rgb(255, 255, 255)"], "solid: the colour as a background, white text");
+    await pollPage(opts, () => document.documentElement.classList.contains("rr-chips-solid"));
+    assert.equal((await previewChip(".rr-chip-mark-award")).color, "rgb(16, 18, 22)", "…and readable text on the gold of an award");
+    await patchPrefs({ chips: { style: "text" } });
+    await eventually(page, () => document.documentElement.classList.contains("rr-chips-text"));
+    const textOnly = await chipStyle(rank);
+    assert.deepEqual([textOnly.bg, textOnly.border, textOnly.color], ["transparent", "transparent", "rgb(51, 69, 168)"], "text only: no box");
+    await patchPrefs({ chips: { style: "outline", shape: "square", label: "tier" } });
+    await eventually(page, () => document.documentElement.classList.contains("rr-chips-square") && document.documentElement.classList.contains("rr-chips-tier"));
+    const shaped = await chipStyle(rank);
+    assert.deepEqual([shaped.radius, shaped.k], ["3px", "none"], "square, and the tier alone (the list's name is hidden)");
+    assert.match(await page.locator(rank).first().getAttribute("title"), /CCF A/, "the tooltip still names the list");
+    await patchPrefs({ chips: { shape: "pill", label: "full" }, colors: { ccf: "#0d9488", award: "#7c3aed" } });
+    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "13,148,136"; });
+    assert.equal((await chipStyle('.rr-chip[data-kind="core"][data-tier="A"], .rr-chip[data-kind="core"][data-tier="A*"]')).color, "rgb(51, 69, 168)", "a colour is for one family: CORE keeps its own");
+    await pollPage(opts, () => getComputedStyle(document.documentElement).getPropertyValue("--rr-award-fill").trim() === "#7c3aed");
+    assert.notEqual((await previewChip(".rr-chip-mark-award")).color, "rgb(107, 74, 0)", "the award chips are in the picked colour");
+    // a ready-made look replaces all of it; the button of the look in force is marked
+    await opts.bringToFront();
+    await settle(opts);
+    await opts.click('[data-chip-theme="lists"]');
+    await settle(opts);
+    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return document.documentElement.classList.contains("rr-chips-soft") && Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "37,99,235"; });
+    assert.equal(await opts.locator('[data-chip-theme="lists"]').evaluate((el) => el.classList.contains("active")), true);
+    await opts.click('[data-chip-theme="outline"]');
+    await settle(opts);
+    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return !document.documentElement.classList.contains("rr-chips-soft") && Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "51,69,168"; });
+    assert.deepEqual([(await stored(opts, "sync", "prefs")).chips, Object.values((await stored(opts, "sync", "prefs")).colors).slice(4)], [{ style: "outline", shape: "pill", label: "full" }, ["", "", "", ""]], "the built-in look: nothing of the others is left");
+    ok("the look of the chips: outline, soft, solid and text only; rounded or square; the list's name or the tier alone; a colour for each family; ready-made looks that replace the look in force");
+
     // -- S4. the toolbar popup follows the settings
     await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-chip[data-kind="ccf"]'));
