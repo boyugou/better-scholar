@@ -418,24 +418,24 @@
     }
 
     // The active filters in the words the panel already uses (the cell, the awards row, the venue, the years, and "Only highlighted" when asked for);
-    // used by the filter bar and by the line that says what the numbers under the filters count
-    function filterParts(m, withOnly) {
+    // used by the filter bar, by the line that says what the numbers under the filters count, and (in the standard words: `tr`) by the copied summary
+    function filterParts(m, withOnly, tr = t) {
       const parts = [];
       if (m.selection) {
-        const srcName = m.source === "core" ? t("srcCore") : t("srcCcf");
-        parts.push([m.selection.role ? t(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? t("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
+        const srcName = m.source === "core" ? tr("srcCore") : tr("srcCcf");
+        parts.push([m.selection.role ? tr(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? tr("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
       }
-      if (m.markGroup) parts.push(t(MARK_KEY[m.markGroup]));
+      if (m.markGroup) parts.push(tr(MARK_KEY[m.markGroup]));
       if (m.venueKey) parts.push(m.venueKey);
-      if (withOnly && m.filters.onlyHighlighted) parts.push(t("onlyHighlighted"));
+      if (withOnly && m.filters.onlyHighlighted) parts.push(tr("onlyHighlighted"));
       if (m.filters.yearStart != null || m.filters.yearEnd != null) {
         if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
       }
       if (m.filters.query) parts.push(`"${m.filters.query}"`);
-      if (m.filters.minCitations != null) parts.push(t("filterMinCites", [String(m.filters.minCitations)]));
+      if (m.filters.minCitations != null) parts.push(tr("filterMinCites", [String(m.filters.minCitations)]));
       // (the impact filter is chosen against the numbers, which it does not narrow: it is named in the filter bar only)
-      if (withOnly && m.filterBar && m.filterBar.impact) parts.push(t(m.filterBar.impact.kind === "h" ? "mH" : "mI10"), t("filterMinCites", [String(m.filterBar.impact.min)]));
+      if (withOnly && m.filterBar && m.filterBar.impact) parts.push(tr(m.filterBar.impact.kind === "h" ? "mH" : "mI10"), tr("filterMinCites", [String(m.filterBar.impact.min)]));
       return parts;
     }
 
@@ -479,7 +479,7 @@
             onClick: () => cb.onSelect({ role: r.role, tier: c }) }, r[c] ? String(r[c]) : "·"))),
         showTotal ? h("td", { class: "rr-total", ...P("panel.table.total") }, String(r.total)) : null));
       let hiddenRow = null;
-      if (s.hidden && tp.hidden) {
+      if ((s.hidden || m.hasHidden) && tp.hidden) {                                          // (a count of fewer papers keeps the row: the table does not change its shape under a filter)
         hiddenRow = (h("tr", { "data-role": "hidden", class: "rr-hiddenrow", title: t("tipHidden"), ...P("panel.table.hidden") },
           h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }), ...L("roleHidden"),
             onClick: () => cb.onSelect({ role: "hidden", tier: undefined }) }, dot("hidden"), t("roleHidden"))),
@@ -791,7 +791,7 @@
       queryInput.select();
     }
 
-    return { el, update, flash, focusSearch };
+    return { el, update, flash, focusSearch, filterParts };
   }
 
   B.panel = { create };

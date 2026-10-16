@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Kaydedilmedi: verdiğiniz adların toplamı, Chrome'un ayarlar için ayırdığı alanı aşıyor (toplam 8 KB). Bazılarını kısaltın."
+  },
+  "optFiltersFollow": {
+    "message": "Sayılar filtreleri takip eder"
+  },
+  "optFiltersFollowHint": {
+    "message": "Tablo, ödül ve sunum sayıları ile kopyalanacak özetteki sayı yalnızca filtrelerin bıraktığı makaleleri sayar (yıl aralığı, arama, hızlı filtre, yayın yeri); seçili hücre veya satır hiçbir sayıyı daraltmaz. Kapalı: her zaman tüm profil sayılır."
   }
 }

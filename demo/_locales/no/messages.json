@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Ikke lagret: navnene du har valgt, er til sammen større enn plassen Chrome reserverer til innstillingene (8 KB totalt). Forkort noen av dem."
+  },
+  "optFiltersFollow": {
+    "message": "Tallene følger filtrene"
+  },
+  "optFiltersFollowHint": {
+    "message": "Tabellen, tellingene for priser og foredrag og oversikten som kopieres, teller bare artiklene som filtrene etterlater (et årsintervall, et søk, et hurtigfilter, et publiseringssted); den valgte cellen eller raden innsnevrer ingen telling. Av: de teller alltid hele profilen."
   }
 }

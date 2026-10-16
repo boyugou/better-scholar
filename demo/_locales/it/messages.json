@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Non salvato: i nomi che hai scelto superano insieme lo spazio che Chrome riserva alle impostazioni (8 KB in tutto). Accorciane alcuni."
+  },
+  "optFiltersFollow": {
+    "message": "I conteggi seguono i filtri"
+  },
+  "optFiltersFollowHint": {
+    "message": "La tabella, i conteggi di premi e presentazioni e il conteggio del riepilogo da copiare contano solo gli articoli che restano dopo i filtri (un intervallo di anni, una ricerca, un filtro rapido, una conferenza o una rivista); la cella o la riga selezionata non riduce alcun conteggio. Disattivata: contano sempre l’intero profilo."
   }
 }

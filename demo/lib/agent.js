@@ -21,7 +21,7 @@
       result: "{ version, owner, loaded, complete } — the extension's version, the profile's name, how many papers are loaded, and whether that is the whole list."
     },
     summary: {
-      doc: "The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics.",
+      doc: "The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics. The tables and the counts here are over every loaded paper (the panel's own table follows the filters; `export` with `filtered: true` gives that); `metrics.highlighted` follows the filters.",
       params: {},
       result: "{ owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }."
     },
@@ -35,7 +35,8 @@
       params: {
         format: { type: "choice", values: FORMATS, required: true, doc: "summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180)." },
         source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). The other formats ignore it." },
-        html: { type: "boolean", doc: "true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." }
+        html: { type: "boolean", doc: "true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." },
+        filtered: { type: "boolean", doc: "true: summary and table count only the papers the filters leave, as the panel's own buttons do (when `panel.filters.follow` is on; the text then says what it counted); false (the default): every paper. The other formats always use the papers the page shows." }
       },
       result: "{ format, text, html? } — `html` only when asked for, and only for table, papers and apa."
     },
@@ -126,6 +127,7 @@
       "- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel on the profile page; the settings of the table, of the awards and talks counts and of the copy buttons (`panel.table.*`, `panel.marks.*`, `panel.copy.*`) still decide what the toolbar popup shows, and every other `panel.*` setting has no effect then. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).",
       "- The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.",
       "- What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.",
+      "- The counts follow the filters (`panel.filters.follow`, on by default): with a filter on, the panel's table, its awards and talks counts and its copy summary and copy table count the papers the narrowing filters leave (the years, the search, a venue, *Only highlighted*, the papers behind the h-index); the cell picked in the table and the awards row picked in the counts list papers but narrow no count. The toolbar popup and the `summary` call count every paper.",
       "- Colours are `\"#rrggbb\"` only; `\"\"` restores the built-in colour of a role.",
       "- A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `\"\"` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words. A name is one line; control characters, invisible and zero-width characters, direction overrides, embeddings and isolates and the Unicode tag characters are removed from it (the left-to-right and right-to-left marks stay). The whole record has to fit Chrome's 8 KB for one synced item (a `<` counts six bytes): a configuration that would not is refused, with the reason.",
       "- A language is a code from the list below. Changing `language` reloads the settings page.",

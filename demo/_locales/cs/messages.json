@@ -1141,5 +1141,11 @@
   },
   "optSaveTooBig": {
     "message": "Neuloženo: vlastní názvy dohromady přesahují úložiště, které Chrome pro nastavení vyhrazuje (8 KB celkem). Zkraťte některé z nich."
+  },
+  "optFiltersFollow": {
+    "message": "Počty se řídí filtry"
+  },
+  "optFiltersFollowHint": {
+    "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají (rozsah let, vyhledávání, rychlý filtr, publikační místo); vybraná buňka nebo řádek nesníží žádný počet. Vyp.: počítají vždy celý profil."
   }
 }

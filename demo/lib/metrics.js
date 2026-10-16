@@ -112,7 +112,8 @@
   //   rows:    one entry per role bucket that has papers (cofirst/middle only when non-empty)
   //   hidden:  papers whose author list is truncated without the owner in view
   //   absent:  papers whose complete author list never names the owner
-  function summarize(papers, source = "ccf") {
+  // `keep`: roles that have a row even with no paper (a count of fewer papers keeps the rows of the whole list, so that the table does not change its shape)
+  function summarize(papers, source = "ccf", { keep = [] } = {}) {
     const columns = source === null ? [] : [...(TIERS[source] || TIERS.ccf), NONE];
     const blank = () => Object.assign(Object.fromEntries(columns.map((c) => [c, 0])), { total: 0 });
     const byRole = Object.fromEntries(ROLES.map((r) => [r, blank()]));
@@ -129,7 +130,7 @@
       byRole[p.role].total++; totals.total++;
     }
     const rows = ROLES
-      .filter((r) => byRole[r].total > 0 || r === "first" || r === "second" || r === "last")
+      .filter((r) => byRole[r].total > 0 || r === "first" || r === "second" || r === "last" || keep.includes(r))
       .map((r) => ({ role: r, ...byRole[r] }));
     return { source, columns, rows, totals, hidden, absent, papers: papers.length };
   }

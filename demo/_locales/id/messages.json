@@ -1141,5 +1141,11 @@
   },
   "optSaveTooBig": {
     "message": "Tidak tersimpan: jika dijumlahkan, nama-nama buatan sendiri melebihi ruang penyimpanan yang disediakan Chrome untuk pengaturan (8 KB seluruhnya). Persingkat beberapa nama."
+  },
+  "optFiltersFollow": {
+    "message": "Jumlah mengikuti filter"
+  },
+  "optFiltersFollowHint": {
+    "message": "Tabel, hitungan penghargaan dan presentasi, serta hitungan ringkasan yang disalin hanya menghitung makalah yang tersisa setelah difilter (rentang tahun, pencarian, filter cepat, venue); sel atau baris yang dipilih tidak mempersempit hitungan mana pun. Nonaktif: selalu menghitung seluruh profil."
   }
 }
