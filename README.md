@@ -183,7 +183,7 @@ A comma lists values of `ccf:`, `core:`, `role:`, `type:` or `has:`: `role:first
 | The table of the last five years | press *Last 5 years* (switch it on under *Settings → Filters*) or type `age:<5` | the role × rank table, the awards and talks counts and *Copy summary* count only those papers, and the copied text says so |
 | First- or last-author papers at CCF A or B venues | `role:first,last ccf:a,b` | the papers; the table counts them, and a cell such as *Last × A* lists its papers |
 | Award papers of the last ten years | `has:award age:<10` | those papers, and their count in the table |
-| Journal papers with 100 or more citations | `type:journal cites:>100` | the list, and the citation totals of the highlighted ones |
+| Papers at ranked journals with 100 or more citations | `type:journal cites:>100` (a venue on neither list has no kind) | the list, and the citation totals of the highlighted ones |
 | The papers a co-author is on | press *Read full lists* once, then type the surname | every paper with that name anywhere in its author list (before, only the line the page printed) |
 | The papers that may not be the person's | press the status line "N papers where the profile name is not in the author list" | those papers, to check or to report |
 | A summary to file or send | *Copy summary* or *Copy as table* | the table as text (or as a real table in Word), the lists' edition, what was counted, and a line with the profile's link and the day |
