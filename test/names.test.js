@@ -253,3 +253,24 @@ test("real profiles — Tang Jie: all 100 rows say 'J Tang' under a surname-firs
     assert.deepEqual(names.suggestVariants(f.rows.map((r) => r[0]), owner(f.owner)), { auto: [], suggestions: [] }, slug);
   }
 });
+
+test("the position of the owner in a list is the role: first, last (when the list is whole), second, else middle; a cut list that does not show the owner hides it (seeded random lists, initials and full names)", () => {
+  let seed = 2024;
+  const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+  const pick = (a) => a[Math.floor(rnd() * a.length)];
+  const GIVEN = ["Anna", "Boris", "Chen", "Dmitri", "Elena", "Farid", "Grace", "Hiro", "Ines", "Jorge", "Kofi", "Lena", "Mateo", "Nadia", "Omar", "Priya", "Quentin", "Rosa", "Sven", "Tara"];
+  const SUR = ["Abrams", "Becker", "Cho", "Dvorak", "Egorov", "Fontaine", "Garcia", "Haddad", "Ivanov", "Jensen", "Kowalski", "Larsen", "Moreau", "Nakamura", "Okafor", "Petrov", "Quinn", "Rossi", "Silva", "Tanaka", "Ueda", "Vargas", "Weber", "Xu", "Yilmaz", "Zhang"];
+  for (let i = 0; i < 1500; i++) {
+    const n = 1 + Math.floor(rnd() * 8), used = new Set(), people = [];
+    while (people.length < n) { const p = { given: pick(GIVEN), sur: pick(SUR) }; if (!used.has(p.sur)) { used.add(p.sur); people.push(p); } }
+    const owner = people[Math.floor(rnd() * n)], style = pick(["initial", "full", "initial2"]);
+    const fmt = (p) => (style === "full" || (p === owner && style === "initial2") ? `${p.given} ${p.sur}` : `${p.given[0]} ${p.sur}`);
+    const truncated = rnd() < 0.3;
+    const shown = truncated ? people.slice(0, Math.max(1, n - Math.floor(rnd() * 2))) : people;
+    const text = shown.map(fmt).join(", ") + (truncated ? ", …" : "");
+    const res = names.classifyRow(text, { name: `${owner.given} ${owner.sur}`, alternates: [] });
+    const at = shown.indexOf(owner);
+    const want = at < 0 ? (truncated ? "hidden" : "absent") : at === 0 ? "first" : at === shown.length - 1 && !truncated ? "last" : at === 1 ? "second" : "middle";
+    assert.equal(res.status === "found" ? res.role : res.status, want, text + " / " + owner.given + " " + owner.sur);
+  }
+});

@@ -168,3 +168,29 @@ test("summarize says what the not-ranked column holds: preprints, secondary trac
   assert.equal(m.summarize(rows, null).unranked, null, "by role only there is no such column");
   assert.deepEqual(m.summarize([], "ccf").unranked, { preprint: 0, secondary: 0, other: 0 });
 });
+
+test("the table is what its selections say: every cell counts exactly the papers its pick lists, the rows add up to the totals, and every paper is in the table, hidden or absent (seeded random lists)", () => {
+  let seed = 31337;
+  const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+  const pick = (a) => a[Math.floor(rnd() * a.length)];
+  const mk = () => {
+    const status = pick(["found", "found", "found", "hidden", "absent"]);
+    return { status, role: status === "found" ? pick(["first", "cofirst", "second", "last", "middle"]) : null, venueText: pick(["arXiv preprint", "NeurIPS", "Some Journal 3 (2)", ""]),
+      venue: { ccf: pick([null, { tier: "A" }, { tier: "B" }, { tier: "C" }]), core: pick([null, { rank: "A*" }, { rank: "A" }, { rank: "B" }, { rank: "C" }]), secondary: rnd() < 0.1 ? "workshop" : null }, citations: 0 };
+  };
+  for (let i = 0; i < 300; i++) {
+    const list = Array.from({ length: Math.floor(rnd() * 40) }, mk);
+    for (const source of ["ccf", "core", null]) {
+      const keep = ["cofirst", "middle"].filter(() => rnd() < 0.5);
+      const s = m.summarize(list, source, { keep });
+      assert.equal(s.rows.reduce((n, r) => n + r.total, 0), s.totals.total);
+      assert.equal(s.totals.total + s.hidden + s.absent, list.length, "every paper is somewhere");
+      if (source) assert.equal(s.unranked.preprint + s.unranked.secondary + s.unranked.other, s.totals.none, "the kinds of the not-ranked column add up");
+      for (const r of s.rows) for (const c of s.columns) assert.equal(list.filter((p) => m.inSelection(p, { role: r.role, tier: c }, source)).length, r[c], `${r.role} × ${c}`);
+      assert.equal(list.filter((p) => m.inSelection(p, { role: "hidden" }, source)).length, s.hidden);
+      assert.equal(list.filter((p) => m.inSelection(p, { role: "absent" }, source)).length, s.absent);
+      const sub = m.summarize(list.filter(() => rnd() < 0.5), source, { keep: m.summarize(list, source).rows.map((r) => r.role) });
+      for (const r of m.summarize(list, source).rows) assert.ok(sub.rows.some((x) => x.role === r.role), "a count of fewer papers keeps the rows of the whole list");
+    }
+  }
+});
