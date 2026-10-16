@@ -469,7 +469,7 @@ test("'Joint' says what kind of event it is: '… Annual Joint Conference of the
   assert.equal(brief("2012 IEEE 12th International Conference on Computer and Information Technology, 2012"), "CORE C CIT");
   assert.equal(brief("Proceedings of the IEEE International Conference on Computer and …, 2010"), "CORE C CIT");
   // a venue that is not called joint is not what a "joint" string cut short means; the official names that are printed without the word still match
-  assert.equal(brief("Proceedings of the 16th Conference on Autonomous Agents and MultiAgent …, 2017"), "CORE A AAMAS");
+  assert.equal(brief("Proceedings of the 16th Conference on Autonomous Agents and MultiAgent …, 2017"), "CCF B AAMAS · CORE A AAMAS");
   assert.equal(brief("Proceedings of the 29th ACM Joint Meeting on European Software Engineering …, 2021"), "CCF A FSE · CORE A* FSE");
 });
 
@@ -1417,6 +1417,9 @@ test("names Scholar prints that the lists word differently are aliases: older, i
   assert.notEqual(brief("Computational Geometry 1 (1), 13-34, 1991"), brief("Discrete & Computational Geometry 10 (1), 1-10, 1993"));
   eq("Journal of Systems Architecture 109, 101809, 2020", "CCF B JSA");
   eq("IEEE Transactions on Neural Networks 18 (6), 1815-1825, 2007", "CCF B TNNLS");
+  // a cut "Symposium on Modelling, Analysis and Simulation of …" is MASCOTS in both lists, not the conference MSWiM (CORE's own name has "Model")
+  eq("IEEE International Symposium on Modelling, Analysis and Simulation of …, 2019", "CCF C MASCOTS · CORE B MASCOTS");
+  eq("ACM International Conference on Modeling, Analysis and Simulation of …, 2012", "CCF C MSWiM · CORE A MSWIM");
   // ... and what is not an alias stays without a badge
   none("International Conference on High Performance Computing, 86-105, 2023");
   none("Proceedings of the 2002 ACM symposium on Applied computing, 32-36, 2002");

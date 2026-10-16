@@ -873,7 +873,8 @@
       const sameAs = (a, b) => squash(a.abbr || a.name) === squash(b.abbr || b.name) || (a.src === "ccf" ? idx.sameVenue(a.abbr, b.abbr) : idx.sameVenue(b.abbr, a.abbr));
       if (d && d !== "ambiguous") {
         const rival = readBy(otherSides);
-        if (rival === "ambiguous" || (rival && !sameAs(d, rival))) d = null;
+        // (a rival whose event word is not the string's — a symposium for a "Conference on …" — is no other reading of it)
+        if (rival === "ambiguous" || (rival && !sameAs(d, rival) && !typeClash(rival))) d = null;
       }
       // nothing usable because one common word is all that is left ("… annual international symposium on computer …" is ISCA, not
       // the IEEE Computer Security Foundations Symposium): the event words before it must begin one venue's name, in that order
@@ -1068,6 +1069,7 @@
       out.kind = hint;
       const secs = secondaryWords(raw);
       const matched = {};
+      const realEntry = (e) => (Object.getPrototypeOf(e) === Object.prototype ? e : Object.getPrototypeOf(e));          // (the prefix rule hands out a view of the row: `through`)
       const badge = (src, e, rule) => src === "ccf"
         ? { tier: e.tier, name: e.name, abbr: e.abbr, area: e.area, kind: e.kind, dblp: e.dblp, rule }
         : { rank: e.rank, name: e.name, abbr: e.abbr, kind: e.kind, rule };          // (CORE ranks conferences: its kind is "C")
@@ -1084,7 +1086,7 @@
       // the lists name one venue differently: what one list's wording found, the other list's row of the same venue is too (unless the track words of the string do not fit it)
       if (!out.refused) for (const [from, to] of [["ccf", "core"], ["core", "ccf"]]) {
         if (!matched[from] || out[to] || matched[from].kind === "J") continue;
-        const rows = idx.partners.get(matched[from]) || [];
+        const rows = idx.partners.get(realEntry(matched[from])) || [];
         if (rows.length === 1 && !secs.some((w) => !ownWord(rows[0], w, raw))) out[to] = badge(to, rows[0], out[from].rule);
       }
       // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
