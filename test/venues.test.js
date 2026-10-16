@@ -976,3 +976,17 @@ test("a curated start keeps its own wording: RECOMB's annual 'Computational mole
   assert.equal(brief("Proceedings of the fifth international ACM conference on Assistive …, 2002"), "CCF C ASSETS · CORE A ASSETS");
   assert.equal(brief("Proc. Ubicomp 6, 2006"), "CCF A UbiComp");
 });
+
+test("the inverted title Scholar prints for older IEEE and ACM journals is read back: 'Computers, IEEE Transactions on' is IEEE Transactions on Computers", () => {
+  // real strings of real profiles (single words and several; a line Scholar cut with an ellipsis; the volume or only the pages after it)
+  assert.equal(brief("Computers, IEEE Transactions on 60 (3), 386-399, 2011"), "CCF A TC");
+  assert.equal(brief("Computers, IEEE Transactions on, 1-1, 2011"), "CCF A TC");
+  assert.equal(brief("Communications, IEEE Transactions on 30 (7), 1701-1719, 1982"), "CCF B TCOM");
+  assert.equal(brief("Robotics, IEEE Transactions on 30 (2), 310 - 324, 2013"), "CCF B TR");
+  assert.equal(brief("Pattern Analysis and Machine Intelligence, IEEE Transactions on 33 (5), 867 …, 2011"), "CCF A TPAMI");
+  assert.equal(brief("Graphics, ACM Transactions on 31 (4), 1-11, 2012"), brief("ACM Transactions on Graphics 31 (4), 1-11, 2012"), "the ACM form too");
+  assert.equal(brief("Selected Areas in Communications, IEEE Journal on 25 (3), 2007"), brief("IEEE Journal on Selected Areas in Communications 25 (3), 2007"));
+  // only that form: nothing else is turned around
+  assert.equal(brief("Smith Computers, Transactions on Something 1 (1), 2010"), "", "no IEEE or ACM in front of 'Transactions on': left as it is");
+  assert.equal(brief("Proceedings of the IEEE 105 (3), 2017"), brief("Proceedings of the IEEE"), "a name that is not inverted is read as before");
+});
