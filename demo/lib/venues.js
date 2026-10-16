@@ -217,7 +217,7 @@
       if (!words.some((x) => wordsOf(x).join(" ") === wordsOf(w).join(" "))) words.push(w);
     }
     // "OM@ ISWC 2288", "NLP-DBPEDIA@ ISWC": a workshop co-located with the conference named after the @ (CEUR-WS proceedings)
-    if (!words.length && /\b[A-Za-z0-9-]+@\s?[A-Z]{3,}\b/.test(text)) words.push("workshop");
+    if (!words.length && /\b[A-Za-z0-9-]+@\s?[A-Z]{3,}[A-Z0-9]*\b/.test(text)) words.push("workshop");
     return words;
   }
   const secondaryWord = (raw) => secondaryWords(raw)[0] || null;
@@ -491,7 +491,9 @@
     if (PLACED.test(p.withParens)) return out;
     const text = fold(p.withParens).replace(SIG_CHAIN, " ");
     for (const m of text.matchAll(/\b([A-Z][A-Za-z]{2,10})[-–']\s?(\d{2,4})\b/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded", raw: m[1] });
-    for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded", raw: m[0] });
+    // ("ICME2000", "ICIP98": IEEE Xplore glues the year to the acronym — "… on Multimedia and Expo. ICME2000")
+    // (not after "@" or a hyphen: "BEA@ACL2023", "FTL-IJCAI21" are workshops of the venue, not the venue)
+    for (const m of text.matchAll(/\b[A-Z][A-Z0-9]{3,11}\b/g)) for (const key of uniq([m[0].toLowerCase(), /[@-]$/.test(text.slice(Math.max(0, m.index - 1), m.index)) ? "" : stripDigits(m[0].toLowerCase())].filter(Boolean))) out.push({ key, kind: "embedded", raw: m[0] });
     for (const m of text.matchAll(/\b[Ss]ig[a-z]{3,9}\b/g)) out.push({ key: m[0].toLowerCase(), kind: "embedded" });     // "SIGgraph", "siggraph": Scholar re-cases some strings
     // "SC'05: Proceedings of the 2005 …": a short acronym, a two-digit year and a colon
     for (const m of text.matchAll(/\b([A-Z]{2,10})['’]\d{2}\s*:/g)) out.push({ key: m[1].toLowerCase(), kind: "embedded" });
@@ -789,7 +791,7 @@
       const room = CONF_SIGNAL.test(p.plain) ? 3 : 1;   // a bare "IEEE INFOCOM" says little else
       for (const { key, raw } of embeddedSignals(p)) {
         const hits = confSide && confSide.abbrs.get(key);
-        const left = content.filter((t) => t !== key);
+        const left = content.filter((t) => t !== key && t !== String(raw || "").toLowerCase());          // (the acronym, with its year glued on or not)
         if (p.hasIssue && !CONF_SIGNAL.test(p.plain) && !left.length && !idx.sources.ccf.J.abbrs.has(key)) continue;          // (nothing but an acronym and a volume with an issue — "IEEE MICRO 15 (1)" — is a periodical's title, not an event)
         if (hits && left.length <= room) {
           const d = decide(hits, rawWords);
