@@ -173,8 +173,20 @@ A comma lists values of `ccf:`, `core:`, `role:`, `type:` or `has:`: `role:first
 - An operator with a value it does not take (`ccf:x`) matches nothing, and the box is marked and says why on hover. A word whose colon follows no operator (`http://…`) is an ordinary word. The bare comparisons of earlier versions (`>100`, `>2020`) and the aliases `c:`, `y:`, `tier:` and `rank:` are gone.
 - Typing an operator's colon (`role:`) lists its values; `↓`, or a click on the `/` hint, lists common ones. `↑` / `↓` choose, and `Enter` or `Tab` takes the chosen one. Otherwise `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, then clears the box; on the page, `Escape` clears every filter.
-- The quick buttons under the box toggle `ccf:a`, `cites:>100`, `role:first` and `has:award`; the settings offer more (`core:a*`, `role:cofirst`, `role:second`, `role:last`, `has:talk`), and a button for a kind of paper that nothing on the page draws is left out.
+- The quick buttons under the box toggle `ccf:a`, `cites:>100`, `role:first` and `has:award`; the settings offer more (`core:a*`, `age:<5` as *Last 5 years*, `role:cofirst`, `role:second`, `role:last`, `has:talk`), and a button for a kind of paper that nothing on the page draws is left out.
 - The box takes up to 500 characters.
+
+### Recipes
+
+| I want… | Do this | I get |
+|---|---|---|
+| The table of the last five years | press *Last 5 years* (switch it on under *Settings → Filters*) or type `age:<5` | the role × rank table, the awards and talks counts and *Copy summary* count only those papers, and the copied text says so |
+| First- or last-author papers at CCF A or B venues | `role:first,last ccf:a,b` | the papers; the table counts them, and a cell such as *Last × A* lists its papers |
+| Award papers of the last ten years | `has:award age:<10` | those papers, and their count in the table |
+| Journal papers with 100 or more citations | `type:journal cites:>100` | the list, and the citation totals of the highlighted ones |
+| The papers a co-author is on | press *Read full lists* once, then type the surname | every paper with that name anywhere in its author list (before, only the line the page printed) |
+| The papers that may not be the person's | press the status line "N papers where the profile name is not in the author list" | those papers, to check or to report |
+| A summary to file or send | *Copy summary* or *Copy as table* | the table as text (or as a real table in Word), the lists' edition, what was counted, and a line with the profile's link and the day |
 
 ---
 
