@@ -1514,6 +1514,15 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("European Symposium on Algorithms - Lecture Notes in Computer Science, 2005", "CCF B ESA · CORE A ESA");
   none("Lecture Notes in Computer Science 1603, 117-146, 1999");
   none("Artificial Intelligence Review 23 (2), 187-205, 2005");
+  // IEEE Xplore's inverted title cut among the sponsors: "Computer Vision and Pattern Recognition, 2006 IEEE Computer Society …" is the IEEE Computer Society Conference on it (a workshop says so in its title)
+  eq("Computer Vision and Pattern Recognition, 2006 IEEE Computer Society …, 2006", "CCF A CVPR · CORE A* CVPR");
+  eq("Computer Vision and Pattern Recognition, 1999. IEEE Computer Society …, 1999", "CCF A CVPR · CORE A* CVPR");
+  eq("Data Engineering, 2008 IEEE 24th International …, 2008", "CCF A ICDE · CORE A* ICDE");
+  none("Computer Vision and Pattern Recognition Workshops (CVPRW), 2017 IEEE …, 2017");
+  none("Machine Learning, 2006 IEEE …, 2006");
+  // "IEEE Transaction on …" (singular) is a typo owners type, not another journal
+  eq("IEEE Transaction on Parallel and Distributed Systems, 2220-2232, 2015", "CCF A TPDS");
+  eq("IEEE Transaction On Image Processing 22 (6), 2327-2342, 2013", "CCF A TIP");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

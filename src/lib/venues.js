@@ -51,7 +51,7 @@
     "thirty", "forty", "fifty", "sixty"
   ]);
   // ISO-4 style abbreviations Scholar sometimes prints ("Commun. Acm", "IEEE Trans. …").
-  const ISO = { trans: "transactions", commun: "communications", lett: "letters", jour: "journal", j: "journal" };
+  const ISO = { trans: "transactions", transaction: "transactions", commun: "communications", lett: "letters", jour: "journal", j: "journal" };
   // British and American spellings are one word in a whole name ("Conceptual Modelling" is CORE's ER, "Conceptual Modeling" CCF's; VISSOFT's "Visualisation"): names are also indexed
   // and looked up in the American form. The start of a cut name keeps the spelling it has (the cut "Information Visualization Theory and …" is not CORE's "Visualisation Theory and Practice").
   const US = { modelling: "modeling", modelled: "modeled", labelling: "labeling", centre: "center", centres: "centers", behaviour: "behavior", behaviours: "behaviors", analyse: "analyze", analysed: "analyzed", catalogue: "catalog", defence: "defense" };
@@ -155,6 +155,9 @@
     // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
     // ("Selected Areas in Communications, IEEE Journal on": "IEEE Journal on Selected Areas in Communications"). The form is fixed, so it is read back before anything else.
     s = s.replace(/^(.{2,80}?),\s*((?:IEEE|ACM)(?:\/(?:IEEE|ACM))?\s+(?:Transactions|Journal|Letters|Magazine)\s+on)\b(.*)$/i, "$2 $1$3");
+    // IEEE Xplore's inverted title: "Computer Vision and Pattern Recognition, 2006 IEEE Computer Society Conference on" is the "IEEE Computer Society Conference on Computer Vision and
+    // Pattern Recognition". Scholar's cut may stop among the sponsors ("… 2006 IEEE Computer Society …", "… 2016 IEEE 35th Annual …"): what is left of the form says it is a conference of the IEEE.
+    if (truncated) s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.?\s+(?:the\s+)?(?:\d+(?:st|nd|rd|th)\s+)?(?:ACM\/)?IEEE(?:\s+Computer\s+Society)?(?:\s+\d+(?:st|nd|rd|th))?(?:\s+(?:Annual|International|Joint))*$/i, "IEEE Conference on $1");
     // IEEE Xplore's citation form: "IEEE Visualization, 2002. VIS 2002., 355-362, 2002" — the name, its year, then the event's own
     // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know. (A cut-off line may end on the acronym: "…, 2003. ISESE …", "…, 2009. RTCSA'09 …".)
     s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+(?:([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\.|([A-Z][A-Z0-9&]{1,9})(?:\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2}))?$)/, (m, name, acr, cutAcr) => acr || (truncated && cutAcr) ? name + " (" + (acr || cutAcr) + ")" : m);
