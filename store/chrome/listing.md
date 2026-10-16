@@ -1,14 +1,15 @@
-# Chrome Web Store listing: Better Scholar 2.39.0
+# Chrome Web Store listing: Better Scholar 2.41.0
 
 Every field of the Developer Dashboard, in the order the dashboard shows it (Package, Store listing, Privacy,
 Distribution, Test instructions). Copy the text inside each `text` block as it is. Each factual statement has its
-evidence in `claims.md`; if the code changes, check there first.
+evidence in `claims.md` (`node store/chrome/check-claims.mjs` searches every quote there); if the code changes, check there
+first.
 
-Prepared 2026-10-15 for the package built from commit `3a52a6e` (see `package-check.md`).
+Prepared 2026-10-15 for the package built from commit `f1cd4f1` (see `package-check.md`).
 
 ## 1. Package
 
-Upload `dist/better-scholar-chrome-2.39.0.zip` (built by `bash scripts/package-chrome.sh`). Nothing to type.
+Upload `dist/better-scholar-chrome-2.41.0.zip` (built by `bash scripts/package-chrome.sh`). Nothing to type.
 
 The dashboard takes the **title**, the **summary** and the **version** from the package (the store icon is uploaded
 separately, below). Google's "Prepare your extension" page: "After uploading your item, you won't be able to edit the
@@ -73,9 +74,13 @@ Everything else runs in your browser: no account, no analytics, no ads. Settings
 Free and open source (Apache 2.0). Better Scholar is an independent project and is not affiliated with or endorsed by Google.
 ```
 
-Checks done on this text: "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"),
-"CCF" 3, "CORE" 2 (policy: no "unnatural repetition of the same keyword more than 5 times"); no competitor is named; no
-superlatives.
+Checks done on this text (re-counted 2026-10-15; the text itself is unchanged since 2.39.0 and still true of 2.41.0): 2,490
+characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
+`ccf:a`), "CORE" 2, "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
+keyword more than 5 times"); no competitor is named; no superlatives. The text does not mention what 2.40.0 and 2.41.0 added:
+the editable preview with the user's own names and chip looks, the "Check a venue" box on the settings page, `type:conference`
+and `type:journal` in the search, and the HTML on the clipboard for a word processor. Nothing is false without them; if you add
+a sentence for one, add its row to `claims.md` too.
 
 ### Category
 
@@ -99,50 +104,63 @@ description per locale is optional (Store listing → localize).
 
 ### Graphic assets
 
-Files are in the image worktree, `store/chrome/images/` (described in its `README.md`). Requirements from "Supplying
-images" and "Complete your listing information" (developer.chrome.com, read 2026-10-15). Sizes and formats below were
-measured with `sips`.
+Files are in `store/chrome/images/` (described in its `README.md`; both are written by `npm run store:images`, see
+`screenshots-plan.md`). They were regenerated at commit `8c5fe05` (version 2.41.0) from the real extension on a stand-in
+Scholar page with the fictional profile "Alex Example"; `src/` has changed since only in the German strings and the preview
+editor's drag handling, which no picture shows. Requirements from "Supplying images" and "Complete your listing
+information" (developer.chrome.com, read 2026-10-15). Sizes and formats below were measured with `sips` on 2026-10-15.
 
 | Dashboard field | File | Required | File as made | Status |
 |---|---|---|---|---|
 | Store icon | `icon-128.png` | 128×128 PNG; guidance: 96×96 artwork with 16 px transparent padding | 128×128 PNG with alpha; same bytes as `src/icons/icon-128.png` | OK. The artwork fills the square (guidance, not a rule). |
 | Global promo video | none | optional | none | Leave empty. |
-| Screenshot 1 | `screenshot-1.jpg` | 1280×800 or 640×400; at least 1, at most 5; square corners, no padding | 1280×800 JPEG, no alpha | Size OK. **Made from 2.38.1: regenerate.** |
-| Screenshot 2 | `screenshot-2.jpg` | same | 1280×800 JPEG | Size OK. Regenerate. |
-| Screenshot 3 | `screenshot-3.jpg` | same | 1280×800 JPEG | Size OK. Regenerate. |
-| Screenshot 4 | `screenshot-4.jpg` | same | 1280×800 JPEG | Size OK. Regenerate. |
-| Screenshot 5 | `screenshot-5.jpg` | same | 1280×800 JPEG | Size OK. **Shows the 2.38.1 popup (7 copy buttons); 2.39.0 has 8. Do not upload as is.** |
-| Small promo tile | `promo-small.jpg` | 440×280, PNG or JPEG; required ("You must provide one small, 440x280-pixel promotional image"); guidance "Avoid text" | 440×280 JPEG | Size OK. Has the name and a line of text (guidance only). |
-| Marquee promo tile | `promo-marquee.jpg` | 1400×560, PNG or JPEG; optional | 1400×560 JPEG | Size OK. |
+| Screenshot 1 | `screenshot-1.jpg` | 1280×800 or 640×400; at least 1, at most 5; square corners, no padding | 1280×800 JPEG, no alpha (208 KB) | OK. Caption wording: see below. |
+| Screenshot 2 | `screenshot-2.jpg` | same | 1280×800 JPEG (137 KB) | OK. |
+| Screenshot 3 | `screenshot-3.jpg` | same | 1280×800 JPEG (173 KB) | OK. |
+| Screenshot 4 | `screenshot-4.jpg` | same | 1280×800 JPEG (161 KB) | OK. Caption wording: see below. |
+| Screenshot 5 | `screenshot-5.jpg` | same | 1280×800 JPEG (222 KB) | OK. Shows the popup with the eight copy buttons of 2.41.0. |
+| Small promo tile | `promo-small.jpg` | 440×280, PNG or JPEG; required ("You must provide one small, 440x280-pixel promotional image"); guidance "Avoid text" | 440×280 JPEG (25 KB) | OK. Has the name and a line of text (guidance only). |
+| Marquee promo tile | `promo-marquee.jpg` | 1400×560, PNG or JPEG; optional | 1400×560 JPEG (102 KB) | OK. |
 
-What each screenshot shows (the words are drawn into the images; the store has no caption field). Upload them in this
-order:
+What each screenshot shows (the headline and caption are drawn into the images; the store has no caption field). Upload them
+in this order:
 
-1. "See your role in every paper." A profile with rows tinted by role, the owner's name marked, CCF and CORE chips,
-   award and talk chips, and the panel's role × rank table.
-2. "Papers by role and rank." The panel up close: the table with its CCF / CORE switch, the copy and export buttons, the
-   note that the ranks are today's lists, the awards and talks counts, the year chart, the filters and the citation totals.
-3. "Filter by role, rank and citations." The search `role:first ccf:a cites:>100` with five papers left and the totals
-   following.
-4. "Choose what you see." The settings page with the role switches, the colours and the live preview.
-5. "Your summary in the toolbar." The toolbar popup over a profile, showing the same table and copy buttons.
+1. "See your role in every paper." The profile of the fictional "Alex Example": rows tinted by role (blue, amber, green), the
+   owner's name marked, CCF and CORE chips, award (Best paper) and talk (Oral, Spotlight) chips, and at the right the panel:
+   the role × rank table with its CCF / CORE switch and the note that the ranks are today's lists, the eight copy and export
+   buttons, the Awards & talks counts and the search box with its quick filters.
+2. "Papers by role and rank." The panel up close in its two-column layout: the table, the note, the copy and export buttons,
+   the awards and talks counts, the search box, the quick filters, "Only highlighted", the year range, the citation totals of
+   the highlighted papers, the year chart and the name help.
+3. "Filter by role, rank and citations." The search `role:first ccf:a cites:>100` typed in: five papers left, the bar
+   "Showing 5 of 12 papers" with Clear, and the quick filters CCF A, >100 and First lit (the totals below follow; they are
+   under the fold in this picture).
+4. "Choose what you see." The settings page: the row of section links, the card "Highlight my papers" (a switch for each
+   role and for marking your name) and the start of "Colours", and at the right the live preview (four sample rows, its note,
+   the hint "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it." and the tray "Hidden: 6").
+5. "Your summary in the toolbar." The toolbar popup over the profile: owner and paper count, the table (here by CORE rank),
+   the Awards & talks line, the eight copy and export buttons and the note on the ranks.
 
-Two captions say slightly more than the code does; see `screenshots-plan.md`.
+Two captions say slightly more than the code does: screenshot 1 ("each venue marked with today's CCF and CORE rank", while
+some of its rows have no chip, by design) and screenshot 4 ("Every role, colour and part of the panel has its own switch";
+colours have pickers). The marquee tile says "each venue's CCF and CORE rank" in the same way. See `claims.md` 4.8 and
+`screenshots-plan.md`; the words live in `scripts/store-images.mjs`.
 
 ### Additional fields
 
 | Field | Value |
 |---|---|
 | Official URL | Leave empty. It lists only sites verified as yours (Search Console); not needed. |
-| Homepage URL | `https://boyugou.github.io/better-scholar/` (only after its "100% Offline & Private" badge is corrected; `claims.md` 4.3) |
+| Homepage URL | `https://boyugou.github.io/better-scholar/` (its badge now says "Runs in your browser"; its search-operator cards still show syntax removed in 2.39.0, `claims.md` 4.3: a should-fix on the `site` branch, it does not stop you entering the URL) |
 | Support URL | `https://github.com/boyugou/better-scholar/issues` |
 | Mature content | Off |
 
 ## 3. Privacy
 
 The dashboard docs say: "Your disclosures are displayed to Chrome users, and should be consistent with the existing
-privacy policy URL that you provided." The policy at the URL below must be corrected first (`claims.md` 4.2); the answers
-here describe the code as it is.
+privacy policy URL that you provided." The policy on the site must be brought level with PRIVACY.md first (`claims.md` 4.2:
+the live page lacks the paragraph on the HTML clipboard); the answers here describe the code as it is, and PRIVACY.md says the
+same.
 
 ### Single purpose description
 
@@ -153,7 +171,7 @@ Better Scholar shows, on Google Scholar profile pages, the profile owner's autho
 ### Permission justification: storage
 
 ```text
-storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show, colours, languages) and the extra spellings of a profile owner's name that the user adds on that profile, so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists and venue text read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); and an optional Semantic Scholar API key the user may enter. Nothing in storage is sent to the developer.
+storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages) and the extra spellings of a profile owner's name that the user adds on that profile, so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists and venue text read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); and an optional Semantic Scholar API key the user may enter. Nothing in storage is sent to the developer.
 ```
 
 ### Host permission justification
@@ -176,7 +194,7 @@ No, I am not using remote code.
 If a justification box appears anyway:
 
 ```text
-All code is in the package. The content scripts, toolbar popup, settings page and service worker load only files from the zip; there is no eval, new Function, dynamic import or remotely hosted script. The extension fetches data, never code: Scholar's own paper pages (parsed with DOMParser; only text is read), JSON from api.semanticscholar.org when the user switches that on, and its own _locales files. The rank and award lists are bundled. The page-event listener for scripts on the page answers six fixed calls (ping, summary, papers, export, filter, clearFilters), checks their parameters, and runs nothing it receives.
+All code is in the package. The content scripts, toolbar popup, settings page and service worker load only files from the zip; there is no eval, new Function, dynamic import or remotely hosted script. The extension fetches data, never code: Scholar's own paper pages (parsed with DOMParser; only text is read), JSON from api.semanticscholar.org when the user switches that on, and its own _locales files. The rank and award lists are bundled; the settings page also loads the CCF and CORE lists from the zip, for its "Check a venue" box, and makes no request. The page-event listener for scripts on the page answers six fixed calls (ping, summary, papers, export, filter, clearFilters), checks their parameters, and runs nothing it receives.
 ```
 
 ### Data usage
@@ -202,6 +220,11 @@ handled and stored). Leaving it empty is defensible only if the names are treate
 printed on a public page, and the spellings are spellings of that printed name). Ticking shows "Personally identifiable
 information" on the listing; the privacy policy then explains that it never leaves the browser.
 
+The clipboard and files are not a data type on the form. For the record: the extension writes to the clipboard only when the
+user clicks a copy button (the table, papers and APA buttons write the text and an HTML version of the same data, so that a
+word processor pastes a real table or real italics), saves a CSV or the settings as a file only on a click, and never reads
+the clipboard (`claims.md` L36, P19). PRIVACY.md says so under "Clipboard" and "Files".
+
 ### Certifications
 
 Tick all three. The wording below is the form's as reported since its introduction in 2020; confirm it in the live tab.
@@ -223,8 +246,9 @@ the in-interface disclosure and affirmative action the User Data FAQ (FAQ 10) as
 https://boyugou.github.io/better-scholar/privacy/
 ```
 
-Enter it only after the corrected PRIVACY.md is on the site (`npm run sync-privacy` on the `site` branch, then deploy).
-The corrected policy must also carry the Limited Use statement (`claims.md` 4.2).
+Enter it only after the site's copy of PRIVACY.md is level with the repository's (`npm run sync-privacy` on the `site`
+branch, then deploy; `claims.md` 4.2 lists what the live page still lacks or gets wrong). PRIVACY.md already carries the
+Limited Use statement ("Chrome Web Store user data policy"), and the live page has it too.
 
 ## 4. Distribution
 
@@ -249,9 +273,11 @@ No account, login or payment is needed. Everything works on a public Google Scho
    - "Visualizing data using t-SNE": last author, CCF A (JMLR).
    - "Deep learning" (Nature): last author and no rank chip. Nature is on neither list; that is by design.
 3. While the panel shows "Loading… N", the extension is pressing Scholar's own "Show more" button about once a second, only while the tab is in front. "Cancel" stops it; Settings > Paper list > "Load all papers automatically" turns it off.
-4. Click a cell of the "Papers by role and rank" table to list those papers. Press / and type role:first ccf:a cites:>100 to filter. "Copy summary" copies the table as text.
-5. Click the toolbar button: the popup shows the same table for the open profile. Its settings button opens the settings page with a live preview.
-6. Network features, both started only by the user: "Read full lists" (offered when Scholar cut off author lists) opens each paper's Scholar page about once a second. The Semantic Scholar lookup is off by default (Settings > Semantic Scholar).
+4. Click a cell of the "Papers by role and rank" table to list those papers. Press / and type role:first ccf:a cites:>100 to filter (type:journal and type:conference also work). "Copy summary" copies the table as text. "Copy as table", "Copy papers" and "Copy APA" put the text and an HTML version of the same data on the clipboard (a word processor pastes a real table); "Export CSV" saves a file. The extension writes to the clipboard only when you click, and never reads it.
+5. Click the toolbar button: the popup shows the same table and copy buttons for the open profile.
+6. Click the settings button of the panel or of the popup (or Details > Extension options on chrome://extensions). The settings page opens in a tab and makes no network request. Its preview on the right is the real panel over sample rows: hover a part of it to hide it (✕), move it (⠿) or rename it (✎); the tray "Hidden: N" shows what was hidden and puts it back. Every switch on the left changes the preview at once.
+7. On the settings page, the card "Check a venue" (after "Semantic Scholar"): paste a venue as Scholar prints it. "Proceedings of the IEEE conference on computer vision and pattern recognition" gives CCF A and CORE A* ("Matched by name"). "Findings of the Association for Computational Linguistics: ACL 2023" gets no rank: it is a secondary track, and the extension never guesses.
+8. Network features, both started only by the user: "Read full lists" (offered when Scholar cut off author lists) opens each paper's Scholar page about once a second. The Semantic Scholar lookup is off by default (Settings > Semantic Scholar).
 
 Note: Google Scholar sometimes answers automated or data-center traffic with a CAPTCHA, or with "The system can't perform the operation now. Try again later." Both come from Scholar. The extension adds no CAPTCHA and does not try to get around one: it stops loading the list as soon as Scholar sends no more rows, and stops reading paper pages at the first CAPTCHA. When loading stops early, the panel says "Scholar sent no more papers (N loaded). Try “Load all” again in a moment." The table and the chips still cover the papers that did load; the example rows above are among the first 20 (Scholar lists the most cited first), so they show even then. Solving the CAPTCHA in the tab, or waiting and reloading, lets the rest load.
 ```

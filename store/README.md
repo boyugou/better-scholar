@@ -1,23 +1,25 @@
 # Publishing Better Scholar on the Chrome Web Store
 
-An ordered checklist, from building the zip to after publishing. Prepared on 2026-10-15 for version 2.39.0
-(commit `3a52a6e`). Nothing has been submitted.
+An ordered checklist, from building the zip to after publishing. Brought up to date on 2026-10-15 for version 2.41.0
+(commit `f1cd4f1`; the commit that updates this kit changes only `store/`). Nothing has been submitted.
 
 **[Owner]** marks what only the owner can do: the Google account, the fee, the identity checks, the declarations, the
 upload and the Submit button. **[Ready]** marks what is prepared in this repository. **[Fix]** marks what must change in the
-repository or on the project site before you submit.
+repository or on the project site before you submit. Nothing in this kit ticks a box or takes a decision for the owner.
 
 ## What is in this folder
 
 | File | What it is |
 |---|---|
 | `chrome/listing.md` | Every dashboard field in dashboard order, with the text to paste: title, summary (and two alternatives), description, category, language, images, Privacy tab answers, distribution, support URLs, reviewer test instructions. |
-| `chrome/claims.md` | Every claim in the listing and every Privacy answer mapped to the code that proves it, then **Problems found** in PRIVACY.md, the READMEs, SECURITY.md, CONTRIBUTING.md, the site and the shipped text. |
-| `chrome/package-check.md` | The zip built from this commit: contents, sizes, SHA-256, manifest against the store's limits. |
-| `chrome/screenshots-plan.md` | Where the images are and what in them does not match. |
+| `chrome/claims.md` | Every claim in the listing and every Privacy answer mapped to the code that proves it (quotes you can grep), then **Problems found** in PRIVACY.md, the READMEs, the site and the shipped text. |
+| `chrome/check-claims.mjs` | `node store/chrome/check-claims.mjs` searches every quote of `claims.md` in the file it names and exits 1 if one is gone. Run it after any change to `src/` before you trust the kit. |
+| `chrome/package-check.md` | How to check the zip (a procedure to repeat), and the record for the zip built from this commit: contents, sizes, SHA-256, manifest against the store's limits. |
+| `chrome/screenshots-plan.md` | How the images are made (`npm run store:images`), what each shows, what to do when the interface changes, and the wording that is still open. |
+| `chrome/images/` | The five screenshots, two promo tiles and the icon, with a README written by the generator. |
 
-The images are made by another agent (`store/chrome/images/` in its worktree, with a README describing each). They were
-made from 2.38.1 and must be made again from the version you submit.
+The images are made by `npm run store:images` (`scripts/store-images.mjs`) from the real extension. They were regenerated at
+2.41.0 (commit `8c5fe05`); make them again if the interface changes before you submit.
 
 ## Decisions only the owner can make
 
@@ -38,32 +40,45 @@ made from 2.38.1 and must be made again from the version you submit.
 6. **Visibility**: Public (recommended), or Unlisted for a quiet start.
 7. **Publish automatically after approval**, or hold it and publish by hand (you then have 30 days).
 8. **CORE data**: `NOTICE` says "CORE's terms of use have not been confirmed". Ship as is, or ask CORE first.
+9. **Edge Add-ons**: whether to submit the same zip there as well (section I). The account is free; Partner Center will ask for
+   a description in each of the 30 languages unless a language can be removed.
 
-## A. Fix before you submit **[Fix]**
+## A. Before you submit
 
-The privacy policy URL and the homepage URL are part of the submission, and the reviewer compares them with the code.
+The privacy policy URL and the homepage URL are part of the submission, and the reviewer compares them with the code. All the
+problems the first version of this kit found in PRIVACY.md, the READMEs, SECURITY.md, CONTRIBUTING.md, the agent guide and the
+images are fixed; what is open now is in `chrome/claims.md`, section 4.
 
-1. **PRIVACY.md**, then copy it to the site (`npm run sync-privacy` on the `site` branch, then deploy) and check
-   https://boyugou.github.io/better-scholar/privacy/ shows the new text. What to change is in `chrome/claims.md`, section
-   4.2: the scope of the second script, the storage list ("Nothing else" is not true), the Limited Use statement (missing),
-   the cookies sent with *Read full lists*, the exact content of the Semantic Scholar request, the page-event interface,
-   the *Report* link contents.
-2. **The homepage**: remove "100% Offline & Private" (`claims.md` 4.3).
-3. **The images**: make them again from the commit you submit (`chrome/screenshots-plan.md`). Do not upload
-   screenshot 5 as it is.
-4. Should fix, not blocking: README.md and README.zh-CN.md describe event names and a runtime-messaging channel for other
-   extensions that do not exist; the agent guide in `src/lib/agent.js` names a setting that does not exist
-   (`claims.md` 4.4 to 4.6). A reviewer who opens the repository will read them.
+1. **The privacy policy.**
+   - **PRIVACY.md** in the repository: **[Ready]**. It has the second script's scope, the storage list, the Limited Use
+     statement, the cookies of *Read full lists*, the exact Semantic Scholar request, the page events and the clipboard
+     including its HTML. One sentence is wrong (it says `summary` reports display settings; it returns numbers only) and four
+     emphasised phrases wrap over two lines (`claims.md` 4.2): correct both in PRIVACY.md.
+   - **The copy on the site**, the policy URL: **[Fix]**, a blocker. The live page is one paragraph behind PRIVACY.md (the
+     HTML clipboard) and shows stray asterisks where a phrase wraps. Correct PRIVACY.md first (the two should-fix items
+     above), then run `npm run sync-privacy` on the `site` branch, deploy, and check
+     https://boyugou.github.io/better-scholar/privacy/ for "as text and as HTML", for no stray asterisks and for no sentence
+     on display settings. Do not enter the policy URL before the new page is live.
+2. **The homepage.** The badge is **[Ready]**: it says "Runs in your browser" (the "100% Offline & Private" of the first
+   version is gone). **[Fix]** (should fix): its search-operator cards show `>100 >=50 <10`, `r:cofirst` and `>2020`, which
+   the search has not read since 2.39.0 (`claims.md` 4.3; the source is `build.mjs` on the `site` branch).
+3. **The images**: **[Ready]**, regenerated at 2.41.0 (`chrome/screenshots-plan.md`). Two captions say a little more than the
+   code does (screenshots 1 and 4; `claims.md` 4.8): change the words in `scripts/store-images.mjs` and run
+   `npm run store:images` again, or accept them. Run it again in any case if the interface changes before you submit.
+4. **Should fix, not blocking**: a stale test count and an unlisted `html` parameter in README.md and README.zh-CN.md, two
+   labels and a missing `type` field in the agent guide (`src/lib/agent.js`), and the settings footer's "Scholar pages are
+   read only when you open them" (`claims.md` 4.4 and 4.6). A reviewer who opens the repository will read them.
 5. If you change anything under `src/` (the agent guide, a locale's summary), raise the version (step H1) before you build,
-   and re-check the affected rows of `claims.md`.
+   run `node store/chrome/check-claims.mjs` and look again at the rows it flags.
 
 ## B. Build the package **[Ready]**
 
-1. `git status` is clean and `npm test` passes (429 of 429 on 2026-10-15).
+1. `git status` is clean and `npm test` passes.
 2. `bash scripts/package-chrome.sh`. It checks the bundled data against `data/*.json` and writes
    `dist/better-scholar-chrome-<version>.zip` (`dist/` is git-ignored). No network needed.
-3. Check the zip: `unzip -l dist/better-scholar-chrome-<version>.zip` shows `manifest.json` at the top level and 69 files
-   (the list is in `chrome/package-check.md`).
+3. Check the zip with the procedure in `chrome/package-check.md` (part A): `manifest.json` at the top level, 71 files, no
+   development files, the zip is exactly `src/`. The record for 2.41.0 (721,532 bytes, SHA-256, the digest of the contents)
+   is in part B.
 4. Smoke test: unzip it to a folder, load it with chrome://extensions → Developer mode → Load unpacked, and open the test
    profile from `listing.md` §5.
 
@@ -115,7 +130,7 @@ and "The more code an extension contains, the more work it takes to verify that 
 
 - a new developer and a new extension;
 - 374 match patterns over 187 domains, two content scripts, one of them on every Scholar path at `document_start`;
-- about 2.4 MB of code and data, 969 KB of it the award list;
+- about 2.7 MB of code and data (705 KB zipped), 969 KB of it the award list;
 - automation on a Google site: pressing Scholar's *Show more* by default, and fetching paper pages on a click;
 - one third-party request (Semantic Scholar), off by default.
 
@@ -130,17 +145,17 @@ and a privacy policy that matches the code.
   (https://support.google.com/chrome_webstore/contact/one_stop_support). "Once a ticket is opened or an appeal filed, all
   communication takes place over email", and "it may take up to three days to receive a reply."
 - If the reviewer is right, fix it, raise the version, upload and resubmit; say in the reply what changed and where.
-- If the reviewer misread something, answer with the file and line. Keep it short, factual and polite; one reply per point.
-  For example:
+- If the reviewer misread something, answer with the file and the line of code (look it up when you write the reply: line
+  numbers change with every commit). Keep it short, factual and polite; one reply per point. For example:
 
-  > Thank you for the review. The second content script (content/lang-redirect.js, manifest.json lines 256-451) is the
-  > "Open Scholar in" language setting. It returns at once unless the path is /scholar or /citations (lang-redirect.js
-  > line 7), and it acts only when the user has chosen a language in the settings (off by default); it then reopens the
-  > page with that hl= value. It reads no page content and makes no request. If you prefer, we will narrow its match
-  > patterns to those two paths.
+  > Thank you for the review. The second content script (the second entry of "content_scripts" in manifest.json, which runs
+  > lib/i18n.js and content/lang-redirect.js) is the "Open Scholar in" language setting. It returns at once unless the path
+  > is /scholar or /citations (the test of location.pathname at the top of lang-redirect.js), and it acts only when the user
+  > has chosen a language in the settings (off by default); it then reopens the page with that hl= value. It reads no page
+  > content and makes no request. If you prefer, we will narrow its match patterns to those two paths.
 
 - Answers prepared for likely questions are in `listing.md` (host access, remote code, data use) and `chrome/claims.md`
-  (evidence by file and line).
+  (evidence by file and a quote you can grep).
 
 ## G. After publishing
 
@@ -153,9 +168,10 @@ and a privacy policy that matches the code.
 
 ## H. Updating the published extension
 
-1. Raise `"version"` in `src/manifest.json`. It is the only place: the package script, the settings page footer and the
-   `ping` page call all read it from there. "Each new version must have a larger version number than the previous
-   version", e.g. 2.39.0 → 2.39.1. Add a `CHANGELOG.md` entry.
+1. Raise `"version"` in `src/manifest.json`: the package script, the settings page footer and the `ping` page call all read it
+   from there. "Each new version must have a larger version number than the previous version", e.g. 2.41.0 → 2.41.1. Then
+   `npm run agents:doc` (the title of `AGENTS.md` carries the version, and `npm test` fails while it is stale) and add a
+   `CHANGELOG.md` entry.
 2. `npm test`, `bash scripts/package-chrome.sh`, then in the dashboard: the item → Package → upload the new zip, update the
    listing or the Privacy tab if behaviour changed, Submit for review. "When you submit an update for review, it doesn't
    yet affect your published item."
@@ -225,9 +241,17 @@ Microsoft Edge:
 - https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/publish/publish-extension
 - https://learn.microsoft.com/en-us/microsoft-edge/extensions-chromium/publish/create-dev-account
 
-Project pages checked:
+Re-read for the 2.41.0 update (also on 2026-10-15): the manifest reference for `name`, `short_name` and `description`, "Prepare
+your extension", "Publish in the Chrome Web Store" (the 2GB limit), "Supplying images" (the sizes) and "Provide test
+instructions" (no length limit is stated). The rest of the list above was read for the first version and not read again.
 
-- https://boyugou.github.io/better-scholar/privacy/ (downloaded with `curl`; same text as PRIVACY.md at `3a52a6e`)
-- https://boyugou.github.io/better-scholar/en/ (downloaded with `curl`; carries "100% Offline & Private")
+Project pages checked on 2026-10-15, for the 2.41.0 update:
+
+- https://boyugou.github.io/better-scholar/privacy/ (downloaded with `curl`): the text of `src/privacy.md` on the `site`
+  branch, which equals PRIVACY.md at `f1cd4f1` except for the paragraph on the HTML clipboard; it has the Limited Use
+  statement and shows stray asterisks (`chrome/claims.md` 4.2)
+- https://boyugou.github.io/better-scholar/en/ (downloaded with `curl`): the badge says "Runs in your browser"; the search
+  cards show old operators (`chrome/claims.md` 4.3); "A Chrome Web Store listing may follow."
+- https://www.google.com/supported_domains (downloaded with `curl`): 187 domains, the same as the manifest's
 - https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en (the reviewer's test profile; reachable, 20 papers on the
-  first page for a signed-out visit)
+  first page for a signed-out visit; the five example rows of `listing.md` are numbers 1 to 5)
