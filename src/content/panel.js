@@ -2,7 +2,8 @@
 // update() and reports user intent through callbacks — it owns no application state beyond which
 // disclosure widgets are open. What it shows at all, and in what order, is decided on the settings page
 // (model.prefs); the panel only keeps the quick, per-visit controls: the ranking tab, the filters, the clickable counts.
-// Everything the settings can switch carries data-rr-part="<the setting's path>", so that the settings page can point at it.
+// Everything the settings can switch carries data-rr-part="<the setting's path>", so that the settings page can point at it (a thing that several switches draw, such as
+// a count row of merged talks, carries all their paths, separated by spaces).
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -30,7 +31,7 @@
     const items = () => [...list.children];
     const draw = () => {
       const cur = options.find((o) => o.value === value);
-      label.textContent = cur ? cur.label : placeholder;
+      label.textContent = cur ? cur.label : value || placeholder;                  // (a value the list does not have, set by a page call, is shown as it is)
       el.classList.toggle("rr-dd-set", !!(cur && cur.value !== ""));
       list.replaceChildren(...options.map((o, i) => h("li", { role: "option", tabindex: "-1", "data-value": o.value, "aria-selected": String(o.value === value),
         onClick: () => choose(i) }, o.label)));
@@ -515,7 +516,7 @@
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
       marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
-        "aria-pressed": String(m.markGroup === g), ...P("panel.marks." + B.marks.members(g)[0]), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
+        "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 

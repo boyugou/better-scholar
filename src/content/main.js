@@ -336,8 +336,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
 
   // The summary of the papers by role and rank, from the list the panel counts. `source`: the ranking it uses (default: the panel's own; "none": by role only).
   function summaryOf(source) {
-    const list = papers();
-    const src = source === undefined ? (noRanks(list) ? null : currentSource()) : source === "none" ? null : source;
+    const list = papers(), fallback = noRanks(list) ? null : currentSource();
+    const src = source === undefined ? fallback : source === "none" ? null : B.prefs.lists(prefs)[source] ? source : fallback;           // (a list that nothing draws is not used)
     return { summary: metrics.summarize(list, src), src };
   }
   const summaryWords = () => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked") });
@@ -543,7 +543,11 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (sel && !(p.table.show && (sel.tier !== "none" || p.table.unranked) && (sel.role !== "middle" || p.table.other) && (sel.role !== "hidden" || p.table.hidden))) state.selection = null;
     if (state.markGroup && !(p.marks.show && marks.rows(p.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => p.marks[g]))) state.markGroup = null;
     if (!p.venues.show) state.venueKey = null;
-    if (!(p.filters.show && (p.filters.search || B.prefs.pills(prefs).length))) f.query = "";
+    if (!(p.filters.show && p.filters.search)) {                                                                                  // (no search box: only the words of the quick filters stay, a button can take them off)
+      const keep = p.filters.show ? B.prefs.pills(prefs).map((id) => B.prefs.PILL_OPERATORS[id]) : [];
+      f.query = f.query.split(/\s+/).filter((w) => keep.includes(w.toLowerCase())).join(" ");
+    }
+    if (!p.filters.bar) f.minCitations = null;                                                                                    // (only the filter bar says it is on, and clears it)
     if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)
     const range = p.filters.show && p.filters.years;
     if (!range && !(p.years.show && f.yearStart === f.yearEnd)) { f.yearStart = null; f.yearEnd = null; }                      // (the year bars can only choose one year)
@@ -598,7 +602,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const el = e.target instanceof Element ? e.target : document.body;
     const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
     if (e.key === "/" && !typing) {
-      if (!prefs.panel.show || !prefs.panel.filters.show) return;
+      if (!prefs.panel.show || !prefs.panel.filters.show || !prefs.panel.filters.search) return;
       e.preventDefault();
       if (ui.collapsed) { ui.collapsed = false; B.store.saveUi(ui); refresh(); }
       panel.focusSearch();
@@ -636,8 +640,11 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) f[k] = p[k];
       if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
       state.searchCursor = -1; clearFocusedRow();
+      const asked = Object.fromEntries(Object.entries(state.filters).filter(([k]) => k in p));
+      pruneFilters();                                                                      // (what the settings leave without a control is not applied, and said so)
+      const ignored = Object.keys(asked).filter((k) => asked[k] && state.filters[k] !== asked[k]);
       refresh();
-      return filterState();
+      return { ...filterState(), ignored };
     },
     clearFilters: () => { clearAllFilters(); return filterState(); }
   };

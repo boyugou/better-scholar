@@ -165,11 +165,19 @@
   // chrome.storage.sync takes 120 writes a minute and says nothing when it refuses one. A change is shown at once and written at once, unless a write was made a moment
   // ago: then the latest state is written when that moment is over, so a run of changes (a bulk switch, a drag, typing a name) costs a few writes, not one for each.
   // The echo of a write comes back from storage as a change: it is not taken for somebody else's (the state of this page is newer), and a change made elsewhere while this
-  // page has one of its own to write loses to it.
+  // page has one of its own to write loses to it. An echo is told from another page's change by being one of the writes this page has made and has not seen back yet, in the
+  // order they were made (a change that looks like an older write of this page, from another page, is that page's).
   const WRITE_GAP = 600;                                                        // (100 writes a minute at the fastest)
+  const RETRY_AFTER = 10000;                                                    // (a refused write is made again after this long: the minute's allowance is back)
   let savedTimer = 0, lastWrite = 0, writeTimer = 0, dirty = false, inFlight = false, waiters = [];
-  const written = [];                                                           // (what the last writes were: their echoes)
-  const isEcho = (next) => dirty || inFlight || written.includes(JSON.stringify(next));
+  const awaiting = [];                                                          // (the writes whose echoes have not come: { json, at }, oldest first)
+  function isEcho(next) {
+    const json = JSON.stringify(next), now = Date.now();
+    while (awaiting.length && now - awaiting[0].at > 10000) awaiting.shift();   // (a write that changed nothing has no echo)
+    const i = awaiting.findIndex((w) => w.json === json);
+    if (i >= 0) { awaiting.splice(0, i + 1); return true; }
+    return dirty || inFlight;
+  }
   function status(text, bad) {
     $("saved").textContent = text;
     $("saved").classList.toggle("bad", !!bad);
@@ -181,9 +189,10 @@
     writeTimer = 0;
     if (!dirty) return;
     dirty = false; inFlight = true; lastWrite = Date.now();
-    written.push(JSON.stringify(B.prefs.normalize(prefs))); written.splice(0, written.length - 8);
+    awaiting.push({ json: JSON.stringify(B.prefs.normalize(prefs)), at: lastWrite });
     const ok = await B.store.savePrefs(prefs);
     inFlight = false;
+    if (!ok) { awaiting.pop(); dirty = true; if (!writeTimer) writeTimer = setTimeout(flush, RETRY_AFTER); }      // (the change is still to be written: again later, and when the page is left)
     if (!dirty) document.body.removeAttribute("data-rr-pending");
     const done = waiters; waiters = [];
     done.forEach((resolve) => resolve(ok));
@@ -200,7 +209,8 @@
     syncers.forEach((fn) => fn());
     dirty = true;
     document.body.setAttribute("data-rr-pending", "");
-    if (!writeTimer) writeTimer = setTimeout(flush, Math.max(0, lastWrite + WRITE_GAP - Date.now()));
+    clearTimeout(writeTimer);                                                    // (also a retry that was waiting: the new change is written when the gap is over)
+    writeTimer = setTimeout(flush, Math.max(0, lastWrite + WRITE_GAP - Date.now()));
     return new Promise((resolve) => waiters.push(resolve));
   }
   window.addEventListener("pagehide", () => { if (dirty) flush(); });
@@ -213,18 +223,18 @@
   const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, words), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
 
   // A name: the text of a title or a name on the screen, in the person's own words, in every language. Empty is the built-in text, shown in grey: what the field would say.
-  // (It is shown in the preview as it is typed and saved when the field is left or Enter is pressed; Escape gives the old name back.)
+  // (It is shown in the preview and saved as it is typed (the writes are spaced, see save()), trimmed when the field is left or Enter is pressed; Escape gives the old name back.)
   function nameEdit(row, off) {
     const path = row.path, key = row.label;
     let before = "";
     const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off",
       placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
       onFocus: () => { before = at(path); },
-      onInput: () => { put(path, input.value); B.dom.setLabels(prefs.labels); renderPreview(); },
+      onInput: () => { put(path, input.value); save(); },                         // (saved as it is typed, a few writes at most: a name typed and the page closed is kept)
       onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
       onKeydown: (e) => {
         if (e.key === "Enter") { e.preventDefault(); input.blur(); }
-        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); B.dom.setLabels(prefs.labels); renderPreview(); }
+        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); save(); }
       } });
     const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
       onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");

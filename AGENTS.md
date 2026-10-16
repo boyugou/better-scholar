@@ -21,7 +21,7 @@ Example — years chart off, BibTeX and summary buttons first, last-author rows 
 
 Rules:
 - `semanticScholar` sends paper titles to a third party: turn it on only if the user asks for it. No preset touches it.
-- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel; every other `panel.*` setting then has no effect. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).
+- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel on the profile page; the settings of the table, of the awards and talks counts and of the copy buttons (`panel.table.*`, `panel.marks.*`, `panel.copy.*`) still decide what the toolbar popup shows, and every other `panel.*` setting has no effect then. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).
 - The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.
 - What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.
 - Colours are `"#rrggbb"` only; `""` restores the built-in colour of a role.
@@ -65,7 +65,7 @@ Rules:
 | `colors.core` | "#rrggbb" or "" | `""` | Colour of the CORE chips, "#rrggbb"; "" is the built-in indigo. |
 | `colors.award` | "#rrggbb" or "" | `""` | Colour of the award chips, "#rrggbb"; "" is the built-in gold. |
 | `colors.talk` | "#rrggbb" or "" | `""` | Colour of the talk chips (Oral, Spotlight, Highlight), "#rrggbb"; "" is the built-in slate. |
-| `panel.show` | true / false | `true` | The panel in the right-hand column: off hides all of it and every panel.* setting then has no effect. |
+| `panel.show` | true / false | `true` | The panel in the right-hand column of the profile page: off hides all of it. The settings of the table, of the awards and talks counts and of the copy buttons still decide what the toolbar popup shows; every other panel.* setting has no effect then. |
 | `panel.order` | list of ids | `["table","copy","marks","filters","metrics","years","venues","status","names"]` | The parts of the panel from top to bottom: a list of part ids (table, copy, marks, filters, metrics, years, venues, status, names). Ids left out follow in the default order; a part's own show switch hides it without changing its place. |
 | `panel.header.name` | true / false | `true` | The panel's title at the top. |
 | `labels.extShortName` | text, at most 30 characters | `""` | The text of the panel's title (default: "Better Scholar"): your own words, in every language; "" brings the built-in text back. |
@@ -76,8 +76,8 @@ Rules:
 | `panel.table.title` | true / false | `true` | The title line of the table. |
 | `labels.summaryTitle` | text, at most 30 characters | `""` | The text of the title of the role × rank table (default: "Papers by role and rank"): your own words, in every language; "" brings the built-in text back. |
 | `labels.summaryTitleRoles` | text, at most 30 characters | `""` | The text of the table's title when no venue of the profile is ranked (default: "Papers by role"): your own words, in every language; "" brings the built-in text back. |
-| `panel.table.ccf` | true / false | `true` | A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use. |
-| `panel.table.core` | true / false | `true` | A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use. |
+| `panel.table.ccf` | true / false | `true` | A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use (while the table is not drawn, a list is used where the rows' chips show it). |
+| `panel.table.core` | true / false | `true` | A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use (while the table is not drawn, a list is used where the rows' chips show it). |
 | `panel.table.unranked` | true / false | `true` | The column of papers whose venue has no rank (drawn as “–”). |
 | `labels.tipUnranked` | text, at most 30 characters | `""` | The text of the name of the unranked column (its tooltip, the popup's legend) (default: "Not ranked"): your own words, in every language; "" brings the built-in text back. |
 | `panel.table.total` | true / false | `true` | The totals: the All column and the All row. |
@@ -238,7 +238,7 @@ Result: { owner, total, papers: [{ id, title, authors, venue, year, citations, r
 The papers or the summary as text, in the format of a copy button.
 Parameters:
   - `format` (required): summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180).
-  - `source`: Which ranking summary and table use (default: the one the panel shows; none: by role only). The other formats ignore it.
+  - `source`: Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). The other formats ignore it.
   - `html`: true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text.
 Result: { format, text, html? } — `html` only when asked for, and only for table, papers and apa.
 
@@ -251,12 +251,12 @@ Parameters:
   - `yearEnd`: Papers up to this year.
   - `minCitations`: Papers cited at least this often.
   - `impact`: The highlighted papers behind the h-index (at least h citations, h counted over the highlighted papers the other filters let through) or the i10-index (at least 10 citations).
-Result: { shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing).
+Result: { shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors, ignored } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing); `ignored` names the filters asked for that were not applied because the settings leave them with no control on the page to undo them (the search box, the filter bar, the citation totals …).
 
 ### `clearFilters`
 Remove every filter: the search, a table cell, an awards row, a venue, the year range.
 Parameters: none.
-Result: { shown, total, filters, errors } — as `filter` returns it, after the filters are cleared.
+Result: { shown, total, filters, errors } — as `filter` returns it (without `ignored`), after the filters are cleared.
 
 ## Search syntax
 

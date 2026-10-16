@@ -3,7 +3,7 @@
 // preview, one click to show it again. All of it changes the settings the controls on the left change (the page's put / save), so the two sides are one record.
 //
 // The preview's own DOM is drawn again after every change, so nothing here lives in it: the overlays are children of the preview's card, placed by measuring, and the page
-// calls refresh() after it has drawn the preview. What the panel marks for this module: data-rr-part (the path of the switch that draws it), data-rr-label (the message
+// calls refresh() after it has drawn the preview. What the panel marks for this module: data-rr-part (the path of the switch that draws it, or the paths of the switches, separated by spaces), data-rr-label (the message
 // key of a text with a name), data-rr-order on a container (the path of its order setting) with data-rr-item (or data-section) on its items, data-rr-axis="x" for a row.
 (function () {
   "use strict";
@@ -35,20 +35,20 @@
       const box = item && item.parentElement && item.parentElement.closest("[data-rr-order]");
       return item && box && box.contains(item) ? { item, box, id: item.dataset.rrItem !== undefined ? item.dataset.rrItem : item.dataset.section } : null;
     };
-    const hidePart = (path) => { hide(); put(path, false); save(); };
+    const hidePart = (path) => { hide(); for (const p of path.split(" ")) put(p, false); save(); };                  // (a thing that several switches draw: all of them go)
 
     function show(el) {
       if (el === current) return;
       clearTimeout(hideTimer);
       current = el;
-      const path = el.dataset.rrPart, sec = el.closest("[data-section]"), labelEl = el.closest("[data-rr-label]"), isSection = el === sec;
+      const path = el.dataset.rrPart, first = path.split(" ")[0], sec = el.closest("[data-section]"), labelEl = el.closest("[data-rr-label]"), isSection = el === sec;
       // the tag: for a thing in a part (the part itself has its rail)
       tag.replaceChildren();
       if (!isSection) {
         const g = groupOf(el);
         if (g && g.item === el) tag.append(btn("pv-grip", "⠿", t("optDragMove"), null));
         if (labelEl) tag.append(btn("pv-edit", "✎", t("optRename"), () => openRename(labelEl)));
-        tag.append(btn("pv-x", "✕", `${t("optHide")}: ${partName(path)}`, () => hidePart(path)));
+        tag.append(btn("pv-x", "✕", `${t("optHide")}: ${partName(first)}`, () => hidePart(path)));
         if (tag.firstChild && tag.firstChild.classList.contains("pv-grip")) tag.firstChild.addEventListener("pointerdown", (e) => startDrag(e, g));
         const r = rel(el);
         tag.hidden = false;
@@ -185,7 +185,7 @@
       for (const el of marked) el.classList.remove("pv-hot");
       marked = [];
       if (!path && !labelKey) return;
-      const sel = path ? `[data-rr-part="${path}"]` : `[data-rr-label="${labelKey}"]`;
+      const sel = path ? `[data-rr-part~="${path}"]` : `[data-rr-label="${labelKey}"]`;
       marked = [...aside.querySelectorAll(sel)];
       for (const el of marked) el.classList.add("pv-hot");
       const first = marked.find((el) => el.offsetParent);

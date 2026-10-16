@@ -1178,6 +1178,31 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.deepEqual(Object.values((await stored(opts, "sync", "prefs")).labels).filter(Boolean), [], "every name is back to the standard");
     ok("names: your own words for a title, a column or a button, on the page, in the preview and in the popup, in every language, while the exports keep the standard words");
 
+    // -- S3d2. what is typed is kept even if the page is left first, and two settings pages do not undo each other (an older write of this page is not the other page's echo)
+    {
+      const second = await openOptions(context);
+      await second.bringToFront();
+      await second.fill('input[data-pref="labels.metricsTitle"]', "Typed only");                       // (no Enter, no leaving the field: the name is saved as it is typed)
+      await settle(second);
+      assert.equal((await stored(second, "sync", "prefs")).labels.metricsTitle, "Typed only", "a name typed and not confirmed is stored");
+      await second.fill('input[data-pref="labels.metricsTitle"]', "");
+      await settle(second);
+      assert.equal((await stored(second, "sync", "prefs")).labels.metricsTitle, "");
+      // A turns "Papers by year" off and on again; B (the other page) turns it off: A follows B, and A's next change does not bring the old state back
+      await setPref(opts, "panel.years.show", false);
+      await setPref(opts, "panel.years.show", true);
+      await opts.waitForTimeout(400);
+      await setPref(second, "panel.years.show", false);
+      await opts.bringToFront();
+      await opts.waitForFunction(() => !document.querySelector('input[data-pref="panel.years.show"]').checked, null, { timeout: 5000 });
+      await setPref(opts, "panel.venues.show", true);
+      assert.equal((await stored(opts, "sync", "prefs")).panel.years.show, false, "the change of the other page is still there after this page wrote something else");
+      await setPref(opts, "panel.venues.show", false);
+      await setPref(opts, "panel.years.show", true);
+      await second.close();
+      ok("settings: a name is saved as it is typed; a change made on another settings page is followed and not undone by this page's next change");
+    }
+
     // -- S3e. the look of the chips: a style, a shape, the words of the rank chips, a colour for each family, and ready-made looks
     // (a colour mixed by the stylesheet is reported as color(srgb …): painted on a canvas it is read back as plain rgb)
     const chipStyleOn = (pg, sel) => pg.locator(sel).first().evaluate((el) => {
