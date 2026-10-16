@@ -35,7 +35,7 @@
   "numbers.guards": "잘못된 등급이 표시되지 않도록 막는 검사",
   "numbers.awards": "확장 프로그램이 인식한 수상 논문",
   "numbers.real": "사람이 등급을 하나하나 확인한 실제 Scholar 게재처 표시",
-  "numbers.tests": "실제 브라우저에서 실행하는 E2E 테스트 모음과는 별도의 단위 테스트",
+  "numbers.tests": "단위 테스트 (그 밖에 실제 브라우저에서 실행하는 E2E 테스트 모음)",
   "install.title": "설치",
   "install.step1": "GitHub에서 프로젝트를 내려받고(녹색 “코드” 버튼 → “ZIP 다운로드”), 압축을 풉니다.",
   "install.step2": "chrome://extensions를 열고 “개발자 모드”를 켭니다.",

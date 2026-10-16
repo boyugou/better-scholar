@@ -35,7 +35,7 @@
   "numbers.guards": "誤ったランクの表示を防ぐチェック",
   "numbers.awards": "拡張機能が認識した受賞論文",
   "numbers.real": "Scholar の実際の掲載先表記、人が一件ずつランクを確認したもの",
-  "numbers.tests": "実ブラウザで動く E2E テスト一式とは別の単体テスト",
+  "numbers.tests": "単体テスト（ほかに実ブラウザで動く E2E テスト一式）",
   "install.title": "インストール",
   "install.step1": "GitHub からプロジェクトをダウンロードし（緑色の「<> コード」ボタンから「ZIP をダウンロード」）、解凍します。",
   "install.step2": "chrome://extensions を開き、「デベロッパー モード」をオンにします。",
