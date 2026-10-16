@@ -137,10 +137,15 @@ coverage offline without runtime network access.
 
 What is checked: `node scripts/axe-audit.mjs` runs axe-core 4.10's default rules over the panel on the local Scholar
 stand-in (light, with the system in dark mode, filtered with the unranked-venue list open, every part on, the
-narrow-window layout, in Arabic, Japanese, Thai and German), the settings page (light and dark) and the toolbar popup
-(no profile tab), and exits 1 on any violation; it is run by hand, not in CI. A unit test keeps the faint text
-colours at a contrast of 4.5:1 or more, and the settings page rates each role colour against Scholar's white page
-(3:1). None of this is a claim of conformance to a WCAG level.
+narrow-window layout, in Arabic, Japanese, Thai and German), the settings page (light and dark, and in the states a person
+puts it in: a part hovered, a name being renamed, the tray open, a venue checked) and the toolbar popup (no profile tab, and
+over a profile in light and dark and in four languages), measures the popup with every name at its longest, and exits 1 on any
+violation; it is run by hand, not in CI. `npm run audit:overflow` measures the settings page in 30 languages × 5 widths ×
+light and dark for anything that runs out of its box (also with every name at 30 characters). Unit tests keep the faint text
+colours at a contrast of 4.5:1 or more and the text of every chip at any picked colour (`test/palette.test.js`), and the
+settings page rates each role colour against Scholar's white page (3:1). The preview on the settings page is out of the tab
+order and not read out: the controls on the left are the page for a keyboard and a screen reader. None of this is a claim of
+conformance to a WCAG level.
 
 *Audit of 2026-10-12* (axe-core 4.10, then injected into the end-to-end pages): on the settings page (light and dark),
 the panel (also with the year list open, and in two presets of that version) and the popup, after 2.10.83 no

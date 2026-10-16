@@ -50,5 +50,8 @@ Each with its reason in [*Considered and set aside*](docs/ROADMAP.md#considered-
 - Search operators with suggestions; eight copy and export formats, each with its own switch, also in the toolbar
   popup; the viewer of saved paper details; the guide for AI agents and the page events; 30 interface languages.
   See [`CHANGELOG.md`](CHANGELOG.md).
+- The settings page as an editor (2.40–2.41): a switch for every thing the panel draws, orders, your own names, chip looks,
+  a preview that edits and jumps to the setting, *Check a venue*, the web demo on the site, HTML on the clipboard for Word and
+  Docs, and `type:` in the search.
 - Accessibility is checked, not certified: what `scripts/axe-audit.mjs` and the tests check is in
   [*Accessibility*](docs/ROADMAP.md#accessibility).
