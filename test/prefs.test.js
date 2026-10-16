@@ -332,3 +332,11 @@ test("the record, with every name at its longest in a language that takes three 
   const bytes = Buffer.byteLength(JSON.stringify(worst.prefs)) + "prefs".length;
   assert.ok(bytes < 7400, "the record is " + bytes + " bytes");
 });
+
+test("names: nothing in a name shows nothing or turns the text around, and the joiners some scripts need stay", () => {
+  const r = prefs.apply(prefs.defaults(), { labels: { metricsTitle: "My\u202e papers\u200b\u2066", copySummary: "Copy\u0000 \u061csummary\ufeff" } });
+  assert.deepEqual([r.prefs.labels.metricsTitle, r.prefs.labels.copySummary], ["My papers", "Copy summary"], "bidi marks and overrides, zero-width characters and controls are gone");
+  const persian = "می\u200cخواهم";          // (a non-joiner inside a word)
+  assert.equal(prefs.apply(prefs.defaults(), { labels: { metricsTitle: persian } }).prefs.labels.metricsTitle, persian, "the zero-width non-joiner stays");
+  assert.equal(prefs.normalize({ labels: { mH: "h\u202e-index" } }).labels.mH, "h-index", "a stored record is read the same way");
+});

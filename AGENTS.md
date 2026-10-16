@@ -25,7 +25,7 @@ Rules:
 - The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.
 - What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.
 - Colours are `"#rrggbb"` only; `""` restores the built-in colour of a role.
-- A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `""` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words.
+- A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `""` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words. A name is one line; control characters, zero-width characters and left-to-right / right-to-left marks are removed from it.
 - A language is a code from the list below. Changing `language` reloads the settings page.
 - Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.
 

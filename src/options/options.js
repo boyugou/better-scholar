@@ -231,7 +231,7 @@
       placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
       onFocus: () => { before = at(path); },
       onInput: () => { put(path, input.value); save(); },                         // (saved as it is typed, a few writes at most: a name typed and the page closed is kept)
-      onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
+      onChange: () => { put(path, B.prefs.cleanName(input.value)); save(); },
       onKeydown: (e) => {
         if (e.key === "Enter") { e.preventDefault(); input.blur(); }
         else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); save(); }

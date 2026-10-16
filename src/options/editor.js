@@ -174,7 +174,7 @@
       if (!r || r.done) return;
       r.done = true;
       renaming = null;
-      const words = r.input.value.replace(/\s+/g, " ").trim();
+      const words = B.prefs.cleanName(r.input.value);
       r.box.remove();
       if (keep && words !== (at("labels." + r.key) || r.def)) { put("labels." + r.key, words === r.def ? "" : words); save(); }
     }
