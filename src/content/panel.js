@@ -526,7 +526,7 @@
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
       marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
         "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), onClick: () => cb.onMarkGroup(g) },
-        h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab", ...L(MARK_KEY[g]) }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
+        h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab", ...L(MARK_KEY[g]) }, t(MARK_KEY[g])), h("b", {}, String(counts[g] || 0)))));          // (a pressed row with nothing left to count says 0)
     }
 
     // (a list the person opened stays open when the panel is drawn again, e.g. while more papers arrive)
@@ -609,7 +609,7 @@
 
     function syncFilters(m) {
       const fp = m.prefs.panel.filters;
-      if (queryInput.value.trim() !== (m.filters.query || "")) queryInput.value = m.filters.query || "";
+      if (queryInput.value.trim() !== (m.filters.query || "")) { closeSuggest(); queryInput.value = m.filters.query || ""; }          // (the list's positions are those of the text it was made for)
       syncSearchUI(m);
       onlyCb.checked = !!m.filters.onlyHighlighted;
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];

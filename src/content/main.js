@@ -196,10 +196,10 @@
   }
 
   // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
-  // highlighted papers the other filters let through — not counting the picks (a table cell, an awards row), so that picking one never moves the minimum and with it the counts; at least
-  // 10 for i10. 0: no such filter.
+  // highlighted papers the other filters let through, as the button says (a pick — a table cell, an awards row — is one of the filters); at least 10 for i10. 0: no such filter.
+  // The counts (`counted()`) take the minimum without the picks (`picks: false`), so that picking one never moves it and with it the counts.
   // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
-const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
+const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: !picks })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
   // Do the filters let this row through? `skip`: choices to leave out — `venue` (the venue list is not narrowed by its own choice), `selection` (the table's cell, for the table's
   // own counts), `marks` (an awards row, for the awards counts).
@@ -271,7 +271,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // The rows the table, the awards and talks counts and the panel's copy summary count: the rows those filters leave (with the counts following the filters, a setting), else every row
   function counted() {
     if (!prefs.panel.filters.follow || !scopeFiltering()) return live();
-    const source = currentSource(), min = impactMin(source), skip = { selection: true, marks: true };
+    const source = currentSource(), min = impactMin(source, { picks: false }), skip = { selection: true, marks: true };
     return live().filter((r) => !hides(r, source, min, skip));
   }
   // The table's summary: of the rows counted, with the rows (roles) of the whole list so that the table does not change its shape under a filter
@@ -391,7 +391,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (!prefs.panel.filters.follow || !scopeFiltering()) return "";
     const source = currentSource();
     const parts = panel.filterParts({ source, selection: null, markGroup: null, venueKey: state.venueKey, filters: state.filters,
-      filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } }, true, td);
+      filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source, { picks: false }) } : null } }, true, td);
     return td("filterShowing", [String(counted().length), String(live().length)]) + (parts.length ? " · " + parts.join(" · ") : "");
   }
   // What a copied summary says about where it is from, so that it can be filed or sent on: the profile's own link (nothing else of the address) and the day, when the setting is on; and,

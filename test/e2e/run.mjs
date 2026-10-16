@@ -181,7 +181,7 @@ const setMark = async (p, group, on) => { await setPref(p, "rows." + group, on);
 // (the settings page writes what it was told a moment later than it was told, at most 85 times a minute: a read of its settings waits for that write)
 const settle = async (p) => { await pollPage(p, () => !document.body.hasAttribute("data-rr-pending")).catch(() => {}); await budget(p); };
 // (a profile may write 120 times in a minute: with fewer than `reserve` writes of the minute left, wait for the oldest ones to age out)
-const budget = async (p, reserve = 25) => {
+const budget = async (p, reserve = 40) => {
   const log = p.context().rrWrites;
   while (log) {
     const now = Date.now();
@@ -1288,14 +1288,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal(await visibleRows(page), narrow.last.A, "and lists the papers of that cell within the years chosen");
       await page.click(cell);
       await eventually(page, () => !document.querySelector('button.rr-cell[aria-pressed="true"]'));
-      // the h-index filter's minimum does not move with a pick either: with it pressed, a cell leaves the counts as they were
+      // the h-index filter: the counts take its minimum without the picks (a cell leaves them as they were), while the button, with a cell picked, still lists the papers behind its own number
       await page.click('[data-metric="mH"]');
       await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
       const withH = await readMatrix(page);
-      await page.click('button.rr-cell[data-role="first"][data-tier="A"]');
-      await eventually(page, () => document.querySelector('button.rr-cell[data-role="first"][data-tier="A"][aria-pressed="true"]'));
+      await page.click(cell);
+      await eventually(page, () => document.querySelector('button.rr-cell[data-role="last"][data-tier="A"][aria-pressed="true"]'));
       assert.deepEqual(await readMatrix(page), withH, "a pick, with the h-index papers listed, leaves the counts as they were");
-      await page.click('button.rr-cell[data-role="first"][data-tier="A"]');
+      if (narrow.last.A) assert.ok((await visibleRows(page)) > 0, "and the button still lists the papers behind its own number");
+      await page.click(cell);
       await page.click('[data-metric="mH"]');
       await eventually(page, () => !document.querySelector('[data-metric="mH"][aria-pressed="true"]') && !document.querySelector('button.rr-cell[aria-pressed="true"]'));
       // what the copy buttons put on the clipboard says what it counted

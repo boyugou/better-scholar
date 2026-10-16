@@ -266,8 +266,10 @@ is picked from and what is copied is what the panel shows. The table keeps the r
 and the copied text says what it counted ("Showing 25 of 100 papers · 2021–…": a line under the summary's title, a row under the
 tab-separated table, the caption of the real table). Only the year bars stay whole (a range is chosen against them), and so do
 the coverage lines (loaded, hidden, absent) and the toolbar popup; the `summary` and `export` calls count every paper unless
-they are given `filtered: true` (the panel's way of counting). The minimum of the h-index filter is worked out without the picks
-(`impactMin()`), so that a pick never moves it and with it the counts; a paper with no year is in no year range.
+they are given `filtered: true` (the panel's way of counting). The minimum of the h-index filter for the *counts* is worked out
+without the picks (`impactMin(source, { picks: false })`), so that a pick never moves it and with it the counts; the list and the
+button use the h-index as the button says it, picks included, so that the button lists the papers behind its own number. A paper
+with no year is in no year range.
 
 The impact filter is the h-index and i10 buttons: it shows the highlighted papers behind the number — at least *h* citations,
 *h* being the h-index of the highlighted papers the other filters let through (`impactMin()`), or at least 10. The totals do not
