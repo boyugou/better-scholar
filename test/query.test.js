@@ -218,3 +218,38 @@ test("a quick filter is found in the query whatever the case it was typed in; th
   assert.equal(analysis.queryMatcher("mf kaashoek").test(read), true, "the line, as the page printed it");
   assert.equal(analysis.queryMatcher("frans balakrishnan").test(read), true, "and the names of the whole list");
 });
+
+test("quick filters pressed in any order, and released again, give the query that selects what they say: any of the values of one operator, all of the others; a word typed twice is released at once", () => {
+  let seed = 777;
+  const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+  const pick = (a) => a[Math.floor(rnd() * a.length)];
+  const OPS = ["role:first", "role:last", "role:cofirst", "role:second", "ccf:a", "ccf:b", "ccf:c", "core:a*", "core:a", "has:award", "has:talk", "type:journal", "type:conference", "cites:>100", "age:<5", "year:>2020"];
+  const NOW = 2026;
+  const rows = Array.from({ length: 150 }, () => ({
+    text: ["a paper"], year: rnd() < 0.1 ? null : 2000 + Math.floor(rnd() * 27), citations: Math.floor(rnd() * 300), role: pick(["first", "cofirst", "second", "last", "middle", ""]),
+    ccf: pick([null, "a", "b", "c"]), core: pick([null, "a*", "a", "b", "c"]), type: pick([null, "conference", "journal"]), award: rnd() < 0.2, talk: rnd() < 0.2
+  }));
+  const holds = (op, r) => {
+    const at = op.indexOf(":"), name = op.slice(0, at), v = op.slice(at + 1);
+    return { role: r.role === v, ccf: r.ccf === v, core: r.core === v, type: r.type === v, has: v === "award" ? r.award : r.talk, cites: r.citations > 100, age: r.year != null && NOW - r.year < 5, year: r.year != null && r.year > 2020 }[name];
+  };
+  for (let i = 0; i < 400; i++) {
+    let q = "";
+    const pressed = new Set();
+    for (let k = 0, n = 1 + Math.floor(rnd() * 9); k < n; k++) { const op = pick(OPS); q = query.toggleValue(q, op); if (!pressed.delete(op)) pressed.add(op); }
+    for (const op of OPS) assert.equal(query.hasValue(q, op), pressed.has(op), `${q} / ${op}`);
+    const parsed = query.parse(q);
+    assert.deepEqual(parsed.errors, [], q);
+    const groups = new Map();
+    for (const op of pressed) { const name = op.slice(0, op.indexOf(":")); groups.set(name, [...(groups.get(name) || []), op]); }
+    for (const r of rows) {
+      let want = true;
+      for (const [name, ops] of groups) want = want && (query.LISTED.has(name) ? ops.some((o) => holds(o, r)) : ops.every((o) => holds(o, r)));
+      assert.equal(query.matches(parsed, r, NOW), want, `${q} / ${JSON.stringify(r)}`);
+    }
+  }
+  // the same word typed twice goes with one press
+  assert.equal(query.toggleValue("ccf:a  ccf:a", "ccf:a"), "");
+  assert.equal(query.toggleValue("role:last foo role:First,LAST", "role:last"), "foo role:first");
+  assert.equal(query.toggleValue("AGE:<5 age:<5", "age:<5"), "");
+});

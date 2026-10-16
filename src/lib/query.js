@@ -99,12 +99,15 @@
   // The query with the quick filter put in (joining the word of its operator) or taken out
   function toggleValue(q, op) {
     const ws = words(q), { name, value } = parts(op);
-    if (!LISTED.has(name)) { const i = ws.findIndex((w) => w.toLowerCase() === op); if (i >= 0) ws.splice(i, 1); else ws.push(op); return ws.join(" "); }
-    const has = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name && s.values.includes(value); });
-    if (has >= 0) {
-      const left = split(ws[has]).values.filter((v) => v !== value);
-      if (left.length) ws[has] = name + ":" + left.join(","); else ws.splice(has, 1);
-      return ws.join(" ");
+    // (taken out of every word that has it: the person may have typed it twice)
+    if (!LISTED.has(name)) { const left = ws.filter((w) => w.toLowerCase() !== op); return (left.length < ws.length ? left : [...ws, op]).join(" "); }
+    if (ws.some((w) => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })) {
+      return ws.flatMap((w) => {
+        const s = split(w);
+        if (!s || s.name !== name || !s.values.includes(value)) return [w];
+        const left = s.values.filter((v) => v !== value);
+        return left.length ? [name + ":" + left.join(",")] : [];
+      }).join(" ");
     }
     const same = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name; });
     if (same >= 0) ws[same] = ws[same].replace(/,+$/, "") + "," + value; else ws.push(op);
