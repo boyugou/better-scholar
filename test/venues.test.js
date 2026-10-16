@@ -226,7 +226,7 @@ test("every alias points at a real dataset row", () => {
     if (a.shadow) { assert.ok(a.shadow.length && a.shadow.every((x) => /^[A-Za-z][A-Za-z0-9-]{2,14}$/.test(typeof x === "string" ? x : x.acronym)), "shadow acronyms"); continue; }   // (an unranked event: no row to point at)
     if (a.ccf) {
       const kind = a.kind || "C";
-      const hit = ccf.venues.filter((v) => v.kind === kind && venues.squash(v.abbr) === venues.squash(a.ccf) && (!a.ccfTier || v.tier === a.ccfTier));
+      const hit = ccf.venues.filter((v) => v.kind === kind && venues.squash(v.abbr || v.name) === venues.squash(a.ccf) && (!a.ccfTier || v.tier === a.ccfTier));
       assert.ok(hit.length, `CCF row not found for alias ${JSON.stringify(a.ccf)} (${kind})`);
     }
     if (a.core) {
@@ -234,7 +234,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.starts && a.starts.length));
   }
 });
 
@@ -447,7 +447,9 @@ test("the ACM Digital Library's citation form names the event whatever follows: 
     assert.equal(brief(s), sc, s);
   }
   assert.equal(brief("ICSE '06: Proceedings of the 28th international conference on Software engineering, 2006"), "CCF A ICSE · CORE A* ICSE");
-  assert.equal(brief("Proceedings of the international conference for high performance computing …, 2021"), "", "no acronym, and the visible words fit several venues");
+  // (the start is SC's own: no other venue says "International Conference for High Performance Computing"; 6 strings of the real profiles — aliases.js `starts`)
+  assert.equal(brief("Proceedings of the international conference for high performance computing …, 2021"), sc);
+  assert.equal(brief("Proceedings of the international conference on high performance computing …, 2021"), "", "no acronym, and the visible words fit several venues");
 });
 
 test("ICSM is the old name of ICSME", () => {
@@ -716,7 +718,7 @@ test("IEEE Xplore's citation form 'Name, 2002. ACR 2002., pages' reads as 'Name 
   assert.equal(brief("Proceedings Visualization, 2001. VIS'01., 21-29, 537, 2001"), "CCF A IEEE VIS · CORE A IEEE VIS");
   assert.equal(brief("IEEE International Conference on Communications, 2003. ICC'03. 2, 1080-1084, 2003"), "CCF C ICC");
   // where the acronym is followed by more name, nothing is rewritten
-  assert.equal(brief("Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on, 292-301, 2007"), "CCF B ICDM");
+  assert.equal(brief("Data Mining, 2007. ICDM 2007. Seventh IEEE International Conference on, 292-301, 2007"), "CCF B ICDM · CORE A* ICDM");
   assert.equal(venues.prepare("IEEE Visualization, 2002. VIS 2002., 355-362, 2002").name, "IEEE Visualization (VIS)");
 });
 
@@ -1099,12 +1101,12 @@ test("a journal's own name with a volume is that journal: a one-word title in ca
 
 test("the acronym a string opens with decides between venues whose names boil down to the same words: 'AAAI'17: Proceedings of the … AAAI Conference on Artificial Intelligence' is AAAI (CCF A), not IJCAI (B)", () => {
   for (const [s, want] of [["AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, 4278-4284, 2017", "CCF A AAAI · CORE A* AAAI"], ["AAAI 2019: 33rd AAAI Conference on Artificial Intelligence, 2019", "CCF A AAAI · CORE A* AAAI"],
-    ["IJCAI'18: Proceedings of the 27th International Joint Conference on Artificial Intelligence, 2018", "CCF B IJCAI · CORE A* IJCAI"], ["SDM '19: Proceedings of the SIAM International Conference on Data Mining, 123-145, 2019", "CCF B SDM"],
+    ["IJCAI'18: Proceedings of the 27th International Joint Conference on Artificial Intelligence, 2018", "CCF B IJCAI · CORE A* IJCAI"], ["SDM '19: Proceedings of the SIAM International Conference on Data Mining, 123-145, 2019", "CCF B SDM · CORE A SDM"],
     ["Proceedings of the 3rd ACM SIGCOMM Conference on Internet Measurement, 91-100, 2003", "CCF B IMC · CORE A IMC"], ["Tenth International AAAI Conference on Web and Social Media, 2016", "CCF B ICWSM · CORE A ICWSM"]]) assert.equal(brief(s), want, s);
   // AAAI's own forms ("AAAI-23: Thirty-Seventh AAAI Conference …": the acronym said twice is said once; "… Conference on Artificial Intelligence (AAAI-07)": the acronym in the parenthesis
   // is not IJCAI's), and ACM's journal-first title with the track in its parenthesis ("(ISSTA)" is ISSTA, no longer ICSE; "(FSE)" is the Foundations of Software Engineering, not Fast Software Encryption)
   for (const [s, want] of [["AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023", "CCF A AAAI · CORE A* AAAI"], ["Proceedings of the 22th Conference on Artificial Intelligence (AAAI-07), 2007", "CCF A AAAI · CORE A* AAAI"],
-    ["Proceedings of the ACM on Software Engineering 2 (ISSTA), 1009-1030, 2025", "CCF A ISSTA"], ["Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE"],
+    ["Proceedings of the ACM on Software Engineering 2 (ISSTA), 1009-1030, 2025", "CCF A ISSTA · CORE A ISSTA"], ["Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE · CORE A* FSE"],
     ["2025 USENIX Annual Technical Conference (ATC'25), 2025", "CCF A ACM SIGOPS ATC · CORE A USENIX"], ["COLING-02: Machine Translation in Asia, 2002", ""], ["DS-30: Proceedings of DESIGN 2002", ""],
     // an acronym in front of a name that says what the event is about, in words that are not the venue's ("ITS" is CORE's Intelligent Tutoring Systems; this is ACM's Interactive Tabletops and Surfaces)
     ["ITS '14: ACM International Conference on Interactive Tabletops and Surfaces, 2014", ""], ["ITS 2014: International Conference on Intelligent Tutoring Systems, 2014", "CORE B ITS"],
@@ -1181,7 +1183,7 @@ test("the seventh review: a venue's whole name beats a parenthesised acronym of 
   // the organisation and the name are in the string: it is USENIX Security whatever the parenthesis says (SEC is IFIP's, and an Edge Computing symposium's)
   eq("Proceedings of the 26th USENIX Conference on Security Symposium (SEC'17), 1-18, 2017", "CCF A USENIX Security · CORE A* USENIX-Security");
   // AAAI's other form, "ACRONYM-19:", vetoes a name that boils down to another venue's too
-  eq("SDM-19: SIAM International Conference on Data Mining, 2019", "CCF B SDM");
+  eq("SDM-19: SIAM International Conference on Data Mining, 2019", "CCF B SDM · CORE A SDM");
   // a cut name shows its start: four words that are not "on" or "and" — not "… Workshop on Artificial Intelligence and …"
   for (const s of ["Proceedings of the 2nd International Workshop on Artificial Intelligence and …, 2019", "Proceedings of the 12th ACM Workshop on Artificial Intelligence and …, 2019"]) assert.deepEqual([resolver.resolve(s).ccf, resolver.resolve(s).core], [null, null], s);
   eq("Proceedings of the 16th ACM Workshop on Hot Topics in Storage and File …, 2024", "CCF C HotStorage");
@@ -1330,4 +1332,92 @@ test("an acronym in a parenthesis after a name of its own is that venue's only i
   eq("IEEE International Symposium on Object/Component/Service-Oriented Real-Time Distributed Computing (ISORC)", "CORE C ISORC");
   // a workshop of a renamed venue that does not say "Workshop on": WACV's workshops (the IEEE source name has no "Conference")
   none("IEEE Winter Applications of Computer Vision Workshops (WACVW)");
+});
+
+test("the same venue in the other list: what one list's wording finds brings the other list's row (found with the real profiles and the alternate titles of OpenAlex)", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // each list words the venue differently: CCF's "ACM SIGCHI Conference on …" / CORE's "Designing Interactive Systems"; CCF's old MobiHoc name; CORE's "High Performance Distributed Computing"
+  eq("Proceedings of the 2016 ACM Conference on Designing Interactive Systems, 1-10, 2016", "CCF C DIS · CORE A DIS");
+  eq("Proceedings of the 15th ACM international symposium on Mobile ad hoc networking and computing, 2014", "CCF B MobiHoc · CORE B MOBIHOC");
+  eq("Proceedings of the 34th International Symposium on High-Performance Parallel and Distributed Computing, 2025", "CCF A HPDC · CORE A HPDC");
+  eq("Proceedings of the 2022 ACM on Asia Conference on Computer and Communications Security, 2022", "CCF C AsiaCCS · CORE A AsiaCCS");
+  eq("Proceedings of the 15th ACM international symposium on Mobile ad hoc …, 2014", "CCF B MobiHoc · CORE B MOBIHOC");          // (cut off too)
+  // two rows of one acronym that are two venues share too few words to be one: FSE is the Foundations of Software Engineering and Fast Software Encryption in both lists
+  eq("Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE · CORE A* FSE");
+  eq("International Workshop on Fast Software Encryption, 54-72, 2008", "CCF B FSE · CORE B FSE");
+  for (const [ccfAbbr, coreAcronym] of [["FSE", "FSE"]]) {
+    const rows = resolver.index.partners;
+    const sw = [...rows.keys()].filter((e) => e.src === "ccf" && e.abbr === ccfAbbr);
+    assert.equal(sw.length, 2);
+    for (const e of sw) assert.equal((rows.get(e) || []).length, 1, "each FSE row has exactly one partner: " + e.name);
+    assert.ok(coreAcronym);
+  }
+  // a track word that the second venue does not own still blocks it
+  none("Proceedings of the 2016 ACM Conference on Designing Interactive Systems Companion Publication, 2016");
+});
+
+test("a series title that is the name of an event of its own names that event's acronym: 'American Control Conference - ACC'95' is not CORE's Applied Computing Conference", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  none("Proceedings of 1995 American Control Conference - ACC'95");
+  // a series title says no event; an ACM title that says one says the venue's own words
+  eq("Advances in Cryptology–ASIACRYPT 2009", "CCF B ASIACRYPT · CORE A ASIACRYPT");
+  eq("Proceedings of the ACM SIGPLAN 2002 Conference on Programming language design and implementation - PLDI '02", "CCF A PLDI · CORE A* PLDI");
+  eq("Selected Areas in Cryptography–SAC 2013", "CCF C SAC · CORE B SAC");
+});
+
+test("sponsors, typos of 'proceedings' and spellings that the lists leave out (OpenAlex alternate titles, real profiles)", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  eq("2012 10th IAPR International Workshop on Document Analysis Systems", "CORE B DAS");
+  eq("2018 55th ACM/ESDA/IEEE Design Automation Conference", brief("2018 55th ACM/EDAC/IEEE Design Automation Conference"));
+  assert.notEqual(brief("2018 55th ACM/ESDA/IEEE Design Automation Conference"), "");
+  eq("Proceedings of the International Conference on Web Intelligence, 81-87, 2017", "CORE B WI");
+  eq("2008 Ninth ACIS International Conference on Software Engineering, Artificial Intelligence, Networking, and Parallel/Distributed Computing", "CORE C SNPD");
+  eq("EAI International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services", "CCF C MobiQuitous · CORE C Mobiquitous");
+  eq("Procedings of the British Machine Vision Conference 2015", "CCF C BMVC · CORE A BMVC");
+  eq("Proceesings of the 9th Biennial Conference on Innovative Data Systems Research, 2019", "CCF B CIDR · CORE A CIDR");
+  // British and American spellings are one word in a whole name; the start of a cut name keeps the spelling it has
+  eq("2014 Second IEEE Working Conference on Software Visualization, 11-19, 2014", "CORE B VISSOFT");
+  eq("International Conference on Conceptual Modelling, 167-181, 2002", brief("International Conference on Conceptual Modeling, 167-181, 2002"));
+  none("2014 international conference on information visualization theory and …, 2014");
+});
+
+test("names Scholar prints that the lists word differently are aliases: older, inverted, singular, with a sponsor left out (and IFIP's, HiPC's, the Phoenix conference are read whole)", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  eq("European Conference on Parallel Processing, 112-123, 2011", "CCF B Euro-Par · CORE B EuroPar");
+  eq("International Conference on Parallel Processing, 100-110, 2019", "CCF B ICPP · CORE B ICPP");
+  eq("European Conference on Logics in Artificial Intelligence, 116-132, 2019", "CORE B JELIA");
+  eq("International Conference on Coordination Languages and Models, 160-178, 1996", "CORE C Coordination");
+  eq("2011 IEEE Intelligent Vehicles Symposium (IV), 788-793, 2011", "CORE B IEEE-IV");
+  eq("Proceedings Real-Time Technology and Applications Symposium, 66-75, 1995", "CCF B RTAS · CORE A RTAS");
+  eq("2014 17th Euromicro Conference on Digital System Design, 293-302, 2014", "CORE C DSD");
+  eq("International Conference on Passive and Active Network Measurement, 102-111, 2011", "CCF C PAM · CORE B PAM");
+  eq("IFIP Conference on Human-Computer Interaction, 440-452, 2009", "CCF C INTERACT · CORE B Interact");
+  none("International Conference on Human-Computer Interaction, 137-146, 2011");          // (HCI International: no IFIP, no INTERACT)
+  eq("Proceedings of the international conference for high performance computing …, 2015", "CCF A SC · CORE A SC");
+  eq("2010 IEEE Wireless Communication and Networking Conference, 1-6, 2010", "CCF C WCNC · CORE B WCNC");
+  eq("Proceedings of the 18th International Software Product Line Conference …, 2014", "CORE B SPLC");
+  eq("Proceedings of the 2020 ACM Conference on International Computing Education Research", "CORE A ICER");
+  eq("2010 6th World Congress on Services, 314-317, 2010", "CORE B SERVICES");
+  eq("2005 International Symposium on Empirical Software Engineering, 2005., 10 pp., 2005", "CCF B ESEM · CORE A ESEM");
+  eq("Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies, 2025", "CCF B NAACL · CORE A NAACL");
+  eq("IEEE International Conference on Computer Design: VLSI in Computers and Processors, 2004", "CCF B ICCD · CORE C ICCD");
+  eq("2009 9th IEEE/ACM International Symposium on Cluster Computing and the Grid", "CCF C CCGRID · CORE B CCGRID");
+  eq("2020 20th IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing", "CCF C CCGRID · CORE B CCGRID");
+  eq("International Conference on Networking, Architecture, and Storage, 2017", "CCF C NAS");
+  // events of the same acronym that are not listed (aliases.js `shadow`)
+  none("2022 International Conference on Information Networking (ICOIN)");
+  none("2009 IEEE International SOC Conference (SOCC)");
+  // journals: the title without the subtitle the list adds, and the old name of a renamed journal
+  eq("Computational Geometry 1 (1), 13-34, 1991", "CCF C CGTA");
+  eq("Discrete & Computational Geometry 10 (1), 1-10, 1993", brief("Discrete and Computational Geometry 10 (1), 1-10, 1993"));
+  assert.notEqual(brief("Computational Geometry 1 (1), 13-34, 1991"), brief("Discrete & Computational Geometry 10 (1), 1-10, 1993"));
+  eq("Journal of Systems Architecture 109, 101809, 2020", "CCF B JSA");
+  eq("IEEE Transactions on Neural Networks 18 (6), 1815-1825, 2007", "CCF B TNNLS");
+  // ... and what is not an alias stays without a badge
+  none("International Conference on High Performance Computing, 86-105, 2023");
+  none("Proceedings of the 2002 ACM symposium on Applied computing, 32-36, 2002");
 });

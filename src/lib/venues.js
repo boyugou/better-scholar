@@ -35,10 +35,12 @@
     "proceedings", "proceeding", "proc", "conference", "conferences", "conf", "symposium",
     "symposia", "symp", "workshop", "workshops", "meeting", "meetings", "congress",
     "colloquium", "annual", "international", "intl", "int", "joint", "edition",
-    "volume", "vol", "part", "track", "session", "sessions", "ann", "biennial", "triennial"
+    "volume", "vol", "part", "track", "session", "sessions", "ann", "biennial", "triennial",
+    // (typos of "proceedings" that Scholar prints: "Procedings of the British Machine Vision Conference 2015", "Proceesings of the 9th Biennial Conference …")
+    "procedings", "proceesings", "proceeedings", "proccedings", "proceedigs"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
-  const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier",
+  const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "acis", "iet", "edac", "esda", "eai", "sigchi",
     // ACM's special interest groups that sponsor many events and are the name of none ("ACM SIGPLAN International Conference on
     // Functional Programming" is "International Conference on Functional Programming" without them)
     "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim"]);
@@ -50,6 +52,10 @@
   ]);
   // ISO-4 style abbreviations Scholar sometimes prints ("Commun. Acm", "IEEE Trans. …").
   const ISO = { trans: "transactions", commun: "communications", lett: "letters", jour: "journal", j: "journal" };
+  // British and American spellings are one word in a whole name ("Conceptual Modelling" is CORE's ER, "Conceptual Modeling" CCF's; VISSOFT's "Visualisation"): names are also indexed
+  // and looked up in the American form. The start of a cut name keeps the spelling it has (the cut "Information Visualization Theory and …" is not CORE's "Visualisation Theory and Practice").
+  const US = { modelling: "modeling", modelled: "modeled", labelling: "labeling", centre: "center", centres: "centers", behaviour: "behavior", behaviours: "behaviors", analyse: "analyze", analysed: "analyzed", catalogue: "catalog", defence: "defense" };
+  const us = (t) => US[t] || t.replace(/isation(s?)$/, "ization$1");
   const TYPE_WORDS = ["symposium", "conference", "workshop", "meeting"];
 
   const isNoiseToken = (t) =>
@@ -267,9 +273,9 @@
         };
         for (const mode of fullOnly ? ["full"] : ["full", "noOrg"]) {          // (a name whose organisation is part of what it says — "USENIX ATC" — is not also the bare acronym, "ATC")
           const t = form[mode];
-          if (t.length) { push(side.names, t.join(" "), entry); push(side.first[mode], t[0], { entry, form }); }
+          if (t.length) { push(side.names, t.join(" "), entry); push(side.names, t.map(us).join(" "), entry); push(side.first[mode], t[0], { entry, form }); }
         }
-        if (form.full.length && form.full.length === contentWords(plain).length) push(side.bare, form.full.join(" "), entry);
+        if (form.full.length && form.full.length === contentWords(plain).length) { push(side.bare, form.full.join(" "), entry); push(side.bare, form.full.map(us).join(" "), entry); }
         // order-insensitive key for journals ("…, IEEE Transactions on")
         const bag = canonTokens(plain, "noOrg");
         if (kind === "J" && bag.length >= 3) push(side.bags, uniq(bag).sort().join(" "), entry);
@@ -314,6 +320,27 @@
         }
       }
     }
+    // CCF and CORE rows that are one venue — the alias table says so (SIGKDD / KDD), or the two lists give the same acronym and mostly the same words: a string that one list's
+    // wording found brings the other list's row too ("ACM Conference on Designing Interactive Systems" is CCF's "ACM SIGCHI Conference on Designing Interactive Systems" and CORE's
+    // "Designing Interactive Systems" alike). Two rows of one acronym that are two venues (FSE: Foundations of Software Engineering, Fast Software Encryption) share too few words.
+    const stem = (w) => w.replace(/(?:ings|ing|ed)$/, "").replace(/([^s])s$/, "$1").replace(/(.)\1+/g, "$1");
+    const wordsOf = (e) => new Set(e.extra.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg")).map(stem));
+    const sameWords = (x, y) => {
+      const a = wordsOf(x), b = wordsOf(y), shared = [...a].filter((w) => b.has(w)).length;
+      return a.size > 0 && b.size > 0 && shared >= 2 && shared >= 0.6 * Math.min(a.size, b.size);
+    };
+    const partners = new Map();          // row -> its rows in the other list
+    const link = (x, y) => { push(partners, x, y); push(partners, y, x); };
+    const coreByAcronym = new Map();
+    for (const y of sources.core.C.all) push(coreByAcronym, squash(y.abbr), y);
+    for (const x of sources.ccf.C.all) for (const y of coreByAcronym.get(squash(x.abbr)) || []) if (sameWords(x, y)) link(x, y);
+    for (const a of aliases) {
+      if (!a.ccf || !a.core || (a.kind && a.kind !== "C") || squash(a.ccf) === squash(a.core)) continue;          // (the same acronym is read above, with the words as a check)
+      for (const x of byRef.ccf.get("C|" + squash(a.ccf)) || []) for (const y of byRef.core.get("C|" + squash(a.core)) || []) {
+        if ((a.ccfTier && ratingOf(x) !== a.ccfTier) || (a.coreRank && ratingOf(y) !== a.coreRank)) continue;
+        link(x, y);
+      }
+    }
     // how many venues use each word anywhere in their names: a lone visible word is only a usable prefix
     // when it is rare ("architectural" → ASPLOS), never when it is common ("computer", "principles")
     const df = new Map();
@@ -328,7 +355,7 @@
     const pairs = new Set();
     for (const a of aliases) if (a.ccf && a.core) pairs.add(squash(a.ccf) + "|" + squash(a.core));
     const sameVenue = (ccfAbbr, coreAbbr) => pairs.has(squash(ccfAbbr) + "|" + squash(coreAbbr));
-    return { sources, known, df, sameVenue, shadow };
+    return { sources, known, df, sameVenue, shadow, partners };
   }
 
   // ---------------------------------------------------------------- matching
@@ -502,6 +529,9 @@
         const list = strong || (side.weakAbbrs.get(k) || []).filter((e) => title.some((w) => vocabOf(e).has(w))) || side.abbrs.get(stripDigits(k));
         const d = decide(list && list.length ? list : side.abbrs.get(stripDigits(k)), rawWords, true);
         if (d === "ambiguous") break;
+        // (a title that is the name of an event of its own — "American Control Conference - ACC'95" — names the acronym of that event: ACC is not CORE's Applied Computing Conference;
+        // a series title says no event, and an ACM title that says one says the venue's own words: "… Conference on Programming language design and implementation - PLDI '02")
+        if (d && title.length >= 2 && /\b(?:conference|symposium|symposia|workshop|congress|colloquium|meeting)\b/i.test(fold(p.withParens).slice(0, series.index + 1)) && !title.some((w) => vocabOf(d).has(w))) break;
         if (d) return { entry: d, rule: "acronym" };
       }
     }
@@ -601,13 +631,13 @@
       // organisation words / acronyms carry identity ("Communications of the ACM" is not
       // "Communications"): a weakened variant must still be at least two words long
       if (!tokens.length || (mode !== "full" && tokens.length < 2)) continue;
-      const key = tokens.join(" ");
+      const key = tokens.join(" "), ukey = tokens.map(us).join(" ");
       if (seen.has(key)) continue;
       seen.add(key);
-      let d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
+      let d = nameHit((side) => (bareString ? side.bare : side.names).get(ukey));
       // "Human-Computer Interaction 23 (1), 47-99, 2008": two journals boil down to these words ("Proceedings of the ACM on Human-Computer Interaction" is the other) and the string is
       // nothing but them, with a volume: it is the journal whose whole name they are
-      if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(key));
+      if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(ukey));
       if (d === "ambiguous") return null;
       // ("AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence" boils down, once its acronyms are taken out, to the words of IJCAI's name)
       if (d && !acronymAgrees(d)) continue;
@@ -1037,6 +1067,10 @@
       }
       out.kind = hint;
       const secs = secondaryWords(raw);
+      const matched = {};
+      const badge = (src, e, rule) => src === "ccf"
+        ? { tier: e.tier, name: e.name, abbr: e.abbr, area: e.area, kind: e.kind, dblp: e.dblp, rule }
+        : { rank: e.rank, name: e.name, abbr: e.abbr, kind: e.kind, rule };          // (CORE ranks conferences: its kind is "C")
       for (const src of ["ccf", "core"]) {
         // CORE ranks conferences only: a string CCF identified as a journal is not one
         if (src === "core" && out.ccf && out.ccf.kind === "J") continue;
@@ -1044,9 +1078,14 @@
         if (!r) continue;
         const blocking = secs.find((w) => !ownWord(r.entry, w, raw));
         if (blocking) { out.secondary = blocking; out.refused = true; continue; }
-        out[src] = src === "ccf"
-          ? { tier: r.entry.tier, name: r.entry.name, abbr: r.entry.abbr, area: r.entry.area, kind: r.entry.kind, dblp: r.entry.dblp, rule: r.rule }
-          : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, kind: r.entry.kind, rule: r.rule };          // (CORE ranks conferences: its kind is "C")
+        out[src] = badge(src, r.entry, r.rule);
+        matched[src] = r.entry;
+      }
+      // the lists name one venue differently: what one list's wording found, the other list's row of the same venue is too (unless the track words of the string do not fit it)
+      if (!out.refused) for (const [from, to] of [["ccf", "core"], ["core", "ccf"]]) {
+        if (!matched[from] || out[to] || matched[from].kind === "J") continue;
+        const rows = idx.partners.get(matched[from]) || [];
+        if (rows.length === 1 && !secs.some((w) => !ownWord(rows[0], w, raw))) out[to] = badge(to, rows[0], out[from].rule);
       }
       // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
       // ("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing" is HCOMP to CORE; CCF, which does not list
