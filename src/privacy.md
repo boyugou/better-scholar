@@ -37,7 +37,7 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
   author list, the venue, the time it was read, and whether it came from Semantic Scholar. Entries older than 90
   days are not used and are dropped when the cache is next saved; at most 3,000 papers are kept.
 - `s2key` — the Semantic Scholar API key, only if you enter one in the settings. It is never synced.
-- `askVenue` — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing *Check* beside a venue of the unranked list; the settings page takes it within a moment and removes it.
+- `askVenue` — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing *Check* beside a venue of the unranked list; the settings page takes it within a moment and removes it, and one that nobody took is ignored after 30 seconds.
 
 In the Scholar site's own browser storage:
 
@@ -101,6 +101,9 @@ Links, which open only when you click them:
   address without the host, with the profile's `user=` id replaced by "…".
 - The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The
   toolbar popup links to Google Scholar when the open tab is not a profile.
+- *Check a venue* on the settings page shows, for a CCF venue, a link to the venue's page on DBLP (`https://dblp.org/db/…`,
+  the address the CCF list itself gives). It is a plain link with `rel="noopener noreferrer"`: the extension sends nothing, and the
+  page opens only when you click it.
 
 ## What is never sent
 
