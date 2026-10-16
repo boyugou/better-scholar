@@ -567,7 +567,8 @@
           } }, t("copyUnmatched"));
           unmatchedEl = h("details", { "data-rr": "unmatched", open: unmatchedOpen, ...P("panel.status.unranked"), onToggle: (e) => { unmatchedOpen = e.target.open; } },
             h("summary", {}, tn("coverUnmatched", total, [String(total)])),
-            h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue))),
+            h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue,
+              " ", h("button", { class: "rr-link rr-vcheck", type: "button", "data-act": "check-venue", title: t("optVenueTitle"), "aria-label": `${t("optVenueTitle")}: ${u.venue}`, onClick: () => cb.onCheckVenue(u.venue) }, t("venueCheckLink"))))),
             h("div", { class: "rr-actions" }, copyBtn,
               h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
           coverList.replaceChildren(unmatchedEl);

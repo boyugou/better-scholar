@@ -108,7 +108,7 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Citation totals:** papers, citations, h-index and i10-index of the highlighted papers, each out of the total for all papers. The **h-index button** lists the highlighted papers with at least *h* citations (*h* counted over the highlighted papers the other filters let through); the **i10-index button** lists those with at least 10.
 - **Papers by year:** a bar per year for the highlighted papers, stacked by role, over the last 50 years at most; a click on a bar filters to that year.
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first; a click lists that venue's papers.
-- **Status:** the papers loaded and *Load all*; the roles hidden by cut lists and *Read full lists*; entries that repeat another paper; the papers at venues without a rank, with *Copy list* and *Report*.
+- **Status:** the papers loaded and *Load all*; the roles hidden by cut lists and *Read full lists*; entries that repeat another paper; the papers at venues without a rank, with *Copy list*, *Report* and a *Check* link on each venue that opens the settings page's *Check a venue* with that text filled in.
 - **Name spellings:** *Name not matching? Add a spelling*, and the suggestions.
 - A bar at the top says how many papers the filters show and clears them; `Escape` on the page clears them too. Each part of the panel has its own switch on the settings page.
 - **The whole paper list:** Scholar shows the first papers of a profile and loads more when its own *Show more* button is pressed. By default the extension presses it for you until the list is complete — one press at a time, about once a second, only in the tab you are looking at — and stops at the first press that brings no papers. With *Load all papers automatically* off, the panel offers *Load all*.
@@ -295,7 +295,7 @@ node scripts/axe-audit.mjs            # accessibility audit with axe-core
 ### Accessibility checks
 What is checked, and how — not a claim of conformance to any WCAG level:
 
-- `node scripts/axe-audit.mjs` runs axe-core 4.10's default rules over the panel on the local Scholar stand-in (light; with the system in dark mode; filtered with the unranked-venue list open; every part on; the narrow-window layout; in Arabic, Japanese, Thai and German), the settings page (light and dark) and the toolbar popup (with no profile open). It exits 1 on any violation. It is run by hand, not in CI.
+- `node scripts/axe-audit.mjs` runs axe-core 4.10's default rules over the panel on the local Scholar stand-in (light; with the system in dark mode; filtered with the unranked-venue list open; every part on; the narrow-window layout; in Arabic, Japanese, Thai and German), the settings page (light and dark, and in the states a person puts it in: a part hovered, a name being renamed, the tray open, a venue checked) and the toolbar popup (with no profile open, and over a profile in light and dark and in four languages; also with every name at its longest). It exits 1 on any violation. It is run by hand, not in CI.
 - A unit test keeps the faint text colours of the panel, the settings page and the popup, the last-author name on its tint, and Scholar's grey lines on the row tints at a contrast of 4.5:1 or more.
 - On the settings page, each role colour has its contrast badge (see [the settings page](#5-the-settings-page)).
 

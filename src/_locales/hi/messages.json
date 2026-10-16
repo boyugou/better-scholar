@@ -1141,5 +1141,8 @@
   },
   "optShowSetting": {
     "message": "इसकी सेटिंग दिखाएँ"
+  },
+  "venueCheckLink": {
+    "message": "जाँचें"
   }
 }

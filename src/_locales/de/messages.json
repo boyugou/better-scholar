@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Zugehörige Einstellung anzeigen"
+  },
+  "venueCheckLink": {
+    "message": "Prüfen"
   }
 }

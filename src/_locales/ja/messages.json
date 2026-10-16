@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "設定を表示"
+  },
+  "venueCheckLink": {
+    "message": "確認"
   }
 }

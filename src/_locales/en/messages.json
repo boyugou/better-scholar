@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Show its setting"
+  },
+  "venueCheckLink": {
+    "message": "Check"
   }
 }

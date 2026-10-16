@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "הצגת ההגדרה שלו"
+  },
+  "venueCheckLink": {
+    "message": "בדיקה"
   }
 }

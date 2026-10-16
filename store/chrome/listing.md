@@ -169,7 +169,7 @@ Better Scholar shows, on Google Scholar profile pages, the profile owner's autho
 ### Permission justification: storage
 
 ```text
-storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages) and the extra spellings of a profile owner's name that the user adds on that profile, so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists and venue text read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); and an optional Semantic Scholar API key the user may enter. Nothing in storage is sent to the developer.
+storage keeps the user's settings and the extension's own working data. chrome.storage.sync: the settings (what to show and in which order, colours, chip looks, the user's own names for titles and buttons, languages) and the extra spellings of a profile owner's name that the user adds on that profile, so that they follow the user's Chrome profile. chrome.storage.local, on this device only: whether the panel is folded and which ranking its table shows; the author lists and venue text read with "Read full lists" (at most 3,000 papers, kept for 90 days, viewable and clearable on the settings page); an optional Semantic Scholar API key the user may enter; and, for a moment, a venue text (at most 300 characters) that the user asked the settings page to check by pressing Check beside a venue of the panel's unranked list. Nothing in storage is sent to the developer.
 ```
 
 ### Host permission justification

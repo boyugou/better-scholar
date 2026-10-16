@@ -463,3 +463,6 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 #rr-panel .rr-cover-line[data-rr="suggest"] { flex-wrap: wrap; justify-content: flex-start; }
 #rr-panel .rr-cover-top, #rr-panel .rr-cover-list { display: contents; }           /* (the two slots of the status section take no space of their own: its lines keep their gap) */
 #rr-panel .rr-m i { margin: 0; }
+
+/* the unranked list: each venue can be checked on the settings page */
+#rr-panel .rr-vcheck { margin-inline-start: 4px; font-size: 11px; white-space: nowrap; }

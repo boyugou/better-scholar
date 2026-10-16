@@ -417,6 +417,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     onSource(src) { ui.source = src; state.selection = null; B.store.saveUi(ui); refresh(); },
     // a content script cannot open the options page itself; the service worker does it on request
     onSettings() { try { chrome.runtime.sendMessage({ type: "rr:options" }); } catch (e) { /* extension context gone */ } },
+    // a venue of the unranked list, explained on the settings page (its "Check a venue", with the text in it)
+    async onCheckVenue(text) { await B.store.askVenue(text); this.onSettings(); },
     onSelect(sel) {
       const same = state.selection && state.selection.role === sel.role && state.selection.tier === sel.tier;
       state.selection = same || (sel.role === undefined && sel.tier === undefined) ? null : sel;

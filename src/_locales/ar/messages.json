@@ -1135,5 +1135,8 @@
   },
   "optShowSetting": {
     "message": "عرض إعداده"
+  },
+  "venueCheckLink": {
+    "message": "تحقّق"
   }
 }

@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "顯示對應設定"
+  },
+  "venueCheckLink": {
+    "message": "檢查"
   }
 }

@@ -1953,6 +1953,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await settle(optsG);
       await eventually(pg, () => [...document.querySelectorAll('#gsc_a_b .rr-chip-mark[data-mark="oral"]')].every((x) => x.textContent.includes("Oral")));
       await optsG.close();
+      // a venue of the unranked list can be checked: the settings page opens with its "Check a venue" filled in
+      await pg.bringToFront();
+      await pg.locator('[data-rr="unmatched"] summary').click();
+      const [checkPage] = await Promise.all([ctxG.waitForEvent("page"), pg.locator('[data-rr="unmatched"] [data-act="check-venue"]').first().click()]);
+      await checkPage.waitForSelector('[data-act="venue-check"]');
+      await pollPage(checkPage, () => document.querySelector('[data-act="venue-check"]').value.length > 3 && !!document.querySelector("#card-venue .venue-none"));
+      const askedVenue = await checkPage.inputValue('[data-act="venue-check"]');
+      assert.ok((await pg.locator('[data-rr="unmatched"] li').first().textContent()).includes(askedVenue), "the box holds the venue's text: " + askedVenue);
+      assert.match(await checkPage.locator("#card-venue .venue-none").innerText(), /^No rank/, "a venue of the unranked list gets no rank, and the card says so");
+      await checkPage.close();
       assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
       ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");
     } finally { await ctxG.close(); await fxG.close(); }

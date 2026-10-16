@@ -829,6 +829,20 @@
     if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
   }
 
+  // a venue the panel asked about (the unranked list's "Check"): its text goes into the box, and the card is shown
+  async function takeAskedVenue() {
+    const text = await B.store.takeVenue();
+    if (!text) return;
+    venueInput.value = text;
+    checkVenue();
+    if (searchInput.value) { searchInput.value = ""; filterSettings(""); }
+    const row = venueInput.closest(".venue-row") || venueInput;
+    $("card-venue").scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    row.classList.remove("opt-flash"); void row.offsetWidth; row.classList.add("opt-flash");
+    setTimeout(() => row.classList.remove("opt-flash"), 1800);
+    venueInput.focus({ preventScroll: true });
+  }
+
   $("controls").append(
     ...cardsOfPrefs,
     card("venue", t("optVenueTitle"), t("optVenueHint"), h("div", { class: "row venue-row" }, venueInput), venueOut),
@@ -985,6 +999,7 @@
   ];
   const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onSearchNext", "onImpact", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
+  panelCb.onCheckVenue = async (text) => { await B.store.askVenue(text); await takeAskedVenue(); };               // (on this page itself: the box is filled in and shown)
   panelCb.onSettings = () => { const c = document.getElementById("card-highlight"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
   let panelUi = { collapsed: false, source: "ccf" };
   panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };
@@ -1085,4 +1100,7 @@
     renderPreview();
     syncers.forEach((fn) => fn());
   });
+
+  takeAskedVenue();                                      // (this page was opened by a "Check" of the panel's unranked list, or is open and was brought to the front for it)
+  B.store.onVenueAsked(() => takeAskedVenue());
 })();

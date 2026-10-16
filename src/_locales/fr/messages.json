@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Afficher son réglage"
+  },
+  "venueCheckLink": {
+    "message": "Vérifier"
   }
 }
