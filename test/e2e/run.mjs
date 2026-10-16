@@ -28,7 +28,6 @@ if (!pw || !chromiumPath) {
 }
 
 // ---- expected values from the same pure libraries the extension uses -----------
-const names = require(path.join(repo, "src/lib/names.js"));
 const venues = require(path.join(repo, "src/lib/venues.js"));
 const metrics = require(path.join(repo, "src/lib/metrics.js"));
 const analysis = require(path.join(repo, "src/lib/analysis.js"));

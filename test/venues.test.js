@@ -234,7 +234,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok(a.names && a.names.length);
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length));
   }
 });
 
@@ -1072,7 +1072,7 @@ test("a track at a venue is not the venue: 'Workshop' in a name the venue once h
     (n) => "Doctoral Consortium of the " + n + ", 2019", (n) => n + " Posters, 2019", (n) => "Tutorial at the " + n + ", 2019", (n) => n + " Extended Abstracts, 2019"];
   const holds = (name, word) => venues.secondaryWords(name.replace(/\([^()]*\)/g, " ")).includes(word);
   // (a venue the aliases name with the word — SLT is the "Spoken Language Technology Workshop" — may carry it)
-  const aliasHolds = (badge, word) => aliases.some((a) => (a.ccf === badge.abbr || a.core === badge.abbr) && (a.names || []).some((n) => holds(n, word)));
+  const aliasHolds = (badge, word) => aliases.some((a) => (a.ccf === badge.abbr || a.core === badge.abbr) && [...(a.names || []), ...(a.former || [])].some((n) => holds(n, word)));
   for (const n of names) for (const f of forms) {
     const raw = f(n), word = venues.secondaryWord(raw), r = resolver.resolve(raw);
     for (const badge of [r.ccf, r.core]) if (badge) assert.ok(holds(badge.name, word) || aliasHolds(badge, word), `${raw} → ${badge.name}: a ${word} is not the venue`);
@@ -1129,7 +1129,13 @@ test("the acronym a string opens with decides between venues whose names boil do
   }
   for (const v of core.venues) {
     const raws = [`Proceedings of the 12th ${strip(v.name)}, 123-145, 2019`, `${strip(v.name)} (${v.acronym}), 123-145, 2019`, ...(plain(v.acronym) ? [`${v.acronym} '19: Proceedings of the ${strip(v.name)}, 123-145, 2019`] : [])];
-    for (const raw of raws) { const r = resolver.resolve(raw); assert.ok(!r.core || r.core.abbr === v.acronym || r.core.name === v.name, `${raw} → CORE ${r.core && r.core.abbr}`); }
+    for (const raw of raws) {
+      const r = resolver.resolve(raw);
+      assert.ok(!r.core || r.core.abbr === v.acronym || r.core.name === v.name, `${raw} → CORE ${r.core && r.core.abbr}`);
+      // ... and the CCF list, on a CORE venue's line, names the same venue or nothing ("C&C" is not "CC")
+      // (CORE's "SiggraphA" is a spelling nobody prints: "SIGGRAPH Asia" in a made-up "SiggraphA '19:" form is no case)
+      assert.ok(!r.ccf || v.acronym === "SiggraphA" || venues.squash(r.ccf.abbr) === venues.squash(v.acronym) || resolver.index.sameVenue(r.ccf.abbr, v.acronym), `${raw} → CCF ${r.ccf && r.ccf.abbr}`);
+    }
   }
 });
 
@@ -1212,4 +1218,31 @@ test("the seventh review: a venue's whole name beats a parenthesised acronym of 
   assert.equal(resolver.resolve("IEEE Communications Surveys & Tutorials 22 (3), 1909-1941, 2020").refused, false);
   // the "@" of a workshop co-located with a conference (CEUR-WS) is a track word
   assert.deepEqual([venues.secondaryWords("NLP-DBPEDIA@ ISWC"), venues.secondaryWords("OM@ ISWC 2288"), venues.secondaryWords("Nature 521")], [["workshop"], ["workshop"], []]);
+});
+
+test("the eighth review: a cut name is not a whole one; the old name is the whole name part; notes after a volume are no issue; the same venue in the other list only", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // a cut name shows only the start of the name, and other workshops share it ("Search-Based Software" is Engineering or Testing): no badge for the cut ones, unless the start says four words of its own
+  for (const s of ["Proceedings of the 7th International workshop on search-based software …, 2014", "Proceedings of the Second Workshop on Natural Language Generation …, 2022", "International Workshop on Machine Learning …, 2019"]) none(s);
+  eq("International Workshop on Search-Based Software Engineering, 2009", "CORE B SSBSE");
+  // an old name is the name part whole — not the end of a longer one ("NIPS Workshop on Machine Learning"), not a second track in front of it
+  for (const s of ["NIPS Workshop on Machine Learning, 2016", "ICML Workshop on Machine Learning for Music, 2019", "Satellite Workshop of the 2021 IEEE Spoken Language Technology Workshop (SLT), 2021", "Student Workshop, 2012 IEEE Spoken Language Technology Workshop (SLT), 2012"]) none(s);
+  eq("PRIMA 2005: Pacific Rim International Workshop on Multi-Agents, 2005", "CORE B PRIMA");
+  eq("Proceedings. 11th IEEE Computer Security Foundations Workshop (Cat. No …, 1998", "CCF B CSFW · CORE A CSF");
+  eq("Proceedings 15th IEEE Computer Security Foundations Workshop. CSFW-15, 119-128, 2002", "CCF B CSFW · CORE A CSF");
+  // where the official name says "Workshop", a workshop about something that is not the venue's own subject is another workshop
+  for (const s of ["PKC 2019 Workshop on Post-Quantum Cryptography, 2019", "CHES 2019 Workshop on Hardware Security for Embedded Systems, 2019"]) none(s);
+  eq("International Workshop on Practice and Theory in Public Key Cryptography, 2019", "CCF B PKC · CORE B PKC");
+  eq("VizSEC 2007: Proceedings of the Workshop on Visualization for Computer …, 2008", "CORE C VizSec");
+  // the names a venue had are not its wording: a conference of MSR, SLT, VMCAI is not a clash with them
+  eq("2020 IEEE/ACM 17th International Conference on Mining Software Repositories, 2020", "CCF C MSR · CORE A MSR");
+  eq("VMCAI-19: International Conference on Verification, Model Checking and Abstract Interpretation, 2019", "CCF B VMCAI · CORE B VMCAI");
+  // a note after a number is not a volume's issue: "ASE 19 (Distinguished Paper Award)" is the 19th ASE, not a journal's line
+  for (const [s, want] of [["ASE 19 (Distinguished Paper Award), 2019", "CCF A ASE · CORE A* ASE"], ["CSCW 19 (Best Paper Award), 2019", "CCF A CSCW · CORE A CSCW"], ["WWW 19 (Best Paper), 2019", "CCF A WWW · CORE A* WWW"], ["KDD 19 (Oral), 2019", "CCF A SIGKDD · CORE A* KDD"],
+    ["ASE 19 (3), 2019", ""]]) eq(s, want === "" ? brief("ASE 19 (3), 2019") : want);
+  // another venue that squashes to the same acronym lends no words ("C&C" is Creativity and Cognition, "CC" Compiler Construction)
+  eq("C&C '22: Proceedings of the 14th Conference on Creativity and Cognition, 2022", "CORE B C&C");
+  // the track count: a journal has no tracks
+  assert.equal(resolver.resolve("2019 IEEE symposium series on computational intelligence (SSCI), 230-237, 2019").refused, false);
 });
