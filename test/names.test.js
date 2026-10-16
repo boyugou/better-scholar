@@ -155,6 +155,36 @@ test("findOwner prefers the most specific match over an earlier initial collisio
   assert.equal(names.findOwner(none.tokens, owner("Wei Wang")), -1);
 });
 
+test("a line that holds the owner's spelling at places that give different roles claims no place of honour (the line cannot say which entry is the owner)", () => {
+  const o = owner("Xincen Wang");
+  const cases = [["X Wang, X Wang, P Cong", "middle", true], ["P Cong, X Wang, L Wu, X Wang", "middle", true], ["X Wang, A Lee, X Wang", "middle", true], ["X Wang, X Wang, ...", "middle", true],
+    // the same role at every place: no doubt about it
+    ["A Lee, B Kim, X Wang, C Zhu, X Wang, D Xu, E Li", "middle", false],
+    // one entry is the more specific: it is the owner
+    ["X Wang, Xincen Wang, P Cong", "second", false], ["P Cong, X Wang, Xincen Wang", "last", false],
+    // one entry only
+    ["X Wang, P Cong", "first", false], ["P Cong, X Wang", "last", false]];
+  for (const [line, role, ambiguous] of cases) {
+    const r = names.classifyRow(line, o);
+    assert.equal(r.status, "found", line);
+    assert.equal(r.role, role, line);
+    assert.equal(!!r.ambiguous, ambiguous, line);
+  }
+  // property: whatever the line, an owner's spelling twice with different roles is never first, second, last or co-first
+  let seed = 7; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+  const others = ["P Cong", "L Wu", "A Lee", "B Kim", "Z Zhu", "D Xu", "E Li", "H Park", "J Sun", "K Tan"];
+  for (let i = 0; i < 400; i++) {
+    const n = 3 + Math.floor(rnd() * 8), list = Array.from({ length: n }, () => others[Math.floor(rnd() * others.length)]);
+    const a = Math.floor(rnd() * n); let b = Math.floor(rnd() * n); if (b === a) b = (a + 1) % n;
+    list[a] = "X Wang"; list[b] = "X Wang";
+    const cut = rnd() < 0.3, line = list.join(", ") + (cut ? ", ..." : "");
+    const r = names.classifyRow(line, o);
+    const roles = new Set([a, b].map((i2) => names.roleFor(i2, names.parseAuthors(line).tokens, cut)));
+    if (roles.size > 1) assert.ok(r.role === "middle" && r.ambiguous, line + " → " + r.role);
+    else assert.equal(r.role, [...roles][0], line);
+  }
+});
+
 test("classifyRow reports found / hidden / absent", () => {
   const o = owner("Ion Stoica");
   const found = names.classifyRow("W Kwon, Z Li, I Stoica", o);

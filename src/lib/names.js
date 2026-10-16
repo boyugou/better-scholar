@@ -241,6 +241,14 @@
     return bestIdx;
   }
 
+  // Every author entry that matches the owner as well as the best one does, in order ([] when none): "X Wang, X Wang" holds two of them, and nothing in the line says which is the owner.
+  function ownerCandidates(tokens, owner) {
+    const best = findOwner(tokens, owner);
+    if (best < 0) return [];
+    const top = matchStrength(tokens[best].name, owner);
+    return tokens.map((t, i) => i).filter((i) => matchStrength(tokens[i].name, owner) === top);
+  }
+
   // Role of the author at `idx`: 'cofirst' | 'first' | 'last' | 'second' | 'middle'.
   // Co-first only for an author inside the leading group that shares a mark ("A*, B*, C"); a mark anywhere else says nothing about the role.
   // In a two-author paper the second author is the senior (last) author. A
@@ -254,13 +262,18 @@
   }
 
   // One-call analysis of a row's author string for a given owner.
-  //   status: 'found'   owner located; role is set
+  //   status: 'found'   owner located; role is set ("middle" with `ambiguous` when the line holds the owner's spelling at places that give different roles)
   //           'hidden'  list is truncated and the owner is not in the visible part
   //           'absent'  list is complete but the owner's name never appears
   function classifyRow(authorsText, owner) {
     const { tokens, truncated } = parseAuthors(authorsText);
     const idx = findOwner(tokens, owner);
     if (idx >= 0) {
+      // Two entries of the line match the owner equally well and would give different roles ("X Wang, X Wang, P Cong"): the line cannot tell which is the owner, so it claims no place of
+      // honour — not first, second, last or co-first: the paper is one of the "other" authors', never over-claimed
+      const candidates = ownerCandidates(tokens, owner);
+      const roles = new Set(candidates.map((i) => roleFor(i, tokens, truncated)));
+      if (roles.size > 1) return { status: "found", role: "middle", index: idx, ambiguous: true, tokens, truncated };
       return { status: "found", role: roleFor(idx, tokens, truncated), index: idx, tokens, truncated };
     }
     return { status: truncated ? "hidden" : "absent", role: null, index: -1, tokens, truncated };
@@ -381,6 +394,6 @@
 
   return {
     COFIRST_SYMBOLS, CORRESPONDING_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
-    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
+    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, ownerCandidates, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
   };
 });
