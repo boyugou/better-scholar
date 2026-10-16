@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Taulukko, palkintojen ja esitysten luvut sekä kopioitavan yhteenvedon luku laskevat vain artikkelit, jotka suodattimet jättävät jäljelle (vuosiväli, haku, pikasuodatin, foorumi); valittu solu tai rivi ei kaventa yhtäkään lukua. Pois: ne laskevat aina koko profiilin."
+  },
+  "optPillRecent": {
+    "message": "Viimeiset 5 vuotta"
   }
 }

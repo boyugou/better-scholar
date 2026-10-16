@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Bảng, số đếm giải thưởng và báo cáo cùng bản tóm tắt sao chép chỉ tính các bài báo còn lại sau bộ lọc (khoảng năm, tìm kiếm, bộ lọc nhanh, venue); ô hoặc hàng được chọn không thu hẹp bất kỳ số đếm nào. Tắt: luôn tính trên toàn bộ hồ sơ."
+  },
+  "optPillRecent": {
+    "message": "5 năm gần đây"
   }
 }

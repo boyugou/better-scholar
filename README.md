@@ -51,7 +51,7 @@ Better Scholar is a Chrome (Manifest V3) extension for [Google Scholar](https://
 - **Authorship roles.** First, co-first (a leading group of authors that share a mark such as `*` or `†`), second and last author. Your name is marked in the author line, with your position in a tooltip.
 - **Awards and talks.** A bundled list of 7,830 award-winning papers taken from official award pages, plus the Oral / Spotlight / Highlight labels authors write themselves.
 - **Citation totals.** Papers, citations, h-index and i10-index of your highlighted papers next to those of all papers. The h-index and i10-index buttons list the highlighted papers behind the number.
-- **Search with operators.** `/` focuses the search box; words plus `cites:`, `year:`, `ccf:`, `core:`, `role:`, `type:` and `has:`, with suggestions as you type.
+- **Search with operators.** `/` focuses the search box; words plus `cites:`, `year:`, `age:`, `ccf:`, `core:`, `role:`, `type:` and `has:`, with suggestions as you type.
 - **Copy and export.** Summary, table, papers, APA, BibTeX, Markdown and JSON to the clipboard, and CSV as a file; one switch per format in the settings, and the same buttons in the toolbar popup.
 - **One settings page.** A live preview, presets, colour themes and a JSON configuration. The panel itself holds no settings.
 - **For AI agents.** *Copy guide for agents* gives an AI assistant every setting, your current values, the page calls and the search syntax; page events let a browsing agent read the panel's numbers and set its filters.
@@ -104,7 +104,7 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Copy row:** one button for each format switched on in the settings ([Copy and export](#copy-and-export)).
 - **Awards and talks counts:** a click lists those papers.
 - **Yours to arrange:** every part and every thing in it has its own switch, the parts (and the copy buttons and quick filters) can be put in any order, and titles, columns and buttons can be given your own names ([the settings page](#5-the-settings-page)).
-- **Search box and filters:** words and [operators](#search-operators), quick buttons (CCF A, >100 citations, First author, Award), *Only highlighted*, and a year range from two drop-downs. The table, the awards and talks counts and the copy summary count the papers the filters leave, so a year range gives the table of those years (a switch on the settings page turns that off).
+- **Search box and filters:** words and [operators](#search-operators), quick buttons (CCF A, >100 citations, First author, Award, and Last 5 years among the others), *Only highlighted*, and a year range from two drop-downs. The table, the awards and talks counts and the copy summary count the papers the filters leave, so a year range gives the table of those years (a switch on the settings page turns that off).
 - **Citation totals:** papers, citations, h-index and i10-index of the highlighted papers, each out of the total for all papers. The **h-index button** lists the highlighted papers with at least *h* citations (*h* counted over the highlighted papers the other filters let through); the **i10-index button** lists those with at least 10.
 - **Papers by year:** a bar per year for the highlighted papers, stacked by role, over the last 50 years at most; a click on a bar filters to that year.
 - **Top venues** (off by default): the ranked venues of your highlighted papers, most papers first; a click lists that venue's papers.
@@ -160,6 +160,7 @@ Press `/` on a profile to focus the search box (when the panel and its filters a
 |---|---|---|
 | `cites:` | `cites:>100`, `cites:>=50`, `cites:<10`, `cites:25` | the citation count compared with a number: `>` `>=` `<` `<=` `=` (a bare number means `=`) |
 | `year:` | `year:>=2020`, `year:<2015`, `year:2023` | the publication year, compared the same way |
+| `age:` | `age:<5`, `age:<=10`, `age:0` | how old the paper is in years, compared the same way; this year is 0, so `age:<5` is the last five years and stays true as the years go by (the *Last 5 years* quick button adds it) |
 | `ccf:` | `ccf:a`, `ccf:b`, `ccf:c` | the venue's CCF rank |
 | `core:` | `core:a*`, `core:a`, `core:b`, `core:c` | the venue's CORE rank |
 | `role:` | `role:first`, `role:cofirst`, `role:second`, `role:last`, `role:middle` | your position in the author list (`middle`: none of the other four) |

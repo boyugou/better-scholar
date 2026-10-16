@@ -120,13 +120,13 @@
     const suggestList = h("ul", { class: "rr-search-suggest", id: "rr-suggest", role: "listbox", hidden: true });
 
     // the operators of lib/query.js, in the panel's own words (the group's name is the column it filters: Year, CCF, Role …)
-    const OP_GROUP = { cites: "cite", year: "year", ccf: "tier", core: "tier", role: "author", has: "mark" };
-    const OP_TAG = { cites: "tsvCitations", year: "tsvYear", ccf: "srcCcf", core: "srcCore", role: "tsvRole", has: "tsvAwards" };
+    const OP_GROUP = { cites: "cite", year: "year", age: "year", ccf: "tier", core: "tier", type: "tier", role: "author", has: "mark" };
+    const OP_TAG = { cites: "tsvCitations", year: "tsvYear", age: "tsvYear", ccf: "srcCcf", core: "srcCore", type: "tsvVenue", role: "tsvRole", has: "tsvAwards" };
     const OP_DESC = { "role:first": "roleFirst", "role:cofirst": "roleCofirst", "role:second": "roleSecond", "role:last": "roleLast", "has:award": "markAward", "has:talk": "markTalks" };
     const operatorItems = () => B.query.OPERATORS.flatMap((o) => o.suggest.map((op) => ({ op, name: o.name, group: OP_GROUP[o.name], tag: t(OP_TAG[o.name]), desc: OP_DESC[op] ? t(OP_DESC[op]) : "" })));
 
     // a word that names an operator but has no colon yet is completed, not kept
-    const OPERATOR_NAME = /^(?:role|ccf|core|cites|year|has)$/i;
+    const OPERATOR_NAME = /^(?:role|ccf|core|cites|year|age|type|has)$/i;
     let activeSuggestIdx = -1;
     let currentSuggestions = [];
 
@@ -254,7 +254,7 @@
 
     // The quick filters: one button for each of the settings' panel.filters.pills.* (built once, put in the panel's order, and only the ones that can find something)
     const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks" };
-    const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
+    const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", recent: t("optPillRecent"), award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
     const pillEls = new Map(B.prefs.PILLS.map((id) => {
       const btn = h("button", {
         type: "button",

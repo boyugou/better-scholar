@@ -127,10 +127,11 @@ Rules:
 | `panel.filters.show` | true / false | `true` | The search box and the filters. |
 | `panel.filters.search` | true / false | `true` | The search box, with its suggestions and the number of papers it finds. |
 | `labels.filterPlaceholder` | text, at most 30 characters | `""` | The text of the hint in the search box (default: "Filter title or author…"): your own words, in every language; "" brings the built-in text back. |
-| `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
+| `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","recent","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, recent, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
 | `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.coreA` | true / false | `false` | Quick filter: a button that adds core:a* to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.cites100` | true / false | `true` | Quick filter: a button that adds cites:>100 to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.recent` | true / false | `false` | Quick filter: a button that adds age:<5 to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.first` | true / false | `true` | Quick filter: a button that adds role:first to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.cofirst` | true / false | `false` | Quick filter: a button that adds role:cofirst to the search (left out while nothing of that kind is drawn). |
 | `panel.filters.pills.second` | true / false | `false` | Quick filter: a button that adds role:second to the search (left out while nothing of that kind is drawn). |
@@ -267,6 +268,7 @@ The search box and `filter { query }` take words and operators separated by spac
 
 - `cites:>100` — citations compared with a number: > >= < <= = (a bare number means =).
 - `year:>=2020` — the publication year compared the same way.
+- `age:<5` — how old the paper is, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it (the last five years; it stays true as the years go by).
 - `ccf:a` — the venue's CCF rank: a, b or c.
 - `core:a*` — the venue's CORE rank: a*, a, b or c.
 - `role:first` — your position in the author list: first, cofirst, second, last, or middle (none of those four).

@@ -137,3 +137,19 @@ test("matching: type: with the real resolver — a venue only CORE ranks is a co
   assert.equal(analysis.queryMatcher("type:journal").test(tpami), true);
   assert.equal(analysis.queryMatcher("type:journal", () => [], { ccf: false, core: true }).test(tpami), false, "CCF is off and CORE has no journals: no kind");
 });
+
+test("age: how old a paper is in years, this year being 0: age:<5 is the last five years and stays true as the years go by", () => {
+  assert.deepEqual(query.parse("age:<5").terms, [{ kind: "age", op: "<", n: 5 }]);
+  const parsed = query.parse("age:<5");
+  const at = (year, now) => query.matches(parsed, { text: [], year, citations: 0, role: "", ccf: null, core: null, type: null, award: false, talk: false }, now);
+  assert.deepEqual([2026, 2025, 2022, 2021, 2020].map((y) => at(y, 2026)), [true, true, true, false, false], "this year and the four before it");
+  assert.deepEqual([2031, 2030, 2027, 2026].map((y) => at(y, 2031)), [true, true, true, false], "five years later the same query is five years later");
+  assert.equal(at(2030, 2026), true, "a paper dated after this year is not old");
+  assert.equal(at(null, 2026), false, "no year, no age");
+  assert.deepEqual([query.parse("age:0").terms, query.parse("age:>=10").terms], [[{ kind: "age", op: "=", n: 0 }], [{ kind: "age", op: ">=", n: 10 }]]);
+  assert.equal(query.parse("age:old").errors.length, 1, "a value that is no number says so");
+  // through the page's own matcher, with the real clock
+  const thisYear = new Date().getFullYear();
+  assert.equal(analysis.queryMatcher("age:<5").test({ ...paper, a: { ...paper.a, year: thisYear - 4 } }), true);
+  assert.equal(analysis.queryMatcher("age:<5").test({ ...paper, a: { ...paper.a, year: thisYear - 5 } }), false);
+});

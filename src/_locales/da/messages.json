@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabellen, tællingerne for priser og oplæg og oversigten til kopiering tæller kun de artikler, som filtrene lader stå (et årsinterval, en søgning, et hurtigfilter, et publikationssted); den valgte celle eller række indsnævrer ingen tælling. Fra: de tæller altid hele profilen."
+  },
+  "optPillRecent": {
+    "message": "Seneste 5 år"
   }
 }

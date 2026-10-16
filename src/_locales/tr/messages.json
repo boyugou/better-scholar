@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tablo, ödül ve sunum sayıları ile kopyalanacak özetteki sayı yalnızca filtrelerin bıraktığı makaleleri sayar (yıl aralığı, arama, hızlı filtre, yayın yeri); seçili hücre veya satır hiçbir sayıyı daraltmaz. Kapalı: her zaman tüm profil sayılır."
+  },
+  "optPillRecent": {
+    "message": "Son 5 yıl"
   }
 }

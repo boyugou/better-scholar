@@ -732,6 +732,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.ok((await suggestItems.count()) >= 4, "shows role suggestions");
     const box = await suggestMenu.boundingBox();
     assert.ok(box.y + box.height <= 800, "the list is placed with fixed coordinates: inside the window, not clipped by the panel");
+    // every operator's suggestions carry a badge (the column it filters), age: and type: too
+    for (const [typed, ops, badge] of [["age:", ["age:<5", "age:<=10"], "Year"], ["type:", ["type:conference", "type:journal"], "Venue"]]) {
+      await queryInput.fill(typed);
+      assert.deepEqual(await suggestItems.evaluateAll((els) => els.map((e) => e.dataset.op)), ops, `${typed} suggests its values`);
+      assert.equal((await suggestItems.first().locator(".rr-suggest-cat").textContent()).trim(), badge, `${typed} has a badge`);
+    }
+    await queryInput.fill("role:");
     // Escape: the list first (the text stays), then the text
     await queryInput.press("Escape");
     assert.equal(await suggestMenu.isVisible(), false);
@@ -1282,7 +1289,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.ok(!/Showing/.test(everyone.result.text), "the page call counts every paper");
       assert.ok((await pageCall("export", { format: "table", filtered: true })).result.text.includes(scope), "unless `filtered` is asked for");
       assert.equal((await pageCall("summary")).result.summaries.ccf.papers, total, "the summary call, and so the popup, counts every paper");
+      // the quick filter "Last 5 years" is age:<5: the papers of this year and the four before it, and the table is theirs
+      await pageCall("clearFilters");
+      await patchPrefs({ panel: { filters: { pills: { recent: true } } } });
+      await eventually(page, () => document.querySelector('.rr-spill[data-pill="recent"]'));
+      await page.click('.rr-spill[data-pill="recent"]');
+      await eventually(page, () => document.querySelector('.rr-spill[data-pill="recent"][aria-pressed="true"]'));
+      assert.equal(await page.inputValue(".rr-search-input"), "age:<5", "the pill puts its operator in the search box");
+      const thisYear = new Date().getFullYear();
+      const rowYears = await page.$$eval("#gsc_a_b tr.gsc_a_tr .gsc_a_y", (els) => els.map((e) => parseInt(e.textContent, 10)));
+      assert.equal(await visibleRows(page), rowYears.filter((y) => y > thisYear - 5).length, "it keeps the papers of this year and the four before it");
+      await tableIsRows("the last five years");
+      await page.click('.rr-spill[data-pill="recent"]');
+      await patchPrefs({ panel: { filters: { pills: { recent: false } } } });
+      await pageCall("clearFilters");
       // the setting off: the table, the counts and the copied text are of every paper again
+      await pickYear(page, "year-start", from);
+      await eventually(page, () => document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
       await patchPrefs({ panel: { filters: { follow: false } } });
       await eventually(page, (n) => document.querySelector('tr[data-role="first"] .rr-total').textContent === String(n), whole.first.total);
       assert.deepEqual(await readMatrix(page), whole, "with the setting off the table counts every paper");
@@ -1540,7 +1563,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     // the settings follow the preview: with everything switched on, the panel's parts and the things in them are in the order of the settings, top to bottom
     // (the chips and the name mark are in every row and the "of N" in every number, so only the panel's own parts have one place each)
     await opts.evaluate(async () => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); const all = B.prefs.apply(r.prefs, B.prefs.PRESETS.all).prefs; await chrome.storage.sync.set({ prefs: B.prefs.apply(all, { panel: { filters: { pills: Object.fromEntries(B.prefs.PILLS.map((id) => [id, true])) } } }).prefs }); });
-    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 9 && document.querySelector("#pv-panel [data-rr=\"venues\"]") && !document.querySelector("#pv-panel [data-rr=\"venues\"]").hidden);
+    await pollPage(opts, () => document.querySelectorAll("#pv-panel .rr-spill").length === 10 && document.querySelector("#pv-panel [data-rr=\"venues\"]") && !document.querySelector("#pv-panel [data-rr=\"venues\"]").hidden);
     const panelPaths = prefsLib.SETTINGS.map((x) => x.path).filter((x) => x.startsWith("panel.") && x !== "panel.metrics.of");
     const where = await opts.evaluate((paths) => {
       const aside = document.querySelector(".preview"), base = aside.getBoundingClientRect();

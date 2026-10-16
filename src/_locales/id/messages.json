@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabel, hitungan penghargaan dan presentasi, serta hitungan ringkasan yang disalin hanya menghitung makalah yang tersisa setelah difilter (rentang tahun, pencarian, filter cepat, venue); sel atau baris yang dipilih tidak mempersempit hitungan mana pun. Nonaktif: selalu menghitung seluruh profil."
+  },
+  "optPillRecent": {
+    "message": "5 tahun terakhir"
   }
 }

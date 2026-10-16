@@ -33,7 +33,7 @@
   // The parts of the panel, in their default order (the panel's `order` setting is a permutation of these; each is also a card below)
   const SECTIONS = ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"];
   // The quick filters under the search box: each adds one operator of lib/query.js to the search (a test keeps them valid)
-  const PILL_OPERATORS = { ccfA: "ccf:a", coreA: "core:a*", cites100: "cites:>100", first: "role:first", cofirst: "role:cofirst", second: "role:second", last: "role:last", award: "has:award", talk: "has:talk" };
+  const PILL_OPERATORS = { ccfA: "ccf:a", coreA: "core:a*", cites100: "cites:>100", recent: "age:<5", first: "role:first", cofirst: "role:cofirst", second: "role:second", last: "role:last", award: "has:award", talk: "has:talk" };
   const PILLS = Object.keys(PILL_OPERATORS);
   const PILLS_ON = ["ccfA", "cites100", "first", "award"];
 
@@ -138,7 +138,7 @@
     json: "Copy button: the papers shown as JSON, with roles, ranks and marks.",
     csv: "Copy button: the papers shown as CSV (RFC 4180)."
   };
-  const PILL_LABEL = { ccfA: "optPillCcfA", coreA: "optPillCoreA", cites100: "optPillCites", first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", award: "markAward", talk: "markTalks" };
+  const PILL_LABEL = { ccfA: "optPillCcfA", coreA: "optPillCoreA", cites100: "optPillCites", recent: "optPillRecent", first: "copyFirst", cofirst: "copyCofirst", second: "copySecond", last: "copyLast", award: "markAward", talk: "markTalks" };
 
   const CARDS = [
     card("language", "optLanguageTitle", "optLanguageHint", [

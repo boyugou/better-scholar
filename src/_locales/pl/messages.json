@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabela, liczniki nagród i wystąpień oraz zestawienie do skopiowania liczą tylko te prace, które pozostają po filtrach (zakres lat, wyszukiwanie, szybki filtr, miejsce publikacji); wybrana komórka lub wiersz nie zawęża żadnego licznika. Wył.: zawsze liczą cały profil."
+  },
+  "optPillRecent": {
+    "message": "Ostatnie 5 lat"
   }
 }

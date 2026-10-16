@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabellen, antalen för priser och presentationer och sammanfattningen som kopieras räknar bara de artiklar som filtren lämnar kvar (ett årsintervall, en sökning, ett snabbfilter, ett publiceringsställe); den valda cellen eller raden minskar inget antal. Av: de räknar alltid hela profilen."
+  },
+  "optPillRecent": {
+    "message": "Senaste 5 åren"
   }
 }

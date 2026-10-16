@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "A tabela, as contagens de prémios e apresentações e a contagem do resumo copiado contam apenas os artigos que os filtros deixam (um intervalo de anos, uma pesquisa, um filtro rápido, um veículo); a célula ou linha selecionada não reduz nenhuma contagem. Desativado: contam sempre o perfil inteiro."
+  },
+  "optPillRecent": {
+    "message": "Últimos 5 anos"
   }
 }

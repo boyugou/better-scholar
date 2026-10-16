@@ -20,7 +20,7 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, award: true, oral: true, spotlight: true, highlight: true });
   assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
   assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
-  assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "first", "cofirst", "second", "last", "award", "talk"]);
+  assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "recent", "first", "cofirst", "second", "last", "award", "talk"]);
   assert.equal(d.panel.venues.show, false, "the venue list is off until asked");
   assert.equal(d.panel.marks.grouping, "separate");
   assert.deepEqual(prefs.PILLS.filter((id) => d.panel.filters.pills[id]), ["ccfA", "cites100", "first", "award"], "the quick filters that were always there");
@@ -115,7 +115,7 @@ test("an order is always a whole permutation: ids left out follow in the default
   assert.deepEqual(r.ignored.map((x) => x.path), ["panel.order", "panel.copy.order"]);
   assert.match(r.ignored[0].reason, /listed twice/);
   assert.match(r.ignored[1].reason, /unknown id: "nope" \(ids: summary, table/);
-  assert.deepEqual(r.applied, [{ path: "panel.filters.pills.order", from: prefs.defaults().panel.filters.pills.order, to: ["last", "first", "ccfA", "coreA", "cites100", "cofirst", "second", "award", "talk"] }]);
+  assert.deepEqual(r.applied, [{ path: "panel.filters.pills.order", from: prefs.defaults().panel.filters.pills.order, to: ["last", "first", "ccfA", "coreA", "cites100", "recent", "cofirst", "second", "award", "talk"] }]);
   assert.equal(prefs.apply(prefs.defaults(), { panel: { order: prefs.defaults().panel.order } }).unchanged[0], "panel.order", "the same order: not a change");
   assert.equal(prefs.apply(prefs.defaults(), { panel: { order: ["table"] } }).unchanged[0], "panel.order", "a list that says what already is: not a change");
   assert.match(prefs.apply(prefs.defaults(), { panel: { order: "x" } }).ignored[0].reason, /list of ids/);

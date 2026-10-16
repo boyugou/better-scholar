@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají (rozsah let, vyhledávání, rychlý filtr, publikační místo); vybraná buňka nebo řádek nesníží žádný počet. Vyp.: počítají vždy celý profil."
+  },
+  "optPillRecent": {
+    "message": "Posledních 5 let"
   }
 }

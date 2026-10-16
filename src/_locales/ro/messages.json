@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Tabelul, numărătorile pentru premii și prezentări și numărătoarea rezumatului copiat numără doar lucrările rămase după filtre (un interval de ani, o căutare, un filtru rapid, un venue); celula sau rândul selectat nu reduce niciun număr. Dezactivat: numără mereu tot profilul."
+  },
+  "optPillRecent": {
+    "message": "Ultimii 5 ani"
   }
 }
