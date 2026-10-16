@@ -1325,6 +1325,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await patchPrefs({ panel: { filters: { follow: true } } });
       await pageCall("clearFilters");
       await eventually(page, () => !document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
+      // the search looks into every name of a list that "Read full lists" has read, not only the line the page cut
+      const fullPapers = (await pageCall("papers", { filtered: false })).result.papers;
+      const domLines = await page.$$eval("#gsc_a_b tr.gsc_a_tr", (trs) => trs.map((tr) => ({ title: tr.querySelector("a.gsc_a_at").textContent.trim(), line: (tr.querySelector(".gs_gray").textContent || "").toLowerCase() })));
+      const target = fullPapers.map((p) => {
+        const dom = domLines.find((d) => d.title === p.title);
+        const word = dom && p.authors.split(/,\s*/).map((n) => n.trim().split(/\s+/).pop().toLowerCase()).find((w) => /^[a-z]{4,}$/.test(w) && !dom.line.includes(w));
+        return word ? { title: p.title, word } : null;
+      }).find(Boolean);
+      assert.ok(target, "a paper whose whole author list has a name that the page's line lacks");
+      await page.fill(".rr-search-input", target.word);
+      await eventually(page, (t) => [...document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide) a.gsc_a_at")].some((a) => a.textContent.trim() === t), target.title);
+      await pageCall("clearFilters");
       // a script on the page cannot press the panel's buttons: the click it makes is ignored, a person's is not
       await page.evaluate(() => document.querySelector('.rr-spill[data-pill="ccfA"]').click());
       await page.waitForTimeout(400);

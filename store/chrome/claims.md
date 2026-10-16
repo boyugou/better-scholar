@@ -54,6 +54,7 @@ Checked on 2026-10-15 against commit `f1cd4f1` (version 2.41.0). The commit that
 | L37 | Your own names for titles and buttons | `src/lib/prefs.js` | `const nameRow = (key, ui) => text("labels." + key,` · `const NAME_MAX = 30;` |
 | L38 | The look and colours of the chips | `src/lib/prefs.js` | `{ id: "lists", name: "optChipThemeLists"` · `color("colors.ccf", "Colour of the CCF chips` |
 | L39 | A live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists | `src/options/options.js` · `src/options/editor.js` | `editor = B.editor.attach({ aside: document.querySelector(".preview")` · `btn("pv-x", "✕"` · `btn("pv-grip", "⠿"` · `btn("pv-edit", "✎"` · `"data-act": "venue-check"` · `resolver = resolver \|\| B.venues.createResolver(` |
+| L40 | With a filter on, the table, the awards counts and the copy summary count the papers the filters leave (a year range or `age:<5` gives the table of those years); the search language has `age:` | `src/content/main.js` · `src/lib/query.js` · `src/lib/prefs.js` | `function counted() {` · `if (!prefs.panel.filters.follow \|\| !scopeFiltering()) return live();` · `{ name: "age"` · `bool("panel.filters.follow", true,` |
 
 Counts used in the listing and measured on 2026-10-15 (not quotable): 187 domains and 374 match patterns (`manifest.json`; the
 187 equal the 187 entries of https://www.google.com/supported_domains fetched that day), 7,830 awards, 30 locale folders, the

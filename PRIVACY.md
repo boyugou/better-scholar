@@ -155,7 +155,10 @@ console — and can tell from the attribute that the extension is installed. The
 - They cannot change any setting or anything in storage, they make no network request, and they do not return the
   settings record, the Semantic Scholar key or the name spellings. The panel's own buttons answer only to a person: a
   click or a key that a script makes (`click()`, `dispatchEvent`) does nothing, so a script cannot press *Read full
-  lists*, add a spelling or open the settings page through them.
+  lists*, add a spelling or open the settings page through them. What the extension draws on the page — the panel and its
+  texts (with the names you gave things), the chips, the classes and style properties on `<html>` — is part of the
+  page, and a script there can read it, as with any extension that changes a page; the settings record itself, the
+  Semantic Scholar key and the saved details are not.
 
 ## The website's demo
 

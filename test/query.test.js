@@ -167,3 +167,12 @@ test("the matcher keeps a row's answer while its analysis and its citations are 
   assert.equal(lower.test({ raw: { ...paper.raw }, a: paper.a, shown: 1 }), true, "the text is read in lower case once for each row, and found in any case");
   assert.equal(lower.test({ raw: { ...paper.raw, title: "Attention" }, a: paper.a, shown: 1 }), false, "another row, another text");
 });
+
+test("the search finds a co-author of the whole list once it has been read, not only the names of the line the page cut", () => {
+  const cut = { raw: { ...paper.raw, authorsText: "K He, X Zhang, …" }, a: { ...paper.a, fromDetail: false, tokens: [{ name: "K He" }, { name: "X Zhang" }] }, shown: 1 };
+  assert.equal(analysis.queryMatcher("sun").test(cut), false, "the line the page printed has no Sun");
+  const full = { raw: cut.raw, a: { ...paper.a, fromDetail: true, tokens: [{ name: "K He" }, { name: "X Zhang" }, { name: "S Ren" }, { name: "J Sun" }] }, shown: 1 };
+  assert.equal(analysis.queryMatcher("sun").test(full), true, "the whole list does");
+  assert.equal(analysis.queryMatcher("zhang ren").test(full), true);
+  assert.equal(analysis.queryMatcher("zhang").test(cut), true, "and the cut line still finds what it has");
+});
