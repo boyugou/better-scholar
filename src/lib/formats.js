@@ -27,10 +27,12 @@
   // ---- the summary --------------------------------------------------------------------------------------------------------------------------
 
   // Plain-text summary for the clipboard.
-  function summaryText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [] } = {}) {
+  // `scope`: what the counts count when it is less than the whole profile ("Showing 25 of 100 papers · 2021–…"): a line under the title
+  function summaryText(summary, { owner = "", edition = "", label = ROLE_LABEL, notRanked = "unranked", extra = [], scope = "" } = {}) {
     const src = summary.source === "core" ? "CORE" : summary.source === null ? "" : "CCF";
     const lines = [];
     lines.push((owner ? owner + " — " : "") + `${summary.papers} papers on Google Scholar, by authorship role${src ? ` and ${src} rank` : ""}`);
+    if (scope) lines.push(scope);
     for (const r of summary.rows) {
       if (!r.total) continue;
       const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}: ${r[c]}`);
@@ -50,10 +52,10 @@
       rows: [...summary.rows.map((r) => [label[r.role], ...summary.columns.map((c) => r[c]), r.total]), ["", ...summary.columns.map((c) => summary.totals[c]), summary.totals.total]]
     };
   }
-  // The same table, tab-separated, for a spreadsheet.
+  // The same table, tab-separated, for a spreadsheet. `opts.scope`: what it counts, when that is less than the whole profile: a last line under the table
   function summaryTsv(summary, opts) {
     const t = summaryTable(summary, opts);
-    return [t.header, ...t.rows].map((r) => r.join("\t")).join("\n");
+    return rowsTsv(t.header, [...t.rows, ...(opts && opts.scope ? [[opts.scope]] : [])]);
   }
 
   // ---- tables: tab-separated and CSV ----------------------------------------------------------------------------------------------------------
@@ -97,9 +99,9 @@
   const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ESC[c]);
   // a cell is a text, or { html } (already made safe: the owner's name in bold)
-  function rowsHtml(header, rows) {
+  function rowsHtml(header, rows, caption = "") {
     const cell = (tag) => (v) => `<${tag}>${v && typeof v === "object" && "html" in v ? v.html : esc(formulaSafe(clean(v)))}</${tag}>`;
-    return `<table border="1" cellspacing="0" cellpadding="4">\n<thead><tr>${header.map(cell("th")).join("")}</tr></thead>\n<tbody>\n${rows.map((r) => `<tr>${r.map(cell("td")).join("")}</tr>`).join("\n")}\n</tbody>\n</table>`;
+    return `<table border="1" cellspacing="0" cellpadding="4">\n${caption ? `<caption>${esc(clean(caption))}</caption>\n` : ""}<thead><tr>${header.map(cell("th")).join("")}</tr></thead>\n<tbody>\n${rows.map((r) => `<tr>${r.map(cell("td")).join("")}</tr>`).join("\n")}\n</tbody>\n</table>`;
   }
   // `ctx.markMe`: the owner's name is in bold in the author cells (as the page marks it in the author line); a name is one of the line's names, whole
   const boldOwner = (authors, me) => {
@@ -111,7 +113,7 @@
     const rows = ctx.markMe && col >= 0 ? t.rows.map((r, i) => (clean(papers[i].me) ? r.map((v, j) => (j === col ? { html: boldOwner(esc(clean(papers[i].authors)), esc(clean(papers[i].me))) } : v)) : r)) : t.rows;
     return rowsHtml(t.header, rows);
   }
-  const summaryHtml = (summary, opts) => { const t = summaryTable(summary, opts); return rowsHtml(t.header, t.rows); };
+  const summaryHtml = (summary, opts) => { const t = summaryTable(summary, opts); return rowsHtml(t.header, t.rows, opts && opts.scope); };
 
   // ---- BibTeX -----------------------------------------------------------------------------------------------------------------------------------
   // Everything that means something to TeX is made into the text it spells, so that an entry compiles whatever the title says (and a title cannot carry a command).

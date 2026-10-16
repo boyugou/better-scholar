@@ -1069,6 +1069,13 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
 
     // -- S3c. every thing the panel draws has its own switch, and the parts and the buttons have an order
     const patchPrefs = async (patch) => { await settle(opts); return opts.evaluate(async (pt) => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, pt).prefs }); }, patch); };
+    // (a call of lib/agent.js from the page: the page events the extension answers)
+    const pageCall = (method, params) => page.evaluate(([m, pa]) => new Promise((resolve) => {
+      const id = "c" + Math.random();
+      const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
+      document.addEventListener("better-scholar:response", on);
+      document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: m, params: pa } }));
+    }), [method, params]);
     const count = (sel) => page.locator("#rr-panel " + sel).count();
     const sectionOrder = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-body > [data-section]")].filter((e) => !e.hidden).map((e) => e.dataset.section));
     const defaultOrder = await sectionOrder();
@@ -1163,12 +1170,6 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     // -- S3c2. a call does not apply what the settings leave without a control (and says so), the exports follow what is drawn, a table with no rank column keeps its total,
     // and a panel with nothing in it is no frame on the page
     {
-      const pageCall = (method, params) => page.evaluate(([m, pa]) => new Promise((resolve) => {
-        const id = "c" + Math.random();
-        const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
-        document.addEventListener("better-scholar:response", on);
-        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: m, params: pa } }));
-      }), [method, params]);
       await patchPrefs({ panel: { filters: { show: false, bar: false }, metrics: { show: false } } });
       await eventually(page, () => document.querySelector('[data-rr="filters"]').hidden && document.querySelector('[data-rr="metrics"]').hidden);
       const gone = await pageCall("filter", { query: "ccf:a", minCitations: 500, impact: "h" });
@@ -1223,6 +1224,73 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await patchPrefs({ panel: { header: { name: true, settings: true, fold: true }, ...Object.fromEntries(Object.entries(parts).map(([k, v]) => [k, { show: v }])) } });
       await eventually(page, () => !document.querySelector("#rr-panel").hidden && document.querySelector('[data-rr="metrics"]'));
       ok("a call leaves out (and reports) the filters the settings left without a control; the exports use only a list that is drawn; a table with no rank column keeps its total; a panel with nothing in it is hidden");
+    }
+
+    // -- S3c3. the counts follow the filters: a year range narrows the table, the awards counts and the panel's copy summary and table (which say what they counted); the cell picked in
+    // the table narrows no count; the toolbar popup's and the page calls' numbers stay over every paper; with the setting off nothing follows
+    {
+      await pageCall("clearFilters");
+      await patchPrefs({ roles: { first: true, cofirst: true, second: true, last: true }, panel: { show: true, table: { show: true }, marks: { show: true }, copy: { show: true, summary: true, table: true }, filters: { show: true, years: true, follow: true, bar: true }, years: { show: true } } });
+      await eventually(page, () => document.querySelector(".rr-matrix") && !document.querySelector(".rr-year").hidden && document.querySelector('[data-act="copy-summary"]') && document.querySelector('[data-act="copy-table"]'));
+      const rowsOf = (role) => page.locator(`#gsc_a_b tr.gsc_a_tr.rr-r-${role}:not(.rr-hide)`).count();
+      const tableIsRows = async (what) => {
+        const m = await readMatrix(page);
+        for (const role of ["first", "second", "last"]) assert.equal(m[role].total, await rowsOf(role), `${what}: the ${role}-author row of the table is the number of ${role}-author rows shown`);
+        return m;
+      };
+      const sum = (m) => Object.entries(m).filter(([k]) => k !== "hidden").reduce((n, [, r]) => n + r.total, 0);
+      const marksCount = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel [data-mark-group] b")].reduce((n, b) => n + parseInt(b.textContent, 10), 0));
+      const flavours = () => page.evaluate(async () => { const out = {}; for (const item of await navigator.clipboard.read()) for (const type of item.types) out[type] = await (await item.getType(type)).text(); return out; });
+      const copied = async (kind) => {
+        await page.click(`[data-act="copy-${kind}"]`);
+        await eventually(page, (k) => document.querySelector(`[data-act="copy-${k}"]`).classList.contains("rr-btn-flashed"), kind);
+        return flavours();
+      };
+      const whole = await tableIsRows("no filter");
+      const marksWhole = await marksCount();
+      const total = (await pageCall("papers", { filtered: false })).result.total;
+      const years = (await page.$$eval("#gsc_a_b tr.gsc_a_tr .gsc_a_y", (els) => els.map((e) => parseInt(e.textContent, 10)).filter(Boolean))).sort((a, b) => a - b);
+      const from = years[Math.floor(years.length / 2)];
+      await pickYear(page, "year-start", from);
+      await eventually(page, () => document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
+      const narrow = await tableIsRows(`from ${from}`);
+      assert.ok(sum(narrow) < sum(whole), "a year range narrows the table");
+      const marksNarrow = await marksCount();
+      assert.ok(marksNarrow <= marksWhole, "and the awards and talks counts");
+      assert.deepEqual(Object.keys(narrow), Object.keys(whole), "the table keeps its rows under a filter");
+      // the cell picked in the table does not narrow the table (it is where it is picked); the list is the cell's papers within the years
+      const cell = 'button.rr-cell[data-role="last"][data-tier="A"]';
+      await page.click(cell);
+      await eventually(page, () => document.querySelector('button.rr-cell[data-role="last"][data-tier="A"][aria-pressed="true"]'));
+      assert.deepEqual(await readMatrix(page), narrow, "a cell picked in the table leaves the table as it was");
+      assert.equal(await marksCount(), marksNarrow, "and the awards and talks counts");
+      assert.equal(await visibleRows(page), narrow.last.A, "and lists the papers of that cell within the years chosen");
+      await page.click(cell);
+      await eventually(page, () => !document.querySelector('button.rr-cell[aria-pressed="true"]'));
+      // what the copy buttons put on the clipboard says what it counted
+      const shown = await visibleRows(page);
+      const scope = `Showing ${shown} of ${total} papers · ${from}–…`;
+      const summaryText = (await copied("summary"))["text/plain"].split("\n");
+      assert.equal(summaryText[1], scope, "the copied summary says what it counted: " + summaryText.slice(0, 2).join(" | "));
+      if (narrow.first.total) assert.ok(summaryText.some((l) => l.startsWith(`First author: ${narrow.first.total} `)), "and has the numbers of the table: " + summaryText.join(" | "));
+      const tab = await copied("table");
+      const lines = tab["text/plain"].split("\n");
+      assert.equal(lines[lines.length - 1], scope, "the copied table has it as its last line");
+      assert.ok(tab["text/html"].includes(`<caption>${scope}</caption>`), "and as the caption of the real table");
+      // the toolbar popup and the page calls count every paper unless asked
+      const everyone = await pageCall("export", { format: "table" });
+      assert.ok(!/Showing/.test(everyone.result.text), "the page call counts every paper");
+      assert.ok((await pageCall("export", { format: "table", filtered: true })).result.text.includes(scope), "unless `filtered` is asked for");
+      assert.equal((await pageCall("summary")).result.summaries.ccf.papers, total, "the summary call, and so the popup, counts every paper");
+      // the setting off: the table, the counts and the copied text are of every paper again
+      await patchPrefs({ panel: { filters: { follow: false } } });
+      await eventually(page, (n) => document.querySelector('tr[data-role="first"] .rr-total').textContent === String(n), whole.first.total);
+      assert.deepEqual(await readMatrix(page), whole, "with the setting off the table counts every paper");
+      assert.ok(!(await copied("summary"))["text/plain"].includes("Showing"), "and the copied summary does not say it counted less");
+      await patchPrefs({ panel: { filters: { follow: true } } });
+      await pageCall("clearFilters");
+      await eventually(page, () => !document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
+      ok("the counts follow the filters: a year range narrows the table, the awards counts and the copied summary and table (which say what they counted); the picked cell narrows no count; the popup and the page calls count every paper; the setting off restores it");
     }
 
     // -- S3d. names: the person's own words for a title or a name on the screen, in every language; what a machine reads keeps the standard words
@@ -1479,7 +1547,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       return paths.map((p) => { const el = aside.querySelector(`#pv-panel [data-rr-part="${p}"]`); if (!el) return null; const r = el.getBoundingClientRect(); if (!r.width && !r.height) return null; return { p, y: Math.round(r.top - base.top + aside.scrollTop), x: Math.round(r.left - base.left) }; }).filter(Boolean);
     }, panelPaths);
     const missing = panelPaths.filter((x) => !where.some((w) => w.p === x));
-    assert.deepEqual(missing.filter((x) => !["panel.show", "panel.order", "panel.filters.bar", "panel.copy.order", "panel.filters.pills.order", "panel.marks.grouping"].includes(x)), [], "every part of the panel is drawn in the preview, so that it can be pointed at");
+    assert.deepEqual(missing.filter((x) => !["panel.show", "panel.order", "panel.filters.bar", "panel.copy.order", "panel.filters.pills.order", "panel.marks.grouping", "panel.filters.follow"].includes(x)), [], "every part of the panel is drawn in the preview, so that it can be pointed at");
     for (let i = 1; i < where.length; i++) {
       const a = where[i - 1], b = where[i];
       assert.ok(b.y > a.y + 6 || (b.y >= a.y - 6 && b.x >= a.x - 2), `the settings follow the preview: ${a.p} (${a.y}, ${a.x}) comes before ${b.p} (${b.y}, ${b.x})`);

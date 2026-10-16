@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Ikke gemt: dine egne navne fylder tilsammen mere end den plads, Chrome reserverer til indstillingerne (8 KB i alt). Forkort nogle af dem."
+  },
+  "optFiltersFollow": {
+    "message": "Tallene følger filtrene"
+  },
+  "optFiltersFollowHint": {
+    "message": "Tabellen, tællingerne for priser og oplæg og oversigten til kopiering tæller kun de artikler, som filtrene lader stå (et årsinterval, en søgning, et hurtigfilter, et publikationssted); den valgte celle eller række indsnævrer ingen tælling. Fra: de tæller altid hele profilen."
   }
 }

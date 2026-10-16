@@ -1141,5 +1141,11 @@
   },
   "optSaveTooBig": {
     "message": "Nem mentve: a megadott nevek együtt több helyet foglalnak, mint amennyit a Chrome a beállításoknak tart fenn (összesen 8 KB). Rövidítsd le némelyiket."
+  },
+  "optFiltersFollow": {
+    "message": "A számok a szűrőkhöz igazodnak"
+  },
+  "optFiltersFollowHint": {
+    "message": "A táblázat, a díjak és előadások számlálói, valamint a másolandó összesítés száma csak azokat a cikkeket számolják, amelyek átjutnak a szűrőkön (évtartomány, keresés, gyorsszűrő, venue); a kiválasztott cella vagy sor egyik számlálót sem szűkíti. Kikapcsolva: mindig az egész profilt számolják."
   }
 }

@@ -1141,5 +1141,11 @@
   },
   "optSaveTooBig": {
     "message": "Chưa lưu: các tên bạn đặt cộng lại vượt quá dung lượng mà Chrome dành cho cài đặt (tổng cộng 8 KB). Hãy rút ngắn bớt một số tên."
+  },
+  "optFiltersFollow": {
+    "message": "Số liệu theo bộ lọc"
+  },
+  "optFiltersFollowHint": {
+    "message": "Bảng, số đếm giải thưởng và báo cáo cùng bản tóm tắt sao chép chỉ tính các bài báo còn lại sau bộ lọc (khoảng năm, tìm kiếm, bộ lọc nhanh, venue); ô hoặc hàng được chọn không thu hẹp bất kỳ số đếm nào. Tắt: luôn tính trên toàn bộ hồ sơ."
   }
 }

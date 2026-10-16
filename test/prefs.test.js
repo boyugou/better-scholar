@@ -355,3 +355,14 @@ test("the record's size is counted the way Chrome counts it: a '<' is six bytes,
   const ok = prefs.apply(prefs.defaults(), { labels: Object.fromEntries(Object.keys(prefs.NAMES).map((k) => [k, "字".repeat(prefs.NAME_MAX)])) });
   assert.equal(ok.applied.length, Object.keys(prefs.NAMES).length);
 });
+
+test("the counts follow the filters: on by default, a switch of the filters' card with its hint, and the panel's only (it hangs on the panel itself)", () => {
+  assert.equal(prefs.defaults().panel.filters.follow, true);
+  const row = prefs.SETTINGS.find((r) => r.path === "panel.filters.follow");
+  assert.equal(row.kind, "bool");
+  assert.equal(row.parent, "panel.show");
+  assert.deepEqual([row.label, row.hint], ["optFiltersFollow", "optFiltersFollowHint"]);
+  assert.ok(prefs.CARDS.find((c) => c.id === "filters").rows.some((r) => r.path === "panel.filters.follow"), "it is on the filters' card");
+  const off = prefs.apply(prefs.defaults(), { panel: { filters: { follow: false } } });
+  assert.deepEqual(off.applied.map((a) => [a.path, a.to]), [["panel.filters.follow", false]]);
+});

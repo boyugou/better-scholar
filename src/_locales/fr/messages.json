@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Non enregistré : les noms que vous avez choisis dépassent ensemble l'espace que Chrome réserve aux réglages (8 KB au total). Raccourcissez-en quelques-uns."
+  },
+  "optFiltersFollow": {
+    "message": "Les compteurs suivent les filtres"
+  },
+  "optFiltersFollowHint": {
+    "message": "Le tableau, les compteurs de prix et présentations et le récapitulatif copié ne comptent que les articles que laissent les filtres (une plage d’années, une recherche, un filtre rapide, une conférence ou une revue) ; la cellule ou la ligne sélectionnée ne réduit aucun compteur. Désactivée : ils comptent toujours tout le profil."
   }
 }

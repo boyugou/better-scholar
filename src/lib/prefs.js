@@ -228,7 +228,9 @@
       { parent: "panel.filters.show", ...named("onlyHighlighted") },
       bool("panel.filters.years", true, "The year range: From and To.", { label: "optFiltersYears", parent: "panel.filters.show" }),
       { parent: "panel.filters.show", ...named("yearLabel") },
-      ...names("yearStart", "yearEnd").map((r) => ({ parent: "panel.filters.show", ...r }))
+      ...names("yearStart", "yearEnd").map((r) => ({ parent: "panel.filters.show", ...r })),
+      bool("panel.filters.follow", true, "The counts follow the filters: the table, the awards and talks counts and the panel's copy summary and copy table count the papers the filters leave (a year range, a search, a quick filter, a venue, Only highlighted, the papers behind the h-index); the cell or the row picked in a count narrows no count. Off: they count every paper.",
+        { label: "optFiltersFollow", hint: "optFiltersFollowHint", parent: "panel.show" })
     ]),
     card("metrics", "optPanelMetrics", "optPanelMetricsHint", part("metrics", "Citation totals (papers, citations, h-index, i10-index) of all papers and of the highlighted ones.", [
       ["title", true, "optPartTitle", "The title line of the citation totals.", { name: "metricsTitle" }],

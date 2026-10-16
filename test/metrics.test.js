@@ -95,6 +95,14 @@ test("summarize with no ranking (both rank lists switched off): roles only, no t
   assert.ok(m.inSelection(paper("first", "A"), { role: "first" }, null));
 });
 
+test("summarize keeps the rows it is told to: a count of fewer papers has the shape of the whole list", () => {
+  const rows = [paper("first", "A")];
+  assert.deepEqual(m.summarize(rows, "ccf").rows.map((r) => r.role), ["first", "second", "last"], "cofirst and middle only when they have papers");
+  const kept = m.summarize(rows, "ccf", { keep: ["cofirst", "middle"] });
+  assert.deepEqual(kept.rows.map((r) => [r.role, r.total]), [["first", 1], ["cofirst", 0], ["second", 0], ["last", 0], ["middle", 0]]);
+  assert.equal(kept.totals.total, 1);
+});
+
 test("byYear: highlighted papers per year and role, every year in between, none without a year", () => {
   const r = (year, role, highlighted = true) => ({ year, role, highlighted });
   const out = m.byYear([r(2020, "first"), r(2020, "last"), r(2022, "second"), r(2022, "first", false), r(null, "first"), r(2021, "middle")]);

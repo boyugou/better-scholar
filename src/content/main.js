@@ -198,8 +198,9 @@
   // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
 const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
-  // Do the filters let this row through? `skipVenue`: leave the venue choice out (the venue list is not narrowed by its own choice).
-  function passes(row, source, min, { skipVenue = false } = {}) {
+  // Do the filters let this row through? `skip`: choices to leave out — `venue` (the venue list is not narrowed by its own choice), `selection` (the table's cell, for the table's
+  // own counts), `marks` (an awards row, for the awards counts).
+  function passes(row, source, min, skip = {}) {
     const f = state.filters, a = row.a;
     if (a.year != null) {
       if (f.yearStart != null && a.year < f.yearStart) return false;
@@ -208,18 +209,18 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (f.query && !matcher().test(row)) return false;
     if (f.minCitations != null && row.shown < f.minCitations) return false;
     if (min && !(row.highlighted && row.shown >= min)) return false;
-    if (state.markGroup && !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup)) return false;
-    if (!skipVenue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs)) !== state.venueKey) return false;
-    if (state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
+    if (!skip.marks && state.markGroup && !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup)) return false;
+    if (!skip.venue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs)) !== state.venueKey) return false;
+    if (!skip.selection && state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
     return true;
   }
 
+  // Do the filters keep this row out of the list? (the same `skip` as `passes`)
+  const hides = (row, source, min, skip) => (state.filters.onlyHighlighted && !row.highlighted) || (state.venueKey && !row.highlighted) || !passes(row, source, min, skip);
+
   function applyFilters() {
     const source = currentSource(), min = impactMin(source);
-    for (const row of live()) {
-      const hide = (state.filters.onlyHighlighted && !row.highlighted) || (state.venueKey && !row.highlighted) || !passes(row, source, min);
-      row.raw.tr.classList.toggle("rr-hide", !!hide);
-    }
+    for (const row of live()) row.raw.tr.classList.toggle("rr-hide", !!hides(row, source, min));
   }
 
   // ---- panel model --------------------------------------------------------
@@ -235,12 +236,14 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // Papers per award / talk group among the papers that are the profile owner's (a paper the owner is not
   // on, per its full author list, is not counted) — only the groups whose count row the settings page has switched on.
   // The award kinds behind the "Awards" count (only when that row is switched on)
-  function markKinds() {
-    return prefs.panel.marks.award ? marks.summarizeKinds(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.panelMarks(prefs, r.a.marks) }))) : {};
+  // (`filtered`: of the rows the filters leave, as the panel counts; false: of every row, as the toolbar popup and the page calls count)
+  const markRows = (filtered) => (filtered ? counted() : live()).filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.panelMarks(prefs, r.a.marks) }));
+  function markKinds(filtered = true) {
+    return prefs.panel.marks.award ? marks.summarizeKinds(markRows(filtered)) : {};
   }
 
-  function markCounts() {
-    return marks.summarize(live().filter((r) => r.a.status !== "absent").map((r) => ({ marks: B.prefs.panelMarks(prefs, r.a.marks) })), prefs.panel.marks.grouping);
+  function markCounts(filtered = true) {
+    return marks.summarize(markRows(filtered), prefs.panel.marks.grouping);
   }
 
   // Most rows without an author line means Scholar's markup moved under us.
@@ -249,11 +252,28 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // is any filter narrowing the list (a matrix cell, a group, a venue, "only highlighted", a year range, or a search query)?
   const filtering = () => !!(state.selection || state.markGroup || state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query || state.filters.minCitations != null || state.filters.impact);
 
-  // The numbers under the filters follow the filters: the year range, an awards row, a matrix cell and a venue narrow what is counted. The table
-  // itself stays whole (it is where a cell is chosen), and so do the year bars (the range is chosen against them); the venue list is not narrowed by its own choice.
+  // The numbers of the highlighted papers (citations, h-index, i10) and the venue list follow all the filters — the year range, an awards row, a matrix cell and a venue narrow what is
+  // counted; the venue list is not narrowed by its own choice. (The table, the awards and talks counts and the copied summary count by `counted()` below; the year bars stay whole:
+  // the range is chosen against them.)
   function scoped(source, { skipVenue = false, skipImpact = false } = {}) {
     const min = skipImpact ? 0 : impactMin(source);
-    return live().filter((r) => passes(r, source, min, { skipVenue })).map(paperOf);
+    return live().filter((r) => passes(r, source, min, { venue: skipVenue })).map(paperOf);
+  }
+
+  // A filter that narrows the counts, as against a pick made in a count (the table's cell, an awards row: they list papers, and the counts stay whole under them, so that picking
+  // one never empties the list it is picked from, and what is copied is what the panel shows): the venue, "Only highlighted", the years, the search words, the least
+  // citations, the papers behind the h-index
+  const scopeFiltering = () => !!(state.venueKey || state.filters.onlyHighlighted || state.filters.yearStart != null || state.filters.yearEnd != null || state.filters.query || state.filters.minCitations != null || state.filters.impact);
+  // The rows the table, the awards and talks counts and the panel's copy summary count: the rows those filters leave (with the counts following the filters, a setting), else every row
+  function counted() {
+    if (!prefs.panel.filters.follow || !scopeFiltering()) return live();
+    const source = currentSource(), min = impactMin(source), skip = { selection: true, marks: true };
+    return live().filter((r) => !hides(r, source, min, skip));
+  }
+  // The table's summary: of the rows counted, with the rows (roles) of the whole list so that the table does not change its shape under a filter
+  function tableSummary(whole, source) {
+    if (!prefs.panel.filters.follow || !scopeFiltering()) return whole;
+    return metrics.summarize(counted().map(paperOf), source, { keep: whole.rows.map((r) => r.role) });
   }
 
   // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
@@ -273,10 +293,11 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const source = currentSource();
     const bare = noRanks(list);
     const yearBars = metrics.yearBars(list);
-    const summary = metrics.summarize(list, bare ? null : source);
+    const whole = metrics.summarize(list, bare ? null : source);          // (the coverage numbers are about the whole profile)
+    const summary = tableSummary(whole, bare ? null : source);
     const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs));
     return {
-      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, noRanks: bare,
+      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare,
       selection: state.selection, filters: state.filters,
       searchMatch: matcher().empty ? null : { count: shownRows().length, cursor: state.searchCursor, errors: matcher().errors },
       filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
@@ -289,7 +310,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       coverage: {
         loaded: list.length, canLoadMore: B.scholar.canLoadMore(), complete: listComplete(), loadingAll: state.loadingAll, loadMessage: state.loadMessage,
         repeats: prefs.mergeDuplicates ? 0 : B.duplicates.plan(state.rows.map(dupEntry)).keep.filter((k) => !k).length,
-        hidden: summary.hidden, absent: summary.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
+        hidden: whole.hidden, absent: whole.absent, resolving: state.resolving, resolveMessage: state.resolveMessage, layoutBroken: layoutBroken(),
         unmatched: metrics.unmatchedVenues(list)
       },
       variants, nameHints: hints
@@ -337,23 +358,33 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     awards: t("tsvAwards"), citations: t("tsvCitations"), hidden: td("roleHidden"), roles: copyLabels() });
 
   // The summary of the papers by role and rank, from the list the panel counts. `source`: the ranking it uses (default: the panel's own; "none": by role only).
-  function summaryOf(source) {
+  // `filtered`: of the papers the filters leave, as the panel's table counts them (the panel's own buttons); otherwise of every paper (the toolbar popup, the page calls)
+  function summaryOf(source, filtered = false) {
     const list = papers(), fallback = noRanks(list) ? null : currentSource();
     const src = source === undefined ? fallback : source === "none" ? null : B.prefs.lists(prefs)[source] ? source : fallback;           // (a list that nothing draws is not used)
-    return { summary: metrics.summarize(list, src), src };
+    const whole = metrics.summarize(list, src);
+    return { summary: filtered ? tableSummary(whole, src) : whole, src };
   }
-  const summaryWords = () => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked") });
+  // What a summary of the papers the filters leave counts, in the words of the filter bar and the language's own words: "Showing 25 of 100 papers · 2021–…" ("" when every paper is counted)
+  function scopeLine() {
+    if (!prefs.panel.filters.follow || !scopeFiltering()) return "";
+    const source = currentSource();
+    const parts = panel.filterParts({ source, selection: null, markGroup: null, venueKey: state.venueKey, filters: state.filters,
+      filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } }, true, td);
+    return td("filterShowing", [String(counted().length), String(live().length)]) + (parts.length ? " · " + parts.join(" · ") : "");
+  }
+  const summaryWords = (filtered) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "" });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
-  function exportText(kind, { source } = {}) {
+  function exportText(kind, { source, filtered = false } = {}) {
     const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core };
     if (kind === "summary" || kind === "table") {
-      const { summary, src } = summaryOf(source);
+      const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
-        ? formats.summaryTsv(summary, summaryWords())
-        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts())].filter(Boolean),
-          edition: src ? `${edition[src]} — ${t("tipToday")}` : "" });
+        ? formats.summaryTsv(summary, summaryWords(filtered))
+        : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts(filtered))].filter(Boolean),
+          edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "" });
     }
     const records = paperRecords();
     switch (kind) {
@@ -367,8 +398,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   }
 
   // The second flavour of a copy button, for a word processor: a real table for the table and the papers, real italics for APA; "" for the others (their text is the whole of it)
-  function exportHtml(kind, { source } = {}) {
-    if (kind === "table") return formats.summaryHtml(summaryOf(source).summary, summaryWords());
+  function exportHtml(kind, { source, filtered = false } = {}) {
+    if (kind === "table") return formats.summaryHtml(summaryOf(source, filtered).summary, summaryWords(filtered));
     if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, markMe: !!prefs.rows.name });
     if (kind === "apa") return formats.apaHtml(paperRecords());
     return "";
@@ -377,12 +408,12 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // A copy button pressed: the text goes to the clipboard, or (CSV) to a file; what there is to say is said on the button
   async function deliver(kind) {
     if (kind !== "summary" && kind !== "table" && !shownRows().length) { panel.flash(kind, "empty"); return; }          // (the filters leave no paper: nothing to put on the clipboard)
-    const text = exportText(kind);
+    const text = exportText(kind, { filtered: true });                                // (the panel's buttons copy what the panel counts)
     if (kind === "csv") {
       const safe = (headerName || "scholar").trim().replace(/[/\\?%*:|"<>]/g, "").replace(/\s+/g, "_");
       B.dom.downloadFile((safe || "scholar") + "-papers.csv", text);
       panel.flash(kind);
-    } else if (await copyText(text, exportHtml(kind))) panel.flash(kind);
+    } else if (await copyText(text, exportHtml(kind, { filtered: true }))) panel.flash(kind);
   }
 
   function clearFocusedRow() {
@@ -633,14 +664,14 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
         owner: headerName, loaded: list.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
         noRanks: noRanks(list),
         summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-        marks: markCounts(),
+        marks: markCounts(false),
         metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }
       };
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
-    export: ({ format, source, html }) => {
-      const rich = html ? exportHtml(format, { source }) : "";
-      return { format, text: exportText(format, { source }), ...(rich ? { html: rich } : {}) };          // (a format with no HTML has no html key)
+    export: ({ format, source, html, filtered }) => {
+      const rich = html ? exportHtml(format, { source, filtered }) : "";
+      return { format, text: exportText(format, { source, filtered }), ...(rich ? { html: rich } : {}) };          // (a format with no HTML has no html key)
     },
     filter: (p) => {
       // (a filter with no control left to undo it would hide rows for good)

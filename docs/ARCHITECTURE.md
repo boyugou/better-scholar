@@ -257,8 +257,16 @@ arrows, otherwise `Enter` / `Shift+Enter` step through the matching rows (`rr-ro
 the `filter` call — and `impact`). `applyFilters()` toggles `rr-hide` on rows; `filtering()` says whether any is on, which shows
 the panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*); `Escape` on the page clears them all
 when nothing else has taken the key. The numbers under the filters follow them (`scoped()`: highlighted papers, citations,
-h-index, i10, the venue list — the venue list is not narrowed by its own choice), while the role × rank table and the year bars
-stay whole: they are where a filter is chosen.
+h-index, i10, the venue list — the venue list is not narrowed by its own choice). So do the role × rank table, the awards and
+talks counts and the panel's copy summary and copy table (`counted()`, `tableSummary()`; the setting `panel.filters.follow`, on by
+default): they count the papers the narrowing filters leave (`scopeFiltering()`: the venue, *Only highlighted*, the years, the
+search words, the least citations, the papers behind the h-index). The cell picked in the table and an awards row are picks: they
+list papers and narrow no count (`passes(…, skip)` with `selection` and `marks`), so that picking one never empties the list it
+is picked from and what is copied is what the panel shows. The table keeps the rows of the whole profile (`summarize(…, { keep })`)
+and the copied text says what it counted ("Showing 25 of 100 papers · 2021–…": a line under the summary's title, the last line of
+the tab-separated table, the caption of the real table). Only the year bars stay whole (a range is chosen against them), and so do
+the coverage lines (loaded, hidden, absent), the toolbar popup and the `summary` call; `export` takes `filtered: true` for the
+panel's way of counting.
 
 The impact filter is the h-index and i10 buttons: it shows the highlighted papers behind the number — at least *h* citations,
 *h* being the h-index of the highlighted papers the other filters let through (`impactMin()`), or at least 10. The totals do not

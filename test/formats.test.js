@@ -25,6 +25,21 @@ test("summaryText / summaryTsv", () => {
   assert.equal(tsv[tsv.length - 1], "\t1\t1\t0\t1\t3");
 });
 
+test("a summary of the papers the filters leave says what it counted: a line under the title, the last line of the table, the caption of the real table", () => {
+  const s = metrics.summarize([row("first", "A")], "ccf");
+  const scope = 'Showing 1 of 9 papers · 2021–… · "vision" <b>';
+  const text = f.summaryText(s, { owner: "Jane Doe", scope }).split("\n");
+  assert.equal(text[0], "Jane Doe — 1 papers on Google Scholar, by authorship role and CCF rank");
+  assert.equal(text[1], scope);
+  assert.ok(!f.summaryText(s, { owner: "Jane Doe" }).includes("Showing"), "no scope, no line");
+  const tsv = f.summaryTsv(s, { scope }).split("\n");
+  assert.equal(tsv[tsv.length - 1], '"Showing 1 of 9 papers · 2021–… · ""vision"" <b>"', "a quotation mark in the line is quoted for a spreadsheet");
+  assert.equal(f.summaryTsv(s).split("\n").length, tsv.length - 1, "no scope, no extra line");
+  const html = f.summaryHtml(s, { scope });
+  assert.match(html, /<caption>Showing 1 of 9 papers · 2021–… · &quot;vision&quot; &lt;b&gt;<\/caption>/, "escaped");
+  assert.ok(!f.summaryHtml(s).includes("<caption>"));
+});
+
 test("summaryText appends extra lines before the edition; with no ranking there are no tier columns", () => {
   const s = metrics.summarize([row("first", null)], "ccf");
   const lines = f.summaryText(s, { owner: "Jane Doe", extra: ["Awards & talks: Awards 1"], edition: "CCF 2026" }).split("\n");

@@ -1162,5 +1162,11 @@
   },
   "optSaveTooBig": {
     "message": "Não salvo: os nomes que você escolheu somam mais do que o espaço que o Chrome reserva para as configurações (8 KB no total). Encurte alguns deles."
+  },
+  "optFiltersFollow": {
+    "message": "As contagens seguem os filtros"
+  },
+  "optFiltersFollowHint": {
+    "message": "A tabela, as contagens de prêmios e apresentações e a contagem do resumo copiado só contam os artigos que os filtros deixam (um intervalo de anos, uma pesquisa, um filtro rápido, um veículo); a célula ou linha selecionada não reduz nenhuma contagem. Desativado: sempre contam o perfil inteiro."
   }
 }
