@@ -537,7 +537,6 @@
       input);
   }
 
-  const LANGS = B.i18n.LANGUAGES.map(([code, name]) => [code, name]);
   const card = (id, title, desc, ...rows) => {
     const iconObj = CARD_ICONS[id] || { icon: "sliders", color: "#2563eb", bg: "rgba(37, 99, 235, 0.12)" };
     const h2 = h("h2", {}, makeIconBadge(iconObj), h("span", { class: "card-title-text" }, title));
