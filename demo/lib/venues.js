@@ -35,12 +35,12 @@
     "proceedings", "proceeding", "proc", "conference", "conferences", "conf", "symposium",
     "symposia", "symp", "workshop", "workshops", "meeting", "meetings", "congress",
     "colloquium", "annual", "international", "intl", "int", "joint", "edition",
-    "volume", "vol", "part", "track", "session", "sessions", "ann", "biennial", "triennial",
+    "volume", "vol", "part", "track", "session", "sessions", "ann", "annu", "biennial", "triennial",
     // (typos of "proceedings" that Scholar prints: "Procedings of the British Machine Vision Conference 2015", "Proceesings of the 9th Biennial Conference …")
     "procedings", "proceesings", "proceeedings", "proccedings", "proceedigs"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
-  const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "acis", "iet", "edac", "esda", "eai", "sigchi",
+  const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "edac", "esda", "eai", "sigchi",
     // ACM's special interest groups that sponsor many events and are the name of none ("ACM SIGPLAN International Conference on
     // Functional Programming" is "International Conference on Functional Programming" without them)
     "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim"]);
@@ -241,7 +241,7 @@
     function newSide() {
       // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
       // official name once its boilerplate is dropped ("IEEE International Conference on Data Mining" → "data mining")
-      return { names: new Map(), bare: new Map(), abbrs: new Map(), weakAbbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+      return { names: new Map(), volumeNames: new Map(), bare: new Map(), abbrs: new Map(), weakAbbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
     }
     const push = (map, key, entry) => {
       if (!key) return;
@@ -249,7 +249,7 @@
       if (!list) map.set(key, [entry]); else if (!list.includes(entry)) list.push(entry);
     };
 
-    function register(src, kind, entry, names, abbrs, curated, noPrefix, fullOnly) {
+    function register(src, kind, entry, names, abbrs, curated, noPrefix, fullOnly, volumeOnly) {
       const side = sources[src][kind];
       if (!side) return;
       if (!side.all.includes(entry)) side.all.push(entry);
@@ -271,6 +271,10 @@
           needsJoint: !!curated && /\bjoint\b/i.test(plain),
           noPrefix: !!noPrefix          // a curated name for whole strings only: the start of a cut-off string is never read as it
         };
+        if (volumeOnly) {          // (a title that is also a field: it counts for a line with a volume, a journal's — never as a start, never bare)
+          push(side.volumeNames, form.full.join(" "), entry);
+          continue;
+        }
         for (const mode of fullOnly ? ["full"] : ["full", "noOrg"]) {          // (a name whose organisation is part of what it says — "USENIX ATC" — is not also the bare acronym, "ATC")
           const t = form[mode];
           if (t.length) { push(side.names, t.join(" "), entry); push(side.names, t.map(us).join(" "), entry); push(side.first[mode], t[0], { entry, form }); }
@@ -310,6 +314,7 @@
           register(src, kind, entry, a.names || [], a.abbrs || [], true);
           if (a.exact) { entry.extra.push(...a.exact); register(src, kind, entry, a.exact, [], true, true); }
           if (a.fullOnly) { entry.extra.push(...a.fullOnly); register(src, kind, entry, a.fullOnly, [], true, false, true); }
+          if (a.volume) { entry.extra.push(...a.volume); register(src, kind, entry, a.volume, [], true, false, false, true); }
           if (a.renamed) entry.renamed = true;          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
@@ -361,7 +366,7 @@
 
   // ---------------------------------------------------------------- matching
 
-  const hasWord = (e, w) => e.extra.some((n) => new RegExp("\\b" + w + "\\b", "i").test(n));
+  const hasWord = (e, w) => e.extra.some((n) => new RegExp("\\b" + w + "(?:s|es)?\\b", "i").test(n));          // ("Workshops" is "Workshop")
 
   // Of entries that share a canonical key, the one whose own name uses the most of the string's
   // boilerplate words (forum, international, symposium …) — or null when none stands out.
@@ -382,11 +387,15 @@
   // `strict` (the prefix rule): several different venues that merely share a rating are ambiguous too — the badge would be
   // right, but its tooltip would name a venue that may not be the one. Two rows of the same venue are not different venues.
   const venueKey = (e) => e.src + "|" + e.kind + "|" + squash(e.abbr || e.name);
+  let ties = 0;          // how often decide() took the first of venues that only share a rating: a result that rests on it names a rating, not a venue (matchSource says so: `tied`)
   function decide(list, rawWords, strict) {
     if (!list || !list.length) return null;
     const u = uniq(list);
     if (u.length === 1) return u[0];
-    const tie = (l) => (strict && uniq(l.map(venueKey)).length > 1 ? "ambiguous" : l[0]);
+    const tie = (l) => {
+      if (uniq(l.map(venueKey)).length > 1) { if (strict) return "ambiguous"; ties++; }
+      return l[0];
+    };
     if (rawWords.length) {
       const f = u.filter((e) => rawWords.every((w) => hasWord(e, w)));
       if (f.length === 1) return f[0];
@@ -490,7 +499,13 @@
   }
 
   // Resolve against one source (ccf | core). Returns { entry, rule } | null.
+  // What one list makes of a string: { entry, rule, tied }, null when nothing; `tied`: the entry was taken from venues that share a rating, the first of them
   function matchSource(idx, src, p, hint, known) {
+    const before = ties, r = matchSourceIn(idx, src, p, hint, known);
+    if (r) r.tied = ties !== before;
+    return r;
+  }
+  function matchSourceIn(idx, src, p, hint, known) {
     if (isPublisher(p)) return null;
     // an unranked event named by its own acronym (aliases.js `shadow`)
     if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => (idx.shadow.get(x.key) || []).some((w) => !w || fold(p.withParens).toLowerCase().includes(w)))) return null;
@@ -565,7 +580,7 @@
     const exactForm = (hit, tokens, key) => sides.some((side) => (side.first.full.get(tokens[0]) || []).some(({ entry, form }) => entry === hit && form.full.join(" ") === key));
     // the string says "symposium" and this venue's names say "conference" (and never "symposium"), or the like
     // (the names the venue had count for the string's event word, not against it: "Workshop" in them is no clash with a string that says "Workshop")
-    const hasWordAny = (e, w) => hasWord(e, w) || (Object.getPrototypeOf(e).former || e.former || []).some((n) => new RegExp("\\b" + w + "\\b", "i").test(n));
+    const hasWordAny = (e, w) => hasWord(e, w) || (Object.getPrototypeOf(e).former || e.former || []).some((n) => new RegExp("\\b" + w + "(?:s|es)?\\b", "i").test(n));
     const typeClash = (entry) => rawWords.some((w) => !hasWordAny(entry, w)) && TYPE_WORDS.some((w) => !rawWords.includes(w) && hasWord(entry, w));
     // does another venue's name begin with these words, go on ("… Distributed Computing" → "… Distributed Computing Systems")
     // and use the string's own event word ("conference") where the hit does not (the symposium DISC)?
@@ -635,7 +650,10 @@
       const key = tokens.join(" "), ukey = tokens.map(us).join(" ");
       if (seen.has(key)) continue;
       seen.add(key);
-      let d = nameHit((side) => (bareString ? side.bare : side.names).get(ukey));
+      let d = nameHit((side) => {
+        const base = (bareString ? side.bare : side.names).get(ukey), more = p.hasVolume ? side.volumeNames.get(ukey) : null;
+        return more ? [...(base || []), ...more] : base;
+      });
       // "Human-Computer Interaction 23 (1), 47-99, 2008": two journals boil down to these words ("Proceedings of the ACM on Human-Computer Interaction" is the other) and the string is
       // nothing but them, with a volume: it is the journal whose whole name they are
       if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(ukey));
@@ -1069,7 +1087,8 @@
       }
       out.kind = hint;
       const secs = secondaryWords(raw);
-      const matched = {};
+      const matched = {}, tied = {};
+      const saysAcronymOf = (e) => [...acronymSignals(p), ...embeddedSignals(p)].some((x) => x.key === squash(e.abbr || "") || stripDigits(x.key) === squash(e.abbr || ""));
       const realEntry = (e) => (Object.getPrototypeOf(e) === Object.prototype ? e : Object.getPrototypeOf(e));          // (the prefix rule hands out a view of the row: `through`)
       const badge = (src, e, rule) => src === "ccf"
         ? { tier: e.tier, name: e.name, abbr: e.abbr, area: e.area, kind: e.kind, dblp: e.dblp, rule }
@@ -1083,10 +1102,13 @@
         if (blocking) { out.secondary = blocking; out.refused = true; continue; }
         out[src] = badge(src, r.entry, r.rule);
         matched[src] = r.entry;
+        tied[src] = r.tied;
       }
       // the lists name one venue differently: what one list's wording found, the other list's row of the same venue is too (unless the track words of the string do not fit it)
       if (!out.refused) for (const [from, to] of [["ccf", "core"], ["core", "ccf"]]) {
         if (!matched[from] || out[to] || matched[from].kind === "J") continue;
+        // (a pick among venues of one rating — "International Conference on Data Mining": ICDM or SDM — is no venue to carry over, unless the string says the venue's own acronym)
+        if (tied[from] && !saysAcronymOf(realEntry(matched[from]))) continue;
         const rows = idx.partners.get(realEntry(matched[from])) || [];
         if (rows.length === 1 && !secs.some((w) => !ownWord(rows[0], w, raw))) out[to] = badge(to, rows[0], out[from].rule);
       }

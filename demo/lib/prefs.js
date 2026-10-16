@@ -434,7 +434,7 @@
 
   function normalizeUi(raw) {
     const r = raw && typeof raw === "object" ? raw : {};
-    return { collapsed: r.collapsed === true, source: r.source === "core" ? "core" : "ccf" };
+    return { collapsed: r.collapsed === true, source: RANKS.includes(r.source) ? r.source : null };          // (null: no tab picked on this device yet — the one the settings prefer comes first)
   }
 
   // ---- what is drawn --------------------------------------------------------------------------------------------------------------------
@@ -467,12 +467,12 @@
     return { shown, hidden: ranked.filter((k) => !shown.includes(k)) };
   }
 
-  // The rank lists the table has a tab for, and the one it uses: the remembered one if it is on, otherwise the first that is, otherwise none (the table then shows roles only).
+  // The rank lists the table has a tab for, and the one it uses: the remembered one if it is on, otherwise the one the settings prefer (`rows.prefer`) if the table has a tab for it, otherwise the first that is, otherwise none (the table then shows roles only).
   // While the table is not drawn the summary and the exports are counted by the lists the rows' chips show: what you see is what you copy.
   const sources = (prefs) => RANKS.filter((k) => (prefs.panel.table.show ? prefs.panel.table[k] : prefs.rows[k]));
   function source(prefs, ui) {
     const on = sources(prefs);
-    return on.includes(ui.source) ? ui.source : on[0] || null;
+    return on.includes(ui.source) ? ui.source : on.includes(prefs.rows.prefer) ? prefs.rows.prefer : on[0] || null;
   }
 
   // The copy buttons that are switched on, in the order the panel and the popup draw them.

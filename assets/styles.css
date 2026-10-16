@@ -299,6 +299,21 @@ figcaption { margin-top: 12px; color: var(--muted); font-size: 14px; }
 .op-title { font-size: 15px; font-weight: 700; margin: 0 0 4px; color: var(--text); }
 .op-desc { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.5; }
 
+/* By the numbers */
+.numbers { padding: 40px 0 16px; }
+.numbers h2 { font-size: 28px; text-align: center; font-weight: 750; }
+.numbers .note { text-align: center; margin: 8px auto 24px; max-width: 62ch; }
+.numbers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 960px; margin: 0 auto; }
+.num {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px 20px;
+  box-shadow: inset 0 3px 0 var(--c, var(--accent)), var(--shadow-sm);
+}
+.num b { display: block; font-size: 34px; line-height: 1.1; font-weight: 750; letter-spacing: -0.02em; color: var(--text); font-variant-numeric: tabular-nums; unicode-bidi: isolate; }
+.num span { display: block; margin-top: 8px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+
 /* Features Grid */
 .features { padding: 48px 0; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }

@@ -21,6 +21,7 @@
 //                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA);
 //                 "annual" and any sponsor the start names (IEEE, ACM, a SIG) are part of the start: the IEEE's "… Conference on
 //                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
+//   volume        names of a journal that are also a field ("Computational Geometry"): they count for a line that has a volume, a journal's — "Computational geometry, 307-317, 2000" is a chapter of a book
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
 //                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list. An entry may be { acronym, with }:
@@ -276,11 +277,11 @@
     // the cut-off "Proceedings of the International Conference for High Performance Computing …" (the full name goes on with ", Networking, Storage and Analysis")
     { ccf: "SC", core: "SC", starts: ["International Conference for High Performance Computing"] },
     { ccf: "WCNC", core: "WCNC", names: ["IEEE Wireless Communication and Networking Conference"] },
-    { core: "SPLC", names: ["International Software Product Line Conference", "International Systems and Software Product Line Conference"] },
+    { core: "SPLC", names: ["International Software Product Line Conference"], exact: ["International Systems and Software Product Line Conference", "ACM International Systems and Software Product Line Conference"] },          // (exact: its cut "… Systems and Software …" is SSV's, not SPLC's)
     // ICER was a workshop (CORE's name) until 2013
     { core: "ICER", names: ["International Computing Education Research Conference", "ACM Conference on International Computing Education Research", "ACM Conference on Computing Education Research"] },
     { core: "ACE", names: ["International Conference on Advances in Computer Entertainment Technology"] },
-    { core: "SERVICES", names: ["IEEE World Congress on Services"] },
+    { core: "SERVICES", exact: ["IEEE World Congress on Services"] },          // (exact: the cut "IEEE World Congress on …" is as much the Congress on Computational Intelligence's)
     { core: "IOLTS", names: ["IEEE International On-Line Testing Symposium", "International On-Line Testing Symposium", "IEEE International Symposium on On-Line Testing"] },
     { core: "TEI", names: ["International Conference on Tangible and Embedded Interaction", "Conference on Tangible and Embedded Interaction"] },
     // ESEM before 2007 (ISESE)
@@ -313,15 +314,14 @@
     { core: "BSN", names: ["IEEE International Conference on Wearable and Implantable Body Sensor Networks", "International Workshop on Wearable and Implantable Body Sensor Networks"] },
     { core: "WETICE", names: ["IEEE International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises", "IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises"] },
     { core: "COMPASS", names: ["ACM SIGCAS Conference on Computing and Sustainable Societies", "ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies"] },
-    { core: "CIS", names: ["IEEE International Conference on Cybernetic Intelligent Systems"] },
-    { core: "SNPD", names: ["ACIS International Winter Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing"] },
+    { core: "SNPD", names: ["ACIS International Winter Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing", "ACIS International Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing"] },
+    { core: "IE", names: ["IET International Conference on Intelligent Environments"] },
+    { ccf: "EuroVis", core: "EuroVis", names: ["EG/VGTC Conference on Visualization", "Eurographics/IEEE VGTC Conference on Visualization", "Eurographics/IEEE-VGTC Symposium on Visualization"] },
     { core: "EUSFLAT", names: ["Conference of the European Society for Fuzzy Logic and Technology"] },
     { core: "DCOSS", names: ["International Conference on Distributed Computing in Smart Systems and the Internet of Things", "IEEE International Conference on Distributed Computing in Smart Systems and the Internet of Things", "International Conference on Distributed Computing in Sensor Systems"] },
     { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
     { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
     { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
-    // IEEE is part of what this says: without it the words are ISC High Performance's too
-    { ccf: "HiPC", fullOnly: ["IEEE International Conference on High Performance Computing", "IEEE International Conference on High Performance Computing, Data, and Analytics"] },
     { core: "Broadnets", names: ["International Conference on Broadband Networks", "International Conference on Broadband Communications, Networks and Systems"] },
     { ccf: "ANCS", names: ["ACM/IEEE Symposium on Architectures for Networking and Communications Systems"] },
     { core: "ICSoft", names: ["International Conference on Software Technologies", "International Joint Conference on Software Technologies"] },
@@ -334,8 +334,8 @@
     { ccf: "TNNLS", kind: "J", names: ["IEEE Transactions on Neural Networks", "IEEE Trans. Neural Networks"] },
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
-    { ccf: "CGTA", kind: "J", names: ["Computational Geometry"] },
-    { ccf: "Performance Evaluation: An International Journal", kind: "J", names: ["Performance Evaluation"] },
+    { ccf: "CGTA", kind: "J", volume: ["Computational Geometry"] },
+    { ccf: "Performance Evaluation: An International Journal", kind: "J", volume: ["Performance Evaluation"] },
     // ISO-4 abbreviations as DBLP / BibTeX print them (the full names already match by themselves)
     { ccf: "TOG", kind: "J", names: ["ACM Trans. Graph.", "ACM Trans. on Graphics"] },
     { ccf: "TOCS", kind: "J", names: ["ACM Trans. Comput. Syst."] },
