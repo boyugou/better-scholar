@@ -1307,3 +1307,27 @@ test("the tenth review: WACV's IEEE prints, the list view's cut conference line,
   eq("2018 13th IAPR International Workshop on Document Analysis System (DAS), 2018", brief("2018 13th IAPR International Workshop on Document Analysis Systems (DAS), 2018"));
   assert.notEqual(brief("2018 13th IAPR International Workshop on Document Analysis System (DAS), 2018"), "");
 });
+
+test("an acronym in a parenthesis after a name of its own is that venue's only if most of the name is the venue's (found with the 9,000 most-cited conferences and journals of OpenAlex)", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // other events that share an acronym with a listed one: each spelled out, in full
+  for (const s of ["Innovations in Power and Advanced Computing Technologies (i-PACT)", "International Conference on Electronics, Computers and Artificial Intelligence (ECAI)",
+    "International Conference on Information, Communications & Signal Processing (ICICS)", "International Conference on Information and Communication Systems (ICICS)", "International Conference on Signal Processing, Communication, Power and Embedded System (SCOPES)",
+    "Advanced Solid-State Photonics (TOPS)", "International Conference on Devices, Circuits and Systems (ICDCS)", "International Conference on Computational Cybernetics (ICCC)"]) none(s);
+  // the venue itself, spelled out, with abbreviations, with a location, with a sponsor, older names, joint events, a journal's track in the parenthesis
+  eq("International Conference on Information and Communications Security (ICICS), 2019", brief("International Conference on Information and Communications Security (ICICS), 2019"));
+  assert.notEqual(brief("International Conference on Information and Communications Security (ICICS), 2019"), "");
+  eq("Proc. Conf. Des., Autom. Test Euro.(DATE), 2009", "CCF B DATE · CORE A DATE");
+  eq("2019 IEEE International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada", "CCF B ICRA · CORE A* ICRA");
+  eq("International Conference on Machine Learning (ICML), 2019", "CCF A ICML · CORE A* ICML");
+  eq("IEEE International Conference on Computational Science and Engineering (CSE) and IEEE International Conference on Embedded and Ubiquitous Computing (EUC)", "CORE C EUC");
+  eq("Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (AACL-IJCNLP)", "CORE B IJCNLP");
+  eq("Proceedings of the ACM on Human-Computer Interaction 4 (CSCW1), 1-26, 2020", "CCF A CSCW · CORE A CSCW");
+  eq("International Phoenix Conference on Computers and Communications (IPCCC)", "CCF C IPCCC · CORE C IPCCC");          // (IPCCC's name before 2000)
+  eq("Heterogeneous Computing Workshop (HCW)", "CORE C HCW");
+  eq("International Conference on Industrial Electronics, Control and Instrumentation (IECON)", "CORE C IECON");
+  eq("IEEE International Symposium on Object/Component/Service-Oriented Real-Time Distributed Computing (ISORC)", "CORE C ISORC");
+  // a workshop of a renamed venue that does not say "Workshop on": WACV's workshops (the IEEE source name has no "Conference")
+  none("IEEE Winter Applications of Computer Vision Workshops (WACVW)");
+});

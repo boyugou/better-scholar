@@ -168,6 +168,8 @@
     { core: "XP", names: ["International Conference on Extreme Programming", "International Conference on Extreme Programming and Agile Processes in Software Engineering", "International Conference on Agile Software Development"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Proceedings of the ACM on Measurement and Analysis of Computing Systems", "ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems"] },
     { core: "EC", names: ["ACM Conference on Electronic Commerce", "ACM Conference on Economics and Computation"] },
+    // IPCCC before 2000: the Phoenix Conference on Computers and Communications (OpenAlex files its proceedings under that name, "IPCCC", as the IEEE's series)
+    { ccf: "IPCCC", core: "IPCCC", names: ["International Phoenix Conference on Computers and Communications"] },
 
     // ---- security / crypto
     { ccf: "CCS", core: "CCS", names: ["ACM SIGSAC Conference on Computer and Communications Security", "ACM Conference on Computer and Communications Security"] },
@@ -233,6 +235,10 @@
     // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW.
     // (ICML's first decade, "International Workshop on Machine Learning", is not an alias: a title that generic is every sponsor's workshop, and ICML is A*)
     { core: "WACV", renamed: true, exact: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },          // (exact: the list view's cut "… Applications of Computer …" is the conference or its workshops)
+    // names the lists do not give (found by running the names of the 9,000 most-cited conferences and journals of OpenAlex through the matcher)
+    { core: "HCW", names: ["Heterogeneous Computing Workshop"] },
+    { core: "IECON", names: ["International Conference on Industrial Electronics, Control and Instrumentation"] },
+    { core: "ISORC", names: ["IEEE International Symposium on Object/Component/Service-Oriented Real-Time Distributed Computing"] },
     { core: "VizSec", former: ["Workshop on Visualization for Computer Security"] },
     { core: "HealthCom", former: ["International Workshop on Enterprise Networking and Computing in Healthcare Industry"] },
     { core: "QoMEX", former: ["International Workshop on Quality of Multimedia Experience"] },
@@ -282,6 +288,6 @@
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
     // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
-    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }] }
+    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }] }
   ];
 });
