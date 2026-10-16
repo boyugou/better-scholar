@@ -122,7 +122,9 @@ Links, which open only when you click them:
 The extension writes to the clipboard only when you click a button that copies, and never reads it:
 
 - the copy buttons of the panel and the toolbar popup: *Copy summary*, *Copy as table*, *Copy papers*, *Copy
-  APA*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues;
+  APA*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues. *Copy as table*,
+  *Copy papers* and *Copy APA* put the same content on the clipboard twice, as text and as HTML (which a word
+  processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else;
 - on the settings page: *Copy guide for agents* (it contains your current settings), *Copy config (JSON)*, *Copy
   cache (JSON)* (the saved paper details) and *Copy details for a bug report* (the extension's version, your
   browser's user-agent string, the interface language and your settings).
