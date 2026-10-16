@@ -796,7 +796,8 @@
     const cache = new Map();
 
     function resolve(raw) {
-      const key = String(raw == null ? "" : raw);
+      // (white space is one space and nothing at the ends before any rule looks at the text: "AAAI  Fall Symposium" is the symposium, as with one space, and not the conference)
+      const key = String(raw == null ? "" : raw).replace(/\s+/g, " ").trim();
       if (cache.has(key)) return cache.get(key);
       let res;
       try { res = resolveUncached(key); }

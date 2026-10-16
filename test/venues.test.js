@@ -1008,3 +1008,16 @@ test("IEEE MultiMedia is a magazine: it does not take the rank of the symposium 
     assert.deepEqual([r.core && r.core.abbr, r.core && r.core.rank], ["ISM", "C"], symposium);
   }
 });
+
+test("white space does not matter: a venue with doubled spaces, tabs or line breaks is the same venue — a symposium of a conference with two spaces was taken for the conference", () => {
+  const same = (a, b) => assert.deepEqual(resolver.resolve(a), resolver.resolve(b), JSON.stringify(a));
+  same("AAAI  Fall  Symposium on Privacy and Language Technologies, 2016", "AAAI Fall Symposium on Privacy and Language Technologies, 2016");
+  same("  AAAI Fall\tSymposium on Privacy and Language Technologies,\n2016 ", "AAAI Fall Symposium on Privacy and Language Technologies, 2016");
+  same("(NeurIPS 2025)   NeurIPS Creative AI Track, 2025", "(NeurIPS 2025) NeurIPS Creative AI Track, 2025");
+  const symposium = resolver.resolve("AAAI  Fall  Symposium on Privacy and Language Technologies, 2016");
+  assert.deepEqual([symposium.ccf, symposium.core, symposium.secondary], [null, null, "fall symposium"], "no badge for a symposium");
+  // the corpus, with its spaces tripled and padded: the same answer for every string of a sample
+  const keys = Object.keys(JSON.parse(require("node:fs").readFileSync(require("node:path").join(__dirname, "fixtures", "venues.expected.json"), "utf8"))).filter((_, i) => i % 5 === 0);
+  const fresh = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+  for (const k of keys) assert.deepEqual(fresh.resolve("  " + k.replace(/ /g, "   ") + "  "), resolver.resolve(k), k);
+});
