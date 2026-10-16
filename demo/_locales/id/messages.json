@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Venue lainnya"
+  },
+  "optPrefer": {
+    "message": "Jika kedua daftar memberi peringkat pada venue"
+  },
+  "optPreferHint": {
+    "message": "Satu label, bukan dua: daftar yang dipilih, dan daftar lainnya hanya jika daftar yang dipilih tidak memberi peringkat untuk venue tersebut. Tooltip label tetap menyebut peringkat lainnya."
+  },
+  "optPreferCcf": {
+    "message": "Prioritaskan CCF"
+  },
+  "optPreferCore": {
+    "message": "Prioritaskan CORE"
+  },
+  "optPreferBoth": {
+    "message": "Keduanya"
   }
 }

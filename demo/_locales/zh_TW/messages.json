@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "其他發表處"
+  },
+  "optPrefer": {
+    "message": "兩個列表都有等級時"
+  },
+  "optPreferHint": {
+    "message": "一個標籤代替兩個：依你選的列表顯示；另一列表的標籤只在你選的列表對該發表處沒有等級時才出現。標籤的工具提示也會寫明另一個等級。"
+  },
+  "optPreferCcf": {
+    "message": "CCF 優先"
+  },
+  "optPreferCore": {
+    "message": "CORE 優先"
+  },
+  "optPreferBoth": {
+    "message": "兩者都顯示"
   }
 }

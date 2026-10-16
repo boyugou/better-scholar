@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Alte venue-uri"
+  },
+  "optPrefer": {
+    "message": "Când locul de publicare are rang în ambele liste"
+  },
+  "optPreferHint": {
+    "message": "O singură etichetă în loc de două: lista aleasă, iar cealaltă doar acolo unde aceasta nu are rang pentru locul de publicare. Când se trece cu mouse-ul peste etichetă, apare și celălalt rang."
+  },
+  "optPreferCcf": {
+    "message": "CCF întâi"
+  },
+  "optPreferCore": {
+    "message": "CORE întâi"
+  },
+  "optPreferBoth": {
+    "message": "Ambele"
   }
 }

@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Andra ställen"
+  },
+  "optPrefer": {
+    "message": "När publiceringsstället har rank i båda listorna"
+  },
+  "optPreferHint": {
+    "message": "En etikett i stället för två: listan du väljer, och den andra listan bara där den valda listan saknar rank för publiceringsstället. När du håller muspekaren över etiketten visas fortfarande den andra ranken."
+  },
+  "optPreferCcf": {
+    "message": "CCF först"
+  },
+  "optPreferCore": {
+    "message": "CORE först"
+  },
+  "optPreferBoth": {
+    "message": "Båda"
   }
 }

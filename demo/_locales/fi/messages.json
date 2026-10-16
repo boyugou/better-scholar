@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Muut foorumit"
+  },
+  "optPrefer": {
+    "message": "Kun molemmissa luetteloissa on foorumille luokka"
+  },
+  "optPreferHint": {
+    "message": "Yksi tunniste kahden sijaan: valittu luettelo, ja toinen vain silloin, kun valitussa luettelossa ei ole foorumille luokkaa. Tunnisteen ohjeteksti mainitsee silti toisen luettelon luokan."
+  },
+  "optPreferCcf": {
+    "message": "CCF ensin"
+  },
+  "optPreferCore": {
+    "message": "CORE ensin"
+  },
+  "optPreferBoth": {
+    "message": "Molemmat"
   }
 }

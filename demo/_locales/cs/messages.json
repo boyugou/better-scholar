@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Ostatní místa"
+  },
+  "optPrefer": {
+    "message": "Když oba seznamy hodnotí místo publikace"
+  },
+  "optPreferHint": {
+    "message": "Jeden štítek místo dvou: vybraný seznam a ten druhý jen tam, kde vybraný pro dané místo publikace nemá rank. Při najetí myší na štítek se dál zobrazí i druhý rank."
+  },
+  "optPreferCcf": {
+    "message": "Nejprve CCF"
+  },
+  "optPreferCore": {
+    "message": "Nejprve CORE"
+  },
+  "optPreferBoth": {
+    "message": "Obojí"
   }
 }

@@ -63,7 +63,10 @@
     { ccf: "NAACL", core: "NAACL", names: [
       "Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics",
       "North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
-      "Human Language Technologies: The Annual Conference of the North American Chapter of the Association for Computational Linguistics"
+      "Human Language Technologies: The Annual Conference of the North American Chapter of the Association for Computational Linguistics",
+      // the 2025 name
+      "Nations of the Americas Chapter of the Association for Computational Linguistics",
+      "Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies"
     ] },
     { ccf: "COLING", core: "COLING", names: ["International Conference on Computational Linguistics"], starts: ["International Conference on Computational"] },
     { core: "EACL", names: ["Conference of the European Chapter of the Association for Computational Linguistics", "European Chapter of the Association for Computational Linguistics"] },
@@ -168,6 +171,8 @@
     { core: "XP", names: ["International Conference on Extreme Programming", "International Conference on Extreme Programming and Agile Processes in Software Engineering", "International Conference on Agile Software Development"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Proceedings of the ACM on Measurement and Analysis of Computing Systems", "ACM SIGMETRICS International Conference on Measurement and Modeling of Computer Systems"] },
     { core: "EC", names: ["ACM Conference on Electronic Commerce", "ACM Conference on Economics and Computation"] },
+    // IPCCC before 2000: the Phoenix Conference on Computers and Communications (OpenAlex files its proceedings under that name, "IPCCC", as the IEEE's series)
+    { ccf: "IPCCC", core: "IPCCC", names: ["International Phoenix Conference on Computers and Communications"] },
 
     // ---- security / crypto
     { ccf: "CCS", core: "CCS", names: ["ACM SIGSAC Conference on Computer and Communications Security", "ACM Conference on Computer and Communications Security"] },
@@ -203,7 +208,7 @@
 
     // ---- rows whose official PDF text has a typo or a stray word (kept verbatim in data/):
     //      give the correct spelling so Scholar's strings still match
-    { ccf: "Euro-Par", names: ["European Conference on Parallel and Distributed Computing", "Euro-Par"] },
+    { ccf: "Euro-Par", core: "EuroPar", names: ["European Conference on Parallel and Distributed Computing", "Euro-Par", "European Conference on Parallel Processing", "International Euro-Par Conference on Parallel Processing"] },
     { ccf: "MoDELS", names: ["ACM/IEEE International Conference on Model Driven Engineering Languages and Systems"] },
     { ccf: "PG", names: ["Pacific Conference on Computer Graphics and Applications", "Pacific Graphics"] },
     { ccf: "PASTE", names: ["ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering"] },
@@ -233,6 +238,10 @@
     // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW.
     // (ICML's first decade, "International Workshop on Machine Learning", is not an alias: a title that generic is every sponsor's workshop, and ICML is A*)
     { core: "WACV", renamed: true, exact: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },          // (exact: the list view's cut "… Applications of Computer …" is the conference or its workshops)
+    // names the lists do not give (found by running the names of the 9,000 most-cited conferences and journals of OpenAlex through the matcher)
+    { core: "HCW", names: ["Heterogeneous Computing Workshop"] },
+    { core: "IECON", names: ["International Conference on Industrial Electronics, Control and Instrumentation"] },
+    { core: "ISORC", names: ["IEEE International Symposium on Object/Component/Service-Oriented Real-Time Distributed Computing", "IEEE International Symposium on Object and Component-Oriented Real-Time Distributed Computing", "IEEE International Symposium on Object-Oriented Real-Time Distributed Computing"] },
     { core: "VizSec", former: ["Workshop on Visualization for Computer Security"] },
     { core: "HealthCom", former: ["International Workshop on Enterprise Networking and Computing in Healthcare Industry"] },
     { core: "QoMEX", former: ["International Workshop on Quality of Multimedia Experience"] },
@@ -253,10 +262,80 @@
     { ccf: "AsiaCCS", core: "AsiaCCS", names: ["ACM Symposium on Information, Computer and Communications Security"] },
     { ccf: "P2P", names: ["IEEE International Conference on Peer-to-Peer Computing", "IEEE International Conference on P2P Computing"] },
 
+    // ---- names Scholar prints that the lists word differently: older or inverted names, singular or plural, a sponsor the list leaves out
+    //      (found with the real-profile corpus and the alternate titles OpenAlex files under each conference)
+    { core: "JELIA", names: ["European Conference on Logics in Artificial Intelligence", "Joint European Conference on Logics in Artificial Intelligence"] },
+    { core: "Coordination", names: ["International Conference on Coordination Languages and Models", "Coordination Languages and Models"] },
+    { core: "IEEE-IV", names: ["IEEE Intelligent Vehicles Symposium", "Intelligent Vehicles Symposium"] },
+    // RTAS before 2003 (the Real-Time and Embedded Technology and Applications Symposium of today)
+    { ccf: "RTAS", core: "RTAS", names: ["IEEE Real-Time Technology and Applications Symposium", "Real-Time Technology and Applications Symposium"] },
+    { core: "DSD", names: ["Euromicro Conference on Digital System Design", "Euromicro Symposium on Digital System Design"] },
+    { ccf: "PAM", core: "PAM", names: ["Passive and Active Network Measurement", "International Conference on Passive and Active Network Measurement"] },
+    // IFIP is part of what these say: without it they are any conference on Human-Computer Interaction (HCI International)
+    { ccf: "INTERACT", core: "Interact", fullOnly: ["IFIP Conference on Human-Computer Interaction", "IFIP TC13 Conference on Human-Computer Interaction", "IFIP International Conference on Human-Computer Interaction", "IFIP TC13 International Conference on Human-Computer Interaction"] },
+    // the cut-off "Proceedings of the International Conference for High Performance Computing …" (the full name goes on with ", Networking, Storage and Analysis")
+    { ccf: "SC", core: "SC", starts: ["International Conference for High Performance Computing"] },
+    { ccf: "WCNC", core: "WCNC", names: ["IEEE Wireless Communication and Networking Conference"] },
+    { core: "SPLC", names: ["International Software Product Line Conference", "International Systems and Software Product Line Conference"] },
+    // ICER was a workshop (CORE's name) until 2013
+    { core: "ICER", names: ["International Computing Education Research Conference", "ACM Conference on International Computing Education Research", "ACM Conference on Computing Education Research"] },
+    { core: "ACE", names: ["International Conference on Advances in Computer Entertainment Technology"] },
+    { core: "SERVICES", names: ["IEEE World Congress on Services"] },
+    { core: "IOLTS", names: ["IEEE International On-Line Testing Symposium", "International On-Line Testing Symposium", "IEEE International Symposium on On-Line Testing"] },
+    { core: "TEI", names: ["International Conference on Tangible and Embedded Interaction", "Conference on Tangible and Embedded Interaction"] },
+    // ESEM before 2007 (ISESE)
+    { ccf: "ESEM", core: "ESEM", names: ["International Symposium on Empirical Software Engineering"] },
+    // CCF's name is the one MobiHoc had until 2005 ("Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing"); every print says what CORE says
+    { ccf: "MobiHoc", core: "MOBIHOC", names: ["ACM International Symposium on Mobile Ad Hoc Networking and Computing", "ACM Symposium on Mobile Ad Hoc Networking and Computing"] },
+    { ccf: "CCGRID", core: "CCGRID", names: ["IEEE/ACM International Symposium on Cluster Computing and the Grid", "IEEE International Symposium on Cluster Computing and the Grid", "IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing", "IEEE International Symposium on Cluster, Cloud and Internet Computing"] },
+    { core: "COG", names: ["IEEE Conference on Games"] },          // (not its names as CIG: "Computational Intelligence and …" cut off is CIDM's start too)
+    { core: "HealthCom", names: ["IEEE International Conference on e-Health Networking, Applications and Services", "IEEE International Conference on E-health Networking, Application & Services"] },
+    // (CORE's name has "Model" and "Telecommunications"; the IEEE's prints say "Modeling" or "Modelling" — and a cut "Symposium on Modelling, Analysis and Simulation of …" is not MSWiM, a conference)
+    { ccf: "MASCOTS", core: "MASCOTS", names: ["IEEE International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems", "IEEE International Symposium on Modelling, Analysis and Simulation of Computer and Telecommunication Systems", "IEEE/ACM International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems", "International Symposium on Modelling, Analysis and Simulation of Computer and Telecommunication Systems"] },
+    // the lists word these differently (CCF: the old or the new name, the SIG's own name); the names are each list's own, now on both rows
+    { ccf: "GLOBECOM", core: "GLOBECOM", names: ["IEEE Global Communications Conference", "IEEE Global Telecommunications Conference"] },
+    { ccf: "FORTE", core: "FORTE", names: ["International Conference on Formal Techniques for Distributed Objects, Components, and Systems", "IFIP Joint International Conference on Formal Description Techniques and Protocol Specification, Testing, And Verification"] },
+    { ccf: "APWeb", core: "APWEB", names: ["Asia Pacific Web Conference", "Asia-Pacific Web and Web-Age Information Management Joint International Conference on Web and Big Data"] },
+    { ccf: "SIGSPATIAL", core: "SIGSPATIAL", names: ["ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems", "ACM International Conference on Advances in Geographic Information Systems"] },
+    { ccf: "MEMOCODE", core: "MEMOCODE", names: ["ACM/IEEE International Conference on Formal Methods and Models for System Design", "ACM/IEEE International Conference on Formal Methods and Models for Codesign"] },
+    { ccf: "MASS", core: "MASS", names: ["IEEE International Conference on Mobile Ad-Hoc and Smart Systems", "IEEE International Conference on Mobile Ad Hoc and Smart Systems"] },
+    { core: "KES", names: ["International Conference on Knowledge-Based Intelligent Engineering Systems and Allied Technologies"] },
+    { ccf: "CODES+ISSS", names: ["IEEE/ACM/IFIP International Conference on Hardware/Software Codesign and System Synthesis", "International Conference on Hardware/Software Codesign and System Synthesis"] },
+    { core: "ISADS", names: ["International Symposium on Autonomous Decentralized System"] },
+    // CCF's "Computer Graphics Processing" and "Architectures" are the PDF's words; the conferences say "Computer Graphics" and "Compilers, Architecture, and Synthesis"
+    { ccf: "CAD/Graphics", names: ["International Conference on Computer-Aided Design and Computer Graphics", "IEEE International Conference on Computer-Aided Design and Computer Graphics"] },
+    { ccf: "CASES", names: ["International Conference on Compilers, Architecture, and Synthesis for Embedded Systems"] },
+    { ccf: "NAS", names: ["International Conference on Networking, Architecture, and Storage", "IEEE International Conference on Networking, Architecture and Storage"] },
+    { core: "ISDA", names: ["International Conference on Intelligent Systems Design and Applications"] },
+    { ccf: "IJCB", core: "IJCB", names: ["IEEE International Joint Conference on Biometrics"] },
+    { ccf: "COMPSAC", core: "COMPSAC", names: ["IEEE Annual Computers, Software, and Applications Conference", "IEEE International Computer Software and Applications Conference"] },
+    { ccf: "ICCD", core: "ICCD", names: ["IEEE International Conference on Computer Design: VLSI in Computers and Processors", "International Conference on Computer Design: VLSI in Computers and Processors"] },
+    { core: "BSN", names: ["IEEE International Conference on Wearable and Implantable Body Sensor Networks", "International Workshop on Wearable and Implantable Body Sensor Networks"] },
+    { core: "WETICE", names: ["IEEE International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises", "IEEE International Workshops on Enabling Technologies: Infrastructure for Collaborative Enterprises"] },
+    { core: "COMPASS", names: ["ACM SIGCAS Conference on Computing and Sustainable Societies", "ACM SIGCAS/SIGCHI Conference on Computing and Sustainable Societies"] },
+    { core: "CIS", names: ["IEEE International Conference on Cybernetic Intelligent Systems"] },
+    { core: "SNPD", names: ["ACIS International Winter Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing"] },
+    { core: "EUSFLAT", names: ["Conference of the European Society for Fuzzy Logic and Technology"] },
+    { core: "DCOSS", names: ["International Conference on Distributed Computing in Smart Systems and the Internet of Things", "IEEE International Conference on Distributed Computing in Smart Systems and the Internet of Things", "International Conference on Distributed Computing in Sensor Systems"] },
+    { core: "VLSI-SOC", names: ["IFIP International Conference on Very Large Scale Integration", "IEEE/IFIP International Conference on VLSI and System-on-Chip", "IFIP International Conference on VLSI and System-on-Chip"] },
+    { core: "HPC Asia", names: ["International Conference on High Performance Computing in Asia-Pacific Region", "International Conference on High Performance Computing in the Asia-Pacific Region"] },
+    { core: "VizSec", names: ["IEEE Symposium on Visualization for Cyber Security"] },
+    // IEEE is part of what this says: without it the words are ISC High Performance's too
+    { ccf: "HiPC", fullOnly: ["IEEE International Conference on High Performance Computing", "IEEE International Conference on High Performance Computing, Data, and Analytics"] },
+    { core: "Broadnets", names: ["International Conference on Broadband Networks", "International Conference on Broadband Communications, Networks and Systems"] },
+    { ccf: "ANCS", names: ["ACM/IEEE Symposium on Architectures for Networking and Communications Systems"] },
+    { core: "ICSoft", names: ["International Conference on Software Technologies", "International Joint Conference on Software Technologies"] },
+
     // ---- journals (kind J)
     { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] },
     // the speech journal of the IEEE Signal Processing Society, under its earlier name (1993–2005)
     { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing"] },
+    // IEEE Transactions on Neural Networks until 2011 (Neural Networks and Learning Systems since)
+    { ccf: "TNNLS", kind: "J", names: ["IEEE Transactions on Neural Networks", "IEEE Trans. Neural Networks"] },
+    // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
+    { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
+    { ccf: "CGTA", kind: "J", names: ["Computational Geometry"] },
+    { ccf: "Performance Evaluation: An International Journal", kind: "J", names: ["Performance Evaluation"] },
     // ISO-4 abbreviations as DBLP / BibTeX print them (the full names already match by themselves)
     { ccf: "TOG", kind: "J", names: ["ACM Trans. Graph.", "ACM Trans. on Graphics"] },
     { ccf: "TOCS", kind: "J", names: ["ACM Trans. Comput. Syst."] },
@@ -282,6 +361,6 @@
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
     // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
-    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }] }
+    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
   ];
 });

@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Weitere Venues"
+  },
+  "optPrefer": {
+    "message": "Wenn beide Listen ein Venue einstufen"
+  },
+  "optPreferHint": {
+    "message": "Ein Kennzeichen statt zwei: die gewählte Liste und die andere nur dort, wo die gewählte für das Venue keinen Rang hat. Der Tooltip des Kennzeichens nennt weiterhin den anderen Rang."
+  },
+  "optPreferCcf": {
+    "message": "CCF zuerst"
+  },
+  "optPreferCore": {
+    "message": "CORE zuerst"
+  },
+  "optPreferBoth": {
+    "message": "Beide"
   }
 }

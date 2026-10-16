@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Other venues"
+  },
+  "optPrefer": {
+    "message": "When both lists rank a venue"
+  },
+  "optPreferHint": {
+    "message": "One chip instead of two: the list you pick, and the other one only where the first has no rank for the venue. The chip's tooltip still names the other rank."
+  },
+  "optPreferCcf": {
+    "message": "CCF first"
+  },
+  "optPreferCore": {
+    "message": "CORE first"
+  },
+  "optPreferBoth": {
+    "message": "Both"
   }
 }

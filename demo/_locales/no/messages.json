@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Andre steder"
+  },
+  "optPrefer": {
+    "message": "Når et publiseringssted har rang i begge listene"
+  },
+  "optPreferHint": {
+    "message": "Én merkelapp i stedet for to: listen du velger, og den andre bare der den valgte listen ikke har rang for publiseringsstedet. Verktøytipset på merkelappen nevner fortsatt den andre rangen."
+  },
+  "optPreferCcf": {
+    "message": "CCF først"
+  },
+  "optPreferCore": {
+    "message": "CORE først"
+  },
+  "optPreferBoth": {
+    "message": "Begge"
   }
 }

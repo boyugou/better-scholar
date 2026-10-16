@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Overige venues"
+  },
+  "optPrefer": {
+    "message": "Als een publicatiekanaal in beide lijsten een rang heeft"
+  },
+  "optPreferHint": {
+    "message": "Eén label in plaats van twee: de lijst die je kiest, en de andere alleen waar die lijst geen rang heeft voor het publicatiekanaal. De tooltip van het label noemt nog steeds de andere rang."
+  },
+  "optPreferCcf": {
+    "message": "CCF eerst"
+  },
+  "optPreferCore": {
+    "message": "CORE eerst"
+  },
+  "optPreferBoth": {
+    "message": "Beide"
   }
 }

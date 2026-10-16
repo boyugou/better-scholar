@@ -716,6 +716,7 @@
     "rows.style": { labels: { full: "optRowStyleFull", bar: "optRowStyleBar", tint: "optRowStyleTint", none: "optRowStyleNone" },
       icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram, none: ICONS.noneDiagram } },
     "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} },
+    "rows.prefer": { labels: { ccf: "optPreferCcf", core: "optPreferCore", both: "optPreferBoth" }, icons: {} },
     // (a mini chip in each button shows the look it makes)
     "chips.style": { labels: { outline: "optChipOutline", soft: "optChipSoft", solid: "optChipSolid", text: "optChipText" },
       icons: Object.fromEntries(["outline", "soft", "solid", "text"].map((k) => [k, () => chipSample(`rr-chips-${k} rr-chips-pill rr-chips-full`, { tier: "A", ccf: true })])) },
@@ -976,13 +977,15 @@
 
   // ---- the preview -------------------------------------------------------
   const top = (abbr, name) => ({ ccf: { tier: "A", name, abbr, rule: "acronym" }, core: { rank: "A*", name, abbr, rule: "acronym" } });
+  const coreOnly = (abbr, name) => ({ ccf: null, core: { rank: "A", name, abbr, rule: "acronym" } });
   const SAMPLES = [
     // (in the order of the settings: the four positions, and each paper carries the next of the chips the settings name)
     { role: "first", authors: ["A Author", "B Writer", "C Writer", "D Writer"], me: 0, venue: "ICLR 2025",
       ...top("ICLR", "International Conference on Learning Representations"),
       marks: [{ kind: "best", group: "award", source: "list", awardLabel: "Best Paper Award", venue: "ICLR", year: 2025 }] },
-    { role: "cofirst", authors: ["A Author*", "B Writer*", "C Writer"], me: 0, venue: "CVPR 2024 (Oral)",
-      ...top("CVPR", "IEEE/CVF Conference on Computer Vision and Pattern Recognition"), marks: [{ kind: "oral", group: "oral", source: "author", text: "Oral" }] },
+    // (WACV is ranked by CORE only: where the settings prefer CCF, its chip is the one that fills in)
+    { role: "cofirst", authors: ["A Author*", "B Writer*", "C Writer"], me: 0, venue: "WACV 2025 (Oral)",
+      ...coreOnly("WACV", "IEEE/CVF Winter Conference on Applications of Computer Vision"), marks: [{ kind: "oral", group: "oral", source: "author", text: "Oral" }] },
     { role: "second", authors: ["B Writer", "A Author", "C Writer"], me: 1, venue: "NeurIPS 2024 (Spotlight)",
       ...top("NeurIPS", "Conference on Neural Information Processing Systems"), marks: [{ kind: "spotlight", group: "spotlight", source: "author", text: "Spotlight" }] },
     { role: "last", authors: ["B Writer", "C Writer", "D Writer", "A Author"], me: 3, venue: "ACL 2023 (Highlight)",
@@ -999,9 +1002,8 @@
       if (k) authors.append(", ");
       authors.append(k === s.me && lit && prefs.rows.name ? h("span", { class: "rr-name rr-name-" + s.role, "data-rr-part": "rows.name" }, name) : name);
     });
-    const chips = [];
-    if (prefs.rows.ccf) chips.push(marked(B.chips.tierChip("ccf", s.ccf, EDITION.ccf), "rows.ccf"));
-    if (prefs.rows.core) chips.push(marked(B.chips.tierChip("core", s.core, EDITION.core), "rows.core"));
+    const chips = [], { shown, hidden } = B.prefs.chipLists(prefs, s);
+    for (const k of shown) chips.push(marked(B.chips.tierChip(k, s[k], EDITION[k], hidden.length ? { kind: hidden[0], info: s[hidden[0]] } : null), "rows." + k));
     for (const m of B.prefs.chipMarks(prefs, s.marks)) chips.push(marked(B.chips.markChip(m), "rows." + (m.group === "finalist" ? "award" : m.group)));
     return h("tr", { class: lit ? "rr-r-" + s.role : "", ...(lit ? { "data-rr-part": "roles." + s.role } : {}) },
       h("td", {}, h("a", {}, `${t("optSample")} ${i + 1}`), authors, h("div", { class: "g" }, s.venue, chips.length ? [" ", h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c])))] : null)));
@@ -1036,7 +1038,7 @@
       ownerName: "A Author", edition: EDITION, prefs, ui: panelUi, sources: B.prefs.sources(prefs), source, summary: B.metrics.summarize(PAPERS, source),
       selection: null, filters: { onlyHighlighted: false, yearStart: null, yearEnd: null },
       marks: counts, markKinds: prefs.panel.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
-      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, B.prefs.lists(prefs)), venueKey: null,
+      years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, B.prefs.lists(prefs), B.prefs.winner(prefs)), venueKey: null,
       venuesHasMore: false, venuesExpanded: false,
       coverage: { loaded: PAPERS.length, canLoadMore: true, complete: false, loadingAll: false, loadMessage: "", repeats: 1, hidden: 1, absent: 1, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
