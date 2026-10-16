@@ -463,7 +463,7 @@ input.chip-clr { width: 38px; height: 28px; padding: 2px; border: 1px solid var(
   min-width: 22px; height: 20px; padding: 0 4px; border: 0; border-radius: 5px; background: none; color: #fff; font: inherit; font-size: 12px; line-height: 1; cursor: pointer;
 }
 .pv-btn:hover { background: rgba(255, 255, 255, 0.24); }
-.pv-btn.pv-grip { cursor: grab; letter-spacing: -1px; }
+.pv-btn.pv-grip { cursor: grab; letter-spacing: -1px; touch-action: none; }
 .pv-drop { position: absolute; z-index: 31; border-radius: 2px; background: var(--accent); pointer-events: none; box-shadow: 0 0 0 2px var(--accent-ring); }
 body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select: none; }
 .pv-dragged { opacity: 0.4; }

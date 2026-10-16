@@ -92,6 +92,7 @@
       document.body.classList.add("pv-dragging");
       window.addEventListener("pointermove", onMove);
       window.addEventListener("pointerup", onUp, { once: true });
+      window.addEventListener("pointercancel", endDrag, { once: true });             // (the browser took the gesture over: nothing is moved)
       window.addEventListener("keydown", onKey, true);
     }
     function onMove(e) {
@@ -110,7 +111,10 @@
     }
     function endDrag() {
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", endDrag);
       window.removeEventListener("keydown", onKey, true);
+      if (!dragging) return null;
       document.body.classList.remove("pv-dragging");
       for (const it of dragging.items) it.classList.remove("pv-dragged");
       drop.hidden = true;
@@ -129,7 +133,6 @@
     function onKey(e) {
       if (e.key !== "Escape") return;
       e.preventDefault(); e.stopPropagation();
-      window.removeEventListener("pointerup", onUp);
       endDrag();
     }
 
