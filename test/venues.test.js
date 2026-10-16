@@ -1562,6 +1562,18 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // the joint Web Intelligence / Intelligent Agent Technology event is WI's; the 2000 volume title is EKAW's
   eq("IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "CORE B WI");
   eq("Knowledge Engineering and Knowledge Management Methods, Models, and Tools, 1-16, 2000", "CORE B EKAW");
+  // a venue's name that goes on with "and" and more words, before an acronym in a parenthesis, is another event's name: IEEE's ICIP is not "Image Processing and Robotics" (a subtitle set off by a colon stays)
+  none("2020 International Conference on Image Processing and Robotics (ICIP)");
+  eq("2020 IEEE International Conference on Image Processing (ICIP), 2020", "CCF C ICIP · CORE B ICIP");
+  eq("IEEE/ACM International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)", "CCF A ICSE · CORE A* ICSE");
+  eq("IEEE International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)", "CORE B PIMRC");
+  // the acronym ICCC is also the Computational Cybernetics conference; the sections of SIGGRAPH that are no papers are tracks
+  none("IEEE 3rd International Conference on Computational Cybernetics, 2005. ICCC 2005.");
+  eq("International Conference on Computational Creativity (ICCC), 2019", "CORE C ICCC");
+  none("ACM SIGGRAPH 2004 Computer animation festival on - SIGGRAPH '04");
+  none("ACM SIGGRAPH 2004 Art gallery");
+  none("IEEE International Symposium on Mixed and Augmented Reality - Arts, Media, and Humanities (ISMAR-AMH)");
+  eq("ACM SIGGRAPH 2019 Papers", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

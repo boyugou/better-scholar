@@ -215,7 +215,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings))\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities)\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -760,7 +760,15 @@
       const dotted = new Set((before.match(/[A-Za-z]{2,}\./g) || []).map((x) => squash(x)));
       const owners = [d, ...Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => (idx.sources[sn][kd].abbrs.get(key) || []).filter((e) => e.src !== d.src && (String(e.abbr).toLowerCase() === String(d.abbr).toLowerCase() || (d.src === "ccf" ? idx.sameVenue(d.abbr, e.abbr) : idx.sameVenue(e.abbr, d.abbr)))))) ];
       const own = words.filter((w) => owners.some((e) => vocabOf(e).has(w) || [...vocabOf(e)].some((v) => stemOf(v) === stemOf(w) || (dotted.has(w) && v.startsWith(w))))).length;
-      return own * 2 <= words.length;
+      if (own * 2 <= words.length) return true;
+      // the venue's own name begins the words and they go on with "and" and more words, with nothing to set the rest off: "International Conference on Image Processing and Robotics (ICIP)"
+      // is another event's name, not IEEE's ICIP (a theme after a colon, a dash or a full stop — "… Software Engineering: Software Engineering in Practice (ICSE-SEIP)" — is a subtitle)
+      const text = fold(before);
+      const runsOn = (e) => e.extra.some((n) => {
+        const t = canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg", idx.known);
+        return t.length >= 2 && words.length > t.length && t.every((w, i) => words[i] === w) && new RegExp("(?:\\band|&)\\s+" + words[t.length].replace(/[^a-z0-9]/g, "") + "\\b", "i").test(text);
+      });
+      return !/[:;]|\s[–—-]\s|\.\s/.test(before) && owners.some(runsOn);
     };
     // the acronym as printed names its own venue: "C&C" is Creativity and Cognition, not Compiler Construction ("CC") — unless the lists say the two spellings are one venue ("S&P", "SP")
     const rawNamesVenue = (raw, k, d) => {
