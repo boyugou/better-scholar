@@ -115,7 +115,7 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Toolbar popup:** for the profile in the open tab, the same table, the awards and talks counts, and the copy buttons, under the same switches.
 
 ### 5. The settings page
-Each change is saved at once and open Scholar tabs redraw. The preview on the right is the real panel over sample rows, and it is **an editor, not only a picture**: the cards on the left follow it from top to bottom, hovering a setting outlines what it draws, and hovering a part of the preview offers ✕ to hide it, ⠿ to move it and ✎ (or a double-click) to rename it; a tray above the preview shows what was hidden again. Both sides change the same settings.
+Each change is saved as it is made (a colour when the picker is closed) and open Scholar tabs redraw. The preview on the right is the real panel over sample rows, and it is **an editor, not only a picture**: the cards on the left follow it from top to bottom, hovering a setting outlines what it draws, and hovering a part of the preview offers ✕ to hide it, ⠿ to move it and ✎ (or a double-click) to rename it; a tray above the preview shows what was hidden again. Both sides change the same settings.
 
 - **A switch for every thing.** Each part of the panel (the table, the copy row, awards and talks, the filters, the citation totals, the year chart, the venue list, the status lines, the name help) and each thing in it (a title, a column or row of the table, a button, a quick filter, a number) has its own switch. A switch decides what is *drawn*; what you see is what you search and copy.
 - **Order.** The parts of the panel, the copy buttons and the quick filters can be put in any order: drag them on the preview, or use the buttons on the left.
@@ -170,7 +170,7 @@ Press `/` on a profile to focus the search box (when the panel and its filters a
 - An operator with a value it does not take (`ccf:x`) matches nothing, and the box is marked and says why on hover. A word whose colon follows no operator (`http://…`) is an ordinary word. The bare comparisons of earlier versions (`>100`, `>2020`) and the aliases `c:`, `y:`, `tier:` and `rank:` are gone.
 - Typing an operator's colon (`role:`) lists its values; `↓`, or a click on the `/` hint, lists common ones. `↑` / `↓` choose, and `Enter` or `Tab` takes the chosen one. Otherwise `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, then clears the box; on the page, `Escape` clears every filter.
-- The quick buttons under the box toggle `ccf:a` (`core:a*` when CCF is off), `cites:>100`, `role:first` and `has:award`.
+- The quick buttons under the box toggle `ccf:a`, `cites:>100`, `role:first` and `has:award`; the settings offer more (`core:a*`, `role:cofirst`, `role:second`, `role:last`, `has:talk`), and a button for a kind of paper that nothing on the page draws is left out.
 - The box takes up to 500 characters.
 
 ---

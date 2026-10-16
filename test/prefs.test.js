@@ -221,6 +221,22 @@ test("the ranking the table uses: the remembered one if it has a tab, else the f
   assert.deepEqual(prefs.sources(p(false, false)), []);
 });
 
+test("while the table is not drawn the summary and the exports are counted by the lists the rows' chips show", () => {
+  const p = (table, rows) => prefs.normalize({ panel: { table: { show: table } }, rows });
+  assert.deepEqual(prefs.sources(p(false, { ccf: true, core: false })), ["ccf"], "no table: the chips' lists");
+  assert.deepEqual(prefs.sources(p(false, { ccf: false, core: false })), [], "no table and no chips: nothing draws a rank, so by role only");
+  assert.deepEqual(prefs.sources(p(true, { ccf: false, core: false })), ["ccf", "core"], "the table is drawn: its tabs decide");
+  assert.deepEqual(prefs.sources(prefs.normalize({ panel: { table: { show: true, ccf: false } }, rows: { ccf: true } })), ["core"], "the table's own tabs decide, not the chips");
+});
+
+test("the popup draws the table, the awards and talks counts and the copy buttons: their switches count while the panel is off; the others hang on the panel", () => {
+  const rows = new Map(prefs.SETTINGS.map((s) => [s.path, s]));
+  for (const part of ["table", "marks", "copy"]) assert.equal(rows.get(`panel.${part}.show`).parent, undefined, `panel.${part}.show does not hang on panel.show`);
+  for (const part of ["filters", "metrics", "years", "venues", "status", "names"]) assert.equal(rows.get(`panel.${part}.show`).parent, "panel.show", `panel.${part}.show hangs on panel.show`);
+  // what a thing hangs on is a switch that exists, and no chain loops
+  for (const s of prefs.SETTINGS) for (let at = s, n = 0; at.parent; at = rows.get(at.parent), n++) assert.ok(rows.has(at.parent) && n < 6, `${s.path}: ${at.parent}`);
+});
+
 test("the copy buttons that are on, in the order the settings give", () => {
   assert.deepEqual(prefs.copyButtons(prefs.defaults()), ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
   assert.deepEqual(prefs.copyButtons(prefs.normalize({ panel: { copy: { summary: false, table: false, apa: false } } })), ["papers", "bibtex", "markdown", "json", "csv"]);

@@ -247,7 +247,7 @@ The search box (`/` focuses it when the panel and its filters are shown) feeds `
 once per query and per set of visible marks (`analysis.queryMatcher`). Typing an operator's colon lists that operator's
 suggestions (`OPERATORS[].suggest`), `↓` or the `/` hint lists `POPULAR`; `Enter` / `Tab` take a suggestion chosen with the
 arrows, otherwise `Enter` / `Shift+Enter` step through the matching rows (`rr-row-focused`). A query with errors marks the box
-`aria-invalid` and names them in its tooltip. Four quick buttons toggle `ccf:a` (`core:a*` when CCF is off), `cites:>100`,
+`aria-invalid` and names them in its tooltip. Four quick buttons toggle by default `ccf:a`, `cites:>100`,
 `role:first` and `has:award`. `type:conference` and `type:journal` read the kind the rank lists give the venue (CCF's own, else CORE's; a list that is switched off does not tell, and a venue without a rank has none).
 
 ### Filters and what they scope
@@ -282,8 +282,8 @@ The year chart is `metrics.yearBars()`: one bar a year for the highlighted paper
 the latest: a typo such as 2099 draws nothing), starting at the first year that has a paper; Scholar sometimes dates a paper 1803, which would stretch the chart over two centuries and leave
 every bar a pixel wide. The papers before the first bar are counted (`byYearOlder`) and said in the first axis label's tooltip and in the chart's accessible name (`yearsOlder`).
 
-Layout: in the wide layout (window narrow, panel above the list) `update()` moves the year bars into the first column; the arrangement is redone when
-the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
+Layout: in the wide layout (window narrow, panel above the list) the parts are set in CSS columns (`columns: 2 280px`, `rr-onecol` when the panel is one column wide); the
+arrangement is redone when the window crosses the breakpoint. When Scholar's layout has changed (`layoutBroken`) only the warning (top slot) and the loading status are shown.
 
 ## The toolbar popup
 
@@ -301,11 +301,11 @@ greyed while it is off; a name (`text` row) sits on the row of its switch; an or
 Every control carries `data-pref="<path>"` (the API key's field is `data-pref="s2key"`, not a setting), and an end-to-end
 check fails when a `SETTINGS` row has no control or a control names no setting. Bespoke parts: the colour studio, the chip looks
 (ready-made looks drawn on their own buttons: the look is a few inherited custom properties, so the nearest class wins), the key
-field, the configuration card, the saved data. A change is shown at once and written within 600 ms (`chrome.storage.sync` takes 120
-writes a minute and refuses silently: runs of changes are coalesced, a refused write is shown, and the page's own echoes are not
+field, the configuration card, the saved data. A change is shown at once and written within 600 ms (a name as it is typed, a colour when the picker is closed; `chrome.storage.sync` takes 120
+writes a minute and refuses silently: runs of changes are coalesced, a refused write is shown and made again after 10 s or when the page is left, and the page's own echoes — its writes not yet seen back, in order — are not
 taken for another tab's change); open Scholar tabs redraw on `chrome.storage.onChanged`. The cards: *Language*, *Highlight my
 papers*, *Colours*, *Chips on each paper* (and their look), *Summary panel*, one card for each part of the panel, *Scholar's own
-blocks*, *Duplicate entries*, *Paper list*, *Semantic Scholar*, *AI agents*, *Configuration & presets* and *Saved data*. Groups of
+blocks*, *Duplicate entries*, *Paper list*, *Semantic Scholar*, *Check a venue*, *AI agents*, *Configuration & presets* and *Saved data*. Groups of
 switches have *Enable all* / *Disable all*. A search box and a row of links to the cards sit above them.
 
 The preview is an editor, not only a picture (`options/editor.js`). Hovering a setting outlines what it draws; hovering a thing in
@@ -345,8 +345,8 @@ TypeError in the shim: add what it needs there. The demo asks for its own files 
 line is not shown.
 
 It is not the extension: there is no Scholar page to redraw (the preview is all there is), *Open Scholar in* and the Semantic Scholar switch only save a
-value, the page's footer still says the settings sync with a Chrome profile, and the Semantic Scholar key field keeps whatever a visitor types in their own
-`localStorage` (the origin's, which other pages of the same host share).
+value, the page's footer still says the settings sync with a Chrome profile, and the Semantic Scholar key field keeps whatever a visitor types in memory only (`MEMORY_ONLY`
+in the stand-in: it is never written to `localStorage`, and a reload empties it).
 
 ## Calls: page events and the popup
 
