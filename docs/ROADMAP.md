@@ -134,6 +134,18 @@ Unrecognised venues are listed in the panel. Feed real unrecognised strings back
 A DBLP-derived alias table (the official catalogue prints a DBLP URL per venue) could extend
 coverage offline without runtime network access.
 
+*Wrong badges, 2026-10-16.* The reviewed snapshot is not proof of precision — it held an AAAI paper under IJCAI's badge. Questions put to the
+22,744 real strings and to every official name of both lists found, in one day, fourteen wrong venues in the snapshot (AAAI as IJCAI,
+PACM Software Engineering's ISSTA and FSE papers as ICSE, ACM ITS as CORE's ITS, SIGGRAPH Asia as SIGGRAPH …) and a dozen rules that
+gave a venue's badge to a workshop, a regional edition, a journal's title or a cut name read as whole (each fixed, each pinned by a test; see the
+CHANGELOG): *which acronym does the string name, and is it the badge's?*; *how many of its words are outside the venue's names?*;
+*do the two lists name different venues?* (never, in the corpus); *is the same name printed another way answered the same?*; *does every official name,
+in the forms Scholar prints it, come out as itself or as nothing?*; and two independent reviews that ran the old and the new matcher side by side
+over perturbed copies of the corpus. Left as they are on purpose: an acronym that is both a journal and a conference of the lists and carries no
+other sign ("CSCW" with pages is read as the conference, "World Wide Web" without a volume as the journal); "Proceedings of the ACM on Interactive,
+Mobile, Wearable and Ubiquitous Technologies" (UbiComp's journal-first form, not on the lists); an acronym-only "X Workshops" for a venue whose
+official name still says Workshop (HotOS, CORE's WACV).
+
 ## Other ideas, not started
 
 - **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
