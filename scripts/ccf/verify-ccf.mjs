@@ -59,7 +59,6 @@ function readOldSource(opts) {
   }
 }
 
-const esc = (s) => String(s).replace(/\|/g, '\\|');
 const code = (s) => '`' + String(s).replace(/`/g, "'") + '`';
 const kindName = (k) => (k === 'C' ? 'conference' : 'journal');
 const ref = (v, areas) => `${v.kind}-${v.tier} ${areas.indexOf(v.area) + 1}.${v.serial} (p${v.page})`;

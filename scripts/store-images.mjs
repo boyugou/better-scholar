@@ -161,7 +161,7 @@ p.cap code{font:600 17px/1 ui-monospace,"SF Mono",Menlo,Consolas,monospace;color
   box-shadow:0 0 0 1px rgba(19,26,46,.10),0 4px 10px rgba(19,26,46,.10),0 24px 52px -10px rgba(19,26,46,.36)}
 `;
 
-const COPY_TOP = 40, WIN_TOP = 156, BAR_H = 36;        // headline block, then the window from here down past the bottom edge
+const WIN_TOP = 156, BAR_H = 36;        // headline block, then the window from here down past the bottom edge
 const PAGE_ZOOM = 0.9;                                  // the Scholar page is shown at 90 %: the whole width of the profile fits
 
 function copyBlock(shot, captionHtml) {

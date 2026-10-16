@@ -66,7 +66,6 @@ for (const scheme of ["light", "dark"]) {
 }
 await opts.setViewportSize({ width: 1360, height: 900 });
 // popup (aimed at the profile tab)
-const tabId = await page.evaluate(() => 0).then(() => null);
 const popup = await ctx.newPage();
 await popup.goto(`chrome-extension://${id}/popup/popup.html`); await popup.waitForTimeout(600);
 await run(popup, "popup (no profile tab)");

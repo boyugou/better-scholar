@@ -12,7 +12,7 @@
 // A title that is mostly mathematics ($\tilde O(mn^{8/9})$) is kept as printed; the matcher ignores TeX markup, and Scholar prints
 // such titles in its own way, so those papers are found only if the two happen to agree.
 import { readFileSync } from "node:fs";
-import { text, lines } from "./html.mjs";
+import { lines } from "./html.mjs";
 
 const PAGES = {
   best: "https://www.sigact.org/prizes/best_paper.html",

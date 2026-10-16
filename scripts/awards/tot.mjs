@@ -3380,7 +3380,6 @@ export function parseDacBest(html, source) {
   const entries = [], skipped = [];
   const ls = lines(html).map((x) => x.normalize("NFC").replace(ZW, "").replace(/\s+/g, " ").trim()).filter(Boolean);
   const d = ls.findIndex((l) => /^(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2}, \d{4}$/.test(l));
-  const t = ls.findIndex((l, k) => k > d && /^The \d+(?:st|nd|rd|th) (?:Design Automation Conference|DAC)\b.*Best Paper Awards$/.test(l));
   const year = d >= 0 ? +/(\d{4})$/.exec(ls[d])[1] : 0;
   const i0 = ls.findIndex((l, k) => k > d && /^Best Paper Research(?: Track)?$/.test(l));
   if (!year || d < 0 || i0 < 0 || !ls.some((l) => /DAC/.test(l) && /Best Paper/i.test(l))) return { entries, skipped: ["no best paper release"] };
