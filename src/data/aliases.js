@@ -11,6 +11,7 @@
 //   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
 //   exact         extra names for whole strings only: the start of a cut-off string is never read as one of them
 //                 (a name that is also the start of other venues' names, "Machine Learning and …")
+//   fullOnly      extra names whose organisation is part of what they say ("USENIX ATC"): read whole, never as the bare acronym that is left once the organisation is dropped ("ATC")
 //   noBareAcronym the acronym alone proves nothing: another, unranked venue is called the same ("SAC" is also ACM's Symposium on
 //                 Applied Computing) — only the name counts
 //   starts        visible starts of a cut-off string that are read as this venue although other venues begin the same way
@@ -119,7 +120,7 @@
     { ccf: "OSDI", core: "OSDI", names: ["USENIX Symposium on Operating Systems Design and Implementation"] },
     { ccf: "NSDI", names: ["USENIX Symposium on Networked Systems Design and Implementation", "Symposium on Networked Systems Design and Implementation", "Symposium on Network System Design and Implementation"] },
     { ccf: "EuroSys", core: "EuroSys", names: ["European Conference on Computer Systems", "Conference on Computer Systems", "ACM European Conference on Computer Systems"] },
-    { ccf: "ACM SIGOPS ATC", core: "USENIX", abbrs: ["USENIX ATC"], names: ["USENIX Annual Technical Conference", "USENIX Technical Conference"] },          // ("USENIX ATC" is an abbreviation only: as a name it would leave "ATC", CORE's Advanced and Trusted Computing, to this venue)
+    { ccf: "ACM SIGOPS ATC", core: "USENIX", abbrs: ["USENIX ATC"], fullOnly: ["USENIX ATC"], names: ["USENIX Annual Technical Conference", "USENIX Technical Conference"] },          // ("USENIX ATC" is not also the bare "ATC": that is CORE's Advanced and Trusted Computing)
     { ccf: "FAST", core: "FAST", names: ["USENIX Conference on File and Storage Technologies"] },
     { ccf: "ASPLOS", core: "ASPLOS", names: ["International Conference on Architectural Support for Programming Languages and Operating Systems"] },
     // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)
@@ -206,6 +207,25 @@
     { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
     { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
     { ccf: "SAC", core: "SAC", noBareAcronym: true, names: ["Selected Areas in Cryptography"] },
+    // venues that are, or were, workshops by name, where the list gives the name of today (a string that says "Workshop" is a track at a venue unless it is the venue's own name)
+    { ccf: "SLT", names: ["IEEE Spoken Language Technology Workshop", "Spoken Language Technology Workshop"] },
+    { ccf: "VMCAI", core: "VMCAI", names: ["International Workshop on Verification, Model Checking, and Abstract Interpretation"] },
+    { ccf: "SPIN", names: ["International Workshop on Model Checking Software"] },
+    { ccf: "CSL", core: "CSL", names: ["International Workshop on Computer Science Logic"] },
+    { ccf: "HSCC", names: ["International Workshop on Hybrid Systems: Computation and Control"] },
+    { ccf: "CHES", names: ["International Workshop on Cryptographic Hardware and Embedded Systems"] },
+    { ccf: "RAID", core: "RAID", names: ["International Workshop on Recent Advances in Intrusion Detection"] },
+    { ccf: "ICML", core: "ICML", names: ["International Workshop on Machine Learning"] },
+    { ccf: "MSR", names: ["International Workshop on Mining Software Repositories"] },
+    { ccf: "FSE", ccfTier: "B", names: ["International Workshop on Fast Software Encryption"] },
+    { ccf: "PKC", core: "PKC", names: ["International Workshop on Public Key Cryptography", "IACR International Workshop on Public Key Cryptography"] },
+    { ccf: "ICMR", core: "ICMR", names: ["ACM SIGMM International Workshop on Multimedia Information Retrieval"] },
+    { core: "CHASE", names: ["International Workshop on Cooperative and Human Aspects of Software Engineering"] },
+    { core: "INLG", names: ["International Workshop on Natural Language Generation"] },
+    { core: "SSBSE", names: ["International Workshop on Search-Based Software Engineering"] },
+    { core: "RSP", names: ["IEEE International Workshop on Rapid System Prototyping"] },
+    { core: "HCOMP", names: ["Human Computation Workshop"] },
+    { core: "QoMEX", names: ["International Workshop on Quality of Multimedia Experience"] },
     // earlier or sponsor-carrying names Scholar prints (the lists give the current ones)
     { ccf: "SPAA", core: "SPAA", names: ["ACM Symposium on Parallel Algorithms and Architectures", "Symposium on Parallel Algorithms and Architectures"] },
     // PETS was the International Workshop on Privacy Enhancing Technologies (CORE's note says "of"; the proceedings say "on")

@@ -1070,10 +1070,12 @@ test("a track at a venue is not the venue: 'Workshop' in a name the venue once h
   assert.ok(names.length > 1000);
   const forms = [(n) => n + " Workshops, 2019", (n) => "Workshop at " + n + ", 2019", (n) => "Workshop on Causality at the " + n + ", 2019", (n) => n + ": Companion Volume, 2019", (n) => n + " (Demo Track), 2019",
     (n) => "Doctoral Consortium of the " + n + ", 2019", (n) => n + " Posters, 2019", (n) => "Tutorial at the " + n + ", 2019", (n) => n + " Extended Abstracts, 2019"];
-  const holds = (name, word) => venues.secondaryWord(name.replace(/\([^()]*\)/g, " ")) === word;
+  const holds = (name, word) => venues.secondaryWords(name.replace(/\([^()]*\)/g, " ")).includes(word);
+  // (a venue the aliases name with the word — SLT is the "Spoken Language Technology Workshop" — may carry it)
+  const aliasHolds = (badge, word) => aliases.some((a) => (a.ccf === badge.abbr || a.core === badge.abbr) && (a.names || []).some((n) => holds(n, word)));
   for (const n of names) for (const f of forms) {
     const raw = f(n), word = venues.secondaryWord(raw), r = resolver.resolve(raw);
-    for (const badge of [r.ccf, r.core]) if (badge) assert.ok(holds(badge.name, word), `${raw} → ${badge.name}: a ${word} is not the venue`);
+    for (const badge of [r.ccf, r.core]) if (badge) assert.ok(holds(badge.name, word) || aliasHolds(badge, word), `${raw} → ${badge.name}: a ${word} is not the venue`);
   }
 });
 
@@ -1114,16 +1116,20 @@ test("the acronym a string opens with decides between venues whose names boil do
   // an abbreviation with its organisation ("USENIX ATC") is not the bare acronym ("ATC" is CORE's Advanced and Trusted Computing)
   assert.equal(brief("ATC 2019"), "CORE C ATC");
   assert.equal(brief("USENIX ATC 2019"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
-  // every conference of the CCF list in the forms Scholar prints it, with its acronym: a badge of another venue is never the answer (a missing one is)
+  // every conference of the CCF list in the forms Scholar prints it, with its acronym where it has a plain one: a badge of another venue is never the answer (a missing one is) —
+  // and the same for every conference of the CORE list (the two-letter and the organisation-prefixed acronyms are the collision-prone ones: they are in)
   const same = (r, v) => !r.ccf || r.ccf.abbr === v.abbr || r.ccf.name === v.name;
-  const confs = ccf.venues.filter((v) => v.kind === "C" && v.abbr && /^[A-Za-z][A-Za-z0-9&-]{2,}$/.test(v.abbr));
-  assert.ok(confs.length > 300);
   const strip = (n) => n.replace(/\([^()]*\)/g, " ").replace(/\s+/g, " ").trim();
-  for (const v of confs) {
-    for (const raw of [`Proceedings of the 12th ${strip(v.name)}, 123-145, 2019`, `${strip(v.name)} (${v.abbr}), 123-145, 2019`, `${v.abbr} '19: Proceedings of the ${strip(v.name)}, 123-145, 2019`, `${v.abbr} 2019`]) {
-      const r = resolver.resolve(raw);
-      assert.ok(same(r, v), `${raw} → ${r.ccf && r.ccf.abbr}`);
-    }
+  const plain = (a) => a && /^[A-Za-z][A-Za-z0-9&-]{1,}$/.test(a);
+  const ccfConfs = ccf.venues.filter((v) => v.kind === "C");
+  assert.equal(ccfConfs.length, 386);
+  for (const v of ccfConfs) {
+    const raws = [`Proceedings of the 12th ${strip(v.name)}, 123-145, 2019`, ...(v.abbr ? [`${strip(v.name)} (${v.abbr}), 123-145, 2019`] : []), ...(plain(v.abbr) ? [`${v.abbr} '19: Proceedings of the ${strip(v.name)}, 123-145, 2019`, `${v.abbr} 2019`] : [])];
+    for (const raw of raws) { const r = resolver.resolve(raw); assert.ok(same(r, v), `${raw} → ${r.ccf && r.ccf.abbr}`); }
+  }
+  for (const v of core.venues) {
+    const raws = [`Proceedings of the 12th ${strip(v.name)}, 123-145, 2019`, `${strip(v.name)} (${v.acronym}), 123-145, 2019`, ...(plain(v.acronym) ? [`${v.acronym} '19: Proceedings of the ${strip(v.name)}, 123-145, 2019`] : [])];
+    for (const raw of raws) { const r = resolver.resolve(raw); assert.ok(!r.core || r.core.abbr === v.acronym || r.core.name === v.name, `${raw} → CORE ${r.core && r.core.abbr}`); }
   }
 });
 
@@ -1162,4 +1168,48 @@ test("what the resolver says about a track: `refused` only when a ranked venue w
   const t0 = Date.now();
   resolver.resolve("Nature" + " ,".repeat(40000) + "x");
   assert.ok(Date.now() - t0 < 500, "a long run of punctuation is read in linear time");
+});
+
+test("the seventh review: a venue's whole name beats a parenthesised acronym of another (SEC'17); a cut name needs four words that are not connectives; venues that are workshops by name keep their badge; a volume and an issue make a journal's line", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  // the organisation and the name are in the string: it is USENIX Security whatever the parenthesis says (SEC is IFIP's, and an Edge Computing symposium's)
+  eq("Proceedings of the 26th USENIX Conference on Security Symposium (SEC'17), 1-18, 2017", "CCF A USENIX Security · CORE A* USENIX-Security");
+  // AAAI's other form, "ACRONYM-19:", vetoes a name that boils down to another venue's too
+  eq("SDM-19: SIAM International Conference on Data Mining, 2019", "CCF B SDM");
+  // a cut name shows its start: four words that are not "on" or "and" — not "… Workshop on Artificial Intelligence and …"
+  for (const s of ["Proceedings of the 2nd International Workshop on Artificial Intelligence and …, 2019", "Proceedings of the 12th ACM Workshop on Artificial Intelligence and …, 2019"]) assert.deepEqual([resolver.resolve(s).ccf, resolver.resolve(s).core], [null, null], s);
+  eq("Proceedings of the 16th ACM Workshop on Hot Topics in Storage and File …, 2024", "CCF C HotStorage");
+  // "USENIX ATC" read whole, in the forms Scholar prints it; never as the bare acronym
+  for (const s of ["Proceedings of USENIX ATC, 1-14, 2009", "Proc. USENIX ATC, 2009", "2009 USENIX ATC, 1-14, 2009", "usenix atc, 2009"]) eq(s, "CCF A ACM SIGOPS ATC · CORE A USENIX");
+  eq("ATC 2019", "CORE C ATC");
+  // CCF lists RAID under its old name, CORE under the new one: the acronym in front is the venue of both
+  eq("RAID '21: Proceedings of the 24th International Symposium on Research in Attacks, Intrusions and Defenses, 2021", "CCF B RAID · CORE A RAID");
+  eq("RAID '08: Proceedings of the 11th International Symposium on Recent Advances in Intrusion Detection, 2008", "CCF B RAID · CORE A RAID");
+  // old names with the notes of the CORE list ("prior to 2009 was …", "…; changed 2006")
+  eq("PRIMA 2005: Pacific Rim International Workshop on Multi-Agents, 2005", "CORE B PRIMA");
+  // a rule that narrowed the venue's names (the cut-name rule) still sees all of them
+  eq("Proceedings of the 13th IEEE workshop on Computer Security Foundations, 2000", "CCF B CSFW · CORE A CSF");
+  // venues that are workshops by name, or were: the list gives the name of today
+  for (const [s, want] of [["2012 IEEE Spoken Language Technology Workshop (SLT), 234-239, 2012", "CCF C SLT"], ["International Workshop on Hybrid Systems: Computation and Control, 25-53, 2005", "CCF B HSCC"],
+    ["Proceedings of the Fourth International Workshop on Machine Learning, 337-352, 1987", "CCF A ICML · CORE A* ICML"], ["International workshop on public key cryptography, 68-87, 2009", "CCF B PKC · CORE B PKC"],
+    ["International Workshop on Verification, Model Checking, and Abstract …, 2002", "CCF B VMCAI · CORE B VMCAI"], ["22nd International Workshop on Fast Software Encryption, 2015", "CCF B FSE · CORE B FSE"],
+    ["International Workshop on Computer Science Logic, 1-17, 1993", "CCF C CSL · CORE B CSL"], ["International Workshop on Recent Advances in Intrusion Detection, 17-35, 2002", "CCF B RAID · CORE A RAID"]]) eq(s, want);
+  // ... and a topical workshop at one of them is still a workshop
+  for (const s of ["SLT 2021 Workshop on Speech for Healthcare, 2021", "PKC 2019 Workshop on Post-Quantum Standards, 2019", "ICML Workshop on Machine Learning for Music, 2019"]) assert.ok(!resolver.resolve(s).ccf && !resolver.resolve(s).core, s);
+  // a volume and an issue make a journal's line: an acronym that is no journal's, buried or leading, is not an event there — but a conference's proceedings with a volume are
+  for (const s of ["PLOS Biology 3 (9), e300, 2005", "PLOS ONE 10 (12), e0143055, 2015", "IEEE MICRO 15 (1), 54-64, 1995"]) assert.ok(!resolver.resolve(s).ccf && !resolver.resolve(s).core, s);
+  eq("ACM TKDD 6 (1), 2012", "CCF B TKDD");
+  eq("Proc. VLDB Endow. 1 (2), 1379-1390, 2008", "CCF A VLDB · CORE A* VLDB");
+  eq("VLDB Endowment 8 (7), 738, 2015", "CCF A VLDB · CORE A* VLDB");
+  eq("Proceedings of CIDR 8 (1), 28, 2021", "CCF B CIDR · CORE A CIDR");
+  eq("CCS 21 (2021), 15-19, 2021", "CCF A CCS · CORE A* CCS");
+  eq("KDD 2019 (🌟 Top-3 Most Influential Papers), 2019", "CCF A SIGKDD · CORE A* KDD");
+  // "refused" counts the tracks of listed venues whatever the spelling: the string without its track words names the venue
+  for (const s of ["CHI'13 Extended Abstracts on Human Factors in Computing Systems, 787-792, 2013", "CHI '13 Extended Abstracts on Human Factors in Computing Systems, 787-792, 2013", "Adjunct Proceedings of the 28th Annual ACM Symposium on User Interface Software and Technology, 2015"]) {
+    const r = resolver.resolve(s);
+    assert.ok(r.refused && !r.ccf && !r.core, s);
+  }
+  assert.equal(resolver.resolve("IEEE Communications Surveys & Tutorials 22 (3), 1909-1941, 2020").refused, false);
+  // the "@" of a workshop co-located with a conference (CEUR-WS) is a track word
+  assert.deepEqual([venues.secondaryWords("NLP-DBPEDIA@ ISWC"), venues.secondaryWords("OM@ ISWC 2288"), venues.secondaryWords("Nature 521")], [["workshop"], ["workshop"], []]);
 });
