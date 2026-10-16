@@ -84,7 +84,7 @@
     { ccf: "SGP", core: "SGP", names: ["Eurographics/ACM SIGGRAPH Symposium on Geometry Processing", "Eurographics Symposium on Geometry Processing", "Symposium on Geometry Processing"] },
     { ccf: "SCA", core: "SCA", names: ["Eurographics/ACM SIGGRAPH Symposium on Computer Animation", "ACM SIGGRAPH/Eurographics Symposium on Computer Animation", "Symposium on Computer Animation"] },
     // EGSR was the Eurographics Workshop on Rendering; its proceedings are "Rendering Techniques" (the ACM Digital Library: "Eurographics conference on Rendering Techniques")
-    { ccf: "EGSR", names: ["Eurographics Workshop on Rendering", "Eurographics Workshop on Rendering Techniques", "Eurographics Conference on Rendering Techniques", "Rendering Techniques"] },
+    { ccf: "EGSR", names: ["Eurographics Workshop on Rendering", "Eurographics Workshop on Rendering Techniques", "Eurographics Rendering Workshop", "Eurographics Conference on Rendering Techniques", "Rendering Techniques"] },
     { core: "SiggraphA", names: ["ACM SIGGRAPH Asia", "SIGGRAPH Asia", "ACM SIGGRAPH Asia Papers", "SIGGRAPH Asia Papers", "ACM SIGGRAPH Asia Technical Papers", "SIGGRAPH Asia Technical Papers"] },
 
     // ---- HCI
@@ -101,7 +101,7 @@
     // Hot Chips is one venue under two acronyms (CCF "HOT CHIPS", CORE "HOTCHIPS (HCS)"): not a disagreement between the lists
     { ccf: "HOT CHIPS", core: "HOTCHIPS (HCS)", names: ["Symposium on High Performance Chips"] },
     // more venues the two lists give different acronyms (CSFW was the workshop, CSF is the symposium; CCF has two cloud rows)
-    { ccf: "CSFW", core: "CSF", names: ["IEEE Computer Security Foundations Workshop", "IEEE Computer Security Foundations Symposium"] },
+    { ccf: "CSFW", core: "CSF", names: ["IEEE Computer Security Foundations Workshop", "IEEE Computer Security Foundations Symposium", "Workshop on Computer Security Foundations"] },
     { ccf: "WiSec", core: "ACM_WiSec", names: ["ACM Conference on Security and Privacy in Wireless and Mobile Networks"] },
     { ccf: "IEEE CEC", core: "CEC", names: ["IEEE Congress on Evolutionary Computation"] },
     { ccf: "IEEE BigData", core: "BigData", names: ["IEEE International Conference on Big Data"] },

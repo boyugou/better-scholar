@@ -173,9 +173,11 @@ Ties between entries with the same canonical key are broken by the event word in
 string (`symposium` → SoCC rather than the JCC conference). **Secondary tracks** —
 Findings, workshops, demos, posters, tutorials, extended abstracts, short/industry papers,
 shared tasks — get no badge unless the venue's own official name contains the word
-(IWQoS, HotNets), or the string carries an older name of the venue that does, with the words
-around the word ("International Workshop on Artificial Intelligence and Statistics" is AISTATS;
-"AISTATS Workshop on Causality" is a workshop at it). Results are memoised per string and carry the rule and entry that matched,
+(IWQoS, HotNets), or the string carries an older name of the venue that does, whole (sponsors,
+ordinals and "international" aside; a cut name's first four words are enough: "International Workshop on Artificial Intelligence and Statistics" is AISTATS;
+"AISTATS Workshop on Causality" is a workshop at it; every track word of the string must be one the venue's own name holds). The result says the word
+(`secondary`) and, when a listed venue was matched and its badge withheld because of it, `refused` — the panel's *Not ranked → secondary tracks* counts those and not every
+string with a track word (a journal called "Surveys & Tutorials" is not a track of anything). Results are memoised per string and carry the rule and entry that matched,
 which the chip tooltip shows.
 
 The behaviour is pinned by `test/venues.test.js`: targeted regression cases for every bug found

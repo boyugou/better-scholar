@@ -253,7 +253,7 @@ test("a copied summary can say where it is from: notes are lines under the title
 });
 
 test("the copied summary says what the not-ranked papers are, kind by kind, and nothing when none is not ranked", () => {
-  const unranked = (venueText, secondary) => ({ status: "found", role: "first", venue: { ccf: null, core: null, secondary: secondary || null }, venueText, citations: 0 });
+  const unranked = (venueText, secondary) => ({ status: "found", role: "first", venue: { ccf: null, core: null, secondary: secondary || null, refused: !!secondary }, venueText, citations: 0 });
   const s = metrics.summarize([row("first", "A"), unranked("arXiv preprint arXiv:1"), unranked("arXiv preprint arXiv:2"), unranked("Workshop X", "workshop"), unranked("Some Journal")], "ccf");
   const text = f.summaryText(s, { owner: "Jane Doe" }).split("\n");
   assert.ok(text.includes("Not ranked: 4 (preprints 2, secondary tracks of ranked venues 1, other venues 1)"), text.join(" | "));

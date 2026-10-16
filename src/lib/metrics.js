@@ -115,8 +115,8 @@
   //   unranked: of the papers in the "not ranked" column, how many are preprints (the venue line begins with arXiv, bioRxiv…, as Scholar lists them), how many are a secondary
   //             track (a workshop, demo or the like) of a venue that is on a list, and how many are another venue — so that "–: 21" is not read as 21 papers at weak venues
   // `keep`: roles that have a row even with no paper (a count of fewer papers keeps the rows of the whole list, so that the table does not change its shape)
-  const PREPRINT = /^(?:arxiv|biorxiv|medrxiv|ssrn|preprint|techrxiv|chemrxiv|research square)\b/i;
-  const unrankedKind = (p) => (PREPRINT.test(String(p.venueText || "").trim()) ? "preprint" : p.venue && p.venue.secondary ? "secondary" : "other");
+  const PREPRINT = /^(?:arxiv|biorxiv|medrxiv|ssrn|preprint|techrxiv|chemrxiv|research square|corr\b|(?:iacr )?cryptol(?:ogy|\.)? eprint|eprint)/i;          // (CoRR is DBLP's name for arXiv; the IACR's preprint server is "Cryptology ePrint Archive", "IACR Cryptol. ePrint Arch.")
+  const unrankedKind = (p) => (PREPRINT.test(String(p.venueText || "").trim()) ? "preprint" : p.venue && p.venue.refused ? "secondary" : "other");
   function summarize(papers, source = "ccf", { keep = [] } = {}) {
     const columns = source === null ? [] : [...(TIERS[source] || TIERS.ccf), NONE];
     const blank = () => Object.assign(Object.fromEntries(columns.map((c) => [c, 0])), { total: 0 });

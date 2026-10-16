@@ -1045,6 +1045,9 @@ test("an acronym with a page range is the event: 'AAMAS, 1-10, 2016' and 'CSCW, 
     const r = resolver.resolve(s);
     assert.deepEqual([r.ccf && r.ccf.abbr, r.ccf && r.ccf.tier, r.ccf && r.ccf.kind], [abbr, tier, "C"], s);
   }
+  // ... but the abbreviation of a journal that no conference has the acronym of is the journal's, with a page range as with a year; a number after it that is a volume or an edition is no page range
+  for (const [s, want] of [["ACM DLT, 1-10, 2023", "CCF C ACM DLT"], ["TPAMI, 1-14, 2020", "CCF A TPAMI"], ["IEEE TPAMI, 10-14, 2020", "CCF A TPAMI"], ["TKDE, 1-14, 2020", "CCF A TKDE"],
+    ["HCI 91, 73-87, 1991", ""], ["JMLR 49, 1-34, 2016", ""], ["DLT 2019", "CORE C DLT"]]) assert.equal(brief(s), want, s);
   // every conference of the CCF list with an acronym, in four forms: never a journal, never another venue
   const confs = ccf.venues.filter((v) => v.kind === "C" && v.abbr && /^[A-Z][A-Za-z0-9&-]{2,14}$/.test(v.abbr));
   assert.ok(confs.length > 300);
@@ -1122,4 +1125,40 @@ test("the acronym a string opens with decides between venues whose names boil do
       assert.ok(same(r, v), `${raw} → ${r.ccf && r.ccf.abbr}`);
     }
   }
+});
+
+test("what the resolver says about a track: `refused` only when a ranked venue was matched and withheld; the not-ranked breakdown counts secondary tracks of ranked venues, not every string with a track word", () => {
+  const metrics = require("../src/lib/metrics.js");
+  const r = (s) => resolver.resolve(s);
+  assert.equal(r("AISTATS Workshop on Causality, 2019").refused, true);
+  assert.equal(r("IEEE Communications Surveys & Tutorials 22 (3), 1909-1941, 2020").refused, false, "a journal that is on no list, whose title says Tutorials, is no track of a ranked venue");
+  assert.equal(r("IEEE Communications Surveys & Tutorials 22 (3), 1909-1941, 2020").secondary, "tutorial", "... though the box can still say why it has no rank");
+  assert.equal(r("The Routledge companion to digital humanities, 2019").refused, false);
+  assert.equal(r("ACL 2019").refused, false);
+  const paper = (text) => ({ status: "found", role: "first", venue: r(text), venueText: text, citations: 0 });
+  const s = metrics.summarize(["AISTATS Workshop on Causality, 2019", "IEEE Communications Surveys & Tutorials 22 (3), 1909-1941, 2020", "A new companion to digital humanities, 2012", "Cryptology ePrint Archive, 2019", "IACR Cryptol. ePrint Arch., 2020", "CoRR abs/1512.03385, 2015", "arXiv preprint arXiv:1, 2020", "Doctoral dissertation, MIT, 2015"].map(paper), "ccf");
+  assert.deepEqual(s.unranked, { preprint: 4, secondary: 1, other: 3 });
+  // a string with several track words: the venue whose own name holds the first is held to the others
+  for (const t of ["International Workshop on Quality of Service (IWQoS) Posters, 2019", "Proceedings of the 15th ACM Workshop on Hot Topics in Networks: Posters, 2016", "IEEE International Conference on Emerging Technologies and Factory Automation Workshops, 2019"]) {
+    const x = r(t);
+    assert.ok(!x.ccf && !x.core && x.secondary, t);
+  }
+  assert.ok(venues.secondaryWords("Workshop on X: Posters and Demos").length === 3);
+  // topical workshops at a venue that was once a workshop are not its old name
+  for (const t of ["AISTATS Workshop on Artificial Intelligence for Healthcare, 2019", "PETS 2019 Workshop on Privacy-Preserving Machine Learning, 2019", "EGSR 2019 Workshop on Rendering for Games, 2019"]) assert.ok(!r(t).ccf && !r(t).core, t);
+  // ... and the order of the words in an old name, and a cut-off one
+  assert.equal(brief("Proceedings of the 13th IEEE workshop on Computer Security Foundations (CSFW-13), 2000"), "CCF B CSFW · CORE A CSF");
+  assert.equal(brief("Eurographics Rendering Workshop, 1998"), "CCF B EGSR");
+  assert.equal(brief("Proceedings of the 16th ACM Workshop on Hot Topics in Storage and File …, 2024"), "CCF C HotStorage");
+  // an edition printed as the last two digits of the year the line ends with is no volume ("Graphics interface 98, 43-50, 1998"); a regional edition is not the venue it is named after
+  assert.equal(brief("Graphics interface 98, 43-50, 1998"), "CCF C GI · CORE B GI");
+  assert.equal(brief("USENIX Security 22, 3255-3272, 2022"), "CCF A USENIX Security · CORE A* USENIX-Security");
+  assert.equal(brief("Acm siggraph asia 7 (2), 1-10, 2008"), "");
+  assert.equal(brief("ACM SIGGRAPH Asia 2009 papers, 1-10, 2009"), "CORE A* SiggraphA");
+  assert.equal(brief("Nature 521 (7553), 436-444, 2015"), "");
+  // a cut name that ends in dots is a cut name; the text is read in linear time
+  assert.equal(brief("Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications..."), "CCF A CCS · CORE A* CCS");
+  const t0 = Date.now();
+  resolver.resolve("Nature" + " ,".repeat(40000) + "x");
+  assert.ok(Date.now() - t0 < 500, "a long run of punctuation is read in linear time");
 });

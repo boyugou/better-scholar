@@ -152,7 +152,7 @@ test("topVenues: one short name that stands for two venues gives no name and no 
 });
 
 test("summarize says what the not-ranked column holds: preprints, secondary tracks of ranked venues, other venues; only papers of the table, and none by role only", () => {
-  const p = (role, tier, venueText, secondary) => ({ status: "found", role, venue: { ccf: tier ? { tier } : null, core: null, secondary: secondary || null }, venueText, citations: 0 });
+  const p = (role, tier, venueText, secondary) => ({ status: "found", role, venue: { ccf: tier ? { tier } : null, core: null, secondary: secondary || null, refused: !!secondary }, venueText, citations: 0 });
   const rows = [
     p("first", "A", "Advances in neural information processing systems"),
     p("first", null, "arXiv preprint arXiv:2301.00001, 2023"), p("last", null, "bioRxiv, 2022"), p("last", null, "SSRN Electronic Journal"),
@@ -176,7 +176,7 @@ test("the table is what its selections say: every cell counts exactly the papers
   const mk = () => {
     const status = pick(["found", "found", "found", "hidden", "absent"]);
     return { status, role: status === "found" ? pick(["first", "cofirst", "second", "last", "middle"]) : null, venueText: pick(["arXiv preprint", "NeurIPS", "Some Journal 3 (2)", ""]),
-      venue: { ccf: pick([null, { tier: "A" }, { tier: "B" }, { tier: "C" }]), core: pick([null, { rank: "A*" }, { rank: "A" }, { rank: "B" }, { rank: "C" }]), secondary: rnd() < 0.1 ? "workshop" : null }, citations: 0 };
+      venue: { ccf: pick([null, { tier: "A" }, { tier: "B" }, { tier: "C" }]), core: pick([null, { rank: "A*" }, { rank: "A" }, { rank: "B" }, { rank: "C" }]), secondary: rnd() < 0.1 ? "workshop" : null, refused: rnd() < 0.05 }, citations: 0 };
   };
   for (let i = 0; i < 300; i++) {
     const list = Array.from({ length: Math.floor(rnd() * 40) }, mk);
