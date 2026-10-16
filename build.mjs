@@ -6,12 +6,13 @@
 //   REPO_URL   the extension's GitHub repository
 //   EXT_DIR    the extension's repository on this machine (default: ../google-scholar-highlighter, next to this one). The site takes three
 //              things from it at build time and keeps no copy: the hero picture (store/chrome/images/screenshot-1.jpg), the demo (its own
-//              scripts/build-demo.mjs builds the real settings page into _site/demo) and the text of the export samples (src/lib/formats.js).
+//              scripts/build-demo.mjs builds the real settings page into _site/demo), the text of the export samples (src/lib/formats.js) and the
+//              numbers of the "By the numbers" section (scripts/numbers.mjs counts them from the extension's code and data).
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, copyFileSync, readdirSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { createRequire } from "node:module";
 import { join, dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = dirname(fileURLToPath(import.meta.url));
 const SITE_URL = (process.env.SITE_URL || "https://boyugou.github.io/better-scholar").replace(/\/$/, "");
@@ -30,6 +31,7 @@ needed(HERO, "the hero picture");
 const DEMO_BUILDER = needed(join(EXT_DIR, "scripts", "build-demo.mjs"), "the demo builder (scripts/build-demo.mjs)");
 const FORMATS = needed(join(EXT_DIR, "src", "lib", "formats.js"), "the export code (src/lib/formats.js)");
 const EXT_WORDS = needed(join(EXT_DIR, "src", "_locales", "en", "messages.json"), "the extension's English strings");
+const NUMBERS = needed(join(EXT_DIR, "scripts", "numbers.mjs"), "the numbers (scripts/numbers.mjs)");
 
 // the size of a JPEG, read from its header: the page states it, so that nothing moves while the picture loads
 function jpegSize(file) {
@@ -98,6 +100,15 @@ function exportSamples() {
   };
 }
 const samples = exportSamples();
+
+// The numbers section: what the extension is made of, counted from its repository by its own scripts/numbers.mjs when this page is built, never typed here.
+// A number that grows with every fix comes as "450+" (rounded down); the number is written in the page's language with Latin digits, whatever the language's own.
+const { numbers: countNumbers, headline } = await import(pathToFileURL(NUMBERS).href);
+const STATS = headline(countNumbers());
+const stat = (text, code) => {
+  const n = Number(text.replace(/[,+]/g, ""));
+  return n.toLocaleString(code + "-u-nu-latn") + (text.endsWith("+") ? "+" : "");
+};
 
 // the operator cards of the search section: [key, the sample tokens shown on the card]
 const OPERATORS = [
@@ -228,6 +239,16 @@ ${OPERATORS.map(([k, head]) => `        <div class="op-card">
   <section class="features">
     <div class="wrap grid">
 ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.title`)}</h3><p>${t(`f.${k}.text`)}</p></article>`).join("\n")}
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div class="wrap">
+      <h2>${t("numbers.title")}</h2>
+      <p class="note">${t("numbers.note")}</p>
+      <div class="numbers-grid">
+${STATS.map(([id, text], i) => `        <div class="num" style="--c:${FEATURES[i % 4][1]}"><b dir="ltr">${stat(text, lang.code)}</b><span>${t(`numbers.${id}`)}</span></div>`).join("\n")}
+      </div>
     </div>
   </section>
 
