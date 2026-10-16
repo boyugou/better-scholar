@@ -38,6 +38,17 @@ links out.
    appeared, moved or vanished — and only then run `npm run test:update`.
 4. Add a targeted regression test in `test/venues.test.js` for the bug you fixed.
 
+### Looking for wrong badges nobody has reported
+
+The snapshot only says what the matcher did, not that it was right — a reviewed snapshot once held an AAAI paper under
+IJCAI's badge. Questions that found real mistakes, each a few lines of Node against `src/lib/venues.js` and the corpus
+keys of `test/fixtures/venues.expected.json`: *which acronym does the string open with or put in a parenthesis, and is it the
+badge's?* · *how many of the string's words are outside the venue's names?* · *do CCF and CORE name different venues?* ·
+*is the same name printed another way (case, dashes, dots, "Proceedings of the", another year or page range) answered the same?* ·
+*does every official name of both lists, put into the forms Scholar prints it in (with a volume, "(ACRONYM)", "ACRONYM '19:",
+a track word after it), come out as itself or as nothing — never as another venue?* Anything that changes a badge goes
+through steps 3 and 4 above.
+
 ## Adding a setting
 
 The settings are one table, `SETTINGS` in `src/lib/prefs.js`. Defaults, validation (`normalize`), patches
