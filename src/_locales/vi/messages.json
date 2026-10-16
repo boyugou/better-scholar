@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter giữ lại · Esc hủy · để trống: tên chuẩn"
+  },
+  "optVenueTitle": {
+    "message": "Kiểm tra venue"
+  },
+  "optVenueHint": {
+    "message": "Dán venue như Scholar hiển thị (dòng màu xám dưới một bài báo) để xem danh sách CCF và CORE đánh giá thế nào và theo quy tắc nào. Venue mà các danh sách không xác định được vị trí thì không được xếp hạng: không suy đoán gì cả."
+  },
+  "optVenuePlaceholder": {
+    "message": "ví dụ: Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Chưa xếp hạng. Các danh sách không xác định chắc chắn văn bản này, nên không có nhãn."
+  },
+  "optVenueSecondary": {
+    "message": "Từ “$N1$” cho biết một hạng mục phụ (workshop, poster, bài ngắn …): venue sẽ không được xếp hạng trừ khi tên của chính venue đó có từ này.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

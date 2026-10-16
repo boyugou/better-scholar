@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter kaydeder · Esc iptal eder · boş: standart ad"
+  },
+  "optVenueTitle": {
+    "message": "Yayın yerini kontrol et"
+  },
+  "optVenueHint": {
+    "message": "Scholar'ın gösterdiği biçimiyle bir yayın yeri yapıştırın (bir makalenin altındaki gri satır); CCF ve CORE listelerinin bu yayın yeri hakkında ne düşündüğünü ve hangi kurala göre düşündüğünü görün. Listelerin yerleştiremediği bir yayın yerine sıralama verilmez: hiçbir şey tahmin edilmez."
+  },
+  "optVenuePlaceholder": {
+    "message": "örn. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sıralama yok. Listeler bu metni kesin olarak yerleştiremiyor, bu yüzden etiket verilmez."
+  },
+  "optVenueSecondary": {
+    "message": "“$N1$” kelimesi ikincil bir kategoriyi belirtir (workshop, poster, kısa makale …): yayın yerinin kendi adında bu kelime yoksa sıralama verilmez.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

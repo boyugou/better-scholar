@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter зберігає · Esc скасовує · порожньо: стандартна назва"
+  },
+  "optVenueTitle": {
+    "message": "Перевірити видання"
+  },
+  "optVenueHint": {
+    "message": "Вставте видання так, як його показує Scholar (сірий рядок під статтею), щоб побачити, що про нього кажуть списки CCF і CORE і за яким правилом. Видання, яке списки не можуть визначити, не отримує рангу: нічого не вгадується."
+  },
+  "optVenuePlaceholder": {
+    "message": "напр. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Без рангу. Списки не визначають цей текст напевно, тому мітка не ставиться."
+  },
+  "optVenueSecondary": {
+    "message": "Слово «$N1$» позначає другорядну категорію (workshop, poster, коротка стаття …): видання не отримує рангу, якщо в його власній назві немає цього слова.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Invio conferma · Esc annulla · vuoto: il nome standard"
+  },
+  "optVenueTitle": {
+    "message": "Verifica conferenza/rivista"
+  },
+  "optVenueHint": {
+    "message": "Incolla una conferenza o rivista come la mostra Scholar (la riga grigia sotto un articolo) per vedere cosa ne pensano le liste CCF e CORE e secondo quale regola. Una conferenza o rivista che non riescono a collocare non riceve alcun ranking: non si tira a indovinare nulla."
+  },
+  "optVenuePlaceholder": {
+    "message": "ad es. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Senza ranking. Le liste non collocano questo testo con certezza, quindi non riceve alcuna etichetta."
+  },
+  "optVenueSecondary": {
+    "message": "La parola «$N1$» indica una categoria secondaria (workshop, poster, articolo breve …): la conferenza o rivista non riceve un ranking, a meno che il suo nome non contenga quella parola.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

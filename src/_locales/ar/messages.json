@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter يحفظ · Esc يلغي · فارغ: الاسم الافتراضي"
+  },
+  "optVenueTitle": {
+    "message": "تحقّق من منصة النشر"
+  },
+  "optVenueHint": {
+    "message": "الصق منصة النشر كما تعرضها Scholar (السطر الرمادي تحت الورقة) لترى ما تقوله قائمتا CCF و CORE عنها، وبأي قاعدة. المنصة التي لا تستطيع القائمتان تحديد موقعها لا تحصل على أي تصنيف: لا يُخمَّن شيء."
+  },
+  "optVenuePlaceholder": {
+    "message": "مثال: Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "بلا تصنيف. لا تحدد القائمتان موقع هذا النص بيقين، لذلك لا تنال شارة."
+  },
+  "optVenueSecondary": {
+    "message": "كلمة «$N1$» تُشير إلى مسار ثانوي (ورشة عمل، أو ملصق، أو ورقة قصيرة …)، ولا تنال تصنيفًا إلا إذا احتوى اسم المنصة نفسه على هذه الكلمة.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

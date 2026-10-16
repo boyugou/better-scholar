@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Intro guarda · Esc cancela · vacío: el nombre estándar"
+  },
+  "optVenueTitle": {
+    "message": "Comprobar congreso/revista"
+  },
+  "optVenueHint": {
+    "message": "Pega el congreso o revista tal como aparece en Scholar (la línea gris debajo de un artículo) para ver qué dicen al respecto las listas CCF y CORE, y según qué regla. Un congreso o revista que no puedan ubicar no recibe rango: no se adivina nada."
+  },
+  "optVenuePlaceholder": {
+    "message": "p. ej., Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sin rango. Las listas no ubican este texto con seguridad, así que no recibe etiqueta."
+  },
+  "optVenueSecondary": {
+    "message": "La palabra «$N1$» indica una categoría secundaria (workshop, poster, artículo corto …): el congreso o la revista no recibe rango, salvo que su propio nombre contenga esa palabra.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

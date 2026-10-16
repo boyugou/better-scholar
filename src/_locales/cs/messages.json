@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter uloží · Esc zruší · prázdné: standardní název"
+  },
+  "optVenueTitle": {
+    "message": "Ověřit místo publikace"
+  },
+  "optVenueHint": {
+    "message": "Vložte místo publikace tak, jak je Scholar vypisuje (šedý řádek pod prací), a zjistěte, co z něj dělají seznamy CCF a CORE a podle jakého pravidla. Místo publikace, které seznamy nedokážou zařadit, nedostane žádný rank: nic se nedohaduje."
+  },
+  "optVenuePlaceholder": {
+    "message": "např. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Bez ranku. Seznamy tento text s jistotou nezařazují, proto nedostane štítek."
+  },
+  "optVenueSecondary": {
+    "message": "Slovo „$N1$“ označuje vedlejší kategorii (workshop, poster, krátký článek …). Místo publikace pak nedostane rank, pokud jeho název to slovo neobsahuje.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

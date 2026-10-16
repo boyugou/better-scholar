@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter で確定 · Esc で取り消し · 空欄：標準の名前"
+  },
+  "optVenueTitle": {
+    "message": "掲載先を確認"
+  },
+  "optVenueHint": {
+    "message": "Scholar に表示される掲載先（論文の下にあるグレーの行）を貼り付けると、CCF と CORE のリストがそれをどう扱うか、どの規則に基づくかが分かります。どちらのリストにも位置づけられない掲載先にはランクが付かず、推測は行いません。"
+  },
+  "optVenuePlaceholder": {
+    "message": "例：Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "ランクなし。リストはこのテキストを確実には位置づけられないため、ラベルは付きません。"
+  },
+  "optVenueSecondary": {
+    "message": "「$N1$」は副次的なトラック（ワークショップ、ポスター、短い論文など）を示す語です。掲載先の名称自体にその語が含まれていない限り、ランクは付きません。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

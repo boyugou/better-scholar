@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Entrée valide · Échap annule · vide : le nom standard"
+  },
+  "optVenueTitle": {
+    "message": "Vérifier une conférence/revue"
+  },
+  "optVenueHint": {
+    "message": "Collez une conférence ou revue telle que Scholar l’affiche (la ligne grise sous un article) pour voir ce qu’en disent les listes CCF et CORE, et selon quelle règle. Une conférence ou revue qu’elles ne peuvent pas placer ne reçoit aucun rang : rien n’est deviné."
+  },
+  "optVenuePlaceholder": {
+    "message": "p. ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sans rang. Les listes ne placent pas ce texte avec certitude : il ne reçoit donc pas de pastille."
+  },
+  "optVenueSecondary": {
+    "message": "Le mot « $N1$ » désigne une catégorie secondaire (atelier, poster, article court …) : la conférence ou la revue ne reçoit aucun rang, sauf si son propre nom contient ce mot.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

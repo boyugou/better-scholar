@@ -459,6 +459,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(diag, /^Better Scholar \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"language":"auto",/s);
     assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
+    // -- 6a5c. Check a venue: what the lists make of a text, as the rows of a profile would have it (both ranks and the rule; a secondary track; no rank)
+    await opts.fill('[data-act="venue-check"]', "Proceedings of the IEEE conference on computer vision and pattern recognition");
+    assert.equal(await opts.locator("#card-venue .venue-line").count(), 2);
+    assert.match(await opts.locator('#card-venue .venue-line[data-kind="ccf"]').innerText(), /CCF\s*A\b[\s\S]*\(CVPR\)[\s\S]*Matched by name/);
+    assert.match(await opts.locator('#card-venue .venue-line[data-kind="core"]').innerText(), /CORE\s*A\*/);
+    await opts.fill('[data-act="venue-check"]', "Workshop on Machine Learning for Systems");
+    assert.match(await opts.locator("#card-venue .venue-none").innerText(), /“workshop” marks a secondary track/);
+    await opts.fill('[data-act="venue-check"]', "asdf qwer zxcv");
+    assert.match(await opts.locator("#card-venue .venue-none").innerText(), /^No rank\./);
+    await opts.fill('[data-act="venue-check"]', "");
+    assert.equal(await opts.locator("#card-venue .venue-out").innerText(), "");
+    ok("settings: 'Check a venue' tells what the lists make of a text: both ranks with the rule, a secondary track, no rank");
     // the footer points at the project's own pages, as plain links that open only when clicked
     assert.deepEqual(await opts.evaluate(() => [...document.querySelectorAll(".foot .links a")].map((a) => [a.textContent, a.href, a.target, a.rel])), [
       ["Privacy", "https://boyugou.github.io/better-scholar/privacy/", "_blank", "noopener"],

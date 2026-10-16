@@ -82,6 +82,9 @@
     terminal: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("polyline", { points: "4 17 10 11 4 5" }),
       s("line", { x1: "12", y1: "19", x2: "20", y2: "19" })),
+    search: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("circle", { cx: "11", cy: "11", r: "7" }),
+      s("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" })),
     sparkles: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("path", { d: "m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" })),
     noneDiagram: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
@@ -116,6 +119,7 @@
     merge: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
     load: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
     semantic: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
+    venue: { icon: "search", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
     agent: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
     config: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
     data: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
@@ -794,8 +798,26 @@
     if (end) kids.push(end);
     return card(c.id, t(c.title), c.hint ? t(c.hint) : null, ...kids);
   });
+  // Check a venue: what the rank lists make of a text, and by which rule (the page's own resolver: a row of a profile gets exactly this)
+  let resolver = null;
+  const venueOut = h("div", { class: "venue-out", "aria-live": "polite" });
+  const venueInput = h("input", { type: "text", class: "venue-input", "data-act": "venue-check", placeholder: t("optVenuePlaceholder"), "aria-label": t("optVenueTitle"), spellcheck: "false", autocomplete: "off", maxlength: "300", onInput: () => checkVenue() });
+  function checkVenue() {
+    const text = venueInput.value.replace(/\s+/g, " ").trim();
+    venueOut.replaceChildren();
+    if (!text) return;
+    resolver = resolver || B.venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
+    const res = resolver.resolve(text), found = [["ccf", res.ccf], ["core", res.core]].filter(([, info]) => info);
+    for (const [kind, info] of found) {
+      venueOut.append(h("div", { class: "venue-line", "data-kind": kind }, B.chips.tierChip(kind, info, B.data[kind].meta.label),
+        h("span", { class: "venue-what" }, h("b", {}, info.name + (info.abbr ? " (" + info.abbr + ")" : "")), h("span", { class: "faint" }, " · " + B.chips.ruleText(info)))));
+    }
+    if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
+  }
+
   $("controls").append(
     ...cardsOfPrefs,
+    card("venue", t("optVenueTitle"), t("optVenueHint"), h("div", { class: "row venue-row" }, venueInput), venueOut),
     card("agent", t("optAgentTitle"), t("optAgentHint"),
       h("div", { class: "row" }, agentBtn)),
     card("config", t("optConfigTitle"), t("optConfigHint"),

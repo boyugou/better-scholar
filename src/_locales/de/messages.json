@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter übernimmt · Esc bricht ab · leer: der Standardname"
+  },
+  "optVenueTitle": {
+    "message": "Venue prüfen"
+  },
+  "optVenueHint": {
+    "message": "Füge ein Venue so ein, wie Scholar es anzeigt (die graue Zeile unter einem Paper), um zu sehen, was die CCF- und CORE-Listen daraus machen und nach welcher Regel. Ein Venue, das sie nicht einordnen können, erhält keinen Rang: Es wird nichts geraten."
+  },
+  "optVenuePlaceholder": {
+    "message": "z. B. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Kein Rang. Die Listen ordnen diesen Text nicht mit Sicherheit ein, deshalb bekommt er kein Kennzeichen."
+  },
+  "optVenueSecondary": {
+    "message": "Das Wort „$N1$“ kennzeichnet eine Nebenkategorie (einen Workshop, ein Poster, einen Kurzbeitrag …). Das Venue erhält keinen Rang, außer sein eigener Name enthält dieses Wort.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

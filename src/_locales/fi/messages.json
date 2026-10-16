@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter tallentaa · Esc peruu · tyhjä: oletusnimi"
+  },
+  "optVenueTitle": {
+    "message": "Tarkista julkaisufoorumi"
+  },
+  "optVenueHint": {
+    "message": "Liitä julkaisufoorumi siten kuin Scholar sen näyttää (harmaa rivi artikkelin alla), niin näet, mitä CCF- ja CORE-luettelot siitä päättelevät ja minkä säännön perusteella. Julkaisufoorumi, jota ne eivät voi sijoittaa, ei saa luokkaa: mitään ei arvata."
+  },
+  "optVenuePlaceholder": {
+    "message": "esim. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Ei luokkaa. Luettelot eivät sijoita tätä tekstiä varmasti, joten se ei saa tunnistetta."
+  },
+  "optVenueSecondary": {
+    "message": "Sana “$N1$” merkitsee toissijaista kategoriaa (workshop, poster, lyhyt artikkeli …). Julkaisufoorumi ei saa luokkaa, ellei sen oma nimi sisällä tätä sanaa.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

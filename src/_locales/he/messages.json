@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter שומר · Esc מבטל · ריק: שם ברירת המחדל"
+  },
+  "optVenueTitle": {
+    "message": "בדיקת במת פרסום"
+  },
+  "optVenueHint": {
+    "message": "הדביקו במת פרסום כפי ש-Scholar מציג אותה (השורה האפורה מתחת למאמר) כדי לראות מה רשימות ה-CCF וה-CORE אומרות עליה, ולפי איזה כלל. במת פרסום שהרשימות לא מצליחות למקם לא תקבל דירוג: לא מנחשים כלום."
+  },
+  "optVenuePlaceholder": {
+    "message": "למשל Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "ללא דירוג. הרשימות אינן ממקמות טקסט זה בוודאות, ולכן הוא לא יקבל תגית."
+  },
+  "optVenueSecondary": {
+    "message": "המילה ״$N1$״ מסמנת מסלול משני (סדנה, פוסטר, מאמר קצר …). במת פרסום כזו לא תקבל דירוג, אלא אם שם במת הפרסום עצמה מכיל את המילה.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

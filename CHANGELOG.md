@@ -3,6 +3,7 @@
 ## 2.41.0 — 2026-10-15
 
 - **Paste into Word, Docs or Pages:** *Copy as table*, *Copy papers* and *Copy APA* also put HTML on the clipboard next to the text. A word processor pastes a real table (the role × rank table, or the papers) or a reference list with real italics, a link and a hanging indent; a spreadsheet or a text box takes the text as before. Every text in the HTML is escaped, a cell that looks like a formula is made text, and only web addresses become links. The toolbar popup does the same, and the `export` call returns `html` when asked (`html: true`).
+- **Check a venue** (settings page): paste a venue as Scholar prints it and see what the CCF and CORE lists make of it — the rank, the name it matched, the rule — or why it gets none (a secondary track such as a workshop; not placed with certainty). It uses the same resolver as the rows of a profile.
 - **Search by kind of venue:** `type:conference` and `type:journal` (the kind the rank lists give the venue; a venue without a rank has none), with `ccf:`, `role:` and the others: `role:first ccf:a type:journal`.
 
 ## 2.40.0 — 2026-10-15

@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter 保留 · Esc 取消 · 留空：标准名称"
+  },
+  "optVenueTitle": {
+    "message": "核对期刊/会议"
+  },
+  "optVenueHint": {
+    "message": "粘贴 Scholar 显示的发表场所（论文下方的灰色文字行），即可查看 CCF 和 CORE 名录如何看待它，以及依据哪条规则。名录无法归类的发表场所不获得等级：不做任何猜测。"
+  },
+  "optVenuePlaceholder": {
+    "message": "如 Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "没有等级。名录没有确切收录这段文字，因此不加标签。"
+  },
+  "optVenueSecondary": {
+    "message": "“$N1$”标示次要类别（研讨会、海报、短文等）：除非发表场所自身的名称含有该词，否则不获得等级。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

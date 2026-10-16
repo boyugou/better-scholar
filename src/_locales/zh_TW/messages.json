@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter 保留 · Esc 取消 · 留空：標準名稱"
+  },
+  "optVenueTitle": {
+    "message": "檢查發表處"
+  },
+  "optVenueHint": {
+    "message": "貼上 Scholar 顯示的發表處（論文下方的灰色文字行），即可查看 CCF 與 CORE 清單如何看待它，以及依據哪條規則。清單無法歸類的發表處不會獲得等級：不做任何猜測。"
+  },
+  "optVenuePlaceholder": {
+    "message": "例如：Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "沒有等級。清單沒有確切收錄這段文字，因此不加標籤。"
+  },
+  "optVenueSecondary": {
+    "message": "「$N1$」標示次要類別（研討會、海報、短文等）：除非發表處本身的名稱含有該詞，否則不獲得等級。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter megtartja · Esc megszakítja · üres: az alapnév"
+  },
+  "optVenueTitle": {
+    "message": "Venue ellenőrzése"
+  },
+  "optVenueHint": {
+    "message": "Illeszd be a venue-t úgy, ahogy a Scholar megjeleníti (a cikk alatti szürke sor), hogy lásd, mit mondanak róla a CCF- és CORE-listák, és melyik szabály alapján. Az a venue, amelyet nem tudnak elhelyezni, nem kap rangot: nincs találgatás."
+  },
+  "optVenuePlaceholder": {
+    "message": "pl. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Nincs rang. A listák nem helyezik el biztosan ezt a szöveget, ezért nem kap címkét."
+  },
+  "optVenueSecondary": {
+    "message": "A(z) „$N1$” szó másodlagos kategóriát jelöl (workshop, poszter, rövid cikk …): az a venue csak akkor kap rangot, ha a saját neve tartalmazza ezt a szót.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

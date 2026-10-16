@@ -1118,5 +1118,25 @@
   },
   "optRenameHint": {
     "message": "Enter सहेजता है · Esc रद्द करता है · खाली: मानक नाम"
+  },
+  "optVenueTitle": {
+    "message": "Venue जाँचें"
+  },
+  "optVenueHint": {
+    "message": "किसी venue को वैसे ही पेस्ट करें जैसे Scholar उसे दिखाता है (किसी पेपर के नीचे वाली धूसर पंक्ति), ताकि देखा जा सके कि CCF और CORE सूचियाँ उसके बारे में क्या कहती हैं और किस नियम से। जिस venue को वे तय नहीं कर पातीं, उसे कोई रैंक नहीं मिलती। कुछ भी अनुमान से नहीं लगाया जाता।"
+  },
+  "optVenuePlaceholder": {
+    "message": "उदा. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "कोई रैंक नहीं। सूचियाँ इस पाठ को निश्चित रूप से तय नहीं करतीं, इसलिए इसे कोई टैग नहीं मिलता।"
+  },
+  "optVenueSecondary": {
+    "message": "शब्द “$N1$” एक गौण ट्रैक (वर्कशॉप, पोस्टर, छोटा पेपर …) को दर्शाता है: venue को तभी रैंक मिलती है जब उसके अपने नाम में वही शब्द हो।",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

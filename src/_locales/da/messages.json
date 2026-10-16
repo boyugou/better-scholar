@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter gemmer · Esc annullerer · tomt: standardnavnet"
+  },
+  "optVenueTitle": {
+    "message": "Tjek et publikationssted"
+  },
+  "optVenueHint": {
+    "message": "Indsæt et publikationssted, sådan som Scholar viser det (den grå linje under en artikel), for at se, hvad CCF- og CORE-listerne mener om det, og efter hvilken regel. Et publikationssted, de ikke kan placere, får ingen rang: der gættes intet."
+  },
+  "optVenuePlaceholder": {
+    "message": "fx Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Ingen rang. Listerne placerer ikke teksten med sikkerhed, så den får intet mærke."
+  },
+  "optVenueSecondary": {
+    "message": "Ordet “$N1$” markerer en sekundær kategori (en workshop, en poster, en kort artikel …). Publikationsstedet får ingen rang, medmindre dets eget navn indeholder ordet.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

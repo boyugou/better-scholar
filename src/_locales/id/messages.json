@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter menyimpan · Esc membatalkan · kosong: nama standar"
+  },
+  "optVenueTitle": {
+    "message": "Periksa venue"
+  },
+  "optVenueHint": {
+    "message": "Tempelkan venue sebagaimana Scholar menampilkannya (baris abu-abu di bawah makalah) untuk melihat apa kata daftar CCF dan CORE tentangnya, dan menurut aturan apa. Venue yang tidak dapat mereka tempatkan tidak mendapat peringkat: tidak ada yang ditebak."
+  },
+  "optVenuePlaceholder": {
+    "message": "mis. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Tanpa peringkat. Daftar tidak menempatkan teks ini dengan pasti, sehingga tidak mendapat label."
+  },
+  "optVenueSecondary": {
+    "message": "Kata “$N1$” menandai jalur sekunder (workshop, poster, makalah pendek …): venue itu tidak mendapat peringkat kecuali nama venue itu sendiri memuat kata tersebut.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

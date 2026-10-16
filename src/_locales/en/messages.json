@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter keeps it · Esc cancels · empty: the standard name"
+  },
+  "optVenueTitle": {
+    "message": "Check a venue"
+  },
+  "optVenueHint": {
+    "message": "Paste a venue as Scholar prints it (the grey line under a paper) to see what the CCF and CORE lists make of it, and by which rule. A venue they cannot place gets no rank: nothing is guessed."
+  },
+  "optVenuePlaceholder": {
+    "message": "e.g. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "No rank. The lists do not place this text with certainty, so it gets no badge."
+  },
+  "optVenueSecondary": {
+    "message": "“$N1$” marks a secondary track (a workshop, a poster, a short paper …): it gets no rank unless the venue's own name has that word.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

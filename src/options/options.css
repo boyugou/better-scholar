@@ -1252,6 +1252,61 @@ button.btn.preset-chip:hover {
   gap: 10px;
 }
 
+.venue-row {
+  display: block;
+}
+
+.venue-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 13.5px;
+  padding: 10px 14px;
+  border: 1px solid var(--btn-line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  box-shadow: var(--btn-shadow);
+}
+
+.venue-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.venue-out {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.venue-out:not(:empty) {
+  padding-bottom: 16px;
+}
+
+.venue-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.venue-line .rr-chip {
+  flex: none;
+  min-width: 4.4em;
+  justify-content: center;
+}
+
+.venue-none {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 .config-text {
   width: 100%;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;

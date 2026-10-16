@@ -136,6 +136,7 @@ The cards, in the order of the preview:
 | Duplicate entries | *Merge duplicates* |
 | Paper list | *Load all papers automatically* |
 | Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
+| Check a venue | A text box: paste a venue as Scholar prints it and see the CCF and CORE rank it gets, the name it matched and the rule (by name, by acronym, by the visible part of a cut name) — or why it gets none (a workshop or another secondary track; the lists do not place it) |
 | AI agents | *Copy guide for agents* |
 | Configuration & presets | Presets *All features*, *Last author focus*, *First author focus*, *Minimalist*; *Copy config (JSON)*, *Export file*, *Import file*, and a JSON editor |
 | Saved data | *View saved details*, *Clear saved paper details*, *Reset to defaults*, *Copy details for a bug report* |

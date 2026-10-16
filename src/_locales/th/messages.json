@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter เก็บไว้ · Esc ยกเลิก · ว่าง: ชื่อมาตรฐาน"
+  },
+  "optVenueTitle": {
+    "message": "ตรวจสอบ venue"
+  },
+  "optVenueHint": {
+    "message": "วาง venue ตามที่ Scholar แสดง (บรรทัดสีเทาใต้งานวิจัย) เพื่อดูว่ารายชื่อ CCF และ CORE ประเมิน venue นั้นอย่างไร และใช้กฎข้อใด venue ที่รายชื่อเหล่านี้ระบุไม่ได้จะไม่ได้รับอันดับ ไม่มีการเดาใด ๆ"
+  },
+  "optVenuePlaceholder": {
+    "message": "เช่น Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "ไม่มีอันดับ รายชื่อระบุข้อความนี้ไม่แน่ชัด จึงไม่มีป้ายกำกับ"
+  },
+  "optVenueSecondary": {
+    "message": "คำว่า “$N1$” ใช้บ่งชี้สายรอง (workshop, poster, บทความสั้น ฯลฯ) venue นั้นจะไม่ได้รับอันดับ เว้นแต่ชื่อของ venue มีคำนี้อยู่",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

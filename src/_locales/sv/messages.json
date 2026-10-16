@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter behåller · Esc avbryter · tomt: standardnamnet"
+  },
+  "optVenueTitle": {
+    "message": "Kontrollera ett publiceringsställe"
+  },
+  "optVenueHint": {
+    "message": "Klistra in ett publiceringsställe så som Scholar visar det (den grå raden under en artikel) för att se vad CCF- och CORE-listorna säger om det, och enligt vilken regel. Ett publiceringsställe som listorna inte kan placera får ingen rank: ingenting gissas."
+  },
+  "optVenuePlaceholder": {
+    "message": "t.ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Ingen rank. Listorna placerar inte denna text med säkerhet, så den får ingen etikett."
+  },
+  "optVenueSecondary": {
+    "message": "Ordet ”$N1$” markerar ett sekundärt spår (workshop, poster, kort artikel …). Publiceringsstället får ingen rank om inte dess eget namn innehåller ordet.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

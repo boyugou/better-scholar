@@ -84,7 +84,8 @@ content/panel.js → content/bridge.js → content/main.js
 and calls `bridge.install`. The second content script — `lib/i18n.js`, `content/lang-redirect.js` — runs at
 `document_start` on every page of the same domains. The popup loads `lib/i18n.js`, `lib/prefs.js`, `lib/marks.js`,
 `content/dom.js`, `content/store.js`, `popup/popup.js`; the settings page loads `lib/i18n.js`, `lib/prefs.js`,
-`lib/palette.js`, `lib/query.js`, `lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `content/dom.js`, `content/chips.js`,
+`lib/palette.js`, `lib/query.js`, `lib/agent.js`, `lib/marks.js`, `lib/metrics.js`, `lib/venues.js` with `data/aliases.js`, `data/ccf.js` and
+`data/core.js` (for *Check a venue*, which runs the page's own resolver on a text), `content/dom.js`, `content/chips.js`,
 `content/panel.js`, `content/store.js`, `options/editor.js`, `options/options.js`.
 
 ## Author detection and roles

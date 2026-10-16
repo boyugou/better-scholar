@@ -1112,5 +1112,25 @@
   },
   "optRenameHint": {
     "message": "Enter zachowuje · Esc anuluje · puste: nazwa standardowa"
+  },
+  "optVenueTitle": {
+    "message": "Sprawdź miejsce publikacji"
+  },
+  "optVenueHint": {
+    "message": "Wklej miejsce publikacji tak, jak wyświetla je Scholar (szary wiersz pod pracą), aby zobaczyć, co o nim mówią listy CCF i CORE oraz według jakiej zasady. Miejsce publikacji, którego listy nie potrafią umieścić, nie dostaje rankingu: nic nie jest zgadywane."
+  },
+  "optVenuePlaceholder": {
+    "message": "np. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Bez rankingu. Listy nie umieszczają tego tekstu z pewnością, więc nie dostaje etykiety."
+  },
+  "optVenueSecondary": {
+    "message": "Słowo „$N1$” oznacza kategorię drugorzędną (workshop, poster, krótka praca …). Miejsce publikacji nie dostaje rankingu, chyba że jego własna nazwa zawiera to słowo.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }

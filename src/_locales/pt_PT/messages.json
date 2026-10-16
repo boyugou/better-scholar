@@ -1133,5 +1133,25 @@
   },
   "optRenameHint": {
     "message": "Enter mantém · Esc cancela · vazio: o nome predefinido"
+  },
+  "optVenueTitle": {
+    "message": "Verificar um veículo"
+  },
+  "optVenueHint": {
+    "message": "Cole um veículo tal como o Scholar o apresenta (a linha cinzenta abaixo de um artigo) para ver o que as listas CCF e CORE pensam dele e segundo que regra. Um veículo que elas não consigam posicionar não recebe ranking: nada é adivinhado."
+  },
+  "optVenuePlaceholder": {
+    "message": "ex.: Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sem ranking. As listas não posicionam este texto com certeza, por isso não recebe etiqueta."
+  },
+  "optVenueSecondary": {
+    "message": "A palavra “$N1$” indica uma categoria secundária (workshop, poster, artigo curto …): o veículo não recebe ranking, a menos que o próprio nome contenha essa palavra.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
   }
 }
