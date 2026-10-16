@@ -21,9 +21,9 @@
       result: "{ version, owner, loaded, complete } — the extension's version, the profile's name, how many papers are loaded, and whether that is the whole list."
     },
     summary: {
-      doc: "The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics. The tables and the counts here are over every loaded paper (the panel's own table follows the filters; `export` with `filtered: true` gives that); `metrics.highlighted` follows the filters.",
-      params: {},
-      result: "{ owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }."
+      doc: "The numbers the panel shows: the role × rank tables, the awards and talks counts, the citation metrics. The tables and the counts are over every loaded paper unless `filtered` is true (the panel's own table follows the filters); `metrics.highlighted` follows the filters.",
+      params: { filtered: { type: "boolean", doc: "true: the tables and the awards and talks counts are of the papers the filters leave, as the panel counts them (when `panel.filters.follow` is on; `counted` then says how many papers that is, and the tables keep the rows of the whole profile); false (the default): every loaded paper." } },
+      result: "{ owner, loaded, counted, shown, loadingAll, layoutBroken, edition, noRanks, summaries: { ccf, core, none }, marks, metrics: { highlighted, all } } — `counted` is the number of papers the tables are of;  `summaries.<list>` is { columns, rows: [{ role, A, B, …, total }], totals, hidden, absent, papers }; `marks` counts the papers by award or talk group (the groups the panel counts); `metrics.<which>` is { papers, citations, h, i10 }."
     },
     papers: {
       doc: "The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.",
