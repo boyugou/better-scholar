@@ -156,3 +156,38 @@ test("a very long venue or title is cut before the scans that would be quadratic
   }
   assert.ok(Date.now() - t0 < 1000 * slowdown(), `took ${Date.now() - t0} ms`);
 });
+
+test("hostile titles, authors, venues and addresses go through every export format without a way out of its syntax", () => {
+  const formats = require("../src/lib/formats.js");
+  let s = 4242;
+  const r = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  const pick = (a) => a[Math.floor(r() * a.length)];
+  const ATOMS = ["<script>alert(1)</script>", "</td><td>", "\"onmouseover=\"x\"", "'", "<b>", "&amp;", "&#60;", "=HYPERLINK(\"u\",\"x\")", "+1", "-1", "@SUM(A1)", "\t", "\n", "\r\n", "‮", "\u0000", "{", "}", "\\", "%", "$", "#", "_", "^", "~", "javascript:alert(1)",
+    "https://evil.example/?a=b&c=d", "[x](http://y)", "`", "*", "|", "<img src=x onerror=alert(1)>", "]]>", "--!>", "<!--", "J Smith", "Jane Doe", "…"];
+  const junk = () => Array.from({ length: Math.floor(r() * 5) }, () => pick(ATOMS)).join(pick(["", " ", ", "]));
+  const paper = () => ({ id: junk(), title: junk(), authors: pick([junk(), "A B, Jane Doe, C D", "=cmd|' /C calc'!A0, Jane Doe"]), me: pick(["", "Jane Doe", junk()]), venue: junk(), year: pick([2020, null, "<x>"]), citations: pick([0, 5, "1e3"]),
+    role: pick(["first", "last", "middle", null]), status: pick(["found", "hidden", "absent"]), highlighted: true, type: pick([null, "conference", "journal"]),
+    rank: { ccf: pick([null, { tier: "A", name: junk() }]), core: pick([null, { rank: "A*", name: junk() }]) }, marks: [junk()], url: pick(["", "https://scholar.google.com/x?a=1&b=2", "javascript:alert(1)", junk(), "https://x.org/{a}}\\"]) });
+  const labels = { year: "Year", title: "Title", authors: "Authors", role: "Role", venue: "Venue", ccf: "CCF", core: "CORE", awards: "Awards", citations: "Cited", hidden: "Hidden", roles: { first: "First", cofirst: "Co", second: "Second", last: "Last", middle: "Other" } };
+  // what is left of a piece of HTML when its own tags (the table's, the paragraph's, an http link) are taken out must have no tag-like character: every text was escaped
+  const ownTags = /<\/?(?:table|thead|tbody|tr|th|td|caption|p|b|i)(?: border="1" cellspacing="0" cellpadding="4"| style="margin:0 0 0\.6em 0\.5in;text-indent:-0\.5in")?>|<a href="https?:\/\/[^"<>]*">|<\/a>/g;
+  for (let i = 0; i < 300; i++) {
+    const ps = Array.from({ length: 1 + Math.floor(r() * 4) }, paper);
+    const summary = metrics.summarize(ps.map((p) => ({ ...p, venue: p.rank, venueText: p.venue })), "ccf");
+    for (const html of [formats.papersHtml(ps, { labels, markMe: true, ccfOn: true, coreOn: true }), formats.apaHtml(ps), formats.summaryHtml(summary, { scope: junk(), notes: [junk()] })]) {
+      const rest = html.replace(ownTags, "");
+      const at = rest.search(/[<>]/);
+      assert.ok(at < 0, "a tag-like character got out: " + JSON.stringify(rest.slice(Math.max(0, at - 40), at + 40)) + " in " + JSON.stringify(html.slice(0, 300)));
+    }
+    for (const line of formats.papersTsv(ps, { labels }).split("\n").slice(1)) for (const cell of line.split("\t")) {
+      const c = cell.replace(/^"/, "");
+      assert.ok(!/^[=+\-@]/.test(c) || /^[+-]?\d+(?:[.,]\d+)?$/.test(c), "a formula cell: " + cell.slice(0, 40));
+    }
+    const bib = formats.bibtex(ps, {});
+    let depth = 0;
+    for (const ch of bib) { if (ch === "{") depth++; if (ch === "}") depth--; assert.ok(depth >= 0, "BibTeX closes more than it opens: " + bib.slice(0, 160)); }
+    assert.equal(depth, 0, "BibTeX braces are balanced");
+    assert.equal((bib.match(/^@/gm) || []).length, ps.length, "one entry for each paper, whatever a title says");
+    for (const f of [() => formats.papersCsv(ps, { labels }), () => formats.markdown(ps, {}), () => formats.apa(ps), () => formats.json({ owner: junk(), papers: ps }), () => formats.summaryText(summary, { owner: junk(), scope: junk(), notes: [junk()] }), () => formats.summaryTsv(summary, { scope: junk() })]) assert.doesNotThrow(f);
+  }
+});

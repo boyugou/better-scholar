@@ -148,7 +148,7 @@
     return papers.map((p) => {
       const { names, cut } = authorList(p.authors);
       const surname = (names[0] || "").split(/\s+/).pop().normalize("NFD").replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "paper";
-      const year = p.year ? String(p.year) : "";
+      const year = p.year ? String(p.year).replace(/[^0-9]/g, "") : "";                          // (a year is digits: it goes into the key and a field as it is)
       const words = clean(p.title).toLowerCase().match(/[a-z0-9]+/g) || [];
       const word = words.find((w) => !STOP.has(w) && w.length >= 3) || words[0] || "paper";
       const base = `${surname}${year || "nodate"}${word}`;
@@ -164,7 +164,7 @@
         names.length ? `  author = {${[...names.map((n) => (/\band\b/i.test(n) ? "{" + tex(n) + "}" : tex(n))), ...(cut ? ["others"] : [])].join(" and ")}}` : null,
         field && venue ? `  ${field} = {${venue}}` : null,
         year ? `  year = {${year}}` : null,
-        p.url ? `  url = {${p.url}}` : null,
+        p.url ? `  url = {${clean(p.url).replace(/[{}\\]/g, (c) => encodeURIComponent(c))}}` : null,          // (an address whose braces or backslash would unbalance the field or run a command)
         notes.length ? `  note = {${notes.join(", ")}}` : null
       ].filter(Boolean);
       return `@${type}{${key},\n${fields.join(",\n")}\n}`;
