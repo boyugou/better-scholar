@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Vis innstillingen"
+  },
+  "venueCheckLink": {
+    "message": "Sjekk"
   }
 }

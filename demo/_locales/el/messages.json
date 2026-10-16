@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Εμφάνιση της ρύθμισής του"
+  },
+  "venueCheckLink": {
+    "message": "Έλεγχος"
   }
 }

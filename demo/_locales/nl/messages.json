@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Instelling tonen"
+  },
+  "venueCheckLink": {
+    "message": "Controleren"
   }
 }

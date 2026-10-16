@@ -1135,5 +1135,8 @@
   },
   "optShowSetting": {
     "message": "Tampilkan pengaturannya"
+  },
+  "venueCheckLink": {
+    "message": "Periksa"
   }
 }

@@ -1135,5 +1135,8 @@
   },
   "optShowSetting": {
     "message": "显示对应设置"
+  },
+  "venueCheckLink": {
+    "message": "核对"
   }
 }

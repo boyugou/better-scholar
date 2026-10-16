@@ -8,6 +8,7 @@
 //   local ui         { collapsed, source } — written by the Scholar page
 //   sync  variants   { profileId: [name spellings] }
 //   local resolved   { paperId: { ts, authors } } — author lists read with "Read full lists"
+//   local askVenue   a venue text the panel asks the settings page to check (left until the page takes it)
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -79,5 +80,19 @@
   const loadS2Key = async () => { const k = await get("local", "s2key"); return typeof k === "string" ? k.replace(/[^\x21-\x7e]/g, "") : ""; };      // (visible ASCII only: a header cannot carry anything else)
   const saveS2Key = (key) => (key ? set("local", "s2key", key.trim().slice(0, 200)) : remove("local", "s2key"));
 
-  B.store = { loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
+  // A venue of the unranked list the person wants explained: the settings page takes it (and opens its "Check a venue" with it filled in). A short text, nothing personal.
+  const askVenue = (text) => set("local", "askVenue", String(text == null ? "" : text).replace(/\s+/g, " ").trim().slice(0, 300));
+  async function takeVenue() {
+    const v = await get("local", "askVenue");
+    if (v !== undefined) await remove("local", "askVenue");
+    return typeof v === "string" ? v : "";
+  }
+  function onVenueAsked(fn) {
+    if (!live()) return () => {};
+    const listener = (changes, area) => { if (area === "local" && changes.askVenue && typeof changes.askVenue.newValue === "string") fn(); };
+    try { chrome.storage.onChanged.addListener(listener); } catch (e) { return () => {}; }
+    return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
+  }
+
+  B.store = { askVenue, takeVenue, onVenueAsked, loadS2Key, saveS2Key, loadPrefs, savePrefs, loadUi, saveUi, onPrefsChanged, loadVariants, saveVariants, loadResolved, saveResolved, clearResolved };
 })();

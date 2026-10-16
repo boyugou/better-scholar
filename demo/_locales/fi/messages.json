@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Näytä sen asetus"
+  },
+  "venueCheckLink": {
+    "message": "Tarkista"
   }
 }

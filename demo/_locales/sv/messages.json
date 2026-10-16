@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Visa dess inställning"
+  },
+  "venueCheckLink": {
+    "message": "Kontrollera"
   }
 }

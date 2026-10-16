@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "설정 보기"
+  },
+  "venueCheckLink": {
+    "message": "확인"
   }
 }

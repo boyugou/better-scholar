@@ -1156,5 +1156,8 @@
   },
   "optShowSetting": {
     "message": "Ayarını göster"
+  },
+  "venueCheckLink": {
+    "message": "Kontrol et"
   }
 }

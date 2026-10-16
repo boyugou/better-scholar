@@ -1135,5 +1135,8 @@
   },
   "optShowSetting": {
     "message": "Zobrazit jeho nastavení"
+  },
+  "venueCheckLink": {
+    "message": "Ověřit"
   }
 }
