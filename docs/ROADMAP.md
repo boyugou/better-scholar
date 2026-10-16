@@ -25,7 +25,7 @@ year range or *Last 5 years* (`age:<5`) gives the table of those years, and a se
 reverses an earlier choice (the table stayed whole because it is where a cell is picked). What decides it: the cell picked in
 the table and an awards row are *picks* that list papers and narrow no count, so picking one never empties the list it is
 picked from and the copied text equals what the panel shows; the table keeps the rows of the whole profile; the coverage lines
-(loaded, hidden, absent), the year bars, the toolbar popup and the `summary` call stay over every paper (`summary` and
+(loaded, hidden, absent), the year bars and the toolbar popup stay over every paper (the `summary` and
 `export` take `filtered: true` for the panel's way). Not done: counting by the *year chart's* other filters (the bars stay
 whole: a range is chosen against them), and a scope note on the table itself (the filter bar and the metrics line already say
 which papers are counted).

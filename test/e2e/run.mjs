@@ -700,7 +700,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await queryInput.press("Escape");
     // Quick search operator pills
     const pills = page.locator("#rr-panel .rr-search-pills .rr-spill");
-    assert.deepEqual((await pills.evaluateAll((els) => els.map((e) => e.dataset.pill))).filter((id) => id !== "award"), ["ccfA", "cites100", "first"], "the quick filters, in order (Awards is not offered once the whole list is here and no paper has one: until then it is)");
+    await eventually(page, () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100 && !/Loading/.test((document.querySelector('[data-rr="coverage"]') || { textContent: "" }).textContent));
+    await eventually(page, () => !document.querySelector('.rr-spill[data-pill="award"]'));
+    assert.deepEqual(await pills.evaluateAll((els) => els.map((e) => e.dataset.pill)), ["ccfA", "cites100", "first"], "the quick filters, in order: Awards is not offered, no paper of the whole list has one");
     const pillCcf = page.locator('#rr-panel .rr-spill[data-op="ccf:a"]');
     const pillCites = page.locator('#rr-panel .rr-spill[data-op="cites:>100"]');
     assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
@@ -1286,6 +1288,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal(await visibleRows(page), narrow.last.A, "and lists the papers of that cell within the years chosen");
       await page.click(cell);
       await eventually(page, () => !document.querySelector('button.rr-cell[aria-pressed="true"]'));
+      // the h-index filter's minimum does not move with a pick either: with it pressed, a cell leaves the counts as they were
+      await page.click('[data-metric="mH"]');
+      await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
+      const withH = await readMatrix(page);
+      await page.click('button.rr-cell[data-role="first"][data-tier="A"]');
+      await eventually(page, () => document.querySelector('button.rr-cell[data-role="first"][data-tier="A"][aria-pressed="true"]'));
+      assert.deepEqual(await readMatrix(page), withH, "a pick, with the h-index papers listed, leaves the counts as they were");
+      await page.click('button.rr-cell[data-role="first"][data-tier="A"]');
+      await page.click('[data-metric="mH"]');
+      await eventually(page, () => !document.querySelector('[data-metric="mH"][aria-pressed="true"]') && !document.querySelector('button.rr-cell[aria-pressed="true"]'));
       // what the copy buttons put on the clipboard says what it counted
       const shown = await visibleRows(page);
       const scope = `Showing ${shown} of ${total} papers · ${from}–…`;
@@ -1316,6 +1328,19 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await eventually(page, () => document.querySelector(".rr-search-input").value === "role:last");
       await page.click('.rr-spill[data-pill="last"]');
       await patchPrefs({ panel: { filters: { pills: { last: false } } } });
+      await pageCall("clearFilters");
+      // the autocomplete completes the value under the caret in a list and leaves the rest of the word alone
+      const box = ".rr-search-input";
+      await page.fill(box, "role:,last");
+      await page.press(box, "Home");
+      for (let i = 0; i < 5; i++) await page.press(box, "ArrowRight");
+      await page.keyboard.type("fi");
+      await eventually(page, () => document.querySelector('.rr-suggest-item[data-op="role:first"]'));
+      assert.deepEqual(await page.locator(".rr-suggest-item").evaluateAll((els) => els.map((e) => e.dataset.op)), ["role:first"], "the values that begin so, and not the one the word has already");
+      await page.press(box, "ArrowDown");
+      await page.press(box, "Enter");
+      assert.equal(await page.inputValue(box), "role:first,last", "the value under the caret was completed, the rest of the word stayed");
+      assert.equal(await page.evaluate(() => document.querySelector(".rr-search-input").selectionStart), 10, "and the caret is after the completed value");
       await pageCall("clearFilters");
       // the quick filter "Last 5 years" is age:<5: the papers of this year and the four before it, and the table is theirs
       await pageCall("clearFilters");

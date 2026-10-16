@@ -154,25 +154,34 @@
       if (idx < 0) queryInput.removeAttribute("aria-activedescendant");
     }
 
+    // The word the caret is in: from its start to the caret (`word`, what was typed of it) and to its end (`end`; the caret may be in the middle of it)
     function getCurrentWordInfo() {
       const val = queryInput.value;
-      const end = queryInput.selectionEnd != null ? queryInput.selectionEnd : val.length;
-      let start = end;
+      const caret = queryInput.selectionEnd != null ? queryInput.selectionEnd : val.length;
+      let start = caret, end = caret;
       while (start > 0 && !/\s/.test(val[start - 1])) start--;                 // (a scan back from the caret: a pattern anchored at the end is slow on a long line)
-      return { word: val.slice(start, end), start, end };
+      while (end < val.length && !/\s/.test(val[end])) end++;
+      return { word: val.slice(start, caret), start, caret, end };
     }
 
     function applySuggestion(item) {
       if (!item) return;
       const val = queryInput.value;
       const { word, start, end } = getCurrentWordInfo();
-      let next;
-      if (word && (word.includes(":") || OPERATOR_NAME.test(word))) {
-        next = val.slice(0, start) + (item.apply || item.op) + " " + val.slice(end);          // (a value after a comma completes the list: "role:first,la" → "role:first,last")
+      let next, caretAt;
+      if (item.replace) {                                                       // (one value of an operator's list is put in place of the one under the caret: "role:first,la|,second" → "role:first,last|,second")
+        const r = item.replace, tail = val.slice(r.to);
+        next = val.slice(0, r.from) + r.text + (r.space && !/^\s/.test(tail) ? " " : "") + tail;
+        caretAt = (val.slice(0, r.from) + r.text + (r.space ? " " : "")).replace(/\s+/g, " ").length;
+      } else if (word && (word.includes(":") || OPERATOR_NAME.test(word))) {
+        next = val.slice(0, start) + item.op + " " + val.slice(end);
+        caretAt = (val.slice(0, start) + item.op + " ").replace(/\s+/g, " ").length;
       } else {
         next = (val.trim() ? val.trim() + " " : "") + item.op + " ";
+        caretAt = next.replace(/\s+/g, " ").length;
       }
       queryInput.value = next.replace(/\s+/g, " ");
+      queryInput.setSelectionRange(caretAt, caretAt);
       syncSearchUI();
       cb.onQuery(queryInput.value);
       closeSuggest();
@@ -204,14 +213,19 @@
 
     // The word at the caret begins an operator (it has its colon): offer that operator's values. An ordinary word offers nothing (ArrowDown, or the "/" hint, opens the common ones).
     function updateSuggestions() {
-      const w = getCurrentWordInfo().word.toLowerCase();
-      const at = w.indexOf(":");
-      const comma = w.lastIndexOf(",");
-      if (comma > at && at > 0 && B.query.LISTED.has(w.slice(0, at))) {                      // the value being typed after a comma: the operator's other values
-        const head = w.slice(0, comma + 1), name = w.slice(0, at), tail = w.slice(comma + 1);
-        currentSuggestions = operatorItems().filter((item) => item.name === name && item.op.startsWith(name + ":" + tail) && !head.slice(at + 1).split(",").includes(item.op.slice(at + 1)))
-          .map((item) => ({ ...item, apply: head + item.op.slice(at + 1) }));
-      } else currentSuggestions = at < 1 ? [] : operatorItems().filter((item) => item.name === w.slice(0, at) && item.op.startsWith(w));
+      const { word, start, caret, end } = getCurrentWordInfo();
+      const w = word.toLowerCase(), at = w.indexOf(":");
+      const name = at > 0 ? w.slice(0, at) : "";
+      if (name && B.query.LISTED.has(name)) {
+        // an operator whose values can be listed: the value under the caret, of the word's list, completes with the operator's values that the list does not have yet
+        const val = queryInput.value, valueStart = start + at + 1;                   // (positions are those of the text as typed; only what is compared is lower-cased)
+        const before = val.lastIndexOf(",", caret - 1), segStart = before >= valueStart ? before + 1 : valueStart;
+        let segEnd = val.indexOf(",", caret); if (segEnd < 0 || segEnd > end) segEnd = end;
+        const typed = val.slice(segStart, caret).toLowerCase(), here = val.slice(valueStart, segStart).split(",").length - 1;
+        const others = val.slice(valueStart, end).toLowerCase().split(",").filter((_, i) => i !== here);
+        currentSuggestions = caret < valueStart ? [] : operatorItems().filter((item) => item.name === name && item.op.slice(at + 1).startsWith(typed) && !others.includes(item.op.slice(at + 1)))
+          .map((item) => ({ ...item, replace: { from: segStart, to: segEnd, text: item.op.slice(at + 1), space: segEnd === end } }));
+      } else currentSuggestions = at < 1 ? [] : operatorItems().filter((item) => item.name === name && item.op.startsWith(w));
       if (currentSuggestions.length) renderSuggestions(); else closeSuggest();
     }
 
@@ -504,7 +518,7 @@
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {
       const mp = m.prefs.panel.marks, counts = m.marks || {};
-      const groups = B.marks.rows(mp.grouping).filter((g) => counts[g]);
+      const groups = B.marks.rows(mp.grouping).filter((g) => counts[g] || m.markGroup === g);          // (a pressed row stays, so that it can be released, whatever the filters made of its count)
       marksSec.hidden = !groups.length || !mp.show;
       marksHead.hidden = !mp.title;
       // the award count's parts, on hover: best papers and test-of-time awards apart from the honorable mentions
@@ -547,7 +561,7 @@
       // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
       const mp = m.prefs.panel.metrics;
       const countShown = mp.show && mp.papers && !c.layoutBroken && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
-      const lone = status.length === 1 && !c.loadingAll && c.complete && countShown;
+      const lone = status.length === 1 && status[0] === loadedLine && !c.loadingAll && c.complete && countShown;
       if (!lone) lines.push(...status);
       let unmatchedEl = null;
       if (sp.unranked && c.unmatched.length) {

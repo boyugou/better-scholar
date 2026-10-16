@@ -196,15 +196,17 @@
   }
 
   // The impact filter (the h-index and i10 buttons of the panel) shows the highlighted papers behind the number: at least h citations, h being the h-index of the
-  // highlighted papers the other filters let through; at least 10 for i10. 0: no such filter.
+  // highlighted papers the other filters let through — not counting the picks (a table cell, an awards row), so that picking one never moves the minimum and with it the counts; at least
+  // 10 for i10. 0: no such filter.
   // (an h-index of 0 means no highlighted paper has a citation: the filter then shows nothing, so the minimum is one citation, which none of them has)
-const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
+const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metrics.citationMetrics(scoped(source, { skipImpact: true, skipPicks: true })).highlighted.h) : state.filters.impact === "i10" ? 10 : 0);
 
   // Do the filters let this row through? `skip`: choices to leave out — `venue` (the venue list is not narrowed by its own choice), `selection` (the table's cell, for the table's
   // own counts), `marks` (an awards row, for the awards counts).
   function passes(row, source, min, skip = {}) {
     const f = state.filters, a = row.a;
-    if (a.year != null) {
+    if (f.yearStart != null || f.yearEnd != null) {
+      if (a.year == null) return false;                                                // (a paper with no year is in no range, as for `year:` and `age:`)
       if (f.yearStart != null && a.year < f.yearStart) return false;
       if (f.yearEnd != null && a.year > f.yearEnd) return false;
     }
@@ -257,9 +259,9 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // The numbers of the highlighted papers (citations, h-index, i10) and the venue list follow all the filters — the year range, an awards row, a matrix cell and a venue narrow what is
   // counted; the venue list is not narrowed by its own choice. (The table, the awards and talks counts and the copied summary count by `counted()` below; the year bars stay whole:
   // the range is chosen against them.)
-  function scoped(source, { skipVenue = false, skipImpact = false } = {}) {
+  function scoped(source, { skipVenue = false, skipImpact = false, skipPicks = false } = {}) {
     const min = skipImpact ? 0 : impactMin(source);
-    return live().filter((r) => passes(r, source, min, { venue: skipVenue })).map(paperOf);
+    return live().filter((r) => passes(r, source, min, { venue: skipVenue, selection: skipPicks, marks: skipPicks })).map(paperOf);
   }
 
   // A filter that narrows the counts, as against a pick made in a count (the table's cell, an awards row: they list papers, and the counts stay whole under them, so that picking
@@ -589,6 +591,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
     if (state.venueKey && !(prefs.panel.venues.show && metrics.topVenues(papers(), 9999, B.prefs.lists(prefs)).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    // a pick on the papers whose author list lacks the profile's name, or whose list is cut, with no such paper any more (a spelling was added, the lists were read) has no line to undo it
+    if (state.selection && (state.selection.role === "absent" || state.selection.role === "hidden") && (!live().some((r) => r.a.status === state.selection.role) || (state.selection.role === "absent" && layoutBroken()))) state.selection = null;
     // with no tier columns left (nothing on the profile is ranked) a selection on a tier has no control to undo it
     if (state.selection && state.selection.tier && noRanks(papers())) state.selection = state.selection.role ? { role: state.selection.role, tier: undefined } : null;
     applyFilters();

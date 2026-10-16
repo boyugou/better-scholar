@@ -208,3 +208,13 @@ test("a quick filter is one operator:value in the query; beside another of its o
   assert.equal(query.keepOnly("Role:First,Cofirst ccf:a,b foo cites:>100 role:last", new Set(["role:first", "role:last", "ccf:a", "cites:>100"])), "role:first ccf:a cites:>100 role:last", "with no box: the quick filters stay, the rest goes");
   assert.equal(query.keepOnly("foo bar", new Set(["role:first"])), "");
 });
+
+test("a quick filter is found in the query whatever the case it was typed in; the search finds the line the page printed and the whole list that was read", () => {
+  assert.equal(query.hasValue("Age:<5 foo", "age:<5"), true);
+  assert.equal(query.toggleValue("Age:<5 foo", "age:<5"), "foo", "pressed again, it goes: it is not added a second time");
+  assert.equal(query.hasValue("CITES:>100", "cites:>100"), true);
+  // the page prints "MF Kaashoek"; the paper's own page spells the name out
+  const read = { raw: { ...paper.raw, authorsText: "I Stoica, R Morris, MF Kaashoek, …" }, a: { ...paper.a, fromDetail: true, tokens: [{ name: "Ion Stoica" }, { name: "Robert Morris" }, { name: "M Frans Kaashoek" }, { name: "Hari Balakrishnan" }] }, shown: 1 };
+  assert.equal(analysis.queryMatcher("mf kaashoek").test(read), true, "the line, as the page printed it");
+  assert.equal(analysis.queryMatcher("frans balakrishnan").test(read), true, "and the names of the whole list");
+});

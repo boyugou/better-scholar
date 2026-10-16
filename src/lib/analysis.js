@@ -60,7 +60,7 @@
   // (the title, the author line and the venue of a row do not change: in lower case once, not for every key typed)
   const READ = new WeakMap();
   const readText = (raw) => { let t = READ.get(raw); if (!t) { t = [low(raw.title), low(raw.authorsText), low(raw.venueText)]; READ.set(raw, t); } return t; };
-  // (the authors once "Read full lists" has read the whole list: every name of it, not the cut line of the page; kept for as long as the row's analysis is)
+  // (the authors once "Read full lists" has read the whole list: every name of it, besides the line the page printed — the page's initials may be spelled out there; kept for as long as the row's analysis is)
   const FULL = new WeakMap();
   const fullAuthors = (a) => { let t = FULL.get(a); if (t === undefined) { t = low(a.tokens.map((x) => x.name).join(", ")); FULL.set(a, t); } return t; };
 
@@ -70,7 +70,7 @@
       const { raw, a } = row, v0 = a.venue || {}, found = marksOf(row);
       const v = { ccf: ranksOn.ccf === false ? null : v0.ccf, core: ranksOn.core === false ? null : v0.core };      // (a list that is switched off is not searched either)
       return {
-        text: [...(a.fromDetail && a.tokens ? [readText(raw)[0], fullAuthors(a), readText(raw)[2]] : readText(raw)), ...[v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,
+        text: [...readText(raw), ...(a.fromDetail && a.tokens ? [fullAuthors(a)] : []), ...[v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,
           ...found.map((m) => `${m.kind || ""} ${m.label || ""} ${m.text || ""}`)].map(low)],
         year: a.year != null ? a.year : null,
         citations: row.shown,

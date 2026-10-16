@@ -226,10 +226,10 @@ The request's `detail` is `{ id, method, params }`; an `id` that is a string or 
 | Call | Parameters | Result |
 |---|---|---|
 | `ping` | none | `{ version, owner, loaded, complete }` |
-| `summary` | none | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals |
+| `summary` | `filtered` (`true`: the tables and the awards and talks counts of the papers the filters leave, as the panel counts them; default `false`: every loaded paper) | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals, `counted` (how many papers the tables are of) |
 | `papers` | `filtered` (default `true`: the papers the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers` and `apa`) | `{ format, text, html? }` |
-| `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors }` |
+| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers` and `apa`); `filtered` (`true`: the summary and the table count the papers the filters leave) | `{ format, text, html? }` |
+| `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors, ignored }` (`ignored`: what the settings left without a control) |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |
 
 - The parameters are checked before anything runs; a wrong one is answered with `ok: false` and the reason. `filter` is refused while the panel is switched off, since nothing on the page could undo it.

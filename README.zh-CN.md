@@ -226,10 +226,10 @@ const { ok, result, error } = await answer;   // result.text 即 BibTeX
 | 调用 | 参数 | 结果 |
 |---|---|---|
 | `ping` | 无 | `{ version, owner, loaded, complete }` |
-| `summary` | 无 | 角色 × 等级表（CCF、CORE、仅按角色）、获奖与报告形式计数、引用统计 |
+| `summary` | `filtered`（`true`：表格与获奖、报告形式计数按筛选后剩下的论文统计，同面板；默认 `false`：所有已加载的论文） | 角色 × 等级表（CCF、CORE、仅按角色）、获奖与报告形式计数、引用统计、`counted`（表格统计的论文数） |
 | `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa` 另返回 `html`） | `{ format, text, html? }` |
-| `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors }` |
+| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa` 另返回 `html`）；`filtered`（`true`：摘要和表格按筛选后剩下的论文统计） | `{ format, text, html? }` |
+| `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors, ignored }`（`ignored`：设置里没有对应控件而被忽略的筛选） |
 | `clearFilters` | 无 | `{ shown, total, filters, errors }` |
 
 - 参数在执行任何操作之前先经检查；不合规的参数得到 `ok: false` 及原因。面板关闭时 `filter` 会被拒绝，因为页面上没有任何控件能撤销它。
