@@ -234,7 +234,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.starts && a.starts.length));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.starts && a.starts.length));
   }
 });
 
@@ -1433,3 +1433,33 @@ test("names Scholar prints that the lists word differently are aliases: older, i
   none("International Conference on High Performance Computing, 86-105, 2023");
   none("Proceedings of the 2002 ACM symposium on Applied computing, 32-36, 2002");
 });
+
+test("the eleventh review: a pick among venues of one rating is no venue to carry over; sponsors and aliases that read another venue; abbreviated words; plural event words", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // "International Conference on Data Mining" fits ICDM and SDM, which CCF ranks alike (it takes the first) and CORE ranks apart: CORE's A* is not carried over — unless the string says the acronym
+  eq("Proceedings of the International Conference on Data Mining (DMIN), 2013", "CCF B ICDM");
+  eq("International Conference on Data Mining, 2013", "CCF B ICDM");
+  eq("Proceedings of the IEEE International Conference on Data Mining (ICDM), 2013", "CCF B ICDM · CORE A* ICDM");
+  eq("SDM '19: Proceedings of the SIAM International Conference on Data Mining, 123-145, 2019", "CCF B SDM · CORE A SDM");
+  // the IET and the ACIS organise conferences named after a field (IET's Image Processing, the Computer and Information Science of Kuala Lumpur): they are no sponsors to drop
+  none("IET Conference on Image Processing (IPR 2012), 1-6, 2012");
+  none("2012 International Conference on Computer & Information Science (ICCIS), 1-5, 2012");
+  eq("3rd IET International Conference on Intelligent Environments (IE 07), 40-47, 2007", "CORE B IE");
+  eq("2012 IEEE/ACIS 11th International Conference on Computer and Information Science (ICIS), 2012", "CORE C ICIS");
+  eq("2008 Ninth ACIS International Conference on Software Engineering, Artificial Intelligence, Networking, and Parallel/Distributed Computing", "CORE C SNPD");
+  // an alias that begins another venue's name is for whole strings only (SPLC's, SERVICES'); a title that is also a field counts for a line with a volume (a chapter of a book is no journal)
+  none("Proceedings of the 5th international conference on Systems software …, 2010");
+  none("2019 IEEE 12th World Conference on …, 2019");
+  none("Computational geometry, 307-317, 2000");
+  eq("Computational Geometry 11 (2), 69-81, 1998", "CCF C CGTA");
+  // two concurrent series of one name, and a venue whose own name begins another's, are no aliases
+  none("2008 7th IEEE International Conference on Cybernetic Intelligent Systems, 1-6, 2008");
+  none("2015 IEEE 17th International Conference on High Performance Computing …, 2015");
+  // "Annu." is "Annual"; "EG/VGTC" are EuroVis's sponsors; "Workshops" is "Workshop"
+  eq("Proc. 52nd Annu. IEEE/ACM Int. Symp. Microarchitecture (MICRO), 2019", "CCF A MICRO · CORE A* MICRO");
+  eq("Proc. Annu. Int. Cryptology Conf. (CRYPTO), 2019", "CCF A CRYPTO · CORE A* CRYPTO");
+  eq("EG/VGTC Conference on Visualization (EuroVis '16), 2016", "CCF B EuroVis · CORE B EuroVis");
+  eq("2010 19th IEEE International Workshops on Enabling Technologies: Infrastructures for Collaborative Enterprises, 30-35, 2010", "CORE C WETICE");
+});
+

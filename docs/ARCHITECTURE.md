@@ -193,7 +193,7 @@ exists because a real string went wrong without it (the test that pins it names 
 **The same venue in the other list.** CCF and CORE word many venues differently, so one list's wording often finds a string the other's does not. `buildIndex` links the rows that are one
 venue (`idx.partners`): an alias that names both (`ccf` and `core`; the tiers it names pick the rows), or one acronym and mostly the same words (≥ 2 shared and ≥ 60 % of the shorter name's, stems aside; or the same single
 word — MICRO, ACM MM, VIS — the two FSE rows of each list share too few to be linked, nor CC / C&C, ISC, GI: a test names them). After both lists have been read, a match in one list brings the partner row of the other when that list found nothing, the string was not refused, and
-the string's track words are the partner's own. It adds a badge; it never changes or removes one. Whole-name lookup also reads British and American spellings alike (`us()`: "Modelling" and
+the string's track words are the partner's own — and the match was not a pick among venues that only share a rating (`decide()` takes the first: "International Conference on Data Mining" is ICDM or SDM) unless the string says the venue's own acronym. It adds a badge; it never changes or removes one. Whole-name lookup also reads British and American spellings alike (`us()`: "Modelling" and
 "Modeling"); the start of a cut name keeps its spelling. Sponsors the lists do not name (`ORG`: `iapr`, `wic`, `acis`, `iet`, `edac`, `esda`, `eai`, `sigchi`) are no part of a name.
 
 **Secondary tracks** — Findings, workshops, demos, posters, tutorials, extended abstracts,

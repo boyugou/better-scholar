@@ -1025,7 +1025,7 @@
   panelCb.onCopyUnmatched = async () => false;
   panelCb.onCheckVenue = (text) => showVenue(String(text).replace(/\s+/g, " ").trim().slice(0, 300));               // (on this page itself: the box is filled in and shown, nothing is stored)
   panelCb.onSettings = () => { const c = document.getElementById("card-highlight"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
-  let panelUi = { collapsed: false, source: "ccf" };
+  let panelUi = { collapsed: false, source: null };                                        // (no tab picked yet: the preview opens on the list the settings prefer)
   panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };
   panelCb.onSource = (src) => { panelUi.source = src; renderPreview(); };
   const panel = B.panel.create(panelCb);

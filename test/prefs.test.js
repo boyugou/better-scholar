@@ -206,9 +206,9 @@ test("presets are patches the table accepts, and each does what its name says", 
 });
 
 test("normalizeUi", () => {
-  assert.deepEqual(prefs.normalizeUi(null), { collapsed: false, source: "ccf" });
+  assert.deepEqual(prefs.normalizeUi(null), { collapsed: false, source: null }, "no tab picked yet");
   assert.deepEqual(prefs.normalizeUi({ collapsed: true, source: "core" }), { collapsed: true, source: "core" });
-  assert.deepEqual(prefs.normalizeUi({ collapsed: "yes", source: "x" }), { collapsed: false, source: "ccf" });
+  assert.deepEqual(prefs.normalizeUi({ collapsed: "yes", source: "x" }), { collapsed: false, source: null });
 });
 
 test("the ranking the table uses: the remembered one if it has a tab, else the first that has, else none", () => {
@@ -406,3 +406,13 @@ test("rows.prefer: where both lists rank a venue, one chip — the preferred lis
   // the ready-made patch that shows everything shows both lists
   assert.equal(prefs.apply(d, prefs.PRESETS.all).prefs.rows.prefer, "both");
 });
+
+test("the table opens on the list the settings prefer until a tab is picked on this device", () => {
+  const withPrefer = (prefer, ccf = true, core = true) => prefs.normalize({ rows: { prefer, ccf, core }, panel: { table: { ccf, core } } });
+  assert.equal(prefs.source(withPrefer("ccf"), { source: null }), "ccf");
+  assert.equal(prefs.source(withPrefer("core"), { source: null }), "core");
+  assert.equal(prefs.source(withPrefer("both"), { source: null }), "ccf", "no preference: the first list");
+  assert.equal(prefs.source(withPrefer("core"), { source: "ccf" }), "ccf", "a tab picked on this device wins");
+  assert.equal(prefs.source(withPrefer("core", true, false), { source: null }), "ccf", "the preferred list has no tab: the first that has");
+});
+
