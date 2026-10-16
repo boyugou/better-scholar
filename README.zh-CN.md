@@ -118,6 +118,8 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 - **会议与期刊分别检索；** 由字符串本身的用词决定查哪一份名录。
 - **非主会轨道** —— Findings、Workshop、Demo、Poster、Tutorial、扩展摘要、短文与工业论文、Shared Task —— 不给徽章，除非该场所的官方名称本身含有这个词。
 - **来源可查：** 徽章的悬停提示写明匹配到的场所、规则和名录版本。等级取自当前名录，而非论文发表时的等级；面板和每条提示都会说明这一点。
+- **一个标签，不是两个：** CCF 与 CORE 收录的会议大同小异，所以默认一篇论文只显示 CCF 的标签，只有 CCF 没有收录该场所时才用 CORE 的标签补上（CCF 标签的悬停提示里仍会写出 CORE 的等级）。“CORE 优先”反过来，“两者都显示”两个都画。常发表的会议列表、Markdown 与 BibTeX 的注释跟随这个选择；角色×等级表（两个榜单各有一个页签）、搜索和其他复制格式仍保留两个榜单。
+- **两个榜单互相关联：** CCF 与 CORE 对同一个会议常有不同的叫法（*ACM SIGCHI Conference on Designing Interactive Systems* / *Designing Interactive Systems*），所以其中一个榜单的名称认出了某个字符串，另一个榜单里同一个会议的那一行也会一并给出。
 
 ### 3. 获奖与报告形式
 - **获奖名单：** 7,830 篇获奖论文（最佳论文、最佳学生论文、杰出与卓越论文、荣誉提名、分类奖项、时间检验奖），均取自官方页面 —— ACL Anthology 的获奖数据、计算机视觉基金会（CVF），以及各会议和学会自己的获奖页面（NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB、OSDI、SOSP、CHI 等）。只有标题完全一致、且获奖记录的第一作者在该论文作者之中，才算匹配。
