@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Periksa"
+  },
+  "optSaveTooBig": {
+    "message": "Tidak tersimpan: jika dijumlahkan, nama-nama buatan sendiri melebihi ruang penyimpanan yang disediakan Chrome untuk pengaturan (8 KB seluruhnya). Persingkat beberapa nama."
   }
 }

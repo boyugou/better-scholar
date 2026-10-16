@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Kontrol et"
+  },
+  "optSaveTooBig": {
+    "message": "Kaydedilmedi: verdiğiniz adların toplamı, Chrome'un ayarlar için ayırdığı alanı aşıyor (toplam 8 KB). Bazılarını kısaltın."
   }
 }

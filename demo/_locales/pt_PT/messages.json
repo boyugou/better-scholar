@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Verificar"
+  },
+  "optSaveTooBig": {
+    "message": "Não guardado: os nomes que escolheu somam mais do que o espaço que o Chrome reserva para as definições (8 KB no total). Encurte alguns deles."
   }
 }

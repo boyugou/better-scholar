@@ -35,7 +35,7 @@
     "proceedings", "proceeding", "proc", "conference", "conferences", "conf", "symposium",
     "symposia", "symp", "workshop", "workshops", "meeting", "meetings", "congress",
     "colloquium", "annual", "international", "intl", "int", "joint", "edition",
-    "volume", "vol", "part", "track", "session", "sessions", "ann"
+    "volume", "vol", "part", "track", "session", "sessions", "ann", "biennial", "triennial"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
   const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier",
@@ -116,7 +116,7 @@
 
   // (the whole word: "Marketing" and "Decision" are not months — "Journal of Marketing" was read as "Journal of" and then as the Journal of the ACM)
   const MONTH = "(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
-  const PAGES = "(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";
+  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp.")
 
   // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
   // "Datasets; Benchmarks" spellings) is not part of the venue's identity, so it is dropped before matching. Whether the
@@ -138,6 +138,9 @@
     const truncated = /…|\.{3}/.test(s);
     if (truncated) s = s.split(/…|\.{3}/)[0];
     s = s.replace(/\s+/g, " ").trim();
+    // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
+    // ("Selected Areas in Communications, IEEE Journal on": "IEEE Journal on Selected Areas in Communications"). The form is fixed, so it is read back before anything else.
+    s = s.replace(/^(.{2,80}?),\s*((?:IEEE|ACM)(?:\/(?:IEEE|ACM))?\s+(?:Transactions|Journal|Letters|Magazine)\s+on)\b(.*)$/i, "$2 $1$3");
     // IEEE Xplore's citation form: "IEEE Visualization, 2002. VIS 2002., 355-362, 2002" — the name, its year, then the event's own
     // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know.
     s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\./, "$1 ($2)");
@@ -824,7 +827,7 @@
         if (sec && !ownWord(r.entry, sec)) { out.secondary = sec; continue; }
         out[src] = src === "ccf"
           ? { tier: r.entry.tier, name: r.entry.name, abbr: r.entry.abbr, area: r.entry.area, kind: r.entry.kind, dblp: r.entry.dblp, rule: r.rule }
-          : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, rule: r.rule };
+          : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, kind: r.entry.kind, rule: r.rule };          // (CORE ranks conferences: its kind is "C")
       }
       // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
       // ("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing" is HCOMP to CORE; CCF, which does not list

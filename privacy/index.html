@@ -33,7 +33,7 @@
 <li><code>ui</code> — whether the panel is folded, and which ranking (CCF or CORE) its table shows.</li>
 <li><code>resolved</code> — what <em>Read full lists</em> found: for each paper, Scholar's id for the paper on that profile, the full author list, the venue, the time it was read, and whether it came from Semantic Scholar. Entries older than 90 days are not used and are dropped when the cache is next saved; at most 3,000 papers are kept.</li>
 <li><code>s2key</code> — the Semantic Scholar API key, only if you enter one in the settings. It is never synced.</li>
-<li><code>askVenue</code> — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing <em>Check</em> beside a venue of the unranked list; the settings page takes it within a moment and removes it.</li>
+<li><code>askVenue</code> — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing <em>Check</em> beside a venue of the unranked list; the settings page takes it within a moment and removes it, and one that nobody took is ignored after 30 seconds.</li>
 </ul>
 <p>In the Scholar site's own browser storage:</p>
 <ul>
@@ -65,6 +65,7 @@
 <ul>
 <li>The <em>Report</em> links of the panel and the popup open a new issue on this project's GitHub tracker. The panel's fill in the text: the unranked venue strings it lists, or — when Scholar's page layout cannot be read — the page's address without the host, with the profile's <code>user=</code> id replaced by &quot;…&quot;.</li>
 <li>The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The toolbar popup links to Google Scholar when the open tab is not a profile.</li>
+<li><em>Check a venue</em> on the settings page shows, for a CCF venue, a link to the venue's page on DBLP (<code><a href="https://dblp.org/db/…">https://dblp.org/db/…</a></code>, the address the CCF list itself gives). It is a plain link with <code>rel=&quot;noopener noreferrer&quot;</code>: the extension sends nothing, and the page opens only when you click it.</li>
 </ul>
 <p>## What is never sent</p>
 <ul>

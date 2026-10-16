@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Verificar"
+  },
+  "optSaveTooBig": {
+    "message": "Não salvo: os nomes que você escolheu somam mais do que o espaço que o Chrome reserva para as configurações (8 KB no total). Encurte alguns deles."
   }
 }

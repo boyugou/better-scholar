@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Verifică"
+  },
+  "optSaveTooBig": {
+    "message": "Nesalvat: numele pe care le-ai ales depășesc împreună spațiul pe care Chrome îl rezervă setărilor (8 KB în total). Scurtează unele dintre ele."
   }
 }

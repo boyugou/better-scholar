@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Check"
+  },
+  "optSaveTooBig": {
+    "message": "Not saved: the names add up to more than Chrome's storage keeps for the settings (8 KB in all). Shorten some of them."
   }
 }

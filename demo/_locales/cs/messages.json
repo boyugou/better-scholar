@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Ověřit"
+  },
+  "optSaveTooBig": {
+    "message": "Neuloženo: vlastní názvy dohromady přesahují úložiště, které Chrome pro nastavení vyhrazuje (8 KB celkem). Zkraťte některé z nich."
   }
 }

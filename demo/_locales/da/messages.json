@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Tjek"
+  },
+  "optSaveTooBig": {
+    "message": "Ikke gemt: dine egne navne fylder tilsammen mere end den plads, Chrome reserverer til indstillingerne (8 KB i alt). Forkort nogle af dem."
   }
 }

@@ -411,7 +411,7 @@ body {
 .order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
 .order-item.off { opacity: 0.65; }                     /* (dimmed, and still 4.5:1) */
-.order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); }
+.order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); overflow-wrap: anywhere; }
 .order-btn {
   width: 28px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
   font: inherit; font-size: 10px; line-height: 1; cursor: pointer;
@@ -1306,6 +1306,11 @@ button.btn.preset-chip:hover {
   line-height: 1.5;
 }
 
+/* a chip is made for Scholar's white page: on the settings page's own (dark) background it sits on a white swatch, whatever its look */
+.venue-swatch { flex: none; display: inline-flex; padding: 2px 4px; border-radius: 7px; background: #fff; }
+.venue-what { min-width: 0; }
+.venue-meta { display: block; font-size: 12px; color: var(--muted); }
+.venue-meta a { color: var(--accent); }
 .venue-line .rr-chip {
   flex: none;
   min-width: 4.4em;

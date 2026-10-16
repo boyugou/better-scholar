@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Sprawdź"
+  },
+  "optSaveTooBig": {
+    "message": "Nie zapisano: własne nazwy łącznie przekraczają miejsce, jakie Chrome przeznacza na ustawienia (8 KB w sumie). Skróć niektóre z nich."
   }
 }

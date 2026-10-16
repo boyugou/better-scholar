@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "檢查"
+  },
+  "optSaveTooBig": {
+    "message": "未儲存：自訂的名稱加起來超過了 Chrome 為設定保留的儲存空間（共 8 KB）。請縮短其中一些。"
   }
 }

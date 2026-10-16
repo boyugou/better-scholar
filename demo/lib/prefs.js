@@ -302,9 +302,11 @@
       default: return v === s.none || languages().includes(v) ? null : `must be "${s.none}" or one of: ${languages().join(", ")}`;
     }
   }
-  // The characters of a name that show nothing or turn the text around: controls, zero-width space and joiner marks, left-to-right / right-to-left marks and overrides, the invisible
-  // operators (a configuration pasted from somewhere could use them to make a button say what it does not). The joiner and the non-joiner stay: some scripts need them inside words.
-  const UNSEEN = /[\u0000-\u001f\u007f-\u009f\u061c\u200b\u200e\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]/g;
+  // The characters of a name that show nothing or turn the text around: controls, soft hyphen, zero-width space, word joiner and the invisible operators, the fillers (Hangul, Khmer,
+  // Mongolian), bidirectional embeddings, overrides and isolates, the Unicode tag characters (text that a reader does not see and a model does). A configuration pasted from somewhere
+  // could use them to make a button say what it does not. The joiner and non-joiner stay (some scripts need them inside words), and so do the left-to-right, right-to-left and
+  // Arabic letter marks (they fix punctuation in a name of the other direction and cannot hide anything).
+  const UNSEEN = /[\u0000-\u001f\u007f-\u009f\u00ad\u034f\u115f\u1160\u17b4\u17b5\u180b-\u180f\u200b\u202a-\u202e\u2060-\u2064\u2066-\u206f\u3164\ufeff\uffa0\ufff9-\ufffb\u{e0000}-\u{e007f}]/gu;
   // the value as stored: a colour in lower case, a name on one line, an order complete (the ids the list leaves out follow in the default order)
   function clean(s, v) {
     if (s.kind === "color" && typeof v === "string") return v.toLowerCase();
@@ -348,10 +350,26 @@
   // Every setting as { path, value }, in the table's order.
   const flatten = (prefs) => SETTINGS.map((s) => ({ path: s.path, value: read(prefs, s.path) }));
 
+  // What chrome.storage.sync takes for one item: 8,192 bytes, counting the key ("prefs") and the JSON the way Chrome writes it: UTF-8, and a "<" as the six bytes "\u003C"
+  // (so a name of thirty "<" is 180 bytes, not 30). A little is left over.
+  const SYNC_LIMIT = 8192 - "prefs".length - 100;
+  function sizeOf(value) {
+    let n = 0;
+    for (const ch of JSON.stringify(value)) { const c = ch.codePointAt(0); n += ch === "<" ? 6 : c < 0x80 ? 1 : c < 0x800 ? 2 : c < 0x10000 ? 3 : 4; }
+    return n;
+  }
   // A patch (some settings, in the shape of the record: { panel: { years: { show: false } } }) laid over `current`. Nothing in the patch can break the record:
   // what is not a setting, or has a value the setting does not take, is left out and named in `ignored` with the reason.
   //   → { prefs, applied: [{ path, from, to }], unchanged: [path], ignored: [{ path, reason }] }
   function apply(current, patch) {
+    const before = normalize(current);
+    const r = applyPatch(current, patch);
+    const bytes = sizeOf(r.prefs);
+    // (a patch that makes the record larger than Chrome stores is refused whole, with the reason: it would be shown and never kept)
+    if (bytes > SYNC_LIMIT && bytes > sizeOf(before)) return { prefs: before, applied: [], unchanged: r.unchanged, ignored: [...r.ignored, { path: "", reason: `the settings would take ${bytes} bytes, more than Chrome's sync storage keeps for one item (${SYNC_LIMIT}): shorten the names` }] };
+    return r;
+  }
+  function applyPatch(current, patch) {
     const prefs = normalize(current), applied = [], unchanged = [], ignored = [];
     if (!plain(patch)) return { prefs, applied, unchanged, ignored: [{ path: "", reason: "must be a JSON object" }] };
     (function walk(node, prefix) {
@@ -440,6 +458,6 @@
   // The copy buttons that are switched on, in the order the panel and the popup draw them.
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
-  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, cleanName: (v) => clean({ kind: "text" }, v),
+  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
     listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });
