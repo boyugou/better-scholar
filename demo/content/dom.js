@@ -52,7 +52,7 @@
   function applyColors(colors) {
     for (const role of ["first", "cofirst", "second", "last"]) {
       const c = colors && colors[role];
-      if (c) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);
+      if (typeof c === "string" && /^#[0-9a-f]{6}$/i.test(c)) document.documentElement.style.setProperty("--rr-c-" + role, c); else document.documentElement.style.removeProperty("--rr-c-" + role);          // (a colour is "#rrggbb" and nothing else, whoever wrote the record)
     }
   }
   // How the chips look: classes on <html> for the style, the shape and the words (styles.css turns them into a few custom properties), and the colours the

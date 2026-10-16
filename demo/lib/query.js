@@ -1,6 +1,6 @@
 // The search box's language: words, and operators of the form name:value. Pure, no DOM; the panel's autocomplete, the agent guide and the matcher all read OPERATORS.
 //
-//   deep learning        every word must be somewhere in the paper (title, authors, venue, the venue's name in the lists, year, role, marks)
+//   deep learning        every word must be somewhere in the paper (title, authors — the whole list once Read full lists has read it —, venue, the venue's name in the lists, year, role, marks)
 //   cites:>100           citations compared with a number: > >= < <= = (a bare number means =)
 //   year:>=2020          the year compared the same way
 //   age:<5               how old, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it
