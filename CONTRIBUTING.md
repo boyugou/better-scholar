@@ -5,10 +5,10 @@ runs with Node ≥ 20. The end-to-end test, the saved-page check and the accessi
 Playwright and a Chromium build (Playwright's own; branded Chrome 137 and later ignores `--load-extension`).
 
 ```bash
-npm test                              # 429 unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
-npm run test:e2e                      # 78 checks: the real extension in Chromium against a local Scholar stand-in
+npm test                              # the unit tests (names, venues, marks, awards, metrics, formats, query, prefs, agent, i18n, package checks)
+npm run test:e2e                      # the end-to-end checks: the real extension in Chromium against a local Scholar stand-in
 npm run build:demo                    # dist/demo/: the settings page as a static folder for the website (see docs/ARCHITECTURE.md, The web demo)
-npm run test:demo                     # 14 checks: that folder in a plain Chromium page, no extension
+npm run test:demo                     # the web demo's checks: that folder in a plain Chromium page, no extension
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)

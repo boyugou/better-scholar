@@ -818,7 +818,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF rank/);
     assert.match(clip, /Last author: \d+ \(/);
     assert.match(clip, /CCF 2026 \(7th edition\)/);
+    // (a button that also puts HTML on the clipboard is slower than one that puts text: the clipboard is read when the button says it is done)
+    const copied = (act) => page.locator(`[data-act="${act}"]`, { hasText: "Copied" }).waitFor();
     await page.click('[data-act="copy-table"]');
+    await copied("copy-table");
     const tsv = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(tsv.split("\n")[0], /^Role\tA\tB\tC\tNot ranked\tTotal$/);
     // (the clipboard's flavours: the table also has its HTML, a real table for a word processor; the summary is text only)
@@ -829,6 +832,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     ok("Copy summary / Copy as table put the expected text on the clipboard, and the table also as a real table (HTML)");
     // "Copy papers": the papers shown now, one line each
     await page.click('[data-act="copy-papers"]');
+    await copied("copy-papers");
     const paperRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n").map((l) => l.split("\t"));
     assert.deepEqual(paperRows[0], ["Year", "Title", "Authors", "Role", "Venue", "CCF", "CORE", "Awards & talks", "Citations"]);
     assert.equal(paperRows.length, 1 + 100, "the header and the hundred papers loaded");
@@ -840,6 +844,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.ok(paperRows.slice(1).every((r) => r.length === 9));
     await page.check('input[data-act="only"]');
     await page.click('[data-act="copy-papers"]');
+    await page.waitForFunction((n) => navigator.clipboard.readText().then((t) => t.split("\n").length !== n), paperRows.length);          // (the button still says "Copied" from the click before: wait for the new content)
     const onlyRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n");
     assert.equal(onlyRows.length, 1 + (await visibleRows(page)), "the filters count");
     assert.ok(onlyRows.length < paperRows.length);
@@ -864,6 +869,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await page.locator('[data-act="copy-markdown"]').textContent(), "Copied");
     // "Copy APA": standard APA 7th edition publication list
     await page.click('[data-act="copy-apa"]');
+    await copied("copy-apa");
     const apa = await page.evaluate(() => navigator.clipboard.readText());
     assert.ok(apa.includes("(2001).") || apa.includes("(2010)."));
     assert.ok(apa.includes("Stoica, I.") || apa.includes("Paper number 1"));

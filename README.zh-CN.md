@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
-[![Tests](https://img.shields.io/badge/tests-429%20unit%20·%2078%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/boyugou/better-scholar/test.yml?branch=main&style=flat-square&label=tests&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
 [![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
 [![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
@@ -51,7 +51,7 @@ Better Scholar 是一款面向 [Google Scholar](https://scholar.google.com) 学�
 - **作者角色。** 一作、共一（开头几位作者共享 `*`、`†` 等标记）、二作、末位作者。作者行中会标出你的名字，悬停可见你的位次。
 - **获奖与报告形式。** 内置 7,830 篇取自官方获奖页面的获奖论文名单，并识别作者自己写明的 Oral / Spotlight / Highlight。
 - **引用统计。** 高亮论文的论文数、引用数、h 指数与 i10 指数，与全部论文并列显示。点击 h 指数、i10 指数按钮，可列出构成该数字的高亮论文。
-- **带运算符的搜索。** 按 `/` 聚焦搜索框；可输入普通词以及 `cites:`、`year:`、`ccf:`、`core:`、`role:`、`has:`，输入时给出建议。
+- **带运算符的搜索。** 按 `/` 聚焦搜索框；可输入普通词以及 `cites:`、`year:`、`ccf:`、`core:`、`role:`、`type:`、`has:`，输入时给出建议。
 - **复制与导出。** 摘要、表格、论文列表、APA、BibTeX、Markdown、JSON 复制到剪贴板，CSV 保存为文件；设置里每种格式各有一个开关，工具栏弹窗中也有同样的按钮。
 - **一个设置页。** 实时预览、预设、配色主题与 JSON 配置。面板本身不保存任何设置。
 - **面向 AI 智能体。** *Copy guide for agents* 把全部设置、你当前的取值、页面调用与搜索语法交给 AI 助手；页面事件让浏览器智能体读取面板的数字并设置筛选。
@@ -79,7 +79,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 统计、年份
 ```
 
-`src/lib/` 中的代码全部是纯函数（不碰 DOM，不用 `chrome.*`）：在扩展里每个文件挂到 `globalThis.RolesRanks` 上，在 Node 中则用 `require` 加载，所以 429 个单元测试无需构建即可直接运行真实代码。设置页与工具栏弹窗是独立页面；弹窗向学者主页的标签页索取数字。细节见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。
+`src/lib/` 中的代码全部是纯函数（不碰 DOM，不用 `chrome.*`）：在扩展里每个文件挂到 `globalThis.RolesRanks` 上，在 Node 中则用 `require` 加载，所以单元测试无需构建即可直接运行真实代码。设置页与工具栏弹窗是独立页面；弹窗向学者主页的标签页索取数字。细节见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)。
 
 ## 核心功能
 
@@ -181,9 +181,9 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 | 按钮 | 输出 |
 |---|---|
 | *复制摘要* | 纯文本的角色 × 等级表，附获奖与报告形式一行和名录版本 |
-| *复制为表格* | 制表符分隔的角色 × 等级表，便于粘贴进电子表格 |
-| *复制论文列表* | 制表符分隔的论文：年份、标题、作者、角色、场所、CCF、CORE、获奖、引用数（表头用界面语言） |
-| *复制 APA* | APA 第 7 版参考文献：`Authors (Year). Title. *Venue*. URL` |
+| *复制为表格* | 制表符分隔的角色 × 等级表，便于粘贴进电子表格（同时附带一份真正的表格，供文字处理软件粘贴） |
+| *复制论文列表* | 制表符分隔的论文：年份、标题、作者、角色、场所、CCF、CORE、获奖、引用数（表头用界面语言）；同时附带一份真正的表格，供文字处理软件粘贴 |
+| *复制 APA* | APA 第 7 版参考文献：`Authors (Year). Title. *Venue*. URL`；同时附带真正的斜体，供文字处理软件粘贴 |
 | *复制 BibTeX* | BibTeX 条目 |
 | *复制 Markdown* | 带编号的 Markdown 列表：带链接的标题、作者、场所与年份、等级、获奖、引用数 |
 | *复制 JSON* | `{ owner, source, total, papers }`，每篇论文一条记录，含角色、等级与获奖标记 |
@@ -193,6 +193,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 - **APA 第 7 版：** `I Stoica` → `Stoica, I.`，`MF Kaashoek` → `Kaashoek, M. F.`，`L van der Maaten` → `van der Maaten, L.`；两位作者用 `&` 连接；超过 20 位作者时列出前 19 位、`…` 和最后一位；被截断的列表以 `…` 结尾；没有年份时写 `(n.d.)`。星号表示斜体。
 - **Markdown：** Markdown 会解读的每个字符都被转义，标题无法变成链接或标记。
 - **CSV：** 遵循 RFC 4180，带 UTF-8 字节顺序标记（让 Excel 正确显示中文等非拉丁文字），行尾为 CRLF；含逗号、引号、分号或换行的字段加引号。
+- **Word、Docs、Pages：** 表格、论文列表和 APA 三个按钮在文本之外还把 HTML 放进剪贴板：文字处理软件粘贴出真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献；电子表格和文本框仍取文本。HTML 中的所有文字都经过转义，像公式的单元格与制表符格式一样被当作文本。其他格式只有文本。工具栏弹窗和 `export` 调用（`html: true`）给出同样的内容。
 - **电子表格公式：** 在 CSV 和制表符分隔的格式中，以 `=`、`+`、`-` 或 `@` 开头（且不是纯数字）的单元格前会加一个撇号，电子表格会把它当作文本显示。
 - 筛选后没有论文时不复制任何内容，按钮显示 *Nothing to copy*。
 
@@ -269,7 +270,7 @@ better-scholar/
 │   └── _locales/           30 种界面语言的文字
 ├── data/                   源数据集（CCF PDF 抽取、ICORE 导出、获奖名单）及其来源说明
 ├── scripts/                数据构建、CCF 抽取、获奖页面读取、各项检查、打包、无障碍审查
-├── test/                   429 个单元测试；e2e/ 在 Chromium 中对仿真 Scholar 页面运行 78 项检查
+├── test/                   单元测试；e2e/ 在 Chromium 中对仿真 Scholar 页面运行端到端检查
 ├── docs/                   架构、路线图、应用商店素材、截图
 └── contrib/safari/         尽力而为的 Safari 封装生成脚本
 ```
@@ -281,7 +282,7 @@ better-scholar/
 单元测试在 Node.js（20 或更高）上运行，无任何依赖；端到端检查和审查脚本需要 Playwright 与一个 Chromium 版本。
 
 ```bash
-npm test                              # 429 个单元测试
+npm test                              # 单元测试
 npm run test:e2e                      # 78 项端到端检查：真实扩展在 Chromium 中对本地仿真 Scholar 页面运行
 npm run test:update                   # 审阅差异之后，重写场所匹配快照
 npm run data                          # 由 data/*.json 重新生成 src/data/{ccf,core,awards}.js

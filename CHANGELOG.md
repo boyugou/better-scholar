@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.41.0 — 2026-10-15
+
+- **Paste into Word, Docs or Pages:** *Copy as table*, *Copy papers* and *Copy APA* also put HTML on the clipboard next to the text. A word processor pastes a real table (the role × rank table, or the papers) or a reference list with real italics, a link and a hanging indent; a spreadsheet or a text box takes the text as before. Every text in the HTML is escaped, a cell that looks like a formula is made text, and only web addresses become links. The toolbar popup does the same, and the `export` call returns `html` when asked (`html: true`).
+- **Search by kind of venue:** `type:conference` and `type:journal` (the kind the rank lists give the venue; a venue without a rank has none), with `ccf:`, `role:` and the others: `role:first ccf:a type:journal`.
+
 ## 2.40.0 — 2026-10-15
 
 Yours to arrange: the settings page follows the screen, every thing has a switch, the preview is an editor, and names and chip looks are settings too. Nothing is kept for compatibility: the paths of the settings changed (`rowStyle` → `rows.style`, `copy.*` → `panel.copy.*`, `panel.summary` → `panel.table.show`, …), and a stored record of an older version is read as far as it matches and otherwise starts from the defaults.

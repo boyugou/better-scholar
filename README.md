@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Chrome MV3](https://img.shields.io/badge/Chrome-MV3-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/boyugou/better-scholar)
-[![Tests](https://img.shields.io/badge/tests-429%20unit%20·%2078%20e2e-34A853?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
+[![Tests](https://img.shields.io/github/actions/workflow/status/boyugou/better-scholar/test.yml?branch=main&style=flat-square&label=tests&logo=githubactions&logoColor=white)](https://github.com/boyugou/better-scholar/actions)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-success?style=flat-square)](package.json)
 [![Languages](https://img.shields.io/badge/languages-30%20locales-6B57D2?style=flat-square)](src/_locales)
 [![Privacy](https://img.shields.io/badge/privacy-local--first%20·%20no%20tracking-008080?style=flat-square)](PRIVACY.md)
@@ -51,7 +51,7 @@ Better Scholar is a Chrome (Manifest V3) extension for [Google Scholar](https://
 - **Authorship roles.** First, co-first (a leading group of authors that share a mark such as `*` or `†`), second and last author. Your name is marked in the author line, with your position in a tooltip.
 - **Awards and talks.** A bundled list of 7,830 award-winning papers taken from official award pages, plus the Oral / Spotlight / Highlight labels authors write themselves.
 - **Citation totals.** Papers, citations, h-index and i10-index of your highlighted papers next to those of all papers. The h-index and i10-index buttons list the highlighted papers behind the number.
-- **Search with operators.** `/` focuses the search box; words plus `cites:`, `year:`, `ccf:`, `core:`, `role:` and `has:`, with suggestions as you type.
+- **Search with operators.** `/` focuses the search box; words plus `cites:`, `year:`, `ccf:`, `core:`, `role:`, `type:` and `has:`, with suggestions as you type.
 - **Copy and export.** Summary, table, papers, APA, BibTeX, Markdown and JSON to the clipboard, and CSV as a file; one switch per format in the settings, and the same buttons in the toolbar popup.
 - **One settings page.** A live preview, presets, colour themes and a JSON configuration. The panel itself holds no settings.
 - **For AI agents.** *Copy guide for agents* gives an AI assistant every setting, your current values, the page calls and the search syntax; page events let a browsing agent read the panel's numbers and set its filters.
@@ -79,7 +79,7 @@ Scholar profile page ──► content/scholar.js   (reads the rows; presses Sch
   totals, years
 ```
 
-Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each file attaches to `globalThis.RolesRanks`, under Node it is `require`d, which is how the 429 unit tests run the real code without a build step. The settings page and the toolbar popup are separate pages; the popup asks the profile tab for its numbers. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) has the details.
+Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each file attaches to `globalThis.RolesRanks`, under Node it is `require`d, which is how the unit tests run the real code without a build step. The settings page and the toolbar popup are separate pages; the popup asks the profile tab for its numbers. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) has the details.
 
 ## Key features
 
@@ -181,9 +181,9 @@ Each format is a button in the panel's copy row and in the toolbar popup, and ha
 | Button | Output |
 |---|---|
 | *Copy summary* | The role × rank table as plain text, with the awards and talks line and the lists' edition |
-| *Copy as table* | The role × rank table, tab-separated, for a spreadsheet |
-| *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language) |
-| *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*. URL` |
+| *Copy as table* | The role × rank table, tab-separated, for a spreadsheet (and as a real table for a word processor) |
+| *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language); also as a real table for a word processor |
+| *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*. URL`; also with real italics for a word processor |
 | *Copy BibTeX* | BibTeX entries |
 | *Copy Markdown* | A numbered Markdown list: linked title, authors, venue and year, ranks, awards, citations |
 | *Copy JSON* | `{ owner, source, total, papers }`, one record per paper with its role, ranks and marks |
@@ -193,6 +193,7 @@ Each format is a button in the panel's copy row and in the toolbar popup, and ha
 - **APA 7th edition:** `I Stoica` → `Stoica, I.`, `MF Kaashoek` → `Kaashoek, M. F.`, `L van der Maaten` → `van der Maaten, L.`; two authors are joined with `&`; above 20 authors: the first 19, `…`, the last; a cut list ends with `…`; no year gives `(n.d.)`. The asterisks mark the italics.
 - **Markdown:** every character Markdown reads is escaped, so a title cannot become a link or markup.
 - **CSV:** RFC 4180, with a UTF-8 byte-order mark (so that Excel reads non-Latin text) and CRLF line ends; a field with a comma, quote, semicolon or line break is quoted.
+- **Word, Docs, Pages:** the table, papers and APA buttons put HTML on the clipboard next to the text, so a word processor pastes a real table (with borders) or a reference list with real italics, a link and a hanging indent, while a spreadsheet or a text box takes the text as before. Every text in the HTML is escaped, and a cell that looks like a formula is made text as in the tab-separated form. The other formats are text only. The toolbar popup and the `export` call (`html: true`) give the same.
 - **Spreadsheet formulas:** in the CSV and the tab-separated formats, a cell that begins with `=`, `+`, `-` or `@` (and is not a plain number) gets a leading apostrophe, so that a spreadsheet shows it as text.
 - When the filters leave no paper, nothing is copied and the button says *Nothing to copy*.
 
@@ -269,7 +270,7 @@ better-scholar/
 │   └── _locales/           Strings of the 30 interface languages
 ├── data/                   Source datasets (CCF PDF extract, ICORE export, awards) and their provenance
 ├── scripts/                Data builders, CCF extractor, award readers, checks, packaging, accessibility audit
-├── test/                   429 unit tests; e2e/ runs 78 checks in Chromium against a Scholar stand-in
+├── test/                   unit tests; e2e/ runs the end-to-end checks in Chromium against a Scholar stand-in
 ├── docs/                   Architecture, roadmap, store listing kit, pictures
 └── contrib/safari/         Best-effort Safari wrapper generator
 ```
@@ -281,7 +282,7 @@ better-scholar/
 The unit tests run on Node.js (20 or later) with no dependencies; the end-to-end checks and the audits need Playwright and a Chromium build.
 
 ```bash
-npm test                              # 429 unit tests
+npm test                              # the unit tests
 npm run test:e2e                      # 78 end-to-end checks: the real extension in Chromium against a local Scholar stand-in
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
