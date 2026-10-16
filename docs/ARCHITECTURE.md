@@ -313,7 +313,15 @@ the preview shows a tag (✕ hides it, ✎ renames it, ⠿ moves it where it has
 a double-click renames a name and on anything else jumps to the setting that draws it (`jump(path)` of `options.js`: the row is scrolled into view, flashes and takes the keyboard; a
 search of the settings that hides it is cleared first); a tray lists what is hidden, one click to show it. The overlays are children of the preview's card, placed
 by measuring, because the preview is drawn again after every change; all of it changes the same record as the controls (`put` /
-`save`), so the two sides are one.
+`save`), so the two sides are one. The preview is a picture for the eye and the mouse: `quiet()` takes it out of the tab order and the
+accessibility tree after every drawing (the controls on the left are the page for a keyboard and a screen reader; the tray stays for use).
+
+*Check a venue*: a box that runs `venues.createResolver` (the page's own, over `data/ccf.js`, `data/core.js` and `data/aliases.js`) on the text
+and draws what it finds with the chip code of the panel: each list's rank, the matched name, the rule (`chips.ruleText`), and for a CCF venue its
+research area (the list's own Chinese words, or an English name for the other interface languages) and a plain link to its DBLP page; or why there
+is no rank (a secondary track, `res.secondary`, or no certain match). The panel's unranked list has a *Check* link on each venue: it leaves the text
+in `chrome.storage.local` (`askVenue`, at most 300 characters), asks the service worker to open the settings page (the same `rr:options` message as
+the gear), and the settings page takes the text (`takeAskedVenue`, also when it is already open: `storage.onChanged`), fills the box and shows the card.
 
 *Configuration & presets*: a preset (`PRESETS`: *All features*, *Last author focus*, *First author focus*, *Minimalist*), the
 JSON editor and *Import file* all go through `prefs.apply()`, and the page reports what was applied and what was ignored, with
