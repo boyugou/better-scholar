@@ -78,10 +78,10 @@ function exportSamples() {
     rank: ranked(name, "A", "A*"), marks, url: ""
   });
   const papers = [
-    paper(1, "A Author, B Writer, C Writer, D Writer", "ICLR 2025 (Oral)", 2025, 48, "first", "International Conference on Learning Representations", [w("mkOral")]),
+    paper(1, "A Author, B Writer, C Writer, D Writer", "ICLR 2025 (Oral)", 2025, 48, "first", "International Conference on Learning Representations", [w("markOral")]),
     paper(2, "B Writer, A Author, C Writer", "NeurIPS 2024", 2024, 133, "second", "Conference on Neural Information Processing Systems", [w("mkBest") + " (NeurIPS 2024)"]),
-    paper(3, "A Author*, B Writer*, C Writer", "CVPR 2024 (Highlight)", 2024, 27, "cofirst", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", [w("mkHighlight")]),
-    paper(4, "B Writer, C Writer, D Writer, A Author", "ACL 2023 (Spotlight)", 2023, 215, "last", "Annual Meeting of the Association for Computational Linguistics", [w("mkSpotlight")])
+    paper(3, "A Author*, B Writer*, C Writer", "CVPR 2024 (Highlight)", 2024, 27, "cofirst", "IEEE/CVF Conference on Computer Vision and Pattern Recognition", [w("markHighlight")]),
+    paper(4, "B Writer, C Writer, D Writer, A Author", "ACL 2023 (Spotlight)", 2023, 215, "last", "Annual Meeting of the Association for Computational Linguistics", [w("markSpotlight")])
   ];
   const labels = {
     year: w("tsvYear"), title: w("tsvTitle"), authors: w("tsvAuthors"), role: w("tsvRole"), venue: w("tsvVenue"), ccf: w("srcCcf"), core: w("srcCore"),
@@ -367,6 +367,24 @@ writeFileSync(join(out, "privacy", "index.html"), privacyPage());
 writeFileSync(join(out, "404.html"), rootPage().replace('location.replace(pick + "/" + location.hash);', 'location.replace(location.pathname.replace(/[^/]*$/, "") + pick + "/");'));
 writeFileSync(join(out, ".nojekyll"), "");
 writeFileSync(join(out, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+// for AI assistants that look for a site's own description (llmstxt.org): what the extension is, and where everything an agent needs is kept
+writeFileSync(join(out, "llms.txt"), `# Better Scholar
+
+> A free, open-source Chrome extension for Google Scholar profile pages. It works out the profile owner's authorship role in each paper (first, co-first, second, last), matches each venue against the CCF (2026, 7th edition) and CORE (ICORE 2026) lists, marks award-winning papers and Oral / Spotlight / Highlight talks, and sums it up in a panel: a role x rank table, citation totals, papers per year, a search box with operators, and copy / export buttons. It runs in the browser and has no analytics.
+
+Better Scholar can be set up and read by an AI assistant: the agent guide lists every setting with its path and allowed values, the page calls (events on the Scholar page) and the search syntax.
+
+## For agents
+
+- [Agent guide](${REPO_URL}/blob/main/AGENTS.md): every setting, the page calls, the search syntax, the rules (generated from the code)
+- [README](${REPO_URL}/blob/main/README.md): features, search operators, copy and export formats
+- [Privacy policy](${SITE_URL}/privacy/): what is stored, what is sent (Scholar's own pages; Semantic Scholar only if switched on)
+
+## Try it
+
+- [The real settings page, running in the browser](${SITE_URL}/demo/): change a setting and the preview changes; nothing leaves the browser
+- [Source code and install steps](${REPO_URL})
+`);
 writeFileSync(join(out, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${languages.map((l) => `<url><loc>${SITE_URL}/${l.code}/</loc>\n${languages.map((a) => `  <xhtml:link rel="alternate" hreflang="${a.code}" href="${SITE_URL}/${a.code}/"/>`).join("\n")}\n</url>`).join("\n")}
