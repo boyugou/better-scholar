@@ -112,10 +112,10 @@ try {
     assert.match(await page.locator(".try-open").getAttribute("rel"), /noopener/);
     await page.locator(".try-frame").scrollIntoViewIfNeeded();
     await ready(page);
-    await frameOf(page).locator('input[data-pref="ranks.ccf"]').setChecked(false);
+    await frameOf(page).locator('input[data-pref="rows.ccf"]').setChecked(false);
     const [tab] = await Promise.all([context.waitForEvent("page"), page.locator(".try-open").click()]);
-    await tab.locator('input[data-pref="ranks.ccf"]').waitFor();
-    assert.equal(await tab.locator('input[data-pref="ranks.ccf"]').isChecked(), false, "the new tab starts from what the frame saved");
+    await tab.locator('input[data-pref="rows.ccf"]').waitFor();
+    assert.equal(await tab.locator('input[data-pref="rows.ccf"]').isChecked(), false, "the new tab starts from what the frame saved");
     assert.equal(await tab.evaluate(() => document.documentElement.lang), "pt-BR");
     assert.equal(await tab.locator(".rr-demo-note").isVisible(), true, "on its own the demo says it keeps its changes in this browser");
     await context.close();
