@@ -1502,6 +1502,18 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // a three-word journal name with an article number where the pages would be (the lines of ACM TOG, 4 real ones, had no badge: only a name of four words may be followed by words)
   eq("ACM Transactions on Graphics (Proc. of Siggraph'2022) 41 (4), Article No.: 137, 2022", "CCF A TOG");
   eq("ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "CCF A TOG");
+  // Oxford's article numbers where the pages would be ("btac817"), the names journals had, the series of Springer after a title
+  eq("Bioinformatics 39 (1), btac817, 2023", "CCF A Bioinformatics");
+  eq("Briefings in bioinformatics 22 (6), bbab315, 2021", "CCF B Briefings in Bioinformatics");
+  eq("Bioinformatics-Oxford 19 (2), 149-155, 2003", "CCF A Bioinformatics");
+  eq("Computer networks and ISDN systems 25 (7), 761-778, 1993", "CCF B CN");
+  eq("Graphical models and image processing 57 (6), 453-461, 1995", "CCF C GMOD");
+  eq("IEEE Transactions on Robotics and Automation 12 (4), 532-542, 1996", "CCF B TR");
+  eq("Frontiers of Computer Science in China 1 (2), 156-165, 2007", "CCF B FCS");
+  eq("Selected areas in cryptography - Lecture Notes in Computer Science, 130-144, 2003", "CCF C SAC · CORE B SAC");
+  eq("European Symposium on Algorithms - Lecture Notes in Computer Science, 2005", "CCF B ESA · CORE A ESA");
+  none("Lecture Notes in Computer Science 1603, 117-146, 1999");
+  none("Artificial Intelligence Review 23 (2), 187-205, 2005");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

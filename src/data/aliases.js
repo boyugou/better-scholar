@@ -336,9 +336,16 @@
     // ---- journals (kind J)
     { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] },
     // the speech journal of the IEEE Signal Processing Society, under its earlier name (1993–2005)
-    { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing"] },
+    { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing", "IEEE Trans. Speech Audio Process."] },
     // IEEE Transactions on Neural Networks until 2011 (Neural Networks and Learning Systems since)
     { ccf: "TNNLS", kind: "J", names: ["IEEE Transactions on Neural Networks", "IEEE Trans. Neural Networks"] },
+    // names the journals had (Bioinformatics was printed with its publisher's city until 2005; Computer Networks, ISDN until 1998; Graphical Models, with Image Processing until 1998; the IEEE's robotics
+    // journal was Robotics and Automation until 2003; Frontiers of Computer Science was "in China" until 2010)
+    { ccf: "Bioinformatics", kind: "J", names: ["Bioinformatics-Oxford"] },
+    { ccf: "CN", kind: "J", names: ["Computer Networks and ISDN Systems"] },
+    { ccf: "GMOD", kind: "J", names: ["Graphical Models and Image Processing", "CVGIP: Graphical Models and Image Processing"] },
+    { ccf: "TR", kind: "J", names: ["IEEE Transactions on Robotics and Automation", "IEEE Trans. Robotics and Automation"] },
+    { ccf: "FCS", kind: "J", names: ["Frontiers of Computer Science in China"] },
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
     { ccf: "CGTA", kind: "J", volume: ["Computational Geometry"] },
