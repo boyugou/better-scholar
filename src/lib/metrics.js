@@ -112,13 +112,18 @@
   //   rows:    one entry per role bucket that has papers (cofirst/middle only when non-empty)
   //   hidden:  papers whose author list is truncated without the owner in view
   //   absent:  papers whose complete author list never names the owner
+  //   unranked: of the papers in the "not ranked" column, how many are preprints (the venue line begins with arXiv, bioRxiv…, as Scholar lists them), how many are a secondary
+  //             track (a workshop, demo or the like) of a venue that is on a list, and how many are another venue — so that "–: 21" is not read as 21 papers at weak venues
   // `keep`: roles that have a row even with no paper (a count of fewer papers keeps the rows of the whole list, so that the table does not change its shape)
+  const PREPRINT = /^(?:arxiv|biorxiv|medrxiv|ssrn|preprint|techrxiv|chemrxiv|research square)\b/i;
+  const unrankedKind = (p) => (PREPRINT.test(String(p.venueText || "").trim()) ? "preprint" : p.venue && p.venue.secondary ? "secondary" : "other");
   function summarize(papers, source = "ccf", { keep = [] } = {}) {
     const columns = source === null ? [] : [...(TIERS[source] || TIERS.ccf), NONE];
     const blank = () => Object.assign(Object.fromEntries(columns.map((c) => [c, 0])), { total: 0 });
     const byRole = Object.fromEntries(ROLES.map((r) => [r, blank()]));
     const totals = blank();
     let hidden = 0, absent = 0;
+    const unranked = { preprint: 0, secondary: 0, other: 0 };
     for (const p of papers) {
       if (p.status === "hidden") { hidden++; continue; }
       if (p.status !== "found" || !p.role) { absent++; continue; }
@@ -126,13 +131,14 @@
         const t = tierOf(p, source);
         const col = columns.includes(t) ? t : NONE;
         byRole[p.role][col]++; totals[col]++;
+        if (col === NONE) unranked[unrankedKind(p)]++;
       }
       byRole[p.role].total++; totals.total++;
     }
     const rows = ROLES
       .filter((r) => byRole[r].total > 0 || r === "first" || r === "second" || r === "last" || keep.includes(r))
       .map((r) => ({ role: r, ...byRole[r] }));
-    return { source, columns, rows, totals, hidden, absent, papers: papers.length };
+    return { source, columns, rows, totals, hidden, absent, papers: papers.length, unranked: columns.length ? unranked : null };
   }
 
   // Does a paper fall inside the matrix selection? sel = { role?, tier? }.

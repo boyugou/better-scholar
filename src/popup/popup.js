@@ -50,6 +50,8 @@
     const sources = data.noRanks ? [] : listed;                     // (nothing on this profile is on a list that is on: roles only)
     let source = sources.includes(B.prefs.source(prefs, ui)) ? B.prefs.source(prefs, ui) : sources[0] || "none";
     const tp = prefs.panel.table;
+    // what the "not ranked" column holds, kind by kind (on hover), as in the panel
+    const unrankedWords = (s) => (s.unranked ? [["unrankedPreprints", s.unranked.preprint], ["unrankedSecondary", s.unranked.secondary], ["unrankedOther", s.unranked.other]].filter(([, n]) => n).map(([k, n]) => `${t(k)} ${n}`).join(" · ") : "");
     const draw = () => {
       const s = data.summaries[source];
       const tier = (c) => (c === "none" ? "–" : c);
@@ -64,7 +66,7 @@
       const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")),
         showTotal ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
       const table = h("table", {},
-        h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, t("colRole"))), ...cols.map((c) => h("th", {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
+        h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, t("colRole"))), ...cols.map((c) => h("th", c === "none" ? { title: [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") } : {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
         h("tbody", {}, ...s.rows.filter((r) => r.role !== "middle" || tp.other).map((r) => h("tr", {},
           h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
           ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),

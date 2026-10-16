@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "O resumo copiado e a tabela copiada recebem uma linha com a ligação do perfil e a data (Source: …), para que os números possam ser arquivados ou enviados. Uma lista que não está integralmente carregada indica isso ali, independentemente da definição deste interruptor."
+  },
+  "unrankedPreprints": {
+    "message": "Pré-publicações"
+  },
+  "unrankedSecondary": {
+    "message": "Categorias secundárias"
+  },
+  "unrankedOther": {
+    "message": "Outros veículos"
   }
 }

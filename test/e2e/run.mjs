@@ -1288,6 +1288,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal(await visibleRows(page), narrow.last.A, "and lists the papers of that cell within the years chosen");
       await page.click(cell);
       await eventually(page, () => !document.querySelector('button.rr-cell[aria-pressed="true"]'));
+      // what the "not ranked" column holds is on its header: preprints, secondary tracks, other venues — and adds up to the column's total
+      const noneTitle = await page.locator('#rr-panel th button[data-tier="none"]').getAttribute("title");
+      const parts = [...noneTitle.matchAll(/(?:Preprints|Secondary tracks|Other venues) (\d+)/g)].map((x) => Number(x[1]));
+      assert.ok(parts.length >= 1, "the header says: " + noneTitle);
+      assert.equal(parts.reduce((a, b) => a + b, 0), Object.entries(narrow).filter(([k]) => k !== "hidden").reduce((n, [, r]) => n + (r.none || 0), 0), "and the kinds add up to the column's total: " + noneTitle);
       // the h-index filter: the counts take its minimum without the picks (a cell leaves them as they were), while the button, with a cell picked, still lists the papers behind its own number
       await page.click('[data-metric="mH"]');
       await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));

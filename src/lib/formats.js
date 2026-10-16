@@ -40,6 +40,8 @@
       const parts = summary.columns.filter((c) => r[c]).map((c) => `${c === NONE ? notRanked : c}: ${r[c]}`);
       lines.push(`${label[r.role]}: ${r.total}${parts.length ? ` (${parts.join(", ")})` : ""}`);
     }
+    const u = summary.unranked;
+    if (u && summary.totals[NONE]) lines.push(`Not ranked: ${summary.totals[NONE]} (${[["preprints", u.preprint], ["secondary tracks of ranked venues", u.secondary], ["other venues", u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(", ")})`);
     if (summary.hidden) lines.push(`Role not visible (author list truncated by Scholar): ${summary.hidden}`);
     if (summary.absent) lines.push(`Name not found in author list: ${summary.absent}`);
     for (const line of extra) lines.push(line);

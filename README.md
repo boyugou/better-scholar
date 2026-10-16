@@ -196,7 +196,7 @@ Each format is a button in the panel's copy row and in the toolbar popup, and ha
 
 | Button | Output |
 |---|---|
-| *Copy summary* | The role × rank table as plain text, with the awards and talks line and the lists' edition |
+| *Copy summary* | The role × rank table as plain text, with what the not-ranked column holds (preprints, secondary tracks of ranked venues, other venues), the awards and talks line and the lists' edition |
 | *Copy as table* | The role × rank table, tab-separated, for a spreadsheet (and as a real table for a word processor) |
 | *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language); also as a real table for a word processor, with your name in bold in the author cells when the page marks it |
 | *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*. URL`; also with real italics for a word processor |

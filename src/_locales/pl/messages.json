@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Skopiowane zestawienie i skopiowana tabela dostają wiersz z linkiem do profilu i datą (Source: …), żeby liczby można było zarchiwizować albo przesłać dalej. Lista, która nie jest w całości wczytana, mówi o tym w tym miejscu, niezależnie od ustawienia tego przełącznika."
+  },
+  "unrankedPreprints": {
+    "message": "Preprinty"
+  },
+  "unrankedSecondary": {
+    "message": "Kategorie drugorzędne"
+  },
+  "unrankedOther": {
+    "message": "Pozostałe miejsca"
   }
 }

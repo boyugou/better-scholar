@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Il riepilogo copiato e la tabella copiata ricevono una riga con il link del profilo e la data (Source: …), così i numeri si possono archiviare o inoltrare. Un elenco non completamente caricato lo segnala in quel punto, indipendentemente da come è impostato questo interruttore."
+  },
+  "unrankedPreprints": {
+    "message": "Preprint"
+  },
+  "unrankedSecondary": {
+    "message": "Categorie secondarie"
+  },
+  "unrankedOther": {
+    "message": "Altre sedi"
   }
 }

@@ -464,6 +464,9 @@
       summaryHead.hidden = !heading && !control;
     }
 
+    // What the "not ranked" column holds, kind by kind (on hover): "Preprints 9 · Secondary tracks 4 · Other venues 8"
+    const unrankedWords = (s) => (s.unranked ? [["unrankedPreprints", s.unranked.preprint], ["unrankedSecondary", s.unranked.secondary], ["unrankedOther", s.unranked.other]].filter(([, n]) => n).map(([k, n]) => `${t(k)} ${n}`).join(" · ") : "");
+
     function renderMatrix(m) {
       const tp = m.prefs.panel.table;
       const s = m.summary, sel = m.selection;
@@ -475,7 +478,7 @@
       const headRow = h("tr", {}, h("th", {}, h("span", { class: "rr-sr" }, t("colRole"))),
         ...cols.map((c) => h("th", { ...tierPart(c) },
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
-            title: c === "none" ? t("tipUnranked") : "", onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),
+            title: c === "none" ? [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") : "", onClick: () => cb.onSelect({ role: undefined, tier: c }) }, tierText(c)))),
         totalHead);
       const rows = s.rows.filter((r) => r.role !== "middle" || tp.other);
       const bodyRows = rows.map((r) => h("tr", { "data-role": r.role, ...(r.role === "middle" ? P("panel.table.other") : {}) },

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Den kopierte oversikten og den kopierte tabellen får en linje med profilens lenke og datoen (Source: …), slik at tallene kan arkiveres eller sendes videre. En liste som ikke er fullstendig lastet, sier det der uansett hvordan denne bryteren er stilt."
+  },
+  "unrankedPreprints": {
+    "message": "Preprinter"
+  },
+  "unrankedSecondary": {
+    "message": "Sekundære spor"
+  },
+  "unrankedOther": {
+    "message": "Andre steder"
   }
 }

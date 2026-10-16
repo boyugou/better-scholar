@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Die kopierte Übersicht und die kopierte Tabelle bekommen eine Zeile mit dem Profillink und dem Datum (Source: …), damit die Zahlen abgelegt oder weitergegeben werden können. Eine Liste, die nicht vollständig geladen ist, sagt das dort – unabhängig von dieser Option."
+  },
+  "unrankedPreprints": {
+    "message": "Vorabdrucke"
+  },
+  "unrankedSecondary": {
+    "message": "Nebenkategorien"
+  },
+  "unrankedOther": {
+    "message": "Weitere Venues"
   }
 }

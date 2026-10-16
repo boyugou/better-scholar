@@ -150,3 +150,21 @@ test("topVenues: one short name that stands for two venues gives no name and no 
   assert.deepEqual(m.topVenues(same), [{ key: "ASE", count: 2, name: "International Conference on Automated Software Engineering", ccf: "A", core: "A*" }]);
   assert.deepEqual(m.topVenues(same, 6, { ccf: false, core: true }), [{ key: "ASE", count: 2, name: "International Conference on Automated Software Engineering", ccf: null, core: "A*" }]);
 });
+
+test("summarize says what the not-ranked column holds: preprints, secondary tracks of ranked venues, other venues; only papers of the table, and none by role only", () => {
+  const p = (role, tier, venueText, secondary) => ({ status: "found", role, venue: { ccf: tier ? { tier } : null, core: null, secondary: secondary || null }, venueText, citations: 0 });
+  const rows = [
+    p("first", "A", "Advances in neural information processing systems"),
+    p("first", null, "arXiv preprint arXiv:2301.00001, 2023"), p("last", null, "bioRxiv, 2022"), p("last", null, "SSRN Electronic Journal"),
+    p("last", null, "Proceedings of the 2022 Workshop on X", "workshop"),
+    p("second", null, "Some Journal of Things 12 (3), 45-67, 2020"), p("second", null, "A Book Chapter"),
+    { status: "hidden", role: null, venue: {}, venueText: "arXiv preprint", citations: 0 },
+    { status: "absent", role: null, venue: {}, venueText: "arXiv preprint", citations: 0 }
+  ];
+  const s = m.summarize(rows, "ccf");
+  assert.deepEqual(s.unranked, { preprint: 3, secondary: 1, other: 2 }, "the papers of the table that are in its not-ranked column: a hidden or absent paper is not");
+  assert.equal(s.totals.none, 6);
+  assert.equal(s.unranked.preprint + s.unranked.secondary + s.unranked.other, s.totals.none, "all of them, once");
+  assert.equal(m.summarize(rows, null).unranked, null, "by role only there is no such column");
+  assert.deepEqual(m.summarize([], "ccf").unranked, { preprint: 0, secondary: 0, other: 0 });
+});
