@@ -1088,7 +1088,7 @@
     "message": "Egyszínű"
   },
   "optPreviewEdit": {
-    "message": "Ha egy rész fölé viszed az egeret, elrejtheted (✕) vagy áthelyezheted (⠿). Egy nevet dupla kattintással átnevezhetsz."
+    "message": "Ha egy rész fölé viszed az egeret, elrejtheted (✕), áthelyezheted (⠿) vagy megjelenítheted a beállítását (⚙). Egy nevet dupla kattintással átnevezhetsz, bármi másra duplán kattintva pedig a beállításához ugorhatsz."
   },
   "optHide": {
     "message": "Elrejtés"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Beállításának megjelenítése"
   }
 }

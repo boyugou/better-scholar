@@ -1088,7 +1088,7 @@
     "message": "Jednobarevné"
   },
   "optPreviewEdit": {
-    "message": "Najetím na část ji skryjete (✕) nebo přesunete (⠿). Dvojklikem na název jej přejmenujete."
+    "message": "Najetím na část ji skryjete (✕), přesunete (⠿) nebo najdete její nastavení (⚙). Dvojklikem na název jej přejmenujete, dvojklikem na cokoli jiného přejdete k jeho nastavení."
   },
   "optHide": {
     "message": "Skrýt"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Zobrazit jeho nastavení"
   }
 }

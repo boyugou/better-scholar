@@ -59,16 +59,17 @@
           ...sources.map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, name(k))))
         : sources.length === 1 ? h("div", { class: "src" }, name(sources[0])) : null;
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);
+      const showTotal = tp.total || !cols.length;                                     // (a table with no tier column has no number but the total: it is drawn whatever its switch says)
       // (the count of the "hidden" row is its only number: with no total column it takes the room of the columns)
       const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")),
-        tp.total ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
+        showTotal ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
       const table = h("table", {},
-        h("thead", {}, h("tr", {}, h("th", {}), ...cols.map((c) => h("th", {}, tier(c))), tp.total ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
+        h("thead", {}, h("tr", {}, h("th", {}), ...cols.map((c) => h("th", {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
         h("tbody", {}, ...s.rows.filter((r) => r.role !== "middle" || tp.other).map((r) => h("tr", {},
           h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
           ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),
-          tp.total ? h("td", { class: "t" }, String(r.total)) : null)), hiddenRow),
-        tp.total ? h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))) : null);
+          showTotal ? h("td", { class: "t" }, String(r.total)) : null)), hiddenRow),
+        showTotal ? h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))) : null);
       const mp = prefs.panel.marks;
       const markParts = !mp.show ? [] : B.marks.rows(mp.grouping).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
       // A copy button: the text comes from the page (the same as the panel's button) and goes to the clipboard — the CSV to a file. What there is to say is said on the button.

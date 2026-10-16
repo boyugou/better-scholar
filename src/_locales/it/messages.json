@@ -1109,7 +1109,7 @@
     "message": "Monocromatico"
   },
   "optPreviewEdit": {
-    "message": "Passa il mouse su una parte per nasconderla (✕) o spostarla (⠿). Fai doppio clic su un nome per rinominarlo."
+    "message": "Passa il mouse su una parte per nasconderla (✕), spostarla (⠿) o mostrare la sua impostazione (⚙). Fai doppio clic su un nome per rinominarlo, su qualsiasi altra cosa per andare alla sua impostazione."
   },
   "optHide": {
     "message": "Nascondi"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Mostra la sua impostazione"
   }
 }

@@ -1109,7 +1109,7 @@
     "message": "Yksivärinen"
   },
   "optPreviewEdit": {
-    "message": "Vie hiiri osan päälle, jos haluat piilottaa sen (✕) tai siirtää sen (⠿). Kaksoisnapsauta nimeä, jos haluat nimetä sen uudelleen."
+    "message": "Vie hiiri osan päälle, jos haluat piilottaa sen (✕), siirtää sen (⠿) tai näyttää sen asetuksen (⚙). Kaksoisnapsauta nimeä, jos haluat nimetä sen uudelleen, tai mitä tahansa muuta, jos haluat siirtyä sen asetukseen."
   },
   "optHide": {
     "message": "Piilota"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Näytä sen asetus"
   }
 }

@@ -1088,7 +1088,7 @@
     "message": "Đơn sắc"
   },
   "optPreviewEdit": {
-    "message": "Rê chuột lên một phần để ẩn (✕) hoặc di chuyển (⠿). Nhấp đúp vào tên để đổi tên."
+    "message": "Rê chuột lên một phần để ẩn (✕), di chuyển (⠿) hoặc hiện cài đặt của phần đó (⚙). Nhấp đúp vào tên để đổi tên, còn nhấp đúp vào mọi thứ khác để chuyển đến cài đặt của nó."
   },
   "optHide": {
     "message": "Ẩn"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Hiện cài đặt"
   }
 }

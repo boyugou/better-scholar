@@ -1109,7 +1109,7 @@
     "message": "Monochrome"
   },
   "optPreviewEdit": {
-    "message": "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it."
+    "message": "Hover a part to hide it (✕), move it (⠿) or find its setting (⚙). Double-click a name to rename it, anything else to jump to its setting."
   },
   "optHide": {
     "message": "Hide"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Show its setting"
   }
 }

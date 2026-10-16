@@ -1088,7 +1088,7 @@
     "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Arahkan kursor ke bagian untuk menyembunyikannya (✕) atau memindahkannya (⠿). Klik ganda nama untuk mengganti namanya."
+    "message": "Arahkan kursor ke bagian untuk menyembunyikannya (✕), memindahkannya (⠿) atau menampilkan pengaturannya (⚙). Klik ganda nama untuk mengganti namanya, klik ganda hal lain untuk melompat ke pengaturannya."
   },
   "optHide": {
     "message": "Sembunyikan"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Tampilkan pengaturannya"
   }
 }

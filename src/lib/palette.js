@@ -26,6 +26,15 @@
   // the text that reads best on a fill: white or near black, whichever has the higher contrast
   const on = (fill) => (contrast(WHITE, fill) >= contrast(DARK, fill) ? WHITE : DARK);
 
+  // Text on a chip is small (10.5px): it has to read at the contrast WCAG asks of small text, whatever colour a person picks. A text colour is darkened, step by step,
+  // until it does on the chip's background; a fill that neither white nor near-black text can be read on (a mid grey) is darkened until white text can.
+  const AA = 4.5;
+  const darker = (hex) => mix(hex, "#000000", 0.94);
+  function legible(ink, bg) { let c = ink; for (let i = 0; i < 60 && contrast(c, bg) < AA; i++) c = darker(c); return c; }
+  function solid(fill) { let c = fill; for (let i = 0; i < 60 && contrast(on(c), c) < AA; i++) c = darker(c); return c; }
+  // (the soft look lays a tenth of the fill on white; the outline and text looks are on white itself: the tint is the harder of the two)
+  const tint = (fill) => mix(fill, WHITE, 0.1);
+
   // The custom properties of one family for the colour `hex` ("#rrggbb"): { "--rr-ccf-1-ink": …, … }
   function vars(family, hex) {
     if (!FAMILIES.includes(family) || !/^#[0-9a-fA-F]{6}$/.test(hex)) return {};
@@ -38,12 +47,17 @@
         { ink: mix(x, "#69708a", 0.16), edge: mix(x, "#d3d7e3", 0.09), fill: mix(x, WHITE, 0.62) },
         { ink: mix(x, "#727a8f", 0.1), edge: mix(x, "#e2e5ec", 0.06), fill: mix(x, WHITE, 0.5) }
       ];
-      tiers.forEach((t, i) => { for (const [k, v] of Object.entries({ ...t, on: on(t.fill) })) out[`--rr-${family}-${i + 1}-${k}`] = v; });
+      tiers.forEach((t, i) => {
+        const fill = solid(t.fill);
+        for (const [k, v] of Object.entries({ ink: legible(t.ink, tint(fill)), edge: t.edge, fill, on: on(fill) })) out[`--rr-${family}-${i + 1}-${k}`] = v;
+      });
     } else if (family === "award") {
-      Object.assign(out, { "--rr-award-bg": mix(x, WHITE, 0.14), "--rr-award-ink": mix(x, "#000000", 0.5), "--rr-award-edge": mix(x, WHITE, 0.5), "--rr-award-icon": x,
-        "--rr-award-fill": x, "--rr-award-on": on(x), "--rr-finalist-ink": mix(x, "#000000", 0.55), "--rr-finalist-edge": mix(x, WHITE, 0.6) });
+      const bg = mix(x, WHITE, 0.14), fill = solid(x);
+      Object.assign(out, { "--rr-award-bg": bg, "--rr-award-ink": legible(mix(x, "#000000", 0.5), bg), "--rr-award-edge": mix(x, WHITE, 0.5), "--rr-award-icon": x,
+        "--rr-award-fill": fill, "--rr-award-on": on(fill), "--rr-finalist-ink": legible(mix(x, "#000000", 0.55), WHITE), "--rr-finalist-edge": mix(x, WHITE, 0.6) });
     } else {
-      Object.assign(out, { "--rr-talk-bg": mix(x, WHITE, 0.1), "--rr-talk-ink": mix(x, "#000000", 0.85), "--rr-talk-edge": mix(x, WHITE, 0.25), "--rr-talk-fill": x, "--rr-talk-on": on(x) });
+      const bg = mix(x, WHITE, 0.1), fill = solid(x);
+      Object.assign(out, { "--rr-talk-bg": bg, "--rr-talk-ink": legible(mix(x, "#000000", 0.85), bg), "--rr-talk-edge": mix(x, WHITE, 0.25), "--rr-talk-fill": fill, "--rr-talk-on": on(fill) });
     }
     return out;
   }
@@ -51,5 +65,5 @@
   const BY_FAMILY = Object.fromEntries(FAMILIES.map((f) => [f, Object.keys(vars(f, DEFAULTS[f]))]));
   const NAMES = FAMILIES.flatMap((f) => BY_FAMILY[f]);
 
-  return { FAMILIES, DEFAULTS, NAMES, BY_FAMILY, vars, mix, on, contrast, luminance };
+  return { FAMILIES, DEFAULTS, NAMES, BY_FAMILY, AA, vars, mix, on, contrast, luminance, legible, solid };
 });

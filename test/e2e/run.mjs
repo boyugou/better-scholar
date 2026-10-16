@@ -33,6 +33,7 @@ const venues = require(path.join(repo, "src/lib/venues.js"));
 const metrics = require(path.join(repo, "src/lib/metrics.js"));
 const analysis = require(path.join(repo, "src/lib/analysis.js"));
 const prefsLib = require(path.join(repo, "src/lib/prefs.js"));
+const paletteLib = require(path.join(repo, "src/lib/palette.js"));
 const agentLib = require(path.join(repo, "src/lib/agent.js"));
 const ccf = require(path.join(repo, "src/data/ccf.js"));
 const core = require(path.join(repo, "src/data/core.js"));
@@ -1118,6 +1119,49 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await eventually(page, () => !document.querySelector('[data-rr="variants"]').hidden);
     ok("every thing the panel draws has its own switch (title bar, table, totals, filters, citation totals, year chart, name help), the parts and the buttons follow their order, and a filter whose control goes is cleared");
 
+    // -- S3c2. a call does not apply what the settings leave without a control (and says so), the exports follow what is drawn, a table with no rank column keeps its total,
+    // and a panel with nothing in it is no frame on the page
+    {
+      const pageCall = (method, params) => page.evaluate(([m, pa]) => new Promise((resolve) => {
+        const id = "c" + Math.random();
+        const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
+        document.addEventListener("better-scholar:response", on);
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: m, params: pa } }));
+      }), [method, params]);
+      await patchPrefs({ panel: { filters: { show: false, bar: false }, metrics: { show: false } } });
+      await eventually(page, () => document.querySelector('[data-rr="filters"]').hidden && document.querySelector('[data-rr="metrics"]').hidden);
+      const gone = await pageCall("filter", { query: "ccf:a", minCitations: 500, impact: "h" });
+      assert.ok(gone.ok, JSON.stringify(gone));
+      assert.deepEqual([...gone.result.ignored].sort(), ["impact", "minCitations", "query"], "the filters that have no control are said to be left out");
+      assert.equal(gone.result.shown, gone.result.total, "and are not applied: nothing could undo them");
+      await patchPrefs({ panel: { filters: { show: true, search: false, bar: true } } });
+      await eventually(page, () => document.querySelector(".rr-search").hidden && !document.querySelector(".rr-search-pills").hidden);
+      const kept = await pageCall("filter", { query: "role:first learning" });
+      assert.equal(kept.result.filters.query, "role:first", "with no search box the words of a quick filter stay (a button takes them off), the others do not");
+      assert.deepEqual(kept.result.ignored, ["query"]);
+      await pageCall("clearFilters");
+      await patchPrefs({ panel: { filters: { search: true }, metrics: { show: true } } });
+      await eventually(page, () => !document.querySelector(".rr-search").hidden && !document.querySelector('[data-rr="metrics"]').hidden);
+      // the exports follow what is drawn: a list that no chip and no tab shows is not used, whatever the call asks for
+      await patchPrefs({ rows: { core: false }, panel: { table: { core: false } } });
+      await eventually(page, () => !document.querySelector('.rr-chip[data-kind="core"]'));
+      const noCore = await pageCall("export", { format: "summary", source: "core" });
+      assert.match(noCore.result.text, /by authorship role and CCF rank/, "a rank list nothing draws is not used by the summary");
+      await patchPrefs({ rows: { core: true }, panel: { table: { core: true } } });
+      // a table with no rank column has no number but the total: it is drawn whatever the switch says
+      await patchPrefs({ rows: { ccf: false, core: false }, panel: { table: { ccf: false, core: false, total: false } } });
+      await eventually(page, () => document.querySelector(".rr-matrix th.rr-col-total") && document.querySelectorAll(".rr-matrix .rr-total").length > 0);
+      await patchPrefs({ rows: { ccf: true, core: true }, panel: { table: { ccf: true, core: true, total: true } } });
+      await eventually(page, () => document.querySelector('.rr-chip[data-kind="ccf"]') && document.querySelectorAll(".rr-matrix thead th").length > 3);
+      // a panel with nothing in it is hidden, not an empty frame
+      const parts = { table: true, copy: true, marks: true, filters: true, metrics: true, years: true, venues: false, status: true, names: true };
+      await patchPrefs({ panel: { header: { name: false, settings: false, fold: false }, ...Object.fromEntries(Object.keys(parts).map((k) => [k, { show: false }])) } });
+      await eventually(page, () => document.querySelector("#rr-panel").hidden);
+      await patchPrefs({ panel: { header: { name: true, settings: true, fold: true }, ...Object.fromEntries(Object.entries(parts).map(([k, v]) => [k, { show: v }])) } });
+      await eventually(page, () => !document.querySelector("#rr-panel").hidden && document.querySelector('[data-rr="metrics"]'));
+      ok("a call leaves out (and reports) the filters the settings left without a control; the exports use only a list that is drawn; a table with no rank column keeps its total; a panel with nothing in it is hidden");
+    }
+
     // -- S3d. names: the person's own words for a title or a name on the screen, in every language; what a machine reads keeps the standard words
     const nameOf = async (key, words) => { const f = opts.locator(`input[data-pref="labels.${key}"]`); await f.fill(words); await f.press("Enter"); await settle(opts); };
     await opts.bringToFront();
@@ -1234,8 +1278,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const shaped = await chipStyle(rank);
     assert.deepEqual([shaped.radius, shaped.k], ["3px", "none"], "square, and the tier alone (the list's name is hidden)");
     assert.match(await page.locator(rank).first().getAttribute("title"), /CCF A/, "the tooltip still names the list");
-    await patchPrefs({ chips: { shape: "pill", label: "full" }, colors: { ccf: "#0d9488", award: "#7c3aed" } });
-    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "13,148,136"; });
+    await patchPrefs({ chips: { shape: "pill", label: "full" }, colors: { ccf: "#0f766e", award: "#7c3aed" } });          // (a colour that reads on its own: a lighter pick is darkened for the text, see palette.test.js)
+    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "15,118,110"; });
     assert.equal((await chipStyle('.rr-chip[data-kind="core"][data-tier="A"], .rr-chip[data-kind="core"][data-tier="A*"]')).color, "rgb(51, 69, 168)", "a colour is for one family: CORE keeps its own");
     await pollPage(opts, () => getComputedStyle(document.documentElement).getPropertyValue("--rr-award-fill").trim() === "#7c3aed");
     assert.notEqual((await previewChip(".rr-chip-mark-award")).color, "rgb(107, 74, 0)", "the award chips are in the picked colour");
@@ -1244,12 +1288,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await settle(opts);
     await opts.click('[data-chip-theme="lists"]');
     await settle(opts);
-    await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return document.documentElement.classList.contains("rr-chips-soft") && Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "37,99,235"; });
+    const listsInk = [1, 3, 5].map((k) => parseInt(paletteLib.vars("ccf", "#2563eb")["--rr-ccf-1-ink"].slice(k, k + 2), 16)).join();          // (the look's CCF text: the picked blue, darkened a little where it would not read on the soft tint)
+    await eventually(page, (want) => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return document.documentElement.classList.contains("rr-chips-soft") && Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === want; }, listsInk);
     assert.equal(await opts.locator('[data-chip-theme="lists"]').evaluate((el) => el.classList.contains("active")), true);
     await opts.click('[data-chip-theme="outline"]');
     await settle(opts);
     await eventually(page, () => { const x = document.createElement("canvas").getContext("2d"); x.fillStyle = getComputedStyle(document.querySelector('.rr-chip[data-kind="ccf"][data-tier="A"]')).color; x.fillRect(0, 0, 1, 1); return !document.documentElement.classList.contains("rr-chips-soft") && Array.from(x.getImageData(0, 0, 1, 1).data).slice(0, 3).join() === "51,69,168"; });
     assert.deepEqual([(await stored(opts, "sync", "prefs")).chips, Object.values((await stored(opts, "sync", "prefs")).colors).slice(4)], [{ style: "outline", shape: "pill", label: "full" }, ["", "", "", ""]], "the built-in look: nothing of the others is left");
+    assert.deepEqual(await opts.evaluate(() => [...document.querySelectorAll(".chip-theme")].flatMap((b) => { const br = b.getBoundingClientRect(); return [...b.querySelectorAll(".rr-chip")].filter((c) => c.getBoundingClientRect().right > br.right - 1).map((c) => b.dataset.chipTheme + ": " + c.textContent); })), [], "no chip on a look's button runs out of the button");
     ok("the look of the chips: outline, soft, solid and text only; rounded or square; the list's name or the tier alone; a colour for each family; ready-made looks that replace the look in force");
 
     // -- S4. the toolbar popup follows the settings
@@ -1446,6 +1492,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.locator(".pv-rename-input").press("Escape");
     await settle(opts);
     assert.equal((await stored(opts, "sync", "prefs")).labels.metricsTitle, "", "Escape: the name is not kept");
+    // from the preview to its setting: the ⚙ on a part's rail, and a double-click on anything that is not a name
+    await opts.hover('#pv-panel [data-section="years"] .rr-sec-title');
+    await opts.locator(".pv-rail .pv-go").click();
+    await pollPage(opts, () => document.activeElement && document.activeElement.dataset.pref === "panel.years.show");
+    assert.equal(await opts.locator("#card-years .opt-flash").count(), 1, "the row of the setting flashes");
+    await opts.mouse.move(5, 5);
+    await opts.locator('#preview tr[data-rr-part="roles.last"]').dblclick({ position: { x: 30, y: 40 } });
+    await pollPage(opts, () => document.activeElement && document.activeElement.dataset.pref === "roles.last");
     // from a setting to what it draws: the part is outlined while the pointer is on the setting (and the name's field points at the text)
     await opts.hover('label:has(input[data-pref="panel.copy.json"])');
     assert.equal(await opts.locator('#pv-panel [data-act="copy-json"]').evaluate((el) => el.classList.contains("pv-hot")), true, "a setting points at what it draws");
@@ -1886,6 +1940,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         hidden: 2
       });
       assert.equal(await pg.locator('#gsc_a_b .rr-chip-mark[data-mark="oral"]').count(), 3, "the three Orals the author wrote");
+      // a chip word the person renamed reaches the open page (the chips on the rows are drawn again)
+      const optsG = await openOptions(ctxG);
+      await optsG.fill('input[data-pref="labels.markOral"]', "Keynote");
+      await optsG.press('input[data-pref="labels.markOral"]', "Enter");
+      await settle(optsG);
+      await eventually(pg, () => { const c = [...document.querySelectorAll('#gsc_a_b .rr-chip-mark[data-mark="oral"]')]; return c.length === 3 && c.every((x) => x.textContent.includes("Keynote")); });
+      await optsG.fill('input[data-pref="labels.markOral"]', "");
+      await optsG.press('input[data-pref="labels.markOral"]', "Enter");
+      await settle(optsG);
+      await eventually(pg, () => [...document.querySelectorAll('#gsc_a_b .rr-chip-mark[data-mark="oral"]')].every((x) => x.textContent.includes("Oral")));
+      await optsG.close();
       assert.match(await pg.locator('[data-rr="unmatched"] summary').textContent(), /^2 papers at venues without a rank/, "COLM and TMLR are on no list; Findings and demo tracks are not counted as missing");
       ok("a real profile read on the live page: the table is the one the live panel showed (First 1, Co-first 2, Second 1, Other 7, 2 hidden)");
     } finally { await ctxG.close(); await fxG.close(); }

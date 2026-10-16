@@ -448,6 +448,10 @@ body {
 .chip-theme:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .chip-sample { display: inline-flex; align-items: center; }
 .chip-sample .rr-chips { white-space: nowrap; }
+/* on a look's button the chips that do not fit wrap out of sight (a chip is whole or not shown, never cut in two) */
+.chip-theme .chip-sample { display: flex; align-items: flex-start; align-self: stretch; height: 20px; overflow: hidden; }
+.chip-theme .chip-sample .rr-chips { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; min-width: 0; white-space: normal; }
+.chip-theme .chip-sample .rr-chip { margin: 0; }                                                                   /* (a chip is 18px high: a second line starts below the 20px box) */
 .seg-btn .chip-sample { margin-inline-end: 6px; }
 .opt.opt-color { cursor: default; }
 input.chip-clr { width: 38px; height: 28px; padding: 2px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent; cursor: pointer; }
@@ -464,6 +468,9 @@ input.chip-clr { width: 38px; height: 28px; padding: 2px; border: 1px solid var(
 }
 .pv-btn:hover { background: rgba(255, 255, 255, 0.24); }
 .pv-btn.pv-grip { cursor: grab; letter-spacing: -1px; touch-action: none; }
+.opt-flash { animation: opt-flash 1.8s ease-out; }
+@keyframes opt-flash { 0%, 35% { background: var(--accent-ring); box-shadow: inset 0 0 0 2px var(--accent); } 100% { background: transparent; box-shadow: inset 0 0 0 0 transparent; } }
+@media (prefers-reduced-motion: reduce) { .opt-flash { animation: none; background: var(--accent-ring); box-shadow: inset 0 0 0 2px var(--accent); } }
 .pv-drop { position: absolute; z-index: 31; border-radius: 2px; background: var(--accent); pointer-events: none; box-shadow: 0 0 0 2px var(--accent-ring); }
 body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select: none; }
 .pv-dragged { opacity: 0.4; }

@@ -1088,7 +1088,7 @@
     "message": "Monochromatyczny"
   },
   "optPreviewEdit": {
-    "message": "Najedź kursorem na część, aby ją ukryć (✕) lub przesunąć (⠿). Kliknij dwukrotnie nazwę, aby ją zmienić."
+    "message": "Najedź kursorem na część, aby ją ukryć (✕), przesunąć (⠿) lub pokazać jej ustawienie (⚙). Kliknij dwukrotnie nazwę, aby ją zmienić. Kliknij dwukrotnie cokolwiek innego, aby przejść do jego ustawienia."
   },
   "optHide": {
     "message": "Ukryj"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Pokaż ustawienie"
   }
 }

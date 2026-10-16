@@ -148,9 +148,10 @@
   }
 
   // What decorate() draws on a row, as a string: when it is the same as last time nothing is touched (a long list is decorated once, not once per batch)
+  let namesSig = "";                                                                        // (the person's own names, as set at the last refresh: the chips' words are among them)
   function decorKey(row) {
     const a = row.a, v = a.venue || {};
-    return [analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.rows.name, prefs.rows.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.rows.core && v.core ? v.core.rank + v.core.name : "",
+    return [namesSig, analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.rows.name, prefs.rows.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.rows.core && v.core ? v.core.rank + v.core.name : "",
       B.prefs.chipMarks(prefs, a.marks).map((m) => m.kind + m.source + (m.venue || "") + (m.year || "") + (m.text || "")).join(","), prefs.roles.first, prefs.roles.cofirst, prefs.roles.second, prefs.roles.last,
       row.raw.authorsEl ? row.raw.authorsEl.isConnected : 0, row.raw.venueEl ? row.raw.venueEl.querySelector(":scope > .rr-chips") !== null : 0].join("|");
   }
@@ -518,6 +519,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   }
 
   function refresh() {
+    namesSig = JSON.stringify(prefs.labels);
     applyMerge();
     for (const row of state.rows) decorate(row);
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it

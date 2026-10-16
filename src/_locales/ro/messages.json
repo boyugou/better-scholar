@@ -1088,7 +1088,7 @@
     "message": "Monocrom"
   },
   "optPreviewEdit": {
-    "message": "Treci cu cursorul peste o parte ca s-o ascunzi (✕) sau s-o muți (⠿). Dă dublu clic pe un nume ca să-l redenumești."
+    "message": "Treci cu cursorul peste o parte ca s-o ascunzi (✕), s-o muți (⠿) sau ca să-i găsești setarea (⚙). Dă dublu clic pe un nume ca să-l redenumești, iar pe orice altceva ca să ajungi la setarea lui."
   },
   "optHide": {
     "message": "Ascunde"
@@ -1132,5 +1132,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Arată setarea"
   }
 }

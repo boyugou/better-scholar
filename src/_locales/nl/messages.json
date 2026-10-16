@@ -1109,7 +1109,7 @@
     "message": "Monochroom"
   },
   "optPreviewEdit": {
-    "message": "Wijs een onderdeel aan om het te verbergen (✕) of te verplaatsen (⠿). Dubbelklik op een naam om die te hernoemen."
+    "message": "Wijs een onderdeel aan om het te verbergen (✕), te verplaatsen (⠿) of de instelling ervan te tonen (⚙). Dubbelklik op een naam om die te hernoemen, op al het overige om naar de instelling ervan te gaan."
   },
   "optHide": {
     "message": "Verbergen"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Instelling tonen"
   }
 }

@@ -1109,7 +1109,7 @@
     "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Før musepekeren over en del for å skjule den (✕) eller flytte den (⠿). Dobbeltklikk et navn for å gi det nytt navn."
+    "message": "Før musepekeren over en del for å skjule den (✕), flytte den (⠿) eller vise innstillingen for den (⚙). Dobbeltklikk et navn for å gi det nytt navn, alt annet for å hoppe til innstillingen."
   },
   "optHide": {
     "message": "Skjul"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Vis innstillingen"
   }
 }

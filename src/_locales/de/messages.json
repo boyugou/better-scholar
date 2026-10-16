@@ -1109,7 +1109,7 @@
     "message": "Einfarbig"
   },
   "optPreviewEdit": {
-    "message": "Fahre über einen Teil, um ihn auszublenden (✕) oder zu verschieben (⠿). Doppelklicke einen Namen, um ihn umzubenennen."
+    "message": "Fahre über einen Teil, um ihn auszublenden (✕), zu verschieben (⠿) oder seine Einstellung zu finden (⚙). Doppelklicke einen Namen, um ihn umzubenennen, und alles andere, um zu seiner Einstellung zu springen."
   },
   "optHide": {
     "message": "Ausblenden"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Zugehörige Einstellung anzeigen"
   }
 }

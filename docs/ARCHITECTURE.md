@@ -309,8 +309,9 @@ blocks*, *Duplicate entries*, *Paper list*, *Semantic Scholar*, *Check a venue*,
 switches have *Enable all* / *Disable all*. A search box and a row of links to the cards sit above them.
 
 The preview is an editor, not only a picture (`options/editor.js`). Hovering a setting outlines what it draws; hovering a thing in
-the preview shows a tag (✕ hides it, ✎ renames it, ⠿ moves it where it has an order) and a part of the panel a rail (hide, move);
-a double-click renames; a tray lists what is hidden, one click to show it. The overlays are children of the preview's card, placed
+the preview shows a tag (✕ hides it, ✎ renames it, ⠿ moves it where it has an order, ⚙ shows its setting) and a part of the panel a rail (hide, move, setting);
+a double-click renames a name and on anything else jumps to the setting that draws it (`jump(path)` of `options.js`: the row is scrolled into view, flashes and takes the keyboard; a
+search of the settings that hides it is cleared first); a tray lists what is hidden, one click to show it. The overlays are children of the preview's card, placed
 by measuring, because the preview is drawn again after every change; all of it changes the same record as the controls (`put` /
 `save`), so the two sides are one.
 

@@ -1109,7 +1109,7 @@
     "message": "Monocromo"
   },
   "optPreviewEdit": {
-    "message": "Pasa el cursor sobre una parte para ocultarla (✕) o moverla (⠿). Haz doble clic en un nombre para renombrarlo."
+    "message": "Pasa el cursor sobre una parte para ocultarla (✕), moverla (⠿) o ver su ajuste (⚙). Haz doble clic en un nombre para renombrarlo y en cualquier otra cosa para ir a su ajuste."
   },
   "optHide": {
     "message": "Ocultar"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Mostrar su ajuste"
   }
 }

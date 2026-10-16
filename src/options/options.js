@@ -755,7 +755,11 @@
       onChange: () => { put(row.path, input.value); save(); } });
     const reset = h("button", { type: "button", class: "name-reset", "data-act": "chip-color-reset", title: t("optColorsReset"), "aria-label": `${t(row.label)}: ${t("optColorsReset")}`,
       onClick: () => { put(row.path, ""); save(); } }, "↺");
-    const sync = () => { input.value = at(row.path) || def; reset.hidden = !at(row.path); };
+    const sync = () => {
+      input.value = at(row.path) || def; reset.hidden = !at(row.path);
+      d.words.textContent = t(row.label);                                              // (the word may be one the person renamed: "Spotlight" is in the talks' colour row)
+      input.setAttribute("aria-label", `${t(row.label)}: ${t("optChipColors")}`); reset.setAttribute("aria-label", `${t(row.label)}: ${t("optColorsReset")}`);
+    };
     syncers.push(sync);
     sync();
     return h("div", { class: "opt opt-color" }, h("span", { class: "txt" }, d.name), h("span", { class: "name-edit" }, input, reset));
@@ -1031,7 +1035,23 @@
     const part = PART_OF.exec(s.path);
     return !part || s.path.endsWith(".show") || at(`panel.${part[1]}.show`);
   }).map((s) => ({ path: s.path, name: partName(s.path) }));
-  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts });
+  // from the preview to the controls: the setting of a part (its ⚙, or a double-click on it) is brought into view, flashes, and has the keyboard
+  let flashTimer = 0;
+  function jump(path) {
+    if (searchInput.value) { searchInput.value = ""; filterSettings(""); }                                   // (a search of the settings that has hidden the row)
+    const control = $("controls").querySelector(`[data-pref="${path}"]`);
+    const card = B.prefs.CARDS.find((c) => c.rows.some((r) => r.path === path));
+    const row = (control && control.closest(".opt, .role-studio-card")) || control || (card && $("card-" + card.id));
+    if (!row) return;
+    row.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    for (const el of document.querySelectorAll(".opt-flash")) el.classList.remove("opt-flash");
+    void row.offsetWidth;                                                                                    // (the animation starts again when the same row is asked for twice)
+    row.classList.add("opt-flash");
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(() => row.classList.remove("opt-flash"), 1800);
+    if (control && control.focus && !control.disabled) control.focus({ preventScroll: true });
+  }
+  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts, jump });
   // from the controls to the preview: the part a setting draws is outlined while the pointer or the keyboard is on the setting
   const settingOf = (target) => { const row = target.closest && target.closest(".opt, .role-studio-card"); const el = row && row.querySelector("[data-pref]"); return el ? el.dataset.pref : null; };
   const point = (path) => (path && path.startsWith("labels.") ? editor.highlight(null, path.slice(7)) : editor.highlight(path || null));

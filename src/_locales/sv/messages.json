@@ -1109,7 +1109,7 @@
     "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Håll muspekaren över en del för att dölja den (✕) eller flytta den (⠿). Dubbelklicka på ett namn för att byta namn."
+    "message": "Håll muspekaren över en del för att dölja den (✕), flytta den (⠿) eller visa dess inställning (⚙). Dubbelklicka på ett namn för att byta namn och på allt annat för att hoppa till dess inställning."
   },
   "optHide": {
     "message": "Dölj"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Visa dess inställning"
   }
 }

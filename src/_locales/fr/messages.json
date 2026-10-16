@@ -1109,7 +1109,7 @@
     "message": "Unicolore"
   },
   "optPreviewEdit": {
-    "message": "Survolez une partie pour la masquer (✕) ou la déplacer (⠿). Double-cliquez sur un nom pour le renommer."
+    "message": "Survolez une partie pour la masquer (✕), la déplacer (⠿) ou afficher son réglage (⚙). Double-cliquez sur un nom pour le renommer, sur tout le reste pour accéder à son réglage."
   },
   "optHide": {
     "message": "Masquer"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Afficher son réglage"
   }
 }

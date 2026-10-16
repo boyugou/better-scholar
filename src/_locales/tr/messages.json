@@ -1109,7 +1109,7 @@
     "message": "Tek renkli"
   },
   "optPreviewEdit": {
-    "message": "Bir bölümün üzerine gelerek gizleyin (✕) veya taşıyın (⠿). Bir adı değiştirmek için üzerine çift tıklayın."
+    "message": "Bir bölümün üzerine gelerek gizleyin (✕), taşıyın (⠿) veya ayarını gösterin (⚙). Bir adı değiştirmek için üzerine çift tıklayın, diğer şeylerde ise çift tıklayarak ayarına gidin."
   },
   "optHide": {
     "message": "Gizle"
@@ -1153,5 +1153,8 @@
         "content": "$1"
       }
     }
+  },
+  "optShowSetting": {
+    "message": "Ayarını göster"
   }
 }
