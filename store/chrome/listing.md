@@ -60,8 +60,8 @@ Better Scholar adds two things to Google Scholar profile pages: the profile owne
 • Summary: a role × rank table (click a cell to list those papers), citation totals and h-index of the highlighted papers, and a chart by year.
 • Awards and talks: chips for awards on a bundled list (7,830 paper awards at major conferences) and for the Oral, Spotlight and Highlight labels authors write in the title or venue.
 • Search: press / and type, for example role:first ccf:a cites:>100.
-• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV. The toolbar button and page events for scripts or AI agents give the same data.
-• Settings: a switch for each role and panel part, your own colours, merging duplicate entries, hiding parts of the profile page, 30 languages, and reopening search and profile pages in a chosen language.
+• Copy and export: the summary or the papers shown, as plain text, a table, APA, BibTeX, Markdown, JSON or CSV; the table, the papers and APA also paste into Word or Docs as a real table or with real italics. The toolbar button and page events for scripts or AI agents give the same data.
+• Settings: a switch for each role and for every part of the panel and every thing in it, in any order, with your own names for titles and buttons; the look and colours of the chips; a live preview that you edit by hovering it (hide, move, rename); a box that checks a venue against the lists; merging duplicate entries, hiding parts of the profile page, 30 languages, and reopening search and profile pages in a chosen language.
 
 The ranks come from today's CCF and CORE lists, not the rank a venue had when the paper was published. CCF states that its list is not a basis for academic evaluation.
 
@@ -74,13 +74,12 @@ Everything else runs in your browser: no account, no analytics, no ads. Settings
 Free and open source (Apache 2.0). Better Scholar is an independent project and is not affiliated with or endorsed by Google.
 ```
 
-Checks done on this text (re-counted 2026-10-15; the text itself is unchanged since 2.39.0 and still true of 2.41.0): 2,490
+Checks done on this text (re-counted 2026-10-16, after two bullets were extended for 2.40.0 and 2.41.0; still true of 2.41.0): 2,812
 characters; "Scholar" appears 5 times (counting "Better Scholar", "Google Scholar" and "Semantic Scholar"), "CCF" 3 (once as
 `ccf:a`), "CORE" 2, "rank" 4 (7 with "ranks" and "ranking"), all in sentences (policy: no "unnatural repetition of the same
-keyword more than 5 times"); no competitor is named; no superlatives. The text does not mention what 2.40.0 and 2.41.0 added:
-the editable preview with the user's own names and chip looks, the "Check a venue" box on the settings page, `type:conference`
-and `type:journal` in the search, and the HTML on the clipboard for a word processor. Nothing is false without them; if you add
-a sentence for one, add its row to `claims.md` too.
+keyword more than 5 times"); no competitor is named; no superlatives. The text says what 2.40.0 and 2.41.0 added in two bullets (the
+HTML on the clipboard; the own names, chip looks, editable preview and venue box), each with its row in `claims.md` (L36 to L39);
+`type:conference` and `type:journal` are not mentioned.
 
 ### Category
 
