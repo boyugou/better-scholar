@@ -171,15 +171,40 @@ means no badge:
 4. **Subtitle** — a known name followed by extra words (`…: Human Language Technologies`).
 
 Ties between entries with the same canonical key are broken by the event word in the
-string (`symposium` → SoCC rather than the JCC conference). **Secondary tracks** —
-Findings, workshops, demos, posters, tutorials, extended abstracts, short/industry papers,
-shared tasks — get no badge unless the venue's own official name contains the word
-(IWQoS, HotNets), or the string carries an older name of the venue that does, whole (sponsors,
-ordinals and "international" aside; a cut name's first four words are enough: "International Workshop on Artificial Intelligence and Statistics" is AISTATS;
-"AISTATS Workshop on Causality" is a workshop at it; every track word of the string must be one the venue's own name holds). The result says the word
-(`secondary`) and, when a listed venue was matched and its badge withheld because of it, `refused` — the panel's *Not ranked → secondary tracks* counts those and not every
-string with a track word (a journal called "Surveys & Tutorials" is not a track of anything). Results are memoised per string and carry the rule and entry that matched,
-which the chip tooltip shows.
+string (`symposium` → SoCC rather than the JCC conference); a journal and a conference of one
+name are told apart by the acronym the string names (`Computational Visual Media (CVM)`).
+
+**Guards.** Each is a veto that stops a weaker reading from beating a stronger one, and each
+exists because a real string went wrong without it (the test that pins it names the string):
+
+| Guard (in `matchSource` unless noted) | What it stops |
+|---|---|
+| `acronymAgrees` | a name hit that is another venue's when the string names an acronym — leading (`AAAI'17: …`, `SDM-19: …`) or in a parenthesis (`(AAAI-07)`) — whose venue is not the hit (IJCAI's boiled name vs AAAI); the hit stays when its own acronym, or its whole name, is in the string |
+| `nameBody` | a leading acronym repeated inside the name (`AAAI-23: Thirty-Seventh AAAI Conference …`) is read once |
+| `byContext` | two venues share an acronym (`FSE`): the one whose own words the rest of the string is |
+| `subjectIsAnotherVenues`, `nameIsAnotherVenues`, `foreign`, `namedElsewhere`, `parenContradicts` | an acronym in front of, or next to, a name about something else (`ITS '14: … Interactive Tabletops`, `SIGGRAPH Asia`, `ACM SIGIR … (ICTIR)`); the venue's words are those of both lists' venue, not of another that squashes to the same acronym |
+| `rawNamesVenue` | an acronym printed with `&` names its own venue (`C&C` is not `CC`) unless `idx.sameVenue` pairs the spellings (`S&P`/`SP`) |
+| `resolveUncached` hint | an acronym is no conference when it is a journal-only abbreviation with a page range (`TPAMI, 1-14`) or a one-word journal title (`GeoInformatica 12 (3)`); `prepare` marks `hasVolume`/`hasIssue` (a parenthesis that looks like an issue: `ISSUE_BODY`; a note is none) and an edition equal to the year's last two digits is no volume |
+| `typeClash`, `former` aliases | a string that says "Conference" is not the venue that says "Symposium"; the names a venue had that say "Workshop" count for the string's event word, not against it |
+| `ownWord` (in `resolveUncached`) | a track word: see below |
+
+**Secondary tracks** — Findings, workshops, demos, posters, tutorials, extended abstracts,
+short/industry papers, shared tasks — get no badge, unless every track word of the string is one
+the venue's own name holds. `ownWord` has two ways in. (a) The venue's official name holds the word
+(IWQoS, HotNets): exempt — but where the string says "Workshop on <subject>", the subject must be the
+venue's own words (spelling and endings aside; a cut string needs two words of it that begin the subject of one of its names), or it is
+another workshop (`PKC 2019 Workshop on Post-Quantum Cryptography`); a `renamed` row (CORE's WACV, still
+listed as a Workshop) has no such name. (b) A name the venue had (`former` or an alias; the notes of CORE's
+names, `prior to 2009 was …`) holds it: the string's name part — without volume, pages, year and
+parentheses, with ordinals, years, "proceedings", "international" and sponsors out on both sides — must
+BE that name, its own acronym before or after it allowed (`International Workshop on Artificial Intelligence and
+Statistics` is AISTATS; `NIPS Workshop on Machine Learning`, `ICML Workshop on Machine Learning for Music` are tracks). A cut name is no
+whole name (it may go on: `… Search-Based Software …` is Engineering or Testing): only the start of it counts, four
+words of its own besides the track word and the connectives, all there is before the cut. The result says the word
+(`secondary`) and, when a listed venue was matched — or the string without its track words names one that is
+not a journal — and its badge withheld, `refused`: the panel's *Not ranked → secondary tracks* counts those and not every
+string with a track word (a journal called "Surveys & Tutorials" is not a track of anything). Results are memoised per string
+and carry the rule and entry that matched, which the chip tooltip shows.
 
 The behaviour is pinned by `test/venues.test.js`: targeted regression cases for every bug found
 in the audit, and a reviewed **snapshot** of the result for every venue string in the
