@@ -322,6 +322,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       return {
         id: r.raw.id, title: r.raw.title,
         authors: (resolved && resolved.authors) || r.raw.authorsText,                // (the whole list once "Read full lists" has read it)
+        me: a.status === "found" && a.tokens && a.tokens[a.index] ? a.tokens[a.index].name : "",           // (the owner's name as the author line prints it)
         venue: (resolved && resolved.venue) || r.raw.venueText,
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
         type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
@@ -368,7 +369,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   // The second flavour of a copy button, for a word processor: a real table for the table and the papers, real italics for APA; "" for the others (their text is the whole of it)
   function exportHtml(kind, { source } = {}) {
     if (kind === "table") return formats.summaryHtml(summaryOf(source).summary, summaryWords());
-    if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core });
+    if (kind === "papers") return formats.papersHtml(paperRecords(), { labels: tableLabels(), ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, markMe: !!prefs.rows.name });
     if (kind === "apa") return formats.apaHtml(paperRecords());
     return "";
   }

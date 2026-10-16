@@ -1306,6 +1306,9 @@ button.btn.preset-chip:hover {
   line-height: 1.5;
 }
 
+.venue-what { min-width: 0; }
+.venue-meta { display: block; font-size: 12px; color: var(--muted); }
+.venue-meta a { color: var(--accent); }
 .venue-line .rr-chip {
   flex: none;
   min-width: 4.4em;

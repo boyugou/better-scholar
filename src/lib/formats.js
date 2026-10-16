@@ -1,7 +1,8 @@
 // Text for the copy buttons, the toolbar popup and agents: the papers (as records) or the summary go in, a string comes out. Pure, no DOM.
 //
 // A paper record, as content/main.js makes it from the rows the page shows:
-//   { id, title, authors, venue, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }
+//   { id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }
+//   `me` is the profile owner's name as this paper's author line prints it ("" when it was not found there)
 //   `authors` is the author line as Scholar printed it (or the full list read from the paper's page), "…" or "..." where Scholar cut it; `type` is
 //   "conference" | "journal" | null (what the rank lists say the venue is); `url` is absolute or "". Titles and author names are whatever their authors typed: every
 //   format below treats them as untrusted text (a title can look like a spreadsheet formula, a Markdown link, a TeX command).
@@ -95,11 +96,21 @@
   // there and the reference list gets real italics. Every text is escaped; a cell is as safe as in the tab-separated form (a spreadsheet reads HTML cells too).
   const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ESC[c]);
+  // a cell is a text, or { html } (already made safe: the owner's name in bold)
   function rowsHtml(header, rows) {
-    const cell = (tag) => (v) => `<${tag}>${esc(formulaSafe(clean(v)))}</${tag}>`;
+    const cell = (tag) => (v) => `<${tag}>${v && typeof v === "object" && "html" in v ? v.html : esc(formulaSafe(clean(v)))}</${tag}>`;
     return `<table border="1" cellspacing="0" cellpadding="4">\n<thead><tr>${header.map(cell("th")).join("")}</tr></thead>\n<tbody>\n${rows.map((r) => `<tr>${r.map(cell("td")).join("")}</tr>`).join("\n")}\n</tbody>\n</table>`;
   }
-  const papersHtml = (papers, ctx) => { const t = table(papers, ctx); return rowsHtml(t.header, t.rows); };
+  // `ctx.markMe`: the owner's name is in bold in the author cells (as the page marks it in the author line); a name is one of the line's names, whole
+  const boldOwner = (authors, me) => {
+    const re = new RegExp("(^|, )(" + me.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")(?=,|$)");
+    return authors.replace(re, (_, lead, name) => `${lead}<b>${name}</b>`);
+  };
+  function papersHtml(papers, ctx) {
+    const t = table(papers, ctx), col = t.header.indexOf(ctx.labels.authors);
+    const rows = ctx.markMe && col >= 0 ? t.rows.map((r, i) => (clean(papers[i].me) ? r.map((v, j) => (j === col ? { html: boldOwner(esc(clean(papers[i].authors)), esc(clean(papers[i].me))) } : v)) : r)) : t.rows;
+    return rowsHtml(t.header, rows);
+  }
   const summaryHtml = (summary, opts) => { const t = summaryTable(summary, opts); return rowsHtml(t.header, t.rows); };
 
   // ---- BibTeX -----------------------------------------------------------------------------------------------------------------------------------

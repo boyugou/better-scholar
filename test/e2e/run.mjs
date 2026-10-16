@@ -467,6 +467,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.equal(await opts.locator("#card-venue .venue-line").count(), 2);
     assert.match(await opts.locator('#card-venue .venue-line[data-kind="ccf"]').innerText(), /CCF\s*A\b[\s\S]*\(CVPR\)[\s\S]*Matched by name/);
     assert.match(await opts.locator('#card-venue .venue-line[data-kind="core"]').innerText(), /CORE\s*A\*/);
+    assert.match(await opts.locator('#card-venue .venue-line[data-kind="ccf"] .venue-meta').innerText(), /^Artificial intelligence · DBLP/, "the CCF entry names its area and links to DBLP");
+    assert.equal(await opts.locator('#card-venue .venue-line[data-kind="ccf"] a').getAttribute("href"), "https://dblp.org/db/conf/cvpr/");
+    assert.equal(await opts.locator('#card-venue .venue-line[data-kind="ccf"] a').getAttribute("rel"), "noopener noreferrer");
     await opts.fill('[data-act="venue-check"]', "Workshop on Machine Learning for Systems");
     assert.match(await opts.locator("#card-venue .venue-none").innerText(), /“workshop” marks a secondary track/);
     await opts.fill('[data-act="venue-check"]', "asdf qwer zxcv");
@@ -851,7 +854,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const paperRows = (await page.evaluate(() => navigator.clipboard.readText())).split("\n").map((l) => l.split("\t"));
     assert.deepEqual(paperRows[0], ["Year", "Title", "Authors", "Role", "Venue", "CCF", "CORE", "Awards & talks", "Citations"]);
     assert.equal(paperRows.length, 1 + 100, "the header and the hundred papers loaded");
-    assert.equal(((await flavours())["text/html"].match(/<tr>/g) || []).length, 1 + 100, "the papers also as a real table: the header and the hundred papers");
+    const richPapers = (await flavours())["text/html"];
+    assert.equal((richPapers.match(/<tr>/g) || []).length, 1 + 100, "the papers also as a real table: the header and the hundred papers");
+    assert.match(richPapers, /<td>[^<]*(?:<b>[^<]+<\/b>[^<]*)+<\/td>/, "the owner's name is in bold in the author cells, as the page marks it");
     const exp = expected(profile);
     assert.equal(paperRows[1][1], profile.rows[0].title);
     assert.equal(paperRows[1][8], String(profile.rows[0].cites));
@@ -1598,7 +1603,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     }, [method, params]);
     const papersRes = await call("papers");
     assert.ok(papersRes.ok && papersRes.result.papers.length > 0 && papersRes.result.total >= papersRes.result.papers.length, "papers: the records");
-    assert.deepEqual(Object.keys(papersRes.result.papers[0]).sort(), ["authors", "citations", "highlighted", "id", "marks", "rank", "role", "status", "title", "type", "url", "venue", "year"]);
+    assert.deepEqual(Object.keys(papersRes.result.papers[0]).sort(), ["authors", "citations", "highlighted", "id", "marks", "me", "rank", "role", "status", "title", "type", "url", "venue", "year"]);
     const exMd = await call("export", { format: "markdown" });
     const exApa = await call("export", { format: "apa" });
     const exJson = await call("export", { format: "json" });

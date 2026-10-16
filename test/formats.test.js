@@ -203,3 +203,17 @@ test("html: the reference list has real italics for the venue (the full stop sta
   assert.equal(f.apa(list).split("\n\n")[0], "Stoica, I., & Morris, R. (2001). Chord & co. *ACM SIGCOMM <CCR>*. https://scholar.google.com/citations?view_op=view_citation&citation_for_view=123");
   assert.ok(f.apa(list).split("\n\n")[1].includes("*Nature.* javascript:alert(1)"));
 });
+
+test("html: the owner's name is in bold in the author cells when the page marks it, as a whole name of the line and never in the text forms", () => {
+  const lab = { labels };
+  const bold = (p, markMe = true) => f.papersHtml([p], { ...lab, markMe });
+  assert.ok(bold(paper({ authors: "K He, X Zhang, S Ren, J Sun", me: "X Zhang" })).includes("<td>K He, <b>X Zhang</b>, S Ren, J Sun</td>"));
+  assert.ok(bold(paper({ authors: "Li Wei, W Li, Li", me: "Li" })).includes("<td>Li Wei, W Li, <b>Li</b></td>"), "only a whole name of the line, the first one that is the owner's");
+  assert.ok(bold(paper({ authors: "J Doe, A <i>Smith</i> & Co", me: "A <i>Smith</i> & Co" })).includes("<b>A &lt;i&gt;Smith&lt;/i&gt; &amp; Co</b>"), "the name is escaped like the rest");
+  assert.ok(bold(paper({ authors: "J Smith (Jr.), A Doe", me: "J Smith (Jr.)" })).includes("<b>J Smith (Jr.)</b>"), "a name with characters a pattern reads is taken as it is");
+  assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "X Zhang" }), false).includes("<b>"), "the page does not mark the name: nor does the copy");
+  assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "" })).includes("<b>"), "no name found in the line: nothing to mark");
+  assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "Y Nobody" })).includes("<b>"), "a name that is not in the line is not marked");
+  assert.equal(f.papersTsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
+  assert.equal(f.papersCsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
+});

@@ -136,7 +136,7 @@ The cards, in the order of the preview:
 | Duplicate entries | *Merge duplicates* |
 | Paper list | *Load all papers automatically* |
 | Semantic Scholar | *Read author lists from Semantic Scholar first* (off by default); an optional API key |
-| Check a venue | A text box: paste a venue as Scholar prints it and see the CCF and CORE rank it gets, the name it matched and the rule (by name, by acronym, by the visible part of a cut name) — or why it gets none (a workshop or another secondary track; the lists do not place it) |
+| Check a venue | A text box: paste a venue as Scholar prints it and see the CCF and CORE rank it gets, the name it matched, the rule (by name, by acronym, by the visible part of a cut name), and for a CCF venue its research area and a link to its DBLP page (opened only when you click it) — or why it gets none (a workshop or another secondary track; the lists do not place it) |
 | AI agents | *Copy guide for agents* |
 | Configuration & presets | Presets *All features*, *Last author focus*, *First author focus*, *Minimalist*; *Copy config (JSON)*, *Export file*, *Import file*, and a JSON editor |
 | Saved data | *View saved details*, *Clear saved paper details*, *Reset to defaults*, *Copy details for a bug report* |
@@ -183,7 +183,7 @@ Each format is a button in the panel's copy row and in the toolbar popup, and ha
 |---|---|
 | *Copy summary* | The role × rank table as plain text, with the awards and talks line and the lists' edition |
 | *Copy as table* | The role × rank table, tab-separated, for a spreadsheet (and as a real table for a word processor) |
-| *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language); also as a real table for a word processor |
+| *Copy papers* | The papers, tab-separated: year, title, authors, role, venue, CCF, CORE, awards, citations (headers in the interface language); also as a real table for a word processor, with your name in bold in the author cells when the page marks it |
 | *Copy APA* | APA 7th edition references: `Authors (Year). Title. *Venue*. URL`; also with real italics for a word processor |
 | *Copy BibTeX* | BibTeX entries |
 | *Copy Markdown* | A numbered Markdown list: linked title, authors, venue and year, ranks, awards, citations |
@@ -224,7 +224,7 @@ The request's `detail` is `{ id, method, params }`; an `id` that is a string or 
 |---|---|---|
 | `ping` | none | `{ version, owner, loaded, complete }` |
 | `summary` | none | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals |
-| `papers` | `filtered` (default `true`: the papers the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
+| `papers` | `filtered` (default `true`: the papers the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
 | `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers` and `apa`) | `{ format, text, html? }` |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors }` |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |

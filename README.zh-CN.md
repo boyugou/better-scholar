@@ -136,7 +136,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 | 重复条目 | *合并重复论文* |
 | 论文列表 | *自动加载全部论文* |
 | Semantic Scholar | *优先用 Semantic Scholar 补全作者列表*（默认关闭）；可选的 API 密钥 |
-| 检查场所 | 一个文本框：粘贴 Scholar 印出的场所文字，看 CCF 与 CORE 给它什么等级、匹配到哪个条目、依据哪条规则（名称、缩写、被截断名称的可见部分）——或者它为什么没有等级（研讨会等次要类别；名录无法确定它） |
+| 检查场所 | 一个文本框：粘贴 Scholar 印出的场所文字，看 CCF 与 CORE 给它什么等级、匹配到哪个条目、依据哪条规则（名称、缩写、被截断名称的可见部分），CCF 场所还有其研究领域和指向 DBLP 页面的链接（点击才会打开）——或者它为什么没有等级（研讨会等次要类别；名录无法确定它） |
 | AI agents | *Copy guide for agents* |
 | 配置与预设 | 预设 *全功能开启*、*Last author focus*、*第一作者偏好*、*极简风格*；*复制配置 (JSON)*、*导出文件*、*导入文件*，以及一个 JSON 编辑器 |
 | 已保存的数据 | *查看已保存详情*、*清除已保存的论文详情*、*恢复默认设置*、*复制问题报告所需的信息* |
@@ -183,7 +183,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 |---|---|
 | *复制摘要* | 纯文本的角色 × 等级表，附获奖与报告形式一行和名录版本 |
 | *复制为表格* | 制表符分隔的角色 × 等级表，便于粘贴进电子表格（同时附带一份真正的表格，供文字处理软件粘贴） |
-| *复制论文列表* | 制表符分隔的论文：年份、标题、作者、角色、场所、CCF、CORE、获奖、引用数（表头用界面语言）；同时附带一份真正的表格，供文字处理软件粘贴 |
+| *复制论文列表* | 制表符分隔的论文：年份、标题、作者、角色、场所、CCF、CORE、获奖、引用数（表头用界面语言）；同时附带一份真正的表格，供文字处理软件粘贴（页面标出你的名字时，作者栏里你的名字是粗体） |
 | *复制 APA* | APA 第 7 版参考文献：`Authors (Year). Title. *Venue*. URL`；同时附带真正的斜体，供文字处理软件粘贴 |
 | *复制 BibTeX* | BibTeX 条目 |
 | *复制 Markdown* | 带编号的 Markdown 列表：带链接的标题、作者、场所与年份、等级、获奖、引用数 |
@@ -224,7 +224,7 @@ const { ok, result, error } = await answer;   // result.text 即 BibTeX
 |---|---|---|
 | `ping` | 无 | `{ version, owner, loaded, complete }` |
 | `summary` | 无 | 角色 × 等级表（CCF、CORE、仅按角色）、获奖与报告形式计数、引用统计 |
-| `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
+| `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, me, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
 | `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa` 另返回 `html`） | `{ format, text, html? }` |
 | `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors }` |
 | `clearFilters` | 无 | `{ shown, total, filters, errors }` |

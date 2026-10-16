@@ -813,6 +813,14 @@
     return card(c.id, t(c.title), c.hint ? t(c.hint) : null, ...kids);
   });
   // Check a venue: what the rank lists make of a text, and by which rule (the page's own resolver: a row of a profile gets exactly this)
+  // The CCF list names the research area of each venue in Chinese (its own words); other interface languages get the English name of the area
+  const AREA_EN = {
+    "计算机体系结构/并行与分布计算/存储系统": "Computer architecture, parallel and distributed computing, storage systems", "计算机网络": "Computer networks", "网络与信息安全": "Network and information security",
+    "软件工程/系统软件/程序设计语言": "Software engineering, system software, programming languages", "数据库/数据挖掘/内容检索": "Databases, data mining, information retrieval",
+    "计算机科学理论": "Theory of computer science", "计算机图形学与多媒体": "Computer graphics and multimedia", "人工智能": "Artificial intelligence",
+    "人机交互与普适计算": "Human-computer interaction and ubiquitous computing", "交叉/综合/新兴": "Interdisciplinary, comprehensive, emerging"
+  };
+  const areaName = (a) => (/^zh/i.test(B.dom.langTag()) ? a : AREA_EN[a] || a);
   let resolver = null;
   const venueOut = h("div", { class: "venue-out", "aria-live": "polite" });
   const venueInput = h("input", { type: "text", class: "venue-input", "data-act": "venue-check", placeholder: t("optVenuePlaceholder"), "aria-label": t("optVenueTitle"), spellcheck: "false", autocomplete: "off", maxlength: "300", onInput: () => checkVenue() });
@@ -823,8 +831,12 @@
     resolver = resolver || B.venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
     const res = resolver.resolve(text), found = [["ccf", res.ccf], ["core", res.core]].filter(([, info]) => info);
     for (const [kind, info] of found) {
+      // (the CCF entry also says its area and where the venue is on DBLP: a link, opened only when it is clicked)
+      const dblp = info.dblp && /^https?:\/\/dblp\.(?:uni-trier\.de|org)\/db\/[\w\/-]+\/?$/.test(info.dblp) ? info.dblp.replace(/^http:\/\/dblp\.uni-trier\.de/, "https://dblp.org").replace(/^http:\/\/dblp\.org/, "https://dblp.org") : "";
+      const meta = [info.area ? areaName(info.area) : "", dblp ? h("a", { href: dblp, target: "_blank", rel: "noopener noreferrer", "aria-label": "DBLP: " + info.name }, "DBLP ↗") : ""].filter(Boolean);
       venueOut.append(h("div", { class: "venue-line", "data-kind": kind }, B.chips.tierChip(kind, info, B.data[kind].meta.label),
-        h("span", { class: "venue-what" }, h("b", {}, info.name + (info.abbr ? " (" + info.abbr + ")" : "")), h("span", { class: "faint" }, " · " + B.chips.ruleText(info)))));
+        h("span", { class: "venue-what" }, h("b", {}, info.name + (info.abbr ? " (" + info.abbr + ")" : "")), h("span", { class: "faint" }, " · " + B.chips.ruleText(info)),
+          meta.length ? h("span", { class: "venue-meta" }, ...meta.flatMap((m, i) => (i ? [" · ", m] : [m]))) : null)));
     }
     if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
   }
