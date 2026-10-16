@@ -13,7 +13,7 @@ npm run test:update                   # rewrite the venue snapshot, after review
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
 node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
-npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names` stress-tests the names)
+npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; the one known limit: a copy button never gets narrower than its text, so 30 full-width characters on it, in a panel narrower than about 380px, stick out)
 npm run check:claims                  # every quote in store/chrome/claims.md still exists in the code it names
 ```
 
