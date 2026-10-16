@@ -1096,6 +1096,11 @@ test("the acronym a string opens with decides between venues whose names boil do
   for (const [s, want] of [["AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, 4278-4284, 2017", "CCF A AAAI · CORE A* AAAI"], ["AAAI 2019: 33rd AAAI Conference on Artificial Intelligence, 2019", "CCF A AAAI · CORE A* AAAI"],
     ["IJCAI'18: Proceedings of the 27th International Joint Conference on Artificial Intelligence, 2018", "CCF B IJCAI · CORE A* IJCAI"], ["SDM '19: Proceedings of the SIAM International Conference on Data Mining, 123-145, 2019", "CCF B SDM"],
     ["Proceedings of the 3rd ACM SIGCOMM Conference on Internet Measurement, 91-100, 2003", "CCF B IMC · CORE A IMC"], ["Tenth International AAAI Conference on Web and Social Media, 2016", "CCF B ICWSM · CORE A ICWSM"]]) assert.equal(brief(s), want, s);
+  // AAAI's own forms ("AAAI-23: Thirty-Seventh AAAI Conference …": the acronym said twice is said once; "… Conference on Artificial Intelligence (AAAI-07)": the acronym in the parenthesis
+  // is not IJCAI's), and ACM's journal-first title with the track in its parenthesis ("(ISSTA)" is ISSTA, no longer ICSE; "(FSE)" is the Foundations of Software Engineering, not Fast Software Encryption)
+  for (const [s, want] of [["AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023", "CCF A AAAI · CORE A* AAAI"], ["Proceedings of the 22th Conference on Artificial Intelligence (AAAI-07), 2007", "CCF A AAAI · CORE A* AAAI"],
+    ["Proceedings of the ACM on Software Engineering 2 (ISSTA), 1009-1030, 2025", "CCF A ISSTA"], ["Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE"],
+    ["2025 USENIX Annual Technical Conference (ATC'25), 2025", "CCF A ACM SIGOPS ATC · CORE A USENIX"], ["COLING-02: Machine Translation in Asia, 2002", ""], ["DS-30: Proceedings of DESIGN 2002", ""]]) assert.equal(brief(s), want, s);
   // a journal and a conference that are called the same ("Computational Visual Media"): the acronym in the parenthesis names the conference; the bare name is the journal's, as before
   assert.equal(brief("Computational Visual Media (CVM), 2019"), "CCF C CVM");
   assert.equal(brief("Computational Visual Media 5 (2), 123-145, 2019"), "CCF B CVMJ");

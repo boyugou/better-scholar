@@ -544,13 +544,23 @@
     // (a curated alias such as "Pacific Graphics", a journal called "Machine Learning").
     const plainWords = contentWords(p.plain);
     const bareString = !hint && plainWords.length <= 2 && !plainWords.some((w) => ORG.has(w)) && plainWords.length === canonTokens(p.plain, "full").length;
-    // the acronym a string opens with ("AAAI'17: …", "SDM 2019 …") names its event: a hit that is not the venue of that acronym disagrees with it — if the acronym is any venue's here
+    // the acronym a string names for its event — it opens with it ("AAAI'17: …", "SDM 2019 …") or puts it in a parenthesis ("(AAAI-07)", "(ISSTA)") — is the venue's: a name hit
+    // that is another venue's, whose own acronym the string does not say ("… Conference on Artificial Intelligence (AAAI-07)" boils down to IJCAI's name), disagrees with it.
+    // (the acronyms of other venues that the string only holds — "2025 USENIX Annual Technical Conference (ATC'25)" — are told by the hit's own being in it)
     const ownersOf = (a) => sides.flatMap((side) => [...(side.abbrs.get(a) || []), ...(side.weakAbbrs.get(a) || [])]);
+    const wordsHere = new Set(fold(p.withParens).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
     const acronymAgrees = (hit) => {
-      const owned = acronymSignals(p).filter((sig) => sig.kind === "lead" && sig.event && ownersOf(sig.key).length);
+      const own = squash(hit.abbr || "");
+      if (own.length >= 2 && (wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
+      const owned = acronymSignals(p).filter((sig) => ((sig.kind === "lead" && sig.event) || sig.kind === "paren") && ownersOf(sig.key).length);
       return !owned.length || owned.some((sig) => ownersOf(sig.key).includes(hit));
     };
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
+    // ("AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence": the acronym in front says the event, and says it again inside the name — the venue's own name has it once)
+    const nameBody = (() => {
+      const m = /^([A-Za-z][A-Za-z0-9&/]{1,9})\s*['’-]?\s*(?:\d{4}|\d{2})\s*:\s*(.+)$/.exec(p.plain);
+      return m && new RegExp("\\b" + m[1].replace(/[^A-Za-z0-9]/g, "") + "\\b", "i").test(m[2]) ? m[2] : p.plain;
+    })();
     const seen = new Set();
     let clashing = null;           // the string's whole name is a venue's, with another event word ("Symposium" for a Conference): only if nothing better turns up
     // the series form names its event by the acronym after the dash: when that acronym is a known one and the rule above did not take it
@@ -558,7 +568,7 @@
     const seriesAcronymKnown = !!series && idx.known.has(squash(series[1]));
     for (const mode of modes) {
       if (mode === "noAcr" && seriesAcronymKnown) continue;
-      const tokens = canonTokens(p.plain, mode, idx.known);
+      const tokens = canonTokens(nameBody, mode, idx.known);
       // organisation words / acronyms carry identity ("Communications of the ACM" is not
       // "Communications"): a weakened variant must still be at least two words long
       if (!tokens.length || (mode !== "full" && tokens.length < 2)) continue;
@@ -571,7 +581,7 @@
       if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(key));
       if (d === "ambiguous") return null;
       // ("AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence" boils down, once its acronyms are taken out, to the words of IJCAI's name)
-      if (d && mode === "noAcr" && !acronymAgrees(d)) continue;
+      if (d && !acronymAgrees(d)) continue;
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
       if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
@@ -629,8 +639,17 @@
       }
       return false;
     };
+    // two venues share the acronym ("FSE": the Foundations of Software Engineering and Fast Software Encryption): the words of the string that are not the acronym say which —
+    // the one whose own words they all are ("Proceedings of the ACM on Software Engineering 1 (FSE)")
+    const byContext = (key) => {
+      const words = canonTokens(p.plain, "noOrg", idx.known).filter((w) => w !== key && w !== stripDigits(key));
+      if (words.length < 2) return "ambiguous";
+      const covering = uniq(sides.flatMap((side) => side.abbrs.get(key) || [])).filter((e) => words.every((w) => vocabOf(e).has(w)));
+      return covering.length === 1 ? covering[0] : "ambiguous";
+    };
     for (const { key, part, kind } of signals) {
-      const d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
+      let d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
+      if (d === "ambiguous" && !part) d = byContext(key);
       // (a parenthesised acronym after a name that is another venue's: two or more other words, none of them this venue's own — see the
       // buried acronyms below — in a string that spells out an event; a journal's abbreviated name before its track, "Proc. ACM Program. Lang. 6 (POPL)", does not)
       const nameIsAnotherVenues = kind === "paren" && spelledEvent && d && d !== "ambiguous" && (() => {
