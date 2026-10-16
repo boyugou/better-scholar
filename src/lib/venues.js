@@ -413,7 +413,7 @@
     // (after a two-letter acronym a bare two-digit number is not a year: "DS 75-4" is a Design Society report, not the conference DS)
     // (a page range after a longer acronym is read as the event's too — "AAMAS, 1-10, 2016", "CSCW, 1-25, 2017": a ten-page conference paper starts on page 1 — as "AAMAS, 11-20, 2016" always was;
     // but only weakly: the abbreviation of a journal that no conference shares — "TPAMI, 1-14, 2020" — is the journal's, see `resolve`)
-    const numberAfter = first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b(?!\s*-\s*\d)|\d+(?:st|nd|rd|th)\b)/;
+    const numberAfter = first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b(?!\s*-\s*\d+\b)|\d+(?:st|nd|rd|th)\b)/;
     const pagesAfter = first.length > 2 && /^\d{1,5}\s*-\s*\d{1,5}\b/.test(rest);
     const yearAfter = numberAfter.test(rest) || pagesAfter, weak = !numberAfter.test(rest) && pagesAfter;
     if (!placed && looksAcr && (restNoise || yearAfter)) {

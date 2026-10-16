@@ -1152,6 +1152,7 @@ test("what the resolver says about a track: `refused` only when a ranked venue w
   assert.equal(brief("Proceedings of the 16th ACM Workshop on Hot Topics in Storage and File …, 2024"), "CCF C HotStorage");
   // an edition printed as the last two digits of the year the line ends with is no volume ("Graphics interface 98, 43-50, 1998"); a regional edition is not the venue it is named after
   assert.equal(brief("Graphics interface 98, 43-50, 1998"), "CCF C GI · CORE B GI");
+  assert.equal(brief("ECRTS 2019-31ST EUROMICRO CONFERENCE ON REAL-TIME SYSTEMS, 1-25, 2019"), "CORE B ECRTS", "a year, a dash and an ordinal are no page range");
   assert.equal(brief("USENIX Security 22, 3255-3272, 2022"), "CCF A USENIX Security · CORE A* USENIX-Security");
   assert.equal(brief("Acm siggraph asia 7 (2), 1-10, 2008"), "");
   assert.equal(brief("ACM SIGGRAPH Asia 2009 papers, 1-10, 2009"), "CORE A* SiggraphA");
