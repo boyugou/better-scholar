@@ -95,6 +95,7 @@ for (const lang of ["ar", "ja", "th", "de"]) {
   await popupAudit(`popup in ${lang}`);
 }
 await setPrefs({ language: "auto" });
+await page.waitForTimeout(1200); await page.bringToFront(); await page.waitForSelector("#rr-panel", { state: "attached" });          // (a change of language reloads the profile page: the popup asks it for the summary)
 // the popup with every renamable text at its longest (30 characters, words; and 30 full-width characters in a row): does anything stick out of the popup or make it scroll sideways?
 const NAMES = Object.keys((await import(pathToFileURL(path.join(root, "src/lib/prefs.js")).href).then((m) => m.default || m)).NAMES);
 for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-width", "漢".repeat(30)]]) {

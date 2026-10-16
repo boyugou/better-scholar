@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Controleren"
+  },
+  "optSaveTooBig": {
+    "message": "Niet opgeslagen: de namen die je hebt gekozen zijn samen groter dan de ruimte die Chrome voor de instellingen bewaart (8 KB in totaal). Maak er een paar korter."
   }
 }

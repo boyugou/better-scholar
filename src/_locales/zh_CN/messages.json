@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "核对"
+  },
+  "optSaveTooBig": {
+    "message": "未保存：自定义的名称加起来超过了 Chrome 为设置保留的存储空间（共 8 KB）。请缩短其中一些。"
   }
 }

@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Tarkista"
+  },
+  "optSaveTooBig": {
+    "message": "Ei tallennettu: omat nimesi ylittävät yhteensä tallennustilan, jonka Chrome varaa asetuksille (8 KB kaikkiaan). Lyhennä joitakin niistä."
   }
 }

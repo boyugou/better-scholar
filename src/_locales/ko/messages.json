@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "확인"
+  },
+  "optSaveTooBig": {
+    "message": "저장되지 않았습니다. 직접 정한 이름을 합친 크기가 Chrome이 설정용으로 보관하는 용량(총 8 KB)을 넘습니다. 일부 이름을 줄여 주세요."
   }
 }

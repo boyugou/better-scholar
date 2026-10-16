@@ -827,7 +827,7 @@
         if (sec && !ownWord(r.entry, sec)) { out.secondary = sec; continue; }
         out[src] = src === "ccf"
           ? { tier: r.entry.tier, name: r.entry.name, abbr: r.entry.abbr, area: r.entry.area, kind: r.entry.kind, dblp: r.entry.dblp, rule: r.rule }
-          : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, rule: r.rule };
+          : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, kind: r.entry.kind, rule: r.rule };          // (CORE ranks conferences: its kind is "C")
       }
       // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
       // ("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing" is HCOMP to CORE; CCF, which does not list

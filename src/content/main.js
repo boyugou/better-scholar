@@ -525,6 +525,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     namesSig = JSON.stringify(prefs.labels);
     applyMerge();
     for (const row of state.rows) decorate(row);
+    pruneFilters();                                                                      // (a filter whose control the settings took away: after decorate, the year chart is drawn from the papers that are highlighted now)
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
     if (state.venueKey && !(prefs.panel.venues.show && metrics.topVenues(papers(), 9999, B.prefs.lists(prefs)).some((v) => v.key === state.venueKey))) state.venueKey = null;
@@ -550,12 +551,14 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     if (!p.venues.show) state.venueKey = null;
     if (!(p.filters.show && p.filters.search)) {                                                                                  // (no search box: only the words of the quick filters stay, a button can take them off)
       const keep = p.filters.show ? B.prefs.pills(prefs).map((id) => B.prefs.PILL_OPERATORS[id]) : [];
-      f.query = f.query.split(/\s+/).filter((w) => keep.includes(w.toLowerCase())).join(" ");
+      f.query = f.query.split(/\s+/).map((w) => w.toLowerCase()).filter((w) => keep.includes(w)).join(" ");          // (in lower case: the buttons read the words as the operators are written)
     }
     if (!p.filters.bar) f.minCitations = null;                                                                                    // (only the filter bar says it is on, and clears it)
     if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)
     const range = p.filters.show && p.filters.years;
-    if (!range && !(p.years.show && f.yearStart === f.yearEnd)) { f.yearStart = null; f.yearEnd = null; }                      // (the year bars can only choose one year)
+    // (the year bars can only choose one year, and only while the chart is drawn (two bars at least) with a bar for that year)
+    const bar = p.years.show && f.yearStart != null && f.yearStart === f.yearEnd && (() => { const bars = metrics.yearBars(papers()).bars; return bars.length >= 2 && bars.some((b) => b.year === f.yearStart); })();
+    if (!range && !bar) { f.yearStart = null; f.yearEnd = null; }
     if (f.impact && !(p.metrics.show && p.metrics[f.impact])) f.impact = null;
   }
 
@@ -569,8 +572,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const wasAuto = prefs.autoLoad;
     prefs = next;
     if (currentSource() !== before) state.selection = null;                        // its tier belonged to the other ranking
-    pruneFilters();
-    refresh();
+    refresh();                                                                      // (which also clears the filters left without a control)
     if (prefs.autoLoad && !wasAuto) { if (state.loadingAll) restartAuto = true; else startLoad("auto"); }                                          // switched on: load the rest of the list now
     else if (!prefs.autoLoad && loadOrigin === "auto" && loadAbort) loadAbort.abort();          // switched off: stop what it began
   });
@@ -636,16 +638,18 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       };
     },
     papers: ({ filtered = true } = {}) => ({ owner: headerName, total: live().length, papers: paperRecords(filtered) }),
-    export: ({ format, source, html }) => ({ format, text: exportText(format, { source }), ...(html ? { html: exportHtml(format, { source }) } : {}) }),
+    export: ({ format, source, html }) => {
+      const rich = html ? exportHtml(format, { source }) : "";
+      return { format, text: exportText(format, { source }), ...(rich ? { html: rich } : {}) };          // (a format with no HTML has no html key)
+    },
     filter: (p) => {
       // (a filter with no control left to undo it would hide rows for good)
       if (!prefs.panel.show) throw new Error("the panel is off in the settings, so nothing could undo a filter");
-      const f = state.filters;
-      if ("query" in p) f.query = p.query.trim();
-      for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) f[k] = p[k];
+      const f = state.filters, asked = {};
+      if ("query" in p) asked.query = f.query = p.query.trim().replace(/\s+/g, " ");
+      for (const k of ["onlyHighlighted", "yearStart", "yearEnd", "minCitations", "impact"]) if (k in p) asked[k] = f[k] = p[k];
       if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
       state.searchCursor = -1; clearFocusedRow();
-      const asked = Object.fromEntries(Object.entries(state.filters).filter(([k]) => k in p));
       pruneFilters();                                                                      // (what the settings leave without a control is not applied, and said so)
       const ignored = Object.keys(asked).filter((k) => asked[k] && state.filters[k] !== asked[k]);
       refresh();

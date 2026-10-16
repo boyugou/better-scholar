@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Kontrollera"
+  },
+  "optSaveTooBig": {
+    "message": "Inte sparat: namnen du har valt är tillsammans större än utrymmet Chrome reserverar för inställningarna (8 KB totalt). Korta några av dem."
   }
 }

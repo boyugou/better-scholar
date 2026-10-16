@@ -122,3 +122,18 @@ test("matching: type: the kind of venue the rank lists say it is; a venue withou
   const bad = analysis.queryMatcher("type:book");
   assert.deepEqual([bad.test(conf), bad.errors.length], [false, 1]);
 });
+
+test("matching: type: with the real resolver — a venue only CORE ranks is a conference; with CCF off the kind still comes from CORE; a CCF journal is a journal", () => {
+  const venues = require("../src/lib/venues.js"), ccf = require("../src/data/ccf.js"), core = require("../src/data/core.js"), aliases = require("../src/data/aliases.js");
+  const resolver = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+  const row = (venueText) => ({ raw: { title: "t", authorsText: "A B", venueText, citations: 1, year: 2020 }, a: { status: "found", role: "first", year: 2020, venue: resolver.resolve(venueText), marks: [] }, shown: 1 });
+  const lrec = row("International Conference on Language Resources and Evaluation, 2020");
+  assert.ok(lrec.a.venue.core && !lrec.a.venue.ccf, "LREC is on CORE's list only");
+  assert.equal(analysis.queryMatcher("type:conference").test(lrec), true, "a venue only CORE ranks is a conference");
+  assert.equal(analysis.queryMatcher("type:journal").test(lrec), false);
+  const cvpr = row("Proceedings of the IEEE conference on computer vision and pattern recognition, 2016");
+  assert.equal(analysis.queryMatcher("type:conference", () => [], { ccf: false, core: true }).test(cvpr), true, "CCF is off: CORE says conference");
+  const tpami = row("IEEE Transactions on Pattern Analysis and Machine Intelligence 33 (5), 867-880, 2011");
+  assert.equal(analysis.queryMatcher("type:journal").test(tpami), true);
+  assert.equal(analysis.queryMatcher("type:journal", () => [], { ccf: false, core: true }).test(tpami), false, "CCF is off and CORE has no journals: no kind");
+});

@@ -81,15 +81,16 @@
   const saveS2Key = (key) => (key ? set("local", "s2key", key.trim().slice(0, 200)) : remove("local", "s2key"));
 
   // A venue of the unranked list the person wants explained: the settings page takes it (and opens its "Check a venue" with it filled in). A short text, nothing personal.
-  const askVenue = (text) => set("local", "askVenue", String(text == null ? "" : text).replace(/\s+/g, " ").trim().slice(0, 300));
+  // (an ask that nobody took within half a minute is stale: a later visit to the settings page must not jump to a venue that was asked about long ago)
+  const askVenue = (text) => set("local", "askVenue", { text: String(text == null ? "" : text).replace(/\s+/g, " ").trim().slice(0, 300), at: Date.now() });
   async function takeVenue() {
     const v = await get("local", "askVenue");
     if (v !== undefined) await remove("local", "askVenue");
-    return typeof v === "string" ? v : "";
+    return v && typeof v.text === "string" && Date.now() - v.at < 30000 ? v.text : "";
   }
   function onVenueAsked(fn) {
     if (!live()) return () => {};
-    const listener = (changes, area) => { if (area === "local" && changes.askVenue && typeof changes.askVenue.newValue === "string") fn(); };
+    const listener = (changes, area) => { if (area === "local" && changes.askVenue && changes.askVenue.newValue && typeof changes.askVenue.newValue.text === "string") fn(); };
     try { chrome.storage.onChanged.addListener(listener); } catch (e) { return () => {}; }
     return () => { try { chrome.storage.onChanged.removeListener(listener); } catch (e) { /* gone */ } };
   }

@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Comprobar"
+  },
+  "optSaveTooBig": {
+    "message": "No guardado: los nombres que has puesto suman más que el espacio que Chrome reserva para los ajustes (8 KB en total). Acorta algunos de ellos."
   }
 }

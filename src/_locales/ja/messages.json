@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "確認"
+  },
+  "optSaveTooBig": {
+    "message": "保存されませんでした。自分で付けた名前の合計が、Chrome が設定用に確保する容量（全体で 8 KB）を超えています。一部の名前を短くしてください。"
   }
 }

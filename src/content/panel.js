@@ -517,8 +517,8 @@
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
       marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
-        "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
-        h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
+        "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), onClick: () => cb.onMarkGroup(g) },
+        h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab", ...L(MARK_KEY[g]) }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 
     // (a list the person opened stays open when the panel is drawn again, e.g. while more papers arrive)
@@ -624,8 +624,8 @@
         .map((part) => (part === "" ? h("b", {}, fmt(a)) : part === "" ? h("span", { class: "rr-faint", ...P("panel.metrics.of") }, fmt(b)) : h("i", {}, part))));
       const row = (key, a, b, withPct, path) => {
         const pct = withPct && b > 0 ? Math.round((a / b) * 100) : null;
-        return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null, ...P(path), ...L(key) },
-          h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
+        return h("div", { class: "rr-m", "data-metric": key, title: pct !== null ? `${pct}%` : null, ...P(path) },
+          h("span", { ...L(key) }, t(key)), h("span", {}, ...ofNodes(a, b)));                  // (the name is the label's: a double-click on the number is not a rename)
       };
       const btnRow = (key, a, b, impact, threshold, path) => {
         const isPressed = m.filters.impact === impact;
@@ -638,9 +638,9 @@
           "aria-pressed": String(isPressed),
           disabled: idle ? true : null,
           title,
-          ...P(path), ...L(key),
+          ...P(path),
           onClick: () => cb.onImpact(impact)
-        }, h("span", {}, t(key)), h("span", {}, ...ofNodes(a, b)));
+        }, h("span", { ...L(key) }, t(key)), h("span", {}, ...ofNodes(a, b)));
       };
       const heading = mp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.metrics.title"), ...L("metricsTitle") }, t("metricsTitle"))) : null;
       // which papers "highlighted" means: the roles that are switched on ("First, Second and Last")
@@ -676,7 +676,7 @@
         h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
             const isSelected = m.filters.yearStart === d.year && m.filters.yearEnd === d.year;
-            const disabled = !d.total;
+            const disabled = !d.total && !isSelected;                          // (a pressed bar can always be released)
             return h("button", {
               class: "rr-bar", type: "button", "data-year": String(d.year), "aria-pressed": String(isSelected),
               disabled: disabled ? true : null, tabindex: disabled ? "-1" : null,
@@ -753,7 +753,7 @@
       el.classList.toggle("rr-onecol", Object.values(sections).filter((s) => !s.hidden).length < 2);
       body.hidden = Object.values(sections).every((s) => s.hidden);
       el.classList.toggle("rr-bare", body.hidden);
-      el.hidden = head.hidden && body.hidden && filterBar.hidden;                                                      // (nothing of it is drawn: no empty frame on the page)
+      el.hidden = head.hidden && body.hidden && filterBar.hidden && warnBar.hidden;                                                      // (nothing of it is drawn: no empty frame on the page)
       // (the lists' names without their edition note, unbreakable, and isolated so that right-to-left text cannot reorder them: "CCF 2026 · ICORE 2026")
       const listName = (label) => "⁨" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, " ") + "⁩";
       const lists = (m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ");

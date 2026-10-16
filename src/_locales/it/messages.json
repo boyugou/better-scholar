@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Verifica"
+  },
+  "optSaveTooBig": {
+    "message": "Non salvato: i nomi che hai scelto superano insieme lo spazio che Chrome riserva alle impostazioni (8 KB in tutto). Accorciane alcuni."
   }
 }

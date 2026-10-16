@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Vérifier"
+  },
+  "optSaveTooBig": {
+    "message": "Non enregistré : les noms que vous avez choisis dépassent ensemble l'espace que Chrome réserve aux réglages (8 KB au total). Raccourcissez-en quelques-uns."
   }
 }

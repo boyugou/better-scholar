@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Sjekk"
+  },
+  "optSaveTooBig": {
+    "message": "Ikke lagret: navnene du har valgt, er til sammen større enn plassen Chrome reserverer til innstillingene (8 KB totalt). Forkort noen av dem."
   }
 }

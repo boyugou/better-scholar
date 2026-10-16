@@ -58,8 +58,8 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-chips-text    { --look-fill: 0%; --look-solid: 0%; --look-edge: 0%; --look-paint: 0%; --look-fin: 0%; --look-pad: 1px; }
 .rr-chips-pill    { --look-radius: 9px; }
 .rr-chips-square  { --look-radius: 3px; }
-.rr-chips-full    { --look-k: inline; }
-.rr-chips-tier    { --look-k: none; }
+.rr-chips-full    { --look-k: inline; --look-core: 0%; }
+.rr-chips-tier    { --look-k: none; --look-core: 100%; }          /* (with the list's name left out a CCF A and a CORE A* would be the same chip: CORE is teal then, until a colour is picked for it) */
 
 /* The colours of the chips. Each family has the colours below until a colour is picked (settings → Chips): the settings page and this page then set the custom properties
    named here on <html> (lib/palette.js makes them from the one colour), and these are only the fallbacks. ink: the text, edge: the outline, fill: the solid look's background,
@@ -73,15 +73,10 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 .rr-chip-t2[data-kind="ccf"]  { --ink: var(--rr-ccf-2-ink, #5361bd);  --edge: var(--rr-ccf-2-edge, #c1c8ef);  --fill: var(--rr-ccf-2-fill, #5361bd);  --on: var(--rr-ccf-2-on, #fff); }
 .rr-chip-t3[data-kind="ccf"]  { --ink: var(--rr-ccf-3-ink, #626982);  --edge: var(--rr-ccf-3-edge, #d3d7e3);  --fill: var(--rr-ccf-3-fill, #69708a);  --on: var(--rr-ccf-3-on, #fff); }
 .rr-chip-t4[data-kind="ccf"]  { --ink: var(--rr-ccf-4-ink, #626a7e);  --edge: var(--rr-ccf-4-edge, #e2e5ec);  --fill: var(--rr-ccf-4-fill, #656c80);  --on: var(--rr-ccf-4-on, #fff); }
-.rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, #3345a8); --edge: var(--rr-core-1-edge, #9aa6e0); --fill: var(--rr-core-1-fill, #3345a8); --on: var(--rr-core-1-on, #fff); }
-.rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, #5361bd); --edge: var(--rr-core-2-edge, #c1c8ef); --fill: var(--rr-core-2-fill, #5361bd); --on: var(--rr-core-2-on, #fff); }
-.rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #626982); --edge: var(--rr-core-3-edge, #d3d7e3); --fill: var(--rr-core-3-fill, #69708a); --on: var(--rr-core-3-on, #fff); }
-.rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #626a7e); --edge: var(--rr-core-4-edge, #e2e5ec); --fill: var(--rr-core-4-fill, #656c80); --on: var(--rr-core-4-on, #fff); }
-/* with the list's name left out ("tier alone") a CCF A and a CORE A* would be the same chip: until a colour is picked for CORE it is teal then */
-.rr-chips-tier .rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, #176b73); --edge: var(--rr-core-1-edge, #8fcdd3); --fill: var(--rr-core-1-fill, #176b73); }
-.rr-chips-tier .rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, #25808a); --edge: var(--rr-core-2-edge, #b5dde1); --fill: var(--rr-core-2-fill, #25808a); }
-.rr-chips-tier .rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #5d7478); --edge: var(--rr-core-3-edge, #d1e2e4); --fill: var(--rr-core-3-fill, #5d7478); }
-.rr-chips-tier .rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #66787b); --edge: var(--rr-core-4-edge, #e2eaeb); --fill: var(--rr-core-4-fill, #566a6e); }
+.rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, color-mix(in srgb, #176b73 var(--look-core, 0%), #3345a8)); --edge: var(--rr-core-1-edge, color-mix(in srgb, #8fcdd3 var(--look-core, 0%), #9aa6e0)); --fill: var(--rr-core-1-fill, color-mix(in srgb, #176b73 var(--look-core, 0%), #3345a8)); --on: var(--rr-core-1-on, #fff); }
+.rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, color-mix(in srgb, #22717a var(--look-core, 0%), #5361bd)); --edge: var(--rr-core-2-edge, color-mix(in srgb, #b5dde1 var(--look-core, 0%), #c1c8ef)); --fill: var(--rr-core-2-fill, color-mix(in srgb, #25808a var(--look-core, 0%), #5361bd)); --on: var(--rr-core-2-on, #fff); }
+.rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, color-mix(in srgb, #556b6e var(--look-core, 0%), #626982)); --edge: var(--rr-core-3-edge, color-mix(in srgb, #d1e2e4 var(--look-core, 0%), #d3d7e3)); --fill: var(--rr-core-3-fill, color-mix(in srgb, #5d7478 var(--look-core, 0%), #69708a)); --on: var(--rr-core-3-on, #fff); }
+.rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, color-mix(in srgb, #5a6a6c var(--look-core, 0%), #626a7e)); --edge: var(--rr-core-4-edge, color-mix(in srgb, #e2eaeb var(--look-core, 0%), #e2e5ec)); --fill: var(--rr-core-4-fill, color-mix(in srgb, #566a6e var(--look-core, 0%), #656c80)); --on: var(--rr-core-4-on, #fff); }
 
 /* awards and talk levels (the panel's Awards & talks rows use the same icons) */
 .rr-chip-mark, #rr-panel .rr-mi {
@@ -429,10 +424,10 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 }
 
 /* a name the person chose can be 30 letters in a row: it breaks where it must, instead of widening the panel past its frame */
-#rr-panel { overflow-wrap: anywhere; }
+#rr-panel [data-rr-label] { overflow-wrap: anywhere; }
 #rr-panel .rr-dd { min-width: 0; max-width: 46%; }
 #rr-panel .rr-dd-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-#rr-panel .rr-sec-head, #rr-panel .rr-cover-line { flex-wrap: wrap; }
+#rr-panel .rr-sec-head { flex-wrap: wrap; }
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }

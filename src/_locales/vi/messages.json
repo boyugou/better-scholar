@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Kiểm tra"
+  },
+  "optSaveTooBig": {
+    "message": "Chưa lưu: các tên bạn đặt cộng lại vượt quá dung lượng mà Chrome dành cho cài đặt (tổng cộng 8 KB). Hãy rút ngắn bớt một số tên."
   }
 }

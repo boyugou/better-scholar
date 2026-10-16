@@ -40,7 +40,7 @@ test("vars: the custom properties of a family from one colour; nothing for a col
 test("every property the palette sets is read by the stylesheet, and the built-in colours there are the palette's defaults", () => {
   assert.deepEqual(palette.NAMES.filter((n) => !css.includes(n)), []);
   assert.match(css, /--rr-ccf-1-ink, #3345a8/);
-  assert.match(css, /--rr-core-1-ink, #3345a8/);
+  assert.match(css, /--rr-core-1-ink, color-mix\(in srgb, #176b73 var\(--look-core, 0%\), #3345a8\)/, "CORE's own colour is the indigo unless the look leaves the list's name out");
   assert.match(css, /--rr-award-fill, #d29a00/);
   assert.match(css, /--rr-talk-ink, #3a4a5f/);
   assert.deepEqual(palette.DEFAULTS, { ccf: "#3345a8", core: "#3345a8", award: "#d29a00", talk: "#3a4a5f" });
@@ -94,14 +94,35 @@ test("text on a chip reads (4.5:1) whatever colour is picked: every tier's text 
   }
 });
 
-test("the built-in colours in the stylesheet read too (4.5:1 on white and on the soft look's tint), and 'tier alone' keeps CCF and CORE apart", () => {
-  const fallback = (name) => { const m = new RegExp(`${name.replace(/[-]/g, "\\-")}, (#[0-9a-f]{3,6})\\b`).exec(css); assert.ok(m, name); return m[1].length === 4 ? "#" + [...m[1].slice(1)].map((c) => c + c).join("") : m[1]; };
-  for (const family of ["ccf", "core"]) for (let i = 1; i <= 4; i++) {
-    const ink = fallback(`--rr-${family}-${i}-ink`), fill = fallback(`--rr-${family}-${i}-fill`), on = fallback(`--rr-${family}-${i}-on`);
-    assert.ok(palette.contrast(ink, "#ffffff") >= palette.AA, `${family} ${i}: ${ink} on white`);
-    assert.ok(palette.contrast(ink, palette.mix(fill, "#ffffff", 0.1)) >= palette.AA, `${family} ${i}: ${ink} on the tint`);
-    assert.ok(palette.contrast(on, fill) >= palette.AA, `${family} ${i}: ${on} on ${fill}`);
+test("the built-in colours in the stylesheet read too (4.5:1 on white, on the soft look's tint and on every row tint), the CORE colours of 'tier alone' included, and CORE is teal only while the list's name is left out", () => {
+  const W = "#ffffff";
+  const rowTints = [palette.mix("#1a73e8", W, 0.12), palette.mix("#a142f4", W, 0.12), palette.mix("#f9ab00", W, 0.14), palette.mix("#1e8e3e", W, 0.12)];     // (the role colours at the alphas of the rows' tints)
+  const hexes = (expr) => (expr.match(/#[0-9a-f]{3,6}\b/gi) || []).map((h) => (h.length === 4 ? "#" + [...h.slice(1)].map((c) => c + c).join("") : h.toLowerCase()));
+  // the fallback of `name: var(--x, FALLBACK)`, found by balancing the parentheses (a fallback may hold a colour-mix and a var of its own)
+  const decl = (rule, name) => {
+    const at = rule.indexOf(name + ": var(");
+    assert.ok(at >= 0, name + " in " + rule);
+    let depth = 0, i = rule.indexOf("(", at);
+    const start = i;
+    for (; i < rule.length; i++) { if (rule[i] === "(") depth++; else if (rule[i] === ")" && --depth === 0) break; }
+    const inner = rule.slice(start + 1, i);
+    return inner.slice(inner.indexOf(",") + 1);
+  };
+  let rules = 0;
+  for (const m of css.matchAll(/^\.rr-chip-t(\d)\[data-kind="(ccf|core)"\]\s+\{[^\n]*\}$/gm)) {
+    rules++;
+    const inks = hexes(decl(m[0], "--ink")), fills = hexes(decl(m[0], "--fill")), on = hexes(decl(m[0], "--on"))[0];
+    assert.equal(inks.length, fills.length, m[0]);
+    inks.forEach((ink, i) => {
+      for (const bg of [W, palette.mix(fills[i], W, 0.1), ...rowTints]) assert.ok(palette.contrast(ink, bg) >= palette.AA, `${m[2]} tier ${m[1]}: ${ink} on ${bg} is ${palette.contrast(ink, bg).toFixed(2)}`);
+      assert.ok(palette.contrast(on, fills[i]) >= palette.AA, `${m[2]} tier ${m[1]}: ${on} on its solid fill ${fills[i]}`);
+    });
+    if (m[2] === "core") assert.equal(inks.length, 2, "CORE has a teal and an indigo colour (the look's flag decides)");
   }
-  for (const key of ["award-ink", "finalist-ink", "talk-ink"]) assert.ok(palette.contrast(fallback("--rr-" + key), "#ffffff") >= palette.AA, key);
-  assert.match(css, /\.rr-chips-tier \.rr-chip-t1\[data-kind="core"\]/, "with the list's name left out CORE is teal until a colour is picked for it");
+  assert.equal(rules, 8, "four tiers of each list");
+  for (const key of ["award-ink", "finalist-ink", "talk-ink"]) assert.ok(palette.contrast(hexes(css.match(new RegExp("--rr-" + key + ", (#[0-9a-f]{3,6})"))[0])[0], W) >= palette.AA, key);
+  // the colour of CORE follows the nearest look (an inherited property), not an ancestor's class
+  assert.match(css, /\.rr-chips-tier\s*\{[^}]*--look-core: 100%/);
+  assert.match(css, /\.rr-chips-full\s*\{[^}]*--look-core: 0%/);
+  assert.doesNotMatch(css, /\.rr-chips-tier \.rr-chip/, "no rule that reads an ancestor's class: a sample on a button with its own look would leak");
 });

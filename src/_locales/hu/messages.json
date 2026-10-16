@@ -1138,5 +1138,8 @@
   },
   "venueCheckLink": {
     "message": "Ellenőrzés"
+  },
+  "optSaveTooBig": {
+    "message": "Nem mentve: a megadott nevek együtt több helyet foglalnak, mint amennyit a Chrome a beállításoknak tart fenn (összesen 8 KB). Rövidítsd le némelyiket."
   }
 }

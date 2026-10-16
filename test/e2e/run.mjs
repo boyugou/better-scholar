@@ -86,7 +86,7 @@ let step = 0;
 const ok = (msg) => console.log(`  ✓ ${String(++step).padStart(2)}  ${msg}`);
 
 async function launch() {
-  return pw.chromium.launchPersistentContext(path.join(tmp, "profile-" + Math.random().toString(36).slice(2)), {
+  const ctx = await pw.chromium.launchPersistentContext(path.join(tmp, "profile-" + Math.random().toString(36).slice(2)), {
     executablePath: chromiumPath,
     headless: !process.env.E2E_HEADED,                              // E2E_HEADED=1 shows the window (background tabs then behave like a real browser's)
     viewport: { width: 1360, height: 900 },
@@ -94,6 +94,18 @@ async function launch() {
     permissions: ["clipboard-read", "clipboard-write"],
     args: [`--disable-extensions-except=${extDir}`, `--load-extension=${extDir}`, "--no-first-run", ...(process.env.CI ? ["--no-sandbox"] : [])]
   });
+  // chrome.storage.sync takes 120 writes a minute from a profile and refuses the rest (the settings page then writes again 10 s later): the extension's pages report each
+  // write they make (a message in the console), so that the tests can wait while the minute's allowance is nearly used (see budget())
+  ctx.rrWrites = [];
+  await ctx.addInitScript(() => {
+    try {
+      if (location.protocol !== "chrome-extension:" || !chrome.storage || !chrome.storage.sync) return;
+      const set = chrome.storage.sync.set.bind(chrome.storage.sync);
+      chrome.storage.sync.set = (...args) => { console.log("rr-sync-write"); return set(...args); };
+    } catch (e) { /* not an extension page */ }
+  });
+  ctx.on("console", (m) => { if (m.text() === "rr-sync-write") ctx.rrWrites.push(Date.now()); });
+  return ctx;
 }
 
 
@@ -167,7 +179,17 @@ const setPref = async (p, key, on) => { await p.bringToFront(); await p.setCheck
 const setList = async (p, list, on) => { await setPref(p, "rows." + list, on); await setPref(p, "panel.table." + list, on); };
 const setMark = async (p, group, on) => { await setPref(p, "rows." + group, on); await setPref(p, "panel.marks." + group, on); };
 // (the settings page writes what it was told a moment later than it was told, at most 85 times a minute: a read of its settings waits for that write)
-const settle = (p) => pollPage(p, () => !document.body.hasAttribute("data-rr-pending")).catch(() => {});
+const settle = async (p) => { await pollPage(p, () => !document.body.hasAttribute("data-rr-pending")).catch(() => {}); await budget(p); };
+// (a profile may write 120 times in a minute: with fewer than `reserve` writes of the minute left, wait for the oldest ones to age out)
+const budget = async (p, reserve = 25) => {
+  const log = p.context().rrWrites;
+  while (log) {
+    const now = Date.now();
+    while (log.length && now - log[0] > 61000) log.shift();
+    if (log.length + reserve <= 120) return;
+    await p.waitForTimeout(1000);
+  }
+};
 const stored = async (p, area, key) => { if (area === "sync" && key === "prefs" && p.url().endsWith("/options/options.html")) await settle(p); return p.evaluate(([a, k]) => chrome.storage[a].get(k).then((r) => r[k]), [area, key]); };
 // (waitForFunction evaluates its predicate as a string, which the extension pages' content security policy -- scripts from 'self' only -- can refuse
 // on some builds: these pages are polled with evaluate instead)
@@ -1103,6 +1125,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await patchPrefs({ panel: { filters: { years: false }, years: { show: false } } });
     await eventually(page, () => document.querySelector(".rr-year").hidden);
     assert.equal(await visibleRows(page), 20, "a year range with no dropdown and no bar to undo it is cleared");
+    // a one-year filter is never left without a control: the chart goes when nothing is highlighted, and the year filter goes with it
+    await patchPrefs({ panel: { filters: { years: false, bar: false }, years: { show: true } } });
+    await eventually(page, () => document.querySelector(".rr-bar:not([disabled])") && document.querySelector(".rr-bar:not([disabled])").offsetParent);
+    const aYear = await page.locator(".rr-bar:not([disabled])").first().getAttribute("data-year");
+    await page.locator(`.rr-bar[data-year="${aYear}"]`).click();
+    await eventually(page, () => document.querySelectorAll('.rr-bar[aria-pressed="true"]').length === 1);
+    assert.ok((await visibleRows(page)) < 20, "a bar filters to its year");
+    await patchPrefs({ roles: { first: false, cofirst: false, second: false, last: false } });
+    await eventually(page, () => document.querySelector('[data-rr="years"]').hidden);
+    assert.equal(await visibleRows(page), 20, "no highlighted paper, no chart: the year filter that only a bar could undo is gone with it");
+    await patchPrefs({ roles: { first: true, cofirst: true, second: true, last: true }, panel: { filters: { years: true, bar: true } } });
+    await eventually(page, () => !document.querySelector('[data-rr="years"]').hidden && document.querySelector(".rr-bar") && !document.querySelector(".rr-year").hidden);
     await patchPrefs({ panel: { filters: { years: true, only: false }, years: { show: true } } });
     await eventually(page, () => !document.querySelector(".rr-year").hidden && document.querySelector('[data-act="only"]').closest(".rr-row").hidden);
     await patchPrefs({ panel: { filters: { only: true } } });
@@ -1146,8 +1180,30 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       const kept = await pageCall("filter", { query: "role:first learning" });
       assert.equal(kept.result.filters.query, "role:first", "with no search box the words of a quick filter stay (a button takes them off), the others do not");
       assert.deepEqual(kept.result.ignored, ["query"]);
+      const upper = await pageCall("filter", { query: "CCF:A learning" });
+      assert.equal(upper.result.filters.query, "ccf:a", "the words that stay are the quick filters' own, in lower case: a button can take them off");
       await pageCall("clearFilters");
       await patchPrefs({ panel: { filters: { search: true }, metrics: { show: true } } });
+      await eventually(page, () => !document.querySelector(".rr-search").hidden);
+      const spaced = await pageCall("filter", { query: "role:first   cites:>1" });
+      assert.deepEqual([spaced.result.ignored, spaced.result.filters.query], [[], "role:first cites:>1"], "a query with extra spaces is not reported as left out");
+      const anyYear = await pageCall("filter", { yearStart: 2099, yearEnd: 2099, query: "" });
+      assert.deepEqual(anyYear.result.ignored, [], "with the year list on, any year can be asked for: the list shows it and can undo it");
+      await pageCall("clearFilters");
+      await patchPrefs({ panel: { filters: { years: false } } });
+      await eventually(page, () => document.querySelector(".rr-year").hidden);
+      const year = await pageCall("filter", { yearStart: 2099, yearEnd: 2099, query: "" });
+      assert.deepEqual([...year.result.ignored].sort(), ["yearEnd", "yearStart"], "a year with no bar to undo it is left out and said so");
+      assert.equal(year.result.shown, year.result.total);
+      const barYear = Number(await page.locator(".rr-bar:not([disabled])").first().getAttribute("data-year"));
+      const viaBar = await pageCall("filter", { yearStart: barYear, yearEnd: barYear });
+      assert.deepEqual([viaBar.result.ignored, viaBar.result.shown < viaBar.result.total], [[], true], "a year the chart has a bar for is kept: the bar undoes it");
+      await pageCall("clearFilters");
+      await patchPrefs({ panel: { filters: { years: true } } });
+      await eventually(page, () => !document.querySelector(".rr-year").hidden);
+      const noHtml = await pageCall("export", { format: "bibtex", html: true });
+      assert.ok(noHtml.ok && !("html" in noHtml.result), "a format with no HTML has no html key");
+      await pageCall("clearFilters");
       await eventually(page, () => !document.querySelector(".rr-search").hidden && !document.querySelector('[data-rr="metrics"]').hidden);
       // the exports follow what is drawn: a list that no chip and no tab shows is not used, whatever the call asks for
       await patchPrefs({ rows: { core: false }, panel: { table: { core: false } } });
@@ -1511,7 +1567,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.hover('label:has(input[data-pref="panel.copy.json"])');
     assert.equal(await opts.locator('#pv-panel [data-act="copy-json"]').evaluate((el) => el.classList.contains("pv-hot")), true, "a setting points at what it draws");
     await opts.hover('.opt:has(input[data-pref="labels.mH"])');
-    assert.equal(await opts.locator('#pv-panel [data-metric="mH"]').evaluate((el) => el.classList.contains("pv-hot")), true, "so does a name's field");
+    assert.equal(await opts.locator('#pv-panel [data-metric="mH"] [data-rr-label]').evaluate((el) => el.classList.contains("pv-hot")), true, "so does a name's field: the text it names");
     await opts.mouse.move(5, 5);
     assert.equal(await opts.locator(".pv-hot").count(), 0);
     await opts.locator('[data-act="reset"]').click(); await opts.locator('[data-act="reset-confirm"]').click(); await settle(opts);

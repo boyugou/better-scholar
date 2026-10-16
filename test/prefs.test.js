@@ -333,10 +333,25 @@ test("the record, with every name at its longest in a language that takes three 
   assert.ok(bytes < 7400, "the record is " + bytes + " bytes");
 });
 
-test("names: nothing in a name shows nothing or turns the text around, and the joiners some scripts need stay", () => {
-  const r = prefs.apply(prefs.defaults(), { labels: { metricsTitle: "My\u202e papers\u200b\u2066", copySummary: "Copy\u0000 \u061csummary\ufeff" } });
-  assert.deepEqual([r.prefs.labels.metricsTitle, r.prefs.labels.copySummary], ["My papers", "Copy summary"], "bidi marks and overrides, zero-width characters and controls are gone");
+test("names: nothing in a name shows nothing or turns the text around, and what some scripts need stays", () => {
+  const r = prefs.apply(prefs.defaults(), { labels: { metricsTitle: "My\u202e papers\u200b\u2066", copySummary: "Copy\u0000 \u00adsum\u3164mary\ufeff\u{e0001}\u{e0041}" } });
+  assert.deepEqual([r.prefs.labels.metricsTitle, r.prefs.labels.copySummary], ["My papers", "Copy summary"], "overrides, isolates, zero-width characters, fillers, tag characters and controls are gone");
   const persian = "می\u200cخواهم";          // (a non-joiner inside a word)
   assert.equal(prefs.apply(prefs.defaults(), { labels: { metricsTitle: persian } }).prefs.labels.metricsTitle, persian, "the zero-width non-joiner stays");
+  const hebrew = "עברית\u200f (1)";          // (a right-to-left mark that fixes the punctuation of a Hebrew name in a left-to-right page)
+  assert.equal(prefs.apply(prefs.defaults(), { labels: { metricsTitle: hebrew } }).prefs.labels.metricsTitle, hebrew, "the direction marks stay");
   assert.equal(prefs.normalize({ labels: { mH: "h\u202e-index" } }).labels.mH, "h-index", "a stored record is read the same way");
+});
+
+test("the record's size is counted the way Chrome counts it: a '<' is six bytes, and a patch that would make the record too large for chrome.storage.sync is refused whole", () => {
+  assert.equal(prefs.sizeOf({ a: "<" }), Buffer.byteLength('{"a":"<"}') + 5, "a < is \\u003C in Chrome's JSON");
+  assert.ok(prefs.sizeOf(prefs.defaults()) < 3500, "the defaults: " + prefs.sizeOf(prefs.defaults()));
+  const labels = Object.fromEntries(Object.keys(prefs.NAMES).map((k) => [k, "<".repeat(prefs.NAME_MAX)]));
+  const r = prefs.apply(prefs.defaults(), { labels, rows: { style: "bar" } });
+  assert.deepEqual(r.applied, [], "nothing of it is applied, the other setting in the patch too");
+  assert.match(r.ignored.at(-1).reason, /more than Chrome's sync storage keeps for one item/);
+  assert.deepEqual(r.prefs, prefs.defaults(), "the record is as it was");
+  // the same names in characters that cost three bytes fit, as before
+  const ok = prefs.apply(prefs.defaults(), { labels: Object.fromEntries(Object.keys(prefs.NAMES).map((k) => [k, "字".repeat(prefs.NAME_MAX)])) });
+  assert.equal(ok.applied.length, Object.keys(prefs.NAMES).length);
 });

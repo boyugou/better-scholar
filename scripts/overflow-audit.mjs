@@ -43,6 +43,7 @@ const browser = await pw.chromium.launch({ executablePath: chromiumPath, args: p
 // In the page: the elements whose text or box goes outside the box that holds them. A box is a button, a row, a card, a cell, a label…; the overlays of the preview's
 // editor (tags, rails, drop bar) are meant to stick out and are left out.
 function measure() {
+  for (const d of document.querySelectorAll("details")) d.open = true;                      // (what is folded away is measured too: the name help, the unranked list, the tray)
   const BOXES = "button, .opt, .row, .card, .chip-theme, label, summary, td, th, .seg-btn, .name-edit, .toc a, .opt-search-box, .rr-sec, .rr-copybar";
   const SKIP = ".pv-tag, .pv-rail, .pv-drop, .pv-rename, .pv-tray, .rr-sr, [hidden], .sr-only, .skip, .demo-bar, .rr-dd-list, .rr-suggest";
   const out = [];
@@ -61,6 +62,16 @@ function measure() {
     // text cut by its own box
     if ((cs.overflowX === "hidden" || cs.overflowX === "clip") && el.scrollWidth > el.clientWidth + 1 && (el.textContent || "").trim() && cs.textOverflow !== "ellipsis" && !el.matches(".opt-search, .chip-sample, .rr-bars, .toc") && !el.closest(".chip-theme")) {
       out.push({ kind: "cut by its own box", what: `${desc(el)} ${el.scrollWidth} > ${el.clientWidth}: "${(el.textContent || "").trim().slice(0, 40)}"` });
+    }
+    // a one-word label of a script that has spaces ("Ad|d", "Hinzufü|gen"): the word's text is on more than one line
+    const label = (el.textContent || "").trim();
+    if (el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {
+      const range = document.createRange(), lines = new Set();
+      for (const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); walker.nextNode();) {          // (the text only: an icon beside it has a box of its own)
+        range.selectNodeContents(walker.currentNode);
+        for (const q of range.getClientRects()) if (q.width > 0.5) lines.add(Math.round(q.top / 4));
+      }
+      if (lines.size > 1) out.push({ kind: "a word broken in two", what: `${desc(el)}: "${label.slice(0, 30)}" is on ${lines.size} lines` });
     }
     // runs out of the box that holds it
     const box = el.parentElement && el.parentElement.closest(BOXES);

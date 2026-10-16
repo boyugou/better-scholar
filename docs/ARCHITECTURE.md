@@ -389,12 +389,12 @@ Three buttons put a second flavour on the clipboard: *Copy as table* (`summaryHt
 
 | Area | Key | What | Written by |
 |---|---|---|---|
-| `chrome.storage.sync` | `prefs` | The settings record (`SETTINGS`), names and orders included: under 7 KB at its worst (a test), the item limit is 8 KB | the settings page only |
+| `chrome.storage.sync` | `prefs` | The settings record (`SETTINGS`), names and orders included: under 7 KB at its worst (a test); the item limit is 8 KB, counted as Chrome counts it (`sizeOf`: a `<` is six bytes), and a record over it is not written, not retried, and the page says so | the settings page only |
 | `chrome.storage.sync` | `variants` | `{ profileId: [spellings] }`, at most 8 per profile, 40 profiles | the Scholar page |
 | `chrome.storage.local` | `ui` | `{ collapsed, source }` | the Scholar page only |
 | `chrome.storage.local` | `resolved` | `{ paperId: { authors, venue, ts, via? } }` from *Read full lists*; 90 days, at most 3,000 | the Scholar page; cleared from the settings page |
 | `chrome.storage.local` | `s2key` | The optional Semantic Scholar API key (never synced) | the settings page |
-| `chrome.storage.local` | `askVenue` | A venue text from the unranked list's *Check* link, until the settings page takes it (it then fills *Check a venue*) | the Scholar page; the settings page removes it |
+| `chrome.storage.local` | `askVenue` | A venue text and the time, from the unranked list's *Check* link, until the settings page takes it (it then fills *Check a venue*; an entry older than 30 s is ignored) | the Scholar page; the settings page removes it |
 | Scholar's `localStorage` | `rr-load-lock` | `{ id, t }` while an automatic load presses *Show more* | `content/scholar.js` |
 | Scholar's `sessionStorage` | `rr-hl` | The language code and time of the last redirect, the guard against a loop | `content/lang-redirect.js` |
 

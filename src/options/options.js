@@ -188,6 +188,15 @@
   async function flush() {
     writeTimer = 0;
     if (!dirty) return;
+    // (more than Chrome keeps for one item, counted as Chrome counts: not written, not tried again, and said so: it would be refused every time)
+    if (B.prefs.sizeOf(B.prefs.normalize(prefs)) > B.prefs.SYNC_LIMIT) {
+      dirty = false;
+      document.body.removeAttribute("data-rr-pending");
+      const done = waiters; waiters = [];
+      done.forEach((resolve) => resolve(false));
+      status(t("optSaveTooBig"), true);
+      return;
+    }
     dirty = false; inFlight = true; lastWrite = Date.now();
     awaiting.push({ json: JSON.stringify(B.prefs.normalize(prefs)), at: lastWrite });
     const ok = await B.store.savePrefs(prefs);
@@ -834,7 +843,7 @@
       // (the CCF entry also says its area and where the venue is on DBLP: a link, opened only when it is clicked)
       const dblp = info.dblp && /^https?:\/\/dblp\.(?:uni-trier\.de|org)\/db\/[\w\/-]+\/?$/.test(info.dblp) ? info.dblp.replace(/^http:\/\/dblp\.uni-trier\.de/, "https://dblp.org").replace(/^http:\/\/dblp\.org/, "https://dblp.org") : "";
       const meta = [info.area ? areaName(info.area) : "", dblp ? h("a", { href: dblp, target: "_blank", rel: "noopener noreferrer", "aria-label": "DBLP: " + info.name }, "DBLP ↗") : ""].filter(Boolean);
-      venueOut.append(h("div", { class: "venue-line", "data-kind": kind }, B.chips.tierChip(kind, info, B.data[kind].meta.label),
+      venueOut.append(h("div", { class: "venue-line", "data-kind": kind }, h("span", { class: "venue-swatch" }, B.chips.tierChip(kind, info, B.data[kind].meta.label)),
         h("span", { class: "venue-what" }, h("b", {}, info.name + (info.abbr ? " (" + info.abbr + ")" : "")), h("span", { class: "faint" }, " · " + B.chips.ruleText(info)),
           meta.length ? h("span", { class: "venue-meta" }, ...meta.flatMap((m, i) => (i ? [" · ", m] : [m]))) : null)));
     }
@@ -842,9 +851,7 @@
   }
 
   // a venue the panel asked about (the unranked list's "Check"): its text goes into the box, and the card is shown
-  async function takeAskedVenue() {
-    const text = await B.store.takeVenue();
-    if (!text) return;
+  function showVenue(text) {
     venueInput.value = text;
     checkVenue();
     if (searchInput.value) { searchInput.value = ""; filterSettings(""); }
@@ -853,6 +860,10 @@
     row.classList.remove("opt-flash"); void row.offsetWidth; row.classList.add("opt-flash");
     setTimeout(() => row.classList.remove("opt-flash"), 1800);
     venueInput.focus({ preventScroll: true });
+  }
+  async function takeAskedVenue() {
+    const text = await B.store.takeVenue();
+    if (text) showVenue(text);
   }
 
   $("controls").append(
@@ -1011,7 +1022,7 @@
   ];
   const panelCb = Object.fromEntries(["onSettings", "onCollapse", "onSource", "onSelect", "onOnly", "onYear", "onQuery", "onSearchNext", "onImpact", "onMarkGroup", "onVenue", "onToggleVenues", "onClearFilters", "onCopy", "onAddVariant", "onRemoveVariant", "onLoadAll", "onCancelLoad", "onResolve", "onCancelResolve"].map((k) => [k, () => {}]));
   panelCb.onCopyUnmatched = async () => false;
-  panelCb.onCheckVenue = async (text) => { await B.store.askVenue(text); await takeAskedVenue(); };               // (on this page itself: the box is filled in and shown)
+  panelCb.onCheckVenue = (text) => showVenue(String(text).replace(/\s+/g, " ").trim().slice(0, 300));               // (on this page itself: the box is filled in and shown, nothing is stored)
   panelCb.onSettings = () => { const c = document.getElementById("card-highlight"); if (c) window.scrollTo({ top: c.getBoundingClientRect().top + scrollY - 70, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
   let panelUi = { collapsed: false, source: "ccf" };
   panelCb.onCollapse = () => { panelUi.collapsed = !panelUi.collapsed; renderPreview(); };

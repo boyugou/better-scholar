@@ -1159,5 +1159,8 @@
   },
   "venueCheckLink": {
     "message": "Prüfen"
+  },
+  "optSaveTooBig": {
+    "message": "Nicht gespeichert: Deine eigenen Namen ergeben zusammen mehr, als Chrome für die Einstellungen an Speicher vorhält (insgesamt 8 KB). Kürze einige davon."
   }
 }
