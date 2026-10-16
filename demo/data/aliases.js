@@ -11,6 +11,9 @@
 //   abbrs         extra abbreviations, for both rows (CCF calls it "SIGKDD", CORE and everyone else "KDD")
 //   exact         extra names for whole strings only: the start of a cut-off string is never read as one of them
 //                 (a name that is also the start of other venues' names, "Machine Learning and …")
+//   former        names the venue had, or is printed under, that say "Workshop" where the list's name does not: found by name, and a string that carries one whole is the venue
+//                 (any other "… Workshop on …" at it is a track); not part of the venue's wording otherwise, so they do not make its "Conference" a clash
+//   renamed       the list's name for the row is a name the venue had (CORE's WACV: "IEEE Workshop on Applications of Computer Vision"): its "Workshop" is no longer what the venue is
 //   fullOnly      extra names whose organisation is part of what they say ("USENIX ATC"): read whole, never as the bare acronym that is left once the organisation is dropped ("ATC")
 //   noBareAcronym the acronym alone proves nothing: another, unranked venue is called the same ("SAC" is also ACM's Symposium on
 //                 Applied Computing) — only the name counts
@@ -207,25 +210,32 @@
     { ccf: "HotStorage", names: ["Hot Topics in Storage and File Systems", "USENIX Workshop on Hot Topics in Storage and File Systems"] },
     { ccf: "JCC", names: ["International Conference on Joint Cloud Computing"] },
     { ccf: "SAC", core: "SAC", noBareAcronym: true, names: ["Selected Areas in Cryptography"] },
-    // venues that are, or were, workshops by name, where the list gives the name of today (a string that says "Workshop" is a track at a venue unless it is the venue's own name)
-    { ccf: "SLT", names: ["IEEE Spoken Language Technology Workshop", "Spoken Language Technology Workshop"] },
-    { ccf: "VMCAI", core: "VMCAI", names: ["International Workshop on Verification, Model Checking, and Abstract Interpretation"] },
-    { ccf: "SPIN", names: ["International Workshop on Model Checking Software"] },
-    { ccf: "CSL", core: "CSL", names: ["International Workshop on Computer Science Logic"] },
-    { ccf: "HSCC", names: ["International Workshop on Hybrid Systems: Computation and Control"] },
-    { ccf: "CHES", names: ["International Workshop on Cryptographic Hardware and Embedded Systems"] },
-    { ccf: "RAID", core: "RAID", names: ["International Workshop on Recent Advances in Intrusion Detection"] },
-    { ccf: "ICML", core: "ICML", names: ["International Workshop on Machine Learning"] },
-    { ccf: "MSR", names: ["International Workshop on Mining Software Repositories"] },
-    { ccf: "FSE", ccfTier: "B", names: ["International Workshop on Fast Software Encryption"] },
-    { ccf: "PKC", core: "PKC", names: ["International Workshop on Public Key Cryptography", "IACR International Workshop on Public Key Cryptography"] },
-    { ccf: "ICMR", core: "ICMR", names: ["ACM SIGMM International Workshop on Multimedia Information Retrieval"] },
-    { core: "CHASE", names: ["International Workshop on Cooperative and Human Aspects of Software Engineering"] },
-    { core: "INLG", names: ["International Workshop on Natural Language Generation"] },
-    { core: "SSBSE", names: ["International Workshop on Search-Based Software Engineering"] },
-    { core: "RSP", names: ["IEEE International Workshop on Rapid System Prototyping"] },
-    { core: "HCOMP", names: ["Human Computation Workshop"] },
-    { core: "QoMEX", names: ["International Workshop on Quality of Multimedia Experience"] },
+    // venues that are, or were, workshops by name, where the list gives the name of today (a string that says "Workshop" is a track at a venue unless it is the venue's own name):
+    // `former` names are found by name like any other, but are not the venue's wording otherwise — its "conference" is not a clash with them
+    { ccf: "SLT", former: ["IEEE Spoken Language Technology Workshop", "Spoken Language Technology Workshop"] },
+    { ccf: "VMCAI", core: "VMCAI", former: ["International Workshop on Verification, Model Checking, and Abstract Interpretation"] },
+    { ccf: "SPIN", former: ["International Workshop on Model Checking Software"] },
+    { ccf: "CSL", core: "CSL", former: ["International Workshop on Computer Science Logic"] },
+    { ccf: "HSCC", former: ["International Workshop on Hybrid Systems: Computation and Control"] },
+    { ccf: "CHES", former: ["International Workshop on Cryptographic Hardware and Embedded Systems"] },
+    { ccf: "RAID", core: "RAID", former: ["International Workshop on Recent Advances in Intrusion Detection"] },
+    { ccf: "MSR", core: "MSR", former: ["International Workshop on Mining Software Repositories"] },
+    { ccf: "FSE", ccfTier: "B", former: ["International Workshop on Fast Software Encryption"] },
+    { ccf: "PKC", core: "PKC", former: ["International Workshop on Public Key Cryptography", "IACR International Workshop on Public Key Cryptography", "International Workshop on Practice and Theory in Public Key Cryptography"] },
+    { ccf: "ICMR", core: "ICMR", former: ["ACM SIGMM International Workshop on Multimedia Information Retrieval"] },
+    { core: "CHASE", former: ["International Workshop on Cooperative and Human Aspects of Software Engineering"] },
+    { core: "INLG", former: ["International Workshop on Natural Language Generation"] },
+    { core: "SSBSE", former: ["International Workshop on Search-Based Software Engineering"] },
+    { core: "RSP", former: ["IEEE International Workshop on Rapid System Prototyping"] },
+    { core: "HCOMP", former: ["Human Computation Workshop"] },
+    { ccf: "PEPM", core: "PEPM", former: ["ACM SIGPLAN Workshop on Partial Evaluation and Semantics-Based Program Manipulation"] },
+    { core: "MISE", former: ["International Workshop on Modeling in Software Engineering"] },
+    // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW.
+    // (ICML's first decade, "International Workshop on Machine Learning", is not an alias: a title that generic is every sponsor's workshop, and ICML is A*)
+    { core: "WACV", renamed: true, exact: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },          // (exact: the list view's cut "… Applications of Computer …" is the conference or its workshops)
+    { core: "VizSec", former: ["Workshop on Visualization for Computer Security"] },
+    { core: "HealthCom", former: ["International Workshop on Enterprise Networking and Computing in Healthcare Industry"] },
+    { core: "QoMEX", former: ["International Workshop on Quality of Multimedia Experience"] },
     // earlier or sponsor-carrying names Scholar prints (the lists give the current ones)
     { ccf: "SPAA", core: "SPAA", names: ["ACM Symposium on Parallel Algorithms and Architectures", "Symposium on Parallel Algorithms and Architectures"] },
     // PETS was the International Workshop on Privacy Enhancing Technologies (CORE's note says "of"; the proceedings say "on")
