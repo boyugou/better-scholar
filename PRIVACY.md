@@ -128,7 +128,9 @@ The extension writes to the clipboard only when you click a button that copies, 
 - the copy buttons of the panel and the toolbar popup: *Copy summary*, *Copy as table*, *Copy papers*, *Copy
   APA*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues. *Copy as table*,
   *Copy papers* and *Copy APA* put the same content on the clipboard twice, as text and as HTML (which a word
-  processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else;
+  processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else.
+  *Copy summary* and *Copy as table* end with a line giving the profile's link (`…/citations?user=<id>`, nothing else of the
+  address) and the day, unless you switch that off in the settings, and say when the paper list is not all loaded;
 - on the settings page: *Copy guide for agents* (it contains your current settings), *Copy config (JSON)*, *Copy
   cache (JSON)* (the saved paper details) and *Copy details for a bug report* (the extension's version, your
   browser's user-agent string, the interface language and your settings).
