@@ -132,8 +132,8 @@ in this order:
    the awards and talks counts, the search box, the quick filters, "Only highlighted", the year range, the citation totals of
    the highlighted papers, the year chart and the name help.
 3. "Filter by role, rank and citations." The search `role:first ccf:a cites:>100` typed in: five papers left, the bar
-   "Showing 5 of 12 papers" with Clear, and the quick filters CCF A, >100 and First lit (the totals below follow; they are
-   under the fold in this picture).
+   "Showing 5 of 12 papers" with Clear, the role × rank table counting those five, and the quick filters CCF A, >100 and
+   First lit (the citation totals below follow too; they are under the fold in this picture).
 4. "Choose what you see." The settings page: the row of section links, the card "Highlight my papers" (a switch for each
    role and for marking your name) and the start of "Colours", and at the right the live preview (four sample rows, its note,
    the hint "Hover a part to hide it (✕) or move it (⠿). Double-click a name to rename it." and the tray "Hidden: 6").

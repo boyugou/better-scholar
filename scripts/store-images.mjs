@@ -45,7 +45,7 @@ const SHOTS = {
   },
   search: {
     file: "screenshot-3.jpg", title: "Filter by role, rank and citations",
-    caption: "Type " + QUERY + " and the list and its citation totals follow.",
+    caption: "Type " + QUERY + " and the list, the table and the citation totals follow.",
     about: "The panel's search box with the query `" + QUERY + "` typed in: the paper list keeps the five first-author CCF A papers with more than 100 citations, the filter bar at the top of the panel says \"Showing 5 of 12 papers\" and offers Clear, the matching quick-filter pills light up, and the citation totals count only those papers."
   },
   settings: {
@@ -303,7 +303,7 @@ try {
   if (tabId == null) throw new Error("the profile tab did not answer the popup");
   await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tabId}`);
   await poll(popup, () => !!document.querySelector(".who") && !!document.querySelector("main table") && !!document.querySelector(".seg"), null, "the popup's table");
-  await popup.evaluate(() => [...document.querySelectorAll(".seg button")].find((b) => b.textContent.trim() === "CORE").click());
+  await popup.locator(".seg button", { hasText: "CORE" }).click();                                      // (a real click: the extension's buttons ignore one a script makes)
   await poll(popup, () => { const b = [...document.querySelectorAll(".seg button")].find((x) => x.textContent.trim() === "CORE"); return b && b.getAttribute("aria-pressed") === "true"; }, null, "the popup's CORE table");
   await popup.evaluate(() => document.fonts.ready);
   const popupH = await popup.evaluate(() => Math.ceil(document.documentElement.getBoundingClientRect().height));
@@ -344,7 +344,7 @@ try {
   }
 
   // 3
-  await render(SHOTS.search.file, page1280(copyBlock(SHOTS.search, "Type <code>" + esc(QUERY) + "</code> and the list and its citation totals follow.") +
+  await render(SHOTS.search.file, page1280(copyBlock(SHOTS.search, "Type <code>" + esc(QUERY) + "</code> and the list, the table and the citation totals follow.") +
     windowHtml({ img: dataUri(shotSearch), cssW: PAGE_W, cssH: pageH, zoom: PAGE_ZOOM, left: winLeft(PAGE_W, PAGE_ZOOM) })), 1280, 800);
 
   // 4
