@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "במות אחרות"
+  },
+  "optPrefer": {
+    "message": "כאשר לבמה יש דירוג בשתי הרשימות"
+  },
+  "optPreferHint": {
+    "message": "תגית אחת במקום שתיים: הרשימה שנבחרה, והאחרת רק במקום שבו לרשימה שנבחרה אין דירוג לבמה. הטקסט שמופיע בריחוף על התגית ממשיך לציין את הדירוג מהרשימה האחרת."
+  },
+  "optPreferCcf": {
+    "message": "CCF קודם"
+  },
+  "optPreferCore": {
+    "message": "CORE קודם"
+  },
+  "optPreferBoth": {
+    "message": "שתיהן"
   }
 }

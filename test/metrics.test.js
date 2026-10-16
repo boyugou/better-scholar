@@ -194,3 +194,12 @@ test("the table is what its selections say: every cell counts exactly the papers
     }
   }
 });
+
+test("topVenues: where both lists rank a venue and one is the winner, its rank stands alone; the other list's rank is kept where the winner has none", () => {
+  const venue = (abbr, ccf, core) => ({ highlighted: true, venue: { ccf: ccf ? { abbr, name: abbr + " full", tier: ccf } : null, core: core ? { abbr, name: abbr + " full", rank: core } : null } });
+  const rows = [venue("ICML", "A", "A*"), venue("ICML", "A", "A*"), venue("EACL", null, "A"), venue("NSDI", "A", null)];
+  const by = (winner) => Object.fromEntries(m.topVenues(rows, 9, { ccf: true, core: true }, winner).map((v) => [v.key, [v.ccf, v.core]]));
+  assert.deepEqual(by(null), { ICML: ["A", "A*"], EACL: [null, "A"], NSDI: ["A", null] });
+  assert.deepEqual(by("ccf"), { ICML: ["A", null], EACL: [null, "A"], NSDI: ["A", null] });
+  assert.deepEqual(by("core"), { ICML: [null, "A*"], EACL: [null, "A"], NSDI: ["A", null] }, "CCF fills in where CORE has none");
+});

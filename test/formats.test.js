@@ -261,3 +261,18 @@ test("the copied summary says what the not-ranked papers are, kind by kind, and 
   assert.ok(!f.summaryText(ranked, { owner: "Jane Doe" }).includes("Not ranked:"), "all ranked: no line");
   assert.ok(!f.summaryText(metrics.summarize([unranked("arXiv")], null), { owner: "Jane Doe" }).includes("Not ranked:"), "by role only: no line");
 });
+
+test("rank notes of the BibTeX and Markdown copies: where both lists rank a venue and one is preferred, its rank stands alone (the table and the JSON keep both)", () => {
+  const both = paper(), coreOnly = paper({ rank: { ccf: null, core: { rank: "A" } } });
+  for (const [prefer, want] of [[null, "CCF A · CORE A\\*"], ["ccf", "**CCF A**"], ["core", "**CORE A\\***"]]) assert.ok(f.markdown([both], { prefer }).includes(want), String(prefer));
+  assert.ok(f.markdown([coreOnly], { prefer: "ccf" }).includes("**CORE A**"), "CORE fills in where CCF has no rank");
+  assert.match(f.bibtex([both], { prefer: "ccf" }), /CCF A/);
+  assert.doesNotMatch(f.bibtex([both], { prefer: "ccf" }), /CORE/);
+  assert.doesNotMatch(f.bibtex([both], { prefer: "core" }), /CCF/);
+  assert.match(f.bibtex([both], {}), /CCF A.*CORE A\*/s);
+  const tsv = f.papersTsv([both], { labels: { year: "Year", title: "Title", authors: "Authors", role: "Role", venue: "Venue", ccf: "CCF", core: "CORE", awards: "Awards", citations: "Citations", roles: {}, hidden: "?" }, ccfOn: true, coreOn: true, prefer: "ccf" });
+  assert.ok(tsv.includes("A\tA*"), "the table has a column for each list: both ranks stay");
+  // a list that is not drawn is not given, whatever is preferred
+  assert.ok(!f.markdown([both], { ccfOn: false, prefer: "ccf" }).includes("CCF"));
+});
+

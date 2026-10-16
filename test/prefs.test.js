@@ -17,7 +17,7 @@ test("defaults: complete, in the table's order, and a fresh object each time", (
   assert.deepEqual(d.roles, { first: true, cofirst: true, second: true, last: true });
   assert.deepEqual(d.colors, { first: "", cofirst: "", second: "", last: "", ccf: "", core: "", award: "", talk: "" });
   assert.deepEqual(d.chips, { style: "outline", shape: "pill", label: "full" });
-  assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, award: true, oral: true, spotlight: true, highlight: true });
+  assert.deepEqual(d.rows, { name: true, style: "full", ccf: true, core: true, prefer: "ccf", award: true, oral: true, spotlight: true, highlight: true });
   assert.deepEqual(d.panel.order, ["table", "copy", "marks", "filters", "metrics", "years", "venues", "status", "names"]);
   assert.deepEqual(d.panel.copy.order, ["summary", "table", "papers", "apa", "bibtex", "markdown", "json", "csv"]);
   assert.deepEqual(d.panel.filters.pills.order, ["ccfA", "coreA", "cites100", "recent", "first", "cofirst", "second", "last", "award", "talk"]);
@@ -374,4 +374,35 @@ test("the counts follow the filters: on by default, a switch of the filters' car
   assert.ok(prefs.CARDS.find((c) => c.id === "filters").rows.some((r) => r.path === "panel.filters.follow"), "it is on the filters' card");
   const off = prefs.apply(prefs.defaults(), { panel: { filters: { follow: false } } });
   assert.deepEqual(off.applied.map((a) => [a.path, a.to]), [["panel.filters.follow", false]]);
+});
+
+test("rows.prefer: where both lists rank a venue, one chip — the preferred list's — and the other fills in where it has no rank", () => {
+  const d = prefs.defaults();
+  assert.equal(d.rows.prefer, "ccf");
+  const both = { ccf: { tier: "A" }, core: { rank: "A*" } };
+  assert.deepEqual(prefs.chipLists(d, both), { shown: ["ccf"], hidden: ["core"] });
+  assert.deepEqual(prefs.chipLists(d, { core: { rank: "B" } }), { shown: ["core"], hidden: [] }, "CCF has no rank for the venue: CORE fills in");
+  assert.deepEqual(prefs.chipLists(d, { ccf: { tier: "C" }, core: null }), { shown: ["ccf"], hidden: [] });
+  assert.deepEqual(prefs.chipLists(d, null), { shown: [], hidden: [] });
+  assert.deepEqual(prefs.chipLists(d, {}), { shown: [], hidden: [] });
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { prefer: "core" } }), both), { shown: ["core"], hidden: ["ccf"] });
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { prefer: "core" } }), { ccf: { tier: "B" } }), { shown: ["ccf"], hidden: [] }, "the other way round: CCF fills in");
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { prefer: "both" } }), both), { shown: ["ccf", "core"], hidden: [] });
+  // only between lists that are drawn: a list whose chip is off is not left out for one that is, and a preferred list that is not drawn wins nothing
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { ccf: false } }), both), { shown: ["core"], hidden: [] });
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { core: false } }), both), { shown: ["ccf"], hidden: [] });
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { prefer: "core", core: false } }), both), { shown: ["ccf"], hidden: [] });
+  assert.deepEqual(prefs.chipLists(prefs.normalize({ rows: { ccf: false, core: false } }), both), { shown: [], hidden: [] });
+  // the venue list and the notes of the copies go by the lists drawn anywhere (a chip or a tab of the table)
+  assert.equal(prefs.winner(d), "ccf");
+  assert.equal(prefs.winner(prefs.normalize({ rows: { prefer: "core" } })), "core");
+  assert.equal(prefs.winner(prefs.normalize({ rows: { prefer: "both" } })), null);
+  assert.equal(prefs.winner(prefs.normalize({ rows: { core: false }, panel: { table: { core: false } } })), null, "CORE is drawn nowhere");
+  assert.equal(prefs.winner(prefs.normalize({ rows: { core: false } })), "ccf", "CORE is still a tab of the table: it is drawn");
+  // a value that is not a choice falls back, and a patch names it
+  assert.equal(prefs.normalize({ rows: { prefer: "both?" } }).rows.prefer, "ccf");
+  assert.deepEqual(prefs.apply(d, { rows: { prefer: "none" } }).ignored.map((x) => x.path), ["rows.prefer"]);
+  assert.equal(prefs.apply(d, { rows: { prefer: "core" } }).prefs.rows.prefer, "core");
+  // the ready-made patch that shows everything shows both lists
+  assert.equal(prefs.apply(d, prefs.PRESETS.all).prefs.rows.prefer, "both");
 });

@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Autres supports"
+  },
+  "optPrefer": {
+    "message": "Quand une conférence ou une revue a un rang dans les deux listes"
+  },
+  "optPreferHint": {
+    "message": "Une pastille au lieu de deux : la liste choisie, et l’autre seulement là où la première n’a pas de rang pour la conférence ou la revue. L’info-bulle de la pastille indique toujours l’autre rang."
+  },
+  "optPreferCcf": {
+    "message": "CCF d’abord"
+  },
+  "optPreferCore": {
+    "message": "CORE d’abord"
+  },
+  "optPreferBoth": {
+    "message": "Les deux"
   }
 }

@@ -81,7 +81,8 @@
 
   // Where the highlighted papers were published: ranked venues, most papers first (ties by name), at most `n`. One short name can stand for more than one venue
   // (a conference and the journal that share it): the venue's full name and ranks are given only when every paper under the key agrees, and only for the lists that are on.
-  function topVenues(rows, n = 6, lists) {
+  // `winner`: the list whose rank stands alone where both rank the venue (lib/prefs.js winner(): the one the settings prefer), or null
+  function topVenues(rows, n = 6, lists, winner = null) {
     const on = lists || {};
     const groups = new Map();                       // key → { count, seen: signature → { name, ccf, core } }
     for (const r of rows) {
@@ -90,6 +91,7 @@
       if (!key) continue;
       const v = r.venue || {};
       const meta = { name: (v.ccf && v.ccf.name) || (v.core && v.core.name) || key, ccf: on.ccf !== false && v.ccf ? v.ccf.tier : null, core: on.core !== false && v.core ? v.core.rank : null };
+      if (winner && meta[winner]) for (const k of ["ccf", "core"]) if (k !== winner) meta[k] = null;
       const g = groups.get(key) || { count: 0, seen: new Map() };
       g.count++;
       g.seen.set(`${meta.name}|${meta.ccf}|${meta.core}`, meta);

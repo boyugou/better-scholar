@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Pozostałe miejsca"
+  },
+  "optPrefer": {
+    "message": "Gdy miejsce publikacji ma ranking na obu listach"
+  },
+  "optPreferHint": {
+    "message": "Jedna etykieta zamiast dwóch: wybrana lista, a druga tylko tam, gdzie wybrana nie ma rankingu dla miejsca publikacji. Podpowiedź etykiety nadal podaje drugi ranking."
+  },
+  "optPreferCcf": {
+    "message": "Najpierw CCF"
+  },
+  "optPreferCore": {
+    "message": "Najpierw CORE"
+  },
+  "optPreferBoth": {
+    "message": "Obie"
   }
 }

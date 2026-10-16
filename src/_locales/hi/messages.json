@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "अन्य venues"
+  },
+  "optPrefer": {
+    "message": "जब दोनों सूचियाँ किसी venue को रैंक करें"
+  },
+  "optPreferHint": {
+    "message": "दो के बजाय एक टैग: चुनी हुई सूची, और दूसरी केवल वहाँ, जहाँ चुनी हुई सूची में venue की कोई रैंक नहीं है। टैग का टूलटिप फिर भी दूसरी सूची की रैंक बताता है।"
+  },
+  "optPreferCcf": {
+    "message": "CCF पहले"
+  },
+  "optPreferCore": {
+    "message": "CORE पहले"
+  },
+  "optPreferBoth": {
+    "message": "दोनों"
   }
 }

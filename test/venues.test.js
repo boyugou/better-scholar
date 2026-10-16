@@ -1343,6 +1343,11 @@ test("the same venue in the other list: what one list's wording finds brings the
   eq("Proceedings of the 34th International Symposium on High-Performance Parallel and Distributed Computing, 2025", "CCF A HPDC · CORE A HPDC");
   eq("Proceedings of the 2022 ACM on Asia Conference on Computer and Communications Security, 2022", "CCF C AsiaCCS · CORE A AsiaCCS");
   eq("Proceedings of the 15th ACM international symposium on Mobile ad hoc …, 2014", "CCF B MobiHoc · CORE B MOBIHOC");          // (cut off too)
+  // a name of one word each (MICRO, ACM MM, VIS, ICS, Middleware) is the same word; the renamed ones the alias table pairs (GLOBECOM, SIGSPATIAL, APWeb, FORTE)
+  eq("Proceedings of the ACM International Conference on Supercomputing, 261-270, 2011", "CCF B ICS · CORE A ICS");
+  eq("Proceedings of the 12th annual ACM international conference on Multimedia …, 2004", "CCF A ACM MM · CORE A* ACMMM");
+  eq("2014 IEEE Global Communications Conference, 698-703, 2014", "CCF C GLOBECOM · CORE B GLOBECOM");
+  eq("Proceedings of the 16th ACM SIGSPATIAL international conference on Advances …, 2008", "CCF C SIGSPATIAL · CORE A SIGSPATIAL");
   // two rows of one acronym that are two venues share too few words to be one: FSE is the Foundations of Software Engineering and Fast Software Encryption in both lists
   eq("Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE · CORE A* FSE");
   eq("International Workshop on Fast Software Encryption, 54-72, 2008", "CCF B FSE · CORE B FSE");
@@ -1351,6 +1356,10 @@ test("the same venue in the other list: what one list's wording finds brings the
     const sw = [...rows.keys()].filter((e) => e.src === "ccf" && e.abbr === ccfAbbr);
     assert.equal(sw.length, 2);
     for (const e of sw) assert.equal((rows.get(e) || []).length, 1, "each FSE row has exactly one partner: " + e.name);
+    for (const [a, other] of [["CC", "Creativity and Cognition"], ["ISC", "Industrial Simulation"], ["GI", "Global Internet"]]) {          // (homonyms: one acronym, two events)
+      const x = [...rows.keys()].find((e) => e.src === "ccf" && e.abbr === a);
+      assert.ok(!(rows.get(x) || []).some((y) => y.name.includes(other)), a + " and " + other + " are not one venue");
+    }
     assert.ok(coreAcronym);
   }
   // a track word that the second venue does not own still blocks it

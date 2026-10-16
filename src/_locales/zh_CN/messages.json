@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "其他发表场所"
+  },
+  "optPrefer": {
+    "message": "两个列表都有等级时"
+  },
+  "optPreferHint": {
+    "message": "一个标签代替两个：按你选的列表显示；另一列表的标签只在你选的列表对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
+  },
+  "optPreferCcf": {
+    "message": "CCF 优先"
+  },
+  "optPreferCore": {
+    "message": "CORE 优先"
+  },
+  "optPreferBoth": {
+    "message": "两者都显示"
   }
 }

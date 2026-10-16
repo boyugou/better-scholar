@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Outros veículos"
+  },
+  "optPrefer": {
+    "message": "Quando um veículo tem ranking nas duas listas"
+  },
+  "optPreferHint": {
+    "message": "Uma etiqueta em vez de duas: a lista que você escolher, e a outra só onde a escolhida não tem ranking para o veículo. A dica da etiqueta ainda menciona o outro ranking."
+  },
+  "optPreferCcf": {
+    "message": "CCF primeiro"
+  },
+  "optPreferCore": {
+    "message": "CORE primeiro"
+  },
+  "optPreferBoth": {
+    "message": "Ambas"
   }
 }

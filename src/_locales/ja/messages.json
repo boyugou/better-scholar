@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "その他の掲載先"
+  },
+  "optPrefer": {
+    "message": "両方のリストに掲載先のランクがある場合"
+  },
+  "optPreferHint": {
+    "message": "ラベルは2つではなく1つです：選んだリストのランクを表示し、そのリストにランクがない掲載先に限り、もう一方のリストのランクを表示します。ラベルのツールチップには、もう一方のランクも引き続き表示されます。"
+  },
+  "optPreferCcf": {
+    "message": "CCF 優先"
+  },
+  "optPreferCore": {
+    "message": "CORE 優先"
+  },
+  "optPreferBoth": {
+    "message": "両方"
   }
 }

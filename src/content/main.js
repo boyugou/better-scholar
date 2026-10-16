@@ -151,7 +151,7 @@
   let namesSig = "";                                                                        // (the person's own names, as set at the last refresh: the chips' words are among them)
   function decorKey(row) {
     const a = row.a, v = a.venue || {};
-    return [namesSig, analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.rows.name, prefs.rows.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.rows.core && v.core ? v.core.rank + v.core.name : "",
+    return [namesSig, analysis.isHighlighted(a, prefs.roles), a.role, a.index, a.tokens ? a.tokens.length : 0, a.fromDetail, prefs.rows.name, prefs.rows.ccf && v.ccf ? v.ccf.tier + v.ccf.name : "", prefs.rows.core && v.core ? v.core.rank + v.core.name : "", prefs.rows.prefer,
       B.prefs.chipMarks(prefs, a.marks).map((m) => m.kind + m.source + (m.venue || "") + (m.year || "") + (m.text || "")).join(","), prefs.roles.first, prefs.roles.cofirst, prefs.roles.second, prefs.roles.last,
       row.raw.authorsEl ? row.raw.authorsEl.isConnected : 0, row.raw.venueEl ? row.raw.venueEl.querySelector(":scope > .rr-chips") !== null : 0].join("|");
   }
@@ -170,9 +170,8 @@
         if (before && before.rrSpace) before.remove();                                       // (the space put before the chips)
         n.remove();
       });
-      const chips = [];
-      if (prefs.rows.ccf && a.venue.ccf) chips.push(chip.tierChip("ccf", a.venue.ccf, edition.ccf));
-      if (prefs.rows.core && a.venue.core) chips.push(chip.tierChip("core", a.venue.core, edition.core));
+      const chips = [], { shown, hidden } = B.prefs.chipLists(prefs, a.venue);
+      for (const k of shown) chips.push(chip.tierChip(k, a.venue[k], edition[k], hidden.length ? { kind: hidden[0], info: a.venue[hidden[0]] } : null));
       for (const m of B.prefs.chipMarks(prefs, a.marks)) chips.push(chip.markChip(m));
       if (chips.length) {
         // the chips of a row stay together (they wrap to the next line as one) and start at the text's edge there: a real space before them, no margin
@@ -301,9 +300,9 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // filter can be undone) even when the other filters leave it out of the first few
   function venueList(source) {
     const max = state.venuesExpanded ? 24 : 6;
-    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, B.prefs.lists(prefs));
+    const list = metrics.topVenues(scoped(source, { skipVenue: true }), max, B.prefs.lists(prefs), B.prefs.winner(prefs));
     if (state.venueKey && !list.some((v) => v.key === state.venueKey)) {
-      const mine = metrics.topVenues(scoped(source), 99, B.prefs.lists(prefs)).find((v) => v.key === state.venueKey);
+      const mine = metrics.topVenues(scoped(source), 99, B.prefs.lists(prefs), B.prefs.winner(prefs)).find((v) => v.key === state.venueKey);
       list.push({ key: state.venueKey, count: mine ? mine.count : 0, name: mine ? mine.name : state.venueKey, ccf: mine ? mine.ccf : null, core: mine ? mine.core : null });
     }
     return list;
@@ -316,7 +315,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     const yearBars = metrics.yearBars(list);
     const whole = metrics.summarize(list, bare ? null : source);          // (the coverage numbers are about the whole profile)
     const summary = tableSummary(whole, bare ? null : source);
-    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs));
+    const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs), B.prefs.winner(prefs));
     return {
       ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare, pillFinds: pillFinds(),
       selection: state.selection, filters: state.filters,
@@ -408,7 +407,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
   function exportText(kind, { source, filtered = false } = {}) {
-    const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core };
+    const ctx = { ccfOn: B.prefs.lists(prefs).ccf, coreOn: B.prefs.lists(prefs).core, prefer: B.prefs.winner(prefs) };
     if (kind === "summary" || kind === "table") {
       const { summary, src } = summaryOf(source, filtered);
       return kind === "table"
@@ -590,7 +589,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     pruneFilters();                                                                      // (a filter whose control the settings took away: after decorate, the year chart is drawn from the papers that are highlighted now)
     // a venue filter whose venue cannot be in the panel's list any more (the roles, the merge, the lists or the venue list changed) has no control left to undo it
     // (checked once the rows know whether they are highlighted: after decorate, before the filters are applied)
-    if (state.venueKey && !(prefs.panel.venues.show && metrics.topVenues(papers(), 9999, B.prefs.lists(prefs)).some((v) => v.key === state.venueKey))) state.venueKey = null;
+    if (state.venueKey && !(prefs.panel.venues.show && metrics.topVenues(papers(), 9999, B.prefs.lists(prefs), B.prefs.winner(prefs)).some((v) => v.key === state.venueKey))) state.venueKey = null;
     // a pick on the papers whose author list lacks the profile's name, or whose list is cut, with no such paper any more (a spelling was added, the lists were read) has no line to undo it
     if (state.selection && (state.selection.role === "absent" || state.selection.role === "hidden") && (!live().some((r) => r.a.status === state.selection.role) || (state.selection.role === "absent" && layoutBroken()))) state.selection = null;
     // with no tier columns left (nothing on the profile is ranked) a selection on a tier has no control to undo it

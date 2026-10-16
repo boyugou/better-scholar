@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "기타 게재처"
+  },
+  "optPrefer": {
+    "message": "두 목록 모두 게재처에 등급이 있을 때"
+  },
+  "optPreferHint": {
+    "message": "라벨은 두 개 대신 하나만 표시됩니다: 선택한 목록의 등급을 보여 주고, 다른 목록의 등급은 선택한 목록에 게재처 등급이 없을 때만 보여 줍니다. 라벨 툴팁에는 여전히 다른 목록의 등급이 적혀 있습니다."
+  },
+  "optPreferCcf": {
+    "message": "CCF 우선"
+  },
+  "optPreferCore": {
+    "message": "CORE 우선"
+  },
+  "optPreferBoth": {
+    "message": "둘 다"
   }
 }

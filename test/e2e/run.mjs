@@ -215,6 +215,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     const seed = await openOptions(context);
     assert.equal(await seed.isChecked('input[data-pref="autoLoad"]'), true, "loading the whole list is on by default");
     await setPref(seed, "autoLoad", false);
+    // where both lists rank a venue the default draws one chip: CCF's (and CORE's where CCF has none); the checks below count the chips of both lists, so they run on "Both"
+    // (the default, and each choice, have their own check: S3c2b)
+    assert.equal(await seed.locator('input[data-pref="rows.prefer"]:checked').getAttribute("value"), "ccf", "CCF first by default");
+    await seed.click('label.seg-btn:has(input[data-pref="rows.prefer"][value="both"])');
+    await settle(seed);
     await seed.close();
     const page = await context.newPage();
     await page.goto(fx.url);
@@ -1244,6 +1249,90 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await patchPrefs({ panel: { header: { name: true, settings: true, fold: true }, ...Object.fromEntries(Object.entries(parts).map(([k, v]) => [k, { show: v }])) } });
       await eventually(page, () => !document.querySelector("#rr-panel").hidden && document.querySelector('[data-rr="metrics"]'));
       ok("a call leaves out (and reports) the filters the settings left without a control; the exports use only a list that is drawn; a table with no rank column keeps its total; a panel with nothing in it is hidden");
+    }
+
+    // -- S3c2b. one chip where both lists rank a venue: the list the settings prefer, and the other one only where it has no rank for the venue (`rows.prefer`; CCF first by default).
+    // The tooltip names the other rank; the venue list and the notes of the BibTeX and Markdown copies follow; the table, the search and the table copies keep both lists.
+    {
+      const pg = await context.newPage();                                              // (a page of its own: the checks after this one count on the first twenty papers of `page`)
+      await pg.goto(fx.url);
+      await pg.waitForSelector("#rr-panel");
+      const call = (method, params) => pg.evaluate(([m, pa]) => new Promise((resolve) => {
+        const id = "c" + Math.random();
+        const on = (e) => { if (e.detail.id === id) { document.removeEventListener("better-scholar:response", on); resolve(e.detail); } };
+        document.addEventListener("better-scholar:response", on);
+        document.dispatchEvent(new CustomEvent("better-scholar:request", { detail: { id, method: m, params: pa } }));
+      }), [method, params]);
+      await patchPrefs({ rows: { ccf: true, core: true }, panel: { show: true, table: { show: true, ccf: true, core: true }, venues: { show: true }, filters: { show: true }, copy: { show: true }, status: { show: true, loaded: true } } });
+      await eventually(pg, () => document.querySelector('[data-act="load-all"]') || document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length >= 100);
+      if (await pg.locator('[data-act="load-all"]').count()) {                        // (the first 20 papers have no venue that only CORE ranks)
+        await pg.click('[data-act="load-all"]');
+        await pg.waitForFunction(() => !document.querySelector('[data-act="load-all"]') && document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length >= 100);
+      }
+      const nRows = await pg.locator("#gsc_a_b tr.gsc_a_tr").count();
+      const want = expected({ owner: profile.owner, rows: profile.rows.slice(0, nRows) });
+      const tally = (pred) => want.filter((p) => pred(p.venue)).length;
+      const both = tally((v) => v.ccf && v.core), coreOnly = tally((v) => v.core && !v.ccf), ccfOnly = tally((v) => v.ccf && !v.core);
+      assert.ok(both >= 5 && ccfOnly >= 1 && coreOnly >= 1, `the profile has papers at venues both lists rank (${both}), only CCF ranks (${ccfOnly}) and only CORE ranks (${coreOnly}) — all loaded: ${nRows}`);
+      const drawn = async (mode, ccfN, coreN) => {
+        await patchPrefs({ rows: { prefer: mode } });
+        await eventually(pg, ([a, b]) => document.querySelectorAll('#gsc_a_b .rr-chip[data-kind="ccf"]').length === a && document.querySelectorAll('#gsc_a_b .rr-chip[data-kind="core"]').length === b, [ccfN, coreN]);
+      };
+      const exported = async (format) => (await call("export", { format })).result.text;
+      const times = (text, word) => (text.match(new RegExp(word, "g")) || []).length;
+      const venueTitles = () => pg.locator('#rr-panel [data-venue]').evaluateAll((els) => els.map((e) => e.title));
+      // the default is CCF first: CCF's chip, and CORE's where CCF has none
+      await drawn("ccf", both + ccfOnly, coreOnly);
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip[data-kind="ccf"][data-also="core"]').count(), both, "a CCF chip that stands for both lists says so");
+      const tip = await pg.locator('#gsc_a_b .rr-chip[data-kind="ccf"][data-also="core"]').first().getAttribute("title");
+      assert.match(tip, /^CCF [ABC] · .+\nCORE (A\*|A|B|C) · /, "…and its tooltip names the CORE rank too");
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip[data-kind="core"][data-also]').count(), 0);
+      assert.ok((await venueTitles()).every((t) => !(t.includes("CCF") && t.includes("CORE"))), "the venue list names one list for a venue");
+      const md = await exported("markdown");
+      assert.equal(times(md, "CORE"), coreOnly, "the Markdown notes: CORE only where CCF has no rank");
+      assert.equal(times(md, "CCF"), both + ccfOnly);
+      assert.equal(times(await exported("bibtex"), "CORE "), coreOnly, "…and the BibTeX notes");
+      const tsv = (await exported("papers")).split("\n").map((l) => l.split("\t")), at = tsv[0].indexOf("CORE");
+      assert.ok(at > 0 && tsv.slice(1).filter((r) => r[at]).length === both + coreOnly, "the table copy keeps a column for each list: both ranks stay");
+      assert.ok((await call("export", { format: "json" })).result.text.includes('"core"'), "…and so does the JSON");
+      // CORE first: the other way round
+      await drawn("core", ccfOnly, both + coreOnly);
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip[data-kind="core"][data-also="ccf"]').count(), both);
+      assert.match(await pg.locator('#gsc_a_b .rr-chip[data-kind="core"][data-also="ccf"]').first().getAttribute("title"), /\nCCF [ABC] · /);
+      assert.equal(times(await exported("markdown"), "CCF"), ccfOnly);
+      // both lists: both chips, as before
+      await drawn("both", both + ccfOnly, both + coreOnly);
+      assert.equal(await pg.locator('#gsc_a_b .rr-chip[data-also]').count(), 0);
+      assert.ok((await venueTitles()).some((t) => t.includes("CCF") && t.includes("CORE")), "the venue list names both");
+      // the search is not narrowed by what a chip leaves out: a CORE filter finds the papers at CORE's venues, whichever chip they wear
+      await drawn("ccf", both + ccfOnly, coreOnly);
+      const coreAStar = tally((v) => v.core && v.core.rank === "A*");
+      assert.ok(coreAStar > coreOnly, "the profile has papers at venues CORE ranks A* that CCF ranks too");
+      await pg.locator('#rr-panel input[data-act="filter-query"]').fill("core:a*");
+      await eventually(pg, (n) => [...document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")].filter((tr) => !tr.classList.contains("rr-hide")).length === n, coreAStar);
+      await call("clearFilters");
+      // the settings page: the same choice, and the preview draws what the page will
+      await opts.bringToFront();
+      const previewChips = (kind) => opts.locator(`#preview .rr-chip[data-kind="${kind}"]`).count();
+      await eventually(opts, () => document.querySelector('input[data-pref="rows.prefer"][value="ccf"]').checked);
+      assert.deepEqual([await previewChips("ccf"), await previewChips("core")], [3, 1], "the preview: CCF's chip where CCF ranks the venue, CORE's where only it does");
+      await opts.click('label.seg-btn:has(input[data-pref="rows.prefer"][value="core"])');
+      await eventually(opts, () => document.querySelectorAll('#preview .rr-chip[data-kind="ccf"]').length === 0);
+      assert.deepEqual([await previewChips("ccf"), await previewChips("core")], [0, 4]);
+      await opts.click('label.seg-btn:has(input[data-pref="rows.prefer"][value="both"])');
+      await eventually(opts, () => document.querySelectorAll('#preview .rr-chip[data-kind="ccf"]').length === 3 && document.querySelectorAll('#preview .rr-chip[data-kind="core"]').length === 4);
+      await opts.click('label.seg-btn:has(input[data-pref="rows.prefer"][value="ccf"])');
+      await eventually(opts, () => document.querySelectorAll('#preview .rr-chip[data-kind="core"]').length === 1);
+      await settle(opts);
+      assert.equal((await stored(opts, "sync", "prefs")).rows.prefer, "ccf");
+      // a list that is not drawn is not left out for the sake of one that is
+      await patchPrefs({ rows: { core: false }, panel: { table: { core: false } } });
+      await eventually(pg, ([a]) => document.querySelectorAll('#gsc_a_b .rr-chip[data-kind="ccf"]').length === a && !document.querySelector('.rr-chip[data-kind="core"]'), [both + ccfOnly]);
+      await patchPrefs({ rows: { core: true }, panel: { table: { core: true } } });
+      await patchPrefs({ rows: { prefer: "both" }, panel: { venues: { show: false } } });          // (the checks that follow count the chips of both lists, and the venue list is off by default)
+      await drawn("both", both + ccfOnly, both + coreOnly);
+      await pg.close();
+      ok("one chip where both lists rank a venue: CCF first by default, CORE first or both on request; the tooltip names the other rank, the venue list and the Markdown/BibTeX notes follow, the table, the JSON and the search keep both lists; the settings preview shows it");
     }
 
     // -- S3c3. the counts follow the filters: a year range narrows the table, the awards counts and the panel's copy summary and table (which say what they counted); the cell picked in

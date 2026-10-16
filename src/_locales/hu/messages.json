@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Egyéb venue-k"
+  },
+  "optPrefer": {
+    "message": "Ha mindkét lista rangsorolja a venue-t"
+  },
+  "optPreferHint": {
+    "message": "Két címke helyett egy: a kiválasztott lista, a másik pedig csak akkor, ha a kiválasztott listán nincs rangsorolva a venue. A címke súgószövege továbbra is megnevezi a másik rangot."
+  },
+  "optPreferCcf": {
+    "message": "CCF előnyben"
+  },
+  "optPreferCore": {
+    "message": "CORE előnyben"
+  },
+  "optPreferBoth": {
+    "message": "Mindkettő"
   }
 }

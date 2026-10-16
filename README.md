@@ -94,6 +94,8 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **Conferences and journals are looked up separately;** the string's own words decide which list is consulted.
 - **Secondary tracks** — Findings, workshops, demos, posters, tutorials, extended abstracts, short and industry papers, shared tasks — get no badge unless the venue's official name contains the word.
 - **Provenance:** a badge's tooltip names the matched venue, the rule and the list's edition. Ranks are today's lists, not the rank at publication time; the panel and every tooltip say so.
+- **One chip instead of two:** CCF and CORE rank much the same venues, so by default a paper gets CCF's chip, and CORE's only where CCF has no rank for the venue (the tooltip of the CCF chip names the CORE rank too). *CORE first* turns it round, *Both* draws both. The venue list and the Markdown and BibTeX notes follow the choice; the table (it has a tab for each list), the search and the other copies keep both lists.
+- **The two lists are linked.** CCF and CORE word many venues differently (*ACM SIGCHI Conference on Designing Interactive Systems* / *Designing Interactive Systems*), so a string that one list's name finds brings the other list's row of the same venue too.
 
 ### 3. Awards and talks
 - **Award list:** 7,830 award-winning papers (best, best student, outstanding and distinguished papers, honorable mentions, category awards, test-of-time awards) from official pages — the ACL Anthology's award data, the Computer Vision Foundation, and the conferences' and societies' own award pages (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, OSDI, SOSP, CHI and many more). A paper matches only by an identical title and the award's first author among its authors.
@@ -129,7 +131,7 @@ The cards, in the order of the preview:
 | Language | Extension language (or follow the browser); *Open Scholar in* |
 | Highlight my papers | A switch per role; *Mark my name in the author line* |
 | Colours | Five colour themes (Default, Cool, Warm, High contrast, Soft); a colour per role, with a contrast badge; row highlight: tint and bar, bar only, tint only, none |
-| Chips on each paper | CCF, CORE, award and talk chips; the names of the award chips; the chips' look (six ready-made looks, style, shape, words, colours) |
+| Chips on each paper | CCF, CORE, award and talk chips; which list's chip stands where both rank a venue (CCF first, CORE first, both); the names of the award chips; the chips' look (six ready-made looks, style, shape, words, colours) |
 | Summary panel | The panel; the order of its parts; the title bar's parts; the bar that says the list is filtered; *Compact* |
 | Role × rank table, Copy & export, Awards and talks, Filters, Citation totals, Papers by year, Top venues, Loaded papers and unranked venues, Name spelling help | One card for each part of the panel: its switch, a switch (and a name) for each thing in it, and where it has one an order |
 | Scholar's own blocks | Hide *Cited by* (or only its table or its chart), *Co-authors*, *Public access* |

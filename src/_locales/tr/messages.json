@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Diğer yayın yerleri"
+  },
+  "optPrefer": {
+    "message": "Yayın yerinin her iki listede de sıralaması olduğunda"
+  },
+  "optPreferHint": {
+    "message": "İki etiket yerine tek etiket gösterilir: seçtiğiniz listenin etiketi, diğer listenin etiketi ise yalnızca seçtiğiniz listede yayın yerinin sıralaması yoksa gösterilir. Etiketin üzerine gelindiğinde diğer sıralama yine görünür."
+  },
+  "optPreferCcf": {
+    "message": "Önce CCF"
+  },
+  "optPreferCore": {
+    "message": "Önce CORE"
+  },
+  "optPreferBoth": {
+    "message": "İkisi de"
   }
 }

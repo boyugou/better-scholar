@@ -11,17 +11,22 @@
 
   const ruleText = (info) => t(RULE_TEXT[info.rule] || "ruleName");
 
+  const tierOf = (kind, info) => (kind === "ccf" ? info.tier : info.rank);
+  const sourceName = (kind) => (kind === "ccf" ? t("srcCcf") : t("srcCore"));
+  const venueLine = (kind, info) => `${sourceName(kind)} ${tierOf(kind, info)} · ${info.name}${info.abbr ? " (" + info.abbr + ")" : ""}`;
+
   // kind: "ccf" | "core"; info: the venue match ({ tier } or { rank }, name, abbr, rule); edition: the list's label
-  function tierChip(kind, info, edition) {
-    const tier = kind === "ccf" ? info.tier : info.rank;
-    const source = kind === "ccf" ? t("srcCcf") : t("srcCore");
+  // `also`: the other list's match, when it ranks the venue too and the chip stands for both (the settings prefer this list): the tooltip names that rank as well
+  function tierChip(kind, info, edition, also) {
+    const tier = tierOf(kind, info);
     const lines = [
-      `${source} ${tier} · ${info.name}${info.abbr ? " (" + info.abbr + ")" : ""}`,
+      venueLine(kind, info),
+      ...(also ? [venueLine(also.kind, also.info)] : []),
       ruleText(info),
       edition + " — " + t("tipToday")
     ];
-    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
-      h("span", { class: "rr-k" }, source), " ", h("b", {}, tier));
+    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
+      h("span", { class: "rr-k" }, sourceName(kind)), " ", h("b", {}, tier));
   }
 
   // Chip text: the kind in the interface language. A named category keeps the name it was given.

@@ -22,7 +22,11 @@
     const parts = clean(line).split(/,\s*/).filter(Boolean);
     return { names: parts.filter((a) => !CUT.test(a)), cut: parts.some((a) => CUT.test(a)) || /(?:\.\.\.|…)$/.test(clean(line)) };
   }
-  const rankNotes = (p, { ccfOn = true, coreOn = true } = {}) => [ccfOn && p.rank.ccf && p.rank.ccf.tier ? `CCF ${p.rank.ccf.tier}` : "", coreOn && p.rank.core && p.rank.core.rank ? `CORE ${p.rank.core.rank}` : ""].filter(Boolean);
+  // `prefer`: the list that stands alone where both rank the venue (the settings' `rows.prefer`, as the chips draw it), or null for both
+  const rankNotes = (p, { ccfOn = true, coreOn = true, prefer = null } = {}) => {
+    const ccf = ccfOn && p.rank.ccf && p.rank.ccf.tier, core = coreOn && p.rank.core && p.rank.core.rank, both = ccf && core;
+    return [ccf && !(both && prefer === "core") ? `CCF ${ccf}` : "", core && !(both && prefer === "ccf") ? `CORE ${core}` : ""].filter(Boolean);
+  };
 
   // ---- the summary --------------------------------------------------------------------------------------------------------------------------
 

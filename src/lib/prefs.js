@@ -162,6 +162,8 @@
     card("chips", "optChipsTitle", "optChipsHint", [
       bool("rows.ccf", true, "A CCF rank chip after the venue of a paper.", { label: "optCcf", hint: "optCcfHint" }),
       bool("rows.core", true, "A CORE rank chip after the venue of a paper.", { label: "optCore", hint: "optCoreHint" }),
+      choice("rows.prefer", ["ccf", "core", "both"], "ccf", "Where both lists rank a venue (CCF and CORE are often the same news twice): \"ccf\" draws the CCF chip alone and the CORE chip only where CCF has no rank for the venue, \"core\" the other way round, \"both\" draws both. The venue list of the panel and the notes of the BibTeX and Markdown copies follow; the table, the search and the other exports keep both lists. Only between lists that are drawn.",
+        { label: "optPrefer", hint: "optPreferHint" }),
       bool("rows.award", true, "An award chip (best paper and the like) on a paper.", { label: "markAward", hint: "optMarkAwardHint" }),
       bool("rows.oral", true, "An \"Oral\" chip (a talk level the authors wrote in the venue) on a paper.", { label: "markOral" }),
       bool("rows.spotlight", true, "A \"Spotlight\" chip on a paper.", { label: "markSpotlight" }),
@@ -405,7 +407,7 @@
   // Ready-made patches (the settings page offers them; each is applied like any other patch, and a test keeps them valid).
   const PRESETS = {
     // everything the extension can show; the choice of network use (semanticScholar) and the language are not touched
-    all: patchOf((s) => (aPart(s) ? true : s.path.startsWith("hide.") ? false : { "rows.style": "full", "panel.marks.grouping": "separate", mergeDuplicates: true, autoLoad: true }[s.path])),
+    all: patchOf((s) => (aPart(s) ? true : s.path.startsWith("hide.") ? false : { "rows.style": "full", "rows.prefer": "both", "panel.marks.grouping": "separate", mergeDuplicates: true, autoLoad: true }[s.path])),
     // the papers where you are the last author
     last: { roles: { first: false, cofirst: false, second: false, last: true }, rows: { style: "full" } },
     // the papers where you are first or co-first author
@@ -453,6 +455,18 @@
     return prefs.panel.filters.pills.order.filter((id) => prefs.panel.filters.pills[id] && finds[id] !== false);
   }
 
+  // CCF and CORE rank much the same venues: where both rank one and a list is preferred (`rows.prefer`), that list is the winner and the other is drawn only where the winner has no
+  // rank for the venue. Only between lists that are drawn (`drawn`: { ccf, core }; a list that nothing draws is not left out in favour of one that is).
+  const winner = (prefs, drawn = lists(prefs)) => (drawn.ccf && drawn.core && prefs.rows.prefer !== "both" ? prefs.rows.prefer : null);
+  // The lists whose rank a chip is drawn for on a paper's venue line: those that rank the venue and have a chip switched on — the winner alone where it ranks the venue.
+  // `venue`: { ccf, core } (the ranks, or nothing). The lists that rank it and are left out in favour of the winner are `hidden` (the chip's tooltip names them).
+  function chipLists(prefs, venue) {
+    const v = venue || {}, drawn = { ccf: !!prefs.rows.ccf, core: !!prefs.rows.core };
+    const ranked = RANKS.filter((k) => drawn[k] && v[k]), w = winner(prefs, drawn);
+    const shown = w && ranked.includes(w) ? [w] : ranked;
+    return { shown, hidden: ranked.filter((k) => !shown.includes(k)) };
+  }
+
   // The rank lists the table has a tab for, and the one it uses: the remembered one if it is on, otherwise the first that is, otherwise none (the table then shows roles only).
   // While the table is not drawn the summary and the exports are counted by the lists the rows' chips show: what you see is what you copy.
   const sources = (prefs) => RANKS.filter((k) => (prefs.panel.table.show ? prefs.panel.table[k] : prefs.rows[k]));
@@ -465,5 +479,5 @@
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
   return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
-    listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
+    listShown, lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });

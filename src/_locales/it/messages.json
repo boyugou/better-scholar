@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Altre sedi"
+  },
+  "optPrefer": {
+    "message": "Quando entrambi gli elenchi classificano una conferenza o una rivista"
+  },
+  "optPreferHint": {
+    "message": "Un'etichetta invece di due: quella dell'elenco scelto, e quella dell'altro solo dove l'elenco scelto non ha un ranking per la conferenza o la rivista. Il suggerimento dell'etichetta riporta comunque l'altro ranking."
+  },
+  "optPreferCcf": {
+    "message": "Prima CCF"
+  },
+  "optPreferCore": {
+    "message": "Prima CORE"
+  },
+  "optPreferBoth": {
+    "message": "Entrambi"
   }
 }

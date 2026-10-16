@@ -327,7 +327,8 @@
     const wordsOf = (e) => new Set(e.extra.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg")).map(stem));
     const sameWords = (x, y) => {
       const a = wordsOf(x), b = wordsOf(y), shared = [...a].filter((w) => b.has(w)).length;
-      return a.size > 0 && b.size > 0 && shared >= 2 && shared >= 0.6 * Math.min(a.size, b.size);
+      if (!a.size || !b.size) return false;
+      return (shared >= 2 && shared >= 0.6 * Math.min(a.size, b.size)) || (shared === a.size && shared === b.size);          // (a name of one word each — MICRO, ACM MM, VIS — is the same word)
     };
     const partners = new Map();          // row -> its rows in the other list
     const link = (x, y) => { push(partners, x, y); push(partners, y, x); };
@@ -335,7 +336,7 @@
     for (const y of sources.core.C.all) push(coreByAcronym, squash(y.abbr), y);
     for (const x of sources.ccf.C.all) for (const y of coreByAcronym.get(squash(x.abbr)) || []) if (sameWords(x, y)) link(x, y);
     for (const a of aliases) {
-      if (!a.ccf || !a.core || (a.kind && a.kind !== "C") || squash(a.ccf) === squash(a.core)) continue;          // (the same acronym is read above, with the words as a check)
+      if (!a.ccf || !a.core || (a.kind && a.kind !== "C")) continue;
       for (const x of byRef.ccf.get("C|" + squash(a.ccf)) || []) for (const y of byRef.core.get("C|" + squash(a.core)) || []) {
         if ((a.ccfTier && ratingOf(x) !== a.ccfTier) || (a.coreRank && ratingOf(y) !== a.coreRank)) continue;
         link(x, y);

@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Venue khác"
+  },
+  "optPrefer": {
+    "message": "Khi cả hai danh sách đều xếp hạng nơi công bố"
+  },
+  "optPreferHint": {
+    "message": "Một nhãn thay vì hai: danh sách bạn chọn, và danh sách kia chỉ hiện khi danh sách bạn chọn không có hạng cho nơi công bố đó. Chú thích của nhãn cũng nêu hạng của danh sách kia."
+  },
+  "optPreferCcf": {
+    "message": "Ưu tiên CCF"
+  },
+  "optPreferCore": {
+    "message": "Ưu tiên CORE"
+  },
+  "optPreferBoth": {
+    "message": "Cả hai"
   }
 }

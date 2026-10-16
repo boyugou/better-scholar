@@ -1189,5 +1189,20 @@
   },
   "unrankedOther": {
     "message": "Otros medios"
+  },
+  "optPrefer": {
+    "message": "Cuando un congreso o revista tiene rango en ambas listas"
+  },
+  "optPreferHint": {
+    "message": "Una etiqueta en lugar de dos: la lista elegida y, solo donde esta no tenga rango para el congreso o revista, la otra. El texto que aparece al pasar el cursor sigue indicando el otro rango."
+  },
+  "optPreferCcf": {
+    "message": "CCF primero"
+  },
+  "optPreferCore": {
+    "message": "CORE primero"
+  },
+  "optPreferBoth": {
+    "message": "Ambas"
   }
 }
