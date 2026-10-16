@@ -17,6 +17,23 @@ switch under *Settings → Copy & export*: the summary as text, the summary tabl
 format: a row `copy.<format>` in `SETTINGS`, its text in `lib/formats.js`, its case in `exportText()`
 (`content/main.js`), its label in every language and an end-to-end check (`CONTRIBUTING.md`, *Adding a setting*).
 
+## Filters and counts
+
+**Built** (2.41). The role × rank table, the awards and talks counts and the panel's *Copy summary* / *Copy as table* count the
+papers the narrowing filters leave (`counted()` in `src/content/main.js`; setting `panel.filters.follow`, on by default), so a
+year range or *Last 5 years* (`age:<5`) gives the table of those years, and a search the table of the papers it finds. This
+reverses an earlier choice (the table stayed whole because it is where a cell is picked). What decides it: the cell picked in
+the table and an awards row are *picks* that list papers and narrow no count, so picking one never empties the list it is
+picked from and the copied text equals what the panel shows; the table keeps the rows of the whole profile; the coverage lines
+(loaded, hidden, absent), the year bars, the toolbar popup and the `summary` call stay over every paper (`summary` and
+`export` take `filtered: true` for the panel's way). Not done: counting by the *year chart's* other filters (the bars stay
+whole: a range is chosen against them), and a scope note on the table itself (the filter bar and the metrics line already say
+which papers are counted).
+
+**Next — more ways to say "recent".** `age:<5` is the only relative operator; others (`age:<=10`) work but have no button.
+Custom quick filters (a name and a query of your own, as a pill) would cover "recent CCF-A first-author papers" in one click;
+each would need a list kind in `SETTINGS` (today a setting is a switch, a choice, a colour, a text or an order).
+
 ## Data freshness
 
 **Built.** `.github/workflows/data-fresh.yml` runs `scripts/check-data-fresh.mjs` every Monday: the run fails when

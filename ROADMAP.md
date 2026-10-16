@@ -22,6 +22,8 @@ What has been built is in [`CHANGELOG.md`](CHANGELOG.md).
   alias table could extend coverage offline ([details](docs/ROADMAP.md#venue-matching-coverage)).
 - **More citation styles** (IEEE, the ACM reference format), each one more copy format
   ([details](docs/ROADMAP.md#exports)).
+- **Custom quick filters**: a name and a query of your own as a pill, for "recent CCF-A first-author papers" in one click
+  ([details](docs/ROADMAP.md#filters-and-counts)).
 - **Other ideas, not started** ([details](docs/ROADMAP.md#other-ideas-not-started)): name spellings beyond today's
   rules, from real strings only; a list of the keys in the panel; user-defined weighting of ranks; an MCP server
   (it would need the `nativeMessaging` permission and a program installed outside the browser); end-to-end pictures
