@@ -1574,6 +1574,9 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("ACM SIGGRAPH 2004 Art gallery");
   none("IEEE International Symposium on Mixed and Augmented Reality - Arts, Media, and Humanities (ISMAR-AMH)");
   eq("ACM SIGGRAPH 2019 Papers", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  // the model checkers' SPIN is not the spin physicists'
+  none("International Spin Physics Symposium (SPIN)");
+  eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });
