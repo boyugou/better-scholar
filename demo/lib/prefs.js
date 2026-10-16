@@ -456,8 +456,13 @@
   }
 
   // CCF and CORE rank much the same venues: where both rank one and a list is preferred (`rows.prefer`), that list is the winner and the other is drawn only where the winner has no
-  // rank for the venue. Only between lists that are drawn (`drawn`: { ccf, core }; a list that nothing draws is not left out in favour of one that is).
-  const winner = (prefs, drawn = lists(prefs)) => (drawn.ccf && drawn.core && prefs.rows.prefer !== "both" ? prefs.rows.prefer : null);
+  // rank for the venue. Only between lists that are drawn (`drawn`: { ccf, core }; a list that nothing draws is not left out in favour of one that is) — and a preferred list whose
+  // chip is off is no winner where the other has one: a list whose chip is off is never kept over one whose chip is on, in the chips and in what is counted and copied alike.
+  const winner = (prefs, drawn = lists(prefs)) => {
+    const w = prefs.rows.prefer;
+    if (!drawn.ccf || !drawn.core || w === "both") return null;
+    return (prefs.rows.ccf || prefs.rows.core) && !prefs.rows[w] ? null : w;
+  };
   // The lists whose rank a chip is drawn for on a paper's venue line: those that rank the venue and have a chip switched on — the winner alone where it ranks the venue.
   // `venue`: { ccf, core } (the ranks, or nothing). The lists that rank it and are left out in favour of the winner are `hidden` (the chip's tooltip names them).
   function chipLists(prefs, venue) {

@@ -21,6 +21,8 @@
 //                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA);
 //                 "annual" and any sponsor the start names (IEEE, ACM, a SIG) are part of the start: the IEEE's "… Conference on
 //                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
+//   uncut         names that are only read whole, with their organisation, in a string that Scholar did not cut off: where the cut ends the same words
+//                 begin another venue's name (HiPC's old "IEEE International Conference on High Performance Computing" — its cut is as much HPCC's "… and Communications")
 //   volume        names of a journal that are also a field ("Computational Geometry"): they count for a line that has a volume, a journal's — "Computational geometry, 307-317, 2000" is a chapter of a book
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
@@ -266,6 +268,15 @@
     // ---- names Scholar prints that the lists word differently: older or inverted names, singular or plural, a sponsor the list leaves out
     //      (found with the real-profile corpus and the alternate titles OpenAlex files under each conference)
     { core: "JELIA", names: ["European Conference on Logics in Artificial Intelligence", "Joint European Conference on Logics in Artificial Intelligence"] },
+    // (joint proceedings, and the title that says "Applications" where CORE says "Application")
+    { ccf: "DSN", core: "DSN", names: ["International Conference on Dependable Systems and Networks With FTCS and DCC"] },
+    { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
+    { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
+    { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
+    // (HiPC was the IEEE's "International Conference on High Performance Computing" before "Data and Analytics" came: with the IEEE only, and not cut off — the bare name is other events', its cut HPCC's)
+    { ccf: "HiPC", uncut: ["IEEE International Conference on High Performance Computing"] },
+    // (CORE's name begins with its sponsor, ACIS, which is no sponsor to drop: ICIS's is "IEEE/ACIS International Conference on Computer and Information Science")
+    { core: "SERA", names: ["International Conference on Software Engineering Research, Management and Applications", "Software Engineering Research, Management and Applications"] },
     { core: "Coordination", names: ["International Conference on Coordination Languages and Models", "Coordination Languages and Models"] },
     { core: "IEEE-IV", names: ["IEEE Intelligent Vehicles Symposium", "Intelligent Vehicles Symposium"] },
     // RTAS before 2003 (the Real-Time and Embedded Technology and Applications Symposium of today)
@@ -277,7 +288,8 @@
     // the cut-off "Proceedings of the International Conference for High Performance Computing …" (the full name goes on with ", Networking, Storage and Analysis")
     { ccf: "SC", core: "SC", starts: ["International Conference for High Performance Computing"] },
     { ccf: "WCNC", core: "WCNC", names: ["IEEE Wireless Communication and Networking Conference"] },
-    { core: "SPLC", names: ["International Software Product Line Conference"], exact: ["International Systems and Software Product Line Conference", "ACM International Systems and Software Product Line Conference"] },          // (exact: its cut "… Systems and Software …" is SSV's, not SPLC's)
+    { core: "SPLC", names: ["International Software Product Line Conference"], exact: ["International Systems and Software Product Line Conference", "ACM International Systems and Software Product Line Conference"],          // (exact: its cut "… Systems and Software …" is SSV's, not SPLC's — "… Systems and Software Product …" is not)
+      starts: ["ACM Conference on Systems and Software Product", "ACM International Systems and Software Product", "International Systems and Software Product", "Systems and Software Product"] },
     // ICER was a workshop (CORE's name) until 2013
     { core: "ICER", names: ["International Computing Education Research Conference", "ACM Conference on International Computing Education Research", "ACM Conference on Computing Education Research"] },
     { core: "ACE", names: ["International Conference on Advances in Computer Entertainment Technology"] },
@@ -329,9 +341,16 @@
     // ---- journals (kind J)
     { ccf: "TOPS", kind: "J", names: ["ACM Transactions on Information and System Security"] },
     // the speech journal of the IEEE Signal Processing Society, under its earlier name (1993–2005)
-    { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing"] },
+    { ccf: "TASLP", kind: "J", names: ["IEEE Transactions on Speech and Audio Processing", "IEEE Trans. Speech Audio Process."] },
     // IEEE Transactions on Neural Networks until 2011 (Neural Networks and Learning Systems since)
     { ccf: "TNNLS", kind: "J", names: ["IEEE Transactions on Neural Networks", "IEEE Trans. Neural Networks"] },
+    // names the journals had (Bioinformatics was printed with its publisher's city until 2005; Computer Networks, ISDN until 1998; Graphical Models, with Image Processing until 1998; the IEEE's robotics
+    // journal was Robotics and Automation until 2003; Frontiers of Computer Science was "in China" until 2010)
+    { ccf: "Bioinformatics", kind: "J", names: ["Bioinformatics-Oxford"] },
+    { ccf: "CN", kind: "J", names: ["Computer Networks and ISDN Systems"] },
+    { ccf: "GMOD", kind: "J", names: ["Graphical Models and Image Processing", "CVGIP: Graphical Models and Image Processing"] },
+    { ccf: "TR", kind: "J", names: ["IEEE Transactions on Robotics and Automation", "IEEE Trans. Robotics and Automation"] },
+    { ccf: "FCS", kind: "J", names: ["Frontiers of Computer Science in China"] },
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
     { ccf: "CGTA", kind: "J", volume: ["Computational Geometry"] },

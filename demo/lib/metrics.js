@@ -74,9 +74,11 @@
 
   // The venue a ranked paper belongs to, by its usual short name ("NeurIPS"), or "" when it matched no list
   // `lists` says which rankings are switched on ({ ccf, core }, both by default): a venue only a switched-off list knows has no key
-  function venueKey(venue, lists) {
+  // `winner`: the list whose name stands for a venue both rank (lib/prefs.js winner()): "SIGKDD" is CCF's name for KDD, "KDD" CORE's
+  function venueKey(venue, lists, winner = null) {
     const v = venue || {}, on = lists || {};
-    return (on.ccf !== false && v.ccf && (v.ccf.abbr || v.ccf.name)) || (on.core !== false && v.core && (v.core.abbr || v.core.name)) || "";
+    const name = (k) => on[k] !== false && v[k] && (v[k].abbr || v[k].name);
+    return (winner === "core" ? name("core") || name("ccf") : name("ccf") || name("core")) || "";
   }
 
   // Where the highlighted papers were published: ranked venues, most papers first (ties by name), at most `n`. One short name can stand for more than one venue
@@ -87,10 +89,12 @@
     const groups = new Map();                       // key → { count, seen: signature → { name, ccf, core } }
     for (const r of rows) {
       if (!r.highlighted) continue;
-      const key = venueKey(r.venue, lists);
+      const key = venueKey(r.venue, lists, winner);
       if (!key) continue;
       const v = r.venue || {};
-      const meta = { name: (v.ccf && v.ccf.name) || (v.core && v.core.name) || key, ccf: on.ccf !== false && v.ccf ? v.ccf.tier : null, core: on.core !== false && v.core ? v.core.rank : null };
+      // (the venue's full name is the one of the list that names it by `key`: CCF's name is not paired with CORE's rank)
+      const named = (winner === "core" ? ["core", "ccf"] : ["ccf", "core"]).map((k) => on[k] !== false && v[k]).find((x) => x && (x.abbr || x.name));
+      const meta = { name: (named && named.name) || key, ccf: on.ccf !== false && v.ccf ? v.ccf.tier : null, core: on.core !== false && v.core ? v.core.rank : null };
       if (winner && meta[winner]) for (const k of ["ccf", "core"]) if (k !== winner) meta[k] = null;
       const g = groups.get(key) || { count: 0, seen: new Map() };
       g.count++;
