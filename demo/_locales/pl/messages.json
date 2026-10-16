@@ -464,7 +464,7 @@
     "message": "Przywrócić wszystkie te ustawienia do wartości domyślnych?"
   },
   "optStorage": {
-    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Strony Scholar są odczytywane tylko wtedy, gdy je otworzysz, a tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
+    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Rozszerzenie odczytuje strony Scholar, które otwierasz, a gdy naciśniesz „Odczytaj pełne listy”, także strony prac ze skróconą listą autorów; tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
   },
   "optSample": {
     "message": "Przykładowa praca"
@@ -1088,7 +1088,7 @@
     "message": "Monochromatyczny"
   },
   "optPreviewEdit": {
-    "message": "Najedź kursorem na część, aby ją ukryć (✕) lub przesunąć (⠿). Kliknij dwukrotnie nazwę, aby ją zmienić."
+    "message": "Najedź kursorem na część, aby ją ukryć (✕), przesunąć (⠿) lub pokazać jej ustawienie (⚙). Kliknij dwukrotnie nazwę, aby ją zmienić. Kliknij dwukrotnie cokolwiek innego, aby przejść do jego ustawienia."
   },
   "optHide": {
     "message": "Ukryj"
@@ -1112,5 +1112,28 @@
   },
   "optRenameHint": {
     "message": "Enter zachowuje · Esc anuluje · puste: nazwa standardowa"
+  },
+  "optVenueTitle": {
+    "message": "Sprawdź miejsce publikacji"
+  },
+  "optVenueHint": {
+    "message": "Wklej miejsce publikacji tak, jak wyświetla je Scholar (szary wiersz pod pracą), aby zobaczyć, co o nim mówią listy CCF i CORE oraz według jakiej zasady. Miejsce publikacji, którego listy nie potrafią umieścić, nie dostaje rankingu: nic nie jest zgadywane."
+  },
+  "optVenuePlaceholder": {
+    "message": "np. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Bez rankingu. Listy nie umieszczają tego tekstu z pewnością, więc nie dostaje etykiety."
+  },
+  "optVenueSecondary": {
+    "message": "Słowo „$N1$” oznacza kategorię drugorzędną (workshop, poster, krótka praca …). Miejsce publikacji nie dostaje rankingu, chyba że jego własna nazwa zawiera to słowo.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Pokaż ustawienie"
   }
 }

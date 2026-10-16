@@ -82,6 +82,9 @@
     terminal: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("polyline", { points: "4 17 10 11 4 5" }),
       s("line", { x1: "12", y1: "19", x2: "20", y2: "19" })),
+    search: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
+      s("circle", { cx: "11", cy: "11", r: "7" }),
+      s("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" })),
     sparkles: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
       s("path", { d: "m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z" })),
     noneDiagram: () => s("svg", { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round" },
@@ -116,6 +119,7 @@
     merge: { icon: "merge", color: "#059669", bg: "rgba(5, 150, 105, 0.12)" },
     load: { icon: "download", color: "#0d9488", bg: "rgba(13, 148, 136, 0.12)" },
     semantic: { icon: "brain", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
+    venue: { icon: "search", color: "#7c3aed", bg: "rgba(124, 58, 237, 0.12)" },
     agent: { icon: "terminal", color: "#4338ca", bg: "rgba(67, 56, 202, 0.12)" },
     config: { icon: "sliders", color: "#ea580c", bg: "rgba(234, 88, 12, 0.12)" },
     data: { icon: "database", color: "#e11d48", bg: "rgba(225, 29, 72, 0.12)" }
@@ -161,11 +165,19 @@
   // chrome.storage.sync takes 120 writes a minute and says nothing when it refuses one. A change is shown at once and written at once, unless a write was made a moment
   // ago: then the latest state is written when that moment is over, so a run of changes (a bulk switch, a drag, typing a name) costs a few writes, not one for each.
   // The echo of a write comes back from storage as a change: it is not taken for somebody else's (the state of this page is newer), and a change made elsewhere while this
-  // page has one of its own to write loses to it.
+  // page has one of its own to write loses to it. An echo is told from another page's change by being one of the writes this page has made and has not seen back yet, in the
+  // order they were made (a change that looks like an older write of this page, from another page, is that page's).
   const WRITE_GAP = 600;                                                        // (100 writes a minute at the fastest)
+  const RETRY_AFTER = 10000;                                                    // (a refused write is made again after this long: the minute's allowance is back)
   let savedTimer = 0, lastWrite = 0, writeTimer = 0, dirty = false, inFlight = false, waiters = [];
-  const written = [];                                                           // (what the last writes were: their echoes)
-  const isEcho = (next) => dirty || inFlight || written.includes(JSON.stringify(next));
+  const awaiting = [];                                                          // (the writes whose echoes have not come: { json, at }, oldest first)
+  function isEcho(next) {
+    const json = JSON.stringify(next), now = Date.now();
+    while (awaiting.length && now - awaiting[0].at > 10000) awaiting.shift();   // (a write that changed nothing has no echo)
+    const i = awaiting.findIndex((w) => w.json === json);
+    if (i >= 0) { awaiting.splice(0, i + 1); return true; }
+    return dirty || inFlight;
+  }
   function status(text, bad) {
     $("saved").textContent = text;
     $("saved").classList.toggle("bad", !!bad);
@@ -177,9 +189,10 @@
     writeTimer = 0;
     if (!dirty) return;
     dirty = false; inFlight = true; lastWrite = Date.now();
-    written.push(JSON.stringify(B.prefs.normalize(prefs))); written.splice(0, written.length - 8);
+    awaiting.push({ json: JSON.stringify(B.prefs.normalize(prefs)), at: lastWrite });
     const ok = await B.store.savePrefs(prefs);
     inFlight = false;
+    if (!ok) { awaiting.pop(); dirty = true; if (!writeTimer) writeTimer = setTimeout(flush, RETRY_AFTER); }      // (the change is still to be written: again later, and when the page is left)
     if (!dirty) document.body.removeAttribute("data-rr-pending");
     const done = waiters; waiters = [];
     done.forEach((resolve) => resolve(ok));
@@ -196,7 +209,8 @@
     syncers.forEach((fn) => fn());
     dirty = true;
     document.body.setAttribute("data-rr-pending", "");
-    if (!writeTimer) writeTimer = setTimeout(flush, Math.max(0, lastWrite + WRITE_GAP - Date.now()));
+    clearTimeout(writeTimer);                                                    // (also a retry that was waiting: the new change is written when the gap is over)
+    writeTimer = setTimeout(flush, Math.max(0, lastWrite + WRITE_GAP - Date.now()));
     return new Promise((resolve) => waiters.push(resolve));
   }
   window.addEventListener("pagehide", () => { if (dirty) flush(); });
@@ -209,18 +223,18 @@
   const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, words), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
 
   // A name: the text of a title or a name on the screen, in the person's own words, in every language. Empty is the built-in text, shown in grey: what the field would say.
-  // (It is shown in the preview as it is typed and saved when the field is left or Enter is pressed; Escape gives the old name back.)
+  // (It is shown in the preview and saved as it is typed (the writes are spaced, see save()), trimmed when the field is left or Enter is pressed; Escape gives the old name back.)
   function nameEdit(row, off) {
     const path = row.path, key = row.label;
     let before = "";
     const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off",
       placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
       onFocus: () => { before = at(path); },
-      onInput: () => { put(path, input.value); B.dom.setLabels(prefs.labels); renderPreview(); },
+      onInput: () => { put(path, input.value); save(); },                         // (saved as it is typed, a few writes at most: a name typed and the page closed is kept)
       onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
       onKeydown: (e) => {
         if (e.key === "Enter") { e.preventDefault(); input.blur(); }
-        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); B.dom.setLabels(prefs.labels); renderPreview(); }
+        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); save(); }
       } });
     const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
       onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");
@@ -741,7 +755,11 @@
       onChange: () => { put(row.path, input.value); save(); } });
     const reset = h("button", { type: "button", class: "name-reset", "data-act": "chip-color-reset", title: t("optColorsReset"), "aria-label": `${t(row.label)}: ${t("optColorsReset")}`,
       onClick: () => { put(row.path, ""); save(); } }, "↺");
-    const sync = () => { input.value = at(row.path) || def; reset.hidden = !at(row.path); };
+    const sync = () => {
+      input.value = at(row.path) || def; reset.hidden = !at(row.path);
+      d.words.textContent = t(row.label);                                              // (the word may be one the person renamed: "Spotlight" is in the talks' colour row)
+      input.setAttribute("aria-label", `${t(row.label)}: ${t("optChipColors")}`); reset.setAttribute("aria-label", `${t(row.label)}: ${t("optColorsReset")}`);
+    };
     syncers.push(sync);
     sync();
     return h("div", { class: "opt opt-color" }, h("span", { class: "txt" }, d.name), h("span", { class: "name-edit" }, input, reset));
@@ -794,8 +812,26 @@
     if (end) kids.push(end);
     return card(c.id, t(c.title), c.hint ? t(c.hint) : null, ...kids);
   });
+  // Check a venue: what the rank lists make of a text, and by which rule (the page's own resolver: a row of a profile gets exactly this)
+  let resolver = null;
+  const venueOut = h("div", { class: "venue-out", "aria-live": "polite" });
+  const venueInput = h("input", { type: "text", class: "venue-input", "data-act": "venue-check", placeholder: t("optVenuePlaceholder"), "aria-label": t("optVenueTitle"), spellcheck: "false", autocomplete: "off", maxlength: "300", onInput: () => checkVenue() });
+  function checkVenue() {
+    const text = venueInput.value.replace(/\s+/g, " ").trim();
+    venueOut.replaceChildren();
+    if (!text) return;
+    resolver = resolver || B.venues.createResolver({ ccf: B.data.ccf.venues, core: B.data.core.venues, aliases: B.aliases });
+    const res = resolver.resolve(text), found = [["ccf", res.ccf], ["core", res.core]].filter(([, info]) => info);
+    for (const [kind, info] of found) {
+      venueOut.append(h("div", { class: "venue-line", "data-kind": kind }, B.chips.tierChip(kind, info, B.data[kind].meta.label),
+        h("span", { class: "venue-what" }, h("b", {}, info.name + (info.abbr ? " (" + info.abbr + ")" : "")), h("span", { class: "faint" }, " · " + B.chips.ruleText(info)))));
+    }
+    if (!found.length) venueOut.append(h("p", { class: "venue-none" }, res.secondary ? t("optVenueSecondary", [res.secondary]) : t("optVenueNone")));
+  }
+
   $("controls").append(
     ...cardsOfPrefs,
+    card("venue", t("optVenueTitle"), t("optVenueHint"), h("div", { class: "row venue-row" }, venueInput), venueOut),
     card("agent", t("optAgentTitle"), t("optAgentHint"),
       h("div", { class: "row" }, agentBtn)),
     card("config", t("optConfigTitle"), t("optConfigHint"),
@@ -999,7 +1035,23 @@
     const part = PART_OF.exec(s.path);
     return !part || s.path.endsWith(".show") || at(`panel.${part[1]}.show`);
   }).map((s) => ({ path: s.path, name: partName(s.path) }));
-  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts });
+  // from the preview to the controls: the setting of a part (its ⚙, or a double-click on it) is brought into view, flashes, and has the keyboard
+  let flashTimer = 0;
+  function jump(path) {
+    if (searchInput.value) { searchInput.value = ""; filterSettings(""); }                                   // (a search of the settings that has hidden the row)
+    const control = $("controls").querySelector(`[data-pref="${path}"]`);
+    const card = B.prefs.CARDS.find((c) => c.rows.some((r) => r.path === path));
+    const row = (control && control.closest(".opt, .role-studio-card")) || control || (card && $("card-" + card.id));
+    if (!row) return;
+    row.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    for (const el of document.querySelectorAll(".opt-flash")) el.classList.remove("opt-flash");
+    void row.offsetWidth;                                                                                    // (the animation starts again when the same row is asked for twice)
+    row.classList.add("opt-flash");
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(() => row.classList.remove("opt-flash"), 1800);
+    if (control && control.focus && !control.disabled) control.focus({ preventScroll: true });
+  }
+  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts, jump });
   // from the controls to the preview: the part a setting draws is outlined while the pointer or the keyboard is on the setting
   const settingOf = (target) => { const row = target.closest && target.closest(".opt, .role-studio-card"); const el = row && row.querySelector("[data-pref]"); return el ? el.dataset.pref : null; };
   const point = (path) => (path && path.startsWith("labels.") ? editor.highlight(null, path.slice(7)) : editor.highlight(path || null));

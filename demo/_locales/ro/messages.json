@@ -464,7 +464,7 @@
     "message": "Readuci toate aceste setări la valorile implicite?"
   },
   "optStorage": {
-    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Paginile Scholar sunt citite doar atunci când le deschizi, iar titlurile lucrărilor sunt trimise către Semantic Scholar doar dacă activezi asta."
+    "message": "Setările sunt păstrate în browser și se sincronizează cu profilul tău Chrome. Extensia citește paginile Scholar pe care le deschizi și, atunci când apeși „Citește lista completă”, paginile lucrărilor cu lista de autori trunchiată; titlurile lucrărilor sunt trimise către Semantic Scholar doar dacă activezi asta."
   },
   "optSample": {
     "message": "Lucrare de exemplu"
@@ -1088,7 +1088,7 @@
     "message": "Monocrom"
   },
   "optPreviewEdit": {
-    "message": "Treci cu cursorul peste o parte ca s-o ascunzi (✕) sau s-o muți (⠿). Dă dublu clic pe un nume ca să-l redenumești."
+    "message": "Treci cu cursorul peste o parte ca s-o ascunzi (✕), s-o muți (⠿) sau ca să-i găsești setarea (⚙). Dă dublu clic pe un nume ca să-l redenumești, iar pe orice altceva ca să ajungi la setarea lui."
   },
   "optHide": {
     "message": "Ascunde"
@@ -1112,5 +1112,28 @@
   },
   "optRenameHint": {
     "message": "Enter păstrează · Esc anulează · gol: numele standard"
+  },
+  "optVenueTitle": {
+    "message": "Verifică un venue"
+  },
+  "optVenueHint": {
+    "message": "Lipește un venue așa cum îl afișează Scholar (linia gri de sub o lucrare), ca să vezi ce spun despre el listele CCF și CORE și după ce regulă. Un venue pe care listele nu-l pot plasa nu primește rang: nu se ghicește nimic."
+  },
+  "optVenuePlaceholder": {
+    "message": "de ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Fără rang. Listele nu plasează acest text cu certitudine, așa că nu primește nicio etichetă."
+  },
+  "optVenueSecondary": {
+    "message": "Cuvântul „$N1$” marchează o categorie secundară (workshop, poster, lucrare scurtă …): un venue nu primește rang decât dacă numele lui conține acest cuvânt.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Arată setarea"
   }
 }

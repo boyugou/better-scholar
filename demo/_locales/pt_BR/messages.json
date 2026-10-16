@@ -482,7 +482,7 @@
     "message": "Restaurar todas estas configurações para os padrões?"
   },
   "optStorage": {
-    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. As páginas do Scholar só são lidas quando você as abre, e os títulos dos artigos só são enviados ao Semantic Scholar se você ativar essa opção."
+    "message": "As configurações ficam no seu navegador e sincronizam com seu perfil do Chrome. A extensão lê as páginas do Scholar que você abre e, quando você pressiona “Ler listas completas”, também as páginas de artigos com lista de autores truncada; os títulos dos artigos só são enviados ao Semantic Scholar se você ativar essa opção."
   },
   "optSample": {
     "message": "Artigo de exemplo"
@@ -1109,7 +1109,7 @@
     "message": "Monocromático"
   },
   "optPreviewEdit": {
-    "message": "Passe o cursor sobre uma parte para ocultá-la (✕) ou movê-la (⠿). Clique duas vezes num nome para renomeá-lo."
+    "message": "Passe o cursor sobre uma parte para ocultá-la (✕), movê-la (⠿) ou mostrar a configuração dela (⚙). Clique duas vezes num nome para renomeá-lo e em qualquer outra coisa para ir à configuração dela."
   },
   "optHide": {
     "message": "Ocultar"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter mantém · Esc cancela · vazio: o nome padrão"
+  },
+  "optVenueTitle": {
+    "message": "Verificar um veículo"
+  },
+  "optVenueHint": {
+    "message": "Cole um veículo como o Scholar o exibe (a linha cinza abaixo de um artigo) para ver o que as listas CCF e CORE concluem sobre ele e por qual regra. Um veículo que elas não conseguem posicionar não recebe ranking: nada é adivinhado."
+  },
+  "optVenuePlaceholder": {
+    "message": "ex.: Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sem ranking. As listas não posicionam este texto com certeza, então ele não recebe etiqueta."
+  },
+  "optVenueSecondary": {
+    "message": "A palavra “$N1$” indica uma categoria secundária (workshop, pôster, artigo curto …): o veículo não recebe ranking, a menos que o próprio nome dele contenha essa palavra.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Mostrar a configuração"
   }
 }

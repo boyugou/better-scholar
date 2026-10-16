@@ -464,7 +464,7 @@
     "message": "Visszaállítod az összes beállítást az alapértékekre?"
   },
   "optStorage": {
-    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. A Scholar-oldalakat csak akkor olvassa be a bővítmény, amikor megnyitod őket, a cikkek címei pedig csak akkor kerülnek a Semantic Scholarhoz, ha bekapcsolod ezt."
+    "message": "A beállítások a böngészőben tárolódnak, és szinkronizálódnak a Chrome-profilddal. A bővítmény beolvassa a Scholar-oldalakat, amelyeket megnyitsz, a „Teljes listák olvasása” gomb megnyomásakor a csonka szerzőlistájú cikkek oldalait is; a cikkek címei pedig csak akkor kerülnek a Semantic Scholarhoz, ha bekapcsolod ezt."
   },
   "optSample": {
     "message": "Minta cikk"
@@ -1088,7 +1088,7 @@
     "message": "Egyszínű"
   },
   "optPreviewEdit": {
-    "message": "Ha egy rész fölé viszed az egeret, elrejtheted (✕) vagy áthelyezheted (⠿). Egy nevet dupla kattintással átnevezhetsz."
+    "message": "Ha egy rész fölé viszed az egeret, elrejtheted (✕), áthelyezheted (⠿) vagy megjelenítheted a beállítását (⚙). Egy nevet dupla kattintással átnevezhetsz, bármi másra duplán kattintva pedig a beállításához ugorhatsz."
   },
   "optHide": {
     "message": "Elrejtés"
@@ -1112,5 +1112,28 @@
   },
   "optRenameHint": {
     "message": "Enter megtartja · Esc megszakítja · üres: az alapnév"
+  },
+  "optVenueTitle": {
+    "message": "Venue ellenőrzése"
+  },
+  "optVenueHint": {
+    "message": "Illeszd be a venue-t úgy, ahogy a Scholar megjeleníti (a cikk alatti szürke sor), hogy lásd, mit mondanak róla a CCF- és CORE-listák, és melyik szabály alapján. Az a venue, amelyet nem tudnak elhelyezni, nem kap rangot: nincs találgatás."
+  },
+  "optVenuePlaceholder": {
+    "message": "pl. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Nincs rang. A listák nem helyezik el biztosan ezt a szöveget, ezért nem kap címkét."
+  },
+  "optVenueSecondary": {
+    "message": "A(z) „$N1$” szó másodlagos kategóriát jelöl (workshop, poszter, rövid cikk …): az a venue csak akkor kap rangot, ha a saját neve tartalmazza ezt a szót.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Beállításának megjelenítése"
   }
 }

@@ -482,7 +482,7 @@
     "message": "Bu ayarların tümü varsayılanlara sıfırlansın mı?"
   },
   "optStorage": {
-    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Scholar sayfaları yalnızca siz açtığınızda okunur; makale başlıkları ise yalnızca bu seçeneği açarsanız Semantic Scholar'a gönderilir."
+    "message": "Ayarlar tarayıcınızda saklanır ve Chrome profilinizle eşitlenir. Eklenti, açtığınız Scholar sayfalarını okur ve “Tam listeleri oku” düğmesine bastığınızda yazar listesi kısaltılmış makalelerin sayfalarını da okur; makale başlıkları ise yalnızca bu seçeneği açarsanız Semantic Scholar'a gönderilir."
   },
   "optSample": {
     "message": "Örnek makale"
@@ -1109,7 +1109,7 @@
     "message": "Tek renkli"
   },
   "optPreviewEdit": {
-    "message": "Bir bölümün üzerine gelerek gizleyin (✕) veya taşıyın (⠿). Bir adı değiştirmek için üzerine çift tıklayın."
+    "message": "Bir bölümün üzerine gelerek gizleyin (✕), taşıyın (⠿) veya ayarını gösterin (⚙). Bir adı değiştirmek için üzerine çift tıklayın, diğer şeylerde ise çift tıklayarak ayarına gidin."
   },
   "optHide": {
     "message": "Gizle"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter kaydeder · Esc iptal eder · boş: standart ad"
+  },
+  "optVenueTitle": {
+    "message": "Yayın yerini kontrol et"
+  },
+  "optVenueHint": {
+    "message": "Scholar'ın gösterdiği biçimiyle bir yayın yeri yapıştırın (bir makalenin altındaki gri satır); CCF ve CORE listelerinin bu yayın yeri hakkında ne düşündüğünü ve hangi kurala göre düşündüğünü görün. Listelerin yerleştiremediği bir yayın yerine sıralama verilmez: hiçbir şey tahmin edilmez."
+  },
+  "optVenuePlaceholder": {
+    "message": "örn. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sıralama yok. Listeler bu metni kesin olarak yerleştiremiyor, bu yüzden etiket verilmez."
+  },
+  "optVenueSecondary": {
+    "message": "“$N1$” kelimesi ikincil bir kategoriyi belirtir (workshop, poster, kısa makale …): yayın yerinin kendi adında bu kelime yoksa sıralama verilmez.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Ayarını göster"
   }
 }

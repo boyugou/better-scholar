@@ -482,7 +482,7 @@
     "message": "Ripristinare tutte queste impostazioni ai valori predefiniti?"
   },
   "optStorage": {
-    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. Le pagine di Scholar vengono lette solo quando le apri, e i titoli degli articoli vengono inviati a Semantic Scholar solo se lo attivi."
+    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. L’estensione legge le pagine di Scholar che apri e, quando premi «Leggi elenchi completi», anche le pagine degli articoli con un elenco di autori troncato; i titoli degli articoli vengono inviati a Semantic Scholar solo se lo attivi."
   },
   "optSample": {
     "message": "Articolo di esempio"
@@ -1109,7 +1109,7 @@
     "message": "Monocromatico"
   },
   "optPreviewEdit": {
-    "message": "Passa il mouse su una parte per nasconderla (✕) o spostarla (⠿). Fai doppio clic su un nome per rinominarlo."
+    "message": "Passa il mouse su una parte per nasconderla (✕), spostarla (⠿) o mostrare la sua impostazione (⚙). Fai doppio clic su un nome per rinominarlo, su qualsiasi altra cosa per andare alla sua impostazione."
   },
   "optHide": {
     "message": "Nascondi"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Invio conferma · Esc annulla · vuoto: il nome standard"
+  },
+  "optVenueTitle": {
+    "message": "Verifica conferenza/rivista"
+  },
+  "optVenueHint": {
+    "message": "Incolla una conferenza o rivista come la mostra Scholar (la riga grigia sotto un articolo) per vedere cosa ne pensano le liste CCF e CORE e secondo quale regola. Una conferenza o rivista che non riescono a collocare non riceve alcun ranking: non si tira a indovinare nulla."
+  },
+  "optVenuePlaceholder": {
+    "message": "ad es. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Senza ranking. Le liste non collocano questo testo con certezza, quindi non riceve alcuna etichetta."
+  },
+  "optVenueSecondary": {
+    "message": "La parola «$N1$» indica una categoria secondaria (workshop, poster, articolo breve …): la conferenza o rivista non riceve un ranking, a meno che il suo nome non contenga quella parola.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Mostra la sua impostazione"
   }
 }

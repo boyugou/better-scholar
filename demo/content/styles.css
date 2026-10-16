@@ -71,12 +71,17 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 }
 .rr-chip-t1[data-kind="ccf"]  { --ink: var(--rr-ccf-1-ink, #3345a8);  --edge: var(--rr-ccf-1-edge, #9aa6e0);  --fill: var(--rr-ccf-1-fill, #3345a8);  --on: var(--rr-ccf-1-on, #fff); }
 .rr-chip-t2[data-kind="ccf"]  { --ink: var(--rr-ccf-2-ink, #5361bd);  --edge: var(--rr-ccf-2-edge, #c1c8ef);  --fill: var(--rr-ccf-2-fill, #5361bd);  --on: var(--rr-ccf-2-on, #fff); }
-.rr-chip-t3[data-kind="ccf"]  { --ink: var(--rr-ccf-3-ink, #69708a);  --edge: var(--rr-ccf-3-edge, #d3d7e3);  --fill: var(--rr-ccf-3-fill, #69708a);  --on: var(--rr-ccf-3-on, #fff); }
-.rr-chip-t4[data-kind="ccf"]  { --ink: var(--rr-ccf-4-ink, #727a8f);  --edge: var(--rr-ccf-4-edge, #e2e5ec);  --fill: var(--rr-ccf-4-fill, #656c80);  --on: var(--rr-ccf-4-on, #fff); }
+.rr-chip-t3[data-kind="ccf"]  { --ink: var(--rr-ccf-3-ink, #626982);  --edge: var(--rr-ccf-3-edge, #d3d7e3);  --fill: var(--rr-ccf-3-fill, #69708a);  --on: var(--rr-ccf-3-on, #fff); }
+.rr-chip-t4[data-kind="ccf"]  { --ink: var(--rr-ccf-4-ink, #626a7e);  --edge: var(--rr-ccf-4-edge, #e2e5ec);  --fill: var(--rr-ccf-4-fill, #656c80);  --on: var(--rr-ccf-4-on, #fff); }
 .rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, #3345a8); --edge: var(--rr-core-1-edge, #9aa6e0); --fill: var(--rr-core-1-fill, #3345a8); --on: var(--rr-core-1-on, #fff); }
 .rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, #5361bd); --edge: var(--rr-core-2-edge, #c1c8ef); --fill: var(--rr-core-2-fill, #5361bd); --on: var(--rr-core-2-on, #fff); }
-.rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #69708a); --edge: var(--rr-core-3-edge, #d3d7e3); --fill: var(--rr-core-3-fill, #69708a); --on: var(--rr-core-3-on, #fff); }
-.rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #727a8f); --edge: var(--rr-core-4-edge, #e2e5ec); --fill: var(--rr-core-4-fill, #656c80); --on: var(--rr-core-4-on, #fff); }
+.rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #626982); --edge: var(--rr-core-3-edge, #d3d7e3); --fill: var(--rr-core-3-fill, #69708a); --on: var(--rr-core-3-on, #fff); }
+.rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #626a7e); --edge: var(--rr-core-4-edge, #e2e5ec); --fill: var(--rr-core-4-fill, #656c80); --on: var(--rr-core-4-on, #fff); }
+/* with the list's name left out ("tier alone") a CCF A and a CORE A* would be the same chip: until a colour is picked for CORE it is teal then */
+.rr-chips-tier .rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, #176b73); --edge: var(--rr-core-1-edge, #8fcdd3); --fill: var(--rr-core-1-fill, #176b73); }
+.rr-chips-tier .rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, #25808a); --edge: var(--rr-core-2-edge, #b5dde1); --fill: var(--rr-core-2-fill, #25808a); }
+.rr-chips-tier .rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #5d7478); --edge: var(--rr-core-3-edge, #d1e2e4); --fill: var(--rr-core-3-fill, #5d7478); }
+.rr-chips-tier .rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #66787b); --edge: var(--rr-core-4-edge, #e2eaeb); --fill: var(--rr-core-4-fill, #566a6e); }
 
 /* awards and talk levels (the panel's Awards & talks rows use the same icons) */
 .rr-chip-mark, #rr-panel .rr-mi {
@@ -422,6 +427,12 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   #rr-panel .rr-search-count.rr-search-count-empty { border: 2px solid Highlight; }
   tr.gsc_a_tr.rr-row-focused { outline: 3px solid Highlight !important; }
 }
+
+/* a name the person chose can be 30 letters in a row: it breaks where it must, instead of widening the panel past its frame */
+#rr-panel { overflow-wrap: anywhere; }
+#rr-panel .rr-dd { min-width: 0; max-width: 46%; }
+#rr-panel .rr-dd-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#rr-panel .rr-sec-head, #rr-panel .rr-cover-line { flex-wrap: wrap; }
 
 /* "Showing 25 of 100 papers · Clear": the list is filtered */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }

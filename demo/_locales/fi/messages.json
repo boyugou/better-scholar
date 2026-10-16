@@ -482,7 +482,7 @@
     "message": "Palautetaanko kaikki nämä asetukset oletusarvoihin?"
   },
   "optStorage": {
-    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Scholar-sivuja luetaan vain silloin, kun avaat ne, ja artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
+    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Laajennus lukee Scholar-sivut, jotka avaat, ja kun painat “Lue täydet luettelot”, myös sivut artikkeleista, joiden tekijäluettelo on katkaistu; artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
   },
   "optSample": {
     "message": "Esimerkkiartikkeli"
@@ -1109,7 +1109,7 @@
     "message": "Yksivärinen"
   },
   "optPreviewEdit": {
-    "message": "Vie hiiri osan päälle, jos haluat piilottaa sen (✕) tai siirtää sen (⠿). Kaksoisnapsauta nimeä, jos haluat nimetä sen uudelleen."
+    "message": "Vie hiiri osan päälle, jos haluat piilottaa sen (✕), siirtää sen (⠿) tai näyttää sen asetuksen (⚙). Kaksoisnapsauta nimeä, jos haluat nimetä sen uudelleen, tai mitä tahansa muuta, jos haluat siirtyä sen asetukseen."
   },
   "optHide": {
     "message": "Piilota"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter tallentaa · Esc peruu · tyhjä: oletusnimi"
+  },
+  "optVenueTitle": {
+    "message": "Tarkista julkaisufoorumi"
+  },
+  "optVenueHint": {
+    "message": "Liitä julkaisufoorumi siten kuin Scholar sen näyttää (harmaa rivi artikkelin alla), niin näet, mitä CCF- ja CORE-luettelot siitä päättelevät ja minkä säännön perusteella. Julkaisufoorumi, jota ne eivät voi sijoittaa, ei saa luokkaa: mitään ei arvata."
+  },
+  "optVenuePlaceholder": {
+    "message": "esim. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Ei luokkaa. Luettelot eivät sijoita tätä tekstiä varmasti, joten se ei saa tunnistetta."
+  },
+  "optVenueSecondary": {
+    "message": "Sana “$N1$” merkitsee toissijaista kategoriaa (workshop, poster, lyhyt artikkeli …). Julkaisufoorumi ei saa luokkaa, ellei sen oma nimi sisällä tätä sanaa.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Näytä sen asetus"
   }
 }

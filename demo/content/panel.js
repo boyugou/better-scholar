@@ -2,7 +2,8 @@
 // update() and reports user intent through callbacks — it owns no application state beyond which
 // disclosure widgets are open. What it shows at all, and in what order, is decided on the settings page
 // (model.prefs); the panel only keeps the quick, per-visit controls: the ranking tab, the filters, the clickable counts.
-// Everything the settings can switch carries data-rr-part="<the setting's path>", so that the settings page can point at it.
+// Everything the settings can switch carries data-rr-part="<the setting's path>", so that the settings page can point at it (a thing that several switches draw, such as
+// a count row of merged talks, carries all their paths, separated by spaces).
 (function () {
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
@@ -30,7 +31,7 @@
     const items = () => [...list.children];
     const draw = () => {
       const cur = options.find((o) => o.value === value);
-      label.textContent = cur ? cur.label : placeholder;
+      label.textContent = cur ? cur.label : value || placeholder;                  // (a value the list does not have, set by a page call, is shown as it is)
       el.classList.toggle("rr-dd-set", !!(cur && cur.value !== ""));
       list.replaceChildren(...options.map((o, i) => h("li", { role: "option", tabindex: "-1", "data-value": o.value, "aria-selected": String(o.value === value),
         onClick: () => choose(i) }, o.label)));
@@ -460,8 +461,9 @@
       const s = m.summary, sel = m.selection;
       const pressed = (x) => String(sameSel(sel, x));
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);                    // (the tiers belong to the list's tab; the "not ranked" column has its own switch)
+      const showTotal = tp.total || !cols.length;                                           // (a table with no tier column has no number but the total: it is drawn whatever its switch says)
       const tierPart = (c) => (c === "none" ? P("panel.table.unranked") : m.source ? P("panel.table." + m.source) : {});
-      const totalHead = tp.total ? h("th", { class: "rr-col-total", ...P("panel.table.total"), ...L("colTotal") }, t("colTotal")) : null;
+      const totalHead = showTotal ? h("th", { class: "rr-col-total", ...P("panel.table.total"), ...L("colTotal") }, t("colTotal")) : null;
       const headRow = h("tr", {}, h("th", {}, h("span", { class: "rr-sr" }, t("colRole"))),
         ...cols.map((c) => h("th", { ...tierPart(c) },
           h("button", { class: "rr-rolebtn", type: "button", style: "padding:1px 5px", "data-tier": c, "aria-pressed": pressed({ role: undefined, tier: c }),
@@ -475,19 +477,19 @@
           h("button", { class: "rr-cell" + (r[c] ? "" : " rr-zero"), type: "button", tabindex: r[c] ? null : "-1", "data-role": r.role, "data-tier": c,
             "aria-pressed": pressed({ role: r.role, tier: c }), "aria-label": `${t(ROLE_KEY[r.role])} ${tierText(c)}: ${r[c]}`,
             onClick: () => cb.onSelect({ role: r.role, tier: c }) }, r[c] ? String(r[c]) : "·"))),
-        tp.total ? h("td", { class: "rr-total", ...P("panel.table.total") }, String(r.total)) : null));
+        showTotal ? h("td", { class: "rr-total", ...P("panel.table.total") }, String(r.total)) : null));
       let hiddenRow = null;
       if (s.hidden && tp.hidden) {
         hiddenRow = (h("tr", { "data-role": "hidden", class: "rr-hiddenrow", title: t("tipHidden"), ...P("panel.table.hidden") },
           h("th", {}, h("button", { class: "rr-rolebtn", type: "button", "data-role": "hidden", "aria-pressed": pressed({ role: "hidden", tier: undefined }), ...L("roleHidden"),
             onClick: () => cb.onSelect({ role: "hidden", tier: undefined }) }, dot("hidden"), t("roleHidden"))),
           // (the count is the row's only number: with no total column it takes the room of the columns)
-          tp.total ? [cols.length ? h("td", { colspan: String(cols.length), class: "rr-faint" }, "") : null, h("td", { class: "rr-total" }, String(s.hidden))]
+          showTotal ? [cols.length ? h("td", { colspan: String(cols.length), class: "rr-faint" }, "") : null, h("td", { class: "rr-total" }, String(s.hidden))]
             : h("td", { colspan: String(Math.max(1, cols.length)), class: "rr-total" }, String(s.hidden))));
       }
-      const foot = tp.total ? h("tr", { ...P("panel.table.total") }, h("th", { ...L("colTotal") }, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total))) : null;
+      const foot = showTotal ? h("tr", { ...P("panel.table.total") }, h("th", { ...L("colTotal") }, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total))) : null;
       // (the papers whose position is not known are not in the total: their row comes after it)
-      matrixBox.replaceChildren(h("table", { class: "rr-matrix" + (tp.total ? "" : " rr-no-total") }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
+      matrixBox.replaceChildren(h("table", { class: "rr-matrix" + (showTotal ? "" : " rr-no-total") }, h("thead", {}, headRow), h("tbody", {}, ...bodyRows), h("tfoot", {}, foot, hiddenRow)));
     }
 
     function renderActions(m) {
@@ -515,7 +517,7 @@
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
       marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
-        "aria-pressed": String(m.markGroup === g), ...P("panel.marks." + B.marks.members(g)[0]), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
+        "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), ...L(MARK_KEY[g]), onClick: () => cb.onMarkGroup(g) },
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab" }, t(MARK_KEY[g])), h("b", {}, String(counts[g])))));
     }
 
@@ -733,7 +735,8 @@
       }
       summarySec.hidden = !m.prefs.panel.table.show;
       renderSummaryHead(m); renderMatrix(m); renderActions(m); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m); syncFilters(m); renderMetrics(m); renderNames(m);
-      metricsSec.hidden = !m.prefs.panel.metrics.show;
+      const mt = m.prefs.panel.metrics;
+      metricsSec.hidden = !mt.show || !(mt.papers || mt.citations || mt.h || mt.i10);                               // (a title and a scope line with no number under them are no part)
       coverSec.hidden = !m.prefs.panel.status.show || !(coverTop.childNodes.length || coverList.childNodes.length);
       const say = [m.coverage.loadMessage, m.coverage.resolveMessage].filter(Boolean).join(" ");
       if (announce.textContent !== say) announce.textContent = say;
@@ -749,6 +752,7 @@
       el.classList.toggle("rr-onecol", Object.values(sections).filter((s) => !s.hidden).length < 2);
       body.hidden = Object.values(sections).every((s) => s.hidden);
       el.classList.toggle("rr-bare", body.hidden);
+      el.hidden = head.hidden && body.hidden && filterBar.hidden;                                                      // (nothing of it is drawn: no empty frame on the page)
       // (the lists' names without their edition note, unbreakable, and isolated so that right-to-left text cannot reorder them: "CCF 2026 · ICORE 2026")
       const listName = (label) => "⁨" + String(label).replace(/\s*\(.*?\)\s*$/, "").replace(/ /g, " ") + "⁩";
       const lists = (m.sources.length ? m.sources : ["ccf", "core"]).map((s) => listName(m.edition[s])).join(" · ");

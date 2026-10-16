@@ -464,7 +464,7 @@
     "message": "Đặt lại tất cả cài đặt này về mặc định?"
   },
   "optStorage": {
-    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Trang Scholar chỉ được đọc khi bạn mở chúng, còn tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
+    "message": "Cài đặt được lưu trong trình duyệt và đồng bộ với hồ sơ Chrome của bạn. Tiện ích đọc các trang Scholar mà bạn mở, và khi bạn nhấn “Đọc danh sách đầy đủ”, cũng đọc các trang bài báo có danh sách tác giả bị rút gọn; tiêu đề bài báo chỉ được gửi tới Semantic Scholar nếu bạn bật tính năng đó."
   },
   "optSample": {
     "message": "Bài mẫu"
@@ -1088,7 +1088,7 @@
     "message": "Đơn sắc"
   },
   "optPreviewEdit": {
-    "message": "Rê chuột lên một phần để ẩn (✕) hoặc di chuyển (⠿). Nhấp đúp vào tên để đổi tên."
+    "message": "Rê chuột lên một phần để ẩn (✕), di chuyển (⠿) hoặc hiện cài đặt của phần đó (⚙). Nhấp đúp vào tên để đổi tên, còn nhấp đúp vào mọi thứ khác để chuyển đến cài đặt của nó."
   },
   "optHide": {
     "message": "Ẩn"
@@ -1112,5 +1112,28 @@
   },
   "optRenameHint": {
     "message": "Enter giữ lại · Esc hủy · để trống: tên chuẩn"
+  },
+  "optVenueTitle": {
+    "message": "Kiểm tra venue"
+  },
+  "optVenueHint": {
+    "message": "Dán venue như Scholar hiển thị (dòng màu xám dưới một bài báo) để xem danh sách CCF và CORE đánh giá thế nào và theo quy tắc nào. Venue mà các danh sách không xác định được vị trí thì không được xếp hạng: không suy đoán gì cả."
+  },
+  "optVenuePlaceholder": {
+    "message": "ví dụ: Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Chưa xếp hạng. Các danh sách không xác định chắc chắn văn bản này, nên không có nhãn."
+  },
+  "optVenueSecondary": {
+    "message": "Từ “$N1$” cho biết một hạng mục phụ (workshop, poster, bài ngắn …): venue sẽ không được xếp hạng trừ khi tên của chính venue đó có từ này.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Hiện cài đặt"
   }
 }

@@ -50,7 +50,7 @@
 </ul>
 <p>A request to Semantic Scholar, off by default:</p>
 <ul>
-<li>Only if you switch on <em>Semantic Scholar → Read author lists from Semantic Scholar first</em> and then click *Read full lists*, the extension first asks <code><a href="https://api.semanticscholar.org/graph/v1/paper/search/match">https://api.semanticscholar.org/graph/v1/paper/search/match</a></code> about each of those papers. The request carries the paper's title as its search text and the list of fields wanted (title, authors, year); it is sent without cookies and without a referrer, with a pause of 1.1 seconds after each. If you entered an API key, it is sent in the request's <code>x-api-key</code> header, and to no other address. An answer is used only when its title, first author and year agree with the paper's. Papers it does not know go to Scholar's own page as above, and so do all the remaining ones once Semantic Scholar refuses a request or cannot be reached (<code>content/semantic.js</code>, <code>content/detail.js</code>).</li>
+<li>Only if you switch on <em>Semantic Scholar → Read author lists from Semantic Scholar first</em> and then click <em>Read full lists</em>, the extension first asks <code><a href="https://api.semanticscholar.org/graph/v1/paper/search/match">https://api.semanticscholar.org/graph/v1/paper/search/match</a></code> about each of those papers. The request carries the paper's title as its search text and the list of fields wanted (title, authors, year); it is sent without cookies and without a referrer, with a pause of 1.1 seconds after each. If you entered an API key, it is sent in the request's <code>x-api-key</code> header, and to no other address. An answer is used only when its title, first author and year agree with the paper's. Papers it does not know go to Scholar's own page as above, and so do all the remaining ones once Semantic Scholar refuses a request or cannot be reached (<code>content/semantic.js</code>, <code>content/detail.js</code>).</li>
 <li>No preset switches this on.</li>
 </ul>
 <p>Nothing else:</p>
@@ -77,8 +77,8 @@
 <p>## Clipboard</p>
 <p>The extension writes to the clipboard only when you click a button that copies, and never reads it:</p>
 <ul>
-<li>the copy buttons of the panel and the toolbar popup: <em>Copy summary</em>, <em>Copy as table</em>, <em>Copy papers</em>, *Copy APA<em>, </em>Copy BibTeX<em>, </em>Copy Markdown<em>, </em>Copy JSON<em>; and </em>Copy list* under the unranked venues;</li>
-<li>on the settings page: <em>Copy guide for agents</em> (it contains your current settings), <em>Copy config (JSON)</em>, *Copy cache (JSON)<em> (the saved paper details) and </em>Copy details for a bug report* (the extension's version, your browser's user-agent string, the interface language and your settings).</li>
+<li>the copy buttons of the panel and the toolbar popup: <em>Copy summary</em>, <em>Copy as table</em>, <em>Copy papers</em>, <em>Copy APA</em>, <em>Copy BibTeX</em>, <em>Copy Markdown</em>, <em>Copy JSON</em>; and <em>Copy list</em> under the unranked venues. <em>Copy as table</em>, <em>Copy papers</em> and <em>Copy APA</em> put the same content on the clipboard twice, as text and as HTML (which a word processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else;</li>
+<li>on the settings page: <em>Copy guide for agents</em> (it contains your current settings), <em>Copy config (JSON)</em>, <em>Copy cache (JSON)</em> (the saved paper details) and <em>Copy details for a bug report</em> (the extension's version, your browser's user-agent string, the interface language and your settings).</li>
 </ul>
 <p>## Files</p>
 <p>Files are saved only when you click, and are made in the browser:</p>
@@ -90,7 +90,7 @@
 <p>## Page events</p>
 <p>On a profile page the extension sets the attribute <code>data-rr-ready</code> on the page's <code>&lt;html&gt;</code> element, and answers <code>better-scholar:request</code> events with <code>better-scholar:response</code> events (<code>content/bridge.js</code>, <code>lib/agent.js</code>). Any script running in that page can use them — the page's own scripts, other extensions' scripts, the DevTools console — and can tell from the attribute that the extension is installed. There is no check of who asks.</p>
 <ul>
-<li>The calls are <code>ping</code>, <code>summary</code>, <code>papers</code>, <code>export</code>, <code>filter</code> and <code>clearFilters</code>. They return what the panel and its copy buttons produce for that profile: the counts, the papers' records (with the author lists that *Read full lists* saved for those papers), and the text of a copy format. <code>summary</code> also reports a few display settings: which rank lists and copy buttons are on, whether the table and the awards counts are shown, and how talks are counted. <code>filter</code> and <code>clearFilters</code> change the filters of that page only.</li>
+<li>The calls are <code>ping</code>, <code>summary</code>, <code>papers</code>, <code>export</code>, <code>filter</code> and <code>clearFilters</code>. They return what the panel and its copy buttons produce for that profile: the counts, the papers' records (with the author lists that <em>Read full lists</em> saved for those papers), and the text of a copy format. <code>summary</code> returns numbers only. <code>filter</code> and <code>clearFilters</code> change the filters of that page only.</li>
 <li>They cannot change any setting or anything in storage, they make no network request, and they do not return the settings record, the Semantic Scholar key or the name spellings.</li>
 </ul>
 <p>## The website's demo</p>

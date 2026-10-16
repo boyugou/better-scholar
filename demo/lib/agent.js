@@ -28,13 +28,13 @@
     papers: {
       doc: "The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.",
       params: { filtered: { type: "boolean", doc: "true (the default): only the papers the page shows now, after the filters; false: every loaded paper." } },
-      result: "{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null."
+      result: "{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue)."
     },
     export: {
       doc: "The papers or the summary as text, in the format of a copy button.",
       params: {
         format: { type: "choice", values: FORMATS, required: true, doc: "summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180)." },
-        source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only). The other formats ignore it." },
+        source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only; a list that nothing draws is not used, the default is used instead). The other formats ignore it." },
         html: { type: "boolean", doc: "true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." }
       },
       result: "{ format, text, html? } — `html` only when asked for, and only for table, papers and apa."
@@ -49,12 +49,12 @@
         minCitations: { type: "integer", min: 0, max: 100000000, nullable: true, doc: "Papers cited at least this often." },
         impact: { type: "choice", values: ["h", "i10"], nullable: true, doc: "The highlighted papers behind the h-index (at least h citations, h counted over the highlighted papers the other filters let through) or the i10-index (at least 10 citations)." }
       },
-      result: "{ shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing)."
+      result: "{ shown, total, filters: { query, onlyHighlighted, yearStart, yearEnd, minCitations, impact }, errors, ignored } — `errors` names the terms of the query that could not be read (an operator with a value it does not take matches nothing); `ignored` names the filters asked for that were not applied because the settings leave them with no control on the page to undo them (the search box, the filter bar, the citation totals …)."
     },
     clearFilters: {
       doc: "Remove every filter: the search, a table cell, an awards row, a venue, the year range.",
       params: {},
-      result: "{ shown, total, filters, errors } — as `filter` returns it, after the filters are cleared."
+      result: "{ shown, total, filters, errors } — as `filter` returns it (without `ignored`), after the filters are cleared."
     }
   };
 
@@ -114,7 +114,7 @@
       "",
       "1. Read what the user wants. Use only the settings listed below; do not invent any.",
       "2. Reply with **one JSON object** that holds only the settings to change, in the shape of the record under \"Current settings\" (nested objects, as in the examples; no dotted paths). Leave out what stays as it is.",
-      "3. The user pastes it into *Settings → Configuration → Config editor* and presses **Apply** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.",
+      "3. The user pastes it into *Settings → Configuration & presets → Paste or edit a configuration (JSON)* and presses **Apply configuration** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.",
       "",
       "Example — years chart off, BibTeX and summary buttons first, last-author rows only, bar-style rows:",
       "```json",
@@ -123,7 +123,7 @@
       "",
       "Rules:",
       "- `semanticScholar` sends paper titles to a third party: turn it on only if the user asks for it. No preset touches it.",
-      "- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel; every other `panel.*` setting then has no effect. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).",
+      "- The table of settings is in the order of the screen, top to bottom. `panel.show: false` hides the whole panel on the profile page; the settings of the table, of the awards and talks counts and of the copy buttons (`panel.table.*`, `panel.marks.*`, `panel.copy.*`) still decide what the toolbar popup shows, and every other `panel.*` setting has no effect then. A part's `show` switch hides the part, the switches inside it hide single things; the `order` lists only move things and never hide (a part left out of a list follows the others in the default order).",
       "- The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.",
       "- What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.",
       "- Colours are `\"#rrggbb\"` only; `\"\"` restores the built-in colour of a role.",

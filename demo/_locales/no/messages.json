@@ -482,7 +482,7 @@
     "message": "Tilbakestille alle disse innstillingene til standardverdiene?"
   },
   "optStorage": {
-    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Scholar-sider leses bare når du åpner dem, og artikkeltitler sendes bare til Semantic Scholar hvis du slår det på."
+    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Utvidelsen leser Scholar-sidene du åpner, og når du trykker «Les fulle lister», også sidene til artikler med en forkortet forfatterliste; artikkeltitler sendes bare til Semantic Scholar hvis du slår det på."
   },
   "optSample": {
     "message": "Eksempelartikkel"
@@ -1109,7 +1109,7 @@
     "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Før musepekeren over en del for å skjule den (✕) eller flytte den (⠿). Dobbeltklikk et navn for å gi det nytt navn."
+    "message": "Før musepekeren over en del for å skjule den (✕), flytte den (⠿) eller vise innstillingen for den (⚙). Dobbeltklikk et navn for å gi det nytt navn, alt annet for å hoppe til innstillingen."
   },
   "optHide": {
     "message": "Skjul"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter beholder · Esc avbryter · tomt: standardnavnet"
+  },
+  "optVenueTitle": {
+    "message": "Sjekk et publiseringssted"
+  },
+  "optVenueHint": {
+    "message": "Lim inn et publiseringssted slik Scholar viser det (den grå linjen under en artikkel), så du kan se hva CCF- og CORE-listene mener om det, og etter hvilken regel. Et publiseringssted som listene ikke kan plassere, får ingen rang: ingenting gjettes."
+  },
+  "optVenuePlaceholder": {
+    "message": "f.eks. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Uten rang. Listene plasserer ikke denne teksten med sikkerhet, så den får ingen merkelapp."
+  },
+  "optVenueSecondary": {
+    "message": "Ordet «$N1$» markerer et sekundært spor (workshop, poster, kort artikkel …). Publiseringsstedet får ingen rang med mindre navnet selv inneholder ordet.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Vis innstillingen"
   }
 }

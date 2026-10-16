@@ -482,7 +482,7 @@
     "message": "Alle diese Einstellungen auf die Standardwerte zurücksetzen?"
   },
   "optStorage": {
-    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Scholar-Seiten werden nur gelesen, wenn du sie öffnest, und Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
+    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Die Erweiterung liest die Scholar-Seiten, die du öffnest, und wenn du auf „Ganze Listen lesen“ klickst, auch die Seiten von Papers mit gekürzter Autorenliste; Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
   },
   "optSample": {
     "message": "Beispiel-Paper"
@@ -1109,7 +1109,7 @@
     "message": "Einfarbig"
   },
   "optPreviewEdit": {
-    "message": "Fahre über einen Teil, um ihn auszublenden (✕) oder zu verschieben (⠿). Doppelklicke einen Namen, um ihn umzubenennen."
+    "message": "Fahre über einen Teil, um ihn auszublenden (✕), zu verschieben (⠿) oder seine Einstellung zu finden (⚙). Doppelklicke einen Namen, um ihn umzubenennen, und alles andere, um zu seiner Einstellung zu springen."
   },
   "optHide": {
     "message": "Ausblenden"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter übernimmt · Esc bricht ab · leer: der Standardname"
+  },
+  "optVenueTitle": {
+    "message": "Venue prüfen"
+  },
+  "optVenueHint": {
+    "message": "Füge eine Venue so ein, wie Scholar sie anzeigt (die graue Zeile unter einem Paper), um zu sehen, was die CCF- und CORE-Listen daraus machen und nach welcher Regel. Eine Venue, die sie nicht einordnen können, erhält keinen Rang: Es wird nichts geraten."
+  },
+  "optVenuePlaceholder": {
+    "message": "z. B. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Kein Rang. Die Listen ordnen diesen Text nicht mit Sicherheit ein, deshalb bekommt er kein Kennzeichen."
+  },
+  "optVenueSecondary": {
+    "message": "Das Wort „$N1$“ kennzeichnet eine Nebenkategorie (einen Workshop, ein Poster, einen Kurzbeitrag …). Die Venue erhält keinen Rang, außer ihr eigener Name enthält dieses Wort.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Zugehörige Einstellung anzeigen"
   }
 }

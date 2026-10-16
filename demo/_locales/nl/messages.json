@@ -482,7 +482,7 @@
     "message": "Al deze instellingen terugzetten naar de standaardwaarden?"
   },
   "optStorage": {
-    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. Scholar-pagina's worden alleen gelezen wanneer je ze opent, en paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
+    "message": "Instellingen worden in je browser opgeslagen en synchroniseren met je Chrome-profiel. De extensie leest de Scholar-pagina's die je opent, en wanneer je op “Hele lijsten lezen” drukt, ook de pagina's van papers met een afgekapte auteurslijst; paper-titels worden alleen naar Semantic Scholar gestuurd als je dat aanzet."
   },
   "optSample": {
     "message": "Voorbeeldpaper"
@@ -1109,7 +1109,7 @@
     "message": "Monochroom"
   },
   "optPreviewEdit": {
-    "message": "Wijs een onderdeel aan om het te verbergen (✕) of te verplaatsen (⠿). Dubbelklik op een naam om die te hernoemen."
+    "message": "Wijs een onderdeel aan om het te verbergen (✕), te verplaatsen (⠿) of de instelling ervan te tonen (⚙). Dubbelklik op een naam om die te hernoemen, op al het overige om naar de instelling ervan te gaan."
   },
   "optHide": {
     "message": "Verbergen"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter bewaart · Esc annuleert · leeg: de standaardnaam"
+  },
+  "optVenueTitle": {
+    "message": "Venue controleren"
+  },
+  "optVenueHint": {
+    "message": "Plak een venue zoals Scholar die toont (de grijze regel onder een paper) om te zien wat de CCF- en CORE-lijsten ervan vinden, en volgens welke regel. Een venue die ze niet kunnen plaatsen krijgt geen rang: er wordt niets geraden."
+  },
+  "optVenuePlaceholder": {
+    "message": "bijv. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Geen rang. De lijsten plaatsen deze tekst niet met zekerheid, dus krijgt hij geen label."
+  },
+  "optVenueSecondary": {
+    "message": "Het woord “$N1$” duidt een secundaire categorie aan (workshop, poster, kort paper …): een venue krijgt geen rang, tenzij de eigen naam dat woord bevat.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Instelling tonen"
   }
 }

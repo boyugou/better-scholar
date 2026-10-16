@@ -464,7 +464,7 @@
     "message": "把这里的所有设置恢复为默认值？"
   },
   "optStorage": {
-    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。Scholar 页面仅在你打开时才会读取；只有开启 Semantic Scholar 后，论文标题才会发送给它。"
+    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。扩展会读取你打开的 Scholar 页面；点“补全”时，也会读取作者列表被截断的论文页面；只有开启 Semantic Scholar 后，论文标题才会发送给它。"
   },
   "optSample": {
     "message": "示例论文"
@@ -1088,7 +1088,7 @@
     "message": "单色"
   },
   "optPreviewEdit": {
-    "message": "将鼠标悬停在某部分上即可隐藏(✕)或移动(⠿)。双击名称可重命名。"
+    "message": "将鼠标悬停在某部分上即可隐藏(✕)、移动(⠿)或显示对应设置(⚙)。双击名称可重命名，双击其他任何内容则跳转到对应设置。"
   },
   "optHide": {
     "message": "隐藏"
@@ -1112,5 +1112,28 @@
   },
   "optRenameHint": {
     "message": "Enter 保留 · Esc 取消 · 留空：标准名称"
+  },
+  "optVenueTitle": {
+    "message": "核对期刊/会议"
+  },
+  "optVenueHint": {
+    "message": "粘贴 Scholar 显示的发表场所（论文下方的灰色文字行），即可查看 CCF 和 CORE 名录如何看待它，以及依据哪条规则。名录无法归类的发表场所不获得等级：不做任何猜测。"
+  },
+  "optVenuePlaceholder": {
+    "message": "如 Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "没有等级。名录没有确切收录这段文字，因此不加标签。"
+  },
+  "optVenueSecondary": {
+    "message": "“$N1$”标示次要类别（研讨会、海报、短文等）：除非发表场所自身的名称含有该词，否则不获得等级。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "显示对应设置"
   }
 }

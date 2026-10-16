@@ -110,9 +110,9 @@
   const names = (...keys) => keys.map((k) => nameRow(k));
 
   // a part of the panel: its own switch, then one for each thing it draws — [key, default, label, doc, ui]; ui.name (a message key of NAMES) puts that name on the thing's row;
-  // a row of its own (names(…)) among the things stays among them
-  const part = (id, doc, things, { show = true } = {}) => [
-    bool(`panel.${id}.show`, show, doc, { label: "optShowSection", parent: "panel.show" }),
+  // a row of its own (names(…)) among the things stays among them. `popup`: the toolbar popup draws the part too, so its switches count while the panel is off.
+  const part = (id, doc, things, { show = true, popup = false } = {}) => [
+    bool(`panel.${id}.show`, show, doc, { label: "optShowSection", ...(popup ? {} : { parent: "panel.show" }) }),
     ...things.flatMap((entry) => {
       if (!Array.isArray(entry)) return [{ parent: `panel.${id}.show`, ...entry }];
       const [key, def, label, doc, { name, ...ui } = {}] = entry;
@@ -179,7 +179,7 @@
 
     // the panel, top to bottom
     card("panel", "optPanelTitle", null, [
-      bool("panel.show", true, "The panel in the right-hand column: off hides all of it and every panel.* setting then has no effect.", { label: "optPanelShow", hint: "optPanelShowHint" }),
+      bool("panel.show", true, "The panel in the right-hand column of the profile page: off hides all of it. The settings of the table, of the awards and talks counts and of the copy buttons still decide what the toolbar popup shows; every other panel.* setting has no effect then.", { label: "optPanelShow", hint: "optPanelShowHint" }),
       order("panel.order", SECTIONS, "The parts of the panel from top to bottom: a list of part ids (" + SECTIONS.join(", ") + "). Ids left out follow in the default order; a part's own show switch hides it without changing its place.",
         { label: "optPanelOrder", hint: "optPanelOrderHint", parent: "panel.show" }),
       bool("panel.header.name", true, "The panel's title at the top.", { label: "optHeadName", parent: "panel.show" }),
@@ -191,17 +191,17 @@
     card("table", "optPanelSummary", "optPanelSummaryHint", part("table", "The table of your papers by position and rank (also the toolbar popup's table).", [
       ["title", true, "optPartTitle", "The title line of the table.", { name: "summaryTitle" }],
       ...names("summaryTitleRoles"),
-      ["ccf", true, "optTableCcf", "A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use."],
-      ["core", true, "optTableCore", "A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use."],
+      ["ccf", true, "optTableCcf", "A CCF tab and its columns in the table; also the CCF ranking the copy summary and the copy table use (while the table is not drawn, a list is used where the rows' chips show it)."],
+      ["core", true, "optTableCore", "A CORE tab and its columns in the table; also the CORE ranking the copy summary and the copy table use (while the table is not drawn, a list is used where the rows' chips show it)."],
       ["unranked", true, "optTableUnranked", "The column of papers whose venue has no rank (drawn as “–”).", { name: "tipUnranked" }],
       ["total", true, "optTableTotal", "The totals: the All column and the All row.", { name: "colTotal" }],
       ...names("roleFirst", "roleCofirst", "roleSecond", "roleLast"),
       ["other", true, "optTableOther", "The \"Other\" row: papers where you are neither first, co-first, second nor last author.", { name: "roleMiddle" }],
       ["hidden", true, "optTableHidden", "The \"Hidden\" row: papers whose cut-off author list does not show your position.", { name: "roleHidden" }],
       ["note", true, "optTableNote", "The note under the table that says the ranks are today's lists, not the rank at publication."]
-    ])),
+    ], { popup: true })),
     card("copy", "optCopyTitle", "optCopyHint", [
-      bool("panel.copy.show", true, "The row of copy and export buttons (also the toolbar popup's).", { label: "optShowSection", parent: "panel.show" }),
+      bool("panel.copy.show", true, "The row of copy and export buttons (also the toolbar popup's).", { label: "optShowSection" }),
       order("panel.copy.order", COPY_BUTTONS, "The copy buttons, left to right: a list of ids (" + COPY_BUTTONS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderButtons", parent: "panel.copy.show" }),
       ...COPY_BUTTONS.flatMap((k) => [bool(`panel.copy.${k}`, true, COPY_DOC[k], { label: COPY_LABEL[k], parent: "panel.copy.show" }), { parent: "panel.copy.show", ...named(COPY_LABEL[k]) }])
@@ -214,7 +214,7 @@
         ["spotlight", true, "markSpotlight", "A count row for \"Spotlight\" papers.", { name: "markSpotlight" }],
         ["highlight", true, "markHighlight", "A count row for \"Highlight\" papers.", { name: "markHighlight" }],
         ...names("markSpotlightHighlight", "markTalks")
-      ]),
+      ], { popup: true }),
       choice("panel.marks.grouping", ["separate", "pair", "talks"], "separate", "How the panel counts talks: \"separate\" one row each for oral, spotlight and highlight; \"pair\" spotlight and highlight together; \"talks\" all three together.",
         { label: "optTalkRows", hint: "optTalkRowsHint", parent: "panel.marks.show" })
     ]),
@@ -427,7 +427,8 @@
   }
 
   // The rank lists the table has a tab for, and the one it uses: the remembered one if it is on, otherwise the first that is, otherwise none (the table then shows roles only).
-  const sources = (prefs) => RANKS.filter((k) => prefs.panel.table[k]);
+  // While the table is not drawn the summary and the exports are counted by the lists the rows' chips show: what you see is what you copy.
+  const sources = (prefs) => RANKS.filter((k) => (prefs.panel.table.show ? prefs.panel.table[k] : prefs.rows[k]));
   function source(prefs, ui) {
     const on = sources(prefs);
     return on.includes(ui.source) ? ui.source : on[0] || null;

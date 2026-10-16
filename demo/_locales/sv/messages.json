@@ -482,7 +482,7 @@
     "message": "Återställa alla dessa inställningar till standardvärdena?"
   },
   "optStorage": {
-    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Scholar-sidor läses bara när du öppnar dem, och artikeltitlar skickas till Semantic Scholar bara om du aktiverar det."
+    "message": "Inställningarna lagras i din webbläsare och synkas med din Chrome-profil. Tillägget läser de Scholar-sidor du öppnar, och när du trycker på ”Läs hela listorna” även sidorna för artiklar med en kortad författarlista; artikeltitlar skickas till Semantic Scholar bara om du aktiverar det."
   },
   "optSample": {
     "message": "Exempelartikel"
@@ -1109,7 +1109,7 @@
     "message": "Monokrom"
   },
   "optPreviewEdit": {
-    "message": "Håll muspekaren över en del för att dölja den (✕) eller flytta den (⠿). Dubbelklicka på ett namn för att byta namn."
+    "message": "Håll muspekaren över en del för att dölja den (✕), flytta den (⠿) eller visa dess inställning (⚙). Dubbelklicka på ett namn för att byta namn och på allt annat för att hoppa till dess inställning."
   },
   "optHide": {
     "message": "Dölj"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter behåller · Esc avbryter · tomt: standardnamnet"
+  },
+  "optVenueTitle": {
+    "message": "Kontrollera ett publiceringsställe"
+  },
+  "optVenueHint": {
+    "message": "Klistra in ett publiceringsställe så som Scholar visar det (den grå raden under en artikel) för att se vad CCF- och CORE-listorna säger om det, och enligt vilken regel. Ett publiceringsställe som listorna inte kan placera får ingen rank: ingenting gissas."
+  },
+  "optVenuePlaceholder": {
+    "message": "t.ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Ingen rank. Listorna placerar inte denna text med säkerhet, så den får ingen etikett."
+  },
+  "optVenueSecondary": {
+    "message": "Ordet ”$N1$” markerar ett sekundärt spår (workshop, poster, kort artikel …). Publiceringsstället får ingen rank om inte dess eget namn innehåller ordet.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Visa dess inställning"
   }
 }

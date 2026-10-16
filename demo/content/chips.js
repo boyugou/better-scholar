@@ -9,13 +9,15 @@
   const SHADE = { ccf: { A: 1, B: 3, C: 4 }, core: { "A*": 1, A: 2, B: 3, C: 4 } };
   const RULE_TEXT = { name: "ruleName", acronym: "ruleAcronym", prefix: "rulePrefix" };
 
+  const ruleText = (info) => t(RULE_TEXT[info.rule] || "ruleName");
+
   // kind: "ccf" | "core"; info: the venue match ({ tier } or { rank }, name, abbr, rule); edition: the list's label
   function tierChip(kind, info, edition) {
     const tier = kind === "ccf" ? info.tier : info.rank;
     const source = kind === "ccf" ? t("srcCcf") : t("srcCore");
     const lines = [
       `${source} ${tier} · ${info.name}${info.abbr ? " (" + info.abbr + ")" : ""}`,
-      t(RULE_TEXT[info.rule] || "ruleName"),
+      ruleText(info),
       edition + " — " + t("tipToday")
     ];
     return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier },
@@ -45,5 +47,5 @@
   // The kind's name in the interface language, for counts ("Best paper 5 · Honorable mention 47")
   const kindName = (kind) => t(kind === "best-category" ? "mkCategory" : MARK_TEXT[kind] || "mkBest");
 
-  B.chips = { tierChip, markChip, markLabel, kindName };
+  B.chips = { tierChip, ruleText, markChip, markLabel, kindName };
 })();

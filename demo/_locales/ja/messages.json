@@ -482,7 +482,7 @@
     "message": "これらの設定をすべて初期設定に戻しますか？"
   },
   "optStorage": {
-    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。Scholar のページは開いたときにだけ読み取られ、論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
+    "message": "設定はブラウザに保存され、Chrome のプロフィールと同期されます。拡張機能は、開いた Scholar のページを読み取ります。また、「完全なリストを読み取る」を押したときには、著者リストが途中で切れている論文のページも読み取ります。論文のタイトルが Semantic Scholar に送られるのは、それをオンにした場合だけです。"
   },
   "optSample": {
     "message": "サンプル論文"
@@ -1109,7 +1109,7 @@
     "message": "単色"
   },
   "optPreviewEdit": {
-    "message": "部分にカーソルを合わせると、非表示（✕）や移動（⠿）ができます。名前をダブルクリックすると名前を変えられます。"
+    "message": "部分にカーソルを合わせると、非表示（✕）、移動（⠿）、設定の表示（⚙）ができます。名前をダブルクリックすると名前を変えられ、それ以外をダブルクリックするとその設定に移動します。"
   },
   "optHide": {
     "message": "非表示"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Enter で確定 · Esc で取り消し · 空欄：標準の名前"
+  },
+  "optVenueTitle": {
+    "message": "掲載先を確認"
+  },
+  "optVenueHint": {
+    "message": "Scholar に表示される掲載先（論文の下にあるグレーの行）を貼り付けると、CCF と CORE のリストがそれをどう扱うか、どの規則に基づくかが分かります。どちらのリストにも位置づけられない掲載先にはランクが付かず、推測は行いません。"
+  },
+  "optVenuePlaceholder": {
+    "message": "例：Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "ランクなし。リストはこのテキストを確実には位置づけられないため、ラベルは付きません。"
+  },
+  "optVenueSecondary": {
+    "message": "「$N1$」は副次的なトラック（ワークショップ、ポスター、短い論文など）を示す語です。掲載先の名称自体にその語が含まれていない限り、ランクは付きません。",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "設定を表示"
   }
 }

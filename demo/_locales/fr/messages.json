@@ -482,7 +482,7 @@
     "message": "Rétablir tous ces réglages à leurs valeurs par défaut ?"
   },
   "optStorage": {
-    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Les pages Scholar ne sont lues que lorsque vous les ouvrez, et les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
+    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. L’extension lit les pages Scholar que vous ouvrez et, lorsque vous cliquez sur « Lire la liste complète », les pages des articles dont la liste d’auteurs est tronquée ; les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
   },
   "optSample": {
     "message": "Article d’exemple"
@@ -1109,7 +1109,7 @@
     "message": "Unicolore"
   },
   "optPreviewEdit": {
-    "message": "Survolez une partie pour la masquer (✕) ou la déplacer (⠿). Double-cliquez sur un nom pour le renommer."
+    "message": "Survolez une partie pour la masquer (✕), la déplacer (⠿) ou afficher son réglage (⚙). Double-cliquez sur un nom pour le renommer, sur tout le reste pour accéder à son réglage."
   },
   "optHide": {
     "message": "Masquer"
@@ -1133,5 +1133,28 @@
   },
   "optRenameHint": {
     "message": "Entrée valide · Échap annule · vide : le nom standard"
+  },
+  "optVenueTitle": {
+    "message": "Vérifier une conférence/revue"
+  },
+  "optVenueHint": {
+    "message": "Collez une conférence ou revue telle que Scholar l’affiche (la ligne grise sous un article) pour voir ce qu’en disent les listes CCF et CORE, et selon quelle règle. Une conférence ou revue qu’elles ne peuvent pas placer ne reçoit aucun rang : rien n’est deviné."
+  },
+  "optVenuePlaceholder": {
+    "message": "p. ex. Proceedings of the IEEE conference on computer vision and pattern recognition"
+  },
+  "optVenueNone": {
+    "message": "Sans rang. Les listes ne placent pas ce texte avec certitude : il ne reçoit donc pas de pastille."
+  },
+  "optVenueSecondary": {
+    "message": "Le mot « $N1$ » désigne une catégorie secondaire (atelier, poster, article court …) : la conférence ou la revue ne reçoit aucun rang, sauf si son propre nom contient ce mot.",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowSetting": {
+    "message": "Afficher son réglage"
   }
 }
