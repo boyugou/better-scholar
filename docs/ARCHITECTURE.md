@@ -151,7 +151,8 @@ means no badge:
    `Conference`, …). Three variants are tried, strictest first: all words, without
    organisation words (IEEE/ACM/USENIX…), and without all-caps acronyms of real venues
    (`2020 CHI Conference on …`). Weakened variants need ≥ 2 words. Curated **aliases**
-   (`src/data/aliases.js`) are indexed as extra names. Journals also match on the same
+   (`src/data/aliases.js`) are indexed as extra names (`names`; `fullOnly` for a name whose organisation is part of what it says — "USENIX ATC" is not also "ATC"; `former` for the names
+   a venue had that say "Workshop" — found by name, but not part of the venue's wording, so they are no type clash and are read only by the secondary-track exemption). Journals also match on the same
    words in a different order (`Audio, Speech, and Language Processing, IEEE Transactions on`).
 2. **Acronym** — only strong signals: `(ICML)`, `(NSDI 11)`, `(USENIX Security 21)`,
    `(S&P'05)`, an unclosed `(OSDI …`, a leading `ISCA 2014`, a one-word venue (`Ndss`), or an
