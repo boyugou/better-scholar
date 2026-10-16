@@ -11,6 +11,7 @@ npm run build:demo                    # dist/demo/: the settings page as a stati
 npm run test:demo                     # the web demo's checks: that folder in a plain Chromium page, no extension
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff (see below)
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
+npm run numbers                       # rewrite the "By the numbers" blocks of README.md and README.zh-CN.md (counted from the code and the data; a test fails when they are stale)
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
 node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
 npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; the one known limit: a copy button never gets narrower than its text, so 30 full-width characters on it, in a panel narrower than about 380px, stick out)

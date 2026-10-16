@@ -13,7 +13,8 @@
     "data": "node scripts/build-data.mjs",
     "agents:doc": "node scripts/agents-doc.js",
     "store:images": "node scripts/store-images.mjs",
-    "build:demo": "node scripts/build-demo.mjs"
+    "build:demo": "node scripts/build-demo.mjs",
+    "numbers": "node scripts/numbers.mjs --readme"
   },
   "engines": {
     "node": ">=20"

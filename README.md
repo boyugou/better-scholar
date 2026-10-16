@@ -58,6 +58,30 @@ Better Scholar is a Chrome (Manifest V3) extension for [Google Scholar](https://
 - **30 interface languages**, and *Open Scholar in* to open Scholar itself in a language you choose.
 - **Private.** No account, no analytics, no tracking. The only request to a site other than Scholar is the optional Semantic Scholar title lookup, off by default. See [`PRIVACY.md`](PRIVACY.md).
 
+## By the numbers
+
+How much the extension is made of, counted from its code and its data — nothing here is typed by hand (`npm run numbers`):
+
+<!-- numbers:begin -->
+| Number | What | Counted from |
+|---:|---|---|
+| **153** | settings you can change, in 18 cards — 86 switches, 48 names you can give things, 19 colours, choices, orders and languages | the rows of the settings tree (`src/lib/prefs.js`) |
+| **171** | nodes in that tree, 4 levels deep: a card, the switch of a part, a thing in it, its name | cards and rows; a row hangs on the switch of its part |
+| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats, quick filters, chip looks and presets — each with its own switch, most with a place in an order you set | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages — 350 strings each, 10,500 translated strings | `src/_locales/*/messages.json` |
+| **1,481** | ranked venues: 386 CCF conferences, 295 CCF journals, 800 CORE conferences | the rows of the bundled lists (`src/data/ccf.js`, `src/data/core.js`) |
+| **450+** | names Scholar prints that the lists do not have, in 220+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
+| **2,400+** · **1,100+** | name forms and acronyms the matcher looks up | the keys of its indexes |
+| **250+** | venues that are one entry in both lists under two names: a badge found by one list's wording brings the other's | `idx.partners` |
+| **5 · 17** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guard checks that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
+| **7,830** | award-winning papers, from 194 venues and series, 1990–2026 | `src/data/awards.js` |
+| **22,744** | real Scholar venue lines whose badge was each looked at and written down | `test/fixtures/venues.expected.json` |
+| **500+ · 80+ · 15** | unit tests, end-to-end checks in a real Chromium with the extension loaded, checks of the web demo | `test/*.test.js`, `test/e2e/` |
+| **0** | dependencies, and no build step | `package.json` |
+
+Counted from the code and the data by `npm run numbers`; a test keeps this table true. Counts that grow with every fix are given rounded down.
+<!-- numbers:end -->
+
 ## How it works
 
 ```
