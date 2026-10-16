@@ -37,7 +37,7 @@
   "footer.privacy": "Tietosuoja",
   "footer.issues": "Ilmoita ongelmasta",
   "demo.title": "Kokeile oikeaa asetussivua",
-  "demo.hint": "Tämä on laajennuksen oma asetussivu, joka toimii suoraan tällä sivulla: kytke jokin asetus päälle tai pois päältä, niin esikatselu päivittyy samalla.",
+  "demo.hint": "Tämä on laajennuksen oma asetussivu, joka toimii suoraan tällä sivulla: kytke jokin asetus päälle tai pois päältä, niin esikatselu päivittyy samalla. Vie hiiri esikatselun päälle, jos haluat piilottaa, siirtää tai nimetä uudelleen jonkin osan, ja kaksoisnapsauta osaa siirtyäksesi sen asetukseen.",
   "demo.local": "Muutoksesi tallennetaan vain tähän selaimeen.",
   "demo.open": "Avaa uudessa välilehdessä",
   "demo.frame": "Better Scholar -asetussivu, interaktiivinen demo",

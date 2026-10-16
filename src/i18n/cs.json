@@ -37,7 +37,7 @@
   "footer.privacy": "Ochrana soukromí",
   "footer.issues": "Nahlásit problém",
   "demo.title": "Vyzkoušejte skutečnou stránku nastavení",
-  "demo.hint": "Toto je vlastní stránka nastavení rozšíření, která běží přímo tady: zapněte nebo vypněte kterýkoli přepínač a náhled se hned změní.",
+  "demo.hint": "Toto je vlastní stránka nastavení rozšíření, která běží přímo tady: zapněte nebo vypněte kterýkoli přepínač a náhled se hned změní. Najetím na náhled část skryjete, přesunete nebo přejmenujete a dvojklikem na ni přejdete k jejímu nastavení.",
   "demo.local": "Vaše změny zůstanou jen v tomto prohlížeči.",
   "demo.open": "Otevřít na nové kartě",
   "demo.frame": "Stránka nastavení Better Scholar, interaktivní demo",

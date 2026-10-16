@@ -37,7 +37,7 @@
   "footer.privacy": "Privacidade",
   "footer.issues": "Comunicar um problema",
   "demo.title": "Experimente a verdadeira página de definições",
-  "demo.hint": "Esta é a própria página de definições da extensão, a funcionar aqui mesmo: mude um interruptor e a pré-visualização atualiza-se de imediato.",
+  "demo.hint": "Esta é a própria página de definições da extensão, a funcionar aqui mesmo: mude um interruptor e a pré-visualização atualiza-se de imediato. Passe o cursor sobre a pré-visualização para ocultar, mover ou mudar o nome de uma parte, e faça duplo clique numa parte para ir até à respetiva definição.",
   "demo.local": "As suas alterações ficam apenas neste navegador.",
   "demo.open": "Abrir num novo separador",
   "demo.frame": "Página de definições do Better Scholar, demonstração interativa",

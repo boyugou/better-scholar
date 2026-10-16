@@ -37,7 +37,7 @@
   "footer.privacy": "Gizlilik",
   "footer.issues": "Sorun bildir",
   "demo.title": "Gerçek ayarlar sayfasını deneyin",
-  "demo.hint": "Eklentinin kendi ayarlar sayfası burada çalışıyor: bir seçeneği açıp kapatın, önizleme de buna göre değişir.",
+  "demo.hint": "Eklentinin kendi ayarlar sayfası burada çalışıyor: bir seçeneği açıp kapatın, önizleme de buna göre değişir. Bir bölümü gizlemek, taşımak veya yeniden adlandırmak için önizlemenin üzerine gelin; bir bölüme çift tıklayarak da ayarına gidin.",
   "demo.local": "Değişiklikleriniz yalnızca tarayıcınızda kalır.",
   "demo.open": "Yeni sekmede aç",
   "demo.frame": "Better Scholar ayarlar sayfası, etkileşimli demo",

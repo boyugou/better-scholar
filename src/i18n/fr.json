@@ -37,7 +37,7 @@
   "footer.privacy": "Confidentialité",
   "footer.issues": "Signaler un problème",
   "demo.title": "Essayez la vraie page de réglages",
-  "demo.hint": "Voici la page de réglages de l'extension, qui fonctionne ici même : basculez un interrupteur et l'aperçu se met à jour.",
+  "demo.hint": "Voici la page de réglages de l'extension, qui fonctionne ici même : basculez un interrupteur et l'aperçu se met à jour. Survolez l'aperçu pour masquer, déplacer ou renommer une partie, et double-cliquez sur une partie pour accéder à son réglage.",
   "demo.local": "Vos modifications restent dans ce navigateur.",
   "demo.open": "Ouvrir dans un nouvel onglet",
   "demo.frame": "Page de réglages de Better Scholar, une démonstration interactive",

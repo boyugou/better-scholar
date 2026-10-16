@@ -37,7 +37,7 @@
   "footer.privacy": "Privacy",
   "footer.issues": "Segnala un problema",
   "demo.title": "Prova la vera pagina delle impostazioni",
-  "demo.hint": "Questa è la pagina delle impostazioni dell'estensione, in funzione proprio qui: cambia un interruttore e l'anteprima si aggiorna.",
+  "demo.hint": "Questa è la pagina delle impostazioni dell'estensione, in funzione proprio qui: cambia un interruttore e l'anteprima si aggiorna. Passa il mouse sull'anteprima per nascondere, spostare o rinominare una parte, e fai doppio clic su una parte per andare alla sua impostazione.",
   "demo.local": "Le tue modifiche restano in questo browser.",
   "demo.open": "Apri in una nuova scheda",
   "demo.frame": "Pagina delle impostazioni di Better Scholar, una demo interattiva",

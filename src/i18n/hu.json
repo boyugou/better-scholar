@@ -37,7 +37,7 @@
   "footer.privacy": "Adatvédelem",
   "footer.issues": "Probléma jelentése",
   "demo.title": "Próbáld ki a valódi beállítási oldalt",
-  "demo.hint": "Ez a bővítmény saját beállítási oldala, amely itt fut élőben: kattints egy kapcsolóra, és az előnézet frissül.",
+  "demo.hint": "Ez a bővítmény saját beállítási oldala, amely itt fut élőben: kattints egy kapcsolóra, és az előnézet frissül. Vidd az egeret az előnézet fölé, hogy elrejts, áthelyezz vagy átnevezz egy részt, és kattints duplán egy részre, hogy a beállításához ugorj.",
   "demo.local": "A módosításaid csak ebben a böngészőben maradnak.",
   "demo.open": "Megnyitás új lapon",
   "demo.frame": "A Better Scholar beállítási oldala, interaktív demó",

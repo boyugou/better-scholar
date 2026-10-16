@@ -37,7 +37,7 @@
   "footer.privacy": "Confidențialitate",
   "footer.issues": "Raportează o problemă",
   "demo.title": "Încearcă pagina reală de setări",
-  "demo.hint": "Aceasta este propria pagină de setări a extensiei, care rulează chiar aici: schimbă un comutator, iar previzualizarea se actualizează.",
+  "demo.hint": "Aceasta este propria pagină de setări a extensiei, care rulează chiar aici: schimbă un comutator, iar previzualizarea se actualizează. Treci cu cursorul peste previzualizare ca să ascunzi, să muți sau să redenumești o parte, iar dublu clic pe o parte te duce la setarea ei.",
   "demo.local": "Modificările tale rămân doar în acest browser.",
   "demo.open": "Deschide într-o filă nouă",
   "demo.frame": "Pagina de setări Better Scholar, demonstrație interactivă",

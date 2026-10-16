@@ -37,7 +37,7 @@
   "footer.privacy": "Prywatność",
   "footer.issues": "Zgłoś problem",
   "demo.title": "Wypróbuj prawdziwą stronę ustawień",
-  "demo.hint": "To własna strona ustawień rozszerzenia, działająca właśnie tutaj: przełącz opcję, a podgląd od razu się zmieni.",
+  "demo.hint": "To własna strona ustawień rozszerzenia, działająca właśnie tutaj: przełącz opcję, a podgląd od razu się zmieni. Najedź kursorem na podgląd, aby ukryć część, przesunąć ją lub zmienić jej nazwę, a dwukrotnie kliknij część, aby przejść do jej ustawienia.",
   "demo.local": "Twoje zmiany zostają tylko w tej przeglądarce.",
   "demo.open": "Otwórz w nowej karcie",
   "demo.frame": "Strona ustawień Better Scholar, interaktywna demonstracja",

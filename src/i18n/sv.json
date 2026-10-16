@@ -37,7 +37,7 @@
   "footer.privacy": "Integritet",
   "footer.issues": "Rapportera ett problem",
   "demo.title": "Prova den riktiga inställningssidan",
-  "demo.hint": "Det här är tilläggets egen inställningssida, som körs direkt här: slå på eller av en inställning, så följer förhandsvisningen med.",
+  "demo.hint": "Det här är tilläggets egen inställningssida, som körs direkt här: slå på eller av en inställning, så följer förhandsvisningen med. Håll muspekaren över förhandsvisningen för att dölja, flytta eller byta namn på en del, och dubbelklicka på en del för att hoppa till dess inställning.",
   "demo.local": "Dina ändringar lagras bara i den här webbläsaren.",
   "demo.open": "Öppna i ny flik",
   "demo.frame": "Inställningssidan i Better Scholar, en interaktiv demo",

@@ -37,7 +37,7 @@
   "footer.privacy": "Privacy",
   "footer.issues": "Een probleem melden",
   "demo.title": "Probeer de echte instellingenpagina",
-  "demo.hint": "Dit is de eigen instellingenpagina van de extensie, die hier gewoon draait: zet een schakelaar om en het voorbeeld past zich direct aan.",
+  "demo.hint": "Dit is de eigen instellingenpagina van de extensie, die hier gewoon draait: zet een schakelaar om en het voorbeeld past zich direct aan. Wijs het voorbeeld aan om een onderdeel te verbergen, te verplaatsen of te hernoemen, en dubbelklik op een onderdeel om naar de instelling ervan te gaan.",
   "demo.local": "Je wijzigingen worden alleen in deze browser opgeslagen.",
   "demo.open": "Openen in nieuw tabblad",
   "demo.frame": "Instellingenpagina van Better Scholar, een interactieve demo",

@@ -37,7 +37,7 @@
   "footer.privacy": "Privacy",
   "footer.issues": "Report a problem",
   "demo.title": "Try the real settings page",
-  "demo.hint": "This is the extension's own settings page, running right here: flip a switch and the preview follows.",
+  "demo.hint": "This is the extension's own settings page, running right here: flip a switch and the preview follows. Hover the preview to hide, move or rename a part, and double-click a part to jump to its setting.",
   "demo.local": "Your changes stay in this browser.",
   "demo.open": "Open in a new tab",
   "demo.frame": "Better Scholar settings page, an interactive demo",

@@ -37,7 +37,7 @@
   "footer.privacy": "Privacidad",
   "footer.issues": "Informar de un problema",
   "demo.title": "Prueba la verdadera página de ajustes",
-  "demo.hint": "Es la propia página de ajustes de la extensión, que funciona aquí mismo: cambia un interruptor y la vista previa se actualiza.",
+  "demo.hint": "Es la propia página de ajustes de la extensión, que funciona aquí mismo: cambia un interruptor y la vista previa se actualiza. Pasa el cursor sobre la vista previa para ocultar, mover o renombrar una parte, y haz doble clic en una parte para ir a su ajuste.",
   "demo.local": "Tus cambios se quedan en este navegador.",
   "demo.open": "Abrir en una pestaña nueva",
   "demo.frame": "Página de ajustes de Better Scholar, una demostración interactiva",

@@ -37,7 +37,7 @@
   "footer.privacy": "Quyền riêng tư",
   "footer.issues": "Báo cáo sự cố",
   "demo.title": "Dùng thử trang cài đặt thật",
-  "demo.hint": "Đây là trang cài đặt của chính tiện ích, đang chạy ngay tại đây: bật hoặc tắt một công tắc, phần “Xem trước” sẽ cập nhật theo.",
+  "demo.hint": "Đây là trang cài đặt của chính tiện ích, đang chạy ngay tại đây: bật hoặc tắt một công tắc, phần “Xem trước” sẽ cập nhật theo. Rê chuột lên “Xem trước” để ẩn, di chuyển hoặc đổi tên một phần, và nhấp đúp vào một phần để chuyển đến cài đặt của phần đó.",
   "demo.local": "Mọi thay đổi của bạn chỉ được lưu trong trình duyệt này.",
   "demo.open": "Mở trong tab mới",
   "demo.frame": "Trang cài đặt Better Scholar, bản demo tương tác",

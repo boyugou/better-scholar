@@ -37,7 +37,7 @@
   "footer.privacy": "Privatliv",
   "footer.issues": "Rapportér et problem",
   "demo.title": "Prøv den rigtige indstillingsside",
-  "demo.hint": "Dette er udvidelsens egen indstillingsside, der kører lige her: slå en indstilling til eller fra, så følger forhåndsvisningen med.",
+  "demo.hint": "Dette er udvidelsens egen indstillingsside, der kører lige her: slå en indstilling til eller fra, så følger forhåndsvisningen med. Hold musen over forhåndsvisningen for at skjule, flytte eller omdøbe en del, og dobbeltklik på en del for at gå til dens indstilling.",
   "demo.local": "Dine ændringer gemmes kun i denne browser.",
   "demo.open": "Åbn i ny fane",
   "demo.frame": "Indstillingssiden i Better Scholar, en interaktiv demo",
