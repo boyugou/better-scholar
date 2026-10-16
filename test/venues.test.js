@@ -1093,7 +1093,9 @@ test("a journal's own name with a volume is that journal: a one-word title in ca
   // journal-first form of conferences: their papers are POPL's, CSCW's … and stay unranked)
   const journals = ccf.venues.filter((v) => v.kind === "J" && !/^Proceedings of the ACM on /.test(v.name));
   assert.ok(journals.length > 280);
-  for (const v of journals) for (const f of [(n) => n + " 12 (3), 123-145, 2019", (n) => n.toLowerCase() + " 12 (3), 123-145, 2019", (n) => n.toUpperCase() + " 12 (3), 123-145, 2019"]) {
+  for (const v of journals) for (const f of [(n) => n + " 12 (3), 123-145, 2019", (n) => n.toLowerCase() + " 12 (3), 123-145, 2019", (n) => n.toUpperCase() + " 12 (3), 123-145, 2019",
+    // ... and with an article number where the pages would be (ACM's "Article No.: 137", "article 75", "No. 3"; cut off at it)
+    (n) => n + " 12 (3), Article No.: 45, 2020", (n) => n.toLowerCase() + " 12 (3), article 45, 2020", (n) => n + " 12 (3), Article …, 2020", (n) => n + " 12 (3), No. 45, 2020"]) {
     const raw = f(v.name), r = resolver.resolve(raw);
     assert.ok(r.ccf && r.ccf.kind === "J" && r.ccf.name === v.name, `${raw} → ${r.ccf && r.ccf.name}`);
   }
@@ -1494,6 +1496,12 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("2011IEEE 10th International Conference on Trust, Security and Privacy in …, 2011", "CCF C TrustCom · CORE B TrustCom");
   eq("International Conference on Smart Card Research and Advanced Applications, 22-41, 2017", "CORE C CARDIS");
   eq("Conference on Artificial Intelligence in Medicine in Europe, 152-157, 2003", "CORE B AIME");
+  // CORE's SERA begins with its sponsor, ACIS, which is no sponsor to drop (it is part of ICIS's name): the print without it is an alias
+  eq("International Conference on Software Engineering Research, Management and Applications, 2012", "CORE C SERA");
+  eq("2012 10th ACIS International Conference on Software Engineering Research, Management and Applications (SERA 2012), 2012", "CORE C SERA");
+  // a three-word journal name with an article number where the pages would be (the lines of ACM TOG, 4 real ones, had no badge: only a name of four words may be followed by words)
+  eq("ACM Transactions on Graphics (Proc. of Siggraph'2022) 41 (4), Article No.: 137, 2022", "CCF A TOG");
+  eq("ACM Transactions on Graphics 38 (4 : SIGGRAPH 2019), Article 28, 2019", "CCF A TOG");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

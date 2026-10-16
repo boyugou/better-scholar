@@ -271,6 +271,8 @@
     { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
     { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
     { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
+    // (CORE's name begins with its sponsor, ACIS, which is no sponsor to drop: ICIS's is "IEEE/ACIS International Conference on Computer and Information Science")
+    { core: "SERA", names: ["International Conference on Software Engineering Research, Management and Applications", "Software Engineering Research, Management and Applications"] },
     { core: "Coordination", names: ["International Conference on Coordination Languages and Models", "Coordination Languages and Models"] },
     { core: "IEEE-IV", names: ["IEEE Intelligent Vehicles Symposium", "Intelligent Vehicles Symposium"] },
     // RTAS before 2003 (the Real-Time and Embedded Technology and Applications Symposium of today)
