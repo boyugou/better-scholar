@@ -266,6 +266,11 @@
     // ---- names Scholar prints that the lists word differently: older or inverted names, singular or plural, a sponsor the list leaves out
     //      (found with the real-profile corpus and the alternate titles OpenAlex files under each conference)
     { core: "JELIA", names: ["European Conference on Logics in Artificial Intelligence", "Joint European Conference on Logics in Artificial Intelligence"] },
+    // (joint proceedings, and the title that says "Applications" where CORE says "Application")
+    { ccf: "DSN", core: "DSN", names: ["International Conference on Dependable Systems and Networks With FTCS and DCC"] },
+    { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
+    { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
+    { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
     { core: "Coordination", names: ["International Conference on Coordination Languages and Models", "Coordination Languages and Models"] },
     { core: "IEEE-IV", names: ["IEEE Intelligent Vehicles Symposium", "Intelligent Vehicles Symposium"] },
     // RTAS before 2003 (the Real-Time and Embedded Technology and Applications Symposium of today)

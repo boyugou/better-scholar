@@ -1477,3 +1477,23 @@ test("an acronym with its year glued on is the acronym; a workshop co-located wi
   none("FTL-IJCAI21, 2021");
   assert.equal(resolver.resolve("BEA@ACL2023, 2023").secondary, "workshop");
 });
+
+test("real prints that missed a badge: a cut IEEE citation form, joint proceedings, a sponsor's typo, a glued year, a plural", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // IEEE Xplore's "Name, YEAR. ACRONYM" form, cut on the acronym: the acronym (with or without its year) is the event's own
+  eq("2003 International Symposium on Empirical Software Engineering, 2003. ISESE …, 2003", "CCF B ESEM · CORE A ESEM");
+  eq("Embedded and Real-Time Computing Systems and Applications, 2009. RTCSA'09 …, 2009", "CORE B RTCSA");
+  none("IEEE Global Telecommunications Conference Workshops, 2004. GlobeCom …, 2004");
+  eq("25th International Conference on Software Engineering, 2003. Proceedings …, 2003", "CCF A ICSE · CORE A* ICSE");
+  // joint proceedings and the digest of an EDA conference
+  eq("2008 IEEE International Conference on Dependable Systems and Networks With …, 2008", "CCF B DSN · CORE A DSN");
+  eq("1999 IEEE/ACM International Conference on Computer-Aided Design. Digest of …, 1999", "CCF B ICCAD · CORE A ICCAD");
+  // "CFV" for the CVF; "2011IEEE" for "2011 IEEE"; "Applications" for "Application"; "… in Europe"
+  eq("IEEE/CFV Conference on Computer Vision and Pattern Recognition, 2023", "CCF A CVPR · CORE A* CVPR");
+  eq("2011IEEE 10th International Conference on Trust, Security and Privacy in …, 2011", "CCF C TrustCom · CORE B TrustCom");
+  eq("International Conference on Smart Card Research and Advanced Applications, 22-41, 2017", "CORE C CARDIS");
+  eq("Conference on Artificial Intelligence in Medicine in Europe, 152-157, 2003", "CORE B AIME");
+  // (another event of the same words stays without)
+  none("International Conference on Smart Card Research and Advanced Systems, 2017");
+});

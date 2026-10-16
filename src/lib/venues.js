@@ -40,7 +40,7 @@
     "procedings", "proceesings", "proceeedings", "proccedings", "proceedigs"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
-  const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "edac", "esda", "eai", "sigchi",
+  const ORG = new Set(["ieee", "acm", "cvf", "cfv", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "edac", "esda", "eai", "sigchi",
     // ACM's special interest groups that sponsor many events and are the name of none ("ACM SIGPLAN International Conference on
     // Functional Programming" is "International Conference on Functional Programming" without them)
     "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim"]);
@@ -144,7 +144,7 @@
   function prepare(raw) {
     // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic; and a venue is not longer than a thousand characters
     // — a longer text is cut, for the same reason: a run of commas in front of a pattern costs time in proportion to the square of its length)
-    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
+    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(/^((?:19|20)\d{2})(?=(?:IEEE|ACM)\b)/, "$1 ").replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
@@ -154,8 +154,8 @@
     // ("Selected Areas in Communications, IEEE Journal on": "IEEE Journal on Selected Areas in Communications"). The form is fixed, so it is read back before anything else.
     s = s.replace(/^(.{2,80}?),\s*((?:IEEE|ACM)(?:\/(?:IEEE|ACM))?\s+(?:Transactions|Journal|Letters|Magazine)\s+on)\b(.*)$/i, "$2 $1$3");
     // IEEE Xplore's citation form: "IEEE Visualization, 2002. VIS 2002., 355-362, 2002" — the name, its year, then the event's own
-    // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know.
-    s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\./, "$1 ($2)");
+    // acronym and year. Read as "IEEE Visualization (VIS)", the form the rules below know. (A cut-off line may end on the acronym: "…, 2003. ISESE …", "…, 2009. RTCSA'09 …".)
+    s = s.replace(/^(.{6,}?),\s*(?:19|20)\d{2}\.\s+(?:([A-Z][A-Za-z0-9&]{1,9})\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2})\.|([A-Z][A-Z0-9&]{1,9})(?:\s*['’]?\s*(?:\d{2}|(?:19|20)\d{2}))?$)/, (m, name, acr, cutAcr) => acr || (truncated && cutAcr) ? name + " (" + (acr || cutAcr) + ")" : m);
     const withParens = s;
     let hasVolume = false, hasIssue = false;
     const finalYear = (/\b((?:19|20)\d{2})\s*$/.exec(s) || [])[1];

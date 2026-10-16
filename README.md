@@ -70,7 +70,7 @@ How much the extension is made of, counted from its code and its data — nothin
 | **9 · 8 · 10 · 6 · 4** | panel parts, copy formats, quick filters, chip looks and presets — each with its own switch, most with a place in an order you set | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
 | **30** | interface languages — 350 strings each, 10,500 translated strings | `src/_locales/*/messages.json` |
 | **1,481** | ranked venues: 386 CCF conferences, 295 CCF journals, 800 CORE conferences | the rows of the bundled lists (`src/data/ccf.js`, `src/data/core.js`) |
-| **450+** | names Scholar prints that the lists do not have, in 220+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
+| **450+** | names Scholar prints that the lists do not have, in 230+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
 | **2,400+** · **1,100+** | name forms and acronyms the matcher looks up | the keys of its indexes |
 | **250+** | venues that are one entry in both lists under two names: a badge found by one list's wording brings the other's | `idx.partners` |
 | **5 · 17** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guard checks that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
