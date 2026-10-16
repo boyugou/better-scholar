@@ -110,6 +110,7 @@ Rules:
 | `labels.copyJson` | text, at most 30 characters | `""` | The text of the Copy JSON button (default: "Copy JSON"): your own words, in every language; "" brings the built-in text back. |
 | `panel.copy.csv` | true / false | `true` | Copy button: the papers shown as CSV (RFC 4180). |
 | `labels.exportCsv` | text, at most 30 characters | `""` | The text of the Export CSV button (default: "Export CSV"): your own words, in every language; "" brings the built-in text back. |
+| `panel.copy.source` | true / false | `true` | A line in the copied summary and the copied table with the profile's link (nothing else of the address) and the day, so that the numbers can be filed or sent on. A list that is not all loaded says so in the same place whatever this says. |
 | `panel.marks.show` | true / false | `true` | The awards and talks counts: one click lists those papers. |
 | `panel.marks.title` | true / false | `true` | The title line of the awards and talks counts. |
 | `labels.marksTitle` | text, at most 30 characters | `""` | The text of the title of the awards and talks counts (default: "Awards & talks"): your own words, in every language; "" brings the built-in text back. |
@@ -128,16 +129,16 @@ Rules:
 | `panel.filters.search` | true / false | `true` | The search box, with its suggestions and the number of papers it finds. |
 | `labels.filterPlaceholder` | text, at most 30 characters | `""` | The text of the hint in the search box (default: "Filter title or author…"): your own words, in every language; "" brings the built-in text back. |
 | `panel.filters.pills.order` | list of ids | `["ccfA","coreA","cites100","recent","first","cofirst","second","last","award","talk"]` | The quick-filter buttons under the search box, left to right: a list of ids (ccfA, coreA, cites100, recent, first, cofirst, second, last, award, talk). Ids left out follow in the default order; a button's own switch hides it without changing its place. |
-| `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.coreA` | true / false | `false` | Quick filter: a button that adds core:a* to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.cites100` | true / false | `true` | Quick filter: a button that adds cites:>100 to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.recent` | true / false | `false` | Quick filter: a button that adds age:<5 to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.first` | true / false | `true` | Quick filter: a button that adds role:first to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.cofirst` | true / false | `false` | Quick filter: a button that adds role:cofirst to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.second` | true / false | `false` | Quick filter: a button that adds role:second to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.last` | true / false | `false` | Quick filter: a button that adds role:last to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.award` | true / false | `true` | Quick filter: a button that adds has:award to the search (left out while nothing of that kind is drawn). |
-| `panel.filters.pills.talk` | true / false | `false` | Quick filter: a button that adds has:talk to the search (left out while nothing of that kind is drawn). |
+| `panel.filters.pills.ccfA` | true / false | `true` | Quick filter: a button that adds ccf:a to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.coreA` | true / false | `false` | Quick filter: a button that adds core:a* to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.cites100` | true / false | `true` | Quick filter: a button that adds cites:>100 to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.recent` | true / false | `false` | Quick filter: a button that adds age:<5 to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.first` | true / false | `true` | Quick filter: a button that adds role:first to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.cofirst` | true / false | `false` | Quick filter: a button that adds role:cofirst to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.second` | true / false | `false` | Quick filter: a button that adds role:second to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.last` | true / false | `false` | Quick filter: a button that adds role:last to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.award` | true / false | `true` | Quick filter: a button that adds has:award to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
+| `panel.filters.pills.talk` | true / false | `false` | Quick filter: a button that adds has:talk to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find). |
 | `panel.filters.only` | true / false | `true` | The "Only highlighted" switch (absent while no position is highlighted). |
 | `labels.onlyHighlighted` | text, at most 30 characters | `""` | The text of the Only highlighted switch (default: "Only highlighted"): your own words, in every language; "" brings the built-in text back. |
 | `panel.filters.years` | true / false | `true` | The year range: From and To. |
@@ -190,7 +191,7 @@ Language codes: en (English), zh_CN (简体中文), zh_TW (繁體中文), ja (�
 
 ### Presets
 Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:
-- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"rows":{"name":true,"style":"full","ccf":true,"core":true,"award":true,"oral":true,"spotlight":true,"highlight":true},"panel":{"show":true,"header":{"name":true,"settings":true,"fold":true},"filters":{"bar":true,"show":true,"search":true,"only":true,"years":true,"follow":true},"table":{"show":true,"title":true,"ccf":true,"core":true,"unranked":true,"total":true,"other":true,"hidden":true,"note":true},"copy":{"show":true,"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true},"marks":{"show":true,"title":true,"award":true,"oral":true,"spotlight":true,"highlight":true,"grouping":"separate"},"metrics":{"show":true,"title":true,"scope":true,"papers":true,"citations":true,"h":true,"i10":true,"of":true},"years":{"show":true,"title":true,"axis":true},"venues":{"show":true,"title":true},"status":{"show":true,"loaded":true,"cutoff":true,"repeats":true,"absent":true,"unranked":true},"names":{"show":true,"hints":true,"add":true}},"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"mergeDuplicates":true,"autoLoad":true}`
+- `all`: `{"roles":{"first":true,"cofirst":true,"second":true,"last":true},"rows":{"name":true,"style":"full","ccf":true,"core":true,"award":true,"oral":true,"spotlight":true,"highlight":true},"panel":{"show":true,"header":{"name":true,"settings":true,"fold":true},"filters":{"bar":true,"show":true,"search":true,"only":true,"years":true,"follow":true},"table":{"show":true,"title":true,"ccf":true,"core":true,"unranked":true,"total":true,"other":true,"hidden":true,"note":true},"copy":{"show":true,"summary":true,"table":true,"papers":true,"apa":true,"bibtex":true,"markdown":true,"json":true,"csv":true,"source":true},"marks":{"show":true,"title":true,"award":true,"oral":true,"spotlight":true,"highlight":true,"grouping":"separate"},"metrics":{"show":true,"title":true,"scope":true,"papers":true,"citations":true,"h":true,"i10":true,"of":true},"years":{"show":true,"title":true,"axis":true},"venues":{"show":true,"title":true},"status":{"show":true,"loaded":true,"cutoff":true,"repeats":true,"absent":true,"unranked":true},"names":{"show":true,"hints":true,"add":true}},"hide":{"cited":false,"citedTable":false,"citedChart":false,"coauthors":false,"access":false},"mergeDuplicates":true,"autoLoad":true}`
 - `last`: `{"roles":{"first":false,"cofirst":false,"second":false,"last":true},"rows":{"style":"full"}}`
 - `first`: `{"roles":{"first":true,"cofirst":true,"second":false,"last":false},"rows":{"style":"full"}}`
 - `minimal`: `{"rows":{"style":"tint"},"hide":{"citedTable":true,"access":true},"panel":{"show":true,"table":{"show":false},"copy":{"show":false},"marks":{"show":false},"filters":{"show":true},"metrics":{"show":true},"years":{"show":false},"venues":{"show":false},"status":{"show":false},"names":{"show":false}}}`
@@ -275,6 +276,8 @@ The search box and `filter { query }` take words and operators separated by spac
 - `role:first` — your position in the author list: first, cofirst, second, last, or middle (none of those four).
 - `type:journal` — the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind).
 - `has:award` — has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark.
+
+The values of `ccf`, `core`, `role`, `type`, `has` can be listed with commas: `role:first,last` is a paper where you are the first or the last author, `ccf:a,b` one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way.
 
 ## Rules for working on this repository
 

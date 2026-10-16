@@ -168,6 +168,8 @@ Press `/` on a profile to focus the search box (when the panel and its filters a
 | `has:` | `has:award`, `has:talk` | a best-paper award or finalist mark; an Oral, Spotlight or Highlight mark |
 | words | `ccf:a role:first cites:>100 detection` | everything together: all terms must match |
 
+A comma lists values of `ccf:`, `core:`, `role:`, `type:` or `has:`: `role:first,last` is *either* (first or last author), `ccf:a,b` a CCF A or B venue; separate words must all hold. Quick buttons of the same operator join one word (*First author* and *Last author* give `role:first,last`) instead of asking for the impossible.
+
 - An operator with a value it does not take (`ccf:x`) matches nothing, and the box is marked and says why on hover. A word whose colon follows no operator (`http://…`) is an ordinary word. The bare comparisons of earlier versions (`>100`, `>2020`) and the aliases `c:`, `y:`, `tier:` and `rank:` are gone.
 - Typing an operator's colon (`role:`) lists its values; `↓`, or a click on the `/` hint, lists common ones. `↑` / `↓` choose, and `Enter` or `Tab` takes the chosen one. Otherwise `Enter` jumps to the next matching row and `Shift`+`Enter` to the previous one.
 - `Escape` closes the list, then clears the box; on the page, `Escape` clears every filter.
@@ -178,7 +180,7 @@ Press `/` on a profile to focus the search box (when the panel and its filters a
 
 ## Copy and export
 
-Each format is a button in the panel's copy row and in the toolbar popup, and has its own switch under *Settings → Copy & export* (all on by default; with none on, there is no copy row). The paper formats take the papers the page shows now, after the filters, with the full author lists that *Read full lists* saved; the summary and the table count every loaded paper.
+Each format is a button in the panel's copy row and in the toolbar popup, and has its own switch under *Settings → Copy & export* (all on by default; with none on, there is no copy row). The paper formats take the papers the page shows now, after the filters, with the full author lists that *Read full lists* saved; the summary and the table count the papers the filters leave when it is the panel's button (the toolbar popup's count every loaded paper) and say what they counted ("Showing 25 of 100 papers · 2021–…"). They also carry a line with the profile's link and the day (`Source: …`; a switch on the *Copy & export* card) and say when the list is not all loaded, so that the numbers can be filed or sent on.
 
 | Button | Output |
 |---|---|

@@ -253,17 +253,17 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-seg button:hover{ color: var(--rr-text); }
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
-#rr-panel .rr-matrix thead th:not(:first-child){ width: 34px; }
-#rr-panel .rr-matrix thead th.rr-col-total{ width: 42px; }
+#rr-panel .rr-matrix thead th:not(:first-child){ width: 30px; }
+#rr-panel .rr-matrix thead th.rr-col-total{ width: 38px; }
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
 #rr-panel .rr-matrix tbody th{ text-align: start; overflow-wrap: anywhere; }
-#rr-panel .rr-rolebtn{ max-width: 100%; text-align: start; overflow-wrap: anywhere; }
+#rr-panel .rr-rolebtn{ max-width: 100%; text-align: start; overflow-wrap: anywhere; hyphens: auto; }
 #rr-panel .rr-matrix tfoot td, #rr-panel .rr-matrix tfoot th{ border-top: 1px solid var(--rr-line); padding-top: 3px; color: var(--rr-muted); }
 #rr-panel .rr-matrix tfoot th{ text-align: start; padding-inline-start: 19px; }
 #rr-panel .rr-rolebtn{ display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; border-radius: 4px; }
 #rr-panel .rr-dot{ width: 9px; height: 9px; border-radius: 2.5px; flex: none; }
-#rr-panel .rr-cell{ display: inline-block; min-width: 27px; padding: 2px 0; border-radius: 4px; text-align: center; font-weight: 700; }
+#rr-panel .rr-cell{ display: inline-block; min-width: 25px; padding: 2px 0; border-radius: 4px; text-align: center; font-weight: 700; }
 #rr-panel .rr-cell.rr-zero{ color: #bdc1c6; font-weight: 400; }
 #rr-panel .rr-cell:hover:not(.rr-zero), #rr-panel .rr-rolebtn:hover{ background: #f1f3f4; }
 #rr-panel .rr-cell[aria-pressed="true"], #rr-panel .rr-rolebtn[aria-pressed="true"]{ background: #e8f0fe; box-shadow: inset 0 0 0 1px var(--rr-accent); }

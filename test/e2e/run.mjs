@@ -700,7 +700,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await queryInput.press("Escape");
     // Quick search operator pills
     const pills = page.locator("#rr-panel .rr-search-pills .rr-spill");
-    assert.equal(await pills.count(), 4, "4 quick operator pills render");
+    assert.deepEqual((await pills.evaluateAll((els) => els.map((e) => e.dataset.pill))).filter((id) => id !== "award"), ["ccfA", "cites100", "first"], "the quick filters, in order (Awards is not offered once the whole list is here and no paper has one: until then it is)");
     const pillCcf = page.locator('#rr-panel .rr-spill[data-op="ccf:a"]');
     const pillCites = page.locator('#rr-panel .rr-spill[data-op="cites:>100"]');
     assert.equal(await pillCcf.getAttribute("aria-pressed"), "false");
@@ -865,6 +865,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF rank/);
     assert.match(clip, /Last author: \d+ \(/);
     assert.match(clip, /CCF 2026 \(7th edition\)/);
+    assert.match(clip, /\nSource: http:\/\/127\.0\.0\.1:\d+\/citations\?user=[^&\s·]+ · \d{4}-\d{2}-\d{2}\n/, "where it is from: the profile's link and the day");
+    assert.ok(!clip.includes("Not fully loaded"), "the whole list is here: nothing to say about it");
     // (a button that also puts HTML on the clipboard is slower than one that puts text: the clipboard is read when the button says it is done)
     const copied = (act) => page.locator(`[data-act="${act}"]`, { hasText: "Copied" }).waitFor();
     await page.click('[data-act="copy-table"]');
@@ -1122,11 +1124,11 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await patchPrefs({ panel: { table: { total: true, unranked: true, other: true, note: true, title: true } } });
     await eventually(page, () => document.querySelector(".rr-matrix th.rr-col-total") && document.querySelector('.rr-matrix tr[data-role="middle"]') && !document.querySelector('[data-rr="note"]').hidden);
     // the order of the buttons and of the parts, and the quick filters
-    await patchPrefs({ panel: { copy: { order: ["csv", "json"] }, order: ["metrics", "table"], filters: { pills: { order: ["award", "first"], cites100: false } } } });
+    await patchPrefs({ panel: { copy: { order: ["csv", "json"] }, order: ["metrics", "table"], filters: { pills: { order: ["first", "ccfA"], cites100: false } } } });
     await eventually(page, () => document.querySelector('[data-rr="export-row"] button').dataset.act === "copy-csv");
     assert.deepEqual((await page.locator('[data-rr="export-row"] button').evaluateAll((els) => els.map((e) => e.dataset.act))).slice(0, 3), ["copy-csv", "copy-json", "copy-summary"], "the copy buttons in the order of the settings");
     assert.deepEqual((await sectionOrder()).slice(0, 2), ["metrics", "table"], "the parts in the order of the settings");
-    assert.deepEqual(await page.locator("#rr-panel .rr-spill").evaluateAll((els) => els.map((e) => e.dataset.pill)), ["award", "first", "ccfA"], "the quick filters: in order, those that are off left out");
+    assert.deepEqual((await page.locator("#rr-panel .rr-spill").evaluateAll((els) => els.map((e) => e.dataset.pill))).filter((id) => id !== "award"), ["first", "ccfA"], "the quick filters: in order, those that are off left out");
     await setList(opts, "ccf", false);
     await eventually(page, () => !document.querySelector('.rr-spill[data-pill="ccfA"]'));
     await setList(opts, "ccf", true);
@@ -1292,7 +1294,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       if (narrow.first.total) assert.ok(summaryText.some((l) => l.startsWith(`First author: ${narrow.first.total} `)), "and has the numbers of the table: " + summaryText.join(" | "));
       const tab = await copied("table");
       const lines = tab["text/plain"].split("\n");
-      assert.equal(lines[lines.length - 1], scope, "the copied table has it as its last line");
+      assert.ok(lines.indexOf(scope) > 1, "the copied table has it as a line under it (the notes of where it is from follow)");
       assert.ok(tab["text/html"].includes(`<caption>${scope}</caption>`), "and as the caption of the real table");
       // the toolbar popup and the page calls count every paper unless asked
       const everyone = await pageCall("export", { format: "table" });
@@ -1301,6 +1303,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.equal((await pageCall("summary")).result.summaries.ccf.papers, total, "the summary call, and so the popup, counts every paper");
       const mine = (await pageCall("summary", { filtered: true })).result;
       assert.deepEqual([mine.loaded, mine.counted, mine.summaries.ccf.papers, mine.summaries.ccf.rows.find((r) => r.role === "first").total], [total, shown, shown, narrow.first.total], "and what the panel counts when asked");
+      // two quick filters of one operator are "either": First author and Last author give role:first,last, not two words that nothing can satisfy
+      await patchPrefs({ panel: { filters: { pills: { last: true } } } });
+      await eventually(page, () => document.querySelector('.rr-spill[data-pill="last"]'));
+      await page.click('.rr-spill[data-pill="first"]');
+      await page.click('.rr-spill[data-pill="last"]');
+      await eventually(page, () => document.querySelector(".rr-search-input").value === "role:first,last");
+      assert.deepEqual(await page.locator('.rr-spill[aria-pressed="true"]').evaluateAll((els) => els.map((e) => e.dataset.pill).sort()), ["first", "last"], "both buttons show as pressed");
+      assert.equal(await visibleRows(page), (await rowsOf("first")) + (await rowsOf("last")), "the papers where you are the first or the last author");
+      assert.ok((await visibleRows(page)) > 0, "and there are some");
+      await page.click('.rr-spill[data-pill="first"]');
+      await eventually(page, () => document.querySelector(".rr-search-input").value === "role:last");
+      await page.click('.rr-spill[data-pill="last"]');
+      await patchPrefs({ panel: { filters: { pills: { last: false } } } });
+      await pageCall("clearFilters");
       // the quick filter "Last 5 years" is age:<5: the papers of this year and the four before it, and the table is theirs
       await pageCall("clearFilters");
       await patchPrefs({ panel: { filters: { pills: { recent: true } } } });
@@ -1325,6 +1341,27 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await patchPrefs({ panel: { filters: { follow: true } } });
       await pageCall("clearFilters");
       await eventually(page, () => !document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
+      // the line about papers whose list lacks the profile's name lists them (a click), and says so in the filter bar
+      const absentCount = Number((await page.locator('[data-rr="absent"] button').textContent()).match(/\d+/)[0]);
+      await page.click('[data-rr="absent"] button');
+      await eventually(page, (n) => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length === n, absentCount);
+      assert.match(await page.locator(".rr-fb-what").textContent(), /Name not in the author list/, "the filter bar names it");
+      assert.equal(await page.locator('[data-rr="absent"] button').getAttribute("aria-pressed"), "true");
+      assert.deepEqual(await readMatrix(page), whole, "the table stays as it was: the pick narrows no count");
+      await page.click('[data-rr="absent"] button');
+      await eventually(page, () => !document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
+      // the copied summary says where it is from: the profile's link without anything else of the address, and the day
+      await pageCall("clearFilters");
+      const withSource = (await copied("summary"))["text/plain"].split("\n");
+      const sourceLine = withSource.find((l) => l.startsWith("Source: "));
+      assert.match(sourceLine, /^Source: http:\/\/127\.0\.0\.1:\d+\/citations\?user=[^&\s·]+ · \d{4}-\d{2}-\d{2}$/, "the profile's link (nothing else) and the day: " + sourceLine);
+      assert.ok(withSource.includes(`Not fully loaded: ${total} papers so far`), "a list that is not all loaded says so (this page has its first twenty): " + withSource.join(" | "));
+      assert.ok((await copied("table"))["text/html"].includes("<p>Source: "), "and the table has it under it");
+      await patchPrefs({ panel: { copy: { source: false } } });
+      await page.waitForTimeout(700);                                                  // (the page takes the new settings from the storage event)
+      assert.ok(!(await copied("summary"))["text/plain"].includes("Source: "), "the switch takes it away");
+      await patchPrefs({ panel: { copy: { source: true } } });
+      await page.waitForTimeout(700);
       // the search looks into every name of a list that "Read full lists" has read, not only the line the page cut
       const fullPapers = (await pageCall("papers", { filtered: false })).result.papers;
       const domLines = await page.$$eval("#gsc_a_b tr.gsc_a_tr", (trs) => trs.map((tr) => ({ title: tr.querySelector("a.gsc_a_at").textContent.trim(), line: (tr.querySelector(".gs_gray").textContent || "").toLowerCase() })));
@@ -1602,7 +1639,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       return paths.map((p) => { const el = aside.querySelector(`#pv-panel [data-rr-part="${p}"]`); if (!el) return null; const r = el.getBoundingClientRect(); if (!r.width && !r.height) return null; return { p, y: Math.round(r.top - base.top + aside.scrollTop), x: Math.round(r.left - base.left) }; }).filter(Boolean);
     }, panelPaths);
     const missing = panelPaths.filter((x) => !where.some((w) => w.p === x));
-    assert.deepEqual(missing.filter((x) => !["panel.show", "panel.order", "panel.filters.bar", "panel.copy.order", "panel.filters.pills.order", "panel.marks.grouping", "panel.filters.follow"].includes(x)), [], "every part of the panel is drawn in the preview, so that it can be pointed at");
+    assert.deepEqual(missing.filter((x) => !["panel.show", "panel.order", "panel.filters.bar", "panel.copy.order", "panel.filters.pills.order", "panel.marks.grouping", "panel.filters.follow", "panel.copy.source"].includes(x)), [], "every part of the panel is drawn in the preview, so that it can be pointed at");
     for (let i = 1; i < where.length; i++) {
       const a = where[i - 1], b = where[i];
       assert.ok(b.y > a.y + 6 || (b.y >= a.y - 6 && b.x >= a.x - 2), `the settings follow the preview: ${a.p} (${a.y}, ${a.x}) comes before ${b.p} (${b.y}, ${b.x})`);
@@ -2050,6 +2087,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.deepEqual([mx.first.total, mx.second.total, mx.last.total, mx.hidden], [5, 4, 3, 1], "the roles are counted as before, one paper's list is cut off");
       assert.equal(await pg.locator('[data-rr="unmatched"] .rr-list li').count(), 13, "the venues are still listed for whoever wants them");
       assert.equal(await pg.locator('[data-act="report-unmatched"]').count(), 1, "and can still be reported (a computer-science profile whose venues the lists miss is where a report helps)");
+      assert.equal(await pg.locator('.rr-spill[data-pill="ccfA"]').count(), 0, "a quick filter for a rank that no paper here has is not offered");
+      assert.ok(await pg.locator('.rr-spill[data-pill="first"]').count() > 0, "those that find something are");
       await pg.bringToFront(); await pg.locator("#rr-panel").screenshot({ path: path.join(outDir, "state-no-ranks.png") });
       // the toolbar popup tells the same story
       const popN = await ctxN.newPage();

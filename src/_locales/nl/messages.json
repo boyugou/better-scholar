@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Laatste 5 jaar"
+  },
+  "filterAbsent": {
+    "message": "Profielnaam niet in de auteurslijst"
+  },
+  "optCopySource": {
+    "message": "Profiellink en datum toevoegen aan het gekopieerde overzicht"
+  },
+  "optCopySourceHint": {
+    "message": "Het gekopieerde overzicht en de gekopieerde tabel krijgen een regel met de profiellink en de datum (Source: …), zodat de cijfers kunnen worden opgeslagen of doorgestuurd. Een lijst die niet helemaal is geladen, meldt dat daar, ongeacht de stand van deze schakelaar."
   }
 }

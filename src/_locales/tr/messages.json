@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Son 5 yıl"
+  },
+  "filterAbsent": {
+    "message": "Profil adı yazar listesinde yok"
+  },
+  "optCopySource": {
+    "message": "Kopyalanan özete profilin bağlantısını ve tarihi ekle"
+  },
+  "optCopySourceHint": {
+    "message": "Kopyalanan özete ve kopyalanan tabloya profilin bağlantısı ile tarihi (Source: …) içeren bir satır eklenir; böylece sayılar dosyalanabilir veya iletilebilir. Tamamı yüklenmemiş bir liste bunu, bu anahtarın durumu ne olursa olsun, orada belirtir."
   }
 }

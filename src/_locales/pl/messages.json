@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "Ostatnie 5 lat"
+  },
+  "coverLoadedOne": {
+    "message": "Wczytana praca: 1"
+  },
+  "coverHiddenOne": {
+    "message": "Rola ukryta przez skróconą listę autorów: 1"
+  },
+  "coverAbsentOne": {
+    "message": "Praca, w której nie ma nazwiska z profilu: 1"
+  },
+  "coverUnmatchedOne": {
+    "message": "Praca w miejscu publikacji bez rankingu: 1"
+  },
+  "popupPapersOne": {
+    "message": "Praca: 1"
+  },
+  "optCacheCountOne": {
+    "message": "Zapisana na tym urządzeniu lista autorów: 1 (przechowywana 90 dni)."
+  },
+  "yearsOlderOne": {
+    "message": "Starsza praca poza wykresem: 1"
+  },
+  "filterAbsent": {
+    "message": "Nazwiska z profilu nie ma na liście autorów"
+  },
+  "optCopySource": {
+    "message": "Dodaj link do profilu i datę do skopiowanego zestawienia"
+  },
+  "optCopySourceHint": {
+    "message": "Skopiowane zestawienie i skopiowana tabela dostają wiersz z linkiem do profilu i datą (Source: …), żeby liczby można było zarchiwizować albo przesłać dalej. Lista, która nie jest w całości wczytana, mówi o tym w tym miejscu, niezależnie od ustawienia tego przełącznika."
   }
 }

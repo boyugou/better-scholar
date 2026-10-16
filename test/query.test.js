@@ -30,7 +30,7 @@ test("parse: words, operators, and what an operator with a wrong value does", ()
   assert.deepEqual(query.parse("deep Learning"), { terms: [{ kind: "text", text: "deep" }, { kind: "text", text: "learning" }], errors: [] });
   assert.deepEqual(query.parse("  cites:>100  year:2020 ").terms, [{ kind: "cites", op: ">", n: 100 }, { kind: "year", op: "=", n: 2020 }]);
   assert.deepEqual(query.parse("cites:>=5 cites:<=9 cites:<1 cites:=3").terms.map((t) => t.op + t.n), [">=5", "<=9", "<1", "=3"]);
-  assert.deepEqual(query.parse("CCF:A core:A* role:Cofirst has:AWARD").terms, [{ kind: "ccf", value: "a" }, { kind: "core", value: "a*" }, { kind: "role", value: "cofirst" }, { kind: "has", value: "award" }]);
+  assert.deepEqual(query.parse("CCF:A core:A* role:Cofirst has:AWARD").terms, [{ kind: "ccf", values: ["a"] }, { kind: "core", values: ["a*"] }, { kind: "role", values: ["cofirst"] }, { kind: "has", values: ["award"] }]);
   // not an operator: a word like any other
   assert.deepEqual(query.parse("http://x.org foo:bar >100 :x").terms.map((t) => t.kind + ":" + t.text), ["text:http://x.org", "text:foo:bar", "text:>100", "text::x"]);
   // an operator with a value it does not take matches nothing and says why
@@ -175,4 +175,36 @@ test("the search finds a co-author of the whole list once it has been read, not 
   assert.equal(analysis.queryMatcher("sun").test(full), true, "the whole list does");
   assert.equal(analysis.queryMatcher("zhang ren").test(full), true);
   assert.equal(analysis.queryMatcher("zhang").test(cut), true, "and the cut line still finds what it has");
+});
+
+test("a comma lists values of an operator: any of them; separate words must all hold; one still typing has the values it has", () => {
+  assert.deepEqual(query.parse("role:first,last ccf:a,b has:award,talk").terms, [{ kind: "role", values: ["first", "last"] }, { kind: "ccf", values: ["a", "b"] }, { kind: "has", values: ["award", "talk"] }]);
+  assert.deepEqual(query.parse("role:first,").terms, [{ kind: "role", values: ["first"] }], "a trailing comma, while typing");
+  assert.deepEqual(query.parse("role:first,first,Last").terms, [{ kind: "role", values: ["first", "last"] }], "the same value twice is one");
+  const bad = query.parse("role:first,nope ccf: ccf:,");
+  assert.deepEqual(bad.terms.map((t) => t.kind), ["never", "never", "never"], "one value it does not take, or none, and the word finds nothing");
+  assert.match(bad.errors[0], /^role:first,nope — your position/);
+  const row = (role, ccf, extra = {}) => ({ raw: paper.raw, a: { ...paper.a, role, venue: { ccf: ccf ? { tier: ccf } : null, core: null }, marks: [], ...extra }, shown: 1 });
+  const m = (q) => analysis.queryMatcher(q);
+  assert.deepEqual(["first", "last", "second", "middle"].map((r) => m("role:first,last").test(row(r, "A"))), [true, true, false, false]);
+  assert.deepEqual(["A", "B", "C", null].map((t) => m("ccf:a,b").test(row("first", t))), [true, true, false, false]);
+  assert.equal(m("role:first,last ccf:a").test(row("last", "B")), false, "separate words must all hold");
+  assert.equal(m("role:first role:last").test(row("first", "A")), false, "nothing is both a first and a last author: two words ask for both");
+  assert.equal(m("has:award,talk").test({ ...row("first", "A"), a: { ...paper.a, marks: [{ kind: "spotlight", group: "spotlight", label: "Spotlight", text: "" }] } }), true, "any of award or talk");
+  assert.equal(m("type:conference,journal").test(row("first", "A", { venue: { ccf: { tier: "A", kind: "J" }, core: null } })), true);
+});
+
+test("a quick filter is one operator:value in the query; beside another of its operator it joins the word, and takes itself out of it again", () => {
+  let q = "";
+  const steps = [["role:first", "role:first"], ["role:last", "role:first,last"], ["ccf:a", "role:first,last ccf:a"], ["role:first", "role:last ccf:a"], ["cites:>100", "role:last ccf:a cites:>100"], ["ccf:b", "role:last ccf:a,b cites:>100"],
+    ["role:last", "ccf:a,b cites:>100"], ["cites:>100", "ccf:a,b"], ["ccf:a", "ccf:b"], ["ccf:b", ""]];
+  for (const [op, want] of steps) { q = query.toggleValue(q, op); assert.equal(q, want, op); }
+  assert.deepEqual(["role:first,last", "ROLE:First"].map((w) => query.hasValue(w, "role:first")), [true, true]);
+  assert.equal(query.hasValue("role:first,last", "role:second"), false);
+  assert.equal(query.hasValue("cites:>100 foo", "cites:>100"), true);
+  assert.equal(query.hasValue("cites:>1000", "cites:>100"), false, "a comparison is a word of its own: no part of it is a value");
+  assert.equal(query.toggleValue("role:first role:last", "role:last"), "role:first", "two words the person typed: the one that has the value gives it up");
+  assert.equal(query.toggleValue("deep role:first,", "role:last"), "deep role:first,last", "a trailing comma is not doubled");
+  assert.equal(query.keepOnly("Role:First,Cofirst ccf:a,b foo cites:>100 role:last", new Set(["role:first", "role:last", "ccf:a", "cites:>100"])), "role:first ccf:a cites:>100 role:last", "with no box: the quick filters stay, the rest goes");
+  assert.equal(query.keepOnly("foo bar", new Set(["role:first"])), "");
 });

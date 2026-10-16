@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Últimos 5 anos"
+  },
+  "filterAbsent": {
+    "message": "Nome do perfil fora da lista de autores"
+  },
+  "optCopySource": {
+    "message": "Adicionar a ligação do perfil e a data ao resumo copiado"
+  },
+  "optCopySourceHint": {
+    "message": "O resumo copiado e a tabela copiada recebem uma linha com a ligação do perfil e a data (Source: …), para que os números possam ser arquivados ou enviados. Uma lista que não está integralmente carregada indica isso ali, independentemente da definição deste interruptor."
   }
 }

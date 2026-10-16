@@ -139,6 +139,7 @@
   function inSelection(paper, sel, source = "ccf") {
     if (!sel) return true;
     if (sel.role === "hidden") return paper.status === "hidden";
+    if (sel.role === "absent") return paper.status === "absent";                 // (the papers whose complete author list does not have the profile's name)
     if (paper.status !== "found") return false;
     if (sel.role && paper.role !== sel.role) return false;
     if (sel.tier && tierOf(paper, source) !== sel.tier) return false;

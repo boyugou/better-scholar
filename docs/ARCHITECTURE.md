@@ -383,8 +383,10 @@ in the stand-in: it is never written to `localStorage`, and a reload empties it)
 ## Exports
 
 `lib/formats.js` turns the paper records (`paperRecords()` in `main.js`: the rows the page shows, with the author list and
-venue that *Read full lists* saved) or the summary into text. *Copy summary* and *Copy as table* count every loaded paper
-(`summaryText`, `summaryTsv`); the others take the papers shown. *Copy papers* is tab-separated (`papersTsv`), *Export CSV* is
+venue that *Read full lists* saved) or the summary into text. *Copy summary* and *Copy as table* (`summaryText`, `summaryTsv`,
+`summaryHtml`) count the papers the filters leave when it is the panel's button (`filtered: true`; the popup and the page calls
+count every loaded paper) and carry `notes` under the scope line: the profile's link and the day (`panel.copy.source`) and, when
+the list is not all here, `Not fully loaded` (`copyNotes()` in `main.js`); the others take the papers shown. *Copy papers* is tab-separated (`papersTsv`), *Export CSV* is
 RFC 4180 with a UTF-8 byte-order mark and CRLF line ends (`papersCsv`); in both, a cell that begins with `=`, `+`, `-` or `@` and
 is not a plain number gets a leading apostrophe. BibTeX keys are surname + year + the first title word of three or more letters
 that is not a stop word (`he2016deep`, `nodate` without a year), made unique with `b`, `c`, …; the author list ends `and others`

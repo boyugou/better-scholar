@@ -28,7 +28,7 @@ test("every listed language has its own folder, with exactly the English keys an
   assert.equal(i18n.codes.length, new Set(i18n.codes).size);
   for (const code of i18n.codes) {
     const m = JSON.parse(fs.readFileSync(path.join(loc, code, "messages.json"), "utf8"));
-    const missing = Object.keys(en).filter((k) => !m[k] && !k.endsWith("One")), extra = Object.keys(m).filter((k) => !en[k]);
+    const missing = Object.keys(en).filter((k) => !m[k]), extra = Object.keys(m).filter((k) => !en[k]);
     assert.deepEqual(missing, [], code + ": missing keys");
     assert.deepEqual(extra, [], code + ": extra keys");
     for (const [k, v] of Object.entries(m)) {

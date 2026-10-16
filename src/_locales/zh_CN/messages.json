@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "近 5 年"
+  },
+  "coverLoadedOne": {
+    "message": "已加载 1 篇"
+  },
+  "coverHiddenOne": {
+    "message": "1 篇的作者列表被截断，看不到角色"
+  },
+  "coverAbsentOne": {
+    "message": "1 篇的作者列表里没找到本人姓名"
+  },
+  "coverUnmatchedOne": {
+    "message": "1 篇的发表场所未收录"
+  },
+  "popupPapersOne": {
+    "message": "1 篇"
+  },
+  "optCacheCountOne": {
+    "message": "本机已保存 1 篇论文的作者列表（保留 90 天）。"
+  },
+  "yearsOlderOne": {
+    "message": "另有 1 篇更早的论文未画出"
+  },
+  "filterAbsent": {
+    "message": "作者列表里没找到本人姓名"
+  },
+  "optCopySource": {
+    "message": "在复制的摘要中加入主页链接和日期"
+  },
+  "optCopySourceHint": {
+    "message": "复制的摘要和复制的表格会多出一行，写明主页链接和日期（Source: …），便于归档或转发这些数字。列表未全部加载时，无论此开关如何设置，复制的内容中都会注明。"
   }
 }

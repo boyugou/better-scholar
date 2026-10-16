@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Seneste 5 år"
+  },
+  "filterAbsent": {
+    "message": "Profilnavn ikke på forfatterlisten"
+  },
+  "optCopySource": {
+    "message": "Tilføj profilens link og datoen til den kopierede oversigt"
+  },
+  "optCopySourceHint": {
+    "message": "Den kopierede oversigt og den kopierede tabel får en linje med profilens link og datoen (Source: …), så tallene kan arkiveres eller sendes videre. En liste, der ikke er indlæst helt, siger det dér, uanset denne kontakt."
   }
 }

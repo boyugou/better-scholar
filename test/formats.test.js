@@ -238,3 +238,16 @@ test("html: the owner's name is in bold in the author cells when the page marks 
   assert.equal(f.papersTsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
   assert.equal(f.papersCsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
 });
+
+test("a copied summary can say where it is from: notes are lines under the title, rows under the table, paragraphs under the real table", () => {
+  const s = metrics.summarize([row("first", "A")], "ccf");
+  const notes = ["Source: https://scholar.google.com/citations?user=AbC123 · 2026-10-16", "Not fully loaded: 20 papers so far"];
+  const text = f.summaryText(s, { owner: "Jane Doe", scope: "Showing 1 of 9 papers", notes }).split("\n");
+  assert.deepEqual(text.slice(1, 4), ["Showing 1 of 9 papers", ...notes], "after the scope line, in order");
+  const tsv = f.summaryTsv(s, { scope: "Showing 1 of 9 papers", notes }).split("\n");
+  assert.deepEqual(tsv.slice(-3), ["Showing 1 of 9 papers", ...notes]);
+  const html = f.summaryHtml(s, { notes: ["Source: <b>x</b> & y"] });
+  assert.ok(html.endsWith("</table>\n<p>Source: &lt;b&gt;x&lt;/b&gt; &amp; y</p>"), "escaped, after the table");
+  assert.equal(f.summaryHtml(s, {}), f.summaryHtml(s), "no notes, nothing added");
+  assert.equal(f.summaryText(s, { owner: "Jane Doe" }), f.summaryText(s, { owner: "Jane Doe", notes: [] }));
+});

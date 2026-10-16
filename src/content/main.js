@@ -278,6 +278,23 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     return metrics.summarize(counted().map(paperOf), source, { keep: whole.rows.map((r) => r.role) });
   }
 
+  // The quick filters that find something on this profile (a button for a rank nobody here has, or for a kind of mark no paper carries, would only list nothing). Known only once the
+  // whole list is here (before, a button that finds nothing yet is not a button that never will); null until then. Worked out again when a row's analysis, its citations or the settings change.
+  let finds = { prefs: null, as: [], shown: [], value: null };
+  function pillFinds() {
+    if (!listComplete()) return null;
+    const rows = live();
+    if (finds.prefs !== prefs || finds.as.length !== rows.length || rows.some((r, i) => r.a !== finds.as[i] || r.shown !== finds.shown[i])) {
+      const lists = B.prefs.lists(prefs), value = {};
+      for (const id of B.prefs.pills(prefs)) {
+        const m = analysis.queryMatcher(B.prefs.PILL_OPERATORS[id], (row) => B.prefs.visibleMarks(prefs, row.a.marks), lists);
+        value[id] = rows.some((r) => m.test(r));
+      }
+      finds = { prefs, as: rows.map((r) => r.a), shown: rows.map((r) => r.shown), value };
+    }
+    return finds.value;
+  }
+
   // The venue list: the venues of the papers the other filters let through, most papers first, and always the chosen venue (a pressed row, so that the
   // filter can be undone) even when the other filters leave it out of the first few
   function venueList(source) {
@@ -299,7 +316,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     const summary = tableSummary(whole, bare ? null : source);
     const allVenues = metrics.topVenues(scoped(source, { skipVenue: true }), 99, B.prefs.lists(prefs));
     return {
-      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare,
+      ownerName: headerName, edition, prefs, ui, sources: B.prefs.sources(prefs), source, summary, hasHidden: whole.hidden > 0, noRanks: bare, pillFinds: pillFinds(),
       selection: state.selection, filters: state.filters,
       searchMatch: matcher().empty ? null : { count: shownRows().length, cursor: state.searchCursor, errors: matcher().errors },
       filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
@@ -375,7 +392,16 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       filterBar: { impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } }, true, td);
     return td("filterShowing", [String(counted().length), String(live().length)]) + (parts.length ? " · " + parts.join(" · ") : "");
   }
-  const summaryWords = (filtered) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "" });
+  // What a copied summary says about where it is from, so that it can be filed or sent on: the profile's own link (nothing else of the address) and the day, when the setting is on; and,
+  // when the list is not all here, that it is not (the count is of what is loaded)
+  function copyNotes() {
+    const notes = [];
+    const id = new URLSearchParams(location.search).get("user"), d = new Date();
+    if (prefs.panel.copy.source && id) notes.push(`Source: ${location.origin}/citations?user=${encodeURIComponent(id)} · ${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`);
+    if (!listComplete()) notes.push(`Not fully loaded: ${live().length} papers so far`);
+    return notes;
+  }
+  const summaryWords = (filtered) => ({ label: copyLabels(), header: t("tsvRole"), total: t("tsvTotal"), notRanked: td("tipUnranked"), scope: filtered ? scopeLine() : "", notes: copyNotes() });
 
   // The text of one copy button; the button's name is the format (lib/prefs.js COPY_BUTTONS). `source`: the ranking the summary and the table use
   // (default: the panel's own; "none": by role only).
@@ -386,7 +412,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       return kind === "table"
         ? formats.summaryTsv(summary, summaryWords(filtered))
         : formats.summaryText(summary, { owner: headerName, label: copyLabels(), notRanked: td("tipUnranked").toLowerCase(), extra: [marksLine(markCounts(filtered))].filter(Boolean),
-          edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "" });
+          edition: src ? `${edition[src]} — ${t("tipToday")}` : "", scope: filtered ? scopeLine() : "", notes: copyNotes() });
     }
     const records = paperRecords();
     switch (kind) {
@@ -580,12 +606,12 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   function pruneFilters() {
     const p = prefs.panel, f = state.filters, sel = state.selection;
     if (!p.show) { state.selection = null; state.markGroup = null; state.venueKey = null; Object.assign(f, { onlyHighlighted: false, yearStart: null, yearEnd: null, query: "", minCitations: null, impact: null }); return; }
-    if (sel && !(p.table.show && (sel.tier !== "none" || p.table.unranked) && (sel.role !== "middle" || p.table.other) && (sel.role !== "hidden" || p.table.hidden))) state.selection = null;
+    if (sel && !(sel.role === "absent" ? p.status.show && p.status.absent : p.table.show && (sel.tier !== "none" || p.table.unranked) && (sel.role !== "middle" || p.table.other) && (sel.role !== "hidden" || p.table.hidden))) state.selection = null;
     if (state.markGroup && !(p.marks.show && marks.rows(p.marks.grouping).includes(state.markGroup) && marks.members(state.markGroup).some((g) => p.marks[g]))) state.markGroup = null;
     if (!p.venues.show) state.venueKey = null;
     if (!(p.filters.show && p.filters.search)) {                                                                                  // (no search box: only the words of the quick filters stay, a button can take them off)
       const keep = p.filters.show ? B.prefs.pills(prefs).map((id) => B.prefs.PILL_OPERATORS[id]) : [];
-      f.query = f.query.split(/\s+/).map((w) => w.toLowerCase()).filter((w) => keep.includes(w)).join(" ");          // (in lower case: the buttons read the words as the operators are written)
+      f.query = B.query.keepOnly(f.query, new Set(keep));          // (in lower case: the buttons read the words as the operators are written; the values of one operator that are quick filters stay)
     }
     if (!p.filters.bar) f.minCitations = null;                                                                                    // (only the filter bar says it is on, and clears it)
     if (!(p.filters.show && p.filters.only) || !Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;          // (with nothing highlighted the filter would hide every row)

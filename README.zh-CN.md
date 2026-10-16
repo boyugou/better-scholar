@@ -168,6 +168,8 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 | `has:` | `has:award`、`has:talk` | 最佳论文奖或候选标记；Oral、Spotlight 或 Highlight 标记 |
 | 普通词 | `ccf:a role:first cites:>100 detection` | 组合使用：所有条件都须满足 |
 
+`ccf:`、`core:`、`role:`、`type:`、`has:` 的值可以用逗号列出：`role:first,last` 表示“一作或末位”（任一），`ccf:a,b` 表示 CCF A 或 B 类场所；不同的词必须同时成立。同一运算符的快捷按钮会合并成一个词（同时按“一作”和“末位”得到 `role:first,last`），而不是要求不可能的“既是一作又是末位”。
+
 - 运算符取了它不接受的值（如 `ccf:x`）时不匹配任何论文，搜索框会被标出，悬停可见原因。冒号前不是运算符的词（如 `http://…`）按普通词处理。早期版本的裸比较式（`>100`、`>2020`）以及别名 `c:`、`y:`、`tier:`、`rank:` 已取消。
 - 输入运算符的冒号（如 `role:`）会列出它的取值；按 `↓` 或点击 `/` 提示会列出常用项。用 `↑` / `↓` 选择，`Enter` 或 `Tab` 采用所选项。没有选中建议时，`Enter` 跳到下一条匹配的论文行，`Shift`+`Enter` 跳到上一条。
 - `Escape` 先关闭建议列表，再清空搜索框；在页面上按 `Escape` 会清除全部筛选。
