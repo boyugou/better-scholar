@@ -231,7 +231,7 @@
       placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
       onFocus: () => { before = at(path); },
       onInput: () => { put(path, input.value); save(); },                         // (saved as it is typed, a few writes at most: a name typed and the page closed is kept)
-      onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
+      onChange: () => { put(path, B.prefs.cleanName(input.value)); save(); },
       onKeydown: (e) => {
         if (e.key === "Enter") { e.preventDefault(); input.blur(); }
         else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); save(); }
@@ -1008,10 +1008,17 @@
   }
 
   let editor = null;
+  // The preview is a picture of the panel and of the rows: it is not read out and not in the tab order (what it shows is set by the controls on the left, which are the
+  // page for the keyboard and a screen reader; the tray above the preview is the one part of it that is for use). The mouse still works on it, and edits it.
+  function quiet(el) {
+    el.setAttribute("aria-hidden", "true");
+    for (const f of el.querySelectorAll('a[href], button, input, select, textarea, summary, [tabindex]')) f.tabIndex = -1;
+  }
   function renderPreview() {
     $("pv-panel").hidden = !prefs.panel.show;
     if (prefs.panel.show) { if (!$("pv-panel").contains(panel.el)) $("pv-panel").append(panel.el); panel.update(panelModel()); }
     $("preview").replaceChildren(...SAMPLES.map(sampleRow));
+    quiet($("pv-panel")); quiet(document.querySelector("table.pv"));
     if (editor) editor.refresh();
   }
   renderPreview();

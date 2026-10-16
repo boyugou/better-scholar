@@ -302,10 +302,13 @@
       default: return v === s.none || languages().includes(v) ? null : `must be "${s.none}" or one of: ${languages().join(", ")}`;
     }
   }
+  // The characters of a name that show nothing or turn the text around: controls, zero-width space and joiner marks, left-to-right / right-to-left marks and overrides, the invisible
+  // operators (a configuration pasted from somewhere could use them to make a button say what it does not). The joiner and the non-joiner stay: some scripts need them inside words.
+  const UNSEEN = /[\u0000-\u001f\u007f-\u009f\u061c\u200b\u200e\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]/g;
   // the value as stored: a colour in lower case, a name on one line, an order complete (the ids the list leaves out follow in the default order)
   function clean(s, v) {
     if (s.kind === "color" && typeof v === "string") return v.toLowerCase();
-    if (s.kind === "text" && typeof v === "string") return v.replace(/\s+/g, " ").trim();
+    if (s.kind === "text" && typeof v === "string") return v.replace(/\s+/g, " ").replace(UNSEEN, "").trim();
     if (s.kind === "order" && Array.isArray(v)) return [...new Set(v), ...s.def.filter((x) => !v.includes(x))];
     return v;
   }
@@ -437,6 +440,6 @@
   // The copy buttons that are switched on, in the order the panel and the popup draw them.
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
-  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply,
+  return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, cleanName: (v) => clean({ kind: "text" }, v),
     listShown, lists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });
