@@ -271,6 +271,7 @@
     // (joint proceedings, and the title that says "Applications" where CORE says "Application")
     { ccf: "DSN", core: "DSN", names: ["International Conference on Dependable Systems and Networks With FTCS and DCC"] },
     { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
+    { core: "ACII", names: ["Humaine Association Conference on Affective Computing and Intelligent Interaction"] },          // (2013's name)
     { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
     { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
     // (HiPC was the IEEE's "International Conference on High Performance Computing" before "Data and Analytics" came: with the IEEE only, and not cut off — the bare name is other events', its cut HPCC's)
@@ -351,6 +352,7 @@
     { ccf: "GMOD", kind: "J", names: ["Graphical Models and Image Processing", "CVGIP: Graphical Models and Image Processing"] },
     { ccf: "TR", kind: "J", names: ["IEEE Transactions on Robotics and Automation", "IEEE Trans. Robotics and Automation"] },
     { ccf: "FCS", kind: "J", names: ["Frontiers of Computer Science in China"] },
+    { ccf: "TCASI", kind: "J", names: ["IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications"] },          // (until 2003; "Regular Papers" since)
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
     { ccf: "CGTA", kind: "J", volume: ["Computational Geometry"] },

@@ -1533,6 +1533,18 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("SIGSPATIAL Special 12 (3), 2019", "CCF C SIGSPATIAL");
   // two lists read a cut differently: the whole name is the better reading, not the venue that merely begins with the visible words
   eq("Proceedings of the 2019 IEEE International Symposium on Software Engineering …, 2019", "CORE C SEW");
+  // Springer's proceedings volumes numbered in Roman: the volume and its description are no part of the name — but "Systems I: Regular Papers" is a journal's own title
+  eq("Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …, 2013", "CORE C WAFR");
+  eq("Algorithmic Foundations of Robotics IX: Selected Contributions of the Ninth …, 2010", "CORE C WAFR");
+  eq("IEEE Transactions on Circuits and Systems I: Regular Papers 51 (2), 342-353, 2004", "CCF C TCASI");
+  eq("IEEE Transactions on Circuits and Systems I: Fundamental Theory and …, 1992", "CCF C TCASI");
+  none("IEEE Transactions on Circuits and Systems II: Express Briefs 53 (5), 339-343, 2006");
+  eq("2013 humaine association conference on affective computing and intelligent …, 2013", "CORE B ACII");
+  // a sponsor's acronym beside the name of another event: ACM SIGIR's International Conference on the Theory of Information Retrieval (ICTIR) is no SIGIR — three words of subject, one of them not SIGIR's
+  none("Proceedings of the 2019 ACM SIGIR International Conference on Theory of Information Retrieval, 2019");
+  none("ICTIR 2019: ACM SIGIR International Conference on Theory of Information Retrieval, 2019");
+  eq("Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval, 2019", "CCF A SIGIR · CORE A* SIGIR");
+  eq("Proceedings of 1993 IEEE International Conference on Computer Design ICCD'93 …, 1993", "CCF B ICCD · CORE C ICCD");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

@@ -150,6 +150,9 @@
     const truncated = /…|\.{3}/.test(s);
     if (truncated) s = s.split(/…|\.{3}/)[0];
     s = s.replace(/\s+/g, " ").trim();
+    // Springer's proceedings volumes numbered in Roman: "Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …", "… IX: Selected Contributions of the Ninth …" — the volume and
+    // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
+    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, "$1");
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name
     s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, "$1");
     // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
@@ -800,6 +803,10 @@
     if (hint !== "J" && !placeAndPublisher) {
       const content = canonTokens(p.plain, "noOrg", idx.known);
       const room = CONF_SIGNAL.test(p.plain) ? 3 : 1;   // a bare "IEEE INFOCOM" says little else
+      // what the event is about, in the string's own words: "… International Conference on Theory of Information Retrieval" — three words or more, one of them not the venue's own, are the
+      // name of another event under the sponsor's acronym (ACM SIGIR's ICTIR is no SIGIR), where the same words beside the acronym ("IEEE INFOCOM 2016 - … Conference on Computer Communications") are its own
+      const subject = (() => { const m = /\b(?:conference|symposium|symposia|workshop|congress|colloquium|meeting)\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(p.plain)); return m ? canonTokens(m[1], "noOrg") : []; })();
+      const subjectIsNotOwn = (d, key) => { const words = subject.filter((w) => w !== key); if (words.length < 3) return false; const own = new Set([...vocabOf(d)].map(stemOf)); return words.some((w) => !own.has(stemOf(w))); };          // (the acronym itself, "… Computer Design ICCD'93", is no word of the subject)
       for (const { key, raw } of embeddedSignals(p)) {
         const hits = confSide && confSide.abbrs.get(key);
         const left = content.filter((t) => t !== key && t !== String(raw || "").toLowerCase());          // (the acronym, with its year glued on or not)
@@ -811,7 +818,7 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
-          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
+          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
           if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
