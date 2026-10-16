@@ -48,27 +48,66 @@ await opts.goto(`chrome-extension://${id}/options/options.html`); await opts.wai
 await run(opts, "settings (light)");
 await opts.emulateMedia({ colorScheme: "dark" }); await opts.waitForTimeout(400);
 await run(opts, "settings (dark)");
+// the settings page in the states a person puts it in: a part hovered (its tag and rail), a name being renamed on the preview, the tray of hidden things open, a venue checked
+for (const scheme of ["light", "dark"]) {
+  await opts.emulateMedia({ colorScheme: scheme }); await opts.waitForTimeout(300);
+  await opts.setViewportSize({ width: 1360, height: 1500 });
+  await opts.hover('#pv-panel [data-section="metrics"] .rr-sec-title'); await opts.waitForTimeout(400);
+  await run(opts, `settings (${scheme}): a part hovered, tag and rail shown`);
+  await opts.dblclick('#pv-panel [data-section="metrics"] .rr-sec-title'); await opts.waitForSelector(".pv-rename-input");
+  await run(opts, `settings (${scheme}): a name being renamed`);
+  await opts.press(".pv-rename-input", "Escape");
+  await opts.locator(".pv-tray summary").click(); await opts.waitForTimeout(200);
+  await run(opts, `settings (${scheme}): the tray of hidden things open`);
+  await opts.locator(".pv-tray summary").click();
+  await opts.fill('[data-act="venue-check"]', "Proceedings of the IEEE conference on computer vision and pattern recognition"); await opts.waitForTimeout(200);
+  await run(opts, `settings (${scheme}): a venue checked`, "#card-venue");
+  await opts.fill('[data-act="venue-check"]', "");
+}
+await opts.setViewportSize({ width: 1360, height: 900 });
 // popup (aimed at the profile tab)
 const tabId = await page.evaluate(() => 0).then(() => null);
 const popup = await ctx.newPage();
 await popup.goto(`chrome-extension://${id}/popup/popup.html`); await popup.waitForTimeout(600);
 await run(popup, "popup (no profile tab)");
 // every part on, the wide layout, an RTL language, a Japanese one
-const setPrefs = (patch) => opts.evaluate(async (pt) => { const r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: { ...(r.prefs || {}), ...pt } }); }, patch);
-await setPrefs({ panel: { show: true, summary: true, marks: true, filters: true, metrics: true, years: true, venues: true, status: true, names: true } });
+const setPrefs = (patch) => opts.evaluate(async (pt) => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs || B.prefs.defaults(), pt).prefs }); }, patch);
+await setPrefs({ panel: { venues: { show: true } } });          // (every other part is on by default)
 await page.reload(); await page.bringToFront(); await page.waitForSelector("#rr-panel", { state: "attached" }); await page.waitForTimeout(1200);
 await run(page, "panel, every part on", "#rr-panel");
 await page.setViewportSize({ width: 760, height: 900 }); await page.waitForTimeout(600);
 await run(page, "panel, wide layout (narrow window)", "#rr-panel");
 await page.setViewportSize({ width: 1360, height: 900 });
+// the toolbar popup over the profile tab: the table, the counts and the copy buttons, in the sizes of a popup, light and dark, in a few languages
+const profileTab = await popup.evaluate(async () => { for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } } return null; });
+const popupAudit = async (label) => {
+  await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
+  await run(popup, label);
+};
+for (const scheme of ["light", "dark"]) { await popup.emulateMedia({ colorScheme: scheme }); await popupAudit(`popup over a profile (${scheme})`); }
+await popup.emulateMedia({ colorScheme: "light" });
 for (const lang of ["ar", "ja", "th", "de"]) {
   await setPrefs({ language: lang });
   await page.waitForTimeout(1200);
   await page.bringToFront();
   await page.waitForSelector("#rr-panel", { state: "attached" });
   await run(page, `panel in ${lang}`, "#rr-panel");
+  await popupAudit(`popup in ${lang}`);
 }
 await setPrefs({ language: "auto" });
+// the popup with every renamable text at its longest (30 characters, words; and 30 full-width characters in a row): does anything stick out of the popup or make it scroll sideways?
+const NAMES = Object.keys((await import(pathToFileURL(path.join(root, "src/lib/prefs.js")).href).then((m) => m.default || m)).NAMES);
+for (const [kind, text] of [["words", "Wmw Wmw Wmw Wmw Wmw Wmw Wmw Wm"], ["full-width", "漢".repeat(30)]]) {
+  await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, text])) });
+  await popup.waitForTimeout(300);
+  await popup.goto(`chrome-extension://${id}/popup/popup.html?tab=${profileTab}`); await popup.waitForSelector(".who"); await popup.waitForTimeout(300);
+  const out = await popup.evaluate(() => { const w = Math.round(document.body.getBoundingClientRect().width), over = [...document.body.querySelectorAll("*")].filter((e) => !e.closest("[hidden]") && e.getBoundingClientRect().width && e.getBoundingClientRect().right > w + 1).map((e) => e.tagName.toLowerCase() + "." + String(e.className).split(" ")[0] + " " + Math.round(e.getBoundingClientRect().right)); return { scrollWidth: document.body.scrollWidth, w, over: over.slice(0, 4) }; });          // (the popup is as wide as its body: 340px)
+  const bad = out.scrollWidth > out.w + 1 || out.over.length;
+  const known = bad && kind === "full-width";          // (a copy button never gets narrower than its text: 30 full-width characters are wider than the popup. Reported, not counted)
+  if (bad && !known) total++;
+  console.log(`${bad ? (known ? "·" : "✗") : "✓"} popup with every name at its longest (${kind}): width ${out.w}, scrollWidth ${out.scrollWidth}${out.over.length ? ", sticks out: " + out.over.join("; ") : ""}${known ? " (known limit)" : ""}`);
+}
+await setPrefs({ labels: Object.fromEntries(NAMES.map((k) => [k, ""])) });
 await ctx.close(); await fx.close();
 console.log(total ? `\n${total} violation type(s)` : "\nno violations");
 process.exit(total ? 1 : 0);

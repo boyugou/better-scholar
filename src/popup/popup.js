@@ -64,7 +64,7 @@
       const hiddenRow = s.hidden && tp.hidden ? h("tr", {}, h("th", {}, h("span", { class: "dot", style: "background:#dadce0" }), t("roleHidden")),
         showTotal ? [cols.length ? h("td", { colspan: String(cols.length), class: "z" }, "") : null, h("td", { class: "t" }, String(s.hidden))] : h("td", { colspan: String(Math.max(1, cols.length)), class: "t" }, String(s.hidden))) : null;
       const table = h("table", {},
-        h("thead", {}, h("tr", {}, h("th", {}), ...cols.map((c) => h("th", {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
+        h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, t("colRole"))), ...cols.map((c) => h("th", {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
         h("tbody", {}, ...s.rows.filter((r) => r.role !== "middle" || tp.other).map((r) => h("tr", {},
           h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
           ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),

@@ -460,6 +460,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     assert.match(diag, /^Better Scholar \d+\.\d+\.\d+\n.*Chrome.*\ninterface language: .+\nsettings: \{"language":"auto",/s);
     assert.ok(!/@|user=/.test(diag), "nothing that identifies the person");
     ok("settings: 'Copy details for a bug report' puts the version, browser, language and settings on the clipboard");
+    // -- 6a5b2. the preview is a picture: nothing in it is in the tab order or read out (the controls on the left are the page for a keyboard and a screen reader)
+    assert.deepEqual(await opts.evaluate(() => ({ hidden: [document.getElementById("pv-panel").getAttribute("aria-hidden"), document.querySelector("table.pv").getAttribute("aria-hidden")], tabbable: [...document.querySelectorAll("#pv-panel a[href], #pv-panel button, #pv-panel input, #pv-panel select, #pv-panel summary, table.pv a[href]")].filter((e) => e.tabIndex >= 0).length })), { hidden: ["true", "true"], tabbable: 0 });
     // -- 6a5c. Check a venue: what the lists make of a text, as the rows of a profile would have it (both ranks and the rule; a secondary track; no rank)
     await opts.fill('[data-act="venue-check"]', "Proceedings of the IEEE conference on computer vision and pattern recognition");
     assert.equal(await opts.locator("#card-venue .venue-line").count(), 2);

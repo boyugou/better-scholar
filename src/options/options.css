@@ -410,7 +410,7 @@ body {
 .opt.opt-order { flex-direction: column; align-items: stretch; gap: 8px; cursor: default; }
 .order-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
 .order-item { display: flex; align-items: center; gap: 2px; padding: 3px 4px 3px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
-.order-item.off { opacity: 0.55; }
+.order-item.off { opacity: 0.65; }                     /* (dimmed, and still 4.5:1) */
 .order-name { flex: 1; min-width: 0; font-size: 13px; color: var(--text); }
 .order-btn {
   width: 28px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: none; color: var(--muted);
@@ -446,14 +446,15 @@ body {
 .chip-theme:hover { background: var(--hover); }
 .chip-theme.active { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
 .chip-theme:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.chip-sample { display: inline-flex; align-items: center; }
+/* chips are made for Scholar's white page: on the settings page's own (dark) background a sample sits on a white swatch */
+.chip-sample { display: inline-flex; align-items: center; background: #fff; border-radius: 7px; padding: 1px 4px; }
 .chip-sample .rr-chips { white-space: nowrap; }
 /* on a look's button the chips that do not fit wrap out of sight (a chip is whole or not shown, never cut in two) */
 /* the sample rows keep the card's width: a long chip (a name the person chose) is clipped, it does not widen the preview */
 .preview table.pv { table-layout: fixed; width: 100%; }
 .preview table.pv .rr-chips { white-space: normal; }
 .preview table.pv .rr-chip { max-width: 100%; overflow: hidden; }
-.chip-theme .chip-sample { display: flex; align-items: flex-start; align-self: stretch; height: 20px; overflow: hidden; }
+.chip-theme .chip-sample { display: flex; align-items: flex-start; align-self: stretch; box-sizing: border-box; height: 24px; padding: 3px 5px; overflow: hidden; }
 .chip-theme .chip-sample .rr-chips { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 4px; min-width: 0; white-space: normal; }
 .chip-theme .chip-sample .rr-chip { margin: 0; max-width: 100%; min-width: 0; overflow: hidden; white-space: nowrap; }                                                                   /* (a chip is 18px high: a second line starts below the 20px box) */
 .seg-btn .chip-sample { margin-inline-end: 6px; }
