@@ -150,6 +150,15 @@ try {
   assert.equal(await A.locator("#saved").textContent(), en.optSaved.message);
   ok("clicking a switch changes the preview and says Saved");
 
+  // -- 4b. the page's own tools work in a plain page too: the venue check (the real resolver over the lists), a double-click that jumps to a setting
+  await A.fill('[data-act="venue-check"]', "Proceedings of the IEEE conference on computer vision and pattern recognition");
+  assert.equal(await A.locator("#card-venue .venue-line").count(), 2, "both lists place a CVPR venue");
+  assert.match(await A.locator('#card-venue .venue-line[data-kind="ccf"] a').getAttribute("href"), /^https:\/\/dblp\.org\/db\/conf\/cvpr\/?$/);
+  await A.fill('[data-act="venue-check"]', "");
+  await A.locator('#preview tr[data-rr-part="roles.last"]').dblclick({ position: { x: 30, y: 40 } });
+  await until(A, () => document.activeElement && document.activeElement.dataset.pref === "roles.last");
+  ok("the venue check and the jump from the preview to a setting work in the demo");
+
   // -- 5. it persists: in localStorage, under the demo's prefix, and across a reload
   assert.equal((await stored(A)).rows.ccf, false);
   const keys = await A.evaluate(() => Object.keys(localStorage));
