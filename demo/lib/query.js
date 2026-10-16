@@ -5,6 +5,7 @@
 //   year:>=2020          the year compared the same way
 //   ccf:a   core:a*      the venue's rank in that list
 //   role:first           your position: first, cofirst, second, last, or middle (none of those)
+//   type:journal         the venue's kind as the rank lists say it: conference or journal (a venue without a rank has none)
 //   has:award            an award or finalist mark; has:talk: Oral, Spotlight or Highlight
 // A word with a colon whose front is no operator ("http://…") is a word like any other. An operator with a value it does not take matches nothing, and is
 // named in `errors`, so that whoever typed it (a person, an agent) can see why.
@@ -26,6 +27,8 @@
     { name: "core", value: /^(?:a\*|[abc])$/, example: "core:a*", suggest: ["core:a*", "core:a", "core:b"], doc: "the venue's CORE rank: a*, a, b or c." },
     { name: "role", value: /^(?:first|cofirst|second|last|middle)$/, example: "role:first", suggest: ["role:first", "role:cofirst", "role:second", "role:last"],
       doc: "your position in the author list: first, cofirst, second, last, or middle (none of those four)." },
+    { name: "type", value: /^(?:conference|journal)$/, example: "type:journal", suggest: ["type:conference", "type:journal"],
+      doc: "the kind of venue the rank lists say it is: conference or journal (a venue without a rank has no kind)." },
     { name: "has", value: /^(?:award|talk)$/, example: "has:award", suggest: ["has:award", "has:talk"],
       doc: "has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark." }
   ];
@@ -34,7 +37,7 @@
   const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "year:>2020", "has:award", "has:talk"];
   const TEXT_FIELDS = 8000;       // a longer query than this is cut: nobody types it, and a script could send anything
 
-  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year", op, n } | { kind: "ccf" | "core" | "role" | "has", value } | { kind: "never" }.
+  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", value } | { kind: "never" }.
   function parse(q) {
     const terms = [], errors = [];
     for (const word of String(q == null ? "" : q).slice(0, TEXT_FIELDS).toLowerCase().split(/\s+/).filter(Boolean)) {
@@ -50,7 +53,7 @@
 
   const COMPARERS = { ">": (a, b) => a > b, ">=": (a, b) => a >= b, "<": (a, b) => a < b, "<=": (a, b) => a <= b, "=": (a, b) => a === b };
 
-  // fields: { text: [lower-case strings to look into], year: number | null, citations: number, role: string, ccf: "a" | null, core: "a*" | null, award: boolean, talk: boolean }
+  // fields: { text: [lower-case strings to look into], year: number | null, citations: number, role: string, ccf: "a" | null, core: "a*" | null, type: "conference" | "journal" | null, award: boolean, talk: boolean }
   function matches(parsed, fields) {
     return parsed.terms.every((term) => {
       switch (term.kind) {
@@ -60,6 +63,7 @@
         case "ccf": return fields.ccf === term.value;
         case "core": return fields.core === term.value;
         case "role": return fields.role === term.value;
+        case "type": return fields.type === term.value;
         case "has": return term.value === "award" ? fields.award : fields.talk;
         default: return false;
       }

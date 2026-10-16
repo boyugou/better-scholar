@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Legjobb cikk döntőse"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "A szerzők saját szavaiból a Scholaron az egyes cikkek címében és venue-szövegében (nincs ellenőrizve), valamint a nagy konferenciák díjnyertes cikkeinek beépített listájából."
   },
@@ -402,7 +393,7 @@
     "message": "Összesítő panel megjelenítése"
   },
   "optPanelShowHint": {
-    "message": "A szerep × rang táblázat a profiloldalon. Kikapcsolva: csak a cikklista kap jelölést."
+    "message": "A panel a profiloldal jobb oldali oszlopában van. Ki: csak a cikklista lesz megjelölve."
   },
   "optPanelSummary": {
     "message": "Szerep × rang táblázat"
@@ -417,7 +408,7 @@
     "message": "Betöltött cikkek és rang nélküli venue-k"
   },
   "optPanelStatusHint": {
-    "message": "Hány cikk van betöltve, az „Összes betöltése” gomb, és a rang nélküli venue-k cikkeinek listája."
+    "message": "Hány cikk van betöltve, az „Összes betöltése” gomb, mi nem olvasható be, és a rang nélküli venue-k cikkeinek listája."
   },
   "optPanelNames": {
     "message": "Névírási segítség"
@@ -438,7 +429,7 @@
     "message": "Szűrők"
   },
   "optPanelFiltersHint": {
-    "message": "Csak a kiemelt cikkek és egy évtartomány."
+    "message": "A keresőmező, a gyorsszűrők, a „Csak a kiemeltek” kapcsoló és az évtartomány."
   },
   "optPanelMetrics": {
     "message": "Hivatkozásösszegek"
@@ -926,64 +917,64 @@
     "message": "Bezárás"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Címkék minden cikken"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "A cikk venue-ja után álló kis címkék: a rangjai, valamint díjak vagy előadások."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "A részek sorrendje"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Felülről lefelé. A kikapcsolt rész megtartja a helyét."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Név a tetején"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Beállítások gomb"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Összecsukás gomb"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "A rész megjelenítése"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Cím"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF-fül és oszlopok"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE-fül és oszlopok"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "„Nincs rangsorolva” oszlop"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Összesítők (oszlop és sor)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "„Egyéb” sor"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "„Rejtett” sor"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Megjegyzés a rangok eredetéről"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "A gombok sorrendje"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Keresőmező"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "A gyorsszűrők sorrendje"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Gyorsszűrők"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "100-nál több idézet"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Évtartomány"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "„Megjelenített cikkek: N / M” sáv"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "A számításba vett helyezéseket megnevező sor"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "„/ N” minden szám mellett"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Első és utolsó év"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Betöltött cikkek és az „Összes betöltése”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Csonkolt szerzőlisták és a „Teljes listák olvasása”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Ismétlődő bejegyzések"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "A neved nélküli cikkek"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Rang nélküli venue-kon megjelent cikkek"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "A cikkekben talált névírásmódok"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Feljebb"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Lejjebb"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Nincs szín"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Nem mentve: a Chrome korlátozza, milyen gyakran írhatók a beállítások. Várj egy kicsit, aztán próbáld újra."
+  },
+  "optNameTip": {
+    "message": "Saját neved ehhez, minden nyelven. Üres: az alapnév."
+  },
+  "optNameOf": {
+    "message": "név"
+  },
+  "optNameReset": {
+    "message": "Vissza az alapnévre"
+  },
+  "optChipLook": {
+    "message": "Megjelenés"
+  },
+  "optChipColors": {
+    "message": "Színek"
+  },
+  "optChipStyle": {
+    "message": "Címkék stílusa"
+  },
+  "optChipOutline": {
+    "message": "Körvonal"
+  },
+  "optChipSoft": {
+    "message": "Halvány"
+  },
+  "optChipSolid": {
+    "message": "Tömör"
+  },
+  "optChipText": {
+    "message": "Csak szöveg"
+  },
+  "optChipShape": {
+    "message": "Címkék alakja"
+  },
+  "optChipPill": {
+    "message": "Lekerekített"
+  },
+  "optChipSquare": {
+    "message": "Négyszögletes"
+  },
+  "optChipLabel": {
+    "message": "Rangcímke szövege"
+  },
+  "optChipLabelFull": {
+    "message": "Lista és kategória (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Csak kategória (A)"
+  },
+  "optChipThemes": {
+    "message": "Kész megjelenések"
+  },
+  "optChipThemeLists": {
+    "message": "Szín listánként"
+  },
+  "optChipThemeMono": {
+    "message": "Egyszínű"
+  },
+  "optPreviewEdit": {
+    "message": "Ha egy rész fölé viszed az egeret, elrejtheted (✕) vagy áthelyezheted (⠿). Egy nevet dupla kattintással átnevezhetsz."
+  },
+  "optHide": {
+    "message": "Elrejtés"
+  },
+  "optRename": {
+    "message": "Átnevezés"
+  },
+  "optDragMove": {
+    "message": "Húzással áthelyezés"
+  },
+  "optHiddenTray": {
+    "message": "Rejtve: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Újra megjelenítés"
+  },
+  "optRenameHint": {
+    "message": "Enter megtartja · Esc megszakítja · üres: az alapnév"
   }
 }

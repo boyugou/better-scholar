@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalista nejlepší práce"
   },
-  "mkOral": {
-    "message": "Ústní přednes"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Podle slov samotných autorů v názvu a popisu místa publikace každé práce ve Scholar (neověřeno) a podle přibaleného seznamu oceněných prací z velkých konferencí."
   },
@@ -402,7 +393,7 @@
     "message": "Zobrazit panel s přehledem"
   },
   "optPanelShowHint": {
-    "message": "Tabulka role × rank na stránce profilu. Vyp.: označí se jen seznam prací."
+    "message": "Panel v pravém sloupci stránky profilu. Vypnuto: označí se jen seznam prací."
   },
   "optPanelSummary": {
     "message": "Tabulka role × rank"
@@ -417,7 +408,7 @@
     "message": "Načtené práce a publikační místa bez ranku"
   },
   "optPanelStatusHint": {
-    "message": "Kolik prací je načteno, tlačítko „Načíst vše“ a seznam prací v místech publikace bez ranku."
+    "message": "Kolik prací je načteno, tlačítko „Načíst vše“, co se nepodařilo přečíst, a seznam prací v místech publikace bez ranku."
   },
   "optPanelNames": {
     "message": "Pomoc se zápisem jména"
@@ -438,7 +429,7 @@
     "message": "Filtry"
   },
   "optPanelFiltersHint": {
-    "message": "Jen zvýrazněné práce a rozsah let."
+    "message": "Vyhledávací pole, rychlé filtry, přepínač „Jen zvýrazněné“ a rozsah let."
   },
   "optPanelMetrics": {
     "message": "Součty citací"
@@ -926,64 +917,64 @@
     "message": "Zavřít"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Štítky u každé práce"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Malé štítky za místem publikace práce: její ranky a ocenění nebo přednesy."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Pořadí částí"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Shora dolů. Vypnutá část si ponechá své místo."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Jméno nahoře"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Tlačítko Nastavení"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Tlačítko Sbalit"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Zobrazit tuto část"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Nadpis"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Záložka a sloupce CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Záložka a sloupce CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Sloupec „Bez ranku“"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Součty (sloupec a řádek)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Řádek „Ostatní“"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Řádek „Skrytá“"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Poznámka o tom, odkud ranky pocházejí"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Pořadí tlačítek"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Vyhledávací pole"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Pořadí rychlých filtrů"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Rychlé filtry"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Více než 100 citací"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Rozsah let"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Lišta „Zobrazené práce: N / M“"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Řádek s pozicemi, které se počítají"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "„z N“ u každého čísla"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "První a poslední rok"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Načtené práce a tlačítko „Načíst vše“"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Zkrácené seznamy autorů a tlačítko „Přečíst celé seznamy“"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Opakované záznamy"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Práce bez vašeho jména"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Práce v místech publikace bez ranku"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Způsoby zápisu jména nalezené ve vašich pracích"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Posunout nahoru"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Posunout dolů"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Bez barvy"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Neuloženo: Chrome omezuje, jak často lze nastavení zapisovat. Počkejte chvíli a zkuste to znovu."
+  },
+  "optNameTip": {
+    "message": "Váš vlastní název pro toto, ve všech jazycích. Prázdné: standardní název."
+  },
+  "optNameOf": {
+    "message": "název"
+  },
+  "optNameReset": {
+    "message": "Zpět na standardní název"
+  },
+  "optChipLook": {
+    "message": "Vzhled"
+  },
+  "optChipColors": {
+    "message": "Barvy"
+  },
+  "optChipStyle": {
+    "message": "Styl štítků"
+  },
+  "optChipOutline": {
+    "message": "Obrys"
+  },
+  "optChipSoft": {
+    "message": "Jemný"
+  },
+  "optChipSolid": {
+    "message": "Plný"
+  },
+  "optChipText": {
+    "message": "Jen text"
+  },
+  "optChipShape": {
+    "message": "Tvar štítků"
+  },
+  "optChipPill": {
+    "message": "Zaoblené"
+  },
+  "optChipSquare": {
+    "message": "Hranaté"
+  },
+  "optChipLabel": {
+    "message": "Text štítku ranku"
+  },
+  "optChipLabelFull": {
+    "message": "Seznam a třída (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Jen třída (A)"
+  },
+  "optChipThemes": {
+    "message": "Hotové vzhledy"
+  },
+  "optChipThemeLists": {
+    "message": "Barva podle seznamu"
+  },
+  "optChipThemeMono": {
+    "message": "Jednobarevné"
+  },
+  "optPreviewEdit": {
+    "message": "Najetím na část ji skryjete (✕) nebo přesunete (⠿). Dvojklikem na název jej přejmenujete."
+  },
+  "optHide": {
+    "message": "Skrýt"
+  },
+  "optRename": {
+    "message": "Přejmenovat"
+  },
+  "optDragMove": {
+    "message": "Přetažením přesunout"
+  },
+  "optHiddenTray": {
+    "message": "Skryto: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Znovu zobrazit"
+  },
+  "optRenameHint": {
+    "message": "Enter uloží · Esc zruší · prázdné: standardní název"
   }
 }

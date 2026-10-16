@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Φιναλίστ καλύτερης εργασίας"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Από τα λόγια των ίδιων των συγγραφέων στον τίτλο και στο μέσο δημοσίευσης κάθε εργασίας στο Scholar (δεν ελέγχονται) και από ενσωματωμένη λίστα βραβευμένων εργασιών σε μεγάλα συνέδρια."
   },
@@ -417,7 +408,7 @@
     "message": "Εμφάνιση του πίνακα σύνοψης"
   },
   "optPanelShowHint": {
-    "message": "Ο πίνακας ρόλου × βαθμίδας στη σελίδα προφίλ. Ανενεργό: σημαίνεται μόνο η λίστα εργασιών."
+    "message": "Ο πίνακας στη δεξιά στήλη μιας σελίδας προφίλ. Ανενεργός: σημειώνεται μόνο η λίστα εργασιών."
   },
   "optPanelSummary": {
     "message": "Πίνακας ρόλου × βαθμίδας"
@@ -432,7 +423,7 @@
     "message": "Φορτωμένες εργασίες και μέσα δημοσίευσης χωρίς βαθμίδα"
   },
   "optPanelStatusHint": {
-    "message": "Πόσες εργασίες έχουν φορτωθεί, το κουμπί «Φόρτωση όλων» και η λίστα εργασιών σε μέσα δημοσίευσης χωρίς βαθμίδα."
+    "message": "Πόσες εργασίες έχουν φορτωθεί, το κουμπί «Φόρτωση όλων», τι δεν μπόρεσε να διαβαστεί και η λίστα των εργασιών σε μέσα δημοσίευσης χωρίς βαθμίδα."
   },
   "optPanelNames": {
     "message": "Βοήθεια ορθογραφίας ονόματος"
@@ -453,7 +444,7 @@
     "message": "Φίλτρα"
   },
   "optPanelFiltersHint": {
-    "message": "Μόνο επισημασμένες εργασίες και εύρος ετών."
+    "message": "Το πεδίο αναζήτησης, τα γρήγορα φίλτρα, ο διακόπτης «Μόνο επισημασμένες» και το εύρος ετών."
   },
   "optPanelMetrics": {
     "message": "Σύνολα αναφορών"
@@ -947,64 +938,64 @@
     "message": "Κλείσιμο"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Ετικέτες σε κάθε εργασία"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Οι μικρές ετικέτες μετά το μέσο δημοσίευσης μιας εργασίας: οι βαθμίδες της, και βραβεία ή ομιλίες."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Σειρά των τμημάτων"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Από πάνω προς τα κάτω. Ένα τμήμα που είναι απενεργοποιημένο διατηρεί τη θέση του."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Όνομα στην κορυφή"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Κουμπί ρυθμίσεων"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Κουμπί σύμπτυξης"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Εμφάνιση αυτού του τμήματος"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Τίτλος"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Καρτέλα και στήλες CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Καρτέλα και στήλες CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Στήλη «Χωρίς βαθμίδα»"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Σύνολα (στήλη και γραμμή)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Γραμμή «Άλλη θέση»"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Γραμμή «Κρυφό»"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Σημείωση για την προέλευση των βαθμίδων"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Σειρά των κουμπιών"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Πεδίο αναζήτησης"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Σειρά των γρήγορων φίλτρων"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Γρήγορα φίλτρα"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1013,51 +1004,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Πάνω από 100 αναφορές"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Εύρος ετών"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Γραμμή «Εμφανιζόμενες εργασίες: N / M»"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Γραμμή που ονομάζει τις θέσεις που μετρούν"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "«από N» δίπλα σε κάθε αριθμό"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Πρώτο και τελευταίο έτος"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Φορτωμένες εργασίες και «Φόρτωση όλων»"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Περικομμένες λίστες συγγραφέων και «Ανάγνωση πλήρων λιστών»"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Επαναλαμβανόμενες καταχωρίσεις"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Εργασίες χωρίς το όνομά σας"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Εργασίες σε μέσα δημοσίευσης χωρίς βαθμίδα"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Γραφές του ονόματος που βρέθηκαν στις εργασίες σας"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Μετακίνηση πάνω"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Μετακίνηση κάτω"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Χωρίς χρώμα"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Δεν αποθηκεύτηκε: το Chrome περιορίζει πόσο συχνά μπορούν να αποθηκευτούν ρυθμίσεις. Περιμένετε λίγο και δοκιμάστε ξανά."
+  },
+  "optNameTip": {
+    "message": "Το δικό σας όνομα για αυτό, σε όλες τις γλώσσες. Κενό: το τυπικό όνομα."
+  },
+  "optNameOf": {
+    "message": "όνομα"
+  },
+  "optNameReset": {
+    "message": "Επαναφορά στο τυπικό όνομα"
+  },
+  "optChipLook": {
+    "message": "Εμφάνιση"
+  },
+  "optChipColors": {
+    "message": "Χρώματα"
+  },
+  "optChipStyle": {
+    "message": "Στυλ ετικετών"
+  },
+  "optChipOutline": {
+    "message": "Περίγραμμα"
+  },
+  "optChipSoft": {
+    "message": "Απαλό"
+  },
+  "optChipSolid": {
+    "message": "Συμπαγές"
+  },
+  "optChipText": {
+    "message": "Μόνο κείμενο"
+  },
+  "optChipShape": {
+    "message": "Σχήμα ετικετών"
+  },
+  "optChipPill": {
+    "message": "Στρογγυλεμένες"
+  },
+  "optChipSquare": {
+    "message": "Τετράγωνες"
+  },
+  "optChipLabel": {
+    "message": "Κείμενο ετικέτας βαθμίδας"
+  },
+  "optChipLabelFull": {
+    "message": "Λίστα και βαθμίδα (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Μόνο βαθμίδα (A)"
+  },
+  "optChipThemes": {
+    "message": "Έτοιμα στυλ"
+  },
+  "optChipThemeLists": {
+    "message": "Χρώμα ανά λίστα"
+  },
+  "optChipThemeMono": {
+    "message": "Μονόχρωμο"
+  },
+  "optPreviewEdit": {
+    "message": "Φέρτε τον δείκτη πάνω σε ένα τμήμα για απόκρυψη (✕) ή μετακίνηση (⠿). Διπλό κλικ σε ένα όνομα για μετονομασία."
+  },
+  "optHide": {
+    "message": "Απόκρυψη"
+  },
+  "optRename": {
+    "message": "Μετονομασία"
+  },
+  "optDragMove": {
+    "message": "Σύρετε για μετακίνηση"
+  },
+  "optHiddenTray": {
+    "message": "Κρυφά: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Εμφάνιση ξανά"
+  },
+  "optRenameHint": {
+    "message": "Enter: αποθήκευση · Esc: ακύρωση · κενό: το τυπικό όνομα"
   }
 }

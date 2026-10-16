@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "최우수 논문상 후보"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Scholar에 표시된 각 논문의 제목과 게재처 문구에서 저자가 직접 적은 내용(검증 안 됨)과, 주요 학회 수상 논문 목록(내장)을 기준으로 합니다."
   },
@@ -417,7 +408,7 @@
     "message": "요약 패널 표시"
   },
   "optPanelShowHint": {
-    "message": "프로필 페이지의 순서×등급 표입니다. 끄면 논문 목록에만 표시합니다."
+    "message": "프로필 페이지 오른쪽 열의 패널. 끄면 논문 목록에만 표시가 붙습니다."
   },
   "optPanelSummary": {
     "message": "순서×등급 표"
@@ -432,7 +423,7 @@
     "message": "불러온 논문과 등급 없는 게재처"
   },
   "optPanelStatusHint": {
-    "message": "불러온 논문 수, “모두 불러오기” 버튼, 등급이 없는 게재처의 논문 목록."
+    "message": "불러온 논문 수, “모두 불러오기” 버튼, 읽지 못한 항목, 등급 없는 게재처의 논문 목록."
   },
   "optPanelNames": {
     "message": "이름 표기 도움말"
@@ -453,7 +444,7 @@
     "message": "필터"
   },
   "optPanelFiltersHint": {
-    "message": "강조된 논문만 보기와 연도 범위."
+    "message": "검색창, 빠른 필터, “강조된 논문만” 스위치, 연도 범위."
   },
   "optPanelMetrics": {
     "message": "인용 합계"
@@ -947,64 +938,64 @@
     "message": "닫기"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "논문마다 라벨"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "논문 게재처 뒤에 붙는 작은 라벨: 등급, 그리고 수상이나 발표."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "부분의 순서"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "위에서 아래로. 꺼진 부분은 자리를 지킵니다."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "상단의 이름"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "설정 버튼"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "접기 버튼"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "이 부분 보기"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "제목"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF 탭과 열"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE 탭과 열"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "“등급 없음” 열"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "합계(열과 행)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "“기타” 행"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "“숨김” 행"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "등급의 출처 안내"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "버튼의 순서"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "검색창"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "빠른 필터의 순서"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "빠른 필터"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1013,51 +1004,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "인용수 100 초과"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "연도 범위"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "“논문 M편 중 N편 표시” 막대"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "집계되는 저자 순서를 알려 주는 줄"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "각 숫자 옆의 “/ N”"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "첫 해와 마지막 해"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "불러온 논문과 “모두 불러오기”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "잘린 저자 목록과 “전체 목록 읽기”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "중복 항목"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "내 이름이 없는 논문"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "등급 없는 게재처의 논문"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "논문에서 찾은 이름 표기"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "위로 이동"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "아래로 이동"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "색 없음"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "저장되지 않았습니다. Chrome은 설정을 기록하는 빈도를 제한합니다. 잠시 후 다시 변경해 주세요."
+  },
+  "optNameTip": {
+    "message": "이 항목에 쓸 내 이름(모든 언어 공통). 비우면 기본 이름."
+  },
+  "optNameOf": {
+    "message": "이름"
+  },
+  "optNameReset": {
+    "message": "기본 이름으로 되돌리기"
+  },
+  "optChipLook": {
+    "message": "모양"
+  },
+  "optChipColors": {
+    "message": "색상"
+  },
+  "optChipStyle": {
+    "message": "라벨 스타일"
+  },
+  "optChipOutline": {
+    "message": "외곽선"
+  },
+  "optChipSoft": {
+    "message": "부드러운"
+  },
+  "optChipSolid": {
+    "message": "채움"
+  },
+  "optChipText": {
+    "message": "텍스트만"
+  },
+  "optChipShape": {
+    "message": "라벨 모양"
+  },
+  "optChipPill": {
+    "message": "둥근"
+  },
+  "optChipSquare": {
+    "message": "사각형"
+  },
+  "optChipLabel": {
+    "message": "등급 라벨 텍스트"
+  },
+  "optChipLabelFull": {
+    "message": "목록과 등급 (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "등급만 (A)"
+  },
+  "optChipThemes": {
+    "message": "기본 제공 모양"
+  },
+  "optChipThemeLists": {
+    "message": "목록별 색상"
+  },
+  "optChipThemeMono": {
+    "message": "단색"
+  },
+  "optPreviewEdit": {
+    "message": "부분 위에 마우스를 올리면 숨기기(✕)나 이동(⠿)을 할 수 있습니다. 이름을 두 번 클릭하면 이름을 바꿀 수 있습니다."
+  },
+  "optHide": {
+    "message": "숨기기"
+  },
+  "optRename": {
+    "message": "이름 바꾸기"
+  },
+  "optDragMove": {
+    "message": "끌어서 이동"
+  },
+  "optHiddenTray": {
+    "message": "숨김: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "다시 표시"
+  },
+  "optRenameHint": {
+    "message": "Enter 저장 · Esc 취소 · 비우면 기본 이름"
   }
 }

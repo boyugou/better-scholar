@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalist til bedste artikel"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Fra forfatternes egne ord i hver artikels titel og publikationssted på Scholar (ikke kontrolleret) og fra en indbygget liste over prisvindende artikler ved store konferencer."
   },
@@ -417,7 +408,7 @@
     "message": "Vis oversigtspanelet"
   },
   "optPanelShowHint": {
-    "message": "Tabellen rolle × rang på profilsiden. Fra: kun artikellisten markeres."
+    "message": "Panelet i højre kolonne på en profilside. Fra: kun artikellisten markeres."
   },
   "optPanelSummary": {
     "message": "Tabel over rolle × rang"
@@ -432,7 +423,7 @@
     "message": "Indlæste artikler og steder uden rang"
   },
   "optPanelStatusHint": {
-    "message": "Hvor mange artikler der er indlæst, knappen “Indlæs alle” og listen over artikler på steder uden rang."
+    "message": "Hvor mange artikler der er indlæst, knappen “Indlæs alle”, hvad der ikke kunne læses, og listen over artikler på steder uden rang."
   },
   "optPanelNames": {
     "message": "Hjælp til navnestavning"
@@ -453,7 +444,7 @@
     "message": "Filtre"
   },
   "optPanelFiltersHint": {
-    "message": "Kun fremhævede artikler og et årsinterval."
+    "message": "Søgefeltet, hurtigfiltrene, kontakten “Kun fremhævede” og årsintervallet."
   },
   "optPanelMetrics": {
     "message": "Citationssummer"
@@ -947,64 +938,64 @@
     "message": "Luk"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Mærker på hver artikel"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "De små mærker efter en artikels publikationssted: dens rang samt priser eller oplæg."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Rækkefølge af dele"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Fra top til bund. En del, der er slået fra, beholder sin plads."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Navn øverst"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Knappen Indstillinger"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Knappen Fold sammen"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Vis denne del"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Titel"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF-fane og kolonner"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE-fane og kolonner"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Kolonnen “Ingen rang”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Totaler (kolonne og række)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Rækken “Øvrige”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Rækken “Skjult”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Note om, hvor rangerne kommer fra"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Rækkefølge af knapperne"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Søgefelt"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Rækkefølge af hurtigfiltrene"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Hurtigfiltre"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1013,51 +1004,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Over 100 citeringer"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Årsinterval"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Linjen “Viste artikler: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Linje, der nævner de positioner, der tæller"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“af N” ved hvert tal"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Første og sidste år"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Indlæste artikler og “Indlæs alle”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Afkortede forfatterlister og “Læs fulde lister”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Gentagne poster"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Artikler uden dit navn"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Artikler på steder uden rang"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Stavemåder fundet i dine artikler"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Flyt op"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Flyt ned"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Ingen farve"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Ikke gemt: Chrome begrænser, hvor ofte indstillinger kan skrives. Vent et øjeblik, og prøv igen."
+  },
+  "optNameTip": {
+    "message": "Dit eget navn til dette på alle sprog. Tomt: standardnavnet."
+  },
+  "optNameOf": {
+    "message": "navn"
+  },
+  "optNameReset": {
+    "message": "Tilbage til standardnavnet"
+  },
+  "optChipLook": {
+    "message": "Udseende"
+  },
+  "optChipColors": {
+    "message": "Farver"
+  },
+  "optChipStyle": {
+    "message": "Mærkernes stil"
+  },
+  "optChipOutline": {
+    "message": "Kontur"
+  },
+  "optChipSoft": {
+    "message": "Blød"
+  },
+  "optChipSolid": {
+    "message": "Fyldt"
+  },
+  "optChipText": {
+    "message": "Kun tekst"
+  },
+  "optChipShape": {
+    "message": "Mærkernes form"
+  },
+  "optChipPill": {
+    "message": "Afrundede"
+  },
+  "optChipSquare": {
+    "message": "Firkantede"
+  },
+  "optChipLabel": {
+    "message": "Tekst på rangmærkerne"
+  },
+  "optChipLabelFull": {
+    "message": "Liste og niveau (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Kun niveau (A)"
+  },
+  "optChipThemes": {
+    "message": "Færdige udseender"
+  },
+  "optChipThemeLists": {
+    "message": "Farve pr. liste"
+  },
+  "optChipThemeMono": {
+    "message": "Monokrom"
+  },
+  "optPreviewEdit": {
+    "message": "Hold musen over en del for at skjule den (✕) eller flytte den (⠿). Dobbeltklik på et navn for at omdøbe det."
+  },
+  "optHide": {
+    "message": "Skjul"
+  },
+  "optRename": {
+    "message": "Omdøb"
+  },
+  "optDragMove": {
+    "message": "Træk for at flytte"
+  },
+  "optHiddenTray": {
+    "message": "Skjult: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Vis igen"
+  },
+  "optRenameHint": {
+    "message": "Enter gemmer · Esc annullerer · tomt: standardnavnet"
   }
 }

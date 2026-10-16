@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "最佳論文入圍"
   },
-  "mkOral": {
-    "message": "口頭報告"
-  },
-  "mkSpotlight": {
-    "message": "聚光報告"
-  },
-  "mkHighlight": {
-    "message": "亮點報告"
-  },
   "marksHint": {
     "message": "依據作者在 Scholar 上於各論文標題與發表處文字中自行標註的內容（未經查證），以及內建的各大會議獲獎論文清單。"
   },
@@ -417,7 +408,7 @@
     "message": "顯示摘要面板"
   },
   "optPanelShowHint": {
-    "message": "作者頁面上的位次×等級表。關閉後，只標示論文列表。"
+    "message": "個人頁面右側欄中的面板。關閉時：只標示論文列表。"
   },
   "optPanelSummary": {
     "message": "位次×等級表"
@@ -432,7 +423,7 @@
     "message": "已載入論文與無等級的發表處"
   },
   "optPanelStatusHint": {
-    "message": "已載入的論文數、「全部載入」按鈕，以及發表處沒有等級的論文清單。"
+    "message": "已載入的論文數、「全部載入」按鈕、無法讀取的內容，以及發表處沒有等級的論文列表。"
   },
   "optPanelNames": {
     "message": "姓名拼法輔助"
@@ -453,7 +444,7 @@
     "message": "篩選"
   },
   "optPanelFiltersHint": {
-    "message": "只看已標示的論文，以及年份範圍。"
+    "message": "搜尋框、快速篩選、「只看已標示的」開關和年份範圍。"
   },
   "optPanelMetrics": {
     "message": "引用統計"
@@ -947,64 +938,64 @@
     "message": "關閉"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "每篇論文上的標籤"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "論文發表處後的小標籤：等級，以及獲獎或報告形式。"
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "各部分的順序"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "從上到下排列。關閉的部分仍保留原位。"
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "頂部名稱"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "設定按鈕"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "收合按鈕"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "顯示此部分"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "標題"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF 分頁及欄"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE 分頁及欄"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "「未收錄等級」欄"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "合計（欄和列）"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "「其他」列"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "「被隱藏」列"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "關於等級來源的說明"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "按鈕的順序"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "搜尋框"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "快速篩選的順序"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "快速篩選"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1013,51 +1004,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "引用超過 100 次"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "年份範圍"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "「顯示 N / M 篇論文」橫條"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "列出計入統計之位次的一行"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "每個數字旁的「／N」"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "首年與末年"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "已載入論文與「全部載入」"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "被截短的作者列表與「補全」"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "重複的條目"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "未列出本人姓名的論文"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "發表處沒有等級的論文"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "在您的論文中找到的拼法"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "上移"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "下移"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "不上色"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "未儲存：Chrome 限制了設定的寫入頻率。請稍候片刻，再重新更改。"
+  },
+  "optNameTip": {
+    "message": "您為此設定的名稱，適用於所有語言。留空：使用標準名稱。"
+  },
+  "optNameOf": {
+    "message": "名稱"
+  },
+  "optNameReset": {
+    "message": "還原標準名稱"
+  },
+  "optChipLook": {
+    "message": "外觀"
+  },
+  "optChipColors": {
+    "message": "顏色"
+  },
+  "optChipStyle": {
+    "message": "標籤樣式"
+  },
+  "optChipOutline": {
+    "message": "框線"
+  },
+  "optChipSoft": {
+    "message": "柔和"
+  },
+  "optChipSolid": {
+    "message": "實心"
+  },
+  "optChipText": {
+    "message": "僅文字"
+  },
+  "optChipShape": {
+    "message": "標籤形狀"
+  },
+  "optChipPill": {
+    "message": "圓角"
+  },
+  "optChipSquare": {
+    "message": "直角"
+  },
+  "optChipLabel": {
+    "message": "等級標籤的文字"
+  },
+  "optChipLabelFull": {
+    "message": "列表與等級(CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "僅等級(A)"
+  },
+  "optChipThemes": {
+    "message": "現成樣式"
+  },
+  "optChipThemeLists": {
+    "message": "每個列表一種顏色"
+  },
+  "optChipThemeMono": {
+    "message": "單色"
+  },
+  "optPreviewEdit": {
+    "message": "將滑鼠移到某部分上，即可隱藏(✕)或移動(⠿)。雙擊名稱可重新命名。"
+  },
+  "optHide": {
+    "message": "隱藏"
+  },
+  "optRename": {
+    "message": "重新命名"
+  },
+  "optDragMove": {
+    "message": "拖曳以移動"
+  },
+  "optHiddenTray": {
+    "message": "已隱藏：$N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "重新顯示"
+  },
+  "optRenameHint": {
+    "message": "Enter 保留 · Esc 取消 · 留空：標準名稱"
   }
 }

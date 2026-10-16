@@ -139,6 +139,7 @@
   $("sub").textContent = t("optHeading");
   $("pv-title").replaceChildren(makeIconBadge({ icon: "sparkles", color: "#1a73e8", bg: "rgba(26, 115, 232, 0.12)" }), h("span", { class: "card-title-text" }, t("optPreviewTitle")));
   $("pv-note").textContent = t("optPreviewNote");
+  $("pv-hint").textContent = t("optPreviewEdit");
   $("storage").textContent = t("optStorage");
   $("ver").textContent = "v" + chrome.runtime.getManifest().version;
   $("lnk-privacy").parentNode.setAttribute("aria-label", t("extName"));
@@ -153,6 +154,7 @@
   }
 
   let prefs = await B.store.loadPrefs();
+  B.dom.setLabels(prefs.labels);
   const shownLanguage = prefs.language;                 // (the page is drawn in this one: a change of the interface language reloads it)
   const syncers = [];
 
@@ -186,8 +188,10 @@
   }
   // (the page's own state is changed and drawn first; the returned promise settles when the write has been made)
   function save() {
+    B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
+    B.dom.applyChips(prefs.chips, prefs.colors);
     renderPreview();
     syncers.forEach((fn) => fn());
     dirty = true;
@@ -202,14 +206,37 @@
   const put = (path, value) => { const keys = path.split("."); keys.slice(0, -1).reduce((o, k) => o[k], prefs)[keys[keys.length - 1]] = value; };
   let uid = 0;
   // the name of a control is its label; its hint is what a screen reader reads after it
-  const described = (label, hint) => { const id = "opt-" + ++uid; return { name: h("span", { class: "name", id: id + "-n" }, label), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+  const described = (label, hint) => { const id = "opt-" + ++uid; const words = document.createTextNode(label); return { id, words, name: h("span", { class: "name", id: id + "-n" }, words), hint: hint ? h("span", { class: "hint", id: id + "-h" }, hint) : null, ids: { "aria-labelledby": id + "-n", "aria-describedby": hint ? id + "-h" : null } }; };
+
+  // A name: the text of a title or a name on the screen, in the person's own words, in every language. Empty is the built-in text, shown in grey: what the field would say.
+  // (It is shown in the preview as it is typed and saved when the field is left or Enter is pressed; Escape gives the old name back.)
+  function nameEdit(row, off) {
+    const path = row.path, key = row.label;
+    let before = "";
+    const input = h("input", { type: "text", class: "name-input", "data-pref": path, maxlength: String(row.max), spellcheck: "false", autocomplete: "off",
+      placeholder: B.dom.tDefault(key), title: t("optNameTip"), "aria-label": B.dom.tDefault(key) + " — " + t("optNameOf"),
+      onFocus: () => { before = at(path); },
+      onInput: () => { put(path, input.value); B.dom.setLabels(prefs.labels); renderPreview(); },
+      onChange: () => { put(path, input.value.replace(/\s+/g, " ").trim()); save(); },
+      onKeydown: (e) => {
+        if (e.key === "Enter") { e.preventDefault(); input.blur(); }
+        else if (e.key === "Escape" && at(path) !== before) { e.preventDefault(); input.value = before; put(path, before); B.dom.setLabels(prefs.labels); renderPreview(); }
+      } });
+    const reset = h("button", { type: "button", class: "name-reset", "data-act": "name-reset", "aria-label": B.dom.tDefault(key) + " — " + t("optNameReset"), title: t("optNameReset"),
+      onClick: (e) => { e.preventDefault(); e.stopPropagation(); put(path, ""); save(); } }, "↺");
+    const sync = () => { input.value = at(path); reset.hidden = !at(path); input.disabled = off ? off() : false; };
+    syncers.push(sync);
+    sync();
+    return h("span", { class: "name-edit" }, input, reset);
+  }
 
   // One switch
-  function option({ path, label, hint, swatch, sub, off }) {
+  function option({ path, label, hint, swatch, sub, off, name, key }) {
     const d = described(label, hint);
-    const input = h("input", { type: "checkbox", role: "switch", class: "sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
+    if (key) syncers.push(() => { d.words.nodeValue = t(key); });                    // (a switch is named by what it shows: when that is renamed, so is it)
+    const input = h("input", { type: "checkbox", role: "switch", class: "sw", id: d.id + "-sw", "data-pref": path, ...d.ids, onChange: () => { put(path, input.checked); save(); } });
     if (swatch) d.name.prepend(h("span", { class: "swatch", style: "background:" + swatch }));
-    const row = h("label", { class: "opt" + (sub ? " sub" : "") }, h("span", { class: "txt" }, d.name, d.hint), input);
+    const row = h("label", { class: "opt" + (sub ? " sub" : "") + (name ? " opt-named" : ""), for: input.id }, h("span", { class: "txt" }, d.name, d.hint), name ? nameEdit(name, off) : null, input);
     const sync = () => {
       input.checked = !!at(path);
       const disabled = off ? off() : false;
@@ -666,8 +693,59 @@
   const CHOICES = {
     "rows.style": { labels: { full: "optRowStyleFull", bar: "optRowStyleBar", tint: "optRowStyleTint", none: "optRowStyleNone" },
       icons: { full: ICONS.fullDiagram, bar: ICONS.barDiagram, tint: ICONS.tintDiagram, none: ICONS.noneDiagram } },
-    "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} }
+    "panel.marks.grouping": { labels: { separate: "optTalkSeparate", pair: "optTalkPair", talks: "optTalkAll" }, icons: {} },
+    // (a mini chip in each button shows the look it makes)
+    "chips.style": { labels: { outline: "optChipOutline", soft: "optChipSoft", solid: "optChipSolid", text: "optChipText" },
+      icons: Object.fromEntries(["outline", "soft", "solid", "text"].map((k) => [k, () => chipSample(`rr-chips-${k} rr-chips-pill rr-chips-full`, { tier: "A", ccf: true })])) },
+    "chips.shape": { labels: { pill: "optChipPill", square: "optChipSquare" }, icons: { pill: () => chipSample("rr-chips-outline rr-chips-pill rr-chips-full", { tier: "A", ccf: true }), square: () => chipSample("rr-chips-outline rr-chips-square rr-chips-full", { tier: "A", ccf: true }) } },
+    "chips.label": { labels: { full: "optChipLabelFull", tier: "optChipLabelTier" }, icons: {} }
   };
+
+  // A few chips drawn in a look of their own: the wrapper carries the look's classes and colours, which the chips' styles read (the settings page shows the looks on buttons)
+  // `colors`: the picked colours of the look ({ ccf, core, award, talk }), none for the built-in ones
+  function chipSample(classes, { tier = "A", ccf = false, colors = {}, more = false } = {}) {
+    const bare = (el) => { el.removeAttribute("title"); return el; };
+    const chips = [bare(B.chips.tierChip("ccf", { tier, name: "", abbr: "", rule: "name" }, ""))];
+    if (!ccf) chips.push(bare(B.chips.tierChip("core", { rank: "A*", name: "", abbr: "", rule: "name" }, "")));
+    if (more) chips.push(bare(B.chips.markChip({ kind: "best", group: "award", source: "author", text: "" })), bare(B.chips.markChip({ kind: "oral", group: "oral", source: "author", text: "" })));
+    const el = h("span", { class: "chip-sample " + classes }, h("span", { class: "rr-chips" }, chips.flatMap((c, i) => (i ? [" ", c] : [c]))));
+    // (a family with no colour of its own has the built-in one, whatever the page's chips are coloured: `initial` makes the stylesheet's fallback count)
+    for (const family of B.palette.FAMILIES) {
+      const own = colors[family] ? B.palette.vars(family, colors[family]) : {};
+      for (const name of B.palette.BY_FAMILY[family]) el.style.setProperty(name, own[name] || "initial");
+    }
+    return el;
+  }
+
+  // The ready-made looks of the chips (lib/prefs.js CHIP_THEMES): a button for each, drawn in its own look
+  function chipThemesBar() {
+    const buttons = B.prefs.CHIP_THEMES.map((theme) => {
+      const look = theme.patch.chips;
+      const classes = `rr-chips-${look.style} rr-chips-${look.shape} rr-chips-${look.label}`;
+      const btn = h("button", { type: "button", class: "chip-theme", "data-chip-theme": theme.id, "aria-label": `${t("optChipThemes")}: ${t(theme.name)}`, onClick: () => applyPatch(theme.patch) },
+        chipSample(classes, { more: true, colors: theme.patch.colors }), h("span", { class: "chip-theme-name" }, t(theme.name)));
+      return { theme, btn };
+    });
+    const sync = () => buttons.forEach(({ theme, btn }) => btn.classList.toggle("active", B.prefs.apply(prefs, theme.patch).applied.length === 0));
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "chip-themes", role: "group", "aria-label": t("optChipThemes") }, ...buttons.map((b) => b.btn));
+  }
+
+  // The colour of a family of chips: a picker and a button that puts the built-in colour back (the built-in is what the picker shows until a colour is picked)
+  function chipColor(row) {
+    const family = row.path.split(".")[1], def = B.palette.DEFAULTS[family];
+    const d = described(t(row.label), "");
+    const input = h("input", { type: "color", class: "clr chip-clr", "data-pref": row.path, "aria-label": `${t(row.label)}: ${t("optChipColors")}`,
+      onInput: () => { put(row.path, input.value); B.dom.applyChips(prefs.chips, prefs.colors); renderPreview(); },
+      onChange: () => { put(row.path, input.value); save(); } });
+    const reset = h("button", { type: "button", class: "name-reset", "data-act": "chip-color-reset", title: t("optColorsReset"), "aria-label": `${t(row.label)}: ${t("optColorsReset")}`,
+      onClick: () => { put(row.path, ""); save(); } }, "↺");
+    const sync = () => { input.value = at(row.path) || def; reset.hidden = !at(row.path); };
+    syncers.push(sync);
+    sync();
+    return h("div", { class: "opt opt-color" }, h("span", { class: "txt" }, d.name), h("span", { class: "name-edit" }, input, reset));
+  }
   const NONE_WORD = { language: "optLanguageAuto", scholarLanguage: "optLanguageKeep" };
   const cardOf = (id) => B.prefs.CARDS.find((c) => c.id === id);
   // the name of an item of an order list: a part is named by its card, a button by its own switch; it is dimmed while its switch is off
@@ -675,14 +753,16 @@
   const itemOff = (path, id) => !at(path === "panel.order" ? `panel.${id}.show` : path.replace(/\.order$/, "." + id));
 
   // the control of one row, by what the row is
-  function control(row, rows) {
+  function control(row, rows, name) {
     const label = t(row.label), hint = row.hint ? t(row.hint) : "";
     switch (row.kind) {
-      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row) });
+      case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
+      case "text": return row.inline ? null : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
       case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons }); }
       case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
-      default: return null;                                                     // (the colours have their own studio)
+      case "color": return B.prefs.ROLES.includes(row.path.split(".")[1]) ? null : chipColor(row);        // (the role colours have their own studio)
+      default: return null;
     }
   }
 
@@ -702,11 +782,12 @@
   const cardsOfPrefs = B.prefs.CARDS.map((c) => {
     const kids = c.id === "colors" ? [themePresetsBar(), ...B.prefs.ROLES.map(roleStudioCard)] : [];
     let group = null;
-    for (const row of c.rows) {
-      if (row.group !== group) { group = row.group; if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
-      const el = control(row, c.rows);
+    c.rows.forEach((row, i) => {
+      if (row.group !== group) { group = row.group; if (group === "optChipLook") kids.push(chipThemesBar()); if (group) kids.push(h("h3", { class: "opt-group" }, t(group))); }
+      const next = c.rows[i + 1];
+      const el = control(row, c.rows, next && next.kind === "text" && next.inline ? next : null);       // (a name beside its switch is drawn on the switch's row)
       if (el) kids.push(el);
-    }
+    });
     if (c.id === "colors") kids.push(h("div", { class: "row" }, colorsResetBtn));
     if (c.id === "semantic") kids.push(keyRow());
     const end = bulkOf(c, ...(c.id === "panel" ? [compactBtn] : []));
@@ -890,12 +971,41 @@
     };
   }
 
+  let editor = null;
   function renderPreview() {
     $("pv-panel").hidden = !prefs.panel.show;
     if (prefs.panel.show) { if (!$("pv-panel").contains(panel.el)) $("pv-panel").append(panel.el); panel.update(panelModel()); }
     $("preview").replaceChildren(...SAMPLES.map(sampleRow));
+    if (editor) editor.refresh();
   }
   renderPreview();
+
+  // The preview is edited from itself as well as from the controls (editor.js): the words it needs from this page
+  const partName = (path) => {
+    const row = SETTING.get(path);
+    if (!row) return path;
+    if (path === "panel.show") return t("optPanelTitle");
+    if (path.endsWith(".show")) return t(cardOf(row.card).title);                                // (a part of the panel: its card's title)
+    if (row.card === "panel") return t(row.label);                                              // (the title bar's parts, the filter bar)
+    return `${t(cardOf(row.card).title)} · ${t(row.label)}`;
+  };
+  // the switches that draw something on the preview and are off: each can be turned on again from the tray (what hangs on a part that is off waits until the part is on)
+  const PART_OF = /^panel\.(table|copy|marks|filters|metrics|years|venues|status|names)\./;
+  const hiddenParts = () => B.prefs.SETTINGS.filter((s) => {
+    if (s.kind !== "bool" || !/^(panel|rows|roles)\./.test(s.path) || at(s.path)) return false;
+    if (s.path === "panel.show") return true;
+    if (!s.path.startsWith("panel.")) return true;
+    if (!at("panel.show")) return false;                                                         // (the panel itself is off: it is what waits)
+    const part = PART_OF.exec(s.path);
+    return !part || s.path.endsWith(".show") || at(`panel.${part[1]}.show`);
+  }).map((s) => ({ path: s.path, name: partName(s.path) }));
+  editor = B.editor.attach({ aside: document.querySelector(".preview"), host: document.querySelector(".preview > .card"), tray: $("pv-tray"), at, put, save, partName, hiddenParts });
+  // from the controls to the preview: the part a setting draws is outlined while the pointer or the keyboard is on the setting
+  const settingOf = (target) => { const row = target.closest && target.closest(".opt, .role-studio-card"); const el = row && row.querySelector("[data-pref]"); return el ? el.dataset.pref : null; };
+  const point = (path) => (path && path.startsWith("labels.") ? editor.highlight(null, path.slice(7)) : editor.highlight(path || null));
+  $("controls").addEventListener("pointerover", (e) => point(settingOf(e.target)));
+  $("controls").addEventListener("focusin", (e) => point(settingOf(e.target)));
+  for (const type of ["pointerleave", "focusout"]) $("controls").addEventListener(type, () => editor.highlight(null));
 
   // (the preview is Scholar's own page, which is always light: it does not follow the system theme, and there is nothing to switch)
   const pvAside = document.querySelector(".preview");
@@ -909,8 +1019,10 @@
   B.store.onPrefsChanged((next) => {
     if (isEcho(next)) return;
     prefs = next;
+    B.dom.setLabels(prefs.labels);
     B.dom.applyColors(prefs.colors);
     B.dom.applyRowStyle(prefs.rows.style);
+    B.dom.applyChips(prefs.chips, prefs.colors);
     renderPreview();
     syncers.forEach((fn) => fn());
   });

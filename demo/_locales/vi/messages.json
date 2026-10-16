@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Lọt chung kết bài báo xuất sắc nhất"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Dựa trên chính lời của tác giả trong tiêu đề và phần venue của từng bài trên Scholar (không kiểm chứng), và danh sách kèm theo các bài đoạt giải tại hội nghị lớn."
   },
@@ -402,7 +393,7 @@
     "message": "Hiện bảng tóm tắt"
   },
   "optPanelShowHint": {
-    "message": "Bảng vai trò × hạng trên trang hồ sơ. Tắt: chỉ đánh dấu danh sách bài báo."
+    "message": "Bảng ở cột bên phải trang hồ sơ. Tắt: chỉ đánh dấu danh sách bài báo."
   },
   "optPanelSummary": {
     "message": "Bảng vai trò × hạng"
@@ -417,7 +408,7 @@
     "message": "Bài đã tải và venue chưa xếp hạng"
   },
   "optPanelStatusHint": {
-    "message": "Số bài đã tải, nút “Tải tất cả” và danh sách bài ở venue chưa xếp hạng."
+    "message": "Số bài đã tải, nút “Tải tất cả”, những gì không đọc được, và danh sách bài báo ở nơi công bố chưa xếp hạng."
   },
   "optPanelNames": {
     "message": "Hỗ trợ cách viết tên"
@@ -438,7 +429,7 @@
     "message": "Bộ lọc"
   },
   "optPanelFiltersHint": {
-    "message": "Chỉ bài được tô nổi và khoảng năm."
+    "message": "Ô tìm kiếm, bộ lọc nhanh, công tắc “Chỉ bài được tô nổi” và khoảng năm."
   },
   "optPanelMetrics": {
     "message": "Tổng trích dẫn"
@@ -926,64 +917,64 @@
     "message": "Đóng"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Nhãn trên mỗi bài báo"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Nhãn nhỏ sau nơi công bố của bài báo: hạng, và giải thưởng hoặc báo cáo."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Thứ tự các phần"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Từ trên xuống dưới. Phần đang tắt vẫn giữ vị trí."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Tên ở trên cùng"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Nút cài đặt"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Nút thu gọn"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Hiện phần này"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Tiêu đề"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Thẻ CCF và các cột"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Thẻ CORE và các cột"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Cột “Chưa xếp hạng”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Tổng (cột và hàng)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Hàng “Khác”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Hàng “Bị ẩn”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Ghi chú về nguồn xếp hạng"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Thứ tự các nút"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Ô tìm kiếm"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Thứ tự bộ lọc nhanh"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Bộ lọc nhanh"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Hơn 100 trích dẫn"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Khoảng năm"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Thanh “Hiển thị N trên tổng M bài”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Dòng nêu các vai trò được tính"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“trên N” cạnh mỗi số"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Năm đầu và năm cuối"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Bài đã tải và Tải tất cả"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Danh sách tác giả bị rút gọn và Đọc danh sách đầy đủ"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Các mục bị lặp"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Bài không có tên bạn"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Bài báo ở nơi công bố chưa xếp hạng"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Các cách viết tìm thấy trong bài của bạn"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Di chuyển lên"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Di chuyển xuống"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Không màu"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Chưa lưu: Chrome giới hạn số lần ghi cài đặt. Hãy đợi một chút rồi thay đổi lại."
+  },
+  "optNameTip": {
+    "message": "Tên riêng của bạn cho mục này, dùng cho mọi ngôn ngữ. Để trống: tên chuẩn."
+  },
+  "optNameOf": {
+    "message": "tên"
+  },
+  "optNameReset": {
+    "message": "Về tên chuẩn"
+  },
+  "optChipLook": {
+    "message": "Kiểu dáng"
+  },
+  "optChipColors": {
+    "message": "Màu sắc"
+  },
+  "optChipStyle": {
+    "message": "Kiểu nhãn"
+  },
+  "optChipOutline": {
+    "message": "Viền"
+  },
+  "optChipSoft": {
+    "message": "Dịu nhẹ"
+  },
+  "optChipSolid": {
+    "message": "Đặc"
+  },
+  "optChipText": {
+    "message": "Chỉ chữ"
+  },
+  "optChipShape": {
+    "message": "Hình dạng nhãn"
+  },
+  "optChipPill": {
+    "message": "Bo tròn"
+  },
+  "optChipSquare": {
+    "message": "Vuông"
+  },
+  "optChipLabel": {
+    "message": "Chữ trên nhãn xếp hạng"
+  },
+  "optChipLabelFull": {
+    "message": "Danh sách và hạng (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Chỉ hạng (A)"
+  },
+  "optChipThemes": {
+    "message": "Kiểu có sẵn"
+  },
+  "optChipThemeLists": {
+    "message": "Màu theo danh sách"
+  },
+  "optChipThemeMono": {
+    "message": "Đơn sắc"
+  },
+  "optPreviewEdit": {
+    "message": "Rê chuột lên một phần để ẩn (✕) hoặc di chuyển (⠿). Nhấp đúp vào tên để đổi tên."
+  },
+  "optHide": {
+    "message": "Ẩn"
+  },
+  "optRename": {
+    "message": "Đổi tên"
+  },
+  "optDragMove": {
+    "message": "Kéo để di chuyển"
+  },
+  "optHiddenTray": {
+    "message": "Bị ẩn: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Hiện lại"
+  },
+  "optRenameHint": {
+    "message": "Enter giữ lại · Esc hủy · để trống: tên chuẩn"
   }
 }

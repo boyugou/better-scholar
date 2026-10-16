@@ -34,9 +34,10 @@
       doc: "The papers or the summary as text, in the format of a copy button.",
       params: {
         format: { type: "choice", values: FORMATS, required: true, doc: "summary: the summary as text · table: the summary table, tab-separated · papers: the papers, tab-separated · apa · bibtex · markdown · json (the `papers` records) · csv (RFC 4180)." },
-        source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only). The other formats ignore it." }
+        source: { type: "choice", values: ["ccf", "core", "none"], doc: "Which ranking summary and table use (default: the one the panel shows; none: by role only). The other formats ignore it." },
+        html: { type: "boolean", doc: "true: for table, papers and apa also return `html`, the same content for a word processor (a real table, real italics): what the copy buttons put on the clipboard next to the text." }
       },
-      result: "{ format, text }"
+      result: "{ format, text, html? } — `html` only when asked for, and only for table, papers and apa."
     },
     filter: {
       doc: "Narrow the list the page shows (the filters of the panel). Only the filters named are changed; null clears a number.",
@@ -87,7 +88,7 @@
   // ---- the guide ------------------------------------------------------------------------------------------------------------------------
   const code = (s) => "`" + s + "`";
   const cell = (s) => String(s).replace(/\|/g, "\\|");
-  const valueOf = (s) => (s.kind === "bool" ? "true / false" : s.kind === "color" ? "\"#rrggbb\" or \"\"" : s.kind === "choice" ? s.values.map((v) => `"${v}"`).join(" / ") : s.kind === "order" ? "list of ids" : `"${s.none}" or a language code`);
+  const valueOf = (s) => (s.kind === "bool" ? "true / false" : s.kind === "color" ? "\"#rrggbb\" or \"\"" : s.kind === "choice" ? s.values.map((v) => `"${v}"`).join(" / ") : s.kind === "order" ? "list of ids" : s.kind === "text" ? `text, at most ${s.max} characters` : `"${s.none}" or a language code`);
   const json = (v) => JSON.stringify(v);
 
   // `current`: the user's settings as the record (the settings page's copy passes them); omitted, the guide is the reference alone (AGENTS.md). `version`: the extension's version.
@@ -95,6 +96,7 @@
     const now = prefs.normalize(current);
     const settings = prefs.SETTINGS.map((s) => `| ${code(s.path)} | ${valueOf(s)} | ${code(json(s.def))} | ${cell(s.doc)} |`);
     const presets = Object.entries(prefs.PRESETS).map(([name, patch]) => `- ${code(name)}: ${code(json(patch))}`);
+    const looks = prefs.CHIP_THEMES.map((th) => `- ${code(th.id)}: ${code(json(th.patch))}`);
     const calls = Object.entries(METHODS).map(([name, m]) => {
       const params = Object.entries(m.params).map(([k, p]) => `  - ${code(k)}${p.required ? " (required)" : ""}: ${p.doc}${p.type === "choice" ? "" : ""}`);
       return [`### ${code(name)}`, m.doc, params.length ? "Parameters:" : "Parameters: none.", ...params, `Result: ${m.result}`].join("\n");
@@ -125,6 +127,7 @@
       "- The copy buttons, the table and the awards counts are also in the toolbar popup, under the same switches.",
       "- What you see is what you search and copy: a rank list (CCF, CORE) or a kind of mark (award, oral, spotlight, highlight) that nothing draws — no chip (`rows.*`), no table tab (`panel.table.ccf`, `panel.table.core`), no count row (`panel.marks.*`) — is also left out of the search and of the exports.",
       "- Colours are `\"#rrggbb\"` only; `\"\"` restores the built-in colour of a role.",
+      "- A name (`labels.<message key>`) is a text of the screen in the user's own words — a title, a column, a button. It replaces the translated text in every language; `\"\"` brings the built-in text back. Names are for the eye: the search operators (`role:first`), the exports and the page calls keep the standard words.",
       "- A language is a code from the list below. Changing `language` reloads the settings page.",
       "- Not settings, so not in the JSON: the Semantic Scholar API key, the spellings of the user's name (kept per profile) and the cache of paper details; the user sets those on the settings page itself.",
       "",
@@ -139,6 +142,10 @@
       "### Presets",
       "Ready-made patches (the settings page has a button for each); a preset changes only the settings it names:",
       ...presets,
+      "",
+      "### Chip looks",
+      "Ready-made looks for the chips (the settings page has a button for each); each names every chip setting, so it replaces the look that was there:",
+      ...looks,
       "",
       ...(current === undefined ? [] : ["### Current settings of this user", "```json", JSON.stringify(now, null, 2), "```", ""]),
       "## Page events",

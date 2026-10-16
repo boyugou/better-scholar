@@ -41,35 +41,64 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 /* (separated by real spaces, with no margin: on a wrapped line the group starts at the text's edge; it wraps as one) */
 .rr-chips { display: inline; white-space: nowrap; word-spacing: 2px; }
 .rr-chip {
-  display: inline-flex; align-items: center; vertical-align: middle; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 6px;
-  border: 1px solid transparent; border-radius: 9px;
+  display: inline-flex; align-items: center; vertical-align: middle; gap: 3px; box-sizing: content-box; height: 16px; margin: -3px 0; padding: 0 var(--look-pad, 6px);
+  border: 1px solid transparent; border-radius: var(--look-radius, 9px);
   font: 600 10.5px/1 Arial, sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: default;
 }
 .rr-chip { word-spacing: normal; }
-.rr-chip .rr-k { font-weight: 500; color: color-mix(in srgb, currentColor 78%, transparent); }
+.rr-chip .rr-k { font-weight: 500; color: color-mix(in srgb, currentColor 78%, transparent); display: var(--look-k, inline); }
 .rr-chip b { font-weight: 700; }
-.rr-chip-t1 { background: #fff; color: #3345a8; border-color: #9aa6e0; }
-.rr-chip-t2 { background: #fff; color: #5361bd; border-color: #c1c8ef; }
-.rr-chip-t3 { background: #fff; color: #69708a; border-color: #d3d7e3; }
-.rr-chip-t4 { background: #fff; color: #727a8f; border-color: #e2e5ec; }
+
+/* The look of the chips (settings → Chips) is a few custom properties, set by a class on <html> (or on any ancestor: the settings page shows each look on its own button, and the
+   nearest one wins). outline is what a chip has until a look is chosen. fill: how much of the chip's colour the rank chip's background has; solid: the share of the solid fill
+   and its text; edge: how much of the outline is drawn; paint: whether there is a background at all. */
+.rr-chips-outline { --look-fill: 0%; --look-solid: 0%; --look-edge: 100%; --look-paint: 100%; --look-fin: 100%; --look-pad: 6px; }
+.rr-chips-soft    { --look-fill: 10%; --look-solid: 0%; --look-edge: 0%; --look-paint: 100%; --look-fin: 100%; --look-pad: 6px; }
+.rr-chips-solid   { --look-fill: 100%; --look-solid: 100%; --look-edge: 0%; --look-paint: 100%; --look-fin: 100%; --look-pad: 6px; }
+.rr-chips-text    { --look-fill: 0%; --look-solid: 0%; --look-edge: 0%; --look-paint: 0%; --look-fin: 0%; --look-pad: 1px; }
+.rr-chips-pill    { --look-radius: 9px; }
+.rr-chips-square  { --look-radius: 3px; }
+.rr-chips-full    { --look-k: inline; }
+.rr-chips-tier    { --look-k: none; }
+
+/* The colours of the chips. Each family has the colours below until a colour is picked (settings → Chips): the settings page and this page then set the custom properties
+   named here on <html> (lib/palette.js makes them from the one colour), and these are only the fallbacks. ink: the text, edge: the outline, fill: the solid look's background,
+   on: the text on that fill. A rank chip is white with an outline; its tiers fade from the strongest (1) to the weakest (4). */
+.rr-chip-rank {
+  background: color-mix(in srgb, color-mix(in srgb, var(--fill) var(--look-fill, 0%), #fff) var(--look-paint, 100%), transparent);
+  color: color-mix(in srgb, var(--on) var(--look-solid, 0%), var(--ink));
+  border-color: color-mix(in srgb, var(--edge) var(--look-edge, 100%), transparent);
+}
+.rr-chip-t1[data-kind="ccf"]  { --ink: var(--rr-ccf-1-ink, #3345a8);  --edge: var(--rr-ccf-1-edge, #9aa6e0);  --fill: var(--rr-ccf-1-fill, #3345a8);  --on: var(--rr-ccf-1-on, #fff); }
+.rr-chip-t2[data-kind="ccf"]  { --ink: var(--rr-ccf-2-ink, #5361bd);  --edge: var(--rr-ccf-2-edge, #c1c8ef);  --fill: var(--rr-ccf-2-fill, #5361bd);  --on: var(--rr-ccf-2-on, #fff); }
+.rr-chip-t3[data-kind="ccf"]  { --ink: var(--rr-ccf-3-ink, #69708a);  --edge: var(--rr-ccf-3-edge, #d3d7e3);  --fill: var(--rr-ccf-3-fill, #69708a);  --on: var(--rr-ccf-3-on, #fff); }
+.rr-chip-t4[data-kind="ccf"]  { --ink: var(--rr-ccf-4-ink, #727a8f);  --edge: var(--rr-ccf-4-edge, #e2e5ec);  --fill: var(--rr-ccf-4-fill, #656c80);  --on: var(--rr-ccf-4-on, #fff); }
+.rr-chip-t1[data-kind="core"] { --ink: var(--rr-core-1-ink, #3345a8); --edge: var(--rr-core-1-edge, #9aa6e0); --fill: var(--rr-core-1-fill, #3345a8); --on: var(--rr-core-1-on, #fff); }
+.rr-chip-t2[data-kind="core"] { --ink: var(--rr-core-2-ink, #5361bd); --edge: var(--rr-core-2-edge, #c1c8ef); --fill: var(--rr-core-2-fill, #5361bd); --on: var(--rr-core-2-on, #fff); }
+.rr-chip-t3[data-kind="core"] { --ink: var(--rr-core-3-ink, #69708a); --edge: var(--rr-core-3-edge, #d3d7e3); --fill: var(--rr-core-3-fill, #69708a); --on: var(--rr-core-3-on, #fff); }
+.rr-chip-t4[data-kind="core"] { --ink: var(--rr-core-4-ink, #727a8f); --edge: var(--rr-core-4-edge, #e2e5ec); --fill: var(--rr-core-4-fill, #656c80); --on: var(--rr-core-4-on, #fff); }
 
 /* awards and talk levels (the panel's Awards & talks rows use the same icons) */
 .rr-chip-mark, #rr-panel .rr-mi {
   --rr-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 .7l1.35 2.95 3.2.35-2.4 2.15.68 3.15L5 7.75 2.17 9.3l.68-3.15L.45 4l3.2-.35z'/%3E%3C/svg%3E");
   --rr-star-o: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1.3l1.15 2.5 2.75.3-2.05 1.85.58 2.7L5 7.2 2.57 8.65l.58-2.7L1.1 4.1l2.75-.3z' fill='none' stroke='black' stroke-width='.9' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
-.rr-chip-mark { background: #eef2f7; color: #3a4a5f; border-color: #d3dbe6; }
+.rr-chip-mark { --mk-bg: var(--rr-talk-bg, #eef2f7); --mk-ink: var(--rr-talk-ink, #3a4a5f); --mk-edge: var(--rr-talk-edge, #d3dbe6); --mk-fill: var(--rr-talk-fill, #5b6b80); --mk-on: var(--rr-talk-on, #fff);
+  background: color-mix(in srgb, color-mix(in srgb, var(--mk-fill) var(--look-solid, 0%), var(--mk-bg)) var(--look-paint, 100%), transparent);
+  color: color-mix(in srgb, var(--mk-on) var(--look-solid, 0%), var(--mk-ink));
+  border-color: color-mix(in srgb, var(--mk-edge) var(--look-edge, 100%), transparent); }
 .rr-chip-mark::before, #rr-panel .rr-mi::before { content: ""; display: block; flex: none; width: 9px; height: 9px; background: currentColor; }
 .rr-chip-mark-oral::before, .rr-chip-mark-spotlight::before, .rr-chip-mark-highlight::before, #rr-panel .rr-mi-talk::before { width: 5px; height: 5px; border-radius: 50%; opacity: .7; }
 .rr-chip-mark-award::before, .rr-chip-mark-finalist::before, #rr-panel .rr-mi-award::before {
   -webkit-mask: var(--rr-star) center / contain no-repeat; mask: var(--rr-star) center / contain no-repeat;
 }
-.rr-chip-mark-award { background: #fff4cf; color: #6b4a00; border-color: #efc84a; }
-.rr-chip-mark-award::before, #rr-panel .rr-mi-award::before { background: #d29a00; }
-.rr-chip-mark-award[data-mark="runner-up"] { background: #f2f4f7; color: #4a5361; border-color: #cdd3dc; }
-.rr-chip-mark-award[data-mark="runner-up"]::before { background: #98a2b3; }
-.rr-chip-mark-finalist { background: transparent; color: #7a6a3a; border: 1px dashed #d8c070; }
-.rr-chip-mark-finalist::before { -webkit-mask-image: var(--rr-star-o); mask-image: var(--rr-star-o); }
+.rr-chip-mark-award { --mk-bg: var(--rr-award-bg, #fff4cf); --mk-ink: var(--rr-award-ink, #6b4a00); --mk-edge: var(--rr-award-edge, #efc84a); --mk-fill: var(--rr-award-fill, #d29a00); --mk-on: var(--rr-award-on, #101216); }
+.rr-chip-mark-award::before { background: color-mix(in srgb, currentColor var(--look-solid, 0%), var(--rr-award-icon, #d29a00)); }
+#rr-panel .rr-mi-award::before { background: var(--rr-award-icon, #d29a00); }
+.rr-chip-mark-award[data-mark="runner-up"] { --mk-bg: #f2f4f7; --mk-ink: #4a5361; --mk-edge: #cdd3dc; --mk-fill: #6b7686; --mk-on: #fff; }
+.rr-chip-mark-award[data-mark="runner-up"]::before { background: color-mix(in srgb, currentColor var(--look-solid, 0%), #98a2b3); }
+.rr-chip-mark-finalist { background: transparent; color: var(--rr-finalist-ink, #7a6a3a); border: 1px dashed color-mix(in srgb, var(--rr-finalist-edge, #d8c070) var(--look-fin, 100%), transparent); }
+.rr-chip-mark-finalist::before { -webkit-mask-image: var(--rr-star-o); mask-image: var(--rr-star-o); background: currentColor; }
 
 .rr-name { font-weight: 700; border-radius: 3px; padding: 0 3px; }
 .rr-name-first   { background: color-mix(in srgb, var(--rr-c-first, #1a73e8) 12%, transparent); color: color-mix(in srgb, var(--rr-c-first, #1a73e8) 62%, black); }

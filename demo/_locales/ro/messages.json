@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalistă la cea mai bună lucrare"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Din cuvintele autorilor înșiși din titlul și textul venue-ului fiecărei lucrări de pe Scholar (neverificate) și dintr-o listă inclusă de lucrări premiate la conferințe importante."
   },
@@ -402,7 +393,7 @@
     "message": "Arată panoul de rezumat"
   },
   "optPanelShowHint": {
-    "message": "Tabelul rol × rang pe pagina profilului. Dezactivat: este marcată doar lista de lucrări."
+    "message": "Panoul din coloana din dreapta a unei pagini de profil. Oprit: se marchează doar lista de lucrări."
   },
   "optPanelSummary": {
     "message": "Tabel rol × rang"
@@ -417,7 +408,7 @@
     "message": "Lucrări încărcate și venue-uri fără rang"
   },
   "optPanelStatusHint": {
-    "message": "Câte lucrări sunt încărcate, butonul „Încarcă tot” și lista lucrărilor de la venue-uri fără rang."
+    "message": "Câte lucrări sunt încărcate, butonul „Încarcă tot”, ce nu a putut fi citit și lista lucrărilor din locuri de publicare fără rang."
   },
   "optPanelNames": {
     "message": "Ajutor pentru grafia numelui"
@@ -438,7 +429,7 @@
     "message": "Filtre"
   },
   "optPanelFiltersHint": {
-    "message": "Doar lucrările evidențiate și un interval de ani."
+    "message": "Câmpul de căutare, filtrele rapide, comutatorul „Doar cele evidențiate” și intervalul de ani."
   },
   "optPanelMetrics": {
     "message": "Totaluri de citări"
@@ -926,64 +917,64 @@
     "message": "Închide"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Etichete la fiecare lucrare"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Etichetele mici de după locul de publicare al unei lucrări: rangul, și premiile sau prezentările."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Ordinea părților"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "De sus în jos. O parte oprită își păstrează locul."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Numele din partea de sus"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Butonul de setări"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Butonul de restrângere"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Afișează această parte"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Titlu"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Fila CCF și coloanele"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Fila CORE și coloanele"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Coloana „Fără rang”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Totaluri (coloană și rând)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Rândul „Altele”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Rândul „Ascuns”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Notă despre originea rangurilor"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Ordinea butoanelor"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Câmpul de căutare"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Ordinea filtrelor rapide"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Filtre rapide"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Peste 100 de citări"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Interval de ani"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Bara „Lucrări afișate: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Rândul cu pozițiile care contează"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "„din N” lângă fiecare număr"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Primul și ultimul an"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Lucrări încărcate și Încarcă tot"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Listele de autori trunchiate și Citește lista completă"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Intrări repetate"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Lucrări fără numele tău"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Lucrări în locuri de publicare fără rang"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Grafii găsite în lucrările tale"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Mută în sus"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Mută în jos"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Fără culoare"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Nesalvat: Chrome limitează cât de des pot fi salvate setările. Așteaptă puțin și modifică din nou."
+  },
+  "optNameTip": {
+    "message": "Propriul tău nume pentru asta, în orice limbă. Gol: numele standard."
+  },
+  "optNameOf": {
+    "message": "nume"
+  },
+  "optNameReset": {
+    "message": "Înapoi la numele standard"
+  },
+  "optChipLook": {
+    "message": "Aspect"
+  },
+  "optChipColors": {
+    "message": "Culori"
+  },
+  "optChipStyle": {
+    "message": "Stilul etichetelor"
+  },
+  "optChipOutline": {
+    "message": "Contur"
+  },
+  "optChipSoft": {
+    "message": "Blând"
+  },
+  "optChipSolid": {
+    "message": "Plin"
+  },
+  "optChipText": {
+    "message": "Doar text"
+  },
+  "optChipShape": {
+    "message": "Forma etichetelor"
+  },
+  "optChipPill": {
+    "message": "Rotunjit"
+  },
+  "optChipSquare": {
+    "message": "Pătrat"
+  },
+  "optChipLabel": {
+    "message": "Textul etichetei de rang"
+  },
+  "optChipLabelFull": {
+    "message": "Lista și nivelul (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Doar nivelul (A)"
+  },
+  "optChipThemes": {
+    "message": "Stiluri predefinite"
+  },
+  "optChipThemeLists": {
+    "message": "Culoare pe fiecare listă"
+  },
+  "optChipThemeMono": {
+    "message": "Monocrom"
+  },
+  "optPreviewEdit": {
+    "message": "Treci cu cursorul peste o parte ca s-o ascunzi (✕) sau s-o muți (⠿). Dă dublu clic pe un nume ca să-l redenumești."
+  },
+  "optHide": {
+    "message": "Ascunde"
+  },
+  "optRename": {
+    "message": "Redenumește"
+  },
+  "optDragMove": {
+    "message": "Trage pentru a muta"
+  },
+  "optHiddenTray": {
+    "message": "Ascunse: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Afișează din nou"
+  },
+  "optRenameHint": {
+    "message": "Enter păstrează · Esc anulează · gol: numele standard"
   }
 }

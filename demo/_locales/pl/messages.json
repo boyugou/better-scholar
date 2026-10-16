@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finalista najlepszej pracy"
   },
-  "mkOral": {
-    "message": "Wystąpienie ustne"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Na podstawie słów samych autorów w tytule i opisie miejsca publikacji każdej pracy w Scholar (niesprawdzanych) oraz wbudowanej listy nagrodzonych prac z dużych konferencji."
   },
@@ -402,7 +393,7 @@
     "message": "Pokaż panel zestawienia"
   },
   "optPanelShowHint": {
-    "message": "Tabela rola × ranking na stronie profilu. Wył.: oznaczana jest tylko lista prac."
+    "message": "Panel w prawej kolumnie strony profilu. Wyłączony: tylko lista prac jest oznaczana."
   },
   "optPanelSummary": {
     "message": "Tabela rola × ranking"
@@ -417,7 +408,7 @@
     "message": "Wczytane prace i miejsca publikacji bez rankingu"
   },
   "optPanelStatusHint": {
-    "message": "Ile prac wczytano, przycisk „Wczytaj wszystko” i lista prac w miejscach publikacji bez rankingu."
+    "message": "Ile prac wczytano, przycisk „Wczytaj wszystko”, czego nie udało się odczytać oraz lista prac w miejscach publikacji bez rankingu."
   },
   "optPanelNames": {
     "message": "Pomoc w pisowni nazwiska"
@@ -438,7 +429,7 @@
     "message": "Filtry"
   },
   "optPanelFiltersHint": {
-    "message": "Tylko wyróżnione prace i zakres lat."
+    "message": "Pole wyszukiwania, szybkie filtry, przełącznik „Tylko wyróżnione” i zakres lat."
   },
   "optPanelMetrics": {
     "message": "Sumy cytowań"
@@ -926,64 +917,64 @@
     "message": "Zamknij"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Etykiety przy każdej pracy"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Małe etykiety za miejscem publikacji: ranking, a także nagrody lub wystąpienia."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Kolejność części"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "Od góry do dołu. Wyłączona część zachowuje swoje miejsce."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Nazwa u góry"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Przycisk ustawień"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Przycisk zwijania"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Pokaż tę część"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Nagłówek"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Zakładka i kolumny CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Zakładka i kolumny CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Kolumna „Bez rankingu”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Sumy (kolumna i wiersz)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Wiersz „Pozostali”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Wiersz „Ukryta”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Uwaga o pochodzeniu rankingów"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Kolejność przycisków"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Pole wyszukiwania"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Kolejność szybkich filtrów"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Szybkie filtry"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Ponad 100 cytowań"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Zakres lat"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Pasek „Wyświetlone prace: N / M”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Wiersz z nazwami pozycji, które się liczą"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "„z N” przy każdej liczbie"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Pierwszy i ostatni rok"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Wczytane prace oraz Wczytaj wszystko"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Skrócone listy autorów oraz Odczytaj pełne listy"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Powtarzające się wpisy"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Prace bez Twojego nazwiska"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Prace w miejscach publikacji bez rankingu"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Pisownie znalezione w Twoich pracach"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Przesuń w górę"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Przesuń w dół"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Bez koloru"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Nie zapisano: Chrome ogranicza, jak często można zapisywać ustawienia. Poczekaj chwilę i zmień ponownie."
+  },
+  "optNameTip": {
+    "message": "Twoja własna nazwa, we wszystkich językach. Puste: nazwa standardowa."
+  },
+  "optNameOf": {
+    "message": "nazwa"
+  },
+  "optNameReset": {
+    "message": "Przywróć standardową nazwę"
+  },
+  "optChipLook": {
+    "message": "Wygląd"
+  },
+  "optChipColors": {
+    "message": "Kolory"
+  },
+  "optChipStyle": {
+    "message": "Styl etykiet"
+  },
+  "optChipOutline": {
+    "message": "Kontur"
+  },
+  "optChipSoft": {
+    "message": "Łagodny"
+  },
+  "optChipSolid": {
+    "message": "Pełny"
+  },
+  "optChipText": {
+    "message": "Sam tekst"
+  },
+  "optChipShape": {
+    "message": "Kształt etykiet"
+  },
+  "optChipPill": {
+    "message": "Zaokrąglony"
+  },
+  "optChipSquare": {
+    "message": "Kwadratowy"
+  },
+  "optChipLabel": {
+    "message": "Tekst etykiety rankingu"
+  },
+  "optChipLabelFull": {
+    "message": "Lista i kategoria (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Tylko kategoria (A)"
+  },
+  "optChipThemes": {
+    "message": "Gotowe style"
+  },
+  "optChipThemeLists": {
+    "message": "Kolor dla każdej listy"
+  },
+  "optChipThemeMono": {
+    "message": "Monochromatyczny"
+  },
+  "optPreviewEdit": {
+    "message": "Najedź kursorem na część, aby ją ukryć (✕) lub przesunąć (⠿). Kliknij dwukrotnie nazwę, aby ją zmienić."
+  },
+  "optHide": {
+    "message": "Ukryj"
+  },
+  "optRename": {
+    "message": "Zmień nazwę"
+  },
+  "optDragMove": {
+    "message": "Przeciągnij, aby przesunąć"
+  },
+  "optHiddenTray": {
+    "message": "Ukryte: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Pokaż ponownie"
+  },
+  "optRenameHint": {
+    "message": "Enter zachowuje · Esc anuluje · puste: nazwa standardowa"
   }
 }

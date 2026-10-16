@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "सर्वश्रेष्ठ पेपर फ़ाइनलिस्ट"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "Scholar पर हर पेपर के शीर्षक और venue टेक्स्ट में लेखकों के अपने शब्दों से (जाँचा नहीं गया), और प्रमुख सम्मेलनों के पुरस्कृत पेपरों की एक बंडल की गई सूची से।"
   },
@@ -402,7 +393,7 @@
     "message": "सारांश पैनल दिखाएँ"
   },
   "optPanelShowHint": {
-    "message": "प्रोफ़ाइल पेज पर भूमिका × रैंक तालिका। बंद होने पर: केवल पेपर सूची चिह्नित होती है।"
+    "message": "प्रोफ़ाइल पेज के दाएँ कॉलम में पैनल। बंद: केवल पेपर सूची पर निशान लगते हैं।"
   },
   "optPanelSummary": {
     "message": "भूमिका × रैंक तालिका"
@@ -417,7 +408,7 @@
     "message": "लोड हुए पेपर और बिना रैंक वाले venue"
   },
   "optPanelStatusHint": {
-    "message": "कितने पेपर लोड हुए, “सभी लोड करें” बटन, और बिना रैंक वाले venue के पेपरों की सूची।"
+    "message": "कितने पेपर लोड हुए हैं, “सभी लोड करें” बटन, क्या नहीं पढ़ा जा सका, और बिना रैंक वाले venue के पेपरों की सूची।"
   },
   "optPanelNames": {
     "message": "नाम वर्तनी सहायता"
@@ -438,7 +429,7 @@
     "message": "फ़िल्टर"
   },
   "optPanelFiltersHint": {
-    "message": "केवल हाइलाइट किए गए पेपर, और वर्ष सीमा।"
+    "message": "खोज बॉक्स, त्वरित फ़िल्टर, “केवल हाइलाइट किए गए” स्विच और वर्ष सीमा।"
   },
   "optPanelMetrics": {
     "message": "उद्धरण कुल"
@@ -932,64 +923,64 @@
     "message": "बंद करें"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "हर पेपर पर टैग"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "किसी पेपर के venue के बाद के छोटे टैग: उसकी रैंक, और पुरस्कार या टॉक।"
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "भागों का क्रम"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "ऊपर से नीचे। बंद किया गया भाग अपनी जगह बनाए रखता है।"
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "ऊपर का नाम"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "सेटिंग्स बटन"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "समेटने का बटन"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "यह भाग दिखाएँ"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "शीर्षक"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "CCF टैब और कॉलम"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "CORE टैब और कॉलम"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "“बिना रैंक” कॉलम"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "कुल (कॉलम और पंक्ति)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "“अन्य” पंक्ति"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "“छिपा” पंक्ति"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "यह नोट कि रैंक कहाँ से आते हैं"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "बटनों का क्रम"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "खोज बॉक्स"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "त्वरित फ़िल्टर का क्रम"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "त्वरित फ़िल्टर"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -998,51 +989,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "100 से अधिक उद्धरण"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "वर्ष सीमा"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "“दिखाए गए पेपर: N / M” पट्टी"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "वह पंक्ति जो गिने जाने वाले स्थान बताती है"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "हर संख्या के साथ “N में से”"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "पहला और आखिरी वर्ष"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "लोड हुए पेपर, और “सभी लोड करें”"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "कटी हुई लेखक सूचियाँ, और “पूरी सूचियाँ पढ़ें”"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "दोहराई गई प्रविष्टियाँ"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "आपके नाम के बिना पेपर"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "बिना रैंक वाले venue के पेपर"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "आपके पेपर में मिली नाम की वर्तनियाँ"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "ऊपर ले जाएँ"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "नीचे ले जाएँ"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "कोई रंग नहीं"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "सहेजा नहीं गया: Chrome सेटिंग्स लिखने की दर सीमित करता है। थोड़ी देर रुकें और फिर से कोशिश करें।"
+  },
+  "optNameTip": {
+    "message": "इसके लिए आपका अपना नाम, सभी भाषाओं में। खाली: मानक नाम।"
+  },
+  "optNameOf": {
+    "message": "नाम"
+  },
+  "optNameReset": {
+    "message": "मानक नाम पर लौटें"
+  },
+  "optChipLook": {
+    "message": "रूप"
+  },
+  "optChipColors": {
+    "message": "रंग"
+  },
+  "optChipStyle": {
+    "message": "टैग की शैली"
+  },
+  "optChipOutline": {
+    "message": "रूपरेखा"
+  },
+  "optChipSoft": {
+    "message": "हल्का"
+  },
+  "optChipSolid": {
+    "message": "भरा हुआ"
+  },
+  "optChipText": {
+    "message": "केवल टेक्स्ट"
+  },
+  "optChipShape": {
+    "message": "टैग का आकार"
+  },
+  "optChipPill": {
+    "message": "गोल"
+  },
+  "optChipSquare": {
+    "message": "चौकोर"
+  },
+  "optChipLabel": {
+    "message": "रैंक टैग का टेक्स्ट"
+  },
+  "optChipLabelFull": {
+    "message": "सूची और स्तर (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "केवल स्तर (A)"
+  },
+  "optChipThemes": {
+    "message": "तैयार रूप"
+  },
+  "optChipThemeLists": {
+    "message": "हर सूची का अलग रंग"
+  },
+  "optChipThemeMono": {
+    "message": "एकरंगा"
+  },
+  "optPreviewEdit": {
+    "message": "किसी भाग पर होवर करके उसे छिपाएँ (✕) या खिसकाएँ (⠿)। किसी नाम पर डबल-क्लिक करके उसका नाम बदलें।"
+  },
+  "optHide": {
+    "message": "छिपाएँ"
+  },
+  "optRename": {
+    "message": "नाम बदलें"
+  },
+  "optDragMove": {
+    "message": "खींचकर खिसकाएँ"
+  },
+  "optHiddenTray": {
+    "message": "छिपे हुए: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "फिर से दिखाएँ"
+  },
+  "optRenameHint": {
+    "message": "Enter सहेजता है · Esc रद्द करता है · खाली: मानक नाम"
   }
 }

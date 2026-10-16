@@ -1,0 +1,16 @@
+# Better Scholar
+
+> A free, open-source Chrome extension for Google Scholar profile pages. It works out the profile owner's authorship role in each paper (first, co-first, second, last), matches each venue against the CCF (2026, 7th edition) and CORE (ICORE 2026) lists, marks award-winning papers and Oral / Spotlight / Highlight talks, and sums it up in a panel: a role x rank table, citation totals, papers per year, a search box with operators, and copy / export buttons. It runs in the browser and has no analytics.
+
+Better Scholar can be set up and read by an AI assistant: the agent guide lists every setting with its path and allowed values, the page calls (events on the Scholar page) and the search syntax.
+
+## For agents
+
+- [Agent guide](https://github.com/boyugou/better-scholar/blob/main/AGENTS.md): every setting, the page calls, the search syntax, the rules (generated from the code)
+- [README](https://github.com/boyugou/better-scholar/blob/main/README.md): features, search operators, copy and export formats
+- [Privacy policy](https://boyugou.github.io/better-scholar/privacy/): what is stored, what is sent (Scholar's own pages; Semantic Scholar only if switched on)
+
+## Try it
+
+- [The real settings page, running in the browser](https://boyugou.github.io/better-scholar/demo/): change a setting and the preview changes; nothing leaves the browser
+- [Source code and install steps](https://github.com/boyugou/better-scholar)

@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "เข้ารอบ Best paper"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "จากคำที่ผู้เขียนเขียนเองในชื่อเรื่องและข้อความ venue ของแต่ละงานบน Scholar (ไม่ได้ตรวจสอบ) และจากรายชื่องานที่ได้รับรางวัลในการประชุมสำคัญที่มาพร้อมส่วนขยาย"
   },
@@ -402,7 +393,7 @@
     "message": "แสดงแผงสรุป"
   },
   "optPanelShowHint": {
-    "message": "ตารางบทบาท × อันดับบนหน้าโปรไฟล์ เมื่อปิด: จะทำเครื่องหมายเฉพาะรายการงานวิจัย"
+    "message": "แผงในคอลัมน์ด้านขวาของหน้าโปรไฟล์ ปิด: ทำเครื่องหมายเฉพาะรายการงานวิจัย"
   },
   "optPanelSummary": {
     "message": "ตารางบทบาท × อันดับ"
@@ -417,7 +408,7 @@
     "message": "งานที่โหลดแล้วและ venue ที่ไม่มีอันดับ"
   },
   "optPanelStatusHint": {
-    "message": "จำนวนงานที่โหลดแล้ว ปุ่ม “โหลดทั้งหมด” และรายการงานใน venue ที่ไม่มีอันดับ"
+    "message": "จำนวนงานวิจัยที่โหลดแล้ว ปุ่ม “โหลดทั้งหมด” สิ่งที่อ่านไม่ได้ และรายการงานวิจัยในแหล่งตีพิมพ์ที่ไม่มีอันดับ"
   },
   "optPanelNames": {
     "message": "ตัวช่วยตัวสะกดชื่อ"
@@ -438,7 +429,7 @@
     "message": "ตัวกรอง"
   },
   "optPanelFiltersHint": {
-    "message": "เฉพาะงานที่ไฮไลต์ และช่วงปี"
+    "message": "ช่องค้นหา ตัวกรองด่วน สวิตช์ “เฉพาะที่ไฮไลต์” และช่วงปี"
   },
   "optPanelMetrics": {
     "message": "ยอดอ้างอิง"
@@ -926,64 +917,64 @@
     "message": "ปิด"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "ป้ายกำกับบนแต่ละงานวิจัย"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "ป้ายเล็ก ๆ ที่อยู่หลังแหล่งตีพิมพ์ของงานวิจัย: อันดับ และรางวัลหรือการนำเสนอ"
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "ลำดับของแต่ละส่วน"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "จากบนลงล่าง ส่วนที่ปิดอยู่จะยังคงตำแหน่งเดิม"
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "ชื่อด้านบน"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "ปุ่มการตั้งค่า"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "ปุ่มย่อ"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "แสดงส่วนนี้"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "หัวข้อ"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "แท็บและคอลัมน์ CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "แท็บและคอลัมน์ CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "คอลัมน์ “ไม่มีอันดับ”"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "ผลรวม (คอลัมน์และแถว)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "แถว “อื่น ๆ”"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "แถว “ซ่อนอยู่”"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "หมายเหตุว่าอันดับมาจากไหน"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "ลำดับของปุ่ม"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "ช่องค้นหา"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "ลำดับของตัวกรองด่วน"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "ตัวกรองด่วน"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -992,51 +983,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "มากกว่า 100 การอ้างอิง"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "ช่วงปี"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "แถบ “แสดง N จาก M เรื่อง”"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "บรรทัดที่ระบุบทบาทที่นับ"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "“จาก N” ข้างตัวเลขแต่ละตัว"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "ปีแรกและปีสุดท้าย"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "งานวิจัยที่โหลดแล้ว และโหลดทั้งหมด"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "รายชื่อผู้เขียนที่ถูกตัด และอ่านรายชื่อฉบับเต็ม"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "รายการที่ซ้ำ"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "งานวิจัยที่ไม่มีชื่อของคุณ"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "งานวิจัยในแหล่งตีพิมพ์ที่ไม่มีอันดับ"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "ตัวสะกดที่พบในงานวิจัยของคุณ"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "เลื่อนขึ้น"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "เลื่อนลง"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "ไม่มีสี"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "ยังไม่ได้บันทึก: Chrome จำกัดความถี่ในการบันทึกการตั้งค่า รอสักครู่แล้วลองเปลี่ยนอีกครั้ง"
+  },
+  "optNameTip": {
+    "message": "ชื่อของคุณเองสำหรับส่วนนี้ ใช้ได้ในทุกภาษา ว่าง: ใช้ชื่อมาตรฐาน"
+  },
+  "optNameOf": {
+    "message": "ชื่อ"
+  },
+  "optNameReset": {
+    "message": "กลับเป็นชื่อมาตรฐาน"
+  },
+  "optChipLook": {
+    "message": "รูปแบบ"
+  },
+  "optChipColors": {
+    "message": "สี"
+  },
+  "optChipStyle": {
+    "message": "รูปแบบป้าย"
+  },
+  "optChipOutline": {
+    "message": "เส้นขอบ"
+  },
+  "optChipSoft": {
+    "message": "นุ่มนวล"
+  },
+  "optChipSolid": {
+    "message": "ทึบ"
+  },
+  "optChipText": {
+    "message": "เฉพาะข้อความ"
+  },
+  "optChipShape": {
+    "message": "รูปทรงป้าย"
+  },
+  "optChipPill": {
+    "message": "มุมโค้ง"
+  },
+  "optChipSquare": {
+    "message": "มุมฉาก"
+  },
+  "optChipLabel": {
+    "message": "ข้อความบนป้ายอันดับ"
+  },
+  "optChipLabelFull": {
+    "message": "รายการและระดับ (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "เฉพาะระดับ (A)"
+  },
+  "optChipThemes": {
+    "message": "รูปแบบสำเร็จรูป"
+  },
+  "optChipThemeLists": {
+    "message": "สีแยกตามรายการ"
+  },
+  "optChipThemeMono": {
+    "message": "สีเดียว"
+  },
+  "optPreviewEdit": {
+    "message": "เลื่อนเมาส์ไปที่ส่วนเพื่อซ่อน (✕) หรือย้าย (⠿) ดับเบิลคลิกชื่อเพื่อเปลี่ยนชื่อ"
+  },
+  "optHide": {
+    "message": "ซ่อน"
+  },
+  "optRename": {
+    "message": "เปลี่ยนชื่อ"
+  },
+  "optDragMove": {
+    "message": "ลากเพื่อย้าย"
+  },
+  "optHiddenTray": {
+    "message": "ซ่อนอยู่: $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "แสดงอีกครั้ง"
+  },
+  "optRenameHint": {
+    "message": "Enter เก็บไว้ · Esc ยกเลิก · ว่าง: ชื่อมาตรฐาน"
   }
 }

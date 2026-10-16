@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="demo.css">
   <link rel="preload" as="script" href="lib/i18n.js">
   <link rel="preload" as="script" href="lib/prefs.js">
+  <link rel="preload" as="script" href="lib/palette.js">
   <link rel="preload" as="script" href="lib/query.js">
   <link rel="preload" as="script" href="lib/agent.js">
   <link rel="preload" as="script" href="lib/marks.js">
@@ -21,6 +22,7 @@
   <link rel="preload" as="script" href="content/chips.js">
   <link rel="preload" as="script" href="content/panel.js">
   <link rel="preload" as="script" href="content/store.js">
+  <link rel="preload" as="script" href="options/editor.js">
   <link rel="preload" as="script" href="options/options.js">
 </head>
 <body>
@@ -40,6 +42,8 @@
           </div>
           <table class="pv"><tbody id="preview"></tbody></table>
           <p class="desc" id="pv-note"></p>
+          <p class="desc pv-edit-hint" id="pv-hint"></p>
+          <div id="pv-tray"></div>
           <div id="pv-panel"></div>
         </section>
       </aside>
@@ -48,6 +52,6 @@
       </footer>
     </div>
   </div>
-  <script src="demo-shim.js" data-version="2.39.2" data-scripts="lib/i18n.js lib/prefs.js lib/query.js lib/agent.js lib/marks.js lib/metrics.js content/dom.js content/chips.js content/panel.js content/store.js options/options.js"></script>
+  <script src="demo-shim.js" data-version="2.41.0" data-scripts="lib/i18n.js lib/prefs.js lib/palette.js lib/query.js lib/agent.js lib/marks.js lib/metrics.js content/dom.js content/chips.js content/panel.js content/store.js options/editor.js options/options.js"></script>
 </body>
 </html>

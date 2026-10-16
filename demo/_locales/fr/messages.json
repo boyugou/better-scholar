@@ -50,15 +50,6 @@
   "mkFinalist": {
     "message": "Finaliste du meilleur article"
   },
-  "mkOral": {
-    "message": "Oral"
-  },
-  "mkSpotlight": {
-    "message": "Spotlight"
-  },
-  "mkHighlight": {
-    "message": "Highlight"
-  },
   "marksHint": {
     "message": "D’après ce que les auteurs écrivent eux-mêmes dans le titre et les informations de publication de chaque article sur Scholar (non vérifié), et d’après une liste intégrée d’articles primés dans les grandes conférences."
   },
@@ -417,7 +408,7 @@
     "message": "Afficher le panneau récapitulatif"
   },
   "optPanelShowHint": {
-    "message": "Le tableau rôle × rang sur la page de profil. Désactivé : seule la liste des articles est annotée."
+    "message": "Le panneau de la colonne de droite d’une page de profil. Désactivé : seule la liste des articles est signalée."
   },
   "optPanelSummary": {
     "message": "Tableau rôle × rang"
@@ -432,7 +423,7 @@
     "message": "Articles chargés et conférences ou revues sans rang"
   },
   "optPanelStatusHint": {
-    "message": "Le nombre d’articles chargés, le bouton « Tout charger » et la liste des articles dans des conférences ou revues sans rang."
+    "message": "Le nombre d’articles chargés, le bouton « Tout charger », ce qui n’a pas pu être lu et la liste des articles dans des conférences ou revues sans rang."
   },
   "optPanelNames": {
     "message": "Aide pour la graphie du nom"
@@ -453,7 +444,7 @@
     "message": "Filtres"
   },
   "optPanelFiltersHint": {
-    "message": "Seulement les articles mis en évidence, et une période."
+    "message": "Le champ de recherche, les filtres rapides, l’interrupteur « Mis en évidence seulement » et la plage d’années."
   },
   "optPanelMetrics": {
     "message": "Totaux de citations"
@@ -947,64 +938,64 @@
     "message": "Fermer"
   },
   "optChipsTitle": {
-    "message": "Chips on each paper"
+    "message": "Pastilles sur chaque article"
   },
   "optChipsHint": {
-    "message": "The small labels after a paper's venue: its ranks, and awards or talks."
+    "message": "Les petites pastilles après la conférence ou la revue d’un article : ses rangs, ainsi que les prix ou les présentations."
   },
   "optPanelOrder": {
-    "message": "Order of the parts"
+    "message": "Ordre des parties"
   },
   "optPanelOrderHint": {
-    "message": "From top to bottom. A part that is switched off keeps its place."
+    "message": "De haut en bas. Une partie désactivée garde sa place."
   },
   "optHeadName": {
-    "message": "Name at the top"
+    "message": "Nom en haut"
   },
   "optHeadSettings": {
-    "message": "Settings button"
+    "message": "Bouton Réglages"
   },
   "optHeadFold": {
-    "message": "Fold button"
+    "message": "Bouton Replier"
   },
   "optShowSection": {
-    "message": "Show this part"
+    "message": "Afficher cette partie"
   },
   "optPartTitle": {
-    "message": "Title"
+    "message": "Titre"
   },
   "optTableCcf": {
-    "message": "CCF tab and columns"
+    "message": "Onglet et colonnes CCF"
   },
   "optTableCore": {
-    "message": "CORE tab and columns"
+    "message": "Onglet et colonnes CORE"
   },
   "optTableUnranked": {
-    "message": "“Not ranked” column"
+    "message": "Colonne « Sans rang »"
   },
   "optTableTotal": {
-    "message": "Totals (column and row)"
+    "message": "Totaux (colonne et ligne)"
   },
   "optTableOther": {
-    "message": "“Other” row"
+    "message": "Ligne « Autres »"
   },
   "optTableHidden": {
-    "message": "“Hidden” row"
+    "message": "Ligne « Masqué »"
   },
   "optTableNote": {
-    "message": "Note on where the ranks come from"
+    "message": "Note sur l’origine des rangs"
   },
   "optOrderButtons": {
-    "message": "Order of the buttons"
+    "message": "Ordre des boutons"
   },
   "optFiltersSearch": {
-    "message": "Search box"
+    "message": "Champ de recherche"
   },
   "optOrderPills": {
-    "message": "Order of the quick filters"
+    "message": "Ordre des filtres rapides"
   },
   "optFiltersQuick": {
-    "message": "Quick filters"
+    "message": "Filtres rapides"
   },
   "optPillCcfA": {
     "message": "CCF A"
@@ -1013,51 +1004,134 @@
     "message": "CORE A*"
   },
   "optPillCites": {
-    "message": "More than 100 citations"
+    "message": "Plus de 100 citations"
   },
   "optFiltersYears": {
-    "message": "Year range"
+    "message": "Plage d’années"
   },
   "optFiltersBar": {
-    "message": "“Showing N of M” bar"
+    "message": "Barre « Articles affichés : N / M »"
   },
   "optMetricsScope": {
-    "message": "Line naming the positions that count"
+    "message": "Ligne qui nomme les positions comptées"
   },
   "optMetricsOf": {
-    "message": "“of N” beside each number"
+    "message": "« sur N » après chaque nombre"
   },
   "optYearsAxis": {
-    "message": "First and last year"
+    "message": "Première et dernière année"
   },
   "optStatusLoaded": {
-    "message": "Papers loaded, and Load all"
+    "message": "Articles chargés et « Tout charger »"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Listes d’auteurs tronquées et « Lire la liste complète »"
   },
   "optStatusRepeats": {
-    "message": "Repeated entries"
+    "message": "Entrées en double"
   },
   "optStatusAbsent": {
-    "message": "Papers without your name"
+    "message": "Articles sans votre nom"
   },
   "optStatusUnranked": {
-    "message": "Papers at unranked venues"
+    "message": "Articles dans des conférences ou revues sans rang"
   },
   "optNamesHints": {
-    "message": "Spellings found in your papers"
+    "message": "Graphies relevées dans vos articles"
   },
   "optMoveUp": {
-    "message": "Move up"
+    "message": "Monter"
   },
   "optMoveDown": {
-    "message": "Move down"
+    "message": "Descendre"
   },
   "optRowStyleNone": {
-    "message": "No colour"
+    "message": "Aucune couleur"
   },
   "optSaveFailed": {
-    "message": "Not saved: Chrome limits how often settings can be written. Wait a moment and change it again."
+    "message": "Non enregistré : Chrome limite la fréquence à laquelle les réglages peuvent être enregistrés. Patientez un instant, puis réessayez."
+  },
+  "optNameTip": {
+    "message": "Votre propre nom pour cela, dans toutes les langues. Vide : le nom standard."
+  },
+  "optNameOf": {
+    "message": "nom"
+  },
+  "optNameReset": {
+    "message": "Revenir au nom standard"
+  },
+  "optChipLook": {
+    "message": "Apparence"
+  },
+  "optChipColors": {
+    "message": "Couleurs"
+  },
+  "optChipStyle": {
+    "message": "Style des pastilles"
+  },
+  "optChipOutline": {
+    "message": "Contour"
+  },
+  "optChipSoft": {
+    "message": "Léger"
+  },
+  "optChipSolid": {
+    "message": "Plein"
+  },
+  "optChipText": {
+    "message": "Texte seul"
+  },
+  "optChipShape": {
+    "message": "Forme des pastilles"
+  },
+  "optChipPill": {
+    "message": "Arrondies"
+  },
+  "optChipSquare": {
+    "message": "Carrées"
+  },
+  "optChipLabel": {
+    "message": "Texte des pastilles de rang"
+  },
+  "optChipLabelFull": {
+    "message": "Liste et niveau (CCF A)"
+  },
+  "optChipLabelTier": {
+    "message": "Niveau seul (A)"
+  },
+  "optChipThemes": {
+    "message": "Modèles"
+  },
+  "optChipThemeLists": {
+    "message": "Une couleur par liste"
+  },
+  "optChipThemeMono": {
+    "message": "Unicolore"
+  },
+  "optPreviewEdit": {
+    "message": "Survolez une partie pour la masquer (✕) ou la déplacer (⠿). Double-cliquez sur un nom pour le renommer."
+  },
+  "optHide": {
+    "message": "Masquer"
+  },
+  "optRename": {
+    "message": "Renommer"
+  },
+  "optDragMove": {
+    "message": "Glisser pour déplacer"
+  },
+  "optHiddenTray": {
+    "message": "Masquées : $N1$",
+    "placeholders": {
+      "n1": {
+        "content": "$1"
+      }
+    }
+  },
+  "optShowAgain": {
+    "message": "Afficher à nouveau"
+  },
+  "optRenameHint": {
+    "message": "Entrée valide · Échap annule · vide : le nom standard"
   }
 }
