@@ -168,6 +168,10 @@
     { core: "ITiCSE", names: ["ACM SIGCSE Conference on Innovation and Technology in Computer Science Education", "SIGCSE Conference on Innovation and Technology in Computer Science Education", "International Conference on Innovation and Technology in Computer Science Education"] },
     // LPAR's current name (CORE lists the older "Logic Programming and Automated Reasoning"); ACII's (CORE's name stops at "Intelligent"); ISoLA's, which Scholar prints without its subtitle
     { core: "LPAR", names: ["International Conference on Logic for Programming, Artificial Intelligence and Reasoning"] },
+    // (the joint event of the Web Intelligence conference and the Intelligent Agent Technology conference: CORE's WI, "previously joint with" it)
+    { core: "WI", names: ["IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "Web Intelligence and Intelligent Agent Technology"] },
+    // (the 2000 volume title)
+    { core: "EKAW", names: ["Knowledge Engineering and Knowledge Management Methods, Models, and Tools"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development
@@ -352,6 +356,9 @@
     { ccf: "GMOD", kind: "J", names: ["Graphical Models and Image Processing", "CVGIP: Graphical Models and Image Processing"] },
     { ccf: "TR", kind: "J", names: ["IEEE Transactions on Robotics and Automation", "IEEE Trans. Robotics and Automation"] },
     { ccf: "FCS", kind: "J", names: ["Frontiers of Computer Science in China"] },
+    // the parts of the IEEE's Systems, Man and Cybernetics journal (until 2012): Part A is today's Systems, Part B today's Cybernetics (Part B (Cybernetics), with the subtitle in a parenthesis, says too little)
+    { ccf: "TSMC", kind: "J", names: ["IEEE Transactions on Systems, Man, and Cybernetics, Part A: Systems and Humans"] },
+    { ccf: "IEEE Transactions on Cybernetics", kind: "J", names: ["IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics"] },
     { ccf: "TCASI", kind: "J", names: ["IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications"] },          // (until 2003; "Regular Papers" since)
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },

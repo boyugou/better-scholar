@@ -127,7 +127,7 @@
 
   // (the whole word: "Marketing" and "Decision" are not months — "Journal of Marketing" was read as "Journal of" and then as the Journal of the ACM)
   const MONTH = "(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
-  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|[a-z]{2,6}\\d{3,7})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp." and the article numbers of Oxford's journals: "btac817", "bbab315")
+  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|[a-z]{2,6}\\d{3,7}|(?:i{2,3}|iv|vi{0,3}|ix|xi{0,3}|xiv|xv|xvi{0,3}|xix|xx|xxi{0,3}))(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp.", the article numbers of Oxford's journals — "btac817", "bbab315" — and the Roman page numbers of the front matter: "vi")
 
   // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
   // "Datasets; Benchmarks" spellings) is not part of the venue's identity, so it is dropped before matching. Whether the
@@ -215,7 +215,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings))\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -966,10 +966,24 @@
     // R5: the string is a known name plus a subtitle ("…: Human Language Technologies")
     if (R.length >= 4) {
       const found = [];
+      // where the visible words of the known name end, in the text: what follows must be a subtitle — set off by a colon, a dash, a comma, a full stop or a parenthesis — and not words that
+      // go on with the name ("… Interactive Techniques in Australasia and South East Asia" is GRAPHITE, "… Information Retrieval in the Asia Pacific Region" is SIGIR-AP, "Data Mining and
+      // Knowledge Discovery Handbook" is a book: a longer name of another event, not a subtitle of this one)
+      const setOff = (tokens) => {
+        const text = fold(p.plain);
+        let k = 0;
+        for (const m of text.matchAll(/[A-Za-z0-9]+/g)) {
+          const tok = canonTokens(m[0], "full");
+          if (!tok.length) continue;
+          if (tok[0] !== tokens[k]) return false;
+          if (++k === tokens.length) return /^\s*(?:[:;,.–—(/-]|$)/.test(text.slice(m.index + m[0].length));
+        }
+        return false;
+      };
       for (const side of sides) {
         for (const { entry, form } of side.first.full.get(R[0]) || []) {
           const t = form.full;
-          if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w)) found.push({ e: entry, len: t.length });
+          if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w) && setOff(t)) found.push({ e: entry, len: t.length });
         }
       }
       if (found.length) {

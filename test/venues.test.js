@@ -1545,6 +1545,23 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("ICTIR 2019: ACM SIGIR International Conference on Theory of Information Retrieval, 2019");
   eq("Proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval, 2019", "CCF A SIGIR · CORE A* SIGIR");
   eq("Proceedings of 1993 IEEE International Conference on Computer Design ICCD'93 …, 1993", "CCF B ICCD · CORE C ICCD");
+  // a known name followed by words that go on with it is another event's name, not the venue with a subtitle (rule R5: a subtitle is set off by a colon, a dash, a comma, a full stop, a slash or a parenthesis)
+  none("International Conference on Computer Graphics and Interactive Techniques in Australasia and South East Asia (GRAPHITE)");
+  none("Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region");
+  none("Data mining and knowledge discovery handbook, 1049-1077, 2010");
+  eq("FINANCIAL CRYPTOGRAPHY AND DATA SECURITY, FC 2018 10957, 19, 2018", "CCF C FC · CORE A FC");
+  eq("IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - ", "CCF A CVPR · CORE A* CVPR");
+  // a supplemental volume is no main proceedings; the Roman page numbers of the front matter are no part of the name
+  none("IEEE/IFIP International Conference on Dependable Systems and Networks - Supplemental Volume (DSN-S)");
+  eq("IEEE transactions on visualization and computer graphics 20 (4), vi, 2014", "CCF A TVCG");
+  eq("Proceedings-Real-Time Systems Symposium 2016, ix, 2016", "CCF A RTSS · CORE A RTSS");
+  // the parts of the IEEE's Systems, Man and Cybernetics journal: Part A is today's Systems, Part B today's Cybernetics
+  eq("IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and …, 2004", "CCF B TSMC");
+  eq("IEEE Trans. Systems, Man, and Cybernetics, Part B: Cybernetics 35 (6), 1098-1107, 2005", "CCF B IEEE Transactions on Cybernetics");
+  none("IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics) 40 …, 2009");
+  // the joint Web Intelligence / Intelligent Agent Technology event is WI's; the 2000 volume title is EKAW's
+  eq("IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "CORE B WI");
+  eq("Knowledge Engineering and Knowledge Management Methods, Models, and Tools, 1-16, 2000", "CORE B EKAW");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });
