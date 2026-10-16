@@ -656,7 +656,14 @@
         const others = canonTokens(p.plain, "noOrg", idx.known).filter((w) => w !== key && w !== stripDigits(key));
         return others.length >= 2 && !others.some((w) => vocabOf(d).has(w));
       })();
-      if (d && d !== "ambiguous" && !nameIsAnotherVenues && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d)) && !(kind !== "paren" && parenContradicts(d))) return { entry: d, rule: "acronym" };
+      // (an acronym in front of a name that says what the event is about — "ITS '14: ACM International Conference on Interactive Tabletops and Surfaces" — is that venue's only if its
+      // own words are among them: not CORE's ITS, the Intelligent Tutoring Systems; a theme or a note after the name — "DiGRA 2007 Conference: Situated Play" — is no name)
+      const subjectIsAnotherVenues = kind === "lead" && d && d !== "ambiguous" && (() => {
+        const m = /\b(?:conference|symposium|symposia|workshop|congress|colloquium|meeting)\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(]+)/i.exec(p.plain);
+        const subject = m ? canonTokens(m[1], "noOrg", idx.known).filter((w) => w !== key && w !== stripDigits(key)) : [];
+        return subject.length >= 2 && !subject.some((w) => vocabOf(d).has(w));
+      })();
+      if (d && d !== "ambiguous" && !nameIsAnotherVenues && !subjectIsAnotherVenues && !(kind === "paren" && key.length <= 3 && !ownWordsOnly(d)) && !(kind !== "paren" && parenContradicts(d))) return { entry: d, rule: "acronym" };
     }
     // Acronym buried in a sentence: only when little else is said ("… SIGCOMM 2008 conference on
     // Data communication"), and never for journals — otherwise "NIPS-2010 deep learning and

@@ -1100,7 +1100,11 @@ test("the acronym a string opens with decides between venues whose names boil do
   // is not IJCAI's), and ACM's journal-first title with the track in its parenthesis ("(ISSTA)" is ISSTA, no longer ICSE; "(FSE)" is the Foundations of Software Engineering, not Fast Software Encryption)
   for (const [s, want] of [["AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023", "CCF A AAAI · CORE A* AAAI"], ["Proceedings of the 22th Conference on Artificial Intelligence (AAAI-07), 2007", "CCF A AAAI · CORE A* AAAI"],
     ["Proceedings of the ACM on Software Engineering 2 (ISSTA), 1009-1030, 2025", "CCF A ISSTA"], ["Proceedings of the ACM on Software Engineering 1 (FSE), 338-358, 2024", "CCF A FSE"],
-    ["2025 USENIX Annual Technical Conference (ATC'25), 2025", "CCF A ACM SIGOPS ATC · CORE A USENIX"], ["COLING-02: Machine Translation in Asia, 2002", ""], ["DS-30: Proceedings of DESIGN 2002", ""]]) assert.equal(brief(s), want, s);
+    ["2025 USENIX Annual Technical Conference (ATC'25), 2025", "CCF A ACM SIGOPS ATC · CORE A USENIX"], ["COLING-02: Machine Translation in Asia, 2002", ""], ["DS-30: Proceedings of DESIGN 2002", ""],
+    // an acronym in front of a name that says what the event is about, in words that are not the venue's ("ITS" is CORE's Intelligent Tutoring Systems; this is ACM's Interactive Tabletops and Surfaces)
+    ["ITS '14: ACM International Conference on Interactive Tabletops and Surfaces, 2014", ""], ["ITS 2014: International Conference on Intelligent Tutoring Systems, 2014", "CORE B ITS"],
+    // ... while a theme or a note after the name is no name
+    ["Proceedings of DiGRA 2007 Conference: Situated Play, 2007", "CORE C DIGRA"], ["ACM SIGGRAPH 2022 Conference Proceedings, Article No.: 11, Pages 1–10, 2022", "CCF A SIGGRAPH · CORE A* SIGGRAPH"]]) assert.equal(brief(s), want, s);
   // a journal and a conference that are called the same ("Computational Visual Media"): the acronym in the parenthesis names the conference; the bare name is the journal's, as before
   assert.equal(brief("Computational Visual Media (CVM), 2019"), "CCF C CVM");
   assert.equal(brief("Computational Visual Media 5 (2), 123-145, 2019"), "CCF B CVMJ");
