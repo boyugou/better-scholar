@@ -1299,6 +1299,8 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       assert.ok(!/Showing/.test(everyone.result.text), "the page call counts every paper");
       assert.ok((await pageCall("export", { format: "table", filtered: true })).result.text.includes(scope), "unless `filtered` is asked for");
       assert.equal((await pageCall("summary")).result.summaries.ccf.papers, total, "the summary call, and so the popup, counts every paper");
+      const mine = (await pageCall("summary", { filtered: true })).result;
+      assert.deepEqual([mine.loaded, mine.counted, mine.summaries.ccf.papers, mine.summaries.ccf.rows.find((r) => r.role === "first").total], [total, shown, shown, narrow.first.total], "and what the panel counts when asked");
       // the quick filter "Last 5 years" is age:<5: the papers of this year and the four before it, and the table is theirs
       await pageCall("clearFilters");
       await patchPrefs({ panel: { filters: { pills: { recent: true } } } });

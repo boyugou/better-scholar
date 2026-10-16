@@ -659,13 +659,15 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
   const filterState = () => ({ shown: shownRows().length, total: live().length, filters: { ...state.filters }, errors: matcher().errors });
   const methods = {
     ping: () => ({ version: VERSION, owner: headerName, loaded: live().length, complete: listComplete() }),
-    summary: () => {
+    summary: ({ filtered = false } = {}) => {
       const list = papers(), source = currentSource();
+      const rows = filtered && prefs.panel.filters.follow && scopeFiltering() ? counted().map(paperOf) : list;          // (the papers the tables are of)
+      const table = (src) => { const whole = metrics.summarize(list, src); return rows === list ? whole : metrics.summarize(rows, src, { keep: whole.rows.map((r) => r.role) }); };
       return {
-        owner: headerName, loaded: list.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
+        owner: headerName, loaded: list.length, counted: rows.length, shown: shownRows().length, loadingAll: state.loadingAll, layoutBroken: layoutBroken(), edition,
         noRanks: noRanks(list),
-        summaries: { ccf: metrics.summarize(list, "ccf"), core: metrics.summarize(list, "core"), none: metrics.summarize(list, null) },
-        marks: markCounts(false),
+        summaries: { ccf: table("ccf"), core: table("core"), none: table(null) },
+        marks: markCounts(rows !== list),
         metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all }
       };
     },
