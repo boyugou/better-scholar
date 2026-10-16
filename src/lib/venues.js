@@ -402,7 +402,9 @@
     // ("HCI International" is a conference of its own — not the journal HCI — although "international" is a noise word)
     const restNoise = canonTokens(rest, "full").length === 0 && !/^international\b/i.test(rest);
     // (after a two-letter acronym a bare two-digit number is not a year: "DS 75-4" is a Design Society report, not the conference DS)
-    const yearAfter = (first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b)/).test(rest);
+    // (a page range after a longer acronym is read as the event's too — "AAMAS, 1-10, 2016", "CSCW, 1-25, 2017": a ten-page conference paper starts on page 1 — as "AAMAS, 11-20, 2016" always was;
+    // the journals of those names are printed in full)
+    const yearAfter = (first.length <= 2 ? /^(?:'\d{2}\b|(?:19|20)\d{2}\b|\d+(?:st|nd|rd|th)\b)/ : /^(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b|\d{1,5}\s*-\s*\d{1,5}\b)/).test(rest);
     if (!placed && looksAcr && (restNoise || yearAfter)) {
       // "USENIX ATC 2007": with its organisation first ("usenixatc" is the venue; "atc" alone is a trusted-computing conference)
       const org = head0.length > head.length ? head0.slice(0, head0.length - head.length).trim().split(/[\s/-]+/).filter(Boolean) : [];

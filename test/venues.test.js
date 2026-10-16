@@ -1039,3 +1039,17 @@ test("a venue printed another way is the same venue: a trailing comma or full st
   }
   assert.ok(resolver.resolve("CHI‘20: ACM Conference on Human Factors in Computing, 2020").ccf, "a curly apostrophe in an event name no longer hides it");
 });
+
+test("an acronym with a page range is the event: 'AAMAS, 1-10, 2016' and 'CSCW, 1-25, 2017' are the conferences, not the journals of those names; no conference acronym is read as a journal", () => {
+  for (const [s, abbr, tier] of [["AAMAS, 1-10, 2016", "AAMAS", "B"], ["AAMAS, 566-574, 2016", "AAMAS", "B"], ["CSCW, 1-25, 2017", "CSCW", "A"], ["CSCW, 10-19, 2017", "CSCW", "A"]]) {
+    const r = resolver.resolve(s);
+    assert.deepEqual([r.ccf && r.ccf.abbr, r.ccf && r.ccf.tier, r.ccf && r.ccf.kind], [abbr, tier, "C"], s);
+  }
+  // every conference of the CCF list with an acronym, in four forms: never a journal, never another venue
+  const confs = ccf.venues.filter((v) => v.kind === "C" && v.abbr && /^[A-Z][A-Za-z0-9&-]{2,14}$/.test(v.abbr));
+  assert.ok(confs.length > 300);
+  for (const v of confs) for (const tail of [", 1-10, 2019", " 2019", ", 100-110, 2019", ", 1-12"]) {
+    const r = resolver.resolve(v.abbr + tail);
+    assert.ok(!r.ccf || (r.ccf.kind === "C" && (r.ccf.abbr === v.abbr || r.ccf.name === v.name)), `${v.abbr}${tail} → ${r.ccf && r.ccf.kind} ${r.ccf && r.ccf.name}`);
+  }
+});
