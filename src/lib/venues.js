@@ -796,8 +796,12 @@
     const cache = new Map();
 
     function resolve(raw) {
-      // (white space is one space and nothing at the ends before any rule looks at the text: "AAAI  Fall Symposium" is the symposium, as with one space, and not the conference)
-      const key = String(raw == null ? "" : raw).replace(/\s+/g, " ").trim();
+      // The same venue printed another way is the same venue. Before any rule looks at the text: the invisible characters a copy from a PDF or a page leaves (soft hyphen, zero-width
+      // spaces, the byte-order mark) are gone, every dash is a hyphen, every apostrophe and quotation mark is a straight one, white space is one space and nothing at the ends, and a
+      // string does not end in punctuation. ("AAAI  Fall Symposium", "AAAI Fall​ Symposium" and "Late–Breaking" must be read as the symposium and the late-breaking track they are,
+      // not as the conference they would be taken for if the rule that spots them did not see them.)
+      const key = String(raw == null ? "" : raw).replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, "").replace(/[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]/g, "-")
+        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\s+/g, " ").replace(/[\s,;:.]+$/, "").trim();
       if (cache.has(key)) return cache.get(key);
       let res;
       try { res = resolveUncached(key); }

@@ -1021,3 +1021,21 @@ test("white space does not matter: a venue with doubled spaces, tabs or line bre
   const fresh = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
   for (const k of keys) assert.deepEqual(fresh.resolve("  " + k.replace(/ /g, "   ") + "  "), resolver.resolve(k), k);
 });
+
+test("a venue printed another way is the same venue: a trailing comma or full stop, other dashes, apostrophes and quotation marks, invisible characters (soft hyphen, zero-width space), composed or decomposed accents, no-break spaces — never a different badge", () => {
+  const T = {
+    "a trailing comma": (s) => s + ",", "a trailing full stop": (s) => s + " .", "en dashes": (s) => s.replace(/-/g, "–"), "curly quotes": (s) => s.replace(/'/g, "’").replace(/"/g, "”"),
+    "zero-width spaces": (s) => s.replace(/ /g, " ​"), "soft hyphens": (s) => s.replace(/([a-z]{6})/g, "$1­"), "decomposed accents": (s) => s.normalize("NFD"), "no-break spaces": (s) => s.replace(/ /g, " ")
+  };
+  const keys = Object.keys(JSON.parse(require("node:fs").readFileSync(require("node:path").join(__dirname, "fixtures", "venues.expected.json"), "utf8"))).filter((_, i) => i % 9 === 0);
+  for (const [what, f] of Object.entries(T)) {
+    const fresh = venues.createResolver({ ccf: ccf.venues, core: core.venues, aliases });
+    for (const k of keys) assert.deepEqual(fresh.resolve(f(k)), resolver.resolve(k), `${what}: ${k}`);
+  }
+  // real cases: a track that a dash or an invisible character used to hide
+  for (const s of ["AAAI (Late–Breaking Developments), 2013", "AAAI (Late-Breaking Developments), 2013", "(NeurIPS 2025) NeurIPS Creative AI Track, 2025", "AAAI Fall​ Symposium on Privacy and Language Technologies, 2016"]) {
+    const r = resolver.resolve(s);
+    assert.ok(r.secondary && !r.ccf && !r.core, s + " is a secondary track: no badge");
+  }
+  assert.ok(resolver.resolve("CHI‘20: ACM Conference on Human Factors in Computing, 2020").ccf, "a curly apostrophe in an event name no longer hides it");
+});
