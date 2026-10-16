@@ -1073,3 +1073,21 @@ test("a track at a venue is not the venue: 'Workshop' in a name the venue once h
     for (const badge of [r.ccf, r.core]) if (badge) assert.ok(holds(badge.name, word), `${raw} → ${badge.name}: a ${word} is not the venue`);
   }
 });
+
+test("a journal's own name with a volume is that journal: a one-word title in camel or capital letters is no acronym ('GeoInformatica 12 (3)'), and two journals that boil down to the same words are told apart by the whole name ('Human-Computer Interaction 23 (1)')", () => {
+  for (const [s, abbr] of [["GeoInformatica 12 (3), 123-145, 2019", "GeoInformatica"], ["GeoInformatica 23 (1), 2019", "GeoInformatica"], ["GEOINFORMATICA 23 (1), 2019", "GeoInformatica"],
+    ["Human–Computer Interaction 23 (1), 47-99, 2008", "HCI"], ["Human-computer interaction 15 (4), 263-322, 2000", "HCI"], ["HUMAN–COMPUTER INTERACTION 23 (4), 406-432, 2008", "HCI"]]) {
+    const r = resolver.resolve(s);
+    assert.equal(r.ccf && (r.ccf.abbr || r.ccf.name), abbr, s);
+  }
+  // ... but the proceedings that share those words, and the bare name with no volume, are not it
+  for (const s of ["Proceedings of the ACM on Human-Computer Interaction 3 (3), 1-23, 2019", "Human-Computer Interaction, 2019", "Human-Computer Interaction"]) assert.equal(resolver.resolve(s).ccf, null, s);
+  // every journal of the CCF list, by its whole name with a volume, an issue, pages and a year, in the three ways Scholar writes it (the two "Proceedings of the ACM on …" journals are the
+  // journal-first form of conferences: their papers are POPL's, CSCW's … and stay unranked)
+  const journals = ccf.venues.filter((v) => v.kind === "J" && !/^Proceedings of the ACM on /.test(v.name));
+  assert.ok(journals.length > 280);
+  for (const v of journals) for (const f of [(n) => n + " 12 (3), 123-145, 2019", (n) => n.toLowerCase() + " 12 (3), 123-145, 2019", (n) => n.toUpperCase() + " 12 (3), 123-145, 2019"]) {
+    const raw = f(v.name), r = resolver.resolve(raw);
+    assert.ok(r.ccf && r.ccf.kind === "J" && r.ccf.name === v.name, `${raw} → ${r.ccf && r.ccf.name}`);
+  }
+});

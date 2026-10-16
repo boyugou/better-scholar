@@ -552,7 +552,10 @@
       const key = tokens.join(" ");
       if (seen.has(key)) continue;
       seen.add(key);
-      const d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
+      let d = nameHit((side) => (bareString ? side.bare : side.names).get(key));
+      // "Human-Computer Interaction 23 (1), 47-99, 2008": two journals boil down to these words ("Proceedings of the ACM on Human-Computer Interaction" is the other) and the string is
+      // nothing but them, with a volume: it is the journal whose whole name they are
+      if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(key));
       if (d === "ambiguous") return null;
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
@@ -843,10 +846,11 @@
       out.name = p.name;
       if (!p.name || NON_VENUE.test(p.name)) return out;
       let hint = PERIODICALS.has(fold(p.name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()) ? "J" : typeHint(p.name);
-      // "WWW 2018", "ISCA 2014 42 (3)": an acronym followed by a year names an event
+      // "WWW 2018", "ISCA 2014 42 (3)": an acronym followed by a year names an event — unless the word is the whole title of a journal ("GeoInformatica 12 (3), 123-145, 2019":
+      // written in camel case it looks like an acronym, and its volume like an edition)
       if (!hint) {
         const lead = acronymSignals(p).find((s) => s.kind === "lead" && s.event);
-        if (lead) hint = "C";
+        if (lead && !idx.sources.ccf.J.names.has(canonTokens(p.name, "full").join(" "))) hint = "C";
       }
       out.kind = hint;
       const sec = secondaryWord(raw);
