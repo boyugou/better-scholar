@@ -1463,3 +1463,17 @@ test("the eleventh review: a pick among venues of one rating is no venue to carr
   eq("2010 19th IEEE International Workshops on Enabling Technologies: Infrastructures for Collaborative Enterprises, 30-35, 2010", "CORE C WETICE");
 });
 
+
+test("an acronym with its year glued on is the acronym; a workshop co-located with a venue is not the venue", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // IEEE Xplore prints "ICME2000", "SC20: …", "LAK26: …"
+  eq("2000 IEEE International Conference on Multimedia and Expo. ICME2000 …, 2000", "CCF B ICME · CORE A ICME");
+  eq("2020 SC20: International Conference for High Performance Computing …, 2020", "CCF A SC · CORE A SC");
+  eq("Proceedings of the LAK26: 16th International Learning Analytics and …, 2026", "CORE A LAK");
+  // "BEA@ACL2023", "FTL-IJCAI21": a workshop of the venue, whichever way the year is written
+  none("BEA@ACL2023, 2023");
+  none("BEA@ACL 2023, 2023");
+  none("FTL-IJCAI21, 2021");
+  assert.equal(resolver.resolve("BEA@ACL2023, 2023").secondary, "workshop");
+});
