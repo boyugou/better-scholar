@@ -113,10 +113,10 @@ test("the documentation quotes the real size of the list: data/README.md's cover
   const { coverage } = await import("../scripts/awards/coverage.mjs");
   const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
   assert.ok(read("data/README.md").includes(`| Entries | ${coverage(data.entries)} |`), "data/README.md's Entries row is stale: run  node scripts/awards/coverage.mjs");
-  for (const [file, re] of [["README.md", /\b(\d+) paper awards/], ["docs/ROADMAP.md", /\((\d+) entries on/]]) {
+  for (const [file, re] of [["README.md", /\b(\d[\d,]*) paper awards/], ["docs/ROADMAP.md", /\((\d+) entries on/]]) {
     const m = re.exec(read(file));
     assert.ok(m, `${file}: no longer says how many awards the list has (pattern ${re})`);
-    assert.equal(Number(m[1]), data.entries.length, `${file} says ${m[1]} awards, the list has ${data.entries.length}`);
+    assert.equal(Number(m[1].replace(/,/g, "")), data.entries.length, `${file} says ${m[1]} awards, the list has ${data.entries.length}`);
   }
 });
 

@@ -416,3 +416,18 @@ test("the table opens on the list the settings prefer until a tab is picked on t
   assert.equal(prefs.source(withPrefer("core", true, false), { source: null }), "ccf", "the preferred list has no tab: the first that has");
 });
 
+
+test("the winner never keeps a list whose chip is off over one whose chip is on", () => {
+  const p = (rows, panel) => prefs.normalize({ rows, panel });
+  // chips: CORE only; the CCF tab is still on: CCF first would keep the list that has no chip — no winner, both lists are drawn somewhere
+  assert.equal(prefs.winner(p({ ccf: false })), null);
+  assert.equal(prefs.winner(p({ ccf: false, prefer: "core" })), "core", "the preferred list has its chip: it wins");
+  assert.equal(prefs.winner(p({ core: false, prefer: "core" })), null, "the other way round");
+  assert.equal(prefs.winner(p({ core: false })), "ccf");
+  // no chip at all: the tabs decide, as before
+  assert.equal(prefs.winner(p({ ccf: false, core: false })), "ccf");
+  assert.equal(prefs.winner(p({ ccf: false, core: false, prefer: "core" })), "core");
+  // the chips and the winner agree for one venue both lists rank
+  const both = { ccf: { tier: "A" }, core: { rank: "A*" } };
+  assert.deepEqual(prefs.chipLists(p({ ccf: false }), both), { shown: ["core"], hidden: [] });
+});

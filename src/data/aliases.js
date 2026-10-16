@@ -21,6 +21,8 @@
 //                 (the ACL Anthology's "Proceedings of the 23rd International Conference on Computational …" is COLING, not ICCSA);
 //                 "annual" and any sponsor the start names (IEEE, ACM, a SIG) are part of the start: the IEEE's "… Conference on
 //                 Computational …" is not COLING, and nothing here is a start that only some of the venue's years fit
+//   uncut         names that are only read whole, with their organisation, in a string that Scholar did not cut off: where the cut ends the same words
+//                 begin another venue's name (HiPC's old "IEEE International Conference on High Performance Computing" — its cut is as much HPCC's "… and Communications")
 //   volume        names of a journal that are also a field ("Computational Geometry"): they count for a line that has a volume, a journal's — "Computational geometry, 307-317, 2000" is a chapter of a book
 //   shadow        (an entry of its own, no ccf / core) acronyms of unranked events whose names boil down to the words of a ranked venue's: a string that names one of them
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
@@ -271,6 +273,8 @@
     { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
     { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
     { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
+    // (HiPC was the IEEE's "International Conference on High Performance Computing" before "Data and Analytics" came: with the IEEE only, and not cut off — the bare name is other events', its cut HPCC's)
+    { ccf: "HiPC", uncut: ["IEEE International Conference on High Performance Computing"] },
     // (CORE's name begins with its sponsor, ACIS, which is no sponsor to drop: ICIS's is "IEEE/ACIS International Conference on Computer and Information Science")
     { core: "SERA", names: ["International Conference on Software Engineering Research, Management and Applications", "Software Engineering Research, Management and Applications"] },
     { core: "Coordination", names: ["International Conference on Coordination Languages and Models", "Coordination Languages and Models"] },
@@ -284,7 +288,8 @@
     // the cut-off "Proceedings of the International Conference for High Performance Computing …" (the full name goes on with ", Networking, Storage and Analysis")
     { ccf: "SC", core: "SC", starts: ["International Conference for High Performance Computing"] },
     { ccf: "WCNC", core: "WCNC", names: ["IEEE Wireless Communication and Networking Conference"] },
-    { core: "SPLC", names: ["International Software Product Line Conference"], exact: ["International Systems and Software Product Line Conference", "ACM International Systems and Software Product Line Conference"] },          // (exact: its cut "… Systems and Software …" is SSV's, not SPLC's)
+    { core: "SPLC", names: ["International Software Product Line Conference"], exact: ["International Systems and Software Product Line Conference", "ACM International Systems and Software Product Line Conference"],          // (exact: its cut "… Systems and Software …" is SSV's, not SPLC's — "… Systems and Software Product …" is not)
+      starts: ["ACM Conference on Systems and Software Product", "ACM International Systems and Software Product", "International Systems and Software Product", "Systems and Software Product"] },
     // ICER was a workshop (CORE's name) until 2013
     { core: "ICER", names: ["International Computing Education Research Conference", "ACM Conference on International Computing Education Research", "ACM Conference on Computing Education Research"] },
     { core: "ACE", names: ["International Conference on Advances in Computer Entertainment Technology"] },

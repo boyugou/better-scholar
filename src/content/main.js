@@ -213,7 +213,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (f.minCitations != null && row.shown < f.minCitations) return false;
     if (min && !(row.highlighted && row.shown >= min)) return false;
     if (!skip.marks && state.markGroup && !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup)) return false;
-    if (!skip.venue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs)) !== state.venueKey) return false;
+    if (!skip.venue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs), B.prefs.winner(prefs)) !== state.venueKey) return false;
     if (!skip.selection && state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
     return true;
   }

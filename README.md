@@ -49,7 +49,7 @@ Better Scholar is a Chrome (Manifest V3) extension for [Google Scholar](https://
 - **No dependencies, no build step.** Load `src/` as an unpacked extension.
 - **Precision first.** The venue matcher has no fuzzy or substring fallback. A venue it cannot place gets no badge and is listed in the panel; every badge's tooltip names the matched venue, the rule that matched and the list's edition.
 - **Authorship roles.** First, co-first (a leading group of authors that share a mark such as `*` or `†`), second and last author. Your name is marked in the author line, with your position in a tooltip.
-- **Awards and talks.** A bundled list of 7,830 award-winning papers taken from official award pages, plus the Oral / Spotlight / Highlight labels authors write themselves.
+- **Awards and talks.** A bundled list of 7,830 paper awards taken from official award pages, plus the Oral / Spotlight / Highlight labels authors write themselves.
 - **Citation totals.** Papers, citations, h-index and i10-index of your highlighted papers next to those of all papers. The h-index and i10-index buttons list the highlighted papers behind the number.
 - **Search with operators.** `/` focuses the search box; words plus `cites:`, `year:`, `age:`, `ccf:`, `core:`, `role:`, `type:` and `has:`, with suggestions as you type.
 - **Copy and export.** Summary, table, papers, APA, BibTeX, Markdown and JSON to the clipboard, and CSV as a file; one switch per format in the settings, and the same buttons in the toolbar popup.
@@ -67,14 +67,14 @@ How much the extension is made of, counted from its code and its data — nothin
 |---:|---|---|
 | **153** | settings you can change, in 18 cards — 86 switches, 48 names you can give things, 19 colours, choices, orders and languages | the rows of the settings tree (`src/lib/prefs.js`) |
 | **171** | nodes in that tree, 4 levels deep: a card, the switch of a part, a thing in it, its name | cards and rows; a row hangs on the switch of its part |
-| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats, quick filters, chip looks and presets — each with its own switch, most with a place in an order you set | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
-| **30** | interface languages — 350 strings each, 10,500 translated strings | `src/_locales/*/messages.json` |
-| **1,481** | ranked venues: 386 CCF conferences, 295 CCF journals, 800 CORE conferences | the rows of the bundled lists (`src/data/ccf.js`, `src/data/core.js`) |
-| **450+** | names Scholar prints that the lists do not have, in 230+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
+| **9 · 8 · 10 · 6 · 4** | panel parts, copy formats and quick filters — each with its own switch, most with a place in an order you set — and chip looks and presets to pick from | `SECTIONS`, `COPY_BUTTONS`, `PILLS`, `CHIP_THEMES`, `PRESETS` |
+| **30** | interface languages — 350 strings each, 10,150 translated strings | `src/_locales/*/messages.json` |
+| **1,179** | ranked venues, in 1,481 rows of the two bundled lists (386 CCF conferences, 295 CCF journals, 800 CORE conferences): 298 venues are a row in both | the rows of `src/data/ccf.js` and `src/data/core.js`, linked by `idx.partners` |
+| **350+** | names Scholar prints that the lists do not have, in 230+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
 | **2,400+** · **1,100+** | name forms and acronyms the matcher looks up | the keys of its indexes |
-| **250+** | venues that are one entry in both lists under two names: a badge found by one list's wording brings the other's | `idx.partners` |
-| **5 · 17** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guard checks that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
-| **7,830** | award-winning papers, from 194 venues and series, 1990–2026 | `src/data/awards.js` |
+| **150+** | venues that the two lists word differently and the matcher knows are one: a badge found by one list's wording brings the other's | `idx.partners` |
+| **5 · 13** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
+| **7,724** | award-winning papers (7,830 awards), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real Scholar venue lines whose badge was each looked at and written down | `test/fixtures/venues.expected.json` |
 | **500+ · 80+ · 15** | unit tests, end-to-end checks in a real Chromium with the extension loaded, checks of the web demo | `test/*.test.js`, `test/e2e/` |
 | **0** | dependencies, and no build step | `package.json` |
@@ -122,7 +122,7 @@ Everything in `src/lib/` is pure (no DOM, no `chrome.*`): in the extension each 
 - **The two lists are linked.** CCF and CORE word many venues differently (*ACM SIGCHI Conference on Designing Interactive Systems* / *Designing Interactive Systems*), so a string that one list's name finds brings the other list's row of the same venue too.
 
 ### 3. Awards and talks
-- **Award list:** 7,830 award-winning papers (best, best student, outstanding and distinguished papers, honorable mentions, category awards, test-of-time awards) from official pages — the ACL Anthology's award data, the Computer Vision Foundation, and the conferences' and societies' own award pages (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, OSDI, SOSP, CHI and many more). A paper matches only by an identical title and the award's first author among its authors.
+- **Award list:** 7,830 paper awards (best, best student, outstanding and distinguished papers, honorable mentions, category awards, test-of-time awards) from official pages — the ACL Anthology's award data, the Computer Vision Foundation, and the conferences' and societies' own award pages (NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV, ACL, EMNLP, NAACL, AAAI, IJCAI, SIGCOMM, S&P, CCS, USENIX Security, SIGMOD, VLDB, OSDI, SOSP, CHI and many more). A paper matches only by an identical title and the award's first author among its authors.
 - **What the authors wrote:** award words (Best Paper, Outstanding Paper, Test of Time, a best-paper finalist) and the talk levels Oral, Spotlight and Highlight, read from the title or venue text by rules that leave ordinary words alone (*Oral Oncology*).
 
 ### 4. The panel and the toolbar popup

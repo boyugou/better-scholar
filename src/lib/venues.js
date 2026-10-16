@@ -247,7 +247,7 @@
     function newSide() {
       // `bare`: the names that are nothing but their own content words ("Pacific Graphics", "NIPS"), not what is left of a longer
       // official name once its boilerplate is dropped ("IEEE International Conference on Data Mining" → "data mining")
-      return { names: new Map(), volumeNames: new Map(), bare: new Map(), abbrs: new Map(), weakAbbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
+      return { names: new Map(), volumeNames: new Map(), uncutNames: new Map(), bare: new Map(), abbrs: new Map(), weakAbbrs: new Map(), bags: new Map(), starts: new Map(), all: [], first: { full: new Map(), noOrg: new Map() } };
     }
     const push = (map, key, entry) => {
       if (!key) return;
@@ -255,7 +255,7 @@
       if (!list) map.set(key, [entry]); else if (!list.includes(entry)) list.push(entry);
     };
 
-    function register(src, kind, entry, names, abbrs, curated, noPrefix, fullOnly, volumeOnly) {
+    function register(src, kind, entry, names, abbrs, curated, noPrefix, fullOnly, volumeOnly, uncutOnly) {
       const side = sources[src][kind];
       if (!side) return;
       if (!side.all.includes(entry)) side.all.push(entry);
@@ -279,6 +279,10 @@
         };
         if (volumeOnly) {          // (a title that is also a field: it counts for a line with a volume, a journal's — never as a start, never bare)
           push(side.volumeNames, form.full.join(" "), entry);
+          continue;
+        }
+        if (uncutOnly) {          // (a name that is only read whole, with its organisation, in a string that Scholar did not cut off — never as a start, never bare)
+          push(side.uncutNames, form.full.join(" "), entry);
           continue;
         }
         for (const mode of fullOnly ? ["full"] : ["full", "noOrg"]) {          // (a name whose organisation is part of what it says — "USENIX ATC" — is not also the bare acronym, "ATC")
@@ -321,6 +325,7 @@
           if (a.exact) { entry.extra.push(...a.exact); register(src, kind, entry, a.exact, [], true, true); }
           if (a.fullOnly) { entry.extra.push(...a.fullOnly); register(src, kind, entry, a.fullOnly, [], true, false, true); }
           if (a.volume) { entry.extra.push(...a.volume); register(src, kind, entry, a.volume, [], true, false, false, true); }
+          if (a.uncut) { entry.extra.push(...a.uncut); register(src, kind, entry, a.uncut, [], true, false, false, false, true); }
           if (a.renamed) entry.renamed = true;          // (the list's name is a name it had: its "Workshop" says nothing about the venue of today)
           if (a.former) { entry.former = (entry.former || []).concat(a.former); register(src, kind, entry, a.former, [], true); }          // (found by name; not part of its wording — `extra` — so "Workshop" in them is no type clash)
           if (a.noBareAcronym) {            // the acronym says nothing without the name: ACM's SAC is not Selected Areas in Cryptography
@@ -659,8 +664,8 @@
       if (seen.has(key)) continue;
       seen.add(key);
       let d = nameHit((side) => {
-        const base = (bareString ? side.bare : side.names).get(ukey), more = p.hasVolume ? side.volumeNames.get(ukey) : null;
-        return more ? [...(base || []), ...more] : base;
+        const base = (bareString ? side.bare : side.names).get(ukey), more = p.hasVolume ? side.volumeNames.get(ukey) : null, whole = p.truncated ? null : side.uncutNames.get(ukey);
+        return more || whole ? [...(base || []), ...(more || []), ...(whole || [])] : base;
       });
       // "Human-Computer Interaction 23 (1), 47-99, 2008": two journals boil down to these words ("Proceedings of the ACM on Human-Computer Interaction" is the other) and the string is
       // nothing but them, with a volume: it is the journal whose whole name they are
@@ -828,6 +833,7 @@
     // R4: Scholar cut the name short with "…": accept a unique entry that begins with what is left.
     const R = canonTokens(p.plain, "full");
     const visibleWords = p.plain.split(/\s+/).filter(Boolean).length;
+    const visibleContent = R.filter((t) => !ORG.has(t)).length;          // (the words of the visible start that are no sponsor: "… IFIP/IEEE International Conference on …" shows none)
     if (p.truncated && R.length >= 1 && (R.length >= 3 || visibleWords >= 6)) {
       // a start the curators read as one venue although others begin the same way (aliases.js `starts`)
       const named = firstHit((side) => side.starts.get(startKey(p.plain)));
@@ -900,8 +906,9 @@
       const sameAs = (a, b) => squash(a.abbr || a.name) === squash(b.abbr || b.name) || (a.src === "ccf" ? idx.sameVenue(a.abbr, b.abbr) : idx.sameVenue(b.abbr, a.abbr));
       if (d && d !== "ambiguous") {
         const rival = readBy(otherSides);
-        // (a rival whose event word is not the string's — a symposium for a "Conference on …" — is no other reading of it)
-        if (rival === "ambiguous" || (rival && !sameAs(d, rival) && !typeClash(rival))) d = null;
+        // (a rival whose event word is not the string's — a symposium for a "Conference on …" — is no other reading of it: where the visible start says what the event is about,
+        // in two words at least; a cut that shows the sponsors and the event words only — "… IFIP/IEEE International Conference on …" — fits any of their venues)
+        if (rival === "ambiguous" || (rival && !sameAs(d, rival) && !(typeClash(rival) && visibleContent >= 2))) d = null;
       }
       // nothing usable because one common word is all that is left ("… annual international symposium on computer …" is ISCA, not
       // the IEEE Computer Security Foundations Symposium): the event words before it must begin one venue's name, in that order
@@ -1114,7 +1121,8 @@
       }
       // the lists name one venue differently: what one list's wording found, the other list's row of the same venue is too (unless the track words of the string do not fit it)
       if (!out.refused) for (const [from, to] of [["ccf", "core"], ["core", "ccf"]]) {
-        if (!matched[from] || out[to] || matched[from].kind === "J") continue;
+        // (a volume with an issue is a periodical's line: "SIGSPATIAL Special 12 (3)" is the newsletter, which CORE's guard refused — what one list refused is not for the fill to add)
+        if (!matched[from] || out[to] || matched[from].kind === "J" || (p.hasIssue && !CONF_SIGNAL.test(p.plain))) continue;
         // (a pick among venues of one rating — "International Conference on Data Mining": ICDM or SDM — is no venue to carry over, unless the string says the venue's own acronym)
         if (tied[from] && !saysAcronymOf(realEntry(matched[from]))) continue;
         const rows = idx.partners.get(realEntry(matched[from])) || [];
@@ -1129,6 +1137,9 @@
         // both lists read the same words as different venues (by their start, or as a name that two venues share once their
         // organisation is dropped: IFIP's SEC and Springer's ISC "Information Security"): at least one is wrong, nothing says which
         else if (out.ccf.rule === out.core.rule && (out.ccf.rule === "prefix" || out.ccf.rule === "name")) { out.ccf = null; out.core = null; }
+        // ... one found a whole name, the other only a venue that begins with the words that are visible: the whole name is the better reading
+        else if (out.ccf.rule === "prefix" && out.core.rule === "name") out.ccf = null;
+        else if (out.core.rule === "prefix" && out.ccf.rule === "name") out.core = null;
       }
       // a workshop / Findings / demo string is unranked on purpose, not "missing"
       if (secs.length && !out.ccf && !out.core && !out.secondary) out.secondary = secs[0];

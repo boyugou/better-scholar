@@ -203,3 +203,18 @@ test("topVenues: where both lists rank a venue and one is the winner, its rank s
   assert.deepEqual(by("ccf"), { ICML: ["A", null], EACL: [null, "A"], NSDI: ["A", null] });
   assert.deepEqual(by("core"), { ICML: [null, "A*"], EACL: [null, "A"], NSDI: ["A", null] }, "CCF fills in where CORE has none");
 });
+
+test("topVenues: under the winner the venue goes by that list's own name — CCF's SIGKDD is CORE's KDD — and the click on it finds its papers", () => {
+  const row = { highlighted: true, venue: { ccf: { abbr: "SIGKDD", name: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining", tier: "A" }, core: { abbr: "KDD", name: "ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", rank: "A*" } } };
+  const on = { ccf: true, core: true };
+  assert.deepEqual(m.topVenues([row], 3, on, "ccf"), [{ key: "SIGKDD", count: 1, name: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining", ccf: "A", core: null }]);
+  assert.deepEqual(m.topVenues([row], 3, on, "core"), [{ key: "KDD", count: 1, name: "ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", ccf: null, core: "A*" }], "CORE's name beside CORE's rank");
+  // the key a row is found by is the key the list shows
+  assert.equal(m.venueKey(row.venue, on, "core"), "KDD");
+  assert.equal(m.venueKey(row.venue, on, "ccf"), "SIGKDD");
+  assert.equal(m.venueKey(row.venue, on), "SIGKDD");
+  // a venue only the other list ranks keeps that list's name; a list that is off names nothing
+  assert.equal(m.venueKey({ ccf: row.venue.ccf }, on, "core"), "SIGKDD");
+  assert.equal(m.venueKey(row.venue, { ccf: false, core: true }, "ccf"), "KDD");
+  assert.deepEqual(m.topVenues([row], 3, { ccf: false, core: true }), [{ key: "KDD", count: 1, name: "ACM SIGKDD International Conference on Knowledge Discovery and Data Mining", ccf: null, core: "A*" }], "no CCF name with a list that is off");
+});

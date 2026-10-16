@@ -234,7 +234,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.starts && a.starts.length));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length) || (a.fullOnly && a.fullOnly.length) || (a.volume && a.volume.length) || (a.uncut && a.uncut.length) || (a.starts && a.starts.length));
   }
 });
 
@@ -1523,6 +1523,16 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // "IEEE Transaction on …" (singular) is a typo owners type, not another journal
   eq("IEEE Transaction on Parallel and Distributed Systems, 2220-2232, 2015", "CCF A TPDS");
   eq("IEEE Transaction On Image Processing 22 (6), 2327-2342, 2013", "CCF A TIP");
+  // the whole IEEE name HiPC had, not cut off (its cut is as much HPCC's); the realistic cut of SPLC; a string that shows only the sponsors; a periodical's line is not a conference's
+  eq("2016 IEEE 23rd International Conference on High Performance Computing, 2016", "CCF C HiPC");
+  none("2015 IEEE 17th International Conference on High Performance Computing …, 2015");
+  eq("Proceedings of the 24th ACM Conference on Systems and Software Product …, 2020", "CORE B SPLC");
+  none("Proceedings of the 23rd International Systems and Software …, 2019");
+  none("Proceedings of the Twenty-Seventh IFIP/IEEE International Conference on …, 2019");
+  eq("Proceedings of the Eleventh IEEE/ACM/IFIP International Conference on …, 2016", "CCF B CODES+ISSS");
+  eq("SIGSPATIAL Special 12 (3), 2019", "CCF C SIGSPATIAL");
+  // two lists read a cut differently: the whole name is the better reading, not the venue that merely begins with the visible words
+  eq("Proceedings of the 2019 IEEE International Symposium on Software Engineering …, 2019", "CORE C SEW");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
 });

@@ -49,7 +49,7 @@ Better Scholar 是一款面向 [Google Scholar](https://scholar.google.com) 学�
 - **零依赖，无构建步骤。** 直接以“加载已解压的扩展程序”方式加载 `src/`。
 - **查准率优先。** 场所匹配没有任何模糊或子串回退。无法确定的场所不给徽章，而是列在面板里；每个徽章的悬停提示都写明匹配到的场所、所用规则和名录版本。
 - **作者角色。** 一作、共一（开头几位作者共享 `*`、`†` 等标记）、二作、末位作者。作者行中会标出你的名字，悬停可见你的位次。
-- **获奖与报告形式。** 内置 7,830 篇取自官方获奖页面的获奖论文名单，并识别作者自己写明的 Oral / Spotlight / Highlight。
+- **获奖与报告形式。** 内置 7,830 项取自官方获奖页面的论文奖项名单，并识别作者自己写明的 Oral / Spotlight / Highlight。
 - **引用统计。** 高亮论文的论文数、引用数、h 指数与 i10 指数，与全部论文并列显示。点击 h 指数、i10 指数按钮，可列出构成该数字的高亮论文。
 - **带运算符的搜索。** 按 `/` 聚焦搜索框；可输入普通词以及 `cites:`、`year:`、`age:`、`ccf:`、`core:`、`role:`、`type:`、`has:`，输入时给出建议。表格、奖项与报告的计数和“复制摘要”随筛选（年份范围、搜索、快捷按钮…）收窄；设置页里可关闭。
 - **复制与导出。** 摘要、表格、论文列表、APA、BibTeX、Markdown、JSON 复制到剪贴板，CSV 保存为文件；设置里每种格式各有一个开关，工具栏弹窗中也有同样的按钮。
@@ -67,14 +67,14 @@ Better Scholar 是一款面向 [Google Scholar](https://scholar.google.com) 学�
 |---:|---|---|
 | **153** | 项可调整的设置，分在 18 张卡片里——86 个开关、48 处可以改成自己的叫法、19 项颜色、选项、顺序和语言 | 设置树的各行（`src/lib/prefs.js`） |
 | **171** | 个节点，共 4 层：卡片、某个部分的开关、其中的一项、它的名字 | 卡片和各行；每一行挂在所属部分的开关下 |
-| **9 · 8 · 10 · 6 · 4** | 个面板部分、复制格式、快捷筛选、标签样式和预设——每一项都有自己的开关，多数还能排顺序 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
-| **30** | 种界面语言——每种 350 条文案，共 10,500 条译文 | `src/_locales/*/messages.json` |
-| **1,481** | 个有等级的发表场所：386 个 CCF 会议、295 个 CCF 期刊、800 个 CORE 会议 | 内置榜单的各行（`src/data/ccf.js`、`src/data/core.js`） |
-| **450+** | 个 Scholar 会写、榜单里却没有的名字，收在 230+ 条人工整理的条目里（旧名与改名、别的拼写、榜单自己的错字、不给标签的同名会议） | `src/data/aliases.js` |
+| **9 · 8 · 10 · 6 · 4** | 个面板部分、复制格式和快捷筛选——每一项都有自己的开关，多数还能排顺序——以及可选的标签样式和预设 | `SECTIONS`、`COPY_BUTTONS`、`PILLS`、`CHIP_THEMES`、`PRESETS` |
+| **30** | 种界面语言——每种 350 条文案，共 10,150 条译文 | `src/_locales/*/messages.json` |
+| **1,179** | 个有等级的发表场所，分在两个内置榜单的 1,481 行里（386 个 CCF 会议、295 个 CCF 期刊、800 个 CORE 会议）：其中 298 个在两个榜单里各有一行 | `src/data/ccf.js` 和 `src/data/core.js` 的各行，由 `idx.partners` 关联 |
+| **350+** | 个 Scholar 会写、榜单里却没有的名字，收在 230+ 条人工整理的条目里（旧名与改名、别的拼写、榜单自己的错字、不给标签的同名会议） | `src/data/aliases.js` |
 | **2,400+** · **1,100+** | 个名称写法和缩写，匹配器逐一查找 | 各索引的键 |
-| **250+** | 个在两个榜单里各有一条、名称不同的会议：其中一个榜单的写法认出来，另一个榜单的等级也一并给出 | `idx.partners` |
-| **5 · 17** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的检查 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
-| **7,830** | 篇获奖论文，来自 194 个会议和系列，1990–2026 年 | `src/data/awards.js` |
+| **150+** | 个两个榜单叫法不同、匹配器知道是同一个的发表场所：其中一个榜单的写法认出来，另一个榜单的等级也一并给出 | `idx.partners` |
+| **5 · 13** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的防护 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
+| **7,724** | 篇获奖论文（共 7,830 项奖项），来自 194 个会议和系列，1990–2026 年 | `src/data/awards.js` |
 | **22,744** | 行真实的 Scholar 发表场所文本，每一行的标签都逐一看过并记录在案 | `test/fixtures/venues.expected.json` |
 | **500+ · 80+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
 | **0** | 个依赖，也没有构建步骤 | `package.json` |
@@ -122,7 +122,7 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 - **两个榜单互相关联：** CCF 与 CORE 对同一个会议常有不同的叫法（*ACM SIGCHI Conference on Designing Interactive Systems* / *Designing Interactive Systems*），所以其中一个榜单的名称认出了某个字符串，另一个榜单里同一个会议的那一行也会一并给出。
 
 ### 3. 获奖与报告形式
-- **获奖名单：** 7,830 篇获奖论文（最佳论文、最佳学生论文、杰出与卓越论文、荣誉提名、分类奖项、时间检验奖），均取自官方页面 —— ACL Anthology 的获奖数据、计算机视觉基金会（CVF），以及各会议和学会自己的获奖页面（NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB、OSDI、SOSP、CHI 等）。只有标题完全一致、且获奖记录的第一作者在该论文作者之中，才算匹配。
+- **获奖名单：** 7,830 项论文奖项（最佳论文、最佳学生论文、杰出与卓越论文、荣誉提名、分类奖项、时间检验奖），均取自官方页面 —— ACL Anthology 的获奖数据、计算机视觉基金会（CVF），以及各会议和学会自己的获奖页面（NeurIPS、ICML、ICLR、CVPR、ICCV、ECCV、ACL、EMNLP、NAACL、AAAI、IJCAI、SIGCOMM、S&P、CCS、USENIX Security、SIGMOD、VLDB、OSDI、SOSP、CHI 等）。只有标题完全一致、且获奖记录的第一作者在该论文作者之中，才算匹配。
 - **作者自己写明的内容：** 获奖用语（Best Paper、Outstanding Paper、Test of Time、最佳论文候选）以及报告形式 Oral、Spotlight、Highlight，从标题或场所文本中读出，规则会避开普通词汇（如 *Oral Oncology*）。
 
 ### 4. 面板与工具栏弹窗
