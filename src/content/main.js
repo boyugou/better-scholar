@@ -346,7 +346,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
         me: a.status === "found" && a.tokens && a.tokens[a.index] ? a.tokens[a.index].name : "",           // (the owner's name as the author line prints it)
         venue: (resolved && resolved.venue) || r.raw.venueText,
         year: a.year, citations: r.shown, role: a.role, status: a.status, highlighted: r.highlighted,
-        type: KIND[(v.ccf && v.ccf.kind) || (v.core && v.core.kind)] || null,
+        type: KIND[(shown.ccf && v.ccf && v.ccf.kind) || (shown.core && v.core && v.core.kind)] || null,          // (a list that is switched off does not tell the kind, as in the search)
         rank: { ccf: shown.ccf && v.ccf ? { tier: v.ccf.tier, name: v.ccf.name } : null, core: shown.core && v.core ? { rank: v.core.rank, name: v.core.name } : null },
         marks: markLabels(a),
         url: r.raw.href ? new URL(r.raw.href, location.origin).href : ""
@@ -509,7 +509,8 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     },
     onCancelResolve() { if (resolveAbort) resolveAbort.abort(); },
     onAddVariant(v) {
-      if (variants.includes(v)) return;
+      v = String(v == null ? "" : v).trim().slice(0, 80);              // (a name is not longer: eight spellings of forty profiles must fit the 8 KB of a synced item)
+      if (!v || variants.includes(v)) return;
       variants = [...variants, v].slice(-8);        // at most eight: a ninth replaces the oldest, so adding one always does something
       B.store.saveVariants(profileId, variants);
       rehint();
@@ -590,7 +591,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
     // (the year bars can only choose one year, and only while the chart is drawn (two bars at least) with a bar for that year)
     const bar = p.years.show && f.yearStart != null && f.yearStart === f.yearEnd && (() => { const bars = metrics.yearBars(papers()).bars; return bars.length >= 2 && bars.some((b) => b.year === f.yearStart); })();
     if (!range && !bar) { f.yearStart = null; f.yearEnd = null; }
-    if (f.impact && !(p.metrics.show && p.metrics[f.impact])) f.impact = null;
+    if (f.impact && !(p.metrics.show && p.metrics[f.impact] && Object.values(prefs.roles).some(Boolean))) f.impact = null;          // (the h-index and i10 buttons are not drawn while no position is highlighted)
   }
 
   // The settings page saved something (in this or any other tab): show it at once.
@@ -682,7 +683,7 @@ const impactMin = (source) => (state.filters.impact === "h" ? Math.max(1, metric
       if (!Object.values(prefs.roles).some(Boolean)) f.onlyHighlighted = false;           // nothing is highlighted: the filter would hide every row
       state.searchCursor = -1; clearFocusedRow();
       pruneFilters();                                                                      // (what the settings leave without a control is not applied, and said so)
-      const ignored = Object.keys(asked).filter((k) => asked[k] && state.filters[k] !== asked[k]);
+      const ignored = Object.keys(asked).filter((k) => asked[k] && (k === "query" ? String(state.filters[k]).toLowerCase() !== asked[k].toLowerCase() : state.filters[k] !== asked[k]));          // (a search word the box would not keep in capitals but keeps in lower case is not left out)
       refresh();
       return { ...filterState(), ignored };
     },

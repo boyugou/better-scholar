@@ -998,3 +998,13 @@ test("'Biennial' qualifies an event like 'Annual', and IEEE Xplore's '4 pp.' is 
   assert.equal(brief("2006 IEEE International Symposium on Circuits and Systems, 4 pp.-4542, 2006"), "CCF B ISCAS · CORE C ISCAS");
   assert.equal(brief("Biennial Report of the Society, 12 pp., 2006"), "", "a word that is no name is still no venue");
 });
+
+test("IEEE MultiMedia is a magazine: it does not take the rank of the symposium whose name it shortens to", () => {
+  const magazine = resolver.resolve("IEEE MultiMedia 28 (2), 86-95, 2021");
+  assert.deepEqual([magazine.ccf, magazine.core, magazine.kind], [null, null, "J"]);
+  assert.equal(resolver.resolve("IEEE MultiMedia, 2019").core, null);
+  for (const symposium of ["IEEE International Symposium on Multimedia (ISM), 2020", "International Symposium on Multimedia, 2019"]) {
+    const r = resolver.resolve(symposium);
+    assert.deepEqual([r.core && r.core.abbr, r.core && r.core.rank], ["ISM", "C"], symposium);
+  }
+});

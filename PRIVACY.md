@@ -35,7 +35,7 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
 - `ui` — whether the panel is folded, and which ranking (CCF or CORE) its table shows.
 - `resolved` — what *Read full lists* found: for each paper, Scholar's id for the paper on that profile, the full
   author list, the venue, the time it was read, and whether it came from Semantic Scholar. Entries older than 90
-  days are not used and are dropped when the cache is next saved; at most 3,000 papers are kept.
+  days are not used and are dropped when the cache is next saved; at most 3,000 papers and three million characters are kept (the newest first).
 - `s2key` — the Semantic Scholar API key, only if you enter one in the settings. It is never synced.
 - `askVenue` — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing *Check* beside a venue of the unranked list; the settings page takes it within a moment and removes it, and one that nobody took is ignored after 30 seconds.
 
@@ -153,7 +153,9 @@ console — and can tell from the attribute that the extension is installed. The
   lists* saved for those papers), and the text of a copy format. `summary` returns numbers only. `filter` and
   `clearFilters` change the filters of that page only.
 - They cannot change any setting or anything in storage, they make no network request, and they do not return the
-  settings record, the Semantic Scholar key or the name spellings.
+  settings record, the Semantic Scholar key or the name spellings. The panel's own buttons answer only to a person: a
+  click or a key that a script makes (`click()`, `dispatchEvent`) does nothing, so a script cannot press *Read full
+  lists*, add a spelling or open the settings page through them.
 
 ## The website's demo
 

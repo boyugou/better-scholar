@@ -341,6 +341,15 @@ test("names: nothing in a name shows nothing or turns the text around, and what 
   const hebrew = "עברית\u200f (1)";          // (a right-to-left mark that fixes the punctuation of a Hebrew name in a left-to-right page)
   assert.equal(prefs.apply(prefs.defaults(), { labels: { metricsTitle: hebrew } }).prefs.labels.metricsTitle, hebrew, "the direction marks stay");
   assert.equal(prefs.normalize({ labels: { mH: "h\u202e-index" } }).labels.mH, "h-index", "a stored record is read the same way");
+  // what is left of a name is one line of single spaces; a name of nothing but marks is no name; the variation selectors of the supplement are hidden text, those of Mongolian letters are not
+  const one = (v) => prefs.apply(prefs.defaults(), { labels: { metricsTitle: v } }).prefs.labels.metricsTitle;
+  assert.equal(one("My \u00ad papers"), "My papers", "a soft hyphen between two spaces leaves one space");
+  assert.equal(one("\u200e"), "", "a name of only a direction mark shows nothing: it is no name");
+  assert.equal(one(" \u200f\ufe0f\u200d "), "");
+  assert.equal(one("Best\u{e0100}\u{e0101}"), "Best", "the variation selectors of the supplement are gone");
+  const mongolian = "ᠮᠣᠩᠭᠣᠯ\u180b";
+  assert.equal(one(mongolian), mongolian, "the Mongolian variation selector shapes a letter");
+  assert.equal(one("❤\ufe0f"), "❤\ufe0f", "and an emoji keeps its presentation selector");
 });
 
 test("the record's size is counted the way Chrome counts it: a '<' is six bytes, and a patch that would make the record too large for chrome.storage.sync is refused whole", () => {

@@ -43,7 +43,7 @@
       if (el === current) return;
       clearTimeout(hideTimer);
       current = el;
-      const path = el.dataset.rrPart, first = path.split(" ")[0], sec = el.closest("[data-section]"), labelEl = el.closest("[data-rr-label]") || el.querySelector("[data-rr-label]"), isSection = el === sec;
+      const path = el.dataset.rrPart, first = path.split(" ")[0], sec = el.closest("[data-section]"), labelEl = el.closest("[data-rr-label]") || el.querySelector(":scope > [data-rr-label]"), isSection = el === sec;
       // the tag: for a thing in a part (the part itself has its rail)
       tag.replaceChildren();
       if (!isSection) {

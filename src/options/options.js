@@ -749,7 +749,7 @@
         chipSample(classes, { more: true, colors: theme.patch.colors }), h("span", { class: "chip-theme-name" }, t(theme.name)));
       return { theme, btn };
     });
-    const sync = () => buttons.forEach(({ theme, btn }) => btn.classList.toggle("active", B.prefs.apply(prefs, theme.patch).applied.length === 0));
+    const sync = () => buttons.forEach(({ theme, btn }) => btn.classList.toggle("active", (({ applied, ignored }) => !applied.length && !ignored.length)(B.prefs.apply(prefs, theme.patch))));
     syncers.push(sync);
     sync();
     return h("div", { class: "chip-themes", role: "group", "aria-label": t("optChipThemes") }, ...buttons.map((b) => b.btn));

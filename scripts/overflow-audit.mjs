@@ -42,7 +42,7 @@ const browser = await pw.chromium.launch({ executablePath: chromiumPath, args: p
 
 // In the page: the elements whose text or box goes outside the box that holds them. A box is a button, a row, a card, a cell, a label…; the overlays of the preview's
 // editor (tags, rails, drop bar) are meant to stick out and are left out.
-function measure() {
+function measure(opts) {
   for (const d of document.querySelectorAll("details")) d.open = true;                      // (what is folded away is measured too: the name help, the unranked list, the tray)
   const BOXES = "button, .opt, .row, .card, .chip-theme, label, summary, td, th, .seg-btn, .name-edit, .toc a, .opt-search-box, .rr-sec, .rr-copybar";
   const SKIP = ".pv-tag, .pv-rail, .pv-drop, .pv-rename, .pv-tray, .rr-sr, [hidden], .sr-only, .skip, .demo-bar, .rr-dd-list, .rr-suggest";
@@ -65,7 +65,7 @@ function measure() {
     }
     // a one-word label of a script that has spaces ("Ad|d", "Hinzufü|gen"): the word's text is on more than one line
     const label = (el.textContent || "").trim();
-    if (el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {
+    if (!opts.longNames && el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {          // (not with every name at 30 letters in a row: such a name breaks where it must)
       const range = document.createRange(), lines = new Set();
       for (const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); walker.nextNode();) {          // (the text only: an icon beside it has a box of its own)
         range.selectNodeContents(walker.currentNode);
@@ -98,7 +98,7 @@ for (const scheme of schemes) for (const width of widths) {
     await page.waitForSelector("#card-table");
     await page.waitForTimeout(120);
     loads++;
-    for (const f of await page.evaluate(measure)) {
+    for (const f of await page.evaluate(measure, { longNames })) {
       const key = f.kind + " · " + f.what.replace(/[0-9.]+/g, "#").replace(/"[^"]*"/g, "").trim();
       if (!found.has(key)) found.set(key, []);
       found.get(key).push(`${lang}@${width}${scheme === "dark" ? "d" : ""}: ${f.what}`);

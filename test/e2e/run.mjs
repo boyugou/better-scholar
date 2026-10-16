@@ -1072,7 +1072,17 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     for (const role of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + role, true);
     await eventually(page, () => document.querySelectorAll("tr[class*='rr-r-']").length > 0 && !document.querySelector('[data-act="only"]').closest(".rr-row").hidden);
     assert.equal(await page.isChecked('input[data-act="only"]'), false);
-    ok("every role switched off: the 'Only highlighted' filter is cleared and hidden");
+    // the papers behind the h-index are a filter whose buttons are not drawn while no position is highlighted: it goes too
+    await page.click('[data-metric="mH"]');
+    await eventually(page, () => document.querySelector('[data-metric="mH"][aria-pressed="true"]'));
+    assert.ok((await visibleRows(page)) < 20, "the h-index papers are listed");
+    for (const role of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + role, false);
+    await eventually(page, () => document.querySelectorAll("tr[class*='rr-r-']").length === 0 && !document.querySelector('[data-metric="mH"]'));
+    assert.equal(await visibleRows(page), 20, "no position highlighted: the h-index filter that its button could undo is gone, no row is hidden");
+    for (const role of ["first", "cofirst", "second", "last"]) await setPref(opts, "roles." + role, true);
+    await eventually(page, () => document.querySelector('[data-metric="mH"]') && document.querySelectorAll("tr[class*='rr-r-']").length > 0);
+    assert.equal(await page.locator('[data-metric="mH"][aria-pressed="true"]').count(), 0, "and it stays off when the positions come back");
+    ok("every role switched off: the 'Only highlighted' filter and the h-index papers are cleared and hidden");
 
     // -- S3c. every thing the panel draws has its own switch, and the parts and the buttons have an order
     const patchPrefs = async (patch) => { await settle(opts); return opts.evaluate(async (pt) => { const B = RolesRanks, r = await chrome.storage.sync.get("prefs"); await chrome.storage.sync.set({ prefs: B.prefs.apply(r.prefs, pt).prefs }); }, patch); };
@@ -1313,7 +1323,15 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await patchPrefs({ panel: { filters: { follow: true } } });
       await pageCall("clearFilters");
       await eventually(page, () => !document.querySelector("#gsc_a_b tr.gsc_a_tr.rr-hide"));
-      ok("the counts follow the filters: a year range narrows the table, the awards counts and the copied summary and table (which say what they counted); the picked cell narrows no count; the popup and the page calls count every paper; the setting off restores it");
+      // a script on the page cannot press the panel's buttons: the click it makes is ignored, a person's is not
+      await page.evaluate(() => document.querySelector('.rr-spill[data-pill="ccfA"]').click());
+      await page.waitForTimeout(400);
+      assert.equal(await page.inputValue(".rr-search-input"), "", "a click made by a script does nothing");
+      await page.click('.rr-spill[data-pill="ccfA"]');
+      await eventually(page, () => document.querySelector(".rr-search-input").value === "ccf:a");
+      await page.click('.rr-spill[data-pill="ccfA"]');
+      await eventually(page, () => document.querySelector(".rr-search-input").value === "");
+      ok("the counts follow the filters: a year range narrows the table, the awards counts and the copied summary and table (which say what they counted); the picked cell narrows no count; the popup and the page calls count every paper; the setting off restores it; a click a script makes presses no button");
     }
 
     // -- S3d. names: the person's own words for a title or a name on the screen, in every language; what a machine reads keeps the standard words
@@ -1627,6 +1645,10 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.mouse.move(grip.x + 4, grip.y + 4); await opts.mouse.down(); await opts.mouse.move(grip.x + 4, grip.y + 400, { steps: 8 }); await opts.keyboard.press("Escape"); await opts.mouse.up();
     await settle(opts);
     assert.deepEqual((await stored(opts, "sync", "prefs")).panel.order.slice(0, 3), ["table", "marks", "copy"], "Escape: nothing moved");
+    // the pencil is for a thing's own name: a sample row has none (the chips inside it have theirs, and are things of their own)
+    await opts.hover('#preview tr[data-rr-part="roles.first"] td > a');
+    await opts.locator(".pv-tag .pv-x").waitFor({ state: "visible", timeout: 8000 });
+    assert.equal(await opts.locator(".pv-tag .pv-edit").count(), 0, "a row of the sample list offers no rename: its chips are not its name");
     // a name: a double-click, an input over the text, Enter
     await opts.dblclick('#pv-panel [data-rr="metrics"] .rr-sec-title');
     await opts.locator(".pv-rename-input").fill("Output");

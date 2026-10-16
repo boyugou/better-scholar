@@ -424,7 +424,7 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
 }
 
 /* a name the person chose can be 30 letters in a row: it breaks where it must, instead of widening the panel past its frame */
-#rr-panel [data-rr-label] { overflow-wrap: anywhere; }
+#rr-panel [data-rr-label], #rr-panel .rr-scope, #rr-panel .rr-fb-text { overflow-wrap: anywhere; }
 #rr-panel .rr-dd { min-width: 0; max-width: 46%; }
 #rr-panel .rr-dd-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #rr-panel .rr-sec-head { flex-wrap: wrap; }

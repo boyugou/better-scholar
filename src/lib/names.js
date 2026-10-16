@@ -76,9 +76,10 @@
 
   // The profile header is free text: "Prof. John Smith", "John Smith, PhD",
   // "Wei Zhang (张伟)". Reduce it to the name proper.
+  // (a name is not longer than a few hundred characters, and runs of white space are made one before the patterns below look at them: a long run would make them quadratic)
   function cleanOwnerHeader(s) {
-    let r = fold(s).replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
-    r = r.replace(/[,;|]+/g, " ").replace(/\s+(?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
+    let r = fold(String(s == null ? "" : s).slice(0, 300)).replace(/\s+/g, " ").replace(/\([^)]*\)|\[[^\]]*\]/g, " ");
+    r = r.replace(/[,;|]+/g, " ").replace(/\s+/g, " ").replace(/ (?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
     const toks = r.split(/\s+/).filter(Boolean);
     while (toks.length > 1 && PREFIXES.has(bare(toks[0]))) toks.shift();
     while (toks.length > 1 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();
@@ -133,9 +134,10 @@
   //   3  identical after normalisation          2  every given name spelled out and equal
   //   1  initial-compatible only                0  no match
   function strength(a, variant) {
-    const b = nameParts(variant, { owner: true });
+    const form = ownerForm(variant), b = form.parts;
     if (!a.last || !b.last) return 0;
-    if (normalize(a.raw) === normalize(cleanOwnerHeader(variant))) return 3;
+    if (a.norm === undefined) a.norm = normalize(a.raw);
+    if (a.norm === form.norm) return 3;
     if (!sameSurname(a, b)) return 0;
     if (!a.givens.length || !b.givens.length) return 0;
     if (!givensCompatible(a.givens, b.givens)) return 0;
@@ -145,17 +147,35 @@
 
   const isAllCaps = (s) => /[A-Z]/.test(fold(s)) && fold(s) === fold(s).toUpperCase();
 
+  // What is made of an owner's name (the profile's name, a spelling) is made once: the same few names are compared with every author of every paper, and the profile of a large
+  // collaboration has thousands of authors in a paper
+  const forms = new Map();
+  function ownerForm(name) {
+    const key = String(name == null ? "" : name);
+    let f = forms.get(key);
+    if (!f) {
+      if (forms.size >= 200) forms.clear();
+      const norm = normalize(cleanOwnerHeader(key));
+      f = { norm, words: norm.split(" ").filter(Boolean), parts: nameParts(key, { owner: true }), caps: isAllCaps(key) };
+      forms.set(key, f);
+    }
+    return f;
+  }
+
   // owner = { name, alternates?: string[] } — alternates are extra spellings the
   // user told us about ("Zhang Wei", "W. Zhang").
   function matchStrength(authorText, owner) {
     const a = nameParts(authorText);
     a.raw = authorText;
     const variants = [owner.name, ...(owner.alternates || [])].filter(Boolean);
-    let best = 0;
+    let best = 0, authorCaps;
     for (const v of variants) {
       // a spelling in capitals ("JA DOUDNA", offered from a patent) names the capitals: it must not make every "Wu Li" the owner's, as an ordinary spelling would
       // (not when the profile's own name is in capitals: its rearrangements, which the page derives, are in capitals too)
-      if (v !== owner.name && isAllCaps(v) && !isAllCaps(authorText) && !isAllCaps(owner.name)) continue;
+      if (v !== owner.name && ownerForm(v).caps) {
+        if (authorCaps === undefined) authorCaps = isAllCaps(authorText);
+        if (!authorCaps && !ownerForm(owner.name).caps) continue;
+      }
       best = Math.max(best, strength(a, v));
     }
     return best;
@@ -261,7 +281,7 @@
   // "SY Philip" for "Philip S. Yu", "J Tang" for "Tang Jie", "M Tomas" for "Tomas Mikolov" — but not "PA David" for "David Patterson".
   function isPermutation(authorName, ownerName) {
     const a = normalize(authorName).split(" ").filter(Boolean);
-    const o = normalize(cleanOwnerHeader(ownerName)).split(" ").filter(Boolean);
+    const o = ownerForm(ownerName).words;
     if (a.length !== o.length || a.length < 2) return false;
     const used = new Array(o.length).fill(false);
     let written = 0;
@@ -286,7 +306,7 @@
     if (!/[A-Z]/.test(raw) || raw !== raw.toUpperCase()) return false;
     const words = raw.split(/\s+/);
     if (words.length < 2) return false;
-    const a = nameParts(authorName), o = nameParts(ownerName, { owner: true });
+    const a = nameParts(authorName), o = ownerForm(ownerName).parts;
     if (!a.last || !o.last || !sameSurname(a, o) || !o.givens.length) return false;
     const given = words.slice(0, -1);
     if (!given.every((w) => /^[A-Z]{1,3}$/.test(w))) return false;

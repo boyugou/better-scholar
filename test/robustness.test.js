@@ -124,3 +124,35 @@ test("results are deterministic and never mutate shared state between calls", ()
   assert.equal(JSON.stringify(marks.detect({ venue: "NeurIPS 2023 Oral" })), JSON.stringify(m));
   assert.equal(JSON.stringify(marks.detect({ venue: "NeurIPS 2023 Oral" })), JSON.stringify(m), "the shared /g regexes are reset between calls");
 });
+
+test("a hostile profile name — a long run of white space or brackets, as an owner can put in the header — is read at once", () => {
+  const row = "J Smith, Jane Doe, K Lee, " + "A B, ".repeat(100);
+  const t0 = Date.now();
+  for (const name of ["Jane " + "﻿".repeat(5000) + "Doe", "(".repeat(5000), "[".repeat(5000), "Jane ".repeat(2000) + "PhD", " ".repeat(20000) + "Jane Doe"]) {
+    const hostile = { name, alternates: [] };
+    assert.doesNotThrow(() => names.classifyRow(row, hostile), name.slice(0, 12));
+    assert.doesNotThrow(() => names.suggestVariants([row, row], hostile), name.slice(0, 12));
+    assert.doesNotThrow(() => names.isShoutedInitials("JA DOE", name), name.slice(0, 12));
+  }
+  assert.ok(Date.now() - t0 < 1500 * slowdown(), `took ${Date.now() - t0} ms`);
+  assert.equal(names.classifyRow("J Smith, Jane Doe", { name: "Jane ﻿﻿Doe", alternates: [] }).role, "last", "and the name it prints is still the owner's");
+});
+
+test("the author lists of a large collaboration (thousands of authors in a paper) are read in a few seconds for a hundred papers", () => {
+  const authors = Array.from({ length: 3000 }, (_, i) => `${String.fromCharCode(65 + (i % 26))}${String.fromCharCode(65 + (i % 7))} Surname${i}`).join(", ");
+  const spellings = { name: "Jane Doe", alternates: ["Doe Jane", "J Doe"] };
+  const t0 = Date.now();
+  for (let r = 0; r < 100; r++) names.classifyRow(authors, spellings);
+  names.suggestVariants(Array(100).fill(authors), spellings);
+  assert.ok(Date.now() - t0 < 4000 * slowdown(), `took ${Date.now() - t0} ms`);
+});
+
+test("a very long venue or title is cut before the scans that would be quadratic in it", () => {
+  const t0 = Date.now();
+  for (let i = 0; i < 5; i++) {
+    venues.prepare(",".repeat(20000) + " Nature");
+    venues.prepare("-".repeat(20000) + " Nature");
+    marks.detect({ venue: "oral ".repeat(4000), title: "best paper award ".repeat(2000) });
+  }
+  assert.ok(Date.now() - t0 < 1000 * slowdown(), `took ${Date.now() - t0} ms`);
+});

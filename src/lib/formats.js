@@ -110,14 +110,15 @@
   };
   function papersHtml(papers, ctx) {
     const t = table(papers, ctx), col = t.header.indexOf(ctx.labels.authors);
-    const rows = ctx.markMe && col >= 0 ? t.rows.map((r, i) => (clean(papers[i].me) ? r.map((v, j) => (j === col ? { html: boldOwner(esc(clean(papers[i].authors)), esc(clean(papers[i].me))) } : v)) : r)) : t.rows;
+    const rows = ctx.markMe && col >= 0 ? t.rows.map((r, i) => (clean(papers[i].me) ? r.map((v, j) => (j === col ? { html: boldOwner(esc(formulaSafe(clean(papers[i].authors))), esc(clean(papers[i].me))) } : v)) : r)) : t.rows;
     return rowsHtml(t.header, rows);
   }
   const summaryHtml = (summary, opts) => { const t = summaryTable(summary, opts); return rowsHtml(t.header, t.rows, opts && opts.scope); };
 
   // ---- BibTeX -----------------------------------------------------------------------------------------------------------------------------------
-  // Everything that means something to TeX is made into the text it spells, so that an entry compiles whatever the title says (and a title cannot carry a command).
-  const TEX = { "\\": "\\textbackslash{}", "{": "\\{", "}": "\\}", "$": "\\$", "&": "\\&", "#": "\\#", "^": "\\textasciicircum{}", "_": "\\_", "~": "\\textasciitilde{}", "%": "\\%" };
+  // Everything that means something to TeX is made into the text it spells, so that an entry compiles whatever the title says (and a title cannot carry a command). A brace is
+  // spelled with \textbraceleft{}: BibTeX counts the braces of a field whatever stands before them, so "\}" would close the field, and what came after it could open an entry.
+  const TEX = { "\\": "\\textbackslash{}", "{": "\\textbraceleft{}", "}": "\\textbraceright{}", "$": "\\$", "&": "\\&", "#": "\\#", "^": "\\textasciicircum{}", "_": "\\_", "~": "\\textasciitilde{}", "%": "\\%" };
   const tex = (s) => clean(s).replace(/[\\{}$&#^_~%]/g, (c) => TEX[c]);
   const STOP = new Set(["a", "an", "the", "on", "in", "for", "and", "of", "to", "with", "at", "by", "from", "towards"]);
 

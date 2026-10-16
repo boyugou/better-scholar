@@ -118,15 +118,19 @@ test("bibtex: a cut author list ends 'and others', and an entry's key is never u
 
 test("bibtex: nothing in a title or an author name can be a TeX command", () => {
   const bib = f.bibtex([paper({ title: "100% of C++ & Rust: A #1 Study of $X_y$ in O(n^2) with {BERT} \\input{/etc/passwd} ~ a", authors: "A \\write18 Author, B {Writer}" })]);
-  assert.ok(bib.includes("  title = {100\\% of C++ \\& Rust: A \\#1 Study of \\$X\\_y\\$ in O(n\\textasciicircum{}2) with \\{BERT\\} \\textbackslash{}input\\{/etc/passwd\\} \\textasciitilde{} a},"));
-  assert.ok(bib.includes("author = {A \\textbackslash{}write18 Author and B \\{Writer\\}}"));
-  // every brace in an entry is balanced, whatever the title holds
-  for (const title of ["}{", "{{{", "}}}", "a{b", "\\{"]) {
-    const entry = f.bibtex([paper({ title })]);
+  assert.ok(bib.includes("  title = {100\\% of C++ \\& Rust: A \\#1 Study of \\$X\\_y\\$ in O(n\\textasciicircum{}2) with \\textbraceleft{}BERT\\textbraceright{} \\textbackslash{}input\\textbraceleft{}/etc/passwd\\textbraceright{} \\textasciitilde{} a},"));
+  assert.ok(bib.includes("author = {A \\textbackslash{}write18 Author and B \\textbraceleft{}Writer\\textbraceright{}}"));
+  // every brace in an entry is balanced, whatever the title holds: counted as BibTeX counts them, every one, whatever stands before it
+  for (const title of ["}{", "{{{", "}}}", "a{b", "\\{", "\\}", "x\\\\}"]) {
+    const entry = f.bibtex([paper({ title, authors: title })]);
     let depth = 0;
-    for (let i = 0; i < entry.length; i++) { if (entry[i] === "\\") { i++; continue; } if (entry[i] === "{") depth++; if (entry[i] === "}") depth--; assert.ok(depth >= 0, title); }
+    for (const ch of entry) { if (ch === "{") depth++; if (ch === "}") depth--; assert.ok(depth >= 0, title); }
     assert.equal(depth, 0, title);
   }
+  // a title cannot close its field and open an entry of its own
+  const evil = f.bibtex([paper({ title: 'Deep Learning}} @misc(evil, title = "Injected")' })]);
+  assert.equal(evil.match(/^@/gm).length, 1, "one entry");
+  assert.ok(evil.includes("\\textbraceright{}\\textbraceright{} @misc(evil"), "the braces are text");
 });
 
 test("markdown: a publication list; what a title says cannot become a link or markup", () => {
@@ -229,6 +233,8 @@ test("html: the owner's name is in bold in the author cells when the page marks 
   assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "X Zhang" }), false).includes("<b>"), "the page does not mark the name: nor does the copy");
   assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "" })).includes("<b>"), "no name found in the line: nothing to mark");
   assert.ok(!bold(paper({ authors: "K He, X Zhang", me: "Y Nobody" })).includes("<b>"), "a name that is not in the line is not marked");
+  const formula = bold(paper({ authors: '=HYPERLINK("https://evil.example","Jane Doe"), Jane Doe', me: "Jane Doe" }));
+  assert.ok(formula.includes("<td>&#39;=HYPERLINK(") && formula.includes("<b>Jane Doe</b></td>"), "a cell that begins like a formula is made text here too, owner in bold or not");
   assert.equal(f.papersTsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
   assert.equal(f.papersCsv([paper({ me: "X Zhang" })], lab).includes("<b>"), false);
 });

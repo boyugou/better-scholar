@@ -38,7 +38,7 @@
     url.searchParams.set("hl", "en");
     if (url.origin !== location.origin) throw new ResolveError("http", "not a Scholar page");      // (cookies go only to the page's own origin)
     const res = await fetch(url.href, { credentials: "include", signal });
-    if (res.status === 429 || res.status === 503 || /\/sorry\//.test(res.url)) throw new ResolveError("captcha");
+    if (res.status === 429 || res.status === 503 || /\/sorry\//.test(res.url) || (res.redirected && new URL(res.url).origin !== location.origin)) throw new ResolveError("captcha");
     if (!res.ok) throw new ResolveError("http", "HTTP " + res.status);
     return parseDetail(await res.text());
   }
@@ -46,7 +46,7 @@
   // items: [{ id, href }]. cache: { [id]: { authors, venue, ts } } is updated in place.
   // Calls onProgress(done, total) and onResult(id, entry); returns { done, stopped }.
   async function resolveAll(items, cache, { onProgress, onResult, signal, semantic = false } = {}) {
-    let done = 0, askSemantic = true, limited = false, badKey = false;
+    let done = 0, askSemantic = true, limited = false, badKey = false, failed = 0;
     for (const item of items) {
       if (signal && signal.aborted) return { done, stopped: "cancelled" };
       // Semantic Scholar first when the settings allow it (items carry the title); a miss or a slow-down sends the paper to Scholar's own page
@@ -65,10 +65,13 @@
       if (!cache[item.id]) {
         try {
           const d = await fetchDetail(item.href, signal);
+          failed = 0;
           if (d.authors) cache[item.id] = { authors: d.authors, venue: d.venue, ts: Date.now() };
         } catch (e) {
           if (e.name === "AbortError") return { done, stopped: "cancelled" };
           if (e instanceof ResolveError && e.code === "captcha") return { done, stopped: "captcha" };
+          // (a request that could not be made at all — the block page Google redirects to is on another site, and a redirect there fails the request — twice in a row: stop, as for a CAPTCHA)
+          if (e instanceof TypeError && ++failed >= 2) return { done, stopped: "captcha" };
           // a single failed page is skipped; keep going
         }
         await sleep(PACE());

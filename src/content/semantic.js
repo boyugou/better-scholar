@@ -12,7 +12,7 @@
   async function lookup(title, signal, { authorsText = "", year = null } = {}) {
     const url = API + "?fields=title,authors,year&query=" + encodeURIComponent(title);
     const apiKey = await B.store.loadS2Key();                       // (a free key avoids the limit shared by everyone without one)
-    const res = await fetch(url, { signal, credentials: "omit", referrerPolicy: "no-referrer", headers: apiKey ? { "x-api-key": apiKey } : {} });
+    const res = await fetch(url, { signal, credentials: "omit", referrerPolicy: "no-referrer", redirect: "error", headers: apiKey ? { "x-api-key": apiKey } : {} });          // (the key goes to the API's own address and nowhere else)
     if (res.status === 404) return null;
     if (res.status === 401 || res.status === 403) throw Object.assign(new Error(apiKey ? "key" : "limited"), apiKey ? { badKey: true } : { limited: true });          // (a key Semantic Scholar does not accept: no point in asking again; without a key a refusal is the shared limit)
     if (res.status === 429 || res.status >= 500) throw Object.assign(new Error("limited"), { limited: true });

@@ -304,15 +304,17 @@
       default: return v === s.none || languages().includes(v) ? null : `must be "${s.none}" or one of: ${languages().join(", ")}`;
     }
   }
-  // The characters of a name that show nothing or turn the text around: controls, soft hyphen, zero-width space, word joiner and the invisible operators, the fillers (Hangul, Khmer,
-  // Mongolian), bidirectional embeddings, overrides and isolates, the Unicode tag characters (text that a reader does not see and a model does). A configuration pasted from somewhere
-  // could use them to make a button say what it does not. The joiner and non-joiner stay (some scripts need them inside words), and so do the left-to-right, right-to-left and
-  // Arabic letter marks (they fix punctuation in a name of the other direction and cannot hide anything).
-  const UNSEEN = /[\u0000-\u001f\u007f-\u009f\u00ad\u034f\u115f\u1160\u17b4\u17b5\u180b-\u180f\u200b\u202a-\u202e\u2060-\u2064\u2066-\u206f\u3164\ufeff\uffa0\ufff9-\ufffb\u{e0000}-\u{e007f}]/gu;
+  // The characters of a name that show nothing or turn the text around: controls, soft hyphen, zero-width space, word joiner and the invisible operators, the fillers (Hangul, Khmer),
+  // bidirectional embeddings, overrides and isolates, the Unicode tag characters and the variation selectors of the supplement (text that a reader does not see and a model does).
+  // A configuration pasted from somewhere could use them to make a button say what it does not. The joiner and non-joiner stay (some scripts need them inside words), and so do the
+  // left-to-right, right-to-left and Arabic letter marks (they fix punctuation in a name of the other direction), the Mongolian variation selectors (they shape its letters) and the
+  // variation selectors of emoji and CJK (U+FE00-FE0F): a name made of nothing but marks that stay is no name (`clean` makes it "").
+  const UNSEEN = /[\u0000-\u001f\u007f-\u009f\u00ad\u034f\u115f\u1160\u17b4\u17b5\u200b\u202a-\u202e\u2060-\u2064\u2066-\u206f\u3164\ufeff\uffa0\ufff9-\ufffb\u{1bca0}-\u{1bca3}\u{1d173}-\u{1d17a}\u{e0000}-\u{e007f}\u{e0100}-\u{e01ef}]/gu;
+  const MARKS_ONLY = /^[\s\u200c\u200d\u200e\u200f\u061c\u180b-\u180f\ufe00-\ufe0f]*$/;
   // the value as stored: a colour in lower case, a name on one line, an order complete (the ids the list leaves out follow in the default order)
   function clean(s, v) {
     if (s.kind === "color" && typeof v === "string") return v.toLowerCase();
-    if (s.kind === "text" && typeof v === "string") return v.replace(/\s+/g, " ").replace(UNSEEN, "").trim();
+    if (s.kind === "text" && typeof v === "string") { const out = v.replace(UNSEEN, (c) => (/\s/.test(c) ? " " : "")).replace(/\s+/g, " ").trim(); return MARKS_ONLY.test(out) ? "" : out; }
     if (s.kind === "order" && Array.isArray(v)) return [...new Set(v), ...s.def.filter((x) => !v.includes(x))];
     return v;
   }

@@ -62,7 +62,8 @@
 
   const SPACES = /[   -​  　]/g;
   // (NFKC turns the styled letters some authors paste in — 𝐎𝐫𝐚𝐥, 𝘉𝘦𝘴𝘵 𝘗𝘢𝘱𝘦𝘳, full-width ＯＲＡＬ — back into plain ones)
-  const norm = (s) => String(s == null ? "" : s)
+  // (a text longer than a title or a venue ever is — a thousand characters — is cut: the scan below is quadratic in the number of phrases a text holds)
+  const norm = (s) => String(s == null ? "" : s).slice(0, 1000)
     .normalize("NFKC")
     .replace(SPACES, " ")
     .replace(/[（［【]/g, (c) => (c === "（" ? "(" : "[")).replace(/[）］】]/g, (c) => (c === "）" ? ")" : "]"))
