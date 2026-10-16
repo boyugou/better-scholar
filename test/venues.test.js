@@ -1053,3 +1053,23 @@ test("an acronym with a page range is the event: 'AAMAS, 1-10, 2016' and 'CSCW, 
     assert.ok(!r.ccf || (r.ccf.kind === "C" && (r.ccf.abbr === v.abbr || r.ccf.name === v.name)), `${v.abbr}${tail} → ${r.ccf && r.ccf.kind} ${r.ccf && r.ccf.name}`);
   }
 });
+
+test("a track at a venue is not the venue: 'Workshop' in a name the venue once had (AISTATS, EGSR, PETS, RV) does not make its workshops the venue's papers; a venue that is a workshop (HotOS, ASRU) keeps its badge", () => {
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core, r.secondary], [null, null, "workshop"], s); };
+  for (const s of ["AISTATS Workshop on Causality, 2019", "International Conference on Artificial Intelligence and Statistics Workshops, 2019", "Workshop at AISTATS, 2019",
+    "Eurographics Symposium on Rendering Workshops, 2019", "Runtime Verification Workshop, 2019", "PETS Workshop, 2019"]) none(s);
+  // ... while the name the venue had, as printed, is the venue
+  for (const [s, want] of [["International workshop on artificial intelligence and statistics, 33-40, 2005", "CCF C AISTATS · CORE A AISTATS"], ["Eurographics Workshop on Rendering Techniques, 103-114, 2001", "CCF B EGSR"],
+    ["International Workshop on Privacy Enhancing Technologies, 186-206, 2004", "CORE A PETS"], ["Proceedings of the 12th IEEE Computer Security Foundations Workshop, 192-202, 1999", "CCF B CSFW · CORE A CSF"],
+    ["11th USENIX Workshop on Hot Topics in Storage and File Systems (HotStorage 19), 2019", "CCF C HotStorage"], ["15th workshop on hot topics in operating systems (HotOS XV), 2015", "CCF B HotOS · CORE A HotOS"]]) assert.equal(brief(s), want, s);
+  // every conference of both lists, with a track named in nine ways: a badge only from a row whose own official name holds that track word
+  const names = [...ccf.venues.filter((v) => v.kind === "C").map((v) => v.name), ...core.venues.map((v) => v.name)].map((n) => n.replace(/\([^()]*\)/g, " ").replace(/\s+/g, " ").trim()).filter((n) => !venues.secondaryWord(n));          // (a name that holds a track word has said it already)
+  assert.ok(names.length > 1000);
+  const forms = [(n) => n + " Workshops, 2019", (n) => "Workshop at " + n + ", 2019", (n) => "Workshop on Causality at the " + n + ", 2019", (n) => n + ": Companion Volume, 2019", (n) => n + " (Demo Track), 2019",
+    (n) => "Doctoral Consortium of the " + n + ", 2019", (n) => n + " Posters, 2019", (n) => "Tutorial at the " + n + ", 2019", (n) => n + " Extended Abstracts, 2019"];
+  const holds = (name, word) => venues.secondaryWord(name.replace(/\([^()]*\)/g, " ")) === word;
+  for (const n of names) for (const f of forms) {
+    const raw = f(n), word = venues.secondaryWord(raw), r = resolver.resolve(raw);
+    for (const badge of [r.ccf, r.core]) if (badge) assert.ok(holds(badge.name, word), `${raw} → ${badge.name}: a ${word} is not the venue`);
+  }
+});

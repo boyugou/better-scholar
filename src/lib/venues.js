@@ -785,8 +785,28 @@
     return null;
   }
 
-  // Does the venue's own name (or alias) contain the secondary-track word itself?
-  const ownWord = (entry, word) => entry.extra.some((n) => fold(n).toLowerCase().includes(word));
+  // Is the secondary-track word part of the venue, not a sign of a track at it? Two cases. The venue's official name holds it (HotOS, ASRU, IWQoS: "Workshop" is what the venue
+  // is, whichever way the string words it). Or a name it had, or is printed under, holds it ("International Workshop on Artificial Intelligence and Statistics" is AISTATS under
+  // its first name) — then the words beside it in that name must stand in the string as well (the two after it, or at the end of a name the two before it, in that order):
+  // "AISTATS Workshop on Causality" is a workshop at the conference, and "…Statistics Workshops, 2019" its workshops.
+  const wordsOf = (text) => fold(text).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map((w) => w.replace(/s$/, ""));
+  const wordAt = (t, target, i) => i + target.length <= t.length && target.every((w, j) => t[i + j] === w);
+  function ownWord(entry, word, raw) {
+    const target = wordsOf(word);
+    const official = wordsOf(String(entry.name).replace(/\([^()]*\)/g, " "));
+    for (let i = 0; i < official.length; i++) if (wordAt(official, target, i)) return true;
+    const have = " " + wordsOf(raw).join(" ") + " ";
+    return entry.extra.some((n) => {
+      const t = wordsOf(n);
+      for (let i = 0; i < t.length; i++) {
+        if (!wordAt(t, target, i)) continue;
+        const end = i + target.length, after = t.length - end;
+        const phrase = after >= 2 ? t.slice(i, end + 2) : t.slice(Math.max(0, i - 2), end + after);
+        if (have.includes(" " + phrase.join(" ") + " ")) return true;
+      }
+      return false;
+    });
+  }
 
   const NON_VENUE = /^(?:arxiv|biorxiv|medrxiv|ssrn|preprint|technical report|tech\.? rep|url|https?:|see https?:|cited on|unpublished)/i;
   // Periodicals that are on neither list and whose title, without the words a conference name drops ("International Symposium on"), is the title of a conference that is on one:
@@ -835,7 +855,7 @@
         if (src === "core" && out.ccf && out.ccf.kind === "J") continue;
         const r = matchSource(idx, src, p, hint, idx.known);
         if (!r) continue;
-        if (sec && !ownWord(r.entry, sec)) { out.secondary = sec; continue; }
+        if (sec && !ownWord(r.entry, sec, raw)) { out.secondary = sec; continue; }
         out[src] = src === "ccf"
           ? { tier: r.entry.tier, name: r.entry.name, abbr: r.entry.abbr, area: r.entry.area, kind: r.entry.kind, dblp: r.entry.dblp, rule: r.rule }
           : { rank: r.entry.rank, name: r.entry.name, abbr: r.entry.abbr, kind: r.entry.kind, rule: r.rule };          // (CORE ranks conferences: its kind is "C")

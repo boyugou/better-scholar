@@ -208,6 +208,8 @@
     { ccf: "SAC", core: "SAC", noBareAcronym: true, names: ["Selected Areas in Cryptography"] },
     // earlier or sponsor-carrying names Scholar prints (the lists give the current ones)
     { ccf: "SPAA", core: "SPAA", names: ["ACM Symposium on Parallel Algorithms and Architectures", "Symposium on Parallel Algorithms and Architectures"] },
+    // PETS was the International Workshop on Privacy Enhancing Technologies (CORE's note says "of"; the proceedings say "on")
+    { core: "PETS", names: ["International Workshop on Privacy Enhancing Technologies"] },
     { ccf: "SenSys", names: ["ACM Conference on Embedded Network Sensor Systems", "ACM International Conference on Embedded Networked Sensor Systems", "International Conference on Embedded Networked Sensor Systems"] },
     { ccf: "CoNEXT", core: "CoNEXT", names: ["ACM CoNEXT Conference", "CoNEXT Conference"] },
     { ccf: "SECON", core: "SECON", names: ["IEEE Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks", "Sensor, Mesh and Ad Hoc Communications and Networks"] },
