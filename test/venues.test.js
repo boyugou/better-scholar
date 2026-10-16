@@ -990,3 +990,11 @@ test("the inverted title Scholar prints for older IEEE and ACM journals is read 
   assert.equal(brief("Smith Computers, Transactions on Something 1 (1), 2010"), "", "no IEEE or ACM in front of 'Transactions on': left as it is");
   assert.equal(brief("Proceedings of the IEEE 105 (3), 2017"), brief("Proceedings of the IEEE"), "a name that is not inverted is read as before");
 });
+
+test("'Biennial' qualifies an event like 'Annual', and IEEE Xplore's '4 pp.' is a page count, not part of the name", () => {
+  assert.equal(brief("Proceedings of 5th Biennial Conference on Innovative Data Systems Research, 2011"), "CCF B CIDR · CORE A CIDR");
+  assert.equal(brief("8th Biennial Conference on Innovative Data Systems Research, 2017"), brief("Conference on Innovative Data Systems Research, 2017"));
+  assert.equal(brief("2006 IEEE International Symposium on Circuits and Systems, 4 pp., 2006"), "CCF B ISCAS · CORE C ISCAS");
+  assert.equal(brief("2006 IEEE International Symposium on Circuits and Systems, 4 pp.-4542, 2006"), "CCF B ISCAS · CORE C ISCAS");
+  assert.equal(brief("Biennial Report of the Society, 12 pp., 2006"), "", "a word that is no name is still no venue");
+});

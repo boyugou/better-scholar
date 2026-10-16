@@ -35,7 +35,7 @@
     "proceedings", "proceeding", "proc", "conference", "conferences", "conf", "symposium",
     "symposia", "symp", "workshop", "workshops", "meeting", "meetings", "congress",
     "colloquium", "annual", "international", "intl", "int", "joint", "edition",
-    "volume", "vol", "part", "track", "session", "sessions", "ann"
+    "volume", "vol", "part", "track", "session", "sessions", "ann", "biennial", "triennial"
   ]);
   // Organisations that co-sponsor many events; never an identity on their own.
   const ORG = new Set(["ieee", "acm", "cvf", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier",
@@ -116,7 +116,7 @@
 
   // (the whole word: "Marketing" and "Decision" are not months — "Journal of Marketing" was read as "Journal of" and then as the Journal of the ACM)
   const MONTH = "(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
-  const PAGES = "(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";
+  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp.")
 
   // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
   // "Datasets; Benchmarks" spellings) is not part of the venue's identity, so it is dropped before matching. Whether the
