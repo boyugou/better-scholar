@@ -185,11 +185,13 @@
   }
 
   // The search box's query, compiled once per query (and per set of marks that count)
-  let compiled = { key: null, matcher: null };
+  let compiled = { key: null, matcher: null, query: null, prefs: null };
   function matcher() {
+    if (compiled.matcher && compiled.query === state.filters.query && compiled.prefs === prefs) return compiled.matcher;          // (asked for every row, several times a refresh)
     const lists = B.prefs.lists(prefs);
     const key = state.filters.query + "\u0000" + B.prefs.MARK_GROUPS.map((g) => (B.prefs.markShown(prefs, g) ? 1 : 0)).join("") + (lists.ccf ? "c" : "-") + (lists.core ? "c" : "-");
     if (compiled.key !== key) compiled = { key, matcher: analysis.queryMatcher(state.filters.query, (row) => B.prefs.visibleMarks(prefs, row.a.marks), lists) };
+    compiled.query = state.filters.query; compiled.prefs = prefs;
     return compiled.matcher;
   }
 

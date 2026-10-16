@@ -56,15 +56,19 @@
   // ({ raw: { title, authorsText, venueText }, a: the analysis, shown: the citations counted }), and the terms of the query that could not be read.
   // `marksOf(row)` says which marks count (the ones the settings leave on).
   const KIND = { C: "conference", J: "journal" };           // (what the rank lists call a venue's kind)
+  const low = (x) => String(x || "").toLowerCase();
+  // (the title, the author line and the venue of a row do not change: in lower case once, not for every key typed)
+  const READ = new WeakMap();
+  const readText = (raw) => { let t = READ.get(raw); if (!t) { t = [low(raw.title), low(raw.authorsText), low(raw.venueText)]; READ.set(raw, t); } return t; };
+
   function queryMatcher(q, marksOf = (row) => row.a.marks || [], ranksOn = {}) {
     const parsed = query.parse(q);
     const fields = (row) => {
       const { raw, a } = row, v0 = a.venue || {}, found = marksOf(row);
       const v = { ccf: ranksOn.ccf === false ? null : v0.ccf, core: ranksOn.core === false ? null : v0.core };      // (a list that is switched off is not searched either)
-      const low = (x) => String(x || "").toLowerCase();
       return {
-        text: [raw.title, raw.authorsText, raw.venueText, v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,
-          ...found.map((m) => `${m.kind || ""} ${m.label || ""} ${m.text || ""}`)].map(low),
+        text: [...readText(raw), ...[v.ccf && v.ccf.abbr, v.ccf && v.ccf.name, v.core && v.core.abbr, v.core && v.core.name,
+          ...found.map((m) => `${m.kind || ""} ${m.label || ""} ${m.text || ""}`)].map(low)],
         year: a.year != null ? a.year : null,
         citations: row.shown,
         role: low(a.role),
@@ -75,7 +79,17 @@
         talk: found.some((m) => m.group === "oral" || m.group === "spotlight" || m.group === "highlight")
       };
     };
-    return { test: (row) => !parsed.terms.length || query.matches(parsed, fields(row)), errors: parsed.errors, empty: !parsed.terms.length };
+    // (the answer for a row is kept while its analysis (`row.a`, made again when anything it depends on changes) and its citations are the same: the page asks several times a refresh)
+    const memo = new WeakMap();
+    const test = (row) => {
+      if (!parsed.terms.length) return true;
+      const hit = row.raw && memo.get(row.raw);
+      if (hit && hit.a === row.a && hit.shown === row.shown) return hit.ok;
+      const ok = query.matches(parsed, fields(row));
+      if (row.raw) memo.set(row.raw, { a: row.a, shown: row.shown, ok });
+      return ok;
+    };
+    return { test, errors: parsed.errors, empty: !parsed.terms.length };
   }
 
   // The rows that would benefit from a look at the paper's own page: the owner is

@@ -153,3 +153,17 @@ test("age: how old a paper is in years, this year being 0: age:<5 is the last fi
   assert.equal(analysis.queryMatcher("age:<5").test({ ...paper, a: { ...paper.a, year: thisYear - 4 } }), true);
   assert.equal(analysis.queryMatcher("age:<5").test({ ...paper, a: { ...paper.a, year: thisYear - 5 } }), false);
 });
+
+test("the matcher keeps a row's answer while its analysis and its citations are the same, and asks again when either changes", () => {
+  const m = analysis.queryMatcher("cites:>100 year:>=2010");
+  const row = { raw: paper.raw, a: paper.a, shown: 50 };
+  assert.equal(m.test(row), false);
+  assert.equal(m.test(row), false, "asked twice: the same");
+  row.shown = 500;
+  assert.equal(m.test(row), true, "the citations are another number now (a merge of duplicates)");
+  row.a = { ...paper.a, year: 2001 };
+  assert.equal(m.test(row), false, "a new analysis of the row (another year)");
+  const lower = analysis.queryMatcher("residual learning");
+  assert.equal(lower.test({ raw: { ...paper.raw }, a: paper.a, shown: 1 }), true, "the text is read in lower case once for each row, and found in any case");
+  assert.equal(lower.test({ raw: { ...paper.raw, title: "Attention" }, a: paper.a, shown: 1 }), false, "another row, another text");
+});
