@@ -101,6 +101,9 @@ Links, which open only when you click them:
   address without the host, with the profile's `user=` id replaced by "…".
 - The footer of the settings page links to the privacy page, the issue tracker and the GitHub repository. The
   toolbar popup links to Google Scholar when the open tab is not a profile.
+- *Check a venue* on the settings page shows, for a CCF venue, a link to the venue's page on DBLP (`https://dblp.org/db/…`,
+  the address the CCF list itself gives). It is a plain link with `rel="noopener noreferrer"`: the extension sends nothing, and the
+  page opens only when you click it.
 
 ## What is never sent
 
