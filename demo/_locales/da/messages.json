@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Den kopierede oversigt og den kopierede tabel får en linje med profilens link og datoen (Source: …), så tallene kan arkiveres eller sendes videre. En liste, der ikke er indlæst helt, siger det dér, uanset denne kontakt."
+  },
+  "unrankedPreprints": {
+    "message": "Forhåndstryk"
+  },
+  "unrankedSecondary": {
+    "message": "Sekundære kategorier"
+  },
+  "unrankedOther": {
+    "message": "Andre steder"
   }
 }

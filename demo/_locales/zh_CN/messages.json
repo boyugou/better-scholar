@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "复制的摘要和复制的表格会多出一行，写明主页链接和日期（Source: …），便于归档或转发这些数字。列表未全部加载时，无论此开关如何设置，复制的内容中都会注明。"
+  },
+  "unrankedPreprints": {
+    "message": "预印本"
+  },
+  "unrankedSecondary": {
+    "message": "次要类别"
+  },
+  "unrankedOther": {
+    "message": "其他发表场所"
   }
 }

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "コピーした集計とコピーした表には、プロフィールのリンクと日付（Source: …）を書いた行が加わります。数値を整理したり送ったりできるようにするためです。全部は読み込まれていないリストでは、このスイッチの設定にかかわらず、その旨がそこに書かれます。"
+  },
+  "unrankedPreprints": {
+    "message": "プレプリント"
+  },
+  "unrankedSecondary": {
+    "message": "副次トラック"
+  },
+  "unrankedOther": {
+    "message": "その他の掲載先"
   }
 }

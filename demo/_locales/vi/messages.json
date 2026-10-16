@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Tóm tắt đã sao chép và bảng đã sao chép sẽ có thêm một dòng ghi liên kết hồ sơ và ngày (Source: …), để có thể lưu hoặc chuyển tiếp các con số. Danh sách chưa tải đủ sẽ ghi điều đó ngay tại đó, bất kể công tắc này đang ở trạng thái nào."
+  },
+  "unrankedPreprints": {
+    "message": "Preprint"
+  },
+  "unrankedSecondary": {
+    "message": "Hạng mục phụ"
+  },
+  "unrankedOther": {
+    "message": "Venue khác"
   }
 }

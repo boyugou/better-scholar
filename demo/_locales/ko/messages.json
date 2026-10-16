@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "복사한 요약과 복사한 표에 프로필 링크와 날짜가 적힌 줄(Source: …)이 추가되어, 수치를 정리하거나 다른 곳으로 보낼 수 있습니다. 전부 불러오지 않은 목록은 이 스위치 설정과 관계없이 그 사실을 거기에 표시합니다."
+  },
+  "unrankedPreprints": {
+    "message": "프리프린트"
+  },
+  "unrankedSecondary": {
+    "message": "부차 트랙"
+  },
+  "unrankedOther": {
+    "message": "기타 게재처"
   }
 }

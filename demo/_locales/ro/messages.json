@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Rezumatul copiat și tabelul copiat primesc un rând cu linkul profilului și data (Source: …), ca numerele să poată fi arhivate sau trimise mai departe. O listă care nu este încărcată integral o spune acolo, indiferent cum este setat acest comutator."
+  },
+  "unrankedPreprints": {
+    "message": "Preprinturi"
+  },
+  "unrankedSecondary": {
+    "message": "Categorii secundare"
+  },
+  "unrankedOther": {
+    "message": "Alte venue-uri"
   }
 }

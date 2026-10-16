@@ -43,7 +43,7 @@
   const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "age:<5", "has:award", "has:talk"];
   const TEXT_FIELDS = 8000;       // a longer query than this is cut: nobody types it, and a script could send anything
 
-  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", value } | { kind: "never" }.
+  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", values: [any of these] } | { kind: "never" }.
   function parse(q) {
     const terms = [], errors = [];
     for (const word of String(q == null ? "" : q).slice(0, TEXT_FIELDS).toLowerCase().split(/\s+/).filter(Boolean)) {
@@ -94,12 +94,12 @@
   // Is this quick filter in the query?
   function hasValue(q, op) {
     const { name, value } = parts(op);
-    return words(q).some((w) => (LISTED.has(name) ? (() => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })() : w === op));
+    return words(q).some((w) => (LISTED.has(name) ? (() => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })() : w.toLowerCase() === op));
   }
   // The query with the quick filter put in (joining the word of its operator) or taken out
   function toggleValue(q, op) {
     const ws = words(q), { name, value } = parts(op);
-    if (!LISTED.has(name)) { const i = ws.indexOf(op); if (i >= 0) ws.splice(i, 1); else ws.push(op); return ws.join(" "); }
+    if (!LISTED.has(name)) { const i = ws.findIndex((w) => w.toLowerCase() === op); if (i >= 0) ws.splice(i, 1); else ws.push(op); return ws.join(" "); }
     const has = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name && s.values.includes(value); });
     if (has >= 0) {
       const left = split(ws[has]).values.filter((v) => v !== value);

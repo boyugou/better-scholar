@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Den kopierade sammanfattningen och den kopierade tabellen får en rad med profilens länk och datumet (Source: …), så att siffrorna kan arkiveras eller skickas vidare. En lista som inte är helt inläst säger det där, oavsett hur reglaget är inställt."
+  },
+  "unrankedPreprints": {
+    "message": "Förhandstryck"
+  },
+  "unrankedSecondary": {
+    "message": "Sekundära spår"
+  },
+  "unrankedOther": {
+    "message": "Andra ställen"
   }
 }

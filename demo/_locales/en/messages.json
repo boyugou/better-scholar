@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "The copied summary and the copied table get a line with the profile's link and the day (Source: …), so that the numbers can be filed or sent on. A list that is not all loaded says so there whatever this switch says."
+  },
+  "unrankedPreprints": {
+    "message": "Preprints"
+  },
+  "unrankedSecondary": {
+    "message": "Secondary tracks"
+  },
+  "unrankedOther": {
+    "message": "Other venues"
   }
 }

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Le récapitulatif copié et le tableau copié reçoivent une ligne avec le lien du profil et la date (Source: …), pour que les chiffres puissent être classés ou transmis. Une liste qui n’est pas entièrement chargée le signale à cet endroit, quel que soit l’état de cet interrupteur."
+  },
+  "unrankedPreprints": {
+    "message": "Préprints"
+  },
+  "unrankedSecondary": {
+    "message": "Catégories secondaires"
+  },
+  "unrankedOther": {
+    "message": "Autres supports"
   }
 }

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "A másolt összesítés és a másolt táblázat egy sort kap a profil linkjével és a dátummal (Source: …), hogy a számokat el lehessen tárolni vagy tovább lehessen küldeni. Ha a lista nincs teljesen betöltve, a másolat ott ezt jelzi, a kapcsoló állásától függetlenül."
+  },
+  "unrankedPreprints": {
+    "message": "Preprintek"
+  },
+  "unrankedSecondary": {
+    "message": "Másodlagos kategóriák"
+  },
+  "unrankedOther": {
+    "message": "Egyéb venue-k"
   }
 }

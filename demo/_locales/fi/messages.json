@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Kopioituun yhteenvetoon ja kopioituun taulukkoon lisätään rivi, jossa on profiilin linkki ja päivämäärä (Source: …), jotta luvut voi arkistoida tai lähettää eteenpäin. Lista, jota ei ole ladattu kokonaan, mainitsee sen siinä kohdassa tämän kytkimen asennosta riippumatta."
+  },
+  "unrankedPreprints": {
+    "message": "Preprintit"
+  },
+  "unrankedSecondary": {
+    "message": "Toissijaiset kategoriat"
+  },
+  "unrankedOther": {
+    "message": "Muut foorumit"
   }
 }

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "Ringkasan yang disalin dan tabel yang disalin mendapat satu baris berisi tautan profil dan tanggal (Source: …), agar angka-angkanya bisa diarsipkan atau diteruskan. Daftar yang belum sepenuhnya dimuat akan menyebutkannya di sana, apa pun posisi sakelar ini."
+  },
+  "unrankedPreprints": {
+    "message": "Preprint"
+  },
+  "unrankedSecondary": {
+    "message": "Jalur sekunder"
+  },
+  "unrankedOther": {
+    "message": "Venue lainnya"
   }
 }

@@ -1180,5 +1180,14 @@
   },
   "optCopySourceHint": {
     "message": "O resumo copiado e a tabela copiada recebem uma linha com o link do perfil e a data (Source: …), para que os números possam ser arquivados ou enviados adiante. Uma lista que não foi carregada por completo informa isso ali, independentemente de como esta chave está ajustada."
+  },
+  "unrankedPreprints": {
+    "message": "Pré-publicações"
+  },
+  "unrankedSecondary": {
+    "message": "Categorias secundárias"
+  },
+  "unrankedOther": {
+    "message": "Outros veículos"
   }
 }
