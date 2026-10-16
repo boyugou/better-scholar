@@ -482,7 +482,7 @@
     "message": "Reset all of these settings to their defaults?"
   },
   "optStorage": {
-    "message": "Settings stay in your browser and sync with your Chrome profile. Scholar pages are read only when you open them, and paper titles go to Semantic Scholar only if you switch that on."
+    "message": "Settings stay in your browser and sync with your Chrome profile. The extension reads the Scholar pages you open, and the pages of papers with a cut-off author list when you press Read full lists; paper titles go to Semantic Scholar only if you switch that on."
   },
   "optSample": {
     "message": "Sample paper"

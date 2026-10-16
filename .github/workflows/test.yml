@@ -18,6 +18,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm test
       - run: node scripts/build-data.mjs --check
+      - run: npm run check:claims
       - run: scripts/package-chrome.sh
 
   e2e:

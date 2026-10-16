@@ -35,7 +35,7 @@ const QUERY = "role:first ccf:a cites:>100";
 const SHOTS = {
   profile: {
     file: "screenshot-1.jpg", title: "See your role in every paper",
-    caption: "Rows coloured by authorship role, each venue marked with today's CCF and CORE rank.",
+    caption: "Rows coloured by authorship role; every venue the CCF and CORE lists place carries today's rank.",
     about: "A Scholar profile with the extension on: each paper's row is tinted by the owner's authorship role (first, second, last author), the owner's name is marked in the author line, the venue carries its CCF and CORE chips, awards and talks have their own chips (Best paper, Oral, Spotlight), and the panel at the top of the sidebar adds it up in the role × rank table."
   },
   panel: {
@@ -50,7 +50,7 @@ const SHOTS = {
   },
   settings: {
     file: "screenshot-4.jpg", title: "Choose what you see",
-    caption: "Every role, colour and part of the panel has its own switch, with a live preview.",
+    caption: "Every part of the panel has its own switch and every colour its own picker, with a live preview.",
     about: "The settings page (light): the \"Highlight my papers\" switches for each authorship role and for marking your name, the start of the Colours section with its palettes, and on the right the live preview (sample papers and the real panel), which is always Scholar's light page."
   },
   popup: {
@@ -62,7 +62,7 @@ const SHOTS = {
 const PROMO = {
   name: "Better Scholar",
   small: "Roles and ranks on every paper",
-  marquee: "Your authorship role and each venue's CCF and CORE rank, on every Scholar profile."
+  marquee: "Your authorship role, and the CCF and CORE rank of each venue the lists place, on every Scholar profile."
 };
 
 // ---- a copy of the extension that also runs on the stand-in page (as in test/e2e/run.mjs) -------------------------------

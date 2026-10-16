@@ -482,7 +482,7 @@
     "message": "要將這些設定全部還原為預設值嗎？"
   },
   "optStorage": {
-    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。Scholar 頁面僅在您開啟時才會讀取；只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
+    "message": "設定儲存在瀏覽器中，並與您的 Chrome 設定檔同步。擴充功能會讀取您開啟的 Scholar 頁面；您按下「補全」時，也會讀取作者列表被截短的論文頁面；只有開啟 Semantic Scholar 後，論文標題才會傳送給它。"
   },
   "optSample": {
     "message": "範例論文"

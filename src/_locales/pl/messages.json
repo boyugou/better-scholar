@@ -464,7 +464,7 @@
     "message": "Przywrócić wszystkie te ustawienia do wartości domyślnych?"
   },
   "optStorage": {
-    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Strony Scholar są odczytywane tylko wtedy, gdy je otworzysz, a tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
+    "message": "Ustawienia są przechowywane w przeglądarce i synchronizowane z profilem Chrome. Rozszerzenie odczytuje strony Scholar, które otwierasz, a gdy naciśniesz „Odczytaj pełne listy”, także strony prac ze skróconą listą autorów; tytuły prac trafiają do Semantic Scholar tylko wtedy, gdy to włączysz."
   },
   "optSample": {
     "message": "Przykładowa praca"

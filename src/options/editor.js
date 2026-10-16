@@ -54,7 +54,9 @@
         if (tag.firstChild && tag.firstChild.classList.contains("pv-grip")) tag.firstChild.addEventListener("pointerdown", (e) => startDrag(e, g));
         const r = rel(el);
         tag.hidden = false;
-        tag.style.left = Math.max(0, r.left) + "px";
+        // (a thing as wide as a row has its tag at its right end: its text starts at the left, where the tag would cover the line above)
+        const wide = r.width > host.clientWidth * 0.6;
+        tag.style.left = Math.max(0, wide ? r.left + r.width - tag.offsetWidth - 6 : r.left) + "px";
         tag.style.top = Math.max(0, r.top - tag.offsetHeight + 3) + "px";
       } else tag.hidden = true;
       // the rail: the whole part, at its left edge (inside the part's own margin)

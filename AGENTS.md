@@ -12,7 +12,7 @@ Two things you can do:
 
 1. Read what the user wants. Use only the settings listed below; do not invent any.
 2. Reply with **one JSON object** that holds only the settings to change, in the shape of the record under "Current settings" (nested objects, as in the examples; no dotted paths). Leave out what stays as it is.
-3. The user pastes it into *Settings → Configuration → Config editor* and presses **Apply** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.
+3. The user pastes it into *Settings → Configuration & presets → Paste or edit a configuration (JSON)* and presses **Apply configuration** (or saves it as a `.json` file and uses *Import file*). The page then says what it applied and what it ignored. If something was ignored, ask the user to send you that message and correct the object.
 
 Example — years chart off, BibTeX and summary buttons first, last-author rows only, bar-style rows:
 ```json
@@ -232,7 +232,7 @@ Result: { owner, loaded, shown, loadingAll, layoutBroken, edition, noRanks, summ
 The papers, one record each: who you are in the author list, the venue's ranks, award and talk marks.
 Parameters:
   - `filtered`: true (the default): only the papers the page shows now, after the filters; false: every loaded paper.
-Result: { owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null.
+Result: { owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank: { ccf: { tier, name } | null, core: { rank, name } | null }, marks: [string], url }] } — `role` is first | cofirst | second | last | middle | null; `type` is conference | journal | null (the kind the rank lists give the venue).
 
 ### `export`
 The papers or the summary as text, in the format of a copy button.

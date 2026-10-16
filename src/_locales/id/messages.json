@@ -464,7 +464,7 @@
     "message": "Kembalikan semua pengaturan ini ke default?"
   },
   "optStorage": {
-    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Halaman Scholar hanya dibaca saat Anda membukanya, dan judul makalah hanya dikirim ke Semantic Scholar jika Anda mengaktifkannya."
+    "message": "Pengaturan disimpan di browser dan disinkronkan dengan profil Chrome Anda. Ekstensi membaca halaman Scholar yang Anda buka dan, saat Anda menekan tombol “Baca daftar lengkap”, halaman makalah dengan daftar penulis yang terpotong; judul makalah hanya dikirim ke Semantic Scholar jika Anda mengaktifkannya."
   },
   "optSample": {
     "message": "Contoh makalah"

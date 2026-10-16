@@ -146,9 +146,8 @@ console — and can tell from the attribute that the extension is installed. The
 
 - The calls are `ping`, `summary`, `papers`, `export`, `filter` and `clearFilters`. They return what the panel and
   its copy buttons produce for that profile: the counts, the papers' records (with the author lists that *Read full
-  lists* saved for those papers), and the text of a copy format. `summary` also reports a few display settings:
-  which rank lists and copy buttons are on, whether the table and the awards counts are shown, and how talks are
-  counted. `filter` and `clearFilters` change the filters of that page only.
+  lists* saved for those papers), and the text of a copy format. `summary` returns numbers only. `filter` and
+  `clearFilters` change the filters of that page only.
 - They cannot change any setting or anything in storage, they make no network request, and they do not return the
   settings record, the Semantic Scholar key or the name spellings.
 

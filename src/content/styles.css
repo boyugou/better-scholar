@@ -428,6 +428,12 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   tr.gsc_a_tr.rr-row-focused { outline: 3px solid Highlight !important; }
 }
 
+/* a name the person chose can be 30 letters in a row: it breaks where it must, instead of widening the panel past its frame */
+#rr-panel { overflow-wrap: anywhere; }
+#rr-panel .rr-dd { min-width: 0; max-width: 46%; }
+#rr-panel .rr-dd-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#rr-panel .rr-sec-head, #rr-panel .rr-cover-line { flex-wrap: wrap; }
+
 /* "Showing 25 of 100 papers · Clear": the list is filtered */
 #rr-panel .rr-filterbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px; background: #e8f0fe; border-bottom: 1px solid var(--rr-line); font-size: 12px; }
 #rr-panel .rr-filterbar.rr-fb-empty { background: #fef7e0; border-bottom-color: #fce8b2; }

@@ -482,7 +482,7 @@
     "message": "Tilbakestille alle disse innstillingene til standardverdiene?"
   },
   "optStorage": {
-    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Scholar-sider leses bare når du åpner dem, og artikkeltitler sendes bare til Semantic Scholar hvis du slår det på."
+    "message": "Innstillingene lagres i nettleseren din og synkroniseres med Chrome-profilen din. Utvidelsen leser Scholar-sidene du åpner, og når du trykker «Les fulle lister», også sidene til artikler med en forkortet forfatterliste; artikkeltitler sendes bare til Semantic Scholar hvis du slår det på."
   },
   "optSample": {
     "message": "Eksempelartikkel"

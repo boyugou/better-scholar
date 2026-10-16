@@ -141,10 +141,8 @@ in this order:
 5. "Your summary in the toolbar." The toolbar popup over the profile: owner and paper count, the table (here by CORE rank),
    the Awards & talks line, the eight copy and export buttons and the note on the ranks.
 
-Two captions say slightly more than the code does: screenshot 1 ("each venue marked with today's CCF and CORE rank", while
-some of its rows have no chip, by design) and screenshot 4 ("Every role, colour and part of the panel has its own switch";
-colours have pickers). The marquee tile says "each venue's CCF and CORE rank" in the same way. See `claims.md` 4.8 and
-`screenshots-plan.md`; the words live in `scripts/store-images.mjs`.
+The captions were made exact (screenshot 1 and the marquee say "every venue the CCF and CORE lists place"; screenshot 4 says every
+colour has its own picker); the words live in `scripts/store-images.mjs`, see `screenshots-plan.md`.
 
 ### Additional fields
 

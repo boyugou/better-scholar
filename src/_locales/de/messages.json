@@ -482,7 +482,7 @@
     "message": "Alle diese Einstellungen auf die Standardwerte zurücksetzen?"
   },
   "optStorage": {
-    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Scholar-Seiten werden nur gelesen, wenn du sie öffnest, und Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
+    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Die Erweiterung liest die Scholar-Seiten, die du öffnest, und wenn du auf „Ganze Listen lesen“ klickst, auch die Seiten von Papers mit gekürzter Autorenliste; Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
   },
   "optSample": {
     "message": "Beispiel-Paper"

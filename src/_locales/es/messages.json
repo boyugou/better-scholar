@@ -482,7 +482,7 @@
     "message": "¿Restablecer todos estos ajustes a sus valores predeterminados?"
   },
   "optStorage": {
-    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. Las páginas de Scholar solo se leen cuando las abres, y los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
+    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. La extensión lee las páginas de Scholar que abres y, cuando pulsas «Leer listas completas», las páginas de artículos con una lista de autores recortada; los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
   },
   "optSample": {
     "message": "Artículo de ejemplo"

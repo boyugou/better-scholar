@@ -482,7 +482,7 @@
     "message": "Ripristinare tutte queste impostazioni ai valori predefiniti?"
   },
   "optStorage": {
-    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. Le pagine di Scholar vengono lette solo quando le apri, e i titoli degli articoli vengono inviati a Semantic Scholar solo se lo attivi."
+    "message": "Le impostazioni sono salvate nel browser e sincronizzate con il tuo profilo Chrome. L’estensione legge le pagine di Scholar che apri e, quando premi «Leggi elenchi completi», anche le pagine degli articoli con un elenco di autori troncato; i titoli degli articoli vengono inviati a Semantic Scholar solo se lo attivi."
   },
   "optSample": {
     "message": "Articolo di esempio"

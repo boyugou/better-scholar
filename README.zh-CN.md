@@ -225,7 +225,7 @@ const { ok, result, error } = await answer;   // result.text 即 BibTeX
 | `ping` | 无 | `{ version, owner, loaded, complete }` |
 | `summary` | 无 | 角色 × 等级表（CCF、CORE、仅按角色）、获奖与报告形式计数、引用统计 |
 | `papers` | `filtered`（默认 `true`：页面当前显示的论文；`false`：所有已加载的论文） | `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格） | `{ format, text }` |
+| `export` | `format`（必填：`summary`、`table`、`papers`、`apa`、`bibtex`、`markdown`、`json`、`csv`）；`source`（`ccf`、`core`、`none`；用于摘要和表格）；`html`（`true`：对 `table`、`papers`、`apa` 另返回 `html`） | `{ format, text, html? }` |
 | `filter` | `query`、`onlyHighlighted`、`yearStart`、`yearEnd`、`minCitations`、`impact`（`h` 或 `i10`）；`null` 清除一个数值 | `{ shown, total, filters, errors }` |
 | `clearFilters` | 无 | `{ shown, total, filters, errors }` |
 
@@ -272,7 +272,8 @@ better-scholar/
 ├── data/                   源数据集（CCF PDF 抽取、ICORE 导出、获奖名单）及其来源说明
 ├── scripts/                数据构建、CCF 抽取、获奖页面读取、各项检查、打包、无障碍审查
 ├── test/                   单元测试；e2e/ 在 Chromium 中对仿真 Scholar 页面运行端到端检查
-├── docs/                   架构、路线图、应用商店素材、截图
+├── docs/                   架构与路线图
+├── store/                  Chrome 应用商店提交素材：上架文案、每条说法的依据、安装包记录、图片
 └── contrib/safari/         尽力而为的 Safari 封装生成脚本
 ```
 
@@ -284,7 +285,7 @@ better-scholar/
 
 ```bash
 npm test                              # 单元测试
-npm run test:e2e                      # 78 项端到端检查：真实扩展在 Chromium 中对本地仿真 Scholar 页面运行
+npm run test:e2e                      # 端到端检查：真实扩展在 Chromium 中对本地仿真 Scholar 页面运行
 npm run test:update                   # 审阅差异之后，重写场所匹配快照
 npm run data                          # 由 data/*.json 重新生成 src/data/{ccf,core,awards}.js
 npm run check:profile -- page.html    # 在一个真实保存的 Scholar 学者主页上运行扩展

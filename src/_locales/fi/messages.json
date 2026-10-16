@@ -482,7 +482,7 @@
     "message": "Palautetaanko kaikki nämä asetukset oletusarvoihin?"
   },
   "optStorage": {
-    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Scholar-sivuja luetaan vain silloin, kun avaat ne, ja artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
+    "message": "Asetukset tallennetaan selaimeesi ja synkronoidaan Chrome-profiilisi kanssa. Laajennus lukee Scholar-sivut, jotka avaat, ja kun painat “Lue täydet luettelot”, myös sivut artikkeleista, joiden tekijäluettelo on katkaistu; artikkelien otsikot lähetetään Semantic Scholarille vain, jos otat sen käyttöön."
   },
   "optSample": {
     "message": "Esimerkkiartikkeli"

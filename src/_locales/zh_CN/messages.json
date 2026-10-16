@@ -464,7 +464,7 @@
     "message": "把这里的所有设置恢复为默认值？"
   },
   "optStorage": {
-    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。Scholar 页面仅在你打开时才会读取；只有开启 Semantic Scholar 后，论文标题才会发送给它。"
+    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。扩展会读取你打开的 Scholar 页面；点“补全”时，也会读取作者列表被截断的论文页面；只有开启 Semantic Scholar 后，论文标题才会发送给它。"
   },
   "optSample": {
     "message": "示例论文"

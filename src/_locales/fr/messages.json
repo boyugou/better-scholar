@@ -482,7 +482,7 @@
     "message": "Rétablir tous ces réglages à leurs valeurs par défaut ?"
   },
   "optStorage": {
-    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. Les pages Scholar ne sont lues que lorsque vous les ouvrez, et les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
+    "message": "Les réglages sont stockés dans votre navigateur et synchronisés avec votre profil Chrome. L’extension lit les pages Scholar que vous ouvrez et, lorsque vous cliquez sur « Lire la liste complète », les pages des articles dont la liste d’auteurs est tronquée ; les titres des articles ne sont envoyés à Semantic Scholar que si vous l’activez."
   },
   "optSample": {
     "message": "Article d’exemple"

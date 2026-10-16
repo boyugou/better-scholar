@@ -225,7 +225,7 @@ The request's `detail` is `{ id, method, params }`; an `id` that is a string or 
 | `ping` | none | `{ version, owner, loaded, complete }` |
 | `summary` | none | The role × rank tables (CCF, CORE, by role only), the awards and talks counts, the citation totals |
 | `papers` | `filtered` (default `true`: the papers the page shows; `false`: every loaded paper) | `{ owner, total, papers: [{ id, title, authors, venue, year, citations, role, status, highlighted, type, rank, marks, url }] }` |
-| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table) | `{ format, text }` |
+| `export` | `format` (required: `summary`, `table`, `papers`, `apa`, `bibtex`, `markdown`, `json`, `csv`); `source` (`ccf`, `core`, `none`; for the summary and the table); `html` (`true`: also return `html` for `table`, `papers` and `apa`) | `{ format, text, html? }` |
 | `filter` | `query`, `onlyHighlighted`, `yearStart`, `yearEnd`, `minCitations`, `impact` (`h` or `i10`); `null` clears a number | `{ shown, total, filters, errors }` |
 | `clearFilters` | none | `{ shown, total, filters, errors }` |
 
@@ -272,7 +272,8 @@ better-scholar/
 ├── data/                   Source datasets (CCF PDF extract, ICORE export, awards) and their provenance
 ├── scripts/                Data builders, CCF extractor, award readers, checks, packaging, accessibility audit
 ├── test/                   unit tests; e2e/ runs the end-to-end checks in Chromium against a Scholar stand-in
-├── docs/                   Architecture, roadmap, store listing kit, pictures
+├── docs/                   Architecture and roadmap
+├── store/                  Chrome Web Store submission kit: listing text, the evidence behind each claim, package record, images
 └── contrib/safari/         Best-effort Safari wrapper generator
 ```
 
@@ -284,7 +285,7 @@ The unit tests run on Node.js (20 or later) with no dependencies; the end-to-end
 
 ```bash
 npm test                              # the unit tests
-npm run test:e2e                      # 78 end-to-end checks: the real extension in Chromium against a local Scholar stand-in
+npm run test:e2e                      # the end-to-end checks: the real extension in Chromium against a local Scholar stand-in
 npm run test:update                   # rewrite the venue snapshot, after reviewing its diff
 npm run data                          # rebuild src/data/{ccf,core,awards}.js from data/*.json
 npm run check:profile -- page.html    # the extension on a real saved Scholar profile page
