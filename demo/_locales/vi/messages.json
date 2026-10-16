@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "5 năm gần đây"
+  },
+  "coverLoadedOne": {
+    "message": "Đã tải 1 bài"
+  },
+  "coverHiddenOne": {
+    "message": "1 vai trò bị ẩn do danh sách tác giả bị rút gọn"
+  },
+  "coverAbsentOne": {
+    "message": "1 bài có danh sách tác giả không chứa tên hồ sơ"
+  },
+  "coverUnmatchedOne": {
+    "message": "1 bài ở venue chưa xếp hạng"
+  },
+  "popupPapersOne": {
+    "message": "1 bài"
+  },
+  "optCacheCountOne": {
+    "message": "Danh sách tác giả của 1 bài được lưu trên thiết bị này (giữ 90 ngày)."
+  },
+  "yearsOlderOne": {
+    "message": "1 bài cũ hơn không được hiển thị"
+  },
+  "filterAbsent": {
+    "message": "Không có tên hồ sơ trong danh sách tác giả"
+  },
+  "optCopySource": {
+    "message": "Thêm liên kết hồ sơ và ngày vào tóm tắt đã sao chép"
+  },
+  "optCopySourceHint": {
+    "message": "Tóm tắt đã sao chép và bảng đã sao chép sẽ có thêm một dòng ghi liên kết hồ sơ và ngày (Source: …), để có thể lưu hoặc chuyển tiếp các con số. Danh sách chưa tải đủ sẽ ghi điều đó ngay tại đó, bất kể công tắc này đang ở trạng thái nào."
   }
 }

@@ -172,7 +172,9 @@
       "",
       "The search box and `filter { query }` take words and operators separated by spaces; a paper must match all of them. A word matches the title, authors, venue, the venue's name in the lists, the year, the role and the marks (case does not matter).",
       "",
-      ...query.OPERATORS.map((o) => `- ${code(o.example)} — ${o.doc}`)
+      ...query.OPERATORS.map((o) => `- ${code(o.example)} — ${o.doc}`),
+      "",
+      `The values of ${[...query.LISTED].map(code).join(", ")} can be listed with commas: ${code("role:first,last")} is a paper where you are the first or the last author, ${code("ccf:a,b")} one at a CCF A or B venue. Separate words must all hold; the values of one word, any of them. The quick filters under the search box join the word of their operator in the same way.`
     ].join("\n");
   }
 

@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "5 dernières années"
+  },
+  "filterAbsent": {
+    "message": "Nom du profil absent de la liste des auteurs"
+  },
+  "optCopySource": {
+    "message": "Ajouter le lien du profil et la date au récapitulatif copié"
+  },
+  "optCopySourceHint": {
+    "message": "Le récapitulatif copié et le tableau copié reçoivent une ligne avec le lien du profil et la date (Source: …), pour que les chiffres puissent être classés ou transmis. Une liste qui n’est pas entièrement chargée le signale à cet endroit, quel que soit l’état de cet interrupteur."
   }
 }

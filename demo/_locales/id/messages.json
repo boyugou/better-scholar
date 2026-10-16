@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "5 tahun terakhir"
+  },
+  "coverLoadedOne": {
+    "message": "1 makalah dimuat"
+  },
+  "coverHiddenOne": {
+    "message": "1 peran tersembunyi karena daftar penulis dipotong"
+  },
+  "coverAbsentOne": {
+    "message": "1 makalah yang daftar penulisnya tidak memuat nama profil"
+  },
+  "coverUnmatchedOne": {
+    "message": "1 makalah di venue tanpa peringkat"
+  },
+  "popupPapersOne": {
+    "message": "1 makalah"
+  },
+  "optCacheCountOne": {
+    "message": "Daftar penulis 1 makalah tersimpan di perangkat ini (disimpan 90 hari)."
+  },
+  "yearsOlderOne": {
+    "message": "1 makalah yang lebih lama tidak ditampilkan"
+  },
+  "filterAbsent": {
+    "message": "Nama profil tidak ada di daftar penulis"
+  },
+  "optCopySource": {
+    "message": "Tambahkan tautan profil dan tanggal ke ringkasan yang disalin"
+  },
+  "optCopySourceHint": {
+    "message": "Ringkasan yang disalin dan tabel yang disalin mendapat satu baris berisi tautan profil dan tanggal (Source: …), agar angka-angkanya bisa diarsipkan atau diteruskan. Daftar yang belum sepenuhnya dimuat akan menyebutkannya di sana, apa pun posisi sakelar ini."
   }
 }

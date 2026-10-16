@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "Posledních 5 let"
+  },
+  "coverLoadedOne": {
+    "message": "Načtená práce: 1"
+  },
+  "coverHiddenOne": {
+    "message": "Role skrytá zkráceným seznamem autorů: 1"
+  },
+  "coverAbsentOne": {
+    "message": "Práce, kde jméno z profilu není mezi autory: 1"
+  },
+  "coverUnmatchedOne": {
+    "message": "Práce v místě publikace bez ranku: 1"
+  },
+  "popupPapersOne": {
+    "message": "Práce: 1"
+  },
+  "optCacheCountOne": {
+    "message": "Seznam autorů práce uložený na tomto zařízení: 1 (uchován 90 dní)."
+  },
+  "yearsOlderOne": {
+    "message": "Nevykreslená starší práce: 1"
+  },
+  "filterAbsent": {
+    "message": "Jméno z profilu není mezi autory"
+  },
+  "optCopySource": {
+    "message": "Přidat do zkopírovaného přehledu odkaz na profil a datum"
+  },
+  "optCopySourceHint": {
+    "message": "Zkopírovaný přehled i zkopírovaná tabulka dostanou řádek s odkazem na profil a datem (Source: …), aby se čísla dala založit nebo poslat dál. Seznam, který není celý načtený, to v nich řekne bez ohledu na tento přepínač."
   }
 }

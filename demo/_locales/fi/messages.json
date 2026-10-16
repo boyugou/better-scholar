@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Viimeiset 5 vuotta"
+  },
+  "filterAbsent": {
+    "message": "Profiilin nimi ei ole kirjoittajaluettelossa"
+  },
+  "optCopySource": {
+    "message": "Lisää profiilin linkki ja päivämäärä kopioituun yhteenvetoon"
+  },
+  "optCopySourceHint": {
+    "message": "Kopioituun yhteenvetoon ja kopioituun taulukkoon lisätään rivi, jossa on profiilin linkki ja päivämäärä (Source: …), jotta luvut voi arkistoida tai lähettää eteenpäin. Lista, jota ei ole ladattu kokonaan, mainitsee sen siinä kohdassa tämän kytkimen asennosta riippumatta."
   }
 }

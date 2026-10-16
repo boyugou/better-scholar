@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "近 5 年"
+  },
+  "filterAbsent": {
+    "message": "作者列表中找不到本頁姓名"
+  },
+  "optCopySource": {
+    "message": "在已複製的摘要中加入作者頁面連結和日期"
+  },
+  "optCopySourceHint": {
+    "message": "已複製的摘要和已複製的表格會多一行，寫明作者頁面的連結與日期（Source: …），方便歸檔或轉寄這些數字。列表未全部載入時，無論此開關如何設定，複製的內容都會註明。"
   }
 }

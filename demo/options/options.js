@@ -488,7 +488,7 @@
       const isCustom = current !== defaultColor.toLowerCase();
       resetBtn.style.display = isCustom ? "inline-flex" : "none";
       const { pass, label } = barContrast(current);
-      contrastPill.className = "contrast-badge " + (pass ? "pass" : "warn");
+      contrastPill.className = "contrast-badge " + (pass || !isCustom ? "pass" : "warn");          // (the built-in colour does not warn about itself: the warning is for a colour that was picked)
       contrastPill.textContent = label;
     }
 

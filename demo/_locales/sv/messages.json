@@ -1171,5 +1171,14 @@
   },
   "optPillRecent": {
     "message": "Senaste 5 åren"
+  },
+  "filterAbsent": {
+    "message": "Profilnamnet inte i författarlistan"
+  },
+  "optCopySource": {
+    "message": "Lägg till profilens länk och datumet i den kopierade sammanfattningen"
+  },
+  "optCopySourceHint": {
+    "message": "Den kopierade sammanfattningen och den kopierade tabellen får en rad med profilens länk och datumet (Source: …), så att siffrorna kan arkiveras eller skickas vidare. En lista som inte är helt inläst säger det där, oavsett hur reglaget är inställt."
   }
 }

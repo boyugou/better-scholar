@@ -204,7 +204,9 @@
       bool("panel.copy.show", true, "The row of copy and export buttons (also the toolbar popup's).", { label: "optShowSection" }),
       order("panel.copy.order", COPY_BUTTONS, "The copy buttons, left to right: a list of ids (" + COPY_BUTTONS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderButtons", parent: "panel.copy.show" }),
-      ...COPY_BUTTONS.flatMap((k) => [bool(`panel.copy.${k}`, true, COPY_DOC[k], { label: COPY_LABEL[k], parent: "panel.copy.show" }), { parent: "panel.copy.show", ...named(COPY_LABEL[k]) }])
+      ...COPY_BUTTONS.flatMap((k) => [bool(`panel.copy.${k}`, true, COPY_DOC[k], { label: COPY_LABEL[k], parent: "panel.copy.show" }), { parent: "panel.copy.show", ...named(COPY_LABEL[k]) }]),
+      bool("panel.copy.source", true, "A line in the copied summary and the copied table with the profile's link (nothing else of the address) and the day, so that the numbers can be filed or sent on. A list that is not all loaded says so in the same place whatever this says.",
+        { label: "optCopySource", hint: "optCopySourceHint", parent: "panel.copy.show" })
     ]),
     card("marks", "optMarksTitle", "optPanelMarksHint", [
       ...part("marks", "The awards and talks counts: one click lists those papers.", [
@@ -222,7 +224,7 @@
       ...part("filters", "The search box and the filters.", [["search", true, "optFiltersSearch", "The search box, with its suggestions and the number of papers it finds.", { name: "filterPlaceholder" }]]),
       order("panel.filters.pills.order", PILLS, "The quick-filter buttons under the search box, left to right: a list of ids (" + PILLS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderPills", parent: "panel.filters.show", group: "optFiltersQuick" }),
-      ...PILLS.map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn).`,
+      ...PILLS.map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find).`,
         { label: PILL_LABEL[id], parent: "panel.filters.show", group: "optFiltersQuick" })),
       bool("panel.filters.only", true, "The \"Only highlighted\" switch (absent while no position is highlighted).", { label: "onlyHighlighted", parent: "panel.filters.show" }),
       { parent: "panel.filters.show", ...named("onlyHighlighted") },

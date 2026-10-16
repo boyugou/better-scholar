@@ -8,6 +8,7 @@
 //   role:first           your position: first, cofirst, second, last, or middle (none of those)
 //   type:journal         the venue's kind as the rank lists say it: conference or journal (a venue without a rank has none)
 //   has:award            an award or finalist mark; has:talk: Oral, Spotlight or Highlight
+//   role:first,last      a comma lists values of one operator (ccf, core, role, type, has): any of them, so "first or last author"; separate words must all hold
 // A word with a colon whose front is no operator ("http://…") is a word like any other. An operator with a value it does not take matches nothing, and is
 // named in `errors`, so that whoever typed it (a person, an agent) can see why.
 (function (root, factory) {
@@ -36,6 +37,8 @@
       doc: "has:award — a best-paper award or finalist mark; has:talk — an Oral, Spotlight or Highlight mark." }
   ];
   const BY_NAME = new Map(OPERATORS.map((o) => [o.name, o]));
+  // the operators whose values are a few words, so that a comma can list them ("any of these")
+  const LISTED = new Set(["ccf", "core", "role", "type", "has"]);
   // what the panel offers when the box is empty and the person asks for suggestions (each is one of the operators' `suggest`)
   const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "age:<5", "has:award", "has:talk"];
   const TEXT_FIELDS = 8000;       // a longer query than this is cut: nobody types it, and a script could send anything
@@ -47,9 +50,15 @@
       const at = word.indexOf(":");
       const op = at > 0 ? BY_NAME.get(word.slice(0, at)) : undefined;
       if (!op) { terms.push({ kind: "text", text: word }); continue; }
-      const raw = word.slice(at + 1), m = op.value.exec(raw);
-      if (!m) { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); continue; }
-      terms.push(op.name === "cites" || op.name === "year" || op.name === "age" ? { kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) } : { kind: op.name, value: raw });
+      const raw = word.slice(at + 1), bad = () => { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); };
+      if (LISTED.has(op.name)) {                                              // (a comma lists values: "role:first,last"; one still typing, "role:first,", has the one it has)
+        const values = [...new Set(raw.split(",").filter(Boolean))];
+        if (!values.length || values.some((v) => !op.value.test(v))) bad(); else terms.push({ kind: op.name, values });
+        continue;
+      }
+      const m = op.value.exec(raw);
+      if (!m) { bad(); continue; }
+      terms.push({ kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) });
     }
     return { terms, errors };
   }
@@ -65,15 +74,52 @@
         case "cites": return COMPARERS[term.op](fields.citations, term.n);
         case "year": return fields.year != null && COMPARERS[term.op](fields.year, term.n);
         case "age": return fields.year != null && COMPARERS[term.op](now - fields.year, term.n);
-        case "ccf": return fields.ccf === term.value;
-        case "core": return fields.core === term.value;
-        case "role": return fields.role === term.value;
-        case "type": return fields.type === term.value;
-        case "has": return term.value === "award" ? fields.award : fields.talk;
+        case "ccf": return term.values.includes(fields.ccf);
+        case "core": return term.values.includes(fields.core);
+        case "role": return term.values.includes(fields.role);
+        case "type": return term.values.includes(fields.type);
+        case "has": return term.values.some((v) => (v === "award" ? fields.award : fields.talk));
         default: return false;
       }
     });
   }
 
-  return { OPERATORS, POPULAR, parse, matches };
+  // ---- the quick filters in a query ------------------------------------------------------------------------------------------------------------
+  // A quick filter is one `operator:value` ("role:first"). Pressed beside another of the same operator it joins its word ("role:first,last": either), rather than becoming a second
+  // word that must hold as well (nothing is both a first and a last author).
+  const words = (q) => String(q == null ? "" : q).trim().split(/\s+/).filter(Boolean);
+  const split = (word) => { const at = word.indexOf(":"); return at > 0 ? { name: word.slice(0, at).toLowerCase(), values: word.slice(at + 1).toLowerCase().split(",").filter(Boolean) } : null; };
+  const parts = (op) => { const at = op.indexOf(":"); return { name: op.slice(0, at), value: op.slice(at + 1) }; };
+
+  // Is this quick filter in the query?
+  function hasValue(q, op) {
+    const { name, value } = parts(op);
+    return words(q).some((w) => (LISTED.has(name) ? (() => { const s = split(w); return !!s && s.name === name && s.values.includes(value); })() : w === op));
+  }
+  // The query with the quick filter put in (joining the word of its operator) or taken out
+  function toggleValue(q, op) {
+    const ws = words(q), { name, value } = parts(op);
+    if (!LISTED.has(name)) { const i = ws.indexOf(op); if (i >= 0) ws.splice(i, 1); else ws.push(op); return ws.join(" "); }
+    const has = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name && s.values.includes(value); });
+    if (has >= 0) {
+      const left = split(ws[has]).values.filter((v) => v !== value);
+      if (left.length) ws[has] = name + ":" + left.join(","); else ws.splice(has, 1);
+      return ws.join(" ");
+    }
+    const same = ws.findIndex((w) => { const s = split(w); return !!s && s.name === name; });
+    if (same >= 0) ws[same] = ws[same].replace(/,+$/, "") + "," + value; else ws.push(op);
+    return ws.join(" ");
+  }
+  // The words and values of the query that are quick filters in `allowed` (a Set of "operator:value"), in lower case: what stays when the search box is not there to hold the rest
+  function keepOnly(q, allowed) {
+    const out = [];
+    for (const w of words(q)) {
+      const lw = w.toLowerCase(), s = split(lw);
+      if (s && LISTED.has(s.name)) { const keep = s.values.filter((v) => allowed.has(s.name + ":" + v)); if (keep.length) out.push(s.name + ":" + keep.join(",")); }
+      else if (allowed.has(lw)) out.push(lw);
+    }
+    return out.join(" ");
+  }
+
+  return { OPERATORS, POPULAR, LISTED, parse, matches, hasValue, toggleValue, keepOnly };
 });

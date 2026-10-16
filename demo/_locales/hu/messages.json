@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "Elmúlt 5 év"
+  },
+  "coverLoadedOne": {
+    "message": "1 cikk betöltve"
+  },
+  "coverHiddenOne": {
+    "message": "1 szerep rejtve a megcsonkított szerzői lista miatt"
+  },
+  "coverAbsentOne": {
+    "message": "1 cikk, amelynek szerzői listájában nincs ott a profil neve"
+  },
+  "coverUnmatchedOne": {
+    "message": "1 cikk rang nélküli venue-ban"
+  },
+  "popupPapersOne": {
+    "message": "1 cikk"
+  },
+  "optCacheCountOne": {
+    "message": "1 cikk szerzői listája van mentve ezen az eszközön (90 napig megőrizve)."
+  },
+  "yearsOlderOne": {
+    "message": "1 régebbi cikk nincs ábrázolva"
+  },
+  "filterAbsent": {
+    "message": "A profil neve nincs a szerzői listájában"
+  },
+  "optCopySource": {
+    "message": "A profil linkjének és a dátumnak a hozzáadása a másolt összesítéshez"
+  },
+  "optCopySourceHint": {
+    "message": "A másolt összesítés és a másolt táblázat egy sort kap a profil linkjével és a dátummal (Source: …), hogy a számokat el lehessen tárolni vagy tovább lehessen küldeni. Ha a lista nincs teljesen betöltve, a másolat ott ezt jelzi, a kapcsoló állásától függetlenül."
   }
 }

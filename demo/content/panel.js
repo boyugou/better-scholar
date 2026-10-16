@@ -168,7 +168,7 @@
       const { word, start, end } = getCurrentWordInfo();
       let next;
       if (word && (word.includes(":") || OPERATOR_NAME.test(word))) {
-        next = val.slice(0, start) + item.op + " " + val.slice(end);
+        next = val.slice(0, start) + (item.apply || item.op) + " " + val.slice(end);          // (a value after a comma completes the list: "role:first,la" → "role:first,last")
       } else {
         next = (val.trim() ? val.trim() + " " : "") + item.op + " ";
       }
@@ -206,7 +206,12 @@
     function updateSuggestions() {
       const w = getCurrentWordInfo().word.toLowerCase();
       const at = w.indexOf(":");
-      currentSuggestions = at < 1 ? [] : operatorItems().filter((item) => item.name === w.slice(0, at) && item.op.startsWith(w));
+      const comma = w.lastIndexOf(",");
+      if (comma > at && at > 0 && B.query.LISTED.has(w.slice(0, at))) {                      // the value being typed after a comma: the operator's other values
+        const head = w.slice(0, comma + 1), name = w.slice(0, at), tail = w.slice(comma + 1);
+        currentSuggestions = operatorItems().filter((item) => item.name === name && item.op.startsWith(name + ":" + tail) && !head.slice(at + 1).split(",").includes(item.op.slice(at + 1)))
+          .map((item) => ({ ...item, apply: head + item.op.slice(at + 1) }));
+      } else currentSuggestions = at < 1 ? [] : operatorItems().filter((item) => item.name === w.slice(0, at) && item.op.startsWith(w));
       if (currentSuggestions.length) renderSuggestions(); else closeSuggest();
     }
 
@@ -241,17 +246,6 @@
       queryInput.focus();
     } }, "×");
 
-    function toggleToken(query, token) {
-      const parts = (query || "").trim().split(/\s+/).filter(Boolean);
-      const idx = parts.indexOf(token);
-      if (idx >= 0) parts.splice(idx, 1);
-      else parts.push(token);
-      return parts.join(" ");
-    }
-    function hasToken(query, token) {
-      return (query || "").trim().split(/\s+/).filter(Boolean).includes(token);
-    }
-
     // The quick filters: one button for each of the settings' panel.filters.pills.* (built once, put in the panel's order, and only the ones that can find something)
     const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks" };
     const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", recent: t("optPillRecent"), award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
@@ -265,7 +259,7 @@
         ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
         onClick: () => {
           closeSuggest();
-          queryInput.value = toggleToken(queryInput.value, B.prefs.PILL_OPERATORS[id]);
+          queryInput.value = B.query.toggleValue(queryInput.value, B.prefs.PILL_OPERATORS[id]);
           syncSearchUI();
           cb.onQuery(queryInput.value);
           queryInput.focus();
@@ -280,7 +274,7 @@
       clearSearchBtn.hidden = !hasText;
       kbdHint.hidden = hasText;
       for (const btn of pillEls.values()) {
-        const active = hasToken(queryInput.value, btn.getAttribute("data-op"));
+        const active = B.query.hasValue(queryInput.value, btn.getAttribute("data-op"));
         btn.classList.toggle("rr-spill-active", active);
         btn.setAttribute("aria-pressed", String(active));
       }
@@ -423,7 +417,7 @@
       const parts = [];
       if (m.selection) {
         const srcName = m.source === "core" ? tr("srcCore") : tr("srcCcf");
-        parts.push([m.selection.role ? tr(m.selection.role === "hidden" ? "roleHidden" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? tr("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
+        parts.push([m.selection.role ? tr(m.selection.role === "hidden" ? "roleHidden" : m.selection.role === "absent" ? "filterAbsent" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? tr("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
       }
       if (m.markGroup) parts.push(tr(MARK_KEY[m.markGroup]));
       if (m.venueKey) parts.push(m.venueKey);
@@ -548,7 +542,8 @@
       // the same paper listed twice: say so, and where the setting is (the panel itself does not write settings)
       if (sp.repeats && c.repeats > 0) status.push(h("div", { class: "rr-cover-line", "data-rr": "repeats", ...P("panel.status.repeats") }, h("span", { class: "rr-note" }, t("coverRepeats", [String(c.repeats)])),
         h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
-      if (sp.absent && c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent", ...P("panel.status.absent") }, tn("coverAbsent", c.absent, [String(c.absent)])));        // (when the layout is broken every paper is "absent": that is the warning's news)
+      if (sp.absent && c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent", ...P("panel.status.absent") },
+        h("button", { class: "rr-link", type: "button", "aria-pressed": String(sameSel(m.selection, { role: "absent", tier: undefined })), onClick: () => cb.onSelect({ role: "absent", tier: undefined }) }, tn("coverAbsent", c.absent, [String(c.absent)]))));          // (a click lists them)        // (when the layout is broken every paper is "absent": that is the warning's news)
       // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
       const mp = m.prefs.panel.metrics;
       const countShown = mp.show && mp.papers && !c.layoutBroken && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
@@ -606,7 +601,8 @@
       const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
       yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");
       yearEnd.setOptions(opts(t("yearEnd")), m.filters.yearEnd != null ? String(m.filters.yearEnd) : "");
-      const ids = B.prefs.pills(m.prefs);                                                // (the quick filters, in the panel's order)
+      // (the quick filters, in the panel's order: those that find something on this profile — a pressed one stays, so that it can be released)
+      const ids = B.prefs.pills(m.prefs).filter((id) => !m.pillFinds || m.pillFinds[id] !== false || B.query.hasValue(queryInput.value, B.prefs.PILL_OPERATORS[id]));
       searchPills.replaceChildren(...ids.map((id) => pillEls.get(id)));
       searchPills.hidden = !ids.length;
       searchRow.hidden = !fp.search;

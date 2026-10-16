@@ -1150,5 +1150,35 @@
   },
   "optPillRecent": {
     "message": "Ultimii 5 ani"
+  },
+  "coverLoadedOne": {
+    "message": "Lucrarea încărcată: 1"
+  },
+  "coverHiddenOne": {
+    "message": "Rolul ascuns din cauza listei de autori trunchiate: 1"
+  },
+  "coverAbsentOne": {
+    "message": "Lucrarea în care numele din profil nu apare în lista de autori: 1"
+  },
+  "coverUnmatchedOne": {
+    "message": "Lucrarea la un venue fără rang: 1"
+  },
+  "popupPapersOne": {
+    "message": "Lucrare: 1"
+  },
+  "optCacheCountOne": {
+    "message": "Lista de autori salvată pe acest dispozitiv: 1 (păstrată 90 de zile)."
+  },
+  "yearsOlderOne": {
+    "message": "Lucrarea mai veche din afara graficului: 1"
+  },
+  "filterAbsent": {
+    "message": "Numele din profil lipsește din lista de autori"
+  },
+  "optCopySource": {
+    "message": "Adaugă linkul profilului și data în rezumatul copiat"
+  },
+  "optCopySourceHint": {
+    "message": "Rezumatul copiat și tabelul copiat primesc un rând cu linkul profilului și data (Source: …), ca numerele să poată fi arhivate sau trimise mai departe. O listă care nu este încărcată integral o spune acolo, indiferent cum este setat acest comutator."
   }
 }
