@@ -3,6 +3,10 @@
   "use strict";
   const B = (globalThis.RolesRanks = globalThis.RolesRanks || {});
 
+  // The events of a person: a click, a key, a press. One that a script made (el.click(), dispatchEvent) does not press the extension's buttons — they write settings, ask
+  // Scholar for pages and open the settings page, and a script on the page can use the page events (lib/agent.js) for what it may do.
+  const PERSON = new Set(["click", "keydown", "pointerdown"]);
+
   // h("div", { class: "x", onClick: fn, dataset: { a: 1 } }, "text", childNode, [more])
   function h(tag, attrs, ...children) {
     const el = document.createElement(tag);
@@ -10,7 +14,7 @@
       if (v == null || v === false) continue;
       if (k === "class") el.className = v;
       else if (k === "dataset") Object.assign(el.dataset, v);
-      else if (k.length > 2 && k.startsWith("on") && typeof v === "function") el.addEventListener(k.slice(2).toLowerCase(), v);
+      else if (k.length > 2 && k.startsWith("on") && typeof v === "function") { const type = k.slice(2).toLowerCase(); el.addEventListener(type, PERSON.has(type) ? (e) => { if (e.isTrusted) v(e); } : v); }
       else if (v === true) el.setAttribute(k, "");
       else el.setAttribute(k, String(v));
     }

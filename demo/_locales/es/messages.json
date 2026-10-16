@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "La tabla, los recuentos de premios y ponencias y el recuento del resumen copiado solo cuentan los artículos que dejan los filtros (un intervalo de años, una búsqueda, un filtro rápido, un congreso o una revista); la celda o fila seleccionada no reduce ningún recuento. Desactivada: siempre cuentan todo el perfil."
+  },
+  "optPillRecent": {
+    "message": "Últimos 5 años"
   }
 }

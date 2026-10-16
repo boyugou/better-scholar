@@ -3,6 +3,7 @@
 //   deep learning        every word must be somewhere in the paper (title, authors, venue, the venue's name in the lists, year, role, marks)
 //   cites:>100           citations compared with a number: > >= < <= = (a bare number means =)
 //   year:>=2020          the year compared the same way
+//   age:<5               how old, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it
 //   ccf:a   core:a*      the venue's rank in that list
 //   role:first           your position: first, cofirst, second, last, or middle (none of those)
 //   type:journal         the venue's kind as the rank lists say it: conference or journal (a venue without a rank has none)
@@ -23,6 +24,8 @@
       doc: "citations compared with a number: > >= < <= = (a bare number means =)." },
     { name: "year", value: new RegExp("^" + COMPARE + "$"), example: "year:>=2020", suggest: ["year:>2020", "year:>=2015"],
       doc: "the publication year compared the same way." },
+    { name: "age", value: new RegExp("^" + COMPARE + "$"), example: "age:<5", suggest: ["age:<5", "age:<=10"],
+      doc: "how old the paper is, in years, compared the same way: this year is 0, so age:<5 is this year and the four before it (the last five years; it stays true as the years go by)." },
     { name: "ccf", value: /^[abc]$/, example: "ccf:a", suggest: ["ccf:a", "ccf:b", "ccf:c"], doc: "the venue's CCF rank: a, b or c." },
     { name: "core", value: /^(?:a\*|[abc])$/, example: "core:a*", suggest: ["core:a*", "core:a", "core:b"], doc: "the venue's CORE rank: a*, a, b or c." },
     { name: "role", value: /^(?:first|cofirst|second|last|middle)$/, example: "role:first", suggest: ["role:first", "role:cofirst", "role:second", "role:last"],
@@ -34,10 +37,10 @@
   ];
   const BY_NAME = new Map(OPERATORS.map((o) => [o.name, o]));
   // what the panel offers when the box is empty and the person asks for suggestions (each is one of the operators' `suggest`)
-  const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "year:>2020", "has:award", "has:talk"];
+  const POPULAR = ["role:first", "role:last", "ccf:a", "core:a*", "cites:>100", "age:<5", "has:award", "has:talk"];
   const TEXT_FIELDS = 8000;       // a longer query than this is cut: nobody types it, and a script could send anything
 
-  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", value } | { kind: "never" }.
+  // → { terms, errors }. A term is { kind: "text", text } | { kind: "cites" | "year" | "age", op, n } | { kind: "ccf" | "core" | "role" | "type" | "has", value } | { kind: "never" }.
   function parse(q) {
     const terms = [], errors = [];
     for (const word of String(q == null ? "" : q).slice(0, TEXT_FIELDS).toLowerCase().split(/\s+/).filter(Boolean)) {
@@ -46,7 +49,7 @@
       if (!op) { terms.push({ kind: "text", text: word }); continue; }
       const raw = word.slice(at + 1), m = op.value.exec(raw);
       if (!m) { terms.push({ kind: "never" }); errors.push(`${word} — ${op.doc.replace(/\.$/, "")}`); continue; }
-      terms.push(op.name === "cites" || op.name === "year" ? { kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) } : { kind: op.name, value: raw });
+      terms.push(op.name === "cites" || op.name === "year" || op.name === "age" ? { kind: op.name, op: m[1] || "=", n: parseInt(m[2], 10) } : { kind: op.name, value: raw });
     }
     return { terms, errors };
   }
@@ -54,12 +57,14 @@
   const COMPARERS = { ">": (a, b) => a > b, ">=": (a, b) => a >= b, "<": (a, b) => a < b, "<=": (a, b) => a <= b, "=": (a, b) => a === b };
 
   // fields: { text: [lower-case strings to look into], year: number | null, citations: number, role: string, ccf: "a" | null, core: "a*" | null, type: "conference" | "journal" | null, award: boolean, talk: boolean }
-  function matches(parsed, fields) {
+  // `now`: the current year, for `age` (a paper of this year is 0 years old)
+  function matches(parsed, fields, now = new Date().getFullYear()) {
     return parsed.terms.every((term) => {
       switch (term.kind) {
         case "text": return fields.text.some((s) => s.includes(term.text)) || (fields.year != null && String(fields.year) === term.text) || fields.role === term.text;
         case "cites": return COMPARERS[term.op](fields.citations, term.n);
         case "year": return fields.year != null && COMPARERS[term.op](fields.year, term.n);
+        case "age": return fields.year != null && COMPARERS[term.op](now - fields.year, term.n);
         case "ccf": return fields.ccf === term.value;
         case "core": return fields.core === term.value;
         case "role": return fields.role === term.value;

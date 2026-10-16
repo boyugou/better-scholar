@@ -56,9 +56,10 @@
   }
   async function saveVariants(profileId, list) {
     const all = Object.assign({}, (await get("sync", "variants")) || {});
-    if (list.length) all[profileId] = list.slice(-8); else delete all[profileId];
-    const keys = Object.keys(all);
-    if (keys.length > 40) delete all[keys[0]];          // chrome.storage.sync items are capped at 8 KB
+    delete all[profileId];                                            // (put last: the profile written most recently is the last to go)
+    if (list.length) all[profileId] = list.slice(-8);
+    // (chrome.storage.sync takes 8 KB for an item: at most forty profiles, and fewer when their spellings are long)
+    while (Object.keys(all).length > 40 || (Object.keys(all).length > 1 && B.prefs.sizeOf(all) > B.prefs.SYNC_LIMIT - 20)) delete all[Object.keys(all)[0]];
     await set("sync", "variants", all);
   }
 
@@ -70,9 +71,18 @@
     for (const [id, v] of Object.entries(all)) if (v && now - v.ts < TTL) out[id] = v;
     return out;
   }
+  // The details read from Scholar's paper pages (and from Semantic Scholar): the newest first, up to three thousand papers and three million characters — an author list of a large
+  // collaboration is tens of thousands. What does not fit is read again when it is asked for. One write that Chrome refuses must not be the end of all of them.
+  const RESOLVED_BUDGET = 3000000;
   async function saveResolved(map) {
-    const entries = Object.entries(map).sort((a, b) => b[1].ts - a[1].ts).slice(0, 3000);
-    await set("local", "resolved", Object.fromEntries(entries));
+    let size = 0;
+    const keep = [];
+    for (const [id, v] of Object.entries(map).sort((a, b) => b[1].ts - a[1].ts)) {
+      const n = id.length + String(v.authors || "").length + String(v.venue || "").length + 40;
+      if (keep.length >= 3000 || size + n > RESOLVED_BUDGET) continue;
+      size += n; keep.push([id, v]);
+    }
+    return set("local", "resolved", Object.fromEntries(keep));
   }
   const clearResolved = () => remove("local", "resolved");
 

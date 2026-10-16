@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "The table, the awards and talks counts and the copy summary count only the papers the filters leave (a year range, a search, a quick filter, a venue); the cell or row you pick narrows no count. Off: they always count the whole profile."
+  },
+  "optPillRecent": {
+    "message": "Last 5 years"
   }
 }

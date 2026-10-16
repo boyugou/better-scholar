@@ -1147,5 +1147,8 @@
   },
   "optFiltersFollowHint": {
     "message": "A táblázat, a díjak és előadások számlálói, valamint a másolandó összesítés száma csak azokat a cikkeket számolják, amelyek átjutnak a szűrőkön (évtartomány, keresés, gyorsszűrő, venue); a kiválasztott cella vagy sor egyik számlálót sem szűkíti. Kikapcsolva: mindig az egész profilt számolják."
+  },
+  "optPillRecent": {
+    "message": "Elmúlt 5 év"
   }
 }

@@ -131,8 +131,9 @@
   // plain      name with parenthetical content removed (used for name matching)
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
   function prepare(raw) {
-    // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic)
-    let s = fold(raw).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
+    // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic; and a venue is not longer than a thousand characters
+    // — a longer text is cut, for the same reason: a run of commas in front of a pattern costs time in proportion to the square of its length)
+    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
@@ -786,6 +787,9 @@
   const ownWord = (entry, word) => entry.extra.some((n) => fold(n).toLowerCase().includes(word));
 
   const NON_VENUE = /^(?:arxiv|biorxiv|medrxiv|ssrn|preprint|technical report|tech\.? rep|url|https?:|see https?:|cited on|unpublished)/i;
+  // Periodicals that are on neither list and whose title, without the words a conference name drops ("International Symposium on"), is the title of a conference that is on one:
+  // "IEEE MultiMedia" is a magazine, "IEEE International Symposium on Multimedia" is ISM. Read as what they are, they are not taken for the conference.
+  const PERIODICALS = new Set(["ieee multimedia"]);
 
   function createResolver(data) {
     const idx = buildIndex(data);
@@ -811,7 +815,7 @@
       out.truncated = p.truncated;
       out.name = p.name;
       if (!p.name || NON_VENUE.test(p.name)) return out;
-      let hint = typeHint(p.name);
+      let hint = PERIODICALS.has(fold(p.name).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()) ? "J" : typeHint(p.name);
       // "WWW 2018", "ISCA 2014 42 (3)": an acronym followed by a year names an event
       if (!hint) {
         const lead = acronymSignals(p).find((s) => s.kind === "lead" && s.event);

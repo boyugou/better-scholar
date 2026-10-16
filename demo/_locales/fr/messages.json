@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Le tableau, les compteurs de prix et présentations et le récapitulatif copié ne comptent que les articles que laissent les filtres (une plage d’années, une recherche, un filtre rapide, une conférence ou une revue) ; la cellule ou la ligne sélectionnée ne réduit aucun compteur. Désactivée : ils comptent toujours tout le profil."
+  },
+  "optPillRecent": {
+    "message": "5 dernières années"
   }
 }

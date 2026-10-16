@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "De tabel, de tellingen voor prijzen en talks en het overzicht om te kopiëren tellen alleen de papers die de filters overlaten (een jaarbereik, een zoekopdracht, een snelfilter, een venue); de geselecteerde cel of rij verkleint geen enkele telling. Uit: ze tellen altijd het hele profiel."
+  },
+  "optPillRecent": {
+    "message": "Laatste 5 jaar"
   }
 }

@@ -120,13 +120,13 @@
     const suggestList = h("ul", { class: "rr-search-suggest", id: "rr-suggest", role: "listbox", hidden: true });
 
     // the operators of lib/query.js, in the panel's own words (the group's name is the column it filters: Year, CCF, Role …)
-    const OP_GROUP = { cites: "cite", year: "year", ccf: "tier", core: "tier", role: "author", has: "mark" };
-    const OP_TAG = { cites: "tsvCitations", year: "tsvYear", ccf: "srcCcf", core: "srcCore", role: "tsvRole", has: "tsvAwards" };
+    const OP_GROUP = { cites: "cite", year: "year", age: "year", ccf: "tier", core: "tier", type: "tier", role: "author", has: "mark" };
+    const OP_TAG = { cites: "tsvCitations", year: "tsvYear", age: "tsvYear", ccf: "srcCcf", core: "srcCore", type: "tsvVenue", role: "tsvRole", has: "tsvAwards" };
     const OP_DESC = { "role:first": "roleFirst", "role:cofirst": "roleCofirst", "role:second": "roleSecond", "role:last": "roleLast", "has:award": "markAward", "has:talk": "markTalks" };
     const operatorItems = () => B.query.OPERATORS.flatMap((o) => o.suggest.map((op) => ({ op, name: o.name, group: OP_GROUP[o.name], tag: t(OP_TAG[o.name]), desc: OP_DESC[op] ? t(OP_DESC[op]) : "" })));
 
     // a word that names an operator but has no colon yet is completed, not kept
-    const OPERATOR_NAME = /^(?:role|ccf|core|cites|year|has)$/i;
+    const OPERATOR_NAME = /^(?:role|ccf|core|cites|year|age|type|has)$/i;
     let activeSuggestIdx = -1;
     let currentSuggestions = [];
 
@@ -254,7 +254,7 @@
 
     // The quick filters: one button for each of the settings' panel.filters.pills.* (built once, put in the panel's order, and only the ones that can find something)
     const PILL_NAME = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast", award: "markAward", talk: "markTalks" };
-    const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
+    const pillLabel = (id) => ({ ccfA: t("srcCcf") + " A", coreA: t("srcCore") + " A*", cites100: ">100", recent: t("optPillRecent"), award: t("markAward"), talk: t("markTalks") }[id] || t(ROLE_KEY[id]));
     const pillEls = new Map(B.prefs.PILLS.map((id) => {
       const btn = h("button", {
         type: "button",
@@ -376,9 +376,9 @@
     // name help: the spellings found in the papers (drawn again with every update), and the box where one is added (input kept stable across updates)
     const suggestBox = h("div", { class: "rr-suggest-box" });
     const variantList = h("div", { class: "rr-variants" });
-    const variantInput = h("input", { type: "text", "data-act": "variant-input" });
+    const variantInput = h("input", { type: "text", maxlength: "80", "data-act": "variant-input" });
     const addVariant = () => { const v = variantInput.value.trim(); if (v) { cb.onAddVariant(v); variantInput.value = ""; } };
-    variantInput.addEventListener("keydown", (e) => { if (e.key === "Enter") addVariant(); });
+    variantInput.addEventListener("keydown", (e) => { if (e.isTrusted && e.key === "Enter") addVariant(); });
     const variantSummary = h("summary", { ...L("variantsTitle") });
     const variantAddBtn = h("button", { class: "rr-btn", type: "button", onClick: addVariant });
     const variantBox = h("details", { "data-rr": "variants", ...P("panel.names.add") }, variantSummary, variantList, h("div", { class: "rr-add" }, variantInput, variantAddBtn));
@@ -570,7 +570,7 @@
             h("ul", { class: "rr-list", tabindex: "0", "aria-label": tn("coverUnmatched", total, [String(total)]) }, ...c.unmatched.slice(0, 20).map((u) => h("li", {}, u.count > 1 ? h("b", {}, u.count + "× ") : null, u.venue,
               " ", h("button", { class: "rr-link rr-vcheck", type: "button", "data-act": "check-venue", title: t("optVenueTitle"), "aria-label": `${t("optVenueTitle")}: ${u.venue}`, onClick: () => cb.onCheckVenue(u.venue) }, t("venueCheckLink"))))),
             h("div", { class: "rr-actions" }, copyBtn,
-              h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener", "data-act": "report-unmatched" }, t("reportLink"))));
+              h("a", { class: "rr-link", href: issueUrl("Venue not recognised", report), target: "_blank", rel: "noopener noreferrer", "data-act": "report-unmatched" }, t("reportLink"))));
           coverList.replaceChildren(unmatchedEl);
         }
       } else if (unmatchedSig) { unmatchedSig = ""; coverList.replaceChildren(); }
@@ -578,7 +578,7 @@
       warnBar.hidden = !c.layoutBroken;
       if (c.layoutBroken) {
         warnBar.replaceChildren(t("layoutWarning") + " ",
-          h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/user=[^&]+/, "user=…")), target: "_blank", rel: "noopener" }, t("reportLink")));
+          h("a", { class: "rr-link", href: issueUrl("Scholar page layout changed", location.pathname + location.search.replace(/([?&])user=[^&#]*/g, "$1user=…")), target: "_blank", rel: "noopener noreferrer" }, t("reportLink")));
       }
       coverTop.replaceChildren(...lines);
     }

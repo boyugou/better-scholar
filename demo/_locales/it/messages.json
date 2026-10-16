@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "La tabella, i conteggi di premi e presentazioni e il conteggio del riepilogo da copiare contano solo gli articoli che restano dopo i filtri (un intervallo di anni, una ricerca, un filtro rapido, una conferenza o una rivista); la cella o la riga selezionata non riduce alcun conteggio. Disattivata: contano sempre l’intero profilo."
+  },
+  "optPillRecent": {
+    "message": "Ultimi 5 anni"
   }
 }

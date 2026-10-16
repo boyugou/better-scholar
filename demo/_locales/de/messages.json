@@ -1168,5 +1168,8 @@
   },
   "optFiltersFollowHint": {
     "message": "Die Tabelle, die Zählungen für Auszeichnungen und Vorträge und die Übersicht zum Kopieren zählen nur die Paper, die nach den Filtern übrig bleiben (ein Jahreszeitraum, eine Suche, ein Schnellfilter, ein Venue); die gewählte Zelle oder Zeile engt keine Zählung ein. Aus: Gezählt wird immer das ganze Profil."
+  },
+  "optPillRecent": {
+    "message": "Letzte 5 Jahre"
   }
 }
