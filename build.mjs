@@ -101,10 +101,10 @@ const samples = exportSamples();
 
 // the operator cards of the search section: [key, the sample tokens shown on the card]
 const OPERATORS = [
-  ["cite", '<code>&gt;100</code> <code>&gt;=50</code> <code>&lt;10</code>'],
+  ["cite", '<code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code>'],
   ["tier", "<code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code>"],
-  ["role", "<code>role:first</code> <code>role:last</code> <code>r:cofirst</code>"],
-  ["year", "<code>&gt;2020</code> <code>year:&gt;=2021</code>"],
+  ["role", "<code>role:first</code> <code>role:last</code> <code>role:cofirst</code>"],
+  ["year", "<code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code>"],
   ["honors", "<code>has:award</code> <code>has:talk</code>"],
   ["reset", "<kbd>Escape</kbd>"]
 ];
@@ -319,17 +319,20 @@ function inline(text) {
 }
 function privacyPage() {
   const lines = readFileSync(join(root, "src", "privacy.md"), "utf8").split("\n");
-  let html = "", list = false, para = [];
+  // (a paragraph or a list item is read whole before its emphasis is: *two words* may be broken over two lines of the source)
+  let html = "", list = false, para = [], item = null;
+  const endItem = () => { if (item !== null) { html += `<li>${inline(item)}</li>\n`; item = null; } };
+  const endList = () => { endItem(); if (list) { html += "</ul>\n"; list = false; } };
   const flush = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>\n`; para = []; } };
   for (const line of lines) {
-    if (/^# /.test(line)) { flush(); html += `<h1>${inline(line.slice(2))}</h1>\n`; }
-    else if (/^- /.test(line)) { flush(); if (!list) { html += "<ul>\n"; list = true; } else html += "</li>\n"; html += `<li>${inline(line.slice(2))}`; }
-    else if (/^\s+\S/.test(line) && list) html += " " + inline(line.trim());
-    else if (!line.trim()) { if (list) { html += "</li>\n</ul>\n"; list = false; } flush(); }
-    else if (list) { html += "</li>\n</ul>\n"; list = false; para.push(line.trim()); }
+    if (/^# /.test(line)) { endList(); flush(); html += `<h1>${inline(line.slice(2))}</h1>\n`; }
+    else if (/^- /.test(line)) { flush(); if (!list) { html += "<ul>\n"; list = true; } endItem(); item = line.slice(2); }
+    else if (/^\s+\S/.test(line) && list) item += " " + line.trim();
+    else if (!line.trim()) { endList(); flush(); }
+    else if (list) { endList(); para.push(line.trim()); }
     else para.push(line.trim());
   }
-  if (list) html += "</li>\n</ul>\n";
+  endList();
   flush();
   return `<!doctype html>
 <html lang="en" dir="ltr">

@@ -122,7 +122,9 @@ Links, which open only when you click them:
 The extension writes to the clipboard only when you click a button that copies, and never reads it:
 
 - the copy buttons of the panel and the toolbar popup: *Copy summary*, *Copy as table*, *Copy papers*, *Copy
-  APA*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues;
+  APA*, *Copy BibTeX*, *Copy Markdown*, *Copy JSON*; and *Copy list* under the unranked venues. *Copy as table*,
+  *Copy papers* and *Copy APA* put the same content on the clipboard twice, as text and as HTML (which a word
+  processor reads as a real table or as italics); the HTML is made from the same data and contains nothing else;
 - on the settings page: *Copy guide for agents* (it contains your current settings), *Copy config (JSON)*, *Copy
   cache (JSON)* (the saved paper details) and *Copy details for a bug report* (the extension's version, your
   browser's user-agent string, the interface language and your settings).
@@ -144,9 +146,8 @@ console — and can tell from the attribute that the extension is installed. The
 
 - The calls are `ping`, `summary`, `papers`, `export`, `filter` and `clearFilters`. They return what the panel and
   its copy buttons produce for that profile: the counts, the papers' records (with the author lists that *Read full
-  lists* saved for those papers), and the text of a copy format. `summary` also reports a few display settings:
-  which rank lists and copy buttons are on, whether the table and the awards counts are shown, and how talks are
-  counted. `filter` and `clearFilters` change the filters of that page only.
+  lists* saved for those papers), and the text of a copy format. `summary` returns numbers only. `filter` and
+  `clearFilters` change the filters of that page only.
 - They cannot change any setting or anything in storage, they make no network request, and they do not return the
   settings record, the Semantic Scholar key or the name spellings.
 
