@@ -115,7 +115,7 @@
   // -------------------------------------------------------------- input cleanup
 
   // what stands in the parenthesis after a volume as its issue: "(3)", "(1-3)", "(SI)", "(S1)", "(Suppl 1)", "(Nov)" — not a note ("(Best Paper Award)", "(Oral)") and not a year
-  const ISSUE_BODY = "(?:\\d{1,3}(?:\\s*[-–/]\\s*\\d{1,3})?(?:[A-Za-z]{1,3}\\d{0,2})?|[A-Za-z]{1,3}\\d{0,2}|suppl(?:ement)?[\\s_.]*[^)]{0,6}|pt\\.?\\s*[A-Za-z\\d]+|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\\.?)";
+  const ISSUE_BODY = "(?:\\d{1,3}(?:\\s*[-–/]\\s*\\d{1,3})?(?:(?!(?:st|nd|rd|th)\\b)[A-Za-z]{1,3}\\d{0,2})?|[A-Za-z]{1,3}\\d{0,2}|suppl(?:ement)?[\\s_.]*[^)]{0,6}|pt\\.?\\s*[A-Za-z\\d]+|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\\.?)";
   const ISSUE_ONLY = new RegExp("^\\s*(?:" + ISSUE_BODY + "|(?!(?:19|20)\\d{2}\\b)\\d{4})\\s*$", "i");          // (Nature's issues have four digits: "521 (7553)")
   const ISSUE_AFTER = new RegExp("^\\d{1,3}\\s*\\(\\s*" + ISSUE_BODY + "\\s*\\)", "i");
 
@@ -684,7 +684,9 @@
     };
     for (const { key, part, kind, issue, raw } of signals) {
       if (issue && !(idx.sources[src].J && idx.sources[src].J.abbrs.has(key))) continue;
-      let d = part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
+      // (the venue whose acronym is spelled as the string spells it comes first: "CC 2019" is Compiler Construction, not "C&C", which squashes alike)
+      const exactHere = raw && !part ? uniq(sides.flatMap((side) => (side.abbrs.get(key) || []).filter((e) => e.abbr === raw))) : [];
+      let d = exactHere.length === 1 ? exactHere[0] : part ? (confSide && sides.includes(confSide) ? decide(confSide.abbrs.get(key), rawWords) : null) : firstHit((side) => side.abbrs.get(key));
       if (d === "ambiguous" && !part) d = byContext(key);
       // (a parenthesised acronym after a name that is another venue's: two or more other words, none of them this venue's own — see the
       // buried acronyms below — in a string that spells out an event; a journal's abbreviated name before its track, "Proc. ACM Program. Lang. 6 (POPL)", does not)
@@ -906,18 +908,28 @@
     // (a) the official name holds the word: "Workshop" is what the venue is — but where the string says what the workshop is about ("PKC 2019 Workshop on Post-Quantum Cryptography"),
     // that is the venue's own subject (its words, spelled alike: "Modeling" is "Modelling") or it is another workshop; a cut string shows only the start of its subject, two words of
     // which must begin the subject of one of the venue's names; a venue the list names by a name it had ("renamed") has no official name that says what it is
-    if (!(proto.renamed || entry.renamed) && holdsWord(wordsOf(String(entry.name).replace(/\([^()]*\)/g, " ")), target)) {
+    const renamed = !!(proto.renamed || entry.renamed);
+    if (holdsWord(wordsOf(String(entry.name).replace(/\([^()]*\)/g, " ")), target) && !(renamed && /\bconference\b/i.test(raw))) {
       const about = word === "workshop" ? /\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(raw)) : null;
       const subject = about ? canonTokens(about[1], "noOrg") : [];
-      const stem = (w) => w.replace(/(?:ings|ing|ed|es|s)$/, "").replace(/(.)\1+/g, "$1");
+      const stem = (w) => w.replace(/(?:ings|ing|ed)$/, "").replace(/([^s])s$/, "$1").replace(/(.)\1+/g, "$1");
       const vocab = new Set(all.flatMap((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg").flatMap((w) => [w, stem(w)])));
-      if (!subject.length) return true;
-      if (cut < 0) { if (subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true; }
-      else if (subject.every((w) => vocab.has(w) || vocab.has(stem(w))) && [...ownTokens].some((t) => rawWords.includes(t))) return true;          // (cut, with the venue's own acronym beside it: "Public Key Cryptography-PKC 2003: 6th International Workshop on Theory and …")
-      else if (subject.length >= 2) {
-        // the visible part of the subject must be the start of the subject of one of the venue's names ("Network and operating …" is NOSSDAV's; "Visualization for …" is anybody's)
-        const starts = all.map((n) => { const m = /\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(n)); return m ? canonTokens(m[1], "noOrg") : null; }).filter(Boolean);
-        if (starts.length ? starts.some((ns) => subject.every((w, i) => ns[i] !== undefined && (ns[i] === w || stem(ns[i]) === stem(w)))) : subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true;
+      // a renamed venue is the Workshop only where the string says so with the subject of the old name ("Applications of Computer Vision, 2008. WACV 2008. IEEE Workshop on"): "WACV Workshops" says nothing
+      let evidence = true;
+      if (renamed) {
+        const have = new Set(rawWords.flatMap((w) => [w, stem(w)]));
+        const need = canonTokens(((/\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(entry.name)) || [])[1]) || "", "noOrg");
+        evidence = need.length > 0 && (cut < 0 ? need.every((w) => have.has(w) || have.has(stem(w))) : subject.length >= 2 && subject.every((w, i) => need[i] !== undefined && (need[i] === w || stem(need[i]) === stem(w))));
+      }
+      if (evidence) {
+        if (!subject.length) return true;
+        if (cut < 0) { if (subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true; }
+        else if (subject.every((w) => vocab.has(w) || vocab.has(stem(w))) && [...ownTokens].some((t) => rawWords.includes(t))) return true;          // (cut, with the venue's own acronym beside it: "Public Key Cryptography-PKC 2003: 6th International Workshop on Theory and …")
+        else if (subject.length >= 2) {
+          // the visible part of the subject must be the start of the subject of one of the venue's names ("Network and operating …" is NOSSDAV's; "Visualization for …" is anybody's)
+          const starts = all.map((n) => { const m = /\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(n)); return m ? canonTokens(m[1], "noOrg") : null; }).filter(Boolean);
+          if (starts.length ? starts.some((ns) => subject.every((w, i) => ns[i] !== undefined && (ns[i] === w || stem(ns[i]) === stem(w)))) : subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true;
+        }
       }
     }
     // (b) a name it had, or is printed under: the string must carry that whole name as the whole of its name part — without volume, pages, year and parentheses, and with what varies from
@@ -941,7 +953,8 @@
       // all there is before the cut and say four words of its own, not counting the track word and the connectives
       for (let k = core.length - 1; k >= 4; k--) {
         const start = core.slice(0, k);
-        if (start.filter((w) => !STOP.has(w) && !target.includes(w)).length >= 4 && holdsWord(start, target) && head.length === start.length && start.every((w, j) => head[j] === w)) return true;
+        const own = [...ownTokens].some((t) => rawWords.includes(t));          // (with the venue's own acronym in the string — "MSR '06: … workshop on Mining software …" — two words suffice)
+        if (start.filter((w) => !STOP.has(w) && !target.includes(w)).length >= (own ? 2 : 4) && holdsWord(start, target) && (own ? named : head).length === start.length && start.every((w, j) => (own ? named[j] : head[j]) === w)) return true;
       }
       return false;
     }));

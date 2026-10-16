@@ -234,7 +234,7 @@ test("every alias points at a real dataset row", () => {
       assert.ok(hit.length, `CORE row not found for alias ${JSON.stringify(a.core)}`);
     }
     assert.ok(a.ccf || a.core, "alias needs a target");
-    assert.ok((a.names && a.names.length) || (a.former && a.former.length));
+    assert.ok((a.names && a.names.length) || (a.former && a.former.length) || (a.exact && a.exact.length));
   }
 });
 
@@ -1197,7 +1197,7 @@ test("the seventh review: a venue's whole name beats a parenthesised acronym of 
   eq("Proceedings of the 13th IEEE workshop on Computer Security Foundations, 2000", "CCF B CSFW · CORE A CSF");
   // venues that are workshops by name, or were: the list gives the name of today
   for (const [s, want] of [["2012 IEEE Spoken Language Technology Workshop (SLT), 234-239, 2012", "CCF C SLT"], ["International Workshop on Hybrid Systems: Computation and Control, 25-53, 2005", "CCF B HSCC"],
-    ["Proceedings of the Fourth International Workshop on Machine Learning, 337-352, 1987", "CCF A ICML · CORE A* ICML"], ["International workshop on public key cryptography, 68-87, 2009", "CCF B PKC · CORE B PKC"],
+    ["International workshop on public key cryptography, 68-87, 2009", "CCF B PKC · CORE B PKC"],
     ["International Workshop on Verification, Model Checking, and Abstract …, 2002", "CCF B VMCAI · CORE B VMCAI"], ["22nd International Workshop on Fast Software Encryption, 2015", "CCF B FSE · CORE B FSE"],
     ["International Workshop on Computer Science Logic, 1-17, 1993", "CCF C CSL · CORE B CSL"], ["International Workshop on Recent Advances in Intrusion Detection, 17-35, 2002", "CCF B RAID · CORE A RAID"]]) eq(s, want);
   // ... and a topical workshop at one of them is still a workshop
@@ -1280,4 +1280,30 @@ test("the ninth review: a renamed venue's workshops (WACV), the acronym before a
   eq("S&P 2019, 2019", brief("S&P 2019, 2019"));
   assert.ok(/CCF A S&P/.test(brief("S&P 2019, 2019")) && /CORE A\* SP/.test(brief("S&P 2019, 2019")), brief("S&P 2019, 2019"));
   eq("ASP-DAC 2004: Asia and South Pacific Design Automation Conference 2004 (IEEE …, 2004", "CCF C ASP-DAC · CORE B ASPDAC");
+});
+
+test("the tenth review: WACV's IEEE prints, the list view's cut conference line, a generic old title, an exact acronym, an ordinal is no issue, a cut name with its own acronym", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // WACV as IEEE printed it while it was the Workshop (inverted titles, dotted ones, the cut one) is WACV; as the Winter Conference's workshops it is not, in any form
+  for (const s of ["Applications of Computer Vision (WACV), 2011 IEEE Workshop on, 155-162, 2011", "Applications of Computer Vision, 2008. WACV 2008. IEEE Workshop on, 1-8, 2008", "2005 Seventh IEEE Workshops on Applications of Computer Vision …, 2005", "2013 IEEE Workshop on Applications of Computer Vision (WACV), 75-82, 2013"]) eq(s, "CORE A WACV");
+  // the list view cuts the conference's line ("… Applications of Computer …") and its workshops' line alike: no badge for either; the full title tells them apart
+  none("Proceedings of the IEEE/CVF winter conference on applications of computer …, 2020");
+  eq("Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2023", "CORE A WACV");
+  none("Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops, 2023");
+  // a title as generic as "Workshop on Machine Learning" is every sponsor's: no alias for ICML's first decade
+  for (const s of ["IEEE Workshop on Machine Learning, 1-6, 2019", "Proceedings of the Fourth International Workshop on Machine Learning, 337-352, 1987"]) none(s);
+  // the exact spelling first: "CC 2019" is Compiler Construction in both lists, "C&C 2022" Creativity and Cognition
+  eq("CC 2019, 2019", "CCF B CC · CORE B CC");
+  eq("C&C 2022, 2022", "CORE B C&C");
+  // an ordinal in parentheses is no issue; a supplement is
+  for (const [s, want] of [["CCS 21 (1st), 2021", false], ["Rendering Techniques 2005 (16th)", false], ["Bioinformatics 38 (Supplement_1), i1-i2, 2022", true], ["Foo 12 (Suppl 2), 5, 2015", true], ["Foo 12 (12), 5, 2015", true]]) assert.equal(venues.prepare(s).hasIssue, want, s);
+  eq("CCS 21 (1st), 2021", "CCF A CCS · CORE A* CCS");
+  // a cut name with the venue's own acronym in front: two words of the old name suffice
+  eq("MSR '06: Proceedings of the 2006 international workshop on Mining software …, 2006", "CCF C MSR · CORE A MSR");
+  eq("CHASE '08: Proceedings of the 2008 international workshop on Cooperative and human aspects of …, 2008", "CORE B CHASE");
+  none("Proceedings of the 2006 international workshop on Mining software …, 2006");
+  // spelling of a subject: endings and doubled letters are no difference (DAS's "Systems", MiSE's "Modelling")
+  eq("2018 13th IAPR International Workshop on Document Analysis System (DAS), 2018", brief("2018 13th IAPR International Workshop on Document Analysis Systems (DAS), 2018"));
+  assert.notEqual(brief("2018 13th IAPR International Workshop on Document Analysis System (DAS), 2018"), "");
 });

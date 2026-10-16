@@ -219,7 +219,6 @@
     { ccf: "HSCC", former: ["International Workshop on Hybrid Systems: Computation and Control"] },
     { ccf: "CHES", former: ["International Workshop on Cryptographic Hardware and Embedded Systems"] },
     { ccf: "RAID", core: "RAID", former: ["International Workshop on Recent Advances in Intrusion Detection"] },
-    { ccf: "ICML", core: "ICML", former: ["International Workshop on Machine Learning"] },
     { ccf: "MSR", core: "MSR", former: ["International Workshop on Mining Software Repositories"] },
     { ccf: "FSE", ccfTier: "B", former: ["International Workshop on Fast Software Encryption"] },
     { ccf: "PKC", core: "PKC", former: ["International Workshop on Public Key Cryptography", "IACR International Workshop on Public Key Cryptography", "International Workshop on Practice and Theory in Public Key Cryptography"] },
@@ -231,8 +230,9 @@
     { core: "HCOMP", former: ["Human Computation Workshop"] },
     { ccf: "PEPM", core: "PEPM", former: ["ACM SIGPLAN Workshop on Partial Evaluation and Semantics-Based Program Manipulation"] },
     { core: "MISE", former: ["International Workshop on Modeling in Software Engineering"] },
-    // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW
-    { core: "WACV", renamed: true, names: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },
+    // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW.
+    // (ICML's first decade, "International Workshop on Machine Learning", is not an alias: a title that generic is every sponsor's workshop, and ICML is A*)
+    { core: "WACV", renamed: true, exact: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },          // (exact: the list view's cut "… Applications of Computer …" is the conference or its workshops)
     { core: "VizSec", former: ["Workshop on Visualization for Computer Security"] },
     { core: "HealthCom", former: ["International Workshop on Enterprise Networking and Computing in Healthcare Industry"] },
     { core: "QoMEX", former: ["International Workshop on Quality of Multimedia Experience"] },
