@@ -1246,3 +1246,38 @@ test("the eighth review: a cut name is not a whole one; the old name is the whol
   // the track count: a journal has no tracks
   assert.equal(resolver.resolve("2019 IEEE symposium series on computational intelligence (SSCI), 230-237, 2019").refused, false);
 });
+
+test("the ninth review: a renamed venue's workshops (WACV), the acronym before a former name, spelling variants of a subject, former names with a sponsor, issues like (3S), an ampersand sets two acronyms apart", () => {
+  const eq = (s, want) => assert.equal(brief(s), want, s);
+  const none = (s) => { const r = resolver.resolve(s); assert.deepEqual([r.ccf, r.core], [null, null], s); };
+  // CORE still lists WACV under the name of the IEEE Workshop on Applications of Computer Vision; it is the Winter Conference, and the workshops of it are not it
+  eq("Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision, 2023", "CORE A WACV");
+  eq("Proceedings Fourth IEEE Workshop on Applications of Computer Vision. WACV'98 …, 1998", "CORE A WACV");
+  for (const s of ["Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops, 2023", "WACV Workshops, 2019"]) none(s);
+  // the venue's acronym in front of an old name, "Proceedings of the" after it, an acronym that ends in "s"
+  eq("MSR '06: Proceedings of the 2006 international workshop on Mining software repositories, 2006", "CCF C MSR · CORE A MSR");
+  eq("CHASE '08: Proceedings of the 2008 international workshop on Cooperative and human aspects of software engineering, 2008", "CORE B CHASE");
+  eq("HotStorage '22: Proceedings of the 14th ACM Workshop on Hot Topics in Storage and File Systems, 2022", "CCF C HotStorage");
+  eq("CHES 2005: International Workshop on Cryptographic Hardware and Embedded Systems, 2005", "CCF B CHES · CORE A CHES");
+  // an old name printed with its sponsor, read without it, is no clash with "Conference" in the venue's wording
+  eq("2015 IEEE/ACM 8th International Workshop on Cooperative and Human Aspects of Software Engineering, 2015", "CORE B CHASE");
+  // spelling variants of a subject, and the older titles of PEPM and MiSE
+  eq("2016 IEEE/ACM 8th International Workshop on Modeling in Software Engineering (MiSE), 2016", "CORE C MISE");
+  eq("2017 IEEE/ACM 9th International Workshop on Modelling in Software Engineering (MiSE), 2017", "CORE C MISE");
+  eq("PEPM '02: Proceedings of the 2002 ACM SIGPLAN workshop on Partial evaluation and semantics-based program manipulation, 2002", "CCF C PEPM · CORE C PEPM");
+  // a cut subject must begin the subject of one of the venue's names, and say two words of it; one word is anybody's
+  eq("Proceedings of the 13th international workshop on Network and operating …, 2003", "CCF B NOSSDAV");
+  eq("Public Key Cryptography-PKC 2003: 6th International Workshop on Theory and …, 2002", "CCF B PKC");
+  for (const s of ["Proceedings of the 12th Workshop on Visualization for …, 2019", "Proceedings of the 12th Workshop on Hot Topics in …, 2019"]) none(s);
+  // a cut name is no whole name: the whole old name, then the cut (what follows may be a subtitle) — unless its own acronym follows the name
+  none("International Workshop on Verification, Model Checking, and Abstract Interpretation …, 2019");
+  eq("International Workshop on Verification, Model Checking, and Abstract Interpretation (VMCAI) …, 2019", "CCF B VMCAI · CORE B VMCAI");
+  // an issue looks like one: "(3S)", "(5s)", "(3pt2)", Nature's four digits — a note, an "Oral" or a year does not
+  for (const [s, want] of [["SIGMOD Rec. 43 (3S), 2014", true], ["IEEE MICRO 35 (5s), 2015", true], ["Nature 521 (7553), 436-444, 2015", true], ["Foo 12 (3pt2), 5, 2015", true], ["ASE 19 (Best Paper), 2019", false], ["CCS 21 (2021), 15-19, 2021", false], ["KDD 19 (Oral), 2019", false]]) assert.equal(venues.prepare(s).hasIssue, want, s);
+  none("IEEE MICRO 35 (5s), 2015");
+  // an ampersand sets two acronyms apart ("C&C" is Creativity and Cognition, "CC" Compiler Construction) — unless the lists say they are one ("S&P", "SP"; "ASP-DAC", "ASPDAC" differ by a hyphen only)
+  for (const s of ["C&C 2022, 2022", "C&C '22, 2022", "C&C 2022: Creativity and Cognition, 2022"]) eq(s, "CORE B C&C");
+  eq("S&P 2019, 2019", brief("S&P 2019, 2019"));
+  assert.ok(/CCF A S&P/.test(brief("S&P 2019, 2019")) && /CORE A\* SP/.test(brief("S&P 2019, 2019")), brief("S&P 2019, 2019"));
+  eq("ASP-DAC 2004: Asia and South Pacific Design Automation Conference 2004 (IEEE …, 2004", "CCF C ASP-DAC · CORE B ASPDAC");
+});

@@ -13,6 +13,7 @@
 //                 (a name that is also the start of other venues' names, "Machine Learning and …")
 //   former        names the venue had, or is printed under, that say "Workshop" where the list's name does not: found by name, and a string that carries one whole is the venue
 //                 (any other "… Workshop on …" at it is a track); not part of the venue's wording otherwise, so they do not make its "Conference" a clash
+//   renamed       the list's name for the row is a name the venue had (CORE's WACV: "IEEE Workshop on Applications of Computer Vision"): its "Workshop" is no longer what the venue is
 //   fullOnly      extra names whose organisation is part of what they say ("USENIX ATC"): read whole, never as the bare acronym that is left once the organisation is dropped ("ATC")
 //   noBareAcronym the acronym alone proves nothing: another, unranked venue is called the same ("SAC" is also ACM's Symposium on
 //                 Applied Computing) — only the name counts
@@ -228,6 +229,10 @@
     { core: "SSBSE", former: ["International Workshop on Search-Based Software Engineering"] },
     { core: "RSP", former: ["IEEE International Workshop on Rapid System Prototyping"] },
     { core: "HCOMP", former: ["Human Computation Workshop"] },
+    { ccf: "PEPM", core: "PEPM", former: ["ACM SIGPLAN Workshop on Partial Evaluation and Semantics-Based Program Manipulation"] },
+    { core: "MISE", former: ["International Workshop on Modeling in Software Engineering"] },
+    // WACV was the IEEE Workshop on Applications of Computer Vision (CORE still lists that name); it is the Winter Conference, and its workshops are WACVW
+    { core: "WACV", renamed: true, names: ["IEEE/CVF Winter Conference on Applications of Computer Vision", "IEEE Winter Conference on Applications of Computer Vision", "Winter Conference on Applications of Computer Vision"] },
     { core: "VizSec", former: ["Workshop on Visualization for Computer Security"] },
     { core: "HealthCom", former: ["International Workshop on Enterprise Networking and Computing in Healthcare Industry"] },
     { core: "QoMEX", former: ["International Workshop on Quality of Multimedia Experience"] },
