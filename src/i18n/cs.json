@@ -55,7 +55,7 @@
   "ops.role.title": "Role autorství",
   "ops.role.text": "Filtrujte podle prvního, spoluprvního, druhého nebo posledního (seniorního) autora.",
   "ops.year.title": "Roky vydání",
-  "ops.year.text": "Články vydané po zvolených letech, před nimi nebo v jejich rozmezí.",
+  "ops.year.text": "Články vydané po zvolených letech, před nimi nebo v jejich rozmezí, nebo v posledních pěti letech.",
   "ops.honors.title": "Ocenění a přednášky",
   "ops.honors.text": "Najděte články Best Paper, Test of Time, Oral, Spotlight a Highlight.",
   "ops.reset.title": "Reset jedním stisknutím",

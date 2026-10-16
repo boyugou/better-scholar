@@ -55,7 +55,7 @@
   "ops.role.title": "Roluri de autor",
   "ops.role.text": "Filtrează după primul, co-primul, al doilea sau ultimul autor (senior).",
   "ops.year.title": "Anii publicării",
-  "ops.year.text": "Lucrări publicate după, înainte sau în anii pe care îi alegi.",
+  "ops.year.text": "Lucrări publicate după, înainte sau în anii pe care îi alegi, sau în ultimii cinci ani.",
   "ops.honors.title": "Premii și prezentări",
   "ops.honors.text": "Găsește lucrările Best Paper, Test of Time, Oral, Spotlight și Highlight.",
   "ops.reset.title": "Resetare dintr-o singură tastă",

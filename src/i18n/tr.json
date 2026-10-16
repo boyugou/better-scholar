@@ -55,7 +55,7 @@
   "ops.role.title": "Yazarlık rolleri",
   "ops.role.text": "Birinci, ortak birinci, ikinci veya son (kıdemli) yazara göre filtreleyin.",
   "ops.year.title": "Yayın yılları",
-  "ops.year.text": "Seçtiğiniz yıllardan sonra, önce veya o yıllar içinde yayımlanan makaleler.",
+  "ops.year.text": "Seçtiğiniz yıllardan sonra, önce veya o yıllar içinde ya da son beş yılda yayımlanan makaleler.",
   "ops.honors.title": "Ödüller ve sunumlar",
   "ops.honors.text": "Best Paper, Test of Time, Oral, Spotlight ve Highlight makalelerini bulun.",
   "ops.reset.title": "Tek tuşla sıfırlama",

@@ -55,7 +55,7 @@
   "ops.role.title": "Kirjoittajaroolit",
   "ops.role.text": "Suodata ensimmäisen, jaetun ensimmäisen, toisen tai viimeisen (vanhemman) kirjoittajan mukaan.",
   "ops.year.title": "Julkaisuvuodet",
-  "ops.year.text": "Julkaisut, jotka on julkaistu valitsemiesi vuosien jälkeen, ennen niitä tai niiden aikana.",
+  "ops.year.text": "Julkaisut, jotka on julkaistu valitsemiesi vuosien jälkeen, ennen niitä tai niiden aikana tai viimeisten viiden vuoden aikana.",
   "ops.honors.title": "Palkinnot ja esitykset",
   "ops.honors.text": "Löydä Best Paper-, Test of Time-, Oral-, Spotlight- ja Highlight-julkaisut.",
   "ops.reset.title": "Nollaus yhdellä näppäimellä",

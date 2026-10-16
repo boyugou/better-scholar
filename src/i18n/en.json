@@ -55,7 +55,7 @@
   "ops.role.title": "Authorship roles",
   "ops.role.text": "Filter by first, co-first, second or last (senior) author.",
   "ops.year.title": "Publication years",
-  "ops.year.text": "Papers published after, before or within the years you choose.",
+  "ops.year.text": "Papers published after, before or within the years you choose, or in the last five years.",
   "ops.honors.title": "Awards and talks",
   "ops.honors.text": "Find Best Paper, Test of Time, Oral, Spotlight and Highlight papers.",
   "ops.reset.title": "One-key reset",

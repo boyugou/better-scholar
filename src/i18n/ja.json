@@ -55,7 +55,7 @@
   "ops.role.title": "著者の役割",
   "ops.role.text": "筆頭著者、共同筆頭著者、第二著者、最終著者（シニア）で絞り込みます。",
   "ops.year.title": "発表年",
-  "ops.year.text": "選んだ年より後、前、またはその範囲内に発表された論文。",
+  "ops.year.text": "選んだ年より後、前、またはその範囲内、もしくは直近5年間に発表された論文。",
   "ops.honors.title": "受賞と発表",
   "ops.honors.text": "ベストペーパー、時の試練賞、Oral、Spotlight、Highlight の論文を探せます。",
   "ops.reset.title": "ワンキーでリセット",

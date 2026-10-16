@@ -55,7 +55,7 @@
   "ops.role.title": "תפקידי מחברים",
   "ops.role.text": "סננו לפי מחבר ראשון, ראשון שותף, שני או אחרון (בכיר).",
   "ops.year.title": "שנות פרסום",
-  "ops.year.text": "מאמרים שפורסמו אחרי השנים שתבחרו, לפניהן או במהלכן.",
+  "ops.year.text": "מאמרים שפורסמו אחרי השנים שתבחרו, לפניהן או במהלכן, או בחמש השנים האחרונות.",
   "ops.honors.title": "פרסים והרצאות",
   "ops.honors.text": "מצאו מאמרי Best Paper, Test of Time, Oral, Spotlight ו-Highlight.",
   "ops.reset.title": "איפוס במקש אחד",

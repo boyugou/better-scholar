@@ -55,7 +55,7 @@
   "ops.role.title": "저자 역할",
   "ops.role.text": "제1저자, 공동 제1저자, 제2저자, 마지막(교신) 저자로 필터링합니다.",
   "ops.year.title": "출판 연도",
-  "ops.year.text": "선택한 연도 이후, 이전 또는 해당 기간에 출판된 논문을 보여줍니다.",
+  "ops.year.text": "선택한 연도 이후, 이전 또는 해당 기간에, 혹은 최근 5년 이내에 출판된 논문을 보여줍니다.",
   "ops.honors.title": "수상 및 발표",
   "ops.honors.text": "Best Paper, Test of Time, Oral, Spotlight, Highlight 논문을 찾아보세요.",
   "ops.reset.title": "키 하나로 초기화",

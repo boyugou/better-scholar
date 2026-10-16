@@ -55,7 +55,7 @@
   "ops.role.title": "Autorenrollen",
   "ops.role.text": "Filtern Sie nach Erstautor, Co-Erstautor, Zweitautor oder Letztautor (Senior).",
   "ops.year.title": "Publikationsjahre",
-  "ops.year.text": "Paper, die nach, vor oder innerhalb der gewählten Jahre erschienen sind.",
+  "ops.year.text": "Paper, die nach, vor oder innerhalb der gewählten Jahre oder in den letzten fünf Jahren erschienen sind.",
   "ops.honors.title": "Auszeichnungen und Vorträge",
   "ops.honors.text": "Finden Sie Best-Paper-, Test-of-Time-, Oral-, Spotlight- und Highlight-Paper.",
   "ops.reset.title": "Zurücksetzen mit einer Taste",

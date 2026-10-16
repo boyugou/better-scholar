@@ -55,7 +55,7 @@
   "ops.role.title": "Rôles d'auteur",
   "ops.role.text": "Filtrez par premier auteur, co-premier auteur, deuxième auteur ou dernier auteur (senior).",
   "ops.year.title": "Années de publication",
-  "ops.year.text": "Les articles publiés après, avant ou pendant les années que vous choisissez.",
+  "ops.year.text": "Les articles publiés après, avant ou pendant les années que vous choisissez, ou au cours des cinq dernières années.",
   "ops.honors.title": "Prix et présentations",
   "ops.honors.text": "Retrouvez les articles Best Paper, Test of Time, Oral, Spotlight et Highlight.",
   "ops.reset.title": "Réinitialisation en une touche",

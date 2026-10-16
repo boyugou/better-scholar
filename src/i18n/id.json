@@ -55,7 +55,7 @@
   "ops.role.title": "Peran kepenulisan",
   "ops.role.text": "Saring berdasarkan penulis pertama, penulis pertama bersama, penulis kedua, atau penulis terakhir (senior).",
   "ops.year.title": "Tahun terbit",
-  "ops.year.text": "Makalah yang terbit setelah, sebelum, atau dalam rentang tahun yang Anda pilih.",
+  "ops.year.text": "Makalah yang terbit setelah, sebelum, atau dalam rentang tahun yang Anda pilih, atau dalam lima tahun terakhir.",
   "ops.honors.title": "Penghargaan dan presentasi",
   "ops.honors.text": "Temukan makalah Best Paper, Test of Time, Oral, Spotlight, dan Highlight.",
   "ops.reset.title": "Reset satu tombol",

@@ -55,7 +55,7 @@
   "ops.role.title": "Papéis de autoria",
   "ops.role.text": "Filtre por primeiro autor, coprimeiro autor, segundo autor ou último autor (sênior).",
   "ops.year.title": "Anos de publicação",
-  "ops.year.text": "Artigos publicados depois, antes ou dentro dos anos que você escolher.",
+  "ops.year.text": "Artigos publicados depois, antes ou dentro dos anos que você escolher, ou nos últimos cinco anos.",
   "ops.honors.title": "Prêmios e apresentações",
   "ops.honors.text": "Encontre artigos com Best Paper, Test of Time, Oral, Spotlight e Highlight.",
   "ops.reset.title": "Redefinição com uma tecla",

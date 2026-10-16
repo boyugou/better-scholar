@@ -55,7 +55,7 @@
   "ops.role.title": "作者角色",
   "ops.role.text": "依第一作者、共同第一作者、第二作者或末位（資深）作者篩選。",
   "ops.year.title": "發表年份",
-  "ops.year.text": "篩選在所選年份之後、之前或期間發表的論文。",
+  "ops.year.text": "篩選在所選年份之後、之前或期間，或近五年內發表的論文。",
   "ops.honors.title": "獎項與演講",
   "ops.honors.text": "找出 Best Paper、時間考驗獎、Oral、Spotlight 與 Highlight 論文。",
   "ops.reset.title": "一鍵重設",

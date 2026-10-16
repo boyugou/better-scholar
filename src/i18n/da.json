@@ -55,7 +55,7 @@
   "ops.role.title": "Forfatterroller",
   "ops.role.text": "Filtrér efter første, delt første, anden eller sidste (senior) forfatter.",
   "ops.year.title": "Udgivelsesår",
-  "ops.year.text": "Artikler udgivet efter, før eller inden for de år, du vælger.",
+  "ops.year.text": "Artikler udgivet efter, før eller inden for de år, du vælger, eller i de seneste fem år.",
   "ops.honors.title": "Priser og foredrag",
   "ops.honors.text": "Find artikler med Best Paper, Test of Time, Oral, Spotlight og Highlight.",
   "ops.reset.title": "Nulstil med én tast",

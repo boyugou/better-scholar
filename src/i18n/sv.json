@@ -55,7 +55,7 @@
   "ops.role.title": "Författarroller",
   "ops.role.text": "Filtrera på första, delat första, andra eller sista (senior) författare.",
   "ops.year.title": "Publiceringsår",
-  "ops.year.text": "Artiklar publicerade efter, före eller inom de år du väljer.",
+  "ops.year.text": "Artiklar publicerade efter, före eller inom de år du väljer, eller under de senaste fem åren.",
   "ops.honors.title": "Priser och föredrag",
   "ops.honors.text": "Hitta artiklar med Best Paper, Test of Time, Oral, Spotlight och Highlight.",
   "ops.reset.title": "Återställ med en tangent",

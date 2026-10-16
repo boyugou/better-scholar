@@ -55,7 +55,7 @@
   "ops.role.title": "作者角色",
   "ops.role.text": "按第一作者、共同第一作者、第二作者或末位（资深）作者筛选。",
   "ops.year.title": "发表年份",
-  "ops.year.text": "筛选在所选年份之后、之前或期间发表的论文。",
+  "ops.year.text": "筛选在所选年份之后、之前或期间，或近五年内发表的论文。",
   "ops.honors.title": "奖项与报告",
   "ops.honors.text": "查找 Best Paper、时间检验奖、Oral、Spotlight 和 Highlight 论文。",
   "ops.reset.title": "一键重置",

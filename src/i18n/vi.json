@@ -55,7 +55,7 @@
   "ops.role.title": "Vai trò tác giả",
   "ops.role.text": "Lọc theo tác giả đầu, đồng tác giả đầu, tác giả thứ hai hoặc tác giả cuối (senior).",
   "ops.year.title": "Năm công bố",
-  "ops.year.text": "Các bài được công bố sau, trước hoặc trong khoảng năm bạn chọn.",
+  "ops.year.text": "Các bài được công bố sau, trước hoặc trong khoảng năm bạn chọn, hoặc trong 5 năm gần đây.",
   "ops.honors.title": "Giải thưởng và báo cáo",
   "ops.honors.text": "Tìm các bài Best Paper, Test of Time, Oral, Spotlight và Highlight.",
   "ops.reset.title": "Đặt lại chỉ bằng một phím",
