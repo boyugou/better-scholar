@@ -37,6 +37,7 @@ In `chrome.storage.local`, on this device only (`content/store.js`):
   author list, the venue, the time it was read, and whether it came from Semantic Scholar. Entries older than 90
   days are not used and are dropped when the cache is next saved; at most 3,000 papers are kept.
 - `s2key` — the Semantic Scholar API key, only if you enter one in the settings. It is never synced.
+- `askVenue` — a venue text (at most 300 characters, as Scholar printed it) that you asked the settings page to check by pressing *Check* beside a venue of the unranked list; the settings page takes it within a moment and removes it.
 
 In the Scholar site's own browser storage:
 
