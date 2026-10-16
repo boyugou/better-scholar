@@ -119,7 +119,7 @@
     { ccf: "OSDI", core: "OSDI", names: ["USENIX Symposium on Operating Systems Design and Implementation"] },
     { ccf: "NSDI", names: ["USENIX Symposium on Networked Systems Design and Implementation", "Symposium on Networked Systems Design and Implementation", "Symposium on Network System Design and Implementation"] },
     { ccf: "EuroSys", core: "EuroSys", names: ["European Conference on Computer Systems", "Conference on Computer Systems", "ACM European Conference on Computer Systems"] },
-    { ccf: "ACM SIGOPS ATC", core: "USENIX", abbrs: ["USENIX ATC"], names: ["USENIX Annual Technical Conference", "USENIX Technical Conference", "USENIX ATC"] },
+    { ccf: "ACM SIGOPS ATC", core: "USENIX", abbrs: ["USENIX ATC"], names: ["USENIX Annual Technical Conference", "USENIX Technical Conference"] },          // ("USENIX ATC" is an abbreviation only: as a name it would leave "ATC", CORE's Advanced and Trusted Computing, to this venue)
     { ccf: "FAST", core: "FAST", names: ["USENIX Conference on File and Storage Technologies"] },
     { ccf: "ASPLOS", core: "ASPLOS", names: ["International Conference on Architectural Support for Programming Languages and Operating Systems"] },
     // software engineering: the maintenance conference became ICSME in 2014 (CORE keeps the old name in a parenthesis)

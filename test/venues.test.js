@@ -1091,3 +1091,26 @@ test("a journal's own name with a volume is that journal: a one-word title in ca
     assert.ok(r.ccf && r.ccf.kind === "J" && r.ccf.name === v.name, `${raw} → ${r.ccf && r.ccf.name}`);
   }
 });
+
+test("the acronym a string opens with decides between venues whose names boil down to the same words: 'AAAI'17: Proceedings of the … AAAI Conference on Artificial Intelligence' is AAAI (CCF A), not IJCAI (B)", () => {
+  for (const [s, want] of [["AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence, 4278-4284, 2017", "CCF A AAAI · CORE A* AAAI"], ["AAAI 2019: 33rd AAAI Conference on Artificial Intelligence, 2019", "CCF A AAAI · CORE A* AAAI"],
+    ["IJCAI'18: Proceedings of the 27th International Joint Conference on Artificial Intelligence, 2018", "CCF B IJCAI · CORE A* IJCAI"], ["SDM '19: Proceedings of the SIAM International Conference on Data Mining, 123-145, 2019", "CCF B SDM"],
+    ["Proceedings of the 3rd ACM SIGCOMM Conference on Internet Measurement, 91-100, 2003", "CCF B IMC · CORE A IMC"], ["Tenth International AAAI Conference on Web and Social Media, 2016", "CCF B ICWSM · CORE A ICWSM"]]) assert.equal(brief(s), want, s);
+  // a journal and a conference that are called the same ("Computational Visual Media"): the acronym in the parenthesis names the conference; the bare name is the journal's, as before
+  assert.equal(brief("Computational Visual Media (CVM), 2019"), "CCF C CVM");
+  assert.equal(brief("Computational Visual Media 5 (2), 123-145, 2019"), "CCF B CVMJ");
+  // an abbreviation with its organisation ("USENIX ATC") is not the bare acronym ("ATC" is CORE's Advanced and Trusted Computing)
+  assert.equal(brief("ATC 2019"), "CORE C ATC");
+  assert.equal(brief("USENIX ATC 2019"), "CCF A ACM SIGOPS ATC · CORE A USENIX");
+  // every conference of the CCF list in the forms Scholar prints it, with its acronym: a badge of another venue is never the answer (a missing one is)
+  const same = (r, v) => !r.ccf || r.ccf.abbr === v.abbr || r.ccf.name === v.name;
+  const confs = ccf.venues.filter((v) => v.kind === "C" && v.abbr && /^[A-Za-z][A-Za-z0-9&-]{2,}$/.test(v.abbr));
+  assert.ok(confs.length > 300);
+  const strip = (n) => n.replace(/\([^()]*\)/g, " ").replace(/\s+/g, " ").trim();
+  for (const v of confs) {
+    for (const raw of [`Proceedings of the 12th ${strip(v.name)}, 123-145, 2019`, `${strip(v.name)} (${v.abbr}), 123-145, 2019`, `${v.abbr} '19: Proceedings of the ${strip(v.name)}, 123-145, 2019`, `${v.abbr} 2019`]) {
+      const r = resolver.resolve(raw);
+      assert.ok(same(r, v), `${raw} → ${r.ccf && r.ccf.abbr}`);
+    }
+  }
+});

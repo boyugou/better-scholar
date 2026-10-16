@@ -499,7 +499,14 @@
       }
       // a journal and a conference can share a canonical key ("Computer Graphics Forum" / "Computer
       // Graphics International"): the boilerplate word the string keeps (forum / international) says which
-      if (hits.length > 1) { const pick = pickByBoiler(hits, p.plain); if (pick) return pick; }
+      if (hits.length > 1) {
+        const pick = pickByBoiler(hits, p.plain);
+        if (pick) return pick;
+        // a journal and a conference of one name ("Computational Visual Media"): the acronym the string names ("… (CVM)") is the conference's
+        const named = acronymSignals(p).filter((sig) => sig.kind === "paren" || (sig.kind === "lead" && sig.event));
+        const byAcronym = hits.filter((h) => named.some((sig) => squash(h.abbr) === sig.key));
+        if (byAcronym.length === 1) return byAcronym[0];
+      }
       return hits[0] || null;
     };
     // is the string's whole name (organisations included) one of the forms of this venue's names?
@@ -537,6 +544,12 @@
     // (a curated alias such as "Pacific Graphics", a journal called "Machine Learning").
     const plainWords = contentWords(p.plain);
     const bareString = !hint && plainWords.length <= 2 && !plainWords.some((w) => ORG.has(w)) && plainWords.length === canonTokens(p.plain, "full").length;
+    // the acronym a string opens with ("AAAI'17: …", "SDM 2019 …") names its event: a hit that is not the venue of that acronym disagrees with it — if the acronym is any venue's here
+    const ownersOf = (a) => sides.flatMap((side) => [...(side.abbrs.get(a) || []), ...(side.weakAbbrs.get(a) || [])]);
+    const acronymAgrees = (hit) => {
+      const owned = acronymSignals(p).filter((sig) => sig.kind === "lead" && sig.event && ownersOf(sig.key).length);
+      return !owned.length || owned.some((sig) => ownersOf(sig.key).includes(hit));
+    };
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
     const seen = new Set();
     let clashing = null;           // the string's whole name is a venue's, with another event word ("Symposium" for a Conference): only if nothing better turns up
@@ -557,6 +570,8 @@
       // nothing but them, with a volume: it is the journal whose whole name they are
       if (d === "ambiguous" && p.hasVolume && !bareString && plainWords.length === canonTokens(p.plain, "full").length) d = nameHit((side) => side.bare.get(key));
       if (d === "ambiguous") return null;
+      // ("AAAI'17: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence" boils down, once its acronyms are taken out, to the words of IJCAI's name)
+      if (d && mode === "noAcr" && !acronymAgrees(d)) continue;
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
       if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
