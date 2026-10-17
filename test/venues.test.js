@@ -1610,6 +1610,21 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Proceedings of the 18th ACM/SIGEVO Conference on Foundations of Genetic Algorithms", "CORE A FOGA");
   eq("SIGGRAPH Asia 2018 Technical Papers on   - SIGGRAPH Asia '18", "CORE A* SiggraphA");
   none("ACM SIGGRAPH 2004 Computer animation festival on - SIGGRAPH '04");
+  // an event that says "Joint" is not a venue whose names never do (Joint Cloud Computing, the Japanese Joint Symposium on Parallel Processing); the years a venue was held jointly say so in the title
+  none("2020 IEEE international conference on joint cloud computing, 86-93, 2020");
+  none("9th Joint Symposium on Parallel Processing, 136-198, 1997");
+  none("Joint Pattern Recognition Symposium");
+  eq("Proceedings IEEE Joint International Conference on Requirements Engineering …, 2002", "CCF B RE · CORE A RE");
+  eq("Proceedings of the 1998 ACM SIGMETRICS joint international conference on Measurement and modeling of computer systems", "CCF B SIGMETRICS · CORE A* SIGMETRICS");
+  eq("Proceedings of the joint international conference on Measurement and …, 2004", "CCF B SIGMETRICS · CORE A* SIGMETRICS");
+  eq("2019 IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technologies", "CORE B WI");
+  // acronyms of other events that the names of a ranked venue boil down to, and the predecessors of IPDPS
+  none("2022 2nd International Conference on Artificial Intelligence (ICAI)");
+  none("2020 International Conference on Artificial Intelligence and Education (ICAIE)");
+  none("2021 IEEE 3rd International Conference on Circuits and Systems (ICCS)");
+  eq("International Parallel Processing Symposium (IPPS)", "CCF B IPDPS · CORE A IPDPS");
+  eq("International Conference on Parallel Processing (ICPP), 2019", "CCF B ICPP · CORE B ICPP");
+  none("IEEE/ACM International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER)");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");

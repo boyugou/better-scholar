@@ -219,7 +219,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities)\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -699,6 +699,8 @@
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
       if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
+      // (a string that says "Joint" is not a venue whose names never do: the "Joint Symposium on Parallel Processing" of Japan is neither ICPP nor IPDPS)
+      if (d && d !== "ambiguous" && /\bjoint\b/i.test(p.plain) && !hasWord(d, "joint")) continue;
       // ("Journal" alone is not "Journal of the ACM": a one-word string only meets a journal's name that is that one word whole, not the rest of a name that lost its organisation)
       if (d && d !== "ambiguous" && d.kind === "J" && tokens.length < 2 && !d.extra.some((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "full").join(" ") === key)) continue;
       // ("International Security" is a political-science journal, not the USENIX Security Symposium: one content word with "international" or "annual"

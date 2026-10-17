@@ -169,7 +169,7 @@
     // LPAR's current name (CORE lists the older "Logic Programming and Automated Reasoning"); ACII's (CORE's name stops at "Intelligent"); ISoLA's, which Scholar prints without its subtitle
     { core: "LPAR", names: ["International Conference on Logic for Programming, Artificial Intelligence and Reasoning"] },
     // (the joint event of the Web Intelligence conference and the Intelligent Agent Technology conference: CORE's WI, "previously joint with" it)
-    { core: "WI", names: ["IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "Web Intelligence and Intelligent Agent Technology"] },
+    { core: "WI", names: ["IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology", "IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technologies", "Web Intelligence and Intelligent Agent Technology"] },
     // (the 2000 volume title)
     { core: "EKAW", names: ["Knowledge Engineering and Knowledge Management Methods, Models, and Tools"] },
     // (the symposium's older title in the singular — "Second IEEE Symposium on Computer and Communications" is ISCC, not INFOCOM — and the symposium CORE calls a conference)
@@ -180,7 +180,13 @@
     { core: "PIMRC", names: ["IEEE International Symposium on Personal, Indoor and Mobile Radio Communications"] },
     { core: "IEEE CIFEr", names: ["IEEE Symposium on Computational Intelligence for Financial Engineering and Economics", "IEEE Conference on Computational Intelligence for Financial Engineering & Economics"] },
     { ccf: "I3D", core: "I3DG", names: ["ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games", "Symposium on Interactive 3D Graphics and Games"] },
+    // (IPDPS began as two symposia, the International Parallel Processing Symposium and the Symposium on Parallel and Distributed Processing, that merged in 1998)
+    { ccf: "IPDPS", core: "IPDPS", names: ["International Parallel Processing Symposium", "IEEE Symposium on Parallel and Distributed Processing"] },
     { ccf: "IEEE VIS", core: "IEEE VIS", names: ["IEEE Visualization and Visual Analytics"] },          // (the symposium on Information Visualization, 1995–2006, is not VIS: CCF's VIS is the Visualization conference of DBLP's conf/visualization)
+    // (the years a conference was held jointly with another say so in the title: "Joint" is part of the name those years)
+    { ccf: "RE", core: "RE", names: ["IEEE Joint International Conference on Requirements Engineering", "IEEE Joint International Requirements Engineering Conference"] },
+    { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Joint International Conference on Measurement and Modeling of Computer Systems", "ACM SIGMETRICS Joint International Conference on Measurement and Modeling of Computer Systems"] },
+    { core: "InSITE", names: ["Informing Science and Information Technology Education Joint Conference", "Informing Science and IT Education Joint Conference"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development
@@ -400,6 +406,6 @@
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
     // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
-    { shadow: [{ acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
+    { shadow: [{ acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
   ];
 });
