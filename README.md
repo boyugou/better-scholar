@@ -73,7 +73,7 @@ How much the extension is made of, counted from its code and its data — nothin
 | **400+** | names Scholar prints that the lists do not have, in 250+ curated entries (older and renamed venues, other spellings, a list's own typos, look-alike events that get no badge) | `src/data/aliases.js` |
 | **2,500+** · **1,100+** | name forms and acronyms the matcher looks up | the keys of its indexes |
 | **150+** | venues that the two lists word differently and the matcher knows are one: a badge found by one list's wording brings the other's | `idx.partners` |
-| **5 · 13** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
+| **5 · 18** | recognition stages (name, journal word-bag, acronym, the visible start of a cut name, name and subtitle) and guards that stop a weaker reading from beating a stronger one | the labelled stages of `src/lib/venues.js` and the guard table of `docs/ARCHITECTURE.md` |
 | **7,724** | award-winning papers (7,830 awards), from 194 venues and series, 1990–2026 | `src/data/awards.js` |
 | **22,744** | real Scholar venue lines whose badge was each looked at and written down | `test/fixtures/venues.expected.json` |
 | **500+ · 80+ · 15** | unit tests, end-to-end checks in a real Chromium with the extension loaded, checks of the web demo | `test/*.test.js`, `test/e2e/` |
