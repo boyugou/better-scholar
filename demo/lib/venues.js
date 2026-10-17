@@ -73,6 +73,10 @@
   const squash = (s) => fold(s).toLowerCase().replace(/[^a-z0-9]+/g, "");
   // "nsdi11" -> "nsdi", "sp05" -> "sp"; leaves "3dv" and "p2p" alone.
   const stripDigits = (k) => (/^[a-z0-9]*[a-z]\d+$/.test(k) ? k.replace(/\d+$/, "") : k);
+  // A name as it is spelled, less what no venue's name rests on: years, ordinals, "Proceedings of the", "annual", the little words and what is in parentheses. Unlike the canonical
+  // tokens it keeps "international", "ACM" and the event word: "Conference on Supercomputing" and "International Conference on Supercomputing" boil down to one key, not to one name.
+  const literalKey = (text) => fold(text).toLowerCase().replace(/\([^()]*\)/g, " ").split(/[^a-z0-9]+/)
+    .filter((t) => t && !STOP.has(t) && !/^(?:proc(?:eedings?)?|ann(?:ual|u)?|biennial|triennial)$/.test(t) && !isNoiseToken(t)).join(" ");
   const uniq = (list) => Array.from(new Set(list));
 
   // Canonical token list of a venue name. `mode`:
@@ -415,10 +419,12 @@
   // right, but its tooltip would name a venue that may not be the one. Two rows of the same venue are not different venues.
   const venueKey = (e) => e.src + "|" + e.kind + "|" + squash(e.abbr || e.name);
   let ties = 0;          // how often decide() took the first of venues that only share a rating: a result that rests on it names a rating, not a venue (matchSource says so: `tied`)
-  function decide(list, rawWords, strict) {
+  function decide(list, rawWords, strict, spells) {
     if (!list || !list.length) return null;
     const u = uniq(list);
     if (u.length === 1) return u[0];
+    // (the string spells the whole name of one of them — a curated alias counts — and of none of the others: that is the venue, whatever shorter form they share)
+    if (spells) { const named = u.filter(spells); if (named.length === 1) return named[0]; }
     const tie = (l) => {
       if (uniq(l.map(venueKey)).length > 1) { if (strict) return "ambiguous"; ties++; }
       return l[0];
@@ -589,10 +595,12 @@
     // A volume number with no conference wording ("Information Fusion 50") is a journal:
     // do not name-match it to a conference of the same name.
     const nameSides = !hint && p.hasVolume ? sides.filter((side) => side === idx.sources[src].J) : sides;
+    const literal = literalKey(p.plain);
+    const spells = (e) => !!literal && e.extra.some((n) => literalKey(n) === literal);
     const nameHit = (getter) => {
       const hits = [];
       for (const side of nameSides) {
-        const d = decide(getter(side), rawWords);
+        const d = decide(getter(side), rawWords, false, spells);
         if (d === "ambiguous") return "ambiguous";
         if (d) hits.push(d);
       }
@@ -1233,5 +1241,5 @@
     return { resolve, index: idx };
   }
 
-  return { createResolver, prepare, canonTokens, typeHint, secondaryWord, secondaryWords, squash };
+  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash };
 });

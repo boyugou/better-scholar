@@ -484,5 +484,5 @@
   const copyButtons = (prefs) => prefs.panel.copy.order.filter((k) => prefs.panel.copy[k]);
 
   return { ROLES, RANKS, MARK_GROUPS, COPY_BUTTONS, HIDE_PARTS, SECTIONS, PILLS, PILL_OPERATORS, NAMES, NAME_MAX, CARDS, SETTINGS, PRESETS, CHIP_THEMES, defaults, normalize, normalizeUi, flatten, apply, SYNC_LIMIT, sizeOf, cleanName: (v) => clean({ kind: "text" }, v),
-    listShown, lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
+    lists, winner, chipLists, markShown, visibleMarks, chipMarks, panelMarks, pills, sources, source, copyButtons };
 });
