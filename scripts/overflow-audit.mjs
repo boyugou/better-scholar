@@ -65,7 +65,7 @@ function measure(opts) {
     }
     // a one-word label of a script that has spaces ("Ad|d", "Hinzufü|gen"): the word's text is on more than one line
     const label = (el.textContent || "").trim();
-    if (!opts.longNames && el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {          // (not with every name at 30 letters in a row: such a name breaks where it must)
+    if (!opts.longNames && el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я\u0590-\u06ff\u0900-\u097f\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {          // (not with every name at 30 letters in a row: such a name breaks where it must)
       const range = document.createRange(), lines = new Set();
       for (const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); walker.nextNode();) {          // (the text only: an icon beside it has a box of its own)
         range.selectNodeContents(walker.currentNode);
