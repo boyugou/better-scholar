@@ -511,9 +511,9 @@
     const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})(\s*['’]?\s*)\d{2}\s*:/.exec(head);
     // (a two-letter acronym needs the apostrophe or no space before the number: "CHI '09:", "SC18:" — "DS 30: Proceedings of DESIGN 2002" is the Design Society's report series)
     if (acmDl && /[A-Z]/.test(acmDl[1]) && !(acmDl[1].length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true, raw: acmDl[1] });
-    // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
+    // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR" (with its year glued on, "ICLR2020", the lead rule above has read it; a title-cased one — "Ijcai15", "Nips2016" — is not the shape of an acronym there, and stays here)
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !glued(words[0]) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !(glued(words[0]) && ((a) => /[A-Z].*[A-Z]/.test(a) || a === a.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(a))(unglue(words[0]))) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
     return out;
   }
 

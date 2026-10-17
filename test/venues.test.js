@@ -1845,6 +1845,9 @@ test("a bare acronym with its year glued on (\"ASE'19\", \"ICLR2020\") is the ev
   // an acute accent, a grave accent or a prime between the acronym and its year is the apostrophe (real prints: "NANOARCH´15", "NT+ME`24")
   for (const mark of ["\u00b4", "`", "\u2032", "\u02b9", "\u2019"]) { eq(`NDSS${mark}19`, "CCF A NDSS · CORE A* NDSS"); eq(`ASE${mark}19`, "CCF A ASE · CORE A* ASE"); }
   eq("SC18", "CCF A SC · CORE A SC");
+  // a title-cased one-word venue with its year glued on is still the venue (Scholar re-cases some strings): the one-word rule keeps it
+  eq("Ijcai15", "CCF B IJCAI · CORE A* IJCAI");
+  eq("Nips2016", "CCF A NeurIPS · CORE A* NeurIPS");
   // every acronym of the lists: where the spaced form names a venue, the glued form names the same one (it may name more: "Mobisys'19" has the shape of an acronym with its year, "Mobisys '19" does not)
   const abbrs = new Set([...ccf.venues.filter((v) => v.kind === "C").map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter((a) => a && a.length > 1 && !/\s/.test(a)));
   assert.ok(abbrs.size > 800);
@@ -1854,12 +1857,12 @@ test("a bare acronym with its year glued on (\"ASE'19\", \"ICLR2020\") is the ev
     if (spaced && brief(`${a}${mark}19`) !== spaced) differ.push(`${a}: ${spaced} vs ${brief(`${a}${mark}19`)}`);
   }
   assert.deepEqual(differ.slice(0, 10), []);
-  // … and so does the year jammed on ("ICLR2020", "ICML24"): never another venue than "ICLR 2020" names, never a venue of the other kind (journal / conference)
+  // … and so does the year jammed on ("ICLR2020", "ICML24"): never another venue than "ICLR 2020" names (a journal for a conference, Creativity and Cognition for Compiler Construction)
   const jammed = [];
   for (const a of abbrs) {
     if (!/^[A-Za-z&]{3,10}$/.test(a) || !/[A-Z]/.test(a)) continue;
     const spaced = brief(`${a} 2019`);
-    for (const g of [`${a}2019`, `${a}19`]) { const got = brief(g); if (got && got !== spaced) jammed.push(`${g}: ${got} vs ${spaced || "nothing"}`); }
+    for (const g of [`${a}2019`, `${a}19`]) { const got = brief(g); if (got && spaced && got !== spaced) jammed.push(`${g}: ${got} vs ${spaced}`); }          // (a title-case word — "Middleware2019" — may name the venue where "Middleware 2019" names none: the digits glued on say more)
   }
   assert.deepEqual(jammed.slice(0, 10), []);
 });
