@@ -175,7 +175,8 @@
       const before = s;
       s = s.replace(/\s*,\s*(?:19|20)\d{2}\s*$/, "");                       // ", 2014"
       s = s.replace(/\s*,?\s*\bPMLR\b\s*\d*\s*[:,]?\s*(?:\d+\s*[-–]\s*\d+)?\s*$/i, "");   // ", PMLR 235:12345-12367" (the proceedings series, not a venue)
-      s = s.replace(new RegExp("\\s*,\\s*" + PAGES + "\\s*$"), "");        // ", 611-626" / ", 79"
+      s = s.replace(new RegExp("\\s*,\\s*(?:(?:[Pp]p?\\.|[Pp]ages?)\\s*)?" + PAGES + "\\s*$"), "");        // ", 611-626" / ", 79" / ", pp. 1-18" / ", Pages 1–10"
+      s = s.replace(/\s*(?:,|[–-]|\()\s*(?:early access|in press|accepted|just accepted|to appear|forthcoming|published online|online(?: first| ahead of print)?|epub(?: ahead of print)?|ahead of print|preprint)\s*\)?\s*$/i, "");   // (the state of an article: "…, early access", "(in press)")
       s = s.replace(/\s*,\s*(?:article|art\.?|paper|no\.?|number)\b\.?(?:\s*(?:no\.?|number|id))?\s*[:#]?\s*[A-Za-z]{0,2}\d*[A-Za-z]{0,2}\s*$/i, "");   // ", Article No.: 137" / ", article 75" / ", Art. no. 12" / ", No. 3" (an article number, not a page)
       s = s.replace(/\s*,\s*\d+\s*:\s*\d+\s*-\s*\d+\s*$/, "");              // ", 3: 1-3: 19"
       { const vol = /\s+\d+\s*\(([^)]*)\)?\s*$/.exec(s); if (vol) { hasVolume = true; if (ISSUE_ONLY.test(vol[1])) hasIssue = true; } }
