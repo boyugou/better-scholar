@@ -14,7 +14,8 @@ npm run data                          # rebuild src/data/{ccf,core,awards}.js fr
 npm run numbers                       # rewrite the "By the numbers" blocks of README.md and README.zh-CN.md (counted from the code and the data; a test fails when they are stale)
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
 node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
-npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; the one known limit: a copy button never gets narrower than its text, so 30 full-width characters on it, in a panel narrower than about 380px, stick out)
+npm run diff:matcher                  # what a change to the matcher does to 75,000 real titles (LOST / MOVED / GAIN against a commit)
+npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; `spaced` and `cjk` come out clean from 420px up; `wide`, thirty capital Ws in a row and wider than any real name, still lets the tray's buttons stick out by 2px at 420px)
 npm run check:claims                  # every quote in store/chrome/claims.md still exists in the code it names
 ```
 
@@ -65,9 +66,17 @@ address, never go round a bot check — DBLP's Anubis page is one):
   number where the pages would be, a former name, a series suffix).
 
 Every rule added after such a finding had a side effect somewhere else at least once (a series strip that made a journal's
-title a badge, an extension rule that refused a name CORE words differently): run the snapshot diff, the OpenAlex
-old-versus-new differential and a generated sweep of every official name in several forms before the commit, and ask an
-independent reviewer to read the diff.
+title a badge, an extension rule that refused a name CORE words differently): run the snapshot diff, the old-versus-new
+differential and a generated sweep of every official name in several forms before the commit, and ask an independent
+reviewer to read the diff.
+
+**The differential is a script.** `test/fixtures/real-titles.txt` holds 50,000+ more real titles from the two public
+sources above (one per line, no expected answer) and `npm run diff:matcher [<commit>]` (`scripts/diff-matcher.mjs`)
+resolves those and the 22,000+ corpus lines with the matcher of that commit (default `HEAD`) and with the working tree:
+*LOST* (a badge gone), *MOVED* (another venue's badge) and, with `--gains`, *GAIN*. Each LOST and MOVED line is a wrong
+badge removed on purpose or a regression; the unit tests never see the second kind. `npm run pull:titles`
+(`scripts/pull-real-titles.mjs`) refreshes the file from Crossref and OpenAlex, resumably, into the git-ignored
+`.cache/real-titles/`.
 
 ## Adding a setting
 

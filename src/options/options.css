@@ -368,6 +368,7 @@ body {
   font-weight: 600;
   font-size: 13.5px;
   color: var(--text);
+  overflow-wrap: anywhere;
 }
 
 .opt .hint {

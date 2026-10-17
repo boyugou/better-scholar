@@ -10,6 +10,8 @@
     "check:profile": "node scripts/check-saved-profile.mjs",
     "check:claims": "node store/chrome/check-claims.mjs",
     "audit:overflow": "node scripts/overflow-audit.mjs",
+    "diff:matcher": "node scripts/diff-matcher.mjs",
+    "pull:titles": "node scripts/pull-real-titles.mjs",
     "data": "node scripts/build-data.mjs",
     "agents:doc": "node scripts/agents-doc.js",
     "store:images": "node scripts/store-images.mjs",
