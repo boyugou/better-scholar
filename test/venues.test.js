@@ -1628,6 +1628,8 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // the state of an article after the name ("early access", "in press", "Online ahead of print") and "pp." before the pages are no part of a journal's name
   for (const tail of [", early access, 2023", ", in press, 2023", ", accepted, 2023", ", Online ahead of print", " - Early Access", ", pp. 1-18, 2023", " 45 (6), pp. 7090-7106, 2023", " (in press)"]) eq("IEEE Transactions on Pattern Analysis and Machine Intelligence" + tail, "CCF A TPAMI");
   eq("Bioinformatics, in press, 2021", "CCF A Bioinformatics");
+  eq("International Symposium on Computer Architecture, Pages 1–10, 2019", "CCF A ISCA · CORE A* ISCA");
+  eq("Design Automation Conference, pages 123-145, 2019", "CCF A DAC · CORE A* DAC");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
