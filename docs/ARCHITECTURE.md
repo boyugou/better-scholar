@@ -484,7 +484,8 @@ Three buttons put a second flavour on the clipboard: *Copy as table* (`summaryHt
 | Suite | What it proves |
 |-------|----------------|
 | `test/names.test.js` | role logic, name matching edge cases, and owner detection rates on real profiles |
-| `test/venues.test.js` | the matcher: regression cases, alias integrity, reviewed snapshot over real venue strings |
+| `test/venues.test.js` | the matcher: regression cases, alias integrity, reviewed snapshot over real venue strings, and generative invariants over every ranked name — its forms come out as itself or nothing, with its own acronym added or cut after any word it is that venue's or nothing, and only four official names get no badge from their own list |
+| `test/real-titles.test.js` | `test/fixtures/real-titles.txt` (the extra real titles `scripts/diff-matcher.mjs` replays): sorted, each once, none that the snapshot holds |
 | `test/real-profile.test.js` | a real profile's rows: roles, venues and the role × rank table the live page showed |
 | `test/marks.test.js`, `test/awards.test.js` | award and talk words the authors wrote; matching the bundled award list |
 | `test/awards-sources.test.js`, `test/awards-merge.test.js` | the award page readers on synthetic pages; the merge gate that refuses rows it cannot verify |
