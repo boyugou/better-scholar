@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar 著者順、CCF / CORE ランク、主要学会の受賞歴、年度グラフ、即時検索で研究者プロフィールを強化します。"
+    "message": "Google Scholar の研究者プロフィールに、著者順、CCF / CORE ランク、主要学会の受賞歴、年別グラフ、即時検索を追加します。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "最優秀論文賞候補"
   },
   "marksHint": {
-    "message": "Scholar 上の各論文のタイトルや掲載誌の文言にある著者自身の記載（未検証）と、主要会議の受賞論文リスト（内蔵）に基づきます。"
+    "message": "Scholar 上の各論文のタイトルや掲載先の文言にある著者自身の記載（未検証）と、主要会議の受賞論文リスト（内蔵）に基づきます。"
   },
   "marksAsWritten": {
     "message": "著者の記載または受賞リストによる"
@@ -121,7 +121,7 @@
     "message": "ランクなし"
   },
   "tipHidden": {
-    "message": "Scholar が著者リストを省略しているため、プロフィール本人の順位が表示されません"
+    "message": "Scholar が著者リストを省略しているため、プロフィール本人の著者順が表示されません"
   },
   "copySummary": {
     "message": "集計をコピー"
@@ -169,7 +169,7 @@
     "message": "1 件は著者リストの省略により著者順が不明"
   },
   "resolveBtn": {
-    "message": "完全なリストを読み取る"
+    "message": "著者リストを補完"
   },
   "resolveHint": {
     "message": "各論文の Scholar のページを（約 1 秒に 1 件）開き、完全な著者リストを読み取ります。"
@@ -322,7 +322,7 @@
     "message": "最終著者"
   },
   "copyMiddle": {
-    "message": "その他の順位"
+    "message": "その他の位置"
   },
   "tsvRole": {
     "message": "著者順"
@@ -375,7 +375,7 @@
     "message": "著者の行で自分の名前を強調"
   },
   "optMarkNameHint": {
-    "message": "太字と色付きで表示します。ポインタを合わせると順位が表示されます。"
+    "message": "太字と色付きで表示します。ポインタを合わせると著者順が表示されます。"
   },
   "optCcf": {
     "message": "CCF ランク"
@@ -511,25 +511,25 @@
     "message": "論文をコピー"
   },
   "copyBibtex": {
-    "message": "BibTeXコピー"
+    "message": "BibTeX をコピー"
   },
   "copyApa": {
-    "message": "APAコピー"
+    "message": "APA をコピー"
   },
   "copyMarkdown": {
-    "message": "Markdownをコピー"
+    "message": "Markdown をコピー"
   },
   "copyJson": {
     "message": "JSON をコピー"
   },
   "exportCsv": {
-    "message": "CSV出力"
+    "message": "CSV をエクスポート"
   },
   "copyEmpty": {
-    "message": "コピーするものがありません"
+    "message": "コピー対象なし"
   },
   "exported": {
-    "message": "出力完了"
+    "message": "エクスポートしました"
   },
   "tsvYear": {
     "message": "年"
@@ -753,7 +753,7 @@
     }
   },
   "filterClear": {
-    "message": "消去"
+    "message": "クリア"
   },
   "filterMinCites": {
     "message": "引用数 ≥ $N1$",
@@ -842,7 +842,7 @@
     "message": "設定をコピー (JSON)"
   },
   "optConfigExport": {
-    "message": "ファイル書き出し"
+    "message": "ファイルをエクスポート"
   },
   "optConfigImportFile": {
     "message": "ファイルを読み込み"
@@ -894,7 +894,7 @@
     "message": "全機能有効"
   },
   "optPresetFirst": {
-    "message": "第一著者優先"
+    "message": "筆頭著者優先"
   },
   "optPresetMinimal": {
     "message": "ミニマル"
