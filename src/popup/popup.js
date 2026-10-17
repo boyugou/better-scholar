@@ -58,7 +58,7 @@
       const name = (k) => t(k === "ccf" ? "srcCcf" : "srcCore");
       const seg = !tp.show ? null : sources.length > 1
         ? h("div", { class: "seg", role: "group" },
-          ...sources.map((k) => h("button", { type: "button", "aria-pressed": String(k === source), onClick: () => { source = k; draw(); } }, name(k))))
+          ...sources.map((k) => h("button", { type: "button", "data-src": k, "aria-pressed": String(k === source), onClick: () => { source = k; draw(); const again = main.querySelector('.seg button[data-src="' + k + '"]'); if (again) again.focus(); } }, name(k))))
         : sources.length === 1 ? h("div", { class: "src" }, name(sources[0])) : null;
       const cols = s.columns.filter((c) => c !== "none" || tp.unranked);
       const showTotal = tp.total || !cols.length;                                     // (a table with no tier column has no number but the total: it is drawn whatever its switch says)
@@ -98,7 +98,7 @@
         ...copyKinds.map((kind) => h("button", { class: "btn", "data-act": "copy-" + kind, type: "button", onClick: deliver(kind) }, t(B.dom.COPY_LABEL[kind])))) : null;
       // (replaceChildren would print a literal "null" for an absent part, so absent parts are dropped first)
       main.replaceChildren(...[
-        h("div", { class: "who" }, h("b", {}, data.owner),
+        h("div", { class: "who" }, h("b", { title: data.owner }, data.owner),
           // (a paper whose author list does not have the profile name is not in the table: "19 of 20 papers", and the tooltip says why)
           h("span", { title: s.absent > 0 ? tn("coverAbsent", s.absent, [String(s.absent)]) : null },
             data.loadingAll ? t("loadingAll", [String(data.loaded)])                         // (the list is still being loaded: the table is not final)
@@ -113,7 +113,7 @@
     draw();
   }
 
-  main.replaceChildren(h("p", { class: "empty" }, t("popupReading")));
+  main.replaceChildren(h("p", { class: "empty", role: "status" }, t("popupReading")));
   const answer = await call("summary");
   if (answer && answer.ok) { const prefs = await B.store.loadPrefs(); B.dom.setLabels(prefs.labels); render(answer.result, prefs, await B.store.loadUi()); } else notProfile();
 })();

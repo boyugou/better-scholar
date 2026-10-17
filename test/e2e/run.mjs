@@ -522,6 +522,18 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.emulateMedia({ reducedMotion: "no-preference" });
     await opts.evaluate(() => window.scrollTo(0, 0));
     ok(`settings page: ${links} links to its cards under the header, each one scrolls its card into view`);
+    // ... they are one stop for the Tab key, the arrows move among them (not 22 stops in front of the first setting), and a colour row is one stop too
+    assert.equal(await opts.locator(".toc a[tabindex='0']").count(), 1, "one section link is the stop");
+    assert.equal(await opts.locator(".toc a:not([tabindex='0'])").count(), links - 1);
+    await opts.locator(".toc a[tabindex='0']").focus();
+    const firstLink = await opts.evaluate(() => document.activeElement.dataset.card);
+    await opts.keyboard.press("ArrowRight");
+    const secondLink = await opts.evaluate(() => ({ card: document.activeElement.dataset.card, stop: document.activeElement.tabIndex }));
+    assert.notEqual(secondLink.card, firstLink, "an arrow moves to the next link");
+    assert.equal(secondLink.stop, 0, "and the stop moves with it");
+    await opts.keyboard.press("End");
+    assert.equal(await opts.evaluate(() => document.activeElement === [...document.querySelectorAll(".toc a")].pop()), true, "End moves to the last link");
+    assert.equal(await opts.locator(".curated-palette-row").first().locator("button[tabindex='0']").count(), 1, "one swatch of a colour row is the stop");
 
     // -- 6b. the settings page's preview stays whole in view while the page scrolls, also in a short window
     await opts.bringToFront();
@@ -1749,6 +1761,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.click('[data-act="reset"]');
     await opts.click('[data-act="reset-cancel"]');                        // (it asks on the page: "No" leaves the settings alone)
     assert.equal(await opts.locator('[data-act="reset"]').count(), 1);
+    assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.dataset.act), "reset", "the focus goes back to the Reset button");
+    await opts.keyboard.press("Enter");                                   // (asks again) ... and Escape says no, with the focus back on the button
+    assert.equal(await opts.locator('[data-act="reset-cancel"]').count(), 1);
+    await opts.keyboard.press("Escape");
+    assert.equal(await opts.locator('[data-act="reset-confirm"]').count(), 0, "Escape does not reset");
+    assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.dataset.act), "reset");
     await opts.click('[data-act="reset"]');
     await opts.click('[data-act="reset-confirm"]');
     await eventually(opts, () => document.querySelectorAll("#preview tr.rr-r-last").length === 1);
@@ -2422,6 +2440,23 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await pill("award").click();
     assert.equal(await visibleRows(page), 10);
     ok("a pill lists exactly those papers, and clicking again clears it");
+    // while the filters leave none of a group's papers its row stays (a quiet 0): the panel does not shrink or grow under the search box when a filter is switched on
+    {
+      const markRowCount = () => page.locator("#rr-panel .rr-markrow").count();
+      const searchTop = () => page.evaluate(() => { const i = document.querySelector('#rr-panel input[data-act="filter-query"]'); return Math.round(i.getBoundingClientRect().top + scrollY); });
+      const rowsBefore = await markRowCount(), topBefore = await searchTop();
+      await page.fill('#rr-panel input[data-act="filter-query"]', "zzzqq-no-such-paper");
+      await eventually(page, () => document.querySelector("#rr-panel .rr-filterbar.rr-fb-empty"));
+      assert.equal(await markRowCount(), rowsBefore, "the awards rows stay while the filters leave none of their papers");
+      assert.equal(await searchTop(), topBefore, "the search box does not move when a filter is switched on");
+      assert.match(await page.locator("#rr-panel .rr-head").textContent(), /Showing 0 of/, "the bar is in the title bar");
+      assert.equal(await page.locator("#rr-panel .rr-title").isVisible(), false, "in place of the title");
+      assert.equal(await page.locator("#rr-panel .rr-markrow-zero").count(), rowsBefore, "the rows are quiet");
+      await page.fill('#rr-panel input[data-act="filter-query"]', "");
+      await eventually(page, () => document.querySelector('[data-rr="filterbar"]').hidden);
+      assert.equal(await page.locator("#rr-panel .rr-title").isVisible(), true, "the title is back");
+      ok("a filter leaves the panel as tall as it was: the filter bar is in the title bar, the awards rows stay (quiet) and the search box does not move");
+    }
     await page.click('[data-act="copy-summary"]');
     const text = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(text, /Awards & talks: Awards 4, Oral 2, Spotlight 1 \(from the authors' own words or the award list\)/);

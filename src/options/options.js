@@ -352,6 +352,22 @@
   };
 
   // WCAG Luminance and Contrast Ratio Calculation
+  // One Tab stop for a row of buttons or links: the arrows (mirrored in a right-to-left page), Home and End move among them; the stop is the one that is on, else the first.
+  // Returns the function that puts the stop where it belongs (call it after the row changes).
+  function rove(group, items, isOn) {
+    const stopAt = (el) => items().forEach((b) => { b.tabIndex = b === el ? 0 : -1; });
+    group.addEventListener("keydown", (e) => {
+      const list = items(), at = list.indexOf(document.activeElement);
+      if (at < 0) return;
+      const rtl = getComputedStyle(group).direction === "rtl";
+      const to = e.key === "Home" ? 0 : e.key === "End" ? list.length - 1 : e.key === "ArrowRight" ? at + (rtl ? -1 : 1) : e.key === "ArrowLeft" ? at + (rtl ? 1 : -1) : e.key === "ArrowDown" ? at + 1 : e.key === "ArrowUp" ? at - 1 : -1;
+      if (to < 0 || to >= list.length) return;
+      e.preventDefault(); stopAt(list[to]); list[to].focus();
+    });
+    group.addEventListener("focusin", (e) => { if (items().includes(e.target)) stopAt(e.target); });
+    return () => { const list = items(); stopAt(list.find(isOn) || list[0]); };
+  }
+
   function calculateLuminance(hex) {
     const clean = hex.replace("#", "");
     if (clean.length !== 6) return 0.5;
@@ -485,6 +501,7 @@
         el.classList.toggle("active", match);
         el.setAttribute("aria-pressed", match ? "true" : "false");
       });
+      placeStop();
       const isCustom = current !== defaultColor.toLowerCase();
       resetBtn.style.display = isCustom ? "inline-flex" : "none";
       const { pass, label } = barContrast(current);
@@ -492,13 +509,14 @@
       contrastPill.textContent = label;
     }
 
+    const paletteRow = h("div", { class: "curated-palette-row", role: "group", "aria-label": roleLabel }, ...dotButtons.map((d) => d.el));
+    const placeStop = rove(paletteRow, () => dotButtons.map((d) => d.el), (b) => b.classList.contains("active"));
     const row = h("div", { class: "role-studio-card" },
       h("div", { class: "role-info-wrap" },
         previewChip,
         h("span", { class: "name" }, roleLabel)),
       h("div", { class: "role-studio-controls" },
-        h("div", { class: "curated-palette-row", role: "group", "aria-label": roleLabel },
-          ...dotButtons.map((d) => d.el)),
+        paletteRow,
         pill,
         contrastPill,
         resetBtn));
@@ -648,11 +666,12 @@
   const resetBox = h("span", { class: "reset-box" });
   const resetBtn = h("button", { class: "btn", type: "button", "data-act": "reset", "aria-label": t("optReset"), onClick: () => askReset() }, t("optReset"));
   function askReset() {
-    const yes = h("button", { class: "btn danger", type: "button", "data-act": "reset-confirm", "aria-label": t("optReset"), onClick: () => { prefs = B.prefs.defaults(); save(); resetBox.replaceChildren(resetBtn); } }, t("optReset"));
-    const no = h("button", { class: "btn", type: "button", "data-act": "reset-cancel", "aria-label": t("cancel"), onClick: () => resetBox.replaceChildren(resetBtn) }, t("cancel"));
-    resetBox.replaceChildren(h("span", { class: "ask" }, t("optResetConfirm")), yes, no);
+    const yes = h("button", { class: "btn danger", type: "button", "data-act": "reset-confirm", "aria-label": t("optReset"), onClick: () => { prefs = B.prefs.defaults(); save(); resetBox.replaceChildren(resetBtn); resetBtn.focus(); } }, t("optReset"));
+    const no = h("button", { class: "btn", type: "button", "data-act": "reset-cancel", "aria-label": t("cancel"), onClick: () => { resetBox.replaceChildren(resetBtn); resetBtn.focus(); } }, t("cancel"));
+    resetBox.replaceChildren(h("span", { class: "ask", role: "alert" }, t("optResetConfirm")), yes, no);
     no.focus();
   }
+  resetBox.addEventListener("keydown", (e) => { if (e.key === "Escape" && resetBox.querySelector('[data-act="reset-cancel"]')) { e.preventDefault(); resetBox.replaceChildren(resetBtn); resetBtn.focus(); } });
   resetBox.append(resetBtn);
 
   // ---- Configuration: the record as JSON, in and out. Whatever comes in is a patch that lib/prefs.js apply() lays over the settings and reports ----
@@ -933,6 +952,7 @@
       card.hidden = !show;
       if (toc.children[idx]) toc.children[idx].hidden = !show;
     });
+    placeTocStop();          // (a hidden link cannot be the stop)
     const none = !!q && cards.every((card) => card.hidden);
     searchNone.hidden = !none;
     searchNone.textContent = none ? t("optSearchNone") : "";
@@ -954,6 +974,9 @@
   });
 
   $("controls").prepend(toc, searchBox, searchNone);
+  // the section links are one stop for the Tab key (22 of them stood in front of the first setting): the arrows move among them, the section in view is the stop
+  const placeTocStop = rove(toc, () => [...toc.querySelectorAll("a:not([hidden])")], (a) => a.hasAttribute("aria-current"));
+  placeTocStop();
   try {
     const seen = new Set();
     const mark = () => {
@@ -969,6 +992,7 @@
           a.removeAttribute("aria-current");
         }
       });
+      if (!toc.contains(document.activeElement)) placeTocStop();
     };
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) {

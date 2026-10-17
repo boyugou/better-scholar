@@ -321,7 +321,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
       selection: state.selection, filters: state.filters,
       searchMatch: matcher().empty ? null : { count: shownRows().length, cursor: state.searchCursor, errors: matcher().errors },
       filterBar: filtering() ? { shown: shownRows().length, total: live().length, impact: state.filters.impact ? { kind: state.filters.impact, min: impactMin(source) } : null } : null,
-      marks: markCounts(), markKinds: markKinds(), markGroup: state.markGroup,
+      marks: markCounts(), marksWhole: markCounts(false), markKinds: markKinds(), markGroup: state.markGroup,
       years: Array.from(new Set(list.map((p) => p.year).filter((y) => y != null))).sort((a, b) => b - a),
       metrics: { highlighted: metrics.citationMetrics(scoped(source, { skipImpact: true })).highlighted, all: metrics.citationMetrics(list).all },
       byYear: yearBars.bars, byYearOlder: yearBars.older,

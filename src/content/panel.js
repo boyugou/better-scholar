@@ -67,7 +67,7 @@
       else if (k === "Home") { e.preventDefault(); focusItem(0); }
       else if (k === "End") { e.preventDefault(); focusItem(options.length - 1); }
       else if (k === "Enter" || k === " ") { e.preventDefault(); choose(active); }
-      else if (k === "Tab") close(false);
+      else if (k === "Tab") close(true);          // (the focus goes back to the button first: the Tab then moves on from it — "To" after "From" — not from the list, which stands elsewhere)
     });
     return {
       el, list,
@@ -272,12 +272,12 @@
         "aria-pressed": "false",
         ...(id === "cites100" ? { dir: "ltr" } : {}),          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100")
         ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
-        onClick: () => {
+        onClick: (e) => {
           closeSuggest();
           queryInput.value = B.query.toggleValue(queryInput.value, B.prefs.PILL_OPERATORS[id]);
           syncSearchUI();
           cb.onQuery(queryInput.value);
-          queryInput.focus();
+          if (e.detail > 0) queryInput.focus();          // (a click goes on in the search box; a key press stays on the pill, so that the next one is a Tab away)
         }
       });
       return [id, btn];
@@ -398,7 +398,11 @@
     for (const [id, sec] of Object.entries(sections)) sec.setAttribute("data-section", id);
     const body = h("div", { class: "rr-body", "data-rr-order": "panel.order" });
     // a bar that says the list is filtered, by how much, and clears every filter
-    const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") });
+    const fbCount = document.createTextNode(""), fbWhat = h("span", { class: "rr-fb-what" });
+    const fbText = h("span", { class: "rr-fb-text", role: "status" }, fbCount, fbWhat);          // (a status: what the filters leave is said when it changes)
+    const fbClear = h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() });
+    let fbSig = "";
+    const filterBar = h("div", { class: "rr-filterbar", "data-rr": "filterbar", hidden: true, ...P("panel.filters.bar") }, fbText, fbClear);
     // Scholar's page changed under us: the warning is the first thing in the panel
     const warnBar = h("div", { class: "rr-warn", "data-rr": "layout-warning", hidden: true });
     // What a screen reader is told when the panel's status changes (loading stopped, reading the full lists finished): a live region that stays in the page
@@ -523,13 +527,14 @@
     // A row for each award / talk group that occurs on the loaded papers; click one to list just those.
     function renderMarks(m) {
       const mp = m.prefs.panel.marks, counts = m.marks || {};
-      const groups = B.marks.rows(mp.grouping).filter((g) => counts[g] || m.markGroup === g);          // (a pressed row stays, so that it can be released, whatever the filters made of its count)
+      const whole = m.marksWhole || {};
+      const groups = B.marks.rows(mp.grouping).filter((g) => counts[g] || whole[g] || m.markGroup === g);          // (a row stays while the filters leave none of its papers, like the table's columns: the section — and the search box under it — does not move)          // (a pressed row stays, so that it can be released, whatever the filters made of its count)
       marksSec.hidden = !groups.length || !mp.show;
       marksHead.hidden = !mp.title;
       // the award count's parts, on hover: best papers and test-of-time awards apart from the honorable mentions
       const kinds = m.markKinds || {};
       const parts = B.marks.KINDS.filter((k) => kinds[k]).map((k) => `${B.chips.kindName(k)} ${kinds[k]}`).join(" · ");
-      marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow", type: "button", "data-mark-group": g, title: g === "award" && parts ? parts : null,
+      marksRows.replaceChildren(...groups.map((g) => h("button", { class: "rr-markrow" + (counts[g] || m.markGroup === g ? "" : " rr-markrow-zero"), type: "button", disabled: counts[g] || m.markGroup === g ? null : true, "data-mark-group": g, title: g === "award" && parts ? parts : null,
         "aria-pressed": String(m.markGroup === g), ...P(B.marks.members(g).map((k) => "panel.marks." + k).join(" ")), onClick: () => cb.onMarkGroup(g) },
         h("span", { class: "rr-mi rr-mi-" + (g === "award" ? "award" : "talk") }), h("span", { class: "rr-lab", ...L(MARK_KEY[g]) }, t(MARK_KEY[g])), h("b", {}, String(counts[g] || 0)))));          // (a pressed row with nothing left to count says 0)
     }
@@ -541,8 +546,8 @@
       const lines = [];
       const loadedLine = h("div", { class: "rr-cover-line", ...P("panel.status.loaded") },
         h("span", { class: "rr-note" }, c.loadingAll ? t("loadingAll", [String(c.loaded)]) : tn("coverLoaded", c.loaded, [String(c.loaded)])),
-        c.loadingAll ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelLoad() }, t("cancel"))
-          : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-act": "load-all", ...L("loadAll"), onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
+        c.loadingAll ? h("button", { class: "rr-link", type: "button", "data-focus": "load", onClick: () => cb.onCancelLoad() }, t("cancel"))
+          : c.canLoadMore ? h("button", { class: "rr-link", type: "button", "data-focus": "load", "data-act": "load-all", ...L("loadAll"), onClick: () => cb.onLoadAll() }, t("loadAll")) : null);
       const status = [];
       if (sp.loaded) {
         status.push(loadedLine);
@@ -552,8 +557,8 @@
         if (c.hidden > 0 || c.resolving) {
           status.push(h("div", { class: "rr-cover-line", ...P("panel.status.cutoff") },
             h("span", { class: "rr-note" }, c.resolving ? t("resolving", [String(c.resolving.done), String(c.resolving.total)]) : tn("coverHidden", c.hidden, [String(c.hidden)])),
-            c.resolving ? h("button", { class: "rr-link", type: "button", onClick: () => cb.onCancelResolve() }, t("cancel"))
-              : h("button", { class: "rr-link", type: "button", "data-act": "resolve", ...L("resolveBtn"), onClick: () => cb.onResolve() }, t("resolveBtn"))));
+            c.resolving ? h("button", { class: "rr-link", type: "button", "data-focus": "resolve", onClick: () => cb.onCancelResolve() }, t("cancel"))
+              : h("button", { class: "rr-link", type: "button", "data-focus": "resolve", "data-act": "resolve", ...L("resolveBtn"), onClick: () => cb.onResolve() }, t("resolveBtn"))));
           if (!c.resolving) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-hint", ...P("panel.status.cutoff") }, t(m.prefs.semanticScholar ? "resolveHintSemantic" : "resolveHint")));        // (what it does and who it asks, titles included: before it is pressed, not in a tooltip)
         }
         if (c.resolveMessage) status.push(h("div", { class: "rr-faint", "data-rr": "resolve-msg", ...P("panel.status.cutoff") }, c.resolveMessage));
@@ -562,7 +567,7 @@
       if (sp.repeats && c.repeats > 0) status.push(h("div", { class: "rr-cover-line", "data-rr": "repeats", ...P("panel.status.repeats") }, h("span", { class: "rr-note" }, t("coverRepeats", [String(c.repeats)])),
         h("button", { class: "rr-link", type: "button", "data-act": "repeats-settings", onClick: () => cb.onSettings() }, t("coverRepeatsAction"))));
       if (sp.absent && c.absent > 0 && !c.layoutBroken) status.push(h("div", { class: "rr-note", "data-rr": "absent", ...P("panel.status.absent") },
-        h("button", { class: "rr-link", type: "button", "aria-pressed": String(sameSel(m.selection, { role: "absent", tier: undefined })), onClick: () => cb.onSelect({ role: "absent", tier: undefined }) }, tn("coverAbsent", c.absent, [String(c.absent)]))));          // (a click lists them)        // (when the layout is broken every paper is "absent": that is the warning's news)
+        h("button", { class: "rr-link", type: "button", "data-focus": "absent", "aria-pressed": String(sameSel(m.selection, { role: "absent", tier: undefined })), onClick: () => cb.onSelect({ role: "absent", tier: undefined }) }, tn("coverAbsent", c.absent, [String(c.absent)]))));          // (a click lists them)        // (when the layout is broken every paper is "absent": that is the warning's news)
       // (the count of the papers is in the totals above: a lone line that only says it again, in a section of its own, is noise; it stays while papers are still coming and whenever the totals are not shown)
       const mp = m.prefs.panel.metrics;
       const countShown = mp.show && mp.papers && !c.layoutBroken && B.prefs.ROLES.some((r) => m.prefs.roles[r]);
@@ -617,9 +622,11 @@
       if (queryInput.value.trim() !== (m.filters.query || "")) { closeSuggest(); queryInput.value = m.filters.query || ""; }          // (the list's positions are those of the text it was made for)
       syncSearchUI(m);
       onlyCb.checked = !!m.filters.onlyHighlighted;
-      const opts = (label) => [{ value: "", label }, ...m.years.map((y) => ({ value: String(y), label: String(y) }))];
-      yearStart.setOptions(opts(t("yearStart")), m.filters.yearStart != null ? String(m.filters.yearStart) : "");
-      yearEnd.setOptions(opts(t("yearEnd")), m.filters.yearEnd != null ? String(m.filters.yearEnd) : "");
+      // (the range cannot be put upside down: "From" offers no year after the "To" that is set, and "To" none before the "From")
+      const ys = m.filters.yearStart, ye = m.filters.yearEnd;
+      const opts = (label, keep) => [{ value: "", label }, ...m.years.filter(keep).map((y) => ({ value: String(y), label: String(y) }))];
+      yearStart.setOptions(opts(t("yearStart"), (y) => ye == null || y <= ye), ys != null ? String(ys) : "");
+      yearEnd.setOptions(opts(t("yearEnd"), (y) => ys == null || y >= ys), ye != null ? String(ye) : "");
       // (the quick filters, in the panel's order: those that find something on this profile — a pressed one stays, so that it can be released)
       const ids = B.prefs.pills(m.prefs).filter((id) => !m.pillFinds || m.pillFinds[id] !== false || B.query.hasValue(queryInput.value, B.prefs.PILL_OPERATORS[id]));
       searchPills.replaceChildren(...ids.map((id) => pillEls.get(id)));
@@ -755,15 +762,31 @@
       el.classList.toggle("rr-collapsed", !!m.ui.collapsed && hp.fold);                // (with no fold button a folded panel could not be opened again)
       collapseBtn.title = t(m.ui.collapsed ? "expand" : "collapse");
       collapseBtn.setAttribute("aria-expanded", String(!m.ui.collapsed));
-      title.hidden = !hp.name; settingsBtn.hidden = !hp.settings; collapseBtn.hidden = !hp.fold;
+      settingsBtn.hidden = !hp.settings; collapseBtn.hidden = !hp.fold;
       head.hidden = !(hp.name || hp.settings || hp.fold);
       head.classList.toggle("rr-head-notitle", !hp.name);
-      filterBar.hidden = !m.filterBar || !m.prefs.panel.filters.bar;
+      const barOn = !!m.filterBar && m.prefs.panel.filters.bar;
+      filterBar.hidden = !barOn;
+      // The bar says "Showing 25 of 100 papers" in the title bar, in place of the title while a filter is on: the panel is as tall as it was, so that nothing under the pointer or the caret
+      // moves when a filter is switched on (a bar of its own pushed the table, the search box and everything else down). With no title bar it stands in front of the parts.
+      const barInHead = barOn && !head.hidden;
+      if (!head.hidden ? filterBar.parentNode !== head : filterBar.parentNode !== el) { if (!head.hidden) head.insertBefore(filterBar, settingsBtn); else el.insertBefore(filterBar, body); }
+      head.classList.toggle("rr-head-filtered", barInHead);
+      head.classList.toggle("rr-head-empty", barInHead && m.filterBar.shown === 0);
+      title.hidden = !hp.name || barInHead;
       filterBar.classList.toggle("rr-fb-empty", !!(m.filterBar && m.filterBar.shown === 0));
-      if (m.filterBar) {
+      fbClear.textContent = t("filterClear");          // (named even while the bar is not drawn: no control without a name in the page)
+      searchCount.setAttribute("aria-live", barOn ? "off" : "polite");          // (the bar says it in a sentence; the bare number is only read where there is no bar)
+      if (barOn) {
         const parts = filterParts(m, true);
-        filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, ...parts.flatMap((part) => [" · ", h("bdi", {}, part)])) : null),
-          h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
+        const count = t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]);
+        const sig = count + "\u0001" + parts.join("\u0001");
+        if (sig !== fbSig) {
+          fbSig = sig;
+          fbCount.nodeValue = count;
+          fbWhat.replaceChildren(...parts.flatMap((part) => [" · ", h("bdi", {}, part)]));          // (each part isolated: a query in quotes does not reorder the words around it in a right-to-left line)
+          fbText.title = count + (parts.length ? " · " + parts.join(" · ") : "");          // (the bar is one line: all of it on hover)
+        }
       }
       summarySec.hidden = !m.prefs.panel.table.show;
       renderSummaryHead(m); renderMatrix(m); renderActions(m); renderMarks(m); renderCoverage(m); renderYears(m); renderVenues(m); syncFilters(m); renderMetrics(m); renderNames(m);
@@ -794,7 +817,7 @@
     }
 
     // A control the panel draws again keeps the keyboard where it was: when the focus fell to the page with the old control, it is put on the one with the same name
-    const FOCUS_ATTRS = ["data-year", "data-metric", "data-venue", "data-mark-group", "data-role", "data-tier", "data-act", "data-src"];
+    const FOCUS_ATTRS = ["data-year", "data-metric", "data-venue", "data-mark-group", "data-role", "data-tier", "data-act", "data-src", "data-focus"];          // (data-focus: a place that holds one button at a time — "Load all", then "Cancel")
     const sectionOf = (node) => { const sec = node.closest("[data-rr]"); return sec ? sec.getAttribute("data-rr") : ""; };
     function focusKeyOf(node) {
       if (!node || node === document.body || !el.contains(node)) return null;
