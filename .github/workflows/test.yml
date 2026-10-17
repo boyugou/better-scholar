@@ -33,3 +33,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - run: npm run test:demo
+      # the settings page in six languages at a desktop, a half-screen and a phone width (the website's frame): nothing runs out of its box, no word is cut in two
+      - run: node scripts/overflow-audit.mjs --lang en,de,fi,ja,ar,ru --width 1360,700,330 --scheme light,dark
