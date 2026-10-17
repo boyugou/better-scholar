@@ -142,7 +142,7 @@ test("abbreviated journal names and older conference names", () => {
   assert.equal(brief("J. ACM 12, 1965"), "CCF A JACM");
   assert.equal(brief("Proceedings of the 2006 ACM/IEEE Conference on Supercomputing, 83-es, 2006"), "CCF A SC · CORE A SC");
   assert.equal(brief("SC'05: Proceedings of the 2005 ACM/IEEE Conference on Supercomputing, 11-11, 2005"), "CCF A SC · CORE A SC");
-  assert.equal(brief("Proceedings of the 2007 symposium on Interactive 3D graphics and games, 167-174, 2007"), "CCF B I3D");
+  assert.equal(brief("Proceedings of the 2007 symposium on Interactive 3D graphics and games, 167-174, 2007"), "CCF B I3D · CORE B I3DG");
 });
 
 test("CORE now fires on the strings Scholar really prints", () => {
@@ -1599,6 +1599,17 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Proceedings of the 12th International Conference on Extending Database Technology: Advances in Database Technology", "CCF B EDBT · CORE B EDBT");
   none("Intelligent Data Analysis: An Introduction, 403-427, 2007");
   none("Data Mining and Knowledge Discovery: Handbook");
+  // names CORE words with a typo or another last word (PIMRC, CIFEr, I3DG) and the 2024 name of VIS; the symposium on Information Visualization (1995-2006) is not in the lists
+  eq("2009 IEEE 20th International Symposium on Personal, Indoor and Mobile Radio Communications", "CORE B PIMRC");
+  eq("2011 IEEE Symposium on Computational Intelligence for Financial Engineering and Economics", "CORE C IEEE CIFEr");
+  eq("Proceedings of the ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games", "CCF B I3D · CORE B I3DG");
+  eq("2024 IEEE Visualization and Visual Analytics (VIS)", "CCF A IEEE VIS · CORE A IEEE VIS");
+  none("IEEE Symposium on Information Visualization, 199-206, 2004");
+  eq("2009 13th international conference information visualisation, 592-597, 2009", "CORE C IV");
+  // the sponsor SIGEVO is no part of FOGA's name; ACM's series form with the word before the dash cut off repeats the title
+  eq("Proceedings of the 18th ACM/SIGEVO Conference on Foundations of Genetic Algorithms", "CORE A FOGA");
+  eq("SIGGRAPH Asia 2018 Technical Papers on   - SIGGRAPH Asia '18", "CORE A* SiggraphA");
+  none("ACM SIGGRAPH 2004 Computer animation festival on - SIGGRAPH '04");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");

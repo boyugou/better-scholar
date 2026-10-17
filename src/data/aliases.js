@@ -175,6 +175,12 @@
     // (the symposium's older title in the singular — "Second IEEE Symposium on Computer and Communications" is ISCC, not INFOCOM — and the symposium CORE calls a conference)
     { ccf: "ISCC", core: "ISCC", names: ["IEEE Symposium on Computer and Communications"] },
     { core: "RO-MAN", names: ["IEEE International Symposium on Robot and Human Interactive Communication"] },
+    // (CORE words these with a typo or a different last word: "Personal and Indoor Mobile Radio Conference", "ACM-SIGRAPH …", "… Financial Engineering"; the VIS of 2024 is "Visualization and Visual Analytics",
+    // the Visualization conference)
+    { core: "PIMRC", names: ["IEEE International Symposium on Personal, Indoor and Mobile Radio Communications"] },
+    { core: "IEEE CIFEr", names: ["IEEE Symposium on Computational Intelligence for Financial Engineering and Economics", "IEEE Conference on Computational Intelligence for Financial Engineering & Economics"] },
+    { ccf: "I3D", core: "I3DG", names: ["ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games", "Symposium on Interactive 3D Graphics and Games"] },
+    { ccf: "IEEE VIS", core: "IEEE VIS", names: ["IEEE Visualization and Visual Analytics"] },          // (the symposium on Information Visualization, 1995–2006, is not VIS: CCF's VIS is the Visualization conference of DBLP's conf/visualization)
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development

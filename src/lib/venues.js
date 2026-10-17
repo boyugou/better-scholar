@@ -43,7 +43,7 @@
   const ORG = new Set(["ieee", "acm", "cvf", "cfv", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "edac", "esda", "eai", "sigchi",
     // ACM's special interest groups that sponsor many events and are the name of none ("ACM SIGPLAN International Conference on
     // Functional Programming" is "International Conference on Functional Programming" without them)
-    "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim"]);
+    "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim", "sigevo"]);
   const ORDINAL_WORDS = new Set([
     "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
     "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth",
@@ -155,6 +155,8 @@
     // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
     let viaSeries = false;          // (the name is a volume's title: a book of proceedings, a conference's — never a journal of that title)
     s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; return name; });
+    // ACM's series form with the word before the dash cut off: "SIGGRAPH Asia 2018 Technical Papers on - SIGGRAPH Asia '18" — the acronym after the dash only repeats the title
+    s = s.replace(/\s+on\s*[-–—]\s*[A-Za-z][A-Za-z0-9 ]{1,24}\s*['’]\s?\d{2}\s*$/i, "");
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name
     s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, (m, name) => { viaSeries = true; return name; });
     // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
