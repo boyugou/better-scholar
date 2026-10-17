@@ -393,7 +393,7 @@
   }
 
   return {
-    COFIRST_SYMBOLS, CORRESPONDING_SYMBOLS, normalize, cleanOwnerHeader, nameParts, givensCompatible,
-    matchStrength, matchesAuthor, splitCofirst, leadingGroup, parseAuthors, findOwner, ownerCandidates, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
+    normalize, cleanOwnerHeader, nameParts,
+    matchesAuthor, leadingGroup, parseAuthors, findOwner, roleFor, classifyRow, reorderings, isPermutation, isShoutedInitials, suggestVariants
   };
 });

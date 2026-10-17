@@ -43,5 +43,5 @@
     return { keep, citations, merged };
   }
 
-  return { key, plan, MIN_KEY };
+  return { key, plan };
 });

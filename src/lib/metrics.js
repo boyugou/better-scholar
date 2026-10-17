@@ -172,5 +172,5 @@
     return Array.from(counts, ([venue, count]) => ({ venue, count })).sort((a, b) => b.count - a.count);
   }
 
-  return { ROLES, TIERS, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues };
+  return { ROLES, NONE, hIndex, i10Index, citationMetrics, byYear, yearBars, YEAR_BARS, venueKey, topVenues, tierOf, summarize, inSelection, unmatchedVenues };
 });

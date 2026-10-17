@@ -196,5 +196,5 @@
 
   const inGroup = (paper, group) => members(group).some((g) => (paper.marks || []).some((m) => m.group === g));
 
-  return { KINDS, GROUPS, TALK_ROWS, rows, members, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
+  return { KINDS, GROUPS, rows, members, LABEL, groupOf, scan, detect, merge, summarize, summarizeKinds, inGroup };
 });

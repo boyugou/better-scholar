@@ -1233,5 +1233,5 @@
     return { resolve, index: idx };
   }
 
-  return { createResolver, prepare, canonTokens, typeHint, secondaryWord, secondaryWords, squash };
+  return { createResolver, prepare, canonTokens, secondaryWord, secondaryWords, squash };
 });
