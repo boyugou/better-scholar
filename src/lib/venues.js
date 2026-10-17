@@ -636,21 +636,32 @@
     // that is another venue's, whose own acronym the string does not say ("… Conference on Artificial Intelligence (AAAI-07)" boils down to IJCAI's name), disagrees with it.
     // (the acronyms of other venues that the string only holds — "2025 USENIX Annual Technical Conference (ATC'25)" — are told by the hit's own being in it)
     const ownersOf = (a) => sides.flatMap((side) => [...(side.abbrs.get(a) || []), ...(side.weakAbbrs.get(a) || [])]);
+    // (the venues of both lists that have this acronym: a string that names the acronym of a conference only the other list has is not the journal of this list that has the same words)
+    const ownersInBoth = (a) => Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => [...(idx.sources[sn][kd].abbrs.get(a) || []), ...(idx.sources[sn][kd].weakAbbrs.get(a) || [])]));
     const wordsHere = new Set(fold(p.withParens).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
     // ... and a hit whose whole name stands in the string is the venue the string says ("… USENIX Conference on Security Symposium (SEC'17)": the organisation and the name are there)
     const wholeName = (hit) => hit.extra.some((n) => { const w = fold(n.replace(/\([^()]*\)/g, " ")).toLowerCase().split(/[^a-z0-9]+/).filter((x) => x && !STOP.has(x)); return w.length >= 2 && w.every((x) => wordsHere.has(x)); });
     const dashLead = /^([A-Za-z][A-Za-z0-9&/]{1,9})-(?:\d{4}|\d{2})\s*:/.exec(p.plain);          // ("SDM-19: …": AAAI's and others' own form; it vetoes, it does not name the event)
     const acronymAgrees = (hit) => {
       const own = squash(hit.abbr || "");
-      if (own.length >= 2 && (wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
-      if (wholeName(hit)) return true;
+      // (a venue whose acronym is an English word — IFIP's "Networking" — has its acronym in the string only where it is written in capitals: "Networking Conference (WCNC)" says WCNC)
+      if (own.length >= 2 && (ENGLISH_ACRONYMS.has(own) ? new RegExp("\\b" + own.toUpperCase() + "\\b").test(p.withParens) : wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
       const named = acronymSignals(p).filter((sig) => (sig.kind === "lead" && sig.event) || sig.kind === "paren");
       if (dashLead) named.push({ key: squash(dashLead[1]) });
       // (an acronym in capitals after the title — "Machine Learning: ECML 2005" — names the event too: the words in front are the series' title, not ICML's)
       // (not the host of a workshop: "ICSE Workshop on Modeling in Software Engineering" is MISE's, whose name says "ICSE" in front of its own event word)
-      for (const sig of embeddedSignals(p)) if (sig.raw && /^[A-Z]{4,}\d*$/.test(sig.raw) && !named.some((x) => x.key === sig.key) && !new RegExp("\\b" + sig.raw + "\\b['’]?\\d*\\s+(?:\\w+\\s+)?(?:workshops?|symposium|symposia|conference|colloquium|meeting|congress)\\b", "i").test(p.withParens)) named.push({ key: sig.key });
+      // (in a string that is all capitals every word looks like an acronym: there the capitals say nothing)
+      if (/[a-z]{2}/.test(p.withParens)) for (const sig of embeddedSignals(p)) if (sig.raw && /^[A-Z]{4,}\d*$/.test(sig.raw) && !named.some((x) => x.key === sig.key) && !new RegExp("\\b" + sig.raw + "\\b['’]?\\d*\\s+(?:\\w+\\s+)?(?:workshops?|symposium|symposia|conference|colloquium|meeting|congress)\\b", "i").test(p.withParens)) named.push({ key: sig.key });
       const owned = named.filter((sig) => ownersOf(sig.key).length);
-      return !owned.length || owned.some((sig) => ownersOf(sig.key).includes(hit));
+      // (the hit's whole name stands in the string: it is the venue the string says — unless the acronym the string names is another venue's, of either list, whose name stands there too:
+      // "International Wireless Communications and Mobile Computing (IWCMC)" is the conference, not the journal that has the same words; the event word and the sponsors are no part of
+      // that name — Crossref prints the conference without its "Conference")
+      const hereTokens = new Set(canonTokens(p.plain, "noOrg", idx.known));
+      const saysName = (e) => e.extra.some((n) => { const t = canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg", idx.known); return t.length >= 2 && t.every((w) => hereTokens.has(w)); });
+      const another = (e) => e !== hit && !(e.src !== hit.src && (squash(e.abbr || "") === squash(hit.abbr || "") || (hit.src === "ccf" ? idx.sameVenue(hit.abbr, e.abbr) : idx.sameVenue(e.abbr, hit.abbr))));
+      const rivalNamed = named.some((sig) => ownersInBoth(sig.key).some((e) => another(e) && saysName(e)));
+      if (wholeName(hit) && !rivalNamed) return true;
+      return owned.length ? owned.some((sig) => ownersOf(sig.key).includes(hit)) : !rivalNamed;
     };
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
     // ("AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence": the acronym in front says the event, and says it again inside the name — the venue's own name has it once)
@@ -714,7 +725,7 @@
       if (bag.length >= 3) {
         const bkey = uniq(bag).sort().join(" ");
         const d = nameHit((side) => side.bags && side.bags.get(bkey));
-        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d)) return { entry: d, rule: "name" };
+        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d) && acronymAgrees(d)) return { entry: d, rule: "name" };
       }
     }
 

@@ -172,6 +172,9 @@
     { core: "WI", names: ["IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "Web Intelligence and Intelligent Agent Technology"] },
     // (the 2000 volume title)
     { core: "EKAW", names: ["Knowledge Engineering and Knowledge Management Methods, Models, and Tools"] },
+    // (the symposium's older title in the singular — "Second IEEE Symposium on Computer and Communications" is ISCC, not INFOCOM — and the symposium CORE calls a conference)
+    { ccf: "ISCC", core: "ISCC", names: ["IEEE Symposium on Computer and Communications"] },
+    { core: "RO-MAN", names: ["IEEE International Symposium on Robot and Human Interactive Communication"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development

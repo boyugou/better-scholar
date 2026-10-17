@@ -1581,6 +1581,15 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("Machine Learning: ECML 2005 - Lecture Notes in Computer Science, 2005");
   // (the host of a workshop is no other venue: the workshop's own name says it)
   eq("2009 ICSE Workshop on Modeling in Software Engineering, 1-6, 2009", "CORE C MISE");
+  // an acronym that is an English word counts as the string's only in capitals ("Networking Conference (WCNC)" is WCNC); the acronym the string names for a conference of the other list, whose name stands there too, is
+  // not the journal of this list that has the same words (Crossref prints the conference without its "Conference")
+  eq("Networking Conference (WCNC)", "CCF C WCNC · CORE B WCNC");
+  eq("IFIP Networking Conference, 2019", "CCF C Networking · CORE B Networking");
+  eq("2023 International Wireless Communications and Mobile Computing (IWCMC)", "CORE B IWCMC");
+  eq("Wireless Communications and Mobile Computing 2019 (3), 1-10, 2019", "CCF C WCMC");
+  // the symposium's older title in the singular, and the symposium CORE calls a conference
+  eq("Proceedings Second IEEE Symposium on Computer and Communications", "CCF C ISCC · CORE C ISCC");
+  eq("19th International Symposium in Robot and Human Interactive Communication", "CORE B RO-MAN");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
