@@ -87,7 +87,8 @@
   function canonTokens(s, mode, known) {
     let r = fold(s).replace(/&/g, " and ");
     if (mode === "noAcr" && known) {
-      r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) ? " " : m));
+      // (an acronym with its year jammed on — "TCC2020 International Colloquium on Automata, Languages, and Programming" — is the acronym as well)
+      r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) || known.has(m.toLowerCase().replace(/(?:19|20)\d{2}$|\d{2}$/, "")) ? " " : m));
     }
     const out = dropOrdinalTypos(r.toLowerCase()
       .replace(/[^a-z0-9]+/g, " ")
@@ -458,7 +459,7 @@
 
   // All-caps / camel-case acronym signals present in the string, strongest first.
   // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and a two-digit year without an apostrophe — "SC18", "CC19" — are left to the other rules: "DS 75" is a report)
-  const GLUED_APOS = /['’]\d{2}$/, GLUED_JAM = /^(?=.*[A-Z])(?:([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})|([A-Za-z&]{2})(?:19|20)\d{2})$/;
+  const GLUED_APOS = /['’]\d{2}:?$/, GLUED_JAM = /^(?=.*[A-Z])(?:([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})|([A-Za-z&]{2})(?:19|20)\d{2}):?$/;          // (a colon may follow: "EUROCRYPT2019: Annual International Conference …")
   const unglue = (w) => w.replace(GLUED_APOS, "").replace(GLUED_JAM, "$1$2");
   const glued = (w) => GLUED_APOS.test(w) || GLUED_JAM.test(w);
   function acronymSignals(p) {
@@ -510,7 +511,9 @@
     // an acronym, a two-digit year and a colon name the event whatever follows
     const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})(\s*['’]?\s*)\d{2}\s*:/.exec(head);
     // (a two-letter acronym needs the apostrophe or no space before the number: "CHI '09:", "SC18:" — "DS 30: Proceedings of DESIGN 2002" is the Design Society's report series)
-    if (acmDl && /[A-Z]/.test(acmDl[1]) && !(acmDl[1].length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true, raw: acmDl[1] });
+    // ("ICSE2019:" — the expression takes the century into the acronym, "ICSE20"; "C&C2019:" would pass the guard that tells it from "CC" with it)
+    const acmAcr = acmDl && (acmDl[2] === "" && acmDl[1].length > 3 && /(?:19|20)$/.test(acmDl[1]) ? acmDl[1].slice(0, -2) : acmDl[1]);
+    if (acmDl && /[A-Z]/.test(acmAcr) && !(acmAcr.length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmAcr)) out.push({ key: k, kind: "lead", event: true, raw: acmAcr });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR" (with its year glued on, "ICLR2020", the lead rule above has read it; a title-cased one — "Ijcai15", "Nips2016" — is not the shape of an acronym there, and stays here)
     const words = p.plain.split(/\s+/).filter(Boolean);
     if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !(glued(words[0]) && ((a) => /[A-Z].*[A-Z]/.test(a) || a === a.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(a))(unglue(words[0]))) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
@@ -1137,7 +1140,7 @@
       const core = trackCore(part, target);
       if (!core.length) return false;
       const initials = core.filter((w) => !STOP.has(w)).map((w) => w[0]).join("");
-      const mine = (w) => w === initials || w === initials.slice(0, -1) || ownTokens.has(w);          // (its acronym: "PRIMA 2005: Pacific Rim International Workshop on …")
+      const mine = (w) => w === initials || w === initials.slice(0, -1) || ownTokens.has(w) || ownTokens.has(w.replace(/(?:19|20)\d{2}$|\d{2}$/, ""));          // (its acronym, with its year jammed on: "NOSSDAV2019 International Workshop on …")          // (its acronym: "PRIMA 2005: Pacific Rim International Workshop on …")
       const named = head.slice(); while (named.length && mine(named[0])) named.shift();
       if (!core.every((w, j) => named[j] === w)) {
         if (cut < 0) return false;

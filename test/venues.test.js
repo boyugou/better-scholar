@@ -1905,3 +1905,24 @@ test("an ambiguous acronym with a volume and an issue is judged without throwing
   for (const raw of ["FSE24 Computing 12 (3)", "FSE-2024 Poster 4 (1), 7", "ESEC/FSE2019 12 (3), 100-110, 2019", "GI20 Security 12 (3)"]) assert.doesNotThrow(() => resolver.resolve(raw), raw);
 });
 
+test("an acronym with its year glued on, in front of the venue's own name (\"TCC2020 International Colloquium on …\", \"NOSSDAV2019: International Workshop on …\"), reads as with a space: the name's venue, never another", () => {
+  assert.equal(brief("TCC2020 International Colloquium on Automata, Languages, and Programming, 276-287, 2006"), brief("TCC 2020 International Colloquium on Automata, Languages, and Programming, 276-287, 2006"));
+  assert.equal(brief("TCC2020 International Colloquium on Automata, Languages, and Programming, 276-287, 2006"), "CCF B ICALP · CORE A* ICALP");
+  assert.equal(brief("C&C2019: Creativity and Cognition"), "CORE B C&C");          // (the century is not part of the acronym: CCF's "CC" is Compiler Construction)
+  assert.equal(brief("NOSSDAV2019 International Workshop on Network and Operating System Support for Digital Audio and Video"), "CCF B NOSSDAV · CORE B NOSSDAV");
+  // every conference of both lists, its own acronym glued to a year (or an apostrophe and two digits, or followed by a colon) before its official name
+  const rows = [...ccf.venues.filter((v) => v.kind === "C").map((v) => ({ abbr: v.abbr, name: v.name })), ...core.venues.map((v) => ({ abbr: v.acronym, name: v.name }))];
+  const conflict = [], lost = new Set();
+  for (const r of rows) {
+    if (!/^[A-Za-z&]{3,10}$/.test(r.abbr || "") || !/[A-Z]/.test(r.abbr)) continue;
+    const name = r.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+    for (const [glued, spaced] of [[`${r.abbr}2019 ${name}`, `${r.abbr} 2019 ${name}`], [`${r.abbr}'19 ${name}`, `${r.abbr} '19 ${name}`], [`${r.abbr}2019: ${name}`, `${r.abbr} 2019: ${name}`]]) {
+      const a = brief(glued), b = brief(spaced);
+      if (a && b && a !== b) conflict.push(`${glued.slice(0, 60)} → ${a} vs ${b}`);
+      if (!a && b) lost.add(r.abbr);
+    }
+  }
+  assert.deepEqual(conflict.slice(0, 10), []);
+  assert.deepEqual([...lost], ["USENIX"], "the spaced form names a venue where the glued one names none: only USENIX (its own name is also an organisation)");
+});
+
