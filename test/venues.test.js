@@ -1683,3 +1683,12 @@ test("a string that spells the whole name of one of the venues that share its wo
   eq("Proceedings of the 10th international conference on Electronic commerce", "CORE C ICEC");
   eq("Proceedings of the 10th ACM conference on Electronic commerce", "CORE A* EC");
 });
+
+test("real prints that missed a badge: MASCOTS with 'Telecommunications', PROFES under its name until 2011, Internetware's title printed twice by ACM", () => {
+  const eq = (raw, want) => assert.equal(brief(raw), want, raw);
+  eq("Proceedings. 10th IEEE International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunications Systems", "CCF C MASCOTS · CORE B MASCOTS");
+  eq("11th IEEE/ACM International Symposium on Modeling, Analysis and Simulation of Computer Telecommunications Systems, 2003. MASCOTS 2003", "CCF C MASCOTS · CORE B MASCOTS");
+  eq("Proceedings of the 12th International Conference on Product Focused Software Development and Process Improvement, 2011", "CORE B PROFES");
+  eq("Proceedings of the 6th Asia-Pacific Symposium on Internetware on Internetware, 2014", "CCF C Internetware");
+});
+
