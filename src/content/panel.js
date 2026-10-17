@@ -511,7 +511,8 @@
       actions.replaceChildren(...on.map((kind) => {
         const flashed = ui.flash && ui.flash.kind === kind;
         const cls = "rr-btn" + (flashed && ui.flash.mode !== "empty" ? " rr-btn-flashed" : "");
-        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
+        // (a flashed button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one)
+        return h("button", { class: cls, type: "button", "data-act": "copy-" + kind, style: flashed && ui.flash.width ? "min-width:" + ui.flash.width + "px" : null, ...P("panel.copy." + kind), "data-rr-item": kind, ...L(B.dom.COPY_LABEL[kind]), onClick: () => cb.onCopy(kind) },
           flashed ? flashText() : t(B.dom.COPY_LABEL[kind]));
       }));
       restoreFocus(focused);
@@ -809,7 +810,12 @@
     // `mode` "empty": nothing was copied, the button says why; said to a screen reader too
     let flashTimer = 0;
     function flash(kind, mode) {
-      ui.flash = { kind, mode };
+      // the width the button's own label asks for (the button itself may have grown to fill its row)
+      const own = actions.querySelector('[data-act="copy-' + kind + '"]');
+      let width = 0;
+      if (own && !(ui.flash && ui.flash.kind === kind)) { const was = own.style.cssText; own.style.cssText = "flex:none;min-width:0;width:max-content"; width = Math.ceil(own.getBoundingClientRect().width); own.style.cssText = was; }
+      else if (ui.flash && ui.flash.kind === kind) width = ui.flash.width || 0;
+      ui.flash = { kind, mode, width };
       if (lastModel) renderActions(lastModel);
       flashSr.textContent = flashText();
       clearTimeout(flashTimer);

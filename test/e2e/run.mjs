@@ -893,7 +893,12 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     }
 
     // -- 12. clipboard
+    // (the buttons stay where they are while the pressed one says "Copied": a shorter word must not let the ones after it move up, and the next click land on another button)
+    const copyBoxes = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => { const r = b.getBoundingClientRect(); return [b.dataset.act, Math.round(r.left), Math.round(r.top)]; }));
+    const boxesBefore = await copyBoxes();
     await page.click('[data-act="copy-summary"]');
+    await page.locator('[data-act="copy-summary"]', { hasText: "Copied" }).waitFor();
+    assert.deepEqual(await copyBoxes(), boxesBefore, "the copy buttons keep their places while one says Copied");
     const clip = await page.evaluate(() => navigator.clipboard.readText());
     assert.match(clip, /^Ion Stoica — 100 papers on Google Scholar, by authorship role and CCF rank/);
     assert.match(clip, /Last author: \d+ \(/);

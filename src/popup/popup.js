@@ -78,9 +78,11 @@
       const say = (button, text, ok = true) => {
         const old = button.dataset.label || (button.dataset.label = button.textContent);
         clearTimeout(button.rrTimer);
+        // (the button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one)
+        if (!button.style.minWidth) { const was = button.style.cssText; button.style.cssText = "flex:none;min-width:0;width:max-content"; const w = Math.ceil(button.getBoundingClientRect().width); button.style.cssText = was; button.style.minWidth = w + "px"; }
         button.textContent = text;
         if (ok) button.classList.add("btn-flashed");
-        button.rrTimer = setTimeout(() => { button.textContent = old; button.classList.remove("btn-flashed"); }, 1200);
+        button.rrTimer = setTimeout(() => { button.textContent = old; button.classList.remove("btn-flashed"); button.style.minWidth = ""; }, 1200);
       };
       const deliver = (kind) => async (e) => {
         const button = e.target.closest("button") || e.target;
