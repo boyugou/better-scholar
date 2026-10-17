@@ -457,6 +457,10 @@
     "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language"]);
 
   // All-caps / camel-case acronym signals present in the string, strongest first.
+  // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and no apostrophe — "SC18" — are left to the other rules)
+  const GLUED_APOS = /['’]\d{2}$/, GLUED_JAM = /^(?=.*[A-Z])([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})$/;
+  const unglue = (w) => w.replace(GLUED_APOS, "").replace(GLUED_JAM, "$1");
+  const glued = (w) => GLUED_APOS.test(w) || GLUED_JAM.test(w);
   function acronymSignals(p) {
     const out = [];
     const keys = (txt) => {
@@ -482,7 +486,7 @@
     // ("Proceedings ASE 2000. Fifteenth IEEE International Conference on Automated …": the proceedings' own title word is not the venue)
     const head0 = p.withParens.replace(/^[\s,]+/, "").replace(/^(?:proceedings?|proc\.?)(?:\s+of)?\s+(?:the\s+)?(?=[A-Z][A-Za-z0-9&'’-]{1,14}[\s,]+(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b))/i, "");
     const head = head0.replace(ORG_LEAD, "");
-    const first = (head.split(/[\s,]+/)[0] || "").replace(/['’]\d{2}$/, "");          // ("ASE'19": the acronym, then its year written without a space — the same event as "ASE '19" and "ASE 2019")
+    const first = unglue(head.split(/[\s,]+/)[0] || "");          // ("ASE'19", "ICLR2020": the acronym, then its year written without a space — the same event as "ASE '19" and "ASE 2019")
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
     const looksAcr = /^[A-Za-z][A-Za-z0-9&'’\/-]{1,14}$/.test(first) &&
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
@@ -509,7 +513,7 @@
     if (acmDl && /[A-Z]/.test(acmDl[1]) && !(acmDl[1].length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true, raw: acmDl[1] });
     // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !/['’]\d{2}$/.test(words[0]) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !glued(words[0]) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
     return out;
   }
 

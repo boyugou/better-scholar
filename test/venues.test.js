@@ -1824,7 +1824,7 @@ test("partner rows (one venue under the two lists' names): the official name of 
   assert.equal(resolver.resolve("NOSSDAV Workshops, 2019").core, null);          // (CORE's name for NOSSDAV lacks it)
 });
 
-test("a bare acronym with its year glued on (\"ASE'19\") is the event of that year, as \"ASE '19\" and \"ASE 2019\" are — not the journal or the other venue that has the same letters", () => {
+test("a bare acronym with its year glued on (\"ASE'19\", \"ICLR2020\") is the event of that year, as \"ASE '19\" and \"ASE 2019\" are — not the journal or the other venue that has the same letters", () => {
   const eq = (raw, want) => assert.equal(brief(raw), want, raw);
   // (before: the glued year stayed inside the acronym, nothing said "event", and CCF's journals ASE, CSCW, TCC, RE, AAMAS, IM — or CORE's Creativity and Cognition for CC — won)
   eq("ASE'19", "CCF A ASE · CORE A* ASE");
@@ -1837,6 +1837,12 @@ test("a bare acronym with its year glued on (\"ASE'19\") is the event of that ye
   eq("C&C'19", "CORE B C&C");
   eq("NDSS'05", "CCF A NDSS · CORE A* NDSS");
   eq("CAD'24", "");          // (a conference of its own; CCF's B is the journal Computer-Aided Design)
+  // the year written against the acronym without an apostrophe is the same: "ICLR2020 and arXiv preprint …" (the paper is an ICLR one that is also on arXiv), "NeurIPS24 Datasets Track"
+  eq("ICLR2020 and arXiv preprint arXiv:1910.01663, 2019", "CCF A ICLR · CORE A* ICLR");
+  eq("NeurIPS24 Datasets Track, 2024", "CCF A NeurIPS · CORE A* NeurIPS");
+  eq("NeurIPS'21 and arXiv preprint arXiv:2102.12470, 2021", "CCF A NeurIPS · CORE A* NeurIPS");
+  eq("C&C2019", "CORE B C&C");          // (not CCF's Compiler Construction: "CC")
+  eq("SC18", "CCF A SC · CORE A SC");
   // every acronym of the lists: where the spaced form names a venue, the glued form names the same one (it may name more: "Mobisys'19" has the shape of an acronym with its year, "Mobisys '19" does not)
   const abbrs = new Set([...ccf.venues.filter((v) => v.kind === "C").map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter((a) => a && a.length > 1 && !/\s/.test(a)));
   assert.ok(abbrs.size > 800);
@@ -1846,5 +1852,13 @@ test("a bare acronym with its year glued on (\"ASE'19\") is the event of that ye
     if (spaced && brief(`${a}${mark}19`) !== spaced) differ.push(`${a}: ${spaced} vs ${brief(`${a}${mark}19`)}`);
   }
   assert.deepEqual(differ.slice(0, 10), []);
+  // … and so does the year jammed on ("ICLR2020", "ICML24"): never another venue than "ICLR 2020" names, never a venue of the other kind (journal / conference)
+  const jammed = [];
+  for (const a of abbrs) {
+    if (!/^[A-Za-z&]{3,10}$/.test(a) || !/[A-Z]/.test(a)) continue;
+    const spaced = brief(`${a} 2019`);
+    for (const g of [`${a}2019`, `${a}19`]) { const got = brief(g); if (got && got !== spaced) jammed.push(`${g}: ${got} vs ${spaced || "nothing"}`); }
+  }
+  assert.deepEqual(jammed.slice(0, 10), []);
 });
 
