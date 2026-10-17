@@ -1590,6 +1590,15 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // the symposium's older title in the singular, and the symposium CORE calls a conference
   eq("Proceedings Second IEEE Symposium on Computer and Communications", "CCF C ISCC · CORE C ISCC");
   eq("19th International Symposium in Robot and Human Interactive Communication", "CORE B RO-MAN");
+  // what publishers print: an ordinal with its hyphen written out, a space missing after "of", ACM's 2024 title of the SIGGRAPH proceedings, a volume's subtitle after the colon (not a book's: "Intelligent Data Analysis: An Introduction")
+  eq("Proceedings of the TwentySecond International Conference on Principles of Knowledge Representation and Reasoning", "CCF B KR · CORE A* KR");
+  eq("Proceedings of the12th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments", "CCF B VEE · CORE B VEE");
+  eq("Special Interest Group on Computer Graphics and Interactive Techniques Conference", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  eq("Proceedings of the Special Interest Group on Computer Graphics and …, 2025", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  none("Special Interest Group on Computer Graphics and Interactive Techniques Conference Courses");
+  eq("Proceedings of the 12th International Conference on Extending Database Technology: Advances in Database Technology", "CCF B EDBT · CORE B EDBT");
+  none("Intelligent Data Analysis: An Introduction, 403-427, 2007");
+  none("Data Mining and Knowledge Discovery: Handbook");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");

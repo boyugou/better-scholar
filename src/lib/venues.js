@@ -59,7 +59,8 @@
   const TYPE_WORDS = ["symposium", "conference", "workshop", "meeting"];
 
   const isNoiseToken = (t) =>
-    /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a");
+    /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a") ||
+    /^(?:twenty|thirty|forty|fifty|sixty)(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)$/.test(t);          // ("TwentySecond": the IJCAI Organization's proceedings write the hyphen out)
   // Authors often drop the "h" of an ordinal: "The Thirty-eight Conference on Neural Information Processing
   // Systems" (NeurIPS 2024 was the thirty-eighth). After a tens word, "eight" / "nine" / "nineth" is that ordinal.
   const TENS = new Set(["twenty", "thirty", "forty", "fifty", "sixty"]);
@@ -144,7 +145,7 @@
   function prepare(raw) {
     // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic; and a venue is not longer than a thousand characters
     // — a longer text is cut, for the same reason: a run of commas in front of a pattern costs time in proportion to the square of its length)
-    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(/^((?:19|20)\d{2})(?=(?:IEEE|ACM)\b)/, "$1 ").replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
+    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(/^((?:19|20)\d{2})(?=(?:IEEE|ACM)\b)/, "$1 ").replace(/\b(of|the)(\d{1,3}(?:st|nd|rd|th))\b/gi, "$1 $2").replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
@@ -989,7 +990,7 @@
     }
 
     // R5: the string is a known name plus a subtitle ("…: Human Language Technologies")
-    if (R.length >= 4) {
+    if (R.length >= 3) {
       const found = [];
       // where the visible words of the known name end, in the text: what follows must be a subtitle — set off by a colon, a dash, a comma, a full stop or a parenthesis — and not words that
       // go on with the name ("… Interactive Techniques in Australasia and South East Asia" is GRAPHITE, "… Information Retrieval in the Asia Pacific Region" is SIGIR-AP, "Data Mining and
@@ -1001,14 +1002,17 @@
           const tok = canonTokens(m[0], "full");
           if (!tok.length) continue;
           if (tok[0] !== tokens[k]) return false;
-          if (++k === tokens.length) return /^\s*(?:[:;,.–—(/-]|$)/.test(text.slice(m.index + m[0].length));
+          // (a name of three words needs the colon: "Extending Database Technology: Advances in Database Technology" — the volume's own title after it)
+          if (++k === tokens.length) return (tokens.length >= 4 ? /^\s*(?:[:;,.–—(/-]|$)/ : /^\s*:/).test(text.slice(m.index + m[0].length));
         }
         return false;
       };
       for (const side of sides) {
         for (const { entry, form } of side.first.full.get(R[0]) || []) {
           const t = form.full;
-          if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w) && setOff(t)) found.push({ e: entry, len: t.length });
+          // (a journal's title with words after it is a book of that title — "Intelligent Data Analysis: An Introduction", "Data Mining and Knowledge Discovery: Handbook" —, a conference's is its proceedings)
+          // (a name of three words says too little without the words of an event in the string: "Intelligent Data Analysis: An Introduction" is a book)
+          if (entry.kind !== "J" && (t.length >= 4 || CONF_SIGNAL.test(p.plain)) && t.length >= 3 && t.length < R.length && t.every((w, i) => R[i] === w) && setOff(t)) found.push({ e: entry, len: t.length });
         }
       }
       if (found.length) {

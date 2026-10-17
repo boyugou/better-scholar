@@ -214,7 +214,9 @@
     { ccf: "OOPSLA", core: "OOPSLA", names: ["ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"] },
     { ccf: "STOC", core: "STOC", names: ["ACM Symposium on Theory of Computing", "ACM SIGACT Symposium on Theory of Computing"] },
     { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"], starts: ["Foundations of Computer Science Proceedings Annual Symposium on"] },
-    { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques"] },
+    // (since 2024 ACM prints the proceedings as "Special Interest Group on Computer Graphics and Interactive Techniques Conference" — "Conference Papers" is the main track, "Courses", "Posters" … are not)
+    { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques", "Special Interest Group on Computer Graphics and Interactive Techniques Conference", "Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers"],
+      starts: ["Special Interest Group on Computer Graphics and"] },
 
     // ---- rows whose official PDF text has a typo or a stray word (kept verbatim in data/):
     //      give the correct spelling so Scholar's strings still match
