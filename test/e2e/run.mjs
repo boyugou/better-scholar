@@ -2846,5 +2846,58 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await fx9.close();
   }
 
+  // -- 30. hostile data — markup, huge words, bidirectional controls, prototype names, empty fields — is drawn by the panel and the popup, and nothing throws
+  {
+    let seed = 7;
+    const rnd = () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
+    const pick = (a) => a[Math.floor(rnd() * a.length)];
+    const hostile = ["", " ", "…", "\u200b", "<img src=x onerror=alert(1)>", "<script>alert(1)</script>", "&lt;b&gt;x&lt;/b&gt;", "\"'`", "}{][)(", "%s %d {0} ${x} {{y}}", "javascript:alert(1)", "C:\\path\\file", "line\nbreak\ttab", "a".repeat(2500), "W".repeat(300),
+      "نص عربي طويل ".repeat(30), "עברית ארוכה ".repeat(30), "😀".repeat(60), "İstanbul ß ǅ", "\u202e", "\u2066x\u2069", "0", "-1", "constructor", "__proto__", "toString", "hasOwnProperty"];
+    const people = ["I Stoica", "R Morris", "D Karger", "MF Kaashoek", "…", "A <b>Bold</b>", "😀 Smile", "اسم عربي", "יוסי כהן", "I Stoica*", "R Morris*", "constructor", "__proto__"];
+    const venuesReal = ["ACM SIGCOMM computer communication review 31 (4), 149-160, 2001", "Proceedings of the 25th Symposium on Operating Systems Principles, 2015", "Advances in Neural Information Processing Systems 32, 2019", "NSDI 2019", "arXiv preprint arXiv:2105.04321, 2021"];
+    const rows = Array.from({ length: 120 }, (_, i) => {
+      const as = Array.from({ length: 1 + Math.floor(rnd() * (rnd() < 0.1 ? 100 : 7)) }, () => pick(people));
+      if (rnd() < 0.85) as.splice(Math.floor(rnd() * as.length), 0, "I Stoica");
+      return [rnd() < 0.05 ? pick(hostile) : as.join(", "), rnd() < 0.5 ? pick(hostile) + (rnd() < 0.5 ? ", " + (1900 + Math.floor(rnd() * 220)) : "") : pick(venuesReal).replace(/\d{4}/, String(1950 + Math.floor(rnd() * 150))), rnd() < 0.2 ? pick(hostile) || "untitled" : "Paper " + i + " " + pick(hostile).slice(0, 40)];
+    });
+    const fx10 = await start({ slug: "ion-stoica", pageSize: 200, rows, latency: 0 });
+    const ctx10 = await launch();
+    try {
+      const page = await ctx10.newPage();
+      const errors = [];
+      page.on("pageerror", (e) => errors.push(String(e).slice(0, 200)));
+      page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });
+      await page.goto(fx10.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      await page.bringToFront();
+      const state = () => page.evaluate(() => { for (const d of document.querySelectorAll("#rr-panel details")) d.open = true; const p = document.getElementById("rr-panel"); return { bad: ((p.innerText || "").match(/undefined|NaN|\[object|Infinity/g) || []).slice(0, 3), over: Math.max(p.scrollWidth - p.clientWidth, Math.round(p.getBoundingClientRect().right - window.innerWidth)) }; });
+      let st = await state();
+      assert.deepEqual(st.bad, [], "no undefined, NaN or [object …] where a number or a name should be");
+      assert.ok(st.over <= 1, `the panel stays in its box: ${st.over}px`);
+      // every button the panel has, once (not the ones that leave the page: a file, Scholar's own pages)
+      const count = await page.evaluate(() => document.querySelectorAll("#rr-panel button").length);
+      let clicked = 0;
+      for (let i = 0; i < count && clicked < 50; i++) {
+        const did = await page.evaluate((i) => { const b = document.querySelectorAll("#rr-panel button")[i]; if (!b || b.disabled || !b.offsetParent || /export csv|read full|load|report|check|settings|options/i.test((b.textContent || "") + (b.getAttribute("aria-label") || "") + (b.dataset.act || ""))) return false; b.click(); return true; }, i).catch(() => false);
+        if (did) clicked++;
+      }
+      assert.ok(clicked >= 20, `${clicked} buttons were pressed`);
+      for (const q of ["role:first ccf:a", "cites:>1e999 year:<-5", "\"unterminated", "has:", "ccf:zzz core:", "<b>", "role:\u202e", "a".repeat(400), ""]) await page.locator("#rr-panel input").first().fill(q);
+      st = await state();
+      assert.deepEqual(st.bad, [], "…also after the buttons and some odd queries");
+      assert.ok(st.over <= 1, `…and in its box: ${st.over}px`);
+      const popup = await ctx10.newPage();
+      popup.on("pageerror", (e) => errors.push("popup: " + String(e).slice(0, 200)));
+      await popup.goto(`chrome-extension://${extId}/popup/popup.html`);
+      const tab = await popup.evaluate(async () => { for (const t of await chrome.tabs.query({})) { try { const r = await chrome.tabs.sendMessage(t.id, { type: "rr:call", method: "summary" }); if (r && r.ok) return t.id; } catch (e) { /* not a profile */ } } return null; });
+      await popup.goto(`chrome-extension://${extId}/popup/popup.html?tab=${tab}`);
+      await popup.waitForSelector(".who");
+      assert.deepEqual(((await popup.evaluate(() => document.body.innerText)).match(/undefined|NaN|\[object|Infinity/g) || []), [], "the popup draws it too");
+      assert.deepEqual(errors, [], "no page error, no console error");
+      ok(`a profile of hostile strings (markup, 2,500-letter words, bidirectional controls, prototype names, empty fields) is drawn by the panel and the popup: ${clicked} buttons pressed, odd queries typed, nothing throws, nothing reads undefined or NaN`);
+    } finally { await ctx10.close(); await fx10.close(); }
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

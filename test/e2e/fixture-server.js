@@ -6,8 +6,9 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
-function loadProfile(slug, repeat = 1) {
-  const f = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "fixtures", "profiles", slug + ".json"), "utf8"));
+function loadProfile(slug, repeat = 1, customRows) {
+  // `customRows` ([authors, venue, title] each) stands in for a profile of its own: the owner is the slug's
+  const f = customRows ? { owner: JSON.parse(fs.readFileSync(path.join(__dirname, "..", "fixtures", "profiles", slug + ".json"), "utf8")).owner, rows: customRows } : JSON.parse(fs.readFileSync(path.join(__dirname, "..", "fixtures", "profiles", slug + ".json"), "utf8"));
   // `repeat` multiplies the rows (distinct ids) to stand in for a very large profile
   const source = Array.from({ length: repeat }, () => f.rows).flat();
   const rows = source.map(([authors, venue, title], i) => {
@@ -91,10 +92,10 @@ function detailPage(profile, id, hl) {
 </div></body></html>`;
 }
 
-function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150 } = {}) {
+function start({ slug = "ion-stoica", pageSize = 20, header, port = 0, hl = "en", repeat = 1, brokenLayout = false, stopAfter, latency = 150, rows } = {}) {
   ROW_HL = hl;
   BROKEN = brokenLayout;
-  const profile = loadProfile(slug, repeat);
+  const profile = loadProfile(slug, repeat, rows);
   let detailRequests = 0;
   const detailHls = [];
   const server = http.createServer((req, res) => {

@@ -76,7 +76,7 @@ Better Scholar 是一款面向 [Google Scholar](https://scholar.google.com) 学�
 | **5 · 18** | 道识别步骤（全名、期刊词袋、缩写、被截断名称的可见开头、全名加副标题）和防止较弱判断压过较强判断的防护 | `src/lib/venues.js` 中标注的步骤与 `docs/ARCHITECTURE.md` 的检查表 |
 | **5,581** | 篇获奖论文，另有 2,143 篇获荣誉提名或亚军（共 7,830 项奖项），来自 194 个会议和系列，1990–2026 年 | `src/data/awards.js` |
 | **22,744** | 行真实的 Scholar 发表场所文本，每一行的标签都逐一看过并记录在案 | `test/fixtures/venues.expected.json` |
-| **500+ · 80+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
+| **500+ · 90+ · 15** | 个单元测试、在加载了扩展的真实 Chromium 里运行的端到端检查、网页演示的检查 | `test/*.test.js`、`test/e2e/` |
 | **0** | 个依赖，也没有构建步骤 | `package.json` |
 
 这些数字由 `npm run numbers` 从代码和数据里统计，并有测试保证与实际一致；随每次修复增长的数目只写成向下取整的“N+”。
