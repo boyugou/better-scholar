@@ -270,6 +270,7 @@
         "data-op": B.prefs.PILL_OPERATORS[id],
         "data-pill": id,
         "aria-pressed": "false",
+        ...(id === "cites100" ? { dir: "ltr" } : {}),          // (">100" is a comparison: in a right-to-left panel its sign would be mirrored to "<100")
         ...P("panel.filters.pills." + id), "data-rr-item": id, ...(PILL_NAME[id] ? L(PILL_NAME[id]) : {}),
         onClick: () => {
           closeSuggest();

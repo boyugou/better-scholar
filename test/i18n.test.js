@@ -51,3 +51,14 @@ test("resolve: the folder a browser language is served from (so that lang and nu
   for (const [ui, want] of Object.entries(cases)) assert.equal(i18n.resolve(ui), want, ui);
   assert.equal(i18n.resolve(undefined), "en");
 });
+
+test("a comparison sign in a right-to-left language stands in a left-to-right isolate: '≥100' in Arabic or Hebrew would be drawn '≤100' and say the opposite", () => {
+  for (const code of fs.readdirSync(loc).filter((c) => i18n.isRtl(c))) {
+    const messages = JSON.parse(fs.readFileSync(path.join(loc, code, "messages.json"), "utf8"));
+    for (const [key, { message }] of Object.entries(messages)) {
+      const bare = message.replace(/\u2066[^\u2069]*\u2069/g, "");
+      assert.ok(!/[<>≥≤]/.test(bare), `${code}/${key}: a comparison sign outside an isolate (U+2066 … U+2069): ${message}`);
+    }
+  }
+});
+

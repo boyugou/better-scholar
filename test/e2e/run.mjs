@@ -2488,6 +2488,9 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
           const over = await page.evaluate(() => {
             const p = document.getElementById("rr-panel"), out = [];
             for (const b of p.querySelectorAll(".rr-btn")) if (b.offsetParent && b.scrollWidth > b.clientWidth + 1) out.push("cut: " + b.textContent.trim());
+            // in a right-to-left panel the ">100" pill is a left-to-right run: its sign is not mirrored to "<100"
+            const cites = p.querySelector('[data-pill="cites100"]');
+            if (p.dir === "rtl" && cites && getComputedStyle(cites).direction !== "ltr") out.push("mirrored: " + cites.textContent.trim());
             // a button's words stay on one line: a copy button that loses its minimum width breaks its label into single letters, and then nothing is cut or outside the box
             const range = document.createRange();
             for (const b of p.querySelectorAll(".rr-btn")) {
