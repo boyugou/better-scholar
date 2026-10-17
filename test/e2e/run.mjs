@@ -2488,6 +2488,14 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
           const over = await page.evaluate(() => {
             const p = document.getElementById("rr-panel"), out = [];
             for (const b of p.querySelectorAll(".rr-btn")) if (b.offsetParent && b.scrollWidth > b.clientWidth + 1) out.push("cut: " + b.textContent.trim());
+            // a button's words stay on one line: a copy button that loses its minimum width breaks its label into single letters, and then nothing is cut or outside the box
+            const range = document.createRange();
+            for (const b of p.querySelectorAll(".rr-btn")) {
+              if (!b.offsetParent) continue;
+              const tops = new Set();
+              for (const w = document.createTreeWalker(b, NodeFilter.SHOW_TEXT); w.nextNode();) { range.selectNodeContents(w.currentNode); for (const q of range.getClientRects()) if (q.width > 0.5) tops.add(Math.round(q.top / 4)); }
+              if (tops.size > 1) out.push("wrapped: " + b.textContent.trim());
+            }
             const box = p.getBoundingClientRect();
             for (const el of p.querySelectorAll("*")) { if (!el.offsetParent) continue; const r = el.getBoundingClientRect(); if (r.width && (r.right > box.right + 1 || r.left < box.left - 1)) { out.push("outside: " + el.className + " " + el.textContent.trim().slice(0, 20)); break; } }
             return out;

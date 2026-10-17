@@ -283,7 +283,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-copybar{ display: flex; flex-wrap: wrap; gap: 6px; }
 #rr-panel .rr-copy .rr-actions{ margin-top: 0; }
 #rr-panel .rr-copybar .rr-btn{
-  flex: 1 1 0; min-width: min(max-content, 100%); padding: 4px 6px; font-size: 11.5px; text-align: center; overflow-wrap: anywhere;
+  flex: 1 1 0; min-width: max-content; padding: 4px 6px; font-size: 11.5px; text-align: center; white-space: nowrap;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
 #rr-panel .rr-copybar .rr-btn::before {
@@ -343,6 +343,8 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-variant button{ color: var(--rr-faint); font-size: 14px; line-height: 1; padding: 0 3px; }
 #rr-panel .rr-variant-auto{ padding-inline-end: 7px; background: transparent; box-shadow: inset 0 0 0 1px #dadce0; }
 #rr-panel .rr-add{ display: flex; gap: 6px; }
+#rr-panel .rr-add > input{ flex: 1 1 auto; min-width: 0; }
+#rr-panel .rr-add > button{ flex: none; white-space: nowrap; }          /* (the input gives way, the button keeps its word on one line: Chinese "添加", Korean "추가" and Norwegian "Legg til" were broken in two) */
 
 /* Awards & talks: one row per group, same icons as the chips; click a row to list just those papers */
 #rr-panel .rr-mi { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; flex: none; color: #3a4a5f; }

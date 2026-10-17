@@ -15,7 +15,7 @@ npm run numbers                       # rewrite the "By the numbers" blocks of R
 npm run check:profile -- page.html    # the extension on a real saved Scholar page (see below)
 node scripts/axe-audit.mjs            # axe-core over the panel, the settings page and the popup (see below)
 npm run diff:matcher                  # what a change to the matcher does to 75,000 real titles (LOST / MOVED / GAIN against a commit)
-npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; `spaced` and `cjk` come out clean from 420px up; `wide`, thirty capital Ws in a row and wider than any real name, still lets the tray's buttons stick out by 2px at 420px)
+npm run audit:overflow                # does anything on the settings page run out of its box or scroll sideways? 30 languages × 5 widths × light/dark (`--long-names spaced|cjk|wide` stress-tests the names; the one known limit: a copy button never gets narrower than its text, so 30 full-width characters on it, in a panel narrower than about 380px, stick out)
 npm run check:claims                  # every quote in store/chrome/claims.md still exists in the code it names
 ```
 
