@@ -1862,3 +1862,41 @@ test("a bare acronym with its year glued on (\"ASE'19\", \"ICLR2020\") is the ev
   assert.deepEqual(jammed.slice(0, 10), []);
 });
 
+test("the workshops held at a venue are not the venue, also where its own name says Workshop (NOSSDAV, REFSQ, PKC, CHES, HotOS …): 'X Workshops', 'Workshop at X'", () => {
+  const sq = (x) => String(x || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const rows = [...ccf.venues.filter((v) => v.kind === "C").map((v) => ({ src: "ccf", abbr: v.abbr, name: v.name })), ...core.venues.map((v) => ({ src: "core", abbr: v.acronym, name: v.name }))];
+  const bad = []; let seen = 0;
+  for (const row of rows) {
+    const name = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+    if (!/\bworkshop\b/i.test(name) || /\bworkshops\b/i.test(name) || !row.abbr) continue;          // (a name that says "Workshops" is its own plural: WETICE)
+    seen++;
+    for (const raw of [`${row.abbr} Workshops, 2019`, `Workshop at ${row.abbr}, 2019`, `Workshop at the ${name}, 2019`, `${name} Workshops, 2019`, `${row.abbr} 2019 Workshops`, `${row.abbr}'19 Workshops`, `Workshops at ${row.abbr} 2019`]) {
+      const b = resolver.resolve(raw)[row.src];
+      if (b && (sq(b.abbr) === sq(row.abbr) || b.name === row.name)) bad.push(`${row.src}:${row.abbr} ← ${raw}`);
+    }
+  }
+  assert.ok(seen > 70, `${seen} rows say Workshop`);
+  assert.deepEqual(bad.slice(0, 10), []);
+  // … while the venue's own name, in plural or with its subject, is the venue
+  assert.equal(brief("2005 Seventh IEEE Workshops on Applications of Computer Vision …, 2005"), "CORE A WACV");
+  assert.equal(brief("15th workshop on hot topics in operating systems (HotOS XV), 2015"), "CCF B HotOS · CORE A HotOS");
+  assert.equal(brief("IEEE Workshop on Automatic Speech Recognition and Understanding"), "CCF C ASRU · CORE C ASRU");
+});
+
+test("a two-letter acronym with a four-digit year jammed on (\"RE2019\", \"CC2019\") is that event, as \"RE 2019\" is — not the journal RE or CORE's C&C", () => {
+  assert.equal(brief("RE2019"), "CCF B RE · CORE A RE");
+  assert.equal(brief("CC2019"), "CCF B CC · CORE B CC");
+  assert.equal(brief("IM2019"), "CCF C IM · CORE B IM");
+  assert.equal(brief("SC2018"), "CCF A SC · CORE A SC");
+  const abbrs = new Set([...ccf.venues.filter((v) => v.kind === "C").map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter((a) => /^[A-Za-z]{2}$/.test(a || "") && /[A-Z]/.test(a)));
+  assert.ok(abbrs.size > 10);
+  const differ = [];
+  for (const a of abbrs) { const spaced = brief(`${a} 2019`), jam = brief(`${a}2019`); if (jam && jam !== spaced) differ.push(`${a}2019: ${jam} vs ${spaced || "nothing"}`); }
+  assert.deepEqual(differ, []);
+});
+
+test("an ambiguous acronym with a volume and an issue is judged without throwing (the resolver of these tests is strict)", () => {
+  // (the sixteenth review: `foreign` asked an "ambiguous" decision for its words; in production the throw was caught and the paper stayed unranked)
+  for (const raw of ["FSE24 Computing 12 (3)", "FSE-2024 Poster 4 (1), 7", "ESEC/FSE2019 12 (3), 100-110, 2019", "GI20 Security 12 (3)"]) assert.doesNotThrow(() => resolver.resolve(raw), raw);
+});
+

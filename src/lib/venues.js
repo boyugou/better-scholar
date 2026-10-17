@@ -457,9 +457,9 @@
     "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language"]);
 
   // All-caps / camel-case acronym signals present in the string, strongest first.
-  // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and no apostrophe — "SC18" — are left to the other rules)
-  const GLUED_APOS = /['’]\d{2}$/, GLUED_JAM = /^(?=.*[A-Z])([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})$/;
-  const unglue = (w) => w.replace(GLUED_APOS, "").replace(GLUED_JAM, "$1");
+  // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and a two-digit year without an apostrophe — "SC18", "CC19" — are left to the other rules: "DS 75" is a report)
+  const GLUED_APOS = /['’]\d{2}$/, GLUED_JAM = /^(?=.*[A-Z])(?:([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})|([A-Za-z&]{2})(?:19|20)\d{2})$/;
+  const unglue = (w) => w.replace(GLUED_APOS, "").replace(GLUED_JAM, "$1$2");
   const glued = (w) => GLUED_APOS.test(w) || GLUED_JAM.test(w);
   function acronymSignals(p) {
     const out = [];
@@ -889,7 +889,7 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
-          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
+          const foreign = d && d !== "ambiguous" && ((spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w))));          // (no entry to judge — "ambiguous", or none — is no foreign one)
           if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
@@ -1113,7 +1113,9 @@
         const need = canonTokens(((/\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(entry.name)) || [])[1]) || "", "noOrg");
         evidence = need.length > 0 && /\bworkshops?\s+on\b/i.test(fold(raw)) && (cut < 0 ? need.every((w) => have.has(w) || have.has(stem(w))) : subject.length >= 2 && subject.every((w, i) => need[i] !== undefined && (need[i] === w || stem(need[i]) === stem(w))));
       }
-      if (evidence) {
+      // the workshops held at the venue are not the venue, though its own name says Workshop: "REFSQ Workshops" (the plural without a subject, where the name has the singular; "Seventh IEEE Workshops on Applications of Computer Vision" is the event's own name), "Workshop at REFSQ"
+      const hosted = word === "workshop" && ((/\bworkshops\b(?!\s+(?:on|of|for)\b)/i.test(fold(raw)) && !/\bworkshops\b/i.test(fold(String(entry.name)))) || /\bworkshop\s+(?:at|@|co-?located\s+with)\b/i.test(fold(raw)));
+      if (evidence && !hosted) {
         if (!subject.length) return true;
         if (cut < 0) { if (subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true; }
         else if (subject.every((w) => vocab.has(w) || vocab.has(stem(w))) && [...ownTokens].some((t) => rawWords.includes(t))) return true;          // (cut, with the venue's own acronym beside it: "Public Key Cryptography-PKC 2003: 6th International Workshop on Theory and …")
