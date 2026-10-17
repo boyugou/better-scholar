@@ -188,7 +188,7 @@
       { parent: "panel.show", ...named("extShortName") },
       bool("panel.header.settings", true, "The button in the panel's title bar that opens the settings page.", { label: "optHeadSettings", parent: "panel.show" }),
       bool("panel.header.fold", true, "The button that folds the panel to its title bar. Off: the panel is always open.", { label: "optHeadFold", parent: "panel.show" }),
-      bool("panel.filters.bar", true, "The bar under the title bar that says how many papers the filters leave, and clears them (drawn only while a filter is on).", { label: "optFiltersBar", parent: "panel.show" })
+      bool("panel.filters.bar", true, "The line in the panel's title bar that says how many papers the filters leave, and clears them: it takes the place of the title while a filter is on.", { label: "optFiltersBar", parent: "panel.show" })
     ]),
     card("table", "optPanelSummary", "optPanelSummaryHint", part("table", "The table of your papers by position and rank (also the toolbar popup's table).", [
       ["title", true, "optPartTitle", "The title line of the table.", { name: "summaryTitle" }],
@@ -447,7 +447,8 @@
   const markShown = (prefs, group) => { const k = markKey(group); return !!(prefs.rows[k] || (prefs.panel.marks.show && prefs.panel.marks[k])); };
   const visibleMarks = (prefs, marks) => (marks || []).filter((m) => markShown(prefs, m.group));              // for the search and the exports
   const chipMarks = (prefs, marks) => (marks || []).filter((m) => !!prefs.rows[markKey(m.group)]);            // for the chips on the rows
-  const panelMarks = (prefs, marks) => (marks || []).filter((m) => !!prefs.panel.marks[markKey(m.group)]);    // for the counts in the panel and the popup
+  // (the part's own switch too: with the "Awards & talks" part off nothing of it is counted in the panel, the popup or a copied summary — what you see is what you copy)
+  const panelMarks = (prefs, marks) => (prefs.panel.marks.show ? (marks || []).filter((m) => !!prefs.panel.marks[markKey(m.group)]) : []);    // for the counts in the panel and the popup
 
   // The quick filters that are drawn, in their order: those switched on that can find something (a rank list or a kind of mark that nothing draws finds nothing)
   function pills(prefs) {

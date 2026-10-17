@@ -431,3 +431,14 @@ test("the winner never keeps a list whose chip is off over one whose chip is on"
   const both = { ccf: { tier: "A" }, core: { rank: "A*" } };
   assert.deepEqual(prefs.chipLists(p({ ccf: false }), both), { shown: ["core"], hidden: [] });
 });
+
+test("the counts of marks in the panel, the popup and a copied summary follow the part's own switch too (what you see is what you copy)", () => {
+  const on = prefs.normalize({});
+  const marks = [{ group: "award" }, { group: "oral" }, { group: "finalist" }];
+  assert.equal(prefs.panelMarks(on, marks).length, 3);
+  const off = prefs.apply(on, { panel: { marks: { show: false } } }).prefs;
+  assert.deepEqual(prefs.panelMarks(off, marks), []);
+  const noOral = prefs.apply(on, { panel: { marks: { oral: false } } }).prefs;
+  assert.deepEqual(prefs.panelMarks(noOral, marks).map((m) => m.group), ["award", "finalist"]);
+});
+

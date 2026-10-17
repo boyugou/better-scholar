@@ -2974,5 +2974,49 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     ok("the page changes under the panel: an article taken away, the body of the table swapped (and a row added to it), a profile with no articles (its message is no paper), a slash typed in a shadow field is that field's");
   }
 
+  // -- 33. what the settings say is drawn is also what is counted and copied: with the "Awards & talks" part off its line is not in a copied summary; an order and a choice are greyed with the switch they hang on
+  {
+    const fx13 = await start({ slug: "marks-demo", pageSize: 100, latency: 0 });
+    const ctx13 = await launch();
+    try {
+      const opts = await openOptions(ctx13);
+      const page = await ctx13.newPage();
+      await page.goto(fx13.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('#rr-panel button[data-mark-group="award"]').length === 1);
+      const copied = async () => {
+        await page.bringToFront();
+        await page.click('[data-act="copy-summary"]');
+        await page.locator('[data-act="copy-summary"]', { hasText: "Copied" }).waitFor();
+        return page.evaluate(() => navigator.clipboard.readText());
+      };
+      assert.match(await copied(), /Awards & talks/, "the part is on: its line is in the summary");
+      await setPref(opts, "panel.marks.show", false);
+      await eventually(page, () => document.querySelectorAll('#rr-panel button[data-mark-group="award"]').length === 0);
+      await page.waitForTimeout(400);
+      assert.doesNotMatch(await copied(), /Awards & talks|Oral \d|Spotlight \d/, "the part is off: what is not drawn is not copied");
+      await setPref(opts, "panel.marks.show", true);
+      await eventually(page, () => document.querySelectorAll('#rr-panel button[data-mark-group="award"]').length === 1);
+      // the settings page: a list that can be moved and a choice are greyed while the part they belong to is off, and wake with it
+      await opts.bringToFront();
+      const state = () => opts.evaluate(() => {
+        const order = document.querySelector('ol[data-pref="panel.order"]').closest(".opt"), choice = document.querySelector('input[data-pref="panel.marks.grouping"]').closest(".opt");
+        return { orderGrey: order.classList.contains("disabled"), orderButtons: [...order.querySelectorAll(".order-btn")].every((b) => b.disabled), choiceGrey: choice.classList.contains("disabled"), choiceInputs: [...choice.querySelectorAll("input")].every((i) => i.disabled) };
+      });
+      assert.deepEqual(await state(), { orderGrey: false, orderButtons: false, choiceGrey: false, choiceInputs: false }, "both are live while the panel and its marks part are on");
+      await setPref(opts, "panel.show", false);
+      let st = await state();
+      assert.ok(st.orderGrey && st.orderButtons, "the panel's order of parts is greyed with the panel switch");
+      await setPref(opts, "panel.show", true);
+      await setPref(opts, "panel.marks.show", false);
+      st = await state();
+      assert.ok(st.choiceGrey && st.choiceInputs, "the grouping of the talk rows is greyed with the part's switch");
+      await setPref(opts, "panel.marks.show", true);
+      st = await state();
+      assert.deepEqual(st, { orderGrey: false, orderButtons: false, choiceGrey: false, choiceInputs: false }, "and they wake");
+      ok("what the settings say is drawn is what is counted and copied (the Awards & talks part off: not in a copied summary), and an order and a choice are greyed with the switch they hang on");
+    } finally { await ctx13.close(); await fx13.close(); }
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });
