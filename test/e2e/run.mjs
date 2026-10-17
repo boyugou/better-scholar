@@ -629,6 +629,33 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
       await yearBar.click();
       assert.equal(await yearBar.getAttribute("aria-pressed"), "false");
       assert.equal(await visibleRows(page), all.length);
+      // the bars are one stop for the keyboard, not one a year: the arrows, Home and End move among them, Enter presses one and the focus stays on its year after the bars are drawn again
+      const barsOn = page.locator("#rr-panel button.rr-bar:not([disabled])");
+      if ((await barsOn.count()) >= 3) {
+        const stops = await barsOn.evaluateAll((els) => els.filter((e) => e.tabIndex === 0).map((e) => e.dataset.year));
+        assert.equal(stops.length, 1, "one bar is the keyboard stop");
+        const yearOn = () => page.evaluate(() => document.activeElement && document.activeElement.dataset && document.activeElement.dataset.year);
+        await page.locator(`#rr-panel button.rr-bar[data-year="${stops[0]}"]`).focus();
+        const enabledYears = await barsOn.evaluateAll((els) => els.map((e) => e.dataset.year));
+        assert.equal(stops[0], enabledYears[enabledYears.length - 1], "the stop is the latest year that has a paper");
+        await page.keyboard.press("ArrowLeft");
+        assert.equal(await yearOn(), enabledYears[enabledYears.length - 2], "ArrowLeft moves to the year before");
+        await page.keyboard.press("Home");
+        assert.equal(await yearOn(), enabledYears[0], "Home moves to the first year");
+        await page.keyboard.press("ArrowLeft");
+        assert.equal(await yearOn(), enabledYears[0], "the first year is the end");
+        await page.keyboard.press("End");
+        assert.equal(await yearOn(), enabledYears[enabledYears.length - 1], "End moves to the last year");
+        await page.keyboard.press("ArrowLeft"); await page.keyboard.press("Enter");
+        const pressedYear = enabledYears[enabledYears.length - 2];
+        await eventually(page, (y) => document.querySelector(`#rr-panel button.rr-bar[data-year="${y}"]`).getAttribute("aria-pressed") === "true", pressedYear);
+        assert.equal(await yearOn(), pressedYear, "the focus stays on the year after the bars are drawn again");
+        assert.equal(await page.evaluate(() => document.activeElement.tabIndex), 0, "and it is the keyboard stop");
+        await page.keyboard.press("Enter");
+        await eventually(page, () => document.querySelectorAll('#rr-panel button.rr-bar[aria-pressed="true"]').length === 0);
+        assert.equal(await visibleRows(page), all.length);
+        await page.evaluate(() => document.activeElement && document.activeElement.blur());
+      }
     }
     // quick search query filter: typing filters by title and author, clear button and Esc clear
     const queryInput = page.locator('#rr-panel input[data-act="filter-query"]');

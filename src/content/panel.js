@@ -684,16 +684,31 @@
       const top = Math.max(...data.map((d) => d.total));
       const older = m.byYearOlder || 0, olderNote = older ? tn("yearsOlder", older, [String(older)]) : "";        // (papers before the last fifty years are not drawn: said on hover and to screen readers)
       const names = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
+      // One stop for the keyboard, not one for every year: the bar that has it (the bars are drawn again with every change, so it is remembered), else the picked year, else the latest
+      // year that has a paper; the arrow keys, Home and End move among the others.
+      const focusedYear = yearsSec.contains(document.activeElement) && document.activeElement.dataset ? document.activeElement.dataset.year || null : null;
+      const selectedYear = m.filters.yearStart != null && m.filters.yearStart === m.filters.yearEnd ? String(m.filters.yearStart) : null;
+      const pressable = data.filter((d) => d.total || String(d.year) === selectedYear);
+      const stop = [focusedYear, selectedYear].find((y) => y && pressable.some((d) => String(d.year) === y)) || (pressable.length ? String(pressable[pressable.length - 1].year) : null);
+      const onBarKey = (e) => {
+        const bars = [...e.currentTarget.querySelectorAll("button.rr-bar:not([disabled])")], at = bars.indexOf(document.activeElement);
+        if (at < 0) return;
+        const rtl = getComputedStyle(e.currentTarget).direction === "rtl";
+        const to = e.key === "Home" ? 0 : e.key === "End" ? bars.length - 1 : e.key === "ArrowRight" ? at + (rtl ? -1 : 1) : e.key === "ArrowLeft" ? at + (rtl ? 1 : -1) : -1;
+        if (to < 0 || to >= bars.length) return;
+        e.preventDefault();
+        bars[at].tabIndex = -1; bars[to].tabIndex = 0; bars[to].focus();
+      };
       yearsSec.replaceChildren(...[
         yp.title ? h("div", { class: "rr-sec-head" }, h("span", { class: "rr-sec-title", ...P("panel.years.title"), ...L("yearsTitle") }, t("yearsTitle"))) : null,
       h("div", { class: "rr-yearsbox", style: "width:min(100%," + data.length * 28 + "px)" },
-        h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
+        h("div", { class: "rr-bars", style: data.length > 24 ? "gap:1px" : null, role: "group", onKeydown: onBarKey, "aria-label": t("yearsTitle") + ": " + data.map((d) => d.year + " " + d.total).join(", ") + (older ? ". " + olderNote : "") },
           ...data.map((d) => {
             const isSelected = m.filters.yearStart === d.year && m.filters.yearEnd === d.year;
             const disabled = !d.total && !isSelected;                          // (a pressed bar can always be released)
             return h("button", {
               class: "rr-bar", type: "button", "data-year": String(d.year), "aria-pressed": String(isSelected),
-              disabled: disabled ? true : null, tabindex: disabled ? "-1" : null,
+              disabled: disabled ? true : null, tabindex: !disabled && String(d.year) === stop ? "0" : "-1",
               "aria-label": String(d.year) + ": " + (d.total ? String(d.total) : "0"),
               title: [String(d.year), ...B.prefs.ROLES.filter((r) => d[r]).map((r) => t(names[r]) + ": " + d[r])].join("\n"),
               onClick: () => {
@@ -706,6 +721,7 @@
               ...B.prefs.ROLES.filter((r) => d[r]).map((r) => h("i", { style: "flex:" + d[r] + ";background:" + ROLE_COLOR[r] }))));
           })),
         yp.axis ? h("div", { class: "rr-bars-axis", ...P("panel.years.axis") }, h("span", { title: older ? olderNote : null }, String(data[0].year)), h("span", {}, String(data[data.length - 1].year))) : null)].filter(Boolean));
+      if (focusedYear) { const again = yearsSec.querySelector('button.rr-bar[data-year="' + focusedYear + '"]:not([disabled])'); if (again) again.focus({ preventScroll: true }); }
     }
 
     // The venues the highlighted papers appear in, most frequent first; click one to list its papers
