@@ -12,7 +12,7 @@ scripts/verify.mjs    every language has every string, every link resolves, lang
 scripts/deploy.sh     build + verify + publish to the gh-pages branch (no CI needed)
 scripts/render-assets.mjs   dev tool: apple-touch-icon.png and og.png
 scripts/axe-audit.mjs       dev tool: axe-core accessibility audit of the built pages
-scripts/check-page.mjs      dev tool: the "Try" section and the export samples in a browser (no sideways scroll from a phone up, the keyboard gets out of the frame, ...)
+scripts/check-page.mjs      dev tool: the "Try" section and the export samples in a browser (no sideways scroll from a phone up, no word cut in two on a phone in any language, the keyboard gets out of the frame, ...)
 scripts/serve.mjs           a small static server for _site, for the two tools above (the demo needs http, not file://)
 ```
 

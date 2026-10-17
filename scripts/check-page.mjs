@@ -6,7 +6,7 @@
 //
 // What a layout screenshot cannot say: the frame does not make the page wider (phone, tablet, right to left), the page does not scroll by itself when
 // the frame loads or when something inside it opens, the keyboard can get out of the frame (Tab, and the skip link), the frame has its name, the page
-// inside is in the page's language and dark when the page is, the export tabs and the copy button work, and nothing logs an error.
+// inside is in the page's language and dark when the page is, the export tabs and the copy button work, on a phone no word of any page is cut in two (30 languages), and nothing logs an error.
 import { createRequire } from "node:module";
 import assert from "node:assert/strict";
 import path from "node:path";
@@ -158,6 +158,37 @@ try {
     await context.close();
   }
   ok("the export tabs work by mouse and by keys, and the button copies what is shown");
+
+  // -- a phone: in every language no word of a page is cut in two by the end of a line (a text squeezed beside something, a button, a badge) and the page does not scroll sideways
+  {
+    const languages = JSON.parse((await import("node:fs")).readFileSync(path.join(site, "src", "languages.json"), "utf8")).map((l) => l.code);
+    const cut = [];
+    for (const width of [390, 320]) {
+      const context = await browser.newContext({ viewport: { width, height: 900 } });
+      const page = await context.newPage();
+      for (const lang of languages) for (const sub of ["", "privacy/"]) {
+        await page.goto(`${origin}/${lang}/${sub}`, { waitUntil: "load" });
+        const r = await page.evaluate(() => {
+          const WORD = /[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f][A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f.'’]{4,}/g;
+          const range = document.createRange(), words = new Set(), d = document.documentElement;
+          for (const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); walker.nextNode();) {
+            const node = walker.currentNode, el = node.parentElement;
+            if (!el || ["SCRIPT", "STYLE", "CODE", "PRE"].includes(el.tagName) || el.closest("pre, code, iframe, [hidden]") || !el.getClientRects().length || getComputedStyle(el).visibility === "hidden") continue;
+            for (const m of node.data.matchAll(WORD)) {
+              if (m[0].length >= 16 && d.clientWidth <= 330) continue;          // (a compound of 16 letters or more is cut on a phone whatever the page does)
+              range.setStart(node, m.index); range.setEnd(node, m.index + m[0].length);
+              if (new Set([...range.getClientRects()].filter((q) => q.width > 0.5).map((q) => Math.round(q.top / 4))).size > 1) words.add(m[0]);
+            }
+          }
+          return { sideways: d.scrollWidth - d.clientWidth, words: [...words] };
+        });
+        if (r.sideways > 1 || r.words.length) cut.push(`${lang}/${sub}@${width}: ${r.sideways > 1 ? `sideways ${r.sideways}px; ` : ""}${r.words.join(", ")}`);
+      }
+      await context.close();
+    }
+    assert.deepEqual(cut, [], "on a phone:\n" + cut.join("\n"));
+  }
+  ok("on a phone (390 and 320 px) no word of any page, in any of the 30 languages, is cut in two and no page scrolls sideways");
 
   // -- no error anywhere
   assert.deepEqual(problems, [], "errors:\n" + problems.join("\n"));
