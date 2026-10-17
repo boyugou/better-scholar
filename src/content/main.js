@@ -80,9 +80,11 @@
       state.rows.push({ raw, a: analyzeRaw(raw), highlighted: false });
       added = true;
     }
+    const before = state.rows.length;
     state.rows = state.rows.filter((r) => r.raw.tr.isConnected);
+    const removed = state.rows.length !== before;          // (the owner deleting an article of the profile: Scholar takes its row away)
     if (added && updateHints()) reanalyze();
-    return added;
+    return added || removed;
   }
 
   // ---- duplicates: with the setting on, an entry that repeats another is hidden and the most cited one shows the total -------------
@@ -659,7 +661,21 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     clearTimeout(completeTimer);
     completeTimer = setTimeout(() => { if (!state.loadingAll && !state.complete && !B.scholar.canLoadMore()) { state.complete = true; refresh(); } }, 1800);
   };
-  if (tbody) new MutationObserver(() => { if (ingest()) { scheduleRefresh(); checkComplete(); } }).observe(tbody, { childList: true });
+  // The rows come, go, or the whole body of the table is swapped for another (a re-render): the body being watched is looked for again whenever the table's own children change.
+  const onRows = () => { if (ingest()) { scheduleRefresh(); checkComplete(); } };
+  let watchedBody = null, rowObserver = null;
+  const watchBody = () => {
+    const body = B.scholar.tbody();
+    if (!body || body === watchedBody) return;
+    watchedBody = body;
+    if (rowObserver) rowObserver.disconnect();
+    rowObserver = new MutationObserver(onRows);
+    rowObserver.observe(body, { childList: true });
+  };
+  if (tbody) {
+    watchBody();
+    if (tbody.parentElement) new MutationObserver(() => { watchBody(); onRows(); }).observe(tbody.parentElement, { childList: true });
+  }
   // (a window that becomes narrow or wide moves the panel above / beside the list; its sections are arranged for that layout, so they are drawn again)
   window.addEventListener("resize", frame(() => {
     const was = panel.el.classList.contains("rr-wide");
@@ -671,7 +687,9 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
   // own (its menus and dialogs keep the key), so only a key pressed on the page itself or in the panel counts.
   window.addEventListener("keydown", (e) => {
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
-    const el = e.target instanceof Element ? e.target : document.body;
+    // (a key typed into a field of a shadow tree — another extension's widget on the page — is retargeted to the tree's host: the field itself is the first of its path)
+    const target = (e.composedPath && e.composedPath()[0]) || e.target;
+    const el = target instanceof Element ? target : document.body;
     const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
     if (e.key === "/" && !typing) {
       if (!prefs.panel.show || !prefs.panel.filters.show || !prefs.panel.filters.search) return;

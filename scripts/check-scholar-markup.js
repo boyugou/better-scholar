@@ -18,6 +18,7 @@
     ["#gsc_a_b tr.gsc_a_tr td.gsc_a_t .gs_gray", "…its author and venue lines (two per row)", "rows2"],
     ["#gsc_a_b tr.gsc_a_tr td.gsc_a_y", "…its year", "rows"],
     ["#gsc_a_b tr.gsc_a_tr td.gsc_a_c", "…its citation count", "rows"],
+    [".gsc_a_e", "the message row of a profile with no articles (only there)", "maybe"],
     ["#gsc_bpf_more", "the Show more button", "some"],
     ["#gsc_a_tw", "the paper table's wrapper", "some"],
     ["#gsc_a_t", "the paper table (the panel is placed by it when the wrapper is missing)", "some"],

@@ -16,7 +16,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 // like Scholar: disabled while it loads, disabled for good when nothing is left. `answers`: how many presses are answered at all;
 // `silent`: presses (counted from 1) that bring no rows; `lateEnable`: the button comes back this many ms after the rows do.
 function page({ first = 3, batches = [3, 3], answers = Infinity, silent = [], lateEnable = 0, hidden = false, noButton = false } = {}) {
-  const rows = Array.from({ length: first }, (_, i) => ({ i }));
+  const rows = Array.from({ length: first }, (_, i) => ({ i, querySelector: () => null }));          // (a row has no empty-profile message in it)
   const queue = batches.slice();
   const btn = {
     disabled: queue.length === 0, presses: 0, pressedAt: [],
@@ -26,7 +26,7 @@ function page({ first = 3, batches = [3, 3], answers = Infinity, silent = [], la
       setTimeout(() => {
         if (this.presses > answers || silent.includes(this.presses)) { this.disabled = false; return; }   // no answer: the button comes back, no rows do
         const n = queue.shift() || 0;
-        for (let i = 0; i < n; i++) rows.push({ i: rows.length });
+        for (let i = 0; i < n; i++) rows.push({ i: rows.length, querySelector: () => null });
         const more = queue.length > 0;
         if (lateEnable && more) setTimeout(() => { this.disabled = false; }, lateEnable); else this.disabled = !more;
       }, 5);
@@ -137,12 +137,12 @@ test("a press still in flight is not the end of the list: a late answer after a 
   const slow = page({ first: 3, batches: [3, 3] });
   const origClick = slow.btn.click;
   // an answer slower than rowTimeout: the button stays disabled past the timeout
-  slow.btn.click = function () { this.presses++; this.disabled = true; setTimeout(() => { for (let i = 0; i < 3; i++) slow.rows.push({}); this.disabled = false; }, 200); };
+  slow.btn.click = function () { this.presses++; this.disabled = true; setTimeout(() => { for (let i = 0; i < 3; i++) slow.rows.push({ querySelector: () => null }); this.disabled = false; }, 200); };
   assert.equal(await loadAll({ timing: { ...FAST, rowTimeout: 60, regrace: 40 }, maxStalls: 2 }), "stalled");
   void origClick;
   const busy = page({ first: 3, batches: [3] });
   busy.btn.disabled = true;                          // a press by the user is in flight when the loader looks
-  setTimeout(() => { busy.rows.push({}, {}, {}); busy.btn.disabled = true; }, 20);
+  setTimeout(() => { busy.rows.push({ querySelector: () => null }, { querySelector: () => null }, { querySelector: () => null }); busy.btn.disabled = true; }, 20);
   const r = loadAll({ timing: { ...FAST, regrace: 100 } });
   setTimeout(() => { busy.btn.disabled = false; }, 40);
   assert.equal(await r, "done");

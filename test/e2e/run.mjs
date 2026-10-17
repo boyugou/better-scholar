@@ -2922,5 +2922,57 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctx10.close(); await fx10.close(); }
   }
 
+  // -- 32. the page changes under the panel: an article taken away (the owner deleting it from the profile), the whole body of the table swapped, a profile with no articles, a key typed in another extension's shadow field
+  {
+    const fx12 = await start({ slug: "ion-stoica", pageSize: 100, latency: 0 });
+    const ctx12 = await launch();
+    try {
+      const page = await ctx12.newPage();
+      await page.goto(fx12.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1 && document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100);
+      assert.deepEqual(await readMatrix(page), matrixOf(expected(fx12.profile)), "the panel starts out right");
+      // three articles taken away: the table follows
+      await page.evaluate(() => { for (const tr of [...document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")].slice(0, 3)) tr.remove(); });
+      await eventually(page, () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 97);
+      const rest = { owner: fx12.profile.owner, rows: fx12.profile.rows.slice(3) };
+      const waitMatrix = async () => { for (let i = 0; i < 60; i++) { const m = JSON.stringify(await readMatrix(page)); if (m === JSON.stringify(matrixOf(expected(rest)))) return true; await page.waitForTimeout(100); } return false; };
+      assert.ok(await waitMatrix(), "three rows taken away from the page are taken out of the table");
+      // the whole body of the table swapped for a copy, and a row added to the new one
+      await page.evaluate(() => {
+        const old = document.getElementById("gsc_a_b"), body = old.cloneNode(true);
+        old.replaceWith(body);
+        const tr = body.lastElementChild.cloneNode(true);
+        tr.querySelector("a.gsc_a_at").href = tr.querySelector("a.gsc_a_at").href.replace(/citation_for_view=[^&]+/, "citation_for_view=TEST:PNEW");
+        body.appendChild(tr);
+      });
+      const grown = { owner: fx12.profile.owner, rows: [...rest.rows, fx12.profile.rows[99]] };
+      const waitGrown = async () => { for (let i = 0; i < 60; i++) { const m = JSON.stringify(await readMatrix(page)); if (m === JSON.stringify(matrixOf(expected(grown)))) return true; await page.waitForTimeout(100); } return false; };
+      assert.ok(await waitGrown(), "a row added to a swapped body is read too");
+      // a key typed in a field inside a shadow tree is that field's, not the panel's search
+      await page.evaluate(() => { const host = document.createElement("div"); host.id = "shadow-host"; document.body.appendChild(host); const root = host.attachShadow({ mode: "open" }); const input = document.createElement("input"); input.id = "shadow-input"; root.appendChild(input); });
+      await page.evaluate(() => document.getElementById("shadow-host").shadowRoot.getElementById("shadow-input").focus());
+      await page.keyboard.type("a/b");
+      assert.equal(await page.evaluate(() => document.getElementById("shadow-host").shadowRoot.getElementById("shadow-input").value), "a/b", "the slash is typed into the field of the shadow tree");
+      assert.equal(await page.evaluate(() => document.activeElement && document.activeElement.id), "shadow-host", "and the focus stays in it");
+    } finally { await ctx12.close(); await fx12.close(); }
+    // a profile with no articles: Scholar's message is no paper
+    const fxE = await start({ slug: "ion-stoica", pageSize: 100, rows: [], latency: 0 });
+    const ctxE = await launch();
+    try {
+      const page = await ctxE.newPage();
+      const errors = [];
+      page.on("pageerror", (e) => errors.push(String(e).slice(0, 200)));
+      await page.goto(fxE.url);
+      await page.waitForSelector("#rr-panel");
+      await page.waitForTimeout(800);
+      assert.equal(await page.locator("#gsc_a_b td.gsc_a_e").count(), 1, "the stand-in shows the message row");
+      assert.doesNotMatch(await page.locator("#rr-panel").innerText(), /\b1 papers?\b|[1-9]\d* papers? loaded/, "the panel does not count the message as a paper");
+      assert.equal(await page.locator("#gsc_a_b tr.gsc_a_tr .rr-chips").count(), 0, "and puts no chips on it");
+      assert.deepEqual(errors, []);
+    } finally { await ctxE.close(); await fxE.close(); }
+    ok("the page changes under the panel: an article taken away, the body of the table swapped (and a row added to it), a profile with no articles (its message is no paper), a slash typed in a shadow field is that field's");
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

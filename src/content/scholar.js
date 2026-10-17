@@ -13,7 +13,8 @@
   }
   const ownerName = () => (($("#gsc_prf_in") || {}).textContent || "").trim();
   const tbody = () => $("#gsc_a_b");
-  const rowElements = () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr"));
+  // (the message of a profile with no articles — "There are no articles in this profile." — is a row of the table too, and no paper)
+  const rowElements = () => Array.from(document.querySelectorAll("#gsc_a_b tr.gsc_a_tr")).filter((tr) => !tr.querySelector("td.gsc_a_e"));
   const showMoreButton = () => $("#gsc_bpf_more");
 
   // Text of an element without anything this extension appended to it. Scholar's DOM puts a no-break space
@@ -92,9 +93,9 @@
   // Milliseconds: between presses (plus up to `jitter`), how long a press may take to bring rows, how long to wait for the button to
   // come back after a batch. Overridable (`timing`) so that the loader can be tested without waiting nine seconds.
   // One automatic run at a time per browser: tabs of the same Scholar origin share localStorage, so a run takes a short-lived lock before each press
-  // (several visible windows would otherwise press in parallel). A lock nobody renews for a few seconds is stale.
+  // (several visible windows would otherwise press in parallel). A lock nobody renews for twelve seconds is stale (a press may wait nine for its rows, and the lock is renewed once per press).
   const LOCK = "rr-load-lock", me = Math.random().toString(36).slice(2);
-  const lockFree = () => { try { const l = JSON.parse(localStorage.getItem(LOCK) || "null"); return !l || l.id === me || Date.now() - l.t > 5000; } catch (e) { return true; } };
+  const lockFree = () => { try { const l = JSON.parse(localStorage.getItem(LOCK) || "null"); return !l || l.id === me || Date.now() - l.t > 12000; } catch (e) { return true; } };
   const takeLock = () => { try { localStorage.setItem(LOCK, JSON.stringify({ id: me, t: Date.now() })); } catch (e) { /* no storage: no lock */ } };
   const dropLock = () => { try { const l = JSON.parse(localStorage.getItem(LOCK) || "null"); if (l && l.id === me) localStorage.removeItem(LOCK); } catch (e) { /* gone */ } };
 

@@ -59,7 +59,7 @@ function profilePage(profile, opts) {
 <div id="gs_top"><div id="gs_bdy"><div id="gsc_bdy">
 <div id="gsc_prf"><div id="gsc_prf_i"><div id="gsc_prf_in">${esc(opts.header || profile.owner)}</div></div></div>
 <div class="gsc_rsb"><div id="gsc_rsb_cit" class="gsc_rsb_s gsc_prf_pnl"><div class="gsc_rsb_head">Cited by</div><table id="gsc_rsb_st"><tr><td>All</td><td>100000</td></tr><tr><td>h-index</td><td>100</td></tr></table><div class="gsc_md_hist_b">histogram</div></div><div id="gsc_rsb_mnd" class="gsc_rsb_s gsc_prf_pnl">Public access</div><div id="gsc_rsb_co" class="gsc_rsb_s gsc_prf_pnl">Co-authors</div></div>
-<div id="gsc_a_tw"><table id="gsc_a_t"><thead><tr><th>TITLE</th><th>CITED BY</th><th>YEAR</th></tr></thead><tbody id="gsc_a_b">${first.map(rowHtml).join("")}</tbody></table>
+<div id="gsc_a_tw"><table id="gsc_a_t"><thead><tr><th>TITLE</th><th>CITED BY</th><th>YEAR</th></tr></thead><tbody id="gsc_a_b">${first.length ? first.map(rowHtml).join("") : '<tr class="gsc_a_tr"><td colspan="3" class="gsc_a_e">There are no articles in this profile.</td></tr>'}</tbody></table>
 <button id="gsc_bpf_more" type="button"${rest.length ? "" : " disabled"}>Show more</button></div>
 </div></div></div>
 <script>
