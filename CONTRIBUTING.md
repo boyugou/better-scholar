@@ -50,6 +50,25 @@ badge's?* · *how many of the string's words are outside the venue's names?* · 
 a track word after it), come out as itself or as nothing — never as another venue?* Anything that changes a badge goes
 through steps 3 and 4 above.
 
+Three independent sources of real publisher strings found most of the later mistakes (all public and free; send no e-mail
+address, never go round a bot check — DBLP's Anubis page is one):
+
+- **OpenAlex** conference sources (`/sources?filter=type:conference`, about 12,000, with the alternate titles of each): the
+  titles of one source are one venue, so a title that reads as another venue, or as none while the rest of its source does,
+  is a mistake or a gap; and *which titles get a badge although they hold words that are not the badge's venue's own?* found
+  a regional conference read as the main one, a book read as a journal and a section of SIGGRAPH read as the papers.
+- **Crossref** `/works?filter=type:proceedings-article&sample=100` (twelve thousand random container titles, 14 % ranked) and
+  `?query.container-title=<official name>` per ranked venue (the closest titles of each, in every spelling the publishers use):
+  *is the title close to the venue's name but unbadged, or badged as another venue?*
+- **The real corpus itself**: *which unbadged lines begin with, or contain, a ranked venue's whole official name?* and *which
+  mention a ranked acronym in capitals?* — most are right (another journal, a workshop), the rest are the gaps (an article
+  number where the pages would be, a former name, a series suffix).
+
+Every rule added after such a finding had a side effect somewhere else at least once (a series strip that made a journal's
+title a badge, an extension rule that refused a name CORE words differently): run the snapshot diff, the OpenAlex
+old-versus-new differential and a generated sweep of every official name in several forms before the commit, and ask an
+independent reviewer to read the diff.
+
 ## Adding a setting
 
 The settings are one table, `SETTINGS` in `src/lib/prefs.js`. Defaults, validation (`normalize`), patches
