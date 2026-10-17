@@ -735,7 +735,7 @@
     "message": "مسح"
   },
   "filterMinCites": {
-    "message": "≥$N1$ استشهاد",
+    "message": "\u2066≥$N1$\u2069 استشهاد",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -757,7 +757,7 @@
     }
   },
   "tipFilterH": {
-    "message": "تصفية لأبحاث النواة h (≥$N1$ استشهاد)",
+    "message": "تصفية لأبحاث النواة h (\u2066≥$N1$\u2069 استشهاد)",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -765,7 +765,7 @@
     }
   },
   "tipFilterI10": {
-    "message": "تصفية لأبحاث i10 (≥10 استشهادات)"
+    "message": "تصفية لأبحاث i10 (\u2066≥10\u2069 استشهادات)"
   },
   "popupPapersOf": {
     "message": "الأوراق: $N1$ من $N2$",
