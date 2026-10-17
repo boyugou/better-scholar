@@ -1842,6 +1842,8 @@ test("a bare acronym with its year glued on (\"ASE'19\", \"ICLR2020\") is the ev
   eq("NeurIPS24 Datasets Track, 2024", "CCF A NeurIPS · CORE A* NeurIPS");
   eq("NeurIPS'21 and arXiv preprint arXiv:2102.12470, 2021", "CCF A NeurIPS · CORE A* NeurIPS");
   eq("C&C2019", "CORE B C&C");          // (not CCF's Compiler Construction: "CC")
+  // an acute accent, a grave accent or a prime between the acronym and its year is the apostrophe (real prints: "NANOARCH´15", "NT+ME`24")
+  for (const mark of ["\u00b4", "`", "\u2032", "\u02b9", "\u2019"]) { eq(`NDSS${mark}19`, "CCF A NDSS · CORE A* NDSS"); eq(`ASE${mark}19`, "CCF A ASE · CORE A* ASE"); }
   eq("SC18", "CCF A SC · CORE A SC");
   // every acronym of the lists: where the spaced form names a venue, the glued form names the same one (it may name more: "Mobisys'19" has the shape of an acronym with its year, "Mobisys '19" does not)
   const abbrs = new Set([...ccf.venues.filter((v) => v.kind === "C").map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter((a) => a && a.length > 1 && !/\s/.test(a)));
