@@ -2,8 +2,9 @@
 // award-winning paper by its full title and the first author's surname. Pure, no DOM.
 //
 // Precision first: the title must be identical once case, accents and punctuation are ignored,
-// AND the award's first author must be among the row's authors. A near title, a similar surname or a
-// shared venue is never enough. The list only knows the paper awards of the venues and years it covers
+// AND the award's first author must be among the row's authors, AND the row's year must fit the award's
+// (a conference's award: that year or the next; a test-of-time award: the paper is not younger than it).
+// A near title, a similar surname or a shared venue is never enough. The list only knows the paper awards of the venues and years it covers
 // (best papers of the main conferences, test-of-time awards); a paper that is not on it simply has no mark.
 (function (root, factory) {
   const api = factory(
@@ -42,14 +43,18 @@
       if (!byTitle.has(k)) byTitle.set(k, []);
       byTitle.get(k).push({ s, v, y, a, l: l || "" });
     }
-    // fields: { title, authorsText } — authorsText is the list view's text, or a paper page's full list
-    function lookup({ title, authorsText }) {
+    // A row's year is the year of its publication: the award of a conference is for a paper of that year's event (one more for the proceedings that come out after it), and a test-of-time
+    // award is for a paper that is older than the award. A row of another year is another publication of the same title — the journal version of a conference's best paper.
+    const yearFits = (h, year) => (h.a === "tot" ? year <= h.y : Math.abs(year - h.y) <= 1);
+    // fields: { title, authorsText, year? } — authorsText is the list view's text, or a paper page's full list; year: the row's own (none: no check)
+    function lookup({ title, authorsText, year }) {
       const hits = byTitle.get(titleKey(title));
       if (!hits) return [];
       const authors = new Set(names.parseAuthors(authorsText || "").tokens.map((t) => surnameKey(t.name)));
       const out = [];
       for (const h of hits) {
         if (!authors.has(h.s)) continue;
+        if (Number.isFinite(year) && !yearFits(h, year)) continue;
         out.push({ kind: KIND[h.a], venue: h.v, year: h.y, awardLabel: h.l });
       }
       return out;

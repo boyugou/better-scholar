@@ -43,7 +43,7 @@
       // bundled list when one is given (ctx.awards, awards.js)
       marks: marks.merge(
         marks.detect({ title: raw.title, venue: [venueText, resolved && resolved.venue] }, { venueWord: ctx.venueWord }),
-        ctx.awards ? ctx.awards.lookup({ title: raw.title, authorsText }) : [])
+        ctx.awards ? ctx.awards.lookup({ title: raw.title, authorsText, year: raw.year }) : [])
     };
   }
 

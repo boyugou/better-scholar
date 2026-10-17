@@ -38,17 +38,23 @@
   const S = "[-\\s]";   // separator inside a phrase: "best paper", "best-paper"
   // Order matters: a lesser honour is tried before the award it contains, and a span that
   // is already taken is never read twice ("Best Paper Runner-up" is not "Best Paper").
+  // (the qualifiers a best paper takes: "Best Student Paper", "Best Research Paper"; a runner-up or a finalist of any of them is that, not the award itself)
+  const Q = `(?:(?:student|short|long|full|research|main${S}track|application|applied|systems?|theory|industry|dataset|resource)${S})*`;
+  const BEST = `(?:best|outstanding|distinguished)${S}${Q}paper(?:${S}awards?)?(?:\\s\\([^()]{1,40}\\))?`;          // (… "Best Paper Awards", "Best Paper (AI for Social Impact track)")
+  const RUNNER = `(?:runner${S}?ups?|honou?rable${S}mentions?)`;
+  const FINAL = `(?:finalists?|nominees?|nominations?|candidates?)`;
+  const FOR = `(?:${S}(?:for|of|in)|,)?${S}(?:the${S})?`;          // "Honorable Mention for Best Paper", "Runner-up, Best Paper Award", "Nominee for the Best Paper Award"
   const PHRASES = [
     { kind: "finalist", label: "Best paper finalist",
-      re: new RegExp(`\\b(?:best${S}paper${S}(?:award${S})?(?:finalists?|nominees?|nominations?|candidates?)|(?:award|best${S}paper)${S}(?:finalist|nominee|candidate)|(?:nominated|shortlisted)${S}for${S}(?:the${S})?best${S}paper(?:${S}award)?|award${S}candidates?)\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${S}${FINAL}|(?:award${S})?${FINAL}${FOR}${BEST}|(?:nominated|shortlisted)${S}for${S}(?:the${S})?${BEST}|(?:best${S}paper|award)${S}(?:finalist|nominee|candidate)|award${S}candidates?)\\b`, "gi") },
     { kind: "runner-up", label: (m) => (/runner/i.test(m) ? "Best paper runner-up" : "Honorable mention"),
-      re: new RegExp(`\\b(?:(?:best|outstanding|distinguished)${S}paper${S}(?:award${S})?(?:runner${S}?up|honou?rable${S}mention)|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|runner${S}?up${S}(?:for${S})?(?:the${S})?best${S}paper|honou?rable${S}mention(?:${S}award)?)\\b`, "gi") },
-    { kind: "best-student", label: "Best student paper", re: new RegExp(`\\bbest${S}student${S}paper(?:${S}award)?\\b`, "gi") },
+      re: new RegExp(`\\b(?:${BEST}${S}${RUNNER}|(?:second|2nd|third|3rd)${S}best${S}paper(?:${S}award)?|${RUNNER}${FOR}${BEST}|test${S}of${S}time(?:${S}paper)?(?:${S}award)?${S}${RUNNER}|honou?rable${S}mentions?(?:${S}award)?)\\b`, "gi") },
+    { kind: "best-student", label: "Best student paper", re: new RegExp(`\\b(?:best|outstanding)${S}student${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best short paper", re: new RegExp(`\\bbest${S}short${S}paper(?:${S}award)?\\b`, "gi") },
     { kind: "best", label: "Best paper",
       re: new RegExp(`\\bbest${S}(?:(?:long|full|research|main${S}track|application|applied|systems?|theory|industry|dataset|resource)${S})?paper(?:${S}award)?\\b`, "gi") },
     { kind: "outstanding", label: "Outstanding paper",
-      re: new RegExp(`\\boutstanding${S}(?:(?:student|long|short|main${S}track|research)${S})*paper(?:${S}award)?\\b`, "gi") },
+      re: new RegExp(`\\boutstanding${S}(?:(?:long|short|main${S}track|research)${S})*paper(?:${S}award)?\\b`, "gi") },
     { kind: "distinguished", label: "Distinguished paper", re: new RegExp(`\\bdistinguished${S}(?:student${S})?paper(?:${S}award)?\\b`, "gi") },
     { kind: "tot", label: "Test of time",
       re: new RegExp(`\\b(?:test${S}of${S}time(?:${S}(?:paper${S})?award)?|most${S}influential${S}paper(?:${S}award)?|(?:10|ten)${S}years?${S}(?:most${S}influential|test${S}of${S}time)(?:${S}paper)?(?:${S}award)?|classic${S}paper${S}award)\\b`, "gi") },
@@ -57,7 +63,7 @@
     { kind: "spotlight", label: "Spotlight", talk: true, re: /\bnotable[-\s]top[-\s]?25\s*%/gi },
     { kind: "oral", label: "Oral", talk: true, re: new RegExp(`\\b(?:(?:long|short|full)${S})?oral(?:${S}(?:presentation|paper|talk|session|track))?\\b`, "gi") },
     { kind: "spotlight", label: "Spotlight", talk: true, re: new RegExp(`\\bspotlight(?:${S}(?:presentation|paper|talk|track|poster))?\\b`, "gi") },
-    { kind: "highlight", label: "Highlight", talk: true, re: new RegExp(`\\bhighlights?(?:${S}(?:paper|presentation|poster))?\\b`, "gi") }
+    { kind: "highlight", label: "Highlight", talk: true, re: new RegExp(`\\bhighlight(?:${S}(?:paper|presentation|poster))?\\b|\\bhighlights${S}(?:paper|presentation|poster)s?\\b`, "gi") }
   ];
 
   const SPACES = /[   -​  　]/g;
@@ -149,9 +155,11 @@
   // Combine what the author wrote with what the award list says. The list wins where both name the same
   // kind (it is the better evidence) but remembers the author's words in `declared`.
   //   listed: [{ kind, venue, year, awardLabel }]  →  [{ kind, group, label, source, … }], most notable first
+  const TOP = new Set(["best", "best-student", "outstanding", "distinguished", "best-category"]);
   function merge(declared, listed) {
     const byKind = new Map();
     for (const m of declared || []) byKind.set(m.kind, m);
+    if ((listed || []).some((m) => TOP.has(m.kind))) byKind.delete("finalist");          // (a paper the list says won is no mere finalist, whatever its authors typed)
     for (const m of listed || []) {
       const prev = byKind.get(m.kind);
       byKind.set(m.kind, {

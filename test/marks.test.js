@@ -186,3 +186,36 @@ test("talk rows: apart by default, spotlight + highlight together, or all three 
   assert.deepEqual(marks.summarize(papers, "talks"), { award: 1, "oral+spotlight+highlight": 5 });
   assert.ok(marks.inGroup(P("highlight"), "spotlight+highlight") && !marks.inGroup(P("oral"), "spotlight+highlight") && marks.inGroup(P("oral"), "oral+spotlight+highlight"));
 });
+
+test("a runner-up, an honorable mention or a finalist of any best paper is that, never the award itself (the nineteenth review: 358 of 7,830 official labels read as another kind)", () => {
+  for (const [text, want] of [
+    ["KDD 1997 Best Research Paper Runner-up", "runner-up"], ["KDD 2005 Best Student Paper Runner-up", "runner-up"], ["SIGMM 2020 Test of Time Paper Award Honorable Mention", "runner-up"],
+    ["CVPR 2020 Best Paper Honorable Mentions", "runner-up"], ["CHI 2019 Honorable Mention for Best Paper", "runner-up"], ["KDD 2020 Runner-up, Best Paper Award", "runner-up"],
+    ["Best Paper Awards Honorable Mention", "runner-up"], ["Best Paper (AI for Social Impact track) Honorable Mention", "runner-up"], ["Second Best Paper", "runner-up"],
+    ["ICASSP 2020, Best Student Paper Finalist", "finalist"], ["CHI 2020 Nominee for the Best Paper Award", "finalist"], ["Finalist for Best Paper", "finalist"], ["Best Paper Award Finalist", "finalist"],
+    ["Outstanding Student Paper", "best-student"], ["Best Student Paper Award", "best-student"], ["Best Paper Award", "best"], ["Best Short Paper", "best"], ["CVPR 2016 Best Paper Award", "best"],
+    ["Outstanding Paper Award", "outstanding"], ["Distinguished Paper Award", "distinguished"], ["Test of Time Award", "tot"]
+  ]) assert.deepEqual(venue(text), [want], text);
+  // the bundled list's own labels, typed as an author would type them: none reads as the other side
+  const awards = require("../src/lib/awards.js"), data = require("../src/data/awards.js");
+  const top = new Set(["best", "best-student", "outstanding", "distinguished", "best-category", "tot"]);
+  const wrong = [];
+  for (const [, , v, y, a, l] of data.items) {
+    const found = venue(`${v} ${y} ${l || ""}`.trim());
+    if (a === "runner-up" ? found.some((k) => top.has(k)) : found.length && found.every((k) => k === "runner-up" || k === "finalist")) wrong.push(`${a}: ${l} → ${found.join("+")}`);
+  }
+  assert.deepEqual(wrong.slice(0, 10), [], `${wrong.length} labels read as the other side`);
+  assert.ok(awards.KIND);
+});
+
+test("'Highlights' in a name is no Highlight talk; a paper the list says won is no mere finalist", () => {
+  assert.deepEqual(venue("Full papers, feature articles, highlights"), []);
+  assert.deepEqual(venue("Proceedings & Highlights - Emerging Tech Conference Edge Intelligence 2024"), []);
+  assert.deepEqual(venue("ICLR 2020 (Highlight)"), ["highlight"]);
+  assert.deepEqual(venue("CVPR 2021 Highlights Paper"), ["highlight"]);
+  const declared = marks.detect({ venue: "CVPR 2016 Best Paper Award Finalist" });
+  assert.deepEqual(declared.map((m) => m.kind), ["finalist"]);
+  assert.deepEqual(marks.merge(declared, [{ kind: "best", venue: "CVPR", year: 2016, awardLabel: "Best Paper" }]).map((m) => m.kind), ["best"]);
+  assert.deepEqual(marks.merge(declared, [{ kind: "runner-up", venue: "CVPR", year: 2016, awardLabel: "Honorable Mention" }]).map((m) => m.kind).sort(), ["finalist", "runner-up"]);
+});
+

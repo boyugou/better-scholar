@@ -436,3 +436,34 @@ test("the bundled list: no title ends in a sentence full stop some pages leave a
   const bad = data.entries.filter((e) => /[^.]\.$/.test(e.title)).map((e) => `${e.venue} ${e.year} ${e.title}`);
   assert.deepEqual(bad, []);
 });
+
+test("a row of another year is another publication of the same title: the journal version of a best paper gets no award; one year of drift is fine; a test-of-time award goes to a paper not younger than it", () => {
+  const data = require("../src/data/awards.js");
+  const idx = awards.createIndex(data.items);
+  const maskRcnn = (year) => idx.lookup({ title: "Mask R-CNN", authorsText: "K He, G Gkioxari, P Dollár, R Girshick", year }).map((a) => a.kind);
+  assert.deepEqual(maskRcnn(2017), ["best"], "the paper of the award's year");
+  assert.deepEqual(maskRcnn(2018), ["best"], "proceedings that come out a year later");
+  assert.deepEqual(maskRcnn(2020), [], "the TPAMI version of 2020 did not win the ICCV 2017 award");
+  assert.deepEqual(maskRcnn(2012), [], "nor does a paper of five years before");
+  assert.deepEqual(maskRcnn(null), ["best"], "a row with no year is not asked");
+  assert.deepEqual(maskRcnn(undefined), ["best"]);
+  // a test-of-time award: the paper is older than the award, never younger
+  const tot = data.items.find((it) => it[4] === "tot" && it[3] >= 2015);
+  assert.ok(tot, "the list has test-of-time awards");
+  const [key, surname, , awardYear] = tot, entry = { key, surname, year: awardYear };
+  const find = (year) => idx.lookup({ title: key, authorsText: `A ${surname.charAt(0).toUpperCase() + surname.slice(1)}`, year }).filter((a) => a.kind === "tot");
+  assert.equal(find(awardYear - 10).length >= 1, true, JSON.stringify(entry));
+  assert.equal(find(awardYear + 3).length, 0, "a paper younger than its test-of-time award is another paper");
+  // the duplicates of the official pages: one paper listed for two years — the row's year picks one
+  const fast = (year) => idx.lookup({ title: "Fast Image Search for Learned Metrics", authorsText: "P Jain, B Kulis, K Grauman", year }).map((a) => a.year);
+  assert.deepEqual(fast(2008), [2008]);
+  assert.deepEqual(fast(2006), [2006]);
+});
+
+test("the ICSE 2008 distinguished paper is found under its whole title (the page ran it into the author list)", () => {
+  const data = require("../src/data/awards.js");
+  const idx = awards.createIndex(data.items);
+  const found = idx.lookup({ title: "Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach", authorsText: "J Ruthruff, J Penix, D Morgenthaler, S Elbaum, G Rothermel", year: 2008 });
+  assert.deepEqual(found.map((a) => [a.kind, a.venue, a.year]), [["distinguished", "ICSE", 2008]]);
+});
+
