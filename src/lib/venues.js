@@ -1082,7 +1082,7 @@
   const trackCore = (text, target) => wordsOf(String(text).replace(/\b(?:proceedings?|proc\.?)\s+(?:of\s+)?(?:the\s+)?/gi, " ")).filter((w) => target.includes(w) || KIND_WORDS.has(w) || !(BOILER.has(w) || ORG.has(w) || SEQ_DROP.has(w) || isNoiseToken(w)));
   // a name and the names its notes give: "Privacy Enhancing Technologies Symposium (was International Workshop of Privacy Enhancing Technologies)"
   const nameParts = (n) => [n.replace(/\([^()]*\)/g, " "), ...Array.from(n.matchAll(/\(([^()]*)\)/g), (m) => m[1].replace(/^\s*(?:prior to \d{4}\s+)?(?:was|previously|formerly|aka)\s+/i, "").replace(/\s*[;,]\s*(?:changed|renamed|until)\b.*$/i, ""))];
-  function ownWord(entry, word, raw) {
+  function ownWord(entry, word, raw, whole) {
     const target = wordsOf(word);
     // (the names of the venue itself, not a view of it that a rule narrowed to the names it matched — `through` —, and the names it had)
     const proto = Object.getPrototypeOf(entry) || {};
@@ -1097,7 +1097,7 @@
     // that is the venue's own subject (its words, spelled alike: "Modeling" is "Modelling") or it is another workshop; a cut string shows only the start of its subject, two words of
     // which must begin the subject of one of the venue's names; a venue the list names by a name it had ("renamed") has no official name that says what it is
     const renamed = !!(proto.renamed || entry.renamed);
-    if (holdsWord(wordsOf(String(entry.name).replace(/\([^()]*\)/g, " ")), target) && !(renamed && /\bconference\b/i.test(raw))) {
+    if (!whole && holdsWord(wordsOf(String(entry.name).replace(/\([^()]*\)/g, " ")), target) && !(renamed && /\bconference\b/i.test(raw))) {
       const about = word === "workshop" ? /\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(raw)) : null;
       const subject = about ? canonTokens(about[1], "noOrg") : [];
       const stem = stemOf;
@@ -1204,18 +1204,30 @@
       const badge = (src, e, rule) => src === "ccf"
         ? { tier: e.tier, name: e.name, abbr: e.abbr, area: e.area, kind: e.kind, dblp: e.dblp, rule }
         : { rank: e.rank, name: e.name, abbr: e.abbr, kind: e.kind, rule };          // (CORE ranks conferences: its kind is "C")
+      const take = (src, r) => {
+        out[src] = badge(src, r.entry, r.rule);
+        matched[src] = r.entry;
+        tied[src] = r.tied;
+        clashed[src] = !!r.clashed;
+        weak[src] = !!(r.weak || r.clashed);
+      };
+      const blocked = [];
       for (const src of ["ccf", "core"]) {
         // CORE ranks conferences only: a string CCF identified as a journal is not one
         if (src === "core" && out.ccf && out.ccf.kind === "J") continue;
         const r = matchSource(idx, src, p, hint, idx.known);
         if (!r) continue;
         const blocking = secs.find((w) => !ownWord(r.entry, w, raw));
-        if (blocking) { out.secondary = blocking; out.refused = true; continue; }
-        out[src] = badge(src, r.entry, r.rule);
-        matched[src] = r.entry;
-        tied[src] = r.tied;
-        clashed[src] = !!r.clashed;
-        weak[src] = !!(r.weak || r.clashed);
+        if (blocking) blocked.push({ src, r, blocking });
+        else take(src, r);
+      }
+      // A track word the list's name for the venue lacks is a track of it — unless the string is the whole official name of the other list's row of the same venue, which holds the word: "Workshop" is
+      // what NOSSDAV is to CCF ("International Workshop on Network and Operating System Support for Digital Audio and Video"), and CORE's name for it leaves the word out. ("NOSSDAV Workshops" are tracks.)
+      const wholeName = (e, w) => ownWord(e, w, raw, true);
+      for (const b of blocked) {
+        const other = b.src === "ccf" ? "core" : "ccf";
+        if (matched[other] && (idx.partners.get(realEntry(matched[other])) || []).includes(realEntry(b.r.entry)) && secs.every((w) => ownWord(b.r.entry, w, raw) || wholeName(matched[other], w))) take(b.src, b.r);
+        else { out.secondary = b.blocking; out.refused = true; }
       }
       // The lists read the string by name as two different venues, one from the whole name as it is spelled, the other only once its organisation or an acronym was left out, or against
       // its event word: "IFIP International Information Security Conference" is IFIP's SEC to CCF; CORE's "Information Security Conference" (ISC) needed the IFIP dropped. The whole name is
@@ -1230,8 +1242,9 @@
         if (!matched[from] || out[to] || matched[from].kind === "J" || (p.hasIssue && !CONF_SIGNAL.test(p.plain))) continue;
         // (a pick among venues of one rating — "International Conference on Data Mining": ICDM or SDM — is no venue to carry over, unless the string says the venue's own acronym)
         if (tied[from] && !saysAcronymOf(realEntry(matched[from]))) continue;
+        // (the track words must fit the other row too — or the string is the whole official name of the row that found it: "Workshop" is NOSSDAV's own word to CCF, though CORE's name for the venue leaves it out)
         const rows = idx.partners.get(realEntry(matched[from])) || [];
-        if (rows.length === 1 && !secs.some((w) => !ownWord(rows[0], w, raw))) out[to] = badge(to, rows[0], out[from].rule);
+        if (rows.length === 1 && secs.every((w) => ownWord(rows[0], w, raw) || wholeName(matched[from], w))) out[to] = badge(to, rows[0], out[from].rule);
       }
       // The lists disagree about which venue it is: one found the whole name, the other only an acronym lying in the string
       // ("Proceedings of the AAAI Conference on Human Computation and Crowdsourcing" is HCOMP to CORE; CCF, which does not list

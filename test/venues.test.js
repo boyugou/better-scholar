@@ -1065,7 +1065,7 @@ test("a track at a venue is not the venue: 'Workshop' in a name the venue once h
     "Eurographics Symposium on Rendering Workshops, 2019", "Runtime Verification Workshop, 2019", "PETS Workshop, 2019"]) none(s);
   // ... while the name the venue had, as printed, is the venue
   for (const [s, want] of [["International workshop on artificial intelligence and statistics, 33-40, 2005", "CCF C AISTATS · CORE A AISTATS"], ["Eurographics Workshop on Rendering Techniques, 103-114, 2001", "CCF B EGSR"],
-    ["International Workshop on Privacy Enhancing Technologies, 186-206, 2004", "CORE A PETS"], ["Proceedings of the 12th IEEE Computer Security Foundations Workshop, 192-202, 1999", "CCF B CSFW · CORE A CSF"],
+    ["International Workshop on Privacy Enhancing Technologies, 186-206, 2004", "CCF C PETS · CORE A PETS"], ["Proceedings of the 12th IEEE Computer Security Foundations Workshop, 192-202, 1999", "CCF B CSFW · CORE A CSF"],
     ["11th USENIX Workshop on Hot Topics in Storage and File Systems (HotStorage 19), 2019", "CCF C HotStorage"], ["15th workshop on hot topics in operating systems (HotOS XV), 2015", "CCF B HotOS · CORE A HotOS"]]) assert.equal(brief(s), want, s);
   // every conference of both lists, with a track named in nine ways: a badge only from a row whose own official name holds that track word
   const names = [...ccf.venues.filter((v) => v.kind === "C").map((v) => v.name), ...core.venues.map((v) => v.name)].map((n) => n.replace(/\([^()]*\)/g, " ").replace(/\s+/g, " ").trim()).filter((n) => !venues.secondaryWord(n));          // (a name that holds a track word has said it already)
@@ -1796,5 +1796,31 @@ test("every ranked venue's own official name gets its own list's badge — excep
   assert.deepEqual(other, [], "another venue's badge for a venue's own name");
   // (PACM PL and PACMHCI: papers of POPL, CSCW … in their journal form; ACL: the Anthology's publisher is printed for ACL, NAACL, EMNLP …; IDA: also the journal of that title)
   assert.deepEqual([...new Set(missed)].sort(), ["ccf:PACM PL", "ccf:PACMHCI", "core:ACL", "core:IDA"]);
+});
+
+test("partner rows (one venue under the two lists' names): the official name of either brings the other's row — also where only one list's name holds the track word (NOSSDAV, REFSQ, FSE are 'Workshop's to one list)", () => {
+  const entries = [];
+  for (const side of Object.values(resolver.index.sources)) for (const list of Object.values(side)) entries.push(...list.all);
+  const seen = new Set(), missed = [];
+  for (const e of entries) for (const q of resolver.index.partners.get(e) || []) {
+    const key = [`${e.src}:${e.abbr}`, `${q.src}:${q.abbr}`].sort().join("|");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    for (const [from, to] of [[e, q], [q, e]]) {
+      const n = from.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+      const r = resolver.resolve(n);
+      if (r[from.src] && !r[to.src]) missed.push(`${from.src}:${from.abbr}`);
+    }
+  }
+  assert.ok(seen.size > 280, `${seen.size} partner pairs`);
+  assert.deepEqual(missed, []);
+  // the real strings of NOSSDAV and the old workshop REFSQ: CORE's name for the first and CCF's for the second leave "Workshop" out, and the workshop is the venue, not a track of it
+  for (const s of ["Proceedings of the 33rd Workshop on Network and Operating System Support for Digital Audio and Video", "Proceedings of the 22nd International Workshop on Network and Operating System Support for Digital Audio and Video"])
+    assert.equal(brief(s), "CCF B NOSSDAV · CORE B NOSSDAV");
+  assert.equal(brief("International Workshop on Requirements Engineering: Foundation for Software Quality"), "CCF C REFSQ · CORE B REFSQ");
+  // … but only where the string is the whole official name: a workshop at the venue stays a track, and a cut name or the name followed by "Workshop" is not that name
+  assert.deepEqual([resolver.resolve("AISTATS Workshop on Causality").ccf, resolver.resolve("AISTATS Workshop on Causality").core], [null, null]);
+  for (const s of ["REFSQ Workshops, 2019", "Requirements Engineering: Foundation for Software Quality Workshops, 2019"]) assert.equal(resolver.resolve(s).ccf, null, s);          // (CCF's name for REFSQ lacks "Workshop")
+  assert.equal(resolver.resolve("NOSSDAV Workshops, 2019").core, null);          // (CORE's name for NOSSDAV lacks it)
 });
 
