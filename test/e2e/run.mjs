@@ -441,6 +441,16 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await page.waitForFunction((x) => (document.querySelector("#rr-panel") || {}).getAttribute && document.querySelector("#rr-panel").getAttribute("aria-label") === x, jaTitle, { timeout: 15000 });
     await pollPage(opts, (x) => document.title.startsWith(x), jaTitle, 15000);
     assert.equal(await opts.locator('select[data-pref="language"]').inputValue(), "ja");
+    // ... the filter bar writes a typed query in the language's quotes (the profile may still be drawing itself again after the change of language: the text is typed again until it stays)
+    await page.bringToFront();
+    for (let tries = 1; ; tries++) {
+      await page.fill('#rr-panel input[data-act="filter-query"]', "role:last ccf:a");
+      try { await page.waitForFunction(() => /「role:last ccf:a」/.test((document.querySelector("#rr-panel .rr-fb-what") || {}).textContent || ""), null, { timeout: 2500 }); break; }
+      catch (e) { if (tries >= 5) throw e; await page.waitForTimeout(500); }
+    }
+    await page.fill('#rr-panel input[data-act="filter-query"]', "");
+    await page.waitForFunction(() => document.querySelector('[data-rr="filterbar"]').hidden, null, { timeout: 8000 });
+    await opts.bringToFront();
     await opts.selectOption('select[data-pref="language"]', "ar");
     await page.waitForFunction(() => document.querySelector("#rr-panel") && document.querySelector("#rr-panel").dir === "rtl", null, { timeout: 15000 });
     await pollPage(opts, () => document.documentElement.dir === "rtl", null, 15000);

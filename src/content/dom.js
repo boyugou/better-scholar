@@ -70,6 +70,10 @@
   }
   const dir = () => (B.i18n.isRtl(language) ? "rtl" : "ltr");
   const langTag = () => String(language).replace("_", "-");
+  // the comma between two words of one phrase, and the quotes round a typed query, as the language writes them (the standard English words of the copied summary keep ", " and "…")
+  const comma = () => { const l = String(language).slice(0, 2).toLowerCase(); return l === "zh" ? "，" : l === "ja" ? "、" : l === "ar" ? "، " : ", "; };
+  const QUOTES = { zh: ["“", "”"], ko: ["“", "”"], ja: ["「", "」"], de: ["„", "“"], cs: ["„", "“"], pl: ["„", "”"], ru: ["«", "»"], uk: ["«", "»"], fr: ["«\u00a0", "\u00a0»"] };
+  const quote = (text) => { const q = QUOTES[String(language).slice(0, 2).toLowerCase()] || ['"', '"']; return q[0] + text + q[1]; };
   // the colon after a label: full-width in Chinese and Japanese, with a no-break space before it in French
   const colon = () => { const l = String(language).slice(0, 2).toLowerCase(); return l === "zh" || l === "ja" ? "：" : l === "fr" ? "\u00a0: " : ": "; };
 
@@ -151,5 +155,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, comma, quote, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

@@ -436,7 +436,7 @@
       const parts = [];
       if (m.selection) {
         const srcName = m.source === "core" ? tr("srcCore") : tr("srcCcf");
-        parts.push([m.selection.role ? tr(m.selection.role === "hidden" ? "roleHidden" : m.selection.role === "absent" ? "filterAbsent" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? tr("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(", "));
+        parts.push([m.selection.role ? tr(m.selection.role === "hidden" ? "roleHidden" : m.selection.role === "absent" ? "filterAbsent" : ROLE_KEY[m.selection.role]) : "", m.selection.tier ? (m.selection.tier === "none" ? tr("tipUnranked") : `${srcName} ${m.selection.tier}`) : ""].filter(Boolean).join(tr === t ? B.dom.comma() : ", "));
       }
       if (m.markGroup) parts.push(tr(MARK_KEY[m.markGroup]));
       if (m.venueKey) parts.push(m.venueKey);
@@ -445,7 +445,7 @@
         if (m.filters.yearStart === m.filters.yearEnd && m.filters.yearStart != null) parts.push(String(m.filters.yearStart));
         else parts.push((m.filters.yearStart != null ? m.filters.yearStart : "…") + "–" + (m.filters.yearEnd != null ? m.filters.yearEnd : "…"));
       }
-      if (m.filters.query) parts.push(`"${m.filters.query}"`);
+      if (m.filters.query) parts.push(tr === t ? B.dom.quote(m.filters.query) : `"${m.filters.query}"`);
       if (m.filters.minCitations != null) parts.push(tr("filterMinCites", [String(m.filters.minCitations)]));
       // (the impact filter is chosen against the numbers, which it does not narrow: it is named in the filter bar only)
       if (withOnly && m.filterBar && m.filterBar.impact) parts.push(tr(m.filterBar.impact.kind === "h" ? "mH" : "mI10"), tr("filterMinCites", [String(m.filterBar.impact.min)]));
