@@ -557,9 +557,12 @@
     const postTags = [];
     if (/[a-z]{2}/.test(p.withParens)) for (const m of p.withParens.matchAll(/[:;,–—-]\s*([A-Z][A-Z0-9&]{2,9})(?:\s*['’]?\d{2,4})?\s*(?=[,:;.]|$)/g)) postTags.push({ key: squash(m[1]), raw: m[1] });
     const sayKeys = new Set([...acronymSignals(p).filter((sig) => (sig.kind === "lead" && sig.event) || sig.kind === "paren").map((sig) => sig.key), ...postTags.map((t) => t.key)]);
+    // venues that share an acronym are told apart by the sponsor the string names: "IFIP SEC 2019" is IFIP's, not the ACM/IEEE Symposium on Edge Computing, whose acronym is the same
+    const sponsorsHere = [...ORG].filter((o) => /^[a-z]+$/.test(o) && new RegExp("\\b" + o + "\\b", "i").test(fold(p.withParens)));
+    const sponsored = (e) => sponsorsHere.length > 0 && sponsorsHere.every((o) => e.extra.some((n) => new RegExp("\\b" + o + "\\b", "i").test(fold(n))));
     const firstHit = (getter) => {
       for (const side of sides) {
-        const d = decide(getter(side), rawWords);
+        const d = decide(getter(side), rawWords, false, [sponsored]);
         if (d === "ambiguous") return "ambiguous";
         if (d) return d;
       }
@@ -750,7 +753,7 @@
       // venue is a symposium: a venue whose longer name goes on the same way and does say "conference" is the better reading —
       // the prefix rule below decides between them
       if (d && p.truncated && continuesBeyond(sides, mode, tokens, d)) continue;
-      if (d) return { entry: d, rule: "name" };
+      if (d) return { entry: d, rule: "name", weak: mode !== "full" };          // (weak: read once the organisation or an acronym of the string was left out)
     }
 
     // (not for an event word the rewrite of an inverted title made up: "Software Engineering, 2010 IEEE 32nd …" is no more the IEEE Software Engineering Workshop than the conference)
@@ -1195,7 +1198,7 @@
       }
       out.kind = hint;
       const secs = secondaryWords(raw);
-      const matched = {}, tied = {}, clashed = {};
+      const matched = {}, tied = {}, clashed = {}, weak = {};
       const saysAcronymOf = (e) => [...acronymSignals(p), ...embeddedSignals(p)].some((x) => x.key === squash(e.abbr || "") || stripDigits(x.key) === squash(e.abbr || ""));
       const realEntry = (e) => (Object.getPrototypeOf(e) === Object.prototype ? e : Object.getPrototypeOf(e));          // (the prefix rule hands out a view of the row: `through`)
       const badge = (src, e, rule) => src === "ccf"
@@ -1212,6 +1215,14 @@
         matched[src] = r.entry;
         tied[src] = r.tied;
         clashed[src] = !!r.clashed;
+        weak[src] = !!(r.weak || r.clashed);
+      }
+      // The lists read the string by name as two different venues, one from the whole name as it is spelled, the other only once its organisation or an acronym was left out, or against
+      // its event word: "IFIP International Information Security Conference" is IFIP's SEC to CCF; CORE's "Information Security Conference" (ISC) needed the IFIP dropped. The whole name is
+      // the better reading, and the other list's row of that venue comes with it (below).
+      if (out.ccf && out.core && out.ccf.kind !== "J" && out.ccf.rule === "name" && out.core.rule === "name" && squash(out.ccf.abbr) !== squash(out.core.abbr) && !idx.sameVenue(out.ccf.abbr, out.core.abbr)) {
+        if (weak.core && !weak.ccf) { delete out.core; delete matched.core; }
+        else if (weak.ccf && !weak.core) { delete out.ccf; delete matched.ccf; }
       }
       // the lists name one venue differently: what one list's wording found, the other list's row of the same venue is too (unless the track words of the string do not fit it)
       if (!out.refused) for (const [from, to] of [["ccf", "core"], ["core", "ccf"]]) {

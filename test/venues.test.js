@@ -1765,3 +1765,36 @@ test("every ranked name cut after any word (with the cut mark) gets the badge of
   assert.deepEqual(wrong.slice(0, 10), [], `${wrong.length} cuts carry a badge that does not begin like them`);
 });
 
+test("two venues read as different by the lists: the whole name as spelled beats a reading that left out the sponsor or went against the event word; one acronym of two venues goes by the sponsor", () => {
+  const nameOf = (raw, src) => { const r = resolver.resolve(raw)[src]; return r ? r.name : null; };
+  // ... IFIP's SEC is CCF's row of that name (CORE's "Information Security Conference" needed the IFIP dropped), and "International Symposium on Neural Networks" is CORE's ISNN (CCF's IJCNN went against "symposium")
+  assert.equal(nameOf("IFIP International Information Security Conference", "ccf"), "IFIP International Information Security Conference");
+  assert.equal(nameOf("Proceedings of the 15th IFIP International Information Security Conference, 100-110, 2019", "ccf"), "IFIP International Information Security Conference");
+  assert.equal(brief("International Symposium on Neural Networks"), "CORE C ISNN");
+  assert.equal(brief("Proceedings of the 15th International Symposium on Neural Networks, 100-110, 2019"), "CORE C ISNN");
+  // ... CCF has two rows with the acronym SEC: the sponsor the string names says which
+  assert.equal(nameOf("IFIP SEC 2019", "ccf"), "IFIP International Information Security Conference");
+  assert.equal(nameOf("IFIP SEC'19", "ccf"), "IFIP International Information Security Conference");
+  assert.equal(nameOf("IEEE/ACM SEC 2019", "ccf"), "ACM/IEEE Symposium on Edge Computing");
+  assert.equal(nameOf("2018 IEEE/ACM Symposium on Edge Computing (SEC), 300-312, 2018", "ccf"), "ACM/IEEE Symposium on Edge Computing");
+  // ... and the first of two readings is still no reading when neither is stronger
+  assert.equal(brief("Proceedings of the 2019 Conference on X"), "");
+});
+
+test("every ranked venue's own official name gets its own list's badge — except the four that cannot: the two journal-first 'Proceedings of the ACM on …', the ACL Anthology's publisher string and a name that is also a journal's", () => {
+  const sq = (x) => String(x || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const rows = [...ccf.venues.map((v) => ({ src: "ccf", abbr: v.abbr, name: v.name, kind: v.kind })), ...core.venues.map((v) => ({ src: "core", abbr: v.acronym, name: v.name, kind: "C" }))];
+  const missed = [], other = [];
+  for (const row of rows) {
+    const n = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+    for (const raw of row.kind === "J" ? [`${n} 12 (3), 100-110, 2019`] : [n, `Proceedings of the 15th ${n}, 100-110, 2019`]) {
+      const b = resolver.resolve(raw)[row.src];
+      if (!b) missed.push(`${row.src}:${row.abbr}`);
+      else if (sq(b.abbr) !== sq(row.abbr) && b.name !== row.name) other.push(`${raw} → ${b.abbr}`);
+    }
+  }
+  assert.deepEqual(other, [], "another venue's badge for a venue's own name");
+  // (PACM PL and PACMHCI: papers of POPL, CSCW … in their journal form; ACL: the Anthology's publisher is printed for ACL, NAACL, EMNLP …; IDA: also the journal of that title)
+  assert.deepEqual([...new Set(missed)].sort(), ["ccf:PACM PL", "ccf:PACMHCI", "core:ACL", "core:IDA"]);
+});
+
