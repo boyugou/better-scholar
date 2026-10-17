@@ -28,6 +28,8 @@
 //                 by its acronym — "International Conference on Computer and Communications (ICCC)" is not INFOCOM, "International Congress on Image and Signal
 //                 Processing (CISP)" not ICISP, "IEEE Region 10 Symposium (TENSYMP)" not TENCON — gets no badge from either list. An entry may be { acronym, with }:
 //                 the acronym only counts when the string also holds that word ("ICCC" is ranked too, the Computational Creativity conference)
+//                 It may also be { name }: an unranked event whose whole name, organisations included, boils down to words of a ranked venue's ("ACM Symposium on Applied Computing" is
+//                 not CORE's Applied Computing Conference; "Proceedings of the ACM on Computer Graphics and Interactive Techniques" is a journal for I3D, HPG and SCA, not SIGGRAPH).
 //   names         extra names; case, punctuation, ordinals, years and words like
 //                 "Proceedings of the" / "International" / "Conference" are ignored
 //                 when matching, and ACM/IEEE/USENIX prefixes are optional.
@@ -187,6 +189,8 @@
     { ccf: "RE", core: "RE", names: ["IEEE Joint International Conference on Requirements Engineering", "IEEE Joint International Requirements Engineering Conference"] },
     { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Joint International Conference on Measurement and Modeling of Computer Systems", "ACM SIGMETRICS Joint International Conference on Measurement and Modeling of Computer Systems"] },
     { core: "InSITE", names: ["Informing Science and Information Technology Education Joint Conference", "Informing Science and IT Education Joint Conference"] },
+    // (Shape Modeling International was the Shape Modeling Applications conference until 2007)
+    { ccf: "SMI", names: ["International Conference on Shape Modeling and Applications", "IEEE International Conference on Shape Modeling and Applications"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development
@@ -406,6 +410,6 @@
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
     // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
-    { shadow: [{ acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
+    { shadow: [{ acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, { name: "ACM Symposium on Applied Computing" }, { name: "Proceedings of the ACM on Computer Graphics and Interactive Techniques" }, "SIGIR-AP", "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
   ];
 });

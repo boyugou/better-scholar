@@ -135,8 +135,12 @@ roughly one badge in five (CVPR as C, every unlisted "IEEE …" journal as A, "m
 learning" anywhere as ICML…). The rewrite has no fuzzy fallback at all.
 
 `prepare(raw)` reduces what Scholar prints to the venue words: it drops `[arXiv…]`
-annotations, the `…` truncation marker (remembered), trailing year / pages / volume (issue),
-`Volume N`, leading ordinals and years, and records whether a volume number was present.
+annotations, the `…` truncation marker (remembered), trailing year / pages (also `pp. 1-18`, `Pages 1–10`, Roman front-matter pages, Oxford's `btac817`) /
+article number (`Article No.: 137`, `Art. no. 12`, `No. 3`) / volume (issue) / state of the article (`early access`, `in press`), `Volume N`, leading ordinals and years, and records
+whether a volume number was present. It also reads back the forms the rules below could not: IEEE Xplore's inverted conference title cut among the sponsors
+(`Computer Vision and Pattern Recognition, 2006 IEEE Computer Society …` is `IEEE Conference on …` — the event word is a guess, so a clash with it is no reading), its citation form cut on the
+acronym (`…, 2003. ISESE …`), a title in a publisher's series (`… - Lecture Notes in Computer Science`, `… X: Proceedings of the Tenth …`: a volume of proceedings — `viaSeries`, read
+in the conferences only — and then no longer cut), the parts of the SMC journal (`Part B (Cybernetics)` is `Part B: Cybernetics`), and the `on - ACRONYM 'YY` of ACM's cut series form.
 
 `typeHint` decides which index to consult: conference words (proceedings, conference,
 symposium, `Advances in`) → conferences; journal words (journal, transactions, letters,
@@ -168,7 +172,9 @@ means no badge:
    tooltip would name the wrong venue). `Joint` is an identity word: a string that says it only
    reads as a venue that does (`… Annual Joint Conference of the IEEE Computer and …` is INFOCOM,
    not CIT).
-4. **Subtitle** — a known name followed by extra words (`…: Human Language Technologies`).
+4. **Subtitle** — a known conference name of four words (three, with a colon, in a string that says an event) followed by words that are set off: a colon, a dash, a comma, a full
+   stop, a slash or a parenthesis, after the name and the event word that ends it (`…: Human Language Technologies`, `… Security Symposium, San Diego, California`). Words that go on
+   with the name are another event's (`… Interactive Techniques in Australasia and South East Asia` is GRAPHITE), and a journal's title with words after it is a book.
 
 Ties between entries with the same canonical key are broken by the event word in the
 string (`symposium` → SoCC rather than the JCC conference); a journal and a conference of one
@@ -179,7 +185,7 @@ exists because a real string went wrong without it (the test that pins it names 
 
 | Guard (in `matchSource` unless noted) | What it stops |
 |---|---|
-| `acronymAgrees` | a name hit that is another venue's when the string names an acronym — leading (`AAAI'17: …`, `SDM-19: …`) or in a parenthesis (`(AAAI-07)`) — whose venue is not the hit (IJCAI's boiled name vs AAAI); the hit stays when its own acronym, or its whole name, is in the string; `nameBody` first reads an acronym repeated inside the name once — a leading acronym repeated inside the name (`AAAI-23: Thirty-Seventh AAAI Conference …`) is read once |
+| `acronymAgrees` | a name hit that is another venue's when the string names an acronym — leading (`AAAI'17: …`, `SDM-19: …`), in a parenthesis (`(AAAI-07)`) or in capitals after the title (`Machine Learning: ECML 2004`, `Data Mining and Knowledge Discovery: PAKDD 2005`) — whose venue is not the hit (IJCAI's boiled name vs AAAI); the hit stays when its own acronym (an English word only in capitals), or its whole name — except against an acronym set off after the title —, is in the string; `nameBody` first reads an acronym repeated inside the name once — a leading acronym repeated inside the name (`AAAI-23: Thirty-Seventh AAAI Conference …`) is read once |
 | `byContext` | two venues share an acronym (`FSE`): the one whose own words the rest of the string is |
 | `subjectIsAnotherVenues`, `nameIsAnotherVenues`, `foreign`, `namedElsewhere`, `parenContradicts` | an acronym in front of, or next to, a name about something else (`ITS '14: … Interactive Tabletops`, `SIGGRAPH Asia`, `ACM SIGIR … (ICTIR)`); the venue's words are those of both lists' venue, not of another that squashes to the same acronym |
 | `parenNameIsAnotherVenueOf` | a name of its own in front of a parenthesised acronym (`Innovations in Power and Advanced Computing Technologies (i-PACT)`, `… Devices, Circuits and Systems (ICDCS)`): more than half of the words before the parenthesis must be the venue's (its own segment; the same venue of the other list lends its words; a volume in front, or a joint event `(EMNLP-IJCNLP)`, is exempt); used by the parenthesis rule and the buried-acronym rule. Not stricter on purpose: sponsors the lists do not name (`ACM/EDAC/IEEE`, `IET`) and British spellings are noise, not another venue — what slips through (`… Information and Communication Systems (ICICS)`) is a `shadow` entry (`jointEvent` exempts a joint event) |
@@ -199,6 +205,11 @@ venue (`idx.partners`): an alias that names both (`ccf` and `core`; the tiers it
 word — MICRO, ACM MM, VIS — the two FSE rows of each list share too few to be linked, nor CC / C&C, ISC, GI: a test names them). After both lists have been read, a match in one list brings the partner row of the other when that list found nothing, the string was not refused, and
 the string's track words are the partner's own — and the match was not a pick among venues that only share a rating (`decide()` takes the first: "International Conference on Data Mining" is ICDM or SDM) unless the string says the venue's own acronym. It adds a badge; it never changes or removes one. Whole-name lookup also reads British and American spellings alike (`us()`: "Modelling" and
 "Modeling"); the start of a cut name keeps its spelling. Sponsors the lists do not name (`ORG`: `iapr`, `wic`, `edac`, `esda`, `eai`, `sigchi`; `cfv`, the typo of CVF) are no part of a name — not `acis` and `iet`, which name events of their own (ICIS's "IEEE/ACIS", the IET's Image Processing conference): CORE's SERA, whose name begins with ACIS, is an alias without it.
+
+**Where the two lists disagree.** After both have been read: an acronym reading loses to the other list's whole-name reading of another venue, and the other way round; two readings of one rule (both by name, or both by prefix) that name different venues are both dropped; a prefix reading
+loses to the other list's whole name — unless that name's event word is not the string's (a symposium for a "Conference on …": the whole name is `clashed`, a weak reading, and the two disagree, so both are dropped). A cut shows a venue only by its start, so a clashing rival of another event word is no other reading of
+it where the visible start has two content words besides the sponsors (`visibleContent`; "IFIP/IEEE International Conference on …" shows none and claims nothing). A string that says "Joint" is no venue whose names never do; the years a venue was held jointly (RE, SIGMETRICS, InSITE, WI) are aliases. Events of the name a ranked
+venue's words boil down to are `shadow` entries of their own: by acronym (`ICAI`, `{ acronym: "ICCS", with: "circuits" }`), or by whole name (`{ name: "ACM Symposium on Applied Computing" }`).
 
 **Secondary tracks** — Findings, workshops, demos, posters, tutorials, extended abstracts,
 short/industry papers, shared tasks — get no badge, unless every track word of the string is one

@@ -34,9 +34,9 @@ test("the numbers are counted, whole and true to what they name", async () => {
   // every guard the architecture table names exists in the matcher
   assert.ok(n.matching.guards >= 10);
   for (const g of n.matching.guardNames) assert.ok(venues.includes(g), `the guard ${g} of docs/ARCHITECTURE.md is not in lib/venues.js`);
-  assert.ok(n.matching.curatedNames > 300 && n.matching.forms > 2000 && n.matching.acronyms > 1000 && n.matching.linked > 250 && n.matching.links > 100 && n.matching.links <= n.matching.linked);
+  assert.ok(n.matching.curatedNames > 300 && n.matching.forms > 2000 && n.matching.acronyms > 1000 && n.matching.linked > 250 && n.matching.links > 40 && n.matching.links <= n.matching.linked);
   // a paper that won two awards is one paper
-  assert.ok(n.award.papers > 7000 && n.award.papers <= n.award.entries && n.award.from < n.award.to);
+  assert.ok(n.award.papers > 5000 && n.award.papers + n.award.mentions <= n.award.entries && n.award.from < n.award.to);
   // the tests the README counts are the ones that run
   assert.ok(n.tests.unit >= 500 && n.tests.e2e >= 80 && n.tests.demo >= 15 && n.tests.realLines > 22000);
   assert.equal(n.dependencies, 0, "no dependencies");

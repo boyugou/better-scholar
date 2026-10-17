@@ -1531,8 +1531,10 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("Proceedings of the Twenty-Seventh IFIP/IEEE International Conference on …, 2019");
   eq("Proceedings of the Eleventh IEEE/ACM/IFIP International Conference on …, 2016", "CCF B CODES+ISSS");
   eq("SIGSPATIAL Special 12 (3), 2019", "CCF C SIGSPATIAL");
-  // two lists read a cut differently: the whole name is the better reading, not the venue that merely begins with the visible words
-  eq("Proceedings of the 2019 IEEE International Symposium on Software Engineering …, 2019", "CORE C SEW");
+  // two lists read a cut differently: the whole name is the better reading, not the venue that merely begins with the visible words — unless the whole name's event word is not the string's
+  // (SEW is a workshop, the string says symposium; SCA is a symposium, the string says conference): then neither reading is more than a guess
+  none("Proceedings of the 2019 IEEE International Symposium on Software Engineering …, 2019");
+  none("Proceedings of the 2019 International Conference on Computer Animation …, 2019");
   // Springer's proceedings volumes numbered in Roman: the volume and its description are no part of the name — but "Systems I: Regular Papers" is a journal's own title
   eq("Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …, 2013", "CORE C WAFR");
   eq("Algorithmic Foundations of Robotics IX: Selected Contributions of the Ninth …, 2010", "CORE C WAFR");
@@ -1558,7 +1560,11 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   // the parts of the IEEE's Systems, Man and Cybernetics journal: Part A is today's Systems, Part B today's Cybernetics
   eq("IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and …, 2004", "CCF B TSMC");
   eq("IEEE Trans. Systems, Man, and Cybernetics, Part B: Cybernetics 35 (6), 1098-1107, 2005", "CCF B IEEE Transactions on Cybernetics");
-  none("IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics) 40 …, 2009");
+  eq("IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics) 40 …, 2009", "CCF B IEEE Transactions on Cybernetics");
+  eq("IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics) 40 (3), 1-9, 2010", "CCF B IEEE Transactions on Cybernetics");
+  eq("IEEE Transactions on Systems, Man, and Cybernetics, Part B 40 (3), 2010", "CCF B IEEE Transactions on Cybernetics");
+  none("IEEE Transactions on Systems, Man, and Cybernetics, Part C (Applications and Reviews) 40 (1), 2010");
+  eq("IEEE Transactions on Systems, Man, and Cybernetics, Part A: Systems and Humans 37 (6), 2007", "CCF B TSMC");
   // the joint Web Intelligence / Intelligent Agent Technology event is WI's; the 2000 volume title is EKAW's
   eq("IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "CORE B WI");
   eq("Knowledge Engineering and Knowledge Management Methods, Models, and Tools, 1-16, 2000", "CORE B EKAW");
@@ -1630,6 +1636,29 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Bioinformatics, in press, 2021", "CCF A Bioinformatics");
   eq("International Symposium on Computer Architecture, Pages 1–10, 2019", "CCF A ISCA · CORE A* ISCA");
   eq("Design Automation Conference, pages 123-145, 2019", "CCF A DAC · CORE A* DAC");
+  // review 13: an acronym in capitals set off after the title says the event even where the title's words are a journal's whole name (LNAI's "Machine Learning: ECML 2004")
+  none("Machine learning: ECML 2004, 217-228, 2004");
+  none("Data Mining and Knowledge Discovery: PAKDD 2005");
+  eq("Artificial Intelligence: IJCAI 2005", "CCF B IJCAI · CORE A* IJCAI");
+  eq("The VLDB Journal 12 (3), 123-145, 2019", "CCF A VLDBJ");
+  // ... an unranked event of the name the string says (a journal for I3D, HPG and SCA; ACM's SAC) is no ranked venue of nearly the same words
+  none("Proceedings of the ACM on Computer Graphics and Interactive Techniques 5 (1), 1-17, 2022");
+  none("Proceedings of the 2010 ACM Symposium on Applied Computing …, 2010");
+  none("ACM Symposium on Applied Computing X: Proceedings of the Tenth …, 2010");
+  none("Annual International ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region (SIGIR-AP)");
+  // ... the name of a venue followed by words that are set off — the event word, "of", "on" are part of the name: "… Security Symposium, San Diego, California"
+  eq("Network and Distributed System Security Symposium, San Diego, California", "CCF A NDSS · CORE A* NDSS");
+  eq("IEEE Real-Time Systems Symposium, Lisbon, Portugal", "CCF A RTSS · CORE A RTSS");
+  eq("Design, Automation and Test in Europe Conference, Grenoble, France", "CCF B DATE · CORE A DATE");
+  // ... a cut whose whole-name reading has another event word than the string (a symposium for a conference) disagrees with the other list's reading of its start: neither is more than a guess
+  none("Software Engineering, 2010 IEEE 32nd …, 2010");
+  // ... a leading acronym of a name that ends with its event word ("… Australasian Computing Education Conference") is that event's, and a year in front of a parenthesis is no volume
+  none("ACE '17: Proceedings of the Nineteenth Australasian Computing Education Conference, 31-40, 2017");
+  none("2nd International Seminar on Guidance and Counseling 2019 (ISGC 2019)");
+  eq("WWW '19: The World Wide Web Conference, 2019", "CCF A WWW · CORE A* WWW");
+  eq("International Conference on Shape Modeling and Applications 2005 (SMI'05 …, 2005", "CCF C SMI");
+  // ... an article number after an acronym is read like pages
+  eq("CSCW, Article 12, 2017", "CCF A CSCW · CORE A CSCW");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
