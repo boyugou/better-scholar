@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Cancella la ricerca"
   },
+  "optSearchNone": {
+    "message": "Nessuna impostazione corrisponde a questa ricerca."
+  },
   "optCacheTitle": {
     "message": "Dettagli degli articoli salvati"
   },

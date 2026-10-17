@@ -894,7 +894,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
 
     // -- 12. clipboard
     // (the buttons stay where they are while the pressed one says "Copied": a shorter word must not let the ones after it move up, and the next click land on another button)
-    const copyBoxes = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => { const r = b.getBoundingClientRect(); return [b.dataset.act, Math.round(r.left), Math.round(r.top)]; }));
+    const copyBoxes = () => page.evaluate(() => [...document.querySelectorAll("#rr-panel .rr-copybar .rr-btn")].map((b) => { const r = b.getBoundingClientRect(); return [b.dataset.act, Math.round(r.left + scrollX), Math.round(r.top + scrollY)]; }));          // (in the page's own coordinates: the click may scroll the panel into view)
     const boxesBefore = await copyBoxes();
     await page.click('[data-act="copy-summary"]');
     await page.locator('[data-act="copy-summary"]', { hasText: "Copied" }).waitFor();

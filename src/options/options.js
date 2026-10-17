@@ -430,7 +430,7 @@
 
     const previewChip = h("span", { class: "role-swatch-badge", style: `background: ${defaultColor};`, "aria-hidden": "true" });
     const liveDot = h("span", { class: "color-dot-live", style: `background: ${defaultColor};` });
-    const hexLabel = h("span", { class: "color-hex" }, defaultColor.toUpperCase());
+    const hexLabel = h("span", { class: "color-hex", dir: "ltr" }, defaultColor.toUpperCase());          // (a code: in a right-to-left page its "#" would end up after the digits)
     const contrastPill = h("span", { class: "contrast-badge pass", title: t("optContrastTip") });
 
     const pill = h("label", { class: "hex-input-pill", "aria-label": roleLabel },
@@ -905,6 +905,8 @@
   searchClear.hidden = true;
   const searchKbd = h("kbd", { class: "opt-search-kbd", "aria-hidden": "true" }, "/");
   const searchBox = h("div", { class: "opt-search-box" }, searchIcon, searchInput, searchClear, searchKbd);
+  // what the person is told when no setting matches (a status, so that a screen reader says it too)
+  const searchNone = h("p", { class: "opt-search-none", role: "status", hidden: true });
 
   function filterSettings(query) {
     const q = (query || "").trim().toLowerCase();
@@ -931,6 +933,9 @@
       card.hidden = !show;
       if (toc.children[idx]) toc.children[idx].hidden = !show;
     });
+    const none = !!q && cards.every((card) => card.hidden);
+    searchNone.hidden = !none;
+    searchNone.textContent = none ? t("optSearchNone") : "";
   }
   searchInput.addEventListener("input", () => filterSettings(searchInput.value));
   searchInput.addEventListener("keydown", (e) => {
@@ -948,7 +953,7 @@
     }
   });
 
-  $("controls").prepend(toc, searchBox);
+  $("controls").prepend(toc, searchBox, searchNone);
   try {
     const seen = new Set();
     const mark = () => {

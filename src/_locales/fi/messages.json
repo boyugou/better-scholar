@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Tyhjennä haku"
   },
+  "optSearchNone": {
+    "message": "Mikään asetus ei vastaa hakua."
+  },
   "optCacheTitle": {
     "message": "Tallennetut artikkelitiedot"
   },

@@ -70,6 +70,8 @@
   }
   const dir = () => (B.i18n.isRtl(language) ? "rtl" : "ltr");
   const langTag = () => String(language).replace("_", "-");
+  // the colon after a label: full-width in Chinese and Japanese, with a no-break space before it in French
+  const colon = () => { const l = String(language).slice(0, 2).toLowerCase(); return l === "zh" || l === "ja" ? "：" : l === "fr" ? "\u00a0: " : ": "; };
 
   // chrome.i18n lookup; falls back to the key so a missing string is visible, not blank.
   function t(key, subs) {
@@ -149,5 +151,5 @@
   // the words on the copy buttons (panel, toolbar popup, settings page): one per format of lib/prefs.js COPY_BUTTONS
   const COPY_LABEL = { summary: "copySummary", table: "copyTable", papers: "copyPapers", apa: "copyApa", bibtex: "copyBibtex", markdown: "copyMarkdown", json: "copyJson", csv: "exportCsv" };
 
-  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, copyText, downloadFile, sleep, frame, issueUrl, REPO };
+  B.dom = { h, t, tn, tDefault, setLabels, COPY_LABEL, applyColors, applyRowStyle, applyChips, useLanguage, dir, langTag, colon, copyText, downloadFile, sleep, frame, issueUrl, REPO };
 })();

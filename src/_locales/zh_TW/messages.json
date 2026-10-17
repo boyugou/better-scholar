@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "清除搜尋"
   },
+  "optSearchNone": {
+    "message": "沒有與之相符的設定。"
+  },
   "optCacheTitle": {
     "message": "已儲存論文詳情"
   },
@@ -1094,10 +1097,10 @@
     "message": "等級標籤的文字"
   },
   "optChipLabelFull": {
-    "message": "列表與等級(CCF A)"
+    "message": "列表與等級（CCF A）"
   },
   "optChipLabelTier": {
-    "message": "僅等級(A)"
+    "message": "僅等級（A）"
   },
   "optChipThemes": {
     "message": "現成樣式"
@@ -1109,7 +1112,7 @@
     "message": "單色"
   },
   "optPreviewEdit": {
-    "message": "將滑鼠移到某部分上，即可隱藏(✕)、移動(⠿)或顯示對應設定(⚙)。雙擊名稱可重新命名，雙擊其他任何內容則跳到對應設定。"
+    "message": "將滑鼠移到某部分上，即可隱藏（✕）、移動（⠿）或顯示對應設定（⚙）。雙擊名稱可重新命名，雙擊其他任何內容則跳到對應設定。"
   },
   "optHide": {
     "message": "隱藏"

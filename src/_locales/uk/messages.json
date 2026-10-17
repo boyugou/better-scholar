@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Очистити пошук"
   },
+  "optSearchNone": {
+    "message": "Жодне налаштування не відповідає запиту."
+  },
   "optCacheTitle": {
     "message": "Збережені дані статей"
   },

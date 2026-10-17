@@ -108,7 +108,7 @@
     const coverSec = h("div", { class: "rr-sec rr-cover", "data-rr": "coverage", ...P("panel.status.show") }, coverTop, coverList);
 
     // filters (built once, synced on update)
-    const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", maxlength: "500",
+    const queryInput = h("input", { type: "search", class: "rr-search-input", "data-act": "filter-query", maxlength: "500", spellcheck: "false", autocomplete: "off", autocapitalize: "off", autocorrect: "off", dir: "auto",          // (operators are code, not words: no red squiggles; its direction follows what is typed)
       role: "combobox", "aria-autocomplete": "list", "aria-expanded": "false", "aria-controls": "rr-suggest" });
     const searchCount = h("span", { class: "rr-search-count", "data-rr": "search-count", hidden: true, "aria-live": "polite" });
     const kbdHint = h("kbd", { class: "rr-search-kbd", "aria-hidden": "true", onClick: () => {
@@ -195,7 +195,7 @@
       placeSuggest();
       suggestList.replaceChildren(...currentSuggestions.map((item, n) => {
         const catBadge = h("span", { class: `rr-suggest-cat rr-scat-${item.group}` }, item.tag);
-        const opCode = h("code", { class: "rr-suggest-op" }, item.op);
+        const opCode = h("code", { class: "rr-suggest-op", dir: "ltr" }, item.op);
         const descText = h("span", { class: "rr-suggest-desc" }, item.desc);
         return h("li", {
           class: "rr-suggest-item",
@@ -762,7 +762,7 @@
       filterBar.classList.toggle("rr-fb-empty", !!(m.filterBar && m.filterBar.shown === 0));
       if (m.filterBar) {
         const parts = filterParts(m, true);
-        filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, " · " + parts.join(" · ")) : null),
+        filterBar.replaceChildren(h("span", { class: "rr-fb-text" }, t("filterShowing", [String(m.filterBar.shown), String(m.filterBar.total)]), parts.length ? h("span", { class: "rr-fb-what" }, ...parts.flatMap((part) => [" · ", h("bdi", {}, part)])) : null),
           h("button", { class: "rr-link", type: "button", "data-act": "clear-filters", onClick: () => cb.onClearFilters() }, t("filterClear")));
       }
       summarySec.hidden = !m.prefs.panel.table.show;

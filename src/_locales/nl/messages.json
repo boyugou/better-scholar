@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Zoekopdracht wissen"
   },
+  "optSearchNone": {
+    "message": "Geen instelling komt overeen met die zoekopdracht."
+  },
   "optCacheTitle": {
     "message": "Opgeslagen artikeldetails"
   },

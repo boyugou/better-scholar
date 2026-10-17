@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Suche löschen"
   },
+  "optSearchNone": {
+    "message": "Keine Einstellung entspricht dieser Suche."
+  },
   "optCacheTitle": {
     "message": "Gespeicherte Artikeldetails"
   },

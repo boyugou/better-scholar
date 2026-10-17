@@ -73,7 +73,7 @@
           showTotal ? h("td", { class: "t" }, String(r.total)) : null)), hiddenRow),
         showTotal ? h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))) : null);
       const mp = prefs.panel.marks;
-      const markParts = !mp.show ? [] : B.marks.rows(mp.grouping).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + " " + data.marks[g]);
+      const markParts = !mp.show ? [] : B.marks.rows(mp.grouping).filter((g) => (data.marks || {})[g]).map((g) => t(MARK_KEY[g]) + "\u00a0" + data.marks[g]);          // (a count never stands alone at the start of a line)
       // A copy button: the text comes from the page (the same as the panel's button) and goes to the clipboard — the CSV to a file. What there is to say is said on the button.
       const say = (button, text, ok = true) => {
         const old = button.dataset.label || (button.dataset.label = button.textContent);
@@ -105,7 +105,7 @@
               : s.absent > 0 ? t("popupPapersOf", [String(data.loaded - s.absent), String(data.loaded)]) : tn("popupPapers", data.loaded, [String(data.loaded)]))),
         tp.show ? seg : null, tp.show ? table : null,
         tp.show && source !== "none" && tp.unranked ? h("p", { class: "legend" }, "– " + t("tipUnranked")) : null,
-        markParts.length ? h("p", { class: "marks", title: t("marksHint") }, mp.title ? h("b", {}, t("marksTitle") + ": ") : null, markParts.join(" · ")) : null,
+        markParts.length ? h("p", { class: "marks", title: t("marksHint") }, mp.title ? h("b", {}, t("marksTitle") + B.dom.colon()) : null, markParts.join(" · ")) : null,
         copyBar,
         tp.show && tp.note && (data.noRanks || sources.length) ? h("p", { class: "note" }, t(data.noRanks ? "noRanksNote" : "dataNote", [(listed.length ? listed : ["ccf", "core"]).map((k) => listName(data.edition[k])).join(" · ")])) : null
       ].filter(Boolean));

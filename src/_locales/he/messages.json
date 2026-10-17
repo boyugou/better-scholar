@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "ניקוי החיפוש"
   },
+  "optSearchNone": {
+    "message": "אף הגדרה לא תואמת לחיפוש."
+  },
   "optCacheTitle": {
     "message": "פרטי מאמרים שמורים"
   },

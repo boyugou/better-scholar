@@ -254,7 +254,7 @@ tr.rr-r-first .gs_gray, tr.rr-r-cofirst .gs_gray, tr.rr-r-second .gs_gray, tr.rr
 #rr-panel .rr-seg button[aria-pressed="true"]{ background: #fff; color: var(--rr-accent); box-shadow: 0 1px 2px rgba(60,64,67,.28); }
 #rr-panel .rr-matrix{ width: 100%; border-collapse: collapse; table-layout: fixed; font-variant-numeric: tabular-nums; }
 #rr-panel .rr-matrix thead th:not(:first-child){ width: 30px; }
-#rr-panel .rr-matrix thead th.rr-col-total{ width: 38px; }
+#rr-panel .rr-matrix thead th.rr-col-total{ width: 44px; }          /* (Hungarian "Összes" is 39px wide) */
 #rr-panel .rr-matrix th, #rr-panel .rr-matrix td{ padding: 1px 0; text-align: center; font-weight: 400; }
 #rr-panel .rr-matrix thead th{ color: var(--rr-muted); font-size: 11px; font-weight: 700; padding-bottom: 3px; }
 #rr-panel .rr-matrix tbody th{ text-align: start; overflow-wrap: anywhere; }
@@ -411,6 +411,9 @@ html.rr-rows-none tr[class*="rr-r-"] > td:first-child { box-shadow: none !import
   .rr-name { text-decoration: underline; }
   .rr-chip, #rr-panel .rr-search-kbd { border-color: ButtonText; }
   #rr-panel .rr-stack { outline: 1px solid ButtonText; }
+  /* the colour of a role is its identity, not decoration: the dots and the year bars keep it */
+  #rr-panel .rr-dot, #rr-panel .rr-stack i { forced-color-adjust: none; }
+  #rr-panel .rr-dot { outline: 1px solid ButtonText; }
   #rr-panel .rr-filterbar, #rr-panel > .rr-warn { border: 1px solid CanvasText; }
   /* masks are drawn with a background colour, which the system would turn into the page colour: keep them in the text colour */
   #rr-panel .rr-ico-settings::before, #rr-panel .rr-ico-caret::before, #rr-panel .rr-mi::before, .rr-chip-mark::before, .rr-chip-mark-award[data-mark="runner-up"]::before { background-color: CanvasText; }

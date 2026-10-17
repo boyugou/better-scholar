@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Keresés törlése"
   },
+  "optSearchNone": {
+    "message": "Ehhez nincs egyező beállítás."
+  },
   "optCacheTitle": {
     "message": "Mentett cikkrészletek"
   },

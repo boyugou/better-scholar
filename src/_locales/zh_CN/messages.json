@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "清除搜索"
   },
+  "optSearchNone": {
+    "message": "没有与之匹配的设置。"
+  },
   "optCacheTitle": {
     "message": "已保存论文详情"
   },
@@ -1073,10 +1076,10 @@
     "message": "等级标签的文字"
   },
   "optChipLabelFull": {
-    "message": "列表与等级(CCF A)"
+    "message": "列表与等级（CCF A）"
   },
   "optChipLabelTier": {
-    "message": "仅等级(A)"
+    "message": "仅等级（A）"
   },
   "optChipThemes": {
     "message": "现成样式"
@@ -1088,7 +1091,7 @@
     "message": "单色"
   },
   "optPreviewEdit": {
-    "message": "将鼠标悬停在某部分上即可隐藏(✕)、移动(⠿)或显示对应设置(⚙)。双击名称可重命名，双击其他任何内容则跳转到对应设置。"
+    "message": "将鼠标悬停在某部分上即可隐藏（✕）、移动（⠿）或显示对应设置（⚙）。双击名称可重命名，双击其他任何内容则跳转到对应设置。"
   },
   "optHide": {
     "message": "隐藏"

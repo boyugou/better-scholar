@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Vymazat hledání"
   },
+  "optSearchNone": {
+    "message": "Žádné nastavení tomu neodpovídá."
+  },
   "optCacheTitle": {
     "message": "Uložené podrobnosti článků"
   },
