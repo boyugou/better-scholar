@@ -1087,8 +1087,9 @@ test("a journal's own name with a volume is that journal: a one-word title in ca
     const r = resolver.resolve(s);
     assert.equal(r.ccf && (r.ccf.abbr || r.ccf.name), abbr, s);
   }
-  // ... but the proceedings that share those words, and the bare name with no volume, are not it
-  for (const s of ["Proceedings of the ACM on Human-Computer Interaction 3 (3), 1-23, 2019", "Human-Computer Interaction, 2019", "Human-Computer Interaction"]) assert.equal(resolver.resolve(s).ccf, null, s);
+  // ... but the proceedings that share those words are not it; the name with no volume (Scholar prints an online-first article so) is the journal, the one the string spells whole
+  assert.equal(resolver.resolve("Proceedings of the ACM on Human-Computer Interaction 3 (3), 1-23, 2019").ccf, null);
+  for (const s of ["Human-Computer Interaction, 2019", "Human-Computer Interaction"]) assert.equal(resolver.resolve(s).ccf.abbr, "HCI", s);
   // every journal of the CCF list, by its whole name with a volume, an issue, pages and a year, in the three ways Scholar writes it (the two "Proceedings of the ACM on …" journals are the
   // journal-first form of conferences: their papers are POPL's, CSCW's … and stay unranked)
   const journals = ccf.venues.filter((v) => v.kind === "J" && !/^Proceedings of the ACM on /.test(v.name));
@@ -1666,4 +1667,19 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
   // (another event of the same words stays without)
   none("International Conference on Smart Card Research and Advanced Systems, 2017");
+});
+
+test("a string that spells the whole name of one of the venues that share its words is that venue: the ACM's International Conference on Supercomputing (ICS) and the ACM/IEEE Conference on Supercomputing (SC)", () => {
+  const eq = (raw, want) => assert.equal(brief(raw), want, raw);
+  // ... ICS says "international" and SC does not; the names boil down to the same words, the spelling does not
+  eq("Proceedings of the 25th international conference on Supercomputing, 2011", "CCF B ICS · CORE A ICS");
+  eq("International Conference on Supercomputing, 456-474, 1987", "CCF B ICS · CORE A ICS");
+  eq("Proceedings of the conference on Supercomputing, 1990", "CCF A SC · CORE A SC");
+  eq("Conference on Supercomputing", "CCF A SC · CORE A SC");
+  eq("Proceedings - Supercomputing", "CCF A SC · CORE A SC");
+  eq("Proceedings of the 2006 ACM/IEEE conference on Supercomputing, 2006", "CCF A SC · CORE A SC");
+  // ... the Information Security Conference (ISC), not IFIP's; the International Conference on Electronic Commerce (ICEC), not ACM's Conference on Electronic Commerce (EC)
+  eq("Information Security Conference", "CCF C ISC · CORE C ISC");
+  eq("Proceedings of the 10th international conference on Electronic commerce", "CORE C ICEC");
+  eq("Proceedings of the 10th ACM conference on Electronic commerce", "CORE A* EC");
 });

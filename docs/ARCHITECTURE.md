@@ -158,6 +158,10 @@ means no badge:
    (`src/data/aliases.js`) are indexed as extra names (`names`; `fullOnly` for a name whose organisation is part of what it says — "USENIX ATC" is not also "ATC"; `former` for the names
    a venue had that say "Workshop" — found by name, but not part of the venue's wording, so they are no type clash and are read only by the secondary-track exemption). Journals also match on the same
    words in a different order (`Audio, Speech, and Language Processing, IEEE Transactions on`).
+   Venues whose names boil down to one key (ICS, *International Conference on Supercomputing*, and SC, *Conference on Supercomputing*; ISC and IFIP's *Information Security Conference*) are told
+   apart by what the string spells: the one whose own name (an alias counts) the string says whole — years, ordinals, "Proceedings of the", "annual" and the little words aside, but "international",
+   "ACM" and the event word kept (`literalKey`, passed to `decide` as `spells`) — is the venue. Only a tie is broken this way; a string that spells none of them is read as before (the first of venues
+   that share a rating, else no badge).
 2. **Acronym** — only strong signals: `(ICML)`, `(NSDI 11)`, `(USENIX Security 21)`,
    `(S&P'05)`, an unclosed `(OSDI …`, a leading `ISCA 2014`, a one-word venue (`Ndss`), or an
    acronym buried in a sentence when little else is said. Organisation words are never
