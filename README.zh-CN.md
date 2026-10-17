@@ -54,7 +54,7 @@ Better Scholar 是一款面向 [Google Scholar](https://scholar.google.com) 学�
 - **带运算符的搜索。** 按 `/` 聚焦搜索框；可输入普通词以及 `cites:`、`year:`、`age:`、`ccf:`、`core:`、`role:`、`type:`、`has:`，输入时给出建议。表格、奖项与报告的计数和“复制摘要”随筛选（年份范围、搜索、快捷按钮…）收窄；设置页里可关闭。
 - **复制与导出。** 摘要、表格、论文列表、APA、BibTeX、Markdown、JSON 复制到剪贴板，CSV 保存为文件；设置里每种格式各有一个开关，工具栏弹窗中也有同样的按钮。
 - **一个设置页。** 实时预览、预设、配色主题与 JSON 配置。面板本身不保存任何设置。
-- **面向 AI 智能体。** *Copy guide for agents* 把全部设置、你当前的取值、页面调用与搜索语法交给 AI 助手；页面事件让浏览器智能体读取面板的数字并设置筛选。
+- **面向 AI 智能体。** *复制智能体指南* 把全部设置、你当前的取值、页面调用与搜索语法交给 AI 助手；页面事件让浏览器智能体读取面板的数字并设置筛选。
 - **30 种界面语言**，另有 *以此语言打开 Scholar*，让 Scholar 本身以你选的语言打开。
 - **隐私。** 无账号、无统计分析、无追踪。唯一发往 Scholar 以外网站的请求是可选的 Semantic Scholar 标题查询，默认关闭。详见 [`PRIVACY.md`](PRIVACY.md)。
 
@@ -163,8 +163,8 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 | 论文列表 | *自动加载全部论文* |
 | Semantic Scholar | *优先用 Semantic Scholar 补全作者列表*（默认关闭）；可选的 API 密钥 |
 | 检查场所 | 一个文本框：粘贴 Scholar 印出的场所文字，看 CCF 与 CORE 给它什么等级、匹配到哪个条目、依据哪条规则（名称、缩写、被截断名称的可见部分），CCF 场所还有其研究领域和指向 DBLP 页面的链接（点击才会打开）——或者它为什么没有等级（研讨会等次要类别；名录无法确定它） |
-| AI agents | *Copy guide for agents* |
-| 配置与预设 | 预设 *全功能开启*、*Last author focus*、*第一作者偏好*、*极简风格*；*复制配置 (JSON)*、*导出文件*、*导入文件*，以及一个 JSON 编辑器 |
+| AI 智能体 | *复制智能体指南* |
+| 配置与预设 | 预设 *全功能开启*、*末位作者偏好*、*第一作者偏好*、*极简风格*；*复制配置 (JSON)*、*导出文件*、*导入文件*，以及一个 JSON 编辑器 |
 | 已保存的数据 | *查看已保存详情*、*清除已保存的论文详情*、*恢复默认设置*、*复制问题报告所需的信息* |
 
 - **配置只用 JSON。** 编辑器和 *导入文件* 接受与导出记录同形的补丁，如 `{ "panel": { "years": { "show": false }, "copy": { "order": ["bibtex", "summary"] } }, "rows": { "style": "bar" }, "labels": { "metricsTitle": "我的论文" } }`；页面会说明应用了什么、忽略了什么及原因。预设只改它列出的设置，没有任何预设会打开 Semantic Scholar。
@@ -225,14 +225,14 @@ content/panel.js     论文行：角色着色、       lib/formats.js           
 - **CSV：** 遵循 RFC 4180，带 UTF-8 字节顺序标记（让 Excel 正确显示中文等非拉丁文字），行尾为 CRLF；含逗号、引号、分号或换行的字段加引号。
 - **Word、Docs、Pages：** 表格、论文列表和 APA 三个按钮在文本之外还把 HTML 放进剪贴板：文字处理软件粘贴出真正的表格（带边框），或带真正斜体、链接和悬挂缩进的参考文献；电子表格和文本框仍取文本。HTML 中的所有文字都经过转义，像公式的单元格与制表符格式一样被当作文本。其他格式只有文本。工具栏弹窗和 `export` 调用（`html: true`）给出同样的内容。
 - **电子表格公式：** 在 CSV 和制表符分隔的格式中，以 `=`、`+`、`-` 或 `@` 开头（且不是纯数字）的单元格前会加一个撇号，电子表格会把它当作文本显示。
-- 筛选后没有论文时不复制任何内容，按钮显示 *Nothing to copy*。
+- 筛选后没有论文时不复制任何内容，按钮显示 *没有可复制的内容*。
 
 ---
 
 ## 面向 AI 智能体
 
 ### 让 AI 助手帮你配置
-*设置 → AI agents → Copy guide for agents* 会把一份 Markdown 指南放到剪贴板：每项设置（路径、取值、默认值、作用）、你当前的设置、预设、页面调用与搜索语法。它由代码实际使用的表格生成（`lib/prefs.js` 中的 `SETTINGS` 与 `PRESETS`、`lib/agent.js` 中的 `METHODS`、`lib/query.js` 中的 `OPERATORS`），因此不会与代码脱节。把它和你的需求一起交给 AI 助手，再把它的回答（一个 JSON 对象）粘贴到 *配置与预设 → Paste or edit a configuration (JSON)*，然后按 *应用配置*。
+*设置 → AI 智能体 → 复制智能体指南* 会把一份 Markdown 指南放到剪贴板：每项设置（路径、取值、默认值、作用）、你当前的设置、预设、页面调用与搜索语法。它由代码实际使用的表格生成（`lib/prefs.js` 中的 `SETTINGS` 与 `PRESETS`、`lib/agent.js` 中的 `METHODS`、`lib/query.js` 中的 `OPERATORS`），因此不会与代码脱节。把它和你的需求一起交给 AI 助手，再把它的回答（一个 JSON 对象）粘贴到 *配置与预设 → Paste or edit a configuration (JSON)*，然后按 *应用配置*。
 
 ### 页面事件
 在学者主页上，扩展运行后会在 `<html>` 上设置属性 `data-rr-ready`（值为 `"true"`），并以 `better-scholar:response` 事件回答在 `document` 上派发的 `better-scholar:request` 事件：
