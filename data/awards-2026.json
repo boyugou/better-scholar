@@ -81668,19 +81668,17 @@
    "year": 2008,
    "award": "distinguished",
    "awardLabel": "ACM SIGSOFT Distinguished Paper",
-   "title": "An Experimental Approach",
+   "title": "Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach",
    "authors": [
     "Joseph Ruthruff",
     "John Penix",
     "David Morgenthaler",
     "Sebastian Elbaum",
-    "Gregg Rothermel",
-    "Predicting Accurate",
-    "Actionable Static Analysis Warnings"
+    "Gregg Rothermel"
    ],
    "track": "main",
    "source": "https://www2.sigsoft.org/awards/distinguishedpaper/",
-   "evidence": "30th International Conference on Software Engineering (ICSE 2008): Joseph Ruthruff, John Penix, David Morgenthaler, Sebastian Elbaum, Gregg Rothermel, Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach"
+   "evidence": "30th International Conference on Software Engineering (ICSE 2008): Joseph Ruthruff, John Penix, David Morgenthaler, Sebastian Elbaum, Gregg Rothermel, Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach [the page runs the title into the author list; the paper is \"Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach\" — data/exclusions.json]"
   },
   {
    "venue": "ICSE",

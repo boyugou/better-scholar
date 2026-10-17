@@ -71,6 +71,14 @@
    "title": "Locally Adaptive Dimensionality Deduction for Indexing Large Time Series Databases",
    "newTitle": "Locally Adaptive Dimensionality Reduction for Indexing Large Time Series Databases",
    "reason": "sigmod.org/sigmod-awards/sigmod-best-paper-award/ prints \"Deduction\" (Keogh et al.'s paper is \"… Dimensionality Reduction …\"); the misprint matched nothing on Scholar"
+  },
+  {
+   "venue": "ICSE",
+   "year": 2008,
+   "title": "An Experimental Approach",
+   "newTitle": "Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach",
+   "authors": ["Joseph Ruthruff", "John Penix", "David Morgenthaler", "Sebastian Elbaum", "Gregg Rothermel"],
+   "reason": "www2.sigsoft.org/awards/distinguishedpaper/ prints this paper's title run into its author list (\"… Gregg Rothermel, Predicting Accurate and Actionable Static Analysis Warnings: An Experimental Approach\"): the reader split it at the \"and\" and kept only the subtitle as the title, so the paper matched nothing on Scholar"
   }
  ]
 }
