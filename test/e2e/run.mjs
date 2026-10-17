@@ -2846,7 +2846,30 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await fx9.close();
   }
 
-  // -- 30. hostile data — markup, huge words, bidirectional controls, prototype names, empty fields — is drawn by the panel and the popup, and nothing throws
+  // -- 30. an awards row counts the papers that may be the person's, and the list it opens holds the same: not one whose complete author list lacks the name
+  {
+    const award = "NeurIPS 2020 Best Paper Award";
+    const rows = [["I Stoica, A Smith, B Lee", award, "Found paper"], ["A Smith, B Lee, C Kim", award, "Absent paper"], ["A Smith, B Lee, …", award, "Hidden paper"],
+      ["I Stoica, R Morris", "Proceedings of the 25th Symposium on Operating Systems Principles, 2015", "Other paper"]];
+    const fx11 = await start({ slug: "ion-stoica", pageSize: 20, rows, latency: 0 });
+    const ctx11 = await launch();
+    try {
+      const page = await ctx11.newPage();
+      await page.goto(fx11.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('#rr-panel .rr-markrow[data-mark-group="award"]').length === 1);
+      await page.bringToFront();
+      const counted = parseInt(await page.locator('#rr-panel .rr-markrow[data-mark-group="award"] .rr-markcount, #rr-panel .rr-markrow[data-mark-group="award"] b').first().textContent(), 10);
+      assert.equal(counted, 2, "the row counts the paper with the name and the one whose list was cut, not the one whose whole list lacks it");
+      await page.click('#rr-panel .rr-markrow[data-mark-group="award"]');
+      await eventually(page, () => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr:not(.rr-hide)").length <= 2);
+      assert.equal(await visibleRows(page), counted, "the list the row opens holds as many papers as the row counts");
+      assert.deepEqual(await page.locator("#gsc_a_b tr.gsc_a_tr:not(.rr-hide) .gsc_a_at").allTextContents(), ["Found paper", "Hidden paper"]);
+      ok("an awards row counts the papers that may be the person's, and the list it opens holds the same (a paper whose whole author list lacks the name is in neither)");
+    } finally { await ctx11.close(); await fx11.close(); }
+  }
+
+  // -- 31. hostile data — markup, huge words, bidirectional controls, prototype names, empty fields — is drawn by the panel and the popup, and nothing throws
   {
     let seed = 7;
     const rnd = () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };

@@ -46,12 +46,17 @@
     }
     const u = summary.unranked;
     if (u && summary.totals[NONE]) lines.push(`Not ranked: ${summary.totals[NONE]} (${[["preprints", u.preprint], ["secondary tracks of ranked venues", u.secondary], ["other venues", u.other]].filter(([, n]) => n).map(([w, n]) => `${w} ${n}`).join(", ")})`);
-    if (summary.hidden) lines.push(`Role not visible (author list truncated by Scholar): ${summary.hidden}`);
-    if (summary.absent) lines.push(`Name not found in author list: ${summary.absent}`);
+    lines.push(...unseenLines(summary));
     for (const line of extra) lines.push(line);
     if (edition) lines.push(edition);
     return lines.join("\n");
   }
+
+  // The papers the table does not count by role: the author list was cut and the name is not in the part Scholar shows, or the list is whole and has no such name
+  const unseenLines = (summary) => [
+    summary.hidden ? `Role not visible (author list truncated by Scholar): ${summary.hidden}` : "",
+    summary.absent ? `Name not found in author list: ${summary.absent}` : ""
+  ].filter(Boolean);
 
   // The summary table: a header and one row per role, then the totals.
   function summaryTable(summary, { label = ROLE_LABEL, header = "Role", total = "Total", notRanked = "Unranked" } = {}) {
@@ -63,7 +68,7 @@
   // The same table, tab-separated, for a spreadsheet. `opts.scope`: what it counts, when that is less than the whole profile: a last line under the table
   function summaryTsv(summary, opts) {
     const t = summaryTable(summary, opts), o = opts || {};
-    return rowsTsv(t.header, [...t.rows, ...[o.scope, ...(o.notes || [])].filter(Boolean).map((line) => [line])]);
+    return rowsTsv(t.header, [...t.rows, ...[o.scope, ...unseenLines(summary), ...(o.notes || [])].filter(Boolean).map((line) => [line])]);
   }
 
   // ---- tables: tab-separated and CSV ----------------------------------------------------------------------------------------------------------
@@ -123,7 +128,8 @@
   }
   const summaryHtml = (summary, opts) => {
     const t = summaryTable(summary, opts), o = opts || {};
-    return rowsHtml(t.header, t.rows, o.scope) + (o.notes && o.notes.length ? "\n" + o.notes.map((n) => `<p>${esc(clean(n))}</p>`).join("\n") : "");
+    const after = [...unseenLines(summary), ...(o.notes || [])];
+    return rowsHtml(t.header, t.rows, o.scope) + (after.length ? "\n" + after.map((n) => `<p>${esc(clean(n))}</p>`).join("\n") : "");
   };
 
   // ---- BibTeX -----------------------------------------------------------------------------------------------------------------------------------
@@ -132,6 +138,9 @@
   const TEX = { "\\": "\\textbackslash{}", "{": "\\textbraceleft{}", "}": "\\textbraceright{}", "$": "\\$", "&": "\\&", "#": "\\#", "^": "\\textasciicircum{}", "_": "\\_", "~": "\\textasciitilde{}", "%": "\\%" };
   const tex = (s) => clean(s).replace(/[\\{}$&#^_~%]/g, (c) => TEX[c]);
   const STOP = new Set(["a", "an", "the", "on", "in", "for", "and", "of", "to", "with", "at", "by", "from", "towards"]);
+  // letters without accents, and those that have none to take off, as ASCII (a citation key is ASCII)
+  const ASCII_LETTERS = { "ł": "l", "Ł": "L", "ø": "o", "Ø": "O", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "þ": "th", "Þ": "Th", "ß": "ss", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ı": "i", "ħ": "h", "Ħ": "H" };
+  const ascii = (s) => String(s == null ? "" : s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[łŁøØđĐðÐþÞßæÆœŒıħĦ]/g, (c) => ASCII_LETTERS[c]);
 
   function entryType(p) {
     const venue = clean(p.venue);
@@ -151,9 +160,9 @@
     const used = new Set();
     return papers.map((p) => {
       const { names, cut } = authorList(p.authors);
-      const surname = (names[0] || "").split(/\s+/).pop().normalize("NFD").replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "paper";
+      const surname = ascii(names[0] || "").split(/\s+/).pop().replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "paper";
       const year = p.year ? String(p.year).replace(/[^0-9]/g, "") : "";                          // (a year is digits: it goes into the key and a field as it is)
-      const words = clean(p.title).toLowerCase().match(/[a-z0-9]+/g) || [];
+      const words = ascii(clean(p.title)).toLowerCase().match(/[a-z]+/g) || [];          // (letters: "Über die Welt" is "uber", "2016 Survey of Things" is "survey")
       const word = words.find((w) => !STOP.has(w) && w.length >= 3) || words[0] || "paper";
       const base = `${surname}${year || "nodate"}${word}`;
       let key = base;

@@ -82,20 +82,23 @@
     r = r.replace(/[,;|]+/g, " ").replace(/\s+/g, " ").replace(/ (?:ph\.?\s?d|m\.?\s?d)\.?\s*$/i, "");
     const toks = r.split(/\s+/).filter(Boolean);
     while (toks.length > 1 && PREFIXES.has(bare(toks[0]))) toks.shift();
-    while (toks.length > 1 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();
+    while (toks.length > 2 && SUFFIXES.has(bare(toks[toks.length - 1]))) toks.pop();          // (not the second word of a two-word name: "Chidi Mba", "Naoki Ii")
     return toks.join(" ");
   }
 
-  // { givens: [tokens], particles: [..], last: surname token }
+  // { givens: [tokens], particles: [..], last: surname token, compound: the surname is joined by a hyphen or an apostrophe ("Carreira-Perpinan", "O'Connell") }
   function nameParts(s, { owner = false } = {}) {
-    const toks = normalize(owner ? cleanOwnerHeader(s) : s).split(" ").filter(Boolean);
-    if (!toks.length) return { givens: [], particles: [], last: "" };
+    const raw = owner ? cleanOwnerHeader(s) : String(s == null ? "" : s);
+    const toks = normalize(raw).split(" ").filter(Boolean);
+    if (!toks.length) return { givens: [], particles: [], last: "", compound: false };
+    const lastWord = fold(raw).trim().split(/\s+/).pop().replace(/^[-'’.]+|[-'’.]+$/g, "");
+    const compound = /[-'’]/.test(lastWord);
     const last = toks[toks.length - 1];
     let end = toks.length - 1;
     const particles = [];
     // A particle only counts when something (a given name) precedes it.
     while (end > 1 && PARTICLES.has(toks[end - 1])) particles.unshift(toks[--end]);
-    return { givens: toks.slice(0, end), particles, last };
+    return { givens: toks.slice(0, end), particles, last, compound };
   }
 
   // True when a concatenated-initials token (one side) lines up letter by letter
@@ -126,8 +129,9 @@
     return true;
   }
 
+  // (a surname joined by a hyphen or an apostrophe is another surname than its last part: "Carreira-Perpinan" and "O'Connell" are not "Perpinan" and "Connell")
   const sameSurname = (a, b) =>
-    a.last === b.last &&
+    a.last === b.last && !!a.compound === !!b.compound &&
     (!a.particles.length || !b.particles.length || a.particles.join(" ") === b.particles.join(" "));
 
   // How strongly does the displayed author text match one owner name variant?
@@ -176,6 +180,8 @@
         if (authorCaps === undefined) authorCaps = isAllCaps(authorText);
         if (!authorCaps && !ownerForm(owner.name).caps) continue;
       }
+      // (the name as printed, once the page has chosen its rearrangement: only the identical name is still the owner's — "L Wei" is not "Li Wei" where "W Li" is)
+      if (owner.exactName && v === owner.name) { if (a.norm === undefined) a.norm = normalize(a.raw); best = Math.max(best, a.norm === ownerForm(v).norm ? 3 : 0); continue; }
       best = Math.max(best, strength(a, v));
     }
     return best;
@@ -210,23 +216,26 @@
     const shared = a.filter((m) => b.includes(m));
     if (!shared.length) return 0;
     let k = 2;
-    while (k < tokens.length && shared.some((m) => (tokens[k].marks || []).includes(m))) k++;
-    return k;
+    while (k < tokens.length && !tokens[k].afterCut && shared.some((m) => (tokens[k].marks || []).includes(m))) k++;
+    return k === tokens.length && k > 2 ? 0 : k;          // (every author marked: the mark is no equal contribution of a leading few)
   }
 
   // Parse "A Smith, B Jones, C Lee" into ordered tokens with co-first flags.
   // Scholar truncates long lists with "…" or "..."; the marker is dropped but we
   // remember the list was cut so "last author" is never over-claimed.
+  // (the marks of a cut: "…", "⋯", "‥", two or more dots, ". . .", "et al"; and the separators besides the comma: ";", "·", the ideographic and Arabic commas, "|", a spaced slash, " and ", "&")
+  const CUT = /…|⋯|‥|\.{2,}|(?:\.\s){2,}\.|\bet al\b\.?/gi;
+  const SEPARATOR = /[,;·、､，；،|]|\s\/\s|\s(?:and|&amp;|&)\s/i;
   function parseAuthors(text) {
     const src = String(text || "");
-    const truncated = /…|\.\.\.|\bet al\b\.?/i.test(src);
-    const tokens = src
-      .replace(/…|\.\.\.|\bet al\b\.?/gi, ",")
-      .split(/[,;·、，；]/)
+    const truncated = new RegExp(CUT.source, "i").test(src);
+    // what stands after a cut has no known position in the list: it can be neither the first, the second nor the last author
+    const tokens = src.split(CUT).flatMap((part, seg) => part.split(SEPARATOR)
       .map((t) => t.trim())
       .filter(Boolean)
       .map(splitCofirst)
-      .filter((t) => t.name.length > 1);
+      .filter((t) => t.name.length > 1)
+      .map((t) => (seg > 0 ? { ...t, afterCut: true } : t)));
     return { tokens, truncated };
   }
 
@@ -254,6 +263,7 @@
   // In a two-author paper the second author is the senior (last) author. A
   // truncated list never claims the last slot.
   function roleFor(idx, tokens, truncated) {
+    if (tokens[idx].afterCut) return "middle";
     if (tokens[idx].cofirst && idx < leadingGroup(tokens)) return "cofirst";
     if (idx === 0) return "first";
     if (idx === tokens.length - 1 && !truncated) return "last";
@@ -361,7 +371,7 @@
       }
       if (best && best.n - base >= Math.max(5, 4 * base) && best.n >= lists.length * 0.25) {
         out.auto.push({ name: best.cand, rows: best.n - base });
-        current = { name: owner.name, alternates: [...(owner.alternates || []), best.cand] };
+        current = { name: owner.name, alternates: [...(owner.alternates || []), best.cand], exactName: true };
       }
     }
     const tally = new Map();

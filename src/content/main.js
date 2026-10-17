@@ -46,7 +46,8 @@
   // What the rows say about the owner's spelling (see names.suggestVariants): the profile name in the other order is used at
   // once when it finds the owner and the name as printed hardly does; other rearrangements ("SY Philip") are only offered.
   let hints = { auto: [], suggestions: [] };
-  const owner = () => ({ name: headerName, alternates: [...variants, ...hints.auto.map((v) => v.name)] });
+  // (once the page has chosen the profile name's other order — "Li Wei" printed "W Li" — the name as printed finds only its identical self: "L Wei" is somebody else's)
+  const owner = () => ({ name: headerName, alternates: [...variants, ...hints.auto.map((v) => v.name)], exactName: hints.auto.length > 0 });
   // true when the automatic spellings changed (the rows must then be analysed again)
   function updateHints() {
     const next = names.suggestVariants(state.rows.map((r) => (resolvedCache[r.raw.id] && resolvedCache[r.raw.id].authors) || r.raw.authorsText), { name: headerName, alternates: variants });
@@ -212,7 +213,8 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     if (f.query && !matcher().test(row)) return false;
     if (f.minCitations != null && row.shown < f.minCitations) return false;
     if (min && !(row.highlighted && row.shown >= min)) return false;
-    if (!skip.marks && state.markGroup && !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup)) return false;
+    // (an awards or talks row counts the papers that may be the person's — not one whose complete author list lacks the name: the list it opens holds the same)
+    if (!skip.marks && state.markGroup && (a.status === "absent" || !marks.inGroup({ marks: B.prefs.panelMarks(prefs, a.marks) }, state.markGroup))) return false;
     if (!skip.venue && state.venueKey && metrics.venueKey(a.venue, B.prefs.lists(prefs), B.prefs.winner(prefs)) !== state.venueKey) return false;
     if (!skip.selection && state.selection && !metrics.inSelection({ status: a.status, role: a.role, venue: a.venue }, state.selection, source)) return false;
     return true;

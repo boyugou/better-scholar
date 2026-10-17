@@ -276,3 +276,29 @@ test("rank notes of the BibTeX and Markdown copies: where both lists rank a venu
   assert.ok(!f.markdown([both], { ccfOn: false, prefer: "ccf" }).includes("CCF"));
 });
 
+test("the copied table says what it did not count by role, as the summary does: the lists Scholar cut and the papers without the name", () => {
+  const summary = metrics.summarize([row("first", "A"), row("last", "B"), { status: "hidden", role: null, venue: {}, citations: 1 }, { status: "hidden", role: null, venue: {}, citations: 1 }, { status: "absent", role: null, venue: {}, citations: 1 }], "ccf");
+  assert.equal(summary.hidden, 2);
+  assert.equal(summary.absent, 1);
+  const lines = f.summaryTsv(summary, { label: { first: "First", second: "Second", last: "Last", middle: "Other" } }).split("\n");
+  assert.ok(lines.includes("Role not visible (author list truncated by Scholar): 2"), lines.join(" | "));
+  assert.ok(lines.includes("Name not found in author list: 1"), lines.join(" | "));
+  const html = f.summaryHtml(summary, { label: { first: "First", second: "Second", last: "Last", middle: "Other" } });
+  assert.match(html, /<p>Role not visible \(author list truncated by Scholar\): 2<\/p>/);
+  assert.match(html, /<p>Name not found in author list: 1<\/p>/);
+  // … and a profile with nothing unseen adds nothing
+  const whole = metrics.summarize([row("first", "A")], "ccf");
+  assert.ok(!/not visible|not found/.test(f.summaryTsv(whole, {})));
+});
+
+test("BibTeX citation keys are ASCII, as the README says: the first word of three letters or more of the title, accents taken off, digits not counted", () => {
+  const key = (title, authors = "J Smith") => /^@\w+\{([^,]+),/.exec(f.bibtex([paper({ title, authors, year: 2020 })]))[1];
+  assert.equal(key("\u00d6konomische Theorie der Firma"), "smith2020okonomische");
+  assert.equal(key("\u00dcber die Welt"), "smith2020uber");
+  assert.equal(key("2016 Survey of Things"), "smith2020survey");
+  assert.equal(key("The \u0141ukasz Method"), "smith2020lukasz");
+  assert.equal(key("Deep Learning", "\u0141 Kaiser"), "kaiser2020deep");
+  assert.equal(key("COVID-19 and Models"), "smith2020covid");
+  assert.equal(key("\u6df1\u5ea6\u5b66\u4e60"), "smith2020paper", "no letters of ASCII: a word that says so");
+});
+

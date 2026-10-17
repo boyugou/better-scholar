@@ -105,6 +105,10 @@ Matching an author token to the owner (`names.js`):
   with it; an all-caps *name* is not treated as initials;
 - family-name particles (`van der`, `von`, …) belong to the surname; `de/di/da/le/la` do
   not, because they are common given names;
+- a surname joined by a hyphen or an apostrophe (`Carreira-Perpinan`, `O'Connell`) is a **compound**: it equals only
+  another compound of the same words, never its last part (`MA Carreira-Perpinan` is not `Miguel Perpinan`'s,
+  `H Molina` is not `Hector Garcia-Molina`'s) — `nameParts().compound`, checked by `sameSurname`;
+- a two-word name keeps its second word (`Chidi Mba`, `Naoki Ii` are not a degree); a suffix (`Jr`, `PhD`) is taken off a longer name only;
 - user-added spellings ("name variants", stored per profile, at most eight) are extra owner names. Chinese
   family-name-first order (`Zhang Wei` for `W Zhang`) is never guessed blindly — it would
   create false matches — but the page's own rows can show it: `names.suggestVariants` (pure)
@@ -114,9 +118,13 @@ Matching an author token to the owner (`names.js`):
   rearrangements with initials (`SY Philip` for `Philip S. Yu`, `J Tang`) and an all-caps inventor (`JA DOUDNA`: `isShoutedInitials`, only when the same initials written as usual find the owner elsewhere on the profile; an all-caps name is never read as initials by the matcher) are only **offered**,
   from complete author lists that otherwise lack the owner, in at least two papers, as a
   one-click suggestion; the automatic spelling is not stored (it is derived again on every load),
-  a suggestion that is accepted becomes an ordinary variant.
+  a suggestion that is accepted becomes an ordinary variant. Once the automatic spelling is chosen the owner is `{ …, exactName: true }`: the profile name as
+  printed then finds only its *identical* self (`Li Wei` printed `W Li`: `L Wei` is somebody else; `matchStrength`).
 
-Roles (`roleFor`): co-first (the owner is inside the leading group of authors that share a mark with the first author — `A*, B*, C`, at least two; a lone mark or
+Author lists (`parseAuthors`) are cut at a cut mark (`…`, `⋯`, `‥`, two dots or more, `. . .`, `et al`) and told apart at `,` `;` `·` `|` the ideographic and
+Arabic commas, a spaced slash, ` and ` and `&`; a name after a cut has no known position (`afterCut`: always middle, never in a leading group).
+
+Roles (`roleFor`): co-first (the owner is inside the leading group of authors that share a mark with the first author — `A*, B*, C`, at least two, and not every author of a list of three or more; a lone mark or
 one further down, a corresponding or co-senior author, says nothing; the envelope ✉ is never equal contribution) → first (position 0) → last (final
 position, only if the list is *not* truncated) → second (position 1) → middle. In a
 two-author paper the second author is the senior (last) author. Middle authors are not

@@ -304,3 +304,79 @@ test("the position of the owner in a list is the role: first, last (when the lis
     assert.equal(res.status === "found" ? res.role : res.status, want, text + " / " + owner.given + " " + owner.sur);
   }
 });
+
+// ---- the independent review of 2026-10-17: six ways the owner's name could be credited to someone else's position ----
+
+const roleOf = (header, line, extra = {}) => { const r = names.classifyRow(line, { name: header, ...extra }); return r.status === "found" ? r.role : r.status; };
+
+test("a surname joined by a hyphen or an apostrophe is not its last part: 'Carreira-Perpinan' is not 'Perpinan', 'O'Connell' not 'Connell'", () => {
+  assert.equal(roleOf("Miguel Perpinan", "MA Carreira-Perpinan, G Hinton"), "absent");
+  assert.equal(roleOf("Mark Connell", "A East-Seletsky, MR O\u2019Connell, SC Knight, D Burstein, JHD Cate, R Tjian, ..."), "hidden", "the cut list keeps asking for its full author list");
+  assert.equal(roleOf("Anna Jones", "Anna Smith-Jones, B Lee"), "absent");
+  assert.equal(roleOf("Hector Garcia-Molina", "H Molina, X Li"), "absent");
+  // … the compound itself, in whatever dress Scholar prints it, is the owner's
+  assert.equal(roleOf("Hector Garcia-Molina", "H Garcia-Molina, X Li"), "first");
+  assert.equal(roleOf("Miguel \u00c1. Carreira-Perpi\u00f1\u00e1n", "MA Carreira-Perpinan, G Hinton"), "first");
+  assert.equal(roleOf("Sean O\u2019Brien", "S O'Brien, A Lee"), "first");
+  assert.equal(roleOf("Sean O'Brien", "A Lee, S O\u2019Brien"), "last");
+  assert.equal(roleOf("Jian-Yun Nie", "J Nie, A Lee"), "first", "a hyphen in a given name is no compound surname");
+});
+
+test("what stands after a cut has no known place in the list: not the first, the second or the last author", () => {
+  assert.equal(roleOf("Alex Example", "\u2026, A Example, B Writer"), "middle");
+  assert.equal(roleOf("Alex Example", "A Writer, ..., A Example"), "middle");
+  assert.equal(roleOf("Alex Example", "..., B Writer, A Example"), "middle");
+  assert.equal(roleOf("Alex Example", "A Example, B Writer, ..."), "first", "before the cut the places are known");
+  assert.equal(roleOf("Alex Example", "B Writer, A Example, ..."), "second");
+  assert.equal(roleOf("Alex Example", "A Writer*, B Writer*, ..., A Example*"), "middle", "a mark after the cut is no leading group's");
+});
+
+test("the marks of a cut: \u2026 \u22ef \u2025, two dots or more, '. . .', 'et al' — the list is cut and its last place is never claimed", () => {
+  for (const cut of ["\u2026", "\u22ef", "\u2025", "..", "...", " . . .", "et al", "et al."]) {
+    const r = names.classifyRow(`B Writer, A Example, ${cut}`.replace(", ,", ","), { name: "Alex Example" });
+    assert.equal(r.truncated, true, JSON.stringify(cut));
+    assert.equal(r.role, "second", JSON.stringify(cut));
+  }
+  assert.equal(roleOf("Alex Example", "B Writer, A Example \u22ef"), "second");
+  assert.equal(roleOf("Alex Example", "J. R. R. Tolkien, A Example"), "last", "initials with their dots are no cut: the list is whole, and its second author of two is the last");
+});
+
+test("authors are told apart by more than the comma: ';', '|', a spaced slash, ' and ', '&', the ideographic and Arabic commas", () => {
+  for (const sep of [" and ", " & ", " &amp; ", " | ", " / ", "; ", "\u060c ", "\uff64", "\u3001"]) {
+    assert.equal(roleOf("Bob Lee", `A Smith${sep}B Jones${sep}B Lee`), "last", JSON.stringify(sep));
+    assert.equal(roleOf("Alice Jones", `A Smith${sep}A Jones`), "last", JSON.stringify(sep));
+    assert.equal(roleOf("Alice Jones", `A Jones${sep}A Smith${sep}C Lee`), "first", JSON.stringify(sep));
+  }
+  assert.equal(roleOf("Bob Lee", "A Smith, B Jones and C Lee"), "absent", "three people: 'B Jones and C Lee' is not 'B Lee'");
+  assert.equal(roleOf("Bob Lee", "A Smith, B Jones | C Lee"), "absent", "'B Jones' and 'C Lee' are two people: not 'Bob Lee'");
+  assert.equal(roleOf("Alice Jones", "A Smith and B Jones"), "absent", "'B Jones' is not 'A Jones'");
+});
+
+test("a two-word name keeps its second word, however much it looks like a degree: 'Chidi Mba', 'Naoki Ii'; a third word that is a suffix still goes", () => {
+  assert.equal(roleOf("Chidi Mba", "C Mba, A Lee"), "first");
+  assert.equal(roleOf("Naoki Ii", "N Ii, A Lee"), "first");
+  assert.equal(roleOf("John Smith Jr", "J Smith, A Lee"), "first");
+  assert.equal(roleOf("Prof. Dr. Jane Doe, PhD", "J Doe, A Lee"), "first");
+});
+
+test("a mark on every author of a list of three or more is no equal contribution of a leading few; two marked authors of two are co-first", () => {
+  assert.equal(roleOf("Alex Example", "A Example*, B Writer*, C Lee*"), "first");
+  assert.equal(roleOf("Alex Example", "A Writer*, B Writer*, A Example*"), "last");
+  assert.equal(roleOf("Alex Example", "A Example*, B Writer*, C Lee"), "cofirst");
+  assert.equal(roleOf("Alex Example", "A Example*, B Writer*"), "cofirst");
+});
+
+test("a surname-first profile name the page has turned round ('Li Wei' printed 'W Li') finds only its identical self as printed: 'L Wei' is somebody else", () => {
+  const mine = Array.from({ length: 91 }, (_, i) => `W Li, A Chen${i % 3 ? "" : ", D Xu"}, B Zhao`);
+  const others = Array.from({ length: 9 }, () => "L Wei, C Wu, D Xu");
+  const lines = [...mine, ...others];
+  const hints = names.suggestVariants(lines, { name: "Li Wei" });
+  assert.deepEqual(hints.auto.map((v) => v.name), ["Wei Li"], "the page chooses the other order");
+  const before = { name: "Li Wei", alternates: ["Wei Li"] }, after = { name: "Li Wei", alternates: ["Wei Li"], exactName: true };
+  const found = (o) => lines.filter((l) => names.classifyRow(l, o).status === "found").length;
+  assert.equal(found(before), 100, "the name as printed kept finding 'L Wei' as well (the stranger took a place of honour in nine papers)");
+  assert.equal(found(after), 91, "now only the owner's papers");
+  assert.equal(names.classifyRow("Li Wei, A Chen, B Zhao", after).role, "first", "the identical name, in full, is still the owner's");
+  assert.equal(names.classifyRow("L Wei, C Wu", after).status, "absent");
+});
+
