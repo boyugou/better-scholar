@@ -69,7 +69,7 @@
         h("thead", {}, h("tr", {}, h("th", {}, h("span", { class: "sr" }, t("colRole"))), ...cols.map((c) => h("th", c === "none" ? { title: [t("tipUnranked"), unrankedWords(s)].filter(Boolean).join("\n") } : {}, tier(c))), showTotal ? h("th", { class: "rr-col-total" }, t("colTotal")) : null)),
         h("tbody", {}, ...s.rows.filter((r) => r.role !== "middle" || tp.other).map((r) => h("tr", {},
           h("th", {}, h("span", { class: "dot", style: "background:" + COLOR[r.role] }), t(ROLE[r.role])),
-          ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, r[c] ? String(r[c]) : "·")),
+          ...cols.map((c) => h("td", { class: r[c] ? "" : "z" }, ...(r[c] ? [String(r[c])] : [h("span", { "aria-hidden": "true" }, "·"), h("span", { class: "sr" }, "0")]))),
           showTotal ? h("td", { class: "t" }, String(r.total)) : null)), hiddenRow),
         showTotal ? h("tfoot", {}, h("tr", {}, h("th", {}, t("colTotal")), ...cols.map((c) => h("td", {}, String(s.totals[c]))), h("td", {}, String(s.totals.total)))) : null);
       const mp = prefs.panel.marks;
@@ -81,6 +81,8 @@
         // (the button keeps the width of its own label, so that the shorter word does not let the buttons after it move up: the next click would land on another one)
         if (!button.style.minWidth) { const was = button.style.cssText; button.style.cssText = "flex:none;min-width:0;width:max-content"; const w = Math.ceil(button.getBoundingClientRect().width); button.style.cssText = was; button.style.minWidth = w + "px"; }
         button.textContent = text;
+        const live = document.getElementById("live");          // (a button that changes its words is not read out: the status is)
+        if (live) { live.textContent = text; clearTimeout(live.rrTimer); live.rrTimer = setTimeout(() => { live.textContent = ""; }, 1500); }
         if (ok) button.classList.add("btn-flashed");
         button.rrTimer = setTimeout(() => { button.textContent = old; button.classList.remove("btn-flashed"); button.style.minWidth = ""; }, 1200);
       };

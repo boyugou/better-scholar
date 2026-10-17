@@ -3018,5 +3018,71 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctx13.close(); await fx13.close(); }
   }
 
+  // -- 34. the accessibility review: the keyboard stays on a pill and goes to the search box after Clear, the parts have headings, the table and its buttons say the list and the tier, a drop-down button says what it is a year of,
+  // the query's error is in words, the settings page says "Copied", names its chosen looks and takes a section link to the section
+  {
+    const fx14 = await start({ slug: "ion-stoica", pageSize: 100, latency: 0 });
+    const ctx14 = await launch();
+    try {
+      const page = await ctx14.newPage();
+      await page.goto(fx14.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      await page.bringToFront();
+      const active = () => page.evaluate(() => { const a = document.activeElement; return a ? { tag: a.tagName, pill: a.dataset.pill || null, act: a.dataset.act || null, cls: String(a.className) } : null; });
+      // a key press on a pill: the pill keeps the keyboard when the panel is drawn again
+      await page.focus('#rr-panel .rr-spill[data-pill="ccfA"]');
+      await page.keyboard.press("Enter");
+      await page.waitForTimeout(500);
+      assert.equal((await active()).pill, "ccfA", "the pill keeps the keyboard");
+      // Clear in the filter bar by key: the bar goes with the filters, the keyboard goes to the search box
+      await page.focus('#rr-panel [data-act="clear-filters"]');
+      await page.keyboard.press("Enter");
+      await page.waitForTimeout(400);
+      assert.match((await active()).cls, /rr-search-input/, "after Clear the keyboard is in the search box");
+      // headings, a named table, buttons that say the list and the tier
+      const sem = await page.evaluate(() => ({
+        headings: [...document.querySelectorAll('#rr-panel [role="heading"]')].map((n) => [n.getAttribute("aria-level"), n.textContent.trim()]),
+        table: (document.querySelector("#rr-panel table.rr-matrix") || {}).ariaLabel || document.querySelector("#rr-panel table.rr-matrix").getAttribute("aria-label"),
+        cell: document.querySelector('#rr-panel button.rr-cell[data-role="first"][data-tier="A"]').getAttribute("aria-label"),
+        head: document.querySelector('#rr-panel thead button[data-tier="A"]').getAttribute("aria-label"),
+        none: document.querySelector('#rr-panel thead button[data-tier="none"]').getAttribute("aria-label")
+      }));
+      assert.ok(sem.headings.length >= 3 && sem.headings.every(([lvl, text]) => lvl === "3" && text), `the parts have headings: ${JSON.stringify(sem.headings)}`);
+      assert.ok(sem.table, "the table has a name");
+      assert.match(sem.cell, /^First, CCF A: \d+$/, "a cell says the role, the list and the tier");
+      assert.equal(sem.head, "CCF A", "a column says its list");
+      assert.match(sem.none, /ranked/i, "the column of what is not ranked is named in words");
+      // a drop-down keeps its name when it shows a choice
+      await page.click('#rr-panel [data-act="year-start"]');
+      await page.locator("#rr-panel .rr-dd-list:not([hidden]) li").nth(2).click();
+      assert.match(await page.locator('#rr-panel [data-act="year-start"]').getAttribute("aria-label"), /^[^:]+: \d{4}$/, "a year button reads 'From: 2024', not '2024'");
+      // the query's error in words, linked to the box
+      await page.locator("#rr-panel .rr-search-input").fill("cites:abc");
+      await page.waitForTimeout(300);
+      assert.equal(await page.locator("#rr-search-error").isVisible(), true, "the error is on the screen");
+      assert.ok((await page.locator("#rr-search-error").textContent()).trim().length > 3);
+      assert.equal(await page.locator("#rr-panel .rr-search-input").getAttribute("aria-describedby"), "rr-search-error");
+      await page.locator("#rr-panel .rr-search-input").fill("");
+      await page.waitForTimeout(300);
+      assert.equal(await page.locator("#rr-search-error").isVisible(), false, "and goes with it");
+      // the settings page
+      const opts = await openOptions(ctx14);
+      await opts.bringToFront();
+      assert.equal(await opts.evaluate(() => [...document.querySelectorAll("h2 svg, .seg-btn svg")].filter((v) => v.getAttribute("aria-hidden") !== "true").length), 0, "no icon of the page is read out");
+      assert.equal(await opts.locator('.theme-preset-card[aria-pressed="true"]').count() <= 1, true);
+      assert.equal(await opts.locator(".theme-preset-card[aria-pressed]").count() > 3, true, "a look says whether it is chosen");
+      assert.equal(await opts.locator(".chip-theme[aria-pressed]").count() > 3, true);
+      await opts.click('[data-act="config-copy"]');
+      await eventually(opts, () => document.getElementById("live").textContent === "Copied");
+      const card = await opts.evaluate(() => document.querySelector("nav.toc a:nth-child(3)").dataset.card);
+      await opts.focus("nav.toc a:nth-child(3)");
+      await opts.keyboard.press("Enter");
+      await opts.waitForTimeout(900);
+      assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.id), card, "a section link taken by key leaves the keyboard in the section");
+      ok("the keyboard stays on a pill and goes to the search box after Clear; headings, a named table, buttons with the list and the tier, a drop-down that keeps its name, the query's error in words; the settings page says Copied, names its looks and takes a section link to the section");
+    } finally { await ctx14.close(); await fx14.close(); }
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });
