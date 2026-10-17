@@ -313,8 +313,10 @@ arrows, otherwise `Enter` / `Shift+Enter` step through the matching rows (`rr-ro
 `state` in `main.js` holds the filters: `selection` (a matrix cell, role or tier), `markGroup` (an awards / talk row), `venueKey`
 (a venue of the top-venues list) and `filters` (`onlyHighlighted`, `yearStart`, `yearEnd`, `query`, `minCitations` — set only by
 the `filter` call — and `impact`). `applyFilters()` toggles `rr-hide` on rows; `filtering()` says whether any is on, which shows
-the panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*); `Escape` on the page clears them all
-when nothing else has taken the key. The numbers under the filters follow them (`scoped()`: highlighted papers, citations,
+the panel's filter bar ("Showing 25 of 100 papers · Last, CCF A · 2020–2024" and *Clear*). The bar stands in the title bar in place of the title (one line,
+the whole text on hover, a `role="status"` so that it is said when it changes; with no title bar it stands in front of the parts), so that a filter does not
+make the panel taller: nothing under the pointer or the caret moves — which is also why the awards rows stay, quiet, while the filters leave none of their papers
+(`marksWhole`). `Escape` on the page clears them all when nothing else has taken the key. The numbers under the filters follow them (`scoped()`: highlighted papers, citations,
 h-index, i10, the venue list — the venue list is not narrowed by its own choice). So do the role × rank table, the awards and
 talks counts and the panel's copy summary and copy table (`counted()`, `tableSummary()`; the setting `panel.filters.follow`, on by
 default): they count the papers the narrowing filters leave (`scopeFiltering()`: the venue, *Only highlighted*, the years, the
@@ -384,6 +386,11 @@ search of the settings that hides it is cleared first); a tray lists what is hid
 by measuring, because the preview is drawn again after every change; all of it changes the same record as the controls (`put` /
 `save`), so the two sides are one. The preview is a picture for the eye and the mouse: `quiet()` takes it out of the tab order and the
 accessibility tree after every drawing (the controls on the left are the page for a keyboard and a screen reader; the tray stays for use).
+
+For the keyboard, a row of like buttons is one Tab stop (`rove()` in `options.js`; the year bars of the panel do the same): the section links under the header and
+each colour row, the arrows (mirrored in a right-to-left page), Home and End move among them and the one that is on, or in view, is the stop — 22 links and 40 swatches
+did not stand in front of the first setting any more. In one column (a window under 960 px) the preview is a sticky strip of at most 40% of the window's height that
+scrolls inside, so that the settings are in the first screen and a change is seen as it is made; a link to a section scrolls it to just below the strip.
 
 *Check a venue*: a box that runs `venues.createResolver` (the page's own, over `data/ccf.js`, `data/core.js` and `data/aliases.js`) on the text
 and draws what it finds with the chip code of the panel: each list's rank, the matched name, the rule (`chips.ruleText`), and for a CCF venue its
