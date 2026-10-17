@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Aramayı temizle"
   },
+  "optSearchNone": {
+    "message": "Bununla eşleşen bir ayar yok."
+  },
   "optCacheTitle": {
     "message": "Kayıtlı Makale Ayrıntıları"
   },

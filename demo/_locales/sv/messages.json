@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Rensa sökningen"
   },
+  "optSearchNone": {
+    "message": "Ingen inställning matchar sökningen."
+  },
   "optCacheTitle": {
     "message": "Sparade artikeluppgifter"
   },

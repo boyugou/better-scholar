@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Ryd søgningen"
   },
+  "optSearchNone": {
+    "message": "Ingen indstilling matcher søgningen."
+  },
   "optCacheTitle": {
     "message": "Gemte artikeldetaljer"
   },

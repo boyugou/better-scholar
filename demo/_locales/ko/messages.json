@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "검색 지우기"
   },
+  "optSearchNone": {
+    "message": "일치하는 설정이 없습니다."
+  },
   "optCacheTitle": {
     "message": "저장된 논문 세부 정보"
   },

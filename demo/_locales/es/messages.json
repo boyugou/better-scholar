@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Borrar la búsqueda"
   },
+  "optSearchNone": {
+    "message": "Ningún ajuste coincide con esa búsqueda."
+  },
   "optCacheTitle": {
     "message": "Detalles de artículos guardados"
   },

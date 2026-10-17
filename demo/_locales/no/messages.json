@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Tøm søket"
   },
+  "optSearchNone": {
+    "message": "Ingen innstilling samsvarer med søket."
+  },
   "optCacheTitle": {
     "message": "Lagrede artikkeldetaljer"
   },

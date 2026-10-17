@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Hapus pencarian"
   },
+  "optSearchNone": {
+    "message": "Tidak ada setelan yang cocok dengan pencarian ini."
+  },
   "optCacheTitle": {
     "message": "Detail Makalah Tersimpan"
   },

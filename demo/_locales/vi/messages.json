@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Xóa tìm kiếm"
   },
+  "optSearchNone": {
+    "message": "Không có cài đặt nào khớp với tìm kiếm này."
+  },
   "optCacheTitle": {
     "message": "Chi tiết bài báo đã lưu"
   },

@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "Wyczyść wyszukiwanie"
   },
+  "optSearchNone": {
+    "message": "Żadne ustawienie nie pasuje do tego wyszukiwania."
+  },
   "optCacheTitle": {
     "message": "Zapisane szczegóły publikacji"
   },

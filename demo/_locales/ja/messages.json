@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "検索をクリア"
   },
+  "optSearchNone": {
+    "message": "一致する設定はありません。"
+  },
   "optCacheTitle": {
     "message": "保存済み論文詳細"
   },

@@ -893,6 +893,9 @@
   "optSearchClear": {
     "message": "खोज साफ़ करें"
   },
+  "optSearchNone": {
+    "message": "इस खोज से कोई सेटिंग मेल नहीं खाती।"
+  },
   "optCacheTitle": {
     "message": "सहेजे गए शोधपत्र विवरण"
   },

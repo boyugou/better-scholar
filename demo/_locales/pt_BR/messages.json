@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Limpar a busca"
   },
+  "optSearchNone": {
+    "message": "Nenhuma configuração corresponde a essa pesquisa."
+  },
   "optCacheTitle": {
     "message": "Detalhes de artigos salvos"
   },

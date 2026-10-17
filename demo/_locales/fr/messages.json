@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Effacer la recherche"
   },
+  "optSearchNone": {
+    "message": "Aucun paramètre ne correspond à cette recherche."
+  },
   "optCacheTitle": {
     "message": "Détails des articles enregistrés"
   },

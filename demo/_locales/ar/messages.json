@@ -887,6 +887,9 @@
   "optSearchClear": {
     "message": "مسح البحث"
   },
+  "optSearchNone": {
+    "message": "لا يوجد إعداد مطابق لذلك."
+  },
   "optCacheTitle": {
     "message": "تفاصيل الأوراق البحثية المحفوظة"
   },

@@ -241,19 +241,23 @@ body {
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }
+  /* one column: the preview stays at the top of the window, a part of its height, and scrolls inside — the settings are not 2,000 px away, and a change is seen as it is made */
   .preview {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 12;
     order: -1;
     grid-column: 1;
     grid-row: auto;
-    max-height: none;
-    overflow: visible;
+    max-height: min(40vh, 420px);
+    overflow-y: auto;
   }
   .grid > main, .grid > .foot {
     grid-row: auto;
   }
-  .preview.more::after {
-    display: none;
+  /* what is scrolled to is not left under the preview */
+  .card, .opt, .role-studio-card {
+    scroll-margin-top: calc(min(40vh, 420px) + 16px);
   }
 }
 
@@ -378,7 +382,11 @@ body {
   font-weight: 400;
   line-height: 1.42;
   margin-top: 2px;
+  text-wrap: pretty;
 }
+
+/* the descriptions: no last line of one or two characters (Chinese, Japanese) */
+.card .desc, .opt .name { text-wrap: pretty; }
 
 .opt.disabled {
   opacity: 0.55;
@@ -428,7 +436,7 @@ body {
   width: 172px; max-width: 42vw; padding: 5px 10px; border: 1px solid var(--btn-line); border-radius: 8px; background: transparent;
   color: var(--text); font: inherit; font-size: 12.5px; cursor: text;
 }
-.name-input::placeholder { color: var(--faint); opacity: 0.85; }
+.name-input::placeholder { color: var(--faint); opacity: 1; }          /* (the faint colour is already rated 4.5:1; fading it more took the dark page to 3.2:1) */
 .name-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-ring); }
 .name-input:disabled { opacity: 0.6; }
 .name-reset {
@@ -1060,6 +1068,13 @@ button.btn.danger:hover {
   mask-image: linear-gradient(270deg, #000 calc(100% - 32px), transparent);
 }
 
+/* one column: the section links scroll away with the settings, the preview holds the top of the window */
+@media (max-width: 960px) {
+  .toc {
+    position: static;
+  }
+}
+
 .toc::-webkit-scrollbar {
   display: none;
 }
@@ -1165,6 +1180,29 @@ button.btn.danger:hover {
 .opt-search-clear:hover {
   background: var(--btn-line);
   color: var(--text);
+}
+
+/* one way to clear the box: the browser's own × inside a search field is left out, the round button has its × */
+.opt-search::-webkit-search-cancel-button,
+.opt-search::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.opt-search-clear::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.opt-search-none {
+  margin: -8px 2px 18px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .opt-search-kbd {
@@ -1593,6 +1631,8 @@ button.btn.preset-chip:hover {
 }
 
 @media (forced-colors: active) {
+  /* the colours are the thing being chosen: the swatches, the role dots and the theme strips keep them */
+  .swatch, .theme-strip-dot, .curated-dot-btn, .color-dot-live, .role-swatch-badge { forced-color-adjust: none; outline: 1px solid ButtonText; }
   .sw {
     -webkit-appearance: auto;
     appearance: auto;

@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Limpar a pesquisa"
   },
+  "optSearchNone": {
+    "message": "Nenhuma definição corresponde a essa pesquisa."
+  },
   "optCacheTitle": {
     "message": "Detalhes de artigos guardados"
   },

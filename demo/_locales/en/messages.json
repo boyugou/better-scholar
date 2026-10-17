@@ -908,6 +908,9 @@
   "optSearchClear": {
     "message": "Clear the search"
   },
+  "optSearchNone": {
+    "message": "No setting matches that."
+  },
   "optCacheTitle": {
     "message": "Saved Paper Details"
   },

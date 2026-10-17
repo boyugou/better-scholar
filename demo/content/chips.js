@@ -25,7 +25,7 @@
       ruleText(info),
       edition + " — " + t("tipToday")
     ];
-    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
+    return h("span", { class: "rr-chip rr-chip-rank rr-chip-t" + (SHADE[kind][tier] || 4), dir: "ltr", title: lines.join("\n"), "data-kind": kind, "data-tier": tier, ...(also ? { "data-also": also.kind } : {}) },
       h("span", { class: "rr-k" }, sourceName(kind)), " ", h("b", {}, tier));
   }
 
@@ -45,7 +45,7 @@
       lines.push(t("tipMarkList", [mark.awardLabel || name, mark.venue + " " + mark.year]));
       if (mark.declared) lines.push(t("tipMarkAuthor", [mark.declared]));
     } else lines.push(t("tipMarkAuthor", [mark.text]));
-    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
+    return h("span", { class: "rr-chip rr-chip-mark rr-chip-mark-" + mark.group, dir: "auto", "data-mark": mark.kind, "data-group": mark.group, "data-source": mark.source,
       ...(MARK_TEXT[mark.kind] ? { "data-rr-label": MARK_TEXT[mark.kind] } : {}), title: lines.join("\n") }, name);
   }
 
