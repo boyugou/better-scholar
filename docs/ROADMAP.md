@@ -169,7 +169,7 @@ stand-in (light, with the system in dark mode, filtered with the unranked-venue 
 narrow-window layout, in Arabic, Japanese, Thai and German), the settings page (light and dark, and in the states a person
 puts it in: a part hovered, a name being renamed, the tray open, a venue checked) and the toolbar popup (no profile tab, and
 over a profile in light and dark and in four languages), measures the popup with every name at its longest, and exits 1 on any
-violation; it is run by hand, not in CI. `npm run audit:overflow` measures the settings page in 30 languages × 5 widths ×
+violation; it is run by hand, not in CI. `npm run audit:overflow` measures the settings page in 30 languages × 7 widths ×
 light and dark for anything that runs out of its box (also with every name at 30 characters). Unit tests keep the faint text
 colours at a contrast of 4.5:1 or more and the text of every chip at any picked colour (`test/palette.test.js`), and the
 settings page rates each role colour against Scholar's white page (3:1). The preview on the settings page is out of the tab

@@ -568,9 +568,27 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.waitForTimeout(1200);
     const landed = await opts.evaluate(() => { const a = document.querySelectorAll(".toc a")[3], c = document.getElementById(a.dataset.card).getBoundingClientRect(); return { cardTop: c.top, previewBottom: document.querySelector(".preview").getBoundingClientRect().bottom }; });
     assert.ok(landed.cardTop >= landed.previewBottom - 2, `a section link lands the card below the preview: ${JSON.stringify(landed)}`);
+    // on a phone (the website's frame is this page at 330 px): no word of a setting's name or of a role is cut in two by the end of a line (a select goes under its label), and the page does not scroll sideways
+    await opts.setViewportSize({ width: 330, height: 700 });
+    await opts.evaluate(() => window.scrollTo(0, 0));
+    const phone = await opts.evaluate(() => {
+      const range = document.createRange(), broken = [];
+      for (const el of document.querySelectorAll("#controls .opt .name, .preview .rr-rolebtn, .preview .rr-matrix thead th")) {
+        if (!el.getClientRects().length) continue;
+        for (const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); w.nextNode();) for (const m of w.currentNode.data.matchAll(/[A-Za-z]{4,}/g)) {
+          range.setStart(w.currentNode, m.index); range.setEnd(w.currentNode, m.index + m[0].length);
+          if (new Set([...range.getClientRects()].filter((q) => q.width > 0.5).map((q) => Math.round(q.top / 4))).size > 1) broken.push(m[0]);
+        }
+      }
+      const d = document.documentElement, label = document.querySelector("#controls .opt:has(select.sel) .name"), sel = document.querySelector("#controls .opt:has(select.sel) select.sel");
+      return { broken, sideways: d.scrollWidth - d.clientWidth, selectBelow: !!(label && sel && sel.getBoundingClientRect().top >= label.getBoundingClientRect().bottom - 1) };
+    });
+    assert.deepEqual(phone.broken, [], `on a phone no word is cut in two: ${phone.broken.join(", ")}`);
+    assert.ok(phone.sideways <= 1, `on a phone the page does not scroll sideways: ${phone.sideways}px`);
+    assert.ok(phone.selectBelow, "on a phone a select goes under its label");
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 900 });
-    ok("the settings preview stays whole in view while the page scrolls, even in a short window; in one column it is a strip at the top and a section link lands below it");
+    ok("the settings preview stays whole in view while the page scrolls, even in a short window; in one column it is a strip at the top and a section link lands below it; on a phone no word is cut in two and a select goes under its label");
 
     // -- 7. matrix cell filters the list
     const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;

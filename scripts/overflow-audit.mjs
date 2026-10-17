@@ -1,6 +1,6 @@
 // Dev tool: does anything on the settings page (and the panel in its preview) run out of its box, get cut, or make the page scroll sideways — in each of the 30
 // languages, at several widths, light and dark? It builds the web demo (scripts/build-demo.mjs: the real settings page in a plain page), serves it, and measures.
-//   node scripts/overflow-audit.mjs                       every language, five widths, both schemes (a few minutes)
+//   node scripts/overflow-audit.mjs                       every language, seven widths (the narrowest two: the frame of the website on a phone), both schemes (a few minutes)
 //   node scripts/overflow-audit.mjs --lang de,ja --width 900,390 --scheme dark       a part of that
 //   node scripts/overflow-audit.mjs --long-names [spaced|cjk|wide]
 //                 every renamable text named with 30 characters (the longest a name can be) and the venue list on: "spaced" (default) is words with spaces,
@@ -20,7 +20,7 @@ if (built.status !== 0) { console.error(built.stderr || built.stdout); process.e
 const demo = path.join(root, "dist", "demo");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "src/manifest.json"), "utf8"));
 const languages = arg("lang", fs.readdirSync(path.join(root, "src/_locales")).map((c) => c.replace("_", "-")));
-const widths = arg("width", ["1360", "1100", "900", "700", "420"]).map(Number);
+const widths = arg("width", ["1360", "1100", "900", "700", "420", "330", "300"]).map(Number);          // (330 and 300: the settings page in the website's frame on a 390 and a 360 px phone)
 const schemes = arg("scheme", ["light", "dark"]);
 const longAt = process.argv.indexOf("--long-names");
 const longNames = longAt > 0;
@@ -65,13 +65,13 @@ function measure(opts) {
     }
     // a one-word label of a script that has spaces ("Ad|d", "Hinzufü|gen"): the word's text is on more than one line
     const label = (el.textContent || "").trim();
-    if (!opts.longNames && el.matches("button, summary, label, a") && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я\u0590-\u06ff\u0900-\u097f\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af.'’-]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {          // (not with every name at 30 letters in a row: such a name breaks where it must)
+    if (!opts.longNames && el.matches("button, summary, label, a") && !(/[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(label) && label.length > 6) && /^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-я\u0590-\u06ff\u0900-\u097f\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af.'’]{2,}$/.test(label) && !el.closest(".rr-dd-list")) {          // (not with every name at 30 letters in a row: such a name breaks where it must)
       const range = document.createRange(), lines = new Set();
       for (const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); walker.nextNode();) {          // (the text only: an icon beside it has a box of its own)
         range.selectNodeContents(walker.currentNode);
         for (const q of range.getClientRects()) if (q.width > 0.5) lines.add(Math.round(q.top / 4));
       }
-      if (lines.size > 1) out.push({ kind: "a word broken in two", what: `${desc(el)}: "${label.slice(0, 30)}" is on ${lines.size} lines` });
+      if (lines.size > 1 && !(label.length >= 16 && doc.clientWidth <= 330)) out.push({ kind: "a word broken in two", what: `${desc(el)}: "${label.slice(0, 30)}" is on ${lines.size} lines` });
     }
     // runs out of the box that holds it
     const box = el.parentElement && el.parentElement.closest(BOXES);
@@ -81,6 +81,23 @@ function measure(opts) {
       const clipped = bs.overflowX !== "visible";
       if ((r.right > b.right + 1.5 || r.left < b.left - 1.5) && b.width > 0 && !(bs.display === "inline" && !clipped)) {
         out.push({ kind: clipped ? "cut by the box that holds it" : "sticks out of the box that holds it", what: `${desc(el)} ${Math.round(r.left)}..${Math.round(r.right)} not in ${desc(box)} ${Math.round(b.left)}..${Math.round(b.right)}${(el.textContent || "").trim() ? `: "${(el.textContent || "").trim().slice(0, 30)}"` : ""}` });
+      }
+    }
+  }
+  // any word of a script that has spaces, cut in two by the end of a line ("Extensio|n language": a label squeezed beside its control) — the check above sees one-word labels only
+  if (!opts.longNames) {
+    const WORD = /[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f][A-Za-zÀ-ÖØ-öø-ÿĀ-žА-яͰ-Ͽ\u0590-\u06ff\u0900-\u097f.'’]{4,}/g;
+    const range = document.createRange(), seen = new Set();
+    for (const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); walker.nextNode();) {
+      const node = walker.currentNode, el = node.parentElement;
+      if (!el || el.closest(SKIP) || el.closest(".rr-dd-list") || ["SCRIPT", "STYLE", "OPTION", "TEXTAREA", "CODE", "PRE"].includes(el.tagName) || el.closest("code, pre")) continue;
+      const cs = getComputedStyle(el);
+      if (cs.visibility === "hidden" || cs.display === "none" || !el.getClientRects().length) continue;
+      for (const m of node.data.matchAll(WORD)) {
+        range.setStart(node, m.index); range.setEnd(node, m.index + m[0].length);
+        const tops = new Set([...range.getClientRects()].filter((q) => q.width > 0.5).map((q) => Math.round(q.top / 4)));
+        if (m[0].length >= 16 && doc.clientWidth <= 330) continue;          // (a compound of 16 letters or more — Finnish "Viittausmetriikkataulukko", "Yhteisensimmäinen" — is cut on a phone: nothing but a hyphen would help)
+        if (tops.size > 1 && !seen.has(desc(el) + m[0])) { seen.add(desc(el) + m[0]); out.push({ kind: "a word broken in two (any word)", what: `${desc(el)}: "${m[0]}" is on ${tops.size} lines` }); }
       }
     }
   }

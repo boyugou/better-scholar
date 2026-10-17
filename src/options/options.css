@@ -343,8 +343,9 @@ body {
 
 .opt {
   display: flex;
+  flex-wrap: wrap;                       /* a control that does not fit beside its label (a phone, a narrow window) goes under it: the label is never squeezed into letters */
   align-items: center;
-  gap: 16px;
+  gap: 8px 16px;
   padding: 13px 20px;
   border-top: 1px solid var(--line);
   cursor: pointer;
@@ -361,7 +362,7 @@ body {
 }
 
 .opt .txt {
-  flex: 1;
+  flex: 1 1 10rem;
   min-width: 0;
 }
 
@@ -621,6 +622,11 @@ body.pv-dragging, body.pv-dragging * { cursor: grabbing !important; user-select:
   white-space: nowrap;
 }
 
+/* a phone: a choice with a long name (Oral, Spotlight and Highlight papers, in Spanish) wraps in its button instead of making the page wider */
+@media (max-width: 420px) {
+  .seg-btn, .opt.opt-segmented .seg-btn { white-space: normal; flex: 1 1 auto; max-width: 100%; text-align: center; }
+}
+
 .seg-radio {
   position: absolute;
   opacity: 0;
@@ -667,7 +673,7 @@ select.sel {
   font-weight: 500;
   height: 36px;
   padding: 0 34px 0 12px;
-  max-width: 240px;
+  max-width: min(240px, 100%);
   border: 1px solid var(--btn-line);
   border-radius: 9px;
   color: var(--text);
