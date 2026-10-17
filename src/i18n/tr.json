@@ -9,6 +9,8 @@
   "hero.install": "Yükle",
   "hero.github": "GitHub'da görüntüle",
   "hero.note": "Ücretsiz ve açık kaynak · Chrome ve diğer Chromium tarayıcıları · 30 dil",
+  "hero.badge.local": "Tarayıcınızda çalışır",
+  "hero.badge.nodeps": "Bağımlılık yok",
   "shot.caption": "Uydurma bir profil (gerçek yayın yerleri, uydurma yayınlar): satırlar role göre renklendirilmiş, her yayın yerinin yanında sıralama etiketi ve sağda özet.",
   "f.roles.title": "Her yayın rolünüze göre renklendirilmiş",
   "f.roles.text": "Birinci, ortak birinci, ikinci ve son yazar satırları kendi renklerini alır; adınız yazar satırında vurgulanır.",

@@ -9,6 +9,8 @@
   "hero.install": "Installeren",
   "hero.github": "Bekijk op GitHub",
   "hero.note": "Gratis en open source · Chrome en andere Chromium-browsers · 30 talen",
+  "hero.badge.local": "Werkt in je browser",
+  "hero.badge.nodeps": "Geen afhankelijkheden",
   "shot.caption": "Een verzonnen profiel (echte media, verzonnen artikelen): rijen gekleurd op rol, rangchips naast elk medium, de samenvatting rechts.",
   "f.roles.title": "Elke publicatie gekleurd naar jouw rol",
   "f.roles.text": "Rijen voor eerste, gedeeld eerste, tweede en laatste auteur krijgen elk een eigen kleur, en je naam wordt gemarkeerd in de auteursregel.",

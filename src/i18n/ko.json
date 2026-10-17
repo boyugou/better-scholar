@@ -9,6 +9,8 @@
   "hero.install": "설치",
   "hero.github": "GitHub에서 보기",
   "hero.note": "무료 · 오픈 소스 · Chrome 및 기타 Chromium 브라우저 지원 · 30개 언어",
+  "hero.badge.local": "브라우저에서 실행",
+  "hero.badge.nodeps": "의존성 없음",
   "shot.caption": "가상의 프로필(실제 게재처, 가상의 논문): 역할별로 색이 입혀진 행, 게재처 옆의 등급 표시, 오른쪽의 요약.",
   "f.roles.title": "모든 논문을 나의 역할별 색으로",
   "f.roles.text": "제1저자, 공동 제1저자, 제2저자, 마지막 저자 행마다 색이 지정되며, 저자 목록에서는 내 이름이 표시됩니다.",

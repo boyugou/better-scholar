@@ -9,6 +9,8 @@
   "hero.install": "Instalovat",
   "hero.github": "Zobrazit na GitHubu",
   "hero.note": "Zdarma a s otevřeným zdrojovým kódem · Chrome a další prohlížeče na Chromiu · 30 jazyků",
+  "hero.badge.local": "Běží ve vašem prohlížeči",
+  "hero.badge.nodeps": "Žádné závislosti",
   "shot.caption": "Smyšlený profil (skutečná publikační místa, vymyšlené články): řádky obarvené podle role, u každého místa štítek ranku, souhrn vpravo.",
   "f.roles.title": "Každý článek obarvený podle vaší role",
   "f.roles.text": "Řádky pro prvního, spoluprvního, druhého a posledního autora dostanou vlastní barvu a vaše jméno je v seznamu autorů zvýrazněno.",

@@ -9,6 +9,8 @@
   "hero.install": "Zainstaluj",
   "hero.github": "Zobacz na GitHub",
   "hero.note": "Bezpłatne i open source · Chrome oraz inne przeglądarki oparte na Chromium · 30 języków",
+  "hero.badge.local": "Działa w twojej przeglądarce",
+  "hero.badge.nodeps": "Bez zależności",
   "shot.caption": "Zmyślony profil (prawdziwe miejsca publikacji, wymyślone artykuły): wiersze pokolorowane według roli, przy każdym miejscu etykieta rangi, podsumowanie po prawej.",
   "f.roles.title": "Każda publikacja pokolorowana według twojej roli",
   "f.roles.text": "Wiersze dla pierwszego, współpierwszego, drugiego i ostatniego autora dostają własny kolor, a twoje nazwisko jest wyróżnione w liście autorów.",

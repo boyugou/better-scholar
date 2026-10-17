@@ -9,6 +9,8 @@
   "hero.install": "Installieren",
   "hero.github": "Auf GitHub ansehen",
   "hero.note": "Kostenlos und Open Source · Chrome und andere Chromium-Browser · 30 Sprachen",
+  "hero.badge.local": "Läuft in Ihrem Browser",
+  "hero.badge.nodeps": "Keine Abhängigkeiten",
   "shot.caption": "Ein erfundenes Profil (echte Publikationsorte, erfundene Arbeiten): nach Rolle eingefärbte Zeilen, Rang-Labels neben jedem Publikationsort und die Zusammenfassung rechts.",
   "f.roles.title": "Jede Publikation, eingefärbt nach Ihrer Rolle",
   "f.roles.text": "Zeilen für Erstautor, Co-Erstautor, Zweitautor und Letztautor erhalten je eine Farbe, und Ihr Name wird in der Autorenzeile markiert.",

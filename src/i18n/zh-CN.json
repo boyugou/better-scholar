@@ -9,6 +9,8 @@
   "hero.install": "安装",
   "hero.github": "在 GitHub 上查看",
   "hero.note": "免费开源 · 支持 Chrome 及其他 Chromium 内核浏览器 · 30 种界面语言",
+  "hero.badge.local": "在浏览器中运行",
+  "hero.badge.nodeps": "零依赖",
   "shot.caption": "一个虚构的个人主页（真实的场所，虚构的论文）：按角色着色的行、每个场所旁的等级标签，右侧是汇总。",
   "f.roles.title": "每篇论文，按你的角色着色",
   "f.roles.text": "第一、共同第一、第二和末位作者各对应一种颜色，你的名字会在作者列表中被标出。",

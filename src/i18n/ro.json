@@ -9,6 +9,8 @@
   "hero.install": "Instalare",
   "hero.github": "Vezi pe GitHub",
   "hero.note": "Gratuită și open source · Chrome și alte browsere Chromium · 30 de limbi",
+  "hero.badge.local": "Rulează în browserul tău",
+  "hero.badge.nodeps": "Fără dependențe",
   "shot.caption": "Un profil inventat (publicații reale, lucrări fictive): rânduri colorate după rol, etichete de rang lângă fiecare publicație și rezumatul în dreapta.",
   "f.roles.title": "Fiecare lucrare, colorată după rolul tău",
   "f.roles.text": "Rândurile pentru primul autor, co-primul autor, al doilea autor și ultimul autor primesc fiecare o culoare, iar numele tău este marcat în lista autorilor.",

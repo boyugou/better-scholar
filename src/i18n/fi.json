@@ -9,6 +9,8 @@
   "hero.install": "Asenna",
   "hero.github": "Katso GitHubissa",
   "hero.note": "Ilmainen ja avoin lähdekoodi · Chrome ja muut Chromium-selaimet · 30 kieltä",
+  "hero.badge.local": "Toimii selaimessasi",
+  "hero.badge.nodeps": "Ei riippuvuuksia",
   "shot.caption": "Keksitty profiili (oikeat foorumit, keksityt julkaisut): rivit värjätty roolin mukaan, luokitusmerkit foorumin vieressä ja yhteenveto oikealla.",
   "f.roles.title": "Jokainen julkaisu värjätty roolisi mukaan",
   "f.roles.text": "Ensimmäisen, jaetun ensimmäisen, toisen ja viimeisen kirjoittajan rivit saavat oman värinsä, ja nimesi on korostettu kirjoittajariviltä.",

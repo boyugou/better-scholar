@@ -9,6 +9,8 @@
   "hero.install": "Installer",
   "hero.github": "Se på GitHub",
   "hero.note": "Gratis og open source · Chrome og andre Chromium-browsere · 30 sprog",
+  "hero.badge.local": "Kører i din browser",
+  "hero.badge.nodeps": "Ingen afhængigheder",
   "shot.caption": "En opdigtet profil (rigtige kanaler, opdigtede artikler): rækker farvet efter rolle, rangmærker ved siden af hver kanal og resuméet til højre.",
   "f.roles.title": "Hver publikation farvet efter din rolle",
   "f.roles.text": "Rækker for første, delt første, anden og sidste forfatter får hver sin farve, og dit navn markeres i forfatterlinjen.",

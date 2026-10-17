@@ -9,6 +9,8 @@
   "hero.install": "Installa",
   "hero.github": "Vedi su GitHub",
   "hero.note": "Gratuita e open source · Chrome e altri browser Chromium · 30 lingue",
+  "hero.badge.local": "Funziona nel tuo browser",
+  "hero.badge.nodeps": "Nessuna dipendenza",
   "shot.caption": "Un profilo inventato (sedi reali, articoli di fantasia): righe colorate per ruolo, etichette di ranking accanto a ogni sede, il riepilogo a destra.",
   "f.roles.title": "Ogni articolo, colorato in base al tuo ruolo",
   "f.roles.text": "Le righe di primo autore, co-primo autore, secondo autore e ultimo autore hanno ciascuna un colore, e il tuo nome è evidenziato nell'elenco degli autori.",

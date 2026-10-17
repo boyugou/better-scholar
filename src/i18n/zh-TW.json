@@ -9,6 +9,8 @@
   "hero.install": "安裝",
   "hero.github": "在 GitHub 上檢視",
   "hero.note": "免費開源 · 支援 Chrome 及其他 Chromium 核心瀏覽器 · 30 種介面語言",
+  "hero.badge.local": "在瀏覽器中執行",
+  "hero.badge.nodeps": "零依賴",
   "shot.caption": "一個虛構的個人頁面（真實的場所，虛構的論文）：依角色著色的列、每個場所旁的等級標籤，右側為彙整。",
   "f.roles.title": "每篇論文，依你的角色著色",
   "f.roles.text": "第一、共同第一、第二與末位作者的列各有一種顏色，你的名字會在作者列中標示出來。",

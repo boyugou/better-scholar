@@ -9,6 +9,8 @@
   "hero.install": "Installer",
   "hero.github": "Voir sur GitHub",
   "hero.note": "Gratuite et open source · Chrome et autres navigateurs Chromium · 30 langues",
+  "hero.badge.local": "Fonctionne dans votre navigateur",
+  "hero.badge.nodeps": "Aucune dépendance",
   "shot.caption": "Un profil fictif (de vraies revues et conférences, des articles inventés) : lignes colorées selon le rôle, pastilles de classement à côté de chaque publication, synthèse à droite.",
   "f.roles.title": "Chaque article, coloré selon votre rôle",
   "f.roles.text": "Les lignes premier auteur, co-premier auteur, deuxième auteur et dernier auteur ont chacune leur couleur, et votre nom est mis en évidence dans la liste des auteurs.",

@@ -9,6 +9,8 @@
   "hero.install": "Cài đặt",
   "hero.github": "Xem trên GitHub",
   "hero.note": "Miễn phí và mã nguồn mở · Chrome và các trình duyệt Chromium khác · 30 ngôn ngữ",
+  "hero.badge.local": "Chạy trên trình duyệt",
+  "hero.badge.nodeps": "Không dùng thư viện ngoài",
   "shot.caption": "Một hồ sơ giả lập (nơi công bố thật, bài báo hư cấu): các dòng được tô màu theo vai trò, nhãn xếp hạng cạnh mỗi nơi công bố, và bảng tổng hợp bên phải.",
   "f.roles.title": "Mọi bài báo, tô màu theo vai trò của bạn",
   "f.roles.text": "Các dòng tác giả đầu, đồng tác giả đầu, tác giả thứ hai và tác giả cuối đều có màu riêng, và tên bạn được đánh dấu trong dòng tác giả.",

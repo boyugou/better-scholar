@@ -9,6 +9,8 @@
   "hero.install": "Install",
   "hero.github": "View on GitHub",
   "hero.note": "Free and open source · Chrome and other Chromium browsers · 30 languages",
+  "hero.badge.local": "Runs in your browser",
+  "hero.badge.nodeps": "No dependencies",
   "shot.caption": "An invented profile (real venues, made-up papers): rows coloured by role, rank chips beside each venue, the summary on the right.",
   "f.roles.title": "Every paper, coloured by your role",
   "f.roles.text": "First, co-first, second and last author rows each get a colour, and your name is marked in the author line.",

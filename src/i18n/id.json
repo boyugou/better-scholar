@@ -9,6 +9,8 @@
   "hero.install": "Pasang",
   "hero.github": "Lihat di GitHub",
   "hero.note": "Gratis dan open source · Chrome dan peramban Chromium lainnya · 30 bahasa",
+  "hero.badge.local": "Berjalan di peramban Anda",
+  "hero.badge.nodeps": "Tanpa dependensi",
   "shot.caption": "Profil rekaan (tempat terbit sungguhan, makalah fiktif): baris diwarnai menurut peran, lencana peringkat di samping setiap tempat terbit, dan ringkasan di sebelah kanan.",
   "f.roles.title": "Setiap makalah, diwarnai sesuai peran Anda",
   "f.roles.text": "Baris penulis pertama, penulis pertama bersama, penulis kedua, dan penulis terakhir masing-masing mendapat warna, dan nama Anda ditandai di daftar penulis.",
