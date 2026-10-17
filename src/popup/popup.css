@@ -49,7 +49,7 @@ tfoot th { text-align: start; padding-inline-start: 15px; }
 .actions { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
 button.btn, a.btn { font: inherit; font-weight: 600; padding: 5px 12px; border: 1px solid var(--btn-line); border-radius: 7px; background: var(--bg); color: var(--text); cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s, box-shadow .15s; }
 .actions button.btn {
-  flex: 1 1 0; min-width: max-content; padding: 4px 6px; font-size: 11.5px; text-align: center; white-space: nowrap;
+  flex: 1 1 0; min-width: min(max-content, 100%); padding: 4px 6px; font-size: 11.5px; text-align: center; overflow-wrap: anywhere;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
 }
 .actions button.btn::before {
