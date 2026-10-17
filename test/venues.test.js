@@ -1824,3 +1824,27 @@ test("partner rows (one venue under the two lists' names): the official name of 
   assert.equal(resolver.resolve("NOSSDAV Workshops, 2019").core, null);          // (CORE's name for NOSSDAV lacks it)
 });
 
+test("a bare acronym with its year glued on (\"ASE'19\") is the event of that year, as \"ASE '19\" and \"ASE 2019\" are — not the journal or the other venue that has the same letters", () => {
+  const eq = (raw, want) => assert.equal(brief(raw), want, raw);
+  // (before: the glued year stayed inside the acronym, nothing said "event", and CCF's journals ASE, CSCW, TCC, RE, AAMAS, IM — or CORE's Creativity and Cognition for CC — won)
+  eq("ASE'19", "CCF A ASE · CORE A* ASE");
+  eq("CSCW'19", "CCF A CSCW · CORE A CSCW");
+  eq("TCC'19", "CCF B TCC · CORE B TCC");
+  eq("RE'19", "CCF B RE · CORE A RE");
+  eq("CC'19", "CCF B CC · CORE B CC");
+  eq("AAMAS'19", "CCF B AAMAS · CORE A AAMAS");
+  eq("IM'19", "CCF C IM · CORE B IM");
+  eq("C&C'19", "CORE B C&C");
+  eq("NDSS'05", "CCF A NDSS · CORE A* NDSS");
+  eq("CAD'24", "");          // (a conference of its own; CCF's B is the journal Computer-Aided Design)
+  // every acronym of the lists: where the spaced form names a venue, the glued form names the same one (it may name more: "Mobisys'19" has the shape of an acronym with its year, "Mobisys '19" does not)
+  const abbrs = new Set([...ccf.venues.filter((v) => v.kind === "C").map((v) => v.abbr), ...core.venues.map((v) => v.acronym)].filter((a) => a && a.length > 1 && !/\s/.test(a)));
+  assert.ok(abbrs.size > 800);
+  const differ = [];
+  for (const a of abbrs) for (const mark of ["'", "\u2019"]) {
+    const spaced = brief(`${a} ${mark}19`);
+    if (spaced && brief(`${a}${mark}19`) !== spaced) differ.push(`${a}: ${spaced} vs ${brief(`${a}${mark}19`)}`);
+  }
+  assert.deepEqual(differ.slice(0, 10), []);
+});
+
