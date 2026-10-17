@@ -405,7 +405,7 @@
     "message": "获奖论文和各级报告（Oral 等）的数量，点击即可列出。"
   },
   "optPanelStatus": {
-    "message": "已加载论文与无排名 venue"
+    "message": "已加载论文与未收录的发表场所"
   },
   "optPanelStatusHint": {
     "message": "已加载的论文数、“全部加载”按钮、无法读取的内容，以及发表场所未收录的论文列表。"
