@@ -910,8 +910,9 @@
         "aria-label": titleText,
         onClick: (e) => {
           e.preventDefault();
+          const pvBox = document.querySelector(".preview"), covered = getComputedStyle(toc).position === "sticky" ? toc.offsetHeight : (pvBox && getComputedStyle(pvBox).position === "sticky" ? pvBox.offsetHeight : 0);          // (what stays at the top of the window: the links, or in one column the preview)
           window.scrollTo({
-            top: Math.max(0, c.getBoundingClientRect().top + scrollY - toc.offsetHeight - 14),
+            top: Math.max(0, c.getBoundingClientRect().top + scrollY - covered - 14),
             behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
           });
         }

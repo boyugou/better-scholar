@@ -547,8 +547,20 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 2600 });             // (tall enough for the whole preview also with the wider fonts of a CI machine)
     await pollPage(opts, () => !document.querySelector(".preview").classList.contains("more"), null, 12000).catch(async () => assert.fail("a whole preview has no fade: " + JSON.stringify(await opts.evaluate(() => { const p = document.querySelector(".preview"); return { scrollH: p.scrollHeight, clientH: p.clientHeight, top: p.scrollTop, innerH: innerHeight, cls: p.className }; }))));
+    // in one column (a half-screen window, 150% zoom) the preview holds the top of the window as a strip, a part of its height, and a section link lands below it
+    await opts.setViewportSize({ width: 800, height: 700 });
+    await opts.evaluate(() => window.scrollTo(0, 0));
+    const strip = await opts.evaluate(() => { const b = document.querySelector(".preview").getBoundingClientRect(), first = document.querySelector("#controls .opt, #controls .card .row"); return { pos: getComputedStyle(document.querySelector(".preview")).position, h: b.height, vh: innerHeight, firstTop: first ? first.getBoundingClientRect().top : 0 }; });
+    assert.equal(strip.pos, "sticky", "the preview is a strip at the top in one column");
+    assert.ok(strip.h <= strip.vh * 0.41, `the strip is at most 40% of the window: ${JSON.stringify(strip)}`);
+    assert.ok(strip.firstTop < strip.vh, `the first setting is in the first screen: ${JSON.stringify(strip)}`);
+    await opts.locator(".toc a").nth(3).click();
+    await opts.waitForTimeout(1200);
+    const landed = await opts.evaluate(() => { const a = document.querySelectorAll(".toc a")[3], c = document.getElementById(a.dataset.card).getBoundingClientRect(); return { cardTop: c.top, previewBottom: document.querySelector(".preview").getBoundingClientRect().bottom }; });
+    assert.ok(landed.cardTop >= landed.previewBottom - 2, `a section link lands the card below the preview: ${JSON.stringify(landed)}`);
+    await opts.evaluate(() => window.scrollTo(0, 0));
     await opts.setViewportSize({ width: 1360, height: 900 });
-    ok("the settings preview stays whole in view while the page scrolls, even in a short window");
+    ok("the settings preview stays whole in view while the page scrolls, even in a short window; in one column it is a strip at the top and a section link lands below it");
 
     // -- 7. matrix cell filters the list
     const lastA = all.filter((p) => p.status === "found" && p.role === "last" && p.venue.ccf && p.venue.ccf.tier === "A").length;
