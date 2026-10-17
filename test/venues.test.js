@@ -1625,6 +1625,9 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("International Parallel Processing Symposium (IPPS)", "CCF B IPDPS · CORE A IPDPS");
   eq("International Conference on Parallel Processing (ICPP), 2019", "CCF B ICPP · CORE B ICPP");
   none("IEEE/ACM International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER)");
+  // the state of an article after the name ("early access", "in press", "Online ahead of print") and "pp." before the pages are no part of a journal's name
+  for (const tail of [", early access, 2023", ", in press, 2023", ", accepted, 2023", ", Online ahead of print", " - Early Access", ", pp. 1-18, 2023", " 45 (6), pp. 7090-7106, 2023", " (in press)"]) eq("IEEE Transactions on Pattern Analysis and Machine Intelligence" + tail, "CCF A TPAMI");
+  eq("Bioinformatics, in press, 2021", "CCF A Bioinformatics");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");
