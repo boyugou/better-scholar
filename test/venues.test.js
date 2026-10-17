@@ -1742,3 +1742,26 @@ test("a ranked conference's official name with its own acronym added (after the 
   assert.deepEqual(wrong.slice(0, 10), [], `${wrong.length} strings carry another venue's badge`);
 });
 
+test("every ranked name cut after any word (with the cut mark) gets the badge of a venue whose own words begin like the cut, or none", () => {
+  const sq = (x) => String(x || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const toks = (x) => venues.canonTokens(x.replace(/\([^()]*\)/g, " "), "noOrg");
+  const entries = [];
+  for (const side of Object.values(resolver.index.sources)) for (const list of Object.values(side)) entries.push(...list.all);
+  const rows = [...ccf.venues.map((v) => ({ src: "ccf", abbr: v.abbr, name: v.name })), ...core.venues.map((v) => ({ src: "core", abbr: v.acronym, name: v.name }))];
+  const wrong = [];
+  for (const row of rows) {
+    const words = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim().split(" ");
+    for (let k = 2; k < words.length; k++) for (const pre of ["", "Proceedings of the "]) {
+      const cut = words.slice(0, k).join(" "), raw = `${pre}${cut} …, 2019`, cutToks = toks(cut);
+      if (cutToks.length < 2) continue;
+      const r = resolver.resolve(raw);
+      for (const [src, b] of [["ccf", r.ccf], ["core", r.core]]) {
+        if (!b) continue;
+        const own = sq(b.abbr) === sq(row.abbr) || (row.src === "ccf" && src === "core" && resolver.index.sameVenue(row.abbr, b.abbr)) || (row.src === "core" && src === "ccf" && resolver.index.sameVenue(b.abbr, row.abbr));
+        if (!own && !entries.some((e) => e.abbr === b.abbr && e.extra.some((n) => { const t = toks(n); return cutToks.every((w, i) => t[i] === w); }))) wrong.push(`${raw} → ${src} ${b.abbr}`);
+      }
+    }
+  }
+  assert.deepEqual(wrong.slice(0, 10), [], `${wrong.length} cuts carry a badge that does not begin like them`);
+});
+
