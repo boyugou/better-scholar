@@ -326,6 +326,7 @@
     { ccf: "ESEM", core: "ESEM", names: ["International Symposium on Empirical Software Engineering"] },
     // PROFES until 2011 said "Software Development and Process Improvement"; ACM prints Internetware's title twice ("… Symposium on Internetware on Internetware")
     { core: "PROFES", names: ["International Conference on Product Focused Software Development and Process Improvement"] },
+    { core: "ESOP", names: ["European Symposium on Programming Languages and Systems"] },          // (Springer's series title "Programming Languages and Systems" with the symposium's: how Scholar prints ESOP's volumes — two real lines — as it prints APLAS)
     { ccf: "Internetware", names: ["Asia-Pacific Symposium on Internetware on Internetware"] },
     // CCF's name is the one MobiHoc had until 2005 ("Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing"); every print says what CORE says
     { ccf: "MobiHoc", core: "MOBIHOC", names: ["ACM International Symposium on Mobile Ad Hoc Networking and Computing", "ACM Symposium on Mobile Ad Hoc Networking and Computing"] },

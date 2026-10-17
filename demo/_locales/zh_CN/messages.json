@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "谷歌学术学者主页增强：署名位次、CCF 与 CORE 等级、顶会奖项、年份图谱与即时检索。"
+    "message": "谷歌学术学者主页增强：署名位次、CCF 与 CORE 等级、顶会奖项、年份分布图与即时检索。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -384,7 +384,7 @@
     "message": "哪些按钮会把显示的论文或摘要以文本形式复制或保存。面板和工具栏弹出窗口提供的是同样的按钮；全部关闭时，就没有复制行。"
   },
   "optMarkAwardHint": {
-    "message": "最佳论文、杰出论文、优秀论文、荣誉提名、时间检验奖，以及最佳论文入围。"
+    "message": "最佳论文、杰出论文、卓越论文、荣誉提名、时间检验奖，以及最佳论文入围。"
   },
   "optPanelTitle": {
     "message": "摘要面板"
@@ -396,10 +396,10 @@
     "message": "个人主页右侧一栏中的面板。关闭时：只标注论文列表。"
   },
   "optPanelSummary": {
-    "message": "角色 × 排名表格"
+    "message": "角色 × 等级表"
   },
   "optPanelSummaryHint": {
-    "message": "你的论文表格，按位置和排名列出，并附排名来源的说明。"
+    "message": "你的论文表格，按角色和等级列出，并附等级来源的说明。"
   },
   "optPanelMarksHint": {
     "message": "获奖论文和各级报告（Oral 等）的数量，点击即可列出。"
@@ -414,7 +414,7 @@
     "message": "名字拼写帮助"
   },
   "optPanelNamesHint": {
-    "message": "“名字不匹配？添加拼写”及对你名字的拼写建议。"
+    "message": "“名字没匹配上？添加一种写法”及对你名字的写法建议。"
   },
   "optPanelCompact": {
     "message": "精简：只留筛选和引用统计"
@@ -788,7 +788,7 @@
     "message": "反馈问题"
   },
   "filterPlaceholder": {
-    "message": "按标题或作者过滤…"
+    "message": "按标题或作者筛选…"
   },
   "searchShortcut": {
     "message": "按 / 键搜索"
@@ -803,7 +803,7 @@
     "message": "引用指标表格"
   },
   "optHideCitedTableHint": {
-    "message": "边栏中的引用量、h-index 和 i10-index 表格。"
+    "message": "侧栏中的引用量、h-index 和 i10-index 表格。"
   },
   "optHideCitedChart": {
     "message": "每年引用统计图"
@@ -1076,7 +1076,7 @@
     "message": "等级标签的文字"
   },
   "optChipLabelFull": {
-    "message": "列表与等级（CCF A）"
+    "message": "名录与等级（CCF A）"
   },
   "optChipLabelTier": {
     "message": "仅等级（A）"
@@ -1085,7 +1085,7 @@
     "message": "现成样式"
   },
   "optChipThemeLists": {
-    "message": "每个列表一种颜色"
+    "message": "每个名录一种颜色"
   },
   "optChipThemeMono": {
     "message": "单色"
@@ -1194,10 +1194,10 @@
     "message": "其他发表场所"
   },
   "optPrefer": {
-    "message": "两个列表都有等级时"
+    "message": "两个名录都有等级时"
   },
   "optPreferHint": {
-    "message": "一个标签代替两个：按你选的列表显示；另一列表的标签只在你选的列表对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
+    "message": "一个标签代替两个：按你选的名录显示；另一名录的标签只在你选的名录对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
   },
   "optPreferCcf": {
     "message": "CCF 优先"

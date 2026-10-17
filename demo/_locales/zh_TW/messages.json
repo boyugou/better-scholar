@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "谷歌學術學者首頁增強：署名位次、CCF 與 CORE 等級、頂會獎項、年份圖譜與即時檢索。"
+    "message": "Google 學術搜尋作者頁面增強：署名位次、CCF 與 CORE 等級、頂會獎項、年份分布圖與即時檢索。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -109,7 +109,7 @@
     "message": "其他"
   },
   "roleHidden": {
-    "message": "被隱藏"
+    "message": "無法判斷"
   },
   "colRole": {
     "message": "位次"
@@ -651,7 +651,7 @@
     "message": "報告形式"
   },
   "optTalkRows": {
-    "message": "面板裡的行"
+    "message": "面板裡的列"
   },
   "optTalkRowsHint": {
     "message": "報告形式如何計數。合併後，同時具有多種的論文只算一次。"
@@ -669,7 +669,7 @@
     "message": "Semantic Scholar"
   },
   "optSemanticHint": {
-    "message": "Scholar 截斷的內容，多一個地方可查。"
+    "message": "Scholar 截短的內容，多一個地方可查。"
   },
   "optSemanticLabel": {
     "message": "優先用 Semantic Scholar 補全作者列表"
@@ -698,7 +698,7 @@
     "message": "每年一根柱，用各位次的顏色。"
   },
   "coverRepeats": {
-    "message": "與另一篇重複的條目：$N1$",
+    "message": "與另一篇重複的項目：$N1$",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -833,10 +833,10 @@
     "message": "側邊欄中的歷年引用統計長條圖。"
   },
   "optConfigTitle": {
-    "message": "設定與預設"
+    "message": "設定與預設組合"
   },
   "optConfigHint": {
-    "message": "以 JSON 形式提供的設定：可以複製、儲存為檔案、載入檔案，或把變更貼到編輯框中。預設只會改變它列出的項目，頁面會說明已套用了什麼、略過了什麼。"
+    "message": "以 JSON 形式提供的設定：可以複製、儲存為檔案、載入檔案，或把變更貼到編輯框中。預設組合只會改變它列出的項目，頁面會說明已套用了什麼、略過了什麼。"
   },
   "optConfigCopy": {
     "message": "複製設定 (JSON)"
@@ -885,7 +885,7 @@
     "message": "複製代理指南"
   },
   "optConfigPreset": {
-    "message": "快速預設"
+    "message": "快速預設組合"
   },
   "optPresetLast": {
     "message": "最後作者偏好"
@@ -983,7 +983,7 @@
     "message": "「其他」列"
   },
   "optTableHidden": {
-    "message": "「被隱藏」列"
+    "message": "「無法判斷」列"
   },
   "optTableNote": {
     "message": "關於等級來源的說明"
@@ -1031,7 +1031,7 @@
     "message": "被截短的作者列表與「補全」"
   },
   "optStatusRepeats": {
-    "message": "重複的條目"
+    "message": "重複的項目"
   },
   "optStatusAbsent": {
     "message": "未列出本人姓名的論文"
@@ -1097,7 +1097,7 @@
     "message": "等級標籤的文字"
   },
   "optChipLabelFull": {
-    "message": "列表與等級（CCF A）"
+    "message": "清單與等級（CCF A）"
   },
   "optChipLabelTier": {
     "message": "僅等級（A）"
@@ -1106,7 +1106,7 @@
     "message": "現成樣式"
   },
   "optChipThemeLists": {
-    "message": "每個列表一種顏色"
+    "message": "每個清單一種顏色"
   },
   "optChipThemeMono": {
     "message": "單色"
@@ -1194,10 +1194,10 @@
     "message": "其他發表處"
   },
   "optPrefer": {
-    "message": "兩個列表都有等級時"
+    "message": "兩個清單都有等級時"
   },
   "optPreferHint": {
-    "message": "一個標籤代替兩個：依你選的列表顯示；另一列表的標籤只在你選的列表對該發表處沒有等級時才出現。標籤的工具提示也會寫明另一個等級。"
+    "message": "一個標籤代替兩個：依您選的清單顯示；另一清單的標籤只在您選的清單對該發表處沒有等級時才出現。標籤的工具提示也會寫明另一個等級。"
   },
   "optPreferCcf": {
     "message": "CCF 優先"

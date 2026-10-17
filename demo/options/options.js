@@ -282,7 +282,7 @@
   }
 
   // A choice among a few values, as radio buttons drawn as one segmented control (the arrow keys move between them, as in any radio group)
-  function segmented({ path, label, hint, choices, icons = {} }) {
+  function segmented({ path, label, hint, choices, icons = {}, off }) {
     const d = described(label, hint);
     const radios = choices.map(([value, text]) => {
       const input = h("input", { type: "radio", class: "seg-radio", name: "seg-" + path, value, "data-pref": path, onChange: () => { if (input.checked) { put(path, value); save(); } } });
@@ -290,14 +290,18 @@
     });
     const row = h("div", { class: "opt opt-segmented" }, h("span", { class: "txt" }, d.name, d.hint),
       h("div", { class: "seg-control", role: "radiogroup", ...d.ids }, ...radios.map((r) => r.label)));
-    const sync = () => radios.forEach(({ value, input, label: lab }) => { const on = at(path) === value; input.checked = on; lab.classList.toggle("active", on); });
+    const sync = () => {
+      const dead = off ? off() : false;                                    // (greyed with the switch it hangs on, as a switch is)
+      row.classList.toggle("disabled", dead);
+      radios.forEach(({ value, input, label: lab }) => { const on = at(path) === value; input.checked = on; input.disabled = dead; lab.classList.toggle("active", on); });
+    };
     syncers.push(sync);
     sync();
     return row;
   }
 
   // An order: the parts (or buttons) of a list, top to bottom, each with the buttons that move it. The ids a switch hides are dimmed, not removed: they keep their place.
-  function orderList({ path, label, hint, nameOf, offOf }) {
+  function orderList({ path, label, hint, nameOf, offOf, off }) {
     const d = described(label, hint);
     const list = h("ol", { class: "order-list", "data-pref": path, ...d.ids });
     let focus = null;                                                      // (the button that was pressed: the list is drawn again, and the keyboard must stay on it)
@@ -309,17 +313,19 @@
       put(path, order);
       save();
     };
+    const wrap = h("div", { class: "opt opt-order" }, h("span", { class: "txt" }, d.name, d.hint), list);
     const sync = () => {
-      const order = at(path);
+      const order = at(path), dead = off ? off() : false;                  // (greyed with the switch it hangs on, as a switch is)
+      wrap.classList.toggle("disabled", dead);
       list.replaceChildren(...order.map((id, i) => h("li", { class: "order-item" + (offOf(id) ? " off" : ""), "data-id": id },
         h("span", { class: "order-name" }, nameOf(id)),
-        h("button", { type: "button", class: "order-btn", "data-act": "move-up", "aria-label": `${nameOf(id)}: ${t("optMoveUp")}`, title: t("optMoveUp"), disabled: i === 0, onClick: () => move(id, -1) }, "▲"),
-        h("button", { type: "button", class: "order-btn", "data-act": "move-down", "aria-label": `${nameOf(id)}: ${t("optMoveDown")}`, title: t("optMoveDown"), disabled: i === order.length - 1, onClick: () => move(id, 1) }, "▼"))));
+        h("button", { type: "button", class: "order-btn", "data-act": "move-up", "aria-label": `${nameOf(id)}: ${t("optMoveUp")}`, title: t("optMoveUp"), disabled: dead || i === 0, onClick: () => move(id, -1) }, "▲"),
+        h("button", { type: "button", class: "order-btn", "data-act": "move-down", "aria-label": `${nameOf(id)}: ${t("optMoveDown")}`, title: t("optMoveDown"), disabled: dead || i === order.length - 1, onClick: () => move(id, 1) }, "▼"))));
       if (focus) { const b = list.querySelector(`[data-id="${focus.id}"] [data-act="${focus.act}"]`) || list.querySelector(`[data-id="${focus.id}"] .order-btn:not([disabled])`); if (b) b.focus(); focus = null; }
     };
     syncers.push(sync);
     sync();
-    return h("div", { class: "opt opt-order" }, h("span", { class: "txt" }, d.name, d.hint), list);
+    return wrap;
   }
 
   // A language: the plain list of the languages (each in its own name) with the setting's own "none" first. The interface language reloads the page once chosen.
@@ -804,8 +810,8 @@
     switch (row.kind) {
       case "bool": return option({ path: row.path, label, hint, swatch: row.swatch ? ROLE_COLOR[row.swatch] : null, sub: !!row.parent && rows.some((r) => r.path === row.parent), off: () => inert(row), name, key: row.label });
       case "text": return row.inline ? null : h("div", { class: "opt opt-name" + (row.parent && rows.some((r) => r.path === row.parent) ? " sub" : "") }, h("span", { class: "txt" }, h("span", { class: "name" }, label)), nameEdit(row, () => inert(row)));
-      case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons }); }
-      case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id) });
+      case "choice": { const c = CHOICES[row.path]; return segmented({ path: row.path, label, hint, choices: row.values.map((v) => [v, t(c.labels[v])]), icons: c.icons, off: () => inert(row) }); }
+      case "order": return orderList({ path: row.path, label, hint, nameOf: (id) => itemName(row.path, id), offOf: (id) => itemOff(row.path, id), off: () => inert(row) });
       case "language": return languageSelect({ path: row.path, label, hint, none: [row.none, t(NONE_WORD[row.path])], reload: row.path === "language" });
       case "color": return B.prefs.ROLES.includes(row.path.split(".")[1]) ? null : chipColor(row);        // (the role colours have their own studio)
       default: return null;
@@ -1070,6 +1076,7 @@
       marks: counts, markKinds: prefs.panel.marks.award ? B.marks.summarizeKinds(PAPERS.map(visible)) : {}, markGroup: null,
       years: [2025, 2024, 2023, 2022, 2021, 2020], metrics: B.metrics.citationMetrics(PAPERS), byYear: B.metrics.byYear(PAPERS), topVenues: B.metrics.topVenues(PAPERS, 6, B.prefs.lists(prefs), B.prefs.winner(prefs)), venueKey: null,
       venuesHasMore: false, venuesExpanded: false,
+      // (every part is drawn in the preview, whatever the data — it is what a part is pointed at by: with Merge duplicates on the real panel has no "repeats" line)
       coverage: { loaded: PAPERS.length, canLoadMore: true, complete: false, loadingAll: false, loadMessage: "", repeats: 1, hidden: 1, absent: 1, resolving: null, resolveMessage: "", layoutBroken: false,
         unmatched: [{ venue: "Example Workshop on Things", count: 2 }] },
       variants: [], nameHints: { auto: [], suggestions: [{ name: "Author A", rows: 2 }] }

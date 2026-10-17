@@ -87,7 +87,8 @@
   function canonTokens(s, mode, known) {
     let r = fold(s).replace(/&/g, " and ");
     if (mode === "noAcr" && known) {
-      r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) ? " " : m));
+      // (an acronym with its year jammed on — "TCC2020 International Colloquium on Automata, Languages, and Programming" — is the acronym as well)
+      r = r.replace(/\b[A-Z][A-Z0-9]{1,9}\b/g, (m) => (known.has(m.toLowerCase()) || known.has(m.toLowerCase().replace(/(?:19|20)\d{2}$|\d{2}$/, "")) ? " " : m));
     }
     const out = dropOrdinalTypos(r.toLowerCase()
       .replace(/[^a-z0-9]+/g, " ")
@@ -457,6 +458,10 @@
     "mabs", "cloud", "ideas", "seams", "forum", "micro", "science", "cognition", "networks", "metrics", "security", "learning", "robotics", "vision", "language"]);
 
   // All-caps / camel-case acronym signals present in the string, strongest first.
+  // an acronym with its year written against it: "ASE'19", "CC'19", "ICLR2020", "ICML24" — an event, as with a space (two letters and a two-digit year without an apostrophe — "SC18", "CC19" — are left to the other rules: "DS 75" is a report)
+  const GLUED_APOS = /['’]\d{2}:?$/, GLUED_JAM = /^(?=.*[A-Z])(?:([A-Za-z&]{3,10})(?:\d{2}|(?:19|20)\d{2})|([A-Za-z&]{2})(?:19|20)\d{2}):?$/;          // (a colon may follow: "EUROCRYPT2019: Annual International Conference …")
+  const unglue = (w) => w.replace(GLUED_APOS, "").replace(GLUED_JAM, "$1$2");
+  const glued = (w) => GLUED_APOS.test(w) || GLUED_JAM.test(w);
   function acronymSignals(p) {
     const out = [];
     const keys = (txt) => {
@@ -482,7 +487,7 @@
     // ("Proceedings ASE 2000. Fifteenth IEEE International Conference on Automated …": the proceedings' own title word is not the venue)
     const head0 = p.withParens.replace(/^[\s,]+/, "").replace(/^(?:proceedings?|proc\.?)(?:\s+of)?\s+(?:the\s+)?(?=[A-Z][A-Za-z0-9&'’-]{1,14}[\s,]+(?:'?\d{2,4}\b|\d+(?:st|nd|rd|th)\b))/i, "");
     const head = head0.replace(ORG_LEAD, "");
-    const first = (head.split(/[\s,]+/)[0] || "").replace(/['’]\d{2}$/, "");          // ("ASE'19": the acronym, then its year written without a space — the same event as "ASE '19" and "ASE 2019")
+    const first = unglue(head.split(/[\s,]+/)[0] || "");          // ("ASE'19", "ICLR2020": the acronym, then its year written without a space — the same event as "ASE '19" and "ASE 2019")
     const rest = head.slice(first.length).replace(/^[\s,]+/, "");
     const looksAcr = /^[A-Za-z][A-Za-z0-9&'’\/-]{1,14}$/.test(first) &&
       (/[A-Z].*[A-Z]/.test(first) || first === first.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(first));
@@ -506,10 +511,12 @@
     // an acronym, a two-digit year and a colon name the event whatever follows
     const acmDl = /^([A-Za-z][A-Za-z0-9&\/]{1,9})(\s*['’]?\s*)\d{2}\s*:/.exec(head);
     // (a two-letter acronym needs the apostrophe or no space before the number: "CHI '09:", "SC18:" — "DS 30: Proceedings of DESIGN 2002" is the Design Society's report series)
-    if (acmDl && /[A-Z]/.test(acmDl[1]) && !(acmDl[1].length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmDl[1])) out.push({ key: k, kind: "lead", event: true, raw: acmDl[1] });
-    // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR"
+    // ("ICSE2019:" — the expression takes the century into the acronym, "ICSE20"; "C&C2019:" would pass the guard that tells it from "CC" with it)
+    const acmAcr = acmDl && (acmDl[2] === "" && acmDl[1].length > 3 && /(?:19|20)$/.test(acmDl[1]) ? acmDl[1].slice(0, -2) : acmDl[1]);
+    if (acmDl && /[A-Z]/.test(acmAcr) && !(acmAcr.length <= 2 && /\s/.test(acmDl[2]) && !/['’]/.test(acmDl[2]))) for (const k of keys(acmAcr)) out.push({ key: k, kind: "lead", event: true, raw: acmAcr });
+    // a one-word venue equal to an acronym: "Ndss", "Osdi 8 (4), 7, 2008", "ICLR" (with its year glued on, "ICLR2020", the lead rule above has read it; a title-cased one — "Ijcai15", "Nips2016" — is not the shape of an acronym there, and stays here)
     const words = p.plain.split(/\s+/).filter(Boolean);
-    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !/['’]\d{2}$/.test(words[0]) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
+    if (!placed && words.length === 1 && /^[A-Za-z][A-Za-z0-9&'’-]{3,14}$/.test(words[0]) && !(glued(words[0]) && ((a) => /[A-Z].*[A-Z]/.test(a) || a === a.toUpperCase() || /^[A-Z][a-z]+[A-Z]/.test(a))(unglue(words[0]))) && !(ENGLISH_ACRONYMS.has(words[0].toLowerCase()) && words[0] !== words[0].toUpperCase())) for (const k of keys(words[0])) out.push({ key: k, kind: "lead", event: false });
     return out;
   }
 
@@ -885,7 +892,7 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
-          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
+          const foreign = d && d !== "ambiguous" && ((spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w))));          // (no entry to judge — "ambiguous", or none — is no foreign one)
           if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
@@ -1109,7 +1116,9 @@
         const need = canonTokens(((/\bworkshops?\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(entry.name)) || [])[1]) || "", "noOrg");
         evidence = need.length > 0 && /\bworkshops?\s+on\b/i.test(fold(raw)) && (cut < 0 ? need.every((w) => have.has(w) || have.has(stem(w))) : subject.length >= 2 && subject.every((w, i) => need[i] !== undefined && (need[i] === w || stem(need[i]) === stem(w))));
       }
-      if (evidence) {
+      // the workshops held at the venue are not the venue, though its own name says Workshop: "REFSQ Workshops" (the plural without a subject, where the name has the singular; "Seventh IEEE Workshops on Applications of Computer Vision" is the event's own name), "Workshop at REFSQ"
+      const hosted = word === "workshop" && ((/\bworkshops\b(?!\s+(?:on|of|for)\b)/i.test(fold(raw)) && !/\bworkshops\b/i.test(fold(String(entry.name)))) || /\bworkshop\s+(?:at|@|co-?located\s+with)\b/i.test(fold(raw)));
+      if (evidence && !hosted) {
         if (!subject.length) return true;
         if (cut < 0) { if (subject.every((w) => vocab.has(w) || vocab.has(stem(w)))) return true; }
         else if (subject.every((w) => vocab.has(w) || vocab.has(stem(w))) && [...ownTokens].some((t) => rawWords.includes(t))) return true;          // (cut, with the venue's own acronym beside it: "Public Key Cryptography-PKC 2003: 6th International Workshop on Theory and …")
@@ -1131,7 +1140,7 @@
       const core = trackCore(part, target);
       if (!core.length) return false;
       const initials = core.filter((w) => !STOP.has(w)).map((w) => w[0]).join("");
-      const mine = (w) => w === initials || w === initials.slice(0, -1) || ownTokens.has(w);          // (its acronym: "PRIMA 2005: Pacific Rim International Workshop on …")
+      const mine = (w) => w === initials || w === initials.slice(0, -1) || ownTokens.has(w) || ownTokens.has(w.replace(/(?:19|20)\d{2}$|\d{2}$/, ""));          // (its acronym, with its year jammed on: "NOSSDAV2019 International Workshop on …")          // (its acronym: "PRIMA 2005: Pacific Rim International Workshop on …")
       const named = head.slice(); while (named.length && mine(named[0])) named.shift();
       if (!core.every((w, j) => named[j] === w)) {
         if (cut < 0) return false;
@@ -1159,12 +1168,12 @@
 
     function resolve(raw) {
       // The same venue printed another way is the same venue. Before any rule looks at the text: the invisible characters a copy from a PDF or a page leaves (soft hyphen, zero-width
-      // spaces, the byte-order mark) are gone, every dash is a hyphen, every apostrophe and quotation mark is a straight one, white space is one space and nothing at the ends, three dots
+      // spaces, the byte-order mark) are gone, every dash is a hyphen, every apostrophe and quotation mark is a straight one (an acute accent, a grave accent or a prime between a letter and a two-digit year is the apostrophe of "NDSS'19" too), white space is one space and nothing at the ends, three dots
       // are the ellipsis that marks a cut name, and a string does not end in punctuation. ("AAAI  Fall Symposium", "AAAI Fall​ Symposium" and "Late–Breaking" must be read as the symposium
       // and the late-breaking track they are, not as the conference they would be taken for if the rule that spots them did not see them.) Every scan below is linear: the text is cut at the
       // length `prepare` reads first.
       let key = String(raw == null ? "" : raw).slice(0, 1000).replace(/[\u00ad\u200b-\u200d\u2060\ufeff]/g, "").replace(/[\u2010-\u2015\u2212\ufe58\ufe63\uff0d]/g, "-")
-        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
+        .replace(/[\u2018\u2019\u201b\u02bc]/g, "'").replace(/([A-Za-z])[\u00b4`\u2032\u02b9](?=\d{2}\b)/g, "$1'").replace(/[\u201c\u201d\u201f]/g, '"').replace(/\.{3,}/g, "…").replace(/\s+/g, " ");
       let end = key.length;
       while (end > 0 && /[\s,;:.]/.test(key[end - 1])) end--;
       key = key.slice(0, end).trim();
