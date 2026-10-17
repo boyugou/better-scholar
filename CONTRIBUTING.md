@@ -48,8 +48,11 @@ keys of `test/fixtures/venues.expected.json`: *which acronym does the string ope
 badge's?* · *how many of the string's words are outside the venue's names?* · *do CCF and CORE name different venues?* ·
 *is the same name printed another way (case, dashes, dots, "Proceedings of the", another year or page range) answered the same?* ·
 *does every official name of both lists, put into the forms Scholar prints it in (with a volume, "(ACRONYM)", "ACRONYM '19:",
-a track word after it), come out as itself or as nothing — never as another venue?* Anything that changes a badge goes
-through steps 3 and 4 above.
+a track word after it), come out as itself or as nothing — never as another venue?* · *with its own acronym added after the
+title ("…, AAAI 2019"), in a parenthesis or in front, is it still that venue or nothing?* · *cut after any word, does it get a
+venue that begins like the cut, or nothing?* (the last three are unit tests over every name; an oracle for them has to accept
+the other list's spelling of the same acronym — SIGKDD / KDD, MSWiM / MSWIM, ACM MM / ACMMM — or it drowns in false alarms).
+Anything that changes a badge goes through steps 3 and 4 above.
 
 Three independent sources of real publisher strings found most of the later mistakes (all public and free; send no e-mail
 address, never go round a bot check — DBLP's Anubis page is one):
