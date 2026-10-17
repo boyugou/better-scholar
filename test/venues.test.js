@@ -1692,3 +1692,53 @@ test("real prints that missed a badge: MASCOTS with 'Telecommunications', PROFES
   eq("Proceedings of the 6th Asia-Pacific Symposium on Internetware on Internetware, 2014", "CCF C Internetware");
 });
 
+test("the fourteenth review: an acronym after the title names the venue (AAAI, SDM), the name a string spells never beats an acronym it names, a shadow is the spelled name, the series acronym honours the shadows", () => {
+  const eq = (raw, want) => assert.equal(brief(raw), want, raw), none = (raw) => assert.equal(brief(raw), "", raw);
+  // ... the venue's own acronym after its name ("…, AAAI 2019") is not IJCAI's or ICDM's words
+  eq("Proceedings of the AAAI Conference on Artificial Intelligence, AAAI 2019", "CCF A AAAI · CORE A* AAAI");
+  eq("SIAM International Conference on Data Mining, SDM 2019", "CCF B SDM · CORE A SDM");
+  eq("SIAM International Conference on Data Mining; SDM 2019", "CCF B SDM · CORE A SDM");
+  eq("SIAM International Conference on Data Mining - SDM '19", "CCF B SDM · CORE A SDM");
+  // ... the acronym the string names is the venue, and the name it spells does not override another venue's acronym
+  eq("Conference on Supercomputing (ICS)", "CCF B ICS · CORE A ICS");
+  eq("International Conference on Supercomputing (SC)", "CCF A SC · CORE A SC");
+  none("Human-Computer Interaction (CHI)");
+  none("Human-Computer Interaction (IUI)");
+  eq("EC '09: Proceedings of the 10th ACM conference on Electronic commerce", "CORE A* EC");
+  eq("Proceedings of the 19th annual international conference on Supercomputing - ICS '05", "CCF B ICS · CORE A ICS");
+  eq("Proceedings of the 5th conference on Creativity & cognition - C&C '05", "CORE B C&C");
+  // ... an unranked event is shadowed by the name the string spells, not by every string that boils down to its words: ACM's Conference on Computer Graphics … is SIGGRAPH, the ACM Proceedings of … is not
+  eq("ACM Conference on Computer Graphics and Interactive Techniques (SIGGRAPH 2019)", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  eq("ACM International Conference on Computer Graphics and Interactive Techniques", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  none("Proceedings of the ACM on Computer Graphics and Interactive Techniques 5 (1), 1-17, 2022");
+  // ... the subtitle rule: "Joint" is not the venue's, an industrial track is a track
+  none("Joint Network and Distributed System Security Symposium, San Diego");
+  none("Proceedings of the 18th ACM/IFIP/USENIX Middleware Conference: Industrial Track");
+  // ... ISC is also the supercomputing conference of Germany, which the lists do not hold; a volume of a series is no journal
+  none("Supercomputing: 29th International Conference, ISC 2014, Leipzig, Germany, June 22-26, 2014");
+  none("Supercomputing - ISC 2014");
+  eq("Information Security Conference", "CCF C ISC · CORE C ISC");
+  none("Journal of Cryptology - Lecture Notes in Computer Science, 2005");
+});
+
+test("a ranked conference's official name with its own acronym added (after the title, in a parenthesis, in front) is that venue's badge or none, never another venue's", () => {
+  const sq = (x) => String(x || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const bare = (a) => sq(String(a).replace(/^(?:IEEE|ACM|IFIP|USENIX|SIAM)[\s/_-]+/i, ""));
+  const rows = [...ccf.venues.filter((v) => v.kind === "C").map((v) => ({ src: "ccf", abbr: v.abbr, name: v.name })), ...core.venues.map((v) => ({ src: "core", abbr: v.acronym, name: v.name }))];
+  const forms = (n, a) => [`${n}, ${a} 2019`, `${n}; ${a} 2019`, `${n} - ${a} '19`, `${n} (${a})`, `${a} 2019: ${n}`, `${a}'19: ${n}`, `Proceedings of the ${n}, ${a} 2019`, `${n}, ${a}`];
+  const wrong = [];
+  for (const row of rows) {
+    if (!row.abbr || row.abbr.length < 2 || row.abbr === "ACM SIGOPS ATC") continue;          // (that row's own abbreviation is a name, not an acronym: "ACM SIGOPS ATC'19:" reads as CORE's ATC)
+    const n = row.name.replace(/\s*\([^()]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
+    for (const raw of forms(n, row.abbr)) {
+      const r = resolver.resolve(raw);
+      for (const [src, badge] of [["ccf", r.ccf], ["core", r.core]]) {
+        if (!badge) continue;
+        const own = bare(badge.abbr) === bare(row.abbr) || bare(badge.abbr).replace(/^(?:acm)/, "") === bare(row.abbr).replace(/^(?:acm)/, "") || (row.src === "ccf" && src === "core" && resolver.index.sameVenue(row.abbr, badge.abbr)) || (row.src === "core" && src === "ccf" && resolver.index.sameVenue(badge.abbr, row.abbr));
+        if (!own) wrong.push(`${raw} → ${src} ${badge.abbr}`);
+      }
+    }
+  }
+  assert.deepEqual(wrong.slice(0, 10), [], `${wrong.length} strings carry another venue's badge`);
+});
+
