@@ -43,7 +43,7 @@
   const ORG = new Set(["ieee", "acm", "cvf", "cfv", "usenix", "ifip", "siam", "ieeeacm", "acmieee", "springer", "elsevier", "iapr", "wic", "edac", "esda", "eai", "sigchi",
     // ACM's special interest groups that sponsor many events and are the name of none ("ACM SIGPLAN International Conference on
     // Functional Programming" is "International Conference on Functional Programming" without them)
-    "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim"]);
+    "sigplan", "sigsoft", "sigact", "sigops", "sigarch", "sigsac", "sigda", "sigbed", "sigsim", "sigevo"]);
   const ORDINAL_WORDS = new Set([
     "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
     "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth",
@@ -59,7 +59,8 @@
   const TYPE_WORDS = ["symposium", "conference", "workshop", "meeting"];
 
   const isNoiseToken = (t) =>
-    /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a");
+    /^\d+$/.test(t) || /^\d+(st|nd|rd|th)$/.test(t) || ORDINAL_WORDS.has(t) || (t.length === 1 && t !== "a") ||
+    /^(?:twenty|thirty|forty|fifty|sixty)(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)$/.test(t);          // ("TwentySecond": the IJCAI Organization's proceedings write the hyphen out)
   // Authors often drop the "h" of an ordinal: "The Thirty-eight Conference on Neural Information Processing
   // Systems" (NeurIPS 2024 was the thirty-eighth). After a tens word, "eight" / "nine" / "nineth" is that ordinal.
   const TENS = new Set(["twenty", "thirty", "forty", "fifty", "sixty"]);
@@ -127,7 +128,7 @@
 
   // (the whole word: "Marketing" and "Decision" are not months — "Journal of Marketing" was read as "Journal of" and then as the Journal of the ACM)
   const MONTH = "(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sept?(?:ember)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)";
-  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|[a-z]{2,6}\\d{3,7})(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp." and the article numbers of Oxford's journals: "btac817", "bbab315")
+  const PAGES = "(?:\\d+\\s*pp\\.?|[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|[a-z]{2,6}\\d{3,7}|(?:i{2,3}|iv|vi{0,3}|ix|xi{0,3}|xiv|xv|xvi{0,3}|xix|xx|xxi{0,3}))(?:\\s*[-–−]+\\s*(?:[A-Za-z]{0,3}\\d+[A-Za-z]{0,3}|es))?";          // (also IEEE Xplore's "4 pp.", the article numbers of Oxford's journals — "btac817", "bbab315" — and the Roman page numbers of the front matter: "vi")
 
   // NeurIPS's "Datasets and Benchmarks Track" papers are NeurIPS papers: the phrase (and its "(Round 2)", "Track on …",
   // "Datasets; Benchmarks" spellings) is not part of the venue's identity, so it is dropped before matching. Whether the
@@ -137,21 +138,27 @@
   const DB_TAIL = new RegExp("[\\s,;:–-]*\\b" + DB_PHRASE + "(?=\\s*(?:[,;:.)]|$|\\d))", "gi");
 
   // Reduce a raw Scholar venue field to
-  //   { name, plain, withParens, truncated, hasVolume, hasIssue }          (hasIssue: "12 (3)" — a journal's volume and issue)
+  //   { name, plain, withParens, truncated, hasVolume, hasIssue, viaSeries }          (hasIssue: "12 (3)" — a journal's volume and issue; viaSeries: the string was a volume's title in a publisher's series)
   // name       the venue words with volume/pages/year tails removed (parentheses kept)
   // plain      name with parenthetical content removed (used for name matching)
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
   function prepare(raw) {
     // (whitespace is collapsed first: a long run of spaces in front of a pattern would otherwise make the scan quadratic; and a venue is not longer than a thousand characters
     // — a longer text is cut, for the same reason: a run of commas in front of a pattern costs time in proportion to the square of its length)
-    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(/^((?:19|20)\d{2})(?=(?:IEEE|ACM)\b)/, "$1 ").replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
+    let s = fold(String(raw == null ? "" : raw).slice(0, 1000)).replace(/\s+/g, " ").trim().replace(/^((?:19|20)\d{2})(?=(?:IEEE|ACM)\b)/, "$1 ").replace(/\b(of|the)(\d{1,3}(?:st|nd|rd|th))\b/gi, "$1 $2").replace(DB_PAREN, " ").replace(DB_TAIL, " ").replace(/[\s,;:–-]*\bgeneral track\b/gi, " ").replace(/\s+/g, " ").trim();
     // "[arXiv preprint arXiv:2305.1]" / "(arXiv:…)" annotations some owners append
     s = s.replace(/\[[^\]]*\]?/g, " ").replace(/\((?:[^()]*arxiv[^()]*)\)?/gi, " ");
     const truncated = /…|\.{3}/.test(s);
     if (truncated) s = s.split(/…|\.{3}/)[0];
     s = s.replace(/\s+/g, " ").trim();
+    // Springer's proceedings volumes numbered in Roman: "Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …", "… IX: Selected Contributions of the Ninth …" — the volume and
+    // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
+    let viaSeries = false;          // (the name is a volume's title: a book of proceedings, a conference's — never a journal of that title)
+    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; return name; });
+    // ACM's series form with the word before the dash cut off: "SIGGRAPH Asia 2018 Technical Papers on - SIGGRAPH Asia '18" — the acronym after the dash only repeats the title
+    s = s.replace(/\s+on\s*[-–—]\s*[A-Za-z][A-Za-z0-9 ]{1,24}\s*['’]\s?\d{2}\s*$/i, "");
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name
-    s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, "$1");
+    s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, (m, name) => { viaSeries = true; return name; });
     // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
     // ("Selected Areas in Communications, IEEE Journal on": "IEEE Journal on Selected Areas in Communications"). The form is fixed, so it is read back before anything else.
     s = s.replace(/^(.{2,80}?),\s*((?:IEEE|ACM)(?:\/(?:IEEE|ACM))?\s+(?:Transactions|Journal|Letters|Magazine)\s+on)\b(.*)$/i, "$2 $1$3");
@@ -184,7 +191,7 @@
     s = s.replace(/\s+(?:19|20)\d{2}\s*$/, "").replace(/[\s,;:.-]+$/, "").trim();   // "ISCA 2014"
     // an unclosed "(OSDI" at the very end still counts as acronym text, but is not name text
     const plain = s.replace(/\([^()]*\)?/g, " ").replace(/\s+/g, " ").trim();
-    return { name: s, plain, withParens, truncated, hasVolume, hasIssue };
+    return { name: s, plain, withParens, truncated, hasVolume, hasIssue, viaSeries };
   }
 
   // ------------------------------------------------------- type & track signals
@@ -212,7 +219,7 @@
 
   // Secondary tracks of a main conference: not the main proceedings, so no badge —
   // unless the venue's OWN official name contains the word (IWQoS, HotNets, …).
-  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first))\b/i;
+  const SECONDARY = /\b(?:workshops?|companion|demos?|demonstrations?|doctoral|tutorials?|courses?|posters?|adjunct|findings|extended abstracts?|conference abstracts|abstracts and applications|talks|sketches|emerging technologies|late[- ]breaking|short papers?|industry track|shared task|student (?:abstracts?|research)|work[- ]in[- ]progress|symposium series|(?:spring|summer|fall|autumn|winter) symposi(?:um|a)|tiny papers?|summits?|blog ?posts?|competition track|creative ai(?: track)?|sister conferences?|journal[- ](?:track|first)|supplement(?:al)? (?:volume|proceedings)|(?:computer )?animation festival|art gallery|electronic theat(?:er|re)|educators? program|real-time live|vr village|appy hour|production sessions?|technical briefs?|arts, media,? (?:and )?humanities|new ideas and emerging results)\b/i;
   // Every secondary-track word of the string, in order, each once ("Workshop … Posters" has two): a venue whose own name holds one of them is not held to that one only.
   function secondaryWords(raw) {
     const text = fold(raw), words = [];
@@ -522,7 +529,9 @@
     if (isPublisher(p)) return null;
     // an unranked event named by its own acronym (aliases.js `shadow`)
     if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => (idx.shadow.get(x.key) || []).some((w) => !w || fold(p.withParens).toLowerCase().includes(w)))) return null;
-    const kinds = hint ? [hint] : ["J", "C"];
+    // (a volume's title in a publisher's series — "Machine Learning - Lecture Notes in Computer Science" — is a book of proceedings, not the journal of that title: the conferences only, and the
+    // bare-name guard below still holds, as it does for a string whose type is not known)
+    const kinds = hint ? [hint] : p.viaSeries ? ["C"] : ["J", "C"];
     const sides = kinds.map((k) => idx.sources[src][k]).filter(Boolean);
     if (!sides.length) return null;
     const rawWords = TYPE_WORDS.filter((w) => new RegExp("\\b" + w + "s?\\b", "i").test(p.plain));
@@ -630,18 +639,32 @@
     // that is another venue's, whose own acronym the string does not say ("… Conference on Artificial Intelligence (AAAI-07)" boils down to IJCAI's name), disagrees with it.
     // (the acronyms of other venues that the string only holds — "2025 USENIX Annual Technical Conference (ATC'25)" — are told by the hit's own being in it)
     const ownersOf = (a) => sides.flatMap((side) => [...(side.abbrs.get(a) || []), ...(side.weakAbbrs.get(a) || [])]);
+    // (the venues of both lists that have this acronym: a string that names the acronym of a conference only the other list has is not the journal of this list that has the same words)
+    const ownersInBoth = (a) => Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => [...(idx.sources[sn][kd].abbrs.get(a) || []), ...(idx.sources[sn][kd].weakAbbrs.get(a) || [])]));
     const wordsHere = new Set(fold(p.withParens).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean));
     // ... and a hit whose whole name stands in the string is the venue the string says ("… USENIX Conference on Security Symposium (SEC'17)": the organisation and the name are there)
     const wholeName = (hit) => hit.extra.some((n) => { const w = fold(n.replace(/\([^()]*\)/g, " ")).toLowerCase().split(/[^a-z0-9]+/).filter((x) => x && !STOP.has(x)); return w.length >= 2 && w.every((x) => wordsHere.has(x)); });
     const dashLead = /^([A-Za-z][A-Za-z0-9&/]{1,9})-(?:\d{4}|\d{2})\s*:/.exec(p.plain);          // ("SDM-19: …": AAAI's and others' own form; it vetoes, it does not name the event)
     const acronymAgrees = (hit) => {
       const own = squash(hit.abbr || "");
-      if (own.length >= 2 && (wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
-      if (wholeName(hit)) return true;
+      // (a venue whose acronym is an English word — IFIP's "Networking" — has its acronym in the string only where it is written in capitals: "Networking Conference (WCNC)" says WCNC)
+      if (own.length >= 2 && (ENGLISH_ACRONYMS.has(own) ? new RegExp("\\b" + own.toUpperCase() + "\\b").test(p.withParens) : wordsHere.has(own) || wordsHere.has(stripDigits(own)))) return true;
       const named = acronymSignals(p).filter((sig) => (sig.kind === "lead" && sig.event) || sig.kind === "paren");
       if (dashLead) named.push({ key: squash(dashLead[1]) });
+      // (an acronym in capitals after the title — "Machine Learning: ECML 2005" — names the event too: the words in front are the series' title, not ICML's)
+      // (not the host of a workshop: "ICSE Workshop on Modeling in Software Engineering" is MISE's, whose name says "ICSE" in front of its own event word)
+      // (in a string that is all capitals every word looks like an acronym: there the capitals say nothing)
+      if (/[a-z]{2}/.test(p.withParens)) for (const sig of embeddedSignals(p)) if (sig.raw && /^[A-Z]{4,}\d*$/.test(sig.raw) && !named.some((x) => x.key === sig.key) && !new RegExp("\\b" + sig.raw + "\\b['’]?\\d*\\s+(?:\\w+\\s+)?(?:workshops?|symposium|symposia|conference|colloquium|meeting|congress)\\b", "i").test(p.withParens)) named.push({ key: sig.key });
       const owned = named.filter((sig) => ownersOf(sig.key).length);
-      return !owned.length || owned.some((sig) => ownersOf(sig.key).includes(hit));
+      // (the hit's whole name stands in the string: it is the venue the string says — unless the acronym the string names is another venue's, of either list, whose name stands there too:
+      // "International Wireless Communications and Mobile Computing (IWCMC)" is the conference, not the journal that has the same words; the event word and the sponsors are no part of
+      // that name — Crossref prints the conference without its "Conference")
+      const hereTokens = new Set(canonTokens(p.plain, "noOrg", idx.known));
+      const saysName = (e) => e.extra.some((n) => { const t = canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg", idx.known); return t.length >= 2 && t.every((w) => hereTokens.has(w)); });
+      const another = (e) => e !== hit && !(e.src !== hit.src && (squash(e.abbr || "") === squash(hit.abbr || "") || (hit.src === "ccf" ? idx.sameVenue(hit.abbr, e.abbr) : idx.sameVenue(e.abbr, hit.abbr))));
+      const rivalNamed = named.some((sig) => ownersInBoth(sig.key).some((e) => another(e) && saysName(e)));
+      if (wholeName(hit) && !rivalNamed) return true;
+      return owned.length ? owned.some((sig) => ownersOf(sig.key).includes(hit)) : !rivalNamed;
     };
     const intlJournalWithoutIntl = (e) => e.kind === "J" && /^(?:the\s+)?international\s+journal\b/i.test(e.name) && !/\b(?:international|intl|int)\b/i.test(p.plain);
     // ("AAAI-23: Thirty-Seventh AAAI Conference on Artificial Intelligence": the acronym in front says the event, and says it again inside the name — the venue's own name has it once)
@@ -676,6 +699,8 @@
       // ("Journal of Knowledge Management" is Emerald's, not IGI's International Journal of Knowledge Management; Scholar prints a journal's whole title, so a
       // journal whose name begins "International Journal" is not met without the word — "Int." and "Intl" count as the word)
       if (d && d !== "ambiguous" && intlJournalWithoutIntl(d)) continue;
+      // (a string that says "Joint" is not a venue whose names never do: the "Joint Symposium on Parallel Processing" of Japan is neither ICPP nor IPDPS)
+      if (d && d !== "ambiguous" && /\bjoint\b/i.test(p.plain) && !hasWord(d, "joint")) continue;
       // ("Journal" alone is not "Journal of the ACM": a one-word string only meets a journal's name that is that one word whole, not the rest of a name that lost its organisation)
       if (d && d !== "ambiguous" && d.kind === "J" && tokens.length < 2 && !d.extra.some((n) => canonTokens(n.replace(/\([^()]*\)/g, " "), "full").join(" ") === key)) continue;
       // ("International Security" is a political-science journal, not the USENIX Security Symposium: one content word with "international" or "annual"
@@ -705,7 +730,7 @@
       if (bag.length >= 3) {
         const bkey = uniq(bag).sort().join(" ");
         const d = nameHit((side) => side.bags && side.bags.get(bkey));
-        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d)) return { entry: d, rule: "name" };
+        if (d && d !== "ambiguous" && !intlJournalWithoutIntl(d) && acronymAgrees(d)) return { entry: d, rule: "name" };
       }
     }
 
@@ -757,7 +782,15 @@
       const dotted = new Set((before.match(/[A-Za-z]{2,}\./g) || []).map((x) => squash(x)));
       const owners = [d, ...Object.keys(idx.sources).flatMap((sn) => Object.keys(idx.sources[sn]).flatMap((kd) => (idx.sources[sn][kd].abbrs.get(key) || []).filter((e) => e.src !== d.src && (String(e.abbr).toLowerCase() === String(d.abbr).toLowerCase() || (d.src === "ccf" ? idx.sameVenue(d.abbr, e.abbr) : idx.sameVenue(e.abbr, d.abbr)))))) ];
       const own = words.filter((w) => owners.some((e) => vocabOf(e).has(w) || [...vocabOf(e)].some((v) => stemOf(v) === stemOf(w) || (dotted.has(w) && v.startsWith(w))))).length;
-      return own * 2 <= words.length;
+      if (own * 2 <= words.length) return true;
+      // the venue's own name begins the words and they go on with "and" and more words, with nothing to set the rest off: "International Conference on Image Processing and Robotics (ICIP)"
+      // is another event's name, not IEEE's ICIP (a theme after a colon, a dash or a full stop — "… Software Engineering: Software Engineering in Practice (ICSE-SEIP)" — is a subtitle)
+      const text = fold(before);
+      const runsOn = (e) => e.extra.some((n) => {
+        const t = canonTokens(n.replace(/\([^()]*\)/g, " "), "noOrg", idx.known);
+        return t.length >= 2 && words.length > t.length && t.every((w, i) => words[i] === w) && new RegExp("(?:\\band|&)\\s+" + words[t.length].replace(/[^a-z0-9]/g, "") + "\\b", "i").test(text);
+      });
+      return !/[:;]|\s[–—-]\s|\.\s/.test(before) && owners.some(runsOn);
     };
     // the acronym as printed names its own venue: "C&C" is Creativity and Cognition, not Compiler Construction ("CC") — unless the lists say the two spellings are one venue ("S&P", "SP")
     const rawNamesVenue = (raw, k, d) => {
@@ -800,6 +833,10 @@
     if (hint !== "J" && !placeAndPublisher) {
       const content = canonTokens(p.plain, "noOrg", idx.known);
       const room = CONF_SIGNAL.test(p.plain) ? 3 : 1;   // a bare "IEEE INFOCOM" says little else
+      // what the event is about, in the string's own words: "… International Conference on Theory of Information Retrieval" — three words or more, one of them not the venue's own, are the
+      // name of another event under the sponsor's acronym (ACM SIGIR's ICTIR is no SIGIR), where the same words beside the acronym ("IEEE INFOCOM 2016 - … Conference on Computer Communications") are its own
+      const subject = (() => { const m = /\b(?:conference|symposium|symposia|workshop|congress|colloquium|meeting)\s+(?:on|of|for)\s+(?:the\s+)?([^,:;(.…]+)/i.exec(fold(p.plain)); return m ? canonTokens(m[1], "noOrg") : []; })();
+      const subjectIsNotOwn = (d, key) => { const words = subject.filter((w) => w !== key); if (words.length < 3) return false; const own = new Set([...vocabOf(d)].map(stemOf)); return words.some((w) => !own.has(stemOf(w))); };          // (the acronym itself, "… Computer Design ICCD'93", is no word of the subject)
       for (const { key, raw } of embeddedSignals(p)) {
         const hits = confSide && confSide.abbrs.get(key);
         const left = content.filter((t) => t !== key && t !== String(raw || "").toLowerCase());          // (the acronym, with its year glued on or not)
@@ -811,7 +848,7 @@
           // Two or more other words, none of them the venue's own, are the name of something else: "International Symposium on Wearable Computers
           // (ISWC)" is not the Semantic Web conference of that acronym (a single stray word — "ACL-08: HLT", "VLDB Endowment" — proves nothing)
           // (a line that ends in a volume and an issue is a journal's unless what stands beside the acronym is the venue's own: "PLOS Biology 3 (9)" is not the workshop PLOS, "VLDB Endowment 8 (7)" is VLDB)
-          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
+          const foreign = (spelledEvent && left.length >= 2 && !left.some((w) => vocabOf(d).has(w))) || (d && d !== "ambiguous" && subjectIsNotOwn(d, key)) || namedElsewhere(key, left, d) || parenNameIsAnotherVenueOf(raw, key, d, false) || (p.hasIssue && !CONF_SIGNAL.test(p.plain) && left.length >= 1 && !left.every((w) => vocabOf(d).has(w)));
           if (d && d !== "ambiguous" && !foreign && !parenContradicts(d) && !(p.truncated && !left.every((w) => vocabOf(d).has(w)))) return { entry: d, rule: "acronym" };
         }
       }
@@ -957,12 +994,29 @@
     }
 
     // R5: the string is a known name plus a subtitle ("…: Human Language Technologies")
-    if (R.length >= 4) {
+    if (R.length >= 3) {
       const found = [];
+      // where the visible words of the known name end, in the text: what follows must be a subtitle — set off by a colon, a dash, a comma, a full stop or a parenthesis — and not words that
+      // go on with the name ("… Interactive Techniques in Australasia and South East Asia" is GRAPHITE, "… Information Retrieval in the Asia Pacific Region" is SIGIR-AP, "Data Mining and
+      // Knowledge Discovery Handbook" is a book: a longer name of another event, not a subtitle of this one)
+      const setOff = (tokens) => {
+        const text = fold(p.plain);
+        let k = 0;
+        for (const m of text.matchAll(/[A-Za-z0-9]+/g)) {
+          const tok = canonTokens(m[0], "full");
+          if (!tok.length) continue;
+          if (tok[0] !== tokens[k]) return false;
+          // (a name of three words needs the colon: "Extending Database Technology: Advances in Database Technology" — the volume's own title after it)
+          if (++k === tokens.length) return (tokens.length >= 4 ? /^\s*(?:[:;,.–—(/-]|$)/ : /^\s*:/).test(text.slice(m.index + m[0].length));
+        }
+        return false;
+      };
       for (const side of sides) {
         for (const { entry, form } of side.first.full.get(R[0]) || []) {
           const t = form.full;
-          if (t.length >= 4 && t.length < R.length && t.every((w, i) => R[i] === w)) found.push({ e: entry, len: t.length });
+          // (a journal's title with words after it is a book of that title — "Intelligent Data Analysis: An Introduction", "Data Mining and Knowledge Discovery: Handbook" —, a conference's is its proceedings)
+          // (a name of three words says too little without the words of an event in the string: "Intelligent Data Analysis: An Introduction" is a book)
+          if (entry.kind !== "J" && (t.length >= 4 || CONF_SIGNAL.test(p.plain)) && t.length >= 3 && t.length < R.length && t.every((w, i) => R[i] === w) && setOff(t)) found.push({ e: entry, len: t.length });
         }
       }
       if (found.length) {

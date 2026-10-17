@@ -168,6 +168,25 @@
     { core: "ITiCSE", names: ["ACM SIGCSE Conference on Innovation and Technology in Computer Science Education", "SIGCSE Conference on Innovation and Technology in Computer Science Education", "International Conference on Innovation and Technology in Computer Science Education"] },
     // LPAR's current name (CORE lists the older "Logic Programming and Automated Reasoning"); ACII's (CORE's name stops at "Intelligent"); ISoLA's, which Scholar prints without its subtitle
     { core: "LPAR", names: ["International Conference on Logic for Programming, Artificial Intelligence and Reasoning"] },
+    // (the joint event of the Web Intelligence conference and the Intelligent Agent Technology conference: CORE's WI, "previously joint with" it)
+    { core: "WI", names: ["IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology", "IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology", "IEEE/WIC/ACM International Joint Conferences on Web Intelligence and Intelligent Agent Technologies", "Web Intelligence and Intelligent Agent Technology"] },
+    // (the 2000 volume title)
+    { core: "EKAW", names: ["Knowledge Engineering and Knowledge Management Methods, Models, and Tools"] },
+    // (the symposium's older title in the singular — "Second IEEE Symposium on Computer and Communications" is ISCC, not INFOCOM — and the symposium CORE calls a conference)
+    { ccf: "ISCC", core: "ISCC", names: ["IEEE Symposium on Computer and Communications"] },
+    { core: "RO-MAN", names: ["IEEE International Symposium on Robot and Human Interactive Communication"] },
+    // (CORE words these with a typo or a different last word: "Personal and Indoor Mobile Radio Conference", "ACM-SIGRAPH …", "… Financial Engineering"; the VIS of 2024 is "Visualization and Visual Analytics",
+    // the Visualization conference)
+    { core: "PIMRC", names: ["IEEE International Symposium on Personal, Indoor and Mobile Radio Communications"] },
+    { core: "IEEE CIFEr", names: ["IEEE Symposium on Computational Intelligence for Financial Engineering and Economics", "IEEE Conference on Computational Intelligence for Financial Engineering & Economics"] },
+    { ccf: "I3D", core: "I3DG", names: ["ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games", "Symposium on Interactive 3D Graphics and Games"] },
+    // (IPDPS began as two symposia, the International Parallel Processing Symposium and the Symposium on Parallel and Distributed Processing, that merged in 1998)
+    { ccf: "IPDPS", core: "IPDPS", names: ["International Parallel Processing Symposium", "IEEE Symposium on Parallel and Distributed Processing"] },
+    { ccf: "IEEE VIS", core: "IEEE VIS", names: ["IEEE Visualization and Visual Analytics"] },          // (the symposium on Information Visualization, 1995–2006, is not VIS: CCF's VIS is the Visualization conference of DBLP's conf/visualization)
+    // (the years a conference was held jointly with another say so in the title: "Joint" is part of the name those years)
+    { ccf: "RE", core: "RE", names: ["IEEE Joint International Conference on Requirements Engineering", "IEEE Joint International Requirements Engineering Conference"] },
+    { ccf: "SIGMETRICS", core: "SIGMETRICS", names: ["Joint International Conference on Measurement and Modeling of Computer Systems", "ACM SIGMETRICS Joint International Conference on Measurement and Modeling of Computer Systems"] },
+    { core: "InSITE", names: ["Informing Science and Information Technology Education Joint Conference", "Informing Science and IT Education Joint Conference"] },
     { core: "ACII", names: ["International Conference on Affective Computing and Intelligent Interaction"] },
     { core: "ISoLA", names: ["International Symposium on Leveraging Applications of Formal Methods"] },
     // XP's first names, before it became the conference on agile software development
@@ -207,7 +226,9 @@
     { ccf: "OOPSLA", core: "OOPSLA", names: ["ACM SIGPLAN International Conference on Object-Oriented Programming, Systems, Languages, and Applications"] },
     { ccf: "STOC", core: "STOC", names: ["ACM Symposium on Theory of Computing", "ACM SIGACT Symposium on Theory of Computing"] },
     { ccf: "FOCS", core: "FOCS", names: ["IEEE Symposium on Foundations of Computer Science", "Annual Symposium on Foundations of Computer Science"], starts: ["Foundations of Computer Science Proceedings Annual Symposium on"] },
-    { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques"] },
+    // (since 2024 ACM prints the proceedings as "Special Interest Group on Computer Graphics and Interactive Techniques Conference" — "Conference Papers" is the main track, "Courses", "Posters" … are not)
+    { ccf: "SIGGRAPH", core: "SIGGRAPH", names: ["ACM SIGGRAPH Conference", "International Conference on Computer Graphics and Interactive Techniques", "Special Interest Group on Computer Graphics and Interactive Techniques Conference", "Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers"],
+      starts: ["Special Interest Group on Computer Graphics and"] },
 
     // ---- rows whose official PDF text has a typo or a stray word (kept verbatim in data/):
     //      give the correct spelling so Scholar's strings still match
@@ -271,6 +292,7 @@
     // (joint proceedings, and the title that says "Applications" where CORE says "Application")
     { ccf: "DSN", core: "DSN", names: ["International Conference on Dependable Systems and Networks With FTCS and DCC"] },
     { ccf: "ICCAD", core: "ICCAD", names: ["International Conference on Computer-Aided Design. Digest of Technical Papers"] },
+    { core: "ACII", names: ["Humaine Association Conference on Affective Computing and Intelligent Interaction"] },          // (2013's name)
     { core: "CARDIS", names: ["International Conference on Smart Card Research and Advanced Applications", "Smart Card Research and Advanced Applications"] },
     { core: "AIME", names: ["Conference on Artificial Intelligence in Medicine in Europe", "Artificial Intelligence in Medicine in Europe"] },
     // (HiPC was the IEEE's "International Conference on High Performance Computing" before "Data and Analytics" came: with the IEEE only, and not cut off — the bare name is other events', its cut HPCC's)
@@ -351,6 +373,10 @@
     { ccf: "GMOD", kind: "J", names: ["Graphical Models and Image Processing", "CVGIP: Graphical Models and Image Processing"] },
     { ccf: "TR", kind: "J", names: ["IEEE Transactions on Robotics and Automation", "IEEE Trans. Robotics and Automation"] },
     { ccf: "FCS", kind: "J", names: ["Frontiers of Computer Science in China"] },
+    // the parts of the IEEE's Systems, Man and Cybernetics journal (until 2012): Part A is today's Systems, Part B today's Cybernetics (Part B (Cybernetics), with the subtitle in a parenthesis, says too little)
+    { ccf: "TSMC", kind: "J", names: ["IEEE Transactions on Systems, Man, and Cybernetics, Part A: Systems and Humans"] },
+    { ccf: "IEEE Transactions on Cybernetics", kind: "J", names: ["IEEE Transactions on Systems, Man, and Cybernetics, Part B: Cybernetics"] },
+    { ccf: "TCASI", kind: "J", names: ["IEEE Transactions on Circuits and Systems I: Fundamental Theory and Applications"] },          // (until 2003; "Regular Papers" since)
     // the title without the subtitle the list adds: what Elsevier's journals are printed as ("Computational Geometry 1 (1)" — 23 strings of the real profiles)
     { ccf: "JSA", kind: "J", names: ["Journal of Systems Architecture"] },
     { ccf: "CGTA", kind: "J", volume: ["Computational Geometry"] },
@@ -380,6 +406,6 @@
     { ccf: "VLDBJ", kind: "J", names: ["VLDB J."] },
     // unranked events that a ranked venue's name would otherwise claim (found by running the names of the most-cited conferences through the matcher);
     // JCC is the exception that proves the rule: CCF ranks the JointCloud conference, but the words of "IEEE … Joint Cloud Computing (JCC)" boil down to IEEE CLOUD's — no badge is better than that one
-    { shadow: [{ acronym: "ICCC", with: "communications" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
+    { shadow: [{ acronym: "ICCC", with: "communications" }, { acronym: "ICCC", with: "cybernetics" }, { acronym: "SPIN", with: "physics" }, "ICAI", "ICAIE", "SIIE", "ISCTURKEY", "ICONIC", "ICSyS", { acronym: "ICCS", with: "circuits" }, { acronym: "ICCAS", with: "circuits" }, "ANNSIM", { acronym: "MAS", with: "simulation" }, "CISP", "TENSYMP", "ASYU", "CAI", "ICTIR", "ISCISC", "ICCIT", "COMM", "ICNLP", "MODSIM", "ONCON", "IntelliSys", "ICALTE", "ICSOFT-PT", { acronym: "JCC", with: "joint cloud" }, { acronym: "ICICS", with: "communication systems" }, "ICOIN", { acronym: "SOCC", with: "soc conference" }, { acronym: "SOCC", with: "system-on-chip" }] }
   ];
 });
