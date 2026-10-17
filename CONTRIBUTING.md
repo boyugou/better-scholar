@@ -142,6 +142,17 @@ Rank data is checked against its official sources every Monday (`.github/workflo
 is gone, or a newer edition is offered — then regenerate the data as `data/README.md` describes — and with exit 2
 when a source could not be reached or refused the check (no verdict: look again later, or by hand).
 
+### Look at the screens
+
+Every automated check can be green on a broken layout: a label cut into single letters overflows nothing, a comparison sign mirrored in a
+right-to-left line is only text, a bar that pushes the table down by 30 px is no failure of any assertion. After any change to a style, a label or
+a layout, `npm run test:e2e` and look at the pictures it writes (the folder is printed at the end: `panel-all.png`, `popup.png`, `narrow.png`,
+`showcase.png`, the `lang-*.png` of five languages, `settings-ar.png`), then take the state you changed in a few languages (the Arabic panel is the
+right-to-left test, Hungarian and Finnish the long words, Chinese and Japanese the lines with no spaces) and at a narrow width. Measure positions in the page's coordinates
+(`getBoundingClientRect().top + scrollY`: a click may scroll). The end-to-end run also asks that no button's words wrap, that a copy button
+keeps its place while it says *Copied*, that a filter leaves the search box where it was and that the section links are one Tab stop; add
+the check for a defect you fix, so that it is found by a run and not by a person.
+
 ### Accessibility audit
 
 `node scripts/axe-audit.mjs` runs axe-core 4.10's default rules (fetched once from cdnjs into the git-ignored
