@@ -1574,6 +1574,13 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   none("ACM SIGGRAPH 2004 Art gallery");
   none("IEEE International Symposium on Mixed and Augmented Reality - Arts, Media, and Humanities (ISMAR-AMH)");
   eq("ACM SIGGRAPH 2019 Papers", "CCF A SIGGRAPH · CORE A* SIGGRAPH");
+  // a volume's title in Springer's series is a book of proceedings: never the journal of that title, and not the venue whose name the title boils down to when it names another one (ECML)
+  none("Machine Learning - Lecture Notes in Computer Science, 2005");
+  none("Distributed Computing - Lecture Notes in Computer Science, 2005");
+  none("Pattern Recognition - Lecture Notes in Computer Science, 2005");
+  none("Machine Learning: ECML 2005 - Lecture Notes in Computer Science, 2005");
+  // (the host of a workshop is no other venue: the workshop's own name says it)
+  eq("2009 ICSE Workshop on Modeling in Software Engineering, 1-6, 2009", "CORE C MISE");
   // the model checkers' SPIN is not the spin physicists'
   none("International Spin Physics Symposium (SPIN)");
   eq("International Symposium on Model Checking of Software (SPIN)", "CCF C SPIN");

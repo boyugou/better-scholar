@@ -137,7 +137,7 @@
   const DB_TAIL = new RegExp("[\\s,;:–-]*\\b" + DB_PHRASE + "(?=\\s*(?:[,;:.)]|$|\\d))", "gi");
 
   // Reduce a raw Scholar venue field to
-  //   { name, plain, withParens, truncated, hasVolume, hasIssue }          (hasIssue: "12 (3)" — a journal's volume and issue)
+  //   { name, plain, withParens, truncated, hasVolume, hasIssue, viaSeries }          (hasIssue: "12 (3)" — a journal's volume and issue; viaSeries: the string was a volume's title in a publisher's series)
   // name       the venue words with volume/pages/year tails removed (parentheses kept)
   // plain      name with parenthetical content removed (used for name matching)
   // withParens name before tail removal, parentheses kept (used for acronym extraction)
@@ -152,9 +152,10 @@
     s = s.replace(/\s+/g, " ").trim();
     // Springer's proceedings volumes numbered in Roman: "Algorithmic Foundations of Robotics X: Proceedings of the Tenth Workshop on …", "… IX: Selected Contributions of the Ninth …" — the volume and
     // its description are no part of the name (only where the colon is followed by what the volume holds: "Circuits and Systems I: Regular Papers" is a journal's own title)
-    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, "$1");
+    let viaSeries = false;          // (the name is a volume's title: a book of proceedings, a conference's — never a journal of that title)
+    s = s.replace(/^(.{6,}?)\s+(?:[IVXL]{1,5})\s*:\s*(?:Selected|Proceedings|The\s+(?:\d+(?:st|nd|rd|th)|[A-Z][a-z]+(?:th|st|nd|rd))\b)\b.*$/, (m, name) => { viaSeries = true; return name; });
     // "Theory of Cryptography - Lecture Notes in Computer Science, 2005": the series of the publisher is no part of the venue's name
-    s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, "$1");
+    s = s.replace(/^(.{6,}?)\s*[-–—]\s*(?:Lecture Notes in (?:Computer Science|Artificial Intelligence|Bioinformatics|Business Information Processing|Networks and Systems)|Communications in Computer and Information Science|Studies in Computational Intelligence|Advances in Intelligent Systems and Computing)\b.*$/i, (m, name) => { viaSeries = true; return name; });
     // The inverted title Scholar prints for many older IEEE and ACM journals: "Computers, IEEE Transactions on 60 (3), 386-399, 2011" is "IEEE Transactions on Computers"
     // ("Selected Areas in Communications, IEEE Journal on": "IEEE Journal on Selected Areas in Communications"). The form is fixed, so it is read back before anything else.
     s = s.replace(/^(.{2,80}?),\s*((?:IEEE|ACM)(?:\/(?:IEEE|ACM))?\s+(?:Transactions|Journal|Letters|Magazine)\s+on)\b(.*)$/i, "$2 $1$3");
@@ -187,7 +188,7 @@
     s = s.replace(/\s+(?:19|20)\d{2}\s*$/, "").replace(/[\s,;:.-]+$/, "").trim();   // "ISCA 2014"
     // an unclosed "(OSDI" at the very end still counts as acronym text, but is not name text
     const plain = s.replace(/\([^()]*\)?/g, " ").replace(/\s+/g, " ").trim();
-    return { name: s, plain, withParens, truncated, hasVolume, hasIssue };
+    return { name: s, plain, withParens, truncated, hasVolume, hasIssue, viaSeries };
   }
 
   // ------------------------------------------------------- type & track signals
@@ -525,7 +526,9 @@
     if (isPublisher(p)) return null;
     // an unranked event named by its own acronym (aliases.js `shadow`)
     if (idx.shadow.size && [...acronymSignals(p), ...embeddedSignals(p)].some((x) => (idx.shadow.get(x.key) || []).some((w) => !w || fold(p.withParens).toLowerCase().includes(w)))) return null;
-    const kinds = hint ? [hint] : ["J", "C"];
+    // (a volume's title in a publisher's series — "Machine Learning - Lecture Notes in Computer Science" — is a book of proceedings, not the journal of that title: the conferences only, and the
+    // bare-name guard below still holds, as it does for a string whose type is not known)
+    const kinds = hint ? [hint] : p.viaSeries ? ["C"] : ["J", "C"];
     const sides = kinds.map((k) => idx.sources[src][k]).filter(Boolean);
     if (!sides.length) return null;
     const rawWords = TYPE_WORDS.filter((w) => new RegExp("\\b" + w + "s?\\b", "i").test(p.plain));
@@ -643,6 +646,9 @@
       if (wholeName(hit)) return true;
       const named = acronymSignals(p).filter((sig) => (sig.kind === "lead" && sig.event) || sig.kind === "paren");
       if (dashLead) named.push({ key: squash(dashLead[1]) });
+      // (an acronym in capitals after the title — "Machine Learning: ECML 2005" — names the event too: the words in front are the series' title, not ICML's)
+      // (not the host of a workshop: "ICSE Workshop on Modeling in Software Engineering" is MISE's, whose name says "ICSE" in front of its own event word)
+      for (const sig of embeddedSignals(p)) if (sig.raw && /^[A-Z]{4,}\d*$/.test(sig.raw) && !named.some((x) => x.key === sig.key) && !new RegExp("\\b" + sig.raw + "\\b['’]?\\d*\\s+(?:\\w+\\s+)?(?:workshops?|symposium|symposia|conference|colloquium|meeting|congress)\\b", "i").test(p.withParens)) named.push({ key: sig.key });
       const owned = named.filter((sig) => ownersOf(sig.key).length);
       return !owned.length || owned.some((sig) => ownersOf(sig.key).includes(hit));
     };
