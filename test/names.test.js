@@ -380,3 +380,13 @@ test("a surname-first profile name the page has turned round ('Li Wei' printed '
   assert.equal(names.classifyRow("L Wei, C Wu", after).status, "absent");
 });
 
+test("a spelling in initials that was accepted or typed in is that print form and no other: 'SY Philip' is not 'S Philip' or 'Sam Philip'; a full alternate still covers its initials", () => {
+  assert.equal(roleOf("Philip S. Yu", "SY Philip, A Lee", { alternates: ["SY Philip"] }), "first");
+  assert.equal(roleOf("Philip S. Yu", "S Philip, A Lee", { alternates: ["SY Philip"] }), "absent");
+  assert.equal(roleOf("Philip S. Yu", "A Lee, Sam Philip", { alternates: ["SY Philip"] }), "absent");
+  assert.equal(roleOf("Philip S. Yu", "A Lee, SY Philip", { alternates: ["SY Philip"] }), "last");
+  assert.equal(roleOf("Su Yu", "Y Su, A Lee", { alternates: ["Yu Su"] }), "first", "a full-name alternate is read as a name is: its initials find it");
+  assert.equal(roleOf("Zhang Wei", "W Zhang, A Lee", { alternates: ["W. Zhang"] }), "first", "'W. Zhang' as printed");
+  assert.equal(roleOf("Zhang Wei", "Wei Zhang, A Lee", { alternates: ["W. Zhang"] }), "absent", "… and nothing but that: the full name is not in the list of alternates");
+});
+
