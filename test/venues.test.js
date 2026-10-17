@@ -1650,6 +1650,8 @@ test("real prints that missed a badge: a cut IEEE citation form, joint proceedin
   eq("Network and Distributed System Security Symposium, San Diego, California", "CCF A NDSS · CORE A* NDSS");
   eq("IEEE Real-Time Systems Symposium, Lisbon, Portugal", "CCF A RTSS · CORE A RTSS");
   eq("Design, Automation and Test in Europe Conference, Grenoble, France", "CCF B DATE · CORE A DATE");
+  eq("International Conference on Field-programmable Logic and Applications/International Conference on Field Programmable Logic and Applications", "CCF C FPL · CORE B FPL");
+  eq("2015 IEEE 17th International Conference on High Performance Computing and Communications, 2015 IEEE 7th International Symposium on Cyberspace Safety and Security, and 2015 IEEE 12th International Conference on Embedded Software and Systems", "CCF C HPCC · CORE C HPCC");
   // ... a cut whose whole-name reading has another event word than the string (a symposium for a conference) disagrees with the other list's reading of its start: neither is more than a guess
   none("Software Engineering, 2010 IEEE 32nd …, 2010");
   // ... a leading acronym of a name that ends with its event word ("… Australasian Computing Education Conference") is that event's, and a year in front of a parenthesis is no volume

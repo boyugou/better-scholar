@@ -1021,17 +1021,19 @@
       // Knowledge Discovery Handbook" is a book: a longer name of another event, not a subtitle of this one)
       const setOff = (tokens) => {
         const text = fold(p.plain);
-        let k = 0, end = -1;
+        let k = 0, lastEnd = -1, nextStart = text.length;
         for (const m of text.matchAll(/[A-Za-z0-9]+/g)) {
           const tok = canonTokens(m[0], "full");
-          if (k === tokens.length) { if (tok.length) break; end = m.index + m[0].length; continue; }          // (the words after the name that are no words — the event word, "of", "on" — belong to it: "… Security Symposium, San Diego")
+          if (k === tokens.length) { if (tok.length) { nextStart = m.index; break; } continue; }          // (the words after the name that are no words — the event word, "of", "on" — belong to the gap)
           if (!tok.length) continue;
           if (tok[0] !== tokens[k]) return false;
-          if (++k === tokens.length) end = m.index + m[0].length;
+          if (++k === tokens.length) lastEnd = m.index + m[0].length;
         }
         if (k < tokens.length) return false;
+        // the gap between the name and the next word is where a subtitle is set off: "… Security Symposium, San Diego", "… Applications/International Conference on …"
         // (a name of three words needs the colon: "Extending Database Technology: Advances in Database Technology" — the volume's own title after it)
-        return (tokens.length >= 4 ? /^\s*(?:[:;,.–—(/-]|$)/ : /^\s*:/).test(text.slice(end));
+        const gap = text.slice(lastEnd, nextStart);
+        return nextStart >= text.length || (tokens.length >= 4 ? /[:;,.–—(/-]/ : /:/).test(gap);
       };
       for (const side of sides) {
         for (const { entry, form } of side.first.full.get(R[0]) || []) {
