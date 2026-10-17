@@ -146,6 +146,10 @@ other sign ("CSCW" with pages is read as the conference, "World Wide Web" withou
 Mobile, Wearable and Ubiquitous Technologies" (UbiComp's journal-first form, not on the lists); an acronym-only "X Workshops" for a venue whose
 official name still says Workshop (HotOS, CORE's WACV).
 
+*Print forms, 2026-10-17.* Every official name in 21 print forms (upper and lower case, `&` for "and", hyphens, no diacritics, "The …", "In …", pages, "Proc. of the …", year in front or behind, a quotation, …) comes out as itself or nothing — the exceptions are listed here because
+no real string has them: a **publisher after the name** (", Springer, 2019": 31–40 rows lose their badge, and "SIAM International Conference on Data Mining, ACM, 2019" reads as ICDM; none of the 22,744 real Scholar lines ends with a publisher), "15th Annual" in front
+of HotStorage, and the year written with a hyphen or jammed onto a mixed-case word ("Mobisys2019"; the jammed capital-letter acronyms and the apostrophe forms are read as events since 2.41.0). The probe: resolve each form of every row, count rows that lose the badge or get another venue's.
+
 ## Other ideas, not started
 
 - **Name spellings beyond today's rules**: composite, hyphenated and other romanised names (Iberian double surnames,
