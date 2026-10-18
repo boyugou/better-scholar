@@ -32,6 +32,8 @@ for (const [rel, l] of pages) {
   if (l && !new RegExp(`<iframe src="\\.\\./demo/\\?lang=${l.code}" title="[^"]+" loading="lazy">`).test(html)) fail(`${rel}: no demo iframe for ${l.code}`);
   if (l && !html.includes(`href="../demo/?lang=${l.code}" target="_blank" rel="noopener"`)) fail(`${rel}: no link to open the demo on its own`);
   if (/\{\{|\}\}|undefined|\[object/.test(html.replace(/<script[\s\S]*?<\/script>/g, ""))) fail(`${rel}: unreplaced text`);
+  // the explainer: four steps beside a picture whose labels are the extension's own words in this language (the build fills it from the extension's code)
+  if (l && ((html.match(/<button type="button" data-step="\d"/g) || []).length !== 4 || !html.includes('class="how-stage" aria-hidden="true"'))) fail(`${rel}: the explainer is not complete`);
   for (const m of html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)) {
     const ref = m[1];
     if (/^(https?:|mailto:|data:)/.test(ref)) continue;

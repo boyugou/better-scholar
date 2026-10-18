@@ -61,17 +61,15 @@ const menu = ORDER.map((c) => languages.find((l) => l.code === c)).filter(Boolea
 for (const l of languages) if (!menu.includes(l)) menu.push(l);
 
 // (the four role colours, in turn: the colour code of the product, not a rainbow)
-const FEATURES = [
-  ["roles", "#4d8ff5"], ["ranks", "#b36cf6"], ["summary", "#fbbc04"], ["awards", "#34a853"],
-  ["complete", "#4d8ff5"], ["merge", "#b36cf6"], ["yours", "#fbbc04"], ["private", "#34a853"]
-];
+const COLOURS = ["#4d8ff5", "#b36cf6", "#fbbc04", "#34a853"];
+const FEATURES = ["awards", "complete", "merge", "yours", "private", "lang"];
 
 // The export section shows what the extension's own export code writes (src/lib/formats.js of EXT_DIR) for the invented papers of the settings
 // page's preview, where "A Author" is you: the text a copy button puts on the clipboard, never sample output made by hand, and no real person's papers.
 const formats = createRequire(import.meta.url)(FORMATS);
 const words = JSON.parse(readFileSync(EXT_WORDS, "utf8"));
 const w = (key) => { if (!words[key]) throw new Error(`the extension's English strings have no "${key}"`); return words[key].message; };
-const EXPORTS = [["bibtex", "BibTeX (LaTeX-Ready)"], ["apa", "APA 7th Edition"], ["json", "Structured JSON"], ["markdown", "GitHub Markdown"], ["csv", "RFC-4180 CSV"]];
+const EXPORTS = [["bibtex", "BibTeX"], ["apa", "APA"], ["json", "JSON"], ["markdown", "Markdown"], ["csv", "CSV"]];      // (the formats' own names, the same in every language)
 
 function exportSamples() {
   const ranked = (name, ccf, core) => ({ ccf: { tier: ccf, name }, core: { rank: core, name } });
@@ -115,10 +113,98 @@ const OPERATORS = [
   ["cite", '<code>cites:&gt;100</code> <code>cites:&gt;=50</code> <code>cites:&lt;10</code>'],
   ["tier", "<code>ccf:a</code> <code>ccf:b</code> <code>core:a*</code>"],
   ["role", "<code>role:first</code> <code>role:last</code> <code>role:cofirst</code>"],
-  ["year", "<code>year:&gt;2020</code> <code>year:&gt;=2021</code> <code>year:&lt;=2015</code>"],
+  ["year", "<code>year:&gt;=2020</code> <code>year:2023</code> <code>age:&lt;5</code>"],
   ["honors", "<code>has:award</code> <code>has:talk</code>"],
   ["reset", "<kbd>Escape</kbd>"]
 ];
+
+// The explainer ("How it reads a paper"): two invented papers at real venues, and what the extension's own code (src/lib of EXT_DIR) finds in them: the role
+// and its place in the author line, the rank and the rule that found it, the secondary track that gets none. Its labels are the extension's own strings in
+// the page's language. So the steps show what the extension does, never a story typed here, and the build stops if the code no longer tells that story.
+const extLib = (file) => createRequire(import.meta.url)(needed(join(EXT_DIR, "src", file), `the extension's ${file}`));
+const venuesLib = extLib("lib/venues.js");
+const resolver = venuesLib.createResolver({ ccf: extLib("data/ccf.js").venues, core: extLib("data/core.js").venues, aliases: extLib("data/aliases.js") });
+const HOW = [
+  { title: "Self-Supervised Depth from Casual Video", authorsText: "A Example, B Writer, C Writer, D Writer", venueText: "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023", citations: 892, year: 2023 },
+  { title: "Cheap Calibration for Retrieval-Augmented Models", authorsText: "B Writer, A Example, H Writer", venueText: "Findings of the Association for Computational Linguistics: ACL 2022, 410-423, 2022", citations: 868, year: 2022 }
+].map((raw) => ({ raw, a: extLib("lib/analysis.js").analyzeRow(raw, { owner: { name: "Alex Example" }, resolver }) }));
+{
+  const [one, two] = HOW.map((p) => p.a);
+  if (!(one.status === "found" && one.role === "first" && one.venue.ccf && one.venue.ccf.tier === "A" && one.venue.ccf.rule === "name" && one.venue.core && one.venue.name
+    && two.status === "found" && two.role === "second" && !two.venue.ccf && !two.venue.core && two.venue.secondary)) {
+    console.error("build: the papers of the explainer no longer read as its steps say (a first author at a CCF A venue found by its name; a second author at a secondary track, unranked). The extension's code now finds:\n"
+      + JSON.stringify(HOW.map((p) => ({ status: p.a.status, role: p.a.role, ccf: p.a.venue.ccf, core: p.a.venue.core, secondary: p.a.venue.secondary })), null, 1));
+    process.exit(1);
+  }
+}
+// the extension's strings in a language (its folders are zh_CN where the site says zh-CN), and one message with its $N1$ placeholders filled in
+const extWords = Object.fromEntries(languages.map((l) => { const f = join(EXT_DIR, "src", "_locales", l.code.replace("-", "_"), "messages.json"); return [l.code, existsSync(f) ? JSON.parse(readFileSync(f, "utf8")) : words]; }));
+const ext = (code, key, ...subs) => {
+  const m = extWords[code][key] || words[key];
+  if (!m) throw new Error(`the extension's strings have no "${key}"`);
+  return m.message.replace(/\$(\w+)\$/g, (whole, name) => { const ph = m.placeholders && m.placeholders[name.toLowerCase()]; return ph ? String(subs[Number(ph.content.slice(1)) - 1]) : whole; });
+};
+// The role colours are the extension's defaults (src/content/styles.css there); the chip is its rank chip as it is drawn until a look is chosen.
+const ROLE_COLOUR = { first: "#1a73e8", cofirst: "#a142f4", second: "#f9ab00", last: "#1e8e3e" };
+const ROLE_WORD = { first: "roleFirst", cofirst: "roleCofirst", second: "roleSecond", last: "roleLast" };
+
+// The stage is a picture of what the steps say (the steps hold the words, so a screen reader is given those and not the picture twice). An element with
+// data-from / data-to is shown at those steps (the script switches it; the page is written at step 4, the whole story, for a reader with no script or no motion).
+function explainer(lang, t) {
+  const code = lang.code;
+  const on = (cls, from, to = 4) => `class="${cls}${from <= 4 && 4 <= to ? " on" : ""}" data-from="${from}"${to < 4 ? ` data-to="${to}"` : ""}`;
+  const rows = HOW.map(({ raw, a }) => {
+    const me = a.tokens[a.index].name;
+    const authors = esc(raw.authorsText).replace(esc(me), `<span ${on("nm", 1)} data-focus="1">${esc(me)}</span>`);
+    let venue = esc(raw.venueText), track = "";
+    if (a.venue.ccf) venue = venue.replace(esc(a.venue.name), `<span ${on("vn", 2)} data-focus="2">${esc(a.venue.name)}</span>`)
+      + ` <span ${on("chip", 2)} data-focus="2"><span class="k">CCF</span> <b>${esc(a.venue.ccf.tier)}</b></span>`;
+    else venue = venue.replace(new RegExp(`\\b${a.venue.secondary}s?\\b`, "i"), (word) => { track = word; return `<mark ${on("sec", 3)} data-focus="3">${word}</mark>`; });
+    const role = `<span class="tag">${esc(ext(code, ROLE_WORD[a.role]))}</span> ${esc(ext(code, "tipPosition", a.index + 1, a.authorCount))}`;
+    const notes = [`<p ${on("co", 1, a.venue.ccf ? 1 : 2)}>${role}</p>`];
+    if (a.venue.ccf) notes.push(`<p ${on("co", 2)}><b dir="ltr">CCF ${esc(a.venue.ccf.tier)} · CORE ${esc(a.venue.core.rank)}</b> · ${esc(ext(code, "ruleName"))}: <span dir="ltr">${esc(a.venue.ccf.name)}</span></p>`);
+    else notes.push(`<p ${on("co", 3)}><b dir="ltr">${esc(track)}</b> · ${t("how.secondary")}</p>`);
+    return `          <div ${on("sr", 1)} dir="ltr" data-role="${a.role}" style="--rc:${ROLE_COLOUR[a.role]}">
+            <div class="sr-text" lang="en"><div class="sr-t">${esc(raw.title)}</div><div class="sr-a">${authors}</div><div class="sr-v">${venue}</div></div>
+            <div class="sr-c">${raw.citations}</div><div class="sr-y">${raw.year}</div>
+            <div class="co-slot" dir="${lang.dir}">${notes.join("")}</div>
+          </div>`;
+  }).join("\n");
+  // the table: a row for each role the papers have, a column for each CCF tier and one for no rank, each paper counted once (what the panel's table does)
+  const roles = Object.keys(ROLE_WORD).filter((r) => HOW.some((p) => p.a.role === r));
+  const cols = ["A", "B", "C", ""];
+  const cell = (n) => (n ? `<td ${on("hit", 4)} data-focus="4"><span class="z">·</span><span class="v">${n}</span></td>` : "<td>·</td>");
+  const table = `<table>
+              <thead><tr><th></th>${cols.map((c) => `<th>${c || "–"}</th>`).join("")}<th>${esc(ext(code, "colTotal"))}</th></tr></thead>
+              <tbody>${roles.map((r) => {
+    const mine = HOW.filter((p) => p.a.role === r);
+    return `<tr><th><i style="--rc:${ROLE_COLOUR[r]}"></i>${esc(ext(code, ROLE_WORD[r]))}</th>${cols.map((c) => cell(mine.filter((p) => (p.a.venue.ccf ? p.a.venue.ccf.tier : "") === c).length)).join("")}${cell(mine.length)}</tr>`;
+  }).join("")}</tbody>
+            </table>`;
+  const steps = [1, 2, 3, 4].map((n) => `          <li><button type="button" data-step="${n}"${n === 4 ? ' aria-current="step"' : ""}><span class="n">${n}</span><b>${t(`how.s${n}.title`)}</b><span class="d">${t(`how.s${n}.text`)}</span><i class="bar" aria-hidden="true"></i></button></li>`).join("\n");
+  return `  <section class="how" id="how">
+    <div class="wrap">
+      <h2>${t("how.title")}</h2>
+      <p class="note">${t("how.note")}</p>
+      <div class="how-grid">
+        <ol class="how-steps">
+${steps}
+        </ol>
+        <div class="how-figure">
+        <div class="how-stage" aria-hidden="true">
+          <div class="sr-head" dir="ltr" lang="en"><span>Title</span><span>Cited by</span><span>Year</span></div>
+${rows}
+          <div class="mini">
+            <div class="mini-h"><b>${esc(ext(code, "summaryTitle"))}</b><span dir="ltr"><i class="on">CCF</i><i>CORE</i></span></div>
+            ${table}
+          </div>
+        </div>
+        <button type="button" class="how-play" hidden data-play="${t("how.play")}" data-pause="${t("how.pause")}"><svg class="i-play" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><svg class="i-pause" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><span>${t("how.play")}</span></button>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
 
 function page(lang) {
   const t = (k) => esc(strings[lang.code][k] ?? strings.en[k]).replace(/chrome:\/\/extensions/g, "<code>chrome://extensions</code>");
@@ -167,12 +253,7 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="hero-badges">
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> Manifest V3</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg> ${t("hero.badge.local")}</span>
-        <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg> ${t("hero.badge.nodeps")}</span>
-      </div>
-      <div class="stripes" aria-hidden="true"><i style="--c:#4d8ff5"></i><i style="--c:#b36cf6"></i><i style="--c:#fbbc04"></i><i style="--c:#34a853"></i></div>
+      <div class="stripes" aria-hidden="true">${COLOURS.map((c) => `<i style="--c:${c}"></i>`).join("")}</div>
       <h1>${t("hero.title")}</h1>
       <p class="lead">${t("hero.sub")}</p>
       <p class="cta"><a class="btn" href="#install">${t("hero.install")}</a> <a class="btn ghost" href="${REPO_URL}">${t("hero.github")}</a></p>
@@ -188,6 +269,17 @@ ${languages.map((l) => `<link rel="alternate" hreflang="${l.code}" href="${SITE_
         </div>
         <figcaption>${t("shot.caption")}</figcaption>
       </figure>
+    </div>
+  </section>
+
+${explainer(lang, t)}
+
+  <section class="features">
+    <div class="wrap">
+      <h2>${t("features.title")}</h2>
+      <div class="grid">
+${FEATURES.map((k, i) => `        <article style="--c:${COLOURS[i % 4]}"><h3>${t(`f.${k}.title`)}</h3><p>${t(`f.${k}.text`)}</p></article>`).join("\n")}
+      </div>
     </div>
   </section>
 
@@ -228,17 +320,11 @@ ${EXPORTS.map(([k], i) => `          <pre class="code-preview" role="tabpanel" i
       <p class="note">${t("ops.note").replace("[/]", "<kbd>/</kbd>")}</p>
       <div class="operators-grid">
 ${OPERATORS.map(([k, head]) => `        <div class="op-card">
-          <div class="op-header">${head}</div>
-          <p class="op-title">${t(`ops.${k}.title`)}</p>
+          <div class="op-header" dir="ltr">${head}</div>
+          <h3 class="op-title">${t(`ops.${k}.title`)}</h3>
           <p class="op-desc">${t(`ops.${k}.text`)}</p>
         </div>`).join("\n")}
       </div>
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="wrap grid">
-${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.title`)}</h3><p>${t(`f.${k}.text`)}</p></article>`).join("\n")}
     </div>
   </section>
 
@@ -247,7 +333,7 @@ ${FEATURES.map(([k, c]) => `      <article style="--c:${c}"><h3>${t(`f.${k}.titl
       <h2>${t("numbers.title")}</h2>
       <p class="note">${t("numbers.note")}</p>
       <div class="numbers-grid">
-${STATS.map(([id, text], i) => `        <div class="num" style="--c:${FEATURES[i % 4][1]}"><b dir="ltr">${stat(text, lang.code)}</b><span>${t(`numbers.${id}`)}</span></div>`).join("\n")}
+${STATS.map(([id, text], i) => `        <div class="num" style="--c:${COLOURS[i % 4]}"><b dir="ltr">${stat(text, lang.code)}</b><span>${t(`numbers.${id}`)}</span></div>`).join("\n")}
       </div>
     </div>
   </section>
@@ -267,7 +353,11 @@ ${STATS.map(([id, text], i) => `        <div class="num" style="--c:${FEATURES[i
   <section class="honest">
     <div class="wrap">
       <h2>${t("honest.title")}</h2>
-      <p>${t("honest.text")}</p>
+      <ul class="limits">
+        <li>${t("honest.l1")}</li>
+        <li>${t("honest.l2")}</li>
+        <li>${t("honest.l3")}</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -275,9 +365,9 @@ ${STATS.map(([id, text], i) => `        <div class="num" style="--c:${FEATURES[i
   <div class="wrap">
     <span>${t("footer.license")}</span>
     <a href="../privacy/">${t("footer.privacy")}</a>
-    <a href="${REPO_URL}/blob/main/ROADMAP.md">Roadmap</a>
-    <a href="${REPO_URL}/blob/main/AGENTS.md">Agent API</a>
-    <a href="${REPO_URL}/blob/main/SECURITY.md">Security</a>
+    <a href="${REPO_URL}/blob/main/ROADMAP.md">${t("footer.roadmap")}</a>
+    <a href="${REPO_URL}/blob/main/AGENTS.md">${t("footer.agents")}</a>
+    <a href="${REPO_URL}/blob/main/SECURITY.md">${t("footer.security")}</a>
     <a href="${REPO_URL}/issues">${t("footer.issues")}</a>
     <a href="${REPO_URL}">GitHub</a>
   </div>
@@ -332,29 +422,44 @@ ${languages.map((l) => `<li><a href="${l.code}/" hreflang="${l.code}" lang="${l.
 
 // PRIVACY.md as one English page
 function inline(text) {
-  return esc(text)
-    .replace(/`([^`]+)`/g, "<code>$1</code>")
+  // (a code span is left as it is: no emphasis and no link inside it — `https://scholar.google.<domain>/…` is a pattern, not an address)
+  return String(text).split(/(`[^`]+`)/).map((part, i) => (i % 2 ? `<code>${esc(part.slice(1, -1))}</code>` : esc(part)
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
-    .replace(/(https:\/\/[^\s<)]+?)([.,]?)(?=\s|$|<)/g, '<a href="$1">$1</a>$2');
+    .replace(/(https:\/\/[^\s<)]+?)([.,]?)(?=\s|$|<)/g, '<a href="$1">$1</a>$2'))).join("");
 }
 function privacyPage() {
   const lines = readFileSync(join(root, "src", "privacy.md"), "utf8").split("\n");
   // (a paragraph or a list item is read whole before its emphasis is: *two words* may be broken over two lines of the source)
-  let html = "", list = false, para = [], item = null;
+  let html = "", list = false, para = [], item = null, table = null;
   const endItem = () => { if (item !== null) { html += `<li>${inline(item)}</li>\n`; item = null; } };
   const endList = () => { endItem(); if (list) { html += "</ul>\n"; list = false; } };
   const flush = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>\n`; para = []; } };
+  // a table: its first row is the header, the second the |---| line, then the rows
+  const cellsOf = (line) => line.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+  const endTable = () => {
+    if (!table) return;
+    const [head, , ...rows] = table;
+    html += `<div class="table"><table>\n<thead><tr>${cellsOf(head).map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead>\n<tbody>\n${rows.map((r) => `<tr>${cellsOf(r).map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`).join("\n")}\n</tbody></table></div>\n`;
+    table = null;
+  };
   for (const line of lines) {
-    if (/^# /.test(line)) { endList(); flush(); html += `<h1>${inline(line.slice(2))}</h1>\n`; }
+    if (/^\|/.test(line)) { endList(); flush(); (table = table || []).push(line); continue; }
+    endTable();
+    const heading = /^(#{1,3}) (.*)$/.exec(line);
+    if (heading) { endList(); flush(); const n = heading[1].length; html += `<h${n}${n > 1 ? ` id="${heading[2].toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}"` : ""}>${inline(heading[2])}</h${n}>\n`; }
     else if (/^- /.test(line)) { flush(); if (!list) { html += "<ul>\n"; list = true; } endItem(); item = line.slice(2); }
     else if (/^\s+\S/.test(line) && list) item += " " + line.trim();
     else if (!line.trim()) { endList(); flush(); }
     else if (list) { endList(); para.push(line.trim()); }
     else para.push(line.trim());
   }
+  endTable();
   endList();
   flush();
+  // the sections, listed under the opening paragraph
+  const sections = [...html.matchAll(/<h2 id="([^"]+)">([^<]*)<\/h2>/g)];
+  html = html.replace("</p>\n", `</p>\n<nav class="toc" aria-label="Sections"><ul>${sections.map((m) => `<li><a href="#${m[1]}">${m[2]}</a></li>`).join("")}</ul></nav>\n`);
   return `<!doctype html>
 <html lang="en" dir="ltr">
 <head>

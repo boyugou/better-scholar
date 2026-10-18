@@ -159,6 +159,45 @@ try {
   }
   ok("the export tabs work by mouse and by keys, and the button copies what is shown");
 
+  // -- the explainer: it plays once in view, a chosen step stops it and shows that step's parts of the picture, the button plays it again; with reduced
+  //    motion nothing moves by itself and the picture stays at the whole story (step 4)
+  {
+    const { context, page } = await open("en", 1360);
+    const playing = () => page.evaluate(() => document.querySelector(".how").classList.contains("playing"));
+    const shown = (sel) => page.locator(`.how-stage ${sel}.on`).count();
+    await page.locator(".how-stage").scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
+    assert.equal(await playing(), true, "the explainer plays once it is in view");
+    await page.locator('.how-steps button[data-step="2"]').click();
+    assert.equal(await playing(), false, "a chosen step stops it");
+    assert.equal(await page.locator('.how-steps button[data-step="2"]').getAttribute("aria-current"), "step");
+    assert.equal(await shown(".chip"), 1, "step 2: the rank chip");
+    assert.equal(await shown("mark.sec"), 0, "step 2: the track word is not marked yet");
+    await page.locator('.how-steps button[data-step="3"]').click();
+    assert.equal(await shown("mark.sec"), 1, "step 3: the track word is marked");
+    await page.locator('.how-steps button[data-step="1"]').click();
+    assert.equal((await shown(".chip")) + (await shown("mark.sec")) + (await shown("td.hit")), 0, "step 1: no chip, no track word, no count yet");
+    assert.equal(await shown(".nm"), 2, "step 1: the name in both author lines");
+    await page.waitForTimeout(4200);
+    assert.equal(await page.locator('.how-steps button[data-step="1"]').getAttribute("aria-current"), "step", "a chosen step stays");
+    await page.locator(".how-play").click();
+    assert.equal(await playing(), true, "the button plays it again");
+    assert.equal(await page.locator(".how-play span").textContent(), await page.locator(".how-play").getAttribute("data-pause"), "the button then says Pause");
+    await context.close();
+  }
+  {
+    const context = await browser.newContext({ viewport: { width: 1360, height: 900 }, reducedMotion: "reduce" });
+    const page = await context.newPage();
+    await page.goto(`${origin}/en/`);
+    await page.locator(".how-stage").scrollIntoViewIfNeeded();
+    await page.waitForTimeout(2500);
+    assert.equal(await page.evaluate(() => document.querySelector(".how").classList.contains("playing")), false, "with reduced motion it does not play by itself");
+    assert.equal(await page.locator('.how-steps button[data-step="4"]').getAttribute("aria-current"), "step", "with reduced motion it shows the whole story");
+    assert.equal(await page.locator(".how-stage td.hit.on").count() > 0, true);
+    await context.close();
+  }
+  ok("the explainer plays in view, stops at a chosen step and shows that step, plays again from its button, and stays still with reduced motion");
+
   // -- a phone: in every language no word of a page is cut in two by the end of a line (a text squeezed beside something, a button, a badge) and the page does not scroll sideways
   {
     const languages = JSON.parse((await import("node:fs")).readFileSync(path.join(site, "src", "languages.json"), "utf8")).map((l) => l.code);

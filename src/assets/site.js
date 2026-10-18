@@ -48,3 +48,41 @@
     }, function () { /* the browser refused: nothing to say */ });
   });
 })();
+
+// How it reads a paper: the steps change the picture beside them. Step 0 is Scholar's page as it is; 1 to 4 add what the extension finds. It plays by itself
+// while it is in view (not with reduced motion), and stops for good once a step is chosen; the button pauses and plays it. The page is written at step 4,
+// so without the script the picture shows the whole story.
+(function () {
+  var how = document.querySelector(".how");
+  if (!how) return;
+  var stage = how.querySelector(".how-stage"), buttons = [].slice.call(how.querySelectorAll(".how-steps button")), toggle = how.querySelector(".how-play");
+  var parts = [].slice.call(stage.querySelectorAll("[data-from]")), focusable = [].slice.call(stage.querySelectorAll("[data-focus]"));
+  var DWELL = [1600, 3400, 3800, 3800, 5600], step = 4, timer = null, playing = false, chosen = false, seen = false;
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function show(n) {
+    step = n;
+    parts.forEach(function (el) { var from = +el.getAttribute("data-from"), to = +(el.getAttribute("data-to") || 4); el.classList.toggle("on", n >= from && n <= to); });
+    focusable.forEach(function (el) { el.classList.remove("focus"); });
+    if (n) setTimeout(function () { focusable.forEach(function (el) { if (+el.getAttribute("data-focus") === n && step === n) el.classList.add("focus"); }); }, 30);
+    buttons.forEach(function (b, i) { if (i + 1 === n) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+    how.style.setProperty("--dwell", DWELL[n] + "ms");
+  }
+  function label() { toggle.querySelector("span").textContent = toggle.getAttribute(playing ? "data-pause" : "data-play"); }
+  function next() { timer = setTimeout(function () { show((step + 1) % 5); next(); }, DWELL[step]); }
+  function play() {
+    if (playing) return;
+    playing = true; how.classList.add("playing"); label();
+    if (step === 4) show(0);
+    next();
+  }
+  function pause() { playing = false; clearTimeout(timer); how.classList.remove("playing"); label(); }
+  buttons.forEach(function (b, i) { b.addEventListener("click", function () { chosen = true; pause(); show(i + 1); }); });
+  toggle.hidden = false;
+  label();
+  toggle.addEventListener("click", function () { if (playing) { chosen = true; pause(); } else { chosen = false; play(); } });
+  if (still || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (entries) {
+    var inView = entries[0].isIntersecting;
+    if (inView && !chosen) { if (!seen) { seen = true; show(0); } play(); } else if (!inView && playing) pause();
+  }, { threshold: 0.45 }).observe(stage);
+})();

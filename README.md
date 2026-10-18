@@ -13,12 +13,13 @@ scripts/deploy.sh     build + verify + publish to the gh-pages branch (no CI nee
 scripts/render-assets.mjs   dev tool: apple-touch-icon.png and og.png
 scripts/axe-audit.mjs       dev tool: axe-core accessibility audit of the built pages
 scripts/check-page.mjs      dev tool: the "Try" section and the export samples in a browser (no sideways scroll from a phone up, no word cut in two on a phone in any language, the keyboard gets out of the frame, ...)
-scripts/serve.mjs           a small static server for _site, for the two tools above (the demo needs http, not file://)
+scripts/serve.mjs           a small static server for _site, for the tools here (the demo needs http, not file://)
+scripts/record-explainer.mjs  dev tool: the "How it reads a paper" section as an animated GIF for the extension's README (needs ffmpeg)
 ```
 
 ## What comes from the extension's repository
 
-The build takes three things from the extension's repository and keeps no copy of them. `EXT_DIR` names it (default: `../google-scholar-highlighter`,
+The build takes four things from the extension's repository and keeps no copy of them. `EXT_DIR` names it (default: `../google-scholar-highlighter`,
 next to this one); the build stops with a message when something is missing, and that repository must be at a commit that has it.
 
 - **The hero picture**: `store/chrome/images/screenshot-1.jpg` (made there by `npm run store:images`), shown from just above its browser window
@@ -28,6 +29,10 @@ next to this one); the build stops with a message when something is missing, and
   own; what a visitor changes stays in their browser. How it works: `docs/ARCHITECTURE.md` there, "The web demo".
 - **The text of the export samples**: `src/lib/formats.js` (and the English strings) of the extension, run on the invented papers of the settings page's
   preview, so the samples are what a copy button really writes.
+- **The explainer** ("How it reads a paper"): two invented papers at real venues, run through the extension's own `src/lib` (the role and its place in
+  the author line, the rank and the rule that found it, the track word that stops a rank), labelled with the extension's own strings in each language.
+  The build stops when the code no longer finds what the steps say. `scripts/record-explainer.mjs` records it as the GIF of the extension's README
+  (`assets/how-it-works.gif` there).
 
 No real person is named anywhere: the people in the pictures and samples are invented (A Author, B Writer, a made-up profile). `verify.mjs` checks a small
 denylist (the researchers the old demo used) over everything the build writes, the demo's scripts included; pictures are looked at by eye.
