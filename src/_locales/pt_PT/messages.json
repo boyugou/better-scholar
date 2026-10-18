@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Melhore o Google Scholar: papéis de autoria, ranks CCF e CORE, prémios de conferências, gráficos anuais e pesquisa instantânea."
+    "message": "Nos perfis do Google Scholar: a posição de autor do titular e o ranking CCF e CORE do veículo por artigo, numa só tabela."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalista a melhor artigo"
   },
   "marksHint": {
-    "message": "Com base nas palavras dos próprios autores no título e no veículo de cada artigo no Scholar (não verificadas) e numa lista incluída de artigos premiados em grandes conferências."
+    "message": "Vêm de duas fontes: as palavras que os próprios autores escrevem no título ou na linha do veículo de cada artigo no Scholar (não verificadas), e uma lista incluída de artigos premiados em grandes conferências."
   },
   "marksAsWritten": {
     "message": "pelas palavras dos autores ou pela lista de prémios"
@@ -175,7 +175,7 @@
     "message": "Abre a página de cada artigo no Scholar (cerca de uma por segundo) para ler a lista completa de autores."
   },
   "resolveHintSemantic": {
-    "message": "Pergunta primeiro ao Semantic Scholar a lista de autores de cada artigo (o Semantic Scholar recebe apenas o título) e depois abre as páginas dos artigos restantes no Scholar (cerca de uma por segundo)."
+    "message": "Pergunta primeiro ao Semantic Scholar a lista de autores de cada artigo (o Semantic Scholar recebe apenas o título). Depois abre as páginas dos outros artigos no Scholar, cerca de uma por segundo."
   },
   "resolving": {
     "message": "A ler listas de autores… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Repor todas estas definições nos valores predefinidos?"
   },
   "optStorage": {
-    "message": "As definições ficam guardadas no seu navegador e sincronizam com o seu perfil do Chrome. A extensão lê as páginas do Scholar que abre e, ao premir “Ler listas completas”, também as páginas de artigos com lista de autores truncada; os títulos dos artigos só são enviados para o Semantic Scholar se ativar esta opção."
+    "message": "As definições ficam guardadas no seu navegador e sincronizam com o seu perfil do Chrome. A extensão lê as páginas do Scholar que abre. Ao premir “Ler listas completas”, também lê as páginas de artigos com lista de autores truncada. Os títulos dos artigos só são enviados para o Semantic Scholar se ativar esta opção."
   },
   "optSample": {
     "message": "Artigo de exemplo"
@@ -494,7 +494,7 @@
     "message": "Carregar todos os artigos automaticamente"
   },
   "optAutoLoadHint": {
-    "message": "No início, o Scholar mostra apenas os primeiros artigos. Isto prime por si o botão “Mostrar mais” dele, cerca de uma vez por segundo, até carregar a lista toda, e pára se o Scholar deixar de responder. Desativado: o painel oferece “Carregar tudo”."
+    "message": "O Scholar mostra apenas os primeiros artigos de um perfil. Isto prime por si o botão “Mostrar mais” do próprio Scholar, cerca de uma vez por segundo, até carregar a lista toda. O processo pára se o Scholar deixar de responder. Desativado: o painel mostra “Carregar tudo” em vez disso."
   },
   "loadStalled": {
     "message": "O Scholar não enviou mais artigos ($N1$ carregados). Tente “Carregar tudo” de novo daqui a pouco.",
@@ -583,7 +583,7 @@
     "message": "Unir duplicados"
   },
   "optMergeLabelHint": {
-    "message": "As entradas com o mesmo título (exceto maiúsculas, acentos e pontuação) e o mesmo primeiro autor tornam-se uma só: a mais citada fica e mostra as citações de todas. O painel conta-a uma vez."
+    "message": "As entradas com o mesmo título e o mesmo primeiro autor tornam-se uma só (maiúsculas, acentos e pontuação não contam). A mais citada fica e mostra as citações de todas. O painel conta-a uma vez."
   },
   "mergedTip": {
     "message": "Unido a partir de $N1$ entradas: as citações de todas elas",
@@ -675,7 +675,7 @@
     "message": "Ler primeiro as listas de autores do Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Ao premir “Ler listas completas”, pergunta primeiro ao Semantic Scholar a lista completa de autores de cada artigo (o Semantic Scholar recebe apenas o título do artigo e nada mais), e só abre a página do próprio Scholar para o que aquele não conhece. Menos pedidos ao Scholar, portanto menos CAPTCHAs."
+    "message": "Ao premir “Ler listas completas”, pergunta primeiro ao Semantic Scholar a lista completa de autores de cada artigo. Ele recebe apenas o título do artigo e nada mais. A página do próprio Scholar só é aberta para os artigos que o Semantic Scholar não conhece. Menos pedidos ao Scholar significam menos CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Artigos destacados por ano"
@@ -879,7 +879,7 @@
     "message": "Agentes de IA"
   },
   "optAgentHint": {
-    "message": "Copie um guia que lista todas as definições, os respetivos valores e as suas escolhas atuais. Cole-o no seu assistente de IA, diga o que quer e depois cole a resposta no editor de configuração abaixo e prima Aplicar configuração."
+    "message": "Copie um guia que lista todas as definições, os respetivos valores e as suas escolhas atuais. Dê-o ao seu assistente de IA, junto com o que quer. Depois, cole a resposta no editor de configuração abaixo e prima Aplicar configuração."
   },
   "optAgentCopy": {
     "message": "Copiar guia para agentes"
@@ -1147,7 +1147,7 @@
     "message": "Verificar um veículo"
   },
   "optVenueHint": {
-    "message": "Cole um veículo tal como o Scholar o apresenta (a linha cinzenta abaixo de um artigo) para ver o que as listas CCF e CORE pensam dele e segundo que regra. Um veículo que elas não consigam posicionar não recebe ranking: nada é adivinhado."
+    "message": "Cole um veículo tal como o Scholar o apresenta: a linha cinzenta abaixo de um artigo. Assim vê o que as listas CCF e CORE pensam dele e segundo que regra. Um veículo que elas não consigam posicionar não recebe ranking. Nada é adivinhado."
   },
   "optVenuePlaceholder": {
     "message": "ex.: Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1156,7 +1156,7 @@
     "message": "Sem ranking. As listas não posicionam este texto com certeza, por isso não recebe etiqueta."
   },
   "optVenueSecondary": {
-    "message": "A palavra “$N1$” indica uma categoria secundária (workshop, poster, artigo curto …): o veículo não recebe ranking, a menos que o próprio nome contenha essa palavra.",
+    "message": "A palavra “$N1$” indica uma categoria secundária, como workshop, poster ou artigo curto. O veículo não recebe ranking, a menos que o próprio nome contenha essa palavra.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "As contagens seguem os filtros"
   },
   "optFiltersFollowHint": {
-    "message": "A tabela, as contagens de prémios e apresentações e a contagem do resumo copiado contam apenas os artigos que os filtros deixam (um intervalo de anos, uma pesquisa, um filtro rápido, um veículo); a célula ou linha selecionada não reduz nenhuma contagem. Desativado: contam sempre o perfil inteiro."
+    "message": "A tabela, as contagens de prémios e apresentações e a contagem do resumo copiado contam apenas os artigos que os filtros deixam: um intervalo de anos, uma pesquisa, um filtro rápido ou um veículo. A célula ou linha selecionada não altera nenhuma contagem. Desativado: contam sempre o perfil inteiro."
   },
   "optPillRecent": {
     "message": "Últimos 5 anos"
@@ -1188,7 +1188,7 @@
     "message": "Adicionar a ligação do perfil e a data ao resumo copiado"
   },
   "optCopySourceHint": {
-    "message": "O resumo copiado e a tabela copiada recebem uma linha com a ligação do perfil e a data (Source: …), para que os números possam ser arquivados ou enviados. Uma lista que não está integralmente carregada indica isso ali, independentemente da definição deste interruptor."
+    "message": "O resumo copiado e a tabela copiada terminam com uma linha com a ligação do perfil e a data (Source: …), para poder arquivar ou enviar os números. Uma lista que não está integralmente carregada indica sempre isso ali."
   },
   "unrankedPreprints": {
     "message": "Pré-publicações"
@@ -1203,7 +1203,7 @@
     "message": "Quando um veículo tem ranking nas duas listas"
   },
   "optPreferHint": {
-    "message": "Uma etiqueta em vez de duas: a lista que escolher, e a outra só onde a escolhida não tem ranking para o veículo. Ao passar o rato sobre a etiqueta, continua a aparecer o outro ranking."
+    "message": "Uma etiqueta em vez de duas: a etiqueta da lista que escolher. A etiqueta da outra lista só aparece onde a escolhida não tem ranking para o veículo. Ao passar o rato sobre a etiqueta, continua a aparecer o outro ranking."
   },
   "optPreferCcf": {
     "message": "CCF primeiro"

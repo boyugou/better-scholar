@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Forbedr Google Scholar: forfatterroller, CCF- og CORE-rangeringer, konferencepriser, årsgrafer og øjeblikkelig søgning."
+    "message": "På Google Scholar-profiler: ejerens forfatterrolle og CCF- og CORE-rang pr. artikels publikationssted, opgjort i én tabel."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalist til bedste artikel"
   },
   "marksHint": {
-    "message": "Fra forfatternes egne ord i hver artikels titel og publikationssted på Scholar (ikke kontrolleret) og fra en indbygget liste over prisvindende artikler ved store konferencer."
+    "message": "Fra to kilder: dels de ord, forfatterne selv skriver i en artikels titel eller i linjen med publikationssted på Scholar (ikke kontrolleret), og dels en indbygget liste over prisvindende artikler ved store konferencer."
   },
   "marksAsWritten": {
     "message": "fra forfatternes egne ord eller prislisten"
@@ -175,7 +175,7 @@
     "message": "Åbner hver artikels side på Scholar (omkring én i sekundet) for at læse hele forfatterlisten."
   },
   "resolveHintSemantic": {
-    "message": "Først spørges Semantic Scholar om forfatterlisten for hver artikel (der sendes kun artiklens titel), og derefter åbnes artiklens side på Scholar for de øvrige (omkring én i sekundet)."
+    "message": "Først spørges Semantic Scholar om forfatterlisten for hver artikel (der sendes kun artiklens titel). Derefter åbnes artiklens side på Scholar for de øvrige artikler, omkring én i sekundet."
   },
   "resolving": {
     "message": "Læser forfatterlister… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Nulstille alle disse indstillinger til standardværdierne?"
   },
   "optStorage": {
-    "message": "Indstillingerne gemmes i din browser og synkroniseres med din Chrome-profil. Udvidelsen læser de Scholar-sider, du åbner, og når du trykker på “Læs fulde lister”, også siderne for artikler med en afkortet forfatterliste; artikeltitler sendes kun til Semantic Scholar, hvis du slår det til."
+    "message": "Indstillingerne gemmes i din browser og synkroniseres med din Chrome-profil. Udvidelsen læser de Scholar-sider, du åbner. Når du trykker på “Læs fulde lister”, læser den også siderne for artikler med en afkortet forfatterliste. Artikeltitler sendes kun til Semantic Scholar, hvis du slår det til."
   },
   "optSample": {
     "message": "Eksempelartikel"
@@ -494,7 +494,7 @@
     "message": "Indlæs alle artikler automatisk"
   },
   "optAutoLoadHint": {
-    "message": "Scholar viser først kun de første artikler. Udvidelsen trykker på Scholars egen knap “Vis flere” for dig, omkring én gang i sekundet, til hele listen er indlæst, og stopper, hvis Scholar holder op med at svare. Fra: panelet tilbyder i stedet “Indlæs alle”."
+    "message": "Scholar viser kun de første artikler på profilen. Udvidelsen trykker for dig på Scholars egen knap “Vis flere”, omkring én gang i sekundet, indtil hele listen er indlæst. Den stopper, hvis Scholar holder op med at svare. Fra: panelet viser i stedet “Indlæs alle”."
   },
   "loadStalled": {
     "message": "Scholar sendte ikke flere artikler ($N1$ indlæst). Prøv “Indlæs alle” igen om lidt.",
@@ -583,7 +583,7 @@
     "message": "Slå dubletter sammen"
   },
   "optMergeLabelHint": {
-    "message": "Poster med samme titel (bortset fra store bogstaver, accenter og tegnsætning) og samme førsteforfatter bliver til én: den mest citerede bliver og viser alles citationer. Panelet tæller den én gang."
+    "message": "Poster med samme titel og samme førsteforfatter bliver til én post (store bogstaver, accenter og tegnsætning betyder ikke noget). Den mest citerede post bliver stående og viser alles citationer. Panelet tæller den én gang."
   },
   "mergedTip": {
     "message": "Slået sammen fra $N1$ poster: citationerne fra dem alle",
@@ -675,7 +675,7 @@
     "message": "Læs først forfatterlister fra Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Når du trykker på “Læs fulde lister”, spørges Semantic Scholar først om hver artikels fulde forfatterliste (der sendes kun artiklens titel), og Scholars egen side åbnes kun for det, som Semantic Scholar ikke kender. Det giver færre forespørgsler til Scholar og færre CAPTCHA'er."
+    "message": "Når du trykker på “Læs fulde lister”, spørges Semantic Scholar først om hver artikels fulde forfatterliste. Den får kun artiklens titel og intet andet. Scholars egen side åbnes derefter kun for de artikler, som Semantic Scholar ikke kender. Færre forespørgsler til Scholar betyder færre CAPTCHA'er."
   },
   "yearsTitle": {
     "message": "Fremhævede artikler pr. år"
@@ -879,7 +879,7 @@
     "message": "AI-agenter"
   },
   "optAgentHint": {
-    "message": "Kopiér en vejledning, der lister hver indstilling, dens værdier og dine nuværende valg. Indsæt den i chatten med din AI-assistent, sig hvad du vil have, og indsæt derefter svaret i konfigurationseditoren nedenfor, og tryk på “Anvend konfiguration”."
+    "message": "Kopiér en vejledning, der lister hver indstilling, dens værdier og dine nuværende valg. Giv den til din AI-assistent sammen med det, du vil have. Indsæt derefter svaret i konfigurationseditoren nedenfor, og tryk på “Anvend konfiguration”."
   },
   "optAgentCopy": {
     "message": "Kopiér vejledning til AI"
@@ -1147,7 +1147,7 @@
     "message": "Tjek et publikationssted"
   },
   "optVenueHint": {
-    "message": "Indsæt et publikationssted, sådan som Scholar viser det (den grå linje under en artikel), for at se, hvad CCF- og CORE-listerne mener om det, og efter hvilken regel. Et publikationssted, de ikke kan placere, får ingen rang: der gættes intet."
+    "message": "Indsæt et publikationssted, sådan som Scholar viser det: den grå linje under en artikel. Du ser, hvad CCF- og CORE-listerne mener om det, og efter hvilken regel. Et publikationssted, de ikke kan placere, får ingen rang. Der gættes intet."
   },
   "optVenuePlaceholder": {
     "message": "fx Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1156,7 +1156,7 @@
     "message": "Ingen rang. Listerne placerer ikke teksten med sikkerhed, så den får intet mærke."
   },
   "optVenueSecondary": {
-    "message": "Ordet “$N1$” markerer en sekundær kategori (en workshop, en poster, en kort artikel …). Publikationsstedet får ingen rang, medmindre dets eget navn indeholder ordet.",
+    "message": "Ordet “$N1$” markerer en sekundær kategori, for eksempel en workshop, en poster eller en kort artikel. Publikationsstedet får ingen rang, medmindre dets eget navn indeholder ordet.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "Tallene følger filtrene"
   },
   "optFiltersFollowHint": {
-    "message": "Tabellen, tællingerne for priser og oplæg og oversigten til kopiering tæller kun de artikler, som filtrene lader stå (et årsinterval, en søgning, et hurtigfilter, et publikationssted); den valgte celle eller række indsnævrer ingen tælling. Fra: de tæller altid hele profilen."
+    "message": "Tabellen, tællingerne for priser og oplæg og oversigten til kopiering tæller kun de artikler, som filtrene lader stå: et årsinterval, en søgning, et hurtigfilter eller et publikationssted. Den valgte celle eller række ændrer ikke nogen af tællingerne. Fra: de tæller altid hele profilen."
   },
   "optPillRecent": {
     "message": "Seneste 5 år"
@@ -1188,7 +1188,7 @@
     "message": "Tilføj profilens link og datoen til den kopierede oversigt"
   },
   "optCopySourceHint": {
-    "message": "Den kopierede oversigt og den kopierede tabel får en linje med profilens link og datoen (Source: …), så tallene kan arkiveres eller sendes videre. En liste, der ikke er indlæst helt, siger det dér, uanset denne kontakt."
+    "message": "Den kopierede oversigt og den kopierede tabel slutter med en linje med profilens link og datoen (Source: …), så du kan arkivere eller sende tallene videre. En liste, der ikke er indlæst helt, siger det altid dér."
   },
   "unrankedPreprints": {
     "message": "Forhåndstryk"
@@ -1203,7 +1203,7 @@
     "message": "Når begge lister rangerer et publikationssted"
   },
   "optPreferHint": {
-    "message": "Ét mærke i stedet for to: den valgte liste, og den anden kun dér, hvor den valgte ikke har en rang for publikationsstedet. Når musen peger på mærket, vises stadig den anden rang."
+    "message": "Ét mærke i stedet for to: mærket for den liste, du vælger, og den andens mærke, men kun dér, hvor den valgte liste ikke har en rang for publikationsstedet. Når musen peger på mærket, vises stadig den anden rang."
   },
   "optPreferCcf": {
     "message": "CCF først"

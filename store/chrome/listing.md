@@ -25,27 +25,13 @@ Better Scholar
 
 ### Summary (from the package, read-only)
 
-What the dashboard will show now: the `extDescription` of `src/_locales/en/messages.json` (124 characters; the limit is
-132). Each of the 30 locales supplies its own translation, and the store shows the one that matches the visitor.
+What the dashboard will show: the `extDescription` of `src/_locales/en/messages.json` (122 characters; the limit is 132).
+Each of the 30 locales supplies its own translation, and the store shows the one that matches the visitor. (Changed on
+2026-10-17 from "Enhance Google Scholar: authorship roles, CCF & CORE ranks, …", which listed features in a promotional tone, to one
+plain sentence of what it does. A package built before that change still has the old one.)
 
 ```text
-Enhance Google Scholar: authorship roles, CCF & CORE ranks, conference awards, year distribution charts, and instant search.
-```
-
-It is accurate. If you want the summary to state the single purpose more directly, here are two alternatives (both within
-132 characters, no superlatives). To use one, replace `extDescription` in `en` **and the 29 other locales** (a test
-checks every locale against the limit; the Spanish one is already exactly 132), then package again.
-
-Alternative A (128 characters):
-
-```text
-On Google Scholar profiles: the owner's authorship role in each paper, the venue's CCF and CORE rank, and a role × rank summary.
-```
-
-Alternative B (127 characters):
-
-```text
-Authorship roles and today's CCF and CORE venue ranks on Google Scholar profiles, with a role × rank table, filters and export.
+On Google Scholar profiles: the owner's author role and the venue's CCF and CORE rank on each paper, counted in one table.
 ```
 
 ### Description
@@ -234,7 +220,7 @@ Tick all three. The wording below is the form's as reported since its introducti
 
 The opt-in itself: the setting is off by default (`semanticScholar: false`) and its own text says "(it receives the
 paper's title and nothing else)"; once it is on, the panel's hint under "Read full lists" says the same before the click
-("Asks Semantic Scholar for each paper's author list first (it receives only the title)"); no preset turns it on. That is
+("First asks Semantic Scholar for each paper's author list (it gets only the title)"); no preset turns it on. That is
 the in-interface disclosure and affirmative action the User Data FAQ (FAQ 10) asks for.
 
 ### Privacy policy URL

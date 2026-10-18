@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "谷歌学术学者主页增强：署名位次、CCF 与 CORE 等级、顶会奖项、年份分布图与即时检索。"
+    "message": "在 Google Scholar 学者主页上显示主页作者在每篇论文中的位置，以及期刊/会议的 CCF 与 CORE 等级，并汇总成一张表。"
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "最佳论文入围"
   },
   "marksHint": {
-    "message": "来自 Scholar 上每篇论文标题和发表信息里作者自己写的文字（未核实），以及内置的主要会议获奖论文名单。"
+    "message": "来自两个来源：Scholar 上每篇论文标题或发表信息行里作者自己写的文字（未核实），以及内置的主要会议获奖论文名单。"
   },
   "marksAsWritten": {
     "message": "来自作者自述或获奖名单"
@@ -169,7 +169,7 @@
     "message": "逐篇读取 Scholar 上的论文页（约每秒一篇）以获取完整作者列表。"
   },
   "resolveHintSemantic": {
-    "message": "先向 Semantic Scholar 询问每篇论文的作者列表（只发送论文标题），其余的再逐篇读取 Scholar 上的论文页（约每秒一篇）。"
+    "message": "先向 Semantic Scholar 询问每篇论文的作者列表（只发送论文标题）。其余论文再逐篇读取 Scholar 上的论文页，约每秒一篇。"
   },
   "resolving": {
     "message": "正在读取作者列表… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "把这里的所有设置恢复为默认值？"
   },
   "optStorage": {
-    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。扩展会读取你打开的 Scholar 页面；点“补全”时，也会读取作者列表被截断的论文页面；只有开启 Semantic Scholar 后，论文标题才会发送给它。"
+    "message": "设置保存在浏览器中，并随你的 Chrome 账号同步。扩展会读取你打开的 Scholar 页面。点“补全”时，它也会读取作者列表被截断的论文页面。只有开启 Semantic Scholar 后，论文标题才会发送给它。"
   },
   "optSample": {
     "message": "示例论文"
@@ -476,7 +476,7 @@
     "message": "自动加载全部论文"
   },
   "optAutoLoadHint": {
-    "message": "Scholar 起初只显示前面一批论文。开启后会替你点击它自带的“显示更多”按钮（约每秒一次），直到整个列表加载完，若 Scholar 不再响应就停止。关闭后，面板里会提供“全部加载”按钮。"
+    "message": "Scholar 只在主页上显示前面一批论文。开启后，它会替你点击 Scholar 自带的“显示更多”按钮（约每秒一次），直到整个列表加载完。若 Scholar 不再响应，它就会停止。关闭后，面板里会改为显示“全部加载”按钮。"
   },
   "loadStalled": {
     "message": "Scholar 没有再返回论文（已加载 $N1$ 篇）。稍后可再点“全部加载”。",
@@ -565,7 +565,7 @@
     "message": "合并重复论文"
   },
   "optMergeLabelHint": {
-    "message": "标题相同（忽略大小写、重音和标点）且第一作者相同的条目合为一条：保留引用最多的那条，并显示全部条目的引用之和。面板里只计一次。"
+    "message": "标题相同且第一作者相同的条目合为一条（不计大小写、重音和标点）。保留引用最多的条目，并显示全部条目的引用之和。面板里只计一次。"
   },
   "mergedTip": {
     "message": "由 $N1$ 条合并：显示全部条目的引用之和",
@@ -657,7 +657,7 @@
     "message": "优先用 Semantic Scholar 补全作者列表"
   },
   "optSemanticLabelHint": {
-    "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表（只发送论文标题，不发别的），它不认识的才去读 Scholar 自己的页面。对 Scholar 的请求更少，验证码也更少。"
+    "message": "点“补全”时，先向 Semantic Scholar 询问每篇论文的完整作者列表。它只收到论文标题，不收到其他信息。只有 Semantic Scholar 不认识的论文，才会去读 Scholar 自己的页面。对 Scholar 的请求减少，意味着验证码也会减少。"
   },
   "yearsTitle": {
     "message": "各年份的高亮论文"
@@ -858,7 +858,7 @@
     "message": "AI 智能体"
   },
   "optAgentHint": {
-    "message": "复制一份指南，其中列出所有设置、它们的取值以及你当前的选择。把它粘贴给你的 AI 助手，说明你的需求，然后把它的回复粘贴到下方的配置编辑框中，再点击“应用配置”。"
+    "message": "复制一份指南，其中列出所有设置、它们的取值以及你当前的选择。把它连同你的需求一起交给 AI 助手。然后，把回复粘贴到下方的配置编辑框中，再点击“应用配置”。"
   },
   "optAgentCopy": {
     "message": "复制智能体指南"
@@ -1126,7 +1126,7 @@
     "message": "核对期刊/会议"
   },
   "optVenueHint": {
-    "message": "粘贴 Scholar 显示的发表场所（论文下方的灰色文字行），即可查看 CCF 和 CORE 名录如何看待它，以及依据哪条规则。名录无法归类的发表场所不获得等级：不做任何猜测。"
+    "message": "粘贴 Scholar 显示的发表场所：论文下方的灰色文字行。你会看到 CCF 和 CORE 名录如何看待它，以及依据哪条规则。名录无法归类的发表场所不获得等级。不做任何猜测。"
   },
   "optVenuePlaceholder": {
     "message": "如 Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1135,7 +1135,7 @@
     "message": "没有等级。名录没有确切收录这段文字，因此不加标签。"
   },
   "optVenueSecondary": {
-    "message": "“$N1$”标示次要类别（研讨会、海报、短文等）：除非发表场所自身的名称含有该词，否则不获得等级。",
+    "message": "“$N1$”标示次要类别，例如研讨会、海报或短文。除非发表场所自身的名称含有该词，否则不获得等级。",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1155,7 +1155,7 @@
     "message": "计数随筛选变化"
   },
   "optFiltersFollowHint": {
-    "message": "表格、获奖与报告形式的计数和复制摘要的计数，只统计筛选后剩下的论文（年份范围、搜索、快速筛选、发表场所）；选中的单元格或行不会缩小任何计数。关闭后，始终统计整个主页。"
+    "message": "表格、获奖与报告形式的计数，以及复制摘要的计数，只统计筛选后剩下的论文：年份范围、搜索、快速筛选或发表场所。选中的单元格或行不会改变任何计数。关闭后，始终统计整个主页。"
   },
   "optPillRecent": {
     "message": "近 5 年"
@@ -1188,7 +1188,7 @@
     "message": "在复制的摘要中加入主页链接和日期"
   },
   "optCopySourceHint": {
-    "message": "复制的摘要和复制的表格会多出一行，写明主页链接和日期（Source: …），便于归档或转发这些数字。列表未全部加载时，无论此开关如何设置，复制的内容中都会注明。"
+    "message": "复制的摘要和复制的表格末尾会多出一行，写明主页链接和日期（Source: …），便于归档或转发这些数字。列表未全部加载时，复制的内容中总会注明。"
   },
   "unrankedPreprints": {
     "message": "预印本"
@@ -1203,7 +1203,7 @@
     "message": "两个名录都有等级时"
   },
   "optPreferHint": {
-    "message": "一个标签代替两个：按你选的名录显示；另一名录的标签只在你选的名录对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
+    "message": "一个标签代替两个：显示你选的名录的标签。另一名录的标签只在你选的名录对该发表场所没有等级时才出现。标签的悬停提示也会写明另一个等级。"
   },
   "optPreferCcf": {
     "message": "CCF 优先"

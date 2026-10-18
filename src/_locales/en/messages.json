@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Enhance Google Scholar: authorship roles, CCF & CORE ranks, conference awards, year distribution charts, and instant search."
+    "message": "On Google Scholar profiles: the owner's author role and the venue's CCF and CORE rank on each paper, counted in one table."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Best paper finalist"
   },
   "marksHint": {
-    "message": "From the authors' own words in each paper's title and venue text on Scholar (not checked), and from a bundled list of award-winning papers at major conferences."
+    "message": "From two sources: the words that authors write in a paper's title or venue line on Scholar (not checked), and a bundled list of award-winning papers at major conferences."
   },
   "marksAsWritten": {
     "message": "from the authors' own words or the award list"
@@ -121,7 +121,7 @@
     "message": "Not ranked"
   },
   "tipHidden": {
-    "message": "Scholar truncated the author list, so the profile owner's position is not visible"
+    "message": "Scholar cut the author list, so the profile owner's place in it is not visible"
   },
   "copySummary": {
     "message": "Copy summary"
@@ -158,7 +158,7 @@
     "message": "Cancel"
   },
   "coverHidden": {
-    "message": "$N1$ roles hidden by truncated author lists",
+    "message": "$N1$ roles hidden by cut author lists",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -166,7 +166,7 @@
     }
   },
   "coverHiddenOne": {
-    "message": "1 role hidden by a truncated author list"
+    "message": "1 role hidden by a cut author list"
   },
   "resolveBtn": {
     "message": "Read full lists"
@@ -175,7 +175,7 @@
     "message": "Opens each paper's page on Scholar (about one per second) to read the full author list."
   },
   "resolveHintSemantic": {
-    "message": "Asks Semantic Scholar for each paper's author list first (it receives only the title), then opens Scholar's page for the rest (about one per second)."
+    "message": "First asks Semantic Scholar for each paper's author list (it gets only the title). Then opens Scholar's page for the other papers, about one a second."
   },
   "resolving": {
     "message": "Reading author lists… $N1$/$N2$",
@@ -290,7 +290,7 @@
     "message": "Matched by acronym"
   },
   "rulePrefix": {
-    "message": "Matched by the visible part of a truncated name"
+    "message": "Matched by the visible part of a cut name"
   },
   "tipToday": {
     "message": "current list, not the rank at publication"
@@ -482,7 +482,7 @@
     "message": "Reset all of these settings to their defaults?"
   },
   "optStorage": {
-    "message": "Settings stay in your browser and sync with your Chrome profile. The extension reads the Scholar pages you open, and the pages of papers with a cut-off author list when you press Read full lists; paper titles go to Semantic Scholar only if you switch that on."
+    "message": "Your settings stay in your browser and sync with your Chrome profile. The extension reads the Scholar pages that you open. When you press Read full lists, it also reads the pages of papers with a cut author list. Paper titles go to Semantic Scholar only if you turn that on."
   },
   "optSample": {
     "message": "Sample paper"
@@ -494,7 +494,7 @@
     "message": "Load all papers automatically"
   },
   "optAutoLoadHint": {
-    "message": "Scholar shows only the first papers at first. This presses its own “Show more” button for you, about once a second, until the whole list is loaded, and stops if Scholar stops answering. Off: the panel offers “Load all” instead."
+    "message": "Scholar shows only the first papers of a profile. This presses Scholar's own “Show more” button for you, about once a second, until the whole list is loaded. It stops if Scholar stops answering. Off: the panel shows “Load all” instead."
   },
   "loadStalled": {
     "message": "Scholar sent no more papers ($N1$ loaded). Try “Load all” again in a moment.",
@@ -583,7 +583,7 @@
     "message": "Merge duplicates"
   },
   "optMergeLabelHint": {
-    "message": "Entries with the same title (capitals, accents and punctuation aside) and the same first author become one: the most cited stays and shows the citations of all of them. The panel counts it once."
+    "message": "Entries with the same title and the same first author become one entry (capitals, accents and punctuation do not count). The most cited entry stays and shows the citations of all of them. The panel counts it once."
   },
   "mergedTip": {
     "message": "Merged from $N1$ entries: the citations of all of them",
@@ -675,7 +675,7 @@
     "message": "Read author lists from Semantic Scholar first"
   },
   "optSemanticLabelHint": {
-    "message": "When you press Read full lists, ask Semantic Scholar for each paper's full author list first (it receives the paper's title and nothing else), and open Scholar's own page only for what it does not know. Fewer requests to Scholar, so fewer CAPTCHAs."
+    "message": "When you press Read full lists, first ask Semantic Scholar for each paper's full author list. It gets the paper's title and nothing else. Scholar's own page is then opened only for the papers that Semantic Scholar does not know. Fewer requests to Scholar mean fewer CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Highlighted papers by year"
@@ -879,7 +879,7 @@
     "message": "AI agents"
   },
   "optAgentHint": {
-    "message": "Copy a guide that lists every setting, its values and your current choices. Paste it to your AI assistant, say what you want, then paste its answer into the configuration editor below and press Apply."
+    "message": "Copy a guide that lists every setting, its values and your current choices. Give it to your AI assistant with what you want. Then paste its answer into the configuration editor below, and press Apply."
   },
   "optAgentCopy": {
     "message": "Copy guide for agents"
@@ -1034,7 +1034,7 @@
     "message": "Papers loaded, and Load all"
   },
   "optStatusCutoff": {
-    "message": "Cut-off author lists, and Read full lists"
+    "message": "Cut author lists, and Read full lists"
   },
   "optStatusRepeats": {
     "message": "Repeated entries"
@@ -1147,16 +1147,16 @@
     "message": "Check a venue"
   },
   "optVenueHint": {
-    "message": "Paste a venue as Scholar prints it (the grey line under a paper) to see what the CCF and CORE lists make of it, and by which rule. A venue they cannot place gets no rank: nothing is guessed."
+    "message": "Paste a venue as Scholar prints it: the grey line under a paper. You see what the CCF and CORE lists make of it, and by which rule. A venue that they cannot place gets no rank. Nothing is guessed."
   },
   "optVenuePlaceholder": {
     "message": "e.g. Proceedings of the IEEE conference on computer vision and pattern recognition"
   },
   "optVenueNone": {
-    "message": "No rank. The lists do not place this text with certainty, so it gets no badge."
+    "message": "No rank. The lists do not place this text for certain, so it gets no chip."
   },
   "optVenueSecondary": {
-    "message": "“$N1$” marks a secondary track (a workshop, a poster, a short paper …): it gets no rank unless the venue's own name has that word.",
+    "message": "“$N1$” marks a secondary track, such as a workshop, a poster or a short paper. It gets no rank, unless the venue's own name has that word.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "The counts follow the filters"
   },
   "optFiltersFollowHint": {
-    "message": "The table, the awards and talks counts and the copy summary count only the papers the filters leave (a year range, a search, a quick filter, a venue); the cell or row you pick narrows no count. Off: they always count the whole profile."
+    "message": "The table, the award and talk counts and the copied summary count only the papers that the filters leave: a year range, a search, a quick filter or a venue. A selected cell or row does not change the counts. Off: they always count the whole profile."
   },
   "optPillRecent": {
     "message": "Last 5 years"
@@ -1188,7 +1188,7 @@
     "message": "Add the profile's link and the day to the copied summary"
   },
   "optCopySourceHint": {
-    "message": "The copied summary and the copied table get a line with the profile's link and the day (Source: …), so that the numbers can be filed or sent on. A list that is not all loaded says so there whatever this switch says."
+    "message": "The copied summary and table end with a line that gives the profile's link and the date (Source: …), so that you can file or send the numbers. A list that is not fully loaded always says so there."
   },
   "unrankedPreprints": {
     "message": "Preprints"
@@ -1203,7 +1203,7 @@
     "message": "When both lists rank a venue"
   },
   "optPreferHint": {
-    "message": "One chip instead of two: the list you pick, and the other one only where the first has no rank for the venue. The chip's tooltip still names the other rank."
+    "message": "One chip instead of two: the chip of the list that you pick, and the other list's chip only where the first list has no rank for the venue. The chip's tooltip still names the other rank."
   },
   "optPreferCcf": {
     "message": "CCF first"

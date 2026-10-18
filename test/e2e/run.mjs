@@ -932,7 +932,7 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
         await pg.bringToFront();
         await pg.waitForFunction(() => document.querySelectorAll("#gsc_a_b tr.gsc_a_tr").length === 100, null, { timeout: 30000 });
         await pg.waitForSelector('[data-act="resolve"]');
-        assert.match(await pg.locator('[data-rr="resolve-hint"]').textContent(), /^Asks Semantic Scholar .*it receives only the title/, "with the setting on, the panel says that titles go to Semantic Scholar before the button is pressed");
+        assert.match(await pg.locator('[data-rr="resolve-hint"]').textContent(), /^First asks Semantic Scholar .*it gets only the title/, "with the setting on, the panel says that titles go to Semantic Scholar before the button is pressed");
         await pg.click('[data-act="resolve"]');
         await pg.waitForFunction(() => !document.querySelector('tr[data-role="hidden"]'), null, { timeout: 30000 });
         assert.deepEqual(await readMatrix(pg), resolvedExpect, "the same roles as when Scholar's own pages are read");

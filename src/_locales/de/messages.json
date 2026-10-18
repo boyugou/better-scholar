@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar Profile erweitern: Autorenrollen, CCF- & CORE-Ränge, Konferenzpreise, Jahresdiagramme und Sofortsuche."
+    "message": "In Profilen auf Google Scholar: Autorenrolle des Inhabers, CCF- und CORE-Rang der Venue je Paper, in einer Tabelle gezählt."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Best-Paper-Finalist"
   },
   "marksHint": {
-    "message": "Nach den Angaben der Autoren in Titel und Venue-Text jedes Papers auf Scholar (ungeprüft) sowie einer mitgelieferten Liste preisgekrönter Paper bedeutender Konferenzen."
+    "message": "Aus zwei Quellen: den Angaben der Autoren im Titel oder in der Venue-Zeile eines Papers auf Scholar (ungeprüft) und einer mitgelieferten Liste preisgekrönter Paper bedeutender Konferenzen."
   },
   "marksAsWritten": {
     "message": "nach Angabe der Autoren oder der Preisliste"
@@ -175,7 +175,7 @@
     "message": "Öffnet die Seite jedes Papers auf Scholar (etwa eine pro Sekunde), um die vollständige Autorenliste zu lesen."
   },
   "resolveHintSemantic": {
-    "message": "Zuerst wird bei Semantic Scholar die Autorenliste jedes Papers abgefragt (es wird nur der Titel gesendet), danach wird für den Rest die Seite des Papers auf Scholar geöffnet (etwa eine pro Sekunde)."
+    "message": "Zuerst wird bei Semantic Scholar die Autorenliste jedes Papers abgefragt (es wird nur der Titel gesendet). Danach wird die Seite der übrigen Paper auf Scholar geöffnet, etwa eine pro Sekunde."
   },
   "resolving": {
     "message": "Autorenlisten werden gelesen… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "Alle diese Einstellungen auf die Standardwerte zurücksetzen?"
   },
   "optStorage": {
-    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Die Erweiterung liest die Scholar-Seiten, die du öffnest, und wenn du auf „Ganze Listen lesen“ klickst, auch die Seiten von Papers mit gekürzter Autorenliste; Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
+    "message": "Die Einstellungen werden in deinem Browser gespeichert und mit deinem Chrome-Profil synchronisiert. Die Erweiterung liest die Scholar-Seiten, die du öffnest. Wenn du auf „Ganze Listen lesen“ klickst, liest sie außerdem die Seiten von Papers mit gekürzter Autorenliste. Paper-Titel gehen nur dann an Semantic Scholar, wenn du das einschaltest."
   },
   "optSample": {
     "message": "Beispiel-Paper"
@@ -494,7 +494,7 @@
     "message": "Alle Paper automatisch laden"
   },
   "optAutoLoadHint": {
-    "message": "Scholar zeigt zunächst nur die ersten Paper. Diese Option drückt für dich dessen Schaltfläche „Mehr anzeigen“, etwa einmal pro Sekunde, bis die ganze Liste geladen ist, und hört auf, wenn Scholar nicht mehr antwortet. Aus: Das Feld bietet stattdessen „Alle laden“ an."
+    "message": "Scholar zeigt nur die ersten Paper eines Profils. Diese Option drückt für dich Scholars eigene Schaltfläche „Mehr anzeigen“, etwa einmal pro Sekunde, bis die ganze Liste geladen ist. Sie hört auf, wenn Scholar nicht mehr antwortet. Aus: Das Feld zeigt stattdessen „Alle laden“ an."
   },
   "loadStalled": {
     "message": "Scholar hat keine weiteren Paper geliefert ($N1$ geladen). Versuche „Alle laden“ in einem Moment erneut.",
@@ -583,7 +583,7 @@
     "message": "Duplikate zusammenführen"
   },
   "optMergeLabelHint": {
-    "message": "Einträge mit demselben Titel (ohne Groß-/Kleinschreibung, Akzente und Satzzeichen) und demselben Erstautor werden zu einem: Der meistzitierte bleibt und zeigt die Zitierungen aller. Das Übersichtsfeld zählt ihn nur einmal."
+    "message": "Einträge mit demselben Titel und demselben Erstautor werden zu einem Eintrag (Groß- und Kleinschreibung, Akzente und Satzzeichen spielen keine Rolle). Der meistzitierte Eintrag bleibt und zeigt die Zitierungen aller. Das Übersichtsfeld zählt ihn nur einmal."
   },
   "mergedTip": {
     "message": "Aus $N1$ Einträgen zusammengeführt: die Zitierungen aller",
@@ -675,7 +675,7 @@
     "message": "Autorenlisten zuerst über Semantic Scholar lesen"
   },
   "optSemanticLabelHint": {
-    "message": "Beim Klick auf „Ganze Listen lesen“ wird zuerst Semantic Scholar nach der vollständigen Autorenliste jedes Papers gefragt (es wird nur der Titel gesendet), und die Scholar-Seite selbst wird nur für das geöffnet, was Semantic Scholar nicht kennt. Weniger Anfragen an Scholar, also weniger CAPTCHAs."
+    "message": "Beim Klick auf „Ganze Listen lesen“ wird bei Semantic Scholar zuerst die vollständige Autorenliste jedes Papers abgefragt. Gesendet wird nur der Titel des Papers, sonst nichts. Die Scholar-Seite selbst wird dann nur für die Paper geöffnet, die Semantic Scholar nicht kennt. Weniger Anfragen an Scholar bedeuten weniger CAPTCHAs."
   },
   "yearsTitle": {
     "message": "Hervorgehobene Paper nach Jahr"
@@ -879,7 +879,7 @@
     "message": "KI-Agenten"
   },
   "optAgentHint": {
-    "message": "Kopiere eine Anleitung, die jede Einstellung, ihre Werte und deine aktuelle Auswahl auflistet. Füge sie in den Chat mit deinem KI-Assistenten ein, sag, was du willst, und füge dann seine Antwort unten in den Konfigurationseditor ein und klicke auf „Konfiguration anwenden“."
+    "message": "Kopiere eine Anleitung, die jede Einstellung, ihre Werte und deine aktuelle Auswahl auflistet. Gib sie deinem KI-Assistenten zusammen mit dem, was du willst. Füge dann seine Antwort unten in den Konfigurationseditor ein und klicke auf „Konfiguration anwenden“."
   },
   "optAgentCopy": {
     "message": "KI-Anleitung kopieren"
@@ -1147,7 +1147,7 @@
     "message": "Venue prüfen"
   },
   "optVenueHint": {
-    "message": "Füge eine Venue so ein, wie Scholar sie anzeigt (die graue Zeile unter einem Paper), um zu sehen, was die CCF- und CORE-Listen daraus machen und nach welcher Regel. Eine Venue, die sie nicht einordnen können, erhält keinen Rang: Es wird nichts geraten."
+    "message": "Füge eine Venue so ein, wie Scholar sie anzeigt: die graue Zeile unter einem Paper. Du siehst dann, was die CCF- und CORE-Listen daraus machen und nach welcher Regel. Eine Venue, die sie nicht einordnen können, erhält keinen Rang. Es wird nichts geraten."
   },
   "optVenuePlaceholder": {
     "message": "z. B. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1156,7 +1156,7 @@
     "message": "Kein Rang. Die Listen ordnen diesen Text nicht mit Sicherheit ein, deshalb bekommt er kein Kennzeichen."
   },
   "optVenueSecondary": {
-    "message": "Das Wort „$N1$“ kennzeichnet eine Nebenkategorie (einen Workshop, ein Poster, einen Kurzbeitrag …). Die Venue erhält keinen Rang, außer ihr eigener Name enthält dieses Wort.",
+    "message": "Das Wort „$N1$“ kennzeichnet eine Nebenkategorie, etwa einen Workshop, ein Poster oder einen Kurzbeitrag. Die Venue erhält keinen Rang, außer ihr eigener Name enthält dieses Wort.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "Die Zahlen richten sich nach den Filtern"
   },
   "optFiltersFollowHint": {
-    "message": "Die Tabelle, die Zählungen für Auszeichnungen und Vorträge und die Übersicht zum Kopieren zählen nur die Paper, die nach den Filtern übrig bleiben (ein Jahreszeitraum, eine Suche, ein Schnellfilter, ein Venue); die gewählte Zelle oder Zeile engt keine Zählung ein. Aus: Gezählt wird immer das ganze Profil."
+    "message": "Die Tabelle, die Zählungen für Auszeichnungen und Vorträge und die Übersicht zum Kopieren zählen nur die Paper, die nach den Filtern übrig bleiben: ein Jahreszeitraum, eine Suche, ein Schnellfilter oder ein Venue. Die gewählte Zelle oder Zeile ändert keine der Zählungen. Aus: Gezählt wird immer das ganze Profil."
   },
   "optPillRecent": {
     "message": "Letzte 5 Jahre"
@@ -1188,7 +1188,7 @@
     "message": "Profillink und Datum zur kopierten Übersicht hinzufügen"
   },
   "optCopySourceHint": {
-    "message": "Die kopierte Übersicht und die kopierte Tabelle bekommen eine Zeile mit dem Profillink und dem Datum (Source: …), damit die Zahlen abgelegt oder weitergegeben werden können. Eine Liste, die nicht vollständig geladen ist, sagt das dort – unabhängig von dieser Option."
+    "message": "Die kopierte Übersicht und die kopierte Tabelle enden mit einer Zeile, die den Profillink und das Datum enthält (Source: …). So kannst du die Zahlen ablegen oder weitergeben. Eine Liste, die nicht vollständig geladen ist, sagt das dort immer."
   },
   "unrankedPreprints": {
     "message": "Vorabdrucke"
@@ -1203,7 +1203,7 @@
     "message": "Wenn beide Listen ein Venue einstufen"
   },
   "optPreferHint": {
-    "message": "Ein Kennzeichen statt zwei: die gewählte Liste und die andere nur dort, wo die gewählte für das Venue keinen Rang hat. Der Tooltip des Kennzeichens nennt weiterhin den anderen Rang."
+    "message": "Ein Kennzeichen statt zwei: das Kennzeichen der Liste, die du wählst, und das der anderen Liste nur dort, wo die gewählte Liste für die Venue keinen Rang hat. Der Tooltip des Kennzeichens nennt weiterhin den anderen Rang."
   },
   "optPreferCcf": {
     "message": "CCF zuerst"

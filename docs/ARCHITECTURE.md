@@ -9,26 +9,26 @@ default — the page's script makes that request, see [Loading the whole list](#
 `src/` loads unmodified in other Chromium browsers; Safari is best-effort (see
 [Platform policy](#platform-policy-chrome-first)).
 
+```mermaid
+flowchart LR
+  S["content/scholar.js<br/>reads Scholar's profile DOM<br/>(the only code that does)"] -- "raw rows" --> A["lib/analysis.js"]
+  A --> N["lib/names.js<br/>owner, roles"]
+  A --> V["lib/venues.js<br/>CCF tier, CORE rank"]
+  A --> M["lib/marks.js<br/>award and talk words"]
+  A --> W["lib/awards.js<br/>award list"]
+  A --> Q["lib/query.js<br/>search language"]
+  N & V & M & W & Q --> MAIN["content/main.js<br/>state, filters, observers<br/>settings: lib/prefs.js"]
+  MAIN --> PANEL["content/panel.js<br/>the panel"]
+  MAIN --> ROWS["the rows<br/>tint, chips, marked name"]
+  MAIN --> MET["lib/metrics.js<br/>summary, h-index, years"]
+  MAIN --> FMT["lib/formats.js<br/>copy and export text"]
+  MAIN --> BR["content/bridge.js<br/>lib/agent.js calls"]
+  POP["popup/"] -. "rr:call" .-> BR
+  OPT["options/<br/>writes prefs"] -. "storage.onChanged" .-> MAIN
 ```
-Scholar profile page ──► content/scholar.js   (the only code that knows Scholar's profile DOM)
-                             │ raw rows: title, authors text, venue text, citations, year
-                             ▼
-                        lib/analysis.js ──► lib/names.js    owner + roles (first / co-first / second / last …)
-                             │          ├─► lib/venues.js   CCF / CORE tier  ◄── data/ccf.js, data/core.js, data/aliases.js
-                             │          ├─► lib/marks.js    awards / talk levels the author wrote (title, venue text)
-                             │          ├─► lib/awards.js   award-winning papers (data/awards.js, from official award pages)
-                             │          └─► lib/query.js    the search box's language (analysis.queryMatcher)
-                             ▼
-                        content/main.js  (state, filters, observers; settings: lib/prefs.js)
-                             │  ├─► content/panel.js     the view: table, copy row, search, totals, years, venues, status
-                             │  ├─► decorated rows       role tint, rank / award chips, the marked name
-                             │  ├─► lib/metrics.js       role × tier summary, h-index / i10, year bars, top venues
-                             │  ├─► lib/formats.js       the text of the copy buttons and of `export`
-                             │  └─► content/bridge.js    the calls of lib/agent.js: page events + the popup's messages
-                             │
-popup/    ── calls the profile tab (rr:call summary / export) and renders the same table and copy buttons
-options/  ── the settings page: writes `prefs`; open Scholar tabs redraw on chrome.storage.onChanged
-```
+
+`data/ccf.js`, `data/core.js` and `data/aliases.js` feed `lib/venues.js`; `data/awards.js` feeds `lib/awards.js`. The popup asks the profile tab
+for `summary` and `export`. The settings page writes `prefs`, and open Scholar tabs redraw on `chrome.storage.onChanged`.
 
 Everything under `lib/` is **pure** (no DOM, no `chrome.*`). Each file is a UMD-style script: in the extension it
 attaches to `globalThis.RolesRanks`, under Node it is `require`d. That is what lets the unit tests exercise the real
@@ -123,6 +123,19 @@ Matching an author token to the owner (`names.js`):
 
 Author lists (`parseAuthors`) are cut at a cut mark (`…`, `⋯`, `‥`, two dots or more, `. . .`, `et al`) and told apart at `,` `;` `·` `|` the ideographic and
 Arabic commas, a spaced slash, ` and ` and `&`; a name after a cut has no known position (`afterCut`: always middle, never in a leading group).
+
+```mermaid
+flowchart LR
+  T["The owner's place<br/>in the author list"] --> C{"In a leading group<br/>that shares a mark?<br/>A*, B*, C"}
+  C -- yes --> CF["co-first"]
+  C -- no --> F{"Place 1?"}
+  F -- yes --> FI["first"]
+  F -- no --> L{"Last place, and<br/>the list is complete?"}
+  L -- yes --> LA["last"]
+  L -- no --> SE{"Place 2?"}
+  SE -- yes --> SC["second"]
+  SE -- no --> MI["middle (not highlighted)"]
+```
 
 Roles (`roleFor`): co-first (the owner is inside the leading group of authors that share a mark with the first author — `A*, B*, C`, at least two, and not every author of a list of three or more; a lone mark or
 one further down, a corresponding or co-senior author, says nothing; the envelope ✉ is never equal contribution) → first (position 0) → last (final

@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Mejore Google Scholar: roles de autor, clasificaciones CCF y CORE, premios de conferencias, gráficos por año y búsqueda instantánea."
+    "message": "En perfiles de Google Scholar: posición de autor del titular y rango CCF y CORE de la publicación por artículo, en una tabla."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalista a mejor artículo"
   },
   "marksHint": {
-    "message": "Según lo que los propios autores escriben en el título y en los datos de publicación de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
+    "message": "De dos fuentes: lo que los propios autores escriben en el título o en la línea de publicación de cada artículo en Scholar (sin verificar), y una lista incluida de artículos premiados en congresos importantes."
   },
   "marksAsWritten": {
     "message": "según los autores o la lista de premios"
@@ -175,7 +175,7 @@
     "message": "Abre la página de cada artículo en Scholar (aprox. uno por segundo) para leer la lista completa de autores."
   },
   "resolveHintSemantic": {
-    "message": "Primero pide a Semantic Scholar la lista de autores de cada artículo (solo se envía el título) y luego abre en Scholar las páginas de los artículos que falten (aprox. uno por segundo)."
+    "message": "Primero pide a Semantic Scholar la lista de autores de cada artículo (solo se envía el título). Después abre en Scholar las páginas de los demás artículos, aprox. uno por segundo."
   },
   "resolving": {
     "message": "Leyendo listas de autores… $N1$/$N2$",
@@ -482,7 +482,7 @@
     "message": "¿Restablecer todos estos ajustes a sus valores predeterminados?"
   },
   "optStorage": {
-    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. La extensión lee las páginas de Scholar que abres y, cuando pulsas «Leer listas completas», las páginas de artículos con una lista de autores recortada; los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
+    "message": "Los ajustes se guardan en tu navegador y se sincronizan con tu perfil de Chrome. La extensión lee las páginas de Scholar que abres. Al pulsar «Leer listas completas», también lee las páginas de artículos con una lista de autores recortada. Los títulos de los artículos solo se envían a Semantic Scholar si lo activas."
   },
   "optSample": {
     "message": "Artículo de ejemplo"
@@ -494,7 +494,7 @@
     "message": "Cargar todos los artículos automáticamente"
   },
   "optAutoLoadHint": {
-    "message": "Al principio Scholar solo muestra los primeros artículos. Esta opción pulsa por ti su botón «Mostrar más», aproximadamente una vez por segundo, hasta cargar toda la lista, y se detiene si Scholar deja de responder. Desactivada: el panel ofrece «Cargar todo»."
+    "message": "Scholar solo muestra los primeros artículos de un perfil. Esta opción pulsa por ti el propio botón «Mostrar más» de Scholar, aproximadamente una vez por segundo, hasta cargar toda la lista. Se detiene si Scholar deja de responder. Desactivada: el panel muestra «Cargar todo» en su lugar."
   },
   "loadStalled": {
     "message": "Scholar no envió más artículos ($N1$ cargados). Vuelve a probar «Cargar todo» en un momento.",
@@ -583,7 +583,7 @@
     "message": "Combinar duplicados"
   },
   "optMergeLabelHint": {
-    "message": "Las entradas con el mismo título (sin contar mayúsculas, acentos ni puntuación) y el mismo primer autor pasan a ser una: se queda la más citada y muestra las citas de todas. El panel la cuenta una sola vez."
+    "message": "Las entradas con el mismo título y el mismo primer autor pasan a ser una sola entrada (no importan las mayúsculas, los acentos ni la puntuación). La entrada más citada se queda y muestra las citas de todas. El panel la cuenta una sola vez."
   },
   "mergedTip": {
     "message": "Combinada a partir de $N1$ entradas: las citas de todas ellas",
@@ -675,7 +675,7 @@
     "message": "Leer primero las listas de autores de Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Al pulsar «Leer listas completas», primero se pide a Semantic Scholar la lista completa de autores de cada artículo (solo se envía el título del artículo), y solo se abre la página de Scholar para lo que Semantic Scholar no conoce. Menos peticiones a Scholar, así que menos CAPTCHA."
+    "message": "Al pulsar «Leer listas completas», primero se pide a Semantic Scholar la lista completa de autores de cada artículo. Solo se envía el título del artículo, nada más. La propia página de Scholar se abre después solo para los artículos que Semantic Scholar no conoce. Menos peticiones a Scholar, así que menos CAPTCHA."
   },
   "yearsTitle": {
     "message": "Artículos resaltados por año"
@@ -879,7 +879,7 @@
     "message": "Agentes de IA"
   },
   "optAgentHint": {
-    "message": "Copia una guía que enumera cada ajuste, sus valores y tus opciones actuales. Pégala en tu asistente de IA, dile lo que quieres y luego pega su respuesta en el editor de configuración de abajo y pulsa «Aplicar configuración»."
+    "message": "Copia una guía que enumere cada ajuste, sus valores y tus opciones actuales. Dásela a tu asistente de IA junto con lo que quieras. Después pega su respuesta en el editor de configuración de abajo y pulsa «Aplicar configuración»."
   },
   "optAgentCopy": {
     "message": "Copiar guía para agentes"
@@ -1147,7 +1147,7 @@
     "message": "Comprobar congreso/revista"
   },
   "optVenueHint": {
-    "message": "Pega el congreso o revista tal como aparece en Scholar (la línea gris debajo de un artículo) para ver qué dicen al respecto las listas CCF y CORE, y según qué regla. Un congreso o revista que no puedan ubicar no recibe rango: no se adivina nada."
+    "message": "Pega el congreso o la revista tal como aparece en Scholar: la línea gris debajo de un artículo. Así verás qué dicen las listas CCF y CORE al respecto, y según qué regla. Un congreso o revista que no puedan ubicar no recibe rango. No se adivina nada."
   },
   "optVenuePlaceholder": {
     "message": "p. ej., Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1156,7 +1156,7 @@
     "message": "Sin rango. Las listas no ubican este texto con seguridad, así que no recibe etiqueta."
   },
   "optVenueSecondary": {
-    "message": "La palabra «$N1$» indica una categoría secundaria (workshop, poster, artículo corto …): el congreso o la revista no recibe rango, salvo que su propio nombre contenga esa palabra.",
+    "message": "La palabra «$N1$» indica una categoría secundaria, como workshop, poster o artículo corto. El congreso o la revista no recibe rango, salvo que su propio nombre contenga esa palabra.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1176,7 +1176,7 @@
     "message": "Los recuentos se ajustan a los filtros"
   },
   "optFiltersFollowHint": {
-    "message": "La tabla, los recuentos de premios y ponencias y el recuento del resumen copiado solo cuentan los artículos que dejan los filtros (un intervalo de años, una búsqueda, un filtro rápido, un congreso o una revista); la celda o fila seleccionada no reduce ningún recuento. Desactivada: siempre cuentan todo el perfil."
+    "message": "La tabla, los recuentos de premios y ponencias y el resumen copiado solo cuentan los artículos que dejan los filtros: un intervalo de años, una búsqueda, un filtro rápido o un congreso o una revista. La celda o fila seleccionada no cambia ningún recuento. Desactivada: siempre cuentan todo el perfil."
   },
   "optPillRecent": {
     "message": "Últimos 5 años"
@@ -1188,7 +1188,7 @@
     "message": "Añadir el enlace del perfil y la fecha al resumen copiado"
   },
   "optCopySourceHint": {
-    "message": "El resumen copiado y la tabla copiada incluyen una línea con el enlace del perfil y la fecha (Source: …), para poder archivar los números o enviarlos. Una lista que no está cargada por completo lo indica ahí, con independencia de cómo esté este interruptor."
+    "message": "El resumen copiado y la tabla copiada terminan con una línea con el enlace del perfil y la fecha (Source: …), para que puedas archivar o enviar los números. Una lista que no está cargada por completo siempre lo indica ahí."
   },
   "unrankedPreprints": {
     "message": "Prepublicaciones"
@@ -1203,7 +1203,7 @@
     "message": "Cuando un congreso o revista tiene rango en ambas listas"
   },
   "optPreferHint": {
-    "message": "Una etiqueta en lugar de dos: la lista elegida y, solo donde esta no tenga rango para el congreso o revista, la otra. El texto que aparece al pasar el cursor sigue indicando el otro rango."
+    "message": "Una etiqueta en lugar de dos: la etiqueta de la lista que eliges, y la de la otra lista solo donde la lista elegida no tenga rango para el congreso o la revista. El texto que aparece al pasar el cursor sigue indicando el otro rango."
   },
   "optPreferCcf": {
     "message": "CCF primero"

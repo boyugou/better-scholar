@@ -40,6 +40,17 @@ links out.
    appeared, moved or vanished — and only then run `npm run test:update`.
 4. Add a targeted regression test in `test/venues.test.js` for the bug you fixed.
 
+```mermaid
+flowchart LR
+  A["A real venue line,<br/>wrong or without a chip"] --> B["Add it to<br/>test/fixtures/venues.json"]
+  B --> C["Fix the matcher,<br/>or add an alias"]
+  C --> D["npm test:<br/>read the snapshot diff"]
+  D -- "a change is wrong" --> C
+  D -- "every change is right" --> E["npm run test:update"]
+  E --> F["npm run diff:matcher<br/>(the real-title differential)"]
+  F --> G["A regression test<br/>for the bug"]
+```
+
 ### Looking for wrong badges nobody has reported
 
 The snapshot only says what the matcher did, not that it was right — a reviewed snapshot once held an AAAI paper under

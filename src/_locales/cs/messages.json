@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Vylepšete Google Scholar: autorské role, hodnocení CCF a CORE, ocenění z konferencí, grafy podle let a okamžité vyhledávání."
+    "message": "Na profilech Google Scholar: autorská role majitele a rank CCF a CORE místa publikace u každé práce, sečtené v jedné tabulce."
   },
   "extShortName": {
     "message": "Better Scholar"
@@ -51,7 +51,7 @@
     "message": "Finalista nejlepší práce"
   },
   "marksHint": {
-    "message": "Podle slov samotných autorů v názvu a popisu místa publikace každé práce ve Scholar (neověřeno) a podle přibaleného seznamu oceněných prací z velkých konferencí."
+    "message": "Ze dvou zdrojů: ze slov, která autoři sami uvádějí v názvu práce nebo v řádku s místem publikace na Scholar (neověřeno), a z přibaleného seznamu oceněných prací z velkých konferencí."
   },
   "marksAsWritten": {
     "message": "ze slov autorů nebo ze seznamu ocenění"
@@ -169,7 +169,7 @@
     "message": "Otevře stránku každé práce ve Scholar (zhruba jednu za sekundu), aby přečetlo celý seznam autorů."
   },
   "resolveHintSemantic": {
-    "message": "Nejprve rozšíření požádá Semantic Scholar o seznam autorů každé práce (posílá se jen název práce) a pak otevře stránku práce ve Scholar pro zbytek (zhruba jednu za sekundu)."
+    "message": "Nejprve rozšíření požádá Semantic Scholar o seznam autorů každé práce (posílá se jen název práce). Potom otevře stránku práce ve Scholar pro ostatní práce, zhruba jednu za sekundu."
   },
   "resolving": {
     "message": "Čtení seznamů autorů… $N1$/$N2$",
@@ -464,7 +464,7 @@
     "message": "Obnovit všechna tato nastavení na výchozí hodnoty?"
   },
   "optStorage": {
-    "message": "Nastavení se ukládá v prohlížeči a synchronizuje s profilem Chrome. Rozšíření čte stránky Scholar, které otevřete, a když stisknete „Přečíst celé seznamy“, také stránky prací se zkráceným seznamem autorů; názvy prací se posílají do Semantic Scholar jen tehdy, když to zapnete."
+    "message": "Nastavení se ukládá v prohlížeči a synchronizuje s profilem Chrome. Rozšíření čte stránky Scholar, které otevřete. Když stisknete „Přečíst celé seznamy“, čte také stránky prací se zkráceným seznamem autorů. Názvy prací se posílají do Semantic Scholar jen tehdy, když to zapnete."
   },
   "optSample": {
     "message": "Ukázková práce"
@@ -476,7 +476,7 @@
     "message": "Načíst všechny práce automaticky"
   },
   "optAutoLoadHint": {
-    "message": "Scholar zprvu ukáže jen první práce. Rozšíření za vás zhruba jednou za sekundu stiskne jeho tlačítko „Zobrazit další“, dokud se nenačte celý seznam, a zastaví se, když Scholar přestane odpovídat. Vyp.: panel nabídne „Načíst vše“."
+    "message": "Scholar ukáže jen první práce profilu. Rozšíření za vás zhruba jednou za sekundu stiskne jeho vlastní tlačítko „Zobrazit další“, dokud se nenačte celý seznam. Zastaví se, když Scholar přestane odpovídat. Vyp.: panel místo toho zobrazí „Načíst vše“."
   },
   "loadStalled": {
     "message": "Scholar už neposlal další práce (načteno: $N1$). Zkuste „Načíst vše“ za chvíli znovu.",
@@ -565,7 +565,7 @@
     "message": "Sloučit duplicity"
   },
   "optMergeLabelHint": {
-    "message": "Záznamy se stejným názvem (bez ohledu na velikost písmen, diakritiku a interpunkci) a stejným prvním autorem se sloučí v jeden: zůstane nejcitovanější, s citacemi všech. Panel ho počítá jednou."
+    "message": "Záznamy se stejným názvem a stejným prvním autorem se sloučí do jednoho záznamu (bez ohledu na velikost písmen, diakritiku a interpunkci). Nejcitovanější záznam zůstane a ukáže citace všech. Panel ho počítá jednou."
   },
   "mergedTip": {
     "message": "Sloučeno záznamů: $N1$; započtené citace všech",
@@ -657,7 +657,7 @@
     "message": "Nejprve číst seznamy autorů ze Semantic Scholar"
   },
   "optSemanticLabelHint": {
-    "message": "Po stisku „Přečíst celé seznamy“ rozšíření nejprve požádá Semantic Scholar o úplný seznam autorů každé práce (posílá se jen název práce) a stránku samotného Scholar otevře jen pro práce, které Semantic Scholar nezná. Méně dotazů na Scholar, tedy méně CAPTCHA."
+    "message": "Po stisku „Přečíst celé seznamy“ rozšíření nejprve požádá Semantic Scholar o úplný seznam autorů každé práce. Dostane jen název práce, nic víc. Stránka samotného Scholar se pak otevře jen pro práce, které Semantic Scholar nezná. Méně dotazů na Scholar, tedy méně CAPTCHA."
   },
   "yearsTitle": {
     "message": "Zvýrazněné práce podle roku"
@@ -858,7 +858,7 @@
     "message": "AI agenti"
   },
   "optAgentHint": {
-    "message": "Zkopírujte návod, který vypisuje každé nastavení, jeho hodnoty a vaše současné volby. Předejte ho svému asistentovi AI, řekněte, co chcete, a pak jeho odpověď vložte do editoru konfigurace níže a stiskněte „Použít konfiguraci“."
+    "message": "Zkopírujte návod, který vypisuje každé nastavení, jeho hodnoty a vaše současné volby. Předejte ho svému asistentovi AI spolu s tím, co chcete. Pak jeho odpověď vložte do editoru konfigurace níže a stiskněte „Použít konfiguraci“."
   },
   "optAgentCopy": {
     "message": "Kopírovat návod pro AI"
@@ -1126,7 +1126,7 @@
     "message": "Ověřit místo publikace"
   },
   "optVenueHint": {
-    "message": "Vložte místo publikace tak, jak je Scholar vypisuje (šedý řádek pod prací), a zjistěte, co z něj dělají seznamy CCF a CORE a podle jakého pravidla. Místo publikace, které seznamy nedokážou zařadit, nedostane žádný rank: nic se nedohaduje."
+    "message": "Vložte místo publikace tak, jak je Scholar vypisuje: šedý řádek pod prací. Uvidíte, co z něj dělají seznamy CCF a CORE a podle jakého pravidla. Místo publikace, které seznamy nedokážou zařadit, nedostane žádný rank. Nic se nedohaduje."
   },
   "optVenuePlaceholder": {
     "message": "např. Proceedings of the IEEE conference on computer vision and pattern recognition"
@@ -1135,7 +1135,7 @@
     "message": "Bez ranku. Seznamy tento text s jistotou nezařazují, proto nedostane štítek."
   },
   "optVenueSecondary": {
-    "message": "Slovo „$N1$“ označuje vedlejší kategorii (workshop, poster, krátký článek …). Místo publikace pak nedostane rank, pokud jeho název to slovo neobsahuje.",
+    "message": "Slovo „$N1$“ označuje vedlejší kategorii, například workshop, poster nebo krátký článek. Místo publikace nedostane rank, pokud jeho název to slovo neobsahuje.",
     "placeholders": {
       "n1": {
         "content": "$1"
@@ -1155,7 +1155,7 @@
     "message": "Počty se řídí filtry"
   },
   "optFiltersFollowHint": {
-    "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají (rozsah let, vyhledávání, rychlý filtr, publikační místo); vybraná buňka nebo řádek nesníží žádný počet. Vyp.: počítají vždy celý profil."
+    "message": "Tabulka, počty u ocenění a přednesů a přehled ke kopírování počítají jen práce, které filtry ponechají: rozsah let, vyhledávání, rychlý filtr nebo publikační místo. Vybraná buňka nebo řádek počty nemění. Vyp.: počítají vždy celý profil."
   },
   "optPillRecent": {
     "message": "Posledních 5 let"
@@ -1188,7 +1188,7 @@
     "message": "Přidat do zkopírovaného přehledu odkaz na profil a datum"
   },
   "optCopySourceHint": {
-    "message": "Zkopírovaný přehled i zkopírovaná tabulka dostanou řádek s odkazem na profil a datem (Source: …), aby se čísla dala založit nebo poslat dál. Seznam, který není celý načtený, to v nich řekne bez ohledu na tento přepínač."
+    "message": "Zkopírovaný přehled a zkopírovaná tabulka končí řádkem s odkazem na profil a datem (Source: …), abyste čísla mohli založit nebo poslat dál. Seznam, který není celý načtený, to v nich vždy řekne."
   },
   "unrankedPreprints": {
     "message": "Preprinty"
@@ -1203,7 +1203,7 @@
     "message": "Když oba seznamy hodnotí místo publikace"
   },
   "optPreferHint": {
-    "message": "Jeden štítek místo dvou: vybraný seznam a ten druhý jen tam, kde vybraný pro dané místo publikace nemá rank. Při najetí myší na štítek se dál zobrazí i druhý rank."
+    "message": "Jeden štítek místo dvou: štítek seznamu, který vyberete, a štítek druhého seznamu jen tam, kde vybraný seznam pro dané místo publikace nemá rank. Při najetí myší na štítek se dál zobrazí i druhý rank."
   },
   "optPreferCcf": {
     "message": "Nejprve CCF"
