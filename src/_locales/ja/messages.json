@@ -3,7 +3,7 @@
     "message": "Better Scholar"
   },
   "extDescription": {
-    "message": "Google Scholar の著者プロフィール：所有者の著者順と、論文ごとの掲載先の CCF / CORE ランクを 1つの表に集計します。"
+    "message": "Google Scholar の著者プロフィール：本人の著者順と、論文ごとの掲載先の CCF / CORE ランクを 1つの表に集計します。"
   },
   "extShortName": {
     "message": "Better Scholar"
