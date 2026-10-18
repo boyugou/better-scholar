@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Kotak pencarian"
   },
+  "optFiltersKey": {
+    "message": "Tombol “/” melompat ke kotak pencarian"
+  },
+  "optFiltersKeyHint": {
+    "message": "Di panel pada halaman profil, dan di halaman ini untuk pencariannya sendiri. Mati: tombol tidak melakukan apa-apa."
+  },
   "optOrderPills": {
     "message": "Urutan filter cepat"
   },

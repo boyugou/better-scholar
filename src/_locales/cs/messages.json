@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Vyhledávací pole"
   },
+  "optFiltersKey": {
+    "message": "Klávesa “/” přeskočí na vyhledávání"
+  },
+  "optFiltersKeyHint": {
+    "message": "V panelu na stránce profilu a na této stránce pro její vlastní vyhledávání. Vypnuto: klávesa nedělá nic."
+  },
   "optOrderPills": {
     "message": "Pořadí rychlých filtrů"
   },

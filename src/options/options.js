@@ -934,13 +934,15 @@
   searchClear.hidden = true;
   const searchKbd = h("kbd", { class: "opt-search-kbd", "aria-hidden": "true" }, "/");
   const searchBox = h("div", { class: "opt-search-box" }, searchIcon, searchInput, searchClear, searchKbd);
+  syncers.push(() => { searchKbd.hidden = !!searchInput.value.trim() || !prefs.panel.filters.key; });          // (the "/" hint follows its switch)
+  searchKbd.hidden = !prefs.panel.filters.key;
   // what the person is told when no setting matches (a status, so that a screen reader says it too)
   const searchNone = h("p", { class: "opt-search-none", role: "status", hidden: true });
 
   function filterSettings(query) {
     const q = (query || "").trim().toLowerCase();
     searchClear.hidden = !q;
-    searchKbd.hidden = !!q;
+    searchKbd.hidden = !!q || !prefs.panel.filters.key;
     cards.forEach((card, idx) => {
       const h2 = (card.querySelector("h2")?.textContent || "").toLowerCase();
       const desc = (card.querySelector(".desc")?.textContent || "").toLowerCase();
@@ -976,7 +978,7 @@
     }
   });
   window.addEventListener("keydown", (e) => {
-    if (e.key === "/" && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
+    if (e.key === "/" && prefs.panel.filters.key && document.activeElement !== searchInput && !["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) {
       e.preventDefault();
       searchInput.focus();
       searchInput.select();

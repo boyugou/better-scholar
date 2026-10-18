@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Suchfeld"
   },
+  "optFiltersKey": {
+    "message": "Die Taste “/” springt zum Suchfeld"
+  },
+  "optFiltersKeyHint": {
+    "message": "Im Übersichtsfeld auf einer Profilseite und auf dieser Seite für deren eigene Suche. Aus: Die Taste tut nichts."
+  },
   "optOrderPills": {
     "message": "Reihenfolge der Schnellfilter"
   },

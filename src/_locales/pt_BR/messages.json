@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Caixa de pesquisa"
   },
+  "optFiltersKey": {
+    "message": "A tecla “/” leva à pesquisa"
+  },
+  "optFiltersKeyHint": {
+    "message": "No painel de uma página de perfil e nesta página, para a pesquisa dela mesma. Desativado: a tecla não faz nada."
+  },
   "optOrderPills": {
     "message": "Ordem dos filtros rápidos"
   },

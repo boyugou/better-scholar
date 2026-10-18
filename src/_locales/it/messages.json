@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Casella di ricerca"
   },
+  "optFiltersKey": {
+    "message": "Il tasto “/” porta alla ricerca"
+  },
+  "optFiltersKeyHint": {
+    "message": "Nel pannello su una pagina del profilo e in questa pagina per la sua ricerca. Disattivato: il tasto non fa nulla."
+  },
   "optOrderPills": {
     "message": "Ordine dei filtri rapidi"
   },

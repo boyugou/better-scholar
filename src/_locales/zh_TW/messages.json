@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "搜尋框"
   },
+  "optFiltersKey": {
+    "message": "“/”鍵跳至搜尋框"
+  },
+  "optFiltersKeyHint": {
+    "message": "在個人頁面的面板中，以及本頁自身的搜尋框中。關閉時：此鍵不會有任何作用。"
+  },
   "optOrderPills": {
     "message": "快速篩選的順序"
   },

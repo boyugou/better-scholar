@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Zoekvak"
   },
+  "optFiltersKey": {
+    "message": "De “/”-toets springt naar het zoekvak"
+  },
+  "optFiltersKeyHint": {
+    "message": "In het paneel op een profielpagina en op deze pagina voor het eigen zoekvak. Uit: de toets doet niets."
+  },
   "optOrderPills": {
     "message": "Volgorde van de snelfilters"
   },

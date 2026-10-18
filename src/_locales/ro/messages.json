@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Câmpul de căutare"
   },
+  "optFiltersKey": {
+    "message": "Tasta “/” sare la căutare"
+  },
+  "optFiltersKeyHint": {
+    "message": "În panoul de pe o pagină de profil și pe această pagină, pentru propria ei căutare. Oprit: tasta nu face nimic."
+  },
   "optOrderPills": {
     "message": "Ordinea filtrelor rapide"
   },

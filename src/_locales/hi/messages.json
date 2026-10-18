@@ -979,6 +979,12 @@
   "optFiltersSearch": {
     "message": "खोज बॉक्स"
   },
+  "optFiltersKey": {
+    "message": "“/” कुंजी खोज पर ले जाती है"
+  },
+  "optFiltersKeyHint": {
+    "message": "प्रोफ़ाइल पेज पर पैनल में, और इस पेज पर इसकी अपनी खोज के लिए। बंद: कुंजी कुछ नहीं करती।"
+  },
   "optOrderPills": {
     "message": "त्वरित फ़िल्टर का क्रम"
   },

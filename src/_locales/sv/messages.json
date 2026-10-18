@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Sökruta"
   },
+  "optFiltersKey": {
+    "message": "Tangenten “/” hoppar till sökrutan"
+  },
+  "optFiltersKeyHint": {
+    "message": "I panelen på en profilsida och på den här sidan för dess egen sökning. Av: tangenten gör ingenting."
+  },
   "optOrderPills": {
     "message": "Ordning på snabbfiltren"
   },

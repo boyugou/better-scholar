@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "검색창"
   },
+  "optFiltersKey": {
+    "message": "“/” 키로 검색창에 바로 가기"
+  },
+  "optFiltersKeyHint": {
+    "message": "프로필 페이지의 패널, 그리고 이 페이지 자체 검색에서 작동합니다. 끄면 키를 눌러도 아무 일도 일어나지 않습니다."
+  },
   "optOrderPills": {
     "message": "빠른 필터의 순서"
   },

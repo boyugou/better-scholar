@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "תיבת חיפוש"
   },
+  "optFiltersKey": {
+    "message": "המקש “/” מעביר לחיפוש"
+  },
+  "optFiltersKeyHint": {
+    "message": "בלוח שבעמוד פרופיל, ובעמוד הזה לחיפוש שלו. כבוי: המקש לא עושה דבר."
+  },
   "optOrderPills": {
     "message": "סדר המסננים המהירים"
   },

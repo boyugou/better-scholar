@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Keresőmező"
   },
+  "optFiltersKey": {
+    "message": "A “/” billentyű a keresőmezőre ugrik"
+  },
+  "optFiltersKeyHint": {
+    "message": "A profiloldal panelén, és ezen az oldalon a saját keresésére. Ki: a billentyű nem csinál semmit."
+  },
   "optOrderPills": {
     "message": "A gyorsszűrők sorrendje"
   },

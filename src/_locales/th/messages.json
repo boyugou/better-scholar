@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "ช่องค้นหา"
   },
+  "optFiltersKey": {
+    "message": "ปุ่ม “/” พาไปยังช่องค้นหา"
+  },
+  "optFiltersKeyHint": {
+    "message": "ในแผงบนหน้าโปรไฟล์ และในหน้านี้สำหรับช่องค้นหาของหน้านี้เอง ปิด: ปุ่มนี้ไม่ทำอะไรเลย"
+  },
   "optOrderPills": {
     "message": "ลำดับของตัวกรองด่วน"
   },

@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Champ de recherche"
   },
+  "optFiltersKey": {
+    "message": "La touche “/” mène à la recherche"
+  },
+  "optFiltersKeyHint": {
+    "message": "Dans le panneau d’une page de profil, et sur cette page pour sa propre recherche. Désactivée : la touche ne fait rien."
+  },
   "optOrderPills": {
     "message": "Ordre des filtres rapides"
   },

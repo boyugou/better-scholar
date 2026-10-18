@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Ô tìm kiếm"
   },
+  "optFiltersKey": {
+    "message": "Phím “/” nhảy đến ô tìm kiếm"
+  },
+  "optFiltersKeyHint": {
+    "message": "Trong bảng trên trang hồ sơ, và trên trang này cho ô tìm kiếm của chính nó. Tắt: phím không làm gì cả."
+  },
   "optOrderPills": {
     "message": "Thứ tự bộ lọc nhanh"
   },

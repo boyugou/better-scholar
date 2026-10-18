@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "مربع البحث"
   },
+  "optFiltersKey": {
+    "message": "مفتاح “/” ينقل إلى مربع البحث"
+  },
+  "optFiltersKeyHint": {
+    "message": "في اللوحة على صفحة الملف الشخصي، وفي بحث هذه الصفحة نفسها. إيقاف: المفتاح لا يفعل شيئًا."
+  },
   "optOrderPills": {
     "message": "ترتيب المرشّحات السريعة"
   },

@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "検索欄"
   },
+  "optFiltersKey": {
+    "message": "“/”キーで検索欄へ移動"
+  },
+  "optFiltersKeyHint": {
+    "message": "プロフィールページのパネル、およびこのページ自身の検索欄で効きます。オフの場合は、このキーは何もしません。"
+  },
   "optOrderPills": {
     "message": "クイックフィルターの順序"
   },

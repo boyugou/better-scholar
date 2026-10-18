@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Arama kutusu"
   },
+  "optFiltersKey": {
+    "message": "“/” tuşu arama kutusuna atlar"
+  },
+  "optFiltersKeyHint": {
+    "message": "Profil sayfasındaki panelde ve bu sayfada, sayfanın kendi aramasında. Kapalı: tuş hiçbir şey yapmaz."
+  },
   "optOrderPills": {
     "message": "Hızlı filtrelerin sırası"
   },

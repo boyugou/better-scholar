@@ -692,7 +692,7 @@ const impactMin = (source, { picks = true } = {}) => (state.filters.impact === "
     const el = target instanceof Element ? target : document.body;
     const typing = /^(?:input|textarea|select)$/i.test(el.tagName) || el.isContentEditable;
     if (e.key === "/" && !typing) {
-      if (!prefs.panel.show || !prefs.panel.filters.show || !prefs.panel.filters.search) return;
+      if (!prefs.panel.show || !prefs.panel.filters.show || !prefs.panel.filters.search || !prefs.panel.filters.key) return;          // (a character key that does something can be switched off)
       e.preventDefault();
       if (ui.collapsed) { ui.collapsed = false; B.store.saveUi(ui); refresh(); }
       panel.focusSearch();

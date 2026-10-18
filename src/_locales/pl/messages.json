@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "Pole wyszukiwania"
   },
+  "optFiltersKey": {
+    "message": "Klawisz “/” przenosi do pola wyszukiwania"
+  },
+  "optFiltersKeyHint": {
+    "message": "W panelu na stronie profilu i na tej stronie, do jej własnego wyszukiwania. Wyłączony: klawisz nie robi nic."
+  },
   "optOrderPills": {
     "message": "Kolejność szybkich filtrów"
   },

@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Cuadro de búsqueda"
   },
+  "optFiltersKey": {
+    "message": "La tecla “/” salta a la búsqueda"
+  },
+  "optFiltersKeyHint": {
+    "message": "En el panel de una página de perfil y en esta página, para su propia búsqueda. Desactivado: la tecla no hace nada."
+  },
   "optOrderPills": {
     "message": "Orden de los filtros rápidos"
   },

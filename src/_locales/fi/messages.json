@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Hakukenttä"
   },
+  "optFiltersKey": {
+    "message": "“/”-näppäin siirtää hakukenttään"
+  },
+  "optFiltersKeyHint": {
+    "message": "Paneelissa profiilisivulla sekä tällä sivulla sen omaa hakua varten. Pois: näppäin ei tee mitään."
+  },
   "optOrderPills": {
     "message": "Pikasuodattimien järjestys"
   },

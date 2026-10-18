@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Søgefelt"
   },
+  "optFiltersKey": {
+    "message": "“/”-tasten springer til søgefeltet"
+  },
+  "optFiltersKeyHint": {
+    "message": "I panelet på en profilside og på denne side til dens egen søgning. Fra: tasten gør ingenting."
+  },
   "optOrderPills": {
     "message": "Rækkefølge af hurtigfiltrene"
   },

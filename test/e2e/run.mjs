@@ -3084,5 +3084,39 @@ const eventually = async (page, fn, arg) => { await page.bringToFront(); try { r
     } finally { await ctx14.close(); await fx14.close(); }
   }
 
+  // -- 35. the "/" key is a setting (WCAG 2.1.4: a character key that does something can be switched off): on, it jumps to the search box; off, it does nothing, its hint goes, and so does the settings page's own
+  {
+    const fx15 = await start({ slug: "ion-stoica", pageSize: 100, latency: 0 });
+    const ctx15 = await launch();
+    try {
+      const opts = await openOptions(ctx15);
+      const page = await ctx15.newPage();
+      await page.goto(fx15.url);
+      await page.waitForSelector("#rr-panel");
+      await eventually(page, () => document.querySelectorAll('[data-rr="matrix"] table').length === 1);
+      await page.bringToFront();
+      const focusedIsSearch = () => page.evaluate(() => /rr-search-input/.test(String((document.activeElement || {}).className)));
+      await page.evaluate(() => document.activeElement && document.activeElement.blur());
+      await page.keyboard.press("/");
+      assert.equal(await focusedIsSearch(), true, "on: the slash goes to the search box");
+      assert.equal(await page.locator("#rr-panel .rr-search-kbd").isVisible(), true, "and its hint is drawn");
+      await setPref(opts, "panel.filters.key", false);
+      await eventually(page, () => document.querySelector("#rr-panel .rr-search-kbd").hidden === true);
+      await page.evaluate(() => document.activeElement && document.activeElement.blur());
+      await page.keyboard.press("/");
+      assert.equal(await focusedIsSearch(), false, "off: the slash does nothing");
+      await opts.bringToFront();
+      assert.equal(await opts.locator(".opt-search-kbd").isVisible(), false, "the settings page's own hint goes with it");
+      await opts.evaluate(() => document.activeElement && document.activeElement.blur());
+      await opts.keyboard.press("/");
+      assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.className.includes("opt-search")), false, "and its own slash does nothing");
+      await setPref(opts, "panel.filters.key", true);
+      await opts.evaluate(() => document.activeElement && document.activeElement.blur());
+      await opts.keyboard.press("/");
+      assert.equal(await opts.evaluate(() => document.activeElement && document.activeElement.className.includes("opt-search")), true, "on again: it jumps to the settings search");
+      ok("the \"/\" key is a setting: on, it jumps to the search box (the panel's and the settings page's); off, it does nothing and its hint is gone");
+    } finally { await ctx15.close(); await fx15.close(); }
+  }
+
   console.log(`\nAll ${step} checks passed. Screenshots: ${outDir}`);
 })().catch((e) => { console.error("\nE2E FAILED:", e && e.stack || e); process.exit(1); });

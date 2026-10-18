@@ -994,6 +994,12 @@
   "optFiltersSearch": {
     "message": "Search box"
   },
+  "optFiltersKey": {
+    "message": "The “/” key jumps to the search"
+  },
+  "optFiltersKeyHint": {
+    "message": "In the panel on a profile, and on this page for its own search. Off: the key does nothing."
+  },
   "optOrderPills": {
     "message": "Order of the quick filters"
   },

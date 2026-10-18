@@ -973,6 +973,12 @@
   "optFiltersSearch": {
     "message": "搜索框"
   },
+  "optFiltersKey": {
+    "message": "“/”键跳转到搜索框"
+  },
+  "optFiltersKeyHint": {
+    "message": "在个人主页的面板中，以及本页自身的搜索框中。关闭时：该键不起任何作用。"
+  },
   "optOrderPills": {
     "message": "快速筛选的顺序"
   },

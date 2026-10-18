@@ -223,7 +223,8 @@
         { label: "optTalkRows", hint: "optTalkRowsHint", parent: "panel.marks.show" })
     ]),
     card("filters", "optPanelFilters", "optPanelFiltersHint", [
-      ...part("filters", "The search box and the filters.", [["search", true, "optFiltersSearch", "The search box, with its suggestions and the number of papers it finds.", { name: "filterPlaceholder" }]]),
+      ...part("filters", "The search box and the filters.", [["search", true, "optFiltersSearch", "The search box, with its suggestions and the number of papers it finds.", { name: "filterPlaceholder" }],
+        ["key", true, "optFiltersKey", "The \"/\" key jumps to the search box — on a profile, and on this settings page for its own search. Off: the key does nothing (a character key that does something is one a person can switch off).", { hint: "optFiltersKeyHint", parent: "panel.filters.search" }]]),
       order("panel.filters.pills.order", PILLS, "The quick-filter buttons under the search box, left to right: a list of ids (" + PILLS.join(", ") + "). Ids left out follow in the default order; a button's own switch hides it without changing its place.",
         { label: "optOrderPills", parent: "panel.filters.show", group: "optFiltersQuick" }),
       ...PILLS.map((id) => bool(`panel.filters.pills.${id}`, PILLS_ON.includes(id), `Quick filter: a button that adds ${PILL_OPERATORS[id]} to the search (left out while nothing of that kind is drawn, and on a profile with no paper that it would find).`,
