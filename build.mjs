@@ -466,7 +466,7 @@ function privacyPage() {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy: Better Scholar</title>
-<meta name="description" content="What Better Scholar reads, stores and sends: nothing leaves your browser unless you switch on the Semantic Scholar lookup.">
+<meta name="description" content="What Better Scholar reads, stores and sends: requests go only to the Google Scholar site you have open, and a paper's title to Semantic Scholar only if you turn that on. No account, no analytics, no tracking.">
 <link rel="canonical" href="${SITE_URL}/privacy/">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="stylesheet" href="../assets/styles.css">
